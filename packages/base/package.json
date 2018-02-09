@@ -15,11 +15,8 @@
     "test": "react-scripts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepublish": "npm run build",
-    "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "prepublish": "yarn build"
   },
-  "dependencies": {},
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^0.14.9 || ^15.0.0 || ^16.0.0",
@@ -44,5 +41,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  }
 }
