@@ -20,7 +20,8 @@
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^0.14.9 || ^15.0.0 || ^16.0.0",
-    "react-dom": "^0.14.9 || ^15.0.0 || ^16.0.0"
+    "react-dom": "^0.14.9 || ^15.0.0 || ^16.0.0",
+    "styled-components": "^3.1.6"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -44,5 +45,11 @@
   ],
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "styled-components": "^3.1.6",
+    "text-mask-core": "^5.0.1",
+    "tinycolor2": "^1.4.1"
   }
 }
