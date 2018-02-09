@@ -1,5 +1,23 @@
 {
-	"devDependencies": {
-		"lerna": "^2.8.0"
-	}
+  "name": "@staccx/bento",
+  "private": true,
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/stacc-flow/bento#readme",
+  "description": "",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^2.8.0"
+  }
 }
