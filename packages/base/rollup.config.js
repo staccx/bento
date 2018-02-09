@@ -1,6 +1,5 @@
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
-import postcss from 'rollup-plugin-postcss'
 import resolve from 'rollup-plugin-node-resolve'
 
 import pkg from './package.json'
@@ -24,11 +23,9 @@ export default {
     'styled-components'
   ],
   plugins: [
-    postcss({
-      modules: true
-    }),
     babel({
-      exclude: 'node_modules/**'
+      exclude: 'node_modules/**',
+      plugins: ['external-helpers']
     }),
     resolve(),
     commonjs()

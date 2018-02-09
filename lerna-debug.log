@@ -1,29 +1,99 @@
-0 silly input []
-1 silly flags { _: [ 'bootstrap' ],
-1 silly flags   'reject-cycles': false,
-1 silly flags   rejectCycles: false,
-1 silly flags   args: [] }
+0 silly input [ 'publish' ]
+1 silly flags { _: [ 'publish' ], 'reject-cycles': false, rejectCycles: false }
 2 verbose rootPath /Users/espen/Projects/bento
 3 info version 2.8.0
-4 silly existsSync /Users/espen/Projects/bento/VERSION
-5 silly initialize attempt
-6 silly npmConfig { registry: undefined,
-6 silly npmConfig   npmClient: 'yarn',
-6 silly npmConfig   npmClientArgs: undefined,
-6 silly npmConfig   mutex: 'network:42424' }
-7 silly initialize success
-8 silly execute attempt
-9 info Bootstrapping 1 packages
-10 silly installInDirOriginalPackageJson /Users/espen/Projects/bento
-11 silly getExecOpts { cwd: '/Users/espen/Projects/bento' }
-12 silly installInDir [ 'yarn',
-12 silly installInDir   [ 'install', '--mutex', 'network:42424', '--non-interactive' ] ]
-13 error execute callback with error
-14 error Error: Command failed: yarn install --mutex network:42424 --non-interactive
-14 error error Workspaces can only be enabled in private projects
-14 error yarn install v1.3.2
-14 error info No lockfile found.
-14 error info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
-14 error
-14 error     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/execa/index.js:236:11)
-14 error     at <anonymous>
+4 silly isInitialized
+5 silly isInitialized true
+6 silly existsSync /Users/espen/Projects/bento/VERSION
+7 silly initialize attempt
+8 info current version 0.0.1
+9 silly isDetachedHead
+10 silly getCurrentBranch
+11 verbose getCurrentBranch master
+12 verbose isDetachedHead false
+13 silly getCurrentBranch
+14 verbose getCurrentBranch master
+15 silly getUpdates
+16 info Checking for updated packages...
+17 silly hasTags
+18 verbose hasTags true
+19 silly getLastTag
+20 verbose getLastTag v0.0.1
+21 info Comparing with v0.0.1.
+22 silly diffSinceIn v0.0.1 packages/base
+23 silly diff packages/base/package.json
+23 silly diff packages/base/rollup.config.js
+23 silly diff packages/base/src/components/Button/Button.js
+23 silly diff packages/base/src/components/Input/Input.js
+23 silly diff packages/base/src/components/Input/MaskedInput.js
+23 silly diff packages/base/src/components/Label/Label.js
+23 silly diff packages/base/src/index.js
+24 verbose updated @staccx/base
+25 info Checking for prereleased packages...
+26 silly collectDependents
+27 silly isPackageDependentOf @staccx/base @staccx/base
+28 silly collectUpdates
+29 verbose has filtered update @staccx/base
+30 silly initialize success
+31 silly execute attempt
+32 silly addFile /Users/espen/Projects/bento/lerna.json
+33 silly runScriptSync preversion @staccx/bento
+34 silly runScriptSync preversion @staccx/base
+35 silly runScriptSync version @staccx/base
+36 silly runScriptSync version @staccx/bento
+37 silly addFile /Users/espen/Projects/bento/packages/base/package.json
+38 silly commit v0.0.2
+39 verbose commit [ 'commit', '--no-verify', '-m', 'v0.0.2' ]
+40 silly addTag v0.0.2
+41 silly runScriptSync postversion @staccx/base
+42 silly runScriptSync postversion @staccx/bento
+43 info publish Publishing packages to npm...
+44 silly existsSync /Users/espen/Projects/bento/packages/base/scripts/prepublish.js
+45 verbose execScript No prepublish script found at /Users/espen/Projects/bento/packages/base/scripts/prepublish.js
+46 verbose publishing @staccx/base
+47 silly publishTaggedInDir latest base
+48 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/base' }
+49 error publish Retrying failed publish: @staccx/base
+50 verbose publish error undefined
+51 verbose publishing @staccx/base
+52 silly publishTaggedInDir latest base
+53 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/base' }
+54 error publish Retrying failed publish: @staccx/base
+55 verbose publish error undefined
+56 verbose publishing @staccx/base
+57 silly publishTaggedInDir latest base
+58 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/base' }
+59 error publish Retrying failed publish: @staccx/base
+60 verbose publish error undefined
+61 verbose publishing @staccx/base
+62 silly publishTaggedInDir latest base
+63 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/base' }
+64 error publish Retrying failed publish: @staccx/base
+65 verbose publish error undefined
+66 verbose publishing @staccx/base
+67 silly publishTaggedInDir latest base
+68 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/base' }
+69 error publish Ran out of retries while publishing @staccx/base Error: Command failed: yarn publish --tag latest --new-version 0.0.2
+69 error publish error An unexpected error occurred: "Can't answer a question unless a user TTY".
+69 error publish yarn publish v1.3.2
+69 error publish [1/4] Bumping version...
+69 error publish info Current version: 0.0.2
+69 error publish [2/4] Logging in...
+69 error publish info If you think this is a bug, please open a bug report with the information provided in "/Users/espen/Projects/bento/packages/base/yarn-error.log".
+69 error publish info Visit https://yarnpkg.com/en/docs/cli/publish for documentation about this command.
+69 error publish
+69 error publish     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/execa/index.js:236:11)
+69 error publish     at <anonymous>
+69 error publish     at process._tickCallback (internal/process/next_tick.js:160:7)
+70 error execute callback with error
+71 error Error: Command failed: yarn publish --tag latest --new-version 0.0.2
+71 error error An unexpected error occurred: "Can't answer a question unless a user TTY".
+71 error yarn publish v1.3.2
+71 error [1/4] Bumping version...
+71 error info Current version: 0.0.2
+71 error [2/4] Logging in...
+71 error info If you think this is a bug, please open a bug report with the information provided in "/Users/espen/Projects/bento/packages/base/yarn-error.log".
+71 error info Visit https://yarnpkg.com/en/docs/cli/publish for documentation about this command.
+71 error
+71 error     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/execa/index.js:236:11)
+71 error     at <anonymous>
