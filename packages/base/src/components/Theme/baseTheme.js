@@ -44,8 +44,8 @@ export const theme = {
       input: "16px",
       huge: "44px"
     },
-    heading: "Libre Baskerville",
-    body: "Libre Franklin"
+    heading: "sans-serif",
+    body: "sans-serif"
   },
   targetSize: {
     small: "36px",
