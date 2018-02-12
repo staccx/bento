@@ -13,11 +13,12 @@
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "test": "react-scripts test --env=jsdom",
-    "build": "rollup -c",
+    "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
     "prepublish": "yarn build",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide:build": "styleguidist build",
+    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
