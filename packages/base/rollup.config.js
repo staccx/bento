@@ -28,6 +28,10 @@ export default {
       plugins: ['external-helpers']
     }),
     resolve(),
-    commonjs()
+    commonjs({
+      namedExports: {
+        '../../node_modules/text-mask-core/dist/textMaskCore.js' : ['createTextMaskInputElement']
+      }
+    })
   ]
 }

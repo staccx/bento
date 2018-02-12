@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENCED",
@@ -15,7 +15,9 @@
     "test": "react-scripts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepublish": "yarn build"
+    "prepublish": "yarn build",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
@@ -34,11 +36,14 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "^1.0.17",
+    "react-styleguidist": "^6.2.3",
     "rollup": "^0.54.0",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^8.2.1",
     "rollup-plugin-node-resolve": "^3.0.2",
-    "rollup-plugin-postcss": "^1.1.0"
+    "rollup-plugin-postcss": "^1.1.0",
+    "webpack": "^3.10.0",
+    "webpack-blocks": "^1.0.0-rc.2"
   },
   "files": [
     "dist"

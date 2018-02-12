@@ -29,4 +29,5 @@ Label.propTypes = {
   className: PropTypes.string
 }
 
+/** @component */
 export default Label

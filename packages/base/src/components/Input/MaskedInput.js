@@ -76,5 +76,5 @@ MaskedInput.propTypes = {
   keepCharPositions: PropTypes.bool,
   showMask: PropTypes.bool,
 }
-
+/** @component */
 export default MaskedInput

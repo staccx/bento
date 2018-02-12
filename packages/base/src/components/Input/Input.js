@@ -5,7 +5,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import MaskedInput from './MaskedInput'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import Label from '../Label/Label'
 
 class Input extends React.Component {
@@ -123,5 +123,5 @@ export const InputDefaultProps = {
 }
 
 Input.defaultProps = InputDefaultProps
-
+/** @component */
 export default Input

@@ -5,7 +5,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-import tinycolor from 'tinycolor2'
+const tinycolor = require('tinycolor2')
 
 const Button = ({children, onClick, className, to, ...otherProps}) => {
   return <ButtonPrimary onClick={onClick} className={className} {...otherProps}>{children}</ButtonPrimary>
@@ -63,4 +63,5 @@ Button.propTypes = {
   to: PropTypes.string
 }
 
+/** @component */
 export default Button
