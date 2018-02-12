@@ -2,12 +2,11 @@
  * @class Button
  */
 
-import React from "react"
 import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 const tinycolor = require("tinycolor2")
 
-const styles = css`
+const Button = styled.button`
   background-color: ${p => p.theme.color.blue};
   color: ${p =>
     tinycolor
@@ -50,10 +49,6 @@ const styles = css`
   &:last-of-type {
     margin-right: 0;
   }
-`
-
-const Button = styled.button`
-  ${styles};
 `
 
 export const ButtonUnstyled = styled.button``

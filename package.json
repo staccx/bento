@@ -14,10 +14,11 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/stacc-flow/bento#readme",
   "description": "",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "devDependencies": {
     "lerna": "^2.8.0"
+  },
+  "dependencies": {
+    "standard": "^10.0.3"
   }
 }
