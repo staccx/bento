@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-var textMaskCore = require('text-mask-core')
+import React from "react"
+import PropTypes from "prop-types"
+var textMaskCore = require("text-mask-core")
 
 class MaskedInput extends React.Component {
   constructor(...args) {
@@ -11,11 +11,11 @@ class MaskedInput extends React.Component {
   }
 
   initTextMask() {
-    const {props, props: {value}} = this
+    const { props, props: { value } } = this
 
     this.textMaskInputElement = textMaskCore.createTextMaskInputElement({
       inputElement: this.inputElement,
-      ...props,
+      ...props
     })
     this.textMaskInputElement.update(value)
   }
@@ -29,7 +29,7 @@ class MaskedInput extends React.Component {
   }
 
   render() {
-    const props = {...this.props}
+    const props = { ...this.props }
 
     delete props.mask
     delete props.guide
@@ -45,7 +45,7 @@ class MaskedInput extends React.Component {
         {...props}
         onChange={this.onChange}
         defaultValue={this.props.value}
-        ref={(inputElement) => (this.inputElement = inputElement)}
+        ref={inputElement => (this.inputElement = inputElement)}
       />
     )
   }
@@ -53,7 +53,7 @@ class MaskedInput extends React.Component {
   onChange(event) {
     this.textMaskInputElement.update()
 
-    if (typeof this.props.onChange === 'function') {
+    if (typeof this.props.onChange === "function") {
       this.props.onChange(event)
     }
   }
@@ -66,15 +66,15 @@ MaskedInput.propTypes = {
     PropTypes.bool,
     PropTypes.shape({
       mask: PropTypes.oneOfType([PropTypes.array, PropTypes.func]),
-      pipe: PropTypes.func,
-    }),
+      pipe: PropTypes.func
+    })
   ]).isRequired,
   guide: PropTypes.bool,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   pipe: PropTypes.func,
   placeholderChar: PropTypes.string,
   keepCharPositions: PropTypes.bool,
-  showMask: PropTypes.bool,
+  showMask: PropTypes.bool
 }
 /** @component */
 export default MaskedInput

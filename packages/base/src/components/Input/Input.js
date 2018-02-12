@@ -2,23 +2,23 @@
  * @class MaskedInput
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import MaskedInput from './MaskedInput'
-import styled, {css} from 'styled-components'
-import Label from '../Label/Label'
+import React from "react"
+import PropTypes from "prop-types"
+import MaskedInput from "./MaskedInput"
+import styled, { css } from "styled-components"
+import Label from "../Label/Label"
 
 class Input extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.focus = this.focus.bind(this)
   }
 
-  focus () {
+  focus() {
     this.input.focus()
   }
 
-  render () {
+  render() {
     const {
       autoFocus,
       className,
@@ -39,7 +39,8 @@ class Input extends React.Component {
     return (
       <InputWrapper className={className}>
         <Label htmlFor={id}>{label}</Label>
-        {mask ? <InputWithMask
+        {mask ? (
+          <InputWithMask
             mask={mask}
             autoFocus={autoFocus}
             value={value}
@@ -51,8 +52,10 @@ class Input extends React.Component {
             onKeyDown={onKeyDown}
             placeholder={placeholder}
             type={type}
-            {...otherProps} />
-          : <InputNoMask
+            {...otherProps}
+          />
+        ) : (
+          <InputNoMask
             autoFocus={autoFocus}
             defaultValue={value}
             disabled={disabled}
@@ -64,7 +67,8 @@ class Input extends React.Component {
             placeholder={placeholder}
             type={type}
             {...otherProps}
-          />}
+          />
+        )}
       </InputWrapper>
     )
   }
@@ -76,15 +80,14 @@ export const InputWrapper = styled.div`
   position: relative;
 `
 
-export const inputCss = css`
-`
+export const inputCss = css``
 
 const InputWithMask = styled(MaskedInput)`
-${inputCss}
+  ${inputCss};
 `
 
 const InputNoMask = styled.input`
- ${inputCss}
+  ${inputCss};
 `
 
 export const InputPropTypes = {
@@ -99,7 +102,7 @@ export const InputPropTypes = {
   onKeyDown: PropTypes.func,
   placeholder: PropTypes.string,
   style: PropTypes.object,
-  type: PropTypes.oneOf(['text', 'email', 'number', 'tel', 'url']),
+  type: PropTypes.oneOf(["text", "email", "number", "tel", "url"]),
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   label: PropTypes.string
 }
@@ -117,9 +120,9 @@ export const InputDefaultProps = {
   onKeyDown: null,
   placeholder: null,
   style: null,
-  type: 'text',
-  value: '',
-  label: ''
+  type: "text",
+  value: "",
+  label: ""
 }
 
 Input.defaultProps = InputDefaultProps

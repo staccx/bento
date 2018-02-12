@@ -2,11 +2,13 @@
  * @class Label
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import React from "react"
+import PropTypes from "prop-types"
+import styled from "styled-components"
 
-const Label = ({ className, children, ...rest }) => (<LabelElement className={className}>{children}</LabelElement>)
+const Label = ({ className, children, ...rest }) => (
+  <LabelElement className={className}>{children}</LabelElement>
+)
 
 const LabelElement = styled.label`
   font-weight: bold;
@@ -21,11 +23,16 @@ const LabelElement = styled.label`
 `
 
 Label.defaultProps = {
-  className: ''
+  className: ""
 }
 
 Label.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element, PropTypes.string, PropTypes.array]).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.array
+  ]).isRequired,
   className: PropTypes.string
 }
 

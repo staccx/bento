@@ -2,16 +2,21 @@
  * @class Button
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
-const tinycolor = require('tinycolor2')
+import React from "react"
+import PropTypes from "prop-types"
+import styled, { css } from "styled-components"
+const tinycolor = require("tinycolor2")
 
 const styles = css`
   background-color: ${p => p.theme.color.blue};
   color: ${p =>
-  tinycolor.mostReadable(p.theme.color.blue, ['#fff'], {includeFallbackColors: true, level: 'AA', size: 'large'})
-    .toString()};
+    tinycolor
+      .mostReadable(p.theme.color.blue, ["#fff"], {
+        includeFallbackColors: true,
+        level: "AA",
+        size: "large"
+      })
+      .toString()};
   border-width: 0;
   border-radius: 2px;
   padding: ${p => p.theme.spacing.tiny} ${p => p.theme.spacing.medium};
@@ -35,7 +40,10 @@ const styles = css`
   &:hover,
   &:focus {
     outline: none;
-    background-color: ${p => tinycolor(p.theme.color.blue).darken(5).toString()};
+    background-color: ${p =>
+      tinycolor(p.theme.color.blue)
+        .darken(5)
+        .toString()};
   }
 
   &:last-child,
@@ -44,18 +52,25 @@ const styles = css`
   }
 `
 
-const Button = styled.button`${styles}`
+const Button = styled.button`
+  ${styles};
+`
 
 export const ButtonUnstyled = styled.button``
 
 const defaultProps = {
   onClick: null,
-  to: '#',
-  className: ''
+  to: "#",
+  className: ""
 }
 
 const propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element, PropTypes.string, PropTypes.array]).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.array
+  ]).isRequired,
   onClick: PropTypes.func,
   className: PropTypes.string,
   to: PropTypes.string

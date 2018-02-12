@@ -1,8 +1,10 @@
-import styled, { css, } from 'styled-components'
+import styled, { css } from "styled-components"
 
 export default (Component, style) => {
   const styles = css`
-  ${style}  
-`
-  return styled(Component)`${styles}`
+    ${style};
+  `
+  return styled(Component)`
+    ${styles};
+  `
 }
