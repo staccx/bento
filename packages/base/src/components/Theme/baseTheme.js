@@ -1,4 +1,4 @@
-const theme = {
+export const theme = {
   name: 'StaccXBase',
   spacing: {
     huge: '96px',

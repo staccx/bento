@@ -7,10 +7,6 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 const tinycolor = require('tinycolor2')
 
-const Button = ({children, onClick, className, to, ...otherProps}) => {
-  return <ButtonPrimary onClick={onClick} className={className} {...otherProps}>{children}</ButtonPrimary>
-}
-
 const styles = css`
   background-color: ${p => p.theme.color.blue};
   color: ${p =>
@@ -48,20 +44,28 @@ const styles = css`
   }
 `
 
-const ButtonPrimary = styled.button`${styles}`
+const Button = styled.button`${styles}`
 
-Button.defaultProps = {
+export const ButtonUnstyled = styled.button``
+
+const defaultProps = {
   onClick: null,
   to: '#',
   className: ''
 }
 
-Button.propTypes = {
+const propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element, PropTypes.string, PropTypes.array]).isRequired,
   onClick: PropTypes.func,
   className: PropTypes.string,
   to: PropTypes.string
 }
+
+Button.defaultProps = defaultProps
+Button.propTypes = propTypes
+
+ButtonUnstyled.defaultProps = defaultProps
+ButtonUnstyled.propTypes = propTypes
 
 /** @component */
 export default Button
