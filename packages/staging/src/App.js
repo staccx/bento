@@ -1,7 +1,14 @@
 import React, { Component } from "react"
 import logo from "./logo.svg"
 import "./App.css"
-import { ThemeProvider, SplitList, SplitListItem } from "@staccx/base"
+import {
+  ThemeProvider,
+  SplitList,
+  SplitListItem,
+  RadioButton,
+  CheckBox,
+  RadioButtonGroup
+} from "@staccx/base"
 
 const myList = [
   {
@@ -38,6 +45,19 @@ class App extends Component {
               </SplitListItem>
             ))}
           </SplitList>
+          <div>
+            <RadioButtonGroup
+              group="asdasbn"
+              onChange={() => console.log("oyoy")}
+            >
+              <RadioButton defaultChecked key="key-jnkqd" id="qwerfasc">
+                Roger roger
+              </RadioButton>
+              <RadioButton key="key-jba" id="12ewdqsn">
+                Roger roger
+              </RadioButton>
+            </RadioButtonGroup>
+          </div>
         </div>
       </ThemeProvider>
     )
