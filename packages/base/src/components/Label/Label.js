@@ -17,9 +17,6 @@ const LabelElement = styled.label`
   line-height: 1.2;
   padding-bottom: ${p => p.theme.spacing.tiny};
   display: block;
-  position: absolute;
-  top: ${p => p.theme.spacing.small};
-  left: ${p => p.theme.spacing.medium};
 `
 
 Label.defaultProps = {

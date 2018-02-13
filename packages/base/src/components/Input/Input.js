@@ -84,16 +84,18 @@ export const inputCss = css`
   display: block;
   width: 100%;
   margin: 0 auto;
-  min-height: 72px;
+  min-height: ${p => p.theme.targetSize.normal};
   border-width: 0;
   border-radius: 0;
-  padding: ${p => p.theme.spacing.medium} ${p => p.theme.spacing.medium} 0;
+  padding-left: ${p => p.theme.spacing.small};
+  padding-right: ${p => p.theme.spacing.small};
   font-family: ${p => p.theme.font.body};
   transition: border-color .2s ease-out;
   font-size: ${p => p.theme.font.size.input};
   -webkit-appearance: none;
   appearance: none;
   -moz-appearance: textfield;
+  border: 1px solid ${p => p.theme.color.line};
 
   &::-webkit-input-placeholder { /* WebKit browsers */
     color: ${p => p.theme.color.line};
@@ -115,7 +117,6 @@ export const inputCss = css`
   &:focus,
   &:active {
     outline: none;
-    border-width: 0;
     background-color: ${p => p.theme.color.subtleHover};
   }
 
