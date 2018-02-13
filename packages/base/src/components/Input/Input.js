@@ -86,7 +86,7 @@ export const inputCss = css`
   margin: 0 auto;
   min-height: ${p => p.theme.targetSize.normal};
   border-width: 0;
-  border-radius: 0;
+  border-radius: ${p => p.theme.borderRadius};
   padding-left: ${p => p.theme.spacing.small};
   padding-right: ${p => p.theme.spacing.small};
   font-family: ${p => p.theme.font.body};
