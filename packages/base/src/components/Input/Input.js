@@ -81,7 +81,7 @@ export const InputWrapper = styled.div`
 `
 
 export const inputCss = css`
-display: block;
+  display: block;
   width: 100%;
   margin: 0 auto;
   min-height: 72px;
@@ -94,7 +94,6 @@ display: block;
   -webkit-appearance: none;
   appearance: none;
   -moz-appearance: textfield;
-
 
   &::-webkit-input-placeholder { /* WebKit browsers */
     color: ${p => p.theme.color.line};
