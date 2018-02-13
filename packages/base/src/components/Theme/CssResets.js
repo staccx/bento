@@ -1,7 +1,7 @@
 
 import { injectGlobal } from 'styled-components'
 
-const CssResets = () => injectGlobal`
+const cssResets = () => injectGlobal`
   body, h1, h2, h3, h4, h5, h6,
   blockquote, p, pre,
   dl, dd, ol, ul,
@@ -71,4 +71,4 @@ fieldset {
   }
 `
 
-export default CssResets
+export default cssResets
