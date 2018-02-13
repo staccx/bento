@@ -7,7 +7,7 @@ import styled from "styled-components"
 const tinycolor = require("tinycolor2")
 
 const Button = styled.button`
-  background-color: ${p => p.theme.color.blue};
+  background-color: ${p => p.theme.color.primary};
   color: ${p =>
     tinycolor
       .mostReadable(p.theme.color.blue, ["#fff"], {
@@ -40,14 +40,26 @@ const Button = styled.button`
   &:focus {
     outline: none;
     background-color: ${p =>
-      tinycolor(p.theme.color.blue)
-        .darken(5)
-        .toString()};
+    tinycolor(p.theme.color.primary)
+      .darken(5)
+      .toString()};
+    color: ${p =>
+    tinycolor
+      .mostReadable(tinycolor(p.theme.color.primary)
+        .darken(5), ["#fff"], {
+          includeFallbackColors: true,
+          level: "AA",
+          size: "large"
+        })
+      .toString()};
   }
 
   &:last-child,
   &:last-of-type {
     margin-right: 0;
+  }
+  &:last-child:first-child{
+    margin-bottom: 0;
   }
 `
 
