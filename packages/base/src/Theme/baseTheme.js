@@ -6,7 +6,8 @@ export const theme = {
     mediumPlus: "32px",
     medium: "24px",
     small: "12px",
-    tiny: "6px"
+    tiny: "6px",
+    micro: "3px"
   },
   wrapper: {
     small: "420px",
