@@ -13,21 +13,23 @@ const CheckBox = ({
   className,
   defaultChecked,
   ...otherProps
-}) => (
-  <CheckWrapper>
-    <Check
-      className={className}
-      id={id}
-      disabled={disabled}
-      type="checkbox"
-      name={group}
-      onChange={onChange}
-      defaultChecked={defaultChecked}
-      {...otherProps}
-    />
-    <Label htmlFor={id}>{children}</Label>
-  </CheckWrapper>
-)
+}) => {
+  return (
+    <CheckWrapper>
+      <Check
+        className={className}
+        id={id}
+        disabled={disabled}
+        type="checkbox"
+        name={group}
+        onChange={onChange}
+        defaultChecked={defaultChecked}
+        {...otherProps}
+      />
+      <Label htmlFor={id}>{children}</Label>
+    </CheckWrapper>
+  )
+}
 
 const CheckWrapper = styled.div`
   min-height: ${p => p.theme.targetSize.normal};
@@ -105,7 +107,7 @@ const Label = styled.label`
 CheckBox.propTypes = {
   children: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
-  group: PropTypes.string.isRequired,
+  group: PropTypes.string,
   id: PropTypes.string.isRequired,
   input: PropTypes.any,
   onChange: PropTypes.func,

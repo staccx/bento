@@ -13,7 +13,7 @@ const CheckGroup = ({ children, group, onChange }) => {
     React.cloneElement(child, {
       ...child.props,
       onChange: handleChange,
-      group: group
+      group
     })
   )
 }
