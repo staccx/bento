@@ -7,7 +7,7 @@ import {
   SplitListItem,
   RadioButton,
   CheckBox,
-  RadioButtonGroup
+  CheckGroup
 } from "@staccx/base"
 
 const myList = [
@@ -46,17 +46,14 @@ class App extends Component {
             ))}
           </SplitList>
           <div>
-            <RadioButtonGroup
-              group="asdasbn"
-              onChange={() => console.log("oyoy")}
-            >
+            <CheckGroup group="asdasbn" onChange={() => console.log("oyoy")}>
               <RadioButton defaultChecked key="key-jnkqd" id="qwerfasc">
                 Roger roger
               </RadioButton>
               <RadioButton key="key-jba" id="12ewdqsn">
                 Roger roger
               </RadioButton>
-            </RadioButtonGroup>
+            </CheckGroup>
           </div>
         </div>
       </ThemeProvider>

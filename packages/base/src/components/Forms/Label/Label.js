@@ -7,7 +7,9 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 
 const Label = ({ className, children, ...rest }) => (
-  <LabelElement className={className} {...rest}>{children}</LabelElement>
+  <LabelElement className={className} {...rest}>
+    {children}
+  </LabelElement>
 )
 
 const LabelElement = styled.label`

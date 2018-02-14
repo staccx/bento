@@ -45,7 +45,6 @@ const Label = styled.label`
     height: 16px;
     border-radius: 50%;
     background-color: ${p => p.theme.color.primary};
-
     line-height: 20px;
     transform: scale(0);
     transition: all 0.2s ease-in-out;

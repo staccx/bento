@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const RadioButtonGroup = ({ children, group, onChange }) => {
+const CheckGroup = ({ children, group, onChange }) => {
   const handleChange = event => {
     const value = event.target.value
     if (onChange) {
@@ -18,10 +18,10 @@ const RadioButtonGroup = ({ children, group, onChange }) => {
   )
 }
 
-RadioButtonGroup.propTypes = {
+CheckGroup.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
   group: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired
 }
 
-export default RadioButtonGroup
+export default CheckGroup

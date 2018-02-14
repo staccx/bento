@@ -6,7 +6,7 @@ import Input from "./components/Forms/Input/Input"
 import Label from "./components/Forms/Label/Label"
 import CheckBox from "./components/Forms/CheckBox/CheckBox"
 import RadioButton from "./components/Forms/RadioButton/RadioButton"
-import RadioButtonGroup from "./components/Forms/RadioButtonGroup/RadioButtonGroup"
+import CheckGroup from "./components/Forms/CheckGroup/CheckGroup"
 import SplitList from "./components/Lists/SplitList/SplitList"
 import SplitListItem from "./components/Lists/SplitList/SplitList.Item"
 import Flag from "./components/Layout/Flag/Flag"
@@ -20,7 +20,7 @@ export {
   Button,
   ButtonUnstyled,
   CheckBox,
-  RadioButtonGroup,
+  CheckGroup,
   extend,
   Flag,
   Input,
