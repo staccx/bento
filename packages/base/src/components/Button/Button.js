@@ -40,25 +40,24 @@ const Button = styled.button`
   &:focus {
     outline: none;
     background-color: ${p =>
-    tinycolor(p.theme.color.primary)
-      .darken(5)
-      .toString()};
+      tinycolor(p.theme.color.primary)
+        .darken(5)
+        .toString()};
     color: ${p =>
-    tinycolor
-      .mostReadable(tinycolor(p.theme.color.primary)
-        .darken(5), ["#fff"], {
+      tinycolor
+        .mostReadable(tinycolor(p.theme.color.primary).darken(5), ["#fff"], {
           includeFallbackColors: true,
           level: "AA",
           size: "large"
         })
-      .toString()};
+        .toString()};
   }
 
   &:last-child,
   &:last-of-type {
     margin-right: 0;
   }
-  &:last-child:first-child{
+  &:last-child:first-child {
     margin-bottom: 0;
   }
 `
