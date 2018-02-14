@@ -56,6 +56,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
+    "easing-utils": "^0.0.7",
     "prettier": "^1.10.2",
     "prop-types": "^15.6.0",
     "styled-components": "^3.1.6",

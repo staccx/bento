@@ -7,6 +7,8 @@ import Label from "./components/Forms/Label/Label"
 import CheckBox from "./components/Forms/CheckBox/CheckBox"
 import RadioButton from "./components/Forms/RadioButton/RadioButton"
 import CheckGroup from "./components/Forms/CheckGroup/CheckGroup"
+import Slider from "./components/Forms/Slider/Slider/Slider"
+import SliderKeyboardInput from "./components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput"
 import SplitList from "./components/Lists/SplitList/SplitList"
 import SplitListItem from "./components/Lists/SplitList/SplitList.Item"
 import Flag from "./components/Layout/Flag/Flag"
@@ -26,6 +28,8 @@ export {
   Input,
   Label,
   RadioButton,
+  Slider,
+  SliderKeyboardInput,
   SplitList,
   SplitListItem,
   ThemeProvider

@@ -7,7 +7,9 @@ import {
   SplitListItem,
   RadioButton,
   CheckBox,
-  CheckGroup
+  CheckGroup,
+  Slider,
+  SliderKeyboardInput
 } from "@staccx/base"
 
 const myList = [
@@ -23,6 +25,10 @@ const myList = [
     myThirdProp: "ewkmdsna"
   }
 ]
+
+const handleCheckboxChange = value => {
+  console.log("You checked " + value)
+}
 
 class App extends Component {
   render() {
@@ -54,6 +60,27 @@ class App extends Component {
                 Roger roger
               </RadioButton>
             </CheckGroup>
+          </div>
+          <div>
+            <CheckGroup onChange={handleCheckboxChange} group={"checkboxgroup"}>
+              <CheckBox id="asdt43" key="key_vdvsew" value="Alpha">
+                Checkbox Alpha
+              </CheckBox>
+              <CheckBox id="nrff2" key="key_rthjn" value="Bravo">
+                Checkbox Bravo
+              </CheckBox>
+            </CheckGroup>
+          </div>
+          <div>
+            <h3>Naked slider component</h3>
+            <Slider name="theSlider" onChange={() => console.log("Slide")} />
+
+            <h3>Slider with input</h3>
+            <SliderKeyboardInput
+              name="theSlider"
+              label="Accessibility label"
+              onChange={() => console.log("Slide with input")}
+            />
           </div>
         </div>
       </ThemeProvider>

@@ -3,29 +3,37 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 
 const Slider = ({
-  name,
-  value,
-  min,
-  max,
-  step,
-  onChange,
   disabled,
+  max,
+  min,
+  name,
+  onChange,
+  percentage,
+  step,
+  value,
   ...restProps
-}) => (
-  <SliderInput percentage={percentage}>
-    <input
-      type="range"
-      name={name}
-      value={value}
-      onChange={onChange}
-      min={min}
-      max={max}
-      step={step}
-      disabled={disabled}
-      {...restProps}
-    />
-  </SliderInput>
-)
+}) => {
+  if (percentage === undefined) {
+    console.warn(
+      "Slider component needs to be told what percentage it is by its parent in order to show it’s progress visually in webkit browsers."
+    )
+  }
+  return (
+    <SliderInput percentage={percentage}>
+      <input
+        type="range"
+        name={name}
+        value={value && value}
+        onChange={onChange}
+        min={min}
+        max={max}
+        step={step}
+        disabled={disabled}
+        {...restProps}
+      />
+    </SliderInput>
+  )
+}
 
 const SliderThumb = css`
   -webkit-appearance: none;
@@ -62,9 +70,6 @@ const SliderTrack = css`
   border-radius: 4.5px;
   color: transparent;
   background-color: ${p => p.theme.color.line};
-
-  &:focus {
-  }
 `
 
 const SliderInput = styled.div`
@@ -124,13 +129,13 @@ const SliderInput = styled.div`
     ${SliderThumb}
   }
 
-  /* Style the track */
+  /* Style the track for webkit */
   input[type=range]::-webkit-slider-runnable-track {
     ${SliderTrack}
     background: linear-gradient(90deg,
       ${p => p.theme.color.blue} 0%, ${p => p.theme.color.blue}
       ${p => p.percentage}%, ${p => p.theme.color.line}
-      ${p => p.percentage + 0.1}%,
+      ${p => p.percentage + 0.0}%,
       ${p => p.theme.color.line} 100%) 0 100% no-repeat content-box;
   }
 
@@ -138,6 +143,7 @@ const SliderInput = styled.div`
   input[type=range]:focus::-webkit-slider-runnable-track {
   }
 
+  /* Style the track for mozilla */
   input[type=range]::-moz-range-track {
     ${SliderTrack}
   }
@@ -148,6 +154,7 @@ const SliderInput = styled.div`
     border-radius: 4.5px;
   }
 
+  /* Style the track for MS */
   input[type=range]::-ms-track {
     ${SliderTrack}
   }
@@ -170,22 +177,23 @@ const SliderInput = styled.div`
 `
 
 Slider.defaultProps = {
-  value: 0,
+  value: undefined,
   min: 0,
   max: 100,
   step: 1,
-  animationTicks: 50
+  disabled: false
 }
 
 Slider.propTypes = {
-  label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.number,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   min: PropTypes.number,
   max: PropTypes.number,
   onChange: PropTypes.func,
   step: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  animationTicks: PropTypes.number
+  animationTicks: PropTypes.number,
+  disabled: PropTypes.bool,
+  percentage: PropTypes.number
 }
 
 export default Slider
