@@ -12,7 +12,8 @@ export const theme = {
   wrapper: {
     small: "420px",
     medium: "640px",
-    large: "1024px"
+    large: "1024px",
+    breakout: "640px"
   },
   color: {
     bg: "#fff",

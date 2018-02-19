@@ -15,6 +15,7 @@ import List from "./components/Lists/List"
 import SplitListItem from "./components/Lists/SplitList/SplitListItem"
 import ExpandListItem from "./components/Expand/ExpandListItem"
 import Flag from "./components/Layout/Flag/Flag"
+import Wrapper from "./components/Layout/Wrapper/Wrapper"
 import { default as Button, ButtonUnstyled } from "./components/Button/Button"
 import { default as extend } from "./functions/extend"
 import { default as cssResets } from "./Styles/cssResets"
@@ -38,5 +39,6 @@ export {
   List,
   SplitListItem,
   ThemeProvider,
-  ExpandListItem
+  ExpandListItem,
+  Wrapper
 }
