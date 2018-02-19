@@ -20,7 +20,7 @@ const myList = [
   }
 ];
 
-<SplitList>
+<List>
   {myList.map(listItem => (
     <SplitListItem key={listItem.myUniqueId}>
       {listItem.myLeftProp}
@@ -28,5 +28,5 @@ const myList = [
       {listItem.myThirdProp ? listItem.myThirdProp : null}
     </SplitListItem>
   ))}
-</SplitList>
+</List>
 ```

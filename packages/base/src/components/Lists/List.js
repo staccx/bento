@@ -2,21 +2,21 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-const List = styled.ul`
+const ListUl = styled.ul`
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
 `
 
-const SplitList = ({ children, className }) => (
-  <List className={className}>{children}</List>
+const List = ({ children, className }) => (
+  <ListUl className={className}>{children}</ListUl>
 )
 
-SplitList.defaultProps = {
+List.defaultProps = {
   className: ""
 }
 
-SplitList.propTypes = {
+List.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element
@@ -24,4 +24,4 @@ SplitList.propTypes = {
   className: PropTypes.string
 }
 
-export default SplitList
+export default List

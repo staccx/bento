@@ -1,5 +1,5 @@
-import SplitListItem from "./src/components/Lists/SplitList/SplitList.Item"
 import RadioPillItem from "./src/components/Forms/RadioPill/RadioPill.Item"
+import List from "./src/components/Lists/List"
 
-global.SplitListItem = SplitListItem
+global.List = List
 global.RadioPillItem = RadioPillItem

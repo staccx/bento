@@ -11,8 +11,9 @@ import RadioPillItem from "./components/Forms/RadioPill/RadioPill.Item"
 import CheckGroup from "./components/Forms/CheckGroup/CheckGroup"
 import Slider from "./components/Forms/Slider/Slider/Slider"
 import SliderKeyboardInput from "./components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput"
-import SplitList from "./components/Lists/SplitList/SplitList"
-import SplitListItem from "./components/Lists/SplitList/SplitList.Item"
+import List from "./components/Lists/List"
+import SplitListItem from "./components/Lists/SplitList/SplitListItem"
+import ExpandListItem from "./components/Expand/ExpandListItem"
 import Flag from "./components/Layout/Flag/Flag"
 import { default as Button, ButtonUnstyled } from "./components/Button/Button"
 import { default as extend } from "./functions/extend"
@@ -34,7 +35,8 @@ export {
   RadioPillItem,
   Slider,
   SliderKeyboardInput,
-  SplitList,
+  List,
   SplitListItem,
-  ThemeProvider
+  ThemeProvider,
+  ExpandListItem
 }
