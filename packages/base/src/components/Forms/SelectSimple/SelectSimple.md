@@ -1,0 +1,15 @@
+```jsx
+<SelectSimple
+  label="Sivilstatus"
+  placeholder="Velg..."
+  options={[
+    "Gift",
+    "Samboer",
+    "Skilt",
+    "Partnerskap",
+    "Ugift",
+    "Enke/Enkemann",
+    "Separert"
+  ]}
+/>
+```
