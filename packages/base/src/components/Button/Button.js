@@ -10,7 +10,7 @@ const Button = styled.button`
   background-color: ${p => p.theme.color.primary};
   color: ${p =>
     tinycolor
-      .mostReadable(p.theme.color.blue, ["#fff"], {
+      .mostReadable(p.theme.color.primary, ["#fff"], {
         includeFallbackColors: true,
         level: "AA",
         size: "large"

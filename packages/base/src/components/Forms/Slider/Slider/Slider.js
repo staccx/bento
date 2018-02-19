@@ -51,7 +51,7 @@ const SliderThumb = css`
   &:active,
   &:focus {
     border-color: ${p => p.theme.color.white};
-    background-color: ${p => p.theme.color.green};
+    background-color: ${p => p.theme.color.secondary};
   }
 `
 
@@ -133,7 +133,7 @@ const SliderInput = styled.div`
   input[type=range]::-webkit-slider-runnable-track {
     ${SliderTrack}
     background: linear-gradient(90deg,
-      ${p => p.theme.color.blue} 0%, ${p => p.theme.color.blue}
+      ${p => p.theme.color.primary} 0%, ${p => p.theme.color.primary}
       ${p => p.percentage}%, ${p => p.theme.color.line}
       ${p => p.percentage + 0.0}%,
       ${p => p.theme.color.line} 100%) 0 100% no-repeat content-box;
@@ -149,7 +149,7 @@ const SliderInput = styled.div`
   }
 
   input[type=range]::-moz-range-progress {
-    background-color: ${p => p.theme.color.blue};
+    background-color: ${p => p.theme.color.primary};
     height: 9px;
     border-radius: 4.5px;
   }
@@ -160,7 +160,7 @@ const SliderInput = styled.div`
   }
 
   input[type=range]::-ms-fill-lower {
-    background-color: ${p => p.theme.color.blue};
+    background-color: ${p => p.theme.color.primary};
   }
 
   input[type=range]:focus::-ms-fill-lower {

@@ -79,7 +79,7 @@ const ExpandBtn = styled.button`
     outline: none;
 
     ${ExpandIcon} {
-      fill: ${p => p.theme.color.blue};
+      fill: ${p => p.theme.color.primary};
     }
   }
 `

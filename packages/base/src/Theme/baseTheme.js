@@ -16,22 +16,21 @@ export const theme = {
     breakout: "640px"
   },
   color: {
-    bg: "#fff",
-    bgGray: "#f7f7ff",
-    primary: "#00a190",
-    gray: "#767676",
-    text: "#2b2b2b",
     white: "#fff",
-    red: "#ea526f",
-    green: "#00a190",
-    blue: "#988EFB",
-    yellow: "#f4da87",
+    bg: "#fff",
+    subtleHover: "#F7F7FF",
+    bgGray: "#f7f7ff",
     line: "#EBEBF2",
+    gray: "#767676",
     wcag: "#777",
     disabled: "#BABABA",
+    primary: "#00a190",
+    secondary: "#F5A623",
+    text: "#2b2b2b",
+    negative: "#ea526f",
+    positive: "#4A90E2",
     warning: "#c54059",
-    black: "#000",
-    subtleHover: "#F7F7FF"
+    black: "#000"
   },
   font: {
     size: {

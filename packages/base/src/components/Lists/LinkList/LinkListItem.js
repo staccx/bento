@@ -65,9 +65,8 @@ const Button = styled.a`
   ${ButtonStyle};
   &:hover,
   &:focus {
-    background-color: ${p => p.theme.color.subtleHover};
     ${Cursor} {
-      fill: ${p => p.theme.color.white};
+      fill: ${p => p.theme.color.primary};
     }
   }
 `

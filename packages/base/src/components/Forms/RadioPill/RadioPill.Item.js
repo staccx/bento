@@ -48,16 +48,16 @@ const Radio = styled.input`
   ${VisuallyHidden};
   &:checked {
     ~ ${Label} {
-      color: ${p => p.theme.color.blue};
+      color: ${p => p.theme.color.primary};
       z-index: 1;
     }
 
     &:first-child ~ ${Label} {
-      border-color: ${p => p.theme.color.blue};
+      border-color: ${p => p.theme.color.primary};
     }
 
     &:nth-child(2) ~ ${Label} {
-      border-color: ${p => p.theme.color.blue};
+      border-color: ${p => p.theme.color.primary};
     }
   }
 `
@@ -88,7 +88,7 @@ const RadioWrapper = styled.div`
   ${Radio}:focus ~  {
     ${Label} {
       z-index: 1;
-      border-color: ${p => p.theme.color.blue};
+      border-color: ${p => p.theme.color.primary};
     }
   }
 `
