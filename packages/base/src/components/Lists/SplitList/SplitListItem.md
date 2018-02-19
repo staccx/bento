@@ -1,5 +1,3 @@
-SplitList and SplitListItem
-
 ```jsx harmony
 const myList = [
   {
