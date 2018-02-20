@@ -24,7 +24,7 @@ import Box from "./components/Layout/Box/Box"
 import Pack from "./components/Layout/Pack/Pack"
 import PackItem from "./components/Layout/Pack/PackItem"
 
-import { default as Button, ButtonUnstyled } from "./components/Button/Button"
+import { default as Button } from "./components/Button/Button"
 import { default as extend } from "./functions/extend"
 import { default as cssResets } from "./Styles/cssResets"
 import { default as ThemeProvider } from "./Theme/ThemeWrapper"
@@ -32,7 +32,6 @@ import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 export {
   cssResets,
   Button,
-  ButtonUnstyled,
   CheckBox,
   CheckGroup,
   extend,

@@ -62,7 +62,6 @@ const Button = styled.button`
   }
 `
 
-export const ButtonUnstyled = styled.button``
 
 const defaultProps = {
   onClick: null,
@@ -84,9 +83,6 @@ const propTypes = {
 
 Button.defaultProps = defaultProps
 Button.propTypes = propTypes
-
-ButtonUnstyled.defaultProps = defaultProps
-ButtonUnstyled.propTypes = propTypes
 
 /** @component */
 export default Button

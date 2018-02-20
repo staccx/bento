@@ -1,5 +1,4 @@
-import { Input } from "./"
-import { Button, extend } from "./index"
+import { Input, Button, extend } from "./"
 
 describe("Input", () => {
   it("is truthy", () => {
