@@ -153,7 +153,8 @@ export const InputPropTypes = {
   style: PropTypes.object,
   type: PropTypes.oneOf(["text", "email", "number", "tel", "url"]),
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  label: PropTypes.string
+  label: PropTypes.string,
+  className: PropTypes.string
 }
 
 Input.propTypes = InputPropTypes
