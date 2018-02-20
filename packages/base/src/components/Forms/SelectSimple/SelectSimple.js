@@ -1,7 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Label from "./../Label/Label"
+import Label from "../Label/Label"
+import halveThemeValue from "../../../functions/halveThemeValue"
+
+const Caret = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 16">
+    <path d="M3.81 0a.54.54 0 0 0-.38.16L.16 3.47a.56.56 0 0 0 0 .78l11.45 11.59a.54.54 0 0 0 .78 0L23.84 4.25a.56.56 0 0 0 0-.78L20.57.17a.54.54 0 0 0-.77 0L12 8.04 4.2.16A.54.54 0 0 0 3.81 0z" />
+  </svg>
+)
+Caret.propTypes = { className: PropTypes.string }
+Caret.defaultProps = { className: "" }
 
 const SelectSimple = ({
   options,
@@ -13,9 +22,9 @@ const SelectSimple = ({
 }) => (
   <SelectWrapper>
     <Label htmlFor={id}>{label}</Label>
-    <Select className={className} id={id}>
+    <Select className={className} id={id} defaultValue={placeholder || ""}>
       {placeholder && (
-        <option disabled selected>
+        <option disabled value={placeholder}>
           {placeholder}
         </option>
       )}
@@ -25,6 +34,7 @@ const SelectSimple = ({
         </option>
       ))}
     </Select>
+    <SelectIcon />
   </SelectWrapper>
 )
 
@@ -47,32 +57,39 @@ const SelectWrapper = styled.div`
   position: relative;
 `
 
+const SelectIcon = styled(Caret)`
+  position: absolute;
+  right: ${p => p.theme.spacing.small};
+  bottom: ${p => halveThemeValue(p.theme.targetSize.normal)};
+  width: 12px;
+  fill: ${p => p.theme.color.gray};
+  transform: translateY(50%);
+  transition: fill 0.2s ease;
+`
+
 const Select = styled.select`
-  background: transparent;
-  font-size: ${p => p.theme.font.size.input};
-  box-shadow: none;
-  padding-top: 0;
-  padding-left: ${p => p.theme.spacing.small};
-  padding-right: ${p => p.theme.spacing.medium};
+  width: 100%;
   min-height: ${p => p.theme.targetSize.normal};
+  font-size: ${p => p.theme.font.size.input};
+  padding: 10px ${p => p.theme.spacing.medium} 10px
+    ${p => p.theme.spacing.small};
+  box-shadow: none;
   border-radius: ${p => p.theme.borderRadius};
   line-height: 1.4;
   border: 1px solid ${p => p.theme.color.line};
   -webkit-appearance: none;
   appearance: none;
-  width: 100%;
   cursor: pointer;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 5' width='14' height='8'%3e%3cpath fill='%237D7D91' d='M7.4 1.1l-1-1-2.3 2.3L1.8.1l-1 1 3.3 3.3z'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 7px top 55%;
-  font-size: 16px;
 
   &:focus,
   &:hover {
-    background-color: ${p => p.theme.color.subtleHover};
     color: ${p => p.theme.color.blue};
     border-color: ${p => p.theme.color.line};
     outline: none;
+
+    ~ ${SelectIcon} {
+      fill: ${p => p.theme.color.primary};
+    }
   }
 `
 
