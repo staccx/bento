@@ -32,11 +32,16 @@ class ExpandListItem extends Component {
         <ExpandBtn
           isExpanded={this.state.isExpanded}
           onClick={this.handleChange}
+          aria-expanded={this.state.isExpanded}
+          aria-controls={title}
+          id={title + "2"}
         >
           {title} <ExpandIcon isExpanded={this.state.isExpanded} />
         </ExpandBtn>
         {this.state.isExpanded && (
-          <ExpandedItem flush={flush}>{children}</ExpandedItem>
+          <ExpandedItem flush={flush} id={title} aria-labelledby={title + "2"}>
+            {children}
+          </ExpandedItem>
         )}
       </ExpandItem>
     )
