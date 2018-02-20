@@ -9,8 +9,8 @@ const PackItem = ({ className, children, ...rest }) => (
 )
 
 const ListItem = styled.li`
-  display: table-cell;
-  vertical-align: top;
+  display: inline-block;
+  padding: ${p => p.theme.spacing.small};
 `
 
 PackItem.defaultProps = {
