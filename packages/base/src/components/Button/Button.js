@@ -62,7 +62,6 @@ const Button = styled.button`
   }
 `
 
-
 const defaultProps = {
   onClick: null,
   to: "#",

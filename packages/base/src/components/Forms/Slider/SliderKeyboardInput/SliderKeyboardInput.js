@@ -1,12 +1,14 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import { linear } from "easing-utils"
-import Input from "../../Input/Input"
-import Slider from "../Slider/Slider"
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { linear } from 'easing-utils'
+import inverseLerp from '../../../../functions/inverseLerp'
+import Input from '../../Input/Input'
+import Slider from '../Slider/Slider'
+import clamp from '../../../../functions/clamp'
 
 class SliderKeyboardInput extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       isAnimatingIn: false,
@@ -15,22 +17,23 @@ class SliderKeyboardInput extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.countUp = this.countUp.bind(this)
+    this.updateState = this.updateState.bind(this)
     this.tick = 0
   }
 
-  componentDidMount() {
+  componentDidMount () {
     if (this.props.easingFunction) {
       this.startCount()
     }
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     if (this.props.easingFunction) {
       this.stopCount()
     }
   }
 
-  startCount() {
+  startCount () {
     if (!this._frameId) {
       this.setState(
         {
@@ -43,68 +46,60 @@ class SliderKeyboardInput extends React.Component {
     }
   }
 
-  countUp() {
+  countUp () {
     // perform loop work here
     if (this.tick < this.props.animationTicks && this.props.easingFunction) {
       const t = this.props.easingFunction(this.tick / this.props.animationTicks)
       const newValue = this.props.value * t
-      const progress = newValue / this.props.max
-      this.setState(
-        {
-          currentValue: Math.ceil(newValue),
-          percentage: progress * 100 - 1
-        },
-        () => {
+
+      this.updateState(newValue)
+        .then(() => {
           this._frameId = window.requestAnimationFrame(this.countUp)
-        }
-      )
+        })
     } else {
-      this.setState(
+      this.updateState(this.props.value,
         {
-          currentValue: this.props.value,
-          percentage: this.props.value / this.props.max * 100 - 1,
           isAnimatingIn: false
-        },
-        this.stopCount
-      )
+        })
+        .then(this.stopCount)
     }
     this.tick++
   }
 
-  stopCount() {
+  stopCount () {
     window.cancelAnimationFrame(this._frameId)
   }
 
-  handleChange(event) {
+  updateState (value, options = {}) {
+    return new Promise(resolve => {
+      this.setState({
+        currentValue: clamp(this.props.min, this.props.max, Math.ceil(value)),
+        percentage: inverseLerp(this.props.min, this.props.max, value) * 100,
+        ...options
+      }, resolve)
+    })
+  }
+
+  handleChange (event) {
     const value = event.target.value
-    this.setState(
-      {
-        currentValue: value,
-        percentage: value / this.props.max * 100
-      },
-      () => {
+    this.updateState(value)
+      .then(() => {
         if (this.props.onChange) {
           this.props.onChange(this.state.currentValue)
         }
-      }
-    )
+      })
   }
 
-  render() {
+  render () {
     const {
       label,
       name,
-      value,
       min,
       max,
       step,
-      onChange,
-      animationTicks,
-      easingFunction,
-      ...otherProps
+      mask
     } = this.props
-    const { currentValue, percentage } = this.state
-    const mask = otherProps.mask ? otherProps.mask : null
+    const {currentValue, percentage} = this.state
     return (
       <SliderWrapper>
         <HiddenLabel htmlFor={name}>{label}</HiddenLabel>
@@ -116,7 +111,7 @@ class SliderKeyboardInput extends React.Component {
           onChange={this.handleChange}
           min={min}
           max={max}
-          mask={mask}
+          mask={mask || null}
           disabled={this.state.isAnimatingIn}
         />
         <Slider
@@ -125,6 +120,8 @@ class SliderKeyboardInput extends React.Component {
           name={name}
           id={name}
           step={step}
+          min={min}
+          max={max}
           onChange={this.handleChange}
         />
       </SliderWrapper>
