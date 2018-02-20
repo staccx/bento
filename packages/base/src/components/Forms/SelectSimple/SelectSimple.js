@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Label from "../Label/Label"
-import halveThemeValue from "../../../functions/halveThemeValue"
+import multiplyPixelValue from "../../../functions/multiplyPixelValue"
 
 const Caret = ({ className }) => (
   <svg className={className} viewBox="0 0 24 16">
@@ -60,7 +60,7 @@ const SelectWrapper = styled.div`
 const SelectIcon = styled(Caret)`
   position: absolute;
   right: ${p => p.theme.spacing.small};
-  bottom: ${p => halveThemeValue(p.theme.targetSize.normal)};
+  bottom: ${p => multiplyPixelValue(p.theme.targetSize.normal, 0.5)};
   width: 12px;
   fill: ${p => p.theme.color.gray};
   transform: translateY(50%);
