@@ -30,7 +30,8 @@ export const theme = {
     negative: "#ea526f",
     positive: "#4A90E2",
     warning: "#c54059",
-    black: "#000"
+    black: "#000",
+    green: "#00a190" // for toggle eks
   },
   font: {
     size: {
