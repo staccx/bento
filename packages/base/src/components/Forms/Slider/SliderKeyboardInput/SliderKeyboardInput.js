@@ -1,14 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import { linear } from 'easing-utils'
-import inverseLerp from '../../../../functions/inverseLerp'
-import Input from '../../Input/Input'
-import Slider from '../Slider/Slider'
-import clamp from '../../../../functions/clamp'
+import React from "react"
+import PropTypes from "prop-types"
+import styled from "styled-components"
+import { linear } from "easing-utils"
+import inverseLerp from "../../../../functions/inverseLerp"
+import Input from "../../Input/Input"
+import Slider from "../Slider/Slider"
+import clamp from "../../../../functions/clamp"
 
 class SliderKeyboardInput extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       isAnimatingIn: false,
@@ -17,23 +17,24 @@ class SliderKeyboardInput extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.countUp = this.countUp.bind(this)
+    this.stopCount = this.stopCount.bind(this)
     this.updateState = this.updateState.bind(this)
     this.tick = 0
   }
 
-  componentDidMount () {
+  componentDidMount() {
     if (this.props.easingFunction) {
       this.startCount()
     }
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     if (this.props.easingFunction) {
       this.stopCount()
     }
   }
 
-  startCount () {
+  startCount() {
     if (!this._frameId) {
       this.setState(
         {
@@ -46,60 +47,52 @@ class SliderKeyboardInput extends React.Component {
     }
   }
 
-  countUp () {
+  countUp() {
     // perform loop work here
     if (this.tick < this.props.animationTicks && this.props.easingFunction) {
       const t = this.props.easingFunction(this.tick / this.props.animationTicks)
       const newValue = this.props.value * t
 
-      this.updateState(newValue)
-        .then(() => {
-          this._frameId = window.requestAnimationFrame(this.countUp)
-        })
+      this.updateState(newValue).then(() => {
+        this._frameId = window.requestAnimationFrame(this.countUp)
+      })
     } else {
-      this.updateState(this.props.value,
-        {
-          isAnimatingIn: false
-        })
-        .then(this.stopCount)
+      this.updateState(this.props.value, {
+        isAnimatingIn: false
+      }).then(this.stopCount)
     }
     this.tick++
   }
 
-  stopCount () {
+  stopCount() {
     window.cancelAnimationFrame(this._frameId)
   }
 
-  updateState (value, options = {}) {
+  updateState(value, options = {}) {
     return new Promise(resolve => {
-      this.setState({
-        currentValue: clamp(this.props.min, this.props.max, Math.ceil(value)),
-        percentage: inverseLerp(this.props.min, this.props.max, value) * 100,
-        ...options
-      }, resolve)
+      this.setState(
+        {
+          currentValue: clamp(this.props.min, this.props.max, Math.ceil(value)),
+          percentage: inverseLerp(this.props.min, this.props.max, value) * 100,
+          ...options
+        },
+        resolve
+      )
     })
   }
 
-  handleChange (event) {
+  handleChange(event) {
     const value = event.target.value
-    this.updateState(value)
-      .then(() => {
-        if (this.props.onChange) {
-          this.props.onChange(this.state.currentValue)
-        }
-      })
+    this.updateState(value).then(() => {
+      if (this.props.onChange) {
+        this.props.onChange(this.state.currentValue)
+      }
+    })
   }
 
-  render () {
-    const {
-      label,
-      name,
-      min,
-      max,
-      step,
-      mask
-    } = this.props
-    const {currentValue, percentage} = this.state
+  render() {
+    const { label, name, min, max, step, mask } = this.props
+    const { currentValue, percentage } = this.state
     return (
       <SliderWrapper>
         <HiddenLabel htmlFor={name}>{label}</HiddenLabel>
