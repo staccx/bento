@@ -11,12 +11,15 @@ import RadioPillItem from "./components/Forms/RadioPill/RadioPill.Item"
 import CheckGroup from "./components/Forms/CheckGroup/CheckGroup"
 import Slider from "./components/Forms/Slider/Slider/Slider"
 import SliderKeyboardInput from "./components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput"
+import SelectSimple from "./components/Forms/SelectSimple/SelectSimple"
+
 // list
 import List from "./components/Lists/List"
 import SplitListItem from "./components/Lists/SplitList/SplitListItem"
 import ExpandListItem from "./components/Lists/ExpandList/ExpandListItem"
 import LinkListItem from "./components/Lists/LinkList/LinkListItem"
 import InlineListItem from "./components/Lists/InlineList/InlineListItem"
+
 // layout
 import Flag from "./components/Layout/Flag/Flag"
 import Wrapper from "./components/Layout/Wrapper/Wrapper"
@@ -41,6 +44,7 @@ export {
   RadioButton,
   RadioPill,
   RadioPillItem,
+  SelectSimple,
   Slider,
   SliderKeyboardInput,
   List,

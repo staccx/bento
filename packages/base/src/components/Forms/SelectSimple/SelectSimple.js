@@ -13,7 +13,7 @@ Caret.propTypes = { className: PropTypes.string }
 Caret.defaultProps = { className: "" }
 
 const SelectSimple = ({
-  options,
+  children,
   label,
   placeholder,
   className,
@@ -21,18 +21,19 @@ const SelectSimple = ({
   ...rest
 }) => (
   <SelectWrapper>
-    <Label htmlFor={id}>{label}</Label>
-    <Select className={className} id={id} defaultValue={placeholder || ""}>
+    {label && <Label htmlFor={id}>{label}</Label>}
+    <Select
+      className={className}
+      id={id}
+      defaultValue={placeholder || ""}
+      {...rest}
+    >
       {placeholder && (
         <option disabled value={placeholder}>
           {placeholder}
         </option>
       )}
-      {options.map(option => (
-        <option value={option} key={option}>
-          {option}
-        </option>
-      ))}
+      {children}
     </Select>
     <SelectIcon />
   </SelectWrapper>
@@ -40,12 +41,13 @@ const SelectSimple = ({
 
 SelectSimple.defaultProps = {
   className: "",
-  placeholder: ""
+  placeholder: "",
+  label: null
 }
 
 SelectSimple.propTypes = {
-  label: PropTypes.string.isRequired,
-  options: PropTypes.array.isRequired,
+  label: PropTypes.string,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
   placeholder: PropTypes.string,
   id: PropTypes.string.isRequired,
   className: PropTypes.string
