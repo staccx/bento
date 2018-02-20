@@ -12,10 +12,10 @@ The pack object simply causes any number of elements pack up horizontally to aut
 </Pack>
 ```
 
-### Middle-aligned and wrapped
+### Middle-aligned and noWrapped
 
 ```jsx
-<Pack middle wrap>
+<Pack middle noWrap>
   <PackItem>Lån</PackItem>
   <PackItem>Kreditt</PackItem>
   <PackItem>Sparing</PackItem>
@@ -26,8 +26,10 @@ The pack object simply causes any number of elements pack up horizontally to aut
 
 ### Bottom-aligned
 
+Bottom, middle and justify flex-start
+
 ```jsx
-<Pack bottom>
+<Pack bottom middle justify={"flex-start"}>
   <PackItem>Lån</PackItem>
   <PackItem>Kreditt</PackItem>
   <PackItem>Sparing</PackItem>
