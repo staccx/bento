@@ -33,28 +33,28 @@ import { default as cssResets } from "./Styles/cssResets"
 import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 
 export {
-  cssResets,
+  Box,
   Button,
   CheckBox,
   CheckGroup,
+  cssResets,
+  ExpandListItem,
   extend,
   Flag,
+  InlineListItem,
   Input,
   Label,
+  LinkListItem,
+  List,
+  Pack,
+  PackItem,
   RadioButton,
   RadioPill,
   RadioPillItem,
   SelectSimple,
   Slider,
   SliderKeyboardInput,
-  List,
   SplitListItem,
   ThemeProvider,
-  ExpandListItem,
-  Wrapper,
-  Box,
-  LinkListItem,
-  InlineListItem,
-  Pack,
-  PackItem
+  Wrapper
 }
