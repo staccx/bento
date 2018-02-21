@@ -20,14 +20,9 @@ const SelectSimple = ({
   id,
   ...rest
 }) => (
-  <SelectWrapper>
+  <SelectWrapper className={className}>
     {label && <Label htmlFor={id}>{label}</Label>}
-    <Select
-      className={className}
-      id={id}
-      defaultValue={placeholder || ""}
-      {...rest}
-    >
+    <Select id={id} defaultValue={placeholder || ""} {...rest}>
       {placeholder && (
         <option disabled value={placeholder}>
           {placeholder}
