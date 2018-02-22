@@ -1,5 +1,5 @@
 import accounting from "accounting"
-import createNumberMask from "text-mask-addons/dist/createNumberMask"
+const createNumberMask = require("text-mask-addons/dist/createNumberMask").default
 
 const prefix = ""
 const suffix = " NOK"
