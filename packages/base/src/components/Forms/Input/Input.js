@@ -1,5 +1,5 @@
 /**
- * @class MaskedInput
+ * @class Input
  */
 
 import React from "react"

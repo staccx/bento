@@ -1,13 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-var textMaskCore = require("text-mask-core")
+const textMaskCore = require("text-mask-core")
 
 class MaskedInput extends React.Component {
   constructor(...args) {
     super(...args)
 
     this.onChange = this.onChange.bind(this)
-    console.log(textMaskCore)
   }
 
   initTextMask() {
@@ -74,7 +73,8 @@ MaskedInput.propTypes = {
   pipe: PropTypes.func,
   placeholderChar: PropTypes.string,
   keepCharPositions: PropTypes.bool,
-  showMask: PropTypes.bool
+  showMask: PropTypes.bool,
+  onChange: PropTypes.func
 }
 /** @component */
 export default MaskedInput

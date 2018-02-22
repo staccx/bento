@@ -2,7 +2,7 @@ import React from "react"
 import { number, string } from "prop-types"
 import styled from "styled-components"
 
-const Digit = ({isAnimating, digit, speed, size }) => {
+const Digit = ({ isAnimating, digit, speed, size }) => {
   return (
     <DigitWrapper isAnimating size={size}>
       <DigitContainer digit={digit} speed={speed}>

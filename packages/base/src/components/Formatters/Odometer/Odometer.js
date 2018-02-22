@@ -1,11 +1,11 @@
-import React from 'react'
-import { number } from 'prop-types'
-import styled from 'styled-components'
-import Digit from './Digit'
-import VisuallyHidden from '../../../Styles/VisuallyHidden'
+import React from "react"
+import { number } from "prop-types"
+import styled from "styled-components"
+import Digit from "./Digit"
+import VisuallyHidden from "../../../Styles/VisuallyHidden"
 
 class Odometer extends React.PureComponent {
-  constructor (...props) {
+  constructor(...props) {
     super(...props)
 
     this.state = {
@@ -17,38 +17,38 @@ class Odometer extends React.PureComponent {
     this.animate = this.animate.bind(this)
   }
 
-  componentWillMount () {
+  componentWillMount() {
     this.animate()
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (this.props.number !== nextProps.number) {
       this.animate()
     }
   }
 
-  animate () {
-    this.setState({isAnimating: true})
+  animate() {
+    this.setState({ isAnimating: true })
     clearTimeout(this.timeout)
     this.timeout = setTimeout(() => {
-      this.setState({isAnimating: false})
+      this.setState({ isAnimating: false })
     }, this.props.speed + 10)
   }
 
-  render () {
-    const {number, speed, size, separatorSteps, ...restProps} = this.props
+  render() {
+    const { number, speed, size, separatorSteps, ...restProps } = this.props
 
-    const {isAnimating} = this.state
+    const { isAnimating } = this.state
 
     // TODO: Remove this once we have settled on formatting -> Intl.NumberFormat vs accounting vs masking lib
-    const formatNumber = (num, thousandSeparator = ' ') => {
+    const formatNumber = (num, thousandSeparator = " ") => {
       return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, thousandSeparator)
     }
 
     const chars = parseInt(number, 10)
       .toString()
-      .replace('-', '')
-      .split('')
+      .replace("-", "")
+      .split("")
     const digitLength = chars.length
     const numSeparators = digitLength / separatorSteps
     const separatorIndices = []
@@ -61,14 +61,18 @@ class Odometer extends React.PureComponent {
       separatorIndices.indexOf(index) > -1 && index < len
     return (
       <OdometerWrapper size={size} {...restProps}>
-        <OdometerStatic isAnimating={isAnimating}>{formatNumber(number)}</OdometerStatic>
+        <OdometerStatic isAnimating={isAnimating}>
+          {formatNumber(number)}
+        </OdometerStatic>
         <OdometerAnimating isAnimating={isAnimating}>
           {chars.map((digit, i) => {
             // NOTE: Do not change the key here. it needs to use index
             return (
               <OdometerContainer key={`digit-${i}`}>
-                {separate(i, chars.length) && <Separator isAnimating>&nbsp;</Separator>}
-                <Digit isAnimating size={size} digit={digit} speed={speed}/>
+                {separate(i, chars.length) && (
+                  <Separator isAnimating>&nbsp;</Separator>
+                )}
+                <Digit isAnimating size={size} digit={digit} speed={speed} />
               </OdometerContainer>
             )
           })}
@@ -79,10 +83,10 @@ class Odometer extends React.PureComponent {
 }
 
 const OdometerAnimating = styled.div`
-  ${p => !p.isAnimating ? VisuallyHidden : ''};
+  ${p => (!p.isAnimating ? VisuallyHidden : "")};
 `
 const OdometerStatic = styled.div`
-   ${p => p.isAnimating ? VisuallyHidden : ''};
+  ${p => (p.isAnimating ? VisuallyHidden : "")};
   letter-spacing: 4px;
 `
 
