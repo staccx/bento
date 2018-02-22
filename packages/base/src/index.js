@@ -5,6 +5,7 @@
 import Input from "./components/Forms/Input/Input"
 import CurrencyInput from "./components/Forms/Input/CurrencyInput/CurrencyInput"
 import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
+import CompanyInput from "./components/Forms/Input/CompanyInput/CompanyInput"
 import Label from "./components/Forms/Label/Label"
 import CheckBox from "./components/Forms/CheckBox/CheckBox"
 import RadioButton from "./components/Forms/RadioButton/RadioButton"
@@ -47,6 +48,7 @@ export {
   Button,
   CheckBox,
   CheckGroup,
+  CompanyInput,
   cssResets,
   CurrencyInput,
   ExpandListItem,
