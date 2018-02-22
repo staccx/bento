@@ -34,6 +34,8 @@ import PackItem from "./components/Layout/Pack/PackItem"
 // formatters
 import Odometer from "./components/Formatters/Odometer/Odometer"
 
+import Modal from "./components/Modal/Modal"
+
 import { default as Button } from "./components/Button/Button"
 import { default as extend } from "./functions/extend"
 import { default as cssResets } from "./Styles/cssResets"
@@ -55,6 +57,7 @@ export {
   LinkListItem,
   List,
   Odometer,
+  Modal,
   Pack,
   PackItem,
   RadioButton,
