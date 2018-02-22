@@ -6,7 +6,7 @@ import multiplyPixelValue from "../../../functions/multiplyPixelValue"
 import Label from "../Label/Label"
 import Input from "../Input/Input"
 import Caret from "../../Icons/Caret"
-import Close from "../../Icons/Close"
+// import Close from "../../Icons/Close"
 
 const DefaultOptionElementWrapper = styled.div`
   border: 1px solid ${p => p.theme.color.line};

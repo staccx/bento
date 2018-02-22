@@ -54,7 +54,6 @@ export const formatCurrency = (number, options = {}) => {
 }
 
 export const createCurrencyMask = (options = {}) => {
-  console.log(options)
   options = Object.assign({},currencyMaskOptions, options)
   return createNumberMask(options)
 }
