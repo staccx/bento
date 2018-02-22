@@ -41,6 +41,7 @@
     "react-scripts": "^1.0.17",
     "react-styleguidist": "^6.2.3",
     "rollup": "^0.54.0",
+    "rollup-plugin-alias": "^1.4.0",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^8.2.1",
     "rollup-plugin-node-resolve": "^3.0.2",
@@ -58,6 +59,7 @@
   },
   "dependencies": {
     "accounting": "^0.4.1",
+    "axios": "^0.18.0",
     "downshift": "^1.28.0",
     "easing-utils": "^0.0.7",
     "lerna": "^2.8.0",
