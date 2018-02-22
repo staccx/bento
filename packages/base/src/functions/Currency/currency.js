@@ -1,5 +1,6 @@
 import accounting from "accounting"
-const createNumberMask = require("text-mask-addons/dist/createNumberMask").default
+const createNumberMask = require("text-mask-addons/dist/createNumberMask")
+  .default
 
 const prefix = ""
 const suffix = " NOK"
@@ -54,6 +55,6 @@ export const formatCurrency = (number, options = {}) => {
 }
 
 export const createCurrencyMask = (options = {}) => {
-  options = Object.assign({},currencyMaskOptions, options)
+  options = Object.assign({}, currencyMaskOptions, options)
   return createNumberMask(options)
 }

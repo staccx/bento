@@ -1,9 +1,9 @@
 import React from "react"
 import Input, { InputDefaultProps, InputPropTypes } from "../Input"
-import { createCurrencyMask } from '../../../../functions/Currency/currency'
+import { createCurrencyMask } from "../../../../functions/Currency/currency"
 
 const CurrencyInput = ({ ...props }) => {
-  const mask = createCurrencyMask({...props})
+  const mask = createCurrencyMask({ ...props })
   return <Input type="number" mask={mask} {...props} />
 }
 
