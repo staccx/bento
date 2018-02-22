@@ -38,7 +38,7 @@ class Input extends React.Component {
 
     return (
       <InputWrapper className={className}>
-        <Label htmlFor={id}>{label}</Label>
+        {label && <Label htmlFor={id}>{label}</Label>}
         {mask ? (
           <InputWithMask
             mask={mask}
@@ -83,19 +83,18 @@ export const InputWrapper = styled.div`
 export const inputCss = css`
   display: block;
   width: 100%;
-  margin: 0 auto;
   min-height: ${p => p.theme.targetSize.normal};
-  border-width: 0;
+  margin: 0 auto;
+  border: 1px solid ${p => p.theme.color.line};
   border-radius: ${p => p.theme.borderRadius};
   padding-left: ${p => p.theme.spacing.small};
   padding-right: ${p => p.theme.spacing.small};
   font-family: ${p => p.theme.font.body};
-  transition: border-color 0.2s ease-out;
   font-size: ${p => p.theme.font.size.input};
+  transition: border-color 0.2s ease-out;
   -webkit-appearance: none;
   appearance: none;
   -moz-appearance: textfield;
-  border: 1px solid ${p => p.theme.color.line};
 
   &::-webkit-input-placeholder {
     /* WebKit browsers */

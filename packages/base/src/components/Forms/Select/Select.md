@@ -14,37 +14,24 @@ const selectContent = [
   }
 ]
 ;<div>
-  <h3>Default select</h3>
+  <h3>Select</h3>
+  <p>
+    Both selectedItem and the option component should be supplied. Can also
+    supply your own optionsWrapperElement and placeHolderElement and caret.
+  </p>
   <Select
     onChange={selectedItem => console.log(selectedItem)}
     label={"Label"}
-    selectedElement={CustomSelected}
+    selectedElement={SelectSelected}
     key={"iwodn21"}
     placeHolderLabel={"Velg…"}
   >
     {selectContent.map(item => (
-      <CustomOptionElement key={item.text} data={item}>
-        <h4>{item.text}</h4>
+      <SelectOption key={item.text} data={item}>
+        <strong>{item.text}</strong>
+        <br />
         <span>{item.value}</span>
-      </CustomOptionElement>
-    ))}
-  </Select>
-
-  <h3>Customized selectn</h3>
-  <Select
-    onChange={selectedItem => console.log(selectedItem)}
-    label={"Label"}
-    selectedElement={CustomSelected}
-    optionsWrapperElement={CustomOptionsWrapperElement}
-    placeHolderElement={CustomPlaceholder}
-    placeHolderLabel={"Velg…"}
-    key={"wkdfnas"}
-  >
-    {selectContent.map(item => (
-      <CustomOptionElement key={item.text} data={item}>
-        <h4>{item.text}</h4>
-        <span>{item.value}</span>
-      </CustomOptionElement>
+      </SelectOption>
     ))}
   </Select>
 </div>
