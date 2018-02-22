@@ -1,33 +1,264 @@
-0 silly input [ 'build' ]
-1 silly flags { _: [ 'run' ],
-1 silly flags   'reject-cycles': false,
-1 silly flags   rejectCycles: false,
-1 silly flags   script: 'build',
-1 silly flags   args: [] }
+0 silly input [ 'publish' ]
+1 silly flags { _: [ 'publish' ], 'reject-cycles': false, rejectCycles: false }
 2 verbose rootPath /Users/espen/Projects/bento
 3 info version 2.8.0
-4 silly existsSync /Users/espen/Projects/bento/VERSION
-5 silly initialize attempt
-6 silly initialize success
-7 silly execute attempt
-8 silly runScriptInDir build [] base
-9 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/base' }
-10 silly runScriptInDir build [] staging
-11 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/staging' }
-12 error build Errored while running script in '@staccx/staging'
-13 error execute callback with error
-14 error Error: Command failed: yarn run build
-14 error error Command failed with exit code 1.
-14 error yarn run v1.3.2
-14 error $ react-scripts build
-14 error Creating an optimized production build...
-14 error Failed to compile.
-14 error
-14 error ./src/App.js
-14 error 1:2488-2497 '@staccx/base' does not contain an export named 'SplitList'.
-14 error
-14 error
-14 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-14 error
-14 error     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/execa/index.js:236:11)
-14 error     at <anonymous>
+4 silly isInitialized
+5 silly isInitialized true
+6 silly existsSync /Users/espen/Projects/bento/VERSION
+7 silly initialize attempt
+8 info current version 0.6.0
+9 silly isDetachedHead
+10 silly getCurrentBranch
+11 verbose getCurrentBranch master
+12 verbose isDetachedHead false
+13 silly getCurrentBranch
+14 verbose getCurrentBranch master
+15 silly getUpdates
+16 info Checking for updated packages...
+17 silly hasTags
+18 verbose hasTags true
+19 silly getLastTag
+20 verbose getLastTag v0.6.0
+21 info Comparing with v0.6.0.
+22 silly diffSinceIn v0.6.0 packages/base
+23 silly diff packages/base/package.json
+23 silly diff packages/base/rollup.config.js
+23 silly diff packages/base/src/components/Forms/Input/AccountInput/AccountInput.js
+23 silly diff packages/base/src/components/Forms/Input/CompanyInput/CompanyInput.js
+23 silly diff packages/base/src/components/Forms/Input/CompanyInput/CompanyInput.md
+23 silly diff packages/base/src/components/Forms/Input/masks.js
+23 silly diff packages/base/src/index.js
+24 silly diffSinceIn v0.6.0 packages/staging
+25 silly diff
+26 verbose updated @staccx/base
+27 info Checking for prereleased packages...
+28 silly collectDependents
+29 silly isPackageDependentOf @staccx/base @staccx/base
+30 silly isPackageDependentOf @staccx/staging @staccx/base
+31 silly collectUpdates
+32 verbose has filtered update @staccx/base
+33 silly initialize success
+34 silly execute attempt
+35 silly addFile /Users/espen/Projects/bento/lerna.json
+36 silly runScriptSync preversion @staccx/bento
+37 silly runScriptSync preversion @staccx/base
+38 silly runScriptSync version @staccx/base
+39 silly runScriptSync version @staccx/bento
+40 silly addFile /Users/espen/Projects/bento/packages/base/package.json
+41 silly commit v0.7.0
+42 verbose commit [ 'commit', '--no-verify', '-m', 'v0.7.0' ]
+43 silly addTag v0.7.0
+44 silly runScriptSync postversion @staccx/base
+45 silly runScriptSync postversion @staccx/bento
+46 info publish Publishing packages to npm...
+47 silly existsSync /Users/espen/Projects/bento/packages/base/scripts/prepublish.js
+48 verbose execScript No prepublish script found at /Users/espen/Projects/bento/packages/base/scripts/prepublish.js
+49 verbose publishing @staccx/base
+50 silly publishTaggedInDir latest base
+51 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/base' }
+52 error publish Retrying failed publish: @staccx/base
+53 verbose publish error undefined
+54 verbose publishing @staccx/base
+55 silly publishTaggedInDir latest base
+56 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/base' }
+57 error publish Retrying failed publish: @staccx/base
+58 verbose publish error undefined
+59 verbose publishing @staccx/base
+60 silly publishTaggedInDir latest base
+61 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/base' }
+62 error publish Retrying failed publish: @staccx/base
+63 verbose publish error undefined
+64 verbose publishing @staccx/base
+65 silly publishTaggedInDir latest base
+66 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/base' }
+67 error publish Retrying failed publish: @staccx/base
+68 verbose publish error undefined
+69 verbose publishing @staccx/base
+70 silly publishTaggedInDir latest base
+71 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/base' }
+72 error publish Ran out of retries while publishing @staccx/base Error: Command failed: yarn publish --tag latest --new-version 0.7.0
+72 error publish
+72 error publish src/index.js → dist/index.js, dist/index.es.js...
+72 error publish preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'assert' over local alternative at '/Users/espen/Projects/bento/node_modules/assert/assert.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'assert' over local alternative at '/Users/espen/Projects/bento/node_modules/assert/assert.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'util' over local alternative at '/Users/espen/Projects/bento/node_modules/util/util.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'util' over local alternative at '/Users/espen/Projects/bento/node_modules/util/util.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'util' over local alternative at '/Users/espen/Projects/bento/node_modules/util/util.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'util' over local alternative at '/Users/espen/Projects/bento/node_modules/util/util.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'util' over local alternative at '/Users/espen/Projects/bento/node_modules/util/util.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'assert' over local alternative at '/Users/espen/Projects/bento/node_modules/assert/assert.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'assert' over local alternative at '/Users/espen/Projects/bento/node_modules/assert/assert.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'assert' over local alternative at '/Users/espen/Projects/bento/node_modules/assert/assert.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+72 error publish [!] (babel plugin) SyntaxError: /Users/espen/Projects/bento/node_modules/axios/package.json: Unexpected token, expected ; (2:8)
+72 error publish ../../node_modules/axios/package.json (2:8)
+72 error publish SyntaxError: /Users/espen/Projects/bento/node_modules/axios/package.json: Unexpected token, expected ; (2:8)
+72 error publish     at error (/Users/espen/Projects/bento/node_modules/rollup/dist/rollup.js:170:15)
+72 error publish     at Object.error (/Users/espen/Projects/bento/node_modules/rollup/dist/rollup.js:17403:21)
+72 error publish     at /Users/espen/Projects/bento/node_modules/rollup/dist/rollup.js:17412:29
+72 error publish     at <anonymous>
+72 error publish
+72 error publish error Command failed with exit code 1.
+72 error publish error Command failed with exit code 1.
+72 error publish yarn publish v1.3.2
+72 error publish [1/4] Bumping version...
+72 error publish info Current version: 0.7.0
+72 error publish [2/4] Logging in...
+72 error publish [3/4] Publishing...
+72 error publish $ yarn build
+72 error publish yarn run v1.3.2
+72 error publish $ yarn prettify && rollup -c
+72 error publish $ prettier --write '{src,__{tests,mocks}__}/**/*.js'
+72 error publish src/components/Button/Button.js 126ms
+72 error publish src/components/Formatters/Odometer/Digit.js 14ms
+72 error publish src/components/Formatters/Odometer/Odometer.js 33ms
+72 error publish src/components/Forms/CheckBox/CheckBox.js 24ms
+72 error publish src/components/Forms/CheckGroup/CheckGroup.js 5ms
+72 error publish src/components/Forms/Input/AccountInput/AccountInput.js 3ms
+72 error publish src/components/Forms/Input/CompanyInput/CompanyInput.js 72ms
+72 error publish src/components/Forms/Input/CurrencyInput/CurrencyInput.js 3ms
+72 error publish src/components/Forms/Input/Input.js 37ms
+72 error publish src/components/Forms/Input/MaskedInput.js 12ms
+72 error publish src/components/Forms/Input/masks.js 4ms
+72 error publish src/components/Forms/Input/PhoneInput/PhoneInput.js 3ms
+72 error publish src/components/Forms/Label/Label.js 6ms
+72 error publish src/components/Forms/RadioButton/RadioButton.js 21ms
+72 error publish src/components/Forms/RadioPill/RadioPill.Item.js 20ms
+72 error publish src/components/Forms/RadioPill/RadioPill.js 6ms
+72 error publish src/components/Forms/Select/Select.js 21ms
+72 error publish src/components/Forms/Select/Select.Option.js 6ms
+72 error publish src/components/Forms/Select/Select.Selected.js 7ms
+72 error publish src/components/Forms/SelectSimple/SelectSimple.js 16ms
+72 error publish src/components/Forms/Slider/Slider/Slider.js 23ms
+72 error publish src/components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput.js 23ms
+72 error publish src/components/Forms/Toggle/Toggle.js 16ms
+72 error publish src/components/Icons/Caret.js 3ms
+72 error publish src/components/Icons/Close.js 2ms
+72 error publish src/components/Layout/Box/Box.js 4ms
+72 error publish src/components/Layout/Flag/Flag.js 21ms
+72 error publish src/components/Layout/Pack/Pack.js 6ms
+72 error publish src/components/Layout/Pack/PackItem.js 4ms
+72 error publish src/components/Layout/Wrapper/Wrapper.js 8ms
+72 error publish src/components/Lists/ExpandList/ExpandListItem.js 19ms
+72 error publish src/components/Lists/InlineList/InlineListItem.js 3ms
+72 error publish src/components/Lists/LinkList/LinkListItem.js 14ms
+72 error publish src/components/Lists/List.js 4ms
+72 error publish src/components/Lists/SplitList/SplitListItem.js 8ms
+72 error publish src/components/Modal/Modal.js 17ms
+72 error publish src/functions/clamp.js 1ms
+72 error publish src/functions/Currency/currency.js 8ms
+72 error publish src/functions/extend.js 2ms
+72 error publish src/functions/inverseLerp.js 4ms
+72 error publish src/functions/multiplyPixelValue.js 2ms
+72 error publish src/index.js 5ms
+72 error publish src/Styles/animations.js 4ms
+72 error publish src/Styles/cssResets.js 2ms
+72 error publish src/Styles/VisuallyHidden.js 4ms
+72 error publish src/test.js 3ms
+72 error publish src/theme/baseTheme.js 6ms
+72 error publish src/theme/ThemeWrapper.js 2ms
+72 error publish info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+72 error publish info Visit https://yarnpkg.com/en/docs/cli/publish for documentation about this command.
+72 error publish
+72 error publish     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/execa/index.js:236:11)
+72 error publish     at <anonymous>
+72 error publish     at process._tickCallback (internal/process/next_tick.js:160:7)
+73 error execute callback with error
+74 error Error: Command failed: yarn publish --tag latest --new-version 0.7.0
+74 error
+74 error src/index.js → dist/index.js, dist/index.es.js...
+74 error preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'assert' over local alternative at '/Users/espen/Projects/bento/node_modules/assert/assert.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'assert' over local alternative at '/Users/espen/Projects/bento/node_modules/assert/assert.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'util' over local alternative at '/Users/espen/Projects/bento/node_modules/util/util.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'util' over local alternative at '/Users/espen/Projects/bento/node_modules/util/util.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'util' over local alternative at '/Users/espen/Projects/bento/node_modules/util/util.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'util' over local alternative at '/Users/espen/Projects/bento/node_modules/util/util.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'util' over local alternative at '/Users/espen/Projects/bento/node_modules/util/util.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'assert' over local alternative at '/Users/espen/Projects/bento/node_modules/assert/assert.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'assert' over local alternative at '/Users/espen/Projects/bento/node_modules/assert/assert.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'assert' over local alternative at '/Users/espen/Projects/bento/node_modules/assert/assert.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error preferring built-in module 'url' over local alternative at '/Users/espen/Projects/bento/node_modules/url/url.js', pass 'preferBuiltins: false' to disable this behavior or 'preferBuiltins: true' to disable this warning
+74 error [!] (babel plugin) SyntaxError: /Users/espen/Projects/bento/node_modules/axios/package.json: Unexpected token, expected ; (2:8)
+74 error ../../node_modules/axios/package.json (2:8)
+74 error SyntaxError: /Users/espen/Projects/bento/node_modules/axios/package.json: Unexpected token, expected ; (2:8)
+74 error     at error (/Users/espen/Projects/bento/node_modules/rollup/dist/rollup.js:170:15)
+74 error     at Object.error (/Users/espen/Projects/bento/node_modules/rollup/dist/rollup.js:17403:21)
+74 error     at /Users/espen/Projects/bento/node_modules/rollup/dist/rollup.js:17412:29
+74 error     at <anonymous>
+74 error
+74 error error Command failed with exit code 1.
+74 error error Command failed with exit code 1.
+74 error yarn publish v1.3.2
+74 error [1/4] Bumping version...
+74 error info Current version: 0.7.0
+74 error [2/4] Logging in...
+74 error [3/4] Publishing...
+74 error $ yarn build
+74 error yarn run v1.3.2
+74 error $ yarn prettify && rollup -c
+74 error $ prettier --write '{src,__{tests,mocks}__}/**/*.js'
+74 error src/components/Button/Button.js 126ms
+74 error src/components/Formatters/Odometer/Digit.js 14ms
+74 error src/components/Formatters/Odometer/Odometer.js 33ms
+74 error src/components/Forms/CheckBox/CheckBox.js 24ms
+74 error src/components/Forms/CheckGroup/CheckGroup.js 5ms
+74 error src/components/Forms/Input/AccountInput/AccountInput.js 3ms
+74 error src/components/Forms/Input/CompanyInput/CompanyInput.js 72ms
+74 error src/components/Forms/Input/CurrencyInput/CurrencyInput.js 3ms
+74 error src/components/Forms/Input/Input.js 37ms
+74 error src/components/Forms/Input/MaskedInput.js 12ms
+74 error src/components/Forms/Input/masks.js 4ms
+74 error src/components/Forms/Input/PhoneInput/PhoneInput.js 3ms
+74 error src/components/Forms/Label/Label.js 6ms
+74 error src/components/Forms/RadioButton/RadioButton.js 21ms
+74 error src/components/Forms/RadioPill/RadioPill.Item.js 20ms
+74 error src/components/Forms/RadioPill/RadioPill.js 6ms
+74 error src/components/Forms/Select/Select.js 21ms
+74 error src/components/Forms/Select/Select.Option.js 6ms
+74 error src/components/Forms/Select/Select.Selected.js 7ms
+74 error src/components/Forms/SelectSimple/SelectSimple.js 16ms
+74 error src/components/Forms/Slider/Slider/Slider.js 23ms
+74 error src/components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput.js 23ms
+74 error src/components/Forms/Toggle/Toggle.js 16ms
+74 error src/components/Icons/Caret.js 3ms
+74 error src/components/Icons/Close.js 2ms
+74 error src/components/Layout/Box/Box.js 4ms
+74 error src/components/Layout/Flag/Flag.js 21ms
+74 error src/components/Layout/Pack/Pack.js 6ms
+74 error src/components/Layout/Pack/PackItem.js 4ms
+74 error src/components/Layout/Wrapper/Wrapper.js 8ms
+74 error src/components/Lists/ExpandList/ExpandListItem.js 19ms
+74 error src/components/Lists/InlineList/InlineListItem.js 3ms
+74 error src/components/Lists/LinkList/LinkListItem.js 14ms
+74 error src/components/Lists/List.js 4ms
+74 error src/components/Lists/SplitList/SplitListItem.js 8ms
+74 error src/components/Modal/Modal.js 17ms
+74 error src/functions/clamp.js 1ms
+74 error src/functions/Currency/currency.js 8ms
+74 error src/functions/extend.js 2ms
+74 error src/functions/inverseLerp.js 4ms
+74 error src/functions/multiplyPixelValue.js 2ms
+74 error src/index.js 5ms
+74 error src/Styles/animations.js 4ms
+74 error src/Styles/cssResets.js 2ms
+74 error src/Styles/VisuallyHidden.js 4ms
+74 error src/test.js 3ms
+74 error src/theme/baseTheme.js 6ms
+74 error src/theme/ThemeWrapper.js 2ms
+74 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+74 error info Visit https://yarnpkg.com/en/docs/cli/publish for documentation about this command.
+74 error
+74 error     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/execa/index.js:236:11)
+74 error     at <anonymous>

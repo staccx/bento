@@ -48,9 +48,12 @@ class CompanyInput extends React.PureComponent {
     this.timeout = setTimeout(() => {
       const filter = `startswith(navn,'${companyName}')`
       axios
-        .get(`http://data.brreg.no/enhetsregisteret/enhet.json?page=${0}&size=${5}&$filter=${filter}`, {
-          cancelToken: this.cancelSource.token
-        })
+        .get(
+          `http://data.brreg.no/enhetsregisteret/enhet.json?page=${0}&size=${5}&$filter=${filter}`,
+          {
+            cancelToken: this.cancelSource.token
+          }
+        )
         .then(result => result.data) // Axios data
         .then(result => result.data) // Brreg data
         .then(companies => {
@@ -144,7 +147,9 @@ class CompanyInput extends React.PureComponent {
                             isSelected={highlightedIndex === index}
                           >
                             {`${item.navn}${
-                              item.orgform.kode !== "AS" ? " - " + item.orgform.kode : ""
+                              item.orgform.kode !== "AS"
+                                ? " - " + item.orgform.kode
+                                : ""
                             }`}
                             <OrgNo>{item.organisasjonsnummer}</OrgNo>
                           </SelectItem>
@@ -232,7 +237,8 @@ const SelectList = styled.ul`
 const SelectItem = styled.li`
   list-style: none;
   padding: ${p => p.theme.spacing.small} ${p => p.theme.spacing.medium};
-  background-color: ${p => (p.isSelected ? p.theme.color.primary : "transparent")};
+  background-color: ${p =>
+    p.isSelected ? p.theme.color.primary : "transparent"};
   color: ${p => (p.isSelected ? p.theme.color.white : p.theme.color.black)};
   border-bottom: 1px solid ${p => p.theme.color.line};
 
