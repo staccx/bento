@@ -1,0 +1,17 @@
+<!--  <h3>Default select</h3>
+<Select
+  items={["apple", "orange", "carrot"]}
+  onChange={selectedItem => console.log(selectedItem)}
+  label={"Label"}
+/>
+
+<h3>Customized select</h3>
+<Select
+  items={["apple", "orange", "carrot"]}
+  onChange={selectedItem => console.log(selectedItem)}
+  label={"Label"}
+  selectedElement={CustomSelected}
+  optionsWrapperElement={CustomOptionsWrapperElement}
+  optionElement={CustomOptionElement}
+/>
+-->
