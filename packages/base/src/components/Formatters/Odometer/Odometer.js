@@ -37,45 +37,32 @@ class Odometer extends React.PureComponent {
 
   render() {
     const { number, speed, size, separatorSteps, ...restProps } = this.props
-
     const { isAnimating } = this.state
-
-    // TODO: Remove this once we have settled on formatting -> Intl.NumberFormat vs accounting vs masking lib
-    const formatNumber = (num, thousandSeparator = " ") => {
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, thousandSeparator)
-    }
-
     const chars = parseInt(number, 10)
       .toString()
       .replace("-", "")
       .split("")
     const digitLength = chars.length
     const numSeparators = digitLength / separatorSteps
-    const separatorIndices = []
     for (let i = 0; i < numSeparators; i++) {
       // TODO: There HAS to be a smarter way of doing this. Brain is not working atm
-      separatorIndices.push(digitLength - separatorSteps * i)
+      chars.splice(digitLength - separatorSteps * i, 0, "")
     }
 
-    const separate = (index, len) =>
-      separatorIndices.indexOf(index) > -1 && index < len
+    const renderDigits = (digit, single, speed) =>
+      chars.map((digit, i) => (
+        <OdometerContainer key={`digit-${i}`}>
+          <Digit size={size} digit={digit} single={single} speed={speed} />
+        </OdometerContainer>
+      ))
+
     return (
       <OdometerWrapper size={size} {...restProps}>
         <OdometerStatic isAnimating={isAnimating}>
-          {formatNumber(number)}
+          {renderDigits(number, true, speed)}
         </OdometerStatic>
         <OdometerAnimating isAnimating={isAnimating}>
-          {chars.map((digit, i) => {
-            // NOTE: Do not change the key here. it needs to use index
-            return (
-              <OdometerContainer key={`digit-${i}`}>
-                {separate(i, chars.length) && (
-                  <Separator isAnimating>&nbsp;</Separator>
-                )}
-                <Digit isAnimating size={size} digit={digit} speed={speed} />
-              </OdometerContainer>
-            )
-          })}
+          {renderDigits(number, false, speed)}
         </OdometerAnimating>
       </OdometerWrapper>
     )
@@ -84,14 +71,14 @@ class Odometer extends React.PureComponent {
 
 const OdometerAnimating = styled.div`
   ${p => (!p.isAnimating ? VisuallyHidden : "")};
+  display: flex;
 `
 const OdometerStatic = styled.div`
   ${p => (p.isAnimating ? VisuallyHidden : "")};
-  letter-spacing: 4px;
+  display: flex;
 `
 
 const OdometerContainer = styled.div`
-  display: inline-block;
   position: relative;
 `
 
@@ -99,11 +86,6 @@ const OdometerWrapper = styled.div`
   font-size: ${p => p.size}px;
   line-height: 1;
   display: inline-block;
-`
-
-const Separator = styled.div`
-  display: block;
-  float: left;
 `
 
 // TODO: Add support for strings?
