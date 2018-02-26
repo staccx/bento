@@ -20,5 +20,19 @@ export const ssnMasks = {
 }
 
 export const accountMasks = {
-  nb: [/[0-9]/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/]
+  nb: [
+    /[0-9]/,
+    /\d/,
+    /\d/,
+    /\d/,
+    " ",
+    /\d/,
+    /\d/,
+    " ",
+    /\d/,
+    /\d/,
+    /\d/,
+    /\d/,
+    /\d/
+  ]
 }
