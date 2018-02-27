@@ -40,6 +40,9 @@ import Close from "./components/Icons/Close"
 // formatters
 import Odometer from "./components/Formatters/Odometer/Odometer"
 
+// Dataviz
+import ProgressBar from "./components/DataViz/ProgressBar/ProgressBar"
+
 import Modal from "./components/Modal/Modal"
 
 import { default as Button } from "./components/Button/Button"
@@ -51,9 +54,9 @@ export {
   Box,
   Button,
   Caret,
-  Close,
   CheckBox,
   CheckGroup,
+  Close,
   CompanyInput,
   cssResets,
   CurrencyInput,
@@ -65,11 +68,12 @@ export {
   Label,
   LinkListItem,
   List,
-  Odometer,
   Modal,
+  Odometer,
   Pack,
   PackItem,
   PhoneInput,
+  ProgressBar,
   RadioButton,
   RadioPill,
   RadioPillItem,
