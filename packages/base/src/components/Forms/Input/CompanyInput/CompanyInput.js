@@ -27,14 +27,11 @@ class CompanyInput extends React.PureComponent {
   }
 
   componentWillUnmount() {
-    if (this.cancelSource) {
-      this.cancelSource.cancel()
-    }
     clearTimeout(this.timeout)
     this.timeout = null
   }
 
-  scheduleSearch = companyName => {
+  scheduleSearch(companyName) {
     clearTimeout(this.timeout)
 
     if (!companyName || companyName.length < 2) {
@@ -42,11 +39,11 @@ class CompanyInput extends React.PureComponent {
       return
     }
 
-    this.cancelSource = axios.CancelToken.source()
     this.setState({ isLoading: true })
     this.timeout = setTimeout(() => {
       const filter = `startswith(navn,'${companyName}')`
-      fetch(
+      window
+        .fetch(
           `http://data.brreg.no/enhetsregisteret/enhet.json?page=${0}&size=${5}&$filter=${filter}`,
           {
             cancelToken: this.cancelSource.token
@@ -65,14 +62,14 @@ class CompanyInput extends React.PureComponent {
     }, this.props.searchTimeout)
   }
 
-  handleChange = e => {
+  handleChange(e) {
     const value = e.target.value
     if (this.props.onChange) {
       this.props.onChange(e)
     }
     this.scheduleSearch(value)
   }
-  handleSelect = selected => {
+  handleSelect(selected) {
     console.log(selected)
     this.setState({ selected }, () => {
       if (this.props.onSelect) {
@@ -89,7 +86,7 @@ class CompanyInput extends React.PureComponent {
       <Downshift
         onSelect={this.handleSelect}
         itemToString={item => (item ? item.name : "")}
-        defaultIsOpen={true}
+        defaultIsOpen
         render={({
           getInputProps,
           getItemProps,

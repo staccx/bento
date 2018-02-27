@@ -153,7 +153,8 @@ export const InputPropTypes = {
   type: PropTypes.oneOf(["text", "email", "number", "tel", "url"]),
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   label: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
+  mask: PropTypes.array
 }
 
 Input.propTypes = InputPropTypes
@@ -171,7 +172,8 @@ export const InputDefaultProps = {
   style: null,
   type: "text",
   value: undefined,
-  label: ""
+  label: "",
+  mask: null
 }
 
 Input.defaultProps = InputDefaultProps

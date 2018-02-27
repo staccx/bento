@@ -174,7 +174,8 @@ SliderKeyboardInput.defaultProps = {
   step: 1,
   animationTicks: 50,
   easingFunction: linear,
-  onChange: null
+  onChange: null,
+  mask: null
 }
 
 SliderKeyboardInput.propTypes = {
@@ -186,7 +187,8 @@ SliderKeyboardInput.propTypes = {
   onChange: PropTypes.func,
   step: PropTypes.number,
   animationTicks: PropTypes.number,
-  easingFunction: PropTypes.func
+  easingFunction: PropTypes.func,
+  mask: PropTypes.array
 }
 
 export default SliderKeyboardInput
