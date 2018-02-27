@@ -1,5 +1,8 @@
 # Base
 
+## NOTE
+Project using *Base* needs to have styled-components as a dependency
+
 ## Install
 
 ```bash
