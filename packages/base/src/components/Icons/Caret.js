@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 const CaretIcon = styled.svg`
   width: 12px;
-  fill: ${p => p.theme.color.gray};
   transition: fill 0.2s ease;
 `
 
