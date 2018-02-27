@@ -33,6 +33,10 @@ import Box from "./components/Layout/Box/Box"
 import Pack from "./components/Layout/Pack/Pack"
 import PackItem from "./components/Layout/Pack/PackItem"
 
+// Icons
+import Caret from "./components/Icons/Caret"
+import Close from "./components/Icons/Close"
+
 // formatters
 import Odometer from "./components/Formatters/Odometer/Odometer"
 
@@ -46,6 +50,8 @@ import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 export {
   Box,
   Button,
+  Caret,
+  Close,
   CheckBox,
   CheckGroup,
   CompanyInput,
