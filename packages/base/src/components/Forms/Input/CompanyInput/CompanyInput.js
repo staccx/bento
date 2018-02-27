@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
 import Input, { InputDefaultProps, InputPropTypes } from "../Input"
-import axios from "axios"
 import Downshift from "downshift"
 import Flag from "../../../Layout/Flag/Flag"
 import Label from "../../Label/Label"
@@ -47,8 +46,7 @@ class CompanyInput extends React.PureComponent {
     this.setState({ isLoading: true })
     this.timeout = setTimeout(() => {
       const filter = `startswith(navn,'${companyName}')`
-      axios
-        .get(
+      fetch(
           `http://data.brreg.no/enhetsregisteret/enhet.json?page=${0}&size=${5}&$filter=${filter}`,
           {
             cancelToken: this.cancelSource.token
