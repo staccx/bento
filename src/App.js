@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
+import DevTools from "mobx-react-devtools";
+import {observer} from 'mobx-react'
 
+@observer
 class App extends Component {
   render () {
     return (
+      <div>
       <Router>
         <div>
           <Route exact path='/' render={() => <div>start <Link to="/page1">Neste</Link></div>}/>
@@ -22,6 +26,8 @@ class App extends Component {
                  </div>}/>
         </div>
       </Router>
+        <DevTools/>
+      </div>
     )
   }
 }
