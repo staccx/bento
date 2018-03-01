@@ -1,7 +1,8 @@
 import { injectGlobal } from "styled-components"
 
-const cssResets = (customResets = '') => {
-  const resets = `
+const cssResets = (customResets = "") => {
+  const resets =
+    `
   body, h1, h2, h3, h4, h5, h6,
   blockquote, p, pre,
   dl, dd, ol, ul,

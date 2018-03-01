@@ -50,14 +50,22 @@ import { default as extend } from "./functions/extend"
 import { default as cssResets } from "./Styles/cssResets"
 import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 
+// /functions
+import inverseLerp from  "./functions/inverseLerp"
+import lerp from  "./functions/lerp"
+import coserp from  "./functions/cosineInterpolate"
+import clamp from  "./functions/clamp"
+
 export {
   Box,
   Button,
   Caret,
   CheckBox,
   CheckGroup,
+  clamp,
   Close,
   CompanyInput,
+  coserp,
   cssResets,
   CurrencyInput,
   ExpandListItem,
@@ -66,6 +74,8 @@ export {
   InlineListItem,
   Input,
   Label,
+  lerp,
+  inverseLerp,
   LinkListItem,
   List,
   Modal,

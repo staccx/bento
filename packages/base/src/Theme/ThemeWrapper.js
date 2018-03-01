@@ -9,7 +9,6 @@ import cssReset from "../Styles/cssResets"
  * TODO: Implement once this is merged into style-components
  */
 export default class ThemeWrapper extends Component {
-
   render() {
     cssReset(this.props.resets)
     const theme = Object.assign({}, baseTheme, this.props.theme)
