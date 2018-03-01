@@ -8,6 +8,7 @@ import DataTest from "./components/DataTest"
 import TestQuestion from "./components/TestQuestion"
 import { themeLaser } from "./theme/themeLaser"
 import ShotgunChart from "./components/ShotgunChart";
+import PieChart from "./components/PieChart";
 
 const elementStyles = `
   html{
@@ -50,6 +51,7 @@ class App extends Component {
                 path="/page2"
                 render={() => (
                   <div>
+                    <PieChart/>
                     Page 2 <Link to="/page1">Tilbake</Link>{" "}
                     <Link to="/page3">Neste</Link>
                   </div>

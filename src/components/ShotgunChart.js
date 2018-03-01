@@ -127,8 +127,6 @@ class ShotgunChart extends Component {
     const ninetyFifth = createDataset(ninetyFifthData, baseColor, '95th Percentile')
     const median = createDataset(medianData, baseColor, 'Median')
 
-
-
     const medianFifth = createSubgroups(fifthData, medianData, 3, '')
     const medianNine = createSubgroups(ninetyFifthData, medianData, 3, '')
 
