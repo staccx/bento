@@ -51,10 +51,10 @@ import { default as cssResets } from "./Styles/cssResets"
 import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 
 // /functions
-import inverseLerp from  "./functions/inverseLerp"
-import lerp from  "./functions/lerp"
-import coserp from  "./functions/cosineInterpolate"
-import clamp from  "./functions/clamp"
+import inverseLerp from "./functions/inverseLerp"
+import lerp from "./functions/lerp"
+import coserp from "./functions/cosineInterpolate"
+import clamp from "./functions/clamp"
 
 export {
   Box,

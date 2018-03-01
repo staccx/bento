@@ -52,8 +52,7 @@ const FlagBody = styled.div`
 
 const reverse = css`
   direction: rtl;
-  > ${FlagImg},
-  > ${FlagBody} {
+  > ${FlagImg}, > ${FlagBody} {
     direction: ltr;
   }
 
@@ -71,15 +70,13 @@ const reverseLarge = css`
 `
 
 const top = css`
-  > ${FlagImg},
-  > ${FlagBody} {
+  > ${FlagImg}, > ${FlagBody} {
     vertical-align: top;
   }
 `
 
 const bottom = css`
-  > ${FlagImg},
-  > ${FlagBody} {
+  > ${FlagImg}, > ${FlagBody} {
     vertical-align: bottom;
   }
 `
@@ -101,8 +98,7 @@ const large = css`
 const responsive = css`
   @media screen and (max-width: ${props => props.responsive}px) {
     &,
-    > ${FlagImg},
-    > ${FlagBody} {
+    > ${FlagImg}, > ${FlagBody} {
       display: block;
       direction: initial;
       padding: 0;
@@ -115,7 +111,6 @@ const responsive = css`
     ${FlagImg} > img {
       max-width: 100%;
     }
-
   }
 `
 
