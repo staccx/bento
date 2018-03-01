@@ -4,7 +4,83 @@ import Chart from 'chart.js'
 import {inject, observer} from 'mobx-react'
 import tinycolor from 'tinycolor2'
 import {differenceInCalendarYears} from 'date-fns'
-import nb from 'date-fns/locale/nb'
+import {lerp, clamp, coserp} from "@staccx/base"
+import {parseDate} from "../utils/parseString";
+
+const getShotgunConfig = (labels, dataSets, baseColor) => ({
+  type: 'line',
+  data: {
+    labels,
+    datasets: dataSets.map((dataSet, index) => {
+      return {
+        data: dataSet.data,
+        label: dataSet.label,
+        backgroundColor: baseColor.toRgbString(),
+        fill: '0',
+        borderColor: baseColor.toRgbString(),
+      }
+    })
+  },
+  options: {
+    legend: {
+      display: false
+    },
+    elements: {
+      point: {
+        radius: 0
+      },
+      line: {
+        borderWidth: 1,
+        fill: false
+      }
+    },
+    plugins: {
+      filler: {
+        propagate: true
+      }
+    },
+    scales: {
+      xAxes: [{
+        type: 'time',
+        distribution: 'series',
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          autoSkip: true,
+          callback: (value) => `${differenceInCalendarYears(value, new Date())} years`,
+          maxRotation: 0,
+          minRotation: 0
+        }
+      }],
+      yAxes: [{
+        type: 'linear',
+
+        ticks: {
+          beginAtZero: false,
+        },
+        gridLines: {
+          display: false
+        },
+        stacked: false
+      }]
+    },
+    showLines: true,
+  }
+})
+
+const createSubgroups = (data, other, amount = 3, label) => {
+  return new Array(amount).fill(undefined).map((v, i) => ({
+      data: data.map((data, index) => {
+        return {
+          x: data.x,
+          y: coserp(other[index].y, data.y, i / amount)
+        }
+      }),
+      label: label + i
+    })
+  )
+}
 
 @inject('apiStore') @observer
 class ShotgunChart extends Component {
@@ -23,27 +99,17 @@ class ShotgunChart extends Component {
   componentDidMount() {
     const {forecast} = this.props.apiStore.marketReturns
     const keys = Object.keys(forecast)
-    const dates = keys.map(key => {
-      // const diff = differenceInCalendarYears(new Date(Date.parse(key)), new Date())
-      // const mod = Math.floor(diff / 2)
-      // if(existing.indexOf(mod) !== -1 || mod < 0) {
-      //   return ""
-      // }
-      // existing.push(mod)
-      // return `${(mod) * 2 + 2} years`
-      const date = new Date(Date.parse(key))
-      return date
-    })
+    const dates = parseDate(keys)
     let max = 0
     let min = 1000000
 
     const getData = prop => keys.map((key, index) => {
       const value = forecast[key][prop]
-      if(value > max) max = value
-      if(value < min) min = value
+      if (value > max) max = value
+      if (value < min) min = value
       return {
         x: dates[index],
-        y:  value
+        y: value
       }
     })
 
@@ -52,99 +118,26 @@ class ShotgunChart extends Component {
     })
 
     const baseColor = tinycolor('rgba (155, 81, 224, 1.0)')
-    const colors = [baseColor.toRgbString(),
-      baseColor.setAlpha(0.5).toRgbString(),
-      baseColor.setAlpha(0.25).toRgbString()
-    ]
 
     const fifthData = getData('5thPercentile')
     const ninetyFifthData = getData('95thPercentile')
     const medianData = getData('Median')
 
-
     const fifth = createDataset(fifthData, baseColor, '5th Percentile')
     const ninetyFifth = createDataset(ninetyFifthData, baseColor, '95th Percentile')
     const median = createDataset(medianData, baseColor, 'Median')
 
-    const createSubGroup = (data, label) => ({
-      data: data.map((data, index) => ({
-        x: data.x,
-        y: (medianData[index].y + data.y) * .5
-      })),
-      label
-    })
 
-    const medianFifth = createSubGroup(fifthData, 'medianfifth')
-    const medianNine = createSubGroup(ninetyFifthData, 'mediannine')
 
-    const dataSets = [median, medianFifth, medianNine, fifth, ninetyFifth]
+    const medianFifth = createSubgroups(fifthData, medianData, 3, '')
+    const medianNine = createSubgroups(ninetyFifthData, medianData, 3, '')
 
-    console.log(min, max)
-    const chart = new Chart(this.chartContext,
-      {
-        type: 'line',
-        data: {
-          labels: dates,
-          datasets: dataSets.map((dataset, index) => {
-            return {
-              data: dataset.data,
-              label: dataset.label,
-              backgroundColor: baseColor.toRgbString(),
-              borderColor: baseColor.toRgbString(),
-              borderWidth: 0,
-              fill: '0'
-            }
-          })
-        },
-        options: {
-          legend: {
-            display: false
-          },
-          elements: {
-            point: {
-              radius: 0
-            },
-            line: {
-              borderWidth: 0
-            }
-          },
-          plugins: {
-            filler: {
-              propagate: true
-            }
-          },
-          scales: {
-            xAxes: [{
-              type: 'time',
-              distribution: 'series',
-              gridLines: {
-                display: false
-              },
-              ticks: {
-                autoSkip: true,
-                callback: (value) => differenceInCalendarYears(value, new Date()),
-                maxRotation: 0,
-                minRotation: 0
-              }
-            }],
-            yAxes: [{
-              type: 'linear',
+    const dataSets = [median, ...medianFifth, ...medianNine, fifth, ninetyFifth]
+    const gradient = this.chartContext.createLinearGradient(0, 0, 0, 400)
+    gradient.addColorStop(0, baseColor.toRgbString());
+    gradient.addColorStop(1, baseColor.setAlpha(clamp(.3, 1, 1 / dataSets.length)).toRgbString());
 
-              ticks: {
-                beginAtZero: false,
-                min: 0,
-                max,
-                stepSize: 1000
-              },
-              gridLines: {
-                display: false
-              },
-              stacked: false
-            }]
-          },
-          showLines: true,
-        }
-      })
+    this.chart = new Chart(this.chartContext, getShotgunConfig(dates, dataSets, baseColor))
   }
 
   render() {
