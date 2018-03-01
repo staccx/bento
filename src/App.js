@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom"
 import DevTools from "mobx-react-devtools"
 import { observer } from "mobx-react"
 import { injectGlobal } from "styled-components"
+import { themeLaser } from "./theme/themeLaser"
 import Stepper from "./components/Stepper"
 import DataTest from "./components/DataTest"
-import { themeLaser } from "./theme/themeLaser"
+import TestQuestion from "./components/TestQuestion"
 
 const elementStyles = () => injectGlobal` // Todo: Better solution for this
   html body {
@@ -29,7 +30,8 @@ class App extends Component {
                 path="/"
                 render={() => (
                   <div>
-                    start <Link to="/page1">Neste</Link>
+                    <TestQuestion />
+                    <Link to="/page1">Neste</Link>
                   </div>
                 )}
               />
