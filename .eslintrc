@@ -1,0 +1,12 @@
+{
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error"
+  },
+  "extends": [
+    "standard",
+    "standard-jsx",
+    "eslint-config-standard-react",
+    "plugin:prettier/recommended"
+  ]
+}
