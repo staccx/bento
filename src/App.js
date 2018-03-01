@@ -3,14 +3,14 @@ import { ThemeProvider, Wrapper } from "@staccx/base"
 import { BrowserRouter as Router, Link, Route } from "react-router-dom"
 import DevTools from "mobx-react-devtools"
 import { observer } from "mobx-react"
-import { injectGlobal } from "styled-components"
-import { themeLaser } from "./theme/themeLaser"
 import Stepper from "./components/Stepper"
 import DataTest from "./components/DataTest"
 import TestQuestion from "./components/TestQuestion"
+import { themeLaser } from "./theme/themeLaser"
+import ShotgunChart from "./components/ShotgunChart";
 
-const elementStyles = () => injectGlobal` // Todo: Better solution for this
-  html body {
+const elementStyles = `
+  html{
     font-family: 'Libre Franklin', sans-serif !important;
   }
 `
@@ -18,9 +18,8 @@ const elementStyles = () => injectGlobal` // Todo: Better solution for this
 @observer
 class App extends Component {
   render() {
-    elementStyles()
     return (
-      <ThemeProvider theme={themeLaser}>
+      <ThemeProvider theme={themeLaser} resets={elementStyles}>
         <div style={{ paddingTop: "48px" }}>
           <Router>
             <Wrapper>
@@ -41,6 +40,7 @@ class App extends Component {
                 render={() => (
                   <div>
                     <DataTest /> <Link to="/">Tilbake</Link>{" "}
+                    <ShotgunChart height={500} width={1000}/>
                     <Link to="/page2">Neste</Link>
                   </div>
                 )}
