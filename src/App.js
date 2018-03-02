@@ -7,12 +7,12 @@ import Stepper from "./components/Stepper"
 import DataTest from "./components/DataTest"
 import TestQuestion from "./components/TestQuestion"
 import { themeLaser } from "./theme/themeLaser"
-import ShotgunChart from "./components/ShotgunChart";
+import ShotgunChart from "./components/ShotgunChart"
 import PieChart from "./components/PieChart";
 
 const elementStyles = `
-  html{
-    font-family: 'Libre Franklin', sans-serif !important;
+  html, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Libre Franklin', sans-serif;
   }
 `
 
@@ -41,7 +41,7 @@ class App extends Component {
                 render={() => (
                   <div>
                     <DataTest /> <Link to="/">Tilbake</Link>{" "}
-                    <ShotgunChart height={500} width={1000}/>
+                    <ShotgunChart height={500} width={1000} />
                     <Link to="/page2">Neste</Link>
                   </div>
                 )}

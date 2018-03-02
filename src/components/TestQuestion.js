@@ -70,11 +70,16 @@ class TestQuestion extends React.Component {
 }
 
 const Question = styled.h1`
-  font-size: ${p => p.theme.font.size.huge};
+  font-family: ${p => p.theme.font.body};
+  font-size: ${p => p.theme.font.size.h1};
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: ${p => p.theme.spacing.large};
 `
 
 const AnswerBox = styled.label`
   display: block;
+  position: relative;
   border-radius: ${p => p.theme.borderRadius};
   margin-bottom: ${p => p.theme.spacing.medium};
   padding: 1px;
@@ -112,6 +117,13 @@ const AnswerBox = styled.label`
           `
     `};
   }
+
+  &:hover,
+  & input:focus ~ {
+    label::before {
+      border-color: ${p => p.theme.color.secondary} !important;
+    }
+  }
 `
 
 const AdvisorRadio = styled(RadioButton)`
@@ -137,10 +149,45 @@ const AdvisorRadio = styled(RadioButton)`
       : ``};
 
   > label {
+    position: static;
     display: inline-block;
     width: 100%;
     padding: ${p => p.theme.spacing.large};
     padding-left: ${p => p.theme.spacing.largePlus};
+
+    &::before,
+    &::after {
+      top: 50%;
+      left: 24px;
+      transform: translateY(-50%);
+      border-color: ${p => p.theme.color.primary};
+      border-width: 2px;
+    }
+
+    &::after {
+      background-color: ${p => p.theme.color.secondary};
+      transform: translate(4px, -50%) scale(0);
+    }
+  }
+
+  > input:checked ~ label {
+    &::before {
+      border-color: ${p => p.theme.color.white};
+    }
+
+    &::after {
+      transform: translate(4px, -50%) scale(1);
+    }
+  }
+
+  > input:checked {
+    &:focus,
+    &:active,
+    &:hover {
+      & label::before {
+        border-color: ${p => p.theme.color.white} !important;
+      }
+    }
   }
 `
 

@@ -18,6 +18,7 @@ export const themeLaser = {
   color: {
     bg: "#fff",
     primary: "#2D9CDB",
+    secondary: "#CF27AA",
     gray: "#767676",
     grayLight: "#C7C7C7",
     text: "#2b2b2b",
