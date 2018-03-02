@@ -20,13 +20,22 @@ class ExpandListItem extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.expanded !== undefined) {
+      this.setState({isExpanded: nextProps.expanded})
+    }
+  }
+
   handleChange(event) {
     this.setState({
       isExpanded: !this.state.isExpanded
     })
+    if(this.props.onClick) {
+      this.props.onClick(event)
+    }
   }
   render() {
-    const { title, children, className, flush, ...otherProps } = this.props
+    const { title, children, className, flush, onClick, ...otherProps } = this.props
     return (
       <ExpandItem className={className} {...otherProps}>
         <ExpandBtn
