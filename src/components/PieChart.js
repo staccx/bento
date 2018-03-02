@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import {inject, observer} from 'mobx-react'
 import Chart from "chart.js"
 import tinycolor from 'tinycolor2'
+import {themeLaser} from '../theme/themeLaser'
 
 const desaturate = (base, count) => new Array(count).fill(undefined).map((v, i) => tinycolor(base).desaturate(i / count * 100).toRgbString())
 
@@ -22,9 +23,6 @@ class PieChart extends Component {
     const self = this
     const {recommendedPortfolio} = this.props.apiStore
     const portfolio = recommendedPortfolio.map(portfolio => portfolio)
-    console.log(portfolio);
-    const colors = desaturate("rgba (155, 81, 224, 1.0)", portfolio.length)
-    console.log(colors);
     const dataset = {
       data: portfolio.map(p => p.weight),
     }
@@ -32,14 +30,12 @@ class PieChart extends Component {
     const data = {
       datasets: [{
         data: dataset.data.map(d => d * 100),
-        backgroundColor: colors
+        backgroundColor: themeLaser.graphColor
       }],
 
       // These labels appear in the legend and in the tooltips when hovering different arcs
       labels: portfolio.map(p => p.instrument.name)
     };
-    self.rotations = {}
-    self.startRotation = -0.5 * Math.PI
     const fullCircle = Math.PI * 2
 
     this.createChart = (ctx) => {
@@ -51,17 +47,9 @@ class PieChart extends Component {
             display: false
           },
           onClick: function (evt, elements) {
-            if (!self.startRotation) {
-              self.startRotation = self.chart.options.rotation
-            }
             if (elements && elements.length) {
               const segment = elements[0];
               const index = segment["_index"]
-
-              if (!self.rotations.hasOwnProperty(index)) {
-                self.rotations[index] = segment._model.endAngle
-              }
-
               const angleToMe = dataset.data.reduce((acc, current, i) => {
                 if (i >= index) {
                   return acc
