@@ -55,7 +55,6 @@ const getShotgunConfig = (labels, dataSets, baseColor) => ({
       }],
       yAxes: [{
         type: 'linear',
-
         ticks: {
           beginAtZero: false,
         },
