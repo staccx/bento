@@ -21,6 +21,8 @@ export const themeLaser = {
     secondary: "#CF27AA",
     gray: "#767676",
     grayLight: "#C7C7C7",
+    grayXLight: "#F4F4F4",
+    grayDark: "#4F4F4F",
     text: "#2b2b2b",
     white: "#fff",
     line: "#F2F2F2",
@@ -63,7 +65,8 @@ export const themeLaser = {
   },
   targetSize: {
     small: "36px",
-    normal: "44px"
+    normal: "44px",
+    large: "68px"
   },
   borderRadius: "15px"
 }

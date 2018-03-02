@@ -6,6 +6,7 @@ import { observer, inject } from "mobx-react"
 import Stepper from "./components/Stepper"
 import DataTest from "./components/DataTest"
 import TestQuestion from "./components/TestQuestion"
+import TestInputs from "./components/TestInputs"
 import { themeLaser } from "./theme/themeLaser"
 import ShotgunChart from "./components/ShotgunChart"
 import PieChart from "./components/PieChart"
@@ -78,7 +79,8 @@ class App extends Component {
                 path="/page4"
                 render={() => (
                   <div>
-                    Page 4 <Link to="/page3">Tilbake</Link>{" "}
+                    <TestInputs />
+                    <Link to="/page3">Tilbake</Link>{" "}
                     <Link to="/page5">Neste</Link>
                   </div>
                 )}
