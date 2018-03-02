@@ -10,15 +10,19 @@ import { themeLaser } from "./theme/themeLaser"
 import ShotgunChart from "./components/ShotgunChart"
 import PieChart from "./components/PieChart"
 import PortfolioExpand from "./components/PortfolioExpand"
+import Portfolio from "./components/Portfolio";
 
 const elementStyles = `
   html, h1, h2, h3, h4, h5, h6 {
     font-family: 'Libre Franklin', sans-serif;
   }
 `
-@inject("apiStore")
+@inject("apiStore", "uiStore")
 @observer
 class App extends Component {
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
+  }
   render() {
     return (
       <ThemeProvider theme={themeLaser} resets={elementStyles}>
@@ -43,9 +47,7 @@ class App extends Component {
                   <div>
                     <DataTest /> <Link to="/">Tilbake</Link>{" "}
                     <ShotgunChart height={500} width={1000} />
-                    <PortfolioExpand
-                      funds={this.props.apiStore.recommendedPortfolio}
-                    />
+                   <Portfolio/>
                     <Link to="/page2">Neste</Link>
                   </div>
                 )}

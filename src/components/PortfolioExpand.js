@@ -17,7 +17,7 @@ const ColorIndicator = styled.svg`
   margin-right: ${p => p.theme.spacing.small};
 `
 
-const PortfolioExpand = ({ funds }) => (
+const PortfolioExpand = ({ funds, selectedIndex, onClick }) => (
   <List>
     {funds.map((fund, index) => (
       <Expand
@@ -25,7 +25,10 @@ const PortfolioExpand = ({ funds }) => (
         title={<Title fundName={fund.instrument.name} index={index} />}
         key={fund.instrument.name}
         id={fund.instrument.name}
+        expanded={selectedIndex !== null ? selectedIndex === index : false}
+        onClick={() => onClick(index)}
       >
+        {selectedIndex}
         {fund.instrument.name} <br />
         Prosent: {fund.weight} <br />
         Pris: {fund.instrument.expenseRatio}%

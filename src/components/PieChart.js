@@ -2,12 +2,11 @@ import React, {Component} from "react"
 import PropTypes from "prop-types"
 import {inject, observer} from 'mobx-react'
 import Chart from "chart.js"
-import tinycolor from 'tinycolor2'
 import {themeLaser} from '../theme/themeLaser'
 
-const desaturate = (base, count) => new Array(count).fill(undefined).map((v, i) => tinycolor(base).desaturate(i / count * 100).toRgbString())
+const fullCircle = Math.PI * 2
 
-@inject("apiStore") @observer
+@inject("apiStore", "uiStore") @observer
 class PieChart extends Component {
   static defaultProps = {
   }
@@ -23,22 +22,21 @@ class PieChart extends Component {
     const self = this
     const {recommendedPortfolio} = this.props.apiStore
     const portfolio = recommendedPortfolio.map(portfolio => portfolio)
-    const dataset = {
+    this.dataset = {
       data: portfolio.map(p => p.weight),
     }
 
     const data = {
       datasets: [{
-        data: dataset.data.map(d => d * 100),
+        data: this.dataset.data.map(d => d * 100),
         backgroundColor: themeLaser.graphColor
       }],
-
-      // These labels appear in the legend and in the tooltips when hovering different arcs
       labels: portfolio.map(p => p.instrument.name)
     };
-    const fullCircle = Math.PI * 2
 
+    self.selectedIndex = 0
     this.createChart = (ctx) => {
+      console.log('creating chart')
       this.chart = new Chart(ctx, {
         data: data,
         type: 'doughnut',
@@ -50,27 +48,21 @@ class PieChart extends Component {
             if (elements && elements.length) {
               const segment = elements[0];
               const index = segment["_index"]
-              const angleToMe = dataset.data.reduce((acc, current, i) => {
-                if (i >= index) {
-                  return acc
-                }
-                return acc + fullCircle * current
-              }, 0)
-              const me = fullCircle * dataset.data[index] * 0.5
-              const angle = -angleToMe - me
+              const angle = self.getAngle(index)
               self.chart.options.rotation = angle
               self.chart.update();
               if (self.selectedIndex !== index) {
                 self.selectedIndex = index;
-                segment._model.outerRadius += 50;
+                segment._model.outerRadius += self.props.explodeAmount;
               }
               else {
                 self.selectedIndex = null;
               }
+              self.props.uiStore.setInstrument(self.selectedIndex)
             }
           },
           layout: {
-            padding: 50
+            padding: self.props.padding
           }
         },
 
@@ -81,6 +73,19 @@ class PieChart extends Component {
 
   componentDidUpdate() {
     this.createChart(this.chartContext)
+  }
+
+  getAngle = index => -this.getAngleToElement(index) - this.getElementDegrees(index)
+
+  getElementDegrees = index => fullCircle * this.dataset.data[index] * 0.5
+
+  getAngleToElement = (index) => {
+    return this.dataset.data.reduce((acc, current, i) => {
+      if (i >= index) {
+        return acc
+      }
+      return acc + fullCircle * current
+    }, 0)
   }
 
   render() {
