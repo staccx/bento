@@ -23,13 +23,23 @@ export const themeLaser = {
     grayLight: "#C7C7C7",
     text: "#2b2b2b",
     white: "#fff",
-    line: "#C7C7C7",
+    line: "#F2F2F2",
     wcag: "#777",
     disabled: "#BABABA",
     warning: "#E32367",
     black: "#000",
     subtleHover: "#C7C7C7"
   },
+  graphColor: [
+    "#2F80ED",
+    "#9B51E0",
+    "#BB6BD9",
+    "#5D3B9F",
+    "#56CCF2",
+    "#EB5757",
+    "#F2994A",
+    "#F2C94C"
+  ],
   gradient: {
     laser: ["#5D3B9F", "#CF27AA"],
     galaxy: ["#AB93FF", "#1CCBFF"]

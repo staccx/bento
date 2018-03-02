@@ -2,20 +2,21 @@ import React, { Component } from "react"
 import { ThemeProvider, Wrapper } from "@staccx/base"
 import { BrowserRouter as Router, Link, Route } from "react-router-dom"
 import DevTools from "mobx-react-devtools"
-import { observer } from "mobx-react"
+import { observer, inject } from "mobx-react"
 import Stepper from "./components/Stepper"
 import DataTest from "./components/DataTest"
 import TestQuestion from "./components/TestQuestion"
 import { themeLaser } from "./theme/themeLaser"
 import ShotgunChart from "./components/ShotgunChart"
-import PieChart from "./components/PieChart";
+import PieChart from "./components/PieChart"
+import PortfolioExpand from "./components/PortfolioExpand"
 
 const elementStyles = `
   html, h1, h2, h3, h4, h5, h6 {
     font-family: 'Libre Franklin', sans-serif;
   }
 `
-
+@inject("apiStore")
 @observer
 class App extends Component {
   render() {
@@ -42,6 +43,9 @@ class App extends Component {
                   <div>
                     <DataTest /> <Link to="/">Tilbake</Link>{" "}
                     <ShotgunChart height={500} width={1000} />
+                    <PortfolioExpand
+                      funds={this.props.apiStore.recommendedPortfolio}
+                    />
                     <Link to="/page2">Neste</Link>
                   </div>
                 )}
@@ -51,7 +55,7 @@ class App extends Component {
                 path="/page2"
                 render={() => (
                   <div>
-                    <PieChart/>
+                    <PieChart />
                     Page 2 <Link to="/page1">Tilbake</Link>{" "}
                     <Link to="/page3">Neste</Link>
                   </div>
