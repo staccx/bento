@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { List, ExpandListItem } from "@staccx/base"
+import { List, ExpandListItem, Wrapper } from "@staccx/base"
 import Fraction from "./Fraction"
+import Donut from "./Donut"
 
 const Title = ({ fundName, index }) => (
   <React.Fragment>
@@ -28,11 +29,34 @@ const PortfolioExpand = ({ funds, selectedIndex, onClick }) => (
         expanded={selectedIndex !== null ? selectedIndex === index : false}
         onClick={() => onClick(index)}
       >
-        {selectedIndex}
-        {fund.instrument.name} <br />
-        Prosent: {fund.weight} <br />
-        Pris: {fund.instrument.expenseRatio}%
-        <Fraction value={3} max={6} />
+        <Wrapper size="small">
+          <Halves>
+            <div>
+              <Mb>
+                <Label>Risk</Label>
+                <Fraction value={3} max={6} />
+              </Mb>
+              <Mb>
+                <Label>Ethical</Label>
+                <Fraction value={2} max={3} />
+              </Mb>
+              <Mb>
+                <Label>{fund.weight} of portfolio</Label>
+                <Donut percentage={fund.weight} />
+              </Mb>
+            </div>
+            <div>
+              <Mb>
+                <Label>Price</Label>
+                {fund.instrument.expenseRatio}%
+              </Mb>
+              <Mb>
+                <Label>Type</Label>
+                {fund.assetClass.label}
+              </Mb>
+            </div>
+          </Halves>
+        </Wrapper>
       </Expand>
     ))}
   </List>
@@ -50,7 +74,7 @@ const Expand = styled(ExpandListItem)`
     max-width: 100%;
     margin-bottom: -1px;
     position: relative;
-    padding: ${p => p.theme.spacing.medium};
+    padding: ${p => p.theme.spacing.medium} 0;
     &::before {
       content: "";
       position: absolute;
@@ -60,6 +84,29 @@ const Expand = styled(ExpandListItem)`
       width: 6px;
       background-color: ${p => p.theme.graphColor[p.index]};
     }
+  }
+`
+
+const Label = styled.div`
+  font-weight: bold;
+  display: block;
+  color: ${p => p.theme.color.wcag};
+`
+
+const Mb = styled.div`
+  &:not(:last-child) {
+    margin-bottom: ${p => p.theme.spacing.medium};
+  }
+`
+
+const Halves = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: ${p => p.theme.spacing.small};
+  grid-template-areas: "left right";
+  @media (max-width: 560px) {
+    grid-template-columns: 100%;
+    grid-template-areas: "one";
   }
 `
 

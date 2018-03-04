@@ -54,7 +54,7 @@ export const themeLaser = {
       h4: "18px",
       h5: "16px",
       h6: "16px",
-      base: "16px",
+      base: "14px",
       small: "14px",
       tiny: "12px",
       input: "16px",
