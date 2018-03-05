@@ -2,14 +2,15 @@
 # yarn lockfile v1
 
 
-"@staccx/base@^0.12.0":
-  version "0.12.0"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-0.12.0.tgz#392c1b9bfa48e36265fe0996c2c534f3c9641cf6"
+"@staccx/base@^0.14.1":
+  version "0.14.1"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-0.14.1.tgz#fa74c9ef28f5ab3fcb4253846765fa0730a0642c"
   dependencies:
     accounting "^0.4.1"
     downshift "^1.28.0"
     easing-utils "^0.0.7"
     lerna "^2.8.0"
+    polished "^1.9.2"
     prettier "^1.10.2"
     prop-types "^15.6.0"
     text-mask-addons "^3.7.1"
