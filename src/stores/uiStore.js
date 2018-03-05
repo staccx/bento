@@ -33,7 +33,10 @@ class UIStore {
     }
   }
 
-  @action setDepositStart = (value) => this.depositStart = clamp(0, 1000000, value)
+  @action setDepositStart = (value) => {
+    const clamped = clamp(0, 1000000, value)
+    this.depositStart = clamped
+  }
   @action setDepositMonthly = (value) => this.depositMonthly = clamp(0, 1000000, value)
 }
 

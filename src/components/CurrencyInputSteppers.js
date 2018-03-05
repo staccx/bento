@@ -9,11 +9,12 @@ const CurrencyInputSteppers = ({
   value,
   onIncrement,
   onDecrement,
+  onChange,
   ...restProps
 }) => {
     return (
     <Outer {...restProps}>
-      <Input label={label} name={id} value={value} id={id} suffix={''} />
+      <Input label={label} name={id} value={value} id={id} suffix={''} onChange={onChange} guide={false}/>
       <Buttons>
         <StepperButton onClick={onIncrement} primary>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

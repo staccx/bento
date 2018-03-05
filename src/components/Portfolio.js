@@ -1,31 +1,15 @@
 import React, { Component } from "react"
-import styled, { css } from "styled-components"
 import { inject, observer } from "mobx-react"
 import PieChart from "./PieChart"
 import PortfolioExpand from "./PortfolioExpand"
 import PortfolioFilter from "./PortfolioFilter"
 import ShotgunChart from "./ShotgunChart"
 import CurrencyInputSteppers from "./CurrencyInputSteppers"
+import styled, { css } from "styled-components"
+import stringTrimAll from "../utils/stringTrimAll";
 import { Heading1, Heading2 } from "../styles/headings"
 
 const explodeAmount = 20
-
-const DEPOSIT_START = "deposit/START_DEPOSIT"
-const DEPOSIT_MONTHLY = "deposit/MONTHLY_DEPOSIT"
-const inputs = [
-  {
-    id: DEPOSIT_START,
-    label: "Første innskudd",
-    defaultValue: 0,
-    incrementBy: 5000
-  },
-  {
-    id: DEPOSIT_MONTHLY,
-    label: "Månedlig innskudd",
-    defaultValue: 2000,
-    incrementBy: 1000
-  }
-]
 
 @inject("apiStore", "uiStore")
 @observer
@@ -59,14 +43,14 @@ class Portfolio extends Component {
     }, delay)
   }
 
-  handleDepositStart = value => {
+  handleInputChange = (value, isStart = true, addToExisting = true) => {
     const {uiStore} = this.props
-    uiStore.setDepositStart(value + uiStore.depositStart)
-  }
+    value = parseInt(stringTrimAll(value.toString()))
+    const func = isStart ? uiStore.setDepositStart : uiStore.setDepositMonthly
+    const val = value + (addToExisting ? isStart ? uiStore.depositStart : uiStore.depositMonthly
+      :0)
 
-  handleDepositMonthly = value => {
-    const {uiStore} = this.props
-    uiStore.setDepositMonthly(value + uiStore.depositMonthly)
+    func(parseInt(stringTrimAll(val.toString())))
   }
 
   render() {
@@ -80,16 +64,18 @@ class Portfolio extends Component {
             label={"Første innskudd"}
             name={"deposit/START_DEPOSIT"}
             value={depositStart}
-            onIncrement={() => this.handleDepositStart(2000)}
-            onDecrement={() => this.handleDepositStart(-2000)}
+            onIncrement={() => this.handleInputChange(2000)}
+            onDecrement={() => this.handleInputChange(-2000)}
+            onChange={e => this.handleInputChange(e.target.value, true, false)}
             id={"deposit_start"}
           />
           <CurrencyInputSteppers
             label={"Månedlig innskudd"}
             name={"deposit/MONTHLY_DEPOSIT"}
             value={depositMonthly}
-            onIncrement={() => this.handleDepositMonthly(2000)}
-            onDecrement={() => this.handleDepositMonthly(-2000)}
+            onIncrement={() => this.handleInputChange(2000, false)}
+            onDecrement={() => this.handleInputChange(-2000, false)}
+            onChange={e => this.handleInputChange(e.target.value, false, false)}
             id={"deposit_monthly"}
           />
         </InputsWrapper>

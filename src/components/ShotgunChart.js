@@ -5,7 +5,7 @@ import {inject, observer} from 'mobx-react'
 import tinycolor from 'tinycolor2'
 import {differenceInCalendarYears} from 'date-fns'
 import {lerp, clamp, coserp} from "@staccx/base"
-import {parseDate} from "../utils/parseString";
+import {parseDate} from "../utils/parseDate";
 import {colorTransparent} from "../utils/colorTransparent";
 
 
