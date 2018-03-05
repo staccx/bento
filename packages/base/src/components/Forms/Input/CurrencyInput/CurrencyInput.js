@@ -11,7 +11,7 @@ const CurrencyInput = ({ ...props }) => {
     delete props[key]
   })
   delete props["mask"]
-  const value = props.value.toString()
+  const value = props.value ? props.value.toString() : '0'
   const mask = createMask(value)
   return <Input type="number" mask={mask} {...props} />
 }
