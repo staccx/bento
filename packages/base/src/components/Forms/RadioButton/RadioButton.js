@@ -57,7 +57,7 @@ const RadioWrapper = styled.div`
   padding-bottom: ${p => p.theme.spacing.small};
 
   &:hover,
-  ${Radio}:focus ~ {
+  ${Radio}:focus ~  {
     ${Label} {
       &::before {
         border-color: ${p => p.theme.color.wcag};

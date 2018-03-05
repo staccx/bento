@@ -63,6 +63,7 @@
     "downshift": "^1.28.0",
     "easing-utils": "^0.0.7",
     "lerna": "^2.8.0",
+    "polished": "^1.9.2",
     "prettier": "^1.10.2",
     "prop-types": "^15.6.0",
     "text-mask-addons": "^3.7.1",

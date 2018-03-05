@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import VisuallyHidden from "../../Styles/VisuallyHidden"
+import hideVisually from "../../Styles/hideVisually"
 
 const Icon = ({ className }) => (
   <svg
@@ -148,7 +148,7 @@ const Close = styled.button`
     fill: ${p => p.theme.color.primary};
   }
   span {
-    ${VisuallyHidden};
+    ${hideVisually};
   }
 `
 
