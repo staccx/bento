@@ -2,7 +2,7 @@ import React from "react"
 import { number } from "prop-types"
 import styled from "styled-components"
 import Digit from "./Digit"
-import VisuallyHidden from "../../../Styles/VisuallyHidden"
+import hideVisually from "../../../Styles/hideVisually"
 
 class Odometer extends React.PureComponent {
   constructor(...props) {
@@ -70,11 +70,11 @@ class Odometer extends React.PureComponent {
 }
 
 const OdometerAnimating = styled.div`
-  ${p => (!p.isAnimating ? VisuallyHidden : "")};
+  ${p => (!p.isAnimating ? hideVisually : "")};
   display: flex;
 `
 const OdometerStatic = styled.div`
-  ${p => (p.isAnimating ? VisuallyHidden : "")};
+  ${p => (p.isAnimating ? hideVisually : "")};
   display: flex;
 `
 

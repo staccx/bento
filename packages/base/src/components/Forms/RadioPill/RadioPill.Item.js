@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import VisuallyHidden from "../../../Styles/VisuallyHidden"
+import hideVisually from "../../../Styles/hideVisually"
 
 const RadioPillItem = ({
   children,
@@ -45,7 +45,7 @@ const Label = styled.label`
 `
 
 const Radio = styled.input`
-  ${VisuallyHidden};
+  ${hideVisually};
   &:checked {
     ~ ${Label} {
       color: ${p => p.theme.color.primary};
@@ -85,7 +85,7 @@ const RadioWrapper = styled.div`
   }
 
   &:hover,
-  ${Radio}:focus ~ {
+  ${Radio}:focus ~  {
     ${Label} {
       z-index: 1;
       border-color: ${p => p.theme.color.primary};

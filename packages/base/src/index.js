@@ -59,6 +59,7 @@ import multiplyPixelValue from "./functions/multiplyPixelValue"
 
 // styles
 import fontSmoothing from "./Styles/fontsmoothing"
+import hideVisually from "./Styles/hideVisually"
 
 export {
   Box,
@@ -76,11 +77,12 @@ export {
   extend,
   Flag,
   fontSmoothing,
+  hideVisually,
   InlineListItem,
   Input,
+  inverseLerp,
   Label,
   lerp,
-  inverseLerp,
   LinkListItem,
   List,
   Modal,
