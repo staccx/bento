@@ -55,6 +55,8 @@ import inverseLerp from "./functions/inverseLerp"
 import lerp from "./functions/lerp"
 import coserp from "./functions/cosineInterpolate"
 import clamp from "./functions/clamp"
+import multiplyPixelValue from "./functions/multiplyPixelValue"
+
 // styles
 import fontSmoothing from "./Styles/fontsmoothing"
 
@@ -82,6 +84,7 @@ export {
   LinkListItem,
   List,
   Modal,
+  multiplyPixelValue,
   Odometer,
   Pack,
   PackItem,
