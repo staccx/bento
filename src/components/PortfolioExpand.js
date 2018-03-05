@@ -113,13 +113,14 @@ const Mb = styled.div`
 `
 
 const Halves = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: ${p => p.theme.spacing.small};
-  grid-template-areas: "left right";
-  @media (max-width: 560px) {
-    grid-template-columns: 100%;
-    grid-template-areas: "one";
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  > * {
+    flex-basis: 50%;
+    &:not(:last-child) {
+      padding-right: ${p => p.theme.spacing.medium};
+    }
   }
 `
 
