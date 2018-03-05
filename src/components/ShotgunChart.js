@@ -6,6 +6,9 @@ import tinycolor from 'tinycolor2'
 import {differenceInCalendarYears} from 'date-fns'
 import {lerp, clamp, coserp} from "@staccx/base"
 import {parseDate} from "../utils/parseString";
+import {colorTransparent} from "../utils/colorTransparent";
+
+
 
 const getShotgunConfig = (labels, dataSets, baseColor) => ({
   type: 'line',
@@ -15,9 +18,6 @@ const getShotgunConfig = (labels, dataSets, baseColor) => ({
       return {
         data: dataSet.data,
         label: dataSet.label,
-        backgroundColor: baseColor.toRgbString(),
-        fill: '0',
-        borderColor: baseColor.toRgbString(),
       }
     })
   },
@@ -27,16 +27,20 @@ const getShotgunConfig = (labels, dataSets, baseColor) => ({
     },
     elements: {
       point: {
-        radius: 0
+        radius: 5,
+        borderWidth: 0,
+        backgroundColor: colorTransparent,
+        borderColor: colorTransparent
       },
       line: {
         borderWidth: 1,
-        fill: false
+        backgroundColor: baseColor.toRgbString(),
+        fill: '0'
       }
     },
     plugins: {
       filler: {
-        propagate: true
+        propagate: false,
       }
     },
     scales: {
