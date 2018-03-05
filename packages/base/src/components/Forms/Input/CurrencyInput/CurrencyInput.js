@@ -1,9 +1,15 @@
 import React from "react"
 import Input, { InputDefaultProps, InputPropTypes } from "../Input"
-import { createCurrencyMask } from "../../../../functions/Currency/currency"
+import { createCurrencyMask, currencyMaskOptions } from "../../../../functions/Currency/currency"
 
 const CurrencyInput = ({ ...props }) => {
-  const mask = createCurrencyMask({ ...props })
+  const createMask = createCurrencyMask({ ...props })
+  Object.keys(currencyMaskOptions).forEach(key => {
+    delete props[key]
+  })
+  delete props["mask"]
+  const value = props.value.toString()
+  const mask = createMask(value)
   return <Input type="number" mask={mask} {...props} />
 }
 

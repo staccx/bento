@@ -13,7 +13,7 @@ const allowNegative = false
 const allowLeadingZeroes = false
 const integerLimit = null
 
-const currencyMaskOptions = {
+export const currencyMaskOptions = {
   prefix,
   suffix,
   includeThousandsSeparator,
