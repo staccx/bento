@@ -42,7 +42,7 @@ const PortfolioExpand = ({ funds, selectedIndex, onClick }) => (
                 <Fraction value={2} max={3} />
               </Mb>
               <Mb>
-                <Label>{fund.weight} of portfolio</Label>
+                <Label>{fund.weight * 100}% of portfolio</Label>
                 <Donut percentage={fund.weight} />
               </Mb>
             </div>
