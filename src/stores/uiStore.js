@@ -3,6 +3,7 @@ import { action, observable } from "mobx"
 import Portfolio from "../components/Portfolio"
 import Experience from "../Questions/Experience"
 import Intro from "../pages/Intro"
+import {clamp} from "@staccx/base"
 
 class UIStore {
   @observable
@@ -19,18 +20,21 @@ class UIStore {
   @observable currentStep = 0
   @observable maxStep = 0
 
-  @action
-  setInstrument = instrument =>
-    (this.selectedInstrument =
-      instrument === this.selectedInstrument ? null : instrument)
+  @observable depositStart = 0
+  @observable depositMonthly = 2000
 
-  @action
-  setStep = step => {
+
+  @action setInstrument = (instrument) => this.selectedInstrument = instrument === this.selectedInstrument ? null : instrument
+
+  @action setStep = (step) => {
     this.currentStep = step
     if (step > this.maxStep) {
       this.maxStep = step
     }
   }
+
+  @action setDepositStart = (value) => this.depositStart = clamp(0, 1000000, value)
+  @action setDepositMonthly = (value) => this.depositMonthly = clamp(0, 1000000, value)
 }
 
 export default UIStore

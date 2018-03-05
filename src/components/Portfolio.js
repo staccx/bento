@@ -10,15 +10,17 @@ import { Heading1, Heading2 } from "../styles/headings"
 
 const explodeAmount = 20
 
+const DEPOSIT_START = "deposit/START_DEPOSIT"
+const DEPOSIT_MONTHLY = "deposit/MONTHLY_DEPOSIT"
 const inputs = [
   {
-    id: "asdai8w23",
+    id: DEPOSIT_START,
     label: "Første innskudd",
     defaultValue: 0,
     incrementBy: 5000
   },
   {
-    id: "124i0hrq",
+    id: DEPOSIT_MONTHLY,
     label: "Månedlig innskudd",
     defaultValue: 2000,
     incrementBy: 1000
@@ -30,7 +32,6 @@ const inputs = [
 class Portfolio extends Component {
   constructor(props, context) {
     super(props, context)
-    this.handleIncrement = this.handleIncrement.bind(this)
   }
 
   componentDidMount() {
@@ -58,30 +59,39 @@ class Portfolio extends Component {
     }, delay)
   }
 
-  handleIncrement = value => {
-    console.log(value)
+  handleDepositStart = value => {
+    const {uiStore} = this.props
+    uiStore.setDepositStart(value + uiStore.depositStart)
+  }
+
+  handleDepositMonthly = value => {
+    const {uiStore} = this.props
+    uiStore.setDepositMonthly(value + uiStore.depositMonthly)
   }
 
   render() {
-    const { selectedInstrument, setInstrument } = this.props.uiStore
+    const { selectedInstrument, setInstrument, depositStart, depositMonthly } = this.props.uiStore
     return (
       <div>
         <Heading1>Your portfolio</Heading1>
         <PortfolioFilter />
         <InputsWrapper>
-          {inputs.map(input => (
-            <InputItem key={input.id}>
-              <CurrencyInputSteppers
-                label={input.label}
-                name={input.id}
-                defaultValue={input.defaultValue}
-                incrementBy={input.incrementBy}
-                onIncrement={this.handleIncrement}
-                onDecrement={this.handleIncrement}
-                id={input.id}
-              />
-            </InputItem>
-          ))}
+          <CurrencyInputSteppers
+            label={"Første innskudd"}
+            name={"deposit/START_DEPOSIT"}
+            value={depositStart}
+            onIncrement={() => this.handleDepositStart(2000)}
+            onDecrement={() => this.handleDepositStart(-2000)}
+            id={"deposit_start"}
+          />
+          <CurrencyInputSteppers
+            label={"Månedlig innskudd"}
+            name={"deposit/MONTHLY_DEPOSIT"}
+            value={depositMonthly}
+            onIncrement={() => this.handleDepositMonthly(2000)}
+            onDecrement={() => this.handleDepositMonthly(-2000)}
+            id={"deposit_monthly"}
+          />
         </InputsWrapper>
         <Heading2> Forecasted annual return</Heading2>
         <ShotgunChart height={500} width={1000} />

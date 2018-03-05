@@ -6,25 +6,16 @@ import { CurrencyInput, Button, multiplyPixelValue } from "@staccx/base"
 const CurrencyInputSteppers = ({
   label,
   id,
-  defaultValue,
-  incrementBy,
+  value,
   onIncrement,
   onDecrement,
   ...restProps
 }) => {
-  const increment = value => {
-    if (value > 0) {
-      onIncrement(value)
-    } else {
-      onDecrement(value)
-    }
-  }
-
-  return (
+    return (
     <Outer {...restProps}>
-      <Input label={label} name={id} value={defaultValue} id={id} />
+      <Input label={label} name={id} value={value} id={id} suffix={''} />
       <Buttons>
-        <StepperButton onClick={() => increment(Math.abs(incrementBy))} primary>
+        <StepperButton onClick={onIncrement} primary>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
             <g fillRule="evenodd">
               <g fillRule="nonzero">
@@ -33,7 +24,7 @@ const CurrencyInputSteppers = ({
             </g>
           </svg>
         </StepperButton>
-        <StepperButton onClick={() => increment(-Math.abs(incrementBy))}>
+        <StepperButton onClick={onDecrement}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 2">
             <g fillRule="evenodd">
               <g fillRule="nonzero">
@@ -106,15 +97,10 @@ const StepperButton = styled(Button)`
   }
 `
 
-CurrencyInputSteppers.defaultProps = {
-  incrementBy: 1000
-}
-
 CurrencyInputSteppers.propTypes = {
   label: PropTypes.string,
   id: PropTypes.string,
-  defaultValue: PropTypes.number,
-  incrementBy: PropTypes.number,
+  value: PropTypes.number,
   onIncrement: PropTypes.func,
   onDecrement: PropTypes.func
 }
