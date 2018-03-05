@@ -55,6 +55,8 @@ import inverseLerp from "./functions/inverseLerp"
 import lerp from "./functions/lerp"
 import coserp from "./functions/cosineInterpolate"
 import clamp from "./functions/clamp"
+// styles
+import fontSmoothing from "./Styles/fontsmoothing"
 
 export {
   Box,
@@ -71,6 +73,7 @@ export {
   ExpandListItem,
   extend,
   Flag,
+  fontSmoothing,
   InlineListItem,
   Input,
   Label,
