@@ -19,22 +19,20 @@ const Showing = ({ risk, duration, sectors }) => {
 }
 
 const PortfolioFilter = () => (
-  <Wrapper>
-    <List>
-      <Expand
-        title={
-          <Showing
-            risk="medium"
-            duration="short"
-            sectors={["Europe", "Digitalization"]}
-          />
-        }
-        id="gfdgsfd54"
-      >
-        Filter
-      </Expand>
-    </List>
-  </Wrapper>
+  <List>
+    <Expand
+      title={
+        <Showing
+          risk="medium"
+          duration="short"
+          sectors={["Europe", "Digitalization"]}
+        />
+      }
+      id="gfdgsfd54"
+    >
+      Filter
+    </Expand>
+  </List>
 )
 
 const Expand = styled(ExpandListItem)`
