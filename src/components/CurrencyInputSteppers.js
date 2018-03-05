@@ -63,6 +63,7 @@ const Input = styled(CurrencyInput)`
     border-width: 0;
     border-bottom: 2px solid ${p => p.theme.color.line};
     font-size: ${p => p.theme.font.size.h1};
+    background-color: transparent;
     transition: border 0.2s ease;
 
     &:hover,

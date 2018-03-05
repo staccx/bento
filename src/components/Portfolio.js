@@ -1,16 +1,37 @@
-import React, {Component} from "react"
-import {inject, observer} from "mobx-react"
+import React, { Component } from "react"
+import { inject, observer } from "mobx-react"
 import PieChart from "./PieChart"
 import PortfolioExpand from "./PortfolioExpand"
-import PortfolioFilter from "./PortfolioFilter";
-import ShotgunChart from "./ShotgunChart";
-import styled, {css} from "styled-components";
+import PortfolioFilter from "./PortfolioFilter"
+import ShotgunChart from "./ShotgunChart"
+import CurrencyInputSteppers from "./CurrencyInputSteppers"
+import styled, { css } from "styled-components"
 
 const explodeAmount = 20
+
+const inputs = [
+  {
+    id: "asdai8w23",
+    label: "Første innskudd",
+    defaultValue: 0,
+    incrementBy: 5000
+  },
+  {
+    id: "124i0hrq",
+    label: "Månedlig innskudd",
+    defaultValue: 2000,
+    incrementBy: 1000
+  }
+]
 
 @inject("apiStore", "uiStore")
 @observer
 class Portfolio extends Component {
+  constructor(props, context) {
+    super(props, context)
+    this.handleIncrement = this.handleIncrement.bind(this)
+  }
+
   componentDidMount() {
     this.pieChart = this.pieChartInjector.wrappedInstance
     this.updatePie(this.props.uiStore.selectedInstrument, 1000)
@@ -36,17 +57,33 @@ class Portfolio extends Component {
     }, delay)
   }
 
+  handleIncrement = value => {
+    console.log(value)
+  }
+
   render() {
-    const {selectedInstrument, setInstrument} = this.props.uiStore
+    const { selectedInstrument, setInstrument } = this.props.uiStore
     return (
       <div>
         <Heading1>Your portfolio</Heading1>
-        <PortfolioFilter/>
-        <Heading2> Forecasted
-          annual
-          return
-        </Heading2>
-        <ShotgunChart height={500} width={1000}/>
+        <PortfolioFilter />
+        <InputsWrapper>
+          {inputs.map(input => (
+            <InputItem key={input.id}>
+              <CurrencyInputSteppers
+                label={input.label}
+                name={input.id}
+                defaultValue={input.defaultValue}
+                incrementBy={input.incrementBy}
+                onIncrement={this.handleIncrement}
+                onDecrement={this.handleIncrement}
+                id={input.id}
+              />
+            </InputItem>
+          ))}
+        </InputsWrapper>
+        <Heading2> Forecasted annual return</Heading2>
+        <ShotgunChart height={500} width={1000} />
         <div>
           <Heading2>Suggested portfolio</Heading2>
           <PortfolioWrapper>
@@ -76,38 +113,53 @@ const PortfolioWrapper = styled.div`
   grid-gap: ${p => p.theme.spacing.large};
   grid-template-areas: "left right";
   @media (max-width: 735px) {
-    grid - gap: ${p => p.theme.spacing.medium};
+    grid-gap: ${p => p.theme.spacing.medium};
   }
   @media (max-width: 710px) {
-    grid - template - columns: 100%;
+    grid-template-columns: 100%;
     grid-template-areas: "one";
   }
 
   > canvas {
-    margin - top: ${p => p.theme.spacing.medium};
+    margin-top: ${p => p.theme.spacing.medium};
     width: 100% !important;
     height: auto !important;
   }
-  `
+`
 
 const Heading = css`
   text-align: center;
   font-weight: 100;
   margin-top: ${p => p.theme.spacing.huge};
-  `
+`
 
 const Heading1 = styled.h1`
   ${Heading};
   font-size: ${p => p.theme.font.size.h1};
   color: ${p => p.theme.color.grayDark};
   margin-bottom: ${p => p.theme.spacing.medium};
-  `
+`
 
 const Heading2 = styled.h2`
   ${Heading};
   font-size: ${p => p.theme.font.size.h2};
   color: ${p => p.theme.color.wcag};
-  `
+`
 
+const InputsWrapper = styled.div`
+  display: flex;
+  max-width: 540px;
+  margin: ${p => p.theme.spacing.large} auto;
+`
+
+const InputItem = styled.div`
+  position: relative;
+  margin-right: ${p => p.theme.spacing.small};
+
+  &:last-child {
+    margin-right: 0;
+    margin-left: ${p => p.theme.spacing.small};
+  }
+`
 
 export default Portfolio
