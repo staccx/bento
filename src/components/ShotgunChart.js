@@ -139,7 +139,12 @@ class ShotgunChart extends Component {
 
   render() {
     return (
-      <canvas ref={node => this.chartContext = node.getContext('2d')}
+      <canvas ref={node => {
+        if (!node) {
+          return
+        }
+        this.chartContext = node.getContext('2d')
+      }}
               id={this.props.chartId}
               width={this.props.width}
               height={this.props.height}>

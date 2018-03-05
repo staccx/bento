@@ -3,6 +3,7 @@ import {inject, observer} from 'mobx-react'
 import styled from 'styled-components'
 import PieChart from "./PieChart";
 import PortfolioExpand from "./PortfolioExpand";
+import ShotgunChart from "./ShotgunChart";
 
 const explodeAmount = 20
 
@@ -28,12 +29,12 @@ class Portfolio extends Component {
   updatePie(index, delay = 200) {
     this.pieChart.selectedIndex = index
     setTimeout(() => {
-      if(index !== null) {
+      if (index !== null) {
         const angle = this.pieChart.getAngle(index)
         this.pieChart.chart.options.rotation = angle
       }
       this.pieChart.chart.update()
-      if(index !== null) {
+      if (index !== null) {
         const doughnut = this.pieChart.chart.getDatasetMeta(0)
         const data = doughnut.data[index]
         data._model.outerRadius += explodeAmount
@@ -44,14 +45,18 @@ class Portfolio extends Component {
   render() {
     const {selectedInstrument, setInstrument} = this.props.uiStore
     return (
-      <PortfolioWrapper>
-        <PieChart ref={node => this.pieChartInjector = node} padding={30} explodeAmount={explodeAmount}/>
-        <PortfolioExpand
-          funds={this.props.apiStore.recommendedPortfolio}
-          selectedIndex={selectedInstrument}
-          onClick={setInstrument}
-        />
-      </PortfolioWrapper>
+      <div>
+        <ShotgunChart height={50} width={100}/>
+        <PortfolioWrapper>
+
+          <PieChart ref={node => this.pieChartInjector = node} padding={30} explodeAmount={explodeAmount}/>
+          <PortfolioExpand
+            funds={this.props.apiStore.recommendedPortfolio}
+            selectedIndex={selectedInstrument}
+            onClick={setInstrument}
+          />
+        </PortfolioWrapper>
+      </div>
     );
   }
 }
