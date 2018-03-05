@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const Donut = ({ percentage }) => {
   const dash = 57
-  const dashoffset = 57 * percentage
+  const dashoffset = 57 * percentage - 57
   console.log(dashoffset)
   return (
     <Graph viewBox="0 0 24 24" width="24" height="24">
@@ -28,11 +28,11 @@ const Graph = styled.svg`
 `
 
 const Bg = styled.circle`
-  stroke: ${p => p.theme.color.primary};
+  stroke: ${p => p.theme.color.line};
 `
 
 const Value = styled.circle`
-  stroke: ${p => p.theme.color.line};
+  stroke: ${p => p.theme.color.primary};
   stroke-dasharray: ${p => p.dash};
   stroke-dashoffset: ${p => p.dashoffset};
 `
