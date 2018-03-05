@@ -21,12 +21,12 @@ class Portfolio extends Component {
   updatePie(index, delay = 200) {
     this.pieChart.selectedIndex = index
     setTimeout(() => {
-      if(index !== null) {
+      if (index !== null) {
         const angle = this.pieChart.getAngle(index)
         this.pieChart.chart.options.rotation = angle
       }
       this.pieChart.chart.update()
-      if(index !== null) {
+      if (index !== null) {
         const doughnut = this.pieChart.chart.getDatasetMeta(0)
         const data = doughnut.data[index]
         data._model.outerRadius += explodeAmount
@@ -56,7 +56,7 @@ class Portfolio extends Component {
 Portfolio.propTypes = {}
 
 const PortfolioWrapper = styled.div`
-  padding-top: ${p => p.theme.spacing.huge};
+  padding-top: ${p => p.theme.spacing.large};
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: ${p => p.theme.spacing.large};

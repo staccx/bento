@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import styled, { css } from "styled-components"
 import { ThemeProvider, Wrapper } from "@staccx/base"
 import { BrowserRouter as Router, Link, Route } from "react-router-dom"
 import DevTools from "mobx-react-devtools"
@@ -11,7 +12,7 @@ import { themeLaser } from "./theme/themeLaser"
 import ShotgunChart from "./components/ShotgunChart"
 import PieChart from "./components/PieChart"
 import PortfolioExpand from "./components/PortfolioExpand"
-import Portfolio from "./components/Portfolio";
+import Portfolio from "./components/Portfolio"
 
 const elementStyles = `
   html, h1, h2, h3, h4, h5, h6 {
@@ -46,9 +47,14 @@ class App extends Component {
                 path="/page1"
                 render={() => (
                   <div>
-                    <DataTest /> <Link to="/">Tilbake</Link>{" "}
+                    <DataTest />
+                    <Heading1>Your portfolio</Heading1>
+                    <Heading2>Forecasted annual return</Heading2>
                     <ShotgunChart height={500} width={1000} />
-                   <Portfolio/>
+                    <div>
+                      <Heading2>Suggested portfolio</Heading2>
+                      <Portfolio />
+                    </div>
                     <Link to="/page2">Neste</Link>
                   </div>
                 )}
@@ -113,5 +119,23 @@ class App extends Component {
     )
   }
 }
+
+const Heading = css`
+  text-align: center;
+  font-weight: 100;
+  margin-top: ${p => p.theme.spacing.huge};
+`
+
+const Heading1 = styled.h1`
+  ${Heading};
+  font-size: ${p => p.theme.font.size.h1};
+  color: ${p => p.theme.color.black};
+`
+
+const Heading2 = styled.h2`
+  ${Heading};
+  font-size: ${p => p.theme.font.size.h2};
+  color: ${p => p.theme.color.wcag};
+`
 
 export default App
