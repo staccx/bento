@@ -99,7 +99,7 @@ const StepperButton = styled(Button)`
   }
 
   > svg {
-    width: 17px;
+    width: 20px;
     vertical-align: middle;
     fill: currentColor;
   }
