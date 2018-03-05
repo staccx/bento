@@ -28,12 +28,16 @@ class Portfolio extends Component {
   updatePie(index, delay = 200) {
     this.pieChart.selectedIndex = index
     setTimeout(() => {
-      const angle = this.pieChart.getAngle(index)
-      const doughnut = this.pieChart.chart.getDatasetMeta(0)
-      const data = doughnut.data[index]
-      this.pieChart.chart.options.rotation = angle
+      if(index !== null) {
+        const angle = this.pieChart.getAngle(index)
+        this.pieChart.chart.options.rotation = angle
+      }
       this.pieChart.chart.update()
-      data._model.outerRadius += explodeAmount
+      if(index !== null) {
+        const doughnut = this.pieChart.chart.getDatasetMeta(0)
+        const data = doughnut.data[index]
+        data._model.outerRadius += explodeAmount
+      }
     }, delay)
   }
 

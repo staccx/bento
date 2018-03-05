@@ -8,11 +8,20 @@ const fullCircle = Math.PI * 2
 
 @inject("apiStore", "uiStore") @observer
 class PieChart extends Component {
-  static defaultProps = {
-  }
+  static defaultProps = {}
 
   static propTypes = {
     apiStore: PropTypes.any
+  }
+  getAngle = index => -this.getAngleToElement(index) - this.getElementDegrees(index)
+  getElementDegrees = index => fullCircle * this.dataset.data[index] * 0.5
+  getAngleToElement = (index) => {
+    return this.dataset.data.reduce((acc, current, i) => {
+      if (i >= index) {
+        return acc
+      }
+      return acc + fullCircle * current
+    }, 0)
   }
 
   componentDidMount() {
@@ -44,6 +53,16 @@ class PieChart extends Component {
           legend: {
             display: false
           },
+          tooltips: {
+            callbacks: {
+              label: (item, data) => {
+                const value = data.datasets[item.datasetIndex].data[item.index]
+                const name = data.labels[item.index]
+
+                return `${name}: ${value}%`
+              }
+            }
+          },
           onClick: function (evt, elements) {
             if (elements && elements.length) {
               const segment = elements[0];
@@ -73,19 +92,6 @@ class PieChart extends Component {
 
   componentDidUpdate() {
     this.createChart(this.chartContext)
-  }
-
-  getAngle = index => -this.getAngleToElement(index) - this.getElementDegrees(index)
-
-  getElementDegrees = index => fullCircle * this.dataset.data[index] * 0.5
-
-  getAngleToElement = (index) => {
-    return this.dataset.data.reduce((acc, current, i) => {
-      if (i >= index) {
-        return acc
-      }
-      return acc + fullCircle * current
-    }, 0)
   }
 
   render() {
