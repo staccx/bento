@@ -11,12 +11,8 @@
 ```
 
 ```jsx harmony
-<CurrencyInput value={1234.01} requireDecimal={true}/>
-```
-
-```jsx harmony
 <div>
-    <CurrencyInput value={1234.01} suffix={' EUR'}/>
-    <CurrencyInput value={1234.01} prefix={'€'} suffix={''}/>
+    <CurrencyInput value={1234}  suffix={' EUR'}/>
+    <CurrencyInput value={1234} prefix={'€'} suffix={''}/>
 </div>
 ```
