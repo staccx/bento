@@ -1,26 +1,51 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { CurrencyInput, Button } from "@staccx/base"
+import { CurrencyInput, Button, multiplyPixelValue } from "@staccx/base"
 
 const CurrencyInputSteppers = ({
   label,
   id,
   defaultValue,
+  incrementBy,
   onIncrement,
   onDecrement,
   ...restProps
-}) => (
-  <Outer {...restProps}>
-    <Input label={label} name={id} defaultValue={defaultValue} id={id} />
-    <Buttons>
-      <StepperButton onChange={onIncrement} primary>
-        +
-      </StepperButton>
-      <StepperButton onChange={onDecrement}>-</StepperButton>
-    </Buttons>
-  </Outer>
-)
+}) => {
+  const increment = value => {
+    if (value > 0) {
+      onIncrement(value)
+    } else {
+      onDecrement(value)
+    }
+  }
+
+  return (
+    <Outer {...restProps}>
+      <Input label={label} name={id} defaultValue={defaultValue} id={id} />
+      <Buttons>
+        <StepperButton onClick={() => increment(Math.abs(incrementBy))} primary>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <g fillRule="evenodd">
+              <g fillRule="nonzero">
+                <polygon points="9 0 9 9 0 9 0 11 9 11 9 20 11 20 11 11 20 11 20 9 11 9 11 0" />
+              </g>
+            </g>
+          </svg>
+        </StepperButton>
+        <StepperButton onClick={() => increment(-Math.abs(incrementBy))}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 2">
+            <g fillRule="evenodd">
+              <g fillRule="nonzero">
+                <polygon points="0 0 0 2 20 2 20 0" />
+              </g>
+            </g>
+          </svg>
+        </StepperButton>
+      </Buttons>
+    </Outer>
+  )
+}
 
 const Outer = styled.div`
   position: relative;
@@ -38,11 +63,13 @@ const Input = styled(CurrencyInput)`
     border-width: 0;
     border-bottom: 2px solid ${p => p.theme.color.line};
     font-size: ${p => p.theme.font.size.h1};
+    transition: border 0.2s ease;
 
     &:hover,
     &:active,
     &:focus {
-      background-color: ${p => p.theme.color.grayXLight};
+      background-color: transparent;
+      border-color: ${p => p.theme.color.secondary};
     }
   }
 `
@@ -50,21 +77,43 @@ const Input = styled(CurrencyInput)`
 const Buttons = styled.div`
   position: absolute;
   right: 0;
-  top: 50%;
+  bottom: ${p => multiplyPixelValue(p.theme.targetSize.large, 0.5)};
+  transform: translateY(50%);
 `
 
 const StepperButton = styled(Button)`
+  margin-bottom: 0;
   border-radius: 50%;
   min-width: ${p => p.theme.targetSize.small};
   min-height: ${p => p.theme.targetSize.small};
   padding: 0;
-  background-color: ${p => (p.primary ? p.theme.grayDark : p.theme.grayLight)};
+  color: ${p => (p.primary ? p.theme.color.white : p.theme.color.text)};
+  background-color: ${p =>
+    p.primary ? p.theme.color.grayDark : p.theme.color.grayLight};
+  transition: background 0.2s ease;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: ${p => p.theme.color.secondary};
+  }
+
+  > svg {
+    width: 17px;
+    vertical-align: middle;
+    fill: currentColor;
+  }
 `
+
+CurrencyInputSteppers.defaultProps = {
+  incrementBy: 1000
+}
 
 CurrencyInputSteppers.propTypes = {
   label: PropTypes.string,
   id: PropTypes.string,
   defaultValue: PropTypes.number,
+  incrementBy: PropTypes.number,
   onIncrement: PropTypes.func,
   onDecrement: PropTypes.func
 }

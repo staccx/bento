@@ -55,7 +55,7 @@ const PortfolioExpand = ({ funds, selectedIndex, onClick }) => (
                   margin={6}
                 >
                   <SparklinesLine
-                    style={{ strokeWidth: 3, stroke: "#336aff", fill: "none" }}
+                    style={{ strokeWidth: 3, stroke: "#2D9CDB", fill: "none" }}
                   />
                 </Sparklines>
               </Mb>
