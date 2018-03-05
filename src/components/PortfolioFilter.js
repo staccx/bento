@@ -2,11 +2,33 @@ import React from "react"
 import styled from "styled-components"
 import { List, ExpandListItem, Wrapper, fontSmoothing } from "@staccx/base"
 
+const Showing = ({ risk, duration, sectors }) => {
+  return (
+    <span>
+      Showing <strong>{risk}</strong> risk, <strong>{duration} term</strong>,
+      with extra focus on{" "}
+      <strong>
+        {sectors.length > 1
+          ? sectors.slice(0, sectors.length - 1).join(", ") +
+            " & " +
+            sectors.slice(-1).map(sector => sector)
+          : sectors}
+      </strong>
+    </span>
+  )
+}
+
 const PortfolioFilter = () => (
   <Wrapper>
     <List>
       <Expand
-        title="Showing medium risk, long term with sectors for Europe & Digitalisation"
+        title={
+          <Showing
+            risk="medium"
+            duration="short"
+            sectors={["Europe", "Digitalization"]}
+          />
+        }
         id="gfdgsfd54"
       >
         Filter
