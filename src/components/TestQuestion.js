@@ -3,24 +3,6 @@ import styled from "styled-components"
 import { rgba } from "polished"
 import { CheckGroup, RadioButton } from "@staccx/base"
 
-const content = {
-  title: "Har du erfaring med fond eller investeringer?",
-  answers: [
-    {
-      id: "8924qdwsacv",
-      heading: "Jeg har ikke investert før",
-      body: "Pengene står kanskje på høyrentekonto?",
-      value: "no"
-    },
-    {
-      id: "wt4iw12",
-      heading: "Jeg har investert før",
-      body: "Du har kanskje investert i fond eller aksjer",
-      value: "yes"
-    }
-  ]
-}
-
 class TestQuestion extends React.Component {
   constructor(props, context) {
     super(props, context)
@@ -39,6 +21,7 @@ class TestQuestion extends React.Component {
 
   render() {
     const { selected } = this.state
+    const { content } = this.props
     return (
       <AnswersWrapper>
         <Question>{content.title}</Question>

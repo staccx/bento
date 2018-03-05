@@ -1,17 +1,18 @@
+import React from "react"
 import { action, observable } from "mobx"
-import Intro from "../pages/Intro"
-import TestQuestion from "../components/TestQuestion"
 import Portfolio from "../components/Portfolio"
+import Experience from "../Questions/Experience"
+import Intro from "../pages/Intro"
 
 class UIStore {
   @observable
   steps = [
     { name: "Start", component: Intro },
-    { name: "Experience", component: TestQuestion },
-    { name: "Purpose", component: TestQuestion },
-    { name: "Risk", component: TestQuestion },
-    { name: "Theme", component: TestQuestion },
-    { name: "Investments", component: TestQuestion },
+    { name: "Experience", component: Experience },
+    { name: "Purpose", component: Experience },
+    { name: "Risk", component: Experience },
+    { name: "Theme", component: Experience },
+    { name: "Investments", component: Experience },
     { name: "Portfolio", component: Portfolio }
   ]
   @observable selectedInstrument = 0
