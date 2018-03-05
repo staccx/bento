@@ -11,8 +11,8 @@ import TestInputs from "./components/TestInputs"
 import { themeLaser } from "./theme/themeLaser"
 import ShotgunChart from "./components/ShotgunChart"
 import PieChart from "./components/PieChart"
-import PortfolioExpand from "./components/PortfolioExpand"
 import Portfolio from "./components/Portfolio"
+import PortfolioFilter from "./components/PortfolioFilter"
 
 const elementStyles = `
   html, h1, h2, h3, h4, h5, h6 {
@@ -49,6 +49,7 @@ class App extends Component {
                   <div>
                     <DataTest />
                     <Heading1>Your portfolio</Heading1>
+                    <PortfolioFilter />
                     <Heading2>Forecasted annual return</Heading2>
                     <ShotgunChart height={500} width={1000} />
                     <div>
@@ -129,7 +130,8 @@ const Heading = css`
 const Heading1 = styled.h1`
   ${Heading};
   font-size: ${p => p.theme.font.size.h1};
-  color: ${p => p.theme.color.black};
+  color: ${p => p.theme.color.grayDark};
+  margin-bottom: ${p => p.theme.spacing.medium};
 `
 
 const Heading2 = styled.h2`

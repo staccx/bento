@@ -1,14 +1,14 @@
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
-import Chart from 'chart.js'
-import {inject, observer} from 'mobx-react'
-import tinycolor from 'tinycolor2'
-import {differenceInCalendarYears} from 'date-fns'
-import {lerp, clamp, coserp} from "@staccx/base"
-import {parseDate} from "../utils/parseString";
+import React, { Component } from "react"
+import PropTypes from "prop-types"
+import Chart from "chart.js"
+import { inject, observer } from "mobx-react"
+import tinycolor from "tinycolor2"
+import { differenceInCalendarYears } from "date-fns"
+import { clamp, coserp } from "@staccx/base"
+import { parseDate } from "../utils/parseString"
 
 const getShotgunConfig = (labels, dataSets, baseColor) => ({
-  type: 'line',
+  type: "line",
   data: {
     labels,
     datasets: dataSets.map((dataSet, index) => {
@@ -16,8 +16,8 @@ const getShotgunConfig = (labels, dataSets, baseColor) => ({
         data: dataSet.data,
         label: dataSet.label,
         backgroundColor: baseColor.toRgbString(),
-        fill: '0',
-        borderColor: baseColor.toRgbString(),
+        fill: "0",
+        borderColor: baseColor.toRgbString()
       }
     })
   },
@@ -40,48 +40,53 @@ const getShotgunConfig = (labels, dataSets, baseColor) => ({
       }
     },
     scales: {
-      xAxes: [{
-        type: 'time',
-        distribution: 'series',
-        gridLines: {
-          display: false
-        },
-        ticks: {
-          autoSkip: true,
-          callback: (value) => `${differenceInCalendarYears(value, new Date())} years`,
-          maxRotation: 0,
-          minRotation: 0
+      xAxes: [
+        {
+          type: "time",
+          distribution: "series",
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            autoSkip: true,
+            callback: value =>
+              `${differenceInCalendarYears(value, new Date())} years`,
+            maxRotation: 0,
+            minRotation: 0
+          }
         }
-      }],
-      yAxes: [{
-        type: 'linear',
-        ticks: {
-          beginAtZero: false,
-        },
-        gridLines: {
-          display: false
-        },
-        stacked: false
-      }]
+      ],
+      yAxes: [
+        {
+          type: "linear",
+          ticks: {
+            beginAtZero: false
+          },
+          gridLines: {
+            display: false
+          },
+          stacked: false
+        }
+      ]
     },
-    showLines: true,
+    showLines: true
   }
 })
 
 const createSubgroups = (data, other, amount = 3, label) => {
   return new Array(amount).fill(undefined).map((v, i) => ({
-      data: data.map((data, index) => {
-        return {
-          x: data.x,
-          y: coserp(other[index].y, data.y, i / amount)
-        }
-      }),
-      label: label + i
-    })
-  )
+    data: data.map((data, index) => {
+      return {
+        x: data.x,
+        y: coserp(other[index].y, data.y, i / amount)
+      }
+    }),
+    label: label + i
+  }))
 }
 
-@inject('apiStore') @observer
+@inject("apiStore")
+@observer
 class ShotgunChart extends Component {
   static propTypes = {
     chartId: PropTypes.string,
@@ -96,54 +101,68 @@ class ShotgunChart extends Component {
   }
 
   componentDidMount() {
-    const {forecast} = this.props.apiStore.marketReturns
+    const { forecast } = this.props.apiStore.marketReturns
     const keys = Object.keys(forecast)
     const dates = parseDate(keys)
     let max = 0
     let min = 1000000
 
-    const getData = prop => keys.map((key, index) => {
-      const value = forecast[key][prop]
-      if (value > max) max = value
-      if (value < min) min = value
-      return {
-        x: dates[index],
-        y: value
-      }
-    })
+    const getData = prop =>
+      keys.map((key, index) => {
+        const value = forecast[key][prop]
+        if (value > max) max = value
+        if (value < min) min = value
+        return {
+          x: dates[index],
+          y: value
+        }
+      })
 
     const createDataset = (data, backgroundColor, label) => ({
-      data, backgroundColor, label
+      data,
+      backgroundColor,
+      label
     })
 
-    const baseColor = tinycolor('rgba (155, 81, 224, 1.0)')
+    const baseColor = tinycolor("rgba (155, 81, 224, 1.0)")
 
-    const fifthData = getData('5thPercentile')
-    const ninetyFifthData = getData('95thPercentile')
-    const medianData = getData('Median')
+    const fifthData = getData("5thPercentile")
+    const ninetyFifthData = getData("95thPercentile")
+    const medianData = getData("Median")
 
-    const fifth = createDataset(fifthData, baseColor, '5th Percentile')
-    const ninetyFifth = createDataset(ninetyFifthData, baseColor, '95th Percentile')
-    const median = createDataset(medianData, baseColor, 'Median')
+    const fifth = createDataset(fifthData, baseColor, "5th Percentile")
+    const ninetyFifth = createDataset(
+      ninetyFifthData,
+      baseColor,
+      "95th Percentile"
+    )
+    const median = createDataset(medianData, baseColor, "Median")
 
-    const medianFifth = createSubgroups(fifthData, medianData, 3, '')
-    const medianNine = createSubgroups(ninetyFifthData, medianData, 3, '')
+    const medianFifth = createSubgroups(fifthData, medianData, 3, "")
+    const medianNine = createSubgroups(ninetyFifthData, medianData, 3, "")
 
     const dataSets = [median, ...medianFifth, ...medianNine, fifth, ninetyFifth]
     const gradient = this.chartContext.createLinearGradient(0, 0, 0, 400)
-    gradient.addColorStop(0, baseColor.toRgbString());
-    gradient.addColorStop(1, baseColor.setAlpha(clamp(.3, 1, 1 / dataSets.length)).toRgbString());
+    gradient.addColorStop(0, baseColor.toRgbString())
+    gradient.addColorStop(
+      1,
+      baseColor.setAlpha(clamp(0.3, 1, 1 / dataSets.length)).toRgbString()
+    )
 
-    this.chart = new Chart(this.chartContext, getShotgunConfig(dates, dataSets, baseColor))
+    this.chart = new Chart(
+      this.chartContext,
+      getShotgunConfig(dates, dataSets, baseColor)
+    )
   }
 
   render() {
     return (
-      <canvas ref={node => this.chartContext = node.getContext('2d')}
-              id={this.props.chartId}
-              width={this.props.width}
-              height={this.props.height}>
-      </canvas>
+      <canvas
+        ref={node => (this.chartContext = node.getContext("2d"))}
+        id={this.props.chartId}
+        width={this.props.width}
+        height={this.props.height}
+      />
     )
   }
 }
