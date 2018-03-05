@@ -1,11 +1,12 @@
 import React, { Component } from "react"
+import styled, { css } from "styled-components"
 import { inject, observer } from "mobx-react"
 import PieChart from "./PieChart"
 import PortfolioExpand from "./PortfolioExpand"
 import PortfolioFilter from "./PortfolioFilter"
 import ShotgunChart from "./ShotgunChart"
 import CurrencyInputSteppers from "./CurrencyInputSteppers"
-import styled, { css } from "styled-components"
+import { Heading1, Heading2 } from "../styles/headings"
 
 const explodeAmount = 20
 
@@ -125,25 +126,6 @@ const PortfolioWrapper = styled.div`
     width: 100% !important;
     height: auto !important;
   }
-`
-
-const Heading = css`
-  text-align: center;
-  font-weight: 100;
-  margin-top: ${p => p.theme.spacing.huge};
-`
-
-const Heading1 = styled.h1`
-  ${Heading};
-  font-size: ${p => p.theme.font.size.h1};
-  color: ${p => p.theme.color.grayDark};
-  margin-bottom: ${p => p.theme.spacing.medium};
-`
-
-const Heading2 = styled.h2`
-  ${Heading};
-  font-size: ${p => p.theme.font.size.h2};
-  color: ${p => p.theme.color.wcag};
 `
 
 const InputsWrapper = styled.div`

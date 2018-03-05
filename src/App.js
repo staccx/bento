@@ -11,9 +11,9 @@ import { themeLaser } from "./theme/themeLaser"
 import ShotgunChart from "./components/ShotgunChart"
 import PieChart from "./components/PieChart"
 import PortfolioExpand from "./components/PortfolioExpand"
-import Portfolio from "./components/Portfolio";
-import StepperNavigation from "./components/StepNavigation";
-import StepContent from "./components/StepContent";
+import Portfolio from "./components/Portfolio"
+import StepperNavigation from "./components/StepNavigation"
+import StepContent from "./components/StepContent"
 
 const elementStyles = `
   html, h1, h2, h3, h4, h5, h6 {
@@ -33,8 +33,8 @@ class App extends Component {
           <Router>
             <Wrapper>
               <Stepper />
-              <StepContent/>
-              <StepperNavigation/>
+              <StepContent />
+              <StepperNavigation />
             </Wrapper>
           </Router>
           <DevTools />
