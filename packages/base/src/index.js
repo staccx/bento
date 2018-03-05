@@ -42,6 +42,7 @@ import Odometer from "./components/Formatters/Odometer/Odometer"
 
 // Dataviz
 import ProgressBar from "./components/DataViz/ProgressBar/ProgressBar"
+import Fraction from "./components/DataViz/Fraction/Fraction"
 
 import Modal from "./components/Modal/Modal"
 
@@ -76,6 +77,7 @@ export {
   ExpandListItem,
   extend,
   Flag,
+  Fraction,
   fontSmoothing,
   hideVisually,
   InlineListItem,
