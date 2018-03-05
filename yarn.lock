@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@staccx/base@^0.11.2":
-  version "0.11.2"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-0.11.2.tgz#5c8202a5de65ee54d9c2b8e7bb35f5e733b77fd1"
+"@staccx/base@^0.12.0":
+  version "0.12.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-0.12.0.tgz#392c1b9bfa48e36265fe0996c2c534f3c9641cf6"
   dependencies:
     accounting "^0.4.1"
     downshift "^1.28.0"
