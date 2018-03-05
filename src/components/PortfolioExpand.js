@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Sparklines, SparklinesLine } from "react-sparklines"
 import { List, ExpandListItem, Wrapper } from "@staccx/base"
 import Fraction from "./Fraction"
 import Donut from "./Donut"
@@ -46,6 +47,18 @@ const PortfolioExpand = ({ funds, selectedIndex, onClick }) => (
               </Mb>
             </div>
             <div>
+              <Mb>
+                <Label>Last 5 years</Label>
+                <Sparklines
+                  data={[5, 10, 5, 10, 8, 10, 5, 10, 8, 4, 5, 2, 8, 15]}
+                  height={25}
+                  margin={6}
+                >
+                  <SparklinesLine
+                    style={{ strokeWidth: 3, stroke: "#336aff", fill: "none" }}
+                  />
+                </Sparklines>
+              </Mb>
               <Mb>
                 <Label>Price</Label>
                 {fund.instrument.expenseRatio}%
