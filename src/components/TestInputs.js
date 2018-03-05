@@ -38,6 +38,9 @@ class TestInputs extends React.Component {
                 label={input.label}
                 name={input.id}
                 defaultValue={input.defaultValue}
+                incrementBy={input.incrementBy}
+                onIncrement={this.handleIncrement}
+                onDecrement={this.handleIncrement}
                 id={input.id}
               />
             </InputItem>
