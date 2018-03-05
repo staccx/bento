@@ -1,9 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Sparklines, SparklinesLine } from "react-sparklines"
-import { List, ExpandListItem, Wrapper } from "@staccx/base"
-import Fraction from "./Fraction"
-import Donut from "./Donut"
+import { List, ExpandListItem, Wrapper, Fraction, Donut } from "@staccx/base"
 
 const Title = ({ fundName, index }) => (
   <React.Fragment>
