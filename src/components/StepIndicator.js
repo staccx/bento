@@ -1,26 +1,33 @@
 import React from "react"
-import styled from "styled-components"
-import {inject, observer} from 'mobx-react'
+import styled, { keyframes } from "styled-components"
+import { inject, observer } from "mobx-react"
 
-@inject('uiStore') @observer
+@inject("uiStore")
+@observer
 class StepIndicator extends React.Component {
+  componentWillUpdate() {
+    this.flipIt = !this.flipIt
+  }
   render() {
     const { uiStore } = this.props
-    const {maxStep, currentStep, steps, setStep} = uiStore
-    const progress = (currentStep) / steps.length
+    const { maxStep, currentStep, steps, setStep } = uiStore
+    const progress = (currentStep + 1) / steps.length
+    const gridColumns =
+      "[1] auto [2] auto [3] auto [4] auto [5] auto [6] auto [7] auto"
     return (
-      <StepperOuter progress={progress * 100 + "%"}>
+      <StepperOuter>
         {steps.map((step, index) => {
           if (index <= maxStep) {
             return (
-              <StepLink
+              <Step
                 key={step.name}
-                id={`step-${index}`}
                 current={index === currentStep}
-                onClick={() => setStep(index)}
+                progress={progress}
               >
-                {step.name}
-              </StepLink>
+                <StepLink id={`step-${index}`} onClick={() => setStep(index)}>
+                  {step.name}
+                </StepLink>
+              </Step>
             )
           }
           return (
@@ -33,46 +40,74 @@ class StepIndicator extends React.Component {
             </Step>
           )
         })}
+        <StepBar progress={currentStep + 2} flipIt={this.flipIt} />
       </StepperOuter>
     )
   }
 }
-const StepperOuter = styled.ol`
-  position: relative;
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 10px;
-  max-width: none;
-  padding: ${p => p.theme.spacing.small} ${p => p.theme.spacing.large};
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: ${p => p.theme.gradient.galaxy[0]};
-    background-image: linear-gradient(
-      to right,
-      ${p => p.theme.gradient.galaxy[0]} 0%,
-      ${p => p.theme.gradient.galaxy[1]} ${p => p.progress},
-      ${p => p.theme.color.grayLight} ${p => p.progress},
-      ${p => p.theme.color.grayLight} 100%
-    );
+const rubberBand = keyframes`
+  from {
+    transform: scaleX(0.9) translateY(1px);
+  }
+
+  to {
+    transform: scaleX(1) translateY(1px);
   }
 `
 
-const Step = styled.li`
+const rubberBand2 = keyframes`
+  from {
+    transform: scaleX(0.89) translateY(1px);
+  }
+
+  to {
+    transform: scaleX(1) translateY(1px);
+  }
+`
+
+const StepperOuter = styled.nav`
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-template-rows: repeat(2, auto);
+  max-width: none;
+  border-bottom: 1px solid ${p => p.theme.color.grayLight};
+`
+
+const Step = styled.div`
+  padding-bottom: ${p => p.theme.spacing.small};
   text-align: center;
   font-size: ${p => p.theme.font.size.small};
   color: ${p => (p.current ? p.theme.color.text : p.theme.color.grayLight)};
+  grid-row: 1;
 `
 
-const StepLink = Step.withComponent("a").extend`
+const StepBar = styled.div`
+  grid-row: 2;
+  grid-column-start: 1;
+  grid-column-end: ${p => p.progress};
+  height: 1px;
+  transform: translateY(1px);
+  background-color: ${p => p.theme.gradient.galaxy[0]};
+  background-image: linear-gradient(
+    to right,
+    ${p => p.theme.gradient.galaxy[0]} 0%,
+    ${p => p.theme.gradient.galaxy[1]} 100%
+  );
+  transform-origin: left;
+  ${p =>
+    p.flipIt
+      ? `animation: ${rubberBand} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1;`
+      : `animation: ${rubberBand2} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1;`}
+}
+`
+
+const StepLink = styled.a`
   text-decoration: none;
-  
+  color: inherit;
   cursor: pointer;
+
   &:hover,
   &:active,
   &:focus {
