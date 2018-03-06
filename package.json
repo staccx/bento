@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@staccx/base": "^0.14.2",
+    "@staccx/base": "^0.15.0",
     "axios": "^0.18.0",
     "chart.js": "^2.7.1",
     "date-fns": "^1.29.0",
