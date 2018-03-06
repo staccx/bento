@@ -5,6 +5,9 @@ import { inject, observer } from "mobx-react"
 @inject("uiStore")
 @observer
 class StepIndicator extends React.Component {
+  componentWillUpdate() {
+    this.flipIt = !this.flipIt
+  }
   render() {
     const { uiStore } = this.props
     const { maxStep, currentStep, steps, setStep } = uiStore
@@ -37,7 +40,7 @@ class StepIndicator extends React.Component {
             </Step>
           )
         })}
-        <StepBar progress={currentStep + 2} />
+        <StepBar progress={currentStep + 2} flipIt={this.flipIt} />
       </StepperOuter>
     )
   }
@@ -63,7 +66,7 @@ const rubberBand2 = keyframes`
   }
 `
 
-const StepperOuter = styled.ol`
+const StepperOuter = styled.nav`
   position: relative;
   display: grid;
   grid-template-columns: repeat(7, auto);
@@ -72,7 +75,7 @@ const StepperOuter = styled.ol`
   border-bottom: 1px solid ${p => p.theme.color.grayLight};
 `
 
-const Step = styled.li`
+const Step = styled.div`
   padding-bottom: ${p => p.theme.spacing.small};
   text-align: center;
   font-size: ${p => p.theme.font.size.small};
@@ -94,7 +97,7 @@ const StepBar = styled.div`
   );
   transform-origin: left;
   ${p =>
-    p.progress % 2
+    p.flipIt
       ? `animation: ${rubberBand} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1;`
       : `animation: ${rubberBand2} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1;`}
 }
