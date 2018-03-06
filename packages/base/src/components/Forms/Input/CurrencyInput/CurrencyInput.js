@@ -16,8 +16,7 @@ const CurrencyInput = ({ ...props }) => {
 
 CurrencyInput.propTypes = InputPropTypes
 CurrencyInput.defaultProps = {
-  ...InputDefaultProps,
-  value: 0
+  ...InputDefaultProps
 }
 
 export default CurrencyInput

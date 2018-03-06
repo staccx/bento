@@ -2,7 +2,7 @@ import accounting from "accounting"
 import createNumberMask from "text-mask-addons/src/createNumberMask"
 
 const prefix = ""
-const suffix = " NOK"
+const suffix = ""
 const includeThousandsSeparator = true
 const thousandsSeparatorSymbol = " "
 const allowDecimal = true
