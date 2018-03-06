@@ -17,6 +17,7 @@ class UIStore {
     { name: "Portfolio", component: Portfolio }
   ]
   @observable selectedInstrument = 0
+
   @observable currentStep = 0
   @observable maxStep = 0
 

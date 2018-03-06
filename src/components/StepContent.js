@@ -1,19 +1,83 @@
 import React, {Component} from 'react';
 import {inject, observer} from 'mobx-react'
+import {Animations} from '@staccx/base'
+import styled, {keyframes} from "styled-components"
+import {Transition, TransitionGroup} from "react-transition-group";
+import StepperNavigation from "./StepNavigation"
+
+const duration = 666;
+
+const Wrapper = styled.div`
+position: relative;
+`
+
+const getBezier = out => out ? `cubic-bezier(0.55, 0.055, 0.675, 0.19)` : `cubic-bezier(0.215, 0.61, 0.355, 1)`
+
+const Enter = styled.div`
+animation: ${Animations.SlideInFromRight} ${p => getBezier(p.direction)} ${duration}ms ${p => p.direction === 1 ? 'normal' : 'reverse'} forwards 1;
+position: absolute;
+width: 100%;
+`
+
+const Exit = styled.div`
+animation: ${Animations.SlideInFromLeft} ${p => getBezier(p.direction)} ${duration}ms ${p => p.direction !== 1 ? 'normal' : 'reverse'} forwards 1;
+position: absolute;
+width: 100%;
+`
+
+const transitionStyles = (direction) => direction === 1 ? {
+  entering: null,
+  entered: Enter,
+  exiting: Exit,
+  exited: null
+} :
+  {
+    entering: null,
+    entered: Exit,
+    exiting: Enter,
+    exited: null
+  };
+
+
+const Slide = ({children, isIn: inProp, direction = 1}) => (
+  <Transition in={inProp} timeout={duration}>
+    {(state) => {
+      const Animation = transitionStyles(direction)[state]
+      if (!Animation) {
+        return null
+      }
+      return (
+          <Animation direction={direction}>
+            {children}
+          </Animation>
+      )
+    }}
+  </Transition>
+);
 
 @inject('uiStore') @observer
 class StepContent extends Component {
+  componentWillMount() {
+    this.last = this.props.uiStore.currentStep
+  }
+
   render() {
-    const {steps, currentStep} = this.props.uiStore
-    const current = steps[currentStep]
-    if (!current) {
-      return null
-    }
-    const Comp = current.component
+    const {currentStep, steps} = this.props.uiStore
+    const direction = this.last > currentStep ? -1 : 1
+    this.last = currentStep
     return (
-      <div>
-        <Comp/>
-      </div>
+      <TransitionGroup component={Wrapper}>
+        {steps.map((item, index) => {
+          const Comp = item.component
+          const isIn = index === currentStep
+          return (
+            <Slide isIn={isIn} key={item.name} direction={direction}>
+              <Comp/>
+              <StepperNavigation/>
+            </Slide>
+          )
+        })}
+      </TransitionGroup>
     );
   }
 }
