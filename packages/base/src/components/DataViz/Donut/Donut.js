@@ -5,7 +5,6 @@ import styled from "styled-components"
 const Donut = ({ percentage, className, ...rest }) => {
   const dash = 57
   const dashoffset = 57 * percentage - 57
-  console.log(dashoffset)
   return (
     <Graph
       viewBox="0 0 24 24"

@@ -115,3 +115,17 @@ export const AppearIn = keyframes`
     transform: translateX(0);
   }
 `
+
+export default {
+  AppearIn,
+  BounceOut,
+  BounceIn,
+  FadeIn,
+  FadeInFromTop,
+  ScaleIn,
+  ScaleInX,
+  ScaleInY,
+  SlideInFromLeft,
+  SlideInFromRight,
+  SlideInFromTop
+}
