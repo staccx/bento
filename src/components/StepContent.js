@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {inject, observer} from 'mobx-react'
 import {Animations} from '@staccx/base'
-import styled, {keyframes} from "styled-components"
+import styled from "styled-components"
 import {Transition, TransitionGroup} from "react-transition-group";
 import StepperNavigation from "./StepNavigation"
 
