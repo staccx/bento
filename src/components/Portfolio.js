@@ -6,7 +6,7 @@ import PortfolioFilter from "./PortfolioFilter"
 import ShotgunChart from "./ShotgunChart"
 import CurrencyInputSteppers from "./CurrencyInputSteppers"
 import styled, { css } from "styled-components"
-import stringTrimAll from "../utils/stringTrimAll";
+import stringTrimAll from "../utils/stringTrimAll"
 import { Heading1, Heading2 } from "../styles/headings"
 
 const explodeAmount = 20
@@ -44,17 +44,25 @@ class Portfolio extends Component {
   }
 
   handleInputChange = (value, isStart = true, addToExisting = true) => {
-    const {uiStore} = this.props
+    const { uiStore } = this.props
     value = parseInt(stringTrimAll(value.toString()))
     const func = isStart ? uiStore.setDepositStart : uiStore.setDepositMonthly
-    const val = value + (addToExisting ? isStart ? uiStore.depositStart : uiStore.depositMonthly
-      :0)
+    const val =
+      value +
+      (addToExisting
+        ? isStart ? uiStore.depositStart : uiStore.depositMonthly
+        : 0)
 
     func(parseInt(stringTrimAll(val.toString())))
   }
 
   render() {
-    const { selectedInstrument, setInstrument, depositStart, depositMonthly } = this.props.uiStore
+    const {
+      selectedInstrument,
+      setInstrument,
+      depositStart,
+      depositMonthly
+    } = this.props.uiStore
     return (
       <div>
         <Heading1>Your portfolio</Heading1>
@@ -128,6 +136,10 @@ const InputsWrapper = styled.div`
   display: flex;
   max-width: 540px;
   margin: ${p => p.theme.spacing.large} auto;
+
+  > *:first-child {
+    margin-right: ${p => p.theme.spacing.large};
+  }
 `
 
 const InputItem = styled.div`
