@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React from "react"
-import styled, {css} from "styled-components"
-import {observable} from "mobx";
-import {inject, observer} from "mobx-react";
-import {easeOutQuad} from "easing-utils";
-import {lerp} from "@staccx/base";
+import styled, { css } from "styled-components"
+import { observable } from "mobx"
+import { inject, observer } from "mobx-react"
+import { easeOutQuad } from "easing-utils"
+import { lerp } from "@staccx/base"
 
 const content = {
   title: "What do you do if there is a strong market decline?",
@@ -38,7 +38,8 @@ const content = {
   ]
 }
 
-@inject("uiStore") @observer
+@inject("uiStore")
+@observer
 class Risk extends React.Component {
   static defaultProps = {
     easingFunction: easeOutQuad,
@@ -65,7 +66,7 @@ class Risk extends React.Component {
   }
 
   incrementWave() {
-    const {currentRisk} = this.props.uiStore
+    const { currentRisk } = this.props.uiStore
     if (this.tick >= this.ticks) {
       clearTimeout(this.timeout)
       window.cancelAnimationFrame(this._frameId)
@@ -85,7 +86,7 @@ class Risk extends React.Component {
     clearTimeout(this.timeout)
     window.cancelAnimationFrame(this._frameId)
     if (this.current !== index) {
-      const {setRisk} = this.props.uiStore
+      const { setRisk } = this.props.uiStore
       this.start = this.current
       this.end = index
       this.tick = 0
@@ -108,10 +109,12 @@ class Risk extends React.Component {
               index={index}
               key={index}
               onClick={() => this.handleClick(index)}
-              neighbor={this.current === index - 1 || this.current === index + 1}
+              neighbor={
+                this.current === index - 1 || this.current === index + 1
+              }
               selected={this.current === index}
             >
-              <WaveElement/>
+              <WaveElement />
             </WaveHover>
           ))}
         </WaveWrapper>
@@ -168,7 +171,8 @@ const WaveHover = styled.span`
   flex-grow: 1;
   cursor: pointer;
   ${WaveElement} {
-    transform: ${p => p.selected ? "scaleY(1.8)" : p.neighbor ? "scaleY(1.4)" : "scaleY(1)"};
+    transform: ${p =>
+      p.selected ? "scaleY(1.8)" : p.neighbor ? "scaleY(1.4)" : "scaleY(1)"};
   }
 `
 

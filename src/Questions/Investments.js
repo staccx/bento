@@ -162,8 +162,10 @@ const ImageCheck = styled(CheckBox)`
       z-index: 10;
     }
 
-    &::after {
+    svg {
       fill: ${p => p.theme.color.white};
+      width: 24px;
+      height: 24px;
       left: auto;
       right: 9px;
       top: 9px;
