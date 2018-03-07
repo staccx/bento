@@ -4,7 +4,7 @@ import styled, { css } from "styled-components"
 import { observable } from "mobx"
 import { inject, observer } from "mobx-react"
 import { easeOutQuad } from "easing-utils"
-import { lerp } from "@staccx/base"
+import { lerp, clamp } from "@staccx/base"
 
 const content = {
   title: "What do you do if there is a strong market decline?",
@@ -83,6 +83,7 @@ class Risk extends React.Component {
   }
 
   handleClick(index) {
+    index = clamp(0, this.props.waves - 1, Math.round(index))
     clearTimeout(this.timeout)
     window.cancelAnimationFrame(this._frameId)
     if (this.current !== index) {
@@ -101,7 +102,7 @@ class Risk extends React.Component {
     return (
       <Space>
         <LabelWrapper>
-          {content.answers.map(e => <Label key={e.id}>{e.heading}</Label>)}
+          {content.answers.map((e, i) => <Label  onClick={() => this.handleClick(i  * (this.props.waves / (content.answers.length -1)))} key={e.id}>{e.heading}</Label>)}
         </LabelWrapper>
         <WaveWrapper>
           {waveArray.map((e, index) => (
