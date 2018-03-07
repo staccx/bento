@@ -12,8 +12,7 @@ class StepIndicator extends React.Component {
     const { uiStore } = this.props
     const { maxStep, currentStep, steps, setStep } = uiStore
     const progress = (currentStep + 1) / steps.length
-    const gridColumns =
-      "[1] auto [2] auto [3] auto [4] auto [5] auto [6] auto [7] auto"
+
     return (
       <StepperOuter>
         {steps.map((step, index) => {

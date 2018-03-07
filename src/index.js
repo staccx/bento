@@ -10,7 +10,7 @@ import WebFont from "webfontloader"
 const apiStore = new ApiStore()
 apiStore.getResult()
 const uiStore = new UIStore()
-uiStore.setStep(1)
+uiStore.setStep(5)
 WebFont.load({
   google: {
     families: ["Libre Baskerville:700", "Libre Franklin:400,600"]
