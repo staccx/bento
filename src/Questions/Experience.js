@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { Toggle } from "@staccx/base"
+import {Toggle} from "@staccx/base"
+import {inject, observer} from "mobx-react"
 
 const content = {
   title: "Do you have experience with funds or investments?",
@@ -20,21 +21,27 @@ const content = {
   ]
 }
 
-const Start = () => (
-  <Wrapper>
-    <Question htmlFor="453346gnkj">{content.title}</Question>
-    <StyledToggle group="testddd" id="453346gnkj" onChange={() => null}>
-      I have invested before
-    </StyledToggle>
-    <FlexAnswer>
-      {content.answers.map(e => (
-        <label key={e} htmlFor="453346gnkj">
-          {e.heading}
-        </label>
-      ))}
-    </FlexAnswer>
-  </Wrapper>
-)
+@inject("uiStore") @observer
+class Start extends React.Component {
+  render() {
+    const {hasExperience, toggleExperience} = this.props.uiStore
+    return (
+      <Wrapper>
+        <Question htmlFor="453346gnkj">{content.title}</Question>
+        <StyledToggle defaultChecked={hasExperience} group="testddd" id="453346gnkj" onChange={toggleExperience}>
+          I have invested before
+        </StyledToggle>
+        <FlexAnswer>
+          {content.answers.map(answer => (
+            <label key={answer.id} htmlFor="453346gnkj">
+              {answer.heading}
+            </label>
+          ))}
+        </FlexAnswer>
+      </Wrapper>
+    )
+  }
+}
 
 const Wrapper = styled.div`
   text-align: center;
