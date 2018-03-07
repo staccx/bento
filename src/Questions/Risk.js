@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
+import debounce from "lodash/debounce"
 
 const content = {
   title: "What do you do if there is a strong market decline?",
@@ -33,6 +34,46 @@ const content = {
   ]
 }
 class Risk extends React.Component {
+  constructor(props, context) {
+    super(props, context)
+    this.state = { selected: 0, hovered: 0 }
+
+    this.handleHover = this.handleHover.bind(this)
+
+    this.incrementWave = this.incrementWave.bind(this)
+  }
+
+  incrementWave = incrementTo => {
+    let nextIncrement = incrementTo
+    if (this.state.selected > incrementTo) {
+      nextIncrement = this.state.selected - 1
+    } else if (this.state.selected < incrementTo) {
+      nextIncrement = this.state.selected + 1
+    }
+
+    this.setState(
+      {
+        selected: nextIncrement
+      },
+      () => {
+        if (this.state.selected !== this.state.hovered) {
+          console.log(nextIncrement)
+          this.incrementWave(this.state.hovered)
+        }
+      }
+    )
+  }
+
+  handleHover = index => {
+    if (this.state.hovered !== index) {
+      this.setState({
+        hovered: index
+      })
+    }
+
+    this.incrementWave(index)
+  }
+
   render() {
     const waves = 100
     const waveArray = [...Array(waves)]
@@ -43,7 +84,12 @@ class Risk extends React.Component {
         </LabelWrapper>
         <WaveWrapper>
           {waveArray.map((e, index) => (
-            <WaveHover href="#" index={index}>
+            <WaveHover
+              index={index}
+              key={index}
+              onMouseEnter={() => this.handleHover(index)}
+              selected={this.state.selected === index}
+            >
               <WaveElement />
             </WaveHover>
           ))}
@@ -95,33 +141,13 @@ const WavePseudo = css`
   transition: 0.6s transform cubic-bezier(0.175, 0.885, 0.32, 1.275);
 `
 
-const WaveHover = styled.a`
+const WaveHover = styled.span`
   position: relative;
   display: block;
   flex-grow: 1;
   cursor: pointer;
-
-  &::before {
-    ${WaveThing};
-    ${WavePseudo};
-    left: -100%;
-  }
-  &::after {
-    ${WaveThing};
-    ${WavePseudo};
-    left: 100%;
-  }
-  &:hover,
-  &:active,
-  &:focus {
-    outline: none;
-    ${WaveElement} {
-      transform: scaleY(1.8);
-    }
-    &:before,
-    &:after {
-      transform: scaleY(1.3);
-    }
+  ${WaveElement} {
+    transform: ${p => p.selected && "scaleY(1.8)"};
   }
 `
 
