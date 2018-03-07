@@ -105,7 +105,11 @@ const Label = styled.label`
 `
 
 CheckBox.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element
+  ]).isRequired,
   disabled: PropTypes.bool,
   group: PropTypes.string,
   id: PropTypes.string.isRequired,
