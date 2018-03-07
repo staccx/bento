@@ -65,6 +65,10 @@ class Risk extends React.Component {
     this.ticks = 100
   }
 
+  componentWillMount() {
+    this.current = this.props.uiStore.currentRisk
+  }
+
   incrementWave() {
     const { currentRisk } = this.props.uiStore
     if (this.tick >= this.ticks) {
