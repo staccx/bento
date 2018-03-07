@@ -9,19 +9,26 @@ const Fraction = ({
   maxComponent,
   valueComponent,
   className,
+  onClick,
   ...rest
 }) => {
   const fractionArray = [...Array(max)].map((e, index) => index < value)
   const unfilled = maxComponent || <DesaturatedDot />
   const filled = valueComponent || <ColoredDot />
 
-  const addKey = (compo, index) =>
-    React.cloneElement(compo, { key: `dot-${index}` })
+  const addKey = (compo, index, handleClick) =>
+    React.cloneElement(compo, {
+      key: `dot-${index}`,
+      onClick: handleClick || null
+    })
 
   return (
     <FractionWrapper className={className} {...rest}>
       {fractionArray.map(
-        (dot, index) => (dot ? addKey(filled, index) : addKey(unfilled, index))
+        (dot, index) =>
+          dot
+            ? addKey(filled, index, () => (onClick ? onClick(index) : null))
+            : addKey(unfilled, index, () => (onClick ? onClick(index) : null))
       )}
       <Hide>
         {value} / {max}
@@ -60,7 +67,8 @@ const FractionWrapper = styled.div`
 Fraction.defaultProps = {
   maxComponent: null,
   valueComponent: null,
-  className: ""
+  className: "",
+  onClick: null
 }
 
 Fraction.propTypes = {
@@ -68,7 +76,8 @@ Fraction.propTypes = {
   max: PropTypes.number.isRequired,
   maxComponent: PropTypes.element,
   valueComponent: PropTypes.element,
-  className: PropTypes.string
+  className: PropTypes.string,
+  onClick: PropTypes.func
 }
 
 export default Fraction
