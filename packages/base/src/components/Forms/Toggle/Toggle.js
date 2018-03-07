@@ -13,9 +13,8 @@ const Toggle = ({
   ...otherProps
 }) => {
   return (
-    <CheckWrapper htmlFor={id}>
+    <CheckWrapper htmlFor={id} className={className}>
       <Check
-        className={className}
         id={id}
         disabled={disabled}
         type="checkbox"

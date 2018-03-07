@@ -18,6 +18,7 @@ import SelectSimple from "./components/Forms/SelectSimple/SelectSimple"
 import Select from "./components/Forms/Select/Select"
 import SelectSelected from "./components/Forms/Select/Select.Selected"
 import SelectOption from "./components/Forms/Select/Select.Option"
+import Toggle from "./components/Forms/Toggle/Toggle"
 
 // list
 import List from "./components/Lists/List"
@@ -111,5 +112,6 @@ export {
   SliderKeyboardInput,
   SplitListItem,
   ThemeProvider,
+  Toggle,
   Wrapper
 }
