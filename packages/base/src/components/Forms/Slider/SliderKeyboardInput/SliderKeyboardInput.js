@@ -91,10 +91,10 @@ class SliderKeyboardInput extends React.Component {
   }
 
   render() {
-    const { label, name, min, max, step, mask } = this.props
+    const { label, name, min, max, step, mask, className } = this.props
     const { currentValue, percentage } = this.state
     return (
-      <SliderWrapper>
+      <SliderWrapper className={className}>
         <HiddenLabel htmlFor={name}>{label}</HiddenLabel>
         <SliderInput
           type="text"
@@ -175,7 +175,8 @@ SliderKeyboardInput.defaultProps = {
   animationTicks: 50,
   easingFunction: linear,
   onChange: null,
-  mask: null
+  mask: null,
+  className: ""
 }
 
 SliderKeyboardInput.propTypes = {
@@ -188,7 +189,8 @@ SliderKeyboardInput.propTypes = {
   step: PropTypes.number,
   animationTicks: PropTypes.number,
   easingFunction: PropTypes.func,
-  mask: PropTypes.array
+  mask: PropTypes.array,
+  className: PropTypes.string
 }
 
 export default SliderKeyboardInput
