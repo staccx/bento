@@ -27,13 +27,23 @@ const Showing = ({ risk, duration, sectors }) => {
 class PortfolioFilter extends Component {
   constructor(props, context) {
     super(props, context)
-    this.state = { risk: 3 }
+    this.state = {
+      risk: 3,
+      isExpanded: true
+    }
     this.handleFractionClick = this.handleFractionClick.bind(this)
+    this.toggleExpand = this.toggleExpand.bind(this)
   }
 
-  handleFractionClick = value => {
+  toggleExpand = () => {
     this.setState({
-      risk: value
+      isExpanded: !this.state.isExpanded
+    })
+  }
+
+  handleFractionClick = index => {
+    this.setState({
+      risk: index + 1
     })
   }
 
@@ -49,30 +59,24 @@ class PortfolioFilter extends Component {
             />
           }
           id="gfdgsfd54"
+          expanded={this.state.isExpanded}
+          onClick={() => this.toggleExpand()}
         >
           <FilterContent>
             <div>
               Risk
               <Fraction
+                onClick={this.handleFractionClick}
                 value={this.state.risk}
                 max={5}
-                maxComponent={
-                  <DotButton
-                    type="button"
-                    onClick={() => this.handleFractionClick(5)}
-                  />
-                }
-                valueComponent={
-                  <DotButton
-                    type="button"
-                    onClick={() => this.handleFractionClick(2)}
-                    filled
-                  />
-                }
+                maxComponent={<DotButton type="button" />}
+                valueComponent={<DotButton type="button" filled />}
               />
-              <button onClick={() => console.log("cøac")}>Test!</button>
             </div>
-            <div>My choices</div>
+            <div>
+              My choices
+              <Fraction value={3} max={5} />
+            </div>
           </FilterContent>
         </Expand>
       </List>
