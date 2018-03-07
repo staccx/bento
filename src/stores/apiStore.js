@@ -1,6 +1,7 @@
 import { observable,action } from 'mobx'
 import axios from 'axios'
 import data from './data.json'
+import {inverseLerp, clamp} from "@staccx/base/dist/index.es";
 
 const client = axios.create({
   baseURL: 'https://13.95.84.217/',
@@ -15,15 +16,52 @@ class ApiStore {
   @observable marketReturns = null
   @observable recommendedPortfolio = null
   @observable forecastedAnnualReturn = 0
+  @observable forecast = null
 
-  // @action getResult = () => client.get('qpm', {
-  //   params: {
-  //     InvestmentHorizon:3,
-  //     RiskTolerance:1,
-  //     PeriodicSavings:1000,
-  //     StartingCapital:10000
-  //   }
-  // }).then(result => result.data)
+  @observable resultDirty = false
+
+  @observable currentRisk = 0
+
+  @observable depositStart = 0
+  @observable depositMonthly = 2000
+
+  @observable timeout = null
+
+  @action setRisk = risk => {
+    this.currentRisk = risk
+    this.getResultFromApi()
+  }
+
+  @action setDepositStart = (value) => {
+    const clamped = clamp(0, 1000000, value)
+    this.depositStart = clamped
+    this.getResultFromApi()
+  }
+  @action setDepositMonthly = (value) => {
+    this.depositMonthly = clamp(0, 1000000, value)
+    this.getResultFromApi()
+  }
+
+  @action getResultFromApi = () => {
+    clearTimeout(this.timeout)
+    this.timeout = setTimeout(() => {
+      client.get('qpm', {
+        params: {
+          InvestmentHorizon: 3,
+          RiskTolerance: Math.round(clamp(1, 3, inverseLerp(1, 100, this.currentRisk) * 3)),
+          PeriodicSavings: this.depositMonthly,
+          StartingCapital: this.depositStart
+        }
+      }).then(result => result.data)
+        .then(result => {
+          this.savingsplan = result.savingsPlan
+          this.forecast = this.savingsplan.forecast
+          this.marketReturns = result.marketReturns
+          this.recommendedPortfolio = result.recommendedPortfolio
+          this.forecastedAnnualReturn = result.forecastedAnnualReturn
+        })
+    }, 200)
+  }
   @action getResult = () => {
     this.savingsplan = data.savingsplan
     this.marketReturns = data.marketReturns

@@ -11,7 +11,7 @@ class PieChart extends Component {
   static defaultProps = {}
 
   static propTypes = {
-    apiStore: PropTypes.any
+    apiStore: PropTypes.object
   }
   getAngle = index => -this.getAngleToElement(index) - this.getElementDegrees(index)
   getElementDegrees = index => fullCircle * this.dataset.data[index] * 0.5
@@ -95,6 +95,7 @@ class PieChart extends Component {
   }
 
   render() {
+    const {recommendedPortfolio} = this.props.apiStore
     return <canvas ref={node => {
       if (!node) {
         return

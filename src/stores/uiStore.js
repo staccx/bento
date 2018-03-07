@@ -7,7 +7,6 @@ import Risk from "../Questions/Risk"
 import Theme from "../Questions/Theme"
 import Investments from "../Questions/Investments"
 import Intro from "../pages/Intro"
-import {clamp} from "@staccx/base"
 
 class UIStore {
   @observable
@@ -27,14 +26,10 @@ class UIStore {
   @observable currentStep = 0
   @observable maxStep = 0
 
-  @observable currentRisk = 0
-
-  @observable depositStart = 0
-  @observable depositMonthly = 2000
+  @action setInstrument = (instrument) => this.selectedInstrument = instrument === this.selectedInstrument ? null : instrument
 
   @action toggleExperience = () => this.hasExperience = !this.hasExperience
 
-  @action setInstrument = (instrument) => this.selectedInstrument = instrument === this.selectedInstrument ? null : instrument
 
   @action setStep = (step) => {
     this.currentStep = step
@@ -43,13 +38,7 @@ class UIStore {
     }
   }
 
-  @action setRisk = risk => this.currentRisk = risk
 
-  @action setDepositStart = (value) => {
-    const clamped = clamp(0, 1000000, value)
-    this.depositStart = clamped
-  }
-  @action setDepositMonthly = (value) => this.depositMonthly = clamp(0, 1000000, value)
 }
 
 export default UIStore

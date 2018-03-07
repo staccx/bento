@@ -38,7 +38,7 @@ const content = {
   ]
 }
 
-@inject("uiStore")
+@inject("apiStore")
 @observer
 class Risk extends React.Component {
   static defaultProps = {
@@ -48,7 +48,7 @@ class Risk extends React.Component {
 
   static propTypes = {
     easingFunction: PropTypes.func,
-    uiStore: PropTypes.any,
+    apiStore: PropTypes.any,
     waves: PropTypes.number
   }
 
@@ -66,11 +66,11 @@ class Risk extends React.Component {
   }
 
   componentWillMount() {
-    this.current = this.props.uiStore.currentRisk
+    this.current = this.props.apiStore.currentRisk
   }
 
   incrementWave() {
-    const { currentRisk } = this.props.uiStore
+    const { currentRisk } = this.props.apiStore
     if (this.tick >= this.ticks) {
       clearTimeout(this.timeout)
       window.cancelAnimationFrame(this._frameId)
@@ -91,7 +91,7 @@ class Risk extends React.Component {
     clearTimeout(this.timeout)
     window.cancelAnimationFrame(this._frameId)
     if (this.current !== index) {
-      const { setRisk } = this.props.uiStore
+      const { setRisk } = this.props.apiStore
       this.start = this.current
       this.end = index
       this.tick = 0

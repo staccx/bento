@@ -19,7 +19,7 @@ const ColorIndicator = styled.svg`
 
 const PortfolioExpand = ({ funds, selectedIndex, onClick }) => (
   <List>
-    {funds.map((fund, index) => (
+    {funds && funds.map((fund, index) => (
       <Expand
         index={index}
         title={<Title fundName={fund.instrument.name} index={index} />}

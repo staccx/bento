@@ -44,13 +44,13 @@ class Portfolio extends Component {
   }
 
   handleInputChange = (value, isStart = true, addToExisting = true) => {
-    const { uiStore } = this.props
+    const { uiStore, apiStore } = this.props
     value = parseInt(stringTrimAll(value.toString()))
-    const func = isStart ? uiStore.setDepositStart : uiStore.setDepositMonthly
+    const func = isStart ? apiStore.setDepositStart : apiStore.setDepositMonthly
     const val =
       value +
       (addToExisting
-        ? isStart ? uiStore.depositStart : uiStore.depositMonthly
+        ? isStart ? apiStore.depositStart : apiStore.depositMonthly
         : 0)
 
     func(parseInt(stringTrimAll(val.toString())))
@@ -59,10 +59,12 @@ class Portfolio extends Component {
   render() {
     const {
       selectedInstrument,
-      setInstrument,
+      setInstrument
+    } = this.props.uiStore
+    const {
       depositStart,
       depositMonthly
-    } = this.props.uiStore
+    } = this.props.apiStore
     return (
       <div>
         <Heading1>Your portfolio</Heading1>

@@ -100,7 +100,8 @@ class ShotgunChart extends Component {
   }
 
   componentDidMount() {
-    const {forecast} = this.props.apiStore.marketReturns
+    this.createChart = () => {
+    const {forecast} = this.props.apiStore
     const keys = Object.keys(forecast)
     const dates = parseDate(keys)
     let max = 0
@@ -138,10 +139,19 @@ class ShotgunChart extends Component {
     gradient.addColorStop(0, baseColor.toRgbString());
     gradient.addColorStop(1, baseColor.setAlpha(clamp(.3, 1, 1 / dataSets.length)).toRgbString());
 
+
     this.chart = new Chart(this.chartContext, getShotgunConfig(dates, dataSets, baseColor))
+    }
+    this.createChart()
+  }
+
+  componentDidUpdate() {
+    console.log('updating')
+    this.createChart()
   }
 
   render() {
+    const {forecast} = this.props.apiStore
     return (
       <canvas ref={node => {
         if (!node) {
