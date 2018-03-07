@@ -138,6 +138,7 @@ const Img = styled.div`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.35);
     z-index: 1;
+    transition: background 0.2s ease;
   }
 `
 
@@ -176,12 +177,17 @@ const ImageCheck = styled(CheckBox)`
         border-color: transparent;
         background-color: transparent;
       }
+    }
+  }
 
+  &:not(:disabled) ~ label {
+    &:hover,
+    &:active,
+    &:focus {
       ${Img} {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         &::after {
           background-color: rgba(0, 0, 0, 0.05);
-          transition: background 0.2s ease;
         }
       }
     }
@@ -197,6 +203,7 @@ const ImageCheck = styled(CheckBox)`
 
   &:disabled ~ label {
     opacity: 0.5;
+    cursor: default;
   }
 `
 
