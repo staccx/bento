@@ -4,7 +4,7 @@ import Chart from "chart.js"
 import { inject, observer } from "mobx-react"
 import tinycolor from "tinycolor2"
 import { differenceInCalendarYears } from "date-fns"
-import { coserp } from "@staccx/base"
+import { coserp, formatCurrency } from "@staccx/base"
 import { parseDate } from "../utils/parseDate"
 import { colorTransparent } from "../utils/colorTransparent"
 
@@ -37,7 +37,7 @@ const shotgunOptions = (duration = 500) => ({
           .map(
             current =>
               current.label
-                ? `${current.label}: ${current.data[item.index].y}`
+                ? `${current.label}: ${formatCurrency(current.data[item.index].y, {precision: 0})}`
                 : null
           ) // TODO: Format currency
 

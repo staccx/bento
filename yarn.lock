@@ -77,9 +77,9 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@staccx/base@^0.17.0":
-  version "0.17.0"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-0.17.0.tgz#91b26b0232ea2bf58c819589e3fdbcecce0cccb4"
+"@staccx/base@^0.18.1":
+  version "0.18.1"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-0.18.1.tgz#8852f224146e257d1f09d692e684acfd9d379ef5"
   dependencies:
     accounting "^0.4.1"
     downshift "^1.28.0"
