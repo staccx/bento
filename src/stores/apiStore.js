@@ -18,7 +18,7 @@ class ApiStore {
   @observable forecastedAnnualReturn = 0
   @observable forecast = null
 
-  @observable currentRisk = 0
+  @observable currentRisk = null
   @observable horizon = 1
 
   @observable optionList = []

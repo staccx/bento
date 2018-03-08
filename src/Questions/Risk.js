@@ -4,7 +4,7 @@ import styled, { css } from "styled-components"
 import { observable } from "mobx"
 import { inject, observer } from "mobx-react"
 import { easeOutQuad } from "easing-utils"
-import { lerp, clamp } from "@staccx/base"
+import { lerp, clamp, Animations } from "@staccx/base"
 import QuestionLead from "../components/QuestionLead"
 
 const content = {
@@ -15,6 +15,7 @@ const content = {
     {
       id: "fsdfds2",
       heading: "I sell everything",
+      body: "I will not risk losing any more money, I sell everything",
       value: "very-low",
       range: [0, 24]
     },
@@ -65,6 +66,7 @@ class Risk extends React.Component {
 
     this.handleClick = this.handleClick.bind(this)
     this.incrementWave = this.incrementWave.bind(this)
+    this.getContentBody = this.getContentBody.bind(this)
     this.timeout = null
     this.tick = 0
     this.ticks = 100
@@ -111,6 +113,13 @@ class Risk extends React.Component {
     this.setState({ hovered: index })
   }
 
+  getContentBody(index) {
+    const currentContent = content.answers.filter(
+      item => item.range[0] <= index && item.range[1] >= index
+    )
+    return currentContent[0].body
+  }
+
   render() {
     const waveArray = [...Array(this.props.waves)]
     return (
@@ -153,6 +162,12 @@ class Risk extends React.Component {
             </WaveContainer>
           ))}
         </WaveWrapper>
+        {this.props.apiStore.currentRisk !== null &&
+          this.props.apiStore.currentRisk === this.current && (
+            <BodyText>
+              {this.getContentBody(this.props.apiStore.currentRisk)}
+            </BodyText>
+          )}
       </div>
     )
   }
@@ -272,6 +287,15 @@ const WaveContainer = styled.span`
         ? waveStyler(p.distanceFromSelected, p.distanceFromHovered)
         : "background-color: #2f80ed; transform: scaleY(1);"};
   }
+`
+
+const BodyText = styled.span`
+  display: block;
+  width: 100%;
+  margin: ${p => p.theme.spacing.medium} 0;
+  text-align: center;
+  color: ${p => p.theme.color.gray};
+  animation: ${Animations.FadeInFromTop} 0.5s ease-out forwards 1;
 `
 
 export default Risk
