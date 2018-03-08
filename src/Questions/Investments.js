@@ -4,9 +4,9 @@ import { CheckGroup, CheckBox } from "@staccx/base"
 import QuestionLead from "../components/QuestionLead"
 
 const content = {
-  title: "Do you want to choose where your investment is placed?",
+  title: "Are there any sectors you specifically believe in?",
   lead:
-    "We can take this into account when building your portfolio. Select up to 4.",
+    "We can take this into account when building your portfolio. Select up to 3.",
   answers: [
     {
       id: "8924qdwsacv",
