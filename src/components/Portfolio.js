@@ -7,7 +7,7 @@ import ShotgunChart from "./ShotgunChart"
 import CurrencyInputSteppers from "./CurrencyInputSteppers"
 import styled, { css } from "styled-components"
 import stringTrimAll from "../utils/stringTrimAll"
-import { Heading1, Heading2 } from "../styles/headings"
+import QuestionLead from "./QuestionLead"
 
 const explodeAmount = 20
 
@@ -57,17 +57,11 @@ class Portfolio extends Component {
   }
 
   render() {
-    const {
-      selectedInstrument,
-      setInstrument
-    } = this.props.uiStore
-    const {
-      depositStart,
-      depositMonthly
-    } = this.props.apiStore
+    const { selectedInstrument, setInstrument } = this.props.uiStore
+    const { depositStart, depositMonthly } = this.props.apiStore
     return (
       <div>
-        <Heading1>Your portfolio</Heading1>
+        <QuestionLead question="Your portfolio" />
         <PortfolioFilter />
         <InputsWrapper>
           <CurrencyInputSteppers
@@ -113,6 +107,14 @@ class Portfolio extends Component {
 
 Portfolio.propTypes = {}
 
+const Heading2 = styled.h2`
+  text-align: center;
+  font-weight: 100;
+  margin-top: ${p => p.theme.spacing.huge};
+  font-size: ${p => p.theme.font.size.h2};
+  color: ${p => p.theme.color.wcag};
+`
+
 const PortfolioWrapper = styled.div`
   padding-top: ${p => p.theme.spacing.large};
   display: grid;
@@ -135,12 +137,14 @@ const PortfolioWrapper = styled.div`
 `
 
 const InputsWrapper = styled.div`
-  display: flex;
-  max-width: 540px;
-  margin: ${p => p.theme.spacing.large} auto;
-
-  > *:first-child {
-    margin-right: ${p => p.theme.spacing.large};
+  margin-top: ${p => p.theme.spacing.large};
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: ${p => p.theme.spacing.large};
+  justify-content: center;
+  @media (max-width: ${p => p.theme.wrapper.medium}) {
+    grid-template-columns: repeat(1, auto);
+    grid-row-gap: ${p => p.theme.spacing.large};
   }
 `
 

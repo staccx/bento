@@ -12,9 +12,17 @@ const CurrencyInputSteppers = ({
   onChange,
   ...restProps
 }) => {
-    return (
+  return (
     <Outer {...restProps}>
-      <Input label={label} name={id} value={value} id={id} suffix={''} onChange={onChange} guide={false}/>
+      <Input
+        label={label}
+        name={id}
+        value={value}
+        id={id}
+        suffix={""}
+        onChange={onChange}
+        guide={false}
+      />
       <Buttons>
         <StepperButton onClick={onIncrement} primary>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -41,6 +49,8 @@ const CurrencyInputSteppers = ({
 
 const Outer = styled.div`
   position: relative;
+  min-width: 200px;
+  max-width: 250px;
 `
 
 const Input = styled(CurrencyInput)`

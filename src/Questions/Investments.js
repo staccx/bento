@@ -4,9 +4,9 @@ import { CheckGroup, CheckBox } from "@staccx/base"
 import QuestionLead from "../components/QuestionLead"
 
 const content = {
-  title: "Do you want to choose where your investment is placed?",
+  title: "Are there any sectors you specifically believe in?",
   lead:
-    "We can take this into account when building your portfolio. Select up to 4.",
+    "We can take this into account when building your portfolio. Select up to 3.",
   answers: [
     {
       id: "8924qdwsacv",
@@ -223,6 +223,9 @@ const Text = styled.span`
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   transform: translate(-50%, -50%);
   z-index: 5;
+  @media (max-width: ${p => p.theme.wrapper.small}) {
+    font-size: ${p => p.theme.font.size.tiny};
+  }
 `
 
 const CheckWrapper = styled.div`
@@ -230,6 +233,9 @@ const CheckWrapper = styled.div`
   grid-template-columns: repeat(3, auto);
   grid-column-gap: ${p => p.theme.spacing.medium};
   justify-content: center;
+  @media (max-width: ${p => p.theme.wrapper.small}) {
+    grid-template-columns: repeat(2, auto);
+  }
 `
 
 export default Investments
