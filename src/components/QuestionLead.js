@@ -17,6 +17,7 @@ const Question = styled.h1`
   text-align: center;
   margin-bottom: ${p => p.theme.spacing.large};
   margin-top: ${p => p.theme.spacing.huge};
+  color: ${p => p.theme.color.grayDark};
 `
 
 const Lead = styled.p`

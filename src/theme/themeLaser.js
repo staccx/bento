@@ -30,7 +30,8 @@ export const themeLaser = {
     disabled: "#BABABA",
     warning: "#E32367",
     black: "#000",
-    subtleHover: "#C7C7C7"
+    subtleHover: "#C7C7C7",
+    btnColor: "#fe83ac"
   },
   graphColor: [
     "#2F80ED",
