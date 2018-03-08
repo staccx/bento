@@ -19,57 +19,62 @@ const ColorIndicator = styled.svg`
 
 const PortfolioExpand = ({ funds, selectedIndex, onClick }) => (
   <List>
-    {funds && funds.map((fund, index) => (
-      <Expand
-        index={index}
-        title={<Title fundName={fund.instrument.name} index={index} />}
-        key={fund.instrument.name}
-        id={fund.instrument.name}
-        expanded={selectedIndex !== null ? selectedIndex === index : false}
-        onClick={() => onClick(index)}
-      >
-        <Wrapper size="small">
-          <Halves>
-            <div>
-              <Mb>
-                <Label>Risk</Label>
-                <Fraction value={3} max={6} />
-              </Mb>
-              <Mb>
-                <Label>Ethical</Label>
-                <Fraction value={2} max={3} />
-              </Mb>
-              <Mb>
-                <Label>{fund.weight * 100}% of portfolio</Label>
-                <Donut percentage={fund.weight} />
-              </Mb>
-            </div>
-            <div>
-              <Mb>
-                <Label>Last 5 years</Label>
-                <Sparklines
-                  data={[5, 10, 5, 10, 8, 10, 5, 10, 8, 4, 5, 2, 8, 15]}
-                  height={25}
-                  margin={6}
-                >
-                  <SparklinesLine
-                    style={{ strokeWidth: 3, stroke: "#2D9CDB", fill: "none" }}
-                  />
-                </Sparklines>
-              </Mb>
-              <Mb>
-                <Label>Price</Label>
-                {fund.instrument.expenseRatio}%
-              </Mb>
-              <Mb>
-                <Label>Type</Label>
-                {fund.assetClass.label}
-              </Mb>
-            </div>
-          </Halves>
-        </Wrapper>
-      </Expand>
-    ))}
+    {funds &&
+      funds.sort((a, b) => a.weight < b.weight).map((fund, index) => (
+        <Expand
+          index={index}
+          title={<Title fundName={fund.instrument.name} index={index} />}
+          key={fund.instrument.name}
+          id={fund.instrument.name}
+          expanded={selectedIndex !== null ? selectedIndex === index : false}
+          onClick={() => onClick(index)}
+        >
+          <Wrapper size="small">
+            <Halves>
+              <div>
+                <Mb>
+                  <Label>Risk</Label>
+                  <Fraction value={3} max={6} />
+                </Mb>
+                <Mb>
+                  <Label>Ethical</Label>
+                  <Fraction value={2} max={3} />
+                </Mb>
+                <Mb>
+                  <Label>{fund.weight * 100}% of portfolio</Label>
+                  <Donut percentage={fund.weight} />
+                </Mb>
+              </div>
+              <div>
+                <Mb>
+                  <Label>Last 5 years</Label>
+                  <Sparklines
+                    data={[5, 10, 5, 10, 8, 10, 5, 10, 8, 4, 5, 2, 8, 15]}
+                    height={25}
+                    margin={6}
+                  >
+                    <SparklinesLine
+                      style={{
+                        strokeWidth: 3,
+                        stroke: "#2D9CDB",
+                        fill: "none"
+                      }}
+                    />
+                  </Sparklines>
+                </Mb>
+                <Mb>
+                  <Label>Price</Label>
+                  {fund.instrument.expenseRatio}%
+                </Mb>
+                <Mb>
+                  <Label>Type</Label>
+                  {fund.assetClass.label}
+                </Mb>
+              </div>
+            </Halves>
+          </Wrapper>
+        </Expand>
+      ))}
   </List>
 )
 
