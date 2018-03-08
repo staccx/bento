@@ -99,7 +99,7 @@ class ApiStore {
         .catch(err => {
           console.warn(err)
           console.log("FAlling back to mock")
-          this.savingsplan = mock.savingsplan
+          this.savingsplan = mock.savingsPlan
           this.forecast = this.savingsplan.forecast
           this.marketReturns = mock.marketReturns
           this.recommendedPortfolio = mock.recommendedPortfolio
