@@ -25,7 +25,7 @@ const SplitListItem = ({ children, className }) => {
     )
   }
   return (
-    <ListItem>
+    <ListItem className={className}>
       {React.Children.map(children, (child, index) => {
         return index <= 1 ? <span>{child}</span> : null
       })}
