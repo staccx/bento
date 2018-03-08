@@ -18,7 +18,7 @@ class ApiStore {
   @observable forecast = null
 
   @observable currentRisk = 0
-  @observable horizon = 0
+  @observable horizon = 1
 
   @observable depositStart = 0
   @observable depositMonthly = 2000
