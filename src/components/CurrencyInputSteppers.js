@@ -92,13 +92,14 @@ const StepperButton = styled(Button)`
   padding: 0;
   color: ${p => (p.primary ? p.theme.color.white : p.theme.color.text)};
   background-color: ${p =>
-    p.primary ? p.theme.color.grayDark : p.theme.color.grayLight};
+    p.primary ? p.theme.color.primary : p.theme.color.secondary};
   transition: background 0.2s ease;
 
   &:hover,
   &:active,
   &:focus {
-    background-color: ${p => p.theme.color.secondary};
+    background-color: ${p =>
+      p.primary ? p.theme.color.primary : p.theme.color.secondary};
   }
 
   > svg {
