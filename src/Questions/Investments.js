@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+import {inject, observer} from "mobx-react"
 import { CheckGroup, CheckBox } from "@staccx/base"
 import QuestionLead from "../components/QuestionLead"
 
@@ -12,104 +13,85 @@ const content = {
       id: "8924qdwsacv",
       label: "USA",
       img: "/img/usa.jpg",
-      value: "USA"
+      value: "c11",
     },
     {
       id: "wt4iw12",
       label: "Asia and Pacific",
       img: "/img/asia.jpg",
-      value: "ASIA"
+      value: "c12",
     },
     {
       id: "ewpoifjw",
       label: "Europe",
       img: "/img/europe.jpg",
-      value: "EU"
+      value: "c13",
     },
     {
       id: "ewgioh9",
       label: "Latin America",
       img: "/img/latam.jpg",
-      value: "LATAM"
+      value: "c100",
     },
     {
       id: "oifb3",
       label: "Digitalisation",
       img: "/img/digital.jpg",
-      value: "DIG"
+      value: "c101",
     },
     {
       id: "92348tgh",
       label: "Ageing population",
       img: "/img/ageing.jpg",
-      value: "AGE"
+      value: "c102",
     },
     {
       id: "jhgfds",
       label: "Healthcare innovation",
       img: "/img/healthcare.jpg",
-      value: "HEALTH"
+      value: "c103",
     },
     {
       id: "1243teyrjtyk",
       label: "Automation & Robotics",
       img: "/img/robots.jpg",
-      value: "ROBOTS"
+      value: "c105"
     },
     {
       id: "124qrwe",
       label: "Clean energy",
       img: "/img/cleanenergy.jpg",
-      value: "CLEANENERGY"
+      value: "c10"
     }
   ]
 }
 
 const MAX_SELECTABLE = 3
 
+@inject("apiStore") @observer
 class Investments extends Component {
-  constructor(props, context) {
-    super(props, context)
-    this.state = { selected: [] }
-    this.handleSelect = this.handleSelect.bind(this)
-    this.isDisabled = this.isDisabled.bind(this)
-  }
-
-  handleSelect(value) {
-    if (!this.state.selected.includes(value)) {
-      this.setState(prevState => ({
-        selected: [...prevState.selected, value]
-      }))
-    } else {
-      this.setState(prevState => ({
-        selected: prevState.selected.filter(i => i !== value)
-      }))
-    }
-  }
-
-  isDisabled(value) {
-    if (
-      this.state.selected.length >= MAX_SELECTABLE &&
-      !this.state.selected.includes(value)
-    ) {
-      return true
-    }
-    return false
-  }
-
   render() {
+    const {optionList, toggleOption} = this.props.apiStore
+
+    const isChecked = value => optionList.indexOf(value) !== -1
+
+    const isDisabled = (value) => {
+      return isChecked(value) ? false : optionList.length >= MAX_SELECTABLE
+    }
+
     return (
       <div>
         <QuestionLead question={content.title}>{content.lead}</QuestionLead>
 
         <CheckWrapper>
-          <CheckGroup group={"geo"} onChange={this.handleSelect}>
+          <CheckGroup group={"geo"} onChange={toggleOption}>
             {content.answers.map(item => (
               <ImageCheck
                 key={item.id}
                 value={item.value}
                 id={item.id}
-                disabled={this.isDisabled(item.value)}
+                defaultChecked={isChecked(item.value)}
+                disabled={isDisabled(item.value)}
               >
                 <Text>{item.label}</Text>
                 <Img>

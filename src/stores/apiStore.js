@@ -2,6 +2,7 @@ import { observable, action } from "mobx"
 import axios from "axios"
 import data from "./data.json"
 import { inverseLerp, clamp } from "@staccx/base/dist/index.es"
+import qs from "qs"
 
 const client = axios.create({
   baseURL: "https://13.95.84.217/",
@@ -20,10 +21,24 @@ class ApiStore {
   @observable currentRisk = 0
   @observable horizon = 1
 
+  @observable optionList = []
+
   @observable depositStart = 0
   @observable depositMonthly = 2000
 
   @observable timeout = null
+
+  @action
+  toggleOption = option => {
+    const index = this.optionList.indexOf(option)
+    if (index !== -1) {
+      this.optionList.splice(index, 1)
+    } else {
+      this.optionList.push(option)
+    }
+
+    this.getResultFromApi()
+  }
 
   @action
   setRisk = risk => {
@@ -61,7 +76,16 @@ class ApiStore {
               clamp(1, 3, inverseLerp(1, 100, this.currentRisk) * 3)
             ),
             PeriodicSavings: this.depositMonthly,
-            StartingCapital: this.depositStart
+            StartingCapital: this.depositStart,
+            OptionList: this.optionList.length
+              ? this.optionList.map(o => o)
+              : null
+          },
+          paramsSerializer: params => {
+            if (!params.OptionList) {
+              delete params.OptionList
+            }
+            return qs.stringify(params, { indices: false })
           }
         })
         .then(result => result.data)
