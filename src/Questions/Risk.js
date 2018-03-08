@@ -57,9 +57,9 @@ class Risk extends React.Component {
 
   constructor(props, context) {
     super(props, context)
+    this.state = { hovered: 1000 }
 
     this.handleClick = this.handleClick.bind(this)
-
     this.incrementWave = this.incrementWave.bind(this)
     this.timeout = null
     this.tick = 0
@@ -102,6 +102,10 @@ class Risk extends React.Component {
     }
   }
 
+  handleHover(index) {
+    this.setState({ hovered: index })
+  }
+
   render() {
     const waveArray = [...Array(this.props.waves)]
     return (
@@ -121,22 +125,18 @@ class Risk extends React.Component {
             </Label>
           ))}
         </LabelWrapper>
-        <WaveWrapper>
+        <WaveWrapper onMouseLeave={() => this.setState({ hovered: 1000 })}>
           {waveArray.map((e, index) => (
-            <WaveHover
+            <WaveContainer
               index={index}
               key={index}
               onClick={() => this.handleClick(index)}
-              neighbor={
-                this.current === index - 1 || this.current === index + 1
-              }
-              nextDoorNeighbor={
-                this.current === index - 2 || this.current === index + 2
-              }
-              selected={this.current === index}
+              onMouseEnter={() => this.handleHover(index)}
+              distanceFromSelected={Math.abs(this.current - index)}
+              distanceFromHovered={Math.abs(this.state.hovered - index)}
             >
-              <WaveElement />
-            </WaveHover>
+              <WaveBar />
+            </WaveContainer>
           ))}
         </WaveWrapper>
       </div>
@@ -160,7 +160,7 @@ const WaveWrapper = styled.div`
   justify-content: stretch;
 `
 
-const WaveElement = styled.i`
+const WaveBar = styled.i`
   width: 3px;
   background-color: #2f80ed;
   height: 32px;
@@ -169,18 +169,67 @@ const WaveElement = styled.i`
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 `
 
-const WaveHover = styled.span`
+const waveStyler = (distanceFromSelected, distanceFromHovered) => {
+  switch (distanceFromSelected) {
+    case 0:
+      return css`
+        background-color: #ff00c8;
+        transform: scaleY(1.8);
+      `
+      break
+    case 1:
+      return css`
+        background-color: #c030ff;
+        transform: scaleY(1.4);
+      `
+      break
+    case 2:
+      return css`
+        background-color: #9d32ff;
+        transform: scaleY(1.1);
+      `
+      break
+    default:
+      switch (distanceFromHovered) {
+        case 0:
+          return css`
+            background-color: #4cf7ff;
+            transform: scaleY(0.8);
+          `
+          break
+        case 1:
+          return css`
+            background-color: #3bbdf8;
+            transform: scaleY(0.9);
+          `
+          break
+        case 2:
+          return css`
+            background-color: #2f92f3;
+            transform: scaleY(0.95);
+          `
+          break
+        default:
+          return css`
+            background-color: #2f80ed;
+            transform: scaleY(1);
+          `
+          break
+      }
+      break
+  }
+}
+
+const WaveContainer = styled.span`
   position: relative;
   display: block;
   flex-grow: 1;
   cursor: pointer;
-  ${WaveElement} {
-    transform: ${p =>
-      p.selected ? "scaleY(1.8)" : p.neighbor ? "scaleY(1.4)" : "scaleY(1)"};
-    background-color: ${p =>
-      p.selected
-        ? "#FF00C8"
-        : p.neighbor ? "#C030FF" : p.nextDoorNeighbor ? "#9D32FF" : "#2f80ed"};
+  ${WaveBar} {
+    ${p =>
+      p.distanceFromSelected < 3 || p.distanceFromHovered < 3
+        ? waveStyler(p.distanceFromSelected, p.distanceFromHovered)
+        : "background-color: #2f80ed; transform: scaleY(1);"};
   }
 `
 
