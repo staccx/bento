@@ -31,15 +31,20 @@
     "eject": "react-app-rewired eject"
   },
   "devDependencies": {
-    "eslint": "^4.18.1",
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.18.2",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-jsx": "^5.0.0",
     "eslint-config-standard-react": "^6.0.0",
+    "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "mobx-react-devtools": "^4.2.15",
+    "prettier": "^1.11.1",
     "react-app-rewire-mobx": "^1.0.7",
     "react-app-rewired": "^1.4.1",
     "standard": "^11.0.0"
