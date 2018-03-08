@@ -212,6 +212,8 @@ class ShotgunChart extends Component {
   }
 
   render() {
+    // NOTE: The next line needs to exist in other to force mobx to update the component when the observable changes
+    const { forecast } = this.props.apiStore // eslint-disable-line no-unused-vars
     return (
       <canvas
         ref={node => {

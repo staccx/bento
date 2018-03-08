@@ -7,7 +7,7 @@ import QuestionLead from "./QuestionLead"
 const Question = ({ content, onChange, selected }) => (
   <div>
     <QuestionLead question={content.title}>{content.lead}</QuestionLead>
-    <CheckGroup group={"experiencealternatives"}>
+    <CheckGroup group={"experiencealternatives"} onChange={() => null}>
       {content.answers.map(answer => (
         <AnswerBox
           selected={answer.value === selected}
