@@ -161,7 +161,13 @@ class Risk extends React.Component {
             </WaveContainer>
           ))}
         </WaveWrapper>
-        {this.bodyText && <BodyText>{this.bodyText}</BodyText>}
+        <BodyTextWrapper>
+          {this.bodyText ? (
+            <BodyText>{this.bodyText}</BodyText>
+          ) : (
+            <span>&nbsp;</span>
+          )}
+        </BodyTextWrapper>
       </div>
     )
   }
@@ -290,10 +296,13 @@ const WaveContainer = styled.span`
   }
 `
 
+const BodyTextWrapper = styled.div`
+  margin: ${p => p.theme.spacing.medium} 0;
+`
+
 const BodyText = styled.span`
   display: block;
   width: 100%;
-  margin: ${p => p.theme.spacing.medium} 0;
   text-align: center;
   color: ${p => p.theme.color.gray};
   animation: ${Animations.FadeInFromTop} 0.5s ease-out forwards 1;
