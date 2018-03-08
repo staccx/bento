@@ -117,6 +117,9 @@ class Risk extends React.Component {
               neighbor={
                 this.current === index - 1 || this.current === index + 1
               }
+              nextDoorNeighbor={
+                this.current === index - 2 || this.current === index + 2
+              }
               selected={this.current === index}
             >
               <WaveElement />
@@ -148,26 +151,13 @@ const WaveWrapper = styled.div`
   justify-content: stretch;
 `
 
-const WaveThing = css`
+const WaveElement = styled.i`
   width: 3px;
   background-color: #2f80ed;
   height: 32px;
   border-radius: 1px;
   display: block;
-`
-
-const WaveElement = styled.i`
-  ${WaveThing};
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-`
-
-const WavePseudo = css`
-  content: "";
-  position: absolute;
-  left: -100%;
-  top: 0;
-  z-index: -1;
-  transition: 0.6s transform cubic-bezier(0.175, 0.885, 0.32, 1.275);
 `
 
 const WaveHover = styled.span`
@@ -178,6 +168,10 @@ const WaveHover = styled.span`
   ${WaveElement} {
     transform: ${p =>
       p.selected ? "scaleY(1.8)" : p.neighbor ? "scaleY(1.4)" : "scaleY(1)"};
+    background-color: ${p =>
+      p.selected
+        ? "#FF00C8"
+        : p.neighbor ? "#C030FF" : p.nextDoorNeighbor ? "#9D32FF" : "#2f80ed"};
   }
 `
 
