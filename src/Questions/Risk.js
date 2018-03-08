@@ -15,26 +15,30 @@ const content = {
     {
       id: "fsdfds2",
       heading: "I sell everything",
-      value: "very-low"
+      value: "very-low",
+      range: [0, 24]
     },
     {
       id: "fdsfd4447",
       heading: "I get uneasy",
       body: "I worry, but keep the night sleep. Keep calm with my investments.",
-      value: "low"
+      value: "low",
+      range: [24, 49]
     },
     {
       id: "fdsa23118",
       heading: "I keep the calm",
       body: "Do not care what the papers write. Keep calm with my investments.",
-      value: "medium"
+      value: "medium",
+      range: [50, 74]
     },
     {
       id: "fdsafds14477",
       heading: "An excellent opportunity",
       body:
         "I do not worry at all. This is a golden opportunity, stocks become cheaper!",
-      value: "medium-plus"
+      value: "medium-plus",
+      range: [75, 100]
     }
   ]
 }
@@ -53,7 +57,7 @@ class Risk extends React.Component {
     waves: PropTypes.number
   }
 
-  @observable current = 0
+  @observable current = null
 
   constructor(props, context) {
     super(props, context)
@@ -112,17 +116,20 @@ class Risk extends React.Component {
       <div>
         <QuestionLead question={content.title}>{content.lead}</QuestionLead>
         <LabelWrapper>
-          {content.answers.map((e, i) => (
-            <Label
+          {content.answers.map((label, i) => (
+            <RangeLabel
               onClick={() =>
                 this.handleClick(
                   i * (this.props.waves / (content.answers.length - 1))
                 )
               }
-              key={e.id}
+              key={label.id}
+              current={
+                this.current > label.range[0] && this.current < label.range[1]
+              }
             >
-              {e.heading}
-            </Label>
+              {label.heading}
+            </RangeLabel>
           ))}
         </LabelWrapper>
         <WaveWrapper onMouseLeave={() => this.setState({ hovered: 1000 })}>
@@ -132,7 +139,9 @@ class Risk extends React.Component {
               key={index}
               onClick={() => this.handleClick(index)}
               onMouseEnter={() => this.handleHover(index)}
-              distanceFromSelected={Math.abs(this.current - index)}
+              distanceFromSelected={
+                this.current !== null ? Math.abs(this.current - index) : null
+              }
               distanceFromHovered={Math.abs(this.state.hovered - index)}
             >
               <WaveBar />
@@ -144,9 +153,9 @@ class Risk extends React.Component {
   }
 }
 
-const Label = styled.label`
+const RangeLabel = styled.label`
   font-weight: bold;
-  color: #2f80ed;
+  color: ${p => (p.current ? p.theme.color.secondary : "#2f80ed")};
   flex-basis: 25%;
   text-align: center;
   padding: ${p => p.theme.spacing.tiny};
@@ -164,6 +173,7 @@ const LabelWrapper = styled.div`
 const WaveWrapper = styled.div`
   display: flex;
   justify-content: stretch;
+  margin-bottom: ${p => p.theme.spacing.medium};
 `
 
 const WaveBar = styled.i`
