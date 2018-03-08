@@ -4,7 +4,7 @@ import styled, { css } from "styled-components"
 import { observable } from "mobx"
 import { inject, observer } from "mobx-react"
 import { easeOutQuad } from "easing-utils"
-import { lerp, clamp, Animations } from "@staccx/base"
+import { Animations, clamp, lerp } from "@staccx/base"
 import QuestionLead from "../components/QuestionLead"
 
 const content = {
@@ -59,11 +59,11 @@ class Risk extends React.Component {
   }
 
   @observable current = null
+  @observable hovered = null
+  @observable bodyText = null
 
   constructor(props, context) {
     super(props, context)
-    this.state = { hovered: null }
-
     this.handleClick = this.handleClick.bind(this)
     this.incrementWave = this.incrementWave.bind(this)
     this.getContentBody = this.getContentBody.bind(this)
@@ -82,6 +82,7 @@ class Risk extends React.Component {
       clearTimeout(this.timeout)
       window.cancelAnimationFrame(this._frameId)
       this.current = currentRisk
+      this.bodyText = this.getContentBody(this.current)
       return
     }
 
@@ -94,13 +95,13 @@ class Risk extends React.Component {
   }
 
   handleClick(index) {
-    console.log(index)
     index = clamp(0, this.props.waves - 1, Math.round(index))
     clearTimeout(this.timeout)
     window.cancelAnimationFrame(this._frameId)
     if (this.current !== index) {
       const { setRisk } = this.props.apiStore
       this.start = this.current
+      this.bodyText = null
       this.end = index
       this.tick = 0
       this.ticks = Math.abs(this.start - this.end)
@@ -110,7 +111,7 @@ class Risk extends React.Component {
   }
 
   handleHover(index) {
-    this.setState({ hovered: index })
+    this.hovered = index
   }
 
   getContentBody(index) {
@@ -142,7 +143,7 @@ class Risk extends React.Component {
             </RangeLabel>
           ))}
         </LabelWrapper>
-        <WaveWrapper onMouseLeave={() => this.setState({ hovered: 1000 })}>
+        <WaveWrapper onMouseLeave={() => this.handleHover(1000)}>
           {waveArray.map((e, index) => (
             <WaveContainer
               index={index}
@@ -153,21 +154,14 @@ class Risk extends React.Component {
                 this.current !== null ? Math.abs(this.current - index) : null
               }
               distanceFromHovered={
-                this.state.hovered !== null
-                  ? Math.abs(this.state.hovered - index)
-                  : null
+                this.hovered !== null ? Math.abs(this.hovered - index) : null
               }
             >
               <WaveBar />
             </WaveContainer>
           ))}
         </WaveWrapper>
-        {this.props.apiStore.currentRisk !== null &&
-          this.props.apiStore.currentRisk === this.current && (
-            <BodyText>
-              {this.getContentBody(this.props.apiStore.currentRisk)}
-            </BodyText>
-          )}
+        {this.bodyText && <BodyText>{this.bodyText}</BodyText>}
       </div>
     )
   }
