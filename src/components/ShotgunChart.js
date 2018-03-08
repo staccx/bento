@@ -25,9 +25,8 @@ const shotgunOptions = (duration = 500) => ({
       borderColor: colorTransparent
     },
     line: {
-      borderWidth: 1,
-      backgroundColor: baseColor.toRgbString(),
-      fill: '0'
+      fill: '0',
+      backgroundColor: baseColor.toRgbString()
     }
   },
   tooltips: {
@@ -50,7 +49,8 @@ const shotgunOptions = (duration = 500) => ({
 
         const date = parseDate(firstItem.xLabel)
         return `in ${differenceInCalendarYears(date, new Date())} years`
-      }
+      },
+      labelColor: () => ({backgroundColor: baseColor.toRgbString()}),
     }
   },
   plugins: {
@@ -94,6 +94,7 @@ const getShotgunConfig = (labels, dataSets, baseColor) => ({
       return {
         data: dataSet.data,
         label: dataSet.label,
+        borderWidth: index === 0 ? 10 : 1
       }
     })
   },
@@ -129,12 +130,27 @@ class ShotgunChart extends Component {
   componentDidMount() {
     this.getLabels = () => {
       const {forecast} = this.props.apiStore
-      const keys = Object.keys(forecast)
-      return parseDate(keys)
+      const years = {}
+      Object.keys(forecast).forEach(key => {
+        const date = parseDate(key)
+        if(!years.hasOwnProperty(date.getFullYear().toString())) {
+          years[date.getFullYear().toString()] = date
+        }
+      })
+      return Object.keys(years)
     }
 
     this.generateData = () => {
       const {forecast} = this.props.apiStore
+      const years = {}
+      const decimate = key => {
+        const date = parseDate(key)
+        if (!years.hasOwnProperty(date.getFullYear().toString())) {
+          years[date.getFullYear().toString()] = date
+          return true
+        }
+        return false
+      }
       const keys = Object.keys(forecast)
       const dates = parseDate(keys)
       let max = 0
@@ -172,10 +188,11 @@ class ShotgunChart extends Component {
       const dataSets = this.generateData()
       const labels = this.getLabels()
       return {
-        datasets: dataSets.map(dataSet => {
+        datasets: dataSets.map((dataSet, index) => {
           return {
             data: dataSet.data,
             label: dataSet.label,
+            borderWidth: index === 0 ? 8 : .1,
           }
         }),
         labels
@@ -186,7 +203,8 @@ class ShotgunChart extends Component {
 
     const gradient = this.chartContext.createLinearGradient(0, 0, 0, 400)
     gradient.addColorStop(0, baseColor.toRgbString());
-    gradient.addColorStop(1, baseColor.setAlpha(clamp(.3, 1, 1 / data.datasets.length)).toRgbString());
+    const colorTo = tinycolor(baseColor)
+    gradient.addColorStop(1, colorTo.setAlpha(0.3).toRgbString());
 
     this.chart = new Chart(this.chartContext, {
       type: "line",
