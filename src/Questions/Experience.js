@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import {Toggle} from "@staccx/base"
-import {inject, observer} from "mobx-react"
+import { Toggle } from "@staccx/base"
+import { inject, observer } from "mobx-react"
+import QuestionLead from "../components/QuestionLead"
 
 const content = {
   title: "Do you have experience with funds or investments?",
@@ -21,14 +22,20 @@ const content = {
   ]
 }
 
-@inject("uiStore") @observer
+@inject("uiStore")
+@observer
 class Start extends React.Component {
   render() {
-    const {hasExperience, toggleExperience} = this.props.uiStore
+    const { hasExperience, toggleExperience } = this.props.uiStore
     return (
-      <Wrapper>
-        <Question htmlFor="453346gnkj">{content.title}</Question>
-        <StyledToggle defaultChecked={hasExperience} group="testddd" id="453346gnkj" onChange={toggleExperience}>
+      <div>
+        <QuestionLead question={content.title}>{content.lead}</QuestionLead>
+        <StyledToggle
+          defaultChecked={hasExperience}
+          group="testddd"
+          id="453346gnkj"
+          onChange={toggleExperience}
+        >
           I have invested before
         </StyledToggle>
         <FlexAnswer>
@@ -38,15 +45,10 @@ class Start extends React.Component {
             </label>
           ))}
         </FlexAnswer>
-      </Wrapper>
+      </div>
     )
   }
 }
-
-const Wrapper = styled.div`
-  text-align: center;
-  padding-top: ${p => p.theme.spacing.large};
-`
 
 const FlexAnswer = styled.div`
   margin-top: ${p => p.theme.spacing.medium};
@@ -59,15 +61,6 @@ const FlexAnswer = styled.div`
       border-left: 1px solid ${p => p.theme.color.line};
     }
   }
-`
-
-const Question = styled.label`
-  font-family: ${p => p.theme.font.body};
-  font-size: ${p => p.theme.font.size.h1};
-  font-weight: normal;
-  text-align: center;
-  margin-bottom: ${p => p.theme.spacing.large};
-  display: block;
 `
 
 const StyledToggle = styled(Toggle)`

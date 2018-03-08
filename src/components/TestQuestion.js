@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { rgba } from "polished"
 import { CheckGroup, RadioButton } from "@staccx/base"
+import QuestionLead from "./QuestionLead"
 
 class TestQuestion extends React.Component {
   constructor(props, context) {
@@ -23,8 +24,8 @@ class TestQuestion extends React.Component {
     const { selected } = this.state
     const { content } = this.props
     return (
-      <AnswersWrapper>
-        <Question>{content.title}</Question>
+      <div>
+        <QuestionLead question={content.title}>{content.lead}</QuestionLead>
         <CheckGroup
           group={"experiencealternatives"}
           onChange={this.handleChange}
@@ -47,18 +48,10 @@ class TestQuestion extends React.Component {
             </AnswerBox>
           ))}
         </CheckGroup>
-      </AnswersWrapper>
+      </div>
     )
   }
 }
-
-const Question = styled.h1`
-  font-family: ${p => p.theme.font.body};
-  font-size: ${p => p.theme.font.size.h1};
-  font-weight: normal;
-  text-align: center;
-  margin-bottom: ${p => p.theme.spacing.large};
-`
 
 const AnswerBox = styled.label`
   display: block;
@@ -172,10 +165,6 @@ const AdvisorRadio = styled(RadioButton)`
       }
     }
   }
-`
-
-const AnswersWrapper = styled.div`
-  padding: ${p => p.theme.spacing.huge};
 `
 
 export default TestQuestion
