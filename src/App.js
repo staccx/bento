@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { ThemeProvider, Wrapper } from "@staccx/base"
 import { BrowserRouter as Router } from "react-router-dom"
-import { inject, observer } from "mobx-react"
 import Stepper from "./components/StepIndicator"
 import { themeLaser } from "./theme/themeLaser"
 import StepContent from "./components/StepContent"
@@ -12,13 +11,7 @@ const elementStyles = `
   }
 `
 
-@inject("apiStore", "uiStore")
-@observer
 class App extends Component {
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
-  }
-
   render() {
     return (
       <ThemeProvider theme={themeLaser} resets={elementStyles}>

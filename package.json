@@ -29,7 +29,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "serve": "yarn build && serve -s build"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
@@ -47,6 +48,7 @@
     "mobx-react-devtools": "^4.2.15",
     "prettier": "^1.11.1",
     "react-app-rewire-mobx": "^1.0.7",
+    "react-app-rewire-styled-components": "^3.0.0",
     "react-app-rewired": "^1.4.1",
     "standard": "^11.0.0"
   }
