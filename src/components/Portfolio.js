@@ -9,7 +9,7 @@ import styled, { css } from "styled-components"
 import stringTrimAll from "../utils/stringTrimAll"
 import QuestionLead from "./QuestionLead"
 
-const explodeAmount = 20
+const explodeAmount = 10
 
 @inject("apiStore", "uiStore")
 @observer
@@ -90,8 +90,8 @@ class Portfolio extends Component {
           <PortfolioWrapper>
             <PieChart
               ref={node => (this.pieChartInjector = node)}
-              padding={30}
-              explodeAmount={explodeAmount}
+              padding={10}
+              explodeAmount={10}
             />
             <PortfolioExpand
               funds={this.props.apiStore.recommendedPortfolio}
