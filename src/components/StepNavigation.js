@@ -12,7 +12,7 @@ class StepNavigation extends Component {
   }
 
   render() {
-    const { maxStep, currentStep, steps, setStep } = this.props.uiStore
+    const { currentStep, steps, setStep } = this.props.uiStore
     const previous = currentStep > 0 ? steps[currentStep - 1] : null
     const next = currentStep < steps.length - 1 ? steps[currentStep + 1] : null
     return (

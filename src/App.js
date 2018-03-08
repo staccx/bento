@@ -1,10 +1,9 @@
-import React, {Component} from "react"
-import {ThemeProvider, Wrapper} from "@staccx/base"
-import {BrowserRouter as Router} from "react-router-dom"
-import DevTools from "mobx-react-devtools"
-import {inject, observer} from "mobx-react"
+import React, { Component } from "react"
+import { ThemeProvider, Wrapper } from "@staccx/base"
+import { BrowserRouter as Router } from "react-router-dom"
+import { inject, observer } from "mobx-react"
 import Stepper from "./components/StepIndicator"
-import {themeLaser} from "./theme/themeLaser"
+import { themeLaser } from "./theme/themeLaser"
 import StepContent from "./components/StepContent"
 
 const elementStyles = `
@@ -23,12 +22,11 @@ class App extends Component {
   render() {
     return (
       <ThemeProvider theme={themeLaser} resets={elementStyles}>
-        <div style={{paddingTop: "48px"}}>
+        <div style={{ paddingTop: "48px" }}>
           <Router>
             <Wrapper>
-              <Stepper/>
-              <StepContent/>
-
+              <Stepper />
+              <StepContent />
             </Wrapper>
           </Router>
         </div>

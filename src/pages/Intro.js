@@ -1,5 +1,4 @@
 import React from "react"
-import styled, { css } from "styled-components"
 import QuestionLead from "./../components/QuestionLead"
 
 const Intro = () => {

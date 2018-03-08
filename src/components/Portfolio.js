@@ -5,7 +5,7 @@ import PortfolioExpand from "./PortfolioExpand"
 import PortfolioFilter from "./PortfolioFilter"
 import ShotgunChart from "./ShotgunChart"
 import CurrencyInputSteppers from "./CurrencyInputSteppers"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import stringTrimAll from "../utils/stringTrimAll"
 import QuestionLead from "./QuestionLead"
 
@@ -14,10 +14,6 @@ const explodeAmount = 10
 @inject("apiStore", "uiStore")
 @observer
 class Portfolio extends Component {
-  constructor(props, context) {
-    super(props, context)
-  }
-
   componentDidMount() {
     this.pieChart = this.pieChartInjector.wrappedInstance
     this.updatePie(this.props.uiStore.selectedInstrument, 1000)
@@ -44,8 +40,8 @@ class Portfolio extends Component {
   }
 
   handleInputChange = (value, isStart = true, addToExisting = true) => {
-    const { uiStore, apiStore } = this.props
-    value = parseInt(stringTrimAll(value.toString()))
+    const { apiStore } = this.props
+    value = parseInt(stringTrimAll(value.toString()), 10)
     const func = isStart ? apiStore.setDepositStart : apiStore.setDepositMonthly
     const val =
       value +
@@ -53,7 +49,7 @@ class Portfolio extends Component {
         ? isStart ? apiStore.depositStart : apiStore.depositMonthly
         : 0)
 
-    func(parseInt(stringTrimAll(val.toString())))
+    func(parseInt(stringTrimAll(val.toString()), 10))
   }
 
   render() {
@@ -145,16 +141,6 @@ const InputsWrapper = styled.div`
   @media (max-width: ${p => p.theme.wrapper.medium}) {
     grid-template-columns: repeat(1, auto);
     grid-row-gap: ${p => p.theme.spacing.large};
-  }
-`
-
-const InputItem = styled.div`
-  position: relative;
-  margin-right: ${p => p.theme.spacing.small};
-
-  &:last-child {
-    margin-right: 0;
-    margin-left: ${p => p.theme.spacing.small};
   }
 `
 

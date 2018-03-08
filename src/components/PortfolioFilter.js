@@ -1,12 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import {
-  List,
-  ExpandListItem,
-  Wrapper,
-  fontSmoothing,
-  Fraction
-} from "@staccx/base"
+import { List, ExpandListItem, fontSmoothing, Fraction } from "@staccx/base"
 
 const Showing = ({ risk, duration, sectors }) => {
   return (
