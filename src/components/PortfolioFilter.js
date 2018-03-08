@@ -1,6 +1,14 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import { List, ExpandListItem, fontSmoothing, Fraction } from "@staccx/base"
+import { inject } from "mobx-react"
+import {
+  List,
+  ExpandListItem,
+  fontSmoothing,
+  Fraction,
+  Slider,
+  SplitListItem
+} from "@staccx/base"
 
 const Showing = ({ risk, duration, sectors }) => {
   return (
@@ -18,12 +26,13 @@ const Showing = ({ risk, duration, sectors }) => {
   )
 }
 
+@inject("uiStore")
 class PortfolioFilter extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
       risk: 3,
-      isExpanded: true
+      isExpanded: false
     }
     this.handleFractionClick = this.handleFractionClick.bind(this)
     this.toggleExpand = this.toggleExpand.bind(this)
@@ -42,6 +51,9 @@ class PortfolioFilter extends Component {
   }
 
   render() {
+    const { uiStore } = this.props
+    const { setStep } = uiStore
+
     return (
       <List>
         <Expand
@@ -58,18 +70,63 @@ class PortfolioFilter extends Component {
         >
           <FilterContent>
             <div>
-              Risk
-              <Fraction
-                onClick={this.handleFractionClick}
-                value={this.state.risk}
-                max={5}
-                maxComponent={<DotButton type="button" />}
-                valueComponent={<DotButton type="button" filled />}
-              />
+              <div>
+                Risk
+                <Fraction
+                  onClick={this.handleFractionClick}
+                  value={this.state.risk}
+                  max={5}
+                  maxComponent={<DotButton type="button" />}
+                  valueComponent={<DotButton type="button" filled />}
+                />
+              </div>
+              <div>
+                Time horizon
+                <Slider
+                  min={0}
+                  max={20}
+                  step={5}
+                  defaultValue={10}
+                  percentage={50}
+                />
+              </div>
             </div>
             <div>
-              My choices
-              <Fraction value={3} max={5} />
+              My answers
+              <List>
+                <AnswersListItem>
+                  <strong>Purpose</strong>
+                  <AnswersListDetails>
+                    Pension
+                    <Subtle>20+ years</Subtle>
+                    <EditLink href="#purpose" onClick={() => setStep(2)}>
+                      Edit
+                    </EditLink>
+                  </AnswersListDetails>
+                </AnswersListItem>
+                <AnswersListItem>
+                  <strong>Risk tolerance</strong>
+                  <AnswersListDetails>
+                    I keep my cool
+                    <Subtle>Medium</Subtle>
+                    <EditLink href="#risk" onClick={() => setStep(3)}>
+                      Edit
+                    </EditLink>
+                  </AnswersListDetails>
+                </AnswersListItem>
+                <AnswersListItem>
+                  <strong>Themes</strong>
+                  <AnswersListDetails>
+                    <span>
+                      <NoWrap>USA</NoWrap>, <NoWrap>Digitalisation</NoWrap>,{" "}
+                      <NoWrap>Clean energy</NoWrap>
+                    </span>
+                    <EditLink href="#themes" onClick={() => setStep(4)}>
+                      Edit
+                    </EditLink>
+                  </AnswersListDetails>
+                </AnswersListItem>
+              </List>
             </div>
           </FilterContent>
         </Expand>
@@ -144,8 +201,46 @@ const DotButton = styled.button`
   &:hover,
   &:active,
   &:focus {
-    background-color: ${p => p.theme.color.primary};
-    opacity: 0.6;
+    outline: none;
+    background-color: ${p =>
+      p.filled ? p.theme.color.primary : p.theme.color.secondary};
+    opacity: ${p => (p.filled ? 1 : 0.6)};
+  }
+`
+
+const AnswersListItem = styled(SplitListItem)`
+  padding: ${p => p.theme.spacing.small};
+  align-items: flex-start;
+  > * {
+    flex-grow: 1;
+    width: 50%;
+  }
+`
+
+const AnswersListDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const NoWrap = styled.span`
+  white-space: nowrap;
+`
+
+const Subtle = styled.i`
+  color: ${p => p.theme.color.wcag};
+  font-size: ${p => p.theme.font.size.tiny};
+  font-style: normal;
+  text-transform: uppercase;
+`
+
+const EditLink = styled.a`
+  text-decoration: none;
+  color: ${p => p.theme.color.primary};
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: ${p => p.theme.color.secondary};
   }
 `
 
