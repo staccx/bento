@@ -35,6 +35,7 @@ class Start extends React.Component {
           group="testddd"
           id="453346gnkj"
           onChange={toggleExperience}
+          on={hasExperience}
         >
           I have invested before
         </StyledToggle>
@@ -67,7 +68,7 @@ const StyledToggle = styled(Toggle)`
   display: flex;
   justify-content: center;
   > div {
-    background: #e0e0e0;
+    background-color: ${p => (p.on ? "#1CCBFF" : "#FE83AC")};
     box-shadow: inset 2px 4px 14px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     width: 200px !important;
