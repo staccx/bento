@@ -40,6 +40,9 @@ class StepNavigation extends Component {
 const Center = styled.div`
   text-align: center;
   margin-top: ${p => p.theme.spacing.large};
+  @media (max-width: ${p => p.theme.wrapper.medium}) {
+    margin-top: ${p => p.theme.spacing.large};
+  }
 `
 
 const Next = styled(Button)`

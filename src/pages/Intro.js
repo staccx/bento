@@ -1,6 +1,5 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import { Heading1 } from "../styles/headings"
 import QuestionLead from "./../components/QuestionLead"
 
 const Intro = () => {
@@ -12,7 +11,6 @@ const Intro = () => {
         on a couple of easy questions. We analyze 50 000 funds to find the best
         ones for your risk level.
       </QuestionLead>
-      <Heading1 />
     </main>
   )
 }

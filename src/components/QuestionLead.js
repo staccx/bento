@@ -18,6 +18,10 @@ const Question = styled.h1`
   margin-bottom: ${p => p.theme.spacing.large};
   margin-top: ${p => p.theme.spacing.huge};
   color: ${p => p.theme.color.grayDark};
+  @media (max-width: ${p => p.theme.wrapper.medium}) {
+    margin-top: ${p => p.theme.spacing.large};
+    font-size: ${p => p.theme.font.size.h2};
+  }
 `
 
 const Lead = styled.p`
@@ -31,6 +35,9 @@ const Lead = styled.p`
   margin-left: auto;
   margin-right: auto;
   line-height: 2;
+  @media (max-width: ${p => p.theme.wrapper.medium}) {
+    margin-bottom: ${p => p.theme.spacing.large};
+  }
 `
 
 export default QuestionLead
