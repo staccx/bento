@@ -38,6 +38,9 @@ const Lead = styled.p`
   @media (max-width: ${p => p.theme.wrapper.medium}) {
     margin-bottom: ${p => p.theme.spacing.large};
   }
+  ${Question} + & {
+    margin-top: -${p => p.theme.spacing.medium};
+  }
 `
 
 export default QuestionLead

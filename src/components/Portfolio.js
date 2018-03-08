@@ -137,10 +137,15 @@ const PortfolioWrapper = styled.div`
 `
 
 const InputsWrapper = styled.div`
-  display: flex;
-  max-width: 540px;
-  margin: ${p => p.theme.spacing.large} auto;
-  flex-wrap: wrap;
+  margin-top: ${p => p.theme.spacing.large};
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: ${p => p.theme.spacing.large};
+  justify-content: center;
+  @media (max-width: ${p => p.theme.wrapper.medium}) {
+    grid-template-columns: repeat(1, auto);
+    grid-row-gap: ${p => p.theme.spacing.large};
+  }
 `
 
 const InputItem = styled.div`

@@ -223,6 +223,9 @@ const Text = styled.span`
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   transform: translate(-50%, -50%);
   z-index: 5;
+  @media (max-width: ${p => p.theme.wrapper.small}) {
+    font-size: ${p => p.theme.font.size.tiny};
+  }
 `
 
 const CheckWrapper = styled.div`
@@ -230,6 +233,9 @@ const CheckWrapper = styled.div`
   grid-template-columns: repeat(3, auto);
   grid-column-gap: ${p => p.theme.spacing.medium};
   justify-content: center;
+  @media (max-width: ${p => p.theme.wrapper.small}) {
+    grid-template-columns: repeat(2, auto);
+  }
 `
 
 export default Investments
