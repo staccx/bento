@@ -37,7 +37,10 @@ const shotgunOptions = (duration = 500) => ({
           .map(
             current =>
               current.label
-                ? `${current.label}: ${formatCurrency(current.data[item.index].y, {precision: 0})}`
+                ? `${current.label}: ${formatCurrency(
+                    current.data[item.index].y,
+                    { precision: 0 }
+                  )}`
                 : null
           ) // TODO: Format currency
 
@@ -125,6 +128,9 @@ class ShotgunChart extends Component {
   componentDidMount() {
     this.getLabels = () => {
       const { forecast } = this.props.apiStore
+      if (!forecast) {
+        return []
+      }
       const years = {}
       Object.keys(forecast).forEach(key => {
         const date = parseDate(key)
@@ -137,6 +143,9 @@ class ShotgunChart extends Component {
 
     this.generateData = () => {
       const { forecast } = this.props.apiStore
+      if (!forecast) {
+        return []
+      }
       const keys = Object.keys(forecast)
       const dates = parseDate(keys)
       let max = 0
