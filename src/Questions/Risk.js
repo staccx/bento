@@ -61,7 +61,7 @@ class Risk extends React.Component {
 
   constructor(props, context) {
     super(props, context)
-    this.state = { hovered: 1000 }
+    this.state = { hovered: null }
 
     this.handleClick = this.handleClick.bind(this)
     this.incrementWave = this.incrementWave.bind(this)
@@ -92,6 +92,7 @@ class Risk extends React.Component {
   }
 
   handleClick(index) {
+    console.log(index)
     index = clamp(0, this.props.waves - 1, Math.round(index))
     clearTimeout(this.timeout)
     window.cancelAnimationFrame(this._frameId)
@@ -120,7 +121,7 @@ class Risk extends React.Component {
             <RangeLabel
               onClick={() =>
                 this.handleClick(
-                  i * (this.props.waves / (content.answers.length - 1))
+                  Math.floor((label.range[0] + label.range[1]) / 2)
                 )
               }
               key={label.id}
@@ -142,7 +143,11 @@ class Risk extends React.Component {
               distanceFromSelected={
                 this.current !== null ? Math.abs(this.current - index) : null
               }
-              distanceFromHovered={Math.abs(this.state.hovered - index)}
+              distanceFromHovered={
+                this.state.hovered !== null
+                  ? Math.abs(this.state.hovered - index)
+                  : null
+              }
             >
               <WaveBar />
             </WaveContainer>
@@ -154,13 +159,31 @@ class Risk extends React.Component {
 }
 
 const RangeLabel = styled.label`
+  position: relative;
   font-weight: bold;
   color: ${p => (p.current ? p.theme.color.secondary : "#2f80ed")};
   flex-basis: 25%;
   text-align: center;
   padding: ${p => p.theme.spacing.tiny};
+
   @media (max-width: ${p => p.theme.wrapper.small}) {
     font-size: ${p => p.theme.font.size.tiny};
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 12px;
+    background-color: ${p => p.theme.color.line};
+  }
+
+  &::after {
+    left: auto;
+    right: 0;
   }
 `
 
@@ -177,6 +200,7 @@ const WaveWrapper = styled.div`
 `
 
 const WaveBar = styled.i`
+  position: relative;
   width: 3px;
   background-color: #2f80ed;
   height: 32px;
@@ -195,19 +219,19 @@ const waveStyler = (distanceFromSelected, distanceFromHovered) => {
         background-color: #ff00c8;
         transform: scaleY(1.8);
       `
-      break
+
     case 1:
       return css`
         background-color: #c030ff;
         transform: scaleY(1.4);
       `
-      break
+
     case 2:
       return css`
         background-color: #9d32ff;
         transform: scaleY(1.1);
       `
-      break
+
     default:
       switch (distanceFromHovered) {
         case 0:
@@ -215,27 +239,25 @@ const waveStyler = (distanceFromSelected, distanceFromHovered) => {
             background-color: #4cf7ff;
             transform: scaleY(0.8);
           `
-          break
+
         case 1:
           return css`
             background-color: #3bbdf8;
             transform: scaleY(0.9);
           `
-          break
+
         case 2:
           return css`
             background-color: #2f92f3;
             transform: scaleY(0.95);
           `
-          break
+
         default:
           return css`
             background-color: #2f80ed;
             transform: scaleY(1);
           `
-          break
       }
-      break
   }
 }
 
