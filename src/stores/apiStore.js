@@ -56,7 +56,7 @@ class ApiStore {
       client
         .get("qpm", {
           params: {
-            InvestmentHorizon: 3,
+            InvestmentHorizon: Math.floor(this.horizon),
             RiskTolerance: Math.round(
               clamp(1, 3, inverseLerp(1, 100, this.currentRisk) * 3)
             ),
