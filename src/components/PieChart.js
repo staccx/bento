@@ -1,21 +1,23 @@
-import React, {Component} from "react"
+import React, { Component } from "react"
 import PropTypes from "prop-types"
-import {inject, observer} from 'mobx-react'
+import { inject, observer } from "mobx-react"
 import Chart from "chart.js"
-import {themeLaser} from '../theme/themeLaser'
+import { themeLaser } from "../theme/themeLaser"
 
 const fullCircle = Math.PI * 2
 
-@inject("apiStore", "uiStore") @observer
+@inject("apiStore", "uiStore")
+@observer
 class PieChart extends Component {
   static defaultProps = {}
 
   static propTypes = {
     apiStore: PropTypes.object
   }
-  getAngle = index => -this.getAngleToElement(index) - this.getElementDegrees(index)
+  getAngle = index =>
+    -this.getAngleToElement(index) - this.getElementDegrees(index)
   getElementDegrees = index => fullCircle * this.dataset.data[index] * 0.5
-  getAngleToElement = (index) => {
+  getAngleToElement = index => {
     return this.dataset.data.reduce((acc, current, i) => {
       if (i >= index) {
         return acc
@@ -31,31 +33,30 @@ class PieChart extends Component {
     const self = this
 
     this.generateData = () => {
-      const {recommendedPortfolio} = this.props.apiStore
+      const { recommendedPortfolio } = this.props.apiStore
       const portfolio = recommendedPortfolio.map(portfolio => portfolio)
       this.dataset = {
-        data: portfolio.map(p => p.weight),
+        data: portfolio.map(p => p.weight)
       }
 
       return {
-        datasets: [{
-          data: this.dataset.data.map(d => d * 100),
-          backgroundColor: themeLaser.graphColor
-        }],
+        datasets: [
+          {
+            data: this.dataset.data.map(d => d * 100),
+            backgroundColor: themeLaser.graphColor
+          }
+        ],
         labels: portfolio.map(p => p.instrument.name)
-      };
-
+      }
     }
-
 
     self.selectedIndex = 0
 
-
-    this.createChart = (ctx) => {
-      console.log('creating chart')
+    this.createChart = ctx => {
+      console.log("creating chart")
       this.chart = new Chart(ctx, {
         data: this.generateData(),
-        type: 'doughnut',
+        type: "doughnut",
         options: {
           legend: {
             display: false
@@ -70,19 +71,18 @@ class PieChart extends Component {
               }
             }
           },
-          onClick: function (evt, elements) {
+          onClick: function(evt, elements) {
             if (elements && elements.length) {
-              const segment = elements[0];
+              const segment = elements[0]
               const index = segment["_index"]
               const angle = self.getAngle(index)
               self.chart.options.rotation = angle
-              self.chart.update();
+              self.chart.update()
               if (self.selectedIndex !== index) {
-                self.selectedIndex = index;
-                segment._model.outerRadius += self.props.explodeAmount;
-              }
-              else {
-                self.selectedIndex = null;
+                self.selectedIndex = index
+                segment._model.outerRadius += self.props.explodeAmount
+              } else {
+                self.selectedIndex = null
               }
               self.props.uiStore.setInstrument(self.selectedIndex)
             }
@@ -90,9 +90,8 @@ class PieChart extends Component {
           layout: {
             padding: self.props.padding
           }
-        },
-
-      });
+        }
+      })
     }
     this.createChart(this.chartContext)
   }
@@ -103,13 +102,17 @@ class PieChart extends Component {
   }
 
   render() {
-    const {recommendedPortfolio} = this.props.apiStore
-    return <canvas ref={node => {
-      if (!node) {
-        return
-      }
-      this.chartContext = node.getContext("2d")
-    }}/>
+    const { recommendedPortfolio } = this.props.apiStore
+    return (
+      <canvas
+        ref={node => {
+          if (!node) {
+            return
+          }
+          this.chartContext = node.getContext("2d")
+        }}
+      />
+    )
   }
 }
 

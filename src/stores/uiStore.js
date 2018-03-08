@@ -17,7 +17,7 @@ class UIStore {
     { name: "Theme", component: Investments },
     { name: "Portfolio", component: Portfolio }
   ]
-  @observable selectedInstrument = 0
+  @observable selectedInstrument = null
 
   @observable hasExperience = false
 
