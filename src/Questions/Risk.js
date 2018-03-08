@@ -174,9 +174,16 @@ const RangeLabel = styled.label`
   flex-basis: 25%;
   text-align: center;
   padding: ${p => p.theme.spacing.tiny};
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 
   @media (max-width: ${p => p.theme.wrapper.small}) {
     font-size: ${p => p.theme.font.size.tiny};
+  }
+
+  &:hover,
+  &:focus {
+    opacity: ${p => (p.current ? "1" : "0.7")};
   }
 
   &::before,
@@ -246,19 +253,19 @@ const waveStyler = (distanceFromSelected, distanceFromHovered) => {
         case 0:
           return css`
             background-color: #4cf7ff;
-            transform: scaleY(0.8);
+            transform: scaleY(0.6);
           `
 
         case 1:
           return css`
             background-color: #3bbdf8;
-            transform: scaleY(0.9);
+            transform: scaleY(0.7);
           `
 
         case 2:
           return css`
             background-color: #2f92f3;
-            transform: scaleY(0.95);
+            transform: scaleY(0.9);
           `
 
         default:
