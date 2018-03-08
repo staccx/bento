@@ -29,25 +29,32 @@ class PieChart extends Component {
       this.chart = null
     }
     const self = this
-    const {recommendedPortfolio} = this.props.apiStore
-    const portfolio = recommendedPortfolio.map(portfolio => portfolio)
-    this.dataset = {
-      data: portfolio.map(p => p.weight),
+
+    this.generateData = () => {
+      const {recommendedPortfolio} = this.props.apiStore
+      const portfolio = recommendedPortfolio.map(portfolio => portfolio)
+      this.dataset = {
+        data: portfolio.map(p => p.weight),
+      }
+
+      return {
+        datasets: [{
+          data: this.dataset.data.map(d => d * 100),
+          backgroundColor: themeLaser.graphColor
+        }],
+        labels: portfolio.map(p => p.instrument.name)
+      };
+
     }
 
-    const data = {
-      datasets: [{
-        data: this.dataset.data.map(d => d * 100),
-        backgroundColor: themeLaser.graphColor
-      }],
-      labels: portfolio.map(p => p.instrument.name)
-    };
 
     self.selectedIndex = 0
+
+
     this.createChart = (ctx) => {
       console.log('creating chart')
       this.chart = new Chart(ctx, {
-        data: data,
+        data: this.generateData(),
         type: 'doughnut',
         options: {
           legend: {
@@ -91,7 +98,8 @@ class PieChart extends Component {
   }
 
   componentDidUpdate() {
-    this.createChart(this.chartContext)
+    this.chart.data = this.generateData()
+    this.chart.update()
   }
 
   render() {

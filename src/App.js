@@ -31,7 +31,6 @@ class App extends Component {
 
             </Wrapper>
           </Router>
-          <DevTools/>
         </div>
       </ThemeProvider>
     )
