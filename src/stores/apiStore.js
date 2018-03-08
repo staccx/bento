@@ -1,6 +1,6 @@
 import { observable, action } from "mobx"
 import axios from "axios"
-import data from "./data.json"
+import mock from "./data.json"
 import { inverseLerp, clamp } from "@staccx/base/dist/index.es"
 import qs from "qs"
 
@@ -96,14 +96,16 @@ class ApiStore {
           this.recommendedPortfolio = result.recommendedPortfolio
           this.forecastedAnnualReturn = result.forecastedAnnualReturn
         })
+        .catch(err => {
+          console.warn(err)
+          console.log("FAlling back to mock")
+          this.savingsplan = mock.savingsplan
+          this.forecast = this.savingsplan.forecast
+          this.marketReturns = mock.marketReturns
+          this.recommendedPortfolio = mock.recommendedPortfolio
+          this.forecastedAnnualReturn = mock.forecastedAnnualReturn
+        })
     }, 200)
-  }
-  @action
-  getResult = () => {
-    this.savingsplan = data.savingsplan
-    this.marketReturns = data.marketReturns
-    this.recommendedPortfolio = data.recommendedPortfolio
-    this.forecastedAnnualReturn = data.forecastedAnnualReturn
   }
 }
 
