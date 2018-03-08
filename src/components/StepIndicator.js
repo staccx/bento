@@ -1,6 +1,7 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import { inject, observer } from "mobx-react"
+import { hideVisually } from "@staccx/base"
 
 @inject("uiStore")
 @observer
@@ -24,7 +25,9 @@ class StepIndicator extends React.Component {
                 progress={progress}
               >
                 <StepLink id={`step-${index}`} onClick={() => setStep(index)}>
-                  {step.name}
+                  <HideMobile current={index === currentStep}>
+                    {step.name}
+                  </HideMobile>
                 </StepLink>
               </Step>
             )
@@ -35,7 +38,11 @@ class StepIndicator extends React.Component {
               id={`step-${index}`}
               current={index === currentStep}
             >
-              {step.name}
+              <StepNotLink>
+                <HideMobile current={index === currentStep}>
+                  {step.name}
+                </HideMobile>
+              </StepNotLink>
             </Step>
           )
         })}
@@ -65,13 +72,36 @@ const rubberBand2 = keyframes`
   }
 `
 
+const StepNotLink = styled.span``
+
+const HideMobile = styled.span`
+  @media (max-width: ${p => p.theme.wrapper.medium}) {
+    ${p => !p.current && hideVisually};
+  }
+`
+
 const StepperOuter = styled.nav`
   position: relative;
   display: grid;
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: repeat(6, auto);
   grid-template-rows: repeat(2, auto);
   max-width: none;
   border-bottom: 1px solid ${p => p.theme.color.grayLight};
+  @media (max-width: ${p => p.theme.wrapper.medium}) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+`
+
+const StepLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: ${p => p.theme.color.primary};
+  }
 `
 
 const Step = styled.div`
@@ -80,6 +110,16 @@ const Step = styled.div`
   font-size: ${p => p.theme.font.size.small};
   color: ${p => (p.current ? p.theme.color.text : p.theme.color.grayLight)};
   grid-row: 1;
+  @media (max-width: ${p => p.theme.wrapper.medium}) {
+    ${StepLink}::before, ${StepNotLink}::before {
+      ${p => !p.current && 'content: ""'};
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      background-color: currentColor;
+      border-radius: 50%;
+    }
+  }
 `
 
 const StepBar = styled.div`
@@ -100,18 +140,6 @@ const StepBar = styled.div`
       ? `animation: ${rubberBand} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1;`
       : `animation: ${rubberBand2} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1;`}
 }
-`
-
-const StepLink = styled.a`
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: ${p => p.theme.color.primary};
-  }
 `
 
 export default StepIndicator
