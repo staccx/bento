@@ -102,7 +102,6 @@ class PieChart extends Component {
   }
 
   render() {
-    const { recommendedPortfolio } = this.props.apiStore
     return (
       <canvas
         ref={node => {
