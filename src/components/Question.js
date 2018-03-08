@@ -4,54 +4,31 @@ import { rgba } from "polished"
 import { CheckGroup, RadioButton } from "@staccx/base"
 import QuestionLead from "./QuestionLead"
 
-class TestQuestion extends React.Component {
-  constructor(props, context) {
-    super(props, context)
-    this.state = { selected: null }
-
-    this.handleChange = this.handleChange.bind(this)
-  }
-
-  handleChange = value => {
-    if (value) {
-      this.setState({
-        selected: value
-      })
-    }
-  }
-
-  render() {
-    const { selected } = this.state
-    const { content } = this.props
-    return (
-      <div>
-        <QuestionLead question={content.title}>{content.lead}</QuestionLead>
-        <CheckGroup
-          group={"experiencealternatives"}
-          onChange={this.handleChange}
+const Question = ({ content, onChange, selected }) => (
+  <div>
+    <QuestionLead question={content.title}>{content.lead}</QuestionLead>
+    <CheckGroup group={"experiencealternatives"}>
+      {content.answers.map(answer => (
+        <AnswerBox
+          selected={answer.value === selected}
+          key={answer.id}
+          htmlFor={answer.id}
         >
-          {content.answers.map(answer => (
-            <AnswerBox
-              selected={answer.value === selected}
-              key={answer.id}
-              htmlFor={answer.id}
-            >
-              <AdvisorRadio
-                id={answer.id}
-                value={answer.value}
-                selected={answer.value === selected}
-                name={"experiencealternatives"}
-              >
-                <strong>{answer.heading}</strong> <br />
-                <span>{answer.body}</span>
-              </AdvisorRadio>
-            </AnswerBox>
-          ))}
-        </CheckGroup>
-      </div>
-    )
-  }
-}
+          <AdvisorRadio
+            id={answer.id}
+            value={answer.value}
+            selected={answer.value === selected}
+            name={"experiencealternatives"}
+            onChange={() => onChange(answer.value)}
+          >
+            <strong>{answer.heading}</strong> <br />
+            <span>{answer.body}</span>
+          </AdvisorRadio>
+        </AnswerBox>
+      ))}
+    </CheckGroup>
+  </div>
+)
 
 const AnswerBox = styled.label`
   display: block;
@@ -167,4 +144,4 @@ const AdvisorRadio = styled(RadioButton)`
   }
 `
 
-export default TestQuestion
+export default Question

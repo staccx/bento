@@ -18,9 +18,8 @@ class ApiStore {
   @observable forecastedAnnualReturn = 0
   @observable forecast = null
 
-  @observable resultDirty = false
-
   @observable currentRisk = 0
+  @observable horizon = 0
 
   @observable depositStart = 0
   @observable depositMonthly = 2000
@@ -42,12 +41,17 @@ class ApiStore {
     this.getResultFromApi()
   }
 
+  @action setHorizon = horizon => {
+    this.horizon = horizon
+    this.getResultFromApi()
+  }
+
   @action getResultFromApi = () => {
     clearTimeout(this.timeout)
     this.timeout = setTimeout(() => {
       client.get('qpm', {
         params: {
-          InvestmentHorizon: 3,
+          InvestmentHorizon: Math.floor(this.horizon),
           RiskTolerance: Math.round(clamp(1, 3, inverseLerp(1, 100, this.currentRisk) * 3)),
           PeriodicSavings: this.depositMonthly,
           StartingCapital: this.depositStart
