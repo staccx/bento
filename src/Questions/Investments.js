@@ -1,10 +1,11 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 import { CheckGroup, CheckBox } from "@staccx/base"
+import QuestionLead from "../components/QuestionLead"
 
 const content = {
   title: "Do you want to choose where your investment is placed?",
-  lede:
+  lead:
     "We can take this into account when building your portfolio. Select up to 4.",
   answers: [
     {
@@ -98,23 +99,27 @@ class Investments extends Component {
 
   render() {
     return (
-      <CheckWrapper>
-        <CheckGroup group={"geo"} onChange={this.handleSelect}>
-          {content.answers.map(item => (
-            <ImageCheck
-              key={item.id}
-              value={item.value}
-              id={item.id}
-              disabled={this.isDisabled(item.value)}
-            >
-              <Text>{item.label}</Text>
-              <Img>
-                <img src={item.img} alt="" />
-              </Img>
-            </ImageCheck>
-          ))}
-        </CheckGroup>
-      </CheckWrapper>
+      <div>
+        <QuestionLead question={content.title}>{content.lead}</QuestionLead>
+
+        <CheckWrapper>
+          <CheckGroup group={"geo"} onChange={this.handleSelect}>
+            {content.answers.map(item => (
+              <ImageCheck
+                key={item.id}
+                value={item.value}
+                id={item.id}
+                disabled={this.isDisabled(item.value)}
+              >
+                <Text>{item.label}</Text>
+                <Img>
+                  <img src={item.img} alt="" />
+                </Img>
+              </ImageCheck>
+            ))}
+          </CheckGroup>
+        </CheckWrapper>
+      </div>
     )
   }
 }
@@ -225,7 +230,6 @@ const CheckWrapper = styled.div`
   grid-template-columns: repeat(3, auto);
   grid-column-gap: ${p => p.theme.spacing.medium};
   justify-content: center;
-  padding-top: ${p => p.theme.spacing.large};
 `
 
 export default Investments

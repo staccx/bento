@@ -5,6 +5,7 @@ import { observable } from "mobx"
 import { inject, observer } from "mobx-react"
 import { easeOutQuad } from "easing-utils"
 import { lerp, clamp } from "@staccx/base"
+import QuestionLead from "../components/QuestionLead"
 
 const content = {
   title: "What do you do if there is a strong market decline?",
@@ -104,9 +105,21 @@ class Risk extends React.Component {
   render() {
     const waveArray = [...Array(this.props.waves)]
     return (
-      <Space>
+      <div>
+        <QuestionLead question={content.title}>{content.lead}</QuestionLead>
         <LabelWrapper>
-          {content.answers.map((e, i) => <Label  onClick={() => this.handleClick(i  * (this.props.waves / (content.answers.length -1)))} key={e.id}>{e.heading}</Label>)}
+          {content.answers.map((e, i) => (
+            <Label
+              onClick={() =>
+                this.handleClick(
+                  i * (this.props.waves / (content.answers.length - 1))
+                )
+              }
+              key={e.id}
+            >
+              {e.heading}
+            </Label>
+          ))}
         </LabelWrapper>
         <WaveWrapper>
           {waveArray.map((e, index) => (
@@ -126,15 +139,11 @@ class Risk extends React.Component {
             </WaveHover>
           ))}
         </WaveWrapper>
-      </Space>
+      </div>
     )
   }
 }
 
-const Space = styled.div`
-  margin-top: 48px;
-  margin-bottom: 48px;
-`
 const Label = styled.label`
   font-weight: bold;
   color: #2f80ed;
