@@ -9,10 +9,11 @@ const Wrapper = ({ children, className, size, breakout, ...otherProps }) => (
 )
 
 const Wrap = styled.div`
+  width: 100%;
+  max-width: ${p => p.theme.wrapper[p.size]};
+  margin: auto;
   padding-left: ${p => p.theme.spacing.medium};
   padding-right: ${p => p.theme.spacing.medium};
-  margin: auto;
-  max-width: ${p => p.theme.wrapper[p.size]};
 
   ${p =>
     p.breakout &&
