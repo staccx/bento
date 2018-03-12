@@ -88,6 +88,7 @@ class PortfolioFilter extends Component {
                   step={5}
                   defaultValue={10}
                   percentage={50}
+                  name="time-horizon"
                 />
               </div>
             </div>

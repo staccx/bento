@@ -1,8 +1,10 @@
 import { observable, action } from "mobx"
+import { differenceInCalendarYears } from "date-fns"
 import axios from "axios"
 import mock from "./data.json"
 import { inverseLerp, clamp } from "@staccx/base/dist/index.es"
 import qs from "qs"
+import { parseDate } from "../utils/parseDate"
 
 const client = axios.create({
   baseURL: "https://13.95.84.217/",
@@ -14,11 +16,13 @@ const client = axios.create({
 class ApiStore {
   @observable savingsplan = null
   @observable marketReturns = null
-  @observable recommendedPortfolio = null
+  @observable recommendedPortfolio = []
   @observable forecastedAnnualReturn = 0
   @observable forecast = null
+  @observable expected = 0
+  @observable years = null
 
-  @observable currentRisk = null
+  @observable currentRisk = 1
   @observable horizon = 1
 
   @observable optionList = []
@@ -92,6 +96,12 @@ class ApiStore {
         .then(result => {
           this.savingsplan = result.savingsPlan
           this.forecast = this.savingsplan.forecast
+          const forecastArray = Object.keys(this.forecast)
+          const last = forecastArray[forecastArray.length - 1]
+          this.expected = this.forecast[last].Median
+          const lastDate = parseDate(last)
+          this.years = differenceInCalendarYears(lastDate, new Date())
+          console.log(this.expected)
           this.marketReturns = result.marketReturns
           this.recommendedPortfolio = result.recommendedPortfolio
           this.forecastedAnnualReturn = result.forecastedAnnualReturn

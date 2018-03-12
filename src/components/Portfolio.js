@@ -1,5 +1,12 @@
 import React, { Component } from "react"
 import { inject, observer } from "mobx-react"
+import {
+  Tab as UnstyledTab,
+  TabList as UnstyledTabList,
+  Tabs as UnstyledTabs,
+  TabPanel as UnstyledTabPanel
+} from "react-tabs"
+import { formatCurrency } from "@staccx/base"
 import PieChart from "./PieChart"
 import PortfolioExpand from "./PortfolioExpand"
 import PortfolioFilter from "./PortfolioFilter"
@@ -61,7 +68,7 @@ class Portfolio extends Component {
         <PortfolioFilter />
         <InputsWrapper>
           <CurrencyInputSteppers
-            label={"Første innskudd"}
+            label={"First deposit"}
             name={"deposit/START_DEPOSIT"}
             value={depositStart}
             onIncrement={() => this.handleInputChange(2000)}
@@ -70,7 +77,7 @@ class Portfolio extends Component {
             id={"deposit_start"}
           />
           <CurrencyInputSteppers
-            label={"Månedlig innskudd"}
+            label={"Monthly deposit"}
             name={"deposit/MONTHLY_DEPOSIT"}
             value={depositMonthly}
             onIncrement={() => this.handleInputChange(2000, false)}
@@ -79,8 +86,36 @@ class Portfolio extends Component {
             id={"deposit_monthly"}
           />
         </InputsWrapper>
-        <Heading2> Forecasted annual return</Heading2>
-        <ShotgunChart height={500} width={1000} />
+        <Tabs>
+          <TabList>
+            <Tab>Expected development</Tab>
+            <Tab>Historical data</Tab>
+          </TabList>
+
+          <TabPanel>
+            <WrittenExplanation>
+              If you save{" "}
+              <strong>
+                {formatCurrency(this.props.apiStore.depositMonthly, {
+                  precision: 0
+                })}
+              </strong>{" "}
+              month we expect you’ll have around{" "}
+              <strong>
+                {formatCurrency(this.props.apiStore.expected, {
+                  precision: 0
+                })}
+              </strong>{" "}
+              in <strong>{this.props.apiStore.years} years</strong>
+            </WrittenExplanation>
+            <ShotgunChart height={400} width={1000} />
+          </TabPanel>
+          <TabPanel>
+            <Heading2>Historical data</Heading2>
+            Graf her.
+          </TabPanel>
+        </Tabs>
+
         <div>
           <Heading2>Suggested portfolio</Heading2>
           <PortfolioWrapper>
@@ -142,6 +177,82 @@ const InputsWrapper = styled.div`
     grid-template-columns: repeat(1, auto);
     grid-row-gap: ${p => p.theme.spacing.large};
   }
+`
+
+const Tabs = styled(UnstyledTabs)`
+  margin-top: ${p => p.theme.spacing.huge};
+`
+
+const TabList = styled(UnstyledTabList)`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 0 ${p => p.theme.spacing.medium} 0;
+`
+
+const Tab = styled(UnstyledTab).attrs({
+  selectedClassName: "selected",
+  disabledClassName: "disabled"
+})`
+  text-align: center;
+  padding: ${p => p.theme.spacing.small} ${p => p.theme.spacing.medium};
+  list-style: none;
+  cursor: pointer;
+  background: #fafafa;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 4px rgba(0, 0, 0, 0.02),
+    0px 8px 8px rgba(0, 0, 0, 0.03);
+  border-radius: 60px;
+  margin-right: ${p => p.theme.spacing.small};
+  margin-bottom: ${p => p.theme.spacing.small};
+  transition: box-shadow 0.2s ease-out;
+
+  &:hover {
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 4px rgba(0, 0, 0, 0.02),
+      0px 8px 8px rgba(0, 0, 0, 0.03), 0px 16px 16px rgba(0, 0, 0, 0.03),
+      0px 32px 32px rgba(0, 0, 0, 0.03), 0px 64px 64px rgba(0, 0, 0, 0.03);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.selected {
+    color: ${p => p.theme.color.white};
+    background: linear-gradient(90deg, #5d3b9f 8.41%, #cf27aa 95.8%);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 4px rgba(0, 0, 0, 0.02),
+      0px 8px 8px rgba(0, 0, 0, 0.03), 0px 16px 16px rgba(0, 0, 0, 0.03),
+      0px 32px 32px rgba(0, 0, 0, 0.03), 0px 64px 64px rgba(0, 0, 0, 0.03);
+    cursor: default;
+  }
+
+  &.disabled {
+    color: #e0e0e0;
+    cursor: not-allowed;
+  }
+`
+
+const TabPanel = styled(UnstyledTabPanel).attrs({
+  selectedClassName: "selected"
+})`
+  display: none;
+  padding: 10px 20px;
+  &.selected {
+    display: block;
+  }
+`
+
+Tab.tabsRole = "Tab"
+Tabs.tabsRole = "Tabs"
+TabPanel.tabsRole = "TabPanel"
+TabList.tabsRole = "TabList"
+
+const WrittenExplanation = styled.p`
+  padding: 0;
+  margin: 0 0 ${p => p.theme.spacing.large} 0;
+  text-align: center;
+  line-height: 1.5;
+  font-size: ${p => p.theme.font.size.h3};
 `
 
 export default Portfolio

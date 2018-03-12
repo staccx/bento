@@ -3,7 +3,7 @@ import UIStore from "./uiStore"
 
 const apiStore = new ApiStore()
 const uiStore = new UIStore()
-uiStore.setStep(2)
+uiStore.setStep(5)
 // apiStore.getResult()
 apiStore.getResultFromApi()
 
