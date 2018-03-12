@@ -63,16 +63,16 @@ const Input = styled(CurrencyInput)`
     min-height: ${p => p.theme.targetSize.large};
     border-radius: 0;
     border-width: 0;
-    border-bottom: 2px solid ${p => p.theme.color.line};
+    border-bottom: 2px solid ${p => p.theme.color.secondary};
     font-size: ${p => p.theme.font.size.h1};
     background-color: transparent;
-    transition: border 0.2s ease;
+    transition: border-color 0.2s ease;
 
     &:hover,
     &:active,
     &:focus {
       background-color: transparent;
-      border-color: ${p => p.theme.color.secondary};
+      border-color: ${p => p.theme.color.primary};
     }
   }
 `
@@ -92,14 +92,14 @@ const StepperButton = styled(Button)`
   padding: 0;
   color: ${p => (p.primary ? p.theme.color.white : p.theme.color.text)};
   background-color: ${p =>
-    p.primary ? p.theme.color.primary : p.theme.color.secondary};
+    p.primary ? p.theme.color.grayDark : p.theme.color.grayLight};
   transition: background 0.2s ease;
 
   &:hover,
   &:active,
   &:focus {
     background-color: ${p =>
-      p.primary ? p.theme.color.primary : p.theme.color.secondary};
+      p.primary ? p.theme.color.primary : p.theme.color.primary};
   }
 
   > svg {
