@@ -8,6 +8,11 @@ import StepContent from "./components/StepContent"
 const elementStyles = `
   html, h1, h2, h3, h4, h5, h6 {
     font-family: 'Libre Franklin', sans-serif;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
   }
 `
 
