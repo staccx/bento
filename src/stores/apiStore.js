@@ -20,6 +20,7 @@ class ApiStore {
   @observable forecastedAnnualReturn = 0
   @observable forecast = null
   @observable expected = 0
+  @observable calculated = 0
   @observable years = null
 
   @observable currentRisk = 1
@@ -101,7 +102,12 @@ class ApiStore {
           this.expected = this.forecast[last].Median
           const lastDate = parseDate(last)
           this.years = differenceInCalendarYears(lastDate, new Date())
-          console.log(this.expected)
+
+          const backtestArray = Object.keys(this.savingsplan.backtest)
+          const lastBacktest = backtestArray[backtestArray.length - 1]
+          this.calculated = this.savingsplan.backtest[
+            lastBacktest
+          ].PortfolioReturns
           this.marketReturns = result.marketReturns
           this.recommendedPortfolio = result.recommendedPortfolio
           this.forecastedAnnualReturn = result.forecastedAnnualReturn

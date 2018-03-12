@@ -100,7 +100,7 @@ class Portfolio extends Component {
                   precision: 0
                 })}
               </strong>{" "}
-              month we expect you’ll have around{" "}
+              month we expect <br /> you’ll have around{" "}
               <strong>
                 {formatCurrency(this.props.apiStore.expected, {
                   precision: 0
@@ -108,11 +108,34 @@ class Portfolio extends Component {
               </strong>{" "}
               in <strong>{this.props.apiStore.years} years</strong>
             </WrittenExplanation>
-            <ShotgunChart height={400} width={1000} />
+            <ShotgunChart height={300} width={1000} />
           </TabPanel>
           <TabPanel>
-            <Heading2>Historical data</Heading2>
-            Graf her.
+            <WrittenExplanation>
+              If you saved{" "}
+              <strong>
+                {formatCurrency(this.props.apiStore.depositMonthly, {
+                  precision: 0
+                })}
+              </strong>{" "}
+              /month with this portfolio <br />since <strong>1996</strong> you
+              would now have{" "}
+              <strong>
+                {formatCurrency(this.props.apiStore.calculated, {
+                  precision: 0
+                })}
+              </strong>
+            </WrittenExplanation>
+            <span
+              style={{
+                backgroundColor: "#f4f4f4",
+                display: "block",
+                padding: 100,
+                textAlign: "center"
+              }}
+            >
+              Graf her.
+            </span>
           </TabPanel>
         </Tabs>
 
