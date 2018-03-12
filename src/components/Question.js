@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 import { rgba } from "polished"
-import { CheckGroup, RadioButton } from "@staccx/base"
+import { CheckGroup, RadioButton, Wrapper } from "@staccx/base"
 import QuestionLead from "./QuestionLead"
 
 const Question = ({ content, onChange, selected }) => (
-  <div>
+  <Wrapper size="medium">
     <QuestionLead question={content.title}>{content.lead}</QuestionLead>
     <CheckGroup group={"experiencealternatives"} onChange={() => null}>
       {content.answers.map(answer => (
@@ -14,6 +14,7 @@ const Question = ({ content, onChange, selected }) => (
           key={answer.id}
           htmlFor={answer.id}
         >
+          <Image>{answer.icon}</Image>
           <AdvisorRadio
             id={answer.id}
             value={answer.value}
@@ -21,115 +22,77 @@ const Question = ({ content, onChange, selected }) => (
             name={"experiencealternatives"}
             onChange={() => onChange(answer.value)}
           >
-            <strong>{answer.heading}</strong> <br />
+            <Heading>{answer.heading}</Heading>
             <span>{answer.body}</span>
           </AdvisorRadio>
         </AnswerBox>
       ))}
     </CheckGroup>
-  </div>
+  </Wrapper>
 )
 
+const Heading = styled.h4`
+  color: ${p => p.theme.color.primary};
+  font-size: ${p => p.theme.font.size.h3};
+  margin-bottom: ${p => p.theme.spacing.small};
+`
+
 const AnswerBox = styled.label`
-  display: block;
+  display: flex;
+  align-items: center;
   position: relative;
   border-radius: ${p => p.theme.borderRadius};
-  margin-bottom: ${p => p.theme.spacing.medium};
+  margin-bottom: ${p => p.theme.spacing.large};
   padding: 1px;
-  overflow: hidden;
-  background-image: linear-gradient(
-    to right,
-    ${p => p.theme.gradient.laser[0]} 0%,
-    ${p => p.theme.gradient.laser[1]} 100%
-  );
-  box-shadow: ${p =>
-    p.selected
-      ? `0 4px 12px rgba(0,0,0, 0.15)`
-      : `
-        0 4px 12px ` +
-        rgba(p.theme.gradient.laser[0], 0.08) +
-        `,
-        0 -1px 8px ` +
-        rgba(p.theme.gradient.galaxy[1], 0.1) +
-        `
-  `};
   transition: box-shadow 0.2s ease;
 
   &:hover,
   &:active,
-  &:focus {
-    box-shadow: ${p =>
-      p.selected
-        ? `0 4px 12px rgba(0,0,0, 0.15)`
-        : `
-          0 4px 16px ` +
-          rgba(p.theme.gradient.laser[0], 0.18) +
-          `,
-          0 -1px 12px ` +
-          rgba(p.theme.gradient.galaxy[1], 0.2) +
-          `
-    `};
-  }
-
-  &:hover,
   & input:focus ~ {
     label::before {
       border-color: ${p => p.theme.color.secondary} !important;
+    }
+    ${Heading} {
+      color: ${p => p.theme.color.secondary};
     }
   }
 `
 
 const AdvisorRadio = styled(RadioButton)`
-  padding: 0;
+  width: 75%;
+  padding: 0 ${p => p.theme.spacing.huge} 0 0;
   border-radius: 14px;
-  color: ${p => (p.selected ? p.theme.color.white : p.theme.color.text)};
-  background-color: ${p => p.theme.color.white};
-  background-image: linear-gradient(to right, white 0%, white 100%);
-
-  ${p =>
-    p.selected
-      ? `
-      background-image: linear-gradient(
-        to right,
-        ` +
-        p.theme.gradient.laser[0] +
-        ` 0%,
-        ` +
-        p.theme.gradient.laser[1] +
-        ` 100%
-      );
-      border-image-slice: 1;`
-      : ``};
 
   > label {
     position: static;
     display: inline-block;
     width: 100%;
-    padding: ${p => p.theme.spacing.large};
-    padding-left: ${p => p.theme.spacing.largePlus};
+    padding-left: ${p => p.theme.spacing.large};
 
     &::before,
     &::after {
       top: 50%;
-      left: 24px;
+      left: auto;
+      right: 48px;
       transform: translateY(-50%);
       border-color: ${p => p.theme.color.primary};
       border-width: 2px;
     }
 
+    &::before {
+      content: "Select  ";
+      text-indent: 32px;
+    }
+
     &::after {
       background-color: ${p => p.theme.color.secondary};
-      transform: translate(4px, -50%) scale(0);
+      transform: translate(-4px, -50%) scale(0);
     }
   }
 
   > input:checked ~ label {
-    &::before {
-      border-color: ${p => p.theme.color.white};
-    }
-
     &::after {
-      transform: translate(4px, -50%) scale(1);
+      transform: translate(-4px, -50%) scale(1);
     }
   }
 
@@ -141,6 +104,12 @@ const AdvisorRadio = styled(RadioButton)`
         border-color: ${p => p.theme.color.white} !important;
       }
     }
+  }
+`
+
+const Image = styled.div`
+  svg {
+    max-width: 100%;
   }
 `
 

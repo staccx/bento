@@ -50,11 +50,13 @@ const Next = styled(Button)`
   border: 2px solid ${p => p.theme.color.btnColor};
   border-radius: 15px;
   background-color: transparent;
+  transition: color 0.2s ease;
+
   &:hover,
   &:focus,
   &:active {
     background-color: transparent;
-    color: ${p => p.theme.color.black};
+    color: ${p => p.theme.color.secondary};
   }
 `
 
@@ -63,6 +65,7 @@ const Previous = styled(Button)`
   border-radius: 15px;
   color: ${p => p.theme.color.wcag};
   background-color: transparent;
+
   &:hover,
   &:focus,
   &:active {
