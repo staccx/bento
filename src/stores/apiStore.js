@@ -19,6 +19,7 @@ class ApiStore {
   @observable recommendedPortfolio = []
   @observable forecastedAnnualReturn = 0
   @observable forecast = null
+  @observable backtest = null
   @observable expected = 0
   @observable calculated = 0
   @observable years = null
@@ -97,6 +98,7 @@ class ApiStore {
         .then(result => {
           this.savingsplan = result.savingsPlan
           this.forecast = this.savingsplan.forecast
+          this.backtest = this.savingsplan.backtest
           const forecastArray = Object.keys(this.forecast)
           const last = forecastArray[forecastArray.length - 1]
           this.expected = this.forecast[last].Median

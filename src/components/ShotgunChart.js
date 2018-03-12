@@ -56,7 +56,10 @@ const shotgunOptions = (duration = 500) => ({
         }
 
         const date = parseDate(firstItem.xLabel)
-        return `in ${differenceInCalendarYears(date, new Date())} years`
+        const diff = differenceInCalendarYears(date, new Date())
+        return `${diff < 0 ? "" : "in"} ${Math.abs(diff)} years ${
+          diff < 0 ? "ago" : ""
+        }`
       },
       labelColor: () => ({ backgroundColor: baseColor.toRgbString() })
     }
@@ -117,7 +120,12 @@ class ShotgunChart extends Component {
   static propTypes = {
     chartId: PropTypes.string,
     height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired
+    width: PropTypes.number.isRequired,
+    isForecast: PropTypes.bool
+  }
+
+  static defaultProps = {
+    isForecast: true
   }
 
   constructor() {
@@ -126,13 +134,19 @@ class ShotgunChart extends Component {
   }
 
   componentDidMount() {
-    this.getLabels = () => {
-      const { forecast } = this.props.apiStore
-      if (!forecast) {
+    const createDataset = (data, backgroundColor, label) => ({
+      data,
+      backgroundColor,
+      label
+    })
+
+    this.getLabels = data => {
+      if (!data) {
         return []
       }
+
       const years = {}
-      Object.keys(forecast).forEach(key => {
+      Object.keys(data).forEach(key => {
         const date = parseDate(key)
         if (!years.hasOwnProperty(date.getFullYear().toString())) {
           years[date.getFullYear().toString()] = date
@@ -141,19 +155,18 @@ class ShotgunChart extends Component {
       return Object.keys(years)
     }
 
-    this.generateData = () => {
-      const { forecast } = this.props.apiStore
-      if (!forecast) {
+    this.generateData = data => {
+      if (!data) {
         return []
       }
-      const keys = Object.keys(forecast)
+      const keys = Object.keys(data)
       const dates = parseDate(keys)
       let max = 0
       let min = 1000000
 
       const getData = prop =>
         keys.map((key, index) => {
-          const value = forecast[key][prop]
+          const value = data[key][prop]
           if (value > max) max = value
           if (value < min) min = value
           return {
@@ -161,12 +174,6 @@ class ShotgunChart extends Component {
             y: value
           }
         })
-
-      const createDataset = (data, backgroundColor, label) => ({
-        data,
-        backgroundColor,
-        label
-      })
 
       const fifthData = getData("5thPercentile")
       const ninetyFifthData = getData("95thPercentile")
@@ -186,9 +193,31 @@ class ShotgunChart extends Component {
       return [median, ...medianFifth, ...medianNine, fifth, ninetyFifth]
     }
 
-    this.getData = () => {
-      const dataSets = this.generateData()
-      const labels = this.getLabels()
+    this.generateBackTest = data => {
+      if (!data) {
+        return []
+      }
+      const keys = Object.keys(data)
+      const dates = parseDate(keys)
+      let max = 0
+      let min = 1000000
+
+      const values = keys.map((key, index) => {
+        const value = data[key].PortfolioReturns
+        if (value > max) max = value
+        if (value < min) min = value
+        return {
+          x: dates[index],
+          y: value
+        }
+      })
+
+      return [createDataset(values, baseColor.toRgbString(), "Backtest")]
+    }
+
+    this.getData = (generateDataSets, generateLabels) => {
+      const dataSets = generateDataSets()
+      const labels = generateLabels()
       return {
         datasets: dataSets.map((dataSet, index) => {
           return {
@@ -201,7 +230,19 @@ class ShotgunChart extends Component {
       }
     }
 
-    const data = this.getData()
+    const { forecast, backtest } = this.props.apiStore
+
+    const { isForecast } = this.props
+
+    const data = isForecast
+      ? this.getData(
+          () => this.generateData(forecast),
+          () => this.getLabels(forecast)
+        )
+      : this.getData(
+          () => this.generateBackTest(backtest),
+          () => this.getLabels(backtest)
+        )
 
     const gradient = this.chartContext.createLinearGradient(0, 0, 0, 400)
     gradient.addColorStop(0, baseColor.toRgbString())
@@ -216,13 +257,25 @@ class ShotgunChart extends Component {
   }
 
   componentDidUpdate() {
-    this.chart.data = this.getData()
+    const { backtest, forecast } = this.props.apiStore
+    const { isForecast } = this.props
+
+    const data = isForecast
+      ? this.getData(
+          () => this.generateData(forecast),
+          () => this.getLabels(forecast)
+        )
+      : this.getData(
+          () => this.generateBackTest(backtest),
+          () => this.getLabels(backtest)
+        )
+    this.chart.data = data
     this.chart.update()
   }
 
   render() {
     // NOTE: The next line needs to exist in other to force mobx to update the component when the observable changes
-    const { forecast } = this.props.apiStore // eslint-disable-line no-unused-vars
+    const { forecast, backtest } = this.props.apiStore // eslint-disable-line no-unused-vars
     return (
       <canvas
         ref={node => {

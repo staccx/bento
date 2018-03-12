@@ -126,16 +126,7 @@ class Portfolio extends Component {
                 })}
               </strong>
             </WrittenExplanation>
-            <span
-              style={{
-                backgroundColor: "#f4f4f4",
-                display: "block",
-                padding: 100,
-                textAlign: "center"
-              }}
-            >
-              Graf her.
-            </span>
+            <ShotgunChart height={300} width={1000} isForecast={false}/>
           </TabPanel>
         </Tabs>
 
