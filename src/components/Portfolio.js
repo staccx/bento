@@ -15,6 +15,7 @@ import CurrencyInputSteppers from "./CurrencyInputSteppers"
 import styled from "styled-components"
 import stringTrimAll from "../utils/stringTrimAll"
 import QuestionLead from "./QuestionLead"
+import Spinner from "./Spinner"
 
 const explodeAmount = 10
 
@@ -86,6 +87,7 @@ class Portfolio extends Component {
             id={"deposit_monthly"}
           />
         </InputsWrapper>
+        <Spinner />
         <Tabs>
           <TabList>
             <Tab>Expected development</Tab>
@@ -126,7 +128,7 @@ class Portfolio extends Component {
                 })}
               </strong>
             </WrittenExplanation>
-            <ShotgunChart height={300} width={1000} isForecast={false}/>
+            <ShotgunChart height={300} width={1000} isForecast={false} />
           </TabPanel>
         </Tabs>
 
