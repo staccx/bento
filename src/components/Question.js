@@ -54,11 +54,11 @@ class Question extends Component {
   }
 }
 
-const dot0 = keyframes`30%, 70% { transform:scale(0.5) translate(-52px, -50%); }`
-const dot1 = keyframes`29%, 70% { transform:scale(0.4999) translate(-52px, -50%); }`
-const dot2 = keyframes`31%, 70% { transform:scale(0.5001) translate(-52px, -50%); }`
-const dot3 = keyframes`28%, 70% { transform:scale(0.4998) translate(-52px, -50%); }`
-const dot4 = keyframes`32%, 70% { transform:scale(0.5002) translate(-52px, -50%); }`
+const dot0 = keyframes`30%, 70% { transform: scale(0.6) translate(-52px, -50%); }`
+const dot1 = keyframes`29%, 70% { transform: scale(0.5999) translate(-52px, -50%); }`
+const dot2 = keyframes`31%, 70% { transform: scale(0.6001) translate(-52px, -50%); }`
+const dot3 = keyframes`28%, 70% { transform: scale(0.5998) translate(-52px, -50%); }`
+const dot4 = keyframes`32%, 70% { transform: scale(0.6002) translate(-52px, -50%); }`
 
 const Inner = styled.div`
   position: relative;
@@ -78,7 +78,7 @@ const Inner = styled.div`
     border-radius: 50%;
     background: rebeccapurple;
     transition: top 0.3s ease-out;
-    transform: translate(-52px, -50%);
+    transform: scale(1) translate(-52px, -50%);
     animation-name: ${p =>
       p.currentRow === 0
         ? dot0
