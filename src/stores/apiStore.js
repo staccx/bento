@@ -25,7 +25,7 @@ class ApiStore {
   @observable years = null
 
   @observable currentRisk = 1
-  @observable horizon = 1
+  @observable horizon = 3
 
   @observable optionList = []
 

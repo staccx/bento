@@ -8,7 +8,20 @@ import { coserp, formatCurrency } from "@staccx/base"
 import { parseDate } from "../utils/parseDate"
 import { colorTransparent } from "../utils/colorTransparent"
 
-const baseColor = tinycolor("rgba (155, 81, 224, 1.0)") // TODO: Make prop
+const baseColorString = "rgba(155, 81, 224, 1.0)"
+const midColorString = "rgba(155, 81, 224, 0.5)"
+const lowColorString = "rgba(155, 81, 224, 0.25)"
+const baseColor = tinycolor(baseColorString) // TODO: Make prop
+
+const backgroundColors = [
+  baseColorString,
+  midColorString,
+  midColorString,
+  lowColorString,
+  lowColorString,
+  lowColorString,
+  lowColorString
+]
 
 const shotgunOptions = (duration = 500) => ({
   animation: {
@@ -26,7 +39,8 @@ const shotgunOptions = (duration = 500) => ({
     },
     line: {
       fill: "0",
-      backgroundColor: baseColor.toRgbString()
+      backgroundColor: baseColor.toRgbString(),
+      borderColor: baseColorString
     }
   },
   tooltips: {
@@ -61,7 +75,7 @@ const shotgunOptions = (duration = 500) => ({
           diff < 0 ? "ago" : ""
         }`
       },
-      labelColor: () => ({ backgroundColor: baseColor.toRgbString() })
+      labelColor: () => ({ backgroundColor: baseColorString })
     }
   },
   plugins: {
@@ -223,7 +237,9 @@ class ShotgunChart extends Component {
           return {
             data: dataSet.data,
             label: dataSet.label,
-            borderWidth: index === 0 ? 8 : 0.1
+            borderWidth: index === 0 ? 2 : 0.1,
+            backgroundColor: backgroundColors[index],
+            pointBackgroundColor: colorTransparent
           }
         }),
         labels
