@@ -16,6 +16,7 @@ import styled from "styled-components"
 import stringTrimAll from "../utils/stringTrimAll"
 import QuestionLead from "./QuestionLead"
 import Spinner from "./Spinner"
+import BarSpinner from "./BarSpinner"
 
 const explodeAmount = 10
 
@@ -88,6 +89,7 @@ class Portfolio extends Component {
           />
         </InputsWrapper>
         <Spinner />
+        <BarSpinner />
         <Tabs>
           <TabList>
             <Tab>Expected development</Tab>
