@@ -31,7 +31,10 @@ const spinnerBubble2 = keyframes`
 `
 
 const SignalSpinner = styled.div`
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: block;
   width: 100%;
   height: ${p => p.theme.spacing.large};

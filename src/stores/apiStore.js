@@ -22,11 +22,11 @@ export const horizonLabels = [
 ]
 
 export const horizonYears = [
-  "2+ YEARS",
-  "4+ YEARS",
-  "10 YEARS",
-  "10+ YEARS",
-  "25 YEARS"
+  "2+ years",
+  "4+ years",
+  "10 years",
+  "10+ years",
+  "25 years"
 ]
 
 export const riskLabels = ["LOW", "MEDIUM", "HIGH"]
@@ -63,6 +63,10 @@ class ApiStore {
   @observable depositMonthly = 2000
 
   @observable timeout = null
+
+  @observable isChartLoading = true
+
+  @action setIsChartLoading = isLoading => (this.isChartLoading = isLoading)
 
   @action
   toggleOption = option => {
@@ -103,11 +107,12 @@ class ApiStore {
   @action
   getResultFromApi = () => {
     clearTimeout(this.timeout)
+    this.isChartLoading = true
     this.timeout = setTimeout(() => {
       client
         .get("qpm", {
           params: {
-            InvestmentHorizon: Math.floor(this.horizon),
+            InvestmentHorizon: Math.floor(clamp(1, 4,this.horizon)),
             RiskTolerance: getActualRisk(this.currentRisk),
             PeriodicSavings: this.depositMonthly,
             StartingCapital: this.depositStart,
@@ -124,6 +129,7 @@ class ApiStore {
         })
         .then(result => result.data)
         .then(result => {
+          this.isChartLoading = false
           this.savingsplan = result.savingsPlan
           this.forecast = this.savingsplan.forecast
           this.backtest = this.savingsplan.backtest
@@ -131,7 +137,7 @@ class ApiStore {
           const last = forecastArray[forecastArray.length - 1]
           this.expected = this.forecast[last].Median
           const lastDate = parseDate(last)
-          this.years = differenceInCalendarYears(lastDate, new Date())
+          this.years = differenceInCalendarYears(lastDate, new Date()) + 1
 
           const backtestArray = Object.keys(this.savingsplan.backtest)
           const lastBacktest = backtestArray[backtestArray.length - 1]
@@ -151,7 +157,7 @@ class ApiStore {
           this.recommendedPortfolio = mock.recommendedPortfolio
           this.forecastedAnnualReturn = mock.forecastedAnnualReturn
         })
-    }, 200)
+    }, 600)
   }
 }
 

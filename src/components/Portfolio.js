@@ -16,7 +16,6 @@ import styled from "styled-components"
 import stringTrimAll from "../utils/stringTrimAll"
 import QuestionLead from "./QuestionLead"
 import Spinner from "./Spinner"
-import BarSpinner from "./BarSpinner"
 
 const explodeAmount = 10
 
@@ -63,7 +62,7 @@ class Portfolio extends Component {
 
   render() {
     const { selectedInstrument, setInstrument } = this.props.uiStore
-    const { depositStart, depositMonthly } = this.props.apiStore
+    const { depositStart, depositMonthly, isChartLoading } = this.props.apiStore
     return (
       <div>
         <QuestionLead question="Your portfolio" />
@@ -88,52 +87,54 @@ class Portfolio extends Component {
             id={"deposit_monthly"}
           />
         </InputsWrapper>
-        <Spinner />
-        <BarSpinner />
-        <Tabs>
-          <TabList>
-            <Tab>Expected development</Tab>
-            <Tab>Historical data</Tab>
-          </TabList>
+        <ContentWrapper>
+          {isChartLoading && <Spinner />}
+          <TabsWrapper isVisible={!isChartLoading}>
+            <Tabs>
+              <TabList>
+                <Tab>Expected development</Tab>
+                <Tab>Historical data</Tab>
+              </TabList>
 
-          <TabPanel>
-            <WrittenExplanation>
-              If you save{" "}
-              <strong>
-                {formatCurrency(this.props.apiStore.depositMonthly, {
-                  precision: 0
-                })}
-              </strong>{" "}
-              month we expect <br /> you’ll have around{" "}
-              <strong>
-                {formatCurrency(this.props.apiStore.expected, {
-                  precision: 0
-                })}
-              </strong>{" "}
-              in <strong>{this.props.apiStore.years} years</strong>
-            </WrittenExplanation>
-            <ShotgunChart height={300} width={1000} />
-          </TabPanel>
-          <TabPanel>
-            <WrittenExplanation>
-              If you saved{" "}
-              <strong>
-                {formatCurrency(this.props.apiStore.depositMonthly, {
-                  precision: 0
-                })}
-              </strong>{" "}
-              /month with this portfolio <br />since <strong>1996</strong> you
-              would now have{" "}
-              <strong>
-                {formatCurrency(this.props.apiStore.calculated, {
-                  precision: 0
-                })}
-              </strong>
-            </WrittenExplanation>
-            <ShotgunChart height={300} width={1000} isForecast={false} />
-          </TabPanel>
-        </Tabs>
-
+              <TabPanel>
+                <WrittenExplanation>
+                  If you save{" "}
+                  <strong>
+                    {formatCurrency(this.props.apiStore.depositMonthly, {
+                      precision: 0
+                    })}
+                  </strong>{" "}
+                  month we expect <br /> you’ll have around{" "}
+                  <strong>
+                    {formatCurrency(this.props.apiStore.expected, {
+                      precision: 0
+                    })}
+                  </strong>{" "}
+                  in <strong>{this.props.apiStore.years} years</strong>
+                </WrittenExplanation>
+                <ShotgunChart height={300} width={1000} />
+              </TabPanel>
+              <TabPanel>
+                <WrittenExplanation>
+                  If you saved{" "}
+                  <strong>
+                    {formatCurrency(this.props.apiStore.depositMonthly, {
+                      precision: 0
+                    })}
+                  </strong>{" "}
+                  /month with this portfolio <br />since <strong>1996</strong>{" "}
+                  you would now have{" "}
+                  <strong>
+                    {formatCurrency(this.props.apiStore.calculated, {
+                      precision: 0
+                    })}
+                  </strong>
+                </WrittenExplanation>
+                <ShotgunChart height={300} width={1000} isForecast={false} />
+              </TabPanel>
+            </Tabs>
+          </TabsWrapper>
+        </ContentWrapper>
         <div>
           <Heading2>Suggested portfolio</Heading2>
           <PortfolioWrapper>
@@ -155,6 +156,15 @@ class Portfolio extends Component {
 }
 
 Portfolio.propTypes = {}
+
+const ContentWrapper = styled.div`
+  position: relative;
+`
+
+const TabsWrapper = styled.div`
+  transition: opacity 0.3s ease-out;
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+`
 
 const Heading2 = styled.h2`
   text-align: center;
@@ -257,7 +267,7 @@ const TabPanel = styled(UnstyledTabPanel).attrs({
   padding: 10px 20px;
   &.selected {
     display: block;
-    animation: 0.6s ${Animations.FadeIn} .2s ease-out 1 forwards;
+    animation: 0.6s ${Animations.FadeIn} 0.2s ease-out 1 forwards;
     opacity: 0;
   }
 `

@@ -7,7 +7,8 @@ import {
   fontSmoothing,
   Fraction,
   Slider,
-  SplitListItem
+  SplitListItem,
+  Wrapper
 } from "@staccx/base"
 import {
   getActualRisk,
@@ -76,91 +77,79 @@ class PortfolioFilter extends Component {
     const riskLabel =
       riskLabels[getActualRisk(this.props.apiStore.currentRisk) - 1]
 
-    const horizonLabel = horizonLabels[apiStore.horizon - 1]
+    const horizonLabel = horizonYears[apiStore.horizon - 1]
 
     const options = apiStore.optionList.map(option => {
       return optionList.find(t => t.code === option)
     })
     return (
-      <List>
-        <Expand
-          title={
-            <Showing
-              risk={riskLabel}
-              duration={horizonLabel}
-              sectors={options}
-            />
-          }
-          id="gfdgsfd54"
-          expanded={uiStore.filterExpanded}
-          onClick={() => uiStore.setFilterExpanded(!uiStore.filterExpanded)}
-        >
-          <FilterContent>
-            <div>
-              <div>
-                Risk
-                <Fraction
-                  onClick={this.handleFractionClick}
-                  value={this.state.risk}
-                  max={5}
-                  maxComponent={<DotButton type="button" />}
-                  valueComponent={<DotButton type="button" filled />}
-                />
-              </div>
-              <div>
-                Time horizon
-                <Slider
-                  min={1}
-                  max={5}
-                  step={1}
-                  value={apiStore.horizon}
-                  percentage={(apiStore.horizon - 1) / 4 * 100}
-                  onChange={e => apiStore.setHorizon(e.target.value)}
-                  name="time-horizon"
-                />
-              </div>
-            </div>
-            <div>
-              My answers
-              <List>
-                <AnswersListItem>
-                  <strong>Purpose</strong>
-                  <AnswersListDetails>
-                    {horizonLabel}
-                    <Subtle>{horizonYears[apiStore.horizon - 1]}</Subtle>
-                    <EditLink href="#purpose" onClick={() => setStep(2)}>
-                      Edit
-                    </EditLink>
-                  </AnswersListDetails>
-                </AnswersListItem>
-                <AnswersListItem>
-                  <strong>Risk tolerance</strong>
-                  <AnswersListDetails>
-                    {riskLabel}
-                    <EditLink href="#risk" onClick={() => setStep(3)}>
-                      Edit
-                    </EditLink>
-                  </AnswersListDetails>
-                </AnswersListItem>
-                <AnswersListItem>
-                  <strong>Themes</strong>
-                  <AnswersListDetails>
-                    <span>
-                      {listOptions(options, "label")}
-                      {options.length === 0 && (
-                        <NoWrap>No themes selected</NoWrap>
-                      )}
-                    </span>
-                    <EditLink href="#themes" onClick={() => setStep(4)}>
-                      Edit
-                    </EditLink>
-                  </AnswersListDetails>
-                </AnswersListItem>
-              </List>
-            </div>
-          </FilterContent>
-        </Expand>
-      </List>
+      <Wrapper size={"medium"}>
+        <List>
+          <Expand
+            title={
+              <Showing
+                risk={riskLabel}
+                duration={horizonLabel}
+                sectors={options}
+              />
+            }
+            id="gfdgsfd54"
+            expanded={uiStore.filterExpanded}
+            onClick={() => uiStore.setFilterExpanded(!uiStore.filterExpanded)}
+          >
+            <FilterContent>
+                My answers
+                <List>
+                  <AnswersListItem>
+                    <strong>Risk</strong>
+                    <AnswersListDetails>
+                      <Fraction
+                        onClick={this.handleFractionClick}
+                        value={this.state.risk}
+                        max={5}
+                        maxComponent={<DotButton type="button" />}
+                        valueComponent={<DotButton type="button" filled />}
+                      />
+                    </AnswersListDetails>
+                  </AnswersListItem>
+                  <AnswersListItem>
+                    <strong>Purpose</strong>
+                    <AnswersListDetails>
+                      {horizonLabels[apiStore.horizon - 1]}
+                      <Subtle>{horizonLabel}</Subtle>
+                      <EditLink href="#purpose" onClick={() => setStep(2)}>
+                        Edit
+                      </EditLink>
+                    </AnswersListDetails>
+                  </AnswersListItem>
+                  <AnswersListItem>
+                    <strong>Risk tolerance</strong>
+                    <AnswersListDetails>
+                      {riskLabel}
+                      <EditLink href="#risk" onClick={() => setStep(3)}>
+                        Edit
+                      </EditLink>
+                    </AnswersListDetails>
+                  </AnswersListItem>
+                  <AnswersListItem>
+                    <strong>Themes</strong>
+                    <AnswersListDetails>
+                      <span>
+                        {listOptions(options, "label")}
+                        {options.length === 0 && (
+                          <NoWrap>No themes selected</NoWrap>
+                        )}
+                      </span>
+                      <EditLink href="#themes" onClick={() => setStep(4)}>
+                        Edit
+                      </EditLink>
+                    </AnswersListDetails>
+                  </AnswersListItem>
+                </List>
+            </FilterContent>
+          </Expand>
+        </List>
+      </Wrapper>
     )
   }
 }
@@ -168,8 +157,6 @@ class PortfolioFilter extends Component {
 const Expand = styled(ExpandListItem)`
   > button {
     position: relative;
-    display: flex;
-    align-items: center;
     color: ${p => p.theme.color.white};
     background-image: linear-gradient(
       90deg,
@@ -200,7 +187,6 @@ const Expand = styled(ExpandListItem)`
 `
 
 const FilterContent = styled.div`
-  display: flex;
   margin: 0 ${p => p.theme.spacing.medium};
   padding: ${p => p.theme.spacing.medium};
   background-color: ${p => p.theme.color.white};
@@ -212,9 +198,6 @@ const FilterContent = styled.div`
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 4px rgba(0, 0, 0, 0.02),
     0px 8px 8px rgba(0, 0, 0, 0.02);
 
-  > div {
-    flex-basis: 50%;
-  }
 `
 
 const DotButton = styled.button`
