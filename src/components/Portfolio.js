@@ -6,7 +6,7 @@ import {
   Tabs as UnstyledTabs,
   TabPanel as UnstyledTabPanel
 } from "react-tabs"
-import { formatCurrency } from "@staccx/base"
+import { formatCurrency, Animations } from "@staccx/base"
 import PieChart from "./PieChart"
 import PortfolioExpand from "./PortfolioExpand"
 import PortfolioFilter from "./PortfolioFilter"
@@ -255,6 +255,8 @@ const TabPanel = styled(UnstyledTabPanel).attrs({
   padding: 10px 20px;
   &.selected {
     display: block;
+    animation: 0.6s ${Animations.FadeIn} .2s ease-out 1 forwards;
+    opacity: 0;
   }
 `
 
