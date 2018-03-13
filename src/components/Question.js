@@ -1,10 +1,29 @@
 import React, { Component } from "react"
 import styled, { keyframes } from "styled-components"
-import { rgba } from "polished"
-import { CheckGroup, RadioButton, Wrapper } from "@staccx/base"
+import { RadioButton, Wrapper } from "@staccx/base"
 import QuestionLead from "./QuestionLead"
+import ShortTerm from "../components/icons/ShortTerm"
+import Umbrella from "../components/icons/Umbrella"
+import NoGoal from "../components/icons/NoGoal"
+import Fortune from "../components/icons/Fortune"
+import Pension from "../components/icons/Pension"
+
+const fallbackImages = [
+  <ShortTerm />,
+  <Umbrella />,
+  <NoGoal />,
+  <Fortune />,
+  <Pension />
+]
 
 class Question extends Component {
+  handleChange = (index, value) => {
+    this.setState({
+      selectedRow: index
+    })
+    this.props.onChange(value)
+  }
+
   constructor(props, context) {
     super(props, context)
     this.state = {
@@ -13,41 +32,40 @@ class Question extends Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange = (index, value) => {
-    this.setState({
-      selectedRow: index
-    })
-    this.props.onChange(value)
-  }
-
   render() {
-    const { content, selected } = this.props
+    const { content, selected, translate } = this.props
     const { selectedRow } = this.state
 
     return (
       <Wrapper size="medium">
-        <QuestionLead question={content.title}>{content.lead}</QuestionLead>
+        <QuestionLead question={translate(content.title)}>
+          {translate(content.lead)}
+        </QuestionLead>
         <Inner totalRows={content.answers.length} currentRow={selectedRow}>
-          {content.answers.map((answer, index) => (
-            <AnswerBox
-              selected={answer.value === selected}
-              key={answer.id}
-              htmlFor={answer.id}
-            >
-              <Image>{answer.icon}</Image>
-              <AdvisorRadio
-                id={answer.id}
-                value={answer.value}
-                selected={answer.value === selected}
-                name={"experiencealternatives"}
-                onChange={() => this.handleChange(index, answer.value)}
-                group={"experiencealternatives"}
+          {content.answers.map((answer, index) => {
+            const value = answer.value[0]
+            return (
+              <AnswerBox
+                selected={value === selected}
+                key={answer._key}
+                htmlFor={answer._key}
               >
-                <Heading>{answer.heading}</Heading>
-                <span>{answer.body}</span>
-              </AdvisorRadio>
-            </AnswerBox>
-          ))}
+                <Image>{answer.icon || fallbackImages[index]}</Image>
+                <AdvisorRadio
+                  id={answer._key}
+                  value={value}
+                  selected={value === selected}
+                  name={"experiencealternatives"}
+                  onChange={() => this.handleChange(index, value)}
+                  group={"experiencealternatives"}
+                  selectText={"Select "}
+                >
+                  <Heading>{translate(answer.heading)}</Heading>
+                  <span>{translate(answer.body)}</span>
+                </AdvisorRadio>
+              </AnswerBox>
+            )
+          })}
         </Inner>
       </Wrapper>
     )

@@ -11,7 +11,31 @@ class StepIndicator extends React.Component {
   }
   render() {
     const { uiStore } = this.props
-    const { maxStep, currentStep, steps, setStep } = uiStore
+    const {
+      maxStep,
+      currentStep,
+      setStep,
+      translate,
+      cmsStart,
+      cmsExperience,
+      cmsRisk,
+      cmsPurpose,
+      cmsTheme,
+      cmsSummary
+    } = uiStore
+
+    const steps = [
+      cmsStart,
+      cmsExperience,
+      cmsPurpose,
+      cmsRisk,
+      cmsTheme,
+      cmsSummary
+    ]
+
+    if (steps.some(s => !s)) {
+      return null
+    }
     const progress = (currentStep + 1) / steps.length
 
     return (
@@ -20,13 +44,13 @@ class StepIndicator extends React.Component {
           if (index <= maxStep) {
             return (
               <Step
-                key={step.name}
+                key={translate(step.name)}
                 current={index === currentStep}
                 progress={progress}
               >
                 <StepLink id={`step-${index}`} onClick={() => setStep(index)}>
                   <HideMobile current={index === currentStep}>
-                    {step.name}
+                    {translate(step.name)}
                   </HideMobile>
                 </StepLink>
               </Step>
@@ -34,13 +58,13 @@ class StepIndicator extends React.Component {
           }
           return (
             <Step
-              key={step.name}
+              key={translate(step.name)}
               id={`step-${index}`}
               current={index === currentStep}
             >
               <StepNotLink>
                 <HideMobile current={index === currentStep}>
-                  {step.name}
+                  {translate(step.name)}
                 </HideMobile>
               </StepNotLink>
             </Step>

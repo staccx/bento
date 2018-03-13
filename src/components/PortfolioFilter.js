@@ -8,7 +8,8 @@ import {
   Fraction,
   Slider,
   SplitListItem,
-  Wrapper
+  Wrapper,
+  lerp
 } from "@staccx/base"
 import {
   getActualRisk,
@@ -17,10 +18,11 @@ import {
   optionList,
   riskLabels
 } from "../stores/apiStore"
-import { inverseLerp, lerp } from "@staccx/base/dist/index.es"
 
-const listOptions = (options, prop = null, separator = "&") => {
-  const doMap = option => (prop ? option[prop] : option)
+const listOptions = (options, prop = null, translate, separator = "&") => {
+  const doMap = option => {
+    return prop ? translate(option[prop]) : option
+  }
   return options.length > 1
     ? options
         .slice(0, options.length - 1)
@@ -28,16 +30,17 @@ const listOptions = (options, prop = null, separator = "&") => {
         .join(", ") +
         ` ${separator} ` +
         options.slice(-1).map(doMap)
-    : options
+    : options.map(doMap)
 }
 
-const Showing = ({ risk, duration, sectors }) => {
+const Showing = ({ risk, duration, sectors, translate }) => {
   return (
     <span>
       Showing <strong>{risk}</strong> risk, <strong>{duration}</strong>
       {sectors.length > 0 && (
         <span>
-          , with extra focus on <strong>{listOptions(sectors, "label")}</strong>
+          , with extra focus on{" "}
+          <strong>{listOptions(sectors, "heading", translate)}</strong>
         </span>
       )}
     </span>
@@ -72,7 +75,7 @@ class PortfolioFilter extends Component {
 
   render() {
     const { uiStore, apiStore } = this.props
-    const { setStep } = uiStore
+    const { setStep, cmsTheme, translate } = uiStore
 
     const riskLabel =
       riskLabels[getActualRisk(this.props.apiStore.currentRisk) - 1]
@@ -80,7 +83,7 @@ class PortfolioFilter extends Component {
     const horizonLabel = horizonYears[apiStore.horizon - 1]
 
     const options = apiStore.optionList.map(option => {
-      return optionList.find(t => t.code === option)
+      return cmsTheme.answers.find(t => t.value[0] === option)
     })
     return (
       <Wrapper size={"medium"}>
@@ -91,6 +94,7 @@ class PortfolioFilter extends Component {
                 risk={riskLabel}
                 duration={horizonLabel}
                 sectors={options}
+                translate={translate}
               />
             }
             id="gfdgsfd54"
@@ -98,54 +102,54 @@ class PortfolioFilter extends Component {
             onClick={() => uiStore.setFilterExpanded(!uiStore.filterExpanded)}
           >
             <FilterContent>
-                My answers
-                <List>
-                  <AnswersListItem>
-                    <strong>Risk</strong>
-                    <AnswersListDetails>
-                      <Fraction
-                        onClick={this.handleFractionClick}
-                        value={this.state.risk}
-                        max={5}
-                        maxComponent={<DotButton type="button" />}
-                        valueComponent={<DotButton type="button" filled />}
-                      />
-                    </AnswersListDetails>
-                  </AnswersListItem>
-                  <AnswersListItem>
-                    <strong>Purpose</strong>
-                    <AnswersListDetails>
-                      {horizonLabels[apiStore.horizon - 1]}
-                      <Subtle>{horizonLabel}</Subtle>
-                      <EditLink href="#purpose" onClick={() => setStep(2)}>
-                        Edit
-                      </EditLink>
-                    </AnswersListDetails>
-                  </AnswersListItem>
-                  <AnswersListItem>
-                    <strong>Risk tolerance</strong>
-                    <AnswersListDetails>
-                      {riskLabel}
-                      <EditLink href="#risk" onClick={() => setStep(3)}>
-                        Edit
-                      </EditLink>
-                    </AnswersListDetails>
-                  </AnswersListItem>
-                  <AnswersListItem>
-                    <strong>Themes</strong>
-                    <AnswersListDetails>
-                      <span>
-                        {listOptions(options, "label")}
-                        {options.length === 0 && (
-                          <NoWrap>No themes selected</NoWrap>
-                        )}
-                      </span>
-                      <EditLink href="#themes" onClick={() => setStep(4)}>
-                        Edit
-                      </EditLink>
-                    </AnswersListDetails>
-                  </AnswersListItem>
-                </List>
+              My answers
+              <List>
+                <AnswersListItem>
+                  <strong>Risk</strong>
+                  <AnswersListDetails>
+                    <Fraction
+                      onClick={this.handleFractionClick}
+                      value={this.state.risk}
+                      max={5}
+                      maxComponent={<DotButton type="button" />}
+                      valueComponent={<DotButton type="button" filled />}
+                    />
+                  </AnswersListDetails>
+                </AnswersListItem>
+                <AnswersListItem>
+                  <strong>Purpose</strong>
+                  <AnswersListDetails>
+                    {horizonLabels[apiStore.horizon - 1]}
+                    <Subtle>{horizonLabel}</Subtle>
+                    <EditLink href="#purpose" onClick={() => setStep(2)}>
+                      Edit
+                    </EditLink>
+                  </AnswersListDetails>
+                </AnswersListItem>
+                <AnswersListItem>
+                  <strong>Risk tolerance</strong>
+                  <AnswersListDetails>
+                    {riskLabel}
+                    <EditLink href="#risk" onClick={() => setStep(3)}>
+                      Edit
+                    </EditLink>
+                  </AnswersListDetails>
+                </AnswersListItem>
+                <AnswersListItem>
+                  <strong>Themes</strong>
+                  <AnswersListDetails>
+                    <span>
+                      {listOptions(options, "heading", translate)}
+                      {options.length === 0 && (
+                        <NoWrap>No themes selected</NoWrap>
+                      )}
+                    </span>
+                    <EditLink href="#themes" onClick={() => setStep(4)}>
+                      Edit
+                    </EditLink>
+                  </AnswersListDetails>
+                </AnswersListItem>
+              </List>
             </FilterContent>
           </Expand>
         </List>
@@ -197,7 +201,6 @@ const FilterContent = styled.div`
   border-top-right-radius: 0;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 4px rgba(0, 0, 0, 0.02),
     0px 8px 8px rgba(0, 0, 0, 0.02);
-
 `
 
 const DotButton = styled.button`

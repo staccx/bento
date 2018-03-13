@@ -7,44 +7,7 @@ import { easeOutQuad } from "easing-utils"
 import { Animations, clamp, lerp } from "@staccx/base"
 import QuestionLead from "../components/QuestionLead"
 
-const content = {
-  title: "What do you do if there is a strong market decline?",
-  lead:
-    "Funds and stocks are affected by fluctuations in the market globally and nationally. A strong market decline is a fall of more than 20%, which has happened seven times on Oslo Stock Exchange over the past 20 years. In the two most extreme cases, the IT bubble and the financial crisis, Oslo Børs had a decline of over 40%.",
-  answers: [
-    {
-      id: "fsdfds2",
-      heading: "I sell everything",
-      body: "I will not risk losing any more money, I sell everything",
-      value: "very-low",
-      range: [0, 24]
-    },
-    {
-      id: "fdsfd4447",
-      heading: "I get uneasy",
-      body: "I worry, but keep the night sleep. Keep calm with my investments.",
-      value: "low",
-      range: [24, 49]
-    },
-    {
-      id: "fdsa23118",
-      heading: "I keep the calm",
-      body: "Do not care what the papers write. Keep calm with my investments.",
-      value: "medium",
-      range: [50, 74]
-    },
-    {
-      id: "fdsafds14477",
-      heading: "An excellent opportunity",
-      body:
-        "I do not worry at all. This is a golden opportunity, stocks become cheaper!",
-      value: "medium-plus",
-      range: [75, 100]
-    }
-  ]
-}
-
-@inject("apiStore")
+@inject("apiStore", "uiStore")
 @observer
 class Risk extends React.Component {
   static defaultProps = {
@@ -115,33 +78,37 @@ class Risk extends React.Component {
   }
 
   getContentBody(index) {
-    const currentContent = content.answers.filter(
-      item => item.range[0] <= index && item.range[1] >= index
-    )
-    return currentContent[0].body
+    const { translate, cmsRisk } = this.props.uiStore
+    const currentContent = cmsRisk.answers.find(item => {
+      const value = item.value[0]
+      const { low, high } = value
+      return low <= index && high >= index
+    })
+    return translate(currentContent.body)
   }
 
   render() {
+    const { translate, cmsRisk } = this.props.uiStore
     const waveArray = [...Array(this.props.waves)]
     return (
       <div>
-        <QuestionLead question={content.title}>{content.lead}</QuestionLead>
+        <QuestionLead question={translate(cmsRisk.title)}>
+          {translate(cmsRisk.lead)}
+        </QuestionLead>
         <LabelWrapper>
-          {content.answers.map((label, i) => (
-            <RangeLabel
-              onClick={() =>
-                this.handleClick(
-                  Math.floor((label.range[0] + label.range[1]) / 2)
-                )
-              }
-              key={label.id}
-              current={
-                this.current > label.range[0] && this.current < label.range[1]
-              }
-            >
-              {label.heading}
-            </RangeLabel>
-          ))}
+          {cmsRisk.answers.map((answer, i) => {
+            const value = answer.value[0]
+            const { low, high } = value
+            return (
+              <RangeLabel
+                onClick={() => this.handleClick(Math.floor((low + high) / 2))}
+                key={answer._key}
+                current={this.current > low && this.current < high}
+              >
+                {translate(answer.heading)}
+              </RangeLabel>
+            )
+          })}
         </LabelWrapper>
         <WaveWrapper onMouseLeave={() => this.handleHover(1000)}>
           {waveArray.map((e, index) => (

@@ -1,17 +1,22 @@
 import React from "react"
+import { inject, observer } from "mobx-react"
 import QuestionLead from "./../components/QuestionLead"
 
-const Intro = () => {
-  return (
-    <main>
-      <QuestionLead question="Answer some simple questions and get your optimal saving-recommendations">
-        Everyone know they should save money, but few know how they should save
-        them. Quantfolio helps you find where you should save your money based
-        on a couple of easy questions. We analyze 50 000 funds to find the best
-        ones for your risk level.
-      </QuestionLead>
-    </main>
-  )
-}
+const Intro = inject("uiStore")(
+  observer(({ uiStore }) => {
+    const {cmsStart, translate} = uiStore
+    if(!cmsStart) {
+      return null
+    }
+
+    return (
+      <main>
+        <QuestionLead question={translate(cmsStart.title)}>
+          {translate(cmsStart.lead)}
+        </QuestionLead>
+      </main>
+    )
+  })
+)
 
 export default Intro

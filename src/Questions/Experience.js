@@ -4,32 +4,21 @@ import { Toggle } from "@staccx/base"
 import { inject, observer } from "mobx-react"
 import QuestionLead from "../components/QuestionLead"
 
-const content = {
-  title: "Do you have experience with funds or investments?",
-  answers: [
-    {
-      id: "8924qdwsacv",
-      heading: "I have never invested",
-      body: "Your money is perhaps on an high interest account?",
-      value: "no"
-    },
-    {
-      id: "wt4iw12",
-      heading: "I have invested before",
-      body: "You have maybe invested in funds or stocks?",
-      value: "yes"
-    }
-  ]
-}
-
 @inject("uiStore")
 @observer
 class Start extends React.Component {
   render() {
-    const { hasExperience, toggleExperience } = this.props.uiStore
+    const {
+      hasExperience,
+      toggleExperience,
+      translate,
+      cmsExperience
+    } = this.props.uiStore
     return (
       <div>
-        <QuestionLead question={content.title}>{content.lead}</QuestionLead>
+        <QuestionLead question={translate(cmsExperience.title)}>
+          {translate(cmsExperience.lead)}
+        </QuestionLead>
         <StyledToggle
           defaultChecked={hasExperience}
           group="testddd"
@@ -40,9 +29,9 @@ class Start extends React.Component {
           I have invested before
         </StyledToggle>
         <FlexAnswer>
-          {content.answers.map(answer => (
-            <label key={answer.id} htmlFor="453346gnkj">
-              {answer.heading}
+          {cmsExperience.answers.map(answer => (
+            <label key={answer._id} htmlFor="453346gnkj">
+              {translate(answer.heading)}
             </label>
           ))}
         </FlexAnswer>

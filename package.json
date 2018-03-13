@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@sanity/client": "^0.126.0",
+    "@sanity/image-url": "^0.126.0",
     "@staccx/base": "^0.18.1",
     "axios": "^0.18.0",
     "chart.js": "^2.7.1",

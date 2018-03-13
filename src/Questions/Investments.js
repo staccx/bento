@@ -4,19 +4,21 @@ import {inject, observer} from "mobx-react"
 import { CheckGroup, CheckBox } from "@staccx/base"
 import QuestionLead from "../components/QuestionLead"
 import {optionList} from "../stores/apiStore";
+import urlFor from "../utils/urlFor";
 
 const content = {
   title: "Are there any sectors you specifically believe in?",
   lead:
-    "We can take this into account when building your portfolio. Select up to 3.",
+    "We can take this into account when building your portfolio. Select up to 13.",
   answers: optionList.map(o => o)
 }
 
 const MAX_SELECTABLE = 3
 
-@inject("apiStore") @observer
+@inject("apiStore", "uiStore") @observer
 class Investments extends Component {
   render() {
+    const {translate, cmsTheme, getImage} = this.props.uiStore
     const {optionList, toggleOption} = this.props.apiStore
 
     const isChecked = value => optionList.indexOf(value) !== -1
@@ -27,24 +29,27 @@ class Investments extends Component {
 
     return (
       <div>
-        <QuestionLead question={content.title}>{content.lead}</QuestionLead>
+        <QuestionLead question={translate(cmsTheme.title)}>{translate(cmsTheme.lead)}</QuestionLead>
 
         <CheckWrapper>
           <CheckGroup group={"geo"} onChange={toggleOption}>
-            {content.answers.map(item => (
-              <ImageCheck
-                key={item.code}
-                value={item.code}
-                id={item.code}
-                defaultChecked={isChecked(item.code)}
-                disabled={isDisabled(item.code)}
-              >
-                <Text>{item.label}</Text>
-                <Img>
-                  <img src={item.img} alt="" />
-                </Img>
-              </ImageCheck>
-            ))}
+            {cmsTheme.answers.map(item => {
+              const value = item.value[0]
+              return (
+                <ImageCheck
+                  key={item._key}
+                  value={value}
+                  id={value}
+                  defaultChecked={isChecked(value)}
+                  disabled={isDisabled(value)}
+                >
+                  <Text>{translate(item.heading)}</Text>
+                  <Img>
+                    <img src={getImage(item.icon)} alt="" />
+                  </Img>
+                </ImageCheck>
+              )
+            })}
           </CheckGroup>
         </CheckWrapper>
       </div>
