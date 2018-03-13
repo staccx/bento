@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import { inject } from "mobx-react"
+import { inject, observer } from "mobx-react"
 import {
   List,
   ExpandListItem,
@@ -9,29 +9,47 @@ import {
   Slider,
   SplitListItem
 } from "@staccx/base"
+import {
+  getActualRisk,
+  horizonLabels,
+  horizonYears,
+  optionList,
+  riskLabels
+} from "../stores/apiStore"
+import { inverseLerp, lerp } from "@staccx/base/dist/index.es"
+
+const listOptions = (options, prop = null, separator = "&") => {
+  const doMap = option => (prop ? option[prop] : option)
+  return options.length > 1
+    ? options
+        .slice(0, options.length - 1)
+        .map(doMap)
+        .join(", ") +
+        ` ${separator} ` +
+        options.slice(-1).map(doMap)
+    : options
+}
 
 const Showing = ({ risk, duration, sectors }) => {
   return (
     <span>
-      Showing <strong>{risk}</strong> risk, <strong>{duration} term</strong>,
-      with extra focus on{" "}
-      <strong>
-        {sectors.length > 1
-          ? sectors.slice(0, sectors.length - 1).join(", ") +
-            " & " +
-            sectors.slice(-1).map(sector => sector)
-          : sectors}
-      </strong>
+      Showing <strong>{risk}</strong> risk, <strong>{duration}</strong>
+      {sectors.length > 0 && (
+        <span>
+          , with extra focus on <strong>{listOptions(sectors, "label")}</strong>
+        </span>
+      )}
     </span>
   )
 }
 
-@inject("uiStore")
+@inject("uiStore", "apiStore")
+@observer
 class PortfolioFilter extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      risk: 3,
+      risk: getActualRisk(this.props.apiStore.currentRisk),
       isExpanded: false
     }
     this.handleFractionClick = this.handleFractionClick.bind(this)
@@ -48,25 +66,34 @@ class PortfolioFilter extends Component {
     this.setState({
       risk: index + 1
     })
+    this.props.apiStore.setRisk(lerp(1, 100, (index + 1) / 5))
   }
 
   render() {
-    const { uiStore } = this.props
+    const { uiStore, apiStore } = this.props
     const { setStep } = uiStore
 
+    const riskLabel =
+      riskLabels[getActualRisk(this.props.apiStore.currentRisk) - 1]
+
+    const horizonLabel = horizonLabels[apiStore.horizon - 1]
+
+    const options = apiStore.optionList.map(option => {
+      return optionList.find(t => t.code === option)
+    })
     return (
       <List>
         <Expand
           title={
             <Showing
-              risk="medium"
-              duration="short"
-              sectors={["Europe", "Digitalization"]}
+              risk={riskLabel}
+              duration={horizonLabel}
+              sectors={options}
             />
           }
           id="gfdgsfd54"
-          expanded={this.state.isExpanded}
-          onClick={() => this.toggleExpand()}
+          expanded={uiStore.filterExpanded}
+          onClick={() => uiStore.setFilterExpanded(!uiStore.filterExpanded)}
         >
           <FilterContent>
             <div>
@@ -83,11 +110,12 @@ class PortfolioFilter extends Component {
               <div>
                 Time horizon
                 <Slider
-                  min={0}
-                  max={20}
-                  step={5}
-                  defaultValue={10}
-                  percentage={50}
+                  min={1}
+                  max={5}
+                  step={1}
+                  value={apiStore.horizon}
+                  percentage={(apiStore.horizon - 1) / 4 * 100}
+                  onChange={e => apiStore.setHorizon(e.target.value)}
                   name="time-horizon"
                 />
               </div>
@@ -98,8 +126,8 @@ class PortfolioFilter extends Component {
                 <AnswersListItem>
                   <strong>Purpose</strong>
                   <AnswersListDetails>
-                    Pension
-                    <Subtle>20+ years</Subtle>
+                    {horizonLabel}
+                    <Subtle>{horizonYears[apiStore.horizon - 1]}</Subtle>
                     <EditLink href="#purpose" onClick={() => setStep(2)}>
                       Edit
                     </EditLink>
@@ -108,8 +136,7 @@ class PortfolioFilter extends Component {
                 <AnswersListItem>
                   <strong>Risk tolerance</strong>
                   <AnswersListDetails>
-                    I keep my cool
-                    <Subtle>Medium</Subtle>
+                    {riskLabel}
                     <EditLink href="#risk" onClick={() => setStep(3)}>
                       Edit
                     </EditLink>
@@ -119,8 +146,10 @@ class PortfolioFilter extends Component {
                   <strong>Themes</strong>
                   <AnswersListDetails>
                     <span>
-                      <NoWrap>USA</NoWrap>, <NoWrap>Digitalisation</NoWrap>,{" "}
-                      <NoWrap>Clean energy</NoWrap>
+                      {listOptions(options, "label")}
+                      {options.length === 0 && (
+                        <NoWrap>No themes selected</NoWrap>
+                      )}
                     </span>
                     <EditLink href="#themes" onClick={() => setStep(4)}>
                       Edit

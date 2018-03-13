@@ -13,6 +13,36 @@ const client = axios.create({
   }
 })
 
+export const horizonLabels = [
+  "Soon",
+  "Rainy days",
+  "No goal",
+  "Build fortune",
+  "Pension"
+]
+
+export const horizonYears = [
+  "2+ YEARS",
+  "4+ YEARS",
+  "10 YEARS",
+  "10+ YEARS",
+  "25 YEARS"
+]
+
+export const riskLabels = ["LOW", "MEDIUM", "HIGH"]
+
+export const optionList = [
+  { label: "USA", code: "c11", img: "/img/usa.jpg" },
+  { label: "Latin America", code: "c13", img: "/img/latam.jpg" },
+  { label: "Asia / Pacific", code: "c12", img: "/img/asia.jpg" },
+  { label: "Europe", code: "c10", img: "/img/europe.jpg" },
+  { label: "Automation & Robotics", code: "c100", img: "/img/robots.jpg" },
+  { label: "Digitalisation", code: "c101", img: "/img/digital.jpg" },
+  { label: "Ageing Population", code: "c102", img: "/img/ageing.jpg" },
+  { label: "Healthcare Innovation", code: "c103", img: "/img/healthcare.jpg" },
+  { label: "Clean Energy", code: "c105", img: "/img/cleanenergy.jpg" }
+]
+
 class ApiStore {
   @observable savingsplan = null
   @observable marketReturns = null
@@ -78,9 +108,7 @@ class ApiStore {
         .get("qpm", {
           params: {
             InvestmentHorizon: Math.floor(this.horizon),
-            RiskTolerance: Math.round(
-              clamp(1, 3, inverseLerp(1, 100, this.currentRisk) * 3)
-            ),
+            RiskTolerance: getActualRisk(this.currentRisk),
             PeriodicSavings: this.depositMonthly,
             StartingCapital: this.depositStart,
             OptionList: this.optionList.length
@@ -126,5 +154,8 @@ class ApiStore {
     }, 200)
   }
 }
+
+export const getActualRisk = (risk, min = 1, max = 100, low = 1, high = 3) =>
+  Math.round(clamp(low, high, inverseLerp(min, max, risk) * high))
 
 export default ApiStore

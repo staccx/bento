@@ -3,67 +3,13 @@ import styled from "styled-components"
 import {inject, observer} from "mobx-react"
 import { CheckGroup, CheckBox } from "@staccx/base"
 import QuestionLead from "../components/QuestionLead"
+import {optionList} from "../stores/apiStore";
 
 const content = {
   title: "Are there any sectors you specifically believe in?",
   lead:
     "We can take this into account when building your portfolio. Select up to 3.",
-  answers: [
-    {
-      id: "8924qdwsacv",
-      label: "USA",
-      img: "/img/usa.jpg",
-      value: "c11",
-    },
-    {
-      id: "wt4iw12",
-      label: "Asia and Pacific",
-      img: "/img/asia.jpg",
-      value: "c12",
-    },
-    {
-      id: "ewpoifjw",
-      label: "Europe",
-      img: "/img/europe.jpg",
-      value: "c13",
-    },
-    {
-      id: "ewgioh9",
-      label: "Latin America",
-      img: "/img/latam.jpg",
-      value: "c100",
-    },
-    {
-      id: "oifb3",
-      label: "Digitalisation",
-      img: "/img/digital.jpg",
-      value: "c101",
-    },
-    {
-      id: "92348tgh",
-      label: "Ageing population",
-      img: "/img/ageing.jpg",
-      value: "c102",
-    },
-    {
-      id: "jhgfds",
-      label: "Healthcare innovation",
-      img: "/img/healthcare.jpg",
-      value: "c103",
-    },
-    {
-      id: "1243teyrjtyk",
-      label: "Automation & Robotics",
-      img: "/img/robots.jpg",
-      value: "c105"
-    },
-    {
-      id: "124qrwe",
-      label: "Clean energy",
-      img: "/img/cleanenergy.jpg",
-      value: "c10"
-    }
-  ]
+  answers: optionList.map(o => o)
 }
 
 const MAX_SELECTABLE = 3
@@ -87,11 +33,11 @@ class Investments extends Component {
           <CheckGroup group={"geo"} onChange={toggleOption}>
             {content.answers.map(item => (
               <ImageCheck
-                key={item.id}
-                value={item.value}
-                id={item.id}
-                defaultChecked={isChecked(item.value)}
-                disabled={isDisabled(item.value)}
+                key={item.code}
+                value={item.code}
+                id={item.code}
+                defaultChecked={isChecked(item.code)}
+                disabled={isDisabled(item.code)}
               >
                 <Text>{item.label}</Text>
                 <Img>

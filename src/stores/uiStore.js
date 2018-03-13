@@ -22,6 +22,9 @@ class UIStore {
 
   @observable currentStep = 0
   @observable maxStep = 0
+  @observable filterExpanded = false
+
+  @action setFilterExpanded = isExpanded => (this.filterExpanded = isExpanded)
 
   @action
   setInstrument = instrument =>
