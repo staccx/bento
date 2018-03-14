@@ -33,6 +33,7 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
+    "deploy": "yarn build && surge -p ./build -d savings-advisor.surge.sh",
     "serve": "yarn build && serve -s build"
   },
   "devDependencies": {
