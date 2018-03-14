@@ -12,14 +12,29 @@ class StepNavigation extends Component {
   }
 
   render() {
-    const { currentStep, steps, setStep } = this.props.uiStore
+    const {
+      currentStep,
+      steps,
+      setStep,
+      settings,
+      translate
+    } = this.props.uiStore
     const previous = currentStep > 0 ? steps[currentStep - 1] : null
     const next = currentStep < steps.length - 1 ? steps[currentStep + 1] : null
+    const current = steps[currentStep]
+    if (!settings) {
+      return null
+    }
+    const nextDisabled =
+      current && current.validator ? !current.validator() : false
     return (
       <Center>
         {next && (
-          <Next onClick={() => setStep(currentStep + 1)}>
-            Next{" "}
+          <Next
+            disabled={nextDisabled}
+            onClick={() => setStep(currentStep + 1)}
+          >
+            {translate(settings.nextButtonLabel)}{" "}
             <svg width="16" height="10" viewBox="0 0 16 10">
               <path
                 transform="translate(.5 .1)"
@@ -30,7 +45,9 @@ class StepNavigation extends Component {
           </Next>
         )}
         {previous && (
-          <Previous onClick={() => setStep(currentStep - 1)}>Back</Previous>
+          <Previous onClick={() => setStep(currentStep - 1)}>
+            {translate(settings.backButtonLabel)}
+          </Previous>
         )}
       </Center>
     )
@@ -57,6 +74,11 @@ const Next = styled(Button)`
   &:active {
     background-color: transparent;
     color: ${p => p.theme.color.secondary};
+  }
+
+  &:disabled {
+    color: ${p => p.theme.color.disabled};
+    border: 0px;
   }
 `
 

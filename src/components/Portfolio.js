@@ -61,15 +61,21 @@ class Portfolio extends Component {
   }
 
   render() {
-    const { selectedInstrument, setInstrument } = this.props.uiStore
+    const {
+      selectedInstrument,
+      setInstrument,
+      cmsSummary,
+      translate
+    } = this.props.uiStore
     const { depositStart, depositMonthly, isChartLoading } = this.props.apiStore
+    console.log(cmsSummary)
     return (
       <div>
-        <QuestionLead question="Your portfolio" />
+        <QuestionLead question={translate(cmsSummary.header)} />
         <PortfolioFilter />
         <InputsWrapper>
           <CurrencyInputSteppers
-            label={"First deposit"}
+            label={translate(cmsSummary.firstDepositLabel)}
             name={"deposit/START_DEPOSIT"}
             value={depositStart}
             onIncrement={() => this.handleInputChange(2000)}
@@ -78,7 +84,7 @@ class Portfolio extends Component {
             id={"deposit_start"}
           />
           <CurrencyInputSteppers
-            label={"Monthly deposit"}
+            label={translate(cmsSummary.monthlyDepositLabel)}
             name={"deposit/MONTHLY_DEPOSIT"}
             value={depositMonthly}
             onIncrement={() => this.handleInputChange(2000, false)}
@@ -92,8 +98,9 @@ class Portfolio extends Component {
           <TabsWrapper isVisible={!isChartLoading}>
             <Tabs>
               <TabList>
-                <Tab>Expected development</Tab>
-                <Tab>Historical data</Tab>
+                <Tab>{translate(cmsSummary.expectedDevelopmentLabel)}</Tab>
+                <Tab>{translate(cmsSummary.backtestLabel)}</Tab>
+                <Tab disabled>{translate(cmsSummary.barChartLabel)}</Tab>
               </TabList>
 
               <TabPanel>
@@ -132,6 +139,7 @@ class Portfolio extends Component {
                 </WrittenExplanation>
                 <ShotgunChart height={300} width={1000} isForecast={false} />
               </TabPanel>
+              <TabPanel><div>Coming soon</div></TabPanel>
             </Tabs>
           </TabsWrapper>
         </ContentWrapper>

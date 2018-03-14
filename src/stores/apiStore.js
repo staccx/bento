@@ -5,6 +5,7 @@ import mock from "./data.json"
 import { inverseLerp, clamp } from "@staccx/base/dist/index.es"
 import qs from "qs"
 import { parseDate } from "../utils/parseDate"
+import {apiStore} from "./index";
 
 const client = axios.create({
   baseURL: "https://13.95.84.217/",
@@ -22,8 +23,8 @@ export const horizonLabels = [
 ]
 
 export const horizonYears = [
-  "2+ years",
-  "4+ years",
+  "3+ years",
+  "5+ years",
   "10 years",
   "10+ years",
   "25 years"
@@ -54,8 +55,8 @@ class ApiStore {
   @observable calculated = 0
   @observable years = null
 
-  @observable currentRisk = 1
-  @observable horizon = 3
+  @observable currentRisk = null
+  @observable horizon = null
 
   @observable optionList = []
 
@@ -65,6 +66,8 @@ class ApiStore {
   @observable timeout = null
 
   @observable isChartLoading = true
+
+  @observable settings = null
 
   @action setIsChartLoading = isLoading => (this.isChartLoading = isLoading)
 
@@ -80,8 +83,23 @@ class ApiStore {
     this.getResultFromApi()
   }
 
+  @action setDefaults = settings => {
+    // this.setRisk(settings.riskDefault)
+    // this.setHorizon(settings.horizonDefault)
+    // this.setDepositStart(settings.depositStart)
+    // this.setDepositStart(settings.depositMonthly)
+
+    this.settings = {
+      horizonLow: settings.horizonRange.low,
+      horizonHigh: settings.horizonRange.high,
+      riskLow: settings.riskRange.low,
+      riskHigh: settings.riskRange.high
+    }
+  }
+
   @action
   setRisk = risk => {
+    console.trace("risk set to", risk)
     this.currentRisk = risk
     this.getResultFromApi()
   }

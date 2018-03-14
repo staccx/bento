@@ -47,6 +47,8 @@ const Showing = ({ risk, duration, sectors, translate }) => {
   )
 }
 
+
+
 @inject("uiStore", "apiStore")
 @observer
 class PortfolioFilter extends Component {
@@ -75,7 +77,7 @@ class PortfolioFilter extends Component {
 
   render() {
     const { uiStore, apiStore } = this.props
-    const { setStep, cmsTheme, translate } = uiStore
+    const { setStep, cmsTheme, cmsSummary, translate } = uiStore
 
     const riskLabel =
       riskLabels[getActualRisk(this.props.apiStore.currentRisk) - 1]
@@ -85,6 +87,9 @@ class PortfolioFilter extends Component {
     const options = apiStore.optionList.map(option => {
       return cmsTheme.answers.find(t => t.value[0] === option)
     })
+
+    const editButtonLabel = translate(cmsSummary.editButtonLabel)
+
     return (
       <Wrapper size={"medium"}>
         <List>
@@ -102,10 +107,10 @@ class PortfolioFilter extends Component {
             onClick={() => uiStore.setFilterExpanded(!uiStore.filterExpanded)}
           >
             <FilterContent>
-              My answers
+              {translate(cmsSummary.filterHeader)}
               <List>
                 <AnswersListItem>
-                  <strong>Risk</strong>
+                  <strong> {translate(cmsSummary.riskLabel)}</strong>
                   <AnswersListDetails>
                     <Fraction
                       onClick={this.handleFractionClick}
@@ -117,35 +122,35 @@ class PortfolioFilter extends Component {
                   </AnswersListDetails>
                 </AnswersListItem>
                 <AnswersListItem>
-                  <strong>Purpose</strong>
+                  <strong>{translate(cmsSummary.purposeLabel)}</strong>
                   <AnswersListDetails>
                     {horizonLabels[apiStore.horizon - 1]}
                     <Subtle>{horizonLabel}</Subtle>
                     <EditLink href="#purpose" onClick={() => setStep(2)}>
-                      Edit
+                      {editButtonLabel}
                     </EditLink>
                   </AnswersListDetails>
                 </AnswersListItem>
                 <AnswersListItem>
-                  <strong>Risk tolerance</strong>
+                  <strong>{translate(cmsSummary.riskToleranceLabel)}</strong>
                   <AnswersListDetails>
                     {riskLabel}
                     <EditLink href="#risk" onClick={() => setStep(3)}>
-                      Edit
+                      {editButtonLabel}
                     </EditLink>
                   </AnswersListDetails>
                 </AnswersListItem>
                 <AnswersListItem>
-                  <strong>Themes</strong>
+                  <strong>{translate(cmsSummary.optionsLabel)}</strong>
                   <AnswersListDetails>
                     <span>
                       {listOptions(options, "heading", translate)}
                       {options.length === 0 && (
-                        <NoWrap>No themes selected</NoWrap>
+                        <NoWrap>{translate(cmsSummary.noOptionsLabel)}</NoWrap>
                       )}
                     </span>
                     <EditLink href="#themes" onClick={() => setStep(4)}>
-                      Edit
+                      {editButtonLabel}
                     </EditLink>
                   </AnswersListDetails>
                 </AnswersListItem>

@@ -3,8 +3,11 @@ import UIStore from "./uiStore"
 
 const apiStore = new ApiStore()
 const uiStore = new UIStore()
-uiStore.setStep(0)
-// apiStore.getResult()
-apiStore.getResultFromApi()
+uiStore.initialize().then(settings => {
+  uiStore.setApiStore(apiStore)
+  apiStore.setDefaults(settings)
+  uiStore.setStep(0)
+})
+
 
 export { apiStore, uiStore }
