@@ -4,6 +4,7 @@ import { Animations } from "@staccx/base"
 import styled from "styled-components"
 import { Transition, TransitionGroup } from "react-transition-group"
 import StepperNavigation from "./StepNavigation"
+import Footer from "./Footer";
 
 const duration = 500
 
@@ -71,7 +72,11 @@ class StepContent extends Component {
           return (
             <Slide isIn={isIn} key={item.name} direction={direction}>
               <Comp />
-              <StepperNavigation />
+              <StepperNavigation/>
+              <Footer>
+                Made by <a href="http://stacc.com">Stacc X</a> <br/>
+                Powered by <a href="http://quantfol.io">Quantfolio</a>
+              </Footer>
             </Slide>
           )
         })}

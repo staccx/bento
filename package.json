@@ -55,5 +55,6 @@
     "react-app-rewire-styled-components": "^3.0.0",
     "react-app-rewired": "^1.4.1",
     "standard": "^11.0.0"
-  }
+  },
+  "proxy": "https://13.95.84.217/"
 }

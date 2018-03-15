@@ -28,31 +28,11 @@ class App extends Component {
               <StepContent />
             </StyledWrapper>
           </Router>
-          <Footer>
-            Made by <a href="http://stacc.com">Stacc X</a> <br />
-            Powered by <a href="http://quantfol.io">Quantfolio</a>
-          </Footer>
         </div>
       </ThemeProvider>
     )
   }
 }
-
-const Footer = styled.div`
-  margin: auto;
-  max-width: 200px;
-  padding: 0 20px;
-  text-align: center;
-  color: #777;
-  line-height: 1.7;
-  a {
-    color: #444;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`
 
 const StyledWrapper = styled(Wrapper)`
   min-height: 100px;
