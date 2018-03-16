@@ -1,7 +1,7 @@
 {
-  "name": "@staccx/base",
-  "version": "0.20.0",
-  "description": "Base componentes",
+  "name": "@staccx/animations",
+  "version": "0.1.0",
+  "description": "Animations",
   "author": "StaccX",
   "license": "UNLICENCED",
   "repository": {
@@ -39,7 +39,6 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "^1.0.17",
-    "react-styleguidist": "^6.2.3",
     "rollup": "^0.54.0",
     "rollup-plugin-alias": "^1.4.0",
     "rollup-plugin-babel": "^3.0.3",
@@ -48,6 +47,7 @@
     "rollup-plugin-node-resolve": "^3.0.2",
     "rollup-plugin-postcss": "^1.1.0",
     "standard": "^10.0.3",
+    "styled-components": "^3.2.3",
     "webpack": "^3.10.0",
     "webpack-blocks": "^1.0.0-rc.2"
   },
@@ -57,20 +57,5 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
-  "dependencies": {
-    "@staccx/animations": "^0.1.0",
-    "@staccx/formatting": "^0.2.0",
-    "@staccx/math": "^0.1.0",
-    "accounting": "^0.4.1",
-    "downshift": "^1.28.0",
-    "easing-utils": "^0.0.7",
-    "lerna": "^2.8.0",
-    "polished": "^1.9.2",
-    "prettier": "^1.10.2",
-    "prop-types": "^15.6.0",
-    "text-mask-addons": "^3.7.1",
-    "text-mask-core": "^5.0.1",
-    "tinycolor2": "^1.4.1",
-    "whatwg-fetch": "^2.0.3"
-  }
+  "dependencies": {}
 }

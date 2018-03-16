@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { ScaleInX } from "../../../Styles/animations"
+import { ScaleInX } from "@staccx/animations"
 
 const ProgressBar = ({ progress, className, ...otherProps }) => (
   <Bg className={className} {...otherProps}>

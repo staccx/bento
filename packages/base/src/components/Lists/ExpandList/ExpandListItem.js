@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { BounceIn } from "../../../Styles/animations"
+import { BounceIn } from "@staccx/animations"
 
 const Caret = ({ className }) => (
   <svg className={className} viewBox="0 0 24 16" width="18">

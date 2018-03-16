@@ -49,11 +49,8 @@ import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 // styles
 import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
-// animations
-import { default as Animations } from "./Styles/animations"
 
 export {
-  Animations,
   Box,
   Button,
   Caret,
