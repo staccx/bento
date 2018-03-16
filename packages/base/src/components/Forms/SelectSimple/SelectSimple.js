@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { multiplyPixelValue } from "@staccx/math"
 import Label from "../Label/Label"
-import multiplyPixelValue from "../../../functions/multiplyPixelValue"
 
 const Caret = ({ className }) => (
   <svg className={className} viewBox="0 0 24 16">

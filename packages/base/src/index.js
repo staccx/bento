@@ -44,16 +44,8 @@ import Donut from "./components/DataViz/Donut/Donut"
 import Modal from "./components/Modal/Modal"
 
 import { default as Button } from "./components/Button/Button"
-import { default as extend } from "./functions/extend"
 import { default as cssResets } from "./Styles/cssResets"
 import { default as ThemeProvider } from "./Theme/ThemeWrapper"
-// /functions
-import inverseLerp from "./functions/inverseLerp"
-import lerp from "./functions/lerp"
-import coserp from "./functions/cosineInterpolate"
-import clamp from "./functions/clamp"
-import multiplyPixelValue from "./functions/multiplyPixelValue"
-import { formatCurrency } from "./functions/Currency/currency"
 // styles
 import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
@@ -67,29 +59,22 @@ export {
   Caret,
   CheckBox,
   CheckGroup,
-  clamp,
   Close,
   CompanyInput,
-  coserp,
   cssResets,
   CurrencyInput,
   Donut,
   ExpandListItem,
-  extend,
-  formatCurrency,
   Flag,
   fontSmoothing,
   Fraction,
   hideVisually,
   InlineListItem,
   Input,
-  inverseLerp,
   Label,
-  lerp,
   LinkListItem,
   List,
   Modal,
-  multiplyPixelValue,
   Odometer,
   Pack,
   PackItem,

@@ -2,10 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { linear } from "easing-utils"
-import inverseLerp from "../../../../functions/inverseLerp"
+import { inverseLerp, clamp } from "@staccx/math"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
-import clamp from "../../../../functions/clamp"
 
 class SliderKeyboardInput extends React.Component {
   constructor(props) {

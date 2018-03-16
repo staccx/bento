@@ -58,6 +58,8 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
+    "@staccx/formatting": "^0.2.0",
+    "@staccx/math": "^0.1.0",
     "accounting": "^0.4.1",
     "downshift": "^1.28.0",
     "easing-utils": "^0.0.7",
