@@ -5,7 +5,10 @@
   "dependencies": {
     "@sanity/client": "^0.126.0",
     "@sanity/image-url": "^0.126.0",
+    "@staccx/animations": "^0.21.0",
     "@staccx/base": "^0.18.1",
+    "@staccx/formatting": "^0.2.0",
+    "@staccx/math": "^0.1.0",
     "axios": "^0.18.0",
     "chart.js": "^2.7.1",
     "date-fns": "^1.29.0",

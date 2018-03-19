@@ -4,7 +4,8 @@ import styled, { css } from "styled-components"
 import { observable } from "mobx"
 import { inject, observer } from "mobx-react"
 import { easeOutQuad } from "easing-utils"
-import { Animations, clamp, lerp } from "@staccx/base"
+import { clamp, lerp } from "@staccx/math"
+import Animations from "@staccx/animations"
 import QuestionLead from "../components/QuestionLead"
 
 @inject("apiStore", "uiStore")

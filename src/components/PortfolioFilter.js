@@ -8,9 +8,9 @@ import {
   Fraction,
   Slider,
   SplitListItem,
-  Wrapper,
-  lerp
+  Wrapper
 } from "@staccx/base"
+import {lerp} from "@staccx/math"
 import {
   getActualRisk,
   horizonLabels,

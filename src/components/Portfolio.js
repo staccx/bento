@@ -6,7 +6,8 @@ import {
   Tabs as UnstyledTabs,
   TabPanel as UnstyledTabPanel
 } from "react-tabs"
-import { formatCurrency, Animations } from "@staccx/base"
+import { formatCurrency } from "@staccx/formatting"
+import Animations from "@staccx/animations"
 import PieChart from "./PieChart"
 import PortfolioExpand from "./PortfolioExpand"
 import PortfolioFilter from "./PortfolioFilter"

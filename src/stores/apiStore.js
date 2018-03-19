@@ -1,14 +1,13 @@
-import { observable, action } from "mobx"
+import { action, observable } from "mobx"
 import { differenceInCalendarYears } from "date-fns"
 import axios from "axios"
 import mock from "./data.json"
-import { inverseLerp, clamp } from "@staccx/base/dist/index.es"
+import { clamp, inverseLerp } from "@staccx/math"
 import qs from "qs"
 import { parseDate } from "../utils/parseDate"
-import {apiStore} from "./index";
 
 const client = axios.create({
-  baseURL: "",
+  baseURL: process.env.NODE_ENV === "production" ? "https://13.95.84.217/" : "",
   headers: {
     Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2RlbW8ucXVhbnRmb2wuaW8iLCJhdWQiOiJRUE0tREVNTyIsInN1YiI6IlF1YW50Zm9saW86aW50ZWdyYXRpb24tdGVzdGluZyIsImlhdCI6IjE1MTY2MzM1ODMiLCJleHAiOiIxNTc5NzA1NTgzIn0.3fc44XDwBkcJwHBlwP0qQGKwCsl076Fxls6j55Ts2aY`
   }
@@ -83,7 +82,8 @@ class ApiStore {
     this.getResultFromApi()
   }
 
-  @action setDefaults = settings => {
+  @action
+  setDefaults = settings => {
     // this.setRisk(settings.riskDefault)
     // this.setHorizon(settings.horizonDefault)
     // this.setDepositStart(settings.depositStart)
@@ -130,7 +130,7 @@ class ApiStore {
       client
         .get("qpm", {
           params: {
-            InvestmentHorizon: Math.floor(clamp(1, 4,this.horizon)),
+            InvestmentHorizon: Math.floor(clamp(1, 4, this.horizon)),
             RiskTolerance: getActualRisk(this.currentRisk),
             PeriodicSavings: this.depositMonthly,
             StartingCapital: this.depositStart,
@@ -171,9 +171,23 @@ class ApiStore {
           console.log("FAlling back to mock")
           this.savingsplan = mock.savingsPlan
           this.forecast = this.savingsplan.forecast
+          this.backtest = this.savingsplan.backtest
           this.marketReturns = mock.marketReturns
           this.recommendedPortfolio = mock.recommendedPortfolio
+
           this.forecastedAnnualReturn = mock.forecastedAnnualReturn
+          this.isChartLoading = false
+          const forecastArray = Object.keys(this.forecast)
+          const last = forecastArray[forecastArray.length - 1]
+          this.expected = this.forecast[last].Median
+          const lastDate = parseDate(last)
+          this.years = differenceInCalendarYears(lastDate, new Date()) + 1
+
+          const backtestArray = Object.keys(this.savingsplan.backtest)
+          const lastBacktest = backtestArray[backtestArray.length - 1]
+          this.calculated = this.savingsplan.backtest[
+            lastBacktest
+            ].PortfolioReturns
         })
     }, 600)
   }
