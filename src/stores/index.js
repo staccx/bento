@@ -6,8 +6,7 @@ const uiStore = new UIStore()
 uiStore.initialize().then(settings => {
   uiStore.setApiStore(apiStore)
   apiStore.setDefaults(settings)
-  uiStore.setStep(0)
+  uiStore.setStep(2)
 })
-
 
 export { apiStore, uiStore }

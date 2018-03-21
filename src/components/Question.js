@@ -37,7 +37,7 @@ class Question extends Component {
     const { selectedRow } = this.state
 
     return (
-      <Wrapper size="medium">
+      <Wrapper size="medium" breakout>
         <QuestionLead question={translate(content.title)}>
           {translate(content.lead)}
         </QuestionLead>
@@ -107,6 +107,14 @@ const Inner = styled.div`
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
   }
+
+  @media (max-width: ${p => p.theme.wrapper.medium}) {
+    grid-auto-rows: 200px;
+
+    &:after {
+      top: calc(${p => p.currentRow / p.totalRows * 100 + "%"} + 24px);
+    }
+  }
 `
 
 const Heading = styled.h4`
@@ -116,8 +124,6 @@ const Heading = styled.h4`
 `
 
 const AnswerBox = styled.label`
-  display: flex;
-  align-items: center;
   position: relative;
   border-radius: ${p => p.theme.borderRadius};
   padding: 1px;
@@ -133,11 +139,14 @@ const AnswerBox = styled.label`
       color: ${p => p.theme.color.secondary};
     }
   }
+
+  @media (min-width: ${p => p.theme.wrapper.medium}) {
+    display: flex;
+    align-items: center;
+  }
 `
 
 const AdvisorRadio = styled(RadioButton)`
-  width: 75%;
-  padding: 0 ${p => p.theme.spacing.huge} 0 0;
   border-radius: 14px;
 
   > label {
@@ -165,6 +174,15 @@ const AdvisorRadio = styled(RadioButton)`
       background-color: ${p => p.theme.color.secondary};
       transform: translate(-4px, -50%) scale(0);
     }
+
+    @media (max-width: ${p => p.theme.wrapper.medium}) {
+      padding: 0;
+
+      &::before,
+      &::after {
+        top: 24px;
+      }
+    }
   }
 
   > input:checked ~ label {
@@ -182,11 +200,20 @@ const AdvisorRadio = styled(RadioButton)`
       }
     }
   }
+
+  @media (min-width: ${p => p.theme.wrapper.medium}) {
+    width: 75%;
+    padding: 0 ${p => p.theme.spacing.huge} 0 0;
+  }
 `
 
 const Image = styled.div`
   svg {
     max-width: 100%;
+
+    @media (max-width: ${p => p.theme.wrapper.medium}) {
+      width: 48px;
+    }
   }
 `
 

@@ -17,6 +17,8 @@ const elementStyles = `
   }
 `
 
+// const laserThemeFunction = () => themeLaser
+
 class App extends Component {
   render() {
     return (
