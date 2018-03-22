@@ -20,7 +20,6 @@ const generateStyle = componentName => props => {
       `
   }
 
-  console.log(componentName, variant)
   return css`${component.base.style}${variant.style}`
 }
 
