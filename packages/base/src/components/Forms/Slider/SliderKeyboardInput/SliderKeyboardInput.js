@@ -3,8 +3,21 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { linear } from "easing-utils"
 import { inverseLerp, clamp } from "@staccx/math"
+import withTheme from "../../../../utils/withTheme"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
+
+const SliderWrapper = styled.div`
+  ${props => props.themeStyle(props)};
+`
+
+const HiddenLabel = styled.label`
+  ${props => props.themeStyle(props)};
+`
+
+const SliderInput = styled(Input)`
+  ${props => props.themeStyle(props)};
+`
 
 class SliderKeyboardInput extends React.Component {
   constructor(props) {
@@ -121,51 +134,6 @@ class SliderKeyboardInput extends React.Component {
   }
 }
 
-const SliderWrapper = styled.div`
-  font-family: ${p => p.theme.font.body};
-  font-size: ${p => p.theme.font.size.input};
-`
-
-const HiddenLabel = styled.label`
-  border: 0 !important;
-  clip: rect(0 0 0 0) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
-`
-
-const SliderInput = styled(Input)`
-  background-color: transparent;
-  border: 0;
-  min-height: ${p => p.theme.targetSize.normal};
-  margin-bottom: ${p => p.theme.spacing.medium};
-  max-width: 100%;
-  -moz-appearance: textfield;
-  outline: none;
-
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  &:hover,
-  &:active,
-  &:focus,
-  &:-moz-ui-invalid,
-  &:invalid {
-    outline: none;
-    box-shadow: none;
-  }
-
-  &:disabled {
-    color: ${p => p.theme.color.text};
-  }
-`
-
 SliderKeyboardInput.defaultProps = {
   value: 0,
   min: 0,
@@ -192,4 +160,4 @@ SliderKeyboardInput.propTypes = {
   className: PropTypes.string
 }
 
-export default SliderKeyboardInput
+export default withTheme(SliderKeyboardInput)

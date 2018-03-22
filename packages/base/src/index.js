@@ -51,9 +51,19 @@ import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
 
 import ButtonStyle from "../src/components/Button/Button.styles"
+import {
+  SliderWrapperStyle,
+  HiddenLabelStyle,
+  SliderInputStyle
+} from "../src/components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput.styles"
 
 const Styles = {
-  button: ButtonStyle
+  button: ButtonStyle,
+  sliderKeyboardInput: {
+    sliderWrapper: SliderWrapperStyle,
+    hiddenLabel: HiddenLabelStyle,
+    sliderInput: SliderInputStyle
+  }
 }
 
 export {
