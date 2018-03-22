@@ -16,6 +16,8 @@ const Slider = ({
   percentage,
   step,
   value,
+  themeStyle,
+  themeVariant,
   ...restProps
 }) => {
   if (percentage === undefined) {
@@ -24,7 +26,7 @@ const Slider = ({
     )
   }
   return (
-    <SliderInput percentage={percentage}>
+    <SliderInput percentage={percentage} themeStyle={themeStyle} themeVariant={themeVariant}>
       <input
         type="range"
         name={name}

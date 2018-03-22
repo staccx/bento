@@ -7,17 +7,26 @@ import withTheme from "../../../../utils/withTheme"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
 
-const SliderWrapper = styled.div`
-  ${props => props.themeStyle(props)};
-`
+const SliderWrapper = withTheme(
+  styled.div`
+    ${props => props.themeStyle(props)};
+  `,
+  "SliderKeyboardInput.SliderWrapper"
+)
 
-const HiddenLabel = styled.label`
-  ${props => props.themeStyle(props)};
-`
+const HiddenLabel = withTheme(
+  styled.label`
+    ${props => props.themeStyle(props)};
+  `,
+  "SliderKeyboardInput.HiddenLabel"
+)
 
-const SliderInput = styled(Input)`
-  ${props => props.themeStyle(props)};
-`
+const SliderInput = withTheme(
+  styled(Input)`
+    ${props => props.themeStyle(props)};
+  `,
+  "SliderKeyboardInput.SliderInput"
+)
 
 class SliderKeyboardInput extends React.Component {
   constructor(props) {
@@ -103,11 +112,11 @@ class SliderKeyboardInput extends React.Component {
   }
 
   render() {
-    const { label, name, min, max, step, mask, className } = this.props
+    const { label, name, min, max, step, mask, className, themeVariant } = this.props
     const { currentValue, percentage } = this.state
     return (
-      <SliderWrapper className={className}>
-        <HiddenLabel htmlFor={name}>{label}</HiddenLabel>
+      <SliderWrapper className={className} themeVariant={themeVariant}>
+        <HiddenLabel htmlFor={name} themeVariant={themeVariant}>{label}</HiddenLabel>
         <SliderInput
           type="text"
           name={`${name}-keyboard`}
@@ -118,6 +127,7 @@ class SliderKeyboardInput extends React.Component {
           max={max}
           mask={mask || null}
           disabled={this.state.isAnimatingIn}
+          themeVariant={themeVariant}
         />
         <Slider
           percentage={percentage}
