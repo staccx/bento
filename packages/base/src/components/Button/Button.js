@@ -4,14 +4,13 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import withTheme from '../../utils/withTheme'
-
+import withTheme from "../../utils/withTheme"
 
 const StyledButton = styled.button`
-  ${props => props.themeStyle(props)}
+  ${props => props.themeStyle(props)};
 `
 
-const Button = ({children, ...rest}) => (
+const Button = ({ children, ...rest }) => (
   <StyledButton {...rest}>{children}</StyledButton>
 )
 
@@ -30,7 +29,7 @@ const propTypes = {
   ]).isRequired,
   onClick: PropTypes.func,
   className: PropTypes.string,
-  to: PropTypes.string,
+  to: PropTypes.string
 }
 
 Button.defaultProps = defaultProps
