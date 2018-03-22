@@ -56,6 +56,7 @@ import {
   HiddenLabelStyle,
   SliderInputStyle
 } from "../src/components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput.styles"
+import SliderStyle from "../src/components/Forms/Slider/Slider/Slider.styles"
 
 const Styles = {
   button: ButtonStyle,
@@ -63,7 +64,8 @@ const Styles = {
     sliderWrapper: SliderWrapperStyle,
     hiddenLabel: HiddenLabelStyle,
     sliderInput: SliderInputStyle
-  }
+  },
+  slider: SliderStyle
 }
 
 export {
