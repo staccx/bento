@@ -112,11 +112,22 @@ class SliderKeyboardInput extends React.Component {
   }
 
   render() {
-    const { label, name, min, max, step, mask, className, themeVariant } = this.props
+    const {
+      label,
+      name,
+      min,
+      max,
+      step,
+      mask,
+      className,
+      themeVariant
+    } = this.props
     const { currentValue, percentage } = this.state
     return (
       <SliderWrapper className={className} themeVariant={themeVariant}>
-        <HiddenLabel htmlFor={name} themeVariant={themeVariant}>{label}</HiddenLabel>
+        <HiddenLabel htmlFor={name} themeVariant={themeVariant}>
+          {label}
+        </HiddenLabel>
         <SliderInput
           type="text"
           name={`${name}-keyboard`}
@@ -153,7 +164,8 @@ SliderKeyboardInput.defaultProps = {
   easingFunction: linear,
   onChange: null,
   mask: null,
-  className: ""
+  className: "",
+  themeVariant: null
 }
 
 SliderKeyboardInput.propTypes = {
@@ -167,7 +179,8 @@ SliderKeyboardInput.propTypes = {
   animationTicks: PropTypes.number,
   easingFunction: PropTypes.func,
   mask: PropTypes.array,
-  className: PropTypes.string
+  className: PropTypes.string,
+  themeVariant: PropTypes.string
 }
 
 export default withTheme(SliderKeyboardInput)
