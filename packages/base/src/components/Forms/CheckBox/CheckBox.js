@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Check from "../../Icons/Check"
+import withTheme from "../../../utils/withTheme"
 // const debug = require('debug')('CheckBox');
 
 const CheckBox = ({
@@ -37,72 +38,33 @@ const CheckBox = ({
   )
 }
 
-const CheckWrapper = styled.div`
-  min-height: ${p => p.theme.globals.targetSize.normal};
-  padding-top: ${p => p.theme.globals.spacing.small};
-  padding-bottom: ${p => p.theme.globals.spacing.small};
-`
+const CheckWrapper = withTheme(
+  styled.div`
+    ${props => props.themeStyle(props)};
+  `,
+  "Checkbox.CheckWrapper"
+)
 
-const IconCheck = styled(Check)`
-  position: absolute;
-  left: 2px;
-  top: 2px;
-  display: block;
-  height: 20px;
-  width: 20px;
-  transform: scale(0);
-  transition: all 0.2s ease-in-out;
-  color: ${p => p.theme.globals.color.primary};
-`
+export const IconCheck = withTheme(
+  styled(Check)`
+    ${props => props.themeStyle(props)};
+  `,
+  "Checkbox.IconCheck"
+)
 
-const InputCheck = styled.input`
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  clip: rect(0 0 0 0);
+const InputCheck = withTheme(
+  styled.input`
+    ${props => props.themeStyle(props)};
+  `,
+  "Checkbox.InputCheck"
+)
 
-  &:checked ~ label {
-    ${IconCheck} {
-      transform: scale(1);
-    }
-  }
-
-  &:focus ~ label {
-    &::before {
-      border-color: ${p => p.theme.globals.color.primary};
-    }
-  }
-`
-
-const Label = styled.label`
-  padding: 0 0 0 ${p => p.theme.globals.spacing.mediumPlus};
-  position: relative;
-  font-weight: normal;
-  letter-spacing: normal;
-  width: auto;
-  cursor: pointer;
-  font-family: ${p => p.theme.globals.font.body};
-  font-family: ${p => p.theme.globals.font.size.input};
-  line-height: 1.6;
-  display: inline-block;
-
-  &::before {
-    content: "";
-    background: ${p => p.theme.globals.color.bg};
-    border: 1px solid ${p => p.theme.globals.color.line};
-    display: block;
-    height: ${p => p.theme.globals.spacing.medium};
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: ${p => p.theme.globals.spacing.medium};
-  }
-
-  &:hover {
-    &::before {
-      border-color: ${p => p.theme.globals.color.primary};
-    }
-  }
-`
+const Label = withTheme(
+  styled.label`
+    ${props => props.themeStyle(props)};
+  `,
+  "Checkbox.Label"
+)
 
 CheckBox.propTypes = {
   children: PropTypes.oneOfType([

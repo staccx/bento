@@ -118,6 +118,29 @@ const theme = {
         style: Styles.odometer.digitContainer
       }
     }
+  },
+  CheckBox: {
+    base: {},
+    CheckWrapper: {
+      base: {
+        style: Styles.checkbox.CheckWrapper
+      }
+    },
+    IconCheck: {
+      base: {
+        style: Styles.checkbox.IconCheck
+      }
+    },
+    InputCheck: {
+      base: {
+        style: Styles.checkbox.InputCheck
+      }
+    },
+    Label: {
+      base: {
+        style: Styles.checkbox.Label
+      }
+    }
   }
 }
 
