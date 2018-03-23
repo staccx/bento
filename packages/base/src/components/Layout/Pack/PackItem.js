@@ -10,7 +10,7 @@ const PackItem = ({ className, children, ...rest }) => (
 
 const ListItem = styled.li`
   display: inline-block;
-  padding: ${p => p.theme.spacing.small};
+  padding: ${p => p.theme.globals.spacing.small};
 `
 
 PackItem.defaultProps = {

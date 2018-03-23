@@ -83,14 +83,14 @@ export const InputWrapper = styled.div`
 export const inputCss = css`
   display: block;
   width: 100%;
-  min-height: ${p => p.theme.targetSize.normal};
+  min-height: ${p => p.theme.globals.targetSize.normal};
   margin: 0 auto;
-  border: 1px solid ${p => p.theme.color.line};
-  border-radius: ${p => p.theme.borderRadius};
-  padding-left: ${p => p.theme.spacing.small};
-  padding-right: ${p => p.theme.spacing.small};
-  font-family: ${p => p.theme.font.body};
-  font-size: ${p => p.theme.font.size.input};
+  border: 1px solid ${p => p.theme.globals.color.line};
+  border-radius: ${p => p.theme.globals.borderRadius};
+  padding-left: ${p => p.theme.globals.spacing.small};
+  padding-right: ${p => p.theme.globals.spacing.small};
+  font-family: ${p => p.theme.globals.font.body};
+  font-size: ${p => p.theme.globals.font.size.input};
   transition: border-color 0.2s ease-out;
   -webkit-appearance: none;
   appearance: none;
@@ -98,29 +98,29 @@ export const inputCss = css`
 
   &::-webkit-input-placeholder {
     /* WebKit browsers */
-    color: ${p => p.theme.color.line};
+    color: ${p => p.theme.globals.color.line};
   }
   &:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
-    color: ${p => p.theme.color.line};
+    color: ${p => p.theme.globals.color.line};
   }
   &::-moz-placeholder {
     /* Mozilla Firefox 19+ */
-    color: ${p => p.theme.color.line};
+    color: ${p => p.theme.globals.color.line};
   }
   &:-ms-input-placeholder {
     /* Internet Explorer 10+ */
-    color: ${p => p.theme.color.line};
+    color: ${p => p.theme.globals.color.line};
   }
   &:-webkit-autofill {
-    background-color: ${p => p.theme.color.bg};
+    background-color: ${p => p.theme.globals.color.bg};
   }
 
   &:hover,
   &:focus,
   &:active {
     outline: none;
-    background-color: ${p => p.theme.color.subtleHover};
+    background-color: ${p => p.theme.globals.color.subtleHover};
   }
 
   &::-webkit-inner-spin-button,

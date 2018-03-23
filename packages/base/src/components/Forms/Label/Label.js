@@ -14,10 +14,10 @@ const Label = ({ className, children, ...rest }) => (
 
 const LabelElement = styled.label`
   font-weight: bold;
-  font-family: ${p => p.theme.font.body};
-  font-size: ${p => p.theme.font.size.base};
+  font-family: ${p => p.theme.globals.font.body};
+  font-size: ${p => p.theme.globals.font.size.base};
   line-height: 1.2;
-  padding-bottom: ${p => p.theme.spacing.tiny};
+  padding-bottom: ${p => p.theme.globals.spacing.tiny};
   display: block;
 `
 

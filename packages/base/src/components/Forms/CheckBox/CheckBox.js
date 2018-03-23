@@ -38,9 +38,9 @@ const CheckBox = ({
 }
 
 const CheckWrapper = styled.div`
-  min-height: ${p => p.theme.targetSize.normal};
-  padding-top: ${p => p.theme.spacing.small};
-  padding-bottom: ${p => p.theme.spacing.small};
+  min-height: ${p => p.theme.globals.targetSize.normal};
+  padding-top: ${p => p.theme.globals.spacing.small};
+  padding-bottom: ${p => p.theme.globals.spacing.small};
 `
 
 const IconCheck = styled(Check)`
@@ -52,7 +52,7 @@ const IconCheck = styled(Check)`
   width: 20px;
   transform: scale(0);
   transition: all 0.2s ease-in-out;
-  color: ${p => p.theme.color.primary};
+  color: ${p => p.theme.globals.color.primary};
 `
 
 const InputCheck = styled.input`
@@ -68,38 +68,38 @@ const InputCheck = styled.input`
 
   &:focus ~ label {
     &::before {
-      border-color: ${p => p.theme.color.primary};
+      border-color: ${p => p.theme.globals.color.primary};
     }
   }
 `
 
 const Label = styled.label`
-  padding: 0 0 0 ${p => p.theme.spacing.mediumPlus};
+  padding: 0 0 0 ${p => p.theme.globals.spacing.mediumPlus};
   position: relative;
   font-weight: normal;
   letter-spacing: normal;
   width: auto;
   cursor: pointer;
-  font-family: ${p => p.theme.font.body};
-  font-family: ${p => p.theme.font.size.input};
+  font-family: ${p => p.theme.globals.font.body};
+  font-family: ${p => p.theme.globals.font.size.input};
   line-height: 1.6;
   display: inline-block;
 
   &::before {
     content: "";
-    background: ${p => p.theme.color.bg};
-    border: 1px solid ${p => p.theme.color.line};
+    background: ${p => p.theme.globals.color.bg};
+    border: 1px solid ${p => p.theme.globals.color.line};
     display: block;
-    height: ${p => p.theme.spacing.medium};
+    height: ${p => p.theme.globals.spacing.medium};
     left: 0;
     position: absolute;
     top: 0;
-    width: ${p => p.theme.spacing.medium};
+    width: ${p => p.theme.globals.spacing.medium};
   }
 
   &:hover {
     &::before {
-      border-color: ${p => p.theme.color.primary};
+      border-color: ${p => p.theme.globals.color.primary};
     }
   }
 `

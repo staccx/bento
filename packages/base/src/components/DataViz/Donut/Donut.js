@@ -34,11 +34,11 @@ const Graph = styled.svg`
 `
 
 const Bg = styled.circle`
-  stroke: ${p => p.theme.color.line};
+  stroke: ${p => p.theme.globals.color.line};
 `
 
 const Value = styled.circle`
-  stroke: ${p => p.theme.color.primary};
+  stroke: ${p => p.theme.globals.color.primary};
   stroke-dasharray: ${p => p.dash};
   stroke-dashoffset: ${p => p.dashoffset};
 `

@@ -12,13 +12,13 @@ const ProgressBar = ({ progress, className, ...otherProps }) => (
 )
 
 const Bg = styled.div`
-  background: ${p => p.theme.color.subtleHover};
+  background: ${p => p.theme.globals.color.subtleHover};
   display: block;
-  height: ${p => p.theme.spacing.medium};
-  border-radius: ${p => p.theme.spacing.small};
+  height: ${p => p.theme.globals.spacing.medium};
+  border-radius: ${p => p.theme.globals.spacing.small};
   position: relative;
   overflow: hidden;
-  border: 3px solid ${p => p.theme.color.subtleHover};
+  border: 3px solid ${p => p.theme.globals.color.subtleHover};
   -webkit-mask-image: -webkit-radial-gradient(
     white,
     black
@@ -28,11 +28,14 @@ const Bg = styled.div`
 const Bar = styled.div`
   position: absolute;
   background-color: ${p =>
-    p.width >= 90 ? p.theme.color.warning : p.theme.color.primary};
+    p.width >= 90
+      ? p.theme.globals.color.warning
+      : p.theme.globals.color.primary};
   left: 0;
   height: 100%;
   width: ${p => (p.width > 100 ? "100" : p.width)}%;
-  border-radius: 0 ${p => p.theme.spacing.small} ${p => p.theme.spacing.small} 0;
+  border-radius: 0 ${p => p.theme.globals.spacing.small}
+    ${p => p.theme.globals.spacing.small} 0;
   transform: scaleX(0);
   animation: ${ScaleInX} 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 1
     forwards;
@@ -41,10 +44,10 @@ const Bar = styled.div`
 
 const Progress = styled.span`
   position: absolute;
-  right: ${p => p.theme.spacing.small};
+  right: ${p => p.theme.globals.spacing.small};
   line-height: 18px;
-  font-size: ${p => p.theme.font.size.tiny};
-  color: ${p => p.theme.color.white};
+  font-size: ${p => p.theme.globals.font.size.tiny};
+  color: ${p => p.theme.globals.color.white};
 `
 
 ProgressBar.defaultProps = {

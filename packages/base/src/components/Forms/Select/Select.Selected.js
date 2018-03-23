@@ -5,15 +5,15 @@ import styled from "styled-components"
 const SelectedContainer = styled.button`
   display: block;
   width: 100%;
-  min-height: ${p => p.theme.targetSize.normal};
+  min-height: ${p => p.theme.globals.targetSize.normal};
   margin: 0 auto;
-  border: 1px solid ${p => p.theme.color.line};
-  border-radius: ${p => p.theme.borderRadius};
-  padding-left: ${p => p.theme.spacing.small};
-  padding-right: ${p => p.theme.spacing.small};
+  border: 1px solid ${p => p.theme.globals.color.line};
+  border-radius: ${p => p.theme.globals.borderRadius};
+  padding-left: ${p => p.theme.globals.spacing.small};
+  padding-right: ${p => p.theme.globals.spacing.small};
   text-align: left;
-  font-family: ${p => p.theme.font.body};
-  font-size: ${p => p.theme.font.size.input};
+  font-family: ${p => p.theme.globals.font.body};
+  font-size: ${p => p.theme.globals.font.size.input};
   pointer: cursor;
   transition: border-color 0.2s ease-out;
 
@@ -21,7 +21,7 @@ const SelectedContainer = styled.button`
   &:focus,
   &:active {
     outline: none;
-    background-color: ${p => p.theme.color.subtleHover};
+    background-color: ${p => p.theme.globals.color.subtleHover};
   }
 `
 

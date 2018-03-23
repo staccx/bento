@@ -49,18 +49,18 @@ const circle = css`
 
 const ColoredDot = styled.div`
   ${circle};
-  background-color: ${p => p.theme.color.primary};
+  background-color: ${p => p.theme.globals.color.primary};
 `
 const DesaturatedDot = styled.div`
   ${circle};
-  background-color: ${p => p.theme.color.line};
+  background-color: ${p => p.theme.globals.color.line};
 `
 
 const FractionWrapper = styled.div`
   display: flex;
   flex-direction: row;
   > * {
-    margin-right: ${p => p.theme.spacing.tiny};
+    margin-right: ${p => p.theme.globals.spacing.tiny};
   }
 `
 

@@ -2,21 +2,21 @@ import { css } from "styled-components"
 
 const SliderThumbStyle = css`
   -webkit-appearance: none;
-  border: 2px solid ${p => p.theme.color.line};
+  border: 2px solid ${p => p.theme.globals.color.line};
   height: 20px;
   width: 20px;
   transform: translateY(-2px);
   border-radius: 50%;
-  background-color: ${p => p.theme.color.white};
+  background-color: ${p => p.theme.globals.color.white};
   cursor: pointer;
   &:hover {
-    background-color: ${p => p.theme.color.bg};
-    border-color: ${p => p.theme.color.disabled};
+    background-color: ${p => p.theme.globals.color.bg};
+    border-color: ${p => p.theme.globals.color.disabled};
   }
   &:active,
   &:focus {
-    border-color: ${p => p.theme.color.white};
-    background-color: ${p => p.theme.color.secondary};
+    border-color: ${p => p.theme.globals.color.white};
+    background-color: ${p => p.theme.globals.color.secondary};
   }
 `
 
@@ -34,7 +34,7 @@ const SliderTrackStyle = css`
   cursor: pointer;
   border-radius: 4.5px;
   color: transparent;
-  background-color: ${p => p.theme.color.line};
+  background-color: ${p => p.theme.globals.color.line};
 `
 
 export default css`
@@ -98,10 +98,11 @@ export default css`
   input[type=range]::-webkit-slider-runnable-track {
     ${SliderTrackStyle}
     background: linear-gradient(90deg,
-      ${p => p.theme.color.primary} 0%, ${p => p.theme.color.primary}
-      ${p => p.percentage}%, ${p => p.theme.color.line}
+      ${p => p.theme.globals.color.primary} 0%, ${p =>
+  p.theme.globals.color.primary}
+      ${p => p.percentage}%, ${p => p.theme.globals.color.line}
       ${p => p.percentage + 0.0}%,
-      ${p => p.theme.color.line} 100%) 0 100% no-repeat content-box;
+      ${p => p.theme.globals.color.line} 100%) 0 100% no-repeat content-box;
   }
 
 
@@ -114,7 +115,7 @@ export default css`
   }
 
   input[type=range]::-moz-range-progress {
-    background-color: ${p => p.theme.color.primary};
+    background-color: ${p => p.theme.globals.color.primary};
     height: 9px;
     border-radius: 4.5px;
   }
@@ -125,18 +126,18 @@ export default css`
   }
 
   input[type=range]::-ms-fill-lower {
-    background-color: ${p => p.theme.color.primary};
+    background-color: ${p => p.theme.globals.color.primary};
   }
 
   input[type=range]:focus::-ms-fill-lower {
-    background-color: ${p => p.theme.color.white};
+    background-color: ${p => p.theme.globals.color.white};
   }
 
   input[type=range]::-ms-fill-upper {
-    background-color: ${p => p.theme.color.white};
+    background-color: ${p => p.theme.globals.color.white};
   }
 
   input[type=range]:focus::-ms-fill-upper {
-    background-color: ${p => p.theme.color.white};
+    background-color: ${p => p.theme.globals.color.white};
   }
 `

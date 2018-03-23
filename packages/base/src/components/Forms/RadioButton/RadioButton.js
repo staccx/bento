@@ -14,11 +14,11 @@ const Radio = styled.input`
 
 const Label = styled.label`
   position: relative;
-  padding: 0 0 0 ${p => p.theme.spacing.mediumPlus};
+  padding: 0 0 0 ${p => p.theme.globals.spacing.mediumPlus};
   width: auto;
   letter-spacing: normal;
-  font-family: ${p => p.theme.font.body};
-  font-size: ${p => p.theme.font.size.input};
+  font-family: ${p => p.theme.globals.font.body};
+  font-size: ${p => p.theme.globals.font.size.input};
   font-weight: normal;
   cursor: pointer;
 
@@ -28,11 +28,11 @@ const Label = styled.label`
     top: -4px;
     left: 0;
     display: block;
-    width: ${p => p.theme.spacing.medium};
-    height: ${p => p.theme.spacing.medium};
-    border: 1px solid ${p => p.theme.color.line};
+    width: ${p => p.theme.globals.spacing.medium};
+    height: ${p => p.theme.globals.spacing.medium};
+    border: 1px solid ${p => p.theme.globals.color.line};
     border-radius: 50%;
-    background: ${p => p.theme.color.white};
+    background: ${p => p.theme.globals.color.white};
   }
 
   &::after {
@@ -44,7 +44,7 @@ const Label = styled.label`
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: ${p => p.theme.color.primary};
+    background-color: ${p => p.theme.globals.color.primary};
     line-height: 20px;
     transform: scale(0);
     transition: all 0.2s ease-in-out;
@@ -52,15 +52,15 @@ const Label = styled.label`
 `
 
 const RadioWrapper = styled.div`
-  min-height: ${p => p.theme.targetSize.normal};
-  padding-top: ${p => p.theme.spacing.small};
-  padding-bottom: ${p => p.theme.spacing.small};
+  min-height: ${p => p.theme.globals.targetSize.normal};
+  padding-top: ${p => p.theme.globals.spacing.small};
+  padding-bottom: ${p => p.theme.globals.spacing.small};
 
   &:hover,
   ${Radio}:focus ~  {
     ${Label} {
       &::before {
-        border-color: ${p => p.theme.color.wcag};
+        border-color: ${p => p.theme.globals.color.wcag};
       }
     }
   }

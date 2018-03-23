@@ -33,7 +33,7 @@ const FlagImg = styled.div`
   display: table-cell;
   width: 1px;
   vertical-align: middle;
-  padding-right: ${p => p.theme.spacing.medium};
+  padding-right: ${p => p.theme.globals.spacing.medium};
   > img {
     max-width: none;
   }
@@ -58,14 +58,14 @@ const reverse = css`
 
   > ${FlagImg} {
     padding-right: 0;
-    padding-left: ${p => p.theme.spacing.medium};
+    padding-left: ${p => p.theme.globals.spacing.medium};
   }
 `
 
 const reverseLarge = css`
   > ${FlagImg} {
     padding-right: 0;
-    padding-left: ${p => p.theme.spacing.large};
+    padding-left: ${p => p.theme.globals.spacing.large};
   }
 `
 
@@ -90,7 +90,7 @@ const flush = css`
 
 const large = css`
   > ${FlagImg} {
-    padding-right: ${p => p.theme.spacing.large};
+    padding-right: ${p => p.theme.globals.spacing.large};
   }
   ${props => (props.reverse ? reverseLarge : null)};
 `
@@ -105,7 +105,7 @@ const responsive = css`
     }
     > ${FlagImg} {
       width: auto;
-      padding-bottom: ${p => p.theme.spacing.medium};
+      padding-bottom: ${p => p.theme.globals.spacing.medium};
     }
 
     ${FlagImg} > img {

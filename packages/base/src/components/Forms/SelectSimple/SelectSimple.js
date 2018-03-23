@@ -56,36 +56,36 @@ const SelectWrapper = styled.div`
 
 const SelectIcon = styled(Caret)`
   position: absolute;
-  right: ${p => p.theme.spacing.small};
-  bottom: ${p => multiplyPixelValue(p.theme.targetSize.normal, 0.5)};
+  right: ${p => p.theme.globals.spacing.small};
+  bottom: ${p => multiplyPixelValue(p.theme.globals.targetSize.normal, 0.5)};
   width: 12px;
-  fill: ${p => p.theme.color.gray};
+  fill: ${p => p.theme.globals.color.gray};
   transform: translateY(50%);
   transition: fill 0.2s ease;
 `
 
 const Select = styled.select`
   width: 100%;
-  min-height: ${p => p.theme.targetSize.normal};
-  font-size: ${p => p.theme.font.size.input};
-  padding: 10px ${p => p.theme.spacing.medium} 10px
-    ${p => p.theme.spacing.small};
+  min-height: ${p => p.theme.globals.targetSize.normal};
+  font-size: ${p => p.theme.globals.font.size.input};
+  padding: 10px ${p => p.theme.globals.spacing.medium} 10px
+    ${p => p.theme.globals.spacing.small};
   box-shadow: none;
-  border-radius: ${p => p.theme.borderRadius};
+  border-radius: ${p => p.theme.globals.borderRadius};
   line-height: 1.4;
-  border: 1px solid ${p => p.theme.color.line};
+  border: 1px solid ${p => p.theme.globals.color.line};
   -webkit-appearance: none;
   appearance: none;
   cursor: pointer;
 
   &:focus,
   &:hover {
-    color: ${p => p.theme.color.blue};
-    border-color: ${p => p.theme.color.line};
+    color: ${p => p.theme.globals.color.blue};
+    border-color: ${p => p.theme.globals.color.line};
     outline: none;
 
     ~ ${SelectIcon} {
-      fill: ${p => p.theme.color.primary};
+      fill: ${p => p.theme.globals.color.primary};
     }
   }
 `

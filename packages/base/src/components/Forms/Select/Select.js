@@ -9,7 +9,7 @@ import Caret from "../../Icons/Caret"
 import Close from "../../Icons/Close"
 
 const DefaultOptionElementWrapper = styled.div`
-  border: 1px solid ${p => p.theme.color.line};
+  border: 1px solid ${p => p.theme.globals.color.line};
   border-top-width: 0;
 `
 
@@ -19,15 +19,15 @@ const SelectedWrapper = styled.div`
 
 const IconButton = styled.button`
   position: absolute;
-  right: ${p => p.theme.spacing.small};
-  bottom: ${p => multiplyPixelValue(p.theme.targetSize.normal, 0.5)};
-  width: ${p => p.theme.targetSize.small};
-  height: ${p => p.theme.targetSize.small};
+  right: ${p => p.theme.globals.spacing.small};
+  bottom: ${p => multiplyPixelValue(p.theme.globals.targetSize.normal, 0.5)};
+  width: ${p => p.theme.globals.targetSize.small};
+  height: ${p => p.theme.globals.targetSize.small};
   border: 0;
-  padding: 0 ${p => p.theme.spacing.tiny};
+  padding: 0 ${p => p.theme.globals.spacing.tiny};
   text-align: center;
   background-color: transparent;
-  fill: ${p => p.theme.color.gray};
+  fill: ${p => p.theme.globals.color.gray};
   transform: translateY(50%);
   transition: fill 0.2s ease;
 
@@ -37,7 +37,7 @@ const IconButton = styled.button`
     outline: none;
 
     svg {
-      fill: ${p => p.theme.color.primary};
+      fill: ${p => p.theme.globals.color.primary};
     }
   }
 `

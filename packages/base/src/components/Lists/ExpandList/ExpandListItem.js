@@ -65,7 +65,7 @@ class ExpandListItem extends Component {
 }
 
 const ExpandItem = styled.li`
-  border-bottom: 1px solid ${p => p.theme.color.line};
+  border-bottom: 1px solid ${p => p.theme.globals.color.line};
   position: relative;
 
   &:last-child {
@@ -76,8 +76,8 @@ const ExpandItem = styled.li`
 const ExpandIcon = styled(Caret)`
   position: absolute;
   top: 16px;
-  right: ${p => p.theme.spacing.small};
-  fill: ${p => p.theme.color.line};
+  right: ${p => p.theme.globals.spacing.small};
+  fill: ${p => p.theme.globals.color.line};
   transition: transform 0.3s ease-out;
   transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
 `
@@ -85,22 +85,23 @@ const ExpandIcon = styled(Caret)`
 const ExpandBtn = styled.button`
   background: transparent;
   border-width: 0;
-  color: ${p => p.theme.color.text};
-  font-size: ${p => p.theme.font.size.base};
+  color: ${p => p.theme.globals.color.text};
+  font-size: ${p => p.theme.globals.font.size.base};
   font-weight: ${p => (p.isExpanded ? "bold" : "normal")};
   cursor: pointer;
-  padding: ${p => p.theme.spacing.small} ${p => p.theme.spacing.large}
-    ${p => p.theme.spacing.small} ${p => p.theme.spacing.medium};
+  padding: ${p => p.theme.globals.spacing.small}
+    ${p => p.theme.globals.spacing.large} ${p => p.theme.globals.spacing.small}
+    ${p => p.theme.globals.spacing.medium};
   width: 100%;
   text-align: left;
 
   &:hover,
   &:focus {
-    color: ${p => p.theme.color.black};
+    color: ${p => p.theme.globals.color.black};
     outline: none;
 
     ${ExpandIcon} {
-      fill: ${p => p.theme.color.primary};
+      fill: ${p => p.theme.globals.color.primary};
     }
   }
 `
@@ -108,9 +109,9 @@ const ExpandBtn = styled.button`
 const ExpandedItem = styled.div`
   opacity: 0;
   animation: 0.4s ${BounceIn} 0.05s ease-out forwards 1;
-  padding: ${p => (p.flush ? 0 : p.theme.spacing.small)}
-    ${p => (p.flush ? 0 : p.theme.spacing.medium)}
-    ${p => (p.flush ? 0 : p.theme.spacing.medium)};
+  padding: ${p => (p.flush ? 0 : p.theme.globals.spacing.small)}
+    ${p => (p.flush ? 0 : p.theme.globals.spacing.medium)}
+    ${p => (p.flush ? 0 : p.theme.globals.spacing.medium)};
   max-width: ${p => (p.flush ? "auto" : "540px")};
   margin: auto;
   line-height: 1.8;

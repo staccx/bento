@@ -173,44 +173,45 @@ const Load = keyframes`
 `
 
 const SelectLoad = styled.div`
-  background-color: ${p => p.theme.color.white};
+  background-color: ${p => p.theme.globals.color.white};
   animation: 0.8s ${Load} ease-in-out infinite alternate;
-  height: ${p => p.theme.spacing.tiny};
+  height: ${p => p.theme.globals.spacing.tiny};
   width: 100%;
   position: absolute;
   cursor: pointer;
   top: 0;
   left: 0;
   z-index: 10;
-  box-shadow: 0px ${p => p.theme.spacing.small} ${p => p.theme.spacing.medium}
-    rgba(0, 0, 0, 0.06);
+  box-shadow: 0px ${p => p.theme.globals.spacing.small}
+    ${p => p.theme.globals.spacing.medium} rgba(0, 0, 0, 0.06);
 `
 
 const Close = styled.button`
   border-width: 0;
   background-color: transparent;
-  color: ${p => p.theme.color.primary};
+  color: ${p => p.theme.globals.color.primary};
   cursor: pointer;
   &:hover,
   &:focus,
   &:active {
     outline: none;
-    color: ${p => p.theme.color.text};
+    color: ${p => p.theme.globals.color.text};
   }
   svg {
-    width: ${p => p.theme.spacing.medium};
+    width: ${p => p.theme.globals.spacing.medium};
   }
 `
 
 const ModifiedFlag = styled(Flag)`
-  padding: ${p => p.theme.spacing.tiny} ${p => p.theme.spacing.tiny}
-    ${p => p.theme.spacing.tiny} ${p => p.theme.spacing.medium};
+  padding: ${p => p.theme.globals.spacing.tiny}
+    ${p => p.theme.globals.spacing.tiny} ${p => p.theme.globals.spacing.tiny}
+    ${p => p.theme.globals.spacing.medium};
   position: relative;
 `
 
 const OrgNo = styled.div`
-  font-size: ${p => p.theme.font.size.tiny};
-  color: ${p => p.theme.color.wcag};
+  font-size: ${p => p.theme.globals.font.size.tiny};
+  color: ${p => p.theme.globals.color.wcag};
 `
 
 const SelectWrapper = styled.div`
@@ -224,25 +225,28 @@ const SelectList = styled.ul`
   left: 0;
   z-index: 10;
   width: 100%;
-  background: ${p => p.theme.color.white};
-  box-shadow: 0px ${p => p.theme.spacing.small} ${p => p.theme.spacing.medium}
-    rgba(0, 0, 0, 0.06);
+  background: ${p => p.theme.globals.color.white};
+  box-shadow: 0px ${p => p.theme.globals.spacing.small}
+    ${p => p.theme.globals.spacing.medium} rgba(0, 0, 0, 0.06);
 `
 
 const SelectItem = styled.li`
   list-style: none;
-  padding: ${p => p.theme.spacing.small} ${p => p.theme.spacing.medium};
+  padding: ${p => p.theme.globals.spacing.small}
+    ${p => p.theme.globals.spacing.medium};
   background-color: ${p =>
-    p.isSelected ? p.theme.color.primary : "transparent"};
-  color: ${p => (p.isSelected ? p.theme.color.white : p.theme.color.black)};
-  border-bottom: 1px solid ${p => p.theme.color.line};
+    p.isSelected ? p.theme.globals.color.primary : "transparent"};
+  color: ${p =>
+    p.isSelected ? p.theme.globals.color.white : p.theme.globals.color.black};
+  border-bottom: 1px solid ${p => p.theme.globals.color.line};
 
   ${OrgNo} {
-    color: ${p => (p.isSelected ? p.theme.color.white : p.theme.color.wcag)};
+    color: ${p =>
+      p.isSelected ? p.theme.globals.color.white : p.theme.globals.color.wcag};
   }
 
   &:first-child {
-    border-top: 1px solid ${p => p.theme.color.line};
+    border-top: 1px solid ${p => p.theme.globals.color.line};
   }
 `
 

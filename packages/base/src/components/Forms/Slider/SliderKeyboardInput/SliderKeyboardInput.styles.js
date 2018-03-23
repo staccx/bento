@@ -1,8 +1,8 @@
 import { css } from "styled-components"
 
 const SliderWrapperStyle = css`
-  font-family: ${p => p.theme.font.body};
-  font-size: ${p => p.theme.font.size.input};
+  font-family: ${p => p.theme.globals.font.body};
+  font-size: ${p => p.theme.globals.font.size.input};
 `
 
 const HiddenLabelStyle = css`
@@ -19,8 +19,8 @@ const HiddenLabelStyle = css`
 const SliderInputStyle = css`
   background-color: transparent;
   border: 0;
-  min-height: ${p => p.theme.targetSize.normal};
-  margin-bottom: ${p => p.theme.spacing.medium};
+  min-height: ${p => p.theme.globals.targetSize.normal};
+  margin-bottom: ${p => p.theme.globals.spacing.medium};
   max-width: 100%;
   -moz-appearance: textfield;
   outline: none;
@@ -41,7 +41,7 @@ const SliderInputStyle = css`
   }
 
   &:disabled {
-    color: ${p => p.theme.color.text};
+    color: ${p => p.theme.globals.color.text};
   }
 `
 
