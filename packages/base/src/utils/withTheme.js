@@ -14,6 +14,9 @@ const generateStyle = componentName => props => {
     return null
   }
   const variant = component[themeVariant]
+  if(!variant) {
+    console.log("no variant", componentName, themeVariant)
+  }
   if (variant.ignoreBase || themeVariant === BASE_NAME) {
     return css`
         ${variant.style};

@@ -55,7 +55,7 @@ class Odometer extends React.PureComponent {
           <Digit size={size} digit={digit} single={single} speed={speed} />
         </OdometerContainer>
       ))
-
+    console.log(isAnimating)
     return (
       <OdometerWrapper size={size} {...restProps}>
         <OdometerStatic isAnimating={isAnimating}>
@@ -73,7 +73,7 @@ const OdometerAnimating = withTheme(
   styled.div`
     ${props => props.themeStyle(props)};
   `,
-  "Odometer.OdomoterAnimating"
+  "Odometer.OdometerAnimating"
 )
 
 const OdometerStatic = withTheme(
