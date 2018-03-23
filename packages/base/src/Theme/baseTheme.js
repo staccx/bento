@@ -1,7 +1,7 @@
 import { Styles } from "../index"
 
 const theme = {
-  name: "FunduTheme",
+  name: "Default theme",
   globals: {
     spacing: {
       huge: "96px",
@@ -72,17 +72,17 @@ const theme = {
     base: {},
     SliderWrapper: {
       base: {
-        style: Styles.sliderKeyboardInput.sliderWrapper
+        style: Styles.SliderKeyboardInput.SliderWrapper
       }
     },
     HiddenLabel: {
       base: {
-        style: Styles.sliderKeyboardInput.hiddenLabel
+        style: Styles.SliderKeyboardInput.HiddenLabel
       }
     },
     SliderInput: {
       base: {
-        style: Styles.sliderKeyboardInput.sliderInput
+        style: Styles.SliderKeyboardInput.SliderInput
       }
     }
   },
@@ -90,32 +90,32 @@ const theme = {
     base: {},
     OdometerAnimating: {
       base: {
-        style: Styles.odometer.odometerAnimating
+        style: Styles.Odometer.OdometerAnimating
       }
     },
     OdometerStatic: {
       base: {
-        style: Styles.odometer.odometerStatic
+        style: Styles.Odometer.OdometerStatic
       }
     },
     OdometerContainer: {
       base: {
-        style: Styles.odometer.odometerContainer
+        style: Styles.Odometer.OdometerContainer
       }
     },
     OdometerWrapper: {
       base: {
-        style: Styles.odometer.odometerWrapper
+        style: Styles.Odometer.OdometerWrapper
       }
     },
     DigitWrapper: {
       base: {
-        style: Styles.odometer.digitWrapper
+        style: Styles.Odometer.DigitWrapper
       }
     },
     DigitContainer: {
       base: {
-        style: Styles.odometer.digitContainer
+        style: Styles.Odometer.DigitContainer
       }
     }
   },
@@ -123,25 +123,27 @@ const theme = {
     base: {},
     CheckWrapper: {
       base: {
-        style: Styles.checkbox.CheckWrapper
+        style: Styles.Checkbox.CheckWrapper
       }
     },
     IconCheck: {
       base: {
-        style: Styles.checkbox.IconCheck
+        style: Styles.Checkbox.IconCheck
       }
     },
     InputCheck: {
       base: {
-        style: Styles.checkbox.InputCheck
+        style: Styles.Checkbox.InputCheck
       }
     },
     Label: {
       base: {
-        style: Styles.checkbox.Label
+        style: Styles.Checkbox.Label
       }
     }
   }
 }
+
+console.log(theme)
 
 export default theme

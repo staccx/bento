@@ -68,7 +68,7 @@ const Label = css`
   }
 `
 
-export const CheckboxStyles = {
+export default {
   CheckWrapper,
   IconCheck,
   InputCheck,

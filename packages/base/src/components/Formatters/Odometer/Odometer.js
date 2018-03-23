@@ -55,7 +55,6 @@ class Odometer extends React.PureComponent {
           <Digit size={size} digit={digit} single={single} speed={speed} />
         </OdometerContainer>
       ))
-    console.log(isAnimating)
     return (
       <OdometerWrapper size={size} {...restProps}>
         <OdometerStatic isAnimating={isAnimating}>

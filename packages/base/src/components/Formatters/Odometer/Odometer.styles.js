@@ -1,32 +1,32 @@
 import { css } from "styled-components"
 import hideVisually from "../../../Styles/hideVisually"
 
-export const OdometerAnimatingStyle = css`
+const OdometerAnimating = css`
   ${p => (!p.isAnimating ? hideVisually : "")};
   display: flex;
 `
-export const OdometerStaticStyle = css`
+const OdometerStatic = css`
   ${p => (p.isAnimating ? hideVisually : "")};
   display: flex;
 `
 
-export const OdometerContainerStyle = css`
+const OdometerContainer = css`
   position: relative;
 `
 
-export const OdometerWrapperStyle = css`
+const OdometerWrapper = css`
   font-size: ${p => p.size}px;
   line-height: 1;
   display: inline-block;
 `
 
-export const DigitWrapperStyle = css`
+const DigitWrapper = css`
   height: ${p => p.size}px;
   width: ${p => (p.isEmpty ? p.size / 2 : p.size / 1.5)}px;
   overflow: hidden;
 `
 
-export const DigitContainerStyle = css`
+const DigitContainer = css`
   font-size: ${p => p.size}px;
   ${p =>
     !p.single &&
@@ -36,3 +36,12 @@ export const DigitContainerStyle = css`
     transition: transform ${p.speed}ms cubic-bezier(0, 0, 0.2, 1);
     `};
 `
+
+export default {
+  OdometerAnimating,
+  OdometerStatic,
+  OdometerContainer,
+  OdometerWrapper,
+  DigitWrapper,
+  DigitContainer
+}

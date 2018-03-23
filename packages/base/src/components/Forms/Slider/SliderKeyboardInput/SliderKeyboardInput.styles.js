@@ -1,11 +1,11 @@
 import { css } from "styled-components"
 
-const SliderWrapperStyle = css`
+const SliderWrapper = css`
   font-family: ${p => p.theme.globals.font.body};
   font-size: ${p => p.theme.globals.font.size.input};
 `
 
-const HiddenLabelStyle = css`
+const HiddenLabel = css`
   border: 0 !important;
   clip: rect(0 0 0 0) !important;
   height: 1px !important;
@@ -16,7 +16,7 @@ const HiddenLabelStyle = css`
   width: 1px !important;
 `
 
-const SliderInputStyle = css`
+const SliderInput = css`
   background-color: transparent;
   border: 0;
   min-height: ${p => p.theme.globals.targetSize.normal};
@@ -45,4 +45,4 @@ const SliderInputStyle = css`
   }
 `
 
-export { SliderWrapperStyle, HiddenLabelStyle, SliderInputStyle }
+export default { SliderWrapper, HiddenLabel, SliderInput }
