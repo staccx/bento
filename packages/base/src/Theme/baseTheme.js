@@ -1,6 +1,6 @@
-import Styles from "../index"
+import { Styles } from "../index"
 
-export const theme = {
+const theme = {
   name: "FunduTheme",
   globals: {
     spacing: {
@@ -120,3 +120,5 @@ export const theme = {
     }
   }
 }
+
+export default theme

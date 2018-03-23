@@ -64,7 +64,7 @@ import {
   OdometerWrapperStyle,
   DigitWrapperStyle,
   DigitContainerStyle
-} from "../src/components/Formatters/Odometer"
+} from "../src/components/Formatters/Odometer/Odometer.styles"
 
 const Styles = {
   button: ButtonStyle,
