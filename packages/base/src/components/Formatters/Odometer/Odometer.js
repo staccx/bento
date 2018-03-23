@@ -1,8 +1,8 @@
 import React from "react"
 import { number } from "prop-types"
 import styled from "styled-components"
+import withTheme from "../../../utils/withTheme"
 import Digit from "./Digit"
-import hideVisually from "../../../Styles/hideVisually"
 
 class Odometer extends React.PureComponent {
   constructor(...props) {
@@ -69,24 +69,33 @@ class Odometer extends React.PureComponent {
   }
 }
 
-const OdometerAnimating = styled.div`
-  ${p => (!p.isAnimating ? hideVisually : "")};
-  display: flex;
-`
-const OdometerStatic = styled.div`
-  ${p => (p.isAnimating ? hideVisually : "")};
-  display: flex;
-`
+const OdometerAnimating = withTheme(
+  styled.div`
+    ${props => props.themeStyle(props)};
+  `,
+  "Odometer.OdomoterAnimating"
+)
 
-const OdometerContainer = styled.div`
-  position: relative;
-`
+const OdometerStatic = withTheme(
+  styled.div`
+    ${props => props.themeStyle(props)};
+  `,
+  "Odometer.OdometerStatic"
+)
 
-const OdometerWrapper = styled.div`
-  font-size: ${p => p.size}px;
-  line-height: 1;
-  display: inline-block;
-`
+const OdometerContainer = withTheme(
+  styled.div`
+    ${props => props.themeStyle(props)};
+  `,
+  "Odometer.OdometerContainer"
+)
+
+const OdometerWrapper = withTheme(
+  styled.div`
+    ${props => props.themeStyle(props)};
+  `,
+  "Odometer.OdometerWrapper"
+)
 
 // TODO: Add support for strings?
 Odometer.propTypes = {

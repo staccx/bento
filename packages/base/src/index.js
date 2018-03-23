@@ -46,10 +46,10 @@ import Modal from "./components/Modal/Modal"
 import { default as Button } from "./components/Button/Button"
 import { default as cssResets } from "./Styles/cssResets"
 import { default as ThemeProvider } from "./Theme/ThemeWrapper"
-// styles
+
+// Styles
 import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
-
 import ButtonStyle from "../src/components/Button/Button.styles"
 import {
   SliderWrapperStyle,
@@ -57,6 +57,14 @@ import {
   SliderInputStyle
 } from "../src/components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput.styles"
 import SliderStyle from "../src/components/Forms/Slider/Slider/Slider.styles"
+import {
+  OdometerAnimatingStyle,
+  OdometerStaticStyle,
+  OdometerContainerStyle,
+  OdometerWrapperStyle,
+  DigitWrapperStyle,
+  DigitContainerStyle
+} from "../src/components/Formatters/Odometer"
 
 const Styles = {
   button: ButtonStyle,
@@ -65,7 +73,15 @@ const Styles = {
     hiddenLabel: HiddenLabelStyle,
     sliderInput: SliderInputStyle
   },
-  slider: SliderStyle
+  slider: SliderStyle,
+  odometer: {
+    odometerAnimating: OdometerAnimatingStyle,
+    odometerStatic: OdometerStaticStyle,
+    odometerContainer: OdometerContainerStyle,
+    odometerWrapper: OdometerWrapperStyle,
+    digitWrapper: DigitWrapperStyle,
+    digitContainer: DigitContainerStyle
+  }
 }
 
 export {

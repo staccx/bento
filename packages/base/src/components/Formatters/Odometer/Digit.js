@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import withTheme from "../../../utils/withTheme"
 
 const Digit = ({ isAnimating, digit, speed, size, single }) => (
   <DigitWrapper isAnimating size={size} isEmpty={!digit}>
@@ -10,22 +11,19 @@ const Digit = ({ isAnimating, digit, speed, size, single }) => (
   </DigitWrapper>
 )
 
-export const DigitWrapper = styled.div`
-  height: ${p => p.size}px;
-  width: ${p => (p.isEmpty ? p.size / 2 : p.size / 1.5)}px;
-  overflow: hidden;
-`
+const DigitWrapper = withTheme(
+  styled.div`
+    ${props => props.themeStyle(props)};
+  `,
+  "Odometer.DigitWrapper"
+)
 
-const DigitContainer = styled.div`
-  font-size: ${p => p.size}px;
-  ${p =>
-    !p.single &&
-    `
-    animationname: slide${p.digit};
-    transform: translateY(-${p.digit}em);
-    transition: transform ${p.speed}ms cubic-bezier(0, 0, 0.2, 1);
-    `};
-`
+const DigitContainer = withTheme(
+  styled.div`
+    ${props => props.themeStyle(props)};
+  `,
+  "Odometer.DigitContainer"
+)
 
 Digit.propTypes = {
   digit: PropTypes.string.isRequired,
