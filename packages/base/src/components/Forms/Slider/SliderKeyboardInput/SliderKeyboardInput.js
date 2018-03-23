@@ -1,35 +1,35 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import { linear } from 'easing-utils'
-import { inverseLerp, clamp } from '@staccx/math'
-import withTheme from '../../../../utils/withTheme'
-import Input from '../../Input/Input'
-import Slider from '../Slider/Slider'
+import React from "react"
+import PropTypes from "prop-types"
+import styled from "styled-components"
+import { linear } from "easing-utils"
+import { inverseLerp, clamp } from "@staccx/math"
+import withTheme from "../../../../utils/withTheme"
+import Input from "../../Input/Input"
+import Slider from "../Slider/Slider"
 
 const SliderWrapper = withTheme(
   styled.div`
     ${props => props.themeStyle(props)};
   `,
-  'SliderKeyboardInput.SliderWrapper'
+  "SliderKeyboardInput.SliderWrapper"
 )
 
 const HiddenLabel = withTheme(
   styled.label`
     ${props => props.themeStyle(props)};
   `,
-  'SliderKeyboardInput.HiddenLabel'
+  "SliderKeyboardInput.HiddenLabel"
 )
 
 const SliderInput = withTheme(
   styled(Input)`
     ${props => props.themeStyle(props)};
   `,
-  'SliderKeyboardInput.SliderInput'
+  "SliderKeyboardInput.SliderInput"
 )
 
 class SliderKeyboardInput extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       isAnimatingIn: false,
@@ -43,19 +43,19 @@ class SliderKeyboardInput extends React.Component {
     this.tick = 0
   }
 
-  componentDidMount () {
+  componentDidMount() {
     if (this.props.easingFunction) {
       this.startCount()
     }
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     if (this.props.easingFunction) {
       this.stopCount()
     }
   }
 
-  startCount () {
+  startCount() {
     if (!this._frameId) {
       this.setState(
         {
@@ -68,7 +68,7 @@ class SliderKeyboardInput extends React.Component {
     }
   }
 
-  countUp () {
+  countUp() {
     // perform loop work here
     if (this.tick < this.props.animationTicks && this.props.easingFunction) {
       const t = this.props.easingFunction(this.tick / this.props.animationTicks)
@@ -85,11 +85,11 @@ class SliderKeyboardInput extends React.Component {
     this.tick++
   }
 
-  stopCount () {
+  stopCount() {
     window.cancelAnimationFrame(this._frameId)
   }
 
-  updateState (value, options = {}) {
+  updateState(value, options = {}) {
     return new Promise(resolve => {
       this.setState(
         {
@@ -102,7 +102,7 @@ class SliderKeyboardInput extends React.Component {
     })
   }
 
-  handleChange (event) {
+  handleChange(event) {
     const value = event.target.value
     this.updateState(value).then(() => {
       if (this.props.onChange) {
@@ -111,7 +111,7 @@ class SliderKeyboardInput extends React.Component {
     })
   }
 
-  render () {
+  render() {
     const {
       label,
       name,
@@ -122,7 +122,7 @@ class SliderKeyboardInput extends React.Component {
       className,
       themeVariant
     } = this.props
-    const {currentValue, percentage} = this.state
+    const { currentValue, percentage } = this.state
     return (
       <SliderWrapper className={className} themeVariant={themeVariant}>
         <HiddenLabel htmlFor={name} themeVariant={themeVariant}>
@@ -164,7 +164,7 @@ SliderKeyboardInput.defaultProps = {
   easingFunction: linear,
   onChange: null,
   mask: null,
-  className: '',
+  className: ""
 }
 
 SliderKeyboardInput.propTypes = {

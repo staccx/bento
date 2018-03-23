@@ -26,7 +26,11 @@ const Slider = ({
     )
   }
   return (
-    <SliderInput percentage={percentage} themeStyle={themeStyle} themeVariant={themeVariant}>
+    <SliderInput
+      percentage={percentage}
+      themeStyle={themeStyle}
+      themeVariant={themeVariant}
+    >
       <input
         type="range"
         name={name}

@@ -1,4 +1,4 @@
-import { css } from "d-components"
+import { css } from "styled-components"
 import { IconCheck as IconCheckComponent } from "./CheckBox"
 
 const CheckWrapper = css`
