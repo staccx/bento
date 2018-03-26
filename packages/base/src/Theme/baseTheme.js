@@ -1,4 +1,9 @@
-// import { Styles } from "../index"
+import { css } from "styled-components"
+
+const crazyStyle = css`
+  background-color: coral;
+  color: papayawhip;
+`
 
 const theme = {
   name: "Default theme",
@@ -58,7 +63,9 @@ const theme = {
     },
     borderRadius: "2px"
   },
-  Button: {},
+  Button: {
+    crazy: crazyStyle
+  },
   Slider: {},
   SliderKeyboardInput: {},
   Odometer: {},

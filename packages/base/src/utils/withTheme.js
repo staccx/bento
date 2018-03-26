@@ -13,7 +13,7 @@ const generateStyle = componentName => props => {
   }
 
   return css`
-    ${deepfind(props.theme, componentName)[props.themeVariant].style};
+    ${deepfind(props.theme, componentName)[props.themeVariant]};
   `
 }
 
