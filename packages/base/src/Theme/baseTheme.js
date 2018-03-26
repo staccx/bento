@@ -1,4 +1,4 @@
-import { Styles } from "../index"
+// import { Styles } from "../index"
 
 const theme = {
   name: "Default theme",
@@ -58,90 +58,11 @@ const theme = {
     },
     borderRadius: "2px"
   },
-  Button: {
-    base: {
-      style: Styles.button
-    }
-  },
-  Slider: {
-    base: {
-      style: Styles.slider
-    }
-  },
-  SliderKeyboardInput: {
-    base: {},
-    SliderWrapper: {
-      base: {
-        style: Styles.SliderKeyboardInput.SliderWrapper
-      }
-    },
-    HiddenLabel: {
-      base: {
-        style: Styles.SliderKeyboardInput.HiddenLabel
-      }
-    },
-    SliderInput: {
-      base: {
-        style: Styles.SliderKeyboardInput.SliderInput
-      }
-    }
-  },
-  Odometer: {
-    base: {},
-    OdometerAnimating: {
-      base: {
-        style: Styles.Odometer.OdometerAnimating
-      }
-    },
-    OdometerStatic: {
-      base: {
-        style: Styles.Odometer.OdometerStatic
-      }
-    },
-    OdometerContainer: {
-      base: {
-        style: Styles.Odometer.OdometerContainer
-      }
-    },
-    OdometerWrapper: {
-      base: {
-        style: Styles.Odometer.OdometerWrapper
-      }
-    },
-    DigitWrapper: {
-      base: {
-        style: Styles.Odometer.DigitWrapper
-      }
-    },
-    DigitContainer: {
-      base: {
-        style: Styles.Odometer.DigitContainer
-      }
-    }
-  },
-  CheckBox: {
-    base: {},
-    CheckWrapper: {
-      base: {
-        style: Styles.Checkbox.CheckWrapper
-      }
-    },
-    IconCheck: {
-      base: {
-        style: Styles.Checkbox.IconCheck
-      }
-    },
-    InputCheck: {
-      base: {
-        style: Styles.Checkbox.InputCheck
-      }
-    },
-    Label: {
-      base: {
-        style: Styles.Checkbox.Label
-      }
-    }
-  }
+  Button: {},
+  Slider: {},
+  SliderKeyboardInput: {},
+  Odometer: {},
+  CheckBox: {}
 }
 
 console.log(theme)
