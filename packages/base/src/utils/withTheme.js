@@ -3,27 +3,40 @@ import PropTypes from "prop-types"
 import { css } from "styled-components"
 import deepfind from "./deepfind"
 
-const BASE_NAME = "base"
 const generateStyle = componentName => props => {
-  const { theme, themeVariant = BASE_NAME } = props
+  const { theme, themeVariant } = props
   if (!theme) {
     return null
   }
+
   const component = deepfind(theme, componentName)
   if (!component) {
     return null
   }
+
   const variant = component[themeVariant]
   if (!variant) {
-    console.log("no variant", componentName, themeVariant)
-  }
-  if (variant.ignoreBase || themeVariant === BASE_NAME) {
-    return css`
-      ${variant.style};
-    `
+    return null
   }
 
-  return css`${component.base.style}${variant.style}`
+  return css`
+    ${variant.style};
+  `
+}
+
+const ignoreBaseFunction = componentName => props => {
+  const component = deepfind(props.theme, componentName)
+  if (
+    !props.themeVariant ||
+    !props.theme ||
+    !component ||
+    !component[props.themeVariant]
+  ) {
+    return null
+  }
+
+  console.log(component)
+  return !!component[props.themeVariant].ignoreBase
 }
 
 const withTheme = (WrappedComponent, name) => {
@@ -31,7 +44,15 @@ const withTheme = (WrappedComponent, name) => {
     render() {
       const componentName = name || WrappedComponent.name
       const style = generateStyle(componentName)
-      return <WrappedComponent {...this.props} themeStyle={style} />
+      const ignoreDefaultStyle = ignoreBaseFunction(componentName)
+
+      return (
+        <WrappedComponent
+          {...this.props}
+          variantStyle={style}
+          ignoreBase={ignoreDefaultStyle}
+        />
+      )
     }
   }
 }
