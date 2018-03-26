@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Check from "../../Icons/Check"
 import withTheme from "../../../utils/withTheme"
+import CheckboxStyles from "./Checkbox.styles"
 // const debug = require('debug')('CheckBox');
 
 const CheckBox = ({
@@ -14,11 +15,13 @@ const CheckBox = ({
   className,
   defaultChecked,
   checkIcon,
+  ignoreBase,
+  themeVariant,
   ...otherProps
 }) => {
   const Icon = checkIcon || IconCheck
   return (
-    <CheckWrapper>
+    <CheckWrapper themeVariant={themeVariant} ignoreBase={ignoreBase}>
       <InputCheck
         className={className}
         id={id}
@@ -27,11 +30,13 @@ const CheckBox = ({
         name={group}
         onChange={onChange}
         defaultChecked={defaultChecked}
+        themeVariant={themeVariant}
+        ignoreBase={ignoreBase}
         {...otherProps}
       />
 
-      <Label htmlFor={id}>
-        <Icon />
+      <Label htmlFor={id} themeVariant={themeVariant} ignoreBase={ignoreBase}>
+        <Icon themeVariant={themeVariant} ignoreBase={ignoreBase} />
         {children}
       </Label>
     </CheckWrapper>
@@ -40,28 +45,32 @@ const CheckBox = ({
 
 const CheckWrapper = withTheme(
   styled.div`
-    ${props => props.themeStyle(props)};
+    ${props => (props.ignoreBase(props) ? null : CheckboxStyles.CheckWrapper)};
+    ${props => props.variantStyle(props)};
   `,
   "Checkbox.CheckWrapper"
 )
 
 export const IconCheck = withTheme(
   styled(Check)`
-    ${props => props.themeStyle(props)};
+    ${props => (props.ignoreBase(props) ? null : CheckboxStyles.IconCheck)};
+    ${props => props.variantStyle(props)};
   `,
   "Checkbox.IconCheck"
 )
 
 const InputCheck = withTheme(
   styled.input`
-    ${props => props.themeStyle(props)};
+    ${props => (props.ignoreBase(props) ? null : CheckboxStyles.InputCheck)};
+    ${props => props.variantStyle(props)};
   `,
   "Checkbox.InputCheck"
 )
 
 const Label = withTheme(
   styled.label`
-    ${props => props.themeStyle(props)};
+    ${props => (props.ignoreBase(props) ? null : CheckboxStyles.Label)};
+    ${props => props.variantStyle(props)};
   `,
   "Checkbox.Label"
 )
@@ -78,7 +87,10 @@ CheckBox.propTypes = {
   input: PropTypes.any,
   onChange: PropTypes.func,
   className: PropTypes.string,
-  defaultChecked: PropTypes.bool
+  defaultChecked: PropTypes.bool,
+  checkIcon: PropTypes.element,
+  ignoreBase: PropTypes.func,
+  themeVariant: PropTypes.string
 }
 
 CheckBox.defaultProps = {
@@ -87,7 +99,10 @@ CheckBox.defaultProps = {
   onChange: null,
   value: "",
   className: "",
-  defaultChecked: false
+  defaultChecked: false,
+  checkIcon: null,
+  ignoreBase: null,
+  themeVariant: null
 }
 
 export default CheckBox

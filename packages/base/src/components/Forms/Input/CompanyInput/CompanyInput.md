@@ -1,3 +1,3 @@
 ```jsx harmony
-<CompanyInput/>
+<CompanyInput id="sdioj" />
 ```

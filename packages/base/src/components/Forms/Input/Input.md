@@ -1,3 +1,3 @@
 ```jsx
-  <Input id="kake" label="label" placeholder="placeholder" />
+<Input id="2ioehjqd" label="label" placeholder="placeholder" />
 ```

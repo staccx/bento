@@ -5,9 +5,11 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import withTheme from "../../utils/withTheme"
+import ButtonStyles from "./Button.styles"
 
 const StyledButton = styled.button`
-  ${props => props.themeStyle(props)};
+  ${props => (props.ignoreBase(props) ? null : ButtonStyles)};
+  ${props => props.variantStyle(props)};
 `
 
 const Button = ({ children, ...rest }) => (

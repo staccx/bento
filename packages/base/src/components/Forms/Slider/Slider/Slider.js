@@ -2,9 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import withTheme from "../../../../utils/withTheme"
+import SliderStyles from "./Slider.styles"
 
 const SliderInput = styled.div`
-  ${props => props.themeStyle(props)};
+  ${props => (props.ignoreBase(props) ? null : SliderStyles)};
+  ${props => props.variantStyle(props)};
 `
 
 const Slider = ({
@@ -16,8 +18,9 @@ const Slider = ({
   percentage,
   step,
   value,
-  themeStyle,
+  variantStyle,
   themeVariant,
+  ignoreBase,
   ...restProps
 }) => {
   if (percentage === undefined) {
@@ -28,8 +31,9 @@ const Slider = ({
   return (
     <SliderInput
       percentage={percentage}
-      themeStyle={themeStyle}
+      variantStyle={variantStyle}
       themeVariant={themeVariant}
+      ignoreBase={ignoreBase}
     >
       <input
         type="range"
@@ -51,7 +55,10 @@ Slider.defaultProps = {
   min: 0,
   max: 100,
   step: 1,
-  disabled: false
+  disabled: false,
+  variantStyle: null,
+  themeVariant: null,
+  ignoreBase: null
 }
 
 Slider.propTypes = {
@@ -63,7 +70,10 @@ Slider.propTypes = {
   step: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   animationTicks: PropTypes.number,
   disabled: PropTypes.bool,
-  percentage: PropTypes.number
+  percentage: PropTypes.number,
+  variantStyle: PropTypes.func,
+  themeVariant: PropTypes.string,
+  ignoreBase: PropTypes.func
 }
 
 export default withTheme(Slider)

@@ -6,24 +6,28 @@ import { inverseLerp, clamp } from "@staccx/math"
 import withTheme from "../../../../utils/withTheme"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
+import SliderStyles from "./SliderKeyboardInput.styles"
 
 const SliderWrapper = withTheme(
   styled.div`
-    ${props => props.themeStyle(props)};
+    ${props => (props.ignoreBase(props) ? null : SliderStyles.SliderWrapper)};
+    ${props => props.variantStyle(props)};
   `,
   "SliderKeyboardInput.SliderWrapper"
 )
 
 const HiddenLabel = withTheme(
   styled.label`
-    ${props => props.themeStyle(props)};
+    ${props => (props.ignoreBase(props) ? null : SliderStyles.HiddenLabel)};
+    ${props => props.variantStyle(props)};
   `,
   "SliderKeyboardInput.HiddenLabel"
 )
 
 const SliderInput = withTheme(
   styled(Input)`
-    ${props => props.themeStyle(props)};
+    ${props => (props.ignoreBase(props) ? null : SliderStyles.SliderInput)};
+    ${props => props.variantStyle(props)};
   `,
   "SliderKeyboardInput.SliderInput"
 )
@@ -120,12 +124,21 @@ class SliderKeyboardInput extends React.Component {
       step,
       mask,
       className,
-      themeVariant
+      themeVariant,
+      ignoreBase
     } = this.props
     const { currentValue, percentage } = this.state
     return (
-      <SliderWrapper className={className} themeVariant={themeVariant}>
-        <HiddenLabel htmlFor={name} themeVariant={themeVariant}>
+      <SliderWrapper
+        className={className}
+        themeVariant={themeVariant}
+        ignoreBase={ignoreBase}
+      >
+        <HiddenLabel
+          htmlFor={name}
+          themeVariant={themeVariant}
+          ignoreBase={ignoreBase}
+        >
           {label}
         </HiddenLabel>
         <SliderInput
@@ -139,6 +152,7 @@ class SliderKeyboardInput extends React.Component {
           mask={mask || null}
           disabled={this.state.isAnimatingIn}
           themeVariant={themeVariant}
+          ignoreBase={ignoreBase}
         />
         <Slider
           percentage={percentage}
@@ -164,7 +178,9 @@ SliderKeyboardInput.defaultProps = {
   easingFunction: linear,
   onChange: null,
   mask: null,
-  className: ""
+  className: "",
+  themeVariant: null,
+  ignoreBase: null
 }
 
 SliderKeyboardInput.propTypes = {
@@ -178,7 +194,9 @@ SliderKeyboardInput.propTypes = {
   animationTicks: PropTypes.number,
   easingFunction: PropTypes.func,
   mask: PropTypes.array,
-  className: PropTypes.string
+  className: PropTypes.string,
+  themeVariant: PropTypes.string,
+  ignoreBase: PropTypes.func
 }
 
 export default withTheme(SliderKeyboardInput)

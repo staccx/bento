@@ -1,7 +1,7 @@
 ```jsx harmony
-<AccountInput value={'34951515827'}/>
+<AccountInput value={'34951515827'} id="sdlkjhq" />
 ```
 
 ```jsx harmony
-<AccountInput/>
+<AccountInput id="sldknqw" />
 ```
