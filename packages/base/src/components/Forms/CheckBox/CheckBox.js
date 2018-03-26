@@ -3,8 +3,6 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Check from "../../Icons/Check"
 import withTheme from "../../../utils/withTheme"
-import CheckboxStyles from "./Checkbox.styles"
-// const debug = require('debug')('CheckBox');
 
 const CheckBox = ({
   children,
@@ -45,7 +43,9 @@ const CheckBox = ({
 
 const CheckWrapper = withTheme(
   styled.div`
-    ${CheckboxStyles.CheckWrapper};
+    min-height: ${p => p.theme.globals.targetSize.normal};
+    padding-top: ${p => p.theme.globals.spacing.small};
+    padding-bottom: ${p => p.theme.globals.spacing.small};
     ${props => props.variantStyle(props)};
   `,
   "Checkbox.CheckWrapper"
@@ -53,7 +53,15 @@ const CheckWrapper = withTheme(
 
 export const IconCheck = withTheme(
   styled(Check)`
-    ${CheckboxStyles.IconCheck};
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    display: block;
+    height: 20px;
+    width: 20px;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+    color: ${p => p.theme.globals.color.primary};
     ${props => props.variantStyle(props)};
   `,
   "Checkbox.IconCheck"
@@ -61,7 +69,22 @@ export const IconCheck = withTheme(
 
 const InputCheck = withTheme(
   styled.input`
-    ${CheckboxStyles.InputCheck};
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    clip: rect(0 0 0 0);
+
+    &:checked ~ label {
+      > svg {
+        transform: scale(1);
+      }
+    }
+
+    &:focus ~ label {
+      &::before {
+        border-color: ${p => p.theme.globals.color.primary};
+      }
+    }
+
     ${props => props.variantStyle(props)};
   `,
   "Checkbox.InputCheck"
@@ -69,7 +92,34 @@ const InputCheck = withTheme(
 
 const Label = withTheme(
   styled.label`
-    ${CheckboxStyles.Label};
+    padding: 0 0 0 ${p => p.theme.globals.spacing.mediumPlus};
+    position: relative;
+    font-weight: normal;
+    letter-spacing: normal;
+    width: auto;
+    cursor: pointer;
+    font-family: ${p => p.theme.globals.font.body};
+    font-family: ${p => p.theme.globals.font.size.input};
+    line-height: 1.6;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      background: ${p => p.theme.globals.color.bg};
+      border: 1px solid ${p => p.theme.globals.color.line};
+      display: block;
+      height: ${p => p.theme.globals.spacing.medium};
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: ${p => p.theme.globals.spacing.medium};
+    }
+
+    &:hover {
+      &::before {
+        border-color: ${p => p.theme.globals.color.primary};
+      }
+    }
     ${props => props.variantStyle(props)};
   `,
   "Checkbox.Label"

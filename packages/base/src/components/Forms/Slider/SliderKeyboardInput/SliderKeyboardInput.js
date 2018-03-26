@@ -6,31 +6,6 @@ import { inverseLerp, clamp } from "@staccx/math"
 import withTheme from "../../../../utils/withTheme"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
-import SliderStyles from "./SliderKeyboardInput.styles"
-
-const SliderWrapper = withTheme(
-  styled.div`
-    ${props => (props.ignoreBase(props) ? null : SliderStyles.SliderWrapper)};
-    ${props => props.variantStyle(props)};
-  `,
-  "SliderKeyboardInput.SliderWrapper"
-)
-
-const HiddenLabel = withTheme(
-  styled.label`
-    ${props => (props.ignoreBase(props) ? null : SliderStyles.HiddenLabel)};
-    ${props => props.variantStyle(props)};
-  `,
-  "SliderKeyboardInput.HiddenLabel"
-)
-
-const SliderInput = withTheme(
-  styled(Input)`
-    ${props => (props.ignoreBase(props) ? null : SliderStyles.SliderInput)};
-    ${props => props.variantStyle(props)};
-  `,
-  "SliderKeyboardInput.SliderInput"
-)
 
 class SliderKeyboardInput extends React.Component {
   constructor(props) {
@@ -168,6 +143,63 @@ class SliderKeyboardInput extends React.Component {
     )
   }
 }
+
+const SliderWrapper = withTheme(
+  styled.div`
+    font-family: ${p => p.theme.globals.font.body};
+    font-size: ${p => p.theme.globals.font.size.input};
+    ${props => props.variantStyle(props)};
+  `,
+  "SliderKeyboardInput.SliderWrapper"
+)
+
+const HiddenLabel = withTheme(
+  styled.label`
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    ${props => props.variantStyle(props)};
+  `,
+  "SliderKeyboardInput.HiddenLabel"
+)
+
+const SliderInput = withTheme(
+  styled(Input)`
+    background-color: transparent;
+    border: 0;
+    min-height: ${p => p.theme.globals.targetSize.normal};
+    margin-bottom: ${p => p.theme.globals.spacing.medium};
+    max-width: 100%;
+    -moz-appearance: textfield;
+    outline: none;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:-moz-ui-invalid,
+    &:invalid {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &:disabled {
+      color: ${p => p.theme.globals.color.text};
+    }
+    ${props => props.variantStyle(props)};
+  `,
+  "SliderKeyboardInput.SliderInput"
+)
 
 SliderKeyboardInput.defaultProps = {
   value: 0,

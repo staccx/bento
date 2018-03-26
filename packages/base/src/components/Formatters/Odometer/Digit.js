@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import withTheme from "../../../utils/withTheme"
-import OdometerStyles from "./Odometer.styles"
 
 const Digit = ({
   isAnimating,
@@ -34,7 +33,9 @@ const Digit = ({
 
 const DigitWrapper = withTheme(
   styled.div`
-    ${OdometerStyles.DigitWrapper};
+    height: ${p => p.size}px;
+    width: ${p => (p.isEmpty ? p.size / 2 : p.size / 1.5)}px;
+    overflow: hidden;
     ${props => props.variantStyle(props)};
   `,
   "Odometer.DigitWrapper"
@@ -42,7 +43,14 @@ const DigitWrapper = withTheme(
 
 const DigitContainer = withTheme(
   styled.div`
-    ${OdometerStyles.DigitContainer};
+    font-size: ${p => p.size}px;
+    ${p =>
+      !p.single &&
+      `
+      animationname: slide${p.digit};
+      transform: translateY(-${p.digit}em);
+      transition: transform ${p.speed}ms cubic-bezier(0, 0, 0.2, 1);
+      `};
     ${props => props.variantStyle(props)};
   `,
   "Odometer.DigitContainer"

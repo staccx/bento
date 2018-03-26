@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import withTheme from "../../../utils/withTheme"
-import OdometerStyles from "./Odometer.styles"
+import hideVisually from "../../../Styles/hideVisually"
 import Digit from "./Digit"
 
 class Odometer extends React.PureComponent {
@@ -103,7 +103,7 @@ class Odometer extends React.PureComponent {
 
 const OdometerAnimating = withTheme(
   styled.div`
-    ${OdometerStyles.OdometerAnimating};
+    ${p => (!p.isAnimating ? hideVisually : "display: flex;")};
     ${props => props.variantStyle(props)};
   `,
   "Odometer.OdometerAnimating"
@@ -111,7 +111,7 @@ const OdometerAnimating = withTheme(
 
 const OdometerStatic = withTheme(
   styled.div`
-    ${OdometerStyles.OdometerStatic};
+    ${p => (p.isAnimating ? hideVisually : "display: flex;")};
     ${props => props.variantStyle(props)};
   `,
   "Odometer.OdometerStatic"
@@ -119,7 +119,7 @@ const OdometerStatic = withTheme(
 
 const OdometerContainer = withTheme(
   styled.div`
-    ${OdometerStyles.OdometerContainer};
+    position: relative;
     ${props => props.variantStyle(props)};
   `,
   "Odometer.OdometerContainer"
@@ -127,7 +127,9 @@ const OdometerContainer = withTheme(
 
 const OdometerWrapper = withTheme(
   styled.div`
-    ${OdometerStyles.OdometerWrapper};
+    font-size: ${p => p.size}px;
+    line-height: 1;
+    display: inline-block;
     ${props => props.variantStyle(props)};
   `,
   "Odometer.OdometerWrapper"
