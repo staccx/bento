@@ -35,7 +35,6 @@ const ignoreBaseFunction = componentName => props => {
     return null
   }
 
-  console.log(component)
   return !!component[props.themeVariant].ignoreBase
 }
 
