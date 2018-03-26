@@ -45,7 +45,7 @@ const CheckBox = ({
 
 const CheckWrapper = withTheme(
   styled.div`
-    ${props => (props.ignoreBase(props) ? null : CheckboxStyles.CheckWrapper)};
+    ${CheckboxStyles.CheckWrapper};
     ${props => props.variantStyle(props)};
   `,
   "Checkbox.CheckWrapper"
@@ -53,7 +53,7 @@ const CheckWrapper = withTheme(
 
 export const IconCheck = withTheme(
   styled(Check)`
-    ${props => (props.ignoreBase(props) ? null : CheckboxStyles.IconCheck)};
+    ${CheckboxStyles.IconCheck};
     ${props => props.variantStyle(props)};
   `,
   "Checkbox.IconCheck"
@@ -61,7 +61,7 @@ export const IconCheck = withTheme(
 
 const InputCheck = withTheme(
   styled.input`
-    ${props => (props.ignoreBase(props) ? null : CheckboxStyles.InputCheck)};
+    ${CheckboxStyles.InputCheck};
     ${props => props.variantStyle(props)};
   `,
   "Checkbox.InputCheck"
@@ -69,7 +69,7 @@ const InputCheck = withTheme(
 
 const Label = withTheme(
   styled.label`
-    ${props => (props.ignoreBase(props) ? null : CheckboxStyles.Label)};
+    ${CheckboxStyles.Label};
     ${props => props.variantStyle(props)};
   `,
   "Checkbox.Label"

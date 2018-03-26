@@ -34,7 +34,7 @@ const Digit = ({
 
 const DigitWrapper = withTheme(
   styled.div`
-    ${props => (props.ignoreBase(props) ? null : OdometerStyles.DigitWrapper)};
+    ${OdometerStyles.DigitWrapper};
     ${props => props.variantStyle(props)};
   `,
   "Odometer.DigitWrapper"
@@ -42,8 +42,7 @@ const DigitWrapper = withTheme(
 
 const DigitContainer = withTheme(
   styled.div`
-    ${props =>
-      props.ignoreBase(props) ? null : OdometerStyles.DigitContainer};
+    ${OdometerStyles.DigitContainer};
     ${props => props.variantStyle(props)};
   `,
   "Odometer.DigitContainer"

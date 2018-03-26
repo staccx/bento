@@ -5,7 +5,7 @@ import withTheme from "../../../../utils/withTheme"
 import SliderStyles from "./Slider.styles"
 
 const SliderInput = styled.div`
-  ${props => (props.ignoreBase(props) ? null : SliderStyles)};
+  ${SliderStyles};
   ${props => props.variantStyle(props)};
 `
 

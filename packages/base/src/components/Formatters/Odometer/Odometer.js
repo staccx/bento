@@ -103,8 +103,7 @@ class Odometer extends React.PureComponent {
 
 const OdometerAnimating = withTheme(
   styled.div`
-    ${props =>
-      props.ignoreBase(props) ? null : OdometerStyles.OdometerAnimating};
+    ${OdometerStyles.OdometerAnimating};
     ${props => props.variantStyle(props)};
   `,
   "Odometer.OdometerAnimating"
@@ -112,8 +111,7 @@ const OdometerAnimating = withTheme(
 
 const OdometerStatic = withTheme(
   styled.div`
-    ${props =>
-      props.ignoreBase(props) ? null : OdometerStyles.OdometerStatic};
+    ${OdometerStyles.OdometerStatic};
     ${props => props.variantStyle(props)};
   `,
   "Odometer.OdometerStatic"
@@ -121,8 +119,7 @@ const OdometerStatic = withTheme(
 
 const OdometerContainer = withTheme(
   styled.div`
-    ${props =>
-      props.ignoreBase(props) ? null : OdometerStyles.OdometerContainer};
+    ${OdometerStyles.OdometerContainer};
     ${props => props.variantStyle(props)};
   `,
   "Odometer.OdometerContainer"
@@ -130,8 +127,7 @@ const OdometerContainer = withTheme(
 
 const OdometerWrapper = withTheme(
   styled.div`
-    ${props =>
-      props.ignoreBase(props) ? null : OdometerStyles.OdometerWrapper};
+    ${OdometerStyles.OdometerWrapper};
     ${props => props.variantStyle(props)};
   `,
   "Odometer.OdometerWrapper"
