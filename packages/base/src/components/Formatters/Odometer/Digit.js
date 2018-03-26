@@ -3,28 +3,19 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import withTheme from "../../../utils/withTheme"
 
-const Digit = ({
-  isAnimating,
-  digit,
-  speed,
-  size,
-  single,
-  themeVariant,
-  ignoreBase
-}) => (
+const Digit = ({ isAnimating, digit, speed, size, single, themeVariant }) => (
   <DigitWrapper
     isAnimating
     size={size}
     isEmpty={!digit}
     themeVariant={themeVariant}
-    ignoreBase={ignoreBase}
   >
     <DigitContainer
       digit={digit}
       speed={speed}
       single={single}
+      size={size}
       themeVariant={themeVariant}
-      ignoreBase={ignoreBase}
     >
       {!digit ? "" : single ? digit : "0 1 2 3 4 5 6 7 8 9 0"}
     </DigitContainer>
@@ -62,8 +53,7 @@ Digit.propTypes = {
   size: PropTypes.number.isRequired,
   isAnimating: PropTypes.bool,
   single: PropTypes.bool,
-  themeVariant: PropTypes.string,
-  ignoreBase: PropTypes.bool
+  themeVariant: PropTypes.string
 }
 
 export default Digit

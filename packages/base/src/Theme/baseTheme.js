@@ -72,6 +72,4 @@ const theme = {
   CheckBox: {}
 }
 
-console.log(theme)
-
 export default theme

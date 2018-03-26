@@ -99,21 +99,12 @@ class SliderKeyboardInput extends React.Component {
       step,
       mask,
       className,
-      themeVariant,
-      ignoreBase
+      themeVariant
     } = this.props
     const { currentValue, percentage } = this.state
     return (
-      <SliderWrapper
-        className={className}
-        themeVariant={themeVariant}
-        ignoreBase={ignoreBase}
-      >
-        <HiddenLabel
-          htmlFor={name}
-          themeVariant={themeVariant}
-          ignoreBase={ignoreBase}
-        >
+      <SliderWrapper className={className} themeVariant={themeVariant}>
+        <HiddenLabel htmlFor={name} themeVariant={themeVariant}>
           {label}
         </HiddenLabel>
         <SliderInput
@@ -127,7 +118,6 @@ class SliderKeyboardInput extends React.Component {
           mask={mask || null}
           disabled={this.state.isAnimatingIn}
           themeVariant={themeVariant}
-          ignoreBase={ignoreBase}
         />
         <Slider
           percentage={percentage}
@@ -211,8 +201,7 @@ SliderKeyboardInput.defaultProps = {
   onChange: null,
   mask: null,
   className: "",
-  themeVariant: null,
-  ignoreBase: null
+  themeVariant: null
 }
 
 SliderKeyboardInput.propTypes = {
@@ -227,8 +216,7 @@ SliderKeyboardInput.propTypes = {
   easingFunction: PropTypes.func,
   mask: PropTypes.array,
   className: PropTypes.string,
-  themeVariant: PropTypes.string,
-  ignoreBase: PropTypes.func
+  themeVariant: PropTypes.string
 }
 
 export default withTheme(SliderKeyboardInput)

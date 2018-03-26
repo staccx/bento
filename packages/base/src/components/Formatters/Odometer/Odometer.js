@@ -42,7 +42,6 @@ class Odometer extends React.PureComponent {
       speed,
       size,
       separatorSteps,
-      ignoreBase,
       themeVariant,
       ...restProps
     } = this.props
@@ -60,38 +59,23 @@ class Odometer extends React.PureComponent {
 
     const renderDigits = (digit, single, speed) =>
       chars.map((digit, i) => (
-        <OdometerContainer
-          key={`digit-${i}`}
-          ignoreBase={ignoreBase}
-          themeVariant={themeVariant}
-        >
+        <OdometerContainer key={`digit-${i}`} themeVariant={themeVariant}>
           <Digit
             size={size}
             digit={digit}
             single={single}
             speed={speed}
-            ignoreBase={ignoreBase}
             themeVariant={themeVariant}
           />
         </OdometerContainer>
       ))
     return (
-      <OdometerWrapper
-        size={size}
-        ignoreBase={ignoreBase}
-        themeVariant={themeVariant}
-        {...restProps}
-      >
-        <OdometerStatic
-          isAnimating={isAnimating}
-          ignoreBase={ignoreBase}
-          themeVariant={themeVariant}
-        >
+      <OdometerWrapper size={size} themeVariant={themeVariant} {...restProps}>
+        <OdometerStatic isAnimating={isAnimating} themeVariant={themeVariant}>
           {renderDigits(number, true, speed)}
         </OdometerStatic>
         <OdometerAnimating
           isAnimating={isAnimating}
-          ignoreBase={ignoreBase}
           themeVariant={themeVariant}
         >
           {renderDigits(number, false, speed)}
@@ -141,8 +125,7 @@ Odometer.propTypes = {
   separatorSteps: PropTypes.number,
   speed: PropTypes.number,
   size: PropTypes.number.isRequired,
-  themeVariant: PropTypes.string,
-  ignoreBase: PropTypes.func
+  themeVariant: PropTypes.string
 }
 
 Odometer.defaultProps = {

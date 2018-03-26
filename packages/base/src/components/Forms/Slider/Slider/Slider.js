@@ -14,7 +14,6 @@ const Slider = ({
   value,
   variantStyle,
   themeVariant,
-  ignoreBase,
   ...restProps
 }) => {
   if (percentage === undefined) {
@@ -27,7 +26,6 @@ const Slider = ({
       percentage={percentage}
       variantStyle={variantStyle}
       themeVariant={themeVariant}
-      ignoreBase={ignoreBase}
     >
       <input
         type="range"
@@ -209,8 +207,7 @@ Slider.propTypes = {
   disabled: PropTypes.bool,
   percentage: PropTypes.number,
   variantStyle: PropTypes.func,
-  themeVariant: PropTypes.string,
-  ignoreBase: PropTypes.func
+  themeVariant: PropTypes.string
 }
 
 export default withTheme(Slider)
