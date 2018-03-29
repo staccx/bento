@@ -50,10 +50,7 @@ import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
 
-import Styles from "./styles"
-
 export {
-  Styles,
   Box,
   Button,
   Caret,

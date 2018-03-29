@@ -4,6 +4,9 @@ import { css } from "styled-components"
 import deepfind from "./deepfind"
 
 const generateStyle = componentName => props => {
+  if (componentName === "SliderKeyboardInput.SliderWrapper") {
+    console.log(props.themeVariant)
+  }
   if (
     !props.theme ||
     !deepfind(props.theme, componentName) ||
@@ -21,6 +24,7 @@ const withTheme = (WrappedComponent, name) => {
   return class PP extends React.Component {
     render() {
       const componentName = name || WrappedComponent.name
+
       const style = generateStyle(componentName)
 
       return <WrappedComponent {...this.props} variantStyle={style} />

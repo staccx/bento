@@ -102,6 +102,7 @@ class SliderKeyboardInput extends React.Component {
       themeVariant
     } = this.props
     const { currentValue, percentage } = this.state
+    console.log(themeVariant)
     return (
       <SliderWrapper className={className} themeVariant={themeVariant}>
         <HiddenLabel htmlFor={name} themeVariant={themeVariant}>
