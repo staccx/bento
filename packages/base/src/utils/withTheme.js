@@ -4,9 +4,6 @@ import { css } from "styled-components"
 import deepfind from "./deepfind"
 
 const generateStyle = componentName => props => {
-  if (componentName === "SliderKeyboardInput.SliderWrapper") {
-    console.log(props.themeVariant)
-  }
   if (
     !props.theme ||
     !deepfind(props.theme, componentName) ||

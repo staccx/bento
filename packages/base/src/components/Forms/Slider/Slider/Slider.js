@@ -14,6 +14,7 @@ const Slider = ({
   value,
   variantStyle,
   themeVariant,
+  ignoreBase,
   ...restProps
 }) => {
   if (percentage === undefined) {
@@ -26,6 +27,7 @@ const Slider = ({
       percentage={percentage}
       variantStyle={variantStyle}
       themeVariant={themeVariant}
+      ignoreBase={ignoreBase}
     >
       <input
         type="range"
@@ -186,28 +188,29 @@ const SliderInput = styled.div`
 `
 
 Slider.defaultProps = {
-  value: undefined,
-  min: 0,
-  max: 100,
-  step: 1,
   disabled: false,
-  variantStyle: null,
+  ignoreBase: null,
+  max: 100,
+  min: 0,
+  step: 1,
   themeVariant: null,
-  ignoreBase: null
+  value: undefined,
+  variantStyle: null
 }
 
 Slider.propTypes = {
-  name: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  min: PropTypes.number,
-  max: PropTypes.number,
-  onChange: PropTypes.func,
-  step: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   animationTicks: PropTypes.number,
   disabled: PropTypes.bool,
+  ignoreBase: PropTypes.bool,
+  max: PropTypes.number,
+  min: PropTypes.number,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
   percentage: PropTypes.number,
-  variantStyle: PropTypes.func,
-  themeVariant: PropTypes.string
+  step: PropTypes.any,
+  themeVariant: PropTypes.string,
+  value: PropTypes.any,
+  variantStyle: PropTypes.func
 }
 
 export default withTheme(Slider)

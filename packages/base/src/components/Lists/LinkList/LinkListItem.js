@@ -13,7 +13,7 @@ Caret.defaultProps = { className: "" }
 
 const LinkListItem = ({ className, children, onClick, to }) => (
   <ListItem className={className}>
-    <Button onClick={onClick && onClick} to={to}>
+    <Button onClick={onClick && onClick} href={to}>
       {children} <Cursor />
     </Button>
   </ListItem>

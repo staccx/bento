@@ -1,5 +1,5 @@
+import PropTypes from 'prop-types'
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
 import { linear } from "easing-utils"
 import { inverseLerp, clamp } from "@staccx/math"
@@ -99,12 +99,12 @@ class SliderKeyboardInput extends React.Component {
       step,
       mask,
       className,
+      ignoreBase,
       themeVariant
     } = this.props
     const { currentValue, percentage } = this.state
-    console.log(themeVariant)
     return (
-      <SliderWrapper className={className} themeVariant={themeVariant}>
+      <SliderWrapper className={className} themeVariant={themeVariant} ignoreBase={ignoreBase}>
         <HiddenLabel htmlFor={name} themeVariant={themeVariant}>
           {label}
         </HiddenLabel>
@@ -193,31 +193,32 @@ const SliderInput = withTheme(
 )
 
 SliderKeyboardInput.defaultProps = {
-  value: 0,
-  min: 0,
-  max: 100,
-  step: 1,
   animationTicks: 50,
-  easingFunction: linear,
-  onChange: null,
-  mask: null,
   className: "",
-  themeVariant: null
+  easingFunction: linear,
+  mask: null,
+  max: 100,
+  min: 0,
+  onChange: null,
+  step: 1,
+  themeVariant: null,
+  value: 0
 }
 
 SliderKeyboardInput.propTypes = {
+  animationTicks: PropTypes.number,
+  className: PropTypes.string,
+  easingFunction: PropTypes.func,
+  ignoreBase: PropTypes.bool,
   label: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.number,
-  min: PropTypes.number,
+  mask: PropTypes.array,
   max: PropTypes.number,
+  min: PropTypes.number,
+  name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   step: PropTypes.number,
-  animationTicks: PropTypes.number,
-  easingFunction: PropTypes.func,
-  mask: PropTypes.array,
-  className: PropTypes.string,
-  themeVariant: PropTypes.string
+  themeVariant: PropTypes.string,
+  value: PropTypes.number
 }
 
 export default withTheme(SliderKeyboardInput)
