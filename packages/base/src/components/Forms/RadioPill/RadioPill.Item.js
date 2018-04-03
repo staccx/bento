@@ -86,7 +86,7 @@ const RadioWrapper = styled.div`
   }
 
   &:hover,
-  ${Radio}:focus ~  {
+  ${Radio}:focus ~ {
     ${Label} {
       z-index: 1;
       border-color: ${p => p.theme.globals.color.primary};

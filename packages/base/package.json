@@ -64,13 +64,14 @@
     "accounting": "^0.4.1",
     "downshift": "^1.28.0",
     "easing-utils": "^0.0.7",
+    "es6-promise": "^4.2.4",
+    "isomorphic-fetch": "^2.2.1",
     "lerna": "^2.8.0",
     "polished": "^1.9.2",
     "prettier": "^1.10.2",
     "prop-types": "^15.6.0",
     "text-mask-addons": "^3.7.1",
     "text-mask-core": "^5.0.1",
-    "tinycolor2": "^1.4.1",
-    "whatwg-fetch": "^2.0.3"
+    "tinycolor2": "^1.4.1"
   }
 }

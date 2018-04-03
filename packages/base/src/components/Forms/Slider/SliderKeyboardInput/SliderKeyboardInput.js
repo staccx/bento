@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import { linear } from "easing-utils"
@@ -104,7 +104,11 @@ class SliderKeyboardInput extends React.Component {
     } = this.props
     const { currentValue, percentage } = this.state
     return (
-      <SliderWrapper className={className} themeVariant={themeVariant} ignoreBase={ignoreBase}>
+      <SliderWrapper
+        className={className}
+        themeVariant={themeVariant}
+        ignoreBase={ignoreBase}
+      >
         <HiddenLabel htmlFor={name} themeVariant={themeVariant}>
           {label}
         </HiddenLabel>

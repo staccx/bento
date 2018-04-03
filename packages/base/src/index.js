@@ -1,7 +1,6 @@
-/**
- * @class ExampleComponent
- */
-import "whatwg-fetch"
+require("es6-promise").polyfill()
+require("isomorphic-fetch")
+
 import Input from "./components/Forms/Input/Input"
 import CurrencyInput from "./components/Forms/Input/CurrencyInput/CurrencyInput"
 import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
