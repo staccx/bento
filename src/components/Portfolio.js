@@ -1,12 +1,12 @@
-import React, { Component } from "react"
-import { inject, observer } from "mobx-react"
+import React, {Component} from "react"
+import {inject, observer} from "mobx-react"
 import {
   Tab as UnstyledTab,
   TabList as UnstyledTabList,
-  Tabs as UnstyledTabs,
-  TabPanel as UnstyledTabPanel
+  TabPanel as UnstyledTabPanel,
+  Tabs as UnstyledTabs
 } from "react-tabs"
-import { formatCurrency } from "@staccx/formatting"
+import {formatCurrency} from "@staccx/formatting"
 import Animations from "@staccx/animations"
 import PieChart from "./PieChart"
 import PortfolioExpand from "./PortfolioExpand"
@@ -23,6 +23,19 @@ const explodeAmount = 10
 @inject("apiStore", "uiStore")
 @observer
 class Portfolio extends Component {
+  handleInputChange = (value, isStart = true, addToExisting = true) => {
+    const {apiStore} = this.props
+    value = parseInt(stringTrimAll(value.toString()), 10)
+    const func = isStart ? apiStore.setDepositStart : apiStore.setDepositMonthly
+    const val =
+      value +
+      (addToExisting
+        ? isStart ? apiStore.depositStart : apiStore.depositMonthly
+        : 0)
+
+    func(parseInt(stringTrimAll(val.toString()), 10))
+  }
+
   componentDidMount() {
     this.pieChart = this.pieChartInjector.wrappedInstance
     this.updatePie(this.props.uiStore.selectedInstrument, 1000)
@@ -48,19 +61,6 @@ class Portfolio extends Component {
     }, delay)
   }
 
-  handleInputChange = (value, isStart = true, addToExisting = true) => {
-    const { apiStore } = this.props
-    value = parseInt(stringTrimAll(value.toString()), 10)
-    const func = isStart ? apiStore.setDepositStart : apiStore.setDepositMonthly
-    const val =
-      value +
-      (addToExisting
-        ? isStart ? apiStore.depositStart : apiStore.depositMonthly
-        : 0)
-
-    func(parseInt(stringTrimAll(val.toString()), 10))
-  }
-
   render() {
     const {
       selectedInstrument,
@@ -68,11 +68,11 @@ class Portfolio extends Component {
       cmsSummary,
       translate
     } = this.props.uiStore
-    const { depositStart, depositMonthly, isChartLoading } = this.props.apiStore
+    const {depositStart, depositMonthly, isChartLoading} = this.props.apiStore
     return (
       <div>
-        <QuestionLead question={translate(cmsSummary.header)} />
-        <PortfolioFilter />
+        <QuestionLead question={translate(cmsSummary.header)}/>
+        <PortfolioFilter/>
         <InputsWrapper>
           <CurrencyInputSteppers
             label={translate(cmsSummary.firstDepositLabel)}
@@ -94,7 +94,7 @@ class Portfolio extends Component {
           />
         </InputsWrapper>
         <ContentWrapper>
-          {isChartLoading && <Spinner />}
+          {isChartLoading && <Spinner/>}
           <TabsWrapper isVisible={!isChartLoading}>
             <Tabs>
               <TabList>
@@ -111,7 +111,7 @@ class Portfolio extends Component {
                       precision: 0
                     })}
                   </strong>{" "}
-                  month we expect <br /> you’ll have around{" "}
+                  month we expect <br/> you’ll have around{" "}
                   <strong>
                     {formatCurrency(this.props.apiStore.expected, {
                       precision: 0
@@ -119,7 +119,7 @@ class Portfolio extends Component {
                   </strong>{" "}
                   in <strong>{this.props.apiStore.years} years</strong>
                 </WrittenExplanation>
-                <ShotgunChart height={300} width={1000} />
+                <ShotgunChart height={300} width={1000}/>
               </TabPanel>
               <TabPanel>
                 <WrittenExplanation>
@@ -129,7 +129,7 @@ class Portfolio extends Component {
                       precision: 0
                     })}
                   </strong>{" "}
-                  /month with this portfolio <br />since <strong>1996</strong>{" "}
+                  /month with this portfolio <br/>since <strong>1996</strong>{" "}
                   you would now have{" "}
                   <strong>
                     {formatCurrency(this.props.apiStore.calculated, {
@@ -137,15 +137,18 @@ class Portfolio extends Component {
                     })}
                   </strong>
                 </WrittenExplanation>
-                <ShotgunChart height={300} width={1000} isForecast={false} />
+                <ShotgunChart height={300} width={1000} isForecast={false}/>
               </TabPanel>
-              <TabPanel><div>Coming soon</div></TabPanel>
+              <TabPanel>
+                <div>Coming soon</div>
+              </TabPanel>
             </Tabs>
           </TabsWrapper>
         </ContentWrapper>
-        <div>
+        <ContentWrapper>
           <Heading2>Suggested portfolio</Heading2>
-          <PortfolioWrapper>
+          {isChartLoading && <Spinner/>}
+          <PortfolioWrapper isVisible={!isChartLoading}>
             <PieChart
               ref={node => (this.pieChartInjector = node)}
               padding={10}
@@ -157,7 +160,7 @@ class Portfolio extends Component {
               onClick={setInstrument}
             />
           </PortfolioWrapper>
-        </div>
+        </ContentWrapper>
       </div>
     )
   }
@@ -171,7 +174,7 @@ const ContentWrapper = styled.div`
 
 const TabsWrapper = styled.div`
   transition: opacity 0.3s ease-out;
-  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  opacity: ${({isVisible}) => (isVisible ? 1 : 0)};
 `
 
 const Heading2 = styled.h2`
@@ -183,6 +186,8 @@ const Heading2 = styled.h2`
 `
 
 const PortfolioWrapper = styled.div`
+  transition: opacity 0.3s ease-out;
+  opacity: ${({isVisible}) => (isVisible ? 1 : 0)};
   padding-top: ${p => p.theme.spacing.large};
   display: grid;
   grid-template-columns: repeat(2, 1fr);
