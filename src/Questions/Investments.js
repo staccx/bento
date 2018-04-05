@@ -1,35 +1,29 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import {inject, observer} from "mobx-react"
+import { inject, observer } from "mobx-react"
 import { CheckGroup, CheckBox } from "@staccx/base"
 import QuestionLead from "../components/QuestionLead"
-import {optionList} from "../stores/apiStore";
-import urlFor from "../utils/urlFor";
-
-const content = {
-  title: "Are there any sectors you specifically believe in?",
-  lead:
-    "We can take this into account when building your portfolio. Select up to 13.",
-  answers: optionList.map(o => o)
-}
 
 const MAX_SELECTABLE = 3
 
-@inject("apiStore", "uiStore") @observer
+@inject("apiStore", "uiStore")
+@observer
 class Investments extends Component {
   render() {
-    const {translate, cmsTheme, getImage} = this.props.uiStore
-    const {optionList, toggleOption} = this.props.apiStore
+    const { translate, cmsTheme, getImage } = this.props.uiStore
+    const { optionList, toggleOption } = this.props.apiStore
 
     const isChecked = value => optionList.indexOf(value) !== -1
 
-    const isDisabled = (value) => {
+    const isDisabled = value => {
       return isChecked(value) ? false : optionList.length >= MAX_SELECTABLE
     }
 
     return (
       <div>
-        <QuestionLead question={translate(cmsTheme.title)}>{translate(cmsTheme.lead)}</QuestionLead>
+        <QuestionLead question={translate(cmsTheme.title)}>
+          {translate(cmsTheme.lead)}
+        </QuestionLead>
 
         <CheckWrapper>
           <CheckGroup group={"geo"} onChange={toggleOption}>

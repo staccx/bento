@@ -84,10 +84,10 @@ class ApiStore {
 
   @action
   setDefaults = settings => {
-    // this.setRisk(settings.riskDefault)
-    // this.setHorizon(settings.horizonDefault)
-    // this.setDepositStart(settings.depositStart)
-    // this.setDepositStart(settings.depositMonthly)
+    this.setRisk(settings.riskDefault)
+    this.setHorizon(settings.horizonDefault)
+    this.setDepositStart(settings.depositStart)
+    this.setDepositMonthly(settings.depositMonthly)
 
     this.settings = {
       horizonLow: settings.horizonRange.low,
@@ -99,7 +99,6 @@ class ApiStore {
 
   @action
   setRisk = risk => {
-    console.trace("risk set to", risk)
     this.currentRisk = risk
     this.getResultFromApi()
   }

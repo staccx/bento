@@ -6,16 +6,14 @@ import {
   ExpandListItem,
   fontSmoothing,
   Fraction,
-  Slider,
   SplitListItem,
   Wrapper
 } from "@staccx/base"
-import {lerp} from "@staccx/math"
+import { lerp } from "@staccx/math"
 import {
   getActualRisk,
   horizonLabels,
   horizonYears,
-  optionList,
   riskLabels
 } from "../stores/apiStore"
 
@@ -46,8 +44,6 @@ const Showing = ({ risk, duration, sectors, translate }) => {
     </span>
   )
 }
-
-
 
 @inject("uiStore", "apiStore")
 @observer

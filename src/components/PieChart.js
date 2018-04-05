@@ -31,12 +31,12 @@ class PieChart extends Component {
       this.chart = null
     }
     const self = this
+    const { recommendedPortfolio } = this.props.apiStore
 
-    this.generateData = () => {
-      const { recommendedPortfolio } = this.props.apiStore
-      const portfolio = recommendedPortfolio.map(portfolio => portfolio)
+    this.generateData = p => {
+      const portfolio = p.map(portfolio => portfolio)
       this.dataset = {
-        data: portfolio.map(p => p.weight)
+        data: portfolio.sort((a, b) => a.weight < b.weight).map(p => p.weight)
       }
 
       return {
@@ -53,9 +53,8 @@ class PieChart extends Component {
     self.selectedIndex = 0
 
     this.createChart = ctx => {
-      console.log("creating chart")
       this.chart = new Chart(ctx, {
-        data: this.generateData(),
+        data: this.generateData(recommendedPortfolio),
         type: "doughnut",
         options: {
           legend: {
@@ -97,11 +96,13 @@ class PieChart extends Component {
   }
 
   componentDidUpdate() {
-    this.chart.data = this.generateData()
+    const { recommendedPortfolio } = this.props.apiStore
+    this.chart.data = this.generateData(recommendedPortfolio)
     this.chart.update()
   }
 
   render() {
+    const {recommendedPortfolio} = this.props.apiStore // eslint-disable-line no-unused-vars
     return (
       <canvas
         ref={node => {

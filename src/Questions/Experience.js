@@ -30,7 +30,7 @@ class Start extends React.Component {
         </StyledToggle>
         <FlexAnswer>
           {cmsExperience.answers.map(answer => (
-            <label key={answer._id} htmlFor="453346gnkj">
+            <label key={answer._key} htmlFor="453346gnkj">
               {translate(answer.heading)}
             </label>
           ))}

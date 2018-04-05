@@ -69,7 +69,6 @@ class Portfolio extends Component {
       translate
     } = this.props.uiStore
     const { depositStart, depositMonthly, isChartLoading } = this.props.apiStore
-    console.log(cmsSummary)
     return (
       <div>
         <QuestionLead question={translate(cmsSummary.header)} />
