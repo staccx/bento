@@ -41,7 +41,12 @@ export const themeLaser = {
     "#56CCF2",
     "#EB5757",
     "#F2994A",
-    "#F2C94C"
+    "#F2C94C",
+    "#219653",
+    "#6FCF97",
+    "#6FB2CF",
+    "#CF756F",
+    "#FFBDB1"
   ],
   gradient: {
     laser: ["#5D3B9F", "#CF27AA"],
