@@ -7,7 +7,7 @@ import withTheme from "../../../../utils/withTheme"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
 
-const removeSpaces = value => value.replace(/\s/g, '')
+const removeSpaces = value => value.replace(/\s/g, "")
 
 class SliderKeyboardInput extends React.Component {
   constructor(props) {
@@ -17,6 +17,7 @@ class SliderKeyboardInput extends React.Component {
       currentValue: 0,
       percentage: 0
     }
+    this.handleBlur = this.handleBlur.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.countUp = this.countUp.bind(this)
     this.stopCount = this.stopCount.bind(this)
@@ -97,6 +98,17 @@ class SliderKeyboardInput extends React.Component {
     })
   }
 
+  handleBlur(event) {
+    const value = event.target.value
+    const valueInt = parseInt(removeSpaces(value), 10)
+    const parsed = clamp(this.props.min, this.props.max, valueInt)
+    this.updateState(parsed).then(() => {
+      if (this.props.onChange) {
+        this.props.onBlur(this.state.currentValue)
+      }
+    })
+  }
+
   render() {
     const {
       label,
@@ -125,6 +137,7 @@ class SliderKeyboardInput extends React.Component {
           id={`${name}-keyboard`}
           value={currentValue}
           onChange={this.handleChange}
+          onBlur={this.handleBlur}
           min={min}
           max={max}
           mask={mask || null}
@@ -227,6 +240,7 @@ SliderKeyboardInput.propTypes = {
   min: PropTypes.number,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
+  onBlur: PropTypes.func,
   step: PropTypes.number,
   themeVariant: PropTypes.string,
   value: PropTypes.number
