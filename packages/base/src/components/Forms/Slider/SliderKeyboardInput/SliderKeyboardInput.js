@@ -7,6 +7,8 @@ import withTheme from "../../../../utils/withTheme"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
 
+const removeSpaces = value => value.replace(/\s/g, '')
+
 class SliderKeyboardInput extends React.Component {
   constructor(props) {
     super(props)
@@ -73,7 +75,12 @@ class SliderKeyboardInput extends React.Component {
       this.setState(
         {
           currentValue: Math.floor(value),
-          percentage: inverseLerp(this.props.min, this.props.max, clamp(this.props.min, this.props.max, Math.ceil(value))) * 100,
+          percentage:
+            inverseLerp(
+              this.props.min,
+              this.props.max,
+              clamp(this.props.min, this.props.max, Math.ceil(value))
+            ) * 100,
           ...options
         },
         resolve
@@ -83,7 +90,7 @@ class SliderKeyboardInput extends React.Component {
 
   handleChange(event) {
     const value = event.target.value
-    this.updateState(value).then(() => {
+    this.updateState(parseInt(removeSpaces(value), 10)).then(() => {
       if (this.props.onChange) {
         this.props.onChange(this.state.currentValue)
       }
@@ -215,7 +222,7 @@ SliderKeyboardInput.propTypes = {
   easingFunction: PropTypes.func,
   ignoreBase: PropTypes.bool,
   label: PropTypes.string.isRequired,
-  mask: PropTypes.array,
+  mask: PropTypes.func,
   max: PropTypes.number,
   min: PropTypes.number,
   name: PropTypes.string.isRequired,
