@@ -72,8 +72,8 @@ class SliderKeyboardInput extends React.Component {
     return new Promise(resolve => {
       this.setState(
         {
-          currentValue: clamp(this.props.min, this.props.max, Math.ceil(value)),
-          percentage: inverseLerp(this.props.min, this.props.max, value) * 100,
+          currentValue: Math.floor(value),
+          percentage: inverseLerp(this.props.min, this.props.max, clamp(this.props.min, this.props.max, Math.ceil(value))) * 100,
           ...options
         },
         resolve

@@ -12,7 +12,8 @@ class CompanyInput extends React.PureComponent {
 
     this.timeout = null
     this.scheduleSearch = this.scheduleSearch.bind(this)
-
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSelect = this.handleSelect.bind(this)
     this.state = {
       autoComplete: [],
       selected: null,
