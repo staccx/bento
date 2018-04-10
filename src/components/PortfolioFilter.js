@@ -87,7 +87,7 @@ class PortfolioFilter extends Component {
     const editButtonLabel = translate(cmsSummary.editButtonLabel)
 
     return (
-      <Wrapper size={"medium"}>
+      <Wrap size={"medium"} breakout>
         <List>
           <Expand
             title={
@@ -103,7 +103,7 @@ class PortfolioFilter extends Component {
             onClick={() => uiStore.setFilterExpanded(!uiStore.filterExpanded)}
           >
             <FilterContent>
-              {translate(cmsSummary.filterHeader)}
+              <Heading>{translate(cmsSummary.filterHeader)}</Heading>
               <List>
                 <AnswersListItem>
                   <strong> {translate(cmsSummary.riskLabel)}</strong>
@@ -120,8 +120,10 @@ class PortfolioFilter extends Component {
                 <AnswersListItem>
                   <strong>{translate(cmsSummary.purposeLabel)}</strong>
                   <AnswersListDetails>
-                    {horizonLabels[apiStore.horizon - 1]}
-                    <Subtle>{horizonLabel}</Subtle>
+                    <div>
+                      <div>{horizonLabels[apiStore.horizon - 1]}</div>
+                      <Subtle>{horizonLabel}</Subtle>
+                    </div>
                     <EditLink href="#purpose" onClick={() => setStep(2)}>
                       {editButtonLabel}
                     </EditLink>
@@ -154,10 +156,19 @@ class PortfolioFilter extends Component {
             </FilterContent>
           </Expand>
         </List>
-      </Wrapper>
+      </Wrap>
     )
   }
 }
+
+const Wrap = styled(Wrapper)`
+  padding: 0;
+`
+
+const Heading = styled.h4`
+  text-align: center;
+  font-weight: bold;
+`
 
 const Expand = styled(ExpandListItem)`
   > button {
@@ -192,16 +203,7 @@ const Expand = styled(ExpandListItem)`
 `
 
 const FilterContent = styled.div`
-  margin: 0 ${p => p.theme.spacing.medium};
-  padding: ${p => p.theme.spacing.medium};
-  background-color: ${p => p.theme.color.white};
-  border: 1px solid ${p => p.theme.color.primary};
-  border-top-width: 0;
-  border-radius: ${p => p.theme.borderRadius};
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 4px rgba(0, 0, 0, 0.02),
-    0px 8px 8px rgba(0, 0, 0, 0.02);
+  padding-top: ${p => p.theme.spacing.medium};
 `
 
 const DotButton = styled.button`
@@ -243,7 +245,7 @@ const NoWrap = styled.span`
   white-space: nowrap;
 `
 
-const Subtle = styled.i`
+const Subtle = styled.div`
   color: ${p => p.theme.color.wcag};
   font-size: ${p => p.theme.font.size.tiny};
   font-style: normal;
