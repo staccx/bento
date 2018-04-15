@@ -3,7 +3,7 @@ import { VARIANT_DEFAULT } from "./_constants";
 
 class ThemeManager {
   constructor(baseTheme = {}) {
-    this.theme = baseTheme;
+    this.theme = Object.assign({}, baseTheme);
   }
 
   get Theme() {
