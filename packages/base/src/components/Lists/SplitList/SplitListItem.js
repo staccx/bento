@@ -11,23 +11,6 @@ import {
   themify
 } from "@staccx/theme"
 
-const ListItem = styled.li`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  border-bottom: 1px solid ${color.line};
-  padding: ${spacing.tiny()}
-    ${spacing.medium()};
-  font-size: ${font.base};
-  font-family: ${fontFamily.body()};
-
-  &:last-child {
-    border-bottom: none;
-  }
-`
-
 const SplitListItem = ({ children, className }) => {
   if (React.Children.count(children) > 2) {
     console.warn(
@@ -42,6 +25,24 @@ const SplitListItem = ({ children, className }) => {
     </ListItem>
   )
 }
+
+export const SPLIT_LIST = "split_list"
+const ListItem = styled.li`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  border-bottom: 1px solid ${color.line};
+  padding: ${spacing.tiny()} ${spacing.medium()};
+  font-size: ${font.base};
+  font-family: ${fontFamily.body()};
+
+  &:last-child {
+    border-bottom: none;
+  }
+  ${themify(SPLIT_LIST)};
+`
 
 SplitListItem.defaultProps = {
   className: ""

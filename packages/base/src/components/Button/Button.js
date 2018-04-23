@@ -3,7 +3,7 @@
  */
 import PropTypes from "prop-types"
 import React from "react"
-import styled, {css} from "styled-components"
+import styled, { css } from "styled-components"
 import {
   targetSize,
   spacing,
@@ -13,7 +13,6 @@ import {
   color,
   themify
 } from "@staccx/theme"
-
 const tinycolor = require("tinycolor2")
 
 export const BUTTON = "Button"

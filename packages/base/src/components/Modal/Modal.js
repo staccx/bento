@@ -2,11 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import hideVisually from "../../Styles/hideVisually"
-import {
-  spacing,
-  color,
-  wrapper
-} from "@staccx/theme"
+import { spacing, color, wrapper, themify } from "@staccx/theme"
 
 const Icon = ({ className }) => (
   <svg
@@ -97,6 +93,7 @@ class Modal extends Component {
   }
 }
 
+export const MODAL_ITEM = "modal_item"
 const ModalItem = styled.dialog`
   border-width: 0;
   height: 100%;
@@ -115,14 +112,15 @@ const ModalItem = styled.dialog`
     ". a a ."
     ". . . .";
   background: transparent;
-  padding: ${spacing.large()}
-    ${spacing.small()} ${spacing.small()}
+  padding: ${spacing.large()} ${spacing.small()} ${spacing.small()}
     ${spacing.small()};
   &:focus {
     outline: none;
   }
+  ${themify(MODAL_ITEM)};
 `
 
+export const MODAL_CONTENT = "modal_content"
 const ModalContent = styled.div`
   background: white;
   grid-area: a;
@@ -136,8 +134,10 @@ const ModalContent = styled.div`
   &:focus {
     outline: none;
   }
+  ${themify(MODAL_CONTENT)};
 `
 
+export const MODAL_CLOSE = "modal_close"
 const Close = styled.button`
   position: fixed;
   top: 0;
@@ -156,8 +156,10 @@ const Close = styled.button`
   span {
     ${hideVisually};
   }
+  ${themify(MODAL_CLOSE)};
 `
 
+export const MODAL_BACKDROP = "modal_backdrop"
 const ModalBackdrop = styled.div`
   position: fixed;
   top: 0;
@@ -166,6 +168,7 @@ const ModalBackdrop = styled.div`
   height: 100%;
   z-index: 999;
   background: rgba(0, 0, 0, 0.8);
+  ${themify(MODAL_BACKDROP)};
 `
 
 Modal.defaultProps = {
