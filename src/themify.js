@@ -1,5 +1,5 @@
 import deepfind from "./deepfind";
-import { css } from "styled-components"
+import { css } from "styled-components";
 import { VARIANT_DEFAULT } from "./_constants";
 
 export default name => props => {
