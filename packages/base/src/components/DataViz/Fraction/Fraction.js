@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import hideVisually from "../../../Styles/hideVisually"
+import { color, themify } from "@staccx/theme"
 
 const Fraction = ({
   value,
@@ -41,20 +42,32 @@ const Hide = styled.span`
   ${hideVisually};
 `
 
+export const FRACTION_CIRCLE = "fraction_circle"
+
 const circle = css`
   width: 12px;
   height: 12px;
   border-radius: 50%;
+  ${themify(FRACTION_CIRCLE)};
 `
+
+export const FRACTION_COLORED_DOT = "fraction_colored_dot"
 
 const ColoredDot = styled.div`
   ${circle};
-  background-color: ${p => p.theme.globals.color.primary};
+  background-color: color ${p => p.theme.globals.color.primary};
+  ${themify(FRACTION_COLORED_DOT)};
 `
+
+export const FRACTION_DESATURATED_DOT = "fraction_desaturated_dot"
+
 const DesaturatedDot = styled.div`
   ${circle};
   background-color: ${p => p.theme.globals.color.line};
+  ${themify(FRACTION_DESATURATED_DOT)};
 `
+
+export const FRACTION = "fraction"
 
 const FractionWrapper = styled.div`
   display: flex;
@@ -62,6 +75,7 @@ const FractionWrapper = styled.div`
   > * {
     margin-right: ${p => p.theme.globals.spacing.tiny};
   }
+  ${themify(FRACTION)};
 `
 
 Fraction.defaultProps = {

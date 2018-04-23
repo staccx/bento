@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import withTheme from "../../../utils/withTheme"
+import { color, themify } from "@staccx/theme"
 
 const Digit = ({ isAnimating, digit, speed, size, single, themeVariant }) => (
   <DigitWrapper
@@ -22,30 +23,26 @@ const Digit = ({ isAnimating, digit, speed, size, single, themeVariant }) => (
   </DigitWrapper>
 )
 
-const DigitWrapper = withTheme(
-  styled.div`
-    height: ${p => p.size}px;
-    width: ${p => (p.isEmpty ? p.size / 2 : p.size / 1.5)}px;
-    overflow: hidden;
-    ${props => props.variantStyle(props)};
-  `,
-  "Odometer.DigitWrapper"
-)
+export const DIGIT = "digit"
+const DigitWrapper = styled.div`
+  height: ${p => p.size}px;
+  width: ${p => (p.isEmpty ? p.size / 2 : p.size / 1.5)}px;
+  overflow: hidden;
+  ${themify(DIGIT)};
+`
 
-const DigitContainer = withTheme(
-  styled.div`
-    font-size: ${p => p.size}px;
-    ${p =>
-      !p.single &&
-      `
+export const DIGIT_CONTAINER = "digit_container"
+const DigitContainer = styled.div`
+  font-size: ${p => p.size}px;
+  ${p =>
+    !p.single &&
+    `
       animationname: slide${p.digit};
       transform: translateY(-${p.digit}em);
       transition: transform ${p.speed}ms cubic-bezier(0, 0, 0.2, 1);
       `};
-    ${props => props.variantStyle(props)};
-  `,
-  "Odometer.DigitContainer"
-)
+  ${themify(DIGIT_CONTAINER)};
+`
 
 Digit.propTypes = {
   digit: PropTypes.string.isRequired,

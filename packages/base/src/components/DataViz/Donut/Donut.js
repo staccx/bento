@@ -1,12 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { color, themify } from "@staccx/theme"
 
 const Donut = ({ percentage, className, ...rest }) => {
   const dash = 57
   const dashoffset = 57 * percentage - 57
   return (
-    <Graph
+    <Wrapper
       viewBox="0 0 24 24"
       width="24"
       height="24"
@@ -25,22 +26,31 @@ const Donut = ({ percentage, className, ...rest }) => {
           dashoffset={dashoffset}
         />
       </g>
-    </Graph>
+    </Wrapper>
   )
 }
 
-const Graph = styled.svg`
+export const DONUT = "donut"
+
+const Wrapper = styled.svg`
   transform: rotateY(180deg);
+  ${themify(DONUT)};
 `
+
+export const DONUT_BG = "donut_bg"
 
 const Bg = styled.circle`
-  stroke: ${p => p.theme.globals.color.line};
+  stroke: ${color("line")};
+  ${themify(DONUT_BG)};
 `
 
+export const DONUT_VALUE = "donut_value"
+
 const Value = styled.circle`
-  stroke: ${p => p.theme.globals.color.primary};
+  stroke: ${color("primary")};
   stroke-dasharray: ${p => p.dash};
   stroke-dashoffset: ${p => p.dashoffset};
+  ${themify(DONUT_VALUE)};
 `
 
 Donut.defaultProps = {

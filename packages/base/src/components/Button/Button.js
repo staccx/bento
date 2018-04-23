@@ -15,8 +15,7 @@ import {
 const tinycolor = require("tinycolor2")
 
 export const BUTTON = "Button"
-
-const Button = styled.button`
+export const ButtonStyle = css`
   background-color: ${color("primary")};
   color: ${p =>
     tinycolor
@@ -73,6 +72,9 @@ const Button = styled.button`
   }
 
   ${themify(BUTTON)};
+`
+const Button = styled.button`
+  ${ButtonStyle};
 `
 
 const defaultProps = {
