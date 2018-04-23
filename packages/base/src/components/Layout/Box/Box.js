@@ -16,8 +16,10 @@ const Box = ({ children, className, size, ...otherProps }) => (
   </Boxing>
 )
 
+export const BOX = "BOX"
 const Boxing = styled.div`
   padding: ${p => spacing(p.size)};
+  ${themify(BOX)};
 `
 
 Box.defaultProps = {

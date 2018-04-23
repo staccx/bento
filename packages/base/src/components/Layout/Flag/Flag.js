@@ -37,6 +37,7 @@ const Flag = ({
   </FlagObject>
 )
 
+export const FLAG_IMG = "FLAG_IMG"
 const FlagImg = styled.div`
   display: table-cell;
   width: 1px;
@@ -45,8 +46,10 @@ const FlagImg = styled.div`
   > img {
     max-width: none;
   }
+  ${themify(FLAG_IMG)};
 `
 
+export const FLAG_BODY = "FLAG_BODY"
 const FlagBody = styled.div`
   display: table-cell;
   vertical-align: middle;
@@ -56,8 +59,10 @@ const FlagBody = styled.div`
   > :last-child {
     margin-bottom: 0;
   }
+  ${themify(FLAG_BODY)};
 `
 
+${themify(FLAG_REVERSE)};
 const reverse = css`
   direction: rtl;
   > ${FlagImg}, > ${FlagBody} {
@@ -68,41 +73,53 @@ const reverse = css`
     padding-right: 0;
     padding-left: ${spacing.medium()};
   }
+  ${themify(FLAG_REVERSE)};
 `
 
+export const FLAG_REVERSE_LARGE = 'FLAG_REVERSE_LARGE'
 const reverseLarge = css`
   > ${FlagImg} {
     padding-right: 0;
     padding-left: ${spacing.large()};
   }
+  ${themify(FLAG_REVERSE_LARGE)};
 `
 
+export const FLAG_TOP = 'FLAG_TOP'
 const top = css`
   > ${FlagImg}, > ${FlagBody} {
     vertical-align: top;
   }
+  ${themify(FLAG_TOP)};
 `
 
+export const FLAG_BOTTOM = 'FLAG_BOTTOM'
 const bottom = css`
   > ${FlagImg}, > ${FlagBody} {
     vertical-align: bottom;
   }
+  ${themify(FLAG_BOTTOM)};
 `
 
+export const FLAG_FLUSH = 'FLAG_FLUSH'
 const flush = css`
   > ${FlagImg} {
     padding-right: 0;
     padding-left: 0;
   }
+  ${themify(FLAG_FLUSH)};
 `
 
+export const FLAG_LARGE = 'FLAG_LARGE'
 const large = css`
   > ${FlagImg} {
     padding-right: ${spacing.large()};
   }
   ${props => (props.reverse ? reverseLarge : null)};
+  ${themify(FLAG_LARGE)};
 `
 
+export const FLAG_RESPONSIVE = 'FLAG_RESPONSIVE'
 const responsive = css`
   @media screen and (max-width: ${props => props.responsive}px) {
     &,
@@ -119,9 +136,11 @@ const responsive = css`
     ${FlagImg} > img {
       max-width: 100%;
     }
+    ${themify(FLAG_RESPONSIVE)};
   }
 `
 
+export const FLAG_OBJECT = 'FLAG_OBJECT'
 const FlagObject = styled.div`
   display: table;
   width: 100%;
@@ -132,6 +151,7 @@ const FlagObject = styled.div`
   ${props => (props.flush ? flush : null)};
   ${props => (props.large ? large : null)};
   ${props => (props.responsive > 0 ? responsive : null)};
+  ${themify(FLAG_OBJECT)};
 `
 
 Flag.defaultProps = {

@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { themify } from "@staccx/theme"
 
 const Pack = ({ children, className, bottom, middle, noWrap, justify }) => (
   <PackUl className={className} bottom={bottom} middle={middle} noWrap={noWrap}>
@@ -15,6 +16,7 @@ const position = (bottom, middle) => {
   else if (middle === true) return "center"
 }
 
+export const PACK = "PACK"
 const PackUl = styled.ul`
   width: 100%;
   margin-left: 0;
@@ -22,6 +24,7 @@ const PackUl = styled.ul`
   justify-content: ${p => p.justify};
   align-items: ${p => position(p.bottom, p.middle)};
   flex-wrap: ${p => !p.noWrap && "wrap"};
+  ${themify(PACK)};
 `
 
 Pack.defaultProps = {
