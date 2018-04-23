@@ -7,6 +7,7 @@ import { default as registerStyle } from './src/registerStyle'
 import { default as spacing } from './src/spacing'
 import { default as ThemeManager } from './src/ThemeManager'
 import { default as themify } from './src/themify'
+import { default as targetSize } from './src/targetSize'
 
 export {
   VARIANT_DEFAULT,
@@ -15,6 +16,7 @@ export {
   font,
   registerStyle,
   spacing,
+  targetSize,
   ThemeManager,
   themify
 }
