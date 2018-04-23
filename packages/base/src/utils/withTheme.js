@@ -34,7 +34,7 @@ withTheme.propTypes = {
 }
 
 withTheme.defaultProps = {
-  themeVariant: null
+  themeVariant: "_default"
 }
 
 export default withTheme

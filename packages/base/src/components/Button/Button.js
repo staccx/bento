@@ -4,41 +4,45 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import withTheme from "../../utils/withTheme"
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 const tinycolor = require("tinycolor2")
 
-const Button = ({ children, ...rest }) => (
-  <StyledButton {...rest}>{children}</StyledButton>
-)
+export const BUTTON = "Button"
 
-const StyledButton = styled.button`
-  background-color: ${p => p.theme.globals.color.primary};
+const Button = styled.button`
+  background-color: ${color("primary")};
   color: ${p =>
     tinycolor
-      .mostReadable(p.theme.globals.color.primary, ["#fff"], {
+      .mostReadable(color("primary")(p), ["#fff"], {
         includeFallbackColors: true,
         level: "AA",
         size: "large"
       })
       .toString()};
   border-width: 0;
-  border-radius: ${p => p.theme.globals.borderRadius};
-  padding: ${p => p.theme.globals.spacing.tiny}
-    ${p => p.theme.globals.spacing.medium};
+  border-radius: ${borderRadius()};
+  padding: ${spacing("tiny")} ${spacing("medium")};
   cursor: pointer;
-  min-height: ${p => p.theme.globals.targetSize.normal};
+  min-height: ${targetSize()};
   text-decoration: none;
   text-align: center;
   display: inline-block;
-  font-size: ${p => p.theme.globals.font.size.base};
-  font-family: ${p => p.theme.globals.font.body};
+  font-size: ${font("base")};
+  font-family: ${font("body", "type")};
   line-height: 32px;
   font-weight: 600;
   white-space: nowrap;
   justify-content: center;
   align-items: center;
-  margin-right: ${p => p.theme.globals.spacing.small};
-  margin-bottom: ${p => p.theme.globals.spacing.small};
+  margin-right: ${spacing("small")};
+  margin-bottom: ${spacing("small")};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -46,20 +50,16 @@ const StyledButton = styled.button`
   &:focus {
     outline: none;
     background-color: ${p =>
-      tinycolor(p.theme.globals.color.primary)
+      tinycolor(color("primary")(p))
         .darken(5)
         .toString()};
     color: ${p =>
       tinycolor
-        .mostReadable(
-          tinycolor(p.theme.globals.color.primary).darken(5),
-          ["#fff"],
-          {
-            includeFallbackColors: true,
-            level: "AA",
-            size: "large"
-          }
-        )
+        .mostReadable(tinycolor(color("primary")(p)).darken(5), ["#fff"], {
+          includeFallbackColors: true,
+          level: "AA",
+          size: "large"
+        })
         .toString()};
   }
 
@@ -72,7 +72,7 @@ const StyledButton = styled.button`
     margin-bottom: 0;
   }
 
-  ${props => props.variantStyle(props)};
+  ${themify(BUTTON)};
 `
 
 const defaultProps = {
@@ -97,4 +97,4 @@ Button.defaultProps = defaultProps
 Button.propTypes = propTypes
 
 /** @component */
-export default withTheme(Button)
+export default Button

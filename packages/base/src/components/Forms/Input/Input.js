@@ -7,6 +7,18 @@ import PropTypes from "prop-types"
 import MaskedInput from "./MaskedInput"
 import styled, { css } from "styled-components"
 import Label from "../Label/Label"
+import {
+  themify,
+  color,
+  spacing,
+  borderRadius,
+  font,
+  targetSize
+} from "@staccx/theme"
+
+export const INPUT = "INPUT"
+export const INPUT_LABEL = "INPUT_LABEL"
+export const INPUT_WRAPPER = "INPUT_WRAPPER"
 
 class Input extends React.Component {
   constructor(props) {
@@ -33,12 +45,16 @@ class Input extends React.Component {
       value,
       label,
       mask,
+      themeVariant,
       ...otherProps
     } = this.props
-
     return (
-      <InputWrapper className={className}>
-        {label && <Label htmlFor={id}>{label}</Label>}
+      <InputWrapper className={className} themeVariant={themeVariant}>
+        {label && (
+          <InputLabel themeVariant={themeVariant} htmlFor={id}>
+            {label}
+          </InputLabel>
+        )}
         {mask ? (
           <InputWithMask
             mask={mask}
@@ -51,6 +67,7 @@ class Input extends React.Component {
             onChange={onChange}
             onKeyDown={onKeyDown}
             placeholder={placeholder}
+            themeVariant={themeVariant}
             type={type}
             {...otherProps}
           />
@@ -65,6 +82,7 @@ class Input extends React.Component {
             onChange={onChange}
             onKeyDown={onKeyDown}
             placeholder={placeholder}
+            themeVariant={themeVariant}
             type={type}
             {...otherProps}
           />
@@ -74,23 +92,28 @@ class Input extends React.Component {
   }
 }
 
+const InputLabel = styled(Label)`
+  ${themify(INPUT_LABEL)};
+`
+
 export const InputWrapper = styled.div`
   display: block;
   margin-bottom: 0;
   position: relative;
+  ${themify(INPUT_WRAPPER)};
 `
 
 export const inputCss = css`
   display: block;
   width: 100%;
-  min-height: ${p => p.theme.globals.targetSize.normal};
+  min-height: ${targetSize()};
   margin: 0 auto;
-  border: 1px solid ${p => p.theme.globals.color.line};
-  border-radius: ${p => p.theme.globals.borderRadius};
-  padding-left: ${p => p.theme.globals.spacing.small};
-  padding-right: ${p => p.theme.globals.spacing.small};
-  font-family: ${p => p.theme.globals.font.body};
-  font-size: ${p => p.theme.globals.font.size.input};
+  border: 1px solid ${color("line")};
+  border-radius: ${borderRadius()};
+  padding-left: ${spacing("small")};
+  padding-right: ${spacing("small")};
+  font-family: ${font("body", "type")};
+  font-size: ${font("input")};
   transition: border-color 0.2s ease-out;
   -webkit-appearance: none;
   appearance: none;
@@ -98,29 +121,29 @@ export const inputCss = css`
 
   &::-webkit-input-placeholder {
     /* WebKit browsers */
-    color: ${p => p.theme.globals.color.line};
+    color: ${color("line")};
   }
   &:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
-    color: ${p => p.theme.globals.color.line};
+    color: ${color("line")};
   }
   &::-moz-placeholder {
     /* Mozilla Firefox 19+ */
-    color: ${p => p.theme.globals.color.line};
+    color: ${color("line")};
   }
   &:-ms-input-placeholder {
     /* Internet Explorer 10+ */
-    color: ${p => p.theme.globals.color.line};
+    color: ${color("line")};
   }
   &:-webkit-autofill {
-    background-color: ${p => p.theme.globals.color.bg};
+    background-color: ${color("bg")};
   }
 
   &:hover,
   &:focus,
   &:active {
     outline: none;
-    background-color: ${p => p.theme.globals.color.subtleHover};
+    background-color: ${color("subtleHover")};
   }
 
   &::-webkit-inner-spin-button,
@@ -128,6 +151,7 @@ export const inputCss = css`
     -webkit-appearance: none;
     margin: 0;
   }
+  ${themify(INPUT)};
 `
 
 const InputWithMask = styled(MaskedInput)`

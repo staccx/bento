@@ -98,6 +98,10 @@
   dependencies:
     easing-utils "^0.0.7"
 
+"@staccx/theme@^0.1.0":
+  version "0.1.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/theme/-/@staccx/theme-0.1.0.tgz#d9861b3e63aaa9655a35e59a741b040ce57ac91a"
+
 "@webpack-blocks/assets@^1.0.0-rc":
   version "1.0.0-rc"
   resolved "https://registry.yarnpkg.com/@webpack-blocks/assets/-/assets-1.0.0-rc.tgz#a68da5f8d2e7c03d572bad6fe37b87ea11bc992b"

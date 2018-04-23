@@ -49,7 +49,25 @@ import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
 
+import {
+  INPUT,
+  INPUT_LABEL,
+  INPUT_WRAPPER
+} from "./components/Forms/Input/Input"
+import { LABEL } from "./components/Forms/Label/Label"
+
+const STYLES = {
+  INPUT,
+  INPUT_LABEL,
+  INPUT_WRAPPER,
+  LABEL
+}
+
+import { default as BaseTheme } from "./theme/baseTheme"
+
 export {
+  BaseTheme,
+  STYLES,
   Box,
   Button,
   Caret,
