@@ -3,20 +3,22 @@
  */
 import PropTypes from "prop-types"
 import React from "react"
-import styled from "styled-components"
+import styled, {css} from "styled-components"
 import {
   targetSize,
   spacing,
   borderRadius,
+  fontFamily,
   font,
   color,
   themify
 } from "@staccx/theme"
+
 const tinycolor = require("tinycolor2")
 
 export const BUTTON = "Button"
 export const ButtonStyle = css`
-  background-color: ${color.primary};
+  background-color: ${color.primary()};
   color: ${p =>
     tinycolor
       .mostReadable(color.primary(p), ["#fff"], {
@@ -27,21 +29,21 @@ export const ButtonStyle = css`
       .toString()};
   border-width: 0;
   border-radius: ${borderRadius()};
-  padding: ${spacing("tiny")} ${spacing.medium};
+  padding: ${spacing.tiny()} ${spacing.medium()};
   cursor: pointer;
   min-height: ${targetSize()};
   text-decoration: none;
   text-align: center;
   display: inline-block;
   font-size: ${font("base")};
-  font-family: ${fontFamily.body};
+  font-family: ${fontFamily.body()};
   line-height: 32px;
   font-weight: 600;
   white-space: nowrap;
   justify-content: center;
   align-items: center;
-  margin-right: ${spacing.small};
-  margin-bottom: ${spacing.small};
+  margin-right: ${spacing.small()};
+  margin-bottom: ${spacing.small()};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -49,12 +51,12 @@ export const ButtonStyle = css`
   &:focus {
     outline: none;
     background-color: ${p =>
-      tinycolor(color.primary(p))
+      tinycolor(color.primary()(p))
         .darken(5)
         .toString()};
     color: ${p =>
       tinycolor
-        .mostReadable(tinycolor(color.primary(p)).darken(5), ["#fff"], {
+        .mostReadable(tinycolor(color.primary()(p)).darken(5), ["#fff"], {
           includeFallbackColors: true,
           level: "AA",
           size: "large"

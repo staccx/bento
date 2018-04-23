@@ -111,8 +111,8 @@ export const inputCss = css`
   margin: 0 auto;
   border: 1px solid ${color.line};
   border-radius: ${borderRadius()};
-  padding-left: ${spacing.small};
-  padding-right: ${spacing.small};
+  padding-left: ${spacing.small()};
+  padding-right: ${spacing.small()};
   font-family: ${fontFamily.base};
   font-size: ${font.input};
   transition: border-color 0.2s ease-out;

@@ -1,6 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  fontFamily,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 
 const Radio = styled.input`
   position: absolute;
@@ -14,10 +23,10 @@ const Radio = styled.input`
 
 const Label = styled.label`
   position: relative;
-  padding: 0 0 0 ${spacing.mediumPlus};
+  padding: 0 0 0 ${spacing.mediumPlus()};
   width: auto;
   letter-spacing: normal;
-  font-family: ${fontFamily.body};
+  font-family: ${fontFamily.body()};
   font-size: ${font.input};
   font-weight: normal;
   cursor: pointer;
@@ -28,8 +37,8 @@ const Label = styled.label`
     top: -4px;
     left: 0;
     display: block;
-    width: ${spacing.medium};
-    height: ${spacing.medium};
+    width: ${spacing.medium()};
+    height: ${spacing.medium()};
     border: 1px solid ${color.line};
     border-radius: 50%;
     background: ${color.white};
@@ -53,8 +62,8 @@ const Label = styled.label`
 
 const RadioWrapper = styled.div`
   min-height: ${targetSize.normal};
-  padding-top: ${spacing.small};
-  padding-bottom: ${spacing.small};
+  padding-top: ${spacing.small()};
+  padding-bottom: ${spacing.small()};
 
   &:hover,
   ${Radio}:focus ~ {

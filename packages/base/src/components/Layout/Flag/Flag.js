@@ -1,6 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 
 const Flag = ({
   children,
@@ -33,7 +41,7 @@ const FlagImg = styled.div`
   display: table-cell;
   width: 1px;
   vertical-align: middle;
-  padding-right: ${spacing.medium};
+  padding-right: ${spacing.medium()};
   > img {
     max-width: none;
   }
@@ -58,14 +66,14 @@ const reverse = css`
 
   > ${FlagImg} {
     padding-right: 0;
-    padding-left: ${spacing.medium};
+    padding-left: ${spacing.medium()};
   }
 `
 
 const reverseLarge = css`
   > ${FlagImg} {
     padding-right: 0;
-    padding-left: ${spacing.large};
+    padding-left: ${spacing.large()};
   }
 `
 
@@ -90,7 +98,7 @@ const flush = css`
 
 const large = css`
   > ${FlagImg} {
-    padding-right: ${spacing.large};
+    padding-right: ${spacing.large()};
   }
   ${props => (props.reverse ? reverseLarge : null)};
 `
@@ -105,7 +113,7 @@ const responsive = css`
     }
     > ${FlagImg} {
       width: auto;
-      padding-bottom: ${spacing.medium};
+      padding-bottom: ${spacing.medium()};
     }
 
     ${FlagImg} > img {

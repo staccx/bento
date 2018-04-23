@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import {spacing} from "@staccx/theme"
 
 const PackItem = ({ className, children, ...rest }) => (
   <ListItem className={className} {...rest}>
@@ -10,7 +11,7 @@ const PackItem = ({ className, children, ...rest }) => (
 
 const ListItem = styled.li`
   display: inline-block;
-  padding: ${spacing.small};
+  padding: ${spacing.small()};
 `
 
 PackItem.defaultProps = {

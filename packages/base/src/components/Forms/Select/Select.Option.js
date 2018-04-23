@@ -1,6 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  fontFamily,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 
 const OptionContainer = styled.div`
   display: block;
@@ -8,10 +17,10 @@ const OptionContainer = styled.div`
   min-height: ${targetSize.normal};
   margin: 0 auto;
   border-bottom: 1px solid ${color.line};
-  padding: ${spacing.tiny}
-    ${spacing.small};
+  padding: ${spacing.tiny()}
+    ${spacing.small()};
   text-align: left;
-  font-family: ${fontFamily.body};
+  font-family: ${fontFamily.body()};
   font-size: ${font.input};
   pointer: cursor;
   transition: border-color 0.2s ease-out;

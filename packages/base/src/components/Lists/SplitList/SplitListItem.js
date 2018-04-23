@@ -1,6 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  fontFamily,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 
 const ListItem = styled.li`
   position: relative;
@@ -9,10 +18,10 @@ const ListItem = styled.li`
   align-items: center;
   list-style: none;
   border-bottom: 1px solid ${color.line};
-  padding: ${spacing.tiny}
-    ${spacing.medium};
+  padding: ${spacing.tiny()}
+    ${spacing.medium()};
   font-size: ${font.base};
-  font-family: ${fontFamily.body};
+  font-family: ${fontFamily.body()};
 
   &:last-child {
     border-bottom: none;

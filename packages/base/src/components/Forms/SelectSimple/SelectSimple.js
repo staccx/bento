@@ -3,6 +3,14 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { multiplyPixelValue } from "@staccx/math"
 import Label from "../Label/Label"
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 
 const Caret = ({ className }) => (
   <svg className={className} viewBox="0 0 24 16">
@@ -56,8 +64,8 @@ const SelectWrapper = styled.div`
 
 const SelectIcon = styled(Caret)`
   position: absolute;
-  right: ${spacing.small};
-  bottom: ${p => multiplyPixelValue(p.theme.globals.targetSize.normal, 0.5)};
+  right: ${spacing.small()};
+  bottom: ${p => multiplyPixelValue(targetSize.normal()(p), 0.5)};
   width: 12px;
   fill: ${color.gray};
   transform: translateY(50%);
@@ -68,10 +76,10 @@ const Select = styled.select`
   width: 100%;
   min-height: ${targetSize.normal};
   font-size: ${font.input};
-  padding: 10px ${spacing.medium} 10px
-    ${spacing.small};
+  padding: 10px ${spacing.medium()} 10px
+    ${spacing.small()};
   box-shadow: none;
-  border-radius: ${p => p.theme.globals.borderRadius};
+  border-radius: ${borderRadius};
   line-height: 1.4;
   border: 1px solid ${color.line};
   -webkit-appearance: none;

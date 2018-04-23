@@ -1,13 +1,12 @@
 const path = require("path")
 const { createConfig, babel } = require("webpack-blocks")
 
-const wrapperPath = path.join(__dirname, "src/Theme/ThemeWrapper.js")
-console.log(wrapperPath)
+const Wrapper = path.join(__dirname, "src/Theme/ThemeWrapper.js")
 module.exports = {
   webpackConfig: createConfig([babel()]),
-  skipComponentsWithoutExample: true,
+  skipComponentsWithoutExample: false,
   require: [path.resolve(__dirname, "styleguide.setup.js")],
   styleguideComponents: {
-    Wrapper: wrapperPath
+    Wrapper: Wrapper
   }
 }

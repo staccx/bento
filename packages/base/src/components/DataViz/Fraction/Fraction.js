@@ -77,7 +77,7 @@ const FractionWrapper = styled.div`
   display: flex;
   flex-direction: row;
   > * {
-    margin-right: ${spacing.tiny};
+    margin-right: ${spacing.tiny()};
   }
   ${themify(FRACTION)};
 `

@@ -1,8 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled, { css } from 'styled-components'
+import { spacing, wrapper } from '@staccx/theme'
 
-const Wrapper = ({ children, className, size, breakout, ...otherProps }) => (
+const Wrapper = ({children, className, size, breakout, ...otherProps}) => (
   <Wrap breakout={breakout} className={className} size={size} {...otherProps}>
     {children}
   </Wrap>
@@ -10,15 +11,15 @@ const Wrapper = ({ children, className, size, breakout, ...otherProps }) => (
 
 const Wrap = styled.div`
   width: 100%;
-  max-width: ${p => p.theme.globals.wrapper[p.size]};
+  max-width: ${p => wrapper(p.size)};
   margin: auto;
-  padding-left: ${spacing.medium};
-  padding-right: ${spacing.medium};
+  padding-left: ${spacing.medium()};
+  padding-right: ${spacing.medium()};
 
   ${p =>
-    p.breakout &&
-    css`
-      @media (max-width: ${p => p.theme.globals.wrapper.breakout}) {
+  p.breakout &&
+  css`
+      @media (max-width: ${wrapper.breakout}) {
         padding-left: 0;
         padding-right: 0;
       }
@@ -26,8 +27,8 @@ const Wrap = styled.div`
 `
 
 Wrapper.defaultProps = {
-  className: "",
-  size: "large",
+  className: '',
+  size: 'large',
   breakout: false
 }
 
@@ -39,7 +40,7 @@ Wrapper.propTypes = {
     PropTypes.array
   ]),
   className: PropTypes.string,
-  size: PropTypes.oneOf(["small", "medium", "large"]),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   breakout: PropTypes.bool
 }
 

@@ -1,6 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  fontFamily,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 
 const Toggle = ({
   children,
@@ -32,8 +41,8 @@ const Toggle = ({
 
 const CheckWrapper = styled.label`
   min-height: ${targetSize.normal};
-  padding-top: ${spacing.tiny};
-  padding-bottom: ${spacing.tiny};
+  padding-top: ${spacing.tiny()};
+  padding-bottom: ${spacing.tiny()};
   display: block;
 `
 

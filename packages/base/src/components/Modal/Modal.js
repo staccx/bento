@@ -2,6 +2,11 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import hideVisually from "../../Styles/hideVisually"
+import {
+  spacing,
+  color,
+  wrapper
+} from "@staccx/theme"
 
 const Icon = ({ className }) => (
   <svg
@@ -110,9 +115,9 @@ const ModalItem = styled.dialog`
     ". a a ."
     ". . . .";
   background: transparent;
-  padding: ${spacing.large}
-    ${spacing.small} ${spacing.small}
-    ${spacing.small};
+  padding: ${spacing.large()}
+    ${spacing.small()} ${spacing.small()}
+    ${spacing.small()};
   &:focus {
     outline: none;
   }
@@ -123,8 +128,8 @@ const ModalContent = styled.div`
   grid-area: a;
   align-self: center;
   justify-self: center;
-  padding: ${spacing.medium};
-  max-width: ${p => p.theme.globals.wrapper.medium};
+  padding: ${spacing.medium()};
+  max-width: ${wrapper.medium};
   min-width: 296px;
   width: 100%;
   overflow-y: auto;
@@ -141,7 +146,7 @@ const Close = styled.button`
   background: transparent;
   border-width: 0;
   fill: ${color.white};
-  padding: ${spacing.small};
+  padding: ${spacing.small()};
   cursor: pointer;
   &:focus,
   &:hover {

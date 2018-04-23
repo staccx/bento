@@ -7,6 +7,14 @@ import Label from "../Label/Label"
 import Input from "../Input/Input"
 import Caret from "../../Icons/Caret"
 import Close from "../../Icons/Close"
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 
 const DefaultOptionElementWrapper = styled.div`
   border: 1px solid ${color.line};
@@ -19,12 +27,12 @@ const SelectedWrapper = styled.div`
 
 const IconButton = styled.button`
   position: absolute;
-  right: ${spacing.small};
-  bottom: ${p => multiplyPixelValue(p.theme.globals.targetSize.normal, 0.5)};
+  right: ${spacing.small()};
+  bottom: ${p => multiplyPixelValue(targetSize.normal()(p), 0.5)};
   width: ${targetSize.small};
   height: ${targetSize.small};
   border: 0;
-  padding: 0 ${spacing.tiny};
+  padding: 0 ${spacing.tiny()};
   text-align: center;
   background-color: transparent;
   fill: ${color.gray};

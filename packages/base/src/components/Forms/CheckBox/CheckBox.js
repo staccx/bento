@@ -47,8 +47,8 @@ const CheckBox = ({
 
 const CheckWrapper = styled.div`
     min-height: ${targetSize()};
-    padding-top: ${spacing.small};
-    padding-bottom: ${spacing.small};
+    padding-top: ${spacing.small()};
+    padding-bottom: ${spacing.small()};
     ${themify(CHECKBOX)};
   `
 
@@ -87,13 +87,13 @@ const InputCheck = styled.input`
 
 const Label =
   styled.label`
-    padding: 0 0 0 ${spacing.mediumPlus};
+    padding: 0 0 0 ${spacing.mediumPlus()};
     position: relative;
     font-weight: normal;
     letter-spacing: normal;
     width: auto;
     cursor: pointer;
-    font-family: ${fontFamily.body};
+    font-family: ${fontFamily.body()};
     font-family: ${font.input};
     line-height: 1.6;
     display: inline-block;
@@ -103,11 +103,11 @@ const Label =
       background: ${color.bg};
       border: 1px solid ${color.line};
       display: block;
-      height: ${spacing.medium};
+      height: ${spacing.medium()};
       left: 0;
       position: absolute;
       top: 0;
-      width: ${spacing.medium};
+      width: ${spacing.medium()};
     }
 
     &:hover {

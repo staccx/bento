@@ -6,6 +6,15 @@ import { inverseLerp, clamp } from "@staccx/math"
 import withTheme from "../../../../utils/withTheme"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  fontFamily,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 
 const removeSpaces = value => value.replace(/\s/g, "")
 
@@ -161,7 +170,7 @@ class SliderKeyboardInput extends React.Component {
 
 const SliderWrapper = withTheme(
   styled.div`
-    font-family: ${fontFamily.body};
+    font-family: ${fontFamily.body()};
     font-size: ${font.input};
     ${props => props.variantStyle(props)};
   `,
@@ -188,7 +197,7 @@ const SliderInput = withTheme(
     background-color: transparent;
     border: 0;
     min-height: ${targetSize.normal};
-    margin-bottom: ${spacing.medium};
+    margin-bottom: ${spacing.medium()};
     max-width: 100%;
     -moz-appearance: textfield;
     outline: none;

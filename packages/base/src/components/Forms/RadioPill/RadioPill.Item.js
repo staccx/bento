@@ -2,6 +2,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import hideVisually from "../../../Styles/hideVisually"
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  fontFamily,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 
 const RadioPillItem = ({
   children,
@@ -33,11 +42,11 @@ const borderRadiusRadioPill = "6px"
 
 const Label = styled.label`
   position: relative;
-  padding: ${spacing.tiny}
-    ${spacing.small};
+  padding: ${spacing.tiny()}
+    ${spacing.small()};
   border: 1px solid ${color.line};
   ${"" /* width: auto; */} cursor: pointer;
-  font-family: ${fontFamily.body};
+  font-family: ${fontFamily.body()};
   font-size: ${font.input};
   letter-spacing: normal;
   font-weight: normal;
@@ -66,8 +75,8 @@ const Radio = styled.input`
 const RadioWrapper = styled.div`
   display: inline-block;
   min-height: ${targetSize.normal};
-  padding-top: ${spacing.small};
-  padding-bottom: ${spacing.small};
+  padding-top: ${spacing.small()};
+  padding-bottom: ${spacing.small()};
 
   &:first-child {
     ${Label} {

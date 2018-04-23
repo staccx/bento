@@ -2,6 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import withTheme from "../../../../utils/withTheme"
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 
 const Slider = ({
   disabled,

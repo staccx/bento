@@ -1,7 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  fontFamily,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 const Box = ({ children, className, size, ...otherProps }) => (
   <Boxing className={className} size={size} {...otherProps}>
     {children}
@@ -9,7 +17,7 @@ const Box = ({ children, className, size, ...otherProps }) => (
 )
 
 const Boxing = styled.div`
-  padding: ${spacing[p.size]};
+  padding: ${p => spacing(p.size)};
 `
 
 Box.defaultProps = {

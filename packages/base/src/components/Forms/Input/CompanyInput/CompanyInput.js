@@ -179,15 +179,15 @@ export const SELECT_LOAD = "select_load"
 const SelectLoad = styled.div`
   background-color: ${color.white};
   animation: 0.8s ${Load} ease-in-out infinite alternate;
-  height: ${spacing.tiny};
+  height: ${spacing.tiny()};
   width: 100%;
   position: absolute;
   cursor: pointer;
   top: 0;
   left: 0;
   z-index: 10;
-  box-shadow: 0px ${spacing.small}
-    ${spacing.medium} rgba(0, 0, 0, 0.06);
+  box-shadow: 0px ${spacing.small()}
+    ${spacing.medium()} rgba(0, 0, 0, 0.06);
 `
 
 const Close = styled.button`
@@ -202,14 +202,14 @@ const Close = styled.button`
     color: ${color.text};
   }
   svg {
-    width: ${spacing.medium};
+    width: ${spacing.medium()};
   }
 `
 
 const ModifiedFlag = styled(Flag)`
-  padding: ${spacing.tiny}
-    ${spacing.tiny} ${spacing.tiny}
-    ${spacing.medium};
+  padding: ${spacing.tiny()}
+    ${spacing.tiny()} ${spacing.tiny()}
+    ${spacing.medium()};
   position: relative;
 `
 
@@ -230,14 +230,14 @@ const SelectList = styled.ul`
   z-index: 10;
   width: 100%;
   background: ${color.white};
-  box-shadow: 0px ${spacing.small}
-    ${spacing.medium} rgba(0, 0, 0, 0.06);
+  box-shadow: 0px ${spacing.small()}
+    ${spacing.medium()} rgba(0, 0, 0, 0.06);
 `
 
 const SelectItem = styled.li`
   list-style: none;
-  padding: ${spacing.small}
-    ${spacing.medium};
+  padding: ${spacing.small()}
+    ${spacing.medium()};
   background-color: ${p =>
     p.isSelected ? color.primary : "transparent"};
   color: ${p =>
