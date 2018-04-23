@@ -13,7 +13,8 @@ import {
   spacing,
   borderRadius,
   font,
-  targetSize
+  targetSize,
+  fontFamily
 } from "@staccx/theme"
 
 export const INPUT = "INPUT"
@@ -106,14 +107,14 @@ export const InputWrapper = styled.div`
 export const inputCss = css`
   display: block;
   width: 100%;
-  min-height: ${targetSize()};
+  min-height: ${targetSize.normal};
   margin: 0 auto;
-  border: 1px solid ${color("line")};
+  border: 1px solid ${color.line};
   border-radius: ${borderRadius()};
-  padding-left: ${spacing("small")};
-  padding-right: ${spacing("small")};
-  font-family: ${font("body", "type")};
-  font-size: ${font("input")};
+  padding-left: ${spacing.small};
+  padding-right: ${spacing.small};
+  font-family: ${fontFamily.base};
+  font-size: ${font.input};
   transition: border-color 0.2s ease-out;
   -webkit-appearance: none;
   appearance: none;
@@ -121,22 +122,22 @@ export const inputCss = css`
 
   &::-webkit-input-placeholder {
     /* WebKit browsers */
-    color: ${color("line")};
+    color: ${color.line};
   }
   &:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
-    color: ${color("line")};
+    color: ${color.line};
   }
   &::-moz-placeholder {
     /* Mozilla Firefox 19+ */
-    color: ${color("line")};
+    color: ${color.line};
   }
   &:-ms-input-placeholder {
     /* Internet Explorer 10+ */
-    color: ${color("line")};
+    color: ${color.line};
   }
   &:-webkit-autofill {
-    background-color: ${color("bg")};
+    background-color: ${color.bg};
   }
 
   &:hover,

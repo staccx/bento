@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import FallbackCheck from "../../Icons/Check"
-import {themify, color, font, borderRadius, spacing, targetSize} from "@staccx/theme"
+import {themify, color, font, spacing, targetSize, fontFamily} from "@staccx/theme"
 
 export const CHECKBOX = "checkbox"
 export const CHECKBOX_CHECKED_ICON = "checkbox_checked_icon"
@@ -47,8 +47,8 @@ const CheckBox = ({
 
 const CheckWrapper = styled.div`
     min-height: ${targetSize()};
-    padding-top: ${spacing("small")};
-    padding-bottom: ${spacing("small")};
+    padding-top: ${spacing.small};
+    padding-bottom: ${spacing.small};
     ${themify(CHECKBOX)};
   `
 
@@ -61,7 +61,7 @@ export const Icon = styled(p => (p && p.checkIcon) ? p.checkIcon : FallbackCheck
     width: 20px;
     transform: scale(0);
     transition: all 0.2s ease-in-out;
-    color: ${color("primary")};
+    color: ${color.primary};
     ${themify(CHECKBOX_CHECKED_ICON)};
   `
 
@@ -78,7 +78,7 @@ const InputCheck = styled.input`
 
     &:focus ~ label {
       &::before {
-        border-color: ${color("primary")};
+        border-color: ${color.primary};
       }
     }
 
@@ -87,32 +87,32 @@ const InputCheck = styled.input`
 
 const Label =
   styled.label`
-    padding: 0 0 0 ${spacing("mediumPlus")};
+    padding: 0 0 0 ${spacing.mediumPlus};
     position: relative;
     font-weight: normal;
     letter-spacing: normal;
     width: auto;
     cursor: pointer;
-    font-family: ${font("body", "type")};
-    font-family: ${font("input")};
+    font-family: ${fontFamily.body};
+    font-family: ${font.input};
     line-height: 1.6;
     display: inline-block;
 
     &::before {
       content: "";
-      background: ${color("bg")};
-      border: 1px solid ${color("line")};
+      background: ${color.bg};
+      border: 1px solid ${color.line};
       display: block;
-      height: ${spacing("medium")};
+      height: ${spacing.medium};
       left: 0;
       position: absolute;
       top: 0;
-      width: ${spacing("medium")};
+      width: ${spacing.medium};
     }
 
     &:hover {
       &::before {
-        border-color: ${color("primary")};
+        border-color: ${color.primary};
       }
     }
     ${themify(CHECKBOX_LABEL)};

@@ -143,7 +143,7 @@ const SliderInput = styled.div`
     ${SliderTrackStyle}
     background: linear-gradient(90deg,
       ${color.primary} 0%, ${p =>
-  p.theme.globals.color.primary}
+  color.primary}
       ${p => p.percentage}%, ${color.line}
       ${p => p.percentage + 0.0}%,
       ${color.line} 100%) 0 100% no-repeat content-box;

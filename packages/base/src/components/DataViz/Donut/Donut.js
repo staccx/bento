@@ -1,7 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { color, themify } from "@staccx/theme"
+import {
+  color,
+  themify
+} from "@staccx/theme"
 
 const Donut = ({ percentage, className, ...rest }) => {
   const dash = 57
@@ -40,14 +43,14 @@ const Wrapper = styled.svg`
 export const DONUT_BG = "donut_bg"
 
 const Bg = styled.circle`
-  stroke: ${color("line")};
+  stroke: ${color.line};
   ${themify(DONUT_BG)};
 `
 
 export const DONUT_VALUE = "donut_value"
 
 const Value = styled.circle`
-  stroke: ${color("primary")};
+  stroke: ${color.primary};
   stroke-dasharray: ${p => p.dash};
   stroke-dashoffset: ${p => p.dashoffset};
   ${themify(DONUT_VALUE)};

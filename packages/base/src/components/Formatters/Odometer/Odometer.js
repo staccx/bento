@@ -89,21 +89,18 @@ class Odometer extends React.PureComponent {
 export const ODOMETER_ANIMATING = "odometer_animating"
 const OdometerAnimating = styled.div`
   ${p => (!p.isAnimating ? hideVisually : "display: flex;")};
-  ${props => props.variantStyle(props)};
   ${themify(ODOMETER_ANIMATING)};
 `
 
 export const ODOMETER_STATIC = "odometer_static"
 const OdometerStatic = styled.div`
   ${p => (p.isAnimating ? hideVisually : "display: flex;")};
-  ${props => props.variantStyle(props)};
   ${themify(ODOMETER_STATIC)};
 `
 
 export const ODOMETER_CONTAINER = "odometer_container"
 const OdometerContainer = styled.div`
   position: relative;
-  ${props => props.variantStyle(props)};
   ${themify(ODOMETER_CONTAINER)};
 `
 

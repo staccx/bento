@@ -239,14 +239,14 @@ const SelectItem = styled.li`
   padding: ${spacing.small}
     ${spacing.medium};
   background-color: ${p =>
-    p.isSelected ? p.theme.globals.color.primary : "transparent"};
+    p.isSelected ? color.primary : "transparent"};
   color: ${p =>
-    p.isSelected ? p.theme.globals.color.white : p.theme.globals.color.black};
+    p.isSelected ? color.white : color.black};
   border-bottom: 1px solid ${color.line};
 
   ${OrgNo} {
     color: ${p =>
-      p.isSelected ? p.theme.globals.color.white : p.theme.globals.color.wcag};
+      p.isSelected ? color.white : color.wcag};
   }
 
   &:first-child {

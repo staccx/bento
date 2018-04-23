@@ -2,7 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { ScaleInX } from "@staccx/animations"
-import { color, themify } from "@staccx/theme"
+import {
+  spacing,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
 
 const ProgressBar = ({ progress, className, ...otherProps }) => (
   <Bg className={className} {...otherProps}>
@@ -15,13 +20,13 @@ const ProgressBar = ({ progress, className, ...otherProps }) => (
 export const PROGRESS_BAR = "progress_bar"
 
 const Bg = styled.div`
-  background: ${p => p.theme.globals.color.subtleHover};
+  background: ${color.subtleHover};
   display: block;
-  height: ${p => p.theme.globals.spacing.medium};
-  border-radius: ${p => p.theme.globals.spacing.small};
+  height: ${spacing.medium};
+  border-radius: ${spacing.small};
   position: relative;
   overflow: hidden;
-  border: 3px solid ${p => p.theme.globals.color.subtleHover};
+  border: 3px solid ${color.subtleHover};
   -webkit-mask-image: -webkit-radial-gradient(
     white,
     black
@@ -35,13 +40,13 @@ const Bar = styled.div`
   position: absolute;
   background-color: ${p =>
     p.width >= 90
-      ? p.theme.globals.color.warning
-      : p.theme.globals.color.primary};
+      ? color.warning
+      : color.primary};
   left: 0;
   height: 100%;
   width: ${p => (p.width > 100 ? "100" : p.width)}%;
-  border-radius: 0 ${p => p.theme.globals.spacing.small}
-    ${p => p.theme.globals.spacing.small} 0;
+  border-radius: 0 ${spacing.small}
+    ${spacing.small} 0;
   transform: scaleX(0);
   animation: ${ScaleInX} 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 1
     forwards;
@@ -52,10 +57,10 @@ const Bar = styled.div`
 export const PROGRESS_BAR_PROGRESS = "progress_bar_progress"
 const Progress = styled.span`
   position: absolute;
-  right: ${p => p.theme.globals.spacing.small};
+  right: ${spacing.small};
   line-height: 18px;
-  font-size: ${p => p.theme.globals.font.size.tiny};
-  color: ${p => p.theme.globals.color.white};
+  font-size: ${font.tiny};
+  color: ${color.white};
   ${themify(PROGRESS_BAR_PROGRESS)};
 `
 

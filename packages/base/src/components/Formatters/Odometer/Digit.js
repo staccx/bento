@@ -1,8 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import withTheme from "../../../utils/withTheme"
-import { color, themify } from "@staccx/theme"
+import {
+  themify
+} from "@staccx/theme"
 
 const Digit = ({ isAnimating, digit, speed, size, single, themeVariant }) => (
   <DigitWrapper
