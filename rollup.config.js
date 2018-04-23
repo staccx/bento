@@ -17,7 +17,7 @@ export default {
       format: "es"
     }
   ],
-  external: ["styled-components"],
+  external: ["react", "styled-components"],
   plugins: [
     json(),
     babel({

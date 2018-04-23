@@ -2,8 +2,7 @@ import getProp from "./getProp";
 
 const targetSize = (size = "normal") => getProp("targetSize", size);
 
-targetSize.small = () => targetSize("small")
-targetSize.normal = () => targetSize()
+targetSize.small = () => targetSize("small");
+targetSize.normal = () => targetSize();
 
-export default targetSize
-
+export default targetSize;

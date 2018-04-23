@@ -8,15 +8,21 @@ import { default as spacing } from './src/spacing'
 import { default as ThemeManager } from './src/ThemeManager'
 import { default as themify } from './src/themify'
 import { default as targetSize } from './src/targetSize'
+import { default as fontFamily } from './src/fontFamily'
+import { default as wrapper } from './src/wrapper'
+import { default as ThemeComponent } from './src/ThemeComponent'
 
 export {
   VARIANT_DEFAULT,
   borderRadius,
   color,
   font,
+  fontFamily,
   registerStyle,
   spacing,
   targetSize,
+  ThemeComponent,
   ThemeManager,
-  themify
+  themify,
+  wrapper
 }
