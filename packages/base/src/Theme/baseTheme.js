@@ -40,6 +40,10 @@ const theme = {
     black: "#000",
     green: "#00a190" // for toggle eks
   },
+  fontFamily: {
+    heading: "sans-serif",
+    body: "sans-serif"
+  },
   font: {
     size: {
       h1: "36px",
@@ -52,13 +56,7 @@ const theme = {
       tiny: "12px",
       input: "16px",
       huge: "44px"
-    },
-    type: {
-      heading: "sans-serif",
-      body: "sans-serif"
-    },
-    heading: "sans-serif",
-    body: "sans-serif"
+    }
   },
   targetSize: {
     small: "36px",

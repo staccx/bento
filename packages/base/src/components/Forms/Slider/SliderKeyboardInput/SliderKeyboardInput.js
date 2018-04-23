@@ -161,8 +161,8 @@ class SliderKeyboardInput extends React.Component {
 
 const SliderWrapper = withTheme(
   styled.div`
-    font-family: ${p => p.theme.globals.font.body};
-    font-size: ${p => p.theme.globals.font.size.input};
+    font-family: ${fontFamily.body};
+    font-size: ${font.input};
     ${props => props.variantStyle(props)};
   `,
   "SliderKeyboardInput.SliderWrapper"
@@ -187,8 +187,8 @@ const SliderInput = withTheme(
   styled(Input)`
     background-color: transparent;
     border: 0;
-    min-height: ${p => p.theme.globals.targetSize.normal};
-    margin-bottom: ${p => p.theme.globals.spacing.medium};
+    min-height: ${targetSize.normal};
+    margin-bottom: ${spacing.medium};
     max-width: 100%;
     -moz-appearance: textfield;
     outline: none;
@@ -209,7 +209,7 @@ const SliderInput = withTheme(
     }
 
     &:disabled {
-      color: ${p => p.theme.globals.color.text};
+      color: ${color.text};
     }
     ${props => props.variantStyle(props)};
   `,

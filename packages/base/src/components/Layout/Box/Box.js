@@ -9,7 +9,7 @@ const Box = ({ children, className, size, ...otherProps }) => (
 )
 
 const Boxing = styled.div`
-  padding: ${p => p.theme.globals.spacing[p.size]};
+  padding: ${spacing[p.size]};
 `
 
 Box.defaultProps = {

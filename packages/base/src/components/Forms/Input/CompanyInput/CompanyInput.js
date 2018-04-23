@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
+import {themify, spacing, targetSize, borderRadius, font, color} from "@staccx/theme"
 import Input, { InputDefaultProps, InputPropTypes } from "../Input"
 import Downshift from "downshift"
 import Flag from "../../../Layout/Flag/Flag"
@@ -173,46 +174,48 @@ const Load = keyframes`
   }
 `
 
+export const SELECT_LOAD = "select_load"
+
 const SelectLoad = styled.div`
-  background-color: ${p => p.theme.globals.color.white};
+  background-color: ${color.white};
   animation: 0.8s ${Load} ease-in-out infinite alternate;
-  height: ${p => p.theme.globals.spacing.tiny};
+  height: ${spacing.tiny};
   width: 100%;
   position: absolute;
   cursor: pointer;
   top: 0;
   left: 0;
   z-index: 10;
-  box-shadow: 0px ${p => p.theme.globals.spacing.small}
-    ${p => p.theme.globals.spacing.medium} rgba(0, 0, 0, 0.06);
+  box-shadow: 0px ${spacing.small}
+    ${spacing.medium} rgba(0, 0, 0, 0.06);
 `
 
 const Close = styled.button`
   border-width: 0;
   background-color: transparent;
-  color: ${p => p.theme.globals.color.primary};
+  color: ${color.primary};
   cursor: pointer;
   &:hover,
   &:focus,
   &:active {
     outline: none;
-    color: ${p => p.theme.globals.color.text};
+    color: ${color.text};
   }
   svg {
-    width: ${p => p.theme.globals.spacing.medium};
+    width: ${spacing.medium};
   }
 `
 
 const ModifiedFlag = styled(Flag)`
-  padding: ${p => p.theme.globals.spacing.tiny}
-    ${p => p.theme.globals.spacing.tiny} ${p => p.theme.globals.spacing.tiny}
-    ${p => p.theme.globals.spacing.medium};
+  padding: ${spacing.tiny}
+    ${spacing.tiny} ${spacing.tiny}
+    ${spacing.medium};
   position: relative;
 `
 
 const OrgNo = styled.div`
-  font-size: ${p => p.theme.globals.font.size.tiny};
-  color: ${p => p.theme.globals.color.wcag};
+  font-size: ${font.tiny};
+  color: ${color.wcag};
 `
 
 const SelectWrapper = styled.div`
@@ -226,20 +229,20 @@ const SelectList = styled.ul`
   left: 0;
   z-index: 10;
   width: 100%;
-  background: ${p => p.theme.globals.color.white};
-  box-shadow: 0px ${p => p.theme.globals.spacing.small}
-    ${p => p.theme.globals.spacing.medium} rgba(0, 0, 0, 0.06);
+  background: ${color.white};
+  box-shadow: 0px ${spacing.small}
+    ${spacing.medium} rgba(0, 0, 0, 0.06);
 `
 
 const SelectItem = styled.li`
   list-style: none;
-  padding: ${p => p.theme.globals.spacing.small}
-    ${p => p.theme.globals.spacing.medium};
+  padding: ${spacing.small}
+    ${spacing.medium};
   background-color: ${p =>
     p.isSelected ? p.theme.globals.color.primary : "transparent"};
   color: ${p =>
     p.isSelected ? p.theme.globals.color.white : p.theme.globals.color.black};
-  border-bottom: 1px solid ${p => p.theme.globals.color.line};
+  border-bottom: 1px solid ${color.line};
 
   ${OrgNo} {
     color: ${p =>
@@ -247,7 +250,7 @@ const SelectItem = styled.li`
   }
 
   &:first-child {
-    border-top: 1px solid ${p => p.theme.globals.color.line};
+    border-top: 1px solid ${color.line};
   }
 `
 

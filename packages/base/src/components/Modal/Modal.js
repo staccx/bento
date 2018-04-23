@@ -110,9 +110,9 @@ const ModalItem = styled.dialog`
     ". a a ."
     ". . . .";
   background: transparent;
-  padding: ${p => p.theme.globals.spacing.large}
-    ${p => p.theme.globals.spacing.small} ${p => p.theme.globals.spacing.small}
-    ${p => p.theme.globals.spacing.small};
+  padding: ${spacing.large}
+    ${spacing.small} ${spacing.small}
+    ${spacing.small};
   &:focus {
     outline: none;
   }
@@ -123,7 +123,7 @@ const ModalContent = styled.div`
   grid-area: a;
   align-self: center;
   justify-self: center;
-  padding: ${p => p.theme.globals.spacing.medium};
+  padding: ${spacing.medium};
   max-width: ${p => p.theme.globals.wrapper.medium};
   min-width: 296px;
   width: 100%;
@@ -140,13 +140,13 @@ const Close = styled.button`
   z-index: 9999;
   background: transparent;
   border-width: 0;
-  fill: ${p => p.theme.globals.color.white};
-  padding: ${p => p.theme.globals.spacing.small};
+  fill: ${color.white};
+  padding: ${spacing.small};
   cursor: pointer;
   &:focus,
   &:hover {
     outline: none;
-    fill: ${p => p.theme.globals.color.primary};
+    fill: ${color.primary};
   }
   span {
     ${hideVisually};

@@ -12,8 +12,8 @@ const Wrap = styled.div`
   width: 100%;
   max-width: ${p => p.theme.globals.wrapper[p.size]};
   margin: auto;
-  padding-left: ${p => p.theme.globals.spacing.medium};
-  padding-right: ${p => p.theme.globals.spacing.medium};
+  padding-left: ${spacing.medium};
+  padding-right: ${spacing.medium};
 
   ${p =>
     p.breakout &&

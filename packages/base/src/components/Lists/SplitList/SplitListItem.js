@@ -8,11 +8,11 @@ const ListItem = styled.li`
   justify-content: space-between;
   align-items: center;
   list-style: none;
-  border-bottom: 1px solid ${p => p.theme.globals.color.line};
-  padding: ${p => p.theme.globals.spacing.tiny}
-    ${p => p.theme.globals.spacing.medium};
-  font-size: ${p => p.theme.globals.font.size.base};
-  font-family: ${p => p.theme.globals.font.body};
+  border-bottom: 1px solid ${color.line};
+  padding: ${spacing.tiny}
+    ${spacing.medium};
+  font-size: ${font.base};
+  font-family: ${fontFamily.body};
 
   &:last-child {
     border-bottom: none;

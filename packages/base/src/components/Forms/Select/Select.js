@@ -9,7 +9,7 @@ import Caret from "../../Icons/Caret"
 import Close from "../../Icons/Close"
 
 const DefaultOptionElementWrapper = styled.div`
-  border: 1px solid ${p => p.theme.globals.color.line};
+  border: 1px solid ${color.line};
   border-top-width: 0;
 `
 
@@ -19,15 +19,15 @@ const SelectedWrapper = styled.div`
 
 const IconButton = styled.button`
   position: absolute;
-  right: ${p => p.theme.globals.spacing.small};
+  right: ${spacing.small};
   bottom: ${p => multiplyPixelValue(p.theme.globals.targetSize.normal, 0.5)};
-  width: ${p => p.theme.globals.targetSize.small};
-  height: ${p => p.theme.globals.targetSize.small};
+  width: ${targetSize.small};
+  height: ${targetSize.small};
   border: 0;
-  padding: 0 ${p => p.theme.globals.spacing.tiny};
+  padding: 0 ${spacing.tiny};
   text-align: center;
   background-color: transparent;
-  fill: ${p => p.theme.globals.color.gray};
+  fill: ${color.gray};
   transform: translateY(50%);
   transition: fill 0.2s ease;
 
@@ -37,7 +37,7 @@ const IconButton = styled.button`
     outline: none;
 
     svg {
-      fill: ${p => p.theme.globals.color.primary};
+      fill: ${color.primary};
     }
   }
 `

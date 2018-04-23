@@ -1,8 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Check from "../../Icons/Check"
-import withTheme from "../../../utils/withTheme"
+import FallbackCheck from "../../Icons/Check"
+import {themify, color, font, borderRadius, spacing, targetSize} from "@staccx/theme"
+
+export const CHECKBOX = "checkbox"
+export const CHECKBOX_CHECKED_ICON = "checkbox_checked_icon"
+export const CHECKBOX_LABEL = "checkbox_label"
+export const CHECKBOX_INPUT = "checkbox_input"
 
 const CheckBox = ({
   children,
@@ -17,7 +22,6 @@ const CheckBox = ({
   themeVariant,
   ...otherProps
 }) => {
-  const Icon = checkIcon || IconCheck
   return (
     <CheckWrapper themeVariant={themeVariant} ignoreBase={ignoreBase}>
       <InputCheck
@@ -34,25 +38,21 @@ const CheckBox = ({
       />
 
       <Label htmlFor={id} themeVariant={themeVariant} ignoreBase={ignoreBase}>
-        <Icon themeVariant={themeVariant} ignoreBase={ignoreBase} />
+       <Icon checkIcon={checkIcon} themeVariant={themeVariant} ignoreBase={ignoreBase} />
         {children}
       </Label>
     </CheckWrapper>
   )
 }
 
-const CheckWrapper = withTheme(
-  styled.div`
-    min-height: ${p => p.theme.globals.targetSize.normal};
-    padding-top: ${p => p.theme.globals.spacing.small};
-    padding-bottom: ${p => p.theme.globals.spacing.small};
-    ${props => props.variantStyle(props)};
-  `,
-  "Checkbox.CheckWrapper"
-)
+const CheckWrapper = styled.div`
+    min-height: ${targetSize()};
+    padding-top: ${spacing("small")};
+    padding-bottom: ${spacing("small")};
+    ${themify(CHECKBOX)};
+  `
 
-export const IconCheck = withTheme(
-  styled(Check)`
+export const Icon = styled(p => (p && p.checkIcon) ? p.checkIcon : FallbackCheck)`
     position: absolute;
     left: 2px;
     top: 2px;
@@ -61,14 +61,11 @@ export const IconCheck = withTheme(
     width: 20px;
     transform: scale(0);
     transition: all 0.2s ease-in-out;
-    color: ${p => p.theme.globals.color.primary};
-    ${props => props.variantStyle(props)};
-  `,
-  "Checkbox.IconCheck"
-)
+    color: ${color("primary")};
+    ${themify(CHECKBOX_CHECKED_ICON)};
+  `
 
-const InputCheck = withTheme(
-  styled.input`
+const InputCheck = styled.input`
     position: absolute;
     clip: rect(0, 0, 0, 0);
     clip: rect(0 0 0 0);
@@ -81,49 +78,45 @@ const InputCheck = withTheme(
 
     &:focus ~ label {
       &::before {
-        border-color: ${p => p.theme.globals.color.primary};
+        border-color: ${color("primary")};
       }
     }
 
-    ${props => props.variantStyle(props)};
-  `,
-  "Checkbox.InputCheck"
-)
+    ${themify(CHECKBOX_INPUT)};
+  `
 
-const Label = withTheme(
+const Label =
   styled.label`
-    padding: 0 0 0 ${p => p.theme.globals.spacing.mediumPlus};
+    padding: 0 0 0 ${spacing("mediumPlus")};
     position: relative;
     font-weight: normal;
     letter-spacing: normal;
     width: auto;
     cursor: pointer;
-    font-family: ${p => p.theme.globals.font.body};
-    font-family: ${p => p.theme.globals.font.size.input};
+    font-family: ${font("body", "type")};
+    font-family: ${font("input")};
     line-height: 1.6;
     display: inline-block;
 
     &::before {
       content: "";
-      background: ${p => p.theme.globals.color.bg};
-      border: 1px solid ${p => p.theme.globals.color.line};
+      background: ${color("bg")};
+      border: 1px solid ${color("line")};
       display: block;
-      height: ${p => p.theme.globals.spacing.medium};
+      height: ${spacing("medium")};
       left: 0;
       position: absolute;
       top: 0;
-      width: ${p => p.theme.globals.spacing.medium};
+      width: ${spacing("medium")};
     }
 
     &:hover {
       &::before {
-        border-color: ${p => p.theme.globals.color.primary};
+        border-color: ${color("primary")};
       }
     }
-    ${props => props.variantStyle(props)};
-  `,
-  "Checkbox.Label"
-)
+    ${themify(CHECKBOX_LABEL)};
+  `
 
 CheckBox.propTypes = {
   children: PropTypes.oneOfType([

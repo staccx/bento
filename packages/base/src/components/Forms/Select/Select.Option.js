@@ -5,14 +5,14 @@ import styled from "styled-components"
 const OptionContainer = styled.div`
   display: block;
   width: 100%;
-  min-height: ${p => p.theme.globals.targetSize.normal};
+  min-height: ${targetSize.normal};
   margin: 0 auto;
-  border-bottom: 1px solid ${p => p.theme.globals.color.line};
-  padding: ${p => p.theme.globals.spacing.tiny}
-    ${p => p.theme.globals.spacing.small};
+  border-bottom: 1px solid ${color.line};
+  padding: ${spacing.tiny}
+    ${spacing.small};
   text-align: left;
-  font-family: ${p => p.theme.globals.font.body};
-  font-size: ${p => p.theme.globals.font.size.input};
+  font-family: ${fontFamily.body};
+  font-size: ${font.input};
   pointer: cursor;
   transition: border-color 0.2s ease-out;
 
@@ -20,7 +20,7 @@ const OptionContainer = styled.div`
   &:focus,
   &:active {
     outline: none;
-    background-color: ${p => p.theme.globals.color.subtleHover};
+    background-color: ${color.subtleHover};
   }
 
   &:last-child {

@@ -31,14 +31,14 @@ const Toggle = ({
 }
 
 const CheckWrapper = styled.label`
-  min-height: ${p => p.theme.globals.targetSize.normal};
-  padding-top: ${p => p.theme.globals.spacing.tiny};
-  padding-bottom: ${p => p.theme.globals.spacing.tiny};
+  min-height: ${targetSize.normal};
+  padding-top: ${spacing.tiny};
+  padding-bottom: ${spacing.tiny};
   display: block;
 `
 
 const ToggleElement = styled.div`
-  background: ${p => p.theme.globals.color.line};
+  background: ${color.line};
   border-radius: 2em;
   padding: 2px;
   transition: all 0.4s ease;
@@ -49,7 +49,7 @@ const ToggleElement = styled.div`
   }
   &:after {
     border-radius: 50%;
-    background: ${p => p.theme.globals.color.white};
+    background: ${color.white};
     transition: all 0.2s ease;
   }
 `
@@ -99,7 +99,7 @@ const Check = styled.input`
   }
 
   &:checked + ${ToggleElement} {
-    background: ${p => p.theme.globals.color.green};
+    background: ${color.green};
     &:after {
       transform: translateX(100%);
     }

@@ -32,13 +32,13 @@ LinkListItem.propTypes = {
 }
 
 const Cursor = styled(Caret)`
-  fill: ${p => p.theme.globals.color.line};
-  margin-left: ${p => p.theme.globals.spacing.small};
+  fill: ${color.line};
+  margin-left: ${spacing.small};
 `
 
 const ListItem = styled.li`
   list-style: none;
-  border-bottom: 1px solid ${p => p.theme.globals.color.line};
+  border-bottom: 1px solid ${color.line};
   position: relative;
   &:last-child {
     border-bottom: none;
@@ -48,10 +48,10 @@ const ListItem = styled.li`
 const ButtonStyle = css`
   text-decoration: none;
   color: black;
-  font-size: ${p => p.theme.globals.font.size.base};
-  font-family: ${p => p.theme.globals.font.body};
-  padding: ${p => p.theme.globals.spacing.small}
-    ${p => p.theme.globals.spacing.medium};
+  font-size: ${font.base};
+  font-family: ${fontFamily.body};
+  padding: ${spacing.small}
+    ${spacing.medium};
   display: block;
   font-weight: normal;
   display: flex;
@@ -67,7 +67,7 @@ const Button = styled.a`
   &:hover,
   &:focus {
     ${Cursor} {
-      fill: ${p => p.theme.globals.color.primary};
+      fill: ${color.primary};
     }
   }
 `

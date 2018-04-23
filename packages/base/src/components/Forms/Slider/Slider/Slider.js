@@ -46,21 +46,21 @@ const Slider = ({
 
 const SliderThumbStyle = css`
   -webkit-appearance: none;
-  border: 2px solid ${p => p.theme.globals.color.line};
+  border: 2px solid ${color.line};
   height: 20px;
   width: 20px;
   transform: translateY(-2px);
   border-radius: 50%;
-  background-color: ${p => p.theme.globals.color.white};
+  background-color: ${color.white};
   cursor: pointer;
   &:hover {
-    background-color: ${p => p.theme.globals.color.bg};
-    border-color: ${p => p.theme.globals.color.disabled};
+    background-color: ${color.bg};
+    border-color: ${color.disabled};
   }
   &:active,
   &:focus {
-    border-color: ${p => p.theme.globals.color.white};
-    background-color: ${p => p.theme.globals.color.secondary};
+    border-color: ${color.white};
+    background-color: ${color.secondary};
   }
 `
 
@@ -78,7 +78,7 @@ const SliderTrackStyle = css`
   cursor: pointer;
   border-radius: 4.5px;
   color: transparent;
-  background-color: ${p => p.theme.globals.color.line};
+  background-color: ${color.line};
 `
 
 const SliderInput = styled.div`
@@ -142,11 +142,11 @@ const SliderInput = styled.div`
   input[type=range]::-webkit-slider-runnable-track {
     ${SliderTrackStyle}
     background: linear-gradient(90deg,
-      ${p => p.theme.globals.color.primary} 0%, ${p =>
+      ${color.primary} 0%, ${p =>
   p.theme.globals.color.primary}
-      ${p => p.percentage}%, ${p => p.theme.globals.color.line}
+      ${p => p.percentage}%, ${color.line}
       ${p => p.percentage + 0.0}%,
-      ${p => p.theme.globals.color.line} 100%) 0 100% no-repeat content-box;
+      ${color.line} 100%) 0 100% no-repeat content-box;
   }
 
 
@@ -159,7 +159,7 @@ const SliderInput = styled.div`
   }
 
   input[type=range]::-moz-range-progress {
-    background-color: ${p => p.theme.globals.color.primary};
+    background-color: ${color.primary};
     height: 9px;
     border-radius: 4.5px;
   }
@@ -170,19 +170,19 @@ const SliderInput = styled.div`
   }
 
   input[type=range]::-ms-fill-lower {
-    background-color: ${p => p.theme.globals.color.primary};
+    background-color: ${color.primary};
   }
 
   input[type=range]:focus::-ms-fill-lower {
-    background-color: ${p => p.theme.globals.color.white};
+    background-color: ${color.white};
   }
 
   input[type=range]::-ms-fill-upper {
-    background-color: ${p => p.theme.globals.color.white};
+    background-color: ${color.white};
   }
 
   input[type=range]:focus::-ms-fill-upper {
-    background-color: ${p => p.theme.globals.color.white};
+    background-color: ${color.white};
   }
   ${props => props.variantStyle(props)};
 `

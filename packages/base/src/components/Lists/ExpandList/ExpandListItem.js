@@ -65,7 +65,7 @@ class ExpandListItem extends Component {
 }
 
 const ExpandItem = styled.li`
-  border-bottom: 1px solid ${p => p.theme.globals.color.line};
+  border-bottom: 1px solid ${color.line};
   position: relative;
 
   &:last-child {
@@ -76,8 +76,8 @@ const ExpandItem = styled.li`
 const ExpandIcon = styled(Caret)`
   position: absolute;
   top: 16px;
-  right: ${p => p.theme.globals.spacing.small};
-  fill: ${p => p.theme.globals.color.line};
+  right: ${spacing.small};
+  fill: ${color.line};
   transition: transform 0.3s ease-out;
   transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
 `
@@ -85,23 +85,23 @@ const ExpandIcon = styled(Caret)`
 const ExpandBtn = styled.button`
   background: transparent;
   border-width: 0;
-  color: ${p => p.theme.globals.color.text};
-  font-size: ${p => p.theme.globals.font.size.base};
+  color: ${color.text};
+  font-size: ${font.base};
   font-weight: ${p => (p.isExpanded ? "bold" : "normal")};
   cursor: pointer;
-  padding: ${p => p.theme.globals.spacing.small}
-    ${p => p.theme.globals.spacing.large} ${p => p.theme.globals.spacing.small}
-    ${p => p.theme.globals.spacing.medium};
+  padding: ${spacing.small}
+    ${spacing.large} ${spacing.small}
+    ${spacing.medium};
   width: 100%;
   text-align: left;
 
   &:hover,
   &:focus {
-    color: ${p => p.theme.globals.color.black};
+    color: ${color.black};
     outline: none;
 
     ${ExpandIcon} {
-      fill: ${p => p.theme.globals.color.primary};
+      fill: ${color.primary};
     }
   }
 `

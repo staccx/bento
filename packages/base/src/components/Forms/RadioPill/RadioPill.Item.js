@@ -33,12 +33,12 @@ const borderRadiusRadioPill = "6px"
 
 const Label = styled.label`
   position: relative;
-  padding: ${p => p.theme.globals.spacing.tiny}
-    ${p => p.theme.globals.spacing.small};
-  border: 1px solid ${p => p.theme.globals.color.line};
+  padding: ${spacing.tiny}
+    ${spacing.small};
+  border: 1px solid ${color.line};
   ${"" /* width: auto; */} cursor: pointer;
-  font-family: ${p => p.theme.globals.font.body};
-  font-size: ${p => p.theme.globals.font.size.input};
+  font-family: ${fontFamily.body};
+  font-size: ${font.input};
   letter-spacing: normal;
   font-weight: normal;
 
@@ -49,25 +49,25 @@ const Radio = styled.input`
   ${hideVisually};
   &:checked {
     ~ ${Label} {
-      color: ${p => p.theme.globals.color.primary};
+      color: ${color.primary};
       z-index: 1;
     }
 
     &:first-child ~ ${Label} {
-      border-color: ${p => p.theme.globals.color.primary};
+      border-color: ${color.primary};
     }
 
     &:nth-child(2) ~ ${Label} {
-      border-color: ${p => p.theme.globals.color.primary};
+      border-color: ${color.primary};
     }
   }
 `
 
 const RadioWrapper = styled.div`
   display: inline-block;
-  min-height: ${p => p.theme.globals.targetSize.normal};
-  padding-top: ${p => p.theme.globals.spacing.small};
-  padding-bottom: ${p => p.theme.globals.spacing.small};
+  min-height: ${targetSize.normal};
+  padding-top: ${spacing.small};
+  padding-bottom: ${spacing.small};
 
   &:first-child {
     ${Label} {
@@ -89,7 +89,7 @@ const RadioWrapper = styled.div`
   ${Radio}:focus ~ {
     ${Label} {
       z-index: 1;
-      border-color: ${p => p.theme.globals.color.primary};
+      border-color: ${color.primary};
     }
   }
 `
