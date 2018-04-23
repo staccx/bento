@@ -168,62 +168,54 @@ class SliderKeyboardInput extends React.Component {
   }
 }
 
-const SliderWrapper = withTheme(
-  styled.div`
-    font-family: ${fontFamily.body()};
-    font-size: ${font.input};
-    ${props => props.variantStyle(props)};
-  `,
-  "SliderKeyboardInput.SliderWrapper"
-)
+export const SLIDER_KEYBOARD_WRAPPER = "SLIDER_KEYBOARD_WRAPPER"
+const SliderWrapper = styled.div`
+  font-family: ${fontFamily.body()};
+  font-size: ${font.input};
+  ${themify(SLIDER_KEYBOARD_WRAPPER)};
+`
 
-const HiddenLabel = withTheme(
-  styled.label`
-    border: 0 !important;
-    clip: rect(0 0 0 0) !important;
-    height: 1px !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important;
-    ${props => props.variantStyle(props)};
-  `,
-  "SliderKeyboardInput.HiddenLabel"
-)
+const HiddenLabel = styled.label`
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+`
 
-const SliderInput = withTheme(
-  styled(Input)`
-    background-color: transparent;
-    border: 0;
-    min-height: ${targetSize.normal};
-    margin-bottom: ${spacing.medium()};
-    max-width: 100%;
-    -moz-appearance: textfield;
+export const SLIDER_KEYBOARD_INPUT = "SLIDER_KEYBOARD_INPUT"
+const SliderInput = styled(Input)`
+  background-color: transparent;
+  border: 0;
+  min-height: ${targetSize.normal};
+  margin-bottom: ${spacing.medium()};
+  max-width: 100%;
+  -moz-appearance: textfield;
+  outline: none;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:-moz-ui-invalid,
+  &:invalid {
     outline: none;
+    box-shadow: none;
+  }
 
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    &:hover,
-    &:active,
-    &:focus,
-    &:-moz-ui-invalid,
-    &:invalid {
-      outline: none;
-      box-shadow: none;
-    }
-
-    &:disabled {
-      color: ${color.text};
-    }
-    ${props => props.variantStyle(props)};
-  `,
-  "SliderKeyboardInput.SliderInput"
-)
+  &:disabled {
+    color: ${color.text};
+  }
+  ${themify(SLIDER_KEYBOARD_INPUT)};
+`
 
 SliderKeyboardInput.defaultProps = {
   animationTicks: 50,

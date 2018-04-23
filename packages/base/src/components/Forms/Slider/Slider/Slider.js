@@ -52,6 +52,7 @@ const Slider = ({
   )
 }
 
+export const SLIDER_THUMB_STYLE = "SLIDER_THUMB_STYLE"
 const SliderThumbStyle = css`
   -webkit-appearance: none;
   border: 2px solid ${color.line};
@@ -70,6 +71,7 @@ const SliderThumbStyle = css`
     border-color: ${color.white};
     background-color: ${color.secondary};
   }
+  ${themify(SLIDER_THUMB_STYLE)};
 `
 
 const SliderHiddenTrackStyle = css`
@@ -80,6 +82,7 @@ const SliderHiddenTrackStyle = css`
   color: transparent;
 `
 
+export const SLIDER_TRACK_STYLE = "SLIDER_TRACK_STYLE"
 const SliderTrackStyle = css`
   width: 100%;
   height: 9px;
@@ -87,8 +90,10 @@ const SliderTrackStyle = css`
   border-radius: 4.5px;
   color: transparent;
   background-color: ${color.line};
+  ${themify(SLIDER_TRACK_STYLE)};
 `
 
+export const SLIDER_INPUT = "SLIDER_INPUT"
 const SliderInput = styled.div`
   position: relative;
   font-weight: bold;
@@ -150,12 +155,11 @@ const SliderInput = styled.div`
   input[type=range]::-webkit-slider-runnable-track {
     ${SliderTrackStyle}
     background: linear-gradient(90deg,
-      ${color.primary} 0%, ${p => color.primary}
+      ${color.primary} 0%, ${color.primary}
       ${p => p.percentage}%, ${color.line}
       ${p => p.percentage + 0.0}%,
       ${color.line} 100%) 0 100% no-repeat content-box;
   }
-
 
   input[type=range]:focus::-webkit-slider-runnable-track {
   }
@@ -191,7 +195,8 @@ const SliderInput = styled.div`
   input[type=range]:focus::-ms-fill-upper {
     background-color: ${color.white};
   }
-  ${props => props.variantStyle(props)};
+
+  ${themify(SLIDER_INPUT)};
 `
 
 Slider.defaultProps = {
