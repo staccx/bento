@@ -42,8 +42,7 @@ const borderRadiusRadioPill = "6px"
 
 const Label = styled.label`
   position: relative;
-  padding: ${spacing.tiny()}
-    ${spacing.small()};
+  padding: ${spacing.tiny()} ${spacing.small()};
   border: 1px solid ${color.line};
   ${"" /* width: auto; */} cursor: pointer;
   font-family: ${fontFamily.body()};

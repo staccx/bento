@@ -2,12 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { ScaleInX } from "@staccx/animations"
-import {
-  spacing,
-  font,
-  color,
-  themify
-} from "@staccx/theme"
+import { spacing, font, color, themify } from "@staccx/theme"
 
 const ProgressBar = ({ progress, className, ...otherProps }) => (
   <Bg className={className} {...otherProps}>
@@ -38,15 +33,11 @@ export const PROGRESS_BAR_BAR = "progress_bar_bar"
 
 const Bar = styled.div`
   position: absolute;
-  background-color: ${p =>
-    p.width >= 90
-      ? color.warning
-      : color.primary};
+  background-color: ${p => (p.width >= 90 ? color.warning : color.primary)};
   left: 0;
   height: 100%;
   width: ${p => (p.width > 100 ? "100" : p.width)}%;
-  border-radius: 0 ${spacing.small()}
-    ${spacing.small()} 0;
+  border-radius: 0 ${spacing.small()} ${spacing.small()} 0;
   transform: scaleX(0);
   animation: ${ScaleInX} 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 1
     forwards;

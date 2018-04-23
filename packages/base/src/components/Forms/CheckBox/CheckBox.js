@@ -2,7 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import FallbackCheck from "../../Icons/Check"
-import {themify, color, font, spacing, targetSize, fontFamily} from "@staccx/theme"
+import {
+  themify,
+  color,
+  font,
+  spacing,
+  targetSize,
+  fontFamily
+} from "@staccx/theme"
 
 export const CHECKBOX = "checkbox"
 export const CHECKBOX_CHECKED_ICON = "checkbox_checked_icon"
@@ -38,7 +45,11 @@ const CheckBox = ({
       />
 
       <Label htmlFor={id} themeVariant={themeVariant} ignoreBase={ignoreBase}>
-       <Icon checkIcon={checkIcon} themeVariant={themeVariant} ignoreBase={ignoreBase} />
+        <Icon
+          checkIcon={checkIcon}
+          themeVariant={themeVariant}
+          ignoreBase={ignoreBase}
+        />
         {children}
       </Label>
     </CheckWrapper>
@@ -46,77 +57,78 @@ const CheckBox = ({
 }
 
 const CheckWrapper = styled.div`
-    min-height: ${targetSize()};
-    padding-top: ${spacing.small()};
-    padding-bottom: ${spacing.small()};
-    ${themify(CHECKBOX)};
-  `
+  min-height: ${targetSize()};
+  padding-top: ${spacing.small()};
+  padding-bottom: ${spacing.small()};
+  ${themify(CHECKBOX)};
+`
 
-export const Icon = styled(p => (p && p.checkIcon) ? p.checkIcon : FallbackCheck)`
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    display: block;
-    height: 20px;
-    width: 20px;
-    transform: scale(0);
-    transition: all 0.2s ease-in-out;
-    color: ${color.primary};
-    ${themify(CHECKBOX_CHECKED_ICON)};
-  `
+export const Icon = styled(
+  p => (p && p.checkIcon ? p.checkIcon : FallbackCheck)
+)`
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  display: block;
+  height: 20px;
+  width: 20px;
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+  color: ${color.primary};
+  ${themify(CHECKBOX_CHECKED_ICON)};
+`
 
 const InputCheck = styled.input`
-    position: absolute;
-    clip: rect(0, 0, 0, 0);
-    clip: rect(0 0 0 0);
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  clip: rect(0 0 0 0);
 
-    &:checked ~ label {
-      > svg {
-        transform: scale(1);
-      }
+  &:checked ~ label {
+    > svg {
+      transform: scale(1);
     }
+  }
 
-    &:focus ~ label {
-      &::before {
-        border-color: ${color.primary};
-      }
-    }
-
-    ${themify(CHECKBOX_INPUT)};
-  `
-
-const Label =
-  styled.label`
-    padding: 0 0 0 ${spacing.mediumPlus()};
-    position: relative;
-    font-weight: normal;
-    letter-spacing: normal;
-    width: auto;
-    cursor: pointer;
-    font-family: ${fontFamily.body()};
-    font-family: ${font.input};
-    line-height: 1.6;
-    display: inline-block;
-
+  &:focus ~ label {
     &::before {
-      content: "";
-      background: ${color.bg};
-      border: 1px solid ${color.line};
-      display: block;
-      height: ${spacing.medium()};
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: ${spacing.medium()};
+      border-color: ${color.primary};
     }
+  }
 
-    &:hover {
-      &::before {
-        border-color: ${color.primary};
-      }
+  ${themify(CHECKBOX_INPUT)};
+`
+
+const Label = styled.label`
+  padding: 0 0 0 ${spacing.mediumPlus()};
+  position: relative;
+  font-weight: normal;
+  letter-spacing: normal;
+  width: auto;
+  cursor: pointer;
+  font-family: ${fontFamily.body()};
+  font-family: ${font.input};
+  line-height: 1.6;
+  display: inline-block;
+
+  &::before {
+    content: "";
+    background: ${color.bg};
+    border: 1px solid ${color.line};
+    display: block;
+    height: ${spacing.medium()};
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: ${spacing.medium()};
+  }
+
+  &:hover {
+    &::before {
+      border-color: ${color.primary};
     }
-    ${themify(CHECKBOX_LABEL)};
-  `
+  }
+  ${themify(CHECKBOX_LABEL)};
+`
 
 CheckBox.propTypes = {
   children: PropTypes.oneOfType([

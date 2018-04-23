@@ -1,7 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
-import {themify, spacing, targetSize, borderRadius, font, color} from "@staccx/theme"
+import {
+  themify,
+  spacing,
+  targetSize,
+  borderRadius,
+  font,
+  color
+} from "@staccx/theme"
 import Input, { InputDefaultProps, InputPropTypes } from "../Input"
 import Downshift from "downshift"
 import Flag from "../../../Layout/Flag/Flag"
@@ -186,8 +193,7 @@ const SelectLoad = styled.div`
   top: 0;
   left: 0;
   z-index: 10;
-  box-shadow: 0px ${spacing.small()}
-    ${spacing.medium()} rgba(0, 0, 0, 0.06);
+  box-shadow: 0px ${spacing.small()} ${spacing.medium()} rgba(0, 0, 0, 0.06);
 `
 
 const Close = styled.button`
@@ -207,8 +213,7 @@ const Close = styled.button`
 `
 
 const ModifiedFlag = styled(Flag)`
-  padding: ${spacing.tiny()}
-    ${spacing.tiny()} ${spacing.tiny()}
+  padding: ${spacing.tiny()} ${spacing.tiny()} ${spacing.tiny()}
     ${spacing.medium()};
   position: relative;
 `
@@ -230,23 +235,18 @@ const SelectList = styled.ul`
   z-index: 10;
   width: 100%;
   background: ${color.white};
-  box-shadow: 0px ${spacing.small()}
-    ${spacing.medium()} rgba(0, 0, 0, 0.06);
+  box-shadow: 0px ${spacing.small()} ${spacing.medium()} rgba(0, 0, 0, 0.06);
 `
 
 const SelectItem = styled.li`
   list-style: none;
-  padding: ${spacing.small()}
-    ${spacing.medium()};
-  background-color: ${p =>
-    p.isSelected ? color.primary : "transparent"};
-  color: ${p =>
-    p.isSelected ? color.white : color.black};
+  padding: ${spacing.small()} ${spacing.medium()};
+  background-color: ${p => (p.isSelected ? color.primary : "transparent")};
+  color: ${p => (p.isSelected ? color.white : color.black)};
   border-bottom: 1px solid ${color.line};
 
   ${OrgNo} {
-    color: ${p =>
-      p.isSelected ? color.white : color.wcag};
+    color: ${p => (p.isSelected ? color.white : color.wcag)};
   }
 
   &:first-child {

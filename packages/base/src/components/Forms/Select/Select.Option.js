@@ -17,8 +17,7 @@ const OptionContainer = styled.div`
   min-height: ${targetSize.normal};
   margin: 0 auto;
   border-bottom: 1px solid ${color.line};
-  padding: ${spacing.tiny()}
-    ${spacing.small()};
+  padding: ${spacing.tiny()} ${spacing.small()};
   text-align: left;
   font-family: ${fontFamily.body()};
   font-size: ${font.input};

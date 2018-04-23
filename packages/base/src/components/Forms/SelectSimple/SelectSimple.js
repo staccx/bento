@@ -76,8 +76,7 @@ const Select = styled.select`
   width: 100%;
   min-height: ${targetSize.normal};
   font-size: ${font.input};
-  padding: 10px ${spacing.medium()} 10px
-    ${spacing.small()};
+  padding: 10px ${spacing.medium()} 10px ${spacing.small()};
   box-shadow: none;
   border-radius: ${borderRadius};
   line-height: 1.4;

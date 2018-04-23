@@ -22,8 +22,8 @@ const Toggle = ({
   ...otherProps
 }) => {
   return (
-    <CheckWrapper htmlFor={id} className={className}>
-      <Check
+    <ToggleWrapper htmlFor={id} className={className}>
+      <ToggleInput
         id={id}
         disabled={disabled}
         type="checkbox"
@@ -35,17 +35,20 @@ const Toggle = ({
       <ToggleElement>
         <span>{children}</span>
       </ToggleElement>
-    </CheckWrapper>
+    </ToggleWrapper>
   )
 }
 
-const CheckWrapper = styled.label`
+export const TOGGLE = "TOGGLE"
+const ToggleWrapper = styled.label`
   min-height: ${targetSize.normal};
   padding-top: ${spacing.tiny()};
   padding-bottom: ${spacing.tiny()};
   display: block;
+  ${themify(TOGGLE)};
 `
 
+export const TOGGLE_ELEMENT = "TOGGLE_ELEMENT"
 const ToggleElement = styled.div`
   background: ${color.line};
   border-radius: 2em;
@@ -61,9 +64,12 @@ const ToggleElement = styled.div`
     background: ${color.white};
     transition: all 0.2s ease;
   }
+  ${themify(TOGGLE_ELEMENT)};
 `
 
-const Check = styled.input`
+export const TOGGLE_INPUT = "TOGGLE_INPUT"
+export const TOGGLE_ELEMENT_CHECKED = "TOGGLE_ELEMENT_CHECKED"
+const ToggleInput = styled.input`
   position: absolute;
   clip: rect(0, 0, 0, 0);
   clip: rect(0 0 0 0);
@@ -82,6 +88,9 @@ const Check = styled.input`
   }
 
   + ${ToggleElement} {
+     {
+      /* TODO: Burde dette vært flyttet inn i Toggle-element over?*/
+    }
     outline: 0;
     display: block;
     width: 4em;
@@ -112,7 +121,9 @@ const Check = styled.input`
     &:after {
       transform: translateX(100%);
     }
+    ${themify(TOGGLE_ELEMENT_CHECKED)};
   }
+  ${themify(TOGGLE_INPUT)};
 `
 
 Toggle.propTypes = {

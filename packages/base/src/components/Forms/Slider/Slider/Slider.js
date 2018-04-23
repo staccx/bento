@@ -150,8 +150,7 @@ const SliderInput = styled.div`
   input[type=range]::-webkit-slider-runnable-track {
     ${SliderTrackStyle}
     background: linear-gradient(90deg,
-      ${color.primary} 0%, ${p =>
-  color.primary}
+      ${color.primary} 0%, ${p => color.primary}
       ${p => p.percentage}%, ${color.line}
       ${p => p.percentage + 0.0}%,
       ${color.line} 100%) 0 100% no-repeat content-box;

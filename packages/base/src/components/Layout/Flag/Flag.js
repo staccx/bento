@@ -62,7 +62,7 @@ const FlagBody = styled.div`
   ${themify(FLAG_BODY)};
 `
 
-${themify(FLAG_REVERSE)};
+export const FLAG_REVERSE = "FLAG_REVERSE"
 const reverse = css`
   direction: rtl;
   > ${FlagImg}, > ${FlagBody} {
@@ -76,7 +76,7 @@ const reverse = css`
   ${themify(FLAG_REVERSE)};
 `
 
-export const FLAG_REVERSE_LARGE = 'FLAG_REVERSE_LARGE'
+export const FLAG_REVERSE_LARGE = "FLAG_REVERSE_LARGE"
 const reverseLarge = css`
   > ${FlagImg} {
     padding-right: 0;
@@ -85,7 +85,7 @@ const reverseLarge = css`
   ${themify(FLAG_REVERSE_LARGE)};
 `
 
-export const FLAG_TOP = 'FLAG_TOP'
+export const FLAG_TOP = "FLAG_TOP"
 const top = css`
   > ${FlagImg}, > ${FlagBody} {
     vertical-align: top;
@@ -93,7 +93,7 @@ const top = css`
   ${themify(FLAG_TOP)};
 `
 
-export const FLAG_BOTTOM = 'FLAG_BOTTOM'
+export const FLAG_BOTTOM = "FLAG_BOTTOM"
 const bottom = css`
   > ${FlagImg}, > ${FlagBody} {
     vertical-align: bottom;
@@ -101,7 +101,7 @@ const bottom = css`
   ${themify(FLAG_BOTTOM)};
 `
 
-export const FLAG_FLUSH = 'FLAG_FLUSH'
+export const FLAG_FLUSH = "FLAG_FLUSH"
 const flush = css`
   > ${FlagImg} {
     padding-right: 0;
@@ -110,7 +110,7 @@ const flush = css`
   ${themify(FLAG_FLUSH)};
 `
 
-export const FLAG_LARGE = 'FLAG_LARGE'
+export const FLAG_LARGE = "FLAG_LARGE"
 const large = css`
   > ${FlagImg} {
     padding-right: ${spacing.large()};
@@ -119,7 +119,7 @@ const large = css`
   ${themify(FLAG_LARGE)};
 `
 
-export const FLAG_RESPONSIVE = 'FLAG_RESPONSIVE'
+export const FLAG_RESPONSIVE = "FLAG_RESPONSIVE"
 const responsive = css`
   @media screen and (max-width: ${props => props.responsive}px) {
     &,
@@ -140,7 +140,7 @@ const responsive = css`
   }
 `
 
-export const FLAG_OBJECT = 'FLAG_OBJECT'
+export const FLAG_OBJECT = "FLAG_OBJECT"
 const FlagObject = styled.div`
   display: table;
   width: 100%;

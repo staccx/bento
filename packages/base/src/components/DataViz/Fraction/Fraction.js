@@ -2,11 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import hideVisually from "../../../Styles/hideVisually"
-import {
-  spacing,
-  color,
-  themify
-} from "@staccx/theme"
+import { spacing, color, themify } from "@staccx/theme"
 
 const Fraction = ({
   value,
