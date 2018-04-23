@@ -1,20 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import FallbackCheck from "../../Icons/Check"
+import Check from "../../Icons/Check"
 import {
   themify,
   color,
   font,
   spacing,
   targetSize,
-  fontFamily
+  fontFamily,
+  ThemeComponent
 } from "@staccx/theme"
 
 export const CHECKBOX = "checkbox"
 export const CHECKBOX_CHECKED_ICON = "checkbox_checked_icon"
 export const CHECKBOX_LABEL = "checkbox_label"
 export const CHECKBOX_INPUT = "checkbox_input"
+export const COMPONENT_CHECKBOX_ICON = "COMPONENT_CHECKBOX_ICON"
 
 const CheckBox = ({
   children,
@@ -30,7 +32,7 @@ const CheckBox = ({
   ...otherProps
 }) => {
   return (
-    <CheckWrapper themeVariant={themeVariant} ignoreBase={ignoreBase}>
+    <CheckWrapper themeVariant={themeVariant}>
       <InputCheck
         className={className}
         id={id}
@@ -40,16 +42,11 @@ const CheckBox = ({
         onChange={onChange}
         defaultChecked={defaultChecked}
         themeVariant={themeVariant}
-        ignoreBase={ignoreBase}
         {...otherProps}
       />
 
-      <Label htmlFor={id} themeVariant={themeVariant} ignoreBase={ignoreBase}>
-        <Icon
-          checkIcon={checkIcon}
-          themeVariant={themeVariant}
-          ignoreBase={ignoreBase}
-        />
+      <Label htmlFor={id} themeVariant={themeVariant}>
+        <Icon themeVariant={themeVariant} />
         {children}
       </Label>
     </CheckWrapper>
@@ -57,15 +54,17 @@ const CheckBox = ({
 }
 
 const CheckWrapper = styled.div`
-  min-height: ${targetSize()};
-  padding-top: ${spacing.small()};
-  padding-bottom: ${spacing.small()};
+  min-height: ${targetSize};
+  padding-top: ${spacing.small};
+  padding-bottom: ${spacing.small};
   ${themify(CHECKBOX)};
 `
 
-export const Icon = styled(
-  p => (p && p.checkIcon ? p.checkIcon : FallbackCheck)
-)`
+const IconComponent = () => (
+  <ThemeComponent tagName={COMPONENT_CHECKBOX_ICON} fallback={Check} />
+)
+
+export const Icon = styled(IconComponent)`
   position: absolute;
   left: 2px;
   top: 2px;
@@ -83,11 +82,11 @@ const InputCheck = styled.input`
   clip: rect(0, 0, 0, 0);
   clip: rect(0 0 0 0);
 
-  &:checked ~ label {
-    > svg {
-      transform: scale(1);
+    &:checked ~ label {
+      > svg {
+        transform: scale(1);
+      }
     }
-  }
 
   &:focus ~ label {
     &::before {
@@ -99,14 +98,14 @@ const InputCheck = styled.input`
 `
 
 const Label = styled.label`
-  padding: 0 0 0 ${spacing.mediumPlus()};
+  padding: 0 0 0 ${spacing.mediumPlus};
   position: relative;
   font-weight: normal;
   letter-spacing: normal;
   width: auto;
   cursor: pointer;
-  font-family: ${fontFamily.body()};
-  font-family: ${font.input};
+  font-family: ${fontFamily.body};
+  font-size: ${font.input};
   line-height: 1.6;
   display: inline-block;
 
@@ -115,11 +114,11 @@ const Label = styled.label`
     background: ${color.bg};
     border: 1px solid ${color.line};
     display: block;
-    height: ${spacing.medium()};
+    height: ${spacing.medium};
     left: 0;
     position: absolute;
     top: 0;
-    width: ${spacing.medium()};
+    width: ${spacing.medium};
   }
 
   &:hover {

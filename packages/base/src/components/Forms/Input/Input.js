@@ -68,7 +68,6 @@ class Input extends React.Component {
             onChange={onChange}
             onKeyDown={onKeyDown}
             placeholder={placeholder}
-            themeVariant={themeVariant}
             type={type}
             {...otherProps}
           />

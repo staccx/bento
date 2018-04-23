@@ -63,10 +63,17 @@ const STYLES = {
   LABEL
 }
 
-import { default as BaseTheme } from "./theme/baseTheme"
+import { default as themeManager, theme } from "./theme/baseTheme"
+import { COMPONENT_CHECKBOX_ICON } from "./components/Forms/CheckBox/CheckBox"
+
+const Icons = {
+  COMPONENT_CHECKBOX_ICON
+}
 
 export {
-  BaseTheme,
+  Icons,
+  theme as BaseTheme,
+  themeManager,
   STYLES,
   Box,
   Button,

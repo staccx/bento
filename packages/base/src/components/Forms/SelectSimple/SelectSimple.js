@@ -3,14 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { multiplyPixelValue } from "@staccx/math"
 import Label from "../Label/Label"
-import {
-  targetSize,
-  spacing,
-  borderRadius,
-  font,
-  color,
-  themify
-} from "@staccx/theme"
+import { borderRadius, color, font, spacing, targetSize } from "@staccx/theme"
 
 const Caret = ({ className }) => (
   <svg className={className} viewBox="0 0 24 16">
@@ -65,7 +58,10 @@ const SelectWrapper = styled.div`
 const SelectIcon = styled(Caret)`
   position: absolute;
   right: ${spacing.small()};
-  bottom: ${p => multiplyPixelValue(targetSize.normal()(p), 0.5)};
+  bottom: ${p => {
+    const value = targetSize.normal()(p)
+    return multiplyPixelValue(value, 0.5)
+  }};
   width: 12px;
   fill: ${color.gray};
   transform: translateY(50%);

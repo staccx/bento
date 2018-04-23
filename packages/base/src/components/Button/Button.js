@@ -30,7 +30,7 @@ export const ButtonStyle = css`
   border-radius: ${borderRadius()};
   padding: ${spacing.tiny()} ${spacing.medium()};
   cursor: pointer;
-  min-height: ${targetSize()};
+  min-height: ${targetSize.normal};
   text-decoration: none;
   text-align: center;
   display: inline-block;

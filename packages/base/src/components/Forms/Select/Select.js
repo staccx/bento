@@ -28,11 +28,14 @@ const SelectedWrapper = styled.div`
 const IconButton = styled.button`
   position: absolute;
   right: ${spacing.small()};
-  bottom: ${p => multiplyPixelValue(targetSize.normal()(p), 0.5)};
+  bottom: ${p => {
+    const value = targetSize.normal()(p)
+    return multiplyPixelValue(value, 0.5)
+  }};
   width: ${targetSize.small};
   height: ${targetSize.small};
   border: 0;
-  padding: 0 ${spacing.tiny()};
+  padding: 0 ${spacing.tiny};
   text-align: center;
   background-color: transparent;
   fill: ${color.gray};

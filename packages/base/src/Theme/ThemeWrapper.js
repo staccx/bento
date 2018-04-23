@@ -11,13 +11,15 @@ import cssReset from "../Styles/cssResets"
 export default class ThemeWrapper extends Component {
   render() {
     cssReset(this.props.resets)
-    const theme = Object.assign({}, baseTheme, this.props.theme)
-    return <ThemeProvider theme={theme}>{this.props.children}</ThemeProvider>
+    return (
+      <ThemeProvider theme={baseTheme.theme}>
+        {this.props.children}
+      </ThemeProvider>
+    )
   }
 }
 
 ThemeWrapper.propTypes = {
   children: PropTypes.object.isRequired,
-  theme: PropTypes.object,
   resets: PropTypes.string
 }

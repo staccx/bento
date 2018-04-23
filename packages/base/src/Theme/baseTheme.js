@@ -1,11 +1,6 @@
-import { css } from "styled-components"
+import { ThemeManager } from "@staccx/theme"
 
-const crazyStyle = css`
-  background-color: coral;
-  color: papayawhip;
-`
-
-const theme = {
+export const theme = {
   name: "Default theme",
   spacing: {
     huge: "96px",
@@ -65,4 +60,6 @@ const theme = {
   borderRadius: "2px"
 }
 
-export default theme
+const manager = new ThemeManager(theme)
+
+export default manager
