@@ -10,7 +10,10 @@ class MaskedInput extends React.Component {
   }
 
   initTextMask() {
-    const { props, props: { value } } = this
+    const {
+      props,
+      props: { value }
+    } = this
 
     this.textMaskInputElement = textMaskCore.createTextMaskInputElement({
       inputElement: this.inputElement,

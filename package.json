@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "styleguide": "cd packages/base && styleguidist server"
+    "styleguide": "cd packages/base && styleguidist server",
+    "start": "cd packages/base && yarn start"
   },
   "repository": {
     "type": "git",

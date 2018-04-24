@@ -17,10 +17,10 @@ const Label = ({ className, children, ...rest }) => (
 
 const LabelElement = styled.label`
   font-weight: bold;
-  font-family: ${fontFamily.body()};
-  font-size: ${font.base()};
+  font-family: ${fontFamily.body};
+  font-size: ${font.base};
   line-height: 1.2;
-  padding-bottom: ${spacing.tiny()};
+  padding-bottom: ${spacing.tiny};
   display: block;
   ${themify(LABEL)};
 `

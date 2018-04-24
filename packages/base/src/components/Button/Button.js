@@ -16,7 +16,7 @@ import {
 const tinycolor = require("tinycolor2")
 
 export const BUTTON = "Button"
-export const Style = css`
+const Style = css`
   background-color: ${color.primary()};
   color: ${p =>
     tinycolor
@@ -100,6 +100,5 @@ const propTypes = {
 Button.defaultProps = defaultProps
 Button.propTypes = propTypes
 
-Button.Style = BUTTON
 /** @component */
 export default Button

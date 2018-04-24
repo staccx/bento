@@ -70,7 +70,6 @@ const Icons = {
   COMPONENT_CHECKBOX_ICON
 }
 
-console.log(SliderStyles)
 export {
   Icons,
   theme as BaseTheme,
