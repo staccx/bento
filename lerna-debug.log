@@ -1,32 +1,29 @@
-0 silly input [ 'build' ]
-1 silly flags { _: [ 'run' ],
+0 silly input []
+1 silly flags { _: [ 'bootstrap' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   script: 'build',
 1 silly flags   args: [] }
 2 verbose rootPath /Users/espen/Projects/bento
 3 info version 2.8.0
 4 silly existsSync /Users/espen/Projects/bento/VERSION
 5 silly initialize attempt
-6 silly initialize success
-7 silly execute attempt
-8 silly runScriptInDir build [] base
-9 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/base' }
-10 silly runScriptInDir build [] staging
-11 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/staging' }
-12 error build Errored while running script in '@staccx/staging'
+6 silly npmConfig { registry: undefined,
+6 silly npmConfig   npmClient: 'yarn',
+6 silly npmConfig   npmClientArgs: undefined,
+6 silly npmConfig   mutex: 'network:42424' }
+7 silly initialize success
+8 silly execute attempt
+9 info Bootstrapping 3 packages
+10 silly installInDirOriginalPackageJson /Users/espen/Projects/bento
+11 silly getExecOpts { cwd: '/Users/espen/Projects/bento' }
+12 silly installInDir [ 'yarn',
+12 silly installInDir   [ 'install', '--mutex', 'network:42424', '--non-interactive' ] ]
 13 error execute callback with error
-14 error Error: Command failed: yarn run build
-14 error error Command failed with exit code 1.
-14 error yarn run v1.3.2
-14 error $ react-scripts build
-14 error Creating an optimized production build...
-14 error Failed to compile.
+14 error Error: Command failed: yarn install --mutex network:42424 --non-interactive
+14 error error Couldn't find any versions for "@staccx/theme" that matches "^1.0.1"
+14 error yarn install v1.6.0
+14 error [1/4] Resolving packages...
+14 error info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
 14 error
-14 error Module not found: Error: Can't resolve 'styled-components' in '/Users/espen/Projects/bento/packages/base/dist'
-14 error
-14 error
-14 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-14 error
-14 error     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/execa/index.js:236:11)
+14 error     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/lerna/node_modules/execa/index.js:236:11)
 14 error     at <anonymous>
