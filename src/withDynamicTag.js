@@ -1,13 +1,13 @@
-import { createElement as h } from 'react';
-import styled from 'styled-components';
+import { createElement as h } from "react";
+import styled from "styled-components";
 
 export const withDynamicTag = Component => {
   const bucket = Object.create(null);
 
   const DynamicTag = props => {
-    const {tag} = props;
+    const { tag } = props;
 
-    if (typeof tag !== 'string' || !styled.hasOwnProperty(tag)) {
+    if (typeof tag !== "string" || !styled.hasOwnProperty(tag)) {
       return h(Component, props);
     }
 

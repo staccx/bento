@@ -1,13 +1,6 @@
-import deepfind from "./deepfind";
+import getProp from './getProp'
 
-const font = (name, type = "size") => ({ theme }) => {
-  const deep = ["font", type, name].join(".");
-  if (!deepfind(theme, deep)) {
-    console.warn("Could not find font", deep, theme);
-    return null;
-  }
-  return theme.font[type][name];
-};
+const font = size => getProp("font", size);
 
 font.h1 = () => font("h1");
 font.h2 = () => font("h2");

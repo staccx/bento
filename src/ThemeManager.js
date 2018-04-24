@@ -1,5 +1,6 @@
 import registerStyle from "./registerStyle";
 import { VARIANT_DEFAULT } from "./_constants";
+import mergeDeep from './mergeDeep'
 
 class ThemeManager {
   constructor(baseTheme = {}) {
@@ -11,14 +12,14 @@ class ThemeManager {
   }
 
   addGlobal(name, value) {
-    Object.assign(this.theme, {
+    this.theme = mergeDeep(this.theme, {
       [name]: value
     });
     return this;
   }
 
   addStyle(style) {
-    Object.assign(this.theme, style);
+    this.theme = mergeDeep(this.theme, style);
     return this;
   }
 
