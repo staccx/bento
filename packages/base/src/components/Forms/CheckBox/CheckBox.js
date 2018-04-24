@@ -60,8 +60,12 @@ const CheckWrapper = styled.div`
   ${themify(CHECKBOX)};
 `
 
-const IconComponent = ({...props}) => (
-  <ThemeComponent tagName={COMPONENT_CHECKBOX_ICON} fallback={Check} {...props} />
+const IconComponent = ({ ...props }) => (
+  <ThemeComponent
+    tagName={COMPONENT_CHECKBOX_ICON}
+    fallback={Check}
+    {...props}
+  />
 )
 
 export const Icon = styled(IconComponent)`
@@ -82,11 +86,11 @@ const InputCheck = styled.input`
   clip: rect(0, 0, 0, 0);
   clip: rect(0 0 0 0);
 
-    &:checked ~ label {
-      > svg {
-        transform: scale(1);
-      }
+  &:checked ~ label {
+    > svg {
+      transform: scale(1);
     }
+  }
 
   &:focus ~ label {
     &::before {

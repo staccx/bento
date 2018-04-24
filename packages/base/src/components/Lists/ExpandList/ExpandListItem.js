@@ -86,8 +86,12 @@ const ExpandItem = styled.li`
 `
 
 export const COMPONENT_EXPAND_LIST_ICON = "COMPONENT_EXPAND_LIST_ICON"
-const IconComponent = ({...props}) => (
-  <ThemeComponent tagName={COMPONENT_EXPAND_LIST_ICON} fallback={Caret} {...props} />
+const IconComponent = ({ ...props }) => (
+  <ThemeComponent
+    tagName={COMPONENT_EXPAND_LIST_ICON}
+    fallback={Caret}
+    {...props}
+  />
 )
 export const EXPAND_LIST_ICON = "EXPAND_LIST_ICON"
 const ExpandIcon = styled(IconComponent)`

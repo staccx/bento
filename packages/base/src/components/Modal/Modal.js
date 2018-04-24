@@ -16,8 +16,8 @@ class Modal extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.isOpen !== this.state.isOpen) {
-      this.setState({isOpen: nextProps.isOpen})
+    if (nextProps.isOpen !== this.state.isOpen) {
+      this.setState({ isOpen: nextProps.isOpen })
     }
   }
 
@@ -33,7 +33,7 @@ class Modal extends Component {
   }
 
   handleChange(event) {
-    if(this.props.onClose) {
+    if (this.props.onClose) {
       this.props.onClose(event)
     }
     // TODO: Make controllable/uncontrollable toggle.
@@ -172,8 +172,12 @@ const ModalBackdrop = styled.div`
 `
 
 export const COMPONENT_MODAL_CLOSE_ICON = "COMPONENT_MODAL_CLOSE_ICON"
-const IconComponent = ({...props}) => (
-  <ThemeComponent tagName={COMPONENT_MODAL_CLOSE_ICON} fallback={IconClose} {...props} />
+const IconComponent = ({ ...props }) => (
+  <ThemeComponent
+    tagName={COMPONENT_MODAL_CLOSE_ICON}
+    fallback={IconClose}
+    {...props}
+  />
 )
 
 const Icon = styled(IconComponent)``
