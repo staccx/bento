@@ -11,6 +11,7 @@ import {
   themify
 } from "@staccx/theme"
 
+export const RADIO_BUTTON_RADIO = "RADIO_BUTTON_RADIO"
 const Radio = styled.input`
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -19,14 +20,16 @@ const Radio = styled.input`
   &:checked ~ label::after {
     transform: scale(1);
   }
+  ${themify(RADIO_BUTTON_RADIO)};
 `
 
+export const RADIO_BUTTON_LABEL = "RADIO_BUTTON_LABEL"
 const Label = styled.label`
   position: relative;
-  padding: 0 0 0 ${spacing.mediumPlus()};
+  padding: 0 0 0 ${spacing.mediumPlus};
   width: auto;
   letter-spacing: normal;
-  font-family: ${fontFamily.body()};
+  font-family: ${fontFamily.body};
   font-size: ${font.input};
   font-weight: normal;
   cursor: pointer;
@@ -37,8 +40,8 @@ const Label = styled.label`
     top: -4px;
     left: 0;
     display: block;
-    width: ${spacing.medium()};
-    height: ${spacing.medium()};
+    width: ${spacing.medium};
+    height: ${spacing.medium};
     border: 1px solid ${color.line};
     border-radius: 50%;
     background: ${color.white};
@@ -58,12 +61,15 @@ const Label = styled.label`
     transform: scale(0);
     transition: all 0.2s ease-in-out;
   }
+
+  ${themify(RADIO_BUTTON_LABEL)};
 `
 
+export const RADIO_BUTTON_WRAPPER = "RADIO_BUTTON_WRAPPER"
 const RadioWrapper = styled.div`
   min-height: ${targetSize.normal};
-  padding-top: ${spacing.small()};
-  padding-bottom: ${spacing.small()};
+  padding-top: ${spacing.small};
+  padding-bottom: ${spacing.small};
 
   &:hover,
   ${Radio}:focus ~ {
@@ -73,6 +79,7 @@ const RadioWrapper = styled.div`
       }
     }
   }
+  ${themify(RADIO_BUTTON_WRAPPER)};
 `
 
 const RadioButton = ({
@@ -112,6 +119,12 @@ RadioButton.propTypes = {
     PropTypes.string,
     PropTypes.number,
     PropTypes.object
+  ]),
+  /** Only for documentation: */
+  _themeVars: PropTypes.oneOf([
+    RADIO_BUTTON_LABEL,
+    RADIO_BUTTON_RADIO,
+    RADIO_BUTTON_WRAPPER
   ])
 }
 

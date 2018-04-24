@@ -3,15 +3,25 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { multiplyPixelValue } from "@staccx/math"
 import Label from "../Label/Label"
-import { borderRadius, color, font, spacing, targetSize } from "@staccx/theme"
+import Caret from "../../Icons/Caret"
+import {
+  borderRadius,
+  color,
+  font,
+  spacing,
+  targetSize,
+  themify,
+  ThemeComponent
+} from "@staccx/theme"
 
-const Caret = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 16">
-    <path d="M3.81 0a.54.54 0 0 0-.38.16L.16 3.47a.56.56 0 0 0 0 .78l11.45 11.59a.54.54 0 0 0 .78 0L23.84 4.25a.56.56 0 0 0 0-.78L20.57.17a.54.54 0 0 0-.77 0L12 8.04 4.2.16A.54.54 0 0 0 3.81 0z" />
-  </svg>
+export const COMPONENT_SELECT_SIMPLE_ICON = "COMPONENT_SELECT_SIMPLE_ICON"
+const IconComponent = ({ ...props }) => (
+  <ThemeComponent
+    tagName={COMPONENT_SELECT_SIMPLE_ICON}
+    fallback={Caret}
+    {...props}
+  />
 )
-Caret.propTypes = { className: PropTypes.string }
-Caret.defaultProps = { className: "" }
 
 const SelectSimple = ({
   children,
@@ -46,16 +56,26 @@ SelectSimple.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
   placeholder: PropTypes.string,
   id: PropTypes.string.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Only for documentation: */
+  _themeVars: PropTypes.oneOf([
+    COMPONENT_SELECT_SIMPLE_ICON,
+    SELECT_SIMPLE_ICON,
+    SELECT_SIMPLE_WRAPPER,
+    SELECT_SIMPLE_SELECT
+  ])
 }
 
+export const SELECT_SIMPLE_WRAPPER = "SELECT_SIMPLE_WRAPPER"
 const SelectWrapper = styled.div`
   display: block;
   margin-bottom: 0;
   position: relative;
+  ${themify(SELECT_SIMPLE_WRAPPER)};
 `
 
-const SelectIcon = styled(Caret)`
+export const SELECT_SIMPLE_ICON = "SELECT_SIMPLE_ICON"
+const SelectIcon = styled(IconComponent)`
   position: absolute;
   right: ${spacing.small()};
   bottom: ${p => {
@@ -66,8 +86,10 @@ const SelectIcon = styled(Caret)`
   fill: ${color.gray};
   transform: translateY(50%);
   transition: fill 0.2s ease;
+  ${themify(SELECT_SIMPLE_ICON)};
 `
 
+export const SELECT_SIMPLE_SELECT = "SELECT_SIMPLE_SELECT"
 const Select = styled.select`
   width: 100%;
   min-height: ${targetSize.normal};
@@ -83,7 +105,7 @@ const Select = styled.select`
 
   &:focus,
   &:hover {
-    color: ${color.blue};
+    color: ${color.primary};
     border-color: ${color.line};
     outline: none;
 
@@ -91,6 +113,7 @@ const Select = styled.select`
       fill: ${color.primary};
     }
   }
+  ${themify(SELECT_SIMPLE_SELECT)};
 `
 
 export default SelectSimple
