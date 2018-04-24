@@ -60,8 +60,8 @@ const CheckWrapper = styled.div`
   ${themify(CHECKBOX)};
 `
 
-const IconComponent = () => (
-  <ThemeComponent tagName={COMPONENT_CHECKBOX_ICON} fallback={Check} />
+const IconComponent = ({...props}) => (
+  <ThemeComponent tagName={COMPONENT_CHECKBOX_ICON} fallback={Check} {...props} />
 )
 
 export const Icon = styled(IconComponent)`
