@@ -1,4 +1,4 @@
-import getProp from './getProp'
+import getProp from "./getProp";
 
 const font = size => getProp("font", size);
 

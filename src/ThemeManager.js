@@ -1,6 +1,6 @@
 import registerStyle from "./registerStyle";
 import { VARIANT_DEFAULT } from "./_constants";
-import mergeDeep from './mergeDeep'
+import mergeDeep from "./mergeDeep";
 
 class ThemeManager {
   constructor(baseTheme = {}) {
