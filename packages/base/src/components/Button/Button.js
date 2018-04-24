@@ -17,32 +17,32 @@ const tinycolor = require("tinycolor2")
 
 export const BUTTON = "Button"
 const Style = css`
-  background-color: ${color.primary()};
+  background-color: ${color.primary};
   color: ${p =>
     tinycolor
-      .mostReadable(color.primary(p), ["#fff"], {
+      .mostReadable(color.primary()(p), ["#fff"], {
         includeFallbackColors: true,
         level: "AA",
         size: "large"
       })
       .toString()};
   border-width: 0;
-  border-radius: ${borderRadius()};
-  padding: ${spacing.tiny()} ${spacing.medium()};
+  border-radius: ${borderRadius};
+  padding: ${spacing.tiny} ${spacing.medium};
   cursor: pointer;
   min-height: ${targetSize.normal};
   text-decoration: none;
   text-align: center;
   display: inline-block;
-  font-size: ${font("base")};
-  font-family: ${fontFamily.body()};
+  font-size: ${font.base};
+  font-family: ${fontFamily.body};
   line-height: 32px;
   font-weight: 600;
   white-space: nowrap;
   justify-content: center;
   align-items: center;
-  margin-right: ${spacing.small()};
-  margin-bottom: ${spacing.small()};
+  margin-right: ${spacing.small};
+  margin-bottom: ${spacing.small};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.2s ease;
