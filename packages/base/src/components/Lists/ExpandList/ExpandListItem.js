@@ -9,7 +9,8 @@ import {
   fontFamily,
   font,
   color,
-  themify
+  themify,
+  ThemeComponent
 } from "@staccx/theme"
 
 const Caret = ({ className }) => (
@@ -84,8 +85,12 @@ const ExpandItem = styled.li`
   ${themify(EXPAND_LIST_ITEM)};
 `
 
+export const COMPONENT_EXPAND_LIST_ICON = "EXPAND_LIST_ICON"
+const IconComponent = ({...props}) => (
+  <ThemeComponent tagName={COMPONENT_EXPAND_LIST_ICON} fallback={Caret} {...props} />
+)
 export const EXPAND_LIST_ICON = "EXPAND_LIST_ICON"
-const ExpandIcon = styled(Caret)`
+const ExpandIcon = styled(IconComponent)`
   position: absolute;
   top: 16px;
   right: ${spacing.small()};
