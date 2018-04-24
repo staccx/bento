@@ -3,7 +3,6 @@ import React from "react"
 import styled from "styled-components"
 import { linear } from "easing-utils"
 import { inverseLerp, clamp } from "@staccx/math"
-import withTheme from "../../../../utils/withTheme"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
 import {
@@ -247,4 +246,4 @@ SliderKeyboardInput.propTypes = {
   value: PropTypes.number
 }
 
-export default withTheme(SliderKeyboardInput)
+export default SliderKeyboardInput

@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import withTheme from "../../../../utils/withTheme"
 import {
   targetSize,
   spacing,
@@ -225,4 +224,4 @@ Slider.propTypes = {
   variantStyle: PropTypes.func
 }
 
-export default withTheme(Slider)
+export default Slider
