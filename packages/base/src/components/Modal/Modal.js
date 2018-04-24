@@ -23,6 +23,9 @@ class Modal extends Component {
 
   escFunction(event) {
     if (event.keyCode === 27) {
+      if (this.props.onClose) {
+        this.props.onClose(event)
+      }
       this.setState({
         isOpen: false
       })
