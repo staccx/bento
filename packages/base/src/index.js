@@ -11,7 +11,7 @@ import RadioButton from "./components/Forms/RadioButton/RadioButton"
 import RadioPill from "./components/Forms/RadioPill/RadioPill"
 import RadioPillItem from "./components/Forms/RadioPill/RadioPill.Item"
 import CheckGroup from "./components/Forms/CheckGroup/CheckGroup"
-import Slider from "./components/Forms/Slider/Slider/Slider"
+import Slider, * as SliderStyles from "./components/Forms/Slider/Slider/Slider"
 import SliderKeyboardInput from "./components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput"
 import SelectSimple from "./components/Forms/SelectSimple/SelectSimple"
 import Select from "./components/Forms/Select/Select"
@@ -42,7 +42,7 @@ import Donut from "./components/DataViz/Donut/Donut"
 
 import Modal from "./components/Modal/Modal"
 
-import { default as Button } from "./components/Button/Button"
+import Button, * as ButtonStyles from "./components/Button/Button"
 import { default as cssResets } from "./Styles/cssResets"
 import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 
@@ -70,6 +70,7 @@ const Icons = {
   COMPONENT_CHECKBOX_ICON
 }
 
+console.log(SliderStyles)
 export {
   Icons,
   theme as BaseTheme,
@@ -77,6 +78,7 @@ export {
   STYLES,
   Box,
   Button,
+  ButtonStyles,
   Caret,
   CheckBox,
   CheckGroup,
@@ -109,6 +111,7 @@ export {
   SelectSelected,
   SelectSimple,
   Slider,
+  SliderStyles,
   SliderKeyboardInput,
   SplitListItem,
   ThemeProvider,
