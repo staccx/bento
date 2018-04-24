@@ -1,5 +1,13 @@
 ```jsx
-<Modal open={true}>
+<div>
+<Button
+    size="small"
+    onClick={() => setState({ isOpen: true })}
+    disabled={state.isOpen}
+  >
+    Show Modal
+  </Button>
+<Modal isOpen={state.isOpen} onClose={() => setState({isOpen: false})}>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis
     erat ipsum, ut euismod orci luctus sit amet. Donec et tincidunt dolor, at
@@ -24,4 +32,5 @@
     arcu mi, facilisis accumsan risus iaculis eu. Sed a lacinia mauris.
   </p>
 </Modal>
+</div>
 ```

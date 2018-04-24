@@ -24,7 +24,13 @@ class Modal extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.escFunction = this.escFunction.bind(this)
     this.state = {
-      isOpen: this.props.open
+      isOpen: this.props.isOpen
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.isOpen !== this.state.isOpen) {
+      this.setState({isOpen: nextProps.isOpen})
     }
   }
 
@@ -37,6 +43,10 @@ class Modal extends Component {
   }
 
   handleChange(event) {
+    if(this.props.onClose) {
+      this.props.onClose(event)
+    }
+    // TODO: Make controllable/uncontrollable toggle.
     this.setState({
       isOpen: !this.state.isOpen
     })
@@ -172,14 +182,15 @@ const ModalBackdrop = styled.div`
 `
 
 Modal.defaultProps = {
-  open: false,
+  isOpen: false,
   className: ""
 }
 
 Modal.propTypes = {
   children: PropTypes.any.isRequired,
   className: PropTypes.string,
-  open: PropTypes.bool
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func
 }
 
 export default Modal
