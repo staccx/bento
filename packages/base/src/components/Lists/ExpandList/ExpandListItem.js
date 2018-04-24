@@ -85,7 +85,7 @@ const ExpandItem = styled.li`
   ${themify(EXPAND_LIST_ITEM)};
 `
 
-export const COMPONENT_EXPAND_LIST_ICON = "EXPAND_LIST_ICON"
+export const COMPONENT_EXPAND_LIST_ICON = "COMPONENT_EXPAND_LIST_ICON"
 const IconComponent = ({...props}) => (
   <ThemeComponent tagName={COMPONENT_EXPAND_LIST_ICON} fallback={Caret} {...props} />
 )
