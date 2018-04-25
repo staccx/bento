@@ -40,6 +40,7 @@ import Odometer from "./components/Formatters/Odometer/Odometer"
 import ProgressBar from "./components/DataViz/ProgressBar/ProgressBar"
 import Fraction from "./components/DataViz/Fraction/Fraction"
 import Donut from "./components/DataViz/Donut/Donut"
+import KeyFigures from "./components/DataViz/Keyfigures/Keyfigures"
 
 import Modal from "./components/Modal/Modal"
 
@@ -49,20 +50,6 @@ import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 
 import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
-
-import {
-  INPUT,
-  INPUT_LABEL,
-  INPUT_WRAPPER
-} from "./components/Forms/Input/Input"
-import { LABEL } from "./components/Forms/Label/Label"
-
-const STYLES = {
-  INPUT,
-  INPUT_LABEL,
-  INPUT_WRAPPER,
-  LABEL
-}
 
 import { default as themeManager, theme } from "./theme/baseTheme"
 import { COMPONENT_CHECKBOX_ICON } from "./components/Forms/CheckBox/CheckBox"
@@ -96,6 +83,7 @@ export {
   InlineListItem,
   Input,
   InputStyles,
+  KeyFigures,
   Label,
   LabelStyles,
   LinkListItem,
