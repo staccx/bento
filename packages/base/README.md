@@ -53,11 +53,10 @@ themeManager
 
 
 export default themeManager.Theme
+```
 
-------------
-
+```javascript
 // app.js
-...
 import theme from "./theme.js"
 
 render() {
@@ -76,37 +75,37 @@ In order to do this you need `@staccx/theme` // TODO: Should this be proxied thr
 ```javascript
 // myInputStyle.js
 import {css} from "styled-components"
+import {InputStyles} from "@staccx/base"
 import {registerStyle, color, spacing} from "@staccx/theme"
 
 export const myInputStyle = registerStyle(css`
     margin-right: ${spacing.medium};
     color: ${color.primary};
-`
+`, InputStyles.INPUT)
 
 export const myInputLabelStyle = registerStyle(css`
      position: absolute;
      left: ${spacing.medium};
      top: ${spacing.medium};
      color: ${color.black};
-`
+`, InputStyles.INPUT_LABEL)
 
-------------
+```
 
+```javascript
 // theme.js
-
 import {themeManager, InputStyles} from "@staccx/base"
 import {myInputStyle, myInputLabelStyle} from "./myInputStyle"
 
 themeManager
-.addStyle(myInputStyle, InputStyles.INPUT)
-.addStyle(myInputLabelStyle, InputStyles.INPUT_LABEL)
+.addStyle(myInputStyle)
+.addStyle(myInputLabelStyle)
 
 export default themeManager.Theme
+```
 
-------------
-
+```javascript
 // app.js
-...
 import theme from "./theme.js"
 
 render() {
@@ -118,3 +117,143 @@ render() {
   }
 
 ```
+
+## Themify base components
+
+```javascript
+import {
+  targetSize,
+  spacing,
+  borderRadius,
+  fontFamily,
+  font,
+  color,
+  themify
+} from "@staccx/theme"
+
+export const BUTTON = "Button"
+const Style = css`
+  background-color: ${color.primary};
+  border-width: 0;
+  ...
+
+  ${themify(BUTTON)}; // This is the magic
+`
+const Button = styled.button`
+  ${Style};
+`
+
+// ... adding proptypes and other stuff
+export default Button
+```
+
+### Note: Make sure that the string sent to `themify` is unique
+
+## Adding Replace-components
+Some components are replaceable. This is mainly icons that you might want to change,
+but it might be extended further later
+
+```javascript
+import styled from "styled-components"
+import {ThemeComponent} from "@staccx/theme" // Use this component to achieve this
+import MyDefaultComponent from "./MyDefaultComponent" // 👈 fallback component
+
+// This is the actual code that enables replacibility
+export const COMPONENT_EXPAND_LIST_ICON = "COMPONENT_EXPAND_LIST_ICON"
+const IconComponent = ({ ...props }) => (
+  <ThemeComponent
+    tagName={COMPONENT_EXPAND_LIST_ICON}
+    fallback={Caret}
+    {...props} // 👈 Important
+  />
+)
+
+// Styled the actual component and themify
+export const EXPAND_LIST_ICON = "EXPAND_LIST_ICON"
+const ExpandIcon = styled(IconComponent)`
+  position: absolute;
+  top: 16px;
+  right: ${spacing.small};
+  fill: ${color.line};
+  transition: transform 0.3s ease-out;
+  transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
+  ${themify(EXPAND_LIST_ICON)};
+`
+
+...
+
+// Usage
+<OtherMarkup>
+<ExpandIcon />
+</OtherMarkup>
+
+```
+
+### Replacing ☝️ components
+```javascript
+// theme.js
+import {themeManager} from "@staccx/base"
+import Caret from "./MyNewCoolCaret"
+
+themeManager
+ .addGlobal(Icons.COMPONENT_EXPAND_LIST_ICON, Caret)
+
+ ...
+```
+
+## Variants
+Sometimes using the same component and replacing just the style is needed.
+Button is a great use case.
+
+```javascript
+// myButtonVariant.js
+export const ButtonSubtleStyle = registerStyle(css`
+  background-color: transparent;
+  color: ${color.text};
+  border-width: 0;
+  border-bottom: 2px solid ${color.primary};
+  box-shadow: none;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+  font-size: ${font.base};
+  text-decoration: none;
+  padding-bottom: 3px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: ${color.primary};
+    border-bottom-color: ${p =>
+      tinycolor(color.primary)
+        .darken(10)
+        .toString()};
+    background-color: transparent;
+  }
+`, ButtonStyles.BUTTON, "subtle") // Note the "subtle" name for the variant.
+
+```
+
+```javascript
+// theme.js
+import {themeManager} from "@staccx/base"
+import {ButtonSubtleStyle} from "./ButtonSubtleStyle"
+
+themeManager.addStyle(ButtonSubtleStyle)
+```
+
+```javascript
+// app.js
+import theme from "./theme.js"
+
+render() {
+    return (
+    <ThemeProvider theme={theme}>
+        <Button variant="subtle" />
+    </ThemeProvider>
+    )
+  }
+
+```
+
+
