@@ -9,6 +9,7 @@ import {
   spacing,
   targetSize,
   fontFamily,
+  borderRadius,
   ThemeComponent
 } from "@staccx/theme"
 
@@ -70,11 +71,11 @@ const IconComponent = ({ ...props }) => (
 
 export const Icon = styled(IconComponent)`
   position: absolute;
-  left: 2px;
-  top: 2px;
+  left: 3px;
+  top: 3px;
   display: block;
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
   transform: scale(0);
   transition: all 0.2s ease-in-out;
   color: ${color.primary};
@@ -117,6 +118,7 @@ const Label = styled.label`
     content: "";
     background: ${color.bg};
     border: 1px solid ${color.line};
+    border-radius: ${borderRadius};
     display: block;
     height: ${spacing.medium};
     left: 0;
