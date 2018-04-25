@@ -3,6 +3,7 @@ require("isomorphic-fetch")
 
 import Input from "./components/Forms/Input/Input"
 import CurrencyInput from "./components/Forms/Input/CurrencyInput/CurrencyInput"
+import AccountInput from "./components/Forms/Input/AccountInput/AccountInput"
 import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
 import CompanyInput from "./components/Forms/Input/CompanyInput/CompanyInput"
 import Label from "./components/Forms/Label/Label"
@@ -75,6 +76,7 @@ export {
   theme as BaseTheme,
   themeManager,
   STYLES,
+  AccountInput,
   Box,
   Button,
   ButtonStyles,
