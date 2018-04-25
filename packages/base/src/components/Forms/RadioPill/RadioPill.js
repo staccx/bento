@@ -3,26 +3,17 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { themify } from "@staccx/theme"
 
-const RadioPill = ({ children, group, onChange, className, ...restProps }) => {
-  const handleChange = event => {
-    const value = event.target.value
-    if (onChange) {
-      onChange(value)
-    }
-  }
-
-  return (
-    <RadioPillContainer className={className}>
-      {children.map(child =>
-        React.cloneElement(child, {
-          ...child.props,
-          onChange: handleChange,
-          group
-        })
-      )}
-    </RadioPillContainer>
-  )
-}
+const RadioPill = ({ children, group, onChange, className, ...restProps }) => (
+  <RadioPillContainer className={className}>
+    {children.map(child =>
+      React.cloneElement(child, {
+        ...child.props,
+        onChange: onChange,
+        group
+      })
+    )}
+  </RadioPillContainer>
+)
 
 export const RADIO_PILL = "RADIO_PILL"
 const RadioPillContainer = styled.fieldset`

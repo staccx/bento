@@ -59,7 +59,8 @@ const Radio = styled.input`
   ${hideVisually};
   &:checked {
     ~ ${Label} {
-      color: ${color.primary};
+      background-color: ${color.primary};
+      color: ${color.white};
       z-index: 1;
     }
 
@@ -119,11 +120,12 @@ RadioPillItem.defaultProps = {
 }
 
 RadioPillItem.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   group: PropTypes.string,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   input: PropTypes.any,
   onChange: PropTypes.func,
   defaultChecked: PropTypes.bool,
