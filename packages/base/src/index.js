@@ -33,7 +33,9 @@ import Pack from "./components/Layout/Pack/Pack"
 import PackItem from "./components/Layout/Pack/PackItem"
 // Icons
 import Caret from "./components/Icons/Caret"
+import CaretRight from "./components/Icons/CaretRight"
 import Close from "./components/Icons/Close"
+
 // formatters
 import Odometer from "./components/Formatters/Odometer/Odometer"
 // Dataviz
@@ -53,6 +55,7 @@ import hideVisually from "./Styles/hideVisually"
 
 import { default as themeManager, theme } from "./theme/baseTheme"
 import { COMPONENT_CHECKBOX_ICON } from "./components/Forms/CheckBox/CheckBox"
+// TODO: Trengs denne?
 
 const Icons = {
   COMPONENT_CHECKBOX_ICON
@@ -68,6 +71,7 @@ export {
   Button,
   ButtonStyles,
   Caret,
+  CaretRight,
   CheckBox,
   CheckGroup,
   Close,

@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { BounceIn } from "@staccx/animations"
+import Caret from "../../Icons/Caret"
 import {
   targetSize,
   spacing,
@@ -12,14 +13,6 @@ import {
   themify,
   ThemeComponent
 } from "@staccx/theme"
-
-const Caret = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 16" width="18">
-    <path d="M3.81 0a.54.54 0 0 0-.38.16L.16 3.47a.56.56 0 0 0 0 .78l11.45 11.59a.54.54 0 0 0 .78 0L23.84 4.25a.56.56 0 0 0 0-.78L20.57.17a.54.54 0 0 0-.77 0L12 8.04 4.2.16A.54.54 0 0 0 3.81 0z" />
-  </svg>
-)
-Caret.propTypes = { className: PropTypes.string }
-Caret.defaultProps = { className: "" }
 
 class ExpandListItem extends Component {
   constructor(props) {

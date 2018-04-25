@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
+import CaretRight from "../../Icons/CaretRight"
 import {
   targetSize,
   spacing,
@@ -8,16 +9,18 @@ import {
   fontFamily,
   font,
   color,
-  themify
+  themify,
+  ThemeComponent
 } from "@staccx/theme"
 
-const Caret = ({ className }) => (
-  <svg className={className} width="13" height="19" viewBox="0 0 13 19">
-    <path d="M2.8 0L0 2.8l6.6 6.6L0 16l2.8 2.8 9.4-9.4L2.8 0z" />
-  </svg>
+export const COMPONENT_LINK_LIST_ITEM_ICON = "COMPONENT_LINK_LIST_ITEM_ICON"
+const IconComponent = ({ ...props }) => (
+  <ThemeComponent
+    tagName={COMPONENT_LINK_LIST_ITEM_ICON}
+    fallback={CaretRight}
+    {...props}
+  />
 )
-Caret.propTypes = { className: PropTypes.string }
-Caret.defaultProps = { className: "" }
 
 const LinkListItem = ({ className, children, onClick, to }) => (
   <ListItem className={className}>
@@ -40,7 +43,7 @@ LinkListItem.propTypes = {
 }
 
 export const LINK_LIST_ITEM_CARET = "LINK_LIST_ITEM_CARET"
-const Cursor = styled(Caret)`
+const Cursor = styled(IconComponent)`
   fill: ${color.line};
   margin-left: ${spacing.small()};
   ${themify(LINK_LIST_ITEM_CARET)};
@@ -76,12 +79,15 @@ const ButtonStyle = css`
 `
 
 export const LINK_LIST_ITEM_BUTTON = "LINK_LIST_ITEM_BUTTON"
+export const LINK_LIST_ITEM_BUTTON_HOVER_ICON =
+  "LINK_LIST_ITEM_BUTTON_HOVER_ICON"
 const Button = styled.a`
   ${ButtonStyle};
   &:hover,
   &:focus {
     ${Cursor} {
       fill: ${color.primary};
+      ${themify(LINK_LIST_ITEM_BUTTON_HOVER_ICON)};
     }
   }
   ${themify(LINK_LIST_ITEM_BUTTON)};

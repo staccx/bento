@@ -40,18 +40,16 @@ export const theme = {
     body: "sans-serif"
   },
   font: {
-    size: {
-      h1: "36px",
-      h2: "26px",
-      h3: "22px",
-      h4: "18px",
-      h5: "16px",
-      h6: "14px",
-      base: "14px",
-      tiny: "12px",
-      input: "16px",
-      huge: "44px"
-    }
+    h1: "36px",
+    h2: "26px",
+    h3: "22px",
+    h4: "18px",
+    h5: "16px",
+    h6: "14px",
+    base: "14px",
+    tiny: "12px",
+    input: "16px",
+    huge: "44px"
   },
   targetSize: {
     small: "36px",
