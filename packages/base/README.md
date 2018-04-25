@@ -72,6 +72,7 @@ render() {
 
 ## Adding styles to base components
 In other to do this you need `@staccx/theme` // TODO: Should this be proxied through base?
+
 ```jsx harmony
 // myInputStyle.js
 import {css} from "styled-components"
