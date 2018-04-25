@@ -71,7 +71,7 @@ render() {
 ```
 
 ## Adding styles to base components
-In other to do this you need `@staccx/theme` // TODO: Should this be proxied through base?
+In order to do this you need `@staccx/theme` // TODO: Should this be proxied through base?
 
 ```javascript
 // myInputStyle.js
