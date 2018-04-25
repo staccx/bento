@@ -20,7 +20,7 @@ import { Input, BaseTheme } from "@staccx/base"
 class Example extends Component {
   render() {
     return ( 
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={BaseTheme}>
         <Input />
     </ThemeProvider>
     )
