@@ -6,7 +6,7 @@ import CurrencyInput from "./components/Forms/Input/CurrencyInput/CurrencyInput"
 import AccountInput from "./components/Forms/Input/AccountInput/AccountInput"
 import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
 import CompanyInput from "./components/Forms/Input/CompanyInput/CompanyInput"
-import Label from "./components/Forms/Label/Label"
+import Label, * as LabelStyles from "./components/Forms/Label/Label"
 import CheckBox from "./components/Forms/CheckBox/CheckBox"
 import RadioButton from "./components/Forms/RadioButton/RadioButton"
 import RadioPill from "./components/Forms/RadioPill/RadioPill"
@@ -97,6 +97,7 @@ export {
   Input,
   InputStyles,
   Label,
+  LabelStyles,
   LinkListItem,
   List,
   Modal,

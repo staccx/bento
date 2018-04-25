@@ -112,7 +112,7 @@ export const inputCss = css`
   border-radius: ${borderRadius()};
   padding-left: ${spacing.small()};
   padding-right: ${spacing.small()};
-  font-family: ${fontFamily.base};
+  font-family: ${fontFamily.body};
   font-size: ${font.input};
   transition: border-color 0.2s ease-out;
   -webkit-appearance: none;
