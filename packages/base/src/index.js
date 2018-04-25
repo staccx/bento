@@ -1,7 +1,7 @@
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
-import Input from "./components/Forms/Input/Input"
+import Input, * as InputStyles from "./components/Forms/Input/Input"
 import CurrencyInput from "./components/Forms/Input/CurrencyInput/CurrencyInput"
 import AccountInput from "./components/Forms/Input/AccountInput/AccountInput"
 import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
@@ -95,6 +95,7 @@ export {
   hideVisually,
   InlineListItem,
   Input,
+  InputStyles,
   Label,
   LinkListItem,
   List,
