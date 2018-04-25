@@ -1,4 +1,4 @@
-import { ThemeManager } from "@staccx/theme"
+import { ThemeManager } from '@staccx/theme'
 
 export const theme = {
   name: "Default theme",
@@ -59,5 +59,4 @@ export const theme = {
 }
 
 const manager = new ThemeManager(theme)
-
 export default manager

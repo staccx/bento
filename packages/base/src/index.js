@@ -14,7 +14,7 @@ import RadioPillItem from "./components/Forms/RadioPill/RadioPill.Item"
 import CheckGroup from "./components/Forms/CheckGroup/CheckGroup"
 import Slider, * as SliderStyles from "./components/Forms/Slider/Slider/Slider"
 import SliderKeyboardInput from "./components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput"
-import SelectSimple from "./components/Forms/SelectSimple/SelectSimple"
+import SelectSimple, * as SelectSimpleStyles from "./components/Forms/SelectSimple/SelectSimple"
 import Select from "./components/Forms/Select/Select"
 import SelectSelected from "./components/Forms/Select/Select.Selected"
 import SelectOption from "./components/Forms/Select/Select.Option"
@@ -65,7 +65,6 @@ export {
   Icons,
   theme as BaseTheme,
   themeManager,
-  STYLES,
   AccountInput,
   Box,
   Button,
@@ -106,6 +105,7 @@ export {
   SelectOption,
   SelectSelected,
   SelectSimple,
+  SelectSimpleStyles,
   Slider,
   SliderStyles,
   SliderKeyboardInput,
