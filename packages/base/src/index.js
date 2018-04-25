@@ -5,7 +5,7 @@ import Input, * as InputStyles from "./components/Forms/Input/Input"
 import CurrencyInput from "./components/Forms/Input/CurrencyInput/CurrencyInput"
 import AccountInput from "./components/Forms/Input/AccountInput/AccountInput"
 import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
-import CompanyInput from "./components/Forms/Input/CompanyInput/CompanyInput"
+import CompanyInput, * as CompanyInputStyles from "./components/Forms/Input/CompanyInput/CompanyInput"
 import Label, * as LabelStyles from "./components/Forms/Label/Label"
 import CheckBox from "./components/Forms/CheckBox/CheckBox"
 import RadioButton from "./components/Forms/RadioButton/RadioButton"
@@ -76,6 +76,7 @@ export {
   CheckGroup,
   Close,
   CompanyInput,
+  CompanyInputStyles,
   cssResets,
   CurrencyInput,
   Donut,
