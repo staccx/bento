@@ -12,7 +12,7 @@ yarn add @staccx/base styled-components@3.2.6
 ## Usage
 
 #### Minimum requirement
-```jsx harmony
+```javascript
 import React, { Component } from "react"
 import {ThemeProvider} from "styled-components"
 import { Input, BaseTheme } from "@staccx/base"
@@ -30,7 +30,7 @@ class Example extends Component {
 
 ## Theming
 
-```jsx harmony
+```javascript
 // theme.js
 import {themeManager} from "@staccx/base"
 
@@ -73,7 +73,7 @@ render() {
 ## Adding styles to base components
 In other to do this you need `@staccx/theme` // TODO: Should this be proxied through base?
 
-```jsx harmony
+```javascript
 // myInputStyle.js
 import {css} from "styled-components"
 import {registerStyle, color, spacing} from "@staccx/theme"
