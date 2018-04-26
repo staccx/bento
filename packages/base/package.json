@@ -21,14 +21,14 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "peerDependencies": {
-    "@staccx/theme": "^1.0.1",
+    "@staccx/theme": "^2.0.0",
     "prop-types": "^15.5.4",
     "react": "^0.14.9 || ^15.0.0 || ^16.0.0",
     "react-dom": "^0.14.9 || ^15.0.0 || ^16.0.0",
     "styled-components": "^3.1.6"
   },
   "devDependencies": {
-    "@staccx/theme": "^2.0.1-1",
+    "@staccx/theme": "^2.0.1",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-plugin-external-helpers": "^6.22.0",

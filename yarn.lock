@@ -106,9 +106,9 @@
   dependencies:
     easing-utils "^0.0.7"
 
-"@staccx/theme@^2.0.1-1":
-  version "2.0.1-1"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/theme/-/@staccx/theme-2.0.1-1.tgz#944bffcfa5f306a8a296c1fceb5fa2d18a43e0c5"
+"@staccx/theme@^2.0.1":
+  version "2.0.1"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/theme/-/@staccx/theme-2.0.1.tgz#a907fc759ae7a70ab2ca7ec8489807ca69e6f200"
 
 "@vue/component-compiler-utils@^1.0.0":
   version "1.1.0"
