@@ -48,13 +48,12 @@ import KeyFigures from "./components/DataViz/Keyfigures/Keyfigures"
 import Modal from "./components/Modal/Modal"
 
 import Button, * as ButtonStyles from "./components/Button/Button"
-import { default as cssResets } from "./Styles/cssResets"
 import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 
 import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
 
-import { default as themeManager, theme } from "./theme/baseTheme"
+import { default as themeManager } from "./theme/baseTheme"
 import { COMPONENT_CHECKBOX_ICON } from "./components/Forms/CheckBox/CheckBox"
 // TODO: Trengs denne?
 
@@ -64,7 +63,6 @@ const Icons = {
 
 export {
   Icons,
-  theme as BaseTheme,
   themeManager,
   AccountInput,
   Box,
@@ -77,7 +75,6 @@ export {
   Close,
   CompanyInput,
   CompanyInputStyles,
-  cssResets,
   CurrencyInput,
   Donut,
   ExpandListItem,

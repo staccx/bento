@@ -1,18 +1,19 @@
 import React, { Component } from "react"
 import { ThemeProvider } from "styled-components"
 import PropTypes from "prop-types"
-import baseTheme from "./baseTheme"
-import cssReset from "../Styles/cssResets"
+import themeManager from "./baseTheme"
 
 /**
  * NOTE : https://github.com/styled-components/styled-components/issues/1333.
  * TODO: Implement once this is merged into style-components
  */
 export default class ThemeWrapper extends Component {
+  componentWillMount() {
+    themeManager.addReset(this.props.reset).resetCSS()
+  }
   render() {
-    cssReset(this.props.resets)
     return (
-      <ThemeProvider theme={baseTheme.theme}>
+      <ThemeProvider theme={themeManager.theme}>
         {this.props.children}
       </ThemeProvider>
     )

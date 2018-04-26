@@ -1,4 +1,5 @@
 import { ThemeManager } from "@staccx/theme"
+import { reset } from "../Styles/cssResets"
 
 export const theme = {
   name: "Default theme",
@@ -58,5 +59,6 @@ export const theme = {
   borderRadius: "2px"
 }
 
-const manager = new ThemeManager(theme)
+const manager = new ThemeManager(theme, reset)
+
 export default manager

@@ -1,8 +1,4 @@
-import { injectGlobal } from "styled-components"
-
-const cssResets = (customResets = "") => {
-  const resets =
-    `
+export const reset = `
   body, h1, h2, h3, h4, h5, h6,
   blockquote, p, pre,
   dl, dd, ol, ul,
@@ -70,9 +66,4 @@ fieldset {
   img {
     max-width: 100%;
   }
-` + customResets
-
-  injectGlobal`${resets}`
-}
-
-export default cssResets
+`
