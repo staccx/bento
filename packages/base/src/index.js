@@ -5,6 +5,7 @@ import Input, * as InputStyles from "./components/Forms/Input/Input"
 import CurrencyInput from "./components/Forms/Input/CurrencyInput/CurrencyInput"
 import AccountInput from "./components/Forms/Input/AccountInput/AccountInput"
 import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
+import NationalIdInput from "./components/Forms/Input/NationalIdInput/NationalIdInput"
 import CompanyInput, * as CompanyInputStyles from "./components/Forms/Input/CompanyInput/CompanyInput"
 import Label, * as LabelStyles from "./components/Forms/Label/Label"
 import CheckBox from "./components/Forms/CheckBox/CheckBox"
@@ -96,6 +97,7 @@ export {
   Odometer,
   Pack,
   PackItem,
+  NationalIdInput,
   PhoneInput,
   ProgressBar,
   RadioButton,
