@@ -13,7 +13,7 @@ import RadioPill from "./components/Forms/RadioPill/RadioPill"
 import RadioPillItem from "./components/Forms/RadioPill/RadioPill.Item"
 import CheckGroup from "./components/Forms/CheckGroup/CheckGroup"
 import Slider, * as SliderStyles from "./components/Forms/Slider/Slider/Slider"
-import SliderKeyboardInput from "./components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput"
+import SliderKeyboardInput, * as SliderKeyboardInputStyles from "./components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput"
 import SelectSimple, * as SelectSimpleStyles from "./components/Forms/SelectSimple/SelectSimple"
 import Select from "./components/Forms/Select/Select"
 import SelectSelected from "./components/Forms/Select/Select.Selected"
@@ -109,6 +109,7 @@ export {
   Slider,
   SliderStyles,
   SliderKeyboardInput,
+  SliderKeyboardInputStyles,
   SplitListItem,
   ThemeProvider,
   Toggle,

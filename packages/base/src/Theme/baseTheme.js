@@ -1,4 +1,4 @@
-import { ThemeManager } from '@staccx/theme'
+import { ThemeManager } from "@staccx/theme"
 
 export const theme = {
   name: "Default theme",
