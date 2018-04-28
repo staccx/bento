@@ -1,7 +1,8 @@
-import {formatCurrency, createCurrencyMask, currencyMaskOptions} from "./src/currency"
+import {formatCurrency, createCurrencyMask, currencyMaskOptions, abbreviateCurrency} from "./src/currency"
 
 export {
   formatCurrency,
   createCurrencyMask,
-  currencyMaskOptions
+  currencyMaskOptions,
+  abbreviateCurrency
 }
