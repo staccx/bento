@@ -14,7 +14,6 @@ class App extends Component {
         <Provider customer={customer} account={account}>
           <Wrapper size="small">
             <Account />
-            <Button>My X Button</Button>
             <Transactions />
           </Wrapper>
         </Provider>
