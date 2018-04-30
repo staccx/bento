@@ -1,11 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import {inject, observer} from "mobx-react"
+import { inject, observer } from "mobx-react"
 import { font, color } from "@staccx/theme"
 import { Box } from "./Box"
 
-@inject("account") @observer
+@inject("account")
+@observer
 class Account extends React.Component {
   static defaultProps = {
     title: "På konto"
@@ -16,10 +17,10 @@ class Account extends React.Component {
     title: PropTypes.string
   }
 
-  render () {
-    const {account, title} = this.props
-    const {earned} = account
-    const {availableBalance} = account.account
+  render() {
+    const { account, title } = this.props
+    const { earned } = account
+    const { availableBalance } = account.account
     return (
       <Box>
         <Title>{title}</Title>
@@ -45,7 +46,7 @@ const Balance = styled.div`
 const Earned = styled.div`
   font-size: ${font.input};
   font-weight: bold;
-  color: ${color.green};
+  color: ${color.secondary};
 `
 
 export default Account

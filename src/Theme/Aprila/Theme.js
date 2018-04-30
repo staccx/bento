@@ -32,6 +32,7 @@ const color = {
   bg: "#fff",
   bgGray: "#F2F1FC",
   primary: "#FF7E68",
+  secondary: "#3B2C7C",
   gray: "#767676",
   text: "#2b2b2b",
   white: "#fff",
@@ -39,6 +40,8 @@ const color = {
   wcag: "#777",
   disabled: "#BABABA",
   warning: "#FB8D90",
+  positive: "#FF7E68",
+  negative: "#3B2C7C",
   black: "#000",
   subtleHover: "#F2F1FC"
 }

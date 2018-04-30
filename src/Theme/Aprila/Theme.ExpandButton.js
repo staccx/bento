@@ -8,7 +8,7 @@ export default registerStyle(
     width: 100%;
     margin: 0;
     background-color: transparent;
-    color: ${color.primary};
+    color: ${color.secondary};
 
     &:hover,
     &:focus,
