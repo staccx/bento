@@ -36,6 +36,7 @@ const Balance = styled.div`
 const Earned = styled.div`
   font-size: ${font.input};
   font-weight: bold;
+  color: ${color.green};
 `;
 
 Account.defaultProps = {
