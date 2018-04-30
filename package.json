@@ -5,6 +5,7 @@
   "dependencies": {
     "@staccx/base": "^2.8.1",
     "@staccx/theme": "^2.0.1",
+    "axios": "^0.18.0",
     "mobx": "^4.2.0",
     "mobx-react": "^5.0.0",
     "prop-types": "^15.6.1",
