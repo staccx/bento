@@ -1,14 +1,16 @@
 import { css } from "styled-components"
-import { registerStyle, color } from "@staccx/theme"
+import { registerStyle, color, spacing } from "@staccx/theme"
 import { ButtonStyles } from "@staccx/base"
 
 export default registerStyle(
   css`
-    display: block;
-    width: 100%;
-    margin: 0;
+    display: flex;
+    padding-left: ${spacing.small};
     background-color: transparent;
-    color: ${color.primary};
+    width: 100%;
+    text-align: left;
+    color: ${color.text};
+    border-bottom: 1px solid ${color.line};
 
     &:hover,
     &:focus,
@@ -18,5 +20,5 @@ export default registerStyle(
     }
   `,
   ButtonStyles.BUTTON,
-  "expand"
+  "menuItem"
 )

@@ -22,6 +22,7 @@ const List = styled.ol`
   grid-gap: ${spacing.small};
   list-style-type: none;
   padding: ${spacing.small} 0 0;
+  margin: 0;
 `
 
 TransactionList.propTypes = {
