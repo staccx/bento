@@ -29,23 +29,18 @@ const spacing = {
   tiny: "6px"
 }
 const color = {
-  bg: "#F8F8F8",
-  bgGray: "#F9F7F7",
-  primary: "#3297BF",
+  bg: "#fff",
+  bgGray: "#F2F1FC",
+  primary: "#FF7E68",
   gray: "#767676",
   text: "#2b2b2b",
   white: "#fff",
-  red: "#FB8D90",
-  pink: "#f8d0db",
-  green: "#55C4B4",
-  blue: "#188EFB",
-  yellow: "#f4da87",
   line: "#EBEBF2",
   wcag: "#777",
   disabled: "#BABABA",
   warning: "#FB8D90",
   black: "#000",
-  subtleHover: "#F7F7FF"
+  subtleHover: "#F2F1FC"
 }
 
 const font = {
@@ -67,7 +62,7 @@ const fontFamily = {
 }
 
 themeManager
-  .setName("X Theme Starter pack")
+  .setName("Aprila")
   .addFont(font)
   .addColors(color)
   .addSpacing(spacing)
