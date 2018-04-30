@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Button } from "@staccx/base"
 import { Box } from "../Box"
@@ -33,7 +32,7 @@ const menuOptions = [
   }
 ]
 
-const Menu = ({ children }) => (
+const Menu = () => (
   <Container>
     <List>
       {menuOptions.map(option => (
@@ -67,9 +66,5 @@ const IconOuter = styled.div`
 `
 
 const ListItem = styled.li``
-
-Menu.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired
-}
 
 export default Menu
