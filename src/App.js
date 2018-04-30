@@ -1,30 +1,23 @@
-import React, { Component } from "react"
-import { Button, Wrapper } from "@staccx/base"
-import { ThemeProvider } from "styled-components"
-import theme from "./theme.js"
-import fakeData from "./data/transactions"
-import Account from "./components/Account"
-import TransactionList from "./components/TransactionList/TransactionList"
-import TransactionListItem from "./components/TransactionList/TransactionList.item"
+import React, { Component } from 'react'
+import { Button, Wrapper } from '@staccx/base'
+import { ThemeProvider } from 'styled-components'
+import theme from './theme.js'
+import Account from './components/Account'
+import Transactions from './components/Transactions'
+import { Provider } from 'mobx-react'
+import { account, customer } from './state'
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <ThemeProvider theme={theme}>
-        <Wrapper size="small">
-          <Account balance={917822.45} earned={17822.45} />
-          <Button>My X Button</Button>
-          <TransactionList>
-            {fakeData.map(transaction => (
-              <TransactionListItem
-                heading={transaction.heading}
-                date={transaction.date}
-                amount={transaction.amount}
-                key={transaction.id}
-              />
-            ))}
-          </TransactionList>
-        </Wrapper>
+        <Provider customer={customer} account={account}>
+          <Wrapper size="small">
+            <Account balance={917822.45} earned={17822.45}/>
+            <Button>My X Button</Button>
+            <Transactions/>
+          </Wrapper>
+        </Provider>
       </ThemeProvider>
     )
   }

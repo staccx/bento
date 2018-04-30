@@ -12,7 +12,7 @@ export default [
     amount: 50000
   },
   {
-    _id: "siodh9wq",
+    _id: "siodh9swq",
     date: "1 måned siden",
     heading: "Penger inn på konto",
     amount: 50000
