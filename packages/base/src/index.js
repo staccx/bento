@@ -1,6 +1,3 @@
-require("es6-promise").polyfill()
-require("isomorphic-fetch")
-
 import Input, * as InputStyles from "./components/Forms/Input/Input"
 import CurrencyInput from "./components/Forms/Input/CurrencyInput/CurrencyInput"
 import AccountInput from "./components/Forms/Input/AccountInput/AccountInput"
@@ -8,7 +5,9 @@ import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
 import NationalIdInput from "./components/Forms/Input/NationalIdInput/NationalIdInput"
 import CompanyInput, * as CompanyInputStyles from "./components/Forms/Input/CompanyInput/CompanyInput"
 import Label, * as LabelStyles from "./components/Forms/Label/Label"
-import CheckBox from "./components/Forms/CheckBox/CheckBox"
+import CheckBox, {
+  COMPONENT_CHECKBOX_ICON
+} from "./components/Forms/CheckBox/CheckBox"
 import RadioButton from "./components/Forms/RadioButton/RadioButton"
 import RadioPill from "./components/Forms/RadioPill/RadioPill"
 import RadioPillItem from "./components/Forms/RadioPill/RadioPill.Item"
@@ -29,7 +28,7 @@ import InlineListItem from "./components/Lists/InlineList/InlineListItem"
 // layout
 import Flag from "./components/Layout/Flag/Flag"
 import Wrapper from "./components/Layout/Wrapper/Wrapper"
-import Box from "./components/Layout/Box/Box"
+import Box, * as BoxStyles from "./components/Layout/Box/Box"
 import Pack from "./components/Layout/Pack/Pack"
 import PackItem from "./components/Layout/Pack/PackItem"
 // Icons
@@ -54,7 +53,9 @@ import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
 
 import { default as themeManager } from "./theme/baseTheme"
-import { COMPONENT_CHECKBOX_ICON } from "./components/Forms/CheckBox/CheckBox"
+
+require("es6-promise").polyfill()
+require("isomorphic-fetch")
 // TODO: Trengs denne?
 
 const Icons = {
@@ -66,6 +67,7 @@ export {
   themeManager,
   AccountInput,
   Box,
+  BoxStyles,
   Button,
   ButtonStyles,
   Caret,
