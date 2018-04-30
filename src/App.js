@@ -13,7 +13,7 @@ class App extends Component {
       <ThemeProvider theme={Theme}>
         <Provider customer={customer} account={account}>
           <Wrapper size="small">
-            <Account balance={917822.45} earned={17822.45} />
+            <Account />
             <Button>My X Button</Button>
             <Transactions />
           </Wrapper>

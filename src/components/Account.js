@@ -1,16 +1,34 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import {inject, observer} from "mobx-react"
 import { font, color } from "@staccx/theme"
 import { Box } from "./Box"
 
-const Account = ({ title, balance, earned }) => (
-  <Box>
-    <Title>{title}</Title>
-    <Balance>{balance}</Balance>
-    <Earned>{earned}</Earned>
-  </Box>
-)
+@inject("account") @observer
+class Account extends React.Component {
+  static defaultProps = {
+    title: "På konto"
+  }
+
+  static propTypes = {
+    account: PropTypes.object.isRequired,
+    title: PropTypes.string
+  }
+
+  render () {
+    const {account, title} = this.props
+    const {earned} = account
+    const {availableBalance} = account.account
+    return (
+      <Box>
+        <Title>{title}</Title>
+        <Balance>{availableBalance}</Balance>
+        <Earned>{earned}</Earned>
+      </Box>
+    )
+  }
+}
 
 const Title = styled.h3`
   font-size: ${font.input};
@@ -29,15 +47,5 @@ const Earned = styled.div`
   font-weight: bold;
   color: ${color.green};
 `
-
-Account.defaultProps = {
-  title: "På konto"
-}
-
-Account.propTypes = {
-  title: PropTypes.string,
-  balance: PropTypes.number.isRequired,
-  earned: PropTypes.number.isRequired
-}
 
 export default Account
