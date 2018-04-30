@@ -1,7 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import registerServiceWorker from "./registerServiceWorker";
+import WebFont from "webfontloader";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+WebFont.load({
+  google: {
+    families: ["IBM Plex Sans:700,400"]
+  }
+});
+
+ReactDOM.render(<App />, document.getElementById("root"));
 registerServiceWorker();
