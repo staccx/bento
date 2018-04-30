@@ -1,16 +1,17 @@
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import TransactionList from './TransactionList/TransactionList'
-import TransactionListItem from './TransactionList/TransactionList.item'
-import {inject, observer} from "mobx-react"
+import PropTypes from "prop-types"
+import React, { Component } from "react"
+import TransactionList from "./TransactionList/TransactionList"
+import TransactionListItem from "./TransactionList/TransactionList.item"
+import { inject, observer } from "mobx-react"
 
-@inject("account") @observer
+@inject("account")
+@observer
 class Transactions extends Component {
   static propTypes = {
     account: PropTypes.object
   }
 
-  render () {
+  render() {
     return (
       <TransactionList>
         {this.props.account.transactions.map(transaction => (
