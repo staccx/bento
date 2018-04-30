@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Button, Wrapper } from "@staccx/base"
+import { Wrapper } from "@staccx/base"
 import { ThemeProvider } from "styled-components"
 import Theme from "./Theme/Theme"
 import Account from "./components/Account"
