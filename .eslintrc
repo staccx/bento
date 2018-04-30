@@ -1,8 +1,19 @@
 {
+  "parser": "babel-eslint",
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/prop-types": false,
+    "react/no-unused-prop-types": false
+  },
   "extends": [
     "standard",
     "standard-jsx",
     "eslint-config-standard-react",
-    "prettier"
-  ]
+    "plugin:prettier/recommended",
+    "prettier/standard"
+  ],
+  "globals": {
+    "sessionStorage": true
+  }
 }
