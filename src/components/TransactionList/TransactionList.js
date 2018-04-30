@@ -2,11 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { spacing } from "@staccx/theme"
-import { Button } from "@staccx/base"
-import { Box } from "../Box"
+import { Button, Box } from "@staccx/base"
 
 const TransactionList = ({ children }) => (
-  <Container>
+  <Container variant="dashboardBox">
     <List>{children}</List>
     <Button variant="expand">Flere transaksjoner</Button>
   </Container>

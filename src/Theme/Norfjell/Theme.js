@@ -2,6 +2,7 @@ import { themeManager } from "@staccx/base"
 import reset from "./reset"
 import ExpandButton from "./Theme.ExpandButton"
 import MenuButton from "./Theme.MenuButton"
+import DashboardBox from "./Theme.DashboardBox"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -78,5 +79,6 @@ themeManager
   .resetCSS()
   .addStyle(ExpandButton)
   .addStyle(MenuButton)
+  .addStyle(DashboardBox)
 
 export default themeManager.Theme

@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Button } from "@staccx/base"
-import { Box } from "../Box"
+import { Button, Box } from "@staccx/base"
 import IconArrowRight from "../Icons/Icon.ArrowRight"
 import IconArrowUp from "../Icons/Icon.ArrowUp"
 import IconArrowDown from "../Icons/Icon.ArrowDown"
@@ -33,7 +32,7 @@ const menuOptions = [
 ]
 
 const Menu = () => (
-  <Container>
+  <Container variant="dashboardBox">
     <List>
       {menuOptions.map(option => (
         <ListItem key={option._id}>

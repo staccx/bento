@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { inject, observer } from "mobx-react"
 import { font, color } from "@staccx/theme"
-import { Box } from "./Box"
+import { Box } from "@staccx/base"
 
 @inject("account")
 @observer
@@ -22,7 +22,7 @@ class Account extends React.Component {
     const { earned } = account
     const { availableBalance } = account.account
     return (
-      <Box>
+      <Box variant="dashboardBox">
         <Title>{title}</Title>
         <Balance>{availableBalance}</Balance>
         <Earned>{earned}</Earned>
