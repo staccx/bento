@@ -6,4 +6,4 @@ export default `
     font-family: 'IBM Plex Sans';
     background-color: #F8F8F8;
   }
-`;
+`

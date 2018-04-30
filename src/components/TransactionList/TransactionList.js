@@ -2,11 +2,21 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { spacing } from "@staccx/theme"
+import { Button } from "@staccx/base"
 import { Box } from "../Box"
 
-const TransactionList = ({ children }) => <List>{children}</List>
+const TransactionList = ({ children }) => (
+  <Container>
+    <List>{children}</List>
+    <Button variant="expand">Flere transaksjoner</Button>
+  </Container>
+)
 
-const List = styled(Box)`
+const Container = styled(Box)`
+  padding: 0;
+`
+
+const List = styled.ol`
   display: grid;
   grid-auto-flow: row;
   grid-gap: ${spacing.small};

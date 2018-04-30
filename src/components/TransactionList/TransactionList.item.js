@@ -45,7 +45,9 @@ const Body = styled.div`
 const Amount = styled.div``
 
 TransactionListItem.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired
+  heading: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired
 }
 
 export default TransactionListItem
