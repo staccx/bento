@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { font, color, spacing } from "@staccx/theme";
 
 const Account = ({ title, balance, earned }) => (
   <AccountCard>
-    <h2>{title}</h2>
+    <Title>{title}</Title>
     <Balance>{balance}</Balance>
     <Earned>{earned}</Earned>
   </AccountCard>
@@ -17,11 +18,25 @@ const AccountCard = styled.div`
     0px 2px 2px rgba(0, 0, 75, 0.021), 0px 32px 22px rgba(0, 0, 75, 0.021),
     0px 44px 64px rgba(0, 0, 75, 0.0101);
   border-radius: 3px;
+  padding: ${spacing.medium};
 `;
 
-const Balance = styled.div``;
+const Title = styled.h3`
+  font-size: ${font.input};
+  font-weight: bold;
+  color: ${color.wcag};
+`;
 
-const Earned = styled.div``;
+const Balance = styled.div`
+  font-size: ${font.h1};
+  font-weight: bold;
+  color: ${color.primary};
+`;
+
+const Earned = styled.div`
+  font-size: ${font.input};
+  font-weight: bold;
+`;
 
 Account.defaultProps = {
   title: "På konto"
