@@ -1,5 +1,5 @@
-import { BaseTheme } from '@staccx/base'
-import {  theme } from '@staccx/theme'
+import { BaseTheme } from "@staccx/base"
+import { Theme } from "@staccx/theme"
 import reset from "./reset"
 import ExpandButton from "./Theme.ExpandButton"
 import MenuButton from "./Theme.MenuButton"
@@ -65,8 +65,9 @@ const fontFamily = {
   body: "IBM Plex Sans"
 }
 
-const t = new theme(BaseTheme, {
+const t = new Theme(BaseTheme, {
   name: "Aprila",
+  dashboardLayout: "stonehenge",
   font,
   color,
   wrapper,

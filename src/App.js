@@ -2,10 +2,9 @@ import React, { Component } from "react"
 import { Provider } from "mobx-react"
 import styled, { ThemeProvider, injectGlobal } from "styled-components"
 import { HotKeys } from "react-hotkeys"
-import { Wrapper, hideVisually } from "@staccx/base"
+import { Layout, LayoutItem, hideVisually } from "@staccx/base"
 import AprilaTheme from "./Theme/Aprila/Theme"
 import NorfjellTheme from "./Theme/Norfjell/Theme"
-import { Grid } from "./components/Grid"
 import Account from "./components/Account"
 import Transactions from "./components/Transactions"
 import Menu from "./components/Menu/Menu"
@@ -41,18 +40,23 @@ class App extends Component {
   toggleTheme() {
     console.log("Switching away from " + this.state.activeTheme.name)
     if (this.state.activeTheme.name === "Aprila") {
-      this.setState({
-        activeTheme: NorfjellTheme
-      }, this.onThemeChanged)
+      this.setState(
+        {
+          activeTheme: NorfjellTheme
+        },
+        this.onThemeChanged
+      )
     } else {
-      this.setState({
-        activeTheme: AprilaTheme
-      }, this.onThemeChanged)
+      this.setState(
+        {
+          activeTheme: AprilaTheme
+        },
+        this.onThemeChanged
+      )
     }
   }
 
-  onThemeChanged() {
-  }
+  onThemeChanged() {}
 
   setPage(pageName) {
     this.setState({
@@ -76,14 +80,17 @@ class App extends Component {
           <Provider customer={customer} account={account}>
             <HotKeysHandler keyMap={keyMap} handlers={handlers} focused>
               <input ref={c => (this._container = c)} />
-
-              <Wrapper size="small">
-                <Grid>
+              <Layout grid={this.state.activeTheme.dashboardLayout}>
+                <LayoutItem area="header">
                   <Account />
+                </LayoutItem>
+                <LayoutItem area="body">
                   <Transactions />
+                </LayoutItem>
+                <LayoutItem area="aside">
                   <Menu pages={pages} />
-                </Grid>
-              </Wrapper>
+                </LayoutItem>
+              </Layout>
               {this.state.currentPage === "deposit" && <Deposit />}
             </HotKeysHandler>
           </Provider>
