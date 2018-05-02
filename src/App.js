@@ -90,6 +90,7 @@ class App extends Component {
                 </LayoutItem>
                 <LayoutItem area="aside">
                   <Menu pages={pages} />
+                  <Ad />
                 </LayoutItem>
               </Layout>
               {this.state.currentPage === "deposit" && <Deposit />}
