@@ -1,6 +1,6 @@
 const { Map } = require("immutable")
 
-export default class theme {
+export default class Theme {
   constructor(theme, ...props) {
     const map = Map({})
     this.theme = map.mergeDeep(...theme, ...props).toJS()

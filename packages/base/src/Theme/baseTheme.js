@@ -1,4 +1,4 @@
-import { theme } from "@staccx/theme"
+import { Theme } from "@staccx/theme"
 import { reset } from "../Styles/cssResets"
 
 export const t = {
@@ -60,4 +60,4 @@ export const t = {
   global: reset
 }
 
-export default new theme(t)
+export default new Theme(t)
