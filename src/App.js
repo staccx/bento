@@ -9,6 +9,7 @@ import Account from "./components/Account"
 import Transactions from "./components/Transactions"
 import Menu from "./components/Menu/Menu"
 import Deposit from "./pages/Deposit"
+import Ad from "./components/Ad"
 
 import { account, customer } from "./state"
 

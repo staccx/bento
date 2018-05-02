@@ -22,7 +22,7 @@ class Account extends React.Component {
     const { earned } = account
     const { availableBalance } = account.account
     return (
-      <Box variant="dashboardBox">
+      <Box variant="accountBox">
         <Title>{title}</Title>
         <Balance>{availableBalance}</Balance>
         <Earned>{earned}</Earned>

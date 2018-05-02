@@ -3,6 +3,7 @@ import { Theme } from "@staccx/theme"
 import reset from "./reset"
 import ExpandButton from "./Theme.ExpandButton"
 import MenuButton from "./Theme.MenuButton"
+import { BoxStyling } from "./Theme.Box"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -80,5 +81,6 @@ const t = new Theme(BaseTheme, {
 })
   .addStyles(MenuButton)
   .addStyles(ExpandButton)
+  .addStyles(BoxStyling)
 
 export default t.get
