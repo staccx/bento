@@ -66,20 +66,20 @@ const fontFamily = {
 }
 
 export const init = () =>
-themeManager
-  .setName("Norfjell")
-  .addFont(font)
-  .addColors(color)
-  .addSpacing(spacing)
-  .addWrapper(wrapper)
-  .addTargetSizes(targetSize)
-  .addBorderRadius(borderRadius)
-  .addOther("headerHeight", headerHeight)
-  .addFontFamilies(fontFamily)
-  .addReset(reset)
-  .resetCSS()
-  .addStyle(ExpandButton)
-  .addStyle(MenuButton)
-  .addStyle(DashboardBox)
+  themeManager
+    .setName("Norfjell")
+    .addFont(font)
+    .addColors(color)
+    .addSpacing(spacing)
+    .addWrapper(wrapper)
+    .addTargetSizes(targetSize)
+    .addBorderRadius(borderRadius)
+    .addOther("headerHeight", headerHeight)
+    .addFontFamilies(fontFamily)
+    .addReset(reset)
+    .resetCSS()
+    .addStyle(ExpandButton)
+    .addStyle(MenuButton)
+    .addStyle(DashboardBox)
 
 export default themeManager

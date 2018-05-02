@@ -1,7 +1,9 @@
 import React, { Component } from "react"
-import { Wrapper } from "@staccx/base"
+import styled from "styled-components"
+import { HotKeys } from "react-hotkeys"
+import { Wrapper, hideVisually } from "@staccx/base"
 import { ThemeProvider } from "styled-components"
-import NorfjellTheme, {init as initNorfjell} from "./Theme/Norfjell/Theme"
+import NorfjellTheme, { init as initNorfjell } from "./Theme/Norfjell/Theme"
 import AprilaTheme, { init as initAprila } from "./Theme/Aprila/Theme"
 import { Grid } from "./components/Grid"
 import Account from "./components/Account"
@@ -10,11 +12,15 @@ import Menu from "./components/Menu/Menu"
 import { Provider } from "mobx-react"
 import { account, customer } from "./state"
 
+const keyMap = {
+  switchTheme: "t"
+}
+
 class App extends Component {
   constructor(...props) {
     super(...props)
     this.state = {
-      activeTheme: AprilaTheme
+      activeTheme: NorfjellTheme
     }
     this.toggleTheme = this.toggleTheme.bind(this)
   }
@@ -22,6 +28,16 @@ class App extends Component {
   componentWillMount() {
     initNorfjell()
     initAprila()
+  }
+
+  componentDidMount() {
+    this._container.focus()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps.isFocused && this.props.isFocused) {
+      this._container.focus()
+    }
   }
 
   toggleTheme() {
@@ -42,22 +58,39 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.activeTheme)
+    const handlers = {
+      switchTheme: this.toggleTheme
+    }
+
     return (
-      <ThemeProvider theme={this.state.activeTheme.Theme}>
-        <Provider customer={customer} account={account}>
-          <Wrapper size="small">
-            <Grid>
-              <Account />
-              <Transactions />
-              <Menu />
-            </Grid>
-            <button onClick={this.toggleTheme}>Switch theme</button>
-          </Wrapper>
-        </Provider>
-      </ThemeProvider>
+      <div>
+        <HotKeysHandler keyMap={keyMap} handlers={handlers} focused>
+          <input ref={c => (this._container = c)} />
+        </HotKeysHandler>
+        <ThemeProvider theme={this.state.activeTheme.Theme}>
+          <Provider customer={customer} account={account}>
+            <Wrapper size="small">
+              <Grid>
+                <Account />
+                <Transactions />
+                <Menu />
+              </Grid>
+            </Wrapper>
+          </Provider>
+        </ThemeProvider>
+      </div>
     )
   }
 }
+
+const HotKeysHandler = styled(HotKeys)`
+  &:focus {
+    outline: 0;
+  }
+
+  > input {
+    ${hideVisually};
+  }
+`
 
 export default App
