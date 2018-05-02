@@ -8,14 +8,13 @@ import IconProfile from "../Icons/Icon.Profile"
 import IconLogout from "../Icons/Icon.Logout"
 import { spacing } from "@staccx/theme"
 
-const Menu = pages => {
-  console.log(pages.pages)
+const Menu = ({ pages }) => {
   const menuOptions = [
     {
       _id: "eiwfohug",
       label: "Sett inn penger",
       icon: <IconArrowDown />,
-      page: () => pages.pages.deposit()
+      page: () => pages.deposit()
     },
     {
       _id: "wiofdh",
