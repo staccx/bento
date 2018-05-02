@@ -1,20 +1,33 @@
 import React from "react"
 import styled from "styled-components"
-import { Modal } from "@staccx/base"
+import { Modal, Box, Button } from "@staccx/base"
 
 const Deposit = () => (
-  <Modal isOpen>
+  <FlushModal isOpen>
     <PageContent>
-      <PageLeft>Yo</PageLeft>
-      <PageRight>Yo!</PageRight>
+      <Box variant="modalLeft">
+        <h2>eFaktura</h2>
+        <p>
+          Ved å klikke på knappen under får du tilsendt en eFaktura på 0,- fra
+          NorFjell bank. Juster beløpet til det du ønsker å sette inn på
+          høyrente-kontoen og betal eFakturaen.
+        </p>
+        <Button variant="modalLeftButton">Send eFaktura</Button>
+      </Box>
+      <Box variant="modalRight">Yo!</Box>
     </PageContent>
-  </Modal>
+  </FlushModal>
 )
 
-const PageContent = styled.div``
+const PageContent = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+`
 
-const PageLeft = styled.div``
-
-const PageRight = styled.div``
+const FlushModal = styled(Modal)`
+  > * {
+    padding: 0;
+  }
+`
 
 export default Deposit
