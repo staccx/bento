@@ -8,44 +8,48 @@ import IconProfile from "../Icons/Icon.Profile"
 import IconLogout from "../Icons/Icon.Logout"
 import { spacing } from "@staccx/theme"
 
-const menuOptions = [
-  {
-    _id: "eiwfohug",
-    label: "Sett inn penger",
-    icon: <IconArrowDown />
-  },
-  {
-    _id: "wiofdh",
-    label: "Ta ut penger",
-    icon: <IconArrowUp />
-  },
-  {
-    _id: "sioahugcf",
-    label: "Min profil",
-    icon: <IconProfile />
-  },
-  {
-    _id: "fugya",
-    label: "Logg ut",
-    icon: <IconLogout />
-  }
-]
+const Menu = pages => {
+  console.log(pages.pages)
+  const menuOptions = [
+    {
+      _id: "eiwfohug",
+      label: "Sett inn penger",
+      icon: <IconArrowDown />,
+      page: () => pages.pages.deposit()
+    },
+    {
+      _id: "wiofdh",
+      label: "Ta ut penger",
+      icon: <IconArrowUp />
+    },
+    {
+      _id: "sioahugcf",
+      label: "Min profil",
+      icon: <IconProfile />
+    },
+    {
+      _id: "fugya",
+      label: "Logg ut",
+      icon: <IconLogout />
+    }
+  ]
 
-const Menu = () => (
-  <Container variant="dashboardBox">
-    <List>
-      {menuOptions.map(option => (
-        <ListItem key={option._id}>
-          <Button variant="menuItem">
-            <IconOuter>{option.icon}</IconOuter>
-            <ButtonLabel>{option.label}</ButtonLabel>
-            <IconArrowRight />
-          </Button>
-        </ListItem>
-      ))}
-    </List>
-  </Container>
-)
+  return (
+    <Container variant="dashboardBox">
+      <List>
+        {menuOptions.map(option => (
+          <ListItem key={option._id}>
+            <Button variant="menuItem" onClick={() => option.page()}>
+              <IconOuter>{option.icon}</IconOuter>
+              <ButtonLabel>{option.label}</ButtonLabel>
+              <IconArrowRight />
+            </Button>
+          </ListItem>
+        ))}
+      </List>
+    </Container>
+  )
+}
 
 const Container = styled(Box)`
   padding: 0;

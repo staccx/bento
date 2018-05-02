@@ -1,15 +1,16 @@
 import React, { Component } from "react"
-import styled from "styled-components"
+import { Provider } from "mobx-react"
+import styled, { ThemeProvider } from "styled-components"
 import { HotKeys } from "react-hotkeys"
 import { Wrapper, hideVisually } from "@staccx/base"
-import { ThemeProvider } from "styled-components"
 import NorfjellTheme, { init as initNorfjell } from "./Theme/Norfjell/Theme"
 import AprilaTheme, { init as initAprila } from "./Theme/Aprila/Theme"
 import { Grid } from "./components/Grid"
 import Account from "./components/Account"
 import Transactions from "./components/Transactions"
 import Menu from "./components/Menu/Menu"
-import { Provider } from "mobx-react"
+import Deposit from "./pages/Deposit"
+
 import { account, customer } from "./state"
 
 const keyMap = {
@@ -20,7 +21,8 @@ class App extends Component {
   constructor(...props) {
     super(...props)
     this.state = {
-      activeTheme: NorfjellTheme
+      activeTheme: NorfjellTheme,
+      currentPage: null
     }
     this.toggleTheme = this.toggleTheme.bind(this)
   }
@@ -57,9 +59,19 @@ class App extends Component {
     }
   }
 
+  setPage(pageName) {
+    this.setState({
+      currentPage: pageName
+    })
+  }
+
   render() {
     const handlers = {
       switchTheme: this.toggleTheme
+    }
+
+    const pages = {
+      deposit: () => this.setPage("deposit")
     }
 
     return (
@@ -69,13 +81,16 @@ class App extends Component {
         </HotKeysHandler>
         <ThemeProvider theme={this.state.activeTheme.Theme}>
           <Provider customer={customer} account={account}>
-            <Wrapper size="small">
-              <Grid>
-                <Account />
-                <Transactions />
-                <Menu />
-              </Grid>
-            </Wrapper>
+            <div>
+              <Wrapper size="small">
+                <Grid>
+                  <Account />
+                  <Transactions />
+                  <Menu pages={pages} />
+                </Grid>
+              </Wrapper>
+              {this.state.currentPage === "deposit" && <Deposit />}
+            </div>
           </Provider>
         </ThemeProvider>
       </div>
