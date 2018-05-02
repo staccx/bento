@@ -65,6 +65,7 @@ const fontFamily = {
   body: "IBM Plex Sans"
 }
 
+export const init = () =>
 themeManager
   .setName("Norfjell")
   .addFont(font)
@@ -81,4 +82,4 @@ themeManager
   .addStyle(MenuButton)
   .addStyle(DashboardBox)
 
-export default themeManager.Theme
+export default themeManager

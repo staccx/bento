@@ -64,7 +64,7 @@ const fontFamily = {
   body: "IBM Plex Sans"
 }
 
-themeManager
+export const init = () => themeManager
   .setName("Aprila")
   .addFont(font)
   .addColors(color)
@@ -79,4 +79,4 @@ themeManager
   .addStyle(ExpandButton)
   .addStyle(MenuButton)
 
-export default themeManager.Theme
+export default themeManager
