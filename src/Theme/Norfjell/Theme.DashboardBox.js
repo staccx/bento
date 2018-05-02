@@ -1,9 +1,10 @@
-import { css } from "styled-components"
-import { registerStyle, color, spacing } from "@staccx/theme"
-import { BoxStyles } from "@staccx/base"
+import { css } from 'styled-components'
+import { color, registerStyle, spacing } from '@staccx/theme'
+import { BoxStyles } from '@staccx/base'
 
 export default registerStyle(
-  css`
+  {
+    dashboardBox: css`
     background: ${color.white};
     box-shadow: 0px 16px 16px rgba(0, 0, 75, 0.002),
       0px 8px 8px rgba(0, 0, 75, 0.001), 0px 4px 7px rgba(0, 0, 75, 0.021),
@@ -11,7 +12,7 @@ export default registerStyle(
       0px 44px 64px rgba(0, 0, 75, 0.0101);
     border-radius: 3px;
     padding: ${spacing.medium};
-  `,
-  BoxStyles.BOX,
-  "dashboardBox"
+  `
+  },
+  BoxStyles.BOX
 )

@@ -2,8 +2,8 @@ import { css } from "styled-components"
 import { registerStyle, color, spacing } from "@staccx/theme"
 import { ButtonStyles } from "@staccx/base"
 
-export default registerStyle(
-  css`
+export default registerStyle({
+  menuItem: css`
     display: flex;
     padding-left: ${spacing.small};
     background-color: transparent;
@@ -18,7 +18,6 @@ export default registerStyle(
       background-color: transparent;
       color: ${color.text};
     }
-  `,
-  ButtonStyles.BUTTON,
-  "menuItem"
+  `
+  }, ButtonStyles.BUTTON
 )

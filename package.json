@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@staccx/base": "^2.9.0",
-    "@staccx/theme": "^2.0.1",
+    "@staccx/base": "^3.0.0",
+    "@staccx/theme": "^3.0.0",
     "axios": "^0.18.0",
+    "immutable": "^3.8.2",
     "mobx": "^4.2.0",
     "mobx-react": "^5.0.0",
     "prop-types": "^15.6.1",

@@ -1,4 +1,5 @@
-import { themeManager } from "@staccx/base"
+import { BaseTheme } from '@staccx/base'
+import {  theme } from '@staccx/theme'
 import reset from "./reset"
 import ExpandButton from "./Theme.ExpandButton"
 import MenuButton from "./Theme.MenuButton"
@@ -64,19 +65,19 @@ const fontFamily = {
   body: "IBM Plex Sans"
 }
 
-export const init = () => themeManager
-  .setName("Aprila")
-  .addFont(font)
-  .addColors(color)
-  .addSpacing(spacing)
-  .addWrapper(wrapper)
-  .addTargetSizes(targetSize)
-  .addBorderRadius(borderRadius)
-  .addOther("headerHeight", headerHeight)
-  .addFontFamilies(fontFamily)
-  .addReset(reset)
-  .resetCSS()
-  .addStyle(ExpandButton)
-  .addStyle(MenuButton)
+const t = new theme(BaseTheme, {
+  name: "Aprila",
+  font,
+  color,
+  wrapper,
+  targetSize,
+  borderRadius,
+  headerHeight,
+  fontFamily,
+  spacing,
+  global: reset
+})
+  .addStyles(MenuButton)
+  .addStyles(ExpandButton)
 
-export default themeManager
+export default t.get

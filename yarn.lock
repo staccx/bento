@@ -96,9 +96,9 @@
   version "0.21.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-0.21.0.tgz#59c6b8e1acbfe1ae5b5ad772964917aec5f6797a"
 
-"@staccx/base@^2.9.0":
-  version "2.9.0"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-2.9.0.tgz#b3d3a1817757ed4e1ef8f024c5c6d012410b53ed"
+"@staccx/base@^3.0.0":
+  version "3.0.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-3.0.0.tgz#8a8961d5a2e1a6981ce09671bf018f3f8447d7b0"
   dependencies:
     "@staccx/animations" "^0.21.0"
     "@staccx/formatting" "^0.2.0"
@@ -130,9 +130,9 @@
   dependencies:
     easing-utils "^0.0.7"
 
-"@staccx/theme@^2.0.1":
-  version "2.0.1"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/theme/-/@staccx/theme-2.0.1.tgz#a907fc759ae7a70ab2ca7ec8489807ca69e6f200"
+"@staccx/theme@^3.0.0":
+  version "3.0.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/theme/-/@staccx/theme-3.0.0.tgz#d447da9ce58d1fa521d0187256a8400b4306f853"
 
 JSONStream@^1.0.4:
   version "1.3.2"
@@ -4023,6 +4023,10 @@ ignore-walk@^3.0.1:
 ignore@^3.0.9, ignore@^3.3.3, ignore@^3.3.6:
   version "3.3.8"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.8.tgz#3f8e9c35d38708a3a7e0e9abb6c73e7ee7707b2b"
+
+immutable@^3.8.2:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
 
 import-lazy@^2.1.0:
   version "2.1.0"

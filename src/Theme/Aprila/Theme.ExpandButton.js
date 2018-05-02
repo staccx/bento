@@ -3,7 +3,7 @@ import { registerStyle, color } from "@staccx/theme"
 import { ButtonStyles } from "@staccx/base"
 
 export default registerStyle(
-  css`
+  {expand: css`
     display: block;
     width: 100%;
     margin: 0;
@@ -16,7 +16,6 @@ export default registerStyle(
       background-color: transparent;
       color: ${color.text};
     }
-  `,
-  ButtonStyles.BUTTON,
-  "expand"
+  `},
+  ButtonStyles.BUTTON
 )

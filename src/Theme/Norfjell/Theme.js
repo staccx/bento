@@ -1,85 +1,87 @@
-import { themeManager } from "@staccx/base"
-import reset from "./reset"
-import ExpandButton from "./Theme.ExpandButton"
-import MenuButton from "./Theme.MenuButton"
-import DashboardBox from "./Theme.DashboardBox"
+import { BaseTheme } from '@staccx/base'
+import { theme } from '@staccx/theme'
+import reset from './reset'
+import ExpandButton from './Theme.ExpandButton'
+import MenuButton from './Theme.MenuButton'
+import DashboardBox from './Theme.DashboardBox'
 
-const borderRadius = "0px"
-const headerHeight = "70px"
+const borderRadius = '0px'
+const headerHeight = '70px'
 
 const targetSize = {
-  small: "36px",
-  normal: "44px"
+  small: '36px',
+  normal: '44px'
 }
 
 const wrapper = {
-  small: "420px",
-  medium: "640px",
-  large: "1024px",
-  breakout: "640px"
+  small: '420px',
+  medium: '640px',
+  large: '1024px',
+  breakout: '640px'
 }
 
 const spacing = {
-  grid: "7vh",
-  huge: "96px",
-  largePlus: "72px",
-  large: "48px",
-  mediumPlus: "32px",
-  medium: "24px",
-  small: "12px",
-  tiny: "6px"
+  grid: '7vh',
+  huge: '96px',
+  largePlus: '72px',
+  large: '48px',
+  mediumPlus: '32px',
+  medium: '24px',
+  small: '12px',
+  tiny: '6px'
 }
 const color = {
-  bg: "#F8F8F8",
-  bgGray: "#F9F7F7",
-  primary: "#3297BF",
-  secondary: "#55C4B4",
-  gray: "#767676",
-  text: "#2b2b2b",
-  white: "#fff",
-  line: "#EBEBF2",
-  wcag: "#777",
-  disabled: "#BABABA",
-  warning: "#FB8D90",
-  positive: "#3297BF",
-  negative: "#FB8D90",
-  black: "#000",
-  subtleHover: "#F7F7FF"
+  bg: '#F8F8F8',
+  bgGray: '#F9F7F7',
+  primary: '#3297BF',
+  secondary: '#55C4B4',
+  gray: '#767676',
+  text: '#2b2b2b',
+  white: '#fff',
+  line: '#EBEBF2',
+  wcag: '#777',
+  disabled: '#BABABA',
+  warning: '#FB8D90',
+  positive: '#3297BF',
+  negative: '#FB8D90',
+  black: '#000',
+  subtleHover: '#F7F7FF'
 }
 
 const font = {
-  h1: "36px",
-  h2: "26px",
-  h3: "22px",
-  h4: "18px",
-  h5: "16px",
-  h6: "14px",
-  base: "14px",
-  tiny: "12px",
-  input: "16px",
-  huge: "44px"
+  h1: '36px',
+  h2: '26px',
+  h3: '22px',
+  h4: '18px',
+  h5: '16px',
+  h6: '14px',
+  base: '14px',
+  tiny: '12px',
+  input: '16px',
+  huge: '44px'
 }
 
 const fontFamily = {
-  heading: "IBM Plex Sans",
-  body: "IBM Plex Sans"
+  heading: 'IBM Plex Sans',
+  body: 'IBM Plex Sans'
 }
 
-export const init = () =>
-  themeManager
-    .setName("Norfjell")
-    .addFont(font)
-    .addColors(color)
-    .addSpacing(spacing)
-    .addWrapper(wrapper)
-    .addTargetSizes(targetSize)
-    .addBorderRadius(borderRadius)
-    .addOther("headerHeight", headerHeight)
-    .addFontFamilies(fontFamily)
-    .addReset(reset)
-    .resetCSS()
-    .addStyle(ExpandButton)
-    .addStyle(MenuButton)
-    .addStyle(DashboardBox)
 
-export default themeManager
+const t = new theme(BaseTheme, {
+  name: "Norfjell",
+  font,
+  color,
+  wrapper,
+  targetSize,
+  borderRadius,
+  headerHeight,
+  fontFamily,
+  spacing,
+  global: reset
+})
+  .addStyles(MenuButton)
+  .addStyles(ExpandButton)
+  .addStyles(DashboardBox)
+
+
+export default t.get

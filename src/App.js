@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 import { Provider } from "mobx-react"
-import styled, { ThemeProvider } from "styled-components"
+import styled, { ThemeProvider, injectGlobal } from "styled-components"
 import { HotKeys } from "react-hotkeys"
 import { Wrapper, hideVisually } from "@staccx/base"
-import NorfjellTheme, { init as initNorfjell } from "./Theme/Norfjell/Theme"
-import AprilaTheme, { init as initAprila } from "./Theme/Aprila/Theme"
+import AprilaTheme from "./Theme/Aprila/Theme"
+import NorfjellTheme from "./Theme/Norfjell/Theme"
 import { Grid } from "./components/Grid"
 import Account from "./components/Account"
 import Transactions from "./components/Transactions"
@@ -25,11 +25,7 @@ class App extends Component {
       currentPage: null
     }
     this.toggleTheme = this.toggleTheme.bind(this)
-  }
-
-  componentWillMount() {
-    initNorfjell()
-    initAprila()
+    this.onThemeChanged = this.onThemeChanged.bind(this)
   }
 
   componentDidMount() {
@@ -43,20 +39,19 @@ class App extends Component {
   }
 
   toggleTheme() {
-    console.log("Switching away from " + this.state.activeTheme.Theme.name)
-    if (this.state.activeTheme.Theme.name === "Aprila") {
-      console.log("Setting theme to Norfjell")
+    console.log("Switching away from " + this.state.activeTheme.name)
+    if (this.state.activeTheme.name === "Aprila") {
       this.setState({
         activeTheme: NorfjellTheme
-      })
-      initNorfjell()
+      }, this.onThemeChanged)
     } else {
-      console.log("Setting theme to aprila")
       this.setState({
         activeTheme: AprilaTheme
-      })
-      initAprila()
+      }, this.onThemeChanged)
     }
+  }
+
+  onThemeChanged() {
   }
 
   setPage(pageName) {
@@ -74,12 +69,13 @@ class App extends Component {
       deposit: () => this.setPage("deposit")
     }
 
+    injectGlobal`${this.state.activeTheme.global}`
     return (
       <div>
         <HotKeysHandler keyMap={keyMap} handlers={handlers} focused>
           <input ref={c => (this._container = c)} />
         </HotKeysHandler>
-        <ThemeProvider theme={this.state.activeTheme.Theme}>
+        <ThemeProvider theme={this.state.activeTheme}>
           <Provider customer={customer} account={account}>
             <div>
               <Wrapper size="small">
