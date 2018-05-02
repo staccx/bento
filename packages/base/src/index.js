@@ -29,6 +29,8 @@ import InlineListItem from "./components/Lists/InlineList/InlineListItem"
 import Flag from "./components/Layout/Flag/Flag"
 import Wrapper from "./components/Layout/Wrapper/Wrapper"
 import Box, * as BoxStyles from "./components/Layout/Box/Box"
+import Layout, * as LayoutStyles from "./components/Layout/Layout/Layout"
+import LayoutItem, * as LayoutItemStyles from "./components/Layout/Layout/LayoutItem"
 import Pack from "./components/Layout/Pack/Pack"
 import PackItem from "./components/Layout/Pack/PackItem"
 // Icons
@@ -90,6 +92,10 @@ export {
   KeyFigures,
   Label,
   LabelStyles,
+  Layout,
+  LayoutStyles,
+  LayoutItem,
+  LayoutItemStyles,
   LinkListItem,
   List,
   Modal,
