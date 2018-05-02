@@ -1,16 +1,16 @@
 export default (obj, propertyPath) => {
-  if (!propertyPath) return null;
+  if (!propertyPath) return null
 
-  const properties = propertyPath.split(".");
+  const properties = propertyPath.split(".")
 
   for (let i = 0; i < properties.length; i++) {
-    const prop = properties[i];
+    const prop = properties[i]
 
     if (!obj || !obj.hasOwnProperty(prop)) {
-      return null;
+      return null
     } else {
-      obj = obj[prop];
+      obj = obj[prop]
     }
   }
-  return obj;
-};
+  return obj
+}

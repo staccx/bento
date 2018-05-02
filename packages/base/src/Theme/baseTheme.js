@@ -1,7 +1,7 @@
-import { ThemeManager } from "@staccx/theme"
+import { theme } from "@staccx/theme"
 import { reset } from "../Styles/cssResets"
 
-export const theme = {
+export const t = {
   name: "Default theme",
   spacing: {
     huge: "96px",
@@ -56,9 +56,8 @@ export const theme = {
     small: "36px",
     normal: "44px"
   },
-  borderRadius: "2px"
+  borderRadius: "2px",
+  global: reset
 }
 
-const manager = new ThemeManager(theme, reset)
-
-export default manager
+export default new theme(t)

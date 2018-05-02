@@ -1,9 +1,9 @@
-import deepfind from "./deepfind";
+import deepfind from "./deepfind"
 
 export default (prop, field) => ({ theme }) => {
   if (!deepfind(theme, [prop, field].join("."))) {
-    console.warn("Could not find", [prop, field].join("."));
-    return null;
+    console.warn("Could not find", [prop, field].join("."))
+    return null
   }
-  return theme[prop][field];
-};
+  return theme[prop][field]
+}

@@ -1,1 +1,1 @@
-export default () => props => props.theme.borderRadius;
+export default () => props => props.theme.borderRadius

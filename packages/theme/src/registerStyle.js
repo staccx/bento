@@ -1,9 +1,7 @@
-import { VARIANT_DEFAULT } from "./_constants";
-
-export default (style, name, variant = VARIANT_DEFAULT) => {
+export default (styles, name) => {
   return {
     [name]: {
-      [variant]: style
+      ...styles
     }
-  };
-};
+  }
+}

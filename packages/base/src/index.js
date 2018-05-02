@@ -52,9 +52,7 @@ import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
 
-import { default as themeManager, theme as BaseTheme } from "./theme/baseTheme"
-
-
+import { default as BaseTheme } from "./theme/baseTheme"
 
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
@@ -66,7 +64,6 @@ const Icons = {
 
 export {
   Icons,
-  themeManager,
   AccountInput,
   BaseTheme,
   Box,

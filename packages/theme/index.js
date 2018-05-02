@@ -6,6 +6,7 @@ import { default as font } from './src/font'
 import { default as registerStyle } from './src/registerStyle'
 import { default as spacing } from './src/spacing'
 import { default as ThemeManager } from './src/ThemeManager'
+import { default as theme } from './src/theme'
 import { default as themify } from './src/themify'
 import { default as targetSize } from './src/targetSize'
 import { default as fontFamily } from './src/fontFamily'
@@ -23,6 +24,7 @@ export {
   targetSize,
   ThemeComponent,
   ThemeManager,
+  theme,
   themify,
   wrapper
 }

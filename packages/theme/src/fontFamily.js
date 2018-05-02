@@ -1,8 +1,8 @@
-import getProp from "./getProp";
+import getProp from "./getProp"
 
-const fontFamily = family => getProp("fontFamily", family);
+const fontFamily = family => getProp("fontFamily", family)
 
-fontFamily.heading = () => fontFamily("heading");
-fontFamily.body = () => fontFamily("body");
+fontFamily.heading = () => fontFamily("heading")
+fontFamily.body = () => fontFamily("body")
 
-export default fontFamily;
+export default fontFamily
