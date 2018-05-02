@@ -72,12 +72,11 @@ class App extends Component {
     injectGlobal`${this.state.activeTheme.global}`
     return (
       <div>
-        <HotKeysHandler keyMap={keyMap} handlers={handlers} focused>
-          <input ref={c => (this._container = c)} />
-        </HotKeysHandler>
         <ThemeProvider theme={this.state.activeTheme}>
           <Provider customer={customer} account={account}>
-            <div>
+            <HotKeysHandler keyMap={keyMap} handlers={handlers} focused>
+              <input ref={c => (this._container = c)} />
+
               <Wrapper size="small">
                 <Grid>
                   <Account />
@@ -86,7 +85,7 @@ class App extends Component {
                 </Grid>
               </Wrapper>
               {this.state.currentPage === "deposit" && <Deposit />}
-            </div>
+            </HotKeysHandler>
           </Provider>
         </ThemeProvider>
       </div>
