@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { color, registerStyle, spacing } from "@staccx/theme"
+import { color, registerStyle } from "@staccx/theme"
 import { BoxStyles } from "@staccx/base"
 
 export const BoxStyling = registerStyle(
@@ -13,15 +13,20 @@ export const BoxStyling = registerStyle(
       background: ${color.secondary};
       color: ${color.white};
       border-radius: 0;
-      padding: ${spacing.medium};
+      padding: 0;
       min-height: 25vh;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
     `,
     dashboardBox: css`
       background: ${color.bgGray};
       border-radius: 8px;
+    `,
+    headerContainer: css`
+      background: ${color.secondary};
+      padding: 0;
+      border-radius: 0;
     `
   },
   BoxStyles.BOX

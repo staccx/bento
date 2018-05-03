@@ -15,7 +15,10 @@ export default registerStyle(
   {
     dashboardBox: defaultBox,
     accountBox: defaultBox,
-    adBox: defaultBox
+    adBox: defaultBox,
+    headerContainer: css`
+      padding: ${spacing.large} 0 0;
+    `
   },
   BoxStyles.BOX
 )

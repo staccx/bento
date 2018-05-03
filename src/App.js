@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
-import { Provider } from 'mobx-react'
-import styled, { injectGlobal, ThemeProvider } from 'styled-components'
-import { HotKeys } from 'react-hotkeys'
-import { hideVisually, Layout, LayoutItem } from '@staccx/base'
-import AprilaTheme from './Theme/Aprila/Theme'
-import NorfjellTheme from './Theme/Norfjell/Theme'
-import Account from './components/Account'
-import Transactions from './components/Transactions'
-import Menu from './components/Menu/Menu'
-import Deposit from './pages/Deposit'
-import Ad from './components/Ad'
+import React, { Component } from "react"
+import { Provider } from "mobx-react"
+import styled, { injectGlobal, ThemeProvider } from "styled-components"
+import { HotKeys } from "react-hotkeys"
+import { hideVisually, Layout, LayoutItem, BaseTheme, Box } from "@staccx/base"
+import AprilaTheme from "./Theme/Aprila/Theme"
+import NorfjellTheme from "./Theme/Norfjell/Theme"
+import Account from "./components/Account"
+import Transactions from "./components/Transactions"
+import Menu from "./components/Menu/Menu"
+import Deposit from "./pages/Deposit"
+import Ad from "./components/Ad"
 
 import { account, customer } from "./state"
 
@@ -85,10 +85,14 @@ class App extends Component {
           <Provider customer={customer} account={account}>
             <HotKeysHandler keyMap={keyMap} handlers={handlers} focused>
               <input ref={c => (this._container = c)} />
+              <Box variant="headerContainer">
+                <Layout grid={this.state.activeTheme.dashboardLayout}>
+                  <Test>
+                    <Account />
+                  </Test>
+                </Layout>
+              </Box>
               <Layout grid={this.state.activeTheme.dashboardLayout}>
-                <LayoutItem area="header">
-                  <Account />
-                </LayoutItem>
                 <LayoutItem area="body">
                   <Transactions />
                 </LayoutItem>
@@ -120,6 +124,10 @@ const HotKeysHandler = styled(HotKeys)`
   > input {
     ${hideVisually};
   }
+`
+
+const Test = styled(LayoutItem)`
+  grid-area: header / 2 / footer / -2;
 `
 
 export default App
