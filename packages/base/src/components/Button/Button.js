@@ -41,8 +41,6 @@ const Style = css`
   white-space: nowrap;
   justify-content: center;
   align-items: center;
-  margin-right: ${spacing.small};
-  margin-bottom: ${spacing.small};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.2s ease;
@@ -62,15 +60,6 @@ const Style = css`
           size: "large"
         })
         .toString()};
-  }
-
-  &:last-child,
-  &:last-of-type {
-    margin-right: 0;
-  }
-
-  &:last-child:first-child {
-    margin-bottom: 0;
   }
 
   ${themify(BUTTON)};

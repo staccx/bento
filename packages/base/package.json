@@ -67,6 +67,7 @@
     "downshift": "^1.28.0",
     "easing-utils": "^0.0.7",
     "es6-promise": "^4.2.4",
+    "immutable": "^3.8.2",
     "isomorphic-fetch": "^2.2.1",
     "lerna": "^2.8.0",
     "polished": "^1.9.2",

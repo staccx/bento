@@ -33,6 +33,7 @@ import Layout, * as LayoutStyles from "./components/Layout/Layout/Layout"
 import LayoutItem, * as LayoutItemStyles from "./components/Layout/Layout/LayoutItem"
 import Pack from "./components/Layout/Pack/Pack"
 import PackItem from "./components/Layout/Pack/PackItem"
+import ItemGroup, * as ItemGroupStyles from "./components/Layout/ItemGroup/ItemGroup"
 // Icons
 import Caret from "./components/Icons/Caret"
 import CaretRight from "./components/Icons/CaretRight"
@@ -55,19 +56,18 @@ import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
 
 import { default as BaseTheme } from "./theme/baseTheme"
-
-require("es6-promise").polyfill()
-require("isomorphic-fetch")
 // TODO: Trengs denne?
 
 import { Theme } from "@staccx/theme"
+
+require("es6-promise").polyfill()
+require("isomorphic-fetch")
 
 const Icons = {
   COMPONENT_CHECKBOX_ICON
 }
 
 export {
-  Icons,
   AccountInput,
   BaseTheme,
   Box,
@@ -88,23 +88,26 @@ export {
   fontSmoothing,
   Fraction,
   hideVisually,
+  Icons,
   InlineListItem,
   Input,
   InputStyles,
+  ItemGroup,
+  ItemGroupStyles,
   KeyFigures,
   Label,
   LabelStyles,
   Layout,
-  LayoutStyles,
   LayoutItem,
   LayoutItemStyles,
+  LayoutStyles,
   LinkListItem,
   List,
   Modal,
+  NationalIdInput,
   Odometer,
   Pack,
   PackItem,
-  NationalIdInput,
   PhoneInput,
   ProgressBar,
   RadioButton,
@@ -116,9 +119,9 @@ export {
   SelectSimple,
   SelectSimpleStyles,
   Slider,
-  SliderStyles,
   SliderKeyboardInput,
   SliderKeyboardInputStyles,
+  SliderStyles,
   SplitListItem,
   Theme,
   ThemeProvider,
