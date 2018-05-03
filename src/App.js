@@ -1,15 +1,15 @@
-import React, { Component } from "react"
-import { Provider } from "mobx-react"
-import styled, { injectGlobal, ThemeProvider } from "styled-components"
-import { HotKeys } from "react-hotkeys"
-import { hideVisually, Layout, LayoutItem } from "@staccx/base"
-import AprilaTheme from "./Theme/Aprila/Theme"
-import NorfjellTheme from "./Theme/Norfjell/Theme"
-import Account from "./components/Account"
-import Transactions from "./components/Transactions"
-import Menu from "./components/Menu/Menu"
-import Deposit from "./pages/Deposit"
-import Ad from "./components/Ad"
+import React, { Component } from 'react'
+import { Provider } from 'mobx-react'
+import styled, { injectGlobal, ThemeProvider } from 'styled-components'
+import { HotKeys } from 'react-hotkeys'
+import { hideVisually, Layout, LayoutItem, BaseTheme } from '@staccx/base'
+import AprilaTheme from './Theme/Aprila/Theme'
+import NorfjellTheme from './Theme/Norfjell/Theme'
+import Account from './components/Account'
+import Transactions from './components/Transactions'
+import Menu from './components/Menu/Menu'
+import Deposit from './pages/Deposit'
+import Ad from './components/Ad'
 
 import { account, customer } from "./state"
 
@@ -74,6 +74,7 @@ class App extends Component {
       deposit: () => this.setPage("deposit")
     }
 
+    console.log(BaseTheme)
     console.log(this.state.activeTheme)
     injectGlobal`
     ${this.state.activeTheme.reset};

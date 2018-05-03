@@ -4,6 +4,7 @@ import payments from '../data/payments'
 import transactions from '../data/transactions'
 import customer from '../data/customer'
 import annualStatements from '../data/annualStatements'
+import customerContext from '../data/customerContext'
 // import axios from "axios"
 // const axiosInstance = axios.create({
 //   baseURL: "/api"
@@ -14,7 +15,7 @@ import annualStatements from '../data/annualStatements'
 // }
 const delay = 200
 
-export const getAccount = () => {
+export const getAccounts = () => {
   // return axiosInstance.get(`/accounts`, getConfig())
   //   .then(result => result.data)
   return new Promise(resolve => {

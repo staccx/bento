@@ -1,15 +1,15 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import { inject, observer } from "mobx-react"
-import { font, color } from "@staccx/theme"
-import { Box } from "@staccx/base"
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { inject, observer } from 'mobx-react'
+import { color, font } from '@staccx/theme'
+import { Box } from '@staccx/base'
 
-@inject("account")
+@inject('account')
 @observer
 class Account extends React.Component {
   static defaultProps = {
-    title: "På konto"
+    title: 'På konto'
   }
 
   static propTypes = {
@@ -17,10 +17,13 @@ class Account extends React.Component {
     title: PropTypes.string
   }
 
-  render() {
-    const { account, title } = this.props
-    const { earned } = account
-    const { availableBalance } = account.account
+  render () {
+    const {account, title} = this.props
+    const {earned, selectedAccount} = account
+    if (!selectedAccount) {
+      return null
+    }
+    const {availableBalance} = selectedAccount
     return (
       <Box variant="accountBox">
         <Title>{title}</Title>
