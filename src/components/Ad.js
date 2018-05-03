@@ -1,8 +1,7 @@
 import React from "react"
 import { font } from "@staccx/theme"
-import { Button, Box, Layout, LayoutItem } from "@staccx/base"
+import { Button, Box, Layout, LayoutItem, ItemGroup } from "@staccx/base"
 import styled from "styled-components"
-import Pack from "./Pack"
 
 const Ad = () => (
   <Box variant="adBox">
@@ -20,11 +19,11 @@ const Ad = () => (
         </p>
       </LayoutItem>
       <LayoutItem>
-        <Pack>
+        <ItemGroup>
           <Button>Jeg vil ha fakturasalg!</Button>
           <Button>Nei takk</Button>
           <Button>3dje</Button>
-        </Pack>
+        </ItemGroup>
       </LayoutItem>
     </Layout>
   </Box>
