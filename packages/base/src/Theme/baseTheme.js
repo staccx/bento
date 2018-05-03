@@ -57,7 +57,7 @@ export const t = {
     normal: "44px"
   },
   borderRadius: "2px",
-  global: reset
+  reset
 }
 
-export default new Theme(t)
+export default new Theme(t, {}).get

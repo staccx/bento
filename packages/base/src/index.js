@@ -60,6 +60,8 @@ require("es6-promise").polyfill()
 require("isomorphic-fetch")
 // TODO: Trengs denne?
 
+import { Theme } from "@staccx/theme"
+
 const Icons = {
   COMPONENT_CHECKBOX_ICON
 }
@@ -118,6 +120,7 @@ export {
   SliderKeyboardInput,
   SliderKeyboardInputStyles,
   SplitListItem,
+  Theme,
   ThemeProvider,
   Toggle,
   Wrapper

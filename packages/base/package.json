@@ -21,14 +21,12 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "peerDependencies": {
-    "@staccx/theme": "^3.0.0",
     "prop-types": "^15.5.4",
     "react": "^0.14.9 || ^15.0.0 || ^16.0.0",
     "react-dom": "^0.14.9 || ^15.0.0 || ^16.0.0",
-    "styled-components": "^3.1.6"
+    "styled-components": "^3.2.6"
   },
   "devDependencies": {
-    "@staccx/theme": "^3.1.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-plugin-external-helpers": "^6.22.0",
@@ -50,6 +48,7 @@
     "rollup-plugin-node-resolve": "^3.0.2",
     "rollup-plugin-postcss": "^1.1.0",
     "standard": "^10.0.3",
+    "styled-components": "^3.2.6",
     "webpack": "^3.10.0",
     "webpack-blocks": "^1.0.0-rc.2"
   },
@@ -63,6 +62,7 @@
     "@staccx/animations": "^0.21.0",
     "@staccx/formatting": "^0.2.0",
     "@staccx/math": "^0.1.0",
+    "@staccx/theme": "^3.1.0",
     "accounting": "^0.4.1",
     "downshift": "^1.28.0",
     "easing-utils": "^0.0.7",
