@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { inject, observer } from "mobx-react"
 import { color, font } from "@staccx/theme"
 import { Box } from "@staccx/base"
+import { formatCurrency } from "@staccx/formatting"
 
 @inject("account")
 @observer
@@ -24,12 +25,16 @@ class Account extends React.Component {
       return null
     }
     const { availableBalance } = selectedAccount
+    console.log(availableBalance)
     return (
       <Box variant="accountBox">
         <Container>
           <Title>{title}</Title>
-          <Balance>{availableBalance}</Balance>
-          <Earned>{earned}</Earned>
+          <Balance>
+            {availableBalance &&
+              formatCurrency(availableBalance, { precision: 2 })}
+          </Balance>
+          <Earned>{earned && formatCurrency(earned, { precision: 2 })}</Earned>
         </Container>
       </Box>
     )

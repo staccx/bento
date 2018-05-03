@@ -64,7 +64,7 @@ const font = {
   tiny: "12px",
   input: "16px",
   huge: "44px",
-  accountBalance: "48px"
+  accountBalance: "calc(36px + (84 - 36) * ((100vw - 300px) / (1600 - 300)))"
 }
 
 const fontFamily = {
