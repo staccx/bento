@@ -45,7 +45,8 @@ const color = {
   positive: "#FF7E68",
   negative: "#3B2C7C",
   black: "#000",
-  subtleHover: "#F2F1FC"
+  subtleHover: "#F2F1FC",
+  accountEarned: "#F2F1FC"
 }
 
 const font = {

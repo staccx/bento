@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { inject, observer } from 'mobx-react'
 import { color, font } from '@staccx/theme'
-import { Box } from '@staccx/base'
+import { Box, Wrapper } from '@staccx/base'
 
 @inject('account')
 @observer
@@ -26,9 +26,11 @@ class Account extends React.Component {
     const {availableBalance} = selectedAccount
     return (
       <Box variant="accountBox">
-        <Title>{title}</Title>
-        <Balance>{availableBalance}</Balance>
-        <Earned>{earned}</Earned>
+        <Container size="medium">
+          <Title>{title}</Title>
+          <Balance>{availableBalance}</Balance>
+          <Earned>{earned}</Earned>
+        </Container>
       </Box>
     )
   }
@@ -49,7 +51,11 @@ const Balance = styled.div`
 const Earned = styled.div`
   font-size: ${font.input};
   font-weight: bold;
-  color: ${color.secondary};
+  color: ${color("accountEarned")};
+`
+
+const Container = styled(Wrapper)`
+  padding: 0;
 `
 
 export default Account
