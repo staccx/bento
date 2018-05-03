@@ -3,6 +3,7 @@ import reset from "./reset"
 import ExpandButton from "./Theme.ExpandButton"
 import MenuButton from "./Theme.MenuButton"
 import { BoxStyling } from "./Theme.Box"
+import ModalStyles from "./Theme.Modal"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -81,5 +82,6 @@ const t = new Theme(BaseTheme, {
   .addStyles(MenuButton)
   .addStyles(ExpandButton)
   .addStyles(BoxStyling)
+  .addStyles(ModalStyles)
 
 export default t.get

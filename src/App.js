@@ -92,8 +92,14 @@ ${this.state.activeTheme.global};`
                   <Transactions />
                 </LayoutItem>
                 <LayoutItem area="aside">
-                  <Menu pages={pages} />
-                  <Ad />
+                  <Layout grid="rows">
+                    <LayoutItem>
+                      <Menu pages={pages} />
+                    </LayoutItem>
+                    <LayoutItem>
+                      <Ad />
+                    </LayoutItem>
+                  </Layout>
                 </LayoutItem>
               </Layout>
               {this.state.currentPage === "deposit" && <Deposit />}
