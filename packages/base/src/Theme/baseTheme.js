@@ -1,5 +1,6 @@
 // import { Theme } from "@staccx/theme"
 import { reset } from "../Styles/cssResets"
+import grids from "../components/Layout/Layout/Layout.Grids"
 
 export const theme = {
   name: "Default theme",
@@ -18,7 +19,6 @@ export const theme = {
     large: "1024px",
     breakout: "640px"
   },
-  omg: "",
   color: {
     white: "#fff",
     bg: "#fff",
@@ -58,7 +58,8 @@ export const theme = {
     normal: "44px"
   },
   borderRadius: "2px",
-  reset
+  reset,
+  grid: grids
 }
 
 export default theme
