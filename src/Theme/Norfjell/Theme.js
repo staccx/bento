@@ -1,5 +1,4 @@
-import { BaseTheme } from "@staccx/base"
-import { Theme } from "@staccx/theme"
+import { BaseTheme, Theme } from "@staccx/base"
 import reset from "./reset"
 import ExpandButton from "./Theme.ExpandButton"
 import MenuButton from "./Theme.MenuButton"
