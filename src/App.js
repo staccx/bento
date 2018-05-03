@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Provider } from 'mobx-react'
 import styled, { injectGlobal, ThemeProvider } from 'styled-components'
 import { HotKeys } from 'react-hotkeys'
-import { hideVisually, Layout, LayoutItem, BaseTheme } from '@staccx/base'
+import { hideVisually, Layout, LayoutItem } from '@staccx/base'
 import AprilaTheme from './Theme/Aprila/Theme'
 import NorfjellTheme from './Theme/Norfjell/Theme'
 import Account from './components/Account'
@@ -74,11 +74,11 @@ class App extends Component {
       deposit: () => this.setPage("deposit")
     }
 
-    console.log(BaseTheme)
-    console.log(this.state.activeTheme)
     injectGlobal`
     ${this.state.activeTheme.reset};
-${this.state.activeTheme.global};`
+    ${this.state.activeTheme.global};
+    .${Math.random()}-test { }
+    `
     return (
       <div>
         <ThemeProvider theme={this.state.activeTheme}>
