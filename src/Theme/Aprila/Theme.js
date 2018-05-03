@@ -5,6 +5,7 @@ import ExpandButton from "./Theme.ExpandButton"
 import MenuButton from "./Theme.MenuButton"
 import { BoxStyling } from "./Theme.Box"
 import ModalStyles from "./Theme.Modal"
+import IconLogout from '../../components/Icons/Icon.Logout'
 import Logo from "./Theme.Logo"
 
 const borderRadius = "8px"
@@ -83,7 +84,8 @@ const t = new Theme(BaseTheme, {
   headerHeight,
   fontFamily,
   spacing,
-  global: reset
+  global: reset,
+  iconArrowDown: IconLogout
 })
   .addStyles(MenuButton)
   .addStyles(ExpandButton)
