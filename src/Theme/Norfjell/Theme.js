@@ -1,4 +1,3 @@
-import React from "react"
 import { BaseTheme, Theme } from "@staccx/base"
 import reset from "./reset"
 import ExpandButton from "./Theme.ExpandButton"
@@ -74,7 +73,7 @@ const fontFamily = {
 const t = new Theme(BaseTheme, {
   name: "Norfjell",
   dashboardLayout: "columnNarrow",
-  logo: <Logo />,
+  logo: Logo,
   font,
   color,
   wrapper,

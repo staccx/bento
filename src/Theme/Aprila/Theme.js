@@ -1,11 +1,9 @@
-import React from "react"
 import { BaseTheme, Theme } from "@staccx/base"
 import reset from "./reset"
 import ExpandButton from "./Theme.ExpandButton"
 import MenuButton from "./Theme.MenuButton"
 import { BoxStyling } from "./Theme.Box"
 import ModalStyles from "./Theme.Modal"
-import IconLogout from '../../components/Icons/Icon.Logout'
 import Logo from "./Theme.Logo"
 
 const borderRadius = "8px"
@@ -75,7 +73,7 @@ const fontFamily = {
 const t = new Theme(BaseTheme, {
   name: "Aprila",
   dashboardLayout: "stonehenge",
-  logo: <Logo />,
+  logo: Logo,
   font,
   color,
   wrapper,
@@ -85,7 +83,6 @@ const t = new Theme(BaseTheme, {
   fontFamily,
   spacing,
   global: reset,
-  iconArrowDown: IconLogout
 })
   .addStyles(MenuButton)
   .addStyles(ExpandButton)

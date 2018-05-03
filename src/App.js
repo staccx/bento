@@ -3,6 +3,7 @@ import { Provider } from "mobx-react"
 import styled, { injectGlobal, ThemeProvider } from "styled-components"
 import { HotKeys } from "react-hotkeys"
 import { hideVisually, Layout, LayoutItem, Box } from "@staccx/base"
+import { ThemeComponent } from "@staccx/theme"
 import AprilaTheme from "./Theme/Aprila/Theme"
 import NorfjellTheme from "./Theme/Norfjell/Theme"
 import Account from "./components/Account"
@@ -91,7 +92,7 @@ class App extends Component {
               <Box variant="headerContainer">
                 <Layout grid={this.state.activeTheme.dashboardLayout}>
                   <Hero>
-                    {this.state.activeTheme.logo}
+                    <ThemeComponent tagName={"logo"} fallback={Ad} />
                     <Account />
                   </Hero>
                 </Layout>
