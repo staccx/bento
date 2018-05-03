@@ -9,7 +9,6 @@ const defaultBox = css`
     0px 2px 2px rgba(0, 0, 75, 0.021), 0px 32px 22px rgba(0, 0, 75, 0.021),
     0px 44px 64px rgba(0, 0, 75, 0.0101);
   border-radius: 3px;
-  padding: ${spacing.medium};
 `
 
 export default registerStyle(

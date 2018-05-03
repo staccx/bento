@@ -8,16 +8,15 @@ export const BoxStyling = registerStyle(
       background: ${color.secondary};
       color: ${color.white};
       border-radius: 8px;
-      padding: ${spacing.medium};
     `,
     accountBox: css`
       background: ${color.secondary};
       color: ${color.white};
       border-radius: 0;
-      padding: ${spacing.medium};
     `,
     dashboardBox: css`
       background: ${color.bgGray};
+      border-radius: 8px;
     `
   },
   BoxStyles.BOX
