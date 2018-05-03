@@ -1,4 +1,4 @@
-import { wrapper } from "@staccx/theme"
+import { wrapper, spacing } from "@staccx/theme"
 import { css } from "styled-components"
 
 export default {
@@ -19,5 +19,8 @@ export default {
       ".  aside  ."
       ".  footer  .";
     grid-auto-flow: column;
+  `,
+  rows: css`
+    grid-auto-flow: row;
   `
 }
