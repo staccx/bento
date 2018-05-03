@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@staccx/base": "^3.2.0",
-    "@staccx/theme": "^3.2.0",
+    "@staccx/base": "^3.3.0",
+    "@staccx/theme": "^3.3.0",
     "axios": "^0.18.0",
     "immutable": "^3.8.2",
     "mobx": "^4.2.0",
