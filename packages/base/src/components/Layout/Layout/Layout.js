@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { themify, spacing, wrapper } from "@staccx/theme"
+import { themify, spacing, wrapper, grid } from "@staccx/theme"
 
 const Layout = ({ grid, children, className }) => (
   <LayoutContainer className={className} grid={grid}>

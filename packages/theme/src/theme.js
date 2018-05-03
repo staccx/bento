@@ -3,7 +3,7 @@ const { Map } = require("immutable")
 export default class Theme {
   constructor(theme, ...props) {
     const map = Map({})
-    this.theme = map.mergeDeep(...theme, ...props).toJS()
+    this.theme = map.mergeDeep(theme, ...props).toJS()
   }
 
   get get() {

@@ -1,7 +1,7 @@
-import { Theme } from "@staccx/theme"
+// import { Theme } from "@staccx/theme"
 import { reset } from "../Styles/cssResets"
 
-export const t = {
+export const theme = {
   name: "Default theme",
   spacing: {
     huge: "96px",
@@ -18,6 +18,7 @@ export const t = {
     large: "1024px",
     breakout: "640px"
   },
+  omg: "",
   color: {
     white: "#fff",
     bg: "#fff",
@@ -60,4 +61,4 @@ export const t = {
   reset
 }
 
-export default new Theme(t, {}).get
+export default theme
