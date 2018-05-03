@@ -1,35 +1,38 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Box, Button } from '@staccx/base'
-import IconArrowRight from '../Icons/Icon.ArrowRight'
-import IconArrowUp from '../Icons/Icon.ArrowUp'
-import IconArrowDown from '../Icons/Icon.ArrowDown'
-import IconProfile from '../Icons/Icon.Profile'
-import IconLogout from '../Icons/Icon.Logout'
-import { spacing, ThemeComponent } from '@staccx/theme'
+import React from "react"
+import styled from "styled-components"
+import { Box, Button } from "@staccx/base"
+import IconArrowRight from "../Icons/Icon.ArrowRight"
+import IconArrowUp from "../Icons/Icon.ArrowUp"
+import IconArrowDown from "../Icons/Icon.ArrowDown"
+import IconProfile from "../Icons/Icon.Profile"
+import IconLogout from "../Icons/Icon.Logout"
+import { spacing, ThemeComponent } from "@staccx/theme"
 
-const Menu = ({pages}) => {
+const Menu = ({ pages }) => {
   const menuOptions = [
     {
-      _id: 'eiwfohug',
-      label: 'Sett inn penger',
-      icon: <ThemeComponent tagName={'iconArrowDown'} fallback={IconArrowDown}/>,
+      _id: "eiwfohug",
+      label: "Sett inn penger",
+      icon: (
+        <ThemeComponent tagName={"iconArrowDown"} fallback={IconArrowDown} />
+      ),
       page: () => pages.deposit()
     },
     {
-      _id: 'wiofdh',
-      label: 'Ta ut penger',
-      icon: <ThemeComponent tagName={'iconArrowUp'} fallback={IconArrowUp}/>
+      _id: "wiofdh",
+      label: "Ta ut penger",
+      icon: <ThemeComponent tagName={"iconArrowUp"} fallback={IconArrowUp} />,
+      page: () => pages.withdraw()
     },
     {
-      _id: 'sioahugcf',
-      label: 'Min profil',
-      icon: <ThemeComponent tagName={'iconArrowUp'} fallback={IconProfile}/>
+      _id: "sioahugcf",
+      label: "Min profil",
+      icon: <ThemeComponent tagName={"iconArrowUp"} fallback={IconProfile} />
     },
     {
-      _id: 'fugya',
-      label: 'Logg ut',
-      icon: <ThemeComponent tagName={'iconArrowUp'} fallback={IconLogout}/>
+      _id: "fugya",
+      label: "Logg ut",
+      icon: <ThemeComponent tagName={"iconArrowUp"} fallback={IconLogout} />
     }
   ]
 
@@ -41,7 +44,7 @@ const Menu = ({pages}) => {
             <Button variant="menuItem" onClick={() => option.page()}>
               <IconOuter>{option.icon}</IconOuter>
               <ButtonLabel>{option.label}</ButtonLabel>
-              <IconArrowRight/>
+              <IconArrowRight />
             </Button>
           </ListItem>
         ))}
