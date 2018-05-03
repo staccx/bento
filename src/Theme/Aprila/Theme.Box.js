@@ -13,6 +13,11 @@ export const BoxStyling = registerStyle(
       background: ${color.secondary};
       color: ${color.white};
       border-radius: 0;
+      padding: ${spacing.medium};
+      min-height: 25vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     `,
     dashboardBox: css`
       background: ${color.bgGray};

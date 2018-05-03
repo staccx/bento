@@ -5,7 +5,7 @@ import MenuButton from "./Theme.MenuButton"
 import { BoxStyling } from "./Theme.Box"
 import ModalStyles from "./Theme.Modal"
 
-const borderRadius = "0px"
+const borderRadius = "8px"
 const headerHeight = "70px"
 
 const targetSize = {
