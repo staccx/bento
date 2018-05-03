@@ -1,9 +1,11 @@
+import React from "react"
 import { BaseTheme, Theme } from "@staccx/base"
 import reset from "./reset"
 import ExpandButton from "./Theme.ExpandButton"
 import MenuButton from "./Theme.MenuButton"
 import { BoxStyling } from "./Theme.Box"
 import ModalStyles from "./Theme.Modal"
+import Logo from "./Theme.Logo"
 
 const borderRadius = "8px"
 const headerHeight = "70px"
@@ -45,7 +47,8 @@ const color = {
   positive: "#FF7E68",
   negative: "#3B2C7C",
   black: "#000",
-  subtleHover: "#F2F1FC",
+  subtleHover: "#E9E8F2",
+  accountHeading: "#F2F1FC",
   accountEarned: "#F2F1FC"
 }
 
@@ -59,7 +62,8 @@ const font = {
   base: "14px",
   tiny: "12px",
   input: "16px",
-  huge: "44px"
+  huge: "44px",
+  accountBalance: "48px"
 }
 
 const fontFamily = {
@@ -70,6 +74,7 @@ const fontFamily = {
 const t = new Theme(BaseTheme, {
   name: "Aprila",
   dashboardLayout: "stonehenge",
+  logo: <Logo />,
   font,
   color,
   wrapper,

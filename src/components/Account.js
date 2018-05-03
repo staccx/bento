@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { inject, observer } from "mobx-react"
 import { color, font } from "@staccx/theme"
-import { Box, Wrapper } from "@staccx/base"
+import { Box } from "@staccx/base"
 
 @inject("account")
 @observer
@@ -39,11 +39,11 @@ class Account extends React.Component {
 const Title = styled.h3`
   font-size: ${font.input};
   font-weight: bold;
-  color: ${color.wcag};
+  color: ${color("accountHeading")};
 `
 
 const Balance = styled.div`
-  font-size: ${font.h1};
+  font-size: ${font("accountBalance")};
   font-weight: bold;
   color: ${color.primary};
 `

@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Provider } from "mobx-react"
 import styled, { injectGlobal, ThemeProvider } from "styled-components"
 import { HotKeys } from "react-hotkeys"
-import { hideVisually, Layout, LayoutItem, BaseTheme, Box } from "@staccx/base"
+import { hideVisually, Layout, LayoutItem, Box } from "@staccx/base"
 import AprilaTheme from "./Theme/Aprila/Theme"
 import NorfjellTheme from "./Theme/Norfjell/Theme"
 import Account from "./components/Account"
@@ -75,10 +75,11 @@ class App extends Component {
     }
 
     injectGlobal`
-    ${this.state.activeTheme.reset};
-    ${this.state.activeTheme.global};
-    .${Math.random()}-test { }
+      ${this.state.activeTheme.reset};
+      ${this.state.activeTheme.global};
+      .${Math.random()}-test { }
     `
+
     return (
       <div>
         <ThemeProvider theme={this.state.activeTheme}>
@@ -87,9 +88,10 @@ class App extends Component {
               <input ref={c => (this._container = c)} />
               <Box variant="headerContainer">
                 <Layout grid={this.state.activeTheme.dashboardLayout}>
-                  <Test>
+                  <Hero>
+                    {this.state.activeTheme.logo}
                     <Account />
-                  </Test>
+                  </Hero>
                 </Layout>
               </Box>
               <Layout grid={this.state.activeTheme.dashboardLayout}>
@@ -126,7 +128,7 @@ const HotKeysHandler = styled(HotKeys)`
   }
 `
 
-const Test = styled(LayoutItem)`
+const Hero = styled(LayoutItem)`
   grid-area: header / 2 / footer / -2;
 `
 

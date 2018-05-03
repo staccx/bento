@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, registerStyle } from "@staccx/theme"
-import { BoxStyles } from "@staccx/base"
+import { BoxStyles, fontSmoothing } from "@staccx/base"
 
 export const BoxStyling = registerStyle(
   {
@@ -8,6 +8,7 @@ export const BoxStyling = registerStyle(
       background: ${color.secondary};
       color: ${color.white};
       border-radius: 8px;
+      ${fontSmoothing};
     `,
     accountBox: css`
       background: ${color.secondary};
@@ -18,6 +19,7 @@ export const BoxStyling = registerStyle(
       display: flex;
       flex-direction: row;
       align-items: center;
+      ${fontSmoothing};
     `,
     dashboardBox: css`
       background: ${color.bgGray};

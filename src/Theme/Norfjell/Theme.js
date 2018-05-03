@@ -1,9 +1,11 @@
+import React from "react"
 import { BaseTheme, Theme } from "@staccx/base"
 import reset from "./reset"
 import ExpandButton from "./Theme.ExpandButton"
 import MenuButton from "./Theme.MenuButton"
 import { ModalStyles, ModalLeftButton } from "./Theme.Modal"
 import DashboardBox from "./Theme.Box"
+import Logo from "./Theme.Logo"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -46,6 +48,7 @@ const color = {
   negative: "#FB8D90",
   black: "#000",
   subtleHover: "#F7F7FF",
+  accountHeading: "#BABABA",
   accountEarned: "#55C4B4"
 }
 
@@ -59,7 +62,8 @@ const font = {
   base: "14px",
   tiny: "12px",
   input: "16px",
-  huge: "44px"
+  huge: "44px",
+  accountBalance: "36px"
 }
 
 const fontFamily = {
@@ -70,6 +74,7 @@ const fontFamily = {
 const t = new Theme(BaseTheme, {
   name: "Norfjell",
   dashboardLayout: "columnNarrow",
+  logo: <Logo />,
   font,
   color,
   wrapper,
