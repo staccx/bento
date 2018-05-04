@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@staccx/animations": "^1.0.0",
     "@staccx/base": "^3.4.0",
     "@staccx/formatting": "^0.3.1",
     "@staccx/theme": "^3.4.0",
