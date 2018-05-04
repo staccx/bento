@@ -18,5 +18,6 @@ color.positive = () => color("positive")
 color.warning = () => color("warning")
 color.black = () => color("black")
 color.green = () => color("green")
+color.link = () => color("link")
 
 export default color
