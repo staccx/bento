@@ -8,6 +8,10 @@ class ThemeComponent extends React.Component {
       !theme || !tagName || !theme.hasOwnProperty(tagName)
         ? fallback
         : theme[tagName]
+
+    if(!Component) {
+      return null
+    }
     return <Component {...props}>{children}</Component>
   }
 }
