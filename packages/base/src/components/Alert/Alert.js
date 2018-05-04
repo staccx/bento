@@ -48,23 +48,29 @@ const Icon = ({ type, props }) => {
   }
 }
 
+export const ALERT_WARNING = "ALERT_WARNING"
+export const ALERT_INFO = "ALERT_INFO"
+export const ALERT_SUCCESS = "ALERT_SUCCESS"
 const colors = ({ type }) => {
   switch (type) {
     case "warning":
       return css`
         background-color: ${color("warning")};
         color: ${color("white")};
+        ${themify(ALERT_WARNING)};
       `
     case "success":
       return css`
         background-color: ${color("positive")};
         color: ${color("white")};
+        ${themify(ALERT_SUCCESS)};
       `
     case "info":
     default:
       return css`
         background-color: ${color("line")};
         color: ${color("text")};
+        ${themify(ALERT_INFO)};
       `
   }
 }
