@@ -47,9 +47,12 @@ const color = {
   positive: "#3297BF",
   negative: "#FB8D90",
   black: "#000",
-  subtleHover: "#F7F7FF",
-  accountHeading: "#BABABA",
-  accountEarned: "#55C4B4"
+  subtleHover: "#F7F7FF"
+}
+
+const BiBSpecificColor = {
+  accountHeading: color.disabled,
+  accountEarned: color.secondary
 }
 
 const font = {
@@ -62,8 +65,13 @@ const font = {
   base: "14px",
   tiny: "12px",
   input: "16px",
-  huge: "44px",
-  accountBalance: "36px"
+  huge: "44px"
+}
+
+const BiBSpecificFont = {
+  accountBalance: font.h1,
+  accountBalanceDecimals: font.tiny,
+  transactionHeading: font.h6
 }
 
 const fontFamily = {
@@ -79,8 +87,8 @@ const t = new Theme(BaseTheme, {
   },
   logo: Logo,
   menu: Menu,
-  font,
-  color,
+  font: { ...font, ...BiBSpecificFont },
+  color: { ...color, ...BiBSpecificColor },
   wrapper,
   targetSize,
   borderRadius,

@@ -32,10 +32,7 @@ class Account extends React.Component {
       <Box variant="accountBox">
         <Container>
           <Title>{title}</Title>
-          <Balance>
-            {primary &&
-              formatCurrency(parseInt(primary, 10))}
-          </Balance>
+          <Balance>{primary && formatCurrency(parseInt(primary, 10))}</Balance>
           {secondary && <Decimal>.{secondary}</Decimal>}
           <Earned>{earned && formatCurrency(earned, { precision: 2 })}</Earned>
         </Container>
@@ -58,7 +55,7 @@ const Balance = styled.div`
 `
 
 const Decimal = styled.span`
-  font-size: ${font.tiny};
+  font-size: ${font("accountBalanceDecimals")};
   font-weight: bold;
   color: ${color.primary};
 `

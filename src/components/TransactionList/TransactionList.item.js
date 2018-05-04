@@ -1,14 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { spacing, color } from "@staccx/theme"
+import { spacing, color, font } from "@staccx/theme"
 import { formatCurrency } from "@staccx/formatting"
 
 const TransactionListItem = ({ heading, date, amount }) => (
   <Item>
     <Icon type={amount > 0 ? "deposit" : "withdrawal"} />
     <Body>
-      <h4>{heading}</h4>
+      <TransactionHeading>{heading}</TransactionHeading>
       <div>{date}</div>
     </Body>
     <Amount>{formatCurrency(amount)}</Amount>
@@ -43,6 +43,10 @@ const Body = styled.div`
 `
 
 const Amount = styled.div``
+
+const TransactionHeading = styled.h4`
+  font-size: ${font("transactionHeading")};
+`
 
 TransactionListItem.propTypes = {
   heading: PropTypes.string.isRequired,

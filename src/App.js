@@ -82,8 +82,6 @@ class App extends Component {
       .${Math.random()}-test { }
     `
 
-    console.log(this.state.activeTheme.layout)
-
     return (
       <div>
         <ThemeProvider theme={this.state.activeTheme}>

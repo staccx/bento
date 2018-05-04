@@ -47,28 +47,41 @@ const color = {
   positive: "#FF7E68",
   negative: "#3B2C7C",
   black: "#000",
-  subtleHover: "#E9E8F2",
-  accountHeading: "#F2F1FC",
-  accountEarned: "#F2F1FC"
+  subtleHover: "#E9E8F2"
+}
+
+const BiBSpecificColor = {
+  accountHeading: color.bgGray,
+  accountEarned: color.bgGray
 }
 
 const font = {
   h1: "36px",
-  h2: "26px",
-  h3: "22px",
+  h2: "28px",
+  h3: "20px",
   h4: "18px",
   h5: "16px",
   h6: "14px",
   base: "14px",
   tiny: "12px",
   input: "16px",
-  huge: "44px",
-  accountBalance: "calc(36px + (84 - 36) * ((100vw - 300px) / (1600 - 300)))"
+  huge: "44px"
+}
+
+const BiBSpecificFont = {
+  accountBalance:
+    "calc(" +
+    font.h1 +
+    " + (84 - " +
+    font.h1.substring(0, font.h1.indexOf("px")) +
+    " ) * ((100vw - 300px) / (2560 - 300)))",
+  accountBalanceDecimals: font.h2,
+  transactionHeading: font.h4
 }
 
 const fontFamily = {
-  heading: "IBM Plex Sans",
-  body: "IBM Plex Sans"
+  heading: "Fira Sans",
+  body: "Fira Sans"
 }
 
 const t = new Theme(BaseTheme, {
@@ -79,8 +92,8 @@ const t = new Theme(BaseTheme, {
   },
   logo: Logo,
   menu: Menu,
-  font,
-  color,
+  font: { ...font, ...BiBSpecificFont },
+  color: { ...color, ...BiBSpecificColor },
   wrapper,
   targetSize,
   borderRadius,
