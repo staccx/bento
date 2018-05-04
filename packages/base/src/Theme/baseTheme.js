@@ -35,7 +35,8 @@ export const theme = {
     positive: "#4A90E2",
     warning: "#c54059",
     black: "#000",
-    green: "#00a190" // for toggle eks
+    green: "#00a190", // for toggle eks
+    link: "#279AF1"
   },
   fontFamily: {
     heading: "sans-serif",

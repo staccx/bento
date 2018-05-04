@@ -1,3 +1,5 @@
+import { color, fontFamily } from "@staccx/theme"
+
 export const reset = `
   body, h1, h2, h3, h4, h5, h6,
   blockquote, p, pre,
@@ -13,19 +15,19 @@ export const reset = `
     overflow-x: hidden;
     min-height: 100%;
     box-sizing: border-box;
-    background-color: #fff;
-    font-family: sans-serif;
+    background-color: ${color.bg};
+    font-family: ${fontFamily.body};
     font-size: 14px;
-    color: #2b2b2b;
+    color: ${color.text};
   }
   a {
-    color: #279AF1;
+    color: ${color.link};
   }
   body {
     min-height: 100vh;
   }
   h1,h2,h3,h4,h5,h6 {
-    font-family: serif;
+    font-family: ${fontFamily.heading};
     font-weight: bold;
     font-size: 1em;
     -webkit-font-smoothing: antialiased;
