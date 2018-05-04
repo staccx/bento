@@ -5,7 +5,13 @@ import Flag from "../Layout/Flag/Flag"
 import Warning from "../Icons/Warning"
 import Success from "../Icons/Success"
 import Info from "../Icons/Info"
-import { spacing, themify, ThemeComponent, color } from "@staccx/theme"
+import {
+  spacing,
+  themify,
+  ThemeComponent,
+  color,
+  borderRadius
+} from "@staccx/theme"
 
 export const COMPONENT_ALERT_INFO = "COMPONENT_ALERT_INFO"
 export const COMPONENT_ALERT_WARNING = "COMPONENT_ALERT_WARNING"
@@ -76,7 +82,7 @@ const Alert = ({ children, type }) => {
 export const ALERT = "ALERT"
 const AlertElement = styled.div`
   width: 100%;
-  border-radius: 3px;
+  border-radius: ${borderRadius};
   padding: ${spacing.small};
   ${colors};
   ${themify(ALERT)};
