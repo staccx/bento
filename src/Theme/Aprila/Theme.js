@@ -8,6 +8,7 @@ import IconArrowDown from "./Icons/Icon.ArrowDown"
 import IconArrowUp from "./Icons/Icon.ArrowUp"
 import IconLogout from "./Icons/Icon.Logout"
 import IconProfile from "./Icons/Icon.Profile"
+import Footer from "./Footer/Footer"
 
 const borderRadius = "8px"
 const headerHeight = "70px"
@@ -98,6 +99,7 @@ const t = new Theme(BaseTheme, {
   iconArrowUp: IconArrowUp,
   iconProfile: IconProfile,
   iconLogout: IconLogout,
+  footer: Footer,
   menu: Menu,
   font: { ...font, ...BiBSpecificFont },
   color: { ...color, ...BiBSpecificColor },

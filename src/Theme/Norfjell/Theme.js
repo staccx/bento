@@ -4,6 +4,7 @@ import Button from "./Theme.Button"
 import DashboardBox from "./Theme.Box"
 import Logo from "./Theme.Logo"
 import Menu from "./../../components/Menu/MenuList"
+import Footer from "./Footer/Footer"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -86,6 +87,7 @@ const t = new Theme(BaseTheme, {
   },
   logo: Logo,
   menu: Menu,
+  footer: Footer,
   font: { ...font, ...BiBSpecificFont },
   color: { ...color, ...BiBSpecificColor },
   wrapper,

@@ -3,7 +3,7 @@ import { Provider } from "mobx-react"
 import styled, { injectGlobal, ThemeProvider } from "styled-components"
 import { HotKeys } from "react-hotkeys"
 import { hideVisually, Layout, LayoutItem, Box } from "@staccx/base"
-import { ThemeComponent } from "@staccx/theme"
+import { ThemeComponent, spacing } from "@staccx/theme"
 import AprilaTheme from "./Theme/Aprila/Theme"
 import NorfjellTheme from "./Theme/Norfjell/Theme"
 import Account from "./components/Account"
@@ -88,27 +88,38 @@ class App extends Component {
           <Provider customer={customer} account={account}>
             <HotKeysHandler keyMap={keyMap} handlers={handlers} focused>
               <input ref={c => (this._container = c)} />
-              <Box variant="headerContainer">
-                <Layout grid={this.state.activeTheme.layout.dashboardLayout}>
-                  <Hero>
-                    <ThemeComponent tagName={"logo"} fallback={Ad} />
-                    <Account />
-                  </Hero>
-                </Layout>
-              </Box>
-              <Layout grid={this.state.activeTheme.layout.dashboardLayout}>
-                <LayoutItem area="body">
-                  <Transactions />
-                </LayoutItem>
-                <LayoutItem area="main">
-                  <ThemeComponent tagName={"menu"} pages={pages} />
-                </LayoutItem>
-                <LayoutItem area="aside">
-                  <Ad />
-                </LayoutItem>
-              </Layout>
-              {this.state.currentPage === "deposit" && <Deposit />}
-              {this.state.currentPage === "withdraw" && <Withdraw />}
+              <Outer>
+                <div>
+                  <Box variant="headerContainer">
+                    <Layout
+                      grid={this.state.activeTheme.layout.dashboardLayout}
+                    >
+                      <Hero>
+                        <ThemeComponent
+                          tagName={"logo"}
+                          inverted
+                          fallback={Ad}
+                        />
+                        <Account />
+                      </Hero>
+                    </Layout>
+                  </Box>
+                  <Layout grid={this.state.activeTheme.layout.dashboardLayout}>
+                    <LayoutItem area="body">
+                      <Transactions />
+                    </LayoutItem>
+                    <LayoutItem area="main">
+                      <ThemeComponent tagName={"menu"} pages={pages} />
+                    </LayoutItem>
+                    <LayoutItem area="aside">
+                      <Ad />
+                    </LayoutItem>
+                  </Layout>
+                </div>
+                {this.state.currentPage === "deposit" && <Deposit />}
+                {this.state.currentPage === "withdraw" && <Withdraw />}
+                <ThemeComponent tagName={"footer"} />
+              </Outer>
             </HotKeysHandler>
           </Provider>
         </ThemeProvider>
@@ -129,6 +140,13 @@ const HotKeysHandler = styled(HotKeys)`
 
 const Hero = styled(LayoutItem)`
   grid-area: header / 2 / footer / -2;
+  padding-top: ${spacing.large};
+`
+
+const Outer = styled.div`
+  display: grid;
+  align-content: space-between;
+  height: 100vh;
 `
 
 export default App
