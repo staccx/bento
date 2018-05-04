@@ -10,7 +10,6 @@ import Account from "./components/Account"
 import Transactions from "./components/Transactions"
 import Deposit from "./pages/Deposit"
 import Withdraw from "./pages/Withdraw"
-import Ad from "./components/Ad"
 
 import { account, customer } from "./state"
 
@@ -98,7 +97,7 @@ class App extends Component {
                         <ThemeComponent
                           tagName={"logo"}
                           inverted
-                          fallback={Ad}
+                          fallback={null}
                         />
                         <Account />
                       </Hero>
@@ -111,9 +110,7 @@ class App extends Component {
                     <LayoutItem area="main">
                       <ThemeComponent tagName={"menu"} pages={pages} />
                     </LayoutItem>
-                    <LayoutItem area="aside">
-                      <Ad />
-                    </LayoutItem>
+                    <ThemeComponent tagName={"ad"} />
                   </Layout>
                 </div>
                 {this.state.currentPage === "deposit" && <Deposit />}

@@ -11,6 +11,7 @@ import IconArrowUp from "./Icons/Icon.ArrowUp"
 import IconLogout from "./Icons/Icon.Logout"
 import IconProfile from "./Icons/Icon.Profile"
 import Footer from "./Footer/Footer"
+import Ad from "./Ad"
 
 const borderRadius = "8px"
 const headerHeight = "70px"
@@ -103,6 +104,7 @@ const t = new Theme(BaseTheme, {
   iconLogout: IconLogout,
   footer: Footer,
   menu: Menu,
+  ad: Ad,
   font: { ...font, ...BiBSpecificFont },
   color: { ...color, ...BiBSpecificColor },
   wrapper,
