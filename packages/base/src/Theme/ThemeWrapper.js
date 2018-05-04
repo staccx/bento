@@ -9,7 +9,7 @@ import Theme from "./baseTheme"
  */
 export default class ThemeWrapper extends Component {
   render() {
-    injectGlobal(Theme.reset)
+    injectGlobal`${Theme.reset}`
     return <ThemeProvider theme={Theme}>{this.props.children}</ThemeProvider>
   }
 }
