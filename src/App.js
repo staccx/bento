@@ -77,7 +77,7 @@ class App extends Component {
     }
 
     injectGlobal`
-      ${this.state.activeTheme.reset};
+      ${this.state.activeTheme.reset(this.state.activeTheme)};
       ${this.state.activeTheme.global};
       .${Math.random()}-test { }
     `

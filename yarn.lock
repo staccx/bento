@@ -96,14 +96,14 @@
   version "0.21.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-0.21.0.tgz#59c6b8e1acbfe1ae5b5ad772964917aec5f6797a"
 
-"@staccx/base@^3.3.0":
-  version "3.3.0"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-3.3.0.tgz#45a637daf00faeeb371d741633342d6fe4eaf685"
+"@staccx/base@^3.4.0":
+  version "3.4.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-3.4.0.tgz#fdd975beac979d55534f7e799465ccba997aeabc"
   dependencies:
     "@staccx/animations" "^0.21.0"
     "@staccx/formatting" "^0.2.0"
     "@staccx/math" "^0.1.0"
-    "@staccx/theme" "^3.3.0"
+    "@staccx/theme" "^3.4.0"
     accounting "^0.4.1"
     downshift "^1.28.0"
     easing-utils "^0.0.7"
@@ -140,9 +140,9 @@
   dependencies:
     easing-utils "^0.0.7"
 
-"@staccx/theme@^3.3.0":
-  version "3.3.0"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/theme/-/@staccx/theme-3.3.0.tgz#a20b8868030b1e3921159cdb4fb5e5b4de530809"
+"@staccx/theme@^3.4.0":
+  version "3.4.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/theme/-/@staccx/theme-3.4.0.tgz#2500f20891ad5d12308f74eaacfc8001364111e5"
   dependencies:
     immutable "^3.8.2"
 
