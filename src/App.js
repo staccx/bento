@@ -8,7 +8,6 @@ import AprilaTheme from "./Theme/Aprila/Theme"
 import NorfjellTheme from "./Theme/Norfjell/Theme"
 import Account from "./components/Account"
 import Transactions from "./components/Transactions"
-import Menu from "./components/Menu/Menu"
 import Deposit from "./pages/Deposit"
 import Withdraw from "./pages/Withdraw"
 import Ad from "./components/Ad"
@@ -83,6 +82,8 @@ class App extends Component {
       .${Math.random()}-test { }
     `
 
+    console.log(this.state.activeTheme.layout)
+
     return (
       <div>
         <ThemeProvider theme={this.state.activeTheme}>
@@ -90,26 +91,22 @@ class App extends Component {
             <HotKeysHandler keyMap={keyMap} handlers={handlers} focused>
               <input ref={c => (this._container = c)} />
               <Box variant="headerContainer">
-                <Layout grid={this.state.activeTheme.dashboardLayout}>
+                <Layout grid={this.state.activeTheme.layout.dashboardLayout}>
                   <Hero>
                     <ThemeComponent tagName={"logo"} fallback={Ad} />
                     <Account />
                   </Hero>
                 </Layout>
               </Box>
-              <Layout grid={this.state.activeTheme.dashboardLayout}>
+              <Layout grid={this.state.activeTheme.layout.dashboardLayout}>
                 <LayoutItem area="body">
                   <Transactions />
                 </LayoutItem>
+                <LayoutItem area="main">
+                  <ThemeComponent tagName={"menu"} pages={pages} />
+                </LayoutItem>
                 <LayoutItem area="aside">
-                  <Layout grid="rows">
-                    <LayoutItem>
-                      <Menu pages={pages} />
-                    </LayoutItem>
-                    <LayoutItem>
-                      <Ad />
-                    </LayoutItem>
-                  </Layout>
+                  <Ad />
                 </LayoutItem>
               </Layout>
               {this.state.currentPage === "deposit" && <Deposit />}

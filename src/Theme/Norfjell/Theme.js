@@ -5,6 +5,7 @@ import MenuButton from "./Theme.MenuButton"
 import { ModalStyles, ModalLeftButton } from "./Theme.Modal"
 import DashboardBox from "./Theme.Box"
 import Logo from "./Theme.Logo"
+import Menu from "./../../components/Menu/MenuList"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -72,8 +73,12 @@ const fontFamily = {
 
 const t = new Theme(BaseTheme, {
   name: "Norfjell",
-  dashboardLayout: "columnNarrow",
+  layout: {
+    dashboardLayout: "columnNarrow",
+    menuArea: "aside"
+  },
   logo: Logo,
+  menu: Menu,
   font,
   color,
   wrapper,

@@ -5,6 +5,7 @@ import MenuButton from "./Theme.MenuButton"
 import { BoxStyling } from "./Theme.Box"
 import ModalStyles from "./Theme.Modal"
 import Logo from "./Theme.Logo"
+import Menu from "./../../components/Menu/MenuRow"
 
 const borderRadius = "8px"
 const headerHeight = "70px"
@@ -37,7 +38,7 @@ const color = {
   primary: "#FF7E68",
   secondary: "#3B2C7C",
   gray: "#767676",
-  text: "#2b2b2b",
+  text: "#3b2c7c",
   white: "#fff",
   line: "#EBEBF2",
   wcag: "#777",
@@ -72,8 +73,12 @@ const fontFamily = {
 
 const t = new Theme(BaseTheme, {
   name: "Aprila",
-  dashboardLayout: "stonehenge",
+  layout: {
+    dashboardLayout: "stonehenge",
+    menuArea: "main"
+  },
   logo: Logo,
+  menu: Menu,
   font,
   color,
   wrapper,
@@ -82,7 +87,7 @@ const t = new Theme(BaseTheme, {
   headerHeight,
   fontFamily,
   spacing,
-  global: reset,
+  global: reset
 })
   .addStyles(MenuButton)
   .addStyles(ExpandButton)

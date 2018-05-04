@@ -23,6 +23,7 @@ export const BoxStyling = registerStyle(
     `,
     dashboardBox: css`
       background: ${color.bgGray};
+      color: ${color.text};
       border-radius: 8px;
     `,
     headerContainer: css`
