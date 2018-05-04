@@ -18,6 +18,15 @@ export default registerStyle(
     adBox: defaultBox,
     headerContainer: css`
       padding: ${spacing.large} 0 0;
+    `,
+    modalLeft: css`
+      background-color: ${color.primary};
+      color: ${color.white};
+      text-align: center;
+    `,
+    modalRight: css`
+      background-color: ${color.white};
+      text-align: center;
     `
   },
   BoxStyles.BOX

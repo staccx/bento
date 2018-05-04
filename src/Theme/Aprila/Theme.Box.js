@@ -30,6 +30,14 @@ export const BoxStyling = registerStyle(
       background: ${color.secondary};
       padding: 0;
       border-radius: 0;
+    `,
+    modalLeft: css`
+      background-color: ${color.bgGray};
+      text-align: center;
+    `,
+    modalRight: css`
+      background-color: ${color.white};
+      text-align: center;
     `
   },
   BoxStyles.BOX

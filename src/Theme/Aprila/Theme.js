@@ -3,7 +3,6 @@ import reset from "./reset"
 import ExpandButton from "./Theme.ExpandButton"
 import MenuButton from "./Theme.MenuButton"
 import { BoxStyling } from "./Theme.Box"
-import ModalStyles from "./Theme.Modal"
 import Logo from "./Theme.Logo"
 import Menu from "./../../components/Menu/MenuRow"
 import IconArrowDown from "./Icons/Icon.ArrowDown"
@@ -113,6 +112,5 @@ const t = new Theme(BaseTheme, {
   .addStyles(MenuButton)
   .addStyles(ExpandButton)
   .addStyles(BoxStyling)
-  .addStyles(ModalStyles)
 
 export default t.get
