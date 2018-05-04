@@ -2,7 +2,14 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import hideVisually from "../../Styles/hideVisually"
-import { spacing, color, wrapper, themify, ThemeComponent } from "@staccx/theme"
+import {
+  spacing,
+  color,
+  wrapper,
+  themify,
+  ThemeComponent,
+  borderRadius
+} from "@staccx/theme"
 import IconClose from "../Icons/Close"
 
 class Modal extends Component {
@@ -58,7 +65,7 @@ class Modal extends Component {
   }
 
   render() {
-    const { children, className, ...otherProps } = this.props
+    const { children, className, variant, ...otherProps } = this.props
     const { isOpen } = this.state
     this.fixOverflow()
     if (isOpen) {
@@ -71,21 +78,27 @@ class Modal extends Component {
             tabIndex="0"
             open="open"
             aria-labelledby="modal"
+            variant={variant}
           >
-            <ModalContent role="document" tabIndex="0" id="modal">
+            <ModalContent
+              role="document"
+              tabIndex="0"
+              id="modal"
+              variant={variant}
+            >
+              <Close
+                type="button"
+                id="modal-close"
+                aria-label="Close (Press escape to close)"
+                onClick={this.handleChange}
+              >
+                <span>Close</span>
+                <Icon />
+              </Close>
               {children}
             </ModalContent>
           </ModalItem>
-          <Close
-            type="button"
-            id="modal-close"
-            aria-label="Close (Press escape to close)"
-            onClick={this.handleChange}
-          >
-            <span>Close</span>
-            <Icon />
-          </Close>
-          <ModalBackdrop />
+          <ModalBackdrop onClick={this.handleChange} variant={variant} />
         </React.Fragment>
       )
     }
@@ -123,14 +136,17 @@ const ModalItem = styled.dialog`
 export const MODAL_CONTENT = "modal_content"
 const ModalContent = styled.div`
   background: white;
+  border-radius: ${borderRadius};
   grid-area: a;
   align-self: center;
   justify-self: center;
-  padding: ${spacing.medium()};
+  padding: ${spacing.large} ${spacing.medium} ${spacing.medium}
+    ${spacing.medium};
   max-width: ${wrapper.medium};
   min-width: 296px;
   width: 100%;
   overflow-y: auto;
+  position: relative;
   &:focus {
     outline: none;
   }
@@ -139,13 +155,13 @@ const ModalContent = styled.div`
 
 export const MODAL_CLOSE = "modal_close"
 const Close = styled.button`
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   z-index: 9999;
   background: transparent;
   border-width: 0;
-  fill: ${color.white};
+  fill: ${color.primary};
   padding: ${spacing.small()};
   cursor: pointer;
   &:focus,

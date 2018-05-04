@@ -50,7 +50,7 @@ import Fraction from "./components/DataViz/Fraction/Fraction"
 import Donut from "./components/DataViz/Donut/Donut"
 import KeyFigures from "./components/DataViz/Keyfigures/Keyfigures"
 
-import Modal from "./components/Modal/Modal"
+import Modal, * as ModalStyles from "./components/Modal/Modal"
 
 import Button, * as ButtonStyles from "./components/Button/Button"
 import Alert, * as AlertStyles from "./components/Alert/Alert"
@@ -111,6 +111,7 @@ export {
   LinkListItem,
   List,
   Modal,
+  ModalStyles,
   NationalIdInput,
   Odometer,
   Pack,
