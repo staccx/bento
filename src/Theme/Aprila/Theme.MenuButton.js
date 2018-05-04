@@ -1,11 +1,11 @@
 import { css } from "styled-components"
-import { registerStyle, color, spacing, font } from "@staccx/theme"
+import { registerStyle, color, font } from "@staccx/theme"
 import { ButtonStyles } from "@staccx/base"
 
 export default registerStyle(
   {
     menuItem: css`
-      padding-left: ${spacing.small};
+      padding: 0;
       background-color: transparent;
       width: 100%;
       text-align: center;

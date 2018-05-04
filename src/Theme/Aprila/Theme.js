@@ -6,6 +6,10 @@ import { BoxStyling } from "./Theme.Box"
 import ModalStyles from "./Theme.Modal"
 import Logo from "./Theme.Logo"
 import Menu from "./../../components/Menu/MenuRow"
+import IconArrowDown from "./Icons/Icon.ArrowDown"
+import IconArrowUp from "./Icons/Icon.ArrowUp"
+import IconLogout from "./Icons/Icon.Logout"
+import IconProfile from "./Icons/Icon.Profile"
 
 const borderRadius = "8px"
 const headerHeight = "70px"
@@ -91,6 +95,10 @@ const t = new Theme(BaseTheme, {
     menuArea: "main"
   },
   logo: Logo,
+  iconArrowDown: IconArrowDown,
+  iconArrowUp: IconArrowUp,
+  iconProfile: IconProfile,
+  iconLogout: IconLogout,
   menu: Menu,
   font: { ...font, ...BiBSpecificFont },
   color: { ...color, ...BiBSpecificColor },

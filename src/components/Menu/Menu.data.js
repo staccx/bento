@@ -21,11 +21,11 @@ export default pages => [
   {
     _id: "sioahugcf",
     label: "Min profil",
-    icon: <ThemeComponent tagName={"iconArrowUp"} fallback={IconProfile} />
+    icon: <ThemeComponent tagName={"iconProfile"} fallback={IconProfile} />
   },
   {
     _id: "fugya",
     label: "Logg ut",
-    icon: <ThemeComponent tagName={"iconArrowUp"} fallback={IconLogout} />
+    icon: <ThemeComponent tagName={"iconLogout"} fallback={IconLogout} />
   }
 ]
