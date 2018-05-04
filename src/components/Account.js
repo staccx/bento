@@ -25,15 +25,18 @@ class Account extends React.Component {
       return null
     }
     const { availableBalance } = selectedAccount
-    console.log(availableBalance)
+    const split = availableBalance ? availableBalance.toString().split(".") : []
+    const primary = split.length ? split[0] : ""
+    const secondary = split.length > 1 ? split[1] : ""
     return (
       <Box variant="accountBox">
         <Container>
           <Title>{title}</Title>
           <Balance>
-            {availableBalance &&
-              formatCurrency(availableBalance, { precision: 2 })}
+            {primary &&
+              formatCurrency(parseInt(primary, 10))}
           </Balance>
+          {secondary && <Decimal>.{secondary}</Decimal>}
           <Earned>{earned && formatCurrency(earned, { precision: 2 })}</Earned>
         </Container>
       </Box>
@@ -49,6 +52,13 @@ const Title = styled.h3`
 
 const Balance = styled.div`
   font-size: ${font("accountBalance")};
+  font-weight: bold;
+  color: ${color.primary};
+  display: inline;
+`
+
+const Decimal = styled.span`
+  font-size: ${font.tiny};
   font-weight: bold;
   color: ${color.primary};
 `
