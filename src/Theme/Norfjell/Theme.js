@@ -1,6 +1,7 @@
 import { BaseTheme, Theme } from "@staccx/base"
 import reset from "./reset"
 import Button from "./Theme.Button"
+import Modal from "./Theme.Modal"
 import DashboardBox from "./Theme.Box"
 import Logo from "./Theme.Logo"
 import Menu from "./../../components/Menu/MenuList"
@@ -100,5 +101,6 @@ const t = new Theme(BaseTheme, {
 })
   .addStyles(Button)
   .addStyles(DashboardBox)
+  .addStyles(Modal)
 
 export default t.get

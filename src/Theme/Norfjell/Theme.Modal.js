@@ -1,13 +1,13 @@
 import { css } from "styled-components"
-import { registerStyle, color } from "@staccx/theme"
-import { ButtonStyles } from "@staccx/base"
+import { registerStyle, spacing, wrapper } from "@staccx/theme"
+import { ModalStyles } from "@staccx/base"
 
-export const ModalLeftButton = registerStyle(
+export default registerStyle(
   {
-    modalLeftButton: css`
-      background-color: ${color.white};
-      color: ${color.primary};
+    small: css`
+      max-width: ${wrapper.small};
+      padding-top: ${spacing.medium};
     `
   },
-  ButtonStyles.BUTTON
+  ModalStyles.MODAL_CONTENT
 )

@@ -3,6 +3,8 @@ import reset from "./reset"
 import Button from "./Theme.Button"
 import { BoxStyling } from "./Theme.Box"
 import Logo from "./Theme.Logo"
+import ModalStyle from "./Theme.Modal"
+import AlertStyle from "./Theme.Alert"
 import Menu from "./../../components/Menu/MenuRow"
 import IconArrowDown from "./Icons/Icon.ArrowDown"
 import IconArrowUp from "./Icons/Icon.ArrowUp"
@@ -43,14 +45,14 @@ const color = {
   gray: "#767676",
   text: "#3b2c7c",
   white: "#fff",
-  line: "#EBEBF2",
+  line: "#D3D3F4",
   wcag: "#777",
   disabled: "#BABABA",
   warning: "#FB8D90",
   positive: "#FF7E68",
   negative: "#3B2C7C",
   black: "#000",
-  subtleHover: "#E9E8F2"
+  subtleHover: "#F2F1FC"
 }
 
 const BiBSpecificColor = {
@@ -113,5 +115,7 @@ const t = new Theme(BaseTheme, {
 })
   .addStyles(Button)
   .addStyles(BoxStyling)
+  .addStyles(ModalStyle)
+  .addStyles(AlertStyle)
 
 export default t.get

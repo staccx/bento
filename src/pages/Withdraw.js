@@ -9,14 +9,14 @@ import {
   AccountInput,
   Alert
 } from "@staccx/base"
-import { color, spacing } from "@staccx/theme"
+import { color, spacing, font } from "@staccx/theme"
 
 const Deposit = () => (
-  <Modal isOpen>
+  <Modal variant="small" isOpen>
     <Layout grid="rows">
       <LayoutItem>
-        <h1>Ta ut penger</h1>
-        <span>917 822,45 disponibelt</span>
+        <Heading>Ta ut penger</Heading>
+        <SubTitle>917 822,45 disponibelt</SubTitle>
       </LayoutItem>
       <LayoutItem>
         <InputContent>
@@ -30,7 +30,7 @@ const Deposit = () => (
       </LayoutItem>
       <LayoutItem>
         <Alert type="info">
-          Siste innskudd kom fra <Code>9081 15 74238</Code>. Klikk her for å
+          Siste innskudd kom fra <Number>9081 15 74238</Number>. Klikk her for å
           sende penger tilbake
         </Alert>
       </LayoutItem>
@@ -41,6 +41,20 @@ const Deposit = () => (
   </Modal>
 )
 
+const Heading = styled.h1`
+  font-size: ${font.h4};
+  text-align: center;
+  font-weight: bold;
+  color: ${color.text};
+  margin-bottom: ${spacing.tiny};
+`
+const SubTitle = styled.h1`
+  font-size: ${font.h6};
+  text-align: center;
+  color: ${color.wcag};
+  font-weight: normal;
+`
+
 const InputContent = styled.div`
   display: grid;
   grid-column-gap: ${spacing.small};
@@ -48,9 +62,9 @@ const InputContent = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 `
 
-const Code = styled.code`
+const Number = styled.span`
   display: inline-block;
-  color: ${color.primary};
+  color: ${color.secondary};
 `
 
 export default Deposit
