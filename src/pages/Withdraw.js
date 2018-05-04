@@ -2,40 +2,55 @@ import React from "react"
 import styled from "styled-components"
 import {
   Modal,
-  Box,
   Button,
-  List,
-  SplitListItem,
   Layout,
   LayoutItem,
   Input,
-  AccountInput
+  AccountInput,
+  Alert
 } from "@staccx/base"
 import { color, spacing } from "@staccx/theme"
 
 const Deposit = () => (
   <Modal isOpen>
-    <header>
-      <h1>Ta ut penger</h1>
-      <span>917 822,45 disponibelt</span>
-    </header>
-    <div>
-      <Input label="Beløp" placeholder="0" type="tel" />
-      <AccountInput label="Kontonummer" placeholder="XXXX XX XXXXX" />
-      <Alert>
-        Siste innskudd kom fra <code>9081 15 74238</code>. Klikk her for å sende
-        penger tilbake
-      </Alert>
-      <Button>Overfør</Button>
-    </div>
+    <Layout grid="rows">
+      <LayoutItem>
+        <h1>Ta ut penger</h1>
+        <span>917 822,45 disponibelt</span>
+      </LayoutItem>
+      <LayoutItem>
+        <InputContent>
+          <Input label="Beløp" placeholder="0" type="tel" id="telwithdraw" />
+          <AccountInput
+            label="Kontonummer"
+            placeholder="XXXX XX XXXXX"
+            id="accountwithdraw"
+          />
+        </InputContent>
+      </LayoutItem>
+      <LayoutItem>
+        <Alert type="info">
+          Siste innskudd kom fra <Code>9081 15 74238</Code>. Klikk her for å
+          sende penger tilbake
+        </Alert>
+      </LayoutItem>
+      <LayoutItem>
+        <Button>Overfør</Button>
+      </LayoutItem>
+    </Layout>
   </Modal>
 )
 
-const Alert = styled.div`
-  width: 100%;
-  background: #f0f0f0;
-  border-radius: 3px;
-  padding: ${spacing.small};
+const InputContent = styled.div`
+  display: grid;
+  grid-column-gap: ${spacing.small};
+  grid-row-gap: ${spacing.small};
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+`
+
+const Code = styled.code`
+  display: inline-block;
+  color: ${color.primary};
 `
 
 export default Deposit
