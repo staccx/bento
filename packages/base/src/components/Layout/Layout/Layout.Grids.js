@@ -3,7 +3,8 @@ import { css } from "styled-components"
 
 export default {
   stonehenge: css`
-    grid-template-columns: 1fr minmax(320px, 1fr) minmax(320px, 1fr) 1fr;
+    grid-template-columns: 0.5fr minmax(320px, 520px) minmax(320px, 520px) 0.5fr;
+    grid-template-rows: auto auto auto 1fr;
     grid-template-areas:
       "header  header  header  header"
       ".  main  main  ."
