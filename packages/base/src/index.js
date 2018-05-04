@@ -38,6 +38,9 @@ import ItemGroup, * as ItemGroupStyles from "./components/Layout/ItemGroup/ItemG
 import Caret from "./components/Icons/Caret"
 import CaretRight from "./components/Icons/CaretRight"
 import Close from "./components/Icons/Close"
+import Warning from "./components/Icons/Warning"
+import Info from "./components/Icons/Info"
+import Success from "./components/Icons/Success"
 
 // formatters
 import Odometer from "./components/Formatters/Odometer/Odometer"
@@ -50,6 +53,7 @@ import KeyFigures from "./components/DataViz/Keyfigures/Keyfigures"
 import Modal from "./components/Modal/Modal"
 
 import Button, * as ButtonStyles from "./components/Button/Button"
+import Alert, * as AlertStyles from "./components/Alert/Alert"
 import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 
 import fontSmoothing from "./Styles/fontsmoothing"
@@ -69,6 +73,8 @@ const Icons = {
 
 export {
   AccountInput,
+  Alert,
+  AlertStyles,
   BaseTheme,
   Box,
   BoxStyles,
@@ -89,6 +95,7 @@ export {
   Fraction,
   hideVisually,
   Icons,
+  Info,
   InlineListItem,
   Input,
   InputStyles,
@@ -123,8 +130,10 @@ export {
   SliderKeyboardInputStyles,
   SliderStyles,
   SplitListItem,
+  Success,
   Theme,
   ThemeProvider,
   Toggle,
+  Warning,
   Wrapper
 }

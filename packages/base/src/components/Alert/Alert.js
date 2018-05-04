@@ -2,7 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import Flag from "../Layout/Flag/Flag"
-import Caret from "../Icons/Caret"
+import Warning from "../Icons/Warning"
+import Success from "../Icons/Success"
+import Info from "../Icons/Info"
 import { spacing, themify, ThemeComponent, color } from "@staccx/theme"
 
 export const COMPONENT_ALERT_INFO = "COMPONENT_ALERT_INFO"
@@ -15,7 +17,7 @@ const Icon = ({ type, props }) => {
       return (
         <ThemeComponent
           tagName={COMPONENT_ALERT_INFO}
-          fallback={Caret}
+          fallback={Info}
           {...props}
         />
       )
@@ -23,7 +25,7 @@ const Icon = ({ type, props }) => {
       return (
         <ThemeComponent
           tagName={COMPONENT_ALERT_WARNING}
-          fallback={Caret}
+          fallback={Warning}
           {...props}
         />
       )
@@ -31,7 +33,7 @@ const Icon = ({ type, props }) => {
       return (
         <ThemeComponent
           tagName={COMPONENT_ALERT_SUCCESS}
-          fallback={Caret}
+          fallback={Success}
           {...props}
         />
       )
@@ -64,7 +66,9 @@ const colors = ({ type }) => {
 const Alert = ({ children, type }) => {
   return (
     <AlertElement type={type} role="alert">
-      <Flag img={<Icon type={type} />}>{children}</Flag>
+      <Flag small img={<Icon type={type} />}>
+        {children}
+      </Flag>
     </AlertElement>
   )
 }
@@ -89,7 +93,7 @@ Alert.propTypes = {
 }
 
 Alert.defaultProps = {
-  spacing: "tiny"
+  type: "info"
 }
 
 export default Alert

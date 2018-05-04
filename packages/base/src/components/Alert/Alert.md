@@ -1,7 +1,7 @@
 ```jsx
 <div>
-  <Alert type="warning">This is a primary alert—check it out!</Alert>
-  <Alert type="success">This is a primary alert—check it out!</Alert>
-  <Alert type="info">This is a primary alert—check it out!</Alert>
+  <Alert type="warning">This is a warning</Alert>
+  <Alert type="success">This is a Success-message</Alert>
+  <Alert type="info">This is an info-box!</Alert>
 </div>
 ```

@@ -20,6 +20,7 @@ const Flag = ({
   responsive,
   flush,
   large,
+  small,
   ...otherProps
 }) => (
   <FlagObject
@@ -30,6 +31,7 @@ const Flag = ({
     responsive={responsive}
     flush={flush}
     large={large}
+    small={small}
     {...otherProps}
   >
     <FlagImg>{img}</FlagImg>
@@ -37,7 +39,6 @@ const Flag = ({
   </FlagObject>
 )
 
-export const FLAG_IMG = "FLAG_IMG"
 const FlagImg = styled.div`
   display: table-cell;
   width: 1px;
@@ -46,10 +47,11 @@ const FlagImg = styled.div`
   > img {
     max-width: none;
   }
-  ${themify(FLAG_IMG)};
+  > svg {
+    display: block;
+  }
 `
 
-export const FLAG_BODY = "FLAG_BODY"
 const FlagBody = styled.div`
   display: table-cell;
   vertical-align: middle;
@@ -59,10 +61,8 @@ const FlagBody = styled.div`
   > :last-child {
     margin-bottom: 0;
   }
-  ${themify(FLAG_BODY)};
 `
 
-export const FLAG_REVERSE = "FLAG_REVERSE"
 const reverse = css`
   direction: rtl;
   > ${FlagImg}, > ${FlagBody} {
@@ -73,53 +73,55 @@ const reverse = css`
     padding-right: 0;
     padding-left: ${spacing.medium()};
   }
-  ${themify(FLAG_REVERSE)};
 `
 
-export const FLAG_REVERSE_LARGE = "FLAG_REVERSE_LARGE"
 const reverseLarge = css`
   > ${FlagImg} {
     padding-right: 0;
     padding-left: ${spacing.large()};
   }
-  ${themify(FLAG_REVERSE_LARGE)};
 `
 
-export const FLAG_TOP = "FLAG_TOP"
+const reverseSmall = css`
+  > ${FlagImg} {
+    padding-right: 0;
+    padding-left: ${spacing.small()};
+  }
+`
+
 const top = css`
   > ${FlagImg}, > ${FlagBody} {
     vertical-align: top;
   }
-  ${themify(FLAG_TOP)};
 `
 
-export const FLAG_BOTTOM = "FLAG_BOTTOM"
 const bottom = css`
   > ${FlagImg}, > ${FlagBody} {
     vertical-align: bottom;
   }
-  ${themify(FLAG_BOTTOM)};
 `
 
-export const FLAG_FLUSH = "FLAG_FLUSH"
 const flush = css`
   > ${FlagImg} {
     padding-right: 0;
     padding-left: 0;
   }
-  ${themify(FLAG_FLUSH)};
 `
 
-export const FLAG_LARGE = "FLAG_LARGE"
 const large = css`
   > ${FlagImg} {
     padding-right: ${spacing.large()};
   }
   ${props => (props.reverse ? reverseLarge : null)};
-  ${themify(FLAG_LARGE)};
 `
 
-export const FLAG_RESPONSIVE = "FLAG_RESPONSIVE"
+const small = css`
+  > ${FlagImg} {
+    padding-right: ${spacing.small()};
+  }
+  ${props => (props.reverse ? reverseSmall : null)};
+`
+
 const responsive = css`
   @media screen and (max-width: ${props => props.responsive}px) {
     &,
@@ -136,7 +138,6 @@ const responsive = css`
     ${FlagImg} > img {
       max-width: 100%;
     }
-    ${themify(FLAG_RESPONSIVE)};
   }
 `
 
@@ -150,6 +151,7 @@ const FlagObject = styled.div`
   ${props => (props.bottom ? bottom : null)};
   ${props => (props.flush ? flush : null)};
   ${props => (props.large ? large : null)};
+  ${props => (props.small ? small : null)};
   ${props => (props.responsive > 0 ? responsive : null)};
   ${themify(FLAG_OBJECT)};
 `
@@ -161,7 +163,8 @@ Flag.defaultProps = {
   bottom: null,
   responsive: 0,
   flush: null,
-  large: null
+  large: null,
+  small: null
 }
 
 Flag.propTypes = {
@@ -183,7 +186,8 @@ Flag.propTypes = {
   bottom: PropTypes.bool,
   responsive: PropTypes.number,
   flush: PropTypes.bool,
-  large: PropTypes.bool
+  large: PropTypes.bool,
+  small: PropTypes.bool
 }
 
 export default Flag
