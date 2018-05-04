@@ -1,6 +1,6 @@
 import { color, fontFamily } from "@staccx/theme"
 
-export const reset = `
+export const reset = props => `
   body, h1, h2, h3, h4, h5, h6,
   blockquote, p, pre,
   dl, dd, ol, ul,
@@ -15,19 +15,19 @@ export const reset = `
     overflow-x: hidden;
     min-height: 100%;
     box-sizing: border-box;
-    background-color: ${color.bg};
-    font-family: ${fontFamily.body};
+    background-color: ${color.bg()(props)};
+    font-family: ${fontFamily.body()(props)};
     font-size: 14px;
-    color: ${color.text};
+    color: ${color.text()(props)};
   }
   a {
-    color: ${color.link};
+    color: ${color.link()(props)};
   }
   body {
     min-height: 100vh;
   }
   h1,h2,h3,h4,h5,h6 {
-    font-family: ${fontFamily.heading};
+    font-family: ${fontFamily.heading()(props)};
     font-weight: bold;
     font-size: 1em;
     -webkit-font-smoothing: antialiased;
