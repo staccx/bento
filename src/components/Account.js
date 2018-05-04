@@ -50,14 +50,14 @@ const Title = styled.h3`
 const Balance = styled.div`
   font-size: ${font("accountBalance")};
   font-weight: bold;
-  color: ${color.primary};
+  color: ${color("accountBalance")};
   display: inline;
 `
 
 const Decimal = styled.span`
   font-size: ${font("accountBalanceDecimals")};
+  color: ${color("accountBalance")};
   font-weight: bold;
-  color: ${color.primary};
 `
 
 const Earned = styled.div`

@@ -10,6 +10,7 @@
     "immutable": "^3.8.2",
     "mobx": "^4.2.0",
     "mobx-react": "^5.0.0",
+    "polished": "^1.9.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-app-rewire-mobx": "^1.0.8",

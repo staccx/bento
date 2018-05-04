@@ -4,6 +4,20 @@ import { ButtonStyles } from "@staccx/base"
 
 export default registerStyle(
   {
+    expand: css`
+      display: block;
+      width: 100%;
+      margin: 0;
+      background-color: transparent;
+      color: ${color.primary};
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent;
+        color: ${color.text};
+      }
+    `,
     menuItem: css`
       display: flex;
       padding-left: ${spacing.small};
@@ -20,6 +34,10 @@ export default registerStyle(
         background-color: ${color.subtleHover};
         color: ${color.text};
       }
+    `,
+    modalLeftButton: css`
+      background-color: ${color.white};
+      color: ${color.primary};
     `
   },
   ButtonStyles.BUTTON

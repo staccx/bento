@@ -18,7 +18,7 @@ const Outer = styled.div`
   margin: 0 auto ${spacing.small};
   padding: ${spacing.medium};
   border-radius: 50%;
-  background-color: ${color.secondary};
+  background-color: ${color.primary};
 `
 
 const Icon = styled.svg`

@@ -1,7 +1,6 @@
 import { BaseTheme, Theme } from "@staccx/base"
 import reset from "./reset"
-import ExpandButton from "./Theme.ExpandButton"
-import MenuButton from "./Theme.MenuButton"
+import Button from "./Theme.Button"
 import { BoxStyling } from "./Theme.Box"
 import Logo from "./Theme.Logo"
 import Menu from "./../../components/Menu/MenuRow"
@@ -38,8 +37,8 @@ const spacing = {
 const color = {
   bg: "#fff",
   bgGray: "#F2F1FC",
-  primary: "#FF7E68",
-  secondary: "#3B2C7C",
+  primary: "#3B2C7C",
+  secondary: "#FF7E68",
   gray: "#767676",
   text: "#3b2c7c",
   white: "#fff",
@@ -55,7 +54,8 @@ const color = {
 
 const BiBSpecificColor = {
   accountHeading: color.bgGray,
-  accountEarned: color.bgGray
+  accountEarned: color.bgGray,
+  accountBalance: color.secondary
 }
 
 const font = {
@@ -109,8 +109,7 @@ const t = new Theme(BaseTheme, {
   spacing,
   global: reset
 })
-  .addStyles(MenuButton)
-  .addStyles(ExpandButton)
+  .addStyles(Button)
   .addStyles(BoxStyling)
 
 export default t.get

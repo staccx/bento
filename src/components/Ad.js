@@ -20,9 +20,7 @@ const Ad = () => (
       </LayoutItem>
       <LayoutItem>
         <ItemGroup>
-          <Button>Jeg vil ha fakturasalg!</Button>
-          <Button>Nei takk</Button>
-          <Button>3dje</Button>
+          <Button variant="secondary">Jeg vil ha fakturasalg!</Button>
         </ItemGroup>
       </LayoutItem>
     </Layout>

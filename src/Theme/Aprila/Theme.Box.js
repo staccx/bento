@@ -5,13 +5,13 @@ import { BoxStyles, fontSmoothing } from "@staccx/base"
 export const BoxStyling = registerStyle(
   {
     adBox: css`
-      background: ${color.secondary};
+      background: ${color.primary};
       color: ${color.white};
       border-radius: 8px;
       ${fontSmoothing};
     `,
     accountBox: css`
-      background: ${color.secondary};
+      background: ${color.primary};
       color: ${color.white};
       border-radius: 0;
       padding: 0;
@@ -27,7 +27,7 @@ export const BoxStyling = registerStyle(
       border-radius: 8px;
     `,
     headerContainer: css`
-      background: ${color.secondary};
+      background: ${color.primary};
       padding: 0;
       border-radius: 0;
     `,

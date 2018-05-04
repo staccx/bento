@@ -1,7 +1,6 @@
 import { BaseTheme, Theme } from "@staccx/base"
 import reset from "./reset"
-import ExpandButton from "./Theme.ExpandButton"
-import MenuButton from "./Theme.MenuButton"
+import Button from "./Theme.Button"
 import DashboardBox from "./Theme.Box"
 import Logo from "./Theme.Logo"
 import Menu from "./../../components/Menu/MenuList"
@@ -51,7 +50,8 @@ const color = {
 
 const BiBSpecificColor = {
   accountHeading: color.disabled,
-  accountEarned: color.secondary
+  accountEarned: color.secondary,
+  accountBalance: color.primary
 }
 
 const font = {
@@ -96,8 +96,7 @@ const t = new Theme(BaseTheme, {
   spacing,
   global: reset
 })
-  .addStyles(MenuButton)
-  .addStyles(ExpandButton)
+  .addStyles(Button)
   .addStyles(DashboardBox)
 
 export default t.get
