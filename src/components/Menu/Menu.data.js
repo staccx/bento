@@ -21,7 +21,8 @@ export default pages => [
   {
     _id: "sioahugcf",
     label: "Min profil",
-    icon: <ThemeComponent tagName={"iconProfile"} fallback={IconProfile} />
+    icon: <ThemeComponent tagName={"iconProfile"} fallback={IconProfile} />,
+    page: () => pages.profile()
   },
   {
     _id: "fugya",

@@ -10,6 +10,7 @@ import Account from "./components/Account"
 import Transactions from "./components/Transactions"
 import Deposit from "./pages/Deposit"
 import Withdraw from "./pages/Withdraw"
+import Profile from "./pages/Profile"
 
 import { account, customer } from "./state"
 
@@ -72,7 +73,8 @@ class App extends Component {
 
     const pages = {
       deposit: () => this.setPage("deposit"),
-      withdraw: () => this.setPage("withdraw")
+      withdraw: () => this.setPage("withdraw"),
+      profile: () => this.setPage("profile")
     }
 
     injectGlobal`
@@ -115,6 +117,7 @@ class App extends Component {
                 </div>
                 {this.state.currentPage === "deposit" && <Deposit />}
                 {this.state.currentPage === "withdraw" && <Withdraw />}
+                {this.state.currentPage === "profile" && <Profile />}
                 <ThemeComponent tagName={"footer"} />
               </Outer>
             </HotKeysHandler>
