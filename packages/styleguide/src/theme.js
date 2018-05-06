@@ -31,7 +31,7 @@ const color = {
   bgGray: "#F9F7F7",
   primary: "#23A532",
   gray: "#767676",
-  text: "#2b2b2b",
+  text: "#ea5210",
   white: "#fff",
   red: "#ea526f",
   pink: "#f8d0db",
