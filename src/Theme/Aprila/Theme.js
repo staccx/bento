@@ -3,7 +3,7 @@ import reset from "./reset"
 import Button from "./Theme.Button"
 import { BoxStyling } from "./Theme.Box"
 import Logo from "./Theme.Logo"
-import ModalStyle from "./Theme.Modal"
+import ModalStyle, { ModalBackdropStyle } from "./Theme.Modal"
 import AlertStyle from "./Theme.Alert"
 import Menu from "./../../components/Menu/MenuRow"
 import IconArrowDown from "./Icons/Icon.ArrowDown"
@@ -119,5 +119,6 @@ const t = new Theme(BaseTheme, {
   .addStyles(BoxStyling)
   .addStyles(ModalStyle)
   .addStyles(AlertStyle)
+  .addStyles(ModalBackdropStyle)
 
 export default t.get
