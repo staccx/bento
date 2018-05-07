@@ -29,6 +29,7 @@ const MenuWrapper = styled.div`
 
 const ButtonLabel = styled.span`
   flex-grow: 1;
+  font-weight: 300;
 `
 
 const IconOuter = styled.div``

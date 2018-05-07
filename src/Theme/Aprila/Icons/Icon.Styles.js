@@ -10,6 +10,12 @@ export const Outer = styled.div`
   padding: ${spacing.medium};
   border-radius: 50%;
   background-color: ${color.primary};
+
+  @media screen and (max-width: 1010px) {
+    width: 36px;
+    height: 36px;
+    padding: ${spacing.small};
+  }
 `
 
 export const Icon = styled.svg`
@@ -17,4 +23,9 @@ export const Icon = styled.svg`
   height: 36px;
   fill: ${color.white};
   vertical-align: middle;
+
+  @media screen and (max-width: 1010px) {
+    width: 24px;
+    height: 24px;
+  }
 `
