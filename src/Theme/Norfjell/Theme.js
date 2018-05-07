@@ -6,6 +6,7 @@ import DashboardBox from "./Theme.Box"
 import Logo from "./Theme.Logo"
 import Menu from "./../../components/Menu/MenuList"
 import Footer from "./Footer/Footer"
+import ExpandListBtn from "../Shared/Transaction.ExpandButton"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -97,7 +98,8 @@ const t = new Theme(BaseTheme, {
   headerHeight,
   fontFamily,
   spacing,
-  global: reset
+  global: reset,
+  COMPONENT_EXPAND_LIST_ITEM_BTN: ExpandListBtn
 })
   .addStyles(Button)
   .addStyles(DashboardBox)

@@ -12,6 +12,7 @@ import IconLogout from "./Icons/Icon.Logout"
 import IconProfile from "./Icons/Icon.Profile"
 import Footer from "./Footer/Footer"
 import Ad from "./Ad"
+import ExpandListBtn from "../Shared/Transaction.ExpandButton"
 
 const borderRadius = "8px"
 const headerHeight = "70px"
@@ -113,7 +114,8 @@ const t = new Theme(BaseTheme, {
   headerHeight,
   fontFamily,
   spacing,
-  global: reset
+  global: reset,
+  COMPONENT_EXPAND_LIST_ITEM_BTN: ExpandListBtn
 })
   .addStyles(Button)
   .addStyles(BoxStyling)

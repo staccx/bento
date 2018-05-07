@@ -16,11 +16,14 @@ class Transactions extends Component {
       <TransactionList>
         {this.props.account.transactions.map(transaction => (
           <TransactionListItem
+            title={transaction._id}
             heading={transaction.heading}
             date={transaction.date}
             amount={transaction.amount}
             key={transaction._id}
-          />
+          >
+            <div>hei</div>
+          </TransactionListItem>
         ))}
       </TransactionList>
     )
