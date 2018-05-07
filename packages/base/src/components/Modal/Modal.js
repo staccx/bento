@@ -11,6 +11,7 @@ import {
   borderRadius
 } from "@staccx/theme"
 import IconClose from "../Icons/Close"
+import { FadeIn } from "@staccx/animations"
 
 class Modal extends Component {
   constructor(props) {
@@ -184,6 +185,8 @@ const ModalBackdrop = styled.div`
   height: 100%;
   z-index: 999;
   background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  animation: 0.2s ${FadeIn} ease-out forwards 1;
   ${themify(MODAL_BACKDROP)};
 `
 
