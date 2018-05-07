@@ -1,9 +1,9 @@
 {
   "name": "@staccx/styleguide",
-  "version": "3.6.0",
+  "version": "3.7.0-0",
   "private": true,
   "dependencies": {
-    "@staccx/base": "^3.6.0",
+    "@staccx/base": "^3.7.0-0",
     "@staccx/theme": "^3.4.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",

@@ -61,6 +61,7 @@ import hideVisually from "./Styles/hideVisually"
 
 import { default as BaseTheme } from "./theme/baseTheme"
 // TODO: Trengs denne?
+import JsonSchema from "./components/Forms/JsonSchema/JsonSchema"
 
 import { Theme } from "@staccx/theme"
 
@@ -101,6 +102,7 @@ export {
   InputStyles,
   ItemGroup,
   ItemGroupStyles,
+  JsonSchema,
   KeyFigures,
   Label,
   LabelStyles,
