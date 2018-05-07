@@ -11,11 +11,9 @@ const Footer = () => (
           <ThemeComponent tagName={"logo"} />
         </div>
         <div>
-          <p>
-            <FooterMenuItem>Aprila Bank ASA</FooterMenuItem>
-            <FooterMenuItem>Kirkegata 5, 0153 Oslo</FooterMenuItem>
-            <FooterMenuItem>hei@aprila.no</FooterMenuItem>
-          </p>
+          <FooterMenuItem>Aprila Bank ASA</FooterMenuItem>
+          <FooterMenuItem>Kirkegata 5, 0153 Oslo</FooterMenuItem>
+          <FooterMenuItem>hei@aprila.no</FooterMenuItem>
         </div>
       </Left>
       <Right>

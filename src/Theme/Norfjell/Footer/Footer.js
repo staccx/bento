@@ -11,10 +11,8 @@ const Footer = () => (
           <ThemeComponent tagName={"logo"} />
         </div>
         <div>
-          <p>
-            <FooterMenuItem>Norfjell Bank</FooterMenuItem>
-            <FooterMenuItem> staccx@stacc.com</FooterMenuItem>
-          </p>
+          <FooterMenuItem>Norfjell Bank</FooterMenuItem>
+          <FooterMenuItem> staccx@stacc.com</FooterMenuItem>
         </div>
       </Left>
       <Right>
