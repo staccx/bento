@@ -127,7 +127,8 @@ class SliderKeyboardInput extends React.Component {
       mask,
       className,
       ignoreBase,
-      themeVariant
+      themeVariant,
+      showLabel
     } = this.props
     const { currentValue, percentage } = this.state
     return (
@@ -146,6 +147,7 @@ class SliderKeyboardInput extends React.Component {
           value={currentValue}
           onChange={this.handleChange}
           onBlur={this.handleBlur}
+          label={showLabel ? label : null}
           min={min}
           max={max}
           mask={mask || null}
@@ -226,7 +228,8 @@ SliderKeyboardInput.defaultProps = {
   onChange: null,
   step: 1,
   themeVariant: null,
-  value: 0
+  value: 0,
+  showLabel: false
 }
 
 SliderKeyboardInput.propTypes = {
@@ -243,7 +246,8 @@ SliderKeyboardInput.propTypes = {
   onBlur: PropTypes.func,
   step: PropTypes.number,
   themeVariant: PropTypes.string,
-  value: PropTypes.number
+  value: PropTypes.number,
+  showLabel: PropTypes.bool
 }
 
 export default SliderKeyboardInput

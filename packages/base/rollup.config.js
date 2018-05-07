@@ -19,11 +19,17 @@ export default {
       format: "es"
     }
   ],
-  external: ["react", "react-dom", "prop-types", "styled-components"],
+  external: [
+    "react",
+    "react-dom",
+    "prop-types",
+    "styled-components",
+    "react-jsonschema-form"
+  ],
   plugins: [
     json(),
     babel({
-      exclude: ["node_modules/**"],
+      exclude: ["../../node_modules/**"],
       plugins: ["external-helpers"]
     }),
     resolve(),
