@@ -9,7 +9,7 @@ class ThemeComponent extends React.Component {
         ? fallback
         : theme[tagName]
 
-    if(!Component) {
+    if (!Component) {
       return null
     }
     return <Component {...props}>{children}</Component>

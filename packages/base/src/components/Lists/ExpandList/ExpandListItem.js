@@ -3,17 +3,23 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { BounceIn } from "@staccx/animations"
 import Caret from "../../Icons/Caret"
-import {
-  targetSize,
-  spacing,
-  borderRadius,
-  fontFamily,
-  font,
-  color,
-  themify,
-  ThemeComponent
-} from "@staccx/theme"
+import { spacing, font, color, themify, ThemeComponent } from "@staccx/theme"
 
+const ExpandButton = ({ title, isExpanded, ...props }) => (
+  <ExpandBtn isExpanded={isExpanded} {...props}>
+    {title} <ExpandIcon isExpanded={isExpanded} />
+  </ExpandBtn>
+)
+
+export const COMPONENT_EXPAND_LIST_ITEM_BTN = "COMPONENT_EXPAND_LIST_ITEM_BTN"
+
+const BtnComponent = ({ ...props }) => (
+  <ThemeComponent
+    tagName={COMPONENT_EXPAND_LIST_ITEM_BTN}
+    fallback={ExpandButton}
+    {...props}
+  />
+)
 class ExpandListItem extends Component {
   constructor(props) {
     super(props)
@@ -46,18 +52,17 @@ class ExpandListItem extends Component {
       onClick,
       ...otherProps
     } = this.props
+    const { isExpanded } = this.state
     return (
       <ExpandItem className={className} {...otherProps}>
-        <ExpandBtn
-          isExpanded={this.state.isExpanded}
+        <BtnComponent
+          isExpanded={isExpanded}
           onClick={this.handleChange}
-          aria-expanded={this.state.isExpanded}
+          aria-expanded={isExpanded}
           aria-controls={title}
           id={title + "2"}
-        >
-          {title} <ExpandIcon isExpanded={this.state.isExpanded} />
-        </ExpandBtn>
-        {this.state.isExpanded && (
+        />
+        {isExpanded && (
           <ExpandedItem flush={flush} id={title} aria-labelledby={title + "2"}>
             {children}
           </ExpandedItem>

@@ -22,7 +22,7 @@ import Toggle from "./components/Forms/Toggle/Toggle"
 // list
 import List from "./components/Lists/List"
 import SplitListItem from "./components/Lists/SplitList/SplitListItem"
-import ExpandListItem from "./components/Lists/ExpandList/ExpandListItem"
+import ExpandListItem, * as ExpandListItemStyles from "./components/Lists/ExpandList/ExpandListItem"
 import LinkListItem from "./components/Lists/LinkList/LinkListItem"
 import InlineListItem from "./components/Lists/InlineList/InlineListItem"
 // layout
@@ -91,6 +91,7 @@ export {
   CurrencyInput,
   Donut,
   ExpandListItem,
+  ExpandListItemStyles,
   Flag,
   fontSmoothing,
   Fraction,
