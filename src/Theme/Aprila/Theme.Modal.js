@@ -15,9 +15,6 @@ const boxAnimation = css`
   transform: translateY(-12px);
   animation: 0.4s ${BounceIn} cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 1;
 `
-const backdrop = css`
-  background-color: ${p => transparentize(0.1, color("primary")(p))};
-`
 
 export default registerStyle(
   {
@@ -33,6 +30,9 @@ export default registerStyle(
   ModalStyles.MODAL_CONTENT
 )
 
+const backdrop = css`
+  background-color: ${p => transparentize(0.1, color("primary")(p))};
+`
 export const ModalBackdropStyle = registerStyle(
   {
     [VARIANT_DEFAULT]: backdrop,
