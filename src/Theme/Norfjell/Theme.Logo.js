@@ -2,8 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { spacing } from "@staccx/theme"
 
-const Logo = () => (
-  <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107 41">
+const Logo = ({ className }) => (
+  <SVG
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 107 41"
+    className={className}
+  >
     <defs>
       <linearGradient
         id="linearGradient-1"

@@ -1,56 +1,47 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing, ThemeComponent } from "@staccx/theme"
-import { Layout, LayoutItem } from "@staccx/base"
+import { color, spacing, ThemeComponent, wrapper } from "@staccx/theme"
+import { Wrapper } from "@staccx/base"
 
 const Footer = () => (
   <Outer>
-    <Layout grid="stonehenge">
-      <Left>
+    <Wrapper>
+      <Layout>
         <div>
-          <ThemeComponent tagName={"logo"} />
+          <Logo tagName={"logo"} />
         </div>
         <div>
           <FooterMenuItem>Norfjell Bank</FooterMenuItem>
           <FooterMenuItem> staccx@stacc.com</FooterMenuItem>
         </div>
-      </Left>
-      <Right>
         <div>
           <FooterMenuItem>Stacc – The fintech platform company</FooterMenuItem>
         </div>
         <div />
-      </Right>
-    </Layout>
+      </Layout>
+    </Wrapper>
   </Outer>
 )
 
+const Logo = styled(ThemeComponent)`
+  margin: 0;
+`
+
+const Layout = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  > div {
+    padding: ${spacing.medium};
+    @media only screen and (max-width: ${wrapper.large}) {
+      width: 100%;
+    }
+  }
+`
+
 const Outer = styled.div`
   background-color: ${color.bgGray};
-  margin-top: ${spacing.large};
   padding: ${spacing.large} 0;
-  ${"" /* color: ${color.white}; */};
-`
-
-const Left = styled(LayoutItem)`
-  grid-area: header / 2 / footer / 3;
-  display: flex;
-  justify-content: space-between;
-
-  > * {
-    flex-grow: 1;
-  }
-`
-
-const Right = styled(LayoutItem)`
-  grid-area: header / 3 / footer / 4;
-
-  display: flex;
-  justify-content: space-between;
-
-  > * {
-    flex-grow: 1;
-  }
 `
 
 const FooterMenuItem = styled.p`
