@@ -18,9 +18,9 @@ export const ITEM_GROUP = "ITEM_GROUP"
 const ItemGroupElement = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -${p => space(p.spacing)};
+  margin: 0 -${p => space(p.spacing)} -${p => p.spacing};
   & > * {
-    margin: 0 ${p => space(p.spacing)};
+    margin: 0 ${p => space(p.spacing)} ${p => p.spacing};
   }
   ${themify(ITEM_GROUP)};
 `
