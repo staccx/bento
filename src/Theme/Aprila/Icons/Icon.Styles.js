@@ -9,7 +9,8 @@ export const Outer = styled.div`
   margin: 0 auto ${spacing.small};
   padding: ${spacing.medium};
   border-radius: 50%;
-  background-color: ${color.primary};
+  background-color: currentColor;
+  transition: background 0.2s ease;
 
   @media screen and (max-width: 1010px) {
     width: 36px;

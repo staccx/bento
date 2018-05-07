@@ -42,7 +42,11 @@ export default registerStyle(
       &:focus,
       &:active {
         background-color: transparent;
-        color: ${color.text};
+        color: ${p => lighten(0.05, color("primary")(p))};
+
+        svg {
+          fill: ${color.secondary};
+        }
       }
 
       svg {
