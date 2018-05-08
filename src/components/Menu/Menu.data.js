@@ -34,7 +34,7 @@ export default pages => [
         <ThemeComponent tagName={"iconInbox"} fallback={IconInbox} />
       </NewBadge>
     ),
-    page: () => pages.profile()
+    page: () => pages.inbox()
   },
   {
     _id: "fugya",

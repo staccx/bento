@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { spacing } from "@staccx/theme"
 import { Button, Box } from "@staccx/base"
 
 const TransactionList = ({ children }) => (
