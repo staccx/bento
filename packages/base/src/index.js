@@ -52,6 +52,8 @@ import KeyFigures from "./components/DataViz/Keyfigures/Keyfigures"
 
 import Modal, * as ModalStyles from "./components/Modal/Modal"
 
+import NewBadge, * as NewBadgeStyles from "./components/NewBadge/NewBadge"
+
 import Button, * as ButtonStyles from "./components/Button/Button"
 import Alert, * as AlertStyles from "./components/Alert/Alert"
 import { default as ThemeProvider } from "./Theme/ThemeWrapper"
@@ -116,6 +118,8 @@ export {
   Modal,
   ModalStyles,
   NationalIdInput,
+  NewBadge,
+  NewBadgeStyles,
   Odometer,
   Pack,
   PackItem,
