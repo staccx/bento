@@ -4,6 +4,7 @@ import lerp from "./src/lerp"
 import coserp from "./src/cosineInterpolate"
 import clamp from "./src/clamp"
 import multiplyPixelValue from "./src/multiplyPixelValue"
+import isNumber from "./src/isNumber"
 
 export {
   clamp,
@@ -11,4 +12,5 @@ export {
   inverseLerp,
   lerp,
   multiplyPixelValue,
+  isNumber
 }
