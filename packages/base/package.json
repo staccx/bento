@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "3.7.1-0",
+  "version": "3.7.1",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENCED",
@@ -62,7 +62,7 @@
     "@staccx/animations": "^3.6.0",
     "@staccx/formatting": "^0.2.0",
     "@staccx/math": "^0.1.0",
-    "@staccx/theme": "^3.4.0",
+    "@staccx/theme": "^3.7.1",
     "accounting": "^0.4.1",
     "downshift": "^1.28.0",
     "easing-utils": "^0.0.7",
