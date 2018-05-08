@@ -27,6 +27,13 @@ const ExpandListBtn = ({ heading, date, amount, isExpanded, ...rest }) => (
   </Item>
 )
 
+const ExpandIcon = styled(Caret)`
+  margin-left: ${spacing.small};
+  fill: ${color.primary};
+  transition: transform 0.3s ease-out;
+  transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
+`
+
 const Item = styled.button`
   display: flex;
   width: 100%;
@@ -34,13 +41,18 @@ const Item = styled.button`
   border: 0;
   background-color: transparent;
   align-items: center;
-  padding: 0 ${spacing.small} ${spacing.small};
+  padding: ${spacing.small};
+  transition: background-color 0.2s ease;
 
   &:focus,
   &:active,
   &:hover {
     outline: none;
-    color: ${color.primary};
+    background-color: rgba(0, 0, 0, 0.03);
+
+    ${ExpandIcon} {
+      fill ${color.secondary};
+    }
   }
 `
 
@@ -73,13 +85,6 @@ const Amount = styled.div``
 
 const TransactionHeading = styled.h4`
   font-size: ${font("transactionHeading")};
-`
-
-const ExpandIcon = styled(Caret)`
-  margin-left: ${spacing.small};
-  fill: ${color.primary};
-  transition: transform 0.3s ease-out;
-  transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
 `
 
 ExpandListBtn.propTypes = {

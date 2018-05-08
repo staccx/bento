@@ -16,11 +16,7 @@ const Container = styled(Box)`
 `
 
 const List = styled.ol`
-  display: grid;
-  grid-auto-flow: row;
-  grid-gap: ${spacing.small};
   list-style-type: none;
-  padding: ${spacing.small} 0 0;
   margin: 0;
 `
 
