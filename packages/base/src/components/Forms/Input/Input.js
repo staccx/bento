@@ -46,13 +46,13 @@ class Input extends React.Component {
       value,
       label,
       mask,
-      themeVariant,
+      variant,
       ...otherProps
     } = this.props
     return (
-      <InputWrapper className={className} themeVariant={themeVariant}>
+      <InputWrapper className={className} variant={variant}>
         {label && (
-          <InputLabel themeVariant={themeVariant} htmlFor={id}>
+          <InputLabel variant={variant} htmlFor={id}>
             {label}
           </InputLabel>
         )}
@@ -68,6 +68,7 @@ class Input extends React.Component {
             onChange={onChange}
             onKeyDown={onKeyDown}
             placeholder={placeholder}
+            variant={variant}
             type={type}
             {...otherProps}
           />
@@ -82,7 +83,7 @@ class Input extends React.Component {
             onChange={onChange}
             onKeyDown={onKeyDown}
             placeholder={placeholder}
-            themeVariant={themeVariant}
+            variant={variant}
             type={type}
             {...otherProps}
           />

@@ -107,7 +107,7 @@ const RadioButton = ({
 )
 
 RadioButton.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   className: PropTypes.string,
   defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
