@@ -43,6 +43,7 @@ const Item = styled.button`
   align-items: center;
   padding: ${spacing.small};
   transition: background-color 0.2s ease;
+  cursor: pointer;
 
   &:focus,
   &:active,
