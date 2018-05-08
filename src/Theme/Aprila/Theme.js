@@ -1,4 +1,5 @@
 import { BaseTheme, Theme } from "@staccx/base"
+import { lighten } from "polished"
 import reset from "./reset"
 import Button from "./Theme.Button"
 import { BoxStyling } from "./Theme.Box"
@@ -13,6 +14,7 @@ import IconProfile from "./Icons/Icon.Profile"
 import Footer from "./Footer/Footer"
 import Ad from "./Ad"
 import ExpandListBtn from "../Shared/Transaction.ExpandButton"
+import ExpandListExpanded from "../Shared/ExpandListItem.Expanded"
 
 const borderRadius = "8px"
 const headerHeight = "70px"
@@ -51,8 +53,8 @@ const color = {
   wcag: "#777",
   disabled: "#BABABA",
   warning: "#FB8D90",
-  positive: "#FF7E68",
-  negative: "#3B2C7C",
+  positive: "#3B2C7C",
+  negative: "#FF7E68",
   black: "#000",
   subtleHover: "#F2F1FC"
 }
@@ -60,7 +62,8 @@ const color = {
 const BiBSpecificColor = {
   accountHeading: color.bgGray,
   accountEarned: color.bgGray,
-  accountBalance: color.secondary
+  accountBalance: color.secondary,
+  expandedItem: lighten(0.05, color.line)
 }
 
 const font = {
@@ -122,5 +125,6 @@ const t = new Theme(BaseTheme, {
   .addStyles(ModalStyle)
   .addStyles(AlertStyle)
   .addStyles(ModalBackdropStyle)
+  .addStyles(ExpandListExpanded)
 
 export default t.get

@@ -7,6 +7,7 @@ import Logo from "./Theme.Logo"
 import Menu from "./../../components/Menu/MenuList"
 import Footer from "./Footer/Footer"
 import ExpandListBtn from "../Shared/Transaction.ExpandButton"
+import ExpandListExpanded from "../Shared/ExpandListItem.Expanded"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -54,7 +55,8 @@ const color = {
 const BiBSpecificColor = {
   accountHeading: color.disabled,
   accountEarned: color.secondary,
-  accountBalance: color.primary
+  accountBalance: color.primary,
+  expandedItem: color.bgGray
 }
 
 const font = {
@@ -104,5 +106,6 @@ const t = new Theme(BaseTheme, {
   .addStyles(Button)
   .addStyles(DashboardBox)
   .addStyles(Modal)
+  .addStyles(ExpandListExpanded)
 
 export default t.get
