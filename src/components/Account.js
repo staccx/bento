@@ -34,7 +34,10 @@ class Account extends React.Component {
           <Title>{title}</Title>
           <Balance>{primary && formatCurrency(parseInt(primary, 10))}</Balance>
           {secondary && <Decimal>.{secondary}</Decimal>}
-          <Earned>{earned && formatCurrency(earned, { precision: 2 })}</Earned>
+          <Earned>
+            {earned &&
+              "Hvorav renter: " + formatCurrency(earned, { precision: 2 })}
+          </Earned>
         </Container>
       </Box>
     )
@@ -62,7 +65,7 @@ const Decimal = styled.span`
 
 const Earned = styled.div`
   font-size: ${font.input};
-  font-weight: ${fontWeight.bold};
+  font-weight: ${fontWeight.light};
   color: ${color("accountEarned")};
 `
 
