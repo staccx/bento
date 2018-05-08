@@ -54,6 +54,11 @@ export const theme = {
     input: "16px",
     huge: "44px"
   },
+  fontWeight: {
+    bold: "bold",
+    normal: "normal",
+    light: "lighter"
+  },
   targetSize: {
     small: "36px",
     normal: "44px"
