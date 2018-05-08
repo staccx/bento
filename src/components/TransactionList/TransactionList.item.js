@@ -9,7 +9,7 @@ const TransactionListItem = ({ children, amount, ...rest }) => (
 )
 
 TransactionListItem.propTypes = {
-  heading: PropTypes.string.isRequired,
+  heading: PropTypes.string,
   date: PropTypes.string.isRequired,
   amount: PropTypes.number.isRequired
 }

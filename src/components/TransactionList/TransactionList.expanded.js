@@ -34,7 +34,6 @@ const Outer = styled.div`
 `
 
 TransactionListItem.propTypes = {
-  heading: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   amount: PropTypes.number.isRequired
 }
