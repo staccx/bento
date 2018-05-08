@@ -6,6 +6,7 @@ import DashboardBox from "./Theme.Box"
 import Logo from "./Theme.Logo"
 import Menu from "./../../components/Menu/MenuList"
 import Footer from "./Footer/Footer"
+import NewBadgeStyles from "./Theme.NewBadge"
 import ExpandListBtn from "../Shared/Transaction.ExpandButton"
 import ExpandListExpanded from "../Shared/ExpandListItem.Expanded"
 
@@ -107,5 +108,6 @@ const t = new Theme(BaseTheme, {
   .addStyles(DashboardBox)
   .addStyles(Modal)
   .addStyles(ExpandListExpanded)
+  .addStyles(NewBadgeStyles)
 
 export default t.get

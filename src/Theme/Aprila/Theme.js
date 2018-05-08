@@ -6,11 +6,13 @@ import { BoxStyling } from "./Theme.Box"
 import Logo from "./Theme.Logo"
 import ModalStyle, { ModalBackdropStyle } from "./Theme.Modal"
 import AlertStyle from "./Theme.Alert"
+import NewBadgeStyle from "./Theme.NewBadge"
 import Menu from "./../../components/Menu/MenuRow"
 import IconArrowDown from "./Icons/Icon.ArrowDown"
 import IconArrowUp from "./Icons/Icon.ArrowUp"
 import IconLogout from "./Icons/Icon.Logout"
 import IconProfile from "./Icons/Icon.Profile"
+import IconInbox from "./Icons/Icon.Inbox"
 import Footer from "./Footer/Footer"
 import Ad from "./Ad"
 import ExpandListBtn from "../Shared/Transaction.ExpandButton"
@@ -112,6 +114,7 @@ const t = new Theme(BaseTheme, {
   iconArrowUp: IconArrowUp,
   iconProfile: IconProfile,
   iconLogout: IconLogout,
+  iconInbox: IconInbox,
   footer: Footer,
   menu: Menu,
   ad: Ad,
@@ -133,5 +136,6 @@ const t = new Theme(BaseTheme, {
   .addStyles(AlertStyle)
   .addStyles(ModalBackdropStyle)
   .addStyles(ExpandListExpanded)
+  .addStyles(NewBadgeStyle)
 
 export default t.get

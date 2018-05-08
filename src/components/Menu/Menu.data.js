@@ -2,8 +2,10 @@ import React from "react"
 import IconArrowUp from "../Icons/Icon.ArrowUp"
 import IconArrowDown from "../Icons/Icon.ArrowDown"
 import IconProfile from "../Icons/Icon.Profile"
+import IconInbox from "../Icons/Icon.Inbox"
 import IconLogout from "../Icons/Icon.Logout"
 import { ThemeComponent } from "@staccx/theme"
+import { NewBadge } from "@staccx/base"
 
 export default pages => [
   {
@@ -22,6 +24,16 @@ export default pages => [
     _id: "sioahugcf",
     label: "Min profil",
     icon: <ThemeComponent tagName={"iconProfile"} fallback={IconProfile} />,
+    page: () => pages.profile()
+  },
+  {
+    _id: "sioahugcf",
+    label: "Innboks",
+    icon: (
+      <NewBadge number={1}>
+        <ThemeComponent tagName={"iconInbox"} fallback={IconInbox} />
+      </NewBadge>
+    ),
     page: () => pages.profile()
   },
   {
