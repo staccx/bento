@@ -2,13 +2,13 @@
  * @class Button
  */
 import PropTypes from "prop-types"
-import React from "react"
 import styled, { css } from "styled-components"
 import {
   targetSize,
   spacing,
   borderRadius,
   fontFamily,
+  fontWeight,
   font,
   color,
   themify
@@ -37,7 +37,7 @@ const Style = css`
   font-size: ${font.base};
   font-family: ${fontFamily.body};
   line-height: 32px;
-  font-weight: 600;
+  font-weight: ${fontWeight.bold};
   white-space: nowrap;
   justify-content: center;
   align-items: center;
