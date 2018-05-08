@@ -121,7 +121,9 @@ class CompanyInput extends React.PureComponent {
                     <Close
                       type="button"
                       onClick={() =>
-                        this.setState({ selected: null, autoComplete: [] })
+                        this.setState({ autoComplete: [] }, () =>
+                          this.handleSelect(null)
+                        )
                       }
                     >
                       <svg viewBox="0 0 26 26" width="50" height="50">

@@ -57,6 +57,7 @@ class ExpandListItem extends Component {
       <ExpandItem className={className} {...otherProps}>
         <BtnComponent
           {...otherProps}
+          title={title}
           isExpanded={isExpanded}
           onClick={this.handleChange}
           aria-expanded={isExpanded}
