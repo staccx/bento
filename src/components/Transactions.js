@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { inject, observer } from "mobx-react"
 import ShowMore from "@tedconf/react-show-more"
 import { Button, Box } from "@staccx/base"
+import { color, spacing } from "@staccx/theme"
 import TransactionListItem from "./TransactionList/TransactionList.item"
 import TransactionListExpanded from "./TransactionList/TransactionList.expanded"
 
@@ -39,7 +40,7 @@ class Transactions extends Component {
                   </TransactionListItem>
                 ))}
               </List>
-              {onMore && (
+              {onMore ? (
                 <Button
                   variant="expand"
                   onClick={() => {
@@ -48,6 +49,8 @@ class Transactions extends Component {
                 >
                   Flere transaksjoner
                 </Button>
+              ) : (
+                <NoMore>Ingen flere transaksjoner</NoMore>
               )}
             </React.Fragment>
           )}
@@ -56,6 +59,13 @@ class Transactions extends Component {
     )
   }
 }
+
+const NoMore = styled.span`
+  display: block;
+  padding: ${spacing.small};
+  text-align: center;
+  color: ${color.wcag};
+`
 
 const Container = styled(Box)`
   padding: 0;
