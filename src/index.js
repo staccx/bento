@@ -6,7 +6,7 @@ import WebFont from "webfontloader"
 
 WebFont.load({
   google: {
-    families: ["IBM Plex Sans:700,400", "Fira Sans:300,400"]
+    families: ["IBM Plex Sans:700,400", "Roboto:400,500"]
   }
 })
 

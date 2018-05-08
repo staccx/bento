@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { inject, observer } from "mobx-react"
-import { color, font } from "@staccx/theme"
+import { color, font, fontWeight } from "@staccx/theme"
 import { Box } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
 
@@ -43,13 +43,13 @@ class Account extends React.Component {
 
 const Title = styled.h3`
   font-size: ${font.input};
-  font-weight: bold;
+  font-weight: ${fontWeight.bold};
   color: ${color("accountHeading")};
 `
 
 const Balance = styled.div`
   font-size: ${font("accountBalance")};
-  font-weight: bold;
+  font-weight: ${fontWeight.bold};
   color: ${color("accountBalance")};
   display: inline;
 `
@@ -57,12 +57,12 @@ const Balance = styled.div`
 const Decimal = styled.span`
   font-size: ${font("accountBalanceDecimals")};
   color: ${color("accountBalance")};
-  font-weight: bold;
+  font-weight: ${fontWeight.bold};
 `
 
 const Earned = styled.div`
   font-size: ${font.input};
-  font-weight: bold;
+  font-weight: ${fontWeight.bold};
   color: ${color("accountEarned")};
 `
 

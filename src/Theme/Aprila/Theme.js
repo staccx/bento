@@ -79,6 +79,12 @@ const font = {
   huge: "44px"
 }
 
+const fontWeight = {
+  bold: 500,
+  normal: 400,
+  light: 400
+}
+
 const BiBSpecificFont = {
   accountBalance:
     "calc(" +
@@ -91,8 +97,8 @@ const BiBSpecificFont = {
 }
 
 const fontFamily = {
-  heading: "Fira Sans",
-  body: "Fira Sans"
+  heading: "Roboto",
+  body: "Roboto"
 }
 
 const t = new Theme(BaseTheme, {
@@ -111,6 +117,7 @@ const t = new Theme(BaseTheme, {
   ad: Ad,
   font: { ...font, ...BiBSpecificFont },
   color: { ...color, ...BiBSpecificColor },
+  fontWeight,
   wrapper,
   targetSize,
   borderRadius,

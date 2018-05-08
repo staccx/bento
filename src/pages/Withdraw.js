@@ -9,7 +9,7 @@ import {
   AccountInput,
   Alert
 } from "@staccx/base"
-import { color, spacing, font } from "@staccx/theme"
+import { color, spacing, font, fontWeight } from "@staccx/theme"
 
 const Deposit = () => (
   <Modal variant="small" isOpen>
@@ -44,7 +44,7 @@ const Deposit = () => (
 const Heading = styled.h1`
   font-size: ${font.h4};
   text-align: center;
-  font-weight: bold;
+  font-weight: ${fontWeight.bold};
   color: ${color.text};
   margin-bottom: ${spacing.tiny};
 `
