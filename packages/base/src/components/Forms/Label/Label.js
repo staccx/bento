@@ -5,7 +5,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themify, font, spacing, fontFamily } from "@staccx/theme"
+import { themify, font, spacing, fontFamily, fontWeight } from "@staccx/theme"
 
 export const LABEL = "LABEL"
 
@@ -16,7 +16,7 @@ const Label = ({ className, children, ...rest }) => (
 )
 
 const LabelElement = styled.label`
-  font-weight: bold;
+  font-weight: ${fontWeight.bold};
   font-family: ${fontFamily.body};
   font-size: ${font.base};
   line-height: 1.2;

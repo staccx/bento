@@ -3,9 +3,8 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import CaretRight from "../../Icons/CaretRight"
 import {
-  targetSize,
   spacing,
-  borderRadius,
+  fontWeight,
   fontFamily,
   font,
   color,
@@ -68,7 +67,7 @@ const ButtonStyle = css`
   font-family: ${fontFamily.body()};
   padding: ${spacing.small()} ${spacing.medium()};
   display: block;
-  font-weight: normal;
+  font-weight: ${fontWeight.normal};
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -10,7 +10,8 @@ import {
   targetSize,
   fontFamily,
   borderRadius,
-  ThemeComponent
+  ThemeComponent,
+  fontWeight
 } from "@staccx/theme"
 
 export const CHECKBOX = "checkbox"
@@ -105,7 +106,7 @@ const InputCheck = styled.input`
 const Label = styled.label`
   padding: 0 0 0 ${spacing.mediumPlus};
   position: relative;
-  font-weight: normal;
+  font-weight: ${fontWeight.normal};
   letter-spacing: normal;
   width: auto;
   cursor: pointer;

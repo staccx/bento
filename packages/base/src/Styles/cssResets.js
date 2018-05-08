@@ -1,4 +1,4 @@
-import { color, fontFamily } from "@staccx/theme"
+import { color, fontFamily, fontWeight } from "@staccx/theme"
 
 export const reset = props => `
   body, h1, h2, h3, h4, h5, h6,
@@ -38,7 +38,7 @@ export const reset = props => `
 
   h1,h2,h3,h4,h5,h6 {
     font-family: ${fontFamily.heading()(props)};
-    font-weight: bold;
+    font-weight: ${fontWeight.bold()(props)};
     font-size: 1em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -181,7 +181,7 @@ strong {
 }
 b,
 strong {
-  font-weight: bolder;
+  font-weight: ${fontWeight.bold()(props)};
 }
 
 code,

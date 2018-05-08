@@ -7,7 +7,8 @@ import {
   borderRadius,
   font,
   color,
-  themify
+  themify,
+  fontWeight
 } from "@staccx/theme"
 
 const Slider = ({
@@ -95,7 +96,7 @@ const SliderTrackStyle = css`
 export const SLIDER_INPUT = "SLIDER_INPUT"
 const SliderInput = styled.div`
   position: relative;
-  font-weight: bold;
+  font-weight: ${fontWeight.bold};
 
   /* Make the default slider invisible */
   > input[type=range] {

@@ -4,7 +4,7 @@ import styled from "styled-components"
 import {
   targetSize,
   spacing,
-  borderRadius,
+  fontWeight,
   fontFamily,
   font,
   color,
@@ -31,7 +31,7 @@ const Label = styled.label`
   letter-spacing: normal;
   font-family: ${fontFamily.body};
   font-size: ${font.input};
-  font-weight: normal;
+  font-weight: ${fontWeight.normal};
   cursor: pointer;
 
   &::before {

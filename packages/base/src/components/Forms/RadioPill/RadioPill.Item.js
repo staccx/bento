@@ -5,7 +5,7 @@ import hideVisually from "../../../Styles/hideVisually"
 import {
   targetSize,
   spacing,
-  borderRadius,
+  fontWeight,
   fontFamily,
   font,
   color,
@@ -49,7 +49,7 @@ const Label = styled.label`
   font-family: ${fontFamily.body()};
   font-size: ${font.input};
   letter-spacing: normal;
-  font-weight: normal;
+  font-weight: ${fontWeight.normal};
   margin-right: -1px;
   ${themify(RADIO_PILL_ITEM_LABEL)};
 `
