@@ -27,7 +27,7 @@ export default pages => [
     page: () => pages.profile()
   },
   {
-    _id: "sioahugcf",
+    _id: "asdasd22",
     label: "Innboks",
     icon: (
       <NewBadge number={1}>

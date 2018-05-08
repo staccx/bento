@@ -48,6 +48,7 @@ export const BoxStyling = registerStyle(
       background-color: ${color.bgGray};
       color: ${color.primary};
       transform: translateY(100%);
+      z-index: 50;
     `
   },
   BoxStyles.BOX

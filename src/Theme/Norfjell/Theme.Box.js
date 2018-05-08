@@ -37,6 +37,7 @@ export default registerStyle(
       background-color: ${color.primary};
       color: ${color.white};
       transform: translateY(100%);
+      z-index: 50;
     `
   },
   BoxStyles.BOX
