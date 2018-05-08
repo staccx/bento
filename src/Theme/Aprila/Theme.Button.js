@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { registerStyle, color, font } from "@staccx/theme"
+import { registerStyle, color, font, targetSize } from "@staccx/theme"
 import { ButtonStyles } from "@staccx/base"
 import { lighten } from "polished"
 
@@ -53,6 +53,19 @@ export default registerStyle(
         display: block;
         margin: 0 auto;
       }
+    `,
+    accountInfo: css`
+      border: 2px solid ${color.secondary};
+      color: ${color.secondary};
+      position: absolute;
+      top: 0;
+      right: -64px;
+      background-color: transparent;
+      width: ${targetSize.normal};
+      height: ${targetSize.normal};
+      line-height: ${targetSize.normal};
+      border-radius: 50%;
+      padding: 0;
     `
   },
   ButtonStyles.BUTTON

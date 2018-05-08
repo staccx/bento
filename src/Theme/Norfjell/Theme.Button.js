@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { registerStyle, color, spacing } from "@staccx/theme"
+import { registerStyle, color, spacing, targetSize } from "@staccx/theme"
 import { ButtonStyles } from "@staccx/base"
 
 export default registerStyle(
@@ -38,6 +38,19 @@ export default registerStyle(
     modalLeftButton: css`
       background-color: ${color.white};
       color: ${color.primary};
+    `,
+    accountInfo: css`
+      border: 1px solid ${color.primary};
+      color: ${color.primary};
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: transparent;
+      width: ${targetSize.normal};
+      height: ${targetSize.normal};
+      line-height: ${targetSize.normal};
+      border-radius: 50%;
+      padding: 0;
     `
   },
   ButtonStyles.BUTTON

@@ -27,6 +27,16 @@ export default registerStyle(
     modalRight: css`
       background-color: ${color.white};
       text-align: center;
+    `,
+    accountInfo: css`
+      position: absolute;
+      bottom: -${spacing.medium};
+      left: -${spacing.medium};
+      width: calc(100% + ${spacing.medium} + ${spacing.medium});
+      padding: ${spacing.medium};
+      background-color: ${color.primary};
+      color: ${color.white};
+      transform: translateY(100%);
     `
   },
   BoxStyles.BOX

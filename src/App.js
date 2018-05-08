@@ -24,10 +24,12 @@ class App extends Component {
     super(...props)
     this.state = {
       activeTheme: NorfjellTheme,
-      currentPage: null
+      currentPage: null,
+      showAccountInfo: false
     }
     this.toggleTheme = this.toggleTheme.bind(this)
     this.onThemeChanged = this.onThemeChanged.bind(this)
+    this.toggleAccountInfo = this.toggleAccountInfo.bind(this)
   }
 
   componentDidMount() {
@@ -57,6 +59,12 @@ class App extends Component {
         this.onThemeChanged
       )
     }
+  }
+
+  toggleAccountInfo() {
+    this.setState({
+      showAccountInfo: !this.state.showAccountInfo
+    })
   }
 
   onThemeChanged() {}
@@ -103,7 +111,10 @@ class App extends Component {
                           inverted
                           fallback={null}
                         />
-                        <Account />
+                        <Account
+                          toggleInfo={this.toggleAccountInfo}
+                          showAccountInfo={this.state.showAccountInfo}
+                        />
                       </Hero>
                     </Layout>
                   </Box>
@@ -151,5 +162,7 @@ const Outer = styled.div`
   align-content: space-between;
   height: 100vh;
 `
+
+const AccountInfo = styled.div``
 
 export default App

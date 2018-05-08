@@ -3,9 +3,9 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { inject, observer } from "mobx-react"
 import { color, font, fontWeight } from "@staccx/theme"
-import { Box } from "@staccx/base"
+import { Box, Button } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
-
+import AccountInfo from "./Account.Info"
 @inject("account")
 @observer
 class Account extends React.Component {
@@ -19,7 +19,7 @@ class Account extends React.Component {
   }
 
   render() {
-    const { account, title } = this.props
+    const { account, title, toggleInfo, showAccountInfo } = this.props
     const { earned, selectedAccount } = account
     if (!selectedAccount) {
       return null
@@ -38,6 +38,10 @@ class Account extends React.Component {
             {earned &&
               "Hvorav renter: " + formatCurrency(earned, { precision: 2 })}
           </Earned>
+          <Button variant="accountInfo" onClick={() => toggleInfo()}>
+            i
+          </Button>
+          {showAccountInfo && <AccountInfo account={selectedAccount} />}
         </Container>
       </Box>
     )
@@ -70,7 +74,7 @@ const Earned = styled.div`
 `
 
 const Container = styled.div`
-  flex-grow: 1;
+  position: relative;
 `
 
 export default Account

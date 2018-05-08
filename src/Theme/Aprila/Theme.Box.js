@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { color, registerStyle } from "@staccx/theme"
+import { color, spacing, registerStyle } from "@staccx/theme"
 import { BoxStyles, fontSmoothing } from "@staccx/base"
 
 export const BoxStyling = registerStyle(
@@ -38,6 +38,16 @@ export const BoxStyling = registerStyle(
     modalRight: css`
       background-color: ${color.white};
       text-align: center;
+    `,
+    accountInfo: css`
+      position: absolute;
+      bottom: -${spacing.medium};
+      left: 0;
+      width: calc(100% + 64px);
+      padding: ${spacing.medium};
+      background-color: ${color.bgGray};
+      color: ${color.primary};
+      transform: translateY(100%);
     `
   },
   BoxStyles.BOX
