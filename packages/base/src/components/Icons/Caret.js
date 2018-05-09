@@ -1,16 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
-
-const CaretIcon = styled.svg`
-  width: 12px;
-  transition: fill 0.2s ease;
-`
 
 const Caret = ({ className }) => (
-  <CaretIcon className={className} viewBox="0 0 24 16">
-    <path d="M3.81 0a.54.54 0 0 0-.38.16L.16 3.47a.56.56 0 0 0 0 .78l11.45 11.59a.54.54 0 0 0 .78 0L23.84 4.25a.56.56 0 0 0 0-.78L20.57.17a.54.54 0 0 0-.77 0L12 8.04 4.2.16A.54.54 0 0 0 3.81 0z" />
-  </CaretIcon>
+  <svg className={className} width="19" height="13" viewBox="0 0 33 20">
+    <path d="M16.5 12.15L28.19.87c.52-.5 1.35-.5 1.87.01l2.05 2.02a1.3 1.3 0 0 1 0 1.86L17.44 19.12a1.36 1.36 0 0 1-1.88 0L.9 4.76A1.3 1.3 0 0 1 .89 2.9L2.94.88c.52-.5 1.35-.5 1.87 0L16.5 12.14v.01z" />
+  </svg>
 )
 
 Caret.propTypes = { className: PropTypes.string }

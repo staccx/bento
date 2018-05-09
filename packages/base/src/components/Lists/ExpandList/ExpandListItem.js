@@ -96,7 +96,6 @@ const IconComponent = ({ ...props }) => (
 export const EXPAND_LIST_ICON = "EXPAND_LIST_ICON"
 const ExpandIcon = styled(IconComponent)`
   position: absolute;
-  top: 16px;
   right: ${spacing.small()};
   fill: ${color.line};
   transition: transform 0.3s ease-out;
@@ -116,6 +115,9 @@ const ExpandBtn = styled.button`
     ${spacing.medium()};
   width: 100%;
   text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   &:hover,
   &:focus {

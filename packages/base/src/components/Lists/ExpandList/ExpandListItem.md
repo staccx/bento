@@ -1,6 +1,6 @@
 ```jsx
 <List>
-  <ExpandListItem title="Hvor lang tid tar det før jeg får svar på søknaden?">
+  <ExpandListItem title="Hvor lang tid tar det før jeg får svar på søknaden og hvorfor er denne teksten så lang som den faktisk er og la oss se hvordan dette ser ut?">
     Du får umiddelbart svar på søknaden og kan se hvor mye du får i lån.
   </ExpandListItem>
   <ExpandListItem title="Hvor lang tid tar det før lånet blir utbetalt?">

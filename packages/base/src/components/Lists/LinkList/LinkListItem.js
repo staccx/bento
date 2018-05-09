@@ -44,7 +44,8 @@ LinkListItem.propTypes = {
 export const LINK_LIST_ITEM_CARET = "LINK_LIST_ITEM_CARET"
 const Cursor = styled(IconComponent)`
   fill: ${color.line};
-  margin-left: ${spacing.small()};
+  position: absolute;
+  right: ${spacing.small};
   ${themify(LINK_LIST_ITEM_CARET)};
 `
 
@@ -65,7 +66,7 @@ const ButtonStyle = css`
   color: black;
   font-size: ${font.base};
   font-family: ${fontFamily.body()};
-  padding: ${spacing.small()} ${spacing.medium()};
+  padding: ${spacing.small} ${spacing.large} ${spacing.small} ${spacing.medium};
   display: block;
   font-weight: ${fontWeight.normal};
   display: flex;
