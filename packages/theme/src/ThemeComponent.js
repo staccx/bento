@@ -1,18 +1,50 @@
 import React from "react"
 import { withTheme } from "styled-components"
+import { VARIANT_DEFAULT } from "./_constants"
 
 class ThemeComponent extends React.Component {
   render() {
-    const { theme, tagName, fallback, children, ...props } = this.props
+    const {
+      theme,
+      tagName,
+      fallback,
+      children,
+      variant = VARIANT_DEFAULT,
+      ...props
+    } = this.props
+
+    if (!variant) {
+      console.warn("Variant must be specified", tagName)
+      return null
+    }
+
     const Component =
       !theme || !tagName || !theme.hasOwnProperty(tagName)
         ? fallback
         : theme[tagName]
 
     if (!Component) {
+      console.warn("Tagname is not present in theme", tagName, variant, theme)
       return null
     }
-    return <Component {...props}>{children}</Component>
+
+    const SubComponent = Component.hasOwnProperty(variant)
+      ? Component[variant]
+      : Component
+
+    if (!SubComponent) {
+      console.warn(
+        "Could not find component nor subcomponent in theme.",
+        tagName,
+        variant,
+        fallback,
+        theme
+      )
+      return null
+    }
+
+    console.log("Using subcomponent", tagName, variant)
+    return <SubComponent {...props}>{children}</SubComponent>
   }
 }
 
