@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, registerStyle, spacing } from "@staccx/theme"
-import { BoxStyles } from "@staccx/base"
+import { BoxStyles, fontSmoothing } from "@staccx/base"
 
 const defaultBox = css`
   background: ${color.white};
@@ -29,15 +29,31 @@ export default registerStyle(
       text-align: center;
     `,
     accountInfo: css`
+      ${defaultBox};
       position: absolute;
-      bottom: -${spacing.medium};
-      left: -${spacing.medium};
-      width: calc(100% + ${spacing.medium} + ${spacing.medium});
+      bottom: -${spacing.tiny};
+      left: -${spacing.small};
+      width: calc(100% + ${spacing.medium});
       padding: ${spacing.medium};
+      border-radius: 3px;
       background-color: ${color.primary};
       color: ${color.white};
       transform: translateY(100%);
       z-index: 50;
+      ${fontSmoothing};
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 12px 12px 12px;
+        border-color: transparent transparent ${color.primary} transparent;
+        transform: translate(-50%, -100%);
+      }
     `
   },
   BoxStyles.BOX

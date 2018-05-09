@@ -43,12 +43,27 @@ export const BoxStyling = registerStyle(
       position: absolute;
       bottom: -${spacing.medium};
       left: 0;
-      width: calc(100% + 64px);
+      width: calc(100vw - ${spacing.medium} - ${spacing.small});
+      max-width: 420px;
       padding: ${spacing.medium};
-      background-color: ${color.bgGray};
+      background-color: ${color("secondaryLight")};
       color: ${color.primary};
       transform: translateY(100%);
       z-index: 50;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 12px 12px 12px;
+        border-color: transparent transparent ${color("secondaryLight")}
+          transparent;
+        transform: translate(-50%, -100%);
+      }
     `
   },
   BoxStyles.BOX

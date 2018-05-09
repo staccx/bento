@@ -1,4 +1,5 @@
 import { BaseTheme, Theme } from "@staccx/base"
+import { rgba } from "polished"
 import reset from "./reset"
 import Button from "./Theme.Button"
 import Modal from "./Theme.Modal"
@@ -57,7 +58,8 @@ const BiBSpecificColor = {
   accountHeading: color.disabled,
   accountEarned: color.secondary,
   accountBalance: color.primary,
-  expandedItem: color.bgGray
+  expandedItem: color.bgGray,
+  accountInfoBorder: rgba(color.white, 0.5)
 }
 
 const font = {

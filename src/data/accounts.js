@@ -1,7 +1,7 @@
 export default {
   "34551524578": {
     externalAccount: "34551524578", // Konto for innbetaling
-    kid: "34551524571", // kid for inbetaling tilsvarer kontonummer
+    kid: 34551524571, // kid for inbetaling tilsvarer kontonummer
     accountId: "34551524578",
     availableBalance: 122776.94, // Disponibelt beløp
     bookedBalance: 122776.94, // Bokført saldo

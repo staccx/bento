@@ -10,6 +10,11 @@ export default registerStyle(
       width: 24px;
       height: 24px;
       font-size: ${p => (p.number < 99 ? "14px" : "12px")};
+
+      @media screen and (max-width: 1010px) {
+        right: -10px;
+        bottom: 6px;
+      }
     `
   },
   NewBadgeStyles.NEW_BADGE_BADGE

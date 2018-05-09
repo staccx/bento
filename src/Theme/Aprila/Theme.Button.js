@@ -2,6 +2,7 @@ import { css } from "styled-components"
 import { registerStyle, color, font, targetSize } from "@staccx/theme"
 import { ButtonStyles } from "@staccx/base"
 import { lighten } from "polished"
+import invisibleButton from "../Shared/invisibleButton"
 
 export default registerStyle(
   {
@@ -29,6 +30,7 @@ export default registerStyle(
         color: ${color.text};
       }
     `,
+    invisible: invisibleButton,
     menuItem: css`
       padding: 0;
       background-color: transparent;
@@ -61,11 +63,22 @@ export default registerStyle(
       top: 0;
       right: -64px;
       background-color: transparent;
-      width: ${targetSize.normal};
-      height: ${targetSize.normal};
-      line-height: ${targetSize.normal};
+      width: ${targetSize.small};
+      height: ${targetSize.small};
+      min-height: ${targetSize.small};
+      line-height: ${targetSize.small};
       border-radius: 50%;
       padding: 0;
+
+      > svg {
+        position: absolute;
+        top: 50;
+        left: 50;
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+        transform: translate(-50%, -50%);
+      }
     `
   },
   ButtonStyles.BUTTON

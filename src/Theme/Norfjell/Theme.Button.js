@@ -1,9 +1,11 @@
 import { css } from "styled-components"
 import { registerStyle, color, spacing, targetSize } from "@staccx/theme"
 import { ButtonStyles } from "@staccx/base"
+import invisibleButton from "../Shared/invisibleButton"
 
 export default registerStyle(
   {
+    invisible: invisibleButton,
     expand: css`
       display: block;
       width: 100%;
@@ -40,17 +42,29 @@ export default registerStyle(
       color: ${color.primary};
     `,
     accountInfo: css`
-      border: 1px solid ${color.primary};
+      position: relative;
+      border: 2px solid ${color.primary};
       color: ${color.primary};
       position: absolute;
-      top: 0;
-      right: 0;
+      top: -${spacing.small};
+      right: -${spacing.small};
       background-color: transparent;
-      width: ${targetSize.normal};
-      height: ${targetSize.normal};
-      line-height: ${targetSize.normal};
+      width: ${spacing.medium};
+      height: ${spacing.medium};
+      min-height: ${spacing.medium};
+      line-height: ${targetSize.small};
       border-radius: 50%;
       padding: 0;
+
+      > svg {
+        position: absolute;
+        top: 50;
+        left: 50;
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+        transform: translate(-50%, -50%);
+      }
     `
   },
   ButtonStyles.BUTTON

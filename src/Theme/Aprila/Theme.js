@@ -1,5 +1,5 @@
 import { BaseTheme, Theme } from "@staccx/base"
-import { lighten } from "polished"
+import { lighten, rgba } from "polished"
 import reset from "./reset"
 import Button from "./Theme.Button"
 import { BoxStyling } from "./Theme.Box"
@@ -48,13 +48,14 @@ const color = {
   bgGray: "#F2F1FC",
   primary: "#3B2C7C",
   secondary: "#FF7E68",
+  secondaryLight: "#FECDC6",
   gray: "#767676",
   text: "#3b2c7c",
   white: "#fff",
   line: "#D3D3F4",
   wcag: "#777",
   disabled: "#BABABA",
-  warning: "#FB8D90",
+  warning: "#FF7E68",
   positive: "#3B2C7C",
   negative: "#FF7E68",
   black: "#000",
@@ -65,7 +66,8 @@ const BiBSpecificColor = {
   accountHeading: color.bgGray,
   accountEarned: color.bgGray,
   accountBalance: color.secondary,
-  expandedItem: lighten(0.05, color.line)
+  expandedItem: lighten(0.05, color.line),
+  accountInfoBorder: rgba(color.primary, 0.25)
 }
 
 const font = {

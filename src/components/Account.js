@@ -39,9 +39,13 @@ class Account extends React.Component {
               "Hvorav renter: " + formatCurrency(earned, { precision: 2 })}
           </Earned>
           <Button variant="accountInfo" onClick={() => toggleInfo()}>
-            i
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M10 0v4h4V0h-4zm0 8v16h4V8h-4z" />
+            </svg>
           </Button>
-          {showAccountInfo && <AccountInfo account={selectedAccount} />}
+          {showAccountInfo && (
+            <AccountInfo account={selectedAccount} toggleInfo={toggleInfo} />
+          )}
         </Container>
       </Box>
     )
