@@ -1,10 +1,10 @@
 {
   "name": "@staccx/styleguide",
-  "version": "3.7.3",
+  "version": "3.8.0",
   "private": true,
   "dependencies": {
-    "@staccx/base": "^3.7.3",
-    "@staccx/theme": "^3.7.1",
+    "@staccx/base": "^3.8.0",
+    "@staccx/theme": "^3.8.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
