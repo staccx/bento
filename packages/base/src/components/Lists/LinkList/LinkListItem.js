@@ -43,7 +43,7 @@ LinkListItem.propTypes = {
 
 export const LINK_LIST_ITEM_CARET = "LINK_LIST_ITEM_CARET"
 const Cursor = styled(IconComponent)`
-  fill: ${color.line};
+  fill: ${color.wcag};
   position: absolute;
   right: ${spacing.small};
   ${themify(LINK_LIST_ITEM_CARET)};

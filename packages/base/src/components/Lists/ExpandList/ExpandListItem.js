@@ -97,7 +97,7 @@ export const EXPAND_LIST_ICON = "EXPAND_LIST_ICON"
 const ExpandIcon = styled(IconComponent)`
   position: absolute;
   right: ${spacing.small()};
-  fill: ${color.line};
+  fill: ${color.wcag};
   transition: transform 0.3s ease-out;
   transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
   ${themify(EXPAND_LIST_ICON)};
