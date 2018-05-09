@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import data from "./Menu.data"
-import { Box, Button } from "@staccx/base"
-import IconArrowRight from "../Icons/Icon.ArrowRight"
+import { Box, Button, CaretRight, LinkListItem, List } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 
 const Menu = ({ pages }) => {
@@ -11,13 +10,10 @@ const Menu = ({ pages }) => {
     <Container variant="dashboardBox">
       <List>
         {menuOptions.map(option => (
-          <ListItem key={option._id}>
-            <Button variant="menuItem" onClick={() => option.page()}>
-              <IconOuter>{option.icon}</IconOuter>
-              <ButtonLabel>{option.label}</ButtonLabel>
-              <IconArrowRight />
-            </Button>
-          </ListItem>
+          <LinkListItem key={option._id} onClick={() => option.page()}>
+            <IconOuter>{option.icon}</IconOuter>
+            <ButtonLabel>{option.label}</ButtonLabel>
+          </LinkListItem>
         ))}
       </List>
     </Container>
@@ -28,19 +24,13 @@ const Container = styled(Box)`
   padding: 0;
 `
 
-const List = styled.ol`
-  list-style-type: none;
-  padding: 0;
+const IconOuter = styled.div`
+  margin-right: ${spacing.small};
+  margin-left: -${spacing.small};
 `
 
 const ButtonLabel = styled.span`
   flex-grow: 1;
 `
-
-const IconOuter = styled.div`
-  margin-right: ${spacing.small};
-`
-
-const ListItem = styled.li``
 
 export default Menu
