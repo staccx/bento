@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { spacing } from "@staccx/theme"
+import { spacing, VARIANT_DEFAULT, registerStyle } from "@staccx/theme"
 
 const Logo = ({ className }) => (
   <SVG
@@ -45,5 +45,7 @@ const SVG = styled.svg`
   margin: 0 auto ${spacing.large};
   width: 140px;
 `
+
+export const LogoStyle = registerStyle({ [VARIANT_DEFAULT]: Logo }, "logo")
 
 export default Logo

@@ -1,5 +1,3 @@
 module.exports = {
-  vendors: [
-    "styled-components"
-  ]
-};
+  vendors: ["styled-components"]
+}

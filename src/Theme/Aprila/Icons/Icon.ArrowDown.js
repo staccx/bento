@@ -1,5 +1,6 @@
 import React from "react"
 import { Outer, Icon } from "./Icon.Styles"
+import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
 
 const IconArrowDown = () => (
   <Outer>
@@ -9,4 +10,8 @@ const IconArrowDown = () => (
   </Outer>
 )
 
+export const IconArrowDownStyle = registerStyle(
+  { [VARIANT_DEFAULT]: IconArrowDown },
+  "iconArrowDown"
+)
 export default IconArrowDown

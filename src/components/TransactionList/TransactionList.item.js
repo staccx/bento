@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { ExpandListItem } from "@staccx/base"
 
 const TransactionListItem = ({ children, amount, ...rest }) => (
-  <ExpandListItem amount={amount} {...rest}>
+  <ExpandListItem variant="transactionListItem" amount={amount} {...rest}>
     {children}
   </ExpandListItem>
 )

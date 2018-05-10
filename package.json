@@ -1,12 +1,12 @@
 {
-  "name": "theme-starter-pack",
+  "name": "bank-in-a-box",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@staccx/animations": "^3.6.0",
-    "@staccx/base": "^3.6.0",
+    "@staccx/animations": "^3.9.0",
+    "@staccx/base": "^3.9.1",
     "@staccx/formatting": "^0.3.1",
-    "@staccx/theme": "^3.4.0",
+    "@staccx/theme": "^3.9.1",
     "@tedconf/react-show-more": "^1.1.2",
     "axios": "^0.18.0",
     "immutable": "^3.8.2",

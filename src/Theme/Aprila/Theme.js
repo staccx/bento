@@ -1,22 +1,23 @@
-import { BaseTheme, Theme } from "@staccx/base"
+import { BaseTheme } from "@staccx/base"
+import { Theme } from "@staccx/theme"
 import { lighten, rgba } from "polished"
 import reset from "./reset"
 import Button from "./Theme.Button"
 import { BoxStyling } from "./Theme.Box"
-import Logo from "./Theme.Logo"
+import { LogoStyle } from "./Theme.Logo"
 import ModalStyle, { ModalBackdropStyle } from "./Theme.Modal"
 import AlertStyle from "./Theme.Alert"
 import NewBadgeStyle from "./Theme.NewBadge"
-import Menu from "./../../components/Menu/MenuRow"
-import IconArrowDown from "./Icons/Icon.ArrowDown"
-import IconArrowUp from "./Icons/Icon.ArrowUp"
-import IconLogout from "./Icons/Icon.Logout"
-import IconProfile from "./Icons/Icon.Profile"
-import IconInbox from "./Icons/Icon.Inbox"
-import Footer from "./Footer/Footer"
-import Ad from "./Ad"
-import ExpandListBtn from "../Shared/Transaction.ExpandButton"
+import { IconArrowDownStyle } from "./Icons/Icon.ArrowDown"
+import { IconArrowUpStyle } from "./Icons/Icon.ArrowUp"
+import { IconLogoutStyle } from "./Icons/Icon.Logout"
+import { IconProfileStyle } from "./Icons/Icon.Profile"
+import { IconInboxStyle } from "./Icons/Icon.Inbox"
+import { FooterStyle } from "./Footer/Footer"
+import { AdStyle } from "./Ad"
+import { ExpandListButtonStyle } from "../Shared/Transaction.ExpandButton"
 import ExpandListExpanded from "../Shared/ExpandListItem.Expanded"
+import { MenuStyle } from "../../components/Menu/MenuRow"
 
 const borderRadius = "8px"
 const headerHeight = "70px"
@@ -111,15 +112,6 @@ const t = new Theme(BaseTheme, {
     dashboardLayout: "stonehenge",
     menuArea: "main"
   },
-  logo: Logo,
-  iconArrowDown: IconArrowDown,
-  iconArrowUp: IconArrowUp,
-  iconProfile: IconProfile,
-  iconLogout: IconLogout,
-  iconInbox: IconInbox,
-  footer: Footer,
-  menu: Menu,
-  ad: Ad,
   font: { ...font, ...BiBSpecificFont },
   color: { ...color, ...BiBSpecificColor },
   fontWeight,
@@ -129,8 +121,7 @@ const t = new Theme(BaseTheme, {
   headerHeight,
   fontFamily,
   spacing,
-  global: reset,
-  COMPONENT_EXPAND_LIST_ITEM_BTN: ExpandListBtn
+  global: reset
 })
   .addStyles(Button)
   .addStyles(BoxStyling)
@@ -139,5 +130,15 @@ const t = new Theme(BaseTheme, {
   .addStyles(ModalBackdropStyle)
   .addStyles(ExpandListExpanded)
   .addStyles(NewBadgeStyle)
+  .addStyles(ExpandListButtonStyle)
+  .addStyles(FooterStyle)
+  .addStyles(MenuStyle)
+  .addStyles(AdStyle)
+  .addStyles(LogoStyle)
+  .addStyles(IconInboxStyle)
+  .addStyles(IconLogoutStyle)
+  .addStyles(IconProfileStyle)
+  .addStyles(IconArrowDownStyle)
+  .addStyles(IconArrowUpStyle)
 
 export default t.get

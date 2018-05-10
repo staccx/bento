@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing, ThemeComponent, wrapper } from "@staccx/theme"
+import { color, spacing, ThemeComponent, wrapper, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
 import { Wrapper } from "@staccx/base"
 const Footer = () => (
   <Outer>
@@ -47,5 +47,10 @@ const Outer = styled.div`
 const FooterMenuItem = styled.p`
   margin-bottom: ${spacing.small};
 `
+
+export const FooterStyle = registerStyle(
+  {[VARIANT_DEFAULT]: Footer},
+  "footer"
+)
 
 export default Footer

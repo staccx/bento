@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { spacing, color, font } from "@staccx/theme"
+import { color, font, registerStyle, spacing } from "@staccx/theme"
 import { formatCurrency } from "@staccx/formatting"
 import { Caret } from "@staccx/base"
 
@@ -93,5 +93,12 @@ ExpandListBtn.propTypes = {
   date: PropTypes.string,
   amount: PropTypes.number
 }
+
+export const ExpandListButtonStyle = registerStyle(
+  {
+    transactionListItem: ExpandListBtn
+  },
+  "COMPONENT_EXPAND_LIST_ITEM_BTN"
+)
 
 export default ExpandListBtn

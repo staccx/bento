@@ -1,5 +1,6 @@
 import React from "react"
 import { Outer, Icon } from "./Icon.Styles"
+import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
 
 const IconLogout = () => (
   <Outer>
@@ -9,4 +10,8 @@ const IconLogout = () => (
   </Outer>
 )
 
+export const IconLogoutStyle = registerStyle(
+  { [VARIANT_DEFAULT]: IconLogout },
+  "iconLogout"
+)
 export default IconLogout

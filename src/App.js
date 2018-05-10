@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import { Provider } from "mobx-react"
-import styled, { injectGlobal, ThemeProvider } from "styled-components"
+import styled from "styled-components"
 import { HotKeys } from "react-hotkeys"
 import { hideVisually, Layout, LayoutItem, Box } from "@staccx/base"
-import { ThemeComponent, spacing } from "@staccx/theme"
+import { ThemeComponent, spacing, ThemeProxyProvider } from "@staccx/theme"
 import AprilaTheme from "./Theme/Aprila/Theme"
 import NorfjellTheme from "./Theme/Norfjell/Theme"
 import Account from "./components/Account"
@@ -87,15 +87,9 @@ class App extends Component {
       inbox: () => this.setPage("inbox")
     }
 
-    injectGlobal`
-      ${this.state.activeTheme.reset({ theme: this.state.activeTheme })};
-      ${this.state.activeTheme.global};
-      .${Math.random()}-test { }
-    `
-
     return (
       <div>
-        <ThemeProvider theme={this.state.activeTheme}>
+        <ThemeProxyProvider theme={this.state.activeTheme}>
           <Provider customer={customer} account={account}>
             <HotKeysHandler keyMap={keyMap} handlers={handlers} focused>
               <input ref={c => (this._container = c)} />
@@ -136,7 +130,7 @@ class App extends Component {
               </Outer>
             </HotKeysHandler>
           </Provider>
-        </ThemeProvider>
+        </ThemeProxyProvider>
       </div>
     )
   }
@@ -162,7 +156,5 @@ const Outer = styled.div`
   align-content: space-between;
   height: 100vh;
 `
-
-const AccountInfo = styled.div``
 
 export default App

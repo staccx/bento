@@ -1,5 +1,5 @@
 import React from "react"
-import { font } from "@staccx/theme"
+import { font, VARIANT_DEFAULT, registerStyle } from "@staccx/theme"
 import { Button, Box, Layout, LayoutItem, ItemGroup } from "@staccx/base"
 import styled from "styled-components"
 
@@ -32,5 +32,5 @@ const Ad = () => (
 const AdHeading = styled.h3`
   font-size: ${font.h3};
 `
-
+export const AdStyle = registerStyle({ [VARIANT_DEFAULT]: Ad }, "ad")
 export default Ad

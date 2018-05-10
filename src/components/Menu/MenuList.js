@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import data from "./Menu.data"
-import { Box, Button, CaretRight, LinkListItem, List } from "@staccx/base"
-import { spacing } from "@staccx/theme"
+import { Box, LinkListItem, List } from "@staccx/base"
+import { spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
 
 const Menu = ({ pages }) => {
   const menuOptions = data(pages)
@@ -10,7 +10,7 @@ const Menu = ({ pages }) => {
     <Container variant="dashboardBox">
       <List>
         {menuOptions.map(option => (
-          <LinkListItem key={option._id} onClick={() => option.page()}>
+          <LinkListItem key={option._id} to={"#"} onClick={() => option.page()}>
             <IconOuter>{option.icon}</IconOuter>
             <ButtonLabel>{option.label}</ButtonLabel>
           </LinkListItem>
@@ -32,5 +32,5 @@ const IconOuter = styled.div`
 const ButtonLabel = styled.span`
   flex-grow: 1;
 `
-
+export const MenuStyle = registerStyle({ [VARIANT_DEFAULT]: Menu }, "menu")
 export default Menu

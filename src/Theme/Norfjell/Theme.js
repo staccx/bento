@@ -1,15 +1,16 @@
-import { BaseTheme, Theme } from "@staccx/base"
+import { BaseTheme } from "@staccx/base"
+import { Theme } from "@staccx/theme"
 import { rgba } from "polished"
 import reset from "./reset"
 import Button from "./Theme.Button"
 import Modal from "./Theme.Modal"
 import DashboardBox from "./Theme.Box"
-import Logo from "./Theme.Logo"
-import Menu from "./../../components/Menu/MenuList"
-import Footer from "./Footer/Footer"
+import { LogoStyle } from "./Theme.Logo"
+import { FooterStyle } from "./Footer/Footer"
 import NewBadgeStyles from "./Theme.NewBadge"
-import ExpandListBtn from "../Shared/Transaction.ExpandButton"
+import { ExpandListButtonStyle } from "../Shared/Transaction.ExpandButton"
 import ExpandListExpanded from "../Shared/ExpandListItem.Expanded"
+import { MenuStyle } from "../../components/Menu/MenuList"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -92,9 +93,6 @@ const t = new Theme(BaseTheme, {
     dashboardLayout: "columnNarrow",
     menuArea: "aside"
   },
-  logo: Logo,
-  menu: Menu,
-  footer: Footer,
   font: { ...font, ...BiBSpecificFont },
   color: { ...color, ...BiBSpecificColor },
   wrapper,
@@ -103,13 +101,16 @@ const t = new Theme(BaseTheme, {
   headerHeight,
   fontFamily,
   spacing,
-  global: reset,
-  COMPONENT_EXPAND_LIST_ITEM_BTN: ExpandListBtn
+  global: reset
 })
   .addStyles(Button)
   .addStyles(DashboardBox)
   .addStyles(Modal)
   .addStyles(ExpandListExpanded)
   .addStyles(NewBadgeStyles)
+  .addStyles(MenuStyle)
+  .addStyles(ExpandListButtonStyle)
+  .addStyles(FooterStyle)
+  .addStyles(LogoStyle)
 
 export default t.get
