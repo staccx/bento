@@ -1,7 +1,7 @@
 import babel from "rollup-plugin-babel"
 import commonjs from "rollup-plugin-commonjs"
 import resolve from "rollup-plugin-node-resolve"
-import json from 'rollup-plugin-json';
+import json from "rollup-plugin-json"
 
 import pkg from "./package.json"
 
@@ -17,11 +17,11 @@ export default {
       format: "es"
     }
   ],
-  external: ["react", "styled-components"],
+  external: ["react", "react-dom", "prop-types", "styled-components"],
   plugins: [
     json(),
     babel({
-      exclude: ['node_modules/**'],
+      exclude: ["node_modules/**"],
       plugins: ["external-helpers"]
     }),
     resolve(),

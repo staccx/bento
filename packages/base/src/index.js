@@ -56,7 +56,6 @@ import NewBadge, * as NewBadgeStyles from "./components/NewBadge/NewBadge"
 
 import Button, * as ButtonStyles from "./components/Button/Button"
 import Alert, * as AlertStyles from "./components/Alert/Alert"
-import { default as ThemeProvider } from "./Theme/ThemeWrapper"
 
 import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
@@ -64,8 +63,6 @@ import hideVisually from "./Styles/hideVisually"
 import { default as BaseTheme } from "./theme/baseTheme"
 // TODO: Trengs denne?
 import JsonSchema from "./components/Forms/JsonSchema/JsonSchema"
-
-import { Theme } from "@staccx/theme"
 
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
@@ -139,8 +136,6 @@ export {
   SliderStyles,
   SplitListItem,
   Success,
-  Theme,
-  ThemeProvider,
   Toggle,
   Warning,
   Wrapper

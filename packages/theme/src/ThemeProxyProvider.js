@@ -6,7 +6,7 @@ import PropTypes from "prop-types"
  * NOTE : https://github.com/styled-components/styled-components/issues/1333.
  * TODO: Implement once this is merged into style-components
  */
-export default class ThemeWrapper extends Component {
+export default class ThemeProxyProvider extends Component {
   render() {
     const { theme } = this.props
     injectGlobal`
@@ -17,11 +17,11 @@ export default class ThemeWrapper extends Component {
   }
 }
 
-ThemeWrapper.propTypes = {
+ThemeProxyProvider.propTypes = {
   children: PropTypes.object.isRequired,
   resets: PropTypes.string,
   theme: PropTypes.shape({
     global: PropTypes.any,
-    reset: PropTypes.string
+    reset: PropTypes.func
   }).isRequired
 }
