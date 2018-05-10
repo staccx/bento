@@ -1,5 +1,5 @@
 import { formatDate, formatDateDistance } from "./date";
-import { addDays } from "date-fns"
+import { addDays } from "date-fns";
 import { enUS } from "date-fns/esm/locale";
 
 describe("Date", () => {
@@ -40,7 +40,6 @@ describe("Date", () => {
       expect(formatted).toBe("15 dager");
     });
 
-
     it("Should format mixed inputs with defaults", () => {
       const date = new Date(1524614400000);
       const date2 = new Date(1525910400000);
@@ -50,12 +49,12 @@ describe("Date", () => {
     });
 
     it("Should get distance only one input with defaults", () => {
-      const date = addDays(new Date(), 10)
+      const date = addDays(new Date(), 10);
       expect(formatDateDistance(date)).toBe("10 dager");
     });
 
     it("Should be able to override locale", () => {
-      const date = addDays(new Date(), 10)
+      const date = addDays(new Date(), 10);
       expect(formatDateDistance(date, new Date(), enUS)).toBe("10 days");
     });
   });

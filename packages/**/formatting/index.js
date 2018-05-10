@@ -1,5 +1,5 @@
 import {formatCurrency, createCurrencyMask, currencyMaskOptions, abbreviateCurrency} from "./src/currency"
-import {formatDateRelative, formatDate} from "./src/date"
+import {formatDateDistance, formatDateRelative, formatDate} from "./src/date"
 
 export {
   formatCurrency,
@@ -7,5 +7,6 @@ export {
   currencyMaskOptions,
   abbreviateCurrency,
   formatDateRelative,
+  formatDateDistance,
   formatDate
 }
