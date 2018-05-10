@@ -50,7 +50,13 @@
   },
   "dependencies": {
     "accounting": "^0.4.1",
+    "date-fns": "^2.0.0-alpha.7",
     "easing-utils": "^0.0.7",
     "text-mask-addons": "^3.7.2"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/^(?!/esm/locale/).*$"
+    ]
   }
 }
