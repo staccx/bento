@@ -30,7 +30,9 @@ class ThemeComponent extends React.Component {
 
     const SubComponent = Component.hasOwnProperty(variant)
       ? Component[variant]
-      : Component
+      : typeof Component === "object"
+        ? fallback
+        : Component
 
     if (!SubComponent) {
       console.warn(
@@ -42,8 +44,6 @@ class ThemeComponent extends React.Component {
       )
       return null
     }
-
-    console.log("Using subcomponent", tagName, variant)
     return <SubComponent {...props}>{children}</SubComponent>
   }
 }
