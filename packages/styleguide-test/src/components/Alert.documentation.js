@@ -6,7 +6,19 @@ import TextDocumentation from "./TextDocumentation"
 
 const AlertDocumentation = () => (
   <Documentation title="Alert">
-    <TextDocumentation component={<Alert />} themify={AlertStyles}>
+    <TextDocumentation
+      component={<Alert />}
+      themify={AlertStyles}
+      themifyDescription={[
+        "Styling for type=info",
+        "Styling for type=warning",
+        "Styling for type=success",
+        "Icon for type=warning",
+        "Icon for type=info",
+        "Icon for type=success",
+        "Styling for all alert-boxes"
+      ]}
+    >
       Provide contextual feedback messages for typical user actions with the
       handful of available and flexible alert messages.
     </TextDocumentation>

@@ -1,27 +1,29 @@
 import React from "react"
 import styled from "styled-components"
-import { fontFamily, font, spacing } from "@staccx/theme"
+import { fontFamily, font, spacing, color } from "@staccx/theme"
 
-const TextDocumentation = ({ children, component, themify }) => {
-  console.log(component.propTypes)
-  return (
-    <TextDocumentationWrapper>
-      <Description>{children}</Description>
-      {/* <Props>{component}</Props> */}
-      <Themify>
-        <SubHeading>Themify</SubHeading>
-        <Table>
-          {Object.values(themify).map(figure => (
-            <TableLine key={figure}>
-              <TableElement>{figure}</TableElement>
-              <TableElement />
-            </TableLine>
-          ))}
-        </Table>
-      </Themify>
-    </TextDocumentationWrapper>
-  )
-}
+const TextDocumentation = ({
+  children,
+  component,
+  themify,
+  themifyDescription
+}) => (
+  <TextDocumentationWrapper>
+    <Description>{children}</Description>
+    {/* <Props>{component}</Props> */}
+    <Themify>
+      <SubHeading>Themify</SubHeading>
+      <Table>
+        {Object.values(themify).map((figure, index) => (
+          <TableLine key={figure}>
+            <TableElement>{figure}</TableElement>
+            <TableElement>{themifyDescription[index]}</TableElement>
+          </TableLine>
+        ))}
+      </Table>
+    </Themify>
+  </TextDocumentationWrapper>
+)
 
 const Description = styled.div`
   padding: ${spacing.small} 0;
@@ -54,6 +56,10 @@ const TableLine = styled.tr`
 `
 const TableElement = styled.td`
   padding: ${spacing.tiny};
+  &:last-child {
+    color: ${color.primary};
+    text-align: right;
+  }
 `
 
 const Props = styled.div``
