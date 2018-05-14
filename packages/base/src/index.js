@@ -23,7 +23,7 @@ import Toggle from "./components/Forms/Toggle/Toggle"
 import List from "./components/Lists/List"
 import SplitListItem from "./components/Lists/SplitList/SplitListItem"
 import ExpandListItem, * as ExpandListItemStyles from "./components/Lists/ExpandList/ExpandListItem"
-import LinkListItem from "./components/Lists/LinkList/LinkListItem"
+import LinkListItem, * as LinkListItemStyles from "./components/Lists/LinkList/LinkListItem"
 import InlineListItem from "./components/Lists/InlineList/InlineListItem"
 // layout
 import Flag from "./components/Layout/Flag/Flag"
@@ -111,6 +111,7 @@ export {
   LayoutItemStyles,
   LayoutStyles,
   LinkListItem,
+  LinkListItemStyles,
   List,
   Modal,
   ModalStyles,

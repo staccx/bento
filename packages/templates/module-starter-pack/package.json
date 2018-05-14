@@ -1,0 +1,55 @@
+{
+  "name": "@staccx/module-starter-pack",
+  "version": "0.1.0",
+  "description": "Starter for new module",
+  "private": true,
+  "author": "StaccX",
+  "license": "UNLICENCED",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "scripts": {
+    "test": "jest --env=jsdom",
+    "test:watch": "jest --env=jsdom --watch",
+    "build": "yarn prettify && rollup -c",
+    "start": "rollup -c -w",
+    "prepublish": "yarn test && yarn build",
+    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^23.0.0-alpha.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-styled-components": "^1.5.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard-jsx": "^5.0.0",
+    "jest": "^23.0.0-alpha.0",
+    "prettier": "^1.10.2",
+    "rollup": "^0.54.0",
+    "rollup-plugin-alias": "^1.4.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-postcss": "^1.1.0",
+    "standard": "^11.0.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  },
+  "dependencies": {
+    "easing-utils": "^0.0.7"
+  }
+}
