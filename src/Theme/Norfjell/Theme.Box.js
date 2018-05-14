@@ -30,30 +30,13 @@ export default registerStyle(
     `,
     accountInfo: css`
       ${defaultBox};
-      position: absolute;
-      bottom: -${spacing.tiny};
-      left: -${spacing.small};
-      width: calc(100% + ${spacing.medium});
+      margin: ${spacing.medium} -${spacing.medium} -${spacing.medium};
       padding: ${spacing.medium};
       border-radius: 3px;
       background-color: ${color.primary};
       color: ${color.white};
-      transform: translateY(100%);
       z-index: 50;
       ${fontSmoothing};
-
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 12px 12px 12px;
-        border-color: transparent transparent ${color.primary} transparent;
-        transform: translate(-50%, -100%);
-      }
     `
   },
   BoxStyles.BOX

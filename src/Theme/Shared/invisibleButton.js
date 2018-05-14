@@ -7,6 +7,7 @@ export default css`
   color: currentColor;
   height: auto;
   min-height: 0;
+  line-height: 1;
 
   &:hover,
   &:focus,
