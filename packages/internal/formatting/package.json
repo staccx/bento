@@ -56,7 +56,7 @@
   },
   "jest": {
     "transformIgnorePatterns": [
-      "/node_modules/^(?!/esm/locale/).*$"
+      "/node_modules/"
     ]
   }
 }
