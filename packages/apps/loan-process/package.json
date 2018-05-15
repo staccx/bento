@@ -66,6 +66,8 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/formatting": "^4.1.0"
+    "@staccx/formatting": "^4.1.0",
+    "formik": "^0.11.11",
+    "yup": "^0.24.1"
   }
 }

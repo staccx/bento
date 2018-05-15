@@ -1,4 +1,4 @@
-import { default as AccountNumber } from "./module/ApplicationFormAccount"
+import { default as SetAccountNumber } from "./module/SetAccountNumber"
 import { default as Offer } from "./module/ApplicationFormOffer"
 import { default as CompleteProcess } from "./module/Complete"
 import { default as Manual } from "./module/Manual"
@@ -11,7 +11,7 @@ import { default as TakesTime } from "./module/TakesTime"
 
 export {
   // Add code
-  AccountNumber,
+  SetAccountNumber,
   Offer,
   CompleteProcess,
   Manual,

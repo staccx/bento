@@ -1,24 +1,13 @@
 import React, { Component } from "react"
 import { ThemeProxyProvider } from "@staccx/theme"
-import {
-  RegisterSigners,
-  LoanRejected,
-  Sign,
-  TakesTime,
-  ProvideAdditionalInfo,
-  RejectOffer,
-  Manual,
-  CompleteProcess,
-  Offer,
-  AccountNumber
-} from "./export"
+import SetAccountNumber from "./module/SetAccountNumber"
 import theme from "./theme.js"
 
 class App extends Component {
   render() {
     return (
       <ThemeProxyProvider theme={theme}>
-        <RegisterSigners />
+        {/*<RegisterSigners />
         <LoanRejected />
         <Sign />
         <TakesTime />
@@ -26,8 +15,8 @@ class App extends Component {
         <RejectOffer />
         <Manual />
         <CompleteProcess />
-        <Offer />
-        <AccountNumber />
+        <Offer />*/}
+        <SetAccountNumber onValidated={console.log}/>
       </ThemeProxyProvider>
     )
   }
