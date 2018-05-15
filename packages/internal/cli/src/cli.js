@@ -36,7 +36,7 @@ program
         message: "Are you sure?"
       })
       .then(response => {
-        const {createModule} = response
+        const { createModule } = response
         console.log(response)
         if (createModule) {
           // console.log({ name })
@@ -45,7 +45,6 @@ program
           console.log("Dirname", __dirname)
           console.log(path.dirname(__filename))
         }
-
       })
   })
 

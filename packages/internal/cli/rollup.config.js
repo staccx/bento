@@ -9,7 +9,7 @@ export default {
   acorn: {
     allowHashBang: true
   },
-  input: "./cli.js",
+  input: "./src/cli.js",
   output: [
     {
       file: pkg.main,
