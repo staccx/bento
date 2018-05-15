@@ -1,4 +1,5 @@
-import { Theme, BaseTheme } from "@staccx/base"
+import { BaseTheme } from "@staccx/base"
+import { Theme } from "@staccx/theme"
 import reset from "./reset"
 
 const borderRadius = "0px"
