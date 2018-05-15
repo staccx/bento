@@ -1,9 +1,9 @@
 import { Theme } from "@staccx/theme"
 import { BaseTheme } from "@staccx/base"
-import reset from "./reset"
-import { HeadingStyling } from "./theme.Headings"
-import { ParagraphStyling } from "./theme.Paragraphs"
-import { BoxStyling } from "./theme.Boxes"
+import reset from "./Theme/reset"
+import { HeadingStyling } from "./Theme/theme.Headings"
+import { ParagraphStyling } from "./Theme/theme.Paragraphs"
+import { BoxStyling } from "./Theme/theme.Boxes"
 
 const borderRadius = "0px"
 const headerHeight = "70px"

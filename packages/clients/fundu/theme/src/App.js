@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Button } from "@staccx/base"
 import { ThemeProxyProvider } from "@staccx/theme"
-import theme from "./Theme/theme.js"
+import theme from "./export.js"
 
 class App extends Component {
   render() {

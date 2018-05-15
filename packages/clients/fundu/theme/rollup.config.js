@@ -6,7 +6,7 @@ import json from "rollup-plugin-json"
 import pkg from "./package.json"
 
 export default {
-  input: "./src/Theme/theme.js",
+  input: "./src/export.js",
   output: [
     {
       file: pkg.main,
@@ -17,7 +17,7 @@ export default {
       format: "es"
     }
   ],
-  external: ["react", "react-dom", "prop-types", "styled-components"],
+  external: ["react", "react-dom", "prop-types", "styled-components", "@staccx/base", "@staccx/theme"],
   plugins: [
     json(),
     babel({

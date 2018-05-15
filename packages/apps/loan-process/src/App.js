@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { ThemeProxyProvider } from "@staccx/theme"
-// import SetAccountNumber from "./module/SetAccountNumber"
-import PresentOffer from "./module/PresentOffer"
+import SetAccountNumber from "./module/SetAccountNumber"
+// import PresentOffer from "./module/PresentOffer"
 import theme from "./theme.js"
 
 class App extends Component {
@@ -17,8 +17,8 @@ class App extends Component {
         <Manual />
         <CompleteProcess />
         <Offer />*/}
-        {/*<SetAccountNumber onValidated={console.log} />*/}
-        <PresentOffer/>
+        <SetAccountNumber onValidated={console.log} />
+        {/*<PresentOffer/>*/}
       </ThemeProxyProvider>
     )
   }
