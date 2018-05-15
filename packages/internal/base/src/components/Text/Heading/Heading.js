@@ -42,7 +42,7 @@ const Heading = ({ level, children, className }) => {
 
 export const HEADING = "heading"
 
-const HeadingsStyle = css`
+export const HeadingsStyle = css`
   font-family: ${fontFamily.heading};
   ${themify(HEADING)};
 `

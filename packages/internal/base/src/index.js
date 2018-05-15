@@ -22,9 +22,9 @@ import SelectOption from "./components/Forms/Select/Select.Option"
 import Toggle from "./components/Forms/Toggle/Toggle"
 
 // Text
-import Text from "./components/Text/Text/Text"
-import Heading from "./components/Text/Heading/Heading"
-import Paragraph from "./components/Text/Paragraph/Paragraph"
+import Text, * as TextStyles from "./components/Text/Text/Text"
+import Heading, * as HeadingStyles from "./components/Text/Heading/Heading"
+import Paragraph, * as ParagraphStyles from "./components/Text/Paragraph/Paragraph"
 
 // Lists
 import List from "./components/Lists/List"
@@ -111,6 +111,7 @@ export {
   fontSmoothing,
   Fraction,
   Heading,
+  HeadingStyles,
   hideVisually,
   Icons,
   Info,
@@ -139,6 +140,7 @@ export {
   Pack,
   PackItem,
   Paragraph,
+  ParagraphStyles,
   PhoneInput,
   ProgressBar,
   RadioButton,
@@ -156,6 +158,7 @@ export {
   SplitListItem,
   Success,
   Text,
+  TextStyles,
   Toggle,
   Warning,
   Wrapper

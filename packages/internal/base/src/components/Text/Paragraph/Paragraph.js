@@ -9,7 +9,7 @@ const Paragraph = ({ level, children, className }) => {
 
 export const PARAGRAPH = "paragraph"
 
-const P = styled.p`
+export const P = styled.p`
   font-family: ${fontFamily.body};
   ${themify(PARAGRAPH)};
 `

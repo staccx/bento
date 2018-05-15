@@ -9,7 +9,7 @@ const Text = ({ level, children, className }) => {
 
 export const TEXT = "text"
 
-const Span = styled.span`
+export const Span = styled.span`
   ${themify(TEXT)};
 `
 
