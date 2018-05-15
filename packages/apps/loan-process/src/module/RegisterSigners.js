@@ -1,9 +1,8 @@
 import React from "react"
-import { Wrapper } from "@staccx/base"
+import { Wrapper, Heading, Paragraph, Box } from "@staccx/base"
 import { removeWhitespace } from "@staccx/formatting"
 import styled from "styled-components"
 import SystemText from "../../components/SystemText"
-import { Heading, Lead, PaddingVertical, TileBox } from "../../Styles"
 import Signers from "../../components/Tables/SignerTable"
 import Button from "../../components/button/Button"
 import withLoanApplication from "../../hoc/withLoanApplication"
@@ -176,17 +175,17 @@ class RegisterSigners extends React.Component {
 
     return (
       <Wrapper size="medium" breakout>
-        <Heading>
+        <Heading variant="centered" level={1}>
           <SystemText systemKey="WHO_TO_SIGN" />
         </Heading>
-        <Lead>
+        <Paragraph variant="lead">
           <SystemText systemKey="REGISTER_SIGNERS_LEAD" />
-          <p>
+          <div>
             <em>{application.data.authorization.signatureText}</em>
-          </p>
-        </Lead>
-        <TileBox>
-          <PaddingVertical>
+          </div>
+        </Paragraph>
+        <Box variant="tileBox">
+          <Box variant="paddingVertical">
             <Signers
               showErrors={this.state.showErrors}
               onValidated={this.handleValidation}
@@ -196,11 +195,11 @@ class RegisterSigners extends React.Component {
               onNationalIdChange={this.handleNationalIdChange}
               onNameChange={this.handleNameIdChange}
             />
-          </PaddingVertical>
+          </Box>
           <StyledButton variant={"subtle"} onClick={this.addPerson}>
             + <SystemText systemKey="ADD_PERSON" />
           </StyledButton>
-        </TileBox>
+        </Box>
         <Button onClick={this.complete}>
           <SystemText systemKey="CONTINUE_NOW" />
         </Button>
