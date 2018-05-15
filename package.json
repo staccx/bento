@@ -16,7 +16,8 @@
   "homepage": "https://bitbucket.org/stacc-flow/bento#readme",
   "description": "",
   "workspaces": [
-    "packages/**/*"
+    "packages/**/*",
+    "packages/internal/*"
   ],
   "devDependencies": {
     "babel-eslint": "^8.2.2",

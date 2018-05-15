@@ -1,34 +1,21 @@
-0 silly input [ 'test' ]
-1 silly flags { _: [ 'run' ],
+0 silly input [ '../formatting' ]
+1 silly flags { _: [ 'import' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   script: 'test',
-1 silly flags   args: [] }
+1 silly flags   flatten: true,
+1 silly flags   pathToRepo: '../formatting' }
 2 verbose rootPath /Users/espen/Projects/bento
 3 info version 2.8.0
-4 silly existsSync /Users/espen/Projects/bento/VERSION
-5 silly initialize attempt
-6 silly initialize success
-7 silly execute attempt
-8 silly runScriptInDir test [] animations
-9 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/animations' }
-10 silly runScriptInDir test [] cli
-11 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/cli' }
-12 silly runScriptInDir test [] theme
-13 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/theme' }
-14 error test Errored while running script in '@staccx/cli-x'
-15 error execute callback with error
-16 error Error: Command failed: yarn run test
-16 error error Command failed with exit code 1.
-16 error yarn run v1.6.0
-16 error $ jest --env=jsdom
-16 error No tests found
-16 error In /Users/espen/Projects/bento/packages/internal/cli
-16 error   5 files checked.
-16 error   testMatch: **/__tests__/**/*.js?(x),**/?(*.)(spec|test).js?(x) - 0 matches
-16 error   testPathIgnorePatterns: /node_modules/ - 5 matches
-16 error Pattern:  - 0 matches
-16 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-16 error
-16 error     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/lerna/node_modules/execa/index.js:236:11)
-16 error     at <anonymous>
+4 silly isInitialized
+5 silly isInitialized true
+6 silly existsSync /Users/espen/Projects/bento/VERSION
+7 silly initialize attempt
+8 silly statSync /Users/espen/Projects/formatting
+9 silly getWorkspaceRoot
+10 verbose getWorkspaceRoot /Users/espen/Projects/bento
+11 silly existsSync /Users/espen/Projects/bento/packages/internal/formatting
+12 silly getCurrentSHA
+13 verbose getCurrentSHA 4fc1e028d1e538fbdcd77ef99bb872078f2f3d45
+14 error initialize callback with error
+15 error Error: Local repository has un-committed changes
+15 error     at ImportCommand.initialize (/Users/espen/.config/yarn/global/node_modules/lerna/lib/commands/ImportCommand.js:158:25)
