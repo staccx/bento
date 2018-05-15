@@ -34,5 +34,10 @@
     "lerna": "^2.8.0",
     "prettier": "^1.11.1",
     "standard": "^11.0.0"
+  },
+  "resolutions": {
+    "jest": "^22.4.3",
+    "babel-jest": "^22.4.3",
+    "babel-core": "^6.26.0"
   }
 }
