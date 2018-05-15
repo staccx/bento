@@ -2,15 +2,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import { withFormik } from "formik"
 import Yup from "yup"
-import { AccountInput, Button, Wrapper } from "@staccx/base"
-import { removeWhitespace } from "@staccx/formatting"
 import {
+  AccountInput,
+  Button,
+  Wrapper,
+  Box,
   Heading,
-  Hr,
-  Illustration,
-  PaddedContainer,
-  TileBox
-} from "./replace/Styles"
+  Divider
+} from "@staccx/base"
+import { removeWhitespace } from "@staccx/formatting"
 import ValidationError from "./replace/ValidationError"
 
 const Form = props => {
@@ -38,12 +38,14 @@ const Form = props => {
 
   return (
     <form onSubmit={_handleSubmit}>
-      <Illustration>{renderIllustration && renderIllustration()}</Illustration>
-      <Heading>{props.headingText}</Heading>
+      <Box variant="illustration">
+        {renderIllustration && renderIllustration()}
+      </Box>
+      <Heading variant="centered">{props.headingText}</Heading>
       <Wrapper size="small" breakout>
-        <TileBox>
-          <PaddedContainer>{props.loanTypeText}</PaddedContainer>
-          <Hr />
+        <Box variant="tileBox">
+          <Box>{props.loanTypeText}</Box>
+          <Divider />
           <AccountInput
             guide={false}
             value={values.accountNumber}
@@ -57,7 +59,7 @@ const Form = props => {
             touched.accountNumber && (
               <ValidationError>{errors.accountNumber}</ValidationError>
             )}
-        </TileBox>
+        </Box>
         {!isSubmitting && (
           <Button type="submit" onClick={() => null}>
             {props.continueButtonText}

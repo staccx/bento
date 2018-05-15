@@ -29,6 +29,11 @@ export const BoxStyling = registerStyle(
     paddingVertical: css`
       padding-top: ${spacing.medium};
       padding-bottom: ${spacing.medium};
+    `,
+    illustration: css`
+      padding: 0;
+      text-align: center;
+      margin-bottom: ${spacing.medium};
     `
   },
   BoxStyles.BOX
