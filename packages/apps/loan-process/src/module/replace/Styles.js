@@ -179,8 +179,7 @@ export const BodyLargeCentered = css`
 `
 
 export const PaddedContainer = styled.div`
-  padding: ${p =>
-  p.large ? spacing.large : spacing.medium};
+  padding: ${p => (p.large ? spacing.large : spacing.medium)};
 `
 export const StepHeading = styled.h1`
   font-size: ${font.h2};
@@ -189,8 +188,7 @@ export const StepHeading = styled.h1`
 `
 
 export const GrayBox = styled.div`
-  padding: ${spacing.medium}
-    ${spacing.large};
+  padding: ${spacing.medium} ${spacing.large};
   background-color: ${color.subtleHover};
 `
 
@@ -218,8 +216,7 @@ export const DocumentStatusItem = styled.li`
   justify-content: space-between;
   align-items: center;
   min-height: 70px;
-  padding: ${spacing.small}
-    ${spacing.medium};
+  padding: ${spacing.small} ${spacing.medium};
   border-top: 1px solid ${color.line};
 `
 export const DocumentStatusContent = styled.div``

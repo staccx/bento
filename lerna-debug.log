@@ -2,64 +2,66 @@
 1 silly flags { _: [ 'run' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   stream: true,
 1 silly flags   script: 'build',
 1 silly flags   args: [] }
-2 verbose rootPath /Users/espen/Projects/bento
+2 verbose rootPath /Users/robin/Projects/staccx/bento
 3 info version 2.8.0
-4 silly existsSync /Users/espen/Projects/bento/VERSION
+4 silly existsSync /Users/robin/Projects/staccx/bento/VERSION
 5 silly initialize attempt
 6 silly initialize success
 7 silly execute attempt
-8 silly runScriptInPackageStreaming [ 'build', [], '@staccx/animations' ]
-9 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/animations' }
-10 silly runScriptInPackageStreaming [ 'build', [], '@staccx/cli-x' ]
-11 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/cli' }
-12 silly runScriptInPackageStreaming [ 'build', [], '@staccx/formatting' ]
-13 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/formatting' }
-14 silly runScriptInPackageStreaming [ 'build', [], '@staccx/math' ]
-15 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/math' }
-16 silly runScriptInPackageStreaming [ 'build', [], '@staccx/theme' ]
-17 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/theme' }
-18 silly runScriptInPackageStreaming [ 'build', [], '@staccx/loan-process' ]
-19 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/apps/loan-process' }
-20 silly runScriptInPackageStreaming [ 'build', [], '@staccx/base' ]
-21 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/base' }
-22 error execute callback with error
-23 error Error: Command failed: yarn run build
-23 error
-23 error ./src/export.js → dist/index.js, dist/index.es.js...
-23 error [!] Error: Could not resolve '../../Styles' from src/module/ApplicationFormAccount.js
-23 error Error: Could not resolve '../../Styles' from src/module/ApplicationFormAccount.js
-23 error     at error (/Users/espen/Projects/bento/node_modules/rollup/dist/rollup.js:170:15)
-23 error     at /Users/espen/Projects/bento/node_modules/rollup/dist/rollup.js:18849:25
-23 error     at <anonymous>
-23 error
-23 error error Command failed with exit code 1.
-23 error
-23 error yarn run v1.6.0
-23 error $ yarn prettify && rollup -c
-23 error $ prettier --write '{src,__{tests,mocks}__}/**/*.js'
-23 error src/App.js 29ms
-23 error src/App.test.js 7ms
-23 error src/export.js 7ms
-23 error src/index.js 4ms
-23 error src/module/ApplicationFormAccount.js 31ms
-23 error src/module/ApplicationFormOffer.js 163ms
-23 error src/module/ApplicationFormOffer.PickLoanSum.js 40ms
-23 error src/module/Authenticate.js 21ms
-23 error src/module/Complete.js 4ms
-23 error src/module/Manual.js 4ms
-23 error src/module/NoThankYou.js 6ms
-23 error src/module/ProvideAdditionalInfo.js 2ms
-23 error src/module/RegisterSigners.js 51ms
-23 error src/module/Rejection.js 3ms
-23 error src/module/Sign.js 36ms
-23 error src/module/TakesTime.js 5ms
-23 error src/registerServiceWorker.js 21ms
-23 error src/reset.js 1ms
-23 error src/theme.js 7ms
-23 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-23 error
-23 error     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/lerna/node_modules/execa/index.js:236:11)
-23 error     at <anonymous>
+8 silly runScriptInDir build [] animations
+9 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/animations' }
+10 silly runScriptInDir build [] cli
+11 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/cli' }
+12 silly runScriptInDir build [] formatting
+13 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/formatting' }
+14 silly runScriptInDir build [] math
+15 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/math' }
+16 silly runScriptInDir build [] theme
+17 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/theme' }
+18 silly runScriptInDir build [] loan-process
+19 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/loan-process' }
+20 silly runScriptInDir build [] base
+21 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/base' }
+22 error build Errored while running script in '@staccx/loan-process'
+23 error execute callback with error
+24 error Error: Command failed: yarn run build
+24 error
+24 error ./src/export.js → dist/index.js, dist/index.es.js...
+24 error [!] Error: Could not resolve '../../components/Dropdown' from src/module/ApplicationFormOffer.js
+24 error Error: Could not resolve '../../components/Dropdown' from src/module/ApplicationFormOffer.js
+24 error     at error (/Users/robin/Projects/staccx/bento/node_modules/rollup/dist/rollup.js:170:15)
+24 error     at /Users/robin/Projects/staccx/bento/node_modules/rollup/dist/rollup.js:18849:25
+24 error     at <anonymous>
+24 error
+24 error error Command failed with exit code 1.
+24 error yarn run v1.6.0
+24 error $ yarn prettify && rollup -c
+24 error $ prettier --write '{src,__{tests,mocks}__}/**/*.js'
+24 error src/App.js 40ms
+24 error src/App.test.js 10ms
+24 error src/export.js 7ms
+24 error src/index.js 3ms
+24 error src/module/ApplicationFormOffer.js 230ms
+24 error src/module/ApplicationFormOffer.PickLoanSum.js 62ms
+24 error src/module/Authenticate.js 29ms
+24 error src/module/Complete.js 5ms
+24 error src/module/Manual.js 5ms
+24 error src/module/NoThankYou.js 3ms
+24 error src/module/ProvideAdditionalInfo.js 4ms
+24 error src/module/RegisterSigners.js 62ms
+24 error src/module/Rejection.js 4ms
+24 error src/module/replace/Styles.js 107ms
+24 error src/module/replace/Tile.js 22ms
+24 error src/module/replace/ValidationError.js 21ms
+24 error src/module/SetAccountNumber.js 39ms
+24 error src/module/Sign.js 50ms
+24 error src/module/TakesTime.js 9ms
+24 error src/registerServiceWorker.js 33ms
+24 error src/reset.js 2ms
+24 error src/theme.js 11ms
+24 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+24 error
+24 error     at Promise.all.then.arr (/Users/robin/.config/yarn/global/node_modules/execa/index.js:236:11)
+24 error     at <anonymous>

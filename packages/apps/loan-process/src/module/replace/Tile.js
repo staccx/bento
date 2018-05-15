@@ -10,7 +10,7 @@ export const TileHeading = styled.h2`
   color: ${color.blue};
 `
 
-const Tile = ({children, className, ...otherProps}) => (
+const Tile = ({ children, className, ...otherProps }) => (
   <TileElement className={className} {...otherProps}>
     {children}
   </TileElement>
