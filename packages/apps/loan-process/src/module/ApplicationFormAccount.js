@@ -1,11 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { removeWhitespace } from "@staccx/formatting"
 import {
-  Hr,
-  PaddedContainer,
-  Illustration,
-  TileBox,
-  Heading
+Hr,
+PaddedContainer,
+Illustration,
+TileBox,
+Heading
 } from "../../Styles"
 import Button from "../../components/button/Button"
 import { Wrapper, AccountInput } from "@staccx/base"
@@ -15,7 +16,6 @@ import { withFormik } from "formik/dist/formik"
 import ValidationError from "../../components/validation/ValidationError"
 import withLoanApplication from "../../hoc/withLoanApplication"
 import withTasks from "../../hoc/withTasks"
-import { removeWhitespace } from "../../utils/removeWhitespace"
 import SystemText from "../../components/SystemText"
 
 const Form = props => {

@@ -10,7 +10,8 @@ describe("Remove white space", () => {
   })
 
   it("Should remove all white space in multiple word string", () => {
-    expect(removeWhitespace("The quick brown fox jumps over the lazy dog"))
-      .toBe("Thequickbrownfoxjumpsoverthelazydog")
+    expect(
+      removeWhitespace("The quick brown fox jumps over the lazy dog")
+    ).toBe("Thequickbrownfoxjumpsoverthelazydog")
   })
 })

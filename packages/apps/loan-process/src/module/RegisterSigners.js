@@ -1,7 +1,8 @@
 import React from "react"
 import { Wrapper } from "@staccx/base"
-import SystemText from "../../components/SystemText"
+import { removeWhitespace } from "@staccx/formatting"
 import styled from "styled-components"
+import SystemText from "../../components/SystemText"
 import { Heading, Lead, PaddingVertical, TileBox } from "../../Styles"
 import Signers from "../../components/Tables/SignerTable"
 import Button from "../../components/button/Button"
@@ -9,7 +10,6 @@ import withLoanApplication from "../../hoc/withLoanApplication"
 import withTasks from "../../hoc/withTasks"
 import { toSystemText } from "../../utils/toSystemText"
 import { spacing } from "@staccx/theme"
-import { removeWhitespace } from "../../utils/removeWhitespace"
 
 const nanoid = require("nanoid")
 

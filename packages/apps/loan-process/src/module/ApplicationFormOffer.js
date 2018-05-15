@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { ItemGroup, Odometer, Wrapper } from "@staccx/base"
-import { format as formatCurrency } from "../../utils/formatCurrency"
+import { formatCurrency } from "@staccx/formatting"
 import Dropdown from "../../components/Dropdown"
 import { GrayBox, Halves, PaddedContainer, StepHeading } from "../../Styles"
 import {

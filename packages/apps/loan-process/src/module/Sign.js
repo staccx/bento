@@ -20,7 +20,7 @@ import {
 import styled from "styled-components"
 import withTasks from "../../hoc/withTasks"
 import withLoanApplication from "../../hoc/withLoanApplication"
-import { format as formatCurrency } from "../../utils/formatCurrency"
+import { formatCurrency } from "@staccx/formatting"
 import { toSystemText } from "../../utils/toSystemText"
 import {
   SIGN_ORDER_STATUS_SIGNED,

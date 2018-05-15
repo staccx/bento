@@ -64,5 +64,8 @@
   },
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  },
+  "dependencies": {
+    "@staccx/formatting": "^4.1.0"
   }
 }

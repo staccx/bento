@@ -4,14 +4,13 @@ import styled from "styled-components"
 import { withFormik } from "formik"
 import Yup from "yup"
 import { CurrencyInput, RadioButton } from "@staccx/base"
+import { formatCurrency, removeWhitespace } from "@staccx/formatting"
 import { BounceIn, BounceOut } from "@staccx/animations"
 import { color, spacing } from "@staccx/theme"
-import { format as formatCurrency } from "../../utils/formatCurrency"
 import { toSystemText } from "../../utils/toSystemText"
 import withLoanApplication from "../../hoc/withLoanApplication"
 import ValidationError from "../../components/validation/ValidationError"
 import SystemText from "../../components/SystemText"
-import { removeWhitespace } from "../../utils/removeWhitespace"
 
 const PickLoanSum = props => {
   const {
