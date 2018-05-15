@@ -6,7 +6,7 @@ import json from "rollup-plugin-json"
 import pkg from "./package.json"
 
 export default {
-  input: "./src/theme.js",
+  input: "./src/Theme/theme.js",
   output: [
     {
       file: pkg.main,
