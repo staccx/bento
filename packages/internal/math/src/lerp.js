@@ -1,1 +1,1 @@
-export default (min, max, t) => min + t * (max - min);
+export default (min, max, t) => min + t * (max - min)
