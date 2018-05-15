@@ -1,6 +1,9 @@
 import { Theme } from "@staccx/theme"
 import { BaseTheme } from "@staccx/base"
 import reset from "./reset"
+import { HeadingStyling } from "./theme.Headings"
+import { ParagraphStyling } from "./theme.Paragraphs"
+import { BoxStyling } from "./theme.Boxes"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -76,5 +79,8 @@ const theme = new Theme(BaseTheme, {
   fontFamily,
   global: reset
 })
+  .addStyles(HeadingStyling)
+  .addStyles(ParagraphStyling)
+  .addStyles(BoxStyling)
 
 export default theme.get
