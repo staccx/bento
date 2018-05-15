@@ -17,7 +17,14 @@ export default {
       format: "es"
     }
   ],
-  external: ["react", "react-dom", "prop-types", "styled-components", "@staccx/base", "@staccx/theme"],
+  external: [
+    "react",
+    "react-dom",
+    "prop-types",
+    "styled-components",
+    "@staccx/base",
+    "@staccx/theme"
+  ],
   plugins: [
     json(),
     babel({
