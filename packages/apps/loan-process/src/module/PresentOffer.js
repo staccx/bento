@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { ItemGroup, Odometer, Wrapper } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
 import Dropdown from "../../components/Dropdown"
-import { GrayBox, Halves, PaddedContainer, StepHeading } from "../../Styles"
+import { GrayBox, Halves, PaddedContainer, StepHeading } from "./replace/Styles"
 import {
   OfferTable,
   OfferTableData,
@@ -12,7 +12,7 @@ import {
   OfferTableDurationsItem,
   OfferTableText,
   OfferTableTotal
-} from "../../Styles.OfferTable"
+} from "./replace/Styles.OfferTable"
 import PickLoanSum from "./ApplicationFormOffer.PickLoanSum"
 import Button from "../../components/button/Button"
 import Tile from "../../components/Tile"
@@ -27,7 +27,7 @@ const reduceMonthlyPayment = (accumulator, currentItem) => {
   return accumulator + currentItem.monthlyPayment
 }
 
-class ApplicationFormOffer extends React.Component {
+class PresentOffer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -308,7 +308,7 @@ const OfferInfoList = styled.ul`
   }
 `
 
-ApplicationFormOffer.propTypes = {
+PresentOffer.propTypes = {
   application: PropTypes.object,
   term: PropTypes.object,
   payment: PropTypes.object,
@@ -318,5 +318,5 @@ ApplicationFormOffer.propTypes = {
 }
 
 export default withSanity(
-  withApp(withLoanApplication(withTasks(ApplicationFormOffer)))
+  withApp(withLoanApplication(withTasks(PresentOffer)))
 )

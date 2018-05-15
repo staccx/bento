@@ -13,22 +13,25 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "test": "jest --env=jsdom",
+    "start": "react-scripts start",
+    "build:app": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
     "test:watch": "jest --env=jsdom --watch",
     "build": "yarn prettify && rollup -c",
-    "start": "rollup -c -w",
-    "prepublish": "yarn test && yarn build",
+    "start:module": "rollup -c -w",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "peerDependencies": {
-    "@staccx/theme": "^3.9.1",
+    "@staccx/base": "4.0.1",
+    "@staccx/theme": "4.0.1",
     "prop-types": "^15.5.4",
     "react": "^0.14.9 || ^15.0.0 || ^16.0.0",
     "react-dom": "^0.14.9 || ^15.0.0 || ^16.0.0",
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
-    "@staccx/theme": "3.9.1",
+    "@staccx/theme": "4.0.1",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^23.0.0-alpha.0",
@@ -40,6 +43,10 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard-jsx": "^5.0.0",
     "jest": "^23.0.0-alpha.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4",
     "prettier": "^1.10.2",
     "rollup": "^0.54.0",
     "rollup-plugin-alias": "^1.4.0",
@@ -57,6 +64,6 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "easing-utils": "^0.0.7"
+
   }
 }
