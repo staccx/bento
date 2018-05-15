@@ -1,5 +1,4 @@
 import React from "react"
-import Wrapper from "../../Layout/Wrapper/Wrapper"
 
 const ObjectFieldTemplate = ({
   TitleField,
@@ -8,7 +7,7 @@ const ObjectFieldTemplate = ({
   description
 }) => {
   return (
-    <Wrapper size={"medium"}>
+    <React.Fragment>
       <TitleField title={title} />
       <div>
         {properties.map(prop => (
@@ -16,7 +15,7 @@ const ObjectFieldTemplate = ({
         ))}
       </div>
       {description}
-    </Wrapper>
+    </React.Fragment>
   )
 }
 

@@ -37,6 +37,12 @@ export default {
       grid-column-gap: 0;
     }
   `,
+  fiftyFifty: css`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+  `,
   rows: css`
     grid-auto-flow: row;
   `

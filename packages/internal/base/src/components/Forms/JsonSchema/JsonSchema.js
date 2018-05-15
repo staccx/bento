@@ -17,12 +17,7 @@ const InputWidget = ({ onChange, ...rest }) => (
 )
 
 const SliderWidget = ({ onChange, id, ...rest }) => (
-  <SliderKeyboardInput
-    name={id}
-    {...rest}
-    onChange={onChange}
-    showLabel={true}
-  />
+  <SliderKeyboardInput name={id} {...rest} onChange={onChange} showLabel />
 )
 
 const PhoneWidget = ({ onChange, id, ...rest }) => (
@@ -30,7 +25,7 @@ const PhoneWidget = ({ onChange, id, ...rest }) => (
     name={id}
     {...rest}
     onChange={e => onChange(e.target.value)}
-    showLabel={true}
+    showLabel
   />
 )
 
@@ -90,22 +85,20 @@ class JsonSchema extends React.Component {
 
   render() {
     return (
-      <Wrapper>
-        <Form
-          schema={this.props.schema}
-          widgets={widgets}
-          fields={fields}
-          uiSchema={this.props.uiSchema}
-          onChange={this.handleChange}
-          onSubmit={this.handleSubmit}
-          onError={this.handleErrors}
-          ArrayFieldTemplate={ArrayFieldTemplate}
-          ObjectFieldTemplate={ObjectFieldTemplate}
-          FieldTemplate={CustomFieldTemplate}
-        >
-          <Button type={"submit"}>Submit</Button>
-        </Form>
-      </Wrapper>
+      <Form
+        schema={this.props.schema}
+        widgets={widgets}
+        fields={fields}
+        uiSchema={this.props.uiSchema}
+        onChange={this.handleChange}
+        onSubmit={this.handleSubmit}
+        onError={this.handleErrors}
+        ArrayFieldTemplate={ArrayFieldTemplate}
+        ObjectFieldTemplate={ObjectFieldTemplate}
+        FieldTemplate={CustomFieldTemplate}
+      >
+        <Button type={"submit"}>Submit</Button>
+      </Form>
     )
   }
 }
