@@ -7365,10 +7365,10 @@ ora@^2.0.0:
     wcwidth "^1.0.1"
 
 original@>=0.0.5:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/original/-/original-1.0.0.tgz#9147f93fa1696d04be61e01bd50baeaca656bd3b"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/original/-/original-1.0.1.tgz#b0a53ff42ba997a8c9cd1fb5daaeb42b9d693190"
   dependencies:
-    url-parse "1.0.x"
+    url-parse "~1.4.0"
 
 os-browserify@^0.3.0:
   version "0.3.0"
@@ -8182,10 +8182,6 @@ querystring@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
 
-querystringify@0.0.x:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-0.0.4.tgz#0cf7f84f9463ff0ae51c4c4b142d95be37724d9c"
-
 querystringify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.0.0.tgz#fa3ed6e68eb15159457c89b37bc6472833195755"
@@ -8845,7 +8841,7 @@ require-uncached@^1.0.2, require-uncached@^1.0.3:
     caller-path "^0.1.0"
     resolve-from "^1.0.0"
 
-requires-port@1.0.x, requires-port@^1.0.0:
+requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
 
@@ -10421,14 +10417,7 @@ url-parse-lax@^1.0.0:
   dependencies:
     prepend-http "^1.0.1"
 
-url-parse@1.0.x:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.0.5.tgz#0854860422afdcfefeb6c965c662d4800169927b"
-  dependencies:
-    querystringify "0.0.x"
-    requires-port "1.0.x"
-
-url-parse@^1.1.8:
+url-parse@^1.1.8, url-parse@~1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.0.tgz#6bfdaad60098c7fe06f623e42b22de62de0d3d75"
   dependencies:
