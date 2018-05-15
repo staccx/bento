@@ -41,6 +41,7 @@ import LayoutItem, * as LayoutItemStyles from "./components/Layout/Layout/Layout
 import Pack from "./components/Layout/Pack/Pack"
 import PackItem from "./components/Layout/Pack/PackItem"
 import ItemGroup, * as ItemGroupStyles from "./components/Layout/ItemGroup/ItemGroup"
+import Divider, * as DividerStyles from "./components/Layout/Divider/Divider"
 
 // Icons
 import Caret from "./components/Icons/Caret"
@@ -104,6 +105,7 @@ export {
   CompanyInput,
   CompanyInputStyles,
   CurrencyInput,
+  Divider,
   Donut,
   ExpandListItem,
   ExpandListItemStyles,
