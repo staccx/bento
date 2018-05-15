@@ -1,3 +1,4 @@
+// Forms
 import Input, * as InputStyles from "./components/Forms/Input/Input"
 import CurrencyInput from "./components/Forms/Input/CurrencyInput/CurrencyInput"
 import AccountInput from "./components/Forms/Input/AccountInput/AccountInput"
@@ -19,21 +20,28 @@ import Select from "./components/Forms/Select/Select"
 import SelectSelected from "./components/Forms/Select/Select.Selected"
 import SelectOption from "./components/Forms/Select/Select.Option"
 import Toggle from "./components/Forms/Toggle/Toggle"
-// list
+
+// Text
+import Text from "./components/Text/Text/Text"
+import Heading from "./components/Text/Heading/Heading"
+import Paragraph from "./components/Text/Paragraph/Paragraph"
+
+// Lists
 import List from "./components/Lists/List"
 import SplitListItem from "./components/Lists/SplitList/SplitListItem"
 import ExpandListItem, * as ExpandListItemStyles from "./components/Lists/ExpandList/ExpandListItem"
 import LinkListItem, * as LinkListItemStyles from "./components/Lists/LinkList/LinkListItem"
 import InlineListItem from "./components/Lists/InlineList/InlineListItem"
-// layout
+
+// Layout
 import Flag from "./components/Layout/Flag/Flag"
 import Wrapper from "./components/Layout/Wrapper/Wrapper"
-import Box, * as BoxStyles from "./components/Layout/Box/Box"
 import Layout, * as LayoutStyles from "./components/Layout/Layout/Layout"
 import LayoutItem, * as LayoutItemStyles from "./components/Layout/Layout/LayoutItem"
 import Pack from "./components/Layout/Pack/Pack"
 import PackItem from "./components/Layout/Pack/PackItem"
 import ItemGroup, * as ItemGroupStyles from "./components/Layout/ItemGroup/ItemGroup"
+
 // Icons
 import Caret from "./components/Icons/Caret"
 import CaretRight from "./components/Icons/CaretRight"
@@ -42,34 +50,42 @@ import Warning from "./components/Icons/Warning"
 import Info from "./components/Icons/Info"
 import Success from "./components/Icons/Success"
 
-// formatters
-import Odometer from "./components/Formatters/Odometer/Odometer"
 // Dataviz
 import ProgressBar from "./components/DataViz/ProgressBar/ProgressBar"
 import Fraction from "./components/DataViz/Fraction/Fraction"
 import Donut from "./components/DataViz/Donut/Donut"
 import KeyFigures from "./components/DataViz/Keyfigures/Keyfigures"
-
-import Modal, * as ModalStyles from "./components/Modal/Modal"
-
 import NewBadge, * as NewBadgeStyles from "./components/NewBadge/NewBadge"
 
-import Button, * as ButtonStyles from "./components/Button/Button"
-import Alert, * as AlertStyles from "./components/Alert/Alert"
+// Modal
+import Modal, * as ModalStyles from "./components/Modal/Modal"
 
+// Buttons
+import Button, * as ButtonStyles from "./components/Button/Button"
+
+// Boxes
+import Alert, * as AlertStyles from "./components/Alert/Alert"
+import Box, * as BoxStyles from "./components/Layout/Box/Box"
+
+// Styles
 import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
 
+// Themes
 import { default as BaseTheme } from "./theme/baseTheme"
-// TODO: Trengs denne?
-import JsonSchema from "./components/Forms/JsonSchema/JsonSchema"
 
+// Formatters
+import Odometer from "./components/Formatters/Odometer/Odometer"
+
+// Utils
+import JsonSchema from "./components/Forms/JsonSchema/JsonSchema"
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
+// Icons
 const Icons = {
   COMPONENT_CHECKBOX_ICON
-}
+} // TODO: Trengs denne?
 
 export {
   AccountInput,
@@ -94,6 +110,7 @@ export {
   Flag,
   fontSmoothing,
   Fraction,
+  Heading,
   hideVisually,
   Icons,
   Info,
@@ -121,6 +138,7 @@ export {
   Odometer,
   Pack,
   PackItem,
+  Paragraph,
   PhoneInput,
   ProgressBar,
   RadioButton,
@@ -137,6 +155,7 @@ export {
   SliderStyles,
   SplitListItem,
   Success,
+  Text,
   Toggle,
   Warning,
   Wrapper
