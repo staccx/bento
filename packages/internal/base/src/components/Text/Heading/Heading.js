@@ -3,37 +3,61 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { font, fontFamily, themify } from "@staccx/theme"
 
-const Heading = ({ level, children, className }) => {
+const Heading = ({ level, children, className, ...restProps }) => {
   switch (level) {
     case "h1":
     case "H1":
     case "1":
-      return <HeadingH1 className={className}>{children}</HeadingH1>
+      return (
+        <HeadingH1 className={className} {...restProps}>
+          {children}
+        </HeadingH1>
+      )
 
     case "h2":
     case "H2":
     case "2":
-      return <HeadingH2 className={className}>{children}</HeadingH2>
+      return (
+        <HeadingH2 className={className} {...restProps}>
+          {children}
+        </HeadingH2>
+      )
 
     case "h3":
     case "H3":
     case "3":
-      return <HeadingH3 className={className}>{children}</HeadingH3>
+      return (
+        <HeadingH3 className={className} {...restProps}>
+          {children}
+        </HeadingH3>
+      )
 
     case "h4":
     case "H4":
     case "4":
-      return <HeadingH4 className={className}>{children}</HeadingH4>
+      return (
+        <HeadingH4 className={className} {...restProps}>
+          {children}
+        </HeadingH4>
+      )
 
     case "h5":
     case "H5":
     case "5":
-      return <HeadingH5 className={className}>{children}</HeadingH5>
+      return (
+        <HeadingH5 className={className} {...restProps}>
+          {children}
+        </HeadingH5>
+      )
 
     case "h6":
     case "H6":
     case "6":
-      return <HeadingH6 className={className}>{children}</HeadingH6>
+      return (
+        <HeadingH6 className={className} {...restProps}>
+          {children}
+        </HeadingH6>
+      )
 
     default:
       break
@@ -50,6 +74,7 @@ export const HeadingsStyle = css`
 const HeadingH1 = styled.h1`
   font-size: ${font.h1};
   ${HeadingsStyle};
+  ${themify(HEADING)};
 `
 
 const HeadingH2 = styled.h2`

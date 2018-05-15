@@ -3,8 +3,12 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { fontFamily, themify } from "@staccx/theme"
 
-const Paragraph = ({ level, children, className }) => {
-  return <P className={className}>{children}</P>
+const Paragraph = ({ level, children, className, ...restProps }) => {
+  return (
+    <P className={className} {...restProps}>
+      {children}
+    </P>
+  )
 }
 
 export const PARAGRAPH = "paragraph"

@@ -3,8 +3,12 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { themify } from "@staccx/theme"
 
-const Text = ({ level, children, className }) => {
-  return <Span className={className}>{children}</Span>
+const Text = ({ level, children, className, ...restProps }) => {
+  return (
+    <Span className={className} {...restProps}>
+      {children}
+    </Span>
+  )
 }
 
 export const TEXT = "text"
