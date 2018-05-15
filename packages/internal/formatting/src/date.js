@@ -1,5 +1,5 @@
 import { format, formatDistance, formatRelative } from "date-fns"
-import { nb } from "date-fns/esm/locale"
+import nb from "date-fns/locale/nb"
 
 export const formatDate = (date, frmat = "DD MMMM YYYY", locale = nb) => {
   return format(date, frmat, { locale })

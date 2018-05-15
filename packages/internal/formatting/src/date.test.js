@@ -1,6 +1,6 @@
 import { formatDate, formatDateDistance } from "./date"
 import { addDays } from "date-fns"
-import { enUS } from "date-fns/esm/locale"
+import enUS from "date-fns/locale/en-US"
 
 describe("Date", () => {
   describe("Format", () => {
