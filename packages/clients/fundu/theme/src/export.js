@@ -4,6 +4,7 @@ import reset from "./Theme/reset"
 import { HeadingStyling } from "./Theme/theme.Headings"
 import { ParagraphStyling } from "./Theme/theme.Paragraphs"
 import { BoxStyling } from "./Theme/theme.Boxes"
+import { AlertStyling } from "./Theme/theme.Alerts"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -82,5 +83,6 @@ const theme = new Theme(BaseTheme, {
   .addStyles(HeadingStyling)
   .addStyles(ParagraphStyling)
   .addStyles(BoxStyling)
+  .addStyles(AlertStyling)
 
 export default theme.get
