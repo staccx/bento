@@ -8,10 +8,10 @@ import {
   Wrapper,
   Box,
   Heading,
-  Divider
+  Divider,
+  Alert
 } from "@staccx/base"
 import { removeWhitespace } from "@staccx/formatting"
-import ValidationError from "./replace/ValidationError"
 
 const Form = props => {
   const {
@@ -57,7 +57,9 @@ const Form = props => {
           />
           {errors.accountNumber &&
             touched.accountNumber && (
-              <ValidationError>{errors.accountNumber}</ValidationError>
+              <Alert type="warning" variant="error">
+                {errors.accountNumber}
+              </Alert>
             )}
         </Box>
         {!isSubmitting && (
