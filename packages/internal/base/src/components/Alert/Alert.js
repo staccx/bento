@@ -75,9 +75,9 @@ const colors = ({ type }) => {
   }
 }
 
-const Alert = ({ children, type }) => {
+const Alert = ({ children, type, ...restProps }) => {
   return (
-    <AlertElement type={type} role="alert">
+    <AlertElement type={type} role="alert" {...restProps}>
       <Flag small img={<Icon type={type} />}>
         {children}
       </Flag>
