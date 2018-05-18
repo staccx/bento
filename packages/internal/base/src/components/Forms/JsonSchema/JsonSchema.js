@@ -96,6 +96,7 @@ class JsonSchema extends React.Component {
         ArrayFieldTemplate={ArrayFieldTemplate}
         ObjectFieldTemplate={ObjectFieldTemplate}
         FieldTemplate={CustomFieldTemplate}
+        className={this.props.className}
       >
         <Button type={"submit"}>Submit</Button>
       </Form>

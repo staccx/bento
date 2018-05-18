@@ -1,6 +1,7 @@
 import React, { Component } from "react"
+import styled from "styled-components"
 import { JsonSchema, Layout, Wrapper } from "@staccx/base"
-import { ThemeProxyProvider } from "@staccx/theme"
+import { ThemeProxyProvider, spacing } from "@staccx/theme"
 import theme from "./theme.js"
 
 const schema = {
@@ -8,11 +9,13 @@ const schema = {
   properties: {
     mobilephone: {
       type: "string",
-      title: "Mobiltelefon"
+      title: "Mobiltelefon",
+      format: "tel"
     },
     email: {
       type: "string",
-      title: "E-post"
+      title: "E-post",
+      format: "email"
     },
     funding: {
       type: "array",
@@ -20,7 +23,8 @@ const schema = {
       items: {
         type: "string",
         enum: ["salary", "gift", "savings", "property"]
-      }
+      },
+      uniqueItems: true
     },
     "Huk av kun dersom dette gjelder deg:": {
       type: "object",
@@ -53,16 +57,12 @@ const schema = {
       properties: {
         electronicDocumentation: {
           type: "boolean",
-          title: "Samtykker til mottak av elektronisk kommunikasjon"
+          title: "Jeg samtykker til mottak av elektronisk kommunikasjon"
         },
         newsAndAdvertisment: {
           type: "boolean",
           title:
-            "Samtykker til mottak av av tilbud og nyheter om andre produkter fra Nordsjøbanken."
-        },
-        confirmed: {
-          type: "boolean",
-          title: "Bekreftet"
+            "Jeg samtykker til mottak av av tilbud og nyheter om andre produkter fra Nordsjøbanken."
         }
       }
     }
@@ -81,13 +81,17 @@ const uiSchema = {
     }
   },
   mobilephone: {
-    "ui:widget": "phone"
+    "ui:widget": "phone",
+    "ui:placeholder": "000 00 000"
   },
   email: {
-    "ui:widget": "email"
+    "ui:widget": "email",
+    "ui:placeholder": "eksempel@eksempel.com"
   },
-  url: {
-    "ui:widget": "text"
+  funding: {
+    "ui:widget": "checkboxes",
+    "ui:title": "Hva er opprinnelsen til midlene som spares?"
+    // "ui:description": "The best password"
   }
 }
 
@@ -96,11 +100,21 @@ class App extends Component {
     return (
       <ThemeProxyProvider theme={theme}>
         <Wrapper size="medium">
-          <JsonSchema schema={schema} uiSchema={uiSchema} />
+          <Form schema={schema} uiSchema={uiSchema} />
         </Wrapper>
       </ThemeProxyProvider>
     )
   }
 }
+
+const Form = styled(JsonSchema)`
+  > div {
+    padding-top: ${spacing.large};
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+  }
+`
 
 export default App
