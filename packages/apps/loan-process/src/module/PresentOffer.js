@@ -1,9 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { ItemGroup, Odometer, Wrapper } from "@staccx/base"
+import { Button, ItemGroup, Odometer, Wrapper } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
-import Dropdown from "../../components/Dropdown"
+import Dropdown from "./replace/Dropdown"
 import { GrayBox, Halves, PaddedContainer, StepHeading } from "./replace/Styles"
 import {
   OfferTable,
@@ -13,110 +13,56 @@ import {
   OfferTableText,
   OfferTableTotal
 } from "./replace/Styles.OfferTable"
-import PickLoanSum from "./ApplicationFormOffer.PickLoanSum"
-import Button from "../../components/button/Button"
-import Tile from "../../components/Tile"
-import SystemText from "../../components/SystemText"
-import withTasks from "../../hoc/withTasks"
-import withLoanApplication from "../../hoc/withLoanApplication"
-import withApp from "../../hoc/withApp"
-import withSanity from "../../hoc/withSanity"
+import PickLoanSum from "./PresentOffer.PickLoanSum"
+import Tile from "./replace/Tile"
 import { spacing } from "@staccx/theme"
-
-const reduceMonthlyPayment = (accumulator, currentItem) => {
-  return accumulator + currentItem.monthlyPayment
-}
 
 class PresentOffer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      customAmount: false,
-      amount: 0,
-      time: 3,
+      isCustomAmount: false,
+      amount: this.props.loanAmount,
+      selectedDuration: this.props.repaymentPeriod,
       initialized: false,
       isValid: true
     }
     this.handleSetCustom = this.handleSetCustom.bind(this)
-    this.handleChangeLoanAmount = this.handleChangeLoanAmount.bind(this)
+    this.handleChangeLoanDuration = this.handleChangeLoanDuration.bind(this)
     this.handleCustomAmount = this.handleCustomAmount.bind(this)
   }
 
-  componentWillMount() {
-    this.props.getPaymentPlan()
-    this.props
-      .getProduct(this.props.loanApplication.productCode)
-      .then(console.log)
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (!this.state.initialized) {
-      if (nextProps.application) {
-        const { data } = nextProps.application
-        if (data) {
-          this.setState(
-            {
-              amount: data.loanAmount,
-              time: data.repaymentPeriod,
-              initialized: true
-            },
-            () => this.props.getPaymentPlan(this.state.amount, this.state.time)
-          )
-        }
-      }
-    }
-  }
-
   handleSetCustom(customAmount) {
+    console.log(customAmount)
     this.setState(
       {
-        customAmount: customAmount === "other"
+        isCustomAmount: customAmount === "other"
       },
       () =>
-        this.handleCustomAmount(
-          this.state.customAmount
-            ? this.state.amount
-            : this.props.application.data.loanAmount
-        )
+        this.handleCustomAmount(this.state.amount)
     )
   }
 
-  handleChangeLoanAmount(duration) {
-    this.setState({ time: duration }, () => {
-      this.props.getPaymentPlan(this.state.amount, duration)
-      this.props.setNumberOfTerms(duration)
+  handleChangeLoanDuration(duration) {
+    this.setState({ selectedDuration: duration }, () => {
+      this.props.handleChangeLoanDuration(duration)
     })
   }
 
   handleCustomAmount(value) {
-    const { application } = this.props
     this.setState({ amount: value }, () => {
-      if (value >= 10000 && value <= application.data.loanAmount) {
-        this.props.getPaymentPlan(value, this.state.time)
-        this.props.setLoanAmount(value)
+      this.props.handleChangeCustomAmount(value)
+      if (value >= this.props.minAmount && value <= this.props.maxAmount) {
         this.setState({ isValid: true })
       } else {
-        console.log("amount out of bounds")
         this.setState({ isValid: false })
       }
     })
   }
 
   respondToOffer(accepted) {
-    const task = this.props.taskReducer[
-      this.props.taskTypes.TASK_TYPE_ACCEPT_LOAN_OFFER
-    ]
-    if (!task) {
-      console.warn("no task. Why are you here?")
-      return
-    }
-    if (!task.IsAcceptOfferTask) {
-      console.warn("Only accept offer tasks can be completed here")
-      return
-    }
-
-    const { amount: loanAmount, time: repaymentPeriod } = this.state
-    return this.props.completeTask(task, {
+    const { amount: loanAmount, selectedDuration: repaymentPeriod } = this.state
+    return this.props.onComplete({
       accepted,
       loanAmount,
       repaymentPeriod
@@ -124,162 +70,117 @@ class PresentOffer extends React.Component {
   }
 
   render() {
-    const {
-      payment,
-      guarantor,
-      loanApplication,
-      taskReducer,
-      sanity
-    } = this.props
-    const task = taskReducer[this.props.taskTypes.TASK_TYPE_ACCEPT_LOAN_OFFER]
-
-    const { customAmount, isValid, amount } = this.state
-
-    const { term } = payment
-    const { application } = loanApplication
-
-    const { data } = application
-
-    if (!task || !data) {
-      return null
-    }
-
-    const { company, loanAmount, repaymentPeriod } = data
     return (
       <div>
-        {application &&
-          term &&
-          task && (
-            <Wrapper size="medium" breakout>
-              <TileBox>
-                <PaddedContainer large>
-                  <StepHeading>
-                    <SystemText systemKey="LOAN_OFFER" />
-                  </StepHeading>
-                  <p>
-                    <SystemText systemKey="LOAN_OFFER_UNTIL" />{" "}
-                    <strong>{formatCurrency(loanAmount || 0)}</strong>
-                  </p>
-                </PaddedContainer>
-                <PickLoanSum
-                  loanAmount={amount}
-                  repaymentPeriod={repaymentPeriod}
-                  customAmount={customAmount}
-                  handleRadio={this.handleSetCustom}
-                  handleCustomAmount={this.handleCustomAmount}
-                  min={10000}
-                  max={loanAmount}
-                />
-                <PaddedContainer large>
-                  <OfferTable>
-                    <tbody>
-                      <tr>
-                        <OfferTableText>
-                          <SystemText systemKey="LOAN_DURATION" />
-                        </OfferTableText>
-                        <OfferTableData>
-                          <OfferTableDurations>
-                            <OfferTableDurationsItem>
-                              {sanity.product && (
-                                <StyledDropdown
-                                  items={sanity.product.termSettings}
-                                  id={"select-loan-duration"}
-                                  selectedItem={
-                                    this.props.loanApplication.numberOfTerms
-                                  }
-                                  postfixItems="mnd"
-                                  onChange={value =>
-                                    this.handleChangeLoanAmount(value)
-                                  }
-                                />
-                              )}
-                            </OfferTableDurationsItem>
-                          </OfferTableDurations>
-                        </OfferTableData>
-                      </tr>
-                      <tr>
-                        <OfferTableText>
-                          <SystemText systemKey="MONTHLY_FEE" />
-                        </OfferTableText>
-                        <OfferTableData>
-                          <Odometer number={term.monthlyFees} size={14} />
-                        </OfferTableData>
-                      </tr>
-                      <tr>
-                        <OfferTableText>
-                          <SystemText systemKey="TOTAL_PAYBACK" />
-                        </OfferTableText>
-                        <OfferTableData>
-                          <Odometer
-                            number={parseInt(
-                              payment.terms.reduce(reduceMonthlyPayment, 0),
-                              10
-                            )}
-                            size={14}
+        <Wrapper size="medium" breakout>
+          <TileBox>
+            <PaddedContainer large>
+              <StepHeading>{this.props.headingText}</StepHeading>
+              <p>
+                {this.props.maxLoanAmountText}{" "}
+                <strong>{formatCurrency(this.props.maxAmount || 0)}</strong>
+              </p>
+            </PaddedContainer>
+            <PickLoanSum
+              loanAmount={
+                this.state.isCustomAmount
+                  ? this.state.amount
+                  : this.props.loanAmount
+              }
+              repaymentPeriod={this.props.repaymentPeriod}
+              isCustomAmount={this.state.isCustomAmount}
+              handleRadio={this.handleSetCustom}
+              handleCustomAmount={this.handleCustomAmount}
+              min={this.props.minAmount}
+              max={this.props.maxAmount}
+              chooseLoanAmountText={"Velg sum"}
+              otherAmountText={"Annen sum"}
+            />
+            <PaddedContainer large>
+              <OfferTable>
+                <tbody>
+                  <tr>
+                    <OfferTableText>
+                      {this.props.loanDurationText}
+                    </OfferTableText>
+                    <OfferTableData>
+                      <OfferTableDurations>
+                        <OfferTableDurationsItem>
+                          <StyledDropdown
+                            items={this.props.potentialDurations}
+                            id={"select-loan-duration"}
+                            selectedItem={this.state.selectedDuration}
+                            postfixItems="mnd"
+                            onChange={value =>
+                              this.handleChangeLoanDuration(value)
+                            }
                           />
-                        </OfferTableData>
-                      </tr>
-                      <OfferTableTotal>
-                        <OfferTableText>
-                          <SystemText systemKey="PAY_MONTHLY" />
-                        </OfferTableText>
-                        <OfferTableData>
-                          <Odometer number={term.monthlyPayment} size={14} />
-                        </OfferTableData>
-                      </OfferTableTotal>
-                    </tbody>
-                  </OfferTable>
-                </PaddedContainer>
-                {company && (
-                  <GrayBox>
-                    <Halves>
-                      <div>
-                        <h4>
-                          <SystemText systemKey="COMPANY_INFO" />
-                        </h4>
-                        <OfferInfoList>
-                          <li>{company.name}</li>
-                          <li>
-                            <SystemText systemKey="ORG_NR_SHORT" />{" "}
-                            {company.orgNo}
-                          </li>
-                        </OfferInfoList>
-                      </div>
-                      {guarantor && (
-                        <div>
-                          <h4>Kausjonist</h4>
-                          <OfferInfoList>
-                            <li>{guarantor.name}</li>
-                            <li>
-                              <SystemText systemKey="PERSONAL_ID_NUMBER" />
-                              {guarantor.ssn}
-                            </li>
-                          </OfferInfoList>
-                        </div>
-                      )}
-                    </Halves>
-                  </GrayBox>
-                )}
-              </TileBox>
-              <ItemGroup>
-                <Button
-                  disabled={!isValid}
-                  onClick={() => this.respondToOffer(true)}
-                >
-                  <SystemText systemKey="CONTINUE_NOW" />
-                </Button>
-                <Button
-                  onClick={() =>
-                    this.respondToOffer(false).then(() =>
-                      this.props.navigate("/application/👎")
-                    )
-                  }
-                >
-                  <SystemText systemKey="NO_THANK_YOU" />
-                </Button>
-              </ItemGroup>
-            </Wrapper>
-          )}
+                        </OfferTableDurationsItem>
+                      </OfferTableDurations>
+                    </OfferTableData>
+                  </tr>
+                  <tr>
+                    <OfferTableText>{this.props.monthlyFeeText}</OfferTableText>
+                    <OfferTableData>
+                      <Odometer number={this.props.monthlyFees} size={14} />
+                    </OfferTableData>
+                  </tr>
+                  <tr>
+                    <OfferTableText>{this.props.paybackText}</OfferTableText>
+                    <OfferTableData>
+                      <Odometer number={this.props.paybackTotal} size={14} />
+                    </OfferTableData>
+                  </tr>
+                  <OfferTableTotal>
+                    <OfferTableText>{this.props.payMonthlyText}</OfferTableText>
+                    <OfferTableData>
+                      <Odometer number={this.props.monthlyPayment} size={14} />
+                    </OfferTableData>
+                  </OfferTableTotal>
+                </tbody>
+              </OfferTable>
+            </PaddedContainer>
+            {this.props.company && (
+              <GrayBox>
+                <Halves>
+                  <div>
+                    <h4>{this.props.companyHeadingPrefixText}</h4>
+                    <OfferInfoList>
+                      <li>{this.props.company.name}</li>
+                      <li>
+                        {this.props.orgNumberPrefixText}{" "}
+                        {this.props.company.orgNo}
+                      </li>
+                    </OfferInfoList>
+                  </div>
+                  {this.props.guarantor && (
+                    <div>
+                      <h4>Kausjonist</h4>
+                      <OfferInfoList>
+                        <li>{this.props.guarantor.name}</li>
+                        <li>
+                          {this.props.nationalIdPrefixText}
+                          {this.props.guarantor.ssn}
+                        </li>
+                      </OfferInfoList>
+                    </div>
+                  )}
+                </Halves>
+              </GrayBox>
+            )}
+          </TileBox>
+          <ItemGroup>
+            <Button
+              disabled={!this.props.isValid}
+              onClick={() => this.respondToOffer(true)}
+            >
+              {this.props.acceptOfferButtonText}
+            </Button>
+            <Button onClick={() => this.respondToOffer(false)}>
+              {this.props.rejectOfferButtonText}
+            </Button>
+          </ItemGroup>
+        </Wrapper>
       </div>
     )
   }
@@ -309,14 +210,36 @@ const OfferInfoList = styled.ul`
 `
 
 PresentOffer.propTypes = {
-  application: PropTypes.object,
-  term: PropTypes.object,
-  payment: PropTypes.object,
-  task: PropTypes.object,
-  company: PropTypes.object,
-  guarantor: PropTypes.object
+  acceptOfferButtonText: PropTypes.string,
+  company: PropTypes.shape({
+    name: PropTypes.string,
+    orgNumber: PropTypes.string
+  }),
+  companyHeadingPrefixText: PropTypes.string,
+  guarantor: PropTypes.any,
+  handleChangeCustomAmount: PropTypes.func,
+  handleChangeLoanDuration: PropTypes.func,
+  headingText: PropTypes.string,
+  isValid: PropTypes.bool,
+  loanAmount: PropTypes.number.isRequired,
+  loanDurationText: PropTypes.string,
+  maxAmount: PropTypes.number,
+  maxLoanAmountText: PropTypes.string,
+  minAmount: PropTypes.number,
+  monthlyFeeText: PropTypes.string,
+  monthlyFees: PropTypes.number,
+  monthlyPayment: PropTypes.number,
+  nationalIdPrefixText: PropTypes.string,
+  onComplete: PropTypes.func.isRequired,
+  onRejected: PropTypes.func.isRequired,
+  orgNumberPrefixText: PropTypes.string,
+  payMonthlyText: PropTypes.string,
+  paybackText: PropTypes.string,
+  paybackTotal: PropTypes.number.isRequired,
+  potentialDurations: PropTypes.array,
+  rejectOfferButtonText: PropTypes.string,
+  repaymentPeriod: PropTypes.number.isRequired,
+  selectedDuration: PropTypes.any
 }
 
-export default withSanity(
-  withApp(withLoanApplication(withTasks(PresentOffer)))
-)
+export default PresentOffer

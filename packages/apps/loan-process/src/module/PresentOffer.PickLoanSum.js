@@ -7,19 +7,18 @@ import { CurrencyInput, RadioButton } from "@staccx/base"
 import { formatCurrency, removeWhitespace } from "@staccx/formatting"
 import { BounceIn, BounceOut } from "@staccx/animations"
 import { color, spacing } from "@staccx/theme"
-import { toSystemText } from "../../utils/toSystemText"
-import withLoanApplication from "../../hoc/withLoanApplication"
-import ValidationError from "../../components/validation/ValidationError"
-import SystemText from "../../components/SystemText"
+import ValidationError from "./replace/ValidationError"
 
 const PickLoanSum = props => {
   const {
     loanAmount,
     max,
     min,
-    customAmount,
+    isCustomAmount,
     handleRadio,
     handleCustomAmount,
+    chooseLoanAmountText,
+    otherAmountText,
     handleChange,
     handleBlur,
     resetForm,
@@ -39,20 +38,33 @@ const PickLoanSum = props => {
   return (
     <Container>
       <PickAmounts visible>
-        <legend>{toSystemText("CHOOSE_LOAN_AMOUNT", "Velg lånebeløp")}</legend>
+        <legend>{chooseLoanAmountText}</legend>
         <InlineRadioButtons>
           <InlineRadioButtonsItem>
             <RadioButton
               key={"userValue"}
               id="userValue"
-              value={max.toString()}
+              value={loanAmount.toString()}
               group={"loanSum"}
               defaultChecked
-              onChange={_handleRadio}
+              onChange={_handleChange}
             >
-              {formatCurrency(max)}
+              {formatCurrency(loanAmount)}
             </RadioButton>
           </InlineRadioButtonsItem>
+          {max > loanAmount && (
+            <InlineRadioButtonsItem>
+              <RadioButton
+                key={"maxValue"}
+                id="maxValue"
+                value={max.toString()}
+                group={"loanSum"}
+                onChange={_handleChange}
+              >
+                {formatCurrency(max)}
+              </RadioButton>
+            </InlineRadioButtonsItem>
+          )}
           <InlineRadioButtonsItem>
             <RadioButton
               key={"otherValue"}
@@ -61,15 +73,15 @@ const PickLoanSum = props => {
               group={"loanSum"}
               onChange={_handleRadio}
             >
-              <SystemText systemKey="OTHER_AMOUNT" />
+              {otherAmountText}
             </RadioButton>
           </InlineRadioButtonsItem>
         </InlineRadioButtons>
       </PickAmounts>
-      {customAmount && (
-        <UserDefinedAmount visible={customAmount}>
+      {isCustomAmount && (
+        <UserDefinedAmount visible={isCustomAmount}>
           <CurrencyInput
-            label={toSystemText("CHOOSE_LOAN_AMOUNT", "Velg lånebeløp")}
+            label={chooseLoanAmountText}
             placeholder="0"
             id="amount"
             max={max}
@@ -130,26 +142,36 @@ PickLoanSum.defaultProps = {
 }
 
 PickLoanSum.propTypes = {
-  customAmount: PropTypes.bool,
+  chooseLoanAmountText: PropTypes.string.isRequired,
+  isCustomAmount: PropTypes.bool,
+  errors: PropTypes.any,
+  handleBlur: PropTypes.any,
+  handleChange: PropTypes.any,
+  handleCustomAmount: PropTypes.func.isRequired,
   handleRadio: PropTypes.func.isRequired,
-  handleCustomAmount: PropTypes.func.isRequired
+  loanAmount: PropTypes.any,
+  max: PropTypes.any,
+  min: PropTypes.any,
+  otherAmountText: PropTypes.any,
+  resetForm: PropTypes.any
 }
 
 export default withFormik({
   mapPropsToValues: props => ({
-    amount: props.loanAmount
+    amount: props.loanAmount,
+    chooseLoanAmountText: props.chooseLoanAmountText
   }),
 
   validationSchema: props =>
     Yup.object().shape({
       amount: Yup.number("NaN bread")
-        .required("Cannot be empty")
+        .required(props.requiredText)
         .transform((currentValue, originalValue) => {
           return parseInt(removeWhitespace(originalValue.toString()), 10)
         })
         .integer()
-        .min(props.min, toSystemText("SUM_TOO_LOW", "Lav sum"))
-        .max(props.max, toSystemText("SUM_TOO_HIGH", "Høy sum"))
+        .min(props.min, props.sumTooLowText)
+        .max(props.max, props.sumTooHighText)
     }),
   handleSubmit: (values, { setSubmitting, props }) => {
     setTimeout(() => {
@@ -159,4 +181,4 @@ export default withFormik({
       }
     }, 200)
   }
-})(withLoanApplication(PickLoanSum))
+})(PickLoanSum)

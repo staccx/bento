@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {spacing, color} from "@staccx/theme"
+import { spacing, color } from "@staccx/theme"
 
 export const OfferTable = styled.table`
   width: 100%;
