@@ -22,9 +22,14 @@ const schema = {
       title: "Hva er opprinnelsen til midlene som spares?",
       items: {
         type: "string",
-        enum: ["salary", "gift", "savings", "property"]
-      },
-      uniqueItems: true
+        enum: ["salary", "gift", "savings", "property"],
+        enumNames: [
+          "Lønn/Pensjon",
+          "Gave/arv",
+          "Oppsparte midler",
+          "Salg av eiendom"
+        ]
+      }
     },
     "Huk av kun dersom dette gjelder deg:": {
       type: "object",
