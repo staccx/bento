@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { ThemeProvider, injectGlobal } from "styled-components"
 import PropTypes from "prop-types"
+import BaseTheme from "./baseTheme"
 
 /**
  * NOTE : https://github.com/styled-components/styled-components/issues/1333.
@@ -22,6 +23,10 @@ ThemeWrapper.propTypes = {
   resets: PropTypes.string,
   theme: PropTypes.shape({
     global: PropTypes.any,
-    reset: PropTypes.string
+    reset: PropTypes.func
   }).isRequired
+}
+
+ThemeWrapper.defaultProps = {
+  theme: BaseTheme
 }
