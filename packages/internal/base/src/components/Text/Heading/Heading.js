@@ -60,7 +60,7 @@ const Heading = ({ level, children, className, ...restProps }) => {
       )
 
     default:
-      break
+      return null // 👈 we always have to return something
   }
 }
 

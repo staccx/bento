@@ -1,35 +1,35 @@
 import React from "react"
-import { Wrapper, Heading, Paragraph, Box } from "@staccx/base"
-import { removeWhitespace } from "@staccx/formatting"
-import styled from "styled-components"
-import SystemText from "../../components/SystemText"
-import Signers from "./RegisterSigners.SignerTable"
-import Button from "../../components/button/Button"
-import withLoanApplication from "../../hoc/withLoanApplication"
-import withTasks from "../../hoc/withTasks"
-import { toSystemText } from "../../utils/toSystemText"
-import { spacing } from "@staccx/theme"
+import PropTypes from "prop-types"
+import {
+  Box,
+  Button,
+  CheckBox,
+  Heading,
+  Input,
+  NationalIdInput,
+  Paragraph,
+  Text,
+  Wrapper
+} from "@staccx/base"
+import { removeWhitespace, formatName } from "@staccx/formatting"
+import styled, { keyframes } from "styled-components"
+import { Field, FieldArray, Form, Formik } from "formik"
+import Yup from "yup"
+import { color, spacing } from "@staccx/theme"
+import { norwegian } from "national-id"
 
-const nanoid = require("nanoid")
+import ValidationError from "./replace/ValidationError"
 
 class RegisterSigners extends React.Component {
   constructor() {
     super()
 
     this.handleSignerChange = this.handleSignerChange.bind(this)
-    this.complete = this.complete.bind(this)
-    this.toggleRow = this.toggleRow.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
     this.initState = this.initState.bind(this)
-    this.handleEmailChange = this.handleEmailChange.bind(this)
-    this.handleNationalIdChange = this.handleNationalIdChange.bind(this)
-    this.handleNameIdChange = this.handleNameIdChange.bind(this)
-    this.handleValidation = this.handleValidation.bind(this)
-    this.changeProp = this.changeProp.bind(this)
-    this.addPerson = this.addPerson.bind(this)
 
     this.state = {
-      signers: null,
-      showErrors: false
+      signers: [],
     }
   }
 
@@ -42,167 +42,177 @@ class RegisterSigners extends React.Component {
   }
 
   initState(props) {
-    if (this.state.signers === null) {
-      const { loanApplication } = props
-      if (loanApplication) {
-        const { application } = loanApplication
-        if (application) {
-          if (
-            application.data &&
-            application.data.authorization.authorizationPerson.length
-          ) {
-            let signers = {}
-            application.data.authorization.authorizationPerson.map(person => {
-              signers[person.id] = {
-                id: person.id,
-                checked: false,
-                email: "",
-                nationalId: "",
-                name: person.name,
-                positions: person.positions,
-                isValid: false
-              }
-            })
-            this.setState({ signers })
-          }
-        }
-      }
-    }
-  }
-
-  changeProp(id, prop, value) {
-    this.setState(
-      {
-        signers: {
-          ...this.state.signers,
-          [id]: {
-            ...this.state.signers[id],
-            [prop]: value
-          }
-        },
-        showErrors: false
-      },
-      this.handleSignerChange
-    )
-  }
-
-  toggleRow(id) {
-    this.changeProp(id, "checked", !this.state.signers[id].checked)
-  }
-
-  handleEmailChange(event, id) {
-    this.changeProp(id, "email", event.target.value)
-  }
-
-  handleNationalIdChange(event, id) {
-    this.changeProp(id, "nationalId", removeWhitespace(event.target.value))
-  }
-
-  handleNameIdChange(event, id) {
-    this.changeProp(id, "name", event.target.value)
-  }
-
-  handleValidation(id, isValid) {
-    if (this.state.signers[id].isValid !== isValid) {
-      setTimeout(() => this.changeProp(id, "isValid", isValid))
+    if (!this.state.signers.length) {
+      this.setState({
+        signers: props.people.map(person => ({
+          id: person.id,
+          checked: false,
+          email: "",
+          nationalId: "",
+          name: person.name,
+          positions: person.positions
+        }))
+      })
     }
   }
 
   handleSignerChange() {
-    this.props.setSigners(this.state.signers)
+    if (this.props.onSignerChange) {
+      this.props.onSignerChange(this.state.signers)
+    }
   }
 
-  addPerson() {
-    const id = nanoid()
-    this.setState({
-      signers: {
-        ...this.state.signers,
-        [id]: {
-          checked: true,
-          email: "",
-          nationalId: "",
-          positions: [],
-          name: toSystemText("NEW_PERSON", "Ny person"),
-          id,
-          custom: true,
-          isValid: false
-        }
-      }
-    })
-  }
-
-  complete() {
-    const task = this.props.taskReducer[
-      this.props.taskTypes.TASK_TYPE_REGISTER_SIGNERS
-    ]
-    if (!task) {
-      console.warn("no task. Why are you here?")
-      return
-    }
-    const signers = Object.keys(this.props.loanApplication.signers)
-      .map(key => {
-        const person = this.props.loanApplication.signers[key]
-        const { positions, custom, checked, ...props } = person
-        if (checked) {
-          return {
-            ...props
-          }
-        }
-      })
-      .filter(p => p)
-
-    const isValid =
-      signers.length > 0 &&
-      signers.every(signer => {
-        return signer.isValid
-      })
-
-    if (isValid) {
-      this.props
-        .completeTask(task, { signers })
-        .then(console.log)
-        .catch(console.error)
-    } else {
-      this.setState({ showErrors: true })
-    }
+  onSubmit(values, errors) {
+    console.log("errors", errors)
+    this.props.onComplete(values)
   }
 
   render() {
-    const { application } = this.props.loanApplication
-    if (!application || !application.data) {
-      return null
-    }
+    const signerValidationSchema = Yup.object().shape({
+      email: Yup.string()
+        .email(this.props.errorEmailInvalidText)
+        .required(this.props.errorEmailRequiredText),
+      nationalId: Yup.string()
+        .test(
+          "nationalId",
+          this.props.errorNationalIdInvalidText,
+          (val, other) => {
+            return norwegian.isValid(removeWhitespace(val))
+          }
+        )
+        .required(this.props.errorNationalIdRequiredText)
+    })
+
+    const validationSchema = Yup.object().shape({
+      signers: Yup.array().of(signerValidationSchema)
+    })
 
     return (
       <Wrapper size="medium" breakout>
         <Heading variant="centered" level={1}>
-          <SystemText systemKey="WHO_TO_SIGN" />
+          {this.props.headingText}
         </Heading>
         <Paragraph variant="lead">
-          <SystemText systemKey="REGISTER_SIGNERS_LEAD" />
-          <div>
-            <em>{application.data.authorization.signatureText}</em>
-          </div>
+          {this.props.leadText}
+          <em>{this.props.signatureText}</em>
         </Paragraph>
         <Box variant="tileBox">
           <Box variant="paddingVertical">
-            <Signers
-              showErrors={this.state.showErrors}
-              onValidated={this.handleValidation}
-              signers={this.state.signers}
-              onRowChanged={this.toggleRow}
-              onEmailChange={this.handleEmailChange}
-              onNationalIdChange={this.handleNationalIdChange}
-              onNameChange={this.handleNameIdChange}
-            />
+            <SignerTable>
+              <SignerTableHead>
+                <FirstColumn>
+                  <Text variant="visuallyHidden">{this.props.chooseText}</Text>
+                </FirstColumn>
+                <div>{this.props.tableHeaderNameText}</div>
+                <div>{this.props.tableHeaderRoleText}</div>
+              </SignerTableHead>
+              <Formik
+                initialValues={{
+                  signers: this.state.signers
+                }}
+                validationSchema={validationSchema}
+                onSubmit={this.onSubmit}
+                render={({ values, errors, submitCount }) => (
+                  <Form>
+                    <FieldArray
+                      name="signers"
+                      render={({ insert, remove, push }) => (
+                        <div>
+                          {values.signers.length > 0 &&
+                            values.signers.map((signer, index) => (
+                              <SignerTableRow key={index}>
+                                <FirstColumn className="col">
+                                  <Field
+                                    render={({ field }) => (
+                                      <CheckBox
+                                        group={`signer.${index}`}
+                                        id={`signers.${index}.checked`}
+                                        {...field}
+                                        defaultChecked={signer.checked}
+                                      >
+                                        {formatName(signer.name)}
+                                      </CheckBox>
+                                    )}
+                                    name={`signers.${index}.checked`}
+                                  />
+                                </FirstColumn>
+                                <SignerFields visible={signer.checked}>
+                                  <div className="col">
+                                    <Field
+                                      render={({ field }) => (
+                                        <NationalIdInput
+                                          id={`signers.${index}.nationalId`}
+                                          placeholder="12345678903"
+                                          label={"Fødselsnummer"}
+                                          {...field}
+                                        />
+                                      )}
+                                      name={`signers.${index}.nationalId`}
+                                    />
+                                    {submitCount > 0 &&
+                                      errors.signers &&
+                                      errors.signers[index] &&
+                                      errors.signers[index].nationalId && (
+                                        <ValidationError>
+                                          {errors.signers[index].nationalId}
+                                        </ValidationError>
+                                      )}
+                                  </div>
+                                  <div className="col">
+                                    <Field
+                                      name={`signers.${index}.email`}
+                                      render={({ field /* _form */ }) => (
+                                        <Input
+                                          label={"Email"}
+                                          id={`signers.${index}.email`}
+                                          {...field}
+                                          placeholder="kari@nordmann.no"
+                                        />
+                                      )}
+                                    />
+                                    {errors.signers &&
+                                      errors.signers[index] &&
+                                      errors.signers[index].email && (
+                                        <ValidationError>
+                                          {errors.signers[index].email}
+                                        </ValidationError>
+                                      )}
+                                  </div>
+                                  <div className="col">
+                                    <Button
+                                      type="button"
+                                      className="secondary"
+                                      onClick={() => remove(index)}
+                                    >
+                                      X
+                                    </Button>
+                                  </div>
+                                </SignerFields>
+                              </SignerTableRow>
+                            ))}
+                          <Button
+                            onClick={() =>
+                              push({
+                                checked: true,
+                                email: "",
+                                nationalId: "",
+                                positions: [],
+                                name: this.props.newPersonDefaultName
+                              })
+                            }
+                          >
+                            Legg til
+                          </Button>
+                        </div>
+                      )}
+                    />
+                    <Button type="submit">{this.props.continueText}</Button>
+                  </Form>
+                )}
+              />
+            </SignerTable>
           </Box>
-          <StyledButton variant={"subtle"} onClick={this.addPerson}>
-            + <SystemText systemKey="ADD_PERSON" />
-          </StyledButton>
         </Box>
-        <Button onClick={this.complete}>
-          <SystemText systemKey="CONTINUE_NOW" />
-        </Button>
       </Wrapper>
     )
   }
@@ -213,4 +223,86 @@ const StyledButton = styled(Button)`
   margin-bottom: ${spacing.medium};
 `
 
-export default withTasks(withLoanApplication(RegisterSigners))
+const SignerTable = styled.div`
+  width: 100%;
+`
+
+const SignerTableHead = styled.div`
+  text-align: left;
+`
+
+export const FirstColumn = styled.div`
+  width: 32px;
+  padding-left: 24px;
+  padding-right: 12px;
+  label {
+    width: 24px;
+    height: 24px;
+  }
+`
+
+const expand = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
+const Line = styled.hr`
+  border-top: 1px solid ${color.line};
+  border-bottom: 0;
+  border-right: 0;
+  border-left: 0;
+`
+
+const SignerFields = styled.div`
+  display: ${props => (props.visible ? "block" : "none")};
+  animation: ${props =>
+    props.animated ? expand + " .2s linear forwards" : "none"};
+
+  &:nth-child(even) {
+    border-top: 1px solid ${color.line};
+    border-bottom: 1px solid ${color.line};
+  }
+`
+const SignerTableRow = styled.div``
+
+export default RegisterSigners
+
+RegisterSigners.propTypes = {
+  addPersonText: PropTypes.string,
+  chooseText: PropTypes.string,
+  continueText: PropTypes.string,
+  errorEmailInvalidText: PropTypes.string,
+  errorEmailRequiredText: PropTypes.string,
+  errorNationalIdInvalidText: PropTypes.string,
+  errorNationalIdRequiredText: PropTypes.string,
+  headingText: PropTypes.string,
+  leadText: PropTypes.string,
+  newPersonDefaultName: PropTypes.string,
+  onComplete: PropTypes.func.isRequired,
+  onSignerChange: PropTypes.func,
+  people: PropTypes.array,
+  signatureText: PropTypes.string,
+  tableHeaderNameText: PropTypes.any,
+  tableHeaderRoleText: PropTypes.any
+}
+
+RegisterSigners.defaultProps = {
+  addPersonText: "Legg til",
+  chooseText: "Velg...",
+  continueText: "Fortsett",
+  errorEmailInvalidText: "Ikke gyldig epost",
+  errorEmailRequiredText: "Epost må fylles ut",
+  errorNationalIdInvalidText: "Fødselsnummer ikke gyldig",
+  errorNationalIdRequiredText: "Fødselsnummer må fylles ut",
+  headingText: "Registrèr signatører",
+  leadText: "Lead text",
+  newPersonDefaultName: "Ny person",
+  people: [],
+  signatureText: "Daglig leder ene og alene (tekst fra Brønnøysund"
+}

@@ -6,16 +6,14 @@
         "modules": false
       }
     ],
-    "stage-0",
-    "react"
+    "stage-0"
   ],
   "env": {
     "test": {
       "presets": [
         [
           "env"
-        ],
-        "react"
+        ]
       ]
     }
   }

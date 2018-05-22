@@ -40,6 +40,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard-jsx": "^5.0.0",
+    "formik": "^0.11.11",
     "jest": "^23.0.0-alpha.0",
     "prettier": "^1.10.2",
     "prop-types": "^15.6.1",
@@ -54,7 +55,8 @@
     "rollup-plugin-node-resolve": "^3.0.2",
     "rollup-plugin-postcss": "^1.1.0",
     "standard": "^11.0.1",
-    "styled-components": "^3.2.6"
+    "styled-components": "^3.2.6",
+    "yup": "^0.24.1"
   },
   "files": [
     "dist"
@@ -68,6 +70,9 @@
   "dependencies": {
     "@staccx/formatting": "^4.1.0",
     "formik": "^0.11.11",
+    "national-id": "^2.0.0",
+    "prop-types": "^15.6.1",
+    "uuid": "^3.2.1",
     "yup": "^0.24.1"
   }
 }
