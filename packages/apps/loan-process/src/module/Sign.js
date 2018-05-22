@@ -1,15 +1,17 @@
 import React from "react"
-import { Wrapper, Button, ExpandListItem } from "@staccx/base"
+import {
+  Wrapper,
+  Button,
+  ExpandListItem,
+  Heading,
+  Paragraph,
+  Box
+} from "@staccx/base"
 import SystemText from "../../components/SystemText"
 import {
   DocumentStatusContent,
   DocumentStatusItem,
-  DocumentStatusList,
-  Heading,
-  Illustration,
-  Lead,
-  Split,
-  TileBox
+  DocumentStatusList
 } from "../../Styles"
 import {
   OfferTable,
@@ -68,19 +70,19 @@ class Sign extends React.Component {
 
     return (
       <Wrapper size="medium" breakout>
-        <Illustration>
+        <Box variant="illustration">
           <img src="/assets/signing.svg" alt="" width="175" />
-        </Illustration>
-        <Heading>
+        </Box>
+        <Heading variant="centered" level={1}>
           <SystemText systemKey="SIGNING_PAGE_HEADING" />
         </Heading>
-        <Lead>
+        <Paragraph variant="lead">
           {data &&
             data.loanType && (
               <SystemText systemKey={`SIGNING_LEAD_${data.loanType}`} />
             )}
-        </Lead>
-        <TileBox>
+        </Paragraph>
+        <Box variant="tileBox">
           <ul>
             {data && (
               <ExpandListItem
@@ -155,14 +157,14 @@ class Sign extends React.Component {
                   <ExpandListItem
                     key={signer.id}
                     title={
-                      <Split>
+                      <Box variant="split">
                         <span>{`${signer.name || "Geir Nilsen"} (${
                           signer.email
                         })`}</span>{" "}
                         {/* TODO: ☝️ fjerne denne fallbacken */}
                         <span>{`${signedDocuments}/${orders.length}`}</span>
                         {/* TODO: ☝️ hente fra api */}
-                      </Split>
+                      </Box>
                     }
                     expanded={index === 0}
                     flush
@@ -204,7 +206,7 @@ class Sign extends React.Component {
                 )
               })}
           </ul>
-        </TileBox>
+        </Box>
       </Wrapper>
     )
   }

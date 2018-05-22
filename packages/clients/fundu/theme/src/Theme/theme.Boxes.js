@@ -34,6 +34,11 @@ export const BoxStyling = registerStyle(
       padding: 0;
       text-align: center;
       margin-bottom: ${spacing.medium};
+    `,
+    split: css`
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     `
   },
   BoxStyles.BOX
