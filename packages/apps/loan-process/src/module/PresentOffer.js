@@ -8,22 +8,14 @@ import {
   Wrapper,
   Box,
   Heading,
+  List,
   Select,
   SelectOption,
   SelectSelected
 } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
-import {
-  OfferTable,
-  OfferTableData,
-  OfferTableDurations,
-  OfferTableDurationsItem,
-  OfferTableText,
-  OfferTableTotal
-} from "./replace/Styles.OfferTable"
 import PickLoanSum from "./PresentOffer.PickLoanSum"
-import Tile from "./replace/Tile"
-import { spacing } from "@staccx/theme"
+import { color, spacing } from "@staccx/theme"
 
 class PresentOffer extends React.Component {
   constructor(props) {
@@ -81,7 +73,7 @@ class PresentOffer extends React.Component {
     return (
       <div>
         <Wrapper size="medium" breakout>
-          <TileBox>
+          <Box variant="tileBox">
             <Box variant="paddedContainerLarge">
               <Heading variant="stepHeading">{this.props.headingText}</Heading>
               <p>
@@ -163,30 +155,30 @@ class PresentOffer extends React.Component {
                 <Box variant="halves">
                   <div>
                     <h4>{this.props.companyHeadingPrefixText}</h4>
-                    <OfferInfoList>
+                    <List variant="offerInfoList">
                       <li>{this.props.company.name}</li>
                       <li>
                         {this.props.orgNumberPrefixText}{" "}
                         {this.props.company.orgNo}
                       </li>
-                    </OfferInfoList>
+                    </List>
                   </div>
                   {this.props.guarantor && (
                     <div>
                       <h4>Kausjonist</h4>
-                      <OfferInfoList>
+                      <List variant="offerInfoList">
                         <li>{this.props.guarantor.name}</li>
                         <li>
                           {this.props.nationalIdPrefixText}
                           {this.props.guarantor.ssn}
                         </li>
-                      </OfferInfoList>
+                      </List>
                     </div>
                   )}
                 </Box>
               </Box>
             )}
-          </TileBox>
+          </Box>
           <ItemGroup>
             <Button
               disabled={!this.props.isValid}
@@ -204,26 +196,32 @@ class PresentOffer extends React.Component {
   }
 }
 
-// const StyledDropdown = styled(Dropdown)`
-//   button {
-//     height: 24px;
-//     padding-right: 24px;
-//   }
-//   svg {
-//     right: 6px;
-//   }
-// `
-
-const TileBox = styled(Tile)`
-  padding: 0;
-  margin-bottom: ${spacing.small};
+const OfferTable = styled.table`
+  width: 100%;
+  table-layout: fixed;
 `
 
-const OfferInfoList = styled.ul`
-  margin-top: ${spacing.tiny};
+const OfferTableText = styled.td`
+  padding: ${spacing.tiny} 0;
+  border-bottom: 1px solid ${color.line};
+  text-align: left;
+`
 
-  li {
-    padding: 3px 0;
+const OfferTableData = styled(OfferTableText)`
+  text-align: right;
+`
+
+const OfferTableTotal = styled.tr`
+  font-weight: bold;
+`
+const OfferTableDurations = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`
+
+const OfferTableDurationsItem = styled.div`
+  &:not(:last-child) {
+    margin-right: ${spacing.small};
   }
 `
 

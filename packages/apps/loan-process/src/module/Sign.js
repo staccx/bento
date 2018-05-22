@@ -5,14 +5,11 @@ import {
   ExpandListItem,
   Heading,
   Paragraph,
-  Box
+  Box,
+  List
 } from "@staccx/base"
+import { spacing, color } from "@staccx/theme"
 import SystemText from "../../components/SystemText"
-import {
-  DocumentStatusContent,
-  DocumentStatusItem,
-  DocumentStatusList
-} from "../../Styles"
 import {
   OfferTable,
   OfferTableData,
@@ -169,17 +166,17 @@ class Sign extends React.Component {
                     expanded={index === 0}
                     flush
                   >
-                    <DocumentStatusList>
+                    <List variant="documentStatusList">
                       {orders.map(order => {
                         const showButton =
                           order.status !== SIGN_ORDER_STATUS_SIGNED ||
                           user.profile.sub !== order.signee
                         return (
                           <DocumentStatusItem key={order.requestId}>
-                            <DocumentStatusContent>
+                            <div>
                               <SystemText systemKey={order.documentType} />
-                            </DocumentStatusContent>
-                            <DocumentStatusContent>
+                            </div>
+                            <div>
                               {showButton && (
                                 <SignButton href={order.url}>
                                   <SystemText systemKey="SIGN" />
@@ -197,11 +194,11 @@ class Sign extends React.Component {
                                   />
                                 </Checkmark>
                               )}
-                            </DocumentStatusContent>
+                            </div>
                           </DocumentStatusItem>
                         )
                       })}
-                    </DocumentStatusList>
+                    </List>
                   </ExpandListItem>
                 )
               })}
@@ -223,6 +220,15 @@ const Checkmark = styled.svg`
   display: block;
   width: 24px;
   height: 24px;
+`
+
+const DocumentStatusItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  padding: ${spacing.small} ${spacing.medium};
+  border-top: 1px solid ${color.line};
 `
 
 export default withApp(withLoanApplication(withTasks(Sign)))

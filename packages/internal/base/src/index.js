@@ -27,7 +27,7 @@ import Heading, * as HeadingStyles from "./components/Text/Heading/Heading"
 import Paragraph, * as ParagraphStyles from "./components/Text/Paragraph/Paragraph"
 
 // Lists
-import List from "./components/Lists/List"
+import List, * as ListStyles from "./components/Lists/List"
 import SplitListItem from "./components/Lists/SplitList/SplitListItem"
 import ExpandListItem, * as ExpandListItemStyles from "./components/Lists/ExpandList/ExpandListItem"
 import LinkListItem, * as LinkListItemStyles from "./components/Lists/LinkList/LinkListItem"
@@ -133,6 +133,7 @@ export {
   LinkListItem,
   LinkListItemStyles,
   List,
+  ListStyles,
   Modal,
   ModalStyles,
   NationalIdInput,

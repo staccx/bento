@@ -1,16 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { themify } from "@staccx/theme"
 
-const ListUl = styled.ul`
+const List = ({ children, className, ...restProps }) => (
+  <ListUl className={className} {...restProps}>
+    {children}
+  </ListUl>
+)
+
+export const LIST = "LIST"
+
+export const ListUl = styled.ul`
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
+  ${themify(LIST)};
 `
-
-const List = ({ children, className }) => (
-  <ListUl className={className}>{children}</ListUl>
-)
 
 List.defaultProps = {
   className: ""
