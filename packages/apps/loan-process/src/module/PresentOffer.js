@@ -119,7 +119,9 @@ class PresentOffer extends React.Component {
                             selectedElement={SelectSelected}
                             placeHolderLabel={"Velg…"}
                             onChange={value =>
-                              this.handleChangeLoanDuration(value.text)
+                              this.handleChangeLoanDuration(
+                                value ? value.text : this.props.repaymentPeriod
+                              )
                             }
                           >
                             {this.props.potentialDurations.map(item => (
