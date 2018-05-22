@@ -43,6 +43,28 @@ export const BoxStyling = registerStyle(
     centeredContainer: css`
       text-align: center;
       width: 100%;
+    `,
+    grayBox: css`
+      padding: ${spacing.medium} ${spacing.large};
+      background-color: ${color.subtleHover};
+    `,
+    halves: css`
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: ${spacing.large};
+      grid-template-areas: "left right";
+      padding: 0;
+
+      @media (max-width: 735px) {
+        grid-gap: ${spacing.medium};
+      }
+      @media (max-width: 710px) {
+        grid-template-columns: 100%;
+        grid-template-areas: "one";
+      }
+    `,
+    paddedContainerLarge: css`
+      padding: ${spacing.large};
     `
   },
   BoxStyles.BOX

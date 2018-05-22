@@ -1,10 +1,18 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Button, ItemGroup, Odometer, Wrapper } from "@staccx/base"
+import {
+  Button,
+  ItemGroup,
+  Odometer,
+  Wrapper,
+  Box,
+  Heading,
+  Select,
+  SelectOption,
+  SelectSelected
+} from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
-import Dropdown from "./replace/Dropdown"
-import { GrayBox, Halves, PaddedContainer, StepHeading } from "./replace/Styles"
 import {
   OfferTable,
   OfferTableData,
@@ -38,8 +46,7 @@ class PresentOffer extends React.Component {
       {
         isCustomAmount: customAmount === "other"
       },
-      () =>
-        this.handleCustomAmount(this.state.amount)
+      () => this.handleCustomAmount(this.state.amount)
     )
   }
 
@@ -70,17 +77,18 @@ class PresentOffer extends React.Component {
   }
 
   render() {
+    console.log(this.state.selectedDuration)
     return (
       <div>
         <Wrapper size="medium" breakout>
           <TileBox>
-            <PaddedContainer large>
-              <StepHeading>{this.props.headingText}</StepHeading>
+            <Box variant="paddedContainerLarge">
+              <Heading variant="stepHeading">{this.props.headingText}</Heading>
               <p>
                 {this.props.maxLoanAmountText}{" "}
                 <strong>{formatCurrency(this.props.maxAmount || 0)}</strong>
               </p>
-            </PaddedContainer>
+            </Box>
             <PickLoanSum
               loanAmount={
                 this.state.isCustomAmount
@@ -96,7 +104,7 @@ class PresentOffer extends React.Component {
               chooseLoanAmountText={"Velg sum"}
               otherAmountText={"Annen sum"}
             />
-            <PaddedContainer large>
+            <Box variant="paddedContainerLarge">
               <OfferTable>
                 <tbody>
                   <tr>
@@ -106,15 +114,23 @@ class PresentOffer extends React.Component {
                     <OfferTableData>
                       <OfferTableDurations>
                         <OfferTableDurationsItem>
-                          <StyledDropdown
-                            items={this.props.potentialDurations}
+                          <Select
                             id={"select-loan-duration"}
-                            selectedItem={this.state.selectedDuration}
-                            postfixItems="mnd"
+                            selectedElement={SelectSelected}
+                            placeHolderLabel={"Velg…"}
                             onChange={value =>
-                              this.handleChangeLoanDuration(value)
+                              this.handleChangeLoanDuration(value.text)
                             }
-                          />
+                          >
+                            {this.props.potentialDurations.map(item => (
+                              <SelectOption
+                                key={item}
+                                data={{ text: item, value: "mnd" }}
+                              >
+                                <strong>{item} mnd.</strong>
+                              </SelectOption>
+                            ))}
+                          </Select>
                         </OfferTableDurationsItem>
                       </OfferTableDurations>
                     </OfferTableData>
@@ -139,10 +155,10 @@ class PresentOffer extends React.Component {
                   </OfferTableTotal>
                 </tbody>
               </OfferTable>
-            </PaddedContainer>
+            </Box>
             {this.props.company && (
-              <GrayBox>
-                <Halves>
+              <Box variant="grayBox">
+                <Box variant="halves">
                   <div>
                     <h4>{this.props.companyHeadingPrefixText}</h4>
                     <OfferInfoList>
@@ -165,8 +181,8 @@ class PresentOffer extends React.Component {
                       </OfferInfoList>
                     </div>
                   )}
-                </Halves>
-              </GrayBox>
+                </Box>
+              </Box>
             )}
           </TileBox>
           <ItemGroup>
@@ -186,15 +202,15 @@ class PresentOffer extends React.Component {
   }
 }
 
-const StyledDropdown = styled(Dropdown)`
-  button {
-    height: 24px;
-    padding-right: 24px;
-  }
-  svg {
-    right: 6px;
-  }
-`
+// const StyledDropdown = styled(Dropdown)`
+//   button {
+//     height: 24px;
+//     padding-right: 24px;
+//   }
+//   svg {
+//     right: 6px;
+//   }
+// `
 
 const TileBox = styled(Tile)`
   padding: 0;

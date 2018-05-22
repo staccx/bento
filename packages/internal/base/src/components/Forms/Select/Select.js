@@ -97,7 +97,9 @@ const Select = ({
   optionsWrapperElement,
   renderPlaceHolderElement,
   placeHolderElement,
-  placeHolderLabel
+  placeHolderLabel,
+  className,
+  ...restProps
 }) => {
   const Selected = renderSelectedElement || selectedElement
   const OptionsWrapper =
@@ -111,6 +113,7 @@ const Select = ({
     <Downshift
       onChange={onChange}
       itemToString={item => (item ? item.text : "")}
+      {...restProps}
       render={({
         getInputProps,
         getButtonProps,
@@ -122,8 +125,8 @@ const Select = ({
         toggleMenu,
         clearSelection
       }) => (
-        <div>
-          <Label>{label}</Label>
+        <div className={className}>
+          {label && <Label>{label}</Label>}
           {selectedItem ? (
             <SelectedWrapper>
               <Selected

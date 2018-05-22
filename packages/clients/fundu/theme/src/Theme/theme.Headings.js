@@ -23,6 +23,11 @@ export const HeadingStyling = registerStyle(
       font-size: ${font.h4};
       font-weight: 300;
       color: ${color.blue};
+    `,
+    stepHeading: css`
+      font-size: ${font.h2};
+      font-weight: 300;
+      margin-bottom: ${spacing.small};
     `
   },
   HeadingStyles.HEADING
