@@ -11,14 +11,14 @@ import {
   themify
 } from "@staccx/theme"
 
-const SplitListItem = ({ children, className }) => {
+const SplitListItem = ({ children, className, ...restProps }) => {
   if (React.Children.count(children) > 2) {
     console.warn(
       "SplitListItem exceeded max children: Can only contain 2 children. Others will be omitted."
     )
   }
   return (
-    <ListItem className={className}>
+    <ListItem className={className} {...restProps}>
       {React.Children.map(children, (child, index) => {
         return index <= 1 ? <span>{child}</span> : null
       })}

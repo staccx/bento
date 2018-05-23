@@ -56,7 +56,7 @@ const CheckBox = ({
 }
 
 const CheckWrapper = styled.div`
-  min-height: ${targetSize};
+  min-height: ${targetSize.normal};
   padding-top: ${spacing.small};
   padding-bottom: ${spacing.small};
   ${themify(CHECKBOX)};

@@ -2,7 +2,7 @@
  * @class Button
  */
 import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import {
   targetSize,
   spacing,
@@ -16,7 +16,8 @@ import {
 const tinycolor = require("tinycolor2")
 
 export const BUTTON = "Button"
-const Style = css`
+
+const Button = styled.button`
   background-color: ${color.primary};
   color: ${p =>
     tinycolor
@@ -63,9 +64,6 @@ const Style = css`
   }
 
   ${themify(BUTTON)};
-`
-const Button = styled.button`
-  ${Style};
 `
 
 const defaultProps = {

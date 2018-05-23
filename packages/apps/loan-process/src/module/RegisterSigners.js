@@ -9,7 +9,9 @@ import {
   NationalIdInput,
   Paragraph,
   Text,
-  Wrapper
+  Wrapper,
+  List,
+  SplitListItem
 } from "@staccx/base"
 import { removeWhitespace, formatName } from "@staccx/formatting"
 import styled, { keyframes } from "styled-components"
@@ -29,7 +31,7 @@ class RegisterSigners extends React.Component {
     this.initState = this.initState.bind(this)
 
     this.state = {
-      signers: [],
+      signers: []
     }
   }
 
@@ -92,51 +94,65 @@ class RegisterSigners extends React.Component {
         <Heading variant="centered" level={1}>
           {this.props.headingText}
         </Heading>
-        <Paragraph variant="lead">
-          {this.props.leadText}
-          <em>{this.props.signatureText}</em>
-        </Paragraph>
+
         <Box variant="tileBox">
           <Box variant="paddingVertical">
-            <SignerTable>
-              <SignerTableHead>
-                <FirstColumn>
-                  <Text variant="visuallyHidden">{this.props.chooseText}</Text>
-                </FirstColumn>
-                <div>{this.props.tableHeaderNameText}</div>
-                <div>{this.props.tableHeaderRoleText}</div>
-              </SignerTableHead>
-              <Formik
-                initialValues={{
-                  signers: this.state.signers
-                }}
-                validationSchema={validationSchema}
-                onSubmit={this.onSubmit}
-                render={({ values, errors, submitCount }) => (
-                  <Form>
-                    <FieldArray
-                      name="signers"
-                      render={({ insert, remove, push }) => (
-                        <div>
-                          {values.signers.length > 0 &&
-                            values.signers.map((signer, index) => (
-                              <SignerTableRow key={index}>
-                                <FirstColumn className="col">
-                                  <Field
-                                    render={({ field }) => (
-                                      <CheckBox
-                                        group={`signer.${index}`}
-                                        id={`signers.${index}.checked`}
-                                        {...field}
-                                        defaultChecked={signer.checked}
-                                      >
-                                        {formatName(signer.name)}
-                                      </CheckBox>
-                                    )}
-                                    name={`signers.${index}.checked`}
-                                  />
-                                </FirstColumn>
-                                <SignerFields visible={signer.checked}>
+            <Paragraph variant="lead">
+              {this.props.leadText}
+              <em>{this.props.signatureText}</em>
+            </Paragraph>
+            <SplitItem>
+              <strong>{this.props.tableHeaderNameText}</strong>
+              <strong>{this.props.tableHeaderRoleText}</strong>
+            </SplitItem>
+
+            <Formik
+              initialValues={{
+                signers: this.state.signers
+              }}
+              validationSchema={validationSchema}
+              onSubmit={this.onSubmit}
+              render={({ values, errors, submitCount }) => (
+                <Form>
+                  <FieldArray
+                    name="signers"
+                    render={({ insert, remove, push }) => (
+                      <div>
+                        {values.signers.length > 0 &&
+                          values.signers.map((signer, index) => (
+                            <List>
+                              <SplitListItem variant="split5050" key={index}>
+                                <Field
+                                  render={({ field }) => (
+                                    <CheckBox
+                                      group={`signer.${index}`}
+                                      id={`signers.${index}.checked`}
+                                      {...field}
+                                      defaultChecked={signer.checked}
+                                    >
+                                      {formatName(signer.name)}
+                                    </CheckBox>
+                                  )}
+                                  name={`signers.${index}.checked`}
+                                />
+                                <SignerRoles>
+                                  <span>
+                                    {signer.positions.map(signer => (
+                                      <span key={signer}>{signer} </span>
+                                    ))}
+                                  </span>
+                                  <Button
+                                    type="button"
+                                    className="secondary"
+                                    variant="delete"
+                                    onClick={() => remove(index)}
+                                  >
+                                    X
+                                  </Button>
+                                </SignerRoles>
+                              </SplitListItem>
+                              {signer.checked && (
+                                <SignerFields variant="grayBox">
                                   <div className="col">
                                     <Field
                                       render={({ field }) => (
@@ -177,18 +193,11 @@ class RegisterSigners extends React.Component {
                                         </ValidationError>
                                       )}
                                   </div>
-                                  <div className="col">
-                                    <Button
-                                      type="button"
-                                      className="secondary"
-                                      onClick={() => remove(index)}
-                                    >
-                                      X
-                                    </Button>
-                                  </div>
                                 </SignerFields>
-                              </SignerTableRow>
-                            ))}
+                              )}
+                            </List>
+                          ))}
+                        <Box>
                           <Button
                             onClick={() =>
                               push({
@@ -202,14 +211,14 @@ class RegisterSigners extends React.Component {
                           >
                             Legg til
                           </Button>
-                        </div>
-                      )}
-                    />
-                    <Button type="submit">{this.props.continueText}</Button>
-                  </Form>
-                )}
-              />
-            </SignerTable>
+                        </Box>
+                      </div>
+                    )}
+                  />
+                  <Button type="submit">{this.props.continueText}</Button>
+                </Form>
+              )}
+            />
           </Box>
         </Box>
       </Wrapper>
@@ -217,26 +226,19 @@ class RegisterSigners extends React.Component {
   }
 }
 
-const StyledButton = styled(Button)`
-  margin-left: ${spacing.medium};
-  margin-bottom: ${spacing.medium};
+const SignerRoles = styled.span`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
-const SignerTable = styled.div`
-  width: 100%;
-`
+const SplitItem = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: ${spacing.tiny()} ${spacing.medium()};
 
-const SignerTableHead = styled.div`
-  text-align: left;
-`
-
-export const FirstColumn = styled.div`
-  width: 32px;
-  padding-left: 24px;
-  padding-right: 12px;
-  label {
-    width: 24px;
-    height: 24px;
+  > * {
+    flex-basis: 50%;
   }
 `
 
@@ -251,24 +253,12 @@ const expand = keyframes`
     transform: translateY(0);
   }
 `
-const Line = styled.hr`
-  border-top: 1px solid ${color.line};
-  border-bottom: 0;
-  border-right: 0;
-  border-left: 0;
-`
 
-const SignerFields = styled.div`
-  display: ${props => (props.visible ? "block" : "none")};
+const SignerFields = styled(Box)`
   animation: ${props =>
     props.animated ? expand + " .2s linear forwards" : "none"};
-
-  &:nth-child(even) {
-    border-top: 1px solid ${color.line};
-    border-bottom: 1px solid ${color.line};
-  }
+  border-bottom: 1px solid ${color.line};
 `
-const SignerTableRow = styled.div``
 
 export default RegisterSigners
 

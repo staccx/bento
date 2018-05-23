@@ -27,6 +27,7 @@ export const BoxStyling = registerStyle(
       margin-bottom: ${spacing.medium};
     `,
     paddingVertical: css`
+      padding: 0;
       padding-top: ${spacing.medium};
       padding-bottom: ${spacing.medium};
     `,
@@ -45,7 +46,6 @@ export const BoxStyling = registerStyle(
       width: 100%;
     `,
     grayBox: css`
-      padding: ${spacing.medium} ${spacing.large};
       background-color: ${color.subtleHover};
     `,
     halves: css`

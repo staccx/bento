@@ -26,7 +26,8 @@ Paragraph.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.string,
-    PropTypes.number
+    PropTypes.number,
+    PropTypes.array
   ]).isRequired,
   className: PropTypes.string
 }

@@ -28,7 +28,7 @@ import Paragraph, * as ParagraphStyles from "./components/Text/Paragraph/Paragra
 
 // Lists
 import List, * as ListStyles from "./components/Lists/List"
-import SplitListItem from "./components/Lists/SplitList/SplitListItem"
+import SplitListItem, * as SplitListItemStyles from "./components/Lists/SplitList/SplitListItem"
 import ExpandListItem, * as ExpandListItemStyles from "./components/Lists/ExpandList/ExpandListItem"
 import LinkListItem, * as LinkListItemStyles from "./components/Lists/LinkList/LinkListItem"
 import InlineListItem from "./components/Lists/InlineList/InlineListItem"
@@ -110,6 +110,7 @@ export {
   CompanyInputStyles,
   CurrencyInput,
   Divider,
+  DividerStyles,
   Donut,
   ExpandListItem,
   ExpandListItemStyles,
@@ -164,6 +165,7 @@ export {
   SliderKeyboardInputStyles,
   SliderStyles,
   SplitListItem,
+  SplitListItemStyles,
   Success,
   Text,
   TextStyles,
