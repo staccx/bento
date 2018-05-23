@@ -244,9 +244,8 @@ class RegisterSigners extends React.Component {
 }
 
 const AddSignerContainer = styled.div`
-  text-align: right;
   padding-top: ${spacing.small};
-  padding-right: ${spacing.medium};
+  padding-left: ${spacing.medium};
 `
 
 const SignerRoles = styled.span`
