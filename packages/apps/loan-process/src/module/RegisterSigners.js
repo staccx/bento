@@ -149,8 +149,7 @@ class RegisterSigners extends React.Component {
                                       )}
                                       name={`signers.${index}.nationalId`}
                                     />
-                                    {submitCount > 0 &&
-                                      errors.signers &&
+                                    {errors.signers &&
                                       errors.signers[index] &&
                                       errors.signers[index].nationalId && (
                                         <ValidationError>
