@@ -9,18 +9,14 @@ import {
   List
 } from "@staccx/base"
 import { spacing, color } from "@staccx/theme"
-import SystemText from "../../components/SystemText"
 import {
   OfferTable,
   OfferTableData,
   OfferTableText,
   OfferTableTotal
-} from "../../Styles.OfferTable"
+} from "./replace/Styles.OfferTable"
 import styled from "styled-components"
-import withTasks from "../../hoc/withTasks"
-import withLoanApplication from "../../hoc/withLoanApplication"
 import { formatCurrency } from "@staccx/formatting"
-import { toSystemText } from "../../utils/toSystemText"
 import {
   SIGN_ORDER_STATUS_SIGNED,
   TASK_TYPE_SIGN_DOCUMENT
@@ -39,53 +35,25 @@ class Sign extends React.Component {
     }
   }
 
-  componentWillMount() {
-    this.timeout = setTimeout(() => {
-      this.props.resumeFromSession(this.props.flowId, 0, true)
-      this.setState({ ready: true })
-    }, 1500)
-  }
-
   render() {
-    if (!this.state.ready) {
-      return <Loading message={"SIGNING_IMMINENT"} />
-    }
-
-    const { loanApplication, payment, taskReducer, user } = this.props
-    const { application } = loanApplication
-    const { data } = application
-
-    const signers = data ? data.signers : []
-
-    const signOrders = data ? data.signOrders : []
-
-    const task = taskReducer[TASK_TYPE_SIGN_DOCUMENT]
-
-    if (!task || !user) {
-      return null
-    }
-
     return (
       <Wrapper size="medium" breakout>
         <Box variant="illustration">
-          <img src="/assets/signing.svg" alt="" width="175" />
+          {this.props.renderIllustration()}
+          {/*<img src="/assets/signing.svg" alt="" width="175" />*/}
         </Box>
         <Heading variant="centered" level={1}>
-          <SystemText systemKey="SIGNING_PAGE_HEADING" />
+          {this.props.headingText}
         </Heading>
         <Paragraph variant="lead">
-          {data &&
-            data.loanType && (
-              <SystemText systemKey={`SIGNING_LEAD_${data.loanType}`} />
-            )}
+          {this.props.leadText}
         </Paragraph>
         <Box variant="tileBox">
           <ul>
-            {data && (
               <ExpandListItem
                 title={
-                  toSystemText("SEE_LOAN_DETAILS", "Se detaljer for lånet på") +
-                  ` ${formatCurrency(data.loanAmount)}`
+                  this.props.loanDetailsText +
+                  ` ${formatCurrency(this.props.loanAmount)}`
                 }
               >
                 {/* TODO: vise om det er lån eller kreditt☝️ */}
@@ -93,45 +61,43 @@ class Sign extends React.Component {
                   <tbody>
                     <tr>
                       <OfferTableText>
-                        <SystemText systemKey="LOAN_OFFER" />
+                        {this.props.loanOfferText}
                       </OfferTableText>
                       <OfferTableData>
-                        {formatCurrency(data.loanAmount)}
+                        {formatCurrency(this.props.loanAmount)}
                       </OfferTableData>
                     </tr>
                     <tr>
                       <OfferTableText>
-                        <SystemText systemKey="LOAN_DURATION" />
+                        {this.props.loanDurationText}
                       </OfferTableText>
                       <OfferTableData>
-                        {data.repaymentPeriod}{" "}
-                        <SystemText systemKey="MONTHS_SHORT" />
+                        {this.props.repaymentPeriod}{" "}
+                        {this.props.monthSuffix}
                       </OfferTableData>
                     </tr>
                     <tr>
                       <OfferTableText>
-                        <SystemText systemKey="MONTHLY_FEE" />
+                        {this.props.monthlyFeeText}
                       </OfferTableText>
                       <OfferTableData>
-                        {payment.term && payment.term.interestRate}%
+                        {this.props.interestRate}%
                       </OfferTableData>
                     </tr>
                     <tr>
                       <OfferTableText>
-                        <SystemText systemKey="TOTAL_PAYBACK" />
+                        {this.props.paybackText}
                       </OfferTableText>
                       <OfferTableData>
-                        {payment.term &&
-                          formatCurrency(payment.term.monthlyPayment * 6)}
+                        {formatCurrency(this.props.paybackTotal)}
                       </OfferTableData>
                     </tr>
                     <OfferTableTotal>
                       <OfferTableText>
-                        <SystemText systemKey="PAY_MONTHLY" />
+                        {this.props.payMonthlyText}
                       </OfferTableText>
                       <OfferTableData>
-                        {payment.term &&
-                          formatCurrency(payment.term.monthlyPayment)}
+                        {formatCurrency(this.props.monthlyPayment)}
                       </OfferTableData>
                     </OfferTableTotal>
                   </tbody>
@@ -139,7 +105,7 @@ class Sign extends React.Component {
                 </OfferTable>
               </ExpandListItem>
             )}
-            {signOrders &&
+            {
               signers.map((signer, index) => {
                 const orders = signOrders.filter(
                   order => order.signee === signer.nationalId
@@ -231,4 +197,4 @@ const DocumentStatusItem = styled.li`
   border-top: 1px solid ${color.line};
 `
 
-export default withApp(withLoanApplication(withTasks(Sign)))
+export default Sign
