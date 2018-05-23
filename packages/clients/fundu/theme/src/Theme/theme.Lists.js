@@ -16,10 +16,8 @@ export const ListStyling = registerStyle(
     bottomBorder: css`
       border-bottom: 1px solid ${color.line};
     `,
-    split5050: css`
-      > * {
-        flex-basis: 50%;
-      }
+    topBorder: css`
+      border-top: 1px solid ${color.line};
     `
   },
   ListStyles.LIST
@@ -27,9 +25,13 @@ export const ListStyling = registerStyle(
 
 export const SplitListItemStyling = registerStyle(
   {
-    split5050: css`
+    signerListItem: css`
       > * {
         flex-basis: 50%;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid ${color.line};
       }
     `
   },

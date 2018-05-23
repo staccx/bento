@@ -11,7 +11,9 @@ import {
   Text,
   Wrapper,
   List,
-  SplitListItem
+  SplitListItem,
+  Layout,
+  LayoutItem
 } from "@staccx/base"
 import { removeWhitespace, formatName } from "@staccx/formatting"
 import styled, { keyframes } from "styled-components"
@@ -118,86 +120,101 @@ class RegisterSigners extends React.Component {
                     name="signers"
                     render={({ insert, remove, push }) => (
                       <div>
-                        {values.signers.length > 0 &&
-                          values.signers.map((signer, index) => (
-                            <List>
-                              <SplitListItem variant="split5050" key={index}>
-                                <Field
-                                  render={({ field }) => (
-                                    <CheckBox
-                                      group={`signer.${index}`}
-                                      id={`signers.${index}.checked`}
-                                      {...field}
-                                      defaultChecked={signer.checked}
+                        <List variant="topBorder">
+                          {values.signers.length > 0 &&
+                            values.signers.map((signer, index) => (
+                              <React.Fragment key={index}>
+                                <SplitListItem variant="signerListItem">
+                                  <Field
+                                    render={({ field }) => (
+                                      <CheckBox
+                                        group={`signer.${index}`}
+                                        id={`signers.${index}.checked`}
+                                        {...field}
+                                        defaultChecked={signer.checked}
+                                      >
+                                        {formatName(signer.name)}
+                                      </CheckBox>
+                                    )}
+                                    name={`signers.${index}.checked`}
+                                  />
+                                  <SignerRoles>
+                                    <span>
+                                      {signer.positions.map(signer => (
+                                        <span key={signer}>{signer} </span>
+                                      ))}
+                                    </span>
+                                    <Button
+                                      type="button"
+                                      className="secondary"
+                                      variant="deleteSigner"
+                                      onClick={() => remove(index)}
                                     >
-                                      {formatName(signer.name)}
-                                    </CheckBox>
-                                  )}
-                                  name={`signers.${index}.checked`}
-                                />
-                                <SignerRoles>
-                                  <span>
-                                    {signer.positions.map(signer => (
-                                      <span key={signer}>{signer} </span>
-                                    ))}
-                                  </span>
-                                  <Button
-                                    type="button"
-                                    className="secondary"
-                                    variant="delete"
-                                    onClick={() => remove(index)}
-                                  >
-                                    X
-                                  </Button>
-                                </SignerRoles>
-                              </SplitListItem>
-                              {signer.checked && (
-                                <SignerFields variant="grayBox">
-                                  <div className="col">
-                                    <Field
-                                      render={({ field }) => (
-                                        <NationalIdInput
-                                          id={`signers.${index}.nationalId`}
-                                          placeholder="12345678903"
-                                          label={"Fødselsnummer"}
-                                          {...field}
-                                        />
-                                      )}
-                                      name={`signers.${index}.nationalId`}
-                                    />
-                                    {errors.signers &&
-                                      errors.signers[index] &&
-                                      errors.signers[index].nationalId && (
-                                        <ValidationError>
-                                          {errors.signers[index].nationalId}
-                                        </ValidationError>
-                                      )}
-                                  </div>
-                                  <div className="col">
-                                    <Field
-                                      name={`signers.${index}.email`}
-                                      render={({ field /* _form */ }) => (
-                                        <Input
-                                          label={"Email"}
-                                          id={`signers.${index}.email`}
-                                          {...field}
-                                          placeholder="kari@nordmann.no"
-                                        />
-                                      )}
-                                    />
-                                    {errors.signers &&
-                                      errors.signers[index] &&
-                                      errors.signers[index].email && (
-                                        <ValidationError>
-                                          {errors.signers[index].email}
-                                        </ValidationError>
-                                      )}
-                                  </div>
-                                </SignerFields>
-                              )}
-                            </List>
-                          ))}
-                        <Box>
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path d="M10 0c-.52 0-1.06.18-1.44.56C8.18.94 8 1.48 8 2v1H2v2h1v16c0 1.64 1.36 3 3 3h12c1.64 0 3-1.36 3-3V5h1V3h-6V2c0-.52-.18-1.06-.56-1.44A2.03 2.03 0 0 0 14 0h-4zm0 2h4v1h-4V2zM5 5h14v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5zm2 3v11h2V8H7zm4 0v11h2V8h-2zm4 0v11h2V8h-2z" />
+                                      </svg>
+                                    </Button>
+                                  </SignerRoles>
+                                </SplitListItem>
+                                {signer.checked && (
+                                  <li>
+                                    <SignerFields variant="grayBox">
+                                      <Layout grid="form">
+                                        <LayoutItem>
+                                          <Field
+                                            render={({ field }) => (
+                                              <NationalIdInput
+                                                id={`signers.${index}.nationalId`}
+                                                placeholder="12345678903"
+                                                label={"Fødselsnummer"}
+                                                {...field}
+                                              />
+                                            )}
+                                            name={`signers.${index}.nationalId`}
+                                          />
+                                          {errors.signers &&
+                                            errors.signers[index] &&
+                                            errors.signers[index]
+                                              .nationalId && (
+                                              <ValidationError>
+                                                {
+                                                  errors.signers[index]
+                                                    .nationalId
+                                                }
+                                              </ValidationError>
+                                            )}
+                                        </LayoutItem>
+                                        <LayoutItem>
+                                          <Field
+                                            name={`signers.${index}.email`}
+                                            render={({ field /* _form */ }) => (
+                                              <Input
+                                                label={"E-post"}
+                                                id={`signers.${index}.email`}
+                                                {...field}
+                                                placeholder="kari@nordmann.no"
+                                              />
+                                            )}
+                                          />
+                                          {errors.signers &&
+                                            errors.signers[index] &&
+                                            errors.signers[index].email && (
+                                              <ValidationError>
+                                                {errors.signers[index].email}
+                                              </ValidationError>
+                                            )}
+                                        </LayoutItem>
+                                      </Layout>
+                                    </SignerFields>
+                                  </li>
+                                )}
+                              </React.Fragment>
+                            ))}
+                        </List>
+                        <AddSignerContainer>
                           <Button
                             onClick={() =>
                               push({
@@ -208,14 +225,17 @@ class RegisterSigners extends React.Component {
                                 name: this.props.newPersonDefaultName
                               })
                             }
+                            variant="addSigner"
                           >
-                            Legg til
+                            {this.props.addPersonText}
                           </Button>
-                        </Box>
+                        </AddSignerContainer>
                       </div>
                     )}
                   />
-                  <Button type="submit">{this.props.continueText}</Button>
+                  <Box>
+                    <Button type="submit">{this.props.continueText}</Button>
+                  </Box>
                 </Form>
               )}
             />
@@ -225,6 +245,12 @@ class RegisterSigners extends React.Component {
     )
   }
 }
+
+const AddSignerContainer = styled.div`
+  text-align: right;
+  padding-top: ${spacing.small};
+  padding-right: ${spacing.medium};
+`
 
 const SignerRoles = styled.span`
   display: flex;
@@ -282,7 +308,7 @@ RegisterSigners.propTypes = {
 }
 
 RegisterSigners.defaultProps = {
-  addPersonText: "Legg til",
+  addPersonText: "+ Legg til person",
   chooseText: "Velg...",
   continueText: "Fortsett",
   errorEmailInvalidText: "Ikke gyldig epost",
@@ -293,5 +319,7 @@ RegisterSigners.defaultProps = {
   leadText: "Lead text",
   newPersonDefaultName: "Ny person",
   people: [],
-  signatureText: "Daglig leder ene og alene (tekst fra Brønnøysund"
+  signatureText: "Daglig leder ene og alene (tekst fra Brønnøysund)",
+  tableHeaderNameText: "Navn",
+  tableHeaderRoleText: "Rolle"
 }

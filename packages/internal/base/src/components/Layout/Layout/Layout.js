@@ -21,7 +21,7 @@ export const LayoutContainer = styled.div`
 
 Layout.defaultProps = {
   className: "",
-  grid: "stonehenge"
+  grid: null
 }
 
 Layout.propTypes = {

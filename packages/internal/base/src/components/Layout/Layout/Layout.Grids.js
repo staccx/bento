@@ -45,5 +45,10 @@ export default {
   `,
   rows: css`
     grid-auto-flow: row;
+  `,
+  form: css`
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
   `
 }
