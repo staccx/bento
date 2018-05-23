@@ -1,8 +1,9 @@
 import React, { Component } from "react"
 import { ThemeProxyProvider } from "@staccx/theme"
-import PresentOffer from "./module/PresentOffer"
 import theme from "./theme.js"
-import RegisterSigners from "./module/RegisterSigners"
+import Sign from "./module/Sign"
+
+// import RegisterSigners from "./module/RegisterSigners"
 
 class App extends Component {
   render() {
@@ -46,15 +47,26 @@ class App extends Component {
         {/* rejectOfferButtonText={"Avslå"} */}
         {/* selectedDuration={6} */}
         {/* /> */}
-
-        <RegisterSigners
-          onComplete={console.log}
-          people={[
-            {
-              name: "Espen Thomassen Sæverud",
-              positions: ["Daglig leder", "Styreformann"]
-            }
-          ]}
+        {/* <RegisterSigners */}
+        {/* onComplete={console.log} */}
+        {/* people={[ */}
+        {/* { */}
+        {/* name: "Espen Thomassen Sæverud", */}
+        {/* positions: ["Daglig leder", "Styreformann"] */}
+        {/* } */}
+        {/* ]} */}
+        {/* /> */}
+        <Sign
+          interestRate={10.4}
+          loanAmount={1000000}
+          monthlyPayment={83000}
+          paybackTotal={1100000}
+          renderDocumentText={type => "dokument"}
+          renderIllustration={() => null}
+          repaymentPeriod={6}
+          signOrders={[]}
+          signers={[]}
+          user={{ nationalId: "21031531021" }}
         />
       </ThemeProxyProvider>
     )
