@@ -97,25 +97,24 @@ class RegisterSigners extends React.Component {
           {this.props.headingText}
         </Heading>
 
-        <Box variant="tileBox">
-          <Box variant="paddingVertical">
-            <Paragraph variant="lead">
-              {this.props.leadText}
-              <em>{this.props.signatureText}</em>
-            </Paragraph>
-            <SplitItem>
-              <strong>{this.props.tableHeaderNameText}</strong>
-              <strong>{this.props.tableHeaderRoleText}</strong>
-            </SplitItem>
-
-            <Formik
-              initialValues={{
-                signers: this.state.signers
-              }}
-              validationSchema={validationSchema}
-              onSubmit={this.onSubmit}
-              render={({ values, errors, submitCount }) => (
-                <Form>
+        <Formik
+          initialValues={{
+            signers: this.state.signers
+          }}
+          validationSchema={validationSchema}
+          onSubmit={this.onSubmit}
+          render={({ values, errors, submitCount }) => (
+            <Form>
+              <Box variant="tileBox">
+                <Box variant="paddingVertical">
+                  <Paragraph variant="lead">
+                    {this.props.leadText}
+                    <em>{this.props.signatureText}</em>
+                  </Paragraph>
+                  <SplitItem>
+                    <strong>{this.props.tableHeaderNameText}</strong>
+                    <strong>{this.props.tableHeaderRoleText}</strong>
+                  </SplitItem>
                   <FieldArray
                     name="signers"
                     render={({ insert, remove, push }) => (
@@ -233,14 +232,12 @@ class RegisterSigners extends React.Component {
                       </div>
                     )}
                   />
-                  <Box>
-                    <Button type="submit">{this.props.continueText}</Button>
-                  </Box>
-                </Form>
-              )}
-            />
-          </Box>
-        </Box>
+                </Box>
+              </Box>
+              <Button type="submit">{this.props.continueText}</Button>
+            </Form>
+          )}
+        />
       </Wrapper>
     )
   }

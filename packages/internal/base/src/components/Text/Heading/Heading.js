@@ -4,10 +4,12 @@ import styled, { css } from "styled-components"
 import { font, fontFamily, themify } from "@staccx/theme"
 
 const Heading = ({ level, children, className, ...restProps }) => {
+  console.log(level)
   switch (level) {
     case "h1":
     case "H1":
     case "1":
+    case 1:
       return (
         <HeadingH1 className={className} {...restProps}>
           {children}
@@ -17,6 +19,7 @@ const Heading = ({ level, children, className, ...restProps }) => {
     case "h2":
     case "H2":
     case "2":
+    case 2:
       return (
         <HeadingH2 className={className} {...restProps}>
           {children}
@@ -26,6 +29,7 @@ const Heading = ({ level, children, className, ...restProps }) => {
     case "h3":
     case "H3":
     case "3":
+    case 3:
       return (
         <HeadingH3 className={className} {...restProps}>
           {children}
@@ -35,6 +39,7 @@ const Heading = ({ level, children, className, ...restProps }) => {
     case "h4":
     case "H4":
     case "4":
+    case 4:
       return (
         <HeadingH4 className={className} {...restProps}>
           {children}
@@ -44,6 +49,7 @@ const Heading = ({ level, children, className, ...restProps }) => {
     case "h5":
     case "H5":
     case "5":
+    case 5:
       return (
         <HeadingH5 className={className} {...restProps}>
           {children}
@@ -53,6 +59,7 @@ const Heading = ({ level, children, className, ...restProps }) => {
     case "h6":
     case "H6":
     case "6":
+    case 6:
       return (
         <HeadingH6 className={className} {...restProps}>
           {children}
@@ -60,7 +67,11 @@ const Heading = ({ level, children, className, ...restProps }) => {
       )
 
     default:
-      return null // 👈 we always have to return something
+      return (
+        <HeadingH1 className={className} {...restProps}>
+          {children}
+        </HeadingH1>
+      ) // 👈 we always have to return something
   }
 }
 
