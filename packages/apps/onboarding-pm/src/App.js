@@ -75,16 +75,6 @@ const schema = {
 }
 
 const uiSchema = {
-  items: {
-    dimensions: {
-      length: {
-        "ui:widget": "range" // could also be "select"
-      }
-    },
-    string: {
-      "ui:widget": "text"
-    }
-  },
   mobilephone: {
     "ui:widget": "phone",
     "ui:placeholder": "000 00 000"

@@ -11,7 +11,7 @@ const ObjectFieldTemplate = ({
       <TitleField title={title} />
       <div>
         {properties.map(prop => (
-          <div key={prop.content.key}>{prop.content}</div>
+          <React.Fragment key={prop.content.key}>{prop.content}</React.Fragment>
         ))}
       </div>
       {description}
