@@ -34,6 +34,7 @@ const TextDocumentationWrapper = styled.div`
   background-color: #f9f7f7;
   padding: ${spacing.medium};
   font-family: ${fontFamily.body};
+  border-right: 1px solid #ebe7e7;
 `
 
 const SubHeading = styled.h2`

@@ -1,5 +1,5 @@
-import { BaseTheme } from "@staccx/base"
 import { Theme } from "@staccx/theme"
+import { BaseTheme } from "@staccx/base"
 import reset from "./reset"
 
 const borderRadius = "0px"
@@ -32,7 +32,7 @@ const color = {
   bgGray: "#F9F7F7",
   primary: "#23A532",
   gray: "#767676",
-  text: "#ea5210",
+  text: "#2b2b2b",
   white: "#fff",
   red: "#ea526f",
   pink: "#f8d0db",
@@ -61,24 +61,19 @@ const font = {
 }
 
 const fontFamily = {
-  heading: "IBM Plex Sans",
-  body: "IBM Plex Sans"
+  heading: "Libre Baskerville",
+  body: "Libre Franklin"
 }
 
 const theme = new Theme(BaseTheme, {
-  name: "Norfjell",
-  layout: {
-    dashboardLayout: "columnNarrow",
-    menuArea: "aside"
-  },
   font,
   color,
+  spacing,
   wrapper,
   targetSize,
   borderRadius,
   headerHeight,
   fontFamily,
-  spacing,
   global: reset
 })
 
