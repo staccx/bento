@@ -81,6 +81,9 @@ import Odometer from "./components/Formatters/Odometer/Odometer"
 // Utils
 import JsonSchema from "./components/Forms/JsonSchema/JsonSchema"
 
+// Logo
+import Logo from "./components/Logo/Logo"
+
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
@@ -131,6 +134,7 @@ export {
   LayoutItem,
   LayoutItemStyles,
   LayoutStyles,
+  Logo,
   LinkListItem,
   LinkListItemStyles,
   List,
