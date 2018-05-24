@@ -17,7 +17,7 @@ import {
   OfferTableTotal
 } from "./replace/Styles.OfferTable"
 import styled from "styled-components"
-import { formatCurrency } from "@staccx/formatting"
+import { formatCurrency, formatName } from "@staccx/formatting"
 
 // const SIGN_ORDER_STATUS_PENDING = "pending"
 
@@ -97,7 +97,7 @@ class Sign extends React.Component {
                     key={signer.id}
                     title={
                       <Box variant="split">
-                        <span>{`${signer.name || "Geir Nilsen"} (${
+                        <span>{`${formatName(signer.name) || "Geir Nilsen"} (${
                           signer.email
                         })`}</span>{" "}
                         {/* TODO: ☝️ fjerne denne fallbacken */}

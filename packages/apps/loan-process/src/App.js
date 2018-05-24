@@ -64,8 +64,23 @@ class App extends Component {
           renderDocumentText={type => "dokument"}
           renderIllustration={() => null}
           repaymentPeriod={6}
-          signOrders={[]}
-          signers={[]}
+          signOrders={[
+            {
+              signee: "21031531021",
+              status: "UNSIGNED",
+              requestId: "abc123",
+              documentType: "DOKUMENT1",
+              url: "https://web.test.fundu.no"
+            }
+          ]}
+          signers={[
+            {
+              nationalId: "21031531021",
+              id: "cba321",
+              name: "ESPEN SÆVERUD",
+              email: "espens@stacc.com"
+            }
+          ]}
           user={{ nationalId: "21031531021" }}
         />
       </ThemeProxyProvider>
