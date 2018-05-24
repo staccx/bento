@@ -6,6 +6,7 @@ import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
 import NationalIdInput from "./components/Forms/Input/NationalIdInput/NationalIdInput"
 import CompanyInput, * as CompanyInputStyles from "./components/Forms/Input/CompanyInput/CompanyInput"
 import Label, * as LabelStyles from "./components/Forms/Label/Label"
+import Legend, * as LegendStyles from "./components/Forms/Legend/Legend"
 import CheckBox, {
   COMPONENT_CHECKBOX_ICON
 } from "./components/Forms/CheckBox/CheckBox"
@@ -135,11 +136,12 @@ export {
   LayoutItem,
   LayoutItemStyles,
   LayoutStyles,
-  Logo,
+  Legend,
   LinkListItem,
   LinkListItemStyles,
   List,
   ListStyles,
+  Logo,
   Modal,
   ModalStyles,
   NationalIdInput,
