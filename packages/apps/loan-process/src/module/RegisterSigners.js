@@ -123,40 +123,81 @@ class RegisterSigners extends React.Component {
                           {values.signers.length > 0 &&
                             values.signers.map((signer, index) => (
                               <React.Fragment key={index}>
-                                <SplitListItem variant="signerListItem">
-                                  <Field
-                                    render={({ field }) => (
-                                      <CheckBox
-                                        group={`signer.${index}`}
-                                        id={`signers.${index}.checked`}
-                                        {...field}
-                                        defaultChecked={signer.checked}
+                                <SplitListItem
+                                  variant="signerListItem"
+                                  hasInput={!!signer.isUserAdded}
+                                >
+                                  {signer.isUserAdded ? (
+                                    <Field
+                                      render={({ field }) => (
+                                        <Box variant="inputContainer">
+                                          <Input
+                                            id={`signers.${index}.name`}
+                                            {...field}
+                                            placeholder="Navn"
+                                            value=""
+                                            label={
+                                              this.props.newPersonDefaultName
+                                            }
+                                            variant="clean"
+                                          />
+                                          <Button
+                                            type="button"
+                                            className="secondary"
+                                            variant="deleteSigner"
+                                            isUserAdded
+                                            onClick={() => remove(index)}
+                                          >
+                                            <svg
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              viewBox="0 0 24 24"
+                                            >
+                                              <path d="M10 0c-.52 0-1.06.18-1.44.56C8.18.94 8 1.48 8 2v1H2v2h1v16c0 1.64 1.36 3 3 3h12c1.64 0 3-1.36 3-3V5h1V3h-6V2c0-.52-.18-1.06-.56-1.44A2.03 2.03 0 0 0 14 0h-4zm0 2h4v1h-4V2zM5 5h14v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5zm2 3v11h2V8H7zm4 0v11h2V8h-2zm4 0v11h2V8h-2z" />
+                                            </svg>
+                                          </Button>
+                                        </Box>
+                                      )}
+                                      name={`signers.${index}.checked`}
+                                    />
+                                  ) : (
+                                    <Field
+                                      render={({ field }) => (
+                                        <CheckBox
+                                          group={`signer.${index}`}
+                                          id={`signers.${index}.checked`}
+                                          {...field}
+                                          defaultChecked={signer.checked}
+                                        >
+                                          {formatName(signer.name)}
+                                        </CheckBox>
+                                      )}
+                                      name={`signers.${index}.checked`}
+                                    />
+                                  )}
+                                  {signer.isUserAdded ? (
+                                    ""
+                                  ) : (
+                                    <SignerRoles>
+                                      <span>
+                                        {signer.positions.map(signer => (
+                                          <span key={signer}>{signer} </span>
+                                        ))}
+                                      </span>
+                                      <Button
+                                        type="button"
+                                        className="secondary"
+                                        variant="deleteSigner"
+                                        onClick={() => remove(index)}
                                       >
-                                        {formatName(signer.name)}
-                                      </CheckBox>
-                                    )}
-                                    name={`signers.${index}.checked`}
-                                  />
-                                  <SignerRoles>
-                                    <span>
-                                      {signer.positions.map(signer => (
-                                        <span key={signer}>{signer} </span>
-                                      ))}
-                                    </span>
-                                    <Button
-                                      type="button"
-                                      className="secondary"
-                                      variant="deleteSigner"
-                                      onClick={() => remove(index)}
-                                    >
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path d="M10 0c-.52 0-1.06.18-1.44.56C8.18.94 8 1.48 8 2v1H2v2h1v16c0 1.64 1.36 3 3 3h12c1.64 0 3-1.36 3-3V5h1V3h-6V2c0-.52-.18-1.06-.56-1.44A2.03 2.03 0 0 0 14 0h-4zm0 2h4v1h-4V2zM5 5h14v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5zm2 3v11h2V8H7zm4 0v11h2V8h-2zm4 0v11h2V8h-2z" />
-                                      </svg>
-                                    </Button>
-                                  </SignerRoles>
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path d="M10 0c-.52 0-1.06.18-1.44.56C8.18.94 8 1.48 8 2v1H2v2h1v16c0 1.64 1.36 3 3 3h12c1.64 0 3-1.36 3-3V5h1V3h-6V2c0-.52-.18-1.06-.56-1.44A2.03 2.03 0 0 0 14 0h-4zm0 2h4v1h-4V2zM5 5h14v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5zm2 3v11h2V8H7zm4 0v11h2V8h-2zm4 0v11h2V8h-2z" />
+                                        </svg>
+                                      </Button>
+                                    </SignerRoles>
+                                  )}
                                 </SplitListItem>
                                 {signer.checked && (
                                   <li>
@@ -221,7 +262,8 @@ class RegisterSigners extends React.Component {
                                 email: "",
                                 nationalId: "",
                                 positions: [],
-                                name: this.props.newPersonDefaultName
+                                name: this.props.newPersonDefaultName,
+                                isUserAdded: true
                               })
                             }
                             variant="addSigner"

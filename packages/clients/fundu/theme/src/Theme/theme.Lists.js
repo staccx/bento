@@ -33,6 +33,16 @@ export const SplitListItemStyling = registerStyle(
       &:last-child {
         border-bottom: 1px solid ${color.line};
       }
+
+      ${p =>
+        p.hasInput &&
+        `
+        flex-wrap: wrap;
+        padding: 0;
+        > * {
+          flex-basis: 100%;
+        }
+      `};
     `
   },
   SplitListItemStyles.SPLIT_LIST

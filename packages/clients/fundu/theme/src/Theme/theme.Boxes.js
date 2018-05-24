@@ -65,6 +65,10 @@ export const BoxStyling = registerStyle(
     `,
     paddedContainerLarge: css`
       padding: ${spacing.large};
+    `,
+    inputContainer: css`
+      position: relative;
+      padding: 0;
     `
   },
   BoxStyles.BOX

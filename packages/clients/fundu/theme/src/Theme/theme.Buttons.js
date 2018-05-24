@@ -27,6 +27,15 @@ export const ButtonStyling = registerStyle(
         background-color: transparent;
         color: ${color.primary};
       }
+
+      ${p =>
+        p.isUserAdded &&
+        `
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+      `};
     `,
     addSigner: css`
       background-color: transparent;

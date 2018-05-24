@@ -8,6 +8,7 @@ import { AlertStyling } from "./Theme/theme.Alerts"
 import { ListStyling, SplitListItemStyling } from "./Theme/theme.Lists"
 import { TextStyling } from "./Theme/theme.Texts"
 import { ButtonStyling } from "./Theme/theme.Buttons"
+import { InputStyling, LabelStyling } from "./Theme/theme.Inputs"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -91,5 +92,7 @@ const theme = new Theme(BaseTheme, {
   .addStyles(TextStyling)
   .addStyles(ButtonStyling)
   .addStyles(SplitListItemStyling)
+  .addStyles(InputStyling)
+  .addStyles(LabelStyling)
 
 export default theme.get
