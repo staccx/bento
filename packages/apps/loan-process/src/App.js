@@ -2,9 +2,11 @@ import React, { Component } from "react"
 import { ThemeProxyProvider } from "@staccx/theme"
 import theme from "./theme.js"
 import Sign from "./module/Sign"
+// import Authenticate from "./module/Authenticate"
+// import PresentOffer from "./module/PresentOffer"
+// import ProvideAdditionalInfo from "./module/ProvideAdditionalInfo"
+import RegisterSigners from "./module/RegisterSigners"
 import Complete from "./module/Complete"
-
-// import RegisterSigners from "./module/RegisterSigners"
 
 class App extends Component {
   render() {
@@ -58,10 +60,17 @@ class App extends Component {
         {/* ]} */}
         {/* /> */}
         <div>
-          <Complete
-            onClick={console.log}
-            illustrationUrl={"https://lorempixel.com/420/320/abstract/1/Sample"}
+          <RegisterSigners
+            onComplete={console.log}
+            people={[
+              {
+                name: "Espen Thomassen Sæverud",
+                positions: ["Daglig leder", "Styreformann"]
+              }
+            ]}
           />
+
+          <hr style={{ margin: "64px 0" }} />
           <Sign
             interestRate={10.4}
             loanAmount={1000000}
@@ -88,6 +97,11 @@ class App extends Component {
               }
             ]}
             user={{ nationalId: "21031531021" }}
+          />
+          <hr style={{ margin: "64px 0" }} />
+          <Complete
+            onClick={console.log}
+            illustrationUrl={"https://lorempixel.com/420/320/abstract/1/Sample"}
           />
         </div>
       </ThemeProxyProvider>
