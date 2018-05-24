@@ -33,7 +33,8 @@ class RegisterSigners extends React.Component {
     this.initState = this.initState.bind(this)
 
     this.state = {
-      signers: []
+      signers: [],
+      showErrors: false
     }
   }
 
@@ -103,182 +104,204 @@ class RegisterSigners extends React.Component {
           }}
           validationSchema={validationSchema}
           onSubmit={this.onSubmit}
-          render={({ values, errors, submitCount }) => (
-            <Form>
-              <Box variant="tileBox">
-                <Box variant="paddingVertical">
-                  <Paragraph variant="lead">
-                    {this.props.leadText}
-                    <em>{this.props.signatureText}</em>
-                  </Paragraph>
-                  <SplitItem>
-                    <strong>{this.props.tableHeaderNameText}</strong>
-                    <strong>{this.props.tableHeaderRoleText}</strong>
-                  </SplitItem>
-                  <FieldArray
-                    name="signers"
-                    render={({ insert, remove, push }) => (
-                      <div>
-                        <List variant="topBorder">
-                          {values.signers.length > 0 &&
-                            values.signers.map((signer, index) => (
-                              <React.Fragment key={index}>
-                                <SplitListItem
-                                  variant="signerListItem"
-                                  hasInput={!!signer.isUserAdded}
-                                >
-                                  {signer.isUserAdded ? (
-                                    <Field
-                                      render={({ field }) => (
-                                        <Box variant="inputContainer">
-                                          <Input
-                                            id={`signers.${index}.name`}
-                                            {...field}
-                                            placeholder="Navn"
-                                            value=""
-                                            label={
-                                              this.props.newPersonDefaultName
-                                            }
-                                            variant="clean"
-                                          />
-                                          <Button
-                                            type="button"
-                                            className="secondary"
-                                            variant="deleteSigner"
-                                            isUserAdded
-                                            onClick={() => remove(index)}
-                                          >
-                                            <svg
-                                              xmlns="http://www.w3.org/2000/svg"
-                                              viewBox="0 0 24 24"
+          render={({ values, touched, errors }) => {
+            return (
+              <Form>
+                <Box variant="tileBox">
+                  <Box variant="paddingVertical">
+                    <Paragraph variant="lead">
+                      {this.props.leadText}
+                      <em>{this.props.signatureText}</em>
+                    </Paragraph>
+                    <SplitItem>
+                      <strong>{this.props.tableHeaderNameText}</strong>
+                      <strong>{this.props.tableHeaderRoleText}</strong>
+                    </SplitItem>
+                    <FieldArray
+                      name="signers"
+                      render={({ insert, remove, push }) => (
+                        <div>
+                          <List variant="topBorder">
+                            {values.signers.length > 0 &&
+                              values.signers.map((signer, index) => (
+                                <React.Fragment key={index}>
+                                  <SplitListItem
+                                    variant="signerListItem"
+                                    hasInput={!!signer.isUserAdded}
+                                  >
+                                    {signer.isUserAdded ? (
+                                      <Field
+                                        render={({ field }) => (
+                                          <Box variant="inputContainer">
+                                            <Input
+                                              id={`signers.${index}.name`}
+                                              {...field}
+                                              placeholder="Navn"
+                                              label={
+                                                this.props.newPersonDefaultName
+                                              }
+                                              variant="clean"
+                                              autoFocus
+                                            />
+                                            <Button
+                                              type="button"
+                                              className="secondary"
+                                              variant="deleteSigner"
+                                              isUserAdded
+                                              onClick={() => remove(index)}
                                             >
-                                              <path d="M10 0c-.52 0-1.06.18-1.44.56C8.18.94 8 1.48 8 2v1H2v2h1v16c0 1.64 1.36 3 3 3h12c1.64 0 3-1.36 3-3V5h1V3h-6V2c0-.52-.18-1.06-.56-1.44A2.03 2.03 0 0 0 14 0h-4zm0 2h4v1h-4V2zM5 5h14v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5zm2 3v11h2V8H7zm4 0v11h2V8h-2zm4 0v11h2V8h-2z" />
-                                            </svg>
-                                          </Button>
-                                        </Box>
-                                      )}
-                                      name={`signers.${index}.checked`}
-                                    />
-                                  ) : (
-                                    <Field
-                                      render={({ field }) => (
-                                        <CheckBox
-                                          group={`signer.${index}`}
-                                          id={`signers.${index}.checked`}
-                                          {...field}
-                                          defaultChecked={signer.checked}
+                                              <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path d="M10 0c-.52 0-1.06.18-1.44.56C8.18.94 8 1.48 8 2v1H2v2h1v16c0 1.64 1.36 3 3 3h12c1.64 0 3-1.36 3-3V5h1V3h-6V2c0-.52-.18-1.06-.56-1.44A2.03 2.03 0 0 0 14 0h-4zm0 2h4v1h-4V2zM5 5h14v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5zm2 3v11h2V8H7zm4 0v11h2V8h-2zm4 0v11h2V8h-2z" />
+                                              </svg>
+                                            </Button>
+                                          </Box>
+                                        )}
+                                        name={`signers.${index}.name`}
+                                      />
+                                    ) : (
+                                      <Field
+                                        render={({ field }) => (
+                                          <CheckBox
+                                            group={`signer.${index}`}
+                                            id={`signers.${index}.checked`}
+                                            {...field}
+                                            defaultChecked={signer.checked}
+                                          >
+                                            {formatName(signer.name)}
+                                          </CheckBox>
+                                        )}
+                                        name={`signers.${index}.checked`}
+                                      />
+                                    )}
+                                    {signer.isUserAdded ? (
+                                      ""
+                                    ) : (
+                                      <SignerRoles>
+                                        <span>
+                                          {signer.positions.map(signer => (
+                                            <span key={signer}>{signer} </span>
+                                          ))}
+                                        </span>
+                                        <Button
+                                          type="button"
+                                          className="secondary"
+                                          variant="deleteSigner"
+                                          onClick={() => remove(index)}
                                         >
-                                          {formatName(signer.name)}
-                                        </CheckBox>
-                                      )}
-                                      name={`signers.${index}.checked`}
-                                    />
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path d="M10 0c-.52 0-1.06.18-1.44.56C8.18.94 8 1.48 8 2v1H2v2h1v16c0 1.64 1.36 3 3 3h12c1.64 0 3-1.36 3-3V5h1V3h-6V2c0-.52-.18-1.06-.56-1.44A2.03 2.03 0 0 0 14 0h-4zm0 2h4v1h-4V2zM5 5h14v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5zm2 3v11h2V8H7zm4 0v11h2V8h-2zm4 0v11h2V8h-2z" />
+                                          </svg>
+                                        </Button>
+                                      </SignerRoles>
+                                    )}
+                                  </SplitListItem>
+                                  {signer.checked && (
+                                    <li>
+                                      <SignerFields variant="grayBox">
+                                        <Layout grid="form">
+                                          <LayoutItem>
+                                            <Field
+                                              render={({ field }) => (
+                                                <NationalIdInput
+                                                  id={`signers.${index}.nationalId`}
+                                                  placeholder="12345678903"
+                                                  label={"Fødselsnummer"}
+                                                  {...field}
+                                                />
+                                              )}
+                                              name={`signers.${index}.nationalId`}
+                                            />
+                                            {(this.state.showErrors ||
+                                              values.signers[index]
+                                                .nationalId) &&
+                                              errors.signers &&
+                                              errors.signers[index] &&
+                                              errors.signers[index]
+                                                .nationalId &&
+                                              touched.signers &&
+                                              touched.signers[index] &&
+                                              touched.signers[index]
+                                                .nationalId && (
+                                                <ValidationError>
+                                                  {
+                                                    errors.signers[index]
+                                                      .nationalId
+                                                  }
+                                                </ValidationError>
+                                              )}
+                                          </LayoutItem>
+                                          <LayoutItem>
+                                            <Field
+                                              name={`signers.${index}.email`}
+                                              render={({
+                                                field /* _form */
+                                              }) => (
+                                                <Input
+                                                  label={"E-post"}
+                                                  id={`signers.${index}.email`}
+                                                  {...field}
+                                                  placeholder="kari@nordmann.no"
+                                                />
+                                              )}
+                                            />
+                                            {(this.state.showErrors ||
+                                              values.signers[index]
+                                                .nationalId) &&
+                                              errors.signers &&
+                                              errors.signers[index] &&
+                                              errors.signers[index].email &&
+                                              touched.signers &&
+                                              touched.signers[index] &&
+                                              touched.signers[index].email && (
+                                                <ValidationError>
+                                                  {errors.signers[index].email}
+                                                </ValidationError>
+                                              )}
+                                          </LayoutItem>
+                                        </Layout>
+                                      </SignerFields>
+                                    </li>
                                   )}
-                                  {signer.isUserAdded ? (
-                                    ""
-                                  ) : (
-                                    <SignerRoles>
-                                      <span>
-                                        {signer.positions.map(signer => (
-                                          <span key={signer}>{signer} </span>
-                                        ))}
-                                      </span>
-                                      <Button
-                                        type="button"
-                                        className="secondary"
-                                        variant="deleteSigner"
-                                        onClick={() => remove(index)}
-                                      >
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          viewBox="0 0 24 24"
-                                        >
-                                          <path d="M10 0c-.52 0-1.06.18-1.44.56C8.18.94 8 1.48 8 2v1H2v2h1v16c0 1.64 1.36 3 3 3h12c1.64 0 3-1.36 3-3V5h1V3h-6V2c0-.52-.18-1.06-.56-1.44A2.03 2.03 0 0 0 14 0h-4zm0 2h4v1h-4V2zM5 5h14v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5zm2 3v11h2V8H7zm4 0v11h2V8h-2zm4 0v11h2V8h-2z" />
-                                        </svg>
-                                      </Button>
-                                    </SignerRoles>
-                                  )}
-                                </SplitListItem>
-                                {signer.checked && (
-                                  <li>
-                                    <SignerFields variant="grayBox">
-                                      <Layout grid="form">
-                                        <LayoutItem>
-                                          <Field
-                                            render={({ field }) => (
-                                              <NationalIdInput
-                                                id={`signers.${index}.nationalId`}
-                                                placeholder="12345678903"
-                                                label={"Fødselsnummer"}
-                                                {...field}
-                                              />
-                                            )}
-                                            name={`signers.${index}.nationalId`}
-                                          />
-                                          {errors.signers &&
-                                            errors.signers[index] &&
-                                            errors.signers[index]
-                                              .nationalId && (
-                                              <ValidationError>
-                                                {
-                                                  errors.signers[index]
-                                                    .nationalId
-                                                }
-                                              </ValidationError>
-                                            )}
-                                        </LayoutItem>
-                                        <LayoutItem>
-                                          <Field
-                                            name={`signers.${index}.email`}
-                                            render={({ field /* _form */ }) => (
-                                              <Input
-                                                label={"E-post"}
-                                                id={`signers.${index}.email`}
-                                                {...field}
-                                                placeholder="kari@nordmann.no"
-                                              />
-                                            )}
-                                          />
-                                          {errors.signers &&
-                                            errors.signers[index] &&
-                                            errors.signers[index].email && (
-                                              <ValidationError>
-                                                {errors.signers[index].email}
-                                              </ValidationError>
-                                            )}
-                                        </LayoutItem>
-                                      </Layout>
-                                    </SignerFields>
-                                  </li>
-                                )}
-                              </React.Fragment>
-                            ))}
-                        </List>
-                        <AddSignerContainer>
-                          <Button
-                            onClick={() =>
-                              push({
-                                checked: true,
-                                email: "",
-                                nationalId: "",
-                                positions: [],
-                                name: this.props.newPersonDefaultName,
-                                isUserAdded: true
-                              })
-                            }
-                            variant="addSigner"
-                          >
-                            {this.props.addPersonText}
-                          </Button>
-                        </AddSignerContainer>
-                      </div>
-                    )}
-                  />
+                                </React.Fragment>
+                              ))}
+                          </List>
+                          <AddSignerContainer>
+                            <Button
+                              onClick={() =>
+                                push({
+                                  checked: true,
+                                  email: "",
+                                  nationalId: "",
+                                  positions: [],
+                                  name: "",
+                                  isUserAdded: true
+                                })
+                              }
+                              variant="addSigner"
+                            >
+                              {this.props.addPersonText}
+                            </Button>
+                          </AddSignerContainer>
+                        </div>
+                      )}
+                    />
+                  </Box>
                 </Box>
-              </Box>
-              <Button type="submit">{this.props.continueText}</Button>
-            </Form>
-          )}
+                <Button
+                  type="submit"
+                  onClick={() => this.setState({ showErrors: true })}
+                >
+                  {this.props.continueText}
+                </Button>
+              </Form>
+            )
+          }}
         />
       </Wrapper>
     )
