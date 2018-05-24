@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { ThemeProxyProvider } from "@staccx/theme"
 import theme from "./theme.js"
 import Sign from "./module/Sign"
+import Complete from "./module/Complete"
 
 // import RegisterSigners from "./module/RegisterSigners"
 
@@ -56,33 +57,39 @@ class App extends Component {
         {/* } */}
         {/* ]} */}
         {/* /> */}
-        <Sign
-          interestRate={10.4}
-          loanAmount={1000000}
-          monthlyPayment={83000}
-          paybackTotal={1100000}
-          renderDocumentText={type => "dokument"}
-          renderIllustration={() => null}
-          repaymentPeriod={6}
-          signOrders={[
-            {
-              signee: "21031531021",
-              status: "UNSIGNED",
-              requestId: "abc123",
-              documentType: "DOKUMENT1",
-              url: "https://web.test.fundu.no"
-            }
-          ]}
-          signers={[
-            {
-              nationalId: "21031531021",
-              id: "cba321",
-              name: "ESPEN SÆVERUD",
-              email: "espens@stacc.com"
-            }
-          ]}
-          user={{ nationalId: "21031531021" }}
-        />
+        <div>
+          <Complete
+            onClick={console.log}
+            illustrationUrl={"https://lorempixel.com/420/320/abstract/1/Sample"}
+          />
+          <Sign
+            interestRate={10.4}
+            loanAmount={1000000}
+            monthlyPayment={83000}
+            paybackTotal={1100000}
+            renderDocumentText={type => "dokument"}
+            renderIllustration={() => null}
+            repaymentPeriod={6}
+            signOrders={[
+              {
+                signee: "21031531021",
+                status: "UNSIGNED",
+                requestId: "abc123",
+                documentType: "DOKUMENT1",
+                url: "https://web.test.fundu.no"
+              }
+            ]}
+            signers={[
+              {
+                nationalId: "21031531021",
+                id: "cba321",
+                name: "ESPEN SÆVERUD",
+                email: "espens@stacc.com"
+              }
+            ]}
+            user={{ nationalId: "21031531021" }}
+          />
+        </div>
       </ThemeProxyProvider>
     )
   }

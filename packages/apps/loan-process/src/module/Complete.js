@@ -1,30 +1,100 @@
 import React from "react"
-import IllustrationSuccess from "../../components/IllustrationSuccess"
-import SystemText from "../../components/SystemText"
-import { Wrapper, Heading, Paragraph, Box } from "@staccx/base"
-import Button from "../../components/button/Button"
+import PropTypes from "prop-types"
+import { Box, Button, Heading, Paragraph, Wrapper } from "@staccx/base"
+import styled from "styled-components"
+import Confetti from "react-dom-confetti"
 
-const Complete = () => (
-  <Wrapper size="medium">
-    <Box variant="centeredContainer">
-      <IllustrationSuccess />
-      <Heading variant="centered">
-        <SystemText
-          systemKey="APPLICATION_CONFIRMATION_HEADING"
-          fallback="Gode greier!"
-        />
-      </Heading>
-      <Paragraph variant="lead">
-        <SystemText
-          systemKey="APPLICATION_CONFIRMATION_LEAD"
-          fallback="Da har vi fått det vi trenger. Pengene skal normalt sett være tilgjengelig innen ett døgn."
-        />
-      </Paragraph>
-      <Button to="/profile">
-        <SystemText systemKey="GO_TO_MY_PROFILE" fallback="Gå til min side" />
-      </Button>
-    </Box>
-  </Wrapper>
-)
+const confettiOptions = {
+  angle: 90,
+  spread: 90,
+  startVelocity: 25,
+  elementCount: 60,
+  decay: 0.95
+}
+
+class Complete extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      confettiActive: false
+    }
+  }
+
+  componentDidMount() {
+    setTimeout(
+      () =>
+        this.setState({
+          confettiActive: !this.state.confettiActive
+        }),
+      this.props.animationDelay
+    )
+  }
+
+  render() {
+    const {
+      onClick,
+      headingText,
+      leadText,
+      buttonText,
+      illustrationUrl
+    } = this.props
+    return (
+      <Wrapper size="medium">
+        <Box variant="centeredContainer">
+          <Outer>
+            <Container className={this.props.className}>
+              <ConfettiContainer>
+                <Confetti
+                  active={this.state.confettiActive}
+                  config={confettiOptions}
+                />
+              </ConfettiContainer>
+              <Illustration src={illustrationUrl} width="200" />
+            </Container>
+          </Outer>
+          <Heading variant="centered">{headingText}</Heading>
+          <Paragraph variant="lead">{leadText}</Paragraph>
+          <Button onClick={onClick}>{buttonText}</Button>
+        </Box>
+      </Wrapper>
+    )
+  }
+}
 
 export default Complete
+
+Complete.propTypes = {
+  animationDelay: PropTypes.any,
+  buttonText: PropTypes.string,
+  className: PropTypes.any,
+  headingText: PropTypes.string,
+  illustrationUrl: PropTypes.string.isRequired,
+  leadText: PropTypes.string,
+  onClick: PropTypes.func
+}
+
+Complete.defaultProps = {
+  buttonText: "Gå til min side",
+  headingText: "Gode greier!",
+  leadText: "Da har vi det vi trenger"
+}
+
+const Outer = styled.div`
+  text-align: center;
+`
+
+const Container = styled.div`
+  position: relative;
+  display: inline-block;
+`
+const ConfettiContainer = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+`
+
+const Illustration = styled.img`
+  display: block;
+  margin: 0 auto 24px;
+`

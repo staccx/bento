@@ -138,22 +138,21 @@ const InlineRadioButtonsItem = styled.div`
 `
 
 PickLoanSum.defaultProps = {
-  customAmount: false
+  customAmount: false,
+  max: 100000,
+  min: 0
 }
 
 PickLoanSum.propTypes = {
   chooseLoanAmountText: PropTypes.string.isRequired,
-  isCustomAmount: PropTypes.bool,
-  errors: PropTypes.any,
-  handleBlur: PropTypes.any,
-  handleChange: PropTypes.any,
+  customAmount: PropTypes.bool,
   handleCustomAmount: PropTypes.func.isRequired,
   handleRadio: PropTypes.func.isRequired,
-  loanAmount: PropTypes.any,
-  max: PropTypes.any,
-  min: PropTypes.any,
-  otherAmountText: PropTypes.any,
-  resetForm: PropTypes.any
+  isCustomAmount: PropTypes.bool,
+  loanAmount: PropTypes.number.isRequired,
+  max: PropTypes.number,
+  min: PropTypes.number,
+  otherAmountText: PropTypes.string
 }
 
 export default withFormik({
