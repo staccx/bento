@@ -61,8 +61,8 @@ const font = {
 }
 
 const fontFamily = {
-  heading: "Libre Baskerville",
-  body: "Libre Franklin"
+  heading: "IBM Plex Sans",
+  body: "IBM Plex Sans"
 }
 
 const theme = new Theme(BaseTheme, {
