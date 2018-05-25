@@ -111,7 +111,7 @@ const Label = styled.label`
   width: auto;
   cursor: pointer;
   font-family: ${fontFamily.body};
-  font-size: ${font.input};
+  font-size: ${font.base};
   line-height: 1.6;
   display: inline-block;
 

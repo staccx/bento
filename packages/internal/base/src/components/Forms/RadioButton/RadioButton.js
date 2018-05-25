@@ -30,7 +30,7 @@ const Label = styled.label`
   width: auto;
   letter-spacing: normal;
   font-family: ${fontFamily.body};
-  font-size: ${font.input};
+  font-size: ${font.base};
   font-weight: ${fontWeight.normal};
   cursor: pointer;
 
