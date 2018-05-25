@@ -51,9 +51,10 @@ const Form = props => {
             value={values.accountNumber}
             onChange={_handleChange}
             label={props.accountNumberText}
-            placeholder="XXXX XX XXXX"
+            placeholder="×××× ×× ××××"
             id="accountNumber"
             locale={"nb"}
+            variant="clean"
           />
           {errors.accountNumber &&
             touched.accountNumber && (
@@ -132,11 +133,12 @@ SetAccountNumber.propTypes = {
 }
 
 SetAccountNumber.defaultProps = {
-  accountNumberErrorText: "Account number invalid",
-  accountNumberText: "Account number",
-  continueButtonText: "Continue",
-  headingText: "Enter account number",
-  loanTypeText: "Credit | Loan"
+  accountNumberErrorText: "Kontonummeret er ikke gyldig",
+  accountNumberText: "Kontonummer",
+  continueButtonText: "Fortsett nå",
+  headingText: "Utbetalingskonto",
+  loanTypeText:
+    "Nesten ferdig, vi trenger bare kontonummeret ditt og signering av avtalen, så er pengene på vei."
 }
 
 export default SetAccountNumber
