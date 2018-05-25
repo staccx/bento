@@ -1,23 +1,23 @@
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
 import {
   Box,
-  Button,
   ExpandListItem,
   Heading,
   List,
-  Paragraph,
-  Wrapper
+  Wrapper,
+  Expand
 } from "@staccx/base"
-import { color, spacing } from "@staccx/theme"
+import { spacing } from "@staccx/theme"
+import { formatCurrency, formatName } from "@staccx/formatting"
+import SignDocument from "./Sign.Document"
 import {
   OfferTable,
   OfferTableData,
   OfferTableText,
   OfferTableTotal
 } from "./replace/Styles.OfferTable"
-import styled from "styled-components"
-import { formatCurrency, formatName } from "@staccx/formatting"
 
 // const SIGN_ORDER_STATUS_PENDING = "pending"
 
@@ -32,149 +32,186 @@ class Sign extends React.Component {
         <Heading variant="centered" level={1}>
           {this.props.headingText}
         </Heading>
-        <Paragraph variant="lead">{this.props.leadText}</Paragraph>
-        <Box variant="tileBox">
-          <ul>
-            <ExpandListItem
-              title={
-                this.props.loanDetailsText +
-                ` ${formatCurrency(this.props.loanAmount)}`
-              }
-            >
-              {/* TODO: vise om det er lån eller kreditt☝️ */}
-              <OfferTable>
-                <tbody>
-                  <tr>
-                    <OfferTableText>{this.props.loanOfferText}</OfferTableText>
-                    <OfferTableData>
-                      {formatCurrency(this.props.loanAmount)}
-                    </OfferTableData>
-                  </tr>
-                  <tr>
-                    <OfferTableText>
-                      {this.props.loanDurationText}
-                    </OfferTableText>
-                    <OfferTableData>
-                      {this.props.repaymentPeriod} {this.props.monthSuffix}
-                    </OfferTableData>
-                  </tr>
-                  <tr>
-                    <OfferTableText>{this.props.monthlyFeeText}</OfferTableText>
-                    <OfferTableData>{this.props.interestRate}%</OfferTableData>
-                  </tr>
-                  <tr>
-                    <OfferTableText>{this.props.paybackText}</OfferTableText>
-                    <OfferTableData>
-                      {formatCurrency(this.props.paybackTotal)}
-                    </OfferTableData>
-                  </tr>
-                  <OfferTableTotal>
-                    <OfferTableText>{this.props.payMonthlyText}</OfferTableText>
-                    <OfferTableData>
-                      {formatCurrency(this.props.monthlyPayment)}
-                    </OfferTableData>
-                  </OfferTableTotal>
-                </tbody>
-                {/* TODO: ☝️ lokalisering + tall fra API */}
-              </OfferTable>
-            </ExpandListItem>
-            {this.props.signOrders &&
-              this.props.signers.map((signer, index) => {
-                const orders = this.props.signOrders.filter(
-                  order => order.signee === signer.nationalId
-                )
+        <Lede>
+          <Expand title={this.props.loanDetailsText}>
+            <span>
+              {this.props.loanDetailsText +
+                ` ${formatCurrency(this.props.loanAmount)}`}
+            </span>
+            <Details>
+              <Box variant="tileBox">
+                {/* TODO: vise om det er lån eller kreditt☝️ */}
+                <OfferTable>
+                  <tbody>
+                    <tr>
+                      <OfferTableText>
+                        {this.props.loanOfferText}
+                      </OfferTableText>
+                      <OfferTableData>
+                        {formatCurrency(this.props.loanAmount)}
+                      </OfferTableData>
+                    </tr>
+                    <tr>
+                      <OfferTableText>
+                        {this.props.loanDurationText}
+                      </OfferTableText>
+                      <OfferTableData>
+                        {this.props.repaymentPeriod} {this.props.monthSuffix}
+                      </OfferTableData>
+                    </tr>
+                    <tr>
+                      <OfferTableText>
+                        {this.props.monthlyFeeText}
+                      </OfferTableText>
+                      <OfferTableData>
+                        {this.props.interestRate}%
+                      </OfferTableData>
+                    </tr>
+                    <tr>
+                      <OfferTableText>{this.props.paybackText}</OfferTableText>
+                      <OfferTableData>
+                        {formatCurrency(this.props.paybackTotal)}
+                      </OfferTableData>
+                    </tr>
+                    <OfferTableTotal>
+                      <OfferTableText>
+                        {this.props.payMonthlyText}
+                      </OfferTableText>
+                      <OfferTableData>
+                        {formatCurrency(this.props.monthlyPayment)}
+                      </OfferTableData>
+                    </OfferTableTotal>
+                  </tbody>
+                  {/* TODO: ☝️ lokalisering + tall fra API */}
+                </OfferTable>
+              </Box>
+            </Details>
+          </Expand>
+        </Lede>
 
-                const signedDocuments = orders.reduce(
-                  (acc, current) =>
-                    acc +
-                    (current.status === this.props.signOrderStatusCompleted)
-                      ? 1
-                      : 0,
-                  0
-                )
-                return (
-                  <ExpandListItem
-                    key={signer.id}
-                    title={
-                      <Box variant="split">
-                        <span>{`${formatName(signer.name) || "Geir Nilsen"} (${
-                          signer.email
-                        })`}</span>{" "}
-                        {/* TODO: ☝️ fjerne denne fallbacken */}
-                        <span>{`${signedDocuments}/${orders.length}`}</span>
-                        {/* TODO: ☝️ hente fra api */}
-                      </Box>
-                    }
-                    expanded={index === 0}
-                    flush
-                  >
-                    <List variant="documentStatusList">
-                      {orders.map(order => {
-                        const showButton =
-                          order.status !==
-                            this.props.signOrderStatusCompleted ||
-                          this.props.user.nationalId !== order.signee
-                        return (
-                          <DocumentStatusItem key={order.requestId}>
-                            <div>
-                              {this.props.renderDocumentText(
-                                order.documentType
-                              )}
-                            </div>
-                            <div>
-                              {showButton && (
-                                <SignButton href={order.url}>
-                                  {this.props.signText}
-                                </SignButton>
-                              )}
-                              {this.props.user.nationalId !== order.signee &&
-                                order.status !==
-                                  this.props.signOrderStatusCompleted &&
-                                this.props.waitingForSignatureText}
-                              {order.status ===
-                                this.props.signOrderStatusCompleted && (
-                                <Checkmark viewBox="0 0 28 28">
-                                  <path
-                                    fill="#19AC20"
-                                    d="M14 28a14 14 0 1 0 0-28 14 14 0 0 0 0 28zm-2-11l9-10 2 2-11 12-6-6 2-2 4 4z"
-                                  />
-                                </Checkmark>
-                              )}
-                            </div>
-                          </DocumentStatusItem>
-                        )
-                      })}
-                    </List>
-                  </ExpandListItem>
-                )
-              })}
-          </ul>
-        </Box>
+        {/* Render users own documents */}
+        {this.props.signOrders &&
+          this.props.signers.map((signer, index) => {
+            const orders = this.props.signOrders.filter(
+              order => order.signee === signer.nationalId
+            )
+
+            const signedDocuments = orders.reduce(
+              (acc, current) =>
+                acc + (current.status === this.props.signOrderStatusCompleted)
+                  ? 1
+                  : 0,
+              0
+            )
+            if (index === 0) {
+              return (
+                <div>
+                  <Heading variant="boxHeading" level={2}>
+                    {this.props.userTaskText}
+                  </Heading>
+                  <Box variant="tileBox">
+                    {orders.map(order => {
+                      const showButton =
+                        order.status !== this.props.signOrderStatusCompleted ||
+                        this.props.user.nationalId !== order.signee
+                      return (
+                        <SignDocument
+                          order={order}
+                          user={this.props.user}
+                          showButton={showButton}
+                          signText={this.props.signText}
+                          signOrderStatusCompleted={
+                            this.props.signOrderStatusCompleted
+                          }
+                          waitingForSignatureText={
+                            this.props.waitingForSignatureText
+                          }
+                          renderDocumentText={this.props.renderDocumentText}
+                        />
+                      )
+                    })}
+                  </Box>
+                </div>
+              )
+            }
+          })}
+        {/* Render other signers documents */}
+        {this.props.signers.length > 1 && (
+          <div>
+            <Heading variant="boxHeading" level={2}>
+              {this.props.othersTaskText}
+            </Heading>
+            <Box variant="tileBox">
+              {this.props.signOrders &&
+                this.props.signers.map((signer, index) => {
+                  const orders = this.props.signOrders.filter(
+                    order => order.signee === signer.nationalId
+                  )
+
+                  const signedDocuments = orders.reduce(
+                    (acc, current) =>
+                      acc +
+                      (current.status === this.props.signOrderStatusCompleted)
+                        ? 1
+                        : 0,
+                    0
+                  )
+                  if (index > 0) {
+                    return (
+                      <List>
+                        <ExpandListItem
+                          key={signer.id}
+                          title={
+                            <Box variant="split">
+                              <span>{formatName(signer.name)}</span>
+                              <span>{`${signedDocuments}/${
+                                orders.length
+                              }`}</span>
+                            </Box>
+                          }
+                          flush
+                        >
+                          <List variant="documentStatusList">
+                            {orders.map(order => {
+                              return (
+                                <SignDocument
+                                  order={order}
+                                  user={this.props.user}
+                                  showButton={false}
+                                  signText={this.props.signText}
+                                  signOrderStatusCompleted={
+                                    this.props.signOrderStatusCompleted
+                                  }
+                                  waitingForSignatureText={
+                                    this.props.waitingForSignatureText
+                                  }
+                                  renderDocumentText={
+                                    this.props.renderDocumentText
+                                  }
+                                />
+                              )
+                            })}
+                          </List>
+                        </ExpandListItem>
+                      </List>
+                    )
+                  }
+                })}
+            </Box>
+          </div>
+        )}
       </Wrapper>
     )
   }
 }
 
-const SignButton = styled(Button.withComponent("a"))`
-  margin-bottom: 0;
-  &:disabled {
-    background: gray;
-  }
+const Lede = styled.div`
+  text-align: center;
+  margin-bottom: ${spacing.medium};
 `
 
-const Checkmark = styled.svg`
-  display: block;
-  width: 24px;
-  height: 24px;
-`
-
-const DocumentStatusItem = styled.li`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 70px;
-  padding: ${spacing.small} ${spacing.medium};
-  border-top: 1px solid ${color.line};
+const Details = styled.div`
+  margin-top: ${spacing.medium};
 `
 
 export default Sign
@@ -203,13 +240,15 @@ Sign.propTypes = {
   user: PropTypes.shape({
     nationalId: PropTypes.string.isRequired
   }).isRequired,
-  waitingForSignatureText: PropTypes.string
+  waitingForSignatureText: PropTypes.string,
+  userTaskText: PropTypes.string,
+  othersTaskText: PropTypes.string
 }
 
 Sign.defaultProps = {
-  headingText: "Lånetilbud",
-  leadText: "Noe tekst her",
-  loanDetailsText: "Detaljer...",
+  headingText: "Signering",
+  leadText: "Vis detaljer",
+  loanDetailsText: "Se detaljer om lånet på ",
   loanDurationText: "Lånelengde",
   loanOfferText: "Lånetilbud",
   monthSuffix: "mnd",
@@ -218,5 +257,7 @@ Sign.defaultProps = {
   paybackText: "Å betale totalt",
   signOrderStatusCompleted: "COMPLETED",
   signText: "Signèr",
-  waitingForSignatureText: "Venter på signering"
+  waitingForSignatureText: "Venter på signering",
+  userTaskText: "Du må signere",
+  othersTaskText: "Andre som skal signere"
 }

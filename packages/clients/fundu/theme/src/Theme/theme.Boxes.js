@@ -40,6 +40,8 @@ export const BoxStyling = registerStyle(
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 100%;
+      padding: 0;
     `,
     centeredContainer: css`
       text-align: center;

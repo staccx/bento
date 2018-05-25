@@ -4,16 +4,23 @@ import { spacing, color } from "@staccx/theme"
 export const OfferTable = styled.table`
   width: 100%;
   table-layout: fixed;
+
+  tr:last-child {
+    td {
+      border-bottom-width: 0;
+    }
+  }
 `
 
 export const OfferTableText = styled.td`
-  padding: ${spacing.tiny} 0;
+  padding: ${spacing.small} 0 ${spacing.small} ${spacing.small};
   border-bottom: 1px solid ${color.line};
   text-align: left;
 `
 
 export const OfferTableData = styled(OfferTableText)`
   text-align: right;
+  padding: ${spacing.small} ${spacing.small} ${spacing.small} 0;
 `
 
 export const OfferTableTotal = styled.tr`

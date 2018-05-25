@@ -97,6 +97,7 @@ class RegisterSigners extends React.Component {
         <Heading variant="centered" level={1}>
           {this.props.headingText}
         </Heading>
+        <Paragraph variant="lead">{this.props.leadText}</Paragraph>
 
         <Formik
           initialValues={{
@@ -109,9 +110,8 @@ class RegisterSigners extends React.Component {
               <Form>
                 <Box variant="tileBox">
                   <Box variant="paddingVertical">
-                    <Paragraph variant="lead">
-                      {this.props.leadText}
-                      <em>{this.props.signatureText}</em>
+                    <Paragraph variant="tileText">
+                      {this.props.signatureText}
                     </Paragraph>
                     <SplitItem>
                       <strong>{this.props.tableHeaderNameText}</strong>
@@ -376,11 +376,13 @@ RegisterSigners.defaultProps = {
   errorEmailRequiredText: "Epost må fylles ut",
   errorNationalIdInvalidText: "Fødselsnummer ikke gyldig",
   errorNationalIdRequiredText: "Fødselsnummer må fylles ut",
-  headingText: "Registrèr signatører",
-  leadText: "Lead text",
+  headingText: "Hvem skal signere?",
+  leadText:
+    "Avtalen må signeres av de som skal signere i henhold til selskapets vedtekter.",
   newPersonDefaultName: "Ny person",
   people: [],
-  signatureText: "Daglig leder ene og alene (tekst fra Brønnøysund)",
+  signatureText:
+    "Daglig leder ene og alene (hentet fra Brønnøysundsregisteret)",
   tableHeaderNameText: "Navn",
   tableHeaderRoleText: "Rolle"
 }

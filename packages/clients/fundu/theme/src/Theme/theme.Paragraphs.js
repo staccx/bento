@@ -13,6 +13,9 @@ export const ParagraphStyling = registerStyle(
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
+    `,
+    tileText: css`
+      margin: 0 0 ${spacing.medium} ${spacing.medium};
     `
   },
   ParagraphStyles.PARAGRAPH

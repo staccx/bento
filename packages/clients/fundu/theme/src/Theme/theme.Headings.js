@@ -28,6 +28,11 @@ export const HeadingStyling = registerStyle(
       font-size: ${font.h2};
       font-weight: 300;
       margin-bottom: ${spacing.small};
+    `,
+    boxHeading: css`
+      font-size: ${font.base};
+      font-weight: 300;
+      margin-bottom: ${spacing.tiny};
     `
   },
   HeadingStyles.HEADING

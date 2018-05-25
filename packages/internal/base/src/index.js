@@ -34,6 +34,9 @@ import ExpandListItem, * as ExpandListItemStyles from "./components/Lists/Expand
 import LinkListItem, * as LinkListItemStyles from "./components/Lists/LinkList/LinkListItem"
 import InlineListItem from "./components/Lists/InlineList/InlineListItem"
 
+// Expand
+import Expand, * as ExpandStyles from "./components/Expand/Expand"
+
 // Layout
 import Flag from "./components/Layout/Flag/Flag"
 import Wrapper from "./components/Layout/Wrapper/Wrapper"
@@ -113,6 +116,8 @@ export {
   Divider,
   DividerStyles,
   Donut,
+  Expand,
+  ExpandStyles,
   ExpandListItem,
   ExpandListItemStyles,
   Flag,
