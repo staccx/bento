@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { withFormik } from "formik"
-const Yup = require("yup")
 import {
   AccountInput,
   Button,
@@ -12,6 +11,7 @@ import {
   Alert
 } from "@staccx/base"
 import { removeWhitespace } from "@staccx/formatting"
+const Yup = require("yup")
 
 const Form = props => {
   const {

@@ -2,12 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { withFormik } from "formik"
-const Yup = require("yup")
 import { CurrencyInput, RadioButton } from "@staccx/base"
 import { formatCurrency, removeWhitespace } from "@staccx/formatting"
 import { BounceIn, BounceOut } from "@staccx/animations"
 import { color, spacing } from "@staccx/theme"
 import ValidationError from "./replace/ValidationError"
+const Yup = require("yup")
 
 const PickLoanSum = props => {
   const {
