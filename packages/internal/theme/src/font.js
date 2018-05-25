@@ -12,5 +12,6 @@ font.base = () => font("base")
 font.tiny = () => font("tiny")
 font.input = () => font("input")
 font.huge = () => font("huge")
+font.lineHeight = () => font("lineHeight")
 
 export default font

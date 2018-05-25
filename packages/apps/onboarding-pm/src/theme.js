@@ -57,7 +57,8 @@ const font = {
   base: "14px",
   tiny: "12px",
   input: "16px",
-  huge: "44px"
+  huge: "44px",
+  lineHeight: "1.5"
 }
 
 const fontFamily = {

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { fontFamily, themify } from "@staccx/theme"
+import { fontFamily, font, themify } from "@staccx/theme"
 
 const Paragraph = ({ level, children, className, ...restProps }) => {
   return (
@@ -15,6 +15,7 @@ export const PARAGRAPH = "paragraph"
 
 export const P = styled.p`
   font-family: ${fontFamily.body};
+  line-height: ${font.lineHeight};
   ${themify(PARAGRAPH)};
 `
 
