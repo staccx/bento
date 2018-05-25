@@ -22,14 +22,16 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "peerDependencies": {
-    "@staccx/theme": "3.9.1",
+    "@staccx/base": "4.2.0",
+    "@staccx/theme": "4.2.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
-    "@staccx/theme": "^4.2.0",
+    "@staccx/base": "4.2.0",
+    "@staccx/theme": "4.2.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^23.0.0-charlie.1",
@@ -71,7 +73,6 @@
     "@staccx/formatting": "^4.2.0",
     "formik": "^0.11.11",
     "national-id": "^2.0.0",
-    "prop-types": "^15.6.1",
     "react-dom-confetti": "^0.0.10",
     "uuid": "^3.2.1",
     "yup": "^0.24.1"

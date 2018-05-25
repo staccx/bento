@@ -1,5 +1,13 @@
 import React, { Component } from "react"
-import { Button } from "@staccx/base"
+import {
+  PresentOffer,
+  CompleteProcess,
+  Sign,
+  RegisterSigners,
+  SetAccountNumber,
+  EndScreen,
+  ProvideAdditionalInfo
+} from "@staccx/loan-process"
 import { ThemeProxyProvider } from "@staccx/theme"
 import theme from "./theme.js"
 
@@ -7,7 +15,15 @@ class App extends Component {
   render() {
     return (
       <ThemeProxyProvider theme={theme}>
-        <Button>My X Button</Button>
+        <div>
+          <PresentOffer />
+          <CompleteProcess />
+          <Sign />
+          <RegisterSigners />
+          <SetAccountNumber />
+          <EndScreen />
+          <ProvideAdditionalInfo />
+        </div>
       </ThemeProxyProvider>
     )
   }

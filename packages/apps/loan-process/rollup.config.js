@@ -9,10 +9,6 @@ export default {
   input: "./src/export.js",
   output: [
     {
-      file: pkg.main,
-      format: "cjs"
-    },
-    {
       file: pkg.module,
       format: "es"
     }
@@ -31,9 +27,6 @@ export default {
       exclude: ["node_modules/**"],
       plugins: ["external-helpers"]
     }),
-    resolve(),
-    commonjs({
-      exclude: ["node_modules/react-com-confetti/**", "node_modules/yup/**"],
-    })
+    resolve()
   ]
 }

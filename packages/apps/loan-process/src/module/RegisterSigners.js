@@ -17,7 +17,7 @@ import {
 import { formatName, removeWhitespace } from "@staccx/formatting"
 import styled, { keyframes } from "styled-components"
 import { Field, FieldArray, Form, Formik } from "formik"
-import Yup from "yup"
+const Yup = require("yup")
 import { color, spacing } from "@staccx/theme"
 import { norwegian } from "national-id"
 

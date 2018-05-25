@@ -26,24 +26,18 @@ class App extends Component {
         <Offer /> */}
 
         <div>
-          <EndScreen  />
-          <hr style={{margin: "64px 0"}}/>
-          <SetAccountNumber  />
+          <EndScreen />
           <hr style={{ margin: "64px 0" }} />
-          <PresentOffer
-          />
+          <SetAccountNumber />
           <hr style={{ margin: "64px 0" }} />
-          <RegisterSigners
-
-          />
+          <PresentOffer />
+          <hr style={{ margin: "64px 0" }} />
+          <RegisterSigners />
 
           <hr style={{ margin: "64px 0" }} />
-          <Sign
-
-          />
+          <Sign />
           <hr style={{ margin: "64px 0" }} />
-          <Complete
-          />
+          <Complete />
         </div>
       </ThemeProxyProvider>
     )

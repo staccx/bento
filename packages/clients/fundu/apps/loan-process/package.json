@@ -5,7 +5,7 @@
   "dependencies": {
     "@staccx/base": "^4.2.0",
     "@staccx/fundu-theme": "^4.2.0",
-    "@staccx/loan-process": "^4.2.0",
+    "@staccx/loan-process": "^4.1.0",
     "@staccx/theme": "^4.2.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",

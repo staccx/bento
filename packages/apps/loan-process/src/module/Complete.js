@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Box, Button, Heading, Paragraph, Wrapper } from "@staccx/base"
 import styled from "styled-components"
-import Confetti from "react-dom-confetti"
+// import Confetti from "react-dom-confetti"
 
 const confettiOptions = {
   angle: 90,
@@ -44,10 +44,10 @@ class Complete extends React.PureComponent {
           <Outer>
             <Container className={this.props.className}>
               <ConfettiContainer>
-                <Confetti
-                  active={this.state.confettiActive}
-                  config={confettiOptions}
-                />
+                {/*<Confetti*/}
+                {/*active={this.state.confettiActive}*/}
+                {/*config={confettiOptions}*/}
+                {/*/>*/}
               </ConfettiContainer>
               <Illustration src={illustrationUrl} width="200" />
             </Container>

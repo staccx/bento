@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { withFormik } from "formik"
-import * as Yup from "yup"
+const Yup = require("yup")
 import { CurrencyInput, RadioButton } from "@staccx/base"
 import { formatCurrency, removeWhitespace } from "@staccx/formatting"
 import { BounceIn, BounceOut } from "@staccx/animations"

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { withFormik } from "formik"
-import * as Yup from "yup"
+const Yup = require("yup")
 import {
   AccountInput,
   Button,
