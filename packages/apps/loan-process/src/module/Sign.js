@@ -3,11 +3,11 @@ import React from "react"
 import styled from "styled-components"
 import {
   Box,
+  Expand,
   ExpandListItem,
   Heading,
   List,
-  Wrapper,
-  Expand
+  Wrapper
 } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 import { formatCurrency, formatName } from "@staccx/formatting"
@@ -23,6 +23,32 @@ import {
 
 class Sign extends React.Component {
   render() {
+    const orders = Object.assign([], this.props.signOrders)
+    const userOrders = orders.filter(
+      order => order.signee === this.props.user.nationalId
+    )
+    const otherOrders = orders.filter(
+      order => order.signee !== this.props.user.nationalId
+    )
+
+    const signers = Object.assign([], this.props.signers)
+
+    const signCountReducer = (accumulator, currentValue) => {
+      const value =
+        currentValue.status === this.props.signOrderStatusCompleted ? 1 : 0
+      return value + accumulator
+    }
+    const otherSigners = signers
+      .filter(signer => signer.nationalId !== this.props.user.nationalId)
+      .map(signer => ({
+        ...signer,
+        orders: otherOrders.filter(order => order.signee === signer.nationalId)
+      }))
+      .map(signer => ({
+        ...signer,
+        signCount: signer.orders.reduce(signCountReducer, 0)
+      }))
+
     return (
       <Wrapper size="medium" breakout>
         <Box variant="illustration">
@@ -88,37 +114,56 @@ class Sign extends React.Component {
             </Details>
           </Expand>
         </Lede>
-
         {/* Render users own documents */}
-        {this.props.signOrders &&
-          this.props.signers.map((signer, index) => {
-            const orders = this.props.signOrders.filter(
-              order => order.signee === signer.nationalId
-            )
-
-            const signedDocuments = orders.reduce(
-              (acc, current) =>
-                acc + (current.status === this.props.signOrderStatusCompleted)
-                  ? 1
-                  : 0,
-              0
-            )
-            if (index === 0) {
+        <div>
+          <Heading variant="boxHeading" level={2}>
+            {this.props.userTaskText}
+          </Heading>
+          <Box variant="tileBox">
+            {userOrders.map(order => {
+              const showButton =
+                order.status !== this.props.signOrderStatusCompleted
               return (
-                <div>
-                  <Heading variant="boxHeading" level={2}>
-                    {this.props.userTaskText}
-                  </Heading>
-                  <Box variant="tileBox">
-                    {orders.map(order => {
-                      const showButton =
-                        order.status !== this.props.signOrderStatusCompleted ||
-                        this.props.user.nationalId !== order.signee
+                <SignDocument
+                  order={order}
+                  user={this.props.user}
+                  showButton={showButton}
+                  signText={this.props.signText}
+                  signOrderStatusCompleted={this.props.signOrderStatusCompleted}
+                  waitingForSignatureText={this.props.waitingForSignatureText}
+                  renderDocumentText={this.props.renderDocumentText}
+                />
+              )
+            })}
+          </Box>
+        </div>
+        {/* Render other signers documents */}
+        <div>
+          <Heading variant="boxHeading" level={2}>
+            {this.props.othersTaskText}
+          </Heading>
+          <Box variant="tileBox">
+            {otherSigners.map(signer => (
+              <List>
+                <ExpandListItem
+                  key={signer.id}
+                  title={
+                    <Box variant="split">
+                      <span>{formatName(signer.name)}</span>
+                      <span>{`${signer.signCount}/${
+                        signer.orders.length
+                      }`}</span>
+                    </Box>
+                  }
+                  flush
+                >
+                  <List variant="documentStatusList">
+                    {signer.orders.map(order => {
                       return (
                         <SignDocument
                           order={order}
                           user={this.props.user}
-                          showButton={showButton}
+                          showButton={false}
                           signText={this.props.signText}
                           signOrderStatusCompleted={
                             this.props.signOrderStatusCompleted
@@ -130,76 +175,12 @@ class Sign extends React.Component {
                         />
                       )
                     })}
-                  </Box>
-                </div>
-              )
-            }
-          })}
-        {/* Render other signers documents */}
-        {this.props.signers.length > 1 && (
-          <div>
-            <Heading variant="boxHeading" level={2}>
-              {this.props.othersTaskText}
-            </Heading>
-            <Box variant="tileBox">
-              {this.props.signOrders &&
-                this.props.signers.map((signer, index) => {
-                  const orders = this.props.signOrders.filter(
-                    order => order.signee === signer.nationalId
-                  )
-
-                  const signedDocuments = orders.reduce(
-                    (acc, current) =>
-                      acc +
-                      (current.status === this.props.signOrderStatusCompleted)
-                        ? 1
-                        : 0,
-                    0
-                  )
-                  if (index > 0) {
-                    return (
-                      <List>
-                        <ExpandListItem
-                          key={signer.id}
-                          title={
-                            <Box variant="split">
-                              <span>{formatName(signer.name)}</span>
-                              <span>{`${signedDocuments}/${
-                                orders.length
-                              }`}</span>
-                            </Box>
-                          }
-                          flush
-                        >
-                          <List variant="documentStatusList">
-                            {orders.map(order => {
-                              return (
-                                <SignDocument
-                                  order={order}
-                                  user={this.props.user}
-                                  showButton={false}
-                                  signText={this.props.signText}
-                                  signOrderStatusCompleted={
-                                    this.props.signOrderStatusCompleted
-                                  }
-                                  waitingForSignatureText={
-                                    this.props.waitingForSignatureText
-                                  }
-                                  renderDocumentText={
-                                    this.props.renderDocumentText
-                                  }
-                                />
-                              )
-                            })}
-                          </List>
-                        </ExpandListItem>
-                      </List>
-                    )
-                  }
-                })}
-            </Box>
-          </div>
-        )}
+                  </List>
+                </ExpandListItem>
+              </List>
+            ))}
+          </Box>
+        </div>
       </Wrapper>
     )
   }
@@ -255,7 +236,7 @@ Sign.defaultProps = {
   monthlyFeeText: "Månedlige gebyrer",
   payMonthlyText: "Å betale månedlig",
   paybackText: "Å betale totalt",
-  signOrderStatusCompleted: "COMPLETED",
+  signOrderStatusCompleted: "SIGNED",
   signText: "Signèr",
   waitingForSignatureText: "Venter på signering",
   userTaskText: "Du må signere",
