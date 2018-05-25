@@ -120,22 +120,26 @@ class Sign extends React.Component {
             {this.props.userTaskText}
           </Heading>
           <Box variant="tileBox">
-            {userOrders.map(order => {
-              const showButton =
-                order.status !== this.props.signOrderStatusCompleted
-              return (
-                <SignDocument
-                  key={order.requestId}
-                  order={order}
-                  user={this.props.user}
-                  showButton={showButton}
-                  signText={this.props.signText}
-                  signOrderStatusCompleted={this.props.signOrderStatusCompleted}
-                  waitingForSignatureText={this.props.waitingForSignatureText}
-                  renderDocumentText={this.props.renderDocumentText}
-                />
-              )
-            })}
+            <List>
+              {userOrders.map(order => {
+                const showButton =
+                  order.status !== this.props.signOrderStatusCompleted
+                return (
+                  <SignDocument
+                    key={order.requestId}
+                    order={order}
+                    user={this.props.user}
+                    showButton={showButton}
+                    signText={this.props.signText}
+                    signOrderStatusCompleted={
+                      this.props.signOrderStatusCompleted
+                    }
+                    waitingForSignatureText={this.props.waitingForSignatureText}
+                    renderDocumentText={this.props.renderDocumentText}
+                  />
+                )
+              })}
+            </List>
           </Box>
         </div>
         {/* Render other signers documents */}

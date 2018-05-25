@@ -56,6 +56,10 @@ export const ExpandListItemStyling = registerStyle(
   {
     signer: css`
       border-bottom: 1px solid ${color.line};
+
+      > * {
+        border-top: 1px solid ${color.line};
+      }
     `
   },
   ExpandListItemStyles.EXPAND_LIST_ITEM

@@ -52,7 +52,10 @@ const DocumentStatusItem = styled.li`
   align-items: center;
   min-height: 70px;
   padding: ${spacing.small} ${spacing.medium};
-  border-top: 1px solid ${color.line};
+
+  &:not(:first-child) {
+    border-top: 1px solid ${color.line};
+  }
 `
 
 export default SignDocument
