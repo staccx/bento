@@ -18,6 +18,7 @@ const PickLoanSum = props => {
     handleRadio,
     handleCustomAmount,
     chooseLoanAmountText,
+    customLoanAmountLabel,
     otherAmountText,
     handleChange,
     handleBlur,
@@ -81,7 +82,7 @@ const PickLoanSum = props => {
       {isCustomAmount && (
         <UserDefinedAmount visible={isCustomAmount}>
           <CurrencyInput
-            label={chooseLoanAmountText}
+            label={customLoanAmountLabel}
             placeholder="0"
             id="amount"
             max={max}
@@ -90,6 +91,7 @@ const PickLoanSum = props => {
             value={loanAmount}
             locale={"nb"}
             onBlur={handleBlur}
+            variant="clean"
           />
           {errors.amount && <ValidationError>{errors.amount}</ValidationError>}
         </UserDefinedAmount>
@@ -114,7 +116,9 @@ const PickAmounts = styled.div`
 `
 
 const UserDefinedAmount = styled.div`
-  ${""} ${props =>
+  border-top: 1px solid ${color.line};
+  opacity: 0;
+  ${props =>
     props.visible
       ? "animation: .4s " + BounceIn + " .05s ease-out forwards 1;"
       : "animation: .4s " + BounceOut + " .05s ease-out forwards 1;"};
@@ -140,7 +144,8 @@ const InlineRadioButtonsItem = styled.div`
 PickLoanSum.defaultProps = {
   customAmount: false,
   max: 100000,
-  min: 0
+  min: 0,
+  customLoanAmountLabel: "Egendefinert sum"
 }
 
 PickLoanSum.propTypes = {
@@ -152,7 +157,8 @@ PickLoanSum.propTypes = {
   loanAmount: PropTypes.number.isRequired,
   max: PropTypes.number,
   min: PropTypes.number,
-  otherAmountText: PropTypes.string
+  otherAmountText: PropTypes.string,
+  customLoanAmountLabel: PropTypes.string
 }
 
 export default withFormik({
