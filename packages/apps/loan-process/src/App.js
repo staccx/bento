@@ -28,7 +28,7 @@ class App extends Component {
         <div>
           <EndScreen  />
           <hr style={{margin: "64px 0"}}/>
-          <SetAccountNumber onValidated={console.log} />
+          <SetAccountNumber  />
           <hr style={{ margin: "64px 0" }} />
           <PresentOffer
           />
@@ -43,8 +43,6 @@ class App extends Component {
           />
           <hr style={{ margin: "64px 0" }} />
           <Complete
-            onClick={console.log}
-            illustrationUrl={"https://lorempixel.com/420/320/abstract/1/Sample"}
           />
         </div>
       </ThemeProxyProvider>

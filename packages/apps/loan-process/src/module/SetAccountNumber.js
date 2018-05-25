@@ -138,7 +138,8 @@ SetAccountNumber.defaultProps = {
   continueButtonText: "Fortsett nå",
   headingText: "Utbetalingskonto",
   loanTypeText:
-    "Nesten ferdig, vi trenger bare kontonummeret ditt og signering av avtalen, så er pengene på vei."
+    "Nesten ferdig, vi trenger bare kontonummeret ditt og signering av avtalen, så er pengene på vei.",
+  onValidated: console.log
 }
 
 export default SetAccountNumber

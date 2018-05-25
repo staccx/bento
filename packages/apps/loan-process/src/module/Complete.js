@@ -76,7 +76,9 @@ Complete.propTypes = {
 Complete.defaultProps = {
   buttonText: "Gå til min side",
   headingText: "Gode greier!",
-  leadText: "Da har vi det vi trenger"
+  leadText: "Da har vi det vi trenger",
+  onClick: console.log,
+  illustrationUrl: "https://lorempixel.com/420/320/abstract/1/Sample"
 }
 
 const Outer = styled.div`
