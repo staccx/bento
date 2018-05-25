@@ -6,15 +6,15 @@ import {
   CheckBox,
   Heading,
   Input,
+  Layout,
+  LayoutItem,
+  List,
   NationalIdInput,
   Paragraph,
-  Wrapper,
-  List,
   SplitListItem,
-  Layout,
-  LayoutItem
+  Wrapper
 } from "@staccx/base"
-import { removeWhitespace, formatName } from "@staccx/formatting"
+import { formatName, removeWhitespace } from "@staccx/formatting"
 import styled, { keyframes } from "styled-components"
 import { Field, FieldArray, Form, Formik } from "formik"
 import Yup from "yup"
@@ -379,9 +379,15 @@ RegisterSigners.defaultProps = {
   leadText:
     "Avtalen må signeres av de som skal signere i henhold til selskapets vedtekter.",
   newPersonDefaultName: "Ny person",
-  people: [],
   signatureText:
     "Daglig leder ene og alene (hentet fra Brønnøysundsregisteret)",
   tableHeaderNameText: "Navn",
-  tableHeaderRoleText: "Rolle"
+  tableHeaderRoleText: "Rolle",
+  onComplete: console.log,
+  people: [
+    {
+      name: "Espen Thomassen Sæverud",
+      positions: ["Daglig leder", "Styreformann"]
+    }
+  ]
 }

@@ -34,13 +34,7 @@ class App extends Component {
           />
           <hr style={{ margin: "64px 0" }} />
           <RegisterSigners
-            onComplete={console.log}
-            people={[
-              {
-                name: "Espen Thomassen Sæverud",
-                positions: ["Daglig leder", "Styreformann"]
-              }
-            ]}
+
           />
 
           <hr style={{ margin: "64px 0" }} />
