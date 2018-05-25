@@ -241,5 +241,70 @@ Sign.defaultProps = {
   signText: "Signèr",
   waitingForSignatureText: "Venter på signering",
   userTaskText: "Du må signere",
-  othersTaskText: "Andre som skal signere"
+  othersTaskText: "Andre som skal signere",
+  interestRate: 10.4,
+  loanAmount: 1000000,
+  monthlyPayment: 83000,
+  paybackTotal: 1100000,
+  renderDocumentText: type => `Låneavtale (${type})`,
+  renderIllustration: () => null,
+  repaymentPeriod: 6,
+  signOrders: [
+    {
+      signee: "21031531021",
+      status: "UNSIGNED",
+      requestId: "abc123",
+      documentType: "DOCUMENT1",
+      url: "https://web.test.fundu.no"
+    },
+    {
+      signee: "21018612344",
+      status: "UNSIGNED",
+      requestId: "abc123",
+      documentType: "DOCUMENT1",
+      url: "https://web.test.fundu.no"
+    },
+    {
+      signee: "21018612344",
+      status: "SIGNED",
+      requestId: "21rfe",
+      documentType: "DOCUMENT2",
+      url: "https://web.test.fundu.no"
+    },
+    {
+      signee: "05088812312",
+      status: "UNSIGNED",
+      requestId: "abc123",
+      documentType: "DOCUMENT1",
+      url: "https://web.test.fundu.no"
+    },
+    {
+      signee: "05088812312",
+      status: "UNSIGNED",
+      requestId: "21rfe",
+      documentType: "DOCUMENT2",
+      url: "https://web.test.fundu.no"
+    }
+  ],
+  signers: [
+    {
+      nationalId: "21031531021",
+      id: "cba321",
+      name: "ESPEN SÆVERUD",
+      email: "espens@stacc.com"
+    },
+    {
+      nationalId: "21018612344",
+      id: "3orj",
+      name: "Robin Sandborg",
+      email: "robins@stacc.com"
+    },
+    {
+      nationalId: "05088812312",
+      id: "ewfsd",
+      name: "Marius Hauken",
+      email: "mariush@stacc.com"
+    }
+  ],
+  user: { nationalId: "21031531021" }
 }
