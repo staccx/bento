@@ -17,7 +17,14 @@ export default {
       format: "es"
     }
   ],
-  external: [],
+  external: [
+    "react",
+    "react-dom",
+    "prop-types",
+    "styled-components",
+    "@staccx/base",
+    "@staccx/theme"
+  ],
   plugins: [
     json(),
     babel({
@@ -25,6 +32,8 @@ export default {
       plugins: ["external-helpers"]
     }),
     resolve(),
-    commonjs()
+    commonjs({
+      exclude: ["node_modules/react-com-confetti/**", "node_modules/yup/**"],
+    })
   ]
 }

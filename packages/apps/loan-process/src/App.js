@@ -9,6 +9,7 @@ import RegisterSigners from "./module/RegisterSigners"
 import Complete from "./module/Complete"
 import SetAccountNumber from "./module/SetAccountNumber"
 import PresentOffer from "./module/PresentOffer"
+import EndScreen from "./module/EndScreen"
 
 class App extends Component {
   render() {
@@ -25,6 +26,8 @@ class App extends Component {
         <Offer /> */}
 
         <div>
+          <EndScreen  />
+          <hr style={{margin: "64px 0"}}/>
           <SetAccountNumber onValidated={console.log} />
           <hr style={{ margin: "64px 0" }} />
           <PresentOffer
