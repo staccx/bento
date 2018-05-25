@@ -14,7 +14,7 @@ export const ParagraphStyling = registerStyle(
       margin-left: auto;
       margin-right: auto;
     `,
-    tileText: css`
+    formIntro: css`
       margin: 0 0 ${spacing.medium} ${spacing.medium};
     `
   },

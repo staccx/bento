@@ -17,11 +17,7 @@ const tileStyle = css`
 
 export const BoxStyling = registerStyle(
   {
-    tile: css`
-      ${tileStyle};
-      padding: ${spacing.medium} 0;
-    `,
-    tileBox: css`
+    actionBox: css`
       ${tileStyle};
       padding: 0;
       margin-bottom: ${spacing.medium};
@@ -43,11 +39,11 @@ export const BoxStyling = registerStyle(
       width: 100%;
       padding: 0;
     `,
-    centeredContainer: css`
+    centeredContent: css`
       text-align: center;
       width: 100%;
     `,
-    grayBox: css`
+    subtleBox: css`
       background-color: ${color.subtleHover};
     `,
     halves: css`
@@ -64,9 +60,6 @@ export const BoxStyling = registerStyle(
         grid-template-columns: 100%;
         grid-template-areas: "one";
       }
-    `,
-    paddedContainerLarge: css`
-      padding: ${spacing.large};
     `,
     inputContainer: css`
       position: relative;

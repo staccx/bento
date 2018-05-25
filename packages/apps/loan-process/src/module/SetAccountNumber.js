@@ -43,7 +43,7 @@ const Form = props => {
       </Box>
       <Heading variant="centered">{props.headingText}</Heading>
       <Wrapper size="small" breakout>
-        <Box variant="tileBox">
+        <Box variant="actionBox">
           <Box>{props.loanTypeText}</Box>
           <Divider />
           <AccountInput

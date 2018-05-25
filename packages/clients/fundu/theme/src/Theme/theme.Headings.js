@@ -19,17 +19,6 @@ export const HeadingStyling = registerStyle(
         font-size: ${font.h2};
       }
     `,
-    tileHeading: css`
-      padding: 0 ${spacing.medium} ${spacing.small};
-      font-size: ${font.h4};
-      font-weight: 300;
-      color: ${color.blue};
-    `,
-    stepHeading: css`
-      font-size: ${font.h2};
-      font-weight: 300;
-      margin-bottom: ${spacing.small};
-    `,
     boxHeading: css`
       font-family: ${fontFamily.body};
       font-size: ${font.base};

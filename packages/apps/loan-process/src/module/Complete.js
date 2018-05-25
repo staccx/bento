@@ -40,7 +40,7 @@ class Complete extends React.PureComponent {
     } = this.props
     return (
       <Wrapper size="medium">
-        <Box variant="centeredContainer">
+        <Box variant="centeredContent">
           <Outer>
             <Container className={this.props.className}>
               <ConfettiContainer>

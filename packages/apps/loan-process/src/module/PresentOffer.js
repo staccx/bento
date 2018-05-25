@@ -72,9 +72,9 @@ class PresentOffer extends React.Component {
     return (
       <div>
         <Wrapper size="medium" breakout>
-          <Box variant="tileBox">
-            <Box variant="paddedContainerLarge">
-              <Heading variant="stepHeading">{this.props.headingText}</Heading>
+          <Heading variant="centered">{this.props.headingText}</Heading>
+          <Box variant="actionBox">
+            <Box size="large">
               <p>
                 {this.props.maxLoanAmountText}{" "}
                 <strong> {formatCurrency(this.props.maxAmount || 0)}</strong>
@@ -95,7 +95,7 @@ class PresentOffer extends React.Component {
               chooseLoanAmountText={"Velg beløp"}
               otherAmountText={"Annet beløp"}
             />
-            <Box variant="paddedContainerLarge">
+            <Box size="large">
               <OfferTable>
                 <tbody>
                   <tr>
@@ -151,7 +151,7 @@ class PresentOffer extends React.Component {
               </OfferTable>
             </Box>
             {this.props.company && (
-              <Box variant="grayBox" size="large">
+              <Box variant="subtleBox" size="large">
                 <Box variant="halves">
                   <div>
                     <h4>{this.props.companyHeadingPrefixText}</h4>

@@ -106,9 +106,9 @@ class RegisterSigners extends React.Component {
           render={({ values, touched, errors }) => {
             return (
               <Form>
-                <Box variant="tileBox">
+                <Box variant="actionBox">
                   <Box variant="paddingVertical">
-                    <Paragraph variant="tileText">
+                    <Paragraph variant="formIntro">
                       {this.props.signatureText}
                     </Paragraph>
                     <SplitItem>
@@ -201,7 +201,7 @@ class RegisterSigners extends React.Component {
                                   </SplitListItem>
                                   {signer.checked && (
                                     <li>
-                                      <SignerFields variant="grayBox">
+                                      <SignerFields variant="subtleBox">
                                         <Layout grid="form">
                                           <LayoutItem>
                                             <Field

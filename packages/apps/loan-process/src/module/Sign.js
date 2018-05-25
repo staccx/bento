@@ -65,7 +65,7 @@ class Sign extends React.Component {
                 ` ${formatCurrency(this.props.loanAmount)}`}
             </span>
             <Details>
-              <Box variant="tileBox">
+              <Box variant="actionBox">
                 {/* TODO: vise om det er lån eller kreditt☝️ */}
                 <OfferTable>
                   <tbody>
@@ -119,7 +119,7 @@ class Sign extends React.Component {
           <Heading variant="boxHeading" level={2}>
             {this.props.userTaskText}
           </Heading>
-          <Box variant="tileBox">
+          <Box variant="actionBox">
             <List>
               {userOrders.map(order => {
                 const showButton =
@@ -148,7 +148,7 @@ class Sign extends React.Component {
           <Heading variant="boxHeading" level={2}>
             {this.props.othersTaskText}
           </Heading>
-          <Box variant="tileBox">
+          <Box variant="actionBox">
             <List>
               {otherSigners.map(signer => (
                 <ExpandListItem
