@@ -77,7 +77,7 @@ class PresentOffer extends React.Component {
               <Heading variant="stepHeading">{this.props.headingText}</Heading>
               <p>
                 {this.props.maxLoanAmountText}{" "}
-                <strong>{formatCurrency(this.props.maxAmount || 0)}</strong>
+                <strong> {formatCurrency(this.props.maxAmount || 0)}</strong>
               </p>
             </Box>
             <PickLoanSum
@@ -114,6 +114,7 @@ class PresentOffer extends React.Component {
                                 value ? value.text : this.props.repaymentPeriod
                               )
                             }
+                            variant="loanOffer"
                           >
                             {this.props.potentialDurations.map(item => (
                               <SelectOption
@@ -276,7 +277,7 @@ PresentOffer.defaultProps = {
   isValid: false,
   loanDurationText: "Låneperiode",
   maxAmount: 1000000,
-  maxLoanAmountText: "Max låne",
+  maxLoanAmountText: "Du kan låne inntil",
   minAmount: 50000,
   monthlyFees: 4000,
   monthlyFeeText: "Månedlig kostnad",

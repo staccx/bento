@@ -1,6 +1,7 @@
 import { css } from "styled-components"
 import { color, font, spacing, registerStyle } from "@staccx/theme"
 import { HeadingStyles } from "@staccx/base"
+import { fontFamily } from "../../../../../internal/theme/index"
 
 export const HeadingStyling = registerStyle(
   {
@@ -30,6 +31,7 @@ export const HeadingStyling = registerStyle(
       margin-bottom: ${spacing.small};
     `,
     boxHeading: css`
+      font-family: ${fontFamily.body};
       font-size: ${font.base};
       font-weight: 300;
       margin-bottom: ${spacing.tiny};

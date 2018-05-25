@@ -131,6 +131,7 @@ class Sign extends React.Component {
                     user={this.props.user}
                     showButton={showButton}
                     signText={this.props.signText}
+                    signedText={this.props.signedText}
                     signOrderStatusCompleted={
                       this.props.signOrderStatusCompleted
                     }
@@ -172,6 +173,7 @@ class Sign extends React.Component {
                           user={this.props.user}
                           showButton={false}
                           signText={this.props.signText}
+                          signedText={this.props.signedText}
                           signOrderStatusCompleted={
                             this.props.signOrderStatusCompleted
                           }
@@ -224,6 +226,7 @@ Sign.propTypes = {
   signOrderStatusCompleted: PropTypes.string,
   signOrders: PropTypes.array.isRequired,
   signText: PropTypes.string,
+  signedText: PropTypes.string,
   signers: PropTypes.array.isRequired,
   user: PropTypes.shape({
     nationalId: PropTypes.string.isRequired
@@ -245,6 +248,7 @@ Sign.defaultProps = {
   paybackText: "Å betale totalt",
   signOrderStatusCompleted: "SIGNED",
   signText: "Signèr",
+  signedText: "Signert",
   waitingForSignatureText: "Venter på signering",
   userTaskText: "Du må signere",
   othersTaskText: "Andre som skal signere",

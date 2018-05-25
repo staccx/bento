@@ -17,8 +17,8 @@ import CheckGroup from "./components/Forms/CheckGroup/CheckGroup"
 import Slider, * as SliderStyles from "./components/Forms/Slider/Slider/Slider"
 import SliderKeyboardInput, * as SliderKeyboardInputStyles from "./components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput"
 import SelectSimple, * as SelectSimpleStyles from "./components/Forms/SelectSimple/SelectSimple"
-import Select from "./components/Forms/Select/Select"
-import SelectSelected from "./components/Forms/Select/Select.Selected"
+import Select, * as SelectStyles from "./components/Forms/Select/Select"
+import SelectSelected, * as SelectSelectedStyles from "./components/Forms/Select/Select.Selected"
 import SelectOption from "./components/Forms/Select/Select.Option"
 import Toggle from "./components/Forms/Toggle/Toggle"
 
@@ -142,6 +142,7 @@ export {
   LayoutItemStyles,
   LayoutStyles,
   Legend,
+  LegendStyles,
   LinkListItem,
   LinkListItemStyles,
   List,
@@ -163,8 +164,10 @@ export {
   RadioPill,
   RadioPillItem,
   Select,
+  SelectStyles,
   SelectOption,
   SelectSelected,
+  SelectSelectedStyles,
   SelectSimple,
   SelectSimpleStyles,
   Slider,

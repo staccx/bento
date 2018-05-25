@@ -11,7 +11,8 @@ import {
   themify
 } from "@staccx/theme"
 
-const SelectedContainer = styled.button`
+export const SELECT_SELECTED = "SELECT_SELECTED"
+export const SelectedContainer = styled.button`
   display: block;
   width: 100%;
   min-height: ${targetSize.normal};
@@ -32,11 +33,19 @@ const SelectedContainer = styled.button`
     outline: none;
     background-color: ${color.subtleHover};
   }
+
+  ${themify(SELECT_SELECTED)};
 `
 
-const SelectSelected = ({ selectedItem, buttonProps, ...restProps }) => {
+const SelectSelected = ({
+  selectedItem,
+  buttonProps,
+  variant,
+  ...restProps
+}) => {
+  console.log(variant)
   return (
-    <SelectedContainer {...buttonProps} {...restProps}>
+    <SelectedContainer variant={variant} {...buttonProps} {...restProps}>
       {selectedItem.text} {selectedItem.value}
     </SelectedContainer>
   )

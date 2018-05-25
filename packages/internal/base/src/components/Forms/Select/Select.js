@@ -18,19 +18,19 @@ import {
 
 export const SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER =
   "SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER"
-const DefaultOptionElementWrapper = styled.div`
+export const DefaultOptionElementWrapper = styled.div`
   border: 1px solid ${color.line};
   border-top-width: 0;,
   ${themify(SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER)}
 `
 
 export const SELECT_WRAPPER = "SELECT_WRAPPER"
-const SelectedWrapper = styled.div`
+export const SelectedWrapper = styled.div`
   position: relative;
   ${themify(SELECT_WRAPPER)};
 `
 export const SELECT_ICON_BUTTON = "SELECT_ICON_BUTTON"
-const IconButton = styled.button`
+export const IconButton = styled.button`
   position: absolute;
   right: ${spacing.small()};
   bottom: ${p => {
@@ -67,6 +67,7 @@ const CaretComp = ({ ...props }) => (
     {...props}
   />
 )
+
 const CaretIcon = styled(CaretComp)`
   transition: transform 0.3s ease-out;
   transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
@@ -99,6 +100,7 @@ const Select = ({
   placeHolderElement,
   placeHolderLabel,
   className,
+  variant,
   ...restProps
 }) => {
   const Selected = renderSelectedElement || selectedElement
@@ -126,42 +128,45 @@ const Select = ({
         clearSelection
       }) => (
         <div className={className}>
-          {label && <Label>{label}</Label>}
+          {label && <Label variant={variant}>{label}</Label>}
           {selectedItem ? (
-            <SelectedWrapper>
+            <SelectedWrapper variant={variant}>
               <Selected
                 onClick={() => toggleMenu()}
                 selectedItem={selectedItem}
                 buttonProps={{ ...getButtonProps() }}
                 inputProps={{ ...getInputProps() }}
                 toggleMenu={toggleMenu}
+                variant={variant}
               />
-              <IconButton onClick={() => clearSelection()}>
-                <CloseIcon />
+              <IconButton onClick={() => clearSelection()} variant={variant}>
+                <CloseIcon variant={variant} />
               </IconButton>
             </SelectedWrapper>
           ) : (
-            <SelectedWrapper>
+            <SelectedWrapper variant={variant}>
               <Placeholder
                 {...getInputProps({
                   placeholder: placeHolderLabel || ""
                 })}
+                variant={variant}
                 onClick={() => toggleMenu()}
               />
-              <IconButton onClick={() => toggleMenu()}>
-                <CaretIcon isExpanded={isOpen} />
+              <IconButton onClick={() => toggleMenu()} variant={variant}>
+                <CaretIcon isExpanded={isOpen} variant={variant} />
               </IconButton>
             </SelectedWrapper>
           )}
           {isOpen && (
-            <OptionsWrapper>
+            <OptionsWrapper variant={variant}>
               {children.map((child, index) => {
                 const item = child.props.data
                 return React.cloneElement(child, {
                   ...getItemProps({ item }),
                   ...child.props,
                   highlighted: highlightedIndex === index,
-                  selected: selectedItem === child
+                  selected: selectedItem === child,
+                  variant: variant
                 })
               })}
             </OptionsWrapper>

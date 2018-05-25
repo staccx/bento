@@ -1,6 +1,6 @@
 import { css } from "styled-components"
-import { spacing, registerStyle } from "@staccx/theme"
-import { InputStyles } from "@staccx/base"
+import { color, spacing, registerStyle } from "@staccx/theme"
+import { InputStyles, SelectSelectedStyles, SelectStyles } from "@staccx/base"
 
 export const InputStyling = registerStyle(
   {
@@ -21,6 +21,9 @@ export const InputStyling = registerStyle(
         top: 12px;
         left: 24px;
       }
+    `,
+    loanOffer: css`
+      border-width: 0;
     `
   },
   InputStyles.INPUT
@@ -39,4 +42,34 @@ export const LabelStyling = registerStyle(
     `
   },
   InputStyles.INPUT_LABEL
+)
+
+export const SelectSelectedStyling = registerStyle(
+  {
+    loanOffer: css`
+      border-width: 0;
+      padding-right: ${spacing.mediumPlus};
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+        color: ${color.primary};
+
+        svg {
+          fill: ${color.primary};
+        }
+      }
+    `
+  },
+  SelectSelectedStyles.SELECT_SELECTED
+)
+
+export const SelectIconButtonStyling = registerStyle(
+  {
+    loanOffer: css`
+      right: 0;
+    `
+  },
+  SelectStyles.SELECT_ICON_BUTTON
 )

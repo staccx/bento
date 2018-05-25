@@ -12,7 +12,12 @@ import {
 } from "./Theme/theme.Lists"
 import { TextStyling } from "./Theme/theme.Texts"
 import { ButtonStyling } from "./Theme/theme.Buttons"
-import { InputStyling, LabelStyling } from "./Theme/theme.Inputs"
+import {
+  InputStyling,
+  LabelStyling,
+  SelectSelectedStyling,
+  SelectIconButtonStyling
+} from "./Theme/theme.Inputs"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -99,5 +104,7 @@ const theme = new Theme(BaseTheme, {
   .addStyles(InputStyling)
   .addStyles(LabelStyling)
   .addStyles(ExpandListItemStyling)
+  .addStyles(SelectSelectedStyling)
+  .addStyles(SelectIconButtonStyling)
 
 export default theme.get
