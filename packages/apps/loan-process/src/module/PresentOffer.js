@@ -69,7 +69,6 @@ class PresentOffer extends React.Component {
   }
 
   render() {
-    console.log(this.state.selectedDuration)
     return (
       <div>
         <Wrapper size="medium" breakout>

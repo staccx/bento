@@ -125,6 +125,7 @@ class Sign extends React.Component {
                 order.status !== this.props.signOrderStatusCompleted
               return (
                 <SignDocument
+                  key={order.requestId}
                   order={order}
                   user={this.props.user}
                   showButton={showButton}
@@ -162,6 +163,7 @@ class Sign extends React.Component {
                     {signer.orders.map(order => {
                       return (
                         <SignDocument
+                          key={order.requestId}
                           order={order}
                           user={this.props.user}
                           showButton={false}
