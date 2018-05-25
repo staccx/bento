@@ -145,7 +145,7 @@ PickLoanSum.defaultProps = {
   customAmount: false,
   max: 100000,
   min: 0,
-  customLoanAmountLabel: "Egendefinert sum"
+  customLoanAmountLabel: "Annet beløp"
 }
 
 PickLoanSum.propTypes = {

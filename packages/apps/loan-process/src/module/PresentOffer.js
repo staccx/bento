@@ -93,8 +93,8 @@ class PresentOffer extends React.Component {
               handleCustomAmount={this.handleCustomAmount}
               min={this.props.minAmount}
               max={this.props.maxAmount}
-              chooseLoanAmountText={"Velg sum"}
-              otherAmountText={"Annen sum"}
+              chooseLoanAmountText={"Velg beløp"}
+              otherAmountText={"Annet beløp"}
             />
             <Box variant="paddedContainerLarge">
               <OfferTable>
@@ -151,7 +151,7 @@ class PresentOffer extends React.Component {
               </OfferTable>
             </Box>
             {this.props.company && (
-              <Box variant="grayBox">
+              <Box variant="grayBox" size="large">
                 <Box variant="halves">
                   <div>
                     <h4>{this.props.companyHeadingPrefixText}</h4>
