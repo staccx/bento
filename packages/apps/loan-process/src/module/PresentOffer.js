@@ -258,4 +258,37 @@ PresentOffer.propTypes = {
   selectedDuration: PropTypes.any
 }
 
+PresentOffer.defaultProps = {
+  loanAmount: 100000,
+  onComplete: console.log,
+
+  onRejected: console.log,
+  paybackTotal: 101000,
+  repaymentPeriod: 6,
+  acceptOfferButtonText: "Fortsett",
+  company: {
+    name: "Stacc X",
+    orgNo: "912319123"
+  },
+  companyHeadingPrefixText: "Selskap",
+  handleChangeCustomAmount: console.log,
+  handleChangeLoanDuration: console.log,
+  headingText: "Lånetilbud",
+  isValid: false,
+  loanDurationText: "Låneperiode",
+  maxAmount: 1000000,
+  maxLoanAmountText: "Max låne",
+  minAmount: 50000,
+  monthlyFees: 4000,
+  monthlyFeeText: "Månedlig kostnad",
+  monthlyPayment: 84000,
+  nationalIdPrefixText: "Personnummer",
+  orgNumberPrefixText: "Organisasjonsnummer",
+  paybackText: "Å betale tilbake",
+  payMonthlyText: "Å betale hver måned",
+  potentialDurations: [6, 3],
+  rejectOfferButtonText: "Avslå",
+  selectedDuration: 6
+}
+
 export default PresentOffer
