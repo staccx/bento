@@ -5,7 +5,11 @@ import { HeadingStyling } from "./Theme/theme.Headings"
 import { ParagraphStyling } from "./Theme/theme.Paragraphs"
 import { BoxStyling } from "./Theme/theme.Boxes"
 import { AlertStyling } from "./Theme/theme.Alerts"
-import { ListStyling, SplitListItemStyling } from "./Theme/theme.Lists"
+import {
+  ListStyling,
+  SplitListItemStyling,
+  ExpandListItemStyling
+} from "./Theme/theme.Lists"
 import { TextStyling } from "./Theme/theme.Texts"
 import { ButtonStyling } from "./Theme/theme.Buttons"
 import { InputStyling, LabelStyling } from "./Theme/theme.Inputs"
@@ -94,5 +98,6 @@ const theme = new Theme(BaseTheme, {
   .addStyles(SplitListItemStyling)
   .addStyles(InputStyling)
   .addStyles(LabelStyling)
+  .addStyles(ExpandListItemStyling)
 
 export default theme.get

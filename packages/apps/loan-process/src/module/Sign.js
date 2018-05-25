@@ -143,8 +143,8 @@ class Sign extends React.Component {
             {this.props.othersTaskText}
           </Heading>
           <Box variant="tileBox">
-            {otherSigners.map(signer => (
-              <List>
+            <List>
+              {otherSigners.map(signer => (
                 <ExpandListItem
                   key={signer.id}
                   title={
@@ -155,6 +155,7 @@ class Sign extends React.Component {
                       }`}</span>
                     </Box>
                   }
+                  variant="signer"
                   flush
                 >
                   <List variant="documentStatusList">
@@ -177,8 +178,8 @@ class Sign extends React.Component {
                     })}
                   </List>
                 </ExpandListItem>
-              </List>
-            ))}
+              ))}
+            </List>
           </Box>
         </div>
       </Wrapper>

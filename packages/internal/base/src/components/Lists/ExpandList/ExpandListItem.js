@@ -50,11 +50,12 @@ class ExpandListItem extends Component {
       className,
       flush,
       onClick,
+      variant,
       ...otherProps
     } = this.props
     const { isExpanded } = this.state
     return (
-      <ExpandItem className={className} {...otherProps}>
+      <ExpandItem className={className} variant={variant} {...otherProps}>
         <BtnComponent
           {...otherProps}
           title={title}
@@ -63,9 +64,15 @@ class ExpandListItem extends Component {
           aria-expanded={isExpanded}
           aria-controls={title}
           id={title + "2"}
+          variant={variant}
         />
         {isExpanded && (
-          <ExpandedItem flush={flush} id={title} aria-labelledby={title + "2"}>
+          <ExpandedItem
+            flush={flush}
+            id={title}
+            aria-labelledby={title + "2"}
+            variant={variant}
+          >
             {children}
           </ExpandedItem>
         )}
