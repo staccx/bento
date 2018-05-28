@@ -6,7 +6,6 @@ import Sign from "./module/Sign"
 // import PresentOffer from "./module/PresentOffer"
 // import ProvideAdditionalInfo from "./module/ProvideAdditionalInfo"
 import RegisterSigners from "./module/RegisterSigners"
-import Complete from "./module/Complete"
 import SetAccountNumber from "./module/SetAccountNumber"
 import PresentOffer from "./module/PresentOffer"
 import EndScreen from "./module/EndScreen"
@@ -51,8 +50,6 @@ class App extends Component {
 
           <hr style={{ margin: "64px 0" }} />
           <Sign />
-          <hr style={{ margin: "64px 0" }} />
-          <Complete />
         </div>
       </ThemeProxyProvider>
     )
