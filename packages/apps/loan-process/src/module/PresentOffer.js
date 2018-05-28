@@ -223,7 +223,7 @@ class PresentOffer extends React.Component {
           </Box>
           <ItemGroup>
             <Button
-              disabled={!this.props.isValid}
+              disabled={!this.state.isValid}
               onClick={() => this.respondToOffer(true)}
             >
               {this.props.acceptOfferButtonText}
