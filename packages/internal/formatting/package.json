@@ -12,7 +12,7 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "test:watch": "jest --env=jsdom --watch",
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",

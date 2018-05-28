@@ -128,7 +128,10 @@ class PresentOffer extends React.Component {
                         <OfferTableDurationsItem>
                           <Select
                             id={"select-loan-duration"}
-                            selectedItem={{ text: `${this.state.selectedDuration}`, value: "mnd" }}
+                            selectedItem={{
+                              text: `${this.state.selectedDuration}`,
+                              value: "mnd"
+                            }}
                             nullable={false}
                             placeHolderLabel={"Velg…"}
                             onChange={value =>
