@@ -147,7 +147,7 @@ const Select = ({
                 </IconButton>
               ) : (
                 <IconButton onClick={() => toggleMenu()} variant={variant}>
-                  <CaretIcon isExpanded={isOpen} variant={variant}/>
+                  <CaretIcon isExpanded={isOpen} variant={variant} />
                 </IconButton>
               )}
             </SelectedWrapper>
