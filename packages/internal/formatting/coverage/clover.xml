@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1527504507563" clover="3.2.0">
-  <project timestamp="1527504507563" name="All files">
+<coverage generated="1527506597022" clover="3.2.0">
+  <project timestamp="1527506597022" name="All files">
     <metrics statements="57" coveredstatements="53" conditionals="31" coveredconditionals="25" methods="13" coveredmethods="11" elements="101" coveredelements="89" complexity="0" loc="57" ncloc="57" packages="1" files="5" classes="5">
       <file name="currency.js" path="/Users/espen/Projects/bento/packages/internal/formatting/src/currency.js">
         <metrics statements="38" coveredstatements="35" conditionals="12" coveredconditionals="7" methods="3" coveredmethods="2"/>
