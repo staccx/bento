@@ -24,7 +24,9 @@ LayoutItem.defaultProps = {
 LayoutItem.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.array
   ]).isRequired,
   className: PropTypes.string,
   grid: PropTypes.string
