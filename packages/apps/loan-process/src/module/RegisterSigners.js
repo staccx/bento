@@ -47,9 +47,9 @@ class RegisterSigners extends React.Component {
   initState(props) {
     if (!this.state.signers.length) {
       this.setState({
-        signers: props.people.map(person => ({
+        signers: props.people.map((person, index) => ({
           id: person.id,
-          checked: false,
+          checked: index === 0 && true,
           email: "",
           nationalId: "",
           name: person.name,
