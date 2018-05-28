@@ -2,16 +2,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
-  Button,
-  ItemGroup,
-  Odometer,
-  Wrapper,
   Box,
+  Button,
   Heading,
+  ItemGroup,
   List,
+  Odometer,
   Select,
   SelectOption,
-  SelectSelected
+  SelectSelected,
+  Wrapper
 } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
 import PickLoanSum from "./PresentOffer.PickLoanSum"
@@ -20,10 +20,11 @@ import { color, spacing } from "@staccx/theme"
 class PresentOffer extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {
       isCustomAmount: false,
-      amount: this.props.loanAmount,
-      selectedDuration: this.props.repaymentPeriod,
+      amount: props.loanAmount,
+      selectedDuration: props.repaymentPeriod,
       initialized: false,
       isValid: true
     }
@@ -32,11 +33,13 @@ class PresentOffer extends React.Component {
     this.handleCustomAmount = this.handleCustomAmount.bind(this)
   }
 
-  handleSetCustom(customAmount) {
-    console.log(customAmount)
+  handleSetCustom(value) {
+    const parsed = parseInt(value, 10)
+    const isCustomAmount = parsed === -1
     this.setState(
       {
-        isCustomAmount: customAmount === "other"
+        isCustomAmount,
+        amount: isCustomAmount ? this.state.amount : parsed
       },
       () => this.handleCustomAmount(this.state.amount)
     )
@@ -69,6 +72,7 @@ class PresentOffer extends React.Component {
   }
 
   render() {
+    console.log(this.state.amount)
     return (
       <div>
         <Wrapper size="medium" breakout>
@@ -81,13 +85,10 @@ class PresentOffer extends React.Component {
               </p>
             </Box>
             <PickLoanSum
-              loanAmount={
-                this.state.isCustomAmount
-                  ? this.state.amount
-                  : this.props.loanAmount
-              }
+              loanAmount={this.state.amount}
               repaymentPeriod={this.props.repaymentPeriod}
               isCustomAmount={this.state.isCustomAmount}
+              initialAmount={this.props.loanAmount}
               handleRadio={this.handleSetCustom}
               handleCustomAmount={this.handleCustomAmount}
               min={this.props.minAmount}

@@ -15,6 +15,7 @@ const PickLoanSum = props => {
     max,
     min,
     isCustomAmount,
+    initialAmount,
     handleRadio,
     handleCustomAmount,
     chooseLoanAmountText,
@@ -45,22 +46,22 @@ const PickLoanSum = props => {
             <RadioButton
               key={"userValue"}
               id="userValue"
-              value={loanAmount.toString()}
+              value={initialAmount}
               group={"loanSum"}
               defaultChecked
-              onChange={_handleChange}
+              onChange={_handleRadio}
             >
-              {formatCurrency(loanAmount)}
+              {formatCurrency(initialAmount)}
             </RadioButton>
           </InlineRadioButtonsItem>
-          {max > loanAmount && (
+          {max > initialAmount && (
             <InlineRadioButtonsItem>
               <RadioButton
                 key={"maxValue"}
                 id="maxValue"
-                value={max.toString()}
+                value={max}
                 group={"loanSum"}
-                onChange={_handleChange}
+                onChange={_handleRadio}
               >
                 {formatCurrency(max)}
               </RadioButton>
@@ -70,7 +71,7 @@ const PickLoanSum = props => {
             <RadioButton
               key={"otherValue"}
               id="otherValue"
-              value={"other"}
+              value={-1}
               group={"loanSum"}
               onChange={_handleRadio}
             >
