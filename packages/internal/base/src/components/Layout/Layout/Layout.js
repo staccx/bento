@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { themify, spacing, grid } from "@staccx/theme"
 
-const Layout = ({ grid, children, className }) => (
-  <LayoutContainer className={className} grid={grid}>
+const Layout = ({ grid, children, className, variant }) => (
+  <LayoutContainer className={className} grid={grid} variant={variant}>
     {children}
   </LayoutContainer>
 )

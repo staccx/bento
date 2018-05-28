@@ -12,10 +12,15 @@ const Wrapper = ({ children, className, size, breakout, ...otherProps }) => (
 export const WRAPPER = "WRAPPER"
 const Wrap = styled.div`
   width: 100%;
-  max-width: ${p => wrapper(p.size)};
-  margin: auto;
+  max-width: ${p => (p.size === "full" ? "none" : wrapper(p.size))};
+  margin: 0 auto;
   padding-left: ${spacing.medium()};
   padding-right: ${spacing.medium()};
+
+  & & {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   ${p =>
     p.breakout &&
@@ -42,7 +47,7 @@ Wrapper.propTypes = {
     PropTypes.array
   ]),
   className: PropTypes.string,
-  size: PropTypes.oneOf(["small", "medium", "large"]),
+  size: PropTypes.oneOf(["small", "medium", "large", "full"]),
   breakout: PropTypes.bool
 }
 

@@ -51,6 +51,27 @@ export const ButtonStyling = registerStyle(
         background-color: transparent;
         color: ${color.primary};
       }
+    `,
+    endScreen: css`
+      background-color: transparent;
+      color: ${color.text};
+      border-width: 0;
+      border-bottom: 2px solid ${color.primary};
+      box-shadow: none;
+      padding-left: 0;
+      padding-right: 0;
+      border-radius: 0;
+      text-decoration: none;
+      padding-bottom: 3px;
+      font-weight: normal;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        color: ${color.primary};
+        border-bottom-color: ${color.primary};
+        background-color: transparent;
+      }
     `
   },
   ButtonStyles.BUTTON

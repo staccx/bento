@@ -1,37 +1,47 @@
 import PropTypes from "prop-types"
 import React from "react"
-import Floor from "./replace/Floor"
-import { Wrapper, Heading, Flag, Button } from "@staccx/base"
+import { Box, Wrapper, Heading, Button, Layout, LayoutItem } from "@staccx/base"
 
 const EndScreen = ({
   renderContent,
   bgColor,
-  size,
+  wrapperSize,
   img,
   reverse,
   headingText,
   content,
   buttonContent,
-  onClick
+  onClick,
+  variant
 }) => {
   if (renderContent) {
     return renderContent()
   }
 
   return (
-    <Floor background={bgColor}>
-      <Wrapper size={size}>
-        <Flag large responsive={800} img={img} reverse={reverse}>
-          <Heading>{headingText}</Heading>
-          {content && content}
-          {buttonContent && (
-            <Button variant="subtle" onClick={onClick}>
-              {buttonContent}
-            </Button>
+    <Box variant={variant} size="flush">
+      <Wrapper size={wrapperSize} variant={variant}>
+        <Layout variant={variant}>
+          {headingText && (
+            <LayoutItem area="heading">
+              <Heading variant={variant}>{headingText}</Heading>
+            </LayoutItem>
           )}
-        </Flag>
+
+          {img && <LayoutItem area="image">{img}</LayoutItem>}
+
+          {content && <LayoutItem area="content">{content}</LayoutItem>}
+
+          {buttonContent && (
+            <LayoutItem area="button">
+              <Button variant={variant} onClick={onClick}>
+                {buttonContent}
+              </Button>
+            </LayoutItem>
+          )}
+        </Layout>
       </Wrapper>
-    </Floor>
+    </Box>
   )
 }
 
@@ -46,15 +56,17 @@ EndScreen.propTypes = {
   onClick: PropTypes.func,
   renderContent: PropTypes.func,
   reverse: PropTypes.bool,
-  size: PropTypes.string
+  wrapperSize: PropTypes.string,
+  variant: PropTypes.string
 }
 
 EndScreen.defaultProps = {
-  bgColor: "#FF3131",
-  content: <div>content</div>,
-  headingText: "Tar lang tid/Avlått osv",
-  img: <img src="http://placehold.it/200x200" alt={"placeholder"} />,
+  bgColor: null,
+  content: null,
+  headingText: null,
+  img: null,
   reverse: true,
-  size: "medium",
-  buttonContent: <span>Click me</span>
+  wrapperSize: "medium",
+  buttonContent: null,
+  variant: "endScreen"
 }

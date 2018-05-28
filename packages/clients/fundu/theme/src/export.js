@@ -19,6 +19,7 @@ import {
   SelectIconButtonStyling,
   SelectOptionsWrapperStyling
 } from "./Theme/theme.Inputs"
+import { LayoutStyling } from "./Theme/theme.Layouts"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -108,5 +109,6 @@ const theme = new Theme(BaseTheme, {
   .addStyles(SelectSelectedStyling)
   .addStyles(SelectIconButtonStyling)
   .addStyles(SelectOptionsWrapperStyling)
+  .addStyles(LayoutStyling)
 
 export default theme.get

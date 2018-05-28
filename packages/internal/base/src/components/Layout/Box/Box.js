@@ -12,7 +12,7 @@ const Box = ({ children, className, size, ...otherProps }) => (
 export const BOX = "BOX"
 
 export const Boxing = styled.div`
-  padding: ${p => spacing(p.size)};
+  padding: ${p => (p.size === "flush" ? 0 : spacing(p.size))};
   border-radius: ${borderRadius};
   ${themify(BOX)};
 `
@@ -37,7 +37,8 @@ Box.propTypes = {
     "medium",
     "small",
     "tiny",
-    "micro"
+    "micro",
+    "flush"
   ])
 }
 

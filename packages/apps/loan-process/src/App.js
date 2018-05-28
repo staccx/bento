@@ -26,7 +26,22 @@ class App extends Component {
         <Offer /> */}
 
         <div>
-          <EndScreen />
+          <EndScreen
+            headingText="Søknaden er til behandling"
+            content={
+              <div>
+                Her står det litt om hva vi sier til deg på denne siden og evt.
+                hvorfor
+              </div>
+            }
+            buttonContent="Gå til min side"
+            img={
+              <img
+                src="https://source.unsplash.com/480x280/?celebration"
+                alt={"placeholder"}
+              />
+            }
+          />
           <hr style={{ margin: "64px 0" }} />
           <SetAccountNumber />
           <hr style={{ margin: "64px 0" }} />

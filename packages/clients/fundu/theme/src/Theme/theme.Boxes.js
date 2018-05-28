@@ -64,6 +64,24 @@ export const BoxStyling = registerStyle(
     inputContainer: css`
       position: relative;
       padding: 0;
+    `,
+    endScreen: css`
+      position: relative;
+      background-color: ${color.bgGray};
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 1 1'%3e%3cpolygon fill='%23FCFCFC' points='1 0 1 1 0 1'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: calc(7vh - 1px);
+        z-index: 0;
+      }
     `
   },
   BoxStyles.BOX
