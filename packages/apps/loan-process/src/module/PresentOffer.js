@@ -14,6 +14,7 @@ import {
   Wrapper
 } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
+import { getPaymentPlan } from "@staccx/payment-plan"
 import PickLoanSum from "./PresentOffer.PickLoanSum"
 import { color, spacing } from "@staccx/theme"
 
@@ -26,11 +27,17 @@ class PresentOffer extends React.Component {
       amount: props.loanAmount,
       selectedDuration: props.repaymentPeriod,
       initialized: false,
-      isValid: true
+      isValid: true,
+      term: null,
+      plan: []
     }
     this.handleSetCustom = this.handleSetCustom.bind(this)
     this.handleChangeLoanDuration = this.handleChangeLoanDuration.bind(this)
     this.handleCustomAmount = this.handleCustomAmount.bind(this)
+  }
+
+  componentWillMount() {
+    this.handleCustomAmount(this.state.amount)
   }
 
   handleSetCustom(value) {
@@ -48,18 +55,31 @@ class PresentOffer extends React.Component {
   handleChangeLoanDuration(duration) {
     this.setState({ selectedDuration: duration }, () => {
       this.props.handleChangeLoanDuration(duration)
+      this.handleCustomAmount(this.state.amount)
     })
   }
 
   handleCustomAmount(value) {
-    this.setState({ amount: value }, () => {
-      this.props.handleChangeCustomAmount(value)
-      if (value >= this.props.minAmount && value <= this.props.maxAmount) {
-        this.setState({ isValid: true })
-      } else {
-        this.setState({ isValid: false })
-      }
-    })
+    const isValid =
+      value >= this.props.minAmount && value <= this.props.maxAmount
+    if (isValid) {
+      const plan =
+        getPaymentPlan({
+          loanAmount: value,
+          terms: this.state.selectedDuration,
+          interestRate: this.props.interestRate,
+          period: 12,
+          startFee: this.props.startFee,
+          termFee: this.props.termFee
+        }) || []
+
+      const term = plan ? (plan.length > 0 ? plan[0] : null) : null
+      this.setState({ amount: value, plan, term, isValid }, () => {
+        this.props.handleChangeCustomAmount(value)
+      })
+    } else {
+      this.setState({ isValid: false, amount: value })
+    }
   }
 
   respondToOffer(accepted) {
@@ -72,7 +92,7 @@ class PresentOffer extends React.Component {
   }
 
   render() {
-    console.log(this.state.amount)
+    const { term, plan } = this.state
     return (
       <div>
         <Wrapper size="medium" breakout>
@@ -130,24 +150,41 @@ class PresentOffer extends React.Component {
                       </OfferTableDurations>
                     </OfferTableData>
                   </tr>
-                  <tr>
-                    <OfferTableText>{this.props.monthlyFeeText}</OfferTableText>
-                    <OfferTableData>
-                      <Odometer number={this.props.monthlyFees} size={14} />
-                    </OfferTableData>
-                  </tr>
-                  <tr>
-                    <OfferTableText>{this.props.paybackText}</OfferTableText>
-                    <OfferTableData>
-                      <Odometer number={this.props.paybackTotal} size={14} />
-                    </OfferTableData>
-                  </tr>
-                  <OfferTableTotal>
-                    <OfferTableText>{this.props.payMonthlyText}</OfferTableText>
-                    <OfferTableData>
-                      <Odometer number={this.props.monthlyPayment} size={14} />
-                    </OfferTableData>
-                  </OfferTableTotal>
+                  {term &&
+                    plan && (
+                      <React.Fragment>
+                        <tr>
+                          <OfferTableText>
+                            {this.props.monthlyFeeText}
+                          </OfferTableText>
+                          <OfferTableData>
+                            <Odometer number={term.monthlyFees} size={14} />
+                          </OfferTableData>
+                        </tr>
+                        <tr>
+                          <OfferTableText>
+                            {this.props.paybackText}
+                          </OfferTableText>
+                          <OfferTableData>
+                            <Odometer
+                              number={plan.reduce(
+                                (acc, curr) => acc + curr.monthlyPayment,
+                                0
+                              )}
+                              size={14}
+                            />
+                          </OfferTableData>
+                        </tr>
+                        <OfferTableTotal>
+                          <OfferTableText>
+                            {this.props.payMonthlyText}
+                          </OfferTableText>
+                          <OfferTableData>
+                            <Odometer number={term.monthlyPayment} size={14} />
+                          </OfferTableData>
+                        </OfferTableTotal>
+                      </React.Fragment>
+                    )}
                 </tbody>
               </OfferTable>
             </Box>
@@ -237,6 +274,7 @@ PresentOffer.propTypes = {
   handleChangeCustomAmount: PropTypes.func,
   handleChangeLoanDuration: PropTypes.func,
   headingText: PropTypes.string,
+  interestRate: PropTypes.any,
   isValid: PropTypes.bool,
   loanAmount: PropTypes.number.isRequired,
   loanDurationText: PropTypes.string,
@@ -256,16 +294,12 @@ PresentOffer.propTypes = {
   potentialDurations: PropTypes.array,
   rejectOfferButtonText: PropTypes.string,
   repaymentPeriod: PropTypes.number.isRequired,
-  selectedDuration: PropTypes.any
+  selectedDuration: PropTypes.any,
+  startFee: PropTypes.any,
+  termFee: PropTypes.any
 }
 
 PresentOffer.defaultProps = {
-  loanAmount: 100000,
-  onComplete: console.log,
-
-  onRejected: console.log,
-  paybackTotal: 101000,
-  repaymentPeriod: 6,
   acceptOfferButtonText: "Fortsett",
   company: {
     name: "Stacc X",
@@ -275,21 +309,29 @@ PresentOffer.defaultProps = {
   handleChangeCustomAmount: console.log,
   handleChangeLoanDuration: console.log,
   headingText: "Lånetilbud",
+  interestRate: 15,
   isValid: false,
+  loanAmount: 100000,
   loanDurationText: "Låneperiode",
   maxAmount: 1000000,
   maxLoanAmountText: "Du kan låne inntil",
   minAmount: 50000,
-  monthlyFees: 4000,
   monthlyFeeText: "Månedlig kostnad",
+  monthlyFees: 4000,
   monthlyPayment: 84000,
   nationalIdPrefixText: "Personnummer",
+  onComplete: console.log,
+  onRejected: console.log,
   orgNumberPrefixText: "Organisasjonsnummer",
-  paybackText: "Å betale tilbake",
   payMonthlyText: "Å betale hver måned",
+  paybackText: "Å betale tilbake",
+  paybackTotal: 101000,
   potentialDurations: [6, 3],
   rejectOfferButtonText: "Avslå",
-  selectedDuration: 6
+  repaymentPeriod: 6,
+  selectedDuration: 6,
+  startFee: 0,
+  termFee: 0
 }
 
 export default PresentOffer

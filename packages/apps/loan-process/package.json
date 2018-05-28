@@ -71,6 +71,7 @@
   },
   "dependencies": {
     "@staccx/formatting": "^4.3.0",
+    "@staccx/payment-plan": "^1.2.0",
     "formik": "^0.11.11",
     "national-id": "^2.0.0",
     "react-dom-confetti": "^0.0.10",
