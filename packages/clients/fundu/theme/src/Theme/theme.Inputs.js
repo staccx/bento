@@ -1,11 +1,6 @@
 import { css } from "styled-components"
 import { color, spacing, registerStyle } from "@staccx/theme"
 import { InputStyles, SelectSelectedStyles, SelectStyles } from "@staccx/base"
-import {
-  font,
-  targetSize,
-  VARIANT_DEFAULT
-} from "../../../../../internal/theme"
 
 export const InputStyling = registerStyle(
   {
@@ -52,7 +47,7 @@ export const LabelStyling = registerStyle(
 export const SelectSelectedStyling = registerStyle(
   {
     loanOffer: css`
-      border-width: 0;
+      border-color: transparent;
       padding-right: ${spacing.mediumPlus};
 
       &:hover,
@@ -60,6 +55,7 @@ export const SelectSelectedStyling = registerStyle(
       &:focus {
         background-color: transparent;
         color: ${color.primary};
+        border-color: ${color.primary};
 
         svg {
           fill: ${color.primary};

@@ -1,7 +1,6 @@
 import { css } from "styled-components"
-import { color, font, spacing, registerStyle } from "@staccx/theme"
+import { color, font, spacing, registerStyle, fontFamily } from "@staccx/theme"
 import { HeadingStyles } from "@staccx/base"
-import { fontFamily } from "../../../../../internal/theme/index"
 
 const centeredHeading = css`
   text-align: center;
