@@ -24,7 +24,7 @@ export const SelectedContainer = styled.button`
   text-align: left;
   font-family: ${fontFamily.body()};
   font-size: ${font.input};
-  pointer: cursor;
+  cursor: pointer;
   transition: border-color 0.2s ease-out;
 
   &:hover,

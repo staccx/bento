@@ -20,15 +20,22 @@ import SelectSelected from "./Select.Selected"
 export const SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER =
   "SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER"
 export const DefaultOptionElementWrapper = styled.div`
+  width: 100%;
   border: 1px solid ${color.line};
   border-top-width: 0;,
   ${themify(SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER)}
 `
 
 export const SELECT_WRAPPER = "SELECT_WRAPPER"
-export const SelectedWrapper = styled.div`
+export const SelectWrapper = styled.div`
   position: relative;
   ${themify(SELECT_WRAPPER)};
+`
+
+export const SELECTED_WRAPPER = "SELECT_WRAPPER"
+export const SelectedWrapper = styled.div`
+  position: relative;
+  ${themify(SELECTED_WRAPPER)};
 `
 export const SELECT_ICON_BUTTON = "SELECT_ICON_BUTTON"
 export const IconButton = styled.button`
@@ -129,56 +136,61 @@ const Select = ({
         toggleMenu,
         clearSelection
       }) => (
-        <div className={className}>
-          {label && <Label variant={variant}>{label}</Label>}
-          {selectedItem ? (
-            <SelectedWrapper variant={variant}>
-              <Selected
-                onClick={() => toggleMenu()}
-                selectedItem={selectedItem}
-                buttonProps={{ ...getButtonProps() }}
-                inputProps={{ ...getInputProps() }}
-                toggleMenu={toggleMenu}
-                variant={variant}
-              />
-              {nullable ? (
-                <IconButton onClick={() => clearSelection()} variant={variant}>
-                  <CloseIcon variant={variant} />
-                </IconButton>
-              ) : (
+        <div>
+          <SelectWrapper className={className}>
+            {label && <Label variant={variant}>{label}</Label>}
+            {selectedItem ? (
+              <SelectedWrapper variant={variant}>
+                <Selected
+                  onClick={() => toggleMenu()}
+                  selectedItem={selectedItem}
+                  buttonProps={{ ...getButtonProps() }}
+                  inputProps={{ ...getInputProps() }}
+                  toggleMenu={toggleMenu}
+                  variant={variant}
+                />
+                {nullable ? (
+                  <IconButton
+                    onClick={() => clearSelection()}
+                    variant={variant}
+                  >
+                    <CloseIcon variant={variant} />
+                  </IconButton>
+                ) : (
+                  <IconButton onClick={() => toggleMenu()} variant={variant}>
+                    <CaretIcon isExpanded={isOpen} variant={variant} />
+                  </IconButton>
+                )}
+              </SelectedWrapper>
+            ) : (
+              <SelectedWrapper variant={variant}>
+                <Placeholder
+                  {...getInputProps({
+                    placeholder: placeHolderLabel || ""
+                  })}
+                  variant={variant}
+                  onClick={() => toggleMenu()}
+                />
                 <IconButton onClick={() => toggleMenu()} variant={variant}>
                   <CaretIcon isExpanded={isOpen} variant={variant} />
                 </IconButton>
-              )}
-            </SelectedWrapper>
-          ) : (
-            <SelectedWrapper variant={variant}>
-              <Placeholder
-                {...getInputProps({
-                  placeholder: placeHolderLabel || ""
+              </SelectedWrapper>
+            )}
+            {isOpen && (
+              <OptionsWrapper variant={variant}>
+                {children.map((child, index) => {
+                  const item = child.props.data
+                  return React.cloneElement(child, {
+                    ...getItemProps({ item }),
+                    ...child.props,
+                    highlighted: highlightedIndex === index,
+                    selected: selectedItem === child,
+                    variant: variant
+                  })
                 })}
-                variant={variant}
-                onClick={() => toggleMenu()}
-              />
-              <IconButton onClick={() => toggleMenu()} variant={variant}>
-                <CaretIcon isExpanded={isOpen} variant={variant} />
-              </IconButton>
-            </SelectedWrapper>
-          )}
-          {isOpen && (
-            <OptionsWrapper variant={variant}>
-              {children.map((child, index) => {
-                const item = child.props.data
-                return React.cloneElement(child, {
-                  ...getItemProps({ item }),
-                  ...child.props,
-                  highlighted: highlightedIndex === index,
-                  selected: selectedItem === child,
-                  variant: variant
-                })
-              })}
-            </OptionsWrapper>
-          )}
+              </OptionsWrapper>
+            )}
+          </SelectWrapper>
         </div>
       )}
     />
