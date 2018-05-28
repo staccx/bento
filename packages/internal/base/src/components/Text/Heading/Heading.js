@@ -4,7 +4,6 @@ import styled, { css } from "styled-components"
 import { font, fontFamily, themify } from "@staccx/theme"
 
 const Heading = ({ level, children, className, ...restProps }) => {
-  console.log(level)
   switch (level) {
     case "h1":
     case "H1":

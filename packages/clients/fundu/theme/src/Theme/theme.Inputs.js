@@ -1,6 +1,11 @@
 import { css } from "styled-components"
 import { color, spacing, registerStyle } from "@staccx/theme"
 import { InputStyles, SelectSelectedStyles, SelectStyles } from "@staccx/base"
+import {
+  font,
+  targetSize,
+  VARIANT_DEFAULT
+} from "../../../../../internal/theme"
 
 export const InputStyling = registerStyle(
   {
@@ -72,4 +77,22 @@ export const SelectIconButtonStyling = registerStyle(
     `
   },
   SelectStyles.SELECT_ICON_BUTTON
+)
+
+export const SelectOptionsWrapperStyling = registerStyle(
+  {
+    loanOffer: css`
+      width: 100%;
+      max-height: 150px;
+      overflow-y: auto;
+      position: absolute;
+      z-index: 10;
+      background-color: ${color.white};
+      box-shadow: rgba(0, 0, 75, 0.015) 0px 2px 2px,
+        rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
+        rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
+        rgba(0, 0, 75, 0.015) 0px 64px 64px;
+    `
+  },
+  SelectStyles.SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER
 )

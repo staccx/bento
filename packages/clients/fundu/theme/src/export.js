@@ -16,7 +16,8 @@ import {
   InputStyling,
   LabelStyling,
   SelectSelectedStyling,
-  SelectIconButtonStyling
+  SelectIconButtonStyling,
+  SelectOptionsWrapperStyling
 } from "./Theme/theme.Inputs"
 
 const borderRadius = "0px"
@@ -106,5 +107,6 @@ const theme = new Theme(BaseTheme, {
   .addStyles(ExpandListItemStyling)
   .addStyles(SelectSelectedStyling)
   .addStyles(SelectIconButtonStyling)
+  .addStyles(SelectOptionsWrapperStyling)
 
 export default theme.get

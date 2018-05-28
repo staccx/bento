@@ -15,6 +15,7 @@ import {
   ThemeComponent,
   themify
 } from "@staccx/theme"
+import SelectSelected from "./Select.Selected"
 
 export const SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER =
   "SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER"
@@ -101,6 +102,7 @@ const Select = ({
   placeHolderLabel,
   className,
   variant,
+  nullable,
   ...restProps
 }) => {
   const Selected = renderSelectedElement || selectedElement
@@ -139,9 +141,15 @@ const Select = ({
                 toggleMenu={toggleMenu}
                 variant={variant}
               />
-              <IconButton onClick={() => clearSelection()} variant={variant}>
-                <CloseIcon variant={variant} />
-              </IconButton>
+              {nullable ? (
+                <IconButton onClick={() => clearSelection()} variant={variant}>
+                  <CloseIcon variant={variant} />
+                </IconButton>
+              ) : (
+                <IconButton onClick={() => toggleMenu()} variant={variant}>
+                  <CaretIcon isExpanded={isOpen} variant={variant}/>
+                </IconButton>
+              )}
             </SelectedWrapper>
           ) : (
             <SelectedWrapper variant={variant}>
@@ -201,6 +209,7 @@ Select.propTypes = {
   placeHolderLabel: PropTypes.string,
   renderPlaceHolderElement: PropTypes.func,
   placeHolderElement: PropTypes.func,
+  nullable: PropTypes.bool,
   _themeVars: PropTypes.oneOf([
     SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER,
     SELECT_ICON_BUTTON,
@@ -208,5 +217,10 @@ Select.propTypes = {
     COMPONENT_SELECT_CARET_ICON,
     COMPONENT_SELECT_CLOSE_ICON
   ])
+}
+
+Select.defaultProps = {
+  nullable: true,
+  selectedElement: SelectSelected
 }
 export default Select

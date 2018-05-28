@@ -128,7 +128,8 @@ class PresentOffer extends React.Component {
                         <OfferTableDurationsItem>
                           <Select
                             id={"select-loan-duration"}
-                            selectedElement={SelectSelected}
+                            selectedItem={{ text: `${this.state.selectedDuration}`, value: "mnd" }}
+                            nullable={false}
                             placeHolderLabel={"Velg…"}
                             onChange={value =>
                               this.handleChangeLoanDuration(
@@ -306,8 +307,8 @@ PresentOffer.defaultProps = {
     orgNo: "912319123"
   },
   companyHeadingPrefixText: "Selskap",
-  handleChangeCustomAmount: console.log,
-  handleChangeLoanDuration: console.log,
+  handleChangeCustomAmount: val => null,
+  handleChangeLoanDuration: val => null,
   headingText: "Lånetilbud",
   interestRate: 15,
   isValid: false,

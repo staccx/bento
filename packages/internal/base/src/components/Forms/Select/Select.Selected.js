@@ -43,7 +43,6 @@ const SelectSelected = ({
   variant,
   ...restProps
 }) => {
-  console.log(variant)
   return (
     <SelectedContainer variant={variant} {...buttonProps} {...restProps}>
       {selectedItem.text} {selectedItem.value}
