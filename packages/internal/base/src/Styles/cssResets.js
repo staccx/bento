@@ -1,4 +1,4 @@
-import { color, fontFamily, fontWeight } from "@staccx/theme"
+import { color, fontFamily, fontWeight, font } from "@staccx/theme"
 
 export const reset = props => `
   body, h1, h2, h3, h4, h5, h6,
@@ -19,7 +19,7 @@ export const reset = props => `
     font-family: ${fontFamily.body()(props)};
     font-size: 14px;
     color: ${color.text()(props)};
-    line-height: 1.15; /* 1 */
+    line-height: ${font.lineHeight()(props)};
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
   }
