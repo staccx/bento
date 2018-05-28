@@ -49,7 +49,7 @@ class RegisterSigners extends React.Component {
       this.setState({
         signers: props.people.map((person, index) => ({
           id: person.id,
-          checked: index === 0 && true,
+          checked: index === 0,
           email: "",
           nationalId: "",
           name: person.name,
@@ -65,9 +65,15 @@ class RegisterSigners extends React.Component {
     }
   }
 
-  onSubmit(values, errors) {
-    console.log("errors", errors)
-    this.props.onComplete(values)
+  onSubmit(values) {
+    console.log(values)
+    this.props.onComplete(
+      values.signers.map(signer => ({
+        nationalId: removeWhitespace(signer.nationalId),
+        id: signer.id,
+        email: signer.email
+      }))
+    )
   }
 
   render() {
@@ -180,7 +186,9 @@ class RegisterSigners extends React.Component {
                                       <SignerRoles>
                                         <span>
                                           {signer.positions.map(signer => (
-                                            <span key={signer}>{signer} </span>
+                                            <span key={signer}>
+                                              {signer.description}{" "}
+                                            </span>
                                           ))}
                                         </span>
                                         <Button

@@ -11,6 +11,7 @@ import {
 } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 import { formatCurrency, formatName } from "@staccx/formatting"
+import { getPaymentPlan } from "@staccx/payment-plan"
 import SignDocument from "./Sign.Document"
 import {
   OfferTable,
@@ -48,6 +49,18 @@ class Sign extends React.Component {
         ...signer,
         signCount: signer.orders.reduce(signCountReducer, 0)
       }))
+
+    const plan =
+      getPaymentPlan({
+        loanAmount: this.props.loanAmount,
+        terms: this.props.repaymentPeriod,
+        interestRate: this.props.interestRate,
+        period: 12,
+        startFee: this.props.startFee || 0,
+        termFee: this.props.termFee
+      }) || []
+
+    const term = plan ? (plan.length > 0 ? plan[0] : null) : null
 
     return (
       <Wrapper size="medium" breakout>
@@ -96,7 +109,12 @@ class Sign extends React.Component {
                     <tr>
                       <OfferTableText>{this.props.paybackText}</OfferTableText>
                       <OfferTableData>
-                        {formatCurrency(this.props.paybackTotal)}
+                        {formatCurrency(
+                          plan.reduce(
+                            (acc, curr) => acc + curr.monthlyPayment,
+                            0
+                          )
+                        )}
                       </OfferTableData>
                     </tr>
                     <OfferTableTotal>
@@ -104,7 +122,7 @@ class Sign extends React.Component {
                         {this.props.payMonthlyText}
                       </OfferTableText>
                       <OfferTableData>
-                        {formatCurrency(this.props.monthlyPayment)}
+                        {formatCurrency(term.monthlyPayment)}
                       </OfferTableData>
                     </OfferTableTotal>
                   </tbody>
@@ -144,52 +162,54 @@ class Sign extends React.Component {
           </Box>
         </div>
         {/* Render other signers documents */}
-        <div>
-          <Heading variant="boxHeading" level={2}>
-            {this.props.othersTaskText}
-          </Heading>
-          <Box variant="actionBox">
-            <List>
-              {otherSigners.map(signer => (
-                <ExpandListItem
-                  key={signer.id}
-                  title={
-                    <Box variant="split">
-                      <span>{formatName(signer.name)}</span>
-                      <span>{`${signer.signCount}/${
-                        signer.orders.length
-                      }`}</span>
-                    </Box>
-                  }
-                  variant="signer"
-                  flush
-                >
-                  <List variant="documentStatusList">
-                    {signer.orders.map(order => {
-                      return (
-                        <SignDocument
-                          key={order.requestId}
-                          order={order}
-                          user={this.props.user}
-                          showButton={false}
-                          signText={this.props.signText}
-                          signedText={this.props.signedText}
-                          signOrderStatusCompleted={
-                            this.props.signOrderStatusCompleted
-                          }
-                          waitingForSignatureText={
-                            this.props.waitingForSignatureText
-                          }
-                          renderDocumentText={this.props.renderDocumentText}
-                        />
-                      )
-                    })}
-                  </List>
-                </ExpandListItem>
-              ))}
-            </List>
-          </Box>
-        </div>
+        {otherSigners.length > 0 && (
+          <div>
+            <Heading variant="boxHeading" level={2}>
+              {this.props.othersTaskText}
+            </Heading>
+            <Box variant="actionBox">
+              <List>
+                {otherSigners.map(signer => (
+                  <ExpandListItem
+                    key={signer.id}
+                    title={
+                      <Box variant="split">
+                        <span>{formatName(signer.name)}</span>
+                        <span>{`${signer.signCount}/${
+                          signer.orders.length
+                        }`}</span>
+                      </Box>
+                    }
+                    variant="signer"
+                    flush
+                  >
+                    <List variant="documentStatusList">
+                      {signer.orders.map(order => {
+                        return (
+                          <SignDocument
+                            key={order.requestId}
+                            order={order}
+                            user={this.props.user}
+                            showButton={false}
+                            signText={this.props.signText}
+                            signedText={this.props.signedText}
+                            signOrderStatusCompleted={
+                              this.props.signOrderStatusCompleted
+                            }
+                            waitingForSignatureText={
+                              this.props.waitingForSignatureText
+                            }
+                            renderDocumentText={this.props.renderDocumentText}
+                          />
+                        )
+                      })}
+                    </List>
+                  </ExpandListItem>
+                ))}
+              </List>
+            </Box>
+          </div>
+        )}
       </Wrapper>
     )
   }
