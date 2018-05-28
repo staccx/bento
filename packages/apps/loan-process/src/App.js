@@ -36,8 +36,9 @@ class App extends Component {
             buttonContent="Gå til min side"
             img={
               <img
-                src="https://source.unsplash.com/480x280/?celebration"
+                src="https://cdn.sanity.io/images/4vjnya25/development/3f1931c6f8da404a7a5f7050c7652bc27c13059b-150x100.svg?w=420"
                 alt={"placeholder"}
+                width="420px"
               />
             }
           />
