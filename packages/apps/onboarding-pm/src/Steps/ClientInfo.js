@@ -12,6 +12,7 @@ import {
   Button
 } from "@staccx/base"
 import { spacing } from "@staccx/theme"
+import Form from "../Components/Form"
 
 const handleSamtykkeChange = value => {
   console.log("You checked " + value)
@@ -28,7 +29,7 @@ const handleOriginChange = value => {
 class ClientInfo extends Component {
   render() {
     return (
-      <Form size="small">
+      <Form>
         <Fieldset>
           <Heading level="2">Personalia</Heading>
           <PhoneInput label="Mobilnummer" id="dlkn2" />
@@ -79,9 +80,6 @@ class ClientInfo extends Component {
               Jeg har utenlandsk statsborgerskap og/eller skatteplikt utenfor
               Norge.
             </CheckBox>
-            <CheckBox id="dfkjlsdf" value="foreignCitizenExposed">
-              Jeg er eller har vært politisk eksponert person i utlandet.
-            </CheckBox>
             <CheckBox id="5436457" value="notOnlyPrivatePurpose">
               Kontoen er ikke til privat bruk.
             </CheckBox>
@@ -116,13 +114,6 @@ class ClientInfo extends Component {
     )
   }
 }
-
-const Form = styled(Wrapper)`
-  padding-top: ${spacing.large};
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-row-gap: 48px;
-`
 
 const Fieldset = styled.div`
   display: grid;

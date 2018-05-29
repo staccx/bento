@@ -40,7 +40,7 @@ export const SelectedWrapper = styled.div`
 export const SELECT_ICON_BUTTON = "SELECT_ICON_BUTTON"
 export const IconButton = styled.button`
   position: absolute;
-  right: ${spacing.small()};
+  right: ${spacing.micro};
   bottom: ${p => {
     const value = targetSize.normal()(p)
     return multiplyPixelValue(value, 0.5)

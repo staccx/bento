@@ -12,7 +12,6 @@ import {
 } from "@staccx/theme"
 
 const OptionContainer = styled.div`
-  display: block;
   width: 100%;
   min-height: ${targetSize.normal};
   margin: 0 auto;
@@ -23,6 +22,8 @@ const OptionContainer = styled.div`
   font-size: ${font.input};
   pointer: cursor;
   transition: border-color 0.2s ease-out;
+  display: flex;
+  align-items: center;
 
   &:hover,
   &:focus,
