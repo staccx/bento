@@ -1,10 +1,10 @@
 {
   "name": "@staccx/fundu-loan-process",
-  "version": "4.6.1",
+  "version": "4.6.2",
   "private": true,
   "dependencies": {
     "@staccx/base": "^4.6.0",
-    "@staccx/fundu-theme": "^4.6.1",
+    "@staccx/fundu-theme": "^4.6.2",
     "@staccx/loan-process": "^4.6.1",
     "@staccx/theme": "^4.4.0",
     "prop-types": "^15.6.1",
