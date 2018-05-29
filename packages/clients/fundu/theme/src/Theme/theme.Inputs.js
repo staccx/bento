@@ -1,7 +1,11 @@
 import { css } from "styled-components"
 import { color, spacing, registerStyle } from "@staccx/theme"
-import { InputStyles, SelectSelectedStyles, SelectStyles } from "@staccx/base"
-import { RadioPillStyles } from "../../../../../internal/base"
+import {
+  InputStyles,
+  SelectSelectedStyles,
+  SelectStyles,
+  RadioPillStyles
+} from "@staccx/base"
 
 export const InputStyling = registerStyle(
   {
