@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import hideVisually from "../../../Styles/hideVisually"
 import {
   targetSize,
@@ -21,9 +21,10 @@ const RadioPillItem = ({
   className,
   defaultChecked,
   value,
+  full,
   ...otherProps
 }) => (
-  <RadioWrapper className={className}>
+  <RadioWrapper className={className} full={full}>
     <Radio
       id={id}
       disabled={disabled}
@@ -34,7 +35,9 @@ const RadioPillItem = ({
       value={value}
       {...otherProps}
     />
-    <Label htmlFor={id}>{children}</Label>
+    <Label htmlFor={id} full={full}>
+      {children}
+    </Label>
   </RadioWrapper>
 )
 
@@ -51,7 +54,16 @@ const Label = styled.label`
   letter-spacing: normal;
   font-weight: ${fontWeight.normal};
   margin-right: -1px;
+  background-color: ${color.white};
   ${themify(RADIO_PILL_ITEM_LABEL)};
+  ${p =>
+    p.full &&
+    css`
+      width: calc(100% + 1px);
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    `};
 `
 
 export const RADIO_PILL_ITEM_CHECKED = "RADIO_PILL_ITEM_CHECKED"
@@ -78,11 +90,11 @@ const Radio = styled.input`
 export const RADIO_PILL_ITEM_WRAPPER = "RADIO_PILL_ITEM_WRAPPER"
 export const RADIO_PILL_ITEM_HOVER = "RADIO_PILL_ITEM_HOVER"
 const RadioWrapper = styled.div`
-  display: inline-block;
+  display: ${p => (p.full ? "flex" : "inline-block")};
   min-height: ${targetSize.normal};
-  padding-top: ${spacing.small()};
-  padding-bottom: ${spacing.small()};
-
+  padding-top: ${p => (p.full ? null : spacing.small)};
+  padding-bottom: ${p => (p.full ? null : spacing.small)};
+  ${p => p.full && "flex-grow: 1"};
   &:first-child {
     ${Label} {
       border-top-left-radius: ${borderRadiusRadioPill};

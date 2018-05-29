@@ -1,26 +1,40 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { themify } from "@staccx/theme"
 
-const RadioPill = ({ children, group, onChange, className, ...restProps }) => (
-  <RadioPillContainer className={className}>
+const RadioPill = ({
+  children,
+  group,
+  onChange,
+  className,
+  full,
+  ...restProps
+}) => (
+  <RadioPillContainer className={className} full={full}>
     {children.map(child =>
       React.cloneElement(child, {
         ...child.props,
         onChange: onChange,
+        full: full,
         group
       })
     )}
   </RadioPillContainer>
 )
 
+const Full = css`
+  display: flex;
+  width: 100%;
+`
+
 export const RADIO_PILL = "RADIO_PILL"
-const RadioPillContainer = styled.fieldset`
+const RadioPillContainer = styled.div`
   border: 0;
   margin: 0;
   padding: 0;
   outline: 0;
+  ${p => p.full && Full};
   ${themify(RADIO_PILL)};
 `
 
