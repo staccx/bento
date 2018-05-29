@@ -111,6 +111,6 @@ const theme = new Theme(BaseTheme, {
   .addStyles(SelectIconButtonStyling)
   .addStyles(SelectOptionsWrapperStyling)
   .addStyles(LayoutStyling)
-  .addStyle(RadioPillStyling)
+  .addStyles(RadioPillStyling)
 
 export default theme.get
