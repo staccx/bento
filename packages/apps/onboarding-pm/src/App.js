@@ -7,7 +7,6 @@ import Consent from "./Steps/Consent"
 import SanctionList from "./Steps/SanctionList"
 import Foreign from "./Steps/Foreign"
 import Confirmation from "./Steps/Confirmation"
-import { Button } from "@staccx/base"
 
 class App extends Component {
   constructor(props) {
@@ -55,7 +54,6 @@ class App extends Component {
     return (
       <ThemeProxyProvider theme={theme}>
         <div>
-          <Button onClick={() => this.setOrigin("salary")}>Klikk</Button>
           {this.state.currentStep === "clientInfo" && (
             <ClientInfo
               steps={steps}

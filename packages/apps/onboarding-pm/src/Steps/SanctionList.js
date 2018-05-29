@@ -3,10 +3,9 @@ import {
   Heading,
   Button,
   Input,
-  SliderKeyboardInput,
+  CurrencyInput,
   Label,
   RadioPill,
-  Legend,
   RadioPillItem
 } from "@staccx/base"
 import Form from "../Components/Form"
@@ -68,8 +67,7 @@ const SanctionList = ({ steps, origin }) => {
             Du oppga at noe av pengene kommer fra en gave
           </Heading>
           <Input label="Hva er gavens opprinnelse?" id="csadj3" />
-          <Input label="Hva er gavens totale størrelse?" id="d34d2" />
-          {/* TODO: Riktig maske */}
+          <CurrencyInput label="Hva er gavens totale størrelse?" id="d34d2" />
         </Fieldset>
       )}
 
@@ -79,8 +77,7 @@ const SanctionList = ({ steps, origin }) => {
           <Input label="Hva er relasjonen til den avdøde?" id="ds3230r" />
           <Input label="Når falt dødsfallet sted?" id=" n3232" />
           {/* TODO: Trenger dato-komponent */}
-          <Input label="Hvilken sum ble arvet?" id="cjkh443" />
-          {/* TODO: Riktig maske NuberInput */}
+          <CurrencyInput label="Hvor mye ble arvet?" id="cjkh443" />
         </Fieldset>
       )}
 
@@ -95,8 +92,7 @@ const SanctionList = ({ steps, origin }) => {
           />
           <Input label="Når ble salget utført?" id="h325" />
           {/* TODO: Trenger dato-komponent */}
-          <Input label="Hva var salgssummen?" id="dsajk3232" />
-          {/* TODO: Riktig maske NuberInput */}
+          <CurrencyInput label="Hva var salgssummen?" id="dsajk3232" />
         </Fieldset>
       )}
       {origin.other && (
