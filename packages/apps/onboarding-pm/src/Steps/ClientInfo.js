@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { Component } from "react"
 import styled from "styled-components"
 import {
@@ -18,17 +19,18 @@ import Fieldset from "../Components/Fieldset"
 class ClientInfo extends Component {
   render() {
     const handleSamtykkeChange = value => {
+      this.props.onSamtykkeChange(value)
       console.log("You checked " + value)
     }
 
     const handleUtenlandsChange = value => {
+      this.props.onForeignChange(value)
       console.log("You checked " + value)
     }
 
     const handleOriginChange = value => {
       console.log("You checked " + value)
-      this.props.origin(value)
-      /* TODO: ☝️ her feiler det.   */
+      this.props.onOriginChange(value)
     }
 
     return (
@@ -127,3 +129,10 @@ class ClientInfo extends Component {
 }
 
 export default ClientInfo
+
+ClientInfo.propTypes = {
+  onForeignChange: PropTypes.func.isRequired,
+  onOriginChange: PropTypes.func.isRequired,
+  onSamtykkeChange: PropTypes.func.isRequired,
+  steps: PropTypes.any
+}

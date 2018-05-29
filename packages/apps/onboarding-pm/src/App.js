@@ -10,8 +10,8 @@ import Confirmation from "./Steps/Confirmation"
 import { Button } from "@staccx/base"
 
 class App extends Component {
-  constructor(...props) {
-    super(...props)
+  constructor(props) {
+    super(props)
     this.state = {
       currentStep: "clientInfo",
       origin: {
@@ -23,6 +23,9 @@ class App extends Component {
         other: false
       }
     }
+
+    this.setOrigin = this.setOrigin.bind(this)
+    this.setStep = this.setStep.bind(this)
   }
 
   setOrigin(checkedValue) {
@@ -54,7 +57,12 @@ class App extends Component {
         <div>
           <Button onClick={() => this.setOrigin("salary")}>Klikk</Button>
           {this.state.currentStep === "clientInfo" && (
-            <ClientInfo steps={steps} origin={this.setOrigin} />
+            <ClientInfo
+              steps={steps}
+              onOriginChange={this.setOrigin}
+              onForeignChange={console.log}
+              onSamtykkeChange={console.log}
+            />
           )}
           {this.state.currentStep === "bankId" && <BankId steps={steps} />}
           {this.state.currentStep === "consent" && <Consent steps={steps} />}
