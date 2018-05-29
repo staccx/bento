@@ -10,7 +10,6 @@ import {
   Odometer,
   Select,
   SelectOption,
-  SelectSelected,
   Wrapper
 } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"

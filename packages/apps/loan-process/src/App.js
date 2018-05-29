@@ -9,6 +9,7 @@ import RegisterSigners from "./module/RegisterSigners"
 import SetAccountNumber from "./module/SetAccountNumber"
 import PresentOffer from "./module/PresentOffer"
 import EndScreen from "./module/EndScreen"
+import PersonalFinance from "./module/PersonalFinance"
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
         <Offer /> */}
 
         <div>
+          <PersonalFinance onValidated={console.log} />
           <EndScreen
             headingText="Søknaden er til behandling"
             content={

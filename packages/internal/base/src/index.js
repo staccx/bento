@@ -11,7 +11,7 @@ import CheckBox, {
   COMPONENT_CHECKBOX_ICON
 } from "./components/Forms/CheckBox/CheckBox"
 import RadioButton from "./components/Forms/RadioButton/RadioButton"
-import RadioPill from "./components/Forms/RadioPill/RadioPill"
+import RadioPill, * as RadioPillStyles from "./components/Forms/RadioPill/RadioPill"
 import RadioPillItem from "./components/Forms/RadioPill/RadioPill.Item"
 import CheckGroup from "./components/Forms/CheckGroup/CheckGroup"
 import Slider, * as SliderStyles from "./components/Forms/Slider/Slider/Slider"
@@ -162,6 +162,7 @@ export {
   ProgressBar,
   RadioButton,
   RadioPill,
+  RadioPillStyles,
   RadioPillItem,
   Select,
   SelectStyles,
