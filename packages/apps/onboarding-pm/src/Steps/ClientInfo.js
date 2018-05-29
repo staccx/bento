@@ -79,7 +79,12 @@ class ClientInfo extends Component {
             >
               Salg av eiendom
             </CheckBox>
-            <CheckBox group="opprinnelse" id="other" value="other" key="test4">
+            <CheckBox
+              group="opprinnelse"
+              id="other"
+              value="other"
+              key="test383"
+            >
               Annet
             </CheckBox>
           </CheckGroup>
@@ -87,11 +92,15 @@ class ClientInfo extends Component {
         <Fieldset>
           <Legend>Huk av kun dersom dette gjelder deg</Legend>
           <CheckGroup onChange={handleUtenlandsChange} group="utenlands">
-            <CheckBox id="231432" value="foreignCitizen">
+            <CheckBox id="231432" value="foreignCitizen" key="ewrr">
               Jeg har utenlandsk statsborgerskap og/eller skatteplikt utenfor
               Norge.
             </CheckBox>
-            <CheckBox id="5436457" value="notOnlyPrivatePurpose">
+            <CheckBox
+              id="5436457"
+              value="notOnlyPrivatePurpose"
+              key="ewrrtgfhg"
+            >
               Kontoen er ikke til privat bruk.
             </CheckBox>
           </CheckGroup>
@@ -104,6 +113,7 @@ class ClientInfo extends Component {
               group="samtykke"
               id="gffdsgdf"
               value="electronicDocumentation"
+              key="45"
             >
               Jeg samtykker til mottak av elektronisk kommunikasjon
             </CheckBox>
@@ -111,6 +121,7 @@ class ClientInfo extends Component {
               group="samtykke"
               id="fdsfdsdf7f"
               value="newsAndAdvertisment"
+              key="45fdfed"
             >
               Jeg samtykker til mottak av av tilbud og nyheter om andre
               produkter.
