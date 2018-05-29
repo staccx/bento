@@ -13,14 +13,14 @@ class App extends Component {
   constructor(...props) {
     super(...props)
     this.state = {
-      currentStep: "sanctionsList",
+      currentStep: "clientInfo",
       origin: {
         salary: false,
         gift: false,
         inheritance: false,
         savings: false,
         property: false,
-        other: true
+        other: false
       }
     }
   }
@@ -54,7 +54,7 @@ class App extends Component {
         <div>
           <Button onClick={() => this.setOrigin("salary")}>Klikk</Button>
           {this.state.currentStep === "clientInfo" && (
-            <ClientInfo steps={steps} />
+            <ClientInfo steps={steps} origin={this.setOrigin} />
           )}
           {this.state.currentStep === "bankId" && <BankId steps={steps} />}
           {this.state.currentStep === "consent" && <Consent steps={steps} />}

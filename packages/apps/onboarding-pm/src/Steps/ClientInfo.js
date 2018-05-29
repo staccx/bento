@@ -15,20 +15,22 @@ import {
 import Form from "../Components/Form"
 import Fieldset from "../Components/Fieldset"
 
-const handleSamtykkeChange = value => {
-  console.log("You checked " + value)
-}
-
-const handleUtenlandsChange = value => {
-  console.log("You checked " + value)
-}
-
-const handleOriginChange = value => {
-  console.log("You checked " + value)
-}
-
 class ClientInfo extends Component {
   render() {
+    const handleSamtykkeChange = value => {
+      console.log("You checked " + value)
+    }
+
+    const handleUtenlandsChange = value => {
+      console.log("You checked " + value)
+    }
+
+    const handleOriginChange = value => {
+      console.log("You checked " + value)
+      this.props.origin(value)
+      /* TODO: ☝️ her feiler det.   */
+    }
+
     return (
       <Form>
         <Fieldset>
