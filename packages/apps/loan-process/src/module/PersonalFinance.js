@@ -63,6 +63,7 @@ const Form = props => {
                     label="Sivilstatus"
                     placeholder="Velg..."
                     id="relationshipStatus"
+                    value={values.relationshipStatus}
                     onChange={handleChange}
                   >
                     {relationshipStatus.map(status => (
@@ -343,7 +344,7 @@ PersonalFinance.defaultProps = {
   expensesRentError: "Angi leieutgifter",
   renderButtonContent: () => "Ok",
   renderRelationshipOption: option => option,
-  relationshipStatus: RELATIONSHIP_STATUS_MARRIED
+  relationshipStatus: undefined
 }
 
 export default PersonalFinance

@@ -29,7 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build:app": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject",
     "test:watch": "jest --env=jsdom --watch",
     "build": "yarn prettify && rollup -c",
