@@ -30,11 +30,11 @@ const CheckBox = ({
   defaultChecked,
   checkIcon,
   ignoreBase,
-  themeVariant,
+  variant,
   ...otherProps
 }) => {
   return (
-    <CheckWrapper themeVariant={themeVariant}>
+    <CheckWrapper variant={variant}>
       <InputCheck
         className={className}
         id={id}
@@ -43,12 +43,12 @@ const CheckBox = ({
         name={group}
         onChange={onChange}
         defaultChecked={defaultChecked}
-        themeVariant={themeVariant}
+        variant={variant}
         {...otherProps}
       />
 
-      <Label htmlFor={id} themeVariant={themeVariant}>
-        <Icon themeVariant={themeVariant} />
+      <Label htmlFor={id} variant={variant}>
+        <Icon variant={variant} />
         {children}
       </Label>
     </CheckWrapper>
