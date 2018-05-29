@@ -7,13 +7,31 @@ import Consent from "./Steps/Consent"
 import SanctionList from "./Steps/SanctionList"
 import Foreign from "./Steps/Foreign"
 import Confirmation from "./Steps/Confirmation"
+import { Button } from "@staccx/base"
 
 class App extends Component {
   constructor(...props) {
     super(...props)
     this.state = {
-      currentStep: "clientInfo"
+      currentStep: "sanctionsList",
+      origin: {
+        salary: false,
+        gift: false,
+        inheritance: false,
+        savings: false,
+        property: false,
+        other: true
+      }
     }
+  }
+
+  setOrigin(checkedValue) {
+    this.setState({
+      origin: {
+        ...this.state.origin,
+        [checkedValue]: !this.state.origin[checkedValue]
+      }
+    })
   }
 
   setStep(stepName) {
@@ -34,13 +52,14 @@ class App extends Component {
     return (
       <ThemeProxyProvider theme={theme}>
         <div>
+          <Button onClick={() => this.setOrigin("salary")}>Klikk</Button>
           {this.state.currentStep === "clientInfo" && (
             <ClientInfo steps={steps} />
           )}
           {this.state.currentStep === "bankId" && <BankId steps={steps} />}
           {this.state.currentStep === "consent" && <Consent steps={steps} />}
           {this.state.currentStep === "sanctionsList" && (
-            <SanctionList steps={steps} />
+            <SanctionList origin={this.state.origin} steps={steps} />
           )}
           {this.state.currentStep === "foreign" && <Foreign steps={steps} />}
           {this.state.currentStep === "confirmation" && <Confirmation />}

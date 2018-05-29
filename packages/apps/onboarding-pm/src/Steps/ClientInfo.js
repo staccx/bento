@@ -11,8 +11,9 @@ import {
   Paragraph,
   Button
 } from "@staccx/base"
-import { spacing } from "@staccx/theme"
+
 import Form from "../Components/Form"
+import Fieldset from "../Components/Fieldset"
 
 const handleSamtykkeChange = value => {
   console.log("You checked " + value)
@@ -50,7 +51,15 @@ class ClientInfo extends Component {
               Lønn/Pensjon
             </CheckBox>
             <CheckBox group="opprinnelse" id="gift" value="gift" key="test2">
-              Gave/Arv
+              Gave
+            </CheckBox>
+            <CheckBox
+              group="opprinnelse"
+              id="inheritance"
+              value="inheritance"
+              key="test676"
+            >
+              Arv
             </CheckBox>
             <CheckBox
               group="opprinnelse"
@@ -114,11 +123,5 @@ class ClientInfo extends Component {
     )
   }
 }
-
-const Fieldset = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-row-gap: 12px;
-`
 
 export default ClientInfo
