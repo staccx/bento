@@ -15,8 +15,8 @@ import { IconProfileStyle } from "./Icons/Icon.Profile"
 import { IconInboxStyle } from "./Icons/Icon.Inbox"
 import { FooterStyle } from "./Footer/Footer"
 import { AdStyle } from "./Ad"
-// import { ExpandListButtonStyle } from "../Shared/Transaction.ExpandButton"
-// import ExpandListExpanded from "../Shared/ExpandListItem.Expanded"
+import { ExpandListButtonStyle } from "../components/Transaction.ExpandButton"
+import ExpandListExpanded from "../components/ExpandListItem.Expanded"
 import { MenuStyle } from "../components/MenuRow"
 
 const borderRadius = "8px"
@@ -128,9 +128,9 @@ const t = new Theme(BaseTheme, {
   .addStyles(ModalStyle)
   .addStyles(AlertStyle)
   .addStyles(ModalBackdropStyle)
-  // .addStyles(ExpandListExpanded)
+  .addStyles(ExpandListExpanded)
   .addStyles(NewBadgeStyle)
-  // .addStyles(ExpandListButtonStyle)
+  .addStyles(ExpandListButtonStyle)
   .addStyles(FooterStyle)
   .addStyles(MenuStyle)
   .addStyles(AdStyle)

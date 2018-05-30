@@ -8,8 +8,8 @@ import DashboardBox from "./Theme.Box"
 import { LogoStyle } from "./Theme.Logo"
 import { FooterStyle } from "./Footer/Footer"
 import NewBadgeStyles from "./Theme.NewBadge"
-// import { ExpandListButtonStyle } from "../Shared/Transaction.ExpandButton"
-// import ExpandListExpanded from "../Shared/ExpandListItem.Expanded"
+import { ExpandListButtonStyle } from "../components/Transaction.ExpandButton"
+import ExpandListExpanded from "../components/ExpandListItem.Expanded"
 import { MenuStyle } from "../components/MenuList"
 
 const borderRadius = "0px"
@@ -106,10 +106,10 @@ const t = new Theme(BaseTheme, {
   .addStyles(Button)
   .addStyles(DashboardBox)
   .addStyles(Modal)
-  // .addStyles(ExpandListExpanded)
+  .addStyles(ExpandListExpanded)
   .addStyles(NewBadgeStyles)
   .addStyles(MenuStyle)
-  // .addStyles(ExpandListButtonStyle)
+  .addStyles(ExpandListButtonStyle)
   .addStyles(FooterStyle)
   .addStyles(LogoStyle)
 
