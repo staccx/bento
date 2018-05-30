@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themify, spacing, grid } from "@staccx/theme"
+import { themify, spacing, grid, themeProps } from "@staccx/theme"
 
 const Layout = ({ grid, children, className, variant, columnGap, rowGap }) => (
   <LayoutContainer
@@ -33,32 +33,11 @@ Layout.defaultProps = {
 }
 
 Layout.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element
-  ]).isRequired,
+  children: themeProps.children.isRequired,
   className: PropTypes.string,
   grid: PropTypes.string,
-  columnGap: PropTypes.oneOf([
-    "huge",
-    "large",
-    "mediumPlus",
-    "medium",
-    "small",
-    "tiny",
-    "micro",
-    "flush"
-  ]),
-  rowGap: PropTypes.oneOf([
-    "huge",
-    "large",
-    "mediumPlus",
-    "medium",
-    "small",
-    "tiny",
-    "micro",
-    "flush"
-  ])
+  columnGap: themeProps.spacing,
+  rowGap: themeProps.spacing
 }
 
 export default Layout

@@ -14,6 +14,7 @@ import { default as fontFamily } from "./src/fontFamily"
 import { default as wrapper } from "./src/wrapper"
 import { default as ThemeComponent } from "./src/ThemeComponent"
 import { default as ThemeProxyProvider } from "./src/ThemeProxyProvider"
+import { themeProps } from "./src/themeProps"
 
 export {
   borderRadius,
@@ -27,6 +28,7 @@ export {
   targetSize,
   Theme,
   ThemeComponent,
+  themeProps,
   ThemeProxyProvider,
   themify,
   VARIANT_DEFAULT,
