@@ -1,5 +1,5 @@
 {
-  "name": "bank-in-a-box",
+  "name": "@staccx/bank-in-a-box",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

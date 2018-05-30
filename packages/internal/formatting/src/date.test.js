@@ -13,8 +13,7 @@ describe("Date", () => {
 
       expect(format("YYYY")).toBe("2018")
       expect(format("MM/YYYY")).toBe("04/2018")
-      expect(format("DD/MM")).toBe("25/04")
-      expect(format("DD/MM")).toBe("25/04")
+      expect(format("dd/MM")).toBe("25/04")
       expect(format("HH:mm")).toBe("00:00")
       expect(format("MMMM")).toBe("april")
     })
@@ -50,7 +49,7 @@ describe("Date", () => {
 
     it("Should get distance only one input with defaults", () => {
       const date = addDays(new Date(), 10)
-      expect(formatDateDistance(date)).toBe("10 dager")
+      expect(formatDateDistance(date)).toBe("ti dager")
     })
 
     it("Should be able to override locale", () => {
