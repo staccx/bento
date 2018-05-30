@@ -1,0 +1,40 @@
+{
+  "name": "@staccx/aprila-theme",
+  "version": "4.9.0",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "peerDependencies": {
+    "@staccx/base": ">=4.0.0",
+    "@staccx/theme": ">=4.0.0",
+    "prop-types": "^15.6.1",
+    "styled-components": "^3.2.6"
+  },
+  "devDependencies": {
+    "@staccx/base": "^4.9.0",
+    "@staccx/theme": "^4.9.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4",
+    "styled-components": "^3.2.6"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build:app": "react-scripts build",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject",
+    "test:watch": "jest --env=jsdom --watch",
+    "build": "yarn prettify && rollup -c",
+    "start:module": "rollup -c -w",
+    "prepublish": "yarn test && yarn build",
+    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
+  }
+}
