@@ -17,16 +17,13 @@ class ClientInfo extends Component {
   render() {
     const handleSamtykkeChange = value => {
       this.props.onSamtykkeChange(value)
-      console.log("You checked " + value)
     }
 
     const handleUtenlandsChange = value => {
       this.props.onForeignChange(value)
-      console.log("You checked " + value)
     }
 
     const handleOriginChange = value => {
-      console.log("You checked " + value)
       this.props.onOriginChange(value)
     }
 
@@ -41,7 +38,7 @@ class ClientInfo extends Component {
           <Layout>
             <Heading level="2">Om din sparing</Heading>
             <Paragraph>
-              Vi er pliktig til å innhente inLayoutasjon om ditt kundeforhold i
+              Vi er pliktig til å innhente informasjon om ditt kundeforhold i
               henhold til hvitvaskingsloven og ber derfor om at du svarer på
               spørsmålene nedenfor.
             </Paragraph>

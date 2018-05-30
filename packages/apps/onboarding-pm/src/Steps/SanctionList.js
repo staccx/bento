@@ -6,10 +6,9 @@ import {
   CurrencyInput,
   Label,
   RadioPill,
-  RadioPillItem
+  RadioPillItem,
+  Layout
 } from "@staccx/base"
-import Form from "../Components/Form"
-import Fieldset from "../Components/Fieldset"
 
 const SavingsYear = [
   {
@@ -37,10 +36,10 @@ const SavingsYear = [
 const SanctionList = ({ steps, origin }) => {
   console.log(origin)
   return (
-    <Form>
+    <Layout rowGap="large">
       <Heading level="2">Opprinnelse av pengene</Heading>
       {(origin.salary || origin.savings) && (
-        <Fieldset>
+        <Layout rowGap="small">
           <Heading level="3">
             Du oppga at pengene kom fra lønn/pensjon/sparing.
           </Heading>
@@ -61,11 +60,11 @@ const SanctionList = ({ steps, origin }) => {
           </div>
 
           <Input label="Hva er kilden til sparingen?" id="r4jk443" />
-        </Fieldset>
+        </Layout>
       )}
 
       {origin.gift && (
-        <Fieldset>
+        <Layout rowGap="small">
           <Heading level="3">
             Du oppga at noe av pengene kommer fra en gave
           </Heading>
@@ -76,11 +75,11 @@ const SanctionList = ({ steps, origin }) => {
             placeholder="0 kr"
             id="d34d2"
           />
-        </Fieldset>
+        </Layout>
       )}
 
       {origin.inheritance && (
-        <Fieldset>
+        <Layout rowGap="small">
           <Heading level="3">Du oppga at noe av pengene kommer fra arv</Heading>
           <Input label="Hva er relasjonen til den avdøde?" id="ds3230r" />
           <Input label="Når falt dødsfallet sted?" id=" n3232" />
@@ -91,11 +90,11 @@ const SanctionList = ({ steps, origin }) => {
             placeholder="0 kr"
             id="cjkh443"
           />
-        </Fieldset>
+        </Layout>
       )}
 
       {origin.property && (
-        <Fieldset>
+        <Layout rowGap="small">
           <Heading level="3">
             Du oppga at noe av pengene kommer fra salg av eiendom
           </Heading>
@@ -111,18 +110,18 @@ const SanctionList = ({ steps, origin }) => {
             placeholder="0 kr"
             id="dsajk3232"
           />
-        </Fieldset>
+        </Layout>
       )}
       {origin.other && (
-        <Fieldset>
+        <Layout rowGap="small">
           <Input label="Hva er opprinnelsen til pengene?" id="fvncnj434" />
-        </Fieldset>
+        </Layout>
       )}
 
       <Button variant="primary" onClick={() => steps.foreign()}>
         Neste steg
       </Button>
-    </Form>
+    </Layout>
   )
 }
 

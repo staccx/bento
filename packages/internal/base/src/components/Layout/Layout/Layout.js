@@ -21,7 +21,7 @@ export const LayoutContainer = styled.div`
   display: grid;
   grid-row-gap: ${p => (p.rowGap === "flush" ? 0 : spacing(p.rowGap))};
   grid-column-gap: ${p => (p.columnGap === "flush" ? 0 : spacing(p.columnGap))};
-  ${grid};
+  ${p => p.grid && grid};
   ${themify(LAYOUT)};
 `
 
