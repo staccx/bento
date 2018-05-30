@@ -12,6 +12,7 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
+    "precommit": "lint-staged",
     "test": "react-scripts test --env=jsdom",
     "build": "yarn prettify && node build.js && rollup -c",
     "start": "node build.js && rollup -c -w",
@@ -40,6 +41,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard-jsx": "^4.0.2",
     "glob": "^7.1.2",
+    "lint-staged": "^7.1.2",
     "progress": "^2.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -59,9 +61,7 @@
     "webpack": "^3.10.0",
     "webpack-blocks": "^1.0.0-rc.2"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },

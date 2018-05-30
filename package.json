@@ -4,8 +4,13 @@
   "version": "0.0.2",
   "main": "index.js",
   "scripts": {
+    "precommit": "lerna run --concurrency 1 --stream precommit",
+    "postcommit": "git update-index --again",
     "styleguide": "cd packages/base && styleguidist server",
     "start": "cd packages/base && yarn start"
+  },
+  "lint-staged": {
+    "*.js": ["prettier-eslint", "git add"]
   },
   "repository": {
     "type": "git",
@@ -15,9 +20,7 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/stacc-flow/bento#readme",
   "description": "",
-  "workspaces": [
-    "packages/**/*"
-  ],
+  "workspaces": ["packages/**/*"],
   "devDependencies": {
     "babel-eslint": "^8.2.2",
     "eslint": "^4.18.2",
@@ -31,8 +34,10 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
     "lerna": "^2.8.0",
     "prettier": "^1.11.1",
+    "prettier-eslint-cli": "^4.7.1",
     "standard": "^11.0.0"
   },
   "resolutions": {
