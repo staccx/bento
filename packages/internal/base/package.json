@@ -21,6 +21,9 @@
     "styleguide:build": "styleguidist build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
+  "lint-staged": {
+    "*.js": ["eslint", "git add"]
+  },
   "peerDependencies": {
     "@staccx/theme": "^3.8.0",
     "prop-types": "^15.5.4",

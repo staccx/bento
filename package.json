@@ -9,9 +9,6 @@
     "styleguide": "cd packages/base && styleguidist server",
     "start": "cd packages/base && yarn start"
   },
-  "lint-staged": {
-    "*.js": ["prettier-eslint", "git add"]
-  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
