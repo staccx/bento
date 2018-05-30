@@ -22,7 +22,7 @@ LayoutItem.defaultProps = {
 }
 
 LayoutItem.propTypes = {
-  children: themeProps.children.isRequired,,
+  children: themeProps.children.isRequired,
   className: PropTypes.string,
   grid: PropTypes.string
 }
