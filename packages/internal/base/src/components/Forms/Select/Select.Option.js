@@ -1,14 +1,12 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
   targetSize,
   spacing,
-  borderRadius,
   fontFamily,
   font,
   color,
-  themify
+  themeProps
 } from "@staccx/theme"
 
 const OptionContainer = styled.div`
@@ -42,12 +40,7 @@ const SelectOption = ({ children, ...restProps }) => {
 }
 
 SelectOption.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired
+  children: themeProps.children.isRequired
 }
 
 export default SelectOption

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { font, fontFamily, themify } from "@staccx/theme"
+import { font, fontFamily, themify, themeProps } from "@staccx/theme"
 
 const Heading = ({ level, children, className, ...restProps }) => {
   switch (level) {
@@ -118,11 +118,7 @@ Heading.defaultProps = {
 }
 
 Heading.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.number
-  ]).isRequired,
+  children: themeProps.children.isRequired,
   level: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string
 }

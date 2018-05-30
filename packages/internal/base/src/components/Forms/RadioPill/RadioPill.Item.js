@@ -9,7 +9,8 @@ import {
   fontFamily,
   font,
   color,
-  themify
+  themify,
+  themeProps
 } from "@staccx/theme"
 
 const RadioPillItem = ({
@@ -132,8 +133,7 @@ RadioPillItem.defaultProps = {
 }
 
 RadioPillItem.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    .isRequired,
+  children: themeProps.children.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   group: PropTypes.string,
@@ -141,14 +141,7 @@ RadioPillItem.propTypes = {
   input: PropTypes.any,
   onChange: PropTypes.func,
   defaultChecked: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Only for documentation: */
-  _themeVars: PropTypes.oneOf([
-    RADIO_PILL_ITEM_CHECKED,
-    RADIO_PILL_ITEM_HOVER,
-    RADIO_PILL_ITEM_LABEL,
-    RADIO_PILL_ITEM_WRAPPER
-  ])
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }
 
 export default RadioPillItem

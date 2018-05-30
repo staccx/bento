@@ -11,7 +11,8 @@ import {
   fontFamily,
   borderRadius,
   ThemeComponent,
-  fontWeight
+  fontWeight,
+  themeProps
 } from "@staccx/theme"
 
 export const CHECKBOX = "checkbox"
@@ -137,11 +138,7 @@ const Label = styled.label`
 `
 
 CheckBox.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element
-  ]).isRequired,
+  children: themeProps.children.isRequired,
   disabled: PropTypes.bool,
   group: PropTypes.string,
   id: PropTypes.string.isRequired,

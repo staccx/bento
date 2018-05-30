@@ -221,14 +221,7 @@ Select.propTypes = {
   placeHolderLabel: PropTypes.string,
   renderPlaceHolderElement: PropTypes.func,
   placeHolderElement: PropTypes.func,
-  nullable: PropTypes.bool,
-  _themeVars: PropTypes.oneOf([
-    SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER,
-    SELECT_ICON_BUTTON,
-    SELECT_WRAPPER,
-    COMPONENT_SELECT_CARET_ICON,
-    COMPONENT_SELECT_CLOSE_ICON
-  ])
+  nullable: PropTypes.bool
 }
 
 Select.defaultProps = {

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { spacing, color, font } from "@staccx/theme"
+import { spacing, color, font, themeProps } from "@staccx/theme"
 
 export const TileHeading = styled.h2`
   padding: 0 ${spacing.medium} ${spacing.small};
@@ -35,12 +35,7 @@ Tile.defaultProps = {
 }
 
 Tile.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired,
+  children: themeProps.children.isRequired,
   className: PropTypes.string
 }
 

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { spacing, color } from "@staccx/theme"
+import { spacing, color, themeProps } from "@staccx/theme"
 
 const Floor = ({ children, className, background, color, ...otherProps }) => {
   if (background && background !== "transparent" && background !== "white") {
@@ -50,12 +50,7 @@ Floor.defaultProps = {
 }
 
 Floor.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired,
+  children: themeProps.children.isRequired,
   className: PropTypes.string,
   background: PropTypes.string
 }

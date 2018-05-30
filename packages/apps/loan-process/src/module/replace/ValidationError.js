@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { color, spacing } from "@staccx/theme"
+import { color, spacing, themeProps } from "@staccx/theme"
 
 const ValidationError = ({ children, className, ...otherProps }) => {
   return (
@@ -34,12 +34,7 @@ ValidationError.defaultProps = {
 }
 
 ValidationError.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired,
+  children: themeProps.children.isRequired,
   className: PropTypes.string
 }
 

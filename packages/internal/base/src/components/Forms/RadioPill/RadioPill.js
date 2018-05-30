@@ -46,9 +46,7 @@ RadioPill.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
   className: PropTypes.string,
   group: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
-  /** Only for documentation: */
-  _themeVars: PropTypes.oneOf([RADIO_PILL])
+  onChange: PropTypes.func
 }
 
 export default RadioPill

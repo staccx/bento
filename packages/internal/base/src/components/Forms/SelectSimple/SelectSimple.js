@@ -11,7 +11,8 @@ import {
   spacing,
   targetSize,
   themify,
-  ThemeComponent
+  ThemeComponent,
+  themeProps
 } from "@staccx/theme"
 
 export const COMPONENT_SELECT_SIMPLE_ICON = "COMPONENT_SELECT_SIMPLE_ICON"
@@ -53,17 +54,10 @@ SelectSimple.defaultProps = {
 
 SelectSimple.propTypes = {
   label: PropTypes.string,
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: themeProps.children.isRequired,
   placeholder: PropTypes.string,
   id: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  /** Only for documentation: */
-  _themeVars: PropTypes.oneOf([
-    COMPONENT_SELECT_SIMPLE_ICON,
-    SELECT_SIMPLE_ICON,
-    SELECT_SIMPLE_WRAPPER,
-    SELECT_SIMPLE_SELECT
-  ])
+  className: PropTypes.string
 }
 
 export const SELECT_SIMPLE_WRAPPER = "SELECT_SIMPLE_WRAPPER"

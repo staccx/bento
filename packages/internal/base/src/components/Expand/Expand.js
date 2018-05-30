@@ -2,7 +2,13 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { BounceIn } from "@staccx/animations"
-import { themify, ThemeComponent, spacing, color } from "@staccx/theme"
+import {
+  themify,
+  ThemeComponent,
+  spacing,
+  color,
+  themeProps
+} from "@staccx/theme"
 import Caret from "../Icons/Caret"
 
 class Expand extends Component {
@@ -139,11 +145,7 @@ Expand.defaultProps = {
 }
 
 Expand.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-    PropTypes.array
-  ]).isRequired,
+  children: themeProps.children.isRequired,
   title: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,

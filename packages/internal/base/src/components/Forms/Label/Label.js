@@ -5,7 +5,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themify, font, spacing, fontFamily, fontWeight } from "@staccx/theme"
+import {
+  themify,
+  font,
+  spacing,
+  fontFamily,
+  fontWeight,
+  themeProps
+} from "@staccx/theme"
 
 export const LABEL = "LABEL"
 
@@ -30,12 +37,7 @@ Label.defaultProps = {
 }
 
 Label.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired,
+  children: themeProps.children.isRequired,
   className: PropTypes.string
 }
 

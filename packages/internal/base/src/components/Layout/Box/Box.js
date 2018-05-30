@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { spacing, borderRadius, themify } from "@staccx/theme"
+import { spacing, borderRadius, themify, themeProps } from "@staccx/theme"
 
 const Box = ({ children, className, size, ...otherProps }) => (
   <Boxing className={className} size={size} {...otherProps}>
@@ -23,23 +23,9 @@ Box.defaultProps = {
 }
 
 Box.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]),
+  children: themeProps.children,
   className: PropTypes.string,
-  size: PropTypes.oneOf([
-    "huge",
-    "large",
-    "mediumPlus",
-    "medium",
-    "small",
-    "tiny",
-    "micro",
-    "flush"
-  ])
+  size: themeProps.spacing
 }
 
 export default Box

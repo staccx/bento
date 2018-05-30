@@ -1,14 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import {
-  targetSize,
-  spacing,
-  borderRadius,
-  font,
-  color,
-  themify
-} from "@staccx/theme"
+import { spacing, themify, themeProps } from "@staccx/theme"
 
 const Flag = ({
   children,
@@ -168,18 +161,8 @@ Flag.defaultProps = {
 }
 
 Flag.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired,
-  img: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired,
+  children: themeProps.children.isRequired,
+  img: themeProps.children.isRequired,
   className: PropTypes.string,
   reverse: PropTypes.bool,
   top: PropTypes.bool,

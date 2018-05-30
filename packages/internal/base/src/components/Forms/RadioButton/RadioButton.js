@@ -8,7 +8,8 @@ import {
   fontFamily,
   font,
   color,
-  themify
+  themify,
+  themeProps
 } from "@staccx/theme"
 
 export const RADIO_BUTTON_RADIO = "RADIO_BUTTON_RADIO"
@@ -107,8 +108,7 @@ const RadioButton = ({
 )
 
 RadioButton.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
-    .isRequired,
+  children: themeProps.children.isRequired,
   className: PropTypes.string,
   defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
@@ -120,12 +120,6 @@ RadioButton.propTypes = {
     PropTypes.string,
     PropTypes.number,
     PropTypes.object
-  ]),
-  /** Only for documentation: */
-  _themeVars: PropTypes.oneOf([
-    RADIO_BUTTON_LABEL,
-    RADIO_BUTTON_RADIO,
-    RADIO_BUTTON_WRAPPER
   ])
 }
 

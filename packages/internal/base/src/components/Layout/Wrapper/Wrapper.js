@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { spacing, wrapper, themify } from "@staccx/theme"
+import { spacing, wrapper, themify, themeProps } from "@staccx/theme"
 
 const Wrapper = ({ children, className, size, breakout, ...otherProps }) => (
   <Wrap breakout={breakout} className={className} size={size} {...otherProps}>
@@ -40,12 +40,7 @@ Wrapper.defaultProps = {
 }
 
 Wrapper.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]),
+  children: themeProps.children,
   className: PropTypes.string,
   size: PropTypes.oneOf(["small", "medium", "large", "full"]),
   breakout: PropTypes.bool

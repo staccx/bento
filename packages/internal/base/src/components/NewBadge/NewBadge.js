@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import { color, fontWeight, themify } from "@staccx/theme"
+import { color, fontWeight, themify, themeProps } from "@staccx/theme"
 import fontSmoothing from "../../Styles/fontsmoothing"
 
 const NewBadge = ({ number, children }) => (
@@ -45,12 +45,7 @@ const Badge = styled.span`
 
 NewBadge.propTypes = {
   number: PropTypes.number.isRequired,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ])
+  children: themeProps.children
 }
 
 export default NewBadge

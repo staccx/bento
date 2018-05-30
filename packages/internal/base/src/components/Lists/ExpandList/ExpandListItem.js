@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { BounceIn } from "@staccx/animations"
 import Caret from "../../Icons/Caret"
-import { spacing, font, color, themify, ThemeComponent } from "@staccx/theme"
+import { spacing, font, color, themify, ThemeComponent, themeProps } from "@staccx/theme"
 
 const ExpandButton = ({ title, isExpanded, ...props }) => (
   <ExpandBtn isExpanded={isExpanded} {...props}>
@@ -158,11 +158,7 @@ ExpandListItem.defaultProps = {
 }
 
 ExpandListItem.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-    PropTypes.array
-  ]).isRequired,
+  children: themeProps.children.isRequired,,
   title: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,

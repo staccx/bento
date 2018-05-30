@@ -1,7 +1,6 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
-import { spacing as space, themify } from "@staccx/theme"
+import { spacing as space, themify, themeProps } from "@staccx/theme"
 
 const ItemGroup = ({ children, spacing }) => (
   <Wrap>
@@ -26,21 +25,8 @@ const ItemGroupElement = styled.div`
 `
 
 ItemGroup.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired,
-  spacing: PropTypes.oneOf([
-    "micro",
-    "tiny",
-    "small",
-    "medium",
-    "mediumPlus",
-    "large",
-    "huge"
-  ])
+  children: themeProps.children.isRequired,
+  spacing: themeProps.spacing
 }
 
 ItemGroup.defaultProps = {

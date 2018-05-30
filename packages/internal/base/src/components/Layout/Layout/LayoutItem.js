@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themify } from "@staccx/theme"
+import { themify, themeProps } from "@staccx/theme"
 
 const LayoutItem = ({ area, children, className }) => (
   <LayoutItemContainer className={className} area={area}>
@@ -22,12 +22,7 @@ LayoutItem.defaultProps = {
 }
 
 LayoutItem.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired,
+  children: themeProps.children.isRequired,,
   className: PropTypes.string,
   grid: PropTypes.string
 }

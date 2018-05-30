@@ -10,7 +10,8 @@ import {
   themify,
   ThemeComponent,
   color,
-  borderRadius
+  borderRadius,
+  themeProps
 } from "@staccx/theme"
 
 export const COMPONENT_ALERT_INFO = "COMPONENT_ALERT_INFO"
@@ -95,12 +96,7 @@ const AlertElement = styled.div`
 `
 
 Alert.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired,
+  children: themeProps.children.isRequired,
   type: PropTypes.oneOf(["warning", "success", "info"])
 }
 

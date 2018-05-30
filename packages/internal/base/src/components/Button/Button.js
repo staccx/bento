@@ -11,7 +11,8 @@ import {
   fontWeight,
   font,
   color,
-  themify
+  themify,
+  themeProps
 } from "@staccx/theme"
 const tinycolor = require("tinycolor2")
 
@@ -73,12 +74,7 @@ const defaultProps = {
 }
 
 const propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired,
+  children: themeProps.children.isRequired,
   onClick: PropTypes.func,
   className: PropTypes.string,
   to: PropTypes.string

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { fontFamily, font, themify } from "@staccx/theme"
+import { fontFamily, font, themify, themeProps } from "@staccx/theme"
 
 const Paragraph = ({ level, children, className, ...restProps }) => {
   return (
@@ -24,12 +24,7 @@ Paragraph.defaultProps = {
 }
 
 Paragraph.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.array
-  ]).isRequired,
+  children: themeProps.children.isRequired,
   className: PropTypes.string
 }
 
