@@ -8,12 +8,13 @@ import {
   SelectOption,
   Flag,
   Paragraph,
-  Input
+  Input,
+  Divider,
+  Wrapper,
+  Layout
 } from "@staccx/base"
 import { targetSize, color, spacing, fontFamily, font } from "@staccx/theme"
 import { countries } from "countries-list"
-import Form from "../Components/Form"
-import Fieldset from "../Components/Fieldset"
 
 const SelectCountry = ({ selectedItem, ...restProps }) => {
   return (
@@ -41,10 +42,10 @@ class Foreign extends Component {
 
   render() {
     return (
-      <Form>
-        <Heading level="2">Utenlandsk statsborgerskap/ skatteplikt</Heading>
-        <div>
-          <Fieldset>
+      <Wrapper size="small">
+        <Layout rowGap="large">
+          <Heading level="2">Utenlandsk statsborgerskap/ skatteplikt</Heading>
+          <Layout>
             <Select
               onChange={selectedItem => console.log(selectedItem)}
               label="Land"
@@ -76,7 +77,7 @@ class Foreign extends Component {
                 <Input id="taxadress" label="Skattemessig adresse utland" />
               </React.Fragment>
             )}
-            <hr />
+            <Divider />
             <div>
               <Button
                 variant="secondary"
@@ -85,22 +86,22 @@ class Foreign extends Component {
                 Legg til flere land
               </Button>
             </div>
-          </Fieldset>
-        </div>
-        <CheckBox id="dfkjlsdf" value="foreignCitizenExposed">
-          Jeg er eller har vært politisk eksponert person i utlandet.
-        </CheckBox>
-        <Paragraph variant="legalese">
-          Ved å klikke fullfør bekrefter du at opplysningene ovenfor er
-          korrekte.
-        </Paragraph>
-        <Button
-          variant="primary"
-          onClick={() => this.props.steps.confirmation()}
-        >
-          Fullfør
-        </Button>
-      </Form>
+          </Layout>
+          <CheckBox id="dfkjlsdf" value="foreignCitizenExposed">
+            Jeg er eller har vært politisk eksponert person i utlandet.
+          </CheckBox>
+          <Paragraph variant="legalese">
+            Ved å klikke fullfør bekrefter du at opplysningene ovenfor er
+            korrekte.
+          </Paragraph>
+          <Button
+            variant="primary"
+            onClick={() => this.props.steps.confirmation()}
+          >
+            Fullfør
+          </Button>
+        </Layout>
+      </Wrapper>
     )
   }
 }

@@ -41,6 +41,9 @@ const SanctionList = ({ steps, origin }) => {
       <Heading level="2">Opprinnelse av pengene</Heading>
       {(origin.salary || origin.savings) && (
         <Fieldset>
+          <Heading level="3">
+            Du oppga at pengene kom fra lønn/pensjon/sparing.
+          </Heading>
           <div>
             <Label>Hvor mange år er midlene spart opp over?</Label>
             <RadioPill full onChange={() => console.log} group={"salaryLength"}>
@@ -67,7 +70,12 @@ const SanctionList = ({ steps, origin }) => {
             Du oppga at noe av pengene kommer fra en gave
           </Heading>
           <Input label="Hva er gavens opprinnelse?" id="csadj3" />
-          <CurrencyInput label="Hva er gavens totale størrelse?" id="d34d2" />
+          <CurrencyInput
+            label="Hva er gavens totale størrelse?"
+            suffix={" kr"}
+            placeholder="0 kr"
+            id="d34d2"
+          />
         </Fieldset>
       )}
 
@@ -77,7 +85,12 @@ const SanctionList = ({ steps, origin }) => {
           <Input label="Hva er relasjonen til den avdøde?" id="ds3230r" />
           <Input label="Når falt dødsfallet sted?" id=" n3232" />
           {/* TODO: Trenger dato-komponent */}
-          <CurrencyInput label="Hvor mye ble arvet?" id="cjkh443" />
+          <CurrencyInput
+            label="Hvor mye ble arvet?"
+            suffix={" kr"}
+            placeholder="0 kr"
+            id="cjkh443"
+          />
         </Fieldset>
       )}
 
@@ -92,7 +105,12 @@ const SanctionList = ({ steps, origin }) => {
           />
           <Input label="Når ble salget utført?" id="h325" />
           {/* TODO: Trenger dato-komponent */}
-          <CurrencyInput label="Hva var salgssummen?" id="dsajk3232" />
+          <CurrencyInput
+            label="Hva var salgssummen?"
+            suffix={" kr"}
+            placeholder="0 kr"
+            id="dsajk3232"
+          />
         </Fieldset>
       )}
       {origin.other && (

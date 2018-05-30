@@ -56,9 +56,6 @@ const CheckBox = ({
 }
 
 const CheckWrapper = styled.div`
-  min-height: ${targetSize.normal};
-  padding-top: ${spacing.small};
-  padding-bottom: ${spacing.small};
   ${themify(CHECKBOX)};
 `
 
@@ -73,7 +70,7 @@ const IconComponent = ({ ...props }) => (
 export const Icon = styled(IconComponent)`
   position: absolute;
   left: 3px;
-  top: 3px;
+  top: 15px;
   display: block;
   height: 18px;
   width: 18px;
@@ -114,6 +111,9 @@ const Label = styled.label`
   font-size: ${font.base};
   line-height: 1.6;
   display: inline-block;
+  min-height: ${targetSize.normal};
+  padding-top: ${spacing.small};
+  padding-bottom: ${spacing.small};
 
   &::before {
     content: "";
@@ -124,7 +124,7 @@ const Label = styled.label`
     height: ${spacing.medium};
     left: 0;
     position: absolute;
-    top: 0;
+    top: ${spacing.small};
     width: ${spacing.medium};
   }
 
