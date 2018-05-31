@@ -1,6 +1,7 @@
 import React, { Component } from "react"
+import styled from "styled-components"
 import { ThemeProxyProvider } from "@staccx/theme"
-import theme from "./theme.js"
+import { ThemeStyrke, ThemeFundu } from "./theme.js"
 import Sign from "./module/Sign"
 // import Authenticate from "./module/Authenticate"
 // import PresentOffer from "./module/PresentOffer"
@@ -11,10 +12,10 @@ import PresentOffer from "./module/PresentOffer"
 import EndScreen from "./module/EndScreen"
 import PersonalFinance from "./module/PersonalFinance"
 
-class App extends Component {
+class Content extends Component {
   render() {
     return (
-      <ThemeProxyProvider theme={theme}>
+      <ThemeProxyProvider theme={this.props.theme}>
         {/* <RegisterSigners />
         <LoanRejected />
         <Sign />
@@ -58,5 +59,29 @@ class App extends Component {
     )
   }
 }
+
+class App extends Component {
+  render() {
+    return (
+      <Outer>
+        <Item>
+          <Content theme={ThemeFundu} />
+        </Item>
+        <Item>
+          <Content theme={ThemeStyrke} />
+        </Item>
+      </Outer>
+    )
+  }
+}
+
+const Outer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const Item = styled.div`
+  flex-basis: 50%;
+`
 
 export default App

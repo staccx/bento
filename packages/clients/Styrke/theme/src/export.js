@@ -49,8 +49,8 @@ const spacing = {
 }
 const color = {
   bg: "#fcfcfc",
-  bgGray: "#F9F7F7",
-  primary: "#23A532",
+  bgGray: "#FCFCFC",
+  primary: "#466CE9",
   gray: "#767676",
   text: "#2b2b2b",
   white: "#fff",
@@ -59,7 +59,7 @@ const color = {
   green: "#00a190",
   blue: "#188EFB",
   yellow: "#f4da87",
-  line: "#EBEBF2",
+  line: "#D9D8D8",
   wcag: "#777",
   disabled: "#BABABA",
   warning: "#c54059",
@@ -81,8 +81,8 @@ const font = {
 }
 
 const fontFamily = {
-  heading: "Libre Baskerville",
-  body: "Libre Franklin"
+  heading: "IBM Plex Sans",
+  body: "IBM Plex Sans"
 }
 
 const theme = new Theme(BaseTheme, {

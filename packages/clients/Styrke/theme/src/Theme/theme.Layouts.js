@@ -7,10 +7,10 @@ export const LayoutStyling = registerStyle(
     endScreen: css`
       grid-template-columns: 1fr;
       grid-template-areas:
+        "image"
         "heading"
         "content"
-        "button"
-        "image";
+        "button";
       grid-auto-flow: column;
       text-align: center;
 

@@ -4,21 +4,17 @@ import { withFormik } from "formik"
 import styled from "styled-components"
 import {
   Wrapper,
-  Input as InputClean,
+  Input,
   Label,
   RadioPill,
   RadioPillItem,
   SelectSimple,
   CurrencyInput,
-  Button
+  Button,
+  List,
+  Box,
+  Heading
 } from "@staccx/base"
-import {
-  FlexHalves,
-  H3,
-  LinedList,
-  LinedListItem,
-  Padding
-} from "./replace/Styles"
 import ValidationError from "./replace/ValidationError"
 import Tile from "./replace/Tile"
 import { spacing, color } from "@staccx/theme"
@@ -41,176 +37,175 @@ const Form = props => {
   return (
     <form onSubmit={handleSubmit}>
       <Wrapper breakout>
-        <TileWithoutPadding>
-          <FlexHalves>
-            <div>
-              <Heading>{props.headingPersonaliaText}</Heading>
-              <LinedList>
-                <LinedListItem>
-                  <InputClean
-                    label={props.postNumberLabelText}
-                    id="postalCode"
-                    type="number"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.postalCode && (
-                    <ValidationError>{errors.postalCode}</ValidationError>
-                  )}
-                </LinedListItem>
-                <LinedListItem>
-                  <SelectSimple
-                    label="Sivilstatus"
-                    placeholder="Velg..."
-                    id="relationshipStatus"
-                    value={values.relationshipStatus}
-                    onChange={handleChange}
-                  >
-                    {relationshipStatus.map(status => (
-                      <option value={status.value} key={status.key}>
-                        {props.renderRelationshipOption(status.key)}
-                      </option>
+        <Box variant="actionBox">
+          <div>
+            <Heading level={2}>{props.headingPersonaliaText}</Heading>
+            <List variant="topBorder">
+              <LI>
+                <Input
+                  label={props.postNumberLabelText}
+                  id="postalCode"
+                  type="number"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  variant="clean"
+                />
+                {errors.postalCode && (
+                  <ValidationError>{errors.postalCode}</ValidationError>
+                )}
+              </LI>
+              <LI>
+                <SelectSimple
+                  label="Sivilstatus"
+                  placeholder="Velg..."
+                  id="relationshipStatus"
+                  value={values.relationshipStatus}
+                  onChange={handleChange}
+                  variant="clean"
+                >
+                  {relationshipStatus.map(status => (
+                    <option value={status.value} key={status.key}>
+                      {props.renderRelationshipOption(status.key)}
+                    </option>
+                  ))}
+                </SelectSimple>
+                {errors.relationshipStatus && (
+                  <ValidationError>{errors.relationshipStatus}</ValidationError>
+                )}
+              </LI>
+              <LI>
+                <Label>
+                  <span>{props.peopleUnder18Text}</span>
+                </Label>
+                <RadioPill
+                  group={"numberOfChildren"}
+                  variant={"numberOfChildren"}
+                  onChange={handleChange}
+                >
+                  {Array.apply(null, Array(5 + 1))
+                    .map((n, i) => i)
+                    .map(val => (
+                      <RadioPillItem
+                        key={val}
+                        id={val}
+                        value={val}
+                        group={"numberOfChildren"}
+                        defaultChecked={values.numberOfChildren === val}
+                      >
+                        {val}
+                      </RadioPillItem>
                     ))}
-                  </SelectSimple>
-                  {errors.relationshipStatus && (
-                    <ValidationError>
-                      {errors.relationshipStatus}
-                    </ValidationError>
-                  )}
-                </LinedListItem>
-                <LinedListItem>
-                  <Label>
-                    <span>{props.peopleUnder18Text}</span>
-                  </Label>
-                  <RadioPill
-                    group={"numberOfChildren"}
-                    variant={"numberOfChildren"}
-                    onChange={handleChange}
-                  >
-                    {Array.apply(null, Array(5 + 1))
-                      .map((n, i) => i)
-                      .map(val => (
-                        <RadioPillItem
-                          key={val}
-                          id={val}
-                          value={val}
-                          group={"numberOfChildren"}
-                          defaultChecked={values.numberOfChildren === val}
-                        >
-                          {val}
-                        </RadioPillItem>
-                      ))}
-                  </RadioPill>
-                  {errors.numberOfChildren && (
-                    <ValidationError>{errors.numberOfChildren}</ValidationError>
-                  )}
-                </LinedListItem>
-              </LinedList>
-            </div>
-            <Right>
-              <Heading>{props.headingIncomeAndExpensesText}</Heading>
-              <LinedList>
-                {values.relationshipStatus &&
-                  hasPartner(values.relationshipStatus) && (
-                    <LinedListItem>
-                      <CurrencyInput
-                        label={props.spouseSalaryLabelText}
-                        placeholder="0"
-                        id="incomeOfSpouse"
-                        value={values.incomeOfSpouse}
-                        locale={"nb"}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
-                      {errors.incomeOfSpouse && (
-                        <ValidationError>
-                          {errors.incomeOfSpouse}
-                        </ValidationError>
-                      )}
-                    </LinedListItem>
-                  )}
-                <LinedListItem>
-                  <CurrencyInput
-                    label={props.salaryLabelText}
-                    placeholder="0"
-                    id="income"
-                    value={values.income}
-                    locale={"nb"}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.income && (
-                    <ValidationError>{errors.income}</ValidationError>
-                  )}
-                </LinedListItem>
-                <LinedListItem>
-                  <CurrencyInput
-                    label={props.salaryMonthlyText}
-                    placeholder="0"
-                    id="monthlySalary"
-                    value={values.monthlySalary}
-                    locale={"nb"}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.monthlySalary && (
-                    <ValidationError>{errors.monthlySalary}</ValidationError>
-                  )}
-                </LinedListItem>
-                <LinedListItem>
-                  <CurrencyInput
-                    label={props.mortgageText}
-                    placeholder="0"
-                    id="mortgageTotal"
-                    value={values.mortgageTotal}
-                    locale={"nb"}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.mortgageTotal && (
-                    <ValidationError>{errors.mortgageTotal}</ValidationError>
-                  )}
-                </LinedListItem>
-                <LinedListItem>
-                  <CurrencyInput
-                    label={props.otherLoansTotalText}
-                    placeholder="0"
-                    id="otherLoansTotal"
-                    value={values.otherLoansTotal}
-                    locale={"nb"}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.otherLoansTotal && (
-                    <ValidationError>{errors.otherLoansTotal}</ValidationError>
-                  )}
-                </LinedListItem>
-                <LinedListItem>
-                  <CurrencyInput
-                    label={props.expensesRentText}
-                    placeholder="0"
-                    id="monthlyRentAndExpenses"
-                    variant="currencyLarge"
-                    value={values.monthlyRentAndExpenses}
-                    locale={"nb"}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.monthlyRentAndExpenses && (
-                    <ValidationError>
-                      {errors.monthlyRentAndExpenses}
-                    </ValidationError>
-                  )}
-                </LinedListItem>
-              </LinedList>
-            </Right>
-          </FlexHalves>
-        </TileWithoutPadding>
-        <Padding>
-          <Button type="submit" onClick={() => null} disabled={isSubmitting}>
-            {props.renderButtonContent()}
-          </Button>
-        </Padding>
+                </RadioPill>
+                {errors.numberOfChildren && (
+                  <ValidationError>{errors.numberOfChildren}</ValidationError>
+                )}
+              </LI>
+            </List>
+          </div>
+          <Right>
+            <Heading level={2}>{props.headingIncomeAndExpensesText}</Heading>
+            <List variant="topBorder">
+              {values.relationshipStatus &&
+                hasPartner(values.relationshipStatus) && (
+                  <LI>
+                    <CurrencyInput
+                      label={props.spouseSalaryLabelText}
+                      placeholder="0"
+                      id="incomeOfSpouse"
+                      value={values.incomeOfSpouse}
+                      locale={"nb"}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      variant="clean"
+                    />
+                    {errors.incomeOfSpouse && (
+                      <ValidationError>{errors.incomeOfSpouse}</ValidationError>
+                    )}
+                  </LI>
+                )}
+              <LI>
+                <CurrencyInput
+                  label={props.salaryLabelText}
+                  placeholder="0"
+                  id="income"
+                  value={values.income}
+                  locale={"nb"}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  variant="clean"
+                />
+                {errors.income && (
+                  <ValidationError>{errors.income}</ValidationError>
+                )}
+              </LI>
+              <LI>
+                <CurrencyInput
+                  label={props.salaryMonthlyText}
+                  placeholder="0"
+                  id="monthlySalary"
+                  value={values.monthlySalary}
+                  locale={"nb"}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  variant="clean"
+                />
+                {errors.monthlySalary && (
+                  <ValidationError>{errors.monthlySalary}</ValidationError>
+                )}
+              </LI>
+              <LI>
+                <CurrencyInput
+                  label={props.mortgageText}
+                  placeholder="0"
+                  id="mortgageTotal"
+                  value={values.mortgageTotal}
+                  locale={"nb"}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  variant="clean"
+                />
+                {errors.mortgageTotal && (
+                  <ValidationError>{errors.mortgageTotal}</ValidationError>
+                )}
+              </LI>
+              <LI>
+                <CurrencyInput
+                  label={props.otherLoansTotalText}
+                  placeholder="0"
+                  id="otherLoansTotal"
+                  value={values.otherLoansTotal}
+                  locale={"nb"}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  variant="clean"
+                />
+                {errors.otherLoansTotal && (
+                  <ValidationError>{errors.otherLoansTotal}</ValidationError>
+                )}
+              </LI>
+              <LI>
+                <CurrencyInput
+                  label={props.expensesRentText}
+                  placeholder="0"
+                  id="monthlyRentAndExpenses"
+                  value={values.monthlyRentAndExpenses}
+                  locale={"nb"}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  variant="clean"
+                />
+                {errors.monthlyRentAndExpenses && (
+                  <ValidationError>
+                    {errors.monthlyRentAndExpenses}
+                  </ValidationError>
+                )}
+              </LI>
+            </List>
+          </Right>
+        </Box>
+        <Button type="submit" onClick={() => null} disabled={isSubmitting}>
+          {props.renderButtonContent()}
+        </Button>
       </Wrapper>
     </form>
   )
@@ -285,16 +280,14 @@ const TileWithoutPadding = styled(Tile)`
   padding-bottom: 0;
 `
 
-const Heading = styled.h2`
-  ${H3};
-  padding-left: ${spacing.medium};
-  color: ${color.blue};
-  margin-bottom: ${spacing.small};
-  padding-top: ${spacing.medium};
+const Right = styled.div`
+  border-left: 1px solid ${color.line};
 `
 
-const Right = styled(LinedList)`
-  border-left: 1px solid ${color.line};
+const LI = styled.li`
+  &:not(:last-child) {
+    border-bottom: 1px solid ${color.line};
+  }
 `
 
 PersonalFinance.propTypes = {
