@@ -3,6 +3,7 @@ import Input, * as InputStyles from "./components/Forms/Input/Input"
 import CurrencyInput from "./components/Forms/Input/CurrencyInput/CurrencyInput"
 import AccountInput from "./components/Forms/Input/AccountInput/AccountInput"
 import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
+import PostalCodeInput from "./components/Forms/Input/PostalCodeInput/PostalCodeInput"
 import NationalIdInput from "./components/Forms/Input/NationalIdInput/NationalIdInput"
 import CompanyInput, * as CompanyInputStyles from "./components/Forms/Input/CompanyInput/CompanyInput"
 import Label, * as LabelStyles from "./components/Forms/Label/Label"
@@ -164,6 +165,7 @@ export {
   RadioPill,
   RadioPillStyles,
   RadioPillItem,
+  PostalCodeInput,
   Select,
   SelectStyles,
   SelectOption,
