@@ -1,6 +1,6 @@
 {
   "name": "@staccx/aprila-theme",
-  "version": "4.13.0",
+  "version": "4.13.1",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -12,8 +12,8 @@
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
-    "@staccx/base": "^4.13.0",
-    "@staccx/theme": "^4.13.0",
+    "@staccx/base": "^4.13.1",
+    "@staccx/theme": "^4.13.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
