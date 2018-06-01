@@ -7,12 +7,46 @@ import PropTypes from "prop-types"
  * TODO: Implement once this is merged into style-components
  */
 export default class ThemeProxyProvider extends Component {
-  render() {
-    const { theme } = this.props
+  constructor(props, context) {
+    super(props, context)
+
+    this.state = {
+      theme: null
+    }
+  }
+
+  componentWillMount() {
+    this.reset(this.props.theme)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.theme !== nextProps.theme) {
+      this.reset(nextProps)
+    }
+  }
+
+  reset(theme) {
+    if (!theme) {
+      console.error("No theme")
+      return
+    }
+    if (theme.webfont) {
+      const WebFont = require("webfontloader")
+      WebFont.load(theme.webfont)
+    }
     injectGlobal`
     ${theme.reset({ theme })};
     ${theme.global}
     `
+
+    this.setState({ theme: Object.assign({}, theme) })
+  }
+
+  render() {
+    const { theme } = this.state
+    if (!theme) {
+      return null
+    }
     return <ThemeProvider theme={theme}>{this.props.children}</ThemeProvider>
   }
 }

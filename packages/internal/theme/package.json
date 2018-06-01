@@ -6,8 +6,8 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "test": "jest --env=jsdom",
-    "test:watch": "jest --env=jsdom --watch",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "test:watch": "react-scripts test --env=jsdom",
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
     "prepublish": "yarn test && yarn build",
@@ -49,6 +49,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "immutable": "^3.8.2"
+    "immutable": "^3.8.2",
+    "webfontloader": "^1.6.28"
   }
 }
