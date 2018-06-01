@@ -5,20 +5,16 @@ import { HeadingStyles } from "@staccx/base"
 const stepHeading = css`
   margin-bottom: ${spacing.medium};
   color: ${color.primary};
-  font-size: ${font.large};
-
-  @media (max-width: 735px) {
-    font-size: ${font.h1};
-  }
-
-  @media (max-height: 850px) {
-    font-size: ${font.h2};
-  }
+  font-size: ${font.h1};
 `
 
 export const HeadingStyling = registerStyle(
   {
     stepHeading: stepHeading,
+    formSection: css`
+      color: ${color.primary};
+      font-size: ${font.h3};
+    `,
     endScreen: stepHeading,
     boxHeading: css`
       font-family: ${fontFamily.body};

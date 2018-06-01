@@ -12,7 +12,6 @@ export const LayoutStyling = registerStyle(
         "content"
         "button";
       grid-auto-flow: column;
-      text-align: center;
 
       @media only screen and (max-width: ${wrapper.medium}) {
         grid-template-columns: ${spacing.small} 1fr ${spacing.small};
@@ -23,6 +22,7 @@ export const LayoutStyling = registerStyle(
     formElements: css`
       padding-top: ${spacing.small};
       padding-bottom: ${spacing.medium};
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     `
   },
   LayoutStyles.LAYOUT

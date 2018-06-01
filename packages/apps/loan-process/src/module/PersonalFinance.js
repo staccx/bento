@@ -38,7 +38,7 @@ const Form = props => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Wrapper breakout>
+      <Wrapper size="large" breakout>
         <Heading variant="stepHeading">{props.headingText}</Heading>
         <Box variant="actionBox">
           <Box variant="largeForm">
@@ -327,7 +327,7 @@ PersonalFinance.defaultProps = {
   otherLoansError: "Angi andre lån",
   spouseSalaryError: "Angi partners lønn",
   expensesRentError: "Angi leieutgifter",
-  renderButtonContent: () => "Ok",
+  renderButtonContent: () => "Søk lån",
   renderRelationshipOption: option => option,
   relationshipStatus: undefined,
   headingText: "Informasjon om deg"

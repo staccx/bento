@@ -28,6 +28,7 @@ class Content extends Component {
 
         <div>
           <PersonalFinance onValidated={console.log} />
+          <hr style={{ margin: "64px 0" }} />
           <EndScreen
             headingText="Søknaden er til behandling"
             content={

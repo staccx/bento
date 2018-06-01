@@ -89,6 +89,7 @@ const Select = styled.select`
   border-radius: ${borderRadius};
   line-height: 1.4;
   border: 1px solid ${color.line};
+  background-color: ${color.white};
   -webkit-appearance: none;
   appearance: none;
   cursor: pointer;
