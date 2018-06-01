@@ -8,9 +8,7 @@ import NationalIdInput from "./components/Forms/Input/NationalIdInput/NationalId
 import CompanyInput, * as CompanyInputStyles from "./components/Forms/Input/CompanyInput/CompanyInput"
 import Label, * as LabelStyles from "./components/Forms/Label/Label"
 import Legend, * as LegendStyles from "./components/Forms/Legend/Legend"
-import CheckBox, {
-  COMPONENT_CHECKBOX_ICON
-} from "./components/Forms/CheckBox/CheckBox"
+import CheckBox, * as CheckBoxStyles from "./components/Forms/CheckBox/CheckBox"
 import RadioButton from "./components/Forms/RadioButton/RadioButton"
 import RadioPill, * as RadioPillStyles from "./components/Forms/RadioPill/RadioPill"
 import RadioPillItem from "./components/Forms/RadioPill/RadioPill.Item"
@@ -92,11 +90,6 @@ import Logo from "./components/Logo/Logo"
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
-// Icons
-const Icons = {
-  COMPONENT_CHECKBOX_ICON
-} // TODO: Trengs denne?
-
 export {
   AccountInput,
   Alert,
@@ -109,6 +102,7 @@ export {
   Caret,
   CaretRight,
   CheckBox,
+  CheckBoxStyles,
   CheckGroup,
   Close,
   CompanyInput,
@@ -127,7 +121,6 @@ export {
   Heading,
   HeadingStyles,
   hideVisually,
-  Icons,
   Info,
   InlineListItem,
   Input,

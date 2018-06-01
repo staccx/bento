@@ -36,5 +36,8 @@
     "start:module": "rollup -c -w",
     "prepublish": "yarn test && yarn build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
+  },
+  "dependencies": {
+    "polished": "^1.9.2"
   }
 }

@@ -3,7 +3,7 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error",
-    "react/prop-types": false,
+    "react/prop-types": 0,
     "react/no-unused-prop-types": false
   },
   "extends": [

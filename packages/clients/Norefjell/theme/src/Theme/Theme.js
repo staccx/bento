@@ -11,6 +11,7 @@ import NewBadgeStyles from "./Theme.NewBadge"
 import { ExpandListButtonStyle } from "../components/Transaction.ExpandButton"
 import ExpandListExpanded from "../components/ExpandListItem.Expanded"
 import { MenuStyle } from "../components/MenuList"
+import { CheckboxCheckedIcon, CheckboxCheckedLabel } from "./Theme.Checkbox"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -112,5 +113,8 @@ const t = new Theme(BaseTheme, {
   .addStyles(ExpandListButtonStyle)
   .addStyles(FooterStyle)
   .addStyles(LogoStyle)
+  .addStyles(LogoStyle)
+  .addStyles(CheckboxCheckedIcon)
+  .addStyles(CheckboxCheckedLabel)
 
 export default t.get

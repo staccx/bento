@@ -18,6 +18,8 @@ import {
 export const CHECKBOX = "checkbox"
 export const CHECKBOX_CHECKED_ICON = "checkbox_checked_icon"
 export const CHECKBOX_LABEL = "checkbox_label"
+export const CHECKBOX_LABEL_BEFORE = "CHECKBOX_LABEL_BEFORE"
+export const CHECKBOX_LABEL_CHECKED = "CHECKBOX_LABEL_CHECKED"
 export const CHECKBOX_INPUT = "checkbox_input"
 export const COMPONENT_CHECKBOX_ICON = "COMPONENT_CHECKBOX_ICON"
 
@@ -90,6 +92,7 @@ const InputCheck = styled.input`
     > svg {
       transform: scale(1);
     }
+    ${themify(CHECKBOX_LABEL_CHECKED)};
   }
 
   &:focus ~ label {
@@ -118,7 +121,7 @@ const Label = styled.label`
 
   &::before {
     content: "";
-    background: ${color.bg};
+    background: ${color.white};
     border: 1px solid ${color.line};
     border-radius: ${borderRadius};
     display: block;
@@ -127,9 +130,11 @@ const Label = styled.label`
     position: absolute;
     top: ${spacing.small};
     width: ${spacing.medium};
+    ${themify(CHECKBOX_LABEL_BEFORE)};
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     &::before {
       border-color: ${color.primary};
     }

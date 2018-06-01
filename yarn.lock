@@ -115,6 +115,29 @@
 "@staccx/animations@^4.12.0":
   version "4.0.1"
 
+"@staccx/base@4.12.0":
+  version "4.12.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-4.12.0.tgz#c0a2a10f024d53f65b3c257f20213ad448c5c624"
+  dependencies:
+    "@staccx/animations" "^4.0.1"
+    "@staccx/formatting" "^0.2.0"
+    "@staccx/math" "^0.1.0"
+    "@staccx/utils" "^4.9.0"
+    accounting "^0.4.1"
+    downshift "^1.28.0"
+    easing-utils "^0.0.7"
+    es6-promise "^4.2.4"
+    immutable "^3.8.2"
+    isomorphic-fetch "^2.2.1"
+    lerna "^2.8.0"
+    polished "^1.9.2"
+    prettier "^1.10.2"
+    prop-types "^15.6.0"
+    react-jsonschema-form "^1.0.3"
+    text-mask-addons "^3.7.1"
+    text-mask-core "^5.0.1"
+    tinycolor2 "^1.4.1"
+
 "@staccx/formatting@^0.2.0":
   version "0.2.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-0.2.0.tgz#b8625abc1d52fe9559ab00d2450d1d941d55768f"
@@ -144,6 +167,12 @@
 "@staccx/theme@4.0.1":
   version "4.0.1"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/theme/-/@staccx/theme-4.0.1.tgz#68242cc2a0832cd9af9ea7fb52bafe8aa7f23cd7"
+  dependencies:
+    immutable "^3.8.2"
+
+"@staccx/theme@4.12.0":
+  version "4.12.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/theme/-/@staccx/theme-4.12.0.tgz#b1ea32bba672ab32dbd28a663ca482f294e0bd9f"
   dependencies:
     immutable "^3.8.2"
 
