@@ -30,7 +30,8 @@ class Foreign extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      taxable: false
+      taxable: false,
+      filter: null
     }
   }
 
@@ -52,14 +53,25 @@ class Foreign extends Component {
               selectedElement={SelectCountry}
               key={"iwodn21"}
               placeHolderLabel={"Velg…"}
+              onInputValueChange={filter => {
+                this.setState({ filter })
+              }}
             >
-              {Object.entries(countries).map(item => (
-                <SelectOption key={item[0]} data={item[1]}>
-                  <Flag small img={item[1].emoji}>
-                    {item[1].name}
-                  </Flag>
-                </SelectOption>
-              ))}
+              {Object.keys(countries)
+                .map(key => countries[key])
+                .filter(
+                  item =>
+                    this.state.filter
+                      ? item.name.startsWith(this.state.filter)
+                      : item
+                )
+                .map(item => (
+                  <SelectOption key={item.name} data={item}>
+                    <Flag small img={item.emoji}>
+                      {item.name}
+                    </Flag>
+                  </SelectOption>
+                ))}
             </Select>
             <CheckBox
               id="skattePliktig"
