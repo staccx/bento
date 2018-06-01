@@ -2,6 +2,7 @@ import { css } from "styled-components"
 import { color, spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
 import {
   InputStyles,
+  LabelStyles,
   SelectSelectedStyles,
   SelectStyles,
   RadioPillStyles,
@@ -45,7 +46,7 @@ export const LabelStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: floatingLabel
   },
-  InputStyles.INPUT_LABEL
+  LabelStyles.LABEL
 )
 
 export const SelectSelectedStyling = registerStyle(
