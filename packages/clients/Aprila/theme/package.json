@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@staccx/base": "^4.13.2",
-    "@staccx/theme": "^4.13.1",
+    "@staccx/theme": "^4.13.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

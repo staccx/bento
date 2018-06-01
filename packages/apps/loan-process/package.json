@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@staccx/base": "^4.13.2",
-    "@staccx/theme": "^4.13.1",
+    "@staccx/theme": "^4.13.2",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^23.0.0-charlie.1",
@@ -70,7 +70,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/formatting": "^4.10.0",
+    "@staccx/formatting": "^4.13.2",
     "@staccx/payment-plan": "^1.2.0",
     "formik": "^0.11.11",
     "national-id": "^2.0.0",

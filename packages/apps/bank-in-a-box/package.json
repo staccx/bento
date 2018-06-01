@@ -8,7 +8,7 @@
     "@staccx/base": "^4.13.2",
     "@staccx/formatting": "^4.12.0",
     "@staccx/norefjell-theme": "^4.13.2",
-    "@staccx/theme": "^4.13.1",
+    "@staccx/theme": "^4.13.2",
     "@tedconf/react-show-more": "^1.1.2",
     "axios": "^0.18.0",
     "immutable": "^3.8.2",
