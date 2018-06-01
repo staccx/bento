@@ -30,9 +30,9 @@ export default class ThemeProxyProvider extends Component {
       console.error("No theme")
       return
     }
-    if (theme.webfont) {
+    if (theme.webfonts) {
       const WebFont = require("webfontloader")
-      WebFont.load(theme.webfont)
+      WebFont.load(theme.webfonts)
     }
     injectGlobal`
     ${theme.reset({ theme })};
