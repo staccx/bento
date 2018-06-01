@@ -82,6 +82,12 @@ const font = {
   huge: "44px"
 }
 
+const webfonts = {
+  google: {
+    families: ["Libre Baskerville:700", "Libre Franklin:400,600"]
+  }
+}
+
 const fontFamily = {
   heading: "Libre Baskerville",
   body: "Libre Franklin"
@@ -89,6 +95,7 @@ const fontFamily = {
 
 const theme = new Theme(BaseTheme, {
   font,
+  webfonts,
   color,
   spacing,
   wrapper,

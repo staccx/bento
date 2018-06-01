@@ -80,12 +80,19 @@ const font = {
   huge: "44px"
 }
 
+const webfonts = {
+  google: {
+    families: ["IBM Plex Sans:400,700"]
+  }
+}
+
 const fontFamily = {
   heading: "IBM Plex Sans",
   body: "IBM Plex Sans"
 }
 
 const theme = new Theme(BaseTheme, {
+  webfonts,
   font,
   color,
   spacing,
