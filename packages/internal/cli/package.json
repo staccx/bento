@@ -1,6 +1,6 @@
 {
   "name": "@staccx/cli-x",
-  "version": "4.13.2",
+  "version": "4.13.3",
   "description": "",
   "private": true,
   "main": "dist/cli.js",
