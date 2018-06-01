@@ -1,32 +1,34 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
+import { color, spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
 import {
   InputStyles,
   SelectSelectedStyles,
   SelectStyles,
-  RadioPillStyles
+  RadioPillStyles,
+  SelectSimpleStyles
 } from "@staccx/base"
+
+const floatingLabel = css`
+  font-size: 14px;
+  line-height: 1.2;
+  padding-bottom: 6px;
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 24px;
+`
 
 export const InputStyling = registerStyle(
   {
-    clean: css`
+    [VARIANT_DEFAULT]: css`
       display: block;
       min-height: 72px;
       border-width: 0;
       border-radius: 0;
       padding: ${spacing.medium} ${spacing.medium} 0;
       transition: border-color 0.2s ease-out;
-
-      > label {
-        font-size: 14px;
-        line-height: 1.2;
-        padding-bottom: 6px;
-        display: block;
-        position: absolute;
-        top: 12px;
-        left: 24px;
-      }
     `,
+    simple: css``,
     loanOffer: css`
       border-width: 0;
     `,
@@ -41,15 +43,7 @@ export const InputStyling = registerStyle(
 
 export const LabelStyling = registerStyle(
   {
-    clean: css`
-      font-size: 14px;
-      line-height: 1.2;
-      padding-bottom: 6px;
-      display: block;
-      position: absolute;
-      top: 12px;
-      left: 24px;
-    `
+    [VARIANT_DEFAULT]: floatingLabel
   },
   InputStyles.INPUT_LABEL
 )
@@ -112,4 +106,35 @@ export const RadioPillStyling = registerStyle(
     `
   },
   RadioPillStyles.RADIO_PILL
+)
+
+export const SelectSimpleWrapperStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css``
+  },
+  SelectSimpleStyles.SELECT_SIMPLE_WRAPPER
+)
+
+export const SelectSimpleSelectStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      display: block;
+      min-height: 72px;
+      border-width: 0;
+      border-radius: 0;
+      padding: ${spacing.medium} ${spacing.medium} 0;
+      transition: border-color 0.2s ease-out;
+
+      & ~ label {
+        font-size: 14px;
+        line-height: 1.2;
+        padding-bottom: 6px;
+        display: block;
+        position: absolute;
+        top: 12px;
+        left: 24px;
+      }
+    `
+  },
+  SelectSimpleStyles.SELECT_SIMPLE_SELECT
 )

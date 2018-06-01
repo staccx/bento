@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { spacing, wrapper, registerStyle } from "@staccx/theme"
+import { color, spacing, wrapper, registerStyle } from "@staccx/theme"
 import { LayoutStyles } from "@staccx/base"
 
 export const LayoutStyling = registerStyle(
@@ -18,6 +18,14 @@ export const LayoutStyling = registerStyle(
         grid-template-columns: ${spacing.small} 1fr ${spacing.small};
         grid-template-rows: auto auto auto auto;
         grid-column-gap: 0;
+      }
+    `,
+    formElements: css`
+      border-top: 1px solid ${color.line};
+      grid-row-gap: 0;
+
+      > *:not(:last-child) {
+        border-bottom: 1px solid ${color.line};
       }
     `
   },

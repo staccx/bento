@@ -2,11 +2,10 @@ import { css } from "styled-components"
 import { color, font, spacing, registerStyle, fontFamily } from "@staccx/theme"
 import { HeadingStyles } from "@staccx/base"
 
-const centeredHeading = css`
-  text-align: center;
+const stepHeading = css`
   margin-bottom: ${spacing.medium};
   color: ${color.primary};
-  font-size: ${font.huge};
+  font-size: ${font.large};
 
   @media (max-width: 735px) {
     font-size: ${font.h1};
@@ -19,8 +18,8 @@ const centeredHeading = css`
 
 export const HeadingStyling = registerStyle(
   {
-    centered: centeredHeading,
-    endScreen: centeredHeading,
+    stepHeading: stepHeading,
+    endScreen: stepHeading,
     boxHeading: css`
       font-family: ${fontFamily.body};
       font-size: ${font.base};

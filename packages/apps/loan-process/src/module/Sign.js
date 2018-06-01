@@ -68,7 +68,7 @@ class Sign extends React.Component {
           {this.props.renderIllustration()}
           {/* <img src="/assets/signing.svg" alt="" width="175" /> */}
         </Box>
-        <Heading variant="centered" level={1}>
+        <Heading variant="stepHeading" level={1}>
           {this.props.headingText}
         </Heading>
         <Lede>

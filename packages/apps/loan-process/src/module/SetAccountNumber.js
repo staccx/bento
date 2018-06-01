@@ -41,7 +41,7 @@ const Form = props => {
       <Box variant="illustration">
         {renderIllustration && renderIllustration()}
       </Box>
-      <Heading variant="centered">{props.headingText}</Heading>
+      <Heading variant="stepHeading">{props.headingText}</Heading>
       <Wrapper size="small" breakout>
         <Box variant="actionBox">
           <Box>{props.loanTypeText}</Box>

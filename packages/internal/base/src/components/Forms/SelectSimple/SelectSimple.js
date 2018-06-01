@@ -30,11 +30,21 @@ const SelectSimple = ({
   placeholder,
   className,
   id,
+  variant,
   ...rest
 }) => (
-  <SelectWrapper className={className}>
-    {label && <Label htmlFor={id}>{label}</Label>}
-    <Select id={id} defaultValue={placeholder || ""} {...rest}>
+  <SelectWrapper className={className} variant={variant}>
+    {label && (
+      <Label htmlFor={id} variant={variant}>
+        {label}
+      </Label>
+    )}
+    <Select
+      id={id}
+      defaultValue={placeholder || ""}
+      variant={variant}
+      {...rest}
+    >
       {placeholder && (
         <option disabled value={placeholder}>
           {placeholder}
@@ -45,20 +55,6 @@ const SelectSimple = ({
     <SelectIcon />
   </SelectWrapper>
 )
-
-SelectSimple.defaultProps = {
-  className: "",
-  placeholder: "",
-  label: null
-}
-
-SelectSimple.propTypes = {
-  label: PropTypes.string,
-  children: themeProps.children.isRequired,
-  placeholder: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  className: PropTypes.string
-}
 
 export const SELECT_SIMPLE_WRAPPER = "SELECT_SIMPLE_WRAPPER"
 const SelectWrapper = styled.div`
@@ -109,5 +105,19 @@ const Select = styled.select`
   }
   ${themify(SELECT_SIMPLE_SELECT)};
 `
+
+SelectSimple.defaultProps = {
+  className: "",
+  placeholder: "",
+  label: null
+}
+
+SelectSimple.propTypes = {
+  label: PropTypes.string,
+  children: themeProps.children.isRequired,
+  placeholder: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  className: PropTypes.string
+}
 
 export default SelectSimple

@@ -22,6 +22,20 @@ export const BoxStyling = registerStyle(
       padding: 0;
       margin-bottom: ${spacing.medium};
     `,
+    largeForm: css`
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+
+      > * {
+        flex-grow: 1;
+        flex-basis: 50%;
+
+        &:last-child {
+          border-left: 1px solid ${color.line};
+        }
+      }
+    `,
     paddingVertical: css`
       padding: 0;
       padding-top: ${spacing.medium};

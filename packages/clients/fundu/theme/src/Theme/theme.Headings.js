@@ -19,13 +19,18 @@ const centeredHeading = css`
 
 export const HeadingStyling = registerStyle(
   {
-    centered: centeredHeading,
+    stepHeading: centeredHeading,
     endScreen: centeredHeading,
     boxHeading: css`
       font-family: ${fontFamily.body};
       font-size: ${font.base};
       font-weight: 300;
       margin-bottom: ${spacing.tiny};
+    `,
+    formSection: css`
+      padding: ${spacing.small} 0 ${spacing.small} ${spacing.medium};
+      font-size: ${font.h3};
+      color: ${color.wcag};
     `
   },
   HeadingStyles.HEADING

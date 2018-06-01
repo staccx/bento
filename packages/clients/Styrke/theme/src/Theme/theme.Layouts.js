@@ -19,6 +19,10 @@ export const LayoutStyling = registerStyle(
         grid-template-rows: auto auto auto auto;
         grid-column-gap: 0;
       }
+    `,
+    formElements: css`
+      padding-top: ${spacing.small};
+      padding-bottom: ${spacing.medium};
     `
   },
   LayoutStyles.LAYOUT

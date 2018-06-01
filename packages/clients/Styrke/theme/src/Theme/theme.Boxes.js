@@ -6,7 +6,9 @@ export const BoxStyling = registerStyle(
   {
     actionBox: css`
       padding: 0;
-      margin-bottom: ${spacing.medium};
+    `,
+    largeForm: css`
+      padding: 0;
     `,
     paddingVertical: css`
       padding: 0;

@@ -95,7 +95,7 @@ class PresentOffer extends React.Component {
     return (
       <div>
         <Wrapper size="medium" breakout>
-          <Heading variant="centered">{this.props.headingText}</Heading>
+          <Heading variant="stepHeading">{this.props.headingText}</Heading>
           <Box variant="actionBox">
             <Box size="large">
               <p>
