@@ -23,6 +23,7 @@ const RadioPillItem = ({
   defaultChecked,
   value,
   full,
+  variant,
   ...otherProps
 }) => (
   <RadioWrapper className={className} full={full}>
@@ -34,6 +35,7 @@ const RadioPillItem = ({
       onChange={onChange}
       defaultChecked={defaultChecked}
       value={value}
+      variant={variant}
       {...otherProps}
     />
     <Label htmlFor={id} full={full}>
@@ -41,8 +43,6 @@ const RadioPillItem = ({
     </Label>
   </RadioWrapper>
 )
-
-const borderRadiusRadioPill = "6px"
 
 export const RADIO_PILL_ITEM_LABEL = "RADIO_PILL_ITEM_LABEL"
 const Label = styled.label`
@@ -96,17 +96,18 @@ const RadioWrapper = styled.div`
   padding-top: ${p => (p.full ? null : spacing.small)};
   padding-bottom: ${p => (p.full ? null : spacing.small)};
   ${p => p.full && "flex-grow: 1"};
+
   &:first-child {
     ${Label} {
-      border-top-left-radius: ${borderRadiusRadioPill};
-      border-bottom-left-radius: ${borderRadiusRadioPill};
+      border-top-left-radius: ${spacing.tiny};
+      border-bottom-left-radius: ${spacing.tiny};
     }
   }
 
   &:last-child {
     ${Label} {
-      border-top-right-radius: ${borderRadiusRadioPill};
-      border-bottom-right-radius: ${borderRadiusRadioPill};
+      border-top-right-radius: ${spacing.tiny};
+      border-bottom-right-radius: ${spacing.tiny};
       border-right-width: 1px;
       margin-right: 0;
     }

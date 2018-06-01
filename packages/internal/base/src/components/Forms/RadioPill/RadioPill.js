@@ -9,14 +9,16 @@ const RadioPill = ({
   onChange,
   className,
   full,
+  variant,
   ...restProps
 }) => (
-  <RadioPillContainer className={className} full={full}>
+  <RadioPillContainer className={className} full={full} variant={variant}>
     {children.map(child =>
       React.cloneElement(child, {
         ...child.props,
         onChange: onChange,
         full: full,
+        variant: variant,
         group
       })
     )}

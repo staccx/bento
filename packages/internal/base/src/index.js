@@ -11,7 +11,7 @@ import Legend, * as LegendStyles from "./components/Forms/Legend/Legend"
 import CheckBox, * as CheckBoxStyles from "./components/Forms/CheckBox/CheckBox"
 import RadioButton from "./components/Forms/RadioButton/RadioButton"
 import RadioPill, * as RadioPillStyles from "./components/Forms/RadioPill/RadioPill"
-import RadioPillItem from "./components/Forms/RadioPill/RadioPill.Item"
+import RadioPillItem, * as RadioPillItemStyles from "./components/Forms/RadioPill/RadioPill.Item"
 import CheckGroup from "./components/Forms/CheckGroup/CheckGroup"
 import Slider, * as SliderStyles from "./components/Forms/Slider/Slider/Slider"
 import SliderKeyboardInput, * as SliderKeyboardInputStyles from "./components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput"
@@ -158,6 +158,7 @@ export {
   RadioPill,
   RadioPillStyles,
   RadioPillItem,
+  RadioPillItemStyles,
   PostalCodeInput,
   Select,
   SelectStyles,

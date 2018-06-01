@@ -5,7 +5,7 @@ import {
   LabelStyles,
   SelectSelectedStyles,
   SelectStyles,
-  RadioPillStyles,
+  RadioPillItemStyles,
   SelectSimpleStyles
 } from "@staccx/base"
 
@@ -44,7 +44,13 @@ export const InputStyling = registerStyle(
 
 export const LabelStyling = registerStyle(
   {
-    [VARIANT_DEFAULT]: floatingLabel
+    [VARIANT_DEFAULT]: floatingLabel,
+    radioPill: css`
+      display: block;
+      padding-left: ${spacing.medium};
+      padding-top: ${spacing.small};
+      padding-bottom: ${spacing.small};
+    `
   },
   LabelStyles.LABEL
 )
@@ -98,17 +104,6 @@ export const SelectOptionsWrapperStyling = registerStyle(
   SelectStyles.SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER
 )
 
-export const RadioPillStyling = registerStyle(
-  {
-    numberOfChildren: css`
-      padding-top: ${spacing.mediumPlus};
-      padding-left: ${spacing.medium};
-      padding-right: ${spacing.medium};
-    `
-  },
-  RadioPillStyles.RADIO_PILL
-)
-
 export const SelectSimpleWrapperStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: css``
@@ -138,4 +133,28 @@ export const SelectSimpleSelectStyling = registerStyle(
     `
   },
   SelectSimpleStyles.SELECT_SIMPLE_SELECT
+)
+
+export const RadioPillItemStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      &:first-child {
+        margin-left: ${spacing.medium};
+        && label {
+          border-radius: 0;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+      &:last-child {
+        margin-right: ${spacing.medium};
+        && label {
+          border-radius: 0;
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+        }
+      }
+    `
+  },
+  RadioPillItemStyles.RADIO_PILL_ITEM_WRAPPER
 )

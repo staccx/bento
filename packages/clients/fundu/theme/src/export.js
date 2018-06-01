@@ -18,7 +18,7 @@ import {
   SelectSelectedStyling,
   SelectIconButtonStyling,
   SelectOptionsWrapperStyling,
-  RadioPillStyling,
+  RadioPillItemStyling,
   SelectSimpleSelectStyling,
   SelectSimpleWrapperStyling
 } from "./Theme/theme.Inputs"
@@ -120,7 +120,7 @@ const theme = new Theme(BaseTheme, {
   .addStyles(SelectIconButtonStyling)
   .addStyles(SelectOptionsWrapperStyling)
   .addStyles(LayoutStyling)
-  .addStyles(RadioPillStyling)
+  .addStyles(RadioPillItemStyling)
   .addStyles(SelectSimpleSelectStyling)
   .addStyles(SelectSimpleWrapperStyling)
 

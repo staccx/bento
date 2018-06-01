@@ -80,13 +80,13 @@ const Form = props => {
                   )}
                 </LayoutItem>
                 <LayoutItem>
-                  <Label>
+                  <Label variant="radioPill">
                     <span>{props.peopleUnder18Text}</span>
                   </Label>
                   <RadioPill
                     group={"numberOfChildren"}
-                    variant={"numberOfChildren"}
                     onChange={handleChange}
+                    full
                   >
                     {Array.apply(null, Array(5 + 1))
                       .map((n, i) => i)

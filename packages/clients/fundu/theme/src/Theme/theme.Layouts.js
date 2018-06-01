@@ -24,6 +24,10 @@ export const LayoutStyling = registerStyle(
       border-top: 1px solid ${color.line};
       grid-row-gap: 0;
 
+      > * {
+        position: relative;
+      }
+
       > *:not(:last-child) {
         border-bottom: 1px solid ${color.line};
       }
