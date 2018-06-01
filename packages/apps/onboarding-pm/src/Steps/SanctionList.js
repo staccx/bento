@@ -41,7 +41,7 @@ const SanctionList = ({ steps, origin }) => {
       <Layout rowGap="large" paddingTop="huge" paddingBottom="large">
         <Heading level="2">Opprinnelse av pengene</Heading>
         {(origin.salary || origin.savings) && (
-          <Layout rowGap="small">
+          <Layout>
             <Heading level="3">
               Du oppga at pengene kom fra lønn/pensjon/sparing.
             </Heading>
@@ -70,7 +70,7 @@ const SanctionList = ({ steps, origin }) => {
         )}
 
         {origin.gift && (
-          <Layout rowGap="small">
+          <Layout>
             <Heading level="3">
               Du oppga at noe av pengene kommer fra en gave
             </Heading>
@@ -85,7 +85,7 @@ const SanctionList = ({ steps, origin }) => {
         )}
 
         {origin.inheritance && (
-          <Layout rowGap="small">
+          <Layout>
             <Heading level="3">
               Du oppga at noe av pengene kommer fra arv
             </Heading>
@@ -102,7 +102,7 @@ const SanctionList = ({ steps, origin }) => {
         )}
 
         {origin.property && (
-          <Layout rowGap="small">
+          <Layout>
             <Heading level="3">
               Du oppga at noe av pengene kommer fra salg av eiendom
             </Heading>
@@ -121,7 +121,7 @@ const SanctionList = ({ steps, origin }) => {
           </Layout>
         )}
         {origin.other && (
-          <Layout rowGap="small">
+          <Layout>
             <Input label="Hva er opprinnelsen til pengene?" id="fvncnj434" />
           </Layout>
         )}
