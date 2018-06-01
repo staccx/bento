@@ -29,7 +29,7 @@ class ClientInfo extends Component {
 
     return (
       <Wrapper size="small">
-        <Layout rowGap="large">
+        <Layout rowGap="large" paddingTop="huge" paddingBottom="large">
           <Layout>
             <Heading level="2">Personalia</Heading>
             <PhoneInput label="Mobilnummer" id="dlkn2" />

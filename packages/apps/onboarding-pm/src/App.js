@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { ThemeProxyProvider } from "@staccx/theme"
-import theme from "./theme.js"
+import NorfjellTheme from "@staccx/norefjell-theme"
+// import AprilaTheme from "@staccx/aprila-theme"
 import ClientInfo from "./Steps/ClientInfo"
 import BankId from "./Steps/BankId"
 import Consent from "./Steps/Consent"
@@ -52,7 +53,7 @@ class App extends Component {
       confirmation: () => this.setStep("confirmation")
     }
     return (
-      <ThemeProxyProvider theme={theme}>
+      <ThemeProxyProvider theme={NorfjellTheme}>
         <div>
           {this.state.currentStep === "clientInfo" && (
             <ClientInfo

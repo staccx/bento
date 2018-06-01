@@ -43,7 +43,7 @@ class Foreign extends Component {
   render() {
     return (
       <Wrapper size="small">
-        <Layout rowGap="large">
+        <Layout rowGap="large" paddingTop="huge" paddingBottom="large">
           <Heading level="2">Utenlandsk statsborgerskap/ skatteplikt</Heading>
           <Layout>
             <Select
