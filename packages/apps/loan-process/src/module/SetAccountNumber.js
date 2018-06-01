@@ -54,7 +54,6 @@ const Form = props => {
             placeholder="×××× ×× ××××"
             id="accountNumber"
             locale={"nb"}
-            variant="clean"
           />
           {errors.accountNumber &&
             touched.accountNumber && (
