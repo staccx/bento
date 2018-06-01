@@ -32,7 +32,7 @@ const targetSize = {
 
 const wrapper = {
   small: "420px",
-  medium: "420px",
+  medium: "460px",
   large: "720px",
   breakout: "640px"
 }

@@ -96,6 +96,13 @@ export const BoxStyling = registerStyle(
         height: calc(7vh - 1px);
         z-index: 0;
       }
+    `,
+    pickAmounts: css`
+      padding: 0;
+
+      > div:first-child {
+        padding: ${spacing.medium} ${spacing.large};
+      }
     `
   },
   BoxStyles.BOX

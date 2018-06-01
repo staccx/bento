@@ -30,6 +30,9 @@ export const ListStyling = registerStyle(
 export const SplitListItemStyling = registerStyle(
   {
     signerListItem: css`
+      padding-left: 0;
+      padding-right: 0;
+
       > * {
         flex-basis: 50%;
       }

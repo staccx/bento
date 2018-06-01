@@ -144,7 +144,6 @@ class RegisterSigners extends React.Component {
                                               label={
                                                 this.props.newPersonDefaultName
                                               }
-                                              variant="clean"
                                               autoFocus
                                             />
                                             <Button
@@ -218,6 +217,7 @@ class RegisterSigners extends React.Component {
                                                   id={`signers.${index}.nationalId`}
                                                   placeholder="12345678903"
                                                   label={"Fødselsnummer"}
+                                                  variant="base"
                                                   {...field}
                                                 />
                                               )}
@@ -253,6 +253,7 @@ class RegisterSigners extends React.Component {
                                                   id={`signers.${index}.email`}
                                                   {...field}
                                                   placeholder="kari@nordmann.no"
+                                                  variant="base"
                                                 />
                                               )}
                                             />

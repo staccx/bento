@@ -10,7 +10,9 @@ import {
   Odometer,
   Select,
   SelectOption,
-  Wrapper
+  Wrapper,
+  Layout,
+  LayoutItem
 } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
 import { getPaymentPlan } from "@staccx/payment-plan"
@@ -97,128 +99,142 @@ class PresentOffer extends React.Component {
         <Wrapper size="medium" breakout>
           <Heading variant="stepHeading">{this.props.headingText}</Heading>
           <Box variant="actionBox">
-            <Box size="large">
+            <Box variant="actionBoxContent" size="large">
               <p>
                 {this.props.maxLoanAmountText}{" "}
                 <strong> {formatCurrency(this.props.maxAmount || 0)}</strong>
               </p>
             </Box>
-            <PickLoanSum
-              loanAmount={this.state.amount}
-              repaymentPeriod={this.props.repaymentPeriod}
-              isCustomAmount={this.state.isCustomAmount}
-              initialAmount={this.props.loanAmount}
-              handleRadio={this.handleSetCustom}
-              handleCustomAmount={this.handleCustomAmount}
-              min={this.props.minAmount}
-              max={this.props.maxAmount}
-              chooseLoanAmountText={"Velg beløp"}
-              otherAmountText={"Annet beløp"}
-            />
-            <Box size="large">
-              <OfferTable>
-                <tbody>
-                  <tr>
-                    <OfferTableText>
-                      {this.props.loanDurationText}
-                    </OfferTableText>
-                    <OfferTableData>
-                      <OfferTableDurations>
-                        <OfferTableDurationsItem>
-                          <Select
-                            id={"select-loan-duration"}
-                            selectedItem={{
-                              text: `${this.state.selectedDuration}`,
-                              value: "mnd"
-                            }}
-                            nullable={false}
-                            placeHolderLabel={"Velg…"}
-                            onChange={value =>
-                              this.handleChangeLoanDuration(
-                                value ? value.text : this.props.repaymentPeriod
-                              )
-                            }
-                            variant="loanOffer"
-                          >
-                            {this.props.potentialDurations.map(item => (
-                              <SelectOption
-                                key={item}
-                                data={{ text: item, value: "mnd" }}
+            <Layout variant="formElements">
+              <LayoutItem>
+                <PickLoanSum
+                  loanAmount={this.state.amount}
+                  repaymentPeriod={this.props.repaymentPeriod}
+                  isCustomAmount={this.state.isCustomAmount}
+                  initialAmount={this.props.loanAmount}
+                  handleRadio={this.handleSetCustom}
+                  handleCustomAmount={this.handleCustomAmount}
+                  min={this.props.minAmount}
+                  max={this.props.maxAmount}
+                  chooseLoanAmountText={"Velg beløp"}
+                  otherAmountText={"Annet beløp"}
+                />
+              </LayoutItem>
+              <LayoutItem>
+                <Box variant="offerTable" size="large">
+                  <OfferTable>
+                    <tbody>
+                      <tr>
+                        <OfferTableText>
+                          {this.props.loanDurationText}
+                        </OfferTableText>
+                        <OfferTableData>
+                          <OfferTableDurations>
+                            <OfferTableDurationsItem>
+                              <Select
+                                id={"select-loan-duration"}
+                                selectedItem={{
+                                  text: `${this.state.selectedDuration}`,
+                                  value: "mnd"
+                                }}
+                                nullable={false}
+                                placeHolderLabel={"Velg…"}
+                                onChange={value =>
+                                  this.handleChangeLoanDuration(
+                                    value
+                                      ? value.text
+                                      : this.props.repaymentPeriod
+                                  )
+                                }
+                                variant="loanOffer"
                               >
-                                <strong>{item} mnd.</strong>
-                              </SelectOption>
-                            ))}
-                          </Select>
-                        </OfferTableDurationsItem>
-                      </OfferTableDurations>
-                    </OfferTableData>
-                  </tr>
-                  {term &&
-                    plan && (
-                      <React.Fragment>
-                        <tr>
-                          <OfferTableText>
-                            {this.props.monthlyFeeText}
-                          </OfferTableText>
-                          <OfferTableData>
-                            <Odometer number={term.monthlyFees} size={14} />
-                          </OfferTableData>
-                        </tr>
-                        <tr>
-                          <OfferTableText>
-                            {this.props.paybackText}
-                          </OfferTableText>
-                          <OfferTableData>
-                            <Odometer
-                              number={plan.reduce(
-                                (acc, curr) => acc + curr.monthlyPayment,
-                                0
-                              )}
-                              size={14}
-                            />
-                          </OfferTableData>
-                        </tr>
-                        <OfferTableTotal>
-                          <OfferTableText>
-                            {this.props.payMonthlyText}
-                          </OfferTableText>
-                          <OfferTableData>
-                            <Odometer number={term.monthlyPayment} size={14} />
-                          </OfferTableData>
-                        </OfferTableTotal>
-                      </React.Fragment>
-                    )}
-                </tbody>
-              </OfferTable>
-            </Box>
-            {this.props.company && (
-              <Box variant="subtleBox" size="large">
-                <Box variant="halves">
-                  <div>
-                    <h4>{this.props.companyHeadingPrefixText}</h4>
-                    <List variant="offerInfoList">
-                      <li>{this.props.company.name}</li>
-                      <li>
-                        {this.props.orgNumberPrefixText}{" "}
-                        {this.props.company.orgNo}
-                      </li>
-                    </List>
-                  </div>
-                  {this.props.guarantor && (
-                    <div>
-                      <h4>Kausjonist</h4>
-                      <List variant="offerInfoList">
-                        <li>{this.props.guarantor.name}</li>
-                        <li>
-                          {this.props.nationalIdPrefixText}
-                          {this.props.guarantor.ssn}
-                        </li>
-                      </List>
-                    </div>
-                  )}
+                                {this.props.potentialDurations.map(item => (
+                                  <SelectOption
+                                    key={item}
+                                    data={{ text: item, value: "mnd" }}
+                                  >
+                                    <strong>{item} mnd.</strong>
+                                  </SelectOption>
+                                ))}
+                              </Select>
+                            </OfferTableDurationsItem>
+                          </OfferTableDurations>
+                        </OfferTableData>
+                      </tr>
+                      {term &&
+                        plan && (
+                          <React.Fragment>
+                            <tr>
+                              <OfferTableText>
+                                {this.props.monthlyFeeText}
+                              </OfferTableText>
+                              <OfferTableData>
+                                <Odometer number={term.monthlyFees} size={14} />
+                              </OfferTableData>
+                            </tr>
+                            <tr>
+                              <OfferTableText>
+                                {this.props.paybackText}
+                              </OfferTableText>
+                              <OfferTableData>
+                                <Odometer
+                                  number={plan.reduce(
+                                    (acc, curr) => acc + curr.monthlyPayment,
+                                    0
+                                  )}
+                                  size={14}
+                                />
+                              </OfferTableData>
+                            </tr>
+                            <OfferTableTotal>
+                              <OfferTableText>
+                                {this.props.payMonthlyText}
+                              </OfferTableText>
+                              <OfferTableData>
+                                <Odometer
+                                  number={term.monthlyPayment}
+                                  size={14}
+                                />
+                              </OfferTableData>
+                            </OfferTableTotal>
+                          </React.Fragment>
+                        )}
+                    </tbody>
+                  </OfferTable>
                 </Box>
-              </Box>
-            )}
+              </LayoutItem>
+
+              {this.props.company && (
+                <LayoutItem>
+                  <Box variant="subtleBox" size="large">
+                    <Box variant="halves">
+                      <div>
+                        <h4>{this.props.companyHeadingPrefixText}</h4>
+                        <List variant="offerInfoList">
+                          <li>{this.props.company.name}</li>
+                          <li>
+                            {this.props.orgNumberPrefixText}{" "}
+                            {this.props.company.orgNo}
+                          </li>
+                        </List>
+                      </div>
+                      {this.props.guarantor && (
+                        <div>
+                          <h4>Kausjonist</h4>
+                          <List variant="offerInfoList">
+                            <li>{this.props.guarantor.name}</li>
+                            <li>
+                              {this.props.nationalIdPrefixText}
+                              {this.props.guarantor.ssn}
+                            </li>
+                          </List>
+                        </div>
+                      )}
+                    </Box>
+                  </Box>
+                </LayoutItem>
+              )}
+            </Layout>
           </Box>
           <ItemGroup>
             <Button
@@ -240,6 +256,10 @@ class PresentOffer extends React.Component {
 const OfferTable = styled.table`
   width: 100%;
   table-layout: fixed;
+
+  tr:last-child td {
+    border-bottom: 0;
+  }
 `
 
 const OfferTableText = styled.td`

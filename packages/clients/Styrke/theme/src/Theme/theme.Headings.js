@@ -3,9 +3,10 @@ import { color, font, spacing, registerStyle, fontFamily } from "@staccx/theme"
 import { HeadingStyles } from "@staccx/base"
 
 const stepHeading = css`
-  margin-bottom: ${spacing.medium};
+  margin-bottom: 0;
   color: ${color.primary};
   font-size: ${font.h1};
+  line-height: 1.25;
 `
 
 export const HeadingStyling = registerStyle(

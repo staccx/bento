@@ -7,7 +7,8 @@ import {
   ExpandListItem,
   Heading,
   List,
-  Wrapper
+  Wrapper,
+  Paragraph
 } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 import { formatCurrency, formatName } from "@staccx/formatting"
@@ -71,7 +72,7 @@ class Sign extends React.Component {
         <Heading variant="stepHeading" level={1}>
           {this.props.headingText}
         </Heading>
-        <Lede>
+        <Paragraph variant="expandLead">
           <Expand title={this.props.loanDetailsText}>
             <span>
               {this.props.loanDetailsText +
@@ -131,7 +132,7 @@ class Sign extends React.Component {
               </Box>
             </Details>
           </Expand>
-        </Lede>
+        </Paragraph>
         {/* Render users own documents */}
         <div>
           <Heading variant="boxHeading" level={2}>
@@ -214,11 +215,6 @@ class Sign extends React.Component {
     )
   }
 }
-
-const Lede = styled.div`
-  text-align: center;
-  margin-bottom: ${spacing.medium};
-`
 
 const Details = styled.div`
   margin-top: ${spacing.medium};

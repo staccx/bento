@@ -117,6 +117,7 @@ button:-moz-focusring,
 }
 
 legend {
+  font-weight: ${fontWeight.bold()(props)};
   box-sizing: border-box; /* 1 */
   color: inherit; /* 2 */
   display: table; /* 1 */

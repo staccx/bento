@@ -7,7 +7,8 @@ import {
   Wrapper,
   Box,
   Heading,
-  Divider,
+  Layout,
+  LayoutItem,
   Alert
 } from "@staccx/base"
 import { removeWhitespace } from "@staccx/formatting"
@@ -41,26 +42,32 @@ const Form = props => {
       <Box variant="illustration">
         {renderIllustration && renderIllustration()}
       </Box>
-      <Heading variant="stepHeading">{props.headingText}</Heading>
+      <Wrapper size="medium" breakout>
+        <Heading variant="stepHeading">{props.headingText}</Heading>
+      </Wrapper>
       <Wrapper size="small" breakout>
         <Box variant="actionBox">
-          <Box>{props.loanTypeText}</Box>
-          <Divider />
-          <AccountInput
-            guide={false}
-            value={values.accountNumber}
-            onChange={_handleChange}
-            label={props.accountNumberText}
-            placeholder="×××× ×× ××××"
-            id="accountNumber"
-            locale={"nb"}
-          />
-          {errors.accountNumber &&
-            touched.accountNumber && (
-              <Alert type="warning" variant="error">
-                {errors.accountNumber}
-              </Alert>
-            )}
+          <Box variant="actionBoxContent">{props.loanTypeText}</Box>
+
+          <Layout variant="formElements">
+            <LayoutItem>
+              <AccountInput
+                guide={false}
+                value={values.accountNumber}
+                onChange={_handleChange}
+                label={props.accountNumberText}
+                placeholder="×××× ×× ××××"
+                id="accountNumber"
+                locale={"nb"}
+              />
+              {errors.accountNumber &&
+                touched.accountNumber && (
+                  <Alert type="warning" variant="error">
+                    {errors.accountNumber}
+                  </Alert>
+                )}
+            </LayoutItem>
+          </Layout>
         </Box>
         {!isSubmitting && (
           <Button type="submit" onClick={() => null}>

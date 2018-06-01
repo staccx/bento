@@ -7,6 +7,9 @@ export const BoxStyling = registerStyle(
     actionBox: css`
       padding: 0;
     `,
+    actionBoxContent: css`
+      padding: ${spacing.medium} 0 0 0;
+    `,
     largeForm: css`
       padding: 0;
     `,
@@ -32,7 +35,7 @@ export const BoxStyling = registerStyle(
       width: 100%;
     `,
     subtleBox: css`
-      background-color: ${color.subtleHover};
+      padding: ${spacing.small} 0;
     `,
     halves: css`
       display: grid;
@@ -52,6 +55,14 @@ export const BoxStyling = registerStyle(
     inputContainer: css`
       position: relative;
       padding: 0;
+    `,
+    pickAmounts: css`
+      padding: ${spacing.medium} 0 0;
+    `,
+    offerTable: css`
+      border-top: 3px solid ${color.primary};
+      border-bottom: 3px solid ${color.primary};
+      padding: 0 0 ${spacing.small};
     `
   },
   BoxStyles.BOX
