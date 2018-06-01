@@ -134,34 +134,38 @@ class Sign extends React.Component {
           </Expand>
         </Paragraph>
         {/* Render users own documents */}
-        <div>
-          <Heading variant="boxHeading" level={2}>
-            {this.props.userTaskText}
-          </Heading>
-          <Box variant="actionBox">
-            <List>
-              {userOrders.map(order => {
-                const showButton =
-                  order.status !== this.props.signOrderStatusCompleted
-                return (
-                  <SignDocument
-                    key={order.requestId}
-                    order={order}
-                    user={this.props.user}
-                    showButton={showButton}
-                    signText={this.props.signText}
-                    signedText={this.props.signedText}
-                    signOrderStatusCompleted={
-                      this.props.signOrderStatusCompleted
-                    }
-                    waitingForSignatureText={this.props.waitingForSignatureText}
-                    renderDocumentText={this.props.renderDocumentText}
-                  />
-                )
-              })}
-            </List>
-          </Box>
-        </div>
+        {userOrders.length > 0 && (
+          <div>
+            <Heading variant="boxHeading" level={2}>
+              {this.props.userTaskText}
+            </Heading>
+            <Box variant="actionBox">
+              <List>
+                {userOrders.map(order => {
+                  const showButton =
+                    order.status !== this.props.signOrderStatusCompleted
+                  return (
+                    <SignDocument
+                      key={order.requestId}
+                      order={order}
+                      user={this.props.user}
+                      showButton={showButton}
+                      signText={this.props.signText}
+                      signedText={this.props.signedText}
+                      signOrderStatusCompleted={
+                        this.props.signOrderStatusCompleted
+                      }
+                      waitingForSignatureText={
+                        this.props.waitingForSignatureText
+                      }
+                      renderDocumentText={this.props.renderDocumentText}
+                    />
+                  )
+                })}
+              </List>
+            </Box>
+          </div>
+        )}
         {/* Render other signers documents */}
         {otherSigners.length > 0 && (
           <div>
