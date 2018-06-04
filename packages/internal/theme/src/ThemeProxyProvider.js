@@ -21,7 +21,7 @@ export default class ThemeProxyProvider extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.theme !== nextProps.theme) {
-      this.reset(nextProps)
+      this.reset(nextProps.theme)
     }
   }
 
@@ -34,6 +34,7 @@ export default class ThemeProxyProvider extends Component {
       const WebFont = require("webfontloader")
       WebFont.load(theme.webfonts)
     }
+
     injectGlobal`
     ${theme.reset({ theme })};
     ${theme.global}
