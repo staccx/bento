@@ -52,7 +52,6 @@ class App extends Component {
         this.onThemeChanged
       )
     } else {
-      console.log("Aprila", AprilaTheme)
       this.setState(
         {
           activeTheme: AprilaTheme
@@ -88,7 +87,6 @@ class App extends Component {
       inbox: () => this.setPage("inbox")
     }
 
-    console.log("active", this.state.activeTheme)
     return (
       <div>
         <ThemeProxyProvider theme={this.state.activeTheme}>

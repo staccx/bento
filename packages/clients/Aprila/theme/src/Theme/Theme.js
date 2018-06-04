@@ -141,5 +141,4 @@ const t = new Theme(BaseTheme, {
   .addStyles(IconArrowDownStyle)
   .addStyles(IconArrowUpStyle)
 
-console.log(t)
 export default t.get
