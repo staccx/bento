@@ -13,6 +13,7 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
+    "precommit": "lint-staged",
     "start": "react-scripts start",
     "build:app": "react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
@@ -22,6 +23,12 @@
     "start:module": "rollup -c -w",
     "prepublish": "yarn test && yarn build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "git add"
+    ]
   },
   "peerDependencies": {
     "@staccx/base": "4.0.1",
