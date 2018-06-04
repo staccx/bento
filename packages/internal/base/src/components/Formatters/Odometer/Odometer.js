@@ -42,7 +42,7 @@ class Odometer extends React.PureComponent {
       speed,
       size,
       separatorSteps,
-      themeVariant,
+      variant,
       ...restProps
     } = this.props
     const { isAnimating } = this.state
@@ -59,25 +59,22 @@ class Odometer extends React.PureComponent {
 
     const renderDigits = (digit, single, speed) =>
       chars.map((digit, i) => (
-        <OdometerContainer key={`digit-${i}`} themeVariant={themeVariant}>
+        <OdometerContainer key={`digit-${i}`} variant={variant}>
           <Digit
             size={size}
             digit={digit}
             single={single}
             speed={speed}
-            themeVariant={themeVariant}
+            variant={variant}
           />
         </OdometerContainer>
       ))
     return (
-      <OdometerWrapper size={size} themeVariant={themeVariant} {...restProps}>
-        <OdometerStatic isAnimating={isAnimating} themeVariant={themeVariant}>
+      <OdometerWrapper size={size} variant={variant} {...restProps}>
+        <OdometerStatic isAnimating={isAnimating} variant={variant}>
           {renderDigits(number, true, speed)}
         </OdometerStatic>
-        <OdometerAnimating
-          isAnimating={isAnimating}
-          themeVariant={themeVariant}
-        >
+        <OdometerAnimating isAnimating={isAnimating} variant={variant}>
           {renderDigits(number, false, speed)}
         </OdometerAnimating>
       </OdometerWrapper>
@@ -117,13 +114,13 @@ Odometer.propTypes = {
   separatorSteps: PropTypes.number,
   speed: PropTypes.number,
   size: PropTypes.number.isRequired,
-  themeVariant: PropTypes.string
+  variant: PropTypes.string
 }
 
 Odometer.defaultProps = {
   separatorSteps: 3,
   speed: 500,
-  themeVariant: null,
+  variant: null,
   ignoreBase: null
 }
 

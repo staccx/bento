@@ -1,12 +1,20 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import {
+  color,
+  spacing,
+  registerStyle,
+  targetSize,
+  VARIANT_DEFAULT
+} from "@staccx/theme"
 import {
   InputStyles,
   LabelStyles,
   SelectSelectedStyles,
   SelectStyles,
   RadioPillItemStyles,
-  SelectSimpleStyles
+  SelectSimpleStyles,
+  SliderKeyboardInputStyles,
+  CompanyInputStyles
 } from "@staccx/base"
 
 const floatingLabel = css`
@@ -157,4 +165,131 @@ export const RadioPillItemStyling = registerStyle(
     `
   },
   RadioPillItemStyles.RADIO_PILL_ITEM_WRAPPER
+)
+export const SliderKeyboardWrapperStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      input[type="text"] {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px dashed ${color.line};
+        min-height: ${targetSize.normal};
+        margin-bottom: 24px;
+        text-align: center;
+        font-size: 40px;
+        width: 240px;
+        max-width: 100%;
+        -moz-appearance: textfield;
+        padding-bottom: ${spacing.small};
+        outline: none;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:-moz-ui-invalid,
+        &:invalid {
+          outline: none;
+          box-shadow: none;
+        }
+
+        &:disabled {
+          color: ${color.text};
+        }
+      }
+    `
+  },
+  SliderKeyboardInputStyles.SLIDER_KEYBOARD_WRAPPER
+)
+
+export const SliderInputStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      input[type="text"] {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px dashed ${color.line};
+        min-height: ${targetSize.normal};
+        margin-bottom: 24px;
+        text-align: center;
+        font-size: 40px;
+        width: 240px;
+        max-width: 100%;
+        -moz-appearance: textfield;
+        padding-bottom: ${spacing.small};
+        outline: none;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:-moz-ui-invalid,
+        &:invalid {
+          outline: none;
+          box-shadow: none;
+        }
+
+        &:disabled {
+          color: ${color.text};
+        }
+      }
+    `
+  },
+  SliderKeyboardInputStyles.SLIDER_KEYBOARD_INPUT
+)
+
+export const CompanyInputLoadFromStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      background-color: ${color("subtleHover")};
+    `
+  },
+  CompanyInputStyles.COMPANY_INPUT_LOAD_FROM
+)
+
+export const CompanyInputLoadToStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      background-color: ${color("blue")};
+    `
+  },
+  CompanyInputStyles.COMPANY_INPUT_LOAD_TO
+)
+
+export const CompanyInputCloseStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      color: ${color("blue")};
+    `
+  },
+  CompanyInputStyles.COMPANY_INPUT_SELECT_CLOSE
+)
+
+export const CompanyInputFlagStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      padding: ${spacing.mediumPlus} ${spacing.tiny} ${spacing.tiny}
+        ${spacing.medium};
+    `
+  },
+  CompanyInputStyles.COMPANY_INPUT_FLAG
+)
+
+export const CompanyInputSelectItemStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      background-color: ${p => (p.isSelected ? color("blue") : "transparent")};
+    `
+  },
+  CompanyInputStyles.COMPANY_INPUT_SELECT_ITEM
 )

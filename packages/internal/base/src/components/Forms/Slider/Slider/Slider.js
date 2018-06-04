@@ -1,15 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import {
-  targetSize,
-  spacing,
-  borderRadius,
-  font,
-  color,
-  themify,
-  fontWeight
-} from "@staccx/theme"
+import { color, themify, fontWeight } from "@staccx/theme"
 
 const Slider = ({
   disabled,
@@ -21,7 +13,7 @@ const Slider = ({
   step,
   value,
   variantStyle,
-  themeVariant,
+  variant,
   ignoreBase,
   ...restProps
 }) => {
@@ -34,7 +26,7 @@ const Slider = ({
     <SliderInput
       percentage={percentage}
       variantStyle={variantStyle}
-      themeVariant={themeVariant}
+      variant={variant}
       ignoreBase={ignoreBase}
     >
       <input
@@ -205,7 +197,7 @@ Slider.defaultProps = {
   max: 100,
   min: 0,
   step: 1,
-  themeVariant: null,
+  variant: null,
   value: undefined,
   variantStyle: null
 }
@@ -220,7 +212,7 @@ Slider.propTypes = {
   onChange: PropTypes.func,
   percentage: PropTypes.number,
   step: PropTypes.any,
-  themeVariant: PropTypes.string,
+  variant: PropTypes.string,
   value: PropTypes.any,
   variantStyle: PropTypes.func
 }

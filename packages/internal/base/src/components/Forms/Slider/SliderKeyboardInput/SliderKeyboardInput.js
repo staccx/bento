@@ -8,7 +8,6 @@ import Slider from "../Slider/Slider"
 import {
   targetSize,
   spacing,
-  borderRadius,
   fontFamily,
   font,
   color,
@@ -127,17 +126,17 @@ class SliderKeyboardInput extends React.Component {
       mask,
       className,
       ignoreBase,
-      themeVariant,
+      variant,
       showLabel
     } = this.props
     const { currentValue, percentage } = this.state
     return (
       <SliderWrapper
         className={className}
-        themeVariant={themeVariant}
+        variant={variant}
         ignoreBase={ignoreBase}
       >
-        <HiddenLabel htmlFor={name} themeVariant={themeVariant}>
+        <HiddenLabel htmlFor={name} variant={variant}>
           {label}
         </HiddenLabel>
         <SliderInput
@@ -152,7 +151,7 @@ class SliderKeyboardInput extends React.Component {
           max={max}
           mask={mask || null}
           disabled={this.state.isAnimatingIn}
-          themeVariant={themeVariant}
+          variant={variant}
         />
         <Slider
           percentage={percentage}
@@ -163,6 +162,7 @@ class SliderKeyboardInput extends React.Component {
           min={min}
           max={max}
           onChange={this.handleChange}
+          variant={variant}
         />
       </SliderWrapper>
     )
@@ -227,7 +227,6 @@ SliderKeyboardInput.defaultProps = {
   min: 0,
   onChange: null,
   step: 1,
-  themeVariant: null,
   value: 0,
   showLabel: false
 }
@@ -245,7 +244,7 @@ SliderKeyboardInput.propTypes = {
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
   step: PropTypes.number,
-  themeVariant: PropTypes.string,
+  variant: PropTypes.string,
   value: PropTypes.number,
   showLabel: PropTypes.bool
 }

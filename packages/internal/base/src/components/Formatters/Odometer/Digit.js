@@ -3,19 +3,14 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { themify } from "@staccx/theme"
 
-const Digit = ({ isAnimating, digit, speed, size, single, themeVariant }) => (
-  <DigitWrapper
-    isAnimating
-    size={size}
-    isEmpty={!digit}
-    themeVariant={themeVariant}
-  >
+const Digit = ({ isAnimating, digit, speed, size, single, variant }) => (
+  <DigitWrapper isAnimating size={size} isEmpty={!digit} variant={variant}>
     <DigitContainer
       digit={digit}
       speed={speed}
       single={single}
       size={size}
-      themeVariant={themeVariant}
+      variant={variant}
     >
       {!digit ? "" : single ? digit : "0 1 2 3 4 5 6 7 8 9 0"}
     </DigitContainer>
@@ -49,7 +44,7 @@ Digit.propTypes = {
   size: PropTypes.number.isRequired,
   isAnimating: PropTypes.bool,
   single: PropTypes.bool,
-  themeVariant: PropTypes.string
+  variant: PropTypes.string
 }
 
 export default Digit

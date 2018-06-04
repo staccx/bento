@@ -153,7 +153,7 @@ CheckBox.propTypes = {
   defaultChecked: PropTypes.bool,
   checkIcon: PropTypes.element,
   ignoreBase: PropTypes.func,
-  themeVariant: PropTypes.string
+  variant: PropTypes.string
 }
 
 CheckBox.defaultProps = {
@@ -165,7 +165,7 @@ CheckBox.defaultProps = {
   defaultChecked: false,
   checkIcon: null,
   ignoreBase: null,
-  themeVariant: null
+  variant: null
 }
 
 export default CheckBox

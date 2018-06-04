@@ -20,7 +20,14 @@ import {
   SelectOptionsWrapperStyling,
   RadioPillItemStyling,
   SelectSimpleSelectStyling,
-  SelectSimpleWrapperStyling
+  SelectSimpleWrapperStyling,
+  SliderKeyboardWrapperStyling,
+  SliderInputStyling,
+  CompanyInputLoadFromStyling,
+  CompanyInputLoadToStyling,
+  CompanyInputCloseStyling,
+  CompanyInputFlagStyling,
+  CompanyInputSelectItemStyling
 } from "./Theme/theme.Inputs"
 import { LayoutStyling } from "./Theme/theme.Layouts"
 
@@ -123,5 +130,11 @@ const theme = new Theme(BaseTheme, {
   .addStyles(RadioPillItemStyling)
   .addStyles(SelectSimpleSelectStyling)
   .addStyles(SelectSimpleWrapperStyling)
-
+  .addStyles(SliderKeyboardWrapperStyling)
+  .addStyles(SliderInputStyling)
+  .addStyles(CompanyInputLoadFromStyling)
+  .addStyles(CompanyInputLoadToStyling)
+  .addStyles(CompanyInputCloseStyling)
+  .addStyles(CompanyInputFlagStyling)
+  .addStyles(CompanyInputSelectItemStyling)
 export default theme.get

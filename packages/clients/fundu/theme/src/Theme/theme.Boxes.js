@@ -80,6 +80,22 @@ export const BoxStyling = registerStyle(
         grid-template-areas: "one";
       }
     `,
+    flexHalves: css`
+      padding: 0;
+      @media (min-width: 711px) {
+        display: flex;
+
+        > * {
+          width: 50%;
+        }
+      }
+      @media (max-width: 710px) {
+        flex-wrap: wrap;
+        > * {
+          width: 100%;
+        }
+      }
+    `,
     addSigner: css`
       position: relative;
       padding: 0;

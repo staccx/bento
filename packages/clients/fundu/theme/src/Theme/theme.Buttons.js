@@ -27,6 +27,7 @@ const subtleButton = css`
 
 export const ButtonStyling = registerStyle(
   {
+    subtle: subtleButton,
     decline: css`
       ${subtleButton};
 
