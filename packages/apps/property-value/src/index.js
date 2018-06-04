@@ -3,5 +3,8 @@ import ReactDOM from "react-dom"
 import App from "./App"
 import registerServiceWorker from "./registerServiceWorker"
 
-ReactDOM.render(<App />, document.getElementById("root"))
+const rootName = "root"
+
+const root = document.getElementById(rootName)
+ReactDOM.render(<App {...root.dataset} />, root)
 registerServiceWorker()
