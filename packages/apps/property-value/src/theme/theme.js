@@ -1,6 +1,7 @@
-import { Theme } from "@staccx/theme"
-import { BaseTheme } from "@staccx/base"
+import { Theme, registerStyle, color } from "@staccx/theme"
+import { BaseTheme, BoxStyles } from "@staccx/base"
 import reset from "./reset"
+import { css } from "styled-components"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -27,7 +28,7 @@ const spacing = {
   small: "12px",
   tiny: "6px"
 }
-const color = {
+const colors = {
   bg: "#fcfcfc",
   bgGray: "#F9F7F7",
   primary: "#23A532",
@@ -65,9 +66,29 @@ const fontFamily = {
   body: "Libre Franklin"
 }
 
+const markerStyle = registerStyle(
+  {
+    marker: css`
+      &:after {
+        content: "";
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        margin-left: -20px;
+        width: 0;
+        height: 0;
+        border-top: solid 20px ${color.primary};
+        border-left: solid 20px transparent;
+        border-right: solid 20px transparent;
+      }
+    `
+  },
+  BoxStyles.BOX
+)
+
 const theme = new Theme(BaseTheme, {
   font,
-  color,
+  colors,
   spacing,
   wrapper,
   targetSize,
@@ -75,6 +96,6 @@ const theme = new Theme(BaseTheme, {
   headerHeight,
   fontFamily,
   global: reset
-})
+}).add(markerStyle)
 
-export default theme.get
+export default theme

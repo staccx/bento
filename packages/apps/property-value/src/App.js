@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Provider as StoreProvider } from "mobx-react"
 import { ThemeProxyProvider } from "@staccx/theme"
-import theme from "./theme.js"
+import theme from "./theme/theme.js"
 import PropertyValue from "./components/PropertyValue"
 import property from "./store/property"
 
@@ -11,6 +11,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(theme)
     return (
       <ThemeProxyProvider theme={theme}>
         <StoreProvider store={property}>

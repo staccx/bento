@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 // eslint-disable-next-line
 import { inject, observer } from "mobx-react"
-import { Heading, Text } from "@staccx/base"
+import { formatCurrency } from "@staccx/formatting"
+import { Text, Wrapper, List, SplitListItem, Box } from "@staccx/base"
 import Map from "./Map"
 
 @inject("store")
@@ -32,11 +33,17 @@ class PropertyValue extends Component {
 
     const { lat, lng, address } = property.details
     return (
-      <div>
-        <Map lat={lat} lng={lng} address={address} />
-        <Heading>{address}</Heading>
-        <Text>{property.value.toString()}</Text>
-      </div>
+      <Wrapper>
+        <Box size={"small"}>
+          <Map lat={lat} lng={lng} address={address} />
+          <List>
+            <SplitListItem>
+              <Text>{address}</Text>
+              <Text>{formatCurrency(property.value)}</Text>
+            </SplitListItem>
+          </List>
+        </Box>
+      </Wrapper>
     )
   }
 }

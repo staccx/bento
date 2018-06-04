@@ -7,12 +7,18 @@ import {
   withGoogleMap,
   withScriptjs
 } from "react-google-maps"
-import { getStreetViewImageUrl } from "../store/property"
+import Marker from "./Marker"
 
 const getPixelPositionOffset = (width, height) => ({
-  x: -(width / 2),
-  y: -(height / 2)
+  x: -(width / 2) - 4, // border
+  y: -(height / 2) - 85
 })
+
+const defaultOptions = {
+  disableDefaultUI: true,
+  gestureHandling: "none",
+  zoomControl: false
+}
 
 const Map = compose(
   mapProps(props => {
@@ -34,16 +40,17 @@ const Map = compose(
   withScriptjs,
   withGoogleMap
 )(props => (
-  <GoogleMap defaultZoom={8} defaultCenter={props.center}>
+  <GoogleMap
+    defaultZoom={16}
+    defaultCenter={props.center}
+    defaultOptions={defaultOptions}
+  >
     <OverlayView
       position={props.center}
       mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
       getPixelPositionOffset={getPixelPositionOffset}
     >
-      <img
-        src={getStreetViewImageUrl(props.center, 256)}
-        alt={"streetviewimage"}
-      />
+      <Marker location={props.center} />
     </OverlayView>
   </GoogleMap>
 ))
