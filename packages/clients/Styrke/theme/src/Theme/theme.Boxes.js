@@ -92,6 +92,10 @@ export const BoxStyling = registerStyle(
     `,
     signDocument: css`
       padding: 0;
+    `,
+    userDefinedAmount: css`
+      padding: ${spacing.medium};
+      background-color: ${color("bgBlue")};
     `
   },
   BoxStyles.BOX

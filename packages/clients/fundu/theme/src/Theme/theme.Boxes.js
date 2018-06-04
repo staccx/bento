@@ -123,6 +123,18 @@ export const BoxStyling = registerStyle(
       li {
         padding: ${spacing.small} ${spacing.medium};
       }
+    `,
+    userDefinedAmount: css`
+      padding: 0;
+      border-top: 1px solid ${color.line};
+
+      input {
+        padding-left: ${spacing.large};
+      }
+
+      label {
+        padding-left: ${spacing.medium};
+      }
     `
   },
   BoxStyles.BOX

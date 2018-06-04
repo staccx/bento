@@ -5,7 +5,6 @@ import { withFormik } from "formik"
 import { CurrencyInput, RadioButton, Box } from "@staccx/base"
 import { formatCurrency, removeWhitespace } from "@staccx/formatting"
 import { BounceIn, BounceOut } from "@staccx/animations"
-import { color, spacing } from "@staccx/theme"
 import ValidationError from "./replace/ValidationError"
 const Yup = require("yup")
 
@@ -82,7 +81,10 @@ const PickLoanSum = props => {
           </InlineRadioButtons>
         </PickAmounts>
         {isCustomAmount && (
-          <UserDefinedAmount visible={isCustomAmount}>
+          <UserDefinedAmount
+            variant="userDefinedAmount"
+            visible={isCustomAmount}
+          >
             <CurrencyInput
               label={customLoanAmountLabel}
               placeholder="0"
@@ -112,21 +114,12 @@ const PickAmounts = styled.div`
       : "animation: .4s " + BounceOut + ".05s ease-out forwards 1;"};
 `
 
-const UserDefinedAmount = styled.div`
-  border-top: 1px solid ${color.line};
+const UserDefinedAmount = styled(Box)`
   opacity: 0;
   ${props =>
     props.visible
       ? "animation: .4s " + BounceIn + " .05s ease-out forwards 1;"
       : "animation: .4s " + BounceOut + " .05s ease-out forwards 1;"};
-
-  input {
-    padding-left: ${spacing.large};
-  }
-
-  label {
-    padding-left: ${spacing.medium};
-  }
 `
 
 const InlineRadioButtons = styled.div`
