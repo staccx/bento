@@ -17,7 +17,7 @@ import {
 import { formatName, removeWhitespace } from "@staccx/formatting"
 import styled, { keyframes } from "styled-components"
 import { Field, FieldArray, Form, Formik } from "formik"
-import { color, spacing } from "@staccx/theme"
+import { spacing } from "@staccx/theme"
 import { norwegian } from "national-id"
 import ValidationError from "./replace/ValidationError"
 const Yup = require("yup")
@@ -136,7 +136,7 @@ class RegisterSigners extends React.Component {
                                     {signer.isUserAdded ? (
                                       <Field
                                         render={({ field }) => (
-                                          <Box variant="inputContainer">
+                                          <Box variant="addSigner">
                                             <Input
                                               id={`signers.${index}.name`}
                                               {...field}
@@ -208,7 +208,7 @@ class RegisterSigners extends React.Component {
                                   </SplitListItem>
                                   {signer.checked && (
                                     <li>
-                                      <SignerFields variant="subtleBox">
+                                      <SignerFields variant="signerFields">
                                         <Layout grid="form">
                                           <LayoutItem>
                                             <Field
@@ -278,7 +278,7 @@ class RegisterSigners extends React.Component {
                                 </React.Fragment>
                               ))}
                           </List>
-                          <AddSignerContainer>
+                          <Box variant="addSignerBtn">
                             <Button
                               onClick={() =>
                                 push({
@@ -294,7 +294,7 @@ class RegisterSigners extends React.Component {
                             >
                               {this.props.addPersonText}
                             </Button>
-                          </AddSignerContainer>
+                          </Box>
                         </div>
                       )}
                     />
@@ -314,11 +314,6 @@ class RegisterSigners extends React.Component {
     )
   }
 }
-
-const AddSignerContainer = styled.div`
-  padding-top: ${spacing.small};
-  padding-left: ${spacing.medium};
-`
 
 const SignerRoles = styled.span`
   display: flex;
@@ -351,7 +346,6 @@ const expand = keyframes`
 const SignerFields = styled(Box)`
   animation: ${props =>
     props.animated ? expand + " .2s linear forwards" : "none"};
-  border-bottom: 1px solid ${color.line};
 `
 
 export default RegisterSigners

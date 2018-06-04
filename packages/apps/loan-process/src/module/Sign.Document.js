@@ -1,6 +1,6 @@
 import React from "react"
 import { Button } from "@staccx/base"
-import { color, spacing } from "@staccx/theme"
+import { spacing } from "@staccx/theme"
 import styled from "styled-components"
 
 // const SIGN_ORDER_STATUS_PENDING = "pending"
@@ -15,7 +15,7 @@ const SignDocument = ({
   signOrderStatusCompleted,
   waitingForSignatureText
 }) => (
-  <DocumentStatusItem key={order.requestId}>
+  <li key={order.requestId}>
     <div>{renderDocumentText(order.documentType)}</div>
     <div>
       {showButton && <SignButton href={order.url}>{signText}</SignButton>}
@@ -34,7 +34,7 @@ const SignDocument = ({
         </SignedContainer>
       )}
     </div>
-  </DocumentStatusItem>
+  </li>
 )
 
 const SignedContainer = styled.div`
@@ -53,16 +53,6 @@ const Checkmark = styled.svg`
   width: ${spacing.medium};
   height: ${spacing.medium};
   margin-right: ${spacing.small};
-`
-
-const DocumentStatusItem = styled.li`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  &:not(:first-child) {
-    border-top: 1px solid ${color.line};
-  }
 `
 
 export default SignDocument

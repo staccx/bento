@@ -62,7 +62,12 @@ class ExpandListItem extends Component {
     } = this.props
     const { isExpanded } = this.state
     return (
-      <ExpandItem className={className} variant={variant} {...otherProps}>
+      <ExpandItem
+        className={className}
+        variant={variant}
+        isExpanded={isExpanded}
+        {...otherProps}
+      >
         <BtnComponent
           {...otherProps}
           title={title}
@@ -79,6 +84,7 @@ class ExpandListItem extends Component {
             id={title}
             aria-labelledby={title + "2"}
             variant={variant}
+            isExpanded={isExpanded}
           >
             {children}
           </ExpandedItem>

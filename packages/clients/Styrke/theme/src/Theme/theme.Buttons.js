@@ -1,9 +1,32 @@
 import { css } from "styled-components"
-import { registerStyle, color, targetSize, spacing } from "@staccx/theme"
+import {
+  registerStyle,
+  color,
+  targetSize,
+  spacing,
+  VARIANT_DEFAULT
+} from "@staccx/theme"
 import { ButtonStyles } from "@staccx/base"
 
 export const ButtonStyling = registerStyle(
   {
+    [VARIANT_DEFAULT]: css`
+      border-bottom: 1px solid ${color("primaryDark")};
+    `,
+    decline: css`
+      background-color: transparent;
+      border-radius: 0;
+      border-bottom: 2px solid ${color("primaryDark")};
+      color: ${color.text};
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: ${color.text};
+        background-color: transparent;
+        border-color: ${color.warning};
+      }
+    `,
     deleteSigner: css`
       align-self: flex-end;
       background-color: transparent;
@@ -11,6 +34,7 @@ export const ButtonStyling = registerStyle(
       padding: 0;
       min-width: ${targetSize.normal};
       border: 1px solid ${color.white};
+      min-height: 42px;
 
       > svg {
         fill: currentColor;
@@ -32,9 +56,8 @@ export const ButtonStyling = registerStyle(
         p.isUserAdded &&
         `
         position: absolute;
-        right: 24px;
-        top: 50%;
-        transform: translateY(-50%);
+        right: 1px;
+        bottom: 1px;
       `};
     `,
     addSigner: css`
@@ -42,7 +65,7 @@ export const ButtonStyling = registerStyle(
       color: ${color.primary};
       min-height: ${targetSize.small};
       padding: 3px ${spacing.small};
-      border: 1px solid ${color.white};
+      border: 1px solid transparent;
 
       &:focus,
       &:active,

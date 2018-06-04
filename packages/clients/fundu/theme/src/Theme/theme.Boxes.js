@@ -22,6 +22,11 @@ export const BoxStyling = registerStyle(
       padding: 0;
       margin-bottom: ${spacing.medium};
     `,
+    expandLeadContent: css`
+      ${tileStyle};
+      padding: 0;
+      margin-bottom: ${spacing.medium};
+    `,
     largeForm: css`
       display: flex;
       justify-content: space-between;
@@ -75,9 +80,13 @@ export const BoxStyling = registerStyle(
         grid-template-areas: "one";
       }
     `,
-    inputContainer: css`
+    addSigner: css`
       position: relative;
       padding: 0;
+    `,
+    addSignerBtn: css`
+      padding-top: ${spacing.small};
+      padding-left: ${spacing.medium};
     `,
     endScreen: css`
       position: relative;

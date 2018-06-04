@@ -78,7 +78,7 @@ class Sign extends React.Component {
                 ` ${formatCurrency(this.props.loanAmount)}`}
             </span>
             <Details>
-              <Box variant="actionBox">
+              <Box variant="expandLeadContent">
                 {/* TODO: vise om det er lån eller kreditt☝️ */}
                 <OfferTable>
                   <tbody>
@@ -140,7 +140,7 @@ class Sign extends React.Component {
             </Heading>
             <Box variant="actionBox">
               <Box variant="signDocument">
-                <List>
+                <List variant="documentSign">
                   {userOrders.map(order => {
                     const showButton =
                       order.status !== this.props.signOrderStatusCompleted

@@ -14,8 +14,32 @@ export const ListStyling = registerStyle(
         padding: 3px 0;
       }
     `,
+    documentSign: css`
+      margin-bottom: ${spacing.medium};
+
+      > li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: ${spacing.small};
+        background-color: ${color("bgBlue")};
+        margin-bottom: 3px;
+
+        &::not(:first-child) {
+          border-top: 1px solid ${color.line};
+          padding-top: ${spacing.small};
+        }
+      }
+    `,
     documentStatusList: css`
-      background-color: ${color.subtleHover};
+      > li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: ${spacing.small} ${spacing.medium};
+        background-color: ${color.bgGray};
+        margin-bottom: 3px;
+      }
     `,
     bottomBorder: css`
       border-bottom: 1px solid ${color.line};
@@ -32,13 +56,10 @@ export const SplitListItemStyling = registerStyle(
     signerListItem: css`
       padding-left: 0;
       padding-right: 0;
+      border-width: 0;
 
       > * {
         flex-basis: 50%;
-      }
-
-      &:last-child {
-        border-bottom: 1px solid ${color.line};
       }
 
       ${p =>
@@ -58,10 +79,12 @@ export const SplitListItemStyling = registerStyle(
 export const ExpandListItemStyling = registerStyle(
   {
     signer: css`
-      border-bottom: 1px solid ${color.line};
+      border-bottom: 1px solid
+        ${p => (p.isExpanded ? "transparent" : color("line")(p))};
 
-      > * {
-        border-top: 1px solid ${color.line};
+      > button {
+        padding-left: 0;
+        padding-right: ${spacing.mediumPlus};
       }
     `
   },

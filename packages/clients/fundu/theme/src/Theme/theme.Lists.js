@@ -14,8 +14,31 @@ export const ListStyling = registerStyle(
         padding: 3px 0;
       }
     `,
+    documentSign: css`
+      > li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: ${spacing.tiny} ${spacing.medium};
+
+        &:not(:last-child) {
+          border-bottom: 1px solid ${color.line};
+        }
+      }
+    `,
     documentStatusList: css`
       background-color: ${color.subtleHover};
+
+      > li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: ${spacing.tiny} ${spacing.medium};
+
+        &:not(:first-child) {
+          border-top: 1px solid ${color.line};
+        }
+      }
     `,
     bottomBorder: css`
       border-bottom: 1px solid ${color.line};

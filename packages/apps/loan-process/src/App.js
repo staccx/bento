@@ -55,6 +55,7 @@ class Content extends Component {
 
           <hr style={{ margin: "64px 0" }} />
           <Sign />
+          <hr style={{ margin: "64px 0" }} />
         </div>
       </ThemeProxyProvider>
     )

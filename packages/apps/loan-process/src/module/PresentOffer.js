@@ -243,7 +243,10 @@ class PresentOffer extends React.Component {
             >
               {this.props.acceptOfferButtonText}
             </Button>
-            <Button onClick={() => this.respondToOffer(false)}>
+            <Button
+              variant="decline"
+              onClick={() => this.respondToOffer(false)}
+            >
               {this.props.rejectOfferButtonText}
             </Button>
           </ItemGroup>

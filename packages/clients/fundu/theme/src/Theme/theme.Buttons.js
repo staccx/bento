@@ -2,8 +2,41 @@ import { css } from "styled-components"
 import { registerStyle, color, targetSize, spacing } from "@staccx/theme"
 import { ButtonStyles } from "@staccx/base"
 
+const subtleButton = css`
+  background-color: transparent;
+  color: ${color.text};
+  border-width: 0;
+  border-bottom: 2px solid ${color.primary};
+  box-shadow: none;
+  padding-left: ${spacing.small};
+  padding-right: ${spacing.small};
+  border-radius: 0;
+  text-decoration: none;
+  padding-bottom: 3px;
+  font-weight: normal;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+    color: ${color.primary};
+    border-bottom-color: ${color.primary};
+    background-color: transparent;
+  }
+`
+
 export const ButtonStyling = registerStyle(
   {
+    decline: css`
+      ${subtleButton};
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: ${color.text};
+        border-bottom-color: ${color.warning};
+      }
+    `,
     deleteSigner: css`
       align-self: flex-end;
       background-color: transparent;
@@ -52,27 +85,7 @@ export const ButtonStyling = registerStyle(
         color: ${color.primary};
       }
     `,
-    endScreen: css`
-      background-color: transparent;
-      color: ${color.text};
-      border-width: 0;
-      border-bottom: 2px solid ${color.primary};
-      box-shadow: none;
-      padding-left: 0;
-      padding-right: 0;
-      border-radius: 0;
-      text-decoration: none;
-      padding-bottom: 3px;
-      font-weight: normal;
-
-      &:hover,
-      &:focus {
-        outline: none;
-        color: ${color.primary};
-        border-bottom-color: ${color.primary};
-        background-color: transparent;
-      }
-    `
+    endScreen: subtleButton
   },
   ButtonStyles.BUTTON
 )

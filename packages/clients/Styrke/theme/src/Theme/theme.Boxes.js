@@ -1,14 +1,31 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
+import { color, spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
 import { BoxStyles } from "@staccx/base"
+
+const subtleBox = css`
+  padding: ${spacing.small};
+  border-radius: 0;
+  background-color: ${color.bgGray};
+`
 
 export const BoxStyling = registerStyle(
   {
+    [VARIANT_DEFAULT]: css`
+      border-radius: 0;
+    `,
     actionBox: css`
       padding: 0;
     `,
     actionBoxContent: css`
       padding: ${spacing.medium} 0 0 0;
+    `,
+    expandLeadContent: css`
+      padding: 0;
+      background-color: ${color("bgBlue")};
+
+      td {
+        border-color: ${color("bgBlueDark")};
+      }
     `,
     largeForm: css`
       padding: 0;
@@ -34,9 +51,8 @@ export const BoxStyling = registerStyle(
       text-align: center;
       width: 100%;
     `,
-    subtleBox: css`
-      padding: ${spacing.small} 0;
-    `,
+    subtleBox: subtleBox,
+    signerFields: subtleBox,
     halves: css`
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -52,9 +68,14 @@ export const BoxStyling = registerStyle(
         grid-template-areas: "one";
       }
     `,
-    inputContainer: css`
+    addSigner: css`
       position: relative;
+      margin: ${spacing.medium} 0 ${spacing.small};
       padding: 0;
+    `,
+    addSignerBtn: css`
+      padding-top: ${spacing.small};
+      padding-left: 0;
     `,
     pickAmounts: css`
       padding: ${spacing.medium} 0 0;
@@ -63,6 +84,7 @@ export const BoxStyling = registerStyle(
       border-top: 3px solid ${color.primary};
       border-bottom: 3px solid ${color.primary};
       padding: 0 0 ${spacing.small};
+      border-radius: 0;
     `,
     expandLead: css`
       padding: 0;
@@ -70,21 +92,6 @@ export const BoxStyling = registerStyle(
     `,
     signDocument: css`
       padding: 0;
-
-      ul {
-        border-top: 1px solid ${color.line};
-        padding-top: ${spacing.small};
-        margin-bottom: ${spacing.medium};
-      }
-
-      li {
-        padding-bottom: ${spacing.small};
-      }
-
-      li:not(:first-child) {
-        border-top: 1px solid ${color.line};
-        padding-top: ${spacing.small};
-      }
     `
   },
   BoxStyles.BOX

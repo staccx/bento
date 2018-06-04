@@ -49,22 +49,22 @@ const spacing = {
 }
 const color = {
   bg: "#fcfcfc",
-  bgGray: "#FCFCFC",
-  primary: "#466CE9",
+  bgGray: "#f6f1e5",
+  bgBlue: "#DCEDF0",
+  bgBlueDark: "#CEDEE0",
+  primary: "#3c61e7",
+  primaryDark: "#1a40c5",
   gray: "#767676",
-  text: "#2b2b2b",
+  text: "#333",
   white: "#fff",
-  red: "#ea526f",
-  pink: "#f8d0db",
-  green: "#00a190",
-  blue: "#188EFB",
-  yellow: "#f4da87",
-  line: "#D9D8D8",
+  red: "#E06666",
+  yellow: "#FFF8BB",
+  line: "#d8d8d8",
   wcag: "#777",
   disabled: "#BABABA",
-  warning: "#c54059",
+  warning: "#E06666",
   black: "#000",
-  subtleHover: "#F7F7FF"
+  subtleHover: "#fff"
 }
 
 const font = {
@@ -80,20 +80,26 @@ const font = {
   huge: "44px"
 }
 
+const fontWeight = {
+  bold: "700",
+  normal: "400"
+}
+
 const webfonts = {
   google: {
-    families: ["IBM Plex Sans:400,700"]
+    families: ["Montserrat:700", "Open Sans:400,600"]
   }
 }
 
 const fontFamily = {
-  heading: "IBM Plex Sans",
-  body: "IBM Plex Sans"
+  heading: "Montserrat",
+  body: "Open Sans"
 }
 
 const theme = new Theme(BaseTheme, {
   webfonts,
   font,
+  fontWeight,
   color,
   spacing,
   wrapper,
