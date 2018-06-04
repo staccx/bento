@@ -22,7 +22,7 @@ import {
 } from "./Theme/theme.Inputs"
 import { LayoutStyling } from "./Theme/theme.Layouts"
 
-const borderRadius = "0px"
+const borderRadius = "5px"
 const headerHeight = "70px"
 
 const targetSize = {
@@ -31,7 +31,7 @@ const targetSize = {
 }
 
 const wrapper = {
-  small: "420px",
+  small: "460px",
   medium: "460px",
   large: "720px",
   breakout: "640px"

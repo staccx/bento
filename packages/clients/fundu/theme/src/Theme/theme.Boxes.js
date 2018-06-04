@@ -103,6 +103,17 @@ export const BoxStyling = registerStyle(
       > div:first-child {
         padding: ${spacing.medium} ${spacing.large};
       }
+    `,
+    expandLead: css`
+      padding: 0;
+      text-align: center;
+      margin-bottom: ${spacing.medium};
+    `,
+    signDocument: css`
+      padding: 0;
+      li {
+        padding: ${spacing.small} ${spacing.medium};
+      }
     `
   },
   BoxStyles.BOX

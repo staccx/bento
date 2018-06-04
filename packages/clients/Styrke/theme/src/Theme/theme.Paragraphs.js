@@ -15,9 +15,6 @@ export const ParagraphStyling = registerStyle(
     `,
     formIntro: css`
       margin: 0 0 ${spacing.medium};
-    `,
-    expandLead: css`
-      margin: ${spacing.medium} 0;
     `
   },
   ParagraphStyles.PARAGRAPH

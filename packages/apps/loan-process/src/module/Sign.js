@@ -7,8 +7,7 @@ import {
   ExpandListItem,
   Heading,
   List,
-  Wrapper,
-  Paragraph
+  Wrapper
 } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 import { formatCurrency, formatName } from "@staccx/formatting"
@@ -72,7 +71,7 @@ class Sign extends React.Component {
         <Heading variant="stepHeading" level={1}>
           {this.props.headingText}
         </Heading>
-        <Paragraph variant="expandLead">
+        <Box variant="expandLead">
           <Expand title={this.props.loanDetailsText}>
             <span>
               {this.props.loanDetailsText +
@@ -132,7 +131,7 @@ class Sign extends React.Component {
               </Box>
             </Details>
           </Expand>
-        </Paragraph>
+        </Box>
         {/* Render users own documents */}
         {userOrders.length > 0 && (
           <div>
@@ -140,29 +139,31 @@ class Sign extends React.Component {
               {this.props.userTaskText}
             </Heading>
             <Box variant="actionBox">
-              <List>
-                {userOrders.map(order => {
-                  const showButton =
-                    order.status !== this.props.signOrderStatusCompleted
-                  return (
-                    <SignDocument
-                      key={order.requestId}
-                      order={order}
-                      user={this.props.user}
-                      showButton={showButton}
-                      signText={this.props.signText}
-                      signedText={this.props.signedText}
-                      signOrderStatusCompleted={
-                        this.props.signOrderStatusCompleted
-                      }
-                      waitingForSignatureText={
-                        this.props.waitingForSignatureText
-                      }
-                      renderDocumentText={this.props.renderDocumentText}
-                    />
-                  )
-                })}
-              </List>
+              <Box variant="signDocument">
+                <List>
+                  {userOrders.map(order => {
+                    const showButton =
+                      order.status !== this.props.signOrderStatusCompleted
+                    return (
+                      <SignDocument
+                        key={order.requestId}
+                        order={order}
+                        user={this.props.user}
+                        showButton={showButton}
+                        signText={this.props.signText}
+                        signedText={this.props.signedText}
+                        signOrderStatusCompleted={
+                          this.props.signOrderStatusCompleted
+                        }
+                        waitingForSignatureText={
+                          this.props.waitingForSignatureText
+                        }
+                        renderDocumentText={this.props.renderDocumentText}
+                      />
+                    )
+                  })}
+                </List>
+              </Box>
             </Box>
           </div>
         )}

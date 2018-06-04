@@ -63,6 +63,28 @@ export const BoxStyling = registerStyle(
       border-top: 3px solid ${color.primary};
       border-bottom: 3px solid ${color.primary};
       padding: 0 0 ${spacing.small};
+    `,
+    expandLead: css`
+      padding: 0;
+      margin: ${spacing.medium} 0;
+    `,
+    signDocument: css`
+      padding: 0;
+
+      ul {
+        border-top: 1px solid ${color.line};
+        padding-top: ${spacing.small};
+        margin-bottom: ${spacing.medium};
+      }
+
+      li {
+        padding-bottom: ${spacing.small};
+      }
+
+      li:not(:first-child) {
+        border-top: 1px solid ${color.line};
+        padding-top: ${spacing.small};
+      }
     `
   },
   BoxStyles.BOX

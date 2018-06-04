@@ -22,6 +22,7 @@ export const HeadingStyling = registerStyle(
       font-size: ${font.base};
       font-weight: 300;
       margin-bottom: ${spacing.tiny};
+      color: ${color.primary};
     `
   },
   HeadingStyles.HEADING

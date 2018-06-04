@@ -59,8 +59,6 @@ const DocumentStatusItem = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 70px;
-  padding: ${spacing.small} ${spacing.medium};
 
   &:not(:first-child) {
     border-top: 1px solid ${color.line};
