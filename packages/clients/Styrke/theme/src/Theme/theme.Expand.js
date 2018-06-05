@@ -7,6 +7,7 @@ export const ExpandStyling = registerStyle(
     dashboardExpand: css`
       display: block;
       width: 100%;
+      text-align: left;
     `
   },
   ExpandStyles.EXPAND_BTN
