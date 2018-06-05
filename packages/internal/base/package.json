@@ -28,7 +28,7 @@
     ]
   },
   "peerDependencies": {
-    "@staccx/theme": "^3.8.0",
+    "@staccx/theme": "^4.15.0",
     "prop-types": "^15.5.4",
     "react": "^0.14.9 || ^15.0.0 || ^16.0.0",
     "react-dom": "^0.14.9 || ^15.0.0 || ^16.0.0",
