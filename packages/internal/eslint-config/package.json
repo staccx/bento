@@ -1,6 +1,6 @@
 {
   "name": "@staccx/eslint-config",
-  "version": "4.15.0",
+  "version": "4.15.1",
   "description": "JavaScript linting setup for @staccx",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,6 @@
     "lint-staged": "^7.1.2",
     "prettier": "^1.10.2",
     "prettier-eslint-cli": "^4.7.1",
-    "standard": "^10.0.3"
+    "standard": "^11.0.1"
   }
 }
