@@ -13,6 +13,10 @@ export const BoxStyling = registerStyle(
     [VARIANT_DEFAULT]: css`
       border-radius: 0;
     `,
+    section: css`
+      border-radius: 0;
+      border-bottom: 1px solid ${color.line};
+    `,
     actionBox: css`
       padding: 0;
     `,

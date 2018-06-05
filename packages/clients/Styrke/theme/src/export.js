@@ -21,6 +21,7 @@ import {
   RadioPillStyling
 } from "./Theme/theme.Inputs"
 import { LayoutStyling } from "./Theme/theme.Layouts"
+import { ExpandStyling } from "./Theme/theme.Expand"
 
 const borderRadius = "5px"
 const headerHeight = "70px"
@@ -34,6 +35,7 @@ const wrapper = {
   small: "460px",
   medium: "460px",
   large: "720px",
+  huge: "1284px",
   breakout: "640px"
 }
 
@@ -125,5 +127,6 @@ const theme = new Theme(BaseTheme, {
   .addStyles(SelectOptionsWrapperStyling)
   .addStyles(LayoutStyling)
   .addStyles(RadioPillStyling)
+  .addStyles(ExpandStyling)
 
 export default theme.get
