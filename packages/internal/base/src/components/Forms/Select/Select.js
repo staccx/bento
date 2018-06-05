@@ -137,7 +137,7 @@ const Select = ({
         clearSelection
       }) => (
         <div>
-          <SelectWrapper className={className}>
+          <SelectWrapper className={className} variant={variant}>
             {label && <Label variant={variant}>{label}</Label>}
             {selectedItem ? (
               <SelectedWrapper variant={variant}>

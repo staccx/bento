@@ -46,5 +46,24 @@ export default {
   `,
   form: css`
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  `,
+  centered: css`
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px;
+    grid-template-areas:
+      ". main main ."
+      ". main main .";
+    height: 100vh;
+    > * {
+      grid-area: main;
+      align-self: center;
+      justify-self: center;
+    }
+  `,
+  dashboard: css`
+    grid-template-columns: 340px 1fr;
+    grid-gap: 12px;
+    min-height: 100vh;
+    grid-template-areas: "sidebar main";
   `
 }
