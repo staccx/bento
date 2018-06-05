@@ -1,5 +1,4 @@
 {
-  "extends": "@staccx",
   "presets": [
     [
       "env",
@@ -12,4 +11,3 @@
   ],
   "plugins": ["babel-plugin-styled-components"]
 }
-
