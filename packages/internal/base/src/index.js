@@ -54,6 +54,9 @@ import Warning from "./components/Icons/Warning"
 import Info from "./components/Icons/Info"
 import Success from "./components/Icons/Success"
 
+// Images
+import Image, * as ImageStyles from "./components/Image/Image"
+
 // Dataviz
 import ProgressBar from "./components/DataViz/ProgressBar/ProgressBar"
 import Fraction from "./components/DataViz/Fraction/Fraction"
@@ -121,6 +124,8 @@ export {
   Heading,
   HeadingStyles,
   hideVisually,
+  Image,
+  ImageStyles,
   Info,
   InlineListItem,
   Input,
