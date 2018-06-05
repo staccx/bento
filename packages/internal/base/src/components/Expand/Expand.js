@@ -42,13 +42,14 @@ class Expand extends Component {
       onClick,
       title,
       hideIcon,
+      variant,
       ...restProps
     } = this.props
 
     const { isExpanded } = this.state
 
     return (
-      <ExpandWrapper className={className} {...restProps}>
+      <ExpandWrapper className={className} variant={variant} {...restProps}>
         {React.Children.map(children, (child, i) => {
           // Ignore the first child
           if (i < 1) {
@@ -60,15 +61,22 @@ class Expand extends Component {
                 aria-expanded={isExpanded}
                 aria-controls={title}
                 id={title + "2"}
+                variant={variant}
               >
                 {child}
-                {!hideIcon && <ExpandIcon isExpanded={isExpanded} />}
+                {!hideIcon && (
+                  <ExpandIcon variant={variant} isExpanded={isExpanded} />
+                )}
               </ExpandBtn>
             )
           }
           return (
             isExpanded && (
-              <ExpandItems id={title} aria-labelledby={title + "2"}>
+              <ExpandItems
+                id={title}
+                aria-labelledby={title + "2"}
+                variant={variant}
+              >
                 {child}
               </ExpandItems>
             )
