@@ -15,12 +15,27 @@ const centeredHeading = css`
   @media (max-height: 850px) {
     font-size: ${font.h2};
   }
+
+  ${p =>
+    p.hasBG &&
+    `
+    @media (min-width: 450px) and (max-width: 2100px) {
+      color: ${color.text};
+    }
+  `};
 `
 
 export const HeadingStyling = registerStyle(
   {
+    large: centeredHeading,
     stepHeading: centeredHeading,
     endScreen: centeredHeading,
+    subHeading: css`
+      font-weight: 400;
+      color: ${color.primary};
+      line-height: 1.5;
+      text-align: ${p => (p.alignLeft ? "left" : "center")};
+    `,
     boxHeading: css`
       font-family: ${fontFamily.body};
       font-size: ${font.base};
