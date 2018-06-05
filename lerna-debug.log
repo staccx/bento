@@ -6,42 +6,46 @@
 1 silly flags   concurrency: 1,
 1 silly flags   script: 'precommit',
 1 silly flags   args: [] }
-2 verbose rootPath /Users/espen/Projects/bento
+2 verbose rootPath /Users/robin/Projects/staccx/bento
 3 info version 2.11.0
-4 silly existsSync /Users/espen/Projects/bento/VERSION
+4 silly existsSync /Users/robin/Projects/staccx/bento/VERSION
 5 silly initialize attempt
 6 silly initialize success
 7 silly execute attempt
-8 silly runScriptInPackageStreaming [ 'precommit', [], '@staccx/property-value' ]
-9 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/apps/property-value' }
-10 error execute callback with error
-11 error Error: Command failed: yarn run precommit
-11 error ✖ "eslint" found some errors. Please fix them and try committing again.
-11 error
-11 error /Users/espen/Projects/bento/packages/apps/property-value/src/store/property.js
-11 error  9:7  error  'streetview' is assigned a value but never used  no-unused-vars
-11 error 45:3  error  'findProperty' is not defined                    no-undef
-11 error 55:3  error  'getPropertyDetails' is not defined              no-undef
-11 error 64:3  error  'getProperty' is not defined                     no-undef
-11 error 73:3  error  'getAddress' is not defined                      no-undef
-11 error 79:3  error  'getAddressInfo' is not defined                  no-undef
-11 error
-11 error /Users/espen/Projects/bento/packages/apps/property-value/src/components/PropertyValue.js
-11 error 2:10  error  'inject' is defined but never used    no-unused-vars
-11 error 2:18  error  'observer' is defined but never used  no-unused-vars
-11 error
-11 error ✖ 8 problems (8 errors, 0 warnings)
-11 error error Command failed with exit code 1.
-11 error
-11 error yarn run v1.6.0
-11 error $ lint-staged
-11 error [?25lRunning tasks for *.js [started]
-11 error eslint [started]
-11 error eslint [failed]
-11 error →
-11 error Running tasks for *.js [failed]
-11 error →
-11 error [?25h[?25hinfo Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-11 error
-11 error     at Promise.all.then.arr (/Users/espen/Projects/bento/node_modules/lerna/node_modules/execa/index.js:236:11)
-11 error     at <anonymous>
+8 silly runScriptInPackageStreaming [ 'precommit', [], '@staccx/base' ]
+9 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/base' }
+10 silly runScriptInPackageStreaming [ 'precommit', [], '@staccx/loan-process' ]
+11 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/loan-process' }
+12 silly runScriptInPackageStreaming [ 'precommit', [], '@staccx/property-value' ]
+13 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/property-value' }
+14 error execute callback with error
+15 error Error: Command failed: yarn run precommit
+15 error ✖ "eslint" found some errors. Please fix them and try committing again.
+15 error
+15 error
+15 error Oops! Something went wrong! :(
+15 error
+15 error ESLint: 4.10.0.
+15 error ESLint couldn't find the plugin "eslint-plugin-prettier". This can happen for a couple different reasons:
+15 error
+15 error 1. If ESLint is installed globally, then make sure eslint-plugin-prettier is also installed globally. A globally-installed ESLint cannot find a locally-installed plugin.
+15 error
+15 error 2. If ESLint is installed locally, then it's likely that the plugin isn't installed correctly. Try reinstalling by running the following:
+15 error
+15 error npm i eslint-plugin-prettier@latest --save-dev
+15 error
+15 error If you still can't figure out the problem, please stop by https://gitter.im/eslint/eslint to chat with the team.
+15 error error Command failed with exit code 1.
+15 error
+15 error yarn run v1.6.0
+15 error $ lint-staged
+15 error [?25lRunning tasks for *.js [started]
+15 error eslint [started]
+15 error eslint [failed]
+15 error →
+15 error Running tasks for *.js [failed]
+15 error →
+15 error [?25h[?25hinfo Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+15 error
+15 error     at Promise.all.then.arr (/Users/robin/Projects/staccx/bento/node_modules/lerna/node_modules/execa/index.js:236:11)
+15 error     at <anonymous>
