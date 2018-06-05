@@ -11,7 +11,7 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
-  "peerDependencies": {
+  "dependencies": {
     "babel-eslint": "^8.2.2",
     "eslint": "^4.18.2",
     "eslint-config-prettier": "^2.9.0",
