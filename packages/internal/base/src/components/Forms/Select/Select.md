@@ -1,38 +1,85 @@
+### Normal
+No selected? First will be selected
 ```jsx
-const selectContent = [
-  {
-    text: "Valg 1",
-    value: "1 000"
-  },
-  {
-    text: "Valg 2",
-    value: "10 000"
-  },
-  {
-    text: "Valg 3",
-    value: "100 000"
+<Select
+  items={["apple", "orange", "carrot"]}
+  onChange={() => null}
+  label={"Fruit"}
+/>
+```
+
+Need default selected?
+```jsx
+<Select
+  items={["apple", "orange", "carrot"]}
+  onChange={() => null}
+  label={"Fruit"}
+  selectedItem="orange"
+/>
+```
+
+### Combobox
+```jsx
+<Select
+  items={["apple", "orange", "carrot"]}
+  onChange={() => null}
+  label={"Fruit"}
+  combobox
+/>
+```
+
+
+### Renderprops
+
+#### Default render prop (children)
+Template for rendering items in list
+```jsx
+<Select
+  items={["apple", "orange", "carrot"]}
+  onChange={() => null}
+  label={"Fruit"}
+>
+{({
+                              item,
+                              getItemProps,
+                              highlighted,
+                              selected,
+                            }) => (
+                            <div {...getItemProps({item})}>{item}</div>
+)}
+</Select>
+```
+
+#### RenderSelected
+```jsx
+<Select
+  items={["apple", "orange", "carrot"]}
+  onChange={() => null}
+  label={"Fruit"}
+  renderSelected={({
+               selectedItem,
+               toggleMenu,
+               getButtonProps,
+               getInputProps
+             }) => {
+             return <Button>{selectedItem}</Button>
   }
-]
-;<div>
-  <h3>Select</h3>
-  <p>
-    Both selectedItem and the option component should be supplied. Can also
-    supply your own optionsWrapperElement and placeHolderElement and caret.
-  </p>
-  <Select
-    onChange={selectedItem => console.log(selectedItem)}
-    label={"Label"}
-    selectedElement={SelectSelected}
-    key={"iwodn21"}
-    placeHolderLabel={"Velg…"}
-  >
-    {selectContent.map(item => (
-      <SelectOption key={item.text} data={item}>
-        <strong>{item.text}</strong>
-        <br />
-        <span>{item.value}</span>
-      </SelectOption>
-    ))}
-  </Select>
-</div>
+  }
+/>
+```
+
+#### itemToString & itemToKey
+Complex object structure?
+```jsx
+<Select
+  items={[
+  {data: {name:"apple"}, id:"2"},
+  {data: {name:"orange"}, id: "3"},
+  {data: {name:"carrot"}, id: "4"}
+  ]}
+  onChange={() => null}
+  label={"Map selected"}
+  itemToString={item => item.data.name}
+  itemToKey={item => item.id}
+/>
 ```
