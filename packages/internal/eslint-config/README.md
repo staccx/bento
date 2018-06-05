@@ -4,6 +4,8 @@ Shared eslint settings for @staccx. Based on prettier + standard. [Based on esli
 
 ## Usage
 
+`yarn add @staccx/eslint-config --dev`
+
 Create .eslintrc in the root of your project
 
 ```
@@ -39,6 +41,8 @@ Example package.json, see [lint-staged](https://github.com/okonet/lint-staged) f
 ```
 
 ### In a lerna repo
+
+`yarn add @staccx/eslint-config --dev -W`
 
 /package.json
 
