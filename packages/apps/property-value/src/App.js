@@ -7,7 +7,11 @@ import property from "./store/property"
 
 class App extends Component {
   componentWillMount() {
-    property.findProperty(this.props.nid).then(console.log)
+    if (this.props.address) {
+      property.findPropertyByAdress(this.props.address).then(console.log)
+    } else if (this.props.nid) {
+      property.findPropertyByNationalId(this.props.nid).then(console.log)
+    }
   }
 
   render() {

@@ -30,6 +30,7 @@ class PropertyValue extends Component {
     if (!property) {
       return <div>No property</div>
     }
+    console.log(property)
 
     const { lat, lng, address } = property.details
     return (

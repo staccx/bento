@@ -20,15 +20,6 @@ export const getStreetViewImageUrl = (location, size) =>
     location.lng
   }&size=${[size, size].join("x")}`
 
-// const getStreetViewImage = async location => {
-//   return streetview
-//     .get(getStreetViewImageUrl(location, 256))
-//     .then(result => result.data)
-//     .then(image => {
-//       return image
-//     })
-//     .catch(console.error)
-// }
 
 const mapAddressResults = result =>
   result.json.results
@@ -42,8 +33,17 @@ const mapAddressResults = result =>
 class Property {
   @observable property = null
 
+  @action findPropertyByNumner = async gardNr => {
+    // TODO
+  }
+
+  @action findPropertyByAdress = async address => {
+    const addressInfo = await this.getAddressInfo(address)
+    this.property = await this.getProperty(addressInfo)
+  }
+
   @action
-  findProperty = async nid => {
+  findPropertyByNationalId = async nid => {
     const propertyDetails = await this.getPropertyDetails(nid)
     if (!propertyDetails) {
       return null
@@ -64,11 +64,17 @@ class Property {
 
   getProperty = async details => {
     await wait()
-
+    const value = await this.getValue(details)
     return {
-      value: 40000000,
+      value,
       details: { ...details }
     }
+  }
+
+  getValue = async addressInfo => {
+    await wait()
+
+    return 1000000 + 10000000 * Math.random()
   }
 
   getAddress = async nid => {
