@@ -21,7 +21,7 @@
     "packages/**/*"
   ],
   "devDependencies": {
-    "@staccx/eslint-config": "^4.15.0"
+    "@staccx/eslint-config": "^4.15.2"
   },
   "resolutions": {
     "jest": "^22.4.3",
