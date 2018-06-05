@@ -62,7 +62,7 @@ export default {
   `,
   dashboard: css`
     grid-template-columns: 340px 1fr;
-    grid-gap: 12px;
+    grid-gap: 0;
     min-height: 100vh;
     grid-template-areas: "sidebar main";
   `
