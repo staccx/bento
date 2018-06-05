@@ -38,7 +38,8 @@ Example package.json, see [lint-staged](https://github.com/okonet/lint-staged) f
 }
 ```
 
-_In a lerna repo_
+### In a lerna repo
+
 /package.json
 
 ```
