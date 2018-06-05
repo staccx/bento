@@ -1,12 +1,15 @@
 {
+  "extends": "@staccx",
   "presets": [
-    ["env", {
-      "modules": false
-    }],
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
     "stage-0",
     "react"
   ],
-  "plugins": [
-    "babel-plugin-styled-components"
-  ]
+  "plugins": ["babel-plugin-styled-components"]
 }
+

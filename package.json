@@ -17,25 +17,11 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/stacc-flow/bento#readme",
   "description": "",
-  "workspaces": ["packages/**/*"],
+  "workspaces": [
+    "packages/**/*"
+  ],
   "devDependencies": {
-    "babel-eslint": "^8.2.2",
-    "eslint": "^4.18.2",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-config-standard-jsx": "^5.0.0",
-    "eslint-config-standard-react": "^6.0.0",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-react": "^7.7.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "husky": "^0.14.3",
-    "lerna": "^2.8.0",
-    "prettier": "^1.11.1",
-    "prettier-eslint-cli": "^4.7.1",
-    "standard": "^11.0.0"
+    "@staccx/eslint-config": "^4.13.4"
   },
   "resolutions": {
     "jest": "^22.4.3",

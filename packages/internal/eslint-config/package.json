@@ -1,0 +1,33 @@
+{
+  "name": "@staccx/eslint-config",
+  "version": "4.13.4",
+  "description": "JavaScript linting setup for @staccx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "StaccX",
+  "license": "UNLICENCED",
+  "publishConfig": {
+    "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  },
+  "peerDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard-jsx": "^5.0.0",
+    "eslint-config-standard-react": "^6.0.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint": "^4.18.2",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.2",
+    "prettier-eslint-cli": "^4.7.1",
+    "prettier": "^1.10.2",
+    "standard": "^10.0.3"
+  }
+}
