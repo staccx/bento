@@ -19,3 +19,44 @@ Create .prettierrc
   "semi": false
 }
 ```
+
+### Precommit linting
+
+This package includes dependencies to [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky). To run linting of staged files precommit you need to set this up.
+
+Example package.json, see [lint-staged](https://github.com/okonet/lint-staged) for other options.
+
+```
+"scripts": {
+  "precommit": "lint-staged"
+},
+"lint-staged": {
+  "*.js": [
+    "eslint",
+    "git add"
+  ]
+}
+```
+
+_In a lerna repo_
+/package.json
+
+```
+"scripts": {
+  "precommit": "lerna run --concurrency 1 --stream precommit",
+}
+```
+
+/packages/my-package/package.json
+
+```
+"scripts": {
+  "precommit": "lint-staged",
+},
+"lint-staged": {
+  "*.js": [
+    "eslint",
+    "git add"
+  ]
+}
+```
