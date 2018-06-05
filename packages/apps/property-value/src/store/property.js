@@ -20,7 +20,6 @@ export const getStreetViewImageUrl = (location, size) =>
     location.lng
   }&size=${[size, size].join("x")}`
 
-
 const mapAddressResults = result =>
   result.json.results
     .map(result => ({
@@ -33,11 +32,13 @@ const mapAddressResults = result =>
 class Property {
   @observable property = null
 
-  @action findPropertyByNumner = async gardNr => {
+  @action
+  findPropertyByNumner = async gardNr => {
     // TODO
   }
 
-  @action findPropertyByAdress = async address => {
+  @action
+  findPropertyByAdress = async address => {
     const addressInfo = await this.getAddressInfo(address)
     this.property = await this.getProperty(addressInfo)
   }
