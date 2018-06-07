@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Downshift from "downshift"
-import { multiplyPixelValue } from "@staccx/math"
 import { ScaleIn } from "@staccx/animations"
 import Label from "../Label/Label"
 import Input from "../Input/Input"
@@ -34,7 +33,7 @@ export const SelectWrapper = styled.div`
   ${themify(SELECT_WRAPPER)};
 `
 
-export const SELECTED_WRAPPER = "SELECT_WRAPPER"
+export const SELECTED_WRAPPER = "SELECTED_WRAPPER"
 export const SelectedWrapper = styled.div`
   position: relative;
   ${themify(SELECTED_WRAPPER)};
@@ -43,10 +42,7 @@ export const SELECT_ICON_BUTTON = "SELECT_ICON_BUTTON"
 export const IconButton = styled.button`
   position: absolute;
   right: ${spacing.micro};
-  bottom: ${p => {
-    const value = targetSize.normal()(p)
-    return multiplyPixelValue(value, 0.5)
-  }};
+  bottom: 50%;
   width: ${targetSize.small};
   height: ${targetSize.small};
   border: 0;
