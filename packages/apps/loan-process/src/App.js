@@ -11,6 +11,7 @@ import SetAccountNumber from "./module/SetAccountNumber"
 import PresentOffer from "./module/PresentOffer"
 import EndScreen from "./module/EndScreen"
 import PersonalFinance from "./module/PersonalFinance"
+import Calculator from "./module/Calculator"
 
 class Content extends Component {
   render() {
@@ -27,6 +28,8 @@ class Content extends Component {
         <Offer /> */}
 
         <div>
+          <Calculator />
+          <hr style={{ margin: "64px 0" }} />
           <PersonalFinance onValidated={console.log} />
           <hr style={{ margin: "64px 0" }} />
           <EndScreen
