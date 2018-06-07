@@ -119,7 +119,6 @@ class Select extends React.PureComponent {
           toggleMenu,
           clearSelection
         }) => {
-          console.log(selectedItem)
           return (
             <div>
               <SelectWrapper className={className} variant={variant}>
