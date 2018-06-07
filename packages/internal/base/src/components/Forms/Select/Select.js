@@ -92,13 +92,18 @@ class Select extends React.PureComponent {
     const Selected = this.props.Selected || Option
     const Placeholder = this.props.Placeholder
 
-    if (this.props.mapKey) {
-      console.log(this.props.mapSelected)
+    const toString = item => {
+      if (!placeHolderLabel || item !== placeHolderLabel) {
+        return itemToString(item)
+      }
+
+      return placeHolderLabel
     }
+
     return (
       <Downshift
         onChange={onChange}
-        itemToString={itemToString}
+        itemToString={toString}
         selectedItem={this.state.selected}
         onSelect={this.handleSelect}
         onInputValueChange={this.setFilter}
@@ -140,9 +145,7 @@ class Select extends React.PureComponent {
                         variant={variant}
                         isSelected
                       >
-                        {selectedItem === this.props.placeholderLabel
-                          ? this.props.placeholderLabel
-                          : itemToString(selectedItem)}
+                        {toString(selectedItem)}
                       </Selected>
                     )}
                     {this.props.combobox ? (
@@ -212,9 +215,7 @@ class Select extends React.PureComponent {
                             data={item}
                             {...getItemProps({ item })}
                           >
-                            <strong>
-                              {itemToString ? itemToString(item) : item}
-                            </strong>
+                            <strong>{toString(item)}</strong>
                           </Option>
                         )
                       })}
