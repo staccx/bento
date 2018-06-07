@@ -33,7 +33,7 @@ export const ButtonStyling = registerStyle(
       color: ${color.primary};
       padding: 0;
       min-width: ${targetSize.normal};
-      border: 1px solid ${color.white};
+      border: 1px solid transparent;
       min-height: 42px;
 
       > svg {

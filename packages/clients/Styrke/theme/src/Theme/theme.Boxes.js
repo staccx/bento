@@ -3,9 +3,9 @@ import { color, spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
 import { BoxStyles } from "@staccx/base"
 
 const subtleBox = css`
-  padding: ${spacing.small};
   border-radius: 0;
   background-color: ${color.bgGray};
+  ${p => p.size === "large" && `padding: ${spacing("medium")(p)}`};
 `
 
 export const BoxStyling = registerStyle(

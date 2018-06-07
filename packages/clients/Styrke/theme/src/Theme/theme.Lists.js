@@ -71,6 +71,10 @@ export const SplitListItemStyling = registerStyle(
           flex-basis: 100%;
         }
       `};
+    `,
+    flush: css`
+      padding-left: 0;
+      padding-right: 0;
     `
   },
   SplitListItemStyles.SPLIT_LIST

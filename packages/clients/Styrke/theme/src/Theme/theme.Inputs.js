@@ -28,6 +28,7 @@ export const SelectSelectedStyling = registerStyle(
     loanOffer: css`
       border-color: transparent;
       padding-right: ${spacing.mediumPlus};
+      background-color: transparent;
 
       &:hover,
       &:active,
