@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Button, Heading, Wrapper } from "@staccx/base"
+import { Button, Heading, Wrapper, Text } from "@staccx/base"
 import { ThemeProxyProvider } from "@staccx/theme"
 import theme from "./theme.js"
 import LanguageProvider from "./Components/LanguageProvider"
@@ -34,7 +34,9 @@ class App extends Component {
       <ThemeProxyProvider theme={theme}>
         <LanguageProvider {...this.state} setLanguage={this.setLanguage}>
           <Wrapper size={"medium"}>
-            <TranslatedText i18nKey={"HELLO"} />
+            <Text>
+              <TranslatedText i18nKey={"HELLO"} />
+            </Text>
             <TranslatedText i18nKey={"HELLO"}>
               {value => <Heading>{value}</Heading>}
             </TranslatedText>

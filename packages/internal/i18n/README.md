@@ -1,6 +1,5 @@
 # Stacc X i18n
 
-
 ## Install
 
 `yarn add @staccx/i18n`
@@ -8,41 +7,41 @@
 ## Usage
 
 ### LanguageProvider
+
 ```jsx
 import React, { Component } from "react"
 
 import { LanguageProvider } from "@staccx/i18n"
 
 const i18nConfig = {
-     texts: {
-       HELLO: {
-         nb: "Heisann",
-         en: "Hello"
-       }
-     },
-     language: "en",
-     languages: ["nb", "en"]
+  texts: {
+    HELLO: {
+      nb: "Heisann",
+      en: "Hello"
     }
+  },
+  language: "en",
+  languages: ["nb", "en"]
+}
 
 class App extends Component {
   render() {
-    return (
-    <LanguageProvider {...i18nConfig}>
-    ...your app
-    </LanguageProvider>
-    )
+    return <LanguageProvider {...i18nConfig}>...your app</LanguageProvider>
   }
 }
 ```
 
 ### TranslatedText
-```jsx
+
+```js
 import React, { Component } from "react"
 
 import { TranslatedText } from "@staccx/i18n"
 
 //inside a render
-<TranslatedText i18nKey="HELLO" />
+<p>
+    <TranslatedText i18nKey="HELLO" />
+</p>
 
 //Or use renderprop
 <TranslatedText i18nKey="HELLO">
@@ -54,6 +53,7 @@ import { TranslatedText } from "@staccx/i18n"
 ```
 
 ### LanguageSettings
+
 ```jsx
 import React, { Component } from "react"
 

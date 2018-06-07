@@ -1,11 +1,10 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { Text } from "@staccx/base"
 import { Consumer } from "./context"
 
 class TranslatedText extends React.Component {
   render() {
-    const { i18nKey, children, ...otherProps } = this.props
+    const { i18nKey, children } = this.props
     return (
       <Consumer>
         {({ texts, language }) => {
@@ -31,7 +30,7 @@ class TranslatedText extends React.Component {
           if (children) {
             return children(value)
           }
-          return <Text {...otherProps}>{value}</Text>
+          return value
         }}
       </Consumer>
     )
