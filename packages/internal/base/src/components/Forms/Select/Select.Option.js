@@ -1,5 +1,6 @@
 import React from "react"
-import styled from "styled-components"
+import PropTypes from "prop-types"
+import styled, { css } from "styled-components"
 import {
   targetSize,
   spacing,
@@ -13,7 +14,6 @@ const OptionContainer = styled.div`
   width: 100%;
   min-height: ${targetSize.normal};
   margin: 0 auto;
-  border-bottom: 1px solid ${color.line};
   padding: ${spacing.tiny()} ${spacing.small()};
   text-align: left;
   font-family: ${fontFamily.body()};
@@ -22,25 +22,42 @@ const OptionContainer = styled.div`
   transition: border-color 0.2s ease-out;
   display: flex;
   align-items: center;
+  overflow: hidden;
 
+  ${p =>
+    p.isSelected &&
+    css`
+      padding-right: ${spacing("mediumPlus")(p)};
+      white-space: nowrap;
+
+      > div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    `};
   &:hover,
   &:focus,
   &:active {
     outline: none;
     background-color: ${color.subtleHover};
   }
-
-  &:last-child {
-    border-bottom-width: 0;
-  }
 `
 
-const SelectOption = ({ children, ...restProps }) => {
-  return <OptionContainer {...restProps}>{children}</OptionContainer>
+const SelectOption = ({ children, isSelected, ...restProps }) => {
+  return (
+    <OptionContainer isSelected={isSelected} {...restProps}>
+      <div>{children}</div>
+    </OptionContainer>
+  )
+}
+
+SelectOption.defaultProps = {
+  isSelected: false
 }
 
 SelectOption.propTypes = {
-  children: themeProps.children.isRequired
+  children: themeProps.children.isRequired,
+  isSelected: PropTypes.bool
 }
 
 export default SelectOption

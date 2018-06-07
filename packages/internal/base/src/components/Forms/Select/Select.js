@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import Downshift from "downshift"
 import { ScaleIn } from "@staccx/animations"
 import Label from "../Label/Label"
@@ -11,59 +11,11 @@ import {
   color,
   spacing,
   targetSize,
+  borderRadius,
   ThemeComponent,
   themify
 } from "@staccx/theme"
 import SelectOption from "./Select.Option"
-
-export const SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER =
-  "SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER"
-export const DefaultOptionElementWrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  border: 1px solid ${color.line};
-  background-color: ${color.white};
-  border-top-width: 0;,
-  ${themify(SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER)}
-`
-
-export const SELECT_WRAPPER = "SELECT_WRAPPER"
-export const SelectWrapper = styled.div`
-  position: relative;
-  ${themify(SELECT_WRAPPER)};
-`
-
-export const SELECTED_WRAPPER = "SELECTED_WRAPPER"
-export const SelectedWrapper = styled.div`
-  position: relative;
-  ${themify(SELECTED_WRAPPER)};
-`
-export const SELECT_ICON_BUTTON = "SELECT_ICON_BUTTON"
-export const IconButton = styled.button`
-  position: absolute;
-  right: ${spacing.micro};
-  bottom: 50%;
-  width: ${targetSize.small};
-  height: ${targetSize.small};
-  border: 0;
-  padding: 0 ${spacing.tiny};
-  text-align: center;
-  background-color: transparent;
-  fill: ${color.gray};
-  transform: translateY(50%);
-  transition: fill 0.2s ease;
-
-  &:active,
-  &:hover,
-  &:focus {
-    outline: none;
-
-    svg {
-      fill: ${color.primary};
-    }
-  }
-  ${themify(SELECT_ICON_BUTTON)};
-`
 
 export const COMPONENT_SELECT_CARET_ICON = "COMPONENT_SELECT_CARET_ICON"
 const CaretComp = ({ ...props }) => (
@@ -96,12 +48,13 @@ class Select extends React.PureComponent {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      defaultSelectedItem: !this.props.combobox ? this.props.items[0] : null,
       filter: null,
       selected: this.props.selectedItem
         ? this.props.selectedItem
         : !this.props.combobox
-          ? this.props.items[0]
+          ? this.props.placeHolderLabel
+            ? this.props.placeHolderLabel
+            : this.props.items[0]
           : null
     }
 
@@ -161,6 +114,7 @@ class Select extends React.PureComponent {
           toggleMenu,
           clearSelection
         }) => {
+          console.log(selectedItem)
           return (
             <div>
               <SelectWrapper className={className} variant={variant}>
@@ -168,7 +122,7 @@ class Select extends React.PureComponent {
                   <Label variant={variant}>{this.props.label}</Label>
                 )}
                 {selectedItem ? (
-                  <SelectedWrapper variant={variant}>
+                  <SelectedWrapper variant={variant} isSelected>
                     {this.props.renderSelected ? (
                       this.props.renderSelected({
                         selectedItem,
@@ -184,8 +138,11 @@ class Select extends React.PureComponent {
                         inputProps={{ ...getInputProps() }}
                         toggleMenu={toggleMenu}
                         variant={variant}
+                        isSelected
                       >
-                        {itemToString(selectedItem)}
+                        {selectedItem === this.props.placeholderLabel
+                          ? this.props.placeholderLabel
+                          : itemToString(selectedItem)}
                       </Selected>
                     )}
                     {this.props.combobox ? (
@@ -205,7 +162,10 @@ class Select extends React.PureComponent {
                     )}
                   </SelectedWrapper>
                 ) : (
-                  <SelectedWrapper variant={variant}>
+                  <SelectedWrapper
+                    variant={variant}
+                    combobox={this.props.combobox}
+                  >
                     {this.props.combobox ? (
                       <Placeholder
                         {...getInputProps({
@@ -223,6 +183,7 @@ class Select extends React.PureComponent {
                         inputProps={{ ...getInputProps() }}
                         toggleMenu={toggleMenu}
                         variant={variant}
+                        isSelected
                       />
                     )}
                     <IconButton onClick={() => toggleMenu()} variant={variant}>
@@ -268,6 +229,66 @@ class Select extends React.PureComponent {
   }
 }
 
+export const SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER =
+  "SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER"
+export const DefaultOptionElementWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  border: 1px solid ${color.line};
+  background-color: ${color.white};
+  border-top-width: 0;
+  z-index: 10;
+
+  > *:not(:last-child) {
+    border-bottom: 1px solid ${color.line};
+  }
+  ${themify(SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER)};
+`
+
+export const SELECT_WRAPPER = "SELECT_WRAPPER"
+export const SelectWrapper = styled.div`
+  position: relative;
+  ${themify(SELECT_WRAPPER)};
+`
+
+export const SELECTED_WRAPPER = "SELECTED_WRAPPER"
+export const SelectedWrapper = styled.div`
+  position: relative;
+  ${p =>
+    !p.combobox &&
+    css`
+      border: 1px solid ${color.line};
+      border-radius: ${borderRadius};
+    `};
+  ${themify(SELECTED_WRAPPER)};
+`
+export const SELECT_ICON_BUTTON = "SELECT_ICON_BUTTON"
+export const IconButton = styled.button`
+  position: absolute;
+  right: ${spacing.micro};
+  bottom: 50%;
+  width: ${targetSize.small};
+  height: ${targetSize.small};
+  border: 0;
+  padding: 0 ${spacing.tiny};
+  text-align: center;
+  background-color: transparent;
+  fill: ${color.gray};
+  transform: translateY(50%);
+  transition: fill 0.2s ease;
+
+  &:active,
+  &:hover,
+  &:focus {
+    outline: none;
+
+    svg {
+      fill: ${color.primary};
+    }
+  }
+  ${themify(SELECT_ICON_BUTTON)};
+`
+
 Select.propTypes = {
   Option: PropTypes.any,
   OptionsWrapper: PropTypes.any,
@@ -276,7 +297,6 @@ Select.propTypes = {
   children: PropTypes.func,
   className: PropTypes.string,
   combobox: PropTypes.bool,
-  defaultSelectedItem: PropTypes.any,
   filterProp: PropTypes.string,
   itemToKey: PropTypes.any,
   itemToString: PropTypes.func,
@@ -296,7 +316,6 @@ Select.defaultProps = {
   OptionsWrapper: DefaultOptionElementWrapper,
   Placeholder: Input,
   combobox: false,
-  defaultSelectedItem: null,
   itemToKey: item => item,
   itemToString: item => item
 }
