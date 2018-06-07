@@ -9,7 +9,6 @@ import {
   List,
   Odometer,
   Select,
-  SelectOption,
   Wrapper,
   Layout,
   LayoutItem
@@ -133,11 +132,6 @@ class PresentOffer extends React.Component {
                             <OfferTableDurationsItem>
                               <Select
                                 id={"select-loan-duration"}
-                                selectedItem={{
-                                  text: `${this.state.selectedDuration}`,
-                                  value: "mnd"
-                                }}
-                                nullable={false}
                                 placeHolderLabel={"Velg…"}
                                 onChange={value =>
                                   this.handleChangeLoanDuration(
@@ -147,16 +141,9 @@ class PresentOffer extends React.Component {
                                   )
                                 }
                                 variant="loanOffer"
-                              >
-                                {this.props.potentialDurations.map(item => (
-                                  <SelectOption
-                                    key={item}
-                                    data={{ text: item, value: "mnd" }}
-                                  >
-                                    <strong>{item} mnd.</strong>
-                                  </SelectOption>
-                                ))}
-                              </Select>
+                                items={this.props.potentialDurations}
+                                itemToString={item => item + " mnd."}
+                              />
                             </OfferTableDurationsItem>
                           </OfferTableDurations>
                         </OfferTableData>
