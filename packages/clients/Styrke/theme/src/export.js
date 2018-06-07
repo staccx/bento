@@ -56,7 +56,7 @@ const color = {
   bgBlueDark: "#CEDEE0",
   primary: "#3c61e7",
   primaryDark: "#1a40c5",
-  gray: "#767676",
+  gray: "#646464",
   text: "#333",
   white: "#fff",
   red: "#E06666",

@@ -1,6 +1,5 @@
 import PropTypes from "prop-types"
 import React from "react"
-import styled from "styled-components"
 import {
   Box,
   Expand,
@@ -9,16 +8,10 @@ import {
   List,
   Wrapper
 } from "@staccx/base"
-import { spacing } from "@staccx/theme"
 import { formatCurrency, formatName } from "@staccx/formatting"
 import { getPaymentPlan } from "@staccx/payment-plan"
 import SignDocument from "./Sign.Document"
-import {
-  OfferTable,
-  OfferTableData,
-  OfferTableText,
-  OfferTableTotal
-} from "./replace/Styles.OfferTable"
+import OfferTable from "./OfferTable"
 
 // const SIGN_ORDER_STATUS_PENDING = "pending"
 
@@ -77,59 +70,23 @@ class Sign extends React.Component {
               {this.props.loanDetailsText +
                 ` ${formatCurrency(this.props.loanAmount)}`}
             </span>
-            <Details>
-              <Box variant="expandLeadContent">
-                {/* TODO: vise om det er lån eller kreditt☝️ */}
-                <OfferTable>
-                  <tbody>
-                    <tr>
-                      <OfferTableText>
-                        {this.props.loanOfferText}
-                      </OfferTableText>
-                      <OfferTableData>
-                        {formatCurrency(this.props.loanAmount)}
-                      </OfferTableData>
-                    </tr>
-                    <tr>
-                      <OfferTableText>
-                        {this.props.loanDurationText}
-                      </OfferTableText>
-                      <OfferTableData>
-                        {this.props.repaymentPeriod} {this.props.monthSuffix}
-                      </OfferTableData>
-                    </tr>
-                    <tr>
-                      <OfferTableText>
-                        {this.props.monthlyFeeText}
-                      </OfferTableText>
-                      <OfferTableData>
-                        {this.props.interestRate}%
-                      </OfferTableData>
-                    </tr>
-                    <tr>
-                      <OfferTableText>{this.props.paybackText}</OfferTableText>
-                      <OfferTableData>
-                        {formatCurrency(
-                          plan.reduce(
-                            (acc, curr) => acc + curr.monthlyPayment,
-                            0
-                          )
-                        )}
-                      </OfferTableData>
-                    </tr>
-                    <OfferTableTotal>
-                      <OfferTableText>
-                        {this.props.payMonthlyText}
-                      </OfferTableText>
-                      <OfferTableData>
-                        {formatCurrency(term.monthlyPayment)}
-                      </OfferTableData>
-                    </OfferTableTotal>
-                  </tbody>
-                  {/* TODO: ☝️ lokalisering + tall fra API */}
-                </OfferTable>
-              </Box>
-            </Details>
+            {/* TODO: vise om det er lån eller kreditt☝️ */}
+            <OfferTable
+              loanOfferText={this.props.loanOfferText}
+              loanAmount={formatCurrency(this.props.loanAmount)}
+              loanDurationText={this.props.loanDurationText}
+              loanRepayment={
+                this.props.repaymentPeriod + this.props.monthSuffix
+              }
+              monthlyFeeText={this.props.monthlyFeeText}
+              interestRate={this.props.interestRate}
+              paybackText={this.props.paybackText}
+              paybackAmount={formatCurrency(
+                plan.reduce((acc, curr) => acc + curr.monthlyPayment, 0)
+              )}
+              payMonthlyText={this.props.payMonthlyText}
+              payMonthlyAmount={formatCurrency(term.monthlyPayment)}
+            />
           </Expand>
         </Box>
         {/* Render users own documents */}
@@ -220,10 +177,6 @@ class Sign extends React.Component {
     )
   }
 }
-
-const Details = styled.div`
-  margin-top: ${spacing.medium};
-`
 
 export default Sign
 

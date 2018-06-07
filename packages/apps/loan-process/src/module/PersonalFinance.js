@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { withFormik } from "formik"
-import styled from "styled-components"
 import {
   Wrapper,
   Input,
@@ -11,19 +10,13 @@ import {
   SelectSimple,
   CurrencyInput,
   Button,
-  List,
   Box,
   Heading,
   Layout,
   LayoutItem
 } from "@staccx/base"
 import ValidationError from "./replace/ValidationError"
-import Tile from "./replace/Tile"
-import { spacing, color } from "@staccx/theme"
-import relationshipStatus, {
-  hasPartner,
-  RELATIONSHIP_STATUS_MARRIED
-} from "./constants/relationshipStatus"
+import relationshipStatus, { hasPartner } from "./constants/relationshipStatus"
 const Yup = require("yup")
 
 const Form = props => {
@@ -80,9 +73,7 @@ const Form = props => {
                   )}
                 </LayoutItem>
                 <LayoutItem>
-                  <Label variant="radioPill">
-                    <span>{props.peopleUnder18Text}</span>
-                  </Label>
+                  <Label variant="radioPill">{props.peopleUnder18Text}</Label>
                   <RadioPill
                     group={"numberOfChildren"}
                     onChange={handleChange}

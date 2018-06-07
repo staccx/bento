@@ -9,6 +9,7 @@ import { default as Sign } from "./module/Sign"
 // import { default as TakesTime } from "./module/TakesTime"
 import { default as EndScreen } from "./module/EndScreen"
 import { default as PersonalFinance } from "./module/PersonalFinance"
+import { default as OfferTable } from "./module/OfferTable"
 
 export {
   PresentOffer,
@@ -17,5 +18,6 @@ export {
   RegisterSigners,
   Sign,
   EndScreen,
-  PersonalFinance
+  PersonalFinance,
+  OfferTable
 }
