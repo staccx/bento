@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
 import {
   Box,
   Button,
@@ -16,7 +15,14 @@ import {
 import { formatCurrency } from "@staccx/formatting"
 import { getPaymentPlan } from "@staccx/payment-plan"
 import PickLoanSum from "./PresentOffer.PickLoanSum"
-import { color, spacing } from "@staccx/theme"
+import {
+  OfferTable,
+  OfferTableData,
+  OfferTableDurations,
+  OfferTableDurationsItem,
+  OfferTableText,
+  OfferTableTotal
+} from "./replace/Styles"
 
 class PresentOffer extends React.Component {
   constructor(props) {
@@ -242,39 +248,6 @@ class PresentOffer extends React.Component {
     )
   }
 }
-
-const OfferTable = styled.table`
-  width: 100%;
-  table-layout: fixed;
-
-  tr:last-child td {
-    border-bottom: 0;
-  }
-`
-
-const OfferTableText = styled.td`
-  padding: ${spacing.tiny} 0;
-  border-bottom: 1px solid ${color.line};
-  text-align: left;
-`
-
-const OfferTableData = styled(OfferTableText)`
-  text-align: right;
-`
-
-const OfferTableTotal = styled.tr`
-  font-weight: bold;
-`
-const OfferTableDurations = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`
-
-const OfferTableDurationsItem = styled.div`
-  &:not(:last-child) {
-    margin-right: ${spacing.small};
-  }
-`
 
 PresentOffer.propTypes = {
   acceptOfferButtonText: PropTypes.string,

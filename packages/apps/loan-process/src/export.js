@@ -6,6 +6,7 @@ import { default as ProvideAdditionalInfo } from "./module/ProvideAdditionalInfo
 import { default as RegisterSigners } from "./module/RegisterSigners"
 // import { default as LoanRejected } from "./module/Rejection"
 import { default as Sign } from "./module/Sign"
+import { default as Calculator } from "./module/Calculator"
 // import { default as TakesTime } from "./module/TakesTime"
 import { default as EndScreen } from "./module/EndScreen"
 import { default as PersonalFinance } from "./module/PersonalFinance"
@@ -19,5 +20,6 @@ export {
   Sign,
   EndScreen,
   PersonalFinance,
-  OfferTable
+  OfferTable,
+  Calculator
 }

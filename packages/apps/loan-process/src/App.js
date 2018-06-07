@@ -28,7 +28,7 @@ class Content extends Component {
         <Offer /> */}
 
         <div>
-          <Calculator />
+          <Calculator onValidated={console.log} />
           <hr style={{ margin: "64px 0" }} />
           <PersonalFinance onValidated={console.log} />
           <hr style={{ margin: "64px 0" }} />

@@ -1,3 +1,1 @@
-export default value => {
-  return value.replace(/\s/g, "")
-}
+export default value => (value ? value.replace(/\s/g, "") : null)
