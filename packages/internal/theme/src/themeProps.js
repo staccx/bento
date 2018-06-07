@@ -15,6 +15,7 @@ export const themeProps = {
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
     PropTypes.string,
+    PropTypes.number,
     PropTypes.array
   ])
 }
