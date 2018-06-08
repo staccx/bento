@@ -11,7 +11,8 @@ const Layout = ({
   columnGap,
   rowGap,
   paddingTop,
-  paddingBottom
+  paddingBottom,
+  ...restProps
 }) => (
   <LayoutContainer
     className={className}
@@ -21,6 +22,7 @@ const Layout = ({
     rowGap={rowGap}
     paddingTop={paddingTop}
     paddingBottom={paddingBottom}
+    {...restProps}
   >
     {children}
   </LayoutContainer>

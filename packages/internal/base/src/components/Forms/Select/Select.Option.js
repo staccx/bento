@@ -7,9 +7,19 @@ import {
   fontFamily,
   font,
   color,
-  themeProps
+  themeProps,
+  themify
 } from "@staccx/theme"
 
+const SelectOption = ({ children, isSelected, ...restProps }) => {
+  return (
+    <OptionContainer isSelected={isSelected} {...restProps}>
+      <div>{children}</div>
+    </OptionContainer>
+  )
+}
+
+export const SELECT_DEFAULT_OPTION = "SELECT_DEFAULT_OPTION"
 const OptionContainer = styled.div`
   width: 100%;
   min-height: ${targetSize.normal};
@@ -18,7 +28,7 @@ const OptionContainer = styled.div`
   text-align: left;
   font-family: ${fontFamily.body()};
   font-size: ${font.input};
-  pointer: cursor;
+  cursor: pointer;
   transition: border-color 0.2s ease-out;
   display: flex;
   align-items: center;
@@ -41,15 +51,8 @@ const OptionContainer = styled.div`
     outline: none;
     background-color: ${color.subtleHover};
   }
+  ${themify(SELECT_DEFAULT_OPTION)};
 `
-
-const SelectOption = ({ children, isSelected, ...restProps }) => {
-  return (
-    <OptionContainer isSelected={isSelected} {...restProps}>
-      <div>{children}</div>
-    </OptionContainer>
-  )
-}
 
 SelectOption.defaultProps = {
   isSelected: false

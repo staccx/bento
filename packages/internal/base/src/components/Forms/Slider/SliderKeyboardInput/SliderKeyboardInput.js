@@ -3,16 +3,10 @@ import React from "react"
 import styled from "styled-components"
 import { linear } from "easing-utils"
 import { inverseLerp, clamp } from "@staccx/math"
+import Label from "../../Label/Label"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
-import {
-  targetSize,
-  spacing,
-  fontFamily,
-  font,
-  color,
-  themify
-} from "@staccx/theme"
+import { targetSize, fontFamily, font, color, themify } from "@staccx/theme"
 
 const removeSpaces = value => value.replace(/\s/g, "")
 
@@ -136,9 +130,9 @@ class SliderKeyboardInput extends React.Component {
         variant={variant}
         ignoreBase={ignoreBase}
       >
-        <HiddenLabel htmlFor={name} variant={variant}>
+        <Label htmlFor={name} variant={variant}>
           {label}
-        </HiddenLabel>
+        </Label>
         <SliderInput
           type="text"
           name={`${name}-keyboard`}
@@ -176,23 +170,11 @@ const SliderWrapper = styled.div`
   ${themify(SLIDER_KEYBOARD_WRAPPER)};
 `
 
-const HiddenLabel = styled.label`
-  border: 0 !important;
-  clip: rect(0 0 0 0) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
-`
-
 export const SLIDER_KEYBOARD_INPUT = "SLIDER_KEYBOARD_INPUT"
 const SliderInput = styled(Input)`
   background-color: transparent;
   border: 0;
   min-height: ${targetSize.normal};
-  margin-bottom: ${spacing.medium()};
   max-width: 100%;
   -moz-appearance: textfield;
   outline: none;

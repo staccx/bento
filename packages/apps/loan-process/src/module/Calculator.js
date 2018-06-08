@@ -11,21 +11,19 @@ import {
   Button,
   Label,
   Odometer,
-  Text
+  Text,
+  Wrapper,
+  Heading,
+  Layout,
+  LayoutItem,
+  List,
+  SplitListItem
 } from "@staccx/base"
 import { createCurrencyMask } from "@staccx/formatting"
 import { getPaymentPlan } from "@staccx/payment-plan"
 import { throttle } from "@staccx/utils"
 import { easeInOutBack } from "easing-utils"
 import { Field, Formik } from "formik"
-import {
-  DetailsHeading,
-  LinedList,
-  LinedListItem,
-  OfferTable,
-  OfferTableText,
-  OfferTableData
-} from "./replace/Styles"
 import ValidationError from "./replace/ValidationError"
 const Yup = require("yup")
 
@@ -106,233 +104,263 @@ class Calculator extends React.Component {
           errors,
           setFieldValue
         }) => (
-          <form onSubmit={handleSubmit}>
-            <Box variant="actionBox">
-              <Box variant="flexHalves">
-                <Box left>
-                  <DetailsHeading>{this.props.headingText}</DetailsHeading>
-                  <Field
-                    name={`value`}
-                    render={({ field }) => {
-                      const { onChange, ...rest } = field
-                      return (
-                        <SliderKeyboardInput
-                          label={this.props.valueLabel}
-                          max={this.props.maxValue}
-                          min={this.props.minValue}
-                          step={5000}
-                          onChange={value => {
-                            this.calculate(value, this.state.terms)
-                            setFieldValue("value", value)
-                          }}
-                          {...rest}
-                          easingFunction={easeInOutBack}
-                          mask={createCurrencyMask(field.value)}
+          <Wrapper size="large" breakout>
+            <Heading level={2} variant="stepHeading">
+              {this.props.headingText}
+            </Heading>
+            <form onSubmit={handleSubmit}>
+              <Box variant="actionBox">
+                <Box variant="largeForm">
+                  <div>
+                    <Layout
+                      variant="formElements"
+                      paddingTop="large"
+                      inCalculator="left"
+                    >
+                      <LayoutItem>
+                        <Layout variant="formElements" inCalculator="left">
+                          <LayoutItem>
+                            <Field
+                              name={`value`}
+                              render={({ field }) => {
+                                const { onChange, ...rest } = field
+                                return (
+                                  <SliderKeyboardInput
+                                    label={this.props.valueLabel}
+                                    max={this.props.maxValue}
+                                    min={this.props.minValue}
+                                    step={5000}
+                                    onChange={value => {
+                                      this.calculate(value, this.state.terms)
+                                      setFieldValue("value", value)
+                                    }}
+                                    {...rest}
+                                    easingFunction={easeInOutBack}
+                                    mask={createCurrencyMask(field.value)}
+                                  />
+                                )
+                              }}
+                            />
+                          </LayoutItem>
+                          <LayoutItem>
+                            <Field
+                              name={`terms`}
+                              render={({ field }) => {
+                                const { onChange, ...rest } = field
+                                return (
+                                  <Box
+                                    variant="loanDurationContainer"
+                                    size="flush"
+                                  >
+                                    <Label
+                                      htmlFor="select-loan-duration"
+                                      variant="loanDuration"
+                                    >
+                                      {this.props.loanDurationLabel}
+                                    </Label>
+                                    <Select
+                                      items={this.props.termValues}
+                                      id={"select-loan-duration"}
+                                      itemToString={item => item + " mnd"}
+                                      onChange={item => {
+                                        this.calculate(this.state.value, item)
+                                        setFieldValue("terms", item)
+                                      }}
+                                      {...rest}
+                                    />
+                                  </Box>
+                                )
+                              }}
+                            />
+                          </LayoutItem>
+                        </Layout>
+                      </LayoutItem>
+                      <LayoutItem>
+                        {this.state.term && (
+                          <Box variant="loanTerms">
+                            <List>
+                              {this.props.showMonthlyFees && (
+                                <SplitListItem>
+                                  <span>{this.props.monthlyFeesText}</span>
+                                  <span>
+                                    <Odometer
+                                      number={this.state.term.monthlyFees}
+                                      size={14}
+                                      seperatorSteps={3}
+                                    />
+                                  </span>
+                                </SplitListItem>
+                              )}
+                              {this.props.showDownpayment && (
+                                <SplitListItem>
+                                  <span>
+                                    {this.props.downPaymentPerMonthText}
+                                  </span>
+                                  <span>
+                                    <Odometer
+                                      number={this.state.term.installment}
+                                      size={14}
+                                      seperatorSteps={3}
+                                    />
+                                  </span>
+                                </SplitListItem>
+                              )}
+                              {this.props.showTotalMonthly && (
+                                <SplitListItem>
+                                  <span>
+                                    <Text bold>
+                                      {this.props.totalMonthlyText}
+                                    </Text>
+                                  </span>
+                                  <span>
+                                    <Text>
+                                      <Odometer
+                                        number={this.state.term.monthlyPayment}
+                                        size={14}
+                                        seperatorSteps={3}
+                                      />
+                                    </Text>
+                                  </span>
+                                </SplitListItem>
+                              )}
+                            </List>
+                          </Box>
+                        )}
+                      </LayoutItem>
+                    </Layout>
+                  </div>
+                  <div>
+                    <Layout variant="formElements" inCalculator>
+                      <LayoutItem>
+                        <Field
+                          name={`name`}
+                          render={({ field }) => (
+                            <Input
+                              id={`name`}
+                              {...field}
+                              placeholder={this.props.namePlaceholder}
+                              label={this.props.nameLabel}
+                              autoFocus
+                            />
+                          )}
                         />
-                      )
-                    }}
-                  />
-                  <Field
-                    name={`terms`}
-                    render={({ field }) => {
-                      const { onChange, ...rest } = field
-                      return (
-                        <React.Fragment>
-                          <Label htmlFor="select-loan-duration">
-                            {this.props.loanDurationLabel}
-                          </Label>
-                          <Select
-                            items={this.props.termValues}
-                            id={"select-loan-duration"}
-                            itemToString={item => item + " mnd"}
-                            onChange={item => {
-                              this.calculate(this.state.value, item)
-                              setFieldValue("terms", item)
-                            }}
-                            {...rest}
-                          />
-                        </React.Fragment>
-                      )
-                    }}
-                  />
-                  {this.state.term && (
-                    <OfferTable>
-                      <tbody>
-                        {this.props.showMonthlyFees && (
-                          <tr>
-                            <OfferTableText>
-                              {this.props.monthlyFeesText}
-                            </OfferTableText>
-                            <OfferTableData>
-                              <Odometer
-                                number={this.state.term.monthlyFees}
-                                size={14}
-                                seperatorSteps={3}
+                        {touched.name &&
+                          errors.name && (
+                            <ValidationError>{errors.name}</ValidationError>
+                          )}
+                      </LayoutItem>
+                      <LayoutItem>
+                        <Field
+                          name={`company`}
+                          render={({ field }) => {
+                            const { onChange, ...props } = field
+                            return (
+                              <CompanyInput
+                                label={this.props.companyNameLabel}
+                                placeholder={this.props.companyNamePlaceholder}
+                                onSearch={this.props.companySearchFunc}
+                                mapItem={this.props.mapCompany}
+                                id="company"
+                                onSelect={value =>
+                                  setFieldValue("company", value)
+                                }
+                                {...props}
                               />
-                            </OfferTableData>
-                          </tr>
-                        )}
-                        {this.props.showDownpayment && (
-                          <tr>
-                            <OfferTableText>
-                              {this.props.downPaymentPerMonthText}
-                            </OfferTableText>
-                            <OfferTableData>
-                              <Odometer
-                                number={this.state.term.installment}
-                                size={14}
-                                seperatorSteps={3}
+                            )
+                          }}
+                        />
+                        {touched.company &&
+                          errors.company && (
+                            <ValidationError>{errors.company}</ValidationError>
+                          )}
+                      </LayoutItem>
+                      <LayoutItem>
+                        <Field
+                          name={`revenue`}
+                          render={({ field }) => (
+                            <CurrencyInput
+                              id={"revenue"}
+                              label={this.props.revenueLabel}
+                              placeholder={this.props.revenuePlaceholder}
+                              locale={"nb"}
+                              {...field}
+                            />
+                          )}
+                        />
+                        {touched.revenue &&
+                          errors.revenue && (
+                            <ValidationError>{errors.revenue}</ValidationError>
+                          )}
+                      </LayoutItem>
+                      <LayoutItem>
+                        <Field
+                          name={`email`}
+                          render={({ field }) => (
+                            <Input
+                              id={"email"}
+                              label={this.props.emailLabel}
+                              placeholder={this.props.emailPlaceholder}
+                              {...field}
+                            />
+                          )}
+                        />
+                        {touched.email &&
+                          errors.email && (
+                            <ValidationError>{errors.email}</ValidationError>
+                          )}
+                      </LayoutItem>
+                      <LayoutItem>
+                        <Field
+                          name={`phone`}
+                          render={({ field }) => (
+                            <PhoneInput
+                              label={this.props.phoneLabel}
+                              id={"phone"}
+                              placeholder={this.props.phonePlaceholder}
+                              {...field}
+                            />
+                          )}
+                        />
+                        {touched.phone &&
+                          errors.phone && (
+                            <ValidationError>{errors.phone}</ValidationError>
+                          )}
+                      </LayoutItem>
+                      <LayoutItem>
+                        <Field
+                          name={`purpose`}
+                          render={({ field }) => {
+                            const { name, value, onBlur } = field
+                            return (
+                              <Select
+                                items={this.props.loanPurposes}
+                                label={this.props.purposeLabel}
+                                placeHolderLabel={this.props.purposePlaceholder}
+                                name={name}
+                                value={value}
+                                onChange={item =>
+                                  setFieldValue("purpose", item)
+                                }
+                                onBlur={onBlur}
+                                variant="loanPurpose"
                               />
-                            </OfferTableData>
-                          </tr>
-                        )}
-                        {this.props.showTotalMonthly && (
-                          <tr>
-                            <OfferTableText>
-                              <Text bold>{this.props.totalMonthlyText}</Text>
-                            </OfferTableText>
-                            <OfferTableData>
-                              <Text>
-                                <Odometer
-                                  number={this.state.term.monthlyPayment}
-                                  size={14}
-                                  seperatorSteps={3}
-                                />
-                              </Text>
-                            </OfferTableData>
-                          </tr>
-                        )}
-                      </tbody>
-                    </OfferTable>
-                  )}
-                </Box>
-                <Box right>
-                  <LinedList>
-                    <LinedListItem>
-                      <Field
-                        name={`name`}
-                        render={({ field }) => (
-                          <Input
-                            id={`name`}
-                            {...field}
-                            placeholder={this.props.namePlaceholder}
-                            label={this.props.nameLabel}
-                            autoFocus
-                          />
-                        )}
-                      />
-                      {touched.name &&
-                        errors.name && (
-                          <ValidationError>{errors.name}</ValidationError>
-                        )}
-                    </LinedListItem>
-                    <LinedListItem>
-                      <Field
-                        name={`company`}
-                        render={({ field }) => {
-                          const { onChange, ...props } = field
-                          return (
-                            <CompanyInput
-                              label={this.props.companyNameLabel}
-                              placeholder={this.props.companyNamePlaceholder}
-                              onSearch={this.props.companySearchFunc}
-                              mapItem={this.props.mapCompany}
-                              id="company"
-                              onSelect={value =>
-                                setFieldValue("company", value)
-                              }
-                              {...props}
-                            />
-                          )
-                        }}
-                      />
-                      {touched.company &&
-                        errors.company && (
-                          <ValidationError>{errors.company}</ValidationError>
-                        )}
-                    </LinedListItem>
-                    <LinedListItem>
-                      <Field
-                        name={`revenue`}
-                        render={({ field }) => (
-                          <CurrencyInput
-                            id={"revenue"}
-                            label={this.props.revenueLabel}
-                            placeholder={this.props.revenuePlaceholder}
-                            locale={"nb"}
-                            {...field}
-                          />
-                        )}
-                      />
-                      {touched.revenue &&
-                        errors.revenue && (
-                          <ValidationError>{errors.revenue}</ValidationError>
-                        )}
-                    </LinedListItem>
-                    <LinedListItem>
-                      <Field
-                        name={`email`}
-                        render={({ field }) => (
-                          <Input
-                            id={"email"}
-                            label={this.props.emailLabel}
-                            placeholder={this.props.emailPlaceholder}
-                            {...field}
-                          />
-                        )}
-                      />
-                      {touched.email &&
-                        errors.email && (
-                          <ValidationError>{errors.email}</ValidationError>
-                        )}
-                    </LinedListItem>
-                    <LinedListItem>
-                      <Field
-                        name={`phone`}
-                        render={({ field }) => (
-                          <PhoneInput
-                            label={this.props.phoneLabel}
-                            id={"phone"}
-                            placeholder={this.props.phonePlaceholder}
-                            {...field}
-                          />
-                        )}
-                      />
-                      {touched.phone &&
-                        errors.phone && (
-                          <ValidationError>{errors.phone}</ValidationError>
-                        )}
-                    </LinedListItem>
-                    <LinedListItem>
-                      <Field
-                        name={`purpose`}
-                        render={({ field }) => {
-                          const { name, value, onBlur } = field
-                          return (
-                            <Select
-                              items={this.props.loanPurposes}
-                              placeHolderLabel={this.props.purposePlaceholder}
-                              name={name}
-                              value={value}
-                              onChange={item => setFieldValue("purpose", item)}
-                              onBlur={onBlur}
-                            />
-                          )
-                        }}
-                      />
-                      {touched.purpose &&
-                        errors.purpose && (
-                          <ValidationError>{errors.purpose}</ValidationError>
-                        )}
-                    </LinedListItem>
-                  </LinedList>
-                  {isValid && (
-                    <Button type={"submit"}>{this.props.buttonText}</Button>
-                  )}
+                            )
+                          }}
+                        />
+                        {touched.purpose &&
+                          errors.purpose && (
+                            <ValidationError>{errors.purpose}</ValidationError>
+                          )}
+                      </LayoutItem>
+                    </Layout>
+                    {isValid && (
+                      <Button type={"submit"}>{this.props.buttonText}</Button>
+                    )}
+                  </div>
                 </Box>
               </Box>
-            </Box>
-          </form>
+            </form>
+          </Wrapper>
         )}
       />
     )
@@ -386,7 +414,8 @@ Calculator.propTypes = {
   termFee: PropTypes.number,
   termValues: PropTypes.array,
   totalMonthlyText: PropTypes.string,
-  valueLabel: PropTypes.string
+  valueLabel: PropTypes.string,
+  purposeLabel: PropTypes.string
 }
 
 Calculator.defaultProps = {
@@ -417,5 +446,7 @@ Calculator.defaultProps = {
   termFee: 3000,
   termValues: [6, 12, 18, 24, 36],
   totalMonthlyText: "Totalt månedlig",
-  valueLabel: "Lånebeløp"
+  valueLabel: "Ønsket lånebeløp",
+  headingText: "Se hva lånet koster",
+  purposeLabel: "Hva skal lånet brukes til?"
 }

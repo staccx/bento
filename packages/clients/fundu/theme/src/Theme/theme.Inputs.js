@@ -9,7 +9,6 @@ import {
 import {
   InputStyles,
   LabelStyles,
-  SelectSelectedStyles,
   SelectStyles,
   RadioPillItemStyles,
   SelectSimpleStyles,
@@ -53,6 +52,9 @@ export const InputStyling = registerStyle(
 export const LabelStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: floatingLabel,
+    loanDuration: css`
+      padding: 0;
+    `,
     radioPill: css`
       display: block;
       padding-left: ${spacing.medium};
@@ -65,6 +67,9 @@ export const LabelStyling = registerStyle(
 
 export const SelectSelectedStyling = registerStyle(
   {
+    [VARIANT_DEFAULT]: css`
+      border-color: transparent;
+    `,
     loanOffer: css`
       border-color: transparent;
       padding-right: ${spacing.mediumPlus};
@@ -82,7 +87,7 @@ export const SelectSelectedStyling = registerStyle(
       }
     `
   },
-  SelectSelectedStyles.SELECT_SELECTED
+  SelectStyles.SELECTED_WRAPPER
 )
 
 export const SelectIconButtonStyling = registerStyle(
@@ -169,38 +174,15 @@ export const RadioPillItemStyling = registerStyle(
 export const SliderKeyboardWrapperStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: css`
-      input[type="text"] {
-        background-color: transparent;
-        border: 0;
-        border-bottom: 1px dashed ${color.line};
-        min-height: ${targetSize.normal};
-        margin-bottom: 24px;
+      max-width: 360px;
+      margin: 0 auto;
+
+      label {
+        display: block;
+        position: relative;
         text-align: center;
-        font-size: 40px;
-        width: 240px;
-        max-width: 100%;
-        -moz-appearance: textfield;
-        padding-bottom: ${spacing.small};
-        outline: none;
-
-        &::-webkit-inner-spin-button,
-        &::-webkit-outer-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
-
-        &:hover,
-        &:active,
-        &:focus,
-        &:-moz-ui-invalid,
-        &:invalid {
-          outline: none;
-          box-shadow: none;
-        }
-
-        &:disabled {
-          color: ${color.text};
-        }
+        top: auto;
+        left: auto;
       }
     `
   },
@@ -211,18 +193,18 @@ export const SliderInputStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: css`
       input[type="text"] {
-        background-color: transparent;
-        border: 0;
-        border-bottom: 1px dashed ${color.line};
+        min-width: 240px;
+        max-width: 100%;
         min-height: ${targetSize.normal};
         margin-bottom: 24px;
+        border-width: 0;
+        border-bottom: 1px dashed ${color.line};
+        padding: ${spacing.small} 0;
+        background-color: transparent;
         text-align: center;
         font-size: 40px;
-        width: 240px;
-        max-width: 100%;
-        -moz-appearance: textfield;
-        padding-bottom: ${spacing.small};
         outline: none;
+        -moz-appearance: textfield;
 
         &::-webkit-inner-spin-button,
         &::-webkit-outer-spin-button {

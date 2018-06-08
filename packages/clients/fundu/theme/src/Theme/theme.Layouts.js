@@ -21,16 +21,24 @@ export const LayoutStyling = registerStyle(
       }
     `,
     formElements: css`
-      border-top: 1px solid ${color.line};
+      ${p =>
+        !p.inCalculator &&
+        css`
+          border-top: 1px solid ${color("line")(p)};
+        `};
       grid-row-gap: 0;
 
       > * {
         position: relative;
       }
 
-      > *:not(:last-child) {
-        border-bottom: 1px solid ${color.line};
-      }
+      ${p =>
+        p.inCalculator !== "left" &&
+        css`
+          > *:not(:last-child) {
+            border-bottom: 1px solid ${color.line};
+          }
+        `};
     `
   },
   LayoutStyles.LAYOUT

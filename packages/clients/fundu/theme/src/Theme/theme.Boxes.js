@@ -151,6 +151,27 @@ export const BoxStyling = registerStyle(
       label {
         padding-left: ${spacing.medium};
       }
+    `,
+    loanDurationContainer: css`
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      grid-column-gap: 24px;
+      grid-row-gap: 24px;
+      max-width: 244px;
+      margin: ${spacing.medium} auto;
+      border-top: 2px solid ${color.primary};
+      border-bottom: 2px solid ${color.primary};
+      align-items: center;
+    `,
+    loanTerms: css`
+      max-width: 350px;
+      margin: 0 auto;
+      padding: 0;
+
+      li {
+        padding-left: 0;
+        padding-right: 0;
+      }
     `
   },
   BoxStyles.BOX

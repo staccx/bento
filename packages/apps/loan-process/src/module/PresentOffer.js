@@ -138,7 +138,6 @@ class PresentOffer extends React.Component {
                             <OfferTableDurationsItem>
                               <Select
                                 id={"select-loan-duration"}
-                                placeHolderLabel={"Velg…"}
                                 onChange={value =>
                                   this.handleChangeLoanDuration(
                                     value

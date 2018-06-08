@@ -1,8 +1,8 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
+import { color, spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
 import {
   InputStyles,
-  SelectSelectedStyles,
+  SelectOptionStyles,
   SelectStyles,
   RadioPillStyles
 } from "@staccx/base"
@@ -43,7 +43,7 @@ export const SelectSelectedStyling = registerStyle(
       }
     `
   },
-  SelectSelectedStyles.SELECT_SELECTED
+  SelectOptionStyles.SELECT_OPTION
 )
 
 export const SelectIconButtonStyling = registerStyle(
