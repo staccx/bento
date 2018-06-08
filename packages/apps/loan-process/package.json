@@ -15,11 +15,12 @@
     "precommit": "lint-staged",
     "start": "react-scripts start",
     "build:app": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject",
-    "test:watch": "jest --env=jsdom --watch",
+    "test:watch": "react-scripts test --env=jsdom",
     "build": "yarn prettify && rollup -c",
     "start:module": "rollup -c -w",
+    "prepublish": "yarn build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "lint-staged": {

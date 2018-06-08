@@ -18,7 +18,6 @@ import { getPaymentPlan } from "@staccx/payment-plan"
 import { throttle } from "@staccx/utils"
 import { easeInOutBack } from "easing-utils"
 import { Field, Formik } from "formik"
-import Yup from "yup"
 import {
   DetailsHeading,
   LinedList,
@@ -28,6 +27,7 @@ import {
   OfferTableData
 } from "./replace/Styles"
 import ValidationError from "./replace/ValidationError"
+const Yup = require("yup")
 
 class Calculator extends React.Component {
   constructor(props, context) {
