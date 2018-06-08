@@ -2,9 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import { spacing as space, themify, themeProps } from "@staccx/theme"
 
-const ItemGroup = ({ children, spacing }) => (
-  <Wrap>
-    <ItemGroupElement spacing={spacing}>{children}</ItemGroupElement>
+const ItemGroup = ({ children, spacing, variant }) => (
+  <Wrap variant={variant}>
+    <ItemGroupElement spacing={spacing} variant={variant}>
+      {children}
+    </ItemGroupElement>
   </Wrap>
 )
 export const ITEM_GROUP_WRAPPER = "ITEM_GROUP_WRAPPER"

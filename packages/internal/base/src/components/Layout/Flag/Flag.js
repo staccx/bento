@@ -14,6 +14,7 @@ const Flag = ({
   flush,
   large,
   small,
+  tiny,
   ...otherProps
 }) => (
   <FlagObject
@@ -25,6 +26,7 @@ const Flag = ({
     flush={flush}
     large={large}
     small={small}
+    tiny={tiny}
     {...otherProps}
   >
     <FlagImg>{img}</FlagImg>
@@ -82,6 +84,13 @@ const reverseSmall = css`
   }
 `
 
+const reverseTiny = css`
+  > ${FlagImg} {
+    padding-right: 0;
+    padding-left: ${spacing.tiny()};
+  }
+`
+
 const top = css`
   > ${FlagImg}, > ${FlagBody} {
     vertical-align: top;
@@ -115,6 +124,13 @@ const small = css`
   ${props => (props.reverse ? reverseSmall : null)};
 `
 
+const tiny = css`
+  > ${FlagImg} {
+    padding-right: ${spacing.tiny()};
+  }
+  ${props => (props.reverse ? reverseTiny : null)};
+`
+
 const responsive = css`
   @media screen and (max-width: ${props => props.responsive}px) {
     &,
@@ -145,6 +161,7 @@ const FlagObject = styled.div`
   ${props => (props.flush ? flush : null)};
   ${props => (props.large ? large : null)};
   ${props => (props.small ? small : null)};
+  ${props => (props.tiny ? tiny : null)};
   ${props => (props.responsive > 0 ? responsive : null)};
   ${themify(FLAG_OBJECT)};
 `
@@ -157,7 +174,8 @@ Flag.defaultProps = {
   responsive: 0,
   flush: null,
   large: null,
-  small: null
+  small: null,
+  tiny: null
 }
 
 Flag.propTypes = {
@@ -170,7 +188,8 @@ Flag.propTypes = {
   responsive: PropTypes.number,
   flush: PropTypes.bool,
   large: PropTypes.bool,
-  small: PropTypes.bool
+  small: PropTypes.bool,
+  tiny: PropTypes.bool
 }
 
 export default Flag
