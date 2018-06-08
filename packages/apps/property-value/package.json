@@ -1,6 +1,6 @@
 {
   "name": "@staccx/property-value",
-  "version": "4.20.0",
+  "version": "4.20.1",
   "description": "Widget for showing property value based on person nationalId (Norway only)",
   "private": true,
   "author": "StaccX",
@@ -69,9 +69,9 @@
   },
   "dependencies": {
     "@google/maps": "^0.4.6",
-    "@staccx/base": "^4.20.0",
-    "@staccx/formatting": "^4.20.0",
-    "@staccx/theme": "^4.20.0",
+    "@staccx/base": "^4.20.1",
+    "@staccx/formatting": "^4.20.1",
+    "@staccx/theme": "^4.20.1",
     "axios": "^0.18.0",
     "google": "^2.1.0",
     "mobx": "^4.3.0",
