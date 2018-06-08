@@ -18,7 +18,8 @@ import {
   LayoutItem,
   List,
   SplitListItem,
-  Alert
+  Alert,
+  Divider
 } from "@staccx/base"
 import { createCurrencyMask } from "@staccx/formatting"
 import { getPaymentPlan } from "@staccx/payment-plan"
@@ -229,6 +230,7 @@ class Calculator extends React.Component {
                         </LayoutItem>
                       )}
                     </Layout>
+                    <Divider height={2} variant="calculator" />
                   </div>
                   <div>
                     <Layout variant="formElements" inCalculator>

@@ -5,6 +5,7 @@ import { HeadingStyling } from "./Theme/theme.Headings"
 import { ParagraphStyling } from "./Theme/theme.Paragraphs"
 import { BoxStyling } from "./Theme/theme.Boxes"
 import { AlertStyling } from "./Theme/theme.Alerts"
+import { DividerStyling } from "./Theme/theme.Dividers"
 import {
   ListStyling,
   SplitListItemStyling,
@@ -139,4 +140,5 @@ const theme = new Theme(BaseTheme, {
   .addStyles(CompanyInputFlagStyling)
   .addStyles(CompanyInputSelectItemStyling)
   .addStyles(SelectOptionStyling)
+  .addStyles(DividerStyling)
 export default theme.get
