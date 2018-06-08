@@ -106,9 +106,11 @@ class Calculator extends React.Component {
           setFieldValue
         }) => (
           <Wrapper size="large" breakout>
-            <Heading level={2} variant="stepHeading">
-              {this.props.headingText}
-            </Heading>
+            {this.props.headingText && (
+              <Heading level={2} variant="stepHeading">
+                {this.props.headingText}
+              </Heading>
+            )}
             <form onSubmit={handleSubmit}>
               <Box variant="actionBox">
                 <Box variant="largeForm">
