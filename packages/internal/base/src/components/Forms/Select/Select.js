@@ -39,9 +39,12 @@ const CloseComp = ({ ...props }) => (
     {...props}
   />
 )
+export const COMPONENT_SELECT_CLOSE_ICON_STYLE =
+  "COMPONENT_SELECT_CLOSE_ICON_STYLE"
 const CloseIcon = styled(CloseComp)`
   transform: scale(0);
   animation: ${ScaleIn} 0.3s ease-in forwards 1;
+  ${themify(COMPONENT_SELECT_CLOSE_ICON_STYLE)};
 `
 
 class Select extends React.PureComponent {
@@ -151,6 +154,7 @@ class Select extends React.PureComponent {
                       <IconButton
                         onClick={() => clearSelection()}
                         variant={variant}
+                        isSelected
                       >
                         <CloseIcon variant={variant} />
                       </IconButton>
@@ -158,6 +162,7 @@ class Select extends React.PureComponent {
                       <IconButton
                         onClick={() => toggleMenu()}
                         variant={variant}
+                        isSelected
                       >
                         <CaretIcon isExpanded={isOpen} variant={variant} />
                       </IconButton>
@@ -185,7 +190,6 @@ class Select extends React.PureComponent {
                         inputProps={{ ...getInputProps() }}
                         toggleMenu={toggleMenu}
                         variant={variant}
-                        isSelected
                       />
                     )}
                     <IconButton onClick={() => toggleMenu()} variant={variant}>
