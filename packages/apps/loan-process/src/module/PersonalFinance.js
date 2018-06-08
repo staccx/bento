@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { withFormik } from "formik"
 import {
+  Alert,
   Wrapper,
   Input,
   Label,
@@ -15,7 +16,6 @@ import {
   Layout,
   LayoutItem
 } from "@staccx/base"
-import ValidationError from "./replace/ValidationError"
 import relationshipStatus, { hasPartner } from "./constants/relationshipStatus"
 const Yup = require("yup")
 
@@ -49,7 +49,9 @@ const Form = props => {
                     onBlur={handleBlur}
                   />
                   {errors.postalCode && (
-                    <ValidationError>{errors.postalCode}</ValidationError>
+                    <Alert type="warning" variant="error">
+                      {errors.postalCode}
+                    </Alert>
                   )}
                 </LayoutItem>
                 <LayoutItem>
@@ -67,9 +69,9 @@ const Form = props => {
                     ))}
                   </SelectSimple>
                   {errors.relationshipStatus && (
-                    <ValidationError>
+                    <Alert type="warning" variant="error">
                       {errors.relationshipStatus}
-                    </ValidationError>
+                    </Alert>
                   )}
                 </LayoutItem>
                 <LayoutItem>
@@ -94,7 +96,9 @@ const Form = props => {
                       ))}
                   </RadioPill>
                   {errors.numberOfChildren && (
-                    <ValidationError>{errors.numberOfChildren}</ValidationError>
+                    <Alert type="warning" variant="error">
+                      {errors.numberOfChildren}
+                    </Alert>
                   )}
                 </LayoutItem>
               </Layout>
@@ -118,9 +122,9 @@ const Form = props => {
                         onBlur={handleBlur}
                       />
                       {errors.incomeOfSpouse && (
-                        <ValidationError>
+                        <Alert type="warning" variant="error">
                           {errors.incomeOfSpouse}
-                        </ValidationError>
+                        </Alert>
                       )}
                     </LayoutItem>
                   )}
@@ -135,7 +139,9 @@ const Form = props => {
                     onBlur={handleBlur}
                   />
                   {errors.income && (
-                    <ValidationError>{errors.income}</ValidationError>
+                    <Alert type="warning" variant="error">
+                      {errors.income}
+                    </Alert>
                   )}
                 </LayoutItem>
                 <LayoutItem>
@@ -149,7 +155,9 @@ const Form = props => {
                     onBlur={handleBlur}
                   />
                   {errors.monthlySalary && (
-                    <ValidationError>{errors.monthlySalary}</ValidationError>
+                    <Alert type="warning" variant="error">
+                      {errors.monthlySalary}
+                    </Alert>
                   )}
                 </LayoutItem>
                 <LayoutItem>
@@ -163,7 +171,9 @@ const Form = props => {
                     onBlur={handleBlur}
                   />
                   {errors.mortgageTotal && (
-                    <ValidationError>{errors.mortgageTotal}</ValidationError>
+                    <Alert type="warning" variant="error">
+                      {errors.mortgageTotal}
+                    </Alert>
                   )}
                 </LayoutItem>
                 <LayoutItem>
@@ -177,7 +187,9 @@ const Form = props => {
                     onBlur={handleBlur}
                   />
                   {errors.otherLoansTotal && (
-                    <ValidationError>{errors.otherLoansTotal}</ValidationError>
+                    <Alert type="warning" variant="error">
+                      {errors.otherLoansTotal}
+                    </Alert>
                   )}
                 </LayoutItem>
                 <LayoutItem>
@@ -191,9 +203,9 @@ const Form = props => {
                     onBlur={handleBlur}
                   />
                   {errors.monthlyRentAndExpenses && (
-                    <ValidationError>
+                    <Alert type="warning" variant="error">
                       {errors.monthlyRentAndExpenses}
-                    </ValidationError>
+                    </Alert>
                   )}
                 </LayoutItem>
               </Layout>

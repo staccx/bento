@@ -102,17 +102,12 @@ export const BoxStyling = registerStyle(
       background-color: ${color("bgBlue")};
     `,
     loanTerms: css`
-      max-width: 350px;
-      margin: 0 auto;
-      padding: ${spacing.medium} 0;
+      margin-top: 34px;
+      padding: 31px 0;
+      min-height: 169px;
       border-top: 3px solid ${color.primary};
       border-bottom: 3px solid ${color.primary};
       border-radius: 0;
-
-      li {
-        padding-left: 0;
-        padding-right: 0;
-      }
     `
   },
   BoxStyles.BOX

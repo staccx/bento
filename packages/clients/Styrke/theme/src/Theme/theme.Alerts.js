@@ -7,8 +7,10 @@ export const AlertStyling = registerStyle(
     error: css`
       background-color: ${color.warning};
       color: ${color.white};
-      padding: ${spacing.small} ${spacing.medium};
+      padding: ${spacing.small};
       position: relative;
+      margin-top: 3px;
+
       &::after {
         content: "";
         width: 0;

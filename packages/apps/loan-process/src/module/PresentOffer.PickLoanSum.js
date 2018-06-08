@@ -2,10 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { withFormik } from "formik"
-import { CurrencyInput, RadioButton, Box } from "@staccx/base"
+import { Alert, CurrencyInput, RadioButton, Box } from "@staccx/base"
 import { formatCurrency, removeWhitespace } from "@staccx/formatting"
 import { BounceIn, BounceOut } from "@staccx/animations"
-import ValidationError from "./replace/ValidationError"
 const Yup = require("yup")
 
 const PickLoanSum = props => {
@@ -97,7 +96,9 @@ const PickLoanSum = props => {
               onBlur={handleBlur}
             />
             {errors.amount && (
-              <ValidationError>{errors.amount}</ValidationError>
+              <Alert type="warning" variant="error">
+                {errors.amount}
+              </Alert>
             )}
           </UserDefinedAmount>
         )}

@@ -17,14 +17,14 @@ import {
   Layout,
   LayoutItem,
   List,
-  SplitListItem
+  SplitListItem,
+  Alert
 } from "@staccx/base"
 import { createCurrencyMask } from "@staccx/formatting"
 import { getPaymentPlan } from "@staccx/payment-plan"
 import { throttle } from "@staccx/utils"
 import { easeInOutBack } from "easing-utils"
 import { Field, Formik } from "formik"
-import ValidationError from "./replace/ValidationError"
 const Yup = require("yup")
 
 class Calculator extends React.Component {
@@ -246,7 +246,9 @@ class Calculator extends React.Component {
                         />
                         {touched.name &&
                           errors.name && (
-                            <ValidationError>{errors.name}</ValidationError>
+                            <Alert variant="error" type="warning">
+                              {errors.name}
+                            </Alert>
                           )}
                       </LayoutItem>
                       <LayoutItem>
@@ -271,7 +273,9 @@ class Calculator extends React.Component {
                         />
                         {touched.company &&
                           errors.company && (
-                            <ValidationError>{errors.company}</ValidationError>
+                            <Alert variant="error" type="warning">
+                              {errors.company}
+                            </Alert>
                           )}
                       </LayoutItem>
                       <LayoutItem>
@@ -289,7 +293,9 @@ class Calculator extends React.Component {
                         />
                         {touched.revenue &&
                           errors.revenue && (
-                            <ValidationError>{errors.revenue}</ValidationError>
+                            <Alert variant="error" type="warning">
+                              {errors.revenue}
+                            </Alert>
                           )}
                       </LayoutItem>
                       <LayoutItem>
@@ -306,7 +312,9 @@ class Calculator extends React.Component {
                         />
                         {touched.email &&
                           errors.email && (
-                            <ValidationError>{errors.email}</ValidationError>
+                            <Alert variant="error" type="warning">
+                              {errors.email}
+                            </Alert>
                           )}
                       </LayoutItem>
                       <LayoutItem>
@@ -323,7 +331,9 @@ class Calculator extends React.Component {
                         />
                         {touched.phone &&
                           errors.phone && (
-                            <ValidationError>{errors.phone}</ValidationError>
+                            <Alert variant="error" type="warning">
+                              {errors.phone}
+                            </Alert>
                           )}
                       </LayoutItem>
                       <LayoutItem>
@@ -349,7 +359,9 @@ class Calculator extends React.Component {
                         />
                         {touched.purpose &&
                           errors.purpose && (
-                            <ValidationError>{errors.purpose}</ValidationError>
+                            <Alert variant="error" type="warning">
+                              {errors.purpose}
+                            </Alert>
                           )}
                       </LayoutItem>
                     </Layout>

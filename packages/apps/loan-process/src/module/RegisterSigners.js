@@ -12,14 +12,14 @@ import {
   NationalIdInput,
   Paragraph,
   SplitListItem,
-  Wrapper
+  Wrapper,
+  Alert
 } from "@staccx/base"
 import { formatName, removeWhitespace } from "@staccx/formatting"
 import styled, { keyframes } from "styled-components"
 import { Field, FieldArray, Form, Formik } from "formik"
 import { spacing } from "@staccx/theme"
 import { norwegian } from "national-id"
-import ValidationError from "./replace/ValidationError"
 const Yup = require("yup")
 
 class RegisterSigners extends React.Component {
@@ -234,12 +234,15 @@ class RegisterSigners extends React.Component {
                                               touched.signers[index] &&
                                               touched.signers[index]
                                                 .nationalId && (
-                                                <ValidationError>
+                                                <Alert
+                                                  type="warning"
+                                                  variant="error"
+                                                >
                                                   {
                                                     errors.signers[index]
                                                       .nationalId
                                                   }
-                                                </ValidationError>
+                                                </Alert>
                                               )}
                                           </LayoutItem>
                                           <LayoutItem>
@@ -266,9 +269,12 @@ class RegisterSigners extends React.Component {
                                               touched.signers &&
                                               touched.signers[index] &&
                                               touched.signers[index].email && (
-                                                <ValidationError>
+                                                <Alert
+                                                  type="warning"
+                                                  variant="error"
+                                                >
                                                   {errors.signers[index].email}
-                                                </ValidationError>
+                                                </Alert>
                                               )}
                                           </LayoutItem>
                                         </Layout>
