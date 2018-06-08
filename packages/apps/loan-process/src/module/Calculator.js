@@ -175,8 +175,9 @@ class Calculator extends React.Component {
                           </LayoutItem>
                         </Layout>
                       </LayoutItem>
-                      <LayoutItem>
-                        {this.state.term && (
+
+                      {this.state.term && (
+                        <LayoutItem>
                           <Box variant="loanTerms">
                             <List>
                               {this.props.showMonthlyFees && (
@@ -225,8 +226,8 @@ class Calculator extends React.Component {
                               )}
                             </List>
                           </Box>
-                        )}
-                      </LayoutItem>
+                        </LayoutItem>
+                      )}
                     </Layout>
                   </div>
                   <div>
@@ -371,6 +372,7 @@ class Calculator extends React.Component {
                   </div>
                 </Box>
               </Box>
+              <Button>Neste</Button>
             </form>
           </Wrapper>
         )}

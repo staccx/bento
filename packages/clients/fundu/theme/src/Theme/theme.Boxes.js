@@ -28,16 +28,26 @@ export const BoxStyling = registerStyle(
       margin-bottom: ${spacing.medium};
     `,
     largeForm: css`
-      display: flex;
-      justify-content: space-between;
       padding: 0;
 
-      > * {
-        flex-grow: 1;
-        flex-basis: 50%;
+      @media (min-width: 711px) {
+        display: flex;
+        justify-content: space-between;
 
-        &:last-child {
-          border-left: 1px solid ${color.line};
+        > * {
+          flex-grow: 1;
+          flex-basis: 50%;
+
+          &:last-child {
+            border-left: 1px solid ${color.line};
+          }
+        }
+      }
+
+      @media (max-width: 711px) {
+        > *:not(:first-child) {
+          border-top: 1px solid ${color.line};
+          margin-top: ${spacing.large};
         }
       }
     `,
@@ -164,9 +174,9 @@ export const BoxStyling = registerStyle(
       align-items: center;
     `,
     loanTerms: css`
-      max-width: 350px;
+      max-width: 400px;
       margin: 0 auto;
-      padding: 0;
+      padding: 0 ${spacing.medium};
 
       li {
         padding-left: 0;

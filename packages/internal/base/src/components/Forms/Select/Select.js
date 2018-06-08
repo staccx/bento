@@ -216,6 +216,7 @@ class Select extends React.PureComponent {
                           <Option
                             key={this.props.itemToKey(item)}
                             data={item}
+                            variant={variant}
                             {...getItemProps({ item })}
                           >
                             <strong>{toString(item)}</strong>

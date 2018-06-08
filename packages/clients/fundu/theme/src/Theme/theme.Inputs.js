@@ -10,6 +10,7 @@ import {
   InputStyles,
   LabelStyles,
   SelectStyles,
+  SelectOptionStyles,
   RadioPillItemStyles,
   SelectSimpleStyles,
   SliderKeyboardInputStyles,
@@ -60,6 +61,12 @@ export const LabelStyling = registerStyle(
       padding-left: ${spacing.medium};
       padding-top: ${spacing.small};
       padding-bottom: ${spacing.small};
+    `,
+    loanPurpose: css`
+      display: block;
+      padding-left: ${spacing.medium};
+      padding-top: ${spacing.small};
+      padding-bottom: ${spacing.tiny};
     `
   },
   LabelStyles.LABEL
@@ -85,9 +92,21 @@ export const SelectSelectedStyling = registerStyle(
           fill: ${color.primary};
         }
       }
+    `,
+    loanPurpose: css`
+      border-color: transparent;
     `
   },
   SelectStyles.SELECTED_WRAPPER
+)
+
+export const SelectOptionStyling = registerStyle(
+  {
+    loanPurpose: css`
+      padding-left: ${spacing.medium};
+    `
+  },
+  SelectOptionStyles.SELECT_DEFAULT_OPTION
 )
 
 export const SelectIconButtonStyling = registerStyle(
@@ -108,6 +127,13 @@ export const SelectOptionsWrapperStyling = registerStyle(
       position: absolute;
       z-index: 10;
       background-color: ${color.white};
+      box-shadow: rgba(0, 0, 75, 0.015) 0px 2px 2px,
+        rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
+        rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
+        rgba(0, 0, 75, 0.015) 0px 64px 64px;
+    `,
+    loanPurpose: css`
+      border-top: 1px solid ${color.line};
       box-shadow: rgba(0, 0, 75, 0.015) 0px 2px 2px,
         rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
         rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
@@ -174,8 +200,9 @@ export const RadioPillItemStyling = registerStyle(
 export const SliderKeyboardWrapperStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: css`
-      max-width: 360px;
+      max-width: 400px;
       margin: 0 auto;
+      padding: 0 ${spacing.medium};
 
       label {
         display: block;

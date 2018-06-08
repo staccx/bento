@@ -27,7 +27,8 @@ import {
   CompanyInputLoadToStyling,
   CompanyInputCloseStyling,
   CompanyInputFlagStyling,
-  CompanyInputSelectItemStyling
+  CompanyInputSelectItemStyling,
+  SelectOptionStyling
 } from "./Theme/theme.Inputs"
 import { LayoutStyling } from "./Theme/theme.Layouts"
 
@@ -137,4 +138,5 @@ const theme = new Theme(BaseTheme, {
   .addStyles(CompanyInputCloseStyling)
   .addStyles(CompanyInputFlagStyling)
   .addStyles(CompanyInputSelectItemStyling)
+  .addStyles(SelectOptionStyling)
 export default theme.get

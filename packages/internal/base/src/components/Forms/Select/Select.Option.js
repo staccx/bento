@@ -11,9 +11,9 @@ import {
   themify
 } from "@staccx/theme"
 
-const SelectOption = ({ children, isSelected, ...restProps }) => {
+const SelectOption = ({ children, isSelected, variant, ...restProps }) => {
   return (
-    <OptionContainer isSelected={isSelected} {...restProps}>
+    <OptionContainer isSelected={isSelected} variant={variant} {...restProps}>
       <div>{children}</div>
     </OptionContainer>
   )
