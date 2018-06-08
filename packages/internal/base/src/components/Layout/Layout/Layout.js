@@ -69,7 +69,9 @@ Layout.defaultProps = {
   className: "",
   grid: null,
   columnGap: "medium",
-  rowGap: "medium"
+  rowGap: "medium",
+  paddingBottom: "flush",
+  paddingTop: "flush"
 }
 
 Layout.propTypes = {
@@ -77,7 +79,9 @@ Layout.propTypes = {
   className: PropTypes.string,
   grid: PropTypes.string,
   columnGap: themeProps.spacing,
-  rowGap: themeProps.spacing
+  rowGap: themeProps.spacing,
+  paddingBottom: themeProps.spacing,
+  paddingTop: themeProps.spacing
 }
 
 export default Layout
