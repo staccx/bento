@@ -1,6 +1,6 @@
 {
   "name": "@staccx/loan-process",
-  "version": "4.20.2",
+  "version": "4.20.3",
   "description": "Loan process",
   "author": "StaccX",
   "license": "UNLICENCED",
@@ -38,8 +38,8 @@
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
-    "@staccx/base": "^4.20.1",
-    "@staccx/theme": "^4.20.1",
+    "@staccx/base": "^4.20.3",
+    "@staccx/theme": "^4.20.3",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^23.0.0-charlie.1",

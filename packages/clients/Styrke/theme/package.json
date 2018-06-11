@@ -1,6 +1,6 @@
 {
   "name": "@staccx/styrke-theme",
-  "version": "4.20.1",
+  "version": "4.20.3",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -12,8 +12,8 @@
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
-    "@staccx/base": "^4.20.1",
-    "@staccx/theme": "^4.20.1",
+    "@staccx/base": "^4.20.3",
+    "@staccx/theme": "^4.20.3",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
