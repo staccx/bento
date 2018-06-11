@@ -8,7 +8,6 @@ class TranslatedText extends React.Component {
     return (
       <Consumer>
         {({ texts, language }) => {
-          console.log("language is", language)
           if (!texts) {
             console.warn("Please provide a dictionary of texts")
             return null
