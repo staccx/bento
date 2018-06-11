@@ -26,5 +26,5 @@ LanguageProvider.propTypes = {
   language: PropTypes.any.isRequired,
   languages: PropTypes.array.isRequired,
   setLanguage: PropTypes.func.isRequired,
-  texts: PropTypes.object.isRequired
+  texts: PropTypes.object
 }
