@@ -24,7 +24,8 @@ export default {
     "react-dom",
     "prop-types",
     "styled-components",
-    "react-jsonschema-form"
+    "react-jsonschema-form",
+    "@staccx/theme"
   ],
   plugins: [
     json(),
