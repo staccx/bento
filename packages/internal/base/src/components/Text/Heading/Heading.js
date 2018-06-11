@@ -84,7 +84,6 @@ export const HeadingsStyle = css`
 const HeadingH1 = styled.h1`
   font-size: ${font.h1};
   ${HeadingsStyle};
-  ${themify(HEADING)};
 `
 
 const HeadingH2 = styled.h2`

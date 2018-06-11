@@ -283,7 +283,7 @@ export const IconButton = styled.button`
   padding: 0 ${spacing.tiny};
   text-align: center;
   background-color: transparent;
-  fill: ${color.gray};
+  fill: ${color.wcag};
   transform: translateY(50%);
   transition: fill 0.2s ease;
 
