@@ -28,12 +28,20 @@ class Logo extends React.PureComponent {
 
   render() {
     if (!this.state.brand) {
-      return <img src={fallback} alt="no brand" />
+      return (
+        <img
+          src={fallback}
+          alt=""
+          height={this.props.height}
+          width={this.props.width}
+        />
+      )
     }
 
     return (
       <img
         height={this.props.height}
+        width={this.props.width}
         src={this.state.brand.url}
         alt={this.state.brand.name}
       />
@@ -46,9 +54,10 @@ export default Logo
 Logo.propTypes = {
   brand: PropTypes.string.isRequired,
   height: PropTypes.number,
+  width: PropTypes.number,
   token: PropTypes.string.isRequired
 }
 
 Logo.defaultProps = {
-  height: 100
+  height: 48
 }
