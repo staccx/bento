@@ -20,11 +20,14 @@ const SelectOption = ({ children, isSelected, variant, ...restProps }) => {
 }
 
 export const SELECT_DEFAULT_OPTION = "SELECT_DEFAULT_OPTION"
-const OptionContainer = styled.div`
+const OptionContainer = styled.button`
+  display: block;
   width: 100%;
   min-height: ${targetSize.normal};
   margin: 0 auto;
   padding: ${spacing.tiny()} ${spacing.small()};
+  background-color: ${color.white};
+  border: none;
   text-align: left;
   font-family: ${fontFamily.body()};
   font-size: ${font.input};
@@ -37,7 +40,6 @@ const OptionContainer = styled.div`
   ${p =>
     p.isSelected &&
     css`
-      padding-right: ${spacing("mediumPlus")(p)};
       white-space: nowrap;
 
       > div {

@@ -102,6 +102,13 @@ export const SelectSelectedStyling = registerStyle(
 
 export const SelectOptionStyling = registerStyle(
   {
+    loanOffer: css`
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+      }
+    `,
     loanPurpose: css`
       padding-left: ${spacing.medium};
     `

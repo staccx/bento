@@ -213,14 +213,16 @@ class Select extends React.PureComponent {
                           })
                         }
                         return (
-                          <Option
-                            key={this.props.itemToKey(item)}
-                            data={item}
-                            variant={variant}
-                            {...getItemProps({ item })}
-                          >
-                            <strong>{toString(item)}</strong>
-                          </Option>
+                          <li>
+                            <Option
+                              key={this.props.itemToKey(item)}
+                              data={item}
+                              variant={variant}
+                              {...getItemProps({ item })}
+                            >
+                              <strong>{toString(item)}</strong>
+                            </Option>
+                          </li>
                         )
                       })}
                   </OptionsWrapper>
@@ -236,9 +238,12 @@ class Select extends React.PureComponent {
 
 export const SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER =
   "SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER"
-export const DefaultOptionElementWrapper = styled.div`
+export const DefaultOptionElementWrapper = styled.ul`
   position: absolute;
   width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
   border: 1px solid ${color.line};
   background-color: ${color.white};
   border-top-width: 0;
