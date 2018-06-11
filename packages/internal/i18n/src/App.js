@@ -11,16 +11,24 @@ class App extends Component {
     super(props, context)
 
     this.state = {
-      texts: {
-        HELLO: {
-          nb: "Heisann",
-          en: "Hellpo"
-        }
-      },
-      language: "en",
-      languages: ["nb", "en"]
+      texts: null,
+      language: null,
+      languages: []
     }
     this.setLanguage = this.setLanguage.bind(this)
+
+    setTimeout(() => {
+      this.setState({
+        texts: {
+          HELLO: {
+            nb: "Heisann",
+            en: "Hellpo"
+          }
+        },
+        language: "en",
+        languages: ["nb", "en"]
+      })
+    }, 1000)
   }
 
   setLanguage(e) {

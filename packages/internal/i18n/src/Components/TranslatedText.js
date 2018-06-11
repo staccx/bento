@@ -9,7 +9,7 @@ class TranslatedText extends React.Component {
       <Consumer>
         {({ texts, language }) => {
           if (!texts) {
-            console.warn("Please provide a dictionary of texts")
+            // Has not been initialized
             return null
           }
           if (!language) {
@@ -17,7 +17,7 @@ class TranslatedText extends React.Component {
             return null
           }
           if (!texts.hasOwnProperty(i18nKey)) {
-            console.warn("Key is not part of texts", i18nKey)
+            console.warn("Key is not part of texts", i18nKey, texts)
             return null
           }
           const entry = texts[i18nKey]

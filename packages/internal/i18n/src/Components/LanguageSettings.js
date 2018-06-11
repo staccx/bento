@@ -1,6 +1,5 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { SelectSimple } from "@staccx/base"
 import { Consumer } from "./context"
 
 class LanguageSettings extends React.Component {
@@ -12,13 +11,13 @@ class LanguageSettings extends React.Component {
       <Consumer>
         {({ setLanguage, language, languages }) => {
           return (
-            <SelectSimple
+            <select
               id={"languages"}
               onChange={setLanguage}
               defaultValue={language}
             >
               {languages.map(lang => <option value={lang}>{lang}</option>)}
-            </SelectSimple>
+            </select>
           )
         }}
       </Consumer>
