@@ -1,7 +1,7 @@
 {
-  "name": "@staccx/module-starter-pack",
+  "name": "@staccx/developer-portal",
   "version": "4.20.1",
-  "description": "Starter for new module",
+  "description": "Developer portal white label",
   "private": true,
   "author": "StaccX",
   "license": "UNLICENCED",
@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "redoc": "^2.0.0-alpha.20",
+    "swagger2openapi": "^2.11.16",
     "tslib": "^1.9.1"
   }
 }
