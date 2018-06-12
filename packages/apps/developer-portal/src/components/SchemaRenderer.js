@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import SchemaConsumer from "./SchemaConsumer"
 import { Text, Paragraph } from "@staccx/base"
+import {deepfind} from "@staccx/utils"
 
 class SchemaRenderer extends React.Component {
   render() {
@@ -9,10 +10,10 @@ class SchemaRenderer extends React.Component {
     return (
       <SchemaConsumer>
         {({ schemas }) => {
-          console.log(schemas)
-          console.log(schema)
 
           if (schema.$ref) {
+            const searchString = schema.$ref.replace("#/", "").replace(/\//g, ".")
+            console.log(searchString)
             return schema.$ref
           }
 

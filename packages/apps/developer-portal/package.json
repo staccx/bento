@@ -60,6 +60,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
+    "@staccx/utils": "^4.20.1",
     "redoc": "^2.0.0-alpha.20",
     "swagger2openapi": "^2.11.16",
     "tslib": "^1.9.1"

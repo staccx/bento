@@ -1,7 +1,7 @@
-export default (obj, propertyPath) => {
+export default (obj, propertyPath, separator = ".") => {
   if (!propertyPath) return null
 
-  const properties = propertyPath.split(".")
+  const properties = propertyPath.split(separator)
 
   for (let i = 0; i < properties.length; i++) {
     const prop = properties[i]
