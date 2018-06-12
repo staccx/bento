@@ -5,7 +5,8 @@ import { Wrapper } from "@staccx/base"
 import convertSwaggerToOpenApi from "../utils/convertSwaggerToOpenApi"
 import Info from "./Info"
 import Servers from "./Servers"
-import Path from "./Path"
+import Paths from "./Paths"
+import SchemaProvider from "./SchemaProvider"
 class ApiRenderer extends React.Component {
   constructor(props, context) {
     super(props, context)
@@ -35,13 +36,13 @@ class ApiRenderer extends React.Component {
       return <div>Nothing here</div>
     }
     return (
+      <SchemaProvider requestBodies={openapi.components.requestBodies} schemas={openapi.components.schemas} securitySchemes={openapi.components.securitySchemes}>
       <Wrapper>
         <Info info={openapi.info} />
         <Servers servers={openapi.servers} />
-        {Object.keys(openapi.paths).map(key => (
-          <Path key={key} path={openapi.paths[key]} name={key} />
-        ))}
+        <Paths paths={openapi.paths} />
       </Wrapper>
+      </SchemaProvider>
     )
   }
 }

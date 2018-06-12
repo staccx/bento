@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import { ThemeProxyProvider } from "@staccx/theme"
 import theme from "./theme.js"
 import ApiRenderer from "./components/ApiRenderer"
+import SchemaProvider from "./components/SchemaProvider"
 
 // const redocTheme: ThemeInterface = {
 //   spacingUnit: 20,

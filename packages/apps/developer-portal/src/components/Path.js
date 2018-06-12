@@ -1,34 +1,29 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Text, ExpandListItem, List } from "@staccx/base"
+import { ExpandListItem, List } from "@staccx/base"
+import Operations from "./Operations"
+import Responses from "./Responses"
 
 class Path extends React.Component {
   constructor(props, context) {
     super(props, context)
 
     this.state = {
-      operations: Object.keys(props.path)
+      operations: Object.keys(props.path).map(key => props.path[key]),
     }
   }
 
   componentWillMount() {}
 
   render() {
-    const { path, name } = this.props
+    const { name } = this.props
 
     return (
       <div>
         <List>
           <ExpandListItem title={name}>
             <List>
-              {this.state.operations.map(key => {
-                const data = path[key]
-                return (
-                  <ExpandListItem key={data.operationId} title={key}>
-                    <Text>{data.summary || " "}</Text>
-                  </ExpandListItem>
-                )
-              })}
+              <Operations operations={this.state.operations} />
             </List>
           </ExpandListItem>
         </List>
