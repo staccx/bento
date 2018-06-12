@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Parameters from "./Parameters"
 import Responses from "./Responses"
+import RequestBody from "./RequestBody"
 
 class Operation extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class Operation extends React.Component {
     return (
       <div>
         <Parameters parameters={this.props.operation.parameters} />
+        <RequestBody requestBody={this.props.operation.requestBody} />
         <Responses responses={this.props.operation.responses} />
       </div>
     )

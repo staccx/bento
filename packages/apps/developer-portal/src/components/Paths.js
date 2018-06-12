@@ -11,3 +11,7 @@ class Paths extends React.Component {
 }
 
 export default Paths
+
+Paths.propTypes = {
+  paths: PropTypes.object
+}

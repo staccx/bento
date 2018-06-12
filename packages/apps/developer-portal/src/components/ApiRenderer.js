@@ -36,12 +36,17 @@ class ApiRenderer extends React.Component {
       return <div>Nothing here</div>
     }
     return (
-      <SchemaProvider requestBodies={openapi.components.requestBodies} schemas={openapi.components.schemas} securitySchemes={openapi.components.securitySchemes}>
-      <Wrapper>
-        <Info info={openapi.info} />
-        <Servers servers={openapi.servers} />
-        <Paths paths={openapi.paths} />
-      </Wrapper>
+      <SchemaProvider
+        requestBodies={openapi.components.requestBodies}
+        schemas={openapi.components.schemas}
+        securitySchemes={openapi.components.securitySchemes}
+        openapi={openapi}
+      >
+        <Wrapper>
+          <Info info={openapi.info} />
+          <Servers servers={openapi.servers} />
+          <Paths paths={openapi.paths} />
+        </Wrapper>
       </SchemaProvider>
     )
   }

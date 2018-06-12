@@ -17,10 +17,17 @@ class Parameter extends React.Component {
         <Paragraph>
           Required: {this.props.parameter.required ? "Yes" : "No"}
         </Paragraph>
-        <SchemaRenderer schema={this.props.parameter.schema} />
+        <SchemaRenderer
+          schema={this.props.parameter.schema}
+          name={this.props.parameter.name}
+        />
       </div>
     )
   }
 }
 
 export default Parameter
+
+Parameter.propTypes = {
+  parameter: PropTypes.object
+}

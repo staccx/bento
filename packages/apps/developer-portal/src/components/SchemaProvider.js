@@ -9,7 +9,8 @@ class SchemaProvider extends React.Component {
         value={{
           requestBodies: this.props.requestBodies,
           securitySchemes: this.props.securitySchemes,
-          schemas: this.props.schemas
+          schemas: this.props.schemas,
+          openapi: this.props.openapi
         }}
       >
         {this.props.children}

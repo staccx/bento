@@ -5,21 +5,27 @@ import ResponseContent from "./ResponseContent"
 
 class Response extends React.Component {
   render() {
-    console.log(this.props.response)
     return (
       <div>
         <Paragraph>
           {this.props.code} - {this.props.response.description}
         </Paragraph>
-        {Object.keys(this.props.response.content).map(type => (
-          <ResponseContent
-            type={type}
-            content={this.props.response.content[type]}
-          />
-        ))}
+        {this.props.response.content &&
+          Object.keys(this.props.response.content).map(type => (
+            <ResponseContent
+              key={this.props.code + type}
+              type={type}
+              content={this.props.response.content[type]}
+            />
+          ))}
       </div>
     )
   }
 }
 
 export default Response
+
+Response.propTypes = {
+  code: PropTypes.any,
+  response: PropTypes.any
+}
