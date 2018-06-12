@@ -62,6 +62,7 @@ import Fraction from "./components/DataViz/Fraction/Fraction"
 import Donut from "./components/DataViz/Donut/Donut"
 import KeyFigures from "./components/DataViz/Keyfigures/Keyfigures"
 import NewBadge, * as NewBadgeStyles from "./components/NewBadge/NewBadge"
+import Loading, * as LoadingStyles from "./components/DataViz/Loading/Loading"
 
 // Modal
 import Modal, * as ModalStyles from "./components/Modal/Modal"
@@ -145,6 +146,8 @@ export {
   LinkListItemStyles,
   List,
   ListStyles,
+  Loading,
+  LoadingStyles,
   Logo,
   Modal,
   ModalStyles,
