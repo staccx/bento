@@ -3,8 +3,13 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { themify, themeProps } from "@staccx/theme"
 
-const LayoutItem = ({ area, children, className }) => (
-  <LayoutItemContainer className={className} area={area}>
+const LayoutItem = ({ area, children, className, variant, ...rest }) => (
+  <LayoutItemContainer
+    className={className}
+    area={area}
+    variant={variant}
+    {...rest}
+  >
     {children}
   </LayoutItemContainer>
 )
@@ -18,13 +23,15 @@ export const LayoutItemContainer = styled.div`
 
 LayoutItem.defaultProps = {
   className: "",
-  grid: "stonehenge"
+  area: "",
+  variant: ""
 }
 
 LayoutItem.propTypes = {
   children: themeProps.children.isRequired,
   className: PropTypes.string,
-  grid: PropTypes.string
+  area: PropTypes.string,
+  variant: PropTypes.string
 }
 
 export default LayoutItem
