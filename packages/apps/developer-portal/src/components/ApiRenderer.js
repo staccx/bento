@@ -7,6 +7,8 @@ import Info from "./Info"
 import Servers from "./Servers"
 import Paths from "./Paths"
 import SchemaProvider from "./SchemaProvider"
+import Tags from "./Tags"
+import findTags from "../utils/findTags"
 class ApiRenderer extends React.Component {
   constructor(props, context) {
     super(props, context)
@@ -31,7 +33,7 @@ class ApiRenderer extends React.Component {
   }
 
   render() {
-    const { openapi } = this.state
+    const { openapi, tags } = this.state
     if (!openapi) {
       return <div>Nothing here</div>
     }
@@ -41,11 +43,13 @@ class ApiRenderer extends React.Component {
         schemas={openapi.components.schemas}
         securitySchemes={openapi.components.securitySchemes}
         openapi={openapi}
+        tags={tags}
       >
         <Wrapper>
           <Info info={openapi.info} />
           <Servers servers={openapi.servers} />
-          <Paths paths={openapi.paths} />
+          <Tags />
+
         </Wrapper>
       </SchemaProvider>
     )
