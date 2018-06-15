@@ -83,7 +83,6 @@ class Calculator extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <Formik
         initialValues={{
@@ -260,7 +259,6 @@ class Calculator extends React.Component {
                               {...field}
                               placeholder={this.props.namePlaceholder}
                               label={this.props.nameLabel}
-                              autoFocus
                             />
                           )}
                         />
@@ -391,7 +389,7 @@ class Calculator extends React.Component {
                   </div>
                 </Box>
               </Box>
-              <Button>Neste</Button>
+              <Button onClick={this.props.onClick}>Neste</Button>
             </form>
           </Wrapper>
         )}
@@ -453,7 +451,8 @@ Calculator.propTypes = {
   valueLabel: PropTypes.string,
   purposeLabel: PropTypes.string,
   productType: PropTypes.string,
-  creditExplanationText: PropTypes.string
+  creditExplanationText: PropTypes.string,
+  onClick: PropTypes.func
 }
 
 Calculator.defaultProps = {
