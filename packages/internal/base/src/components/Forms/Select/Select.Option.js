@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import {
+  borderRadius,
   targetSize,
   spacing,
   fontFamily,
@@ -41,6 +42,7 @@ const OptionContainer = styled.button`
     p.isSelected &&
     css`
       white-space: nowrap;
+      border-radius: ${borderRadius};
 
       > div {
         overflow: hidden;

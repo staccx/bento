@@ -9,13 +9,13 @@ const OfferTable = ({
   loanAmount,
   loanDurationText,
   loanRepayment,
-  monthlyFeeText,
+  interestRateText,
   interestRate,
   paybackText,
   paybackAmount,
   payMonthlyText,
   payMonthlyAmount,
-  showMonthlyFees,
+  showInterestRate,
   showDownpayment,
   showTotalMonthly,
   showAmount,
@@ -37,9 +37,9 @@ const OfferTable = ({
               <OfferTableData>{loanRepayment}</OfferTableData>
             </tr>
           )}
-          {showMonthlyFees && (
+          {showInterestRate && (
             <tr>
-              <OfferTableText>{monthlyFeeText}</OfferTableText>
+              <OfferTableText>{interestRateText}</OfferTableText>
               <OfferTableData>{interestRate}%</OfferTableData>
             </tr>
           )}
@@ -92,7 +92,7 @@ const OfferTableTotal = styled.tr`
 `
 
 OfferTable.propTypes = {
-  showMonthlyFees: PropTypes.bool,
+  showInterestRate: PropTypes.bool,
   showDownpayment: PropTypes.bool,
   showTotalMonthly: PropTypes.bool,
   showAmount: PropTypes.bool,
@@ -100,7 +100,7 @@ OfferTable.propTypes = {
 }
 
 OfferTable.defaultProps = {
-  showMonthlyFees: true,
+  showInterestRate: true,
   showDownpayment: true,
   showTotalMonthly: true,
   showAmount: true,

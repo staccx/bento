@@ -104,10 +104,12 @@ export const BoxStyling = registerStyle(
     loanTerms: css`
       margin-top: 34px;
       padding: 31px 0;
-      min-height: 169px;
       border-top: 3px solid ${color.primary};
       border-bottom: 3px solid ${color.primary};
       border-radius: 0;
+    `,
+    priceExample: css`
+      padding: 0;
     `
   },
   BoxStyles.BOX

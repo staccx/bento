@@ -30,6 +30,16 @@ class Content extends Component {
         <div>
           <Calculator onValidated={console.log} />
           <hr style={{ margin: "64px 0" }} />
+          <Calculator
+            onValidated={console.log}
+            productType={"PRODUCT_CREDIT"}
+            priceExampleText="Effektiv rente 11,56 %. Lånet gis med fastrente i hele lånets løpetid. Priseksempel: 500 000 over 12 mnd, eff. rente 11,56 % kostnader 26 232, totalt 526 232. "
+            downPaymentPerMonthText="Renter første måned (hvis hele kreditten er brukt)"
+            valueLabel="Kredittramme"
+            headingText="Fleksibel kreditt når du trenger det"
+            showTotalMonthly={false}
+          />
+          <hr style={{ margin: "64px 0" }} />
           <PersonalFinance onValidated={console.log} />
           <hr style={{ margin: "64px 0" }} />
           <EndScreen
@@ -53,6 +63,15 @@ class Content extends Component {
           <SetAccountNumber />
           <hr style={{ margin: "64px 0" }} />
           <PresentOffer />
+          <hr style={{ margin: "64px 0" }} />
+          <PresentOffer
+            productType={"PRODUCT_CREDIT"}
+            maxLoanAmountText={"Du kan få innvilget kassakreditt på inntil"}
+            headingText={"Tilbud om kassakreditt"}
+            showMonthlyFee={false}
+            showPayback={false}
+            payMonthlyText="Renter første måned (hvis hele kreditten er brukt)"
+          />
           <hr style={{ margin: "64px 0" }} />
           <RegisterSigners />
 

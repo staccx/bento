@@ -213,9 +213,8 @@ class Select extends React.PureComponent {
                           })
                         }
                         return (
-                          <li>
+                          <li key={this.props.itemToKey(item)}>
                             <Option
-                              key={this.props.itemToKey(item)}
                               data={item}
                               variant={variant}
                               {...getItemProps({ item })}
@@ -264,6 +263,7 @@ export const SelectWrapper = styled.div`
 export const SELECTED_WRAPPER = "SELECTED_WRAPPER"
 export const SelectedWrapper = styled.div`
   position: relative;
+  padding-right: ${spacing.medium};
   ${p =>
     !p.combobox &&
     css`

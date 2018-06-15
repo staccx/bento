@@ -76,6 +76,7 @@ export const SelectSelectedStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: css`
       border-color: transparent;
+      padding-right: 0;
     `,
     loanOffer: css`
       border-color: transparent;
@@ -94,6 +95,7 @@ export const SelectSelectedStyling = registerStyle(
       }
     `,
     loanPurpose: css`
+      padding-right: 0;
       border-color: transparent;
     `
   },

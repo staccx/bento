@@ -111,73 +111,98 @@ class PresentOffer extends React.Component {
               </p>
             </Box>
             <Layout variant="formElements">
-              <LayoutItem>
-                <PickLoanSum
-                  loanAmount={this.state.amount}
-                  repaymentPeriod={this.props.repaymentPeriod}
-                  isCustomAmount={this.state.isCustomAmount}
-                  initialAmount={this.props.loanAmount}
-                  handleRadio={this.handleSetCustom}
-                  handleCustomAmount={this.handleCustomAmount}
-                  min={this.props.minAmount}
-                  max={this.props.maxAmount}
-                  chooseLoanAmountText={"Velg beløp"}
-                  otherAmountText={"Annet beløp"}
-                />
-              </LayoutItem>
+              {this.props.productType === "PRODUCT_LOAN" && (
+                <LayoutItem>
+                  <PickLoanSum
+                    loanAmount={this.state.amount}
+                    repaymentPeriod={this.props.repaymentPeriod}
+                    isCustomAmount={this.state.isCustomAmount}
+                    initialAmount={this.props.loanAmount}
+                    handleRadio={this.handleSetCustom}
+                    handleCustomAmount={this.handleCustomAmount}
+                    min={this.props.minAmount}
+                    max={this.props.maxAmount}
+                    chooseLoanAmountText={"Velg beløp"}
+                    otherAmountText={"Annet beløp"}
+                  />
+                </LayoutItem>
+              )}
               <LayoutItem>
                 <Box variant="offerTable" size="large">
                   <OfferTable>
                     <tbody>
-                      <tr>
-                        <OfferTableText>
-                          {this.props.loanDurationText}
-                        </OfferTableText>
-                        <OfferTableData>
-                          <OfferTableDurations>
-                            <OfferTableDurationsItem>
-                              <Select
-                                id={"select-loan-duration"}
-                                onChange={value =>
-                                  this.handleChangeLoanDuration(
-                                    value
-                                      ? value.text
-                                      : this.props.repaymentPeriod
-                                  )
-                                }
-                                variant="loanOffer"
-                                items={this.props.potentialDurations}
-                                itemToString={item => item + " mnd."}
-                              />
-                            </OfferTableDurationsItem>
-                          </OfferTableDurations>
-                        </OfferTableData>
-                      </tr>
+                      {this.props.productType === "PRODUCT_LOAN" && (
+                        <tr>
+                          <OfferTableText>
+                            {this.props.loanDurationText}
+                          </OfferTableText>
+                          <OfferTableData>
+                            <OfferTableDurations>
+                              <OfferTableDurationsItem>
+                                <Select
+                                  id={"select-loan-duration"}
+                                  onChange={value =>
+                                    this.handleChangeLoanDuration(
+                                      value
+                                        ? value.text
+                                        : this.props.repaymentPeriod
+                                    )
+                                  }
+                                  variant="loanOffer"
+                                  items={this.props.potentialDurations}
+                                  itemToString={item =>
+                                    item >= 12
+                                      ? item / 12 + " år"
+                                      : item + " mnd"
+                                  }
+                                />
+                              </OfferTableDurationsItem>
+                            </OfferTableDurations>
+                          </OfferTableData>
+                        </tr>
+                      )}
                       {term &&
                         plan && (
                           <React.Fragment>
-                            <tr>
-                              <OfferTableText>
-                                {this.props.monthlyFeeText}
-                              </OfferTableText>
-                              <OfferTableData>
-                                <Odometer number={term.monthlyFees} size={14} />
-                              </OfferTableData>
-                            </tr>
-                            <tr>
-                              <OfferTableText>
-                                {this.props.paybackText}
-                              </OfferTableText>
-                              <OfferTableData>
-                                <Odometer
-                                  number={plan.reduce(
-                                    (acc, curr) => acc + curr.monthlyPayment,
-                                    0
-                                  )}
-                                  size={14}
-                                />
-                              </OfferTableData>
-                            </tr>
+                            {this.props.showInterestRate && (
+                              <tr>
+                                <OfferTableText>
+                                  {this.props.interestRateText}
+                                </OfferTableText>
+                                <OfferTableData>
+                                  <span>{term.interestRate} %</span>
+                                </OfferTableData>
+                              </tr>
+                            )}
+                            {this.props.showMonthlyFee && (
+                              <tr>
+                                <OfferTableText>
+                                  {this.props.monthlyFeeText}
+                                </OfferTableText>
+                                <OfferTableData>
+                                  <Odometer
+                                    number={term.monthlyFees}
+                                    size={14}
+                                  />
+                                </OfferTableData>
+                              </tr>
+                            )}
+                            {this.props.showPayback && (
+                              <tr>
+                                <OfferTableText>
+                                  {this.props.paybackText}
+                                </OfferTableText>
+                                <OfferTableData>
+                                  <Odometer
+                                    number={plan.reduce(
+                                      (acc, curr) => acc + curr.monthlyPayment,
+                                      0
+                                    )}
+                                    size={14}
+                                  />
+                                </OfferTableData>
+                              </tr>
+                            )}
                             <OfferTableTotal>
                               <OfferTableText>
                                 {this.props.payMonthlyText}
@@ -281,7 +306,10 @@ PresentOffer.propTypes = {
   repaymentPeriod: PropTypes.number.isRequired,
   selectedDuration: PropTypes.any,
   startFee: PropTypes.any,
-  termFee: PropTypes.any
+  termFee: PropTypes.any,
+  productType: PropTypes.string,
+  showMonthlyFee: PropTypes.bool,
+  showPayback: PropTypes.bool
 }
 
 PresentOffer.defaultProps = {
@@ -311,12 +339,17 @@ PresentOffer.defaultProps = {
   payMonthlyText: "Å betale hver måned",
   paybackText: "Å betale tilbake",
   paybackTotal: 101000,
-  potentialDurations: [6, 3],
+  potentialDurations: [1, 3, 6, 12, 18, 24, 36],
   rejectOfferButtonText: "Avslå",
   repaymentPeriod: 6,
   selectedDuration: 6,
   startFee: 0,
-  termFee: 0
+  termFee: 0,
+  productType: "PRODUCT_LOAN",
+  showMonthlyFee: true,
+  showInterestRate: true,
+  interestRateText: "Rente",
+  showPayback: true
 }
 
 export default PresentOffer

@@ -83,6 +83,7 @@ class Calculator extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <Formik
         initialValues={{
@@ -145,37 +146,50 @@ class Calculator extends React.Component {
                               }}
                             />
                           </LayoutItem>
-                          <LayoutItem>
-                            <Field
-                              name={`terms`}
-                              render={({ field }) => {
-                                const { onChange, ...rest } = field
-                                return (
-                                  <Box
-                                    variant="loanDurationContainer"
-                                    size="flush"
-                                  >
-                                    <Label
-                                      htmlFor="select-loan-duration"
-                                      variant="loanDuration"
+                          {this.props.productType === "PRODUCT_LOAN" && (
+                            <LayoutItem>
+                              <Field
+                                name={`terms`}
+                                render={({ field }) => {
+                                  const { onChange, ...rest } = field
+                                  return (
+                                    <Box
+                                      variant="loanDurationContainer"
+                                      size="flush"
                                     >
-                                      {this.props.loanDurationLabel}
-                                    </Label>
-                                    <Select
-                                      items={this.props.termValues}
-                                      id={"select-loan-duration"}
-                                      itemToString={item => item + " mnd"}
-                                      onChange={item => {
-                                        this.calculate(this.state.value, item)
-                                        setFieldValue("terms", item)
-                                      }}
-                                      {...rest}
-                                    />
-                                  </Box>
-                                )
-                              }}
-                            />
-                          </LayoutItem>
+                                      <Label
+                                        htmlFor="select-loan-duration"
+                                        variant="loanDuration"
+                                      >
+                                        {this.props.loanDurationLabel}
+                                      </Label>
+                                      <Select
+                                        items={this.props.termValues}
+                                        id={"select-loan-duration"}
+                                        itemToString={item =>
+                                          item >= 12
+                                            ? item / 12 + " år"
+                                            : item + " mnd"
+                                        }
+                                        onChange={item => {
+                                          this.calculate(this.state.value, item)
+                                          setFieldValue("terms", item)
+                                        }}
+                                        {...rest}
+                                      />
+                                    </Box>
+                                  )
+                                }}
+                              />
+                            </LayoutItem>
+                          )}
+                          {this.props.productType === "PRODUCT_CREDIT" && (
+                            <Box variant="priceExample" size="mediumPlus">
+                              <Text variant="creditExplainer">
+                                {this.props.creditExplanationText}
+                              </Text>
+                            </Box>
+                          )}
                         </Layout>
                       </LayoutItem>
 
@@ -183,16 +197,10 @@ class Calculator extends React.Component {
                         <LayoutItem>
                           <Box variant="loanTerms">
                             <List>
-                              {this.props.showMonthlyFees && (
+                              {this.props.showInterestRate && (
                                 <SplitListItem>
-                                  <span>{this.props.monthlyFeesText}</span>
-                                  <span>
-                                    <Odometer
-                                      number={this.state.term.monthlyFees}
-                                      size={14}
-                                      seperatorSteps={3}
-                                    />
-                                  </span>
+                                  <span>{this.props.interestRateText}</span>
+                                  <span>{this.props.interestRate} %</span>
                                 </SplitListItem>
                               )}
                               {this.props.showDownpayment && (
@@ -231,6 +239,13 @@ class Calculator extends React.Component {
                           </Box>
                         </LayoutItem>
                       )}
+                      <LayoutItem>
+                        <Box variant="priceExample" size="mediumPlus">
+                          <Text variant="legalese">
+                            {this.props.priceExampleText}
+                          </Text>
+                        </Box>
+                      </LayoutItem>
                     </Layout>
                     <Divider height={2} variant="calculator" />
                   </div>
@@ -410,6 +425,8 @@ Calculator.propTypes = {
   errorValueTooLow: PropTypes.string,
   headingText: PropTypes.string,
   interestRate: PropTypes.number,
+  interestRateText: PropTypes.string,
+  priceExampleText: PropTypes.string,
   loanAmount: PropTypes.number,
   loanDurationLabel: PropTypes.string,
   loanPurposes: PropTypes.array,
@@ -428,12 +445,15 @@ Calculator.propTypes = {
   showDownpayment: PropTypes.bool,
   showMonthlyFees: PropTypes.bool,
   showTotalMonthly: PropTypes.bool,
+  showInterestRate: PropTypes.bool,
   startFee: PropTypes.number,
   termFee: PropTypes.number,
   termValues: PropTypes.array,
   totalMonthlyText: PropTypes.string,
   valueLabel: PropTypes.string,
-  purposeLabel: PropTypes.string
+  purposeLabel: PropTypes.string,
+  productType: PropTypes.string,
+  creditExplanationText: PropTypes.string
 }
 
 Calculator.defaultProps = {
@@ -445,6 +465,7 @@ Calculator.defaultProps = {
   downPaymentPerMonthText: "Nedbetaling månedlig",
   emailLabel: "Epost",
   emailPlaceholder: "mail@mail.com",
+  interestRateText: "Rente",
   interestRate: 19.9,
   loanDurationLabel: "Nedbetalingstid",
   loanPurposes: ["party", "hoverboard"],
@@ -460,11 +481,17 @@ Calculator.defaultProps = {
   showDownpayment: true,
   showMonthlyFees: true,
   showTotalMonthly: true,
+  showInterestRate: true,
   startFee: 0,
   termFee: 3000,
   termValues: [6, 12, 18, 24, 36],
   totalMonthlyText: "Totalt månedlig",
   valueLabel: "Ønsket lånebeløp",
   headingText: "Se hva lånet koster",
-  purposeLabel: "Hva skal lånet brukes til?"
+  purposeLabel: "Hva skal lånet brukes til?",
+  priceExampleText:
+    "Lånet gis med fastrente i hele lånets løpetid. Priseksempel: 500 000 over 6 mnd, eff. rente 11,56 % kostnader 26 232, totalt 526 232.",
+  productType: "PRODUCT_LOAN",
+  creditExplanationText:
+    "Du betaler kun påløpte renter av beløpet du har brukt, resten betaler du når du selv ønsker."
 }
