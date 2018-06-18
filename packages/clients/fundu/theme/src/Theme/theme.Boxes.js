@@ -182,6 +182,15 @@ export const BoxStyling = registerStyle(
         padding-left: 0;
         padding-right: 0;
       }
+    `,
+    header: css`
+      height: ${spacing("largePlus")};
+      border-bottom: 1px solid ${color.line};
+      width: 100%;
+      display: flex;
+      padding-top: 0;
+      padding-bottom: 0;
+      align-items: center;
     `
   },
   BoxStyles.BOX

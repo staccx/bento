@@ -31,6 +31,8 @@ import {
   SelectOptionStyling
 } from "./Theme/theme.Inputs"
 import { LayoutStyling } from "./Theme/theme.Layouts"
+import { LayoutItemStyling } from "./Theme/theme.LayoutItem"
+import { LogoStyle } from "./Theme/Logo"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -127,6 +129,7 @@ const theme = new Theme(BaseTheme, {
   .addStyles(SelectIconButtonStyling)
   .addStyles(SelectOptionsWrapperStyling)
   .addStyles(LayoutStyling)
+  .addStyles(LayoutItemStyling)
   .addStyles(RadioPillItemStyling)
   .addStyles(SelectSimpleSelectStyling)
   .addStyles(SelectSimpleWrapperStyling)
@@ -139,4 +142,5 @@ const theme = new Theme(BaseTheme, {
   .addStyles(CompanyInputSelectItemStyling)
   .addStyles(SelectOptionStyling)
   .addStyles(DividerStyling)
+  .addStyles(LogoStyle)
 export default theme.get
