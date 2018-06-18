@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { spacing, wrapper, registerStyle } from "@staccx/theme"
-import { LayoutStyles } from "@staccx/base"
+import { LayoutStyles, LayoutItemStyles } from "@staccx/base"
 
 export const LayoutStyling = registerStyle(
   {
@@ -26,4 +26,13 @@ export const LayoutStyling = registerStyle(
     `
   },
   LayoutStyles.LAYOUT
+)
+
+export const LayoutItemStyling = registerStyle(
+  {
+    legaleseContainer: css`
+      grid-column: 1/3;
+    `
+  },
+  LayoutItemStyles.LAYOUT_ITEM
 )

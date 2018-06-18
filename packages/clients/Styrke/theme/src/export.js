@@ -21,7 +21,7 @@ import {
   SelectOptionsWrapperStyling,
   RadioPillStyling
 } from "./Theme/theme.Inputs"
-import { LayoutStyling } from "./Theme/theme.Layouts"
+import { LayoutStyling, LayoutItemStyling } from "./Theme/theme.Layouts"
 import { ExpandStyling } from "./Theme/theme.Expand"
 
 const borderRadius = "5px"
@@ -127,6 +127,7 @@ const theme = new Theme(BaseTheme, {
   .addStyles(SelectIconButtonStyling)
   .addStyles(SelectOptionsWrapperStyling)
   .addStyles(LayoutStyling)
+  .addStyles(LayoutItemStyling)
   .addStyles(RadioPillStyling)
   .addStyles(ExpandStyling)
   .addStyles(DividerStyling)
