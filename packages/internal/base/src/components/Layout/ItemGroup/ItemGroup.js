@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { spacing as space, themify, themeProps } from "@staccx/theme"
 
-const ItemGroup = ({ children, spacing, variant, className }) => (
-  <Wrap variant={variant} className={className}>
+const ItemGroup = ({ children, spacing, variant, className, ...restProps }) => (
+  <Wrap variant={variant} className={className} {...restProps}>
     <ItemGroupElement spacing={spacing} variant={variant}>
       {children}
     </ItemGroupElement>
