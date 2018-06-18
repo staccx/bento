@@ -46,6 +46,14 @@ export const ListStyling = registerStyle(
     `,
     topBorder: css`
       border-top: 1px solid ${color.line};
+    `,
+    bullet: css`
+      list-style-type: disc;
+      padding-left: 1.5rem;
+
+      > li {
+        margin-bottom: ${spacing.tiny};
+      }
     `
   },
   ListStyles.LIST

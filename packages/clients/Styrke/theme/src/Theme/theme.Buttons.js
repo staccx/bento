@@ -13,6 +13,20 @@ export const ButtonStyling = registerStyle(
     [VARIANT_DEFAULT]: css`
       border-bottom: 1px solid ${color("primaryDark")};
     `,
+    secondary: css`
+      background-color: transparent;
+      border-radius: 0;
+      border-bottom: 2px solid ${color("primaryDark")};
+      color: ${color.text};
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: ${color.primary};
+        background-color: transparent;
+      }
+    `,
+
     decline: css`
       background-color: transparent;
       border-radius: 0;
