@@ -16,7 +16,6 @@ import { ButtonStyling } from "./Theme/theme.Buttons"
 import {
   InputStyling,
   LabelStyling,
-  SelectSelectedStyling,
   SelectIconButtonStyling,
   SelectOptionsWrapperStyling,
   RadioPillItemStyling,
@@ -125,7 +124,6 @@ const theme = new Theme(BaseTheme, {
   .addStyles(InputStyling)
   .addStyles(LabelStyling)
   .addStyles(ExpandListItemStyling)
-  .addStyles(SelectSelectedStyling)
   .addStyles(SelectIconButtonStyling)
   .addStyles(SelectOptionsWrapperStyling)
   .addStyles(LayoutStyling)

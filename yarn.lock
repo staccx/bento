@@ -176,6 +176,15 @@
   dependencies:
     immutable "^3.8.2"
 
+"@staccx/theme@^4.21.2":
+  version "4.20.3"
+  dependencies:
+    immutable "^3.8.2"
+    webfontloader "^1.6.28"
+
+"@staccx/utils@^4.21.2":
+  version "4.21.0"
+
 "@tedconf/react-show-more@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tedconf/react-show-more/-/react-show-more-1.1.2.tgz#7221a1c7e8a5204a09fc9d1db30cc6102bcabadb"
