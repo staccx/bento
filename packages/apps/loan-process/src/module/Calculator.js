@@ -238,7 +238,7 @@ class Calculator extends React.Component {
                           </Box>
                         </LayoutItem>
                       )}
-                      <LayoutItem>
+                      <LayoutItem variant="legaleseContainer">
                         <Box variant="priceExample" size="mediumPlus">
                           <Text variant="legalese">
                             {this.props.priceExampleText}
