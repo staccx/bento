@@ -191,6 +191,9 @@ export const BoxStyling = registerStyle(
       padding-top: 0;
       padding-bottom: 0;
       align-items: center;
+    `,
+    codeBlock: css`
+      ${tileStyle};
     `
   },
   BoxStyles.BOX

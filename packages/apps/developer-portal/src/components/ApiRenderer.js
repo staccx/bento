@@ -45,12 +45,9 @@ class ApiRenderer extends React.Component {
         openapi={openapi}
         tags={tags}
       >
-        <Wrapper>
-          <Info info={openapi.info} />
-          <Servers servers={openapi.servers} />
-          <Tags />
-
-        </Wrapper>
+        <Info info={openapi.info} />
+        <Servers servers={openapi.servers} />
+        <Tags />
       </SchemaProvider>
     )
   }

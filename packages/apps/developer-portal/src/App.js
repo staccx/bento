@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { ThemeProxyProvider, ThemeComponent } from "@staccx/theme"
-import { Layout, LayoutItem, Box, List } from "@staccx/base"
+import { Layout, LayoutItem, Box, List, Wrapper } from "@staccx/base"
 import FunduTheme from "@staccx/fundu-theme"
 import ApiRenderer from "./components/ApiRenderer"
 
@@ -23,12 +23,20 @@ class App extends Component {
           </LayoutItem>
           <LayoutItem area="main">
             <Box variant="header" />
-            <div>
-              <ApiRenderer
-                url={"https://demo.quantfol.io/swagger/v1/swagger.json"}
-              />
-              <ApiRenderer url={"http://petstore.swagger.io/v2/swagger.json"} />
-            </div>
+            <Wrapper>
+              <Layout paddingTop="large">
+                <Box variant="codeBlock">
+                  <ApiRenderer
+                    url={"https://demo.quantfol.io/swagger/v1/swagger.json"}
+                  />
+                </Box>
+                <Box variant="codeBlock">
+                  <ApiRenderer
+                    url={"http://petstore.swagger.io/v2/swagger.json"}
+                  />
+                </Box>
+              </Layout>
+            </Wrapper>
           </LayoutItem>
         </Layout>
       </ThemeProxyProvider>
