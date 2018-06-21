@@ -1,6 +1,6 @@
 {
   "name": "@staccx/developer-portal",
-  "version": "4.22.2",
+  "version": "4.22.3",
   "description": "Developer portal white label",
   "private": true,
   "author": "StaccX",
@@ -31,7 +31,7 @@
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
-    "@staccx/theme": "^4.21.2",
+    "@staccx/theme": "^4.20.3",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^23.0.0-alpha.0",
@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "@staccx/fundu-theme": "^4.22.2",
-    "@staccx/utils": "^4.21.2",
+    "@staccx/utils": "^4.21.0",
     "redoc": "^2.0.0-alpha.20",
     "swagger2openapi": "^2.11.16",
     "tslib": "^1.9.1"
