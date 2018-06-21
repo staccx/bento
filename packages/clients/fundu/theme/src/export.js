@@ -28,7 +28,8 @@ import {
   CompanyInputCloseStyling,
   CompanyInputFlagStyling,
   CompanyInputSelectItemStyling,
-  SelectOptionStyling
+  SelectOptionStyling,
+  SelectSelectedWrapperStyling
 } from "./Theme/theme.Inputs"
 import { LayoutStyling } from "./Theme/theme.Layouts"
 import { LayoutItemStyling } from "./Theme/theme.LayoutItem"
@@ -143,4 +144,5 @@ const theme = new Theme(BaseTheme, {
   .addStyles(SelectOptionStyling)
   .addStyles(DividerStyling)
   .addStyles(LogoStyle)
+  .addStyles(SelectSelectedWrapperStyling)
 export default theme.get

@@ -72,7 +72,23 @@ export const LabelStyling = registerStyle(
   LabelStyles.LABEL
 )
 
-export const SelectSelectedStyling = registerStyle(
+export const SelectOptionStyling = registerStyle(
+  {
+    loanOffer: css`
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+      }
+    `,
+    loanPurpose: css`
+      padding-left: ${spacing.medium};
+    `
+  },
+  SelectOptionStyles.SELECT_DEFAULT_OPTION
+)
+
+export const SelectSelectedWrapperStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: css`
       border-color: transparent;
@@ -100,22 +116,6 @@ export const SelectSelectedStyling = registerStyle(
     `
   },
   SelectStyles.SELECTED_WRAPPER
-)
-
-export const SelectOptionStyling = registerStyle(
-  {
-    loanOffer: css`
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: transparent;
-      }
-    `,
-    loanPurpose: css`
-      padding-left: ${spacing.medium};
-    `
-  },
-  SelectOptionStyles.SELECT_DEFAULT_OPTION
 )
 
 export const SelectIconButtonStyling = registerStyle(
