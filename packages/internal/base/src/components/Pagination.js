@@ -6,32 +6,45 @@ class Pagination extends React.Component {
     super(props, context)
 
     this.state = {
-      items: props.items.slice(0, props.itemsPerPage),
-      currentIndex: props.startIndex,
-      pageCount: Math.ceil(props.items.length / props.itemsPerPage),
-      nextPage: () => this.resolveItems(props.startIndex + 1),
-      previousPage: null,
-      page: props.startIndex + 1
+      currentIndex: props.startIndex
     }
   }
 
-  resolveItems(currentIndex) {
+  render() {
+    const { currentIndex } = this.state
+
     const start = currentIndex * this.props.itemsPerPage
-    this.setState({
+
+    const rest = this.props.items.slice(
+      start + this.props.itemsPerPage,
+      this.props.items.length
+    )
+
+    const end =
+      rest.length <= this.props.fuzzyLimit
+        ? this.props.items.length
+        : start + this.props.itemsPerPage
+
+    const items = this.props.items.slice(start, end)
+    const pageCount = Math.ceil(
+      (this.props.items.length - this.props.fuzzyLimit) /
+        this.props.itemsPerPage
+    )
+    const result = {
       currentIndex,
-      page: currentIndex + 1,
-      items: this.props.items.slice(start, start + this.props.itemsPerPage),
+      pageCount,
+      items,
       nextPage:
-        currentIndex < this.state.pageCount - 1
-          ? () => this.resolveItems(currentIndex + 1)
+        currentIndex < pageCount - 1
+          ? () => this.setState({ currentIndex: currentIndex + 1 })
           : null,
       previousPage:
-        currentIndex > 0 ? () => this.resolveItems(currentIndex - 1) : null
-    })
-  }
-
-  render() {
-    return this.props.children({ ...this.state })
+        currentIndex > 0
+          ? () => this.setState({ currentIndex: currentIndex - 1 })
+          : null,
+      page: currentIndex + 1
+    }
+    return this.props.children({ ...result })
   }
 }
 
@@ -39,12 +52,14 @@ export default Pagination
 
 Pagination.propTypes = {
   children: PropTypes.func.isRequired,
+  fuzzyLimit: PropTypes.number,
   items: PropTypes.array.isRequired,
   itemsPerPage: PropTypes.number,
   startIndex: PropTypes.number
 }
 
 Pagination.defaultProps = {
+  fuzzyLimit: 1,
   itemsPerPage: 10,
   startIndex: 0
 }
