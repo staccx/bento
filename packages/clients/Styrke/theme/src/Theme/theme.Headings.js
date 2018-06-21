@@ -15,7 +15,7 @@ export const HeadingStyling = registerStyle(
     formSection: css`
       color: ${color.primary};
       font-size: ${font.h3};
-      margin-top: ${spacing.medium};
+      margin-top: ${p => (p.flush ? 0 : spacing("medium")(p))};
     `,
     endScreen: stepHeading,
     boxHeading: css`

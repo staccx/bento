@@ -110,6 +110,19 @@ export const BoxStyling = registerStyle(
     `,
     priceExample: css`
       padding: 0;
+    `,
+    radioContainer: css`
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+
+      > label {
+        flex-basis: 100%;
+      }
+
+      > div:not(:first-child):not(:last-child) {
+        margin-right: ${spacing.medium};
+      }
     `
   },
   BoxStyles.BOX

@@ -10,6 +10,7 @@ import {
   SliderKeyboardInput,
   Button,
   Label,
+  RadioButton,
   Odometer,
   Text,
   Wrapper,
@@ -382,6 +383,118 @@ class Calculator extends React.Component {
                             </Alert>
                           )}
                       </LayoutItem>
+                      <LayoutItem>
+                        <Field
+                          name={`purpose`}
+                          render={({ field }) => {
+                            const { name, value, onBlur } = field
+                            return (
+                              <Select
+                                items={[
+                                  "Nettbetaling",
+                                  "Kortbetaling",
+                                  "Fakturering",
+                                  "Kontantbetaling"
+                                ]}
+                                label={
+                                  "Hvordan betaler som oftest kundene dine deg?"
+                                }
+                                placeHolderLabel={"Velg…"}
+                                name={name}
+                                value={value}
+                                onChange={item => console.log(item)}
+                                onBlur={onBlur}
+                                variant="loanPurpose"
+                              />
+                            )
+                          }}
+                        />
+                        {touched.purpose &&
+                          errors.purpose && (
+                            <Alert variant="error" type="warning">
+                              {errors.purpose}
+                            </Alert>
+                          )}
+                      </LayoutItem>
+                      <LayoutItem>
+                        <Field
+                          name={`paymentsInternational`}
+                          render={({ field }) => {
+                            const { name } = field
+                            return (
+                              <Box variant="radioContainer">
+                                <Label htmlFor={name}>
+                                  Mottar du innbetalinger fra utenfor Norge?
+                                </Label>
+                                <RadioButton
+                                  name={name}
+                                  id="213ewqs"
+                                  onChange={() =>
+                                    console.log("Do you copy? Over.")
+                                  }
+                                >
+                                  Ja
+                                </RadioButton>
+                                <RadioButton
+                                  name={name}
+                                  id="21iehwdaj"
+                                  onChange={() =>
+                                    console.log("Do you copy? Over.")
+                                  }
+                                >
+                                  Nei
+                                </RadioButton>
+                              </Box>
+                            )
+                          }}
+                        />
+                        {touched.purpose &&
+                          errors.purpose && (
+                            <Alert variant="error" type="warning">
+                              {errors.purpose}
+                            </Alert>
+                          )}
+                      </LayoutItem>
+                      <LayoutItem>
+                        <Field
+                          name={`paymentCash`}
+                          render={({ field }) => {
+                            const { name } = field
+                            return (
+                              <Box variant="radioContainer">
+                                <Label htmlFor={name}>
+                                  Tar du i mot kontanter i betaling fra dine
+                                  kunder
+                                </Label>
+                                <RadioButton
+                                  name={name}
+                                  id="3riejwfjnsldk"
+                                  onChange={() =>
+                                    console.log("Do you copy? Over.")
+                                  }
+                                >
+                                  Ja
+                                </RadioButton>
+                                <RadioButton
+                                  name={name}
+                                  id="okwenfs"
+                                  onChange={() =>
+                                    console.log("Do you copy? Over.")
+                                  }
+                                >
+                                  Nei
+                                </RadioButton>
+                              </Box>
+                            )
+                          }}
+                        />
+                        {touched.purpose &&
+                          errors.purpose && (
+                            <Alert variant="error" type="warning">
+                              {errors.purpose}
+                            </Alert>
+                          )}
+                      </LayoutItem>
                     </Layout>
                     {isValid && (
                       <Button type={"submit"}>{this.props.buttonText}</Button>
@@ -465,7 +578,7 @@ Calculator.defaultProps = {
   emailLabel: "Epost",
   emailPlaceholder: "mail@mail.com",
   interestRateText: "Rente",
-  interestRate: 19.9,
+  interestRate: 12.9,
   loanDurationLabel: "Nedbetalingstid",
   loanPurposes: ["party", "hoverboard"],
   maxValue: 1000000,
