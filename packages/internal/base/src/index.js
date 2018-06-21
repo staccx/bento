@@ -90,6 +90,9 @@ import JsonSchema from "./components/Forms/JsonSchema/JsonSchema"
 // Logo
 import Logo from "./components/Logo/Logo"
 
+// Pagination
+import Pagination from "./components/Pagination"
+
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
@@ -157,6 +160,7 @@ export {
   Odometer,
   Pack,
   PackItem,
+  Pagination,
   Paragraph,
   ParagraphStyles,
   PhoneInput,
