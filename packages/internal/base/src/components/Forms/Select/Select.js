@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import Downshift from "downshift"
 import { ScaleIn } from "@staccx/animations"
+import { stringIncludes } from "@staccx/utils"
 import Label from "../Label/Label"
 import Input from "../Input/Input"
 import Caret from "../../Icons/Caret"
@@ -77,7 +78,7 @@ class Select extends React.PureComponent {
     const { filter } = this.state
     const { filterProp } = this.props
     const field = filterProp ? item[filterProp] : item
-    return filter ? field.includes(filter) : true
+    return filter ? stringIncludes(field, filter) : true
   }
 
   render() {
@@ -96,6 +97,9 @@ class Select extends React.PureComponent {
     const Placeholder = this.props.Placeholder
 
     const toString = item => {
+      if (!item) {
+        return ""
+      }
       if (!placeHolderLabel || item !== placeHolderLabel) {
         return itemToString(item)
       }
@@ -203,13 +207,22 @@ class Select extends React.PureComponent {
                       .filter(
                         item => (selectedItem ? item : this.filterItem(item))
                       )
+                      .slice(
+                        0,
+                        this.props.maxItems === -1
+                          ? this.props.items.length
+                          : this.props.maxItems
+                      )
                       .map((item, index) => {
                         if (this.props.children) {
                           return this.props.children({
                             item,
                             getItemProps,
                             highlighted: highlightedIndex === index,
-                            selected: selectedItem === item
+                            selected: selectedItem === item,
+                            reset: () => {
+                              toggleMenu()
+                            }
                           })
                         }
                         return (
@@ -314,6 +327,7 @@ Select.propTypes = {
   label: PropTypes.string,
   mapKey: PropTypes.func,
   mapSelected: PropTypes.func,
+  maxItems: PropTypes.number,
   onChange: PropTypes.func,
   placeHolderLabel: PropTypes.any,
   renderSelected: PropTypes.func,
@@ -327,6 +341,7 @@ Select.defaultProps = {
   Placeholder: Input,
   combobox: false,
   itemToKey: item => item,
-  itemToString: item => item
+  itemToString: item => item,
+  maxItems: -1
 }
 export default Select
