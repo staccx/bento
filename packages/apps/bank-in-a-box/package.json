@@ -1,13 +1,13 @@
 {
   "name": "@staccx/bank-in-a-box",
-  "version": "4.22.2",
+  "version": "4.23.0",
   "private": true,
   "dependencies": {
     "@staccx/animations": "^4.20.1",
-    "@staccx/aprila-theme": "^4.22.2",
-    "@staccx/base": "^4.22.2",
+    "@staccx/aprila-theme": "^4.23.0",
+    "@staccx/base": "^4.23.0",
     "@staccx/formatting": "^4.20.1",
-    "@staccx/norefjell-theme": "^4.22.2",
+    "@staccx/norefjell-theme": "^4.23.0",
     "@staccx/theme": "^4.20.3",
     "@tedconf/react-show-more": "^1.1.2",
     "axios": "^0.18.0",

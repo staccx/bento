@@ -1,6 +1,6 @@
 {
   "name": "@staccx/loan-process",
-  "version": "4.22.2",
+  "version": "4.23.0",
   "description": "Loan process",
   "author": "StaccX",
   "license": "UNLICENCED",
@@ -38,7 +38,7 @@
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
-    "@staccx/base": "^4.22.2",
+    "@staccx/base": "^4.23.0",
     "@staccx/theme": "^4.20.3",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
@@ -76,7 +76,7 @@
   "dependencies": {
     "@staccx/formatting": "^4.20.1",
     "@staccx/payment-plan": "^1.2.0",
-    "@staccx/utils": "^4.21.0",
+    "@staccx/utils": "^4.23.0",
     "formik": "^0.11.11",
     "national-id": "^2.0.0",
     "react-dom-confetti": "^0.0.10",
