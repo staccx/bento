@@ -1,6 +1,6 @@
 {
   "name": "@staccx/developer-portal",
-  "version": "4.23.0",
+  "version": "4.24.0",
   "description": "Developer portal white label",
   "private": true,
   "author": "StaccX",
@@ -60,7 +60,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/fundu-theme": "^4.23.0",
+    "@staccx/fundu-theme": "^4.24.0",
     "@staccx/utils": "^4.23.0",
     "redoc": "^2.0.0-alpha.20",
     "swagger2openapi": "^2.11.16",
