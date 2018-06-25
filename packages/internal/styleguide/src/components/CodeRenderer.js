@@ -10,12 +10,11 @@ class CodeRenderer extends Component {
   render() {
     const { generate, language, grammar, className } = this.props.lang
 
-    console.log()
-    console.log(grammar, language)
+    const code = generate(this.props)
+    console.log(code)
     const html = {
-      __html: Prism.highlight(generate(this.props), grammar, language)
+      __html: Prism.highlight(code, grammar, language)
     }
-    console.log(html)
     return (
       <CodeWrapper className={className}>
         <code className={className} dangerouslySetInnerHTML={html} />
@@ -86,10 +85,9 @@ export default CodeRenderer
 CodeRenderer.defaultProps = {
   body: { id: 0, name: '"Stupendouos"' },
   headers: {
-    Authorization: "Bearer ey123123",
-    "Content-Type": '"application/x-www-form-urlencoded"'
+    Authorization: '"Bearer ey1"'
   },
-  lang: languages.restSharp,
+  lang: languages.okHTTP,
   method: "GET",
   path: "https://cloud.stacc.com/api",
   queryParams: { id: 0, name: "Stupendouos" },

@@ -53,8 +53,8 @@ const color = {
   codeNumber: "#6897BB",
   codeFunction: "#A9B7C6",
   codeOperator: "#A9B7C6",
-  codeClass: "#A9B7C6"
-
+  codeClass: "#A9B7C6",
+  codePunctuation: "#A9B7C6"
 }
 
 const font = {
