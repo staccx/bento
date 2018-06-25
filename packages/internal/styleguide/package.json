@@ -5,6 +5,7 @@
   "dependencies": {
     "@staccx/base": "^4.24.0",
     "@staccx/theme": "^4.20.3",
+    "prismjs": "^1.15.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
