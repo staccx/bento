@@ -1,13 +1,8 @@
 {
-  "parser": "babel-eslint",
-  "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": "error"
-  },
-  "extends": [
-    "standard",
-    "standard-jsx",
-    "eslint-config-standard-react",
-    "plugin:prettier/recommended"
-  ]
+    "extends": "@staccx",
+    "globals": {
+        "it": true,
+        "describe": true,
+        "expect": true
+    }
 }

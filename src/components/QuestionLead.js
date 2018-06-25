@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {font} from "@staccx/theme"
 
 const QuestionLead = ({ question, children }) => {
   return (
@@ -12,7 +13,7 @@ const QuestionLead = ({ question, children }) => {
 
 const Question = styled.h1`
   font-family: ${p => p.theme.font.body};
-  font-size: ${p => p.theme.font.size.h1};
+  font-size: ${font.h1};
   font-weight: normal;
   text-align: center;
   margin-bottom: ${p => p.theme.spacing.large};
@@ -20,13 +21,13 @@ const Question = styled.h1`
   color: ${p => p.theme.color.grayDark};
   @media (max-width: ${p => p.theme.wrapper.medium}) {
     margin-top: ${p => p.theme.spacing.large};
-    font-size: ${p => p.theme.font.size.h2};
+    font-size: ${font.h2};
   }
 `
 
 const Lead = styled.p`
   font-family: ${p => p.theme.font.body};
-  font-size: ${p => p.theme.font.size.base};
+  font-size: ${font.base};
   color: ${p => p.theme.color.wcag};
   font-weight: normal;
   text-align: center;

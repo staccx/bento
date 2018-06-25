@@ -2,6 +2,7 @@ import React from "react"
 import styled, { keyframes } from "styled-components"
 import { inject, observer } from "mobx-react"
 import { hideVisually } from "@staccx/base"
+import {font} from "@staccx/theme"
 
 @inject("uiStore")
 @observer
@@ -131,7 +132,7 @@ const StepLink = styled.a`
 const Step = styled.div`
   padding-bottom: ${p => p.theme.spacing.small};
   text-align: center;
-  font-size: ${p => p.theme.font.size.small};
+  font-size: ${font.small};
   color: ${p => (p.current ? p.theme.color.text : p.theme.color.grayLight)};
   grid-row: 1;
   @media (max-width: ${p => p.theme.wrapper.medium}) {

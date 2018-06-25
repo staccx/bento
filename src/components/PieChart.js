@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { inject, observer } from "mobx-react"
 import Chart from "chart.js"
-import { themeLaser } from "../theme/themeLaser"
+import themeLaser from "../theme/themeLaser"
 
 const fullCircle = Math.PI * 2
 

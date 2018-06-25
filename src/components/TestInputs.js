@@ -53,7 +53,7 @@ class TestInputs extends React.Component {
 
 const Heading = styled.h1`
   font-family: ${p => p.theme.font.body};
-  font-size: ${p => p.theme.font.size.h1};
+  font-size: ${font.h1};
   font-weight: normal;
   text-align: center;
   margin-bottom: ${p => p.theme.spacing.large};

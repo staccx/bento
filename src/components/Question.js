@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import styled, { keyframes } from "styled-components"
 import { RadioButton, Wrapper } from "@staccx/base"
+import { font } from "@staccx/theme"
 import QuestionLead from "./QuestionLead"
 import ShortTerm from "../components/icons/ShortTerm"
 import Umbrella from "../components/icons/Umbrella"
@@ -119,7 +120,7 @@ const Inner = styled.div`
 
 const Heading = styled.h4`
   color: ${p => p.theme.color.primary};
-  font-size: ${p => p.theme.font.size.h3};
+  font-size: ${font.h3};
   margin-bottom: ${p => p.theme.spacing.small};
 `
 

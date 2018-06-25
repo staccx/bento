@@ -7,7 +7,8 @@ import {
   Tabs as UnstyledTabs
 } from "react-tabs"
 import { formatCurrency } from "@staccx/formatting"
-import Animations from "@staccx/animations"
+import {FadeIn} from "@staccx/animations"
+import {font} from "@staccx/theme"
 import PieChart from "./PieChart"
 import PortfolioExpand from "./PortfolioExpand"
 import PortfolioFilter from "./PortfolioFilter"
@@ -181,7 +182,7 @@ const Heading2 = styled.h2`
   text-align: center;
   font-weight: 100;
   margin-top: ${p => p.theme.spacing.huge};
-  font-size: ${p => p.theme.font.size.h2};
+  font-size: ${font.h2};
   color: ${p => p.theme.color.wcag};
 `
 
@@ -280,7 +281,7 @@ const TabPanel = styled(UnstyledTabPanel).attrs({
   padding: 10px 20px;
   &.selected {
     display: block;
-    animation: 0.6s ${Animations.FadeIn} 0.2s ease-out 1 forwards;
+    animation: 0.6s ${FadeIn} 0.2s ease-out 1 forwards;
     opacity: 0;
   }
 `
@@ -295,7 +296,7 @@ const WrittenExplanation = styled.p`
   margin: 0 0 ${p => p.theme.spacing.large} 0;
   text-align: center;
   line-height: 1.5;
-  font-size: ${p => p.theme.font.size.h3};
+  font-size: ${font.h3};
 `
 
 export default Portfolio

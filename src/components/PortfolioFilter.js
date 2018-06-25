@@ -9,6 +9,7 @@ import {
   SplitListItem,
   Wrapper
 } from "@staccx/base"
+import {font} from "@staccx/theme"
 import { lerp } from "@staccx/math"
 import {
   getActualRisk,
@@ -247,7 +248,7 @@ const NoWrap = styled.span`
 
 const Subtle = styled.div`
   color: ${p => p.theme.color.wcag};
-  font-size: ${p => p.theme.font.size.tiny};
+  font-size: ${font.tiny};
   font-style: normal;
   text-transform: uppercase;
 `

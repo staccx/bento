@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 import { inject, observer } from "mobx-react"
-import Animations from "@staccx/animations"
+import { SlideInFromRight, SlideInFromLeft } from "@staccx/animations"
 import styled from "styled-components"
 import { Transition, TransitionGroup } from "react-transition-group"
 import StepperNavigation from "./StepNavigation"
-import Footer from "./Footer";
+import Footer from "./Footer"
 
 const duration = 500
 
@@ -13,14 +13,14 @@ const Wrapper = styled.div`
 `
 
 const Enter = styled.div`
-  animation: ${Animations.SlideInFromRight} ease-in-out ${duration}ms
+  animation: ${SlideInFromRight} ease-in-out ${duration}ms
     ${p => (p.direction === 1 ? "normal" : "reverse")} forwards 1;
   position: absolute;
   width: 100%;
 `
 
 const Exit = styled.div`
-  animation: ${Animations.SlideInFromLeft} ease-in-out ${duration}ms
+  animation: ${SlideInFromLeft} ease-in-out ${duration}ms
     ${p => (p.direction !== 1 ? "normal" : "reverse")} forwards 1;
   position: absolute;
   width: 100%;
@@ -72,9 +72,9 @@ class StepContent extends Component {
           return (
             <Slide isIn={isIn} key={item.name} direction={direction}>
               <Comp />
-              <StepperNavigation/>
+              <StepperNavigation />
               <Footer>
-                Made by <a href="http://stacc.com">Stacc X</a> <br/>
+                Made by <a href="http://stacc.com">Stacc X</a> <br />
                 Powered by <a href="http://quantfol.io">Quantfolio</a>
               </Footer>
             </Slide>

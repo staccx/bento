@@ -5,7 +5,8 @@ import { observable } from "mobx"
 import { inject, observer } from "mobx-react"
 import { easeOutQuad } from "easing-utils"
 import { clamp, lerp } from "@staccx/math"
-import Animations from "@staccx/animations"
+import { spacing, color, font } from "@staccx/theme"
+import { FadeInFromTop } from "@staccx/animations"
 import QuestionLead from "../components/QuestionLead"
 
 @inject("apiStore", "uiStore")
@@ -144,15 +145,15 @@ class Risk extends React.Component {
 const RangeLabel = styled.label`
   position: relative;
   font-weight: bold;
-  color: ${p => (p.current ? p.theme.color.secondary : "#2f80ed")};
+  color: ${p => (p.current ? color.secondary : "#2f80ed")};
   flex-basis: 25%;
   text-align: center;
-  padding: ${p => p.theme.spacing.tiny};
+  padding: ${spacing.tiny};
   cursor: pointer;
   transition: opacity 0.2s ease;
 
   @media (max-width: ${p => p.theme.wrapper.small}) {
-    font-size: ${p => p.theme.font.size.tiny};
+    font-size: ${font.tiny};
   }
 
   &:hover,
@@ -168,7 +169,7 @@ const RangeLabel = styled.label`
     bottom: 0;
     width: 1px;
     height: 12px;
-    background-color: ${p => p.theme.color.line};
+    background-color: ${color.line};
   }
 
   &::after {
@@ -180,13 +181,13 @@ const RangeLabel = styled.label`
 const LabelWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: ${p => p.theme.spacing.medium};
+  margin-bottom: ${spacing.medium};
 `
 
 const WaveWrapper = styled.div`
   display: flex;
   justify-content: stretch;
-  margin-bottom: ${p => p.theme.spacing.medium};
+  margin-bottom: ${spacing.medium};
 `
 
 const WaveBar = styled.i`
@@ -265,15 +266,15 @@ const WaveContainer = styled.span`
 `
 
 const BodyTextWrapper = styled.div`
-  margin: ${p => p.theme.spacing.medium} 0;
+  margin: ${spacing.medium} 0;
 `
 
 const BodyText = styled.span`
   display: block;
   width: 100%;
   text-align: center;
-  color: ${p => p.theme.color.gray};
-  animation: ${Animations.FadeInFromTop} 0.5s ease-out forwards 1;
+  color: ${color.gray};
+  animation: ${FadeInFromTop} 0.5s ease-out forwards 1;
 `
 
 export default Risk

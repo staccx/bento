@@ -1,5 +1,23 @@
-export const themeLaser = {
+import { BaseTheme } from "@staccx/base"
+import { Theme } from "@staccx/theme"
+
+const themeLaser = new Theme(BaseTheme, {
   name: "Laser",
+  webfonts: {
+    google: {
+      families: ["Libre Baskerville:700", "Libre Franklin:400,600"]
+    }
+  },
+  reset: () => `
+  html, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Libre Franklin', sans-serif;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  }
+`,
   spacing: {
     huge: "96px",
     largePlus: "72px",
@@ -53,19 +71,19 @@ export const themeLaser = {
     galaxy: ["#AB93FF", "#1CCBFF"]
   },
   font: {
-    size: {
-      h1: "28px",
-      h2: "22px",
-      h3: "18px",
-      h4: "18px",
-      h5: "16px",
-      h6: "16px",
-      base: "14px",
-      small: "14px",
-      tiny: "12px",
-      input: "16px",
-      huge: "44px"
-    },
+    h1: "28px",
+    h2: "22px",
+    h3: "18px",
+    h4: "18px",
+    h5: "16px",
+    h6: "16px",
+    base: "14px",
+    small: "14px",
+    tiny: "12px",
+    input: "16px",
+    huge: "44px"
+  },
+  fontFamily: {
     heading: "Libre Franklin",
     body: "Libre Franklin"
   },
@@ -75,4 +93,6 @@ export const themeLaser = {
     large: "68px"
   },
   borderRadius: "15px"
-}
+})
+
+export default themeLaser

@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import { inject, observer } from "mobx-react"
 import { CheckGroup, CheckBox } from "@staccx/base"
+import { font } from "@staccx/theme"
 import QuestionLead from "../components/QuestionLead"
 
 const MAX_SELECTABLE = 3
@@ -151,7 +152,7 @@ const Text = styled.span`
   transform: translate(-50%, -50%);
   z-index: 5;
   @media (max-width: ${p => p.theme.wrapper.small}) {
-    font-size: ${p => p.theme.font.size.tiny};
+    font-size: ${font.tiny};
   }
 `
 

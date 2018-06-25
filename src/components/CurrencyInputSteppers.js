@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { CurrencyInput, Button } from "@staccx/base"
 import { multiplyPixelValue } from "@staccx/math"
+import {font} from "@staccx/theme"
 
 const CurrencyInputSteppers = ({
   label,
@@ -65,7 +66,7 @@ const Input = styled(CurrencyInput)`
     border-radius: 0;
     border-width: 0;
     border-bottom: 2px solid ${p => p.theme.color.secondary};
-    font-size: ${p => p.theme.font.size.h1};
+    font-size: ${font.h1};
     background-color: transparent;
     transition: border-color 0.2s ease;
 
