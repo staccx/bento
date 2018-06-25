@@ -10,6 +10,8 @@ class CodeRenderer extends Component {
   render() {
     const { generate, language, grammar, className } = this.props.lang
 
+    console.log()
+    console.log(grammar, language)
     const html = {
       __html: Prism.highlight(generate(this.props), grammar, language)
     }
@@ -23,42 +25,55 @@ class CodeRenderer extends Component {
 }
 
 const CodeWrapper = styled.pre`
-  background-color: ${color.bgGray};
-
+  background-color: ${color("codeBackground")};
+  color: ${color("codeForeground")};
   .token {
     // Affects all code
+    color: ${color("codeForeground")};
   }
 
   .comment {
+    color: ${color("codeComment")};
   }
 
   .keyword {
+    color: ${color("codeKeyword")};
   }
 
   .operator {
+    color: ${color("codeOperator")};
   }
 
   .function {
-    color: #45f23c;
+    color: ${color("codeFunction")};
   }
 
   .string {
+    color: ${color("codeString")};
   }
 
   .punctuation {
-  }
-
-  .keyword {
+    color: ${color("codePunctuation")};
   }
 
   .number {
+    color: ${color("codeNumber")};
+  }
+
+  .class-name {
+    color: ${color("codeClass")};
   }
 `
 
 CodeRenderer.propTypes = {
   body: PropTypes.object,
   headers: PropTypes.object,
-  lang: PropTypes.string,
+  lang: PropTypes.shape({
+    generate: PropTypes.func,
+    grammar: PropTypes.object,
+    language: PropTypes.string,
+    className: PropTypes.string
+  }),
   method: PropTypes.string,
   path: PropTypes.string,
   queryParams: PropTypes.object,
@@ -69,12 +84,15 @@ CodeRenderer.propTypes = {
 export default CodeRenderer
 
 CodeRenderer.defaultProps = {
-  body: { id: 0 },
-  headers: null,
-  lang: languages.nodeRequest,
+  body: { id: 0, name: '"Stupendouos"' },
+  headers: {
+    Authorization: "Bearer ey123123",
+    "Content-Type": '"application/x-www-form-urlencoded"'
+  },
+  lang: languages.restSharp,
   method: "GET",
   path: "https://cloud.stacc.com/api",
-  queryParams: { id: 0 },
+  queryParams: { id: 0, name: "Stupendouos" },
   summary: "Returns the list of all funds in the universe.",
   token: "eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzI1NiJ9"
 }

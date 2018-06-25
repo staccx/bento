@@ -44,7 +44,17 @@ const color = {
   disabled: "#BABABA",
   warning: "#c54059",
   black: "#000",
-  subtleHover: "#F7F7FF"
+  subtleHover: "#F7F7FF",
+  codeBackground: "#2B2B2B",
+  codeForeground: "#A9B7C6",
+  codeComment: "#619647",
+  codeString: "#A5C25C",
+  codeKeyword: "#CB772F",
+  codeNumber: "#6897BB",
+  codeFunction: "#A9B7C6",
+  codeOperator: "#A9B7C6",
+  codeClass: "#A9B7C6"
+
 }
 
 const font = {
@@ -82,4 +92,4 @@ const theme = new Theme(BaseTheme, {
   global: reset
 })
 
-export default theme.get
+export default theme

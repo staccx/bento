@@ -1,21 +1,21 @@
 import React, { Component } from "react"
 import AlertDocumentation from "./components/Alert.documentation"
 import ButtonDocumentation from "./components/Button.documentation"
-import { ThemeProvider } from "styled-components"
 import { Wrapper } from "@staccx/base"
+import { ThemeProxyProvider } from "@staccx/Theme"
 import theme from "./theme.js"
 import CodeRenderer from "./components/CodeRenderer"
 
 class App extends Component {
   render() {
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProxyProvider theme={theme}>
         <Wrapper>
           <AlertDocumentation />
           <ButtonDocumentation />
-          <CodeRenderer/>
+          <CodeRenderer />
         </Wrapper>
-      </ThemeProvider>
+      </ThemeProxyProvider>
     )
   }
 }
