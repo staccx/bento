@@ -5,7 +5,7 @@ import { LayoutItemStyles } from "@staccx/base"
 export const LayoutItemStyling = registerStyle(
   {
     sidebar: css`
-      border-right: 1px solid ${color.line};
+      background-color: ${color.bgGray};
     `
   },
   LayoutItemStyles.LAYOUT_ITEM

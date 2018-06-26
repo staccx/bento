@@ -2,7 +2,7 @@ import { css } from "styled-components"
 import { color, spacing, registerStyle } from "@staccx/theme"
 import { BoxStyles } from "@staccx/base"
 
-const tileStyle = css`
+export const tileStyle = css`
   background: ${color.white};
   box-shadow: rgba(0, 0, 75, 0.015) 0px 2px 2px,
     rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
