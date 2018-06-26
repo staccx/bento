@@ -1,8 +1,0 @@
-{
-    "extends": "@staccx",
-    "globals": {
-        "it": true,
-        "describe": true,
-        "expect": true
-    }
-}
