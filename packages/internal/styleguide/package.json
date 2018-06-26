@@ -1,6 +1,6 @@
 {
   "name": "@staccx/styleguide",
-  "version": "4.24.0",
+  "version": "5.0.0",
   "private": true,
   "dependencies": {
     "@staccx/base": "^4.24.0",

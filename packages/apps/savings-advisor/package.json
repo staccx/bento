@@ -1,6 +1,6 @@
 {
   "name": "@staccx/savings-advisor",
-  "version": "0.1.0",
+  "version": "5.0.0",
   "private": true,
   "dependencies": {
     "@sanity/client": "^0.126.0",
