@@ -6,40 +6,32 @@
 1 silly flags   concurrency: 1,
 1 silly flags   script: 'precommit',
 1 silly flags   args: [] }
-2 verbose rootPath /Users/robin/Projects/staccx/bento
-3 info version 2.11.0
-4 silly existsSync /Users/robin/Projects/staccx/bento/VERSION
+2 verbose rootPath /Users/espen/Projects/bento
+3 info version 2.8.0
+4 silly existsSync /Users/espen/Projects/bento/VERSION
 5 silly initialize attempt
 6 silly initialize success
 7 silly execute attempt
 8 silly runScriptInPackageStreaming [ 'precommit', [], '@staccx/base' ]
-9 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/base' }
+9 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/base' }
 10 error execute callback with error
 11 error Error: Command failed: yarn run precommit
+11 error (node:65056) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
 11 error ✖ "eslint" found some errors. Please fix them and try committing again.
 11 error
-11 error    /Users/robin/Projects/staccx/bento/node_modules/eslint-config-standard/index.js:
-11 error 	Configuration for rule "indent" is invalid:
-11 error 	Value "[object Object]" should NOT have additional properties.
+11 error /Users/espen/Projects/bento/packages/internal/base/build.js
+11 error  6:7  error  'eslint' is assigned a value but never used    no-unused-vars
+11 error  7:7  error  'pkg' is assigned a value but never used       no-unused-vars
+11 error  8:7  error  'filesize' is assigned a value but never used  no-unused-vars
+11 error 12:7  error  'colors' is assigned a value but never used    no-unused-vars
 11 error
-11 error Referenced from: /Users/robin/Projects/staccx/bento/packages/internal/eslint-config/index.js
-11 error Referenced from: /Users/robin/Projects/staccx/bento/.eslintrc
-11 error Error: /Users/robin/Projects/staccx/bento/node_modules/eslint-config-standard/index.js:
-11 error 	Configuration for rule "indent" is invalid:
-11 error 	Value "[object Object]" should NOT have additional properties.
+11 error ✖ 4 problems (4 errors, 0 warnings)
 11 error
-11 error Referenced from: /Users/robin/Projects/staccx/bento/packages/internal/eslint-config/index.js
-11 error Referenced from: /Users/robin/Projects/staccx/bento/.eslintrc
-11 error    at validateRuleOptions (/Users/robin/Projects/staccx/bento/packages/apps/savings-advisor/node_modules/eslint/lib/config/config-validator.js:113:15)
-11 error    at Object.keys.forEach.id (/Users/robin/Projects/staccx/bento/packages/apps/savings-advisor/node_modules/eslint/lib/config/config-validator.js:153:9)
-11 error    at Array.forEach (<anonymous>)
-11 error    at validateRules (/Users/robin/Projects/staccx/bento/packages/apps/savings-advisor/node_modules/eslint/lib/config/config-validator.js:152:30)
-11 error    at Object.validate (/Users/robin/Projects/staccx/bento/packages/apps/savings-advisor/node_modules/eslint/lib/config/config-validator.js:230:5)
-11 error    at loadFromDisk (/Users/robin/Projects/staccx/bento/packages/apps/savings-advisor/node_modules/eslint/lib/config/config-file.js:549:19)
-11 error    at load (/Users/robin/Projects/staccx/bento/packages/apps/savings-advisor/node_modules/eslint/lib/config/config-file.js:592:20)
-11 error    at configExtends.reduceRight (/Users/robin/Projects/staccx/bento/packages/apps/savings-advisor/node_modules/eslint/lib/config/config-file.js:421:36)
-11 error    at Array.reduceRight (<anonymous>)
-11 error    at applyExtends (/Users/robin/Projects/staccx/bento/packages/apps/savings-advisor/node_modules/eslint/lib/config/config-file.js:403:28)
+11 error
+11 error   (node:65060) [ESLINT_LEGACY_OBJECT_REST_SPREAD] DeprecationWarning: The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead. (found in "eslint-config-standard-react")
+11 error (node:65060) [ESLINT_LEGACY_OBJECT_REST_SPREAD] DeprecationWarning: The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead. (found in "../../../node_modules/eslint-config-standard-jsx/index.js")
+11 error (node:65060) [ESLINT_LEGACY_OBJECT_REST_SPREAD] DeprecationWarning: The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead. (found in "standard-jsx")
+11 error (node:65060) [ESLINT_LEGACY_OBJECT_REST_SPREAD] DeprecationWarning: The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead. (found in "standard")
 11 error error Command failed with exit code 1.
 11 error
 11 error yarn run v1.6.0
@@ -52,5 +44,4 @@
 11 error →
 11 error [?25h[?25hinfo Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
 11 error
-11 error     at Promise.all.then.arr (/Users/robin/Projects/staccx/bento/node_modules/lerna/node_modules/execa/index.js:236:11)
-11 error     at <anonymous>
+11 error     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/execa/index.js:236:11)

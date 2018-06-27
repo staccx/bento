@@ -4,14 +4,8 @@
   "private": true,
   "dependencies": {
     "@staccx/base": "^4.24.0",
-    "@staccx/theme": "^4.20.3",
-    "prismjs": "^1.15.0",
-    "prop-types": "^15.6.1",
-    "qs": "^6.5.2",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4",
-    "styled-components": "^3.2.6"
+    "@staccx/soy": "^0.0.1",
+    "@staccx/theme": "^4.20.3"
   },
   "scripts": {
     "start": "react-scripts start",

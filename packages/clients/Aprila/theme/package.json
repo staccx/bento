@@ -6,19 +6,12 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "peerDependencies": {
-    "@staccx/base": ">=4.0.0",
-    "@staccx/theme": ">=4.0.0",
-    "prop-types": "^15.6.1",
-    "styled-components": "^3.2.6"
+    "@staccx/base": "^4",
+    "@staccx/theme": "^4"
   },
   "devDependencies": {
     "@staccx/base": "^4.24.0",
-    "@staccx/theme": "^4.20.3",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4",
-    "styled-components": "^3.2.6"
+    "@staccx/theme": "^4.20.3"
   },
   "files": [
     "dist"
@@ -36,5 +29,8 @@
     "start:module": "rollup -c -w",
     "prepublish": "yarn test && yarn build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
+  },
+  "dependencies": {
+    "@staccx/soy": "^0.0.1"
   }
 }

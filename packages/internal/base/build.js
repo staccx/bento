@@ -2,15 +2,14 @@ const rollup = require("rollup")
 const babel = require("rollup-plugin-babel")
 const commonjs = require("rollup-plugin-commonjs")
 const resolve = require("rollup-plugin-node-resolve")
-const alias = require("rollup-plugin-alias")
 const json = require("rollup-plugin-json")
-const eslint = require("rollup-plugin-eslint")
-const pkg = require("./package.json")
-const filesize = require("rollup-plugin-filesize")
+// const eslint = require("rollup-plugin-eslint")
+// const pkg = require("./package.json")
+// const filesize = require("rollup-plugin-filesize")
 const path = require("path")
 const glob = require("glob")
 const ProgressBar = require("progress")
-const colors = require("colors")
+// const colors = require("colors")
 
 const external = [
   "react",
@@ -34,9 +33,6 @@ const defaultPlugins = [
         "createTextMaskInputElement"
       ]
     }
-  }),
-  alias({
-    components: path.join(__dirname, "./src/components")
   })
   // eslint({})
   // filesize()
