@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-import { ThemeProvider, injectGlobal } from "styled-components"
+import { ThemeProxyProvider } from "@staccx/theme"
 import PropTypes from "prop-types"
-import BaseTheme from "./baseTheme"
+import { styleguideTheme } from "./baseTheme"
 
 /**
  * NOTE : https://github.com/styled-components/styled-components/issues/1333.
@@ -10,11 +10,12 @@ import BaseTheme from "./baseTheme"
 export default class ThemeWrapper extends Component {
   render() {
     const { theme } = this.props
-    injectGlobal`
-    ${theme.reset({ theme })};
-    ${theme.global}
-    `
-    return <ThemeProvider theme={theme}>{this.props.children}</ThemeProvider>
+
+    return (
+      <ThemeProxyProvider theme={theme}>
+        {this.props.children}
+      </ThemeProxyProvider>
+    )
   }
 }
 
@@ -28,5 +29,5 @@ ThemeWrapper.propTypes = {
 }
 
 ThemeWrapper.defaultProps = {
-  theme: BaseTheme
+  theme: styleguideTheme
 }

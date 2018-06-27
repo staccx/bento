@@ -1,6 +1,7 @@
-// import { Theme } from "@staccx/theme"
+import { Theme } from "@staccx/theme"
 import { reset } from "../Styles/cssResets"
 import grids from "../components/Layout/Layout/Layout.Grids"
+import codeTheme from "./codeTheme"
 
 export const theme = {
   name: "Default theme",
@@ -68,5 +69,7 @@ export const theme = {
   reset,
   grid: grids
 }
+
+export const styleguideTheme = new Theme(theme, codeTheme)
 
 export default theme

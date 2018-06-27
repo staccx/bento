@@ -93,6 +93,9 @@ import Logo from "./components/Logo/Logo"
 // Pagination
 import Pagination from "./components/Pagination"
 
+// Code
+import CodeRenderer from "./components/Code/CodeRenderer"
+
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
@@ -111,6 +114,7 @@ export {
   CheckBoxStyles,
   CheckGroup,
   Close,
+  CodeRenderer,
   CompanyInput,
   CompanyInputStyles,
   CurrencyInput,
