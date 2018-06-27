@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { color, font, registerStyle, fontFamily } from "@staccx/theme"
+import { color, font, spacing, registerStyle, fontFamily } from "@staccx/theme"
 import { HeadingStyles } from "@staccx/base"
 
 export const HeadingStyling = registerStyle(
@@ -11,12 +11,14 @@ export const HeadingStyling = registerStyle(
         p.level === 2 &&
         css`
           font-size: ${font.h4};
+          margin-bottom: ${spacing.tiny};
         `};
       ${p =>
         p.level === 4 &&
         css`
           font-size: ${font.h5};
           color: ${color.gray};
+          margin-bottom: ${spacing.tiny};
         `};
     `,
     documentationShortcutHeading: css`
