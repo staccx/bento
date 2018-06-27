@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { spacing, color, registerStyle } from "@staccx/theme"
-import { ListStyles } from "@staccx/base"
+import { ListStyles, SplitListItemStyles } from "@staccx/base"
 
 export const ListStyling = registerStyle(
   {
@@ -27,4 +27,21 @@ export const ListStyling = registerStyle(
     `
   },
   ListStyles.LIST
+)
+
+export const SplitListItemStyling = registerStyle(
+  {
+    documentationMethodListItem: css`
+      align-items: flex-start;
+
+      > * {
+        &:first-child {
+          width: 180px;
+          display: block;
+          text-align: right;
+        }
+      }
+    `
+  },
+  SplitListItemStyles.SPLIT_LIST
 )

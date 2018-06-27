@@ -20,7 +20,7 @@ class App extends Component {
               <Box variant="header">
                 <ThemeComponent tagName={"logo"} fallback={null} />
               </Box>
-              <Box>
+              <Box variant="documentationMenu">
                 <Menu data={fakeMenu} />
               </Box>
             </LayoutItem>

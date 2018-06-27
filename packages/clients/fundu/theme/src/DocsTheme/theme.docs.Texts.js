@@ -12,6 +12,9 @@ export const TextStyling = registerStyle(
       background-color: ${color.bgGray};
       border-radius: 3px;
       line-height: 1.4;
+    `,
+    documentationMethodValidtionText: css`
+      display: block;
     `
   },
   TextStyles.TEXT

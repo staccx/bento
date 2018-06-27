@@ -8,6 +8,14 @@ export const BoxStyling = registerStyle(
     documentationShortcut: css`
       ${tileStyle};
       color: ${color.text};
+    `,
+    codeBlock: css`
+      ${tileStyle};
+      padding: 0;
+    `,
+    documentationMenu: css`
+      position: sticky;
+      top: 1px;
     `
   },
   BoxStyles.BOX

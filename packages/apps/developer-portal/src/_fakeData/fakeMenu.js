@@ -1,7 +1,7 @@
 export default [
   {
     title: "Introduction",
-    url: "/",
+    url: "/intro",
     subMenu: [
       {
         title: "Getting Started",

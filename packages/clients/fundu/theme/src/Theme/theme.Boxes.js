@@ -192,9 +192,6 @@ export const BoxStyling = registerStyle(
       padding-bottom: 0;
       align-items: center;
     `,
-    codeBlock: css`
-      ${tileStyle};
-    `,
     radioContainer: css`
       display: flex;
       padding: ${spacing.mediumPlus} ${spacing.medium} 0;
