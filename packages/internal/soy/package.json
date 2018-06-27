@@ -1,7 +1,7 @@
 {
   "name": "@staccx/soy",
   "version": "0.0.1",
-  "description": "Common dependencies for Stacc X",
+  "description": "I depend, therefore I am (Common dependencies for Stacc X)",
   "license": "UNLICENCED",
   "dependencies": {
     "@google/maps": "^0.4.6",
