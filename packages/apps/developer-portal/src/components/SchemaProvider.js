@@ -5,7 +5,7 @@ import findTags from "../utils/findTags"
 import sortByTags from "../utils/sortByTags"
 
 class SchemaProvider extends React.Component {
-  constructor (props, context) {
+  constructor(props, context) {
     super(props, context)
     const tags = this.props.tags || findTags(this.props.openapi)
     this.state = {

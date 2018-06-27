@@ -15,7 +15,10 @@ class Operation extends React.Component {
         {({ openapi }) => (
           <div>
             <Parameters parameters={this.props.operation.parameters} />
-            <RequestBody requestBody={this.props.operation.requestBody} openapi={openapi} />
+            <RequestBody
+              requestBody={this.props.operation.requestBody}
+              openapi={openapi}
+            />
             <Responses responses={this.props.operation.responses} />
           </div>
         )}

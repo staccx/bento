@@ -4,6 +4,21 @@ import { HeadingStyles } from "@staccx/base"
 
 export const HeadingStyling = registerStyle(
   {
+    documentation: css`
+      font-weight: 400;
+      font-family: ${fontFamily.body};
+      ${p =>
+        p.level === 2 &&
+        css`
+          font-size: ${font.h4};
+        `};
+      ${p =>
+        p.level === 4 &&
+        css`
+          font-size: ${font.h5};
+          color: ${color.gray};
+        `};
+    `,
     documentationShortcutHeading: css`
       font-weight: 400;
       font-family: ${fontFamily.body};

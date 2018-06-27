@@ -5,6 +5,10 @@ import { ListStyles } from "@staccx/base"
 export const ListStyling = registerStyle(
   {
     documentationMenu: css`
+      > li > a {
+        display: block;
+        margin-bottom: ${spacing.tiny};
+      }
       a {
         color: ${color.text};
         text-decoration: none;
@@ -12,6 +16,10 @@ export const ListStyling = registerStyle(
     `,
     documentationSubMenu: css`
       padding-left: ${spacing.small};
+      margin-bottom: ${spacing.medium};
+      li {
+        margin-bottom: ${spacing.small};
+      }
       a {
         color: ${color.gray};
         text-decoration: none;

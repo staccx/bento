@@ -6,13 +6,13 @@ const Menu = ({ data }) => (
   <div>
     <List variant="documentationMenu">
       {data.map(menuItem => (
-        <li>
+        <li key={menuItem.title}>
           <Link to={menuItem.url}>{menuItem.title}</Link>
 
           {menuItem.subMenu && (
             <List variant="documentationSubMenu">
               {menuItem.subMenu.map(subMenuItem => (
-                <li>
+                <li key={subMenuItem.title}>
                   <Link to={subMenuItem.url}>{subMenuItem.title}</Link>
                 </li>
               ))}

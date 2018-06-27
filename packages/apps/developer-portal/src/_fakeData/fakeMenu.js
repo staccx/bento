@@ -37,19 +37,19 @@ export default [
     subMenu: [
       {
         title: "Authentication",
-        url: "/api-reference/authentication"
+        url: "/api-reference/#authentication"
       },
       {
         title: "Proccess flow",
-        url: "/api-reference/proccess-flow"
+        url: "/api-reference/#proccess-flow"
       },
       {
         title: "Tasks",
-        url: "/api-reference/Tasks"
+        url: "/api-reference/#tasks"
       },
       {
         title: "Terms",
-        url: "/api-reference/terms"
+        url: "/api-reference/#terms"
       }
     ]
   }
