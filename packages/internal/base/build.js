@@ -9,7 +9,8 @@ const json = require("rollup-plugin-json")
 const path = require("path")
 const glob = require("glob")
 const ProgressBar = require("progress")
-// const colors = require("colors")
+/* eslint-disable-next-line */
+const colors = require("colors")
 
 const external = [
   "react",
