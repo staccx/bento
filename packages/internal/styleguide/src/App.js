@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 import AlertDocumentation from "./components/Alert.documentation"
 import ButtonDocumentation from "./components/Button.documentation"
-import { Wrapper } from "@staccx/base"
+import { Wrapper, CodeRenderer } from "@staccx/base"
 import { ThemeProxyProvider } from "@staccx/Theme"
 import theme from "./theme.js"
-import CodeRenderer from "./components/CodeRenderer"
+import * as codeGenerators from "@staccx/code-generator"
 
 class App extends Component {
   render() {
@@ -13,7 +13,17 @@ class App extends Component {
         <Wrapper>
           <AlertDocumentation />
           <ButtonDocumentation />
-          <CodeRenderer />
+          <CodeRenderer
+            code={codeGenerators.restSharp({
+              summary: "summarytext",
+              method: "POST",
+              path: "/api/myendpoint",
+              headers: { a: "b", b: "c", d: "e" },
+              body: { a: "b" },
+              queryParams: { q: "my-q-value" }
+            })}
+            language="java"
+          />
         </Wrapper>
       </ThemeProxyProvider>
     )
