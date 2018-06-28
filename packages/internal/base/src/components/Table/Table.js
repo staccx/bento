@@ -1,7 +1,24 @@
-import React, { Component } from "react"
+import React from "react"
 import PropTypes from "prop-types"
+import {
+  // color,
+  // borderRadius,
+  // font,
+  // fontFamily,
+  // fontWeight,
+  // spacing,
+  // targetSize,
+  themify
+} from "@staccx/theme"
+import styled from "styled-components"
 
-class Table extends Component {
+export const TABLE = "base-component-table"
+
+const TableStyled = styled.table`
+  ${themify(TABLE)};
+`
+
+class Table extends React.Component {
   render() {
     const headers = this.props.data
       .reduce((acc, current) => {
@@ -21,7 +38,7 @@ class Table extends Component {
       .map(this.props.mapHeader)
 
     return (
-      <table>
+      <TableStyled>
         <thead>
           <tr>
             {headers.map((item, index) => {
@@ -54,7 +71,7 @@ class Table extends Component {
             )
           })}
         </tbody>
-      </table>
+      </TableStyled>
     )
   }
 }
