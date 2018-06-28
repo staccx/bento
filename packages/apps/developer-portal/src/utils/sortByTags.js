@@ -9,16 +9,20 @@ export default (openapi, tags) => {
         const operation = path[opKey]
         if (operation.tags.indexOf(name) !== -1) {
           if (!operations[name]) {
-            operations[name] = {}
-          }
-          if (!operations[name][key]) {
-            operations[name][key] = {}
+            operations[name] = []
           }
 
-          operations[name][key][opKey] = operation
+          operations[name].push({
+            ...operation,
+            tag: name,
+            path: key.replace(`/${name}`, ""),
+            type: opKey
+          })
         }
       })
     })
   }
+
+  console.log(operations)
   return operations
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
+import { NavHashLink } from "react-router-hash-link"
 import { List } from "@staccx/base"
 import { color } from "@staccx/theme"
 import styled from "styled-components"
@@ -33,7 +34,7 @@ const Menu = ({ data }) => (
             </li>
           ))}
           <li key={"openapi"}>
-            <MenuLink to={"/api"} activeClassName="active">
+            <MenuLink to={"/api-reference"} activeClassName="active">
               API
             </MenuLink>
             <List variant="documentationSubMenu">
@@ -41,7 +42,7 @@ const Menu = ({ data }) => (
                 return (
                   <li key={`path-${tag.name}`}>
                     <SubmenuLink
-                      to={`/api/${tag.name}`}
+                      to={`/api-reference#${tag.name}`}
                       activeClassName="active"
                     >
                       {tag.name}
@@ -68,7 +69,7 @@ const MenuLink = styled(NavLink)`
   }
 `
 
-const SubmenuLink = styled(NavLink)`
+const SubmenuLink = styled(NavHashLink)`
   &.active {
     color: ${color.primary};
   }

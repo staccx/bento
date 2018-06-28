@@ -11,11 +11,13 @@ import Header from "./components/Header/Header"
 import fakeMenu from "./_fakeData/fakeMenu"
 import ApiReference from "./pages/ApiReference"
 import OpenApiProvider from "./components/OpenApiProvider"
+import Path from "./components/Path"
+import OpenApiConsumer from "./components/OpenApiConsumer"
 
 class App extends Component {
   render() {
     return (
-      <OpenApiProvider url={"https://demo.quantfol.io/swagger/v1/swagger.json"}>
+      <OpenApiProvider url={"http://petstore.swagger.io/v2/swagger.json"}>
         <ThemeProxyProvider theme={DocsTheme}>
           <Router>
             <Layout grid="dashboard" variant="responsiveDashboard">
@@ -38,6 +40,7 @@ class App extends Component {
                       component={ApiReference}
                       exact
                     />
+                    <Route path={"/api"} exact component={ApiReference} />
                   </Switch>
                 </Wrapper>
               </LayoutItem>

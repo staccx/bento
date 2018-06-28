@@ -143,6 +143,10 @@
     object-assign "^4.1.1"
     rxjs "^5.5.6"
 
+"@staccx/animations@^4.0.1":
+  version "4.20.1"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-4.20.1.tgz#9cbec5067e58202ca0b494eb97cdaeb4a8cac769"
+
 "@staccx/base@4.12.0":
   version "4.12.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-4.12.0.tgz#c0a2a10f024d53f65b3c257f20213ad448c5c624"
@@ -189,6 +193,10 @@
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/theme/-/@staccx/theme-4.12.0.tgz#b1ea32bba672ab32dbd28a663ca482f294e0bd9f"
   dependencies:
     immutable "^3.8.2"
+
+"@staccx/utils@^4.9.0":
+  version "4.23.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/utils/-/@staccx/utils-4.23.0.tgz#6aa4b3fbec26cc489da33933f27105a4c492b4bd"
 
 "@tedconf/react-show-more@^1.1.2":
   version "1.1.2"
@@ -8570,6 +8578,12 @@ react-router-dom@^4.2.2:
     prop-types "^15.6.1"
     react-router "^4.3.1"
     warning "^4.0.1"
+
+react-router-hash-link@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-router-hash-link/-/react-router-hash-link-1.2.0.tgz#ce824cc5f0502ce9b0686bb6dd9c08659b24094c"
+  dependencies:
+    prop-types "^15.6.0"
 
 react-router@^4.2.0, react-router@^4.3.1:
   version "4.3.1"

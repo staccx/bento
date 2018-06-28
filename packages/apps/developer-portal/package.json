@@ -38,6 +38,7 @@
   "dependencies": {
     "@staccx/fundu-theme": "^5.1.0",
     "@staccx/soy": "^5.1.0",
-    "@staccx/utils": "^5.1.0"
+    "@staccx/utils": "^5.1.0",
+    "react-router-hash-link": "^1.2.0"
   }
 }
