@@ -8,7 +8,7 @@ class Fetch extends React.Component {
     const get = this.props.get || window.fetch
 
     get(this.props.url, this.props.options)
-      .then(response => response.json())
+      .then(this.props.mapData)
       .then(data => this.setState({ data }))
 
     this.state = {
@@ -24,6 +24,7 @@ class Fetch extends React.Component {
 Fetch.propTypes = {
   children: PropTypes.func.isRequired,
   get: PropTypes.func,
+  mapData: PropTypes.func,
   options: PropTypes.object,
   url: PropTypes.string.isRequired
 }
@@ -31,5 +32,6 @@ Fetch.propTypes = {
 export default Fetch
 
 Fetch.defaultProps = {
+  mapData: item => item,
   options: {}
 }
