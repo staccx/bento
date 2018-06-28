@@ -96,6 +96,7 @@ import Pagination from "./components/Pagination"
 // Code
 import CodeRenderer from "./components/Code/CodeRenderer"
 import Table from "./components/Table/Table"
+import Fetch from "./components/Fetch/Fetch"
 
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
@@ -126,6 +127,7 @@ export {
   ExpandStyles,
   ExpandListItem,
   ExpandListItemStyles,
+  Fetch,
   Flag,
   fontSmoothing,
   Fraction,
