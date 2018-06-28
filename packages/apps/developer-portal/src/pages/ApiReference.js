@@ -53,22 +53,6 @@ const response = `{
   ]
 }`
 
-const attributesTable = [
-  {
-    attribute: {
-      heading: "type",
-      type: "string"
-    },
-    description: `The type of error returned. One of{" "}
-  <code>api_connection_error</code>,{" "}
-  <code>api_error</code>,{" "}
-  <code>authentication_error</code>,{" "}
-  <code>card_error</code>, <code>idempotency_error</code>,{" "}
-  <code>invalid_request_error</code>, or{" "}
-  <code>rate_limit_error</code>`
-  }
-]
-
 const ApiReference = () => (
   <Layout
     paddingTop="large"
