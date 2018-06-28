@@ -95,6 +95,7 @@ import Pagination from "./components/Pagination"
 
 // Code
 import CodeRenderer from "./components/Code/CodeRenderer"
+import Table from "./components/Table/Table"
 
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
@@ -188,6 +189,7 @@ export {
   SplitListItem,
   SplitListItemStyles,
   Success,
+  Table,
   Text,
   TextStyles,
   Toggle,
