@@ -13,9 +13,9 @@ const addHeaders = headers => {
 export default ({ summary, method, path, headers, body, queryParams }) =>
   // language=JavaScript
   `
-  /**
-* ${summary}
-*/
+/**
+ * ${summary}
+ */
 OkHttpClient client = new OkHttpClient();
 ${
     body
