@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Fetch, Loading } from "@staccx/base"
-import { Provider } from "./context/schema"
+import { Provider } from "./context/openApi"
 import findTags from "../utils/findTags"
 import sortByTags from "../utils/sortByTags"
 import convertSwaggerToOpenApi from "../utils/convertSwaggerToOpenApi"
@@ -10,7 +10,7 @@ import axios from "axios/index"
 const mapData = item => {
   return convertSwaggerToOpenApi(item.data, {})
 }
-class SchemaProvider extends React.Component {
+class OpenApiProvider extends React.Component {
   render() {
     return (
       <Fetch url={this.props.url} get={axios.get} mapData={mapData}>
@@ -53,9 +53,9 @@ class SchemaProvider extends React.Component {
   }
 }
 
-export default SchemaProvider
+export default OpenApiProvider
 
-SchemaProvider.propTypes = {
+OpenApiProvider.propTypes = {
   children: PropTypes.any.isRequired,
   requestBodies: PropTypes.any,
   schemas: PropTypes.any,

@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SchemaConsumer from "./SchemaConsumer"
+import OpenApiConsumer from "./OpenApiConsumer"
 import { List, SplitListItem, Heading, Text } from "@staccx/base"
 import { deepfind } from "@staccx/utils"
 
@@ -8,7 +8,7 @@ class SchemaRenderer extends React.Component {
   render() {
     const { schema, name } = this.props
     return (
-      <SchemaConsumer>
+      <OpenApiConsumer>
         {({ openapi }) => {
           if (schema.type === "object") {
             return (
@@ -76,7 +76,7 @@ class SchemaRenderer extends React.Component {
             </List>
           )
         }}
-      </SchemaConsumer>
+      </OpenApiConsumer>
     )
   }
 }

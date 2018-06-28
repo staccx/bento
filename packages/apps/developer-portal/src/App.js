@@ -9,12 +9,12 @@ import Menu from "./components/Menu/Menu"
 
 import fakeMenu from "./_fakeData/fakeMenu"
 import ApiReference from "./pages/ApiReference"
-import SchemaProvider from "./components/SchemaProvider"
+import OpenApiProvider from "./components/OpenApiProvider"
 
 class App extends Component {
   render() {
     return (
-      <SchemaProvider url={"http://petstore.swagger.io/v2/swagger.json"}>
+      <OpenApiProvider url={"http://petstore.swagger.io/v2/swagger.json"}>
         <ThemeProxyProvider theme={DocsTheme}>
           <Router>
             <Layout grid="dashboard" variant="responsiveDashboard">
@@ -43,7 +43,7 @@ class App extends Component {
             </Layout>
           </Router>
         </ThemeProxyProvider>
-      </SchemaProvider>
+      </OpenApiProvider>
     )
   }
 }

@@ -1,15 +1,15 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { Consumer } from "./context/schema"
+import { Consumer } from "./context/openApi"
 
-class SchemaConsumer extends React.Component {
+class OpenApiConsumer extends React.Component {
   render() {
     return <Consumer>{props => this.props.children(props)}</Consumer>
   }
 }
 
-export default SchemaConsumer
+export default OpenApiConsumer
 
-SchemaConsumer.propTypes = {
+OpenApiConsumer.propTypes = {
   children: PropTypes.func.isRequired
 }

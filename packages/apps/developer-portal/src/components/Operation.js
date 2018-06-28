@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import Parameters from "./Parameters"
 import Responses from "./Responses"
 import RequestBody from "./RequestBody"
-import SchemaConsumer from "./SchemaConsumer"
+import OpenApiConsumer from "./OpenApiConsumer"
 
 class Operation extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class Operation extends React.Component {
       return null
     }
     return (
-      <SchemaConsumer>
+      <OpenApiConsumer>
         {({ openapi }) => (
           <div>
             <Parameters parameters={this.props.operation.parameters} />
@@ -22,7 +22,7 @@ class Operation extends React.Component {
             <Responses responses={this.props.operation.responses} />
           </div>
         )}
-      </SchemaConsumer>
+      </OpenApiConsumer>
     )
   }
 }

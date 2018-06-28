@@ -3,31 +3,65 @@ import { NavLink } from "react-router-dom"
 import { List } from "@staccx/base"
 import { color } from "@staccx/theme"
 import styled from "styled-components"
+import OpenApiConsumer from "../OpenApiConsumer"
 
 const Menu = ({ data }) => (
-  <MenuWrapper>
-    <List variant="documentationMenu">
-      {data.map(menuItem => (
-        <li key={menuItem.title}>
-          <MenuLink to={menuItem.url} activeClassName="active">
-            {menuItem.title}
-          </MenuLink>
+  <OpenApiConsumer>
+    {({ sorted }) => {
+      console.log(sorted)
+      return (
+        <MenuWrapper>
+          <List variant="documentationMenu">
+            {data.map(menuItem => (
+              <li key={menuItem.title}>
+                <MenuLink to={menuItem.url} activeClassName="active">
+                  {menuItem.title}
+                </MenuLink>
 
-          {menuItem.subMenu && (
-            <List variant="documentationSubMenu">
-              {menuItem.subMenu.map(subMenuItem => (
-                <li key={subMenuItem.title}>
-                  <SubmenuLink to={subMenuItem.url} activeClassName="active">
-                    {subMenuItem.title}
-                  </SubmenuLink>
+                {menuItem.subMenu && (
+                  <List variant="documentationSubMenu">
+                    {menuItem.subMenu.map(subMenuItem => (
+                      <li key={subMenuItem.title}>
+                        <SubmenuLink
+                          to={subMenuItem.url}
+                          activeClassName="active"
+                        >
+                          {subMenuItem.title}
+                        </SubmenuLink>
+                      </li>
+                    ))}
+                  </List>
+                )}
+              </li>
+            ))}
+            {Object.keys(sorted).map(key => {
+              console.log(key)
+              return (
+                <li key={`path-${key}`}>
+                  <MenuLink to={`/api/${key}`} activeClassName="active">
+                    {key}
+                  </MenuLink>
+
+                  {Object.keys(sorted[key]).map(operation => (
+                    <List variant="documentationSubMenu">
+                      <li key={`path-${key}-operation-${operation}`}>
+                        <SubmenuLink
+                          to={`/api/${key}#${operation}`}
+                          activeClassName="active"
+                        >
+                          {operation}
+                        </SubmenuLink>
+                      </li>
+                    </List>
+                  ))}
                 </li>
-              ))}
-            </List>
-          )}
-        </li>
-      ))}
-    </List>
-  </MenuWrapper>
+              )
+            })}
+          </List>
+        </MenuWrapper>
+      )
+    }}
+  </OpenApiConsumer>
 )
 
 const MenuWrapper = styled.div`

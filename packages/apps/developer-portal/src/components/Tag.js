@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { ExpandListItem } from "@staccx/base"
-import SchemaConsumer from "./SchemaConsumer"
+import OpenApiConsumer from "./OpenApiConsumer"
 import Paths from "./Paths"
 
 class Tag extends React.Component {
@@ -14,7 +14,7 @@ class Tag extends React.Component {
     const name = typeof tag === "string" ? tag : tag.name
 
     return (
-      <SchemaConsumer>
+      <OpenApiConsumer>
         {({ sorted }) => {
           return (
             <ExpandListItem title={name}>
@@ -22,7 +22,7 @@ class Tag extends React.Component {
             </ExpandListItem>
           )
         }}
-      </SchemaConsumer>
+      </OpenApiConsumer>
     )
   }
 }

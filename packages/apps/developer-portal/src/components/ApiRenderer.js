@@ -6,7 +6,7 @@ import convertSwaggerToOpenApi from "../utils/convertSwaggerToOpenApi"
 import Info from "./Info"
 import Servers from "./Servers"
 import Paths from "./Paths"
-import SchemaProvider from "./SchemaProvider"
+import SchemaProvider from "./OpenApiProvider"
 import Tags from "./Tags"
 import findTags from "../utils/findTags"
 class ApiRenderer extends React.Component {
