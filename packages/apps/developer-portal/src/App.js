@@ -15,7 +15,7 @@ import OpenApiProvider from "./components/OpenApiProvider"
 class App extends Component {
   render() {
     return (
-      <OpenApiProvider url={"http://petstore.swagger.io/v2/swagger.json"}>
+      <OpenApiProvider url={"https://demo.quantfol.io/swagger/v1/swagger.json"}>
         <ThemeProxyProvider theme={DocsTheme}>
           <Router>
             <Layout grid="dashboard" variant="responsiveDashboard">

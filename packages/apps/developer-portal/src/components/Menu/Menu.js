@@ -7,59 +7,53 @@ import OpenApiConsumer from "../OpenApiConsumer"
 
 const Menu = ({ data }) => (
   <OpenApiConsumer>
-    {({ sorted }) => {
-      console.log(sorted)
-      return (
-        <MenuWrapper>
-          <List variant="documentationMenu">
-            {data.map(menuItem => (
-              <li key={menuItem.title}>
-                <MenuLink to={menuItem.url} activeClassName="active">
-                  {menuItem.title}
-                </MenuLink>
+    {({ tags }) => (
+      <MenuWrapper>
+        <List variant="documentationMenu">
+          {data.map(menuItem => (
+            <li key={menuItem.title}>
+              <MenuLink to={menuItem.url} activeClassName="active">
+                {menuItem.title}
+              </MenuLink>
 
-                {menuItem.subMenu && (
-                  <List variant="documentationSubMenu">
-                    {menuItem.subMenu.map(subMenuItem => (
-                      <li key={subMenuItem.title}>
-                        <SubmenuLink
-                          to={subMenuItem.url}
-                          activeClassName="active"
-                        >
-                          {subMenuItem.title}
-                        </SubmenuLink>
-                      </li>
-                    ))}
-                  </List>
-                )}
-              </li>
-            ))}
-            {Object.keys(sorted).map(key => {
-              console.log(key)
-              return (
-                <li key={`path-${key}`}>
-                  <MenuLink to={`/api/${key}`} activeClassName="active">
-                    {key}
-                  </MenuLink>
-                  <List variant="documentationSubMenu">
-                    {Object.keys(sorted[key]).map(operation => (
-                      <li key={`path-${key}-operation-${operation}`}>
-                        <SubmenuLink
-                          to={`/api/${key}#${operation}`}
-                          activeClassName="active"
-                        >
-                          {operation}
-                        </SubmenuLink>
-                      </li>
-                    ))}
-                  </List>
-                </li>
-              )
-            })}
-          </List>
-        </MenuWrapper>
-      )
-    }}
+              {menuItem.subMenu && (
+                <List variant="documentationSubMenu">
+                  {menuItem.subMenu.map(subMenuItem => (
+                    <li key={subMenuItem.title}>
+                      <SubmenuLink
+                        to={subMenuItem.url}
+                        activeClassName="active"
+                      >
+                        {subMenuItem.title}
+                      </SubmenuLink>
+                    </li>
+                  ))}
+                </List>
+              )}
+            </li>
+          ))}
+          <li key={"openapi"}>
+            <MenuLink to={"/api"} activeClassName="active">
+              API
+            </MenuLink>
+            <List variant="documentationSubMenu">
+              {tags.map(tag => {
+                return (
+                  <li key={`path-${tag.name}`}>
+                    <SubmenuLink
+                      to={`/api/${tag.name}`}
+                      activeClassName="active"
+                    >
+                      {tag.name}
+                    </SubmenuLink>
+                  </li>
+                )
+              })}
+            </List>
+          </li>
+        </List>
+      </MenuWrapper>
+    )}
   </OpenApiConsumer>
 )
 

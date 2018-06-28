@@ -136,8 +136,34 @@ const openapi = {
   }
 }
 
+const openapiWithTagsonRoot = {
+  swagger: "2.0",
+  info: {
+    version: "1.0.0",
+    title: "Swagger Petstore",
+    license: {
+      name: "MIT"
+    }
+  },
+  tags: [{ name: "a" }, { name: "b" }, { name: "c" }, { name: "d" }]
+}
+
 describe("findTags", () => {
   it("Should find tags", () => {
-    expect(findTags(openapi)).toEqual(["a", "b", "c", "d"])
+    expect(findTags(openapi)).toEqual([
+      { name: "a" },
+      { name: "b" },
+      { name: "c" },
+      { name: "d" }
+    ])
+  })
+
+  it("Should find tags on root", () => {
+    expect(findTags(openapi)).toEqual([
+      { name: "a" },
+      { name: "b" },
+      { name: "c" },
+      { name: "d" }
+    ])
   })
 })
