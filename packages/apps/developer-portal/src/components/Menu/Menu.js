@@ -41,9 +41,8 @@ const Menu = ({ data }) => (
                   <MenuLink to={`/api/${key}`} activeClassName="active">
                     {key}
                   </MenuLink>
-
-                  {Object.keys(sorted[key]).map(operation => (
-                    <List variant="documentationSubMenu">
+                  <List variant="documentationSubMenu">
+                    {Object.keys(sorted[key]).map(operation => (
                       <li key={`path-${key}-operation-${operation}`}>
                         <SubmenuLink
                           to={`/api/${key}#${operation}`}
@@ -52,8 +51,8 @@ const Menu = ({ data }) => (
                           {operation}
                         </SubmenuLink>
                       </li>
-                    </List>
-                  ))}
+                    ))}
+                  </List>
                 </li>
               )
             })}
