@@ -3,7 +3,6 @@ export default (openapi, tags) => {
 
   for (const tag of tags) {
     const name = tag.name || tag
-    console.log(name, tags)
     Object.keys(openapi.paths).map(key => {
       const path = openapi.paths[key]
       Object.keys(path).map(opKey => {
@@ -21,6 +20,5 @@ export default (openapi, tags) => {
       })
     })
   }
-  console.log(operations)
   return operations
 }
