@@ -31,7 +31,8 @@
     "@staccx/theme": "^4"
   },
   "devDependencies": {
-    "@staccx/theme": "^5.1.0"
+    "@staccx/theme": "^5.1.0",
+    "babel-plugin-prismjs": "^1.0.2"
   },
   "files": [
     "dist"

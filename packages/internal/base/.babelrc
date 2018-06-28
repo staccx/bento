@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    "babel-plugin-styled-components", 
+    ["prismjs", {
+      "languages": ["javascript", "java", "csharp"]
+    }]
+  ]
+}
