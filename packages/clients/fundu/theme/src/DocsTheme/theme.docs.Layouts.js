@@ -2,19 +2,12 @@ import { css } from "styled-components"
 import { color, spacing, registerStyle } from "@staccx/theme"
 import { LayoutStyles, fontSmoothing } from "@staccx/base"
 
-const apiSplit = css`
-  grid-template-columns: 40% 1fr;
-  grid-column-gap: ${spacing.large};
-`
-
 export const LayoutStyling = registerStyle(
   {
     documentationHeader: css`
-      display: flex;
-      align-items: stretch;
-      justify-content: stretch;
       width: 100%;
-      ${apiSplit};
+      grid-template-columns: calc(40% + ${spacing.large}) 1fr;
+      grid-column-gap: 0;
 
       > * {
         flex-grow: 1;
@@ -28,7 +21,8 @@ export const LayoutStyling = registerStyle(
       }
     `,
     documentationApiExample: css`
-      ${apiSplit};
+      grid-template-columns: 40% 1fr;
+      grid-column-gap: ${spacing.large};
 
       > * {
         padding: ${spacing.medium};
