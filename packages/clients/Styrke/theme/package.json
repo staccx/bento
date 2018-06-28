@@ -1,6 +1,6 @@
 {
   "name": "@staccx/styrke-theme",
-  "version": "4.24.0",
+  "version": "5.1.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -10,8 +10,8 @@
     "@staccx/theme": "^4"
   },
   "devDependencies": {
-    "@staccx/base": "^4.24.0",
-    "@staccx/theme": "^4.20.3"
+    "@staccx/base": "^5.1.0",
+    "@staccx/theme": "^5.1.0"
   },
   "files": [
     "dist"
@@ -31,6 +31,6 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/soy": "^0.0.1"
+    "@staccx/soy": "^5.1.0"
   }
 }

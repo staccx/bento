@@ -1,14 +1,14 @@
 {
   "name": "@staccx/savings-advisor",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "private": true,
   "dependencies": {
-    "@staccx/animations": "^4.20.1",
-    "@staccx/base": "^4.24.0",
-    "@staccx/formatting": "^4.20.1",
-    "@staccx/math": "^4.20.2",
-    "@staccx/soy": "^0.0.1",
-    "@staccx/theme": "^4.20.3"
+    "@staccx/animations": "^5.1.0",
+    "@staccx/base": "^5.1.0",
+    "@staccx/formatting": "^5.1.0",
+    "@staccx/math": "^5.1.0",
+    "@staccx/soy": "^5.1.0",
+    "@staccx/theme": "^5.1.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -19,7 +19,7 @@
     "serve": "yarn build && serve -s build"
   },
   "devDependencies": {
-    "@staccx/eslint-config": "^4.20.1"
+    "@staccx/eslint-config": "^5.1.0"
   },
   "proxy": "https://demo.quantfol.io/"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@staccx/theme",
-  "version": "4.20.3",
+  "version": "5.1.0",
   "license": "UNLICENCED",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -20,6 +20,6 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/soy": "^0.0.1"
+    "@staccx/soy": "^5.1.0"
   }
 }

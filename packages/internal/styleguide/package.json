@@ -1,11 +1,11 @@
 {
   "name": "@staccx/styleguide",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "private": true,
   "dependencies": {
-    "@staccx/base": "^4.24.0",
-    "@staccx/soy": "^0.0.1",
-    "@staccx/theme": "^4.20.3"
+    "@staccx/base": "^5.1.0",
+    "@staccx/soy": "^5.1.0",
+    "@staccx/theme": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

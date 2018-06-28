@@ -1,6 +1,6 @@
 {
   "name": "@staccx/animations",
-  "version": "4.20.1",
+  "version": "5.1.0",
   "description": "Animations",
   "author": "StaccX",
   "license": "UNLICENCED",
@@ -27,6 +27,6 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/soy": "^0.0.1"
+    "@staccx/soy": "^5.1.0"
   }
 }

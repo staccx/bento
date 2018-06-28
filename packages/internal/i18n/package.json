@@ -1,6 +1,6 @@
 {
   "name": "@staccx/i18n",
-  "version": "4.20.4",
+  "version": "5.1.0",
   "description": "intl for base",
   "author": "StaccX",
   "license": "UNLICENCED",
@@ -26,8 +26,6 @@
     "@staccx/base": "^4",
     "@staccx/theme": "^4"
   },
-  "devDependencies": {
-  },
   "files": [
     "dist"
   ],
@@ -35,6 +33,6 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/soy": "^0.0.1"
+    "@staccx/soy": "^5.1.0"
   }
 }
