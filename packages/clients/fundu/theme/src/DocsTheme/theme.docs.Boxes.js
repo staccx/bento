@@ -16,6 +16,11 @@ export const BoxStyling = registerStyle(
     documentationMenu: css`
       position: sticky;
       top: 1px;
+    `,
+    documentationHeaderSearch: css`
+      display: flex;
+      justify-content: stretch;
+      align-items: stretch;
     `
   },
   BoxStyles.BOX

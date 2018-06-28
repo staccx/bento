@@ -26,7 +26,12 @@ const RadioPillItem = ({
   variant,
   ...otherProps
 }) => (
-  <RadioWrapper className={className} full={full}>
+  <RadioWrapper
+    className={className}
+    full={full}
+    variant={variant}
+    {...otherProps}
+  >
     <Radio
       id={id}
       disabled={disabled}
@@ -36,9 +41,8 @@ const RadioPillItem = ({
       defaultChecked={defaultChecked}
       value={value}
       variant={variant}
-      {...otherProps}
     />
-    <Label htmlFor={id} full={full}>
+    <Label variant={variant} htmlFor={id} full={full}>
       {children}
     </Label>
   </RadioWrapper>
@@ -125,7 +129,6 @@ const RadioWrapper = styled.div`
 `
 
 RadioPillItem.defaultProps = {
-  className: "",
   disabled: false,
   input: {},
   onChange: null,

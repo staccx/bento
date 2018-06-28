@@ -6,6 +6,7 @@ import DocsTheme from "./Theme/Theme"
 import SwaggerDocs from "./pages/SwaggerDocs"
 import Introduction from "./pages/Introduction"
 import Menu from "./components/Menu/Menu"
+import Header from "./components/Header/Header"
 
 import fakeMenu from "./_fakeData/fakeMenu"
 import ApiReference from "./pages/ApiReference"
@@ -27,7 +28,7 @@ class App extends Component {
                 </Box>
               </LayoutItem>
               <LayoutItem area="main">
-                <Box variant="header" />
+                <Header />
                 <Wrapper size="documentation">
                   <Switch>
                     <Route path="/" component={Introduction} exact />

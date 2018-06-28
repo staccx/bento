@@ -4,6 +4,7 @@ import { HeadingStyling } from "./theme.docs.Headings"
 import { ListStyling, SplitListItemStyling } from "./theme.docs.Lists"
 import { LayoutStyling } from "./theme.docs.Layouts"
 import { TextStyling } from "./theme.docs.Texts"
+import { InputStyling, RadioPillItemStyling } from "./theme.docs.Inputs"
 
 const wrapper = {
   documentation: "1440px"
@@ -29,5 +30,7 @@ const theme = new Theme({ wrapper, color })
   .add(LayoutStyling)
   .add(TextStyling)
   .add(SplitListItemStyling)
+  .add(InputStyling)
+  .add(RadioPillItemStyling)
 
 export default theme
