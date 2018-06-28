@@ -165,7 +165,9 @@ const ApiReference = () => (
               {sorted[tag].map(operation => {
                 return (
                   <div>
-                    <Heading level={3}>{operation.path} {operation.type}</Heading>
+                    <Heading level={3}>
+                      {operation.path} {operation.type}
+                    </Heading>
                     <Box variant="codeBlock" flush>
                       <Layout variant="documentationApiExample">
                         <div>
@@ -182,13 +184,13 @@ const ApiReference = () => (
                               <Heading level={4} variant="apiExample">
                                 <span>Example request</span>
                               </Heading>
-                              <CodeRenderer code={request}/>
+                              <CodeRenderer code={request} />
                             </div>
                             <div>
                               <Heading level={4} variant="apiExample">
                                 <span>Example response</span>
                               </Heading>
-                              <CodeRenderer code={response}/>
+                              <CodeRenderer code={response} />
                             </div>
                           </Layout>
                         </div>
@@ -215,36 +217,40 @@ const ApiReference = () => (
                         indicate an error with Fundu's servers (these are rare).
                       </Paragraph>
 
-              <div className="method-list">
-                <Heading level={5} className="method-list-title">
-                  Attributes
-                </Heading>
+                      <div className="method-list">
+                        <Heading level={5} className="method-list-title">
+                          Attributes
+                        </Heading>
 
-                <Table data={attributes} variant="documentationAttr">
-                  {({ value }) => (
-                    <td>
-                      <h3>{value.name ? value.name : value}</h3>
-                      <span>{value.type ? value.type : value}</span>
-                    </td>
-                  )}
-                </Table>
-              </div>
-            </Layout>
-          </div>
-          <div>
-            <Layout rowGap="large">
-              <div>
-                <Heading level={4} variant="apiExample">
-                  <span>Example request</span>
-                </Heading>
-                <CodeRenderer code={request} />
-              </div>
-            </Layout>
-          </div>
+                        <Table data={attributes} variant="documentationAttr">
+                          {({ value }) => (
+                            <td>
+                              <h3>{value.name ? value.name : value}</h3>
+                              <span>{value.type ? value.type : value}</span>
+                            </td>
+                          )}
+                        </Table>
+                      </div>
+                    </Layout>
+                  </div>
+                  <div>
+                    <Layout rowGap="large">
+                      <div>
+                        <Heading level={4} variant="apiExample">
+                          <span>Example request</span>
+                        </Heading>
+                        <CodeRenderer code={request} />
+                      </div>
+                    </Layout>
+                  </div>
+                </Layout>
+              </Box>
+            </div>
+          ))}
         </Layout>
-      </Box>
-    </div>
-  </Layout>
+      )
+    }}
+  </OpenApiConsumer>
 )
 
 export default ApiReference
