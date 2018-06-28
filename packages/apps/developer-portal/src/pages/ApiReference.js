@@ -7,7 +7,8 @@ import {
   Text,
   CodeRenderer,
   List,
-  SplitListItem
+  SplitListItem,
+  Table
 } from "@staccx/base"
 
 const request = `var Fundu = require("fundu")(
@@ -52,6 +53,22 @@ const response = `{
     {...}
   ]
 }`
+
+const attributes = [
+  {
+    attribute: { name: "type", type: "string" },
+    description: "The type of error returned. One of"
+  },
+  {
+    attribute: { name: "charge", type: "optional string" },
+    description: "For card errors, the ID of the failed charge."
+  },
+  {
+    attribute: { name: "code", type: "optional string" },
+    description:
+      "For some errors that could be handled programmatically, a short string indicating the error code reported."
+  }
+]
 
 const ApiReference = () => (
   <Layout
@@ -121,53 +138,15 @@ const ApiReference = () => (
                 <Heading level={5} className="method-list-title">
                   Attributes
                 </Heading>
-                <List variant="documentationMethodList">
-                  <SplitListItem variant="documentationMethodListItem">
-                    <Heading level={3} variant="documentationMethodHeading">
-                      type
-                      <Text variant="documentationMethodValidtionText">
-                        string
-                      </Text>
-                    </Heading>
-                    <div>
-                      <p>
-                        The type of error returned. One of{" "}
-                        <code>api_connection_error</code>,{" "}
-                        <code>api_error</code>,{" "}
-                        <code>authentication_error</code>,{" "}
-                        <code>card_error</code>, <code>idempotency_error</code>,{" "}
-                        <code>invalid_request_error</code>, or{" "}
-                        <code>rate_limit_error</code>
-                      </p>
-                    </div>
-                  </SplitListItem>
-                  <SplitListItem variant="documentationMethodListItem">
-                    <Heading level={3} variant="documentationMethodHeading">
-                      charge
-                      <Text variant="documentationMethodValidtionText">
-                        optional string
-                      </Text>
-                    </Heading>
-                    <div>
-                      <p>For card errors, the ID of the failed charge.</p>
-                    </div>
-                  </SplitListItem>
-                  <SplitListItem variant="documentationMethodListItem">
-                    <Heading level={3} variant="documentationMethodHeading">
-                      code
-                      <Text variant="documentationMethodValidtionText">
-                        optional string
-                      </Text>
-                    </Heading>
-                    <div>
-                      <p>
-                        For some errors that could be handled programmatically,
-                        a short string indicating the{" "}
-                        <a href="/docs/error-codes">error code</a> reported.
-                      </p>
-                    </div>
-                  </SplitListItem>
-                </List>
+
+                <Table data={attributes} variant="documentationAttr">
+                  {({ value }) => (
+                    <td>
+                      <h3>{value.name ? value.name : value}</h3>
+                      <span>{value.type ? value.type : value}</span>
+                    </td>
+                  )}
+                </Table>
               </div>
             </Layout>
           </div>
