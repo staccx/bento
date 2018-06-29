@@ -61,12 +61,7 @@ class Table extends React.Component {
             const key = this.props.itemToKey(item)
             return (
               <tr key={`tr-${typeof key === "string" ? key : index}`}>
-                {headers.map(header => {
-                  const value = item.hasOwnProperty(header.value)
-                    ? item[header.value]
-                    : this.props.fallbackCellValue
-                  return <td>{this.props.children({ item, header, value })}</td>
-                })}
+                {this.props.children({ item, headers, index })}
               </tr>
             )
           })}
