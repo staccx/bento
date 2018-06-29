@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themify } from "@staccx/theme"
+import { themify, themeProps } from "@staccx/theme"
 
 const List = ({ children, className, ...restProps }) => (
   <ListUl className={className} {...restProps}>
@@ -23,10 +23,7 @@ List.defaultProps = {
 }
 
 List.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element
-  ]).isRequired,
+  children: themeProps.children.isRequired,
   className: PropTypes.string
 }
 

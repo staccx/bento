@@ -33,6 +33,7 @@ const Header = ({ children, classname }) => (
             type="search"
             placeholder="Search our documentation…"
             variant="documentationHeaderSearch"
+            id="headersearch"
           />
         </Box>
         <div>
