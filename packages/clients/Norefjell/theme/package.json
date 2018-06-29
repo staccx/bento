@@ -1,6 +1,6 @@
 {
   "name": "@staccx/norefjell-theme",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -10,8 +10,8 @@
     "@staccx/theme": "^4"
   },
   "devDependencies": {
-    "@staccx/base": "^5.2.0",
-    "@staccx/theme": "^5.2.0"
+    "@staccx/base": "^5.2.1",
+    "@staccx/theme": "^5.2.1"
   },
   "files": [
     "dist"
