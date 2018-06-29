@@ -175,7 +175,7 @@ export const InputPropTypes = {
   onKeyDown: PropTypes.func,
   placeholder: PropTypes.string,
   style: PropTypes.object,
-  type: PropTypes.oneOf(["text", "email", "number", "tel", "url"]),
+  type: PropTypes.oneOf(["text", "email", "number", "tel", "url", "search"]),
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   label: PropTypes.string,
   className: PropTypes.string,
