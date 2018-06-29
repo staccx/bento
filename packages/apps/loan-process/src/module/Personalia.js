@@ -326,8 +326,8 @@ class Personalia extends React.Component {
                                     name={name}
                                     id="3riejwfjnsldk"
                                     defaultChecked={values.paymentCash}
-                                    onChange={item =>
-                                      setFieldValue("paymentCash", item)
+                                    onChange={() =>
+                                      setFieldValue("paymentCash", true)
                                     }
                                   >
                                     Ja
@@ -336,8 +336,8 @@ class Personalia extends React.Component {
                                     name={name}
                                     id="okwenfs"
                                     defaultChecked={!values.paymentCash}
-                                    onChange={item =>
-                                      setFieldValue("paymentCash", !item)
+                                    onChange={() =>
+                                      setFieldValue("paymentCash", false)
                                     }
                                   >
                                     Nei
