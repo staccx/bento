@@ -12,6 +12,7 @@ import PresentOffer from "./module/PresentOffer"
 import EndScreen from "./module/EndScreen"
 import PersonalFinance from "./module/PersonalFinance"
 import Calculator from "./module/Calculator"
+import Personalia from "./module/Personalia"
 
 class Content extends Component {
   render() {
@@ -28,6 +29,8 @@ class Content extends Component {
         <Offer /> */}
 
         <div>
+          <Personalia onValidated={console.log} onClick={console.log} />
+          <hr style={{ margin: "64px 0" }} />
           <Calculator onValidated={console.log} />
           <hr style={{ margin: "64px 0" }} />
           <Calculator
