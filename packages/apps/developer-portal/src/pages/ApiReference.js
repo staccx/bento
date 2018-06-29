@@ -13,6 +13,8 @@ import {
 import OpenApiConsumer from "../components/OpenApiConsumer"
 import { Link } from "react-router-dom"
 
+const language = "javascript"
+
 const request = `var Fundu = require("fundu")(
   "sk_test_BQokikJOvBiI2HlWgH4olfQ2"
 );
@@ -144,13 +146,13 @@ const ApiReference = () => (
                       <Heading level={4} variant="apiExample">
                         <span>Example request</span>
                       </Heading>
-                      <CodeRenderer code={request} />
+                      <CodeRenderer language={language} code={request} />
                     </div>
                     <div>
                       <Heading level={4} variant="apiExample">
                         <span>Example response</span>
                       </Heading>
-                      <CodeRenderer code={response} />
+                      <CodeRenderer language={language} code={response} />
                     </div>
                   </Layout>
                 </div>
@@ -184,13 +186,13 @@ const ApiReference = () => (
                               <Heading level={4} variant="apiExample">
                                 <span>Example request</span>
                               </Heading>
-                              <CodeRenderer code={request} />
+                              <CodeRenderer language={language} code={request} />
                             </div>
                             <div>
                               <Heading level={4} variant="apiExample">
                                 <span>Example response</span>
                               </Heading>
-                              <CodeRenderer code={response} />
+                              <CodeRenderer language={language} code={response} />
                             </div>
                           </Layout>
                         </div>
@@ -239,7 +241,7 @@ const ApiReference = () => (
                         <Heading level={4} variant="apiExample">
                           <span>Example request</span>
                         </Heading>
-                        <CodeRenderer code={request} />
+                        <CodeRenderer language={language} code={request} />
                       </div>
                     </Layout>
                   </div>
