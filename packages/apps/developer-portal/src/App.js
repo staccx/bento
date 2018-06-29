@@ -40,6 +40,13 @@ class App extends Component {
                       component={ApiReference}
                       exact
                     />
+                    <Route
+                      path="/api-reference/:path"
+                      render={({ match }) => {
+                        console.log(match)
+                        return null
+                      }}
+                    />
                     <Route path={"/api"} exact component={ApiReference} />
                   </Switch>
                 </Wrapper>

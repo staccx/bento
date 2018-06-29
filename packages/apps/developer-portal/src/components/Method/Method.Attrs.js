@@ -32,7 +32,6 @@ const MethodAttrs = ({ responses, parameters }) => {
   }
 
   if (parameters) {
-    console.log("Parameters", parameters)
     return (
       <div>
         <Heading level={5} variant="documentationAttrs">

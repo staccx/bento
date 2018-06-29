@@ -14,13 +14,15 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
   return (
     <div>
       <Heading variant="documentation" level={3}>
-        {operation.path} {operation.type}
+        {operation.summary}
       </Heading>
       <Box variant="codeBlock" flush>
         <Layout variant="documentationApiExample">
           <div>
             <Layout>
-              <Paragraph>{operation.summary}</Paragraph>
+              {operation.description && (
+                <Paragraph>{operation.description}</Paragraph>
+              )}
               {operation.parameters && (
                 <MethodAttrs parameters={operation.parameters} />
               )}
@@ -33,6 +35,8 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
             <MethodExample
               language={language}
               code={{ request, response: response }}
+              path={path}
+              type={type}
             />
           </div>
         </Layout>

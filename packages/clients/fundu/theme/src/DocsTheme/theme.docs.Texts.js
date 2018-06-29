@@ -1,6 +1,22 @@
 import { css } from "styled-components"
-import { color, font, registerStyle } from "@staccx/theme"
+import { color, font, spacing, registerStyle } from "@staccx/theme"
 import { TextStyles } from "@staccx/base"
+
+const getTypeColor = type => {
+  switch (type) {
+    case "get":
+      return "codeNumber"
+
+    case "put":
+      return "codeComment"
+
+    case "delete":
+      return "codeError"
+
+    default:
+      return "codeString"
+  }
+}
 
 export const TextStyling = registerStyle(
   {
@@ -20,6 +36,17 @@ export const TextStyling = registerStyle(
       color: ${color.wcag};
       font-size: ${font.tiny};
       display: block;
+    `,
+    documentationOperationType: css`
+      display: inline-block;
+      font-size: ${font.tiny};
+      background-color: ${p => color(getTypeColor(p.type))};
+      padding: ${spacing.tiny} ${spacing.small};
+      margin-right: ${spacing.small};
+      text-transform: uppercase;
+    `,
+    documentationOperationPath: css`
+      color: ${color("codePunctuation")};
     `
   },
   TextStyles.TEXT

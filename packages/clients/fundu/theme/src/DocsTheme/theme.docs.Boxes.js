@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { color, registerStyle } from "@staccx/theme"
+import { color, spacing, registerStyle } from "@staccx/theme"
 import { BoxStyles } from "@staccx/base"
 import { tileStyle } from "../Theme/theme.Boxes"
 
@@ -21,6 +21,11 @@ export const BoxStyling = registerStyle(
       display: flex;
       justify-content: stretch;
       align-items: stretch;
+    `,
+    documentationTypePath: css`
+      display: flex;
+      align-items: center;
+      margin-bottom: -${spacing.medium};
     `
   },
   BoxStyles.BOX

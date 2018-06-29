@@ -21,7 +21,8 @@ const color = {
   codeFunction: "#88C0D0",
   codeOperator: "#81A1C1",
   codeClass: "#8FBCBB",
-  codePunctuation: "#ECEFF4"
+  codePunctuation: "#ECEFF4",
+  codeError: "#E08679"
 }
 
 const theme = new Theme({ wrapper, color })

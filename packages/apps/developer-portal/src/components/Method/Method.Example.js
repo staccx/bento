@@ -1,9 +1,19 @@
 import React from "react"
-import { Layout, Heading, CodeRenderer } from "@staccx/base"
+import { Layout, Heading, CodeRenderer, Box, Text } from "@staccx/base"
 
-const MethodExample = ({ code, language }) => {
+const MethodExample = ({ code, language, type, path }) => {
   return (
     <Layout rowGap="large">
+      <div>
+        <Box variant="documentationTypePath" size="flush">
+          {type && (
+            <Text variant="documentationOperationType" type={type}>
+              {type}
+            </Text>
+          )}
+          {path && <Text variant="documentationOperationPath">{path}</Text>}
+        </Box>
+      </div>
       <div>
         <Heading level={4} variant="apiExample">
           <span>Example request</span>
