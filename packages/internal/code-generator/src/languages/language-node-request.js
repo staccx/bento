@@ -9,9 +9,9 @@ export default ({ summary, method, path, headers, body, queryParams }) =>
 const request = require("request");
     const options = { 
       method: "${method}",
-      url: "${path}"
-      headers: ${blast(headers)}
-      formData: ${blast(body)}
+      url: "${path}",
+      headers: ${blast(headers)},
+      formData: ${blast(body)},
       qs: ${blast(queryParams)}
     }
     
