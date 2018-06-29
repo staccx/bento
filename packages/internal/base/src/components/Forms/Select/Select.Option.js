@@ -14,7 +14,12 @@ import {
 
 const SelectOption = ({ children, isSelected, variant, ...restProps }) => {
   return (
-    <OptionContainer isSelected={isSelected} variant={variant} {...restProps}>
+    <OptionContainer
+      isSelected={isSelected}
+      variant={variant}
+      type="button"
+      {...restProps}
+    >
       <div>{children}</div>
     </OptionContainer>
   )

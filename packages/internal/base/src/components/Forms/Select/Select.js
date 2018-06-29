@@ -158,6 +158,7 @@ class Select extends React.PureComponent {
                       <IconButton
                         onClick={() => clearSelection()}
                         variant={variant}
+                        type={"button"}
                         isSelected
                       >
                         <CloseIcon variant={variant} />
@@ -166,6 +167,7 @@ class Select extends React.PureComponent {
                       <IconButton
                         onClick={() => toggleMenu()}
                         variant={variant}
+                        type={"button"}
                         isSelected
                       >
                         <CaretIcon isExpanded={isOpen} variant={variant} />
