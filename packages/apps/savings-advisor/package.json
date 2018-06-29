@@ -1,14 +1,14 @@
 {
   "name": "@staccx/savings-advisor",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "private": true,
   "dependencies": {
     "@staccx/animations": "^5.1.0",
-    "@staccx/base": "^5.1.0",
+    "@staccx/base": "^5.2.0",
     "@staccx/formatting": "^5.1.0",
     "@staccx/math": "^5.1.0",
     "@staccx/soy": "^5.1.0",
-    "@staccx/theme": "^5.1.0"
+    "@staccx/theme": "^5.2.0"
   },
   "scripts": {
     "start": "react-app-rewired start",

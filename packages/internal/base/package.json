@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENCED",
@@ -31,7 +31,7 @@
     "@staccx/theme": "^4"
   },
   "devDependencies": {
-    "@staccx/theme": "^5.1.0",
+    "@staccx/theme": "^5.2.0",
     "babel-plugin-prismjs": "^1.0.2"
   },
   "files": [
