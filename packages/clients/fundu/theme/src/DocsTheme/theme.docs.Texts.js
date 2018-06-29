@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { color, registerStyle } from "@staccx/theme"
+import { color, font, registerStyle } from "@staccx/theme"
 import { TextStyles } from "@staccx/base"
 
 export const TextStyling = registerStyle(
@@ -14,6 +14,11 @@ export const TextStyling = registerStyle(
       line-height: 1.4;
     `,
     documentationMethodValidtionText: css`
+      display: block;
+    `,
+    documentationAttrType: css`
+      color: ${color.wcag};
+      font-size: ${font.tiny};
       display: block;
     `
   },

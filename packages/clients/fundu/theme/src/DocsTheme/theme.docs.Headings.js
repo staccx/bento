@@ -1,5 +1,12 @@
 import { css } from "styled-components"
-import { color, font, spacing, registerStyle, fontFamily } from "@staccx/theme"
+import {
+  color,
+  font,
+  spacing,
+  registerStyle,
+  fontFamily,
+  fontWeight
+} from "@staccx/theme"
 import { HeadingStyles, fontSmoothing } from "@staccx/base"
 
 export const HeadingStyling = registerStyle(
@@ -55,10 +62,25 @@ export const HeadingStyling = registerStyle(
       color: ${color.primary};
       line-height: 1.5;
     `,
-    documentationMethodHeading: css`
-      color: ${color.wcag};
-      font-size: ${font.tiny};
+    documentationAttrs: css`
+      padding-bottom: ${spacing.tiny};
+      border-bottom: 1px solid ${color.line};
+      color: ${color.text};
+      font-size: ${font.base};
       font-family: ${fontFamily.body};
+      font-weight: ${fontWeight.bold};
+    `,
+    documentationAttrType: css`
+      color: ${color.text};
+      font-size: ${font.base};
+      font-family: ${fontFamily.body};
+      font-weight: ${fontWeight.bold};
+    `,
+    documentationAttrResponse: css`
+      color: ${color.text};
+      font-family: ${fontFamily.body};
+      font-weight: ${fontWeight.bold};
+      font-size: ${font.base};
     `
   },
   HeadingStyles.HEADING

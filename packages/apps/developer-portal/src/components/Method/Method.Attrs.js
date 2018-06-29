@@ -1,17 +1,67 @@
 import React from "react"
-import { Table } from "@staccx/base"
+import { Table, Heading, Text } from "@staccx/base"
 
-const MethodAttrs = ({ attributes }) => {
-  return (
-    <Table data={attributes} variant="documentationAttr">
-      {({ value }) => (
-        <td>
-          <h3>{value.name ? value.name : value}</h3>
-          <span>{value.type ? value.type : value}</span>
-        </td>
-      )}
-    </Table>
-  )
+const MethodAttrs = ({ responses, parameters }) => {
+  if (responses) {
+    const responsesData = Object.keys(responses).map(key => ({
+      response: key,
+      description: responses[key].description
+    }))
+
+    return (
+      <div>
+        <Heading level={5} variant="documentationAttrs">
+          Responses
+        </Heading>
+        <Table data={responsesData} variant="documentationAttr" responses>
+          {({ item }) => (
+            <React.Fragment>
+              <td>
+                <Heading level={3} variant="documentationAttrResponse">
+                  {item.response}
+                </Heading>
+              </td>
+              <td>
+                <p>{item.description}</p>
+              </td>
+            </React.Fragment>
+          )}
+        </Table>
+      </div>
+    )
+  }
+
+  if (parameters) {
+    console.log("Parameters", parameters)
+    return (
+      <div>
+        <Heading level={5} variant="documentationAttrs">
+          Parameters
+        </Heading>
+        <Table
+          data={parameters}
+          variant="documentationAttr"
+          blacklist={item => item === "name" || item === "description"}
+        >
+          {({ item }) => (
+            <React.Fragment>
+              <td>
+                <Heading level={3} variant="documentationAttrType">
+                  {item.name}
+                </Heading>
+                <Text variant="documentationAttrType">{item.schema.type}</Text>
+              </td>
+              <td>
+                <p>{item.description}</p>
+              </td>
+            </React.Fragment>
+          )}
+        </Table>
+      </div>
+    )
+  }
+
+  return null
 }
 
 export default MethodAttrs

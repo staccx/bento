@@ -1,10 +1,11 @@
 import React from "react"
-import { Layout, Box, Heading, Paragraph, Text, Table } from "@staccx/base"
-import { attributes, request, response } from "../../_fakeData/_fakeMethod"
+import { Layout, Box, Heading, Paragraph, Text } from "@staccx/base"
+import { request, response } from "../../_fakeData/_fakeMethod"
 import MethodExample from "./Method.Example"
 import MethodAttrs from "./Method.Attrs"
 
 const Method = ({ operation, language }) => {
+  // console.log(operation)
   return (
     <div>
       <Heading variant="documentation" level={3}>
@@ -14,18 +15,13 @@ const Method = ({ operation, language }) => {
         <Layout variant="documentationApiExample">
           <div>
             <Layout>
-              <Paragraph>
-                {operation.summary}
-                <Text variant="documentationInline">400</Text>
-              </Paragraph>
-
-              <div className="method-list">
-                <Heading level={5} className="method-list-title">
-                  Attributes
-                </Heading>
-
-                <MethodAttrs attributes={attributes} />
-              </div>
+              <Paragraph>{operation.summary}</Paragraph>
+              {operation.parameters && (
+                <MethodAttrs parameters={operation.parameters} />
+              )}
+              {operation.responses && (
+                <MethodAttrs responses={operation.responses} />
+              )}
             </Layout>
           </div>
           <div>

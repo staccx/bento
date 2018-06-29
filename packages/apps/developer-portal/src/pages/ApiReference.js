@@ -1,5 +1,5 @@
 import React from "react"
-import { Layout, Heading } from "@staccx/base"
+import { Layout, Heading, Paragraph } from "@staccx/base"
 import OpenApiConsumer from "../components/OpenApiConsumer"
 import ApiReferenceInfo from "./ApiReference.Info"
 import Method from "../components/Method/Method"
@@ -9,6 +9,7 @@ const language = "javascript"
 const ApiReference = () => (
   <OpenApiConsumer>
     {({ sorted, openapi, info }) => {
+      console.log(openapi)
       return (
         <Layout
           paddingTop="large"
@@ -19,10 +20,13 @@ const ApiReference = () => (
           <ApiReferenceInfo info={info} />
 
           {Object.keys(sorted).map(tag => (
-            <div>
+            <div key={tag}>
               <Heading id={tag} variant="documentation" level={1}>
                 {tag}
               </Heading>
+              <Paragraph varaint="documentationLede">
+                Tag description goes here
+              </Paragraph>
 
               <Layout
                 paddingTop="large"
@@ -30,6 +34,7 @@ const ApiReference = () => (
                 variant="documentationApiReferences"
                 rowGap="huge"
               >
+                <div>List of definitions</div>
                 {sorted[tag].map(operation => (
                   <Method
                     operation={operation}
