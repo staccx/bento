@@ -1,6 +1,6 @@
 {
   "name": "@staccx/developer-portal",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "description": "Developer portal white label",
   "private": true,
   "author": "StaccX",
@@ -27,7 +27,7 @@
     "@staccx/theme": "^4"
   },
   "devDependencies": {
-    "@staccx/theme": "^5.1.0"
+    "@staccx/theme": "^5.2.0"
   },
   "files": [
     "dist"
@@ -36,7 +36,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/fundu-theme": "^5.1.0",
+    "@staccx/fundu-theme": "^5.2.0",
     "@staccx/soy": "^5.1.0",
     "@staccx/utils": "^5.1.0",
     "react-router-hash-link": "^1.2.0"

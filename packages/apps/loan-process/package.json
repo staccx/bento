@@ -1,6 +1,6 @@
 {
   "name": "@staccx/loan-process",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "description": "Loan process",
   "author": "StaccX",
   "license": "UNLICENCED",
@@ -34,8 +34,8 @@
     "@staccx/theme": "^4"
   },
   "devDependencies": {
-    "@staccx/base": "^5.1.0",
-    "@staccx/theme": "^5.1.0"
+    "@staccx/base": "^5.2.0",
+    "@staccx/theme": "^5.2.0"
   },
   "files": [
     "dist"
