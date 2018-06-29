@@ -8,8 +8,7 @@ const language = "javascript"
 
 const ApiReference = () => (
   <OpenApiConsumer>
-    {({ sorted, openapi, info }) => {
-      console.log(openapi)
+    {({ sorted, openapi, info, codeGeneratorInputs }) => {
       return (
         <Layout
           paddingTop="large"
@@ -37,6 +36,8 @@ const ApiReference = () => (
                 <div>List of definitions</div>
                 {sorted[tag].map(operation => (
                   <Method
+                    openapi={openapi}
+                    codeGeneratorInputs={codeGeneratorInputs}
                     operation={operation}
                     language={language}
                     key={operation.path + operation.type}

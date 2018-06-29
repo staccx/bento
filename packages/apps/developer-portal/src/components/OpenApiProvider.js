@@ -6,6 +6,7 @@ import findTags from "../utils/findTags"
 import sortByTags from "../utils/sortByTags"
 import convertSwaggerToOpenApi from "../utils/convertSwaggerToOpenApi"
 import axios from "axios/index"
+import { fromOpenApi } from "@staccx/code-generator"
 
 const mapData = item => {
   return convertSwaggerToOpenApi(item.data, {})
@@ -29,6 +30,7 @@ class OpenApiProvider extends React.Component {
 
           const { components, info, servers } = openapi
 
+          const codeGeneratorInputs = fromOpenApi(openapi)
           const { requestBodies, schemas, securitySchemes } = components
           return (
             <Provider
@@ -41,7 +43,8 @@ class OpenApiProvider extends React.Component {
                 sorted,
                 servers,
                 components,
-                info
+                info,
+                codeGeneratorInputs
               }}
             >
               {this.props.children}

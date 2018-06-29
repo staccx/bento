@@ -15,7 +15,7 @@ export default (openapi, tags) => {
           operations[name].push({
             ...operation,
             tag: name,
-            path: key.replace(`/${name}`, ""),
+            path: key, // key.replace(`/${name}`, ""),
             type: opKey
           })
         }
@@ -23,6 +23,5 @@ export default (openapi, tags) => {
     })
   }
 
-  console.log(operations)
   return operations
 }

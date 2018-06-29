@@ -15,3 +15,53 @@ export const blast = obj => {
   result += "}"
   return result
 }
+
+export const fromOpenApi = openApi => {
+  const codeGeneratorInputs = {}
+  const paths = Reflect.ownKeys(openApi.paths)
+
+  paths.map(path => {
+    const operations = Reflect.ownKeys(openApi.paths[path])
+
+    operations.map(operation => {
+      const op = openApi.paths[path][operation]
+
+      const result = fromOperation(path, operation, op)
+
+      if (!codeGeneratorInputs[path]) {
+        codeGeneratorInputs[path] = {}
+      }
+
+      codeGeneratorInputs[path][operation] = result
+    })
+  })
+
+  return codeGeneratorInputs
+}
+
+const fromOperation = (path, operationType, operationObject) => {
+  const result = {
+    summary: operationObject.summary || "no summary",
+    method: operationType,
+    path: path,
+    headers: { Accept: "application/json" },
+    queryParams: {},
+    body: {}
+  }
+
+  const parameters = operationObject.parameters || []
+
+  if (parameters) {
+    parameters.map(parameter => {
+      if (parameter.in === "query") {
+        result.queryParams[parameter.name] = "testQueryValue"
+      }
+
+      if (parameter.in === "body") {
+        result.body[parameter.name] = "testParamValue"
+      }
+    })
+  }
+
+  return result
+}

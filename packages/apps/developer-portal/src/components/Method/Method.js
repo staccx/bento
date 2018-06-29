@@ -1,11 +1,16 @@
 import React from "react"
-import { Layout, Box, Heading, Paragraph, Text } from "@staccx/base"
-import { request, response } from "../../_fakeData/_fakeMethod"
+import { Layout, Box, Heading, Paragraph } from "@staccx/base"
+import { response } from "../../_fakeData/_fakeMethod"
 import MethodExample from "./Method.Example"
 import MethodAttrs from "./Method.Attrs"
+import * as codeGenerators from "@staccx/code-generator"
 
-const Method = ({ operation, language }) => {
-  // console.log(operation)
+const Method = ({ codeGeneratorInputs, operation, language }) => {
+  const path = operation.path
+  const type = operation.type
+
+  const request = codeGenerators.nodeRequest(codeGeneratorInputs[path][type])
+
   return (
     <div>
       <Heading variant="documentation" level={3}>
@@ -27,7 +32,7 @@ const Method = ({ operation, language }) => {
           <div>
             <MethodExample
               language={language}
-              code={{ request: request, response: response }}
+              code={{ request, response: response }}
             />
           </div>
         </Layout>
