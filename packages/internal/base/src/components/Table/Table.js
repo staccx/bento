@@ -22,7 +22,8 @@ class Table extends React.Component {
       variant,
       itemToKey,
       onHeaderClick,
-      renderHeader
+      renderHeader,
+      ...restProps
     } = this.props
 
     const headers = data
@@ -43,7 +44,7 @@ class Table extends React.Component {
       .map(mapHeader)
 
     return (
-      <TableStyled variant={variant}>
+      <TableStyled variant={variant} {...restProps}>
         <thead>
           <tr>
             {headers.map((item, index) => {
