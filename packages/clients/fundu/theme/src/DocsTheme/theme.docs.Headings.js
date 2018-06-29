@@ -17,12 +17,19 @@ export const HeadingStyling = registerStyle(
       ${p =>
         p.level === 1 &&
         css`
+          text-transform: capitalize;
           color: ${color.primary};
         `};
       ${p =>
         p.level === 2 &&
         css`
           font-size: ${font.h4};
+          margin-bottom: ${spacing.tiny};
+        `};
+
+      ${p =>
+        p.level === 3 &&
+        css`
           margin-bottom: ${spacing.tiny};
         `};
     `,

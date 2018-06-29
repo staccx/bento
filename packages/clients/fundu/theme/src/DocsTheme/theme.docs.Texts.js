@@ -37,6 +37,10 @@ export const TextStyling = registerStyle(
       font-size: ${font.tiny};
       display: block;
     `,
+    documentationAttrReq: css`
+      color: ${color.wcag};
+      font-size: 10px;
+    `,
     documentationOperationType: css`
       display: inline-block;
       font-size: ${font.tiny};
@@ -45,6 +49,7 @@ export const TextStyling = registerStyle(
       margin-right: ${spacing.small};
       text-transform: uppercase;
     `,
+
     documentationOperationPath: css`
       color: ${color("codePunctuation")};
     `
