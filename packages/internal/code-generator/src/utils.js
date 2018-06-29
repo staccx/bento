@@ -25,10 +25,21 @@ export const fromOpenApi = openApi => {
 
     operations.map(operation => {
       const op = openApi.paths[path][operation]
-      const rootUrl = openApi.servers.length
-        ? openApi.servers[0].url
-        : openApi.servers.url
-      const result = fromOperation(rootUrl, path, operation, op)
+      const requestBody = openApi.paths[path].requestBody
+
+      // set root url to the global servers' url if no specific servers for this path
+      let rootUrl
+      if (openApi.paths[path].servers) {
+        rootUrl = openApi.paths[path].servers.length
+          ? openApi.paths[path].servers[0].url
+          : openApi.paths[path].servers.url
+      } else {
+        rootUrl = openApi.servers.length
+          ? openApi.servers[0].url
+          : openApi.servers.url
+      }
+
+      const result = fromOperation(rootUrl, path, operation, op, requestBody)
 
       if (!codeGeneratorInputs[path]) {
         codeGeneratorInputs[path] = {}
@@ -41,7 +52,13 @@ export const fromOpenApi = openApi => {
   return codeGeneratorInputs
 }
 
-const fromOperation = (rootUrl, path, operationType, operationObject) => {
+const fromOperation = (
+  rootUrl,
+  path,
+  operationType,
+  operationObject,
+  requestBody
+) => {
   const result = {
     summary: operationObject.summary || "no summary",
     method: operationType,
@@ -51,18 +68,52 @@ const fromOperation = (rootUrl, path, operationType, operationObject) => {
     body: {}
   }
 
+  if (requestBody && operationType === "post") {
+  }
+
   const parameters = operationObject.parameters || []
 
   if (parameters) {
     parameters.map(parameter => {
-      if (parameter.in === "path") {
-      }
-      if (parameter.in === "query") {
-        result.queryParams[parameter.name] = "testQueryValue"
-      }
+      switch (parameter.in) {
+        case "query": {
+          result.queryParams[parameter.name] = "testQueryValue"
+          break
+        }
 
-      if (parameter.in === "body") {
-        result.body[parameter.name] = "testParamValue"
+        case "header": {
+          if (
+            !["Accept", "Content-Type", "Authorization"].includes(
+              parameter.name
+            )
+          ) {
+            result.headers[parameter.name] = "testHeaderValue"
+          }
+          break
+        }
+
+        case "path": {
+          // replace {name} in path
+          result.path = result.path.replace(
+            new RegExp(`\{${parameter.name}\}`, "g"),
+            parameter.name + "_testPathValue"
+          )
+          break
+        }
+
+        case "cookie": {
+          // Cookie: name=value; name2=value2; name3=value3
+          if (!result.headers.Cookie) {
+            result.headers.Cookie = ""
+          } else {
+            result.headers.Cookie = result.headers.Cookie.concat("; ")
+          }
+
+          result.headers.Cookie = result.headers.Cookie.concat(
+            `${parameter.name}=testCookieValue`
+          )
+          break
+        }
       }
     })
   }
@@ -74,3 +125,5 @@ const getDummyValue = type => {
   switch (type) {
   }
 }
+
+const resolveReference = (openApi, ref) => {}
