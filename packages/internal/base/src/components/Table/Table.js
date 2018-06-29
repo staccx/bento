@@ -12,15 +12,20 @@ import {
 } from "@staccx/theme"
 import styled from "styled-components"
 
-export const TABLE = "base-component-table"
-
-const TableStyled = styled.table`
-  ${themify(TABLE)};
-`
-
 class Table extends React.Component {
   render() {
-    const headers = this.props.data
+    const {
+      data,
+      blacklist,
+      mapHeader,
+      children,
+      variant,
+      itemToKey,
+      onHeaderClick,
+      renderHeader
+    } = this.props
+
+    const headers = data
       .reduce((acc, current) => {
         Object.keys(current).forEach(key => {
           if (!acc.includes(key)) {
@@ -30,25 +35,25 @@ class Table extends React.Component {
 
         return acc
       }, [])
-      .filter(this.props.blacklist)
+      .filter(blacklist)
       .map(header => ({
         value: header,
         title: header
       }))
-      .map(this.props.mapHeader)
+      .map(mapHeader)
 
     return (
-      <TableStyled>
+      <TableStyled variant={variant}>
         <thead>
           <tr>
             {headers.map((item, index) => {
-              if (this.props.renderHeader) {
-                return this.props.renderHeader({ item, index })
+              if (renderHeader) {
+                return renderHeader({ item, index })
               }
               return (
                 <th
                   key={`thead-${item.value}`}
-                  onClick={e => this.props.onHeaderClick(e, item)}
+                  onClick={e => onHeaderClick(e, item)}
                 >
                   {item.title}
                 </th>
@@ -58,10 +63,10 @@ class Table extends React.Component {
         </thead>
         <tbody>
           {this.props.data.map((item, index) => {
-            const key = this.props.itemToKey(item)
+            const key = itemToKey(item)
             return (
               <tr key={`tr-${typeof key === "string" ? key : index}`}>
-                {this.props.children({ item, headers, index })}
+                {children({ item, headers, index })}
               </tr>
             )
           })}
@@ -70,6 +75,12 @@ class Table extends React.Component {
     )
   }
 }
+
+export const TABLE = "base-component-table"
+
+export const TableStyled = styled.table`
+  ${themify(TABLE)};
+`
 
 Table.propTypes = {
   blacklist: PropTypes.func,
