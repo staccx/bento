@@ -25,8 +25,10 @@ export const fromOpenApi = openApi => {
 
     operations.map(operation => {
       const op = openApi.paths[path][operation]
-
-      const result = fromOperation(path, operation, op)
+      const rootUrl = openApi.servers.length
+        ? openApi.servers[0].url
+        : openApi.servers.url
+      const result = fromOperation(rootUrl, path, operation, op)
 
       if (!codeGeneratorInputs[path]) {
         codeGeneratorInputs[path] = {}
@@ -39,11 +41,11 @@ export const fromOpenApi = openApi => {
   return codeGeneratorInputs
 }
 
-const fromOperation = (path, operationType, operationObject) => {
+const fromOperation = (rootUrl, path, operationType, operationObject) => {
   const result = {
     summary: operationObject.summary || "no summary",
     method: operationType,
-    path: path,
+    path: rootUrl + path,
     headers: { Accept: "application/json" },
     queryParams: {},
     body: {}
@@ -53,6 +55,8 @@ const fromOperation = (path, operationType, operationObject) => {
 
   if (parameters) {
     parameters.map(parameter => {
+      if (parameter.in === "path") {
+      }
       if (parameter.in === "query") {
         result.queryParams[parameter.name] = "testQueryValue"
       }
@@ -64,4 +68,9 @@ const fromOperation = (path, operationType, operationObject) => {
   }
 
   return result
+}
+
+const getDummyValue = type => {
+  switch (type) {
+  }
 }
