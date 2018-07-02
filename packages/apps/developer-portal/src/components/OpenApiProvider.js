@@ -25,9 +25,10 @@ class OpenApiProvider extends React.Component {
     this.setPreferredLanguage = this.setPreferredLanguage.bind(this)
   }
 
-  async compomnentWillMount() {
+  async componentWillMount() {
     const preferredLanguage =
       (await localforage.getItem(preferredLangKey)) || "nodeRequest"
+    console.log(preferredLanguage)
     this.setState({ preferredLanguage })
   }
 
