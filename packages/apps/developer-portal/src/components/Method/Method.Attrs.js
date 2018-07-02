@@ -1,6 +1,5 @@
 import React from "react"
 import { Table, Heading, Text } from "@staccx/base"
-import { isArray } from "util"
 
 const MethodAttrs = ({ responses, parameters, security }) => {
   if (responses) {

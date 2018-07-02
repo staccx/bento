@@ -1,7 +1,7 @@
 import React from "react"
 import { Layout, Heading, Paragraph } from "@staccx/base"
 import OpenApiConsumer from "../components/OpenApiConsumer"
-import ApiReferenceInfo from "./ApiReference.Info"
+// import ApiReferenceInfo from "./ApiReference.Info"
 import Method from "../components/Method/Method"
 import Definitions from "../components/Definitions/Definitions"
 
