@@ -40,6 +40,15 @@ export const LayoutStyling = registerStyle(
         grid-row-gap: ${spacing.medium};
         grid-column-gap: 0;
       }
+    `,
+    documentationExample: css`
+      > * {
+        overflow-x: auto;
+
+        &:first-child {
+          margin-bottom: -${spacing.medium};
+        }
+      }
     `
   },
   LayoutStyles.LAYOUT

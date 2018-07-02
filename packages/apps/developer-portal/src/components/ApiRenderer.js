@@ -1,14 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import axios from "axios"
-import { Wrapper } from "@staccx/base"
 import convertSwaggerToOpenApi from "../utils/convertSwaggerToOpenApi"
 import Info from "./Info"
 import Servers from "./Servers"
-import Paths from "./Paths"
 import SchemaProvider from "./OpenApiProvider"
 import Tags from "./Tags"
-import findTags from "../utils/findTags"
 class ApiRenderer extends React.Component {
   constructor(props, context) {
     super(props, context)

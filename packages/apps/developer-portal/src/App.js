@@ -11,8 +11,6 @@ import Header from "./components/Header/Header"
 import fakeMenu from "./_fakeData/fakeMenu"
 import ApiReference from "./pages/ApiReference"
 import OpenApiProvider from "./components/OpenApiProvider"
-import Path from "./components/Path"
-import OpenApiConsumer from "./components/OpenApiConsumer"
 
 class App extends Component {
   render() {

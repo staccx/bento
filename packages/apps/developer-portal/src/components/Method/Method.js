@@ -9,7 +9,6 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
   const path = operation.path
   const type = operation.type
   const request = codeGenerators.nodeRequest(codeGeneratorInputs[path][type])
-  console.log("Operation", operation)
   return (
     <div>
       {operation.name ? (

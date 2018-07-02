@@ -36,7 +36,7 @@ export const HeadingStyling = registerStyle(
     apiExample: css`
       position: relative;
       margin-bottom: ${spacing.small};
-      margin-left: -${spacing.small};
+      margin-left: 0;
       background-color: ${color("codeBackground")};
       font-family: ${fontFamily.body};
       font-size: ${font.tiny};
@@ -49,15 +49,15 @@ export const HeadingStyling = registerStyle(
         z-index: 5;
         display: inline-block;
         background-color: ${color("codeBackground")};
-        padding: 0 ${spacing.small};
+        padding-right: ${spacing.small};
       }
 
       &::after {
         content: "";
         position: absolute;
         top: 50%;
-        left: -${spacing.small};
-        width: calc(100% + ${spacing.mediumPlus});
+        left: 0;
+        width: 100%;
         height: 1px;
         background-color: ${color("codeComment")};
       }

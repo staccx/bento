@@ -3,7 +3,7 @@ import { Layout, Heading, CodeRenderer, Box, Text } from "@staccx/base"
 
 const MethodExample = ({ code, language, type, path }) => {
   return (
-    <Layout rowGap="large">
+    <Layout variant="documentationExample" rowGap="large">
       <div>
         <Box variant="documentationTypePath" size="flush">
           {type && (

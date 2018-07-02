@@ -25,7 +25,10 @@ export const BoxStyling = registerStyle(
     documentationTypePath: css`
       display: flex;
       align-items: center;
-      margin-bottom: -${spacing.medium};
+      max-width: 100%;
+    `,
+    apiContainer: css`
+      padding-top: ${spacing.large};
     `
   },
   BoxStyles.BOX
