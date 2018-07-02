@@ -1,7 +1,8 @@
 import React from "react"
 import { Table, Heading, Text } from "@staccx/base"
+import { isArray } from "util"
 
-const MethodAttrs = ({ responses, parameters }) => {
+const MethodAttrs = ({ responses, parameters, security }) => {
   if (responses) {
     const responsesData = Object.keys(responses).map(key => ({
       response: key,
@@ -52,6 +53,46 @@ const MethodAttrs = ({ responses, parameters }) => {
               </td>
               <td>
                 <p>{item.description}</p>
+              </td>
+            </React.Fragment>
+          )}
+        </Table>
+      </div>
+    )
+  }
+
+  if (security) {
+    console.log(security)
+    const securityData = security.map(key => {
+      const access = Object.keys(key).map(k => key[k])[0]
+
+      return {
+        auth: Object.keys(key).map(k => k),
+        access: access.map(key => (
+          <p>
+            <code>
+              <Text variant="documentationInline">{key}</Text>
+            </code>
+          </p>
+        ))
+      }
+    })
+
+    return (
+      <div>
+        <Heading level={5} variant="documentationAttrs">
+          Authorization
+        </Heading>
+        <Table data={securityData} variant="documentationAttr">
+          {({ item }) => (
+            <React.Fragment>
+              <td>
+                <Heading level={3} variant="documentationAttrType">
+                  {item.auth}
+                </Heading>
+              </td>
+              <td>
+                <p>{item.access}</p>
               </td>
             </React.Fragment>
           )}

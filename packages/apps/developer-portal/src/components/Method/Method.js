@@ -10,7 +10,7 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
   const type = operation.type
 
   const request = codeGenerators.nodeRequest(codeGeneratorInputs[path][type])
-
+  console.log(operation.security)
   return (
     <div>
       <Heading variant="documentation" level={3}>
@@ -28,6 +28,9 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
               )}
               {operation.responses && (
                 <MethodAttrs responses={operation.responses} />
+              )}
+              {operation.security && (
+                <MethodAttrs security={operation.security} />
               )}
             </Layout>
           </div>

@@ -10,9 +10,8 @@ const language = "javascript"
 const ApiReference = () => (
   <OpenApiConsumer>
     {({ sorted, openapi, info, codeGeneratorInputs }) => {
-      {
-        /* console.log(openapi) */
-      }
+      console.log(openapi)
+
       return (
         <Layout
           paddingTop="large"
@@ -23,12 +22,6 @@ const ApiReference = () => (
           <ApiReferenceInfo info={info} />
 
           {Object.keys(sorted).map(tag => {
-            console.log(
-              tag,
-              openapi.components.schemas[
-                tag.charAt(0).toUpperCase() + tag.slice(1)
-              ]
-            )
             return (
               <div key={tag}>
                 <Heading id={tag} variant="documentation" level={1}>

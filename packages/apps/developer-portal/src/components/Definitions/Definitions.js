@@ -3,11 +3,9 @@ import { Table, Heading, Text } from "@staccx/base"
 
 const Definitions = ({ definitions, tag }) => {
   if (definitions) {
-    console.log("Definitions: ", definitions)
     const properties = definitions.properties
     const required = definitions.required
     const definitionsData = Object.keys(properties).map(key => {
-      console.log(required)
       return {
         property: key,
         type: properties[key].type,
@@ -34,10 +32,10 @@ const Definitions = ({ definitions, tag }) => {
                   {item.property}
                 </Heading>
                 <Text variant="documentationAttrType">
-                  {item.type}
                   {item.required && (
-                    <Text variant="documentationAttrReq"> is required</Text>
+                    <Text variant="documentationAttrReq"> required </Text>
                   )}
+                  {item.type}
                 </Text>
               </td>
               <td>

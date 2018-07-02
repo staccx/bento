@@ -38,7 +38,7 @@ export const TextStyling = registerStyle(
       display: block;
     `,
     documentationAttrReq: css`
-      color: ${color.wcag};
+      color: ${color("codeError")};
       font-size: 10px;
     `,
     documentationOperationType: css`
