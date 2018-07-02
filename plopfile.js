@@ -1,5 +1,5 @@
 module.exports = function(plop) {
-  plop.setGenerator("Create theme", {
+  plop.setGenerator("Theme", {
     description: "Creates new theme",
     prompts: [
       {
@@ -28,7 +28,7 @@ module.exports = function(plop) {
       }
     ]
   })
-  plop.setGenerator("Create base component", {
+  plop.setGenerator("Base component", {
     description: "Create new base component",
     prompts: [
       {
@@ -69,6 +69,60 @@ module.exports = function(plop) {
     ],
     actions: [
 
+    ]
+  })
+  plop.setGenerator("App", {
+    description: "Create new Stacc App",
+    prompts: [
+      {
+        type: "input",
+        name: "name",
+        default: "My Awesome App",
+        message: "Enter app name"
+      },
+      {
+        type: "confirm",
+        name: "confirm",
+        message: "Are you sure?"
+      }
+    ],
+    actions: [
+      {
+        type: "addMany",
+        destination: "packages/apps/{{dashCase name}}/",
+        base: "templates/plop/CreateApp/files",
+        templateFiles: "templates/plop/CreateApp/files/**"
+      },
+      {
+        type: "add",
+        path: "packages/apps/{{dashCase name}}/package.json",
+        templateFile: "templates/plop/CreateApp/templates/package.hbs"
+      },
+      {
+        type: "add",
+        path: "packages/apps/{{dashCase name}}/src/index.js",
+        templateFile: "templates/plop/CreateApp/templates/index.hbs"
+      },
+      {
+        type: "add",
+        path: "packages/apps/{{dashCase name}}/src/App.js",
+        templateFile: "templates/plop/CreateApp/templates/App.hbs"
+      },
+      {
+        type: "add",
+        path: "packages/apps/{{dashCase name}}/public/index.html",
+        templateFile: "templates/plop/CreateApp/templates/html.hbs"
+      },
+      {
+        type: "add",
+        path: "packages/apps/{{dashCase name}}/public/manifest.json",
+        templateFile: "templates/plop/CreateApp/templates/manifest.hbs"
+      },
+      {
+        type: "add",
+        path: "packages/apps/{{dashCase name}}/src/theme/Theme.js",
+        templateFile: "templates/plop/CreateTheme/theme.hbs"
+      }
     ]
   })
 }
