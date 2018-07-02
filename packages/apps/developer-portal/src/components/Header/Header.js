@@ -39,24 +39,26 @@ const Header = ({ children, classname }) => (
         </Box>
         <div>
           <OpenApiConsumer>
-            {({ preferredLanguage, setPreferredLanguage }) => preferredLanguage ? (
-              <RadioPill
-                onChange={e => setPreferredLanguage(e.target.value)}
-                group={"lang"}
-                variant="documentationHeaderLang"
-              >
-                {langs.map(listItem => (
-                  <RadioPillItem
-                    key={listItem.id}
-                    value={listItem.value}
-                    defaultChecked={listItem.value === preferredLanguage}
-                    id={listItem.id}
-                  >
-                    {listItem.label}
-                  </RadioPillItem>
-                ))}
-              </RadioPill>
-            ): null}
+            {({ preferredLanguage, setPreferredLanguage }) =>
+              preferredLanguage ? (
+                <RadioPill
+                  onChange={e => setPreferredLanguage(e.target.value)}
+                  group={"lang"}
+                  variant="documentationHeaderLang"
+                >
+                  {langs.map(listItem => (
+                    <RadioPillItem
+                      key={listItem.id}
+                      value={listItem.value}
+                      defaultChecked={listItem.value === preferredLanguage}
+                      id={listItem.id}
+                    >
+                      {listItem.label}
+                    </RadioPillItem>
+                  ))}
+                </RadioPill>
+              ) : null
+            }
           </OpenApiConsumer>
         </div>
       </Layout>

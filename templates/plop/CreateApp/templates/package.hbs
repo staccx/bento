@@ -8,8 +8,11 @@
 "@staccx/theme": "^5.2.1"
 },
 "scripts": {
+{{#if module}}
+"build": "yarn prettify && rollup -c",
+{{/if}}
 "start": "react-app-rewired start",
-"build": "react-app-rewired build",
+"build:app": "react-app-rewired build",
 "test": "react-app-rewired test --env=jsdom",
 "eject": "react-app-rewired eject",
 "deploy": "yarn build && surge -p ./build",

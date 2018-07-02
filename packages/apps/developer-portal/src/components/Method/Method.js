@@ -15,7 +15,7 @@ const getCodeRendererLanguage = lang => {
 console.log(codeGenerators)
 
 const Method = ({ codeGeneratorInputs, operation, language }) => {
-  if(!language) {
+  if (!language) {
     return null
   }
   const path = operation.path
