@@ -10,8 +10,6 @@ const language = "javascript"
 const ApiReference = () => (
   <OpenApiConsumer>
     {({ sorted, openapi, info, codeGeneratorInputs }) => {
-      console.log(openapi)
-
       return (
         <Layout
           paddingTop="large"
