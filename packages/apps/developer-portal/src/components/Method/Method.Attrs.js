@@ -54,7 +54,13 @@ const MethodAttrs = ({ responses, parameters, security }) => {
                 <Heading level={3} variant="documentationAttrType">
                   {item.name}
                 </Heading>
-                <Text variant="documentationAttrType">{item.schema.type}</Text>
+
+                <Text variant="documentationAttrType">
+                  {item.required && (
+                    <Text variant="documentationAttrReq"> required </Text>
+                  )}
+                  {item.schema.type}
+                </Text>
               </td>
               <td>
                 <p>{item.description}</p>
