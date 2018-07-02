@@ -5,7 +5,8 @@
   "dependencies": {
     "@staccx/base": "^5.2.1",
     "@staccx/soy": "^5.1.0",
-    "@staccx/theme": "^5.2.1"
+    "@staccx/theme": "^5.2.1",
+    "@staccx/nordea-theme": "^5.2.1"
   },
   "scripts": {
     "build": "yarn prettify && rollup -c",

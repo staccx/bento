@@ -11,7 +11,7 @@ import { ButtonStyling } from "./theme.Buttons"
 import { InputStyling } from "./theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 
-const borderRadius = "5px"
+const borderRadius = "0px"
 const headerHeight = "70px"
 
 const targetSize = {
@@ -39,23 +39,21 @@ const spacing = {
 }
 
 const color = {
-  bg: "#fcfcfc",
-  bgGray: "#f6f1e5",
-  bgBlue: "#DCEDF0",
-  bgBlueDark: "#CEDEE0",
-  primary: "#3c61e7",
-  primaryDark: "#1a40c5",
+  bg: "#F4F2F1",
+  primary: "#00005E",
+  primaryLight: "#DCEDFF",
+  secondary: "#FDECE4",
   gray: "#646464",
-  text: "#333",
+  text: "#000",
   white: "#fff",
-  red: "#E06666",
-  yellow: "#FFF8BB",
-  line: "#d8d8d8",
+  red: "#FC6161",
+  yellow: "#FFE184",
+  line: "#979797",
   wcag: "#777",
-  disabled: "#BABABA",
-  warning: "#E06666",
+  disabled: "#E4E4E4",
+  warning: "#FC6161",
   black: "#000",
-  subtleHover: "#fff"
+  subtleHover: "#E5F2FF"
 }
 
 const font = {
