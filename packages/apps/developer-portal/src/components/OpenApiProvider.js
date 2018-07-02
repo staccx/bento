@@ -19,7 +19,7 @@ class OpenApiProvider extends React.Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      preferredLanguage: "nodeRequest"
+      preferredLanguage: null
     }
 
     this.setPreferredLanguage = this.setPreferredLanguage.bind(this)

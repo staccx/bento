@@ -39,7 +39,7 @@ const Header = ({ children, classname }) => (
         </Box>
         <div>
           <OpenApiConsumer>
-            {({preferredLanguage, setPreferredLanguage}) => (
+            {({ preferredLanguage, setPreferredLanguage }) => preferredLanguage ? (
               <RadioPill
                 onChange={e => setPreferredLanguage(e.target.value)}
                 group={"lang"}
@@ -56,7 +56,7 @@ const Header = ({ children, classname }) => (
                   </RadioPillItem>
                 ))}
               </RadioPill>
-            )}
+            ): null}
           </OpenApiConsumer>
         </div>
       </Layout>
