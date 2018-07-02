@@ -10,7 +10,7 @@ const addHeaders = headers => {
   }
 }
 
-export default ({ summary, method, path, headers, body, queryParams }) =>
+const generate = ({ summary, method, path, headers, body, queryParams }) =>
   // language=JavaScript
   `
 /**
@@ -37,3 +37,12 @@ ${addHeaders(headers)}
 
 Response response = client.newCall(request).execute();
 `
+
+export default {
+  generate: opts => {
+    const code = generate(opts)
+    return code
+  },
+
+  label: "java"
+}

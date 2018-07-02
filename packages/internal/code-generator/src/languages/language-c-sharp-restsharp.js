@@ -22,7 +22,7 @@ const addBody = body => {
   }
 }
 
-export default ({ summary, method, path, headers, body, queryParams }) =>
+const generate = ({ summary, method, path, headers, body, queryParams }) =>
   // language=JavaScript
   `
 /**
@@ -36,3 +36,11 @@ ${addHeaders(headers)}
 ${addBody(body)}
 IRestResponse response = client.Execute(request);
 `
+
+export default {
+  generate: opts => {
+    const code = generate(opts)
+    return code
+  },
+  label: "csharp"
+}
