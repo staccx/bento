@@ -17,7 +17,7 @@ import OpenApiConsumer from "./components/OpenApiConsumer"
 class App extends Component {
   render() {
     return (
-      <OpenApiProvider url={"http://petstore.swagger.io/v2/swagger.json"}>
+      <OpenApiProvider url={"/example01.json"}>
         <ThemeProxyProvider theme={DocsTheme}>
           <Router>
             <Layout grid="dashboard" variant="responsiveDashboard">

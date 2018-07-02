@@ -1,19 +1,19 @@
 export const blast = obj => {
   if (!obj) return "{}"
-  const keys = Object.keys(obj)
-  let result = "{"
-  keys
-    .map((key, index) => {
-      return `"${key}": "${obj[key]}"${index < keys.length - 1 ? "," : ""}`
-    })
-    .map(element => {
-      if (element) {
-        console.log("concat", element)
-        result += element
-      }
-    })
-  result += "}"
-  return result
+  return JSON.stringify(obj, null, 2)
+  // const keys = Object.keys(obj)
+  // let result = "{"
+  // keys
+  //   .map((key, index) => {
+  //     return `"${key}": "${obj[key]}"${index < keys.length - 1 ? "," : ""}`
+  //   })
+  //   .map(element => {
+  //     if (element) {
+  //       result += element
+  //     }
+  //   })
+  // result += "}"
+  // return result
 }
 
 export const fromOpenApi = openApi => {
@@ -25,7 +25,7 @@ export const fromOpenApi = openApi => {
 
     operations.map(operation => {
       const op = openApi.paths[path][operation]
-      const requestBody = openApi.paths[path].requestBody
+      const requestBody = op.requestBody
 
       // set root url to the global servers' url if no specific servers for this path
       let rootUrl
@@ -69,6 +69,20 @@ const fromOperation = (
   }
 
   if (requestBody && operationType === "post") {
+    if (requestBody.content && requestBody.content["application/json"]) {
+      const content = requestBody.content["application/json"]
+      let example
+      if (content.examples) {
+        const exampleKey = Reflect.ownKeys(content.examples)[0]
+        example = content.examples[exampleKey]
+      } else if (content.example) {
+        example = content.example
+      }
+
+      if (example) {
+        result.body = example
+      }
+    }
   }
 
   const parameters = operationObject.parameters || []
