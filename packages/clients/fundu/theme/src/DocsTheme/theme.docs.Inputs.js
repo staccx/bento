@@ -49,3 +49,13 @@ export const RadioPillItemStyling = registerStyle(
   },
   RadioPillItemStyles.RADIO_PILL_ITEM_WRAPPER
 )
+
+export const RadioPillItemHoverStyling = registerStyle(
+  {
+    documentationHeaderLang: css`
+      border-width: 0;
+      background-color: ${color.primary}4D;
+    `
+  },
+  RadioPillItemStyles.RADIO_PILL_ITEM_HOVER
+)

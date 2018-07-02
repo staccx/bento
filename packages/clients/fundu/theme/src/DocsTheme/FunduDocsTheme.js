@@ -4,7 +4,11 @@ import { HeadingStyling } from "./theme.docs.Headings"
 import { ListStyling, SplitListItemStyling } from "./theme.docs.Lists"
 import { LayoutStyling } from "./theme.docs.Layouts"
 import { TextStyling } from "./theme.docs.Texts"
-import { InputStyling, RadioPillItemStyling } from "./theme.docs.Inputs"
+import {
+  InputStyling,
+  RadioPillItemStyling,
+  RadioPillItemHoverStyling
+} from "./theme.docs.Inputs"
 import { TableStyling } from "./theme.docs.Tables"
 
 const wrapper = {
@@ -35,5 +39,6 @@ const theme = new Theme({ wrapper, color })
   .add(InputStyling)
   .add(RadioPillItemStyling)
   .add(TableStyling)
+  .add(RadioPillItemHoverStyling)
 
 export default theme
