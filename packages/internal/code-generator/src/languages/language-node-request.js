@@ -1,6 +1,8 @@
 import { blast } from "../utils"
+const prettier = require("prettier/standalone")
+const plugins = [require("prettier/parser-babylon")]
 
-export default ({ summary, method, path, headers, body, queryParams }) =>
+const generate = ({ summary, method, path, headers, body, queryParams }) =>
   // language=JavaScript
   `
 /**
@@ -21,3 +23,20 @@ const request = require("request");
       console.log(body);
     });
   `
+
+export default {
+  generate: opts => {
+    const code = generate(opts)
+    let prettierCode
+    try {
+      prettierCode = prettier.format(code, {
+        parser: "babylon",
+        plugins
+      })
+    } catch (e) {
+      console.log("prettier error", e, code)
+    }
+    return prettierCode || code
+  },
+  label: "javascript"
+}

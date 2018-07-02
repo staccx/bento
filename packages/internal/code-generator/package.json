@@ -30,6 +30,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
+    "prettier": "^1.13.7",
     "qs": "^6.5.2"
   }
 }
