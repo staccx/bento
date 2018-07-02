@@ -19,16 +19,24 @@ const ApiReference = () => (
           variant="documentationApiReferences"
           rowGap="huge"
         >
-          <ApiReferenceInfo info={info} />
+          {/*
+            <ApiReferenceInfo info={info} />
+            Removed for now, let’s try putting this info in one of the other pages
+          */}
 
           {Object.keys(sorted).map(tag => {
+            console.log(sorted)
             return (
               <div key={tag}>
                 <Heading id={tag} variant="documentation" level={1}>
                   {tag}
                 </Heading>
                 <Paragraph varaint="documentationLede">
-                  Tag description goes here
+                  {openapi.tags.map(openApiTag => {
+                    if (openApiTag.name === tag) {
+                      return openApiTag.description
+                    }
+                  })}
                 </Paragraph>
 
                 <Layout

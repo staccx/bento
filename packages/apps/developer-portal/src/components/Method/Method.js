@@ -8,9 +8,8 @@ import * as codeGenerators from "@staccx/code-generator"
 const Method = ({ codeGeneratorInputs, operation, language }) => {
   const path = operation.path
   const type = operation.type
-
   const request = codeGenerators.nodeRequest(codeGeneratorInputs[path][type])
-  console.log(operation.security)
+
   return (
     <div>
       <Heading variant="documentation" level={3}>

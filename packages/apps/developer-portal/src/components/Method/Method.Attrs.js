@@ -14,7 +14,12 @@ const MethodAttrs = ({ responses, parameters, security }) => {
         <Heading level={5} variant="documentationAttrs">
           Responses
         </Heading>
-        <Table data={responsesData} variant="documentationAttr" responses>
+        <Table
+          data={responsesData}
+          variant="documentationAttr"
+          itemToKey={item => item.description}
+          responses
+        >
           {({ item }) => (
             <React.Fragment>
               <td>
@@ -42,6 +47,7 @@ const MethodAttrs = ({ responses, parameters, security }) => {
           data={parameters}
           variant="documentationAttr"
           blacklist={item => item === "name" || item === "description"}
+          itemToKey={item => item.name}
         >
           {({ item }) => (
             <React.Fragment>
@@ -62,14 +68,13 @@ const MethodAttrs = ({ responses, parameters, security }) => {
   }
 
   if (security) {
-    console.log(security)
     const securityData = security.map(key => {
       const access = Object.keys(key).map(k => key[k])[0]
 
       return {
         auth: Object.keys(key).map(k => k),
         access: access.map(key => (
-          <p>
+          <p key={key}>
             <code>
               <Text variant="documentationInline">{key}</Text>
             </code>
@@ -83,7 +88,11 @@ const MethodAttrs = ({ responses, parameters, security }) => {
         <Heading level={5} variant="documentationAttrs">
           Authorization
         </Heading>
-        <Table data={securityData} variant="documentationAttr">
+        <Table
+          data={securityData}
+          variant="documentationAttr"
+          itemToKey={item => item.auth}
+        >
           {({ item }) => (
             <React.Fragment>
               <td>
@@ -91,9 +100,7 @@ const MethodAttrs = ({ responses, parameters, security }) => {
                   {item.auth}
                 </Heading>
               </td>
-              <td>
-                <p>{item.access}</p>
-              </td>
+              <td>{item.access}</td>
             </React.Fragment>
           )}
         </Table>
