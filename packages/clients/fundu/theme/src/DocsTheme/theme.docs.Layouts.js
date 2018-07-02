@@ -45,6 +45,17 @@ export const LayoutStyling = registerStyle(
       > * {
         overflow-x: auto;
 
+        ::-webkit-scrollbar {
+          background-color: rgba(0, 0, 0, 0.2);
+          border-radius: 50px;
+          height: 12px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: ${color("codeComment")};
+          border-radius: 50px;
+        }
+
         &:first-child {
           margin-bottom: -${spacing.medium};
         }
