@@ -39,7 +39,7 @@ export const TextStyling = registerStyle(
     `,
     documentationAttrReq: css`
       color: ${color("codeError")};
-      font-size: 10px;
+      font-size: ${font.tiny};
     `,
     documentationOperationType: css`
       display: inline-block;
