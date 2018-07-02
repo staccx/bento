@@ -5,11 +5,9 @@ import OpenApiConsumer from "../components/OpenApiConsumer"
 import Method from "../components/Method/Method"
 import Definitions from "../components/Definitions/Definitions"
 
-const language = "javascript"
-
 const ApiReference = () => (
   <OpenApiConsumer>
-    {({ sorted, openapi, info, codeGeneratorInputs }) => {
+    {({ sorted, openapi, info, codeGeneratorInputs, preferredLanguage }) => {
       return (
         <Box size="flush" variant="apiContainer">
           {/*
@@ -23,17 +21,15 @@ const ApiReference = () => (
                 <Heading id={tag} variant="documentation" level={1}>
                   {tag}
                 </Heading>
-
                 {openapi.tags ? (
-                  openapi.tags.map(openApiTag => {
-                    if (openApiTag.name === tag) {
-                      return (
+                  openapi.tags.map(
+                    openApiTag =>
+                      openApiTag.name === tag ? (
                         <Paragraph variant="documentationLede">
                           {openApiTag.description}
                         </Paragraph>
-                      )
-                    }
-                  })
+                      ) : null
+                  )
                 ) : (
                   <Paragraph variant="documentationLede">
                     Missing description!
@@ -63,7 +59,7 @@ const ApiReference = () => (
                       openapi={openapi}
                       codeGeneratorInputs={codeGeneratorInputs}
                       operation={operation}
-                      language={language}
+                      language={preferredLanguage}
                       key={operation.path + operation.type}
                     />
                   ))}

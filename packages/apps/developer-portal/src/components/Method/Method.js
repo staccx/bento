@@ -5,13 +5,23 @@ import MethodExample from "./Method.Example"
 import MethodAttrs from "./Method.Attrs"
 import * as codeGenerators from "@staccx/code-generator"
 
+const getCodeRendererLanguage = lang => {
+  switch (lang) {
+    default:
+      return "javascript"
+  }
+}
+
+console.log(codeGenerators)
+
 const Method = ({ codeGeneratorInputs, operation, language }) => {
   const path = operation.path
   const type = operation.type
-  const request = codeGenerators.nodeRequest.generate(
-    codeGeneratorInputs[path][type]
-  )
+  const request = codeGenerators[language](codeGeneratorInputs[path][type])
 
+  const codeRendererLanguage = getCodeRendererLanguage(language)
+
+  console.log("Operation", operation)
   return (
     <div>
       {operation.name ? (
@@ -45,7 +55,7 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
           </div>
           <div>
             <MethodExample
-              language={language}
+              language={codeRendererLanguage}
               code={{ request, response: response }}
               path={path}
               type={type}

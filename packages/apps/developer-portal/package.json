@@ -40,6 +40,7 @@
     "@staccx/fundu-theme": "^5.2.1",
     "@staccx/soy": "^5.1.0",
     "@staccx/utils": "^5.1.0",
+    "localforage": "^1.7.2",
     "react-router-hash-link": "^1.2.0"
   }
 }

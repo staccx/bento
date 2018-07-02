@@ -7,12 +7,37 @@ import sortByTags from "../utils/sortByTags"
 import convertSwaggerToOpenApi from "../utils/convertSwaggerToOpenApi"
 import axios from "axios/index"
 import { fromOpenApi } from "@staccx/code-generator"
+import localforage from "localforage"
 
 const mapData = item => {
   return convertSwaggerToOpenApi(item.data, {})
 }
+
+const preferredLangKey = "x-dev-portal-lang"
+
 class OpenApiProvider extends React.Component {
+  constructor(props, context) {
+    super(props, context)
+    this.state = {
+      preferredLanguage: "nodeRequest"
+    }
+
+    this.setPreferredLanguage = this.setPreferredLanguage.bind(this)
+  }
+
+  async compomnentWillMount() {
+    const preferredLanguage =
+      (await localforage.getItem(preferredLangKey)) || "nodeRequest"
+    this.setState({ preferredLanguage })
+  }
+
+  async setPreferredLanguage(lang) {
+    await localforage.setItem(preferredLangKey, lang)
+    this.setState({ preferredLanguage: lang })
+  }
+
   render() {
+    const { preferredLanguage } = this.state
     return (
       <Fetch url={this.props.url} get={axios.get} mapData={mapData}>
         {({ data }) => {
@@ -44,7 +69,9 @@ class OpenApiProvider extends React.Component {
                 servers,
                 components,
                 info,
-                codeGeneratorInputs
+                codeGeneratorInputs,
+                setPreferredLanguage: this.setPreferredLanguage,
+                preferredLanguage
               }}
             >
               {this.props.children}

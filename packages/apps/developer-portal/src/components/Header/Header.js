@@ -2,23 +2,24 @@ import React from "react"
 import styled from "styled-components"
 import { spacing, color } from "@staccx/theme"
 import { Layout, RadioPill, RadioPillItem, Input, Box } from "@staccx/base"
+import OpenApiConsumer from "../OpenApiConsumer"
 
 const langs = [
   {
     id: "js",
-    value: "js",
+    value: "nodeRequest",
     label: "Node",
     defaultChecked: true
   },
   {
     id: "java",
-    value: "java",
+    value: "okHTTP",
     label: "Java",
     defaultChecked: false
   },
   {
     id: "net",
-    value: "net",
+    value: "restSharp",
     label: ".NET",
     defaultChecked: false
   }
@@ -37,22 +38,26 @@ const Header = ({ children, classname }) => (
           />
         </Box>
         <div>
-          <RadioPill
-            onChange={e => console.log(e.target.value)}
-            group={"lang"}
-            variant="documentationHeaderLang"
-          >
-            {langs.map(listItem => (
-              <RadioPillItem
-                key={listItem.id}
-                value={listItem.value}
-                defaultChecked={listItem.defaultChecked}
-                id={listItem.id}
+          <OpenApiConsumer>
+            {({preferredLanguage, setPreferredLanguage}) => (
+              <RadioPill
+                onChange={e => setPreferredLanguage(e.target.value)}
+                group={"lang"}
+                variant="documentationHeaderLang"
               >
-                {listItem.label}
-              </RadioPillItem>
-            ))}
-          </RadioPill>
+                {langs.map(listItem => (
+                  <RadioPillItem
+                    key={listItem.id}
+                    value={listItem.value}
+                    defaultChecked={listItem.value === preferredLanguage}
+                    id={listItem.id}
+                  >
+                    {listItem.label}
+                  </RadioPillItem>
+                ))}
+              </RadioPill>
+            )}
+          </OpenApiConsumer>
         </div>
       </Layout>
     </HeaderComp>

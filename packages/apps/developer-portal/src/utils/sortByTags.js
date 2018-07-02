@@ -3,9 +3,9 @@ export default (openapi, tags) => {
 
   for (const tag of tags) {
     const name = tag.name || tag
-    Object.keys(openapi.paths).map(key => {
+    Object.keys(openapi.paths).forEach(key => {
       const path = openapi.paths[key]
-      Object.keys(path).map(opKey => {
+      Object.keys(path).forEach(opKey => {
         const operation = path[opKey]
         if (operation.tags.indexOf(name) !== -1) {
           if (!operations[name]) {
