@@ -9,16 +9,24 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
   const path = operation.path
   const type = operation.type
   const request = codeGenerators.nodeRequest(codeGeneratorInputs[path][type])
-
+  console.log("Operation", operation)
   return (
     <div>
-      <Heading variant="documentation" level={3}>
-        {operation.summary}
-      </Heading>
+      {operation.name ? (
+        <Heading variant="documentation" level={3}>
+          {operation.name}
+        </Heading>
+      ) : (
+        <Heading variant="documentation" level={3}>
+          MISSING NAME!
+        </Heading>
+      )}
+
       <Box variant="codeBlock" flush>
         <Layout variant="documentationApiExample">
           <div>
             <Layout>
+              {operation.summary && <Paragraph>{operation.summary}</Paragraph>}
               {operation.description && (
                 <Paragraph>{operation.description}</Paragraph>
               )}
