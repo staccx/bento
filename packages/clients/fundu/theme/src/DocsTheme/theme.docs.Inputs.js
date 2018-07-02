@@ -44,6 +44,15 @@ export const RadioPillItemStyling = registerStyle(
           color: ${color.white};
           z-index: 1;
         }
+
+        &:focus ~ label,
+        &:hover ~ label,
+        &:active ~ label,
+        ~ label:hover,
+        ~ label:active,
+        ~ label:focus {
+          background-color: ${color.primary} !important;
+        }
       }
     `
   },
