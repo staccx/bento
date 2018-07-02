@@ -29,12 +29,13 @@ const ApiReference = () => (
                 <Heading id={tag} variant="documentation" level={1}>
                   {tag}
                 </Heading>
-                <Paragraph varaint="documentationLede">
-                  {openapi.tags.map(openApiTag => {
-                    if (openApiTag.name === tag) {
-                      return openApiTag.description
-                    }
-                  })}
+                <Paragraph variant="documentationLede">
+                  {openapi.tags &&
+                    openapi.tags.map(openApiTag => {
+                      if (openApiTag.name === tag) {
+                        return openApiTag.description
+                      }
+                    })}
                 </Paragraph>
 
                 <Layout
