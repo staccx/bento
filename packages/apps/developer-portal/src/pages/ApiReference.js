@@ -10,6 +10,7 @@ const language = "javascript"
 const ApiReference = () => (
   <OpenApiConsumer>
     {({ sorted, openapi, info, codeGeneratorInputs }) => {
+      console.log(openapi)
       return (
         <Layout
           paddingTop="large"
@@ -29,14 +30,17 @@ const ApiReference = () => (
                 <Heading id={tag} variant="documentation" level={1}>
                   {tag}
                 </Heading>
-                <Paragraph variant="documentationLede">
-                  {openapi.tags &&
-                    openapi.tags.map(openApiTag => {
-                      if (openApiTag.name === tag) {
-                        return openApiTag.description
-                      }
-                    })}
-                </Paragraph>
+
+                {openapi.tags &&
+                  openapi.tags.map(openApiTag => {
+                    if (openApiTag.name === tag) {
+                      return (
+                        <Paragraph variant="documentationLede">
+                          {openApiTag.description}
+                        </Paragraph>
+                      )
+                    }
+                  })}
 
                 <Layout
                   paddingTop="large"
