@@ -21,6 +21,7 @@
     "packages/**/*"
   ],
   "devDependencies": {
-    "@staccx/eslint-config": "^4.20.1"
+    "@staccx/eslint-config": "^4.20.1",
+    "plop": "^2.0.0"
   }
 }
