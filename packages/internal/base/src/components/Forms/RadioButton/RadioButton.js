@@ -11,8 +11,25 @@ import {
   themify,
   themeProps
 } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
-export const RADIO_BUTTON_RADIO = "RADIO_BUTTON_RADIO"
+const tProps = {
+  radio: {
+    name: "RADIO_BUTTON_RADIO",
+    description: "Radio button style",
+    type: themePropTypes.style
+  },
+  label: {
+    name: "RADIO_BUTTON_LABEL",
+    description: "Label style",
+    type: themePropTypes.style
+  },
+  wrapper: {
+    name: "RADIO_BUTTON_WRAPPER",
+    description: "Wrapper style",
+    type: themePropTypes.style
+  }
+}
 const Radio = styled.input`
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -21,10 +38,9 @@ const Radio = styled.input`
   &:checked ~ label::after {
     transform: scale(1);
   }
-  ${themify(RADIO_BUTTON_RADIO)};
+  ${themify(tProps.radio)};
 `
 
-export const RADIO_BUTTON_LABEL = "RADIO_BUTTON_LABEL"
 const Label = styled.label`
   position: relative;
   padding: 0 0 0 ${spacing.mediumPlus};
@@ -63,10 +79,9 @@ const Label = styled.label`
     transition: all 0.2s ease-in-out;
   }
 
-  ${themify(RADIO_BUTTON_LABEL)};
+  ${themify(tProps.label)};
 `
 
-export const RADIO_BUTTON_WRAPPER = "RADIO_BUTTON_WRAPPER"
 const RadioWrapper = styled.div`
   min-height: ${targetSize.normal};
   padding-top: ${spacing.small};
@@ -80,7 +95,7 @@ const RadioWrapper = styled.div`
       }
     }
   }
-  ${themify(RADIO_BUTTON_WRAPPER)};
+  ${themify(tProps.wrapper)};
 `
 
 const RadioButton = ({
@@ -131,5 +146,7 @@ RadioButton.defaultProps = {
   onChange: null,
   value: ""
 }
+
+RadioButton.themeProps = tProps
 
 export default RadioButton
