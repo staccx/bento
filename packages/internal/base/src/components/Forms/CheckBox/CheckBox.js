@@ -14,14 +14,7 @@ import {
   fontWeight,
   themeProps
 } from "@staccx/theme"
-
-export const CHECKBOX = "checkbox"
-export const CHECKBOX_CHECKED_ICON = "checkbox_checked_icon"
-export const CHECKBOX_LABEL = "checkbox_label"
-export const CHECKBOX_LABEL_BEFORE = "CHECKBOX_LABEL_BEFORE"
-export const CHECKBOX_LABEL_CHECKED = "CHECKBOX_LABEL_CHECKED"
-export const CHECKBOX_INPUT = "checkbox_input"
-export const COMPONENT_CHECKBOX_ICON = "COMPONENT_CHECKBOX_ICON"
+import themePropTypes from "../../constants/themePropTypes"
 
 const CheckBox = ({
   children,
@@ -58,13 +51,51 @@ const CheckBox = ({
   )
 }
 
+CheckBox.themeProps = {
+  wrapper: {
+    name: "checkbox",
+    description: "Checkbox style",
+    type: themePropTypes.style
+  },
+  icon: {
+    name: "checkbox_checked_icon",
+    description: "Icon style",
+    type: themePropTypes.style
+  },
+  iconComponent: {
+    name: "COMPONENT_CHECKBOX_ICON",
+    description: "Icon component",
+    type: themePropTypes.component
+  },
+  label: {
+    name: "checkbox_label",
+    description: "Label style",
+    type: themePropTypes.style
+  },
+  labelBefore: {
+    name: "CHECKBOX_LABEL_BEFORE",
+    description: "Label before style",
+    type: themePropTypes.style
+  },
+  labelChecked: {
+    name: "CHECKBOX_LABEL_CHECKED",
+    description: "Label checked style",
+    type: themePropTypes.style
+  },
+  input: {
+    name: "checkbox_input",
+    description: "Inputstyle",
+    type: themePropTypes.style
+  }
+}
+
 const CheckWrapper = styled.div`
-  ${themify(CHECKBOX)};
+  ${themify(CheckBox.themeProps.wrapper)};
 `
 
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
-    tagName={COMPONENT_CHECKBOX_ICON}
+    tagName={CheckBox.themeProps.iconComponent}
     fallback={Check}
     {...props}
   />
@@ -80,7 +111,7 @@ export const Icon = styled(IconComponent)`
   transform: scale(0);
   transition: all 0.2s ease-in-out;
   color: ${color.primary};
-  ${themify(CHECKBOX_CHECKED_ICON)};
+  ${themify(CheckBox.themeProps.icon)};
 `
 
 const InputCheck = styled.input`
@@ -92,7 +123,7 @@ const InputCheck = styled.input`
     > svg {
       transform: scale(1);
     }
-    ${themify(CHECKBOX_LABEL_CHECKED)};
+    ${themify(CheckBox.themeProps.labelChecked)};
   }
 
   &:focus ~ label {
@@ -101,7 +132,7 @@ const InputCheck = styled.input`
     }
   }
 
-  ${themify(CHECKBOX_INPUT)};
+  ${themify(CheckBox.themeProps.input)};
 `
 
 const Label = styled.label`
@@ -130,7 +161,7 @@ const Label = styled.label`
     position: absolute;
     top: ${spacing.small};
     width: ${spacing.medium};
-    ${themify(CHECKBOX_LABEL_BEFORE)};
+    ${themify(CheckBox.themeProps.labelBefore)};
   }
 
   &:hover,
@@ -139,7 +170,7 @@ const Label = styled.label`
       border-color: ${color.primary};
     }
   }
-  ${themify(CHECKBOX_LABEL)};
+  ${themify(CheckBox.themeProps.label)};
 `
 
 CheckBox.propTypes = {
