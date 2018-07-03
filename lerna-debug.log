@@ -16,20 +16,22 @@
 9 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/base' }
 10 error execute callback with error
 11 error Error: Command failed: yarn run precommit
-11 error (node:75456) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+11 error (node:80629) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
 11 error ✖ "eslint" found some errors. Please fix them and try committing again.
 11 error
 11 error /Users/espen/Projects/bento/packages/internal/base/src/index.js
-11 error 138:3  error  'InputStyles' is not defined  no-undef
-11 error 144:3  error  'LabelStyles' is not defined  no-undef
+11 error 114:3  error  'CheckBoxStyles' is not defined       no-undef
+11 error 148:3  error  'LegendStyles' is not defined         no-undef
+11 error 170:3  error  'RadioPillStyles' is not defined      no-undef
+11 error 172:3  error  'RadioPillItemStyles' is not defined  no-undef
 11 error
-11 error ✖ 2 problems (2 errors, 0 warnings)
+11 error ✖ 4 problems (4 errors, 0 warnings)
 11 error
 11 error
-11 error   (node:75461) [ESLINT_LEGACY_OBJECT_REST_SPREAD] DeprecationWarning: The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead. (found in "eslint-config-standard-react")
-11 error (node:75461) [ESLINT_LEGACY_OBJECT_REST_SPREAD] DeprecationWarning: The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead. (found in "../../../node_modules/eslint-config-standard-jsx/index.js")
-11 error (node:75461) [ESLINT_LEGACY_OBJECT_REST_SPREAD] DeprecationWarning: The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead. (found in "standard-jsx")
-11 error (node:75461) [ESLINT_LEGACY_OBJECT_REST_SPREAD] DeprecationWarning: The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead. (found in "standard")
+11 error   (node:80633) [ESLINT_LEGACY_OBJECT_REST_SPREAD] DeprecationWarning: The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead. (found in "eslint-config-standard-react")
+11 error (node:80633) [ESLINT_LEGACY_OBJECT_REST_SPREAD] DeprecationWarning: The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead. (found in "../../../node_modules/eslint-config-standard-jsx/index.js")
+11 error (node:80633) [ESLINT_LEGACY_OBJECT_REST_SPREAD] DeprecationWarning: The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead. (found in "standard-jsx")
+11 error (node:80633) [ESLINT_LEGACY_OBJECT_REST_SPREAD] DeprecationWarning: The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead. (found in "standard")
 11 error error Command failed with exit code 1.
 11 error
 11 error yarn run v1.6.0

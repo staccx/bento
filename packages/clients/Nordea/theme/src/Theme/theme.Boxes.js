@@ -1,5 +1,11 @@
 import { css } from "styled-components"
-import { registerStyle, color, spacing, targetSize, VARIANT_DEFAULT  } from "@staccx/theme"
+import {
+  registerStyle,
+  color,
+  spacing,
+  targetSize,
+  VARIANT_DEFAULT
+} from "@staccx/theme"
 import { BoxStyles } from "@staccx/base"
 
 export const BoxStyling = registerStyle(

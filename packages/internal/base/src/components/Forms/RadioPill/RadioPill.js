@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { themify } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const RadioPill = ({
   children,
@@ -25,19 +26,26 @@ const RadioPill = ({
   </RadioPillContainer>
 )
 
+RadioPill.themeProps = {
+  container: {
+    name: "RADIO_PILL",
+    description: "Container style",
+    type: themePropTypes.style
+  }
+}
+
 const Full = css`
   display: flex;
   width: 100%;
 `
 
-export const RADIO_PILL = "RADIO_PILL"
 const RadioPillContainer = styled.div`
   border: 0;
   margin: 0;
   padding: 0;
   outline: 0;
   ${p => p.full && Full};
-  ${themify(RADIO_PILL)};
+  ${themify(RadioPill.themeProps.container)};
 `
 
 RadioPill.defaultProps = {

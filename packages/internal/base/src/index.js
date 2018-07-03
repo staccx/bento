@@ -7,11 +7,11 @@ import PostalCodeInput from "./components/Forms/Input/PostalCodeInput/PostalCode
 import NationalIdInput from "./components/Forms/Input/NationalIdInput/NationalIdInput"
 import CompanyInput from "./components/Forms/Input/CompanyInput/CompanyInput"
 import Label from "./components/Forms/Label/Label"
-import Legend, * as LegendStyles from "./components/Forms/Legend/Legend"
-import CheckBox, * as CheckBoxStyles from "./components/Forms/CheckBox/CheckBox"
+import Legend from "./components/Forms/Legend/Legend"
+import CheckBox from "./components/Forms/CheckBox/CheckBox"
 import RadioButton from "./components/Forms/RadioButton/RadioButton"
-import RadioPill, * as RadioPillStyles from "./components/Forms/RadioPill/RadioPill"
-import RadioPillItem, * as RadioPillItemStyles from "./components/Forms/RadioPill/RadioPill.Item"
+import RadioPill from "./components/Forms/RadioPill/RadioPill"
+import RadioPillItem from "./components/Forms/RadioPill/RadioPill.Item"
 import CheckGroup from "./components/Forms/CheckGroup/CheckGroup"
 import Slider, * as SliderStyles from "./components/Forms/Slider/Slider/Slider"
 import SliderKeyboardInput, * as SliderKeyboardInputStyles from "./components/Forms/Slider/SliderKeyboardInput/SliderKeyboardInput"
@@ -111,7 +111,6 @@ export {
   Caret,
   CaretRight,
   CheckBox,
-  CheckBoxStyles,
   CheckGroup,
   Close,
   CodeRenderer,
@@ -145,7 +144,6 @@ export {
   LayoutItemStyles,
   LayoutStyles,
   Legend,
-  LegendStyles,
   LinkListItem,
   LinkListItemStyles,
   List,
@@ -167,9 +165,7 @@ export {
   ProgressBar,
   RadioButton,
   RadioPill,
-  RadioPillStyles,
   RadioPillItem,
-  RadioPillItemStyles,
   PostalCodeInput,
   Select,
   SelectStyles,

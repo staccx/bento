@@ -12,6 +12,7 @@ import {
   themify,
   themeProps
 } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const RadioPillItem = ({
   children,
@@ -48,7 +49,28 @@ const RadioPillItem = ({
   </RadioWrapper>
 )
 
-export const RADIO_PILL_ITEM_LABEL = "RADIO_PILL_ITEM_LABEL"
+RadioPillItem.themeProps = {
+  label: {
+    name: "RADIO_PILL_ITEM_LABEL",
+    description: "Label style",
+    type: themePropTypes.style
+  },
+  checked: {
+    name: "RADIO_PILL_ITEM_CHECKED",
+    description: "Checked style",
+    type: themePropTypes.style
+  },
+  wrapper: {
+    name: "RADIO_PILL_ITEM_WRAPPER",
+    description: "Checked style",
+    type: themePropTypes.style
+  },
+  hover: {
+    name: "RADIO_PILL_ITEM_HOVER",
+    description: "Checked style",
+    type: themePropTypes.style
+  }
+}
 const Label = styled.label`
   position: relative;
   padding: ${spacing.tiny()} ${spacing.small()};
@@ -60,7 +82,7 @@ const Label = styled.label`
   font-weight: ${fontWeight.normal};
   margin-right: -1px;
   background-color: ${color.white};
-  ${themify(RADIO_PILL_ITEM_LABEL)};
+  ${themify(RadioPillItem.themeProps.label)};
   ${p =>
     p.full &&
     css`
@@ -71,7 +93,6 @@ const Label = styled.label`
     `};
 `
 
-export const RADIO_PILL_ITEM_CHECKED = "RADIO_PILL_ITEM_CHECKED"
 const Radio = styled.input`
   ${hideVisually};
   &:checked {
@@ -88,12 +109,10 @@ const Radio = styled.input`
     &:nth-child(2) ~ ${Label} {
       border-color: ${color.primary};
     }
-    ${themify(RADIO_PILL_ITEM_CHECKED)};
+    ${themify(RadioPillItem.themeProps.checked)};
   }
 `
 
-export const RADIO_PILL_ITEM_WRAPPER = "RADIO_PILL_ITEM_WRAPPER"
-export const RADIO_PILL_ITEM_HOVER = "RADIO_PILL_ITEM_HOVER"
 const RadioWrapper = styled.div`
   display: ${p => (p.full ? "flex" : "inline-block")};
   min-height: ${targetSize.normal};
@@ -122,10 +141,10 @@ const RadioWrapper = styled.div`
     ${Label} {
       z-index: 1;
       border-color: ${color.primary};
-      ${themify(RADIO_PILL_ITEM_HOVER)};
+      ${themify(RadioPillItem.themeProps.hover)};
     }
   }
-  ${themify(RADIO_PILL_ITEM_WRAPPER)};
+  ${themify(RadioPillItem.themeProps.wrapper)};
 `
 
 RadioPillItem.defaultProps = {
