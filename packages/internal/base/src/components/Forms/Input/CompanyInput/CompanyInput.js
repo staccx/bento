@@ -6,6 +6,7 @@ import Input, { InputDefaultProps, InputPropTypes } from "../Input"
 import Downshift from "downshift"
 import Flag from "../../../Layout/Flag/Flag"
 import Label from "../../Label/Label"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const defaultMapItem = item => {
   if (!item) {
@@ -187,27 +188,75 @@ class CompanyInput extends React.PureComponent {
   }
 }
 
-export const COMPANY_INPUT_LOAD_FROM = "COMPANY_INPUT_LOAD_FROM"
-export const COMPANY_INPUT_LOAD_TO = "COMPANY_INPUT_LOAD_TO"
+CompanyInput.themeProps = {
+  animateLoadFrom: {
+    name: "COMPANY_INPUT_LOAD_FROM",
+    description: "animation load from",
+    type: themePropTypes.style
+  },
+  animateLoadTo: {
+    name: "COMPANY_INPUT_LOAD_FROM",
+    description: "animation load from",
+    type: themePropTypes.style
+  },
+  selectLabel: {
+    name: "COMPANY_INPUT_LABEL",
+    description: "Input label",
+    type: themePropTypes.style
+  },
+  selectLoad: {
+    name: "COMPANY_INPUT_SELECT_LOAD",
+    description: "Select load",
+    type: themePropTypes.style
+  },
+  selectClose: {
+    name: "COMPANY_INPUT_SELECT_CLOSE",
+    description: "Select close",
+    type: themePropTypes.style
+  },
+  selectWrapper: {
+    name: "COMPANY_INPUT_SELECT_WRAPPER",
+    description: "Select wrapper",
+    type: themePropTypes.style
+  },
+  selectList: {
+    name: "COMPANY_INPUT_SELECT_LIST",
+    description: "Select list",
+    type: themePropTypes.style
+  },
+  selectItem: {
+    name: "COMPANY_INPUT_SELECT_ITEM",
+    description: "Select item",
+    type: themePropTypes.style
+  },
+  selectFlag: {
+    name: "COMPANY_INPUT_FLAG",
+    description: "Input flag",
+    type: themePropTypes.style
+  },
+  orgNo: {
+    name: "COMPANY_INPUT_ORG_NO",
+    description: "Input flag",
+    type: themePropTypes.style
+  }
+}
 
-const Load = props => keyframes`
+const Load = () => keyframes`
   from {
-    background-color: ${color.bg()(props)};
-    ${themify(COMPANY_INPUT_LOAD_FROM)}
+    background-color: ${color.bg};
+    ${themify(CompanyInput.themeProps.animateLoadFrom)}
   }
 
   to {
-    background-color: ${color.primary()(props)};
-    ${themify(COMPANY_INPUT_LOAD_TO)}
+    background-color: ${color.primary};
+    ${themify(CompanyInput.themeProps.animateLoadTo)}
   }
 `
 
-export const COMPANY_INPUT_LABEL = "COMPANY_INPUT_LABEL"
 const SelectLabel = styled(Label)`
-  ${themify(COMPANY_INPUT_LABEL)};
+  ${themify(CompanyInput.themeProps.selectLabel)};
 `
 
-export const COMPANY_INPUT_SELECT_LOAD = "COMPANY_INPUT_SELECT_LOAD"
 const SelectLoad = styled.div`
   background-color: ${color.white};
   animation: 0.8s ${Load} ease-in-out infinite alternate;
@@ -219,10 +268,9 @@ const SelectLoad = styled.div`
   left: 0;
   z-index: 10;
   box-shadow: 0px ${spacing.small} ${spacing.medium} rgba(0, 0, 0, 0.06);
-  ${themify(COMPANY_INPUT_SELECT_LOAD)};
+  ${themify(CompanyInput.themeProps.selectLoad)};
 `
 
-export const COMPANY_INPUT_SELECT_CLOSE = "COMPANY_INPUT_SELECT_CLOSE"
 const Close = styled.button`
   border-width: 0;
   background-color: transparent;
@@ -237,28 +285,24 @@ const Close = styled.button`
   svg {
     width: ${spacing.medium};
   }
-  ${themify(COMPANY_INPUT_SELECT_CLOSE)};
+  ${themify(CompanyInput.themeProps.selectClose)};
 `
-export const COMPANY_INPUT_FLAG = "COMPANY_INPUT_FLAG"
 const ModifiedFlag = styled(Flag)`
   padding: ${spacing.tiny} ${spacing.tiny} ${spacing.tiny} ${spacing.medium};
   position: relative;
-  ${themify(COMPANY_INPUT_FLAG)};
+  ${themify(CompanyInput.themeProps.selectFlag)};
 `
 
-export const COMPANY_INPUT_ORG_NO = "COMPANY_INPUT_ORG_NO"
 const OrgNo = styled.div`
   font-size: ${font.tiny};
   color: ${color.wcag};
-  ${themify(COMPANY_INPUT_ORG_NO)};
+  ${themify(CompanyInput.themeProps.orgNo)};
 `
 
-export const COMPANY_INPUT_SELECT_WRAPPER = "COMPANY_INPUT_SELECT_WRAPPER"
 const SelectWrapper = styled.div`
   position: relative;
-  ${themify(COMPANY_INPUT_SELECT_WRAPPER)};
+  ${themify(CompanyInput.themeProps.selectWrapper)};
 `
-export const COMPANY_INPUT_SELECT_LIST = "COMPANY_INPUT_SELECT_LIST"
 const SelectList = styled.ul`
   position: absolute;
   cursor: pointer;
@@ -268,10 +312,9 @@ const SelectList = styled.ul`
   width: 100%;
   background: ${color.white};
   box-shadow: 0px ${spacing.small()} ${spacing.medium()} rgba(0, 0, 0, 0.06);
-  ${themify(COMPANY_INPUT_SELECT_LIST)};
+  ${themify(CompanyInput.themeProps.selectList)};
 `
 
-export const COMPANY_INPUT_SELECT_ITEM = "COMPANY_INPUT_SELECT_ITEM"
 const SelectItem = styled.li`
   list-style: none;
   padding: ${spacing.small()} ${spacing.medium()};
@@ -286,7 +329,7 @@ const SelectItem = styled.li`
   &:first-child {
     border-top: 1px solid ${color.line};
   }
-  ${themify(COMPANY_INPUT_SELECT_ITEM)};
+  ${themify(CompanyInput.themeProps.selectItem)};
 `
 
 CompanyInput.propTypes = {
