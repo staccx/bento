@@ -11,6 +11,7 @@ import {
   themeProps,
   themify
 } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const SelectOption = ({ children, isSelected, variant, ...restProps }) => {
   return (
@@ -25,7 +26,14 @@ const SelectOption = ({ children, isSelected, variant, ...restProps }) => {
   )
 }
 
-export const SELECT_DEFAULT_OPTION = "SELECT_DEFAULT_OPTION"
+SelectOption.themeProps = {
+  optionContainer: {
+    name: "SELECT_DEFAULT_OPTION",
+    description: "Select default option style",
+    type: themePropTypes.style
+  }
+}
+
 const OptionContainer = styled.button`
   display: block;
   width: 100%;
@@ -60,7 +68,7 @@ const OptionContainer = styled.button`
     outline: none;
     background-color: ${color.subtleHover};
   }
-  ${themify(SELECT_DEFAULT_OPTION)};
+  ${themify(SelectOption.themeProps.optionContainer)};
 `
 
 SelectOption.defaultProps = {

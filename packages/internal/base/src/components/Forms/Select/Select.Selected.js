@@ -10,8 +10,15 @@ import {
   color,
   themify
 } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
-export const SELECT_SELECTED = "SELECT_SELECTED"
+const themeProps = {
+  selectedContainer: {
+    name: "SELECT_SELECTED",
+    description: "Selected style",
+    type: themePropTypes.style
+  }
+}
 export const SelectedContainer = styled.button`
   display: block;
   width: 100%;
@@ -34,7 +41,7 @@ export const SelectedContainer = styled.button`
     background-color: ${color.subtleHover};
   }
 
-  ${themify(SELECT_SELECTED)};
+  ${themify(themeProps.selectedContainer)};
 `
 
 const SelectSelected = ({
@@ -54,5 +61,7 @@ SelectSelected.propTypes = {
   selectedItem: PropTypes.object,
   buttonProps: PropTypes.object
 }
+
+SelectSelected.themeProps = themeProps
 
 export default SelectSelected

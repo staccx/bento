@@ -17,11 +17,49 @@ import {
   themify
 } from "@staccx/theme"
 import SelectOption from "./Select.Option"
+import themePropTypes from "../../constants/themePropTypes"
 
-export const COMPONENT_SELECT_CARET_ICON = "COMPONENT_SELECT_CARET_ICON"
+const themeProps = {
+  iconComponent: {
+    name: "COMPONENT_SELECT_CARET_ICON",
+    description: "Select icon",
+    type: themePropTypes.component
+  },
+  closeComponent: {
+    name: "COMPONENT_SELECT_CLOSE_ICON",
+    description: "Close icon",
+    type: themePropTypes.component
+  },
+  iconClose: {
+    name: "COMPONENT_SELECT_CLOSE_ICON_STYLE",
+    description: "Icon close style",
+    type: themePropTypes.style
+  },
+  defaultOptionWrapper: {
+    name: "SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER",
+    description: "Default option wrapper style",
+    type: themePropTypes.style
+  },
+  selectWrapper: {
+    name: "SELECT_WRAPPER",
+    description: "Icon close style",
+    type: themePropTypes.style
+  },
+  selectedWrapper: {
+    name: "SELECTED_WRAPPER",
+    description: "Icon close style",
+    type: themePropTypes.style
+  },
+  iconButton: {
+    name: "SELECT_ICON_BUTTON",
+    description: "Icon close style",
+    type: themePropTypes.style
+  }
+}
+
 const CaretComp = ({ ...props }) => (
   <ThemeComponent
-    tagName={COMPONENT_SELECT_CARET_ICON}
+    tagName={themeProps.iconComponent}
     fallback={Caret}
     {...props}
   />
@@ -32,20 +70,17 @@ const CaretIcon = styled(CaretComp)`
   transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
 `
 
-export const COMPONENT_SELECT_CLOSE_ICON = "COMPONENT_SELECT_CLOSE_ICON"
 const CloseComp = ({ ...props }) => (
   <ThemeComponent
-    tagName={COMPONENT_SELECT_CLOSE_ICON}
+    tagName={themeProps.closeComponent}
     fallback={Close}
     {...props}
   />
 )
-export const COMPONENT_SELECT_CLOSE_ICON_STYLE =
-  "COMPONENT_SELECT_CLOSE_ICON_STYLE"
 const CloseIcon = styled(CloseComp)`
   transform: scale(0);
   animation: ${ScaleIn} 0.3s ease-in forwards 1;
-  ${themify(COMPONENT_SELECT_CLOSE_ICON_STYLE)};
+  ${themify(themeProps.iconClose)};
 `
 
 class Select extends React.PureComponent {
@@ -250,8 +285,6 @@ class Select extends React.PureComponent {
   }
 }
 
-export const SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER =
-  "SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER"
 export const DefaultOptionElementWrapper = styled.ul`
   position: absolute;
   width: 100%;
@@ -266,16 +299,14 @@ export const DefaultOptionElementWrapper = styled.ul`
   > *:not(:last-child) {
     border-bottom: 1px solid ${color.line};
   }
-  ${themify(SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER)};
+  ${themify(themeProps.defaultOptionWrapper)};
 `
 
-export const SELECT_WRAPPER = "SELECT_WRAPPER"
 export const SelectWrapper = styled.div`
   position: relative;
-  ${themify(SELECT_WRAPPER)};
+  ${themify(themeProps.selectWrapper)};
 `
 
-export const SELECTED_WRAPPER = "SELECTED_WRAPPER"
 export const SelectedWrapper = styled.div`
   position: relative;
   padding-right: ${spacing.medium};
@@ -285,9 +316,8 @@ export const SelectedWrapper = styled.div`
       border: 1px solid ${color.line};
       border-radius: ${borderRadius};
     `};
-  ${themify(SELECTED_WRAPPER)};
+  ${themify(themeProps.selectedWrapper)};
 `
-export const SELECT_ICON_BUTTON = "SELECT_ICON_BUTTON"
 export const IconButton = styled.button`
   position: absolute;
   right: ${spacing.micro};
@@ -311,7 +341,7 @@ export const IconButton = styled.button`
       fill: ${color.primary};
     }
   }
-  ${themify(SELECT_ICON_BUTTON)};
+  ${themify(themeProps.iconButton)};
 `
 
 Select.propTypes = {
@@ -346,4 +376,6 @@ Select.defaultProps = {
   itemToString: item => item,
   maxItems: -1
 }
+
+Select.themeProps = themeProps
 export default Select
