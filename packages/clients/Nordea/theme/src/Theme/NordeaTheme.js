@@ -14,6 +14,14 @@ import { LogoStyle } from "./Logo"
 import { AddIcon } from "./Icons/Add"
 import { NewsIcon } from "./Icons/News"
 import { AlertIcon } from "./Icons/Alert"
+import { LoanIcon } from "./Icons/Loan"
+import { LeasingIcon } from "./Icons/Leasing"
+import { LeasingPlusIcon } from "./Icons/LeasingPlus"
+import { PrivateRentIcon } from "./Icons/PrivateRent"
+import { PrivateRentPlusIcon } from "./Icons/PrivateRentPlus"
+import { RentIcon } from "./Icons/Rent"
+import { AccountIcon } from "./Icons/Account"
+import { CardIcon } from "./Icons/Card"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -136,4 +144,12 @@ const theme = new Theme(BaseTheme, {
   .add(AddIcon)
   .add(NewsIcon)
   .add(AlertIcon)
+  .add(LoanIcon)
+  .add(LeasingIcon)
+  .add(LeasingPlusIcon)
+  .add(PrivateRentIcon)
+  .add(PrivateRentPlusIcon)
+  .add(RentIcon)
+  .add(AccountIcon)
+  .add(CardIcon)
 export default theme

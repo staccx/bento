@@ -28,6 +28,8 @@ export const BoxStyling = registerStyle(
     `,
     subtle: css`
       background-color: ${color.white};
+      padding-left: 0;
+      padding-right: 0;
     `
   },
   Box.themeProps.box
