@@ -4,6 +4,7 @@ import styled from "styled-components"
 import hideVisually from "../../../Styles/hideVisually"
 import Digit from "./Digit"
 import { themify } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 class Odometer extends React.PureComponent {
   constructor(...props) {
@@ -82,30 +83,49 @@ class Odometer extends React.PureComponent {
   }
 }
 
-export const ODOMETER_ANIMATING = "odometer_animating"
+Odometer.themeProps = {
+  animating: {
+    name: "odometer_animating",
+    description: "Style for the animating odometer",
+    type: themePropTypes.style
+  },
+  static: {
+    name: "odometer_static",
+    description: "Style for the static odometer",
+    type: themePropTypes.style
+  },
+  container: {
+    name: "odometer_container",
+    description: "Style for the container",
+    type: themePropTypes.style
+  },
+  wrapper: {
+    name: "odometer_wrapper",
+    description: "Style for the wrapper",
+    type: themePropTypes.style
+  }
+}
+
 const OdometerAnimating = styled.div`
   ${p => (!p.isAnimating ? hideVisually : "display: flex;")};
-  ${themify(ODOMETER_ANIMATING)};
+  ${themify(Odometer.themeProps.animating)};
 `
 
-export const ODOMETER_STATIC = "odometer_static"
 const OdometerStatic = styled.div`
   ${p => (p.isAnimating ? hideVisually : "display: flex;")};
-  ${themify(ODOMETER_STATIC)};
+  ${themify(Odometer.themeProps.static)};
 `
 
-export const ODOMETER_CONTAINER = "odometer_container"
 const OdometerContainer = styled.div`
   position: relative;
-  ${themify(ODOMETER_CONTAINER)};
+  ${themify(Odometer.themeProps.container)};
 `
 
-export const ODOMETER_WRAPPER = "odometer_wrapper"
 const OdometerWrapper = styled.div`
   font-size: ${p => p.size}px;
   line-height: 1;
   display: inline-block;
-  ${themify(ODOMETER_WRAPPER)};
+  ${themify(Odometer.themeProps.wrapper)};
 `
 
 // TODO: Add support for strings?

@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { themify } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Digit = ({ isAnimating, digit, speed, size, single, variant }) => (
   <DigitWrapper isAnimating size={size} isEmpty={!digit} variant={variant}>
@@ -17,15 +18,26 @@ const Digit = ({ isAnimating, digit, speed, size, single, variant }) => (
   </DigitWrapper>
 )
 
-export const DIGIT = "digit"
+Digit.themeProps = {
+  wrapper: {
+    name: "digit",
+    description: "Wrapper style",
+    type: themePropTypes.style
+  },
+  container: {
+    name: "digit_container",
+    description: "Container style",
+    type: themePropTypes.style
+  }
+}
+
 const DigitWrapper = styled.div`
   height: ${p => p.size}px;
   width: ${p => (p.isEmpty ? p.size / 2 : p.size / 1.5)}px;
   overflow: hidden;
-  ${themify(DIGIT)};
+  ${themify(Digit.themeProps.wrapper.name)};
 `
 
-export const DIGIT_CONTAINER = "digit_container"
 const DigitContainer = styled.div`
   font-size: ${p => p.size}px;
   ${p =>
@@ -35,7 +47,7 @@ const DigitContainer = styled.div`
       transform: translateY(-${p.digit}em);
       transition: transform ${p.speed}ms cubic-bezier(0, 0, 0.2, 1);
       `};
-  ${themify(DIGIT_CONTAINER)};
+  ${themify(Digit.themeProps.container.name)};
 `
 
 Digit.propTypes = {
