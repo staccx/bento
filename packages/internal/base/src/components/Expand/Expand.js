@@ -10,6 +10,7 @@ import {
   themeProps
 } from "@staccx/theme"
 import Caret from "../Icons/Caret"
+import themePropTypes from "../constants/themePropTypes"
 
 class Expand extends Component {
   constructor(props) {
@@ -72,13 +73,13 @@ class Expand extends Component {
           }
           return (
             isExpanded && (
-              <ExpandItems
+              <ExpandItem
                 id={title}
                 aria-labelledby={title + "2"}
                 variant={variant}
               >
                 {child}
-              </ExpandItems>
+              </ExpandItem>
             )
           )
         })}
@@ -87,12 +88,42 @@ class Expand extends Component {
   }
 }
 
-export const COMPONENT_EXPAND_ICON = "COMPONENT_EXPAND_ICON"
+Expand.themeProps = {
+  iconComponent: {
+    name: "COMPONENT_EXPAND_ICON",
+    description: "Icon shown. Defaults to Caret",
+    type: themePropTypes.component
+  },
+  icon: {
+    name: "EXPAND_ICON",
+    description: "Icon style",
+    type: themePropTypes.style
+  },
+  wrapper: {
+    name: "EXPAND_WRAPPER",
+    description: "Wrapper style",
+    type: themePropTypes.style
+  },
+  button: {
+    name: "EXPAND_BTN",
+    description: "Button style",
+    type: themePropTypes.style
+  },
+  item: {
+    name: "EXPAND_ITEM",
+    description: "Item style",
+    type: themePropTypes.style
+  }
+}
+
 const IconComponent = ({ ...props }) => (
-  <ThemeComponent tagName={COMPONENT_EXPAND_ICON} fallback={Caret} {...props} />
+  <ThemeComponent
+    tagName={Expand.themeProps.iconComponent.name}
+    fallback={Caret}
+    {...props}
+  />
 )
 
-export const EXPAND_ICON = "EXPAND_ICON"
 const ExpandIcon = styled(IconComponent)`
   position: absolute;
   right: ${spacing.small()};
@@ -103,15 +134,13 @@ const ExpandIcon = styled(IconComponent)`
     p.isExpanded
       ? "translateY(-50%) rotate(180deg)"
       : "translateY(-50%) rotate(0)"};
-  ${themify(EXPAND_ICON)};
+  ${themify(Expand.themeProps.icon.name)};
 `
 
-export const EXPAND_WRAPPER = "EXPAND_WRAPPER"
 export const ExpandWrapper = styled.div`
-  ${themify(EXPAND_WRAPPER)};
+  ${themify(Expand.themeProps.wrapper.name)};
 `
 
-export const EXPAND_BTN = "EXPAND_BTN"
 export const ExpandBtn = styled.button`
   position: relative;
   background-color: transparent;
@@ -135,14 +164,13 @@ export const ExpandBtn = styled.button`
     }
   }
 
-  ${themify(EXPAND_BTN)};
+  ${themify(Expand.themeProps.button.name)};
 `
 
-export const EXPAND_ITEMS = "EXPAND_WRAPPER"
-export const ExpandItems = styled.div`
+export const ExpandItem = styled.div`
   opacity: 0;
   animation: 0.4s ${BounceIn} 0.05s ease-out forwards 1;
-  ${themify(EXPAND_ITEMS)};
+  ${themify(Expand.themeProps.item.name)};
 `
 
 Expand.defaultProps = {
