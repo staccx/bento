@@ -42,12 +42,13 @@ class OpenApiProvider extends React.Component {
           if (!data) {
             return <Loading />
           }
-          const { openapi } = data
+          const openapi = data
           if (!openapi) {
             // TODO: Give good error message, or possibly "Try again"
             return <div>Error</div>
           }
 
+          console.log("finding tags", openapi)
           const tags = findTags(openapi)
           const sorted = sortByTags(openapi, tags)
 
