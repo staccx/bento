@@ -4,14 +4,11 @@ import { Fetch, Loading } from "@staccx/base"
 import { Provider } from "./context/openApi"
 import findTags from "../utils/findTags"
 import sortByTags from "../utils/sortByTags"
-import convertSwaggerToOpenApi from "../utils/convertSwaggerToOpenApi"
 import axios from "axios/index"
 import { fromOpenApi } from "@staccx/code-generator"
 import localforage from "localforage"
 
-const mapData = item => {
-  return convertSwaggerToOpenApi(item.data, {})
-}
+const mapData = item => item.data
 
 const preferredLangKey = "x-dev-portal-lang"
 

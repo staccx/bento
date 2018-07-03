@@ -14,7 +14,7 @@
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "start": "react-scripts start",
-    "build:app": "react-app-rewired build",
+    "build:app": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "test:watch": "jest --env=jsdom --watch",

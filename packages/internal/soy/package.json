@@ -68,7 +68,6 @@
     "streetview": "^0.0.3",
     "string_decoder": "^1.1.1",
     "styled-components": "^3.3.3",
-    "swagger2openapi": "^2.11.16",
     "text-mask-addons": "^3.7.1",
     "text-mask-core": "^5.0.1",
     "tinycolor2": "^1.4.1",

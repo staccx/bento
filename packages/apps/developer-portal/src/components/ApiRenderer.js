@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import axios from "axios"
-import convertSwaggerToOpenApi from "../utils/convertSwaggerToOpenApi"
 import Info from "./Info"
 import Servers from "./Servers"
 import SchemaProvider from "./OpenApiProvider"
@@ -18,14 +17,8 @@ class ApiRenderer extends React.Component {
     axios
       .get(this.props.url)
       .then(result => result.data)
-      .then(docs => {
-        if (docs.swagger && docs.swagger === "2.0") {
-          console.log("swagger docs v2")
-          convertSwaggerToOpenApi(docs, {}).then(({ openapi }) => {
-            console.log(openapi)
-            this.setState({ openapi })
-          })
-        }
+      .then(openapi => {
+        this.setState({ openapi })
       })
   }
 
