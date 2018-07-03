@@ -74,19 +74,12 @@ const fontWeight = {
   normal: "400"
 }
 
-const webfonts = {
-  google: {
-    families: ["Montserrat:700", "Open Sans:400,600"]
-  }
-}
-
 const fontFamily = {
-  heading: "Montserrat",
-  body: "Open Sans"
+  heading: "NordeaSansSmall",
+  body: "NordeaSansSmall"
 }
 
 const theme = new Theme(BaseTheme, {
-  webfonts,
   font,
   fontWeight,
   color,
