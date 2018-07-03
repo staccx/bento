@@ -3,6 +3,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import { formatCurrency } from "@staccx/formatting"
 import { spacing, color, font, themify } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const KeyFigures = ({ figures }) => (
   <List>
@@ -15,7 +16,29 @@ const KeyFigures = ({ figures }) => (
   </List>
 )
 
-export const KEYFIGURES = "KEYFIGURES"
+KeyFigures.themeProps = {
+  list: {
+    name: "KEYFIGURES",
+    description: "list style",
+    type: themePropTypes.style
+  },
+  item: {
+    name: "KEYFIGURES_ITEM",
+    description: "item style",
+    type: themePropTypes.style
+  },
+  heading: {
+    name: "KEYFIGURES_HEADING",
+    description: "heading style",
+    type: themePropTypes.style
+  },
+  value: {
+    name: "KEYFIGURES_VALUE",
+    description: "value style",
+    type: themePropTypes.style
+  }
+}
+
 const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -23,10 +46,9 @@ const List = styled.ul`
   margin-bottom: 0;
   color: currentColor;
   padding: 0;
-  ${themify(KEYFIGURES)};
+  ${themify(KeyFigures.themeProps.list.name)};
 `
 
-export const KEYFIGURES_ITEM = "KEYFIGURES_ITEM"
 const ListItem = styled.li`
   position: relative;
   display: flex;
@@ -43,20 +65,18 @@ const ListItem = styled.li`
     width: 1px;
     background-color: ${color.line};
   }
-  ${themify(KEYFIGURES_ITEM)};
+  ${themify(KeyFigures.themeProps.item.name)};
 `
 
-export const KEYFIGURES_HEADING = "KEYFIGURES_HEADING"
 const Heading = styled.h3`
   padding-bottom: ${spacing.tiny};
-  ${themify(KEYFIGURES_HEADING)};
+  ${themify(KeyFigures.themeProps.heading.name)};
 `
 
-export const KEYFIGURES_VALUE = "KEYFIGURES_VALUE"
 const Value = styled.span`
   font-size: ${font.h2};
   color: ${color.blue};
-  ${themify(KEYFIGURES_VALUE)};
+  ${themify(KeyFigures.themeProps.value.name)};
 `
 
 KeyFigures.propTypes = {
