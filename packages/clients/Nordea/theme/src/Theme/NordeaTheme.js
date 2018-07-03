@@ -63,7 +63,26 @@ const color = {
   b3: "#0000FF",
   b2: "#3399FF",
   b1: "#99CCFF",
-  bg1: "#E5F2FF"
+  bg1: "#E5F2FF",
+  p3: "#F0C1AE",
+  p2: "#FBD9CA",
+  p1: "#FDECE4",
+  a1: "#FC6161",
+  a2: "#FFE184",
+  a3: "#40BFA0",
+  g4: "#474748",
+  g3: "#8B8A8D",
+  g2: "#C9C7C7",
+  g1: "#E6E4E3",
+  concrete: "#F4F2F1",
+  table: "#F5F5F5"
+}
+
+const DealerpadSpecificColor = {
+  header: color.b5,
+  headerText: color.white,
+  headerActive: color.b1,
+  headerIconActive: color.white
 }
 
 const font = {
@@ -87,13 +106,6 @@ const fontWeight = {
 const fontFamily = {
   heading: "NordeaSansSmall",
   body: "NordeaSansSmall"
-}
-
-const DealerpadSpecificColor = {
-  header: color.b5,
-  headerText: color.white,
-  headerActive: color.b1,
-  headerIconActive: color.white
 }
 
 const theme = new Theme(BaseTheme, {
