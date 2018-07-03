@@ -1,42 +1,42 @@
 const registerCase = [
   {
     path: "/new-case/:",
-    name: "Lån",
+    label: "Lån",
     icon: "Loan"
   },
   {
     path: "/new-case/:",
-    name: "Leasing",
+    label: "Leasing",
     icon: "Leasing"
   },
   {
     path: "/new-case/:",
-    name: "Leasing pluss",
+    label: "Leasing pluss",
     icon: "LeasingPlus"
   },
   {
     path: "/new-case/:",
-    name: "Privatleie",
+    label: "Privatleie",
     icon: "PrivateRent"
   },
   {
     path: "/new-case/:",
-    name: "Privatleie Pluss",
+    label: "Privatleie Pluss",
     icon: "PrivateRentPlus"
   },
   {
     path: "/new-case/:",
-    name: "Leie",
+    label: "Leie",
     icon: "Rent"
   },
   {
     path: "/new-case/:",
-    name: "Konto",
+    label: "Konto",
     icon: "Account"
   },
   {
     path: "/new-case/:",
-    name: "Kort",
+    label: "Kort",
     icon: "Card"
   }
 ]

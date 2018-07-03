@@ -1,7 +1,10 @@
 import React from "react"
-import { ThemeComponent } from "@staccx/theme"
+import { Link } from "react-router-dom"
+import styled from "styled-components"
 import { Heading, Box, Wrapper, List } from "@staccx/base"
+import { spacing } from "@staccx/theme"
 import registerCase from "../data/registerCase"
+import Portal from "../components/Portal"
 
 const Home = () => (
   <React.Fragment>
@@ -12,16 +15,26 @@ const Home = () => (
     </Box>
     <Box variant="subtle">
       <Wrapper>
-        <List>
+        <Grid>
           {registerCase.map(item => (
-            <a>
-              <ThemeComponent tagName={item.icon} /> <span>{item.name}</span>
-            </a>
+            <li key={item.label}>
+              <Link to={item.path}>
+                <Portal tagName={item.icon} label={item.label} />
+              </Link>
+            </li>
           ))}
-        </List>
+        </Grid>
       </Wrapper>
     </Box>
   </React.Fragment>
 )
+
+const Grid = styled(List)`
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-column-gap: ${spacing.medium};
+  grid-row-gap: ${spacing.medium};
+`
 
 export default Home
