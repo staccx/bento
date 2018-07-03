@@ -15,7 +15,7 @@ import OpenApiProvider from "./components/OpenApiProvider"
 class App extends Component {
   render() {
     return (
-      <OpenApiProvider url={"/example01.json"}>
+      <OpenApiProvider url={"/swagger.json"}>
         <ThemeProxyProvider theme={DocsTheme}>
           <Router>
             <Layout grid="dashboard" variant="responsiveDashboard">
