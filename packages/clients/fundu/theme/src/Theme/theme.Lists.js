@@ -1,10 +1,6 @@
 import { css } from "styled-components"
 import { spacing, color, registerStyle } from "@staccx/theme"
-import {
-  ListStyles,
-  SplitListItemStyles,
-  ExpandListItemStyles
-} from "@staccx/base"
+import { List, SplitListItem, ExpandListItem } from "@staccx/base"
 
 export const ListStyling = registerStyle(
   {
@@ -47,7 +43,7 @@ export const ListStyling = registerStyle(
       border-top: 1px solid ${color.line};
     `
   },
-  ListStyles.LIST
+  List.themeProps.list
 )
 
 export const SplitListItemStyling = registerStyle(
@@ -72,7 +68,7 @@ export const SplitListItemStyling = registerStyle(
       `};
     `
   },
-  SplitListItemStyles.SPLIT_LIST
+  SplitListItem.themeProps.listItem
 )
 
 export const ExpandListItemStyling = registerStyle(
@@ -85,5 +81,5 @@ export const ExpandListItemStyling = registerStyle(
       }
     `
   },
-  ExpandListItemStyles.EXPAND_LIST_ITEM
+  ExpandListItem.themeProps.listItem
 )

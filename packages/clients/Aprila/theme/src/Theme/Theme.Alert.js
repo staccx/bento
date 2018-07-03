@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { registerStyle, VARIANT_DEFAULT, color } from "@staccx/theme"
-import { AlertStyles } from "@staccx/base"
+import { Alert } from "@staccx/base"
 
 export default registerStyle(
   {
@@ -8,5 +8,5 @@ export default registerStyle(
       background-color: ${color("subtleHover")};
     `
   },
-  AlertStyles.ALERT_INFO
+  Alert.themeProps.alertInfo
 )

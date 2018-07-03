@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, font, spacing, registerStyle, fontFamily } from "@staccx/theme"
-import { HeadingStyles } from "@staccx/base"
+import { Heading } from "@staccx/base"
 
 const centeredHeading = css`
   text-align: center;
@@ -48,5 +48,5 @@ export const HeadingStyling = registerStyle(
       color: ${color.wcag};
     `
   },
-  HeadingStyles.HEADING
+  Heading.themeProps.heading
 )

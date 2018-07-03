@@ -7,7 +7,7 @@ import {
   fontFamily,
   fontWeight
 } from "@staccx/theme"
-import { HeadingStyles, fontSmoothing } from "@staccx/base"
+import { Heading, fontSmoothing } from "@staccx/base"
 
 export const HeadingStyling = registerStyle(
   {
@@ -90,5 +90,5 @@ export const HeadingStyling = registerStyle(
       font-size: ${font.base};
     `
   },
-  HeadingStyles.HEADING
+  Heading.themeProps.heading
 )

@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, spacing, registerStyle } from "@staccx/theme"
-import { BoxStyles } from "@staccx/base"
+import { Box } from "@staccx/base"
 
 export const tileStyle = css`
   background: ${color.white};
@@ -201,5 +201,5 @@ export const BoxStyling = registerStyle(
       }
     `
   },
-  BoxStyles.BOX
+  Box.themeProps.box
 )

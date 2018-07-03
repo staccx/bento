@@ -7,14 +7,14 @@ import {
   VARIANT_DEFAULT
 } from "@staccx/theme"
 import {
-  InputStyles,
-  LabelStyles,
-  SelectStyles,
-  SelectOptionStyles,
-  RadioPillItemStyles,
-  SelectSimpleStyles,
-  SliderKeyboardInputStyles,
-  CompanyInputStyles
+  Input,
+  Label,
+  Select,
+  SelectOption,
+  RadioPillItem,
+  SelectSimple,
+  SliderKeyboardInput,
+  CompanyInput
 } from "@staccx/base"
 
 const floatingLabel = css`
@@ -47,7 +47,7 @@ export const InputStyling = registerStyle(
       }
     `
   },
-  InputStyles.INPUT
+  Input.themeProps.input
 )
 
 export const LabelStyling = registerStyle(
@@ -69,7 +69,7 @@ export const LabelStyling = registerStyle(
       padding-bottom: ${spacing.tiny};
     `
   },
-  LabelStyles.LABEL
+  Label.themeProps.label
 )
 
 export const SelectOptionStyling = registerStyle(
@@ -85,7 +85,7 @@ export const SelectOptionStyling = registerStyle(
       padding-left: ${spacing.medium};
     `
   },
-  SelectOptionStyles.SELECT_DEFAULT_OPTION
+  SelectOption.themeProps.optionContainer
 )
 
 export const SelectSelectedWrapperStyling = registerStyle(
@@ -115,7 +115,7 @@ export const SelectSelectedWrapperStyling = registerStyle(
       border-color: transparent;
     `
   },
-  SelectStyles.SELECTED_WRAPPER
+  Select.themeProps.wrapper
 )
 
 export const SelectIconButtonStyling = registerStyle(
@@ -124,7 +124,7 @@ export const SelectIconButtonStyling = registerStyle(
       right: 0;
     `
   },
-  SelectStyles.SELECT_ICON_BUTTON
+  Select.themeProps.iconButton
 )
 
 export const SelectOptionsWrapperStyling = registerStyle(
@@ -149,14 +149,14 @@ export const SelectOptionsWrapperStyling = registerStyle(
         rgba(0, 0, 75, 0.015) 0px 64px 64px;
     `
   },
-  SelectStyles.SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER
+  Select.themeProps.defaultOptionWrapper
 )
 
 export const SelectSimpleWrapperStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: css``
   },
-  SelectSimpleStyles.SELECT_SIMPLE_WRAPPER
+  SelectSimple.themeProps.wrapper
 )
 
 export const SelectSimpleSelectStyling = registerStyle(
@@ -180,7 +180,7 @@ export const SelectSimpleSelectStyling = registerStyle(
       }
     `
   },
-  SelectSimpleStyles.SELECT_SIMPLE_SELECT
+  SelectSimple.themeProps.select
 )
 
 export const RadioPillItemStyling = registerStyle(
@@ -204,7 +204,7 @@ export const RadioPillItemStyling = registerStyle(
       }
     `
   },
-  RadioPillItemStyles.RADIO_PILL_ITEM_WRAPPER
+  RadioPillItem.themeProps.wrapper
 )
 export const SliderKeyboardWrapperStyling = registerStyle(
   {
@@ -222,7 +222,7 @@ export const SliderKeyboardWrapperStyling = registerStyle(
       }
     `
   },
-  SliderKeyboardInputStyles.SLIDER_KEYBOARD_WRAPPER
+  SliderKeyboardInput.themeProps.wrapper
 )
 
 export const SliderInputStyling = registerStyle(
@@ -263,7 +263,7 @@ export const SliderInputStyling = registerStyle(
       }
     `
   },
-  SliderKeyboardInputStyles.SLIDER_KEYBOARD_INPUT
+  SliderKeyboardInput.themeProps.input
 )
 
 export const CompanyInputLoadFromStyling = registerStyle(
@@ -272,7 +272,7 @@ export const CompanyInputLoadFromStyling = registerStyle(
       background-color: ${color("subtleHover")};
     `
   },
-  CompanyInputStyles.COMPANY_INPUT_LOAD_FROM
+  CompanyInput.themeProps.animateLoadFrom
 )
 
 export const CompanyInputLoadToStyling = registerStyle(
@@ -281,7 +281,7 @@ export const CompanyInputLoadToStyling = registerStyle(
       background-color: ${color("blue")};
     `
   },
-  CompanyInputStyles.COMPANY_INPUT_LOAD_TO
+  CompanyInput.themeProps.animateLoadTo
 )
 
 export const CompanyInputCloseStyling = registerStyle(
@@ -290,7 +290,7 @@ export const CompanyInputCloseStyling = registerStyle(
       color: ${color("blue")};
     `
   },
-  CompanyInputStyles.COMPANY_INPUT_SELECT_CLOSE
+  CompanyInput.themeProps.selectClose
 )
 
 export const CompanyInputFlagStyling = registerStyle(
@@ -300,7 +300,7 @@ export const CompanyInputFlagStyling = registerStyle(
         ${spacing.medium};
     `
   },
-  CompanyInputStyles.COMPANY_INPUT_FLAG
+  CompanyInput.themeProps.selectFlag
 )
 
 export const CompanyInputSelectItemStyling = registerStyle(
@@ -309,5 +309,5 @@ export const CompanyInputSelectItemStyling = registerStyle(
       background-color: ${p => (p.isSelected ? color("blue") : "transparent")};
     `
   },
-  CompanyInputStyles.COMPANY_INPUT_SELECT_ITEM
+  CompanyInput.themeProps.selectItem
 )

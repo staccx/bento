@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { font, color, spacing, registerStyle } from "@staccx/theme"
-import { TableStyles, hideVisually } from "@staccx/base"
+import { Table, hideVisually } from "@staccx/base"
 
 export const TableStyling = registerStyle(
   {
@@ -28,5 +28,5 @@ export const TableStyling = registerStyle(
       }
     `
   },
-  TableStyles.TABLE
+  Table.themeProps.table
 )

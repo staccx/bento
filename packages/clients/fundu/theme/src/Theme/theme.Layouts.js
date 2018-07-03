@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, spacing, wrapper, registerStyle } from "@staccx/theme"
-import { LayoutStyles } from "@staccx/base"
+import { Layout } from "@staccx/base"
 
 export const LayoutStyling = registerStyle(
   {
@@ -41,5 +41,5 @@ export const LayoutStyling = registerStyle(
         `};
     `
   },
-  LayoutStyles.LAYOUT
+  Layout.themeProps.container
 )

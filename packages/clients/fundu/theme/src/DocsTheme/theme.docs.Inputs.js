@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, spacing, registerStyle } from "@staccx/theme"
-import { InputStyles, RadioPillItemStyles } from "@staccx/base"
+import { Input, RadioPillItem } from "@staccx/base"
 
 export const InputStyling = registerStyle(
   {
@@ -16,7 +16,7 @@ export const InputStyling = registerStyle(
       }
     `
   },
-  InputStyles.INPUT_WRAPPER
+  Input.themeProps.wrapper
 )
 
 export const RadioPillItemStyling = registerStyle(
@@ -56,7 +56,7 @@ export const RadioPillItemStyling = registerStyle(
       }
     `
   },
-  RadioPillItemStyles.RADIO_PILL_ITEM_WRAPPER
+  RadioPillItem.themeProps.wrapper
 )
 
 export const RadioPillItemHoverStyling = registerStyle(
@@ -66,5 +66,5 @@ export const RadioPillItemHoverStyling = registerStyle(
       background-color: ${color.primary}4D;
     `
   },
-  RadioPillItemStyles.RADIO_PILL_ITEM_HOVER
+  RadioPillItem.themeProps.hover
 )

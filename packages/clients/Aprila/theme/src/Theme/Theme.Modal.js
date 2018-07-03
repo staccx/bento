@@ -7,7 +7,7 @@ import {
   VARIANT_DEFAULT,
   color
 } from "@staccx/theme"
-import { ModalStyles } from "@staccx/base"
+import { Modal } from "@staccx/base"
 import { BounceIn } from "@staccx/animations"
 
 const boxAnimation = css`
@@ -27,7 +27,7 @@ export default registerStyle(
       padding-top: ${spacing.medium};
     `
   },
-  ModalStyles.MODAL_CONTENT
+  Modal.themeProps.content
 )
 
 const backdrop = css`
@@ -38,5 +38,5 @@ export const ModalBackdropStyle = registerStyle(
     [VARIANT_DEFAULT]: backdrop,
     small: backdrop
   },
-  ModalStyles.MODAL_BACKDROP
+  Modal.themeProps.backdrop
 )

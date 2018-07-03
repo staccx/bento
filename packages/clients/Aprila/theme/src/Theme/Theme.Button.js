@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { registerStyle, color, font, targetSize } from "@staccx/theme"
-import { ButtonStyles } from "@staccx/base"
+import { Button } from "@staccx/base"
 import { lighten } from "polished"
 
 const invisibleButton = css`
@@ -97,5 +97,5 @@ export default registerStyle(
       }
     `
   },
-  ButtonStyles.BUTTON
+  Button.themeProps.button
 )

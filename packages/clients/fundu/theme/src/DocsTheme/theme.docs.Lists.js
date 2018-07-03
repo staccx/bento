@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { spacing, color, registerStyle } from "@staccx/theme"
-import { ListStyles, SplitListItemStyles } from "@staccx/base"
+import { List, SplitListItem } from "@staccx/base"
 
 export const ListStyling = registerStyle(
   {
@@ -26,7 +26,7 @@ export const ListStyling = registerStyle(
       }
     `
   },
-  ListStyles.LIST
+  List.themeProps.list
 )
 
 export const SplitListItemStyling = registerStyle(
@@ -43,5 +43,5 @@ export const SplitListItemStyling = registerStyle(
       }
     `
   },
-  SplitListItemStyles.SPLIT_LIST
+  SplitListItem.themeProps.listItem
 )

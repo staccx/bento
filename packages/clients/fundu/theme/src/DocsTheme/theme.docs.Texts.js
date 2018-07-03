@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, font, spacing, registerStyle } from "@staccx/theme"
-import { TextStyles } from "@staccx/base"
+import { Text } from "@staccx/base"
 
 const getTypeColor = type => {
   switch (type) {
@@ -54,5 +54,5 @@ export const TextStyling = registerStyle(
       color: ${color("codePunctuation")};
     `
   },
-  TextStyles.TEXT
+  Text.themeProps.text
 )

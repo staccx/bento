@@ -136,4 +136,6 @@ SelectSimple.propTypes = {
   className: PropTypes.string
 }
 
+SelectSimple.themeProps = tProps
+
 export default SelectSimple

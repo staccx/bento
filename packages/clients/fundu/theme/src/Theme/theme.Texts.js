@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, font, fontWeight, registerStyle } from "@staccx/theme"
-import { TextStyles, hideVisually } from "@staccx/base"
+import { Text, hideVisually } from "@staccx/base"
 
 export const TextStyling = registerStyle(
   {
@@ -20,5 +20,5 @@ export const TextStyling = registerStyle(
       text-align: center;
     `
   },
-  TextStyles.TEXT
+  Text.themeProps.text
 )

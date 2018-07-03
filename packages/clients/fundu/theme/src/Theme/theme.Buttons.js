@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { registerStyle, color, targetSize, spacing } from "@staccx/theme"
-import { ButtonStyles } from "@staccx/base"
+import { Button } from "@staccx/base"
 
 const subtleButton = css`
   background-color: transparent;
@@ -88,5 +88,5 @@ export const ButtonStyling = registerStyle(
     `,
     endScreen: subtleButton
   },
-  ButtonStyles.BUTTON
+  Button.themeProps.button
 )

@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, spacing, registerStyle } from "@staccx/theme"
-import { BoxStyles } from "@staccx/base"
+import { Box } from "@staccx/base"
 import { tileStyle } from "../Theme/theme.Boxes"
 
 export const BoxStyling = registerStyle(
@@ -31,5 +31,5 @@ export const BoxStyling = registerStyle(
       padding-top: ${spacing.large};
     `
   },
-  BoxStyles.BOX
+  Box.themeProps.box
 )
