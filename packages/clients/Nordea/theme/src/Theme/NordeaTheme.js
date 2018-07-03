@@ -25,8 +25,8 @@ const targetSize = {
 
 const wrapper = {
   small: "460px",
-  medium: "648px",
-  large: "720px",
+  medium: "840px",
+  large: "888px",
   huge: "1284px",
   breakout: "640px"
 }
@@ -64,6 +64,7 @@ const color = {
   b2: "#3399FF",
   b1: "#99CCFF",
   bg1: "#E5F2FF",
+  bg2: "#F5F5F5",
   p3: "#F0C1AE",
   p2: "#FBD9CA",
   p1: "#FDECE4",
@@ -75,7 +76,7 @@ const color = {
   g2: "#C9C7C7",
   g1: "#E6E4E3",
   concrete: "#F4F2F1",
-  table: "#F5F5F5"
+  bg2: "#F5F5F5"
 }
 
 const DealerpadSpecificColor = {

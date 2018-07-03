@@ -10,9 +10,14 @@ import {
 } from "@staccx/base"
 
 const NewsHero = ({ article }) => (
-  <Box variant="hero">
+  <Box variant="hero" size="flush">
     <Wrapper>
-      <Layout grid="fiftyFifty">
+      <Layout
+        grid="fiftyFifty"
+        paddingTop="large"
+        paddingBottom="large"
+        columnGap="huge"
+      >
         <LayoutItem>
           <Heading level={1} variant="hero">
             {article.title}

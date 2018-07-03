@@ -9,4 +9,9 @@ export default `
     src:  url('/fonts/NordeaSansSmall-Bold.woff') format('woff');
     font-weight: 700;
   }
+
+  a {
+    color: #0000A0;
+    text-decoration: none;
+  }
 `
