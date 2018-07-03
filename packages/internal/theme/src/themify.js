@@ -2,8 +2,10 @@ import deepfind from "./deepfind"
 import { css } from "styled-components"
 import { VARIANT_DEFAULT } from "./_constants"
 
-export default name => props => {
+export default themeProps => props => {
   const { variant = VARIANT_DEFAULT } = props
+
+  const name = themeProps.hasOwnProperty("name") ? themeProps.name : themeProps
 
   if (
     !props.theme ||
