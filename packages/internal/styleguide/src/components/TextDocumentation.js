@@ -15,8 +15,8 @@ const TextDocumentation = ({
       <SubHeading>Themify</SubHeading>
       <Table>
         {Object.values(themify).map((figure, index) => (
-          <TableLine key={figure}>
-            <TableElement>{figure}</TableElement>
+          <TableLine key={figure.name}>
+            <TableElement>{figure.name}</TableElement>
             <TableElement>{themifyDescription[index]}</TableElement>
           </TableLine>
         ))}

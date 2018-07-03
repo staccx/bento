@@ -11,8 +11,10 @@ const Menu = ({ pages }) => {
       <List>
         {menuOptions.map(option => (
           <LinkListItem key={option._id} to={"#"} onClick={() => option.page()}>
-            <IconOuter>{option.icon}</IconOuter>
-            <ButtonLabel>{option.label}</ButtonLabel>
+            <React.Fragment>
+              <IconOuter>{option.icon}</IconOuter>
+              <ButtonLabel>{option.label}</ButtonLabel>
+            </React.Fragment>
           </LinkListItem>
         ))}
       </List>

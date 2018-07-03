@@ -13,18 +13,17 @@ class ThemeComponent extends React.Component {
       ...props
     } = this.props
 
+    const name = tagName.name ? tagName.name : tagName
     if (!variant) {
-      console.warn("Variant must be specified", tagName)
+      console.warn("Variant must be specified", name)
       return null
     }
 
     const Component =
-      !theme || !tagName || !theme.hasOwnProperty(tagName)
-        ? fallback
-        : theme[tagName]
+      !theme || !name || !theme.hasOwnProperty(name) ? fallback : theme[name]
 
     if (!Component) {
-      console.warn("Tagname is not present in theme", tagName, variant, theme)
+      console.warn("Tagname is not present in theme", name, variant, theme)
       return null
     }
 
@@ -37,7 +36,7 @@ class ThemeComponent extends React.Component {
     if (!SubComponent) {
       console.warn(
         "Could not find component nor subcomponent in theme.",
-        tagName,
+        name,
         variant,
         fallback,
         theme

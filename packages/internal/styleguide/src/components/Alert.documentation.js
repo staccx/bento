@@ -1,5 +1,5 @@
 import React from "react"
-import { Alert, AlertStyles } from "@staccx/base"
+import { Alert } from "@staccx/base"
 import Documentation from "./Documentation"
 import ComponentDocumentation from "./ComponentDocumentation"
 import TextDocumentation from "./TextDocumentation"
@@ -8,7 +8,7 @@ const AlertDocumentation = () => (
   <Documentation title="Alert">
     <TextDocumentation
       component={<Alert />}
-      themify={AlertStyles}
+      themify={Alert.themeProps}
       themifyDescription={[
         "Styling for type=info",
         "Styling for type=warning",
