@@ -75,7 +75,7 @@ const circle = css`
 
 const ColoredDot = styled.div`
   ${circle};
-  background-color: color ${color.primary};
+  background-color: ${color.primary};
   ${themify(Fraction.themeProps.coloredDot.name)};
 `
 
