@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { color, themify, fontWeight } from "@staccx/theme"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const Slider = ({
   disabled,
@@ -44,7 +45,24 @@ const Slider = ({
   )
 }
 
-export const SLIDER_THUMB_STYLE = "SLIDER_THUMB_STYLE"
+Slider.themeProps = {
+  thumb: {
+    name: "SLIDER_THUMB_STYLE",
+    description: "Thumb style",
+    type: themePropTypes.style
+  },
+  track: {
+    name: "SLIDER_TRACK_STYLE",
+    description: "Track style",
+    type: themePropTypes.style
+  },
+  input: {
+    name: "SLIDER_INPUT",
+    description: "Input style",
+    type: themePropTypes.style
+  }
+}
+
 const SliderThumbStyle = css`
   -webkit-appearance: none;
   border: 2px solid ${color.line};
@@ -63,7 +81,7 @@ const SliderThumbStyle = css`
     border-color: ${color.white};
     background-color: ${color.secondary};
   }
-  ${themify(SLIDER_THUMB_STYLE)};
+  ${themify(Slider.themeProps.thumb)};
 `
 
 const SliderHiddenTrackStyle = css`
@@ -74,7 +92,6 @@ const SliderHiddenTrackStyle = css`
   color: transparent;
 `
 
-export const SLIDER_TRACK_STYLE = "SLIDER_TRACK_STYLE"
 const SliderTrackStyle = css`
   width: 100%;
   height: 9px;
@@ -82,10 +99,9 @@ const SliderTrackStyle = css`
   border-radius: 4.5px;
   color: transparent;
   background-color: ${color.line};
-  ${themify(SLIDER_TRACK_STYLE)};
+  ${themify(Slider.themeProps.track)};
 `
 
-export const SLIDER_INPUT = "SLIDER_INPUT"
 const SliderInput = styled.div`
   position: relative;
   font-weight: ${fontWeight.bold};
@@ -188,7 +204,7 @@ const SliderInput = styled.div`
     background-color: ${color.white};
   }
 
-  ${themify(SLIDER_INPUT)};
+  ${themify(Slider.themeProps.input)};
 `
 
 Slider.defaultProps = {
