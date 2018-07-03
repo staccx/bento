@@ -11,6 +11,7 @@ import {
   themify
 } from "@staccx/theme"
 import styled from "styled-components"
+import themePropTypes from "../constants/themePropTypes"
 
 class Table extends React.Component {
   render() {
@@ -77,10 +78,16 @@ class Table extends React.Component {
   }
 }
 
-export const TABLE = "base-component-table"
+Table.themeProps = {
+  table: {
+    name: "base-component-table",
+    description: "",
+    type: themePropTypes.style
+  }
+}
 
 export const TableStyled = styled.table`
-  ${themify(TABLE)};
+  ${themify(Table.themeProps.table)};
 `
 
 Table.propTypes = {

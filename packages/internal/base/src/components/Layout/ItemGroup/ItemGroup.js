@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { spacing as space, themify, themeProps } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const ItemGroup = ({ children, spacing, variant, className, ...restProps }) => (
   <Wrap variant={variant} className={className} {...restProps}>
@@ -9,13 +10,24 @@ const ItemGroup = ({ children, spacing, variant, className, ...restProps }) => (
     </ItemGroupElement>
   </Wrap>
 )
-export const ITEM_GROUP_WRAPPER = "ITEM_GROUP_WRAPPER"
+
+ItemGroup.themeProps = {
+  wrapper: {
+    name: "ITEM_GROUP_WRAPPER",
+    description: "",
+    type: themePropTypes.style
+  },
+  group: {
+    name: "ITEM_GROUP",
+    description: "",
+    type: themePropTypes.style
+  }
+}
 const Wrap = styled.div`
   overflow: hidden;
-  ${themify(ITEM_GROUP_WRAPPER)};
+  ${themify(ItemGroup.themeProps.wrapper)};
 `
 
-export const ITEM_GROUP = "ITEM_GROUP"
 const ItemGroupElement = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -23,7 +35,7 @@ const ItemGroupElement = styled.div`
   & > * {
     margin: 0 ${p => space(p.spacing)} ${p => space(p.spacing)};
   }
-  ${themify(ITEM_GROUP)};
+  ${themify(ItemGroup.themeProps.group)};
 `
 
 ItemGroup.propTypes = {

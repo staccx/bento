@@ -9,6 +9,7 @@ import {
   themify,
   themeProps
 } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const SplitListItem = ({ children, className, ...restProps }) => {
   if (React.Children.count(children) > 2) {
@@ -25,7 +26,14 @@ const SplitListItem = ({ children, className, ...restProps }) => {
   )
 }
 
-export const SPLIT_LIST = "split_list"
+SplitListItem.themeProps = {
+  listItem: {
+    name: "split_list",
+    description: "",
+    type: themePropTypes.style
+  }
+}
+
 const ListItem = styled.li`
   position: relative;
   display: flex;
@@ -40,7 +48,7 @@ const ListItem = styled.li`
   &:last-child {
     border-bottom: none;
   }
-  ${themify(SPLIT_LIST)};
+  ${themify(SplitListItem.themeProps.listItem)};
 `
 
 SplitListItem.defaultProps = {

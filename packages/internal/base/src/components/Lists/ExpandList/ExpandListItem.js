@@ -11,6 +11,7 @@ import {
   ThemeComponent,
   themeProps
 } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const ExpandButton = ({ title, isExpanded, ...props }) => (
   <ExpandBtn isExpanded={isExpanded} {...props}>
@@ -18,11 +19,42 @@ const ExpandButton = ({ title, isExpanded, ...props }) => (
   </ExpandBtn>
 )
 
-export const COMPONENT_EXPAND_LIST_ITEM_BTN = "COMPONENT_EXPAND_LIST_ITEM_BTN"
+const tProps = {
+  listItemButtonComponent: {
+    name: "COMPONENT_EXPAND_LIST_ITEM_BTN",
+    description: "",
+    type: themePropTypes.component
+  },
+  listItem: {
+    name: "EXPAND_LIST_ITEM",
+    description: "",
+    type: themePropTypes.style
+  },
+  listIcon: {
+    name: "EXPAND_LIST_ICON",
+    description: "",
+    type: themePropTypes.style
+  },
+  listButton: {
+    name: "EXPAND_LIST_BUTTON",
+    description: "",
+    type: themePropTypes.style
+  },
+  expandedItem: {
+    name: "EXPAND_LIST_EXPANDED_ITEM",
+    description: "",
+    type: themePropTypes.style
+  },
+  expandListIconComponent: {
+    name: "COMPONENT_EXPAND_LIST_ICON",
+    description: "",
+    type: themePropTypes.component
+  }
+}
 
 const BtnComponent = ({ ...props }) => (
   <ThemeComponent
-    tagName={COMPONENT_EXPAND_LIST_ITEM_BTN}
+    tagName={tProps.listItemButtonComponent}
     fallback={ExpandButton}
     {...props}
   />
@@ -94,7 +126,6 @@ class ExpandListItem extends Component {
   }
 }
 
-export const EXPAND_LIST_ITEM = "EXPAND_LIST_ITEM"
 const ExpandItem = styled.li`
   border-bottom: 1px solid ${color.line};
   position: relative;
@@ -102,28 +133,25 @@ const ExpandItem = styled.li`
   &:last-child {
     border-bottom-width: 0;
   }
-  ${themify(EXPAND_LIST_ITEM)};
+  ${themify(tProps.listItem)};
 `
 
-export const COMPONENT_EXPAND_LIST_ICON = "COMPONENT_EXPAND_LIST_ICON"
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
-    tagName={COMPONENT_EXPAND_LIST_ICON}
+    tagName={tProps.expandListIconComponent}
     fallback={Caret}
     {...props}
   />
 )
-export const EXPAND_LIST_ICON = "EXPAND_LIST_ICON"
 const ExpandIcon = styled(IconComponent)`
   position: absolute;
   right: ${spacing.small()};
   fill: ${color.wcag};
   transition: transform 0.3s ease-out;
   transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
-  ${themify(EXPAND_LIST_ICON)};
+  ${themify(tProps.listIcon)};
 `
 
-export const EXPAND_LIST_BUTTON = "EXPAND_LIST_BUTTON"
 const ExpandBtn = styled.button`
   background: transparent;
   border-width: 0;
@@ -148,10 +176,9 @@ const ExpandBtn = styled.button`
       fill: ${color.primary};
     }
   }
-  ${themify(EXPAND_LIST_BUTTON)};
+  ${themify(tProps.listButton)};
 `
 
-export const EXPAND_LIST_EXPANDED_ITEM = "EXPAND_LIST_EXPANDED_ITEM"
 const ExpandedItem = styled.div`
   opacity: 0;
   animation: 0.4s ${BounceIn} 0.05s ease-out forwards 1;
@@ -161,7 +188,7 @@ const ExpandedItem = styled.div`
   max-width: ${p => (p.flush ? "auto" : "540px")};
   margin: auto;
   line-height: 1.8;
-  ${themify(EXPAND_LIST_EXPANDED_ITEM)};
+  ${themify(tProps.expandedItem)};
 `
 
 ExpandListItem.defaultProps = {
@@ -181,5 +208,7 @@ ExpandListItem.propTypes = {
   expanded: PropTypes.bool,
   flush: PropTypes.bool
 }
+
+ExpandListItem.themeProps = tProps
 
 export default ExpandListItem

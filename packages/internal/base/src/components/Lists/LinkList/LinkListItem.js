@@ -11,11 +11,44 @@ import {
   themify,
   ThemeComponent
 } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
-export const COMPONENT_LINK_LIST_ITEM_ICON = "COMPONENT_LINK_LIST_ITEM_ICON"
+const themeProps = {
+  iconComponent: {
+    name: "COMPONENT_LINK_LIST_ITEM_ICON",
+    description: "",
+    type: themePropTypes.component
+  },
+  icon: {
+    name: "LINK_LIST_ITEM_CARET",
+    description: "",
+    type: themePropTypes.style
+  },
+  listItem: {
+    name: "LINK_LIST_ITEM",
+    description: "",
+    type: themePropTypes.style
+  },
+  itemButton: {
+    name: "LINK_LIST_ITEM_BUTTON_STYLE",
+    description: "",
+    type: themePropTypes.style
+  },
+  link: {
+    name: "LINK_LIST_ITEM_BUTTON",
+    description: "",
+    type: themePropTypes.style
+  },
+  hover: {
+    name: "LINK_LIST_ITEM_BUTTON_HOVER_ICON",
+    description: "",
+    type: themePropTypes.style
+  }
+}
+
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
-    tagName={COMPONENT_LINK_LIST_ITEM_ICON}
+    tagName={themeProps.iconComponent}
     fallback={CaretRight}
     {...props}
   />
@@ -41,15 +74,13 @@ LinkListItem.propTypes = {
   onClick: PropTypes.func
 }
 
-export const LINK_LIST_ITEM_CARET = "LINK_LIST_ITEM_CARET"
 const Cursor = styled(IconComponent)`
   fill: ${color.wcag};
   position: absolute;
   right: ${spacing.small};
-  ${themify(LINK_LIST_ITEM_CARET)};
+  ${themify(themeProps.icon)};
 `
 
-export const LINK_LIST_ITEM = "LINK_LIST_ITEM"
 const ListItem = styled.li`
   list-style: none;
   border-bottom: 1px solid ${color.line};
@@ -57,10 +88,9 @@ const ListItem = styled.li`
   &:last-child {
     border-bottom: none;
   }
-  ${themify(LINK_LIST_ITEM)};
+  ${themify(themeProps.listItem)};
 `
 
-export const LINK_LIST_ITEM_BUTTON_STYLE = "LINK_LIST_ITEM_BUTTON_STYLE"
 const ButtonStyle = css`
   text-decoration: none;
   color: black;
@@ -75,22 +105,19 @@ const ButtonStyle = css`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: pointer;
-  ${themify(LINK_LIST_ITEM_BUTTON_STYLE)};
+  ${themify(themeProps.itemButton)};
 `
 
-export const LINK_LIST_ITEM_BUTTON = "LINK_LIST_ITEM_BUTTON"
-export const LINK_LIST_ITEM_BUTTON_HOVER_ICON =
-  "LINK_LIST_ITEM_BUTTON_HOVER_ICON"
 const Button = styled.a`
   ${ButtonStyle};
   &:hover,
   &:focus {
     ${Cursor} {
       fill: ${color.primary};
-      ${themify(LINK_LIST_ITEM_BUTTON_HOVER_ICON)};
+      ${themify(themeProps.hover)};
     }
   }
-  ${themify(LINK_LIST_ITEM_BUTTON)};
+  ${themify(themeProps.link)};
 `
 
 export default LinkListItem

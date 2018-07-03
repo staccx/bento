@@ -2,16 +2,25 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { themify } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const InlineListItem = ({ className, children, ...rest }) => (
   <ListItem className={className} {...rest}>
     {children}
   </ListItem>
 )
-export const INLINE_LIST_ITEM = "INLINE_LIST_ITEM"
+
+InlineListItem.themeProps = {
+  listItem: {
+    name: "INLINE_LIST_ITEM",
+    description: "",
+    type: themePropTypes.style
+  }
+}
+
 const ListItem = styled.li`
   display: inline-block;
-  ${themify(INLINE_LIST_ITEM)};
+  ${themify(InlineListItem.themeProps.listItem)};
 `
 
 InlineListItem.defaultProps = {

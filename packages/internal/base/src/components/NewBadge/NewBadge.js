@@ -3,6 +3,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import { color, fontWeight, themify, themeProps } from "@staccx/theme"
 import fontSmoothing from "../../Styles/fontsmoothing"
+import themePropTypes from "../constants/themePropTypes"
 
 const NewBadge = ({ number, children }) => (
   <NewBadgeWrapper>
@@ -15,14 +16,25 @@ const NewBadge = ({ number, children }) => (
   </NewBadgeWrapper>
 )
 
-export const NEW_BADGE_WRAPPER = "NEW_BADGE_WRAPPER"
+NewBadge.themeProps = {
+  wrapper: {
+    name: "NEW_BADGE_WRAPPER",
+    description: "",
+    type: themePropTypes.style
+  },
+  badge: {
+    name: "NEW_BADGE_BADGE",
+    description: "",
+    type: themePropTypes.style
+  }
+}
+
 const NewBadgeWrapper = styled.div`
   position: relative;
   display: inline-block;
-  ${themify(NEW_BADGE_WRAPPER)};
+  ${themify(NewBadge.themeProps.wrapper)};
 `
 
-export const NEW_BADGE_BADGE = "NEW_BADGE_BADGE"
 const Badge = styled.span`
   display: flex;
   justify-content: center;
@@ -40,7 +52,7 @@ const Badge = styled.span`
   bottom: -12px;
   position: absolute;
   ${fontSmoothing};
-  ${themify(NEW_BADGE_BADGE)};
+  ${themify(NewBadge.themeProps.badge)};
 `
 
 NewBadge.propTypes = {

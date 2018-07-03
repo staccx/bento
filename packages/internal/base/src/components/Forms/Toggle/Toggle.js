@@ -1,15 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import {
-  targetSize,
-  spacing,
-  borderRadius,
-  fontFamily,
-  font,
-  color,
-  themify
-} from "@staccx/theme"
+import { targetSize, spacing, color, themify } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Toggle = ({
   children,
@@ -39,16 +32,37 @@ const Toggle = ({
   )
 }
 
-export const TOGGLE = "TOGGLE"
+Toggle.themeProps = {
+  wrapper: {
+    name: "TOGGLE",
+    description: "Toggle style",
+    type: themePropTypes.style
+  },
+  toggleElement: {
+    name: "TOGGLE_ELEMENT",
+    description: "Toggle element style",
+    type: themePropTypes.style
+  },
+  input: {
+    name: "TOGGLE_INPUT",
+    description: "Toggle input style",
+    type: themePropTypes.style
+  },
+  checked: {
+    name: "  TOGGLE_ELEMENT_CHECKED",
+    description: "Toggle element checked style",
+    type: themePropTypes.style
+  }
+}
+
 const ToggleWrapper = styled.label`
   min-height: ${targetSize.normal};
   padding-top: ${spacing.tiny()};
   padding-bottom: ${spacing.tiny()};
   display: block;
-  ${themify(TOGGLE)};
+  ${themify(Toggle.themeProps.wrapper)};
 `
 
-export const TOGGLE_ELEMENT = "TOGGLE_ELEMENT"
 const ToggleElement = styled.div`
   background: ${color.line};
   border-radius: 2em;
@@ -64,11 +78,9 @@ const ToggleElement = styled.div`
     background: ${color.white};
     transition: all 0.2s ease;
   }
-  ${themify(TOGGLE_ELEMENT)};
+  ${themify(Toggle.themeProps.toggleElement)};
 `
 
-export const TOGGLE_INPUT = "TOGGLE_INPUT"
-export const TOGGLE_ELEMENT_CHECKED = "TOGGLE_ELEMENT_CHECKED"
 const ToggleInput = styled.input`
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -121,9 +133,9 @@ const ToggleInput = styled.input`
     &:after {
       transform: translateX(100%);
     }
-    ${themify(TOGGLE_ELEMENT_CHECKED)};
+    ${themify(Toggle.themeProps.checked)};
   }
-  ${themify(TOGGLE_INPUT)};
+  ${themify(Toggle.themeProps.input)};
 `
 
 Toggle.propTypes = {

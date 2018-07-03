@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { spacing, themify, themeProps } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Flag = ({
   children,
@@ -33,6 +34,14 @@ const Flag = ({
     <FlagBody>{children}</FlagBody>
   </FlagObject>
 )
+
+Flag.themeProps = {
+  object: {
+    name: "FLAG_OBJECT",
+    description: "",
+    type: themePropTypes.style
+  }
+}
 
 const FlagImg = styled.div`
   display: table-cell;
@@ -150,7 +159,6 @@ const responsive = css`
   }
 `
 
-export const FLAG_OBJECT = "FLAG_OBJECT"
 const FlagObject = styled.div`
   display: table;
   width: 100%;
@@ -163,7 +171,7 @@ const FlagObject = styled.div`
   ${props => (props.small ? small : null)};
   ${props => (props.tiny ? tiny : null)};
   ${props => (props.responsive > 0 ? responsive : null)};
-  ${themify(FLAG_OBJECT)};
+  ${themify(Flag.themeProps.object)};
 `
 
 Flag.defaultProps = {

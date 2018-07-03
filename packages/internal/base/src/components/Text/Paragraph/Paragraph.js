@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { fontFamily, font, themify, themeProps } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Paragraph = ({ level, children, className, ...restProps }) => {
   return (
@@ -11,12 +12,18 @@ const Paragraph = ({ level, children, className, ...restProps }) => {
   )
 }
 
-export const PARAGRAPH = "paragraph"
+Paragraph.themeProps = {
+  paragraph: {
+    name: "paragraph",
+    description: "",
+    type: themePropTypes.style
+  }
+}
 
 export const P = styled.p`
   font-family: ${fontFamily.body};
   line-height: ${font.lineHeight};
-  ${themify(PARAGRAPH)};
+  ${themify(Paragraph.themeProps.paragraph)};
 `
 
 Paragraph.defaultProps = {

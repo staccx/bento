@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { spacing, wrapper, themify, themeProps } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Wrapper = ({ children, className, size, breakout, ...otherProps }) => (
   <Wrap breakout={breakout} className={className} size={size} {...otherProps}>
@@ -9,7 +10,13 @@ const Wrapper = ({ children, className, size, breakout, ...otherProps }) => (
   </Wrap>
 )
 
-export const WRAPPER = "WRAPPER"
+Wrapper.themeProps = {
+  wrapper: {
+    name: "WRAPPER",
+    description: "",
+    type: themePropTypes.style
+  }
+}
 const Wrap = styled.div`
   width: 100%;
   max-width: ${p => (p.size === "full" ? "none" : wrapper(p.size))};
@@ -30,7 +37,7 @@ const Wrap = styled.div`
         padding-right: 0;
       }
     `};
-  ${themify(WRAPPER)};
+  ${themify(Wrapper.themeProps.wrapper)};
 `
 
 Wrapper.defaultProps = {

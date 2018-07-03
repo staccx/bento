@@ -12,6 +12,7 @@ import {
 } from "@staccx/theme"
 import IconClose from "../Icons/Close"
 import { FadeIn } from "@staccx/animations"
+import themePropTypes from "../constants/themePropTypes"
 
 class Modal extends Component {
   constructor(props) {
@@ -107,7 +108,33 @@ class Modal extends Component {
   }
 }
 
-export const MODAL_ITEM = "modal_item"
+Modal.themeProps = {
+  dialog: {
+    name: "modal_item",
+    description: "",
+    type: themePropTypes.style
+  },
+  content: {
+    name: "modal_content",
+    description: "",
+    type: themePropTypes.style
+  },
+  close: {
+    name: "modal_close",
+    description: "",
+    type: themePropTypes.style
+  },
+  backdrop: {
+    name: "modal_backdrop",
+    description: "",
+    type: themePropTypes.style
+  },
+  closeIcon: {
+    name: "COMPONENT_MODAL_CLOSE_ICON",
+    description: "",
+    type: themePropTypes.component
+  }
+}
 const ModalItem = styled.dialog`
   border-width: 0;
   height: 100%;
@@ -131,10 +158,9 @@ const ModalItem = styled.dialog`
   &:focus {
     outline: none;
   }
-  ${themify(MODAL_ITEM)};
+  ${themify(Modal.themeProps.dialog)};
 `
 
-export const MODAL_CONTENT = "modal_content"
 const ModalContent = styled.div`
   background: white;
   border-radius: ${borderRadius};
@@ -151,10 +177,9 @@ const ModalContent = styled.div`
   &:focus {
     outline: none;
   }
-  ${themify(MODAL_CONTENT)};
+  ${themify(Modal.themeProps.content)};
 `
 
-export const MODAL_CLOSE = "modal_close"
 const Close = styled.button`
   position: absolute;
   top: 0;
@@ -173,10 +198,9 @@ const Close = styled.button`
   span {
     ${hideVisually};
   }
-  ${themify(MODAL_CLOSE)};
+  ${themify(Modal.themeProps.close)};
 `
 
-export const MODAL_BACKDROP = "modal_backdrop"
 const ModalBackdrop = styled.div`
   position: fixed;
   top: 0;
@@ -187,13 +211,12 @@ const ModalBackdrop = styled.div`
   background: rgba(0, 0, 0, 0.8);
   opacity: 0;
   animation: 0.2s ${FadeIn} ease-out forwards 1;
-  ${themify(MODAL_BACKDROP)};
+  ${themify(Modal.themeProps.backdrop)};
 `
 
-export const COMPONENT_MODAL_CLOSE_ICON = "COMPONENT_MODAL_CLOSE_ICON"
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
-    tagName={COMPONENT_MODAL_CLOSE_ICON}
+    tagName={Modal.themeProps.closeIcon}
     fallback={IconClose}
     {...props}
   />

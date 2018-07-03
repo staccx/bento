@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { themify, themeProps } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Text = ({ level, children, className, ...restProps }) => {
   return (
@@ -11,10 +12,18 @@ const Text = ({ level, children, className, ...restProps }) => {
   )
 }
 
+Text.themeProps = {
+  text: {
+    name: "text",
+    description: "",
+    type: themePropTypes.style
+  }
+}
+
 export const TEXT = "text"
 
 export const Span = styled.span`
-  ${themify(TEXT)};
+  ${themify(Text.themeProps.text)};
 `
 
 Text.defaultProps = {

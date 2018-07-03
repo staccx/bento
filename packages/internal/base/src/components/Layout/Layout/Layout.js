@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { themify, spacing, grid, themeProps } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Layout = ({
   grid,
@@ -28,7 +29,13 @@ const Layout = ({
   </LayoutContainer>
 )
 
-export const LAYOUT = "LAYOUT"
+Layout.themeProps = {
+  container: {
+    name: "LAYOUT",
+    description: "",
+    type: themePropTypes.style
+  }
+}
 
 const isNotFlush = space => {
   switch (space) {
@@ -62,7 +69,7 @@ export const LayoutContainer = styled.div`
       padding-top: ${spacing(p.paddingTop)};
     `};
   ${p => p.grid && grid};
-  ${themify(LAYOUT)};
+  ${themify(Layout.themeProps.container)};
 `
 
 Layout.defaultProps = {

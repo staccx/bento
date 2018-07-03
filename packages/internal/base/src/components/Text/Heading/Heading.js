@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { font, fontFamily, themify, themeProps } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Heading = ({ level, children, className, ...restProps }) => {
   switch (level) {
@@ -74,11 +75,16 @@ const Heading = ({ level, children, className, ...restProps }) => {
   }
 }
 
-export const HEADING = "heading"
-
+Heading.themeProps = {
+  heading: {
+    name: "heading",
+    description: "",
+    type: themePropTypes.style
+  }
+}
 export const HeadingsStyle = css`
   font-family: ${fontFamily.heading};
-  ${themify(HEADING)};
+  ${themify(Heading.themeProps.heading)};
 `
 
 const HeadingH1 = styled.h1`
