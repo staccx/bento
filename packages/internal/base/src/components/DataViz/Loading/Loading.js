@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
 import { color, spacing, themify, ThemeComponent } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const DefaultLoading = ({ className, variant, ...rest }) => (
   <SignalSpinner className={className} variant={variant} {...rest} />
@@ -9,9 +10,22 @@ const DefaultLoading = ({ className, variant, ...rest }) => (
 
 export const COMPONENT_LOADING = "COMPONENT_LOADING"
 
+const themeProps = {
+  component: {
+    name: "COMPONENT_LOADING",
+    description: "Component for loading",
+    type: themePropTypes.component
+  },
+  loading: {
+    name: "LOADING",
+    description: "Loading style",
+    type: themePropTypes.style
+  }
+}
+
 const Loading = ({ className, variant, ...rest }) => (
   <ThemeComponent
-    tagName={COMPONENT_LOADING}
+    tagName={themeProps.component.name}
     fallback={DefaultLoading}
     {...rest}
   />
@@ -43,7 +57,6 @@ const spinnerBubble2 = keyframes`
   }
 `
 
-export const LOADING = "LOADING"
 const SignalSpinner = styled.div`
   position: relative;
   display: block;
@@ -73,9 +86,10 @@ const SignalSpinner = styled.div`
   &::after {
     animation: ${spinnerBubble2} 2.6s ease-out 0s infinite;
   }
-  ${themify(LOADING)};
+  ${themify(themeProps.loading.name)};
 `
 
 Loading.propTypes = { className: PropTypes.string, variant: PropTypes.string }
+Loading.themeProps = themeProps
 
 export default Loading
