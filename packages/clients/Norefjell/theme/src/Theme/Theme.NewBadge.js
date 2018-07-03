@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
-import { NewBadgeStyles } from "@staccx/base"
+import { NewBadge } from "@staccx/base"
 
 export default registerStyle(
   {
@@ -10,5 +10,5 @@ export default registerStyle(
       transform: scale(0.7);
     `
   },
-  NewBadgeStyles.NEW_BADGE_BADGE
+  NewBadge.themeProps.badge
 )

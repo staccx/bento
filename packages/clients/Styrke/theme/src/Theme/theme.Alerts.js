@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, spacing, registerStyle } from "@staccx/theme"
-import { AlertStyles } from "@staccx/base"
+import { Alert } from "@staccx/base"
 
 export const AlertStyling = registerStyle(
   {
@@ -24,5 +24,5 @@ export const AlertStyling = registerStyle(
       }
     `
   },
-  AlertStyles.ALERT_WARNING
+  Alert.themeProps.alertWarning
 )

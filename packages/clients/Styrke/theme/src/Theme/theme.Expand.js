@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { registerStyle } from "@staccx/theme"
-import { ExpandStyles } from "@staccx/base"
+import { Expand } from "@staccx/base"
 
 export const ExpandStyling = registerStyle(
   {
@@ -10,5 +10,5 @@ export const ExpandStyling = registerStyle(
       text-align: left;
     `
   },
-  ExpandStyles.EXPAND_BTN
+  Expand.themeProps.button
 )

@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { registerStyle, VARIANT_DEFAULT, color } from "@staccx/theme"
-import { CheckBoxStyles } from "@staccx/base"
+import { CheckBox } from "@staccx/base"
 import { darken } from "polished"
 
 export const CheckboxCheckedIcon = registerStyle(
@@ -13,7 +13,7 @@ export const CheckboxCheckedIcon = registerStyle(
       top: 18px;
     `
   },
-  CheckBoxStyles.CHECKBOX_CHECKED_ICON
+  CheckBox.themeProps.icon
 )
 
 export const CheckboxCheckedLabel = registerStyle(
@@ -31,5 +31,5 @@ export const CheckboxCheckedLabel = registerStyle(
       }
     `
   },
-  CheckBoxStyles.CHECKBOX_LABEL_CHECKED
+  CheckBox.themeProps.labelChecked
 )

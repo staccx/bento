@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { spacing, registerStyle } from "@staccx/theme"
-import { DividerStyles } from "@staccx/base"
+import { Divider } from "@staccx/base"
 
 export const DividerStyling = registerStyle(
   {
@@ -8,5 +8,5 @@ export const DividerStyling = registerStyle(
       margin-bottom: ${spacing.mediumPlus};
     `
   },
-  DividerStyles.DIVIDER
+  Divider.themeProps.rule
 )

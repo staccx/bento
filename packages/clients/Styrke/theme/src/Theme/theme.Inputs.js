@@ -1,11 +1,6 @@
 import { css } from "styled-components"
 import { color, spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
-import {
-  InputStyles,
-  SelectOptionStyles,
-  SelectStyles,
-  RadioPillStyles
-} from "@staccx/base"
+import { Input, SelectOption, Select, RadioPill } from "@staccx/base"
 
 export const InputStyling = registerStyle(
   {
@@ -18,10 +13,10 @@ export const InputStyling = registerStyle(
       }
     `
   },
-  InputStyles.INPUT
+  Input.themeProps.input
 )
 
-export const LabelStyling = registerStyle(InputStyles.INPUT_LABEL)
+export const LabelStyling = registerStyle(Input.themeProps.label)
 
 export const SelectSelectedStyling = registerStyle(
   {
@@ -43,7 +38,7 @@ export const SelectSelectedStyling = registerStyle(
       }
     `
   },
-  SelectOptionStyles.SELECT_OPTION
+  SelectOption.themeProps.optionContainer
 )
 
 export const SelectIconButtonStyling = registerStyle(
@@ -52,7 +47,7 @@ export const SelectIconButtonStyling = registerStyle(
       right: 0;
     `
   },
-  SelectStyles.SELECT_ICON_BUTTON
+  Select.themeProps.iconButton
 )
 
 export const SelectOptionsWrapperStyling = registerStyle(
@@ -70,7 +65,7 @@ export const SelectOptionsWrapperStyling = registerStyle(
         rgba(0, 0, 75, 0.015) 0px 64px 64px;
     `
   },
-  SelectStyles.SELECT_DEFAULT_OPTION_ELEMENT_WRAPPER
+  Select.themeProps.defaultOptionWrapper
 )
 
 export const RadioPillStyling = registerStyle(
@@ -81,5 +76,5 @@ export const RadioPillStyling = registerStyle(
       padding-right: ${spacing.medium};
     `
   },
-  RadioPillStyles.RADIO_PILL
+  RadioPill.themeProps.container
 )

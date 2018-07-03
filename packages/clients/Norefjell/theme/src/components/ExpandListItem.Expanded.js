@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
-import { ExpandListItemStyles } from "@staccx/base"
+import { ExpandListItem } from "@staccx/base"
 
 export default registerStyle(
   {
@@ -8,5 +8,5 @@ export default registerStyle(
       padding: 0;
     `
   },
-  ExpandListItemStyles.EXPAND_LIST_EXPANDED_ITEM
+  ExpandListItem.themeProps.expandedItem
 )

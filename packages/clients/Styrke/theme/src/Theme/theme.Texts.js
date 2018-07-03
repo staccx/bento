@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, registerStyle } from "@staccx/theme"
-import { TextStyles, hideVisually } from "@staccx/base"
+import { Text, hideVisually } from "@staccx/base"
 
 export const TextStyling = registerStyle(
   {
@@ -11,5 +11,5 @@ export const TextStyling = registerStyle(
       color: ${color.wcag};
     `
   },
-  TextStyles.TEXT
+  Text.themeProps.text
 )

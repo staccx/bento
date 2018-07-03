@@ -6,7 +6,7 @@ import {
   spacing,
   VARIANT_DEFAULT
 } from "@staccx/theme"
-import { ButtonStyles } from "@staccx/base"
+import { Button } from "@staccx/base"
 
 export const ButtonStyling = registerStyle(
   {
@@ -90,5 +90,5 @@ export const ButtonStyling = registerStyle(
       }
     `
   },
-  ButtonStyles.BUTTON
+  Button.themeProps.button
 )

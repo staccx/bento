@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
-import { BoxStyles } from "@staccx/base"
+import { Box } from "@staccx/base"
 
 const subtleBox = css`
   border-radius: 0;
@@ -125,5 +125,5 @@ export const BoxStyling = registerStyle(
       }
     `
   },
-  BoxStyles.BOX
+  Box.themeProps.box
 )

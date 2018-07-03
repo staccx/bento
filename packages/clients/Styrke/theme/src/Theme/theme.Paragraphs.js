@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { font, spacing, registerStyle } from "@staccx/theme"
-import { ParagraphStyles } from "@staccx/base"
+import { Paragraph } from "@staccx/base"
 
 export const ParagraphStyling = registerStyle(
   {
@@ -17,5 +17,5 @@ export const ParagraphStyling = registerStyle(
       margin: 0 0 ${spacing.medium};
     `
   },
-  ParagraphStyles.PARAGRAPH
+  Paragraph.themeProps.paragraph
 )

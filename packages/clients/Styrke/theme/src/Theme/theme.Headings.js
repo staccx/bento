@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, font, spacing, registerStyle, fontFamily } from "@staccx/theme"
-import { HeadingStyles } from "@staccx/base"
+import { Heading } from "@staccx/base"
 
 const stepHeading = css`
   margin-bottom: 0;
@@ -26,5 +26,5 @@ export const HeadingStyling = registerStyle(
       color: ${color.primary};
     `
   },
-  HeadingStyles.HEADING
+  Heading.themeProps.heading
 )

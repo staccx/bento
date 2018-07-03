@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { registerStyle, color, spacing, targetSize } from "@staccx/theme"
-import { ButtonStyles } from "@staccx/base"
+import { Button } from "@staccx/base"
 
 const invisibleButton = css`
   padding: 0;
@@ -83,5 +83,5 @@ export default registerStyle(
       }
     `
   },
-  ButtonStyles.BUTTON
+  Button.themeProps.button
 )

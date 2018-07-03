@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { registerStyle, spacing, wrapper, VARIANT_DEFAULT } from "@staccx/theme"
-import { ModalStyles } from "@staccx/base"
+import { Modal } from "@staccx/base"
 import { BounceIn } from "@staccx/animations"
 
 const boxAnimation = css`
@@ -20,5 +20,5 @@ export default registerStyle(
       padding-top: ${spacing.medium};
     `
   },
-  ModalStyles.MODAL_CONTENT
+  Modal.themeProps.content
 )

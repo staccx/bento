@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, registerStyle, spacing } from "@staccx/theme"
-import { BoxStyles, fontSmoothing } from "@staccx/base"
+import { Box, fontSmoothing } from "@staccx/base"
 
 const defaultBox = css`
   background: ${color.white};
@@ -39,5 +39,5 @@ export default registerStyle(
       ${fontSmoothing};
     `
   },
-  BoxStyles.BOX
+  Box.themeProps.box
 )
