@@ -13,17 +13,14 @@ import {
   borderRadius,
   themeProps
 } from "@staccx/theme"
-
-export const COMPONENT_ALERT_INFO = "COMPONENT_ALERT_INFO"
-export const COMPONENT_ALERT_WARNING = "COMPONENT_ALERT_WARNING"
-export const COMPONENT_ALERT_SUCCESS = "COMPONENT_SUCCESS"
+import themePropTypes from "../constants/themePropTypes"
 
 const Icon = ({ type, props }) => {
   switch (type) {
     case "info":
       return (
         <ThemeComponent
-          tagName={COMPONENT_ALERT_INFO}
+          tagName={Alert.themeProps.componentAlertInfo.name}
           fallback={Info}
           {...props}
         />
@@ -31,7 +28,7 @@ const Icon = ({ type, props }) => {
     case "warning":
       return (
         <ThemeComponent
-          tagName={COMPONENT_ALERT_WARNING}
+          tagName={Alert.themeProps.componentAlertWarning.name}
           fallback={Warning}
           {...props}
         />
@@ -39,7 +36,7 @@ const Icon = ({ type, props }) => {
     case "success":
       return (
         <ThemeComponent
-          tagName={COMPONENT_ALERT_SUCCESS}
+          tagName={Alert.themeProps.componentAlertSuccess.name}
           fallback={Success}
           {...props}
         />
@@ -49,29 +46,26 @@ const Icon = ({ type, props }) => {
   }
 }
 
-export const ALERT_WARNING = "ALERT_WARNING"
-export const ALERT_INFO = "ALERT_INFO"
-export const ALERT_SUCCESS = "ALERT_SUCCESS"
 const colors = ({ type }) => {
   switch (type) {
     case "warning":
       return css`
         background-color: ${color("warning")};
         color: ${color("white")};
-        ${themify(ALERT_WARNING)};
+        ${themify(Alert.themeProps.alertWarning.name)};
       `
     case "success":
       return css`
         background-color: ${color("positive")};
         color: ${color("white")};
-        ${themify(ALERT_SUCCESS)};
+        ${themify(Alert.themeProps.alertSuccess.name)};
       `
     case "info":
     default:
       return css`
         background-color: ${color("line")};
         color: ${color("text")};
-        ${themify(ALERT_INFO)};
+        ${themify(Alert.themeProps.alertInfo.name)};
       `
   }
 }
@@ -86,13 +80,12 @@ const Alert = ({ children, type, ...restProps }) => {
   )
 }
 
-export const ALERT = "ALERT"
 const AlertElement = styled.div`
   width: 100%;
   border-radius: ${borderRadius};
   padding: ${spacing.small};
   ${colors};
-  ${themify(ALERT)};
+  ${themify(Alert.themeProps.alert.name)};
 `
 
 Alert.propTypes = {
@@ -102,6 +95,44 @@ Alert.propTypes = {
 
 Alert.defaultProps = {
   type: "info"
+}
+
+Alert.themeProps = {
+  alert: {
+    name: "ALERT",
+    description: "Alert style",
+    type: themePropTypes.style
+  },
+  componentAlertInfo: {
+    name: "COMPONENT_ALERT_INFO",
+    description: "Theme component for info alert",
+    type: themePropTypes.component
+  },
+  componentAlertWarning: {
+    name: "COMPONENT_ALERT_WARNING",
+    description: "Theme component for warning alert",
+    type: themePropTypes.component
+  },
+  componentAlertSuccess: {
+    name: "COMPONENT_ALERT_SUCCESS",
+    description: "Theme component for success alert",
+    type: themePropTypes.component
+  },
+  alertInfo: {
+    name: "ALERT_INFO",
+    description: "Styles for info alert",
+    type: themePropTypes.style
+  },
+  alertWarning: {
+    name: "ALERT_WARNING",
+    description: "Styles for warning alert",
+    type: themePropTypes.style
+  },
+  alertSuccess: {
+    name: "ALERT_SUCCESS",
+    description: "Styles for success alert",
+    type: themePropTypes.style
+  }
 }
 
 export default Alert

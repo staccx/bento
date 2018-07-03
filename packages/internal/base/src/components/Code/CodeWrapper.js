@@ -1,7 +1,16 @@
 import styled from "styled-components"
-import { color } from "@staccx/theme"
+import { color, themify } from "@staccx/theme"
+import themePropTypes from "../constants/themePropTypes"
 
-export default styled.pre`
+const themeProps = {
+  wrapper: {
+    name: "code-renderer-wrapper",
+    description: "code renderer wrapper style",
+    type: themePropTypes.style
+  }
+}
+
+const CodeWrapper = styled.pre`
   background-color: ${color("codeBackground")};
   color: ${color("codeForeground")};
   .token {
@@ -40,4 +49,9 @@ export default styled.pre`
   .class-name {
     color: ${color("codeClass")};
   }
+  ${themify(themeProps.wrapper.name)};
 `
+
+CodeWrapper.themeProps = themeProps
+
+export default CodeWrapper

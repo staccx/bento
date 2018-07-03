@@ -68,10 +68,10 @@ import Loading, * as LoadingStyles from "./components/DataViz/Loading/Loading"
 import Modal, * as ModalStyles from "./components/Modal/Modal"
 
 // Buttons
-import Button, * as ButtonStyles from "./components/Button/Button"
+import Button from "./components/Button/Button"
 
+import Alert from "./components/Alert/Alert"
 // Boxes
-import Alert, * as AlertStyles from "./components/Alert/Alert"
 import Box, * as BoxStyles from "./components/Layout/Box/Box"
 
 // Styles
@@ -104,12 +104,10 @@ require("isomorphic-fetch")
 export {
   AccountInput,
   Alert,
-  AlertStyles,
   BaseTheme,
   Box,
   BoxStyles,
   Button,
-  ButtonStyles,
   Caret,
   CaretRight,
   CheckBox,

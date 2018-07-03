@@ -14,10 +14,16 @@ import {
   themify,
   themeProps
 } from "@staccx/theme"
+import themePropTypes from "../constants/themePropTypes"
 const tinycolor = require("tinycolor2")
 
-export const BUTTON = "Button"
-
+const tProps = {
+  button: {
+    name: "Button",
+    description: "Button styles",
+    type: themePropTypes.style
+  }
+}
 const Button = styled.button`
   background-color: ${color.primary};
   color: ${p =>
@@ -64,7 +70,7 @@ const Button = styled.button`
         .toString()};
   }
 
-  ${themify(BUTTON)};
+  ${themify(tProps.button.name)};
 `
 
 const defaultProps = {
@@ -82,6 +88,7 @@ const propTypes = {
 
 Button.defaultProps = defaultProps
 Button.propTypes = propTypes
+Button.themeProps = tProps
 
 /** @component */
 export default Button
