@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import hideVisually from "../../../Styles/hideVisually"
 import { spacing, color, themify } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Fraction = ({
   value,
@@ -42,40 +43,55 @@ const Hide = styled.span`
   ${hideVisually};
 `
 
-export const FRACTION_CIRCLE = "fraction_circle"
+Fraction.themeProps = {
+  wrapper: {
+    name: "fraction",
+    description: "Wrapper style",
+    type: themePropTypes.style
+  },
+  circle: {
+    name: "fraction_circle",
+    description: "Circle style",
+    type: themePropTypes.style
+  },
+  coloredDot: {
+    name: "fraction_colored_dot",
+    description: "Colored dot style",
+    type: themePropTypes.style
+  },
+  desaturatedDot: {
+    name: "fraction_desaturated_dot",
+    description: "Desaturated dot style",
+    type: themePropTypes.style
+  }
+}
 
 const circle = css`
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  ${themify(FRACTION_CIRCLE)};
+  ${themify(Fraction.themeProps.circle.name)};
 `
-
-export const FRACTION_COLORED_DOT = "fraction_colored_dot"
 
 const ColoredDot = styled.div`
   ${circle};
   background-color: color ${color.primary};
-  ${themify(FRACTION_COLORED_DOT)};
+  ${themify(Fraction.themeProps.coloredDot.name)};
 `
-
-export const FRACTION_DESATURATED_DOT = "fraction_desaturated_dot"
 
 const DesaturatedDot = styled.div`
   ${circle};
   background-color: ${color.line};
-  ${themify(FRACTION_DESATURATED_DOT)};
+  ${themify(Fraction.themeProps.desaturatedDot.name)};
 `
-
-export const FRACTION = "fraction"
 
 const FractionWrapper = styled.div`
   display: flex;
   flex-direction: row;
   > * {
-    margin-right: ${spacing.tiny()};
+    margin-right: ${spacing.tiny};
   }
-  ${themify(FRACTION)};
+  ${themify(Fraction.themeProps.wrapper.name)};
 `
 
 Fraction.defaultProps = {
