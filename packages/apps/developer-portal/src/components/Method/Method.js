@@ -20,7 +20,9 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
   }
   const path = operation.path
   const type = operation.type
-  const request = codeGenerators[language].generate(codeGeneratorInputs[path][type])
+  const request = codeGenerators[language].generate(
+    codeGeneratorInputs[path][type]
+  )
 
   const codeRendererLanguage = getCodeRendererLanguage(language)
 

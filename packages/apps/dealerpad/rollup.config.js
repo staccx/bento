@@ -6,25 +6,32 @@ import json from "rollup-plugin-json"
 import pkg from "./package.json"
 
 export default {
-input: "./index.js",
-output: [
-{
-file: pkg.main,
-format: "cjs"
-},
-{
-file: pkg.module,
-format: "es"
-}
-],
-external: ["react", "react-dom", "prop-types", "styled-components", "@staccx/theme", "@staccx/base"],
-plugins: [
-commonjs(),
-resolve(),
-json(),
-babel({
-exclude: ["node_modules/**"],
-plugins: ["external-helpers"]
-})
-]
+  input: "./index.js",
+  output: [
+    {
+      file: pkg.main,
+      format: "cjs"
+    },
+    {
+      file: pkg.module,
+      format: "es"
+    }
+  ],
+  external: [
+    "react",
+    "react-dom",
+    "prop-types",
+    "styled-components",
+    "@staccx/theme",
+    "@staccx/base"
+  ],
+  plugins: [
+    commonjs(),
+    resolve(),
+    json(),
+    babel({
+      exclude: ["node_modules/**"],
+      plugins: ["external-helpers"]
+    })
+  ]
 }
