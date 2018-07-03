@@ -15,89 +15,7 @@ import {
 } from "@staccx/theme"
 import themePropTypes from "../constants/themePropTypes"
 
-const Icon = ({ type, props }) => {
-  switch (type) {
-    case "info":
-      return (
-        <ThemeComponent
-          tagName={Alert.themeProps.componentAlertInfo.name}
-          fallback={Info}
-          {...props}
-        />
-      )
-    case "warning":
-      return (
-        <ThemeComponent
-          tagName={Alert.themeProps.componentAlertWarning.name}
-          fallback={Warning}
-          {...props}
-        />
-      )
-    case "success":
-      return (
-        <ThemeComponent
-          tagName={Alert.themeProps.componentAlertSuccess.name}
-          fallback={Success}
-          {...props}
-        />
-      )
-    default:
-      return null
-  }
-}
-
-const colors = ({ type }) => {
-  switch (type) {
-    case "warning":
-      return css`
-        background-color: ${color("warning")};
-        color: ${color("white")};
-        ${themify(Alert.themeProps.alertWarning.name)};
-      `
-    case "success":
-      return css`
-        background-color: ${color("positive")};
-        color: ${color("white")};
-        ${themify(Alert.themeProps.alertSuccess.name)};
-      `
-    case "info":
-    default:
-      return css`
-        background-color: ${color("line")};
-        color: ${color("text")};
-        ${themify(Alert.themeProps.alertInfo.name)};
-      `
-  }
-}
-
-const Alert = ({ children, type, ...restProps }) => {
-  return (
-    <AlertElement type={type} role="alert" {...restProps}>
-      <Flag small img={<Icon type={type} />}>
-        {children}
-      </Flag>
-    </AlertElement>
-  )
-}
-
-const AlertElement = styled.div`
-  width: 100%;
-  border-radius: ${borderRadius};
-  padding: ${spacing.small};
-  ${colors};
-  ${themify(Alert.themeProps.alert.name)};
-`
-
-Alert.propTypes = {
-  children: themeProps.children.isRequired,
-  type: PropTypes.oneOf(["warning", "success", "info"])
-}
-
-Alert.defaultProps = {
-  type: "info"
-}
-
-Alert.themeProps = {
+const tProps = {
   alert: {
     name: "ALERT",
     description: "Alert style",
@@ -134,5 +52,89 @@ Alert.themeProps = {
     type: themePropTypes.style
   }
 }
+
+const Icon = ({ type, props }) => {
+  switch (type) {
+    case "info":
+      return (
+        <ThemeComponent
+          tagName={tProps.componentAlertInfo}
+          fallback={Info}
+          {...props}
+        />
+      )
+    case "warning":
+      return (
+        <ThemeComponent
+          tagName={tProps.componentAlertWarning}
+          fallback={Warning}
+          {...props}
+        />
+      )
+    case "success":
+      return (
+        <ThemeComponent
+          tagName={tProps.componentAlertSuccess}
+          fallback={Success}
+          {...props}
+        />
+      )
+    default:
+      return null
+  }
+}
+
+const colors = ({ type }) => {
+  switch (type) {
+    case "warning":
+      return css`
+        background-color: ${color("warning")};
+        color: ${color("white")};
+        ${themify(tProps.alertWarning)};
+      `
+    case "success":
+      return css`
+        background-color: ${color("positive")};
+        color: ${color("white")};
+        ${themify(tProps.alertSuccess)};
+      `
+    case "info":
+    default:
+      return css`
+        background-color: ${color("line")};
+        color: ${color("text")};
+        ${themify(tProps.alertInfo)};
+      `
+  }
+}
+
+const Alert = ({ children, type, ...restProps }) => {
+  return (
+    <AlertElement type={type} role="alert" {...restProps}>
+      <Flag small img={<Icon type={type} />}>
+        {children}
+      </Flag>
+    </AlertElement>
+  )
+}
+
+const AlertElement = styled.div`
+  width: 100%;
+  border-radius: ${borderRadius};
+  padding: ${spacing.small};
+  ${colors};
+  ${themify(tProps.alert)};
+`
+
+Alert.propTypes = {
+  children: themeProps.children.isRequired,
+  type: PropTypes.oneOf(["warning", "success", "info"])
+}
+
+Alert.defaultProps = {
+  type: "info"
+}
+
+Alert.themeProps = tProps
 
 export default Alert
