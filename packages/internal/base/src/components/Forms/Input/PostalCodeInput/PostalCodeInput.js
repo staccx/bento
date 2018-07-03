@@ -5,6 +5,7 @@ import { postalCodeMasks } from "../masks"
 import Loading from "../../../DataViz/Loading/Loading"
 import { spacing, targetSize, color, font, themify } from "@staccx/theme"
 import { FadeIn } from "@staccx/animations"
+import themePropTypes from "../../../constants/themePropTypes"
 
 class PostalCodeInput extends React.PureComponent {
   constructor(props, context) {
@@ -59,15 +60,31 @@ class PostalCodeInput extends React.PureComponent {
   }
 }
 
-export const POSTAL_WRAPPER = "POSTAL_WRAPPER"
+PostalCodeInput.themeProps = {
+  wrapper: {
+    name: "POSTAL_WRAPPER",
+    description: "Wrapper style",
+    type: themePropTypes.style
+  },
+  location: {
+    name: "POSTAL_LOCATION",
+    description: "Location style",
+    type: themePropTypes.style
+  },
+  input: {
+    name: "POSTAL_INPUT",
+    description: "Input style",
+    type: themePropTypes.style
+  }
+}
+
 const PostalInputWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  ${themify(POSTAL_WRAPPER)};
+  ${themify(PostalCodeInput.themeProps.wrapper)};
 `
 
-export const POSTAL_LOCATION = "POSTAL_LOCATION"
 const Location = styled.div`
   padding-left: ${spacing.small};
   min-height: ${targetSize.normal};
@@ -78,13 +95,12 @@ const Location = styled.div`
   color: ${p => (p.valid ? color("wcag")(p) : color("warning")(p))};
   opacity: 0;
   animation: ${FadeIn} 0.8s ease-out forwards 1;
-  ${themify(POSTAL_LOCATION)};
+  ${themify(PostalCodeInput.themeProps.location)};
 `
 
-export const POSTAL_INPUT = "POSTAL_INPUT"
 const PostalInput = styled(Input)`
   width: 5em;
-  ${themify(POSTAL_INPUT)};
+  ${themify(PostalCodeInput.themeProps.input)};
 `
 
 // TODO: debounce calls?
