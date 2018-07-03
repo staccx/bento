@@ -1,12 +1,12 @@
 // Forms
-import Input, * as InputStyles from "./components/Forms/Input/Input"
+import Input from "./components/Forms/Input/Input"
 import CurrencyInput from "./components/Forms/Input/CurrencyInput/CurrencyInput"
 import AccountInput from "./components/Forms/Input/AccountInput/AccountInput"
 import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
 import PostalCodeInput from "./components/Forms/Input/PostalCodeInput/PostalCodeInput"
 import NationalIdInput from "./components/Forms/Input/NationalIdInput/NationalIdInput"
 import CompanyInput from "./components/Forms/Input/CompanyInput/CompanyInput"
-import Label, * as LabelStyles from "./components/Forms/Label/Label"
+import Label from "./components/Forms/Label/Label"
 import Legend, * as LegendStyles from "./components/Forms/Legend/Legend"
 import CheckBox, * as CheckBoxStyles from "./components/Forms/CheckBox/CheckBox"
 import RadioButton from "./components/Forms/RadioButton/RadioButton"
@@ -135,13 +135,11 @@ export {
   Info,
   InlineListItem,
   Input,
-  InputStyles,
   ItemGroup,
   ItemGroupStyles,
   JsonSchema,
   KeyFigures,
   Label,
-  LabelStyles,
   Layout,
   LayoutItem,
   LayoutItemStyles,

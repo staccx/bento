@@ -13,14 +13,21 @@ import {
   fontWeight,
   themeProps
 } from "@staccx/theme"
-
-export const LABEL = "LABEL"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Label = ({ className, children, ...rest }) => (
   <LabelElement className={className} {...rest}>
     {children}
   </LabelElement>
 )
+
+Label.themeProps = {
+  label: {
+    name: "LABEL",
+    description: "Label style",
+    type: themePropTypes.style
+  }
+}
 
 const LabelElement = styled.label`
   font-weight: ${fontWeight.bold};
@@ -29,7 +36,7 @@ const LabelElement = styled.label`
   line-height: 1.2;
   padding-bottom: ${spacing.tiny};
   display: block;
-  ${themify(LABEL)};
+  ${themify(Label.themeProps.label)};
 `
 
 Label.defaultProps = {
