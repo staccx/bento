@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { ScaleInX } from "@staccx/animations"
 import { spacing, font, color, themify } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const ProgressBar = ({ progress, className, ...otherProps }) => (
   <Bg className={className} {...otherProps}>
@@ -12,7 +13,23 @@ const ProgressBar = ({ progress, className, ...otherProps }) => (
   </Bg>
 )
 
-export const PROGRESS_BAR = "progress_bar"
+const themeProps = {
+  background: {
+    name: "progress_bar",
+    description: "Progress bar background style",
+    type: themePropTypes.style
+  },
+  bar: {
+    name: "progress_bar_bar",
+    description: "Progress bar bar style",
+    type: themePropTypes.style
+  },
+  progress: {
+    name: "progress_bar_progress",
+    description: "Progress bar progress style",
+    type: themePropTypes.style
+  }
+}
 
 const Bg = styled.div`
   background: ${color.subtleHover};
@@ -26,10 +43,8 @@ const Bg = styled.div`
     white,
     black
   ); /* to remove transition-bug */
-  ${themify(PROGRESS_BAR)};
+  ${themify(themeProps.background.name)};
 `
-
-export const PROGRESS_BAR_BAR = "progress_bar_bar"
 
 const Bar = styled.div`
   position: absolute;
@@ -42,17 +57,16 @@ const Bar = styled.div`
   animation: ${ScaleInX} 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 1
     forwards;
   transform-origin: left center;
-  ${themify(PROGRESS_BAR_BAR)};
+  ${themify(themeProps.bar.name)};
 `
 
-export const PROGRESS_BAR_PROGRESS = "progress_bar_progress"
 const Progress = styled.span`
   position: absolute;
   right: ${spacing.small()};
   line-height: 18px;
   font-size: ${font.tiny};
   color: ${color.white};
-  ${themify(PROGRESS_BAR_PROGRESS)};
+  ${themify(themeProps.progress.name)};
 `
 
 ProgressBar.defaultProps = {
@@ -63,5 +77,7 @@ ProgressBar.propTypes = {
   progress: PropTypes.number.isRequired,
   className: PropTypes.string
 }
+
+ProgressBar.themeProps = themeProps
 
 export default ProgressBar
