@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { color, spacing, registerStyle } from "@staccx/theme"
-import { ListStyles } from "@staccx/base"
+import { List } from "@staccx/base"
 
 export const ListStyling = registerStyle(
   {
@@ -27,5 +27,5 @@ export const ListStyling = registerStyle(
       }
     `
   },
-  ListStyles.LIST
+  List.themeProps.list
 )

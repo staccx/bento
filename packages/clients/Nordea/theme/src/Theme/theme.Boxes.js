@@ -6,7 +6,7 @@ import {
   targetSize,
   VARIANT_DEFAULT
 } from "@staccx/theme"
-import { BoxStyles } from "@staccx/base"
+import { Box } from "@staccx/base"
 
 export const BoxStyling = registerStyle(
   {
@@ -30,5 +30,5 @@ export const BoxStyling = registerStyle(
       background-color: ${color.white};
     `
   },
-  BoxStyles.BOX
+  Box.themeProps.box
 )

@@ -1,7 +1,10 @@
 import { css } from "styled-components"
 import { registerStyle } from "@staccx/theme"
-import { LayoutStyles, LayoutItemStyles } from "@staccx/base"
+import { Layout, LayoutItem } from "@staccx/base"
 
-export const LayoutStyling = registerStyle({}, LayoutStyles.LAYOUT)
+export const LayoutStyling = registerStyle({}, Layout.themeProps.container)
 
-export const LayoutItemStyling = registerStyle({}, LayoutItemStyles.LAYOUT_ITEM)
+export const LayoutItemStyling = registerStyle(
+  {},
+  LayoutItem.themeProps.container
+)

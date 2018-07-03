@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { registerStyle, VARIANT_DEFAULT, color } from "@staccx/theme"
-import { InputStyles, fontSmoothing } from "@staccx/base"
+import { Input, fontSmoothing } from "@staccx/base"
 
 export const InputStyling = registerStyle(
   {
@@ -16,7 +16,7 @@ export const InputStyling = registerStyle(
       }
     `
   },
-  InputStyles.INPUT
+  Input.themeProps.input
 )
 
 export const InputWrapperStyling = registerStyle(
@@ -25,5 +25,5 @@ export const InputWrapperStyling = registerStyle(
       flex-grow: 1;
     `
   },
-  InputStyles.INPUT_WRAPPER
+  Input.themeProps.wrapper
 )
