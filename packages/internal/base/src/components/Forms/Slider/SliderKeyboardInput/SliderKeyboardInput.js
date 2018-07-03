@@ -7,6 +7,7 @@ import Label from "../../Label/Label"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
 import { targetSize, fontFamily, font, color, themify } from "@staccx/theme"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const removeSpaces = value => value.replace(/\s/g, "")
 
@@ -163,14 +164,25 @@ class SliderKeyboardInput extends React.Component {
   }
 }
 
-export const SLIDER_KEYBOARD_WRAPPER = "SLIDER_KEYBOARD_WRAPPER"
+SliderKeyboardInput.themeProps = {
+  wrapper: {
+    name: "SLIDER_KEYBOARD_WRAPPER",
+    description: "Wrapper style",
+    type: themePropTypes.style
+  },
+  input: {
+    name: "SLIDER_KEYBOARD_INPUT",
+    description: "Wrapper style",
+    type: themePropTypes.style
+  }
+}
+
 const SliderWrapper = styled.div`
   font-family: ${fontFamily.body()};
   font-size: ${font.input};
-  ${themify(SLIDER_KEYBOARD_WRAPPER)};
+  ${themify(SliderKeyboardInput.themeProps.wrapper)};
 `
 
-export const SLIDER_KEYBOARD_INPUT = "SLIDER_KEYBOARD_INPUT"
 const SliderInput = styled(Input)`
   background-color: transparent;
   border: 0;
@@ -197,7 +209,7 @@ const SliderInput = styled(Input)`
   &:disabled {
     color: ${color.text};
   }
-  ${themify(SLIDER_KEYBOARD_INPUT)};
+  ${themify(SliderKeyboardInput.themeProps.input)};
 `
 
 SliderKeyboardInput.defaultProps = {
