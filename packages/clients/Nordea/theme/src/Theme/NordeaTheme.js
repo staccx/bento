@@ -10,6 +10,10 @@ import { TextStyling } from "./theme.Texts"
 import { ButtonStyling } from "./theme.Buttons"
 import { InputStyling } from "./theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
+import { LogoStyle } from "./Logo"
+import { AddIcon } from "./Icons/Add"
+import { NewsIcon } from "./Icons/News"
+import { AlertIcon } from "./Icons/Alert"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -40,11 +44,11 @@ const spacing = {
 
 const color = {
   bg: "#F4F2F1",
-  primary: "#00005E",
+  primary: "#0000A0",
   primaryLight: "#DCEDFF",
   secondary: "#FDECE4",
   gray: "#646464",
-  text: "#000",
+  text: "#000040",
   white: "#fff",
   red: "#FC6161",
   yellow: "#FFE184",
@@ -53,7 +57,13 @@ const color = {
   disabled: "#E4E4E4",
   warning: "#FC6161",
   black: "#000",
-  subtleHover: "#E5F2FF"
+  subtleHover: "#E5F2FF",
+  b5: "#00005E",
+  b4: "#0000A0",
+  b3: "#0000FF",
+  b2: "#3399FF",
+  b1: "#99CCFF",
+  bg1: "#E5F2FF"
 }
 
 const font = {
@@ -79,10 +89,17 @@ const fontFamily = {
   body: "NordeaSansSmall"
 }
 
+const DealerpadSpecificColor = {
+  header: color.b5,
+  headerText: color.white,
+  headerActive: color.b1,
+  headerIconActive: color.white
+}
+
 const theme = new Theme(BaseTheme, {
   font,
   fontWeight,
-  color,
+  color: { ...color, ...DealerpadSpecificColor },
   spacing,
   wrapper,
   targetSize,
@@ -101,4 +118,8 @@ const theme = new Theme(BaseTheme, {
   .addStyles(InputStyling)
   .addStyles(LayoutStyling)
   .addStyles(LayoutItemStyling)
+  .add(LogoStyle)
+  .add(AddIcon)
+  .add(NewsIcon)
+  .add(AlertIcon)
 export default theme

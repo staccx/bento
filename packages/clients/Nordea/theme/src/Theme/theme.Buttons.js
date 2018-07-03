@@ -1,5 +1,23 @@
 import { css } from "styled-components"
-import { registerStyle } from "@staccx/theme"
+import {
+  registerStyle,
+  VARIANT_DEFAULT,
+  color,
+  targetSize
+} from "@staccx/theme"
 import { ButtonStyles } from "@staccx/base"
 
-export const ButtonStyling = registerStyle({}, ButtonStyles.BUTTON)
+export const ButtonStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      border-radius: ${targetSize.normal};
+      background-color: ${color("b5")};
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${color("text")};
+      }
+    `
+  },
+  ButtonStyles.BUTTON
+)

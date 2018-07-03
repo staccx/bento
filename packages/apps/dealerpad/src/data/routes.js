@@ -6,10 +6,10 @@ import Case from "../pages/Case"
 
 const routes = [
   {
-    path: "/",
+    path: "/news",
     component: <Home />,
-    name: "HOME",
-    icon: <i />,
+    name: "Nyheter",
+    icon: "News",
     exact: true,
     _id: "dfs4355jkl",
     inMenu: true
@@ -17,8 +17,8 @@ const routes = [
   {
     path: "/new-case",
     component: <NewCase />,
-    name: "NEW_CASE",
-    icon: <i />,
+    name: "Registrer sak",
+    icon: "Add",
     exact: true,
     _id: "54hgklnkl564",
     inMenu: true
@@ -26,8 +26,8 @@ const routes = [
   {
     path: "/my-sales",
     component: <MySales />,
-    name: "MY_SALES",
-    icon: <i />,
+    name: "Mine salg",
+    icon: "Alert",
     exact: true,
     _id: "dsdsree4",
     inMenu: true

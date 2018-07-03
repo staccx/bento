@@ -1,6 +1,11 @@
 import React, { Component } from "react"
 import { ThemeProxyProvider } from "@staccx/theme"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom"
 import theme from "./theme/Theme"
 import routes from "./data/routes"
 
@@ -22,6 +27,7 @@ class App extends Component {
                   key={page.path}
                 />
               ))}
+              <Redirect from="/" exact to="/news" />
             </Switch>
           </div>
         </Router>
