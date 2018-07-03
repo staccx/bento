@@ -14,14 +14,32 @@ import {
   ThemeComponent,
   themeProps
 } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
-export const COMPONENT_SELECT_SIMPLE_ICON = "COMPONENT_SELECT_SIMPLE_ICON"
+const tProps = {
+  iconComponent: {
+    name: "COMPONENT_SELECT_SIMPLE_ICON",
+    description: "Icon component",
+    type: themePropTypes.component
+  },
+  wrapper: {
+    name: "SELECT_SIMPLE_WRAPPER",
+    description: "Wrapper style",
+    type: themePropTypes.style
+  },
+  icon: {
+    name: "SELECT_SIMPLE_ICON",
+    description: "Icon style",
+    type: themePropTypes.style
+  },
+  select: {
+    name: "SELECT_SIMPLE_SELECT",
+    description: "Icon style",
+    type: themePropTypes.style
+  }
+}
 const IconComponent = ({ ...props }) => (
-  <ThemeComponent
-    tagName={COMPONENT_SELECT_SIMPLE_ICON}
-    fallback={Caret}
-    {...props}
-  />
+  <ThemeComponent tagName={tProps.iconComponent} fallback={Caret} {...props} />
 )
 
 const SelectSimple = ({
@@ -56,15 +74,13 @@ const SelectSimple = ({
   </SelectWrapper>
 )
 
-export const SELECT_SIMPLE_WRAPPER = "SELECT_SIMPLE_WRAPPER"
 const SelectWrapper = styled.div`
   display: block;
   margin-bottom: 0;
   position: relative;
-  ${themify(SELECT_SIMPLE_WRAPPER)};
+  ${themify(tProps.wrapper)};
 `
 
-export const SELECT_SIMPLE_ICON = "SELECT_SIMPLE_ICON"
 const SelectIcon = styled(IconComponent)`
   position: absolute;
   right: ${spacing.small()};
@@ -76,10 +92,9 @@ const SelectIcon = styled(IconComponent)`
   fill: ${color.gray};
   transform: translateY(50%);
   transition: fill 0.2s ease;
-  ${themify(SELECT_SIMPLE_ICON)};
+  ${themify(tProps.icon)};
 `
 
-export const SELECT_SIMPLE_SELECT = "SELECT_SIMPLE_SELECT"
 const Select = styled.select`
   width: 100%;
   min-height: ${targetSize.normal};
@@ -104,7 +119,7 @@ const Select = styled.select`
       fill: ${color.primary};
     }
   }
-  ${themify(SELECT_SIMPLE_SELECT)};
+  ${themify(tProps.select)};
 `
 
 SelectSimple.defaultProps = {
