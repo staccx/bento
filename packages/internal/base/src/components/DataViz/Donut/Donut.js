@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { color, themify } from "@staccx/theme"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Donut = ({ percentage, className, ...rest }) => {
   const dash = 57
@@ -30,27 +31,39 @@ const Donut = ({ percentage, className, ...rest }) => {
   )
 }
 
-export const DONUT = "donut"
+Donut.themeProps = {
+  donut: {
+    name: "donut",
+    description: "Wrapper style for donut",
+    type: themePropTypes.style
+  },
+  donutBackground: {
+    name: "donut_bg",
+    description: "Circle style for donut background",
+    type: themePropTypes.style
+  },
+  donutValue: {
+    name: "donut_value",
+    description: "Value style for donut",
+    type: themePropTypes.style
+  }
+}
 
 const Wrapper = styled.svg`
   transform: rotateY(180deg);
-  ${themify(DONUT)};
+  ${themify(Donut.themeProps.donut.name)};
 `
-
-export const DONUT_BG = "donut_bg"
 
 const Bg = styled.circle`
   stroke: ${color.line};
-  ${themify(DONUT_BG)};
+  ${themify(Donut.themeProps.donutBackground.name)};
 `
-
-export const DONUT_VALUE = "donut_value"
 
 const Value = styled.circle`
   stroke: ${color.primary};
   stroke-dasharray: ${p => p.dash};
   stroke-dashoffset: ${p => p.dashoffset};
-  ${themify(DONUT_VALUE)};
+  ${themify(Donut.themeProps.donutValue.name)};
 `
 
 Donut.defaultProps = {
