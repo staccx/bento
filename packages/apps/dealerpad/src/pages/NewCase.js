@@ -1,10 +1,12 @@
 import React from "react"
-import { Heading } from "@staccx/base"
+import { Heading, Box, Wrapper } from "@staccx/base"
 
 const Home = () => (
-  <div>
-    <Heading level={1}>Create new case</Heading>
-  </div>
+  <Box variant="defaultHero">
+    <Wrapper>
+      <Heading level={1}>Opprett ny sak</Heading>
+    </Wrapper>
+  </Box>
 )
 
 export default Home

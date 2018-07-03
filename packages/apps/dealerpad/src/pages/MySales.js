@@ -1,10 +1,25 @@
 import React from "react"
-import { Heading } from "@staccx/base"
+import { ThemeComponent } from "@staccx/theme"
+import { Heading, Box, Wrapper, Input, Button } from "@staccx/base"
 
 const Home = () => (
-  <div>
-    <Heading level={1}>My sales</Heading>
-  </div>
+  <React.Fragment>
+    <Box variant="defaultHero">
+      <Wrapper size="medium">
+        <Heading level={1}>Mine salg</Heading>
+      </Wrapper>
+    </Box>
+    <Wrapper size="medium">
+      <Box variant="salesSearch">
+        <Input placeholder="Søk i mine saker" />
+        <Button variant="filter">
+          <ThemeComponent tagName={"filterIcon"} />
+          Filter
+        </Button>
+      </Box>
+      <Box variant="subtle">Her skal blokken til Robin inn</Box>
+    </Wrapper>
+  </React.Fragment>
 )
 
 export default Home

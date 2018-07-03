@@ -8,7 +8,7 @@ import { AlertStyling } from "./theme.Alerts"
 import { ListStyling } from "./theme.Lists"
 import { TextStyling } from "./theme.Texts"
 import { ButtonStyling } from "./theme.Buttons"
-import { InputStyling } from "./theme.Inputs"
+import { InputStyling, InputWrapperStyling } from "./theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { LogoStyle } from "./Logo"
 import { AddIcon } from "./Icons/Add"
@@ -25,7 +25,7 @@ const targetSize = {
 
 const wrapper = {
   small: "460px",
-  medium: "460px",
+  medium: "648px",
   large: "720px",
   huge: "1284px",
   breakout: "640px"
@@ -52,7 +52,7 @@ const color = {
   white: "#fff",
   red: "#FC6161",
   yellow: "#FFE184",
-  line: "#979797",
+  line: "#C9C7C7",
   wcag: "#777",
   disabled: "#E4E4E4",
   warning: "#FC6161",
@@ -86,7 +86,7 @@ const DealerpadSpecificColor = {
 }
 
 const font = {
-  h1: "36px",
+  h1: "32px",
   h2: "26px",
   h3: "22px",
   h4: "18px",
@@ -120,16 +120,17 @@ const theme = new Theme(BaseTheme, {
   fontFamily,
   global: reset
 })
-  .addStyles(HeadingStyling)
-  .addStyles(ParagraphStyling)
-  .addStyles(BoxStyling)
-  .addStyles(AlertStyling)
-  .addStyles(ListStyling)
-  .addStyles(TextStyling)
-  .addStyles(ButtonStyling)
-  .addStyles(InputStyling)
-  .addStyles(LayoutStyling)
-  .addStyles(LayoutItemStyling)
+  .add(HeadingStyling)
+  .add(ParagraphStyling)
+  .add(BoxStyling)
+  .add(AlertStyling)
+  .add(ListStyling)
+  .add(TextStyling)
+  .add(ButtonStyling)
+  .add(InputStyling)
+  .add(InputWrapperStyling)
+  .add(LayoutStyling)
+  .add(LayoutItemStyling)
   .add(LogoStyle)
   .add(AddIcon)
   .add(NewsIcon)
