@@ -42,13 +42,13 @@ const ApiReference = () => (
                   paddingBottom="huge"
                   key={tag}
                 >
-                  {openapi.components.schemas[
+                  {openapi.definitions[
                     tag.charAt(0).toUpperCase() + tag.slice(1)
                   ] && (
                     <Definitions
                       tag={tag}
                       definitions={
-                        openapi.components.schemas[
+                        openapi.definitions[
                           tag.charAt(0).toUpperCase() + tag.slice(1)
                         ]
                       }
