@@ -16,10 +16,7 @@ import {
   targetSize,
   fontFamily
 } from "@staccx/theme"
-
-export const INPUT = "INPUT"
-export const INPUT_LABEL = "INPUT_LABEL"
-export const INPUT_WRAPPER = "INPUT_WRAPPER"
+import themePropTypes from "../../constants/themePropTypes"
 
 class Input extends React.Component {
   constructor(props) {
@@ -93,15 +90,33 @@ class Input extends React.Component {
   }
 }
 
+Input.themeProps = {
+  input: {
+    name: "INPUT",
+    description: "Input style",
+    type: themePropTypes.style
+  },
+  wrapper: {
+    name: "INPUT_WRAPPER",
+    description: "Wrapper style",
+    type: themePropTypes.style
+  },
+  label: {
+    name: "INPUT_LABEL",
+    description: "Label style",
+    type: themePropTypes.style
+  }
+}
+
 const InputLabel = styled(Label)`
-  ${themify(INPUT_LABEL)};
+  ${themify(Input.themeProps.label)};
 `
 
 export const InputWrapper = styled.div`
   display: block;
   margin-bottom: 0;
   position: relative;
-  ${themify(INPUT_WRAPPER)};
+  ${themify(Input.themeProps.wrapper)};
 `
 
 export const inputCss = css`
@@ -152,7 +167,7 @@ export const inputCss = css`
     -webkit-appearance: none;
     margin: 0;
   }
-  ${themify(INPUT)};
+  ${themify(Input.themeProps.input)};
 `
 
 const InputWithMask = styled(MaskedInput)`
