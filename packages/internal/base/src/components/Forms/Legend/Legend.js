@@ -13,14 +13,21 @@ import {
   fontWeight,
   themeProps
 } from "@staccx/theme"
-
-export const LEGEND = "LEGEND"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Legend = ({ className, children, ...rest }) => (
   <LegendElement className={className} {...rest}>
     {children}
   </LegendElement>
 )
+
+Legend.themeProps = {
+  legend: {
+    name: "LEGEND",
+    description: "Legend style",
+    type: themePropTypes.style
+  }
+}
 
 const LegendElement = styled.legend`
   font-weight: ${fontWeight.bold};
@@ -29,7 +36,7 @@ const LegendElement = styled.legend`
   line-height: 1.2;
   padding-bottom: ${spacing.tiny};
   display: block;
-  ${themify(LEGEND)};
+  ${themify(Legend.themeProps.legend)};
 `
 
 Legend.defaultProps = {
