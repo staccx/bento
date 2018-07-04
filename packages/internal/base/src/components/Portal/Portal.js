@@ -10,12 +10,12 @@ import {
 } from "@staccx/theme"
 import themePropTypes from "../constants/themePropTypes"
 
-const Portal = ({ label, className, tagName, ...rest }) => (
-  <PortalWrapper className={className} {...rest}>
-    <IconWrapper>
+const Portal = ({ label, className, tagName, variant, ...rest }) => (
+  <PortalWrapper className={className} {...rest} variant={variant}>
+    <IconWrapper variant={variant}>
       <ThemeComponent tagName={tagName} />
     </IconWrapper>
-    <Label>{label}</Label>
+    <Label variant={variant}>{label}</Label>
   </PortalWrapper>
 )
 
@@ -78,7 +78,8 @@ Portal.defaultProps = {
 Portal.propTypes = {
   children: themeProps.children.isRequired,
   className: PropTypes.string,
-  tagName: PropTypes.string
+  tagName: PropTypes.string,
+  variant: PropTypes.string
 }
 
 export default Portal

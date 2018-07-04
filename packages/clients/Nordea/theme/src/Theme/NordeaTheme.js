@@ -25,8 +25,11 @@ import { AccountIcon } from "./Icons/Account"
 import { CardIcon } from "./Icons/Card"
 import { CheckmarkIcon } from "./Icons/Checkmark"
 import { DotIcon } from "./Icons/Dot"
+import { PhoneIcon } from "./Icons/Phone"
+import { MailIcon } from "./Icons/Mail"
 import { ArrowRightIcon } from "./Icons/ArrowRight"
 import { TagStyling } from "./theme.Tag"
+import { PortalIcon, PortalLabel } from "./theme.Portal"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -95,7 +98,9 @@ const DealerpadSpecificColor = {
   header: color.b5,
   headerText: color.white,
   headerActive: color.b1,
-  headerIconActive: color.white
+  headerIconActive: color.white,
+  contactIcon: color.p2,
+  contactIconHover: color.p3
 }
 
 const font = {
@@ -158,7 +163,11 @@ const theme = new Theme(BaseTheme, {
   .add(CardIcon)
   .add(CheckmarkIcon)
   .add(DotIcon)
+  .add(PhoneIcon)
+  .add(MailIcon)
   .add(ArrowRightIcon)
   .add(NewBadgeBadgeStyling)
   .add(TagStyling)
+  .add(PortalIcon)
+  .add(PortalLabel)
 export default theme

@@ -11,8 +11,8 @@ import {
 } from "@staccx/theme"
 import themePropTypes from "../../constants/themePropTypes"
 
-const Tag = ({ children, className, ...rest }) => (
-  <TagWrapper className={className} {...rest}>
+const Tag = ({ children, className, variant, ...rest }) => (
+  <TagWrapper className={className} variant={variant} {...rest}>
     {children}
   </TagWrapper>
 )
@@ -42,7 +42,8 @@ Tag.defaultProps = {
 
 Tag.propTypes = {
   children: themeProps.children.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  variant: PropTypes.string
 }
 
 export default Tag

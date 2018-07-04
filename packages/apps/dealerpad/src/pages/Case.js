@@ -24,14 +24,23 @@ const Home = () => (
         </Paragraph>
       </Wrapper>
     </Box>
-    <Heading level="2" variant="subtle">
-      Låntaker
-    </Heading>
-    <Contact
-      name={currentCase.customer.name}
-      phoneNumber={currentCase.customer.phoneNumber}
-      eMail={currentCase.customer.eMail}
-    />
+    <div>
+      <Heading level="2" variant="subtle">
+        Låntaker
+      </Heading>
+      <Contact
+        name={currentCase.customer.name}
+        phoneNumber={currentCase.customer.phoneNumber}
+        eMail={currentCase.customer.eMail}
+      />
+      {currentCase.cosigner && (
+        <Contact
+          name={currentCase.cosigner.name}
+          phoneNumber={currentCase.cosigner.phoneNumber}
+          eMail={currentCase.cosigner.eMail}
+        />
+      )}
+    </div>
   </div>
 )
 

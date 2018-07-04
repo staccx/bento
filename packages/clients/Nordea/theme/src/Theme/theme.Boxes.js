@@ -33,6 +33,7 @@ export const BoxStyling = registerStyle(
     `,
     contact: css`
       background-color: ${color.white};
+      margin-bottom: ${spacing.small};
     `
   },
   Box.themeProps.box
