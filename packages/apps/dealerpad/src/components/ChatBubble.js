@@ -4,9 +4,9 @@ import { color, spacing, font } from "@staccx/theme"
 import { Flag, fontSmoothing } from "@staccx/base"
 import AvatarInitials from "./AvatarInitials"
 
-const ChatBubble = ({ from, body, date, time }) => (
+const ChatBubble = ({ from, body, date, time, currentUser }) => (
   <Flag top small img={<AvatarInitials name={from} />}>
-    <Bubble>
+    <Bubble currentUser={currentUser}>
       {body}
       <Time>
         {date} {time}
@@ -16,8 +16,8 @@ const ChatBubble = ({ from, body, date, time }) => (
 )
 
 const Bubble = styled.div`
-  background-color: ${color("b2")};
-  color: ${color.white};
+  background-color: ${p => (p.currentUser ? color("bg") : color("b2"))};
+  color: ${p => (p.currentUser ? color("text") : color("white"))};
   padding: ${spacing.small};
   font-size: ${font.tiny};
   border-radius: 4px;

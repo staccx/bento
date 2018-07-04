@@ -13,6 +13,7 @@ const ChatLogic = ({ messages }) => {
             time={message.time}
             from={message.from}
             date={message.date}
+            currentUser={false}
           />
         ))}
       </Layout>
