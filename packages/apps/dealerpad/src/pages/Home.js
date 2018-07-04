@@ -3,6 +3,7 @@ import { Heading, Button, Layout, LayoutItem, Wrapper } from "@staccx/base"
 import NewsHero from "../components/News/News.Hero"
 import NewsList from "../components/News/News.List"
 import CasesList from "../components/Cases/Cases.List"
+import CasesProgressLarge from "../components/Cases/Cases.Progress.Large"
 import getNewsItems from "../data/news"
 import getCases from "../data/cases"
 
@@ -26,6 +27,7 @@ const Home = () => (
           </Layout>
         </LayoutItem>
       </Layout>
+      <CasesProgressLarge progress={2} max={4} />
     </Wrapper>
 
     <Heading level={1}>Welcome home</Heading>

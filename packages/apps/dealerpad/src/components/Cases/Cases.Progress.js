@@ -9,7 +9,6 @@ const CasesProgress = ({ progress, max, inverted }) => {
   return (
     <Outer inverted={inverted}>
       {progressArray.map((dot, index) => {
-        console.log(index === progress)
         return index === progress - 1 ? (
           <Current>
             <IconWrapper large>
