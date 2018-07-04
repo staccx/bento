@@ -21,26 +21,34 @@ class PostalCodeInput extends React.PureComponent {
 
   getPostalPlace(postalCode) {
     this.setState({ isLoading: true })
-    window
+    return window
       .fetch(
         `https://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&pnr=${postalCode}`
       )
       .then(result => result.json())
-      .then(place => this.setState({ place, isLoading: false }))
+      .then(
+        place =>
+          new Promise(resolve =>
+            this.setState({ place, postalCode, isLoading: false }, resolve)
+          )
+      )
       .catch(() => this.setState({ isLoading: false }))
   }
 
   handleChange(e) {
     const { value } = e.target
     if (value && !isNaN(value)) {
-      this.getPostalPlace(value)
+      this.getPostalPlace(value).then(() => {
+        if (this.props.onChange) {
+          this.props.onChange(this.state)
+        }
+      })
     } else if (this.state.place) {
       this.setState({ place: null })
     }
   }
 
   render() {
-    console.log(this.state.place)
     return (
       <PostalInputWrapper>
         <PostalInput

@@ -287,6 +287,8 @@ class Select extends React.PureComponent {
 
 export const DefaultOptionElementWrapper = styled.ul`
   position: absolute;
+  max-height: 300px;
+  overflow: auto;
   width: 100%;
   list-style-type: none;
   padding: 0;
