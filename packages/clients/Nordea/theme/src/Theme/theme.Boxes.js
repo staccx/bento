@@ -20,6 +20,10 @@ export const BoxStyling = registerStyle(
       padding-right: 0;
       padding-bottom: ${spacing.mediumPlus};
     `,
+    caseHero: css`
+      background-color: ${color.secondary};
+      height: 100%;
+    `,
     salesSearch: css`
       padding: 0;
       margin-top: calc(-${targetSize.normal} / 2);
@@ -34,6 +38,10 @@ export const BoxStyling = registerStyle(
     contact: css`
       background-color: ${color.white};
       margin-bottom: ${spacing.small};
+    `,
+    chat: css`
+      background: white;
+      height: 100%;
     `
   },
   Box.themeProps.box

@@ -4,7 +4,6 @@ import {
   VARIANT_DEFAULT,
   color,
   fontWeight,
-  spacing,
   font
 } from "@staccx/theme"
 import { Heading } from "@staccx/base"
@@ -18,8 +17,6 @@ export const HeadingStyling = registerStyle(
       color: ${color("b4")};
       font-weight: ${fontWeight.normal};
       line-height: 1.2;
-      margin-top: ${spacing.small};
-      margin-bottom: ${spacing.small};
     `,
     subtle: css`
       color: ${color.wcag};
