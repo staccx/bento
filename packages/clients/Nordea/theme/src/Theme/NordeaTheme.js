@@ -22,6 +22,7 @@ import { PrivateRentPlusIcon } from "./Icons/PrivateRentPlus"
 import { RentIcon } from "./Icons/Rent"
 import { AccountIcon } from "./Icons/Account"
 import { CardIcon } from "./Icons/Card"
+import { CheckmarkIcon } from "./Icons/Checkmark"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -152,4 +153,5 @@ const theme = new Theme(BaseTheme, {
   .add(RentIcon)
   .add(AccountIcon)
   .add(CardIcon)
+  .add(CheckmarkIcon)
 export default theme

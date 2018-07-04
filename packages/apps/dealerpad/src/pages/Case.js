@@ -1,9 +1,15 @@
 import React from "react"
-import { Heading } from "@staccx/base"
+import { Heading, Box, Wrapper } from "@staccx/base"
+import Tag from "../components/Tag"
 
 const Home = () => (
   <div>
-    <Heading level={1}>Single case view</Heading>
+    <Box variant="defaultHero">
+      <Wrapper size="medium">
+        <Tag>Lån</Tag>
+        <Heading level={1}>Eivind kjellevold</Heading>
+      </Wrapper>
+    </Box>
   </div>
 )
 
