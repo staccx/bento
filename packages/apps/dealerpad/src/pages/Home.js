@@ -29,9 +29,6 @@ const Home = () => (
       </Layout>
       <CasesProgressLarge progress={2} max={4} />
     </Wrapper>
-
-    <Heading level={1}>Welcome home</Heading>
-    <Button type="button">Nordea button</Button>
   </div>
 )
 

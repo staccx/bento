@@ -1,6 +1,8 @@
 import React from "react"
 import { ThemeComponent } from "@staccx/theme"
 import { Heading, Box, Wrapper, Input, Button } from "@staccx/base"
+import getCases from "../data/cases"
+import CasesList from "../components/Cases/Cases.List"
 
 const Home = () => (
   <React.Fragment>
@@ -17,7 +19,7 @@ const Home = () => (
           Filter
         </Button>
       </Box>
-      <Box variant="subtle">Her skal blokken til Robin inn</Box>
+      <CasesList cases={getCases().slice(0, 5)} />
     </Wrapper>
   </React.Fragment>
 )

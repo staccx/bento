@@ -12,7 +12,7 @@ const CasesList = ({ cases, compact }) => (
       <List variant="casesList">
         {cases.map((item, index) => (
           <li key={item.id}>
-            <CaseLink to={`cases/${item.id}`}>
+            <CaseLink to={`sales/${item.id}`}>
               <CaseContainer>
                 <div>
                   <Heading level={5}>{item.customer.name}</Heading>
