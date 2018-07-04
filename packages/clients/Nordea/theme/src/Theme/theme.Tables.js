@@ -6,7 +6,7 @@ import {
   registerStyle,
   VARIANT_DEFAULT
 } from "@staccx/theme"
-import { Table } from "@staccx/base"
+import { Table, hideVisually } from "@staccx/base"
 
 export const TableStyling = registerStyle(
   {
@@ -15,7 +15,7 @@ export const TableStyling = registerStyle(
       font-size: ${font.base};
 
       thead {
-        background-color: ${color("b1")};
+        ${hideVisually};
       }
 
       th {
