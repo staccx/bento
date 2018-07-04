@@ -14,7 +14,8 @@
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build:app": "react-app-rewired build",
+    "build": "yarn prettify && rollup -c",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
@@ -27,12 +28,15 @@
   },
   "dependencies": {
     "@staccx/base": "^5.2.1",
-    "@staccx/theme": "^5.2.1",
     "@staccx/code-generator": "^5.2.1",
     "@staccx/fundu-theme": "^5.2.1",
     "@staccx/soy": "^5.1.0",
+    "@staccx/theme": "^5.2.1",
     "@staccx/utils": "^5.1.0",
     "localforage": "^1.7.2",
     "react-router-hash-link": "^1.2.0"
+  },
+  "devDependencies": {
+    "@staccx/rollup-config": "^1.0.0"
   }
 }

@@ -1,3 +1,1 @@
-export default {
-  // Add code
-}
+export { default } from "./App"

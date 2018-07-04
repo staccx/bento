@@ -181,28 +181,6 @@
     text-mask-core "^5.0.1"
     tinycolor2 "^1.4.1"
 
-"@staccx/eslint-config@^4.20.1":
-  version "4.20.1"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/eslint-config/-/@staccx/eslint-config-4.20.1.tgz#7e4fba53cef1334bbf757d2cc84a964232ad9e97"
-  dependencies:
-    babel-eslint "^8.2.2"
-    eslint "^4.18.2"
-    eslint-config-prettier "^2.9.0"
-    eslint-config-standard "^11.0.0"
-    eslint-config-standard-jsx "^5.0.0"
-    eslint-config-standard-react "^6.0.0"
-    eslint-plugin-import "^2.9.0"
-    eslint-plugin-node "^6.0.1"
-    eslint-plugin-prettier "^2.6.0"
-    eslint-plugin-promise "^3.6.0"
-    eslint-plugin-react "^7.7.0"
-    eslint-plugin-standard "^3.0.1"
-    husky "^0.14.3"
-    lint-staged "^7.1.2"
-    prettier "^1.10.2"
-    prettier-eslint-cli "^4.7.1"
-    standard "^11.0.1"
-
 "@staccx/formatting@^0.2.0":
   version "0.2.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-0.2.0.tgz#b8625abc1d52fe9559ab00d2450d1d941d55768f"
@@ -237,6 +215,14 @@
   dependencies:
     babel-preset-flow "6.23.0"
     eslint-plugin-flowtype "2.43.0"
+
+"@types/estree@0.0.39":
+  version "0.0.39"
+  resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
+
+"@types/node@*":
+  version "10.5.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.1.tgz#d578446f4abff5c0b49ade9b4e5274f6badaadfc"
 
 "@webpack-blocks/assets@^1.0.0":
   version "1.0.0"
@@ -3910,7 +3896,7 @@ eslint@4.10.0:
     table "^4.0.1"
     text-table "~0.2.0"
 
-eslint@^4.0.0, eslint@^4.1.1, eslint@^4.18.2, eslint@^4.5.0:
+eslint@^4.0.0, eslint@^4.1.1, eslint@^4.5.0:
   version "4.19.1"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
   dependencies:
@@ -4084,7 +4070,7 @@ estree-walker@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.2.1.tgz#bdafe8095383d8414d5dc2ecf4c9173b6db9412e"
 
-estree-walker@^0.5.0, estree-walker@^0.5.2:
+estree-walker@^0.5.0, estree-walker@^0.5.1, estree-walker@^0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.5.2.tgz#d3850be7529c9580d815600b53126515e146dd39"
 
@@ -8797,7 +8783,7 @@ react-dom-confetti@^0.0.10:
   dependencies:
     dom-confetti "~0.0.11"
 
-react-dom@^16.3.2:
+react-dom@16.4.1, react-dom@^16.3.2:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6"
   dependencies:
@@ -9033,7 +9019,7 @@ react-transition-group@^2.2.1:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react@^16.3.2:
+react@16.4.1, react@^16.3.2:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
   dependencies:
@@ -9577,7 +9563,7 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rollup-plugin-babel@^3.0.3:
+rollup-plugin-babel@^3.0.3, rollup-plugin-babel@^3.0.7:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/rollup-plugin-babel/-/rollup-plugin-babel-3.0.7.tgz#5b13611f1ab8922497e9d15197ae5d8a23fe3b1e"
   dependencies:
@@ -9591,6 +9577,15 @@ rollup-plugin-commonjs@^8.2.1:
     estree-walker "^0.5.0"
     magic-string "^0.22.4"
     resolve "^1.4.0"
+    rollup-pluginutils "^2.0.1"
+
+rollup-plugin-commonjs@^9.1.3:
+  version "9.1.3"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-9.1.3.tgz#37bfbf341292ea14f512438a56df8f9ca3ba4d67"
+  dependencies:
+    estree-walker "^0.5.1"
+    magic-string "^0.22.4"
+    resolve "^1.5.0"
     rollup-pluginutils "^2.0.1"
 
 rollup-plugin-eslint@^4.0.0:
@@ -9616,7 +9611,13 @@ rollup-plugin-json@^2.3.0:
   dependencies:
     rollup-pluginutils "^2.0.1"
 
-rollup-plugin-node-resolve@^3.0.2:
+rollup-plugin-json@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-json/-/rollup-plugin-json-3.0.0.tgz#aeed2ff36e6c4fd0c60c4a8fc3d0884479e9dfce"
+  dependencies:
+    rollup-pluginutils "^2.2.0"
+
+rollup-plugin-node-resolve@^3.0.2, rollup-plugin-node-resolve@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.3.0.tgz#c26d110a36812cbefa7ce117cadcd3439aa1c713"
   dependencies:
@@ -9631,7 +9632,7 @@ rollup-pluginutils@^1.5.0:
     estree-walker "^0.2.1"
     minimatch "^3.0.2"
 
-rollup-pluginutils@^2.0.1:
+rollup-pluginutils@^2.0.1, rollup-pluginutils@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.3.0.tgz#478ace04bd7f6da2e724356ca798214884738fc4"
   dependencies:
@@ -9641,6 +9642,13 @@ rollup-pluginutils@^2.0.1:
 rollup@^0.54.0:
   version "0.54.1"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.54.1.tgz#415a5d999421502646cf54b873fc4ce1a7393970"
+
+rollup@^0.62.0:
+  version "0.62.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.62.0.tgz#4ca8b3c9582195dc9341ff8a1375f58319b95bfc"
+  dependencies:
+    "@types/estree" "0.0.39"
+    "@types/node" "*"
 
 run-async@^2.2.0:
   version "2.3.0"
