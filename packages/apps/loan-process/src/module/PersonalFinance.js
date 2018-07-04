@@ -1,10 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { withFormik } from "formik"
+import { Field, Formik } from "formik"
 import {
   Alert,
   Wrapper,
-  Input,
   Label,
   RadioPill,
   RadioPillItem,
@@ -14,275 +13,326 @@ import {
   Box,
   Heading,
   Layout,
-  LayoutItem
+  LayoutItem,
+  PostalCodeInput
 } from "@staccx/base"
 import relationshipStatus, { hasPartner } from "./constants/relationshipStatus"
 const Yup = require("yup")
 
-const Form = props => {
-  const {
-    values,
-    errors,
-    isSubmitting,
-    handleChange,
-    handleBlur,
-    handleSubmit
-  } = props
+class PersonalFinance extends React.Component {
+  constructor(props, context) {
+    super(props, context)
+    this.handleValidated = this.handleValidated.bind(this)
+  }
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <Wrapper size="large" breakout>
-        <Heading variant="stepHeading">{props.headingText}</Heading>
-        <Box variant="actionBox">
-          <Box variant="largeForm">
-            <div>
-              <Heading level={2} variant="formSection">
-                {props.headingPersonaliaText}
-              </Heading>
-              <Layout variant="formElements">
-                <LayoutItem>
-                  <Input
-                    label={props.postNumberLabelText}
-                    id="postalCode"
-                    type="number"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.postalCode && (
-                    <Alert type="warning" variant="error">
-                      {errors.postalCode}
-                    </Alert>
-                  )}
-                </LayoutItem>
-                <LayoutItem>
-                  <SelectSimple
-                    label="Sivilstatus"
-                    placeholder="Velg..."
-                    id="relationshipStatus"
-                    value={values.relationshipStatus}
-                    onChange={handleChange}
-                  >
-                    {relationshipStatus.map(status => (
-                      <option value={status.value} key={status.key}>
-                        {props.renderRelationshipOption(status.key)}
-                      </option>
-                    ))}
-                  </SelectSimple>
-                  {errors.relationshipStatus && (
-                    <Alert type="warning" variant="error">
-                      {errors.relationshipStatus}
-                    </Alert>
-                  )}
-                </LayoutItem>
-                <LayoutItem>
-                  <Label variant="radioPill">{props.peopleUnder18Text}</Label>
-                  <RadioPill
-                    group={"numberOfChildren"}
-                    onChange={handleChange}
-                    full
-                  >
-                    {Array.apply(null, Array(5 + 1))
-                      .map((n, i) => i)
-                      .map(val => (
-                        <RadioPillItem
-                          key={val}
-                          id={val}
-                          value={val}
-                          group={"numberOfChildren"}
-                          defaultChecked={values.numberOfChildren === val}
-                        >
-                          {val}
-                        </RadioPillItem>
-                      ))}
-                  </RadioPill>
-                  {errors.numberOfChildren && (
-                    <Alert type="warning" variant="error">
-                      {errors.numberOfChildren}
-                    </Alert>
-                  )}
-                </LayoutItem>
-              </Layout>
-            </div>
-
-            <div>
-              <Heading level={2} variant="formSection">
-                {props.headingIncomeAndExpensesText}
-              </Heading>
-              <Layout variant="formElements">
-                {values.relationshipStatus &&
-                  hasPartner(values.relationshipStatus) && (
-                    <LayoutItem>
-                      <CurrencyInput
-                        label={props.spouseSalaryLabelText}
-                        placeholder="0"
-                        id="incomeOfSpouse"
-                        value={values.incomeOfSpouse}
-                        locale={"nb"}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
-                      {errors.incomeOfSpouse && (
-                        <Alert type="warning" variant="error">
-                          {errors.incomeOfSpouse}
-                        </Alert>
-                      )}
-                    </LayoutItem>
-                  )}
-                <LayoutItem>
-                  <CurrencyInput
-                    label={props.salaryLabelText}
-                    placeholder="0"
-                    id="income"
-                    value={values.income}
-                    locale={"nb"}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.income && (
-                    <Alert type="warning" variant="error">
-                      {errors.income}
-                    </Alert>
-                  )}
-                </LayoutItem>
-                <LayoutItem>
-                  <CurrencyInput
-                    label={props.salaryMonthlyText}
-                    placeholder="0"
-                    id="monthlySalary"
-                    value={values.monthlySalary}
-                    locale={"nb"}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.monthlySalary && (
-                    <Alert type="warning" variant="error">
-                      {errors.monthlySalary}
-                    </Alert>
-                  )}
-                </LayoutItem>
-                <LayoutItem>
-                  <CurrencyInput
-                    label={props.mortgageText}
-                    placeholder="0"
-                    id="mortgageTotal"
-                    value={values.mortgageTotal}
-                    locale={"nb"}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.mortgageTotal && (
-                    <Alert type="warning" variant="error">
-                      {errors.mortgageTotal}
-                    </Alert>
-                  )}
-                </LayoutItem>
-                <LayoutItem>
-                  <CurrencyInput
-                    label={props.otherLoansTotalText}
-                    placeholder="0"
-                    id="otherLoansTotal"
-                    value={values.otherLoansTotal}
-                    locale={"nb"}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.otherLoansTotal && (
-                    <Alert type="warning" variant="error">
-                      {errors.otherLoansTotal}
-                    </Alert>
-                  )}
-                </LayoutItem>
-                <LayoutItem>
-                  <CurrencyInput
-                    label={props.expensesRentText}
-                    placeholder="0"
-                    id="monthlyRentAndExpenses"
-                    value={values.monthlyRentAndExpenses}
-                    locale={"nb"}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.monthlyRentAndExpenses && (
-                    <Alert type="warning" variant="error">
-                      {errors.monthlyRentAndExpenses}
-                    </Alert>
-                  )}
-                </LayoutItem>
-              </Layout>
-            </div>
-          </Box>
-        </Box>
-        <Button type="submit" onClick={() => null} disabled={isSubmitting}>
-          {props.renderButtonContent()}
-        </Button>
-      </Wrapper>
-    </form>
-  )
-}
-
-const PersonalFinance = withFormik({
-  mapPropsToValues: props => {
-    return {
-      relationshipStatus: props.relationshipStatus, // [ married, partner, divorced, single, widow, separated ]
-      numberOfChildren: props.numberOfChildren,
-      incomeOfSpouse: props.incomeOfSpouse,
-      income: props.income,
-      monthlySalary: props.monthlySalary,
-      monthlyRentAndExpenses: props.monthlyRentAndExpenses,
-      postalCode: props.postalCode,
-      mortgageTotal: props.mortgageTotal,
-      otherLoansTotal: props.otherLoansTotal
-    }
-  },
-  validationSchema: props =>
-    Yup.object().shape({
+  componentWillMount() {
+    const validateSchema = Yup.object().shape({
       postalCode: Yup.number()
-        .nullable()
         .min(1000)
         .max(9999)
-        .required(props.postNumberError),
-      income: Yup.number()
-        .nullable()
-        .required(props.salaryError),
+        .required(this.props.postNumberError),
+      income: Yup.number().required(this.props.salaryError),
       numberOfChildren: Yup.number()
-        .nullable()
-        .required(props.childrenError),
-      mortgageTotal: Yup.number()
-        .nullable()
-        .required(props.mortgageError),
-      otherLoansTotal: Yup.number()
-        .nullable()
-        .required(props.otherLoansError),
-      monthlySalary: Yup.number()
-        .nullable()
-        .required(props.monthlySalaryError),
+        .transform(value => parseInt(value, 10))
+        .required(this.props.childrenError),
+      mortgageTotal: Yup.number().required(this.props.mortgageError),
+      otherLoansTotal: Yup.number().required(this.props.otherLoansError),
+      monthlySalary: Yup.number().required(this.props.monthlySalaryError),
       incomeOfSpouse: Yup.number().when(
         "relationshipStatus",
         relationshipStatus => {
           return hasPartner(relationshipStatus)
             ? Yup.number()
                 .nullable()
-                .required(props.spouseSalaryError)
+                .required(this.props.spouseSalaryError)
             : Yup.mixed()
         }
       ),
       monthlyRentAndExpenses: Yup.number()
         .nullable()
-        .required(props.expensesRentError),
+        .required(this.props.expensesRentError),
       relationshipStatus: Yup.string()
         .nullable()
         .required("need status")
-    }),
-
-  handleSubmit: (values, { setSubmitting, props }) => {
-    setTimeout(() => {
-      setSubmitting(false)
-      if (props.onValidated) {
-        props.onValidated(values)
-      }
-    }, 200)
+    })
+    this.setState({ validateSchema })
   }
-})(Form)
+
+  handleValidated(values) {
+    this.props.onValidated({
+      ...values,
+      income: parseInt(values.income, 10),
+      monthlyRentAndExpenses: parseInt(values.monthlyRentAndExpenses, 10),
+      monthlySalary: parseInt(values.monthlySalary, 10),
+      mortgageTotal: parseInt(values.mortgageTotal, 10),
+      otherLoansTotal: parseInt(values.otherLoansTotal, 10),
+      numberOfChildren: parseInt(values.numberOfChildren, 10)
+    })
+  }
+
+  render() {
+    return (
+      <Formik
+        initialValues={{}}
+        validationSchema={this.state.validateSchema}
+        onSubmit={this.handleValidated}
+        render={({
+          handleSubmit,
+          isValid,
+          values,
+          touched,
+          errors,
+          setFieldValue
+        }) => {
+          return (
+            <form onSubmit={handleSubmit}>
+              <Wrapper size="large" breakout>
+                <Heading variant="stepHeading">
+                  {this.props.headingText}
+                </Heading>
+                <Box variant="actionBox">
+                  <Box variant="largeForm">
+                    <div>
+                      <Heading level={2} variant="formSection">
+                        {this.props.headingPersonaliaText}
+                      </Heading>
+                      <Layout variant="formElements">
+                        <LayoutItem>
+                          <Field
+                            name={`postalCode`}
+                            render={({ field }) => {
+                              const { value, ...rest } = field
+                              return (
+                                <PostalCodeInput
+                                  id={"postalCode"}
+                                  label={this.props.postNumberLabelText}
+                                  {...rest}
+                                  type="tel"
+                                  onChange={({ postalCode }) => {
+                                    setFieldValue("postalCode", postalCode)
+                                  }}
+                                />
+                              )
+                            }}
+                          />
+                          {touched.postalCode &&
+                            errors.postalCode && (
+                              <Alert variant="error" type="warning">
+                                {errors.postalCode}
+                              </Alert>
+                            )}
+                        </LayoutItem>
+                        <LayoutItem>
+                          <Field
+                            name={`relationshipStatus`}
+                            render={({ field }) => (
+                              <SelectSimple
+                                label="Sivilstatus"
+                                id={"relationshipStatus"}
+                                placeholder="Velg..."
+                                value={values.relationshipStatus}
+                                {...field}
+                              >
+                                {relationshipStatus.map(status => (
+                                  <option value={status.value} key={status.key}>
+                                    {this.props.renderRelationshipOption(
+                                      status.key
+                                    )}
+                                  </option>
+                                ))}
+                              </SelectSimple>
+                            )}
+                          />
+                          {touched.relationshipStatus &&
+                            errors.relationshipStatus && (
+                              <Alert variant="error" type="warning">
+                                {errors.relationshipStatus}
+                              </Alert>
+                            )}
+                        </LayoutItem>
+                        <LayoutItem>
+                          <Label variant="radioPill">
+                            {this.props.peopleUnder18Text}
+                          </Label>
+                          <Field
+                            name={`numberOfChildren`}
+                            render={({ field }) => (
+                              <RadioPill
+                                group={"numberOfChildren"}
+                                full
+                                {...field}
+                              >
+                                {Array.apply(null, Array(5 + 1))
+                                  .map((n, i) => i)
+                                  .map(val => (
+                                    <RadioPillItem
+                                      key={val}
+                                      id={val}
+                                      value={val}
+                                      group={"numberOfChildren"}
+                                      defaultChecked={
+                                        values.numberOfChildren === val
+                                      }
+                                    >
+                                      {val}
+                                    </RadioPillItem>
+                                  ))}
+                              </RadioPill>
+                            )}
+                          />
+                          {touched.numberOfChildren &&
+                            errors.numberOfChildren && (
+                              <Alert variant="error" type="warning">
+                                {errors.numberOfChildren}
+                              </Alert>
+                            )}
+                        </LayoutItem>
+                      </Layout>
+                    </div>
+
+                    <div>
+                      <Heading level={2} variant="formSection">
+                        {this.props.headingIncomeAndExpensesText}
+                      </Heading>
+                      <Layout variant="formElements">
+                        {values.relationshipStatus &&
+                          hasPartner(values.relationshipStatus) && (
+                            <LayoutItem>
+                              <Field
+                                name={`incomeOfSpouse`}
+                                render={({ field }) => (
+                                  <CurrencyInput
+                                    id={"incomeOfSpouse"}
+                                    label={this.props.spouseSalaryLabelText}
+                                    placeholder="0"
+                                    locale={"nb"}
+                                    {...field}
+                                  />
+                                )}
+                              />
+                              {touched.incomeOfSpouse &&
+                                errors.incomeOfSpouse && (
+                                  <Alert variant="error" type="warning">
+                                    {errors.incomeOfSpouse}
+                                  </Alert>
+                                )}
+                            </LayoutItem>
+                          )}
+                        <LayoutItem>
+                          <Field
+                            name={`income`}
+                            render={({ field }) => (
+                              <CurrencyInput
+                                id={"incoincomemeOfSpouse"}
+                                label={this.props.salaryLabelText}
+                                placeholder="0"
+                                locale={"nb"}
+                                {...field}
+                              />
+                            )}
+                          />
+                          {touched.income &&
+                            errors.income && (
+                              <Alert variant="error" type="warning">
+                                {errors.income}
+                              </Alert>
+                            )}
+                        </LayoutItem>
+                        <LayoutItem>
+                          <Field
+                            name={`monthlySalary`}
+                            render={({ field }) => (
+                              <CurrencyInput
+                                id={"monthlySalary"}
+                                label={this.props.salaryMonthlyText}
+                                placeholder="0"
+                                locale={"nb"}
+                                {...field}
+                              />
+                            )}
+                          />
+                          {touched.monthlySalary &&
+                            errors.monthlySalary && (
+                              <Alert variant="error" type="warning">
+                                {errors.monthlySalary}
+                              </Alert>
+                            )}
+                        </LayoutItem>
+                        <LayoutItem>
+                          <Field
+                            name={`mortgageTotal`}
+                            render={({ field }) => (
+                              <CurrencyInput
+                                id={"mortgageTotal"}
+                                label={this.props.mortgageText}
+                                placeholder="0"
+                                locale={"nb"}
+                                {...field}
+                              />
+                            )}
+                          />
+                          {touched.mortgageTotal &&
+                            errors.mortgageTotal && (
+                              <Alert variant="error" type="warning">
+                                {errors.mortgageTotal}
+                              </Alert>
+                            )}
+                        </LayoutItem>
+                        <LayoutItem>
+                          <Field
+                            name={`otherLoansTotal`}
+                            render={({ field }) => (
+                              <CurrencyInput
+                                id={"otherLoansTotal"}
+                                label={this.props.otherLoansTotalText}
+                                placeholder="0"
+                                locale={"nb"}
+                                {...field}
+                              />
+                            )}
+                          />
+                          {touched.otherLoansTotal &&
+                            errors.otherLoansTotal && (
+                              <Alert variant="error" type="warning">
+                                {errors.otherLoansTotal}
+                              </Alert>
+                            )}
+                        </LayoutItem>
+                        <LayoutItem>
+                          <Field
+                            name={`monthlyRentAndExpenses`}
+                            render={({ field }) => (
+                              <CurrencyInput
+                                id={"monthlyRentAndExpenses"}
+                                label={this.props.expensesRentText}
+                                placeholder="0"
+                                locale={"nb"}
+                                {...field}
+                              />
+                            )}
+                          />
+                          {touched.monthlyRentAndExpenses &&
+                            errors.monthlyRentAndExpenses && (
+                              <Alert variant="error" type="warning">
+                                {errors.monthlyRentAndExpenses}
+                              </Alert>
+                            )}
+                        </LayoutItem>
+                      </Layout>
+                    </div>
+                  </Box>
+                </Box>
+                <Button disabled={!isValid} type="submit" onClick={() => null}>
+                  {this.props.renderButtonContent()}
+                </Button>
+              </Wrapper>
+            </form>
+          )
+        }}
+      />
+    )
+  }
+}
 
 PersonalFinance.propTypes = {
   errors: PropTypes.any,

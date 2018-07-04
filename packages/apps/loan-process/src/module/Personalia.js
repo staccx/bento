@@ -204,6 +204,7 @@ class Personalia extends React.Component {
                                   placeHolderLabel={
                                     this.props.purposePlaceholder
                                   }
+                                  {...this.props.purposeSelectProps}
                                   name={name}
                                   value={value}
                                   onChange={item =>
@@ -356,11 +357,14 @@ class Personalia extends React.Component {
                       </Layout>
                       <Button
                         type={"submit"}
+                        disabled={!isValid}
                         onClick={() =>
                           this.props.onClick({ values, touched, errors })
                         }
                       >
-                        {this.props.buttonText}
+                        {this.props.resolveButtonText
+                          ? this.props.resolveButtonText(values)
+                          : this.props.buttonText}
                       </Button>
                     </div>
                   </Box>
@@ -418,7 +422,9 @@ Personalia.propTypes = {
   productType: PropTypes.string,
   purposeLabel: PropTypes.string,
   purposePlaceholder: PropTypes.string,
+  purposeSelectProps: PropTypes.object,
   repaymentMethods: PropTypes.array,
+  resolveButtonText: PropTypes.func,
   revenueLabel: PropTypes.string,
   revenuePlaceholder: PropTypes.string,
   showDownpayment: PropTypes.bool,
@@ -444,10 +450,12 @@ Personalia.defaultProps = {
   monthlyFeesText: "Månedlige gebyr",
   nameLabel: "Navn",
   namePlaceholder: "Navn navnesen",
+  onClick: () => null,
   phoneLabel: "Telefonnummer",
   phonePlaceholder: "xxx xx xxx",
   purposeLabel: "Hva skal lånet brukes til?",
   purposePlaceholder: "Velg...",
+  purposeSelectProps: {},
   repaymentMethods: [
     "Nettbetaling",
     "Kortbetaling",

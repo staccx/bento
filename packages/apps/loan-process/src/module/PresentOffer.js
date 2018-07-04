@@ -143,9 +143,7 @@ class PresentOffer extends React.Component {
                                   id={"select-loan-duration"}
                                   onChange={value =>
                                     this.handleChangeLoanDuration(
-                                      value
-                                        ? value.text
-                                        : this.props.repaymentPeriod
+                                      value || this.props.repaymentPeriod
                                     )
                                   }
                                   variant="loanOffer"

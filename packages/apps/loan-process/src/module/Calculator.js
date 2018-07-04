@@ -146,10 +146,8 @@ class Calculator extends React.Component {
                                       <Select
                                         items={this.props.termValues}
                                         id={"select-loan-duration"}
-                                        itemToString={item =>
-                                          item >= 12
-                                            ? item / 12 + " år"
-                                            : item + " mnd"
+                                        itemToString={
+                                          this.props.termsValuesToString
                                         }
                                         onChange={item => {
                                           this.calculate(this.state.value, item)
@@ -222,7 +220,9 @@ class Calculator extends React.Component {
                       <LayoutItem variant="legaleseContainer">
                         <Box variant="priceExample" size="mediumPlus">
                           <Text variant="legalese">
-                            {this.props.priceExampleText}
+                            {this.props.renderPriceExample
+                              ? this.props.renderPriceExample()
+                              : this.props.priceExampleText}
                           </Text>
                         </Box>
                       </LayoutItem>
@@ -265,6 +265,8 @@ Calculator.defaultProps = {
   startFee: 0,
   termFee: 3000,
   termValues: [6, 12, 18, 24, 36],
+  termsValuesToString: item =>
+    item >= 12 ? (item / 12).toPrecision(2) + " år" : item + " mnd",
   totalMonthlyText: "Totalt månedlig",
   valueLabel: "Ønsket lånebeløp"
 }
@@ -289,6 +291,7 @@ Calculator.propTypes = {
   onValidated: PropTypes.any,
   priceExampleText: PropTypes.string,
   productType: PropTypes.string,
+  renderPriceExample: PropTypes.func,
   showDownpayment: PropTypes.bool,
   showInterestRate: PropTypes.bool,
   showMonthlyFees: PropTypes.bool,
@@ -296,6 +299,7 @@ Calculator.propTypes = {
   startFee: PropTypes.any,
   termFee: PropTypes.number,
   termValues: PropTypes.array,
+  termsValuesToString: PropTypes.func,
   totalMonthlyText: PropTypes.string,
   valueLabel: PropTypes.string
 }
