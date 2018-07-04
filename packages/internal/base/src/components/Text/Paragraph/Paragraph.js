@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { fontFamily, font, themify, themeProps } from "@staccx/theme"
 import themePropTypes from "../../constants/themePropTypes"
 
-const Paragraph = ({ level, children, className, ...restProps }) => {
+const Paragraph = ({ children, className, ...restProps }) => {
   return (
     <P className={className} {...restProps}>
       {children}
