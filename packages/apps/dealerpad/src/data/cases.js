@@ -51,14 +51,14 @@ export default () => [
     },
     messages: [
       {
-        from: "Bjarne Bankås",
+        from: "Bjarne Bankaas",
         date: "28.06.2018",
         time: "11:19",
         body:
           "Du fikk ikke med hele fødselsnummeret i kontrakten. Kan du scanne og sende den på nytt, så skal jeg få godkjent den før jeg går i dag?"
       },
       {
-        from: "Bjarne Bankås",
+        from: "Bjarne Bankaas",
         date: "28.06.2018",
         time: "11:20",
         body:

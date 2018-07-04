@@ -14,6 +14,7 @@ import { formatCurrency } from "@staccx/formatting"
 import Contact from "../components/Contact"
 import CaseProgressLarge from "../components/Cases/Cases.Progress.Large"
 import FinancingTable from "../components/Tables/Table.Financing"
+import ChatLogic from "../components/ChatLogic"
 
 const currentCase = getCases()[0]
 
@@ -41,7 +42,7 @@ const Home = () => (
       </Layout>
     </LayoutItem>
     <LayoutItem variant="caseChat">
-      <Box variant="chat">Chat</Box>
+      <ChatLogic messages={currentCase.messages} />
     </LayoutItem>
     <LayoutItem variant="caseDocumentation">
       <Heading level="2" variant="subtle">

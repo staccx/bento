@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { registerStyle, VARIANT_DEFAULT, color } from "@staccx/theme"
+import { registerStyle, spacing, VARIANT_DEFAULT, color } from "@staccx/theme"
 import { Input, fontSmoothing } from "@staccx/base"
 
 export const InputStyling = registerStyle(
@@ -14,6 +14,10 @@ export const InputStyling = registerStyle(
         border-color: ${color("b4")};
         background-color: ${color.white};
       }
+    `,
+    chat: css`
+      border-color: transparent;
+      padding-right: ${spacing("largePlus")};
     `
   },
   Input.themeProps.input
