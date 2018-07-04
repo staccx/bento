@@ -22,7 +22,7 @@ const Home = () => (
         <LayoutItem>
           <Layout>
             <NewsList articles={getNewsItems().slice(1)} />
-            <CasesList cases={getCases().slice(0, 5)} />
+            <CasesList cases={getCases().slice(0, 5)} compact />
           </Layout>
         </LayoutItem>
       </Layout>
