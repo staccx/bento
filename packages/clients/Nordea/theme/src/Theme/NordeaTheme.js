@@ -11,7 +11,6 @@ import { ButtonStyling } from "./theme.Buttons"
 import { InputStyling, InputWrapperStyling } from "./theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { NewBadgeBadgeStyling } from "./theme.NewBadges"
-
 import { LogoStyle } from "./Logo"
 import { AddIcon } from "./Icons/Add"
 import { NewsIcon } from "./Icons/News"
@@ -27,6 +26,7 @@ import { CardIcon } from "./Icons/Card"
 import { CheckmarkIcon } from "./Icons/Checkmark"
 import { DotIcon } from "./Icons/Dot"
 import { ArrowRightIcon } from "./Icons/ArrowRight"
+import { TagStyling } from "./theme.Tag"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -160,4 +160,5 @@ const theme = new Theme(BaseTheme, {
   .add(DotIcon)
   .add(ArrowRightIcon)
   .add(NewBadgeBadgeStyling)
+  .add(TagStyling)
 export default theme

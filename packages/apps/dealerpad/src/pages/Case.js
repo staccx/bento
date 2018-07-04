@@ -1,20 +1,37 @@
 import React from "react"
-import { Heading, Box, Wrapper, Paragraph } from "@staccx/base"
-import Tag from "../components/Tag"
+import { Heading, Box, Wrapper, Paragraph, Tag, Text } from "@staccx/base"
+import getCases from "../data/cases"
+import getLoanType from "../helpers/getLoanType"
+import { formatCurrency } from "@staccx/formatting"
+import Contact from "../components/Contact"
+
+const currentCase = getCases()[0]
 
 const Home = () => (
   <div>
     <Box variant="defaultHero">
       <Wrapper size="medium">
-        <Tag>Lån</Tag>
-        <Heading level={1}>Eivind kjellevold</Heading>
+        <Tag variant="inverted">{getLoanType(currentCase.type)}</Tag>
+        <Heading level={1} variant="caseHeading">
+          {currentCase.customer.name}{" "}
+          <Text variant="caseNumber">{currentCase.id}</Text>
+        </Heading>
         <Paragraph variant="CaseSummary">
-          Personbil, Volvo V90, 2019 Diesel <br />
-          D5 AWD Silver, Inscription <br />
-          5 670,-/mnd
+          {currentCase.vehicle.type}, {currentCase.vehicle.make}{" "}
+          {currentCase.vehicle.model} {currentCase.vehicle.year} <br />
+          {currentCase.vehicle.variant} <br />
+          {formatCurrency(currentCase.financing.termRent)},-/mnd
         </Paragraph>
       </Wrapper>
     </Box>
+    <Heading level="2" variant="subtle">
+      Låntaker
+    </Heading>
+    <Contact
+      name={currentCase.customer.name}
+      phoneNumber={currentCase.customer.phoneNumber}
+      eMail={currentCase.customer.eMail}
+    />
   </div>
 )
 

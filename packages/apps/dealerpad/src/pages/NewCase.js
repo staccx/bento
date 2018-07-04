@@ -1,10 +1,9 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-import { Heading, Box, Wrapper, List } from "@staccx/base"
+import { Heading, Box, Wrapper, List, Portal } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 import registerCase from "../data/registerCase"
-import Portal from "../components/Portal"
 
 const Home = () => (
   <React.Fragment>

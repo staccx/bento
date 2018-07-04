@@ -30,6 +30,9 @@ export const BoxStyling = registerStyle(
       background-color: ${color.white};
       padding-left: 0;
       padding-right: 0;
+    `,
+    contact: css`
+      background-color: ${color.white};
     `
   },
   Box.themeProps.box

@@ -6,6 +6,9 @@ export const TextStyling = registerStyle(
   {
     subtle: css`
       color: ${color.wcag};
+    `,
+    caseNumber: css`
+      color: ${color("b2")};
     `
   },
   Text.themeProps.text
