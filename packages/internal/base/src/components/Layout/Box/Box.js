@@ -17,6 +17,7 @@ Box.themeProps = {
     type: themePropTypes.style
   }
 }
+
 export const Boxing = styled.div`
   padding: ${p => (p.size === "flush" ? 0 : spacing(p.size))};
   border-radius: ${borderRadius};

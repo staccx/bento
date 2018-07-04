@@ -5,11 +5,11 @@ import { color, fontWeight, themify, themeProps } from "@staccx/theme"
 import fontSmoothing from "../../Styles/fontsmoothing"
 import themePropTypes from "../constants/themePropTypes"
 
-const NewBadge = ({ number, children }) => (
-  <NewBadgeWrapper>
+const NewBadge = ({ number, children, variant }) => (
+  <NewBadgeWrapper variant={variant}>
     {children}
     {number > 0 && (
-      <Badge number={number}>
+      <Badge number={number} variant={variant}>
         <span>{number}</span>
       </Badge>
     )}
