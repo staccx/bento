@@ -17,12 +17,11 @@ export const ListStyling = registerStyle(
     `,
     casesList: css`
       li {
-        padding: ${spacing.small} ${spacing.tiny};
         a {
           text-decoration: none;
         }
         &:nth-child(even) {
-          background-color: ${color("bg2")};
+          background-color: ${color("concrete")};
         }
       }
     `

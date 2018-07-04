@@ -26,6 +26,7 @@ import { AccountIcon } from "./Icons/Account"
 import { CardIcon } from "./Icons/Card"
 import { CheckmarkIcon } from "./Icons/Checkmark"
 import { DotIcon } from "./Icons/Dot"
+import { ArrowRightIcon } from "./Icons/ArrowRight"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -157,5 +158,6 @@ const theme = new Theme(BaseTheme, {
   .add(CardIcon)
   .add(CheckmarkIcon)
   .add(DotIcon)
+  .add(ArrowRightIcon)
   .add(NewBadgeBadgeStyling)
 export default theme
