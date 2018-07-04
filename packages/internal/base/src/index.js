@@ -19,11 +19,13 @@ import SelectSimple from "./components/Forms/SelectSimple/SelectSimple"
 import Select from "./components/Forms/Select/Select"
 import SelectOption from "./components/Forms/Select/Select.Option"
 import Toggle from "./components/Forms/Toggle/Toggle"
+import Portal from "./components/Portal/Portal"
 
 // Text
 import Text from "./components/Text/Text/Text"
 import Heading from "./components/Text/Heading/Heading"
 import Paragraph from "./components/Text/Paragraph/Paragraph"
+import Tag from "./components/Text/Tag/Tag"
 
 // Lists
 import List from "./components/Lists/List"
@@ -149,11 +151,12 @@ export {
   Pagination,
   Paragraph,
   PhoneInput,
+  Portal,
+  PostalCodeInput,
   ProgressBar,
   RadioButton,
   RadioPill,
   RadioPillItem,
-  PostalCodeInput,
   Select,
   SelectOption,
   SelectSimple,
@@ -162,6 +165,7 @@ export {
   SplitListItem,
   Success,
   Table,
+  Tag,
   Text,
   Toggle,
   Warning,
