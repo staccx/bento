@@ -1,12 +1,12 @@
 {
   "name": "@staccx/dealerpad",
-  "version": "5.2.1",
+  "version": "6.0.0",
   "private": true,
   "dependencies": {
-    "@staccx/base": "^5.2.1",
-    "@staccx/soy": "^5.1.0",
-    "@staccx/theme": "^5.2.1",
-    "@staccx/nordea-theme": "^5.2.1"
+    "@staccx/base": "^6.0.0",
+    "@staccx/nordea-theme": "^6.0.0",
+    "@staccx/soy": "^6.0.0",
+    "@staccx/theme": "^6.0.0"
   },
   "scripts": {
     "build": "yarn prettify && rollup -c",
@@ -16,6 +16,5 @@
     "eject": "react-app-rewired eject",
     "deploy": "yarn build && surge -p ./build",
     "serve": "yarn build && serve -s build"
-  },
-  "devDependencies": {}
+  }
 }

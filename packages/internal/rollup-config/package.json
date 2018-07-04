@@ -1,6 +1,6 @@
 {
   "name": "@staccx/rollup-config",
-  "version": "1.0.0",
+  "version": "6.0.0",
   "main": "dist/index.js",
   "license": "UNLICENSED",
   "module": "dist/index.es.js",
@@ -13,7 +13,7 @@
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
   "devDependencies": {
-    "@staccx/soy": "^5.1.0",
+    "@staccx/soy": "^6.0.0",
     "rollup": "^0.62.0",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^9.1.3",
