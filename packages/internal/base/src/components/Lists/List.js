@@ -4,11 +4,20 @@ import styled from "styled-components"
 import { themify, themeProps } from "@staccx/theme"
 import themePropTypes from "../constants/themePropTypes"
 
-const List = ({ children, className, ...restProps }) => (
-  <ListUl className={className} {...restProps}>
-    {children}
-  </ListUl>
-)
+const List = ({ children, className, ordered, ...restProps }) => {
+  if (!ordered) {
+    return (
+      <ListUl className={className} {...restProps}>
+        {children}
+      </ListUl>
+    )
+  }
+  return (
+    <ListOl className={className} {...restProps}>
+      {children}
+    </ListOl>
+  )
+}
 
 List.themeProps = {
   list: {
@@ -24,13 +33,17 @@ export const ListUl = styled.ul`
   ${themify(List.themeProps.list)};
 `
 
+export const ListOl = ListUl.withComponent("ol")
+
 List.defaultProps = {
-  className: ""
+  className: "",
+  ordered: false
 }
 
 List.propTypes = {
   children: themeProps.children.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  ordered: PropTypes.bool
 }
 
 export default List
