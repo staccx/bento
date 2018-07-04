@@ -13,17 +13,17 @@ class App extends Component {
         <Wrapper>
           <AlertDocumentation />
           <ButtonDocumentation />
-          {/*<CodeRenderer*/}
-          {/*code={codeGenerators.restSharp({*/}
-          {/*summary: "summarytext",*/}
-          {/*method: "POST",*/}
-          {/*path: "/api/myendpoint",*/}
-          {/*headers: { a: "b", b: "c", d: "e" },*/}
-          {/*body: { a: "b" },*/}
-          {/*queryParams: { q: "my-q-value" }*/}
-          {/*})}*/}
-          {/*language="java"*/}
-          {/*/>*/}
+          <CodeRenderer
+            code={codeGenerators.restSharp.generate({
+              summary: "summarytext",
+              method: "POST",
+              path: "/api/myendpoint",
+              headers: { a: "b", b: "c", d: "e" },
+              body: { a: "b" },
+              queryParams: { q: "my-q-value" }
+            })}
+            language="java"
+          />
         </Wrapper>
       </ThemeProxyProvider>
     )
