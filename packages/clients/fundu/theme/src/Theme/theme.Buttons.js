@@ -1,5 +1,11 @@
 import { css } from "styled-components"
-import { registerStyle, color, targetSize, spacing } from "@staccx/theme"
+import {
+  registerStyle,
+  color,
+  targetSize,
+  spacing,
+  VARIANT_DEFAULT
+} from "@staccx/theme"
 import { Button } from "@staccx/base"
 
 const subtleButton = css`
@@ -27,6 +33,11 @@ const subtleButton = css`
 
 export const ButtonStyling = registerStyle(
   {
+    [VARIANT_DEFAULT]: css`
+      &:disabled {
+        background-color: ${color.disabled};
+      }
+    `,
     subtle: subtleButton,
     decline: css`
       ${subtleButton};

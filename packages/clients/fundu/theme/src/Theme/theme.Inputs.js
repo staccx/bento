@@ -14,7 +14,8 @@ import {
   RadioPillItem,
   SelectSimple,
   SliderKeyboardInput,
-  CompanyInput
+  CompanyInput,
+  PostalCodeInput
 } from "@staccx/base"
 
 const floatingLabel = css`
@@ -310,4 +311,13 @@ export const CompanyInputSelectItemStyling = registerStyle(
     `
   },
   CompanyInput.themeProps.selectItem
+)
+
+export const PostalCodeInputStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      width: calc(5ch + ${spacing.large});
+    `
+  },
+  PostalCodeInput.themeProps.input
 )

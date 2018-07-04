@@ -29,7 +29,8 @@ import {
   CompanyInputFlagStyling,
   CompanyInputSelectItemStyling,
   SelectOptionStyling,
-  SelectSelectedWrapperStyling
+  SelectSelectedWrapperStyling,
+  PostalCodeInputStyling
 } from "./theme.Inputs"
 import { LayoutStyling } from "./theme.Layouts"
 import { LayoutItemStyling } from "./theme.LayoutItem"
@@ -145,4 +146,5 @@ const theme = new Theme(BaseTheme, {
   .add(DividerStyling)
   .add(LogoStyle)
   .add(SelectSelectedWrapperStyling)
+  .add(PostalCodeInputStyling)
 export default theme
