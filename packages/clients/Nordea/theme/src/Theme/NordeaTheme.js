@@ -36,7 +36,7 @@ const wrapper = {
   small: "460px",
   medium: "840px",
   large: "888px",
-  huge: "1284px",
+  huge: "1440px",
   breakout: "640px"
 }
 

@@ -2,32 +2,38 @@ import React from "react"
 import styled from "styled-components"
 import { NavLink } from "react-router-dom"
 import { ThemeComponent, color, spacing } from "@staccx/theme"
-import { List, fontSmoothing } from "@staccx/base"
+import { Wrapper, List, fontSmoothing } from "@staccx/base"
 import routes from "../../data/routes"
 
 const Header = ({ children, classname }) => (
   <Head>
-    <ThemeComponent tagName={"logo"} inverted />
-    <Menu>
-      {routes.map(
-        page =>
-          page.inMenu && (
-            <li key={page.path + "menu"}>
-              <MenuElement to={page.path} activeClassName="dpCurrent">
-                <ThemeComponent tagName={page.icon} />
-                <MenuText>{page.name}</MenuText>
-              </MenuElement>
-            </li>
-          )
-      )}
-    </Menu>
+    <Wrapper size="huge">
+      <Inner>
+        <ThemeComponent tagName={"logo"} inverted />
+        <Menu>
+          {routes.map(
+            page =>
+              page.inMenu && (
+                <li key={page.path + "menu"}>
+                  <MenuElement to={page.path} activeClassName="dpCurrent">
+                    <ThemeComponent tagName={page.icon} />
+                    <MenuText>{page.name}</MenuText>
+                  </MenuElement>
+                </li>
+              )
+          )}
+        </Menu>
+      </Inner>
+    </Wrapper>
   </Head>
 )
 
 const Head = styled.header`
   background-color: ${color("header")};
-  padding-left: ${spacing.small};
-  padding-right: ${spacing.small};
+  ${fontSmoothing};
+`
+
+const Inner = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,7 +69,6 @@ const MenuElement = styled(NavLink)`
 
 const MenuText = styled.span`
   white-space: nowrap;
-  ${fontSmoothing};
 `
 
 export default Header
