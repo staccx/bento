@@ -13,6 +13,7 @@ import getLoanType from "../helpers/getLoanType"
 import { formatCurrency } from "@staccx/formatting"
 import Contact from "../components/Contact"
 import CaseProgressLarge from "../components/Cases/Cases.Progress.Large"
+import FinancingTable from "../components/Tables/Table.Financing"
 
 const currentCase = getCases()[0]
 
@@ -66,10 +67,7 @@ const Home = () => (
       )}
     </LayoutItem>
     <LayoutItem variant="caseFinance">
-      <Heading level="2" variant="subtle">
-        Finansiering
-      </Heading>
-      <Box variant="subtle">Finansiering</Box>
+      <FinancingTable caseFinancing={currentCase.financing} />
     </LayoutItem>
     <LayoutItem variant="caseObject">
       <Heading level="2" variant="subtle">

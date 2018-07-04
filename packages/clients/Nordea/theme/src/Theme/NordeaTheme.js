@@ -30,6 +30,7 @@ import { MailIcon } from "./Icons/Mail"
 import { ArrowRightIcon } from "./Icons/ArrowRight"
 import { TagStyling } from "./theme.Tag"
 import { PortalIcon, PortalLabel } from "./theme.Portal"
+import { TableStyling } from "./theme.Tables"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -170,4 +171,5 @@ const theme = new Theme(BaseTheme, {
   .add(TagStyling)
   .add(PortalIcon)
   .add(PortalLabel)
+  .add(TableStyling)
 export default theme

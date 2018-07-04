@@ -46,7 +46,7 @@ export default () => [
       restValue: 496930,
       arrangementFee: 4863,
       installmentFee: 106,
-      totalInterest: 0.049,
+      totalInterest: 0.0049,
       termRent: 4990
     },
     messages: [
