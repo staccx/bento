@@ -9,7 +9,9 @@ const Header = ({ children, classname }) => (
   <Head>
     <Wrapper size="huge">
       <Inner>
-        <ThemeComponent tagName={"logo"} inverted />
+        <NavLink to="/">
+          <ThemeComponent tagName={"logo"} inverted />
+        </NavLink>
         <Menu>
           {routes.map(
             page =>

@@ -10,6 +10,8 @@ import { TextStyling } from "./theme.Texts"
 import { ButtonStyling } from "./theme.Buttons"
 import { InputStyling, InputWrapperStyling } from "./theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
+import { NewBadgeBadgeStyling } from "./theme.NewBadges"
+
 import { LogoStyle } from "./Logo"
 import { AddIcon } from "./Icons/Add"
 import { NewsIcon } from "./Icons/News"
@@ -23,6 +25,7 @@ import { RentIcon } from "./Icons/Rent"
 import { AccountIcon } from "./Icons/Account"
 import { CardIcon } from "./Icons/Card"
 import { CheckmarkIcon } from "./Icons/Checkmark"
+import { DotIcon } from "./Icons/Dot"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -84,8 +87,7 @@ const color = {
   g3: "#8B8A8D",
   g2: "#C9C7C7",
   g1: "#E6E4E3",
-  concrete: "#F4F2F1",
-  bg2: "#F5F5F5"
+  concrete: "#F4F2F1"
 }
 
 const DealerpadSpecificColor = {
@@ -154,4 +156,6 @@ const theme = new Theme(BaseTheme, {
   .add(AccountIcon)
   .add(CardIcon)
   .add(CheckmarkIcon)
+  .add(DotIcon)
+  .add(NewBadgeBadgeStyling)
 export default theme
