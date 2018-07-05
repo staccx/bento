@@ -12,6 +12,8 @@ const getVehicleLabel = label => {
       return "Pris pr. km over max kj. lengde"
     case "options":
       return "Ekstrautstyr"
+    default:
+      return null
   }
 }
 

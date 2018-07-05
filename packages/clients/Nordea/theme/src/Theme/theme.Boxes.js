@@ -24,6 +24,16 @@ export const BoxStyling = registerStyle(
       background-color: ${color.secondary};
       height: 100%;
     `,
+    mainSearch: css`
+      position: relative;
+      padding: 0;
+      display: flex;
+      margin-bottom: ${spacing.tiny};
+
+      input {
+        padding-left: ${spacing.mediumPlus};
+      }
+    `,
     salesSearch: css`
       padding: 0;
       margin-top: calc(-${targetSize.normal} / 2);

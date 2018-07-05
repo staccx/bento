@@ -18,7 +18,7 @@ import Contact from "../components/Contact"
 import CaseProgressLarge from "../components/Cases/Cases.Progress.Large"
 import FinancingTable from "../components/Tables/Table.Financing"
 import ObjectTable from "../components/Tables/Table.Object"
-import ChatLogic from "../components/ChatLogic"
+import ChatLogic from "../components/Chat/ChatLogic"
 import Documentation from "../components/Documentation/Documentation"
 
 const Case = ({ match }) => {

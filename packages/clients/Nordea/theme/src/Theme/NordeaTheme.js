@@ -13,6 +13,7 @@ import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { NewBadgeBadgeStyling } from "./theme.NewBadges"
 import { LogoStyle } from "./Logo"
 import { AddIcon } from "./Icons/Add"
+import { SearchIcon } from "./Icons/Search"
 import { NewsIcon } from "./Icons/News"
 import { AlertIcon } from "./Icons/Alert"
 import { LoanIcon } from "./Icons/Loan"
@@ -185,5 +186,6 @@ const theme = new Theme(BaseTheme, {
   .add(DocumentationUploadIcon)
   .add(DocumentationDownloadIcon)
   .add(DocumentationTrashIcon)
+  .add(SearchIcon)
   .add(BackIcon)
 export default theme

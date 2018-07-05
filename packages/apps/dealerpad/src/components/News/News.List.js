@@ -7,7 +7,7 @@ const NewsList = ({ articles }) => (
     <Box size="flush">
       <List variant="newsList" ordered>
         {articles.map(article => (
-          <li key={article.url}>
+          <li key={article.url + article.title}>
             <div>
               <Link to={article.actionUrl}>{article.title}</Link>
             </div>

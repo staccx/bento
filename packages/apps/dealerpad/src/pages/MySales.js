@@ -4,7 +4,7 @@ import { Heading, Box, Wrapper, Input, Button } from "@staccx/base"
 import getCases from "../data/cases"
 import CasesList from "../components/Cases/Cases.List"
 
-const Home = () => (
+const MySales = () => (
   <React.Fragment>
     <Box variant="defaultHero">
       <Wrapper size="medium">
@@ -13,7 +13,11 @@ const Home = () => (
     </Box>
     <Wrapper size="medium">
       <Box variant="salesSearch">
-        <Input placeholder="Søk i mine saker" />
+        <Input
+          placeholder="Søk i mine saker"
+          id="casesearch"
+          name="casesearch"
+        />
         <Button variant="filter">
           <ThemeComponent tagName={"filterIcon"} />
           Filter
@@ -24,4 +28,4 @@ const Home = () => (
   </React.Fragment>
 )
 
-export default Home
+export default MySales

@@ -24,6 +24,8 @@ const getStatus = label => {
       return "Total rente"
     case "termRent":
       return "Terminleie per mnd inkl. mva: "
+    default:
+      return null
   }
 }
 

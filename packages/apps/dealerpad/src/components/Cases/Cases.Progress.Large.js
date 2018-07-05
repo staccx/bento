@@ -11,14 +11,14 @@ const CasesProgressLarge = ({ progress, max, inverted }) => {
     <Outer inverted={inverted}>
       {progressArray.map((dot, index) => {
         return index === progress - 1 ? (
-          <ProgressItem status="current">
+          <ProgressItem status="current" key={getStatus(progress)}>
             <Text>{getStatus(progress)}</Text>
             <ArrowWrapper>
               <ThemeComponent tagName="ArrowRight" />
             </ArrowWrapper>
           </ProgressItem>
         ) : dot ? (
-          <ProgressItem status="completed">
+          <ProgressItem status="completed" key={getStatus(progress)}>
             <Completed>
               <IconWrapper>
                 <ThemeComponent tagName="Checkmark" />
@@ -29,7 +29,7 @@ const CasesProgressLarge = ({ progress, max, inverted }) => {
             </ArrowWrapper>
           </ProgressItem>
         ) : (
-          <ProgressItem status="next">
+          <ProgressItem status="next" key={getStatus(progress)}>
             <Text>{getStatus(index + 1)}</Text>
             {index + 1 !== progressArray.length && (
               <ArrowWrapper>

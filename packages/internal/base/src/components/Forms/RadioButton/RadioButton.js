@@ -106,9 +106,10 @@ const RadioButton = ({
   onChange,
   className,
   defaultChecked,
+  variant,
   ...otherProps
 }) => (
-  <RadioWrapper className={className}>
+  <RadioWrapper className={className} variant={variant}>
     <Radio
       id={id}
       disabled={disabled}
@@ -116,9 +117,12 @@ const RadioButton = ({
       name={group}
       onChange={onChange}
       defaultChecked={defaultChecked}
+      variant={variant}
       {...otherProps}
     />
-    <Label htmlFor={id}>{children}</Label>
+    <Label htmlFor={id} variant={variant}>
+      {children}
+    </Label>
   </RadioWrapper>
 )
 

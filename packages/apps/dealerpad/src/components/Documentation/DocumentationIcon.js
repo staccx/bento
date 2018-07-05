@@ -25,6 +25,8 @@ const DocumentationIcon = ({ status }) => {
           <ThemeComponent tagName="DocumentationRejected" />
         </Rejected>
       )
+    default:
+      return null
   }
 }
 

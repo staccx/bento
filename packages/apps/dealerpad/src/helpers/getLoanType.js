@@ -12,6 +12,8 @@ const getLoanType = loanType => {
       return "Privatleie Pluss"
     case "rent":
       return "Leie"
+    default:
+      return null
   }
 }
 

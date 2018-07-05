@@ -39,6 +39,8 @@ const DocumentationIcon = ({ status }) => {
           </Button>
         </div>
       )
+    default:
+      return null
   }
 }
 
