@@ -40,6 +40,7 @@ import { DocumentationDownloadIcon } from "./Icons/DocumentationDownload"
 import { DocumentationTrashIcon } from "./Icons/DocumentationTrash"
 import { BackIcon } from "./Icons/Back"
 import { DividerStyling } from "./theme.Divider"
+import { RadioButtonWrapper, RadioButtonLabel } from "./theme.RadioButton"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -190,4 +191,6 @@ const theme = new Theme(BaseTheme, {
   .add(SearchIcon)
   .add(BackIcon)
   .add(DividerStyling)
+  .add(RadioButtonWrapper)
+  .add(RadioButtonLabel)
 export default theme

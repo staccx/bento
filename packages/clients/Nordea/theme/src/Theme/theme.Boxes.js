@@ -27,12 +27,8 @@ export const BoxStyling = registerStyle(
     mainSearch: css`
       position: relative;
       padding: 0;
-      display: flex;
-      margin-bottom: ${spacing.tiny};
-
-      input {
-        padding-left: ${spacing.mediumPlus};
-      }
+      display: block;
+      flex-grow: 1;
     `,
     salesSearch: css`
       padding: 0;

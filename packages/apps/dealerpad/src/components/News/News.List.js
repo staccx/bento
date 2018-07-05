@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { Box, List } from "@staccx/base"
+import { Box, List, Layout } from "@staccx/base"
 import { ThemeComponent } from "@staccx/theme"
 import { IconWrapper } from "../Cases/Cases.List"
 
 const NewsList = ({ articles }) => (
-  <div>
+  <Layout rowGap="small">
     <Box size="flush">
       <List variant="newsList" ordered>
         {articles.map(article => (
@@ -22,7 +22,7 @@ const NewsList = ({ articles }) => (
       </List>
     </Box>
     <Link to="#">Les mer</Link>
-  </div>
+  </Layout>
 )
 
 const LinkWrapper = styled.div`

@@ -2,18 +2,26 @@ import { css } from "styled-components"
 import { registerStyle, spacing, VARIANT_DEFAULT, color } from "@staccx/theme"
 import { Input, fontSmoothing } from "@staccx/base"
 
+const defaultStyling = css`
+  border-width: 2px;
+  border-color: transparent;
+  ${fontSmoothing};
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: ${color("b4")};
+    background-color: ${color.white};
+  }
+`
+
 export const InputStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: css`
-      border-width: 2px;
-      border-color: transparent;
-      ${fontSmoothing};
-      &:hover,
-      &:focus,
-      &:active {
-        border-color: ${color("b4")};
-        background-color: ${color.white};
-      }
+      ${defaultStyling};
+    `,
+    search: css`
+      ${defaultStyling};
+      padding-left: ${spacing.large};
     `,
     chat: css`
       height: ${spacing.large};

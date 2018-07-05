@@ -1,8 +1,9 @@
 import React from "react"
 import { ThemeComponent } from "@staccx/theme"
-import { Heading, Box, Wrapper, Input, Button } from "@staccx/base"
+import { Heading, Box, Wrapper, Button } from "@staccx/base"
 import getCases from "../data/cases"
 import CasesList from "../components/Cases/Cases.List"
+import Search from "../components/Search/Search"
 
 const MySales = () => (
   <React.Fragment>
@@ -13,11 +14,7 @@ const MySales = () => (
     </Box>
     <Wrapper size="medium">
       <Box variant="salesSearch">
-        <Input
-          placeholder="Søk i mine saker"
-          id="casesearch"
-          name="casesearch"
-        />
+        <Search />
         <Button variant="filter">
           <ThemeComponent tagName={"filterIcon"} />
           Filter

@@ -5,7 +5,7 @@ import getNewsItems from "../data/news"
 import NewsHero from "../components/News/News.Hero"
 import NewsList from "../components/News/News.List"
 import CasesList from "../components/Cases/Cases.List"
-import Search from "../components/Search/Search"
+import SearchGlobal from "../components/Search/SearchGlobal"
 import Contact from "../components/Contact"
 
 const Home = () => (
@@ -48,7 +48,7 @@ const Home = () => (
               <Contact />
             </LayoutItem>
             <LayoutItem>
-              <Search />
+              <SearchGlobal />
             </LayoutItem>
           </Layout>
         </LayoutItem>
