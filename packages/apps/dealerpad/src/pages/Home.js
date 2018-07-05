@@ -1,12 +1,12 @@
 import React from "react"
-import { Heading, Box, Layout, LayoutItem, Wrapper, Flag } from "@staccx/base"
+import { Heading, Layout, LayoutItem, Wrapper } from "@staccx/base"
 import getCases from "../data/cases"
 import getNewsItems from "../data/news"
 import NewsHero from "../components/News/News.Hero"
 import NewsList from "../components/News/News.List"
 import CasesList from "../components/Cases/Cases.List"
 import Search from "../components/Search/Search"
-import PortalLink from "../components/PortalLink"
+import Contact from "../components/Contact"
 
 const Home = () => (
   <div>
@@ -38,35 +38,17 @@ const Home = () => (
           </Layout>
         </LayoutItem>
         <LayoutItem>
-          <Layout>
+          <Layout rowGap="large">
             <LayoutItem>
               <div>
                 <Heading level="2" variant="subtle">
                   Kontakt oss
                 </Heading>
               </div>
-              <Box variant="contact">
-                <Layout>
-                  <div>
-                    hverdager: 8:00 - 17:00 <br />
-                    tors: 8:00 - 19:00<br />
-                    lør: 10:00 - 14:00
-                  </div>
-                  <Flag
-                    small
-                    img={<PortalLink href={`tel:06245`} tagName="Phone" />}
-                  >
-                    06 245
-                  </Flag>
-                </Layout>
-              </Box>
+              <Contact />
             </LayoutItem>
             <LayoutItem>
-              <Layout>
-                <LayoutItem>
-                  <Search />
-                </LayoutItem>
-              </Layout>
+              <Search />
             </LayoutItem>
           </Layout>
         </LayoutItem>

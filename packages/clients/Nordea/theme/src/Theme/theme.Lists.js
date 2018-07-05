@@ -6,7 +6,7 @@ export const ListStyling = registerStyle(
   {
     newsList: css`
       li {
-        padding: ${spacing.small} ${spacing.tiny};
+        padding: ${spacing.small};
         a {
           text-decoration: none;
         }

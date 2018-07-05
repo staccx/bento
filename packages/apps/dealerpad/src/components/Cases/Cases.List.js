@@ -56,7 +56,7 @@ const CaseContainer = styled.div`
   }
 `
 
-const IconWrapper = styled.div`
+export const IconWrapper = styled.div`
   height: 18px;
   width: 10px;
   margin-left: ${spacing.small};
@@ -68,7 +68,7 @@ const IconWrapper = styled.div`
 
 const CaseLink = styled(Link)`
   display: block;
-  padding: ${spacing.small} ${spacing.tiny};
+  padding: ${spacing.small};
   transition: background 0.2s ease;
 
   &:hover,

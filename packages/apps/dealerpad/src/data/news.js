@@ -1,8 +1,9 @@
 export default () => [
   {
     title: "Leasing kampanje",
-    body: "Bacon ipsum dolor amet prosciutto",
-    image: "https://source.unsplash.com/p7tai9P7H-s/1600x900",
+    body:
+      "Bacon ipsum dolor amet prosciutto buffalo pancetta, tri-tip tail pork chop pork loin capicola chuck tenderloin filet mignon. Pastrami spare ribs short loin, kielbasa bresaola pork chop flank burgdoggen tongue biltong leberkas tri-tip salami. Frankfurter capicola pancetta bacon prosciutto tri-tip. ",
+    image: "/volvo.jpg",
     actionText: "Mer om leasing-kampanjen",
     actionUrl: "/news/lease",
     featured: true

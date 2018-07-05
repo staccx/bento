@@ -1,32 +1,23 @@
 import React from "react"
-import styled from "styled-components"
-import { Box, Heading, Flag, Portal } from "@staccx/base"
-import { color } from "@staccx/theme"
-import PortalLink from "./PortalLink"
+import { Box, Layout, Flag, Text, Divider } from "@staccx/base"
+import PortalLink from "../components/PortalLink"
 
-const Icons = ({ phoneNumber, eMail }) => (
-  <ContactIcons>
-    <PortalLink href={`tel:${phoneNumber}`} tagName="Phone" />
-    <PortalLink href={`mailto:${eMail}`} tagName="Mail" />
-  </ContactIcons>
-)
-
-const Contact = ({ name, phoneNumber, eMail }) => (
+const Contact = () => (
   <Box variant="contact">
-    <Flag reverse img={<Icons phoneNumber={phoneNumber} eMail={eMail} />}>
-      <Heading level="3" variant="ContactName">
-        {name}
-      </Heading>
-      <a href={`tel:${phoneNumber}`}>{phoneNumber}</a> <br />
-      <a href={`mailto:${eMail}`}>{eMail}</a>
-    </Flag>
+    <Layout>
+      <Text variant="inputSize">
+        hverdager: 8:00 - 17:00 <br />
+        tors: 8:00 - 19:00<br />
+        lør: 10:00 - 14:00
+      </Text>
+      <Divider />
+      <Flag small img={<PortalLink href={`tel:06245`} tagName="Phone" />}>
+        <Text variant="inputSize">
+          <a href={`tel:06245`}>06 245</a>
+        </Text>
+      </Flag>
+    </Layout>
   </Box>
 )
-
-const ContactIcons = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 6px;
-`
 
 export default Contact

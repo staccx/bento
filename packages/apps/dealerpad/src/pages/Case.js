@@ -14,7 +14,7 @@ import { Link } from "react-router-dom"
 import getCases from "../data/cases"
 import getLoanType from "../helpers/getLoanType"
 import { formatCurrency } from "@staccx/formatting"
-import Contact from "../components/Contact"
+import ContactPerson from "../components/ContactPerson"
 import CaseProgressLarge from "../components/Cases/Cases.Progress.Large"
 import FinancingTable from "../components/Tables/Table.Financing"
 import ObjectTable from "../components/Tables/Table.Object"
@@ -76,13 +76,13 @@ const Case = ({ match }) => {
         <Heading level="2" variant="subtle">
           Låntaker
         </Heading>
-        <Contact
+        <ContactPerson
           name={currentCase.customer.name}
           phoneNumber={currentCase.customer.phoneNumber}
           eMail={currentCase.customer.eMail}
         />
         {currentCase.cosigner && (
-          <Contact
+          <ContactPerson
             name={currentCase.cosigner.name}
             phoneNumber={currentCase.cosigner.phoneNumber}
             eMail={currentCase.cosigner.eMail}
