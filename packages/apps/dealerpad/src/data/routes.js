@@ -7,7 +7,7 @@ import Case from "../pages/Case"
 const routes = [
   {
     path: "/news",
-    component: <Home />,
+    component: Home,
     name: "Nyheter",
     icon: "News",
     exact: true,
@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: "/new-case",
-    component: <NewCase />,
+    component: NewCase,
     name: "Registrer sak",
     icon: "Add",
     exact: true,
@@ -25,7 +25,7 @@ const routes = [
   },
   {
     path: "/my-sales",
-    component: <MySales />,
+    component: MySales,
     name: "Mine salg",
     icon: "Alert",
     exact: true,
@@ -34,7 +34,7 @@ const routes = [
   },
   {
     path: "/sales/:caseId",
-    component: <Case />,
+    component: Case,
     name: "CASE",
     icon: <i />,
     exact: false,

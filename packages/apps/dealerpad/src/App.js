@@ -23,7 +23,7 @@ class App extends Component {
                 <Route
                   exact={page.exact}
                   path={page.path}
-                  render={() => page.component}
+                  component={page.component}
                   key={page.path}
                 />
               ))}

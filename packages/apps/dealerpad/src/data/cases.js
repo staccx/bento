@@ -1,9 +1,9 @@
 import fileStatus from "./fileStatus"
 
-export default () => [
+const cases = [
   {
     type: "loan",
-    id: 53674,
+    id: "53674",
     status: 2,
     customer: {
       name: "Eva Anita Bjerknes",
@@ -92,7 +92,7 @@ export default () => [
   },
   {
     type: "loan",
-    id: 24543,
+    id: "24543",
     status: 1,
     customer: {
       name: "Marius Hauken",
@@ -143,7 +143,7 @@ export default () => [
   },
   {
     type: "loan",
-    id: 24543,
+    id: "21789",
     status: 1,
     customer: {
       name: "Espen Sæverud",
@@ -183,3 +183,5 @@ export default () => [
     }
   }
 ]
+
+export default caseId => (!caseId ? cases : cases.find(c => c.id === caseId))
