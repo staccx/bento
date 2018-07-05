@@ -1,12 +1,12 @@
 {
   "name": "@staccx/dealerpad",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "private": true,
   "dependencies": {
-    "@staccx/base": "^6.0.0",
-    "@staccx/nordea-theme": "^6.0.0",
-    "@staccx/soy": "^6.0.0",
-    "@staccx/theme": "^6.0.0"
+    "@staccx/base": "^6.1.0",
+    "@staccx/nordea-theme": "^6.1.0",
+    "@staccx/soy": "^6.1.0",
+    "@staccx/theme": "^6.1.0"
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -23,6 +23,6 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^6.0.0"
+    "@staccx/rollup-config": "^6.1.0"
   }
 }

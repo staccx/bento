@@ -1,14 +1,14 @@
 {
   "name": "@staccx/savings-advisor",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "private": true,
   "dependencies": {
-    "@staccx/animations": "^6.0.0",
-    "@staccx/base": "^6.0.0",
-    "@staccx/formatting": "^6.0.0",
-    "@staccx/math": "^6.0.0",
-    "@staccx/soy": "^6.0.0",
-    "@staccx/theme": "^6.0.0"
+    "@staccx/animations": "^6.1.0",
+    "@staccx/base": "^6.1.0",
+    "@staccx/formatting": "^6.1.0",
+    "@staccx/math": "^6.1.0",
+    "@staccx/soy": "^6.1.0",
+    "@staccx/theme": "^6.1.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
