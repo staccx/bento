@@ -34,7 +34,7 @@ export default {
         plugins
       })
     } catch (e) {
-      console.log("prettier error", e, code)
+      // console.log("prettier error", e, code)
     }
     return prettierCode || code
   },
