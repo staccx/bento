@@ -37,6 +37,7 @@ import { DocumentationUploadedIcon } from "./Icons/DocumentationUploaded"
 import { DocumentationUploadIcon } from "./Icons/DocumentationUpload"
 import { DocumentationDownloadIcon } from "./Icons/DocumentationDownload"
 import { DocumentationTrashIcon } from "./Icons/DocumentationTrash"
+import { BackIcon } from "./Icons/Back"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -184,4 +185,5 @@ const theme = new Theme(BaseTheme, {
   .add(DocumentationUploadIcon)
   .add(DocumentationDownloadIcon)
   .add(DocumentationTrashIcon)
+  .add(BackIcon)
 export default theme

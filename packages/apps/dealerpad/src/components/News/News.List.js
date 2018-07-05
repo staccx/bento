@@ -4,7 +4,6 @@ import { Box, List, Heading } from "@staccx/base"
 
 const NewsList = ({ articles }) => (
   <div>
-    <Heading level={4}>I fokus</Heading>
     <Box size="flush">
       <List variant="newsList" ordered>
         {articles.map(article => (

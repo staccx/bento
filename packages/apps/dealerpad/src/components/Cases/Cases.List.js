@@ -6,49 +6,43 @@ import { ThemeComponent, color, spacing } from "@staccx/theme"
 import CasesProgress from "./Cases.Progress"
 
 const CasesList = ({ cases, compact }) => (
-  <div>
-    <Heading level={4}>Mine siste saker</Heading>
-    <Box size="flush">
-      <List variant="casesList">
-        {cases.map((item, index) => (
-          <li key={item.id}>
-            <CaseLink to={`sales/${item.id}`}>
-              <CaseContainer>
+  <Box size="flush">
+    <List variant="casesList">
+      {cases.map((item, index) => (
+        <li key={item.id}>
+          <CaseLink to={`sales/${item.id}`}>
+            <CaseContainer>
+              <div>
+                <Heading level={5}>{item.customer.name}</Heading>
+                <Text>
+                  {item.vehicle.type} {item.vehicle.make} {item.vehicle.model}
+                </Text>
+                <Text variant="subtle"> {item.id}</Text>
+              </div>
+              {!compact && (
                 <div>
-                  <Heading level={5}>{item.customer.name}</Heading>
-                  <Text>
-                    {item.vehicle.type} {item.vehicle.make} {item.vehicle.model}
-                  </Text>
-                  <Text variant="subtle"> {item.id}</Text>
+                  <CasesProgress
+                    progress={item.status}
+                    max={4}
+                    inverted={index % 2}
+                  />
                 </div>
-                {!compact && (
-                  <div>
-                    <CasesProgress
-                      progress={item.status}
-                      max={4}
-                      inverted={index % 2}
-                    />
-                  </div>
-                )}
+              )}
 
-                <div>
-                  {item.messages && (
-                    <NewBadge
-                      variant="casesList"
-                      number={item.messages.length}
-                    />
-                  )}
-                  <IconWrapper>
-                    <ThemeComponent tagName="ArrowRight" />
-                  </IconWrapper>
-                </div>
-              </CaseContainer>
-            </CaseLink>
-          </li>
-        ))}
-      </List>
-    </Box>
-  </div>
+              <div>
+                {item.messages && (
+                  <NewBadge variant="casesList" number={item.messages.length} />
+                )}
+                <IconWrapper>
+                  <ThemeComponent tagName="ArrowRight" />
+                </IconWrapper>
+              </div>
+            </CaseContainer>
+          </CaseLink>
+        </li>
+      ))}
+    </List>
+  </Box>
 )
 
 const CaseContainer = styled.div`

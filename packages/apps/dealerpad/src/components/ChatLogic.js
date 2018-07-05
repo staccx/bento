@@ -3,10 +3,11 @@ import Chat from "./Chat"
 import ChatBubble from "./ChatBubble"
 import { Layout } from "@staccx/base"
 
-const ChatLogic = ({ messages }) => {
-  if (messages) {
-    return (
-      <Chat>
+const ChatLogic = ({ messages, caseNumber }) => {
+  console.log(caseNumber)
+  return (
+    <Chat>
+      {messages && (
         <Layout rowGap="small">
           {messages.map(message => (
             <ChatBubble
@@ -18,10 +19,12 @@ const ChatLogic = ({ messages }) => {
             />
           ))}
         </Layout>
-      </Chat>
-    )
-  }
-  return null
+      )}
+      {!messages && (
+        <div>Start en ny samtale med Nordea Finans på sak {caseNumber}</div>
+      )}
+    </Chat>
+  )
 }
 
 export default ChatLogic
