@@ -25,7 +25,6 @@ class OpenApiProvider extends React.Component {
   async componentWillMount() {
     const preferredLanguage =
       (await localforage.getItem(preferredLangKey)) || "nodeRequest"
-    console.log(preferredLanguage)
     this.setState({ preferredLanguage })
   }
 
@@ -48,7 +47,6 @@ class OpenApiProvider extends React.Component {
             return <div>Error</div>
           }
 
-          console.log("finding tags", openapi)
           const tags = findTags(openapi)
           const sorted = sortByTags(openapi, tags)
 

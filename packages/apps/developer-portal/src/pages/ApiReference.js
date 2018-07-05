@@ -8,7 +8,6 @@ import Definitions from "../components/Definitions/Definitions"
 const ApiReference = () => (
   <OpenApiConsumer>
     {({ sorted, openapi, info, codeGeneratorInputs, preferredLanguage }) => {
-      console.log(preferredLanguage)
       return (
         <Box size="flush" variant="apiContainer">
           {/*

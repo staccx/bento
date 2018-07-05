@@ -12,7 +12,6 @@ const getCodeRendererLanguage = lang => {
   }
 }
 
-console.log(codeGenerators)
 
 const Method = ({ codeGeneratorInputs, operation, language }) => {
   if (!language) {
@@ -26,7 +25,6 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
 
   const codeRendererLanguage = getCodeRendererLanguage(language)
 
-  console.log("Operation", operation)
   return (
     <div>
       {operation.name ? (

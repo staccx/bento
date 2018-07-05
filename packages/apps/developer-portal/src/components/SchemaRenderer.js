@@ -42,7 +42,7 @@ class SchemaRenderer extends React.Component {
               schema.$ref.lastIndexOf("/") + 1
             )
             if (schema.$ref.includes("Allocation")) {
-              console.log("Allocation schema", refSchema)
+              // console.log("Allocation schema", refSchema)
             }
             return (
               <div>

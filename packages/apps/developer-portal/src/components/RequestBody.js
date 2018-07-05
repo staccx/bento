@@ -10,7 +10,6 @@ class RequestBody extends React.Component {
     if (requestBody) {
       if (requestBody.$ref) {
         const ref = findReference(openapi, requestBody.$ref)
-        console.log("ref", ref)
         if (!ref) {
           console.warn("no ref round", requestBody)
           return null

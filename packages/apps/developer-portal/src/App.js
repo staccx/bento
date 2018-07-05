@@ -35,7 +35,6 @@ class App extends Component {
                   <Route
                     path="/api-reference/:path"
                     render={({ match }) => {
-                      console.log(match)
                       return null
                     }}
                   />
