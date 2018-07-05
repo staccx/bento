@@ -16,6 +16,7 @@ export const InputStyling = registerStyle(
       }
     `,
     chat: css`
+      height: ${spacing.large};
       border-color: transparent;
       padding-right: ${spacing("largePlus")};
       ${fontSmoothing};

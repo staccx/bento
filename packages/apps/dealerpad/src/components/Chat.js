@@ -31,7 +31,7 @@ const ChatInput = styled.div`
   left: 0;
   bottom: 0;
   width: 100%;
-  height: ${targetSize.normal};
+  height: ${spacing.large};
   border-top: 1px solid ${color.bg};
 `
 

@@ -1,17 +1,13 @@
 import { css } from "styled-components"
-import { registerStyle, spacing, targetSize } from "@staccx/theme"
+import { registerStyle, spacing } from "@staccx/theme"
 import { Layout, LayoutItem } from "@staccx/base"
 
 export const LayoutStyling = registerStyle(
   {
     case: css`
       grid-template-columns: 1fr 320px 130px 320px 1fr;
-      grid-template-rows:
-        ${spacing.large} auto ${spacing.medium} calc(
-          ${targetSize.normal} - ${spacing.medium}
-        )
-        auto auto auto;
-      grid-row-gap: ${spacing.medium};
+      grid-template-rows: repeat(7, auto);
+      grid-row-gap: ${spacing.large};
       grid-column-gap: ${spacing.medium};
     `
   },

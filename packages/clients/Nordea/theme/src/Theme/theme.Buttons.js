@@ -31,7 +31,7 @@ export const ButtonStyling = registerStyle(
       bottom: 0;
       min-height: ${targetSize.small};
       right: ${spacing.tiny};
-      bottom: ${spacing.tiny};
+      bottom: 8px;
       min-height: ${spacing.mediumPlus};
       padding: 0 ${spacing.small};
     `,
