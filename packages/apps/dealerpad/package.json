@@ -6,7 +6,8 @@
     "@staccx/base": "^6.1.0",
     "@staccx/nordea-theme": "^6.1.1",
     "@staccx/soy": "^6.1.0",
-    "@staccx/theme": "^6.1.0"
+    "@staccx/theme": "^6.1.0",
+    "react-web-notification": "^0.3.2"
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",

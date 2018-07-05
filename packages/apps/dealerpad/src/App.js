@@ -10,6 +10,7 @@ import theme from "./theme/Theme"
 import routes from "./data/routes"
 
 import Header from "./components/Header/Header"
+import Notifications from "./components/Notifications"
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
       <ThemeProxyProvider theme={theme}>
         <Router>
           <div>
+            <Notifications />
             <Header />
             <Switch>
               {routes.map(page => (
