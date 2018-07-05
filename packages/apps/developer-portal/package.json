@@ -2,7 +2,6 @@
   "name": "@staccx/developer-portal",
   "version": "6.1.0",
   "description": "Developer portal white label",
-  "private": true,
   "author": "StaccX",
   "license": "UNLICENCED",
   "repository": {
