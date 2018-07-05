@@ -69,8 +69,8 @@
 56 error build Errored while running script in '@staccx/dealerpad'
 57 error execute callback with error
 58 error Error: Command failed: yarn run build
-58 error (node:99901) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
-58 error (node:99906) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+58 error (node:3274) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+58 error (node:3282) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
 58 error error Command "prettify" not found.
 58 error error Command failed with exit code 1.
 58 error yarn run v1.6.0

@@ -7,6 +7,11 @@ const generateConfig = pkg => {
   const dependencies = Object.keys(pkg.dependencies || {})
 
   const external = id => {
+    // babelHelpers needs to be internal
+    if (id.includes("babelHelpers")) return false
+
+    // module is external if it is listed in dependencies,
+    // or if its name doesn't begin with . or /
     return dependencies.includes(id) || !/^[./]/.test(id)
   }
 
@@ -26,8 +31,13 @@ const generateConfig = pkg => {
     plugins: [
       json(),
       babel({
+        // needed to fix "regeneratorRuntime is not defined"
+        runtimeHelpers: true,
+
         exclude: ["node_modules/**"],
-        plugins: ["external-helpers"]
+
+        // transform-runtime need to fix "regeneratorRuntime is not defined"
+        plugins: ["external-helpers", "transform-runtime"]
       }),
       resolve(),
       commonjs()
