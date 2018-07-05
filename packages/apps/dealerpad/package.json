@@ -8,13 +8,21 @@
     "@staccx/soy": "^6.0.0",
     "@staccx/theme": "^6.0.0"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "build": "yarn prettify && rollup -c",
     "start": "react-app-rewired start",
-    "build:app": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-app-rewired eject",
-    "deploy": "yarn build && surge -p ./build",
-    "serve": "yarn build && serve -s build"
+    "test": "react-app-rewired test --env=jsdom --coverage",
+    "build:app": "react-scripts build",
+    "eject": "react-scripts eject",
+    "test:watch": "react-scripts test --env=jsdom --watch",
+    "build": "yarn prettify && rollup -c",
+    "start:module": "rollup -c -w",
+    "prepublish": "yarn test && yarn build",
+    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
+  },
+  "devDependencies": {
+    "@staccx/rollup-config": "^6.0.0"
   }
 }
