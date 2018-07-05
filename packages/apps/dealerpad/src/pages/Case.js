@@ -16,6 +16,7 @@ import CaseProgressLarge from "../components/Cases/Cases.Progress.Large"
 import FinancingTable from "../components/Tables/Table.Financing"
 import ObjectTable from "../components/Tables/Table.Object"
 import ChatLogic from "../components/ChatLogic"
+import Documentation from "../components/Documentation/Documentation"
 
 const currentCase = getCases()[0]
 
@@ -49,7 +50,11 @@ const Home = () => (
       <Heading level="2" variant="subtle">
         Dokumentasjon
       </Heading>
-      <Box variant="subtle">dokumentasjon</Box>
+      <div>
+        {currentCase.documents.map(document => (
+          <Documentation label={document.name} status={document.status} />
+        ))}
+      </div>
     </LayoutItem>
     <LayoutItem variant="caseContact">
       <Heading level="2" variant="subtle">

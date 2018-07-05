@@ -4,7 +4,8 @@ import {
   VARIANT_DEFAULT,
   color,
   fontWeight,
-  font
+  font,
+  spacing
 } from "@staccx/theme"
 import { Heading } from "@staccx/base"
 
@@ -21,6 +22,7 @@ export const HeadingStyling = registerStyle(
     subtle: css`
       color: ${color.wcag};
       font-size: ${font.tiny};
+      margin-bottom: ${spacing.tiny};
     `,
     ContactName: css`
       color: ${color.text};

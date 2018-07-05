@@ -31,6 +31,12 @@ import { ArrowRightIcon } from "./Icons/ArrowRight"
 import { TagStyling } from "./theme.Tag"
 import { PortalIcon, PortalLabel } from "./theme.Portal"
 import { TableStyling } from "./theme.Tables"
+import { DocumentationApprovedIcon } from "./Icons/DocumentationApproved"
+import { DocumentationRejectedIcon } from "./Icons/DocumentationRejected"
+import { DocumentationUploadedIcon } from "./Icons/DocumentationUploaded"
+import { DocumentationUploadIcon } from "./Icons/DocumentationUpload"
+import { DocumentationDownloadIcon } from "./Icons/DocumentationDownload"
+import { DocumentationTrashIcon } from "./Icons/DocumentationTrash"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -172,4 +178,10 @@ const theme = new Theme(BaseTheme, {
   .add(PortalIcon)
   .add(PortalLabel)
   .add(TableStyling)
+  .add(DocumentationApprovedIcon)
+  .add(DocumentationRejectedIcon)
+  .add(DocumentationUploadedIcon)
+  .add(DocumentationUploadIcon)
+  .add(DocumentationDownloadIcon)
+  .add(DocumentationTrashIcon)
 export default theme

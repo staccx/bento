@@ -1,3 +1,5 @@
+import fileStatus from "./fileStatus"
+
 export default () => [
   {
     type: "loan",
@@ -63,6 +65,28 @@ export default () => [
         time: "11:20",
         body:
           "Jeg går klokken 15:00 forresten, og trenger den i hende innen kl 14:00"
+      }
+    ],
+    documents: [
+      {
+        name: "Kopi av ID til lånetaker",
+        status: fileStatus.empty
+      },
+      {
+        name: "Kopi av ID til medlånetaker",
+        status: fileStatus.rejected
+      },
+      {
+        name: "Kjøpekontrakt",
+        status: fileStatus.approved
+      },
+      {
+        name: "Lånedokument",
+        status: fileStatus.uploaded
+      },
+      {
+        name: "Tinglysningsskjema",
+        status: fileStatus.uploaded
       }
     ]
   },
