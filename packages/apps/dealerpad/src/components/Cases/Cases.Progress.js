@@ -34,6 +34,7 @@ const Outer = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
+  width: 100px;
 
   &::after {
     content: "";

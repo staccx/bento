@@ -15,6 +15,9 @@ export const TextStyling = registerStyle(
       line-height: 1.4;
       color: ${color("g4")};
       ${fontSmoothing};
+    `,
+    legalese: css`
+      font-size: ${font.tiny};
     `
   },
   Text.themeProps.text

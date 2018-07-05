@@ -27,6 +27,10 @@ export const HeadingStyling = registerStyle(
     ContactName: css`
       color: ${color.text};
       font-size: ${font.input};
+    `,
+    caselist: css`
+      font-size: ${font.base};
+      font-weight: ${p => (p.attention ? "bold" : "normal")};
     `
   },
   Heading.themeProps.heading

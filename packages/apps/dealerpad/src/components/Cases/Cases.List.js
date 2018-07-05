@@ -13,26 +13,44 @@ const CasesList = ({ cases, compact }) => (
           <CaseLink to={`sales/${item.id}`}>
             <CaseContainer>
               <div>
-                <Heading level={5}>{item.customer.name}</Heading>
-                <Text>
+                <Heading
+                  level={3}
+                  variant="caselist"
+                  attention={
+                    item.messages || (item.messages && item.messages.length)
+                  }
+                >
+                  {item.customer.name}
+                </Heading>
+                <Text variant="legalese">
                   {item.vehicle.type} {item.vehicle.make} {item.vehicle.model}
+                  <Text variant="subtle"> {item.id}</Text>
                 </Text>
-                <Text variant="subtle"> {item.id}</Text>
               </div>
-              {!compact && (
-                <div>
-                  <CasesProgress
-                    progress={item.status}
-                    max={4}
-                    inverted={index % 2}
-                  />
-                </div>
-              )}
-
-              <div>
-                {item.messages && (
+              {item.messages &&
+                !compact && (
                   <NewBadge variant="casesList" number={item.messages.length} />
                 )}
+
+              <div>
+                {!compact && (
+                  <SpacingLeft>
+                    <CasesProgress
+                      progress={item.status}
+                      max={4}
+                      inverted={index % 2}
+                    />
+                  </SpacingLeft>
+                )}
+                {item.messages &&
+                  compact && (
+                    <SpacingLeft>
+                      <NewBadge
+                        variant="casesList"
+                        number={item.messages.length}
+                      />
+                    </SpacingLeft>
+                  )}
                 <IconWrapper>
                   <ThemeComponent tagName="ArrowRight" />
                 </IconWrapper>
@@ -50,10 +68,18 @@ const CaseContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  > div:first-child {
+    flex-grow: 1;
+  }
+
   > div:last-child {
     display: flex;
     align-items: center;
   }
+`
+
+const SpacingLeft = styled.div`
+  margin-left: ${spacing.small};
 `
 
 export const IconWrapper = styled.div`
