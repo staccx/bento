@@ -93,7 +93,7 @@ const cases = [
   {
     type: "loan",
     id: "24543",
-    status: 1,
+    status: 2,
     customer: {
       name: "Marius Hauken",
       ssn: "23088912345",
@@ -144,7 +144,7 @@ const cases = [
   {
     type: "loan",
     id: "21789",
-    status: 1,
+    status: 2,
     customer: {
       name: "Espen Sæverud",
       ssn: "23088912345",

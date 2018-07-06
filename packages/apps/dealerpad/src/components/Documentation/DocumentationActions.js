@@ -7,9 +7,9 @@ const DocumentationIcon = ({ status }) => {
   switch (status) {
     case fileStatus.empty:
       return (
-        <Button variant="icon">
-          <ThemeComponent tagName="DocumentationUpload" /> Last opp
-        </Button>
+        <div>
+          <Button variant="subtle">Last opp</Button>
+        </div>
       )
     case fileStatus.uploaded:
       return (
@@ -31,12 +31,10 @@ const DocumentationIcon = ({ status }) => {
     case fileStatus.rejected:
       return (
         <div>
-          <Button variant="icon">
-            <ThemeComponent tagName="DocumentationUpload" /> Last opp
-          </Button>
-          <Button variant="icon">
+          <Button variant="subtle">Last opp</Button>
+          {/* <Button variant="icon">
             <ThemeComponent tagName="DocumentationDownload" />
-          </Button>
+          </Button> */}
         </div>
       )
     default:

@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import { color, spacing, ThemeComponent } from "@staccx/theme"
+import { color, spacing, ThemeComponent, font, fontWeight } from "@staccx/theme"
 import { Text, hideVisually } from "@staccx/base"
 import getStatus from "../../helpers/getStatus"
 
@@ -60,6 +60,9 @@ const ProgressItem = styled.div`
   align-self: stretch;
   display: flex;
   justify-content: center;
+  font-size: ${font.tiny};
+  font-weight: ${p =>
+    p.status === "next" ? fontWeight.normal : fontWeight.bold};
   align-items: center;
   padding: ${spacing.small};
   color: ${p => (p.status === "current" ? color("primary") : color("wcag"))};

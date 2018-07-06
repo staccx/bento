@@ -24,7 +24,19 @@ export const TableStyling = registerStyle(
 
       th,
       td {
-        padding: ${spacing.tiny} ${spacing.small};
+        padding: ${spacing.tiny} ${spacing.medium};
+        vertical-align: top;
+        color: ${color.g4};
+      }
+
+      tr:first-child th,
+      tr:first-child td {
+        padding-top: ${spacing.medium};
+      }
+
+      tr:last-child th,
+      tr:last-child td {
+        padding-bottom: ${spacing.medium};
       }
 
       tbody {

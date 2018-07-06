@@ -19,7 +19,7 @@ const Documentation = ({ label, status }) => (
 
 const File = styled.div`
   background-color: ${color.white};
-  padding: ${spacing.tiny} ${spacing.small};
+  padding: ${spacing.tiny} ${spacing.tiny} ${spacing.tiny} ${spacing.medium};
   font-size: ${font.small};
   border-bottom: 1px solid ${color.bg};
   display: grid;

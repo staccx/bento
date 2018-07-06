@@ -3,13 +3,13 @@ import styled from "styled-components"
 import { ThemeComponent, spacing } from "@staccx/theme"
 import { Input, Box } from "@staccx/base"
 
-const Search = ({ children, classname }) => (
+const Search = ({ placeholder }) => (
   <Box variant="mainSearch">
     <IconWrapper>
       <ThemeComponent tagName={"SearchIcon"} />
     </IconWrapper>
     <Input
-      placeholder="Søk"
+      placeholder={placeholder}
       id="search"
       name="search"
       type="search"

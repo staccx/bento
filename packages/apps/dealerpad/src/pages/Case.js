@@ -39,9 +39,11 @@ const Case = ({ match }) => {
           </div>
           <Heading level={1} variant="caseHeading">
             {currentCase.customer.name}{" "}
-            <Text variant="caseNumber">{currentCase.id}</Text>{" "}
-            <Tag variant="inverted">{getLoanType(currentCase.type)}</Tag>
           </Heading>
+          <div>
+            <Tag variant="inverted">{currentCase.id}</Tag>{" "}
+            <Tag variant="inverted">{getLoanType(currentCase.type)}</Tag>
+          </div>
           <Paragraph variant="CaseSummary">
             {currentCase.vehicle.type}, {currentCase.vehicle.make}{" "}
             {currentCase.vehicle.model} {currentCase.vehicle.year} <br />

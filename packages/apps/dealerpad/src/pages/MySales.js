@@ -14,7 +14,7 @@ const MySales = () => (
     </Box>
     <Wrapper size="medium">
       <Box variant="salesSearch">
-        <Search />
+        <Search placeholder="Søk i alle mine salg" />
         <Button variant="filter">
           <ThemeComponent tagName={"filterIcon"} />
           Filter

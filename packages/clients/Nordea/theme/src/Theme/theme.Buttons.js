@@ -53,6 +53,19 @@ export const ButtonStyling = registerStyle(
           fill: ${color("g3")};
         }
       }
+    `,
+    subtle: css`
+      border-radius: ${targetSize.normal};
+      padding: 0 ${spacing.small};
+      min-height: ${spacing.medium};
+      background-color: transparent;
+      color: ${color("b4")};
+      &:hover,
+      &:focus,
+      &:active {
+        color: ${color("b4")};
+        background-color: ${color("bg")};
+      }
     `
   },
   Button.themeProps.button
