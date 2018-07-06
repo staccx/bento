@@ -40,6 +40,9 @@ export default {
   fiftyFifty: css`
     display: grid;
     grid-template-columns: 1fr 1fr;
+    @media only screen and (max-width: 730px) {
+      grid-template-columns: 1fr;
+    }
   `,
   rows: css`
     grid-auto-flow: row;
