@@ -66,6 +66,26 @@ export const ButtonStyling = registerStyle(
         color: ${color("b4")};
         background-color: ${color("bg")};
       }
+    `,
+    back: css`
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      color: ${color("b4")};
+      padding: 0;
+      min-height: ${spacing.medium};
+
+      svg {
+        margin-right: ${spacing.tiny};
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        color: ${color("text")};
+        color: ${color("b4")};
+        background-color: transparent;
+        text-decoration: underline;
+      }
     `
   },
   Button.themeProps.button

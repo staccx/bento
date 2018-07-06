@@ -4,13 +4,11 @@ import {
   Box,
   Paragraph,
   Tag,
-  Text,
   Layout,
-  LayoutItem
+  LayoutItem,
+  Button
 } from "@staccx/base"
-import styled from "styled-components"
-import { ThemeComponent, color, spacing } from "@staccx/theme"
-import { Link } from "react-router-dom"
+import { ThemeComponent } from "@staccx/theme"
 import getCases from "../data/cases"
 import getLoanType from "../helpers/getLoanType"
 import { formatCurrency } from "@staccx/formatting"
@@ -20,8 +18,9 @@ import FinancingTable from "../components/Tables/Table.Financing"
 import ObjectTable from "../components/Tables/Table.Object"
 import ChatLogic from "../components/Chat/ChatLogic"
 import Documentation from "../components/Documentation/Documentation"
+import { slideLeft } from "../components/transitions/transitions"
 
-const Case = ({ match }) => {
+const Case = ({ match, history }) => {
   const currentCase = getCases(match.params.caseId)
 
   return (
@@ -33,9 +32,14 @@ const Case = ({ match }) => {
       <LayoutItem variant="caseSummary">
         <Layout rowGap="small">
           <div>
-            <BackLink to="/my-sales">
+            <Button
+              variant="back"
+              onClick={() =>
+                history.push({ pathname: "/my-sales", state: slideLeft })
+              }
+            >
               <ThemeComponent tagName="Back" /> Mine salg
-            </BackLink>
+            </Button>
           </div>
           <Heading level={1} variant="caseHeading">
             {currentCase.customer.name}{" "}
@@ -106,19 +110,5 @@ const Case = ({ match }) => {
     </Layout>
   )
 }
-
-const BackLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  svg {
-    margin-right: ${spacing.tiny};
-  }
-  &:hover,
-  &:active,
-  &:focus {
-    color: ${color("text")};
-    text-decoration: underline;
-  }
-`
 
 export default Case

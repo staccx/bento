@@ -7,6 +7,8 @@
     "@staccx/nordea-theme": "^6.1.1",
     "@staccx/soy": "^6.1.0",
     "@staccx/theme": "^6.1.0",
+    "history": "^4.7.2",
+    "react-transition-group": "^2.4.0",
     "react-web-notification": "^0.3.2"
   },
   "main": "dist/index.js",
