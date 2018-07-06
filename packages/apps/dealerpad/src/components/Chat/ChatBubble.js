@@ -3,17 +3,34 @@ import styled from "styled-components"
 import { color, spacing, font } from "@staccx/theme"
 import { Flag, fontSmoothing } from "@staccx/base"
 import AvatarInitials from "./AvatarInitials"
+import { SlideInFromLeft } from "@staccx/animations"
 
-const ChatBubble = ({ from, body, date, time, currentUser }) => (
-  <Flag top small img={<AvatarInitials name={from} />}>
+const ChatBubble = ({ from, body, date, time, currentUser, index = 1 }) => (
+  <AnimatedFlag top small img={<AvatarInitials name={from} delay={index} />}>
     <Bubble currentUser={currentUser}>
       {body}
       <Time>
         {date} {time}
       </Time>
     </Bubble>
-  </Flag>
+  </AnimatedFlag>
 )
+
+const AnimatedFlag = styled(Flag)`
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: ${SlideInFromLeft} forwards ease-out 300ms 1;
+  animation-delay: 600ms;
+  &:nth-last-child(3) {
+    animation-delay: 700ms;
+  }
+  &:nth-last-child(2) {
+    animation-delay: 800ms;
+  }
+  &:nth-last-child(1) {
+    animation-delay: 900ms;
+  }
+`
 
 const Bubble = styled.div`
   background-color: ${p => (p.currentUser ? color("bg") : color("b2"))};

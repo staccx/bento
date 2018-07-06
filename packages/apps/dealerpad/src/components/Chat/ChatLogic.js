@@ -7,7 +7,7 @@ const ChatLogic = ({ messages, caseNumber }) => (
   <Chat>
     {messages && (
       <Layout rowGap="small">
-        {messages.map(message => (
+        {messages.map((message, index) => (
           <ChatBubble
             key={message.time + message.date}
             body={message.body}
@@ -15,6 +15,7 @@ const ChatLogic = ({ messages, caseNumber }) => (
             from={message.from}
             date={message.date}
             currentUser={false}
+            index={index}
           />
         ))}
       </Layout>

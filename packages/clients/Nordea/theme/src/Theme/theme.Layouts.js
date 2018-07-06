@@ -1,6 +1,7 @@
 import { css } from "styled-components"
 import { registerStyle, spacing } from "@staccx/theme"
 import { Layout, LayoutItem } from "@staccx/base"
+import { FadeIn, BounceIn } from "@staccx/animations"
 
 export const LayoutStyling = registerStyle(
   {
@@ -24,26 +25,54 @@ export const LayoutItemStyling = registerStyle(
     caseSummary: css`
       grid-column: 2 / span 1;
       grid-row: 2;
+      opacity: 0;
+      animation: ${FadeIn} forwards ease-out 400ms 1;
     `,
     caseChat: css`
       grid-column: 4 / span 1;
       grid-row: 2 / span 3;
+      opacity: 0;
+      animation: ${FadeIn} forwards ease-out 400ms 1;
+      animation-delay: 400ms;
     `,
     caseDocumentation: css`
       grid-column: 2 / span 1;
       grid-row: 5;
+      opacity: 0;
+      animation: ${FadeIn} forwards ease-out 400ms 1;
+      animation-delay: 500ms;
     `,
     caseContact: css`
       grid-column: 4 / span 1;
       grid-row: 5;
+      opacity: 0;
+      animation: ${FadeIn} forwards ease-out 400ms 1;
+      animation-delay: 600ms;
     `,
     caseFinance: css`
       grid-column: 2 / span 1;
       grid-row: 6;
+      opacity: 0;
+      animation: ${FadeIn} forwards ease-out 400ms 1;
+      animation-delay: 700ms;
     `,
     caseObject: css`
       grid-column: 4 / span 1;
       grid-row: 6;
+      opacity: 0;
+      animation: ${FadeIn} forwards ease-out 400ms 1;
+      animation-delay: 800ms;
+    `,
+    fadeIn: css`
+      opacity: 0;
+      animation: ${FadeIn} forwards ease-out 400ms 1;
+      animation-delay: ${p => (p.delay ? p.delay : 0)}ms;
+    `,
+    fadeUp: css`
+      opacity: 0;
+      transform: translateY(-12px);
+      animation: ${BounceIn} forwards ease-out 400ms 1;
+      animation-delay: ${p => (p.delay ? p.delay : 0)}ms;
     `
   },
   LayoutItem.themeProps.container

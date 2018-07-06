@@ -18,7 +18,7 @@ const NewsHero = ({ article }) => (
         paddingBottom="large"
         columnGap="huge"
       >
-        <LayoutItem>
+        <LayoutItem variant="fadeUp" delay={400}>
           <Heading level={1} variant="hero">
             {article.title}
           </Heading>
@@ -27,7 +27,7 @@ const NewsHero = ({ article }) => (
             <Link to={article.actionUrl}>{article.actionText}</Link>
           </div>
         </LayoutItem>
-        <LayoutItem>
+        <LayoutItem variant="fadeUp" delay={500}>
           <img src={article.image} alt="" />
         </LayoutItem>
       </Layout>

@@ -23,23 +23,23 @@ const Home = () => (
       >
         <LayoutItem>
           <Layout>
-            <div>
+            <LayoutItem variant="fadeIn" delay={600}>
               <Heading level="2" variant="subtle">
                 I fokus
               </Heading>
               <NewsList articles={getNewsItems().slice(1)} />
-            </div>
-            <div>
+            </LayoutItem>
+            <LayoutItem variant="fadeIn" delay={700}>
               <Heading level="2" variant="subtle">
                 Mine siste saker
               </Heading>
               <CasesList cases={getCases().slice(0, 5)} compact />
-            </div>
+            </LayoutItem>
           </Layout>
         </LayoutItem>
         <LayoutItem>
           <Layout rowGap="large">
-            <LayoutItem>
+            <LayoutItem variant="fadeIn" delay={800}>
               <div>
                 <Heading level="2" variant="subtle">
                   Kontakt oss
@@ -47,7 +47,7 @@ const Home = () => (
               </div>
               <Contact />
             </LayoutItem>
-            <LayoutItem>
+            <LayoutItem variant="fadeIn" delay={900}>
               <SearchGlobal />
             </LayoutItem>
           </Layout>
