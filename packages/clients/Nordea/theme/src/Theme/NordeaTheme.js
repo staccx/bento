@@ -39,6 +39,7 @@ import { DocumentationUploadIcon } from "./Icons/DocumentationUpload"
 import { DocumentationDownloadIcon } from "./Icons/DocumentationDownload"
 import { DocumentationTrashIcon } from "./Icons/DocumentationTrash"
 import { BackIcon } from "./Icons/Back"
+import { FilterIcon } from "./Icons/Filter"
 import { DividerStyling } from "./theme.Divider"
 import { RadioButtonWrapper, RadioButtonLabel } from "./theme.RadioButton"
 
@@ -190,6 +191,7 @@ const theme = new Theme(BaseTheme, {
   .add(DocumentationTrashIcon)
   .add(SearchIcon)
   .add(BackIcon)
+  .add(FilterIcon)
   .add(DividerStyling)
   .add(RadioButtonWrapper)
   .add(RadioButtonLabel)

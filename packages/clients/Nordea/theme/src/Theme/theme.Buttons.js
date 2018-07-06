@@ -86,6 +86,13 @@ export const ButtonStyling = registerStyle(
         background-color: transparent;
         text-decoration: underline;
       }
+    `,
+    filter: css`
+      justify-content: center;
+      display: flex;
+      svg {
+        margin-right: ${spacing.tiny};
+      }
     `
   },
   Button.themeProps.button
