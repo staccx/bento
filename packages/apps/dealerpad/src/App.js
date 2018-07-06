@@ -8,8 +8,25 @@ import Transitions from "./components/transitions/transitions"
 
 import Header from "./components/Header/Header"
 import Notifications from "./components/Notifications"
+import MobileMenu from "./components/MobileMenu"
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      menuOpen: false
+    }
+    this.toggleMenu = this.toggleMenu.bind(this)
+  }
+
+  toggleMenu() {
+    console.log("toggleMenu")
+    this.setState({
+      menuOpen: !this.state.menuOpen
+    })
+    // TODO: Denne må trigges når du klikker på elementer i menyen ☝️
+  }
+
   render() {
     const history = createHistory()
     return (
@@ -19,7 +36,11 @@ class App extends Component {
             render={({ location }) => (
               <div>
                 <Notifications />
-                <Header />
+                <MobileMenu
+                  menuOpen={this.state.menuOpen}
+                  onClick={() => this.toggleMenu()}
+                />
+                <Header onClick={() => this.toggleMenu()} />
                 <Transitions pageKey={location.key} {...location.state}>
                   <Switch location={location}>
                     {routes.map(page => (

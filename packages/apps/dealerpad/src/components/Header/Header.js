@@ -2,10 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import { NavLink } from "react-router-dom"
 import { ThemeComponent, color, spacing } from "@staccx/theme"
-import { Wrapper, List, fontSmoothing } from "@staccx/base"
+import { Wrapper, List, fontSmoothing, Button } from "@staccx/base"
 import routes from "../../data/routes"
 
-const Header = ({ children, classname }) => (
+const Header = ({ onClick }) => (
   <Head>
     <Wrapper size="huge">
       <Inner>
@@ -16,19 +16,31 @@ const Header = ({ children, classname }) => (
           {routes.map(
             page =>
               page.inMenu && (
-                <li key={page.path + "menu"}>
+                <DesktopMenuElement key={page.path + "menu"}>
                   <MenuElement to={page.path} activeClassName="dpCurrent">
                     <ThemeComponent tagName={page.icon} />
                     <MenuText>{page.name}</MenuText>
                   </MenuElement>
-                </li>
+                </DesktopMenuElement>
               )
           )}
+          <li>
+            <Button variant="hamburger" onClick={() => onClick()}>
+              <ThemeComponent tagName="menu" />
+              <MenuText>Menu</MenuText>
+            </Button>
+          </li>
         </Menu>
       </Inner>
     </Wrapper>
   </Head>
 )
+
+const DesktopMenuElement = styled.li`
+  @media only screen and (max-width: 540px) {
+    display: none;
+  }
+`
 
 const Head = styled.header`
   background-color: ${color("header")};

@@ -93,6 +93,21 @@ export const ButtonStyling = registerStyle(
       svg {
         margin-right: ${spacing.tiny};
       }
+    `,
+    hamburger: css`
+      display: flex;
+      min-height: 52px;
+      background-color: transparent;
+      @media only screen and (min-width: 540px) {
+        display: none;
+      }
+    `,
+    closeMobileMenu: css`
+      background-color: transparent;
+      display: flex;
+      position: absolute;
+      top: ${spacing.small};
+      right: ${spacing.small};
     `
   },
   Button.themeProps.button
