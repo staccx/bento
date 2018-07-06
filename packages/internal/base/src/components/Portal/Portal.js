@@ -1,16 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import {
-  ThemeComponent,
-  spacing,
-  color,
-  themify,
-  themeProps
-} from "@staccx/theme"
+import { ThemeComponent, spacing, color, themify } from "@staccx/theme"
 import themePropTypes from "../constants/themePropTypes"
 
-const Portal = ({ label, className, tagName, variant, ...rest }) => (
+const Portal = ({ label, tagName, variant, className, ...rest }) => (
   <PortalWrapper className={className} {...rest} variant={variant}>
     <IconWrapper variant={variant}>
       <ThemeComponent tagName={tagName} />
@@ -76,7 +70,7 @@ Portal.defaultProps = {
 }
 
 Portal.propTypes = {
-  children: themeProps.children.isRequired,
+  label: PropTypes.string,
   className: PropTypes.string,
   tagName: PropTypes.string,
   variant: PropTypes.string

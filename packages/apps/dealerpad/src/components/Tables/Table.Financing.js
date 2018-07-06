@@ -30,7 +30,7 @@ const FinancingTable = ({ caseFinancing }) => {
         renderHeader={({ item }) => <th colSpan="2">Finansiering</th>}
       >
         {({ item }) => (
-          <React.Fragment>
+          <React.Fragment key={getFinancingLabel(item.label)}>
             <th>{getFinancingLabel(item.label)}</th>
             <td>{item.value}</td>
           </React.Fragment>

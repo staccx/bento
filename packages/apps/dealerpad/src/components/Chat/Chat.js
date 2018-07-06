@@ -7,7 +7,7 @@ const Chat = ({ children }) => (
   <ChatBox variant="Chat">
     <ChatWrapper>{children}</ChatWrapper>
     <ChatInput>
-      <Input variant="chat" placeholder="Beskjed" />
+      <Input variant="chat" placeholder="Beskjed" id="chatinput" />
       <Button variant="chat">Send</Button>
     </ChatInput>
   </ChatBox>

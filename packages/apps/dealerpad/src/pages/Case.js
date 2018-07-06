@@ -72,7 +72,11 @@ const Case = ({ match, history }) => {
           </Heading>
           <div>
             {currentCase.documents.map(document => (
-              <Documentation label={document.name} status={document.status} />
+              <Documentation
+                label={document.name}
+                status={document.status}
+                key={document.name}
+              />
             ))}
           </div>
         </LayoutItem>

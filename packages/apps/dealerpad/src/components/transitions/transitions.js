@@ -17,7 +17,7 @@ export default ({
       timeout: duration
     })}
   >
-    <CSSTransition key={pageKey}>
+    <CSSTransition key={pageKey} timeout={duration}>
       {/* you should wrap CSSTransition child in a div in case it could be null
       see https://github.com/reactjs/react-transition-group/issues/208 */}
       <div>{children}</div>
