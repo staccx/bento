@@ -12,7 +12,6 @@ const getCodeRendererLanguage = lang => {
   }
 }
 
-
 const Method = ({ codeGeneratorInputs, operation, language }) => {
   if (!language) {
     return null

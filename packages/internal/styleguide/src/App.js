@@ -1,29 +1,37 @@
 import React, { Component } from "react"
-import AlertDocumentation from "./components/Alert.documentation"
-import ButtonDocumentation from "./components/Button.documentation"
-import { Wrapper, CodeRenderer } from "@staccx/base"
+import { Wrapper } from "@staccx/base"
 import { ThemeProxyProvider } from "@staccx/Theme"
 import theme from "./theme.js"
-import * as codeGenerators from "@staccx/code-generator"
+import { NordeaTheme } from "@staccx/nordea-theme"
+import aprila from "@staccx/aprila-theme"
+import { Button } from "@staccx/base/dist/lib/previews/index"
+import { Button as Btn } from "@staccx/base"
+import PreviewComponent from "./components/PreviewComponent"
 
 class App extends Component {
+  constructor(props, context) {
+    super(props, context)
+    this.state = {
+      theme: NordeaTheme
+    }
+  }
+
   render() {
     return (
-      <ThemeProxyProvider theme={theme}>
+      <ThemeProxyProvider theme={this.state.theme}>
         <Wrapper>
-          <AlertDocumentation />
-          <ButtonDocumentation />
-          <CodeRenderer
-            code={codeGenerators.restSharp.generate({
-              summary: "summarytext",
-              method: "POST",
-              path: "/api/myendpoint",
-              headers: { a: "b", b: "c", d: "e" },
-              body: { a: "b" },
-              queryParams: { q: "my-q-value" }
-            })}
-            language="java"
-          />
+          <Btn
+            onClick={() => {
+              if (this.state.theme.name === NordeaTheme.name) {
+                this.setState({ theme: aprila })
+              } else {
+                this.setState({ theme: NordeaTheme })
+              }
+            }}
+          >
+            Change
+          </Btn>
+          <PreviewComponent component={Button} />
         </Wrapper>
       </ThemeProxyProvider>
     )

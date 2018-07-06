@@ -1,7 +1,5 @@
-/**
- * @class Button
- */
 import PropTypes from "prop-types"
+import React from "react"
 import styled from "styled-components"
 import {
   targetSize,
@@ -11,8 +9,7 @@ import {
   fontWeight,
   font,
   color,
-  themify,
-  themeProps
+  themify
 } from "@staccx/theme"
 import themePropTypes from "../constants/themePropTypes"
 const tinycolor = require("tinycolor2")
@@ -24,7 +21,8 @@ const tProps = {
     type: themePropTypes.style
   }
 }
-const Button = styled.button`
+
+const ButtonComp = styled.button`
   background-color: ${color.primary};
   color: ${p =>
     tinycolor
@@ -72,6 +70,10 @@ const Button = styled.button`
 
   ${themify(tProps.button.name)};
 `
+/**
+ * Button component. Use to click stuff
+ */
+const Button = props => <ButtonComp {...props} />
 
 const defaultProps = {
   onClick: null,
@@ -80,15 +82,24 @@ const defaultProps = {
 }
 
 const propTypes = {
-  children: themeProps.children.isRequired,
+  /**
+   * The children of the lamb
+   */
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.array
+  ]).isRequired,
   onClick: PropTypes.func,
   className: PropTypes.string,
-  to: PropTypes.string
+  to: PropTypes.string,
+  test: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }
 
 Button.defaultProps = defaultProps
 Button.propTypes = propTypes
 Button.themeProps = tProps
 
-/** @component */
 export default Button

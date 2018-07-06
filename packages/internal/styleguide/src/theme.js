@@ -1,5 +1,6 @@
-import { BaseTheme } from "@staccx/base"
-import { Theme } from "@staccx/theme"
+import { BaseTheme, Button } from "@staccx/base"
+import { Theme, registerStyle } from "@staccx/theme"
+import { css } from "styled-components"
 import reset from "./reset"
 
 const borderRadius = "0px"
@@ -90,6 +91,18 @@ const theme = new Theme(BaseTheme, {
   fontFamily,
   spacing,
   global: reset
-})
+}).add(
+  registerStyle(
+    {
+      blue: css`
+        background-color: blue;
+      `,
+      coral: css`
+        background-color: coral;
+      `
+    },
+    Button.themeProps.button
+  )
+)
 
 export default theme
