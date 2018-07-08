@@ -13,6 +13,8 @@ import { default as targetSize } from "./src/targetSize"
 import { default as fontFamily } from "./src/fontFamily"
 import { default as wrapper } from "./src/wrapper"
 import { default as ThemeComponent } from "./src/ThemeComponent"
+import { default as ThemeConsumer } from "./src/ThemeConsumer"
+import { default as ThemeProvider } from "./src/ThemeProvider"
 import { default as ThemeProxyProvider } from "./src/ThemeProxyProvider"
 import { themeProps } from "./src/themeProps"
 
@@ -28,6 +30,8 @@ export {
   targetSize,
   Theme,
   ThemeComponent,
+  ThemeProvider,
+  ThemeConsumer,
   themeProps,
   ThemeProxyProvider,
   themify,
