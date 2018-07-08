@@ -10,7 +10,7 @@
     "@staccx/theme": "^6.1.0"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "node buildPreviews.js && react-app-rewired start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

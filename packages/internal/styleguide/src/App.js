@@ -1,39 +1,66 @@
 import React, { Component } from "react"
-import { Wrapper } from "@staccx/base"
-import { ThemeProxyProvider } from "@staccx/Theme"
+import { Wrapper, Select } from "@staccx/base"
+import { ThemeProvider, ThemeConsumer } from "@staccx/Theme"
 import theme from "./theme.js"
 import { NordeaTheme } from "@staccx/nordea-theme"
 import aprila from "@staccx/aprila-theme"
-import { Button } from "@staccx/base/dist/lib/previews/index"
-import { Button as Btn } from "@staccx/base"
+import * as Components from "./components.js"
 import PreviewComponent from "./components/PreviewComponent"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 class App extends Component {
   constructor(props, context) {
     super(props, context)
+    const themes = [theme, aprila, NordeaTheme].reduce((acc, curr) => {
+      acc[curr.name] = curr
+      return acc
+    }, {})
     this.state = {
-      theme: NordeaTheme
+      componentThemeName: aprila.name,
+      themes
     }
   }
 
   render() {
     return (
-      <ThemeProxyProvider theme={this.state.theme}>
-        <Wrapper>
-          <Btn
-            onClick={() => {
-              if (this.state.theme.name === NordeaTheme.name) {
-                this.setState({ theme: aprila })
-              } else {
-                this.setState({ theme: NordeaTheme })
-              }
+      <Router>
+        <ThemeProvider themeName={"Styleguide"} themes={this.state.themes}>
+          <ThemeConsumer themeName={"main"}>
+            {({ themes }) => {
+              return (
+                <Select
+                  items={Object.keys(themes).map(key => themes[key])}
+                  itemToString={item => item.name}
+                  itemToKey={item => item.name}
+                  selectedItem={themes[this.state.componentThemeName]}
+                  onChange={theme =>
+                    this.setState({ componentThemeName: theme.name })
+                  }
+                />
+              )
             }}
-          >
-            Change
-          </Btn>
-          <PreviewComponent component={Button} />
-        </Wrapper>
-      </ThemeProxyProvider>
+          </ThemeConsumer>
+          {Reflect.ownKeys(Components).map(key => {
+            const comp = Components[key]
+            return <Link to={`/component/${comp.title}`}>{comp.title}</Link>
+          })}
+          <Route
+            path={"/component/:component"}
+            render={({ match }) => {
+              if (Components.hasOwnProperty(match.params.component)) {
+                return (
+                  <PreviewComponent
+                    componentThemeName={this.state.componentThemeName}
+                    component={Components[match.params.component]}
+                  />
+                )
+              }
+
+              return <div>No such component {match.params.component}</div>
+            }}
+          />
+        </ThemeProvider>
+      </Router>
     )
   }
 }

@@ -39,7 +39,7 @@ const defaultPlugins = [
   // filesize()
 ]
 
-glob("./src/**/*.js", {}, function(er, files) {
+glob("./src/**/!(*.preview).js", {}, function(er, files) {
   const components = files
     .map(file => {
       const basename = path.basename(file)

@@ -77,7 +77,7 @@ const fontFamily = {
 }
 
 const theme = new Theme(BaseTheme, {
-  name: "Norfjell",
+  name: "Styleguide",
   layout: {
     dashboardLayout: "columnNarrow",
     menuArea: "aside"

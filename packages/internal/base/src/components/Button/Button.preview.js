@@ -3,8 +3,10 @@ import Button from "./Button"
 
 const preview = {
   title: "Button",
+  category: "component",
+  tags: ["component", "clickable", "button"],
   component: Button,
-  render: props => <Button {...props}>My Button</Button>
+  render: props => <Button {...props}>Cool Button</Button>
 }
 
 export default preview
