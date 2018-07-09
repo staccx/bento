@@ -50,7 +50,7 @@ glob("../../**/*.preview.js", {}, (error, files) => {
       const parsed = reactDocs.parse(data)
 
       props[name] = parsed
-      return `export{default as  ${name}} from "${file}"\n`
+      return `export{default as  ${name}} from "../../${file}"\n`
     })
     .join("")}  
   `
