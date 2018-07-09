@@ -45,10 +45,12 @@ class PreviewComponent extends Component {
       }
     })
 
-    const themeProps = Reflect.ownKeys(component.themeProps).map(key => {
-      const themeProp = component.themeProps[key]
-      return themeProp
-    })
+    const themeProps = component.themeProps
+      ? Reflect.ownKeys(component.themeProps).map(key => {
+          const themeProp = component.themeProps[key]
+          return themeProp
+        })
+      : []
 
     return (
       <div>
