@@ -38,7 +38,7 @@ class PreviewComponent extends Component {
       const { type, defaultValue, required } = prop
       return {
         name: key,
-        type,
+        type: typeToString(type),
         required,
         defaultValue
       }
@@ -63,9 +63,9 @@ class PreviewComponent extends Component {
                 <Text>{item.name}</Text>
                 <Paragraph>{item.description}</Paragraph>
               </td>
-              <td>{item.type.toString()}</td>
+              <td>{item.type}</td>
               <td>{item.required ? "yes" : "no"}</td>
-              <td>{item.defaultValue && item.defaultValue.value.toString()}</td>
+              <td>{item.defaultValue && valueToString(item.defaultValue)}</td>
             </React.Fragment>
           )}
         </Table>
@@ -157,3 +157,52 @@ PreviewComponent.propTypes = {
 }
 
 export default PreviewComponent
+
+const valueToString = value => {
+  return value.value
+}
+
+const typeToString = type => {
+  console.log("typetostring:", type)
+  switch (type.name) {
+    case "enum": {
+      return type.value.map(v => v.value).join(" | ")
+    }
+
+    case "func": {
+      return "function"
+    }
+
+    case "string": {
+      return "string"
+    }
+
+    case "number": {
+      return "number"
+    }
+
+    case "element": {
+      return "element"
+    }
+
+    case "arrayOf": {
+      return "[".concat(typeToString(type.value).concat(", ...]"))
+    }
+
+    case "union": {
+      return type.value.map(typeToString).join(" | ")
+    }
+
+    case "array": {
+      return "array"
+    }
+
+    case "custom": {
+      return type.raw
+    }
+
+    default: {
+      return JSON.stringify(type)
+    }
+  }
+}
