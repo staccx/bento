@@ -33,37 +33,54 @@ module.exports = function(plop) {
     prompts: [
       {
         type: "input",
-        name: "fileName",
-        message: "Enter filename (root is src/components)"
+        name: "name",
+        message: "Enter name"
       },
-      {
-        type: "list",
-        name: "type",
-        message: "Which type do you want",
-        choices: ["Pure component", "Functional component", "Vanilla"]
-      },
-      {
-        type: "checkbox",
-        name: "deps",
-        message: "Choose what you need",
-        choices: [
-          "animations",
-          "color",
-          "formatting",
-          "i18n",
-          "formatting",
-          "math",
-          "theme",
-          "utils"
-        ]
-      },
+      // {
+      //   type: "list",
+      //   name: "type",
+      //   message: "Which type do you want",
+      //   choices: ["Pure component", "Functional component", "Vanilla"]
+      // },
+      // {
+      //   type: "checkbox",
+      //   name: "deps",
+      //   message: "Choose what you need",
+      //   choices: [
+      //     "animations",
+      //     "color",
+      //     "formatting",
+      //     "i18n",
+      //     "formatting",
+      //     "math",
+      //     "theme",
+      //     "utils"
+      //   ]
+      // },
       {
         type: "confirm",
         name: "confirm",
         message: "Are you sure?"
       }
     ],
-    actions: []
+    actions: [
+      {
+        type: "add",
+        path: "packages/internal/base/components/{{name}}/{{name}}.js",
+        templateFile:
+          "templates/plop/CreateBaseComponent/templates/Component.hbs"
+      },
+      {
+        type: "add",
+        path: "packages/internal/base/components/{{name}}/{{name}}.preview.js",
+        templateFile: "templates/plop/CreateBaseComponent/templates/Preview.hbs"
+      },
+      {
+        type: "add",
+        path: "packages/internal/base/components/{{name}}/{{name}}.md",
+        templateFile: "templates/plop/CreateBaseComponent/templates/Readme.hbs"
+      }
+    ]
   })
   plop.setGenerator("App", {
     description: "Create new Stacc App",
