@@ -11,7 +11,7 @@ import {
 } from "@staccx/base"
 import { VARIANT_DEFAULT, ThemeProvider, ThemeConsumer } from "@staccx/theme"
 import PropTypes from "prop-types"
-import props from "../props.json"
+import props from "../generated/props.json"
 import ComponentDocumentation from "./ComponentDocumentation"
 
 const tabs = {

@@ -39,7 +39,7 @@ glob("../../**/*.preview.js", {}, (error, files) => {
     return
   }
   fs.writeFile(
-    "previews.js",
+    "./src/generated/previews.js",
     `
   ${files
     .map(file => {
@@ -55,10 +55,10 @@ glob("../../**/*.preview.js", {}, (error, files) => {
     .join("")}  
   `
   ).then(() => {
-    fs.writeJson("./src/props.json", props).then(() => {
+    fs.writeJson("./src/generated/props.json", props).then(() => {
       rollup
         .rollup({
-          input: "./previews.js",
+          input: "./src/generated/previews.js",
           external: external,
           plugins: defaultPlugins,
           onwarn: function(message) {
@@ -68,7 +68,7 @@ glob("../../**/*.preview.js", {}, (error, files) => {
         .then(bundle => {
           return bundle
             .write({
-              file: `./src/components.js`,
+              file: `./src/generated/components.js`,
               format: "cjs"
             })
             .then(() => {

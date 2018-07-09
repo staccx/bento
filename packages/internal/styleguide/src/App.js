@@ -4,7 +4,7 @@ import { ThemeProvider, ThemeConsumer } from "@staccx/Theme"
 import theme from "./theme.js"
 import { NordeaTheme } from "@staccx/nordea-theme"
 import aprila from "@staccx/aprila-theme"
-import * as Components from "./components.js"
+import * as Components from "./generated/components.js"
 import PreviewComponent from "./components/PreviewComponent"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
