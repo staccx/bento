@@ -13,6 +13,7 @@ import { VARIANT_DEFAULT, ThemeProvider, ThemeConsumer } from "@staccx/theme"
 import PropTypes from "prop-types"
 import props from "../generated/props.json"
 import ComponentDocumentation from "./ComponentDocumentation"
+import { typeToString, valueToString } from "../utils"
 
 const tabs = {
   preview: "preview",
@@ -157,52 +158,3 @@ PreviewComponent.propTypes = {
 }
 
 export default PreviewComponent
-
-const valueToString = value => {
-  return value.value
-}
-
-const typeToString = type => {
-  console.log("typetostring:", type)
-  switch (type.name) {
-    case "enum": {
-      return type.value.map(v => v.value).join(" | ")
-    }
-
-    case "func": {
-      return "function"
-    }
-
-    case "string": {
-      return "string"
-    }
-
-    case "number": {
-      return "number"
-    }
-
-    case "element": {
-      return "element"
-    }
-
-    case "arrayOf": {
-      return "[".concat(typeToString(type.value).concat(", ...]"))
-    }
-
-    case "union": {
-      return type.value.map(typeToString).join(" | ")
-    }
-
-    case "array": {
-      return "array"
-    }
-
-    case "custom": {
-      return type.raw
-    }
-
-    default: {
-      return JSON.stringify(type)
-    }
-  }
-}

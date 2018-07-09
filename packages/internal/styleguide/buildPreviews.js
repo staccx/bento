@@ -54,28 +54,34 @@ glob("../../**/*.preview.js", {}, (error, files) => {
     })
     .join("")}  
   `
-  ).then(() => {
-    fs.writeJson("./src/generated/props.json", props).then(() => {
-      rollup
-        .rollup({
-          input: "./src/generated/previews.js",
-          external: external,
-          plugins: defaultPlugins,
-          onwarn: function(message) {
-            return `${message.source} has an issue`
-          }
-        })
-        .then(bundle => {
-          return bundle
-            .write({
-              file: `./src/generated/components.js`,
-              format: "cjs"
-            })
-            .then(() => {
-              // fs.unlink("./previews.js").then(() => console.log("done"))
-            })
-        })
-        .catch(console.error)
+  )
+    .then(() => {
+      const data = fs.readFileSync("../theme/src/themeProps.js", "utf8")
+      const parsed = reactDocs.parse(data)
+      props.themeProps = parsed
     })
-  })
+    .then(() => {
+      fs.writeJson("./src/generated/props.json", props).then(() => {
+        rollup
+          .rollup({
+            input: "./src/generated/previews.js",
+            external: external,
+            plugins: defaultPlugins,
+            onwarn: function(message) {
+              return `${message.source} has an issue`
+            }
+          })
+          .then(bundle => {
+            return bundle
+              .write({
+                file: `./src/generated/components.js`,
+                format: "cjs"
+              })
+              .then(() => {
+                // fs.unlink("./previews.js").then(() => console.log("done"))
+              })
+          })
+          .catch(console.error)
+      })
+    })
 })

@@ -1,4 +1,7 @@
 import PropTypes from "prop-types"
+import React from "react"
+
+export class Dummy extends React.Component {}
 
 export const themeProps = {
   spacing: PropTypes.oneOf([
@@ -19,3 +22,5 @@ export const themeProps = {
     PropTypes.array
   ])
 }
+
+Dummy.propTypes = themeProps
