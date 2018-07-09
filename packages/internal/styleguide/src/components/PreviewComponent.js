@@ -40,7 +40,7 @@ class PreviewComponent extends Component {
       return {
         name: key,
         type: typeToString(type),
-        required,
+        required: required || type.name.endsWith(".isRequired"),
         defaultValue
       }
     })
