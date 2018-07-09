@@ -47,6 +47,14 @@ export const typeToString = type => {
       return type.raw
     }
 
+    case "any": {
+      return "any"
+    }
+
+    case "bool": {
+      return "true | false"
+    }
+
     default: {
       return JSON.stringify(type)
     }
