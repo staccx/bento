@@ -2,12 +2,22 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import Prism from "prismjs"
 import CodeWrapper from "./CodeWrapper"
+import "prismjs/components/prism-markup"
+
 class CodeRenderer extends Component {
   render() {
     const { code, language } = this.props
     let grammar = null
     let className = ""
+
+    console.log("prism", Prism.languages)
     switch (language) {
+      case "markup": {
+        className = "language-markup"
+        grammar = Prism.languages.markup
+        break
+      }
+
       case "javascript": {
         className = "language-js"
         grammar = Prism.languages.javascript
@@ -43,7 +53,7 @@ class CodeRenderer extends Component {
 
 CodeRenderer.propTypes = {
   code: PropTypes.string,
-  language: PropTypes.oneOf(["javascript", "java", "csharp"])
+  language: PropTypes.oneOf(["markup", "javascript", "java", "csharp"])
 }
 
 export default CodeRenderer

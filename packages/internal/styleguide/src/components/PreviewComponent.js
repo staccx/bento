@@ -16,6 +16,7 @@ import source from "../generated/source.json"
 import ComponentDocumentation from "./ComponentDocumentation"
 import { typeToString, valueToString } from "../utils"
 import ComponentSource from "./ComponentSource"
+import RenderedSource from "./RenderedSource"
 
 const tabs = {
   preview: "preview",
@@ -130,6 +131,7 @@ class PreviewComponent extends Component {
           {({ theme, themes }) => {
             switch (this.state.tab) {
               case tabs.preview: {
+                const componentRef = React.createRef()
                 return (
                   <ThemeProvider
                     themeName={this.props.componentThemeName}
@@ -139,7 +141,8 @@ class PreviewComponent extends Component {
                       <ComponentDocumentation width={"320px"}>
                         {this.props.component.render({
                           ...this.props,
-                          variant: this.state.variant
+                          variant: this.state.variant,
+                          ref: componentRef
                         })}
                       </ComponentDocumentation>
                     </div>
@@ -150,6 +153,11 @@ class PreviewComponent extends Component {
               case tabs.source: {
                 return <ComponentSource code={source[component.name]} />
               }
+
+              case tabs.sourceComponent: {
+                return <RenderedSource node={componentRef.current} />
+              }
+
               default: {
                 return <div>Not implemented yet</div>
               }
