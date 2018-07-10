@@ -49,7 +49,19 @@ const CodeWrapper = styled.pre`
   .class-name {
     color: ${color("codeClass")};
   }
-  ${themify(themeProps.wrapper.name)};
+
+  .tag {
+    color: ${color("codeHTMLTag")};
+  }
+
+  .attr-value {
+    color: ${color("codeHTMLAttrValue")};
+  }
+
+  .attr-name {
+    color: ${color("codeHTMLAttrName")};
+  }
+  . ${themify(themeProps.wrapper.name)};
 `
 
 CodeWrapper.themeProps = themeProps
