@@ -26,6 +26,7 @@ class ComponentDocumentation extends React.Component {
         >
           {sizes.map(size => (
             <RadioPillItem
+              key={size}
               value={size}
               id={size}
               defaultChecked={this.state.width === size}

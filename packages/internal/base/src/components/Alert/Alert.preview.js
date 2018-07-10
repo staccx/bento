@@ -8,11 +8,17 @@ const preview = {
   render: props => (
     <React.Fragment>
       # Alert type warning
-      <Alert type="warning">This is a warning</Alert>
+      <Alert {...props} type="warning">
+        This is a warning
+      </Alert>
       # Alert type success
-      <Alert type="success">This is a Success-message</Alert>
+      <Alert {...props} type="success">
+        This is a Success-message
+      </Alert>
       # Alert type info
-      <Alert type="info">This is an info-box!</Alert>
+      <Alert {...props} type="info">
+        This is an info-box!
+      </Alert>
     </React.Fragment>
   )
 }

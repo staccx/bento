@@ -73,6 +73,8 @@ LinkListItem.propTypes = {
   onClick: PropTypes.func
 }
 
+LinkListItem.themeProps = themeProps
+
 const Cursor = styled(IconComponent)`
   fill: ${color.wcag};
   position: absolute;

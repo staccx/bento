@@ -73,8 +73,12 @@ class PreviewComponent extends Component {
 
     return (
       <div>
-        <Heading>{this.props.component.title}</Heading>
-        <Text>{this.props.component.description}</Text>
+        {this.props.component.title && (
+          <Heading>{this.props.component.title}</Heading>
+        )}
+        {this.props.component.description && (
+          <Text>{this.props.component.description}</Text>
+        )}
 
         <Divider />
 
@@ -95,20 +99,30 @@ class PreviewComponent extends Component {
             group={"tabs"}
             onChange={e => this.setState({ tab: e.target.value })}
           >
-            <RadioPillItem id={"preview"} value={tabs.preview} defaultChecked>
+            <RadioPillItem
+              key={"preview"}
+              id={"preview"}
+              value={tabs.preview}
+              defaultChecked
+            >
               Preview
             </RadioPillItem>
-            <RadioPillItem id={"Source"} value={tabs.source}>
+            <RadioPillItem id={"Source"} key={"Source"} value={tabs.source}>
               Source
             </RadioPillItem>
-            <RadioPillItem id={"component"} value={tabs.sourceComponent}>
+            <RadioPillItem
+              id={"component"}
+              key={"component"}
+              value={tabs.sourceComponent}
+            >
               Source-component
             </RadioPillItem>
-            <RadioPillItem id={"example"} value={tabs.sourceExample}>
+            <RadioPillItem
+              id={"example"}
+              key={"example"}
+              value={tabs.sourceExample}
+            >
               Source example
-            </RadioPillItem>
-            <RadioPillItem id={"a11y"} value={tabs.a11y}>
-              A11y
             </RadioPillItem>
           </RadioPill>
         </React.Fragment>

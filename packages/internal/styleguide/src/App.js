@@ -40,7 +40,7 @@ class App extends Component {
                   {Reflect.ownKeys(Components).map(key => {
                     const comp = Components[key]
                     return (
-                      <li>
+                      <li key={key}>
                         <Link to={`/component/${comp.title}`}>
                           {comp.title}
                         </Link>
