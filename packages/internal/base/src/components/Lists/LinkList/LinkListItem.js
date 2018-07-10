@@ -63,8 +63,7 @@ const LinkListItem = ({ className, children, onClick, to }) => (
 )
 
 LinkListItem.defaultProps = {
-  className: "",
-  defaultProps: null
+  className: ""
 }
 
 LinkListItem.propTypes = {
