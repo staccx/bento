@@ -10,6 +10,7 @@ import {
   RadioPillItemHoverStyling
 } from "./theme.docs.Inputs"
 import { TableStyling } from "./theme.docs.Tables"
+import { LayoutItemStyling } from "./theme.docs.LayoutItem"
 
 const wrapper = {
   documentation: "1440px"
@@ -37,6 +38,7 @@ const theme = new Theme({ wrapper, color })
   .add(HeadingStyling)
   .add(ListStyling)
   .add(LayoutStyling)
+  .add(LayoutItemStyling)
   .add(TextStyling)
   .add(SplitListItemStyling)
   .add(InputStyling)

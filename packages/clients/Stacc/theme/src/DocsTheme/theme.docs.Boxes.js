@@ -26,6 +26,15 @@ export const BoxStyling = registerStyle(
     `,
     apiContainer: css`
       padding-top: ${spacing.large};
+    `,
+    styleGuideHeader: css`
+      height: ${spacing("largePlus")};
+      border-bottom: 1px solid ${color.line};
+      width: 100%;
+      display: flex;
+      padding-top: 0;
+      padding-bottom: 0;
+      align-items: center;
     `
   },
   Box.themeProps.box

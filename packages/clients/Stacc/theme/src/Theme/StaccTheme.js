@@ -39,7 +39,7 @@ const color = {
   gray: "#B8B8B8",
   text: "#2b2b2b",
   white: "#fff",
-  line: "#F8F8F8",
+  line: "#EBE7E7",
   wcag: "#777",
   disabled: "#B8B8B8",
   warning: "#EB5E55",

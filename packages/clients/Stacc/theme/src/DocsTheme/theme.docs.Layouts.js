@@ -6,19 +6,8 @@ export const LayoutStyling = registerStyle(
   {
     documentationHeader: css`
       width: 100%;
-      grid-template-columns: calc(40% + ${spacing.large}) 1fr;
+      grid-template-columns: 1fr 200px;
       grid-column-gap: 0;
-
-      > * {
-        flex-grow: 1;
-
-        &:last-child {
-          display: flex;
-          align-items: center;
-          background-color: ${color.bgGray};
-          border-left: 1px solid ${color.line};
-        }
-      }
     `,
     documentationApiExample: css`
       grid-template-columns: 35% 1fr;
@@ -61,10 +50,8 @@ export const LayoutStyling = registerStyle(
         }
       }
     `,
-    documentationApiReferences: css`
-      grid-template-columns: 1fr [switcher] 200px;
-      border-bottom: 1px solid ${color.line};
-    `
+
+    documentationSidebar: css``
   },
   Layout.themeProps.container
 )
