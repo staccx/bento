@@ -129,9 +129,10 @@ class PreviewComponent extends Component {
         </ThemeConsumer>
         <ThemeConsumer themeName={this.props.componentThemeName}>
           {({ theme, themes }) => {
+            const componentRef = React.createRef()
+
             switch (this.state.tab) {
               case tabs.preview: {
-                const componentRef = React.createRef()
                 return (
                   <ThemeProvider
                     themeName={this.props.componentThemeName}
