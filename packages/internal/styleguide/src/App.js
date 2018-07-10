@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-import { Wrapper, Select } from "@staccx/base"
+import { Select } from "@staccx/base"
 import { ThemeProvider, ThemeConsumer } from "@staccx/Theme"
-import theme from "./theme.js"
+import Theme from "./theme.js"
 import { NordeaTheme } from "@staccx/nordea-theme"
 import aprila from "@staccx/aprila-theme"
 import * as Components from "./generated/components.js"
@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 class App extends Component {
   constructor(props, context) {
     super(props, context)
-    const themes = [theme, aprila, NordeaTheme].reduce((acc, curr) => {
+    const themes = [Theme, aprila, NordeaTheme].reduce((acc, curr) => {
       acc[curr.name] = curr
       return acc
     }, {})
@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <ThemeProvider themeName={"Styleguide"} themes={this.state.themes}>
+        <ThemeProvider themeName={"Stacc"} themes={this.state.themes}>
           <ThemeConsumer themeName={"main"}>
             {({ themes }) => {
               return (
