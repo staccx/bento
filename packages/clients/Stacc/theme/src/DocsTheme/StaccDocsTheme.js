@@ -26,7 +26,10 @@ const color = {
   codeOperator: "#81A1C1",
   codeClass: "#8FBCBB",
   codePunctuation: "#ECEFF4",
-  codeError: "#E08679"
+  codeError: "#E08679",
+  codeHTMLAttrValue: "#7FB347",
+  codeHTMLAttrName: "#9876AA",
+  codeHTMLTag: "#A9B7C6"
 }
 
 const theme = new Theme({ wrapper, color })
