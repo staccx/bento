@@ -1,3 +1,3 @@
-import Theme from "./Theme/Theme"
+import NorefjellTheme from "./Theme/NorefjellTheme"
 
-export default Theme
+export default NorefjellTheme

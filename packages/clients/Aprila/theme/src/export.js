@@ -1,3 +1,3 @@
-import Theme from "./Theme/Theme"
+import AprilaTheme from "./Theme/AprilaTheme"
 
-export default Theme
+export default AprilaTheme

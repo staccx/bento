@@ -3,7 +3,7 @@ import { Select, Layout, LayoutItem, List } from "@staccx/base"
 import { ThemeProvider, ThemeConsumer, ThemeComponent } from "@staccx/Theme"
 import Theme from "./theme.js"
 import { NordeaTheme } from "@staccx/nordea-theme"
-import aprila from "@staccx/aprila-theme"
+import AprilaTheme from "@staccx/aprila-theme"
 import * as Components from "./generated/components.js"
 import PreviewComponent from "./components/PreviewComponent"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
@@ -11,12 +11,12 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 class App extends Component {
   constructor(props, context) {
     super(props, context)
-    const themes = [Theme, aprila, NordeaTheme].reduce((acc, curr) => {
+    const themes = [Theme, AprilaTheme, NordeaTheme].reduce((acc, curr) => {
       acc[curr.name] = curr
       return acc
     }, {})
     this.state = {
-      componentThemeName: aprila.name,
+      componentThemeName: AprilaTheme.name,
       themes
     }
   }
