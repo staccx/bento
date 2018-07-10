@@ -7,7 +7,7 @@ export const valueToString = value => {
 export const typeToString = type => {
   switch (type.name) {
     case "enum": {
-      return type.value.map(v => v.value).join(" | ")
+      return type.value.map(v => v.value).join(" / ")
     }
 
     case "func": {
@@ -27,11 +27,11 @@ export const typeToString = type => {
     }
 
     case "arrayOf": {
-      return "[".concat(typeToString(type.value).concat(", ...]"))
+      return "array of ".concat(typeToString(type.value))
     }
 
     case "union": {
-      return type.value.map(typeToString).join(" | ")
+      return type.value.map(typeToString).join(" / ")
     }
 
     case "array": {
@@ -51,7 +51,7 @@ export const typeToString = type => {
     }
 
     case "bool": {
-      return "true | false"
+      return "true or false"
     }
 
     default: {
