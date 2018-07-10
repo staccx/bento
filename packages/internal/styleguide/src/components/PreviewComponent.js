@@ -4,7 +4,6 @@ import {
   Text,
   Divider,
   Table,
-  Paragraph,
   RadioPillItem,
   RadioPill
 } from "@staccx/base"
@@ -16,9 +15,9 @@ import PropTypes from "prop-types"
 import props from "../generated/props.json"
 import source from "../generated/source.json"
 import ComponentDocumentation from "./ComponentDocumentation"
-import { typeToString, valueToString } from "../utils"
 import ComponentSource from "./ComponentSource"
 import RenderedSource from "./RenderedSource"
+import PropertiesTable from "./PropertiesTable"
 
 const tabs = {
   preview: "preview",
@@ -65,17 +64,6 @@ class PreviewComponent extends Component {
     const { component } = this.props.component
     const componentProps = props[component.name]
 
-    const data = Reflect.ownKeys(componentProps.props).map(key => {
-      const prop = componentProps.props[key]
-      const { type, defaultValue, required } = prop
-      return {
-        name: key,
-        type: typeToString(type),
-        required: required || type.name.endsWith(".isRequired"),
-        defaultValue
-      }
-    })
-
     const themeProps = component.themeProps
       ? Reflect.ownKeys(component.themeProps).map(key => {
           const themeProp = component.themeProps[key]
@@ -90,19 +78,7 @@ class PreviewComponent extends Component {
 
         <Divider />
 
-        <Table data={data}>
-          {({ item }) => (
-            <React.Fragment>
-              <td>
-                <Text>{item.name}</Text>
-                <Paragraph>{item.description}</Paragraph>
-              </td>
-              <td>{item.type}</td>
-              <td>{item.required ? "yes" : "no"}</td>
-              <td>{item.defaultValue && valueToString(item.defaultValue)}</td>
-            </React.Fragment>
-          )}
-        </Table>
+        <PropertiesTable props={componentProps.props} />
 
         <Table data={themeProps}>
           {({ item }) => (
