@@ -39,6 +39,11 @@ glob("../../**/*.preview.js", {}, (error, files) => {
     console.error(error)
     return
   }
+
+  if (!fs.existsSync("./src/generated")) {
+    fs.mkdirSync("./src/generated")
+  }
+
   fs.writeFile(
     "./src/generated/previews.js",
     `
