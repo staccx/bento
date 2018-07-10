@@ -12,8 +12,10 @@ import {
 import { VARIANT_DEFAULT, ThemeProvider, ThemeConsumer } from "@staccx/theme"
 import PropTypes from "prop-types"
 import props from "../generated/props.json"
+import source from "../generated/source.json"
 import ComponentDocumentation from "./ComponentDocumentation"
 import { typeToString, valueToString } from "../utils"
+import ComponentSource from "./ComponentSource"
 
 const tabs = {
   preview: "preview",
@@ -143,6 +145,10 @@ class PreviewComponent extends Component {
                     </div>
                   </ThemeProvider>
                 )
+              }
+
+              case tabs.source: {
+                return <ComponentSource code={source[component.name]} />
               }
               default: {
                 return <div>Not implemented yet</div>

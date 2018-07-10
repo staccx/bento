@@ -32,6 +32,7 @@ const defaultPlugins = [
 ]
 
 let props = {}
+let source = {}
 
 glob("../../**/*.preview.js", {}, (error, files) => {
   if (error) {
@@ -49,6 +50,7 @@ glob("../../**/*.preview.js", {}, (error, files) => {
       const data = fs.readFileSync(filename, "utf8")
       const parsed = reactDocs.parse(data)
 
+      source[name] = data
       props[name] = parsed
       return `export{default as  ${name}} from "../../${file}"\n`
     })
@@ -61,27 +63,27 @@ glob("../../**/*.preview.js", {}, (error, files) => {
       props.themeProps = parsed
     })
     .then(() => {
-      fs.writeJson("./src/generated/props.json", props).then(() => {
-        rollup
-          .rollup({
-            input: "./src/generated/previews.js",
-            external: external,
-            plugins: defaultPlugins,
-            onwarn: function(message) {
-              return `${message.source} has an issue`
-            }
-          })
-          .then(bundle => {
-            return bundle
-              .write({
-                file: `./src/generated/components.js`,
-                format: "cjs"
-              })
-              .then(() => {
-                // fs.unlink("./previews.js").then(() => console.log("done"))
-              })
-          })
-          .catch(console.error)
-      })
+      fs.writeJsonSync("./src/generated/props.json", props)
+      fs.writeJsonSync("./src/generated/source.json", source)
+      rollup
+        .rollup({
+          input: "./src/generated/previews.js",
+          external: external,
+          plugins: defaultPlugins,
+          onwarn: function(message) {
+            return `${message.source} has an issue`
+          }
+        })
+        .then(bundle => {
+          return bundle
+            .write({
+              file: `./src/generated/components.js`,
+              format: "cjs"
+            })
+            .then(() => {
+              // fs.unlink("./previews.js").then(() => console.log("done"))
+            })
+        })
+        .catch(console.error)
     })
 })
