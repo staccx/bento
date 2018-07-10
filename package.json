@@ -7,7 +7,7 @@
     "precommit": "lerna run --concurrency 1 --stream precommit",
     "postcommit": "git update-index --again",
     "styleguide": "cd packages/base && styleguidist server",
-    "start": "cd packages/base && yarn start"
+    "start": "cd packages/internal/styleguide && yarn start"
   },
   "repository": {
     "type": "git",
