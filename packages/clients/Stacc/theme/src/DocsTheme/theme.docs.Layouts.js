@@ -60,6 +60,10 @@ export const LayoutStyling = registerStyle(
           margin-bottom: -${spacing.medium};
         }
       }
+    `,
+    documentationApiReferences: css`
+      grid-template-columns: 1fr [switcher] 200px;
+      border-bottom: 1px solid ${color.line};
     `
   },
   Layout.themeProps.container
