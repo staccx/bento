@@ -5,7 +5,6 @@ import {
   Divider,
   Table,
   Paragraph,
-  Select,
   RadioPillItem,
   RadioPill
 } from "@staccx/base"
@@ -26,6 +25,20 @@ const tabs = {
   sourceComponent: "source-component",
   sourceExample: "source-example",
   a11y: "A11y"
+}
+
+const getVariants = (theme, name) => {
+  const variants = theme.hasOwnProperty(name)
+    ? Reflect.ownKeys(theme[name]).map(key => ({
+        name: key,
+        value: theme[name][key]
+      }))
+    : []
+
+  if (!variants.some(v => v.name === VARIANT_DEFAULT)) {
+    variants.push({ name: VARIANT_DEFAULT, value: "" })
+  }
+  return variants
 }
 class PreviewComponent extends Component {
   constructor(props, context) {
@@ -113,32 +126,9 @@ class PreviewComponent extends Component {
         </React.Fragment>
         <ThemeConsumer themeName={this.props.componentThemeName}>
           {({ theme, themes }) => {
-            const variants = theme.hasOwnProperty(component.name)
-              ? Reflect.ownKeys(theme[component.name]).map(key => ({
-                  name: key,
-                  value: theme[component.name][key]
-                }))
-              : []
-
-            if (!variants.some(v => v.name === VARIANT_DEFAULT)) {
-              variants.push({ name: VARIANT_DEFAULT, value: "" })
-            }
-            return (
-              <Select
-                items={variants}
-                itemToString={item => item.name}
-                itemToKey={item => item.name}
-                onChange={value => this.setState({ variant: value.name })}
-              />
-            )
-          }}
-        </ThemeConsumer>
-        <ThemeConsumer themeName={this.props.componentThemeName}>
-          {({ theme, themes }) => {
-            const componentRef = React.createRef()
-
             switch (this.state.tab) {
               case tabs.preview: {
+                const variants = getVariants(theme, component.name)
                 return (
                   <ThemeProvider
                     themeName={this.props.componentThemeName}
@@ -146,10 +136,16 @@ class PreviewComponent extends Component {
                   >
                     <div>
                       <ComponentDocumentation width={"320px"}>
-                        {this.props.component.render({
-                          ...this.props,
-                          variant: this.state.variant
-                        })}
+                        {variants.map(variant => (
+                          <React.Fragment>
+                            <Heading level={5}>{variant.name}</Heading>
+                            <Divider />
+                            {this.props.component.render({
+                              ...this.props,
+                              variant: variant.name
+                            })}
+                          </React.Fragment>
+                        ))}
                       </ComponentDocumentation>
                     </div>
                   </ThemeProvider>

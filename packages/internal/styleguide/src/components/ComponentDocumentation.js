@@ -10,7 +10,7 @@ class ComponentDocumentation extends React.Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      width: sizes[4]
+      width: props.width
     }
   }
 
