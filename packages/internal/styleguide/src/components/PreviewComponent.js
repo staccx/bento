@@ -9,6 +9,7 @@ import {
   RadioPill
 } from "@staccx/base"
 import beautify from "xml-beautifier"
+import reactElementToJSXString from 'react-element-to-jsx-string';
 import ReactDOMServer from "react-dom/server"
 import { VARIANT_DEFAULT, ThemeProvider, ThemeConsumer } from "@staccx/theme"
 import PropTypes from "prop-types"
@@ -157,7 +158,8 @@ class PreviewComponent extends Component {
               }
 
               case tabs.sourceComponent: {
-                return <RenderedSource code={""} />
+                const code = reactElementToJSXString(this.props.component.render())
+                return <RenderedSource code={code} />
               }
 
               case tabs.sourceExample: {

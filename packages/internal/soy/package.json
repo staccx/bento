@@ -47,6 +47,7 @@
     "react-docgen": "^2.21.0",
     "react-dom": "^16.3.2",
     "react-dom-confetti": "^0.0.10",
+    "react-element-to-jsx-string": "^14.0.1",
     "react-google-maps": "^9.4.5",
     "react-hotkeys": "^1.1.4",
     "react-jsonschema-form": "^1.0.3",

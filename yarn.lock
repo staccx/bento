@@ -181,28 +181,6 @@
     text-mask-core "^5.0.1"
     tinycolor2 "^1.4.1"
 
-"@staccx/eslint-config@^4.20.1":
-  version "4.20.1"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/eslint-config/-/@staccx/eslint-config-4.20.1.tgz#7e4fba53cef1334bbf757d2cc84a964232ad9e97"
-  dependencies:
-    babel-eslint "^8.2.2"
-    eslint "^4.18.2"
-    eslint-config-prettier "^2.9.0"
-    eslint-config-standard "^11.0.0"
-    eslint-config-standard-jsx "^5.0.0"
-    eslint-config-standard-react "^6.0.0"
-    eslint-plugin-import "^2.9.0"
-    eslint-plugin-node "^6.0.1"
-    eslint-plugin-prettier "^2.6.0"
-    eslint-plugin-promise "^3.6.0"
-    eslint-plugin-react "^7.7.0"
-    eslint-plugin-standard "^3.0.1"
-    husky "^0.14.3"
-    lint-staged "^7.1.2"
-    prettier "^1.10.2"
-    prettier-eslint-cli "^4.7.1"
-    standard "^11.0.1"
-
 "@staccx/formatting@^0.2.0":
   version "0.2.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-0.2.0.tgz#b8625abc1d52fe9559ab00d2450d1d941d55768f"
@@ -3922,7 +3900,7 @@ eslint@4.10.0:
     table "^4.0.1"
     text-table "~0.2.0"
 
-eslint@^4.0.0, eslint@^4.1.1, eslint@^4.18.2, eslint@^4.5.0:
+eslint@^4.0.0, eslint@^4.1.1, eslint@^4.5.0:
   version "4.19.1"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
   dependencies:
@@ -5851,7 +5829,7 @@ is-plain-obj@^1.0.0, is-plain-obj@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-1.1.0.tgz#71a50c8429dfca773c92a390a4a03b39fcd51d3e"
 
-is-plain-object@^2.0.1, is-plain-object@^2.0.3, is-plain-object@^2.0.4:
+is-plain-object@2.0.4, is-plain-object@^2.0.1, is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-2.0.4.tgz#2c163b3fafb1b606d9d17928f05c2a1c38e07677"
   dependencies:
@@ -8830,6 +8808,13 @@ react-dom@^16.3.2:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react-element-to-jsx-string@^14.0.1:
+  version "14.0.1"
+  resolved "https://registry.yarnpkg.com/react-element-to-jsx-string/-/react-element-to-jsx-string-14.0.1.tgz#6c4b8b7a1ec8a255fe2be1ca10b532065e2e219b"
+  dependencies:
+    is-plain-object "2.0.4"
+    stringify-object "3.2.2"
+
 react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
@@ -10371,7 +10356,7 @@ stringify-entities@^1.0.1:
     is-alphanumerical "^1.0.0"
     is-hexadecimal "^1.0.0"
 
-stringify-object@^3.2.0, stringify-object@^3.2.2:
+stringify-object@3.2.2, stringify-object@^3.2.0, stringify-object@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/stringify-object/-/stringify-object-3.2.2.tgz#9853052e5a88fb605a44cd27445aa257ad7ffbcd"
   dependencies:
