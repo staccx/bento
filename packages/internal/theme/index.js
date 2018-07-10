@@ -1,6 +1,7 @@
 // /functions
 import { VARIANT_DEFAULT } from "./src/_constants"
 import { default as borderRadius } from "./src/borderRadius"
+import { default as getThemeProp } from "./src/getProp"
 import { default as color } from "./src/color"
 import { default as font } from "./src/font"
 import { default as fontWeight } from "./src/fontWeight"
@@ -24,6 +25,7 @@ export {
   font,
   fontFamily,
   fontWeight,
+  getThemeProp,
   grid,
   registerStyle,
   spacing,
