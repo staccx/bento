@@ -181,28 +181,6 @@
     text-mask-core "^5.0.1"
     tinycolor2 "^1.4.1"
 
-"@staccx/eslint-config@^4.20.1":
-  version "4.20.1"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/eslint-config/-/@staccx/eslint-config-4.20.1.tgz#7e4fba53cef1334bbf757d2cc84a964232ad9e97"
-  dependencies:
-    babel-eslint "^8.2.2"
-    eslint "^4.18.2"
-    eslint-config-prettier "^2.9.0"
-    eslint-config-standard "^11.0.0"
-    eslint-config-standard-jsx "^5.0.0"
-    eslint-config-standard-react "^6.0.0"
-    eslint-plugin-import "^2.9.0"
-    eslint-plugin-node "^6.0.1"
-    eslint-plugin-prettier "^2.6.0"
-    eslint-plugin-promise "^3.6.0"
-    eslint-plugin-react "^7.7.0"
-    eslint-plugin-standard "^3.0.1"
-    husky "^0.14.3"
-    lint-staged "^7.1.2"
-    prettier "^1.10.2"
-    prettier-eslint-cli "^4.7.1"
-    standard "^11.0.1"
-
 "@staccx/formatting@^0.2.0":
   version "0.2.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-0.2.0.tgz#b8625abc1d52fe9559ab00d2450d1d941d55768f"
@@ -3922,7 +3900,7 @@ eslint@4.10.0:
     table "^4.0.1"
     text-table "~0.2.0"
 
-eslint@^4.0.0, eslint@^4.1.1, eslint@^4.18.2, eslint@^4.5.0:
+eslint@^4.0.0, eslint@^4.1.1, eslint@^4.5.0:
   version "4.19.1"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
   dependencies:
@@ -9387,7 +9365,7 @@ repeat-element@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/repeat-element/-/repeat-element-1.1.2.tgz#ef089a178d1483baae4d93eb98b4f9e4e11d990a"
 
-repeat-string@^1.5.2, repeat-string@^1.5.4, repeat-string@^1.6.1:
+repeat-string@1.6.1, repeat-string@^1.5.2, repeat-string@^1.5.4, repeat-string@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/repeat-string/-/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
 
@@ -11636,6 +11614,12 @@ x-is-string@^0.1.0:
 xdg-basedir@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
+
+xml-beautifier@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/xml-beautifier/-/xml-beautifier-0.4.0.tgz#8ead9e48aa4ffc9c702eca82d53130f0f3aa3c48"
+  dependencies:
+    repeat-string "1.6.1"
 
 xml-name-validator@^2.0.1:
   version "2.0.1"

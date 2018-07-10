@@ -9,6 +9,8 @@ import {
   RadioPillItem,
   RadioPill
 } from "@staccx/base"
+import beautify from "xml-beautifier"
+import ReactDOMServer from "react-dom/server"
 import { VARIANT_DEFAULT, ThemeProvider, ThemeConsumer } from "@staccx/theme"
 import PropTypes from "prop-types"
 import props from "../generated/props.json"
@@ -22,6 +24,7 @@ const tabs = {
   preview: "preview",
   source: "source",
   sourceComponent: "source-component",
+  sourceExample: "source-example",
   a11y: "A11y"
 }
 class PreviewComponent extends Component {
@@ -100,6 +103,9 @@ class PreviewComponent extends Component {
             <RadioPillItem id={"component"} value={tabs.sourceComponent}>
               Source-component
             </RadioPillItem>
+            <RadioPillItem id={"example"} value={tabs.sourceExample}>
+              Source example
+            </RadioPillItem>
             <RadioPillItem id={"a11y"} value={tabs.a11y}>
               A11y
             </RadioPillItem>
@@ -142,8 +148,7 @@ class PreviewComponent extends Component {
                       <ComponentDocumentation width={"320px"}>
                         {this.props.component.render({
                           ...this.props,
-                          variant: this.state.variant,
-                          ref: componentRef
+                          variant: this.state.variant
                         })}
                       </ComponentDocumentation>
                     </div>
@@ -156,7 +161,14 @@ class PreviewComponent extends Component {
               }
 
               case tabs.sourceComponent: {
-                return <RenderedSource node={componentRef.current} />
+                return <RenderedSource code={""} />
+              }
+
+              case tabs.sourceExample: {
+                const code = ReactDOMServer.renderToString(
+                  this.props.component.render()
+                )
+                return <RenderedSource code={beautify(code)} />
               }
 
               default: {
