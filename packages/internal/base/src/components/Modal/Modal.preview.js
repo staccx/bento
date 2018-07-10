@@ -1,13 +1,19 @@
 import React from "react"
 import Modal from "./Modal"
+import Button from "../Button/Button"
 
 const preview = {
   title: "Modal",
   category: "component",
   component: Modal,
-  render: props => (
+  render: ({ setState, isOpen = false, ...props }) => (
     <React.Fragment>
-      <Modal isOpen onClose={() => {}}>
+      <Button onClick={() => setState({ isOpen: !isOpen })}>Open modal</Button>
+      <Modal
+        {...props}
+        isOpen={isOpen}
+        onClose={() => setState({ isOpen: false })}
+      >
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
           iaculis erat ipsum, ut euismod orci luctus sit amet. Donec et

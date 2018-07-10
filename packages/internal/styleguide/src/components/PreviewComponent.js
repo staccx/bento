@@ -9,7 +9,7 @@ import {
   RadioPill
 } from "@staccx/base"
 import beautify from "xml-beautifier"
-import reactElementToJSXString from 'react-element-to-jsx-string';
+import reactElementToJSXString from "react-element-to-jsx-string"
 import ReactDOMServer from "react-dom/server"
 import { VARIANT_DEFAULT, ThemeProvider, ThemeConsumer } from "@staccx/theme"
 import PropTypes from "prop-types"
@@ -46,8 +46,19 @@ class PreviewComponent extends Component {
     super(props, context)
     this.state = {
       variant: VARIANT_DEFAULT,
-      tab: tabs.preview
+      tab: tabs.preview,
+      componentState: {}
     }
+    this.setComponentState = this.setComponentState.bind(this)
+  }
+
+  setComponentState(state) {
+    this.setState({
+      componentState: {
+        ...this.state.componentState,
+        ...state
+      }
+    })
   }
 
   render() {
@@ -142,7 +153,8 @@ class PreviewComponent extends Component {
                             <Heading level={5}>{variant.name}</Heading>
                             <Divider />
                             {this.props.component.render({
-                              ...this.props,
+                              ...this.state.componentState,
+                              setState: this.setComponentState,
                               variant: variant.name
                             })}
                           </React.Fragment>
@@ -158,7 +170,9 @@ class PreviewComponent extends Component {
               }
 
               case tabs.sourceComponent: {
-                const code = reactElementToJSXString(this.props.component.render())
+                const code = reactElementToJSXString(
+                  this.props.component.render()
+                )
                 return <RenderedSource code={code} />
               }
 
