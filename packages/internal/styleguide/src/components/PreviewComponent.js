@@ -10,14 +10,14 @@ import {
 import beautify from "xml-beautifier"
 import reactElementToJSXString from "react-element-to-jsx-string"
 import ReactDOMServer from "react-dom/server"
-import { VARIANT_DEFAULT, ThemeProvider, ThemeConsumer } from "@staccx/theme"
+import { VARIANT_DEFAULT, ThemeConsumer } from "@staccx/theme"
 import PropTypes from "prop-types"
 import props from "../generated/props.json"
 import source from "../generated/source.json"
-import ComponentDocumentation from "./ComponentDocumentation"
 import ComponentSource from "./ComponentSource"
 import RenderedSource from "./RenderedSource"
 import PropertiesTable from "./PropertiesTable"
+import RenderVariants from "./RenderVariants"
 
 const tabs = {
   preview: "preview",
@@ -116,28 +116,14 @@ class PreviewComponent extends Component {
           {({ theme, themes }) => {
             switch (this.state.tab) {
               case tabs.preview: {
-                const variants = getVariants(theme, component.name)
                 return (
-                  <ThemeProvider
+                  <RenderVariants
+                    component={this.props.component}
+                    theme={theme}
                     themeName={this.props.componentThemeName}
                     themes={themes}
-                  >
-                    <div>
-                      <ComponentDocumentation width={"320px"}>
-                        {variants.map(variant => (
-                          <React.Fragment>
-                            <Heading level={5}>{variant.name}</Heading>
-                            <Divider />
-                            {this.props.component.render({
-                              ...this.state.componentState,
-                              setState: this.setComponentState,
-                              variant: variant.name
-                            })}
-                          </React.Fragment>
-                        ))}
-                      </ComponentDocumentation>
-                    </div>
-                  </ThemeProvider>
+                    setComponentState={this.setComponentState}
+                  />
                 )
               }
 
