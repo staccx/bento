@@ -1,3 +1,4 @@
-import Theme from "@staccx/stacc-theme"
+import { StaccTheme, StaccDocsTheme } from "@staccx/stacc-theme"
+import { Theme } from "@staccx/theme"
 
-export default Theme
+export default new Theme(StaccTheme, StaccDocsTheme)
