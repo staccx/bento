@@ -14,6 +14,7 @@ brew install nvm
 nvm install 10.6.0
 brew install yarn --without-node
 yarn global add lerna@2.11.0
+yarn global add plop@2.0.0
 ```
 
 To initialize the monorepo, run the following
