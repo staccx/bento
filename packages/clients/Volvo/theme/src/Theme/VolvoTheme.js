@@ -12,10 +12,10 @@ import { InputStyling, InputWrapperStyling } from "./theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { NewBadgeBadgeStyling } from "./theme.NewBadges"
 import { LogoStyle } from "./Logo"
-import { AddIcon } from "./Icons/Add"
+// import { AddIcon } from "./Icons/Add"
 import { SearchIcon } from "./Icons/Search"
-import { NewsIcon } from "./Icons/News"
-import { AlertIcon } from "./Icons/Alert"
+// import { NewsIcon } from "./Icons/News"
+// import { AlertIcon } from "./Icons/Alert"
 import { LoanIcon } from "./Icons/Loan"
 import { LeasingIcon } from "./Icons/Leasing"
 import { LeasingPlusIcon } from "./Icons/LeasingPlus"
@@ -30,7 +30,7 @@ import { PhoneIcon } from "./Icons/Phone"
 import { MailIcon } from "./Icons/Mail"
 import { ArrowRightIcon } from "./Icons/ArrowRight"
 import { TagStyling } from "./theme.Tag"
-import { PortalIcon, PortalLabel } from "./theme.Portal"
+import { PortalIcon, PortalLabel, PortalSVGIcon } from "./theme.Portal"
 import { TableStyling } from "./theme.Tables"
 import { DocumentationApprovedIcon } from "./Icons/DocumentationApproved"
 import { DocumentationRejectedIcon } from "./Icons/DocumentationRejected"
@@ -71,20 +71,21 @@ const spacing = {
 }
 
 const color = {
-  bg: "#F4F2F1",
-  primary: "#0000A0",
+  bg: "#fff",
+  primary: "#057ACD",
   primaryLight: "#DCEDFF",
-  secondary: "#FDECE4",
+  primaryDark: "#003056",
+  secondary: "#FBFBFB",
   gray: "#646464",
-  text: "#000040",
+  text: "#161618",
   white: "#fff",
   red: "#FC6161",
   yellow: "#FFE184",
-  line: "#C9C7C7",
+  line: "#DDDDDD",
   wcag: "#777",
   disabled: "#E4E4E4",
   warning: "#FC6161",
-  black: "#000",
+  black: "#161618",
   subtleHover: "#E5F2FF",
   b5: "#00005E",
   b4: "#0000A0",
@@ -107,14 +108,14 @@ const color = {
 }
 
 const DealerpadSpecificColor = {
-  header: color.b5,
-  headerText: color.white,
-  headerActive: color.b1,
+  header: color.white,
+  headerText: color.text,
+  headerActive: color.primary,
   headerIconActive: color.white,
-  contactIcon: color.p2,
-  contactIconHover: color.p3,
-  chatBubbleBgCurrentUser: color.bg,
-  chatBubbleBgOtherUser: color.b2,
+  contactIcon: color.text,
+  contactIconHover: color.primary,
+  chatBubbleBgCurrentUser: color.secondary,
+  chatBubbleBgOtherUser: color.primary,
   chatBubbleBgCurrentUserText: color.text,
   chatBubbleBgOtherUserText: color.white
 }
@@ -138,8 +139,8 @@ const fontWeight = {
 }
 
 const fontFamily = {
-  heading: "NordeaSansSmall",
-  body: "NordeaSansSmall"
+  heading: "VolvoBroad",
+  body: "VolvoSansLight"
 }
 
 const theme = new Theme(BaseTheme, {
@@ -166,9 +167,9 @@ const theme = new Theme(BaseTheme, {
   .add(LayoutStyling)
   .add(LayoutItemStyling)
   .add(LogoStyle)
-  .add(AddIcon)
-  .add(NewsIcon)
-  .add(AlertIcon)
+  // .add(AddIcon)
+  // .add(NewsIcon)
+  // .add(AlertIcon)
   .add(LoanIcon)
   .add(LeasingIcon)
   .add(LeasingPlusIcon)
@@ -186,6 +187,7 @@ const theme = new Theme(BaseTheme, {
   .add(TagStyling)
   .add(PortalIcon)
   .add(PortalLabel)
+  .add(PortalSVGIcon)
   .add(TableStyling)
   .add(DocumentationApprovedIcon)
   .add(DocumentationRejectedIcon)

@@ -10,7 +10,7 @@ const CasesList = ({ cases, compact }) => (
     <List variant="casesList">
       {cases.map((item, index) => (
         <li key={item.id}>
-          <CaseLink to={`sales/${item.id}`}>
+          <Link to={`sales/${item.id}`}>
             <CaseContainer>
               <div>
                 <Heading
@@ -56,7 +56,7 @@ const CasesList = ({ cases, compact }) => (
                 </IconWrapper>
               </div>
             </CaseContainer>
-          </CaseLink>
+          </Link>
         </li>
       ))}
     </List>
@@ -83,24 +83,10 @@ const SpacingLeft = styled.div`
 `
 
 export const IconWrapper = styled.div`
-  height: 18px;
-  width: 10px;
   margin-left: ${spacing.small};
   svg {
     display: block;
     fill: ${color.primary};
-  }
-`
-
-const CaseLink = styled(Link)`
-  display: block;
-  padding: ${spacing.small};
-  transition: background 0.2s ease;
-
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: ${color("subtleHover")};
   }
 `
 

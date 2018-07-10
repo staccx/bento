@@ -15,14 +15,20 @@ export const BoxStyling = registerStyle(
       background-color: ${color.white};
     `,
     defaultHero: css`
-      background-color: ${color.secondary};
+      color: ${color.white};
+      background-color: ${color.black};
       padding-top: ${spacing.large};
       padding-left: 0;
       padding-right: 0;
       padding-bottom: ${spacing.mediumPlus};
+      a {
+        color: ${color.white};
+        text-decoration: underline;
+      }
     `,
     caseHero: css`
       background-color: ${color.secondary};
+      color: ${color.text};
       height: 100%;
     `,
     mainSearch: css`
@@ -33,7 +39,7 @@ export const BoxStyling = registerStyle(
     `,
     salesSearch: css`
       padding: 0;
-      margin-top: calc(-${targetSize.normal} / 2);
+      margin-top: ${targetSize.normal};
       display: flex;
       margin-bottom: ${spacing.large};
     `,
@@ -44,19 +50,21 @@ export const BoxStyling = registerStyle(
     `,
     contact: css`
       background-color: ${color.white};
+      border: 1px solid ${color.line};
       margin-bottom: ${spacing.small};
     `,
     chat: css`
       background: white;
       height: 100%;
+      border: 1px solid ${color.line};
       position: relative;
       padding: 0;
     `,
     file: css`
       background-color: ${color.white};
-      padding: ${spacing.tiny} ${spacing.tiny} ${spacing.tiny} ${spacing.medium};
+      padding: ${spacing.tiny} 0 ${spacing.tiny} 0;
       font-size: ${font.small};
-      border-bottom: 1px solid ${color.bg};
+      border-bottom: 1px solid ${color.line};
       display: grid;
       grid-template-columns: 24px 1fr auto;
       grid-column-gap: ${spacing.small};

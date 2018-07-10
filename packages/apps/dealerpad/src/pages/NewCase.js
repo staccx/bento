@@ -10,7 +10,9 @@ const Home = () => (
     <Box variant="defaultHero">
       <Wrapper>
         <LayoutItem variant="fadeIn" delay={400}>
-          <Heading level={1}>Opprett ny sak</Heading>
+          <Heading level={1} variant="salesOverviewHeading">
+            Opprett ny sak
+          </Heading>
         </LayoutItem>
       </Wrapper>
     </Box>

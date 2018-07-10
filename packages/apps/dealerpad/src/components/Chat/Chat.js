@@ -1,16 +1,16 @@
 import React from "react"
 import styled from "styled-components"
 import { color, spacing, targetSize } from "@staccx/theme"
-import { Input, Button } from "@staccx/base"
+import { Input, Button, Box } from "@staccx/base"
 
 const Chat = ({ children }) => (
-  <ChatBox variant="Chat">
+  <Box variant="chat">
     <ChatWrapper>{children}</ChatWrapper>
     <ChatInput>
       <Input variant="chat" placeholder="Beskjed" id="chatinput" />
       <Button variant="chat">Send</Button>
     </ChatInput>
-  </ChatBox>
+  </Box>
 )
 
 const ChatBox = styled.div`

@@ -12,10 +12,10 @@ import { Heading } from "@staccx/base"
 export const HeadingStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: css`
-      color: ${color("b4")};
+      color: ${color("primary")};
     `,
     caseHeading: css`
-      color: ${color("b4")};
+      color: ${color("primary")};
       font-weight: ${fontWeight.normal};
       line-height: 1.2;
     `,
@@ -33,7 +33,7 @@ export const HeadingStyling = registerStyle(
       font-weight: ${p => (p.attention ? "bold" : "normal")};
     `,
     salesOverviewHeading: css`
-      color: ${color("b4")};
+      color: ${color.white};
     `
   },
   Heading.themeProps.heading

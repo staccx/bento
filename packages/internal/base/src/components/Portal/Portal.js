@@ -51,11 +51,11 @@ const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${themify(Portal.themeProps.iconWrapper)};
   svg {
     fill: ${color.primary};
     ${themify(Portal.themeProps.icon)};
   }
+  ${themify(Portal.themeProps.iconWrapper)};
 `
 
 const PortalWrapper = styled.div`

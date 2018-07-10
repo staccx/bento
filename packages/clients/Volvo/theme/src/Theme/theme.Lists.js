@@ -6,12 +6,15 @@ export const ListStyling = registerStyle(
   {
     newsList: css`
       li {
-        padding: ${spacing.small};
+        padding: ${spacing.small} 0;
+        border-bottom: 1px solid ${color.line};
         a {
           text-decoration: none;
-        }
-        &:nth-child(even) {
-          background-color: ${color("bg1")};
+          &:hover,
+          &:active,
+          &:focus {
+            color: ${color("text")};
+          }
         }
       }
     `,
@@ -20,18 +23,16 @@ export const ListStyling = registerStyle(
         a {
           text-decoration: none;
           display: block;
-          padding: ${spacing.small};
+          padding: ${spacing.small} ${spacing.small} ${spacing.small} 0;
           transition: background 0.2s ease;
 
           &:hover,
           &:active,
           &:focus {
-            background-color: ${color("subtleHover")};
+            color: ${color("text")};
           }
         }
-        &:nth-child(even) {
-          background-color: ${color("concrete")};
-        }
+        border-bottom: 1px solid ${color.line};
       }
     `
   },

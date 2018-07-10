@@ -10,7 +10,9 @@ const MySales = () => (
     <LayoutItem variant="fadeIn" delay={400}>
       <Box variant="defaultHero">
         <Wrapper size="medium">
-          <Heading level={1}>Mine salg</Heading>
+          <Heading level={1} variant="salesOverviewHeading">
+            Mine salg
+          </Heading>
         </Wrapper>
       </Box>
     </LayoutItem>

@@ -33,8 +33,14 @@ const AnimatedFlag = styled(Flag)`
 `
 
 const Bubble = styled.div`
-  background-color: ${p => (p.currentUser ? color("bg") : color("b2"))};
-  color: ${p => (p.currentUser ? color("text") : color("white"))};
+  background-color: ${p =>
+    p.currentUser
+      ? color("chatBubbleBgCurrentUser")
+      : color("chatBubbleBgOtherUser")};
+  color: ${p =>
+    p.currentUser
+      ? color("chatBubbleBgCurrentUserText")
+      : color("chatBubbleBgOtherUserText")};
   padding: ${spacing.small};
   font-size: ${font.tiny};
   border-radius: 4px;
