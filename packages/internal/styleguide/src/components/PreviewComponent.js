@@ -10,7 +10,7 @@ import {
 import beautify from "xml-beautifier"
 import reactElementToJSXString from "react-element-to-jsx-string"
 import ReactDOMServer from "react-dom/server"
-import { VARIANT_DEFAULT, ThemeConsumer } from "@staccx/theme"
+import { VARIANT_DEFAULT, ThemeConsumer, ThemeProvider } from "@staccx/theme"
 import PropTypes from "prop-types"
 import props from "../generated/props.json"
 import source from "../generated/source.json"
@@ -18,28 +18,17 @@ import ComponentSource from "./ComponentSource"
 import RenderedSource from "./RenderedSource"
 import PropertiesTable from "./PropertiesTable"
 import RenderVariants from "./RenderVariants"
+import getVariants from "../utils/getVariants"
 
 const tabs = {
-  preview: "preview",
-  source: "source",
-  sourceComponent: "source-component",
-  sourceExample: "source-example",
+  preview: "Example",
+  variants: "Variants",
+  usage: "Usage",
+  htmlSource: "html-source",
+  jsSource: "js-source",
   a11y: "A11y"
 }
 
-const getVariants = (theme, name) => {
-  const variants = theme.hasOwnProperty(name)
-    ? Reflect.ownKeys(theme[name]).map(key => ({
-        name: key,
-        value: theme[name][key]
-      }))
-    : []
-
-  if (!variants.some(v => v.name === VARIANT_DEFAULT)) {
-    variants.push({ name: VARIANT_DEFAULT, value: "" })
-  }
-  return variants
-}
 class PreviewComponent extends Component {
   constructor(props, context) {
     super(props, context)
@@ -61,29 +50,22 @@ class PreviewComponent extends Component {
   }
 
   render() {
-    const { component } = this.props.component
-    const componentProps = props[component.name]
+    const { component } = this.props
+    const componentProps = props[component.component.name]
 
-    const themeProps = component.themeProps
-      ? Reflect.ownKeys(component.themeProps).map(key => {
-          const themeProp = component.themeProps[key]
+    const themeProps = component.component.themeProps
+      ? Reflect.ownKeys(component.component.themeProps).map(key => {
+          const themeProp = component.component.themeProps[key]
           return themeProp
         })
       : []
 
     return (
       <div>
-        {this.props.component.title && (
-          <Heading>{this.props.component.title}</Heading>
-        )}
-        {this.props.component.description && (
-          <Text>{this.props.component.description}</Text>
-        )}
-
+        {component.title && <Heading>{component.title}</Heading>}
+        {component.description && <Text>{component.description}</Text>}
         <Divider />
-
         <PropertiesTable props={componentProps.props} />
-
         <Table data={themeProps}>
           {({ item }) => (
             <React.Fragment>
@@ -93,7 +75,7 @@ class PreviewComponent extends Component {
             </React.Fragment>
           )}
         </Table>
-
+        // Example | Variants | Usage | html-source | js-source
         <React.Fragment>
           <RadioPill
             group={"tabs"}
@@ -105,24 +87,28 @@ class PreviewComponent extends Component {
               value={tabs.preview}
               defaultChecked
             >
-              Preview
+              {tabs.preview}
             </RadioPillItem>
-            <RadioPillItem id={"Source"} key={"Source"} value={tabs.source}>
-              Source
+            <RadioPillItem
+              key={"variants"}
+              id={"variants"}
+              value={tabs.variants}
+            >
+              {tabs.variants}
+            </RadioPillItem>
+            <RadioPillItem id={"usage"} key={"usage"} value={tabs.usage}>
+              {tabs.usage}
             </RadioPillItem>
             <RadioPillItem
               id={"component"}
               key={"component"}
-              value={tabs.sourceComponent}
+              value={tabs.htmlSource}
             >
-              Source-component
+              {tabs.htmlSource}
             </RadioPillItem>
-            <RadioPillItem
-              id={"example"}
-              key={"example"}
-              value={tabs.sourceExample}
-            >
-              Source example
+
+            <RadioPillItem id={"Source"} key={"Source"} value={tabs.jsSource}>
+              {tabs.jsSource}
             </RadioPillItem>
           </RadioPill>
         </React.Fragment>
@@ -132,7 +118,13 @@ class PreviewComponent extends Component {
               case tabs.preview: {
                 return (
                   <RenderVariants
-                    component={this.props.component}
+                    component={component}
+                    variants={{
+                      [VARIANT_DEFAULT]: {
+                        name: "Default",
+                        value: VARIANT_DEFAULT
+                      }
+                    }}
                     theme={theme}
                     themeName={this.props.componentThemeName}
                     themes={themes}
@@ -140,22 +132,33 @@ class PreviewComponent extends Component {
                   />
                 )
               }
-
-              case tabs.source: {
-                return <ComponentSource code={source[component.name]} />
+              case tabs.variants: {
+                return (
+                  <RenderVariants
+                    component={component}
+                    variants={getVariants(
+                      theme,
+                      component.component.themeProps
+                    )}
+                    themeName={this.props.componentThemeName}
+                    themes={themes}
+                    setComponentState={this.setComponentState}
+                  />
+                )
+              }
+              case tabs.jsSource: {
+                return (
+                  <ComponentSource code={source[component.component.name]} />
+                )
               }
 
-              case tabs.sourceComponent: {
-                const code = reactElementToJSXString(
-                  this.props.component.render()
-                )
+              case tabs.usage: {
+                const code = reactElementToJSXString(component.render())
                 return <RenderedSource code={code} />
               }
 
-              case tabs.sourceExample: {
-                const code = ReactDOMServer.renderToString(
-                  this.props.component.render()
-                )
+              case tabs.htmlSource: {
+                const code = ReactDOMServer.renderToString(component.render())
                 return <RenderedSource code={beautify(code)} />
               }
 
