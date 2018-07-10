@@ -4,6 +4,7 @@ import { ThemeProvider, ThemeConsumer, ThemeComponent } from "@staccx/Theme"
 import Theme from "./theme.js"
 import { NordeaTheme } from "@staccx/nordea-theme"
 import AprilaTheme from "@staccx/aprila-theme"
+import { FunduTheme } from "@staccx/fundu-theme"
 import * as Components from "./generated/components.js"
 import PreviewComponent from "./components/PreviewComponent"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
@@ -12,10 +13,13 @@ import Header from "./components/Header"
 class App extends Component {
   constructor(props, context) {
     super(props, context)
-    const themes = [Theme, AprilaTheme, NordeaTheme].reduce((acc, curr) => {
-      acc[curr.name] = curr
-      return acc
-    }, {})
+    const themes = [Theme, AprilaTheme, NordeaTheme, FunduTheme].reduce(
+      (acc, curr) => {
+        acc[curr.name] = curr
+        return acc
+      },
+      {}
+    )
     this.state = {
       componentThemeName: AprilaTheme.name,
       themes

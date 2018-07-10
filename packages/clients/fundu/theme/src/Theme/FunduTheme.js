@@ -106,6 +106,7 @@ const fontFamily = {
 }
 
 const theme = new Theme(BaseTheme, {
+  name: "Fundu",
   font,
   webfonts,
   color,
