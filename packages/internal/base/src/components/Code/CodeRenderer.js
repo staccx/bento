@@ -14,7 +14,7 @@ class CodeRenderer extends Component {
     switch (language) {
       case "markup": {
         className = "language-markup"
-        grammar = Prism.languages.markup
+        grammar = Prism.languages.html
         break
       }
 
