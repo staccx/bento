@@ -106,12 +106,19 @@ const fontFamily = {
   body: "Roboto"
 }
 
+const webfonts = {
+  google: {
+    families: ["Roboto:400,700"]
+  }
+}
+
 const t = new Theme(BaseTheme, {
   name: "Aprila",
   layout: {
     dashboardLayout: "stonehenge",
     menuArea: "main"
   },
+  webfonts,
   font: { ...font, ...BiBSpecificFont },
   color: { ...color, ...BiBSpecificColor },
   fontWeight,
