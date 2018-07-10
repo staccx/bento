@@ -143,6 +143,7 @@ const fontFamily = {
 }
 
 const theme = new Theme(BaseTheme, {
+  name: "Nordea",
   font,
   fontWeight,
   color: { ...color, ...DealerpadSpecificColor },

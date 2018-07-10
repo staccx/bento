@@ -54,10 +54,11 @@ glob("../../**/*.preview.js", {}, (error, files) => {
       props[name] = parsed
       return `export{default as  ${name}} from "../../${file}"\n`
     })
-    .join("")}  
+    .join("")}
   `
   )
     .then(() => {
+      console.log("wrote previews.js")
       const data = fs.readFileSync("../theme/src/themeProps.js", "utf8")
       const parsed = reactDocs.parse(data)
       props.themeProps = parsed

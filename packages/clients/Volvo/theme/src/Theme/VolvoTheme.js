@@ -144,6 +144,7 @@ const fontFamily = {
 }
 
 const theme = new Theme(BaseTheme, {
+  name: "Volvo",
   font,
   fontWeight,
   color: { ...color, ...DealerpadSpecificColor },
