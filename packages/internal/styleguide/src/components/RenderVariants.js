@@ -15,9 +15,9 @@ export default props => {
 
   console.log(variants)
   return (
-    <ThemeProvider themeName={themeName} themes={themes}>
-      <div>
-        <ComponentDocumentation width={"320px"}>
+    <ComponentDocumentation width={"320px"}>
+      <ThemeProvider themeName={themeName} themes={themes}>
+        <div>
           {Reflect.ownKeys(variants).map(key => {
             const variant = variants[key]
             return (
@@ -33,8 +33,8 @@ export default props => {
               </React.Fragment>
             )
           })}
-        </ComponentDocumentation>
-      </div>
-    </ThemeProvider>
+        </div>
+      </ThemeProvider>
+    </ComponentDocumentation>
   )
 }

@@ -153,12 +153,16 @@ class PreviewComponent extends Component {
               }
 
               case tabs.usage: {
-                const code = reactElementToJSXString(component.render())
+                const code = reactElementToJSXString(
+                  component.render({ variant: VARIANT_DEFAULT })
+                )
                 return <RenderedSource code={code} />
               }
 
               case tabs.htmlSource: {
-                const code = ReactDOMServer.renderToString(component.render())
+                const code = ReactDOMServer.renderToString(
+                  component.render({ variant: VARIANT_DEFAULT })
+                )
                 return <RenderedSource code={beautify(code)} />
               }
 
