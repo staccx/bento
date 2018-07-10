@@ -5,7 +5,6 @@ export const valueToString = value => {
 }
 
 export const typeToString = type => {
-  console.log("typetostring:", type)
   switch (type.name) {
     case "enum": {
       return type.value.map(v => v.value).join(" | ")
