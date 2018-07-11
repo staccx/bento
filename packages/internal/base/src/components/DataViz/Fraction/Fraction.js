@@ -95,6 +95,8 @@ const FractionWrapper = styled.div`
 `
 
 Fraction.defaultProps = {
+  max: 5,
+  value: 5,
   maxComponent: null,
   valueComponent: null,
   className: "",
@@ -102,7 +104,15 @@ Fraction.defaultProps = {
 }
 
 Fraction.propTypes = {
+  /**
+   * Value
+   * @export
+   */
   value: PropTypes.number.isRequired,
+  /**
+   * Max
+   * @export
+   */
   max: PropTypes.number.isRequired,
   maxComponent: PropTypes.element,
   valueComponent: PropTypes.element,

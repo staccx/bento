@@ -7,7 +7,9 @@ import {
   Box,
   Slider,
   RadioPill,
-  RadioPillItem
+  RadioPillItem,
+  Wrapper,
+  Label
 } from "@staccx/base"
 import { stringIncludes } from "@staccx/utils"
 const removeToddles = value => value.replace(/"/g, "")
@@ -51,15 +53,22 @@ class CustomProps extends Component {
         )
       }
       case "number": {
+        console.log(prop)
+        const value = parseInt(prop.defaultValue.value || 10, 10)
         return (
-          <Slider
-            name={prop.name}
-            min={1}
-            max={prop.defaultValue.value}
-            value={componentState[prop.name]}
-            step={Math.floor(prop.defaultValue.value * 0.01)}
-            onChange={e => this.setComponentState(prop, e.target.value)}
-          />
+          <Wrapper>
+            <Label>{prop.description}</Label>
+            <Slider
+              name={prop.name}
+              min={0}
+              max={value * 2}
+              value={componentState[prop.name]}
+              step={Math.floor(value * 0.01)}
+              onChange={e =>
+                this.setComponentState(prop, parseInt(e.target.value, 10))
+              }
+            />
+          </Wrapper>
         )
       }
       case "union": {
