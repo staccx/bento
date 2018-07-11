@@ -30,7 +30,7 @@ export const TableStyling = registerStyle(
     propsDescription: css`
       font-family: ${fontFamily("mono")};
       width: 100%;
-      font-size: ${font.base};
+      font-size: ${font.tiny};
       td,
       th {
         padding: ${spacing.tiny};
