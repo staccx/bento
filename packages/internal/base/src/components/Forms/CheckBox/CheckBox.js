@@ -191,11 +191,9 @@ CheckBox.defaultProps = {
   disabled: false,
   input: {},
   onChange: null,
-  value: "",
   className: "",
   defaultChecked: false,
-  checkIcon: null,
-  ignoreBase: null
+  checkIcon: null
 }
 
 export default CheckBox
