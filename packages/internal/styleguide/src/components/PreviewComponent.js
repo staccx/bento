@@ -5,7 +5,7 @@ import reactElementToJSXString from "react-element-to-jsx-string"
 import ReactDOMServer from "react-dom/server"
 import { VARIANT_DEFAULT, ThemeConsumer } from "@staccx/theme"
 import PropTypes from "prop-types"
-import props from "../generated/props.json"
+import generatedProps from "../generated/props.json"
 import source from "../generated/source.json"
 import ComponentSource from "./ComponentSource"
 import RenderedSource from "./RenderedSource"
@@ -38,10 +38,12 @@ class PreviewComponent extends Component {
   }
 
   render() {
-    const { component, width } = this.props
-    const componentProps = props[component.component.name]
-      ? props[component.component.name]
+    const { preview, width } = this.props
+    const componentProps = generatedProps[preview.component.name]
+      ? generatedProps[preview.component.name]
       : { props: {} }
+
+    console.log(preview, "got component props", componentProps)
 
     const componentPropArray = Reflect.ownKeys(componentProps.props).map(
       key => ({
@@ -50,21 +52,21 @@ class PreviewComponent extends Component {
       })
     )
 
-    const themeProps = component.component.themeProps
-      ? Reflect.ownKeys(component.component.themeProps).map(key => {
-          const themeProp = component.component.themeProps[key]
+    const themeProps = preview.component.themeProps
+      ? Reflect.ownKeys(preview.component.themeProps).map(key => {
+          const themeProp = preview.component.themeProps[key]
           return themeProp
         })
       : []
 
     return (
       <React.Fragment>
-        {component.title && <Heading>{component.title}</Heading>}
+        {preview.title && <Heading>{preview.title}</Heading>}
         <Box variant="codeBlock" flush>
           <Layout variant="documentationApiExample">
             <LayoutItem>
               <Layout rowGap="large">
-                {component.description && <Text>{component.description}</Text>}
+                {preview.description && <Text>{preview.description}</Text>}
                 <PropertiesTable props={componentProps.props} />
                 <ThemifyTable data={themeProps} />
               </Layout>
@@ -78,7 +80,7 @@ class PreviewComponent extends Component {
                       case tabs.preview: {
                         return (
                           <RenderVariants
-                            component={component}
+                            component={preview}
                             variants={{
                               [VARIANT_DEFAULT]: {
                                 name: "Default",
@@ -98,10 +100,10 @@ class PreviewComponent extends Component {
                       case tabs.variants: {
                         return (
                           <RenderVariants
-                            component={component}
+                            component={preview}
                             variants={getVariants(
                               theme,
-                              component.component.themeProps
+                              preview.component.themeProps
                             )}
                             themeName={this.props.componentThemeName}
                             themes={themes}
@@ -113,21 +115,21 @@ class PreviewComponent extends Component {
                       case tabs.jsSource: {
                         return (
                           <ComponentSource
-                            code={source[component.component.name]}
+                            code={source[preview.component.name]}
                           />
                         )
                       }
 
                       case tabs.usage: {
                         const code = reactElementToJSXString(
-                          component.render({ variant: VARIANT_DEFAULT })
+                          preview.render({ variant: VARIANT_DEFAULT })
                         )
                         return <RenderedSource code={code} />
                       }
 
                       case tabs.htmlSource: {
                         const code = ReactDOMServer.renderToString(
-                          component.render({ variant: VARIANT_DEFAULT })
+                          preview.render({ variant: VARIANT_DEFAULT })
                         )
                         return <RenderedSource code={beautify(code)} />
                       }
@@ -148,7 +150,7 @@ class PreviewComponent extends Component {
 }
 
 PreviewComponent.propTypes = {
-  component: PropTypes.any.isRequired
+  preview: PropTypes.any.isRequired
 }
 
 export default PreviewComponent

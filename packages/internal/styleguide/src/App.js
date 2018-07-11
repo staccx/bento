@@ -5,7 +5,7 @@ import Theme from "./theme.js"
 import { NordeaTheme } from "@staccx/nordea-theme"
 import AprilaTheme from "@staccx/aprila-theme"
 import { FunduTheme } from "@staccx/fundu-theme"
-import * as Components from "./generated/components.js"
+import * as Previews from "./generated/components.js"
 import PreviewComponent from "./components/PreviewComponent"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Header from "./components/Header"
@@ -39,8 +39,8 @@ class App extends Component {
               </Box>
               <Box variant="documentationMenu">
                 <List variant="documentationMenu">
-                  {Reflect.ownKeys(Components).map(key => {
-                    const comp = Components[key]
+                  {Reflect.ownKeys(Previews).map(key => {
+                    const comp = Previews[key]
                     return (
                       <li key={key}>
                         <Link to={`/component/${comp.title}`}>
@@ -79,11 +79,11 @@ class App extends Component {
                 <Route
                   path={"/component/:component"}
                   render={({ match }) => {
-                    if (Components.hasOwnProperty(match.params.component)) {
+                    if (Previews.hasOwnProperty(match.params.component)) {
                       return (
                         <PreviewComponent
                           componentThemeName={this.state.componentThemeName}
-                          component={Components[match.params.component]}
+                          preview={Previews[match.params.component]}
                           width={this.state.width}
                         />
                       )
