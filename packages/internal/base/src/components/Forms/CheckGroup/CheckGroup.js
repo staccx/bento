@@ -9,12 +9,16 @@ const CheckGroup = ({ children, group, onChange }) => {
     }
   }
 
-  return children.map(child =>
-    React.cloneElement(child, {
-      ...child.props,
-      onChange: handleChange,
-      group
-    })
+  return (
+    <React.Fragment>
+      {children.map(child =>
+        React.cloneElement(child, {
+          ...child.props,
+          onChange: handleChange,
+          group
+        })
+      )}
+    </React.Fragment>
   )
 }
 
