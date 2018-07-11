@@ -2,6 +2,9 @@ import React, { Component } from "react"
 import { Heading, Text, Layout, LayoutItem, Box } from "@staccx/base"
 import beautify from "xml-beautifier"
 import reactElementToJSXString from "react-element-to-jsx-string"
+import prettier from "prettier/standalone"
+import parsers from "prettier/parser-babylon"
+import wrap from "word-wrap"
 import ReactDOMServer from "react-dom/server"
 import { VARIANT_DEFAULT, ThemeConsumer } from "@staccx/theme"
 import PropTypes from "prop-types"
@@ -137,9 +140,19 @@ class PreviewComponent extends Component {
 
                         case tabs.htmlSource: {
                           const code = ReactDOMServer.renderToString(
-                            preview.render({ variant: VARIANT_DEFAULT })
+                            preview.render(...this.state.componentState)
                           )
-                          return <RenderedSource code={beautify(code)} />
+
+                          const prettified = prettier.format(
+                            wrap(code, { width: 80 }),
+                            {
+                              plugins: [parsers],
+                              proseWrap: "always",
+                              printWidth: 1
+                            }
+                          )
+
+                          return <RenderedSource code={prettified} />
                         }
 
                         default: {
