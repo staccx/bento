@@ -46,6 +46,10 @@ export const BoxStyling = registerStyle(
       border-radius: 0px;
       overflow-x: auto;
       max-width: 806px;
+    `,
+    customProps: css`
+      border-top: 1px solid ${color.line};
+      background-color: ${color.white};
     `
   },
   Box.themeProps.box

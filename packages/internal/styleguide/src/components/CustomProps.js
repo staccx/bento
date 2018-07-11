@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { CheckBox, Input, CurrencyInput, Select } from "@staccx/base"
+import { CheckBox, Input, CurrencyInput, Select, Box } from "@staccx/base"
 import { stringIncludes } from "@staccx/utils"
 const removeToddles = value => value.replace(/"/g, "")
 
@@ -142,14 +142,14 @@ class CustomProps extends Component {
     }
 
     return (
-      <div>
+      <Box variant="customProps">
         {this.props.componentProps.map(prop => {
           if (!stringIncludes(prop.description, "@export")) {
             return null
           }
           return this.renderProp(prop)
         })}
-      </div>
+      </Box>
     )
   }
 }

@@ -2,7 +2,6 @@ import React from "react"
 import { ThemeProvider } from "@staccx/theme"
 import { Heading, Divider, Text } from "@staccx/base"
 import ComponentDocumentation from "./ComponentDocumentation"
-import CustomProps from "./CustomProps"
 
 export default ({
   component,
@@ -35,10 +34,6 @@ export default ({
           })}
         </div>
       </ThemeProvider>
-      <CustomProps
-        componentProps={componentProps}
-        setComponentState={setComponentState}
-      />
     </ComponentDocumentation>
   )
 }

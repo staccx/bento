@@ -49,7 +49,14 @@ export const LayoutStyling = registerStyle(
       }
     `,
 
-    documentationSidebar: css``
+    documentationSidebar: css``,
+    styleguideExamples: css`
+      grid-template-rows: 48px auto 200px;
+      height: 100%;
+      > * {
+        padding: ${spacing.medium};
+      }
+    `
   },
   Layout.themeProps.container
 )

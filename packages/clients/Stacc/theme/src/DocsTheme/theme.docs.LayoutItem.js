@@ -9,6 +9,7 @@ export const LayoutItemStyling = registerStyle(
       border-right: 1px solid ${color.line};
     `,
     styleguidePreview: css`
+      padding: 0;
       background-color: ${mapProp(
         "tab",
         {
