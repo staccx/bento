@@ -15,6 +15,7 @@ export const LayoutStyling = registerStyle(
 
       > * {
         padding: ${spacing.medium};
+        background-color: ${color.white};
 
         &:last-child {
           border-left: 1px solid ${color.line};

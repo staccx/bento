@@ -49,7 +49,7 @@ export const BoxStyling = registerStyle(
     `,
     customProps: css`
       border-top: 1px solid ${color.line};
-      background-color: ${color("g3")};
+      background-color: ${color("g4")};
     `
   },
   Box.themeProps.box

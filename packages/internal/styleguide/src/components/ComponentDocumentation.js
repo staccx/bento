@@ -10,7 +10,6 @@ const ComponentDocumentation = ({ children, width }) => (
 )
 
 const ComponentDocumentationWrapper = styled.div`
-  background-color: ${color.bgGray};
   width: ${({ width }) => width};
   padding: ${spacing.medium};
 `

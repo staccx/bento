@@ -13,8 +13,8 @@ export const LayoutItemStyling = registerStyle(
       background-color: ${mapProp(
         "tab",
         {
-          Example: color("bg"),
-          Variants: color("bg")
+          Example: color("white"),
+          Variants: color("white")
         },
         color("codeBackground")
       )};

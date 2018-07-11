@@ -63,7 +63,7 @@ class PreviewComponent extends Component {
       : []
 
     return (
-      <React.Fragment>
+      <Layout paddingTop="large">
         {preview.title && <Heading>{preview.title}</Heading>}
         <Box variant="codeBlock" flush>
           <Layout variant="documentationApiExample">
@@ -173,7 +173,7 @@ class PreviewComponent extends Component {
             </LayoutItem>
           </Layout>
         </Box>
-      </React.Fragment>
+      </Layout>
     )
   }
 }
