@@ -1,6 +1,15 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { CheckBox, Input, CurrencyInput, Select, Box } from "@staccx/base"
+import {
+  CheckBox,
+  Input,
+  CurrencyInput,
+  Select,
+  Box,
+  Slider,
+  RadioPill,
+  RadioPillItem
+} from "@staccx/base"
 import { stringIncludes } from "@staccx/utils"
 const removeToddles = value => value.replace(/"/g, "")
 
@@ -19,7 +28,7 @@ class CustomProps extends Component {
     this.props.setComponentState({ [prop.name]: value })
   }
 
-  renderProp(prop) {
+  renderProp(prop, componentState) {
     switch (prop.type.name) {
       case "bool": {
         return (
@@ -38,6 +47,18 @@ class CustomProps extends Component {
             id={prop.name}
             label={`Edit prop ${prop.name}`}
             defaultValue={removeToddles(prop.defaultValue.value)}
+            onChange={e => this.setComponentState(prop, e.target.value)}
+          />
+        )
+      }
+      case "number": {
+        return (
+          <Slider
+            name={prop.name}
+            min={1}
+            max={prop.defaultValue.value}
+            value={componentState[prop.name]}
+            step={Math.floor(prop.defaultValue.value * 0.01)}
             onChange={e => this.setComponentState(prop, e.target.value)}
           />
         )
@@ -66,40 +87,59 @@ class CustomProps extends Component {
         break
       }
       case "func": {
+        const funcs = [
+          {
+            name: "console.log",
+            value: () => console.log(`${prop.name} clicked`)
+          },
+          {
+            name: "console.warn",
+            value: () => console.warn(`${prop.name} warning`)
+          },
+          {
+            name: "alert",
+            value: () => alert(`${prop.name} warning`)
+          }
+        ]
+
+        const findFunc = name => funcs.find(f => f.name === name)
+
         return (
-          <Select
-            label={`Edit prop ${prop.name}`}
-            items={[
-              {
-                name: "console.log",
-                value: () => console.log(`${prop.name} clicked`)
-              },
-              {
-                name: "console.warn",
-                value: () => console.warn(`${prop.name} warning`)
-              },
-              {
-                name: "alert",
-                value: () => alert(`${prop.name} warning`)
-              }
-            ]}
-            combobox
-            itemToString={item => item.name}
-            itemToKey={item => item.name}
-            onChange={item =>
-              this.setComponentState(prop, item ? item.value : null)
+          <RadioPill
+            group={"funcs"}
+            onChange={e =>
+              this.setComponentState(prop, findFunc(e.target.value).value)
             }
-          />
+            key={prop.name + "func"}
+          >
+            {funcs.map((item, index) => (
+              <RadioPillItem
+                id={item.name}
+                key={item.name}
+                value={item.name}
+                defaultChecked={index === 0}
+              >
+                {item.name}
+              </RadioPillItem>
+            ))}
+          </RadioPill>
         )
       }
       case "enum": {
         return (
-          <Select
-            key={prop.name}
-            label={`Edit prop ${prop.name}`}
-            items={prop.type.value.map(item => removeToddles(item.value))}
-            onChange={val => this.setComponentState(prop, val)}
-          />
+          <RadioPill
+            group={"enums"}
+            onChange={e => this.setComponentState(prop, e.target.value)}
+            key={prop.name + "func"}
+          >
+            {prop.type.value
+              .map(item => removeToddles(item.value))
+              .map(item => (
+                <RadioPillItem id={item} key={item} value={item}>
+                  {item}
+                </RadioPillItem>
+              ))}
+          </RadioPill>
         )
       }
       case "custom":
@@ -136,18 +176,13 @@ class CustomProps extends Component {
     if (!this.props.componentProps) {
       return null
     }
-
-    if (this.state.isEditing) {
-      return <div />
-    }
-
     return (
       <Box variant="customProps">
         {this.props.componentProps.map(prop => {
           if (!stringIncludes(prop.description, "@export")) {
             return null
           }
-          return this.renderProp(prop)
+          return this.renderProp(prop, this.props.componentState)
         })}
       </Box>
     )

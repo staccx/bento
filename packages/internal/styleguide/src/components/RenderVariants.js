@@ -11,7 +11,8 @@ export default ({
   setComponentState,
   variants,
   componentProps,
-  width
+  width,
+  renderHeading
 }) => {
   return (
     <ComponentDocumentation width={width}>
@@ -19,18 +20,27 @@ export default ({
         <div>
           {Reflect.ownKeys(variants).map(key => {
             const variant = variants[key]
-            return (
-              <React.Fragment key={variant.name}>
-                <Heading level={5}>{variant.name}</Heading>
-                {variant.isOverriddenDefault && <Text>Overridden default</Text>}
-                <Divider />
-                {component.render({
-                  ...componentState,
-                  setState: setComponentState,
-                  variant: variant.value
-                })}
-              </React.Fragment>
-            )
+            if (renderHeading) {
+              return (
+                <React.Fragment key={variant.name}>
+                  <Heading level={5}>{variant.name}</Heading>
+                  {variant.isOverriddenDefault && (
+                    <Text>Overridden default</Text>
+                  )}
+                  <Divider />
+                  {component.render({
+                    ...componentState,
+                    setState: setComponentState,
+                    variant: variant.value
+                  })}
+                </React.Fragment>
+              )
+            }
+            return component.render({
+              ...componentState,
+              setState: setComponentState,
+              variant: variant.value
+            })
           })}
         </div>
       </ThemeProvider>

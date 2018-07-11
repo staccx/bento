@@ -6,9 +6,7 @@ const preview = {
   category: "component",
   tags: ["visual"],
   component: Odometer,
-  render: props => (
-    <Odometer number={1234567890} speed={500} size={32} {...props} />
-  )
+  render: props => <Odometer {...props} />
 }
 
 export default preview

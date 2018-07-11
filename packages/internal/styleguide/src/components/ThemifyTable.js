@@ -15,7 +15,6 @@ export default ({ data }) => {
         variant="propsDescription"
       >
         {({ item }) => {
-          console.log(item)
           return (
             <React.Fragment>
               <td>

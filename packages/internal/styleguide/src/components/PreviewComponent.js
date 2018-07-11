@@ -108,6 +108,7 @@ class PreviewComponent extends Component {
                         case tabs.variants: {
                           return (
                             <RenderVariants
+                              renderHeading
                               component={preview}
                               variants={getVariants(
                                 theme,
@@ -161,10 +162,11 @@ class PreviewComponent extends Component {
                     }}
                   </ThemeConsumer>
                 </Box>
-                {this.state.tab === "Example" && (
+                {this.state.tab === tabs.preview && (
                   <CustomProps
                     componentProps={componentPropArray}
                     setComponentState={this.setComponentState}
+                    componentState={this.state.componentState}
                   />
                 )}
               </Layout>

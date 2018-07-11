@@ -130,17 +130,21 @@ const OdometerWrapper = styled.div`
 
 // TODO: Add support for strings?
 Odometer.propTypes = {
+  /**
+   * Value to tween to
+   * @export
+   */
   number: PropTypes.number.isRequired,
   separatorSteps: PropTypes.number,
   speed: PropTypes.number,
-  size: PropTypes.number.isRequired,
-  variant: PropTypes.string
+  size: PropTypes.number.isRequired
 }
 
 Odometer.defaultProps = {
+  number: 1234567890,
   separatorSteps: 3,
-  speed: 500,
-  variant: null
+  size: 32,
+  speed: 500
 }
 
 export default Odometer

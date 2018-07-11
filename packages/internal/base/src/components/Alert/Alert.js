@@ -129,7 +129,6 @@ const AlertElement = styled.div`
 Alert.propTypes = {
   /**
    * Component or text to render inside the alert
-   * @export
    */
   children: themeProps.children.isRequired,
   /**
