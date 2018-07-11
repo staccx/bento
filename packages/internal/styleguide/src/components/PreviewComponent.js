@@ -17,7 +17,6 @@ import getVariants from "../utils/getVariants"
 import tabs from "../data/tabs"
 import ViewTab from "./ViewTab"
 import ThemifyTable from "./ThemifyTable"
-import CustomProps from "./CustomProps"
 
 class PreviewComponent extends Component {
   constructor(props, context) {
@@ -37,8 +36,6 @@ class PreviewComponent extends Component {
         ...state
       }
     }
-
-    console.log(newState)
     this.setState(newState)
   }
 
@@ -48,7 +45,7 @@ class PreviewComponent extends Component {
       ? generatedProps[preview.component.name]
       : { props: {} }
 
-    console.log(preview, "got component props", componentProps)
+    // console.log(preview, "got component props", componentProps)
 
     const componentPropArray = Reflect.ownKeys(componentProps.props)
       .map(key => ({
@@ -63,9 +60,6 @@ class PreviewComponent extends Component {
           return themeProp
         })
       : []
-
-    console.log(preview)
-
     return (
       <Layout paddingTop="large">
         {preview.title && <Heading>{preview.title}</Heading>}
@@ -137,7 +131,10 @@ class PreviewComponent extends Component {
 
                         case tabs.usage: {
                           const code = reactElementToJSXString(
-                            preview.render({ variant: VARIANT_DEFAULT })
+                            preview.render({
+                              variant: VARIANT_DEFAULT,
+                              ...this.state.componentState
+                            })
                           )
                           return <RenderedSource code={code} />
                         }
@@ -166,14 +163,14 @@ class PreviewComponent extends Component {
                     }}
                   </ThemeConsumer>
                 </Box>
-                {this.state.tab === tabs.preview && (
-                  <CustomProps
-                    renderExampleController={preview.renderExampleController}
-                    componentProps={componentPropArray}
-                    setComponentState={this.setComponentState}
-                    componentState={this.state.componentState}
-                  />
-                )}
+                <Box variant="customProps">
+                  {this.state.tab === tabs.preview &&
+                    preview.renderExampleController &&
+                    preview.renderExampleController({
+                      setComponentState: this.setComponentState,
+                      ...this.state.componentState
+                    })}
+                </Box>
               </Layout>
             </LayoutItem>
           </Layout>

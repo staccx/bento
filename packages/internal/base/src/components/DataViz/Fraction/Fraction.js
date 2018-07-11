@@ -106,12 +106,10 @@ Fraction.defaultProps = {
 Fraction.propTypes = {
   /**
    * Value
-   * @export
    */
   value: PropTypes.number.isRequired,
   /**
    * Max
-   * @export
    */
   max: PropTypes.number.isRequired,
   maxComponent: PropTypes.element,

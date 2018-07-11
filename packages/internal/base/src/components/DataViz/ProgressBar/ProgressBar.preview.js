@@ -10,14 +10,18 @@ const preview = {
   tags: ["visual", "animated"],
   component: ProgressBar,
   render: props => <ProgressBar progress={80} {...props} />,
-  renderExampleController: ({ setComponentState }) => (
+  renderExampleController: ({ setComponentState, progress }) => (
     <Wrapper>
       <Label>Progress</Label>
       <Slider
+        name={"progressExample"}
         min={0}
         max={100}
         step={1}
-        onChange={e => setComponentState({ progress: e.target.value })}
+        onChange={e =>
+          setComponentState({ progress: parseInt(e.target.value, 10) })
+        }
+        percentage={progress}
       />
     </Wrapper>
   )

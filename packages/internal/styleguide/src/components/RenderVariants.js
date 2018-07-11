@@ -37,6 +37,7 @@ export default ({
               )
             }
             return component.render({
+              key: variant.name,
               ...componentState,
               setState: setComponentState,
               variant: variant.value

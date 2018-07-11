@@ -132,7 +132,6 @@ const OdometerWrapper = styled.div`
 Odometer.propTypes = {
   /**
    * Value to tween to
-   * @export
    */
   number: PropTypes.number.isRequired,
   separatorSteps: PropTypes.number,
@@ -141,7 +140,7 @@ Odometer.propTypes = {
 }
 
 Odometer.defaultProps = {
-  number: 1234567890,
+  number: 0,
   separatorSteps: 3,
   size: 32,
   speed: 500
