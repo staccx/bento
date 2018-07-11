@@ -70,8 +70,6 @@ export const HeadingStyling = registerStyle(
       line-height: 1.5;
     `,
     documentationAttrs: css`
-      padding-bottom: ${spacing.tiny};
-      border-bottom: 1px solid ${color.line};
       color: ${color.text};
       font-size: ${font.base};
       font-family: ${fontFamily.body};

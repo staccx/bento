@@ -14,6 +14,7 @@ import RenderVariants from "./RenderVariants"
 import getVariants from "../utils/getVariants"
 import tabs from "../data/tabs"
 import ViewTab from "./ViewTab"
+import ThemifyTable from "./ThemifyTable"
 
 class PreviewComponent extends Component {
   constructor(props, context) {
@@ -62,17 +63,11 @@ class PreviewComponent extends Component {
         <Box variant="codeBlock" flush>
           <Layout variant="documentationApiExample">
             <LayoutItem>
-              {component.description && <Text>{component.description}</Text>}
-              <PropertiesTable props={componentProps.props} />
-              <Table data={themeProps}>
-                {({ item }) => (
-                  <React.Fragment>
-                    <td>{item.name}</td>
-                    <td>{item.description}</td>
-                    <td>{item.type}</td>
-                  </React.Fragment>
-                )}
-              </Table>
+              <Layout rowGap="large">
+                {component.description && <Text>{component.description}</Text>}
+                <PropertiesTable props={componentProps.props} />
+                <ThemifyTable data={themeProps} />
+              </Layout>
             </LayoutItem>
             <LayoutItem variant="styleguidePreview" tab={this.state.tab}>
               <ViewTab onChange={e => this.setState({ tab: e.target.value })} />

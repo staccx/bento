@@ -5,6 +5,7 @@ import styled from "styled-components"
 const CloseIcon = styled.svg`
   width: 12px;
   transition: fill 0.2s ease;
+  fill: currentColor;
 `
 
 const Close = ({ className }) => (

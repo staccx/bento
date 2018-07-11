@@ -86,7 +86,7 @@ const fontWeight = {
 const fontFamily = {
   heading: "IBM Plex Sans",
   body: "IBM Plex Sans",
-  mono: "IBM"
+  mono: "IBM Plex Mono"
 }
 
 const t = new Theme(BaseTheme, {

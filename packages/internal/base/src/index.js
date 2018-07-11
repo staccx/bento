@@ -51,6 +51,7 @@ import Divider from "./components/Layout/Divider/Divider"
 import Caret from "./components/Icons/Caret"
 import CaretRight from "./components/Icons/CaretRight"
 import Close from "./components/Icons/Close"
+import Check from "./components/Icons/Check"
 import Warning from "./components/Icons/Warning"
 import Info from "./components/Icons/Info"
 import Success from "./components/Icons/Success"
@@ -111,6 +112,7 @@ export {
   Button,
   Caret,
   CaretRight,
+  Check,
   CheckBox,
   CheckGroup,
   Close,

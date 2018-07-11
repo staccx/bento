@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { font, color, spacing, registerStyle } from "@staccx/theme"
+import { font, color, spacing, registerStyle, fontFamily } from "@staccx/theme"
 import { Table, hideVisually } from "@staccx/base"
 
 export const TableStyling = registerStyle(
@@ -25,6 +25,30 @@ export const TableStyling = registerStyle(
         text-align: right;
         padding-right: ${spacing.medium};
         width: 140px;
+      }
+    `,
+    propsDescription: css`
+      font-family: ${fontFamily("mono")};
+      width: 100%;
+      font-size: ${font.base};
+      td,
+      th {
+        padding: ${spacing.tiny};
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+          text-align: right;
+        }
+      }
+      tr {
+        border-bottom: 1px solid ${color.line};
+      }
+      th {
+        text-align: left;
+        color: ${color.wcag};
+        font-size: ${font.tiny};
       }
     `
   },
