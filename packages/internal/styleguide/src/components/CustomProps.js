@@ -173,7 +173,8 @@ class CustomProps extends Component {
   }
 
   render() {
-    if (!this.props.componentProps) {
+    console.log(this.props.componentProps)
+    if (!this.props.componentProps || this.props.componentProps.length === 0) {
       return null
     }
     return (
