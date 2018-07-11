@@ -22,7 +22,7 @@ class App extends Component {
       {}
     )
     this.state = {
-      componentThemeName: AprilaTheme.name,
+      componentThemeName: Theme.name,
       themes,
       width: props.width
     }
