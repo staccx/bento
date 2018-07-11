@@ -32,6 +32,16 @@ class CustomProps extends Component {
           </CheckBox>
         )
       }
+      case "string": {
+        return (
+          <Input
+            id={prop.name}
+            label={`Edit prop ${prop.name}`}
+            defaultValue={removeToddles(prop.defaultValue.value)}
+            onChange={e => this.setComponentState(prop, e.target.value)}
+          />
+        )
+      }
       case "union": {
         if (prop.type.value.some(t => t.name === "string")) {
           return (

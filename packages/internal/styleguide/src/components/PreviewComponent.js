@@ -33,7 +33,6 @@ class PreviewComponent extends Component {
         ...state
       }
     }
-    console.log(newState)
     this.setState(newState)
   }
 
