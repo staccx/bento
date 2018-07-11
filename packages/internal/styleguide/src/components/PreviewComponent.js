@@ -40,6 +40,8 @@ class PreviewComponent extends Component {
   render() {
     const { component, width } = this.props
     const componentProps = props[component.component.name]
+      ? props[component.component.name]
+      : { props: {} }
 
     const componentPropArray = Reflect.ownKeys(componentProps.props).map(
       key => ({
