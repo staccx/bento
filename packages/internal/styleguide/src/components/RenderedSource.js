@@ -1,8 +1,12 @@
 import React from "react"
-import { CodeRenderer } from "@staccx/base"
+import { CodeRenderer, Box } from "@staccx/base"
 
 const RenderedSource = ({ code }) => {
-  return <CodeRenderer language="markup" code={code} />
+  return (
+    <Box variant="transparent">
+      <CodeRenderer language="markup" code={code} />
+    </Box>
+  )
 }
 
 export default RenderedSource

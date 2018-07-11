@@ -13,7 +13,10 @@ const defaultBox = css`
 
 export default registerStyle(
   {
-    [VARIANT_DEFAULT]: defaultBox
+    [VARIANT_DEFAULT]: defaultBox,
+    transparent: css`
+      background-color: transparent;
+    `
   },
   Box.themeProps.box
 )

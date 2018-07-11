@@ -118,9 +118,11 @@ class PreviewComponent extends Component {
                         }
                         case tabs.jsSource: {
                           return (
-                            <ComponentSource
-                              code={source[preview.component.name]}
-                            />
+                            <Box variant="transparent">
+                              <ComponentSource
+                                code={source[preview.component.name]}
+                              />
+                            </Box>
                           )
                         }
 
@@ -145,10 +147,12 @@ class PreviewComponent extends Component {
                     }}
                   </ThemeConsumer>
                 </Box>
-                <CustomProps
-                  componentProps={componentPropArray}
-                  setComponentState={this.setComponentState}
-                />
+                {this.state.tab === "Example" && (
+                  <CustomProps
+                    componentProps={componentPropArray}
+                    setComponentState={this.setComponentState}
+                  />
+                )}
               </Layout>
             </LayoutItem>
           </Layout>

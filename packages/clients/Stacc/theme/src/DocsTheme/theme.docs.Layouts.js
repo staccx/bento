@@ -51,11 +51,16 @@ export const LayoutStyling = registerStyle(
 
     documentationSidebar: css``,
     styleguideExamples: css`
-      grid-template-rows: 48px auto 200px;
+      grid-template-rows: 72px 1fr;
       height: 100%;
       > * {
-        padding: ${spacing.medium};
+        padding-left: ${spacing.medium};
+        padding-right: ${spacing.medium};
       }
+    `,
+    centered: css`
+      justify-content: center;
+      align-items: center;
     `
   },
   Layout.themeProps.container
