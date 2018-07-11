@@ -26,9 +26,55 @@ class App extends Component {
       themes,
       width: props.width
     }
+
+    this.renderMenu = this.renderMenu.bind(this)
+  }
+
+  renderMenu(menu) {
+    return Reflect.ownKeys(menu).map(key => {
+      const { name, path, ...rest } = menu[key]
+      return (
+        <li key={name}>
+          <Link to={`${path}`}>{`${name}`}</Link>
+          <List>{this.renderMenu(rest)}</List>
+        </li>
+      )
+    })
   }
 
   render() {
+    const previewArray = Reflect.ownKeys(Previews).map(key => Previews[key])
+
+    let current = {}
+    const getPath = (levels, deepness) =>
+      levels.reduce(
+        (acc, level, index) => (index <= deepness ? acc + `/${level}` : acc),
+        ""
+      )
+    const menu = previewArray.reduce((acc, preview) => {
+      if (!preview.category) {
+        return acc
+      }
+      const levels = preview.category.split("/")
+      levels.push(preview.title)
+
+      levels.forEach((level, index) => {
+        if (!current.hasOwnProperty(level)) {
+          if (level === "Heading") {
+            console.log("here", current, index)
+          }
+          current[level] = { name: level, path: getPath(levels, index) }
+        }
+        current = current[level]
+      })
+      acc = Object.assign({}, acc, current)
+      current = acc
+      return acc
+    }, {})
+
+    delete menu.name
+    delete menu.path
+    console.log(menu)
     return (
       <Router>
         <ThemeProvider themeName={"Stacc"} themes={this.state.themes}>
@@ -38,18 +84,7 @@ class App extends Component {
                 <ThemeComponent tagName={"logo"} fallback={null} />
               </Box>
               <Box variant="documentationMenu">
-                <List variant="documentationMenu">
-                  {Reflect.ownKeys(Previews).map(key => {
-                    const comp = Previews[key]
-                    return (
-                      <li key={key}>
-                        <Link to={`/component/${comp.title}`}>
-                          {comp.title}
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </List>
+                <List variant="documentationMenu">{this.renderMenu(menu)}</List>
               </Box>
             </LayoutItem>
             <LayoutItem area="main">
@@ -76,22 +111,33 @@ class App extends Component {
                 </ThemeConsumer>
               </Header>
               <Wrapper size="documentation">
-                <Route
-                  path={"/component/:component"}
-                  render={({ match }) => {
-                    if (Previews.hasOwnProperty(match.params.component)) {
-                      return (
+                {previewArray.map(comp => {
+                  return (
+                    <Route
+                      path={`/${comp.category}/${comp.title}`}
+                      render={() => (
                         <PreviewComponent
                           componentThemeName={this.state.componentThemeName}
-                          preview={Previews[match.params.component]}
+                          preview={comp}
                           width={this.state.width}
                         />
-                      )
-                    }
-
-                    return <div>No such component {match.params.component}</div>
-                  }}
-                />
+                      )}
+                    />
+                  )
+                })}
+                {Reflect.ownKeys(menu).map(key => {
+                  const topLevelItem = menu[key]
+                  return (
+                    <Route
+                      exact
+                      path={`${topLevelItem.path}/:component`}
+                      render={({ match }) => {
+                        console.log(match)
+                        return <div>denne matcher</div>
+                      }}
+                    />
+                  )
+                })}
               </Wrapper>
             </LayoutItem>
           </Layout>
