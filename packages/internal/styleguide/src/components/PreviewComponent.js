@@ -38,7 +38,7 @@ class PreviewComponent extends Component {
 
   render() {
     const { component, width } = this.props
-    const componentProps = props[component.component.name]
+    const componentProps = this.props[component.component.name]
       ? props[component.component.name]
       : { props: {} }
 
