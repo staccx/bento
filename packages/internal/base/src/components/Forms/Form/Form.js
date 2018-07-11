@@ -92,9 +92,9 @@ Form.propTypes = {
   renderButton: PropTypes.func
 }
 
-export default Form
-
 Form.defaultProps = {
   initialValues: {},
   onSubmit: console.log
 }
+
+export default Form

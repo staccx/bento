@@ -112,7 +112,7 @@ class PreviewComponent extends Component {
                               component={preview}
                               variants={getVariants(
                                 theme,
-                                preview.component.themeProps
+                                preview.component.themeProps || {}
                               )}
                               themeName={this.props.componentThemeName}
                               themes={themes}
