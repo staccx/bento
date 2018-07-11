@@ -61,6 +61,14 @@ export const LayoutStyling = registerStyle(
     centered: css`
       justify-content: center;
       align-items: center;
+    `,
+    componentContent: css`
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      & > * {
+        min-width: 300px;
+      }
     `
   },
   Layout.themeProps.container

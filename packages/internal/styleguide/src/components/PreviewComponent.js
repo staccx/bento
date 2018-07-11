@@ -83,22 +83,24 @@ class PreviewComponent extends Component {
                       switch (this.state.tab) {
                         case tabs.preview: {
                           return (
-                            <RenderVariants
-                              component={preview}
-                              variants={{
-                                [VARIANT_DEFAULT]: {
-                                  name: "Default",
-                                  value: VARIANT_DEFAULT
-                                }
-                              }}
-                              componentProps={componentPropArray}
-                              componentState={this.state.componentState}
-                              theme={theme}
-                              themeName={this.props.componentThemeName}
-                              themes={themes}
-                              setComponentState={this.setComponentState}
-                              width={width}
-                            />
+                            <Layout variant="componentContent">
+                              <RenderVariants
+                                component={preview}
+                                variants={{
+                                  [VARIANT_DEFAULT]: {
+                                    name: "Default",
+                                    value: VARIANT_DEFAULT
+                                  }
+                                }}
+                                componentProps={componentPropArray}
+                                componentState={this.state.componentState}
+                                theme={theme}
+                                themeName={this.props.componentThemeName}
+                                themes={themes}
+                                setComponentState={this.setComponentState}
+                                width={width}
+                              />
+                            </Layout>
                           )
                         }
                         case tabs.variants: {
