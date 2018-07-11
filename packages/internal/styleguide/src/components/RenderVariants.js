@@ -10,12 +10,13 @@ export default props => {
     themes,
     componentState,
     setComponentState,
-    variants
+    variants,
+    width
   } = props
 
   console.log(variants)
   return (
-    <ComponentDocumentation width={"320px"}>
+    <ComponentDocumentation width={width}>
       <ThemeProvider themeName={themeName} themes={themes}>
         <div>
           {Reflect.ownKeys(variants).map(key => {

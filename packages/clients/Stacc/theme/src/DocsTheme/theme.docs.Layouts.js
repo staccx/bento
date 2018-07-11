@@ -6,7 +6,7 @@ export const LayoutStyling = registerStyle(
   {
     documentationHeader: css`
       width: 100%;
-      grid-template-columns: 1fr 200px;
+      grid-template-columns: 1fr auto 200px;
       grid-column-gap: 0;
     `,
     documentationApiExample: css`

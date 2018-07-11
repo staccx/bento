@@ -9,6 +9,7 @@ import * as Components from "./generated/components.js"
 import PreviewComponent from "./components/PreviewComponent"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Header from "./components/Header"
+import WidthTab from "./components/WidthTab"
 
 class App extends Component {
   constructor(props, context) {
@@ -22,7 +23,8 @@ class App extends Component {
     )
     this.state = {
       componentThemeName: AprilaTheme.name,
-      themes
+      themes,
+      width: props.width
     }
   }
 
@@ -52,6 +54,11 @@ class App extends Component {
             </LayoutItem>
             <LayoutItem area="main">
               <Header>
+                <WidthTab
+                  onChange={e => {
+                    this.setState({ width: e.target.value })
+                  }}
+                />
                 <ThemeConsumer themeName={"main"}>
                   {({ themes }) => {
                     return (
@@ -77,6 +84,7 @@ class App extends Component {
                         <PreviewComponent
                           componentThemeName={this.state.componentThemeName}
                           component={Components[match.params.component]}
+                          width={this.state.width}
                         />
                       )
                     }

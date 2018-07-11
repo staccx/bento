@@ -36,7 +36,7 @@ class PreviewComponent extends Component {
   }
 
   render() {
-    const { component } = this.props
+    const { component, width } = this.props
     const componentProps = props[component.component.name]
 
     const themeProps = component.component.themeProps
@@ -61,7 +61,6 @@ class PreviewComponent extends Component {
             </React.Fragment>
           )}
         </Table>
-        // Example | Variants | Usage | html-source | js-source
         <ViewTab onChange={e => this.setState({ tab: e.target.value })} />
         <ThemeConsumer themeName={this.props.componentThemeName}>
           {({ theme, themes }) => {
@@ -80,6 +79,7 @@ class PreviewComponent extends Component {
                     themeName={this.props.componentThemeName}
                     themes={themes}
                     setComponentState={this.setComponentState}
+                    width={width}
                   />
                 )
               }
@@ -94,6 +94,7 @@ class PreviewComponent extends Component {
                     themeName={this.props.componentThemeName}
                     themes={themes}
                     setComponentState={this.setComponentState}
+                    width={width}
                   />
                 )
               }
