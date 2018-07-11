@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { Heading, Text, Layout, LayoutItem, Box } from "@staccx/base"
-import beautify from "xml-beautifier"
 import reactElementToJSXString from "react-element-to-jsx-string"
 import prettier from "prettier/standalone"
 import parsers from "prettier/parser-babylon"
@@ -49,12 +48,12 @@ class PreviewComponent extends Component {
 
     console.log(preview, "got component props", componentProps)
 
-    const componentPropArray = Reflect.ownKeys(componentProps.props).map(
-      key => ({
+    const componentPropArray = Reflect.ownKeys(componentProps.props)
+      .map(key => ({
         ...componentProps.props[key],
         name: key
-      })
-    )
+      }))
+      .filter(prop => prop.type)
 
     const themeProps = preview.component.themeProps
       ? Reflect.ownKeys(preview.component.themeProps).map(key => {
