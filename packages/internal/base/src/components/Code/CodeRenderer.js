@@ -52,8 +52,9 @@ class CodeRenderer extends Component {
 }
 
 CodeRenderer.propTypes = {
-  code: PropTypes.string,
+  code: PropTypes.string.isRequired,
   language: PropTypes.oneOf(["markup", "javascript", "java", "csharp"])
+    .isRequired
 }
 
 export default CodeRenderer
