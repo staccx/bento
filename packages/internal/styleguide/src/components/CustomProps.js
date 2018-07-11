@@ -4,7 +4,6 @@ import {
   CheckBox,
   Input,
   CurrencyInput,
-  Select,
   Box,
   Slider,
   RadioPill,
