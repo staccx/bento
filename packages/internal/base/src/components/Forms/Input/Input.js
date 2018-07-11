@@ -181,6 +181,10 @@ const InputNoMask = styled.input`
 export const InputPropTypes = {
   autoFocus: PropTypes.bool,
   callback: PropTypes.func,
+  /**
+   * Disabled prop
+   * @export
+   */
   disabled: PropTypes.bool,
   hidden: PropTypes.bool,
   id: PropTypes.string.isRequired,

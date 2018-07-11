@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Heading, Text, Layout, LayoutItem, Table, Box } from "@staccx/base"
+import { Heading, Text, Layout, LayoutItem, Box } from "@staccx/base"
 import beautify from "xml-beautifier"
 import reactElementToJSXString from "react-element-to-jsx-string"
 import ReactDOMServer from "react-dom/server"

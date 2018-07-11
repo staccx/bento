@@ -83,7 +83,6 @@ const defaultProps = {
 const propTypes = {
   /**
    * The children of the lamb
-   * @export
    */
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),

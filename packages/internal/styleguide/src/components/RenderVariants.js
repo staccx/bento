@@ -18,10 +18,6 @@ export default ({
     <ComponentDocumentation width={width}>
       <ThemeProvider themeName={themeName} themes={themes}>
         <div>
-          <CustomProps
-            componentProps={componentProps}
-            setComponentState={setComponentState}
-          />
           {Reflect.ownKeys(variants).map(key => {
             const variant = variants[key]
             return (
@@ -39,6 +35,10 @@ export default ({
           })}
         </div>
       </ThemeProvider>
+      <CustomProps
+        componentProps={componentProps}
+        setComponentState={setComponentState}
+      />
     </ComponentDocumentation>
   )
 }
