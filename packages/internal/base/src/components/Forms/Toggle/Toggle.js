@@ -153,7 +153,6 @@ Toggle.defaultProps = {
   disabled: false,
   input: {},
   onChange: null,
-  value: "",
   className: "",
   defaultChecked: false,
   children: ""
