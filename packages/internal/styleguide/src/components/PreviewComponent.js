@@ -27,17 +27,26 @@ class PreviewComponent extends Component {
   }
 
   setComponentState(state) {
-    this.setState({
+    const newState = {
       componentState: {
         ...this.state.componentState,
         ...state
       }
-    })
+    }
+    console.log(newState)
+    this.setState(newState)
   }
 
   render() {
     const { component, width } = this.props
     const componentProps = props[component.component.name]
+
+    const componentPropArray = Reflect.ownKeys(componentProps.props).map(
+      key => ({
+        ...componentProps.props[key],
+        name: key
+      })
+    )
 
     const themeProps = component.component.themeProps
       ? Reflect.ownKeys(component.component.themeProps).map(key => {
@@ -75,6 +84,7 @@ class PreviewComponent extends Component {
                         value: VARIANT_DEFAULT
                       }
                     }}
+                    componentProps={componentPropArray}
                     componentState={this.state.componentState}
                     theme={theme}
                     themeName={this.props.componentThemeName}

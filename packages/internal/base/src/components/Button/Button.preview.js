@@ -6,7 +6,7 @@ const preview = {
   category: "component",
   tags: ["component", "clickable", "button"],
   component: Button,
-  render: props => <Button {...props}>Cool Button</Button>
+  render: props => <Button {...props} />
 }
 
 export default preview

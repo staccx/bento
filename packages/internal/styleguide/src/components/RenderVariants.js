@@ -2,23 +2,26 @@ import React from "react"
 import { ThemeProvider } from "@staccx/theme"
 import { Heading, Divider, Text } from "@staccx/base"
 import ComponentDocumentation from "./ComponentDocumentation"
+import CustomProps from "./CustomProps"
 
-export default props => {
-  const {
-    component,
-    themeName,
-    themes,
-    componentState,
-    setComponentState,
-    variants,
-    width
-  } = props
-
-  console.log(variants)
+export default ({
+  component,
+  themeName,
+  themes,
+  componentState,
+  setComponentState,
+  variants,
+  componentProps,
+  width
+}) => {
   return (
     <ComponentDocumentation width={width}>
       <ThemeProvider themeName={themeName} themes={themes}>
         <div>
+          <CustomProps
+            componentProps={componentProps}
+            setComponentState={setComponentState}
+          />
           {Reflect.ownKeys(variants).map(key => {
             const variant = variants[key]
             return (

@@ -76,14 +76,14 @@ const ButtonComp = styled.button`
 const Button = props => <ButtonComp {...props} />
 
 const defaultProps = {
-  onClick: null,
-  to: "#",
-  className: ""
+  children: "button",
+  onClick: null
 }
 
 const propTypes = {
   /**
    * The children of the lamb
+   * @export
    */
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
@@ -92,10 +92,11 @@ const propTypes = {
     PropTypes.number,
     PropTypes.array
   ]).isRequired,
-  onClick: PropTypes.func,
-  className: PropTypes.string,
-  to: PropTypes.string,
-  test: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  /**
+   * Click callback. Why else have a button?
+   * @export
+   */
+  onClick: PropTypes.func
 }
 
 Button.defaultProps = defaultProps
