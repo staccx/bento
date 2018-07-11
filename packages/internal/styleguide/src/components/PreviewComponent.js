@@ -1,16 +1,9 @@
 import React, { Component } from "react"
-import {
-  Heading,
-  Text,
-  Divider,
-  Table,
-  RadioPillItem,
-  RadioPill
-} from "@staccx/base"
+import { Heading, Text, Divider, Table } from "@staccx/base"
 import beautify from "xml-beautifier"
 import reactElementToJSXString from "react-element-to-jsx-string"
 import ReactDOMServer from "react-dom/server"
-import { VARIANT_DEFAULT, ThemeConsumer, ThemeProvider } from "@staccx/theme"
+import { VARIANT_DEFAULT, ThemeConsumer } from "@staccx/theme"
 import PropTypes from "prop-types"
 import props from "../generated/props.json"
 import source from "../generated/source.json"
@@ -19,15 +12,8 @@ import RenderedSource from "./RenderedSource"
 import PropertiesTable from "./PropertiesTable"
 import RenderVariants from "./RenderVariants"
 import getVariants from "../utils/getVariants"
-
-const tabs = {
-  preview: "Example",
-  variants: "Variants",
-  usage: "Usage",
-  htmlSource: "html-source",
-  jsSource: "js-source",
-  a11y: "A11y"
-}
+import tabs from "../data/tabs"
+import ViewTab from "./ViewTab"
 
 class PreviewComponent extends Component {
   constructor(props, context) {
@@ -76,42 +62,7 @@ class PreviewComponent extends Component {
           )}
         </Table>
         // Example | Variants | Usage | html-source | js-source
-        <React.Fragment>
-          <RadioPill
-            group={"tabs"}
-            onChange={e => this.setState({ tab: e.target.value })}
-          >
-            <RadioPillItem
-              key={"preview"}
-              id={"preview"}
-              value={tabs.preview}
-              defaultChecked
-            >
-              {tabs.preview}
-            </RadioPillItem>
-            <RadioPillItem
-              key={"variants"}
-              id={"variants"}
-              value={tabs.variants}
-            >
-              {tabs.variants}
-            </RadioPillItem>
-            <RadioPillItem id={"usage"} key={"usage"} value={tabs.usage}>
-              {tabs.usage}
-            </RadioPillItem>
-            <RadioPillItem
-              id={"component"}
-              key={"component"}
-              value={tabs.htmlSource}
-            >
-              {tabs.htmlSource}
-            </RadioPillItem>
-
-            <RadioPillItem id={"Source"} key={"Source"} value={tabs.jsSource}>
-              {tabs.jsSource}
-            </RadioPillItem>
-          </RadioPill>
-        </React.Fragment>
+        <ViewTab onChange={e => this.setState({ tab: e.target.value })} />
         <ThemeConsumer themeName={this.props.componentThemeName}>
           {({ theme, themes }) => {
             switch (this.state.tab) {
