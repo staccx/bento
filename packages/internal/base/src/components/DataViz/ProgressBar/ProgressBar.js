@@ -35,6 +35,7 @@ const Bg = styled.div`
   background: ${color.subtleHover};
   display: block;
   height: ${spacing.medium()};
+  min-width: 100px;
   border-radius: ${spacing.small()};
   position: relative;
   overflow: hidden;
@@ -43,6 +44,7 @@ const Bg = styled.div`
     white,
     black
   ); /* to remove transition-bug */
+
   ${themify(themeProps.background.name)};
 `
 
