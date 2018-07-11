@@ -11,7 +11,7 @@ export const LayoutStyling = registerStyle(
     `,
     documentationApiExample: css`
       grid-template-columns: 35% 1fr;
-      grid-column-gap: ${spacing.large};
+      grid-column-gap: 0;
 
       > * {
         padding: ${spacing.medium};
