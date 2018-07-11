@@ -63,7 +63,6 @@ glob("../../**/*.preview.js", {}, (error, files) => {
   `
   )
     .then(() => {
-      console.log("wrote previews.js")
       const data = fs.readFileSync("../theme/src/themeProps.js", "utf8")
       const parsed = reactDocs.parse(data)
       props.themeProps = parsed
@@ -87,7 +86,13 @@ glob("../../**/*.preview.js", {}, (error, files) => {
               format: "cjs"
             })
             .then(() => {
-              // fs.unlink("./previews.js").then(() => console.log("done"))
+              // prepend /* eslint-disable to generated file */
+              const data = fs.readFileSync("./src/generated/components.js")
+              const fd = fs.openSync("./src/generated/components.js", "w+")
+              const insert = Buffer.from("/* eslint-disable */\n")
+              fs.writeSync(fd, insert, 0, insert.length, 0)
+              fs.writeSync(fd, data, 0, data.length, insert.length)
+              fs.close(fd)
             })
         })
         .catch(console.error)
