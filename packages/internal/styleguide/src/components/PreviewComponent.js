@@ -75,6 +75,7 @@ class PreviewComponent extends Component {
                         value: VARIANT_DEFAULT
                       }
                     }}
+                    componentState={this.state.componentState}
                     theme={theme}
                     themeName={this.props.componentThemeName}
                     themes={themes}
@@ -91,6 +92,7 @@ class PreviewComponent extends Component {
                       theme,
                       component.component.themeProps
                     )}
+                    componentState={this.state.componentState}
                     themeName={this.props.componentThemeName}
                     themes={themes}
                     setComponentState={this.setComponentState}
