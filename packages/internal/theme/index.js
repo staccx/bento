@@ -2,6 +2,7 @@
 import { VARIANT_DEFAULT } from "./src/_constants"
 import { default as borderRadius } from "./src/borderRadius"
 import { default as getThemeProp } from "./src/getProp"
+import { default as mapProp } from "./src/mapProp"
 import { default as color } from "./src/color"
 import { default as font } from "./src/font"
 import { default as fontWeight } from "./src/fontWeight"
@@ -26,6 +27,7 @@ export {
   fontFamily,
   fontWeight,
   getThemeProp,
+  mapProp,
   grid,
   registerStyle,
   spacing,
