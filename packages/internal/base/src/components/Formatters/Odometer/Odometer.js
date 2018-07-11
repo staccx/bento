@@ -140,8 +140,7 @@ Odometer.propTypes = {
 Odometer.defaultProps = {
   separatorSteps: 3,
   speed: 500,
-  variant: null,
-  ignoreBase: null
+  variant: null
 }
 
 export default Odometer
