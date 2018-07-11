@@ -53,8 +53,10 @@ class CustomProps extends Component {
         )
       }
       case "number": {
-        console.log(prop)
-        const value = parseInt(prop.defaultValue.value || 10, 10)
+        const value = parseInt(
+          prop.defaultValue ? prop.defaultValue.value || 10 : 10,
+          10
+        )
         return (
           <Wrapper>
             <Label>{prop.description}</Label>
@@ -185,6 +187,16 @@ class CustomProps extends Component {
     if (!this.props.componentProps || this.props.componentProps.length === 0) {
       return null
     }
+    if (this.props.renderExampleController) {
+      return (
+        <Box variant="customProps">
+          {this.props.renderExampleController({
+            setComponentState: this.props.setComponentState
+          })}
+        </Box>
+      )
+    }
+
     return (
       <Box variant="customProps">
         {this.props.componentProps.map(prop => {

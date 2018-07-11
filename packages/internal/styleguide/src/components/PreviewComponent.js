@@ -37,6 +37,8 @@ class PreviewComponent extends Component {
         ...state
       }
     }
+
+    console.log(newState)
     this.setState(newState)
   }
 
@@ -61,6 +63,8 @@ class PreviewComponent extends Component {
           return themeProp
         })
       : []
+
+    console.log(preview)
 
     return (
       <Layout paddingTop="large">
@@ -164,6 +168,7 @@ class PreviewComponent extends Component {
                 </Box>
                 {this.state.tab === tabs.preview && (
                   <CustomProps
+                    renderExampleController={preview.renderExampleController}
                     componentProps={componentPropArray}
                     setComponentState={this.setComponentState}
                     componentState={this.state.componentState}

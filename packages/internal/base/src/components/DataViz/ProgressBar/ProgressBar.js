@@ -76,6 +76,9 @@ ProgressBar.defaultProps = {
 }
 
 ProgressBar.propTypes = {
+  /**
+   * Progress in percent (100)
+   */
   progress: PropTypes.number.isRequired,
   className: PropTypes.string
 }
