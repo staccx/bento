@@ -63,5 +63,5 @@ ThemeProvider.propTypes = {
   children: PropTypes.any,
   resets: PropTypes.string,
   themeName: PropTypes.string.isRequired,
-  themes: PropTypes.arrayOf(PropTypes.instanceOf(Theme)).isRequired
+  themes: PropTypes.objectOf(PropTypes.instanceOf(Theme)).isRequired
 }
