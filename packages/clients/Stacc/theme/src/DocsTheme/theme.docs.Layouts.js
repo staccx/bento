@@ -66,6 +66,7 @@ export const LayoutStyling = registerStyle(
       justify-content: center;
       align-items: center;
       height: 100%;
+      position: relative;
       & > * {
         min-width: 300px;
       }
