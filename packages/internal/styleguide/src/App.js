@@ -1,5 +1,13 @@
 import React, { Component } from "react"
-import { Select, Layout, LayoutItem, List, Box, Wrapper } from "@staccx/base"
+import {
+  Select,
+  Layout,
+  LayoutItem,
+  List,
+  Box,
+  Wrapper,
+  Label
+} from "@staccx/base"
 import { ThemeProvider, ThemeConsumer, ThemeComponent } from "@staccx/Theme"
 import Theme from "./theme.js"
 import { NordeaTheme } from "@staccx/nordea-theme"
@@ -32,10 +40,11 @@ class App extends Component {
 
   renderMenu(menu) {
     return Reflect.ownKeys(menu).map(key => {
-      const { name, path, ...rest } = menu[key]
+      const { name, path, parent, ...rest } = menu[key]
       return (
         <li key={name}>
-          <Link to={`${path}`}>{`${name}`}</Link>
+          {path && <Link to={`${path}`}>{`${name}`}</Link>}
+          {!path && <Label>{name}</Label>}
           <List>{this.renderMenu(rest)}</List>
         </li>
       )
@@ -60,10 +69,11 @@ class App extends Component {
 
       levels.forEach((level, index) => {
         if (!current.hasOwnProperty(level)) {
-          if (level === "Heading") {
-            console.log("here", current, index)
+          current[level] = {
+            name: level,
+            path: index === levels.length - 1 ? getPath(levels, index) : null,
+            parent: index > 0 ? levels[index - 1] : null
           }
-          current[level] = { name: level, path: getPath(levels, index) }
         }
         current = current[level]
       })
@@ -72,9 +82,10 @@ class App extends Component {
       return acc
     }, {})
 
+    // TODO: Fix this. brain does not work
     delete menu.name
     delete menu.path
-    console.log(menu)
+    delete menu.parent
     return (
       <Router>
         <ThemeProvider themeName={"Stacc"} themes={this.state.themes}>
@@ -112,8 +123,13 @@ class App extends Component {
               </Header>
               <Wrapper size="documentation">
                 {previewArray.map(comp => {
+                  if (!comp.title) {
+                    console.warn("Has no title", comp)
+                    return null
+                  }
                   return (
                     <Route
+                      key={comp.title}
                       path={`/${comp.category}/${comp.title}`}
                       render={() => (
                         <PreviewComponent
@@ -122,19 +138,6 @@ class App extends Component {
                           width={this.state.width}
                         />
                       )}
-                    />
-                  )
-                })}
-                {Reflect.ownKeys(menu).map(key => {
-                  const topLevelItem = menu[key]
-                  return (
-                    <Route
-                      exact
-                      path={`${topLevelItem.path}/:component`}
-                      render={({ match }) => {
-                        console.log(match)
-                        return <div>denne matcher</div>
-                      }}
                     />
                   )
                 })}
