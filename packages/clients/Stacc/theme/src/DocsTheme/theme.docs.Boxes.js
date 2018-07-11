@@ -9,6 +9,11 @@ export const BoxStyling = registerStyle(
     `,
     codeBlock: css`
       padding: 0;
+      box-shadow: rgba(0, 0, 75, 0.015) 0px 2px 2px,
+        rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
+        rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
+        rgba(0, 0, 75, 0.015) 0px 64px 64px;
+      border: 1px solid ${color.line};
     `,
     documentationMenu: css`
       position: sticky;
@@ -35,6 +40,12 @@ export const BoxStyling = registerStyle(
       padding-top: 0;
       padding-bottom: 0;
       align-items: center;
+    `,
+    overflow: css`
+      padding: 0;
+      border-radius: 0px;
+      overflow-x: auto;
+      max-width: 806px;
     `
   },
   Box.themeProps.box

@@ -32,7 +32,7 @@ const spacing = {
   tiny: "6px"
 }
 const color = {
-  bg: "#fff",
+  bg: "#F8F8F8",
   bgGray: "#F8F8F8",
   primary: "#467EFF",
   secondary: "#EB5E55",

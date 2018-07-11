@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Heading, Text, Divider, Table } from "@staccx/base"
+import { Heading, Text, Layout, LayoutItem, Table, Box } from "@staccx/base"
 import beautify from "xml-beautifier"
 import reactElementToJSXString from "react-element-to-jsx-string"
 import ReactDOMServer from "react-dom/server"
@@ -58,87 +58,97 @@ class PreviewComponent extends Component {
       : []
 
     return (
-      <div>
+      <React.Fragment>
         {component.title && <Heading>{component.title}</Heading>}
-        {component.description && <Text>{component.description}</Text>}
-        <Divider />
-        <PropertiesTable props={componentProps.props} />
-        <Table data={themeProps}>
-          {({ item }) => (
-            <React.Fragment>
-              <td>{item.name}</td>
-              <td>{item.description}</td>
-              <td>{item.type}</td>
-            </React.Fragment>
-          )}
-        </Table>
-        <ViewTab onChange={e => this.setState({ tab: e.target.value })} />
-        <ThemeConsumer themeName={this.props.componentThemeName}>
-          {({ theme, themes }) => {
-            switch (this.state.tab) {
-              case tabs.preview: {
-                return (
-                  <RenderVariants
-                    component={component}
-                    variants={{
-                      [VARIANT_DEFAULT]: {
-                        name: "Default",
-                        value: VARIANT_DEFAULT
+        <Box variant="codeBlock" flush>
+          <Layout variant="documentationApiExample">
+            <LayoutItem>
+              {component.description && <Text>{component.description}</Text>}
+              <PropertiesTable props={componentProps.props} />
+              <Table data={themeProps}>
+                {({ item }) => (
+                  <React.Fragment>
+                    <td>{item.name}</td>
+                    <td>{item.description}</td>
+                    <td>{item.type}</td>
+                  </React.Fragment>
+                )}
+              </Table>
+            </LayoutItem>
+            <LayoutItem variant="styleguidePreview" tab={this.state.tab}>
+              <ViewTab onChange={e => this.setState({ tab: e.target.value })} />
+              <Box variant="overflow">
+                <ThemeConsumer themeName={this.props.componentThemeName}>
+                  {({ theme, themes }) => {
+                    switch (this.state.tab) {
+                      case tabs.preview: {
+                        return (
+                          <RenderVariants
+                            component={component}
+                            variants={{
+                              [VARIANT_DEFAULT]: {
+                                name: "Default",
+                                value: VARIANT_DEFAULT
+                              }
+                            }}
+                            componentProps={componentPropArray}
+                            componentState={this.state.componentState}
+                            theme={theme}
+                            themeName={this.props.componentThemeName}
+                            themes={themes}
+                            setComponentState={this.setComponentState}
+                            width={width}
+                          />
+                        )
                       }
-                    }}
-                    componentProps={componentPropArray}
-                    componentState={this.state.componentState}
-                    theme={theme}
-                    themeName={this.props.componentThemeName}
-                    themes={themes}
-                    setComponentState={this.setComponentState}
-                    width={width}
-                  />
-                )
-              }
-              case tabs.variants: {
-                return (
-                  <RenderVariants
-                    component={component}
-                    variants={getVariants(
-                      theme,
-                      component.component.themeProps
-                    )}
-                    componentState={this.state.componentState}
-                    themeName={this.props.componentThemeName}
-                    themes={themes}
-                    setComponentState={this.setComponentState}
-                    width={width}
-                  />
-                )
-              }
-              case tabs.jsSource: {
-                return (
-                  <ComponentSource code={source[component.component.name]} />
-                )
-              }
+                      case tabs.variants: {
+                        return (
+                          <RenderVariants
+                            component={component}
+                            variants={getVariants(
+                              theme,
+                              component.component.themeProps
+                            )}
+                            themeName={this.props.componentThemeName}
+                            themes={themes}
+                            setComponentState={this.setComponentState}
+                            width={width}
+                          />
+                        )
+                      }
+                      case tabs.jsSource: {
+                        return (
+                          <ComponentSource
+                            code={source[component.component.name]}
+                          />
+                        )
+                      }
 
-              case tabs.usage: {
-                const code = reactElementToJSXString(
-                  component.render({ variant: VARIANT_DEFAULT })
-                )
-                return <RenderedSource code={code} />
-              }
+                      case tabs.usage: {
+                        const code = reactElementToJSXString(
+                          component.render({ variant: VARIANT_DEFAULT })
+                        )
+                        return <RenderedSource code={code} />
+                      }
 
-              case tabs.htmlSource: {
-                const code = ReactDOMServer.renderToString(
-                  component.render({ variant: VARIANT_DEFAULT })
-                )
-                return <RenderedSource code={beautify(code)} />
-              }
+                      case tabs.htmlSource: {
+                        const code = ReactDOMServer.renderToString(
+                          component.render({ variant: VARIANT_DEFAULT })
+                        )
+                        return <RenderedSource code={beautify(code)} />
+                      }
 
-              default: {
-                return <div>Not implemented yet</div>
-              }
-            }
-          }}
-        </ThemeConsumer>
-      </div>
+                      default: {
+                        return <div>Not implemented yet</div>
+                      }
+                    }
+                  }}
+                </ThemeConsumer>
+              </Box>
+            </LayoutItem>
+          </Layout>
+        </Box>
+      </React.Fragment>
     )
   }
 }
