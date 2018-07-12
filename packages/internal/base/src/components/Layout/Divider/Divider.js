@@ -18,6 +18,7 @@ Divider.themeProps = {
 export const Rule = styled.hr`
   height: ${p => p.height}px;
   width: 100%;
+  min-width: 100px;
   border: none;
   background-color: ${color.line};
   ${themify(Divider.themeProps.rule)};

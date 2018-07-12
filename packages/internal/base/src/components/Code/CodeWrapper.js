@@ -11,6 +11,7 @@ const themeProps = {
 }
 
 const CodeWrapper = styled.pre`
+  min-width: 300px;
   background-color: ${color("codeBackground")};
   color: ${color("codeForeground")};
   .token {

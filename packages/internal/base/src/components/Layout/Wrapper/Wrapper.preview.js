@@ -17,6 +17,7 @@ const preview = {
 
 const DemoElementAroundWrapper = styled.div`
   background-color: rgba(70, 126, 255, 0.2);
+  min-width: 300px;
 `
 
 const Example = styled.div`

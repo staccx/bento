@@ -68,9 +68,6 @@ export const LayoutStyling = registerStyle(
       align-items: center;
       height: 100%;
       position: relative;
-      & > * {
-        min-width: 300px;
-      }
     `
   },
   Layout.themeProps.container

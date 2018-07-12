@@ -35,7 +35,7 @@ const Bg = styled.div`
   background: ${color.subtleHover};
   display: block;
   height: ${spacing.medium()};
-  min-width: 100px;
+  min-width: 200px;
   border-radius: ${spacing.small()};
   position: relative;
   overflow: hidden;
