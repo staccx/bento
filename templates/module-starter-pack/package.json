@@ -4,7 +4,7 @@
   "description": "Starter for new module",
   "private": true,
   "author": "StaccX",
-  "license": "UNLICENCED",
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"

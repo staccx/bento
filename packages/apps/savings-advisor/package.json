@@ -28,5 +28,6 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
-  "proxy": "https://demo.quantfol.io/"
+  "proxy": "https://demo.quantfol.io/",
+  "license": "UNLICENSED"
 }

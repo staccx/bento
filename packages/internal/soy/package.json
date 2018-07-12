@@ -2,7 +2,7 @@
   "name": "@staccx/soy",
   "version": "6.2.0",
   "description": "I depend, therefore I am (Common dependencies for Stacc X)",
-  "license": "UNLICENCED",
+  "license": "UNLICENSED",
   "dependencies": {
     "@google/maps": "^0.4.6",
     "@sanity/client": "^0.126.0",

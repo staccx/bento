@@ -1,7 +1,7 @@
 {
   "name": "@staccx/theme",
   "version": "6.2.0",
-  "license": "UNLICENCED",
+  "license": "UNLICENSED",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

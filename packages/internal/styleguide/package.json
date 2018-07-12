@@ -16,5 +16,6 @@
     "eject": "react-scripts eject",
     "cosmos": "cosmos",
     "cosmos:export": "cosmos-export"
-  }
+  },
+  "license": "UNLICENSED"
 }

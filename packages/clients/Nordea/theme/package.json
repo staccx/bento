@@ -19,6 +19,7 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
+  "license": "UNLICENSED",
   "scripts": {
     "start": "react-scripts start",
     "build:app": "react-scripts build",

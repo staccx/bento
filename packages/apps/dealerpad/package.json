@@ -27,5 +27,6 @@
   },
   "devDependencies": {
     "@staccx/rollup-config": "^6.2.0"
-  }
+  },
+  "license": "UNLICENSED"
 }

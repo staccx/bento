@@ -2,6 +2,7 @@
   "name": "@staccx/bank-in-a-box",
   "version": "6.2.0",
   "private": true,
+  "license": "UNLICENSED",
   "dependencies": {
     "@staccx/animations": "^6.2.0",
     "@staccx/aprila-theme": "^6.2.0",

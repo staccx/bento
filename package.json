@@ -15,7 +15,7 @@
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "homepage": "https://bitbucket.org/stacc-flow/bento#readme",
   "description": "",
   "workspaces": [

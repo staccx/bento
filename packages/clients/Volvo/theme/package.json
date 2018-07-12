@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
+  "license": "UNLICENSED",
   "peerDependencies": {
     "@staccx/base": "^4",
     "@staccx/theme": "^4"

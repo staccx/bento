@@ -3,7 +3,7 @@
   "version": "6.2.0",
   "description": "Developer portal white label",
   "author": "StaccX",
-  "license": "UNLICENCED",
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
