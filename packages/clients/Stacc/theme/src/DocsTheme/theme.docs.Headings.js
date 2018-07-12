@@ -86,6 +86,12 @@ export const HeadingStyling = registerStyle(
       font-family: ${fontFamily.body};
       font-weight: ${fontWeight.bold};
       font-size: ${font.base};
+    `,
+    menuHeading: css`
+      color: ${color.primary};
+      font-size: ${font.base};
+      margin-top: ${spacing.tiny};
+      font-family: ${fontFamily("mono")};
     `
   },
   Heading.themeProps.heading

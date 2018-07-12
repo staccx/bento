@@ -7,7 +7,7 @@ import Slider from "../../Forms/Slider/Slider/Slider"
 const max = 123456
 const preview = {
   title: "Odometer",
-  category: "component",
+  category: "component/Dataviz",
   tags: ["visual"],
   component: Odometer,
   render: props => <Odometer {...props} />,

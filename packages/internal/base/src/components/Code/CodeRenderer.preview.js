@@ -3,7 +3,7 @@ import CodeRenderer from "./CodeRenderer"
 
 const preview = {
   title: "CodeRenderer",
-  category: "component",
+  category: "component/Misc",
   tags: ["component", "code"],
   component: CodeRenderer,
   render: props => (
@@ -15,7 +15,7 @@ class MyApp extends React.Component {
   render() {
       return <div>Hello world!</div>
   }
-} 
+}
 
 export default MyApp`}
     />

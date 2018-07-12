@@ -5,6 +5,10 @@ import { List, SplitListItem } from "@staccx/base"
 export const ListStyling = registerStyle(
   {
     documentationMenu: css`
+      li > ul {
+        padding-left: ${spacing.tiny};
+        margin-bottom: ${spacing.small};
+      }
       > li > a {
         display: block;
         margin-bottom: ${spacing.tiny};
@@ -12,6 +16,12 @@ export const ListStyling = registerStyle(
       a {
         color: ${color.text};
         text-decoration: none;
+        &:hover,
+        &:active,
+        &:focus {
+          color: ${color.primary};
+          text-decoration: underline;
+        }
       }
     `,
     documentationSubMenu: css`

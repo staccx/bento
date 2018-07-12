@@ -6,7 +6,7 @@ import {
   List,
   Box,
   Wrapper,
-  Label
+  Heading
 } from "@staccx/base"
 import { ThemeProvider, ThemeConsumer, ThemeComponent } from "@staccx/Theme"
 import Theme from "./theme.js"
@@ -44,8 +44,14 @@ class App extends Component {
       return (
         <li key={name}>
           {path && <Link to={`${path}`}>{`${name}`}</Link>}
-          {!path && <Label>{name}</Label>}
-          <List>{this.renderMenu(rest)}</List>
+          {!path && (
+            <React.Fragment>
+              <Heading level="3" variant="menuHeading">
+                {name}
+              </Heading>
+              <List>{this.renderMenu(rest)}</List>
+            </React.Fragment>
+          )}
         </li>
       )
     })

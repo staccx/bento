@@ -47,17 +47,9 @@ Wrapper.defaultProps = {
 }
 
 Wrapper.propTypes = {
-  /**
-   * Content of wrapper
-   * @export
-   */
   children: themeProps.children,
   className: PropTypes.string,
-  /**
-   * Size of wrapper
-   * @export
-   */
-  size: PropTypes.string,
+  size: PropTypes.oneOf[("small", "medium", "large", "breakout")],
   breakout: PropTypes.bool
 }
 
