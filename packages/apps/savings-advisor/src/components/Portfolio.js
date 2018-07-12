@@ -7,8 +7,8 @@ import {
   Tabs as UnstyledTabs
 } from "react-tabs"
 import { formatCurrency } from "@staccx/formatting"
-import {FadeIn} from "@staccx/animations"
-import {font} from "@staccx/theme"
+import { FadeIn } from "@staccx/animations"
+import { font } from "@staccx/theme"
 import PieChart from "./PieChart"
 import PortfolioExpand from "./PortfolioExpand"
 import PortfolioFilter from "./PortfolioFilter"
@@ -31,7 +31,9 @@ class Portfolio extends Component {
     const val =
       value +
       (addToExisting
-        ? isStart ? apiStore.depositStart : apiStore.depositMonthly
+        ? isStart
+          ? apiStore.depositStart
+          : apiStore.depositMonthly
         : 0)
 
     func(parseInt(stringTrimAll(val.toString()), 10))

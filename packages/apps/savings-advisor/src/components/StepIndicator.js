@@ -2,7 +2,7 @@ import React from "react"
 import styled, { keyframes } from "styled-components"
 import { inject, observer } from "mobx-react"
 import { hideVisually } from "@staccx/base"
-import {font} from "@staccx/theme"
+import { font } from "@staccx/theme"
 
 @inject("uiStore")
 @observer

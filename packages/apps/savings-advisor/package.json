@@ -1,7 +1,9 @@
 {
   "name": "@staccx/savings-advisor",
   "version": "6.1.0",
-  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
   "dependencies": {
     "@staccx/animations": "^6.1.0",
     "@staccx/base": "^6.1.0",
@@ -12,14 +14,19 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build:app": "react-app-rewired build",
+    "build": "yarn prettify && rollup -c",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
-    "deploy": "yarn build && surge -p ./build -d savings-advisor.surge.sh",
-    "serve": "yarn build && serve -s build"
+    "deploy": "yarn build:app && surge -p ./build -d savings-advisor.surge.sh",
+    "serve": "yarn build:app && serve -s build",
+    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
     "@staccx/eslint-config": "^5.1.0"
+  },
+  "publishConfig": {
+    "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "proxy": "https://demo.quantfol.io/"
 }

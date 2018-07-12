@@ -102,7 +102,7 @@ class PieChart extends Component {
   }
 
   render() {
-    const {recommendedPortfolio} = this.props.apiStore // eslint-disable-line no-unused-vars
+    const { recommendedPortfolio } = this.props.apiStore // eslint-disable-line no-unused-vars
     return (
       <canvas
         ref={node => {
