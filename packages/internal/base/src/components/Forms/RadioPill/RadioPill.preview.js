@@ -30,7 +30,7 @@ const handleRadioPillChange = value => {
 
 const preview = {
   title: "RadioPill",
-  category: "component",
+  category: "component/Forms",
   component: RadioPill,
   render: props => (
     <div>

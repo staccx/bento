@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import PropTypes from "prop-types"
 import Input, { InputPropTypes } from "../Input"
 import { postalCodeMasks } from "../masks"
 import Loading from "../../../DataViz/Loading/Loading"
@@ -7,6 +8,9 @@ import { spacing, targetSize, color, font, themify } from "@staccx/theme"
 import { FadeIn } from "@staccx/animations"
 import themePropTypes from "../../../constants/themePropTypes"
 
+/**
+ * Input for Norwegian Postal codes. Adds PostalPlace according to the number. Input is imported from Input-component
+ */
 class PostalCodeInput extends React.PureComponent {
   constructor(props, context) {
     super(props, context)
@@ -50,7 +54,7 @@ class PostalCodeInput extends React.PureComponent {
 
   render() {
     return (
-      <PostalInputWrapper>
+      <PostalInputWrapper variant={this.props.variant}>
         <PostalInput
           type={"tel"}
           mask={postalCodeMasks[this.props.locale]}
@@ -59,7 +63,7 @@ class PostalCodeInput extends React.PureComponent {
         />
         {this.state.isLoading && <Loading />}
         {this.state.place && (
-          <Location valid={this.state.place.valid}>
+          <Location valid={this.state.place.valid} variant={this.props.variant}>
             {this.state.place.result}
           </Location>
         )}
@@ -81,7 +85,7 @@ PostalCodeInput.themeProps = {
   },
   input: {
     name: "POSTAL_INPUT",
-    description: "Input style",
+    description: "Specific Input style",
     type: themePropTypes.style
   }
 }
@@ -112,6 +116,14 @@ const PostalInput = styled(Input)`
 `
 
 // TODO: debounce calls?
-PostalCodeInput.propTypes = InputPropTypes
+PostalCodeInput.propTypes = {
+  ...InputPropTypes,
+  locale: PropTypes.oneOf(["nb"]),
+  onChange: PropTypes.func
+}
+
+PostalCodeInput.defaultProps = {
+  locale: "nb"
+}
 
 export default PostalCodeInput

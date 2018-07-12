@@ -4,7 +4,7 @@ import Button from "../Button/Button"
 
 const preview = {
   title: "Modal",
-  category: "component",
+  category: "component/Layout",
   component: Modal,
   render: ({ setState, isOpen = false, ...props }) => (
     <React.Fragment>

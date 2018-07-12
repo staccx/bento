@@ -3,7 +3,7 @@ import Loading from "./Loading"
 
 const preview = {
   title: "Loading",
-  category: "component",
+  category: "component/Dataviz",
   tags: ["visual", "animated"],
   component: Loading,
   render: props => <Loading {...props} />

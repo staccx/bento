@@ -4,7 +4,7 @@ import List from "../List"
 
 const preview = {
   title: "ExpandListItem",
-  category: "component",
+  category: "component/List",
   component: ExpandListItem,
   render: ({ variant }) => (
     <React.Fragment>

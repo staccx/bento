@@ -5,7 +5,7 @@ import Input from "../Input/Input"
 
 const preview = {
   title: "Form",
-  category: "component",
+  category: "component/Forms",
   tags: ["component"],
   component: Form,
   render: props => (

@@ -4,7 +4,7 @@ import List from "../List"
 
 const preview = {
   title: "LinkListItem",
-  category: "component",
+  category: "component/List",
   component: LinkListItem,
   render: props => (
     <React.Fragment>

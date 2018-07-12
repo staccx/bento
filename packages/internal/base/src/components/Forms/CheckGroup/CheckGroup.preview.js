@@ -13,7 +13,7 @@ const handleCheckboxChange = value => {
 
 const preview = {
   title: "CheckGroup",
-  category: "component",
+  category: "component/Forms",
   tags: ["visual"],
   component: CheckGroup,
   render: props => (

@@ -3,7 +3,7 @@ import SelectSimple from "./SelectSimple"
 
 const preview = {
   title: "SelectSimple",
-  category: "component",
+  category: "component/Forms",
   component: SelectSimple,
   render: props => (
     <SelectSimple label="Sivilstatus" placeholder="Velg..." id="simpleselect">

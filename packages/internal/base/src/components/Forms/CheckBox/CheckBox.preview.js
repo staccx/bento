@@ -3,7 +3,7 @@ import CheckBox from "./CheckBox"
 
 const preview = {
   title: "CheckBox",
-  category: "component",
+  category: "component/Forms",
   tags: ["visual"],
   component: CheckBox,
   render: props => (

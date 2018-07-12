@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import Input, { InputPropTypes } from "../Input"
 
 const masks = {
@@ -17,11 +18,29 @@ const masks = {
     /\d/
   ]
 }
-
-const NationalIdInput = ({ mask, locale = "nb", ...otherProps }) => (
-  <Input type={"tel"} mask={masks[locale]} {...otherProps} />
+/**
+ * Input for National ID Numbers.
+ */
+const NationalIdInput = ({ mask, id, guide, locale = "nb", ...otherProps }) => (
+  <Input
+    type={"tel"}
+    mask={masks[locale]}
+    id={id}
+    guide={guide}
+    {...otherProps}
+  />
 )
 
-NationalIdInput.propTypes = InputPropTypes
+NationalIdInput.propTypes = {
+  ...InputPropTypes,
+  locale: PropTypes.oneOf(["nb"]),
+  id: PropTypes.string.isRequired,
+  guide: PropTypes.bool
+}
+
+NationalIdInput.defaultProps = {
+  locale: "nb",
+  guide: true
+}
 
 export default NationalIdInput

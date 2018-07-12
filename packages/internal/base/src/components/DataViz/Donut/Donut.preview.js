@@ -3,7 +3,7 @@ import Donut from "./Donut"
 
 const preview = {
   title: "Donut",
-  category: "component",
+  category: "component/Dataviz",
   tags: ["component", "dataviz"],
   component: Donut,
   render: props => <Donut percentage={0.25} {...props} />

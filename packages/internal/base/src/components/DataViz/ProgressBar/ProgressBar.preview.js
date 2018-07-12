@@ -6,7 +6,7 @@ import Slider from "../../Forms/Slider/Slider/Slider"
 
 const preview = {
   title: "ProgressBar",
-  category: "component",
+  category: "component/Dataviz",
   tags: ["visual", "animated"],
   component: ProgressBar,
   render: props => <ProgressBar progress={80} {...props} />,

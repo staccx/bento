@@ -3,12 +3,10 @@ import Input from "./Input"
 
 const preview = {
   title: "Input",
-  category: "component",
+  category: "component/Forms/Input",
   component: Input,
   render: props => (
-    <React.Fragment>
-      <Input label={"Your label"} {...props} id={"scramble scrabmle"} />
-    </React.Fragment>
+    <Input label={"Your label"} {...props} id={"scramble scrabmle"} />
   )
 }
 

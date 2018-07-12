@@ -36,6 +36,7 @@ class PreviewComponent extends Component {
         ...state
       }
     }
+
     this.setState(newState)
   }
 
@@ -47,7 +48,7 @@ class PreviewComponent extends Component {
 
     // console.log(preview, "got component props", componentProps)
 
-    const componentPropArray = Reflect.ownKeys(componentProps.props)
+    const componentPropArray = Reflect.ownKeys(componentProps.props || {})
       .map(key => ({
         ...componentProps.props[key],
         name: key
@@ -60,6 +61,7 @@ class PreviewComponent extends Component {
           return themeProp
         })
       : []
+
     return (
       <Layout paddingTop="large">
         {preview.title && <Heading>{preview.title}</Heading>}
@@ -67,7 +69,9 @@ class PreviewComponent extends Component {
           <Layout variant="documentationApiExample">
             <LayoutItem>
               <Layout rowGap="large">
-                {preview.description && <Text>{preview.description}</Text>}
+                {componentProps.description && (
+                  <Text>{componentProps.description}</Text>
+                )}
                 <PropertiesTable props={componentProps.props} />
                 <ThemifyTable data={themeProps} />
               </Layout>
@@ -163,14 +167,16 @@ class PreviewComponent extends Component {
                     }}
                   </ThemeConsumer>
                 </Box>
-                <Box variant="customProps">
-                  {this.state.tab === tabs.preview &&
-                    preview.renderExampleController &&
-                    preview.renderExampleController({
-                      setComponentState: this.setComponentState,
-                      ...this.state.componentState
-                    })}
-                </Box>
+
+                {this.state.tab === tabs.preview &&
+                  preview.renderExampleController && (
+                    <Box variant="customProps">
+                      {preview.renderExampleController({
+                        setComponentState: this.setComponentState,
+                        ...this.state.componentState
+                      })}
+                    </Box>
+                  )}
               </Layout>
             </LayoutItem>
           </Layout>

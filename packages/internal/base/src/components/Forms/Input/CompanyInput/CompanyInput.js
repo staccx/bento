@@ -155,7 +155,7 @@ class CompanyInput extends React.PureComponent {
                       <SelectLoad />
                     </SelectWrapper>
                   )}
-                  {autoComplete.length ? (
+                  {autoComplete && autoComplete.length ? (
                     <SelectWrapper>
                       <SelectList>
                         {autoComplete.map((item, index) => {
@@ -333,23 +333,25 @@ const SelectItem = styled.li`
 `
 
 CompanyInput.propTypes = {
+  ...InputPropTypes,
   searchTimeout: PropTypes.number,
   onSelect: PropTypes.func,
   selected: PropTypes.object,
   onSearch: PropTypes.func,
   mapItem: PropTypes.func,
+  onInputChange: PropTypes.func,
   selectedHeader: PropTypes.string,
-  ...InputPropTypes
+  id: PropTypes.string.isRequired
 }
 
 CompanyInput.defaultProps = {
+  ...InputDefaultProps,
   searchTimeout: 200,
   onSelect: null,
   selected: null,
   onInputChange: null,
   mapItem: defaultMapItem,
-  selectedHeader: "Bedrift",
-  ...InputDefaultProps
+  selectedHeader: "Bedrift"
 }
 
 export default CompanyInput

@@ -3,7 +3,7 @@ import SliderKeyboardInput from "./SliderKeyboardInput"
 
 const preview = {
   title: "SliderKeyboardInput",
-  category: "component",
+  category: "component/Forms",
   component: SliderKeyboardInput,
   render: props => (
     <div>
