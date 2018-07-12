@@ -1,4 +1,4 @@
-## [0.0.2](https://bitbucket.org/stacc-flow/bento/compare/v6.2.0...v0.0.2) (2018-07-12)
+# [](https://bitbucket.org/stacc-flow/bento/compare/v6.2.0...v) (2018-07-12)
 
 
 

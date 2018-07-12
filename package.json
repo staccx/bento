@@ -1,8 +1,6 @@
 {
   "name": "@staccx/bento",
   "private": true,
-  "version": "0.0.2",
-  "main": "index.js",
   "scripts": {
     "precommit": "lerna run --concurrency 1 --stream precommit",
     "postcommit": "git update-index --again",
