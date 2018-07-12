@@ -4,6 +4,11 @@ import styled, { css } from "styled-components"
 import { spacing, themify, themeProps } from "@staccx/theme"
 import themePropTypes from "../../constants/themePropTypes"
 
+/**
+ * The flag object is a design pattern similar to the media object, however it
+ * utilises `display: table[-cell];` to give us control over the vertical
+ * alignments of the text and image.
+ */
 const Flag = ({
   children,
   className,

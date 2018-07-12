@@ -4,6 +4,9 @@ import styled, { css } from "styled-components"
 import { spacing, wrapper, themify, themeProps } from "@staccx/theme"
 import themePropTypes from "../../constants/themePropTypes"
 
+/**
+ * A Wrapper components that centers content and add spacing on the sides
+ */
 const Wrapper = ({ children, className, size, breakout, ...otherProps }) => (
   <Wrap breakout={breakout} className={className} size={size} {...otherProps}>
     {children}
@@ -49,7 +52,7 @@ Wrapper.defaultProps = {
 Wrapper.propTypes = {
   children: themeProps.children,
   className: PropTypes.string,
-  size: PropTypes.oneOf[("small", "medium", "large", "breakout")],
+  size: PropTypes.oneOf(["small", "medium", "large", "breakout"]),
   breakout: PropTypes.bool
 }
 

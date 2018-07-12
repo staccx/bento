@@ -49,14 +49,16 @@ const RadioPillContainer = styled.div`
 `
 
 RadioPill.defaultProps = {
-  onChange: null
+  onChange: null,
+  full: false
 }
 
 RadioPill.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
   className: PropTypes.string,
   group: PropTypes.string.isRequired,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  full: PropTypes.bool
 }
 
 export default RadioPill

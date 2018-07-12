@@ -2,7 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { spacing as space, themify, themeProps } from "@staccx/theme"
 import themePropTypes from "../../constants/themePropTypes"
-
+/**
+ * The ItemGroup object creates spacing between all its children and wraps the items when there is no room
+ */
 const ItemGroup = ({ children, spacing, variant, className, ...restProps }) => (
   <Wrap variant={variant} className={className} {...restProps}>
     <ItemGroupElement spacing={spacing} variant={variant}>

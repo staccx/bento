@@ -1,7 +1,8 @@
 import React from "react"
 import RadioPill from "./RadioPill"
 import RadioPillItem from "./RadioPill.Item"
-import Heading from "../../Text/Heading/Heading"
+import Toggle from "../Toggle/Toggle"
+import Label from "../Label/Label"
 
 const myList = [
   {
@@ -33,35 +34,29 @@ const preview = {
   category: "Components/Forms",
   component: RadioPill,
   render: props => (
-    <div>
-      <Heading level="3">Vanlig</Heading>
-      <RadioPill onChange={handleRadioPillChange} group={"radiopills"}>
-        {myList.map(listItem => (
-          <RadioPillItem
-            key={listItem.myUniqueId}
-            value={listItem.value}
-            defaultChecked={listItem.defaultChecked}
-            id={listItem.myUniqueId}
-          >
-            {listItem.label}
-          </RadioPillItem>
-        ))}
-      </RadioPill>
-
-      <Heading level="3">Full bredde</Heading>
-      <RadioPill full onChange={handleRadioPillChange} group={"radiopills"}>
-        {myList.map(listItem => (
-          <RadioPillItem
-            key={listItem.myUniqueId}
-            value={listItem.value}
-            defaultChecked={listItem.defaultChecked}
-            id={listItem.myUniqueId}
-          >
-            {listItem.label}
-          </RadioPillItem>
-        ))}
-      </RadioPill>
-    </div>
+    <RadioPill onChange={handleRadioPillChange} group={"radiopills"} {...props}>
+      {myList.map(listItem => (
+        <RadioPillItem
+          key={listItem.myUniqueId}
+          value={listItem.value}
+          defaultChecked={listItem.defaultChecked}
+          id={listItem.myUniqueId}
+        >
+          {listItem.label}
+        </RadioPillItem>
+      ))}
+    </RadioPill>
+  ),
+  renderExampleController: ({ setComponentState }) => (
+    <React.Fragment>
+      <Label for="largeRadio">Toggle full-width</Label>
+      <Toggle
+        id="largeRadio"
+        onChange={e => setComponentState({ full: e.target.checked })}
+      >
+        large
+      </Toggle>
+    </React.Fragment>
   )
 }
 

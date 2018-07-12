@@ -152,7 +152,8 @@ RadioPillItem.defaultProps = {
   input: {},
   onChange: null,
   value: "",
-  defaultChecked: false
+  defaultChecked: false,
+  full: false
 }
 
 RadioPillItem.propTypes = {
@@ -164,7 +165,8 @@ RadioPillItem.propTypes = {
   input: PropTypes.any,
   onChange: PropTypes.func,
   defaultChecked: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  full: PropTypes.bool
 }
 
 export default RadioPillItem

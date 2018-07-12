@@ -47,6 +47,9 @@ export default {
   rows: css`
     grid-auto-flow: row;
   `,
+  columns: css`
+    grid-auto-flow: column;
+  `,
   form: css`
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   `,

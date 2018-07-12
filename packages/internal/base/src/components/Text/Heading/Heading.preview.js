@@ -3,7 +3,7 @@ import Heading from "./Heading"
 
 const preview = {
   title: "Heading",
-  category: "Components/Text",
+  category: "Components/Texts",
   tags: ["typography"],
   component: Heading,
   render: props => (
