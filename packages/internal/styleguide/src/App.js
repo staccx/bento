@@ -8,7 +8,13 @@ import {
   Wrapper,
   Heading
 } from "@staccx/base"
-import { ThemeProvider, ThemeConsumer, ThemeComponent } from "@staccx/Theme"
+import styled from "styled-components"
+import {
+  ThemeProvider,
+  ThemeConsumer,
+  ThemeComponent,
+  spacing
+} from "@staccx/Theme"
 import Theme from "./theme.js"
 import { NordeaTheme } from "@staccx/nordea-theme"
 import AprilaTheme from "@staccx/aprila-theme"
@@ -98,7 +104,7 @@ class App extends Component {
       <Router>
         <ThemeProvider themeName={"Stacc"} themes={this.state.themes}>
           <Layout grid="dashboard">
-            <LayoutItem area="sidebar" variant="sidebar">
+            <LayoutItem area="aside" variant="sidebar">
               <Box variant="styleGuideHeader">
                 <ThemeComponent tagName={"logo"} fallback={null} />
               </Box>
@@ -137,46 +143,48 @@ class App extends Component {
                   }}
                 </ThemeConsumer>
               </Header>
-              <Wrapper size="documentation">
-                <Route
-                  path={"/apps/:app"}
-                  exact
-                  render={({ match }) => {
-                    console.log(match.params)
-                    switch (match.params.app) {
-                      case "savings-advisor": {
-                        return (
-                          <AppPreview
-                            app={<SavingsAdvisor />}
-                            themeName={this.state.componentThemeName}
-                            themes={this.state.themes}
-                          />
-                        )
+              <Main>
+                <Wrapper size="documentation">
+                  <Route
+                    path={"/apps/:app"}
+                    exact
+                    render={({ match }) => {
+                      console.log(match.params)
+                      switch (match.params.app) {
+                        case "savings-advisor": {
+                          return (
+                            <AppPreview
+                              app={<SavingsAdvisor />}
+                              themeName={this.state.componentThemeName}
+                              themes={this.state.themes}
+                            />
+                          )
+                        }
                       }
+                      return <SavingsAdvisor />
+                    }}
+                  />
+                  {previewArray.map(comp => {
+                    if (!comp.title) {
+                      console.warn("Has no title", comp)
+                      return null
                     }
-                    return <SavingsAdvisor />
-                  }}
-                />
-                {previewArray.map(comp => {
-                  if (!comp.title) {
-                    console.warn("Has no title", comp)
-                    return null
-                  }
-                  return (
-                    <Route
-                      key={comp.title}
-                      path={`/${comp.category}/${comp.title}`}
-                      render={() => (
-                        <PreviewComponent
-                          componentThemeName={this.state.componentThemeName}
-                          preview={comp}
-                          width={this.state.width}
-                        />
-                      )}
-                    />
-                  )
-                })}
-              </Wrapper>
+                    return (
+                      <Route
+                        key={comp.title}
+                        path={`/${comp.category}/${comp.title}`}
+                        render={() => (
+                          <PreviewComponent
+                            componentThemeName={this.state.componentThemeName}
+                            preview={comp}
+                            width={this.state.width}
+                          />
+                        )}
+                      />
+                    )
+                  })}
+                </Wrapper>
+              </Main>
             </LayoutItem>
           </Layout>
         </ThemeProvider>
@@ -184,5 +192,11 @@ class App extends Component {
     )
   }
 }
+
+const Main = styled.main`
+  overflow-y: auto;
+  height: calc(100vh - 72px);
+  padding-bottom: ${spacing.huge};
+`
 
 export default App

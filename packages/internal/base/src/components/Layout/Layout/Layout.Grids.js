@@ -39,18 +39,30 @@ export default {
   `,
   fiftyFifty: css`
     display: grid;
+    grid-template-areas:
+      "header  main"
+      "body aside"
+      "footer footer";
     grid-template-columns: 1fr 1fr;
     @media only screen and (max-width: 730px) {
       grid-template-columns: 1fr;
     }
   `,
   rows: css`
+    grid-template-areas:
+      "header"
+      "main"
+      "body"
+      "aside"
+      "footer";
     grid-auto-flow: row;
   `,
   columns: css`
+    grid-template-areas: "header main body aside footer";
     grid-auto-flow: column;
   `,
   form: css`
+    grid-template-areas: "header main body aside footer";
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   `,
   centered: css`
@@ -70,6 +82,6 @@ export default {
     grid-template-columns: 340px 1fr;
     grid-gap: 0;
     min-height: 100vh;
-    grid-template-areas: "sidebar main";
+    grid-template-areas: "aside main";
   `
 }

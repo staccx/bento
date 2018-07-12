@@ -4,6 +4,12 @@ import styled, { css } from "styled-components"
 import { themify, spacing, grid, themeProps } from "@staccx/theme"
 import themePropTypes from "../../constants/themePropTypes"
 
+/**
+ * The default Layout-Component. Can be used with Both LayoutItem inside as well as other components.
+ * Is very flexible. You can use some predefined grids with the grid-prop or you can use variants.
+ * The default instance without props just add vertical spacing between items
+ *
+ */
 const Layout = ({
   grid,
   children,
@@ -84,7 +90,16 @@ Layout.defaultProps = {
 Layout.propTypes = {
   children: themeProps.children.isRequired,
   className: PropTypes.string,
-  grid: PropTypes.string,
+  grid: PropTypes.oneOf([
+    "stonehenge",
+    "columnNarrow",
+    "fiftyFifty",
+    "rows",
+    "columns",
+    "form",
+    "centered",
+    "dashboard"
+  ]),
   columnGap: themeProps.spacing,
   rowGap: themeProps.spacing,
   paddingBottom: themeProps.spacing,

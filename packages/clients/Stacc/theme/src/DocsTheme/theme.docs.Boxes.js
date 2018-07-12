@@ -18,6 +18,8 @@ export const BoxStyling = registerStyle(
     documentationMenu: css`
       position: sticky;
       top: 1px;
+      overflow-y: auto;
+      height: calc(100vh - 72px);
     `,
     documentationHeaderSearch: css`
       display: flex;

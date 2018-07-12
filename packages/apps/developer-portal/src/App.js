@@ -17,7 +17,7 @@ class App extends Component {
       <OpenApiProvider url={this.props.openApiUrl}>
         <Router>
           <Layout grid="dashboard" variant="responsiveDashboard">
-            <LayoutItem area="sidebar" variant="sidebar">
+            <LayoutItem area="aside" variant="sidebar">
               <Box variant="header">
                 <ThemeComponent tagName={"logo"} fallback={null} />
               </Box>
