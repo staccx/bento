@@ -105,7 +105,9 @@ class App extends Component {
               <Box variant="documentationMenu">
                 <List variant="documentationMenu">{this.renderMenu(menu)}</List>
                 <List variant="documentationMenu">
-                  <Label>Apps</Label>
+                  <Heading level="3" variant="menuHeading">
+                    Apps
+                  </Heading>
                   <li>
                     <Link to={"/apps/savings-advisor"}>Savings-Advisor</Link>
                   </li>
