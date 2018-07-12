@@ -9,7 +9,7 @@ import {
   SplitListItem,
   Wrapper
 } from "@staccx/base"
-import { font } from "@staccx/theme"
+import { font, getThemeProp, color, spacing, mapProp } from "@staccx/theme"
 import { lerp } from "@staccx/math"
 import {
   getActualRisk,
@@ -174,11 +174,11 @@ const Heading = styled.h4`
 const Expand = styled(ExpandListItem)`
   > button {
     position: relative;
-    color: ${p => p.theme.color.white};
+    color: ${color.white};
     background-image: linear-gradient(
       90deg,
-      ${p => p.theme.gradient.laser[0]} 8.41%,
-      ${p => p.theme.gradient.laser[1]} 95.8%
+      ${getThemeProp("gradient", "laserStart") || color.white} 8.41%,
+      ${getThemeProp("gradient", "laserEnd")} 95.8%
     );
     ${fontSmoothing};
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 4px rgba(0, 0, 0, 0.02),
@@ -189,10 +189,10 @@ const Expand = styled(ExpandListItem)`
 
     &:hover,
     &:focus {
-      color: ${p => p.theme.color.white};
+      color: ${color.white};
 
       > svg {
-        fill: ${p => p.theme.color.white} !important;
+        fill: ${color.white} !important;
       }
     }
   }
@@ -204,7 +204,7 @@ const Expand = styled(ExpandListItem)`
 `
 
 const FilterContent = styled.div`
-  padding-top: ${p => p.theme.spacing.medium};
+  padding-top: ${spacing.medium};
 `
 
 const DotButton = styled.button`
@@ -214,22 +214,21 @@ const DotButton = styled.button`
   height: 16px;
   border: 0;
   border-radius: 50%;
-  background-color: ${p =>
-    p.filled ? p.theme.color.primary : p.theme.color.line};
+  background-color: ${({ filled }) => (filled ? color.primary : color.line)};
   cursor: pointer;
 
   &:hover,
   &:active,
   &:focus {
     outline: none;
-    background-color: ${p =>
-      p.filled ? p.theme.color.primary : p.theme.color.secondary};
+    background-color: ${({ filled }) =>
+      filled ? color.primary : color.secondary}
     opacity: ${p => (p.filled ? 1 : 0.6)};
   }
 `
 
 const AnswersListItem = styled(SplitListItem)`
-  padding: ${p => p.theme.spacing.small};
+  padding: ${spacing.small};
   align-items: flex-start;
   > * {
     flex-grow: 1;
@@ -247,7 +246,7 @@ const NoWrap = styled.span`
 `
 
 const Subtle = styled.div`
-  color: ${p => p.theme.color.wcag};
+  color: ${color.wcag};
   font-size: ${font.tiny};
   font-style: normal;
   text-transform: uppercase;
@@ -255,12 +254,12 @@ const Subtle = styled.div`
 
 const EditLink = styled.a`
   text-decoration: none;
-  color: ${p => p.theme.color.primary};
+  color: ${color.primary};
 
   &:hover,
   &:active,
   &:focus {
-    color: ${p => p.theme.color.secondary};
+    color: ${color.secondary};
   }
 `
 

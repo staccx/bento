@@ -5,10 +5,36 @@ import { observable } from "mobx"
 import { inject, observer } from "mobx-react"
 import { easeOutQuad } from "easing-utils"
 import { clamp, lerp } from "@staccx/math"
-import { spacing, color, font } from "@staccx/theme"
+import { spacing, color, font, wrapper, ThemeComponent } from "@staccx/theme"
 import { FadeInFromTop } from "@staccx/animations"
 import QuestionLead from "../components/QuestionLead"
 
+const DefaultRiskComponent = ({
+  data,
+  handleHover,
+  handleClick,
+  current,
+  hovered
+}) => (
+  <WaveWrapper onMouseLeave={() => handleHover(1000)}>
+    {data.map((e, index) => (
+      <WaveContainer
+        index={index}
+        key={index}
+        onClick={() => handleClick(index)}
+        onMouseEnter={() => handleHover(index)}
+        distanceFromSelected={
+          current !== null ? Math.abs(current - index) : null
+        }
+        distanceFromHovered={
+          hovered !== null ? Math.abs(hovered - index) : null
+        }
+      >
+        <WaveBar />
+      </WaveContainer>
+    ))}
+  </WaveWrapper>
+)
 @inject("apiStore", "uiStore")
 @observer
 class Risk extends React.Component {
@@ -25,11 +51,13 @@ class Risk extends React.Component {
 
   @observable current = null
   @observable hovered = null
+
   @observable bodyText = null
 
   constructor(props, context) {
     super(props, context)
     this.handleClick = this.handleClick.bind(this)
+    this.handleHover = this.handleHover.bind(this)
     this.incrementWave = this.incrementWave.bind(this)
     this.getContentBody = this.getContentBody.bind(this)
     this.timeout = null
@@ -112,24 +140,16 @@ class Risk extends React.Component {
             )
           })}
         </LabelWrapper>
-        <WaveWrapper onMouseLeave={() => this.handleHover(1000)}>
-          {waveArray.map((e, index) => (
-            <WaveContainer
-              index={index}
-              key={index}
-              onClick={() => this.handleClick(index)}
-              onMouseEnter={() => this.handleHover(index)}
-              distanceFromSelected={
-                this.current !== null ? Math.abs(this.current - index) : null
-              }
-              distanceFromHovered={
-                this.hovered !== null ? Math.abs(this.hovered - index) : null
-              }
-            >
-              <WaveBar />
-            </WaveContainer>
-          ))}
-        </WaveWrapper>
+        <ThemeComponent
+          tagName={"risk"}
+          fallback={DefaultRiskComponent}
+          data={waveArray}
+          handleClick={this.handleClick}
+          handleHover={this.handleHover}
+          current={this.current}
+          hovered={this.hovered}
+        />
+
         <BodyTextWrapper>
           {this.bodyText ? (
             <BodyText>{this.bodyText}</BodyText>
@@ -145,14 +165,14 @@ class Risk extends React.Component {
 const RangeLabel = styled.label`
   position: relative;
   font-weight: bold;
-  color: ${p => (p.current ? color.secondary : "#2f80ed")};
+  color: ${p => (p.current ? color.secondary : color("waveDefault"))};
   flex-basis: 25%;
   text-align: center;
   padding: ${spacing.tiny};
   cursor: pointer;
   transition: opacity 0.2s ease;
 
-  @media (max-width: ${p => p.theme.wrapper.small}) {
+  @media (max-width: ${wrapper.small}) {
     font-size: ${font.tiny};
   }
 
@@ -193,12 +213,12 @@ const WaveWrapper = styled.div`
 const WaveBar = styled.i`
   position: relative;
   width: 3px;
-  background-color: #2f80ed;
+  background-color: ${color("waveDefault")};
   height: 32px;
   border-radius: 1px;
   display: block;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  @media (max-width: ${p => p.theme.wrapper.medium}) {
+  @media (max-width: ${wrapper.medium}) {
     width: 1px;
   }
 `
@@ -207,19 +227,19 @@ const waveStyler = (distanceFromSelected, distanceFromHovered) => {
   switch (distanceFromSelected) {
     case 0:
       return css`
-        background-color: #ff00c8;
+        background-color: ${color("waveSelected0")};
         transform: scaleY(1.8);
       `
 
     case 1:
       return css`
-        background-color: #c030ff;
+        background-color: ${color("waveSelected1")};
         transform: scaleY(1.4);
       `
 
     case 2:
       return css`
-        background-color: #9d32ff;
+        background-color: ${color("waveSelected2")};
         transform: scaleY(1.1);
       `
 
@@ -227,25 +247,25 @@ const waveStyler = (distanceFromSelected, distanceFromHovered) => {
       switch (distanceFromHovered) {
         case 0:
           return css`
-            background-color: #4cf7ff;
+            background-color: ${color("waveHovered0")};
             transform: scaleY(0.6);
           `
 
         case 1:
           return css`
-            background-color: #3bbdf8;
+            background-color: ${color("waveHovered1")};
             transform: scaleY(0.7);
           `
 
         case 2:
           return css`
-            background-color: #2f92f3;
+            background-color: ${color("waveHovered2")};
             transform: scaleY(0.9);
           `
 
         default:
           return css`
-            background-color: #2f80ed;
+            background-color: ${color("waveDefault")};
             transform: scaleY(1);
           `
       }
@@ -261,7 +281,7 @@ const WaveContainer = styled.span`
     ${p =>
       p.distanceFromSelected < 3 || p.distanceFromHovered < 3
         ? waveStyler(p.distanceFromSelected, p.distanceFromHovered)
-        : "background-color: #2f80ed; transform: scaleY(1);"};
+        : `background-color: ${color("waveDefault")}; transform: scaleY(1);`};
   }
 `
 

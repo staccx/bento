@@ -2,7 +2,14 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import { inject, observer } from "mobx-react"
 import { CheckGroup, CheckBox } from "@staccx/base"
-import { font } from "@staccx/theme"
+import {
+  font,
+  color,
+  spacing,
+  targetSize,
+  getThemeProp,
+  wrapper
+} from "@staccx/theme"
 import QuestionLead from "../components/QuestionLead"
 
 const MAX_SELECTABLE = 3
@@ -79,14 +86,14 @@ const ImageCheck = styled(CheckBox)`
   & ~ label {
     position: relative;
     padding: 0;
-    color: ${p => p.theme.color.white};
+    color: ${color.white};
     transition: opacity 0.2s ease-in;
 
     &::before {
       right: 0;
       left: auto;
-      width: ${p => p.theme.targetSize.normal};
-      height: ${p => p.theme.targetSize.normal};
+      width: ${targetSize.normal};
+      height: ${targetSize.normal};
       border-color: transparent;
       border-radius: 50%;
       background-color: transparent;
@@ -96,7 +103,7 @@ const ImageCheck = styled(CheckBox)`
     }
 
     svg {
-      fill: ${p => p.theme.color.white};
+      fill: ${color.white};
       width: 24px;
       height: 24px;
       left: auto;
@@ -130,8 +137,8 @@ const ImageCheck = styled(CheckBox)`
 
   &:checked ~ label {
     &::before {
-      border-color: ${p => p.theme.gradient.galaxy[1]};
-      background-color: ${p => p.theme.gradient.galaxy[1]};
+      border-color: ${getThemeProp("gradient", "galaxyStart")};
+      background-color: ${getThemeProp("gradient", "galaxyEnd")};
       transform: scale(1);
     }
   }
@@ -146,12 +153,12 @@ const Text = styled.span`
   position: absolute;
   left: 50%;
   top: 50%;
-  color: ${p => p.theme.color.white};
+  color: ${color.white};
   text-align: center;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   transform: translate(-50%, -50%);
   z-index: 5;
-  @media (max-width: ${p => p.theme.wrapper.small}) {
+  @media (max-width: ${wrapper.small}) {
     font-size: ${font.tiny};
   }
 `
@@ -159,9 +166,9 @@ const Text = styled.span`
 const CheckWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, auto);
-  grid-column-gap: ${p => p.theme.spacing.medium};
+  grid-column-gap: ${spacing.medium};
   justify-content: center;
-  @media (max-width: ${p => p.theme.wrapper.small}) {
+  @media (max-width: ${wrapper.small}) {
     grid-template-columns: repeat(2, auto);
   }
 `

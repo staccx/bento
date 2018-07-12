@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { inject, observer } from "mobx-react"
 import { Button } from "@staccx/base"
+import { color, spacing, wrapper } from "@staccx/theme"
 
 @inject("uiStore")
 @observer
@@ -56,15 +57,15 @@ class StepNavigation extends Component {
 
 const Center = styled.div`
   text-align: center;
-  margin-top: ${p => p.theme.spacing.large};
-  @media (max-width: ${p => p.theme.wrapper.medium}) {
-    margin-top: ${p => p.theme.spacing.large};
+  margin-top: ${spacing.large};
+  @media (max-width: ${wrapper.medium}) {
+    margin-top: ${spacing.large};
   }
 `
 
 const Next = styled(Button)`
-  color: ${p => p.theme.color.btnColor};
-  border: 2px solid ${p => p.theme.color.btnColor};
+  color: ${color.primary};
+  border: 2px solid ${color.primary};
   border-radius: 15px;
   background-color: transparent;
   transition: color 0.2s ease;
@@ -73,11 +74,11 @@ const Next = styled(Button)`
   &:focus,
   &:active {
     background-color: transparent;
-    color: ${p => p.theme.color.secondary};
+    color: ${color.secondary};
   }
 
   &:disabled {
-    color: ${p => p.theme.color.disabled};
+    color: ${color.disabled};
     border: 0px;
   }
 `
@@ -85,14 +86,14 @@ const Next = styled(Button)`
 const Previous = styled(Button)`
   border: 2px solid transparent;
   border-radius: 15px;
-  color: ${p => p.theme.color.wcag};
+  color: ${color.wcag};
   background-color: transparent;
 
   &:hover,
   &:focus,
   &:active {
     background-color: transparent;
-    color: ${p => p.theme.color.black};
+    color: ${color.black};
   }
 `
 

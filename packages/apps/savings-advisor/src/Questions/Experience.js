@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Toggle } from "@staccx/base"
+import { color, spacing } from "@staccx/Theme"
 import { inject, observer } from "mobx-react"
 import QuestionLead from "../components/QuestionLead"
 
@@ -41,14 +42,14 @@ class Start extends React.Component {
 }
 
 const FlexAnswer = styled.div`
-  margin-top: ${p => p.theme.spacing.medium};
+  margin-top: ${spacing.medium};
   display: flex;
   justify-content: center;
   > * {
-    padding: ${p => p.theme.spacing.small};
+    padding: ${spacing.small};
     display: inline-block;
     &:not(:first-child) {
-      border-left: 1px solid ${p => p.theme.color.line};
+      border-left: 1px solid ${color.line};
     }
   }
 `

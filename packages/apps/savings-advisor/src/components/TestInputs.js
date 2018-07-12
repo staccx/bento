@@ -56,7 +56,7 @@ const Heading = styled.h1`
   font-size: ${font.h1};
   font-weight: normal;
   text-align: center;
-  margin-bottom: ${p => p.theme.spacing.large};
+  margin-bottom: ${spacing.large};
 `
 
 const OuterWrapper = styled.div``
@@ -69,11 +69,11 @@ const InputsWrapper = styled.div`
 
 const InputItem = styled.div`
   position: relative;
-  margin-right: ${p => p.theme.spacing.small};
+  margin-right: ${spacing.small};
 
   &:last-child {
     margin-right: 0;
-    margin-left: ${p => p.theme.spacing.small};
+    margin-left: ${spacing.small};
   }
 `
 

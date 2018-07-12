@@ -49,7 +49,14 @@ const themeLaser = new Theme(BaseTheme, {
     warning: "#E32367",
     black: "#000",
     subtleHover: "#C7C7C7",
-    btnColor: "#fe83ac"
+    btnColor: "#fe83ac",
+    waveSelected0: "#ff00c8",
+    waveSelected1: "#c030ff",
+    waveSelected2: "#ff00c8",
+    waveHovered0: "#4cf7ff",
+    waveHovered1: "#3bbdf8",
+    waveHovered2: "#2f92f3",
+    waveDefault: "#2f80ed"
   },
   graphColor: [
     "#2F80ED",

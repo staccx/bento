@@ -2,10 +2,16 @@ import React from "react"
 import styled from "styled-components"
 import { Sparklines, SparklinesLine } from "react-sparklines"
 import { List, ExpandListItem, Wrapper, Fraction, Donut } from "@staccx/base"
+import { color, spacing } from "@staccx/theme"
 
 const Title = ({ fundName, index }) => (
   <React.Fragment>
-    <ColorIndicator width="24" height="24" viewBox="0 0 24 24" index={index}>
+    <ColorIndicator
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      index={"graph" + index}
+    >
       <circle cx="12" cy="12" r="12" fillRule="evenodd" />
     </ColorIndicator>
     {fundName}
@@ -13,8 +19,8 @@ const Title = ({ fundName, index }) => (
 )
 
 const ColorIndicator = styled.svg`
-  fill: ${p => p.theme.graphColor[p.index]};
-  margin-right: ${p => p.theme.spacing.small};
+  fill: ${({ index }) => color(`graph${index}`)};
+  margin-right: ${spacing.small};
 `
 
 const PortfolioExpand = ({ funds, selectedIndex, onClick }) => (
@@ -85,12 +91,12 @@ const Expand = styled(ExpandListItem)`
   }
   > div {
     background-color: #fcfcfc;
-    border: 1px solid ${p => p.theme.color.line};
+    border: 1px solid ${color.line};
     position: relative;
     max-width: 100%;
     margin-bottom: -1px;
     position: relative;
-    padding: ${p => p.theme.spacing.medium} 0;
+    padding: ${spacing.medium} 0;
     &::before {
       content: "";
       position: absolute;
@@ -98,7 +104,7 @@ const Expand = styled(ExpandListItem)`
       top: 0;
       height: 100%;
       width: 6px;
-      background-color: ${p => p.theme.graphColor[p.index]};
+      background-color: ${({ index }) => color("graph" + index)};
     }
   }
 `
@@ -106,12 +112,12 @@ const Expand = styled(ExpandListItem)`
 const Label = styled.div`
   font-weight: bold;
   display: block;
-  color: ${p => p.theme.color.wcag};
+  color: ${color.wcag};
 `
 
 const Mb = styled.div`
   &:not(:last-child) {
-    margin-bottom: ${p => p.theme.spacing.medium};
+    margin-bottom: ${spacing.medium};
   }
 `
 
@@ -122,7 +128,7 @@ const Halves = styled.div`
   > * {
     flex-basis: 50%;
     &:not(:last-child) {
-      padding-right: ${p => p.theme.spacing.medium};
+      padding-right: ${spacing.medium};
     }
   }
 `

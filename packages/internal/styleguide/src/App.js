@@ -13,11 +13,13 @@ import Theme from "./theme.js"
 import { NordeaTheme } from "@staccx/nordea-theme"
 import AprilaTheme from "@staccx/aprila-theme"
 import { FunduTheme } from "@staccx/fundu-theme"
+import { SavingsAdvisor } from "@staccx/savings-advisor"
 import * as Previews from "./generated/components.js"
 import PreviewComponent from "./components/PreviewComponent"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Header from "./components/Header"
 import WidthTab from "./components/WidthTab"
+import AppPreview from "./components/AppPreview"
 
 class App extends Component {
   constructor(props, context) {
@@ -102,6 +104,12 @@ class App extends Component {
               </Box>
               <Box variant="documentationMenu">
                 <List variant="documentationMenu">{this.renderMenu(menu)}</List>
+                <List variant="documentationMenu">
+                  <Label>Apps</Label>
+                  <li>
+                    <Link to={"/apps/savings-advisor"}>Savings-Advisor</Link>
+                  </li>
+                </List>
               </Box>
             </LayoutItem>
             <LayoutItem area="main">
@@ -128,6 +136,25 @@ class App extends Component {
                 </ThemeConsumer>
               </Header>
               <Wrapper size="documentation">
+                <Route
+                  path={"/apps/:app"}
+                  exact
+                  render={({ match }) => {
+                    console.log(match.params)
+                    switch (match.params.app) {
+                      case "savings-advisor": {
+                        return (
+                          <AppPreview
+                            app={<SavingsAdvisor />}
+                            themeName={this.state.componentThemeName}
+                            themes={this.state.themes}
+                          />
+                        )
+                      }
+                    }
+                    return <SavingsAdvisor />
+                  }}
+                />
                 {previewArray.map(comp => {
                   if (!comp.title) {
                     console.warn("Has no title", comp)

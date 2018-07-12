@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { CurrencyInput, Button } from "@staccx/base"
 import { multiplyPixelValue } from "@staccx/math"
-import { font } from "@staccx/theme"
+import { font, color, targetSize, mapProp } from "@staccx/theme"
 
 const CurrencyInputSteppers = ({
   label,
@@ -57,15 +57,15 @@ const Outer = styled.div`
 
 const Input = styled(CurrencyInput)`
   > label {
-    color: ${p => p.theme.color.gray};
+    color: ${color.gray};
     font-weight: normal;
   }
 
   > input {
-    min-height: ${p => p.theme.targetSize.large};
+    min-height: ${targetSize.large};
     border-radius: 0;
     border-width: 0;
-    border-bottom: 2px solid ${p => p.theme.color.secondary};
+    border-bottom: 2px solid ${color.secondary};
     font-size: ${font.h1};
     background-color: transparent;
     transition: border-color 0.2s ease;
@@ -74,7 +74,7 @@ const Input = styled(CurrencyInput)`
     &:active,
     &:focus {
       background-color: transparent;
-      border-color: ${p => p.theme.color.primary};
+      border-color: ${color.primary};
     }
   }
 `
@@ -82,26 +82,26 @@ const Input = styled(CurrencyInput)`
 const Buttons = styled.div`
   position: absolute;
   right: 0;
-  bottom: ${p => multiplyPixelValue(p.theme.targetSize.large, 0.5)};
+  bottom: ${p => multiplyPixelValue(targetSize.normal()(p), 0.5)};
   transform: translateY(50%);
 `
 
 const StepperButton = styled(Button)`
   margin-bottom: 0;
   border-radius: 50%;
-  min-width: ${p => p.theme.targetSize.small};
-  min-height: ${p => p.theme.targetSize.small};
+  min-width: ${targetSize.small};
+  min-height: ${targetSize.small};
   padding: 0;
-  color: ${p => (p.primary ? p.theme.color.white : p.theme.color.text)};
-  background-color: ${p =>
-    p.primary ? p.theme.color.grayDark : p.theme.color.grayLight};
+  color: ${({ primary }) => (primary ? color.white : color.text)};
+  background-color: ${({ primary }) =>
+    primary ? color.grayDark : color.grayLight};
   transition: background 0.2s ease;
 
   &:hover,
   &:active,
   &:focus {
-    background-color: ${p =>
-      p.primary ? p.theme.color.primary : p.theme.color.primary};
+    background-color: ${({ primary }) =>
+      primary ? color.primary : color.primary};
   }
 
   > svg {

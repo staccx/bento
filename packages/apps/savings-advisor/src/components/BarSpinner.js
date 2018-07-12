@@ -32,7 +32,7 @@ const Spinner = styled.div`
 const Bar = styled.div`
   width: 2px;
   margin: 0 2px;
-  height: ${p => p.theme.spacing.large};
+  height: ${spacing.large};
   background-color: red;
   animation: ${BarWave} 1.2s ease-in-out -${p => 1 - p.order * 0.1}s infinite;
 `

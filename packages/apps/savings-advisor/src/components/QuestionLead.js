@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { font } from "@staccx/theme"
+import { font, color, spacing, wrapper } from "@staccx/theme"
 
 const QuestionLead = ({ question, children }) => {
   return (
@@ -16,11 +16,11 @@ const Question = styled.h1`
   font-size: ${font.h1};
   font-weight: normal;
   text-align: center;
-  margin-bottom: ${p => p.theme.spacing.large};
-  margin-top: ${p => p.theme.spacing.huge};
-  color: ${p => p.theme.color.grayDark};
-  @media (max-width: ${p => p.theme.wrapper.medium}) {
-    margin-top: ${p => p.theme.spacing.large};
+  margin-bottom: ${spacing.large};
+  margin-top: ${spacing.huge};
+  color: ${color.grayDark};
+  @media (max-width: ${wrapper.medium}) {
+    margin-top: ${spacing.large};
     font-size: ${font.h2};
   }
 `
@@ -28,19 +28,19 @@ const Question = styled.h1`
 const Lead = styled.p`
   font-family: ${p => p.theme.font.body};
   font-size: ${font.base};
-  color: ${p => p.theme.color.wcag};
+  color: ${color.wcag};
   font-weight: normal;
   text-align: center;
-  margin-bottom: ${p => p.theme.spacing.huge};
+  margin-bottom: ${spacing.huge};
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
   line-height: 2;
-  @media (max-width: ${p => p.theme.wrapper.medium}) {
-    margin-bottom: ${p => p.theme.spacing.large};
+  @media (max-width: ${wrapper.medium}) {
+    margin-bottom: ${spacing.large};
   }
   ${Question} + & {
-    margin-top: -${p => p.theme.spacing.medium};
+    margin-top: -${spacing.medium};
   }
 `
 

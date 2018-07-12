@@ -8,7 +8,7 @@ import {
 } from "react-tabs"
 import { formatCurrency } from "@staccx/formatting"
 import { FadeIn } from "@staccx/animations"
-import { font } from "@staccx/theme"
+import { font, color, spacing, wrapper } from "@staccx/theme"
 import PieChart from "./PieChart"
 import PortfolioExpand from "./PortfolioExpand"
 import PortfolioFilter from "./PortfolioFilter"
@@ -183,21 +183,21 @@ const TabsWrapper = styled.div`
 const Heading2 = styled.h2`
   text-align: center;
   font-weight: 100;
-  margin-top: ${p => p.theme.spacing.huge};
+  margin-top: ${spacing.huge};
   font-size: ${font.h2};
-  color: ${p => p.theme.color.wcag};
+  color: ${color.wcag};
 `
 
 const PortfolioWrapper = styled.div`
   transition: opacity 0.3s ease-out;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  padding-top: ${p => p.theme.spacing.large};
+  padding-top: ${spacing.large};
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: ${p => p.theme.spacing.large};
+  grid-gap: ${spacing.large};
   grid-template-areas: "left right";
   @media (max-width: 735px) {
-    grid-gap: ${p => p.theme.spacing.medium};
+    grid-gap: ${spacing.medium};
   }
   @media (max-width: 710px) {
     grid-template-columns: 100%;
@@ -205,26 +205,26 @@ const PortfolioWrapper = styled.div`
   }
 
   > canvas {
-    margin-top: ${p => p.theme.spacing.medium};
+    margin-top: ${spacing.medium};
     width: 100% !important;
     height: auto !important;
   }
 `
 
 const InputsWrapper = styled.div`
-  margin-top: ${p => p.theme.spacing.large};
+  margin-top: ${spacing.large};
   display: grid;
   grid-template-columns: repeat(2, auto);
-  grid-column-gap: ${p => p.theme.spacing.large};
+  grid-column-gap: ${spacing.large};
   justify-content: center;
-  @media (max-width: ${p => p.theme.wrapper.medium}) {
+  @media (max-width: ${wrapper.medium}) {
     grid-template-columns: repeat(1, auto);
-    grid-row-gap: ${p => p.theme.spacing.large};
+    grid-row-gap: ${spacing.large};
   }
 `
 
 const Tabs = styled(UnstyledTabs)`
-  margin-top: ${p => p.theme.spacing.huge};
+  margin-top: ${spacing.huge};
 `
 
 const TabList = styled(UnstyledTabList)`
@@ -232,7 +232,7 @@ const TabList = styled(UnstyledTabList)`
   justify-content: center;
   flex-wrap: wrap;
   padding: 0;
-  margin: 0 0 ${p => p.theme.spacing.medium} 0;
+  margin: 0 0 ${spacing.medium} 0;
 `
 
 const Tab = styled(UnstyledTab).attrs({
@@ -240,15 +240,15 @@ const Tab = styled(UnstyledTab).attrs({
   disabledClassName: "disabled"
 })`
   text-align: center;
-  padding: ${p => p.theme.spacing.small} ${p => p.theme.spacing.medium};
+  padding: ${spacing.small} ${spacing.medium};
   list-style: none;
   cursor: pointer;
   background: #fafafa;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 4px rgba(0, 0, 0, 0.02),
     0px 8px 8px rgba(0, 0, 0, 0.03);
   border-radius: 60px;
-  margin-right: ${p => p.theme.spacing.small};
-  margin-bottom: ${p => p.theme.spacing.small};
+  margin-right: ${spacing.small};
+  margin-bottom: ${spacing.small};
   transition: box-shadow 0.2s ease-out;
 
   &:hover {
@@ -262,7 +262,7 @@ const Tab = styled(UnstyledTab).attrs({
   }
 
   &.selected {
-    color: ${p => p.theme.color.white};
+    color: ${color.white};
     background: linear-gradient(90deg, #5d3b9f 8.41%, #cf27aa 95.8%);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 4px rgba(0, 0, 0, 0.02),
       0px 8px 8px rgba(0, 0, 0, 0.03), 0px 16px 16px rgba(0, 0, 0, 0.03),
@@ -295,7 +295,7 @@ TabList.tabsRole = "TabList"
 
 const WrittenExplanation = styled.p`
   padding: 0;
-  margin: 0 0 ${p => p.theme.spacing.large} 0;
+  margin: 0 0 ${spacing.large} 0;
   text-align: center;
   line-height: 1.5;
   font-size: ${font.h3};

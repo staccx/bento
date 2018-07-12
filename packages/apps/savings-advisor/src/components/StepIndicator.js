@@ -2,7 +2,7 @@ import React from "react"
 import styled, { keyframes } from "styled-components"
 import { inject, observer } from "mobx-react"
 import { hideVisually } from "@staccx/base"
-import { font } from "@staccx/theme"
+import { font, color, spacing, wrapper, getThemeProp } from "@staccx/theme"
 
 @inject("uiStore")
 @observer
@@ -100,7 +100,7 @@ const rubberBand2 = keyframes`
 const StepNotLink = styled.span``
 
 const HideMobile = styled.span`
-  @media (max-width: ${p => p.theme.wrapper.medium}) {
+  @media (max-width: ${wrapper.medium}) {
     ${p => !p.current && hideVisually};
   }
 `
@@ -111,8 +111,8 @@ const StepperOuter = styled.nav`
   grid-template-columns: repeat(6, auto);
   grid-template-rows: repeat(2, auto);
   max-width: none;
-  border-bottom: 1px solid ${p => p.theme.color.grayLight};
-  @media (max-width: ${p => p.theme.wrapper.medium}) {
+  border-bottom: 1px solid ${color.grayLight};
+  @media (max-width: ${wrapper.medium}) {
     grid-template-columns: repeat(6, 1fr);
   }
 `
@@ -125,17 +125,17 @@ const StepLink = styled.a`
   &:hover,
   &:active,
   &:focus {
-    color: ${p => p.theme.color.primary};
+    color: ${color.primary};
   }
 `
 
 const Step = styled.div`
-  padding-bottom: ${p => p.theme.spacing.small};
+  padding-bottom: ${spacing.small};
   text-align: center;
   font-size: ${font.small};
-  color: ${p => (p.current ? p.theme.color.text : p.theme.color.grayLight)};
+  color: ${p => (p.current ? color.text : color.grayLight)};
   grid-row: 1;
-  @media (max-width: ${p => p.theme.wrapper.medium}) {
+  @media (max-width: ${wrapper.medium}) {
     ${StepLink}::before, ${StepNotLink}::before {
       ${p => !p.current && 'content: ""'};
       width: 12px;
@@ -153,11 +153,11 @@ const StepBar = styled.div`
   grid-column-end: ${p => p.progress};
   height: 1px;
   transform: translateY(1px);
-  background-color: ${p => p.theme.gradient.galaxy[0]};
+  background-color: ${getThemeProp("gradient", "galaxyStart")};
   background-image: linear-gradient(
     to right,
-    ${p => p.theme.gradient.galaxy[0]} 0%,
-    ${p => p.theme.gradient.galaxy[1]} 100%
+    ${getThemeProp("gradient", "galaxyStart")} 0%,
+    ${getThemeProp("gradient", "galaxyEnd")} 100%
   );
   transform-origin: left;
   ${p =>
