@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Table, Text, Close, Check, Heading } from "@staccx/base"
 import { color } from "@staccx/theme"
-import { typeToString, valueToString } from "../utils"
+import { parseType, valueToString } from "../utils"
 
 export default ({ props }) => {
   const data = Reflect.ownKeys(props).map(key => {
@@ -10,7 +10,7 @@ export default ({ props }) => {
     const { type, defaultValue, required /* description = "" */ } = prop
     return {
       name: key,
-      type: typeToString(type),
+      type: parseType(type),
       required: required || type.name.endsWith(".isRequired"),
       default: defaultValue
       // description
