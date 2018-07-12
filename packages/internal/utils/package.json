@@ -1,6 +1,6 @@
 {
   "name": "@staccx/utils",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "description": "Utilites",
   "author": "StaccX",
   "license": "UNLICENCED",
@@ -26,6 +26,6 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/soy": "^6.1.0"
+    "@staccx/soy": "^6.2.0"
   }
 }
