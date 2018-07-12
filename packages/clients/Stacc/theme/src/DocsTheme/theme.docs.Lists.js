@@ -8,6 +8,7 @@ export const ListStyling = registerStyle(
       li > ul {
         padding-left: ${spacing.tiny};
         margin-bottom: ${spacing.small};
+        border-left: 1px solid ${color.line};
       }
       > li > a {
         display: block;
