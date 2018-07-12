@@ -6,6 +6,7 @@
   "scripts": {
     "precommit": "lerna run --concurrency 1 --stream precommit",
     "postcommit": "git update-index --again",
+    "commitmsg": "commitlint -E GIT_PARAMS",
     "styleguide": "cd packages/base && styleguidist server",
     "start": "cd packages/internal/styleguide && yarn start"
   },
@@ -21,6 +22,8 @@
     "packages/**/*"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
     "@staccx/eslint-config": "^4.20.1",
     "plop": "^2.0.0"
   }
