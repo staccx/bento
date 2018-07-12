@@ -40,7 +40,7 @@ NationalIdInput.propTypes = {
 
 NationalIdInput.defaultProps = {
   locale: "nb",
-  guide: true
+  guide: false
 }
 
 export default NationalIdInput
