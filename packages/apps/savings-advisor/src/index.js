@@ -5,7 +5,6 @@ import registerServiceWorker from "./registerServiceWorker"
 import { Provider } from "mobx-react"
 import { apiStore, uiStore } from "./stores"
 
-
 ReactDOM.render(
   <Provider apiStore={apiStore} uiStore={uiStore}>
     <App />

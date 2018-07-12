@@ -9,7 +9,12 @@ class Purpose extends React.Component {
     const { horizon, setHorizon } = this.props.apiStore
     const { translate, cmsPurpose } = this.props.uiStore
     return (
-      <Question selected={horizon} translate={translate} content={cmsPurpose} onChange={setHorizon} />
+      <Question
+        selected={horizon}
+        translate={translate}
+        content={cmsPurpose}
+        onChange={setHorizon}
+      />
     )
   }
 }

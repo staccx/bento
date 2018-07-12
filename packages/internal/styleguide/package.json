@@ -1,13 +1,13 @@
 {
   "name": "@staccx/styleguide",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "private": true,
   "dependencies": {
-    "@staccx/aprila-theme": "^6.1.0",
-    "@staccx/base": "^6.1.0",
-    "@staccx/nordea-theme": "^6.1.1",
-    "@staccx/soy": "^6.1.0",
-    "@staccx/theme": "^6.1.0"
+    "@staccx/aprila-theme": "^6.2.0",
+    "@staccx/base": "^6.2.0",
+    "@staccx/nordea-theme": "^6.2.0",
+    "@staccx/soy": "^6.2.0",
+    "@staccx/theme": "^6.2.0"
   },
   "scripts": {
     "start": "node buildPreviews.js && react-app-rewired start",

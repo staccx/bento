@@ -8,6 +8,9 @@
     ],
     "stage-0",
     "react"
+
   ],
-  "plugins": ["babel-plugin-styled-components"]
+  "plugins": ["babel-plugin-styled-components",
+    "transform-decorators-legacy"
+  ]
 }

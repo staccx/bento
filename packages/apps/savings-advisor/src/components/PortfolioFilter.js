@@ -9,7 +9,7 @@ import {
   SplitListItem,
   Wrapper
 } from "@staccx/base"
-import {font} from "@staccx/theme"
+import { font } from "@staccx/theme"
 import { lerp } from "@staccx/math"
 import {
   getActualRisk,

@@ -1,6 +1,6 @@
 {
   "name": "@staccx/loan-process",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "description": "Loan process",
   "author": "StaccX",
   "license": "UNLICENCED",
@@ -34,8 +34,8 @@
     "@staccx/theme": "^4"
   },
   "devDependencies": {
-    "@staccx/base": "^6.1.0",
-    "@staccx/theme": "^6.1.0"
+    "@staccx/base": "^6.2.0",
+    "@staccx/theme": "^6.2.0"
   },
   "files": [
     "dist"
@@ -47,9 +47,9 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/formatting": "^6.1.0",
+    "@staccx/formatting": "^6.2.0",
     "@staccx/payment-plan": "^1.2.0",
-    "@staccx/soy": "^6.1.0",
-    "@staccx/utils": "^6.1.0"
+    "@staccx/soy": "^6.2.0",
+    "@staccx/utils": "^6.2.0"
   }
 }

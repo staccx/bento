@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import {font} from "@staccx/theme"
+import { font } from "@staccx/theme"
 
 const QuestionLead = ({ question, children }) => {
   return (

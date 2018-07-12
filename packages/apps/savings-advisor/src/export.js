@@ -1,16 +1,16 @@
 import React, { Component } from "react"
-import styled from "styled-components"
-import { Wrapper } from "@staccx/base"
-import { ThemeProxyProvider } from "@staccx/theme"
+// import PropTypes from "prop-types"
+import { apiStore, uiStore } from "./stores"
 import { BrowserRouter as Router } from "react-router-dom"
 import Stepper from "./components/StepIndicator"
-import themeLaser from "./theme/themeLaser"
 import StepContent from "./components/StepContent"
+import { Provider } from "mobx-react"
+import { StyledWrapper } from "./App"
 
-class App extends Component {
+class SavingsAdvisor extends Component {
   render() {
     return (
-      <ThemeProxyProvider theme={themeLaser}>
+      <Provider apiStore={apiStore} uiStore={uiStore}>
         <div style={{ paddingTop: "48px" }}>
           <Router>
             <StyledWrapper>
@@ -19,13 +19,11 @@ class App extends Component {
             </StyledWrapper>
           </Router>
         </div>
-      </ThemeProxyProvider>
+      </Provider>
     )
   }
 }
 
-export const StyledWrapper = styled(Wrapper)`
-  min-height: 100px;
-`
+SavingsAdvisor.propTypes = {}
 
-export default App
+export { SavingsAdvisor }

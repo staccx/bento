@@ -89,7 +89,7 @@ const Inner = styled.div`
     content: "";
     opacity: ${p => (p.currentRow !== null ? 1 : 0)};
     position: absolute;
-    top: calc(${p => p.currentRow / p.totalRows * 100 + "%"} + 75px);
+    top: calc(${p => (p.currentRow / p.totalRows) * 100 + "%"} + 75px);
     right: 0;
     display: block;
     width: 16px;
@@ -103,7 +103,11 @@ const Inner = styled.div`
         ? dot0
         : p.currentRow === 1
           ? dot1
-          : p.currentRow === 2 ? dot2 : p.currentRow === 3 ? dot3 : dot4};
+          : p.currentRow === 2
+            ? dot2
+            : p.currentRow === 3
+              ? dot3
+              : dot4};
     animation-timing-function: ease-in-out;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
@@ -113,7 +117,7 @@ const Inner = styled.div`
     grid-auto-rows: 200px;
 
     &:after {
-      top: calc(${p => p.currentRow / p.totalRows * 100 + "%"} + 24px);
+      top: calc(${p => (p.currentRow / p.totalRows) * 100 + "%"} + 24px);
     }
   }
 `
