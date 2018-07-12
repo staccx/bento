@@ -3,7 +3,7 @@ import Slider from "./Slider"
 
 const preview = {
   title: "Slider",
-  category: "component/Forms",
+  category: "Components/Forms",
   component: Slider,
   render: props => (
     <div>

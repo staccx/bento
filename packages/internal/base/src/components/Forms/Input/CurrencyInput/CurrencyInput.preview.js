@@ -5,7 +5,7 @@ import Layout from "../../../Layout/Layout/Layout"
 
 const preview = {
   title: "CurrencyInput",
-  category: "component/Forms/Input",
+  category: "Components/Forms/Input",
   component: CurrencyInput,
   render: props => <CurrencyInput id="rklfnj3" {...props} />,
   renderExampleController: ({

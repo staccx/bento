@@ -3,7 +3,7 @@ import Wrapper from "./Wrapper"
 
 const preview = {
   title: "Wrapper",
-  category: "component/Layout",
+  category: "Components/Layout",
   component: Wrapper,
   render: props => <Wrapper {...props} />
 }

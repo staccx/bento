@@ -3,7 +3,7 @@ import Alert from "./Alert"
 
 const preview = {
   title: "Alert",
-  category: "component",
+  category: "Components",
   component: Alert,
   render: props => <Alert {...props} />
 }

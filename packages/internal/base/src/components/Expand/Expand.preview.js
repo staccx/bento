@@ -3,7 +3,7 @@ import Expand from "./Expand"
 
 const preview = {
   title: "Expand",
-  category: "component/Layout",
+  category: "Components/Layout",
   tags: ["visual", "animated"],
   component: Expand,
   render: props => (

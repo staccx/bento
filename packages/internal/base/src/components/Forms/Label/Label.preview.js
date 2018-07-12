@@ -3,7 +3,7 @@ import Label from "./Label"
 
 const preview = {
   title: "Label",
-  category: "component/Forms",
+  category: "Components/Forms",
   component: Label,
   render: props => <Label {...props}>This is a label</Label>
 }

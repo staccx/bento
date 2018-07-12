@@ -3,7 +3,7 @@ import Keyfigures from "./Keyfigures"
 
 const preview = {
   title: "Keyfigures",
-  category: "component/Dataviz",
+  category: "Components/Dataviz",
   tags: ["component", "dataviz"],
   component: Keyfigures,
   render: props => (

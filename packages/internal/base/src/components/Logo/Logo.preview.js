@@ -3,7 +3,7 @@ import Logo from "./Logo"
 
 const preview = {
   title: "Logo",
-  category: "component/Dataviz",
+  category: "Components/Dataviz",
   component: Logo,
   render: props => (
     <React.Fragment>

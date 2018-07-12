@@ -3,7 +3,7 @@ import RadioButton from "./RadioButton"
 
 const preview = {
   title: "RadioButton",
-  category: "component/Forms",
+  category: "Components/Forms",
   component: RadioButton,
   render: props => (
     <RadioButton

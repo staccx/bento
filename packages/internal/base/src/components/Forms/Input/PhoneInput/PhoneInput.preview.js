@@ -5,7 +5,7 @@ import Label from "../../Label/Label"
 
 const preview = {
   title: "PhoneInput",
-  category: "component/Forms/Input",
+  category: "Components/Forms/Input",
   component: PhoneInput,
   render: props => (
     <PhoneInput label={"PhoneInput"} id="dsf4dfs456" {...props} />

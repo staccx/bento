@@ -5,7 +5,7 @@ import Label from "../../Label/Label"
 
 const preview = {
   title: "AccountInput",
-  category: "component/Forms/Input",
+  category: "Components/Forms/Input",
   component: AccountInput,
   render: props => (
     <AccountInput label={"AccountInput"} id="9852145" {...props} />

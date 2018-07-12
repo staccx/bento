@@ -3,7 +3,7 @@ import Box from "./Box"
 
 const preview = {
   title: "Box",
-  category: "component/Layout",
+  category: "Components/Layout",
   tags: ["visual"],
   component: Box,
   render: props => <Box {...props}>Content inside box</Box>

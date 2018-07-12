@@ -4,7 +4,7 @@ import Label from "../Label/Label"
 
 const preview = {
   title: "Toggle",
-  category: "component/Forms",
+  category: "Components/Forms",
   component: Toggle,
   render: props => (
     <div>

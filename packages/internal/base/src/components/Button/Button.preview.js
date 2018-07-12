@@ -3,7 +3,7 @@ import Button from "./Button"
 
 const preview = {
   title: "Button",
-  category: "component/Buttons",
+  category: "Components/Buttons",
   tags: ["component", "clickable", "button"],
   component: Button,
   render: props => <Button {...props} />

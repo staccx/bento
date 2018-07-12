@@ -3,7 +3,7 @@ import Select from "./Select"
 
 const preview = {
   title: "Select",
-  category: "component/Forms",
+  category: "Components/Forms",
   component: Select,
   render: props => (
     <Select

@@ -23,7 +23,7 @@ const myList = [
 
 const preview = {
   title: "SplitListItem",
-  category: "component/List",
+  category: "Components/List",
   component: SplitListItem,
   render: props => (
     <React.Fragment>

@@ -6,7 +6,7 @@ import Slider from "../../Forms/Slider/Slider/Slider"
 
 const preview = {
   title: "Fraction",
-  category: "component/Dataviz",
+  category: "Components/Dataviz",
   tags: ["component", "dataviz"],
   component: Fraction,
   render: props => <Fraction value={3} max={6} {...props} />,

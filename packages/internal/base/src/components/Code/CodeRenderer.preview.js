@@ -3,7 +3,7 @@ import CodeRenderer from "./CodeRenderer"
 
 const preview = {
   title: "CodeRenderer",
-  category: "component/Misc",
+  category: "Components/Misc",
   tags: ["component", "code"],
   component: CodeRenderer,
   render: props => (

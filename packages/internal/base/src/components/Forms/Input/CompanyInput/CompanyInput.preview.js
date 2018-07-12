@@ -3,7 +3,7 @@ import CompanyInput from "./CompanyInput"
 
 const preview = {
   title: "CompanyInput",
-  category: "component/Forms/Input",
+  category: "Components/Forms/Input",
   component: CompanyInput,
   render: props => (
     <CompanyInput label={"CompanyInput"} id="rer34554s" {...props} />
