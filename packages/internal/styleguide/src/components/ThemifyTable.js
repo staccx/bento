@@ -4,6 +4,9 @@ import Component from "../components/Icons/Component"
 import Css from "../components/Icons/Css"
 
 export default ({ data }) => {
+  if (data.length === 0) {
+    return null
+  }
   return (
     <div>
       <Heading level="3" variant="documentationAttrs">
