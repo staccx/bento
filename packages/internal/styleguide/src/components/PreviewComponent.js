@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 import { Heading, Text, Layout, LayoutItem, Box } from "@staccx/base"
 import reactElementToJSXString from "react-element-to-jsx-string"
-import prettier from "prettier/standalone"
-import parsers from "prettier/parser-babylon"
+import pretty from "pretty"
 import wrap from "word-wrap"
 import ReactDOMServer from "react-dom/server"
 import { VARIANT_DEFAULT, ThemeConsumer } from "@staccx/theme"
@@ -148,14 +147,8 @@ class PreviewComponent extends Component {
                             preview.render(...this.state.componentState)
                           )
 
-                          const prettified = prettier.format(
-                            wrap(code, { width: 80 }),
-                            {
-                              plugins: [parsers],
-                              proseWrap: "always",
-                              printWidth: 1
-                            }
-                          )
+                          const wrappedCode = wrap(code, { width: 80 })
+                          const prettified = pretty(wrappedCode, { ocd: true })
 
                           return <RenderedSource code={prettified} />
                         }

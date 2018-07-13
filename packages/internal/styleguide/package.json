@@ -8,7 +8,9 @@
     "@staccx/nordea-theme": "^6.2.0",
     "@staccx/savings-advisor": "^6.2.0",
     "@staccx/soy": "^6.2.0",
-    "@staccx/theme": "^6.2.0"
+    "@staccx/theme": "^6.2.0",
+    "pretty": "^2.0.0",
+    "reshape": "^0.5.1"
   },
   "scripts": {
     "start": "node buildPreviews.js && react-app-rewired start",
