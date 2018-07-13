@@ -10,6 +10,7 @@ const path = require("path")
 const reactDocs = require("react-docgen")
 
 const external = [
+  "axios",
   "react",
   "react-dom",
   "prop-types",
