@@ -38,7 +38,7 @@ export const SelectSelectedStyling = registerStyle(
       }
     `
   },
-  SelectOption.themeProps.optionContainer
+  Select.themeProps.optionContainer
 )
 
 export const SelectIconButtonStyling = registerStyle(

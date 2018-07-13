@@ -86,7 +86,7 @@ export const SelectOptionStyling = registerStyle(
       padding-left: ${spacing.medium};
     `
   },
-  SelectOption.themeProps.optionContainer
+  Select.themeProps.optionContainer
 )
 
 export const SelectSelectedWrapperStyling = registerStyle(
