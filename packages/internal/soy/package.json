@@ -34,7 +34,7 @@
     "mobx-react-devtools": "^4.2.15",
     "national-id": "^2.0.0",
     "polished": "^1.9.2",
-    "prettier": "^1.10.2",
+    "prettier": "^1.13.7",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.1",
     "qs": "^6.5.1",
