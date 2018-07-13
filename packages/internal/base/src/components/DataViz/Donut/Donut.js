@@ -4,9 +4,9 @@ import styled from "styled-components"
 import { color, themify } from "@staccx/theme"
 import themePropTypes from "../../constants/themePropTypes"
 
-const Donut = ({ percentage, className, ...rest }) => {
+const Donut = ({ progress, className, warningThreshold, ...rest }) => {
   const dash = 57
-  const dashoffset = 57 * percentage - 57
+  const dashoffset = dash * progress - dash
   return (
     <Wrapper
       viewBox="0 0 24 24"
@@ -15,7 +15,7 @@ const Donut = ({ percentage, className, ...rest }) => {
       className={className}
       {...rest}
     >
-      <title>{percentage * 100}%</title>
+      <title>{progress * 100}%</title>
       <g fill="none" fillRule="evenodd" strokeWidth="6">
         <Bg cx="12" cy="12" r="9" />
         <Value
@@ -25,6 +25,8 @@ const Donut = ({ percentage, className, ...rest }) => {
           transform="rotate(-90 12 12)"
           dash={dash}
           dashoffset={dashoffset}
+          progress={progress}
+          warningThreshold={warningThreshold}
         />
       </g>
     </Wrapper>
@@ -60,18 +62,21 @@ const Bg = styled.circle`
 `
 
 const Value = styled.circle`
-  stroke: ${color.primary};
+  stroke: ${p =>
+    p.progress >= p.warningThreshold ? color.warning : color.primary};
   stroke-dasharray: ${p => p.dash};
   stroke-dashoffset: ${p => p.dashoffset};
   ${themify(Donut.themeProps.donutValue.name)};
 `
 
 Donut.defaultProps = {
-  className: ""
+  className: "",
+  warningThreshold: 0.9
 }
 
 Donut.propTypes = {
-  percentage: PropTypes.number.isRequired,
+  progress: PropTypes.number.isRequired,
+  warningThreshold: PropTypes.number,
   className: PropTypes.string
 }
 

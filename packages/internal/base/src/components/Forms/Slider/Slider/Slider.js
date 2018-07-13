@@ -4,45 +4,58 @@ import styled, { css } from "styled-components"
 import { color, themify, fontWeight } from "@staccx/theme"
 import themePropTypes from "../../../constants/themePropTypes"
 
-const Slider = ({
-  disabled,
-  max,
-  min,
-  name,
-  onChange,
-  percentage,
-  step,
-  value,
-  variantStyle,
-  variant,
-  ignoreBase,
-  ...restProps
-}) => {
-  if (percentage === undefined) {
-    console.warn(
-      "Slider component needs to be told what percentage it is by its parent in order to show it’s progress visually in webkit browsers."
+class Slider extends React.PureComponent {
+  constructor(props, context) {
+    super(props, context)
+
+    this.state = {
+      percentage: props.value ? props.value / props.max : props.max * 0.5
+    }
+
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(e) {
+    const { value } = e.target
+    const percentage = value / this.props.max
+    this.setState({ percentage })
+    this.props.onChange(e)
+  }
+
+  render() {
+    const {
+      disabled,
+      max,
+      min,
+      name,
+      step,
+      value,
+      variantStyle,
+      variant,
+      ignoreBase,
+      ...restProps
+    } = this.props
+    return (
+      <SliderInput
+        percentage={this.state.percentage}
+        variantStyle={variantStyle}
+        variant={variant}
+        ignoreBase={ignoreBase}
+      >
+        <input
+          type="range"
+          name={name}
+          defaultValue={value}
+          min={min}
+          max={max}
+          step={step}
+          disabled={disabled}
+          {...restProps}
+          onChange={this.handleChange}
+        />
+      </SliderInput>
     )
   }
-  return (
-    <SliderInput
-      percentage={percentage}
-      variantStyle={variantStyle}
-      variant={variant}
-      ignoreBase={ignoreBase}
-    >
-      <input
-        type="range"
-        name={name}
-        value={value && value}
-        onChange={onChange}
-        min={min}
-        max={max}
-        step={step}
-        disabled={disabled}
-        {...restProps}
-      />
-    </SliderInput>
-  )
 }
 
 Slider.themeProps = {
@@ -164,8 +177,8 @@ const SliderInput = styled.div`
     ${SliderTrackStyle}
     background: linear-gradient(90deg,
       ${color.primary} 0%, ${color.primary}
-      ${p => p.percentage}%, ${color.line}
-      ${p => p.percentage + 0.0}%,
+      ${p => p.percentage * 100}%, ${color.line}
+      ${p => p.percentage * 100 + 0.0}%,
       ${color.line} 100%) 0 100% no-repeat content-box;
   }
 
@@ -226,7 +239,6 @@ Slider.propTypes = {
   min: PropTypes.number,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
-  percentage: PropTypes.number,
   step: PropTypes.any,
   variant: PropTypes.string,
   value: PropTypes.any,

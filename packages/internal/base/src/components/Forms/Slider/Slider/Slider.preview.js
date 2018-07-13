@@ -7,7 +7,12 @@ const preview = {
   component: Slider,
   render: props => (
     <div>
-      <Slider name="slider" onChange={() => console.log("Sliiiide")} />
+      <Slider
+        name="slider"
+        onChange={e => console.log("Sliiiide", e.target.value)}
+        min={1}
+        max={100}
+      />
     </div>
   )
 }
