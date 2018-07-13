@@ -11,6 +11,7 @@ const Image = ({
   variant,
   aspectRatio,
   stretch,
+  width,
   ...otherProps
 }) => {
   if (aspectRatio) {
@@ -24,6 +25,7 @@ const Image = ({
         ratio={ratio}
         variant={variant}
         round={round}
+        width={width}
         {...otherProps}
       >
         <CroppedImg src={src} stretch={stretch} />
@@ -77,19 +79,25 @@ export const CropContainer = styled.div`
   display: block;
   overflow: hidden;
   padding-bottom: ${p => p.ratio * 100}%;
+  min-width: 100px;
+  ${p => p.width && "width: " + p.width + "px"};
   ${p => p.round && "border-radius: 50%"};
   ${themify(Image.themeProps.container)};
 `
 
 Image.defaultProps = {
   className: "",
-  size: "medium"
+  size: "medium",
+  round: false,
+  aspectRatio: ""
 }
 
 Image.propTypes = {
   children: themeProps.children,
   className: PropTypes.string,
-  size: themeProps.spacing
+  size: themeProps.spacing,
+  round: PropTypes.bool,
+  aspectRatio: PropTypes.string
 }
 
 export default Image
