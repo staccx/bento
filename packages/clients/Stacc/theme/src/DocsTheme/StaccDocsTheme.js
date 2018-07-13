@@ -11,6 +11,11 @@ import {
 } from "./theme.docs.Inputs"
 import { TableStyling } from "./theme.docs.Tables"
 import { LayoutItemStyling } from "./theme.docs.LayoutItem"
+import {
+  SelectWrapperStyle,
+  SelectedWrapperStyle,
+  SelectedOptionContainer
+} from "./theme.docs.Select"
 
 const wrapper = {
   documentation: "1440px"
@@ -45,5 +50,8 @@ const theme = new Theme({ wrapper, color })
   .add(RadioPillItemStyling)
   .add(TableStyling)
   .add(RadioPillItemHoverStyling)
+  .add(SelectWrapperStyle)
+  .add(SelectedWrapperStyle)
+  .add(SelectedOptionContainer)
 
 export default theme

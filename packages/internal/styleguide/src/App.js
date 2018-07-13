@@ -131,6 +131,7 @@ class App extends Component {
                   {({ themes }) => {
                     return (
                       <Select
+                        variant="styleguideSwitchTheme"
                         items={Object.keys(themes).map(key => themes[key])}
                         itemToString={item => item.name}
                         itemToKey={item => item.name}
