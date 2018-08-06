@@ -13,12 +13,6 @@ const Chat = ({ children }) => (
   </Box>
 )
 
-const ChatBox = styled.div`
-  background-color: ${color.white};
-  height: 100%;
-  position: relative;
-`
-
 const ChatWrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;

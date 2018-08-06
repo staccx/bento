@@ -14,7 +14,7 @@ import {
   ThemeConsumer,
   ThemeComponent,
   spacing
-} from "@staccx/Theme"
+} from "@staccx/theme"
 import Theme from "./theme.js"
 import { NordeaTheme } from "@staccx/nordea-theme"
 import AprilaTheme from "@staccx/aprila-theme"
