@@ -19,7 +19,7 @@ import SelectSimple from "./components/Forms/SelectSimple/SelectSimple"
 import Select from "./components/Forms/Select/Select"
 import SelectOption from "./components/Forms/Select/Select.Option"
 import Toggle from "./components/Forms/Toggle/Toggle"
-import Portal from "./components/Portal/Portal"
+import FileInput from "./components/Forms/FileInput/FileInput"
 
 // Text
 import Text from "./components/Text/Text/Text"
@@ -74,8 +74,10 @@ import Modal from "./components/Modal/Modal"
 import Button from "./components/Button/Button"
 
 import Alert from "./components/Alert/Alert"
+
 // Boxes
 import Box from "./components/Layout/Box/Box"
+import Portal from "./components/Portal/Portal"
 
 // Styles
 import fontSmoothing from "./Styles/fontsmoothing"
@@ -124,6 +126,7 @@ export {
   Expand,
   ExpandListItem,
   Fetch,
+  FileInput,
   Flag,
   fontSmoothing,
   Fraction,
