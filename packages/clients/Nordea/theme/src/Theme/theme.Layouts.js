@@ -33,6 +33,12 @@ const mobileColumn = css`
   }
 `
 
+const hideCSS = css`
+  @media only screen and (max-width: 750px) {
+    display: none;
+  }
+`
+
 export const LayoutItemStyling = registerStyle(
   {
     caseHeader: css`
@@ -42,6 +48,16 @@ export const LayoutItemStyling = registerStyle(
       @media only screen and (max-width: 750px) {
         grid-row: 1 / span 3;
         grid-column: 1 / span 3;
+      }
+    `,
+    caseTabs: css`
+      display: none;
+      ${mobileColumn};
+
+      @media only screen and (max-width: 750px) {
+        display: block;
+        grid-row: 3;
+        margin-top: -${spacing.medium};
       }
     `,
     caseSummary: css`
@@ -61,6 +77,7 @@ export const LayoutItemStyling = registerStyle(
       animation: ${FadeIn} forwards ease-out 400ms 1;
       animation-delay: 400ms;
       ${mobileColumn};
+      ${p => p.hideOnMobile && hideCSS};
     `,
     caseDocumentation: css`
       grid-column: 2 / span 1;
@@ -69,6 +86,7 @@ export const LayoutItemStyling = registerStyle(
       animation: ${FadeIn} forwards ease-out 400ms 1;
       animation-delay: 500ms;
       ${mobileColumn};
+      ${p => p.hideOnMobile && hideCSS};
     `,
     caseContact: css`
       grid-column: 4 / span 1;
@@ -77,6 +95,7 @@ export const LayoutItemStyling = registerStyle(
       animation: ${FadeIn} forwards ease-out 400ms 1;
       animation-delay: 600ms;
       ${mobileColumn};
+      ${p => p.hideOnMobile && hideCSS};
     `,
     caseFinance: css`
       grid-column: 2 / span 1;
@@ -85,6 +104,7 @@ export const LayoutItemStyling = registerStyle(
       animation: ${FadeIn} forwards ease-out 400ms 1;
       animation-delay: 700ms;
       ${mobileColumn};
+      ${p => p.hideOnMobile && hideCSS};
     `,
     caseObject: css`
       grid-column: 4 / span 1;
@@ -93,7 +113,9 @@ export const LayoutItemStyling = registerStyle(
       animation: ${FadeIn} forwards ease-out 400ms 1;
       animation-delay: 800ms;
       ${mobileColumn};
+      ${p => p.hideOnMobile && hideCSS};
     `,
+
     fadeIn: css`
       opacity: 0;
       animation: ${FadeIn} forwards ease-out 400ms 1;

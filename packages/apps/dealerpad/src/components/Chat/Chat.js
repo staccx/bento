@@ -16,8 +16,11 @@ const Chat = ({ children }) => (
 const ChatWrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
-  padding: ${spacing.medium} ${spacing.small} ${targetSize.normal};
-  max-height: 370px;
+  padding: ${spacing.medium} ${spacing.small} 56px;
+
+  @media only screen and (min-width: 750px) {
+    max-height: 370px;
+  }
 `
 
 const ChatInput = styled.div`

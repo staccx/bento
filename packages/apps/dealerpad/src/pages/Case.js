@@ -1,4 +1,5 @@
-import React from "react"
+import React, { Component } from "react"
+import styled from "styled-components"
 import {
   Heading,
   Box,
@@ -6,7 +7,8 @@ import {
   Tag,
   Layout,
   LayoutItem,
-  Button
+  Button,
+  ItemGroup
 } from "@staccx/base"
 import { ThemeComponent } from "@staccx/theme"
 import getCases from "../data/cases"
@@ -20,99 +22,165 @@ import ChatLogic from "../components/Chat/ChatLogic"
 import Documentation from "../components/Documentation/Documentation"
 import { slideLeft } from "../components/transitions/transitions"
 
-const Case = ({ match, history }) => {
-  const currentCase = getCases(match.params.caseId)
+class Case extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      currentTab: "documentation" // Only applies to small screens
+    }
+  }
 
-  return (
-    <Layout variant="case">
-      <LayoutItem variant="caseHeader">
-        <Box variant="caseHero" />
-      </LayoutItem>
+  handleChangeTab(value) {
+    this.setState({
+      currentTab: value
+    })
+  }
 
-      <LayoutItem variant="caseSummary">
-        <Layout rowGap="small">
-          <div>
-            <Button
-              variant="back"
-              onClick={() =>
-                history.push({ pathname: "/my-sales", state: slideLeft })
-              }
-            >
-              <ThemeComponent tagName="Back" /> Mine salg
-            </Button>
-          </div>
-          <Heading level={1} variant="caseHeading">
-            {currentCase.customer.name}{" "}
-          </Heading>
-          <div>
-            <Tag variant="inverted">{currentCase.id}</Tag>{" "}
-            <Tag variant="inverted">{getLoanType(currentCase.type)}</Tag>
-          </div>
-          <Paragraph variant="CaseSummary">
-            {currentCase.vehicle.type}, {currentCase.vehicle.make}{" "}
-            {currentCase.vehicle.model} {currentCase.vehicle.year} <br />
-            {currentCase.vehicle.variant} <br />
-            {formatCurrency(currentCase.financing.termRent)},-/mnd
-          </Paragraph>
-          <CaseProgressLarge progress={currentCase.status} max={4} />
-        </Layout>
-      </LayoutItem>
+  render() {
+    const { match, history } = this.props
+    const currentCase = getCases(match.params.caseId)
 
-      <LayoutItem variant="caseChat">
-        <ChatLogic
-          messages={currentCase.messages}
-          caseNumber={currentCase.id}
-        />
-      </LayoutItem>
-
-      {currentCase.documents && (
-        <LayoutItem variant="caseDocumentation">
-          <Heading level="2" variant="subtle">
-            Dokumentasjon
-          </Heading>
-          <div>
-            {currentCase.documents.map(document => (
-              <Documentation
-                label={document.name}
-                status={document.status}
-                key={document.name}
-              />
-            ))}
-          </div>
+    return (
+      <Layout variant="case">
+        <LayoutItem variant="caseHeader">
+          <Box variant="caseHero" />
         </LayoutItem>
-      )}
 
-      <LayoutItem variant="caseContact">
-        <Heading level="2" variant="subtle">
-          Låntaker
-        </Heading>
-        <ContactPerson
-          name={currentCase.customer.name}
-          phoneNumber={currentCase.customer.phoneNumber}
-          eMail={currentCase.customer.eMail}
-        />
-        {currentCase.cosigner && (
-          <ContactPerson
-            name={currentCase.cosigner.name}
-            phoneNumber={currentCase.cosigner.phoneNumber}
-            eMail={currentCase.cosigner.eMail}
+        <LayoutItem variant="caseSummary">
+          <Layout rowGap="small">
+            <div>
+              <Button
+                variant="back"
+                onClick={() =>
+                  history.push({ pathname: "/my-sales", state: slideLeft })
+                }
+              >
+                <ThemeComponent tagName="Back" /> Mine salg
+              </Button>
+            </div>
+            <Heading level={1} variant="caseHeading">
+              {currentCase.customer.name}{" "}
+            </Heading>
+            <div>
+              <Tag variant="inverted">{currentCase.id}</Tag>{" "}
+              <Tag variant="inverted">{getLoanType(currentCase.type)}</Tag>
+            </div>
+            <Paragraph variant="CaseSummary">
+              {currentCase.vehicle.type}, {currentCase.vehicle.make}{" "}
+              {currentCase.vehicle.model} {currentCase.vehicle.year} <br />
+              {currentCase.vehicle.variant} <br />
+              {formatCurrency(currentCase.financing.termRent)},-/mnd
+            </Paragraph>
+            <CaseProgressLarge progress={currentCase.status} max={4} />
+          </Layout>
+        </LayoutItem>
+
+        <LayoutItem variant="caseTabs">
+          <ItemGroup>
+            <Button
+              onClick={() => this.handleChangeTab("documentation")}
+              isCurrent={this.state.currentTab === "documentation"}
+              variant="tabs"
+            >
+              Dokumentasjon
+            </Button>
+            <Button
+              onClick={() => this.handleChangeTab("chat")}
+              isCurrent={this.state.currentTab === "chat"}
+              variant="tabs"
+            >
+              Chat
+            </Button>
+            <Button
+              onClick={() => this.handleChangeTab("contact")}
+              isCurrent={this.state.currentTab === "contact"}
+              variant="tabs"
+            >
+              Kontakt
+            </Button>
+            <Button
+              onClick={() => this.handleChangeTab("object")}
+              isCurrent={this.state.currentTab === "object"}
+              variant="tabs"
+            >
+              Detaljer
+            </Button>
+          </ItemGroup>
+        </LayoutItem>
+
+        <LayoutItem
+          variant="caseChat"
+          hideOnMobile={this.state.currentTab !== "chat"}
+        >
+          <ChatLogic
+            messages={currentCase.messages}
+            caseNumber={currentCase.id}
           />
+        </LayoutItem>
+
+        {currentCase.documents && (
+          <LayoutItem
+            variant="caseDocumentation"
+            hideOnMobile={this.state.currentTab !== "documentation"}
+          >
+            <Heading level="2" variant="subtle">
+              Dokumentasjon
+            </Heading>
+            <div>
+              {currentCase.documents.map(document => (
+                <Documentation
+                  label={document.name}
+                  status={document.status}
+                  key={document.name}
+                />
+              ))}
+            </div>
+          </LayoutItem>
         )}
-      </LayoutItem>
-      <LayoutItem variant="caseFinance">
-        <Heading level="2" variant="subtle">
-          Finansiering
-        </Heading>
-        <FinancingTable caseFinancing={currentCase.financing} />
-      </LayoutItem>
-      <LayoutItem variant="caseObject">
-        <Heading level="2" variant="subtle">
-          Objekt
-        </Heading>
-        <ObjectTable caseObject={currentCase.vehicle} />
-      </LayoutItem>
-    </Layout>
-  )
+
+        <LayoutItem
+          variant="caseContact"
+          hideOnMobile={this.state.currentTab !== "contact"}
+        >
+          <Heading level="2" variant="subtle">
+            Låntaker
+          </Heading>
+          <ContactPerson
+            name={currentCase.customer.name}
+            phoneNumber={currentCase.customer.phoneNumber}
+            eMail={currentCase.customer.eMail}
+          />
+          {currentCase.cosigner && (
+            <ContactPerson
+              name={currentCase.cosigner.name}
+              phoneNumber={currentCase.cosigner.phoneNumber}
+              eMail={currentCase.cosigner.eMail}
+            />
+          )}
+        </LayoutItem>
+
+        <LayoutItem
+          variant="caseFinance"
+          hideOnMobile={this.state.currentTab !== "finance"}
+        >
+          <Heading level="2" variant="subtle">
+            Finansiering
+          </Heading>
+          <FinancingTable caseFinancing={currentCase.financing} />
+        </LayoutItem>
+
+        <LayoutItem
+          variant="caseObject"
+          hideOnMobile={this.state.currentTab !== "object"}
+        >
+          <Heading level="2" variant="subtle">
+            Objekt
+          </Heading>
+          <ObjectTable caseObject={currentCase.vehicle} />
+        </LayoutItem>
+      </Layout>
+    )
+  }
 }
 
 export default Case

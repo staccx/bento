@@ -108,6 +108,27 @@ export const ButtonStyling = registerStyle(
       position: absolute;
       top: ${spacing.small};
       right: ${spacing.small};
+    `,
+    tabs: css`
+      border-radius: 0;
+      background-color: transparent;
+      color: ${color.primary};
+      margin-left: 0;
+      margin-right: 0;
+      padding: ${spacing.tiny} ${spacing.tiny};
+      ${p =>
+        p.isCurrent &&
+        `
+      border-bottom: 2px solid ${color("primary")(p)};
+      `};
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: ${color.primary};
+        background-color: transparent;
+        border-bottom: 2px solid ${color("primary")};
+      }
     `
   },
   Button.themeProps.button
