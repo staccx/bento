@@ -1,6 +1,6 @@
 import React from "react"
 import { ThemeComponent } from "@staccx/theme"
-import { Button } from "@staccx/base"
+import { Button, FileInput } from "@staccx/base"
 import fileStatus from "../../data/fileStatus"
 
 const DocumentationIcon = ({ status }) => {
@@ -31,7 +31,14 @@ const DocumentationIcon = ({ status }) => {
     case fileStatus.rejected:
       return (
         <div>
-          <Button variant="subtle">Last opp</Button>
+          <FileInput
+            group="signer"
+            id="idjadsj"
+            onChange={() => console.log("You changed it")}
+            variant="subtle"
+          >
+            Last opp
+          </FileInput>
           {/* <Button variant="icon">
             <ThemeComponent tagName="DocumentationDownload" />
           </Button> */}
