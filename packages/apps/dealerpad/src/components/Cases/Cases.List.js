@@ -84,9 +84,11 @@ const SpacingLeft = styled.div`
 
 export const IconWrapper = styled.div`
   margin-left: ${spacing.small};
+
   svg {
     display: block;
     fill: ${color.primary};
+    width: 10px;
   }
 `
 
