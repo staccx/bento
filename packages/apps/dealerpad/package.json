@@ -27,5 +27,12 @@
   "devDependencies": {
     "@staccx/rollup-config": "^6.3.0"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "proxy": {
+    "/api": {
+      "target": "https://api.nordea-finans.staccflow.com/",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
 }
