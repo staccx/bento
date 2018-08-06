@@ -1,7 +1,6 @@
 {
   "name": "@staccx/dealerpad",
   "version": "6.2.0",
-  "private": true,
   "dependencies": {
     "@staccx/base": "^6.2.0",
     "@staccx/nordea-theme": "^6.2.0",
