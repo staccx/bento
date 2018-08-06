@@ -1,6 +1,6 @@
 {
   "name": "@staccx/property-value",
-  "version": "6.2.0",
+  "version": "6.3.0",
   "description": "Widget for showing property value based on person nationalId (Norway only)",
   "private": true,
   "author": "StaccX",
@@ -37,9 +37,9 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/base": "^6.2.0",
-    "@staccx/formatting": "^6.2.0",
-    "@staccx/soy": "^6.2.0",
-    "@staccx/theme": "^6.2.0"
+    "@staccx/base": "^6.3.0",
+    "@staccx/formatting": "^6.3.0",
+    "@staccx/soy": "^6.3.0",
+    "@staccx/theme": "^6.3.0"
   }
 }

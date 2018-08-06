@@ -1,14 +1,14 @@
 {
   "name": "@staccx/styleguide",
-  "version": "6.2.0",
+  "version": "6.3.0",
   "private": true,
   "dependencies": {
-    "@staccx/aprila-theme": "^6.2.0",
-    "@staccx/base": "^6.2.0",
-    "@staccx/nordea-theme": "^6.2.0",
-    "@staccx/savings-advisor": "^6.2.0",
-    "@staccx/soy": "^6.2.0",
-    "@staccx/theme": "^6.2.0",
+    "@staccx/aprila-theme": "^6.3.0",
+    "@staccx/base": "^6.3.0",
+    "@staccx/nordea-theme": "^6.3.0",
+    "@staccx/savings-advisor": "^6.3.0",
+    "@staccx/soy": "^6.3.0",
+    "@staccx/theme": "^6.3.0",
     "pretty": "^2.0.0"
   },
   "scripts": {
