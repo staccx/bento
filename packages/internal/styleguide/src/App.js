@@ -161,8 +161,10 @@ class App extends Component {
                             />
                           )
                         }
+                        default: {
+                          return <SavingsAdvisor />
+                        }
                       }
-                      return <SavingsAdvisor />
                     }}
                   />
                   {previewArray.map(comp => {
