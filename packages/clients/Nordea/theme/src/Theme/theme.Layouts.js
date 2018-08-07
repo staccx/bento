@@ -6,7 +6,7 @@ import { FadeIn, BounceIn } from "@staccx/animations"
 export const LayoutStyling = registerStyle(
   {
     case: css`
-      grid-template-columns: 1fr 320px 130px 320px 1fr;
+      grid-template-columns: 1fr minmax(320px, 512px) 96px minmax(320px, 512px) 1fr;
       grid-template-rows: repeat(7, auto);
       grid-row-gap: ${spacing.large};
       grid-column-gap: ${spacing.medium};

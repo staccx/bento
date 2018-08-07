@@ -129,6 +129,21 @@ export const ButtonStyling = registerStyle(
         background-color: transparent;
         border-bottom: 2px solid ${color("primary")};
       }
+    `,
+    emoji: css`
+      background-color: transparent;
+      padding: 0;
+      font-size: 24px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+      }
+
+      &:nth-child(even) {
+        margin: 0 ${spacing.tiny};
+      }
     `
   },
   Button.themeProps.button
