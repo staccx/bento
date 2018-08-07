@@ -11,9 +11,11 @@ import {
   fontFamily,
   borderRadius,
   fontWeight,
-  themeProps
+  themeProps,
+  ThemeComponent
 } from "@staccx/theme"
 import themePropTypes from "../../constants/themePropTypes"
+import Upload from "../../Icons/Upload"
 const tinycolor = require("tinycolor2")
 
 class FileInput extends Component {
@@ -58,20 +60,23 @@ class FileInput extends Component {
     } = this.props
 
     return (
-      <FileWrapper variant={variant}>
+      <FileWrapper variant={variant} className={className}>
         <Input
           type="file"
           innerRef={this.fileInput} // To get the number of uploaded files from the input in case of multiple files
           accept={accept}
-          className={className}
           id={id}
           disabled={disabled}
           onChange={this.handleChange}
           multiple={multiple}
+          variant={variant}
           {...restProps}
         />
         <Label htmlFor={id} variant={variant}>
-          {this.state.uploadedFile ? this.state.uploadedFile : children}
+          <span>
+            <Icon variant={variant} />
+            {this.state.uploadedFile ? this.state.uploadedFile : children}
+          </span>
         </Label>
       </FileWrapper>
     )
@@ -80,19 +85,29 @@ class FileInput extends Component {
 
 FileInput.themeProps = {
   wrapper: {
-    name: "fileinput_wrapper",
+    name: "FileInput_Wrapper",
     description: "FileInput wrapper style",
     type: themePropTypes.style
   },
   input: {
-    name: "fileinput_input",
+    name: "FileInput_Input",
     description: "Input style – default is hidden! Style the label instead.",
     type: themePropTypes.style
   },
   label: {
-    name: "fileinput_label",
+    name: "FileInput_Label",
     description: "Label style",
     type: themePropTypes.style
+  },
+  icon: {
+    name: "FileInput_Icon_Style",
+    description: "Icon style",
+    type: themePropTypes.style
+  },
+  iconComponent: {
+    name: "FileInput_Icon_Component",
+    description: "Icon component",
+    type: themePropTypes.component
   }
 }
 
@@ -135,6 +150,11 @@ const Label = styled.label`
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.2s ease;
 
+  > span {
+    display: flex;
+    align-items: center;
+  }
+
   &:hover,
   &:focus {
     outline: none;
@@ -153,6 +173,22 @@ const Label = styled.label`
   }
 
   ${themify(FileInput.themeProps.label)};
+`
+
+const IconComponent = ({ ...props }) => (
+  <ThemeComponent
+    tagName={FileInput.themeProps.iconComponent}
+    fallback={Upload}
+    {...props}
+  />
+)
+
+export const Icon = styled(IconComponent)`
+  display: block;
+  height: 12px;
+  width: 12px;
+  margin-right: 3px;
+  ${themify(FileInput.themeProps.icon)};
 `
 
 FileInput.propTypes = {
