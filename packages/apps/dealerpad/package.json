@@ -6,9 +6,11 @@
     "@staccx/nordea-theme": "^6.4.0",
     "@staccx/soy": "^6.3.0",
     "@staccx/theme": "^6.3.0",
+    "axios": "^0.18.0",
     "history": "^4.7.2",
     "react-transition-group": "^2.4.0",
-    "react-web-notification": "^0.3.2"
+    "react-web-notification": "^0.3.2",
+    "socket.io": "^2.1.1"
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",

@@ -1,14 +1,17 @@
 import React from "react"
 import { Heading, Layout, LayoutItem, Wrapper } from "@staccx/base"
-import getCases from "../data/cases"
 import getNewsItems from "../data/news"
 import NewsHero from "../components/News/News.Hero"
 import NewsList from "../components/News/News.List"
 import CasesList from "../components/Cases/Cases.List"
 import SearchGlobal from "../components/Search/SearchGlobal"
 import Contact from "../components/Contact"
+import caseStore from "../data/store/caseList"
+import { observer } from "mobx-react"
 
-const Home = () => (
+console.log(caseStore.inittime)
+
+const Home = observer(() => (
   <div>
     <header>
       <NewsHero article={getNewsItems()[0]} />
@@ -33,7 +36,7 @@ const Home = () => (
               <Heading level="2" variant="subtle">
                 Mine siste saker
               </Heading>
-              <CasesList cases={getCases().slice(0, 5)} compact />
+              <CasesList cases={caseStore.cases.slice(0, 5)} compact />
             </LayoutItem>
           </Layout>
         </LayoutItem>
@@ -55,6 +58,6 @@ const Home = () => (
       </Layout>
     </Wrapper>
   </div>
-)
+))
 
 export default Home

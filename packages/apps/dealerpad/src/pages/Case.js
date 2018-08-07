@@ -10,7 +10,6 @@ import {
   ItemGroup
 } from "@staccx/base"
 import { ThemeComponent } from "@staccx/theme"
-import getCases from "../data/cases"
 import getLoanType from "../helpers/getLoanType"
 import { formatCurrency } from "@staccx/formatting"
 import ContactPerson from "../components/ContactPerson"
@@ -20,6 +19,9 @@ import ObjectTable from "../components/Tables/Table.Object"
 import ChatLogic from "../components/Chat/ChatLogic"
 import Documentation from "../components/Documentation/Documentation"
 import { slideLeft } from "../components/transitions/transitions"
+import caseStore from "../data/store/caseList"
+
+console.log(caseStore.inittime)
 
 class Case extends Component {
   constructor(props) {
@@ -37,7 +39,7 @@ class Case extends Component {
 
   render() {
     const { match, history, location } = this.props
-    const currentCase = getCases(match.params.caseId)
+    const currentCase = caseStore.getCase(match.params.caseId)
 
     return (
       <Layout variant="case">
