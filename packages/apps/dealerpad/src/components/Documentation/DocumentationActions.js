@@ -2,15 +2,24 @@ import React from "react"
 import { ThemeComponent } from "@staccx/theme"
 import { Button, FileInput } from "@staccx/base"
 import fileStatus from "../../data/fileStatus"
+import { slideRight } from "../../components/transitions/transitions"
 
-const DocumentationIcon = ({ status }) => {
+const DocumentationIcon = ({ status, history, location }) => {
   switch (status) {
     case fileStatus.empty:
       return (
         <div>
           <FileInput
             id="1243rwtgfh"
-            onChange={() => console.log("You changed it")}
+            onChange={e =>
+              e.target.validity.valid
+                ? history.push({
+                    pathname: location.pathname + "checkimg",
+                    state: slideRight
+                  })
+                : console.warn("Uploaded file not valid")
+            }
+            accept={"image/*"}
           >
             Last opp
           </FileInput>
@@ -38,7 +47,8 @@ const DocumentationIcon = ({ status }) => {
         <div>
           <FileInput
             id="idjadsj"
-            onChange={() => console.log("You changed it")}
+            onChange={e => console.log(e.target.value)}
+            accept={"image/*"}
           >
             Last opp
           </FileInput>

@@ -36,7 +36,7 @@ class Case extends Component {
   }
 
   render() {
-    const { match, history } = this.props
+    const { match, history, location } = this.props
     const currentCase = getCases(match.params.caseId)
 
     return (
@@ -131,6 +131,8 @@ class Case extends Component {
                   label={document.name}
                   status={document.status}
                   key={document.name}
+                  history={history}
+                  location={location}
                 />
               ))}
             </div>
