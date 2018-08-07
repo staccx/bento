@@ -19,7 +19,7 @@ const tinycolor = require("tinycolor2")
 class FileInput extends Component {
   constructor(props, context) {
     super(props, context)
-
+    this.fileInput = React.createRef() // To get the number of uploaded files from the input in case of multiple files
     this.state = {
       uploadedFile: null
     }
@@ -30,14 +30,18 @@ class FileInput extends Component {
   handleChange(e) {
     const { value } = e.target
 
-    if (value.length) {
-      console.log(value)
+    if (this.fileInput.current.files.length > 1) {
+      this.setState({
+        uploadedFile:
+          this.fileInput.current.files.length +
+          " " +
+          this.props.multipleFilesLabel
+      })
+    } else if (value.length) {
       const fileName = value.split("\\").pop()
-      console.log(fileName)
       this.setState({ uploadedFile: fileName })
     }
-
-    this.props.onChange(e)
+    this.props.onChange && this.props.onChange(e)
   }
 
   render() {
@@ -57,11 +61,13 @@ class FileInput extends Component {
       <FileWrapper variant={variant}>
         <Input
           type="file"
+          innerRef={this.fileInput} // To get the number of uploaded files from the input in case of multiple files
           accept={accept}
           className={className}
           id={id}
           disabled={disabled}
           onChange={this.handleChange}
+          multiple={multiple}
           {...restProps}
         />
         <Label htmlFor={id} variant={variant}>
@@ -158,14 +164,16 @@ FileInput.propTypes = {
   onChange: PropTypes.func,
   className: PropTypes.string,
   ignoreBase: PropTypes.func,
-  variant: PropTypes.string
+  variant: PropTypes.string,
+  multipleFilesLabel: PropTypes.string
 }
 
 FileInput.defaultProps = {
   disabled: false,
   input: {},
   onChange: null,
-  className: ""
+  className: "",
+  multipleFilesLabel: "filer"
 }
 
 export default FileInput
