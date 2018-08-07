@@ -5,7 +5,7 @@ import { Paragraph } from "@staccx/base"
 export const ParagraphStyling = registerStyle(
   {
     CaseSummary: css`
-      color: ${color("b4")};
+      color: ${color("gray")};
       font-size: ${font.small};
     `
   },

@@ -1,6 +1,12 @@
 import { css } from "styled-components"
-import { registerStyle, spacing, VARIANT_DEFAULT, color } from "@staccx/theme"
-import { Input, fontSmoothing } from "@staccx/base"
+import {
+  registerStyle,
+  spacing,
+  VARIANT_DEFAULT,
+  color,
+  targetSize
+} from "@staccx/theme"
+import { FileInput, Input, fontSmoothing } from "@staccx/base"
 
 const defaultStyling = css`
   border-width: 1px;
@@ -9,7 +15,7 @@ const defaultStyling = css`
   &:hover,
   &:focus,
   &:active {
-    border-color: ${color("primary")};
+    border-color: ${color("black")};
     background-color: ${color.white};
   }
 `
@@ -49,4 +55,23 @@ export const InputWrapperStyling = registerStyle(
     `
   },
   Input.themeProps.wrapper
+)
+
+export const FileInputLabelStyling = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      border-radius: ${targetSize.normal};
+      padding: 0 ${spacing.small};
+      min-height: ${spacing.medium};
+      background-color: transparent;
+      color: ${color("b4")};
+      &:hover,
+      &:focus,
+      &:active {
+        color: ${color("b4")};
+        background-color: ${color("bg")};
+      }
+    `
+  },
+  FileInput.themeProps.label
 )

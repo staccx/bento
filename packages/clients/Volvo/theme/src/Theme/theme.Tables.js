@@ -24,14 +24,9 @@ export const TableStyling = registerStyle(
 
       th,
       td {
-        padding: ${spacing.tiny} 0;
+        padding: ${spacing.tiny};
         vertical-align: top;
         color: ${color.g4};
-      }
-
-      tr:first-child th,
-      tr:first-child td {
-        padding-top: ${spacing.medium};
       }
 
       tr:last-child th,

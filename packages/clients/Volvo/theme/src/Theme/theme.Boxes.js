@@ -62,7 +62,7 @@ export const BoxStyling = registerStyle(
     `,
     file: css`
       background-color: ${color.white};
-      padding: ${spacing.tiny} 0 ${spacing.tiny} 0;
+      padding: ${spacing.tiny} 0 ${spacing.tiny} ${spacing.tiny};
       font-size: ${font.small};
       border-bottom: 1px solid ${color.line};
       display: grid;

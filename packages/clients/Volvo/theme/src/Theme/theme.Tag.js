@@ -5,7 +5,8 @@ import { Tag } from "@staccx/base"
 export const TagStyling = registerStyle(
   {
     inverted: css`
-      background-color: ${color.white};
+      background-color: ${color.gray};
+      color: ${color.white};
     `
   },
   Tag.themeProps.tag

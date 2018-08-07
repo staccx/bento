@@ -8,7 +8,11 @@ import { AlertStyling } from "./theme.Alerts"
 import { ListStyling } from "./theme.Lists"
 import { TextStyling } from "./theme.Texts"
 import { ButtonStyling } from "./theme.Buttons"
-import { InputStyling, InputWrapperStyling } from "./theme.Inputs"
+import {
+  InputStyling,
+  InputWrapperStyling,
+  FileInputLabelStyling
+} from "./theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { NewBadgeBadgeStyling } from "./theme.NewBadges"
 import { LogoStyle } from "./Logo"
@@ -76,7 +80,7 @@ const color = {
   primaryLight: "#DCEDFF",
   primaryDark: "#003056",
   secondary: "#FBFBFB",
-  gray: "#646464",
+  gray: "#4d4e53",
   text: "#161618",
   white: "#fff",
   red: "#FC6161",
@@ -87,11 +91,11 @@ const color = {
   warning: "#FC6161",
   black: "#161618",
   subtleHover: "#E5F2FF",
-  b5: "#00005E",
-  b4: "#0000A0",
-  b3: "#0000FF",
-  b2: "#3399FF",
-  b1: "#99CCFF",
+  b5: "#0d3c87",
+  b4: "#1251b5",
+  b3: "#057ACD",
+  b2: "#057ACD",
+  b1: "#057ACD",
   bg1: "#E5F2FF",
   bg2: "#F5F5F5",
   p3: "#F0C1AE",
@@ -202,4 +206,5 @@ const theme = new Theme(BaseTheme, {
   .add(DividerStyling)
   .add(RadioButtonWrapper)
   .add(RadioButtonLabel)
+  .add(FileInputLabelStyling)
 export default theme

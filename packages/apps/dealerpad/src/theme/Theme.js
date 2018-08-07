@@ -1,3 +1,3 @@
-import { NordeaTheme } from "@staccx/nordea-theme"
+import { VolvoTheme } from "@staccx/volvo-theme"
 
-export default NordeaTheme
+export default VolvoTheme

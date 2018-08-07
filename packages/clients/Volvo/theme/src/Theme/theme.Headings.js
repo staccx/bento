@@ -15,13 +15,13 @@ export const HeadingStyling = registerStyle(
       color: ${color("primary")};
     `,
     caseHeading: css`
-      color: ${color("primary")};
+      color: ${color("text")};
       font-weight: ${fontWeight.normal};
       line-height: 1.2;
     `,
     subtle: css`
       color: ${color.wcag};
-      font-size: ${font.tiny};
+      font-size: ${font.h4};
       margin-bottom: ${spacing.tiny};
     `,
     ContactName: css`

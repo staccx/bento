@@ -34,7 +34,11 @@ export const ButtonStyling = registerStyle(
       bottom: 8px;
       min-height: ${spacing.mediumPlus};
       padding: 0 ${spacing.small};
-      background-color: ${color("primaryDark")};
+      background-color: ${color("gray")};
+
+      &:hover {
+        background-color: ${color("black")};
+      }
     `,
     icon: css`
       background: transparent;
@@ -91,9 +95,15 @@ export const ButtonStyling = registerStyle(
     filter: css`
       justify-content: center;
       display: flex;
-      background-color: ${color("primaryDark")};
+      background-color: ${color("black")};
       svg {
         margin-right: ${spacing.tiny};
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: ${color("gray")};
       }
     `,
     hamburger: css`
@@ -110,6 +120,42 @@ export const ButtonStyling = registerStyle(
       position: absolute;
       top: ${spacing.small};
       right: ${spacing.small};
+    `,
+    tabs: css`
+      border-radius: 0;
+      background-color: transparent;
+      color: ${color.text};
+      margin-left: 0;
+      margin-right: 0;
+      padding: ${spacing.tiny} ${spacing.tiny};
+      ${p =>
+        p.isCurrent &&
+        `
+      border-bottom: 2px solid ${color("primary")(p)};
+      `};
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: ${color.primary};
+        background-color: transparent;
+        border-bottom: 2px solid ${color("primary")};
+      }
+    `,
+    emoji: css`
+      background-color: transparent;
+      padding: 0;
+      font-size: 24px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+      }
+
+      &:nth-child(even) {
+        margin: 0 ${spacing.tiny};
+      }
     `
   },
   Button.themeProps.button
