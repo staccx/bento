@@ -8,7 +8,12 @@ const DocumentationIcon = ({ status }) => {
     case fileStatus.empty:
       return (
         <div>
-          <Button variant="subtle">Last opp</Button>
+          <FileInput
+            id="1243rwtgfh"
+            onChange={() => console.log("You changed it")}
+          >
+            Last opp
+          </FileInput>
         </div>
       )
     case fileStatus.uploaded:
@@ -32,16 +37,11 @@ const DocumentationIcon = ({ status }) => {
       return (
         <div>
           <FileInput
-            group="signer"
             id="idjadsj"
             onChange={() => console.log("You changed it")}
-            variant="subtle"
           >
             Last opp
           </FileInput>
-          {/* <Button variant="icon">
-            <ThemeComponent tagName="DocumentationDownload" />
-          </Button> */}
         </div>
       )
     default:

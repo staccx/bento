@@ -8,7 +8,11 @@ import { AlertStyling } from "./theme.Alerts"
 import { ListStyling } from "./theme.Lists"
 import { TextStyling } from "./theme.Texts"
 import { ButtonStyling } from "./theme.Buttons"
-import { InputStyling, InputWrapperStyling } from "./theme.Inputs"
+import {
+  InputStyling,
+  InputWrapperStyling,
+  FileInputLabelStyling
+} from "./theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { NewBadgeBadgeStyling } from "./theme.NewBadges"
 import { LogoStyle } from "./Logo"
@@ -200,4 +204,5 @@ const theme = new Theme(BaseTheme, {
   .add(DividerStyling)
   .add(RadioButtonWrapper)
   .add(RadioButtonLabel)
+  .add(FileInputLabelStyling)
 export default theme
