@@ -39,13 +39,14 @@ export default {
   `,
   fiftyFifty: css`
     display: grid;
-    grid-template-areas:
-      "header  main"
-      "body aside"
-      "footer footer";
-    grid-template-columns: 1fr 1fr;
-    @media only screen and (max-width: 730px) {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+
+    @media only screen and (min-width: 730px) {
+      grid-template-areas:
+        "header  main"
+        "body aside"
+        "footer footer";
+      grid-template-columns: 1fr 1fr;
     }
   `,
   rows: css`
