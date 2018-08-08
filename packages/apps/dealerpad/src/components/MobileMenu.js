@@ -5,7 +5,7 @@ import { ThemeComponent, color, spacing } from "@staccx/theme"
 import { List, fontSmoothing, Button } from "@staccx/base"
 import routes from "../data/routes"
 
-const MobileMenu = ({ menuOpen, onClick }) => (
+const MobileMenu = ({ menuOpen, onClick, location }) => (
   <MenuWrapper menuOpen={menuOpen}>
     <Button variant="closeMobileMenu" onClick={() => onClick()}>
       <ThemeComponent tagName="Close" /> Lukk
@@ -14,8 +14,12 @@ const MobileMenu = ({ menuOpen, onClick }) => (
       {routes.map(
         page =>
           page.inMenu && (
-            <li key={page.path + "menu"}>
-              <MenuElement to={page.path} activeClassName="dpCurrent">
+            <li key={page.path}>
+              <MenuElement
+                to={page.path}
+                activeClassName="dpCurrent"
+                onClick={() => location.pathname !== page.path && onClick()}
+              >
                 <ThemeComponent tagName={page.icon} />
                 <MenuText>{page.name}</MenuText>
               </MenuElement>
