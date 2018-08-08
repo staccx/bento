@@ -22,7 +22,7 @@ const CasesProgress = ({ progress, max, inverted }) => {
             </IconWrapper>
           </Completed>
         ) : (
-          <Next inverted={inverted} />
+          <Next inverted={inverted} key={index} />
         )
       })}
       <HiddenText>Her står status på saken for skjermlesere</HiddenText>
