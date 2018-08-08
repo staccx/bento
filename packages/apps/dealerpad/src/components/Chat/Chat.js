@@ -9,9 +9,21 @@ const Chat = ({ children }) => (
     <ChatInput>
       <Input variant="chat" placeholder="Beskjed" id="chatinput" />
       <Emojis>
-        <Button variant="emoji">👍</Button>
-        <Button variant="emoji">🤞</Button>
-        <Button variant="emoji">😊</Button>
+        <Button variant="emoji">
+          <span role="img" aria-label="thumbs up">
+            👍
+          </span>
+        </Button>
+        <Button variant="emoji">
+          <span role="img" aria-label="cross fingers">
+            🤞
+          </span>
+        </Button>
+        <Button variant="emoji">
+          <span role="img" aria-label="smile">
+            😊
+          </span>
+        </Button>
       </Emojis>
       <Button variant="chat">Send</Button>
     </ChatInput>
