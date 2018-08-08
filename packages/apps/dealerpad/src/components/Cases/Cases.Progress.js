@@ -10,13 +10,13 @@ const CasesProgress = ({ progress, max, inverted }) => {
     <Outer inverted={inverted}>
       {progressArray.map((dot, index) => {
         return index === progress - 1 ? (
-          <Current>
+          <Current key={index}>
             <IconWrapper large>
               <ThemeComponent tagName="Dot" />
             </IconWrapper>
           </Current>
         ) : dot ? (
-          <Completed>
+          <Completed key={index}>
             <IconWrapper>
               <ThemeComponent tagName="Checkmark" />
             </IconWrapper>
