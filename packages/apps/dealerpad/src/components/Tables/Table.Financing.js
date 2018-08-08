@@ -12,7 +12,7 @@ const formatValue = (label, value) => {
     case "totalInterest":
       return value * 100 + " %"
     default:
-      return formatCurrency(value)
+      return typeof value === "number" ? formatCurrency(value) : value
   }
 }
 

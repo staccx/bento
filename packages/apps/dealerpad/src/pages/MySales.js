@@ -1,13 +1,10 @@
 import React from "react"
 import { ThemeComponent } from "@staccx/theme"
 import { Heading, Box, Wrapper, Button, LayoutItem } from "@staccx/base"
-import caseStore from "../data/store/caseList"
 import CasesList from "../components/Cases/Cases.List"
 import Search from "../components/Search/Search"
-import { observer } from "mobx-react" 
 
-
-const MySales = observer(() => (
+const MySales = () => (
   <React.Fragment>
     <LayoutItem variant="fadeIn" delay={400}>
       <Box variant="defaultHero">
@@ -30,10 +27,10 @@ const MySales = observer(() => (
         </Box>
       </LayoutItem>
       <LayoutItem variant="fadeUp" delay={600}>
-        <CasesList cases={caseStore.cases.slice(0, 5)} />
+        <CasesList />
       </LayoutItem>
     </Wrapper>
   </React.Fragment>
-))
+)
 
 export default MySales

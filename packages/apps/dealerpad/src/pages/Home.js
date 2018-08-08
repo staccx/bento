@@ -6,12 +6,8 @@ import NewsList from "../components/News/News.List"
 import CasesList from "../components/Cases/Cases.List"
 import SearchGlobal from "../components/Search/SearchGlobal"
 import Contact from "../components/Contact"
-import caseStore from "../data/store/caseList"
-import { observer } from "mobx-react"
 
-console.log(caseStore.inittime)
-
-const Home = observer(() => (
+const Home = () => (
   <div>
     <header>
       <NewsHero article={getNewsItems()[0]} />
@@ -36,7 +32,7 @@ const Home = observer(() => (
               <Heading level="2" variant="subtle">
                 Mine siste saker
               </Heading>
-              <CasesList cases={caseStore.cases.slice(0, 5)} compact />
+              <CasesList compact />
             </LayoutItem>
           </Layout>
         </LayoutItem>
@@ -58,6 +54,6 @@ const Home = observer(() => (
       </Layout>
     </Wrapper>
   </div>
-))
+)
 
 export default Home

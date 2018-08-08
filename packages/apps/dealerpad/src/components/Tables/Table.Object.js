@@ -15,7 +15,7 @@ const formatValue = (label, value) => {
 const ObjectTable = ({ caseObject }) => {
   const concatObject = {
     ...caseObject,
-    make: caseObject.make + " " + caseObject.model + " – " + caseObject.year
+    make: caseObject.vehicle + " " + caseObject.model + " – " + caseObject.year
   }
   delete concatObject.year
   delete concatObject.model

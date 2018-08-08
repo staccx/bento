@@ -1,6 +1,6 @@
 const getLoanType = loanType => {
   switch (loanType) {
-    case "loan":
+    case "car-loan":
       return "Lån"
     case "leasing":
       return "Leasing"

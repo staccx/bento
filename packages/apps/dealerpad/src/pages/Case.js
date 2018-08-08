@@ -7,7 +7,8 @@ import {
   Layout,
   LayoutItem,
   Button,
-  ItemGroup
+  ItemGroup,
+  Loading
 } from "@staccx/base"
 import { ThemeComponent } from "@staccx/theme"
 import getLoanType from "../helpers/getLoanType"
@@ -19,16 +20,18 @@ import ObjectTable from "../components/Tables/Table.Object"
 import ChatLogic from "../components/Chat/ChatLogic"
 import Documentation from "../components/Documentation/Documentation"
 import { slideLeft } from "../components/transitions/transitions"
-import caseStore from "../data/store/caseList"
+import caseStore from "../data/store/caseStore"
+import { observer } from "mobx-react"
 
-console.log(caseStore.inittime)
-
+@observer
 class Case extends Component {
   constructor(props) {
     super(props)
     this.state = {
       currentTab: "documentation" // Only applies to small screens
     }
+
+    caseStore.setCurrentCase(props.match.params.caseId)
   }
 
   handleChangeTab(value) {
@@ -40,6 +43,14 @@ class Case extends Component {
   render() {
     const { match, history, location } = this.props
     const currentCase = caseStore.getCase(match.params.caseId)
+    if (caseStore.loadingCaseDetails) {
+      return <Loading />
+    }
+
+    const customerName =
+      currentCase.customers[0].firstName +
+      " " +
+      currentCase.customers[0].lastName
 
     return (
       <Layout variant="case">
@@ -60,17 +71,21 @@ class Case extends Component {
               </Button>
             </div>
             <Heading level={1} variant="caseHeading">
-              {currentCase.customer.name}{" "}
+              {customerName}
             </Heading>
             <div>
-              <Tag variant="inverted">{currentCase.id}</Tag>{" "}
-              <Tag variant="inverted">{getLoanType(currentCase.type)}</Tag>
+              <Tag variant="inverted">{currentCase.applicationId}</Tag>{" "}
+              <Tag variant="inverted">
+                {getLoanType(currentCase.productName)}
+              </Tag>
             </div>
             <Paragraph variant="CaseSummary">
-              {currentCase.vehicle.type}, {currentCase.vehicle.make}{" "}
-              {currentCase.vehicle.model} {currentCase.vehicle.year} <br />
-              {currentCase.vehicle.variant} <br />
-              {formatCurrency(currentCase.financing.termRent)},-/mnd
+              {currentCase.car.vehicle} {currentCase.car.model}{" "}
+              {currentCase.car.year} <br />
+              {currentCase.car.variant} <br />
+              {formatCurrency(
+                currentCase.funding["termFeePerMnd(inc mva)"]
+              )},-/mnd
             </Paragraph>
             <CaseProgressLarge progress={currentCase.status} max={4} />
           </Layout>
@@ -115,7 +130,7 @@ class Case extends Component {
         >
           <ChatLogic
             messages={currentCase.messages}
-            caseNumber={currentCase.id}
+            caseNumber={currentCase.applicationId}
           />
         </LayoutItem>
 
@@ -149,9 +164,9 @@ class Case extends Component {
             Låntaker
           </Heading>
           <ContactPerson
-            name={currentCase.customer.name}
-            phoneNumber={currentCase.customer.phoneNumber}
-            eMail={currentCase.customer.eMail}
+            name={customerName}
+            phoneNumber={currentCase.customers[0].phoneNumber || "n/a"}
+            eMail={currentCase.customers[0].eMail || "n/a"}
           />
           {currentCase.cosigner && (
             <ContactPerson
@@ -169,7 +184,7 @@ class Case extends Component {
           <Heading level="2" variant="subtle">
             Finansiering
           </Heading>
-          <FinancingTable caseFinancing={currentCase.financing} />
+          <FinancingTable caseFinancing={currentCase.funding} />
         </LayoutItem>
 
         <LayoutItem
@@ -179,7 +194,7 @@ class Case extends Component {
           <Heading level="2" variant="subtle">
             Objekt
           </Heading>
-          <ObjectTable caseObject={currentCase.vehicle} />
+          <ObjectTable caseObject={currentCase.car} />
         </LayoutItem>
       </Layout>
     )

@@ -1,31 +1,34 @@
 const getStatus = label => {
   switch (label) {
-    case "price":
-      return "Pris"
+    case "purchasePrice":
+      return "Kjøpspris"
     case "oneTimeFee":
       return "Engangsavgift"
-    case "startRent":
+    case "startRent(eks mva)":
       return "Startleie eks. mva"
-    case "startRentIncTax":
+    case "startRent(inc mva)":
       return "Startleie inkl. mva"
     case "rentCalculationBasis":
       return "Leieberegningsgrunnlag"
-    case "rentLength":
+    case "rentPeriodMnd":
       return "Leieperiode mnd"
-    case "rentFrequency":
+    case "rentTerm":
       return "Leietermin"
-    case "restValue":
+    case "salvage":
       return "Restverdi"
-    case "arrangementFee":
+    case "establishmentFees(inc mva)":
       return "Etableringsgebyr inkl. mva"
-    case "installmentFee":
+    case "installmentFees":
       return "Termingebyr inkl. mva"
-    case "totalInterest":
+    case "totalFee":
       return "Total rente"
-    case "termRent":
+    case "termFeePerMnd(inc mva)":
       return "Terminleie per mnd inkl. mva: "
-    default:
-      return null
+    case "purchasePriceWithExtra":
+      return "Kjøpspris, eks. årsavgift og evt reg omkostning, inkl. engangsavgift"
+    default: {
+      return "___" + label
+    }
   }
 }
 
