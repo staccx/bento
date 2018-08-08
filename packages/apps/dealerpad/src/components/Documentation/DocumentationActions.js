@@ -14,7 +14,10 @@ const DocumentationIcon = ({ status, history, location }) => {
             onChange={e =>
               e.target.validity.valid
                 ? history.push({
-                    pathname: location.pathname + "checkimg",
+                    pathname:
+                      location.pathname.slice(-1) === "/"
+                        ? location.pathname + "checkimg"
+                        : location.pathname + "/checkimg",
                     state: slideRight
                   })
                 : console.warn("Uploaded file not valid")
@@ -47,7 +50,17 @@ const DocumentationIcon = ({ status, history, location }) => {
         <div>
           <FileInput
             id="idjadsj"
-            onChange={e => console.log(e.target.value)}
+            onChange={e =>
+              e.target.validity.valid
+                ? history.push({
+                    pathname:
+                      location.pathname.slice(-1) === "/"
+                        ? location.pathname + "checkimg"
+                        : location.pathname + "/checkimg",
+                    state: slideRight
+                  })
+                : console.warn("Uploaded file not valid")
+            }
             accept={"image/*"}
           >
             Last opp
