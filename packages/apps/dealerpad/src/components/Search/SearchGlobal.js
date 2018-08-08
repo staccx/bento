@@ -8,7 +8,11 @@ const SearchGlobal = ({ children, classname }) => (
   <div>
     <Search placeholder="Søk" />
     <RadioButtonGroup>
-      <CheckGroup group="searchFrom" variant="mainSearch">
+      <CheckGroup
+        group="searchFrom"
+        variant="mainSearch"
+        onChange={() => console.log("Implement this")}
+      >
         <RadioButton
           id="sadfre4w"
           key="key_sbhw"
