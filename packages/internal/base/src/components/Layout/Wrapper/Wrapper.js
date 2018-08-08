@@ -52,7 +52,7 @@ Wrapper.defaultProps = {
 Wrapper.propTypes = {
   children: themeProps.children,
   className: PropTypes.string,
-  size: PropTypes.oneOf(["small", "medium", "large", "breakout"]),
+  size: PropTypes.string,
   breakout: PropTypes.bool
 }
 
