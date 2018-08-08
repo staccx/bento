@@ -41,11 +41,12 @@ class Case extends Component {
   }
 
   render() {
-    const { match, history, location } = this.props
-    const currentCase = caseStore.getCase(match.params.caseId)
+    const { history, location } = this.props
+
     if (caseStore.loadingCaseDetails) {
       return <Loading />
     }
+    const currentCase = caseStore.currentCase
 
     const customerName =
       currentCase.customers[0].firstName +
@@ -80,7 +81,7 @@ class Case extends Component {
               </Tag>
             </div>
             <Paragraph variant="CaseSummary">
-              {currentCase.car.vehicle} {currentCase.car.model}{" "}
+              {currentCase.car.make} {currentCase.car.model}{" "}
               {currentCase.car.year} <br />
               {currentCase.car.variant} <br />
               {formatCurrency(
