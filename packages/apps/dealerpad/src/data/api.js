@@ -13,3 +13,9 @@ export const fetchCaseDetails = caseId =>
     .get("/flows/" + caseId)
     .then(res => res.data)
     .catch(console.error)
+
+export const fetchTasks = caseId =>
+  axiosInstance
+    .get("/flows/" + caseId + "/tasks")
+    .then(res => res.data)
+    .catch(console.error)

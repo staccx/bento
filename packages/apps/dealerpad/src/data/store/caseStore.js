@@ -1,5 +1,5 @@
 import { observable, action } from "mobx"
-import { fetchCases, fetchCaseDetails } from "../api"
+import { fetchCases, fetchCaseDetails, fetchTasks } from "../api"
 
 class CaseStore {
   @observable loading = true
@@ -22,6 +22,7 @@ class CaseStore {
   async setCurrentCase(caseId) {
     this.loadingCaseDetails = true
     this.currentCase = await fetchCaseDetails(caseId)
+    this.currentCase.documents = (await fetchTasks(caseId)) || []
     this.loadingCaseDetails = false
   }
 }

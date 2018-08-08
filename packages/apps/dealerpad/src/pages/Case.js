@@ -81,7 +81,7 @@ class Case extends Component {
               </Tag>
             </div>
             <Paragraph variant="CaseSummary">
-              {currentCase.car.make} {currentCase.car.model}{" "}
+              {currentCase.car.vehicle} {currentCase.car.model}{" "}
               {currentCase.car.year} <br />
               {currentCase.car.variant} <br />
               {formatCurrency(
@@ -169,11 +169,15 @@ class Case extends Component {
             phoneNumber={currentCase.customers[0].phoneNumber || "n/a"}
             eMail={currentCase.customers[0].eMail || "n/a"}
           />
-          {currentCase.cosigner && (
+          {currentCase.customers[1] && (
             <ContactPerson
-              name={currentCase.cosigner.name}
-              phoneNumber={currentCase.cosigner.phoneNumber}
-              eMail={currentCase.cosigner.eMail}
+              name={
+                currentCase.customers[1].firstName +
+                " " +
+                currentCase.customers[1].lastName
+              }
+              phoneNumber={currentCase.customers[1].phoneNumber || "n/a"}
+              eMail={currentCase.customers[1].eMail || "n/a"}
             />
           )}
         </LayoutItem>
