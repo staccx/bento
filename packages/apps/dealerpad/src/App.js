@@ -23,9 +23,9 @@ class App extends Component {
     })
     // TODO: Denne må trigges når du klikker på elementer i menyen ☝️
   }
-
   render() {
     const history = createHistory()
+
     return (
       <Router history={history}>
         <Route
@@ -35,6 +35,7 @@ class App extends Component {
               <MobileMenu
                 menuOpen={this.state.menuOpen}
                 onClick={() => this.toggleMenu()}
+                location={location}
               />
               <Header onClick={() => this.toggleMenu()} />
               <Transitions pageKey={location.key} {...location.state}>
