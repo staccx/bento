@@ -1,2 +1,4 @@
-import socketIo from "socketio"
+import io from "socket.io"
+
+const socket = io.connect()
 

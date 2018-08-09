@@ -19,3 +19,22 @@ export const fetchTasks = caseId =>
     .get("/flows/" + caseId + "/tasks")
     .then(res => res.data)
     .catch(console.error)
+
+export const uploadFile = fileContents => {
+  const bodyFormData = new FormData()
+  bodyFormData.set("aaa", fileContents)
+
+  return axiosInstance
+    .post("/files", bodyFormData, {
+      headers: { "Content-Type": "multipart/form-data" }
+    })
+    .then(res => res.data)
+}
+
+export const setTaskCompleted = (flowId, taskId, uploadedFileId) =>
+  axiosInstance
+    .post("/flows/" + flowId + "/tasks/" + taskId + "/complete", {
+      uri: "/api/files/" + uploadedFileId
+    })
+    .then(res => res.data)
+
