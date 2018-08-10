@@ -5,7 +5,7 @@ import fileStatus from "../../data/fileStatus"
 
 const DocumentationIcon = ({ status }) => {
   switch (status) {
-    case fileStatus.empty:
+    case fileStatus.pending:
       return <Empty />
     case fileStatus.uploaded:
       return (

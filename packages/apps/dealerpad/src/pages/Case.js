@@ -151,6 +151,7 @@ class Case extends Component {
                   key={document.name}
                   history={history}
                   location={location}
+                  document={document}
                 />
               ))}
             </div>

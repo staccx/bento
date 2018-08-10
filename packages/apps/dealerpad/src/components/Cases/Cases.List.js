@@ -8,14 +8,14 @@ import caseStore from "../../data/store/caseStore"
 import { observer } from "mobx-react"
 
 const CasesList = observer(({ compact }) => {
-  if (caseStore.loading) {
+  if (caseStore.loadingCasesList) {
     return <Loading />
   }
 
   return (
     <Box size="flush">
       <List variant="casesList">
-        {caseStore.cases.slice(0, 5).map((item, index) => (
+        {caseStore.cases.map((item, index) => (
           <li key={item.id}>
             <Link to={`sales/${item.id}`}>
               <CaseContainer>

@@ -1,27 +1,18 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import { ThemeComponent } from "@staccx/theme"
 import { Button, FileInput } from "@staccx/base"
 import fileStatus from "../../data/fileStatus"
-import { slideRight } from "../../components/transitions/transitions"
+import caseStore from "../../data/store/caseStore"
 
-const DocumentationIcon = ({ status, history, location }) => {
+const DocumentationIcon = ({ status, history, location, document }) => {
   switch (status) {
-    case fileStatus.empty:
+    case fileStatus.pending:
       return (
         <div>
           <FileInput
             id="1243rwtgfh"
-            onChange={e =>
-              e.target.validity.valid
-                ? history.push({
-                    pathname:
-                      location.pathname.slice(-1) === "/"
-                        ? location.pathname + "checkimg"
-                        : location.pathname + "/checkimg",
-                    state: slideRight
-                  })
-                : console.warn("Uploaded file not valid")
-            }
+            onChange={caseStore.documentSubmitter(document)}
             accept={"image/*"}
           >
             Last opp
@@ -31,9 +22,11 @@ const DocumentationIcon = ({ status, history, location }) => {
     case fileStatus.uploaded:
       return (
         <div>
-          <Button variant="icon">
-            <ThemeComponent tagName="DocumentationDownload" />
-          </Button>
+          <Link to={document.condition.uri}>
+            <Button variant="icon">
+              <ThemeComponent tagName="DocumentationDownload" />
+            </Button>
+          </Link>
           <Button variant="icon">
             <ThemeComponent tagName="DocumentationTrash" />
           </Button>
@@ -41,26 +34,18 @@ const DocumentationIcon = ({ status, history, location }) => {
       )
     case fileStatus.approved:
       return (
-        <Button variant="icon">
-          <ThemeComponent tagName="DocumentationDownload" />
-        </Button>
+        <Link to={document.condition.uri}>
+          <Button variant="icon">
+            <ThemeComponent tagName="DocumentationDownload" />
+          </Button>
+        </Link>
       )
     case fileStatus.rejected:
       return (
         <div>
           <FileInput
             id="idjadsj"
-            onChange={e =>
-              e.target.validity.valid
-                ? history.push({
-                    pathname:
-                      location.pathname.slice(-1) === "/"
-                        ? location.pathname + "checkimg"
-                        : location.pathname + "/checkimg",
-                    state: slideRight
-                  })
-                : console.warn("Uploaded file not valid")
-            }
+            onChange={caseStore.documentSubmitter(document)}
             accept={"image/*"}
           >
             Last opp

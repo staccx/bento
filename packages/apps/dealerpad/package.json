@@ -10,7 +10,7 @@
     "history": "^4.7.2",
     "react-transition-group": "^2.4.0",
     "react-web-notification": "^0.3.2",
-    "socket.io": "^2.1.1"
+    "socket.io-client": "^2.1.1"
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",

@@ -1,5 +1,5 @@
 export default {
-  empty: "EMPTY",
+  pending: "PENDING",
   uploaded: "UPLOADED",
   approved: "APPROVED",
   rejected: "REJECTED"

@@ -5,14 +5,19 @@ import {
   uploadFile,
   setTaskCompleted,
   fetchTasks
-} from "../api"
+} from "../api/api"
+
+import { connect } from "../api/chat"
+
 import fileStatus from "../fileStatus"
 
 class CaseStore {
-  @observable loading = true
-  @observable loadingCaseDetails = true
+  @observable loadingCasesList = true
   @observable cases = []
+
+  @observable loadingCaseDetails = true
   @observable currentCase = null
+  @observable tasks = []
 
   getCase(caseId) {
     return this.cases.find(currentCase => currentCase.id === caseId)
@@ -20,18 +25,23 @@ class CaseStore {
 
   @action
   async initialize() {
-    this.loading = true
+    this.loadingCasesList = true
     this.cases = await fetchCases()
-    this.loading = false
+    this.loadingCasesList = false
   }
 
-  submitDocument(documentType, taskId, flowId) {
-    return async fileContents => {
-      console.log("got file", fileContents, fileContents.file)
-      // uploadFile(fileContents)
-      //   .then(({ id }) => setTaskCompleted(flowId, taskId, id))
-      //   .then(res => res.data)
-      //   .catch(console.error)
+  @action
+  documentSubmitter(document) {
+    console.log("creating upload function for", document)
+    return async event => {
+      const file = event.target.files[0]
+      const flowId = document.task.flowId
+      const taskId = document.task.taskId
+
+      return uploadFile(file)
+        .then(([{ id }]) => setTaskCompleted(flowId, taskId, id))
+        .then(res => res.data)
+        .catch(console.error)
     }
   }
 
@@ -39,34 +49,36 @@ class CaseStore {
   async setCurrentCase(caseId) {
     this.loadingCaseDetails = true
     this.currentCase = await fetchCaseDetails(caseId)
-    const tasks = await fetchTasks(caseId)
-    this.currentCase.documents = [
-      {
-        name: "Kopi av ID til lånetaker",
-        status: fileStatus.empty,
-        taskId: tasks.find(task => task.taskType === "")
-      },
-      {
-        name: "Kopi av ID til medlånetaker",
-        status: fileStatus.rejected,
-        taskId: tasks.find(task => task.taskType === "")
-      },
-      {
-        name: "Kjøpekontrakt",
-        status: fileStatus.approved,
-        taskId: tasks.find(task => task.taskType === "")
-      },
-      {
-        name: "Lånedokument",
-        status: fileStatus.uploaded,
-        taskId: tasks.find(task => task.taskType === "")
-      },
-      {
-        name: "Tinglysningsskjema",
-        status: fileStatus.uploaded,
-        taskId: tasks.find(task => task.taskType === "")
+    this.tasks = await fetchTasks(caseId)
+
+    console.log("tasks:", this.tasks)
+
+    console.log("conditions:", this.currentCase.conditions)
+
+    console.log(this.currentCase.conditions)
+
+    this.currentCase.documents = Object.keys(this.currentCase.conditions).map(
+      conditionName => {
+        const condition = this.currentCase.conditions[conditionName]
+
+        return {
+          condition: condition,
+          name: condition.description,
+          status: fileStatus[condition.status],
+          task: this.tasks.find(
+            task => task.context.conditionType === conditionName
+          )
+        }
       }
-    ]
+    )
+
+    console.log("documents", this.currentCase.documents)
+    connect(
+      this.currentCase.id,
+      console.log,
+      console.log
+    )
+
     this.loadingCaseDetails = false
   }
 }

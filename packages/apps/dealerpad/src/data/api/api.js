@@ -20,21 +20,20 @@ export const fetchTasks = caseId =>
     .then(res => res.data)
     .catch(console.error)
 
-export const uploadFile = fileContents => {
+export const uploadFile = file => {
   const bodyFormData = new FormData()
-  bodyFormData.set("aaa", fileContents)
+  bodyFormData.append("file", file) // file is an element from event.target.files
 
   return axiosInstance
-    .post("/files", bodyFormData, {
-      headers: { "Content-Type": "multipart/form-data" }
-    })
+    .post("/files", bodyFormData)
     .then(res => res.data)
+    .catch(console.error)
 }
 
 export const setTaskCompleted = (flowId, taskId, uploadedFileId) =>
   axiosInstance
-    .post("/flows/" + flowId + "/tasks/" + taskId + "/complete", {
+    .post("/tasks/" + taskId + "/complete", {
       uri: "/api/files/" + uploadedFileId
     })
     .then(res => res.data)
-
+    .catch(console.error)
