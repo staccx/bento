@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import hideVisually from "../../../Styles/hideVisually"
+import hideVisually from "../../../../Styles/hideVisually"
 import {
   themify,
   color,
@@ -14,8 +14,8 @@ import {
   themeProps,
   ThemeComponent
 } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
-import Upload from "../../Icons/Upload"
+import themePropTypes from "../../../constants/themePropTypes"
+import Upload from "../../../Icons/Upload"
 const tinycolor = require("tinycolor2")
 
 class FileInput extends Component {
@@ -40,8 +40,11 @@ class FileInput extends Component {
           this.props.multipleFilesLabel
       })
     } else if (value.length) {
-      const fileName = value.split("\\").pop()
-      this.setState({ uploadedFile: fileName })
+      this.setState({
+        uploadedFile: this.props.showFileName
+          ? value.split("\\").pop()
+          : "1 " + this.props.singleFileLabel
+      })
     }
     this.props.onChange && this.props.onChange(e)
   }
@@ -201,7 +204,9 @@ FileInput.propTypes = {
   className: PropTypes.string,
   ignoreBase: PropTypes.func,
   variant: PropTypes.string,
-  multipleFilesLabel: PropTypes.string
+  multipleFilesLabel: PropTypes.string,
+  singleFileLabel: PropTypes.string,
+  showFileName: PropTypes.bool
 }
 
 FileInput.defaultProps = {
@@ -209,7 +214,9 @@ FileInput.defaultProps = {
   input: {},
   onChange: null,
   className: "",
-  multipleFilesLabel: "filer"
+  multipleFilesLabel: "files",
+  singleFileLabel: "file",
+  showFileName: true
 }
 
 export default FileInput

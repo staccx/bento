@@ -1,5 +1,5 @@
 import React from "react"
-import { Heading, Layout, LayoutItem, Wrapper } from "@staccx/base"
+import { Heading, Layout, LayoutItem, Wrapper, FileInput } from "@staccx/base"
 import getNewsItems from "../data/news"
 import NewsHero from "../components/News/News.Hero"
 import NewsList from "../components/News/News.List"
@@ -14,6 +14,31 @@ const Home = () => (
     </header>
 
     <Wrapper>
+      <div>
+        <FileInput id="wdasv2">Last opp</FileInput>
+      </div>
+      <div>
+        <FileInput id="sfa" multiple>
+          Last opp flere
+        </FileInput>
+      </div>
+      <div>
+        <FileInput id="ksdan" showFileName={false}>
+          Last opp uten navn
+        </FileInput>
+      </div>
+      <div>
+        <FileInput
+          id="wegrtf"
+          showFileName={false}
+          singleFileLabel={"kopp"}
+          multipleFilesLabel={"kopper"}
+          multiple
+        >
+          Last opp flere uten navn
+        </FileInput>
+      </div>
+
       <Layout
         grid="fiftyFifty"
         paddingTop="large"
