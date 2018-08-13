@@ -33,6 +33,7 @@ import { DotIcon } from "./Icons/Dot"
 import { PhoneIcon } from "./Icons/Phone"
 import { MailIcon } from "./Icons/Mail"
 import { ArrowRightIcon } from "./Icons/ArrowRight"
+import { ChatStartIcon } from "./Icons/ChatStart"
 import { TagStyling } from "./theme.Tag"
 import { PortalIcon, PortalLabel } from "./theme.Portal"
 import { TableStyling } from "./theme.Tables"
@@ -175,6 +176,7 @@ const theme = new Theme(BaseTheme, {
   .add(NewsIcon)
   .add(AlertIcon)
   .add(LoanIcon)
+  .add(ChatStartIcon)
   .add(LeasingIcon)
   .add(LeasingPlusIcon)
   .add(PrivateRentIcon)
