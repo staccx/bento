@@ -7,6 +7,7 @@ export default ({ data }) => {
   if (data.length === 0) {
     return null
   }
+
   return (
     <div>
       <Heading level="3" variant="documentationAttrs">
@@ -16,23 +17,25 @@ export default ({ data }) => {
         data={data}
         blacklist={item => item !== "type"}
         variant="propsDescription"
+        overrideHeaders={["name", "description"]}
       >
         {({ item }) => {
+          console.log(item)
           return (
             <React.Fragment>
               <td>
-                {item.type === "component" && (
+                {item.prop.type === "component" && (
                   <Flag tiny img={<Component />}>
-                    {item.name}
+                    {`${item.componentName}.themeProps.${item.name}`}
                   </Flag>
                 )}
-                {item.type === "style" && (
+                {item.prop.type === "style" && (
                   <Flag tiny img={<Css />}>
-                    {item.name}
+                    {`${item.componentName}.themeProps.${item.name}`}
                   </Flag>
                 )}
               </td>
-              <td>{item.description}</td>
+              <td>{item.prop.description}</td>
             </React.Fragment>
           )
         }}
