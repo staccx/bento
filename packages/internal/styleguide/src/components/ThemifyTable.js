@@ -1,5 +1,5 @@
 import React from "react"
-import { Table, Heading, Flag } from "@staccx/base"
+import { Table, Heading, Flag, CopyToClipboardComponent } from "@staccx/base"
 import Component from "../components/Icons/Component"
 import Css from "../components/Icons/Css"
 
@@ -20,20 +20,27 @@ export default ({ data }) => {
         overrideHeaders={["name", "description"]}
       >
         {({ item }) => {
-          console.log(item)
+          let img = null
+          switch (item.prop.type) {
+            case "component":
+              img = <Component />
+              break
+            case "style":
+              img = <Css />
+              break
+            default:
+              break
+          }
+
+          const name = `${item.componentName}.themeProps.${item.name}`
           return (
             <React.Fragment>
               <td>
-                {item.prop.type === "component" && (
-                  <Flag tiny img={<Component />}>
-                    {`${item.componentName}.themeProps.${item.name}`}
+                <CopyToClipboardComponent copyText={name}>
+                  <Flag tiny img={img}>
+                    {name}
                   </Flag>
-                )}
-                {item.prop.type === "style" && (
-                  <Flag tiny img={<Css />}>
-                    {`${item.componentName}.themeProps.${item.name}`}
-                  </Flag>
-                )}
+                </CopyToClipboardComponent>
               </td>
               <td>{item.prop.description}</td>
             </React.Fragment>

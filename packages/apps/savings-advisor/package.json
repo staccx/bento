@@ -1,16 +1,16 @@
 {
   "name": "@staccx/savings-advisor",
-  "version": "6.4.0",
+  "version": "6.5.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@staccx/animations": "^6.3.0",
-    "@staccx/base": "^6.4.0",
-    "@staccx/formatting": "^6.3.0",
-    "@staccx/math": "^6.3.0",
-    "@staccx/soy": "^6.3.0",
-    "@staccx/theme": "^6.3.0"
+    "@staccx/animations": "^6.5.0",
+    "@staccx/base": "^6.5.0",
+    "@staccx/formatting": "^6.5.0",
+    "@staccx/math": "^6.5.0",
+    "@staccx/soy": "^6.5.0",
+    "@staccx/theme": "^6.5.0"
   },
   "scripts": {
     "start": "react-app-rewired start",

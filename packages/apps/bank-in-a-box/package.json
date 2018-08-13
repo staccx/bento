@@ -1,16 +1,16 @@
 {
   "name": "@staccx/bank-in-a-box",
-  "version": "6.4.0",
+  "version": "6.5.0",
   "private": true,
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/animations": "^6.3.0",
-    "@staccx/aprila-theme": "^6.4.0",
-    "@staccx/base": "^6.4.0",
-    "@staccx/formatting": "^6.3.0",
-    "@staccx/norefjell-theme": "^6.4.0",
-    "@staccx/soy": "^6.3.0",
-    "@staccx/theme": "^6.3.0"
+    "@staccx/animations": "^6.5.0",
+    "@staccx/aprila-theme": "^6.5.0",
+    "@staccx/base": "^6.5.0",
+    "@staccx/formatting": "^6.5.0",
+    "@staccx/norefjell-theme": "^6.5.0",
+    "@staccx/soy": "^6.5.0",
+    "@staccx/theme": "^6.5.0"
   },
   "scripts": {
     "start": "react-app-rewired start",

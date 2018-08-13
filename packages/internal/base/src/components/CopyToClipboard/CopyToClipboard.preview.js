@@ -5,7 +5,7 @@ import Input from "../Forms/Input/Input"
 
 const defaultValue = "My text"
 export default {
-  title: "Copy to clipboard",
+  title: "Copy to clipboard render function",
   category: "Components/Utilites",
   tags: ["utility"],
   component: Copy,
