@@ -24,25 +24,33 @@ class Table extends React.Component {
       itemToKey,
       onHeaderClick,
       renderHeader,
+      overrideHeaders,
       ...restProps
     } = this.props
 
-    const headers = data
-      .reduce((acc, current) => {
-        Object.keys(current).forEach(key => {
-          if (!acc.includes(key)) {
-            acc.push(key)
-          }
-        })
+    const headers = overrideHeaders
+      ? overrideHeaders
+          .map(header => ({
+            value: header,
+            title: header
+          }))
+          .map(mapHeader)
+      : data
+          .reduce((acc, current) => {
+            Object.keys(current).forEach(key => {
+              if (!acc.includes(key)) {
+                acc.push(key)
+              }
+            })
 
-        return acc
-      }, [])
-      .filter(blacklist)
-      .map(header => ({
-        value: header,
-        title: header
-      }))
-      .map(mapHeader)
+            return acc
+          }, [])
+          .filter(blacklist)
+          .map(header => ({
+            value: header,
+            title: header
+          }))
+          .map(mapHeader)
 
     return (
       <TableStyled variant={variant} {...restProps}>
@@ -98,7 +106,8 @@ Table.propTypes = {
   itemToKey: PropTypes.any,
   mapHeader: PropTypes.func,
   onHeaderClick: PropTypes.func,
-  renderHeader: PropTypes.func
+  renderHeader: PropTypes.func,
+  overrideHeaders: PropTypes.array
 }
 
 export default Table
