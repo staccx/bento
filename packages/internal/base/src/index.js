@@ -102,6 +102,7 @@ import Pagination from "./components/Pagination"
 import CodeRenderer from "./components/Code/CodeRenderer"
 import Table from "./components/Table/Table"
 import Fetch from "./components/Fetch/Fetch"
+import CopyToClipboard from "./components/CopyToClipboard/CopyToClipboard"
 
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
@@ -120,6 +121,7 @@ export {
   Close,
   CodeRenderer,
   CompanyInput,
+  CopyToClipboard,
   CurrencyInput,
   Divider,
   Donut,
