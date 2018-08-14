@@ -22,6 +22,7 @@ import Documentation from "../components/Documentation/Documentation"
 import { slideLeft } from "../components/transitions/transitions"
 import caseStore from "../data/store/caseStore"
 import { observer } from "mobx-react"
+import { emptyCase } from "./emptyCase"
 
 @observer
 class Case extends Component {
@@ -43,10 +44,8 @@ class Case extends Component {
   render() {
     const { history, location } = this.props
 
-    if (caseStore.loadingCaseDetails) {
-      return <Loading />
-    }
-    const currentCase = caseStore.currentCase
+    const isLoading = caseStore.loadingCaseDetails
+    const currentCase = isLoading ? emptyCase : caseStore.currentCase
 
     const customerName =
       currentCase.customers[0].firstName +
