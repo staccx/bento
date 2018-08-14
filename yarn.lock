@@ -288,6 +288,12 @@
   version "4.20.1"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-4.20.1.tgz#9cbec5067e58202ca0b494eb97cdaeb4a8cac769"
 
+"@staccx/animations@^5.1.0":
+  version "5.1.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-5.1.0.tgz#b940ca36a1c470f614b8d64fa2806bf5440c5915"
+  dependencies:
+    "@staccx/soy" "^5.1.0"
+
 "@staccx/base@4.12.0":
   version "4.12.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-4.12.0.tgz#c0a2a10f024d53f65b3c257f20213ad448c5c624"
@@ -311,6 +317,38 @@
     text-mask-core "^5.0.1"
     tinycolor2 "^1.4.1"
 
+"@staccx/base@^5.2.1":
+  version "5.2.1"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-5.2.1.tgz#47f60e315ba8f0fbef73b30fd079d0913843897e"
+  dependencies:
+    "@staccx/animations" "^5.1.0"
+    "@staccx/formatting" "^5.1.0"
+    "@staccx/math" "^5.1.0"
+    "@staccx/soy" "^5.1.0"
+    "@staccx/utils" "^5.1.0"
+
+"@staccx/eslint-config@^4.20.1":
+  version "4.20.1"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/eslint-config/-/@staccx/eslint-config-4.20.1.tgz#7e4fba53cef1334bbf757d2cc84a964232ad9e97"
+  dependencies:
+    babel-eslint "^8.2.2"
+    eslint "^4.18.2"
+    eslint-config-prettier "^2.9.0"
+    eslint-config-standard "^11.0.0"
+    eslint-config-standard-jsx "^5.0.0"
+    eslint-config-standard-react "^6.0.0"
+    eslint-plugin-import "^2.9.0"
+    eslint-plugin-node "^6.0.1"
+    eslint-plugin-prettier "^2.6.0"
+    eslint-plugin-promise "^3.6.0"
+    eslint-plugin-react "^7.7.0"
+    eslint-plugin-standard "^3.0.1"
+    husky "^0.14.3"
+    lint-staged "^7.1.2"
+    prettier "^1.10.2"
+    prettier-eslint-cli "^4.7.1"
+    standard "^11.0.1"
+
 "@staccx/formatting@^0.2.0":
   version "0.2.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-0.2.0.tgz#b8625abc1d52fe9559ab00d2450d1d941d55768f"
@@ -319,15 +357,104 @@
     easing-utils "^0.0.7"
     text-mask-addons "^3.7.2"
 
+"@staccx/formatting@^5.1.0":
+  version "5.1.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-5.1.0.tgz#78e4376b8f793630bfe2401f46e37f5a07fd1da5"
+  dependencies:
+    "@staccx/soy" "^5.1.0"
+
 "@staccx/math@^0.1.0":
   version "0.1.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/math/-/@staccx/math-0.1.0.tgz#ad4abd26da19c85b318e83d007e455e29f08fe78"
   dependencies:
     easing-utils "^0.0.7"
 
+"@staccx/math@^5.1.0":
+  version "5.1.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/math/-/@staccx/math-5.1.0.tgz#10f0bfa3295404e843787c35ba366afa4b30f7c4"
+  dependencies:
+    "@staccx/soy" "^5.1.0"
+
 "@staccx/payment-plan@^1.2.0":
   version "1.2.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/payment-plan/-/@staccx/payment-plan-1.2.0.tgz#fa522deb0a490d49813dc454a16e79e1ab6791f1"
+
+"@staccx/soy@^5.1.0":
+  version "5.1.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/soy/-/@staccx/soy-5.1.0.tgz#716cfd77b8606a52ebb7e9bf8f53a2a846917f3b"
+  dependencies:
+    "@google/maps" "^0.4.6"
+    "@sanity/client" "^0.126.0"
+    "@sanity/image-url" "^0.126.0"
+    "@tedconf/react-show-more" "^1.1.2"
+    accounting "^0.4.1"
+    axios "^0.18.0"
+    babel-core "^6.26.0"
+    babel-eslint "^8.2.1"
+    babel-plugin-external-helpers "^6.22.0"
+    babel-plugin-styled-components "^1.5.0"
+    babel-preset-env "^1.6.0"
+    babel-preset-react "^6.24.1"
+    babel-preset-stage-0 "^6.24.1"
+    chart.js "^2.7.1"
+    color "^3.0.0"
+    countries-list "^2.3.2"
+    date-fns "^v2.0.0-alpha.11"
+    downshift "^1.28.0"
+    easing-utils "^0.0.7"
+    es6-promise "^4.2.4"
+    formik "^0.11.11"
+    google "^2.1.0"
+    immutable "^3.8.2"
+    isomorphic-fetch "^2.2.1"
+    lodash.debounce "^4.0.8"
+    mobx "^3.6.1"
+    mobx-react "^4.4.2"
+    mobx-react-devtools "^4.2.15"
+    national-id "^2.0.0"
+    polished "^1.9.2"
+    prettier "^1.10.2"
+    prismjs "^1.15.0"
+    prop-types "^15.6.1"
+    qs "^6.5.1"
+    react "^16.3.2"
+    react-app-rewire-mobx "^1.0.8"
+    react-app-rewire-styled-components "^3.0.2"
+    react-app-rewire-vendor-splitting "^1.3.0"
+    react-app-rewired "^1.5.2"
+    react-dom "^16.3.2"
+    react-dom-confetti "^0.0.10"
+    react-google-maps "^9.4.5"
+    react-hotkeys "^1.1.4"
+    react-jsonschema-form "^1.0.3"
+    react-router "^4.2.0"
+    react-router-dom "^4.2.2"
+    react-scripts "1.1.4"
+    react-sparklines "^1.7.0"
+    react-spring "^5.3.8"
+    react-styleguidist "^6.2.3"
+    react-tabs "^2.2.1"
+    react-transition-group "^2.2.1"
+    recompose "^0.27.1"
+    rollup "^0.54.0"
+    rollup-plugin-babel "^3.0.3"
+    rollup-plugin-commonjs "^8.2.1"
+    rollup-plugin-eslint "^4.0.0"
+    rollup-plugin-filesize "^2.0.0"
+    rollup-plugin-json "^2.3.0"
+    rollup-plugin-node-resolve "^3.0.2"
+    streetview "^0.0.3"
+    string_decoder "^1.1.1"
+    styled-components "^3.3.3"
+    swagger2openapi "^2.11.16"
+    text-mask-addons "^3.7.1"
+    text-mask-core "^5.0.1"
+    tinycolor2 "^1.4.1"
+    uuid "^3.2.1"
+    webfontloader "^1.6.28"
+    webpack "^3.10.0"
+    webpack-blocks "^1.0.0-rc.2"
+    yup "^0.24.1"
 
 "@staccx/theme@4.12.0":
   version "4.12.0"
@@ -335,9 +462,21 @@
   dependencies:
     immutable "^3.8.2"
 
+"@staccx/theme@^5.2.1":
+  version "5.2.1"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/theme/-/@staccx/theme-5.2.1.tgz#bec2068fb0ad3502df2b91314f602bd52a477028"
+  dependencies:
+    "@staccx/soy" "^5.1.0"
+
 "@staccx/utils@^4.9.0":
   version "4.23.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/utils/-/@staccx/utils-4.23.0.tgz#6aa4b3fbec26cc489da33933f27105a4c492b4bd"
+
+"@staccx/utils@^5.1.0":
+  version "5.1.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/utils/-/@staccx/utils-5.1.0.tgz#765ba639b6753580ccd4b58d54d56123d1034941"
+  dependencies:
+    "@staccx/soy" "^5.1.0"
 
 "@tedconf/react-show-more@^1.1.2":
   version "1.1.2"
@@ -523,7 +662,7 @@ ajv@^4.9.1:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
 
-ajv@^5.0.0, ajv@^5.1.0, ajv@^5.1.5, ajv@^5.2.0, ajv@^5.2.3, ajv@^5.3.0:
+ajv@^5.0.0, ajv@^5.0.1, ajv@^5.1.0, ajv@^5.1.5, ajv@^5.2.0, ajv@^5.2.3, ajv@^5.3.0:
   version "5.5.2"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.5.2.tgz#73b5eeca3fab653e3d3f9422b341ad42205dc965"
   dependencies:
@@ -2495,6 +2634,14 @@ cliui@^3.2.0:
     strip-ansi "^3.0.1"
     wrap-ansi "^2.0.0"
 
+cliui@^4.0.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/cliui/-/cliui-4.1.0.tgz#348422dbe82d800b3022eef4f6ac10bf2e4d1b49"
+  dependencies:
+    string-width "^2.1.1"
+    strip-ansi "^4.0.0"
+    wrap-ansi "^2.0.0"
+
 clone-deep@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/clone-deep/-/clone-deep-2.0.2.tgz#00db3a1e173656730d1188c3d6aced6d7ea97713"
@@ -3856,6 +4003,10 @@ es6-object-assign@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/es6-object-assign/-/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
 
+es6-promise@^3.2.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.3.1.tgz#a08cdde84ccdbf34d027a1451bc91d4bcd28a613"
+
 es6-promise@^4.0.5, es6-promise@^4.2.4:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.4.tgz#dc4221c2b16518760bd8c39a52d8f356fc00ed29"
@@ -4150,7 +4301,7 @@ eslint@4.10.0:
     table "^4.0.1"
     text-table "~0.2.0"
 
-eslint@^4.0.0, eslint@^4.1.1, eslint@^4.5.0:
+eslint@^4.0.0, eslint@^4.1.1, eslint@^4.18.2, eslint@^4.5.0:
   version "4.19.1"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
   dependencies:
@@ -6567,7 +6718,7 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
-js-yaml@^3.11.0, js-yaml@^3.4.3, js-yaml@^3.7.0, js-yaml@^3.9.0, js-yaml@^3.9.1:
+js-yaml@^3.11.0, js-yaml@^3.4.3, js-yaml@^3.6.1, js-yaml@^3.7.0, js-yaml@^3.9.0, js-yaml@^3.9.1:
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.0.tgz#eaed656ec8344f10f527c6bfa1b6e2244de167d1"
   dependencies:
@@ -7709,6 +7860,10 @@ node-fetch@^1.0.1:
     encoding "^0.1.11"
     is-stream "^1.0.1"
 
+node-fetch@^2.0.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.2.0.tgz#4ee79bde909262f9775f731e3656d0db55ced5b5"
+
 node-forge@0.7.5:
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.7.5.tgz#6c152c345ce11c52f465c2abd957e8639cd674df"
@@ -7802,6 +7957,12 @@ node-pre-gyp@^0.10.0:
     rimraf "^2.6.1"
     semver "^5.3.0"
     tar "^4"
+
+node-readfiles@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/node-readfiles/-/node-readfiles-0.2.0.tgz#dbbd4af12134e2e635c245ef93ffcf6f60673a5d"
+  dependencies:
+    es6-promise "^3.2.1"
 
 node-sass@^4.8.3:
   version "4.9.0"
@@ -9578,6 +9739,10 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
+reftools@0.0.20:
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/reftools/-/reftools-0.0.20.tgz#011e00736e51c631149a3a22b4c05b7383bdee8c"
+
 regenerate@^1.2.1:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
@@ -10333,6 +10498,44 @@ shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
 
+should-equal@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/should-equal/-/should-equal-2.0.0.tgz#6072cf83047360867e68e98b09d71143d04ee0c3"
+  dependencies:
+    should-type "^1.4.0"
+
+should-format@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/should-format/-/should-format-3.0.3.tgz#9bfc8f74fa39205c53d38c34d717303e277124f1"
+  dependencies:
+    should-type "^1.3.0"
+    should-type-adaptors "^1.0.1"
+
+should-type-adaptors@^1.0.1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/should-type-adaptors/-/should-type-adaptors-1.1.0.tgz#401e7f33b5533033944d5cd8bf2b65027792e27a"
+  dependencies:
+    should-type "^1.3.0"
+    should-util "^1.0.0"
+
+should-type@^1.3.0, should-type@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/should-type/-/should-type-1.4.0.tgz#0756d8ce846dfd09843a6947719dfa0d4cff5cf3"
+
+should-util@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/should-util/-/should-util-1.0.0.tgz#c98cda374aa6b190df8ba87c9889c2b4db620063"
+
+should@^13.0.1:
+  version "13.2.3"
+  resolved "https://registry.yarnpkg.com/should/-/should-13.2.3.tgz#96d8e5acf3e97b49d89b51feaa5ae8d07ef58f10"
+  dependencies:
+    should-equal "^2.0.0"
+    should-format "^3.0.3"
+    should-type "^1.4.0"
+    should-type-adaptors "^1.0.1"
+    should-util "^1.0.0"
+
 sigmund@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/sigmund/-/sigmund-1.0.1.tgz#3ff21f198cad2175f9f3b781853fd94d0d19b590"
@@ -10927,6 +11130,20 @@ sw-toolbox@^3.4.0:
   dependencies:
     path-to-regexp "^1.0.1"
     serviceworker-cache-polyfill "^4.0.0"
+
+swagger2openapi@^2.11.16:
+  version "2.11.16"
+  resolved "https://registry.yarnpkg.com/swagger2openapi/-/swagger2openapi-2.11.16.tgz#7614ed2ebe0617656f8777bf67a33e8b0fba4e9b"
+  dependencies:
+    ajv "^5.0.1"
+    call-me-maybe "^1.0.1"
+    co "^4.6.0"
+    js-yaml "^3.6.1"
+    node-fetch "^2.0.0"
+    node-readfiles "^0.2.0"
+    reftools "0.0.20"
+    should "^13.0.1"
+    yargs "^11.0.0"
 
 swap-case@^1.1.0:
   version "1.1.2"
@@ -12112,6 +12329,12 @@ yargs-parser@^8.0.0:
   dependencies:
     camelcase "^4.1.0"
 
+yargs-parser@^9.0.2:
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-9.0.2.tgz#9ccf6a43460fe4ed40a9bb68f48d43b8a68cc077"
+  dependencies:
+    camelcase "^4.1.0"
+
 yargs@10.0.3:
   version "10.0.3"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-10.0.3.tgz#6542debd9080ad517ec5048fb454efe9e4d4aaae"
@@ -12146,6 +12369,23 @@ yargs@6.6.0, yargs@^6.6.0:
     which-module "^1.0.0"
     y18n "^3.2.1"
     yargs-parser "^4.2.0"
+
+yargs@^11.0.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-11.1.0.tgz#90b869934ed6e871115ea2ff58b03f4724ed2d77"
+  dependencies:
+    cliui "^4.0.0"
+    decamelize "^1.1.1"
+    find-up "^2.1.0"
+    get-caller-file "^1.0.1"
+    os-locale "^2.0.0"
+    require-directory "^2.1.1"
+    require-main-filename "^1.0.1"
+    set-blocking "^2.0.0"
+    string-width "^2.0.0"
+    which-module "^2.0.0"
+    y18n "^3.2.1"
+    yargs-parser "^9.0.2"
 
 yargs@^7.0.0, yargs@^7.0.2:
   version "7.1.0"
