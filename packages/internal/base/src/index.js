@@ -6,6 +6,7 @@ import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
 import PostalCodeInput from "./components/Forms/Input/PostalCodeInput/PostalCodeInput"
 import NationalIdInput from "./components/Forms/Input/NationalIdInput/NationalIdInput"
 import CompanyInput from "./components/Forms/Input/CompanyInput/CompanyInput"
+import FileInput from "./components/Forms/Input/FileInput/FileInput"
 import Label from "./components/Forms/Label/Label"
 import Legend from "./components/Forms/Legend/Legend"
 import CheckBox from "./components/Forms/CheckBox/CheckBox"
@@ -19,7 +20,6 @@ import SelectSimple from "./components/Forms/SelectSimple/SelectSimple"
 import Select from "./components/Forms/Select/Select"
 import SelectOption from "./components/Forms/Select/Select.Option"
 import Toggle from "./components/Forms/Toggle/Toggle"
-import FileInput from "./components/Forms/FileInput/FileInput"
 
 // Text
 import Text from "./components/Text/Text/Text"
@@ -102,6 +102,8 @@ import Pagination from "./components/Pagination"
 import CodeRenderer from "./components/Code/CodeRenderer"
 import Table from "./components/Table/Table"
 import Fetch from "./components/Fetch/Fetch"
+import CopyToClipboard from "./components/CopyToClipboard/CopyToClipboard"
+import CopyToClipboardComponent from "./components/CopyToClipboard/CopyToClipboardComponent"
 
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
@@ -120,6 +122,8 @@ export {
   Close,
   CodeRenderer,
   CompanyInput,
+  CopyToClipboard,
+  CopyToClipboardComponent,
   CurrencyInput,
   Divider,
   Donut,
