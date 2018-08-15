@@ -1,17 +1,19 @@
 import React, { Component } from "react"
-import { Wrapper } from "@staccx/base"
 import { ThemeProxyProvider } from "@staccx/theme"
-import { BrowserRouter as Router } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import theme from "./theme/Theme"
+import Home from "./pages/Home"
+import CreateInvoice from "./pages/CreateInvoice"
 
 class App extends Component {
   render() {
     return (
       <ThemeProxyProvider theme={theme}>
         <Router>
-          <Wrapper>
-            <div>Fresh app smell...</div>
-          </Wrapper>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/create" component={CreateInvoice} />
+          </Switch>
         </Router>
       </ThemeProxyProvider>
     )
