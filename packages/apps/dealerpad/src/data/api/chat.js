@@ -11,9 +11,7 @@ class Chat {
       userName,
       userId,
       message,
-      (res) => {
-        console.log("returning from emit", res)
-      }
+      data => console.log
     )
   }
 

@@ -31,7 +31,7 @@ class ChatStore {
     chatApi.connect(chatUrl)
 
     chatApi.registerHandlers({
-      onMessageReceived: msg => this.messages.push(msg),
+      onMessageReceived: messages => (this.messages = messages),
       onError: console.log
     })
 
