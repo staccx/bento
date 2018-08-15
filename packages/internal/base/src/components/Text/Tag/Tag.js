@@ -33,6 +33,7 @@ const TagWrapper = styled.span`
   border-radius: ${targetSize.normal};
   background-color: ${color.subtleHover};
   color: ${color.primary};
+  min-height: ${spacing.medium};
   ${themify(Tag.themeProps.tag)};
 `
 
