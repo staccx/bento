@@ -8,7 +8,7 @@ import { ThemeComponent, color, spacing } from "@staccx/theme"
 
 const ChatLogic = ({ messages, caseNumber }) => (
   <Chat>
-    {messages && (
+    {messages.length > 0 && (
       <Layout rowGap="small">
         {messages.map((message, index) => (
           <ChatBubble
@@ -23,7 +23,7 @@ const ChatLogic = ({ messages, caseNumber }) => (
         ))}
       </Layout>
     )}
-    {!messages && (
+    {messages.length === 0 && (
       <EmptyChat>
         <ThemeComponent tagName={"ChatStart"} />
         <div>Start en ny samtale med Nordea Finans på sak {caseNumber}</div>
