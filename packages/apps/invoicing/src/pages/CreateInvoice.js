@@ -10,6 +10,7 @@ import {
 } from "@staccx/base"
 import { spacing, color } from "@staccx/theme"
 import styled from "styled-components"
+import AddInvoiceItems from "../components/InvoiceItems/InvoiceItems"
 
 const CreateInvoice = () => (
   <Wrapper>
@@ -18,7 +19,8 @@ const CreateInvoice = () => (
       <InputFlex>
         <div>
           <Select
-            placeholder="Søk etter eksisterende"
+            placeholder="Søk etter eksisterende mottaker"
+            id="findRecipent"
             label="Mottaker"
             combobox
             items={["apple", "orange", "carrot"]}
@@ -26,13 +28,16 @@ const CreateInvoice = () => (
         </div>
         <InputFlexRight>
           <Input
-            id="iasdfjn!"
+            id="invoiceDue"
             label="Forfallsdato"
             placeholder="dd.mm.åååå"
             type={"date"}
           />
         </InputFlexRight>
       </InputFlex>
+
+      <AddInvoiceItems />
+
       <ItemGroup>
         <Button>Lagre og forhåndsvis</Button>
         <Button>Avbryt</Button>
