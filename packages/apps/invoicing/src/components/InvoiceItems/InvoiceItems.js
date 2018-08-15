@@ -9,14 +9,23 @@ class InvoiceItems extends Component {
     super(props)
 
     this.state = {
-      lines: [{}] // FIXME: Improve this with data for each line-item
+      lines: [{ id: 0 }] // FIXME: Improve this with data for each line-item
     }
     this.addLine = this.addLine.bind(this)
+    this.generateUniqueKey = this.generateUniqueKey.bind(this)
+  }
+
+  generateUniqueKey(lines) {
+    const lastElementId = lines[lines.length - 1].id
+    return lastElementId + 1
   }
 
   addLine() {
     this.setState({
-      lines: [...this.state.lines, {}]
+      lines: [
+        ...this.state.lines,
+        { id: this.generateUniqueKey(this.state.lines) }
+      ]
     })
   }
 
@@ -33,7 +42,9 @@ class InvoiceItems extends Component {
             </tr>
           </Thead>
           <TableBody>
-            {this.state.lines.map(() => <InvoiceItemsItem />)}
+            {this.state.lines.map(item => (
+              <InvoiceItemsItem lineId={item.id} key={item.id} />
+            ))}
           </TableBody>
         </Table>
         <Button onClick={() => this.addLine()}>Legg til</Button>

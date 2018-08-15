@@ -3,22 +3,26 @@ import { Input, CurrencyInput } from "@staccx/base"
 import { color } from "@staccx/theme"
 import styled from "styled-components"
 
-const InvoiceItemsItem = () => (
+const InvoiceItemsItem = ({ lineId }) => (
   <TableRow>
     <td>
       <Input
-        id="invoiceLineDesc"
+        id={"invoiceLineDesc" + lineId}
         placeholder="Beskrivelse"
         variant="invoiceLine"
         first
       />
     </td>
     <td>
-      <Input id="invoiceLinePrice" placeholder="0" variant="invoiceLine" />
+      <Input
+        id={"invoiceLinePrice" + lineId}
+        placeholder="0"
+        variant="invoiceLine"
+      />
     </td>
     <td>
       <Input
-        id="invoiceLineNumber"
+        id={"invoiceLineNumber" + lineId}
         placeholder="0"
         defaultValue={1}
         variant="invoiceLine"
@@ -26,7 +30,7 @@ const InvoiceItemsItem = () => (
     </td>
     <td>
       <CurrencyInput
-        id="invoiceLineAmount"
+        id={"invoiceLineAmount" + lineId}
         placeholder="0"
         variant="invoiceLine"
       />
