@@ -14,31 +14,6 @@ const Home = () => (
     </header>
 
     <Wrapper>
-      <div>
-        <FileInput id="wdasv2">Last opp</FileInput>
-      </div>
-      <div>
-        <FileInput id="sfa" multiple>
-          Last opp flere
-        </FileInput>
-      </div>
-      <div>
-        <FileInput id="ksdan" showFileName={false}>
-          Last opp uten navn
-        </FileInput>
-      </div>
-      <div>
-        <FileInput
-          id="wegrtf"
-          showFileName={false}
-          singleFileLabel={"kopp"}
-          multipleFilesLabel={"kopper"}
-          multiple
-        >
-          Last opp flere uten navn
-        </FileInput>
-      </div>
-
       <Layout
         grid="fiftyFifty"
         paddingTop="large"
