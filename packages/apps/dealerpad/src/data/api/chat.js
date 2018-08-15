@@ -1,8 +1,46 @@
 import io from "socket.io-client"
 
-export const connect = (roomName, onPreviousMessages, onMessageReceived) => {
-  const socket = io.connect("https://chat.nordea-finans.staccflow.com/")
+class Chat {
+  socket = null
 
-  socket.on("message", onMessageReceived)
-  socket.emit("join", roomName, onPreviousMessages)
+  sendMessage(roomName, userName, userId, message) {
+    console.log("sending message", roomName, userName, userId, message)
+    return this.socket.emit(
+      "message",
+      roomName,
+      userName,
+      userId,
+      message,
+      (res) => {
+        console.log("returning from emit", res)
+      }
+    )
+  }
+
+  connect(chatUrl) {
+    this.socket = io.connect(chatUrl)
+  }
+
+  registerHandlers({
+    onMessageReceived,
+    onStartedTyping,
+    onStoppedTyping,
+    onError
+  }) {
+    this.socket.on("message", onMessageReceived)
+    this.socket.on("typing", onStartedTyping)
+    this.socket.on("stoppedtyping", onStoppedTyping)
+    this.socket.on("error", onError)
+  }
+
+  join(roomName, onPreviousMessages) {
+    this.socket.emit("join", roomName, onPreviousMessages)
+  }
+
+  leave(roomName) {
+    this.socket.emit("leave", roomName)
+  }
 }
+
+const chat = new Chat()
+export default chat

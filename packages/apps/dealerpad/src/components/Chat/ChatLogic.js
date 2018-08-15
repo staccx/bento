@@ -2,6 +2,7 @@ import React from "react"
 import Chat from "./Chat"
 import ChatBubble from "./ChatBubble"
 import { Layout } from "@staccx/base"
+import userStore from "../../data/store/userStore"
 
 const ChatLogic = ({ messages, caseNumber }) => (
   <Chat>
@@ -9,12 +10,12 @@ const ChatLogic = ({ messages, caseNumber }) => (
       <Layout rowGap="small">
         {messages.map((message, index) => (
           <ChatBubble
-            key={message.time + message.date}
-            body={message.body}
-            time={message.time}
-            from={message.from}
-            date={message.date}
-            currentUser={false}
+            key={message.createdAt}
+            body={message.text}
+            time={message.createdAt}
+            from={message.name}
+            date={message.createdAt}
+            currentUser={message.senderId === userStore.user.id}
             index={index}
           />
         ))}

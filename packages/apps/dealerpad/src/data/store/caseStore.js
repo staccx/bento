@@ -7,8 +7,6 @@ import {
   fetchTasks
 } from "../api/api"
 
-import { connect } from "../api/chat"
-
 import fileStatus from "../fileStatus"
 
 class CaseStore {
@@ -30,7 +28,6 @@ class CaseStore {
     this.loadingCasesList = false
   }
 
-  @action
   documentSubmitter(document) {
     console.log("creating upload function for", document)
     return async event => {
@@ -51,12 +48,6 @@ class CaseStore {
     this.currentCase = await fetchCaseDetails(caseId)
     this.tasks = await fetchTasks(caseId)
 
-    console.log("tasks:", this.tasks)
-
-    console.log("conditions:", this.currentCase.conditions)
-
-    console.log(this.currentCase.conditions)
-
     this.currentCase.documents = Object.keys(this.currentCase.conditions).map(
       conditionName => {
         const condition = this.currentCase.conditions[conditionName]
@@ -70,13 +61,6 @@ class CaseStore {
           )
         }
       }
-    )
-
-    console.log("documents", this.currentCase.documents)
-    connect(
-      this.currentCase.id,
-      console.log,
-      console.log
     )
 
     this.loadingCaseDetails = false

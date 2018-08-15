@@ -21,6 +21,7 @@ import ChatLogic from "../components/Chat/ChatLogic"
 import Documentation from "../components/Documentation/Documentation"
 import { slideLeft } from "../components/transitions/transitions"
 import caseStore from "../data/store/caseStore"
+import chatStore from "../data/store/chatStore"
 import { observer } from "mobx-react"
 
 @observer
@@ -52,6 +53,8 @@ class Case extends Component {
       currentCase.customers[0].firstName +
       " " +
       currentCase.customers[0].lastName
+
+    console.log("messages", chatStore.messages)
 
     return (
       <Layout variant="case">
@@ -130,7 +133,7 @@ class Case extends Component {
           hideOnMobile={this.state.currentTab !== "chat"}
         >
           <ChatLogic
-            messages={currentCase.messages}
+            messages={chatStore.messages}
             caseNumber={currentCase.applicationId}
           />
         </LayoutItem>
