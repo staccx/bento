@@ -1,5 +1,5 @@
 import React from "react"
-import { Heading, Layout, LayoutItem, Wrapper, FileInput } from "@staccx/base"
+import { Heading, Layout, LayoutItem, Wrapper } from "@staccx/base"
 import getNewsItems from "../data/news"
 import NewsHero from "../components/News/News.Hero"
 import NewsList from "../components/News/News.List"
