@@ -90,7 +90,11 @@ class Case extends Component {
                 currentCase.funding["termFeePerMnd(inc mva)"]
               )},-/mnd
             </Paragraph>
-            <CaseProgressLarge progress={currentCase.status} max={4} />
+            <CaseProgressLarge
+              hasRejectedDocuments={currentCase.hasRejectedDocuments}
+              progress={currentCase.status}
+              max={4}
+            />
           </Layout>
         </LayoutItem>
 

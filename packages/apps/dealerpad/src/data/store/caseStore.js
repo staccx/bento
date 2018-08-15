@@ -63,6 +63,33 @@ class CaseStore {
       }
     )
 
+    let status = 1
+
+    if (
+      this.currentCase.documents.some(doc => doc.status === fileStatus.pending)
+    ) {
+      status = 2
+    } else if (
+      this.currentCase.documents.every(
+        doc => doc.status === fileStatus.uploaded
+      )
+    ) {
+      status = 3
+    } else if (
+      this.currentCase.documents.every(
+        doc => doc.status === fileStatus.approved
+      )
+    ) {
+      status = 4
+    }
+
+    this.currentCase.status = status
+
+    // mark case has having rejected documents if at least one doc is rejected
+    this.currentCase.hasRejectedDocuments = this.currentCase.documents.some(
+      doc => doc.status === fileStatus.rejected
+    )
+
     this.loadingCaseDetails = false
   }
 }

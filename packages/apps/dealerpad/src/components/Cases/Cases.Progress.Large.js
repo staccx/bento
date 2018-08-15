@@ -4,7 +4,13 @@ import { color, spacing, ThemeComponent, font, fontWeight } from "@staccx/theme"
 import { Text, hideVisually } from "@staccx/base"
 import getStatus from "../../helpers/getStatus"
 
-const CasesProgressLarge = ({ progress, max, inverted }) => {
+const CasesProgressLarge = ({
+  hasRejecteddocuments,
+  progress,
+  max,
+  inverted
+}) => {
+  console.log("case has rejected documents:", hasRejecteddocuments)
   const progressArray = [...Array(max)].map((e, index) => index < progress)
 
   return (
