@@ -1,6 +1,6 @@
 {
   "name": "@staccx/nordea-theme",
-  "version": "6.5.0",
+  "version": "6.5.1",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -10,8 +10,8 @@
     "@staccx/theme": "^4"
   },
   "devDependencies": {
-    "@staccx/base": "^6.5.0",
-    "@staccx/theme": "^6.5.0"
+    "@staccx/base": "^6.5.1",
+    "@staccx/theme": "^6.5.1"
   },
   "files": [
     "dist"
@@ -32,6 +32,6 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/soy": "^6.5.0"
+    "@staccx/soy": "^6.5.1"
   }
 }
