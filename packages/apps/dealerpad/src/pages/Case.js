@@ -173,8 +173,8 @@ class Case extends Component {
           </Heading>
           <ContactPerson
             name={customerName}
-            phoneNumber={currentCase.customers[0].phoneNumber || "n/a"}
-            eMail={currentCase.customers[0].eMail || "n/a"}
+            phoneNumber={currentCase.customers[0].phoneNumber}
+            eMail={currentCase.customers[0].eMail}
           />
           {currentCase.customers[1] && (
             <ContactPerson
@@ -183,8 +183,8 @@ class Case extends Component {
                 " " +
                 currentCase.customers[1].lastName
               }
-              phoneNumber={currentCase.customers[1].phoneNumber || "n/a"}
-              eMail={currentCase.customers[1].eMail || "n/a"}
+              phoneNumber={currentCase.customers[1].phoneNumber}
+              eMail={currentCase.customers[1].eMail}
             />
           )}
         </LayoutItem>
