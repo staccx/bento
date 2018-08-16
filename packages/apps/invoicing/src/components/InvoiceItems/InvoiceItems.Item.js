@@ -1,40 +1,48 @@
 import React from "react"
-import { Input, CurrencyInput } from "@staccx/base"
+import { Input, CurrencyInput, Select } from "@staccx/base"
 import { color } from "@staccx/theme"
 import styled from "styled-components"
 
-const InvoiceItemsItem = ({ lineId }) => (
+const InvoiceItemsItem = ({
+  id,
+  handleProductChange,
+  handlePriceChange,
+  handleNumberChange,
+  amount
+}) => (
   <TableRow>
     <td>
-      <Input
-        id={"invoiceLineDesc" + lineId}
+      <Select
+        id={"invoiceLineDesc" + id}
         placeholder="Beskrivelse"
         variant="invoiceLine"
-        first
+        items={[
+          "Isola Takshingel",
+          "Isola AirGuard® Smart",
+          "Zanda Protector betongtakstein"
+        ]}
+        onChange={value => handleProductChange(id, value)}
+        combobox
       />
     </td>
     <td>
       <Input
-        id={"invoiceLinePrice" + lineId}
+        id={"invoiceLinePrice" + id}
         placeholder="0"
+        onChange={event => handlePriceChange(id, event)}
         variant="invoiceLine"
       />
     </td>
     <td>
       <Input
-        id={"invoiceLineNumber" + lineId}
+        id={"invoiceLineNumber" + id}
         placeholder="0"
         defaultValue={1}
+        onChange={event => handleNumberChange(id, event)}
         variant="invoiceLine"
       />
     </td>
-    <td>
-      <CurrencyInput
-        id={"invoiceLineAmount" + lineId}
-        placeholder="0"
-        variant="invoiceLine"
-      />
-    </td>
+    <td>{amount}</td>
   </TableRow>
 )
 

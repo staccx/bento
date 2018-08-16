@@ -1,6 +1,7 @@
 import { Theme } from "@staccx/theme"
 import { BaseTheme } from "@staccx/base"
 import { InputStyling } from "./Theme.Inputs"
+import { ListStyling } from "./Theme.Lists"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -83,5 +84,7 @@ const theme = new Theme(BaseTheme, {
   headerHeight,
   fontFamily,
   global: ``
-}).add(InputStyling)
+})
+  .add(InputStyling)
+  .add(ListStyling)
 export default theme

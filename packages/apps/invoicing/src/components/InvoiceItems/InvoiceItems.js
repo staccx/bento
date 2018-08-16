@@ -3,16 +3,21 @@ import { Button } from "@staccx/base"
 import { color, spacing } from "@staccx/theme"
 import styled from "styled-components"
 import InvoiceItemsItem from "./InvoiceItems.Item"
+import InvoiceCalculation from "../InvoiceCalculation/InvoiceCalculation"
 
 class InvoiceItems extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      lines: [{ id: 0 }] // FIXME: Improve this with data for each line-item
+      lines: [{ id: 0, product: null, price: null, number: 1, amount: null }] // FIXME: Improve this with data for each line-item
     }
     this.addLine = this.addLine.bind(this)
     this.generateUniqueKey = this.generateUniqueKey.bind(this)
+    this.handleProductChange = this.handleProductChange.bind(this)
+    this.handlePriceChange = this.handlePriceChange.bind(this)
+    this.handleNumberChange = this.handleNumberChange.bind(this)
+    this.getAmount = this.getAmount.bind(this)
   }
 
   generateUniqueKey(lines) {
@@ -24,9 +29,45 @@ class InvoiceItems extends Component {
     this.setState({
       lines: [
         ...this.state.lines,
-        { id: this.generateUniqueKey(this.state.lines) }
+        {
+          id: this.generateUniqueKey(this.state.lines),
+          product: null,
+          price: null,
+          number: 1,
+          amount: null
+        }
       ]
     })
+  }
+
+  handleProductChange(id, value) {
+    let items = [...this.state.lines]
+    items.map(item => item.id === id && (item.product = value))
+    this.setState({ lines: items })
+  }
+
+  handlePriceChange(id, event) {
+    const value = event.target.value
+    let items = [...this.state.lines]
+    items.map(item => item.id === id && (item.price = value))
+    this.setState({ lines: items })
+  }
+
+  handleNumberChange(id, event) {
+    const value = event.target.value
+    let items = [...this.state.lines]
+    items.map(item => item.id === id && (item.number = value))
+    this.setState({ lines: items })
+  }
+
+  getAmount(id) {
+    const currentItem = this.state.lines.filter(item => item.id === id)
+
+    return !isNaN(
+      parseInt(currentItem[0].price) * parseInt(currentItem[0].number)
+    )
+      ? parseInt(currentItem[0].price) * parseInt(currentItem[0].number)
+      : 0
   }
 
   render() {
@@ -43,11 +84,26 @@ class InvoiceItems extends Component {
           </Thead>
           <TableBody>
             {this.state.lines.map(item => (
-              <InvoiceItemsItem lineId={item.id} key={item.id} />
+              <InvoiceItemsItem
+                id={item.id}
+                product={item.product}
+                handleProductChange={this.handleProductChange}
+                price={item.price}
+                handlePriceChange={this.handlePriceChange}
+                number={item.number}
+                handleNumberChange={this.handleNumberChange}
+                amount={this.getAmount(item.id)}
+                key={item.id}
+              />
             ))}
           </TableBody>
         </Table>
-        <Button onClick={() => this.addLine()}>Legg til</Button>
+        <Footer>
+          <div>
+            <Button onClick={() => this.addLine()}>Legg til</Button>
+          </div>
+          <InvoiceCalculation />
+        </Footer>
       </div>
     )
   }
@@ -65,6 +121,7 @@ const Thead = styled.thead`
   th {
     font-weight: normal;
     padding-bottom: ${spacing.small};
+    padding-right: ${spacing.small};
   }
 
   th:first-child {
@@ -76,6 +133,11 @@ const TableBody = styled.tbody`
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   overflow: hidden;
+`
+
+const Footer = styled.footer`
+  display: flex;
+  justify-content: space-between;
 `
 
 export default InvoiceItems
