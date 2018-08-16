@@ -7,10 +7,20 @@ const getVehicleLabel = label => {
     case "variant":
       return "Modellvariant"
     case "maxMileage":
+    case "maxDriveRange":
       return "Max. tillat årlig kj.lengde"
     case "mileageOverageFee":
-      return "Pris pr. km over max kj. lengde"
+    case "pricePerKm":
+      return "Pris overkjørte km"
     case "options":
+      return "Ekstrautstyr"
+    case "vehicle":
+      return "Modell"
+    case "yearModel":
+      return "Årsmodell"
+    case "bodyStyle":
+      return "Modellvariant"
+    case "enhancement":
       return "Ekstrautstyr"
     default:
       return null

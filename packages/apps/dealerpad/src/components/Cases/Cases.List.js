@@ -11,6 +11,7 @@ const CasesList = observer(({ compact }) => {
   if (caseStore.loadingCasesList) {
     return <Loading />
   }
+  console.log(caseStore.cases)
 
   return (
     <Box size="flush">
@@ -27,7 +28,7 @@ const CasesList = observer(({ compact }) => {
                       item.messages || (item.messages && item.messages.length)
                     }
                   >
-                    {item.customers[0].name}
+                    {item.customers[0].firstName} {item.customers[0].lastName}
                   </Heading>
                   <Text variant="legalese">
                     {item.vehicle.type} {item.vehicle.make} {item.vehicle.model}
