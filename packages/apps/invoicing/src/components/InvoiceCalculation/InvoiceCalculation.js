@@ -7,11 +7,11 @@ const InvoiceCalculation = ({ sums }) => (
     <List variant="invoiceCalculation">
       <li>
         <span>Nettobeløp: </span>
-        <span>{sums.net}</span>
+        <span>{sums.net > 0 ? sums.net.toFixed(2) : sums.net}</span>
       </li>
       <li>
         <span>Merverdiavgift (25%): </span>
-        <span>{sums.vat}</span>
+        <span>{sums.vat > 0 ? sums.vat.toFixed(2) : sums.vat}</span>
       </li>
       <li>
         <span>Rabatt (0 %)</span>
@@ -19,7 +19,7 @@ const InvoiceCalculation = ({ sums }) => (
       </li>
       <li>
         <span>Å betale: </span>
-        <span>0</span>
+        <span>{sums.net + sums.vat > 0 ? sums.net + sums.vat : 0}</span>
       </li>
     </List>
   </div>

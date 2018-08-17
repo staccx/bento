@@ -74,7 +74,9 @@ class InvoiceItems extends Component {
   handlePriceChange(id, event) {
     const value = event.target.value
     let items = [...this.state.lines]
-    items.map(item => item.id === id && (item.price = parseInt(value, 10)))
+    items.map(
+      item => item.id === id && (item.price = parseFloat(value).toFixed(2))
+    )
     this.setState({ lines: items })
   }
 
@@ -89,9 +91,9 @@ class InvoiceItems extends Component {
     const currentItem = this.state.lines.filter(item => item.id === id)
 
     return !isNaN(
-      parseInt(currentItem[0].price, 10) * parseInt(currentItem[0].number, 10)
+      parseFloat(currentItem[0].price) * parseFloat(currentItem[0].number)
     )
-      ? parseInt(currentItem[0].price, 10) * parseInt(currentItem[0].number, 10)
+      ? parseFloat(currentItem[0].price) * parseFloat(currentItem[0].number)
       : 0
   }
 
