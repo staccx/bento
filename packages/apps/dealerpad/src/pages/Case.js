@@ -149,17 +149,16 @@ class Case extends Component {
             caseNumber={currentCase.applicationId}
           />
         </LayoutItem>
-
-        {caseStore.loadingCaseDetails ? (
-          <Loading />
-        ) : (
-          <LayoutItem
-            variant="caseDocumentation"
-            hideOnMobile={this.state.currentTab !== "documentation"}
-          >
-            <Heading level="2" variant="subtle">
-              Dokumentasjon
-            </Heading>
+        <LayoutItem
+          variant="caseDocumentation"
+          hideOnMobile={this.state.currentTab !== "documentation"}
+        >
+          <Heading level="2" variant="subtle">
+            Dokumentasjon
+          </Heading>
+          {caseStore.loadingCaseDetails ? (
+            <Loading />
+          ) : (
             <div>
               {currentCase.documents.map(document => (
                 <Documentation
@@ -172,8 +171,8 @@ class Case extends Component {
                 />
               ))}
             </div>
-          </LayoutItem>
-        )}
+          )}
+        </LayoutItem>
 
         <LayoutItem
           variant="caseContact"
