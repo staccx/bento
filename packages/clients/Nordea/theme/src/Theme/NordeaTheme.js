@@ -47,6 +47,7 @@ import { BackIcon } from "./Icons/Back"
 import { FilterIcon } from "./Icons/Filter"
 import { DividerStyling } from "./theme.Divider"
 import { RadioButtonWrapper, RadioButtonLabel } from "./theme.RadioButton"
+import { LoadingStyle } from "./Loading"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -207,4 +208,5 @@ const theme = new Theme(BaseTheme, {
   .add(RadioButtonWrapper)
   .add(RadioButtonLabel)
   .add(FileInputLabelStyling)
+  .add(LoadingStyle)
 export default theme
