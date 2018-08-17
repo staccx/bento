@@ -35,7 +35,8 @@ class InvoiceItems extends Component {
       return accumulator + line.price * line.number
     }, 0)
     const vat = lines.reduce((accumulator, line) => {
-      return accumulator + line.price * line.number * line.vatRate
+      const netAmount = line.price ? parseFloat(line.price) * line.number : 0
+      return accumulator + netAmount * line.vatRate
     }, 0)
 
     return {
@@ -59,7 +60,8 @@ class InvoiceItems extends Component {
           product: null,
           price: null,
           number: 1,
-          amount: null
+          amount: null,
+          vatRate: 0.25
         }
       ]
     })
@@ -83,7 +85,7 @@ class InvoiceItems extends Component {
   handleNumberChange(id, event) {
     const value = event.target.value
     let items = [...this.state.lines]
-    items.map(item => item.id === id && (item.number = value))
+    items.map(item => item.id === id && (item.number = parseInt(value, 10)))
     this.setState({ lines: items })
   }
 

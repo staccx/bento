@@ -2,6 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import { List } from "@staccx/base"
 
+const calculateTotal = (net, vat, discount) => {
+  const sum = net + vat + discount
+  return sum > 0 ? sum.toFixed(2) : sum
+}
+
 const InvoiceCalculation = ({ sums }) => (
   <div>
     <List variant="invoiceCalculation">
@@ -19,7 +24,7 @@ const InvoiceCalculation = ({ sums }) => (
       </li>
       <li>
         <span>Å betale: </span>
-        <span>{sums.net + sums.vat > 0 ? sums.net + sums.vat : 0}</span>
+        <span>{calculateTotal(sums.net, sums.vat, sums.discount)}</span>
       </li>
     </List>
   </div>
