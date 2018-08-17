@@ -141,7 +141,9 @@ class Case extends Component {
           />
         </LayoutItem>
 
-        {currentCase.documents && (
+        {caseStore.loadingCaseDetails ? (
+          <Loading />
+        ) : (
           <LayoutItem
             variant="caseDocumentation"
             hideOnMobile={this.state.currentTab !== "documentation"}
