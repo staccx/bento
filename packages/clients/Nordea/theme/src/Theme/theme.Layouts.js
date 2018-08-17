@@ -65,6 +65,9 @@ export const LayoutItemStyling = registerStyle(
       grid-row: 2;
       opacity: 0;
       animation: ${FadeIn} forwards ease-out 400ms 1;
+      @media only screen and (min-width: 750px) {
+        min-height: 275px;
+      }
       @media only screen and (max-width: 750px) {
         grid-row: 2;
         grid-column: 2;

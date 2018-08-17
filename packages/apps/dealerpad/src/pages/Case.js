@@ -7,8 +7,7 @@ import {
   Layout,
   LayoutItem,
   Button,
-  ItemGroup,
-  Loading
+  ItemGroup
 } from "@staccx/base"
 import { ThemeComponent } from "@staccx/theme"
 import getLoanType from "../helpers/getLoanType"
@@ -53,8 +52,6 @@ class Case extends Component {
       " " +
       currentCase.customers[0].lastName
 
-    console.log("messages", chatStore.messages)
-
     return (
       <Layout variant="case">
         <LayoutItem variant="caseHeader">
@@ -77,15 +74,26 @@ class Case extends Component {
               {customerName}
             </Heading>
             <div>
-              <Tag variant="inverted">{currentCase.applicationId}</Tag>{" "}
-              <Tag variant="inverted">
-                {getLoanType(currentCase.productName)}
-              </Tag>
+              {currentCase.applicationId && (
+                <Tag variant="inverted">{currentCase.applicationId}</Tag>
+              )}{" "}
+              {currentCase.productName && (
+                <Tag variant="inverted">
+                  {getLoanType(currentCase.productName)}
+                </Tag>
+              )}
             </div>
             <Paragraph variant="CaseSummary">
               {currentCase.car.vehicle} {currentCase.car.model}{" "}
-              {currentCase.car.year} <br />
-              {currentCase.car.variant} <br />
+              {currentCase.car.year && (
+                <span>
+                  {currentCase.car.year} <br />
+                </span>
+              )}
+              {currentCase.car.variant && (
+                <span>{currentCase.car.variant}</span>
+              )}
+              <br />
               {formatCurrency(
                 currentCase.funding["termFeePerMnd(inc mva)"]
               )},-/mnd
@@ -175,8 +183,8 @@ class Case extends Component {
           </Heading>
           <ContactPerson
             name={customerName}
-            phoneNumber={currentCase.customers[0].phoneNumber || "n/a"}
-            eMail={currentCase.customers[0].eMail || "n/a"}
+            phoneNumber={currentCase.customers[0].phoneNumber}
+            eMail={currentCase.customers[0].eMail}
           />
           {currentCase.customers[1] && (
             <ContactPerson
@@ -185,8 +193,8 @@ class Case extends Component {
                 " " +
                 currentCase.customers[1].lastName
               }
-              phoneNumber={currentCase.customers[1].phoneNumber || "n/a"}
-              eMail={currentCase.customers[1].eMail || "n/a"}
+              phoneNumber={currentCase.customers[1].phoneNumber}
+              eMail={currentCase.customers[1].eMail}
             />
           )}
         </LayoutItem>

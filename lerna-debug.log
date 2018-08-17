@@ -1,79 +1,217 @@
-0 silly input []
-1 silly flags { _: [ 'bootstrap' ],
+0 silly input [ 'precommit' ]
+1 silly flags { _: [ 'run' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
+1 silly flags   stream: true,
+1 silly flags   concurrency: 1,
+1 silly flags   since: 'HEAD',
+1 silly flags   script: 'precommit',
 1 silly flags   args: [] }
-2 verbose rootPath /Users/torgeir/projects/bento
+2 verbose rootPath /Users/robin/Projects/staccx/bento
 3 info version 2.11.0
-4 silly existsSync /Users/torgeir/projects/bento/VERSION
-5 silly initialize attempt
-6 silly npmConfig { registry: undefined,
-6 silly npmConfig   npmClient: 'yarn',
-6 silly npmConfig   npmClientArgs: undefined,
-6 silly npmConfig   mutex: 'network:42424' }
-7 silly initialize success
-8 silly execute attempt
-9 info Bootstrapping 28 packages
-10 silly installInDirOriginalPackageJson /Users/torgeir/projects/bento
-11 silly getExecOpts { cwd: '/Users/torgeir/projects/bento' }
-12 silly installInDir [ 'yarn',
-12 silly installInDir   [ 'install', '--mutex', 'network:42424', '--non-interactive' ] ]
-13 error execute callback with error
-14 error Error: Command failed: yarn install --mutex network:42424 --non-interactive
-14 error (node:24180) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/loan-process@6.3.0" has incorrect peer dependency "@staccx/base@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/loan-process@6.3.0" has incorrect peer dependency "@staccx/theme@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm@6.3.0" has incorrect peer dependency "@staccx/base@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm@6.3.0" has incorrect peer dependency "@staccx/theme@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/aprila-theme@6.3.0" has incorrect peer dependency "@staccx/base@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/aprila-theme@6.3.0" has incorrect peer dependency "@staccx/theme@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/fundu-theme@6.3.0" has incorrect peer dependency "@staccx/base@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/fundu-theme@6.3.0" has incorrect peer dependency "@staccx/theme@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/nordea-theme@6.3.0" has incorrect peer dependency "@staccx/base@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/nordea-theme@6.3.0" has incorrect peer dependency "@staccx/theme@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/norefjell-theme@6.3.0" has incorrect peer dependency "@staccx/base@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/norefjell-theme@6.3.0" has incorrect peer dependency "@staccx/theme@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/stacc-theme@6.3.0" has incorrect peer dependency "@staccx/base@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/stacc-theme@6.3.0" has incorrect peer dependency "@staccx/theme@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/styrke-theme@6.3.0" has incorrect peer dependency "@staccx/base@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/styrke-theme@6.3.0" has incorrect peer dependency "@staccx/theme@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/volvo-theme@6.3.0" has incorrect peer dependency "@staccx/base@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/volvo-theme@6.3.0" has incorrect peer dependency "@staccx/theme@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/base@6.3.0" has incorrect peer dependency "@staccx/theme@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/i18n@6.3.0" has incorrect peer dependency "@staccx/base@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/i18n@6.3.0" has incorrect peer dependency "@staccx/theme@^4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/dealerpad > react-transition-group@2.4.0" has unmet peer dependency "react@>=15.0.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/dealerpad > react-transition-group@2.4.0" has unmet peer dependency "react-dom@>=15.0.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/dealerpad > react-web-notification@0.3.2" has unmet peer dependency "react@^0.14.3 || ^15.0.1 || ^16.2.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/developer-portal > react-router-hash-link@1.2.0" has unmet peer dependency "react@>=15".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/developer-portal > react-router-hash-link@1.2.0" has unmet peer dependency "react-router-dom@^4.1.1".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base@4.12.0" has incorrect peer dependency "@staccx/theme@^3.8.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base@4.12.0" has unmet peer dependency "prop-types@^15.5.4".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base@4.12.0" has unmet peer dependency "react@^0.14.9 || ^15.0.0 || ^16.0.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base@4.12.0" has unmet peer dependency "react-dom@^0.14.9 || ^15.0.0 || ^16.0.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base@4.12.0" has unmet peer dependency "styled-components@^3.2.6".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/theme@4.12.0" has unmet peer dependency "prop-types@^15.6.1".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/theme@4.12.0" has unmet peer dependency "styled-components@^3.2.6".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/base > babel-plugin-prismjs@1.0.2" has unmet peer dependency "prismjs@^1.0.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/rollup-config > rollup-plugin-babel@3.0.7" has unmet peer dependency "babel-core@6".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/soy > react-google-maps@9.4.5" has unmet peer dependency "@types/googlemaps@^3.0.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/soy > react-google-maps@9.4.5" has unmet peer dependency "@types/markerclustererplus@^2.1.29".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/soy > react-google-maps@9.4.5" has unmet peer dependency "@types/react@^15.0.0 || ^16.0.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base > @staccx/animations@4.20.1" has unmet peer dependency "react@^0.14.9 || ^15.0.0 || ^16.0.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base > @staccx/animations@4.20.1" has unmet peer dependency "react-dom@^0.14.9 || ^15.0.0 || ^16.0.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base > @staccx/animations@4.20.1" has unmet peer dependency "styled-components@^3.2.6".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base > @staccx/utils@4.23.0" has incorrect peer dependency "@staccx/base@4.0.1".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base > @staccx/utils@4.23.0" has incorrect peer dependency "@staccx/theme@4.0.1".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base > @staccx/utils@4.23.0" has unmet peer dependency "react@^0.14.9 || ^15.0.0 || ^16.0.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base > @staccx/utils@4.23.0" has unmet peer dependency "react-dom@^0.14.9 || ^15.0.0 || ^16.0.0".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/onboarding-pm > @staccx/base > @staccx/utils@4.23.0" has unmet peer dependency "styled-components@^3.2.6".
-14 error warning "workspace-aggregator-d4b93a04-6222-40da-ac2b-26328a6b83ff > @staccx/soy > @tedconf/react-show-more > eslint-plugin-flowtype@2.43.0" has unmet peer dependency "eslint@>=2.0.0".
-14 error error An unexpected error occurred: "could not find a copy of eslint to link in /Users/torgeir/projects/bento/node_modules/@staccx/savings-advisor/node_modules/@staccx/eslint-config/node_modules".
-14 error yarn install v1.9.4
-14 error [1/4] Resolving packages...
-14 error [2/4] Fetching packages...
-14 error [3/4] Linking dependencies...
-14 error info If you think this is a bug, please open a bug report with the information provided in "/Users/torgeir/projects/bento/yarn-error.log".
-14 error info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
-14 error
-14 error     at Promise.all.then.arr (/Users/torgeir/.config/yarn/global/node_modules/lerna/node_modules/execa/index.js:236:11)
+4 silly existsSync /Users/robin/Projects/staccx/bento/VERSION
+5 silly getUpdates
+6 info Checking for updated packages...
+7 silly hasTags
+8 verbose hasTags true
+9 info Comparing with HEAD.
+10 silly diffSinceIn HEAD packages/apps/bank-in-a-box
+11 silly diff
+12 silly diffSinceIn HEAD packages/apps/dealerpad
+13 silly diff
+14 silly diffSinceIn HEAD packages/apps/developer-portal
+15 silly diff
+16 silly diffSinceIn HEAD packages/apps/invoicing
+17 silly diff packages/apps/invoicing/package.json
+17 silly diff packages/apps/invoicing/src/components/InvoiceCalculation/InvoiceCalculation.js
+17 silly diff packages/apps/invoicing/src/components/InvoiceItems/InvoiceItems.Item.js
+17 silly diff packages/apps/invoicing/src/components/InvoiceItems/InvoiceItems.js
+17 silly diff packages/apps/invoicing/src/pages/CreateInvoice.js
+17 silly diff packages/apps/invoicing/src/theme/Theme.Lists.js
+17 silly diff packages/apps/invoicing/src/theme/Theme.js
+18 silly diffSinceIn HEAD packages/apps/loan-process
+19 silly diff
+20 silly diffSinceIn HEAD packages/apps/onboarding-pm
+21 silly diff
+22 silly diffSinceIn HEAD packages/apps/property-value
+23 silly diff
+24 silly diffSinceIn HEAD packages/apps/savings-advisor
+25 silly diff
+26 silly diffSinceIn HEAD packages/clients/Aprila/theme
+27 silly diff
+28 silly diffSinceIn HEAD packages/clients/fundu/theme
+29 silly diff
+30 silly diffSinceIn HEAD packages/clients/Nordea/theme
+31 silly diff
+32 silly diffSinceIn HEAD packages/clients/Norefjell/theme
+33 silly diff
+34 silly diffSinceIn HEAD packages/clients/Stacc/theme
+35 silly diff
+36 silly diffSinceIn HEAD packages/clients/Styrke/theme
+37 silly diff
+38 silly diffSinceIn HEAD packages/clients/Volvo/theme
+39 silly diff
+40 silly diffSinceIn HEAD packages/internal/animations
+41 silly diff
+42 silly diffSinceIn HEAD packages/internal/base
+43 silly diff
+44 silly diffSinceIn HEAD packages/internal/cli
+45 silly diff
+46 silly diffSinceIn HEAD packages/internal/code-generator
+47 silly diff
+48 silly diffSinceIn HEAD packages/internal/color
+49 silly diff
+50 silly diffSinceIn HEAD packages/internal/eslint-config
+51 silly diff
+52 silly diffSinceIn HEAD packages/internal/formatting
+53 silly diff
+54 silly diffSinceIn HEAD packages/internal/i18n
+55 silly diff
+56 silly diffSinceIn HEAD packages/internal/math
+57 silly diff
+58 silly diffSinceIn HEAD packages/internal/rollup-config
+59 silly diff
+60 silly diffSinceIn HEAD packages/internal/soy
+61 silly diff
+62 silly diffSinceIn HEAD packages/internal/styleguide
+63 silly diff
+64 silly diffSinceIn HEAD packages/internal/theme
+65 silly diff
+66 silly diffSinceIn HEAD packages/internal/utils
+67 silly diff
+68 verbose updated @staccx/invoicing
+69 info Checking for prereleased packages...
+70 silly collectDependents
+71 silly isPackageDependentOf @staccx/bank-in-a-box @staccx/invoicing
+72 silly isPackageDependentOf @staccx/animations @staccx/invoicing
+73 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+74 silly isPackageDependentOf @staccx/aprila-theme @staccx/invoicing
+75 silly isPackageDependentOf @staccx/base @staccx/invoicing
+76 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+77 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+78 silly isPackageDependentOf @staccx/animations @staccx/invoicing
+79 silly isPackageDependentOf @staccx/formatting @staccx/invoicing
+80 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+81 silly isPackageDependentOf @staccx/math @staccx/invoicing
+82 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+83 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+84 silly isPackageDependentOf @staccx/utils @staccx/invoicing
+85 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+86 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+87 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+88 silly isPackageDependentOf @staccx/base @staccx/invoicing
+89 silly isPackageDependentOf @staccx/formatting @staccx/invoicing
+90 silly isPackageDependentOf @staccx/norefjell-theme @staccx/invoicing
+91 silly isPackageDependentOf @staccx/base @staccx/invoicing
+92 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+93 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+94 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+95 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+96 silly isPackageDependentOf @staccx/dealerpad @staccx/invoicing
+97 silly isPackageDependentOf @staccx/rollup-config @staccx/invoicing
+98 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+99 silly isPackageDependentOf @staccx/base @staccx/invoicing
+100 silly isPackageDependentOf @staccx/nordea-theme @staccx/invoicing
+101 silly isPackageDependentOf @staccx/base @staccx/invoicing
+102 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+103 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+104 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+105 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+106 silly isPackageDependentOf @staccx/developer-portal @staccx/invoicing
+107 silly isPackageDependentOf @staccx/rollup-config @staccx/invoicing
+108 silly isPackageDependentOf @staccx/base @staccx/invoicing
+109 silly isPackageDependentOf @staccx/code-generator @staccx/invoicing
+110 silly isPackageDependentOf @staccx/fundu-theme @staccx/invoicing
+111 silly isPackageDependentOf @staccx/base @staccx/invoicing
+112 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+113 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+114 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+115 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+116 silly isPackageDependentOf @staccx/utils @staccx/invoicing
+117 silly isPackageDependentOf @staccx/invoicing @staccx/invoicing
+118 silly isPackageDependentOf @staccx/rollup-config @staccx/invoicing
+119 silly isPackageDependentOf @staccx/base @staccx/invoicing
+120 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+121 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+122 silly isPackageDependentOf @staccx/loan-process @staccx/invoicing
+123 silly isPackageDependentOf @staccx/base @staccx/invoicing
+124 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+125 silly isPackageDependentOf @staccx/formatting @staccx/invoicing
+126 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+127 silly isPackageDependentOf @staccx/utils @staccx/invoicing
+128 silly isPackageDependentOf @staccx/onboarding-pm @staccx/invoicing
+129 silly isPackageDependentOf @staccx/aprila-theme @staccx/invoicing
+130 silly isPackageDependentOf @staccx/norefjell-theme @staccx/invoicing
+131 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+132 silly isPackageDependentOf @staccx/property-value @staccx/invoicing
+133 silly isPackageDependentOf @staccx/base @staccx/invoicing
+134 silly isPackageDependentOf @staccx/formatting @staccx/invoicing
+135 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+136 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+137 silly isPackageDependentOf @staccx/savings-advisor @staccx/invoicing
+138 silly isPackageDependentOf @staccx/eslint-config @staccx/invoicing
+139 silly isPackageDependentOf @staccx/animations @staccx/invoicing
+140 silly isPackageDependentOf @staccx/base @staccx/invoicing
+141 silly isPackageDependentOf @staccx/formatting @staccx/invoicing
+142 silly isPackageDependentOf @staccx/math @staccx/invoicing
+143 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+144 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+145 silly isPackageDependentOf @staccx/aprila-theme @staccx/invoicing
+146 silly isPackageDependentOf @staccx/fundu-theme @staccx/invoicing
+147 silly isPackageDependentOf @staccx/nordea-theme @staccx/invoicing
+148 silly isPackageDependentOf @staccx/norefjell-theme @staccx/invoicing
+149 silly isPackageDependentOf @staccx/stacc-theme @staccx/invoicing
+150 silly isPackageDependentOf @staccx/base @staccx/invoicing
+151 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+152 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+153 silly isPackageDependentOf @staccx/styrke-theme @staccx/invoicing
+154 silly isPackageDependentOf @staccx/base @staccx/invoicing
+155 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+156 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+157 silly isPackageDependentOf @staccx/volvo-theme @staccx/invoicing
+158 silly isPackageDependentOf @staccx/base @staccx/invoicing
+159 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+160 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+161 silly isPackageDependentOf @staccx/animations @staccx/invoicing
+162 silly isPackageDependentOf @staccx/base @staccx/invoicing
+163 silly isPackageDependentOf @staccx/cli-x @staccx/invoicing
+164 silly isPackageDependentOf @staccx/code-generator @staccx/invoicing
+165 silly isPackageDependentOf @staccx/color @staccx/invoicing
+166 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+167 silly isPackageDependentOf @staccx/eslint-config @staccx/invoicing
+168 silly isPackageDependentOf @staccx/formatting @staccx/invoicing
+169 silly isPackageDependentOf @staccx/i18n @staccx/invoicing
+170 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+171 silly isPackageDependentOf @staccx/math @staccx/invoicing
+172 silly isPackageDependentOf @staccx/rollup-config @staccx/invoicing
+173 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+174 silly isPackageDependentOf @staccx/styleguide @staccx/invoicing
+175 silly isPackageDependentOf @staccx/aprila-theme @staccx/invoicing
+176 silly isPackageDependentOf @staccx/base @staccx/invoicing
+177 silly isPackageDependentOf @staccx/nordea-theme @staccx/invoicing
+178 silly isPackageDependentOf @staccx/savings-advisor @staccx/invoicing
+179 silly isPackageDependentOf @staccx/soy @staccx/invoicing
+180 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+181 silly isPackageDependentOf @staccx/theme @staccx/invoicing
+182 silly isPackageDependentOf @staccx/utils @staccx/invoicing
+183 silly collectUpdates
+184 verbose has filtered update @staccx/invoicing
+185 silly initialize attempt
+186 silly initialize success
+187 silly execute attempt
+188 silly runScriptInPackageStreaming [ 'precommit', [], '@staccx/invoicing' ]
+189 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/invoicing' }
+190 error execute callback with error
+191 error Error: Command failed: yarn run precommit
+191 error Config could not be found.
+191 error
+191 error Please make sure you have created it correctly.
+191 error See https://github.com/okonet/lint-staged#configuration.
+191 error error Command failed with exit code 1.
+191 error
+191 error yarn run v1.6.0
+191 error $ lint-staged
+191 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+191 error
+191 error     at Promise.all.then.arr (/Users/robin/Projects/staccx/bento/node_modules/lerna/node_modules/execa/index.js:236:11)
+191 error     at <anonymous>
