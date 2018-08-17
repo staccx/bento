@@ -7,7 +7,8 @@ import {
   Layout,
   LayoutItem,
   Button,
-  ItemGroup
+  ItemGroup,
+  Loading
 } from "@staccx/base"
 import { ThemeComponent } from "@staccx/theme"
 import getLoanType from "../helpers/getLoanType"
