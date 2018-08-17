@@ -14,9 +14,8 @@ const ChatLogic = ({ messages, caseNumber }) => (
           <ChatBubble
             key={message.createdAt}
             body={message.text}
-            time={message.createdAt}
+            dateTime={message.createdAt}
             from={message.name}
-            date={message.createdAt}
             currentUser={message.senderId === userStore.user.id}
             index={index}
           />
