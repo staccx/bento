@@ -8,10 +8,10 @@ import caseStore from "../../data/store/caseStore"
 import { observer } from "mobx-react"
 
 const CasesList = observer(({ compact }) => {
-  if (caseStore.loadingCasesList) {
+  if (caseStore.isLoading) {
+    console.log("still loading")
     return <Loading />
   }
-  console.log(caseStore.cases)
 
   return (
     <Box size="flush">
@@ -44,10 +44,12 @@ const CasesList = observer(({ compact }) => {
                   )}
 
                 <div>
-                  {!compact && (
+                  {!compact && caseStore.isLoading ? (
+                    <Loading />
+                  ) : (
                     <SpacingLeft>
                       <CasesProgress
-                        progress={item.status}
+                        progress={item.progress}
                         max={4}
                         inverted={index % 2}
                       />

@@ -30,10 +30,9 @@ class Case extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentTab: "documentation" // Only applies to small screens
+      currentTab: "documentation", // Only applies to small screens
+      currentCase: props.match.params.caseId
     }
-
-    caseStore.setCurrentCase(props.match.params.caseId)
   }
 
   handleChangeTab(value) {
@@ -45,8 +44,9 @@ class Case extends Component {
   render() {
     const { history, location } = this.props
 
-    const isLoading = caseStore.loadingCaseDetails
-    const currentCase = isLoading ? emptyCase : caseStore.currentCase
+    const currentCase = caseStore.isLoading
+      ? emptyCase
+      : caseStore.getCase(this.state.currentCase)
 
     const customerName =
       currentCase.customers[0].firstName +
@@ -101,7 +101,7 @@ class Case extends Component {
             </Paragraph>
             <CaseProgressLarge
               hasRejectedDocuments={currentCase.hasRejectedDocuments}
-              progress={currentCase.status}
+              progress={currentCase.progress}
               max={4}
             />
           </Layout>
@@ -150,7 +150,7 @@ class Case extends Component {
           />
         </LayoutItem>
 
-        {caseStore.loadingCaseDetails ? (
+        {caseStore.isLoading ? (
           <Loading />
         ) : (
           <LayoutItem
