@@ -10,7 +10,16 @@ class InvoiceItems extends Component {
     super(props)
 
     this.state = {
-      lines: [{ id: 0, product: null, price: null, number: 1, amount: null }] // FIXME: Improve this with data for each line-item
+      lines: [
+        {
+          id: 0,
+          product: null,
+          price: null,
+          vatRate: 0.25,
+          number: 1,
+          amount: null
+        }
+      ] // FIXME: Improve this with data for each line-item
     }
     this.addLine = this.addLine.bind(this)
     this.generateUniqueKey = this.generateUniqueKey.bind(this)
@@ -18,6 +27,23 @@ class InvoiceItems extends Component {
     this.handlePriceChange = this.handlePriceChange.bind(this)
     this.handleNumberChange = this.handleNumberChange.bind(this)
     this.getAmount = this.getAmount.bind(this)
+    this.calculateTotal = this.calculateTotal.bind(this)
+  }
+
+  calculateTotal(lines) {
+    const net = lines.reduce((accumulator, line) => {
+      return accumulator + line.price * line.number
+    }, 0)
+    const vat = lines.reduce((accumulator, line) => {
+      const netAmount = line.price ? parseFloat(line.price) * line.number : 0
+      return accumulator + netAmount * line.vatRate
+    }, 0)
+
+    return {
+      net,
+      vat,
+      discount: 0
+    }
   }
 
   generateUniqueKey(lines) {
@@ -34,7 +60,8 @@ class InvoiceItems extends Component {
           product: null,
           price: null,
           number: 1,
-          amount: null
+          amount: null,
+          vatRate: 0.25
         }
       ]
     })
@@ -49,14 +76,16 @@ class InvoiceItems extends Component {
   handlePriceChange(id, event) {
     const value = event.target.value
     let items = [...this.state.lines]
-    items.map(item => item.id === id && (item.price = value))
+    items.map(
+      item => item.id === id && (item.price = parseFloat(value).toFixed(2))
+    )
     this.setState({ lines: items })
   }
 
   handleNumberChange(id, event) {
     const value = event.target.value
     let items = [...this.state.lines]
-    items.map(item => item.id === id && (item.number = value))
+    items.map(item => item.id === id && (item.number = parseInt(value, 10)))
     this.setState({ lines: items })
   }
 
@@ -64,9 +93,9 @@ class InvoiceItems extends Component {
     const currentItem = this.state.lines.filter(item => item.id === id)
 
     return !isNaN(
-      parseInt(currentItem[0].price) * parseInt(currentItem[0].number)
+      parseFloat(currentItem[0].price) * parseFloat(currentItem[0].number)
     )
-      ? parseInt(currentItem[0].price) * parseInt(currentItem[0].number)
+      ? parseFloat(currentItem[0].price) * parseFloat(currentItem[0].number)
       : 0
   }
 
@@ -102,7 +131,7 @@ class InvoiceItems extends Component {
           <div>
             <Button onClick={() => this.addLine()}>Legg til</Button>
           </div>
-          <InvoiceCalculation />
+          <InvoiceCalculation sums={this.calculateTotal(this.state.lines)} />
         </Footer>
       </div>
     )

@@ -13,15 +13,6 @@ import styled from "styled-components"
 import InvoiceItems from "../components/InvoiceItems/InvoiceItems"
 
 class CreateInvoice extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      baseVat: 0.25,
-      baseDiscount: 0,
-      items: []
-    }
-  }
   render() {
     return (
       <Wrapper>

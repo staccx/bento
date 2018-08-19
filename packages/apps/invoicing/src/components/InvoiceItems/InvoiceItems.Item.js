@@ -1,6 +1,6 @@
 import React from "react"
-import { Input, CurrencyInput, Select } from "@staccx/base"
-import { color } from "@staccx/theme"
+import { Input, Select } from "@staccx/base"
+import { color, spacing } from "@staccx/theme"
 import styled from "styled-components"
 
 const InvoiceItemsItem = ({
@@ -42,7 +42,7 @@ const InvoiceItemsItem = ({
         variant="invoiceLine"
       />
     </td>
-    <td>{amount}</td>
+    <td>{parseFloat(amount).toFixed(2)}</td>
   </TableRow>
 )
 
@@ -68,6 +68,11 @@ const TableRow = styled.tr`
 
   > td:not(:first-child) {
     width: 140px;
+  }
+
+  > td:last-child {
+    text-align: right;
+    padding-right: ${spacing.small};
   }
 `
 
