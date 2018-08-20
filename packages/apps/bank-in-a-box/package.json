@@ -1,14 +1,14 @@
 {
   "name": "@staccx/bank-in-a-box",
-  "version": "6.5.1",
+  "version": "6.6.0",
   "private": true,
   "license": "UNLICENSED",
   "dependencies": {
     "@staccx/animations": "^6.5.1",
-    "@staccx/aprila-theme": "^6.5.1",
-    "@staccx/base": "^6.5.1",
+    "@staccx/aprila-theme": "^6.6.0",
+    "@staccx/base": "^6.6.0",
     "@staccx/formatting": "^6.5.1",
-    "@staccx/norefjell-theme": "^6.5.1",
+    "@staccx/norefjell-theme": "^6.6.0",
     "@staccx/soy": "^6.5.1",
     "@staccx/theme": "^6.5.1"
   },

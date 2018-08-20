@@ -1,6 +1,6 @@
 {
   "name": "@staccx/nordea-theme",
-  "version": "6.5.1",
+  "version": "6.6.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -10,7 +10,7 @@
     "@staccx/theme": "^4"
   },
   "devDependencies": {
-    "@staccx/base": "^6.5.1",
+    "@staccx/base": "^6.6.0",
     "@staccx/theme": "^6.5.1"
   },
   "files": [
