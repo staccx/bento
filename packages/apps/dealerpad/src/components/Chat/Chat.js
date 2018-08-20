@@ -10,6 +10,7 @@ class Chat extends React.Component {
     this.state = { message: "" }
     this.handleInput = this.handleInput.bind(this)
     this.sendMessage = this.sendMessage.bind(this)
+    this.appendText = this.appendText.bind(this)
   }
 
   sendMessage() {
@@ -24,10 +25,35 @@ class Chat extends React.Component {
     })
   }
 
+  appendText(text) {
+    return () =>
+      this.setState({
+        message: this.state.message + text
+      })
+  }
+
+  scrollToBottom() {
+    this.messagesEnd.scrollIntoView({ behavior: "smooth" })
+  }
+
+  componentDidUpdate(){
+    this.scrollToBottom()
+  }
+
+  componentDidMount(){
+    this.scrollToBottom()
+  }
+
   render() {
     return (
       <Box variant="chat">
-        <ChatWrapper>{this.props.children}</ChatWrapper>
+        <ChatWrapper>
+          {this.props.children}
+          <div
+            style={{ float: "left", clear: "both" }}
+            ref={e => (this.messagesEnd = e)}
+          />
+        </ChatWrapper>
         <ChatInput>
           <Input
             onChange={this.handleInput}
@@ -37,17 +63,17 @@ class Chat extends React.Component {
             value={this.state.message}
           />
           <Emojis>
-            <Button variant="emoji">
+            <Button onClick={this.appendText("👍")} variant="emoji">
               <span role="img" aria-label="thumbs up">
                 👍
               </span>
             </Button>
-            <Button variant="emoji">
+            <Button onClick={this.appendText("🤞")} variant="emoji">
               <span role="img" aria-label="cross fingers">
                 🤞
               </span>
             </Button>
-            <Button variant="emoji">
+            <Button onClick={this.appendText("😊")} variant="emoji">
               <span role="img" aria-label="smile">
                 😊
               </span>

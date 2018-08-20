@@ -30,9 +30,10 @@ class Case extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentTab: "documentation", // Only applies to small screens
-      currentCase: props.match.params.caseId
+      currentTab: "documentation" // Only applies to small screens
     }
+
+    caseStore.currentCase = props.match.params.caseId
   }
 
   handleChangeTab(value) {
@@ -46,7 +47,7 @@ class Case extends Component {
 
     const currentCase = caseStore.isLoading
       ? emptyCase
-      : caseStore.getCase(this.state.currentCase)
+      : caseStore.currentCase
 
     const customerName =
       currentCase.customers[0].firstName +

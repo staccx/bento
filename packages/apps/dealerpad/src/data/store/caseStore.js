@@ -11,16 +11,24 @@ import fileStatus from "../fileStatus"
 
 class CaseStore {
   @observable cases = null
-  @observable caseDetails = []
+  @observable caseDetails = {}
   @observable loading = -1
+  @observable currentCaseId = null
 
   @computed
   get isLoading() {
     return this.loading > 0 || this.loading === -1
   }
 
-  getCase(caseId) {
-    return this.caseDetails[caseId]
+  @computed
+  get currentCase() {
+    console.log("returning case with id", this.currentCaseId, this.isLoading)
+    return this.caseDetails[this.currentCaseId]
+  }
+
+  set currentCase(caseId) {
+    console.log("setting current case id", caseId)
+    this.currentCaseId = caseId
   }
 
   @action
