@@ -45,9 +45,7 @@ class Case extends Component {
   render() {
     const { history, location } = this.props
 
-    const currentCase = caseStore.isLoading
-      ? emptyCase
-      : caseStore.currentCase
+    const currentCase = caseStore.isLoading ? emptyCase : caseStore.currentCase
 
     const customerName =
       currentCase.customers[0].firstName +
