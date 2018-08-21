@@ -10,7 +10,7 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "post.js"
+      "path": "article.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -19,6 +19,10 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "blockContent.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "socialLink.js"
     }
   ]
 }

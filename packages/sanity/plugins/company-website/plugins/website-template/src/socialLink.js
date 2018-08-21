@@ -1,6 +1,6 @@
 export default {
-  name: "category2",
-  title: "Category2",
+  name: "socialLink",
+  title: "Social Media Link",
   type: "document",
   fields: [
     {
@@ -9,9 +9,9 @@ export default {
       type: "string"
     },
     {
-      name: "description",
-      title: "Description",
-      type: "text"
+      name: "icon",
+      title: "Icon",
+      type: "image"
     }
   ]
 }

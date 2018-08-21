@@ -9,6 +9,29 @@ export default {
       type: "string"
     },
     {
+      name: "title",
+      title: "Title",
+      type: "string"
+    },
+    {
+      name: "phone",
+      title: "Phone",
+      type: "string",
+      validation: Rule =>
+        Rule.custom(val => {
+          if (/(0047|\+47|47)?\d{8}/.test(val)) {
+            return true
+          }
+          return "Must be norwegian number?"
+        }).required()
+    },
+    {
+      name: "email",
+      title: "Email",
+      type: "string",
+      validation: Rule => Rule.email("Must be email").required()
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -35,6 +58,30 @@ export default {
           type: "block",
           styles: [{ title: "Normal", value: "normal" }],
           lists: []
+        }
+      ]
+    },
+    {
+      name: "socialLinks",
+      title: "Social Media Links",
+      type: "array",
+      of: [
+        {
+          title: "Link",
+          type: "object",
+          fields: [
+            {
+              name: "url",
+              title: "url",
+              type: "url"
+            },
+            {
+              name: "type",
+              title: "type",
+              type: "reference",
+              to: [{ type: "socialLink" }]
+            }
+          ]
         }
       ]
     }

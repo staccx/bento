@@ -1,6 +1,6 @@
 export default {
-  name: "post",
-  title: "Post",
+  name: "article",
+  title: "Article",
   type: "document",
   fields: [
     {
@@ -36,6 +36,14 @@ export default {
       title: "Categories",
       type: "array",
       of: [{ type: "reference", to: { type: "category" } }]
+    },
+    {
+      name: "publishAsNews",
+      title: "Should be publish?",
+      description:
+        "If left false, will not appear in 'news' but may be referenced in other lists with articles",
+      validation: Rule => Rule.required(),
+      type: "boolean"
     },
     {
       name: "publishedAt",
