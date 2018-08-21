@@ -36,11 +36,11 @@ class Chat extends React.Component {
     this.messagesEnd.scrollIntoView({ behavior: "smooth" })
   }
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.scrollToBottom()
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.scrollToBottom()
   }
 
