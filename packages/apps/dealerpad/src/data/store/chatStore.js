@@ -10,7 +10,7 @@ class ChatStore {
   @action
   sendMessage(message) {
     return chatApi.sendMessage(
-      caseStore.currentCase.id,
+      caseStore.getCurrentCase().id,
       userStore.user.name,
       userStore.user.id,
       message
@@ -38,10 +38,8 @@ class ChatStore {
     autorun(() => {
       if (caseStore.currentCase) {
         if (this.currentRoom) {
-          console.log("leaving room", this.currentRoom)
           this.leaveRoom(this.currentRoom)
         }
-        console.log("joining room", caseStore.currentCase.id)
         this.joinRoom(caseStore.currentCase.id)
         this.currentRoom = caseStore.currentCase.id
       }

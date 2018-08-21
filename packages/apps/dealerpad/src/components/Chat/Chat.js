@@ -7,28 +7,29 @@ import chatStore from "../../data/store/chatStore"
 class Chat extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { message: "" }
+    this.state = { message: "", sendDisabled: true }
     this.handleInput = this.handleInput.bind(this)
     this.sendMessage = this.sendMessage.bind(this)
     this.appendText = this.appendText.bind(this)
   }
 
   sendMessage() {
-    console.log("sending message", this.state.message)
     chatStore.sendMessage(this.state.message)
-    this.setState({ message: "" })
+    this.setState({ message: "", sendDisabled: true })
   }
 
   handleInput(e) {
     this.setState({
-      message: e.target.value
+      message: e.target.value,
+      sendDisabled: e.target.value.length === 0
     })
   }
 
   appendText(text) {
     return () =>
       this.setState({
-        message: this.state.message + text
+        message: this.state.message + text,
+        sendDisabled: false
       })
   }
 
@@ -79,7 +80,7 @@ class Chat extends React.Component {
               </span>
             </Button>
           </Emojis>
-          <Button onClick={this.sendMessage} variant="chat">
+          <Button disabled={this.state.sendDisabled} onClick={this.sendMessage} variant="chat">
             Send
           </Button>
         </ChatInput>

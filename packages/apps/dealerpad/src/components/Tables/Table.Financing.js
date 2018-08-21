@@ -27,7 +27,11 @@ const FinancingTable = ({ caseFinancing }) => {
       <Table
         data={data}
         blacklist={item => item === "label"}
-        renderHeader={({ item }) => <th colSpan="2">Finansiering</th>}
+        renderHeader={({ item }) => (
+          <th key={item.title} colSpan="2">
+            Finansiering
+          </th>
+        )}
       >
         {({ item }) => (
           <React.Fragment key={getFinancingLabel(item.label)}>

@@ -4,14 +4,13 @@ class Chat {
   socket = null
 
   sendMessage(roomName, userName, userId, message) {
-    console.log("sending message", roomName, userName, userId, message)
     return this.socket.emit(
       "message",
       roomName,
       userName,
       userId,
       message,
-      data => console.log
+      data => data
     )
   }
 
