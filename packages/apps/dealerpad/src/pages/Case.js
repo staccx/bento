@@ -45,7 +45,9 @@ class Case extends Component {
   render() {
     const { history, location } = this.props
 
-    const currentCase = caseStore.isLoading ? emptyCase : caseStore.currentCase
+    const currentCase = caseStore.currentCase
+      ? caseStore.currentCase
+      : emptyCase
 
     const customerName =
       currentCase.customers[0].firstName +
@@ -155,11 +157,11 @@ class Case extends Component {
           <Heading level="2" variant="subtle">
             Dokumentasjon
           </Heading>
-          {caseStore.isLoading ? (
+          {!caseStore.currentCase ? (
             <Loading />
           ) : (
             <div>
-              {currentCase.documents.map(document => (
+              {caseStore.currentCase.documents.map(document => (
                 <Documentation
                   label={document.name}
                   status={document.status}

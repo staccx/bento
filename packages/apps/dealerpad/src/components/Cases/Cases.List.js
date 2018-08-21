@@ -8,70 +8,75 @@ import caseStore from "../../data/store/caseStore"
 import { observer } from "mobx-react"
 
 const CasesList = observer(({ compact }) => {
-  if (caseStore.isLoading) {
-    console.log("still loading")
+  if (!caseStore.cases) {
     return <Loading />
   }
 
   return (
     <Box size="flush">
       <List variant="casesList">
-        {caseStore.cases.map((item, index) => (
-          <li key={item.id}>
-            <Link to={`sales/${item.id}`}>
-              <CaseContainer>
-                <div>
-                  <Heading
-                    level={3}
-                    variant="caselist"
-                    attention={
-                      item.messages || (item.messages && item.messages.length)
-                    }
-                  >
-                    {item.customers[0].firstName} {item.customers[0].lastName}
-                  </Heading>
-                  <Text variant="legalese">
-                    {item.vehicle.type} {item.vehicle.make} {item.vehicle.model}
-                    <Text variant="subtle"> {item.applicationId}</Text>
-                  </Text>
-                </div>
-                {item.messages &&
-                  !compact && (
-                    <NewBadge
-                      variant="casesList"
-                      number={item.messages.length}
-                    />
-                  )}
+        {caseStore.cases.map((item, index) => {
+          const caseItem = caseStore.getCase(item.id)
 
-                <div>
-                  {!compact && caseStore.isLoading ? (
-                    <Loading />
-                  ) : (
-                    <SpacingLeft>
-                      <CasesProgress
-                        progress={item.progress}
-                        max={4}
-                        inverted={index % 2}
-                      />
-                    </SpacingLeft>
-                  )}
+          return (
+            <li key={item.id}>
+              <Link to={`sales/${item.id}`}>
+                <CaseContainer>
+                  <div>
+                    <Heading
+                      level={3}
+                      variant="caselist"
+                      attention={
+                        item.messages || (item.messages && item.messages.length)
+                      }
+                    >
+                      {item.customers[0].firstName} {item.customers[0].lastName}
+                    </Heading>
+                    <Text variant="legalese">
+                      {item.vehicle.type} {item.vehicle.make}{" "}
+                      {item.vehicle.model}
+                      <Text variant="subtle"> {item.applicationId}</Text>
+                    </Text>
+                  </div>
                   {item.messages &&
-                    compact && (
-                      <SpacingLeft>
-                        <NewBadge
-                          variant="casesList"
-                          number={item.messages.length}
-                        />
-                      </SpacingLeft>
+                    !compact && (
+                      <NewBadge
+                        variant="casesList"
+                        number={item.messages.length}
+                      />
                     )}
-                  <IconWrapper>
-                    <ThemeComponent tagName="ArrowRight" />
-                  </IconWrapper>
-                </div>
-              </CaseContainer>
-            </Link>
-          </li>
-        ))}
+
+                  <div>
+                    {!compact &&
+                      (!caseItem ? (
+                        <Loading />
+                      ) : (
+                        <SpacingLeft>
+                          <CasesProgress
+                            progress={caseItem.progress}
+                            max={4}
+                            inverted={index % 2}
+                          />
+                        </SpacingLeft>
+                      ))}
+                    {item.messages &&
+                      compact && (
+                        <SpacingLeft>
+                          <NewBadge
+                            variant="casesList"
+                            number={item.messages.length}
+                          />
+                        </SpacingLeft>
+                      )}
+                    <IconWrapper>
+                      <ThemeComponent tagName="ArrowRight" />
+                    </IconWrapper>
+                  </div>
+                </CaseContainer>
+              </Link>
+            </li>
+          )
+        })}
       </List>
     </Box>
   )

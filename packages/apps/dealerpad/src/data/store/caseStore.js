@@ -12,22 +12,18 @@ import fileStatus from "../fileStatus"
 class CaseStore {
   @observable cases = null
   @observable caseDetails = {}
-  @observable loading = -1
   @observable currentCaseId = null
 
-  @computed
-  get isLoading() {
-    return this.loading > 0 || this.loading === -1
+  getCase(caseId) {
+    return this.caseDetails[caseId]
   }
 
   @computed
   get currentCase() {
-    console.log("returning case with id", this.currentCaseId, this.isLoading)
     return this.caseDetails[this.currentCaseId]
   }
 
   set currentCase(caseId) {
-    console.log("setting current case id", caseId)
     this.currentCaseId = caseId
   }
 
@@ -35,12 +31,19 @@ class CaseStore {
   async initialize() {
     this.cases = await fetchCases()
     this.loading = this.cases.length
-    this.cases.forEach(this.addCaseDetails, this) // async'ly fetch details to each case
+    this.cases.forEach(this.refreshCaseDetails, this) // async'ly add details to each case
   }
 
   @action
-  async addCaseDetails(caseItem) {
-    const caseId = caseItem.id
+  refreshCurrentCase() {
+    const caseId = this.currentCaseId
+    this.currentCase = null
+    this.refreshCaseDetails({ id: caseId })
+    this.currentCase = caseId
+  }
+
+  @action
+  async refreshCaseDetails({ id: caseId }) {
     const details = await fetchCaseDetails(caseId)
     const tasks = await fetchTasks(caseId)
 
@@ -57,9 +60,21 @@ class CaseStore {
 
     let progress = 1
 
-    if (documents.some(doc => doc.status === fileStatus.pending)) {
+    if (
+      documents.some(
+        doc =>
+          doc.status === fileStatus.pending ||
+          doc.status === fileStatus.rejected
+      )
+    ) {
       progress = 2
-    } else if (documents.every(doc => doc.status === fileStatus.uploaded)) {
+    } else if (
+      documents.every(
+        doc =>
+          doc.status === fileStatus.uploaded ||
+          doc.status === fileStatus.approved
+      )
+    ) {
       progress = 3
     } else if (documents.every(doc => doc.status === fileStatus.approved)) {
       progress = 4
@@ -78,20 +93,19 @@ class CaseStore {
       documents
     }
 
-    caseItem.progress = progress
-
     this.loading--
   }
 
   documentSubmitter(document) {
     return async event => {
+      document.status = fileStatus.uploading
       const file = event.target.files[0]
       const flowId = document.task.flowId
       const taskId = document.task.taskId
 
       return uploadFile(file)
         .then(([{ id }]) => setTaskCompleted(flowId, taskId, id))
-        .then(res => res.data)
+        .then(res => this.refreshCurrentCase())
         .catch(console.error)
     }
   }

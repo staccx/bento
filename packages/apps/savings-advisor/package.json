@@ -1,16 +1,16 @@
 {
   "name": "@staccx/savings-advisor",
-  "version": "6.7.0",
+  "version": "7.0.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@staccx/animations": "^6.7.0",
-    "@staccx/base": "^6.7.0",
-    "@staccx/formatting": "^6.7.0",
-    "@staccx/math": "^6.7.0",
-    "@staccx/soy": "^6.7.0",
-    "@staccx/theme": "^6.7.0"
+    "@staccx/animations": "^7.0.0",
+    "@staccx/base": "^7.0.0",
+    "@staccx/formatting": "^7.0.0",
+    "@staccx/math": "^7.0.0",
+    "@staccx/soy": "^7.0.0",
+    "@staccx/theme": "^7.0.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -23,7 +23,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/eslint-config": "^6.3.0"
+    "@staccx/eslint-config": "^7.0.0"
   },
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"

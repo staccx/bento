@@ -6,21 +6,23 @@ import DocumentationIcon from "./DocumentationIcon"
 import DocumentationActions from "./DocumentationActions"
 import fileStatus from "../../data/fileStatus"
 
-const Documentation = ({ document, label, status, history, location }) => (
-  <Box variant="file">
-    <DocumentationIcon status={status} />
-    <Label>
-      {label}
-      {status === fileStatus.rejected && <Rejected>Avvist</Rejected>}
-    </Label>
-    <DocumentationActions
-      status={status}
-      history={history}
-      location={location}
-      document={document}
-    />
-  </Box>
-)
+const Documentation = ({ document, label, status, history, location }) => {
+  return (
+    <Box variant="file">
+      <DocumentationIcon status={status} />
+      <Label>
+        {label}
+        {status === fileStatus.rejected && <Rejected>Avvist</Rejected>}
+      </Label>
+      <DocumentationActions
+        status={status}
+        history={history}
+        location={location}
+        document={document}
+      />
+    </Box>
+  )
+}
 
 const Label = styled.div`
   line-height: 1;

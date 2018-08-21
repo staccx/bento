@@ -31,7 +31,11 @@ const ObjectTable = ({ caseObject }) => {
       <Table
         data={data}
         blacklist={item => item === "label"}
-        renderHeader={({ item }) => <th colSpan="2">Objekt</th>}
+        renderHeader={({ item }) => (
+          <th key={item.title} colSpan="2">
+            Objekt
+          </th>
+        )}
       >
         {({ item }) => (
           <React.Fragment>
