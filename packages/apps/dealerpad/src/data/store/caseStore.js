@@ -12,12 +12,7 @@ import fileStatus from "../fileStatus"
 class CaseStore {
   @observable cases = null
   @observable caseDetails = {}
-  @observable loading = -1
   @observable currentCaseId = null
-
-  isLoading() {
-    return this.loading > 0 || this.loading === -1
-  }
 
   getCase(caseId) {
     return this.caseDetails[caseId]
@@ -103,6 +98,7 @@ class CaseStore {
 
   documentSubmitter(document) {
     return async event => {
+      document.status = fileStatus.uploading
       const file = event.target.files[0]
       const flowId = document.task.flowId
       const taskId = document.task.taskId
