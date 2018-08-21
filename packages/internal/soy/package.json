@@ -1,6 +1,6 @@
 {
   "name": "@staccx/soy",
-  "version": "6.5.1",
+  "version": "6.7.0",
   "description": "I depend, therefore I am (Common dependencies for Stacc X)",
   "license": "UNLICENSED",
   "dependencies": {
@@ -21,7 +21,7 @@
     "color": "^3.0.0",
     "copy-to-clipboard": "^3.0.8",
     "countries-list": "^2.3.2",
-    "date-fns": "^v2.0.0-alpha.11",
+    "date-fns": "^v2.0.0-alpha.16",
     "downshift": "^1.28.0",
     "easing-utils": "^0.0.7",
     "es6-promise": "^4.2.4",
