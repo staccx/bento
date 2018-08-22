@@ -1,0 +1,24 @@
+{
+  "root": true,
+  "project": {
+    "name": "company-website-template"
+  },
+  "api": {
+    "projectId": "8j24leyc",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "website-template"
+  ],
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.js"
+    }
+  ]
+}

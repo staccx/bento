@@ -80,7 +80,11 @@ class Chat extends React.Component {
               </span>
             </Button>
           </Emojis>
-          <Button disabled={this.state.sendDisabled} onClick={this.sendMessage} variant="chat">
+          <Button
+            disabled={this.state.sendDisabled}
+            onClick={this.sendMessage}
+            variant="chat"
+          >
             Send
           </Button>
         </ChatInput>
