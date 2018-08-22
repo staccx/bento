@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Heading, Divider } from "@staccx/base"
+import { Heading, Divider, Flag } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 import IconCheck from "../Icons/IconCheck"
 
@@ -16,28 +16,44 @@ const FeatureList = ({ heading, callToAction }) => (
     </DividerContainer>
     <Features>
       <li>
-        <IconCheck /> Account creation
+        <Flag tiny top img={<IconCheck />}>
+          Account creation
+        </Flag>
       </li>
       <li>
-        <IconCheck /> Commisions & subversions
+        <Flag tiny top img={<IconCheck />}>
+          Commisions & subversions
+        </Flag>
       </li>
       <li>
-        <IconCheck /> Third-party products
+        <Flag tiny top img={<IconCheck />}>
+          Third-party products
+        </Flag>
       </li>
       <li>
-        <IconCheck /> Account management
+        <Flag tiny top img={<IconCheck />}>
+          Account management
+        </Flag>
       </li>
       <li>
-        <IconCheck /> Billing & Collection
+        <Flag tiny top img={<IconCheck />}>
+          Billing & Collection
+        </Flag>
       </li>
       <li>
-        <IconCheck /> Insurance
+        <Flag tiny top img={<IconCheck />}>
+          Insurance
+        </Flag>
       </li>
       <li>
-        <IconCheck /> ClientContainer management
+        <Flag tiny top img={<IconCheck />}>
+          ClientContainer management
+        </Flag>
       </li>
       <li>
-        <IconCheck /> Reporting & analysis
+        <Flag tiny top img={<IconCheck />}>
+          Reporting & analysis
+        </Flag>
       </li>
     </Features>
   </Container>
