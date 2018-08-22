@@ -10,7 +10,7 @@ class ChatStore {
   @action
   sendMessage(message) {
     return chatApi.sendMessage(
-      caseStore.getCurrentCase().id,
+      caseStore.currentCase.id,
       userStore.user.name,
       userStore.user.id,
       message

@@ -35,6 +35,11 @@
       "target": "https://api.nordea-finans.staccflow.com/",
       "secure": false,
       "changeOrigin": true
+    },
+    "/getUnreads": {
+      "target": "https://chat.nordea-finans.staccflow.com/",
+      "secure": false,
+      "changeOrigin": true
     }
   }
 }

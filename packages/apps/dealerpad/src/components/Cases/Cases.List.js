@@ -27,7 +27,7 @@ const CasesList = observer(({ compact }) => {
                       level={3}
                       variant="caselist"
                       attention={
-                        item.messages || (item.messages && item.messages.length)
+                        caseItem ? caseItem.unreadMessages.length > 0 : false
                       }
                     >
                       {item.customers[0].firstName} {item.customers[0].lastName}
