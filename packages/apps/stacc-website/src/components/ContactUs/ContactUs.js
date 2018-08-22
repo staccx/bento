@@ -17,9 +17,9 @@ const ContactUs = ({ person }) => (
             </div>
           </Layout>
         </Body>
-        <div>
+        <ImgContainer>
           <Image src={person.img} alt="" />{" "}
-        </div>
+        </ImgContainer>
       </Inner>
     </Wrapper>
   </Container>
@@ -48,6 +48,10 @@ const Image = styled.img`
 
 const Body = styled.div`
   margin-left: ${spacing.large};
+`
+
+const ImgContainer = styled.div`
+  align-self: flex-end;
 `
 
 export default ContactUs

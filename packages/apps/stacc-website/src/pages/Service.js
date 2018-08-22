@@ -36,7 +36,7 @@ const Service = () => (
           name: "Geir Nordrik",
           phone: "+47 123 12 123",
           email: "geirn@stacc.com",
-          img: "/img/geirn.jpg"
+          img: "/img/geirn.png"
         }}
       />
     </Layout>

@@ -13,6 +13,7 @@ import Jobs from "./pages/Jobs"
 import Overview from "./pages/Overview"
 import Services from "./pages/Services"
 import Service from "./pages/Service"
+import Footer from "./components/Footer/Footer"
 
 class App extends Component {
   render() {
@@ -36,6 +37,7 @@ class App extends Component {
                 </Switch>
               </main>
             </Wrapper>
+            <Footer />
           </div>
         </Router>
       </ThemeProxyProvider>
