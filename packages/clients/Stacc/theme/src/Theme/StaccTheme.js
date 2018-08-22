@@ -7,7 +7,7 @@ import { LogoStyle } from "./Theme.Logo"
 import { CheckboxCheckedIcon, CheckboxCheckedLabel } from "./Theme.Checkbox"
 import { HeadingStyling } from "./theme.Headings"
 
-const borderRadius = "0px"
+const borderRadius = "4px"
 const headerHeight = "70px"
 
 const targetSize = {
@@ -18,7 +18,7 @@ const targetSize = {
 const wrapper = {
   small: "420px",
   medium: "640px",
-  large: "1180px",
+  large: "1040px",
   breakout: "640px"
 }
 
@@ -62,7 +62,7 @@ const color = {
 
 const font = {
   h1: "64px",
-  h2: "26px",
+  h2: "36px",
   h3: "22px",
   h4: "18px",
   h5: "16px",

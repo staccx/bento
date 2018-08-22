@@ -22,8 +22,10 @@ const PageHead = ({ heading, lede, illustration }) => (
 )
 
 const Breadcrumb = styled(Link)`
+  display: block;
   color: ${color.secondary};
   text-decoration: none;
+  margin-bottom: -${spacing.small};
 `
 
 const Body = styled.div`
