@@ -3,6 +3,7 @@ import { Layout, Heading } from "@staccx/base"
 import PageHead from "../components/PageHead/PageHead"
 import FeatureList from "../components/FeatureList/FeatureList"
 import Story from "../components/Story/Story"
+import ContactUs from "../components/ContactUs/ContactUs"
 
 const Service = () => (
   <div>
@@ -30,6 +31,14 @@ const Service = () => (
           />
         </Layout>
       </div>
+      <ContactUs
+        person={{
+          name: "Geir Nordrik",
+          phone: "+47 123 12 123",
+          email: "geirn@stacc.com",
+          img: "/img/geirn.jpg"
+        }}
+      />
     </Layout>
   </div>
 )

@@ -57,7 +57,9 @@ const color = {
   g2: "#B8B8B8",
   g3: "#E4E2E2",
   g4: "#F8F8F8",
-  g5: "#fff"
+  g5: "#fff",
+  blush: "#FFF1E5",
+  pink: "#FCEEED"
 }
 
 const font = {
