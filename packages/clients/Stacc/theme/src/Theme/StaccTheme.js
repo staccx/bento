@@ -5,6 +5,7 @@ import Button from "./Theme.Button"
 import Box from "./Theme.Box"
 import { LogoStyle } from "./Theme.Logo"
 import { CheckboxCheckedIcon, CheckboxCheckedLabel } from "./Theme.Checkbox"
+import { HeadingStyling } from "./theme.Headings"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -17,7 +18,7 @@ const targetSize = {
 const wrapper = {
   small: "420px",
   medium: "640px",
-  large: "1024px",
+  large: "1180px",
   breakout: "640px"
 }
 
@@ -60,13 +61,13 @@ const color = {
 }
 
 const font = {
-  h1: "36px",
+  h1: "64px",
   h2: "26px",
   h3: "22px",
   h4: "18px",
   h5: "16px",
   h6: "14px",
-  base: "14px",
+  base: "16px",
   tiny: "12px",
   input: "16px",
   huge: "44px"
@@ -74,7 +75,7 @@ const font = {
 
 const webfonts = {
   google: {
-    families: ["IBM Plex Sans:400,700", "IBM Plex Mono:400"]
+    families: ["IBM Plex Sans:300,400,500, 700", "IBM Plex Mono:400"]
   }
 }
 
@@ -109,5 +110,6 @@ const t = new Theme(BaseTheme, {
   .add(LogoStyle)
   .add(CheckboxCheckedIcon)
   .add(CheckboxCheckedLabel)
+  .add(HeadingStyling)
 
 export default t
