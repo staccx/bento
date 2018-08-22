@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { NavLink } from "react-router-dom"
-import { spacing } from "@staccx/theme"
+import { spacing, color } from "@staccx/theme"
 
 const HeaderMenu = () => (
   <Navigation>
@@ -51,6 +51,12 @@ const MenuItems = styled.ul`
 
 const MenuItem = styled(NavLink)`
   padding: 0 ${spacing.small};
+  color: ${color.text};
+  text-decoration: none;
+
+  &.is-current {
+    border-bottom: 2px solid ${color.primary};
+  }
 `
 
 export default HeaderMenu

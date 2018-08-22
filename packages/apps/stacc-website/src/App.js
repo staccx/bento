@@ -12,6 +12,7 @@ import Contact from "./pages/Contact"
 import Jobs from "./pages/Jobs"
 import Overview from "./pages/Overview"
 import Services from "./pages/Services"
+import Service from "./pages/Service"
 
 class App extends Component {
   render() {
@@ -30,7 +31,8 @@ class App extends Component {
                   <Route path="/contact" component={Contact} />
                   <Route path="/careers" component={Jobs} />
                   <Route path="/overview" component={Overview} />
-                  <Route path="/services" component={Services} />
+                  <Route path="/services" exact component={Services} />
+                  <Route path="/services/:product" component={Service} />
                 </Switch>
               </main>
             </Wrapper>
