@@ -22,10 +22,6 @@
     "prepublish": "yarn test && yarn build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
-  "peerDependencies": {
-    "@staccx/base": "^4",
-    "@staccx/theme": "^4"
-  },
   "files": [
     "dist"
   ],
@@ -33,6 +29,8 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/soy": "^7.0.1"
+    "@staccx/soy": "^7.0.1",
+    "@staccx/base": "^7.0.1",
+    "@staccx/theme": "^7.0.1"
   }
 }

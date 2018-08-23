@@ -27,13 +27,6 @@
       "git add"
     ]
   },
-  "peerDependencies": {
-    "@staccx/theme": "^4"
-  },
-  "devDependencies": {
-    "@staccx/theme": "^7.0.1",
-    "babel-plugin-prismjs": "^1.0.2"
-  },
   "files": [
     "dist"
   ],
@@ -45,6 +38,8 @@
     "@staccx/formatting": "^7.0.1",
     "@staccx/math": "^7.0.1",
     "@staccx/soy": "^7.0.1",
-    "@staccx/utils": "^7.0.1"
+    "@staccx/utils": "^7.0.1",
+    "@staccx/theme": "^7.0.1",
+    "babel-plugin-prismjs": "^1.0.2"
   }
 }
