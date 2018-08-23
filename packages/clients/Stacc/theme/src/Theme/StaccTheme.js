@@ -5,8 +5,9 @@ import Button from "./Theme.Button"
 import Box from "./Theme.Box"
 import { LogoStyle } from "./Theme.Logo"
 import { CheckboxCheckedIcon, CheckboxCheckedLabel } from "./Theme.Checkbox"
+import { HeadingStyling } from "./theme.Headings"
 
-const borderRadius = "0px"
+const borderRadius = "4px"
 const headerHeight = "70px"
 
 const targetSize = {
@@ -17,7 +18,7 @@ const targetSize = {
 const wrapper = {
   small: "420px",
   medium: "640px",
-  large: "1024px",
+  large: "1040px",
   breakout: "640px"
 }
 
@@ -34,8 +35,8 @@ const spacing = {
 const color = {
   bg: "#F8F8F8",
   bgGray: "#F8F8F8",
-  primary: "#467EFF",
-  secondary: "#EB5E55",
+  primary: "#EB5E55",
+  secondary: "#467EFF",
   gray: "#B8B8B8",
   text: "#2b2b2b",
   white: "#fff",
@@ -56,17 +57,19 @@ const color = {
   g2: "#B8B8B8",
   g3: "#E4E2E2",
   g4: "#F8F8F8",
-  g5: "#fff"
+  g5: "#fff",
+  blush: "#FFF1E5",
+  pink: "#FCEEED"
 }
 
 const font = {
-  h1: "36px",
-  h2: "26px",
+  h1: "64px",
+  h2: "36px",
   h3: "22px",
   h4: "18px",
   h5: "16px",
   h6: "14px",
-  base: "14px",
+  base: "16px",
   tiny: "12px",
   input: "16px",
   huge: "44px"
@@ -74,7 +77,7 @@ const font = {
 
 const webfonts = {
   google: {
-    families: ["IBM Plex Sans:400,700", "IBM Plex Mono:400"]
+    families: ["IBM Plex Sans:300,400,500, 700", "IBM Plex Mono:400"]
   }
 }
 
@@ -109,5 +112,6 @@ const t = new Theme(BaseTheme, {
   .add(LogoStyle)
   .add(CheckboxCheckedIcon)
   .add(CheckboxCheckedLabel)
+  .add(HeadingStyling)
 
 export default t
