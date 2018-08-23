@@ -7,7 +7,8 @@ const Contact = () => (
     <Layout>
       <Text variant="inputSize">
         hverdager: 8:00 - 17:00 <br />
-        tors: 8:00 - 19:00<br />
+        tors: 8:00 - 19:00
+        <br />
         lør: 10:00 - 14:00
       </Text>
       <Divider />

@@ -11,9 +11,12 @@ import { fetchUnreadMessages } from "../api/chat"
 import fileStatus from "../fileStatus"
 
 class CaseStore {
-  @observable cases = null
-  @observable caseDetails = {}
-  @observable currentCaseId = null
+  @observable
+  cases = null
+  @observable
+  caseDetails = {}
+  @observable
+  currentCaseId = null
 
   getCase(caseId) {
     return this.caseDetails[caseId]

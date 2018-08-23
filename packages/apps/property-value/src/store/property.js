@@ -30,7 +30,8 @@ const mapAddressResults = result =>
     .reduce((acc, curr) => curr, {})
 
 class Property {
-  @observable property = null
+  @observable
+  property = null
 
   @action
   findPropertyByNumner = async gardNr => {

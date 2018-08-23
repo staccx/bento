@@ -4,8 +4,10 @@ import caseStore from "./caseStore"
 import userStore from "./userStore"
 
 class ChatStore {
-  @observable messages = []
-  @observable currentRoom = null
+  @observable
+  messages = []
+  @observable
+  currentRoom = null
 
   @action
   sendMessage(message) {

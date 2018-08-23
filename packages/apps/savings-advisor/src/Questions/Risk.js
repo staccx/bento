@@ -49,10 +49,13 @@ class Risk extends React.Component {
     waves: PropTypes.number
   }
 
-  @observable current = null
-  @observable hovered = null
+  @observable
+  current = null
+  @observable
+  hovered = null
 
-  @observable bodyText = null
+  @observable
+  bodyText = null
 
   constructor(props, context) {
     super(props, context)

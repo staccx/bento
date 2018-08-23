@@ -104,9 +104,8 @@ class Case extends Component {
                 <span>{currentCase.car.variant}</span>
               )}
               <br />
-              {formatCurrency(
-                currentCase.funding["termFeePerMnd(inc mva)"]
-              )},-/mnd
+              {formatCurrency(currentCase.funding["termFeePerMnd(inc mva)"])}
+              ,-/mnd
             </Paragraph>
             <CaseProgressLarge
               hasRejectedDocuments={currentCase.hasRejectedDocuments}
