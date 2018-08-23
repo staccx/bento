@@ -26,7 +26,8 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/soy": "^7.0.1"
+    "@staccx/soy": "^7.0.1",
+    "date-fns": "^2.0.0-alpha.16"
   },
   "jest": {}
 }
