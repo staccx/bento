@@ -33,13 +33,21 @@ class Case extends Component {
       currentTab: "documentation" // Only applies to small screens
     }
 
-    caseStore.currentCase = props.match.params.caseId
+    const id = props.match.params.caseId
+    caseStore.currentCase = id
+    caseStore.initializeCurrentCase()
+    chatStore.setCurrentRoom(id)
   }
 
   handleChangeTab(value) {
     this.setState({
       currentTab: value
     })
+  }
+
+  componentWillUnmount() {
+    caseStore.currentCase = null
+    chatStore.setCurrentRoom(null)
   }
 
   render() {

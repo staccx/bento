@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -31,7 +31,7 @@
     "@staccx/theme": "^4"
   },
   "devDependencies": {
-    "@staccx/theme": "^7.0.0",
+    "@staccx/theme": "^7.0.1",
     "babel-plugin-prismjs": "^1.0.2"
   },
   "files": [
@@ -41,10 +41,10 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/animations": "^7.0.0",
-    "@staccx/formatting": "^7.0.0",
-    "@staccx/math": "^7.0.0",
-    "@staccx/soy": "^7.0.0",
-    "@staccx/utils": "^7.0.0"
+    "@staccx/animations": "^7.0.1",
+    "@staccx/formatting": "^7.0.1",
+    "@staccx/math": "^7.0.1",
+    "@staccx/soy": "^7.0.1",
+    "@staccx/utils": "^7.0.1"
   }
 }

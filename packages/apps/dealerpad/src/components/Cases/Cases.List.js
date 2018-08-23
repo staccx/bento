@@ -8,6 +8,8 @@ import caseStore from "../../data/store/caseStore"
 import { observer } from "mobx-react"
 
 const CasesList = observer(({ compact }) => {
+  caseStore.refreshAll()
+
   if (!caseStore.cases) {
     return <Loading />
   }
@@ -27,7 +29,7 @@ const CasesList = observer(({ compact }) => {
                       level={3}
                       variant="caselist"
                       attention={
-                        item.messages || (item.messages && item.messages.length)
+                        caseItem ? caseItem.unreadMessages.length > 0 : false
                       }
                     >
                       {item.customers[0].firstName} {item.customers[0].lastName}

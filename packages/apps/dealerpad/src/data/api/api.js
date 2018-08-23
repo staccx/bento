@@ -30,7 +30,7 @@ export const uploadFile = file => {
     .catch(console.error)
 }
 
-export const setTaskCompleted = (flowId, taskId, uploadedFileId) =>
+export const setTaskCompleted = (taskId, uploadedFileId) =>
   axiosInstance
     .post("/tasks/" + taskId + "/complete", {
       uri: "/api/files/" + uploadedFileId

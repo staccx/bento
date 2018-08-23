@@ -7,6 +7,7 @@ import {
   fetchTasks
 } from "../api/api"
 
+import { fetchUnreadMessages } from "../api/chat"
 import fileStatus from "../fileStatus"
 
 class CaseStore {
@@ -28,28 +29,37 @@ class CaseStore {
   }
 
   @action
-  async initialize() {
+  async refreshAll() {
     this.cases = await fetchCases()
     this.loading = this.cases.length
     this.cases.forEach(this.refreshCaseDetails, this) // async'ly add details to each case
   }
 
   @action
+  initializeCurrentCase() {
+    if (!this.currentCase) {
+      this.refreshCurrentCase()
+    }
+  }
+
+  @action
   refreshCurrentCase() {
-    const caseId = this.currentCaseId
-    this.currentCase = null
-    this.refreshCaseDetails({ id: caseId })
-    this.currentCase = caseId
+    // const caseId = this.currentCaseId
+    // this.currentCase = null
+    if (this.currentCaseId) {
+      this.refreshCaseDetails({ id: this.currentCaseId })
+    }
+    // this.currentCase = caseId
   }
 
   @action
   async refreshCaseDetails({ id: caseId }) {
     const details = await fetchCaseDetails(caseId)
     const tasks = await fetchTasks(caseId)
+    const unreadMessages = await fetchUnreadMessages(caseId)
 
     const documents = Object.keys(details.conditions).map(conditionName => {
       const condition = details.conditions[conditionName]
-
       return {
         condition: condition,
         name: condition.description,
@@ -90,7 +100,8 @@ class CaseStore {
       tasks,
       hasRejectedDocuments,
       progress,
-      documents
+      documents,
+      unreadMessages
     }
 
     this.loading--
@@ -100,11 +111,10 @@ class CaseStore {
     return async event => {
       document.status = fileStatus.uploading
       const file = event.target.files[0]
-      const flowId = document.task.flowId
       const taskId = document.task.taskId
 
       return uploadFile(file)
-        .then(([{ id }]) => setTaskCompleted(flowId, taskId, id))
+        .then(([{ id }]) => setTaskCompleted(taskId, id))
         .then(res => this.refreshCurrentCase())
         .catch(console.error)
     }
@@ -112,5 +122,5 @@ class CaseStore {
 }
 
 const caseStore = new CaseStore()
-caseStore.initialize()
+// caseStore.initialize()
 export default caseStore
