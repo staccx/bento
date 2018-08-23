@@ -1,7 +1,7 @@
 {
   "name": "companywebsitetemplate",
   "private": true,
-  "version": "1.0.0",
+  "version": "7.0.1",
   "description": "",
   "main": "package.json",
   "author": "Espen Thomassen Sæveru <espensaeverud@gmail.com>",
@@ -24,6 +24,5 @@
     "react": "^16.2",
     "react-dom": "^16.2",
     "react-icon-base": "^2.1.2"
-  },
-  "devDependencies": {}
+  }
 }

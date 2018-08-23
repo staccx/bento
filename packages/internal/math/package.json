@@ -1,6 +1,6 @@
 {
   "name": "@staccx/math",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "Convenience functions for math",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -26,6 +26,6 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/soy": "^7.0.0"
+    "@staccx/soy": "^7.0.1"
   }
 }
