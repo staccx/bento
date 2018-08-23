@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -35,11 +35,11 @@
   },
   "dependencies": {
     "@staccx/animations": "^7.0.1",
-    "@staccx/formatting": "^7.0.1",
+    "@staccx/formatting": "^7.0.2",
     "@staccx/math": "^7.0.1",
     "@staccx/soy": "^7.0.1",
-    "@staccx/utils": "^7.0.1",
     "@staccx/theme": "^7.0.1",
+    "@staccx/utils": "^7.0.1",
     "babel-plugin-prismjs": "^1.0.2"
   }
 }
