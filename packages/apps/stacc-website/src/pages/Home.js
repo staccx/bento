@@ -6,8 +6,8 @@ const Home = () => (
   <div>
     <Layout paddingTop="grid" rowGap="grid">
       <Hero
-        heading="Stacc is a financial services software company. We create building
-      blocks for banks."
+        heading="Stacc is a financial services  company.
+        We create building blocks for disruption and mayhem."
         callToAction="Get in touch"
       />
     </Layout>

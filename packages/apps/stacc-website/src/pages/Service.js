@@ -14,23 +14,21 @@ const Service = () => (
         illustration="/img/core.png"
       />
       <FeatureList />
-      <div>
-        <Layout>
-          <Heading level={2}>Seamless integration</Heading>
-          <Story
-            heading="API"
-            body="The platform can be fully accessed through an API enabling you to leverage the functionality of the platform in other systems such as web and mobile banking solutions, self service solutions, agent servicing solutions and whatever system in which you need access to the data and features of your financial services platform."
-            illustration="/img/connected.png"
-          />
-          <Story
-            heading="Power BI"
-            body="Integration with Microsoft Power BI and Microsoft Office comes out of the box, enabling you to analyze your portfolio, clients, transactions and more in every dimension thinkable."
-            illustration="/img/bars.png"
-            callToAction={"Explore analytics"}
-            isEven
-          />
-        </Layout>
-      </div>
+
+      <Heading level={2}>Seamless integration</Heading>
+      <Story
+        heading="API"
+        body="The platform can be fully accessed through an API enabling you to leverage the functionality of the platform in other systems such as web and mobile banking solutions, self service solutions, agent servicing solutions and whatever system in which you need access to the data and features of your financial services platform."
+        illustration="/img/connected.png"
+      />
+      <Story
+        heading="Power BI"
+        body="Integration with Microsoft Power BI and Microsoft Office comes out of the box, enabling you to analyze your portfolio, clients, transactions and more in every dimension thinkable."
+        illustration="/img/bars.png"
+        callToAction={"Explore analytics"}
+        isEven
+      />
+
       <ContactUs
         person={{
           name: "Geir Nordrik",

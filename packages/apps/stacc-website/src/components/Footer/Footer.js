@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Wrapper } from "@staccx/base"
+import { Wrapper, fontSmoothing } from "@staccx/base"
 import { spacing, color } from "@staccx/theme"
 import Logo from "../Logo/Logo"
 
@@ -38,6 +38,7 @@ const Container = styled.div`
   background-color: ${color.text};
   color: ${color.white};
   padding: ${spacing.large} 0;
+  ${fontSmoothing};
 `
 
 const Content = styled.div`

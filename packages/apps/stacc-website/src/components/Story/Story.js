@@ -27,9 +27,7 @@ const Story = ({ heading, body, callToAction, illustration, isEven }) => (
   </Container>
 )
 
-const Container = styled.div`
-  margin-bottom: ${spacing("grid")};
-`
+const Container = styled.div``
 
 const Inner = styled.div`
   display: flex;

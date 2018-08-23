@@ -33,6 +33,7 @@ const Container = styled.div`
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  margin-top: 132px;
 `
 
 const Inner = styled.div`
