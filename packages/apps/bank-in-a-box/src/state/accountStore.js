@@ -2,10 +2,13 @@ import { action, observable } from "mobx"
 import { getAccount, getTransactions } from "./api"
 
 class AccountStore {
-  @observable transactions = []
+  @observable
+  transactions = []
 
-  @observable selectedAccount = {}
-  @observable earned = 2776.944
+  @observable
+  selectedAccount = {}
+  @observable
+  earned = 2776.944
 
   @action
   setSelectedAccount = accountId =>

@@ -1,6 +1,3 @@
-
-class CustomerStore {
-
-}
+class CustomerStore {}
 
 export default CustomerStore
