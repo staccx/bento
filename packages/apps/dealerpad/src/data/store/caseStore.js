@@ -29,18 +29,27 @@ class CaseStore {
   }
 
   @action
-  async initialize() {
+  async refreshAll() {
     this.cases = await fetchCases()
     this.loading = this.cases.length
     this.cases.forEach(this.refreshCaseDetails, this) // async'ly add details to each case
   }
 
   @action
+  initializeCurrentCase() {
+    if (!this.currentCase) {
+      this.refreshCurrentCase()
+    }
+  }
+
+  @action
   refreshCurrentCase() {
-    const caseId = this.currentCaseId
-    this.currentCase = null
-    this.refreshCaseDetails({ id: caseId })
-    this.currentCase = caseId
+    // const caseId = this.currentCaseId
+    // this.currentCase = null
+    if (this.currentCaseId) {
+      this.refreshCaseDetails({ id: this.currentCaseId })
+    }
+    // this.currentCase = caseId
   }
 
   @action
@@ -49,11 +58,8 @@ class CaseStore {
     const tasks = await fetchTasks(caseId)
     const unreadMessages = await fetchUnreadMessages(caseId)
 
-    console.log("got unreads", caseId, unreadMessages.length)
-
     const documents = Object.keys(details.conditions).map(conditionName => {
       const condition = details.conditions[conditionName]
-
       return {
         condition: condition,
         name: condition.description,
@@ -116,5 +122,5 @@ class CaseStore {
 }
 
 const caseStore = new CaseStore()
-caseStore.initialize()
+// caseStore.initialize()
 export default caseStore

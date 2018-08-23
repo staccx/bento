@@ -8,6 +8,8 @@ import caseStore from "../../data/store/caseStore"
 import { observer } from "mobx-react"
 
 const CasesList = observer(({ compact }) => {
+  caseStore.refreshAll()
+
   if (!caseStore.cases) {
     return <Loading />
   }
