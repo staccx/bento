@@ -90,20 +90,11 @@ Layout.defaultProps = {
 Layout.propTypes = {
   children: themeProps.children.isRequired,
   className: PropTypes.string,
-  grid: PropTypes.oneOf([
-    "stonehenge",
-    "columnNarrow",
-    "fiftyFifty",
-    "rows",
-    "columns",
-    "form",
-    "centered",
-    "dashboard"
-  ]),
-  columnGap: themeProps.spacing,
-  rowGap: themeProps.spacing,
-  paddingBottom: themeProps.spacing,
-  paddingTop: themeProps.spacing
+  grid: PropTypes.string,
+  columnGap: PropTypes.string,
+  rowGap: PropTypes.string,
+  paddingBottom: PropTypes.string,
+  paddingTop: PropTypes.string
 }
 
 export default Layout
