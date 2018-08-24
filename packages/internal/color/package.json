@@ -29,6 +29,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/soy": "^7.0.1"
+    "@staccx/soy": "^7.0.1",
+    "color": "^3.0.0"
   }
 }
