@@ -24,6 +24,10 @@ class SanityProvider extends React.Component {
   }
 
   send(query, id) {
+    if (this.state.results[id]) {
+      // Early out. Probably just the same component mounting again
+      return
+    }
     this.state.helper.client
       .fetch(query)
       .then(result => {
@@ -38,6 +42,10 @@ class SanityProvider extends React.Component {
   }
 
   queryHelper(helper, id) {
+    if (this.state.results[id]) {
+      // Early out. Probably just the same component mounting again
+      return
+    }
     helper.send().then(result =>
       this.setState({
         results: {
