@@ -6,7 +6,8 @@
     "postcommit": "git update-index --again",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "styleguide": "cd packages/base && styleguidist server",
-    "start": "cd packages/internal/styleguide && yarn start"
+    "start": "cd packages/internal/styleguide && yarn start",
+    "soy": "node packages/internal/soy"
   },
   "repository": {
     "type": "git",
