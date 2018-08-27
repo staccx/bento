@@ -49,7 +49,7 @@ const Inner = styled.div`
     flex-basis: calc(50%);
   }
 
-  > div:last-child {
+  > div:last-child:not(:first-child) {
     flex-basis: calc(50% - 48px);
     text-align: center;
   }

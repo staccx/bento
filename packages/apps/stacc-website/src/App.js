@@ -12,6 +12,7 @@ import Contact from "./pages/Contact"
 import Jobs from "./pages/Jobs"
 import Overview from "./pages/Overview"
 import Services from "./pages/Services"
+import ServicesInfrastructure from "./pages/ServicesInfrastructure"
 import Service from "./pages/Service"
 import Team from "./pages/Team"
 import Footer from "./components/Footer/Footer"
@@ -35,8 +36,8 @@ class App extends Component {
                   <Route path="/overview" component={Overview} />
                   <Route path="/services" exact component={Services} />
                   <Route
-                    path="/services/:filter(infrastructure|innovation|ux)"
-                    component={Services}
+                    path="/services/:filter(infrastructure)"
+                    component={ServicesInfrastructure}
                     exact
                   />
                   <Route path="/services/:product" component={Service} />

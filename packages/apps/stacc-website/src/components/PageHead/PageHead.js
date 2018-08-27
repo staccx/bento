@@ -4,11 +4,11 @@ import { Link } from "react-router-dom"
 import { Heading, Layout } from "@staccx/base"
 import { spacing, font, color } from "@staccx/theme"
 
-const PageHead = ({ heading, lede, illustration }) => (
+const PageHead = ({ heading, lede, illustration, breadcrumb }) => (
   <header>
     <Layout>
       <div>
-        <Breadcrumb to="/services">Services</Breadcrumb>
+        {breadcrumb && <Breadcrumb to="/services">Services</Breadcrumb>}
         <Heading level={1}>{heading}</Heading>
       </div>
       <Body>
