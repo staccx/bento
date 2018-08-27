@@ -25,11 +25,11 @@ const Team = () => (
         {people.map(person => (
           <PersonItem key={person.firstName + person.lastName}>
             <Flag
+              top
               img={
                 <img
                   src={person.img}
                   width="150"
-                  height="150"
                   alt={person.firstName + " " + person.lastName}
                 />
               }
