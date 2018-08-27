@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { registerStyle, color, font } from "@staccx/theme"
+import { registerStyle, color, font, spacing } from "@staccx/theme"
 import { Heading } from "@staccx/base"
 
 export const HeadingStyling = registerStyle(
@@ -12,6 +12,10 @@ export const HeadingStyling = registerStyle(
     `,
     hero: css`
       font-size: ${font("huge")};
+    `,
+    primary: css`
+      color: ${color.primary};
+      margin-bottom: ${spacing.small};
     `
   },
   Heading.themeProps.heading
