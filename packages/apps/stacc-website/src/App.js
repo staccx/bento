@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import styled from "styled-components"
 import { Wrapper } from "@staccx/base"
 import { ThemeProxyProvider } from "@staccx/theme"
 import { Router, Switch, Route } from "react-router-dom"
@@ -22,7 +23,7 @@ class App extends Component {
     return (
       <ThemeProxyProvider theme={theme}>
         <Router history={history}>
-          <div>
+          <PageWrapper>
             <Header />
             <Wrapper>
               <main>
@@ -35,16 +36,27 @@ class App extends Component {
                   <Route path="/people" component={People} />
                   <Route path="/overview" component={Overview} />
                   <Route path="/services" exact component={Services} />
+                  <Route
+                    path="/services/:filter(infrastructure|innovation|ux)"
+                    component={Services}
+                    exact
+                  />
                   <Route path="/services/:product" component={Service} />
                 </Switch>
               </main>
             </Wrapper>
             <Footer />
-          </div>
+          </PageWrapper>
         </Router>
       </ThemeProxyProvider>
     )
   }
 }
+
+const PageWrapper = styled.div`
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+`
 
 export default App

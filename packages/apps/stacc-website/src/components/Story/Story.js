@@ -1,28 +1,38 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Heading, Layout } from "@staccx/base"
-import { spacing } from "@staccx/theme"
 import GoTo from "../GoTo/GoTo"
 
-const Story = ({ heading, body, callToAction, illustration, isEven }) => (
+const Story = ({
+  heading,
+  body,
+  callToAction,
+  callToActionUrl,
+  illustration,
+  isReverse
+}) => (
   <Container>
-    <Inner rev={isEven}>
+    <Inner rev={isReverse}>
       <div>
         <Layout>
           <div>
-            <Heading level={3}>{heading}</Heading>
-            <Body>{body}</Body>
+            {heading && <Heading level={3}>{heading}</Heading>}
+            {body && <Body>{body}</Body>}
           </div>
-          {callToAction && (
-            <div>
-              <GoTo to="#nowhere">Explore analytics</GoTo>
-            </div>
-          )}
+          {callToAction &&
+            callToActionUrl && (
+              <div>
+                <GoTo to={callToActionUrl}>{callToAction}</GoTo>
+              </div>
+            )}
         </Layout>
       </div>
-      <div>
-        <Illustration src={illustration} alt="" />
-      </div>
+      {illustration && (
+        <div>
+          <Illustration src={illustration} alt="" />
+        </div>
+      )}
     </Inner>
   </Container>
 )
@@ -52,5 +62,14 @@ const Illustration = styled.img`
 const Body = styled.p`
   line-height: 1.8;
 `
+
+Story.propTypes = {
+  heading: PropTypes.string,
+  body: PropTypes.string,
+  callToAction: PropTypes.string,
+  callToActionUrl: PropTypes.string,
+  illustration: PropTypes.string,
+  isReverse: PropTypes.bool
+}
 
 export default Story

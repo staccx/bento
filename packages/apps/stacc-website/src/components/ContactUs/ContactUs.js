@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { Heading, Button, Layout, Wrapper } from "@staccx/base"
+import { Heading, Layout, Wrapper } from "@staccx/base"
 import { color, spacing } from "@staccx/theme"
+import FullWidth from "../FullWidth/FullWidth"
 
 const ContactUs = ({ person }) => (
   <Container>
@@ -25,14 +26,8 @@ const ContactUs = ({ person }) => (
   </Container>
 )
 
-const Container = styled.div`
+const Container = styled(FullWidth)`
   background-color: ${color("blush")};
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   margin-top: 132px;
 `
 

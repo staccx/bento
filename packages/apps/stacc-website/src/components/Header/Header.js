@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { Wrapper } from "@staccx/base"
 import { spacing } from "@staccx/theme"
@@ -9,12 +10,18 @@ const Header = () => (
   <Head>
     <Wrapper>
       <Inner>
-        <Logo />
+        <LogoLink to="/">
+          <Logo />
+        </LogoLink>
         <HeaderMenu />
       </Inner>
     </Wrapper>
   </Head>
 )
+
+const LogoLink = styled(Link)`
+  text-decoration: none;
+`
 
 const Head = styled.header`
   padding-top: ${spacing.mediumPlus};
