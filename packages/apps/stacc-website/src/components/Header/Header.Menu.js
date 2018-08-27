@@ -28,6 +28,11 @@ const HeaderMenu = () => (
         </MenuItem>
       </li>
       <li>
+        <MenuItem to={"/people"} activeClassName="is-current">
+          People
+        </MenuItem>
+      </li>
+      <li>
         <MenuItem to={"/contact"} activeClassName="is-current" emphasized>
           Contact
         </MenuItem>

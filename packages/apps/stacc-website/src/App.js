@@ -13,6 +13,7 @@ import Jobs from "./pages/Jobs"
 import Overview from "./pages/Overview"
 import Services from "./pages/Services"
 import Service from "./pages/Service"
+import People from "./pages/People"
 import Footer from "./components/Footer/Footer"
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
                   <Route path="/clients" component={Clients} />
                   <Route path="/contact" component={Contact} />
                   <Route path="/careers" component={Jobs} />
+                  <Route path="/people" component={People} />
                   <Route path="/overview" component={Overview} />
                   <Route path="/services" exact component={Services} />
                   <Route path="/services/:product" component={Service} />
