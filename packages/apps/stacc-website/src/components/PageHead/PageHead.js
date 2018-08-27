@@ -8,9 +8,15 @@ const PageHead = ({ heading, lede, illustration, breadcrumb }) => (
   <header>
     <Layout>
       <div>
-        {breadcrumb && <Breadcrumb to="/services">Services</Breadcrumb>}
+        <BreadcrumbContainer>
+          {breadcrumb &&
+            breadcrumb.map(crumb => (
+              <Breadcrumb to={crumb.url}>{crumb.label}</Breadcrumb>
+            ))}
+        </BreadcrumbContainer>
         <Heading level={1}>{heading}</Heading>
       </div>
+
       <Body>
         <Lede>{lede}</Lede>
         <div>
@@ -21,11 +27,24 @@ const PageHead = ({ heading, lede, illustration, breadcrumb }) => (
   </header>
 )
 
-const Breadcrumb = styled(Link)`
+const BreadcrumbContainer = styled.div`
   display: block;
   color: ${color.secondary};
+`
+
+const Breadcrumb = styled(Link)`
+  display: inline-block;
+  color: ${color.secondary};
   text-decoration: none;
-  margin-bottom: -${spacing.small};
+
+  &:not(:last-child) {
+    &::after {
+      content: " > ";
+      color: ${color.gray};
+      display: inline-block;
+      margin: 0 ${spacing.tiny};
+    }
+  }
 `
 
 const Body = styled.div`

@@ -5,11 +5,11 @@ import FeatureList from "../components/FeatureList/FeatureList"
 import Story from "../components/Story/Story"
 import ContactUs from "../components/ContactUs/ContactUs"
 
-const Service = ({ match }) => (
+const Service = ({ match, location }) => (
   <div>
     <Layout paddingTop="grid" rowGap="grid">
       <PageHead
-        breadcrumb={{ services: "/services" }}
+        breadcrumb={{ match, location }}
         heading="Core banking infrastructure"
         lede="Stacc Core provides highly automated and flexible administration of credit and savings accounts. Run your financial services company efficiently on a modern platform that promotes innovation and business agility."
         illustration="/img/core.png"
