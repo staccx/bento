@@ -1,21 +1,31 @@
 import React from "react"
 import styled from "styled-components"
+import { font, spacing } from "@staccx/theme"
 import { Heading, Button, Layout } from "@staccx/base"
-import { spacing } from "@staccx/theme"
 
-const Hero = ({ heading, callToAction }) => (
-  <Container>
+const Hero = ({ heading, lede, callToAction }) => (
+  <div>
     <Layout>
-      <Heading level={1}>{heading}</Heading>
-      <div>
-        <Button>{callToAction}</Button>
-      </div>
+      {heading && (
+        <Heading level={1} variant="hero">
+          {heading}
+        </Heading>
+      )}
+      {lede && <Lede>{lede}</Lede>}
+      {callToAction && (
+        <div>
+          <Button>{callToAction}</Button>
+        </div>
+      )}
     </Layout>
-  </Container>
+  </div>
 )
 
-const Container = styled.div`
-  margin-bottom: ${spacing("grid")};
+const Lede = styled.p`
+  font-size: ${font.h3};
+  font-weight: 300;
+  line-height: 1.8;
+  margin-right: ${spacing.large};
 `
 
 export default Hero

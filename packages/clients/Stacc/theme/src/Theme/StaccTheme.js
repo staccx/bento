@@ -72,7 +72,8 @@ const font = {
   base: "16px",
   tiny: "12px",
   input: "16px",
-  huge: "44px"
+  giga: "64px",
+  huge: "48px"
 }
 
 const webfonts = {

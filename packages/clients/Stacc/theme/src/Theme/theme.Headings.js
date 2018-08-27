@@ -9,6 +9,9 @@ export const HeadingStyling = registerStyle(
       text-transform: uppercase;
       font-size: ${font.base};
       letter-spacing: 0.5;
+    `,
+    hero: css`
+      font-size: ${font("huge")};
     `
   },
   Heading.themeProps.heading

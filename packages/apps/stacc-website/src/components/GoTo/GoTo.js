@@ -14,13 +14,13 @@ const GoTo = ({ to, children }) => (
 const GoToLink = styled(Link)`
   display: inline-block;
   font-weight: 500;
-  color: ${color.text};
+  color: ${color.primary};
   text-decoration: none;
 
   &:hover,
   &:active,
   &:focus {
-    color: ${color.secondary};
+    color: ${color.text};
   }
 `
 
