@@ -1,14 +1,14 @@
 {
   "name": "@staccx/invoicing",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "private": true,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@staccx/base": "^7.1.0",
-    "@staccx/soy": "^7.1.0",
-    "@staccx/theme": "^7.1.0"
+    "@staccx/base": "^7.1.1",
+    "@staccx/soy": "^7.1.1",
+    "@staccx/theme": "^7.1.1"
   },
   "scripts": {
     "build": "yarn prettify && rollup -c",
@@ -21,6 +21,6 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.1.0"
+    "@staccx/rollup-config": "^7.1.1"
   }
 }
