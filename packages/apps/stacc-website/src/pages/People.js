@@ -7,7 +7,7 @@ import { spacing, color, font } from "@staccx/theme"
 const People = () => (
   <Wrapper size="medium">
     <Layout paddingTop="grid" rowGap="grid">
-      <Input placeholder="Looking for someone?" />
+      <Input id="peopleSearch" placeholder="Looking for someone?" />
       <ul>
         {people.map(person => (
           <PersonItem key={person.firstName + person.lastName}>
