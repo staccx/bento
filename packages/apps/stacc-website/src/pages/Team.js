@@ -4,10 +4,23 @@ import people from "../data/people"
 import { Flag, Heading, Wrapper, Input, Layout } from "@staccx/base"
 import { formatPhone } from "@staccx/formatting"
 import { spacing, color, font } from "@staccx/theme"
-const People = () => (
+import GoTo from "../components/GoTo/GoTo"
+const Team = () => (
   <Wrapper size="medium">
     <Layout paddingTop="grid" rowGap="grid">
-      <Input id="peopleSearch" placeholder="Looking for someone?" />
+      <div>
+        <Heading level={3}>Stacc</Heading>
+        Stacc AS is a software company group located in Bergen, Norway.
+        Management has 25 years of experience with strategy, business
+        development and technology in the financial services industry. We are
+        currently {people.length} employees and growing rapidly. We are always
+        seeking skilled and talented individuals to join us on this adventure.
+        <GoTo to="/jobs">See current openings</GoTo>
+      </div>
+      <Layout rowGap="medium">
+        <Heading level="2">Looking for someone?</Heading>
+        <Input id="peopleSearch" placeholder="Search employees" />
+      </Layout>
       <ul>
         {people.map(person => (
           <PersonItem key={person.firstName + person.lastName}>
@@ -113,4 +126,4 @@ const Title = styled.div`
   font-size: ${font.h6};
 `
 
-export default People
+export default Team
