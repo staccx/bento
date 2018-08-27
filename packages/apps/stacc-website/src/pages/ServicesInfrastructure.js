@@ -9,6 +9,12 @@ const ServicesInfrastructure = ({ match }) => {
     <div>
       <Layout paddingTop="grid" rowGap="grid">
         <PageHead
+          breadcrumb={[
+            {
+              label: "Services",
+              url: "/services"
+            }
+          ]}
           heading="Infrastructure & architecture"
           lede="Not just one guy in a hoodie – two whole teams of them, backed by several guys with suits and dress shoes. "
         />
