@@ -9,7 +9,7 @@ const people = [
     twitter: "https://twitter.com/mhauken",
     linkedin: "https://www.linkedin.com/in/mariushauken/",
     link: "http://hauken.io/",
-    img: "https://fillmurray.com/150/150",
+    img: "/people/hauk.png",
     company: "X"
   },
   {
@@ -21,7 +21,7 @@ const people = [
     area: ["Design", "Front-end developer"],
     twitter: "https://twitter.com/robrobro",
     linkedin: "https://www.linkedin.com/in/robinsandborg/",
-    img: "https://www.placecage.com/150/150",
+    img: "/people/robin.png",
     company: "X"
   },
   {
@@ -34,7 +34,7 @@ const people = [
     twitter: "https://twitter.com/xSlemx",
     linkedin: "https://www.linkedin.com/in/espenths/",
     link: "http://github.com/xslemx",
-    img: "https://stevensegallery.com/150/150",
+    img: "/people/espen.png",
     company: "X"
   }
 ]
