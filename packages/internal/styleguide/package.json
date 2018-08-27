@@ -1,12 +1,12 @@
 {
   "name": "@staccx/styleguide",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "private": true,
   "dependencies": {
-    "@staccx/aprila-theme": "^7.0.1",
-    "@staccx/base": "^7.0.1",
-    "@staccx/nordea-theme": "^7.0.1",
-    "@staccx/savings-advisor": "^7.0.1",
+    "@staccx/aprila-theme": "^7.0.2",
+    "@staccx/base": "^7.0.2",
+    "@staccx/nordea-theme": "^7.0.2",
+    "@staccx/savings-advisor": "^7.0.2",
     "@staccx/soy": "^7.0.1",
     "@staccx/theme": "^7.0.1",
     "pretty": "^2.0.0"

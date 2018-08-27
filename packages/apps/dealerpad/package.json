@@ -1,9 +1,9 @@
 {
   "name": "@staccx/dealerpad",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "dependencies": {
-    "@staccx/base": "^7.0.1",
-    "@staccx/nordea-theme": "^7.0.1",
+    "@staccx/base": "^7.0.2",
+    "@staccx/nordea-theme": "^7.0.2",
     "@staccx/soy": "^7.0.1",
     "@staccx/theme": "^7.0.1",
     "axios": "^0.18.0",

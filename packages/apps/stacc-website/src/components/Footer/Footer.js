@@ -34,7 +34,7 @@ const Footer = ({ heading, callToAction }) => (
   </Container>
 )
 
-const Container = styled.div`
+const Container = styled.footer`
   background-color: ${color.text};
   color: ${color.white};
   padding: ${spacing.large} 0;

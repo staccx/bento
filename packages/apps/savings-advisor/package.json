@@ -1,13 +1,13 @@
 {
   "name": "@staccx/savings-advisor",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
     "@staccx/animations": "^7.0.1",
-    "@staccx/base": "^7.0.1",
-    "@staccx/formatting": "^7.0.1",
+    "@staccx/base": "^7.0.2",
+    "@staccx/formatting": "^7.0.2",
     "@staccx/math": "^7.0.1",
     "@staccx/soy": "^7.0.1",
     "@staccx/theme": "^7.0.1"

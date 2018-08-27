@@ -1,7 +1,8 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { NavLink } from "react-router-dom"
-import { spacing, color } from "@staccx/theme"
+import { spacing, color, borderRadius } from "@staccx/theme"
+import { opacity } from "@staccx/color"
 
 const HeaderMenu = () => (
   <Navigation>
@@ -27,7 +28,7 @@ const HeaderMenu = () => (
         </MenuItem>
       </li>
       <li>
-        <MenuItem to={"/contact"} activeClassName="is-current">
+        <MenuItem to={"/contact"} activeClassName="is-current" emphasized>
           Contact
         </MenuItem>
       </li>
@@ -50,13 +51,41 @@ const MenuItems = styled.ul`
 `
 
 const MenuItem = styled(NavLink)`
-  padding: 0 ${spacing.small};
+  display: block;
+  margin: 0 ${spacing.small};
+  padding: 3px 0;
   color: ${color.text};
   text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border 0.2s ease;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 2px solid ${p => opacity(color("secondary")(p), 0.5)};
+  }
 
   &.is-current {
     border-bottom: 2px solid ${color.primary};
   }
+
+  ${p =>
+    p.emphasized &&
+    css`
+      color: ${color.white};
+      background-color: ${color.secondary};
+      padding: ${spacing.tiny};
+      border-radius: ${borderRadius};
+      transition: box-shadow 0.2s ease;
+      border-bottom: 0;
+
+      &:hover,
+      &:active,
+      &:focus {
+        box-shadow: 0 2px 6px ${p => opacity(color("secondary")(p), 0.25)};
+        border-bottom: 0;
+      }
+    `};
 `
 
 export default HeaderMenu

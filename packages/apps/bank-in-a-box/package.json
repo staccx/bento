@@ -1,6 +1,6 @@
 {
   "name": "@staccx/bank-in-a-box",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "private": true,
   "license": "UNLICENSED",
   "main": "dist/index.js",
@@ -8,10 +8,10 @@
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
     "@staccx/animations": "^7.0.1",
-    "@staccx/aprila-theme": "^7.0.1",
-    "@staccx/base": "^7.0.1",
-    "@staccx/formatting": "^7.0.1",
-    "@staccx/norefjell-theme": "^7.0.1",
+    "@staccx/aprila-theme": "^7.0.2",
+    "@staccx/base": "^7.0.2",
+    "@staccx/formatting": "^7.0.2",
+    "@staccx/norefjell-theme": "^7.0.2",
     "@staccx/soy": "^7.0.1",
     "@staccx/theme": "^7.0.1"
   },
