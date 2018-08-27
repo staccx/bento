@@ -71,7 +71,11 @@ const doCheck = async () => {
 doCheck().then(dirty => {
   console.log()
   if (dirty) {
-    console.log(chalk.red(dirty, "packages need soy!"))
+    if (program.pour) {
+      console.log(chalk.yellow("Poured into", dirty, "packages!"))
+    } else {
+      console.log(chalk.red(dirty, "packages need soy!"))
+    }
   } else {
     console.log(chalk.green("Everything tastes good!"))
   }
