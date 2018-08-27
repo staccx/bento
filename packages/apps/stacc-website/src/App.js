@@ -7,14 +7,13 @@ import createHistory from "history/createBrowserHistory"
 import theme from "./theme/Theme"
 import Header from "./components/Header/Header"
 import Home from "./pages/Home"
-import About from "./pages/About"
 import Clients from "./pages/Clients"
 import Contact from "./pages/Contact"
 import Jobs from "./pages/Jobs"
 import Overview from "./pages/Overview"
 import Services from "./pages/Services"
 import Service from "./pages/Service"
-import People from "./pages/People"
+import Team from "./pages/Team"
 import Footer from "./components/Footer/Footer"
 
 class App extends Component {
@@ -29,11 +28,10 @@ class App extends Component {
               <main>
                 <Switch>
                   <Route exact path="/" component={Home} />
-                  <Route path="/about" component={About} />
                   <Route path="/clients" component={Clients} />
                   <Route path="/contact" component={Contact} />
                   <Route path="/careers" component={Jobs} />
-                  <Route path="/people" component={People} />
+                  <Route path="/team" component={Team} />
                   <Route path="/overview" component={Overview} />
                   <Route path="/services" exact component={Services} />
                   <Route

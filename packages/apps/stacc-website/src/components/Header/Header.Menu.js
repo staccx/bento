@@ -18,18 +18,13 @@ const HeaderMenu = () => (
         </MenuItem>
       </li>
       <li>
-        <MenuItem to={"/about"} activeClassName="is-current">
-          About
-        </MenuItem>
-      </li>
-      <li>
         <MenuItem to={"/clients"} activeClassName="is-current">
           Clients
         </MenuItem>
       </li>
       <li>
-        <MenuItem to={"/people"} activeClassName="is-current">
-          People
+        <MenuItem to={"/team"} activeClassName="is-current">
+          Team
         </MenuItem>
       </li>
       <li>
