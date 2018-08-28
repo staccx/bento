@@ -1,5 +1,11 @@
 import { css } from "styled-components"
-import { color, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import {
+  color,
+  registerStyle,
+  VARIANT_DEFAULT,
+  borderRadius,
+  spacing
+} from "@staccx/theme"
 import { Box } from "@staccx/base"
 
 const defaultBox = css`
@@ -16,6 +22,13 @@ export default registerStyle(
     [VARIANT_DEFAULT]: defaultBox,
     transparent: css`
       background-color: transparent;
+    `,
+    contact: css`
+      background: ${color.bgGray};
+      border: 2px solid ${color.primary};
+      border-radius: ${borderRadius};
+      padding-top: ${spacing.large};
+      padding-bottom: ${spacing.large};
     `
   },
   Box.themeProps.box
