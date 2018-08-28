@@ -29,10 +29,15 @@ const Contact = () => (
               Get in touch
             </Heading>
             <Layout grid="fiftyFifty">
-              <Input label="Name" id="name" />
-              <Input label="Company" id="Company" />
-              <Input label="E-mail" id="E-mail" />
-              <PhoneInput label="Mobile" id="Mobile" />
+              <Input label="Name" id="name" autocomplete="name" required />
+              <Input label="Company" id="Company" required />
+              <Input label="E-mail" id="E-mail" required autocomplete="email" />
+              <PhoneInput
+                label="Mobile"
+                id="Mobile"
+                required
+                autocomplete="tel"
+              />
               <div>
                 <Button>Send</Button>
               </div>

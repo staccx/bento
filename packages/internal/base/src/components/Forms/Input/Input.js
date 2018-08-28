@@ -44,6 +44,7 @@ class Input extends React.Component {
       label,
       mask,
       variant,
+      autocomplete,
       ...otherProps
     } = this.props
     return (
@@ -67,6 +68,7 @@ class Input extends React.Component {
             placeholder={placeholder}
             variant={variant}
             type={type}
+            autocomplete={autocomplete}
             {...otherProps}
           />
         ) : (
@@ -82,6 +84,7 @@ class Input extends React.Component {
             placeholder={placeholder}
             variant={variant}
             type={type}
+            autocomplete={autocomplete}
             {...otherProps}
           />
         )}
