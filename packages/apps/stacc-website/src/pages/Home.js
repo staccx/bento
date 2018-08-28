@@ -3,6 +3,7 @@ import { Layout } from "@staccx/base"
 import Hero from "../components/Hero/Hero"
 import FullWidth from "../components/FullWidth/FullWidth"
 import Story from "../components/Story/Story"
+import Quote from "../components/Quote/Quote"
 
 const Home = () => (
   <div>
@@ -41,6 +42,11 @@ const Home = () => (
         callToAction={"Explore design and front-end"}
         callToActionUrl={"/services/ux"}
         isReverse={false}
+      />
+      <Quote
+        img="http://fillmurray.com/200/200"
+        name="Bent Gjendem, CEO at Monobank"
+        quote="After switching to the Stacc automated credit scoring platform, defaults on unsecured loans dropped to under 0.7%"
       />
     </Layout>
   </div>
