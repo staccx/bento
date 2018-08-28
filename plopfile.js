@@ -28,7 +28,7 @@ module.exports = function(plop) {
       }
     ]
   })
-  plop.setGenerator("Base component", {
+  plop.setGenerator("base component", {
     description: "Create new base component",
     prompts: [
       {
@@ -66,18 +66,19 @@ module.exports = function(plop) {
     actions: [
       {
         type: "add",
-        path: "packages/internal/base/components/{{name}}/{{name}}.js",
+        path: "packages/internal/base/src/components/{{name}}/{{name}}.js",
         templateFile:
           "templates/plop/CreateBaseComponent/templates/Component.hbs"
       },
       {
         type: "add",
-        path: "packages/internal/base/components/{{name}}/{{name}}.preview.js",
+        path:
+          "packages/internal/base/src/components/{{name}}/{{name}}.preview.js",
         templateFile: "templates/plop/CreateBaseComponent/templates/Preview.hbs"
       },
       {
         type: "add",
-        path: "packages/internal/base/components/{{name}}/{{name}}.md",
+        path: "packages/internal/base/src/components/{{name}}/{{name}}.md",
         templateFile: "templates/plop/CreateBaseComponent/templates/Readme.hbs"
       }
     ]
