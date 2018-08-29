@@ -1,10 +1,10 @@
-import accounts from '../data/accounts'
-import invoices from '../data/invoices'
-import payments from '../data/payments'
-import transactions from '../data/transactions'
-import customer from '../data/customer'
-import annualStatements from '../data/annualStatements'
-import customerContext from '../data/customerContext'
+import accounts from "../data/accounts"
+import invoices from "../data/invoices"
+import payments from "../data/payments"
+import transactions from "../data/transactions"
+import customer from "../data/customer"
+import annualStatements from "../data/annualStatements"
+import customerContext from "../data/customerContext"
 // import axios from "axios"
 // const axiosInstance = axios.create({
 //   baseURL: "/api"
@@ -87,7 +87,7 @@ export const getCustomerContext = () => {
   })
 }
 
-export const completeSigning = ({flowId, requestId}) => {
+export const completeSigning = ({ flowId, requestId }) => {
   const data = {
     flowId,
     requestId
@@ -99,7 +99,13 @@ export const completeSigning = ({flowId, requestId}) => {
   })
 }
 
-export const transfer = ({targetAccount, accountId, amount, nonce, birthNumber}) => {
+export const transfer = ({
+  targetAccount,
+  accountId,
+  amount,
+  nonce,
+  birthNumber
+}) => {
   const data = {
     targetAccount,
     accountId,

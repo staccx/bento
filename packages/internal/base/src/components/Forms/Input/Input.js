@@ -21,6 +21,7 @@ import themePropTypes from "../../constants/themePropTypes"
 class Input extends React.Component {
   constructor(props) {
     super(props)
+    this.input = React.createRef()
     this.focus = this.focus.bind(this)
   }
 
@@ -44,6 +45,7 @@ class Input extends React.Component {
       label,
       mask,
       variant,
+      autocomplete,
       ...otherProps
     } = this.props
     return (
@@ -67,6 +69,8 @@ class Input extends React.Component {
             placeholder={placeholder}
             variant={variant}
             type={type}
+            innerRef={this.input}
+            autocomplete={autocomplete}
             {...otherProps}
           />
         ) : (
@@ -82,6 +86,8 @@ class Input extends React.Component {
             placeholder={placeholder}
             variant={variant}
             type={type}
+            innerRef={this.input}
+            autocomplete={autocomplete}
             {...otherProps}
           />
         )}
@@ -125,9 +131,9 @@ export const inputCss = css`
   min-height: ${targetSize.normal};
   margin: 0 auto;
   border: 1px solid ${color.line};
-  border-radius: ${borderRadius()};
-  padding-left: ${spacing.small()};
-  padding-right: ${spacing.small()};
+  border-radius: ${borderRadius};
+  padding-left: ${spacing.small};
+  padding-right: ${spacing.small};
   font-family: ${fontFamily.body};
   font-size: ${font.input};
   transition: border-color 0.2s ease-out;

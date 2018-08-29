@@ -132,8 +132,8 @@ class Portfolio extends Component {
                       precision: 0
                     })}
                   </strong>{" "}
-                  /month with this portfolio <br />since <strong>1996</strong>{" "}
-                  you would now have{" "}
+                  /month with this portfolio <br />
+                  since <strong>1996</strong> you would now have{" "}
                   <strong>
                     {formatCurrency(this.props.apiStore.calculated, {
                       precision: 0

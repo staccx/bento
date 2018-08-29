@@ -16,7 +16,9 @@ class LanguageSettings extends React.Component {
               onChange={setLanguage}
               defaultValue={language}
             >
-              {languages.map(lang => <option value={lang}>{lang}</option>)}
+              {languages.map(lang => (
+                <option value={lang}>{lang}</option>
+              ))}
             </select>
           )
         }}

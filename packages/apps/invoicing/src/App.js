@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import theme from "./theme/Theme"
 import Home from "./pages/Home"
 import CreateInvoice from "./pages/CreateInvoice"
+import AddCustomer from "./components/AddCustomer/AddCustomer" // TODO: Should be a part of CreateInvoice?
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/create" component={CreateInvoice} />
+            <Route path="/add-customer" component={AddCustomer} />
           </Switch>
         </Router>
       </ThemeProxyProvider>

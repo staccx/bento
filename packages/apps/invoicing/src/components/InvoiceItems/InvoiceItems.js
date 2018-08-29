@@ -35,7 +35,8 @@ class InvoiceItems extends Component {
       return accumulator + line.price * line.number
     }, 0)
     const vat = lines.reduce((accumulator, line) => {
-      return accumulator + line.price * line.number * line.vatRate
+      const netAmount = line.price ? parseFloat(line.price) * line.number : 0
+      return accumulator + netAmount * line.vatRate
     }, 0)
 
     return {
@@ -59,7 +60,8 @@ class InvoiceItems extends Component {
           product: null,
           price: null,
           number: 1,
-          amount: null
+          amount: null,
+          vatRate: 0.25
         }
       ]
     })
@@ -74,14 +76,16 @@ class InvoiceItems extends Component {
   handlePriceChange(id, event) {
     const value = event.target.value
     let items = [...this.state.lines]
-    items.map(item => item.id === id && (item.price = parseInt(value, 10)))
+    items.map(
+      item => item.id === id && (item.price = parseFloat(value).toFixed(2))
+    )
     this.setState({ lines: items })
   }
 
   handleNumberChange(id, event) {
     const value = event.target.value
     let items = [...this.state.lines]
-    items.map(item => item.id === id && (item.number = value))
+    items.map(item => item.id === id && (item.number = parseInt(value, 10)))
     this.setState({ lines: items })
   }
 
@@ -89,9 +93,9 @@ class InvoiceItems extends Component {
     const currentItem = this.state.lines.filter(item => item.id === id)
 
     return !isNaN(
-      parseInt(currentItem[0].price, 10) * parseInt(currentItem[0].number, 10)
+      parseFloat(currentItem[0].price) * parseFloat(currentItem[0].number)
     )
-      ? parseInt(currentItem[0].price, 10) * parseInt(currentItem[0].number, 10)
+      ? parseFloat(currentItem[0].price) * parseFloat(currentItem[0].number)
       : 0
   }
 

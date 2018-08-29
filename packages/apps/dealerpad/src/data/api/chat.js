@@ -1,17 +1,22 @@
 import io from "socket.io-client"
+import axios from "axios"
 
 class Chat {
   socket = null
+  axiosInstance = null
 
-  sendMessage(roomName, userName, userId, message) {
-    console.log("sending message", roomName, userName, userId, message)
+  sendMessage(chatroomName, name, id, msg) {
     return this.socket.emit(
       "message",
-      roomName,
-      userName,
-      userId,
-      message,
-      data => console.log
+      {
+        chatroomName,
+        name,
+        id,
+        msg,
+        userType: "dealer",
+        msgType: "message"
+      },
+      console.log
     )
   }
 
@@ -31,14 +36,32 @@ class Chat {
     this.socket.on("error", onError)
   }
 
-  join(roomName, onPreviousMessages) {
-    this.socket.emit("join", roomName, onPreviousMessages)
+  join(chatroomName, onPreviousMessages) {
+    this.socket.emit(
+      "join",
+      { chatroomName, userType: "dealer" },
+      onPreviousMessages
+    )
   }
 
-  leave(roomName) {
-    this.socket.emit("leave", roomName)
+  leave(roomId) {
+    this.socket.emit("leave", { roomId, userType: "dealer" })
   }
 }
 
+const axiosInstance = axios.create({ baseURL: "/" })
+
+export const fetchUnreadMessages = caseId =>
+  axiosInstance
+    .get("/getUnreads", {
+      params: {
+        chatroomName: caseId,
+        userType: "dealer"
+      }
+    })
+    .then(res => (res.data.length ? res.data : []))
+    .catch(err => [])
+
 const chat = new Chat()
+
 export default chat

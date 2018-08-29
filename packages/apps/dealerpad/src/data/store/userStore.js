@@ -1,7 +1,8 @@
 import { observable } from "mobx"
 
 class UserStore {
-  @observable user = null
+  @observable
+  user = null
 
   initialize() {
     this.user = {

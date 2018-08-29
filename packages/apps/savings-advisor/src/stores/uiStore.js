@@ -36,35 +36,51 @@ class UIStore {
     { name: "Theme", component: Investments, validator: () => true },
     { name: "Portfolio", component: Portfolio }
   ]
-  @observable selectedInstrument = null
+  @observable
+  selectedInstrument = null
 
-  @observable hasExperience = false
+  @observable
+  hasExperience = false
 
-  @observable currentStep = 0
-  @observable maxStep = 0
-  @observable filterExpanded = false
+  @observable
+  currentStep = 0
+  @observable
+  maxStep = 0
+  @observable
+  filterExpanded = false
 
-  @observable cmsContent = null
+  @observable
+  cmsContent = null
 
-  @observable cmsStart = null
-  @observable cmsExperience = null
-  @observable cmsPurpose = null
-  @observable cmsRisk = null
-  @observable cmsTheme = null
-  @observable cmsSummary = null
+  @observable
+  cmsStart = null
+  @observable
+  cmsExperience = null
+  @observable
+  cmsPurpose = null
+  @observable
+  cmsRisk = null
+  @observable
+  cmsTheme = null
+  @observable
+  cmsSummary = null
 
-  @observable settings = null
+  @observable
+  settings = null
 
-  @observable locale = "en"
+  @observable
+  locale = "en"
 
-  @action setFilterExpanded = isExpanded => (this.filterExpanded = isExpanded)
+  @action
+  setFilterExpanded = isExpanded => (this.filterExpanded = isExpanded)
 
   @action
   setInstrument = instrument =>
     (this.selectedInstrument =
       instrument === this.selectedInstrument ? null : instrument)
 
-  @action toggleExperience = () => (this.hasExperience = !this.hasExperience)
+  @action
+  toggleExperience = () => (this.hasExperience = !this.hasExperience)
 
   @action
   setStep = step => {
@@ -74,8 +90,10 @@ class UIStore {
     }
   }
 
-  @action translate = text => (text ? text[this.locale] : null)
-  @action getImage = img => urlFor(client, img)
+  @action
+  translate = text => (text ? text[this.locale] : null)
+  @action
+  getImage = img => urlFor(client, img)
 
   constructor() {
     this.apiStore = null

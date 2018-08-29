@@ -33,7 +33,10 @@ class Case extends Component {
       currentTab: "documentation" // Only applies to small screens
     }
 
-    caseStore.setCurrentCase(props.match.params.caseId)
+    const id = props.match.params.caseId
+    caseStore.currentCase = id
+    caseStore.initializeCurrentCase()
+    chatStore.setCurrentRoom(id)
   }
 
   handleChangeTab(value) {
@@ -42,11 +45,17 @@ class Case extends Component {
     })
   }
 
+  componentWillUnmount() {
+    caseStore.currentCase = null
+    chatStore.setCurrentRoom(null)
+  }
+
   render() {
     const { history, location } = this.props
 
-    const isLoading = caseStore.loadingCaseDetails
-    const currentCase = isLoading ? emptyCase : caseStore.currentCase
+    const currentCase = caseStore.currentCase
+      ? caseStore.currentCase
+      : emptyCase
 
     const customerName =
       currentCase.customers[0].firstName +
@@ -95,13 +104,12 @@ class Case extends Component {
                 <span>{currentCase.car.variant}</span>
               )}
               <br />
-              {formatCurrency(
-                currentCase.funding["termFeePerMnd(inc mva)"]
-              )},-/mnd
+              {formatCurrency(currentCase.funding["termFeePerMnd(inc mva)"])}
+              ,-/mnd
             </Paragraph>
             <CaseProgressLarge
               hasRejectedDocuments={currentCase.hasRejectedDocuments}
-              progress={currentCase.status}
+              progress={currentCase.progress}
               max={4}
             />
           </Layout>
@@ -149,19 +157,18 @@ class Case extends Component {
             caseNumber={currentCase.applicationId}
           />
         </LayoutItem>
-
-        {caseStore.loadingCaseDetails ? (
-          <Loading />
-        ) : (
-          <LayoutItem
-            variant="caseDocumentation"
-            hideOnMobile={this.state.currentTab !== "documentation"}
-          >
-            <Heading level="2" variant="subtle">
-              Dokumentasjon
-            </Heading>
+        <LayoutItem
+          variant="caseDocumentation"
+          hideOnMobile={this.state.currentTab !== "documentation"}
+        >
+          <Heading level="2" variant="subtle">
+            Dokumentasjon
+          </Heading>
+          {!caseStore.currentCase ? (
+            <Loading />
+          ) : (
             <div>
-              {currentCase.documents.map(document => (
+              {caseStore.currentCase.documents.map(document => (
                 <Documentation
                   label={document.name}
                   status={document.status}
@@ -172,8 +179,8 @@ class Case extends Component {
                 />
               ))}
             </div>
-          </LayoutItem>
-        )}
+          )}
+        </LayoutItem>
 
         <LayoutItem
           variant="caseContact"

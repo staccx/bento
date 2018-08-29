@@ -1,12 +1,18 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { ThemeComponent } from "@staccx/theme"
-import { Button, FileInput } from "@staccx/base"
+import { Button, FileInput, Loading } from "@staccx/base"
 import fileStatus from "../../data/fileStatus"
 import caseStore from "../../data/store/caseStore"
 
 const DocumentationIcon = ({ status, history, location, document }) => {
   switch (status) {
+    case fileStatus.uploading:
+      return (
+        <div>
+          <Loading />
+        </div>
+      )
     case fileStatus.pending:
       return (
         <div>

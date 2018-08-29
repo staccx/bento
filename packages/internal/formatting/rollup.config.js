@@ -2,6 +2,7 @@ import babel from "rollup-plugin-babel"
 import commonjs from "rollup-plugin-commonjs"
 import resolve from "rollup-plugin-node-resolve"
 import json from "rollup-plugin-json"
+import filesize from "rollup-plugin-filesize"
 
 import pkg from "./package.json"
 
@@ -25,6 +26,7 @@ export default {
       plugins: ["external-helpers"]
     }),
     resolve(),
-    commonjs()
+    commonjs(),
+    filesize()
   ]
 }

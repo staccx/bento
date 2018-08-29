@@ -9,7 +9,13 @@ class Tags extends React.Component {
     return (
       <OpenApiConsumer>
         {({ tags }) => {
-          return <List>{tags.map(tag => <Tag tag={tag} />)}</List>
+          return (
+            <List>
+              {tags.map(tag => (
+                <Tag tag={tag} />
+              ))}
+            </List>
+          )
         }}
       </OpenApiConsumer>
     )

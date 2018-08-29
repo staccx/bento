@@ -1,11 +1,13 @@
-import { observable, action, autorun } from "mobx"
+import { observable, action } from "mobx"
 import chatApi from "../api/chat"
 import caseStore from "./caseStore"
 import userStore from "./userStore"
 
 class ChatStore {
-  @observable messages = []
-  @observable currentRoom = null
+  @observable
+  messages = []
+  @observable
+  currentRoom = null
 
   @action
   sendMessage(message) {
@@ -18,13 +20,18 @@ class ChatStore {
   }
 
   @action
-  leaveRoom(roomName) {
-    chatApi.leave(roomName)
-  }
+  setCurrentRoom(roomName) {
+    if (roomName !== this.currentRoom) {
+      if (this.currentRoom) {
+        chatApi.leave(this.currentRoom)
+        this.currentRoom = null
+      }
 
-  @action
-  joinRoom(roomName) {
-    chatApi.join(roomName, msgs => (this.messages = msgs))
+      if (roomName) {
+        chatApi.join(roomName, messages => (this.messages = messages))
+        this.currentRoom = roomName
+      }
+    }
   }
 
   initialize(chatUrl) {
@@ -33,18 +40,6 @@ class ChatStore {
     chatApi.registerHandlers({
       onMessageReceived: messages => (this.messages = messages),
       onError: console.log
-    })
-
-    autorun(() => {
-      if (caseStore.currentCase) {
-        if (this.currentRoom) {
-          console.log("leaving room", this.currentRoom)
-          this.leaveRoom(this.currentRoom)
-        }
-        console.log("joining room", caseStore.currentCase.id)
-        this.joinRoom(caseStore.currentCase.id)
-        this.currentRoom = caseStore.currentCase.id
-      }
     })
   }
 }

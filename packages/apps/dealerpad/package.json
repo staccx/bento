@@ -1,11 +1,11 @@
 {
   "name": "@staccx/dealerpad",
-  "version": "6.5.1",
+  "version": "7.1.1",
   "dependencies": {
-    "@staccx/base": "^6.5.1",
-    "@staccx/nordea-theme": "^6.5.1",
-    "@staccx/soy": "^6.5.1",
-    "@staccx/theme": "^6.5.1",
+    "@staccx/base": "^7.1.1",
+    "@staccx/nordea-theme": "^7.1.1",
+    "@staccx/soy": "^7.1.1",
+    "@staccx/theme": "^7.1.1",
     "axios": "^0.18.0",
     "history": "^4.7.2",
     "react-transition-group": "^2.4.0",
@@ -27,12 +27,17 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^6.5.1"
+    "@staccx/rollup-config": "^7.1.1"
   },
   "license": "UNLICENSED",
   "proxy": {
     "/api": {
       "target": "https://api.nordea-finans.staccflow.com/",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/getUnreads": {
+      "target": "https://chat.nordea-finans.staccflow.com/",
       "secure": false,
       "changeOrigin": true
     }

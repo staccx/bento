@@ -45,31 +45,49 @@ export const optionList = [
 ]
 
 class ApiStore {
-  @observable savingsplan = null
-  @observable marketReturns = null
-  @observable recommendedPortfolio = []
-  @observable forecastedAnnualReturn = 0
-  @observable forecast = null
-  @observable backtest = null
-  @observable expected = 0
-  @observable calculated = 0
-  @observable years = null
+  @observable
+  savingsplan = null
+  @observable
+  marketReturns = null
+  @observable
+  recommendedPortfolio = []
+  @observable
+  forecastedAnnualReturn = 0
+  @observable
+  forecast = null
+  @observable
+  backtest = null
+  @observable
+  expected = 0
+  @observable
+  calculated = 0
+  @observable
+  years = null
 
-  @observable currentRisk = null
-  @observable horizon = null
+  @observable
+  currentRisk = null
+  @observable
+  horizon = null
 
-  @observable optionList = []
+  @observable
+  optionList = []
 
-  @observable depositStart = 0
-  @observable depositMonthly = 2000
+  @observable
+  depositStart = 0
+  @observable
+  depositMonthly = 2000
 
-  @observable timeout = null
+  @observable
+  timeout = null
 
-  @observable isChartLoading = true
+  @observable
+  isChartLoading = true
 
-  @observable settings = null
+  @observable
+  settings = null
 
-  @action setIsChartLoading = isLoading => (this.isChartLoading = isLoading)
+  @action
+  setIsChartLoading = isLoading => (this.isChartLoading = isLoading)
 
   @action
   toggleOption = option => {
