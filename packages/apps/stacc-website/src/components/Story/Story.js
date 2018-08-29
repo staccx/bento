@@ -53,6 +53,9 @@ const Inner = styled.div`
     flex-basis: calc(50% - 48px);
     text-align: center;
   }
+  @media only screen and (max-width: 750px) {
+    flex-direction: column-reverse;
+  }
 `
 
 const Illustration = styled.img`
