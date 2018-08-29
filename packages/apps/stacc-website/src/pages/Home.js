@@ -1,13 +1,14 @@
 import React from "react"
-import { Layout } from "@staccx/base"
+import { Layout, Heading } from "@staccx/base"
 import Hero from "../components/Hero/Hero"
 import FullWidth from "../components/FullWidth/FullWidth"
 import Story from "../components/Story/Story"
 import Quote from "../components/Quote/Quote"
+import LogoSalad from "../components/LogoSalad/LogoSalad"
 
 const Home = () => (
   <div>
-    <Layout paddingTop="grid" rowGap="grid" paddingBottom="grid">
+    <Layout paddingTop="grid" rowGap="grid">
       <div>
         <Hero
           heading="Building blocks for first movers in finance."
@@ -43,6 +44,15 @@ const Home = () => (
         callToActionUrl={"/services/ux"}
         isReverse={false}
       />
+      <LogoSalad />
+      <div>
+        <Layout rowGap="large">
+          <Heading level={2}>Building services with Stacc</Heading>
+          <div>
+            <img src="/img/staccstack.png" alt="" />
+          </div>
+        </Layout>
+      </div>
       <Quote
         img="http://fillmurray.com/200/200"
         name="Bent Gjendem, CEO at Monobank"

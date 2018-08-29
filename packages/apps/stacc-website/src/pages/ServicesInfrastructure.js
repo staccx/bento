@@ -13,6 +13,11 @@ const ServicesInfrastructure = ({ match }) => {
             {
               label: "Services",
               url: "/services"
+            },
+            {
+              label: "Infrastructure",
+              url: "/services/infrastructure",
+              current: true
             }
           ]}
           heading="Infrastructure & architecture"

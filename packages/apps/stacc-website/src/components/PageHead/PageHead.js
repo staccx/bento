@@ -4,28 +4,35 @@ import { Link } from "react-router-dom"
 import { Heading, Layout } from "@staccx/base"
 import { spacing, font, color } from "@staccx/theme"
 
-const PageHead = ({ heading, lede, illustration, breadcrumb }) => (
-  <header>
-    <Layout>
-      <div>
-        <BreadcrumbContainer>
-          {breadcrumb &&
-            breadcrumb.map(crumb => (
-              <Breadcrumb to={crumb.url}>{crumb.label}</Breadcrumb>
-            ))}
-        </BreadcrumbContainer>
-        <Heading level={1}>{heading}</Heading>
-      </div>
-
-      <Body>
-        <Lede>{lede}</Lede>
+const PageHead = ({ heading, lede, illustration, breadcrumb }) => {
+  console.log(breadcrumb)
+  return (
+    <header>
+      <Layout>
         <div>
-          <Illustration src={illustration} alt="" />
+          <BreadcrumbContainer>
+            {breadcrumb.length &&
+              breadcrumb.map(crumb => {
+                return crumb.current ? (
+                  <CurrentCrumb>{crumb.label}</CurrentCrumb>
+                ) : (
+                  <Breadcrumb to={crumb.url}>{crumb.label}</Breadcrumb>
+                )
+              })}
+          </BreadcrumbContainer>
+          <Heading level={1}>{heading}</Heading>
         </div>
-      </Body>
-    </Layout>
-  </header>
-)
+
+        <Body>
+          <Lede>{lede}</Lede>
+          <div>
+            <Illustration src={illustration} alt="" />
+          </div>
+        </Body>
+      </Layout>
+    </header>
+  )
+}
 
 const BreadcrumbContainer = styled.div`
   display: block;
@@ -45,6 +52,10 @@ const Breadcrumb = styled(Link)`
       margin: 0 ${spacing.tiny};
     }
   }
+`
+
+const CurrentCrumb = styled.span`
+  color: ${color.gray};
 `
 
 const Body = styled.div`
