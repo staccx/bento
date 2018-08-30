@@ -8,6 +8,7 @@ import LogoSalad from "../components/LogoSalad/LogoSalad"
 import SectionHead from "../components/SectionHead/SectionHead"
 import ContentLinks from "../components/ContentLinks/ContentLinks"
 import ContentLinksItem from "../components/ContentLinks/ContentLinks.Item"
+import Blocks from "../components/Viz/Blocks"
 
 const Home = () => (
   <div>
@@ -19,7 +20,7 @@ const Home = () => (
           callToAction="Get in touch"
         />
         <FullWidth>
-          <img src="/img/blockbelt.png" alt="" />
+          <Blocks />
         </FullWidth>
       </div>
 

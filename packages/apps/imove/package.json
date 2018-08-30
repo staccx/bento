@@ -1,0 +1,33 @@
+{
+  "name": "@staccx/imove",
+  "version": "5.2.1",
+  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "dependencies": {
+    "@staccx/base": "^7.1.1",
+    "@staccx/theme": "^7.1.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "styled-components": "^3.3.3"
+  },
+  "scripts": {
+    "build": "yarn prettify && rollup -c",
+    "start": "react-app-rewired start",
+    "build:app": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject",
+    "deploy": "yarn build && surge -p ./build",
+    "serve": "yarn build && serve -s build",
+    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
+  },
+  "devDependencies": {
+    "@staccx/rollup-config": "^7.1.1",
+    "prettier": "^1.14.2",
+    "react-app-rewired": "^1.5.2",
+    "rollup": "^0.65.0",
+    "serve": "^10.0.0",
+    "surge": "^0.20.1"
+  }
+}

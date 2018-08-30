@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { ThemeProvider } from "@staccx/Theme"
+import { ThemeProvider } from "@staccx/theme"
 
 class AppPreview extends Component {
   render() {

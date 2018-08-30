@@ -21,6 +21,11 @@ const Header = () => (
 
 const LogoLink = styled(Link)`
   text-decoration: none;
+  padding-right: ${spacing.medium};
+  @media only screen and (max-width: 420px) {
+    max-width: 50px;
+    overflow: hidden;
+  }
 `
 
 const Head = styled.header`
@@ -30,6 +35,7 @@ const Head = styled.header`
 const Inner = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `
 
 export default Header
