@@ -7,8 +7,13 @@
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
     "@staccx/base": "^7.1.1",
-    "@staccx/soy": "^7.1.1",
-    "@staccx/theme": "^7.1.1"
+    "@staccx/theme": "^7.1.1",
+    "mobx-react": "^5.2.5",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2",
+    "styled-components": "^3.3.3"
   },
   "scripts": {
     "build": "yarn prettify && rollup -c",
@@ -21,6 +26,13 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.1.1"
+    "@staccx/rollup-config": "^7.1.1",
+    "prettier": "^1.14.2",
+    "react-app-rewire-mobx": "^1.0.8",
+    "react-app-rewire-styled-components": "^3.0.2",
+    "react-app-rewired": "^1.5.2",
+    "rollup": "^0.65.0",
+    "serve": "^10.0.0",
+    "surge": "^0.20.1"
   }
 }

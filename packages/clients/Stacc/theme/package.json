@@ -25,7 +25,20 @@
   },
   "dependencies": {
     "@staccx/base": "^7.1.1",
-    "@staccx/soy": "^7.1.1",
-    "@staccx/theme": "^7.1.1"
+    "@staccx/theme": "^7.1.1",
+    "polished": "^1.9.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "styled-components": "^3.3.3"
+  },
+  "devDependencies": {
+    "jest": "^23.5.0",
+    "prettier": "^1.14.2",
+    "react-scripts": "^1.1.5",
+    "rollup": "^0.65.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2"
   }
 }

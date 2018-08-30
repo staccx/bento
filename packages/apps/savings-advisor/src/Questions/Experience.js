@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Toggle } from "@staccx/base"
-import { color, spacing } from "@staccx/Theme"
+import { color, spacing } from "@staccx/theme"
 import { inject, observer } from "mobx-react"
 import QuestionLead from "../components/QuestionLead"
 
