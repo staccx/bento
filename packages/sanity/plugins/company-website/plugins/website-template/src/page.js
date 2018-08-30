@@ -38,7 +38,7 @@ export default {
     },
     {
       type: "blockContent",
-      name: "Blocks",
+      name: "blocks",
       title: "Blocks"
     }
   ]

@@ -887,6 +887,22 @@
     semver-compare "^1.0.0"
     shallow-equals "^1.0.0"
 
+"@sanity/block-content-to-hyperscript@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@sanity/block-content-to-hyperscript/-/block-content-to-hyperscript-2.0.5.tgz#8b55040353c0b23456a3a85103f39432ab04072f"
+  dependencies:
+    "@sanity/generate-help-url" "^0.132.5"
+    "@sanity/image-url" "^0.132.5"
+    hyperscript "^2.0.2"
+    object-assign "^4.1.1"
+
+"@sanity/block-content-to-react@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@sanity/block-content-to-react/-/block-content-to-react-2.0.4.tgz#4fa15e75ed234aa0ff07141b37a84db817871e47"
+  dependencies:
+    "@sanity/block-content-to-hyperscript" "^2.0.5"
+    prop-types "^15.6.2"
+
 "@sanity/block-tools@0.132.8":
   version "0.132.8"
   resolved "https://registry.yarnpkg.com/@sanity/block-tools/-/block-tools-0.132.8.tgz#d0f4e69b3345e617218076e5f13a0ebc7f805b79"
@@ -1142,7 +1158,7 @@
     slate-soft-break "^0.4.1"
     speakingurl "^13.0.0"
 
-"@sanity/generate-help-url@0.132.5":
+"@sanity/generate-help-url@0.132.5", "@sanity/generate-help-url@^0.132.5":
   version "0.132.5"
   resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-0.132.5.tgz#983415b16b8f00c614e2bfca3073220f6e897730"
 
@@ -1150,7 +1166,7 @@
   version "0.125.8"
   resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-0.125.8.tgz#2937dd144212946b860ab4fb1227be20d7d81b1b"
 
-"@sanity/image-url@0.132.8":
+"@sanity/image-url@0.132.8", "@sanity/image-url@^0.132.5":
   version "0.132.8"
   resolved "https://registry.yarnpkg.com/@sanity/image-url/-/image-url-0.132.8.tgz#cca66e57ecb9352763a2a4b090aa85a83409cea2"
 
@@ -3138,6 +3154,10 @@ browser-resolve@^1.11.2, browser-resolve@^1.11.3:
   dependencies:
     resolve "1.1.7"
 
+browser-split@0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/browser-split/-/browser-split-0.0.0.tgz#41419caef769755929dd518967d3eec0a6262771"
+
 browserify-aes@^1.0.0, browserify-aes@^1.0.4:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/browserify-aes/-/browserify-aes-1.2.0.tgz#326734642f403dabc3003209853bb70ad428ef48"
@@ -3684,6 +3704,12 @@ clap@^1.0.9:
   resolved "https://registry.yarnpkg.com/clap/-/clap-1.2.3.tgz#4f36745b32008492557f46412d66d50cb99bce51"
   dependencies:
     chalk "^1.1.3"
+
+class-list@~0.1.0, class-list@~0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/class-list/-/class-list-0.1.1.tgz#9b9745192c4179b5da0a0d7633658e3c70d796cb"
+  dependencies:
+    indexof "0.0.1"
 
 class-utils@^0.3.5:
   version "0.3.6"
@@ -7107,6 +7133,12 @@ html-comment-regex@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/html-comment-regex/-/html-comment-regex-1.1.1.tgz#668b93776eaae55ebde8f3ad464b307a4963625e"
 
+html-element@^2.0.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/html-element/-/html-element-2.2.0.tgz#c3c1ff88c261db74d0af6391eef90c346f900730"
+  dependencies:
+    class-list "~0.1.1"
+
 html-encoding-sniffer@^1.0.1, html-encoding-sniffer@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/html-encoding-sniffer/-/html-encoding-sniffer-1.0.2.tgz#e70d84b94da53aa375e11fe3a351be6642ca46f8"
@@ -7266,6 +7298,14 @@ husky@^0.14.3:
     is-ci "^1.0.10"
     normalize-path "^1.0.0"
     strip-indent "^2.0.0"
+
+hyperscript@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/hyperscript/-/hyperscript-2.0.2.tgz#3839cba45554bdfe27bb81c2142d1684f8135af5"
+  dependencies:
+    browser-split "0.0.0"
+    class-list "~0.1.0"
+    html-element "^2.0.0"
 
 hyphenate-style-name@^1.0.2:
   version "1.0.2"

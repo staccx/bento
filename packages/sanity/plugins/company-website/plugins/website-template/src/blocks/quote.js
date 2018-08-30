@@ -23,5 +23,11 @@ export default {
       },
       validation: Rule => Rule.required()
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: "subText",
+      subTitle: "quote"
+    }
+  }
 }
