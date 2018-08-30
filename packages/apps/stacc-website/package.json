@@ -9,6 +9,7 @@
     "@staccx/base": "^7.1.1",
     "@staccx/color": "^7.1.1",
     "@staccx/formatting": "^7.1.1",
+    "@staccx/sanity": "^7.1.1",
     "@staccx/stacc-theme": "^7.1.1",
     "@staccx/theme": "^7.1.1",
     "history": "^4.7.2",
