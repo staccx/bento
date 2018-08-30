@@ -48,6 +48,15 @@ const MenuItems = styled.ul`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  @media only screen and (max-width: 649px) {
+    flex-wrap: wrap;
+    > li {
+      flex-basis: 50%;
+      &:first-child {
+        display: none;
+      }
+    }
+  }
 `
 
 const MenuItem = styled(NavLink)`
@@ -68,22 +77,27 @@ const MenuItem = styled(NavLink)`
   &.is-current {
     border-bottom: 2px solid ${color.primary};
   }
+  @media only screen and (max-width: 649px) {
+    display: inline-block;
+  }
 
   ${p =>
     p.emphasized &&
     css`
-      color: ${color.white};
-      background-color: ${color.secondary};
-      padding: ${spacing.tiny};
-      border-radius: ${borderRadius};
-      transition: box-shadow 0.2s ease;
-      border-bottom: 0;
-
-      &:hover,
-      &:active,
-      &:focus {
-        box-shadow: 0 2px 6px ${p => opacity(color("secondary")(p), 0.25)};
+      @media only screen and (min-width: 650px) {
+        color: ${color.white};
+        background-color: ${color.secondary};
+        padding: ${spacing.tiny};
+        border-radius: ${borderRadius};
+        transition: box-shadow 0.2s ease;
         border-bottom: 0;
+
+        &:hover,
+        &:active,
+        &:focus {
+          box-shadow: 0 2px 6px ${p => opacity(color("secondary")(p), 0.25)};
+          border-bottom: 0;
+        }
       }
     `};
 `

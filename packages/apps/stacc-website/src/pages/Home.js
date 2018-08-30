@@ -5,6 +5,7 @@ import FullWidth from "../components/FullWidth/FullWidth"
 import Story from "../components/Story/Story"
 import Quote from "../components/Quote/Quote"
 import LogoSalad from "../components/LogoSalad/LogoSalad"
+import Blocks from "../components/Viz/Blocks"
 
 const Home = () => (
   <div>
@@ -16,7 +17,7 @@ const Home = () => (
           callToAction="Get in touch"
         />
         <FullWidth>
-          <img src="/img/blockbelt.png" alt="" />
+          <Blocks />
         </FullWidth>
       </div>
 
