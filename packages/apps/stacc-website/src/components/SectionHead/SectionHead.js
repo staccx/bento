@@ -1,30 +1,37 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { Heading, Layout } from "@staccx/base"
 import { spacing, font, color } from "@staccx/theme"
 
-const PageHead = ({ heading, lede, illustration, breadcrumb }) => {
-  console.log(breadcrumb)
+const SectionHead = ({
+  heading,
+  headingLevel,
+  lede,
+  illustration,
+  breadcrumb
+}) => {
   return (
     <header>
       <Layout>
-        <div>
-          <BreadcrumbContainer>
-            {breadcrumb.length &&
-              breadcrumb.map(crumb => {
-                return crumb.current ? (
-                  <CurrentCrumb>{crumb.label}</CurrentCrumb>
-                ) : (
-                  <Breadcrumb to={crumb.url}>{crumb.label}</Breadcrumb>
-                )
-              })}
-          </BreadcrumbContainer>
-          <Heading level={1}>{heading}</Heading>
-        </div>
-
         <Body>
-          <Lede>{lede}</Lede>
+          <div>
+            <BreadcrumbContainer>
+              {breadcrumb &&
+                breadcrumb.length &&
+                breadcrumb.map(crumb => {
+                  return crumb.current ? (
+                    <CurrentCrumb>{crumb.label}</CurrentCrumb>
+                  ) : (
+                    <Breadcrumb to={crumb.url}>{crumb.label}</Breadcrumb>
+                  )
+                })}
+            </BreadcrumbContainer>
+            <Heading level={headingLevel}>{heading}</Heading>
+            <Lede>{lede}</Lede>
+          </div>
+
           <div>
             <Illustration src={illustration} alt="" />
           </div>
@@ -74,4 +81,22 @@ const Illustration = styled.img`
   max-width: 320px;
 `
 
-export default PageHead
+SectionHead.defaultProps = {
+  heading: null,
+  headingLevel: 1,
+  lede: null,
+  breadcrumb: null,
+  callToActionUrl: null,
+  illustration: null
+}
+
+SectionHead.propTypes = {
+  heading: PropTypes.string,
+  headingLevel: PropTypes.number,
+  lede: PropTypes.string,
+  breadcrumb: PropTypes.array,
+  callToActionUrl: PropTypes.string,
+  illustration: PropTypes.string
+}
+
+export default SectionHead
