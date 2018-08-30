@@ -9,6 +9,11 @@ export default {
       title: "Title"
     },
     {
+      type: "boolean",
+      name: "isPageHeader",
+      title: "Page Header?"
+    },
+    {
       type: "text",
       name: "body",
       title: "Body"
