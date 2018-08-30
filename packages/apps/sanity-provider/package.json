@@ -7,6 +7,7 @@
   "jsnext:main": "dist/index.es.js",
   "license": "UNLICENSED",
   "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.4",
     "@staccx/base": "^7.1.1",
     "@staccx/theme": "^7.1.1",
     "mobx-react": "^5.2.5",
