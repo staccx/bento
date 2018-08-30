@@ -1,5 +1,7 @@
 export { default as person } from "./person"
 export { default as article } from "./article"
 export { default as blockContent } from "./blockContent"
-export { default as category } from "./category"
+export { default as tag } from "./tag"
 export { default as socialMediaLink } from "./socialLink"
+export { default as company } from "./company"
+export { default as product } from "./product"
