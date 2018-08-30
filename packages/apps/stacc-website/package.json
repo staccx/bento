@@ -9,7 +9,8 @@
     "@staccx/base": "^7.1.1",
     "@staccx/soy": "^7.1.1",
     "@staccx/theme": "^7.1.1",
-    "react-router-breadcrumbs-hoc": "^2.1.4"
+    "react-router-breadcrumbs-hoc": "^2.1.4",
+    "three": "^0.95.0"
   },
   "scripts": {
     "build": "yarn prettify && rollup -c",
