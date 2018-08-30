@@ -15,9 +15,15 @@ export default {
     },
     {
       type: "array",
+      name: "caseStudies",
+      title: "Case studies",
+      of: [{ type: "caseStudy" }]
+    },
+    {
+      type: "array",
       name: "products",
       title: "Products",
-      of: [{ type: "reference", name: "product", to: [{ type: "product" }] }]
+      of: [{ type: "reference", to: [{ type: "product" }] }]
     }
   ]
 }

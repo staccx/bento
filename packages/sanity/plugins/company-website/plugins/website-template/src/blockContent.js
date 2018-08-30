@@ -39,6 +39,13 @@ export default {
     {
       type: "image",
       options: { hotspot: true }
-    }
+    },
+    { type: "tab" },
+    { type: "featureList" },
+    { type: "section" },
+    { type: "sectionHead" },
+    { type: "linkBlock" },
+    { type: "productClients" },
+    { type: "quote" }
   ]
 }

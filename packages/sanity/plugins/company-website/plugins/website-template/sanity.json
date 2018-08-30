@@ -30,7 +30,43 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "caseStudy.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "product.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/tab.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/featureList.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/data/feature.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/section.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/sectionHead.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/linkBlock.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/productClients.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/quote.js"
     }
   ]
 }
