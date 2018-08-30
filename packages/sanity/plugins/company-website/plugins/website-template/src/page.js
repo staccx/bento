@@ -16,6 +16,27 @@ export default {
       }
     },
     {
+      type: "array",
+      name: "subpages",
+      title: "Sub pages",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "page" }],
+          validation: Rule =>
+            Rule.custom((desc, options) => {
+              if (!desc || !desc._ref) {
+                return true
+              }
+
+              return desc._ref === options.document._id.replace("drafts.", "")
+                ? "Can not reference itself!"
+                : true
+            })
+        }
+      ]
+    },
+    {
       type: "blockContent",
       name: "Blocks",
       title: "Blocks"

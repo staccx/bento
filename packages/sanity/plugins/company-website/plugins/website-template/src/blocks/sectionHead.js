@@ -1,7 +1,7 @@
 export default {
   type: "object",
   name: "sectionHead",
-  title: "Seaction head",
+  title: "Section head",
   fields: [
     {
       type: "string",

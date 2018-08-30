@@ -13,7 +13,7 @@ export default {
   preview: {
     select: {
       title: "features[0].title",
-      subtitle: "features.length"
+      subtitle: "features.length.toString()"
     }
   }
 }

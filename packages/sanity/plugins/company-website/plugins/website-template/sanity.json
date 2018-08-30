@@ -38,10 +38,6 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "blocks/tab.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "blocks/featureList.js"
     },
     {
