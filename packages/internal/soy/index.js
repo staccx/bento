@@ -61,24 +61,31 @@ const doCheck = async () => {
     if (program.wild) {
       for (let dep in pkg.devDependencies) {
         if (!pinned[dep]) {
+          const wildVersion = pkg.devDependencies[dep]
+
           if (program.verbose) {
             console.log(
               "🔥",
               chalk.bold(pkg.name) + ":",
               dep,
-              chalk.gray(pkg.devDependencies[dep])
+              chalk.gray(wildVersion)
             )
           }
 
           if (!wildStats[dep]) {
             wildStats[dep] = []
           }
-          if (!wildStats[dep].includes(pkg.devDependencies[dep])) {
-            wildStats[dep].push(pkg.devDependencies[dep])
+
+          let wildElement = wildStats[dep].find(e => e.version === wildVersion)
+          if (wildElement) {
+            wildElement.count++
+          } else {
+            wildStats[dep].push({ version: wildVersion, count: 1 })
           }
         }
       }
     }
+
     if (updatedDependencies) {
       dirtyPackageCounter++
       if (program.pour) {
@@ -111,11 +118,14 @@ doCheck().then(({ dirtyPackageCounter, wildStats }) => {
       (a, b) => wildStats[b].length - wildStats[a].length
     )
 
-    for (let wild of wildSorted) {
+    for (let dep of wildSorted) {
+      wildStats[dep].sort((a, b) => a.count - b.count)
       console.log(
-        chalk.bold(wild) + ":",
-        chalk.gray(wildStats[wild].join(" ")),
-        "(" + wildStats[wild].length + ")"
+        chalk.bold(dep) + ":",
+        chalk.gray(
+          wildStats[dep].map(e => e.version + " (" + e.count + ")").join(" ")
+        ),
+        "(" + wildStats[dep].length + ")"
       )
     }
   }
@@ -124,4 +134,3 @@ doCheck().then(({ dirtyPackageCounter, wildStats }) => {
 //TODO: count how many packages use the different devDependency versions and print from largest to smallest, e.g.: rollup (3): ^0.65.0 (21) ^0.62.0 (3) ^0.54.0 (1)
 //TODO: packages having a package in dependencies that is in soy/devDependencies
 //TODO: packages having a package in devDependencies that is in soy/dependencies
-
