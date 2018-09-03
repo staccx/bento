@@ -1,0 +1,36 @@
+{
+  "name": "@staccx/login-oidc",
+  "version": "7.1.1",
+  "description": "OTP login using oidc-client",
+  "author": "StaccX",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "scripts": {
+    "build": "yarn prettify && rollup -c",
+    "start": "rollup -c -w",
+    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "oidc-client": "^1.5.2",
+    "qs": "^6.5.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.2",
+    "rollup": "^0.65.0"
+  }
+}
