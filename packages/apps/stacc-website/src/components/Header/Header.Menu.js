@@ -3,6 +3,7 @@ import styled, { css } from "styled-components"
 import { NavLink } from "react-router-dom"
 import { spacing, color, borderRadius } from "@staccx/theme"
 import { SanityDocument } from "@staccx/sanity"
+import { Loading } from "@staccx/base"
 import { opacity } from "@staccx/color"
 
 const HeaderMenu = ({ inverted }) => (
@@ -11,7 +12,7 @@ const HeaderMenu = ({ inverted }) => (
       <SanityDocument id={"ffe2cd1d-2fed-4436-9942-ad9674dd80ea"}>
         {({ document }) => {
           if (!document) {
-            return null
+            return <Loading />
           }
           console.log(document)
           return document.links.map(menuItem => (

@@ -4,27 +4,23 @@ import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 import { List, Heading } from "@staccx/base"
 import { spacing, color, font } from "@staccx/theme"
+import { dashIt } from "@staccx/formatting"
 
-const NavigationSubpage = ({ inverted }) => (
+const NavigationSubpage = ({ inverted, items, name }) => (
   <Container>
-    <ProductName level={1}>Stacc Core</ProductName>
+    <ProductName level={1}>{name}</ProductName>
     <Navigation>
       <List>
-        <li>
-          <SubLink to="features/" activeClassName="is-current">
-            Features
-          </SubLink>
-        </li>
-        <li>
-          <SubLink to="use-cases/" activeClassName="is-current">
-            Use cases
-          </SubLink>
-        </li>
-        <li>
-          <SubLink to="technical-details/" activeClassName="is-current">
-            Technical-details
-          </SubLink>
-        </li>
+        {items.map(item => (
+          <li>
+            <SubLink
+              to={`/${dashIt(name)}/${dashIt(item.title)}`}
+              activeClassName="is-current"
+            >
+              {item.title}
+            </SubLink>
+          </li>
+        ))}
       </List>
     </Navigation>
   </Container>
@@ -62,8 +58,14 @@ const SubLink = styled(NavLink)`
   }
 `
 
-NavigationSubpage.defaultProps = {}
+NavigationSubpage.defaultProps = {
+  inverted: false
+}
 
-NavigationSubpage.propTypes = {}
+NavigationSubpage.propTypes = {
+  inverted: PropTypes.bool,
+  items: PropTypes.array,
+  name: PropTypes.string.isRequired
+}
 
 export default NavigationSubpage

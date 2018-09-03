@@ -36,6 +36,7 @@ export const getLinkItem = linkBlock => {
         </SanityDocument>
       )
     }
+    return null
   })
 }
 

@@ -8,6 +8,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.4",
+    "@sanity/image-url": "^0.132.8",
     "@staccx/base": "^7.2.1",
     "@staccx/theme": "^7.2.0",
     "mobx-react": "^5.2.5",

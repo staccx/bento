@@ -1,12 +1,10 @@
 import React from "react"
-import { Text, Heading } from "@staccx/base"
-import { SanityDocument } from "@staccx/sanity"
+import { Text, Heading, Layout } from "@staccx/base"
+import { SanityImage } from "@staccx/sanity"
 import Quote from "../components/Quote/Quote"
 import SectionHead from "../components/SectionHead/SectionHead"
 import Hero from "../components/Hero/Hero"
-import ContentLinksItem, {
-  getLinkItem
-} from "../components/ContentLinks/ContentLinks.Item"
+import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
 import ContentLinks from "../components/ContentLinks/ContentLinks"
 import FeatureList from "../components/FeatureList/FeatureList"
 
@@ -33,7 +31,11 @@ export default {
       />
     ),
     quote: ({ node }) => (
-      <Quote name={node.subText} quote={node.quote} img={node.image} />
+      <SanityImage image={node.image}>
+        {({ image }) => (
+          <Quote name={node.subText} quote={node.quote} img={image.url()} />
+        )}
+      </SanityImage>
     ),
     productClients: props => props.children,
     hero: ({ node }) => (
@@ -46,13 +48,20 @@ export default {
       const { head, links } = node
       return (
         <div>
-          <SectionHead
-            heading={head.title}
-            lede={head.body}
-            headingLevel={head.isPageHeader ? 1 : 2}
-            illustration={head.image}
-          />
-          <ContentLinks>{links.map(getLinkItem)}</ContentLinks>
+          <Layout>
+            <SanityImage image={head.image}>
+              {({ image }) => (
+                <SectionHead
+                  heading={head.title}
+                  lede={head.body}
+                  headingLevel={head.isPageHeader ? 1 : 2}
+                  illustration={image.url()}
+                />
+              )}
+            </SanityImage>
+
+            <ContentLinks>{links.map(getLinkItem)}</ContentLinks>
+          </Layout>
         </div>
       )
     },
