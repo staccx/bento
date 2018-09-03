@@ -4,7 +4,40 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { color, spacing } from "@staccx/theme"
 import { Heading } from "@staccx/base"
+import { SanityDocument } from "@staccx/sanity"
 import IconArrowRight from "../Icons/IconArrowRight"
+
+export const getLinkItem = linkBlock => {
+  return linkBlock.link.map(link => {
+    if (link.url) {
+      return (
+        <ContentLinksItem
+          heading={linkBlock.title}
+          url={link.url}
+          body={linkBlock.body}
+        />
+      )
+    }
+    if (link._ref) {
+      return (
+        <SanityDocument id={link._ref}>
+          {({ document }) => {
+            if (!document) {
+              return null
+            }
+
+            return (
+              <ContentLinksItem
+                heading={document.title}
+                url={`/${document.title}`}
+              />
+            )
+          }}
+        </SanityDocument>
+      )
+    }
+  })
+}
 
 const ContentLinksItem = ({ heading, body, url }) => {
   return (

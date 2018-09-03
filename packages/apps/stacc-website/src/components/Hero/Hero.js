@@ -18,40 +18,27 @@ const Hero = ({ heading, lede, trinity }) => (
             )}
             {lede && <Lede>{lede}</Lede>}
           </Layout>
-          {trinity && (
-            <SecondaryContentContainer singleton>
-              <SecondaryContent>
-                <Heading level={3}>Cloud native, scales seamlessly</Heading>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                  imperdiet molestie sapien ut mattis. Nunc justo magna,
-                  eleifend sed lectus vitae, tempus euismod enim.
-                </p>
-              </SecondaryContent>
-            </SecondaryContentContainer>
-          )}
+          {trinity &&
+            trinity.texts.filter((tri, index) => index === 0).map(tri => (
+              <SecondaryContentContainer singleton>
+                <SecondaryContent>
+                  <Heading level={3}>{tri.heading}</Heading>
+                  <p>{tri.body}</p>
+                </SecondaryContent>
+              </SecondaryContentContainer>
+            ))}
         </StyledWrapper>
       </HeroBG>
     </Container>
     {trinity && (
       <div>
         <SecondaryContentContainer>
-          <SecondaryContent>
-            <Heading level={3}>Looks good, feels right</Heading>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              imperdiet molestie sapien ut mattis. Nunc justo magna, eleifend
-              sed lectus vitae, tempus euismod enim.
-            </p>
-          </SecondaryContent>
-          <SecondaryContent>
-            <Heading level={3}>Works, inside & outside</Heading>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              imperdiet molestie sapien ut mattis. Nunc justo magna, eleifend
-              sed lectus vitae, tempus euismod enim.
-            </p>
-          </SecondaryContent>
+          {trinity.texts.filter((tri, index) => index > 0).map(tri => (
+            <SecondaryContent>
+              <Heading level={3}>{tri.heading}</Heading>
+              <p>{tri.body}</p>
+            </SecondaryContent>
+          ))}
         </SecondaryContentContainer>
       </div>
     )}
@@ -151,13 +138,13 @@ const Lede = styled.p`
 `
 
 Hero.defaultProps = {
-  trinity: true
+  trinity: null
 }
 
 Hero.propTypes = {
   heading: PropTypes.string,
   lede: PropTypes.string,
-  trinity: PropTypes.bool
+  trinity: PropTypes.object
 }
 
 export default Hero

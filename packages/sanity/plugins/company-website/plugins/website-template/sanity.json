@@ -67,6 +67,10 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "subpage.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/hero.js"
     }
   ]
 }

@@ -59,7 +59,7 @@ const MethodAttrs = ({ responses, parameters, security }) => {
                   {item.required && (
                     <Text variant="documentationAttrReq"> required </Text>
                   )}
-                  {item.schema.type}
+                  {item.schema && item.schema.type}
                 </Text>
               </td>
               <td>
