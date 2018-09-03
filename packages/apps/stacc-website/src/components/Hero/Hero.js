@@ -138,13 +138,13 @@ const Lede = styled.p`
 `
 
 Hero.defaultProps = {
-  trinity: true
+  trinity: null
 }
 
 Hero.propTypes = {
   heading: PropTypes.string,
   lede: PropTypes.string,
-  trinity: PropTypes.bool
+  trinity: PropTypes.object
 }
 
 export default Hero

@@ -55,16 +55,26 @@ class App extends Component {
                         return null
                       }
 
-                      const subpages = result.map(
-                        page => (page.subpages ? page.subpages.map(s => s) : [])
+                      const subpages = [].concat.apply(
+                        [],
+                        result.map(
+                          page =>
+                            page.subpages
+                              ? page.subpages.filter(s => s).map(s => s)
+                              : []
+                        )
                       )
+                      console.log(subpages)
 
                       return result.map(page => {
                         if (page.subpages && page.subpages.length) {
                           //If the page has subpage
                           return (
                             <Route
-                              path={`/${page.path.current}/:subpage`}
+                              path={`/${page.path.current.replace(
+                                "/",
+                                ""
+                              )}/:subpage`}
                               render={({ match }) => (
                                 <Page page={page} match={match} />
                               )}
@@ -73,13 +83,14 @@ class App extends Component {
                         }
 
                         if (subpages.find(s => page._id === s._id)) {
+                          console.log("is subpage", page.title, subpages)
                           return null
                         }
 
                         return (
                           <Route
                             exact
-                            path={`/${page.path.current}`}
+                            path={`/${page.path.current.replace("/", "")}`}
                             render={() => <Page page={page} />}
                           />
                         )

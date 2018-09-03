@@ -14,10 +14,29 @@ export default {
       title: "Body"
     },
     {
-      type: "reference",
+      type: "array",
       name: "link",
       title: "Link",
-      to: [{ type: "page" }]
+      of: [
+        {
+          type: "object",
+          title: "String link",
+          fields: [
+            {
+              type: "string",
+              name: "url",
+              title: "Url"
+            }
+          ]
+        },
+        {
+          type: "reference",
+          name: "page",
+          title: "Page",
+          to: [{ type: "page" }]
+        }
+      ],
+      validation: Rule => Rule.max(1).required()
     }
   ]
 }
