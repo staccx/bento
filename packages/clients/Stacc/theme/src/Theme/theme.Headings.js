@@ -12,6 +12,9 @@ export const HeadingStyling = registerStyle(
     `,
     hero: css`
       font-size: ${font("huge")};
+      font-weight: 700;
+      color: ${color.white};
+      text-align: center;
     `,
     primary: css`
       color: ${color.primary};

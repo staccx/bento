@@ -36,6 +36,8 @@ const color = {
   bg: "#F8F8F8",
   bgGray: "#F8F8F8",
   primary: "#EB5E55",
+  primaryDark: "#AB3C32",
+  primaryMediumDark: "#B72E21",
   secondary: "#467EFF",
   gray: "#B8B8B8",
   text: "#2b2b2b",
@@ -78,7 +80,11 @@ const font = {
 
 const webfonts = {
   google: {
-    families: ["IBM Plex Sans:300,400,500, 700", "IBM Plex Mono:400"]
+    families: [
+      "IBM Plex Sans:300,400,500, 700",
+      "IBM Plex Mono:400",
+      "Montserrat:400,500,600,700"
+    ]
   }
 }
 
@@ -88,7 +94,7 @@ const fontWeight = {
 }
 
 const fontFamily = {
-  heading: "IBM Plex Sans",
+  heading: "Montserrat",
   body: "IBM Plex Sans",
   mono: "IBM Plex Mono"
 }

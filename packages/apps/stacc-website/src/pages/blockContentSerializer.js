@@ -27,6 +27,7 @@ export default {
     ),
     quote: ({ node }) => (
       <Quote name={node.subText} quote={node.quote} img={node.image} />
-    )
+    ),
+    productClients: props => props.children
   }
 }

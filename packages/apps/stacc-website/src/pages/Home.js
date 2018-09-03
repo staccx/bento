@@ -1,27 +1,20 @@
 import React from "react"
 import { Layout, Heading } from "@staccx/base"
 import Hero from "../components/Hero/Hero"
-import FullWidth from "../components/FullWidth/FullWidth"
-import Story from "../components/Story/Story"
 import Quote from "../components/Quote/Quote"
 import LogoSalad from "../components/LogoSalad/LogoSalad"
 import SectionHead from "../components/SectionHead/SectionHead"
 import ContentLinks from "../components/ContentLinks/ContentLinks"
 import ContentLinksItem from "../components/ContentLinks/ContentLinks.Item"
-import Blocks from "../components/Viz/Blocks"
 
 const Home = () => (
   <div>
-    <Layout paddingTop="grid" rowGap="grid">
+    <Layout rowGap="grid">
       <div>
         <Hero
-          heading="Building blocks for first movers in finance."
-          lede="Finance has rapidly become a technological arms race. Don’t let technology hold you back from delivering first class products and services."
+          heading="Racecars also come in red."
           callToAction="Get in touch"
         />
-        <FullWidth>
-          <Blocks />
-        </FullWidth>
       </div>
 
       <div>
