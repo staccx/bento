@@ -23,7 +23,23 @@ export default {
           type: "array",
           name: "texts",
           title: "Texts",
-          of: [{ type: "string" }]
+          of: [
+            {
+              type: "object",
+              fields: [
+                {
+                  type: "string",
+                  name: "heading",
+                  title: "Heading"
+                },
+                {
+                  type: "string",
+                  name: "body",
+                  title: "body"
+                }
+              ]
+            }
+          ]
         }
       ],
       validation: Rule =>

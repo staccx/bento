@@ -2,6 +2,7 @@ import React from "react"
 import { Text, Heading } from "@staccx/base"
 import Quote from "../components/Quote/Quote"
 import SectionHead from "../components/SectionHead/SectionHead"
+import Hero from "../components/Hero/Hero"
 
 export default {
   types: {
@@ -28,6 +29,9 @@ export default {
     quote: ({ node }) => (
       <Quote name={node.subText} quote={node.quote} img={node.image} />
     ),
-    productClients: props => props.children
+    productClients: props => props.children,
+    hero: ({ node }) => (
+      <Hero heading={node.title} lede={node.body} trinity={node.trinity} />
+    )
   }
 }
