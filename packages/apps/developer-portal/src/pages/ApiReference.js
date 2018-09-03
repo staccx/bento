@@ -41,28 +41,36 @@ const ApiReference = () => (
                   paddingBottom="huge"
                   key={tag}
                 >
-                  {openapi.definitions[
-                    tag.charAt(0).toUpperCase() + tag.slice(1)
-                  ] && (
-                    <Definitions
-                      tag={tag}
-                      definitions={
-                        openapi.definitions[
-                          tag.charAt(0).toUpperCase() + tag.slice(1)
-                        ]
-                      }
-                    />
-                  )}
+                  {openapi.definitions
+                    ? openapi.definitions[
+                        tag.charAt(0).toUpperCase() + tag.slice(1)
+                      ] && (
+                        <Definitions
+                          tag={tag}
+                          definitions={
+                            openapi.definitions[
+                              tag.charAt(0).toUpperCase() + tag.slice(1)
+                            ]
+                          }
+                        />
+                      )
+                    : null}
 
-                  {sorted[tag].map(operation => (
-                    <Method
-                      openapi={openapi}
-                      codeGeneratorInputs={codeGeneratorInputs}
-                      operation={operation}
-                      language={preferredLanguage}
-                      key={operation.path + operation.type}
-                    />
-                  ))}
+                  {sorted[tag].map(operation => {
+                    console.group(tag)
+                    console.log(operation)
+                    console.log(sorted)
+                    console.groupEnd()
+                    return (
+                      <Method
+                        openapi={openapi}
+                        codeGeneratorInputs={codeGeneratorInputs}
+                        operation={operation}
+                        language={preferredLanguage}
+                        key={operation.path + operation.type}
+                      />
+                    )
+                  })}
                 </Layout>
               </div>
             )
