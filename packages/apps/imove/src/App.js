@@ -5,17 +5,17 @@ import { BrowserRouter as Router } from "react-router-dom"
 import theme from "./theme/Theme"
 
 class App extends Component {
-render() {
-return (
-<ThemeProxyProvider theme={theme}>
+  render() {
+    return (
+      <ThemeProxyProvider theme={theme}>
         <Router>
-            <Wrapper>
-                <div>Fresh app smell...</div>
-            </Wrapper>
+          <Wrapper>
+            <div>Fresh app smell...</div>
+          </Wrapper>
         </Router>
-</ThemeProxyProvider>
-)
-}
+      </ThemeProxyProvider>
+    )
+  }
 }
 
 export default App

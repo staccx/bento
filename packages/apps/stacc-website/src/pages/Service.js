@@ -1,6 +1,6 @@
 import React from "react"
 import { Layout, Heading } from "@staccx/base"
-import PageHead from "../components/PageHead/PageHead"
+import SectionHead from "../components/SectionHead/SectionHead"
 import FeatureList from "../components/FeatureList/FeatureList"
 import Story from "../components/Story/Story"
 import ContactUs from "../components/ContactUs/ContactUs"
@@ -8,7 +8,7 @@ import ContactUs from "../components/ContactUs/ContactUs"
 const Service = ({ match, location }) => (
   <div>
     <Layout paddingTop="grid" rowGap="grid">
-      <PageHead
+      <SectionHead
         breadcrumb={[
           {
             label: "Services",

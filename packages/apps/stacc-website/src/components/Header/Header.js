@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { Wrapper } from "@staccx/base"
@@ -6,14 +7,14 @@ import { spacing } from "@staccx/theme"
 import Logo from "../Logo/Logo"
 import HeaderMenu from "./Header.Menu"
 
-const Header = () => (
-  <Head>
+const Header = ({ inverted }) => (
+  <Head inverted={inverted}>
     <Wrapper>
       <Inner>
         <LogoLink to="/">
-          <Logo />
+          <Logo inverted={inverted} />
         </LogoLink>
-        <HeaderMenu />
+        <HeaderMenu inverted={inverted} />
       </Inner>
     </Wrapper>
   </Head>
@@ -29,7 +30,9 @@ const LogoLink = styled(Link)`
 `
 
 const Head = styled.header`
+  position: relative;
   padding-top: ${spacing.mediumPlus};
+  z-index: 10;
 `
 
 const Inner = styled.div`
@@ -37,5 +40,13 @@ const Inner = styled.div`
   justify-content: space-between;
   align-items: center;
 `
+
+Header.defaultProps = {
+  inverted: true
+}
+
+Header.propTypes = {
+  inverted: PropTypes.bool
+}
 
 export default Header

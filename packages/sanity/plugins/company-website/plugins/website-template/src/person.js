@@ -1,3 +1,5 @@
+import roles from "./roles"
+
 export default {
   name: "person",
   title: "Person",
@@ -12,6 +14,12 @@ export default {
       name: "title",
       title: "Title",
       type: "string"
+    },
+    {
+      name: "company",
+      title: "Works for",
+      type: "reference",
+      to: [{ type: "company" }]
     },
     {
       name: "phone",
@@ -43,6 +51,16 @@ export default {
     {
       name: "image",
       title: "Image",
+      type: "image",
+      options: {
+        hotspot: true
+      },
+      validation: Rule => Rule.required()
+    },
+    {
+      name: "imageSales",
+      title: "Image Sales",
+      description: "To be used for product pages",
       type: "image",
       options: {
         hotspot: true
@@ -84,6 +102,19 @@ export default {
           ]
         }
       ]
+    },
+    {
+      name: "roles",
+      type: "array",
+      title: "Roles",
+      of: [
+        {
+          type: "string",
+          options: {
+            list: roles
+          }
+        }
+      ]
     }
   ],
   preview: {
@@ -93,3 +124,10 @@ export default {
     }
   }
 }
+// Name
+//   - Company
+//   - Role(s) (Management/Sales/Developer/Designers)
+//   - Phone
+//   - Email
+//   - Image
+//   - ImageSales (Kun relevant for de som skal frontes på produktsider etc)

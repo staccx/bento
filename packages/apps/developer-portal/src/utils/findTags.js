@@ -8,14 +8,16 @@ export default openapi => {
     Object.keys(path).forEach(opKey => {
       const operation = path[opKey]
       tags = tags.concat(
-        operation.tags.map(tag => {
-          if (typeof tag === "object") {
-            return tag
-          }
-          return {
-            name: tag
-          }
-        })
+        operation.tags
+          ? operation.tags.map(tag => {
+              if (typeof tag === "object") {
+                return tag
+              }
+              return {
+                name: tag
+              }
+            })
+          : []
       )
     })
   })

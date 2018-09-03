@@ -1,6 +1,6 @@
 import React from "react"
 import { Layout, Heading, Divider } from "@staccx/base"
-import PageHead from "../components/PageHead/PageHead"
+import SectionHead from "../components/SectionHead/SectionHead"
 import Story from "../components/Story/Story"
 
 const ServicesInfrastructure = ({ match }) => {
@@ -8,7 +8,7 @@ const ServicesInfrastructure = ({ match }) => {
   return (
     <div>
       <Layout paddingTop="grid" rowGap="grid" paddingBottom="grid">
-        <PageHead
+        <SectionHead
           breadcrumb={[
             {
               label: "Services",

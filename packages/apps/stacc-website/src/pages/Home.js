@@ -1,50 +1,88 @@
 import React from "react"
 import { Layout, Heading } from "@staccx/base"
 import Hero from "../components/Hero/Hero"
-import FullWidth from "../components/FullWidth/FullWidth"
-import Story from "../components/Story/Story"
 import Quote from "../components/Quote/Quote"
 import LogoSalad from "../components/LogoSalad/LogoSalad"
-import Blocks from "../components/Viz/Blocks"
+import SectionHead from "../components/SectionHead/SectionHead"
+import ContentLinks from "../components/ContentLinks/ContentLinks"
+import ContentLinksItem from "../components/ContentLinks/ContentLinks.Item"
 
 const Home = () => (
   <div>
-    <Layout paddingTop="grid" rowGap="grid">
+    <Layout rowGap="grid">
       <div>
         <Hero
-          heading="Building blocks for first movers in finance."
-          lede="Finance has rapidly become a technological arms race. Don’t let technology hold you back from delivering first class products and services."
+          heading="Racecars also come in red."
           callToAction="Get in touch"
         />
-        <FullWidth>
-          <Blocks />
-        </FullWidth>
       </div>
 
-      <Story
-        heading="Dynamic and robust infrastructure"
-        body="Todays challenges demand systems that are uncoupled, yet communicate better than ever. Use as many or as few blocks as you want – all our systems are created from the ground up to talk to other platforms."
-        illustration="/img/whitepyramid.png"
-        callToAction={"Explore infrastructure products"}
-        callToActionUrl={"/services/infrastructure"}
-        isReverse={false}
-      />
-      <Story
-        heading="Innovation and business development"
-        body="Wether you are a seasoned veteran of the industry or a new challenger, an outside perspective from someone with deep domain knowledge can be invaluable."
-        illustration="/img/whiteconnected.png"
-        callToAction={"Explore innovation services"}
-        callToActionUrl={"/services/innovation"}
-        isReverse={false}
-      />
-      <Story
-        heading="Flexible and personalized UX"
-        body=" What makes you unique should be reflected in every interaction with your users – all the way down to the tiniest details. But you have to move fast, and keep changing."
-        illustration="/img/whitepoint.png"
-        callToAction={"Explore design and front-end"}
-        callToActionUrl={"/services/ux"}
-        isReverse={false}
-      />
+      <div>
+        <Layout>
+          <SectionHead
+            heading="Services"
+            headingLevel={2}
+            lede="If you have an idea or a business case and need help from someone with deep domain knowledge, come talk to us."
+            illustration="/img/whitepoint.png"
+          />
+          <ContentLinks>
+            <ContentLinksItem
+              heading="Financial innovation advice"
+              url="/products/core"
+              body=" We provide stategy and advice on what to build and how to configure it properly. We have extensive experience as entrepenours, investors, consulting, designers and developers"
+            />
+            <ContentLinksItem
+              heading="UX & Front-end rocket fuel"
+              url="/products/core"
+              body="We provice a team of highly skilled designers and front-end developers to add much needed rocket fuel for first movers in banking. There’s no need to sacrifice design in order to create great user experiences."
+            />
+          </ContentLinks>
+        </Layout>
+      </div>
+
+      <div>
+        <Layout>
+          <SectionHead
+            heading="Products"
+            headingLevel={2}
+            lede="We provide a dynamic and robust infrastructure where you can build and run your business and connect everything you need."
+            illustration="/img/whitepyramid.png"
+          />
+          <ContentLinks>
+            <ContentLinksItem
+              heading="API-gateway in the cloud"
+              url="/products/core"
+              body="The Stacc Cloud lets you access, control and monitor all our services through one easy gateway, but that is not all - connect your other services as well, including on-premise applications."
+            />
+            <ContentLinksItem
+              heading="Build, control and fix your business workflow"
+              url="/products/core"
+              body="Stacc Flow is a next generation process engine that connects business logics and micro-services. Design and execute any business workflow in a scalable, secure and predictable way."
+            />
+            <ContentLinksItem
+              heading="Account administration"
+              url="/products/core"
+              body="Stacc Core provides highly automated and flexible administration of credit and savings accounts. Run your bank efficiently on a modern platform that has accounting built in."
+            />
+            <ContentLinksItem
+              heading="Financial insight for retail advisors "
+              url="/products/core"
+              body="Stacc Insight provides solutions for financial counselling and self-service solutions with interaction between advisor and customer. The service integrates to a rich set of data-sources and back-end systems to automate and save time."
+            />
+            <ContentLinksItem
+              heading="Flexible case management"
+              url="/products/core"
+              body="Connect your business process to a case management system to handle manual parts of your process, and then inject data back into the rest of your process and automate the rest."
+            />
+            <ContentLinksItem
+              heading="Company analysis for SMB advisors"
+              url="/products/core"
+              body="The service integrates to a rich set of data-sources and back-end systems to automate information gathering and save time creating analysis and forecasts on your SMB clients."
+            />
+          </ContentLinks>
+        </Layout>
+      </div>
+
       <LogoSalad />
       <div>
         <Layout rowGap="large">

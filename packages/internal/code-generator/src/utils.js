@@ -34,9 +34,11 @@ export const fromOpenApi = openApi => {
           ? openApi.paths[path].servers[0].url
           : openApi.paths[path].servers.url
       } else {
-        rootUrl = openApi.servers.length
-          ? openApi.servers[0].url
-          : openApi.servers.url
+        rootUrl = openApi.servers
+          ? openApi.servers.length
+            ? openApi.servers[0].url
+            : openApi.servers.url
+          : ""
       }
 
       const result = fromOperation(rootUrl, path, operation, op, requestBody)

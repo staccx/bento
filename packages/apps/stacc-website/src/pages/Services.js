@@ -1,13 +1,13 @@
 import React from "react"
 import { Layout } from "@staccx/base"
-import PageHead from "../components/PageHead/PageHead"
+import SectionHead from "../components/SectionHead/SectionHead"
 import Story from "../components/Story/Story"
 
 const Services = ({ match }) => {
   return (
     <div>
       <Layout paddingTop="grid" rowGap="grid" paddingTop="grid">
-        <PageHead
+        <SectionHead
           breadcrumb={[
             {
               label: "Services",
