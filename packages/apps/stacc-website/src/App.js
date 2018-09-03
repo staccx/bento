@@ -22,6 +22,7 @@ import Page from "./pages/Page"
 class App extends Component {
   render() {
     const history = createHistory()
+
     return (
       <ThemeProxyProvider theme={theme}>
         <SanityProvider dataset={"production"} projectId={"8j24leyc"}>
@@ -47,19 +48,42 @@ class App extends Component {
                   </Switch>
                   <SanityList
                     type={"page"}
-                    pick={`path, blocks[]{"image": image.asset->url, ...}`}
+                    pick={`title,subpages[]{blocks[]{"image": image.asset->url, ...}, ...}, path, blocks[]{"image": image.asset->url, ...}`}
                   >
                     {({ result }) => {
                       if (!result) {
                         return null
                       }
-                      return result.map(page => (
-                        <Route
-                          exact
-                          path={page.path.current}
-                          render={() => <Page page={page} />}
-                        />
-                      ))
+
+                      const subpages = result.map(
+                        page => (page.subpages ? page.subpages.map(s => s) : [])
+                      )
+
+                      return result.map(page => {
+                        if (page.subpages && page.subpages.length) {
+                          //If the page has subpage
+                          return (
+                            <Route
+                              path={`/${page.path.current}/:subpage`}
+                              render={({ match }) => (
+                                <Page page={page} match={match} />
+                              )}
+                            />
+                          )
+                        }
+
+                        if (subpages.find(s => page._id === s._id)) {
+                          return null
+                        }
+
+                        return (
+                          <Route
+                            exact
+                            path={`/${page.path.current}`}
+                            render={() => <Page page={page} />}
+                          />
+                        )
+                      })
                     }}
                   </SanityList>
                 </main>
