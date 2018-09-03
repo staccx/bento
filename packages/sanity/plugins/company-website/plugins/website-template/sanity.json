@@ -38,6 +38,18 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "subpage.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "menu.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "menuItem.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "blocks/featureList.js"
     },
     {
@@ -63,10 +75,6 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "blocks/quote.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "subpage.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",

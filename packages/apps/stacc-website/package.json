@@ -28,7 +28,7 @@
     "build:app": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
-    "deploy": "yarn build && surge -p ./build",
+    "deploy": "yarn build:app && surge -p ./build -d stacc.surge.sh",
     "serve": "yarn build && serve -s build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },

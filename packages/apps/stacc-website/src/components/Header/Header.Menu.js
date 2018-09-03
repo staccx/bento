@@ -2,54 +2,33 @@ import React from "react"
 import styled, { css } from "styled-components"
 import { NavLink } from "react-router-dom"
 import { spacing, color, borderRadius } from "@staccx/theme"
+import { SanityDocument } from "@staccx/sanity"
 import { opacity } from "@staccx/color"
 
 const HeaderMenu = ({ inverted }) => (
   <Navigation>
     <MenuItems inverted={inverted}>
-      <li>
-        <MenuItem
-          to={"/"}
-          exact
-          activeClassName="is-current"
-          inverted={inverted}
-        >
-          Home
-        </MenuItem>
-      </li>
-      <li>
-        <MenuItem
-          to={"/services"}
-          activeClassName="is-current"
-          inverted={inverted}
-        >
-          Services
-        </MenuItem>
-      </li>
-      <li>
-        <MenuItem
-          to={"/clients"}
-          activeClassName="is-current"
-          inverted={inverted}
-        >
-          Clients
-        </MenuItem>
-      </li>
-      <li>
-        <MenuItem to={"/team"} activeClassName="is-current" inverted={inverted}>
-          Team
-        </MenuItem>
-      </li>
-      <li>
-        <MenuItem
-          to={"/contact"}
-          activeClassName="is-current"
-          emphasized
-          inverted={inverted}
-        >
-          Contact
-        </MenuItem>
-      </li>
+      <SanityDocument id={"ffe2cd1d-2fed-4436-9942-ad9674dd80ea"}>
+        {({ document }) => {
+          if (!document) {
+            return null
+          }
+          console.log(document)
+          return document.links.map(menuItem => (
+            <li>
+              <MenuItem
+                to={menuItem.link[0].url}
+                exact
+                activeClassName="is-current"
+                inverted={inverted}
+                emphasized={menuItem.emphasized}
+              >
+                {menuItem.title}
+              </MenuItem>
+            </li>
+          ))
+        }}
+      </SanityDocument>
     </MenuItems>
   </Navigation>
 )
