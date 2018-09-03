@@ -4,9 +4,11 @@ import SectionHead from "../components/SectionHead/SectionHead"
 import FeatureList from "../components/FeatureList/FeatureList"
 import Story from "../components/Story/Story"
 import ContactUs from "../components/ContactUs/ContactUs"
+import NavigationSubpage from "../components/NavigationSubpage/NavigationSubpage"
 
 const Service = ({ match, location }) => (
   <div>
+    <NavigationSubpage />
     <Layout paddingTop="grid" rowGap="grid">
       <SectionHead
         breadcrumb={[

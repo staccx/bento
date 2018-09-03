@@ -42,7 +42,7 @@ const Inner = styled.div`
 `
 
 Header.defaultProps = {
-  inverted: true
+  inverted: false
 }
 
 Header.propTypes = {
