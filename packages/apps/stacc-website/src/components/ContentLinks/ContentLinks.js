@@ -1,17 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { ItemGroup } from "@staccx/base"
+import { spacing } from "@staccx/theme"
 
 const ContentLinks = ({ children }) => {
   return <Links>{children}</Links>
 }
 
-const Links = styled(ItemGroup)`
-  > div {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+const Links = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: ${spacing.large};
+  grid-column-gap: ${spacing.large};
 `
 
 ContentLinks.propTypes = {

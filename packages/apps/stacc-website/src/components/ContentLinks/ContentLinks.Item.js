@@ -11,30 +11,42 @@ const ContentLinksItem = ({ heading, body, url }) => {
     <Item>
       <ItemLink to={url}>
         <ItemHeading level={3}>{heading}</ItemHeading>
-        <IconArrowRight />
+        <Icon />
       </ItemLink>
       {body && <p>{body}</p>}
     </Item>
   )
 }
 
-const Item = styled.div`
-  flex-basis: calc(50% - ${spacing.large} - ${spacing.medium});
-  margin-bottom: ${spacing.medium};
-`
+const Item = styled.div``
 
 const ItemLink = styled(Link)`
   text-decoration: none;
-  display: flex;
+  display: block;
   align-items: center;
+  margin-bottom: ${spacing.small};
+  color: ${color.primary};
+  transition: color 0.2s ease;
 
   > *:last-child {
-    margin-left: ${spacing.small};
+    margin-left: ${spacing.tiny};
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: ${color.text};
   }
 `
 
 const ItemHeading = styled(Heading)`
-  color: ${color.primary};
+  display: inline;
+  color: currentColor;
+`
+
+const Icon = styled(IconArrowRight)`
+  display: inline-block;
+  vertical-align: unset;
 `
 
 ContentLinksItem.propTypes = {
