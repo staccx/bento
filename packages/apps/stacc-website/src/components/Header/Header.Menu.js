@@ -14,7 +14,6 @@ const HeaderMenu = ({ inverted }) => (
           if (!document) {
             return <Loading />
           }
-          console.log(document)
           return document.links.map(menuItem => (
             <li>
               <MenuItem

@@ -1,9 +1,10 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 import { Wrapper, Loading } from "@staccx/base"
+import { dashIt } from "@staccx/formatting"
 import { ThemeProxyProvider } from "@staccx/theme"
 import { SanityProvider, SanityList } from "@staccx/sanity"
-import { Router, Switch, Route } from "react-router-dom"
+import { Router, Switch, Route, Redirect } from "react-router-dom"
 import createHistory from "history/createBrowserHistory"
 import theme from "./theme/Theme"
 import Header from "./components/Header/Header"
@@ -60,21 +61,37 @@ class App extends Component {
                               : []
                         )
                       )
-                      console.log(subpages)
 
                       return result.map(page => {
                         if (page.subpages && page.subpages.length) {
                           //If the page has subpages
+
+                          const baseRoute = `/${page.path.current.replace(
+                            "/",
+                            ""
+                          )}`
                           return (
-                            <Route
-                              path={`/${page.path.current.replace(
-                                "/",
-                                ""
-                              )}/:subpage`}
-                              render={({ match }) => (
-                                <Page page={page} match={match} />
-                              )}
-                            />
+                            <div>
+                              <Route
+                                path={`${baseRoute}/:subpage`}
+                                render={({ match }) => (
+                                  <Page page={page} match={match} />
+                                )}
+                              />
+                              <Route
+                                exact
+                                path={`${baseRoute}`}
+                                render={() => {
+                                  return (
+                                    <Redirect
+                                      to={`${baseRoute}/${dashIt(
+                                        page.subpages[0].title
+                                      )}`}
+                                    />
+                                  )
+                                }}
+                              />
+                            </div>
                           )
                         }
 
