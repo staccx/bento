@@ -45,6 +45,7 @@ export default {
     { type: "sectionHead" },
     { type: "linkBlock" },
     { type: "productClients" },
-    { type: "quote" }
+    { type: "quote" },
+    { type: "hero" }
   ]
 }
