@@ -2,7 +2,6 @@ export default {
   type: "document",
   name: "page",
   title: "Pages",
-  index: 0,
   fields: [
     { type: "string", name: "title", title: "Title" },
     {
@@ -21,18 +20,7 @@ export default {
       title: "Sub pages",
       of: [
         {
-          type: "reference",
-          to: [{ type: "page" }],
-          validation: Rule =>
-            Rule.custom((desc, options) => {
-              if (!desc || !desc._ref) {
-                return true
-              }
-
-              return desc._ref === options.document._id.replace("drafts.", "")
-                ? "Can not reference itself!"
-                : true
-            })
+          type: "subpage"
         }
       ]
     },
