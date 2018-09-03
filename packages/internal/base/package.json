@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "7.2.0",
+  "version": "7.2.1",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@staccx/animations": "^7.2.0",
-    "@staccx/formatting": "^7.2.0",
+    "@staccx/formatting": "^7.2.1",
     "@staccx/math": "^7.2.0",
     "@staccx/theme": "^7.2.0",
     "@staccx/utils": "^7.2.0",
