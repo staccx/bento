@@ -1,6 +1,5 @@
 import React from "react"
 import { Layout, Box, Heading, Paragraph } from "@staccx/base"
-import { response } from "../../_fakeData/_fakeMethod"
 import MethodExample from "./Method.Example"
 import MethodAttrs from "./Method.Attrs"
 import * as codeGenerators from "@staccx/code-generator"
@@ -21,6 +20,26 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
   const request = codeGenerators[language].generate(
     codeGeneratorInputs[path][type]
   )
+
+  let response = JSON.stringify({})
+
+  if (
+    operation.responses &&
+    operation.responses["200"] &&
+    operation.responses["200"].content &&
+    operation.responses["200"].content["application/json"] &&
+    operation.responses["200"].content["application/json"].example
+  ) {
+    response = JSON.stringify(
+      operation.responses["200"].content["application/json"].example,
+      null,
+      2
+    )
+  }
+
+  console.log("RESPONSE", response)
+  // operation.responses["200"].content["application/json"].example
+  // console.log("operation>>>>>>", operation)
 
   const codeRendererLanguage = getCodeRendererLanguage(language)
 

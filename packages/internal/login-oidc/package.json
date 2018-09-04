@@ -1,6 +1,6 @@
 {
   "name": "@staccx/login-oidc",
-  "version": "7.2.1",
+  "version": "7.2.4",
   "description": "OTP login using oidc-client",
   "author": "StaccX",
   "license": "UNLICENSED",
