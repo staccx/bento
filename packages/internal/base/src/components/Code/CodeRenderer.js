@@ -10,7 +10,6 @@ class CodeRenderer extends Component {
     let grammar = null
     let className = ""
 
-    console.log("prism", Prism.languages)
     switch (language) {
       case "markup": {
         className = "language-markup"

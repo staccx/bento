@@ -31,14 +31,14 @@ class App extends Component {
                 <Switch>
                   <Route path="/" component={Introduction} exact />
                   <Route path="/swagger" component={SwaggerDocs} exact />
-                  <Route path="/api-reference" component={ApiReference} exact />
-                  <Route
-                    path="/api-reference/:path"
-                    render={({ match }) => {
-                      return null
-                    }}
-                  />
-                  <Route path={"/api"} exact component={ApiReference} />
+                  <Route path="/api-reference" component={ApiReference} />
+                  {/*<Route*/}
+                  {/*path="/api-reference/:path"*/}
+                  {/*render={({ match }) => {*/}
+                  {/*return null*/}
+                  {/*}}*/}
+                  {/*/>*/}
+                  {/*<Route path={"/api"} exact component={ApiReference} />*/}
                 </Switch>
               </Wrapper>
             </LayoutItem>

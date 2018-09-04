@@ -23,23 +23,22 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
 
   let response = JSON.stringify({})
 
-  if (
-    operation.responses &&
-    operation.responses["200"] &&
-    operation.responses["200"].content &&
-    operation.responses["200"].content["application/json"] &&
-    operation.responses["200"].content["application/json"].example
-  ) {
-    response = JSON.stringify(
-      operation.responses["200"].content["application/json"].example,
-      null,
-      2
-    )
-  }
+  // TODO: Organize different status code responses
+  if (operation.responses) {
+    Object.keys(operation.responses).forEach(key => {
+      const res = operation.responses[key]
 
-  console.log("RESPONSE", response)
-  // operation.responses["200"].content["application/json"].example
-  // console.log("operation>>>>>>", operation)
+      if (res && res.content) {
+        Object.keys(res.content).forEach(cKey => {
+          const c = res.content[cKey]
+
+          if (c && c.example) {
+            response = JSON.stringify(c.example, null, 2)
+          }
+        })
+      }
+    })
+  }
 
   const codeRendererLanguage = getCodeRendererLanguage(language)
 
