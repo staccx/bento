@@ -7,7 +7,7 @@ const Features = ({ children }) => (
   <Content>
     <Wrapper size="full">
       <StyledHeading level={2}>Med iMove får du</StyledHeading>
-      <ul>{children}</ul>
+      <List>{children}</List>
       <Cars src="/img/cars@2x.png" alt="BMW i3, VW e-golf and KIA Soul" />
     </Wrapper>
   </Content>
@@ -22,6 +22,12 @@ const StyledHeading = styled(Heading)`
   padding-bottom: calc(
     ${spacing("huge")} - 20px
   ); /* Using calc for optical adjustment: */
+`
+
+const List = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `
 
 const Cars = styled.img`

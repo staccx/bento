@@ -3,6 +3,9 @@ import CallToAction from "../components/CallToAction/CallToAction"
 import Advantages from "../components/Advantages/Advantages"
 import Features from "../components/Features/Features"
 import Feature from "../components/Features/Features.Feature"
+import Pricing from "../components/Pricing/Pricing"
+import Model from "../components/Pricing/Pricing.Model"
+import Footer from "../components/Footer/Footer"
 
 const Home = () => (
   <div>
@@ -47,6 +50,18 @@ const Home = () => (
         content="Noen setninger her som beskriver denne fordelen, i litt mer detalj enn presentert på resten av siden."
       />
     </Features>
+
+    <Pricing
+      heading="Hva koster det?"
+      copy="Velg melom våre modeller:"
+      img="/img/road03@2x.png"
+    >
+      <Model name="VW e-golf" price="Kr 4 300/mnd" />
+      <Model name="BMW i3" price="Kr 4 900/mnd" />
+      <Model name="KIA Soul" price="Kr 4 200/mnd" />
+    </Pricing>
+
+    <Footer />
   </div>
 )
 

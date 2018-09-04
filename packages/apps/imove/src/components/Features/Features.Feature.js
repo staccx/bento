@@ -11,8 +11,6 @@ const Feature = ({ heading, content }) => (
 )
 
 const Content = styled.li`
-  display: inline-block;
-  vertical-align: top;
   font-size: ${font("large")};
   width: 50%;
   padding: 0 ${spacing("largePlusPlus")} ${spacing("largePlus")};
