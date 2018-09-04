@@ -3,6 +3,7 @@ import CallToAction from "../components/CallToAction/CallToAction"
 import Advantages from "../components/Advantages/Advantages"
 import Features from "../components/Features/Features"
 import Feature from "../components/Features/Features.Feature"
+import Pricing from "../components/Pricing/Pricing"
 
 const Home = () => (
   <div>
