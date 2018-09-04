@@ -31,9 +31,7 @@ const ApiReference = () => (
                       ) : null
                   )
                 ) : (
-                  <Paragraph variant="documentationLede">
-                    Missing description!
-                  </Paragraph>
+                  <Paragraph variant="documentationLede" />
                 )}
                 <Layout
                   rowGap="huge"
