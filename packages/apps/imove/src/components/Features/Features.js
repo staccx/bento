@@ -2,30 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { spacing } from "@staccx/theme"
 import { Wrapper, Heading } from "@staccx/base"
-import Feature from "./Features.Feature"
 
-const Features = () => (
+const Features = ({ children }) => (
   <Content>
     <Wrapper size="full">
       <StyledHeading level={2}>Med iMove får du</StyledHeading>
-      <ul>
-        <Feature
-          heading="Bil når du trenger det"
-          content="Noen setninger her som beskriver denne fordelen, i litt mer detalj enn presentert på resten av siden."
-        />
-        <Feature
-          heading="Forsikringer, service og alt det der"
-          content="Noen setninger her som beskriver denne fordelen, i litt mer detalj enn presentert på resten av siden."
-        />
-        <Feature
-          heading="Vi selger din gamle bil"
-          content="Noen setninger her som beskriver denne fordelen, i litt mer detalj enn presentert på resten av siden."
-        />
-        <Feature
-          heading="Bil når du trenger det"
-          content="Noen setninger her som beskriver denne fordelen, i litt mer detalj enn presentert på resten av siden."
-        />
-      </ul>
+      <ul>{children}</ul>
       <Cars src="/img/cars@2x.png" alt="BMW i3, VW e-golf and KIA Soul" />
     </Wrapper>
   </Content>

@@ -2,6 +2,7 @@ import React from "react"
 import CallToAction from "../components/CallToAction/CallToAction"
 import Advantages from "../components/Advantages/Advantages"
 import Features from "../components/Features/Features"
+import Feature from "../components/Features/Features.Feature"
 
 const Home = () => (
   <div>
@@ -28,7 +29,24 @@ const Home = () => (
       secondaryButtonUrl="/newsletter"
     />
 
-    <Features />
+    <Features heading="Med iMove får du">
+      <Feature
+        heading="Bil når du trenger det"
+        content="Noen setninger her som beskriver denne fordelen, i litt mer detalj enn presentert på resten av siden."
+      />
+      <Feature
+        heading="Forsikringer, service og alt det der"
+        content="Noen setninger her som beskriver denne fordelen, i litt mer detalj enn presentert på resten av siden."
+      />
+      <Feature
+        heading="Vi selger din gamle bil"
+        content="Noen setninger her som beskriver denne fordelen, i litt mer detalj enn presentert på resten av siden."
+      />
+      <Feature
+        heading="Bil når du trenger det"
+        content="Noen setninger her som beskriver denne fordelen, i litt mer detalj enn presentert på resten av siden."
+      />
+    </Features>
   </div>
 )
 
