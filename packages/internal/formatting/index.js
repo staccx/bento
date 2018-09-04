@@ -9,6 +9,7 @@ import { default as removeWhitespace } from "./src/removeWhitespace"
 import { default as formatName } from "./src/formatName"
 import { default as truncate } from "./src/truncate"
 import { default as formatPhone } from "./src/phone"
+import { default as dashIt } from "./src/dashIt"
 
 export {
   formatCurrency,
@@ -21,5 +22,6 @@ export {
   removeWhitespace,
   formatName,
   formatPhone,
-  truncate
+  truncate,
+  dashIt
 }

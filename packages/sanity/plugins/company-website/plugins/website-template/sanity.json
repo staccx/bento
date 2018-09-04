@@ -6,15 +6,11 @@
   "parts": [
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "page.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "person.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "article.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "category.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -23,6 +19,74 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "socialLink.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "company.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "client.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "caseStudy.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "product.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "subpage.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "menu.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "menuItem.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/story.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/stories.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/featureList.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/data/feature.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/section.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/sectionHead.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/linkBlock.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/productClients.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/quote.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/hero.js"
     }
   ]
 }

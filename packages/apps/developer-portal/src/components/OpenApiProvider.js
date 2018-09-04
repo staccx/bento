@@ -50,7 +50,7 @@ class OpenApiProvider extends React.Component {
           const tags = findTags(openapi)
           const sorted = sortByTags(openapi, tags)
 
-          const { components, info, servers } = openapi
+          const { components = {}, info, servers } = openapi
 
           const codeGeneratorInputs = fromOpenApi(openapi)
           const { requestBodies, schemas, securitySchemes } = components

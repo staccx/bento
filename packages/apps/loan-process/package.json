@@ -1,6 +1,6 @@
 {
   "name": "@staccx/loan-process",
-  "version": "7.1.1",
+  "version": "7.2.3",
   "description": "Loan process",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -39,11 +39,33 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/base": "^7.1.1",
-    "@staccx/formatting": "^7.1.1",
+    "@staccx/animations": "^7.2.0",
+    "@staccx/base": "^7.2.1",
+    "@staccx/formatting": "^7.2.1",
+    "@staccx/fundu-theme": "^7.2.3",
     "@staccx/payment-plan": "^1.2.0",
-    "@staccx/soy": "^7.1.1",
-    "@staccx/theme": "^7.1.1",
-    "@staccx/utils": "^7.1.1"
+    "@staccx/styrke-theme": "^7.2.1",
+    "@staccx/theme": "^7.2.0",
+    "@staccx/utils": "^7.2.0",
+    "easing-utils": "^0.0.7",
+    "formik": "^0.11.11",
+    "localforage": "^1.7.2",
+    "national-id": "^2.0.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-loadable": "^5.5.0",
+    "styled-components": "^3.3.3",
+    "yup": "^0.24.1"
+  },
+  "devDependencies": {
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
+    "react-scripts": "^1.1.5",
+    "rollup": "^0.65.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2"
   }
 }

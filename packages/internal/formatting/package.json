@@ -1,6 +1,6 @@
 {
   "name": "@staccx/formatting",
-  "version": "7.1.1",
+  "version": "7.2.1",
   "description": "Convenience functions for formatting",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -26,8 +26,19 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/soy": "^7.1.1",
+    "accounting": "^0.4.1",
     "date-fns": "^2.0.0-alpha.16"
   },
-  "jest": {}
+  "jest": {},
+  "devDependencies": {
+    "jest": "^23.5.0",
+    "prettier": "^1.14.2",
+    "react-scripts": "^1.1.5",
+    "rollup": "^0.65.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-filesize": "^2.0.0",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2"
+  }
 }

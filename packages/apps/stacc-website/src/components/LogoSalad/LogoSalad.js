@@ -56,6 +56,7 @@ const Container = styled.div`
 const Salad = styled(ItemGroup)`
   > * {
     justify-content: center;
+    align-items: center;
   }
 `
 

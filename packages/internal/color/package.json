@@ -1,6 +1,6 @@
 {
   "name": "@staccx/color",
-  "version": "7.1.1",
+  "version": "7.2.1",
   "description": "Color functions and helpers",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -29,7 +29,27 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/soy": "^7.1.1",
-    "color": "^3.0.0"
+    "@staccx/base": "^7.2.1",
+    "@staccx/theme": "^7.2.0",
+    "color": "^3.0.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {
+    "@staccx/rollup-config": "^7.2.0",
+    "colors": "^1.3.2",
+    "glob": "^7.1.3",
+    "path": "^0.12.7",
+    "prettier": "^1.14.2",
+    "progress": "^2.0.0",
+    "react-scripts": "^1.1.5",
+    "rollup": "^0.65.0",
+    "rollup-plugin-alias": "^1.4.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-filesize": "^2.0.0",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2"
   }
 }

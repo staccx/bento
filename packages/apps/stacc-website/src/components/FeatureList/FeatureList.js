@@ -3,9 +3,8 @@ import styled from "styled-components"
 import { Heading, Divider } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 import IconCheck from "../Icons/IconCheck"
-import GoTo from "../GoTo/GoTo"
 
-const FeatureList = () => (
+const FeatureList = ({ items }) => (
   <Container>
     <HeadingContainer>
       <Heading variant="emphasized" level={4}>
@@ -17,32 +16,12 @@ const FeatureList = () => (
     </DividerContainer>
     <Content>
       <Features>
-        <li>
-          <IconCheck /> Account creation
-        </li>
-        <li>
-          <IconCheck /> Commisions & subversions
-        </li>
-        <li>
-          <IconCheck /> Third-party products
-        </li>
-        <li>
-          <IconCheck /> Account management
-        </li>
-        <li>
-          <IconCheck /> Billing & Collection
-        </li>
-        <li>
-          <IconCheck /> Insurance
-        </li>
-        <li>
-          <IconCheck /> ClientContainer management
-        </li>
-        <li>
-          <IconCheck /> Reporting & analysis
-        </li>
+        {items.map(item => (
+          <li>
+            <IconCheck /> {item.title}
+          </li>
+        ))}
       </Features>
-      <GoTo to="#nowhere">See full technical specifications</GoTo>
     </Content>
   </Container>
 )
