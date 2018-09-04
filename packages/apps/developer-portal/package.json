@@ -1,6 +1,6 @@
 {
   "name": "@staccx/developer-portal",
-  "version": "7.2.3",
+  "version": "7.2.4",
   "description": "Developer portal white label",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -26,11 +26,11 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/base": "^7.2.1",
-    "@staccx/code-generator": "^7.2.0",
-    "@staccx/fundu-theme": "^7.2.3",
-    "@staccx/theme": "^7.2.0",
-    "@staccx/utils": "^7.2.0",
+    "@staccx/base": "^7.2.4",
+    "@staccx/code-generator": "^7.2.4",
+    "@staccx/fundu-theme": "^7.2.4",
+    "@staccx/theme": "^7.2.4",
+    "@staccx/utils": "^7.2.4",
     "axios": "^0.18.0",
     "localforage": "^1.7.2",
     "prop-types": "^15.6.1",
@@ -40,7 +40,7 @@
     "react-router-hash-link": "^1.2.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.2.0",
+    "@staccx/rollup-config": "^7.2.4",
     "prettier": "^1.14.2",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",
