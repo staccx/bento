@@ -6,6 +6,7 @@ import LogoSalad from "../components/LogoSalad/LogoSalad"
 import SectionHead from "../components/SectionHead/SectionHead"
 import ContentLinks from "../components/ContentLinks/ContentLinks"
 import ContentLinksItem from "../components/ContentLinks/ContentLinks.Item"
+import ClientsOverview from "../components/ClientsOverview/ClientsOverview"
 
 const Home = () => (
   <div>
@@ -83,7 +84,45 @@ const Home = () => (
         </Layout>
       </div>
 
+      <div>
+        <Layout>
+          <Heading level={2}>Clients</Heading>
+          <ClientsOverview
+            items={[
+              {
+                name: "Monobank",
+                body: "lorem ipsum",
+                callToAction: "Monobank case study",
+                callToActionUrl: "#whatsit",
+                image: "/img/banklogos/monobank.png"
+              },
+              {
+                name: "Aprila",
+                body: "lorem ipsum",
+                callToAction: "Aprila case study",
+                callToActionUrl: "#whatsitisit"
+              },
+              {
+                name: "Brage finans",
+                body: "lorem ipsum",
+                callToAction: "brage.no",
+                callToActionUrl: "https://brage.no/",
+                image: "/img/banklogos/brage.png"
+              },
+              {
+                name: "Eika",
+                body: "lorem ipsum",
+                callToAction: "Eika.no",
+                callToActionUrl: "https://eika.no/",
+                image: "/img/banklogos/eika.png"
+              }
+            ]}
+          />
+        </Layout>
+      </div>
+
       <LogoSalad />
+
       <div>
         <Layout rowGap="large">
           <Heading level={2}>Building services with Stacc</Heading>
