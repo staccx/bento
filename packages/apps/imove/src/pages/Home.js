@@ -5,6 +5,7 @@ import Features from "../components/Features/Features"
 import Feature from "../components/Features/Features.Feature"
 import Pricing from "../components/Pricing/Pricing"
 import Model from "../components/Pricing/Pricing.Model"
+import Footer from "../components/Footer/Footer"
 
 const Home = () => (
   <div>
@@ -59,6 +60,8 @@ const Home = () => (
       <Model name="BMW i3" price="Kr 4 900/mnd" />
       <Model name="KIA Soul" price="Kr 4 200/mnd" />
     </Pricing>
+
+    <Footer />
   </div>
 )
 
