@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { NavLink } from "react-router-dom"
 import { spacing, color, borderRadius } from "@staccx/theme"
@@ -115,3 +116,11 @@ const MenuItem = styled(NavLink)`
 `
 
 export default HeaderMenu
+
+HeaderMenu.propTypes = {
+  isInverted: PropTypes.bool
+}
+
+HeaderMenu.defaultProps = {
+  isInverted: false
+}

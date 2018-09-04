@@ -64,14 +64,12 @@ class App extends Component {
 
                       return result.map(page => {
                         if (page.subpages && page.subpages.length) {
-                          //If the page has subpages
-
                           const baseRoute = `/${page.path.current.replace(
                             "/",
                             ""
                           )}`
                           return (
-                            <div>
+                            <div key={page._id}>
                               <Route
                                 path={`${baseRoute}/:subpage`}
                                 render={({ match }) => (
@@ -102,6 +100,7 @@ class App extends Component {
 
                         return (
                           <Route
+                            key={page._id}
                             exact
                             path={`/${page.path.current.replace("/", "")}`}
                             render={() => <Page page={page} />}
