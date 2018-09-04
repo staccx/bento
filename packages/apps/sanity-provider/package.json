@@ -1,6 +1,6 @@
 {
   "name": "@staccx/sanity",
-  "version": "7.2.1",
+  "version": "7.2.3",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",

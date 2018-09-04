@@ -1,6 +1,6 @@
 {
   "name": "@staccx/developer-portal",
-  "version": "7.2.2",
+  "version": "7.2.3",
   "description": "Developer portal white label",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -28,7 +28,7 @@
   "dependencies": {
     "@staccx/base": "^7.2.1",
     "@staccx/code-generator": "^7.2.0",
-    "@staccx/fundu-theme": "^7.2.2",
+    "@staccx/fundu-theme": "^7.2.3",
     "@staccx/theme": "^7.2.0",
     "@staccx/utils": "^7.2.0",
     "axios": "^0.18.0",

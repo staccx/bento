@@ -1,11 +1,11 @@
 {
   "name": "@staccx/styleguide",
-  "version": "7.2.2",
+  "version": "7.2.3",
   "private": true,
   "dependencies": {
     "@staccx/aprila-theme": "^7.2.1",
     "@staccx/base": "^7.2.1",
-    "@staccx/fundu-theme": "^7.2.2",
+    "@staccx/fundu-theme": "^7.2.3",
     "@staccx/nordea-theme": "^7.2.1",
     "@staccx/savings-advisor": "^7.2.1",
     "@staccx/stacc-theme": "^7.2.1",

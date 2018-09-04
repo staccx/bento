@@ -1,6 +1,6 @@
 {
   "name": "@staccx/stacc-website",
-  "version": "7.2.1",
+  "version": "7.2.3",
   "private": true,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -9,7 +9,7 @@
     "@staccx/base": "^7.2.1",
     "@staccx/color": "^7.2.1",
     "@staccx/formatting": "^7.2.1",
-    "@staccx/sanity": "^7.2.1",
+    "@staccx/sanity": "^7.2.3",
     "@staccx/stacc-theme": "^7.2.1",
     "@staccx/theme": "^7.2.0",
     "history": "^4.7.2",
