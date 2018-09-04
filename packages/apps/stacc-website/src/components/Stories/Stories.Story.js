@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Heading, Layout } from "@staccx/base"
+import { SanityImage } from "@staccx/sanity"
 import GoTo from "../GoTo/GoTo"
 
 const Story = ({
@@ -30,7 +31,9 @@ const Story = ({
       </div>
       {illustration && (
         <div>
-          <Illustration src={illustration} alt="" />
+          <SanityImage image={illustration}>
+            {({ image }) => <Illustration src={image.url()} alt="" />}
+          </SanityImage>
         </div>
       )}
     </Inner>

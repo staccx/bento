@@ -7,6 +7,7 @@ import Hero from "../components/Hero/Hero"
 import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
 import ContentLinks from "../components/ContentLinks/ContentLinks"
 import FeatureList from "../components/FeatureList/FeatureList"
+import Stories from "../components/Stories/Stories"
 
 export default {
   container: props => (
@@ -71,12 +72,11 @@ export default {
       )
     },
     featureList: ({ node }) => {
-      console.log(node)
       return <FeatureList items={node.features} />
     },
     stories: ({ node }) => {
       console.log(node)
-      return null
+      return <Stories items={node.list} />
     }
   }
 }

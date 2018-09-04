@@ -1,12 +1,12 @@
 import React from "react"
 import { Layout } from "@staccx/base"
 import SectionHead from "../components/SectionHead/SectionHead"
-import Story from "../components/Story/Story"
+import Story from "../components/Stories/Stories.Story"
 
 const Services = ({ match }) => {
   return (
     <div>
-      <Layout paddingTop="grid" rowGap="grid" paddingTop="grid">
+      <Layout paddingTop="grid" rowGap="grid">
         <SectionHead
           breadcrumb={[
             {
