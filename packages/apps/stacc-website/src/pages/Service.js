@@ -1,14 +1,13 @@
 import React from "react"
 import { Layout, Heading } from "@staccx/base"
 import SectionHead from "../components/SectionHead/SectionHead"
-import FeatureList from "../components/FeatureList/FeatureList"
+// import FeatureList from "../components/FeatureList/FeatureList"
 import Story from "../components/Story/Story"
 import ContactUs from "../components/ContactUs/ContactUs"
-import NavigationSubpage from "../components/NavigationSubpage/NavigationSubpage"
+// import NavigationSubpage from "../components/NavigationSubpage/NavigationSubpage"
 
 const Service = ({ match, location }) => (
   <div>
-    <NavigationSubpage />
     <Layout paddingTop="grid" rowGap="grid">
       <SectionHead
         breadcrumb={[
@@ -30,7 +29,7 @@ const Service = ({ match, location }) => (
         lede="Stacc Core provides highly automated and flexible administration of credit and savings accounts. Run your financial services company efficiently on a modern platform that promotes innovation and business agility."
         illustration="/img/core.png"
       />
-      <FeatureList />
+      {/*<FeatureList />*/}
 
       <Heading level={2}>Seamless integration</Heading>
       <Story

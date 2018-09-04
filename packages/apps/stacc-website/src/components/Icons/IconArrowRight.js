@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing } from "@staccx/theme"
 
 const IconArrowRight = ({ className }) => (
   <Icon

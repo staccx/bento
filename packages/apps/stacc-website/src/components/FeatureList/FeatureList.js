@@ -3,7 +3,6 @@ import styled from "styled-components"
 import { Heading, Divider } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 import IconCheck from "../Icons/IconCheck"
-import GoTo from "../GoTo/GoTo"
 
 const FeatureList = ({ items }) => (
   <Container>

@@ -7,7 +7,7 @@ export default (openapi, tags) => {
       const path = openapi.paths[key]
       Object.keys(path).forEach(opKey => {
         const operation = path[opKey]
-        if (operation.tags.indexOf(name) !== -1) {
+        if (operation.tags && operation.tags.indexOf(name) !== -1) {
           if (!operations[name]) {
             operations[name] = []
           }

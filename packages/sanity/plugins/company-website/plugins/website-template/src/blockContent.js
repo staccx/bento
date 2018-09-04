@@ -46,6 +46,7 @@ export default {
     { type: "linkBlock" },
     { type: "productClients" },
     { type: "quote" },
-    { type: "hero" }
+    { type: "hero" },
+    { type: "stories" }
   ]
 }

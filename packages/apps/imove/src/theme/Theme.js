@@ -1,3 +1,4 @@
+import { css } from "styled-components"
 import { Theme } from "@staccx/theme"
 import { BaseTheme } from "@staccx/base"
 
@@ -13,12 +14,14 @@ const wrapper = {
   small: "420px",
   medium: "640px",
   large: "1024px",
+  largePlus: "1280px",
   breakout: "640px"
 }
 
 const spacing = {
   grid: "7vh",
-  huge: "96px",
+  huge: "130px",
+  largePlusPlus: "100px",
   largePlus: "72px",
   large: "48px",
   mediumPlus: "32px",
@@ -29,7 +32,9 @@ const spacing = {
 const color = {
   bg: "#fcfcfc",
   bgGray: "#F9F7F7",
-  primary: "#23A532",
+  primary: "#FF5C3F",
+  secondary: "#38454B",
+  toneDown: "#8C8C8C",
   gray: "#767676",
   text: "#2b2b2b",
   white: "#fff",
@@ -48,26 +53,28 @@ const color = {
 
 const font = {
   h1: "36px",
-  h2: "26px",
+  h2: "54px",
   h3: "22px",
   h4: "18px",
   h5: "16px",
   h6: "14px",
   base: "14px",
   tiny: "12px",
-  input: "16px",
-  huge: "44px"
+  large: "18px",
+  largePlus: "24px",
+  huge: "36px",
+  input: "16px"
 }
 
 const webfonts = {
   google: {
-    families: ["Libre Baskerville:700", "Libre Franklin:400,600"]
+    families: ["Mukta:800", "Open Sans:400"]
   }
 }
 
 const fontFamily = {
-  heading: "Libre Baskerville",
-  body: "Libre Franklin"
+  heading: "Mukta",
+  body: "Open Sans"
 }
 
 const theme = new Theme(BaseTheme, {
@@ -81,6 +88,10 @@ const theme = new Theme(BaseTheme, {
   borderRadius,
   headerHeight,
   fontFamily,
-  global: ``
+  global: css`
+    h2 {
+      line-height: 1.2;
+    }
+  `
 })
 export default theme

@@ -1166,7 +1166,7 @@
   version "0.125.8"
   resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-0.125.8.tgz#2937dd144212946b860ab4fb1227be20d7d81b1b"
 
-"@sanity/image-url@0.132.8", "@sanity/image-url@^0.132.5":
+"@sanity/image-url@0.132.8", "@sanity/image-url@^0.132.5", "@sanity/image-url@^0.132.8":
   version "0.132.8"
   resolved "https://registry.yarnpkg.com/@sanity/image-url/-/image-url-0.132.8.tgz#cca66e57ecb9352763a2a4b090aa85a83409cea2"
 

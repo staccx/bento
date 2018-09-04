@@ -12,6 +12,7 @@ export const getLinkItem = linkBlock => {
     if (link.url) {
       return (
         <ContentLinksItem
+          key={link.url}
           heading={linkBlock.title}
           url={link.url}
           body={linkBlock.body}
@@ -28,6 +29,7 @@ export const getLinkItem = linkBlock => {
 
             return (
               <ContentLinksItem
+                key={link._ref}
                 heading={document.title}
                 url={`/${document.title}`}
               />
@@ -36,6 +38,7 @@ export const getLinkItem = linkBlock => {
         </SanityDocument>
       )
     }
+    return null
   })
 }
 
