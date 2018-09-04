@@ -55,10 +55,6 @@ const ApiReference = () => (
                     : null}
 
                   {sorted[tag].map(operation => {
-                    console.group(tag)
-                    console.log(operation)
-                    console.log(sorted)
-                    console.groupEnd()
                     return (
                       <Method
                         openapi={openapi}

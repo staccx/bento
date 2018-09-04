@@ -65,6 +65,9 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
               {operation.parameters && (
                 <MethodAttrs parameters={operation.parameters} />
               )}
+              {operation.requestBody && (
+                <MethodAttrs requestBody={operation.requestBody} />
+              )}
               {operation.responses && (
                 <MethodAttrs responses={operation.responses} />
               )}
