@@ -9,6 +9,11 @@ import ContentLinks from "../components/ContentLinks/ContentLinks"
 import FeatureList from "../components/FeatureList/FeatureList"
 
 export default {
+  container: props => (
+    <Layout rowGap="grid" paddingBottom="grid">
+      {props.children}
+    </Layout>
+  ),
   types: {
     block: props => {
       switch (props.node.style) {
@@ -68,6 +73,10 @@ export default {
     featureList: ({ node }) => {
       console.log(node)
       return <FeatureList items={node.features} />
+    },
+    stories: ({ node }) => {
+      console.log(node)
+      return null
     }
   }
 }
