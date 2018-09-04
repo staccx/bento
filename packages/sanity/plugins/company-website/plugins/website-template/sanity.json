@@ -50,6 +50,14 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/story.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/stories.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "blocks/featureList.js"
     },
     {
