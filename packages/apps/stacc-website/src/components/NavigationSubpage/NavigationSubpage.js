@@ -32,6 +32,7 @@ const Container = styled.div`
   margin-top: ${spacing.small};
   border-top: 2px solid ${color.line};
   padding-top: ${spacing.small};
+  padding-bottom: ${spacing("grid")};
 `
 
 const ProductName = styled(Heading)`

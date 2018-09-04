@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Heading, Divider } from "@staccx/base"
-import { spacing } from "@staccx/theme"
+import { spacing, color, font } from "@staccx/theme"
 import IconCheck from "../Icons/IconCheck"
 
 const FeatureList = ({ items }) => (
@@ -18,7 +18,10 @@ const FeatureList = ({ items }) => (
       <Features>
         {items.map(item => (
           <li>
-            <IconCheck /> {item.title}
+            <Header>
+              <IconCheck /> <H level={4}>{item.title}</H>
+            </Header>
+            <Body>{item.body}</Body>
           </li>
         ))}
       </Features>
@@ -56,9 +59,22 @@ const Features = styled.ul`
   overflow: hidden;
 
   > li {
-    flex-basis: 30%;
+    flex-basis: 45%;
     margin: 0 ${spacing.small} ${spacing.medium};
   }
+`
+
+const H = styled(Heading)`
+  padding-left: ${spacing.tiny};
+`
+
+const Body = styled.p`
+  color: ${color.wcag};
+  font-size: ${font.small};
+`
+
+const Header = styled.div`
+  display: flex;
 `
 
 export default FeatureList

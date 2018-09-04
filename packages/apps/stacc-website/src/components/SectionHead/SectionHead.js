@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Heading, Layout } from "@staccx/base"
 import { spacing, font } from "@staccx/theme"
+import { SanityImage } from "@staccx/sanity"
 
 const SectionHead = ({ heading, headingLevel, lede, illustration }) => {
   return (
@@ -15,7 +16,9 @@ const SectionHead = ({ heading, headingLevel, lede, illustration }) => {
           </div>
 
           <div>
-            <Illustration src={illustration} alt="" />
+            <SanityImage image={illustration}>
+              {({ image }) => <Illustration src={image.url()} alt="" />}
+            </SanityImage>
           </div>
         </Body>
       </Layout>

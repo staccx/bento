@@ -1,7 +1,7 @@
 {
   "name": "@staccx/developer-portal",
-  "version": "7.2.4",
-  "description": "Developer portal white label",
+  "version": "7.2.7",
+  "description": "Developer portal white label.",
   "author": "StaccX",
   "license": "UNLICENSED",
   "repository": {
@@ -17,6 +17,7 @@
     "build": "yarn prettify && rollup -c",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
+    "prepublish": "yarn build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "files": [
