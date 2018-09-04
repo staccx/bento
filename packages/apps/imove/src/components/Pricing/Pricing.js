@@ -18,7 +18,7 @@ const Content = styled.div`
   font-size: ${font("largePlus")};
   color: ${color("white")};
   text-align: center;
-  padding: ${spacing("huge")} 0;
+  padding: ${spacing("huge")} 0 calc(${spacing("huge")} + 20px);
   background-image: url(${p => p.bg});
   background-size: contain;
   background-repeat: no-repeat;
