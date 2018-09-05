@@ -6,26 +6,34 @@ import { spacing, font } from "@staccx/theme"
 import FullWidth from "../FullWidth/FullWidth"
 
 const Quote = ({ quote, img, name, isReverse }) => (
-  <FullWidth>
-    <Container>
-      <StyledWrapper>
-        <Flag
-          large
-          reverse={isReverse}
-          img={<Image src={img} width={220} />}
-          responsive={550}
-        >
-          <BlockQuote>
-            {quote}
-            <Footer>
-              — <cite>{name}</cite>
-            </Footer>
-          </BlockQuote>
-        </Flag>
-      </StyledWrapper>
-    </Container>
-  </FullWidth>
+  <Outer>
+    <FullWidth>
+      <Container>
+        <StyledWrapper>
+          <Flag
+            large
+            reverse={isReverse}
+            img={<Image src={img} width={220} />}
+            responsive={550}
+          >
+            <BlockQuote>
+              {quote}
+              <Footer>
+                — <cite>{name}</cite>
+              </Footer>
+            </BlockQuote>
+          </Flag>
+        </StyledWrapper>
+      </Container>
+    </FullWidth>
+  </Outer>
 )
+
+const Outer = styled.div`
+  &:last-child {
+    margin-bottom: -${spacing("grid")};
+  }
+`
 
 const Image = styled.img`
   border-radius: 50%;
