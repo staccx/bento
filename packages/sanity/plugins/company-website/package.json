@@ -20,9 +20,14 @@
     "@sanity/default-layout": "^0.132.7",
     "@sanity/default-login": "^0.132.6",
     "@sanity/desk-tool": "^0.132.7",
+    "airtable": "^0.5.6",
+    "bcryptjs": "^2.4.3",
+    "image-downloader": "^3.4.1",
     "prop-types": "^15.6",
     "react": "^16.2",
     "react-dom": "^16.2",
-    "react-icon-base": "^2.1.2"
+    "react-icon-base": "^2.1.2",
+    "sanity-query-helper": "^0.2.0",
+    "shortid": "^2.2.13"
   }
 }

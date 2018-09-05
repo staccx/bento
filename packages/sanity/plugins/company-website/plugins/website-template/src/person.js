@@ -1,4 +1,5 @@
 import roles from "./roles"
+import soMes from "./soMes"
 
 export default {
   name: "person",
@@ -96,8 +97,10 @@ export default {
             {
               name: "type",
               title: "type",
-              type: "reference",
-              to: [{ type: "socialLink" }]
+              type: "string",
+              options: {
+                list: soMes
+              }
             }
           ]
         }
