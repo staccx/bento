@@ -1,7 +1,7 @@
 import React from "react"
 import { Table, Heading, Text } from "@staccx/base"
 
-const MethodAttrs = ({ responses, parameters, security }) => {
+const MethodAttrs = ({ responses, parameters, security, requestBody }) => {
   if (responses) {
     const responsesData = Object.keys(responses).map(key => ({
       response: key,
@@ -68,6 +68,92 @@ const MethodAttrs = ({ responses, parameters, security }) => {
             </React.Fragment>
           )}
         </Table>
+      </div>
+    )
+  }
+
+  if (requestBody) {
+    const content = requestBody.content
+    console.log(content)
+    const types = Object.keys(content || {})
+
+    return (
+      <div>
+        <Heading level={5} variant="documentationAttrs">
+          Request body
+        </Heading>
+        {types.map(type => {
+          const { schema } = content[type]
+
+          if (schema.items) {
+            return (
+              <Table
+                data={Object.keys(schema.items || {}).map(i => ({
+                  name: i,
+                  ...schema.items[i]
+                }))}
+                variant="documentationAttr"
+                blacklist={item => item === "name" || item === "description"}
+                itemToKey={item => item.name}
+              >
+                {({ item }) => (
+                  <React.Fragment>
+                    <td>
+                      <Heading level={3} variant="documentationAttrType">
+                        {item.name}
+                      </Heading>
+
+                      <Text variant="documentationAttrType">
+                        {item.required && (
+                          <Text variant="documentationAttrReq"> required </Text>
+                        )}
+                        {item.type}
+                      </Text>
+                    </td>
+                    <td>
+                      <p>{item.description}</p>
+                    </td>
+                  </React.Fragment>
+                )}
+              </Table>
+            )
+          }
+          if (schema.properties) {
+            return (
+              <Table
+                data={Object.keys(schema.properties || {}).map(item => ({
+                  name: item,
+                  required: schema.required.indexOf(item) !== -1,
+                  ...schema.properties[item]
+                }))}
+                variant="documentationAttr"
+                blacklist={item => item === "name" || item === "description"}
+                itemToKey={item => item.name}
+              >
+                {({ item }) => (
+                  <React.Fragment>
+                    <td>
+                      <Heading level={3} variant="documentationAttrType">
+                        {item.name}
+                      </Heading>
+
+                      <Text variant="documentationAttrType">
+                        {item.required && (
+                          <Text variant="documentationAttrReq"> required </Text>
+                        )}
+                        {item.type}
+                      </Text>
+                    </td>
+                    <td>
+                      <p>{item.description}</p>
+                    </td>
+                  </React.Fragment>
+                )}
+              </Table>
+            )
+          }
+          return null
+        })}
       </div>
     )
   }

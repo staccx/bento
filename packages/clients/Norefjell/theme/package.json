@@ -1,7 +1,7 @@
 {
   "license": "UNLICENSED",
   "name": "@staccx/norefjell-theme",
-  "version": "7.2.4",
+  "version": "7.2.8",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@staccx/animations": "^7.2.4",
-    "@staccx/base": "^7.2.4",
+    "@staccx/base": "^7.2.8",
     "@staccx/formatting": "^7.2.4",
     "@staccx/theme": "^7.2.4",
     "polished": "^1.9.2",

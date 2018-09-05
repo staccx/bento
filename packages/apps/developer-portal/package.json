@@ -1,6 +1,6 @@
 {
   "name": "@staccx/developer-portal",
-  "version": "7.2.7",
+  "version": "7.3.0",
   "description": "Developer portal white label.",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -27,9 +27,9 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/base": "^7.2.4",
+    "@staccx/base": "^7.2.8",
     "@staccx/code-generator": "^7.2.4",
-    "@staccx/fundu-theme": "^7.2.4",
+    "@staccx/fundu-theme": "^7.2.8",
     "@staccx/theme": "^7.2.4",
     "@staccx/utils": "^7.2.4",
     "axios": "^0.18.0",
@@ -49,5 +49,17 @@
     "react-app-rewire-webpack-bundle-analyzer": "^1.0.1",
     "react-app-rewired": "^1.5.2",
     "rollup": "^0.65.0"
+  },
+  "proxy": {
+    "/api": {
+      "target": "https://docs.test.fundu.no/api",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/swagger.json": {
+      "target": "https://docs.test.fundu.no/swagger.json",
+      "secure": false,
+      "changeOrigin": true
+    }
   }
 }
