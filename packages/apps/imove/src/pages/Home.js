@@ -6,6 +6,7 @@ import Feature from "../components/Features/Features.Feature"
 import Pricing from "../components/Pricing/Pricing"
 import Model from "../components/Pricing/Pricing.Model"
 import Footer from "../components/Footer/Footer"
+import Column from "../components/Footer/Footer.Column"
 
 const Home = () => (
   <div>
@@ -61,7 +62,30 @@ const Home = () => (
       <Model name="KIA Soul" price="Kr 4 200/mnd" />
     </Pricing>
 
-    <Footer />
+    <Footer>
+      <Column heading="Finn oss">
+        <p>
+          iMove AS
+          <br />
+          Strandgaten 99
+          <br />
+          5555 Bergen
+          <br />
+          Org.nr. 999 999 999
+          <br />
+        </p>
+      </Column>
+      <Column heading="Hold deg oppdatert">
+        <p>
+          Hold deg oppdatert med <a href="#">nyhetsbrev fra iMove</a>.
+        </p>
+      </Column>
+      <Column heading="Bli pilotbruker">
+        <p>
+          For mer info, ta kontakt på vårt kontaktskjema <a href="#">her</a>.
+        </p>
+      </Column>
+    </Footer>
   </div>
 )
 
