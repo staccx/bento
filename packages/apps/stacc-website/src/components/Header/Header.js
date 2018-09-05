@@ -1,24 +1,38 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import styled from "styled-components"
-import { Wrapper } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 import Logo from "../Logo/Logo"
 import HeaderMenu from "./Header.Menu"
+import { SanityDocument } from "@staccx/sanity"
+import { Loading, Wrapper } from "@staccx/base"
 
-const Header = ({ inverted }) => (
-  <Head inverted={inverted}>
-    <Wrapper>
-      <Inner>
-        <LogoLink to="/">
-          <Logo inverted={inverted} />
-        </LogoLink>
-        <HeaderMenu inverted={inverted} />
-      </Inner>
-    </Wrapper>
-  </Head>
-)
+const Header = ({ match, location }) => {
+  return (
+    <SanityDocument id={"ffe2cd1d-2fed-4436-9942-ad9674dd80ea"}>
+      {({ document }) => {
+        if (!document) {
+          return <Loading />
+        }
+        const inverted =
+          (document.inverted || []).indexOf(location.pathname) !== -1
+        return (
+          <Head inverted={inverted}>
+            <Wrapper>
+              <Inner>
+                <LogoLink to="/">
+                  <Logo inverted={inverted} />
+                </LogoLink>
+                <HeaderMenu inverted={inverted} items={document.links} />
+              </Inner>
+            </Wrapper>
+          </Head>
+        )
+      }}
+    </SanityDocument>
+  )
+}
 
 const LogoLink = styled(Link)`
   text-decoration: none;
@@ -49,4 +63,4 @@ Header.propTypes = {
   inverted: PropTypes.bool
 }
 
-export default Header
+export default withRouter(Header)

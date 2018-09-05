@@ -3,11 +3,10 @@ import React from "react"
 import SanityQuery from "./SanityQuery"
 import SanityQueryHelper from "sanity-query-helper"
 
-const helper = new SanityQueryHelper({
-  sanityOptions: {}
-})
-
 const SanityList = ({ type, filter, count, pick, children }) => {
+  const helper = new SanityQueryHelper({
+    sanityOptions: {}
+  })
   let query = helper.ofType(type)
   if (filter) {
     query = query.compare(filter)

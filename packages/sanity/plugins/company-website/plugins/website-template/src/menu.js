@@ -13,6 +13,12 @@ export default {
       name: "links",
       title: "Links",
       of: [{ type: "menuItem" }]
+    },
+    {
+      type: "array",
+      name: "inverted",
+      title: "Invert routes",
+      of: [{ type: "string" }]
     }
   ]
 }

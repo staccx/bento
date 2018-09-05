@@ -1,6 +1,6 @@
 {
   "name": "@staccx/imove",
-  "version": "7.2.8",
+  "version": "7.4.0",
   "private": true,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
