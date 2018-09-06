@@ -105,6 +105,8 @@ import Fetch from "./components/Fetch/Fetch"
 import CopyToClipboard from "./components/CopyToClipboard/CopyToClipboard"
 import CopyToClipboardComponent from "./components/CopyToClipboard/CopyToClipboardComponent"
 
+// Search
+import Search from "./components/Search/Search"
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
@@ -166,6 +168,7 @@ export {
   RadioButton,
   RadioPill,
   RadioPillItem,
+  Search,
   Select,
   SelectOption,
   SelectSimple,
