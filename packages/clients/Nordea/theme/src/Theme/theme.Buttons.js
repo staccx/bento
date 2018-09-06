@@ -144,6 +144,13 @@ export const ButtonStyling = registerStyle(
       &:nth-child(even) {
         margin: 0 ${spacing.tiny};
       }
+    `,
+    closeNews: css`
+      background-color: ${color("bg1")};
+      border-radius: ${targetSize.normal};
+      min-height: ${targetSize.small};
+      color: ${color.primary};
+      line-height: inherit;
     `
   },
   Button.themeProps.button

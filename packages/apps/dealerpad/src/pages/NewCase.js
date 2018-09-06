@@ -23,7 +23,11 @@ const Home = () => (
             <li key={item.label}>
               <LayoutItem variant="fadeIn" delay={(index + 1) * 100 + 300}>
                 <Link to={item.path}>
-                  <Portal tagName={item.icon} label={item.label} />
+                  <Portal
+                    tagName={item.icon}
+                    label={item.label}
+                    variant="newCase"
+                  />
                 </Link>
               </LayoutItem>
             </li>

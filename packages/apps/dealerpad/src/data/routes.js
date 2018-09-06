@@ -3,6 +3,7 @@ import Home from "../pages/Home"
 import NewCase from "../pages/NewCase"
 import MySales from "../pages/MySales"
 import Case from "../pages/Case"
+import UnderConstruction from "../pages/UnderConstruction"
 
 const routes = [
   {
@@ -39,6 +40,15 @@ const routes = [
     icon: <i />,
     exact: false,
     _id: "43gh44",
+    inMenu: false
+  },
+  {
+    path: "/working",
+    component: UnderConstruction,
+    name: "UnderConstruction",
+    icon: <i />,
+    exact: true,
+    _id: "fdsfsd454545",
     inMenu: false
   }
 ]

@@ -43,11 +43,15 @@ import { DocumentationUploadedIcon } from "./Icons/DocumentationUploaded"
 import { DocumentationUploadIcon } from "./Icons/DocumentationUpload"
 import { DocumentationDownloadIcon } from "./Icons/DocumentationDownload"
 import { DocumentationTrashIcon } from "./Icons/DocumentationTrash"
+import { CarIcon } from "./Icons/Car"
 import { BackIcon } from "./Icons/Back"
 import { FilterIcon } from "./Icons/Filter"
 import { DividerStyling } from "./theme.Divider"
 import { RadioButtonWrapper, RadioButtonLabel } from "./theme.RadioButton"
 import { LoadingStyle } from "./Loading"
+import { CalculatorIcon } from "./Icons/Calculator"
+import { NcvsIcon } from "./Icons/NCVS"
+import { UrlIcon } from "./Icons/Url"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -209,4 +213,8 @@ const theme = new Theme(BaseTheme, {
   .add(RadioButtonLabel)
   .add(FileInputLabelStyling)
   .add(LoadingStyle)
+  .add(CarIcon)
+  .add(CalculatorIcon)
+  .add(NcvsIcon)
+  .add(UrlIcon)
 export default theme

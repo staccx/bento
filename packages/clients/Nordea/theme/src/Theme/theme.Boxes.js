@@ -21,6 +21,13 @@ export const BoxStyling = registerStyle(
       padding-right: 0;
       padding-bottom: ${spacing.mediumPlus};
     `,
+    statsFloor: css`
+      background-color: ${color.secondary};
+      padding-top: ${spacing.large};
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: ${spacing("largePlus")};
+    `,
     newsHero: css`
       background-color: ${color.white};
       padding-top: ${spacing.large};
@@ -51,7 +58,9 @@ export const BoxStyling = registerStyle(
     `,
     contact: css`
       background-color: ${color.white};
-      margin-bottom: ${spacing.small};
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     `,
     chat: css`
       background: white;
@@ -69,6 +78,13 @@ export const BoxStyling = registerStyle(
       grid-column-gap: ${spacing.small};
       align-items: center;
       ${fontSmoothing};
+    `,
+    overviewPortal: css`
+      background-color: ${color("bg1")};
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: ${spacing.large};
+      padding-bottom: ${spacing.large};
     `
   },
   Box.themeProps.box

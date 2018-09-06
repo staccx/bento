@@ -1,12 +1,14 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import styled from "styled-components"
 import {
   Box,
   Wrapper,
   Layout,
   LayoutItem,
   Heading,
-  Paragraph
+  Paragraph,
+  Button
 } from "@staccx/base"
 
 const NewsHero = ({ article }) => (
@@ -22,10 +24,18 @@ const NewsHero = ({ article }) => (
           <Heading level={1} variant="hero">
             {article.title}
           </Heading>
+
           <Paragraph variant="hero">{article.body}</Paragraph>
-          <div>
-            <Link to={article.actionUrl}>{article.actionText}</Link>
-          </div>
+          <Layout paddingTop="small">
+            <div>
+              <StyledLink to={article.actionUrl}>
+                {article.actionText}
+              </StyledLink>
+            </div>
+            <div>
+              <Button variant="closeNews">Gjem nyhet</Button>
+            </div>
+          </Layout>
         </LayoutItem>
         <LayoutItem variant="fadeUp" delay={500}>
           <img src={article.image} alt="" />
@@ -34,5 +44,9 @@ const NewsHero = ({ article }) => (
     </Wrapper>
   </Box>
 )
+
+const StyledLink = styled(Link)`
+  text-decoration: underline;
+`
 
 export default NewsHero

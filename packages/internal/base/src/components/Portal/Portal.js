@@ -6,10 +6,12 @@ import themePropTypes from "../constants/themePropTypes"
 
 const Portal = ({ label, tagName, variant, className, ...rest }) => (
   <PortalWrapper className={className} {...rest} variant={variant}>
-    <IconWrapper variant={variant}>
+    <IconWrapper variant={variant} {...rest}>
       <ThemeComponent tagName={tagName} />
     </IconWrapper>
-    <Label variant={variant}>{label}</Label>
+    <Label variant={variant} {...rest}>
+      {label}
+    </Label>
   </PortalWrapper>
 )
 

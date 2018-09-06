@@ -15,6 +15,12 @@ export const TextStyling = registerStyle(
     `,
     legalese: css`
       font-size: ${font.tiny};
+    `,
+    contactText: css`
+      font-size: ${font.small};
+      line-height: 1.4;
+      color: ${color("g4")};
+      ${fontSmoothing};
     `
   },
   Text.themeProps.text

@@ -23,9 +23,9 @@ export const LayoutStyling = registerStyle(
       }
     `,
     stats: css`
-      grid-template-columns: 1fr 96px 2fr 1fr;
+      grid-template-columns: 1fr 48px 2fr 1fr;
       grid-template-rows: repeat(3, auto);
-      grid-row-gap: ${spacing.large};
+      grid-row-gap: ${spacing.medium};
       grid-column-gap: ${spacing.medium};
     `
   },
@@ -45,27 +45,41 @@ const hideCSS = css`
   }
 `
 
+const fadeInCss = css`
+  opacity: 0;
+  animation: ${FadeIn} forwards ease-out 400ms 1;
+  animation-delay: ${p => (p.delay ? p.delay : 0)}ms;
+`
+
 export const LayoutItemStyling = registerStyle(
   {
     statsStatus: css`
       grid-column: 1 / span 1;
       grid-row: 2 / span 2;
+      display: flex;
+      ${fadeInCss};
     `,
     statsSelect: css`
       grid-column: 4 / span 1;
       grid-row: 1 / span 1;
+      text-align: right;
+      height: 12px;
+      ${fadeInCss};
     `,
     statsMonth: css`
       grid-column: 3 / span 1;
       grid-row: 2 / span 1;
+      ${fadeInCss};
     `,
     statsTotal: css`
       grid-column: 4 / span 1;
       grid-row: 2 / span 1;
+      ${fadeInCss};
     `,
     statsContact: css`
       grid-column: 3 / span 2;
       grid-row: 3 / span 1;
+      ${fadeInCss};
     `,
     caseHeader: css`
       grid-column: 1 / span 5;
