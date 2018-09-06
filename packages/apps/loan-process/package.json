@@ -1,6 +1,6 @@
 {
   "name": "@staccx/loan-process",
-  "version": "7.2.8",
+  "version": "7.5.0",
   "description": "Loan process",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -40,11 +40,11 @@
   },
   "dependencies": {
     "@staccx/animations": "^7.2.4",
-    "@staccx/base": "^7.2.8",
+    "@staccx/base": "^7.5.0",
     "@staccx/formatting": "^7.2.4",
-    "@staccx/fundu-theme": "^7.2.8",
+    "@staccx/fundu-theme": "^7.5.0",
     "@staccx/payment-plan": "^1.2.0",
-    "@staccx/styrke-theme": "^7.2.8",
+    "@staccx/styrke-theme": "^7.5.0",
     "@staccx/theme": "^7.2.4",
     "@staccx/utils": "^7.2.4",
     "easing-utils": "^0.0.7",
