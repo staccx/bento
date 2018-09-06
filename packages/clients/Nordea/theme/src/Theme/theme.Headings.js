@@ -34,6 +34,16 @@ export const HeadingStyling = registerStyle(
     `,
     salesOverviewHeading: css`
       color: ${color("b4")};
+    `,
+    carConfiguratorHeading: css`
+      color: ${color("b4")};
+      font-size: ${font.h3};
+      font-weight: ${fontWeight.normal};
+    `,
+    carConfiguratorBrand: css`
+      color: ${color("b4")};
+      font-size: ${font.h1};
+      font-weight: ${fontWeight.normal};
     `
   },
   Heading.themeProps.heading

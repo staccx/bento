@@ -151,6 +151,19 @@ export const ButtonStyling = registerStyle(
       min-height: ${targetSize.small};
       color: ${color.primary};
       line-height: inherit;
+    `,
+    white: css`
+      border-radius: ${targetSize.normal};
+      padding: 0 ${spacing.small};
+      min-height: ${spacing.medium};
+      background-color: ${color.white};
+      color: ${color("b4")};
+      &:hover,
+      &:focus,
+      &:active {
+        color: ${color("b4")};
+        background-color: ${color("bg")};
+      }
     `
   },
   Button.themeProps.button

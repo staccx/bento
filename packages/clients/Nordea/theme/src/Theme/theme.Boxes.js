@@ -85,6 +85,13 @@ export const BoxStyling = registerStyle(
       padding-right: 0;
       padding-top: ${spacing.large};
       padding-bottom: ${spacing.large};
+    `,
+    carConfigHero: css`
+      background-color: ${color.secondary};
+      padding-top: ${spacing.large};
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: ${spacing.huge};
     `
   },
   Box.themeProps.box
