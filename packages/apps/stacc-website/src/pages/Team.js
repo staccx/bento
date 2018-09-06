@@ -1,21 +1,31 @@
 import React from "react"
 import { Heading, Wrapper, Input, Layout, Loading } from "@staccx/base"
 import { SanityList } from "@staccx/sanity"
-import GoTo from "../components/GoTo/GoTo"
 import Person from "../components/Person/Person"
+import SectionHead from "../components/SectionHead/SectionHead"
+import ContentLinks from "../components/ContentLinks/ContentLinks"
+import ContentLinksItem from "../components/ContentLinks/ContentLinks.Item"
 
 const Team = () => (
-  <Wrapper size="medium">
+  <Wrapper>
     <Layout paddingTop="grid" rowGap="grid">
-      <div>
-        <Heading level={3}>Stacc</Heading>
-        Stacc AS is a software company group located in Bergen, Norway.
-        Management has 25 years of experience with strategy, business
-        development and technology in the financial services industry. We are
-        currently 62 employees and growing rapidly. We are always seeking
-        skilled and talented individuals to join us on this adventure.
-        <GoTo to="/jobs">See current openings</GoTo>
-      </div>
+      <SectionHead
+        heading="Team Stacc"
+        headingLevel={1}
+        lede="Get all this content from Sanity please. Stacc AS is a software company group located in Bergen, Norway. The management has 25 years of experience with strategy, business development and technology in the financial services industry."
+      />
+      <ContentLinks>
+        <ContentLinksItem
+          heading="About the company"
+          url="/some/page"
+          body="Read more about Stacc, our mission, philosophy and goals"
+        />
+        <ContentLinksItem
+          heading="Join our team"
+          url="/careers"
+          body="Want to move finance forward? Help us create the next generation of finance technology."
+        />
+      </ContentLinks>
       <Layout rowGap="medium">
         <Heading level="2">Looking for someone?</Heading>
         <Input id="peopleSearch" placeholder="Search employees" />
@@ -26,6 +36,7 @@ const Team = () => (
             if (!result) {
               return <Loading />
             }
+            console.log(result)
             return result.map(person => (
               <Person
                 name={person.name}
