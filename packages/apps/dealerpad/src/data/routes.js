@@ -6,9 +6,9 @@ import Case from "../pages/Case"
 
 const routes = [
   {
-    path: "/news",
+    path: "/overview",
     component: Home,
-    name: "Nyheter",
+    name: "Oversikt",
     icon: "News",
     exact: true,
     _id: "dfs4355jkl",

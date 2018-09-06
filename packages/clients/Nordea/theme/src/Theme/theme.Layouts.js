@@ -21,6 +21,12 @@ export const LayoutStyling = registerStyle(
         grid-template-rows: auto;
         grid-column-gap: 0;
       }
+    `,
+    stats: css`
+      grid-template-columns: 1fr 96px 2fr 1fr;
+      grid-template-rows: repeat(3, auto);
+      grid-row-gap: ${spacing.large};
+      grid-column-gap: ${spacing.medium};
     `
   },
   Layout.themeProps.container
@@ -41,6 +47,26 @@ const hideCSS = css`
 
 export const LayoutItemStyling = registerStyle(
   {
+    statsStatus: css`
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 2;
+    `,
+    statsSelect: css`
+      grid-column: 4 / span 1;
+      grid-row: 1 / span 1;
+    `,
+    statsMonth: css`
+      grid-column: 3 / span 1;
+      grid-row: 2 / span 1;
+    `,
+    statsTotal: css`
+      grid-column: 4 / span 1;
+      grid-row: 2 / span 1;
+    `,
+    statsContact: css`
+      grid-column: 3 / span 2;
+      grid-row: 3 / span 1;
+    `,
     caseHeader: css`
       grid-column: 1 / span 5;
       grid-row: 1 / span 3;

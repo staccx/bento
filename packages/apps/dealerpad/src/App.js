@@ -48,7 +48,7 @@ class App extends Component {
                       key={page.path}
                     />
                   ))}
-                  <Redirect from="/" exact to="/news" />
+                  <Redirect from="/" exact to="/overview" />
                 </Switch>
               </Transitions>
             </div>

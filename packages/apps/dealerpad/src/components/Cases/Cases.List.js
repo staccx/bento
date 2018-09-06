@@ -7,82 +7,93 @@ import CasesProgress from "./Cases.Progress"
 import caseStore from "../../data/store/caseStore"
 import { observer } from "mobx-react"
 
-const CasesList = observer(({ compact }) => {
-  caseStore.refreshAll()
-
-  if (!caseStore.cases) {
-    return <Loading />
+@observer
+class CasesList extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log("refreshing all cases now")
+    caseStore.refreshAll()
   }
 
-  return (
-    <Box size="flush">
-      <List variant="casesList">
-        {caseStore.cases.map((item, index) => {
-          const caseItem = caseStore.getCase(item.id)
+  render() {
+    if (!caseStore.cases) {
+      return <Loading />
+    }
 
-          return (
-            <li key={item.id}>
-              <Link to={`sales/${item.id}`}>
-                <CaseContainer>
-                  <div>
-                    <Heading
-                      level={3}
-                      variant="caselist"
-                      attention={
-                        caseItem ? caseItem.unreadMessages.length > 0 : false
-                      }
-                    >
-                      {item.customers[0].firstName} {item.customers[0].lastName}
-                    </Heading>
-                    <Text variant="legalese">
-                      {item.vehicle.type} {item.vehicle.make}{" "}
-                      {item.vehicle.model}
-                      <Text variant="subtle"> {item.applicationId}</Text>
-                    </Text>
-                  </div>
-                  {item.messages &&
-                    !compact && (
-                      <NewBadge
-                        variant="casesList"
-                        number={item.messages.length}
-                      />
-                    )}
+    const { compact } = this.props
 
-                  <div>
-                    {!compact &&
-                      (!caseItem ? (
-                        <Loading />
-                      ) : (
-                        <SpacingLeft>
-                          <CasesProgress
-                            progress={caseItem.progress}
-                            max={4}
-                            inverted={index % 2}
-                          />
-                        </SpacingLeft>
-                      ))}
+    return (
+      <Box size="flush">
+        <List variant="casesList">
+          {caseStore.cases.map((item, index) => {
+            const caseItem = caseStore.getCase(item.id)
+
+            return (
+              <li key={item.id}>
+                <Link to={`sales/${item.id}`}>
+                  <CaseContainer>
+                    <div>
+                      <Heading
+                        level={3}
+                        variant="caselist"
+                        attention={
+                          caseItem ? caseItem.unreadMessages.length > 0 : false
+                        }
+                      >
+                        {item.customers[0].firstName}{" "}
+                        {item.customers[0].lastName}
+                      </Heading>
+                      <Text variant="legalese">
+                        {item.vehicle.type} {item.vehicle.make}{" "}
+                        {item.vehicle.model}
+                        <Text variant="subtle"> {item.applicationId}</Text>
+                      </Text>
+                    </div>
                     {item.messages &&
-                      compact && (
-                        <SpacingLeft>
-                          <NewBadge
-                            variant="casesList"
-                            number={item.messages.length}
-                          />
-                        </SpacingLeft>
+                      !compact && (
+                        <NewBadge
+                          variant="casesList"
+                          number={item.messages.length}
+                        />
                       )}
-                    <IconWrapper>
-                      <ThemeComponent tagName="ArrowRight" />
-                    </IconWrapper>
-                  </div>
-                </CaseContainer>
-              </Link>
-            </li>
-          )
-        })}
-      </List>
-    </Box>
-  )
-})
+
+                    <div>
+                      {!compact &&
+                        (!caseItem ? (
+                          <Loading />
+                        ) : (
+                          <SpacingLeft>
+                            <CasesProgress
+                              progress={caseItem.progress}
+                              max={4}
+                              inverted={index % 2}
+                            />
+                          </SpacingLeft>
+                        ))}
+                      {item.messages &&
+                        compact && (
+                          <SpacingLeft>
+                            <NewBadge
+                              variant="casesList"
+                              number={item.messages.length}
+                            />
+                          </SpacingLeft>
+                        )}
+                      <IconWrapper>
+                        <ThemeComponent tagName="ArrowRight" />
+                      </IconWrapper>
+                    </div>
+                  </CaseContainer>
+                </Link>
+              </li>
+            )
+          })}
+        </List>
+      </Box>
+    )
+  }
+}
+// const CasesList = observer(({ compact }) => {})
 
 const CaseContainer = styled.div`
   display: flex;
