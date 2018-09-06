@@ -1,10 +1,8 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
 import BlockContent from "@sanity/block-content-to-react"
 import blockContentSerializer from "./blockContentSerializer"
 import { dashIt } from "@staccx/formatting"
-import { spacing } from "@staccx/theme"
 import NavigationSubpage from "../components/NavigationSubpage/NavigationSubpage"
 
 class Page extends Component {
@@ -24,23 +22,15 @@ class Page extends Component {
             <NavigationSubpage items={page.subpages} name={page.title} />
           )}
         {renderSubpage && <Page page={renderSubpage} />}
-        <ContentContainer>
-          <BlockContent
-            blocks={page.blocks}
-            serializers={blockContentSerializer}
-            renderContainerOnSingleChild
-          />
-        </ContentContainer>
+        <BlockContent
+          blocks={page.blocks}
+          serializers={blockContentSerializer}
+          renderContainerOnSingleChild
+        />
       </div>
     )
   }
 }
-
-const ContentContainer = styled.div`
-  * > {
-    padding: 0 ${spacing("grid")};
-  }
-`
 
 Page.propTypes = {
   page: PropTypes.object.isRequired

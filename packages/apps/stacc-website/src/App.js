@@ -15,6 +15,7 @@ import Overview from "./pages/Overview"
 import ServicesInfrastructure from "./pages/ServicesInfrastructure"
 import Service from "./pages/Service"
 import Team from "./pages/Team"
+import Case from "./pages/Case"
 import Footer from "./components/Footer/Footer"
 import Page from "./pages/Page"
 
@@ -31,7 +32,7 @@ class App extends Component {
               <Wrapper>
                 <main>
                   <Switch>
-                    <Route path="/clients" component={Clients} />
+                    <Route path="/clients" exact component={Clients} />
                     <Route path="/contact" component={Contact} />
                     <Route path="/careers" component={Jobs} />
                     <Route path="/team" component={Team} />
@@ -42,6 +43,7 @@ class App extends Component {
                       exact
                     />
                     <Route path="/services/:product" component={Service} />
+                    <Route path="/clients/cases/:case" component={Case} />
                   </Switch>
                   <SanityList
                     type={"page"}

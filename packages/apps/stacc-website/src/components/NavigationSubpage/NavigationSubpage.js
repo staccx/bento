@@ -9,20 +9,22 @@ import { dashIt } from "@staccx/formatting"
 const NavigationSubpage = ({ inverted, items, name }) => (
   <Container>
     <ProductName level={1}>{name}</ProductName>
-    <Navigation>
-      <List>
-        {items.map(item => (
-          <li>
-            <SubLink
-              to={`/${dashIt(name)}/${dashIt(item.title)}`}
-              activeClassName="is-current"
-            >
-              {item.title}
-            </SubLink>
-          </li>
-        ))}
-      </List>
-    </Navigation>
+    {items && (
+      <Navigation>
+        <List>
+          {items.map(item => (
+            <li>
+              <SubLink
+                to={`/${dashIt(name)}/${dashIt(item.title)}`}
+                activeClassName="is-current"
+              >
+                {item.title}
+              </SubLink>
+            </li>
+          ))}
+        </List>
+      </Navigation>
+    )}
   </Container>
 )
 
