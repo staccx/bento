@@ -47,6 +47,7 @@ class App extends Component {
                   </Switch>
                   <SanityList
                     type={"page"}
+                    filter={"showOnRoute == true"}
                     pick={`title,subpages[]{...}, path, blocks[]{...}`}
                   >
                     {({ result }) => {

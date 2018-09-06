@@ -9,7 +9,7 @@ const SanityList = ({ type, filter, count, pick, children }) => {
   })
   let query = helper.ofType(type)
   if (filter) {
-    query = query.compare(filter)
+    query = query.doCompare(filter)
   }
 
   if (count) {

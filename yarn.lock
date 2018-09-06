@@ -13540,6 +13540,10 @@ sanity-query-helper@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/sanity-query-helper/-/sanity-query-helper-0.2.0.tgz#8be2f4be1209bda0883f7842b934e441200a58af"
 
+sanity-query-helper@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/sanity-query-helper/-/sanity-query-helper-0.3.0.tgz#efd1b77ad6407fbdd9c3db1b98bb01e1da258ef1"
+
 sass-graph@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/sass-graph/-/sass-graph-2.2.4.tgz#13fbd63cd1caf0908b9fd93476ad43a51d1e0b49"

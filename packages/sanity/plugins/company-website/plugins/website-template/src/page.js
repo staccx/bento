@@ -15,6 +15,12 @@ export default {
       }
     },
     {
+      type: "boolean",
+      name: "showOnRoute",
+      title: "Show on route",
+      description: "Whether this page should be rendered on the path defined above. Set false if only used statically"
+    },
+    {
       type: "array",
       name: "subpages",
       title: "Sub pages",

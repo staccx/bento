@@ -2,12 +2,18 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { BaseSanityQuery } from "./SanityQuery"
 import { Consumer } from "../context"
+import SanityQueryHelper from "sanity-query-helper"
 
 class SanityDocument extends Component {
   componentWillMount() {
     const { id, context } = this.props
 
-    context.queryHelper(context.helper.withFilter("_id").equalTo(`"${id}"`), id)
+    context.queryHelper(
+      new SanityQueryHelper({ sanityOptions: context.helper.sanityOptions })
+        .withFilter("_id")
+        .equalTo(`"${id}"`),
+      id
+    )
   }
 
   render() {
