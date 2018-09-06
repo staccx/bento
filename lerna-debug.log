@@ -1,91 +1,43 @@
-0 silly input [ 'build' ]
+0 silly input [ 'build', '*/theme' ]
 1 silly flags { _: [ 'run' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
 1 silly flags   script: 'build',
-1 silly flags   args: [] }
-2 verbose rootPath /Users/robin/Projects/staccx/bento
-3 info version 2.8.0
-4 silly existsSync /Users/robin/Projects/staccx/bento/VERSION
+1 silly flags   args: [ '*/theme' ] }
+2 verbose rootPath /Users/espen/Projects/bento
+3 info version 2.11.0
+4 silly existsSync /Users/espen/Projects/bento/VERSION
 5 silly initialize attempt
 6 silly initialize success
 7 silly execute attempt
-8 silly runScriptInDir build [] stacc-website
-9 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/stacc-website' }
-10 silly runScriptInDir build [] animations
-11 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/animations' }
-12 silly runScriptInDir build [] cli
-13 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/cli' }
-14 silly runScriptInDir build [] code-generator
-15 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/code-generator' }
-16 silly runScriptInDir build [] color
-17 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/color' }
-18 silly runScriptInDir build [] formatting
-19 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/formatting' }
-20 silly runScriptInDir build [] i18n
-21 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/i18n' }
-22 silly runScriptInDir build [] math
-23 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/math' }
-24 silly runScriptInDir build [] rollup-config
-25 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/rollup-config' }
-26 silly runScriptInDir build [] theme
-27 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/theme' }
-28 silly runScriptInDir build [] utils
-29 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/utils' }
-30 silly runScriptInDir build [] base
-31 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/internal/base' }
-32 silly runScriptInDir build [] invoicing
-33 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/invoicing' }
-34 silly runScriptInDir build [] loan-process
-35 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/loan-process' }
-36 silly runScriptInDir build [] property-value
-37 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/property-value' }
-38 silly runScriptInDir build [] savings-advisor
-39 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/savings-advisor' }
-40 silly runScriptInDir build [] theme
-41 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/clients/Aprila/theme' }
-42 silly runScriptInDir build [] theme
-43 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/clients/fundu/theme' }
-44 silly runScriptInDir build [] theme
-45 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/clients/Nordea/theme' }
-46 silly runScriptInDir build [] theme
-47 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/clients/Norefjell/theme' }
-48 silly runScriptInDir build [] theme
-49 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/clients/Stacc/theme' }
-50 silly runScriptInDir build [] theme
-51 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/clients/Styrke/theme' }
-52 silly runScriptInDir build [] theme
-53 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/clients/Volvo/theme' }
-54 silly runScriptInDir build [] bank-in-a-box
-55 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/bank-in-a-box' }
-56 silly runScriptInDir build [] dealerpad
-57 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/dealerpad' }
-58 silly runScriptInDir build [] developer-portal
-59 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/developer-portal' }
-60 silly runScriptInDir build [] onboarding-pm
-61 silly getExecOpts { cwd: '/Users/robin/Projects/staccx/bento/packages/apps/onboarding-pm' }
-62 error build Errored while running script in '@staccx/bank-in-a-box'
-63 error execute callback with error
-64 error Error: Command failed: yarn run build
-64 error module.js:549
-64 error     throw err;
-64 error     ^
-64 error
-64 error Error: Cannot find module 'react-app-rewire-mobx'
-64 error     at Function.Module._resolveFilename (module.js:547:15)
-64 error     at Function.Module._load (module.js:474:25)
-64 error     at Module.require (module.js:596:17)
-64 error     at require (internal/module.js:11:18)
-64 error     at Object.<anonymous> (/Users/robin/Projects/staccx/bento/packages/apps/bank-in-a-box/config-overrides.js:1:82)
-64 error     at Module._compile (module.js:652:30)
-64 error     at Object.Module._extensions..js (module.js:663:10)
-64 error     at Module.load (module.js:565:32)
-64 error     at tryModuleLoad (module.js:505:12)
-64 error     at Function.Module._load (module.js:497:3)
-64 error error Command failed with exit code 1.
-64 error yarn run v1.6.0
-64 error $ react-app-rewired build
-64 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-64 error
-64 error     at Promise.all.then.arr (/Users/robin/.config/yarn/global/node_modules/execa/index.js:236:11)
-64 error     at <anonymous>
+8 silly runScriptInDir build [ '*/theme' ] animations
+9 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/animations' }
+10 silly runScriptInDir build [ '*/theme' ] cli
+11 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/cli' }
+12 silly runScriptInDir build [ '*/theme' ] code-generator
+13 silly getExecOpts { cwd:
+13 silly getExecOpts    '/Users/espen/Projects/bento/packages/internal/code-generator' }
+14 silly runScriptInDir build [ '*/theme' ] formatting
+15 silly getExecOpts { cwd: '/Users/espen/Projects/bento/packages/internal/formatting' }
+16 error build Errored while running script in '@staccx/animations'
+17 error execute callback with error
+18 error Error: Command failed: yarn run build */theme
+18 error Error: ENOENT: no such file or directory, lstat '/Users/espen/Projects/bento/packages/internal/animations/*'
+18 error     at Object.realpathSync (fs.js:1437:7)
+18 error     at runRollup (/Users/espen/Projects/bento/node_modules/rollup/bin/rollup:1900:29)
+18 error     at Object.<anonymous> (/Users/espen/Projects/bento/node_modules/rollup/bin/rollup:1964:5)
+18 error     at Module._compile (internal/modules/cjs/loader.js:702:30)
+18 error     at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)
+18 error     at Module.load (internal/modules/cjs/loader.js:612:32)
+18 error     at tryModuleLoad (internal/modules/cjs/loader.js:551:12)
+18 error     at Function.Module._load (internal/modules/cjs/loader.js:543:3)
+18 error     at Function.Module.runMain (internal/modules/cjs/loader.js:744:10)
+18 error     at startup (internal/bootstrap/node.js:240:19)
+18 error error Command failed with exit code 1.
+18 error yarn run v1.9.4
+18 error $ yarn prettify && rollup -c '*/theme'
+18 error $ prettier --write '{src,__{tests,mocks}__}/**/*.js'
+18 error src/index.js 45ms
+18 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+18 error
+18 error     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/execa/index.js:236:11)
