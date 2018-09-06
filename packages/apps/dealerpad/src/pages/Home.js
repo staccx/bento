@@ -6,12 +6,14 @@ import NewsList from "../components/News/News.List"
 import CasesList from "../components/Cases/Cases.List"
 import SearchGlobal from "../components/Search/SearchGlobal"
 import Contact from "../components/Contact"
+import NewsStats from "../components/News/News.Stats"
 
 const Home = () => (
   <div>
     <header>
       <NewsHero article={getNewsItems()[0]} />
     </header>
+    <NewsStats />
 
     <Wrapper>
       <Layout

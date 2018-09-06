@@ -10,7 +10,7 @@ import {
 } from "@staccx/base"
 
 const NewsHero = ({ article }) => (
-  <Box variant="defaultHero" size="flush">
+  <Box variant="newsHero" size="flush">
     <Wrapper>
       <Layout
         grid="fiftyFifty"

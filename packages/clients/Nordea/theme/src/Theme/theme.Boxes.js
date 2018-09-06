@@ -21,6 +21,13 @@ export const BoxStyling = registerStyle(
       padding-right: 0;
       padding-bottom: ${spacing.mediumPlus};
     `,
+    newsHero: css`
+      background-color: ${color.white};
+      padding-top: ${spacing.large};
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: ${spacing.mediumPlus};
+    `,
     caseHero: css`
       background-color: ${color.secondary};
       height: 100%;
