@@ -1,7 +1,15 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-import { Heading, Box, Wrapper, List, Flag, LayoutItem } from "@staccx/base"
+import {
+  Heading,
+  Box,
+  Wrapper,
+  List,
+  Flag,
+  LayoutItem,
+  Button
+} from "@staccx/base"
 import { spacing, ThemeComponent, color, targetSize } from "@staccx/theme"
 import registerCase from "../data/registerCase"
 
@@ -32,12 +40,22 @@ const Home = () => (
           ))}
         </List>
         <Center>
-          <img src="/alfa-sak.png" alt="" />
+          <div>
+            <Left>
+              <Button>Simulér ny sak</Button>
+            </Left>
+            <img src="/alfa-sak.png" alt="" />
+          </div>
         </Center>
       </Grid>
     </Box>
   </PageWrapper>
 )
+
+const Left = styled.div`
+  text-align: left;
+  margin-bottom: ${spacing.medium};
+`
 
 const PageWrapper = styled.div`
   display: grid;

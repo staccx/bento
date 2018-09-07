@@ -5,6 +5,7 @@ import MySales from "../pages/MySales"
 import Case from "../pages/Case"
 import UnderConstruction from "../pages/UnderConstruction"
 import CarConfigurator from "../pages/CarConfigurator"
+import NewCaseCreated from "../pages/NewCaseCreated"
 
 const routes = [
   {
@@ -59,6 +60,15 @@ const routes = [
     icon: <i />,
     exact: true,
     _id: "dfsjk348",
+    inMenu: false
+  },
+  {
+    path: "/new-case-created",
+    component: NewCaseCreated,
+    name: "New case created",
+    icon: <i />,
+    exact: true,
+    _id: "dfds54465",
     inMenu: false
   }
 ]
