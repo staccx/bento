@@ -1,6 +1,6 @@
 {
   "name": "@staccx/sanity",
-  "version": "7.5.0",
+  "version": "7.6.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -9,7 +9,7 @@
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.4",
     "@sanity/image-url": "^0.132.8",
-    "@staccx/base": "^7.5.0",
+    "@staccx/base": "^7.6.0",
     "@staccx/theme": "^7.2.4",
     "mobx-react": "^5.2.5",
     "prop-types": "^15.6.1",
