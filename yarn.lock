@@ -776,6 +776,31 @@
   dependencies:
     any-observable "^0.3.0"
 
+"@sanity/base@^0.132.12":
+  version "0.132.12"
+  resolved "https://registry.yarnpkg.com/@sanity/base/-/base-0.132.12.tgz#64c519d298cb5dc67c3b4c498994b920c2c4bcdd"
+  dependencies:
+    "@sanity/client" "0.132.10"
+    "@sanity/document-store" "0.132.5"
+    "@sanity/image-url" "0.132.8"
+    "@sanity/observable" "0.132.5"
+    "@sanity/preview" "0.132.8"
+    "@sanity/schema" "0.132.12"
+    "@sanity/state-router" "0.132.5"
+    "@sanity/validation" "0.132.10"
+    history "^4.6.3"
+    in-publish "^2.0.0"
+    lodash "^4.17.4"
+    nano-pubsub "^1.0.2"
+    postcss-cssnext "^3.0.2"
+    promise-props "^1.0.0"
+    react-icon-base "^2.1.2"
+    react-icons "^2.2.7"
+    react-intl "^2.2.2"
+    rxjs "^6.1.0"
+    semver-compare "^1.0.0"
+    shallow-equals "^1.0.0"
+
 "@sanity/base@^0.132.7":
   version "0.132.10"
   resolved "https://registry.yarnpkg.com/@sanity/base/-/base-0.132.10.tgz#e8ca46083e958c39a08b3180866799db19b7ee22"
@@ -824,6 +849,13 @@
     get-random-values "^1.2.0"
     lodash "^4.17.4"
 
+"@sanity/block-tools@0.132.12":
+  version "0.132.12"
+  resolved "https://registry.yarnpkg.com/@sanity/block-tools/-/block-tools-0.132.12.tgz#6d69ff3e2eb55377cb5e68abc1f6a0347650ef64"
+  dependencies:
+    get-random-values "^1.2.0"
+    lodash "^4.17.4"
+
 "@sanity/check@0.132.10":
   version "0.132.10"
   resolved "https://registry.yarnpkg.com/@sanity/check/-/check-0.132.10.tgz#f8acc0e736536707eefc344be8cbe2daa4053e8a"
@@ -835,7 +867,7 @@
     in-publish "^2.0.0"
     promise-props-recursive "^1.0.0"
 
-"@sanity/client@0.132.10":
+"@sanity/client@0.132.10", "@sanity/client@^0.132.10":
   version "0.132.10"
   resolved "https://registry.yarnpkg.com/@sanity/client/-/client-0.132.10.tgz#92d3c660f6179f8f6e3325a2541f0a89f5f21d0e"
   dependencies:
@@ -858,6 +890,46 @@
     get-it "^4.0.1"
     make-error "^1.3.0"
     object-assign "^4.1.1"
+
+"@sanity/components@^0.132.12":
+  version "0.132.12"
+  resolved "https://registry.yarnpkg.com/@sanity/components/-/components-0.132.12.tgz#72d5b63d44fcfe78fb1ec9b23ad7675cf5ba9f6f"
+  dependencies:
+    "@sanity/date-input" "0.132.10"
+    "@sanity/imagetool" "0.132.5"
+    "@sanity/react-tippy" "1.2.6"
+    attr-accept "^1.1.0"
+    canvas-to-blob "^0.0.0"
+    chance "^1.0.4"
+    circular-at "^1.0.3"
+    classnames "^2.2.5"
+    date-fns "^1.29.0"
+    detect-it "^2.0.0"
+    dialog-polyfill "^0.4.3"
+    dom-scroll-into-view "^1.2.1"
+    ease-component "^1.0.0"
+    element-resize-detector "^1.1.14"
+    exif-component "^1.0.1"
+    fuse.js "^2.4.1"
+    in-publish "^2.0.0"
+    lodash "^4.17.4"
+    lost "^8.0.0"
+    nano-pubsub "^1.0.2"
+    popper.js "1.14.1"
+    postcss-cssnext "^3.0.2"
+    react-addons-css-transition-group "^15.4.1"
+    react-addons-shallow-compare "^15.4.1"
+    react-click-outside "^2.3.1"
+    react-container-query "^0.8.0"
+    react-draggable "^2.2.2"
+    react-dropzone "^3.9.2"
+    react-element-query "^3.0.2"
+    react-ink "^6.1.0"
+    react-popper "^0.10.4"
+    react-sortable-hoc "^0.6.3"
+    react-split-pane "^0.1.63"
+    rxjs "^6.1.0"
+    scroll "^2.0.0"
 
 "@sanity/components@^0.132.7":
   version "0.132.10"
@@ -899,7 +971,7 @@
     rxjs "^6.1.0"
     scroll "^2.0.0"
 
-"@sanity/core@^0.132.6":
+"@sanity/core@^0.132.10", "@sanity/core@^0.132.6":
   version "0.132.10"
   resolved "https://registry.yarnpkg.com/@sanity/core/-/core-0.132.10.tgz#3c2b700fdb5a6b62b6a32e390fa4ec1aa6f80c41"
   dependencies:
@@ -956,6 +1028,16 @@
     "@sanity/generate-help-url" "0.132.10"
     "@sanity/rich-date-input" "0.132.10"
 
+"@sanity/default-layout@^0.132.12":
+  version "0.132.12"
+  resolved "https://registry.yarnpkg.com/@sanity/default-layout/-/default-layout-0.132.12.tgz#c37a7b0b049dcde57340829cf14bde504d8f3d82"
+  dependencies:
+    "@sanity/generate-help-url" "0.132.10"
+    lodash "^4.17.4"
+    react-click-outside "^2.3.1"
+    react-ink "^6.1.0"
+    rxjs "^6.1.0"
+
 "@sanity/default-layout@^0.132.7":
   version "0.132.10"
   resolved "https://registry.yarnpkg.com/@sanity/default-layout/-/default-layout-0.132.10.tgz#89cde87f871598c5d6dc08b15fd3b4f171c4b760"
@@ -966,13 +1048,38 @@
     react-ink "^6.1.0"
     rxjs "^6.1.0"
 
-"@sanity/default-login@^0.132.6":
+"@sanity/default-login@^0.132.10", "@sanity/default-login@^0.132.6":
   version "0.132.10"
   resolved "https://registry.yarnpkg.com/@sanity/default-login/-/default-login-0.132.10.tgz#8e6f4c2bc5e31363ffd9ab43956351d41ddd19c0"
   dependencies:
     "@sanity/generate-help-url" "0.132.10"
     in-publish "^2.0.0"
     prop-types "^15.6.0"
+
+"@sanity/desk-tool@^0.132.12":
+  version "0.132.12"
+  resolved "https://registry.yarnpkg.com/@sanity/desk-tool/-/desk-tool-0.132.12.tgz#3d311c8deafe152c34c84d7e6ad5d023a5267682"
+  dependencies:
+    "@sanity/data-aspects" "0.132.10"
+    "@sanity/form-builder" "0.132.12"
+    "@sanity/mutator" "0.132.5"
+    "@sanity/react-tippy" "1.2.6"
+    "@sanity/uuid" "0.132.5"
+    "@sanity/validation" "0.132.10"
+    classnames "^2.2.5"
+    date-fns "^1.29.0"
+    diff "^3.2.0"
+    element-resize-detector "^1.1.14"
+    hashlru "^2.1.0"
+    in-publish "^2.0.0"
+    lodash "^4.17.4"
+    promise-latest "^1.0.4"
+    react-click-outside "^2.3.1"
+    react-ink "^6.1.0"
+    react-json-inspector "^7.1.1"
+    react-tiny-virtual-list "^2.0.5"
+    rxjs "^6.1.0"
+    shallow-equals "^1.0.0"
 
 "@sanity/desk-tool@^0.132.7":
   version "0.132.11"
@@ -1045,6 +1152,43 @@
     "@sanity/imagetool" "0.132.5"
     "@sanity/mutator" "0.132.5"
     "@sanity/schema" "0.132.10"
+    attr-accept "^1.1.0"
+    canvas-to-blob "^0.0.0"
+    classnames "^2.2.5"
+    date-fns "^1.29.0"
+    debug "^3.1.0"
+    exif-component "^1.0.1"
+    get-random-values "^1.2.0"
+    get-window "^1.1.1"
+    humanize-list "^1.0.1"
+    immutable "^3.8.1"
+    is-equal "^1.5.5"
+    lodash "^4.17.4"
+    moment "^2.19.1"
+    nano-pubsub "^1.0.2"
+    object-inspect "^1.3.0"
+    popper.js "1.14.1"
+    react-click-outside "^2.3.1"
+    react-datepicker "^1.3.0"
+    rxjs "^6.1.0"
+    shallow-equals "^1.0.0"
+    slate "^0.25.2"
+    slate-base64-serializer "^0.1.9"
+    slate-insert-block-on-enter "^0.0.5"
+    slate-react "0.1.10"
+    slate-soft-break "^0.4.1"
+    speakingurl "^13.0.0"
+
+"@sanity/form-builder@0.132.12":
+  version "0.132.12"
+  resolved "https://registry.yarnpkg.com/@sanity/form-builder/-/form-builder-0.132.12.tgz#e979db4549aa8980879cc1b278629cd1594e5d02"
+  dependencies:
+    "@sanity/block-tools" "0.132.12"
+    "@sanity/generate-help-url" "0.132.10"
+    "@sanity/image-url" "0.132.8"
+    "@sanity/imagetool" "0.132.5"
+    "@sanity/mutator" "0.132.5"
+    "@sanity/schema" "0.132.12"
     attr-accept "^1.1.0"
     canvas-to-blob "^0.0.0"
     classnames "^2.2.5"
@@ -1190,6 +1334,18 @@
 "@sanity/schema@0.132.10":
   version "0.132.10"
   resolved "https://registry.yarnpkg.com/@sanity/schema/-/schema-0.132.10.tgz#b119b7dc3c4aa6ca5b50f9218aa80d06f865f74d"
+  dependencies:
+    "@sanity/generate-help-url" "0.132.10"
+    arrify "^1.0.1"
+    humanize-list "^1.0.1"
+    json-reduce "^1.0.0"
+    leven "^2.1.0"
+    lodash "^4.17.4"
+    object-inspect "^1.3.0"
+
+"@sanity/schema@0.132.12":
+  version "0.132.12"
+  resolved "https://registry.yarnpkg.com/@sanity/schema/-/schema-0.132.12.tgz#70db659cdf16136b2830b116d9e1ff2f57df3b22"
   dependencies:
     "@sanity/generate-help-url" "0.132.10"
     arrify "^1.0.1"

@@ -1,0 +1,25 @@
+{
+  "root": true,
+  "project": {
+    "name": "Otemoto"
+  },
+  "api": {
+    "projectId": "g17ztc8k",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "feature-toggle",
+    "feature-toggle-preview"
+  ],
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.js"
+    }
+  ]
+}
