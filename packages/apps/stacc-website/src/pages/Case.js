@@ -88,6 +88,14 @@ const Case = ({ match, location }) => (
           <Timeline items={timeLineData} />
         </Layout>
       </div>
+      <ContactUs
+        person={{
+          name: "Geir Nordrik",
+          phone: "+47 123 12 123",
+          email: "geirn@stacc.com",
+          img: "/img/geirn.png"
+        }}
+      />
     </Layout>
   </div>
 )

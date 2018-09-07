@@ -29,6 +29,10 @@ const ContactUs = ({ person }) => (
 const Container = styled(FullWidth)`
   background-color: ${color("blush")};
   margin-top: 132px;
+
+  &:last-child {
+    margin-bottom: -${spacing("grid")};
+  }
 `
 
 const Inner = styled.div`
