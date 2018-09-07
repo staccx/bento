@@ -19,10 +19,46 @@ import Case from "./pages/Case"
 import Footer from "./components/Footer/Footer"
 import Page from "./pages/Page"
 
+const asciiArt = `
+                            \`-ohy+-\`
+                         ./shmmddmdhs/.
+                     \`-+ydmmds/.-+ydmmdy+-\`
+                  \`:shdmmho:\`      .:sdmmdho:\`
+              \`-+ydmddy+.              -odmmmdy+.\`
+           .:ohmmdho:.              \`./sdmmdhhdmdho:\`
+        -+ydmmdy+-\`              \`-+ydmmds/.\`\`-+ydmdhs/.
+    \`:ohdmmds/.               \`:shdmmho:\`       \`./sdmmdh+-\`
+    +mmmmd+.              \`-+ydmmdy+.               .odmmmd+
+    +mmmdmdhs/.        .:ohdmdhs:.               ./shmmdmmd+
+    +mmd-+ydmmdy+-\`\`-/ydmmdy+-\`              \`-+ydmmhs/-mmd+
+    +mmd   .:odmmdhhdmmds/.               \`:shdmmho-\`  \`mmd+
+    +mmd       -+ydmmmd+.\`            \`-+ydmmmh+.      \`mmd+
+    +mmd          ./shdmdho:\`      .:ohmmdddmm+        \`mmd+
+    +mmd             \`-+ydmdhs/.-+ydmmdy+--ymm+        \`mmd+
+    +mmd:\`              \`./sdmmddmmds/.   .ymm+        \`mmd+
+    +mmmmdy/.\`              \`:hmmy-\`      .ymm+        \`mmd+
+    +mmdshdmdho:\`             ymms        .ymm+        \`mmd+
+    +mmd \`-+ydmmhs/.          ymms        .ymm+        \`mmd+
+    +mmd    \`./sdmmdho-       ymms        .ymm+        \`mmd+
+    +mmd        \`:ohdmmds/.   ymms        .ymm+        \`mmd+
+    +mmd           \`-/ydmmdy+-hmms        .ymm+        \`mmd+
+    +mmd               .:ohdmdmmms        .ymm+        \`mmd+
+    +mmmh+-\`              \`-+ydmms        .ymm+     \`:ohmmd+
+    \`:ohdmmds/.               ymms        .ymm+ \`./sdmmdh+-\`
+        -+ydmmdy+-\`           ymms        .ymmsoydmdhs/.
+           .:ohdmdho:.        ymms        -ymmmmdho:\`
+              \`-+ydmddy+.     ymms     -+ydmmdy+.\`
+                  \`:shdmmho:\`\`ymms .:sdmmdho:\`
+                     \`-+ydmmdydmmhydmmdy+-\`
+                         ./shmmmmmdhs/.        Stacc
+                            \`-ohh+-\`           -  moving finance forward
+
+`
+
 class App extends Component {
   render() {
     const history = createHistory()
-
+    console.log(asciiArt)
     return (
       <ThemeProxyProvider theme={theme}>
         <SanityProvider dataset={"production"} projectId={"8j24leyc"}>
@@ -43,7 +79,7 @@ class App extends Component {
                       exact
                     />
                     <Route path="/services/:product" component={Service} />
-                    <Route path="/clients/cases/:case" component={Case} />
+                    <Route path="/clients/cases/:case" exact component={Case} />
                   </Switch>
                   <SanityList
                     type={"page"}

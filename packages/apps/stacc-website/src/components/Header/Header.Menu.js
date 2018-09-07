@@ -9,7 +9,7 @@ const HeaderMenu = ({ inverted, items }) => (
   <Navigation>
     <MenuItems inverted={inverted}>
       {items.map(menuItem => (
-        <li>
+        <li key={menuItem._key}>
           <MenuItem
             to={menuItem.link[0].url}
             exact
