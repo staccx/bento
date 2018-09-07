@@ -4,7 +4,8 @@ import {
   fetchCaseDetails,
   uploadFile,
   setTaskCompleted,
-  fetchTasks
+  fetchTasks,
+  simulateNewCase
 } from "../api/api"
 
 import { fetchUnreadMessages } from "../api/chat"
@@ -47,12 +48,9 @@ class CaseStore {
 
   @action
   refreshCurrentCase() {
-    // const caseId = this.currentCaseId
-    // this.currentCase = null
     if (this.currentCaseId) {
       this.refreshCaseDetails({ id: this.currentCaseId })
     }
-    // this.currentCase = caseId
   }
 
   @action
@@ -108,6 +106,10 @@ class CaseStore {
     }
 
     this.loading--
+  }
+
+  simulateNewCase() {
+    return simulateNewCase().catch(console.error)
   }
 
   documentSubmitter(document) {
