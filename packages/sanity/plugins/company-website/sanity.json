@@ -1,7 +1,7 @@
 {
   "root": true,
   "project": {
-    "name": "company-website-template"
+    "name": "Stacc dot com"
   },
   "api": {
     "projectId": "8j24leyc",
@@ -13,7 +13,9 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "website-template"
+    "website-template",
+    "stacc-logo",
+    "stacc-styling"
   ],
   "parts": [
     {

@@ -1,0 +1,17 @@
+@import url('https://fonts.google.com/specimen/IBM+Plex+Sans');
+
+:root {
+    --font-family-sans-serif: 'IBM Plex Mono';
+
+    --body-bg: #F8F8F8;
+    --text-color: #2b2b2b;
+
+    --brand-primary: #467EFF;
+    --brand-secondary: #EB5E55;
+
+    --component-bg: #F8F8F8;
+    --component-border-color: #EBE7E7;
+    --component-box-shadow: 0 1px 3px color(var(--black) a(50%));
+
+    --state-danger-color: #EB5E55;
+}
