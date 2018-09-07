@@ -20,6 +20,10 @@ class Search extends React.Component {
   }
 
   handleSearch(term) {
+    if (!term) {
+      this.setState({ result: this.props.documents })
+      return
+    }
     const result = this.state.searcher.search(term)
     this.setState({ result })
   }
