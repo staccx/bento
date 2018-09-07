@@ -9,8 +9,8 @@ const Timeline = ({ items }) => (
     <Content>
       {items.map(item => (
         <Item>
-          <Time level={4}>{item.heading}</Time>
-          <Body>{item.body}</Body>
+          <Time level={4}>{item.title}</Time>
+          <Body>{item.subtitle}</Body>
         </Item>
       ))}
     </Content>
@@ -49,7 +49,7 @@ const Time = styled(Heading)`
 const Body = styled.p``
 
 Timeline.propTypes = {
-  item: PropTypes.array
+  items: PropTypes.array
 }
 
 export default Timeline

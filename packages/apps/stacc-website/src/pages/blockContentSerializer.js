@@ -8,6 +8,7 @@ import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
 import ContentLinks from "../components/ContentLinks/ContentLinks"
 import FeatureList from "../components/FeatureList/FeatureList"
 import Stories from "../components/Stories/Stories"
+import Timeline from "../components/Timeline/Timeline"
 
 export default {
   container: props => (
@@ -77,6 +78,7 @@ export default {
     stories: ({ node }) => {
       console.log(node)
       return <Stories items={node.list} />
-    }
+    },
+    timeline: ({node}) => <Timeline items={node.entries}/>
   }
 }
