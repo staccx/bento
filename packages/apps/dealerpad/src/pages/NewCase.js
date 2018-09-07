@@ -1,13 +1,21 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-import { Heading, Box, Wrapper, List, Flag, LayoutItem } from "@staccx/base"
-import { spacing, ThemeComponent, color } from "@staccx/theme"
+import {
+  Heading,
+  Box,
+  Wrapper,
+  List,
+  Flag,
+  LayoutItem,
+  Button
+} from "@staccx/base"
+import { spacing, ThemeComponent, color, targetSize } from "@staccx/theme"
 import registerCase from "../data/registerCase"
 
 const Home = () => (
-  <React.Fragment>
-    <Box variant="defaultHero">
+  <PageWrapper>
+    <Box variant="newsHero">
       <Wrapper>
         <LayoutItem variant="fadeIn" delay={400}>
           <Heading level={1} variant="salesOverviewHeading">
@@ -16,7 +24,7 @@ const Home = () => (
         </LayoutItem>
       </Wrapper>
     </Box>
-    <Box variant="subtle">
+    <Box variant="newCase">
       <Grid>
         <List>
           {registerCase.map((item, index) => (
@@ -32,12 +40,28 @@ const Home = () => (
           ))}
         </List>
         <Center>
-          <img src="/alfa1.png" alt="" />
+          <div>
+            <Left>
+              <Button>Simulér ny sak</Button>
+            </Left>
+            <img src="/alfa-sak.png" alt="" />
+          </div>
         </Center>
       </Grid>
     </Box>
-  </React.Fragment>
+  </PageWrapper>
 )
+
+const Left = styled.div`
+  text-align: left;
+  margin-bottom: ${spacing.medium};
+`
+
+const PageWrapper = styled.div`
+  display: grid;
+  height: calc(100vh - 52px);
+  grid-template-rows: auto 1fr;
+`
 
 const Grid = styled.div`
   display: grid;
@@ -47,6 +71,13 @@ const Grid = styled.div`
   grid-row-gap: ${spacing.medium};
   > ul {
     padding-left: ${spacing.medium};
+  }
+  @media only screen and (max-width: 760px) {
+    grid-template-columns: 1fr;
+    li {
+      display: inline-block;
+      margin-right: ${spacing.medium};
+    }
   }
 `
 
@@ -64,6 +95,11 @@ const StyledLink = styled(Link)`
   svg {
     width: ${spacing.medium};
     fill: ${color.primary};
+    height: ${spacing.medium};
+  }
+  @media only screen and (max-width: 760px) {
+    border-bottom: 0px transparent solid;
+    height: ${targetSize.normal};
   }
 `
 
