@@ -92,6 +92,11 @@ export const BoxStyling = registerStyle(
       padding-left: 0;
       padding-right: 0;
       padding-bottom: ${spacing.huge};
+    `,
+    newCase: css`
+      background-color: ${color("bg1")};
+      padding-left: 0;
+      padding-right: 0;
     `
   },
   Box.themeProps.box

@@ -2,6 +2,7 @@ import React from "react"
 
 const HackTotalSale = () => (
   <svg
+    style={{ width: "auto", maxWidth: "100%" }}
     width="176"
     height="115"
     viewBox="0 0 176 115"

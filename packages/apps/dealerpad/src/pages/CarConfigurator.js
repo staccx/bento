@@ -52,6 +52,9 @@ const ImageWrapper = styled.div`
   grid-column-gap: ${spacing.medium};
   grid-row-gap: ${spacing.medium};
   margin-top: -${spacing.large};
+  @media only screen and (max-width: 760px) {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
 `
 
 const PageWrapper = styled.div`
