@@ -87,6 +87,10 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "blocks/hero.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/timeline.js"
     }
   ]
 }

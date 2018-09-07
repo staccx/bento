@@ -14,6 +14,11 @@ export default {
       title: "Logo"
     },
     {
+      type: "url",
+      name: "url",
+      title: "Url to client website"
+    },
+    {
       type: "array",
       name: "caseStudies",
       title: "Case studies",

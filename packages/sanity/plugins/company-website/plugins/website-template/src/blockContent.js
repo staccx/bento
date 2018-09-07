@@ -47,6 +47,7 @@ export default {
     { type: "productClients" },
     { type: "quote" },
     { type: "hero" },
-    { type: "stories" }
+    { type: "stories" },
+    { type: "timeline" },
   ]
 }
