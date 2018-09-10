@@ -10,39 +10,28 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "person.js"
+      "path": "productPage.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "servicePage.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "caseStudyPage.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "blockContent.js"
     },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "socialLink.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "company.js"
-    },
+
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "client.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "caseStudy.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "product.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "subpage.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "menu.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -91,6 +80,34 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "blocks/timeline.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "teamPage.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "homePage.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "clientsPage.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "company.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "product.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "person.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "menu.js"
     }
   ]
 }

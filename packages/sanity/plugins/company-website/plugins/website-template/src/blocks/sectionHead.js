@@ -26,5 +26,8 @@ export default {
         hotspot: true
       }
     }
-  ]
+  ],
+  options: {
+    collapsible: true
+  }
 }

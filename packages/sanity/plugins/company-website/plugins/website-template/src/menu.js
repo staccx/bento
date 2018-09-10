@@ -1,7 +1,7 @@
 export default {
   type: "document",
   name: "menu",
-  title: "Menu",
+  title: "Data: Menu",
   fields: [
     {
       type: "string",
@@ -11,7 +11,7 @@ export default {
     {
       type: "array",
       name: "links",
-      title: "Links",
+      title: "MenuItems",
       of: [{ type: "menuItem" }]
     },
     {
