@@ -1,10 +1,9 @@
+import React from "react"
+import IconArrowUp from "../components/Icons/Icon.ArrowUp"
+import IconProfile from "../components/Icons/Icon.Profile"
+import IconLogout from "../components/Icons/Icon.Logout"
+
 export default [
-  {
-    _id: "eiwfohug",
-    label: "Sett inn penger",
-    icon: <IconArrowDown />,
-    page: () => pages.deposit()
-  },
   {
     _id: "wiofdh",
     label: "Ta ut penger",
