@@ -5,6 +5,7 @@ const page = generatePageSchema({
   title: "Case Study Page",
   allowSubpages: null,
   slugPrefix: "/clients/case-study/",
+  slugSource: "caseStudies[0].name",
   additionalFields: [
     {
       type: "reference",

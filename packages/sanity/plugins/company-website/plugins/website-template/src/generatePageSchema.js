@@ -3,6 +3,7 @@ export default ({
   title,
   allowSubpages,
   slugPrefix,
+  slugSource = "name",
   additionalFields = []
 }) => ({
   type: "document",
@@ -15,7 +16,7 @@ export default ({
       name: "path",
       title: "Path",
       options: {
-        source: "name",
+        source: slugSource,
         maxLength: 96,
         auto: true,
         slugify: input =>

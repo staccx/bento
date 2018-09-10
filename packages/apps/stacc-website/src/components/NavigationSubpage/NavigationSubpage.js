@@ -6,16 +6,16 @@ import { List, Heading } from "@staccx/base"
 import { spacing, color, font } from "@staccx/theme"
 import { dashIt } from "@staccx/formatting"
 
-const NavigationSubpage = ({ inverted, items, name }) => (
+const NavigationSubpage = ({ inverted, items, name, title }) => (
   <Container>
-    <ProductName level={1}>{name}</ProductName>
+    <ProductName level={1}>{title}</ProductName>
     {items && (
       <Navigation>
         <List>
           {items.map(item => (
             <li>
               <SubLink
-                to={`/${dashIt(name)}/${dashIt(item.title)}`}
+                to={`${dashIt(name)}/${dashIt(item.title)}`}
                 activeClassName="is-current"
               >
                 {item.title}

@@ -36,7 +36,6 @@ export default {
           to: [{ type: "page" }]
         }
       ],
-      validation: Rule => Rule.max(1).required()
     }
   ]
 }

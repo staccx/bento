@@ -53,6 +53,7 @@ export default {
     },
     section: ({ node }) => {
       const { head, links } = node
+      console.log(node)
       return (
         <div>
           <Layout>
@@ -67,7 +68,7 @@ export default {
               )}
             </SanityImage>
 
-            <ContentLinks>{links.map(getLinkItem)}</ContentLinks>
+            {links && <ContentLinks>{links.map(getLinkItem)}</ContentLinks>}
           </Layout>
         </div>
       )
@@ -79,6 +80,6 @@ export default {
       console.log(node)
       return <Stories items={node.list} />
     },
-    timeline: ({node}) => <Timeline items={node.entries}/>
+    timeline: ({ node }) => <Timeline items={node.entries} />
   }
 }

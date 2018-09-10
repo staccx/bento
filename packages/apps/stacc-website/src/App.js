@@ -13,11 +13,11 @@ import Contact from "./pages/Contact"
 import Jobs from "./pages/Jobs"
 import Overview from "./pages/Overview"
 import ServicesInfrastructure from "./pages/ServicesInfrastructure"
-import Service from "./pages/Service"
 import Team from "./pages/Team"
 import Case from "./pages/Case"
 import Footer from "./components/Footer/Footer"
 import Page from "./pages/Page"
+import Home from "./pages/Home"
 
 const asciiArt = `
                             \`-ohy+-\`
@@ -55,21 +55,6 @@ const asciiArt = `
 
 `
 
-const p2t = {
-  "/": {
-    type: "homePage",
-    pick: `title, hero[], blocks[]{...}`
-  },
-  "/team": {
-    type: "teamPage",
-    pick: `title,sectionHead[]`
-  },
-  "/clients": {
-    type: "clientPage",
-    pick: `title,sectionHead[]`
-  }
-}
-
 class App extends Component {
   render() {
     const history = createHistory()
@@ -84,6 +69,7 @@ class App extends Component {
               <Wrapper>
                 <main>
                   <Switch>
+                    <Route path="/" exact component={Home} />
                     <Route path="/clients" exact component={Clients} />
                     <Route path="/contact" component={Contact} />
                     <Route path="/careers" component={Jobs} />
@@ -94,86 +80,100 @@ class App extends Component {
                       component={ServicesInfrastructure}
                       exact
                     />
-                    <Route path="/services/:product" component={Service} />
-                    <Route path="/clients/cases/:case" exact component={Case} />
                   </Switch>
-                  <Route
-                    render={({ match }) => {
-                      const pageType = p2t[match.path] || "page"
-                      return (
-                        <SanityList type={pageType.type} pick={pageType.pick}>
-                          {({ result }) => {
-                            if (!result) {
-                              return <Loading />
-                            }
+                  <React.Fragment>
+                    <SanityList type={"client"}>
+                      {({ result }) => {
+                        if (!result) {
+                          return null
+                        }
 
-                            const subpages = [].concat.apply(
-                              [],
-                              result.map(
-                                page =>
-                                  page.subpages
-                                    ? page.subpages.filter(s => s).map(s => s)
-                                    : []
-                              )
+                        return (
+                          <React.Fragment>
+                            {result.map(client => {
+                              return client.caseStudies
+                                ? client.caseStudies.map(caseStudy => (
+                                  <Route
+                                      path={caseStudy.path.current}
+                                      render={() => <Case caseStudy={caseStudy} />}
+                                    />
+                                  ))
+                                : null
+                            })}
+                          </React.Fragment>
+                        )
+                      }}
+                    </SanityList>
+                  </React.Fragment>
+                  <React.Fragment>
+                    <SanityList
+                      type={`page" || _type == "servicePage" || _type == "productPage`}
+                    >
+                      {({ result }) => {
+                        if (!result) {
+                          return <Loading />
+                        }
+
+                        const subpages = [].concat.apply(
+                          [],
+                          result.map(
+                            page =>
+                              page.subpages
+                                ? page.subpages.filter(s => s).map(s => s)
+                                : []
+                          )
+                        )
+
+                        return result.map(page => {
+                          if (page.subpages && page.subpages.length) {
+                            const baseRoute = `${page.path.current}`
+
+                            const subPages = (
+                              <React.Fragment>
+                                <Route
+                                  path={`${baseRoute}/:subpage`}
+                                  render={({ match }) => (
+                                    <Page page={page} match={match} />
+                                  )}
+                                />
+                                <Route
+                                  exact
+                                  path={`${baseRoute}`}
+                                  render={() => {
+                                    return (
+                                      <Redirect
+                                        to={`${baseRoute}/${dashIt(
+                                          page.subpages[0].title
+                                        )}`}
+                                      />
+                                    )
+                                  }}
+                                />
+                              </React.Fragment>
                             )
 
-                            return result.map(page => {
-                              if (page.subpages && page.subpages.length) {
-                                const baseRoute =
-                                  pageType === "page"
-                                    ? `/${page.path.current.replace("/", "")}`
-                                    : match.path
+                            return <div key={page._id}>{subPages}</div>
+                          }
 
-                                const subPages = (
-                                  <React.Fragment>
-                                    <Route
-                                      path={`${baseRoute}/:subpage`}
-                                      render={({ match }) => (
-                                        <Page page={page} match={match} />
-                                      )}
-                                    />
-                                    <Route
-                                      exact
-                                      path={`${baseRoute}`}
-                                      render={() => {
-                                        return (
-                                          <Redirect
-                                            to={`${baseRoute}/${dashIt(
-                                              page.subpages[0].title
-                                            )}`}
-                                          />
-                                        )
-                                      }}
-                                    />
-                                  </React.Fragment>
-                                )
+                          if (subpages.some(s => page._id === s._key)) {
+                            console.log("is subpage", page.title, subpages)
+                            return null
+                          }
 
-                                return <div key={page._id}>{subPages}</div>
-                              }
-
-                              if (subpages.some(s => page._id === s._key)) {
-                                console.log("is subpage", page.title, subpages)
-                                return null
-                              }
-
-                              return (
-                                <Route
-                                  key={page._id}
-                                  exact
-                                  path={
-                                    pageType === "page"
-                                      ? `/${page.path.current.replace("/", "")}`
-                                      : match.path
-                                  }
-                                  render={() => <Page page={page} />}
-                                />
-                              )
-                            })
-                          }}
-                        </SanityList>
-                      )
-                    }}
-                  />
+                          return (
+                            <Route
+                              key={page._id}
+                              exact
+                              path={`${page.path.current}`}
+                              render={({ match }) => (
+                                <Page page={page} match={match} />
+                              )}
+                            />
+                          )
+                        })
+                      }}
+                    </SanityList>
+                  </React.Fragment>
                 </main>
               </Wrapper>
               <Footer />

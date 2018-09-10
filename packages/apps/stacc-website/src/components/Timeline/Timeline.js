@@ -7,7 +7,7 @@ import { spacing, color } from "@staccx/theme"
 const Timeline = ({ items }) => (
   <Outer>
     <Content>
-      {items.map(item => (
+      {items && items.map(item => (
         <Item>
           <Time level={4}>{item.title}</Time>
           <Body>{item.subtitle}</Body>
