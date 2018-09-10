@@ -44,7 +44,10 @@ class SanityDocument extends Component {
 
 SanityDocument.propTypes = {
   children: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired
+  context: PropTypes.any,
+  filter: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  pick: PropTypes.string
 }
 
 export default BaseSanityQuery(SanityDocument)
