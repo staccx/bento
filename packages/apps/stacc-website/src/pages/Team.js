@@ -1,15 +1,35 @@
 import React from "react"
 import { Heading, Wrapper, Input, Layout, Loading, Search } from "@staccx/base"
-import { SanityList, SanityDocument } from "@staccx/sanity"
+import { SanityList, SanityDocument, SanityImage } from "@staccx/sanity"
 import Person from "../components/Person/Person"
 import Page from "./Page"
+import SectionHead from "../components/SectionHead/SectionHead"
+import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
+import ContentLinks from "../components/ContentLinks/ContentLinks"
 
 const Team = () => (
   <Wrapper>
-    <SanityDocument id={"85234fc9-0f6e-4958-9129-f29183b97666"}>
+    <SanityDocument id={"ae56715e-4e83-4748-b307-524787231b6b"}>
       {({ document }) => (
         <React.Fragment>
-          {document && <Page page={document} />}
+          {document && (
+            <Layout>
+              <SanityImage image={document.header.head.image}>
+                {({ image }) => (
+                  <SectionHead
+                    heading={document.header.head.title}
+                    lede={document.header.head.body}
+                    headingLevel={document.header.head.isPageHeader ? 1 : 2}
+                    illustration={image.url()}
+                  />
+                )}
+              </SanityImage>
+
+              <ContentLinks>
+                {document.header.links.map(getLinkItem)}
+              </ContentLinks>
+            </Layout>
+          )}
           <SanityList type={"person"} pick={"company->, ..."}>
             {({ result }) => {
               if (!result) {
