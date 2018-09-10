@@ -15,9 +15,11 @@ const ClientsOverviewItem = ({
   <article>
     <Layout rowGap="medium">
       {logo && (
-        <ImageContainer>
-          <img src={logo} alt={name} />
-        </ImageContainer>
+        <ClientLink to={cases.length ? cases[0].url : website || ""}>
+          <ImageContainer>
+            <img src={logo} alt={name} />
+          </ImageContainer>
+        </ClientLink>
       )}
       <Layout rowGap="tiny">
         <Heading level={3}>{name}</Heading>
