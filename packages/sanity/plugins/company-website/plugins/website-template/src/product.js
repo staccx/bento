@@ -1,6 +1,6 @@
 export default {
   name: "product",
   type: "document",
-  title: "Product",
+  title: "Data: Product",
   fields: [{ type: "string", name: "name", title: "Name" }]
 }

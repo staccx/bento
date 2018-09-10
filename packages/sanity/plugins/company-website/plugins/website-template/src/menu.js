@@ -1,7 +1,7 @@
 export default {
   type: "document",
   name: "menu",
-  title: "Menu",
+  title: "Data: Menu",
   fields: [
     {
       type: "string",
