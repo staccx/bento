@@ -5,30 +5,40 @@ import { NavLink } from "react-router-dom"
 import { spacing, color, borderRadius } from "@staccx/theme"
 import { opacity } from "@staccx/color"
 
-const HeaderMenu = ({ inverted, items }) => (
-  <Navigation>
-    <MenuItems inverted={inverted}>
-      {items.map(
-        menuItem =>
-          menuItem.submenu ? (
-            console.log(menuItem.submenu)
-          ) : (
-            <li key={menuItem._key}>
-              <MenuItem
-                to={`#ref:${menuItem.link._ref}`}
-                exact
-                activeClassName="is-current"
-                inverted={inverted}
-                emphasized={menuItem.emphasized}
-              >
+const HeaderMenu = ({ inverted, items }) => {
+  console.log(items)
+  return (
+    <Navigation>
+      <MenuItems inverted={inverted}>
+        {items.map(
+          menuItem =>
+            menuItem.link ? (
+              <li key={menuItem._key}>
+                <MenuItem
+                  to={menuItem.link._ref}
+                  exact
+                  activeClassName="is-current"
+                  inverted={inverted}
+                  emphasized={menuItem.emphasized}
+                >
+                  {menuItem.title}
+                </MenuItem>
+              </li>
+            ) : menuItem.submenu ? (
+              <li key={menuItem._key}>
                 {menuItem.title}
-              </MenuItem>
-            </li>
-          )
-      )}
-    </MenuItems>
-  </Navigation>
-)
+                <ul>
+                  {menuItem.submenu.map(submenuItem => (
+                    <li key={submenuItem._key}>{submenuItem._ref}</li>
+                  ))}
+                </ul>
+              </li>
+            ) : null
+        )}
+      </MenuItems>
+    </Navigation>
+  )
+}
 
 const Navigation = styled.nav`
   flex-grow: 1;
