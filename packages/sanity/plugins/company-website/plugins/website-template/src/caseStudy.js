@@ -1,23 +1,17 @@
 export default {
-  type: "object",
+  type: "document",
   name: "caseStudy",
   title: "Case Study",
   fields: [
     {
       type: "string",
-      name: "title",
-      title: "Title"
+      name: "name",
+      title: "Name"
     },
     {
       type: "text",
-      name: "body",
-      title: "Body"
-    },
-    {
-      type: "reference",
-      name: "link",
-      title: "Link",
-      to: [{ type: "page" }]
+      name: "description",
+      title: "Description"
     },
     {
       type: "array",

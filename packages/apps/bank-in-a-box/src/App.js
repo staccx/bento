@@ -8,10 +8,8 @@ import AprilaTheme from "@staccx/aprila-theme"
 import NorfjellTheme from "@staccx/norefjell-theme"
 import Account from "./components/Account"
 import Transactions from "./components/Transactions"
-import Deposit from "./pages/Deposit"
 import Withdraw from "./pages/Withdraw"
 import Profile from "./pages/Profile"
-import Inbox from "./pages/Inbox"
 
 import { account, customer } from "./state"
 
@@ -81,10 +79,8 @@ class App extends Component {
     }
 
     const pages = {
-      deposit: () => this.setPage("deposit"),
       withdraw: () => this.setPage("withdraw"),
-      profile: () => this.setPage("profile"),
-      inbox: () => this.setPage("inbox")
+      profile: () => this.setPage("profile")
     }
 
     return (
@@ -122,10 +118,8 @@ class App extends Component {
                     <ThemeComponent tagName={"ad"} />
                   </Layout>
                 </div>
-                {this.state.currentPage === "deposit" && <Deposit />}
                 {this.state.currentPage === "withdraw" && <Withdraw />}
                 {this.state.currentPage === "profile" && <Profile />}
-                {this.state.currentPage === "inbox" && <Inbox />}
                 <ThemeComponent tagName={"footer"} />
               </Outer>
             </HotKeysHandler>

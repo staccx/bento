@@ -1,7 +1,7 @@
 export default {
   type: "document",
   name: "company",
-  title: "Stacc Divisions",
+  title: "Data: Stacc Divisions",
   description: "In use by people",
   fields: [
     {

@@ -1,9 +1,9 @@
 export default {
   type: "document",
   name: "page",
-  title: "Pages",
+  title: "Other pages",
   fields: [
-    { type: "string", name: "title", title: "Title" },
+    { type: "string", name: "name", title: "Name" },
     {
       type: "slug",
       name: "path",
@@ -13,12 +13,6 @@ export default {
         maxLength: 96,
         auto: true
       }
-    },
-    {
-      type: "boolean",
-      name: "showOnRoute",
-      title: "Show on route",
-      description: "Whether this page should be rendered on the path defined above. Set false if only used statically"
     },
     {
       type: "array",

@@ -3,7 +3,7 @@ import soMes from "./soMes"
 
 export default {
   name: "person",
-  title: "Person",
+  title: "Data: Person",
   type: "document",
   fields: [
     {
