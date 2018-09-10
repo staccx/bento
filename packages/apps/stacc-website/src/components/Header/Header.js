@@ -10,7 +10,10 @@ import { Loading, Wrapper } from "@staccx/base"
 
 const Header = ({ match, location }) => {
   return (
-    <SanityDocument id={"ffe2cd1d-2fed-4436-9942-ad9674dd80ea"}>
+    <SanityDocument
+      id={"ffe2cd1d-2fed-4436-9942-ad9674dd80ea"}
+      pick={"links[]{link->,submenu[]->,...}, ..."}
+    >
       {({ document }) => {
         if (!document) {
           return <Loading />

@@ -15,7 +15,7 @@ const HeaderMenu = ({ inverted, items }) => {
             menuItem.link ? (
               <li key={menuItem._key}>
                 <MenuItem
-                  to={menuItem.link._ref}
+                  to={menuItem.link.path.current}
                   exact
                   activeClassName="is-current"
                   inverted={inverted}
@@ -25,11 +25,11 @@ const HeaderMenu = ({ inverted, items }) => {
                 </MenuItem>
               </li>
             ) : menuItem.submenu ? (
-              <li key={menuItem._key}>
+              <li key={menuItem.submenu}>
                 {menuItem.title}
                 <ul>
                   {menuItem.submenu.map(submenuItem => (
-                    <li key={submenuItem._key}>{submenuItem._ref}</li>
+                    <li key={submenuItem._key}>{submenuItem.path.current}</li>
                   ))}
                 </ul>
               </li>
