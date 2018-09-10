@@ -1,9 +1,9 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import styled from "styled-components"
 import { Heading, Box, Wrapper, LayoutItem } from "@staccx/base"
 
-const Home = () => (
+const Home = ({ match }) => (
   <PageWrapper>
     <Box variant="newsHero">
       <Wrapper>
@@ -16,7 +16,7 @@ const Home = () => (
     </Box>
     <Box variant="newCase">
       <Wrapper>
-        <StyledLink to="#">Gå til sak</StyledLink>
+        <StyledLink to={"/sales/" + match.params.flowId}>Gå til sak</StyledLink>
       </Wrapper>
     </Box>
   </PageWrapper>
@@ -50,4 +50,4 @@ const StyledLink = styled(Link)`
   background-color: #00005e;
 `
 
-export default Home
+export default withRouter(Home)

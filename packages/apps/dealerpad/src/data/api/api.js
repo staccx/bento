@@ -37,3 +37,9 @@ export const setTaskCompleted = (taskId, uploadedFileId) =>
     })
     .then(res => res.data)
     .catch(console.error)
+
+export const simulateNewCase = () =>
+  axiosInstance
+    .post("/simulation")
+    .then(res => res.data)
+    .catch(console.error)

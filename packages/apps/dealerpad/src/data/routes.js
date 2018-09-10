@@ -63,11 +63,10 @@ const routes = [
     inMenu: false
   },
   {
-    path: "/new-case-created",
+    path: "/new-case-created/:flowId",
     component: NewCaseCreated,
     name: "New case created",
     icon: <i />,
-    exact: true,
     _id: "dfds54465",
     inMenu: false
   }

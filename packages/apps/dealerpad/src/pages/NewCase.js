@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import styled from "styled-components"
 import {
   Heading,
@@ -12,8 +12,9 @@ import {
 } from "@staccx/base"
 import { spacing, ThemeComponent, color, targetSize } from "@staccx/theme"
 import registerCase from "../data/registerCase"
+import caseStore from "../data/store/caseStore"
 
-const Home = () => (
+const Home = ({ history }) => (
   <PageWrapper>
     <Box variant="newsHero">
       <Wrapper>
@@ -42,7 +43,17 @@ const Home = () => (
         <Center>
           <div>
             <Left>
-              <Button>Simulér ny sak</Button>
+              <Button
+                onClick={() =>
+                  caseStore
+                    .simulateNewCase()
+                    .then(({ flowId }) =>
+                      history.push("/new-case-created/" + flowId)
+                    )
+                }
+              >
+                Simulér ny sak
+              </Button>
             </Left>
             <img src="/alfa-sak.png" alt="" />
           </div>
@@ -103,4 +114,4 @@ const StyledLink = styled(Link)`
   }
 `
 
-export default Home
+export default withRouter(Home)
