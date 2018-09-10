@@ -25,11 +25,11 @@ const HeaderMenu = ({ inverted, items }) => {
                 </MenuItem>
               </li>
             ) : menuItem.submenu ? (
-              <li key={menuItem.submenu}>
+              <li key={menuItem._key}>
                 {menuItem.title}
                 <ul>
                   {menuItem.submenu.map(submenuItem => (
-                    <li key={submenuItem._key}>{submenuItem.path.current}</li>
+                    <li key={submenuItem._id}>{submenuItem.path.current}</li>
                   ))}
                 </ul>
               </li>

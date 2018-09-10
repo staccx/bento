@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { color, spacing } from "@staccx/theme"
 import { Heading, Layout } from "@staccx/base"
+import { SanityImage } from "@staccx/sanity"
 
 const ClientsOverviewItem = ({
   name,
@@ -15,9 +16,11 @@ const ClientsOverviewItem = ({
   <article>
     <Layout rowGap="medium">
       {logo && (
-        <ClientLink to={cases.length ? cases[0].url : website || ""}>
+        <ClientLink to={cases.length ? cases[0].path.current : website || ""}>
           <ImageContainer>
-            <img src={logo} alt={name} />
+            <SanityImage image={logo}>
+              {({ image }) => <img src={image.height(240).url()} alt={name} />}
+            </SanityImage>
           </ImageContainer>
         </ClientLink>
       )}
@@ -27,13 +30,13 @@ const ClientsOverviewItem = ({
         <div>
           {cases.length > 0 &&
             cases.map(clientCase => (
-              <ClientLink to={clientCase.url} key={clientCase.key}>
+              <ClientLink to={clientCase.path.current} key={clientCase._key}>
                 {clientCase.name}
               </ClientLink>
             ))}
           {!cases.length &&
             website &&
-            websiteName && <ClientLink to={website}>{websiteName}</ClientLink>}
+            websiteName && <ClientA href={website}>{websiteName}</ClientA>}
         </div>
       </Layout>
     </Layout>
@@ -55,5 +58,7 @@ const ClientLink = styled(Link)`
   text-decoration: none;
   font-weight: 500;
 `
+
+const ClientA = ClientLink.withComponent("a")
 
 export default ClientsOverviewItem
