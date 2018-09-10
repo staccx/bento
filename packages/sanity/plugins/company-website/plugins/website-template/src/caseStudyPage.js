@@ -1,6 +1,6 @@
 import generatePageSchema from "./generatePageSchema"
 
-const page =  generatePageSchema({
+const page = generatePageSchema({
   name: "caseStudyPage",
   title: "Case Study Page",
   allowSubpages: null,
@@ -10,7 +10,7 @@ const page =  generatePageSchema({
       type: "reference",
       name: "client",
       title: "Client",
-      to: [{type: "reference", to: [{type: "client"}]}]
+      to: [{ type: "reference", to: [{ type: "client" }] }]
     },
     {
       type: "sectionHead",

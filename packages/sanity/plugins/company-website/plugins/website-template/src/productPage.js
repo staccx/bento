@@ -1,7 +1,7 @@
 import generatePage from "./generatePageSchema"
 export default generatePage({
   name: "productPage",
-  title: "Product",
+  title: "Products",
   slugPrefix: "/products/",
   allowSubpages: true
 })

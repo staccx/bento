@@ -28,6 +28,7 @@ export default {
     }
   ],
   options: {
-    collapsible: true
+    collapsible: true,
+    collapsed: false
   }
 }
