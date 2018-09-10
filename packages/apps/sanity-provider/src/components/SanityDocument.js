@@ -6,14 +6,21 @@ import SanityQueryHelper from "sanity-query-helper"
 
 class SanityDocument extends Component {
   componentWillMount() {
-    const { id, context } = this.props
+    const { id, context, filter, pick } = this.props
 
-    context.queryHelper(
-      new SanityQueryHelper({ sanityOptions: context.helper.sanityOptions })
-        .withFilter("_id")
-        .equalTo(`"${id}"`),
-      id
-    )
+    let helper = new SanityQueryHelper({
+      sanityOptions: context.helper.sanityOptions
+    })
+      .withFilter("_id")
+      .equalTo(`"${id}"`)
+    if (filter) {
+      helper = helper.doCompare(filter)
+    }
+    if (pick) {
+      helper = helper.pick(pick)
+    }
+
+    context.queryHelper(helper, id)
   }
 
   render() {
