@@ -4,6 +4,20 @@ export default {
   title: "Page: Home",
   fields: [
     {
+      type: "slug",
+      name: "path",
+      title: "Path",
+      description: "read only",
+      readOnly: true,
+      options: {
+        readonly: true,
+        source: "name",
+        maxLength: 96,
+        auto: true,
+        slugify: () => `/`
+      }
+    },
+    {
       type: "hero",
       name: "hero",
       title: "Hero"
