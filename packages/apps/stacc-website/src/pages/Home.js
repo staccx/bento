@@ -1,5 +1,5 @@
 import React from "react"
-import { SanityDocument} from "@staccx/sanity"
+import { SanityDocument } from "@staccx/sanity"
 import Page from "./Page"
 
 const Home = () => (

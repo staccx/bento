@@ -93,9 +93,12 @@ class App extends Component {
                             {result.map(client => {
                               return client.caseStudies
                                 ? client.caseStudies.map(caseStudy => (
-                                  <Route
-                                      path={caseStudy.path.current}
-                                      render={() => <Case caseStudy={caseStudy} />}
+                                    <Route
+                                    key={caseStudy._key}
+                                    path={caseStudy.path.current}
+                                    render={() => (
+                                        <Case caseStudy={caseStudy} />
+                                      )}
                                     />
                                   ))
                                 : null

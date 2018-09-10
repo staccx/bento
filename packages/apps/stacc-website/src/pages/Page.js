@@ -14,14 +14,20 @@ class Page extends Component {
     if (match) {
       const { subpage } = match.params
 
-      renderSubpage = page.subpages ? page.subpages.find(s => dashIt(s.title) === subpage): null
+      renderSubpage = page.subpages
+        ? page.subpages.find(s => dashIt(s.title) === subpage)
+        : null
     }
 
     return (
       <div>
         {page.subpages &&
           page.subpages.length > 0 && (
-            <NavigationSubpage items={page.subpages} name={page.path.current} title={page.name} />
+            <NavigationSubpage
+              items={page.subpages}
+              name={page.path.current}
+              title={page.name}
+            />
           )}
         {renderSubpage && <Page page={renderSubpage} />}
         {page.hero && (

@@ -7,12 +7,13 @@ import { spacing, color } from "@staccx/theme"
 const Timeline = ({ items }) => (
   <Outer>
     <Content>
-      {items && items.map(item => (
-        <Item>
-          <Time level={4}>{item.title}</Time>
-          <Body>{item.subtitle}</Body>
-        </Item>
-      ))}
+      {items &&
+        items.map(item => (
+          <Item>
+            <Time level={4}>{item.title}</Time>
+            <Body>{item.subtitle}</Body>
+          </Item>
+        ))}
     </Content>
   </Outer>
 )

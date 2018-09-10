@@ -20,7 +20,7 @@ const Hero = ({ heading, lede, trinity }) => (
           </Layout>
           {trinity &&
             trinity.texts.filter((tri, index) => index === 0).map(tri => (
-              <SecondaryContentContainer singleton>
+              <SecondaryContentContainer key={tri._key} singleton>
                 <SecondaryContent>
                   <Heading level={3}>{tri.heading}</Heading>
                   <p>{tri.body}</p>
@@ -34,7 +34,7 @@ const Hero = ({ heading, lede, trinity }) => (
       <div>
         <SecondaryContentContainer>
           {trinity.texts.filter((tri, index) => index > 0).map(tri => (
-            <SecondaryContent>
+            <SecondaryContent key={tri._key}>
               <Heading level={3}>{tri.heading}</Heading>
               <p>{tri.body}</p>
             </SecondaryContent>
