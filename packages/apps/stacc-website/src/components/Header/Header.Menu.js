@@ -8,19 +8,24 @@ import { opacity } from "@staccx/color"
 const HeaderMenu = ({ inverted, items }) => (
   <Navigation>
     <MenuItems inverted={inverted}>
-      {items.map(menuItem => (
-        <li key={menuItem._key}>
-          <MenuItem
-            to={menuItem.link[0].url}
-            exact
-            activeClassName="is-current"
-            inverted={inverted}
-            emphasized={menuItem.emphasized}
-          >
-            {menuItem.title}
-          </MenuItem>
-        </li>
-      ))}
+      {items.map(
+        menuItem =>
+          menuItem.submenu ? (
+            console.log(menuItem.submenu)
+          ) : (
+            <li key={menuItem._key}>
+              <MenuItem
+                to={`#ref:${menuItem.link._ref}`}
+                exact
+                activeClassName="is-current"
+                inverted={inverted}
+                emphasized={menuItem.emphasized}
+              >
+                {menuItem.title}
+              </MenuItem>
+            </li>
+          )
+      )}
     </MenuItems>
   </Navigation>
 )
@@ -109,9 +114,9 @@ const MenuItem = styled(NavLink)`
 export default HeaderMenu
 
 HeaderMenu.propTypes = {
-  isInverted: PropTypes.bool
+  inverted: PropTypes.bool
 }
 
 HeaderMenu.defaultProps = {
-  isInverted: false
+  inverted: false
 }
