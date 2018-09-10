@@ -4,6 +4,8 @@ import BlockContent from "@sanity/block-content-to-react"
 import blockContentSerializer from "./blockContentSerializer"
 import { dashIt } from "@staccx/formatting"
 import NavigationSubpage from "../components/NavigationSubpage/NavigationSubpage"
+import Hero from "../components/Hero/Hero"
+import SectionHead from "../components/SectionHead/SectionHead"
 
 class Page extends Component {
   render() {
@@ -15,6 +17,8 @@ class Page extends Component {
       renderSubpage = page.subpages.find(s => dashIt(s.title) === subpage)
     }
 
+    console.log(page)
+
     return (
       <div>
         {page.subpages &&
@@ -22,6 +26,20 @@ class Page extends Component {
             <NavigationSubpage items={page.subpages} name={page.title} />
           )}
         {renderSubpage && <Page page={renderSubpage} />}
+        {page.hero && (
+          <Hero
+            heading={page.hero.title}
+            lede={page.hero.body}
+            trinity={page.hero.trinity}
+          />
+        )}
+        {page.sectionHead && (
+          <SectionHead
+            heading={page.sectionHead.title}
+            lede={page.sectionHead.body}
+            trinity={page.sectionHead.trinity}
+          />
+        )}
         <BlockContent
           blocks={page.blocks}
           serializers={blockContentSerializer}

@@ -55,10 +55,26 @@ const asciiArt = `
 
 `
 
+const p2t = {
+  "/": {
+    type: "homePage",
+    pick: `title, hero[], blocks[]{...}`
+  },
+  "/team": {
+    type: "teamPage",
+    pick: `title,sectionHead[]`
+  },
+  "/clients": {
+    type: "clientPage",
+    pick: `title,sectionHead[]`
+  }
+}
+
 class App extends Component {
   render() {
     const history = createHistory()
     console.log(asciiArt)
+
     return (
       <ThemeProxyProvider theme={theme}>
         <SanityProvider dataset={"production"} projectId={"8j24leyc"}>
@@ -81,73 +97,83 @@ class App extends Component {
                     <Route path="/services/:product" component={Service} />
                     <Route path="/clients/cases/:case" exact component={Case} />
                   </Switch>
-                  <SanityList
-                    type={"page"}
-                    filter={"showOnRoute == true"}
-                    pick={`title,subpages[]{...}, path, blocks[]{...}`}
-                  >
-                    {({ result }) => {
-                      if (!result) {
-                        return <Loading />
-                      }
+                  <Route
+                    render={({ match }) => {
+                      const pageType = p2t[match.path] || "page"
+                      return (
+                        <SanityList type={pageType.type} pick={pageType.pick}>
+                          {({ result }) => {
+                            if (!result) {
+                              return <Loading />
+                            }
 
-                      const subpages = [].concat.apply(
-                        [],
-                        result.map(
-                          page =>
-                            page.subpages
-                              ? page.subpages.filter(s => s).map(s => s)
-                              : []
-                        )
-                      )
+                            const subpages = [].concat.apply(
+                              [],
+                              result.map(
+                                page =>
+                                  page.subpages
+                                    ? page.subpages.filter(s => s).map(s => s)
+                                    : []
+                              )
+                            )
 
-                      return result.map(page => {
-                        if (page.subpages && page.subpages.length) {
-                          const baseRoute = `/${page.path.current.replace(
-                            "/",
-                            ""
-                          )}`
-                          return (
-                            <div key={page._id}>
-                              <Route
-                                path={`${baseRoute}/:subpage`}
-                                render={({ match }) => (
-                                  <Page page={page} match={match} />
-                                )}
-                              />
-                              <Route
-                                exact
-                                path={`${baseRoute}`}
-                                render={() => {
-                                  return (
-                                    <Redirect
-                                      to={`${baseRoute}/${dashIt(
-                                        page.subpages[0].title
-                                      )}`}
+                            return result.map(page => {
+                              if (page.subpages && page.subpages.length) {
+                                const baseRoute =
+                                  pageType === "page"
+                                    ? `/${page.path.current.replace("/", "")}`
+                                    : match.path
+
+                                const subPages = (
+                                  <React.Fragment>
+                                    <Route
+                                      path={`${baseRoute}/:subpage`}
+                                      render={({ match }) => (
+                                        <Page page={page} match={match} />
+                                      )}
                                     />
-                                  )
-                                }}
-                              />
-                            </div>
-                          )
-                        }
+                                    <Route
+                                      exact
+                                      path={`${baseRoute}`}
+                                      render={() => {
+                                        return (
+                                          <Redirect
+                                            to={`${baseRoute}/${dashIt(
+                                              page.subpages[0].title
+                                            )}`}
+                                          />
+                                        )
+                                      }}
+                                    />
+                                  </React.Fragment>
+                                )
 
-                        if (subpages.some(s => page._id === s._key)) {
-                          console.log("is subpage", page.title, subpages)
-                          return null
-                        }
+                                return <div key={page._id}>{subPages}</div>
+                              }
 
-                        return (
-                          <Route
-                            key={page._id}
-                            exact
-                            path={`/${page.path.current.replace("/", "")}`}
-                            render={() => <Page page={page} />}
-                          />
-                        )
-                      })
+                              if (subpages.some(s => page._id === s._key)) {
+                                console.log("is subpage", page.title, subpages)
+                                return null
+                              }
+
+                              return (
+                                <Route
+                                  key={page._id}
+                                  exact
+                                  path={
+                                    pageType === "page"
+                                      ? `/${page.path.current.replace("/", "")}`
+                                      : match.path
+                                  }
+                                  render={() => <Page page={page} />}
+                                />
+                              )
+                            })
+                          }}
+                        </SanityList>
+                      )
                     }}
-                  </SanityList>
+                  />
                 </main>
               </Wrapper>
               <Footer />
