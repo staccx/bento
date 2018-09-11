@@ -39,6 +39,10 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "pageMeta.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "blocks/story.js"
     },
     {

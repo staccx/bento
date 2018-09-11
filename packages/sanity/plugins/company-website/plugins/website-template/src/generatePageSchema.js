@@ -45,6 +45,12 @@ export default ({
       type: "blockContent",
       name: "blocks",
       title: "Blocks"
+    },
+    {
+      type: "meta",
+      name: "meta",
+      title: "Page Meta",
+      description: "For Open Graph. For more see http://ogp.me/"
     }
   ]
 })

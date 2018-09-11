@@ -3,7 +3,13 @@ import PropTypes from "prop-types"
 import BlockContent from "@sanity/block-content-to-react"
 import blockContentSerializer from "./blockContentSerializer"
 import { dashIt } from "@staccx/formatting"
-import { Hero, NavigationSubpage, SectionHead } from "../components/_codeSplitting"
+import { SanityImage } from "@staccx/sanity"
+import {
+  Hero,
+  NavigationSubpage,
+  SectionHead
+} from "../components/_codeSplitting"
+import { Helmet } from "react-helmet"
 
 class Page extends Component {
   render() {
@@ -17,8 +23,26 @@ class Page extends Component {
         : null
     }
 
+    console.log(page.meta)
+
     return (
       <div>
+        {page.meta && (
+          <SanityImage image={page.meta.image}>
+            {({ image }) => (
+              <Helmet>
+                <meta property="og:title" content={page.meta.title} />
+                <meta
+                  property="og:description"
+                  content={page.meta.description}
+                />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={page.meta.url} />
+                <meta property="og:image" content={image.url()} />
+              </Helmet>
+            )}
+          </SanityImage>
+        )}
         {page.subpages &&
           page.subpages.length > 0 && (
             <NavigationSubpage
