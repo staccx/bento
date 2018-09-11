@@ -59,8 +59,7 @@ const asciiArt = `
 class App extends Component {
   render() {
     const history = createHistory()
-    console.log(asciiArt)
-
+    console.log("%c" + asciiArt, "color: #EB5E55;")
     return (
       <ThemeProxyProvider theme={theme}>
         <SanityProvider dataset={"production"} projectId={"8j24leyc"}>
