@@ -54,7 +54,8 @@ export default {
               .filter(child => child._type === "span")
               .map(span => span.text)
               .join("")
-          : "No title"
+          : "No content",
+        subtitle: "Rich text"
       }
     }
   }

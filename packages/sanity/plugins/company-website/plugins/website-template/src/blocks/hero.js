@@ -53,5 +53,17 @@ export default {
           return true
         })
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: "title"
+    },
+    prepare(selection, options) {
+      const { title } = selection
+      return {
+        title,
+        subtitle: "Hero"
+      }
+    }
+  }
 }

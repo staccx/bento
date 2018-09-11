@@ -35,7 +35,19 @@ export default {
           title: "Page",
           to: [{ type: "page" }]
         }
-      ],
+      ]
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: "title"
+    },
+    prepare(selection, options) {
+      const { title } = selection
+      return {
+        title: title,
+        subtitle: "Link blocks"
+      }
+    }
+  }
 }

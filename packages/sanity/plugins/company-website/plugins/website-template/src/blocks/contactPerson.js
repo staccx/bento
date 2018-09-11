@@ -28,6 +28,14 @@ export default {
     select: {
       media: "image",
       title: "heading"
+    },
+    prepare(selection, options) {
+      const { title, media } = selection
+      return {
+        title,
+        media,
+        subtitle: "Contact person"
+      }
     }
   }
 }

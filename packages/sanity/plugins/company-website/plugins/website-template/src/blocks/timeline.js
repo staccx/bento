@@ -28,11 +28,14 @@ export default {
     }
   ],
   preview: {
-    prepare(selection) {
-      const { entries } = selection
+    select: {
+      length: "entries.length"
+    },
+    prepare(selection, options) {
+      const { length } = selection
       return {
-        title: "entries[0].title",
-        subtitle: entries.map(item => item.title + " ")
+        title: "Timeline with " + length + " entries",
+        subtitle: "Timeline"
       }
     }
   }

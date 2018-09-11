@@ -13,7 +13,14 @@ export default {
   preview: {
     select: {
       title: "features[0].title",
-      subtitle: "features.length.toString()"
+      length: "features.length"
+    },
+    prepare(selection, options) {
+      const { title, length } = selection
+      return {
+        title: title + " (" + length + " total features)",
+        subtitle: "Feature list"
+      }
     }
   }
 }

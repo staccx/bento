@@ -26,7 +26,14 @@ export default {
   preview: {
     select: {
       title: "subText",
-      subTitle: "quote"
+      quote: "quote"
+    },
+    prepare(selection, options) {
+      const { title, quote } = selection
+      return {
+        title: title + ": " + quote,
+        subtitle: "Quote"
+      }
     }
   }
 }
