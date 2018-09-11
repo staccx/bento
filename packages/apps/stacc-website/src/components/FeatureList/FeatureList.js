@@ -17,7 +17,7 @@ const FeatureList = ({ items }) => (
     <Content>
       <Features>
         {items.map(item => (
-          <li>
+          <li key={item._key}>
             <Header>
               <IconCheck /> <H level={4}>{item.title}</H>
             </Header>

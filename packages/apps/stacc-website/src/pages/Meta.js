@@ -23,7 +23,7 @@ const Meta = ({ meta }) => {
 }
 
 Meta.propTypes = {
-  meta: PropTypes.object.isRequired
+  meta: PropTypes.object
 }
 
 export default Meta

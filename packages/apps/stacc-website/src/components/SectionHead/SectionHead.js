@@ -16,9 +16,11 @@ const SectionHead = ({ heading, headingLevel, lede, illustration }) => {
           </div>
 
           <div>
-            <SanityImage image={illustration}>
-              {({ image }) => <Illustration src={image.url()} alt="" />}
-            </SanityImage>
+            {illustration && (
+              <SanityImage image={illustration}>
+                {({ image }) => <Illustration src={image.url()} alt="" />}
+              </SanityImage>
+            )}
           </div>
         </Body>
       </Layout>

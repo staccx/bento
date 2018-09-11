@@ -1,5 +1,6 @@
 import React from "react"
-import { Text, Heading, Layout } from "@staccx/base"
+import styled from "styled-components"
+import { Heading, Layout } from "@staccx/base"
 import { SanityImage } from "@staccx/sanity"
 import BlockContent from "@sanity/block-content-to-react"
 import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
@@ -24,6 +25,7 @@ const serializer = {
   ),
   types: {
     block: props => {
+      console.log(props)
       switch (props.node.style) {
         case "h1":
         case "h2":
@@ -32,7 +34,7 @@ const serializer = {
         case "h5":
           return <Heading level={props.node.style}>{props.children}</Heading>
         default:
-          return <Text>{props.children}</Text>
+          return <BodyContent>{props.children}</BodyContent>
       }
     },
     richText: ({ node }) => (
@@ -63,16 +65,18 @@ const serializer = {
       return (
         <div>
           <Layout>
-            <SanityImage image={head.image}>
-              {({ image }) => (
-                <SectionHead
-                  heading={head.title}
-                  lede={head.body}
-                  headingLevel={head.isPageHeader ? 1 : 2}
-                  illustration={image.url()}
-                />
-              )}
-            </SanityImage>
+            {head.image && (
+              <SanityImage image={head.image}>
+                {({ image }) => (
+                  <SectionHead
+                    heading={head.title}
+                    lede={head.body}
+                    headingLevel={head.isPageHeader ? 1 : 2}
+                    illustration={image.url()}
+                  />
+                )}
+              </SanityImage>
+            )}
 
             {links && <ContentLinks>{links.map(getLinkItem)}</ContentLinks>}
           </Layout>
@@ -97,5 +101,11 @@ const serializer = {
     clientList: ({ node }) => <ClientList node={node} />
   }
 }
+
+const BodyContent = styled.div`
+  > p {
+    max-width: 760px;
+  }
+`
 
 export default serializer

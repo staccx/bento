@@ -13,7 +13,7 @@ const NavigationSubpage = ({ inverted, items, name, title }) => (
       <Navigation>
         <List>
           {items.map(item => (
-            <li>
+            <li key={item._key}>
               <SubLink
                 to={`${dashIt(name)}/${dashIt(item.title)}`}
                 activeClassName="is-current"

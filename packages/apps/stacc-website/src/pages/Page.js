@@ -24,8 +24,6 @@ class Page extends Component {
         : null
     }
 
-    console.log(page)
-
     return (
       <div>
         <Meta meta={page.meta} />
