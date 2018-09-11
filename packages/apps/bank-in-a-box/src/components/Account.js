@@ -1,13 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { inject, observer } from "mobx-react"
 import { color, font, fontWeight } from "@staccx/theme"
 import { Box, Button } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
-import AccountInfo from "./Account.Info"
-@inject("account")
-@observer
+
 class Account extends React.Component {
   static defaultProps = {
     title: "På konto"
@@ -19,33 +16,33 @@ class Account extends React.Component {
   }
 
   render() {
-    const { account, title, toggleInfo, showAccountInfo } = this.props
-    const { earned, selectedAccount } = account
-    if (!selectedAccount) {
-      return null
-    }
-    const { availableBalance } = selectedAccount
+    const { account, title, toggleInfo, navigate } = this.props
+    const { availableBalance, accruedInterest } = account
     const split = availableBalance ? availableBalance.toString().split(".") : []
     const primary = split.length ? split[0] : ""
     const secondary = split.length > 1 ? split[1] : ""
     return (
-      <Box variant="accountBox">
+      <Box
+        variant="accountBox"
+        onClick={() => navigate(`/account/${account.accountId}`)}
+      >
         <Container>
           <Title>{title}</Title>
           <Balance>{primary && formatCurrency(parseInt(primary, 10))}</Balance>
           {secondary && <Decimal>.{secondary}</Decimal>}
           <Earned>
-            {earned &&
-              "Hvorav renter: " + formatCurrency(earned, { precision: 2 })}
+            {accruedInterest &&
+              "Hvorav renter: " +
+                formatCurrency(accruedInterest, { precision: 2 })}
           </Earned>
           <Button variant="accountInfo" onClick={() => toggleInfo()}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M10 0v4h4V0h-4zm0 8v16h4V8h-4z" />
             </svg>
           </Button>
-          {showAccountInfo && (
-            <AccountInfo account={selectedAccount} toggleInfo={toggleInfo} />
-          )}
+          {/* {showAccountInfo && ( */}
+          {/* <AccountInfo account={selectedAccount} toggleInfo={toggleInfo} /> */}
+          {/* )} */}
         </Container>
       </Box>
     )

@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Provider } from "mobx-react"
 import { Router, Route, Switch } from "react-router-dom"
 import createHistory from "history/createBrowserHistory"
+import { toJS } from "mobx"
 import Transitions, { backwards } from "./components/transitions/transitions"
 import { ThemeComponent } from "@staccx/theme"
 import { Layout, LayoutItem, Button } from "@staccx/base"
@@ -41,7 +42,25 @@ class App extends Component {
                       <Route
                         path="/"
                         exact
-                        render={() => <Overview accounts={account} />}
+                        render={({ history }) => (
+                          <Overview
+                            history={history}
+                            accounts={account.accounts}
+                          />
+                        )}
+                      />
+                      <Route
+                        path={"/account/:id"}
+                        render={({ match }) => {
+                          const acc = account.accounts.find(
+                            a => a.accountId === match.params.id
+                          )
+                          console.log("her er kontoen du trenger", toJS(acc))
+                          return (
+                            <div
+                            >{`lag accountDetail component og bruk acc som finnes her til å vise detaljer. Sjekk loggen`}</div>
+                          )
+                        }}
                       />
                       <Route path="/profile" exact component={Profile} />
                       <Route path="/logout" exact component={LoggedOut} />
