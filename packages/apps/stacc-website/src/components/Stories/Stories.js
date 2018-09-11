@@ -3,18 +3,21 @@ import PropTypes from "prop-types"
 import { Layout } from "@staccx/base"
 import Story from "./Stories.Story"
 
-const Stories = ({ items }) => (
-  <Layout>
-    {items.map(item => (
-      <Story
-        heading={item.title}
-        body={item.body}
-        key={item._key}
-        illustration={item.image}
-      />
-    ))}
-  </Layout>
-)
+const Stories = ({ items }) => {
+  return (
+    <Layout rowGap="huge">
+      {items.map((item, index) => (
+        <Story
+          heading={item.title}
+          body={item.body}
+          key={item._key}
+          illustration={item.image}
+          isReverse={index % 2}
+        />
+      ))}
+    </Layout>
+  )
+}
 
 Stories.propTypes = {
   items: PropTypes.arrayOf(

@@ -29,6 +29,7 @@ const SectionHead = ({ heading, headingLevel, lede, illustration }) => {
 const Body = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `
 
 const Lede = styled.p`
@@ -40,6 +41,7 @@ const Lede = styled.p`
 
 const Illustration = styled.img`
   max-width: 320px;
+  display: block;
 `
 
 SectionHead.defaultProps = {

@@ -21,6 +21,12 @@ export default {
       type: "section",
       name: "header",
       title: "Top section"
+    },
+    {
+      type: "meta",
+      name: "meta",
+      title: "Page Meta",
+      description: "For Open Graph. For more see http://ogp.me/"
     }
   ],
   preview: {

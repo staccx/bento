@@ -113,6 +113,7 @@ class App extends Component {
                   <React.Fragment>
                     <SanityList
                       type={`page" || _type == "servicePage" || _type == "productPage`}
+                      pick={"blocks[]{employee->,...},..."}
                     >
                       {({ result }) => {
                         if (!result) {

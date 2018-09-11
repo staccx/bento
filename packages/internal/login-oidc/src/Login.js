@@ -17,7 +17,12 @@ class Login extends React.Component {
 
     let stage
     if (hashParams["#id_token"]) {
+      console.log("params", hashParams, searchParams)
       window.sessionStorage.setItem("stacc_id_token", hashParams["#id_token"])
+      window.sessionStorage.setItem(
+        "stacc_access_token",
+        hashParams["access_token"]
+      )
       window.location.replace(props.config.redirectAfterLogin)
     } else if (searchParams.state && searchParams.nonce) {
       stage = stages.waitingForValidation

@@ -39,7 +39,19 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "pageMeta.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/richText.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "blocks/story.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/contactPerson.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
