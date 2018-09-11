@@ -27,6 +27,12 @@ export default {
       name: "blocks",
       title: "Blocks",
       of: [{ type: "section" }, { type: "sectionHead" }, { type: "linkBlock" }]
+    },
+    {
+      type: "meta",
+      name: "meta",
+      title: "Page Meta",
+      description: "For Open Graph. For more see http://ogp.me/"
     }
   ],
   preview: {
