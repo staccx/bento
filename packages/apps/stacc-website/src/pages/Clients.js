@@ -2,8 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { spacing } from "@staccx/theme"
 import { List, Layout } from "@staccx/base"
-import { SanityDocument, SanityList } from "@staccx/sanity"
+import { SanityDocument, SanityList, SanityImage } from "@staccx/sanity"
 import { ClientPreview, SectionHead } from "../components/_codeSplitting"
+import { Helmet } from "react-helmet"
 
 const Clients = () => (
   <Layout paddingTop="grid" paddingBottom="grid" rowGap="grid">
@@ -15,6 +16,22 @@ const Clients = () => (
 
         return (
           <React.Fragment>
+            {document.meta && (
+              <SanityImage image={document.meta.image}>
+                {({ image }) => (
+                  <Helmet>
+                    <meta property="og:title" content={document.meta.title} />
+                    <meta
+                      property="og:description"
+                      content={document.meta.description}
+                    />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content={document.meta.url} />
+                    <meta property="og:image" content={image.url()} />
+                  </Helmet>
+                )}
+              </SanityImage>
+            )}
             <SectionHead
               heading={document.header.title}
               lede={document.header.body}
