@@ -1,6 +1,13 @@
 import LoadableComponents from "react-loadable-visibility/loadable-components"
 import { Loading } from "@staccx/base"
 
+export const ContactUs = LoadableComponents(
+  () => import("../components/ContactUs/ContactUs"),
+  {
+    loading: Loading
+  }
+)
+
 export const Quote = LoadableComponents(
   () => import("../components/Quote/Quote"),
   {

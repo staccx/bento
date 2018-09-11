@@ -1,6 +1,7 @@
 import React from "react"
 import { Text, Heading, Layout } from "@staccx/base"
 import { SanityImage } from "@staccx/sanity"
+import BlockContent from "@sanity/block-content-to-react"
 import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
 import {
   ContentLinks,
@@ -9,10 +10,11 @@ import {
   Quote,
   SectionHead,
   Stories,
-  Timeline
+  Timeline,
+  ContactUs
 } from "../components/_codeSplitting"
 
-export default {
+const serializer = {
   container: props => (
     <Layout rowGap="grid" paddingBottom="grid">
       {props.children}
@@ -31,6 +33,9 @@ export default {
           return <Text>{props.children}</Text>
       }
     },
+    richText: ({ node }) => (
+      <BlockContent blocks={node.bodyContent} serializer={serializer} />
+    ),
     sectionHead: ({ node }) => (
       <SectionHead
         illustration={node.image}
@@ -74,6 +79,19 @@ export default {
     },
     featureList: ({ node }) => <FeatureList items={node.features} />,
     stories: ({ node }) => <Stories items={node.list} />,
-    timeline: ({ node }) => <Timeline items={node.entries} />
+    timeline: ({ node }) => <Timeline items={node.entries} />,
+    contactPerson: ({ node }) => (
+      <ContactUs
+        heading={node.heading}
+        person={{
+          name: node.employee.name,
+          phone: node.employee.phone,
+          email: node.employee.email
+        }}
+        image={node.image}
+      />
+    )
   }
 }
+
+export default serializer

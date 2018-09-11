@@ -1,24 +1,13 @@
-import generatePageSchema from "./generatePageSchema"
-
-const page = generatePageSchema({
-  name: "caseStudyPage",
-  title: "Case Study Page",
-  allowSubpages: null,
-  slugPrefix: "/clients/case-study/",
-  slugSource: "caseStudies[0].name",
-  additionalFields: [
+export default {
+  title: "Rich text",
+  name: "richText",
+  type: "object",
+  fields: [
     {
-      type: "sectionHead",
-      name: "header",
-      title: "Header"
-    },
-    {
-      title: "Body",
-      name: "body",
       type: "array",
+      name: "bodyContent",
       of: [
         {
-          title: "Block",
           type: "block",
           styles: [
             { title: "Normal", value: "normal" },
@@ -49,16 +38,24 @@ const page = generatePageSchema({
               }
             ]
           }
-        },
-        {
-          type: "image",
-          options: { hotspot: true }
         }
       ]
     }
-  ]
-})
-
-page.type = "object"
-
-export default page
+  ],
+  preview: {
+    select: {
+      blocks: "bodyContent"
+    },
+    prepare(value) {
+      const block = (value.blocks || []).find(block => block._type === "block")
+      return {
+        title: block
+          ? block.children
+              .filter(child => child._type === "span")
+              .map(span => span.text)
+              .join("")
+          : "No title"
+      }
+    }
+  }
+}

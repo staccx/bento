@@ -37,6 +37,9 @@ export default {
       }
     },
     {
+      type: "richText"
+    },
+    {
       type: "image",
       options: { hotspot: true }
     },
@@ -49,5 +52,6 @@ export default {
     { type: "hero" },
     { type: "stories" },
     { type: "timeline" },
+    { type: "contactPerson" }
   ]
 }
