@@ -167,6 +167,12 @@ const MenuItems = styled.ul`
       }
     }
   }
+
+  > li:last-child {
+    > * {
+      margin-right: 0;
+    }
+  }
 `
 
 const MenuItem = styled(NavLink)`
@@ -187,10 +193,6 @@ const MenuItem = styled(NavLink)`
         p.inverted
           ? opacity(color("white")(p), 0.5)
           : opacity(color("secondary")(p), 0.5)};
-  }
-
-  &:last-child {
-    margin-right: 0;
   }
 
   &.is-current {

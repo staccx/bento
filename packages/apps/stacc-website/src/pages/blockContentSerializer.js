@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { Heading, Layout } from "@staccx/base"
+import { Layout } from "@staccx/base"
+import { spacing, font, color } from "@staccx/theme"
 import { SanityImage } from "@staccx/sanity"
 import BlockContent from "@sanity/block-content-to-react"
 import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
@@ -24,22 +25,15 @@ const serializer = {
     </Layout>
   ),
   types: {
-    block: props => {
-      console.log(props)
-      switch (props.node.style) {
-        case "h1":
-        case "h2":
-        case "h3":
-        case "h4":
-        case "h5":
-          return <Heading level={props.node.style}>{props.children}</Heading>
-        default:
-          return <BodyContent>{props.children}</BodyContent>
-      }
+    richText: ({ node }) => {
+      console.log(node)
+      return (
+        <BodyContent>
+          <BlockContent blocks={node.bodyContent} serializer={serializer} />
+        </BodyContent>
+      )
     },
-    richText: ({ node }) => (
-      <BlockContent blocks={node.bodyContent} serializer={serializer} />
-    ),
+
     sectionHead: ({ node }) => (
       <SectionHead
         illustration={node.image}
@@ -103,8 +97,51 @@ const serializer = {
 }
 
 const BodyContent = styled.div`
-  > p {
+  p,
+  ul {
     max-width: 760px;
+    margin-bottom: ${spacing.medium};
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: ${spacing.small};
+  }
+
+  h1 {
+    font-size: ${font.h1};
+  }
+
+  h2 {
+    font-size: ${font.h2};
+  }
+
+  h3 {
+    font-size: ${font.h3};
+  }
+
+  h4 {
+    font-size: ${font.h4};
+  }
+
+  h5 {
+    font-size: ${font.h5};
+  }
+
+  h6 {
+    font-size: ${font.h6};
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  a {
+    color: ${color.primary};
   }
 `
 
