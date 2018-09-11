@@ -15,12 +15,17 @@
     "@sanity/desk-tool",
     "website-template",
     "stacc-logo",
-    "stacc-styling"
+    "stacc-styling",
+    "@sanity/production-preview"
   ],
   "parts": [
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema.js"
+    },
+    {
+      "implements": "part:@sanity/production-preview/resolve-production-url",
+      "path": "./resolveProductionUrl.js"
     }
   ]
 }

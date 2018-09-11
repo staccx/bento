@@ -16,7 +16,13 @@ const ClientsOverviewItem = ({
   <article>
     <Layout rowGap="medium">
       {logo && (
-        <ClientLink to={cases.length ? cases[0].path.current : website || ""}>
+        <ClientLink
+          to={
+            cases.length && cases[0].path
+              ? cases[0].path.current
+              : website || ""
+          }
+        >
           <ImageContainer>
             <SanityImage image={logo}>
               {({ image }) => <img src={image.height(240).url()} alt={name} />}
@@ -29,7 +35,7 @@ const ClientsOverviewItem = ({
         <p>{description}</p>
         <div>
           {cases.length > 0 &&
-            cases.map(clientCase => (
+            cases.filter(c => c.path).map(clientCase => (
               <ClientLink to={clientCase.path.current} key={clientCase._key}>
                 {clientCase.name}
               </ClientLink>

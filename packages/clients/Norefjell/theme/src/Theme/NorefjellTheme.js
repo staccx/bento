@@ -3,7 +3,7 @@ import { Theme } from "@staccx/theme"
 import { rgba } from "polished"
 import reset from "./reset"
 import Button from "./Theme.Button"
-import Modal from "./Theme.Modal"
+import Modal from "./Theme.Wrapper"
 import DashboardBox from "./Theme.Box"
 import { LogoStyle } from "./Theme.Logo"
 import { FooterStyle } from "./Footer/Footer"
@@ -12,6 +12,13 @@ import { ExpandListButtonStyle } from "../components/Transaction.ExpandButton"
 import ExpandListExpanded from "../components/ExpandListItem.Expanded"
 import { MenuStyle } from "../components/MenuList"
 import { CheckboxCheckedIcon, CheckboxCheckedLabel } from "./Theme.Checkbox"
+import { IconArrowDown } from "./Icons/Icon.ArrowDown"
+import { IconArrowRight } from "./Icons/Icon.ArrowRight"
+import { IconArrowUp } from "./Icons/Icon.ArrowUp"
+import { IconLogout } from "./Icons/Icon.Logout"
+import { IconProfile } from "./Icons/Icon.Profile"
+import { LayoutStyling } from "./theme.Layouts"
+import { IconCaretRight } from "./Icons/Icon.CaretRight"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -104,17 +111,24 @@ const t = new Theme(BaseTheme, {
   spacing,
   global: reset
 })
-  .addStyles(Button)
-  .addStyles(DashboardBox)
-  .addStyles(Modal)
-  .addStyles(ExpandListExpanded)
-  .addStyles(NewBadgeStyles)
-  .addStyles(MenuStyle)
-  .addStyles(ExpandListButtonStyle)
-  .addStyles(FooterStyle)
-  .addStyles(LogoStyle)
-  .addStyles(LogoStyle)
-  .addStyles(CheckboxCheckedIcon)
-  .addStyles(CheckboxCheckedLabel)
+  .add(Button)
+  .add(DashboardBox)
+  .add(Modal)
+  .add(ExpandListExpanded)
+  .add(NewBadgeStyles)
+  .add(MenuStyle)
+  .add(ExpandListButtonStyle)
+  .add(FooterStyle)
+  .add(LogoStyle)
+  .add(LogoStyle)
+  .add(CheckboxCheckedIcon)
+  .add(CheckboxCheckedLabel)
+  .add(IconArrowDown)
+  .add(IconArrowRight)
+  .add(IconArrowUp)
+  .add(IconLogout)
+  .add(IconProfile)
+  .add(LayoutStyling)
+  .add(IconCaretRight)
 
 export default t.get

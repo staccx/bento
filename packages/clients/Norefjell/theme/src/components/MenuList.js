@@ -1,19 +1,34 @@
 import React from "react"
 import styled from "styled-components"
-import data from "./Menu.data"
-import { Box, LinkListItem, List } from "@staccx/base"
-import { spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { Box, Button, List } from "@staccx/base"
+import {
+  spacing,
+  registerStyle,
+  VARIANT_DEFAULT,
+  ThemeComponent
+} from "@staccx/theme"
 
-const Menu = ({ pages }) => {
-  const menuOptions = data(pages)
+const Menu = ({ menuElements, history }) => {
   return (
     <Container variant="dashboardBox">
       <List>
-        {menuOptions.map(option => (
-          <LinkListItem key={option._id} to={"#"} onClick={() => option.page()}>
-            <IconOuter>{option.icon}</IconOuter>
-            <ButtonLabel>{option.label}</ButtonLabel>
-          </LinkListItem>
+        {menuElements.map(menuElement => (
+          <li>
+            <Button
+              variant="bibMenuElement"
+              key={menuElement._id}
+              onClick={() =>
+                history.push({
+                  pathname: menuElement.path,
+                  state: menuElement.direction
+                })
+              }
+            >
+              <IconOuter>{menuElement.icon}</IconOuter>
+              <ButtonLabel>{menuElement.label}</ButtonLabel>
+              <ThemeComponent tagName="IconCaretRight" />
+            </Button>
+          </li>
         ))}
       </List>
     </Container>

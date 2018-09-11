@@ -1,154 +1,60 @@
 import React, { Component } from "react"
 import { Provider } from "mobx-react"
-import styled from "styled-components"
-import { HotKeys } from "react-hotkeys"
-import { hideVisually, Layout, LayoutItem, Box } from "@staccx/base"
-import { ThemeComponent, spacing, ThemeProxyProvider } from "@staccx/theme"
-import AprilaTheme from "@staccx/aprila-theme"
-import NorfjellTheme from "@staccx/norefjell-theme"
-import Account from "./components/Account"
-import Transactions from "./components/Transactions"
-import Withdraw from "./pages/Withdraw"
+import { Router, Route, Switch } from "react-router-dom"
+import createHistory from "history/createBrowserHistory"
+import Transitions, { backwards } from "./components/transitions/transitions"
+import { ThemeComponent } from "@staccx/theme"
+import { Layout, LayoutItem, Button } from "@staccx/base"
+import Overview from "./pages/Overview"
 import Profile from "./pages/Profile"
+import LoggedOut from "./pages/LoggedOut"
+import Prices from "./pages/Prices"
 
 import { account, customer } from "./state"
 
-const keyMap = {
-  switchTheme: "t"
-}
-
 class App extends Component {
-  constructor(...props) {
-    super(...props)
-    this.state = {
-      activeTheme: NorfjellTheme,
-      currentPage: null,
-      showAccountInfo: false
-    }
-    this.toggleTheme = this.toggleTheme.bind(this)
-    this.onThemeChanged = this.onThemeChanged.bind(this)
-    this.toggleAccountInfo = this.toggleAccountInfo.bind(this)
-  }
-
-  componentDidMount() {
-    this._container.focus()
-  }
-
-  componentDidUpdate(prevProps) {
-    if (!prevProps.isFocused && this.props.isFocused) {
-      this._container.focus()
-    }
-  }
-
-  toggleTheme() {
-    console.log("Switching away from " + this.state.activeTheme.name)
-    if (this.state.activeTheme.name === "Aprila") {
-      this.setState(
-        {
-          activeTheme: NorfjellTheme
-        },
-        this.onThemeChanged
-      )
-    } else {
-      this.setState(
-        {
-          activeTheme: AprilaTheme
-        },
-        this.onThemeChanged
-      )
-    }
-  }
-
-  toggleAccountInfo() {
-    this.setState({
-      showAccountInfo: !this.state.showAccountInfo
-    })
-  }
-
-  onThemeChanged() {}
-
-  setPage(pageName) {
-    this.setState({
-      currentPage: pageName
-    })
-  }
-
   render() {
-    const handlers = {
-      switchTheme: this.toggleTheme
-    }
-
-    const pages = {
-      withdraw: () => this.setPage("withdraw"),
-      profile: () => this.setPage("profile")
-    }
+    const history = createHistory()
 
     return (
-      <div>
-        <ThemeProxyProvider theme={this.state.activeTheme}>
-          <Provider customer={customer} account={account}>
-            <HotKeysHandler keyMap={keyMap} handlers={handlers} focused>
-              <input ref={c => (this._container = c)} />
-              <Outer>
-                <div>
-                  <Box variant="headerContainer">
-                    <Layout
-                      grid={this.state.activeTheme.layout.dashboardLayout}
-                    >
-                      <Hero>
-                        <ThemeComponent
-                          tagName={"logo"}
-                          inverted
-                          fallback={null}
-                        />
-                        <Account
-                          toggleInfo={this.toggleAccountInfo}
-                          showAccountInfo={this.state.showAccountInfo}
-                        />
-                      </Hero>
-                    </Layout>
-                  </Box>
-                  <Layout grid={this.state.activeTheme.layout.dashboardLayout}>
-                    <LayoutItem area="body">
-                      <Transactions />
-                    </LayoutItem>
-                    <LayoutItem area="main">
-                      <ThemeComponent tagName={"menu"} pages={pages} />
-                    </LayoutItem>
-                    <ThemeComponent tagName={"ad"} />
-                  </Layout>
-                </div>
-                {this.state.currentPage === "withdraw" && <Withdraw />}
-                {this.state.currentPage === "profile" && <Profile />}
-                <ThemeComponent tagName={"footer"} />
-              </Outer>
-            </HotKeysHandler>
-          </Provider>
-        </ThemeProxyProvider>
-      </div>
+      <Provider customer={customer} account={account}>
+        <Router history={history}>
+          <Route
+            render={({ location }) => (
+              <Layout variant="bibMainLayout">
+                <LayoutItem area="logo">
+                  <Button
+                    variant="styleless"
+                    onClick={() =>
+                      history.push({
+                        pathname: "/",
+                        state: backwards
+                      })
+                    }
+                  >
+                    <ThemeComponent tagName={"logo"} inverted fallback={null} />
+                  </Button>
+                </LayoutItem>
+                <LayoutItem area="main">
+                  <Transitions pageKey={location.key} {...location.state}>
+                    <Switch location={location}>
+                      <Route path="/" exact component={Overview} />
+                      <Route path="/profile" exact component={Profile} />
+                      <Route path="/logout" exact component={LoggedOut} />
+                      <Route path="/prices" exact component={Prices} />
+                    </Switch>
+                  </Transitions>
+                </LayoutItem>
+                <LayoutItem area="footer">
+                  <ThemeComponent tagName={"footer"} />
+                </LayoutItem>
+              </Layout>
+            )}
+          />
+        </Router>
+      </Provider>
     )
   }
 }
-
-const HotKeysHandler = styled(HotKeys)`
-  &:focus {
-    outline: 0;
-  }
-
-  > input {
-    ${hideVisually};
-  }
-`
-
-const Hero = styled(LayoutItem)`
-  grid-area: header / 2 / footer / -2;
-  padding-top: ${spacing.large};
-`
-
-const Outer = styled.div`
-  display: grid;
-  align-content: space-between;
-  height: 100vh;
-`
 
 export default App

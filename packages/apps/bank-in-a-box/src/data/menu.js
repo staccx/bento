@@ -1,22 +1,29 @@
 import React from "react"
-import IconArrowUp from "../components/Icons/Icon.ArrowUp"
-import IconProfile from "../components/Icons/Icon.Profile"
-import IconLogout from "../components/Icons/Icon.Logout"
+import { ThemeComponent } from "@staccx/theme"
+import { forwards } from "../components/transitions/transitions"
 
-export default [
-  {
-    _id: "wiofdh",
-    label: "Ta ut penger",
-    icon: <IconArrowUp />
-  },
+const menu = [
   {
     _id: "sioahugcf",
     label: "Min profil",
-    icon: <IconProfile />
+    icon: <ThemeComponent tagName={"IconProfile"} />,
+    path: "/profile",
+    direction: forwards
+  },
+  {
+    _id: "wiofdh",
+    label: "Priser",
+    icon: <ThemeComponent tagName={"IconArrowUp"} />,
+    path: "/prices",
+    direction: forwards
   },
   {
     _id: "fugya",
     label: "Logg ut",
-    icon: <IconLogout />
+    icon: <ThemeComponent tagName={"IconLogout"} />,
+    path: "/logout",
+    direction: forwards
   }
 ]
+
+export default menu

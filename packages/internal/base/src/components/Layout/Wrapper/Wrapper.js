@@ -7,8 +7,21 @@ import themePropTypes from "../../constants/themePropTypes"
 /**
  * A Wrapper components that centers content and add spacing on the sides
  */
-const Wrapper = ({ children, className, size, breakout, ...otherProps }) => (
-  <Wrap breakout={breakout} className={className} size={size} {...otherProps}>
+const Wrapper = ({
+  children,
+  className,
+  size,
+  breakout,
+  variant,
+  ...otherProps
+}) => (
+  <Wrap
+    breakout={breakout}
+    className={className}
+    size={size}
+    variant={variant}
+    {...otherProps}
+  >
     {children}
   </Wrap>
 )

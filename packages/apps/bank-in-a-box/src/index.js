@@ -2,7 +2,10 @@ import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
 import registerServiceWorker from "./registerServiceWorker"
+import { Provider } from "mobx-react"
 import WebFont from "webfontloader"
+import theme from "@staccx/norefjell-theme"
+import { ThemeProxyProvider } from "@staccx/theme"
 
 WebFont.load({
   google: {
@@ -10,5 +13,12 @@ WebFont.load({
   }
 })
 
-ReactDOM.render(<App />, document.getElementById("root"))
+ReactDOM.render(
+  <Provider>
+    <ThemeProxyProvider theme={theme}>
+      <App />
+    </ThemeProxyProvider>
+  </Provider>,
+  document.getElementById("root")
+)
 registerServiceWorker()

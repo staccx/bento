@@ -3,6 +3,8 @@ import { Heading, Wrapper, Input, Layout, Loading, Search } from "@staccx/base"
 import { SanityList, SanityDocument, SanityImage } from "@staccx/sanity"
 import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
 import { ContentLinks, Person, SectionHead } from "../components/_codeSplitting"
+import { Helmet } from "react-helmet"
+import Meta from "./Meta"
 
 const Team = () => (
   <Wrapper>
@@ -11,6 +13,7 @@ const Team = () => (
         <React.Fragment>
           {document && (
             <Layout>
+              <Meta meta={document.meta}/>
               <SanityImage image={document.header.head.image}>
                 {({ image }) => (
                   <SectionHead

@@ -4,9 +4,11 @@ import { SanityImage } from "@staccx/sanity"
 import BlockContent from "@sanity/block-content-to-react"
 import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
 import {
+  ClientList,
   ContentLinks,
   FeatureList,
   Hero,
+  PeopleList,
   Quote,
   SectionHead,
   Stories,
@@ -90,7 +92,9 @@ const serializer = {
         }}
         image={node.image}
       />
-    )
+    ),
+    peopleList: ({ node }) => <PeopleList node={node} />,
+    clientList: ({ node }) => <ClientList node={node} />
   }
 }
 

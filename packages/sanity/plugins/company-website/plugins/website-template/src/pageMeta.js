@@ -8,7 +8,7 @@ export default {
   fields: [
     {
       type: "string",
-      name: "name",
+      name: "title",
       title: "og:title"
     },
     {
@@ -17,14 +17,15 @@ export default {
       title: "og:description"
     },
     {
-      type: "string",
-      name: "type",
-      title: "og:type"
-    },
-    {
-      type: "url",
+      type: "slug",
       name: "url",
-      title: "og:url"
+      title: "og:url",
+      options: {
+        source: "path",
+        maxLength: 96,
+        auto: true,
+        slugify: input => `https://stacc.com${input.current}`
+      }
     },
     {
       type: "image",
