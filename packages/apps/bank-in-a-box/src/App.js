@@ -38,7 +38,11 @@ class App extends Component {
                 <LayoutItem area="main">
                   <Transitions pageKey={location.key} {...location.state}>
                     <Switch location={location}>
-                      <Route path="/" exact component={Overview} />
+                      <Route
+                        path="/"
+                        exact
+                        render={() => <Overview accounts={account} />}
+                      />
                       <Route path="/profile" exact component={Profile} />
                       <Route path="/logout" exact component={LoggedOut} />
                       <Route path="/prices" exact component={Prices} />
