@@ -17,7 +17,7 @@ const SanityImage = ({ children, image }) => {
 
 SanityImage.propTypes = {
   children: PropTypes.func.isRequired,
-  image: PropTypes.object.isRequired
+  image: PropTypes.object
 }
 
 export default SanityImage
