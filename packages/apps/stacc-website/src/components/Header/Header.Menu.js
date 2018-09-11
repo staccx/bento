@@ -6,7 +6,6 @@ import { spacing, color, borderRadius } from "@staccx/theme"
 import { opacity } from "@staccx/color"
 
 const HeaderMenu = ({ inverted, items }) => {
-  console.log(items)
   return (
     <Navigation>
       <MenuItems inverted={inverted}>

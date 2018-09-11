@@ -1,7 +1,6 @@
 import React from "react"
 import { Layout, Heading, Divider } from "@staccx/base"
-import SectionHead from "../components/SectionHead/SectionHead"
-import Story from "../components/Stories/Stories.Story"
+import { SectionHead, Story } from "../components/_codeSplitting"
 
 const ServicesInfrastructure = ({ match }) => {
   console.log(match)

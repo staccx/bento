@@ -3,8 +3,7 @@ import styled from "styled-components"
 import { spacing } from "@staccx/theme"
 import { List, Layout } from "@staccx/base"
 import { SanityDocument, SanityList } from "@staccx/sanity"
-import SectionHead from "../components/SectionHead/SectionHead"
-import ClientPreview from "../components/ClientPreview/ClientPreview"
+import { ClientPreview, SectionHead } from "../components/_codeSplitting"
 
 const Clients = () => (
   <Layout paddingTop="grid" paddingBottom="grid" rowGap="grid">
