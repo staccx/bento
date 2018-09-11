@@ -16,19 +16,11 @@ const ClientsOverviewItem = ({
   <article>
     <Layout rowGap="medium">
       {logo && (
-        <ClientLink
-          to={
-            cases.length && cases[0].path
-              ? cases[0].path.current
-              : website || ""
-          }
-        >
-          <ImageContainer>
-            <SanityImage image={logo}>
-              {({ image }) => <img src={image.height(240).url()} alt={name} />}
-            </SanityImage>
-          </ImageContainer>
-        </ClientLink>
+        <ImageContainer>
+          <SanityImage image={logo}>
+            {({ image }) => <img src={image.height(240).url()} alt={name} />}
+          </SanityImage>
+        </ImageContainer>
       )}
       <Layout rowGap="tiny">
         <Heading level={3}>{name}</Heading>

@@ -22,7 +22,7 @@ const ClientList = props => {
                   logo={client.logo}
                   description={client.description}
                   website={client.url}
-                  websiteName={"Gå til " + client.name}
+                  websiteName={client.url.replace(/(^\w+:|^)\/\//, "")}
                   cases={client.caseStudies || []}
                 />
               </li>
