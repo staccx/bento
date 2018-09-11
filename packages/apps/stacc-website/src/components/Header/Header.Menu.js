@@ -35,6 +35,7 @@ class HeaderMenu extends React.Component {
                     activeClassName="is-current"
                     inverted={inverted}
                     emphasized={menuItem.emphasized}
+                    onClick={() => this.setState({ expanded: null })}
                   >
                     {menuItem.title}
                   </MenuItem>
@@ -50,6 +51,7 @@ class HeaderMenu extends React.Component {
                   <SubMenu
                     expanded={this.state.expanded === menuItem._key}
                     inverted={inverted}
+                    onClick={() => this.setState({ expanded: null })}
                   >
                     {menuItem.submenu.map(submenuItem => (
                       <li key={submenuItem._id}>
