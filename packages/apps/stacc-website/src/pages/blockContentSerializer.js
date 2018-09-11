@@ -55,19 +55,16 @@ const serializer = {
       return (
         <div>
           <Layout>
-            {head.image && (
-              <SanityImage image={head.image}>
-                {({ image }) => (
-                  <SectionHead
-                    heading={head.title}
-                    lede={head.body}
-                    headingLevel={head.isPageHeader ? 1 : 2}
-                    illustration={image.url()}
-                  />
-                )}
-              </SanityImage>
-            )}
-
+            <SanityImage image={head.image}>
+              {({ image }) => (
+                <SectionHead
+                  heading={head.title}
+                  lede={head.body}
+                  headingLevel={head.isPageHeader ? 1 : 2}
+                  illustration={image.url()}
+                />
+              )}
+            </SanityImage>
             {links && <ContentLinks>{links.map(getLinkItem)}</ContentLinks>}
           </Layout>
         </div>
