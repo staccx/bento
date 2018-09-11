@@ -43,6 +43,14 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/clientList.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/peopleList.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "blocks/richText.js"
     },
     {

@@ -13,7 +13,15 @@ export default {
   preview: {
     select: {
       media: "list[0].image",
-      title: "list[0].title"
+      length: "list.length"
+    },
+    prepare(selection, options) {
+      const { length, media } = selection
+      return {
+        title: length + " stories",
+        media,
+        subtitle: "Stories"
+      }
     }
   }
 }

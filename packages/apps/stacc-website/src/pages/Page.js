@@ -10,10 +10,11 @@ import {
   SectionHead
 } from "../components/_codeSplitting"
 import { Helmet } from "react-helmet"
+import Meta from "./Meta"
 
 class Page extends Component {
   render() {
-    const { match, page } = this.props
+    const { match, page, blockCredentials = {} } = this.props
     let renderSubpage = null
     if (match) {
       const { subpage } = match.params
@@ -23,26 +24,12 @@ class Page extends Component {
         : null
     }
 
-    console.log(page.meta)
+    console.log(page)
 
     return (
       <div>
-        {page.meta && (
-          <SanityImage image={page.meta.image}>
-            {({ image }) => (
-              <Helmet>
-                <meta property="og:title" content={page.meta.title} />
-                <meta
-                  property="og:description"
-                  content={page.meta.description}
-                />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content={page.meta.url} />
-                <meta property="og:image" content={image.url()} />
-              </Helmet>
-            )}
-          </SanityImage>
-        )}
+        <Meta meta={page.meta} />
+
         {page.subpages &&
           page.subpages.length > 0 && (
             <NavigationSubpage
@@ -70,6 +57,7 @@ class Page extends Component {
           blocks={page.blocks}
           serializers={blockContentSerializer}
           renderContainerOnSingleChild
+          {...blockCredentials}
         />
       </div>
     )

@@ -30,5 +30,19 @@ export default {
   options: {
     collapsible: true,
     collapsed: false
+  },
+  preview: {
+    select: {
+      media: "image",
+      title: "title"
+    },
+    prepare(selection) {
+      const { title, media } = selection
+      return {
+        title: title,
+        media: media,
+        subtitle: "Section header"
+      }
+    }
   }
 }

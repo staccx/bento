@@ -1302,6 +1302,10 @@
     rxjs "^6.1.0"
     shallow-equals "^1.0.0"
 
+"@sanity/production-preview@^0.132.5":
+  version "0.132.5"
+  resolved "https://registry.npmjs.org/@sanity/production-preview/-/production-preview-0.132.5.tgz#de8bc6661e641bc3a35c6a9d49ba7cade55bb24a"
+
 "@sanity/react-tippy@1.2.6":
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/@sanity/react-tippy/-/react-tippy-1.2.6.tgz#50bac9ecdfa2804c23d464b49182d0d52c0d5f3b"

@@ -12,14 +12,13 @@ import { Footer, Header } from "./components/_codeSplitting"
 import {
   Home,
   Case,
-  Clients,
   Page,
-  Team,
   Contact,
   Jobs,
   Overview,
   ServicesInfrastructure
 } from "./pages/_codeSplitting"
+import PreviewLive from "./pages/PreviewLive"
 
 const asciiArt = `
                             \`-ohy+-\`
@@ -71,11 +70,17 @@ class App extends Component {
               <Wrapper>
                 <main>
                   <Switch>
+                    <Route
+                      path="/preview/:id"
+                      exact
+                      render={({ match }) => (
+                        <PreviewLive id={match.params.id} />
+                      )}
+                    />
+
                     <Route path="/" exact component={Home} />
-                    <Route path="/clients" exact component={Clients} />
                     <Route path="/contact" component={Contact} />
                     <Route path="/careers" component={Jobs} />
-                    <Route path="/team" component={Team} />
                     <Route path="/overview" component={Overview} />
                     <Route
                       path="/services/:filter(infrastructure)"
@@ -94,15 +99,20 @@ class App extends Component {
                           <React.Fragment>
                             {result.map(client => {
                               return client.caseStudies
-                                ? client.caseStudies.map(caseStudy => (
-                                    <Route
-                                    key={caseStudy._key}
-                                    path={caseStudy.path.current}
-                                    render={() => (
-                                        <Case caseStudy={caseStudy} />
-                                      )}
-                                    />
-                                  ))
+                                ? client.caseStudies.map(caseStudy => {
+                                    if (!caseStudy.path) {
+                                      return null
+                                    }
+                                    return (
+                                      <Route
+                                        key={caseStudy._key}
+                                        path={caseStudy.path.current}
+                                        render={() => (
+                                          <Case caseStudy={caseStudy} />
+                                        )}
+                                      />
+                                    )
+                                  })
                                 : null
                             })}
                           </React.Fragment>
@@ -112,7 +122,7 @@ class App extends Component {
                   </React.Fragment>
                   <React.Fragment>
                     <SanityList
-                      type={`page" || _type == "servicePage" || _type == "productPage`}
+                      type={`page" || _type == "servicePage" || _type == "productPage" || _type == "teamPage" || _type == "clientsPage`}
                       pick={"blocks[]{employee->,...},..."}
                     >
                       {({ result }) => {

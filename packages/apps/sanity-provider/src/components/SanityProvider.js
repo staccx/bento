@@ -10,7 +10,8 @@ class SanityProvider extends React.Component {
       sanityOptions: {
         projectId: props.projectId,
         dataset: props.dataset,
-        useCdn: props.useCdn
+        useCdn: props.useCdn,
+        withCredentials: props.withCredentials
       }
     })
 
@@ -78,9 +79,11 @@ SanityProvider.propTypes = {
   children: PropTypes.any.isRequired,
   dataset: PropTypes.string.isRequired,
   projectId: PropTypes.string.isRequired,
-  useCdn: PropTypes.bool
+  useCdn: PropTypes.bool,
+  withCredentials: PropTypes.bool
 }
 
 SanityProvider.defaultProps = {
-  useCdn: true
+  useCdn: true,
+  withCredentials: false
 }

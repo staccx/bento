@@ -81,3 +81,17 @@ export const Story = LoadableComponents(
 export const Person = LoadableComponents(() => import("./Person/Person"), {
   loading: Loading
 })
+
+export const PeopleList = LoadableComponents(
+  () => import("./PeopleList/PeopleList"),
+  {
+    loading: Loading
+  }
+)
+
+export const ClientList = LoadableComponents(
+  () => import("./ClientList/ClientList"),
+  {
+    loading: Loading
+  }
+)

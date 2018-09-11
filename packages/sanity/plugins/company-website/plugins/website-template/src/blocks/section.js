@@ -17,8 +17,16 @@ export default {
   ],
   preview: {
     select: {
-      title: "head.title",
-      media: "head.image"
+      media: "head.image",
+      title: "head.title"
+    },
+    prepare(selection) {
+      const { title, media } = selection
+      return {
+        title: title,
+        media: media,
+        subtitle: "Section header with links"
+      }
     }
   }
 }
