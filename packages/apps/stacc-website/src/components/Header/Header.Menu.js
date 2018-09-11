@@ -24,7 +24,7 @@ class HeaderMenu extends React.Component {
     const { inverted, items } = this.props
     return (
       <Navigation>
-        <MenuItems inverted={inverted}>
+        <MenuItems inverted={inverted ? inverted.toString() : undefined}>
           {items.map(
             menuItem =>
               menuItem.link ? (
@@ -33,8 +33,12 @@ class HeaderMenu extends React.Component {
                     to={menuItem.link.path.current}
                     exact
                     activeClassName="is-current"
-                    inverted={inverted}
-                    emphasized={menuItem.emphasized}
+                    inverted={inverted ? inverted.toString() : undefined}
+                    emphasized={
+                      menuItem.emphasized
+                        ? menuItem.emphasized.toString()
+                        : undefined
+                    }
                     onClick={() => this.setState({ expanded: null })}
                   >
                     {menuItem.title}
@@ -44,14 +48,14 @@ class HeaderMenu extends React.Component {
                 <li key={menuItem._key}>
                   <ExpandBtn
                     onClick={() => this.handleExpand(menuItem._key)}
-                    inverted={inverted}
+                    inverted={inverted || undefined}
                     expanded={this.state.expanded === menuItem._key}
                   >
                     {menuItem.title}
                   </ExpandBtn>
                   <SubMenu
                     expanded={this.state.expanded === menuItem._key}
-                    inverted={inverted}
+                    inverted={inverted || undefined}
                     onClick={() => this.setState({ expanded: null })}
                   >
                     {menuItem.submenu.map(submenuItem => (

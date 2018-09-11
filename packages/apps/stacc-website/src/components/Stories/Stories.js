@@ -12,7 +12,7 @@ const Stories = ({ items }) => {
           body={item.body}
           key={item._key}
           illustration={item.image}
-          isReverse={index % 2}
+          isReverse={index % 2 !== 0}
         />
       ))}
     </Layout>

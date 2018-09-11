@@ -25,15 +25,11 @@ const serializer = {
     </Layout>
   ),
   types: {
-    richText: ({ node }) => {
-      console.log(node)
-      return (
-        <BodyContent>
-          <BlockContent blocks={node.bodyContent} serializer={serializer} />
-        </BodyContent>
-      )
-    },
-
+    richText: ({ node }) => (
+      <BodyContent>
+        <BlockContent blocks={node.bodyContent} serializer={serializer} />
+      </BodyContent>
+    ),
     sectionHead: ({ node }) => (
       <SectionHead
         illustration={node.image}

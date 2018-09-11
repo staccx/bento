@@ -74,7 +74,7 @@ Story.propTypes = {
   body: PropTypes.string,
   callToAction: PropTypes.string,
   callToActionUrl: PropTypes.string,
-  illustration: PropTypes.string,
+  illustration: PropTypes.object,
   isReverse: PropTypes.bool
 }
 
