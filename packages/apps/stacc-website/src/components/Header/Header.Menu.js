@@ -45,6 +45,7 @@ class HeaderMenu extends React.Component {
                   <ExpandBtn
                     onClick={() => this.handleExpand(menuItem._key)}
                     inverted={inverted}
+                    expanded={this.state.expanded === menuItem._key}
                   >
                     {menuItem.title}
                   </ExpandBtn>
@@ -71,6 +72,7 @@ class HeaderMenu extends React.Component {
 }
 
 const ExpandBtn = styled(Button)`
+  position: relative;
   display: block;
   margin: 0 ${spacing.small};
   padding: 3px 0;
@@ -82,6 +84,7 @@ const ExpandBtn = styled(Button)`
   border-bottom: 2px solid transparent;
   min-height: 0;
   line-height: inherit;
+  transition: color 0.2s ease;
 
   &:hover,
   &:active,
@@ -94,6 +97,24 @@ const ExpandBtn = styled(Button)`
           ? opacity(color("white")(p), 0.5)
           : opacity(color("secondary")(p), 0.5)};
   }
+
+  ${p =>
+    p.expanded &&
+    css`
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 12px 14px 12px;
+        border-color: transparent transparent ${color.white} transparent;
+        transform: translate(-50%, 100%);
+        z-index: 100;
+      }
+    `};
 `
 
 const SubMenu = styled(List)`
@@ -105,11 +126,6 @@ const SubMenu = styled(List)`
   background-color: ${color.white};
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding: ${spacing.medium};
-  border-top: 2px solid
-    ${p =>
-      p.inverted
-        ? opacity(color("white")(p), 0.5)
-        : opacity(color("secondary")(p), 0.5)};
   width: calc(100% - ${spacing.small});
   z-index: 50;
 `
@@ -160,7 +176,7 @@ const MenuItem = styled(NavLink)`
   color: currentColor;
   text-decoration: none;
   border-bottom: 2px solid transparent;
-  transition: border 0.2s ease;
+  transition: border 0.2s ease, color 0.2s ease;
   font-weight: normal;
 
   &:hover,
