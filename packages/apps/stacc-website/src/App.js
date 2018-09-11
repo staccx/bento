@@ -7,17 +7,19 @@ import { SanityProvider, SanityList } from "@staccx/sanity"
 import { Router, Switch, Route, Redirect } from "react-router-dom"
 import createHistory from "history/createBrowserHistory"
 import theme from "./theme/Theme"
-import Header from "./components/Header/Header"
-import Clients from "./pages/Clients"
-import Contact from "./pages/Contact"
-import Jobs from "./pages/Jobs"
-import Overview from "./pages/Overview"
-import ServicesInfrastructure from "./pages/ServicesInfrastructure"
-import Team from "./pages/Team"
-import Case from "./pages/Case"
-import Footer from "./components/Footer/Footer"
-import Page from "./pages/Page"
-import Home from "./pages/Home"
+
+import { Footer, Header } from "./components/_codeSplitting"
+import {
+  Home,
+  Case,
+  Clients,
+  Page,
+  Team,
+  Contact,
+  Jobs,
+  Overview,
+  ServicesInfrastructure
+} from "./pages/_codeSplitting"
 
 const asciiArt = `
                             \`-ohy+-\`

@@ -1,10 +1,8 @@
 import React from "react"
 import { Heading, Wrapper, Input, Layout, Loading, Search } from "@staccx/base"
 import { SanityList, SanityDocument, SanityImage } from "@staccx/sanity"
-import Person from "../components/Person/Person"
-import SectionHead from "../components/SectionHead/SectionHead"
 import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
-import ContentLinks from "../components/ContentLinks/ContentLinks"
+import { ContentLinks, Person, SectionHead } from "../components/_codeSplitting"
 
 const Team = () => (
   <Wrapper>

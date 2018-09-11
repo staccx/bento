@@ -1,14 +1,16 @@
 import React from "react"
 import { Text, Heading, Layout } from "@staccx/base"
 import { SanityImage } from "@staccx/sanity"
-import Quote from "../components/Quote/Quote"
-import SectionHead from "../components/SectionHead/SectionHead"
-import Hero from "../components/Hero/Hero"
 import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
-import ContentLinks from "../components/ContentLinks/ContentLinks"
-import FeatureList from "../components/FeatureList/FeatureList"
-import Stories from "../components/Stories/Stories"
-import Timeline from "../components/Timeline/Timeline"
+import {
+  ContentLinks,
+  FeatureList,
+  Hero,
+  Quote,
+  SectionHead,
+  Stories,
+  Timeline
+} from "../components/_codeSplitting"
 
 export default {
   container: props => (
@@ -48,12 +50,9 @@ export default {
     hero: ({ node }) => (
       <Hero heading={node.title} lede={node.body} trinity={node.trinity} />
     ),
-    linkBlock: ({ node }) => {
-      return getLinkItem(node)
-    },
+    linkBlock: ({ node }) => getLinkItem(node),
     section: ({ node }) => {
       const { head, links } = node
-      console.log(node)
       return (
         <div>
           <Layout>
@@ -73,13 +72,8 @@ export default {
         </div>
       )
     },
-    featureList: ({ node }) => {
-      return <FeatureList items={node.features} />
-    },
-    stories: ({ node }) => {
-      console.log(node)
-      return <Stories items={node.list} />
-    },
+    featureList: ({ node }) => <FeatureList items={node.features} />,
+    stories: ({ node }) => <Stories items={node.list} />,
     timeline: ({ node }) => <Timeline items={node.entries} />
   }
 }

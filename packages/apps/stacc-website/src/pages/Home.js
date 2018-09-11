@@ -1,6 +1,6 @@
 import React from "react"
 import { SanityDocument } from "@staccx/sanity"
-import Page from "./Page"
+import { Page } from "./_codeSplitting"
 
 const Home = () => (
   <SanityDocument id={"beb2be49-57cb-4cc6-9cd9-2b87656dd8d3"}>
