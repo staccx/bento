@@ -26,8 +26,8 @@ const IconCheck = () => (
 )
 
 const Icon = styled.svg`
-  width: ${spacing.medium};
-  height: ${spacing.medium};
+  width: 18px;
+  height: 18px;
   fill: ${color.primary};
   vertical-align: middle;
 `
