@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import {
-  Modal,
   Button,
   Layout,
   LayoutItem,
@@ -9,13 +8,14 @@ import {
   PhoneInput,
   Toggle,
   Label,
-  Flag
+  Flag,
+  Wrapper
 } from "@staccx/base"
 import { color, spacing, font, fontWeight } from "@staccx/theme"
 
 const Deposit = () => (
-  <Modal variant="small" isOpen>
-    <Layout grid="rows">
+  <Wrapper variant="bib">
+    <Layout>
       <LayoutItem>
         <Heading>Min profil</Heading>
       </LayoutItem>
@@ -79,7 +79,7 @@ const Deposit = () => (
         </Center>
       </LayoutItem>
     </Layout>
-  </Modal>
+  </Wrapper>
 )
 
 const Heading = styled.h1`

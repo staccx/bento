@@ -1,5 +1,11 @@
 import { css } from "styled-components"
-import { registerStyle, color, spacing, targetSize } from "@staccx/theme"
+import {
+  registerStyle,
+  color,
+  spacing,
+  targetSize,
+  fontWeight
+} from "@staccx/theme"
 import { Button } from "@staccx/base"
 
 const invisibleButton = css`
@@ -80,6 +86,39 @@ export default registerStyle(
         height: 14px;
         fill: currentColor;
         transform: translate(-50%, -50%);
+      }
+    `,
+    bibMenuElement: css`
+      display: flex;
+      background-color: transparent;
+      justify-content: space-between;
+      width: 100%;
+      color: ${color.black};
+      border-bottom: 1px solid ${color.line};
+      text-align: left;
+      font-weight: ${fontWeight.normal};
+      position: relative;
+      > svg {
+        position: absolute;
+        right: 12px;
+        fill: ${color.line};
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${color.subtleHover};
+        color: ${color.black};
+      }
+    `,
+    styleless: css`
+      &,
+      &:hover,
+      &:active,
+      &:focus {
+        padding: 0;
+        background-color: transparent;
+        border-width: 0;
+        width: 100%;
       }
     `
   },
