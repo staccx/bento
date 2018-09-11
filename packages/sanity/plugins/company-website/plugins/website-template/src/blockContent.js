@@ -52,6 +52,8 @@ export default {
     { type: "hero" },
     { type: "stories" },
     { type: "timeline" },
-    { type: "contactPerson" }
+    { type: "contactPerson" },
+    { type: "clientList" },
+    { type: "peopleList" }
   ]
 }

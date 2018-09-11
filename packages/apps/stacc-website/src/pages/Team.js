@@ -4,6 +4,7 @@ import { SanityList, SanityDocument, SanityImage } from "@staccx/sanity"
 import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
 import { ContentLinks, Person, SectionHead } from "../components/_codeSplitting"
 import { Helmet } from "react-helmet"
+import Meta from "./Meta"
 
 const Team = () => (
   <Wrapper>
@@ -12,22 +13,7 @@ const Team = () => (
         <React.Fragment>
           {document && (
             <Layout>
-              {document.meta && (
-                <SanityImage image={document.meta.image}>
-                  {({ image }) => (
-                    <Helmet>
-                      <meta property="og:title" content={document.meta.title} />
-                      <meta
-                        property="og:description"
-                        content={document.meta.description}
-                      />
-                      <meta property="og:type" content="website" />
-                      <meta property="og:url" content={document.meta.url} />
-                      <meta property="og:image" content={image.url()} />
-                    </Helmet>
-                  )}
-                </SanityImage>
-              )}
+              <Meta meta={document.meta}/>
               <SanityImage image={document.header.head.image}>
                 {({ image }) => (
                   <SectionHead
