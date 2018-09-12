@@ -5,14 +5,14 @@ import { color, fontWeight } from "@staccx/theme"
 import { formatCurrency } from "@staccx/formatting"
 import { Box, Button, SplitListItem } from "@staccx/base"
 
-const AccountFilter = ({ account }) => (
+const AccountFilter = ({ account, type, duration }) => (
   <Box variant={"accountFilter"}>
     <Box variant={"accountFilterHeader"}>
       <div>{account.accountType === "LOAN" ? "Lån" : "På konto"}</div>
       <div>{formatCurrency(account.availableBalance, { precision: 2 })}</div>
     </Box>
     <div>
-      Viser <strong>alle</strong> transaksjoner <strong>siste 30 dager</strong>
+      Viser <strong>alle</strong> {type} <strong>{duration}</strong>
     </div>
     <div>
       <Button variant="accountFilter">Endre</Button>
@@ -37,8 +37,15 @@ export const AccountInfoListItem = styled(SplitListItem)`
     `};
 `
 
+AccountFilter.defaultProps = {
+  type: "transaksjoner",
+  duration: "siste 30 dager"
+}
+
 AccountFilter.propTypes = {
-  account: PropTypes.object.isRequired
+  account: PropTypes.object.isRequired,
+  type: PropTypes.string,
+  duration: PropTypes.string
 }
 
 export default AccountFilter

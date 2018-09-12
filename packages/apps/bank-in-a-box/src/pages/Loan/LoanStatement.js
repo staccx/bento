@@ -11,16 +11,18 @@ const LoanStatement = ({ history, account, transactions }) => {
         <Heading level="2">Kontoutskrift</Heading>
         <AccountFilter account={account} />
         <Transactions transactions={transactions} />
-        <Button
-          onClick={() =>
-            history.push({
-              pathname: "/account/34551524578",
-              state: backwards
-            })
-          }
-        >
-          Tilbake
-        </Button>
+        <div>
+          <Button
+            onClick={() =>
+              history.push({
+                pathname: "/account/34551524578",
+                state: backwards
+              })
+            }
+          >
+            Tilbake
+          </Button>
+        </div>
       </Layout>
     </Wrapper>
   )

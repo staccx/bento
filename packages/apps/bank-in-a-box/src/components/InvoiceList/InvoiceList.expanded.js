@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { color } from "@staccx/theme"
 import { List, SplitListItem } from "@staccx/base"
 
-const TransactionListItem = ({
+const InvoiceListItemExpanded = ({
   amount,
   fromAccount,
   toAccount,
@@ -61,9 +61,9 @@ const Outer = styled.div`
   background-color: ${color("expandedItem")};
 `
 
-TransactionListItem.propTypes = {
+InvoiceListItemExpanded.propTypes = {
   date: PropTypes.string.isRequired,
   amount: PropTypes.number.isRequired
 }
 
-export default TransactionListItem
+export default InvoiceListItemExpanded

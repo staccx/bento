@@ -69,7 +69,8 @@ const BiBSpecificColor = {
   accountLoan: color.negative,
   expandedItem: color.white,
   accountInfoBorder: color.line,
-  accountFilter: "#2EB6BE"
+  accountFilter: "#2EB6BE",
+  invoice: "#FDC4A3"
 }
 
 const font = {
