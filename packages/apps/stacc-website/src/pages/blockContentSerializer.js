@@ -52,6 +52,9 @@ const serializer = {
     linkBlock: ({ node }) => getLinkItem(node),
     section: ({ node }) => {
       const { head, links } = node
+      if (!head) {
+        return null
+      }
       return (
         <div>
           <Layout>
@@ -82,6 +85,7 @@ const serializer = {
           email: node.employee.email
         }}
         image={node.image}
+        imageCutOut={node.imageCutout}
       />
     ),
     peopleList: ({ node }) => <PeopleList node={node} />,

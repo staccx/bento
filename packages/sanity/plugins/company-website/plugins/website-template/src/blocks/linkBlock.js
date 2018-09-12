@@ -33,7 +33,13 @@ export default {
           type: "reference",
           name: "page",
           title: "Page",
-          to: [{ type: "page" }]
+          to: [
+            { type: "page" },
+            { type: "homePage" },
+            { type: "teamPage" },
+            { type: "productPage" },
+            { type: "clientsPage" }
+          ]
         }
       ]
     }

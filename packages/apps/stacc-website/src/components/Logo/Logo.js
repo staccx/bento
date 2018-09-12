@@ -1,17 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 
-const Logo = ({ inverted }) => (
+const Logo = ({ inverted, isOnBlack }) => (
   <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 50">
     <g fill="none" fillRule="evenodd">
       <g transform="translate(2 2)">
         <polygon
-          stroke={!inverted ? "#E6503F" : "#ffffff"}
+          stroke={!inverted ? "#E6503F" : isOnBlack ? "#E6503F" : "#ffffff"}
           strokeWidth="3.5"
           points="0 11.503 0 34.497 19.462 46 38.923 34.497 38.923 11.503 19.462 0"
         />
         <path
-          stroke={!inverted ? "#E6503F" : "#ffffff"}
+          stroke={!inverted ? "#E6503F" : isOnBlack ? "#E6503F" : "#ffffff"}
           strokeWidth="3.5"
           d="M0 11.5L19.46 23m19.46-11.5L19.46 23m0 23V23M29.2 5.75L9.73 17.25M0 23l19.46 11.5m9.74 5.75v-23"
         />

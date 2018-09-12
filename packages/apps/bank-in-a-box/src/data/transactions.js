@@ -1,5 +1,5 @@
 export default {
-  "34551524578": [
+  "546126722": [
     {
       _id: "qewoimdqw",
       date: "08.05.18",
@@ -53,6 +53,39 @@ export default {
       amount: 50000,
       fromAccount: "1204 10 12475",
       message: "Sparing"
+    }
+  ],
+  "34551524578": [
+    {
+      _id: "456456456gfdg46",
+      date: "12.10.18",
+      friendlyDate: "12.10.18",
+      heading: "Faktura 1020",
+      fromAccount: "1204 10 12475",
+      message: "1020",
+      rent: 1000,
+      installments: 1000,
+      fee: 1000,
+      amount: 3000
+    },
+    {
+      _id: "gfdsfgsd4dfsg45",
+      date: "12.10.18",
+      friendlyDate: "12.10.18",
+      heading: "Innbetaling",
+      fromAccount: "1204 10 12475",
+      message: "Betaling",
+      amount: 3500
+    },
+    {
+      _id: "bcvcvb4554",
+      date: "12.10.18",
+      friendlyDate: "12.10.18",
+      heading: "Faktura 1021",
+      fromAccount: "1204 10 12475",
+      message: "1020",
+      installments: 500,
+      amount: 500
     }
   ]
 }

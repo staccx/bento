@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { color, registerStyle, spacing } from "@staccx/theme"
+import { color, registerStyle, spacing, fontWeight } from "@staccx/theme"
 import { Box, fontSmoothing } from "@staccx/base"
 
 const defaultBox = css`
@@ -30,13 +30,35 @@ export default registerStyle(
     `,
     accountInfo: css`
       ${defaultBox};
-      margin: ${spacing.medium} -${spacing.medium} -${spacing.medium};
       padding: ${spacing.medium};
-      border-radius: 3px;
-      background-color: ${color.primary};
-      color: ${color.white};
-      z-index: 50;
       ${fontSmoothing};
+      position: relative;
+    `,
+    accountFilter: css`
+      ${defaultBox};
+      padding: ${spacing.medium};
+      ${fontSmoothing};
+      position: relative;
+      padding-top: 52px;
+      padding-bottom: ${spacing.small};
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    `,
+    accountFilterHeader: css`
+      display: flex;
+      width: 100%;
+      margin-left: -${spacing.medium};
+      background-color: ${color("accountFilter")};
+      position: absolute;
+      justify-content: space-between;
+      color: ${color.white};
+      top: 0;
+      padding-top: ${spacing.small};
+      padding-bottom: ${spacing.small};
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+      font-weight: ${fontWeight.bold};
     `
   },
   Box.themeProps.box

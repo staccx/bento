@@ -1,6 +1,5 @@
 import { BaseTheme } from "@staccx/base"
 import { Theme } from "@staccx/theme"
-import { rgba } from "polished"
 import reset from "./reset"
 import Button from "./Theme.Button"
 import Modal from "./Theme.Wrapper"
@@ -67,8 +66,10 @@ const BiBSpecificColor = {
   accountHeading: color.disabled,
   accountEarned: color.secondary,
   accountBalance: color.primary,
-  expandedItem: color.bgGray,
-  accountInfoBorder: rgba(color.white, 0.5)
+  accountLoan: color.negative,
+  expandedItem: color.white,
+  accountInfoBorder: color.line,
+  accountFilter: "#2EB6BE"
 }
 
 const font = {
@@ -95,6 +96,11 @@ const fontFamily = {
   body: "IBM Plex Sans"
 }
 
+const fontWeight = {
+  bold: "700",
+  normal: "400"
+}
+
 const t = new Theme(BaseTheme, {
   name: "Norfjell",
   layout: {
@@ -102,6 +108,7 @@ const t = new Theme(BaseTheme, {
     menuArea: "aside"
   },
   font: { ...font, ...BiBSpecificFont },
+  fontWeight,
   color: { ...color, ...BiBSpecificColor },
   wrapper,
   targetSize,

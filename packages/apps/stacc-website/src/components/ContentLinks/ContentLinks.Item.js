@@ -12,7 +12,7 @@ export const getLinkItem = linkBlock => {
     if (link.url) {
       return (
         <ContentLinksItem
-          key={link.url}
+          key={link._ref}
           heading={linkBlock.title}
           url={link.url}
           body={linkBlock.body}
@@ -26,12 +26,13 @@ export const getLinkItem = linkBlock => {
             if (!document) {
               return null
             }
-
+            console.log(document)
             return (
               <ContentLinksItem
                 key={link._ref}
-                heading={document.title}
-                url={`/${document.title}`}
+                heading={linkBlock.title}
+                body={linkBlock.body}
+                url={`/${document.path.current}`}
               />
             )
           }}

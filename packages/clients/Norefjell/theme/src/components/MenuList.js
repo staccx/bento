@@ -46,6 +46,7 @@ const IconOuter = styled.div`
 
 const ButtonLabel = styled.span`
   flex-grow: 1;
+  line-height: 1.3;
 `
 export const MenuStyle = registerStyle({ [VARIANT_DEFAULT]: Menu }, "menu")
 export default Menu

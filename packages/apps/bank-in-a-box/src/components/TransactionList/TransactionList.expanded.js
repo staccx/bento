@@ -9,22 +9,45 @@ const TransactionListItem = ({
   fromAccount,
   toAccount,
   message,
-  date
+  date,
+  fee,
+  rent,
+  installments
 }) => (
   <Outer>
     <List>
+      {rent && (
+        <SplitListItem>
+          <div>Renter</div>
+          <div>{rent}</div>
+        </SplitListItem>
+      )}
+      {installments && (
+        <SplitListItem>
+          <div>Avdrag</div>
+          <div>{installments}</div>
+        </SplitListItem>
+      )}
+      {fee && (
+        <SplitListItem>
+          <div>Gebyr</div>
+          <div>{fee}</div>
+        </SplitListItem>
+      )}
+      <SplitListItem>
+        <div>Totalt:</div>
+        <div>{amount}</div>
+      </SplitListItem>
       <SplitListItem>
         <div>Bokført dato:</div>
         <div>{date}</div>
       </SplitListItem>
-      <SplitListItem>
-        <div>Beløp:</div>
-        <div>{amount}</div>
-      </SplitListItem>
-      <SplitListItem>
-        <div>{toAccount ? "Til konto:" : "Fra konto:"}</div>
-        <div>{toAccount || fromAccount}</div>
-      </SplitListItem>
+      {!rent && (
+        <SplitListItem>
+          <div>{toAccount ? "Til konto:" : "Fra konto:"}</div>
+          <div>{toAccount || fromAccount}</div>
+        </SplitListItem>
+      )}
     </List>
   </Outer>
 )

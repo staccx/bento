@@ -1,33 +1,19 @@
 import React from "react"
 import styled from "styled-components"
 import { Wrapper, fontSmoothing } from "@staccx/base"
-import { spacing, color } from "@staccx/theme"
-import Logo from "../Logo/Logo"
+import { spacing, color, wrapper } from "@staccx/theme"
+import FooterCompanyInfo from "./Footer.CompanyInfo"
+import FooterNavigation from "./Footer.Navigation"
 
 const Footer = ({ heading, callToAction }) => (
   <Container>
     <Wrapper>
       <Content>
         <div>
-          <Logo inverted />
+          <FooterCompanyInfo />
         </div>
         <div>
-          <ul>
-            <li>Overview</li>
-            <li>Services</li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li>Overview</li>
-            <li>Services</li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li>Overview</li>
-            <li>Services</li>
-          </ul>
+          <FooterNavigation />
         </div>
       </Content>
     </Wrapper>
@@ -43,10 +29,25 @@ const Container = styled.footer`
 
 const Content = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column-reverse;
 
-  > div {
-    flex-basis: 25%;
+  @media only screen and (max-width: ${wrapper.medium}) {
+    > div:last-child {
+      margin-bottom: ${spacing.large};
+    }
+  }
+
+  @media only screen and (min-width: ${wrapper.medium}) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    > div:first-child {
+      flex-basis: 25%;
+    }
+
+    > div:last-child {
+      flex-basis: 50%;
+    }
   }
 `
 

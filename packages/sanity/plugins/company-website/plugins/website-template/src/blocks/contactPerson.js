@@ -22,6 +22,11 @@ export default {
       options: {
         hotspot: true
       }
+    },
+    {
+      name: "imageCutout",
+      title: "Image is cut out from background",
+      type: "boolean"
     }
   ],
   preview: {

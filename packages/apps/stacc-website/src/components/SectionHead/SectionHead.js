@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Heading, Layout } from "@staccx/base"
-import { spacing, font } from "@staccx/theme"
+import { spacing, font, wrapper } from "@staccx/theme"
 import { SanityImage } from "@staccx/sanity"
 
 const SectionHead = ({ heading, headingLevel, lede, illustration }) => {
@@ -32,13 +32,21 @@ const Body = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media only screen and (max-width: ${wrapper.medium}) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
 `
 
 const Lede = styled.p`
   font-size: ${font.h3};
   font-weight: 300;
   line-height: 1.8;
-  margin-right: ${spacing.large};
+
+  @media only screen and (min-width: ${wrapper.medium}) {
+    margin-right: ${spacing.large};
+  }
 `
 
 const Illustration = styled.img`
