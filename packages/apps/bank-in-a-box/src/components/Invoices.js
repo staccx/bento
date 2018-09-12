@@ -3,8 +3,9 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import ShowMore from "@tedconf/react-show-more"
 import { Button, Box } from "@staccx/base"
-import TransactionListItem from "./TransactionList/TransactionList.item"
-import TransactionListExpanded from "./TransactionList/TransactionList.expanded"
+import InvoiceListItem from "./InvoiceList/InvoiceList.item"
+import InvoiceListExpanded from "./InvoiceList/InvoiceList.expanded"
+import invoices from "../data/invoices"
 
 class Transactions extends Component {
   static propTypes = {
@@ -14,20 +15,21 @@ class Transactions extends Component {
   render() {
     return (
       <Container variant="dashboardBox">
-        <ShowMore items={this.props.transactions} by={3}>
+        <ShowMore items={invoices} by={5}>
           {({ current, onMore }) => (
             <React.Fragment>
               <List>
                 {current.map(transaction => (
-                  <TransactionListItem
-                    title={transaction._id}
+                  <InvoiceListItem
+                    title="noe greier"
                     heading={transaction.heading}
                     date={transaction.friendlyDate}
                     amount={transaction.amount}
                     key={transaction._id}
+                    status={transaction.status}
                     type={transaction.type}
                   >
-                    <TransactionListExpanded
+                    <InvoiceListExpanded
                       date={transaction.date}
                       amount={transaction.amount}
                       message={transaction.message}
@@ -38,7 +40,7 @@ class Transactions extends Component {
                       fee={transaction.fee}
                       type={transaction.type}
                     />
-                  </TransactionListItem>
+                  </InvoiceListItem>
                 ))}
               </List>
               {onMore && (
