@@ -21,12 +21,7 @@ const Person = ({
       {({ image }) => {
         const imageUrl = image.width(150).url()
         return (
-          <Flag
-            top
-            img={
-              imageUrl ? <img src={imageUrl} width="150" alt={name} /> : null
-            }
-          >
+          <Flag top>
             <Heading level={3}>{name}</Heading>
             <Title>
               {title}, {company.name}
