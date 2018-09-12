@@ -10,7 +10,7 @@ const LoanStatement = ({ history, account, transactions }) => {
       <Layout>
         <Heading level="2">Kontoutskrift</Heading>
         <AccountFilter account={account} />
-        <Transactions transactions={transactions} />
+        <Transactions transactions={account.transactions} />
         <div>
           <Button
             onClick={() =>

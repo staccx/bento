@@ -5,10 +5,10 @@ import fakeTransactions from "../data/transactions"
 
 class AccountStore {
   @observable
-  transactions = fakeTransactions
-
-  @observable
-  accounts = fakeAccounts
+  accounts = fakeAccounts.map(account => ({
+    ...account,
+    transactions: fakeTransactions[account.accountNo]
+  }))
 
   @observable
   selectedAccount = {}
