@@ -93,11 +93,14 @@ export default registerStyle(
       background-color: transparent;
       justify-content: space-between;
       width: 100%;
-      color: ${color.black};
+      color: ${color.wcag};
       border-bottom: 1px solid ${color.line};
       text-align: left;
       font-weight: ${fontWeight.normal};
       position: relative;
+      padding-top: ${spacing.small};
+      padding-bottom: ${spacing.small};
+      line-height: 1.2;
       > svg {
         position: absolute;
         right: 12px;

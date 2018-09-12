@@ -62,7 +62,7 @@ const Due = ({ history }) => {
           <Button
             onClick={() =>
               history.push({
-                pathname: "account/34551524578",
+                pathname: "/account/34551524578",
                 state: backwards
               })
             }

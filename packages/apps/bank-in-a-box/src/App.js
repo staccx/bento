@@ -7,11 +7,19 @@ import Transitions, { backwards } from "./components/transitions/transitions"
 import { ThemeComponent } from "@staccx/theme"
 import { Layout, LayoutItem, Button } from "@staccx/base"
 import Overview from "./pages/Overview"
-import Profile from "./pages/Profile"
+import Profile from "./pages/Profile/Profile"
+import ProfileEdit from "./pages/Profile/ProfileEdit"
+import AnnualStatement from "./pages/Profile/AnnualStatement"
+import ContractDocuments from "./pages/Profile/ContractDocuments"
 import LoggedOut from "./pages/LoggedOut"
 import Prices from "./pages/Prices"
 import AccountDetail from "./pages/AccountDetail"
 import Due from "./pages/Loan/Due"
+import Invoice from "./pages/Loan/Invoice"
+import LoanStatement from "./pages/Loan/LoanStatement"
+import AccountStatement from "./pages/Deposit/AccountStatement"
+import Insurance from "./pages/Loan/Insurance"
+import Withdraw from "./pages/Deposit/Withdraw"
 
 import { account, customer } from "./state"
 
@@ -53,6 +61,7 @@ class App extends Component {
                       />
                       <Route
                         path={"/account/:id"}
+                        exact
                         render={({ match }) => {
                           const acc = account.accounts.find(
                             a => a.accountId === match.params.id
@@ -67,9 +76,61 @@ class App extends Component {
                       <Route path="/logout" exact component={LoggedOut} />
                       <Route path="/prices" exact component={Prices} />
                       <Route
-                        path="/due"
+                        path={"/account/:id/due"}
                         exact
                         render={({ history }) => <Due history={history} />}
+                      />
+                      <Route
+                        path={"/account/:id/invoice"}
+                        exact
+                        render={({ history }) => <Invoice history={history} />}
+                      />
+                      <Route
+                        path={"/account/:id/loan-statement"}
+                        exact
+                        render={({ history }) => (
+                          <LoanStatement history={history} />
+                        )}
+                      />
+                      <Route
+                        path={"/account/:id/insurance"}
+                        exact
+                        render={({ history }) => (
+                          <Insurance history={history} />
+                        )}
+                      />
+                      <Route
+                        path={"/account/:id/account-statement"}
+                        exact
+                        render={({ history }) => (
+                          <AccountStatement history={history} />
+                        )}
+                      />
+                      <Route
+                        path={"/account/:id/withdraw"}
+                        exact
+                        render={({ history }) => <Withdraw history={history} />}
+                      />
+                      <Route
+                        path={"/profile/edit"}
+                        exact
+                        render={({ history }) => (
+                          <ProfileEdit history={history} />
+                        )}
+                      />
+                      <Route
+                        path={"/profile/annual-statement"}
+                        exact
+                        render={({ history }) => (
+                          <AnnualStatement history={history} />
+                        )}
+                      />
+                      <Route
+                        path={"/profile/contract-documents"}
+                        exact
+                        render={({ history }) => (
+                          <ContractDocuments history={history} />
+                        )}
                       />
                     </Switch>
                   </Transitions>

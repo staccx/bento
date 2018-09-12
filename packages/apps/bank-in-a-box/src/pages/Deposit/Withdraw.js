@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import {
-  Modal,
+  Wrapper,
   Button,
   Layout,
   LayoutItem,
@@ -11,8 +11,8 @@ import {
 } from "@staccx/base"
 import { color, spacing, font, fontWeight } from "@staccx/theme"
 
-const Deposit = () => (
-  <Modal variant="small" isOpen>
+const Withdraw = () => (
+  <Wrapper variant="bib">
     <Layout grid="rows">
       <LayoutItem>
         <Heading>Ta ut penger</Heading>
@@ -38,7 +38,7 @@ const Deposit = () => (
         <Button>Overfør</Button>
       </LayoutItem>
     </Layout>
-  </Modal>
+  </Wrapper>
 )
 
 const Heading = styled.h1`
@@ -67,4 +67,4 @@ const Number = styled.span`
   color: ${color.secondary};
 `
 
-export default Deposit
+export default Withdraw
