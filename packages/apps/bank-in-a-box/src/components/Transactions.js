@@ -33,11 +33,14 @@ class Transactions extends Component {
                       message={transaction.message}
                       toAccount={transaction.toAccount}
                       fromAccount={transaction.fromAccount}
+                      rent={transaction.rent}
+                      installments={transaction.installments}
+                      fee={transaction.fee}
                     />
                   </TransactionListItem>
                 ))}
               </List>
-              {onMore ? (
+              {onMore && (
                 <Button
                   variant="expand"
                   onClick={() => {
@@ -46,8 +49,6 @@ class Transactions extends Component {
                 >
                   Flere transaksjoner
                 </Button>
-              ) : (
-                <NoMore>Ingen flere transaksjoner</NoMore>
               )}
             </React.Fragment>
           )}
@@ -56,13 +57,6 @@ class Transactions extends Component {
     )
   }
 }
-
-const NoMore = styled.span`
-  display: block;
-  padding: ${spacing.small};
-  text-align: center;
-  color: ${color.wcag};
-`
 
 const Container = styled(Box)`
   padding: 0;

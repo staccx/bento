@@ -67,7 +67,7 @@ const BiBSpecificColor = {
   accountEarned: color.secondary,
   accountBalance: color.primary,
   accountLoan: color.negative,
-  expandedItem: color.bgGray,
+  expandedItem: color.white,
   accountInfoBorder: color.line,
   accountFilter: "#2EB6BE"
 }
