@@ -11,6 +11,7 @@ import Profile from "./pages/Profile"
 import LoggedOut from "./pages/LoggedOut"
 import Prices from "./pages/Prices"
 import AccountDetail from "./pages/AccountDetail"
+import Due from "./pages/Loan/Due"
 
 import { account, customer } from "./state"
 
@@ -65,6 +66,11 @@ class App extends Component {
                       <Route path="/profile" exact component={Profile} />
                       <Route path="/logout" exact component={LoggedOut} />
                       <Route path="/prices" exact component={Prices} />
+                      <Route
+                        path="/due"
+                        exact
+                        render={({ history }) => <Due history={history} />}
+                      />
                     </Switch>
                   </Transitions>
                 </LayoutItem>
