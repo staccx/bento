@@ -48,7 +48,8 @@
     "react-app-rewire-vendor-splitting": "^1.3.0",
     "react-app-rewire-webpack-bundle-analyzer": "^1.0.1",
     "react-app-rewired": "^1.5.2",
-    "rollup": "^0.65.0"
+    "rollup": "^0.65.0",
+    "@staccx/login-oidc": "^7.6.2"
   },
   "proxy": {
     "/api/": {
