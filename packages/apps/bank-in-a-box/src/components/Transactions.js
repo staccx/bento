@@ -1,15 +1,12 @@
 import PropTypes from "prop-types"
 import React, { Component } from "react"
 import styled from "styled-components"
-import { inject, observer } from "mobx-react"
 import ShowMore from "@tedconf/react-show-more"
 import { Button, Box } from "@staccx/base"
 import { color, spacing } from "@staccx/theme"
 import TransactionListItem from "./TransactionList/TransactionList.item"
 import TransactionListExpanded from "./TransactionList/TransactionList.expanded"
 
-@inject("account")
-@observer
 class Transactions extends Component {
   static propTypes = {
     account: PropTypes.object
@@ -18,7 +15,7 @@ class Transactions extends Component {
   render() {
     return (
       <Container variant="dashboardBox">
-        <ShowMore items={this.props.account.transactions} by={3}>
+        <ShowMore items={this.props.transactions} by={3}>
           {({ current, onMore }) => (
             <React.Fragment>
               <List>

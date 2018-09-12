@@ -23,6 +23,16 @@ import Withdraw from "./pages/Deposit/Withdraw"
 
 import { account, customer } from "./state"
 
+const Accounts = ({ history }) => (
+  <React.Fragment>
+    <Route path={"/account/:id/due"} exact render={<Due history={history} />} />
+    <Route
+      path={"/account/:id/invoice"}
+      exact
+      render={<Invoice history={history} />}
+    />
+  </React.Fragment>
+)
 class App extends Component {
   render() {
     const history = createHistory()
@@ -75,11 +85,7 @@ class App extends Component {
                       <Route path="/profile" exact component={Profile} />
                       <Route path="/logout" exact component={LoggedOut} />
                       <Route path="/prices" exact component={Prices} />
-                      <Route
-                        path={"/account/:id/due"}
-                        exact
-                        render={({ history }) => <Due history={history} />}
-                      />
+
                       <Route
                         path={"/account/:id/invoice"}
                         exact

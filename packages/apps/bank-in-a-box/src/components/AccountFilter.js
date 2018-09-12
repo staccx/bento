@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { color, fontWeight, spacing } from "@staccx/theme"
+import { color, fontWeight } from "@staccx/theme"
 import { formatCurrency } from "@staccx/formatting"
 import { Box, Button, SplitListItem } from "@staccx/base"
 

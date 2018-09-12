@@ -54,5 +54,16 @@ export default {
       fromAccount: "1204 10 12475",
       message: "Sparing"
     }
+  ],
+  "546126722": [
+    {
+      _id: "456456456gfdg46",
+      date: "12.04.18",
+      friendlyDate: "1 måned siden",
+      heading: "Penger inn på konto",
+      amount: 50000,
+      fromAccount: "1204 10 12475",
+      message: "Sparing"
+    }
   ]
 }
