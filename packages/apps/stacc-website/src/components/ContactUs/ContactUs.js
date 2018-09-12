@@ -1,17 +1,17 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { Heading, Layout, Wrapper } from "@staccx/base"
-import { color, spacing } from "@staccx/theme"
+import { color, spacing, wrapper } from "@staccx/theme"
 import { SanityImage } from "@staccx/sanity"
 import FullWidth from "../FullWidth/FullWidth"
 
-const ContactUs = ({ person, heading, image }) => {
+const ContactUs = ({ person, heading, image, imageCutOut }) => {
   return (
-    <Container>
+    <Container imageCutOut={imageCutOut || undefined}>
       <Wrapper>
         <Inner>
           <Body>
-            <Layout>
+            <Layout paddingTop="grid" paddingBottom="grid">
               <Heading level={2}>{heading}</Heading>
               <div>
                 {person.name} <br />
@@ -21,9 +21,15 @@ const ContactUs = ({ person, heading, image }) => {
             </Layout>
           </Body>
           {image && (
-            <ImgContainer>
+            <ImgContainer imageCutOut={imageCutOut || undefined}>
               <SanityImage image={image}>
-                {({ image }) => <Image src={image.url()} alt={person.name} />}
+                {({ image }) => (
+                  <Image
+                    src={image.url()}
+                    alt={person.name}
+                    imageCutOut={imageCutOut || undefined}
+                  />
+                )}
               </SanityImage>
             </ImgContainer>
           )}
@@ -35,8 +41,14 @@ const ContactUs = ({ person, heading, image }) => {
 
 const Container = styled(FullWidth)`
   background-color: ${color("blush")};
-  margin-top: 132px;
 
+  @media only screen and (min-width: ${wrapper.medium}) {
+    ${p =>
+      p.imageCutOut &&
+      css`
+        margin-top: 132px;
+      `};
+  }
   &:last-child {
     margin-bottom: -${spacing("grid")};
   }
@@ -44,14 +56,25 @@ const Container = styled(FullWidth)`
 
 const Inner = styled.div`
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: column;
+
+  @media only screen and (min-width: ${wrapper.medium}) {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+  }
 `
 
 const Image = styled.img`
-  margin-top: -132px;
   display: block;
+
+  @media only screen and (min-width: ${wrapper.medium}) {
+    ${p =>
+      p.imageCutOut &&
+      css`
+        margin-top: -132px;
+      `};
+  }
 `
 
 const Body = styled.div`
@@ -59,7 +82,13 @@ const Body = styled.div`
 `
 
 const ImgContainer = styled.div`
-  align-self: flex-end;
+  @media only screen and (min-width: ${wrapper.medium}) {
+    ${p =>
+      p.imageCutOut &&
+      css`
+        align-self: flex-end;
+      `};
+  }
 `
 
 export default ContactUs
