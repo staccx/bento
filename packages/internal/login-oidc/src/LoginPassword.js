@@ -29,15 +29,15 @@ class LoginPassword extends React.Component {
         ...props.config.oidcConfig,
         acr_values: `idp:${props.config.acrValue}`
       }
-      console.log("challenging identity", oidcConfig)
 
       challengeIdentity(oidcConfig)
     }
 
     this.state = {
-      username: null,
-      password: null,
-      stateToken: searchParams.state
+      username: "",
+      password: "",
+      stateToken: searchParams.state,
+      loginStatus: null
     }
 
     this.handlePasswordInput = this.handlePasswordInput.bind(this)
@@ -47,12 +47,12 @@ class LoginPassword extends React.Component {
 
   handlePasswordInput(e) {
     const password = e.target.value
-    this.setState({ password })
+    this.setState({ password, loginStatus: null })
   }
 
   handleUsernameInput(e) {
     const username = e.target.value
-    this.setState({ username })
+    this.setState({ username, loginStatus: null })
   }
 
   submitCredentials() {
@@ -74,14 +74,23 @@ class LoginPassword extends React.Component {
           })}`
         )
       })
-      .catch(console.error)
+      .catch(err =>
+        this.setState({
+          loginStatus: err,
+          username: "",
+          password: ""
+        })
+      )
   }
 
   render() {
     return this.props.children({
       handleUsernameInput: this.handleUsernameInput,
       handlePasswordInput: this.handlePasswordInput,
-      submitCredentials: this.submitCredentials
+      submitCredentials: this.submitCredentials,
+      loginStatus: this.state.loginStatus,
+      username: this.state.username,
+      password: this.state.password
     })
   }
 }
