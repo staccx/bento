@@ -88,9 +88,14 @@ class App extends Component {
                       <Route
                         path={"/account/:id/loan-statement"}
                         exact
-                        render={({ history }) => (
-                          <LoanStatement history={history} />
-                        )}
+                        render={({ history, match }) => {
+                          const acc = account.accounts.find(
+                            a => a.accountId === match.params.id
+                          )
+                          return (
+                            <LoanStatement account={acc} history={history} />
+                          )
+                        }}
                       />
                       <Route
                         path={"/account/:id/insurance"}

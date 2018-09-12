@@ -143,6 +143,15 @@ export default registerStyle(
           0px 4px 4px rgba(0, 0, 75, 0.023), 0px 34px 24px rgba(0, 0, 75, 0.023),
           0px 46px 66px rgba(0, 0, 75, 0.0103);
       }
+    `,
+    accountFilter: css`
+      background-color: ${color("accountFilter")};
+      color: ${color.white};
+      padding: ${spacing.tiny} ${spacing.small};
+      border-radius: ${spacing.medium};
+      min-height: ${spacing.medium};
+      height: ${spacing.medium};
+      line-height: 0;
     `
   },
   Button.themeProps.button
