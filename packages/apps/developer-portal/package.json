@@ -51,8 +51,8 @@
     "rollup": "^0.65.0"
   },
   "proxy": {
-    "/api": {
-      "target": "https://docs.test.fundu.no/api",
+    "/api/": {
+      "target": "https://docs.test.fundu.no",
       "secure": false,
       "changeOrigin": true
     },

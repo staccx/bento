@@ -1,5 +1,5 @@
 import React from "react"
-import { Table, Heading, Text } from "@staccx/base"
+import { Table, Heading, Text, ExpandListItem, List } from "@staccx/base"
 
 const MethodAttrs = ({ responses, parameters, security, requestBody }) => {
   if (responses) {
@@ -74,7 +74,6 @@ const MethodAttrs = ({ responses, parameters, security, requestBody }) => {
 
   if (requestBody) {
     const content = requestBody.content
-    console.log(content)
     const types = Object.keys(content || {})
 
     return (
@@ -96,25 +95,51 @@ const MethodAttrs = ({ responses, parameters, security, requestBody }) => {
                 blacklist={item => item === "name" || item === "description"}
                 itemToKey={item => item.name}
               >
-                {({ item }) => (
-                  <React.Fragment>
-                    <td>
-                      <Heading level={3} variant="documentationAttrType">
-                        {item.name}
-                      </Heading>
+                {({ item }) => {
+                  console.log("item", item)
+                  return (
+                    <React.Fragment>
+                      <td>
+                        <Heading level={3} variant="documentationAttrType">
+                          {item.name}
+                        </Heading>
 
-                      <Text variant="documentationAttrType">
-                        {item.required && (
-                          <Text variant="documentationAttrReq"> required </Text>
+                        {item.type === "object" ? (
+                          <Text variant="documentationAttrType">
+                            {item.required && (
+                              <Text variant="documentationAttrReq">
+                                required
+                              </Text>
+                            )}
+
+                            <List>
+                              object{" "}
+                              <ExpandListItem>
+                                {Object.keys(item.properties).map(key => (
+                                  <div>
+                                    {key} {item.properties[key].type}
+                                  </div>
+                                ))}
+                              </ExpandListItem>
+                            </List>
+                          </Text>
+                        ) : (
+                          <Text variant="documentationAttrType">
+                            {item.required && (
+                              <Text variant="documentationAttrReq">
+                                required
+                              </Text>
+                            )}
+                            {item.type}
+                          </Text>
                         )}
-                        {item.type}
-                      </Text>
-                    </td>
-                    <td>
-                      <p>{item.description}</p>
-                    </td>
-                  </React.Fragment>
-                )}
+                      </td>
+                      <td>
+                        <p>{item.description}</p>
+                      </td>
+                    </React.Fragment>
+                  )
+                }}
               </Table>
             )
           }
