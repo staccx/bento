@@ -82,6 +82,7 @@ const serializer = {
           email: node.employee.email
         }}
         image={node.image}
+        imageCutOut={node.imageCutout}
       />
     ),
     peopleList: ({ node }) => <PeopleList node={node} />,
