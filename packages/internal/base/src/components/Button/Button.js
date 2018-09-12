@@ -1,5 +1,4 @@
 import PropTypes from "prop-types"
-import React from "react"
 import styled from "styled-components"
 import {
   targetSize,
@@ -22,7 +21,7 @@ const tProps = {
   }
 }
 
-const ButtonComp = styled.button`
+const Button = styled.button`
   background-color: ${color.primary};
   color: ${p =>
     tinycolor
@@ -70,10 +69,6 @@ const ButtonComp = styled.button`
 
   ${themify(tProps.button.name)};
 `
-/**
- * Button component. Use to click stuff
- */
-const Button = props => <ButtonComp {...props} />
 
 const defaultProps = {
   children: "button",
