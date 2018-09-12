@@ -1,7 +1,7 @@
 import React from "react"
-import oidc from "oidc-client"
 import axios from "axios"
 import qs from "qs"
+import { challengeIdentity } from "./utils"
 
 class Login extends React.Component {
   constructor(props) {
@@ -17,7 +17,6 @@ class Login extends React.Component {
 
     let stage
     if (hashParams["#id_token"]) {
-      console.log("params", hashParams, searchParams)
       window.sessionStorage.setItem("stacc_id_token", hashParams["#id_token"])
       window.sessionStorage.setItem(
         "stacc_access_token",
@@ -31,7 +30,10 @@ class Login extends React.Component {
       stage = stages.waitingForId
     } else {
       stage = stages.waitingForState
-      this.challengeIdentity()
+      challengeIdentity({
+        ...props.oidcConfig,
+        acr_values: `idp:${props.config.acrValue}`
+      })
     }
 
     this.state = {
@@ -54,15 +56,6 @@ class Login extends React.Component {
       .catch(console.error)
   }
 
-  challengeIdentity() {
-    const config = {
-      ...this.props.config.oidcConfig,
-      acr_values: `idp:${this.props.config.acrValue}`
-    }
-
-    new oidc.UserManager(config).signinRedirect().catch(console.error)
-  }
-
   submitCode() {
     const state = this.state.stateToken
     const nonce = this.state.code
@@ -75,13 +68,6 @@ class Login extends React.Component {
       .post(this.props.config.codePostUri, { state, nonce })
       .then(res => {
         if (res.status === 200) {
-          console.log(
-            "redirecting to ",
-            this.props.config.oidcConfig.authority +
-              this.props.config.callbackPath +
-              "?" +
-              qs.stringify({ state })
-          )
           window.location.replace(
             this.props.config.oidcConfig.authority +
               this.props.config.callbackPath +
