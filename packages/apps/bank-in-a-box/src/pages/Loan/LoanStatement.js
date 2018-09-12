@@ -1,28 +1,19 @@
 import React from "react"
-import { Layout, Wrapper, Heading, Button } from "@staccx/base"
-import { backwards } from "../../components/transitions/transitions"
+import { Layout, Wrapper, Heading } from "@staccx/base"
 import AccountFilter from "../../components/AccountFilter"
 import Transactions from "../../components/Transactions"
+import Back from "../../components/Back"
 
 const LoanStatement = ({ history, account, transactions }) => {
   return (
     <Wrapper variant="bib">
       <Layout>
-        <Heading level="2">Kontoutskrift</Heading>
+        <div>
+          <Back history={history} path="/account/34551524578" />
+          <Heading level="2">Kontoutskrift</Heading>
+        </div>
         <AccountFilter account={account} />
         <Transactions transactions={account.transactions} />
-        <div>
-          <Button
-            onClick={() =>
-              history.push({
-                pathname: "/account/34551524578",
-                state: backwards
-              })
-            }
-          >
-            Tilbake
-          </Button>
-        </div>
       </Layout>
     </Wrapper>
   )

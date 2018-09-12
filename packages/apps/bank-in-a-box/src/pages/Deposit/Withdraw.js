@@ -7,17 +7,20 @@ import {
   LayoutItem,
   Input,
   AccountInput,
-  Alert
+  Alert,
+  Heading
 } from "@staccx/base"
-import { color, spacing, font, fontWeight } from "@staccx/theme"
+import { color, spacing, font } from "@staccx/theme"
+import Back from "../../components/Back"
 
-const Withdraw = () => (
+const Withdraw = ({ history }) => (
   <Wrapper variant="bib">
+    <div>
+      <Back history={history} path="/account/546126722" />
+      <Heading level="2">Ta ut penger</Heading>
+      <SubTitle>917 822,45 disponibelt</SubTitle>
+    </div>
     <Layout grid="rows">
-      <LayoutItem>
-        <Heading>Ta ut penger</Heading>
-        <SubTitle>917 822,45 disponibelt</SubTitle>
-      </LayoutItem>
       <LayoutItem>
         <InputContent>
           <Input label="Beløp" placeholder="0" type="tel" id="telwithdraw" />
@@ -41,18 +44,12 @@ const Withdraw = () => (
   </Wrapper>
 )
 
-const Heading = styled.h1`
-  font-size: ${font.h4};
-  text-align: center;
-  font-weight: ${fontWeight.bold};
-  color: ${color.text};
-  margin-bottom: ${spacing.tiny};
-`
 const SubTitle = styled.h1`
   font-size: ${font.h6};
-  text-align: center;
+  text-align: left;
   color: ${color.wcag};
   font-weight: normal;
+  margin-bottom: ${spacing.medium};
 `
 
 const InputContent = styled.div`
@@ -64,7 +61,7 @@ const InputContent = styled.div`
 
 const Number = styled.span`
   display: inline-block;
-  color: ${color.secondary};
+  color: ${color.primary};
 `
 
 export default Withdraw

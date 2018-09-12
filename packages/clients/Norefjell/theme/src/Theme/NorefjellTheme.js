@@ -15,9 +15,14 @@ import { IconArrowDown } from "./Icons/Icon.ArrowDown"
 import { IconArrowRight } from "./Icons/Icon.ArrowRight"
 import { IconArrowUp } from "./Icons/Icon.ArrowUp"
 import { IconLogout } from "./Icons/Icon.Logout"
+import { IconPrices } from "./Icons/Icon.Prices"
 import { IconProfile } from "./Icons/Icon.Profile"
+import { IconAccountStatement } from "./Icons/Icon.AccountStatement"
 import { LayoutStyling } from "./theme.Layouts"
 import { IconCaretRight } from "./Icons/Icon.CaretRight"
+import { IconInvoice } from "./Icons/Icon.Invoice"
+import { IconDue } from "./Icons/Icon.Due"
+import { IconInsurance } from "./Icons/Icon.Insurance"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -70,7 +75,7 @@ const BiBSpecificColor = {
   expandedItem: color.white,
   accountInfoBorder: color.line,
   accountFilter: "#2EB6BE",
-  invoice: "#FDC4A3"
+  invoice: "#3297BF"
 }
 
 const font = {
@@ -135,8 +140,13 @@ const t = new Theme(BaseTheme, {
   .add(IconArrowRight)
   .add(IconArrowUp)
   .add(IconLogout)
+  .add(IconPrices)
   .add(IconProfile)
   .add(LayoutStyling)
   .add(IconCaretRight)
+  .add(IconAccountStatement)
+  .add(IconInvoice)
+  .add(IconDue)
+  .add(IconInsurance)
 
 export default t.get

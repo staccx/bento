@@ -14,7 +14,7 @@ const ExpandListBtn = ({
   type,
   ...rest
 }) => (
-  <Item {...rest}>
+  <Item {...rest} isExpanded={isExpanded}>
     <Icon type={type}>
       {type === "DEPOSIT" && (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -28,10 +28,7 @@ const ExpandListBtn = ({
       )}
       {type === "INVOICE" && (
         <svg width="24" height="20" viewBox="0 0 24 20">
-          <path
-            d="M0 0V20H24V19V0H0ZM2 2H22V18H2V2ZM5 5V7H14V5H5ZM16 5V7H19V5H16ZM5 9V11H14V9H5ZM16 9V11H19V9H16ZM12 13V15H19V13H12Z"
-            fill="white"
-          />
+          <path d="M0 0V20H24V19V0H0ZM2 2H22V18H2V2ZM5 5V7H14V5H5ZM16 5V7H19V5H16ZM5 9V11H14V9H5ZM16 9V11H19V9H16ZM12 13V15H19V13H12Z" />
         </svg>
       )}
     </Icon>
@@ -58,17 +55,19 @@ const Item = styled.button`
   width: 100%;
   text-align: left;
   border: 0;
-  background-color: transparent;
+  background-color: ${p => (p.isExpanded ? color.bg : "transparent")};;
   align-items: center;
   padding: ${spacing.small};
   transition: background-color 0.2s ease;
   cursor: pointer;
 
+
+
   &:focus,
   &:active,
   &:hover {
     outline: none;
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: ${color.bg};
 
     ${ExpandIcon} {
       fill ${color.secondary};
@@ -84,28 +83,28 @@ const Icon = styled.div`
   height: 32px;
   margin-right: ${spacing.small};
   padding: ${spacing.tiny};
-  ${p =>
-    p.type === "DEPOSIT" &&
-    css`
-      background-color: ${color.positive};
-    `}
-  ${p =>
-    p.type === "WITHDRAWAL" &&
-    css`
-      background-color: ${color.negative};
-    `}
-  ${p =>
-    p.type === "INVOICE" &&
-    css`
-      background-color: ${color("invoice")};
-    `}
+
   border-radius: 50%;
   text-align: center;
   line-height: 32px;
   color: white;
 
   > svg {
-    fill: ${color.white};
+    ${p =>
+      p.type === "DEPOSIT" &&
+      css`
+        fill: ${color.secondary};
+      `}
+  ${p =>
+    p.type === "WITHDRAWAL" &&
+    css`
+      fill: ${color.negative};
+    `}
+  ${p =>
+    p.type === "INVOICE" &&
+    css`
+      fill: ${color("invoice")};
+    `}
     width: 100%;
   }
 `

@@ -19,26 +19,24 @@ class Transactions extends Component {
           {({ current, onMore }) => (
             <React.Fragment>
               <List>
-                {current.map(transaction => (
+                {current.map(invoice => (
                   <InvoiceListItem
                     title="noe greier"
-                    heading={transaction.heading}
-                    date={transaction.friendlyDate}
-                    amount={transaction.amount}
-                    key={transaction._id}
-                    status={transaction.status}
-                    type={transaction.type}
+                    heading={invoice.heading}
+                    date={invoice.friendlyDate}
+                    amount={invoice.amount}
+                    key={invoice._id}
+                    status={invoice.status}
+                    type={invoice.type}
                   >
                     <InvoiceListExpanded
-                      date={transaction.date}
-                      amount={transaction.amount}
-                      message={transaction.message}
-                      toAccount={transaction.toAccount}
-                      fromAccount={transaction.fromAccount}
-                      rent={transaction.rent}
-                      installments={transaction.installments}
-                      fee={transaction.fee}
-                      type={transaction.type}
+                      amount={invoice.amount}
+                      dueDate={invoice.dueDate}
+                      payTo={invoice.payTo}
+                      paid={invoice.paid}
+                      rest={invoice.rest}
+                      kid={invoice.kid}
+                      url={invoice.url}
                     />
                   </InvoiceListItem>
                 ))}

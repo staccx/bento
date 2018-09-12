@@ -4,7 +4,8 @@ import {
   color,
   spacing,
   targetSize,
-  fontWeight
+  fontWeight,
+  VARIANT_DEFAULT
 } from "@staccx/theme"
 import { Button } from "@staccx/base"
 
@@ -27,6 +28,10 @@ const invisibleButton = css`
 
 export default registerStyle(
   {
+    [VARIANT_DEFAULT]: css`
+      background-color: ${color.secondary};
+      border-radius: ${spacing.medium};
+    `,
     invisible: invisibleButton,
     expand: css`
       display: block;
@@ -109,7 +114,7 @@ export default registerStyle(
       &:hover,
       &:focus,
       &:active {
-        background-color: ${color.subtleHover};
+        background-color: ${color.bg};
         color: ${color.black};
       }
     `,
@@ -132,6 +137,7 @@ export default registerStyle(
         0px 2px 2px rgba(0, 0, 75, 0.021), 0px 32px 22px rgba(0, 0, 75, 0.021),
         0px 44px 64px rgba(0, 0, 75, 0.0101);
       border-radius: 3px;
+      width: 100%;
       text-align: left;
       transition: box-shadow 0.2s ease-out;
       &:hover,
@@ -152,6 +158,42 @@ export default registerStyle(
       min-height: ${spacing.medium};
       height: ${spacing.medium};
       line-height: 0;
+    `,
+    invoiceDownload: css`
+      background-color: ${color.secondary};
+      color: ${color.white};
+      border-radius: 3px;
+      svg {
+        width: ${spacing.medium};
+        fill: ${color.white};
+      }
+      &:hover {
+        background-color: ${color.bg};
+        color: ${color.primary};
+        svg {
+          fill: ${color.primary};
+        }
+      }
+    `,
+    back: css`
+      &,
+      &:hover,
+      &:active,
+      &:focus {
+        padding: 0;
+        background-color: transparent;
+        border-width: 0;
+        color: ${color.secondary};
+        height: 32px;
+        min-height: 32px;
+        svg {
+          margin-right: ${spacing.tiny};
+        }
+      }
+      &:hover,
+      &:focus {
+        color: ${color.primary};
+      }
     `
   },
   Button.themeProps.button

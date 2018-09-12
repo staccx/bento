@@ -1,12 +1,15 @@
 import React from "react"
 import { Layout, Wrapper, Heading, Button, Paragraph, List } from "@staccx/base"
-import { backwards } from "../../components/transitions/transitions"
+import Back from "../../components/Back"
 
 const Insurance = ({ history }) => {
   return (
     <Wrapper variant="bib">
       <Layout>
-        <Heading level="2">Forsikring</Heading>
+        <div>
+          <Back history={history} path="/account/34551524578" />
+          <Heading level="2">Betalingsforsikring</Heading>
+        </div>
         <Paragraph>
           Betalingsforsikring gir deg trygghet og en bekymring mindre dersom du
           skulle bli sykemeldt eller miste jobben/bli permittert.
@@ -55,16 +58,6 @@ const Insurance = ({ history }) => {
             500 000,-.
           </li>
         </List>
-        <Button
-          onClick={() =>
-            history.push({
-              pathname: "/account/34551524578",
-              state: backwards
-            })
-          }
-        >
-          Tilbake
-        </Button>
       </Layout>
     </Wrapper>
   )

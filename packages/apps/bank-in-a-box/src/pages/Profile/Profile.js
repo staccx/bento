@@ -7,16 +7,21 @@ import {
   Toggle,
   Label,
   Flag,
-  Wrapper
+  Wrapper,
+  Heading
 } from "@staccx/base"
-import { color, spacing, font, fontWeight, ThemeComponent } from "@staccx/theme"
+import { ThemeComponent } from "@staccx/theme"
 import menuProfile from "../../data/menuProfile"
+import Back from "../../components/Back"
 
 const Profile = ({ history }) => (
   <Wrapper variant="bib">
     <Layout>
       <LayoutItem>
-        <Heading>Min profil</Heading>
+        <div>
+          <Back history={history} path="/" />
+          <Heading level="2">Min profil</Heading>
+        </div>
       </LayoutItem>
       <ThemeComponent
         tagName={"menu"}
@@ -67,14 +72,6 @@ const Profile = ({ history }) => (
     </Layout>
   </Wrapper>
 )
-
-const Heading = styled.h1`
-  font-size: ${font.h4};
-  text-align: center;
-  font-weight: ${fontWeight.bold};
-  color: ${color.primary};
-  margin-bottom: ${spacing.tiny};
-`
 
 const ModifiedLabel = styled(Label)`
   font-weight: normal;

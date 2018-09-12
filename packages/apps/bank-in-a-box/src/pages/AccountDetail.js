@@ -5,6 +5,7 @@ import AccountInfo from "../components/Account.Info"
 import { ThemeComponent } from "@staccx/theme"
 import menuLoan from "../data/menuLoan"
 import menuDeposit from "../data/menuDeposit"
+import Back from "../components/Back"
 
 const AccountDetail = ({ account, history }) => {
   const menu =
@@ -15,7 +16,12 @@ const AccountDetail = ({ account, history }) => {
   return (
     <Wrapper variant="bib">
       <Layout>
-        <Account account={account} />
+        <div>
+          <div>
+            <Back history={history} path="/" />
+          </div>
+          <Account account={account} />
+        </div>
         <ThemeComponent
           tagName={"menu"}
           menuElements={menu}

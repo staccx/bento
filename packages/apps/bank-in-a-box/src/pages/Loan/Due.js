@@ -9,6 +9,7 @@ import {
   Legend
 } from "@staccx/base"
 import { backwards } from "../../components/transitions/transitions"
+import Back from "../../components/Back"
 
 const handleRadioPillChange = value => {
   console.log("You selected " + value)
@@ -38,7 +39,10 @@ const Due = ({ history }) => {
   return (
     <Wrapper variant="bib">
       <Layout>
-        <Heading level="2">Velg forfallsdato</Heading>
+        <div>
+          <Back history={history} path="/account/34551524578" />
+          <Heading level="2">Forfallsdato</Heading>
+        </div>
         <div>
           <Legend>Hvilken dag vil du ha forfall hver måned?</Legend>
           <RadioPill
