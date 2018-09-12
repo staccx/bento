@@ -16,7 +16,8 @@
     "website-template",
     "stacc-logo",
     "stacc-styling",
-    "@sanity/production-preview"
+    "@sanity/production-preview",
+    "@sanity/google-maps-input"
   ],
   "parts": [
     {

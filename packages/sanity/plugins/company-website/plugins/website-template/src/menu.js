@@ -6,7 +6,13 @@ export default {
     {
       type: "string",
       name: "name",
-      title: "Name"
+      title: "Name",
+      description: "For reference here"
+    },
+    {
+      type: "string",
+      name: "title",
+      title: "Title"
     },
     {
       type: "array",
@@ -20,5 +26,10 @@ export default {
       title: "Invert routes",
       of: [{ type: "string" }]
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: "name"
+    }
+  }
 }
