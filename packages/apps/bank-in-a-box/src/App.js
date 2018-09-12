@@ -10,6 +10,7 @@ import Overview from "./pages/Overview"
 import Profile from "./pages/Profile"
 import LoggedOut from "./pages/LoggedOut"
 import Prices from "./pages/Prices"
+import AccountDetail from "./pages/AccountDetail"
 
 import { account, customer } from "./state"
 
@@ -57,8 +58,7 @@ class App extends Component {
                           )
                           console.log("her er kontoen du trenger", toJS(acc))
                           return (
-                            <div
-                            >{`lag accountDetail component og bruk acc som finnes her til å vise detaljer. Sjekk loggen`}</div>
+                            <AccountDetail account={acc} history={history} />
                           )
                         }}
                       />

@@ -30,12 +30,7 @@ export default registerStyle(
     `,
     accountInfo: css`
       ${defaultBox};
-      margin: ${spacing.medium} -${spacing.medium} -${spacing.medium};
       padding: ${spacing.medium};
-      border-radius: 3px;
-      background-color: ${color.primary};
-      color: ${color.white};
-      z-index: 50;
       ${fontSmoothing};
     `
   },

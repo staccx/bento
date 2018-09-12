@@ -1,61 +1,27 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
-import { font, spacing, color } from "@staccx/theme"
-import { Box, List, SplitListItem, Close, Button } from "@staccx/base"
-import { formatCurrency } from "@staccx/formatting"
+import styled, { css } from "styled-components"
+import { color, fontWeight } from "@staccx/theme"
+import { Box, List, SplitListItem } from "@staccx/base"
 import { BounceIn } from "@staccx/animations"
+import AccountInfoLoan from "./Account.Info.Loan"
+import AccountInfoDeposit from "./Account.Info.Deposit"
 
 const AccountInfo = ({ account, toggleInfo }) => {
   return (
     <Outer>
       <Box variant={"accountInfo"}>
-        <Header>
-          <Heading>Din konto</Heading>
-          <Button variant={"invisible"} onClick={() => toggleInfo()}>
-            <CloseIcon />
-          </Button>
-        </Header>
         <List>
-          <AccountInfoListItem>
-            <strong>KID: </strong>
-            <div>{account.accountId}</div>
-          </AccountInfoListItem>
-          <AccountInfoListItem>
-            <strong>Disponibelt beløp: </strong>
-            <div>
-              {formatCurrency(account.availableBalance, { precision: 2 })}
-            </div>
-          </AccountInfoListItem>
-          <AccountInfoListItem>
-            <strong>Bokført saldo: </strong>
-            <div>{formatCurrency(account.bookedBalance, { precision: 2 })}</div>
-          </AccountInfoListItem>
-          <AccountInfoListItem>
-            <strong>Ikke bokført rente: </strong>
-            <div>
-              {formatCurrency(account.accruedInterest, { precision: 2 })}
-            </div>
-          </AccountInfoListItem>
-          <AccountInfoListItem>
-            <strong>Ordinær rentesats: </strong>
-            <div>{account.effectiveRate}</div>
-          </AccountInfoListItem>
+          {account.accountType === "LOAN" ? (
+            <AccountInfoLoan account={account} />
+          ) : (
+            <AccountInfoDeposit account={account} />
+          )}
         </List>
       </Box>
     </Outer>
   )
 }
-
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: ${spacing.small};
-`
-
-const CloseIcon = styled(Close)`
-  fill: currentColor;
-`
 
 const Outer = styled.div`
   position: relative;
@@ -64,14 +30,21 @@ const Outer = styled.div`
   z-index: 50;
   animation: 0.4s ${BounceIn} cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 1;
 `
-
-const AccountInfoListItem = styled(SplitListItem)`
+export const Strong = styled.strong`
+  font-weight: ${fontWeight.normal};
+`
+export const AccountInfoListItem = styled(SplitListItem)`
   padding: 10px 0;
   border-color: ${color("accountInfoBorder")};
-`
-
-const Heading = styled.h2`
-  font-size: ${font.h3};
+  color: ${color.wcag};
+  ${p =>
+    p.emphasize &&
+    css`
+      &,
+      & ${Strong} {
+        font-weight: ${fontWeight.bold};
+      }
+    `};
 `
 
 AccountInfo.propTypes = {

@@ -67,8 +67,9 @@ const BiBSpecificColor = {
   accountHeading: color.disabled,
   accountEarned: color.secondary,
   accountBalance: color.primary,
+  accountLoan: color.negative,
   expandedItem: color.bgGray,
-  accountInfoBorder: rgba(color.white, 0.5)
+  accountInfoBorder: color.line
 }
 
 const font = {

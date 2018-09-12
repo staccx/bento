@@ -120,6 +120,26 @@ export default registerStyle(
         border-width: 0;
         width: 100%;
       }
+    `,
+    accountBox: css`
+      background: ${color.white};
+      padding: ${spacing.small} ${spacing.medium};
+      box-shadow: 0px 16px 16px rgba(0, 0, 75, 0.002),
+        0px 8px 8px rgba(0, 0, 75, 0.001), 0px 4px 7px rgba(0, 0, 75, 0.021),
+        0px 2px 2px rgba(0, 0, 75, 0.021), 0px 32px 22px rgba(0, 0, 75, 0.021),
+        0px 44px 64px rgba(0, 0, 75, 0.0101);
+      border-radius: 3px;
+      text-align: left;
+      transition: box-shadow 0.2s ease-out;
+      &:hover,
+      &:focus,
+      &:active {
+        background: ${color.white};
+        box-shadow: 0px 18px 18px rgba(0, 0, 75, 0.004),
+          0px 10px 10px rgba(0, 0, 75, 0.003), 0px 6px 9px rgba(0, 0, 75, 0.023),
+          0px 4px 4px rgba(0, 0, 75, 0.023), 0px 34px 24px rgba(0, 0, 75, 0.023),
+          0px 46px 66px rgba(0, 0, 75, 0.0103);
+      }
     `
   },
   Button.themeProps.button
