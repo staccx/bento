@@ -3,7 +3,6 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import ShowMore from "@tedconf/react-show-more"
 import { Button, Box } from "@staccx/base"
-import { color, spacing } from "@staccx/theme"
 import TransactionListItem from "./TransactionList/TransactionList.item"
 import TransactionListExpanded from "./TransactionList/TransactionList.expanded"
 
@@ -36,6 +35,7 @@ class Transactions extends Component {
                       rent={transaction.rent}
                       installments={transaction.installments}
                       fee={transaction.fee}
+                      type={transaction.type}
                     />
                   </TransactionListItem>
                 ))}

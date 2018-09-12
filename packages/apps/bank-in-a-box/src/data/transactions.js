@@ -7,7 +7,8 @@ export default {
       heading: "Penger ut av konto",
       amount: -5000,
       toAccount: "1204 10 12475",
-      message: "Til aksjesparekonto"
+      message: "Til aksjesparekonto",
+      type: "WITHDRAWAL"
     },
     {
       _id: "siodh9wq",
@@ -16,7 +17,8 @@ export default {
       heading: "Penger inn på konto",
       amount: 50000,
       fromAccount: "1204 10 12475",
-      message: "Sparing"
+      message: "Sparing",
+      type: "DEPOSIT"
     },
     {
       _id: "siodh9swq",
@@ -25,7 +27,8 @@ export default {
       heading: "Penger inn på konto",
       amount: 50000,
       fromAccount: "1204 10 12475",
-      message: "Sparing"
+      message: "Sparing",
+      type: "DEPOSIT"
     },
     {
       _id: "2131231ewads",
@@ -34,7 +37,8 @@ export default {
       heading: "Penger ut av konto",
       amount: -5000,
       toAccount: "1204 10 12475",
-      message: "Til aksjesparekonto"
+      message: "Til aksjesparekonto",
+      type: "WITHDRAWAL"
     },
     {
       _id: "wrehtjrytku",
@@ -43,7 +47,8 @@ export default {
       heading: "Penger inn på konto",
       amount: 50000,
       fromAccount: "1204 10 12475",
-      message: "Sparing"
+      message: "Sparing",
+      type: "DEPOSIT"
     },
     {
       _id: "ujtyfgd",
@@ -52,7 +57,8 @@ export default {
       heading: "Penger inn på konto",
       amount: 50000,
       fromAccount: "1204 10 12475",
-      message: "Sparing"
+      message: "Sparing",
+      type: "DEPOSIT"
     }
   ],
   "34551524578": [
@@ -66,7 +72,8 @@ export default {
       rent: 1000,
       installments: 1000,
       fee: 1000,
-      amount: 3000
+      amount: 3000,
+      type: "INVOICE"
     },
     {
       _id: "gfdsfgsd4dfsg45",
@@ -75,7 +82,8 @@ export default {
       heading: "Innbetaling",
       fromAccount: "1204 10 12475",
       message: "Betaling",
-      amount: 3500
+      amount: 3500,
+      type: "DEPOSIT"
     },
     {
       _id: "bcvcvb4554",
@@ -85,7 +93,8 @@ export default {
       fromAccount: "1204 10 12475",
       message: "1020",
       installments: 500,
-      amount: 500
+      amount: 500,
+      type: "INVOICE"
     }
   ]
 }

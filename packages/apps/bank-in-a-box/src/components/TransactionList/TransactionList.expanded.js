@@ -12,7 +12,8 @@ const TransactionListItem = ({
   date,
   fee,
   rent,
-  installments
+  installments,
+  type
 }) => (
   <Outer>
     <List>
@@ -39,10 +40,14 @@ const TransactionListItem = ({
         <div>{amount}</div>
       </SplitListItem>
       <SplitListItem>
-        <div>Bokført dato:</div>
+        <div>
+          {type === "DEPOSIT" && "Bokført dato:"}
+          {type === "WITHDRAWAL" && "Bokført dato:"}
+          {type === "INVOICE" && "Forfallsdato:"}
+        </div>
         <div>{date}</div>
       </SplitListItem>
-      {!rent && (
+      {!type === "INVOICE" && (
         <SplitListItem>
           <div>{toAccount ? "Til konto:" : "Fra konto:"}</div>
           <div>{toAccount || fromAccount}</div>
