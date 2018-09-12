@@ -52,6 +52,9 @@ const serializer = {
     linkBlock: ({ node }) => getLinkItem(node),
     section: ({ node }) => {
       const { head, links } = node
+      if (!head) {
+        return null
+      }
       return (
         <div>
           <Layout>
