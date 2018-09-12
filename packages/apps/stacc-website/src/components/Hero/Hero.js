@@ -100,6 +100,7 @@ const SecondaryContentContainer = styled(ItemGroup)`
     justify-content: space-around;
   }
 
+  @media only screen and (min-width: ${wrapper.large}) {
   ${props =>
     !props.singleton &&
     css`
@@ -114,6 +115,7 @@ const SecondaryContentContainer = styled(ItemGroup)`
       }
     `};
   }
+  }
 `
 
 const SecondaryContent = styled.div`
@@ -122,6 +124,12 @@ const SecondaryContent = styled.div`
 
   > h3 {
     margin-bottom: ${spacing.small};
+  }
+
+  @media only screen and (max-width: ${wrapper.large}) {
+    &:first-child {
+      margin-bottom: ${spacing.large};
+    }
   }
 `
 
