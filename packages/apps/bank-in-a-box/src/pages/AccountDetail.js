@@ -7,7 +7,10 @@ import menuLoan from "../data/menuLoan"
 import menuDeposit from "../data/menuDeposit"
 
 const AccountDetail = ({ account, history }) => {
-  const menu = account.accountType === "LOAN" ? menuLoan : menuDeposit
+  const menu =
+    account.accountType === "LOAN"
+      ? menuLoan(account.accountId)
+      : menuDeposit(account.accountId)
 
   return (
     <Wrapper variant="bib">

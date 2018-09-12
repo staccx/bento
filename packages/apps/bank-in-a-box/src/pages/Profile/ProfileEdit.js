@@ -6,14 +6,12 @@ import {
   LayoutItem,
   Input,
   PhoneInput,
-  Toggle,
-  Label,
-  Flag,
   Wrapper
 } from "@staccx/base"
 import { color, spacing, font, fontWeight } from "@staccx/theme"
+import customer from "../../data/customer"
 
-const Deposit = () => (
+const ProfileEdit = () => (
   <Wrapper variant="bib">
     <Layout>
       <LayoutItem>
@@ -24,7 +22,7 @@ const Deposit = () => (
           <Input
             label="E-post adresse"
             placeholder="mail@mail.com"
-            value="test@test.com"
+            value={customer.mail}
             type="email"
             id="yourmail"
           />
@@ -32,46 +30,10 @@ const Deposit = () => (
             label="Telefonnummer"
             type="tel"
             placeholder="XXX XX XXX"
-            value="47407739"
+            value={customer.tel}
             id="yourtel"
           />
         </InputContent>
-      </LayoutItem>
-      <LayoutItem>
-        <Flag
-          small
-          img={
-            <Toggle
-              group="testddd"
-              id="samtykke-elektronisk-komm"
-              onChange={() => null}
-              defaultChecked
-            />
-          }
-        >
-          <ModifiedLabel htmlFor="samtykke-elektronisk-komm">
-            Jeg samtykker til mottak av elektronisk kommunikasjon og at
-            dokumentene kan sendes til meg elektronisk
-          </ModifiedLabel>
-        </Flag>
-      </LayoutItem>
-      <LayoutItem>
-        <Flag
-          small
-          img={
-            <Toggle
-              defaultChecked
-              group="news"
-              id="tilbud-nyheter"
-              onChange={() => null}
-            />
-          }
-        >
-          <ModifiedLabel htmlFor="tilbud-nyheter">
-            Jeg samtykker til mottak av tilbud og nyheter om andre produkter fra
-            Nordfjell-banken
-          </ModifiedLabel>
-        </Flag>
       </LayoutItem>
       <LayoutItem>
         <Center>
@@ -90,10 +52,6 @@ const Heading = styled.h1`
   margin-bottom: ${spacing.tiny};
 `
 
-const ModifiedLabel = styled(Label)`
-  font-weight: normal;
-`
-
 const Center = styled.div`
   text-align: center;
 `
@@ -107,4 +65,4 @@ const InputContent = styled.div`
   margin: auto;
 `
 
-export default Deposit
+export default ProfileEdit

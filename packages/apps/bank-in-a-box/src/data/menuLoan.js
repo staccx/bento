@@ -2,33 +2,33 @@ import React from "react"
 import { ThemeComponent } from "@staccx/theme"
 import { forwards } from "../components/transitions/transitions"
 
-const menuLoan = [
+const menuLoan = accountId => [
   {
     _id: "s45ht456gcf",
     label: "Kontoutskrift",
     icon: <ThemeComponent tagName={"IconProfile"} />,
-    path: "/account-statement",
+    path: `/account/${accountId}/loan-statement`,
     direction: forwards
   },
   {
     _id: "tetr",
     label: "Faktura",
     icon: <ThemeComponent tagName={"IconArrowUp"} />,
-    path: "/invoice",
+    path: `/account/${accountId}/invoice`,
     direction: forwards
   },
   {
     _id: "hgffghd654h",
     label: "Endre forfallsdag",
     icon: <ThemeComponent tagName={"IconLogout"} />,
-    path: "/due",
+    path: `/account/${accountId}/due`,
     direction: forwards
   },
   {
     _id: "hgfdd12dhfg",
     label: "Betalingsforsikring",
     icon: <ThemeComponent tagName={"IconLogout"} />,
-    path: "/insurance",
+    path: `/account/${accountId}/insurance`,
     direction: forwards
   }
 ]
