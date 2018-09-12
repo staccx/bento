@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 import { List, Heading } from "@staccx/base"
-import { spacing, color, font } from "@staccx/theme"
+import { spacing, color, font, wrapper } from "@staccx/theme"
 import { dashIt } from "@staccx/formatting"
 
 const NavigationSubpage = ({ inverted, items, name, title }) => (
@@ -29,12 +29,15 @@ const NavigationSubpage = ({ inverted, items, name, title }) => (
 )
 
 const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
   margin-top: ${spacing.small};
   border-top: 2px solid ${color.line};
   padding-top: ${spacing.small};
   padding-bottom: ${spacing("grid")};
+
+  @media only screen and (min-width: ${wrapper.medium}) {
+    display: flex;
+    justify-content: space-between;
+  }
 `
 
 const ProductName = styled(Heading)`
@@ -44,10 +47,13 @@ const ProductName = styled(Heading)`
 const Navigation = styled.nav`
   > * {
     display: flex;
-    justify-content: space-between;
 
     > li:not(:last-child) {
       margin-right: ${spacing.medium};
+    }
+
+    @media only screen and (min-width: ${wrapper.medium}) {
+      justify-content: space-between;
     }
   }
 `
