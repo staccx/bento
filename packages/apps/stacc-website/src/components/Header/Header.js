@@ -6,7 +6,7 @@ import { spacing } from "@staccx/theme"
 import Logo from "../Logo/Logo"
 import HeaderMenu from "./Header.Menu"
 import { SanityDocument } from "@staccx/sanity"
-import { Loading, Wrapper } from "@staccx/base"
+import { Wrapper } from "@staccx/base"
 
 const Header = ({ match, location }) => {
   return (
@@ -16,7 +16,7 @@ const Header = ({ match, location }) => {
     >
       {({ document }) => {
         if (!document) {
-          return <Loading />
+          return null
         }
         const inverted =
           (document.inverted || []).indexOf(location.pathname) !== -1
