@@ -6,7 +6,7 @@ import { spacing } from "@staccx/theme"
 import Logo from "../Logo/Logo"
 import HeaderMenu from "./Header.Menu"
 import { SanityDocument } from "@staccx/sanity"
-import { Wrapper } from "@staccx/base"
+import { Wrapper, hideVisually } from "@staccx/base"
 
 const Header = ({ match, location }) => {
   return (
@@ -26,6 +26,7 @@ const Header = ({ match, location }) => {
               <Inner>
                 <LogoLink to="/">
                   <Logo inverted={inverted} />
+                  <LogoTitle>Stacc Home</LogoTitle>
                 </LogoLink>
                 <HeaderMenu inverted={inverted} items={document.links} />
               </Inner>
@@ -56,6 +57,10 @@ const Inner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`
+
+const LogoTitle = styled.span`
+  ${hideVisually};
 `
 
 Header.defaultProps = {

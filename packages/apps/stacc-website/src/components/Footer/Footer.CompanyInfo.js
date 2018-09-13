@@ -10,8 +10,8 @@ const createAddress = address => {
   const lines = address.split("\n")
   return (
     <div>
-      {lines.map(line => (
-        <p>{line}</p>
+      {lines.map((line, index) => (
+        <p key={index}>{line}</p>
       ))}
       <p>
         <FooterLink
@@ -91,7 +91,7 @@ const CompanyName = styled(Heading)`
 `
 
 const FooterLink = styled.a`
-  color: ${color("g1")};
+  color: #929292;
   text-decoration: none;
 
   &:hover,

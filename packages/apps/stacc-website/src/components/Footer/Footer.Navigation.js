@@ -45,7 +45,7 @@ const FooterNavigation = ({ heading, callToAction }) => (
           <div>
             <Layout>
               {subMenus.map(m => (
-                <div>
+                <div key={m._key}>
                   <SubNavHeading level={3}>{m.title}</SubNavHeading>
                   <SubNav>
                     {m.submenu.map(submenuItem => (
@@ -74,7 +74,7 @@ const SubNav = styled.ul`
 
 const SubNavHeading = styled(Heading)`
   font-size: ${font.base};
-  color: ${color("g1")};
+  color: #929292;
   font-weight: normal;
 `
 
