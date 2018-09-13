@@ -7,23 +7,30 @@ import {
   Toggle,
   Label,
   Flag,
-  Wrapper
+  Wrapper,
+  Heading
 } from "@staccx/base"
-import { color, spacing, font, fontWeight, ThemeComponent } from "@staccx/theme"
+import { ThemeComponent } from "@staccx/theme"
 import menuProfile from "../../data/menuProfile"
+import Back from "../../components/Back"
 
 const Profile = ({ history }) => (
   <Wrapper variant="bib">
     <Layout>
-      <LayoutItem>
-        <Heading>Min profil</Heading>
+      <LayoutItem variant="fadeIn" delay="200">
+        <div>
+          <Back history={history} path="/" />
+          <Heading level="2">Min profil</Heading>
+        </div>
       </LayoutItem>
-      <ThemeComponent
-        tagName={"menu"}
-        menuElements={menuProfile}
-        history={history}
-      />
-      <LayoutItem>
+      <LayoutItem variant="fadeIn" delay="400">
+        <ThemeComponent
+          tagName={"menu"}
+          menuElements={menuProfile}
+          history={history}
+        />
+      </LayoutItem>
+      <LayoutItem variant="fadeIn" delay="600">
         <Flag
           small
           img={
@@ -41,7 +48,7 @@ const Profile = ({ history }) => (
           </ModifiedLabel>
         </Flag>
       </LayoutItem>
-      <LayoutItem>
+      <LayoutItem variant="fadeIn" delay="800">
         <Flag
           small
           img={
@@ -59,29 +66,15 @@ const Profile = ({ history }) => (
           </ModifiedLabel>
         </Flag>
       </LayoutItem>
-      <LayoutItem>
-        <Center>
-          <Button>Lagre</Button>
-        </Center>
+      <LayoutItem variant="fadeIn" delay="900">
+        <Button>Lagre</Button>
       </LayoutItem>
     </Layout>
   </Wrapper>
 )
 
-const Heading = styled.h1`
-  font-size: ${font.h4};
-  text-align: center;
-  font-weight: ${fontWeight.bold};
-  color: ${color.primary};
-  margin-bottom: ${spacing.tiny};
-`
-
 const ModifiedLabel = styled(Label)`
   font-weight: normal;
-`
-
-const Center = styled.div`
-  text-align: center;
 `
 
 export default Profile

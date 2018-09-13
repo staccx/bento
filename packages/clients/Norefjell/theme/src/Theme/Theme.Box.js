@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { color, registerStyle, spacing } from "@staccx/theme"
+import { color, registerStyle, spacing, fontWeight } from "@staccx/theme"
 import { Box, fontSmoothing } from "@staccx/base"
 
 const defaultBox = css`
@@ -16,6 +16,7 @@ export default registerStyle(
     dashboardBox: defaultBox,
     accountBox: defaultBox,
     adBox: defaultBox,
+    contractBox: defaultBox,
     headerContainer: css`
       padding: ${spacing.large} 0 0;
     `,
@@ -32,6 +33,42 @@ export default registerStyle(
       ${defaultBox};
       padding: ${spacing.medium};
       ${fontSmoothing};
+      position: relative;
+    `,
+    accountFilter: css`
+      ${defaultBox};
+      padding: ${spacing.medium};
+      ${fontSmoothing};
+      position: relative;
+      padding-top: 52px;
+      padding-bottom: ${spacing.small};
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    `,
+    accountFilterHeader: css`
+      display: flex;
+      width: 100%;
+      margin-left: -${spacing.medium};
+      background-color: ${color("accountFilter")};
+      position: absolute;
+      justify-content: space-between;
+      color: ${color.white};
+      top: 0;
+      padding-top: ${spacing.small};
+      padding-bottom: ${spacing.small};
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+      font-weight: ${fontWeight.bold};
+    `,
+    profileAdress: css`
+      background-color: #f0f0f0;
+    `,
+    prices: css`
+      ${defaultBox};
+      padding-left: 0;
+      padding-right: 0;
+      color: ${color.wcag};
     `
   },
   Box.themeProps.box

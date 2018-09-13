@@ -11,9 +11,9 @@ const menuDeposit = accountId => [
     direction: forwards
   },
   {
-    _id: "s45ht456gcf",
+    _id: "s45dsgcf",
     label: "Kontoutskrift",
-    icon: <ThemeComponent tagName={"IconProfile"} />,
+    icon: <ThemeComponent tagName={"IconAccountStatement"} />,
     path: `/account/${accountId}/account-statement`,
     direction: forwards
   }

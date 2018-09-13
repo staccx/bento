@@ -1,13 +1,14 @@
 import { action, observable } from "mobx"
 import { getAccount, getTransactions } from "./api"
 import fakeAccounts from "../data/accounts"
+import fakeTransactions from "../data/transactions"
 
 class AccountStore {
   @observable
-  transactions = []
-
-  @observable
-  accounts = fakeAccounts
+  accounts = fakeAccounts.map(account => ({
+    ...account,
+    transactions: fakeTransactions[account.accountNo]
+  }))
 
   @observable
   selectedAccount = {}

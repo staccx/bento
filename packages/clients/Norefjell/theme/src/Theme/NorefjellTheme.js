@@ -1,6 +1,5 @@
 import { BaseTheme } from "@staccx/base"
 import { Theme } from "@staccx/theme"
-import { rgba } from "polished"
 import reset from "./reset"
 import Button from "./Theme.Button"
 import Modal from "./Theme.Wrapper"
@@ -16,9 +15,17 @@ import { IconArrowDown } from "./Icons/Icon.ArrowDown"
 import { IconArrowRight } from "./Icons/Icon.ArrowRight"
 import { IconArrowUp } from "./Icons/Icon.ArrowUp"
 import { IconLogout } from "./Icons/Icon.Logout"
+import { IconPrices } from "./Icons/Icon.Prices"
 import { IconProfile } from "./Icons/Icon.Profile"
-import { LayoutStyling } from "./theme.Layouts"
+import { IconAccountStatement } from "./Icons/Icon.AccountStatement"
+import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { IconCaretRight } from "./Icons/Icon.CaretRight"
+import { IconInvoice } from "./Icons/Icon.Invoice"
+import { IconDue } from "./Icons/Icon.Due"
+import { IconInsurance } from "./Icons/Icon.Insurance"
+import { IconPdf } from "./Icons/Icon.Pdf"
+import { IconAnnualStatement } from "./Icons/Icon.AnnualStatement"
+import { IconContracts } from "./Icons/Icon.Contracts"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -68,8 +75,11 @@ const BiBSpecificColor = {
   accountEarned: color.secondary,
   accountBalance: color.primary,
   accountLoan: color.negative,
-  expandedItem: color.bgGray,
-  accountInfoBorder: color.line
+  expandedItem: color.white,
+  accountInfoBorder: color.line,
+  accountFilter: "#2EB6BE",
+  invoice: "#3297BF",
+  mainButton: "#2EB6BE"
 }
 
 const font = {
@@ -96,6 +106,11 @@ const fontFamily = {
   body: "IBM Plex Sans"
 }
 
+const fontWeight = {
+  bold: "700",
+  normal: "400"
+}
+
 const t = new Theme(BaseTheme, {
   name: "Norfjell",
   layout: {
@@ -103,6 +118,7 @@ const t = new Theme(BaseTheme, {
     menuArea: "aside"
   },
   font: { ...font, ...BiBSpecificFont },
+  fontWeight,
   color: { ...color, ...BiBSpecificColor },
   wrapper,
   targetSize,
@@ -128,8 +144,17 @@ const t = new Theme(BaseTheme, {
   .add(IconArrowRight)
   .add(IconArrowUp)
   .add(IconLogout)
+  .add(IconPrices)
   .add(IconProfile)
   .add(LayoutStyling)
+  .add(LayoutItemStyling)
   .add(IconCaretRight)
+  .add(IconAccountStatement)
+  .add(IconInvoice)
+  .add(IconDue)
+  .add(IconInsurance)
+  .add(IconPdf)
+  .add(IconAnnualStatement)
+  .add(IconContracts)
 
 export default t.get

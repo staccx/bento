@@ -6,9 +6,11 @@ import {
   Button,
   RadioPill,
   RadioPillItem,
-  Legend
+  Legend,
+  LayoutItem
 } from "@staccx/base"
 import { backwards } from "../../components/transitions/transitions"
+import Back from "../../components/Back"
 
 const handleRadioPillChange = value => {
   console.log("You selected " + value)
@@ -38,8 +40,11 @@ const Due = ({ history }) => {
   return (
     <Wrapper variant="bib">
       <Layout>
-        <Heading level="2">Velg forfallsdato</Heading>
-        <div>
+        <LayoutItem variant="fadeIn" delay="200">
+          <Back history={history} path="/account/34551524578" />
+          <Heading level="2">Forfallsdato</Heading>
+        </LayoutItem>
+        <LayoutItem variant="fadeIn" delay="400">
           <Legend>Hvilken dag vil du ha forfall hver måned?</Legend>
           <RadioPill
             onChange={handleRadioPillChange}
@@ -57,8 +62,8 @@ const Due = ({ history }) => {
               </RadioPillItem>
             ))}
           </RadioPill>
-        </div>
-        <div>
+        </LayoutItem>
+        <LayoutItem variant="fadeIn" delay="600">
           <Button
             onClick={() =>
               history.push({
@@ -69,7 +74,7 @@ const Due = ({ history }) => {
           >
             Lagre
           </Button>
-        </div>
+        </LayoutItem>
       </Layout>
     </Wrapper>
   )

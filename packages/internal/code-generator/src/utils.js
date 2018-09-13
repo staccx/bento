@@ -78,7 +78,12 @@ const fromOperation = (
         const exampleKey = Reflect.ownKeys(content.examples)[0]
         example = content.examples[exampleKey]
       } else if (content.example) {
-        example = content.example
+        const keys = Object.keys(content.example)
+        if (keys.length === 1 && typeof content.example[keys[0]] === "object") {
+          example = content.example[keys[0]]
+        } else {
+          example = content.example
+        }
       }
 
       if (example) {

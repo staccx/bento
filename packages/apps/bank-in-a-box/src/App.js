@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { Provider } from "mobx-react"
 import { Router, Route, Switch } from "react-router-dom"
 import createHistory from "history/createBrowserHistory"
-import { toJS } from "mobx"
 import Transitions, { backwards } from "./components/transitions/transitions"
 import { ThemeComponent } from "@staccx/theme"
 import { Layout, LayoutItem, Button } from "@staccx/base"
@@ -13,15 +12,9 @@ import AnnualStatement from "./pages/Profile/AnnualStatement"
 import ContractDocuments from "./pages/Profile/ContractDocuments"
 import LoggedOut from "./pages/LoggedOut"
 import Prices from "./pages/Prices"
-import AccountDetail from "./pages/AccountDetail"
-import Due from "./pages/Loan/Due"
-import Invoice from "./pages/Loan/Invoice"
-import LoanStatement from "./pages/Loan/LoanStatement"
-import AccountStatement from "./pages/Deposit/AccountStatement"
-import Insurance from "./pages/Loan/Insurance"
-import Withdraw from "./pages/Deposit/Withdraw"
 
 import { account, customer } from "./state"
+import Account from "./pages/Account"
 
 class App extends Component {
   render() {
@@ -61,56 +54,22 @@ class App extends Component {
                       />
                       <Route
                         path={"/account/:id"}
-                        exact
-                        render={({ match }) => {
-                          const acc = account.accounts.find(
-                            a => a.accountId === match.params.id
-                          )
-                          console.log("her er kontoen du trenger", toJS(acc))
-                          return (
-                            <AccountDetail account={acc} history={history} />
-                          )
-                        }}
+                        render={({ match, history }) => (
+                          <Account
+                            accountStore={account}
+                            match={match}
+                            history={history}
+                          />
+                        )}
                       />
                       <Route path="/profile" exact component={Profile} />
                       <Route path="/logout" exact component={LoggedOut} />
-                      <Route path="/prices" exact component={Prices} />
                       <Route
-                        path={"/account/:id/due"}
+                        path="/prices"
                         exact
-                        render={({ history }) => <Due history={history} />}
+                        render={({ history }) => <Prices history={history} />}
                       />
-                      <Route
-                        path={"/account/:id/invoice"}
-                        exact
-                        render={({ history }) => <Invoice history={history} />}
-                      />
-                      <Route
-                        path={"/account/:id/loan-statement"}
-                        exact
-                        render={({ history }) => (
-                          <LoanStatement history={history} />
-                        )}
-                      />
-                      <Route
-                        path={"/account/:id/insurance"}
-                        exact
-                        render={({ history }) => (
-                          <Insurance history={history} />
-                        )}
-                      />
-                      <Route
-                        path={"/account/:id/account-statement"}
-                        exact
-                        render={({ history }) => (
-                          <AccountStatement history={history} />
-                        )}
-                      />
-                      <Route
-                        path={"/account/:id/withdraw"}
-                        exact
-                        render={({ history }) => <Withdraw history={history} />}
-                      />
+
                       <Route
                         path={"/profile/edit"}
                         exact

@@ -13,7 +13,7 @@ const menu = [
   {
     _id: "wiofdh",
     label: "Priser",
-    icon: <ThemeComponent tagName={"IconArrowUp"} />,
+    icon: <ThemeComponent tagName={"IconPrices"} />,
     path: "/prices",
     direction: forwards
   },

@@ -49,6 +49,7 @@ const Layout = styled.div`
 const Outer = styled.div`
   background-color: ${color.bgGray};
   padding: ${spacing.large} 0;
+  display: none;
 `
 
 const FooterMenuItem = styled.p`

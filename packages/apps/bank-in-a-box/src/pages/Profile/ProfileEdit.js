@@ -6,18 +6,23 @@ import {
   LayoutItem,
   Input,
   PhoneInput,
-  Wrapper
+  Wrapper,
+  Box,
+  Heading,
+  Flag
 } from "@staccx/base"
-import { color, spacing, font, fontWeight } from "@staccx/theme"
+import { spacing } from "@staccx/theme"
 import customer from "../../data/customer"
+import Back from "../../components/Back"
 
-const ProfileEdit = () => (
+const ProfileEdit = ({ history }) => (
   <Wrapper variant="bib">
     <Layout>
-      <LayoutItem>
-        <Heading>Min profil</Heading>
+      <LayoutItem variant="fadeIn" delay="200">
+        <Back history={history} path="/profile/" />
+        <Heading level="2">Endre profil</Heading>
       </LayoutItem>
-      <LayoutItem>
+      <LayoutItem variant="fadeIn" delay="400">
         <InputContent>
           <Input
             label="E-post adresse"
@@ -35,34 +40,27 @@ const ProfileEdit = () => (
           />
         </InputContent>
       </LayoutItem>
-      <LayoutItem>
-        <Center>
+      <LayoutItem variant="fadeIn" delay="600">
+        <Box variant="profileAdress">
+          <Flag reverse tiny img={<Button>Oppdater</Button>}>
+            Adresse: <br /> Helgeplasset 137, 5148 Fyllingsdalen
+          </Flag>
+        </Box>
+      </LayoutItem>
+      <LayoutItem variant="fadeIn" delay="800">
+        <div>
           <Button>Lagre</Button>
-        </Center>
+        </div>
       </LayoutItem>
     </Layout>
   </Wrapper>
 )
 
-const Heading = styled.h1`
-  font-size: ${font.h4};
-  text-align: center;
-  font-weight: ${fontWeight.bold};
-  color: ${color.primary};
-  margin-bottom: ${spacing.tiny};
-`
-
-const Center = styled.div`
-  text-align: center;
-`
-
 const InputContent = styled.div`
   display: grid;
   grid-column-gap: ${spacing.small};
   grid-row-gap: ${spacing.small};
-  grid-template-rows: repeat(auto-fit, 1fr);
-  max-width: 250px;
-  margin: auto;
+  grid-template-columns: auto 110px;
 `
 
 export default ProfileEdit

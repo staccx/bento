@@ -5,5 +5,5 @@ export default {
   tel: "474 07 739",
   adress: "Helgeplasset 137",
   zip: "5148",
-  place: "Fyllingsdalen"
+  location: "Fyllingsdalen"
 }

@@ -1,10 +1,11 @@
 import React from "react"
-import { Layout, Wrapper } from "@staccx/base"
+import { Layout, Wrapper, LayoutItem } from "@staccx/base"
 import Account from "../components/Account"
 import AccountInfo from "../components/Account.Info"
 import { ThemeComponent } from "@staccx/theme"
 import menuLoan from "../data/menuLoan"
 import menuDeposit from "../data/menuDeposit"
+import Back from "../components/Back"
 
 const AccountDetail = ({ account, history }) => {
   const menu =
@@ -15,13 +16,22 @@ const AccountDetail = ({ account, history }) => {
   return (
     <Wrapper variant="bib">
       <Layout>
-        <Account account={account} />
-        <ThemeComponent
-          tagName={"menu"}
-          menuElements={menu}
-          history={history}
-        />
-        <AccountInfo account={account} />
+        <LayoutItem variant="fadeIn" delay="200">
+          <div>
+            <Back history={history} path="/" />
+          </div>
+          <Account account={account} />
+        </LayoutItem>
+        <LayoutItem variant="fadeIn" delay="400">
+          <ThemeComponent
+            tagName={"menu"}
+            menuElements={menu}
+            history={history}
+          />
+        </LayoutItem>
+        <LayoutItem variant="fadeIn" delay="600">
+          <AccountInfo account={account} />
+        </LayoutItem>
       </Layout>
     </Wrapper>
   )
