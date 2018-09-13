@@ -16,6 +16,12 @@ const Login = () => {
     callbackPath: "/username-password-callback"
   }
 
+  if (window.location.host !== "localhost") {
+    const hostParts = window.location.host.split(".")
+    hostParts.splice(0, 1, "oidc")
+    config.oidcConfig.authority = `https://${hostParts.join(".")}`
+  }
+
   return (
     <LoginPassword config={config}>
       {({
