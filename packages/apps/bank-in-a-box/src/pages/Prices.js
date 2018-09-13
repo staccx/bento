@@ -15,11 +15,11 @@ import Back from "../components/Back"
 const Prices = ({ history }) => (
   <Wrapper variant="bib">
     <Layout>
-      <LayoutItem>
+      <LayoutItem variant="fadeIn" delay="200">
         <Back history={history} path="/" />
         <Heading level="2">Priser</Heading>
       </LayoutItem>
-      <LayoutItem>
+      <LayoutItem variant="fadeIn" delay="400">
         <SubHeading level="3">Høyrente</SubHeading>
         <Box variant="prices">
           <List>

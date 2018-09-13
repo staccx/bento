@@ -1,15 +1,26 @@
 import React from "react"
 import styled from "styled-components"
-import { Layout, Wrapper, Heading, Box, List, Flag, Button } from "@staccx/base"
-import { ThemeComponent, color, spacing } from "@staccx/theme"
+import {
+  Layout,
+  Wrapper,
+  Heading,
+  Box,
+  List,
+  Flag,
+  Button,
+  LayoutItem
+} from "@staccx/base"
+import { ThemeComponent, color } from "@staccx/theme"
 import Back from "../../components/Back"
 
 const ContractDocuments = ({ history, accounts }) => (
   <Wrapper variant="bib">
     <Layout>
-      <div>
+      <LayoutItem variant="fadeIn" delay="200">
         <Back history={history} path="/profile/" />
-        <PaddedHeading level="2">Avtaledokumenter</PaddedHeading>
+        <Heading level="2">Avtaledokumenter</Heading>
+      </LayoutItem>
+      <LayoutItem variant="fadeIn" delay="400">
         <Box variant="contractBox">
           <List>
             <ListItem>
@@ -28,7 +39,7 @@ const ContractDocuments = ({ history, accounts }) => (
             </ListItem>
           </List>
         </Box>
-      </div>
+      </LayoutItem>
     </Layout>
   </Wrapper>
 )
@@ -37,10 +48,6 @@ const ListItem = styled.li`
   &:not(:last-child) {
     border-bottom: 1px solid ${color.line};
   }
-`
-
-const PaddedHeading = styled(Heading)`
-  margin-bottom: ${spacing.small};
 `
 
 export default ContractDocuments

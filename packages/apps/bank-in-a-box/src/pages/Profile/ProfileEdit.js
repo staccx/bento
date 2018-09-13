@@ -18,11 +18,11 @@ import Back from "../../components/Back"
 const ProfileEdit = ({ history }) => (
   <Wrapper variant="bib">
     <Layout>
-      <LayoutItem>
+      <LayoutItem variant="fadeIn" delay="200">
         <Back history={history} path="/profile/" />
         <Heading level="2">Endre profil</Heading>
       </LayoutItem>
-      <LayoutItem>
+      <LayoutItem variant="fadeIn" delay="400">
         <InputContent>
           <Input
             label="E-post adresse"
@@ -40,14 +40,14 @@ const ProfileEdit = ({ history }) => (
           />
         </InputContent>
       </LayoutItem>
-      <LayoutItem>
+      <LayoutItem variant="fadeIn" delay="600">
         <Box variant="profileAdress">
           <Flag reverse tiny img={<Button>Oppdater</Button>}>
             Adresse: <br /> Helgeplasset 137, 5148 Fyllingsdalen
           </Flag>
         </Box>
       </LayoutItem>
-      <LayoutItem>
+      <LayoutItem variant="fadeIn" delay="800">
         <div>
           <Button>Lagre</Button>
         </div>

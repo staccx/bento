@@ -1,13 +1,15 @@
 import React from "react"
 import styled from "styled-components"
-import { Layout, Wrapper } from "@staccx/base"
+import { Layout, Wrapper, LayoutItem } from "@staccx/base"
 import Back from "../../components/Back"
 
 const AnnualStatement = ({ history, accounts }) => (
   <Wrapper variant="bib">
     <Layout>
-      <div>
+      <LayoutItem variant="fadeIn" delay="200">
         <Back history={history} path="/profile/" />
+      </LayoutItem>
+      <LayoutItem variant="fadeIn" delay="400">
         <Center>
           <svg
             width="249"
@@ -165,7 +167,7 @@ const AnnualStatement = ({ history, accounts }) => (
             </defs>
           </svg>
         </Center>
-      </div>
+      </LayoutItem>
     </Layout>
   </Wrapper>
 )

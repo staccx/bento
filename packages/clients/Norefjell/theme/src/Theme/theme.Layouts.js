@@ -1,6 +1,7 @@
 import { css } from "styled-components"
 import { registerStyle } from "@staccx/theme"
 import { Layout, LayoutItem } from "@staccx/base"
+import { FadeIn } from "@staccx/animations"
 
 export const LayoutStyling = registerStyle(
   {
@@ -20,7 +21,11 @@ export const LayoutStyling = registerStyle(
 
 export const LayoutItemStyling = registerStyle(
   {
-    statsSelect: css``
+    fadeIn: css`
+      opacity: 0;
+      animation: ${FadeIn} forwards ease-out 400ms 1;
+      animation-delay: ${p => (p.delay ? p.delay : 0)}ms;
+    `
   },
   LayoutItem.themeProps.container
 )

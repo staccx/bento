@@ -6,7 +6,8 @@ import {
   Button,
   RadioPill,
   RadioPillItem,
-  Legend
+  Legend,
+  LayoutItem
 } from "@staccx/base"
 import { backwards } from "../../components/transitions/transitions"
 import Back from "../../components/Back"
@@ -39,11 +40,11 @@ const Due = ({ history }) => {
   return (
     <Wrapper variant="bib">
       <Layout>
-        <div>
+        <LayoutItem variant="fadeIn" delay="200">
           <Back history={history} path="/account/34551524578" />
           <Heading level="2">Forfallsdato</Heading>
-        </div>
-        <div>
+        </LayoutItem>
+        <LayoutItem variant="fadeIn" delay="400">
           <Legend>Hvilken dag vil du ha forfall hver måned?</Legend>
           <RadioPill
             onChange={handleRadioPillChange}
@@ -61,8 +62,8 @@ const Due = ({ history }) => {
               </RadioPillItem>
             ))}
           </RadioPill>
-        </div>
-        <div>
+        </LayoutItem>
+        <LayoutItem variant="fadeIn" delay="600">
           <Button
             onClick={() =>
               history.push({
@@ -73,7 +74,7 @@ const Due = ({ history }) => {
           >
             Lagre
           </Button>
-        </div>
+        </LayoutItem>
       </Layout>
     </Wrapper>
   )

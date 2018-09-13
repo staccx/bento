@@ -18,7 +18,7 @@ import { IconLogout } from "./Icons/Icon.Logout"
 import { IconPrices } from "./Icons/Icon.Prices"
 import { IconProfile } from "./Icons/Icon.Profile"
 import { IconAccountStatement } from "./Icons/Icon.AccountStatement"
-import { LayoutStyling } from "./theme.Layouts"
+import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { IconCaretRight } from "./Icons/Icon.CaretRight"
 import { IconInvoice } from "./Icons/Icon.Invoice"
 import { IconDue } from "./Icons/Icon.Due"
@@ -147,6 +147,7 @@ const t = new Theme(BaseTheme, {
   .add(IconPrices)
   .add(IconProfile)
   .add(LayoutStyling)
+  .add(LayoutItemStyling)
   .add(IconCaretRight)
   .add(IconAccountStatement)
   .add(IconInvoice)

@@ -1,5 +1,5 @@
 import React from "react"
-import { Layout, Wrapper } from "@staccx/base"
+import { Layout, Wrapper, LayoutItem } from "@staccx/base"
 import Account from "../components/Account"
 import AccountInfo from "../components/Account.Info"
 import { ThemeComponent } from "@staccx/theme"
@@ -16,18 +16,22 @@ const AccountDetail = ({ account, history }) => {
   return (
     <Wrapper variant="bib">
       <Layout>
-        <div>
+        <LayoutItem variant="fadeIn" delay="200">
           <div>
             <Back history={history} path="/" />
           </div>
           <Account account={account} />
-        </div>
-        <ThemeComponent
-          tagName={"menu"}
-          menuElements={menu}
-          history={history}
-        />
-        <AccountInfo account={account} />
+        </LayoutItem>
+        <LayoutItem variant="fadeIn" delay="400">
+          <ThemeComponent
+            tagName={"menu"}
+            menuElements={menu}
+            history={history}
+          />
+        </LayoutItem>
+        <LayoutItem variant="fadeIn" delay="600">
+          <AccountInfo account={account} />
+        </LayoutItem>
       </Layout>
     </Wrapper>
   )

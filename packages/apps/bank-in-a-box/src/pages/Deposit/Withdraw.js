@@ -15,13 +15,13 @@ import Back from "../../components/Back"
 
 const Withdraw = ({ history }) => (
   <Wrapper variant="bib">
-    <div>
+    <LayoutItem variant="fadeIn" delay="200">
       <Back history={history} path="/account/546126722" />
       <Heading level="2">Ta ut penger</Heading>
       <SubTitle>917 822,45 disponibelt</SubTitle>
-    </div>
+    </LayoutItem>
     <Layout grid="rows">
-      <LayoutItem>
+      <LayoutItem variant="fadeIn" delay="400">
         <InputContent>
           <Input label="Beløp" placeholder="0" type="tel" id="telwithdraw" />
           <AccountInput
@@ -31,13 +31,13 @@ const Withdraw = ({ history }) => (
           />
         </InputContent>
       </LayoutItem>
-      <LayoutItem>
+      <LayoutItem variant="fadeIn" delay="600">
         <Alert type="info">
           Siste innskudd kom fra <Number>9081 15 74238</Number>. Klikk her for å
           sende penger tilbake
         </Alert>
       </LayoutItem>
-      <LayoutItem>
+      <LayoutItem variant="fadeIn" delay="800">
         <Button>Overfør</Button>
       </LayoutItem>
     </Layout>
