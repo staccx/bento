@@ -32,7 +32,7 @@ export const getLinkItem = linkBlock => {
                 key={link._ref}
                 heading={linkBlock.title}
                 body={linkBlock.body}
-                url={`/${document.path.current}`}
+                url={`${document.path.current}`}
               />
             )
           }}
