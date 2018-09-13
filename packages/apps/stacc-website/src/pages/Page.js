@@ -3,13 +3,11 @@ import PropTypes from "prop-types"
 import BlockContent from "@sanity/block-content-to-react"
 import blockContentSerializer from "./blockContentSerializer"
 import { dashIt } from "@staccx/formatting"
-import { SanityImage } from "@staccx/sanity"
 import {
   Hero,
   NavigationSubpage,
   SectionHead
 } from "../components/_codeSplitting"
-import { Helmet } from "react-helmet"
 import Meta from "./Meta"
 
 class Page extends Component {

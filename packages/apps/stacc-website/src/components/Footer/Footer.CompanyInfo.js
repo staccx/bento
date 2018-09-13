@@ -1,6 +1,5 @@
 import React from "react"
 import { createPortal } from "react-dom"
-import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { Layout, Heading } from "@staccx/base"
 import { color, font, spacing } from "@staccx/theme"
@@ -47,7 +46,7 @@ const FooterCompanyInfo = ({ heading }) => (
                 <div>Org.nr {doc.orgNr.orgNo}</div>,
                 document.getElementById("orgNr")
               )
-              console.log(doc)
+
               return (
                 <div>
                   <CompanyName level={1}>{doc.name}</CompanyName>

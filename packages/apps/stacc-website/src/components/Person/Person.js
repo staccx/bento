@@ -19,7 +19,6 @@ const Person = ({
   <PersonItem key={name}>
     <SanityImage image={image}>
       {({ image }) => {
-        const imageUrl = image.width(150).url()
         return (
           <Flag top>
             <Heading level={3}>{name}</Heading>

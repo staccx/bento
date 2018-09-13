@@ -26,7 +26,7 @@ export const getLinkItem = linkBlock => {
             if (!document) {
               return null
             }
-            console.log(document)
+
             return (
               <ContentLinksItem
                 key={link._ref}

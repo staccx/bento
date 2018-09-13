@@ -1,8 +1,15 @@
 {
   "name": "stacc-web",
+  "alias": "stac.cx",
   "type": "static",
   "static": {
-    "public": "build"
+    "public": "build",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   },
   "env": {
     "NODE_ENV": "production"

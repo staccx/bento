@@ -15,18 +15,22 @@ const ClientList = props => {
 
         return (
           <ClientsList>
-            {result.map(client => (
-              <li key={client._id}>
-                <ClientPreview
-                  name={client.name}
-                  logo={client.logo}
-                  description={client.description}
-                  website={client.url}
-                  websiteName={client.url.replace(/(^\w+:|^)\/\//, "")}
-                  cases={client.caseStudies || []}
-                />
-              </li>
-            ))}
+            {result.map(client => {
+              return (
+                <li key={client._id}>
+                  <ClientPreview
+                    name={client.name}
+                    logo={client.logo}
+                    description={client.description}
+                    website={client.url}
+                    websiteName={
+                      client.url ? client.url.replace(/(^\w+:|^)\/\//, "") : ""
+                    }
+                    cases={client.caseStudies || []}
+                  />
+                </li>
+              )
+            })}
           </ClientsList>
         )
       }}

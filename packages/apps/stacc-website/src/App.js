@@ -171,7 +171,6 @@ class App extends Component {
                           }
 
                           if (subpages.some(s => page._id === s._key)) {
-                            console.log("is subpage", page.title, subpages)
                             return null
                           }
 
