@@ -1,0 +1,11 @@
+{
+  "name": "stacc-web",
+  "type": "static",
+  "static": {
+    "public": "build"
+  },
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "files": ["build"]
+}
