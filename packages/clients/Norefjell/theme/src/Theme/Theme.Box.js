@@ -16,6 +16,7 @@ export default registerStyle(
     dashboardBox: defaultBox,
     accountBox: defaultBox,
     adBox: defaultBox,
+    contractBox: defaultBox,
     headerContainer: css`
       padding: ${spacing.large} 0 0;
     `,
@@ -59,6 +60,15 @@ export default registerStyle(
       border-top-right-radius: 3px;
       border-top-left-radius: 3px;
       font-weight: ${fontWeight.bold};
+    `,
+    profileAdress: css`
+      background-color: #f0f0f0;
+    `,
+    prices: css`
+      ${defaultBox};
+      padding-left: 0;
+      padding-right: 0;
+      color: ${color.wcag};
     `
   },
   Box.themeProps.box

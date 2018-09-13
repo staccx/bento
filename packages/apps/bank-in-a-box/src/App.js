@@ -64,7 +64,11 @@ class App extends Component {
                       />
                       <Route path="/profile" exact component={Profile} />
                       <Route path="/logout" exact component={LoggedOut} />
-                      <Route path="/prices" exact component={Prices} />
+                      <Route
+                        path="/prices"
+                        exact
+                        render={({ history }) => <Prices history={history} />}
+                      />
 
                       <Route
                         path={"/profile/edit"}

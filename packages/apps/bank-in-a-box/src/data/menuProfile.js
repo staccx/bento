@@ -12,21 +12,21 @@ const menuProfile = [
         {customer.zip} {customer.location}
       </div>
     ),
-    icon: <ThemeComponent tagName={"IconArrowUp"} />,
+    icon: <ThemeComponent tagName={"IconProfile"} />,
     path: `/profile/edit`,
     direction: forwards
   },
   {
     _id: "dfgs45dgfs645",
     label: "Årsoppgave",
-    icon: <ThemeComponent tagName={"IconProfile"} />,
+    icon: <ThemeComponent tagName={"IconAnnualStatement"} />,
     path: `/profile/annual-statement`,
     direction: forwards
   },
   {
     _id: "fsd456ds56dfs768fs",
     label: "Avtaledokumenter",
-    icon: <ThemeComponent tagName={"IconProfile"} />,
+    icon: <ThemeComponent tagName={"IconContracts"} />,
     path: `/profile/contract-documents`,
     direction: forwards
   }

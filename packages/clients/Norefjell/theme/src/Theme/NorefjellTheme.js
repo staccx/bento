@@ -23,6 +23,9 @@ import { IconCaretRight } from "./Icons/Icon.CaretRight"
 import { IconInvoice } from "./Icons/Icon.Invoice"
 import { IconDue } from "./Icons/Icon.Due"
 import { IconInsurance } from "./Icons/Icon.Insurance"
+import { IconPdf } from "./Icons/Icon.Pdf"
+import { IconAnnualStatement } from "./Icons/Icon.AnnualStatement"
+import { IconContracts } from "./Icons/Icon.Contracts"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -75,7 +78,8 @@ const BiBSpecificColor = {
   expandedItem: color.white,
   accountInfoBorder: color.line,
   accountFilter: "#2EB6BE",
-  invoice: "#3297BF"
+  invoice: "#3297BF",
+  mainButton: "#2EB6BE"
 }
 
 const font = {
@@ -148,5 +152,8 @@ const t = new Theme(BaseTheme, {
   .add(IconInvoice)
   .add(IconDue)
   .add(IconInsurance)
+  .add(IconPdf)
+  .add(IconAnnualStatement)
+  .add(IconContracts)
 
 export default t.get
