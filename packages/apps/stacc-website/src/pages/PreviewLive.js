@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { Loading } from "@staccx/base"
 import SanityClient from "@sanity/client"
-import { Clients, Home, Page, Team } from "./_codeSplitting"
+import { Page } from "./_codeSplitting"
 
 const client = SanityClient({
   projectId: "8j24leyc",

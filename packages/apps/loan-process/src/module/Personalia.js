@@ -4,7 +4,6 @@ import {
   Box,
   Input,
   CompanyInput,
-  CurrencyInput,
   PhoneInput,
   Select,
   Button,
@@ -20,6 +19,10 @@ import { Field, Formik } from "formik"
 
 const Yup = require("yup")
 
+const mapPurpose = item => item
+
+const mapRepaymentPeriod = item => item
+
 class Personalia extends React.Component {
   componentWillMount() {
     const validateSchema = Yup.object().shape({
@@ -27,7 +30,6 @@ class Personalia extends React.Component {
       company: Yup.object()
         .nullable()
         .required(this.props.errorCompanyRequired),
-      revenue: Yup.number().required(this.props.errorRevenueRequired),
       email: Yup.string()
         .email(this.props.errorEmailInvalid)
         .required(this.props.errorEmailRequired),
@@ -130,26 +132,6 @@ class Personalia extends React.Component {
                         </LayoutItem>
                         <LayoutItem>
                           <Field
-                            name={`revenue`}
-                            render={({ field }) => (
-                              <CurrencyInput
-                                id={"revenue"}
-                                label={this.props.revenueLabel}
-                                placeholder={this.props.revenuePlaceholder}
-                                locale={"nb"}
-                                {...field}
-                              />
-                            )}
-                          />
-                          {touched.revenue &&
-                            errors.revenue && (
-                              <Alert variant="error" type="warning">
-                                {errors.revenue}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
                             name={`email`}
                             render={({ field }) => (
                               <Input
@@ -208,7 +190,10 @@ class Personalia extends React.Component {
                                   name={name}
                                   value={value}
                                   onChange={item =>
-                                    setFieldValue("purpose", item)
+                                    setFieldValue(
+                                      "purpose",
+                                      this.props.mapPurpose(item)
+                                    )
                                   }
                                   // onBlur={onBlur}
                                   variant="loanPurpose"
@@ -245,7 +230,10 @@ class Personalia extends React.Component {
                                   name={name}
                                   value={value}
                                   onChange={item =>
-                                    setFieldValue("repaymentMethod", item)
+                                    setFieldValue(
+                                      "repaymentMethod",
+                                      this.props.mapRepaymentPeriod(item)
+                                    )
                                   }
                                   onBlur={onBlur}
                                   variant="loanPurpose"
@@ -409,6 +397,8 @@ Personalia.propTypes = {
   loanDurationLabel: PropTypes.string,
   loanPurposes: PropTypes.array,
   mapCompany: PropTypes.func,
+  mapPurpose: PropTypes.func,
+  mapRepaymentPeriod: PropTypes.any,
   maxValue: PropTypes.number,
   minValue: PropTypes.number,
   monthlyFeesText: PropTypes.string,
@@ -447,6 +437,8 @@ Personalia.defaultProps = {
   emailPlaceholder: "mail@mail.com",
   loanDurationLabel: "Nedbetalingstid",
   loanPurposes: ["party", "hoverboard"],
+  mapPurpose: mapPurpose,
+  mapRepaymentPeriod: mapRepaymentPeriod,
   monthlyFeesText: "Månedlige gebyr",
   nameLabel: "Navn",
   namePlaceholder: "Navn navnesen",
@@ -462,5 +454,5 @@ Personalia.defaultProps = {
     "Fakturering",
     "Kontantbetaling"
   ],
-  revenueLabel: "Omsetning siste 12 monads"
+  revenueLabel: "Omsetning siste 12 måneder"
 }

@@ -126,7 +126,11 @@ class App extends Component {
                     >
                       {({ result }) => {
                         if (!result) {
-                          return <Loading />
+                          return (
+                            <LoadingContainer>
+                              <Loading />
+                            </LoadingContainer>
+                          )
                         }
 
                         const subpages = [].concat.apply(
@@ -171,7 +175,6 @@ class App extends Component {
                           }
 
                           if (subpages.some(s => page._id === s._key)) {
-                            console.log("is subpage", page.title, subpages)
                             return null
                           }
 
@@ -204,6 +207,13 @@ const PageWrapper = styled.div`
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+`
+
+const LoadingContainer = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  trasnform: translate(-50%, -50%);
 `
 
 export default App

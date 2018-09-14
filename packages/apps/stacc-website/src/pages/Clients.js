@@ -2,9 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { spacing } from "@staccx/theme"
 import { List, Layout } from "@staccx/base"
-import { SanityDocument, SanityList, SanityImage } from "@staccx/sanity"
+import { SanityDocument, SanityList } from "@staccx/sanity"
 import { ClientPreview, SectionHead } from "../components/_codeSplitting"
-import { Helmet } from "react-helmet"
 import Meta from "./Meta"
 
 const Clients = () => (

@@ -59,7 +59,7 @@ class HeaderMenu extends React.Component {
                     onClick={() => this.setState({ expanded: null })}
                   >
                     {menuItem.submenu.map(submenuItem => (
-                      <li key={submenuItem._key}>
+                      <li key={submenuItem._key + submenuItem.path.current}>
                         <SubMenuLink to={submenuItem.path.current}>
                           {submenuItem.name}
                         </SubMenuLink>
