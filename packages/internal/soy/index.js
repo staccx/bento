@@ -40,6 +40,16 @@ const pinned = require(template)
 
 const depTypes = ["dependencies", "devDependencies", "peerDependencies"]
 
+const match = (array, value) => {
+  if (!array) {
+    return true
+  }
+  return array.some(e => {
+    const re = new RegExp(e)
+    return re.test(value)
+  })
+}
+
 /**
  * check package.json for each package in rootDir
  * (recursive except node_modules)
@@ -58,14 +68,14 @@ const doCheck = async () => {
   paths.forEach(path => {
     const pkg = require(path)
 
-    if (program.packages && !program.packages.includes(pkg.name)) {
+    if (!match(program.packages, pkg.name)) {
       return
     }
 
     let updatedDependencies = false
     for (let depType of depTypes) {
       for (let dep in pkg[depType]) {
-        if (!program.dependencies || program.dependencies.includes(dep)) {
+        if (match(program.dependencies, dep)) {
           if (pinned[depType] && pinned[depType][dep]) {
             //if there is a template dep of the same type
             if (program.versions) {
@@ -129,7 +139,7 @@ const doCheck = async () => {
     //find devDependencies not present in template.devDependencies
     if (program.wild) {
       for (let dep in pkg.devDependencies) {
-        if (!program.dependencies || program.dependencies.includes(dep)) {
+        if (match(program.dependencies, dep)) {
           if (!pinned.devDependencies[dep]) {
             const wildVersion = pkg.devDependencies[dep]
 
