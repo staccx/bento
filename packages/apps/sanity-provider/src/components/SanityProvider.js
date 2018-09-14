@@ -19,16 +19,20 @@ class SanityProvider extends React.Component {
       helper,
       results: {}
     }
+    this.requests = {}
 
     this.send = this.send.bind(this)
     this.queryHelper = this.queryHelper.bind(this)
   }
 
   send(query, id) {
-    if (this.state.results[id]) {
+    if (this.state.results[id] || this.requests[id]) {
       // Early out. Probably just the same component mounting again
       return
     }
+    // reserve for other requests with same id
+    this.requests[id] = true
+
     this.state.helper.client
       .fetch(query)
       .then(result => {
@@ -43,10 +47,13 @@ class SanityProvider extends React.Component {
   }
 
   queryHelper(helper, id) {
-    if (this.state.results[id]) {
+    if (this.state.results[id] || this.requests[id]) {
       // Early out. Probably just the same component mounting again
       return
     }
+    // reserve for other requests with same id
+    this.requests[id] = true
+
     helper.send().then(result =>
       this.setState({
         results: {
