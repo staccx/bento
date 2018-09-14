@@ -2,12 +2,13 @@
   "name": "@staccx/bento",
   "private": true,
   "scripts": {
-    "precommit": "lerna run --concurrency 1 --stream precommit --since HEAD",
+    "precommit": "lerna run --concurrency 1 --stream precommit --since HEAD && npm run changelog",
     "postcommit": "git update-index --again",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "styleguide": "cd packages/base && styleguidist server",
     "start": "cd packages/internal/styleguide && yarn start",
-    "soy": "node packages/internal/soy"
+    "soy": "node packages/internal/soy",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG,md"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
+    "conventional-changelog-cli": "^2.0.5",
     "eslint": "^5.0.1",
     "lerna": "^3.0.6",
     "plop": "^2.0.0"
