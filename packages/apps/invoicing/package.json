@@ -12,8 +12,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-router-dom": "^4.2.2",
-    "styled-components": "^3.3.3"
+    "react-router-dom": "^4.2.2"
   },
   "scripts": {
     "build": "yarn prettify && rollup -c",
@@ -34,5 +33,8 @@
     "rollup": "^0.65.0",
     "serve": "^10.0.0",
     "surge": "^0.20.1"
+  },
+  "peerDependencies": {
+    "styled-components": "^3.3.3"
   }
 }
