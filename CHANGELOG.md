@@ -10,6 +10,7 @@
 ### Features
 
 * **base:** add Poll ([9469c0c](https://bitbucket.org/stacc-flow/bento/commits/9469c0c))
+* **bento:** add changelog ([4626f60](https://bitbucket.org/stacc-flow/bento/commits/4626f60))
 
 
 
