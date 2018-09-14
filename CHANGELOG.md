@@ -1,3 +1,27 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="7.7.2"></a>
+## [7.7.2](https://bitbucket.org/projects/stacc-flow/repos/bento/compare/diff?targetBranch=refs%2Ftags%2Fv7.7.1&sourceBranch=refs%2Ftags%2Fv7.7.2) (2018-09-14)
+
+
+### Bug Fixes
+
+* **bento:** fix wrong file ([9aba119](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/9aba119))
+* **sanity:** fix new props. add request cache ([d95b7a6](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/d95b7a6))
+
+
+### Features
+
+* **base:** add Poll ([9469c0c](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/9469c0c))
+* **bento:** add changelog ([4626f60](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/4626f60))
+
+
+
+
+
 <a name=""></a>
 # [](https://bitbucket.org/stacc-flow/bento/compare/v7.7.1...v) (2018-09-14)
 
@@ -2150,6 +2174,3 @@
 
 * **base:** Added base project ([13c0382](https://bitbucket.org/stacc-flow/bento/commits/13c0382))
 * **lerna:** Lerna init ([5a7b993](https://bitbucket.org/stacc-flow/bento/commits/5a7b993))
-
-
-

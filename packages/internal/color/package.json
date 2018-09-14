@@ -1,6 +1,6 @@
 {
   "name": "@staccx/color",
-  "version": "7.6.4",
+  "version": "7.7.2",
   "description": "Color functions and helpers",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -29,7 +29,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/base": "^7.6.4",
+    "@staccx/base": "^7.7.2",
     "@staccx/theme": "^7.6.4",
     "color": "^3.0.0",
     "react": "^16.3.2",
