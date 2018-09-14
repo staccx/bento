@@ -24,6 +24,7 @@
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
+    "conventional-changelog-angular-bitbucket": "^1.1.2",
     "conventional-changelog-cli": "^2.0.5",
     "eslint": "^5.0.1",
     "lerna": "^3.0.6",
