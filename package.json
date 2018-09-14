@@ -2,7 +2,7 @@
   "name": "@staccx/bento",
   "private": true,
   "scripts": {
-    "precommit": "lerna run --concurrency 1 --stream precommit --since HEAD && npm run changelog",
+    "precommit": "lerna run --concurrency 1 --stream precommit --since HEAD",
     "postcommit": "git update-index --again",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "styleguide": "cd packages/base && styleguidist server",
