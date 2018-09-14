@@ -11,11 +11,13 @@ program
   .option("-t, --taste <path>", "check dependencies of packages under path")
   .option("-b, --bottle <file>", "specify template path")
   .option("-p, --pour", "update misaligned dependencies")
+  .option("-V, --versions", "check for version mismatches")
   .option("-w, --wild", "find unmanaged devDependencies")
+  .option("-m, --misplaced", "find misplaced dependencies")
   .option("-v, --verbose", "be verbose")
   .parse(process.argv)
 
-const rootDir = path.resolve(program.taste)
+const rootDir = path.resolve(program.taste ? program.taste : ".")
 const template = path.resolve(
   program.bottle ? program.bottle : "./package.json"
 )
@@ -26,6 +28,12 @@ console.log()
 
 const pinned = require(template)
 
+const depTypes = ["dependencies", "devDependencies", "peerDependencies"]
+
+/**
+ * check package.json for each package in rootDir
+ * (recursive except node_modules)
+ */
 const doCheck = async () => {
   const paths = await globby([
     `${rootDir}/**/package.json`,
@@ -38,26 +46,56 @@ const doCheck = async () => {
   paths.forEach(path => {
     const pkg = require(path)
     let updatedDependencies = false
-    for (let depType of ["dependencies", "devDependencies"]) {
-      for (let dep in pinned[depType]) {
-        const pinnedVersion = pinned[depType][dep]
-        if (pkg[depType] && pkg[depType][dep]) {
-          const packageVersion = pkg[depType][dep]
-          if (pinnedVersion !== packageVersion) {
-            console.log(
-              program.pour ? chalk.green("☑") : chalk.red("☐"),
-              chalk.bold.yellow(pkg.name) + ":",
-              dep,
-              "->",
-              chalk.green(pinnedVersion),
-              chalk.gray(packageVersion)
-            )
-            pkg[depType][dep] = pinnedVersion
-            updatedDependencies = true
+    for (let depType of depTypes) {
+      for (let dep in pkg[depType]) {
+        //if there is a template dep of the same type
+        if (pinned[depType] && pinned[depType][dep]) {
+          if (program.versions) {
+            const pinnedVersion = pinned[depType][dep]
+            if (pkg[depType] && pkg[depType][dep]) {
+              const packageVersion = pkg[depType][dep]
+              if (pinnedVersion !== packageVersion) {
+                console.log(
+                  program.pour ? chalk.green("☑") : chalk.red("☐"),
+                  chalk.bold.yellow(pkg.name) + ":",
+                  dep,
+                  "->",
+                  chalk.green(pinnedVersion),
+                  chalk.gray(packageVersion)
+                )
+                pkg[depType][dep] = pinnedVersion
+                updatedDependencies = true
+              }
+            }
+          }
+
+          //check if the dep is misplaced
+        } else if (program.misplaced) {
+          for (let pinnedDepType of depTypes) {
+            if (pinned[pinnedDepType] && pinned[pinnedDepType][dep]) {
+              console.log(
+                program.pour ? chalk.green("☑") : chalk.red("☐"),
+                chalk.bold.yellow.bgBlue(pkg.name) + ":",
+                dep + ":",
+                "->",
+                chalk.green(pinnedDepType),
+                chalk.gray(depType)
+              )
+
+              const existingVersion = pkg[depType][dep]
+              delete pkg[depType][dep]
+              if (!pkg[pinnedDepType]) {
+                pkg[pinnedDepType] = {}
+              }
+              pkg[pinnedDepType][dep] = existingVersion
+              updatedDependencies = true
+            }
           }
         }
       }
     }
+
+    //find devDependencies not present in template.devDependencies
     if (program.wild) {
       for (let dep in pkg.devDependencies) {
         if (!pinned[dep]) {
@@ -98,6 +136,9 @@ const doCheck = async () => {
   return { dirtyPackageCounter, wildStats }
 }
 
+/**
+ * print summary
+ */
 doCheck().then(({ dirtyPackageCounter, wildStats }) => {
   console.log()
   if (dirtyPackageCounter) {
