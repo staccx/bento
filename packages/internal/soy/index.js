@@ -22,6 +22,11 @@ program
   .option("-F, --packages <pkg1,pkg2,...>", "only consider these packages", l =>
     l.split(",")
   )
+  .option(
+    "--find <pkg1,pkg2,...>",
+    "find packages with these dependencies",
+    l => l.split(",")
+  )
   .option("-v, --verbose", "be verbose")
   .parse(process.argv)
 
@@ -75,6 +80,16 @@ const doCheck = async () => {
     let updatedDependencies = false
     for (let depType of depTypes) {
       for (let dep in pkg[depType]) {
+        if (program.find) {
+          if (match(program.find, dep)) {
+            console.log(
+              chalk.bold(pkg.name),
+              chalk.gray(depType),
+              dep,
+              pkg[depType][dep]
+            )
+          }
+        }
         if (match(program.dependencies, dep)) {
           if (pinned[depType] && pinned[depType][dep]) {
             //if there is a template dep of the same type
