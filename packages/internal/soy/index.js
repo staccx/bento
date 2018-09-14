@@ -14,7 +14,12 @@ program
   .option("-V, --versions", "check for version mismatches")
   .option("-w, --wild", "find unmanaged devDependencies")
   .option("-m, --misplaced", "find misplaced dependencies")
-  .option("-o, --only <pkg1,pkg2,...>", "only consider these dependencies", l =>
+  .option(
+    "-f, --dependencies <pkg1,pkg2,...>",
+    "only consider these dependencies",
+    l => l.split(",")
+  )
+  .option("-F, --packages <pkg1,pkg2,...>", "only consider these packages", l =>
     l.split(",")
   )
   .option("-v, --verbose", "be verbose")
@@ -27,7 +32,8 @@ const template = path.resolve(
 
 console.log("Using template", template)
 console.log("Tasting directory", rootDir)
-console.log("Only considering dependencies", program.only || "(all)")
+console.log("Only considering dependencies", program.dependencies || "(all)")
+console.log("Only considering packages", program.packages || "(all)")
 console.log()
 
 const pinned = require(template)
@@ -46,13 +52,20 @@ const doCheck = async () => {
 
   let dirtyPackageCounter = 0
   const wildStats = {}
+  const versionMismatches = []
+  const misplaced = []
 
   paths.forEach(path => {
     const pkg = require(path)
+
+    if (program.packages && !program.packages.includes(pkg.name)) {
+      return
+    }
+
     let updatedDependencies = false
     for (let depType of depTypes) {
       for (let dep in pkg[depType]) {
-        if (!program.only || program.only.includes(dep)) {
+        if (!program.dependencies || program.dependencies.includes(dep)) {
           if (pinned[depType] && pinned[depType][dep]) {
             //if there is a template dep of the same type
             if (program.versions) {
@@ -70,6 +83,10 @@ const doCheck = async () => {
                   )
                   pkg[depType][dep] = pinnedVersion
                   updatedDependencies = true
+
+                  if (!versionMismatches.includes(dep)) {
+                    versionMismatches.push(dep)
+                  }
                 }
               }
             }
@@ -98,6 +115,10 @@ const doCheck = async () => {
                 }
                 pkg[pinnedDepType][dep] = existingVersion
                 updatedDependencies = true
+
+                if (!misplaced.includes(dep)) {
+                  misplaced.push(dep)
+                }
               }
             }
           }
@@ -108,7 +129,7 @@ const doCheck = async () => {
     //find devDependencies not present in template.devDependencies
     if (program.wild) {
       for (let dep in pkg.devDependencies) {
-        if (!program.only || program.only.includes(dep)) {
+        if (!program.dependencies || program.dependencies.includes(dep)) {
           if (!pinned.devDependencies[dep]) {
             const wildVersion = pkg.devDependencies[dep]
 
@@ -147,41 +168,55 @@ const doCheck = async () => {
       console.log(chalk.bold.green(pkg.name))
     }
   })
-  return { dirtyPackageCounter, wildStats }
+  return { dirtyPackageCounter, wildStats, versionMismatches, misplaced }
 }
 
 /**
  * print summary
  */
-doCheck().then(({ dirtyPackageCounter, wildStats }) => {
-  console.log()
-  if (dirtyPackageCounter) {
-    if (program.pour) {
-      console.log(chalk.yellow("Poured into", dirtyPackageCounter, "packages!"))
+doCheck().then(
+  ({ dirtyPackageCounter, wildStats, versionMismatches, misplaced }) => {
+    console.log()
+    if (dirtyPackageCounter) {
+      if (program.pour) {
+        console.log(
+          chalk.yellow("Poured into", dirtyPackageCounter, "packages!")
+        )
+      } else {
+        console.log(chalk.red(dirtyPackageCounter, "packages need soy!"))
+        if (program.version) {
+          console.log()
+          console.log(chalk.underline("version mismatches:"))
+          console.log(versionMismatches.sort().join("\n"))
+        }
+        if (program.misplaced) {
+          console.log()
+          console.log(chalk.underline("misplaced dependencies:"))
+          console.log(misplaced.sort().join("\n"))
+        }
+      }
     } else {
-      console.log(chalk.red(dirtyPackageCounter, "packages need soy!"))
+      console.log(chalk.green("Everything tastes good!"))
     }
-  } else {
-    console.log(chalk.green("Everything tastes good!"))
-  }
 
-  if (program.wild) {
-    console.log()
-    console.log(chalk.underline("Wild devDependencies summary:"))
-    console.log()
-    const wildSorted = Object.keys(wildStats).sort(
-      (a, b) => wildStats[b].length - wildStats[a].length
-    )
-
-    for (let dep of wildSorted) {
-      wildStats[dep].sort((a, b) => a.count - b.count)
-      console.log(
-        chalk.bold(dep) + ":",
-        chalk.gray(
-          wildStats[dep].map(e => e.version + " (" + e.count + ")").join(" ")
-        ),
-        "(" + wildStats[dep].length + ")"
+    if (program.wild) {
+      console.log()
+      console.log(chalk.underline("Wild devDependencies summary:"))
+      console.log()
+      const wildSorted = Object.keys(wildStats).sort(
+        (a, b) => wildStats[b].length - wildStats[a].length
       )
+
+      for (let dep of wildSorted) {
+        wildStats[dep].sort((a, b) => a.count - b.count)
+        console.log(
+          chalk.bold(dep) + ":",
+          chalk.gray(
+            wildStats[dep].map(e => e.version + " (" + e.count + ")").join(" ")
+          ),
+          "(" + wildStats[dep].length + ")"
+        )
+      }
     }
   }
-})
+)
