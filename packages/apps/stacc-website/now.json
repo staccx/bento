@@ -1,8 +1,31 @@
 {
   "name": "stacc-web",
+  "alias": ["stac.cx"],
   "type": "static",
   "static": {
-    "public": "build"
+    "public": "build",
+    "rewrites": [
+      {
+        "source": "manifest.json",
+        "destination": "manifest.json"
+      },
+      {
+        "source": "robots.txt",
+        "destination": "robots.txt"
+      },
+      {
+        "source": ":file.:type",
+        "destination": ":file.:type"
+      },
+      {
+        "source": "images/:folder/:file",
+        "destination": "images/:folder/:file"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   },
   "env": {
     "NODE_ENV": "production"

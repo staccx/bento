@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { color, spacing } from "@staccx/theme"
@@ -56,6 +57,24 @@ const ClientLink = styled(Link)`
   text-decoration: none;
   font-weight: 500;
 `
+
+ClientsOverviewItem.defaultProps = {
+  name: "",
+  description: "",
+  cases: [],
+  website: "",
+  websiteName: "",
+  logo: null
+}
+
+ClientsOverviewItem.propTypes = {
+  name: PropTypes.string,
+  description: PropTypes.string,
+  cases: PropTypes.array,
+  website: PropTypes.string,
+  websiteName: PropTypes.string,
+  logo: PropTypes.object
+}
 
 const ClientA = ClientLink.withComponent("a")
 

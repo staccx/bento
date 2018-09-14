@@ -21,7 +21,8 @@ export default {
     {
       type: "url",
       name: "url",
-      title: "Url to client website"
+      title: "Url to client website",
+      validation: Rule => Rule.required()
     },
     {
       type: "array",

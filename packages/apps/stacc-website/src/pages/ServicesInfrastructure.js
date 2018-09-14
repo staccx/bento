@@ -3,7 +3,6 @@ import { Layout, Heading, Divider } from "@staccx/base"
 import { SectionHead, Story } from "../components/_codeSplitting"
 
 const ServicesInfrastructure = ({ match }) => {
-  console.log(match)
   return (
     <div>
       <Layout paddingTop="grid" rowGap="grid" paddingBottom="grid">

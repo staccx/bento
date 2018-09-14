@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing } from "@staccx/theme"
+import { color } from "@staccx/theme"
 
 const IconCheck = () => (
   <Icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">

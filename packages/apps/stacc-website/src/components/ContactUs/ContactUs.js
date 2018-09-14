@@ -23,13 +23,17 @@ const ContactUs = ({ person, heading, image, imageCutOut }) => {
           {image && (
             <ImgContainer imageCutOut={imageCutOut || undefined}>
               <SanityImage image={image}>
-                {({ image }) => (
-                  <Image
-                    src={image.url()}
-                    alt={person.name}
-                    imageCutOut={imageCutOut || undefined}
-                  />
-                )}
+                {({ image }) => {
+                  if (image.url()) {
+                    return (
+                      <Image
+                        src={image.url()}
+                        alt={person.name}
+                        imageCutOut={imageCutOut || undefined}
+                      />
+                    )
+                  }
+                }}
               </SanityImage>
             </ImgContainer>
           )}

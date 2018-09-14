@@ -8,12 +8,19 @@ const Login = () => {
       authority: "https://oidc.test.fundu.no",
       client_id: "docs",
       redirect_uri: window.location.origin + "/callback",
-      response_type: "id_token token"
+      response_type: "id_token token",
+      scope: "openid profile"
     },
     acrValue: "username-password-provider",
     codePostUri: "/api/username-password/login",
     redirectAfterLogin: "/",
     callbackPath: "/username-password-callback"
+  }
+
+  if (window.location.host !== "localhost") {
+    const hostParts = window.location.host.split(".")
+    hostParts.splice(0, 1, "oidc")
+    config.oidcConfig.authority = `https://${hostParts.join(".")}`
   }
 
   return (

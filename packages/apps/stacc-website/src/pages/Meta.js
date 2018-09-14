@@ -11,7 +11,9 @@ const Meta = ({ meta }) => {
     <SanityImage image={meta.image}>
       {({ image }) => (
         <Helmet>
+          <meta property="title" content={meta.title} />
           <meta property="og:title" content={meta.title} />
+          <meta property="description" content={meta.description} />
           <meta property="og:description" content={meta.description} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={meta.url.current} />

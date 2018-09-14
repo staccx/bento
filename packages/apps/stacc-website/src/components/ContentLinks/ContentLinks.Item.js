@@ -26,13 +26,13 @@ export const getLinkItem = linkBlock => {
             if (!document) {
               return null
             }
-            console.log(document)
+
             return (
               <ContentLinksItem
                 key={link._ref}
                 heading={linkBlock.title}
                 body={linkBlock.body}
-                url={`/${document.path.current}`}
+                url={`${document.path.current}`}
               />
             )
           }}

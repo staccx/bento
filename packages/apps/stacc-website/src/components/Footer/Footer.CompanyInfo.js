@@ -1,6 +1,5 @@
 import React from "react"
 import { createPortal } from "react-dom"
-import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { Layout, Heading } from "@staccx/base"
 import { color, font, spacing } from "@staccx/theme"
@@ -11,8 +10,8 @@ const createAddress = address => {
   const lines = address.split("\n")
   return (
     <div>
-      {lines.map(line => (
-        <p>{line}</p>
+      {lines.map((line, index) => (
+        <p key={index}>{line}</p>
       ))}
       <p>
         <FooterLink
@@ -47,7 +46,7 @@ const FooterCompanyInfo = ({ heading }) => (
                 <div>Org.nr {doc.orgNr.orgNo}</div>,
                 document.getElementById("orgNr")
               )
-              console.log(doc)
+
               return (
                 <div>
                   <CompanyName level={1}>{doc.name}</CompanyName>
@@ -92,7 +91,7 @@ const CompanyName = styled(Heading)`
 `
 
 const FooterLink = styled.a`
-  color: ${color("g1")};
+  color: #929292;
   text-decoration: none;
 
   &:hover,
