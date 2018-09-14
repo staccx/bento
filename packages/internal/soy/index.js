@@ -14,6 +14,9 @@ program
   .option("-V, --versions", "check for version mismatches")
   .option("-w, --wild", "find unmanaged devDependencies")
   .option("-m, --misplaced", "find misplaced dependencies")
+  .option("-o, --only <pkg1,pkg2,...>", "only consider these dependencies", l =>
+    l.split(",")
+  )
   .option("-v, --verbose", "be verbose")
   .parse(process.argv)
 
@@ -24,6 +27,7 @@ const template = path.resolve(
 
 console.log("Using template", template)
 console.log("Tasting directory", rootDir)
+console.log("Only considering dependencies", program.only || "(all)")
 console.log()
 
 const pinned = require(template)
@@ -48,51 +52,53 @@ const doCheck = async () => {
     let updatedDependencies = false
     for (let depType of depTypes) {
       for (let dep in pkg[depType]) {
-        //if there is a template dep of the same type
-        if (pinned[depType] && pinned[depType][dep]) {
-          if (program.versions) {
-            const pinnedVersion = pinned[depType][dep]
-            if (pkg[depType] && pkg[depType][dep]) {
-              const packageVersion = pkg[depType][dep]
-              if (pinnedVersion !== packageVersion) {
-                console.log(
-                  program.pour ? chalk.green("☑") : chalk.red("☐"),
-                  chalk.bold.yellow(pkg.name) + ":",
-                  dep,
-                  "->",
-                  chalk.green(pinnedVersion),
-                  chalk.gray(packageVersion)
-                )
-                pkg[depType][dep] = pinnedVersion
-                updatedDependencies = true
+        if (!program.only || program.only.includes(dep)) {
+          if (pinned[depType] && pinned[depType][dep]) {
+            //if there is a template dep of the same type
+            if (program.versions) {
+              const pinnedVersion = pinned[depType][dep]
+              if (pkg[depType] && pkg[depType][dep]) {
+                const packageVersion = pkg[depType][dep]
+                if (pinnedVersion !== packageVersion) {
+                  console.log(
+                    program.pour ? chalk.green("☑") : chalk.red("☐"),
+                    chalk.bold.yellow(pkg.name) + ":",
+                    dep,
+                    "->",
+                    chalk.green(pinnedVersion),
+                    chalk.gray(packageVersion)
+                  )
+                  pkg[depType][dep] = pinnedVersion
+                  updatedDependencies = true
+                }
               }
             }
-          }
 
-          //check if the dep is misplaced
-        } else if (program.misplaced) {
-          for (let pinnedDepType of depTypes) {
-            if (
-              pinned[pinnedDepType] &&
-              pinned[pinnedDepType][dep] &&
-              !(pkg[pinnedDepType] && pkg[pinnedDepType][dep])
-            ) {
-              console.log(
-                program.pour ? chalk.green("☑") : chalk.red("☐"),
-                chalk.bold.yellow.bgBlue(pkg.name) + ":",
-                dep + ":",
-                "->",
-                chalk.green(pinnedDepType),
-                chalk.gray(depType)
-              )
+            //check if the dep is misplaced
+          } else if (program.misplaced) {
+            for (let pinnedDepType of depTypes) {
+              if (
+                pinned[pinnedDepType] &&
+                pinned[pinnedDepType][dep] &&
+                !(pkg[pinnedDepType] && pkg[pinnedDepType][dep])
+              ) {
+                console.log(
+                  program.pour ? chalk.green("☑") : chalk.red("☐"),
+                  chalk.bold.yellow.bgBlue(pkg.name) + ":",
+                  dep + ":",
+                  "->",
+                  chalk.green(pinnedDepType),
+                  chalk.gray(depType)
+                )
 
-              const existingVersion = pkg[depType][dep]
-              delete pkg[depType][dep]
-              if (!pkg[pinnedDepType]) {
-                pkg[pinnedDepType] = {}
+                const existingVersion = pkg[depType][dep]
+                delete pkg[depType][dep]
+                if (!pkg[pinnedDepType]) {
+                  pkg[pinnedDepType] = {}
+                }
+                pkg[pinnedDepType][dep] = existingVersion
+                updatedDependencies = true
               }
-              pkg[pinnedDepType][dep] = existingVersion
-              updatedDependencies = true
             }
           }
         }
@@ -102,27 +108,31 @@ const doCheck = async () => {
     //find devDependencies not present in template.devDependencies
     if (program.wild) {
       for (let dep in pkg.devDependencies) {
-        if (!pinned[dep]) {
-          const wildVersion = pkg.devDependencies[dep]
+        if (!program.only || program.only.includes(dep)) {
+          if (!pinned.devDependencies[dep]) {
+            const wildVersion = pkg.devDependencies[dep]
 
-          if (program.verbose) {
-            console.log(
-              "🔥",
-              chalk.bold(pkg.name) + ":",
-              dep,
-              chalk.gray(wildVersion)
+            if (program.verbose) {
+              console.log(
+                "🔥",
+                chalk.bold(pkg.name) + ":",
+                dep,
+                chalk.gray(wildVersion)
+              )
+            }
+
+            if (!wildStats[dep]) {
+              wildStats[dep] = []
+            }
+
+            let wildElement = wildStats[dep].find(
+              e => e.version === wildVersion
             )
-          }
-
-          if (!wildStats[dep]) {
-            wildStats[dep] = []
-          }
-
-          let wildElement = wildStats[dep].find(e => e.version === wildVersion)
-          if (wildElement) {
-            wildElement.count++
-          } else {
-            wildStats[dep].push({ version: wildVersion, count: 1 })
+            if (wildElement) {
+              wildElement.count++
+            } else {
+              wildStats[dep].push({ version: wildVersion, count: 1 })
+            }
           }
         }
       }
