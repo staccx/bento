@@ -6,19 +6,31 @@ import LanguageProvider from "./Components/LanguageProvider"
 import TranslatedText from "./Components/TranslatedText"
 import LanguageSettings from "./Components/LanguageSettings"
 import i18n from "./i18n"
+import dateNowPlugin from "./plugins/date.now"
 
 const i18nConfig = {
   texts: {
     HELLO: {
-      nb: "Heisann, {name}",
-      en: "Hi there",
-      funny: "Use whatever you want: {time}"
+      nb: "Heisann, {name}, dagens dato: {date.now}",
+      en: "Hi there, {name}, today is {date.now}"
     }
   },
   language: "en",
-  languages: ["nb", "en", "funny"],
+  languages: ["nb", "en"],
   data: { name: "Stacc X", time: new Date().toString() },
-  debug: true
+  debug: true,
+  plugins: [dateNowPlugin],
+  pluginOptions: {
+    __default: {
+      weekday: "long"
+    },
+    nb: {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    }
+  }
 }
 
 setTimeout(() => {

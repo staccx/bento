@@ -4,11 +4,13 @@ const format = require("string-format-obj")
  * Class to be used as singleton so that translations can be done out of rendering
  */
 class i18n {
-  init({ texts, language, debug, data }) {
+  init({ texts, language, debug, data, plugins, pluginOptions }) {
     this.texts = texts
     this.language = language
     this.debug = debug
     this.data = data
+    this.plugins = plugins || []
+    this.pluginOptions = pluginOptions || {}
   }
 
   setLanguage(language) {
@@ -35,7 +37,9 @@ class i18n {
     // TODO: Handle commonly used us, like currency, phonenumber, date.now etc.
     try {
       const result = val[this.language]
-      return format(result, formattingData)
+      // Run through plugins
+      const pluginated = this.runPlugins(result)
+      return format(pluginated, formattingData)
     } catch (error) {
       console.error(error, data, key)
 
@@ -43,6 +47,12 @@ class i18n {
         this.language
       } using ${formattingData.toString()}`
     }
+  }
+
+  runPlugins(val) {
+    return this.plugins.reduce((acc, current) => {
+      return current(acc, this.language, this.pluginOptions)
+    }, val)
   }
 
   log(text, level = "info") {
