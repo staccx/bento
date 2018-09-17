@@ -7,25 +7,15 @@ class TranslatedText extends React.Component {
     const { i18nKey, children } = this.props
     return (
       <Consumer>
-        {({ texts, language }) => {
-          if (!texts) {
+        {({ translate, texts }) => {
+          console.log("attempt to translate " + i18nKey, texts)
+
+          const value = translate(i18nKey)
+          if (!value) {
             // Has not been initialized
             return null
           }
-          if (!language) {
-            console.warn("No language defined!", i18nKey)
-            return null
-          }
-          if (!texts.hasOwnProperty(i18nKey)) {
-            console.warn("Key is not part of texts", i18nKey, texts)
-            return null
-          }
-          const entry = texts[i18nKey]
-          if (!entry.hasOwnProperty(language)) {
-            console.warn(`Language ${language} not found in ${i18nKey}`, entry)
-            return null
-          }
-          const value = entry[language]
+
           if (children) {
             return children(value)
           }
