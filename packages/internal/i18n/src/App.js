@@ -10,12 +10,14 @@ import i18n from "./i18n"
 const i18nConfig = {
   texts: {
     HELLO: {
-      nb: "Heisann",
-      en: "Hi there"
+      nb: "Heisann, {name}",
+      en: "Hi there",
+      funny: "Use whatever you want: {time}"
     }
   },
   language: "en",
-  languages: ["nb", "en"],
+  languages: ["nb", "en", "funny"],
+  data: { name: "Stacc X", time: new Date().toString() },
   debug: true
 }
 
@@ -41,7 +43,7 @@ class App extends Component {
             <Text>
               <TranslatedText i18nKey={"HELLO"} />
             </Text>
-            <TranslatedText i18nKey={"HELLO"}>
+            <TranslatedText i18nKey={"HELLO"} data={{ name: "Stacc Flow" }}>
               {value => <Heading>{value}</Heading>}
             </TranslatedText>
             <TranslatedText i18nKey={"HELLO"}>

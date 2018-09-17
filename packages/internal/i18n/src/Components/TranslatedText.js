@@ -4,13 +4,13 @@ import { Consumer } from "./context"
 
 class TranslatedText extends React.Component {
   render() {
-    const { i18nKey, children } = this.props
+    const { i18nKey, children, data } = this.props
     return (
       <Consumer>
         {({ translate, texts }) => {
           console.log("attempt to translate " + i18nKey, texts)
 
-          const value = translate(i18nKey)
+          const value = translate(i18nKey, data)
           if (!value) {
             // Has not been initialized
             return null

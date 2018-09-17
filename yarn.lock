@@ -12011,6 +12011,10 @@ pretty@^2.0.0:
     extend-shallow "^2.0.1"
     js-beautify "^1.6.12"
 
+printf@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/printf/-/printf-0.5.1.tgz#e0466788260859ed153006dc6867f09ddf240cf3"
+
 prismjs@^1.15.0:
   version "1.15.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.15.0.tgz#8801d332e472091ba8def94976c8877ad60398d9"
@@ -14638,6 +14642,10 @@ strict-uri-encode@^1.0.0:
 string-argv@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.0.2.tgz#dac30408690c21f3c3630a3ff3a05877bdcbd736"
+
+string-format-obj@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/string-format-obj/-/string-format-obj-1.1.1.tgz#c7612ca4e2ad923812a81db192dc291850aa1f65"
 
 string-length@^1.0.1:
   version "1.0.1"

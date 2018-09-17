@@ -34,7 +34,8 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-app-rewire-mobx": "^1.0.8",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "string-format-obj": "^1.1.1"
   },
   "devDependencies": {
     "prettier": "^1.14.2",

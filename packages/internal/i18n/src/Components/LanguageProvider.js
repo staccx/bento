@@ -10,11 +10,11 @@ class LanguageProvider extends React.Component {
     this.state = {
       language: props.language,
       languages: props.languages,
-      texts: props.texts
+      texts: props.texts,
+      data: props.data
     }
 
-    this.i18n = i18n
-    this.i18n.init(props)
+    i18n.init(props)
 
     this.setLanguage = this.setLanguage.bind(this)
     LanguageProvider.translate = LanguageProvider.translate.bind(this)
@@ -31,8 +31,14 @@ class LanguageProvider extends React.Component {
     }
   }
 
-  static translate(key) {
-    return i18n.translate(key)
+  /***
+   * Translate to text. Use data param for formatting. See https://github.com/alexei/sprintf.js
+   * @param key
+   * @param data
+   * @returns {string|*}
+   */
+  static translate(key, data) {
+    return i18n.translate(key, data)
   }
 
   render() {
