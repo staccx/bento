@@ -15,6 +15,7 @@ module.exports = {
     "prettier/standard"
   ],
   globals: {
-    sessionStorage: true
+    sessionStorage: true,
+    localStorage: true
   }
 }
