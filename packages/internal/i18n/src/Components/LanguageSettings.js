@@ -9,21 +9,19 @@ class LanguageSettings extends React.Component {
     }
     return (
       <Consumer>
-        {({ setLanguage, language, languages }) => {
-          return (
-            <select
-              id={"languages"}
-              onChange={e => setLanguage(e.target.value)}
-              defaultValue={language}
-            >
-              {languages.map(lang => (
-                <option key={lang} value={lang}>
-                  {lang}
-                </option>
-              ))}
-            </select>
-          )
-        }}
+        {({ setLanguage, language, languages }) => (
+          <select
+            id={"languages"}
+            onChange={e => setLanguage(e.target.value)}
+            value={language}
+          >
+            {languages.map(lang => (
+              <option key={lang} value={lang}>
+                {lang}
+              </option>
+            ))}
+          </select>
+        )}
       </Consumer>
     )
   }

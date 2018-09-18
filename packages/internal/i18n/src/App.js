@@ -36,7 +36,7 @@ const i18nConfig = {
 setTimeout(() => {
   const val = i18n.translate("HELLO")
   console.log("using singleton to translate", val)
-}, 1000)
+})
 
 class App extends Component {
   constructor(props, context) {
