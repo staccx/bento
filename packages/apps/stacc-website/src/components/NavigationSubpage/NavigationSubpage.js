@@ -47,6 +47,7 @@ const ProductName = styled(Heading)`
 const Navigation = styled.nav`
   > * {
     display: flex;
+    flex-wrap: wrap;
 
     > li:not(:last-child) {
       margin-right: ${spacing.medium};

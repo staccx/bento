@@ -63,6 +63,7 @@ const Inner = styled.div`
 
 const Illustration = styled.img`
   max-width: 320px;
+  width: 100%;
 `
 
 const Body = styled.p`

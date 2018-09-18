@@ -40,11 +40,11 @@ const Body = styled.div`
 `
 
 const Lede = styled.p`
-  font-size: ${font.h3};
   font-weight: 300;
   line-height: 1.8;
 
   @media only screen and (min-width: ${wrapper.medium}) {
+    font-size: ${font.h3};
     margin-right: ${spacing.large};
   }
 `
