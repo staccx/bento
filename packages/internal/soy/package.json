@@ -7,6 +7,7 @@
     "start": "node index"
   },
   "dependencies": {
+    "prettier": "^1.13.7",
     "@google/maps": "^0.4.6",
     "@sanity/client": "^0.126.0",
     "@sanity/image-url": "^0.126.0",
@@ -39,7 +40,6 @@
     "prop-types": "^15.6.1",
     "qs": "^6.5.1",
     "react": "^16.3.2",
-    "react-docgen": "^2.21.0",
     "react-dom": "^16.3.2",
     "react-dom-confetti": "^0.0.10",
     "react-element-to-jsx-string": "^14.0.1",
