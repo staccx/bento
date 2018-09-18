@@ -91,7 +91,7 @@ const doCheck = async () => {
     for (let depType of depTypes) {
       for (let dep in pkg[depType]) {
 
-        //remove dependencies
+        //--remove dependencies
         if (program.remove && match(program.remove, dep)) {
           delete pkg[depType][dep]
           console.log(chalk.bold(pkg.name), chalk.gray(dep))
@@ -112,9 +112,11 @@ const doCheck = async () => {
 
         if (match(program.dependencies, dep)) {
           if (pinned[depType] && pinned[depType][dep]) {
+
             //--version compare
             if (program.versions) {
               const pinnedVersion = pinned[depType][dep]
+              
               if (pkg[depType] && pkg[depType][dep]) {
                 const packageVersion = pkg[depType][dep]
                 if (pinnedVersion !== packageVersion) {
