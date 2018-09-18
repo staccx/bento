@@ -74,7 +74,7 @@ class HeaderMenu extends React.Component {
                     {menuItem.submenu.map(submenuItem => (
                       <li key={submenuItem._key + submenuItem.path.current}>
                         <SubMenuLink to={submenuItem.path.current}>
-                          {submenuItem.name}
+                          {submenuItem.title}
                           {"\u00a0"}
                           <Icon />
                         </SubMenuLink>
