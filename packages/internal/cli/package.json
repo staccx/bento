@@ -23,5 +23,8 @@
     "commander": "^2.15.1",
     "fs-extra": "^6.0.1",
     "inquirer": "^5.2.0"
+  },
+  "devDependencies": {
+    "@staccx/rollup-config": "^7.6.4"
   }
 }

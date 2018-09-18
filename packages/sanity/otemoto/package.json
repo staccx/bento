@@ -25,5 +25,8 @@
     "prop-types": "^15.6",
     "react": "^16.2",
     "react-dom": "^16.2"
+  },
+  "devDependencies": {
+    "@staccx/rollup-config": "^7.6.4"
   }
 }
