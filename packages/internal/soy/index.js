@@ -16,7 +16,7 @@ program
   .option("-V, --versions", "check for version mismatches")
   .option("-w, --wild", "find unmanaged devDependencies")
   .option("-m, --misplaced", "find misplaced dependencies")
-  // .option("-d, --depcheck", "find unused dependencies")
+  .option("-d, --depcheck", "find unused dependencies")
   .option(
     "-r, --remove <pkg1,pkg2,...>",
     "remove dependencies from all groups",
@@ -90,7 +90,6 @@ const doCheck = async () => {
     let updatedDependencies = false
     for (let depType of depTypes) {
       for (let dep in pkg[depType]) {
-
         //--remove dependencies
         if (program.remove && match(program.remove, dep)) {
           delete pkg[depType][dep]
@@ -112,11 +111,10 @@ const doCheck = async () => {
 
         if (match(program.dependencies, dep)) {
           if (pinned[depType] && pinned[depType][dep]) {
-
             //--version compare
             if (program.versions) {
               const pinnedVersion = pinned[depType][dep]
-              
+
               if (pkg[depType] && pkg[depType][dep]) {
                 const packageVersion = pkg[depType][dep]
                 if (pinnedVersion !== packageVersion) {
@@ -218,19 +216,46 @@ const doCheck = async () => {
         path.dirname(currentPath),
         {
           withoutDev: false,
-          skipMissing: true,
+          skipMissing: false,
           ignoreDirs: ["node_modules", "dist", "build"],
           parsers: {
             "*.js": depcheck.parser.jsx
           },
           detectors: [
-            // the target detectors
             depcheck.detector.requireCallExpression,
             depcheck.detector.importDeclaration
           ]
         },
         unused => {
-          console.log("unused:", unused.dependencies, unused.devDependencies)
+          const scripts = pkg.scripts || {}
+          const scriptBinaries = []
+          Object.keys(scripts).forEach(s => {
+            const commands = scripts[s]
+              .split(/\s*;\s*|\s*&&\s*/)
+              .map(c => c.split(" ")[0])
+            const builtins = ["yarn", "node"]
+            scriptBinaries.push(...commands.filter(c => !builtins.includes(c)))
+          })
+
+          const filteredDependencies = unused.dependencies.filter(
+            d => !scriptBinaries.includes(d)
+          )
+
+          const filteredDevDependencies = unused.devDependencies.filter(
+            d => !scriptBinaries.includes(d)
+          )
+          if (
+            filteredDevDependencies.length > 0 ||
+            filteredDependencies.length > 0
+          ) {
+            console.log()
+            console.log(chalk.bold.underline(pkg.name) + ":")
+          }
+
+          if (filteredDependencies.length > 0)
+            console.log(filteredDependencies.join(", "))
+          if (filteredDevDependencies.length > 0)
+            console.log(chalk.bgWhite.black(filteredDevDependencies.join(", ")))
         }
       )
     }
