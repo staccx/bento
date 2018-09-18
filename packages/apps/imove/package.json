@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@staccx/rollup-config": "^7.6.4",
-    "prettier": "^1.14.2",
+    "prettier": "^1.13.7",
     "react-app-rewired": "^1.5.2",
     "rollup": "^0.65.0",
     "serve": "^10.0.0",
