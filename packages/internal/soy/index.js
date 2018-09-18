@@ -3,6 +3,7 @@ const path = require("path")
 const globby = require("globby")
 const program = require("commander")
 const chalk = require("chalk")
+const semver = require("semver")
 
 program
   .description(
@@ -50,7 +51,7 @@ const match = (array, value) => {
     return true
   }
   return array.some(e => {
-    const re = new RegExp(e)
+    const re = new RegExp(`^${e}$`)
     return re.test(value)
   })
 }
@@ -80,6 +81,7 @@ const doCheck = async () => {
     let updatedDependencies = false
     for (let depType of depTypes) {
       for (let dep in pkg[depType]) {
+        //--find
         if (program.find) {
           if (match(program.find, dep)) {
             console.log(
@@ -90,21 +92,27 @@ const doCheck = async () => {
             )
           }
         }
+
         if (match(program.dependencies, dep)) {
           if (pinned[depType] && pinned[depType][dep]) {
-            //if there is a template dep of the same type
+            //--version compare
             if (program.versions) {
               const pinnedVersion = pinned[depType][dep]
               if (pkg[depType] && pkg[depType][dep]) {
                 const packageVersion = pkg[depType][dep]
                 if (pinnedVersion !== packageVersion) {
+                  const diff = semver.intersects(pinnedVersion, packageVersion)
+
                   console.log(
                     program.pour ? chalk.green("☑") : chalk.red("☐"),
                     chalk.bold.yellow(pkg.name) + ":",
                     dep,
                     "->",
                     chalk.green(pinnedVersion),
-                    chalk.gray(packageVersion)
+                    chalk.gray(packageVersion),
+                    diff
+                      ? chalk.green("intersecting")
+                      : chalk.red("incompatible")
                   )
                   pkg[depType][dep] = pinnedVersion
                   updatedDependencies = true
@@ -116,7 +124,7 @@ const doCheck = async () => {
               }
             }
 
-            //check if the dep is misplaced
+            //--misplaced
           } else if (program.misplaced) {
             for (let pinnedDepType of depTypes) {
               if (
