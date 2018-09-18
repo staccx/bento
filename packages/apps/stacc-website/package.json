@@ -33,6 +33,7 @@
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
     "deploy": "NODE_ENV=production yarn build:app && now --public && now alias",
+    "deploy:staging": "NODE_ENV=production yarn build:app && now --public",
     "serve": "yarn build && serve -s build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },

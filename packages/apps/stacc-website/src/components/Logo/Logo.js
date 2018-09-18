@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const Logo = ({ inverted, isOnBlack }) => (
+const Logo = ({ inverted, isOnBlack, menuIsVisible }) => (
   <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 50">
     <g fill="none" fillRule="evenodd">
       <g transform="translate(2 2)">
@@ -26,8 +26,12 @@ const Logo = ({ inverted, isOnBlack }) => (
 )
 
 const SVG = styled.svg`
+  display: block;
   width: 158px;
   height: 50px;
+  path {
+    transition: stroke 0.4s ease, fill 0.2s ease;
+  }
 `
 
 export default Logo
