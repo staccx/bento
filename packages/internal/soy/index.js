@@ -4,6 +4,7 @@ const globby = require("globby")
 const program = require("commander")
 const chalk = require("chalk")
 const semver = require("semver")
+const depcheck = require("depcheck")
 
 program
   .description(
@@ -15,6 +16,12 @@ program
   .option("-V, --versions", "check for version mismatches")
   .option("-w, --wild", "find unmanaged devDependencies")
   .option("-m, --misplaced", "find misplaced dependencies")
+  // .option("-d, --depcheck", "find unused dependencies")
+  .option(
+    "-r, --remove <pkg1,pkg2,...>",
+    "remove dependencies from all groups",
+    l => l.split(",")
+  )
   .option(
     "-f, --dependencies <pkg1,pkg2,...>",
     "only consider these dependencies",
@@ -40,6 +47,7 @@ console.log("Using template", template)
 console.log("Tasting directory", rootDir)
 console.log("Only considering dependencies", program.dependencies || "(all)")
 console.log("Only considering packages", program.packages || "(all)")
+console.log("Removing packages", program.remove || "(none)")
 console.log()
 
 const pinned = require(template)
@@ -71,9 +79,10 @@ const doCheck = async () => {
   const versionMismatches = []
   const misplaced = []
 
-  paths.forEach(path => {
-    const pkg = require(path)
+  paths.forEach(currentPath => {
+    const pkg = require(currentPath)
 
+    //return if this package is not in the filter
     if (!match(program.packages, pkg.name)) {
       return
     }
@@ -81,6 +90,14 @@ const doCheck = async () => {
     let updatedDependencies = false
     for (let depType of depTypes) {
       for (let dep in pkg[depType]) {
+
+        //remove dependencies
+        if (program.remove && match(program.remove, dep)) {
+          delete pkg[depType][dep]
+          console.log(chalk.bold(pkg.name), chalk.gray(dep))
+          updatedDependencies = true
+        }
+
         //--find
         if (program.find) {
           if (match(program.find, dep)) {
@@ -192,10 +209,34 @@ const doCheck = async () => {
       }
     }
 
+    //depcheck
+
+    if (program.depcheck) {
+      depcheck(
+        path.dirname(currentPath),
+        {
+          withoutDev: false,
+          skipMissing: true,
+          ignoreDirs: ["node_modules", "dist", "build"],
+          parsers: {
+            "*.js": depcheck.parser.jsx
+          },
+          detectors: [
+            // the target detectors
+            depcheck.detector.requireCallExpression,
+            depcheck.detector.importDeclaration
+          ]
+        },
+        unused => {
+          console.log("unused:", unused.dependencies, unused.devDependencies)
+        }
+      )
+    }
+
     if (updatedDependencies) {
       dirtyPackageCounter++
       if (program.pour) {
-        fs.writeFileSync(path, JSON.stringify(pkg, null, 2) + "\n")
+        fs.writeFileSync(currentPath, JSON.stringify(pkg, null, 2) + "\n")
       }
     } else if (program.verbose) {
       console.log(chalk.bold.green(pkg.name))

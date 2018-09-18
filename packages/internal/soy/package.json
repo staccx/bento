@@ -20,6 +20,7 @@
     "copy-to-clipboard": "^3.0.8",
     "countries-list": "^2.3.2",
     "date-fns": "^v2.0.0-alpha.16",
+    "depcheck": "^0.6.11",
     "downshift": "^1.28.0",
     "easing-utils": "^0.0.7",
     "es6-promise": "^4.2.4",
