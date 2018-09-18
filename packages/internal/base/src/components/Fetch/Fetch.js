@@ -37,6 +37,10 @@ class Fetch extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.timeout)
+  }
+
   render() {
     return this.props.children({ data: this.state.data })
   }
