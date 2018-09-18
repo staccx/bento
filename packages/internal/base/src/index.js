@@ -102,6 +102,7 @@ import Pagination from "./components/Pagination"
 import CodeRenderer from "./components/Code/CodeRenderer"
 import Table from "./components/Table/Table"
 import Fetch from "./components/Fetch/Fetch"
+import Poll from "./components/Fetch/Poll"
 import CopyToClipboard from "./components/CopyToClipboard/CopyToClipboard"
 import CopyToClipboardComponent from "./components/CopyToClipboard/CopyToClipboardComponent"
 
@@ -162,6 +163,7 @@ export {
   Pagination,
   Paragraph,
   PhoneInput,
+  Poll,
   Portal,
   PostalCodeInput,
   ProgressBar,

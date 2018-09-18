@@ -5,8 +5,23 @@ import { Consumer } from "../context"
 import SanityQueryHelper from "sanity-query-helper"
 
 class SanityDocument extends Component {
+  constructor(props, context) {
+    super(props, context)
+    this.fetchDocument = this.fetchDocument.bind(this)
+  }
+
   componentWillMount() {
-    const { id, context, filter, pick } = this.props
+    this.fetchDocument(this.props)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.id !== this.props.id) {
+      this.fetchDocument(nextProps)
+    }
+  }
+
+  fetchDocument(props) {
+    const { id, context, filter, pick } = props
 
     let helper = new SanityQueryHelper({
       sanityOptions: context.helper.sanityOptions
