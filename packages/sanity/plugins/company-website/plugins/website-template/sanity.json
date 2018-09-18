@@ -99,6 +99,10 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/trinity.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "blocks/timeline.js"
     },
     {

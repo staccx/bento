@@ -5,12 +5,12 @@ import { color, font, spacing, wrapper } from "@staccx/theme"
 import { Heading, Layout, Wrapper, ItemGroup } from "@staccx/base"
 import FullWidth from "../FullWidth/FullWidth"
 
-const Hero = ({ heading, lede, trinity }) => (
+const Hero = ({ heading, lede }) => (
   <FullWidth>
     <Container>
       <HeroBG>
         <StyledWrapper>
-          <Layout paddingBottom="grid">
+          <Layout>
             {heading && (
               <Heading level={1} variant="hero">
                 {heading}
@@ -18,30 +18,9 @@ const Hero = ({ heading, lede, trinity }) => (
             )}
             {lede && <Lede>{lede}</Lede>}
           </Layout>
-          {trinity &&
-            trinity.texts.filter((tri, index) => index === 0).map(tri => (
-              <SecondaryContentContainer key={tri._key} singleton>
-                <SecondaryContent>
-                  <Heading level={3}>{tri.heading}</Heading>
-                  <p>{tri.body}</p>
-                </SecondaryContent>
-              </SecondaryContentContainer>
-            ))}
         </StyledWrapper>
       </HeroBG>
     </Container>
-    {trinity && (
-      <div>
-        <SecondaryContentContainer>
-          {trinity.texts.filter((tri, index) => index > 0).map(tri => (
-            <SecondaryContent key={tri._key}>
-              <Heading level={3}>{tri.heading}</Heading>
-              <p>{tri.body}</p>
-            </SecondaryContent>
-          ))}
-        </SecondaryContentContainer>
-      </div>
-    )}
   </FullWidth>
 )
 
@@ -52,6 +31,7 @@ const Container = styled.div`
   position: relative;
   margin-top: -${HeaderHeight};
   z-index: -1;
+  margin-bottom: ${spacing("grid")};
 `
 
 const HeroBG = styled.div`
@@ -88,51 +68,6 @@ const HeroBG = styled.div`
   }
 `
 
-const SecondaryContentContainer = styled(ItemGroup)`
-  position: relative;
-  padding: ${props =>
-    !props.singleton &&
-    css`
-      ${spacing("grid")} 0;
-    `};
-
-  > div {
-    justify-content: space-around;
-  }
-
-  @media only screen and (min-width: ${wrapper.large}) {
-  ${props =>
-    !props.singleton &&
-    css`
-      &::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 0;
-        width: 1px;
-        height: 100%;
-        background-image: linear-gradient(${color.primary}, transparent);
-      }
-    `};
-  }
-  }
-`
-
-const SecondaryContent = styled.div`
-  flex-basis: calc(${wrapper.medium} / 1.5);
-  text-align: center;
-
-  > h3 {
-    margin-bottom: ${spacing.small};
-  }
-
-  @media only screen and (max-width: ${wrapper.large}) {
-    &:first-child {
-      margin-bottom: ${spacing.large};
-    }
-  }
-`
-
 const StyledWrapper = styled(Wrapper)`
   padding-left: ${spacing.medium} !important;
   padding-right: ${spacing.medium} !important;
@@ -141,8 +76,10 @@ const StyledWrapper = styled(Wrapper)`
 const Lede = styled.p`
   font-size: ${font.h3};
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.6;
   text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
 `
 
 Hero.defaultProps = {
