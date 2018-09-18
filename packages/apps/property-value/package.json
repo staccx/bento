@@ -51,11 +51,7 @@
   "devDependencies": {
     "@staccx/rollup-config": "^7.6.4",
     "react-app-rewire-mobx": "^1.0.8",
-    "react-app-rewire-styled-components": "^3.0.2",
-    "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-commonjs": "^8.2.1",
-    "rollup-plugin-json": "^2.3.0",
-    "rollup-plugin-node-resolve": "^3.0.2"
+    "react-app-rewire-styled-components": "^3.0.2"
   },
   "peerDependencies": {
     "styled-components": "^3.3.3"
