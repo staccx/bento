@@ -1,4 +1,6 @@
 import React from "react"
+import Hero from "../components/Hero/Hero"
+import Car from "../components/Hero/Hero.Car"
 import CallToAction from "../components/CallToAction/CallToAction"
 import Advantages from "../components/Advantages/Advantages"
 import Features from "../components/Features/Features"
@@ -10,9 +12,22 @@ import Column from "../components/Footer/Footer.Column"
 
 const Home = () => (
   <div>
+    <Hero
+      headingMain="Abonner på bil og bytt når du vil"
+      subHeadingMain="–en helt ny måte å tenke bil"
+      headingSecondary="Bli pilotbruker og vi hjelper deg å selge bilen din"
+      btnSignUpText="Meld meg på"
+      btnInfoText="Jeg vil vite mer"
+    >
+      <Car name="Hverdagsbil" img="/img/imove-hverdagsbil" />
+      <Car name="Hyttebil" img="/img/imove-hverdagsbil" />
+      <Car name="Flyttebil" img="/img/imove-hverdagsbil" />
+      <Car name="Morobil" img="/img/imove-hverdagsbil" />
+    </Hero>
+
     <CallToAction
-      heading="Bli pilotbruker og vi hjelper deg å selge bilen din"
-      lede="Med iMove Everyday trenger du ikke å binde deg til å eie en bil i lang tid. Du betaler en fast månedspris og slipper å tenke på forsikring, service og alt det der. Bli pilotbruker og få eksklusiv tilgang til iMove før vi åpner for alle."
+      heading="Som pilotbruker får du eksklusiv tilgang til imove"
+      lede="Litt om hvordan imove fungerer, og hvilke fordeler man får som pilotbruker. Den viktigste og mest attraktive fordelen bør fremheves på én eller annen måte, f.eks. i overskriften. 25 pilotbrukere."
       img="/img/road01.png"
       primaryButtonText="Meld meg på"
       primaryButtonUrl="/signup"
