@@ -6,7 +6,10 @@ import {
   Paragraph,
   Loading,
   LayoutItem,
-  List
+  List,
+  RadioPillItem,
+  RadioPill,
+  Text
 } from "@staccx/base"
 import styled from "styled-components"
 import PropTypes from "prop-types"
@@ -32,14 +35,9 @@ class Package extends Component {
       }
     })
 
-    this.build = this.build.bind(this)
     this.runScript = this.runScript.bind(this)
   }
 
-  build() {
-    this.props.socket.emit("build", this.props.pkg.name)
-    this.setState({ isBuilding: true })
-  }
 
   runScript(script) {
     this.props.socket.emit("run script", {
@@ -67,8 +65,19 @@ class Package extends Component {
         )}
         {!this.state.isBuilding && (
           <React.Fragment>
-            <Button onClick={this.build}>Build</Button>
-            <Button onClick={() => this.runScript("build")}>Run script</Button>
+            <ExpandListItem title={"Scripts"}>
+              <RadioPill
+                group={"scripts"}
+                onChange={e => this.runScript(e.target.value)}
+              >
+                {this.props.pkg.scripts &&
+                  this.props.pkg.scripts.map(script => (
+                    <RadioPillItem id={script} value={script}>
+                      <Text>{script}</Text>
+                    </RadioPillItem>
+                  ))}
+              </RadioPill>
+            </ExpandListItem>
             <Button onClick={() => console.log("build it")}>Link</Button>
             <Button onClick={() => console.log("build it")}>
               Open in finder

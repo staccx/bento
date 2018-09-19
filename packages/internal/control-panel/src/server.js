@@ -14,7 +14,17 @@ server.listen(6660, () => console.log("Server running on 6660"))
 
 io.on("connection", socket => {
   console.log("connected")
-  const packages = JSON.parse(exec("lerna ls --json").stdout)
+  const allPackages = JSON.parse(exec("lerna ls --json").stdout)
+  const packages = allPackages.map(pkg => {
+    const pkgFile = `${pkg.location}/package.json`
+    const f = require(pkgFile)
+
+    return {
+      ...pkg,
+      scripts: f.scripts ? Object.keys(f.scripts): []
+    }
+  })
+
   socket.emit("init", { packages })
 
   socket.on("run script", data => {
