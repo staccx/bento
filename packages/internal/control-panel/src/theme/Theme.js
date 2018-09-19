@@ -1,5 +1,35 @@
-import { Theme } from "@staccx/theme"
-import { BaseTheme } from "@staccx/base"
+import { Theme, registerStyle, color } from "@staccx/theme"
+import { BaseTheme, LayoutItem, Layout } from "@staccx/base"
+import { css } from "styled-components"
+import { FadeIn } from "@staccx/animations"
+
+const layoutStyle = registerStyle(
+  {
+    fourByFour: css`
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+    `
+  },
+  Layout.themeProps.container
+)
+
+const fadeInCss = css`
+  opacity: 0;
+  animation: ${FadeIn} forwards ease-out 400ms 1;
+  animation-delay: ${p => (p.delay ? p.delay : 0)}ms;
+`
+
+const layoutItemStyle = registerStyle(
+  {
+    fourByFour: css`
+      opacity: 0;
+      animation: ${FadeIn} forwards ease-out 400ms 1;
+      animation-delay: 800ms;
+      background-color: ${color.secondary};
+    `
+  },
+  LayoutItem.themeProps.container
+)
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -26,7 +56,7 @@ const spacing = {
   small: "12px",
   tiny: "6px"
 }
-const color = {
+const colors = {
   bg: "#fcfcfc",
   bgGray: "#F9F7F7",
   primary: "#23A532",
@@ -74,7 +104,7 @@ const theme = new Theme(BaseTheme, {
   name: "control-panel",
   font,
   webfonts,
-  color,
+  color: colors,
   spacing,
   wrapper,
   targetSize,
@@ -83,4 +113,6 @@ const theme = new Theme(BaseTheme, {
   fontFamily,
   global: ``
 })
+  .add(layoutStyle)
+  .add(layoutItemStyle)
 export default theme

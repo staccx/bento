@@ -201,7 +201,7 @@ class MenuBuilder {
 
     const subMenuView = subMenuViewDev
 
-    return [subMenuAbout, subMenuView, subMenuBuild]
+    return [subMenuAbout, subMenuEdit, subMenuView, subMenuBuild]
   }
 
   buildDefaultTemplate() {
