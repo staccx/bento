@@ -6,13 +6,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 <a name="7.7.3"></a>
 ## [7.7.3](https://bitbucket.org/projects/stacc-flow/repos/bento/compare/diff?targetBranch=refs%2Ftags%2Fv7.7.2&sourceBranch=refs%2Ftags%2Fv7.7.3) (2018-09-19)
 
-**Note:** Version bump only for package @staccx/norefjell-theme
 
+### Features
 
-
-
-
-<a name="7.7.2"></a>
-## [7.7.2](https://bitbucket.org/projects/stacc-flow/repos/bento/compare/diff?targetBranch=refs%2Ftags%2Fv7.7.1&sourceBranch=refs%2Ftags%2Fv7.7.2) (2018-09-14)
-
-**Note:** Version bump only for package @staccx/norefjell-theme
+* **eslint-config:** add localStorage to accepted globals ([2b5aa31](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/2b5aa31))

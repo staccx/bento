@@ -1,11 +1,11 @@
 {
   "name": "@staccx/dealerpad",
-  "version": "7.7.2",
+  "version": "7.7.3",
   "dependencies": {
     "@staccx/animations": "^7.6.4",
-    "@staccx/base": "^7.7.2",
+    "@staccx/base": "^7.7.3",
     "@staccx/formatting": "^7.6.4",
-    "@staccx/nordea-theme": "^7.7.2",
+    "@staccx/nordea-theme": "^7.7.3",
     "@staccx/theme": "^7.6.4",
     "axios": "^0.18.0",
     "history": "^4.7.2",

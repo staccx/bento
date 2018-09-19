@@ -1,6 +1,6 @@
 {
   "name": "@staccx/stacc-theme",
-  "version": "7.7.2",
+  "version": "7.7.3",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -24,7 +24,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/base": "^7.7.2",
+    "@staccx/base": "^7.7.3",
     "@staccx/theme": "^7.6.4",
     "polished": "^1.9.2",
     "react": "^16.3.2",
