@@ -15,7 +15,8 @@ import {
   SectionHead,
   Stories,
   Timeline,
-  ContactUs
+  ContactUs,
+  Trinity
 } from "../components/_codeSplitting"
 
 const serializer = {
@@ -89,7 +90,11 @@ const serializer = {
       />
     ),
     peopleList: ({ node }) => <PeopleList node={node} />,
-    clientList: ({ node }) => <ClientList node={node} />
+    clientList: ({ node }) => <ClientList node={node} />,
+    trinity: ({ node }) => {
+      console.log(node)
+      return <Trinity heading={node.title} items={node.trinity.texts} />
+    }
   }
 }
 

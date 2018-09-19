@@ -4,7 +4,8 @@ module.exports = {
   rules: {
     "prettier/prettier": "error",
     "react/prop-types": 0,
-    "react/no-unused-prop-types": 0
+    "react/no-unused-prop-types": 0,
+    "new-cap": ["error", { newIsCapExceptions: ["i18n"] }]
   },
   extends: [
     "standard",
@@ -14,6 +15,7 @@ module.exports = {
     "prettier/standard"
   ],
   globals: {
-    sessionStorage: true
+    sessionStorage: true,
+    localStorage: true
   }
 }

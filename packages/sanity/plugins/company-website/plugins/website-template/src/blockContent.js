@@ -17,6 +17,7 @@ export default {
     { type: "productClients" },
     { type: "quote" },
     { type: "hero" },
+    { type: "trinity" },
     { type: "stories" },
     { type: "timeline" },
     { type: "contactPerson" },

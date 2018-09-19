@@ -88,7 +88,7 @@ class App extends Component {
                     />
                   </Switch>
                   <React.Fragment>
-                    <SanityList type={"client"}>
+                    <SanityList type={"client"} filter={`hide != true`}>
                       {({ result }) => {
                         if (!result) {
                           return null

@@ -82,6 +82,7 @@ const FooterNav = styled.ul`
   display: flex;
   justify-content: space-between;
   padding-top: ${spacing.small};
+  flex-wrap: wrap;
 `
 
 const FooterNavLink = styled(NavLink)`

@@ -1,16 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
-import { color, font, spacing, wrapper } from "@staccx/theme"
-import { Heading, Layout, Wrapper, ItemGroup } from "@staccx/base"
+import styled from "styled-components"
+import { color, font, spacing, fontFamily, wrapper } from "@staccx/theme"
+import { Heading, Layout, Wrapper } from "@staccx/base"
 import FullWidth from "../FullWidth/FullWidth"
 
-const Hero = ({ heading, lede, trinity }) => (
+const Hero = ({ heading, lede }) => (
   <FullWidth>
     <Container>
       <HeroBG>
         <StyledWrapper>
-          <Layout paddingBottom="grid">
+          <Layout>
             {heading && (
               <Heading level={1} variant="hero">
                 {heading}
@@ -18,40 +18,22 @@ const Hero = ({ heading, lede, trinity }) => (
             )}
             {lede && <Lede>{lede}</Lede>}
           </Layout>
-          {trinity &&
-            trinity.texts.filter((tri, index) => index === 0).map(tri => (
-              <SecondaryContentContainer key={tri._key} singleton>
-                <SecondaryContent>
-                  <Heading level={3}>{tri.heading}</Heading>
-                  <p>{tri.body}</p>
-                </SecondaryContent>
-              </SecondaryContentContainer>
-            ))}
         </StyledWrapper>
       </HeroBG>
     </Container>
-    {trinity && (
-      <div>
-        <SecondaryContentContainer>
-          {trinity.texts.filter((tri, index) => index > 0).map(tri => (
-            <SecondaryContent key={tri._key}>
-              <Heading level={3}>{tri.heading}</Heading>
-              <p>{tri.body}</p>
-            </SecondaryContent>
-          ))}
-        </SecondaryContentContainer>
-      </div>
-    )}
   </FullWidth>
 )
 
 const triangleHeight = "14vh"
+const triangleHeightLarge = "21vh"
+const triangleHeightHuge = "28vh"
 const HeaderHeight = "88px"
 
 const Container = styled.div`
   position: relative;
   margin-top: -${HeaderHeight};
   z-index: -1;
+  margin-bottom: ${spacing("grid")};
 `
 
 const HeroBG = styled.div`
@@ -86,49 +68,34 @@ const HeroBG = styled.div`
     border-width: 0 0 ${triangleHeight} 50vw;
     border-color: transparent transparent ${color.white} transparent;
   }
-`
-
-const SecondaryContentContainer = styled(ItemGroup)`
-  position: relative;
-  padding: ${props =>
-    !props.singleton &&
-    css`
-      ${spacing("grid")} 0;
-    `};
-
-  > div {
-    justify-content: space-around;
-  }
 
   @media only screen and (min-width: ${wrapper.large}) {
-  ${props =>
-    !props.singleton &&
-    css`
-      &::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 0;
-        width: 1px;
-        height: 100%;
-        background-image: linear-gradient(${color.primary}, transparent);
-      }
-    `};
-  }
-  }
-`
+    &::before,
+    &::after {
+      height: ${triangleHeightLarge};
+    }
 
-const SecondaryContent = styled.div`
-  flex-basis: calc(${wrapper.medium} / 1.5);
-  text-align: center;
+    &::before {
+      border-width: ${triangleHeightLarge} 0 0 50vw;
+    }
 
-  > h3 {
-    margin-bottom: ${spacing.small};
+    &::after {
+      border-width: 0 0 ${triangleHeightLarge} 50vw;
+    }
   }
 
-  @media only screen and (max-width: ${wrapper.large}) {
-    &:first-child {
-      margin-bottom: ${spacing.large};
+  @media only screen and (min-width: 1900px) {
+    &::before,
+    &::after {
+      height: ${triangleHeightHuge};
+    }
+
+    &::before {
+      border-width: ${triangleHeightHuge} 0 0 50vw;
+    }
+
+    &::after {
+      border-width: 0 0 ${triangleHeightHuge} 50vw;
     }
   }
 `
@@ -140,9 +107,12 @@ const StyledWrapper = styled(Wrapper)`
 
 const Lede = styled.p`
   font-size: ${font.h3};
+  font-family: ${fontFamily.heading};
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.6;
   text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
 `
 
 Hero.defaultProps = {

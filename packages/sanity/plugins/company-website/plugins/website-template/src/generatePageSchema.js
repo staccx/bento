@@ -10,7 +10,18 @@ export default ({
   name,
   title,
   fields: [
-    { type: "string", name: "name", title: "Name" },
+    {
+      type: "string",
+      name: "name",
+      title: "Name",
+      description: "This is for reference only. Will be source of url"
+    },
+    {
+      type: "string",
+      name: "title",
+      title: "Title",
+      description: "This will be shown on the website"
+    },
     {
       type: "slug",
       name: "path",
@@ -52,5 +63,11 @@ export default ({
       title: "Page Meta",
       description: "For Open Graph. For more see http://ogp.me/"
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: "title",
+      subtitle: "name"
+    }
+  }
 })
