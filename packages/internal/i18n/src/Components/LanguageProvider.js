@@ -11,23 +11,25 @@ class LanguageProvider extends React.Component {
       language: props.language,
       languages: props.languages,
       texts: props.texts,
-      data: props.data
+      data: props.data,
+      initialized: false
     }
-
-    i18n.init(props)
 
     this.setLanguage = this.setLanguage.bind(this)
     LanguageProvider.translate = LanguageProvider.translate.bind(this)
+    i18n.init(props).then(language => {
+      this.setLanguage(language, { initialized: true })
+    })
   }
 
   /**
    * Set language. Keep the language in state to allow for updating
    * @param language
    */
-  setLanguage(language) {
+  setLanguage(language, otherState = {}) {
     if (this.state.languages.indexOf(language) !== -1) {
       i18n.setLanguage(language)
-      this.setState({ language })
+      this.setState({ language, ...otherState })
     }
   }
 

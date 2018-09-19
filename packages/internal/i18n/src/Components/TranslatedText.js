@@ -7,9 +7,10 @@ class TranslatedText extends React.Component {
     const { i18nKey, children, data } = this.props
     return (
       <Consumer>
-        {({ translate, texts }) => {
-          console.log("attempt to translate " + i18nKey, texts)
-
+        {({ translate, initialized }) => {
+          if (!initialized) {
+            return null
+          }
           const value = translate(i18nKey, data)
           if (!value) {
             // Has not been initialized
