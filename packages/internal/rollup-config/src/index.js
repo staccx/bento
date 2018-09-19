@@ -37,7 +37,23 @@ const generateConfig = pkg => {
         exclude: ["node_modules/**"],
 
         // transform-runtime need to fix "regeneratorRuntime is not defined"
-        plugins: ["external-helpers", "transform-runtime"]
+        plugins: [
+          "external-helpers",
+          "transform-runtime",
+          "styled-components",
+          "transform-decorators-legacy"
+        ],
+
+        presets: [
+          [
+            "env",
+            {
+              modules: false
+            }
+          ],
+          "stage-0",
+          "react"
+        ]
       }),
       resolve(),
       commonjs()
