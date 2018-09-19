@@ -62,7 +62,7 @@ const ItemLink = styled(Link)`
   text-decoration: none;
   display: block;
   align-items: center;
-  margin-bottom: ${spacing.small};
+  margin-bottom: ${spacing.tiny};
   color: ${color.primary};
   transition: color 0.2s ease;
   white-space: nowrap;

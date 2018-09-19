@@ -11,7 +11,7 @@ const SectionHead = ({ heading, headingLevel, lede, illustration }) => {
       <Layout>
         <Body>
           <div>
-            <Layout>
+            <Layout rowGap="tiny">
               <Heading level={headingLevel}>{heading}</Heading>
               <Lede>{lede}</Lede>
             </Layout>

@@ -17,6 +17,9 @@ const getResponsiveSize = level => {
     case 2:
       return font.h3
 
+    case 3:
+      return font.h4
+
     default:
       return font[level]
   }

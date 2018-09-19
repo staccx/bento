@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { color, font, spacing, fontFamily } from "@staccx/theme"
+import { color, font, spacing, fontFamily, wrapper } from "@staccx/theme"
 import { Heading, Layout, Wrapper } from "@staccx/base"
 import FullWidth from "../FullWidth/FullWidth"
 
@@ -25,6 +25,8 @@ const Hero = ({ heading, lede }) => (
 )
 
 const triangleHeight = "14vh"
+const triangleHeightLarge = "21vh"
+const triangleHeightHuge = "28vh"
 const HeaderHeight = "88px"
 
 const Container = styled.div`
@@ -65,6 +67,36 @@ const HeroBG = styled.div`
     border-style: solid;
     border-width: 0 0 ${triangleHeight} 50vw;
     border-color: transparent transparent ${color.white} transparent;
+  }
+
+  @media only screen and (min-width: ${wrapper.large}) {
+    &::before,
+    &::after {
+      height: ${triangleHeightLarge};
+    }
+
+    &::before {
+      border-width: ${triangleHeightLarge} 0 0 50vw;
+    }
+
+    &::after {
+      border-width: 0 0 ${triangleHeightLarge} 50vw;
+    }
+  }
+
+  @media only screen and (min-width: 1900px) {
+    &::before,
+    &::after {
+      height: ${triangleHeightHuge};
+    }
+
+    &::before {
+      border-width: ${triangleHeightHuge} 0 0 50vw;
+    }
+
+    &::after {
+      border-width: 0 0 ${triangleHeightHuge} 50vw;
+    }
   }
 `
 
