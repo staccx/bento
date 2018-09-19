@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
-import { color, font, spacing, wrapper } from "@staccx/theme"
-import { Heading, Layout, Wrapper, ItemGroup } from "@staccx/base"
+import styled from "styled-components"
+import { color, font, spacing, fontFamily } from "@staccx/theme"
+import { Heading, Layout, Wrapper } from "@staccx/base"
 import FullWidth from "../FullWidth/FullWidth"
 
 const Hero = ({ heading, lede }) => (
@@ -75,6 +75,7 @@ const StyledWrapper = styled(Wrapper)`
 
 const Lede = styled.p`
   font-size: ${font.h3};
+  font-family: ${fontFamily.heading};
   font-weight: 300;
   line-height: 1.6;
   text-align: center;

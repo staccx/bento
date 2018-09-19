@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Heading, Layout } from "@staccx/base"
-import { spacing, font, wrapper } from "@staccx/theme"
+import { spacing, font, fontFamily, wrapper } from "@staccx/theme"
 import { SanityImage } from "@staccx/sanity"
 
 const SectionHead = ({ heading, headingLevel, lede, illustration }) => {
@@ -11,8 +11,10 @@ const SectionHead = ({ heading, headingLevel, lede, illustration }) => {
       <Layout>
         <Body>
           <div>
-            <Heading level={headingLevel}>{heading}</Heading>
-            <Lede>{lede}</Lede>
+            <Layout>
+              <Heading level={headingLevel}>{heading}</Heading>
+              <Lede>{lede}</Lede>
+            </Layout>
           </div>
 
           <div>
@@ -40,6 +42,7 @@ const Body = styled.div`
 `
 
 const Lede = styled.p`
+  font-family: ${fontFamily.heading};
   font-weight: 300;
   line-height: 1.8;
 
