@@ -21,24 +21,38 @@ io.on("connection", socket => {
 
     return {
       ...pkg,
-      scripts: f.scripts ? Object.keys(f.scripts): []
+      scripts: f.scripts ? Object.keys(f.scripts) : [],
+      dependecies: f.dependecies
     }
   })
 
   socket.emit("init", { packages })
 
+  socket.on("exec raw", data => {
+    // Just fire it
+    exec(data)
+  })
+
+  socket.on("run exec", data => {
+    const { pkg, script } = data
+
+    exec(`lerna exec --scope ${pkg} ${script}`)
+  })
+
   socket.on("run script", data => {
     const { pkg, script } = data
     console.log("run script ", data)
 
-    const child = exec(`lerna run --scope ${pkg} ${script}`, { async: true })
+    const child = exec(`lerna run --scope ${pkg} ${script} --stream`, {
+      async: true
+    })
 
     child.stdout.on("data", data => {
       socket.emit("log", { log: data, pkg })
     })
 
-    child.on("exit", () => {
-      console.log("here")
+    child.on("exit", data => {
+      console.log("here", data)
       socket.emit("build ended", pkg)
     })
   })

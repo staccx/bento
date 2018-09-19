@@ -12,7 +12,9 @@ import {
   Text
 } from "@staccx/base"
 import styled from "styled-components"
+import copy from "copy-to-clipboard"
 import PropTypes from "prop-types"
+const electron = window.require("electron")
 
 class Package extends Component {
   state = {
@@ -31,20 +33,56 @@ class Package extends Component {
 
     this.props.socket.on("log", data => {
       if (data.pkg === props.pkg.name) {
-        this.setState({ log: data.log })
+        this.setState({ log: this.state.log + data.log })
       }
     })
 
+    console.log(electron)
+
     this.runScript = this.runScript.bind(this)
+    this.showInFolder = this.showInFolder.bind(this)
+    this.openIDE = this.openIDE.bind(this)
+    this.openWithCode = this.openWithCode.bind(this)
+    this.openWithWebstorm = this.openWithWebstorm.bind(this)
+    this.link = this.link.bind(this)
+    this.emit = this.emit.bind(this)
   }
 
-
   runScript(script) {
-    this.props.socket.emit("run script", {
+    this.emit("run script", {
       pkg: this.props.pkg.name,
       script: script
     })
-    this.setState({ isBuilding: true })
+    this.setState({ isBuilding: true, log: "" })
+  }
+
+  showInFolder() {
+    electron.shell.showItemInFolder(this.props.pkg.location)
+  }
+
+  openWithCode() {
+    this.openIDE("code")
+  }
+
+  openWithWebstorm() {
+    this.openIDE("webstorm")
+  }
+
+  openIDE(ide) {
+    // this.props.socket.emit("exec raw", `${ide} ${this.props.pkg.location}`)
+    this.emit("exec raw", `${ide} ${this.props.pkg.location}`)
+  }
+
+  link() {
+    this.emit("run exec", {
+      pkg: this.props.pkg.name,
+      script: "yarn link"
+    })
+    copy(`yarn link ${this.props.pkg.name}`)
+  }
+
+  emit(id, data) {
+    this.props.socket.emit(id, data)
   }
 
   render() {
@@ -78,13 +116,10 @@ class Package extends Component {
                   ))}
               </RadioPill>
             </ExpandListItem>
-            <Button onClick={() => console.log("build it")}>Link</Button>
-            <Button onClick={() => console.log("build it")}>
-              Open in finder
-            </Button>
-            <Button onClick={() => console.log("build it")}>
-              Open in Code
-            </Button>
+            <Button onClick={this.link}>Link</Button>
+            <Button onClick={this.showInFolder}>Open in finder</Button>
+            <Button onClick={this.openWithCode}>Open in Code</Button>
+            <Button onClick={this.openWithWebstorm}>Open in Webstorm</Button>
           </React.Fragment>
         )}
         <List>
