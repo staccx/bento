@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link, withRouter } from "react-router-dom"
 import styled from "styled-components"
-import { spacing, wrapper } from "@staccx/theme"
+import { color, spacing, wrapper, fontFamily } from "@staccx/theme"
 import { SanityDocument } from "@staccx/sanity"
 import { Wrapper, hideVisually } from "@staccx/base"
 import Logo from "../Logo/Logo"
@@ -43,7 +43,7 @@ class Header extends React.Component {
           const inverted =
             (document.inverted || []).indexOf(location.pathname) !== -1
           return (
-            <Head inverted={inverted}>
+            <Head inverted={inverted} menuIsVisible={this.state.menuIsVisible}>
               <Wrapper>
                 <Inner>
                   <LogoLink to="/">
@@ -77,16 +77,20 @@ class Header extends React.Component {
 const LogoLink = styled(Link)`
   text-decoration: none;
   padding-right: ${spacing.medium};
-
-  @media only screen and (max-width: ${wrapper.large}) {
-    order: 2;
-  }
 `
 
 const Head = styled.header`
-  position: relative;
   padding-top: ${spacing.mediumPlus};
   z-index: 10;
+  font-family: ${fontFamily.heading};
+
+  @media only screen and (max-width: ${wrapper.large}) {
+    position: ${p => (!p.menuIsVisible ? "relative" : "fixed")};
+    background-color: ${p =>
+      !p.menuIsVisible ? "transparent" : color("primaryDark")(p)};
+    min-height: ${p => (!p.menuIsVisible ? "80px" : "100vh")};
+    width: 100%;
+  }
 `
 
 const Inner = styled.div`

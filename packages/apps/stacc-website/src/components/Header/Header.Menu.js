@@ -1,11 +1,19 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
+import styled, { css, keyframes } from "styled-components"
 import { NavLink } from "react-router-dom"
-import { spacing, color, borderRadius, wrapper, font } from "@staccx/theme"
+import {
+  spacing,
+  color,
+  borderRadius,
+  wrapper,
+  font,
+  fontFamily
+} from "@staccx/theme"
 import { opacity } from "@staccx/color"
 import { Button, List } from "@staccx/base"
 import { BounceIn } from "@staccx/animations"
+import IconArrowRight from "../Icons/IconArrowRight"
 
 class HeaderMenu extends React.Component {
   constructor(props) {
@@ -67,6 +75,8 @@ class HeaderMenu extends React.Component {
                       <li key={submenuItem._key + submenuItem.path.current}>
                         <SubMenuLink to={submenuItem.path.current}>
                           {submenuItem.name}
+                          {"\u00a0"}
+                          <Icon />
                         </SubMenuLink>
                       </li>
                     ))}
@@ -80,6 +90,30 @@ class HeaderMenu extends React.Component {
   }
 }
 
+const SubMenuBounceIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(calc(100% - 12px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+`
+
+const SubMenuArrowBounceIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(100% - 2px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 100%);
+  }
+`
+
 const Navigation = styled.nav`
   display: ${p => (p.isOpen ? "flex" : "none")};
   align-items: stretch;
@@ -87,11 +121,9 @@ const Navigation = styled.nav`
   transition: opacity 0.2s ease;
 
   @media only screen and (max-width: ${wrapper.large}) {
-    order: 1;
     flex-basis: 100%;
     flex-direction: column;
-    background-color: ${color("primaryDark")};
-    margin: -${spacing.mediumPlus} -${spacing.medium} ${spacing.medium};
+    margin: ${spacing.small} -${spacing.medium} 0;
     padding: ${spacing.small} 0 0;
     animation: ${BounceIn} 0.5s ease-out forwards 1;
   }
@@ -203,6 +235,7 @@ const SubMenuExpandBtn = styled(Button)`
   min-height: 0;
   line-height: inherit;
   transition: color 0.2s ease;
+  font-family: ${fontFamily.heading};
 
   &:hover,
   &:active,
@@ -242,6 +275,7 @@ const SubMenuExpandBtn = styled(Button)`
           border-color: transparent transparent ${color.white} transparent;
           transform: translate(-50%, 100%);
           z-index: 100;
+          animation: ${SubMenuArrowBounceIn} 0.2s ease forwards 1;
         }
       `};
   }
@@ -266,25 +300,52 @@ const SubMenu = styled(List)`
     transform: translateY(100%);
     background-color: ${color.white};
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding: ${spacing.medium};
     width: calc(100% - ${spacing.small});
     z-index: 50;
+    animation: ${SubMenuBounceIn} 0.2s ease forwards 1;
+
+    > li {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
   }
 `
 
 const SubMenuLink = styled(NavLink)`
+  display: block;
   color: currentColor;
   text-decoration: none;
   font-size: ${font.base};
+  padding: ${spacing.small} ${spacing.small};
 
   @media only screen and (min-width: ${wrapper.large}) {
     color: ${color.text};
+    transition: background 0.2s ease, color 0.2s ease;
 
     &:hover,
     &:active,
     &:focus {
+      background-color: ${color("g4")};
       color: ${color.primary};
+
+      > svg {
+        color: ${color.primary};
+        transform: translateX(3px);
+      }
     }
+  }
+`
+
+const Icon = styled(IconArrowRight)`
+  display: inline-block;
+  vertical-align: middle;
+  width: 14px;
+  height: 14px;
+  margin-left: ${spacing.tiny};
+  color: ${color("g2")};
+  transition: transform 0.2s ease;
+
+  @media only screen and (max-width: ${wrapper.large}) {
+    display: none;
   }
 `
 

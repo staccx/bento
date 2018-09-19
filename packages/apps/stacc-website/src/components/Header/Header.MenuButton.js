@@ -17,7 +17,6 @@ const HeaderMenuButton = ({ isOpen, inverted, onClick }) => {
 const Outer = styled.div`
   position: relative;
   justify-self: flex-end;
-  order: 3;
 `
 
 const Icon = styled.button`
@@ -45,7 +44,12 @@ const Icon = styled.button`
 const Line = styled.i`
   height: 3px;
   width: 36px;
-  background-color: ${p => (p.inverted ? color("white")(p) : color("text")(p))};
+  background-color: ${p =>
+    p.isOpen
+      ? color("white")(p)
+      : p.inverted
+        ? color("white")(p)
+        : color("text")(p)};
   transition: transform 0.3s ease, opacity 0.2s ease;
 
   ${p =>
