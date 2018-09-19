@@ -1,0 +1,30 @@
+{
+  "name": "@staccx/control-panel",
+  "version": "5.2.1",
+  "private": true,
+  "main": "src/main.js",
+  "productName": "Bento ctrl",
+  "homepage": "./",
+  "dependencies": {
+    "@lerna/list": "^3.3.2",
+    "@staccx/base": "^6.4.0",
+    "@staccx/soy": "^6.3.0",
+    "@staccx/theme": "^6.3.0",
+    "shelljs": "^0.8.2"
+  },
+  "scripts": {
+    "start": "nf start",
+    "cra": "react-app-rewired start",
+    "electron": "electron .",
+    "build:app": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject",
+    "deploy": "yarn build && surge -p ./build",
+    "serve": "yarn build && serve -s build"
+  },
+  "devDependencies": {
+    "@staccx/rollup-config": "^6.3.0",
+    "electron": "^3.0.0",
+    "foreman": "^3.0.1"
+  }
+}

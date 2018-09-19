@@ -187,10 +187,21 @@ class MenuBuilder {
       ]
     }
 
-    const subMenuView =
-      process.env.NODE_ENV === "development" ? subMenuViewDev : subMenuViewProd
+    const subMenuBuild = {
+      label: "Build",
+      submenu: [
+        {
+          label: "Build all",
+          click() {
+            shell.exec("lerna run build")
+          }
+        }
+      ]
+    }
 
-    return [subMenuAbout, subMenuEdit, subMenuView, subMenuWindow, subMenuHelp]
+    const subMenuView = subMenuViewDev
+
+    return [subMenuAbout, subMenuView, subMenuBuild]
   }
 
   buildDefaultTemplate() {
