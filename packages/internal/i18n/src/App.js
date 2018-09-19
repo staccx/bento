@@ -7,28 +7,42 @@ import TranslatedText from "./Components/TranslatedText"
 import LanguageSettings from "./Components/LanguageSettings"
 import i18n from "./i18n"
 import dateNowPlugin from "./plugins/date.now"
+import formatCurrencyPlugin from "./plugins/format.currency"
 
 const i18nConfig = {
   texts: {
     HELLO: {
-      nb: "Heisann, {name}, dagens dato: {date.now}",
-      en: "Hi there, {name}, today is {date.now}"
+      nb: "Heisann, {name}, dagens dato: {date.now}, {currency(price)}",
+      en: "Hi there, {name}, today is {date.now}, {currency(price)}"
     }
   },
   language: "en",
   languages: ["nb", "en"],
-  data: { name: "Stacc X", time: new Date().toString() },
+  data: { name: "Stacc X", price: 10000 },
   debug: true,
-  plugins: [dateNowPlugin],
+  plugins: [dateNowPlugin, formatCurrencyPlugin],
   pluginOptions: {
-    __default: {
-      weekday: "long"
+    timeNow: {
+      en: {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      },
+      nb: {
+        weekday: "long"
+      }
     },
-    nb: {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric"
+    currency: {
+      format: "%s %v",
+      nb: {
+        thousand: ".",
+        symbol: "kr"
+      },
+      en: {
+        thousand: " ",
+        symbol: "$"
+      }
     }
   }
 }

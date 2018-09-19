@@ -51,7 +51,7 @@ class i18n {
     try {
       const result = val[this.language]
       // Run through plugins
-      const pluginated = this.runPlugins(result)
+      const pluginated = this.runPlugins(result, formattingData)
       return format(pluginated, formattingData)
     } catch (error) {
       console.error(error, data, key)
@@ -62,9 +62,9 @@ class i18n {
     }
   }
 
-  runPlugins(val) {
+  runPlugins(val, data) {
     return this.plugins.reduce((acc, current) => {
-      return current(acc, this.language, this.pluginOptions)
+      return current(acc, this.language, this.pluginOptions, data)
     }, val)
   }
 
