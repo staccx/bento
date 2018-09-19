@@ -1,7 +1,7 @@
 {
   "license": "UNLICENSED",
   "name": "@staccx/norefjell-theme",
-  "version": "7.7.3",
+  "version": "7.7.4",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -24,10 +24,10 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/animations": "^7.6.4",
-    "@staccx/base": "^7.7.3",
-    "@staccx/formatting": "^7.6.4",
-    "@staccx/theme": "^7.6.4",
+    "@staccx/animations": "^7.7.4",
+    "@staccx/base": "^7.7.4",
+    "@staccx/formatting": "^7.7.4",
+    "@staccx/theme": "^7.7.4",
     "polished": "^1.9.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
