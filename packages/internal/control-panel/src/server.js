@@ -17,19 +17,14 @@ io.on("connection", socket => {
   const packages = JSON.parse(exec("lerna ls --json").stdout)
   socket.emit("init", { packages })
 
-  socket.on("buildAll", () => {
-    const child = exec("lerna run build", { async: true })
-    child.stdout.on("data", function(data) {
-      socket.emit("write log", data)
-    })
-  })
+  socket.on("run script", data => {
+    const { pkg, script } = data
+    console.log("run script ", data)
 
-  socket.on("build", pkg => {
-    console.log("building", pkg)
-    const child = exec(`lerna run --scope ${pkg} build`, { async: true })
+    const child = exec(`lerna run --scope ${pkg} ${script}`, { async: true })
 
     child.stdout.on("data", data => {
-      socket.emit("write log", data)
+      socket.emit("log", { log: data, pkg })
     })
 
     child.on("exit", () => {

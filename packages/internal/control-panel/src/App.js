@@ -32,7 +32,7 @@ class App extends Component {
         <Router>
           <Layout variant={"fourByFour"}>
             {this.state.packages.map(pkg => (
-              <Package pkg={pkg} socket={this.state.socket} />
+              <Package key={pkg.name} pkg={pkg} socket={this.state.socket} />
             ))}
           </Layout>
         </Router>

@@ -26,11 +26,26 @@ class Package extends Component {
       }
     })
 
+    this.props.socket.on("log", data => {
+      if (data.pkg === props.pkg.name) {
+        this.setState({ log: data.log })
+      }
+    })
+
     this.build = this.build.bind(this)
+    this.runScript = this.runScript.bind(this)
   }
 
   build() {
     this.props.socket.emit("build", this.props.pkg.name)
+    this.setState({ isBuilding: true })
+  }
+
+  runScript(script) {
+    this.props.socket.emit("run script", {
+      pkg: this.props.pkg.name,
+      script: script
+    })
     this.setState({ isBuilding: true })
   }
 
@@ -44,10 +59,16 @@ class Package extends Component {
         <Paragraph>{pkg.private ? "not on npm" : "on npm"}</Paragraph>
         <Paragraph>{`Location: ${pkg.location}`}</Paragraph>
 
-        {this.state.isBuilding && (<React.Fragment><PackageLoading />Building</React.Fragment>}
+        {this.state.isBuilding && (
+          <React.Fragment>
+            <PackageLoading />
+            Building
+          </React.Fragment>
+        )}
         {!this.state.isBuilding && (
           <React.Fragment>
             <Button onClick={this.build}>Build</Button>
+            <Button onClick={() => this.runScript("build")}>Run script</Button>
             <Button onClick={() => console.log("build it")}>Link</Button>
             <Button onClick={() => console.log("build it")}>
               Open in finder
