@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
-import { color, font, spacing, wrapper } from "@staccx/theme"
+import styled from "styled-components"
+import { color, spacing, wrapper } from "@staccx/theme"
 import { Heading, Layout, Wrapper, ItemGroup } from "@staccx/base"
 
 const Trinity = ({ items, heading }) => (
@@ -29,6 +29,10 @@ const Container = styled(ItemGroup)`
   position: relative;
   > div {
     justify-content: space-between;
+
+    @media only screen and (max-width: ${wrapper.large}) {
+      display: block;
+    }
   }
 `
 
@@ -40,9 +44,7 @@ const Item = styled.div`
   }
 
   @media only screen and (max-width: ${wrapper.large}) {
-    &:first-child {
-      margin-bottom: ${spacing.large};
-    }
+    margin-bottom: ${spacing.medium};
   }
 `
 
