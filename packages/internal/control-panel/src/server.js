@@ -14,15 +14,17 @@ server.listen(6660, () => console.log("Server running on 6660"))
 
 io.on("connection", socket => {
   console.log("connected")
-  const allPackages = JSON.parse(exec("lerna ls --json").stdout)
+  const allPackages = JSON.parse(exec("lerna ls --json --all").stdout)
   const packages = allPackages.map(pkg => {
     const pkgFile = `${pkg.location}/package.json`
     const f = require(pkgFile)
 
+    const depKeys = Object.keys(f.dependencies || {})
+    const dependencies = depKeys.reduce((acc, curr) => [...acc, curr], [])
     return {
       ...pkg,
       scripts: f.scripts ? Object.keys(f.scripts) : [],
-      dependecies: f.dependecies
+      dependencies
     }
   })
 

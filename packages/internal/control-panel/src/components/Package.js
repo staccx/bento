@@ -19,7 +19,8 @@ const electron = window.require("electron")
 class Package extends Component {
   state = {
     isBuilding: false,
-    log: ""
+    log: "",
+    error: null
   }
 
   constructor(props, context) {
@@ -46,6 +47,14 @@ class Package extends Component {
     this.openWithWebstorm = this.openWithWebstorm.bind(this)
     this.link = this.link.bind(this)
     this.emit = this.emit.bind(this)
+  }
+
+  componentDidCatch (error, errorInfo) {
+    // Catch errors in any child components and re-renders with an error message
+    this.setState({
+      error: error,
+      errorInfo: errorInfo
+    });
   }
 
   runScript(script) {
@@ -86,6 +95,19 @@ class Package extends Component {
   }
 
   render() {
+    if (this.state.error) {
+      console.log(this.state.error)
+      return (
+        <div>
+          <h2>{"Oh-no! Something went wrong"}</h2>
+          <p className="red">
+            {this.state.error && this.state.error.toString()}
+          </p>
+          <div>{"Component Stack Error Details: "}</div>
+          <p className="red">{this.state.errorInfo.componentStack}</p>
+        </div>
+      )
+    }
     const { pkg } = this.props
 
     return (
@@ -115,6 +137,11 @@ class Package extends Component {
                     </RadioPillItem>
                   ))}
               </RadioPill>
+            </ExpandListItem>
+            <ExpandListItem title={"Dependencies"}>
+              {this.props.pkg.dependencies.map(dep => (
+                <Text>{dep}</Text>
+              ))}
             </ExpandListItem>
             <Button onClick={this.link}>Link</Button>
             <Button onClick={this.showInFolder}>Open in finder</Button>
