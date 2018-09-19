@@ -140,7 +140,7 @@ const MenuItems = styled.ul`
   ${props =>
     props.inverted
       ? `color: ${color("white")(props)}`
-      : `color: ${color("text")(props)}`};
+      : `color: ${color("textDark")(props)}`};
 
   > li:last-child {
     > * {
@@ -168,11 +168,11 @@ const MenuItem = styled(NavLink)`
   display: block;
   margin: 0 ${spacing.small};
   padding: 3px 0;
-  color: currentColor;
   text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: border 0.2s ease, color 0.2s ease;
   font-weight: normal;
+  color: currentColor;
 
   @media only screen and (max-width: ${wrapper.large}) {
     padding: ${spacing.tiny} ${spacing.small};
@@ -200,7 +200,9 @@ const MenuItem = styled(NavLink)`
         @media only screen and (min-width: ${wrapper.large}) {
           color: ${color.white};
           background-color: ${props =>
-            props.inverted ? color("text")(props) : color("secondary")(props)};
+            props.inverted
+              ? color("textDark")(props)
+              : color("secondary")(props)};
           padding: ${spacing.tiny};
           border-radius: ${borderRadius};
           transition: box-shadow 0.2s ease;
@@ -318,7 +320,7 @@ const SubMenuLink = styled(NavLink)`
   padding: ${spacing.small} ${spacing.small};
 
   @media only screen and (min-width: ${wrapper.large}) {
-    color: ${color.text};
+    color: ${color("textDark")};
     transition: background 0.2s ease, color 0.2s ease;
 
     &:hover,

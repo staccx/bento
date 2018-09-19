@@ -2,9 +2,10 @@ import React from "react"
 import { createPortal } from "react-dom"
 import styled from "styled-components"
 import { Layout, Heading } from "@staccx/base"
-import { color, font, spacing } from "@staccx/theme"
+import { color, font, spacing, fontFamily } from "@staccx/theme"
 import Logo from "../Logo/Logo"
 import { SanityDocument } from "@staccx/sanity"
+import { Link } from "react-router-dom"
 
 const createAddress = address => {
   const lines = address.split("\n")
@@ -14,14 +15,14 @@ const createAddress = address => {
         <p key={index}>{line}</p>
       ))}
       <p>
-        <FooterLink
+        <FooterA
           href={`https://www.google.no/maps/place/${lines[0].replace(
             " ",
             "+"
           )},${lines[1].replace(" ", "+")}/`}
         >
           View on map
-        </FooterLink>
+        </FooterA>
       </p>
     </div>
   )
@@ -90,9 +91,10 @@ const CompanyName = styled(Heading)`
   margin-bottom: ${spacing.medium};
 `
 
-const FooterLink = styled.a`
+const FooterLink = styled(Link)`
   color: #929292;
   text-decoration: none;
+  font-family: ${fontFamily.heading};
 
   &:hover,
   &:active,
@@ -100,5 +102,7 @@ const FooterLink = styled.a`
     color: ${color.primary};
   }
 `
+
+const FooterA = FooterLink.withComponent("a")
 
 export default FooterCompanyInfo

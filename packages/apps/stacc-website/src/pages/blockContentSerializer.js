@@ -21,7 +21,7 @@ import {
 
 const serializer = {
   container: props => (
-    <Layout rowGap="grid" paddingBottom="grid">
+    <Layout rowGap="gridLarge" paddingBottom="gridLarge">
       {props.children}
     </Layout>
   ),
@@ -58,7 +58,7 @@ const serializer = {
       }
       return (
         <div>
-          <Layout>
+          <Layout rowGap="large">
             <SanityImage image={head.image}>
               {({ image }) => (
                 <SectionHead
