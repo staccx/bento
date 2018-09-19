@@ -40,8 +40,3 @@ export const Overview = LoadableVisibility({
   loader: () => import("./Overview"),
   loading: Loading
 })
-
-export const ServicesInfrastructure = LoadableVisibility({
-  loader: () => import("./ServicesInfrastructure"),
-  loading: Loading
-})

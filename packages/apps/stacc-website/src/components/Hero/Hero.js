@@ -33,7 +33,6 @@ const Container = styled.div`
   position: relative;
   margin-top: -${HeaderHeight};
   z-index: -1;
-  margin-bottom: ${spacing("grid")};
 `
 
 const HeroBG = styled.div`
@@ -70,6 +69,9 @@ const HeroBG = styled.div`
   }
 
   @media only screen and (min-width: ${wrapper.large}) {
+    padding-top: calc(${HeaderHeight} + ${spacing("grid")} + "3.5vh");
+    padding-bottom: calc(${triangleHeight} + "2vh");
+
     &::before,
     &::after {
       height: ${triangleHeightLarge};
@@ -85,6 +87,11 @@ const HeroBG = styled.div`
   }
 
   @media only screen and (min-width: 1900px) {
+    padding-top: calc(
+      ${HeaderHeight} + ${spacing("grid")} + ${spacing("grid")}
+    );
+    padding-bottom: calc(${triangleHeight} + ${spacing("grid")});
+
     &::before,
     &::after {
       height: ${triangleHeightHuge};

@@ -51,6 +51,7 @@ const StyledWrapper = styled(Wrapper)`
 const Container = styled(FullWidth)`
   background-color: ${color("blush")};
   padding: ${p => (!p.imageCutOut ? spacing("grid")(p) : 0)} 0;
+  color: ${color("textDark")};
 
   @media only screen and (min-width: ${wrapper.medium}) {
     ${p =>
@@ -60,7 +61,7 @@ const Container = styled(FullWidth)`
       `};
   }
   &:last-child {
-    margin-bottom: -${spacing("grid")};
+    margin-bottom: -${spacing("gridLarge")};
   }
 `
 

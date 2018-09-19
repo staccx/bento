@@ -28,6 +28,7 @@ const getResponsiveSize = level => {
 export const HeadingStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: css`
+      color: ${color("textDark")};
       @media only screen and (max-width: ${wrapper.large}) {
         font-size: ${p => getResponsiveSize(p.level)};
       }

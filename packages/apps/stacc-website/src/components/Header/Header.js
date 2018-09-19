@@ -88,8 +88,9 @@ const Head = styled.header`
     position: ${p => (!p.menuIsVisible ? "relative" : "fixed")};
     background-color: ${p =>
       !p.menuIsVisible ? "transparent" : color("primaryDark")(p)};
-    min-height: ${p => (!p.menuIsVisible ? "80px" : "100vh")};
+    height: ${p => (!p.menuIsVisible ? "auto" : "100vh")};
     width: 100%;
+    overflow-y: scroll;
   }
 `
 

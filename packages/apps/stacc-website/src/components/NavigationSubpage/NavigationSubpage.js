@@ -32,7 +32,6 @@ const Container = styled.div`
   margin-top: ${spacing.small};
   border-top: 2px solid ${color.line};
   padding-top: ${spacing.small};
-  padding-bottom: ${spacing("grid")};
 
   @media only screen and (min-width: ${wrapper.medium}) {
     display: flex;
@@ -64,7 +63,7 @@ const SubLink = styled(NavLink)`
   color: ${color.primary};
 
   &.is-current {
-    color: ${color.text};
+    color: ${color("textDark")};
   }
 `
 
