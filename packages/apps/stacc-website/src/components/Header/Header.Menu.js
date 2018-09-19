@@ -290,7 +290,6 @@ const SubMenu = styled(List)`
     background-color: rgba(0, 0, 0, 0.2);
 
     > li {
-      padding: ${spacing.tiny} ${spacing.medium};
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
   }
@@ -317,11 +316,12 @@ const SubMenuLink = styled(NavLink)`
   color: currentColor;
   text-decoration: none;
   font-size: ${font.base};
-  padding: ${spacing.small} ${spacing.small};
+  padding: 16px ${spacing.medium};
 
   @media only screen and (min-width: ${wrapper.large}) {
     color: ${color("textDark")};
     transition: background 0.2s ease, color 0.2s ease;
+    padding: 16px;
 
     &:hover,
     &:active,

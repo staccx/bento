@@ -33,7 +33,6 @@ const Container = styled.div`
   position: relative;
   margin-top: -${HeaderHeight};
   z-index: -1;
-  margin-bottom: ${spacing("grid")};
 `
 
 const HeroBG = styled.div`

@@ -21,7 +21,7 @@ import {
 
 const serializer = {
   container: props => (
-    <Layout rowGap="gridLarge" paddingBottom="gridLarge">
+    <Layout rowGap="gridLarge" paddingTop="gridLarge" paddingBottom="gridLarge">
       {props.children}
     </Layout>
   ),
