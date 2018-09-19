@@ -28,7 +28,6 @@
   "devDependencies": {
     "@staccx/rollup-config": "^7.6.4",
     "prettier": "^1.13.7",
-    "prettify": "^0.1.7",
     "react-scripts": "^1.1.4",
     "rollup": "^0.65.0"
   }

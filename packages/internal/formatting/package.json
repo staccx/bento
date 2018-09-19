@@ -35,7 +35,6 @@
     "jest": "^23.5.0",
     "prettier": "^1.13.7",
     "react-scripts": "^1.1.4",
-    "rollup": "^0.65.0",
-    "rollup-plugin-filesize": "^2.0.0"
+    "rollup": "^0.65.0"
   }
 }

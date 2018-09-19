@@ -8,20 +8,17 @@
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
     "@staccx/animations": "^7.6.4",
-    "@staccx/aprila-theme": "^7.6.4",
     "@staccx/base": "^7.6.4",
     "@staccx/formatting": "^7.6.4",
     "@staccx/norefjell-theme": "^7.6.4",
     "@staccx/theme": "^7.6.4",
     "@tedconf/react-show-more": "^1.1.2",
-    "axios": "^0.18.0",
     "history": "^4.7.2",
-    "mobx": "^5.0.3",
+    "mobx": ">=3.1.17 < 5",
     "mobx-react": "^5.2.5",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-hotkeys": "^1.1.4",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.2.1",
     "webfontloader": "^1.6.28"
@@ -40,6 +37,7 @@
     "react-app-rewire-styled-components": "^3.0.2",
     "react-app-rewire-vendor-splitting": "^1.3.0",
     "react-app-rewired": "^1.5.2",
+    "react-scripts": "^1.0.14",
     "rollup": "^0.65.0"
   },
   "peerDependencies": {

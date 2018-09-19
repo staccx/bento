@@ -29,7 +29,6 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/aprila-theme": "^7.6.4",
     "@staccx/base": "^7.6.4",
     "@staccx/norefjell-theme": "^7.6.4",
     "@staccx/theme": "^7.6.4",
@@ -43,9 +42,7 @@
     "@staccx/rollup-config": "^7.6.4",
     "prettier": "^1.13.7",
     "react-scripts": "^1.1.4",
-    "rollup": "^0.65.0",
-    "serve": "^10.0.0",
-    "surge": "^0.20.1"
+    "rollup": "^0.65.0"
   },
   "peerDependencies": {
     "styled-components": "^3.3.3"

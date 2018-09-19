@@ -13,15 +13,12 @@
     "@staccx/stacc-theme": "^7.6.4",
     "@staccx/theme": "^7.6.4",
     "history": "^4.7.2",
-    "loadable-components": "^2.2.3",
     "mobx-react": "^5.2.5",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
-    "react-loadable": "^5.5.0",
     "react-loadable-visibility": "^2.5.0",
-    "react-router-breadcrumbs-hoc": "^2.1.4",
     "react-router-dom": "^4.2.2",
     "three": "^0.95.0"
   },
@@ -41,8 +38,7 @@
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",
     "react-app-rewired": "^1.5.2",
-    "rollup": "^0.65.0",
-    "surge": "^0.20.1"
+    "rollup": "^0.65.0"
   },
   "peerDependencies": {
     "styled-components": "^3.3.3"
