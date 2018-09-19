@@ -31,7 +31,7 @@ class Login extends React.Component {
     } else {
       stage = stages.waitingForState
       challengeIdentity({
-        ...props.oidcConfig,
+        ...props.config.oidcConfig,
         acr_values: `idp:${props.config.acrValue}`
       })
     }

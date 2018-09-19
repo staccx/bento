@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.7.4"></a>
+## [7.7.4](https://bitbucket.org/projects/stacc-flow/repos/bento/compare/diff?targetBranch=refs%2Ftags%2Fv7.7.3&sourceBranch=refs%2Ftags%2Fv7.7.4) (2018-09-19)
+
+
+### Bug Fixes
+
+* **bento:** publish in release script ([61170c3](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/61170c3))
+
+
+
+
+
+<a name="7.7.3"></a>
+## [7.7.3](https://bitbucket.org/projects/stacc-flow/repos/bento/compare/diff?targetBranch=refs%2Ftags%2Fv7.7.2&sourceBranch=refs%2Ftags%2Fv7.7.3) (2018-09-19)
+
+
+### Bug Fixes
+
+* **base:** fix polling not stopping ([8167dd6](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/8167dd6))
+* **company-website-template:** add servicepage. add title ([c5a62d4](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/c5a62d4))
+* **login-oidc:** fix props ([e1a79bb](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/e1a79bb))
+* **soy:** remove false positive in misplaced test ([b3fba34](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/b3fba34))
+* **stacc-website:** add title as data for heading ([f28bce4](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/f28bce4))
+* **stacc-website:** fix submenu showing name ([1425b44](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/1425b44))
+
+
+### Features
+
+* **company-website-template:** add hide to client ([38409b9](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/38409b9))
+* **eslint-config:** add localStorage to accepted globals ([2b5aa31](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/2b5aa31))
+* **i18n:** add detection of language and state saving ([77dda09](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/77dda09))
+* **i18n:** add formatting ([345077d](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/345077d))
+* **i18n:** add plugins to export. refactor formatter ([8e5137d](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/8e5137d))
+* **i18n:** add support for plugins ([fe7cbcf](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/fe7cbcf))
+* **i18n:** improved language. add singleton instance ([920e96d](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/920e96d))
+* **stacc-website:** add working mobile menu ([f56f60e](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/f56f60e))
+* **stacc-website:** adjust lede font-family ([0438c76](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/0438c76))
+* **stacc-website:** improve mobile menu ([87bafae](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/87bafae))
+* **stacc-website:** improve responsive behaviour ([7157dd5](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/7157dd5))
+* **stacc-website:** improve responsive design ([fd44191](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/fd44191))
+* **stacc-website:** improve trinity responsive ([679b7d8](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/679b7d8))
+* **stacc-website:** no longer fetching clients with hide ([e7d153a](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/e7d153a))
+* **stacc-website:** remove trinity from hero, add trinity block ([f7681fb](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/f7681fb))
+* add components hero and hero.car ([59d964a](https://bitbucket.org/projects/stacc-flow/repos/bento/commits/59d964a))
+
+
+
+
+
 <a name="7.7.2"></a>
 ## [7.7.2](https://bitbucket.org/projects/stacc-flow/repos/bento/compare/diff?targetBranch=refs%2Ftags%2Fv7.7.1&sourceBranch=refs%2Ftags%2Fv7.7.2) (2018-09-14)
 

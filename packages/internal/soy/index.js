@@ -72,7 +72,11 @@ const doCheck = async () => {
           //check if the dep is misplaced
         } else if (program.misplaced) {
           for (let pinnedDepType of depTypes) {
-            if (pinned[pinnedDepType] && pinned[pinnedDepType][dep]) {
+            if (
+              pinned[pinnedDepType] &&
+              pinned[pinnedDepType][dep] &&
+              !(pkg[pinnedDepType] && pkg[pinnedDepType][dep])
+            ) {
               console.log(
                 program.pour ? chalk.green("☑") : chalk.red("☐"),
                 chalk.bold.yellow.bgBlue(pkg.name) + ":",
@@ -171,7 +175,3 @@ doCheck().then(({ dirtyPackageCounter, wildStats }) => {
     }
   }
 })
-
-//TODO: count how many packages use the different devDependency versions and print from largest to smallest, e.g.: rollup (3): ^0.65.0 (21) ^0.62.0 (3) ^0.54.0 (1)
-//TODO: packages having a package in dependencies that is in soy/devDependencies
-//TODO: packages having a package in devDependencies that is in soy/dependencies
