@@ -82,7 +82,7 @@ const doCheck = async () => {
   paths.forEach(currentPath => {
     const pkg = require(currentPath)
 
-    //return if this package is not in the filter
+    // return if this package is not in the filter
     if (!match(program.packages, pkg.name)) {
       return
     }
@@ -90,14 +90,14 @@ const doCheck = async () => {
     let updatedDependencies = false
     for (let depType of depTypes) {
       for (let dep in pkg[depType]) {
-        //--remove dependencies
+        // --remove dependencies
         if (program.remove && match(program.remove, dep)) {
           delete pkg[depType][dep]
           console.log(chalk.bold(pkg.name), chalk.gray(dep))
           updatedDependencies = true
         }
 
-        //--find
+        // --find
         if (program.find) {
           if (match(program.find, dep)) {
             console.log(
@@ -111,7 +111,7 @@ const doCheck = async () => {
 
         if (match(program.dependencies, dep)) {
           if (pinned[depType] && pinned[depType][dep]) {
-            //--version compare
+            // --version compare
             if (program.versions) {
               const pinnedVersion = pinned[depType][dep]
 
@@ -141,7 +141,7 @@ const doCheck = async () => {
               }
             }
 
-            //--misplaced
+            // --misplaced
           } else if (program.misplaced) {
             for (let pinnedDepType of depTypes) {
               if (
@@ -176,7 +176,7 @@ const doCheck = async () => {
       }
     }
 
-    //find devDependencies not present in template.devDependencies
+    // find devDependencies not present in template.devDependencies
     if (program.wild) {
       for (let dep in pkg.devDependencies) {
         if (match(program.dependencies, dep)) {
@@ -209,8 +209,6 @@ const doCheck = async () => {
       }
     }
 
-    //depcheck
-
     if (program.depcheck) {
       depcheck(
         path.dirname(currentPath),
@@ -226,6 +224,7 @@ const doCheck = async () => {
             depcheck.detector.importDeclaration
           ]
         },
+
         unused => {
           const scripts = pkg.scripts || {}
           const scriptBinaries = []
@@ -238,12 +237,13 @@ const doCheck = async () => {
           })
 
           const filteredDependencies = unused.dependencies.filter(
-            d => !scriptBinaries.includes(d)
+            d => !scriptBinaries.includes(d) && match(program.dependencies, d)
           )
 
           const filteredDevDependencies = unused.devDependencies.filter(
-            d => !scriptBinaries.includes(d)
+            d => !scriptBinaries.includes(d) && match(program.dependencies, d)
           )
+
           if (
             filteredDevDependencies.length > 0 ||
             filteredDependencies.length > 0
