@@ -6,6 +6,8 @@ const chalk = require("chalk")
 const semver = require("semver")
 const depcheck = require("depcheck")
 
+const list = l => l.split(",")
+
 program
   .description(
     "Check packages' dependencies and devDependencies against a template"
@@ -18,22 +20,29 @@ program
   .option("-m, --misplaced", "find misplaced dependencies")
   .option("-d, --depcheck", "find unused dependencies")
   .option(
+    "-R, --remove-unused <pkg1,pkg2,...>",
+    "remove these unused dependencies",
+    list
+  )
+  .option(
     "-r, --remove <pkg1,pkg2,...>",
-    "remove dependencies from all groups",
-    l => l.split(",")
+    "remove dependencies from all packages and all groups",
+    list
   )
   .option(
     "-f, --dependencies <pkg1,pkg2,...>",
     "only consider these dependencies",
-    l => l.split(",")
+    list
   )
-  .option("-F, --packages <pkg1,pkg2,...>", "only consider these packages", l =>
-    l.split(",")
+  .option(
+    "-F, --packages <pkg1,pkg2,...>",
+    "only consider these packages",
+    list
   )
   .option(
     "--find <pkg1,pkg2,...>",
     "find packages with these dependencies",
-    l => l.split(",")
+    list
   )
   .option("-v, --verbose", "be verbose")
   .parse(process.argv)
@@ -48,6 +57,7 @@ console.log("Tasting directory", rootDir)
 console.log("Only considering dependencies", program.dependencies || "(all)")
 console.log("Only considering packages", program.packages || "(all)")
 console.log("Removing packages", program.remove || "(none)")
+console.log("Removing unused packages", program.removeUnused || "(none)")
 console.log()
 
 const pinned = require(template)
@@ -79,7 +89,7 @@ const doCheck = async () => {
   const versionMismatches = []
   const misplaced = []
 
-  paths.forEach(currentPath => {
+  paths.forEach(async currentPath => {
     const pkg = require(currentPath)
 
     // return if this package is not in the filter
@@ -210,7 +220,7 @@ const doCheck = async () => {
     }
 
     if (program.depcheck) {
-      depcheck(
+      await depcheck(
         path.dirname(currentPath),
         {
           withoutDev: false,
@@ -256,6 +266,22 @@ const doCheck = async () => {
             console.log(filteredDependencies.join(", "))
           if (filteredDevDependencies.length > 0)
             console.log(chalk.bgWhite.black(filteredDevDependencies.join(", ")))
+
+          if (program.removeUnused) {
+            for (let d of filteredDependencies) {
+              if (match(program.removeUnused, d)) {
+                delete pkg.dependencies[d]
+                updatedDependencies = true
+              }
+            }
+
+            for (let d of filteredDevDependencies) {
+              if (match(program.removeUnused, d)) {
+                delete pkg.devDependencies[d]
+                updatedDependencies = true
+              }
+            }
+          }
         }
       )
     }
@@ -296,8 +322,6 @@ doCheck().then(
           console.log(misplaced.sort().join("\n"))
         }
       }
-    } else {
-      console.log(chalk.green("Everything tastes good!"))
     }
 
     if (program.wild) {
