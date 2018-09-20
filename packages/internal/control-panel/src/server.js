@@ -5,6 +5,7 @@ const server = require("http").createServer(app)
 const socket = require("socket.io")
 const io = socket(server)
 const spawn = require("child_process").spawn
+const getPort = require("get-port")
 
 const api = router()
 
@@ -28,13 +29,16 @@ const execute = (
   const child = spawn(cmd, params, {
     shell: true,
     env,
-    stdio: [null, null, null, "ipc"]
+    stdio: [null, null, null, "ipc"],
+    detached: true
   })
 
   child.stdout.on("data", data => onStdOut(ab2str(data)))
   child.stderr.on("data", data => onStdErr(ab2str(data)))
   child.on("close", onExit)
   child.on("error", onError)
+
+  return child
 }
 
 app.use("/api", api)
@@ -67,20 +71,21 @@ io.on("connection", socket => {
   socket.on("exec raw", data => {
     // Just fire it
     // exec(data)
-
+    console.log("executing", data)
     const split = data.split(" ")
 
     const cmd = split[0]
     const params = split.splice(1)
 
-    execute(cmd, params)
+    execute(cmd, params, console.log, console.log, console.log, console.error)
   })
 
   socket.on("run exec", data => {
     const { pkg, script } = data
 
     execute("lerna", ["exec", `--scope ${pkg}`, script], data =>
-      emitLog(data, pkg))
+      emitLog(data, pkg)
+    )
     // exec(`lerna exec --scope ${pkg} ${script}`)
   })
 
@@ -96,5 +101,26 @@ io.on("connection", socket => {
       data => socket.emit("build ended", pkg),
       data => socket.emit("build ended", pkg)
     )
+  })
+
+  socket.on("serve styleguide", async data => {
+    const port = await getPort({ port: 3000 })
+
+    console.log("Got port", port)
+    const { pid } = execute(
+      "lerna",
+      [
+        "exec",
+        `--scope`,
+        `@staccx/styleguide`,
+        `serve -- -s build -l ${port} &`
+      ],
+      console.log,
+      console.log,
+      console.log,
+      console.log
+    )
+
+    socket.emit("open styleguide", { pid, port })
   })
 })

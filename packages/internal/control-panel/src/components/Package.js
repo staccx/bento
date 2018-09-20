@@ -6,13 +6,14 @@ import {
   Paragraph,
   Loading,
   LayoutItem,
-  List,
+  Wrapper,
   RadioPillItem,
   RadioPill,
   Text
 } from "@staccx/base"
 import styled from "styled-components"
 import copy from "copy-to-clipboard"
+import socket from "../socket"
 import PropTypes from "prop-types"
 import TerminalWindow from "./TerminalWindow"
 const electron = window.require("electron")
@@ -27,13 +28,13 @@ class Package extends Component {
   constructor(props, context) {
     super(props, context)
 
-    this.props.socket.on("build ended", data => {
+    socket.on("build ended", data => {
       if (data === props.pkg.name) {
         this.setState({ isBuilding: false })
       }
     })
 
-    this.props.socket.on("log", data => {
+    socket.on("log", data => {
       if (data.pkg === props.pkg.name) {
         // this.setState({ log: this.state.log + data.log })
         this.terminalWindow.current.write(data.log)
@@ -93,7 +94,7 @@ class Package extends Component {
   }
 
   emit(id, data) {
-    this.props.socket.emit(id, data)
+    socket.emit(id, data)
   }
 
   render() {
@@ -151,10 +152,12 @@ class Package extends Component {
             <Button onClick={this.openWithWebstorm}>Open in Webstorm</Button>
           </React.Fragment>
         )}
-        <TerminalWindow
-          ref={this.terminalWindow}
-          show={this.state.isBuilding}
-        />
+        <Wrapper size={"small"}>
+          <TerminalWindow
+            ref={this.terminalWindow}
+            show={this.state.isBuilding}
+          />
+        </Wrapper>
       </LayoutItem>
     )
   }
