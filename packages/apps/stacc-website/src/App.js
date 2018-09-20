@@ -61,7 +61,7 @@ class App extends Component {
     console.log("%c" + asciiArt, "color: #EB5E55;")
     return (
       <ThemeProxyProvider theme={theme}>
-        <SanityProvider dataset={"production"} projectId={"8j24leyc"}>
+        <SanityProvider dataset={"production"} projectId={"8j24leyc"} useCdn={true}>
           <Router history={history}>
             <PageWrapper>
               <Header />

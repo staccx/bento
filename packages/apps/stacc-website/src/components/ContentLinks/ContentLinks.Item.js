@@ -21,7 +21,7 @@ export const getLinkItem = linkBlock => {
     }
     if (link._ref) {
       return (
-        <SanityDocument id={link._ref}>
+        <SanityDocument id={link._ref} pick={"title, path, body"}>
           {({ document }) => {
             if (!document) {
               return null
