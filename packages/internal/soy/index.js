@@ -81,7 +81,7 @@ const match = (array, value) => {
 const doCheck = async () => {
   const paths = await globby([
     `${rootDir}/**/package.json`,
-    `!${rootDir}/**/node_modules`
+    `!${rootDir}/**/node_modules/**`
   ])
 
   let dirtyPackageCounter = 0
