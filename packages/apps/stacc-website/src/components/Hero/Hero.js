@@ -9,24 +9,26 @@ const Hero = ({ heading, lede }) => (
   <FullWidth>
     <Container>
       <HeroBG>
-        <StyledWrapper>
-          <Layout>
-            {heading && (
-              <Heading level={1} variant="hero">
-                {heading}
-              </Heading>
-            )}
-            {lede && <Lede>{lede}</Lede>}
-          </Layout>
-        </StyledWrapper>
+        <Centered>
+          <StyledWrapper>
+            <Layout>
+              {heading && (
+                <Heading level={1} variant="hero">
+                  {heading}
+                </Heading>
+              )}
+              {lede && <Lede>{lede}</Lede>}
+            </Layout>
+          </StyledWrapper>
+        </Centered>
       </HeroBG>
     </Container>
   </FullWidth>
 )
 
-const triangleHeight = "14vh"
-const triangleHeightLarge = "21vh"
-const triangleHeightHuge = "28vh"
+const triangleHeight = "18vh"
+const triangleHeightLarge = "36vh"
+const triangleHeightHuge = "45vh"
 const HeaderHeight = "88px"
 
 const Container = styled.div`
@@ -35,7 +37,13 @@ const Container = styled.div`
   z-index: -1;
 `
 
+const Centered = styled.div``
+
 const HeroBG = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-image: linear-gradient(
     to bottom,
     ${color("primaryDark")},
@@ -44,6 +52,7 @@ const HeroBG = styled.div`
   color: ${color.white};
   padding-top: calc(${HeaderHeight} + ${spacing("grid")});
   padding-bottom: ${triangleHeight};
+  min-height: 65vh;
 
   &::before,
   &::after {
@@ -69,9 +78,6 @@ const HeroBG = styled.div`
   }
 
   @media only screen and (min-width: ${wrapper.large}) {
-    padding-top: calc(${HeaderHeight} + ${spacing("grid")} + "3.5vh");
-    padding-bottom: calc(${triangleHeight} + "2vh");
-
     &::before,
     &::after {
       height: ${triangleHeightLarge};

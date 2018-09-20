@@ -6,7 +6,7 @@ import { Heading, Layout, Wrapper, ItemGroup } from "@staccx/base"
 
 const Trinity = ({ items, heading }) => (
   <Wrapper>
-    <Layout rowGap="huge">
+    <Layout rowGap="large">
       {heading && <TrinityHeading level={2}>{heading}</TrinityHeading>}
       <Container>
         {items.map(tri => (
