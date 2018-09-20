@@ -14,6 +14,7 @@ import {
 import styled from "styled-components"
 import copy from "copy-to-clipboard"
 import PropTypes from "prop-types"
+import TerminalWindow from "./TerminalWindow"
 const electron = window.require("electron")
 
 class Package extends Component {
@@ -34,11 +35,12 @@ class Package extends Component {
 
     this.props.socket.on("log", data => {
       if (data.pkg === props.pkg.name) {
-        this.setState({ log: this.state.log + data.log })
+        // this.setState({ log: this.state.log + data.log })
+        this.terminalWindow.current.write(data.log)
       }
     })
 
-    console.log(electron)
+    this.terminalWindow = React.createRef()
 
     this.runScript = this.runScript.bind(this)
     this.showInFolder = this.showInFolder.bind(this)
@@ -49,12 +51,12 @@ class Package extends Component {
     this.emit = this.emit.bind(this)
   }
 
-  componentDidCatch (error, errorInfo) {
+  componentDidCatch(error, errorInfo) {
     // Catch errors in any child components and re-renders with an error message
     this.setState({
       error: error,
       errorInfo: errorInfo
-    });
+    })
   }
 
   runScript(script) {
@@ -119,7 +121,7 @@ class Package extends Component {
 
         {this.state.isBuilding && (
           <React.Fragment>
-            <PackageLoading />
+            <Loading />
             Building
           </React.Fragment>
         )}
@@ -132,7 +134,7 @@ class Package extends Component {
               >
                 {this.props.pkg.scripts &&
                   this.props.pkg.scripts.map(script => (
-                    <RadioPillItem id={script} value={script}>
+                    <RadioPillItem key={script} id={script} value={script}>
                       <Text>{script}</Text>
                     </RadioPillItem>
                   ))}
@@ -140,7 +142,7 @@ class Package extends Component {
             </ExpandListItem>
             <ExpandListItem title={"Dependencies"}>
               {this.props.pkg.dependencies.map(dep => (
-                <Text>{dep}</Text>
+                <Paragraph key={dep}>{dep}</Paragraph>
               ))}
             </ExpandListItem>
             <Button onClick={this.link}>Link</Button>
@@ -149,9 +151,10 @@ class Package extends Component {
             <Button onClick={this.openWithWebstorm}>Open in Webstorm</Button>
           </React.Fragment>
         )}
-        <List>
-          <ExpandListItem title={"Console"}>{this.state.log}</ExpandListItem>
-        </List>
+        <TerminalWindow
+          ref={this.terminalWindow}
+          show={this.state.isBuilding}
+        />
       </LayoutItem>
     )
   }

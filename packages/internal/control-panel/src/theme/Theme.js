@@ -76,6 +76,13 @@ const colors = {
   subtleHover: "#F7F7FF"
 }
 
+export const terminalTheme = {
+  background: colors.bg,
+  black: colors.black,
+  blue: colors.blue,
+  foreground: colors.text
+}
+
 const font = {
   h1: "36px",
   h2: "26px",
