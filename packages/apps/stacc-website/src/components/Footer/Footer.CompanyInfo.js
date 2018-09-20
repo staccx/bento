@@ -48,11 +48,25 @@ const FooterCompanyInfo = ({ heading }) => (
                 document.getElementById("orgNr")
               )
 
+              const outbound = createPortal(
+                <div>
+                  <ul>
+                    {doc.outboundLinks.map(link => (
+                      <li>
+                        <FooterA href={link.url}> {link.title}</FooterA>
+                      </li>
+                    ))}
+                  </ul>
+                </div>,
+                document.getElementById("outboundLinks")
+              )
+
               return (
                 <div>
                   <CompanyName level={1}>{doc.name}</CompanyName>
                   {createAddress(doc.address)}
                   {portal}
+                  {outbound}
                 </div>
               )
             }}
@@ -69,10 +83,15 @@ const FooterCompanyInfo = ({ heading }) => (
             }}
           </SanityDocument>
           <div>
-            <div id={"orgNr"} />
-            <FooterLink to={"/privacy-and-cookie-policy"}>
-              Privacy and cookie policy
-            </FooterLink>
+            <Layout>
+              <div>
+                <div id={"orgNr"} />
+                <FooterLink to={"/privacy-and-cookie-policy"}>
+                  Privacy and cookie policy
+                </FooterLink>
+              </div>
+              <div id={"outboundLinks"} />
+            </Layout>
           </div>
         </Layout>
       </Container>

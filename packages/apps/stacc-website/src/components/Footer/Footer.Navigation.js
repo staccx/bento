@@ -51,7 +51,7 @@ const FooterNavigation = ({ heading, callToAction }) => (
                     {m.submenu.map(submenuItem => (
                       <li key={submenuItem._id}>
                         <FooterNavLink to={submenuItem.path.current}>
-                          {submenuItem.name}
+                          {submenuItem.title}
                         </FooterNavLink>
                       </li>
                     ))}
