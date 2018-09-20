@@ -1,19 +1,22 @@
 {
-    "name": "@staccx/soy",
-    "version": "7.7.1",
-    "description": "I depend, therefore I am (Common dependencies for Stacc X)",
-    "license": "UNLICENSED",
-    "scripts": {
-      "start": "node index"
-    },
-    "dependencies": {
-      "chalk": "^2.4.1",
-      "commander": "^2.17.1",
-      "depcheck": "^0.6.11",
-      "semver": "^5.5.1"
-    },
-    "publishConfig": {
-      "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
-    }
+  "name": "@staccx/soy",
+  "version": "7.7.1",
+  "description": "I depend, therefore I am (Common dependencies for Stacc X)",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node index"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.17.1",
+    "depcheck": "^0.6.11",
+    "globby": "^8.0.1",
+    "semver": "^5.5.1"
+  },
+  "publishConfig": {
+    "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  },
+  "peerDependencies": {
+    "styled-components": "^3.3.3"
   }
-  
+}
