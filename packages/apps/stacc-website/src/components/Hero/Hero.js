@@ -119,13 +119,17 @@ const StyledWrapper = styled(Wrapper)`
 `
 
 const Lede = styled.p`
-  font-size: ${font.h3};
+  font-size: ${font.h4};
   font-family: ${fontFamily.heading};
   font-weight: 300;
   line-height: 1.6;
   text-align: center;
   max-width: 680px;
   margin: 0 auto;
+
+  @media only screen and (min-width: ${wrapper.large}) {
+    font-size: ${font.h3};
+  }
 `
 
 Hero.defaultProps = {
