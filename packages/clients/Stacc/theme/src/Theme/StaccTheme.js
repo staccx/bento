@@ -6,6 +6,7 @@ import Box from "./Theme.Box"
 import { LogoStyle } from "./Theme.Logo"
 import { CheckboxCheckedIcon, CheckboxCheckedLabel } from "./Theme.Checkbox"
 import { HeadingStyling } from "./theme.Headings"
+import WrapperStyling from "./Theme.Wrapper"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -122,5 +123,6 @@ const t = new Theme(BaseTheme, {
   .add(CheckboxCheckedIcon)
   .add(CheckboxCheckedLabel)
   .add(HeadingStyling)
+  .add(WrapperStyling)
 
 export default t

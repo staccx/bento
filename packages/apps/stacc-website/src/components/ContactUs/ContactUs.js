@@ -44,8 +44,8 @@ const ContactUs = ({ person, heading, image, imageCutOut }) => {
 }
 
 const StyledWrapper = styled(Wrapper)`
-  padding-left: ${spacing.medium} !important;
-  padding-right: ${spacing.medium} !important;
+  padding-left: 8.5vw !important;
+  padding-right: 8.5vw !important;
 `
 
 const Container = styled(FullWidth)`
