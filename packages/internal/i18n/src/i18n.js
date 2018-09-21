@@ -9,6 +9,9 @@ class i18n {
     this.languages = Object.keys(texts)
       .map(key => texts[key])
       .reduce((acc, current) => {
+        if (!current) {
+          return acc
+        }
         const languages = Object.keys(current).filter(
           k => acc.indexOf(k) === -1
         )
