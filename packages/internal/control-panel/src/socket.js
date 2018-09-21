@@ -3,7 +3,9 @@ const electron = window.require("electron")
 
 const socket = io("/")
 
-const packages = []
+let pkgs = []
+
+const SYSTEM_NAME = "System"
 
 socket.on("open styleguide", ({ port, pid }) => {
   console.log("Styleguide is running on port", port)
@@ -17,7 +19,7 @@ socket.on("open styleguide", ({ port, pid }) => {
 
     win.on("close", () => {
       console.log("window closed")
-      socket.emit("exec raw", `kill -- -${pid}`)
+      socket.emit("exec raw", { pkg: SYSTEM_NAME, script: `kill -- -${pid}` })
     })
     // const current = electron.remote.getCurrentWindow()
     //
@@ -29,11 +31,33 @@ electron.ipcRenderer.on("serve styleguide", () => {
   openStyleguide()
 })
 
+electron.ipcRenderer.on("clean", () => {
+  socket.emit("exec raw", {
+    script: "lerna clean --yes",
+    pkg: SYSTEM_NAME
+  })
+})
+
+electron.ipcRenderer.on("bootstrap", () => {
+  socket.emit("exec raw", {
+    script: "lerna bootstrap",
+    pkg: SYSTEM_NAME
+  })
+})
+
 const openStyleguide = () => socket.emit("serve styleguide")
 
-const getPackages = cb => {
-  socket.on("init", cb)
+const getPackages = fn => {
+  if (pkgs && pkgs.length) {
+    fn({ packages: pkgs })
+    return
+  }
+  socket.on("init", ({ packages }) => {
+    pkgs = packages
+    fn({ packages })
+  })
 }
 
 module.exports = socket
 module.exports.getPackages = getPackages
+module.exports.SYSTEM_NAME = SYSTEM_NAME

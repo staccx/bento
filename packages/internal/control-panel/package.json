@@ -7,9 +7,9 @@
   "homepage": "./",
   "dependencies": {
     "@lerna/list": "^3.3.2",
-    "@staccx/base": "^6.4.0",
-    "@staccx/soy": "^6.3.0",
-    "@staccx/theme": "^6.3.0",
+    "@staccx/base": "^7.7.4",
+    "@staccx/soy": "^7.7.4",
+    "@staccx/theme": "^7.7.4",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
@@ -27,14 +27,12 @@
     "server": "nodemon src/server.js",
     "electron": "electron .",
     "build:app": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-app-rewired eject",
-    "deploy": "yarn build && surge -p ./build",
-    "serve": "yarn build && serve -s build"
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/logo.png.icns --prune=true --out=release-builds"
   },
   "devDependencies": {
     "@staccx/rollup-config": "^6.3.0",
     "electron": "^3.0.0",
+    "electron-packager": "^12.1.2",
     "foreman": "^3.0.1",
     "nodemon": "^1.18.4"
   },

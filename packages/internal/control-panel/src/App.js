@@ -1,13 +1,14 @@
 import React, { Component } from "react"
-import { Wrapper, Layout, Button, LayoutItem } from "@staccx/base"
+import { Wrapper, Layout, Button, LayoutItem, Search, Input } from "@staccx/base"
 import { ThemeProxyProvider } from "@staccx/theme"
 import { BrowserRouter as Router } from "react-router-dom"
 import theme from "./theme/Theme"
 // import { instance } from "./api"
 // import io from "socket.io-client"
-import  { getPackages } from "./socket"
+import { getPackages, SYSTEM_NAME } from "./socket"
 import Package from "./components/Package"
 import Menu from "./components/Menu"
+import TerminalWindow from "./components/TerminalWindow"
 
 class App extends Component {
   constructor(props) {
@@ -45,13 +46,27 @@ class App extends Component {
                 Bootstrap
               </Button>
               <Wrapper>
-                {this.state.packages.map(pkg => (
-                  <Package
-                    key={pkg.name}
-                    pkg={pkg}
-                  />
-                ))}
+                {this.state.packages.length > 0 && (
+                  <Search
+                    documents={this.state.packages}
+                    indexer={"name"}
+                    indicises={["name", "version"]}
+                  >
+                    {({ result, search }) => {
+                      // TODO: Add @staccx dependencies as indices
+                      return (
+                        <React.Fragment>
+                          <Input id={"packages"} onChange={e => search(e.target.value)} placeholder={"Package name"}/>
+                          {result.map(pkg => (
+                          <Package key={pkg.name} pkg={pkg}/>
+                          ))}
+                        </React.Fragment>
+                      )
+                    }}
+                  </Search>
+                )}
               </Wrapper>
+              <TerminalWindow name={SYSTEM_NAME} />
             </LayoutItem>
           </Layout>
         </Router>

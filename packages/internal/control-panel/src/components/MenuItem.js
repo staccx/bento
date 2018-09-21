@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { NavLink, Route } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { spacing, color, fontWeight } from "@staccx/theme"
 
 export const activeName = "menuItemActive"

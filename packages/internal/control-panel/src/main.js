@@ -9,7 +9,12 @@ let mainWindow
 
 function createWindow() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({ width: 1500, height: 1000, title: "Bento" })
+  mainWindow = new BrowserWindow({
+    width: 1500,
+    height: 1000,
+    title: "Bento",
+    icon: path.join(__dirname, "assets/icons/png/64x64.png")
+  })
 
   const startUrl =
     process.env.ELECTRON_START_URL ||

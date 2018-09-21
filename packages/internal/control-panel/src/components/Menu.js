@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing, VARIANT_DEFAULT } from "@staccx/theme"
+import { color, spacing } from "@staccx/theme"
 import { Button } from "@staccx/base"
 import { TranslatedText } from "@staccx/i18n"
 import MenuItem, { MenuTitle } from "./MenuItem"
@@ -25,10 +25,7 @@ class Menu extends React.Component {
           <MenuItem path={"/"} icon={null}>
             Here be menu
           </MenuItem>
-          <MenuItem
-            path={"/"}
-            icon={null}
-          >
+          <MenuItem path={"/"} icon={null}>
             <TranslatedText i18nKey={"REPORTS_MENUITEM"}>
               {value => <MenuTitle>{value}</MenuTitle>}
             </TranslatedText>
@@ -54,6 +51,7 @@ const MenuWrapper = styled.div`
   grid-template-areas: "sidebar menu";
   border-right: 1px solid ${color.line};
   min-height: 100vh;
+  max-width: 200px;
 `
 const CloseWrapper = styled.li`
   min-height: 60px;

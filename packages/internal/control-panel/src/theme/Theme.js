@@ -13,18 +13,12 @@ const layoutStyle = registerStyle(
   Layout.themeProps.container
 )
 
-const fadeInCss = css`
-  opacity: 0;
-  animation: ${FadeIn} forwards ease-out 400ms 1;
-  animation-delay: ${p => (p.delay ? p.delay : 0)}ms;
-`
-
 const layoutItemStyle = registerStyle(
   {
     fourByFour: css`
       opacity: 0;
       animation: ${FadeIn} forwards ease-out 400ms 1;
-      animation-delay: 800ms;
+      animation-delay: 100ms;
       background-color: ${color.secondary};
     `
   },

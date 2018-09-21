@@ -69,23 +69,27 @@ io.on("connection", socket => {
   execute("lerna", ["ls", "--json", "--all"], onData, () => null, () => null)
 
   socket.on("exec raw", data => {
-    // Just fire it
-    // exec(data)
+    const { pkg, script } = data
     console.log("executing", data)
-    const split = data.split(" ")
+    const split = script.split(" ")
 
     const cmd = split[0]
     const params = split.splice(1)
 
-    execute(cmd, params, console.log, console.log, console.log, console.error)
+    // TODO: Improve this
+    const log = msg => emitLog(msg, pkg)
+    const end = msg => socket.emit("build ended", pkg)
+    execute(cmd, params, log, log, end, end)
   })
 
   socket.on("run exec", data => {
     const { pkg, script } = data
 
-    execute("lerna", ["exec", `--scope ${pkg}`, script], data =>
-      emitLog(data, pkg)
-    )
+    console.log("here?", pkg, data)
+
+    const log = msg => emitLog(msg, pkg)
+    const end = msg => socket.emit("build ended", pkg)
+    execute("lerna", ["exec", `--scope ${pkg}`, script], log, log, end, end)
     // exec(`lerna exec --scope ${pkg} ${script}`)
   })
 

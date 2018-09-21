@@ -11,7 +11,6 @@ import {
   RadioPill,
   Text
 } from "@staccx/base"
-import styled from "styled-components"
 import copy from "copy-to-clipboard"
 import socket from "../socket"
 import PropTypes from "prop-types"
@@ -33,15 +32,6 @@ class Package extends Component {
         this.setState({ isBuilding: false })
       }
     })
-
-    socket.on("log", data => {
-      if (data.pkg === props.pkg.name) {
-        // this.setState({ log: this.state.log + data.log })
-        this.terminalWindow.current.write(data.log)
-      }
-    })
-
-    this.terminalWindow = React.createRef()
 
     this.runScript = this.runScript.bind(this)
     this.showInFolder = this.showInFolder.bind(this)
@@ -81,8 +71,10 @@ class Package extends Component {
   }
 
   openIDE(ide) {
-    // this.props.socket.emit("exec raw", `${ide} ${this.props.pkg.location}`)
-    this.emit("exec raw", `${ide} ${this.props.pkg.location}`)
+    this.emit("exec raw", {
+      pkg: this.props.pkg.name,
+      script: `${ide} ${this.props.pkg.location}`
+    })
   }
 
   link() {
@@ -94,6 +86,7 @@ class Package extends Component {
   }
 
   emit(id, data) {
+    console.log("emitting", id, "with data", data)
     socket.emit(id, data)
   }
 
@@ -124,6 +117,11 @@ class Package extends Component {
           <React.Fragment>
             <Loading />
             Building
+            <Wrapper size={"small"}>
+              <TerminalWindow
+                name={pkg.name}
+              />
+            </Wrapper>
           </React.Fragment>
         )}
         {!this.state.isBuilding && (
@@ -152,21 +150,13 @@ class Package extends Component {
             <Button onClick={this.openWithWebstorm}>Open in Webstorm</Button>
           </React.Fragment>
         )}
-        <Wrapper size={"small"}>
-          <TerminalWindow
-            ref={this.terminalWindow}
-            show={this.state.isBuilding}
-          />
-        </Wrapper>
       </LayoutItem>
     )
   }
 }
 
-Package.propTypes = {}
-
-const PackageLoading = styled(Loading)`
-  position: absolute;
-`
+Package.propTypes = {
+  pkg: PropTypes.object
+}
 
 export default Package

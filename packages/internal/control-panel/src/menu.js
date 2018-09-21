@@ -157,7 +157,7 @@ const buildDarwinTemplate = mainWindow => {
       {
         label: "Bootstrap",
         click() {
-          mainWindow.webContents.send("boostrap")
+          mainWindow.webContents.send("bootstrap")
         }
       },
       {
