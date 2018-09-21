@@ -63,6 +63,10 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/logoSalad.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "blocks/stories.js"
     },
     {
@@ -96,6 +100,10 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "blocks/hero.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/trinity.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",

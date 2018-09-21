@@ -1,6 +1,6 @@
 {
   "name": "@staccx/eslint-config",
-  "version": "7.6.4",
+  "version": "7.7.4",
   "description": "JavaScript linting setup for @staccx",
   "main": "index.js",
   "author": "StaccX",

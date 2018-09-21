@@ -38,6 +38,30 @@ export default {
       type: "image",
       name: "logo",
       title: "Logo"
+    },
+    {
+      type: "array",
+      name: "outboundLinks",
+      title: "Outbound links",
+      of: [
+        {
+          type: "object",
+          name: "outoundLink",
+          title: "Outbound link",
+          fields: [
+            {
+              type: "string",
+              name: "title",
+              title: "Title"
+            },
+            {
+              type: "string",
+              name: "url",
+              title: "URL"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -26,7 +26,12 @@ export default {
       type: "array",
       name: "blocks",
       title: "Blocks",
-      of: [{ type: "section" }, { type: "sectionHead" }, { type: "linkBlock" }]
+      of: [
+        { type: "section" },
+        { type: "sectionHead" },
+        { type: "linkBlock" },
+        { type: "trinity" }
+      ]
     },
     {
       type: "meta",

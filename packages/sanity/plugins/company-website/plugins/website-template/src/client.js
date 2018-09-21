@@ -9,6 +9,12 @@ export default {
       title: "Name"
     },
     {
+      type: "boolean",
+      name: "hide",
+      title: "Hide",
+      description: "If true, this will not show on the website"
+    },
+    {
       type: "text",
       name: "description",
       title: "Description"

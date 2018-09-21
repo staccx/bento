@@ -1,0 +1,40 @@
+{
+  "name": "@staccx/control-panel",
+  "version": "5.2.1",
+  "private": true,
+  "main": "src/main.js",
+  "productName": "Bento ctrl",
+  "homepage": "./",
+  "dependencies": {
+    "@lerna/list": "^3.3.2",
+    "@staccx/base": "^7.7.4",
+    "@staccx/soy": "^7.7.4",
+    "@staccx/theme": "^7.7.4",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "get-port": "^4.0.0",
+    "http": "^0.0.0",
+    "shelljs": "^0.8.2",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1",
+    "xterm": "^3.7.0"
+  },
+  "scripts": {
+    "start": "nf start",
+    "cra": "react-app-rewired start",
+    "server": "nodemon src/server.js",
+    "electron": "electron .",
+    "build:app": "react-app-rewired build",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/logo.png.icns --prune=true --out=release-builds"
+  },
+  "devDependencies": {
+    "@staccx/rollup-config": "^6.3.0",
+    "electron": "^3.0.0",
+    "electron-packager": "^12.1.2",
+    "foreman": "^3.0.1",
+    "nodemon": "^1.18.4"
+  },
+  "proxy": "http://localhost:6660/"
+}

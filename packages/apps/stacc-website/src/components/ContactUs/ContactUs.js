@@ -8,10 +8,10 @@ import FullWidth from "../FullWidth/FullWidth"
 const ContactUs = ({ person, heading, image, imageCutOut }) => {
   return (
     <Container imageCutOut={imageCutOut || undefined}>
-      <Wrapper>
+      <StyledWrapper>
         <Inner>
           <Body>
-            <Layout paddingTop="grid" paddingBottom="grid">
+            <Layout>
               <Heading level={2}>{heading}</Heading>
               <div>
                 {person.name} <br />
@@ -38,13 +38,20 @@ const ContactUs = ({ person, heading, image, imageCutOut }) => {
             </ImgContainer>
           )}
         </Inner>
-      </Wrapper>
+      </StyledWrapper>
     </Container>
   )
 }
 
+const StyledWrapper = styled(Wrapper)`
+  padding-left: 8.5vw !important;
+  padding-right: 8.5vw !important;
+`
+
 const Container = styled(FullWidth)`
   background-color: ${color("blush")};
+  padding: ${p => (!p.imageCutOut ? spacing("grid")(p) : 0)} 0;
+  color: ${color("textDark")};
 
   @media only screen and (min-width: ${wrapper.medium}) {
     ${p =>
@@ -54,7 +61,7 @@ const Container = styled(FullWidth)`
       `};
   }
   &:last-child {
-    margin-bottom: -${spacing("grid")};
+    margin-bottom: -${spacing("gridLarge")};
   }
 `
 
@@ -82,7 +89,9 @@ const Image = styled.img`
 `
 
 const Body = styled.div`
-  margin-left: ${spacing.large};
+  @media only screen and (max-width: ${wrapper.medium}) {
+    margin-bottom: ${spacing.large};
+  }
 `
 
 const ImgContainer = styled.div`
@@ -92,6 +101,11 @@ const ImgContainer = styled.div`
       css`
         align-self: flex-end;
       `};
+    margin-right: ${spacing.large};
+  }
+
+  @media only screen and (max-width: ${wrapper.large}) {
+    max-width: 50%;
   }
 `
 

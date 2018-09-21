@@ -38,6 +38,7 @@ export default {
             { type: "homePage" },
             { type: "teamPage" },
             { type: "productPage" },
+            { type: "servicePage" },
             { type: "clientsPage" }
           ]
         }

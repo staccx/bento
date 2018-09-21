@@ -51,7 +51,7 @@ const FooterNavigation = ({ heading, callToAction }) => (
                     {m.submenu.map(submenuItem => (
                       <li key={submenuItem._id}>
                         <FooterNavLink to={submenuItem.path.current}>
-                          {submenuItem.name}
+                          {submenuItem.title}
                         </FooterNavLink>
                       </li>
                     ))}
@@ -82,6 +82,7 @@ const FooterNav = styled.ul`
   display: flex;
   justify-content: space-between;
   padding-top: ${spacing.small};
+  flex-wrap: wrap;
 `
 
 const FooterNavLink = styled(NavLink)`
