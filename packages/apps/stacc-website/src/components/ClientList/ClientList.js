@@ -40,7 +40,7 @@ const ClientList = props => {
 
 ClientList.propTypes = {}
 
-const ClientsList = styled(List)`
+export const ClientsList = styled(List)`
   display: grid;
 
   row-gap: ${spacing.large};

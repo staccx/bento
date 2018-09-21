@@ -61,12 +61,12 @@ class App extends Component {
     console.log("%c" + asciiArt, "color: #EB5E55;")
     return (
       <ThemeProxyProvider theme={theme}>
-        <SanityProvider dataset={"production"} projectId={"8j24leyc"} useCdn={true}>
+        <SanityProvider dataset={"production"} projectId={"8j24leyc"} useCdn>
           <Router history={history}>
             <PageWrapper>
               <Header />
               <Wrapper>
-                <main>
+                <Main>
                   <Switch>
                     <Route
                       path="/preview/:id"
@@ -186,7 +186,7 @@ class App extends Component {
                       }}
                     </SanityList>
                   </React.Fragment>
-                </main>
+                </Main>
               </Wrapper>
               <Footer />
             </PageWrapper>
@@ -196,6 +196,10 @@ class App extends Component {
     )
   }
 }
+
+const Main = styled.main`
+  min-height: 100vh;
+`
 
 const PageWrapper = styled.div`
   min-height: 100vh;

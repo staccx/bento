@@ -16,8 +16,10 @@ import {
   Stories,
   Timeline,
   ContactUs,
-  Trinity
+  Trinity,
+  ClientPreview
 } from "../components/_codeSplitting"
+import { ClientsList } from "../components/ClientList/ClientList"
 
 const serializer = {
   container: props => (
@@ -94,6 +96,28 @@ const serializer = {
     trinity: ({ node }) => {
       console.log(node)
       return <Trinity heading={node.title} items={node.trinity.texts} />
+    },
+    logoSalad: ({ node }) => {
+      return (
+        <ClientsList>
+          {node.logos.map(logo => {
+            return (
+              <li key={logo._id}>
+                <ClientPreview
+                  name={logo.name}
+                  logo={logo.logo}
+                  description={logo.description}
+                  website={logo.url}
+                  websiteName={
+                    logo.url ? logo.url.replace(/(^\w+:|^)\/\//, "") : ""
+                  }
+                  cases={[]}
+                />
+              </li>
+            )
+          })}
+        </ClientsList>
+      )
     }
   }
 }
