@@ -63,6 +63,10 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/logoSalad.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "blocks/stories.js"
     },
     {

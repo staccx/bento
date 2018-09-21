@@ -22,6 +22,7 @@ export default {
     { type: "timeline" },
     { type: "contactPerson" },
     { type: "clientList" },
-    { type: "peopleList" }
+    { type: "peopleList" },
+    { type: "logoSalad" },
   ]
 }
