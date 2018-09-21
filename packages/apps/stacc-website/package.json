@@ -29,7 +29,7 @@
   "scripts": {
     "build": "yarn prettify && rollup -c",
     "start": "react-app-rewired start",
-    "build:app": "yarn createVCards && react-app-rewired build",
+    "build:app": "react-app-rewired build",
     "createVCards": "node createVCards",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",

@@ -22,23 +22,28 @@ const Person = ({
   <PersonItem key={name}>
     <SanityImage image={image}>
       {({ image }) => {
+        const vCardUrl = encodeURI(
+          `https://s3.eu-west-2.amazonaws.com/stacc-vcards/${dashIt(name)}.vcf`
+        )
+        console.log(vCardUrl)
         return (
           <Flag top>
             <Heading level={3}>{name}</Heading>
             <Title>
               {title}, {company.name}
             </Title>
-            <SubtleLink href={`mailto:${email}`}><Send />{email}</SubtleLink> <br />
-            <SubtleLink href={`tel:${phone}`}>
-              <Phone />{formatPhone(phone)}
+            <SubtleLink href={`mailto:${email}`}>
+              <Send />
+              {email}
             </SubtleLink>{" "}
             <br />
-            <SubtleLink
-              href={`/vCards/${dashIt(
-                name
-              )}.vcf`}
-            >
-              <VCard/> Save contact details
+            <SubtleLink href={`tel:${phone}`}>
+              <Phone />
+              {formatPhone(phone)}
+            </SubtleLink>{" "}
+            <br />
+            <SubtleLink href={vCardUrl.toString()} target={"_blank"}>
+              <VCard /> Save contact details
             </SubtleLink>
             <br />
             {linkedin && (
