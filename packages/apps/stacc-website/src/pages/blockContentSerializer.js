@@ -79,18 +79,22 @@ const serializer = {
     featureList: ({ node }) => <FeatureList items={node.features} />,
     stories: ({ node }) => <Stories items={node.list} />,
     timeline: ({ node }) => <Timeline items={node.entries} />,
-    contactPerson: ({ node }) => (
-      <ContactUs
-        heading={node.heading}
-        person={{
-          name: node.employee.name,
-          phone: node.employee.phone,
-          email: node.employee.email
-        }}
-        image={node.image}
-        imageCutOut={node.imageCutout}
-      />
-    ),
+    contactPerson: ({ node, ...rest }) => {
+      console.log("contactPerson", node, rest)
+      return (
+        <ContactUs
+          heading={node.heading}
+          person={{
+            name: node.employee.name,
+            phone: node.employee.phone,
+            email: node.employee.email
+          }}
+          emailSubject={node.emailSubject}
+          image={node.image}
+          imageCutOut={node.imageCutout}
+        />
+      )
+    },
     peopleList: ({ node }) => <PeopleList node={node} />,
     clientList: ({ node }) => <ClientList node={node} />,
     trinity: ({ node }) => {

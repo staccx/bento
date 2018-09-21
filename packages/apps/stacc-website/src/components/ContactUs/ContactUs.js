@@ -5,7 +5,13 @@ import { color, spacing, wrapper } from "@staccx/theme"
 import { SanityImage } from "@staccx/sanity"
 import FullWidth from "../FullWidth/FullWidth"
 
-const ContactUs = ({ person, heading, image, imageCutOut }) => {
+const ContactUs = ({
+  person,
+  heading,
+  image,
+  imageCutOut,
+  emailSubject = null
+}) => {
   return (
     <Container imageCutOut={imageCutOut || undefined}>
       <StyledWrapper>
@@ -15,8 +21,14 @@ const ContactUs = ({ person, heading, image, imageCutOut }) => {
               <Heading level={2}>{heading}</Heading>
               <div>
                 {person.name} <br />
-                {person.phone} <br />
-                {person.email}
+                <a href={`tel:${person.phone}`}>{person.phone}</a> <br />
+                <a
+                  href={`mailto:${person.email}${
+                    emailSubject ? `?subject=${emailSubject}` : ""
+                  }`}
+                >
+                  {person.email}
+                </a>
               </div>
             </Layout>
           </Body>
