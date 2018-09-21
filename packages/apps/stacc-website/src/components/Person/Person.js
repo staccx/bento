@@ -25,7 +25,6 @@ const Person = ({
         const vCardUrl = encodeURI(
           `https://s3.eu-west-2.amazonaws.com/stacc-vcards/${dashIt(name)}.vcf`
         )
-        console.log(vCardUrl)
         return (
           <Flag top>
             <Heading level={3}>{name}</Heading>
