@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Flag, Heading } from "@staccx/base"
-import { formatPhone } from "@staccx/formatting"
+import { formatPhone, dashIt } from "@staccx/formatting"
 import { spacing, color, font } from "@staccx/theme"
 import { SanityImage } from "@staccx/sanity"
 
@@ -29,6 +29,14 @@ const Person = ({
             <SubtleLink href={`tel:${phone}`}>
               {formatPhone(phone)}
             </SubtleLink>{" "}
+            <br />
+            <a
+              href={`/vCards/${dashIt(
+                name
+              )}.vcf`}
+            >
+              Save contact details
+            </a>
             <br />
             {linkedin && (
               <SubtleLink href={linkedin}>
