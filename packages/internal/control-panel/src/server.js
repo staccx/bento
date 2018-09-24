@@ -1,3 +1,4 @@
+const { SYSTEM_NAME } = require("./contants")
 const express = require("express")
 const app = express()
 const router = express.Router
@@ -6,11 +7,18 @@ const socket = require("socket.io")
 const io = socket(server)
 const spawn = require("child_process").spawn
 const getPort = require("get-port")
+const path = require("path")
 
 const api = router()
 
 const ab2str = buf => {
   return String.fromCharCode.apply(null, new Uint16Array(buf))
+}
+
+const executeAsync = (cmd, params, onLog) => {
+  return new Promise((resolve, reject) => {
+    execute(cmd, params, onLog, onLog, resolve, reject)
+  })
 }
 
 const execute = (
@@ -65,6 +73,7 @@ io.on("connection", socket => {
   }
 
   const emitLog = (log, pkg) => socket.emit("log", { log, pkg })
+  const emitEnd = pkg => socket.emit("build ended", pkg)
 
   execute("lerna", ["ls", "--json", "--all"], onData, () => null, () => null)
 
@@ -107,24 +116,47 @@ io.on("connection", socket => {
     )
   })
 
-  socket.on("serve styleguide", async data => {
+  socket.on("serve site", async data => {
+    const { pkg } = data
     const port = await getPort({ port: 3000 })
 
-    console.log("Got port", port)
+    console.log("Serving app on port ", port)
+
+    // TODO: Emit error
     const { pid } = execute(
       "lerna",
-      [
-        "exec",
-        `--scope`,
-        `@staccx/styleguide`,
-        `serve -- -s build -l ${port} &`
-      ],
-      console.log,
-      console.log,
-      console.log,
-      console.log
+      ["exec", `--scope`, pkg, `serve -- -s build -l ${port} &`],
+      log => emitLog(log, pkg),
+      log => emitLog(log, pkg),
+      d => emitEnd(pkg),
+      d => emitEnd(pkg)
     )
 
-    socket.emit("open styleguide", { pid, port })
+    socket.emit("open site", { pid, port })
+  })
+
+  socket.on("reset project", async () => {
+    const rootBento = path.resolve("../../../")
+    console.log(rootBento)
+
+    const cwd = process.cwd()
+
+    process.chdir(rootBento)
+
+    try {
+      await executeAsync("rm", ["-rf", "node_modules"], log =>
+        emitLog(log, SYSTEM_NAME)
+      )
+      await executeAsync("rm", ["yarn.lock"], log => emitLog(log, SYSTEM_NAME))
+      await executeAsync("lerna", ["clean", "--yes"], log =>
+        emitLog(log, SYSTEM_NAME)
+      )
+      await executeAsync("lerna", ["bootstrap"], log => emitLog(log, SYSTEM_NAME))
+    } catch (error) {
+      console.error("Oops", error)
+    }
+    console.log("Reset done")
+
+    process.chdir(cwd)
   })
 })

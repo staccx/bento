@@ -25,7 +25,7 @@
     "start": "nf start",
     "cra": "react-app-rewired start",
     "server": "nodemon src/server.js",
-    "electron": "electron .",
+    "electron": "electron . --disable-http-cache",
     "build:app": "react-app-rewired build",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/logo.png.icns --prune=true --out=release-builds"
   },

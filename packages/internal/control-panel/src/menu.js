@@ -165,6 +165,12 @@ const buildDarwinTemplate = mainWindow => {
         click() {
           mainWindow.webContents.send("clean")
         }
+      },
+      {
+        label: "Reset project",
+        click() {
+          mainWindow.webContents.send("reset project")
+        }
       }
     ]
   }

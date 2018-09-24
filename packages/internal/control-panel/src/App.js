@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   openStyleguide() {
-    this.state.socket.emit("serve styleguide")
+    this.state.socket.emit("serve site", {pkg: "@staccx/styleguide"})
   }
 
   render() {
