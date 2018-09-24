@@ -8,6 +8,7 @@ import {
   withScriptjs
 } from "react-google-maps"
 import Marker from "./Marker"
+import { apiKey } from "../config/googleMaps"
 
 const getPixelPositionOffset = (width, height) => ({
   x: -(width / 2) - 4, // border
@@ -22,7 +23,6 @@ const defaultOptions = {
 
 const Map = compose(
   mapProps(props => {
-    console.log(props)
     return {
       center: {
         ...props
@@ -31,8 +31,7 @@ const Map = compose(
     }
   }),
   withProps({
-    googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${apiKey}&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />

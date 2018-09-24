@@ -1,5 +1,5 @@
 import { Theme, registerStyle, color } from "@staccx/theme"
-import { BaseTheme, BoxStyles } from "@staccx/base"
+import { BaseTheme, Box } from "@staccx/base"
 import reset from "./reset"
 import { css } from "styled-components"
 
@@ -83,7 +83,7 @@ const markerStyle = registerStyle(
       }
     `
   },
-  BoxStyles.BOX
+  Box.themeProps.box
 )
 
 const theme = new Theme(BaseTheme, {
