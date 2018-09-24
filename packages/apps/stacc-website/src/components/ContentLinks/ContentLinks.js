@@ -10,7 +10,7 @@ const ContentLinks = ({ children }) => {
 const Links = styled.div`
   display: grid;
   grid-row-gap: ${spacing.large};
-  grid-column-gap: ${spacing.large};
+  grid-column-gap: ${spacing.huge};
 
   @media only screen and (min-width: ${wrapper.medium}) {
     grid-template-columns: 1fr 1fr;

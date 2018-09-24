@@ -21,7 +21,7 @@ export const getLinkItem = linkBlock => {
     }
     if (link._ref) {
       return (
-        <SanityDocument id={link._ref}>
+        <SanityDocument id={link._ref} pick={"title, path, body"}>
           {({ document }) => {
             if (!document) {
               return null
@@ -48,6 +48,7 @@ const ContentLinksItem = ({ heading, body, url }) => {
     <Item>
       <ItemLink to={url}>
         <ItemHeading level={3}>{heading}</ItemHeading>
+        {"\u00a0"}
         <Icon />
       </ItemLink>
       {body && <p>{body}</p>}
@@ -61,9 +62,10 @@ const ItemLink = styled(Link)`
   text-decoration: none;
   display: block;
   align-items: center;
-  margin-bottom: ${spacing.small};
+  margin-bottom: ${spacing.tiny};
   color: ${color.primary};
   transition: color 0.2s ease;
+  white-space: nowrap;
 
   > *:last-child {
     margin-left: ${spacing.tiny};
@@ -79,6 +81,7 @@ const ItemLink = styled(Link)`
 const ItemHeading = styled(Heading)`
   display: inline;
   color: currentColor;
+  white-space: initial;
 `
 
 const Icon = styled(IconArrowRight)`

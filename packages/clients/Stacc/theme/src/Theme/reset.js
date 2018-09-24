@@ -10,11 +10,13 @@ html {
 }
 
 h1, h2 {
+  color: #2b2b2b;
   font-weight: 700;
   line-height: 1.2;
 }
 
 h3,h4,h5,h6,strong {
+  color: #2b2b2b;
   font-weight: 600;
 }
 `

@@ -1,9 +1,38 @@
 import { css } from "styled-components"
-import { registerStyle, color, font, spacing } from "@staccx/theme"
+import {
+  registerStyle,
+  color,
+  font,
+  spacing,
+  wrapper,
+  VARIANT_DEFAULT
+} from "@staccx/theme"
 import { Heading } from "@staccx/base"
+
+const getResponsiveSize = level => {
+  switch (level) {
+    case 1:
+      return font.h3
+
+    case 2:
+      return font.h3
+
+    case 3:
+      return font.h4
+
+    default:
+      return font[level]
+  }
+}
 
 export const HeadingStyling = registerStyle(
   {
+    [VARIANT_DEFAULT]: css`
+      color: ${color("textDark")};
+      @media only screen and (max-width: ${wrapper.large}) {
+        font-size: ${p => getResponsiveSize(p.level)};
+      }
+    `,
     emphasized: css`
       color: ${color.primary};
       text-transform: uppercase;
@@ -15,6 +44,10 @@ export const HeadingStyling = registerStyle(
       font-weight: 700;
       color: ${color.white};
       text-align: center;
+
+      @media only screen and (max-width: ${wrapper.large}) {
+        font-size: ${font.h2};
+      }
     `,
     primary: css`
       color: ${color.primary};

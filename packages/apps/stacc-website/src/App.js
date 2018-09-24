@@ -15,8 +15,7 @@ import {
   Page,
   Contact,
   Jobs,
-  Overview,
-  ServicesInfrastructure
+  Overview
 } from "./pages/_codeSplitting"
 import PreviewLive from "./pages/PreviewLive"
 
@@ -62,12 +61,12 @@ class App extends Component {
     console.log("%c" + asciiArt, "color: #EB5E55;")
     return (
       <ThemeProxyProvider theme={theme}>
-        <SanityProvider dataset={"production"} projectId={"8j24leyc"}>
+        <SanityProvider dataset={"production"} projectId={"8j24leyc"} useCdn>
           <Router history={history}>
             <PageWrapper>
               <Header />
               <Wrapper>
-                <main>
+                <Main>
                   <Switch>
                     <Route
                       path="/preview/:id"
@@ -81,14 +80,9 @@ class App extends Component {
                     <Route path="/contact" component={Contact} />
                     <Route path="/careers" component={Jobs} />
                     <Route path="/overview" component={Overview} />
-                    <Route
-                      path="/services/:filter(infrastructure)"
-                      component={ServicesInfrastructure}
-                      exact
-                    />
                   </Switch>
                   <React.Fragment>
-                    <SanityList type={"client"}>
+                    <SanityList type={"client"} filter={`hide != true`}>
                       {({ result }) => {
                         if (!result) {
                           return null
@@ -192,7 +186,7 @@ class App extends Component {
                       }}
                     </SanityList>
                   </React.Fragment>
-                </main>
+                </Main>
               </Wrapper>
               <Footer />
             </PageWrapper>
@@ -202,6 +196,10 @@ class App extends Component {
     )
   }
 }
+
+const Main = styled.main`
+  min-height: 100vh;
+`
 
 const PageWrapper = styled.div`
   min-height: 100vh;

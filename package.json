@@ -7,7 +7,8 @@
     "commitmsg": "commitlint -E GIT_PARAMS",
     "styleguide": "cd packages/base && styleguidist server",
     "start": "cd packages/internal/styleguide && yarn start",
-    "soy": "node packages/internal/soy"
+    "soy": "node packages/internal/soy",
+    "release": "lerna publish --conventional-commits --changelog-preset angular-bitbucket "
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
+    "conventional-changelog-angular-bitbucket": "^1.1.2",
+    "conventional-changelog-cli": "^2.0.5",
     "eslint": "^5.0.1",
     "plop": "^2.0.0",
     "babel-eslint": "^8.2.2",

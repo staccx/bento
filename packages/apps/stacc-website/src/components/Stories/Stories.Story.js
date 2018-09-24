@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { Heading, Layout } from "@staccx/base"
 import { SanityImage } from "@staccx/sanity"
 import GoTo from "../GoTo/GoTo"
@@ -14,7 +14,7 @@ const Story = ({
   isReverse
 }) => (
   <Container>
-    <Inner rev={isReverse}>
+    <Inner hasImg={!!illustration} rev={isReverse}>
       <div>
         <Layout>
           <div>
@@ -45,12 +45,23 @@ const Container = styled.div``
 const Inner = styled.div`
   display: flex;
   align-items: center;
-  ${p => p.rev && `flex-direction: row-reverse`};
+  ${p => p.rev && p.hasImg && `flex-direction: row-reverse`};
   justify-content: space-between;
 
-  > div:first-child {
-    flex-basis: calc(50%);
-  }
+  ${p =>
+    p.hasImg
+      ? css`
+          > div:first-child {
+            flex-basis: calc(50%);
+          }
+        `
+      : css`
+          text-align: left;
+          justify-content: flex-start;
+          > div:first-child {
+            flex-basis: calc(56%);
+          }
+        `};
 
   > div:last-child:not(:first-child) {
     flex-basis: calc(50% - 48px);
@@ -63,6 +74,7 @@ const Inner = styled.div`
 
 const Illustration = styled.img`
   max-width: 320px;
+  width: 100%;
 `
 
 const Body = styled.p`

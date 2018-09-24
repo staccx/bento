@@ -28,20 +28,6 @@ const Contact = () => (
             <Heading level="2" variant="primary">
               Get in touch
             </Heading>
-            <Layout grid="fiftyFifty">
-              <Input label="Name" id="name" autocomplete="name" required />
-              <Input label="Company" id="Company" required />
-              <Input label="E-mail" id="E-mail" required autocomplete="email" />
-              <PhoneInput
-                label="Mobile"
-                id="Mobile"
-                required
-                autoComplete="tel"
-              />
-              <div>
-                <Button>Send</Button>
-              </div>
-            </Layout>
           </Layout>
         </Wrapper>
       </Box>

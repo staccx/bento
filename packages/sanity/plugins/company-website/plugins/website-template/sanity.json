@@ -43,6 +43,10 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/typeformBlock.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "blocks/clientList.js"
     },
     {
@@ -60,6 +64,10 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "blocks/contactPerson.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/logoSalad.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -96,6 +104,10 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "blocks/hero.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/trinity.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",

@@ -7,7 +7,7 @@ import { ClientPreview } from "../_codeSplitting"
 
 const ClientList = props => {
   return (
-    <SanityList type={"client"}>
+    <SanityList type={"client"} filter={"hide !== true"}>
       {({ result }) => {
         if (!result) {
           return <Loading />
@@ -40,7 +40,7 @@ const ClientList = props => {
 
 ClientList.propTypes = {}
 
-const ClientsList = styled(List)`
+export const ClientsList = styled(List)`
   display: grid;
 
   row-gap: ${spacing.large};

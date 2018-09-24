@@ -8,7 +8,12 @@ export default {
       name: "heading",
       title: "Heading"
     },
-
+    {
+      type: "string",
+      name: "emailSubject",
+      title: "Email Subject",
+      description: "Use this to prefill email subject in mailto: link."
+    },
     {
       type: "reference",
       name: "employee",

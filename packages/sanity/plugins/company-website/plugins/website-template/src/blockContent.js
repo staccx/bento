@@ -17,10 +17,13 @@ export default {
     { type: "productClients" },
     { type: "quote" },
     { type: "hero" },
+    { type: "trinity" },
     { type: "stories" },
     { type: "timeline" },
     { type: "contactPerson" },
     { type: "clientList" },
-    { type: "peopleList" }
+    { type: "peopleList" },
+    { type: "logoSalad" },
+    { type: "typeform" },
   ]
 }

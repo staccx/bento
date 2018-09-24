@@ -2,7 +2,8 @@ module.exports = {
   parser: "babel-eslint",
   rules: {
     "react/prop-types": 0,
-    "react/no-unused-prop-types": 0
+    "react/no-unused-prop-types": 0,
+    "new-cap": ["error", { newIsCapExceptions: ["i18n"] }]
   },
   extends: [
     "standard",
@@ -12,6 +13,7 @@ module.exports = {
     "prettier/react"
   ],
   globals: {
-    sessionStorage: true
+    sessionStorage: true,
+    localStorage: true
   }
 }

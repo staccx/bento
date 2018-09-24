@@ -15,12 +15,16 @@ import {
   SectionHead,
   Stories,
   Timeline,
-  ContactUs
+  ContactUs,
+  Trinity,
+  ClientPreview
 } from "../components/_codeSplitting"
+import { ClientsList } from "../components/ClientList/ClientList"
+import { ReactTypeformEmbed } from "react-typeform-embed"
 
 const serializer = {
   container: props => (
-    <Layout rowGap="grid" paddingBottom="grid">
+    <Layout rowGap="gridLarge" paddingTop="gridLarge" paddingBottom="gridLarge">
       {props.children}
     </Layout>
   ),
@@ -57,7 +61,7 @@ const serializer = {
       }
       return (
         <div>
-          <Layout>
+          <Layout rowGap="large">
             <SanityImage image={head.image}>
               {({ image }) => (
                 <SectionHead
@@ -76,20 +80,51 @@ const serializer = {
     featureList: ({ node }) => <FeatureList items={node.features} />,
     stories: ({ node }) => <Stories items={node.list} />,
     timeline: ({ node }) => <Timeline items={node.entries} />,
-    contactPerson: ({ node }) => (
-      <ContactUs
-        heading={node.heading}
-        person={{
-          name: node.employee.name,
-          phone: node.employee.phone,
-          email: node.employee.email
-        }}
-        image={node.image}
-        imageCutOut={node.imageCutout}
-      />
-    ),
+    contactPerson: ({ node, ...rest }) => {
+      console.log("contactPerson", node, rest)
+      return (
+        <ContactUs
+          heading={node.heading}
+          person={{
+            name: node.employee.name,
+            phone: node.employee.phone,
+            email: node.employee.email
+          }}
+          emailSubject={node.emailSubject}
+          image={node.image}
+          imageCutOut={node.imageCutout}
+        />
+      )
+    },
     peopleList: ({ node }) => <PeopleList node={node} />,
-    clientList: ({ node }) => <ClientList node={node} />
+    clientList: ({ node }) => <ClientList node={node} />,
+    trinity: ({ node }) => {
+      console.log(node)
+      return <Trinity heading={node.title} items={node.trinity.texts} />
+    },
+    logoSalad: ({ node }) => {
+      return (
+        <ClientsList>
+          {node.logos.map(logo => {
+            return (
+              <li key={logo._id}>
+                <ClientPreview
+                  name={logo.name}
+                  logo={logo.logo}
+                  description={logo.description}
+                  website={logo.url}
+                  websiteName={
+                    logo.url ? logo.url.replace(/(^\w+:|^)\/\//, "") : ""
+                  }
+                  cases={[]}
+                />
+              </li>
+            )
+          })}
+        </ClientsList>
+      )
+    },
+    typeform: ({ node }) => <ReactTypeformEmbed url={node.url} />
   }
 }
 

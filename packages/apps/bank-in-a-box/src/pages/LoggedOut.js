@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Layout, Wrapper, LayoutItem } from "@staccx/base"
-import Back from "../components/Back"
 
 const LoggedOut = ({ history }) => (
   <Wrapper variant="bib">

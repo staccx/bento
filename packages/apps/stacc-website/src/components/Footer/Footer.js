@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Wrapper, fontSmoothing } from "@staccx/base"
-import { spacing, color, wrapper } from "@staccx/theme"
+import { spacing, color, wrapper, fontFamily } from "@staccx/theme"
 import FooterCompanyInfo from "./Footer.CompanyInfo"
 import FooterNavigation from "./Footer.Navigation"
 
@@ -21,10 +21,11 @@ const Footer = ({ heading, callToAction }) => (
 )
 
 const Container = styled.footer`
-  background-color: ${color.text};
+  background-color: ${color("textDark")};
   color: ${color.white};
   padding: ${spacing.large} 0;
   ${fontSmoothing};
+  font-family: ${fontFamily.heading};
 `
 
 const Content = styled.div`
