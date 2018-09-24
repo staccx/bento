@@ -24,5 +24,6 @@ export default {
     { type: "clientList" },
     { type: "peopleList" },
     { type: "logoSalad" },
+    { type: "typeform" },
   ]
 }

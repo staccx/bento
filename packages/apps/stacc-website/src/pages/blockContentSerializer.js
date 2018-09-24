@@ -20,6 +20,7 @@ import {
   ClientPreview
 } from "../components/_codeSplitting"
 import { ClientsList } from "../components/ClientList/ClientList"
+import { ReactTypeformEmbed } from "react-typeform-embed"
 
 const serializer = {
   container: props => (
@@ -122,7 +123,8 @@ const serializer = {
           })}
         </ClientsList>
       )
-    }
+    },
+    typeform: ({ node }) => <ReactTypeformEmbed url={node.url} />
   }
 }
 
