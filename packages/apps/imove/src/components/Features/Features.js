@@ -3,10 +3,10 @@ import styled from "styled-components"
 import { spacing } from "@staccx/theme"
 import { Wrapper, Heading } from "@staccx/base"
 
-const Features = ({ children }) => (
+const Features = ({ heading, children }) => (
   <Content>
     <Wrapper size="full">
-      <StyledHeading level={2}>Med iMove får du</StyledHeading>
+      <StyledHeading level={2}>{heading}</StyledHeading>
       <List>{children}</List>
       <Cars src="/img/cars@2x.png" alt="BMW i3, VW e-golf and KIA Soul" />
     </Wrapper>
