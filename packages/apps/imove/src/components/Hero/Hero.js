@@ -1,8 +1,23 @@
 import React from "react"
 
-const Hero = ({ children }) => (
+const Hero = ({
+  headingMain,
+  subHeadingMain,
+  headingSecondary,
+  hverdagsbilTitle,
+  hverdagsbilSub,
+  hyttebilTitle,
+  hyttebilSub,
+  flyttebilTitle,
+  flyttebilSub,
+  morobilTitle,
+  morobilSub,
+  children
+}) => (
   <div>
-    <span>Hero</span>
+    <h1>{headingMain}</h1>
+    <span>{subHeadingMain}</span>
+    <h2>{headingSecondary}</h2>
     {children}
   </div>
 )
