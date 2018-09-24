@@ -208,6 +208,10 @@ const MenuItem = styled(NavLink)`
           transition: box-shadow 0.2s ease;
           border-bottom: 0;
 
+          &.is-current {
+            border-bottom: 0;
+          }
+
           &:hover,
           &:active,
           &:focus {

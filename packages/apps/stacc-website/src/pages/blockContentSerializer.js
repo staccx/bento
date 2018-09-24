@@ -17,10 +17,10 @@ import {
   Timeline,
   ContactUs,
   Trinity,
-  ClientPreview
+  ClientPreview,
+  Typeform
 } from "../components/_codeSplitting"
 import { ClientsList } from "../components/ClientList/ClientList"
-import { ReactTypeformEmbed } from "react-typeform-embed"
 
 const serializer = {
   container: props => (
@@ -81,7 +81,6 @@ const serializer = {
     stories: ({ node }) => <Stories items={node.list} />,
     timeline: ({ node }) => <Timeline items={node.entries} />,
     contactPerson: ({ node, ...rest }) => {
-      console.log("contactPerson", node, rest)
       return (
         <ContactUs
           heading={node.heading}
@@ -99,7 +98,6 @@ const serializer = {
     peopleList: ({ node }) => <PeopleList node={node} />,
     clientList: ({ node }) => <ClientList node={node} />,
     trinity: ({ node }) => {
-      console.log(node)
       return <Trinity heading={node.title} items={node.trinity.texts} />
     },
     logoSalad: ({ node }) => {
@@ -124,7 +122,7 @@ const serializer = {
         </ClientsList>
       )
     },
-    typeform: ({ node }) => <ReactTypeformEmbed url={node.url} />
+    typeform: ({ node }) => <Typeform heading={node.heading} url={node.url} />
   }
 }
 

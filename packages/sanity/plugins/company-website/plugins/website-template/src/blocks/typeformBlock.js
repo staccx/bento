@@ -4,6 +4,11 @@ export default {
   title: "Typeform",
   fields: [
     {
+      type: "string",
+      name: "heading",
+      title: "Heading"
+    },
+    {
       type: "url",
       name: "url",
       title: "Url"
@@ -11,7 +16,7 @@ export default {
   ],
   preview: {
     select: {
-      title: "url"
+      title: "heading"
     }
   }
 }
