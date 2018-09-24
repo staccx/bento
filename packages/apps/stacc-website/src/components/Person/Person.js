@@ -1,9 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import { Flag, Heading } from "@staccx/base"
-import { formatPhone } from "@staccx/formatting"
+import { formatPhone, dashIt } from "@staccx/formatting"
 import { spacing, color, font } from "@staccx/theme"
 import { SanityImage } from "@staccx/sanity"
+import VCard from "../Icons/vCard"
+import Phone from "../Icons/Phone"
+import Send from "../Icons/Send"
 
 const Person = ({
   name,
@@ -19,16 +22,28 @@ const Person = ({
   <PersonItem key={name}>
     <SanityImage image={image}>
       {({ image }) => {
+        const vCardUrl = encodeURI(
+          `https://s3.eu-west-2.amazonaws.com/stacc-vcards/${dashIt(name)}.vcf`
+        )
         return (
           <Flag top>
             <Heading level={3}>{name}</Heading>
             <Title>
               {title}, {company.name}
             </Title>
-            <SubtleLink href={`mailto:${email}`}>{email}</SubtleLink> <br />
+            <SubtleLink href={`mailto:${email}`}>
+              <Send />
+              {email}
+            </SubtleLink>{" "}
+            <br />
             <SubtleLink href={`tel:${phone}`}>
+              <Phone />
               {formatPhone(phone)}
             </SubtleLink>{" "}
+            <br />
+            <SubtleLink href={vCardUrl.toString()} target={"_blank"}>
+              <VCard /> Save contact details
+            </SubtleLink>
             <br />
             {linkedin && (
               <SubtleLink href={linkedin}>
