@@ -16,12 +16,14 @@ class TerminalWindow extends Component {
     this.container = React.createRef()
 
     socket.on("log", data => {
+      console.log("Received data for", this.props.name)
       if (data.pkg === this.props.name) {
         // this.setState({ log: this.state.log + data.log })
         this.terminal.write(data.log)
       }
     })
 
+    console.log("Created", props)
     this.write = this.write.bind(this)
   }
 

@@ -8,6 +8,7 @@ const io = socket(server)
 const spawn = require("child_process").spawn
 const getPort = require("get-port")
 const path = require("path")
+const ora = require("ora")
 
 const api = router()
 
@@ -141,20 +142,60 @@ io.on("connection", socket => {
 
     const cwd = process.cwd()
 
-    process.chdir(rootBento)
+    const oraReset = new ora({ text: "Resetting project" })
 
+    const oraNod = new ora({
+      text: "Deleting node_modules"
+    })
+    const oraLock = new ora({ text: "Deleting lock file" })
+    const oraClean = new ora({
+      text: "Cleaning package node_modules"
+    })
+    const oraBootstrap = new ora({
+      text: "Bootstrapping project"
+    })
+
+    process.stderr.on("data", log => emitLog(log, SYSTEM_NAME))
+
+    process.chdir(rootBento)
+    oraReset.start()
     try {
+      oraNod.start()
       await executeAsync("rm", ["-rf", "node_modules"], log =>
-        emitLog(log, SYSTEM_NAME)
-      )
-      await executeAsync("rm", ["yarn.lock"], log => emitLog(log, SYSTEM_NAME))
+        emitLog(log,
+      SYSTEM_NAME
+    ))
+
+      oraNod.succeed()
+      oraLock.start()
+
+      await executeAsync("rm", ["yarn.lock"], log =>
+        emitLog(log,
+      SYSTEM_NAME
+    ))
+
+      oraLock.succeed()
+      oraClean.start()
       await executeAsync("lerna", ["clean", "--yes"], log =>
-        emitLog(log, SYSTEM_NAME)
-      )
-      await executeAsync("lerna", ["bootstrap"], log => emitLog(log, SYSTEM_NAME))
+        emitLog(log,
+      SYSTEM_NAME
+    ))
+
+      oraClean.succeed()
+      oraBootstrap.start()
+      await executeAsync("lerna", ["bootstrap"], log =>
+        emitLog(log,
+      SYSTEM_NAME
+    ))
+
+      oraBootstrap.succeed()
     } catch (error) {
       console.error("Oops", error)
+      oraReset.fail(error)
+      return
     }
+    oraReset.succeed("Project successfully reset")
+
     console.log("Reset done")
 
     process.chdir(cwd)

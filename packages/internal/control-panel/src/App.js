@@ -1,11 +1,19 @@
 import React, { Component } from "react"
-import { Wrapper, Layout, Button, LayoutItem, Search, Input } from "@staccx/base"
+import {
+  Wrapper,
+  Layout,
+  Button,
+  LayoutItem,
+  Search,
+  Input
+} from "@staccx/base"
 import { ThemeProxyProvider } from "@staccx/theme"
 import { BrowserRouter as Router } from "react-router-dom"
 import theme from "./theme/Theme"
 // import { instance } from "./api"
 // import io from "socket.io-client"
-import { getPackages, SYSTEM_NAME } from "./socket"
+import { getPackages } from "./socket"
+import { SYSTEM_NAME } from "./contants"
 import Package from "./components/Package"
 import Menu from "./components/Menu"
 import TerminalWindow from "./components/TerminalWindow"
@@ -25,7 +33,7 @@ class App extends Component {
   }
 
   openStyleguide() {
-    this.state.socket.emit("serve site", {pkg: "@staccx/styleguide"})
+    this.state.socket.emit("serve site", { pkg: "@staccx/styleguide" })
   }
 
   render() {
@@ -56,9 +64,13 @@ class App extends Component {
                       // TODO: Add @staccx dependencies as indices
                       return (
                         <React.Fragment>
-                          <Input id={"packages"} onChange={e => search(e.target.value)} placeholder={"Package name"}/>
+                          <Input
+                            id={"packages"}
+                            onChange={e => search(e.target.value)}
+                            placeholder={"Package name"}
+                          />
                           {result.map(pkg => (
-                          <Package key={pkg.name} pkg={pkg}/>
+                            <Package key={pkg.name} pkg={pkg} />
                           ))}
                         </React.Fragment>
                       )
