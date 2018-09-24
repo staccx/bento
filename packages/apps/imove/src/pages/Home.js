@@ -39,8 +39,8 @@ const Home = () => (
     <Advantages />
 
     <CallToAction
-      heading="Som pilotbruker får du tilgang til iMove og alle fordelene"
-      lede="Bli en av våre 25 pilotbrukere, og nyt fordelene av tilgang til bilen du ønsker når du trenger det. Bytt inn din gamle bil og selg den gjennom iMove."
+      heading="Som pilotbruker får du tilgang til imove og alle fordelene"
+      lede="Bli en av våre 25 pilotbrukere, og nyt fordelene av tilgang til bilen du ønsker når du trenger det. Bytt inn din gamle bil og selg den gjennom imove."
       img="/img/road02.png"
       primaryButtonText="Meld meg på"
       primaryButtonUrl="/signup"
@@ -80,7 +80,7 @@ const Home = () => (
     <Footer>
       <Column heading="Finn oss">
         <p>
-          iMove AS
+          imove AS
           <br />
           Strandgaten 99
           <br />
@@ -92,7 +92,7 @@ const Home = () => (
       </Column>
       <Column heading="Hold deg oppdatert">
         <p>
-          Hold deg oppdatert med <a href="#">nyhetsbrev fra iMove</a>.
+          Hold deg oppdatert med <a href="#">nyhetsbrev fra imove</a>.
         </p>
       </Column>
       <Column heading="Bli pilotbruker">
