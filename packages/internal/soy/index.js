@@ -12,12 +12,19 @@ program
   .description(
     "Check packages' dependencies and devDependencies against a template"
   )
+  .option("-D, --discover", "discover differing dependency versions")
   .option("-t, --taste <path>", "check dependencies of packages under path")
   .option("-b, --bottle <file>", "specify template path")
   .option("-p, --pour", "update misaligned dependencies")
-  .option("-V, --versions", "check for version mismatches")
+  .option(
+    "-V, --versions",
+    "check for version mismatches (cannot be combined with -m)"
+  )
   .option("-w, --wild", "find unmanaged devDependencies")
-  .option("-m, --misplaced", "find misplaced dependencies")
+  .option(
+    "-m, --misplaced",
+    "find misplaced dependencies (cannot be combined with -V)"
+  )
   .option("-d, --depcheck", "find unused dependencies")
   .option(
     "-R, --remove-unused <pkg1,pkg2,...>",
@@ -88,6 +95,7 @@ const doCheck = async () => {
   const wildStats = {}
   const versionMismatches = []
   const misplaced = []
+  const versions = {}
 
   paths.forEach(async currentPath => {
     const pkg = require(currentPath)
@@ -107,6 +115,22 @@ const doCheck = async () => {
           updatedDependencies = true
         }
 
+        if (program.discover) {
+          if (!versions[dep]) {
+            versions[dep] = []
+          }
+
+          const versionDoc = versions[dep].find(
+            v => v.version === pkg[depType][dep]
+          )
+
+          if (versionDoc) {
+            versionDoc.count++
+          } else {
+            versions[dep].push({ version: pkg[depType][dep], count: 1 })
+          }
+        }
+
         // --find
         if (program.find) {
           if (match(program.find, dep)) {
@@ -122,7 +146,7 @@ const doCheck = async () => {
         if (match(program.dependencies, dep)) {
           if (pinned[depType] && pinned[depType][dep]) {
             // --version compare
-            if (program.versions) {
+            if (program.versions && !program.misplaced) {
               const pinnedVersion = pinned[depType][dep]
 
               if (pkg[depType] && pkg[depType][dep]) {
@@ -152,7 +176,7 @@ const doCheck = async () => {
             }
 
             // --misplaced
-          } else if (program.misplaced) {
+          } else if (program.misplaced && !program.versions) {
             for (let pinnedDepType of depTypes) {
               if (
                 pinned[pinnedDepType] &&
@@ -295,14 +319,26 @@ const doCheck = async () => {
       console.log(chalk.bold.green(pkg.name))
     }
   })
-  return { dirtyPackageCounter, wildStats, versionMismatches, misplaced }
+  return {
+    dirtyPackageCounter,
+    wildStats,
+    versionMismatches,
+    misplaced,
+    versions
+  }
 }
 
 /**
  * print summary
  */
 doCheck().then(
-  ({ dirtyPackageCounter, wildStats, versionMismatches, misplaced }) => {
+  ({
+    dirtyPackageCounter,
+    wildStats,
+    versionMismatches,
+    misplaced,
+    versions
+  }) => {
     console.log()
     if (dirtyPackageCounter) {
       if (program.pour) {
@@ -322,6 +358,18 @@ doCheck().then(
           console.log(misplaced.sort().join("\n"))
         }
       }
+    }
+
+    if (program.discover) {
+      Object.keys(versions).forEach(key => {
+        if (versions[key].length > 1) {
+          versions[key].sort((k, v) => k.count - v.count)
+          console.log(
+            chalk.bold(key),
+            versions[key].map(v => v.version + ` (${v.count})`).join(", ")
+          )
+        }
+      })
     }
 
     if (program.wild) {
