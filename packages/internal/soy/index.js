@@ -51,6 +51,11 @@ program
     "find packages with these dependencies",
     list
   )
+  .option(
+    "-u, --update <pkg>=<version>",
+    "set all dependencies on pkg to this version",
+    l => l.split("=")
+  )
   .option("-v, --verbose", "be verbose")
   .parse(process.argv)
 
@@ -65,6 +70,9 @@ console.log("Only considering dependencies", program.dependencies || "(all)")
 console.log("Only considering packages", program.packages || "(all)")
 console.log("Removing packages", program.remove || "(none)")
 console.log("Removing unused packages", program.removeUnused || "(none)")
+if (program.update) {
+  console.log("Updating package", program.update[0], "to", program.update[1])
+}
 console.log()
 
 const pinned = require(template)
@@ -112,6 +120,23 @@ const doCheck = async () => {
         if (program.remove && match(program.remove, dep)) {
           delete pkg[depType][dep]
           console.log(chalk.bold(pkg.name), chalk.gray(dep))
+          updatedDependencies = true
+        }
+
+        if (
+          program.update &&
+          program.update.length === 2 &&
+          program.update[1] !== pkg[depType][dep] &&
+          dep === program.update[0] &&
+          semver.validRange(program.update[1])
+        ) {
+          console.log(
+            chalk.bold(pkg.name),
+            dep,
+            chalk.gray(pkg[depType][dep]),
+            chalk.green(program.update[1])
+          )
+          pkg[depType][dep] = program.update[1]
           updatedDependencies = true
         }
 
