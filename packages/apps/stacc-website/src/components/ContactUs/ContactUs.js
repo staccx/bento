@@ -4,6 +4,8 @@ import { Heading, Layout, Wrapper } from "@staccx/base"
 import { color, spacing, wrapper } from "@staccx/theme"
 import { SanityImage } from "@staccx/sanity"
 import FullWidth from "../FullWidth/FullWidth"
+import Send from "../Icons/Send"
+import Phone from "../Icons/Phone"
 
 const ContactUs = ({
   person,
@@ -23,14 +25,24 @@ const ContactUs = ({
                 <Layout rowGap="small">
                   <Heading level={3}>{person.name}</Heading>
                   <div>
-                    <a href={`tel:${person.phone}`}>{person.phone}</a>
-                    <a
-                      href={`mailto:${person.email}${
-                        emailSubject ? `?subject=${emailSubject}` : ""
-                      }`}
-                    >
-                      {person.email}
-                    </a>
+                    <Layout rowGap="tiny">
+                      {person.phone && (
+                        <SubtleLink href={`tel:${person.phone}`}>
+                          <Phone />
+                          {person.phone}
+                        </SubtleLink>
+                      )}
+                      {person.email && (
+                        <SubtleLink
+                          href={`mailto:${person.email}${
+                            emailSubject ? `?subject=${emailSubject}` : ""
+                          }`}
+                        >
+                          <Send />
+                          {person.email}
+                        </SubtleLink>
+                      )}
+                    </Layout>
                   </div>
                 </Layout>
               </div>
@@ -122,6 +134,26 @@ const ImgContainer = styled.div`
 
   @media only screen and (max-width: ${wrapper.large}) {
     max-width: 50%;
+  }
+`
+
+const SubtleLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: ${color.wcag};
+
+  > svg {
+    display: block;
+    margin-right: 3px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: ${color.primary};
+    outline: none;
   }
 `
 
