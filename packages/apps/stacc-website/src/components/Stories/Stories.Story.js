@@ -45,7 +45,7 @@ const Container = styled.div``
 const Inner = styled.div`
   display: flex;
   align-items: center;
-  ${p => p.rev && `flex-direction: row-reverse`};
+  ${p => p.rev && p.hasImg && `flex-direction: row-reverse`};
   justify-content: space-between;
 
   ${p =>
@@ -56,10 +56,10 @@ const Inner = styled.div`
           }
         `
       : css`
-          text-align: center;
-          justify-content: center;
+          text-align: left;
+          justify-content: flex-start;
           > div:first-child {
-            flex-basis: calc(65%);
+            flex-basis: calc(56%);
           }
         `};
 

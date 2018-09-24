@@ -20,15 +20,19 @@ const ContactUs = ({
             <Layout>
               <Heading level={2}>{heading}</Heading>
               <div>
-                {person.name} <br />
-                <a href={`tel:${person.phone}`}>{person.phone}</a> <br />
-                <a
-                  href={`mailto:${person.email}${
-                    emailSubject ? `?subject=${emailSubject}` : ""
-                  }`}
-                >
-                  {person.email}
-                </a>
+                <Layout rowGap="small">
+                  <Heading level={3}>{person.name}</Heading>
+                  <div>
+                    <a href={`tel:${person.phone}`}>{person.phone}</a>
+                    <a
+                      href={`mailto:${person.email}${
+                        emailSubject ? `?subject=${emailSubject}` : ""
+                      }`}
+                    >
+                      {person.email}
+                    </a>
+                  </div>
+                </Layout>
               </div>
             </Layout>
           </Body>
