@@ -29,10 +29,10 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "prettier": "^1.13.7",
+    "prettier": "^1.14.2",
     "qs": "^6.5.1"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.6.4"
+    "@staccx/rollup-config": "^7.7.4"
   }
 }

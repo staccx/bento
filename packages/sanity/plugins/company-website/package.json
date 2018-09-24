@@ -15,12 +15,12 @@
   ],
   "dependencies": {
     "@sanity/client": "^0.132.10",
-    "@sanity/base": "^0.132.7",
-    "@sanity/components": "^0.132.7",
-    "@sanity/core": "^0.132.6",
-    "@sanity/default-layout": "^0.132.7",
-    "@sanity/default-login": "^0.132.6",
-    "@sanity/desk-tool": "^0.132.7",
+    "@sanity/base": "^0.132.12",
+    "@sanity/components": "^0.132.12",
+    "@sanity/core": "^0.132.10",
+    "@sanity/default-layout": "^0.132.12",
+    "@sanity/default-login": "^0.132.10",
+    "@sanity/desk-tool": "^0.132.12",
     "@sanity/google-maps-input": "^0.132.12",
     "@sanity/production-preview": "^0.132.5",
     "@staccx/base": "^7.7.4",
@@ -28,7 +28,7 @@
     "image-downloader": "^3.4.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
-    "sanity-query-helper": "^0.2.0",
+    "sanity-query-helper": "^0.3.0",
     "shortid": "^2.2.13"
   }
 }

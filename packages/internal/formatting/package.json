@@ -31,7 +31,7 @@
   },
   "jest": {},
   "devDependencies": {
-    "@staccx/rollup-config": "^7.6.4",
+    "@staccx/rollup-config": "^7.7.4",
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
     "react-scripts": "^1.1.4",

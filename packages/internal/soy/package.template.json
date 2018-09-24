@@ -7,7 +7,7 @@
     "start": "node index"
   },
   "dependencies": {
-    "prettier": "^1.13.7",
+    "prettier": "^1.14.2",
     "@google/maps": "^0.4.6",
     "@sanity/client": "^0.132.10",
     "@sanity/image-url": "^0.132.8",
