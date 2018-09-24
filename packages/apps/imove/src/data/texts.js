@@ -5,15 +5,15 @@ export default {
   subHeadingMain: "–en helt ny måte å tenke bil",
   headingSecondary: "Bli pilotbruker og vi hjelper deg å selge bilen din",
 
-  button1Text: "Bli kvitt min gamle bil",
-  button2Text: "Abonner på ny bil",
+  buttonCarSale: "Bli kvitt min gamle bil",
+  buttonCarSubscribe: "Abonner på ny bil",
 
-  hverdagsbilTitle: "Hverdagsbil",
-  hverdagsbilSub: "Fra kr 3100 per måned",
-  flyttebilTitle: "Flyttebil",
-  flyttebilSub: "Fra kr 599 per dag",
-  morobilTitle: "Morobil",
-  morobilSub: "Fra kr 1599 per dag",
+  hverdagsbilName: "Hverdagsbil",
+  hverdagsbilSubtitle: "Fra kr 3100 per måned",
+  flyttebilName: "Flyttebil",
+  flyttebilSubtitle: "Fra kr 599 per dag",
+  morobilName: "Morobil",
+  morobilSubtitle: "Fra kr 1599 per dag",
 
   /* Features */
 
