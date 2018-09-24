@@ -17,16 +17,16 @@ const Home = () => (
       headingMain={data.headingMain}
       subHeadingMain={data.subHeadingMain}
       headingSecondary={data.headingSecondary}
-      button1Text={data.button1Text}
-      button2Text={data.button2Text}
-      hverdagsbilTitle={data.hverdagsbilTitle}
-      hverdagsbilSub={data.hverdagsbilSub}
-      hyttebilTitle={data.hyttebilTitle}
-      hyttebilSub={data.hyttebilSub}
-      flyttebilTitle={data.flyttebilTitle}
-      flyttebilSub={data.flyttebilSub}
-      morobilTitle={data.morobilTitle}
-      morobilSub={data.morobilSub}
+      buttonCarSale={data.buttonCarSale}
+      buttonCarSubscribe={data.buttonCarSubscribe}
+      hverdagsbilName={data.hverdagsbilName}
+      hverdagsbilSubtitle={data.hverdagsbilSubtitle}
+      hyttebilName={data.hyttebilName}
+      hyttebilSubtitle={data.hyttebilSubtitle}
+      flyttebilName={data.flyttebilName}
+      flyttebilSubtitle={data.flyttebilSubtitle}
+      morobilName={data.morobilName}
+      morobilSubtitle={data.morobilSubtitle}
     >
       <Car name="Hverdagsbil" img="/img/imove-hverdagsbil" />
       <Car name="Hyttebil" img="/img/imove-hverdagsbil" />
