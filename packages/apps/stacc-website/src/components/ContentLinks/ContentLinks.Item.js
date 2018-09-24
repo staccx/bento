@@ -26,7 +26,6 @@ export const getLinkItem = linkBlock => {
             if (!document) {
               return null
             }
-
             return (
               <ContentLinksItem
                 key={link._ref}
@@ -44,6 +43,18 @@ export const getLinkItem = linkBlock => {
 }
 
 const ContentLinksItem = ({ heading, body, url }) => {
+  if (url.startsWith("http")) {
+    return (
+      <Item>
+        <ItemA href={url}>
+          <ItemHeading level={3}>{heading}</ItemHeading>
+          {"\u00a0"}
+          <Icon />
+        </ItemA>
+        {body && <p>{body}</p>}
+      </Item>
+    )
+  }
   return (
     <Item>
       <ItemLink to={url}>
@@ -77,6 +88,8 @@ const ItemLink = styled(Link)`
     color: ${color.text};
   }
 `
+
+const ItemA = ItemLink.withComponent("a")
 
 const ItemHeading = styled(Heading)`
   display: inline;
