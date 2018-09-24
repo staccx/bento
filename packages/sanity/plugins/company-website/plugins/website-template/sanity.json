@@ -43,6 +43,10 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/typeformBlock.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "blocks/clientList.js"
     },
     {
