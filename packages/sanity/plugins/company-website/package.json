@@ -14,7 +14,7 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/client": "^0.126.0",
+    "@sanity/client": "^0.132.10",
     "@sanity/base": "^0.132.7",
     "@sanity/components": "^0.132.7",
     "@sanity/core": "^0.132.6",

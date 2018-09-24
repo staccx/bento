@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@staccx/rollup-config": "^7.6.4",
-    "prettier": "^1.13.7",
+    "prettier": "^1.14.2",
     "rollup": "^0.65.0"
   }
 }

@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@staccx/rollup-config": "^7.6.4",
-    "prettier": "^1.13.7",
+    "prettier": "^1.14.2",
     "react-app-rewire-styled-components": "^3.0.2",
     "react-app-rewired": "^1.5.2",
     "react-scripts": "^1.1.4",
