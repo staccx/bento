@@ -9,14 +9,7 @@ import createHistory from "history/createBrowserHistory"
 import theme from "./theme/Theme"
 
 import { Footer, Header } from "./components/_codeSplitting"
-import {
-  Home,
-  Case,
-  Page,
-  Contact,
-  Jobs,
-  Overview
-} from "./pages/_codeSplitting"
+import { Home, Case, Page, Jobs, Overview } from "./pages/_codeSplitting"
 import PreviewLive from "./pages/PreviewLive"
 
 const asciiArt = `
@@ -77,7 +70,6 @@ class App extends Component {
                     />
 
                     <Route path="/" exact component={Home} />
-                    <Route path="/contact" component={Contact} />
                     <Route path="/careers" component={Jobs} />
                     <Route path="/overview" component={Overview} />
                   </Switch>

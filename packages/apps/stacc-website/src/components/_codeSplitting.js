@@ -1,6 +1,13 @@
 import LoadableComponents from "react-loadable-visibility/loadable-components"
 import { Loading } from "@staccx/base"
 
+export const Typeform = LoadableComponents(
+  () => import("../components/Typeform/Typeform"),
+  {
+    loading: Loading
+  }
+)
+
 export const Trinity = LoadableComponents(
   () => import("../components/Trinity/Trinity"),
   {
