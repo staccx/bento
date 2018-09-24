@@ -304,7 +304,7 @@ const SubMenu = styled(List)`
     left: ${spacing.small};
     transform: translateY(100%);
     background-color: ${color.white};
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
     width: calc(100% - ${spacing.small});
     z-index: 50;
     animation: ${SubMenuBounceIn} 0.2s ease forwards 1;

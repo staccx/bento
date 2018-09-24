@@ -29,9 +29,7 @@ const Person = ({
           <Layout rowGap="small">
             <div>
               <Heading level={3}>{name}</Heading>
-              <Title>
-                {title}, {company.name}
-              </Title>
+              <Title>{title}</Title>
             </div>
             <Layout rowGap="tiny">
               {email && (
