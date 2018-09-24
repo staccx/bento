@@ -24,7 +24,7 @@ import { ClientsList } from "../components/ClientList/ClientList"
 
 const serializer = {
   container: props => (
-    <Layout rowGap="gridLarge" paddingTop="gridLarge" paddingBottom="gridLarge">
+    <Layout rowGap="gridLarge" paddingTop="grid" paddingBottom="gridLarge">
       {props.children}
     </Layout>
   ),

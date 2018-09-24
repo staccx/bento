@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Heading, Layout } from "@staccx/base"
-import { spacing, font, fontFamily, wrapper } from "@staccx/theme"
+import { Heading, Layout, fontSmoothing } from "@staccx/base"
+import { spacing, font, fontFamily, wrapper, color } from "@staccx/theme"
 import { SanityImage } from "@staccx/sanity"
 
 const SectionHead = ({ heading, headingLevel, lede, illustration }) => {
@@ -11,7 +11,7 @@ const SectionHead = ({ heading, headingLevel, lede, illustration }) => {
       <Layout>
         <Body>
           <div>
-            <Layout rowGap="tiny">
+            <Layout rowGap="small">
               <Heading level={headingLevel}>{heading}</Heading>
               <Lede>{lede}</Lede>
             </Layout>
@@ -45,6 +45,8 @@ const Lede = styled.p`
   font-family: ${fontFamily.heading};
   font-weight: 300;
   line-height: 1.8;
+  color: ${color("textDark")};
+  ${fontSmoothing};
 
   @media only screen and (min-width: ${wrapper.medium}) {
     font-size: ${font.h3};
