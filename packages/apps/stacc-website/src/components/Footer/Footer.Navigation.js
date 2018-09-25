@@ -18,6 +18,7 @@ const FooterNavigation = ({ heading, callToAction, openContactForm }) => (
       const mainMenu = menu.links.filter(menuItem => menuItem.link)
       const subMenus = menu.links.filter(m => m.submenu && m.submenu.length > 0)
 
+      console.log(window.location)
       return (
         <Layout rowGap="large">
           <div>
@@ -41,8 +42,7 @@ const FooterNavigation = ({ heading, callToAction, openContactForm }) => (
                 ))}
                 <li key={"footer_getinTouch"}>
                   <FooterNavLink
-
-                    to={""}
+                    to={window.location}
                     onClick={openContactForm}
                     activeClassName="is-current"
                     emphasized={false}
