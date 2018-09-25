@@ -2,10 +2,7 @@ import React from "react"
 import {
   Heading,
   Wrapper,
-  Input,
   Layout,
-  PhoneInput,
-  Button,
   Box
 } from "@staccx/base"
 
