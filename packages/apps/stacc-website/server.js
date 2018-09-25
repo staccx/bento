@@ -5,9 +5,10 @@ const path = require("path")
 const fs = require("fs")
 const Helper = require("sanity-query-helper")
 const imageUrlBuilder = require("@sanity/image-url")
-var cors = require("cors");
-var helmet = require("helmet");
-var compression = require("compression");
+const cors = require("cors")
+const helmet = require("helmet")
+const compression = require("compression")
+const config = require("./stacc.config")
 
 const filePath = path.resolve(__dirname, "./build", "index.html")
 
@@ -70,11 +71,20 @@ const metaMiddleware = (req, res, next) => {
     })
 }
 
-app.use(helmet());
-app.use(cors());
-app.use(compression());
+app.use(helmet())
+app.use(cors())
+app.use(compression())
 
 app.use(metaMiddleware)
+
+/**
+ * Redirects
+ */
+config.redirects.forEach(redirect => {
+  app.get(redirect.source, (req, res) => {
+    res.redirect(redirect.type, redirect.destination)
+  })
+})
 
 app.use(express.static(path.resolve(__dirname, "./build")))
 

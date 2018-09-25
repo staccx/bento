@@ -1,0 +1,64 @@
+{
+  "redirects": [
+    {
+      "source": "/core",
+      "destination": "/products/core/features",
+      "type": 302
+    },
+    {
+      "source": "/eng/customers",
+      "destination": "/clients",
+      "type": 302
+    },
+    {
+      "source": "/about",
+      "destination": "/team",
+      "type": 302
+    },
+    {
+      "source": "/get-in-touch-with-us",
+      "destination": "/contact",
+      "type": 302
+    },
+    {
+      "source": "/news/:id",
+      "destination": "/",
+      "type": 302
+    },
+    {
+      "source": "/jobs",
+      "destination": "workable.stacc.com",
+      "type": 302
+    },
+    {
+      "source": "/news",
+      "destination": "/",
+      "type": 302
+    },
+    {
+      "source": "/eng",
+      "destination": "/",
+      "type": 302
+    },
+    {
+      "source": "/solutions",
+      "destination": "/products/core/use-cases",
+      "type": 302
+    },
+    {
+      "source": "/flow",
+      "destination": "/products/flow-process/features",
+      "type": 302
+    },
+    {
+      "source": "/stacc-flow",
+      "destination": "/products/flow-process/features",
+      "type": 302
+    },
+    {
+      "source": "/privacypolicy",
+      "destination": "/privacy-and-cookie-policy",
+      "type": 302
+    }
+  ]
+}
