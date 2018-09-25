@@ -8,7 +8,6 @@ import {
   NavigationSubpage,
   SectionHead
 } from "../components/_codeSplitting"
-import Meta from "./Meta"
 
 class Page extends Component {
   render() {
@@ -24,7 +23,6 @@ class Page extends Component {
 
     return (
       <div>
-        <Meta meta={page.meta} />
 
         {page.subpages &&
           page.subpages.length > 0 && (

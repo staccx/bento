@@ -5,12 +5,9 @@ import { Layout } from "@staccx/base"
 import BlockContent from "@sanity/block-content-to-react"
 import blockContentSerializer from "./blockContentSerializer"
 import { NavigationSubpage, SectionHead } from "../components/_codeSplitting"
-import Meta from "./Meta"
 
 const Case = ({ match, location, caseStudy }) => (
   <div>
-    <Meta meta={caseStudy.meta} />
-
     <NavigationSubpage name={"Monobank"} />
     <Layout rowGap="grid" paddingBottom="grid">
       <SectionHead

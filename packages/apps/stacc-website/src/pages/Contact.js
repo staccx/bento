@@ -1,10 +1,5 @@
 import React from "react"
-import {
-  Heading,
-  Wrapper,
-  Layout,
-  Box
-} from "@staccx/base"
+import { Heading, Wrapper, Layout, Box } from "@staccx/base"
 
 const Contact = () => (
   <Layout paddingTop="grid" rowGap="grid">

@@ -4,7 +4,6 @@ import { spacing } from "@staccx/theme"
 import { List, Layout } from "@staccx/base"
 import { SanityDocument, SanityList } from "@staccx/sanity"
 import { ClientPreview, SectionHead } from "../components/_codeSplitting"
-import Meta from "./Meta"
 
 const Clients = () => (
   <Layout paddingTop="grid" paddingBottom="grid" rowGap="grid">
@@ -16,7 +15,6 @@ const Clients = () => (
 
         return (
           <React.Fragment>
-            <Meta meta={document.meta} />
             <SectionHead
               heading={document.header.title}
               lede={document.header.body}
