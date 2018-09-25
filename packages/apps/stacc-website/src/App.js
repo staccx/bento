@@ -12,6 +12,7 @@ import { Footer, Header } from "./components/_codeSplitting"
 import { Home, Case, Page, Jobs, Overview } from "./pages/_codeSplitting"
 import PreviewLive from "./pages/PreviewLive"
 import * as typeformEmbed from "@typeform/embed/lib/api"
+import ScrollToTop from "./components/ScrollToTop"
 
 const asciiArt = `
                             \`-ohy+-\`
@@ -79,6 +80,7 @@ class App extends Component {
           <Router history={history}>
             <PageWrapper>
               <Header openContactForm={this.openContactForm} />
+              <ScrollToTop />
               <Wrapper>
                 <Main>
                   <Switch>
