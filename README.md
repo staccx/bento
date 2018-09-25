@@ -2,44 +2,48 @@
 
 ## Getting started
 
-### Prerequisites
-You need the following to proceed
-* node 10.6.0
-* yarn 1.6.0 
-* lerna 2.11.0  
-
-To install tools, run
 ```
 brew install nvm
-nvm install 10.6.0
+nvm install node
 brew install yarn --without-node
-yarn global add lerna@2.11.0
-yarn global add plop@2.0.0
+yarn global add lerna
+yarn global add plop
 ```
 
-To initialize the monorepo, run the following
+1. Development tools that are used by many packages (like prettier and eslint) should be added as `devDependencies` in package root `~/projects/bento`:
 ```
-cd bento
+yarn add -WD prettier
+```
+2. Always use `peerDependencies` when depending on `styled-components` or other global-scope-dependant modules: 
+```
+yarn add -P styled-components
+```
+3. Direct dependencies used in your app or module should be added as dependencies to that package
+```
+yarn add my-dependency
+```
+4. Dependencies that are not used in production should be added as `devDependencies`
+```
+yarn add -D my-dev-dependency
+```
+
+### Initializing
+
+When pulling changes from repo, packages and dependencies may have changed and you need to run:
+```
 lerna bootstrap
-lerna link
 lerna run build
 ```
 
-To create a new app, run ```plop App```  
-To create a new base component, run ```plop Component```
+To create a new app, run `plop App`  
+To create a new base component, run `plop Component`
 
-## Help! 
+## Help!
 
-If something isn't working as expected, try running ```lerna run build```
+If something isn't working as expected, try running `lerna run build`
 
 If that doesn't solve your problem, try running
+
 ```
-lerna clean
-lerna bootstrap
-lerna link
-lerna run build
+rm -rf node_modules/ && lerna clean --yes && lerna bootstrap && lerna run build
 ```
-
-
-
-
