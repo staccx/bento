@@ -32,6 +32,7 @@ const mapAddressResults = result =>
 class Property {
   @observable
   property = null
+  @observable isLoading = true
 
   @action
   findPropertyByNumner = async gardNr => {
@@ -40,18 +41,22 @@ class Property {
 
   @action
   findPropertyByAdress = async address => {
+    this.isLoading = true
     const addressInfo = await this.getAddressInfo(address)
     this.property = await this.getProperty(addressInfo)
+    this.isLoading = false
   }
 
   @action
   findPropertyByNationalId = async nid => {
+    this.isLoading = true
     const propertyDetails = await this.getPropertyDetails(nid)
     if (!propertyDetails) {
       return null
     }
 
     this.property = await this.getProperty(propertyDetails)
+    this.isLoading = false
     return this.property
   }
 

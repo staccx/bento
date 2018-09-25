@@ -12,7 +12,6 @@
     "@staccx/sanity": "^7.7.4",
     "@staccx/stacc-theme": "^7.7.4",
     "@staccx/theme": "^7.7.4",
-    "@typeform/embed": "^0.1.6",
     "history": "^4.7.2",
     "mobx-react": "^5.2.5",
     "prop-types": "^15.6.1",
@@ -21,6 +20,8 @@
     "react-helmet": "^5.2.0",
     "react-loadable-visibility": "^2.5.0",
     "react-router-dom": "^4.2.2",
+    "@typeform/embed": "^0.1.6",
+    "styled-components": "^3.3.3",
     "three": "^0.95.0"
   },
   "scripts": {

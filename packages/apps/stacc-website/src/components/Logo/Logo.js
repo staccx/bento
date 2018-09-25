@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { wrapper } from "@staccx/theme"
 
 const Logo = ({ inverted, isOnBlack, menuIsVisible }) => (
   <Container>

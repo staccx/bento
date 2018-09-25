@@ -1,4 +1,5 @@
 import React from "react"
+import data from "../data/texts"
 import Hero from "../components/Hero/Hero"
 import Car from "../components/Hero/Hero.Car"
 import CallToAction from "../components/CallToAction/CallToAction"
@@ -13,11 +14,19 @@ import Column from "../components/Footer/Footer.Column"
 const Home = () => (
   <div>
     <Hero
-      headingMain="Abonner på bil og bytt når du vil"
-      subHeadingMain="–en helt ny måte å tenke bil"
-      headingSecondary="Bli pilotbruker og vi hjelper deg å selge bilen din"
-      btnSignUpText="Meld meg på"
-      btnInfoText="Jeg vil vite mer"
+      headingMain={data.headingMain}
+      subHeadingMain={data.subHeadingMain}
+      headingSecondary={data.headingSecondary}
+      buttonCarSale={data.buttonCarSale}
+      buttonCarSubscribe={data.buttonCarSubscribe}
+      hverdagsbilName={data.hverdagsbilName}
+      hverdagsbilSubtitle={data.hverdagsbilSubtitle}
+      hyttebilName={data.hyttebilName}
+      hyttebilSubtitle={data.hyttebilSubtitle}
+      flyttebilName={data.flyttebilName}
+      flyttebilSubtitle={data.flyttebilSubtitle}
+      morobilName={data.morobilName}
+      morobilSubtitle={data.morobilSubtitle}
     >
       <Car name="Hverdagsbil" img="/img/imove-hverdagsbil" />
       <Car name="Hyttebil" img="/img/imove-hverdagsbil" />

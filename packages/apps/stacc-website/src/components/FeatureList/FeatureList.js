@@ -32,16 +32,7 @@ const FeatureList = ({ items }) => (
   </Container>
 )
 
-const Container = styled.div`
-  @media only screen and (min-width: ${wrapper.large}) {
-    display: grid;
-    grid-template-columns: 15% 85%;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "top top"
-      " left right";
-  }
-`
+const Container = styled.div``
 
 const IconContainer = styled.div`
   position: absolute;

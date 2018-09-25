@@ -6,7 +6,7 @@ import { Heading, Layout, Wrapper } from "@staccx/base"
 import FullWidth from "../FullWidth/FullWidth"
 
 const Hero = ({ heading, lede }) => (
-  <FullWidth>
+  <FullWidthWrapper>
     <Container>
       <HeroBG>
         <Centered>
@@ -23,7 +23,7 @@ const Hero = ({ heading, lede }) => (
         </Centered>
       </HeroBG>
     </Container>
-  </FullWidth>
+  </FullWidthWrapper>
 )
 
 const triangleHeight = "18vh"
@@ -37,9 +37,14 @@ const Container = styled.div`
   z-index: -1;
 `
 
+const FullWidthWrapper = styled(FullWidth)`
+  pointer-events: none;
+`
+
 const Centered = styled.div``
 
 const HeroBG = styled.div`
+  pointer-events: none;
   position: relative;
   display: flex;
   flex-direction: column;

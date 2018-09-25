@@ -14,19 +14,33 @@ import { opacity } from "@staccx/color"
 import { Button, List } from "@staccx/base"
 import { BounceIn } from "@staccx/animations"
 import IconArrowRight from "../Icons/IconArrowRight"
+import * as typeformEmbed from "@typeform/embed"
 
 class HeaderMenu extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      expanded: null
+      expanded: null,
+      popup: typeformEmbed.makePopup("https://stacc.typeform.com/to/esvqjU", {
+        hideFooter: true,
+        hideHeaders: true,
+        autoOpen: false,
+        opacity: 0
+      })
     }
+
+    this.openContactForm = this.openContactForm.bind(this)
   }
 
   handleExpand = id => {
     this.setState(prevState => ({
       expanded: prevState.expanded !== id ? id : null
     }))
+  }
+
+  openContactForm() {
+    console.log("opening form")
+    this.state.popup.open()
   }
 
   render() {
@@ -84,6 +98,16 @@ class HeaderMenu extends React.Component {
                 </li>
               ) : null
           )}
+          <li key={"_1231asdafsasd"}>
+            <MenuItemButton
+              onClick={this.openContactForm}
+              activeClassName="is-current"
+              inverted={inverted ? inverted.toString() : undefined}
+              emphasized
+            >
+              {"Get in touch"}
+            </MenuItemButton>
+          </li>
         </MenuItems>
       </Navigation>
     )
@@ -164,7 +188,34 @@ const MenuItems = styled.ul`
   }
 `
 
-const MenuItem = styled(NavLink)`
+const Emphasized = css`
+  @media only screen and (min-width: ${wrapper.large}) {
+    color: ${color.white};
+    background-color: ${props =>
+      props.inverted ? color("textDark")(props) : color("secondary")(props)};
+    padding: ${spacing.tiny};
+    border-radius: ${borderRadius};
+    transition: box-shadow 0.2s ease;
+    border-bottom: 0;
+
+    &.is-current {
+      border-bottom: 0;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: 0 2px 6px
+        ${p =>
+          p.inverted
+            ? opacity(color("black")(p), 0.25)
+            : opacity(color("secondary")(p), 0.25)};
+      border-bottom: 0;
+    }
+  }
+`
+
+const MenuItemCss = css`
   display: block;
   margin: 0 ${spacing.small};
   padding: 3px 0;
@@ -193,38 +244,16 @@ const MenuItem = styled(NavLink)`
             ? opacity(color("white")(p), 0.5)
             : opacity(color("secondary")(p), 0.5)};
     }
-
-    ${p =>
-      p.emphasized &&
-      css`
-        @media only screen and (min-width: ${wrapper.large}) {
-          color: ${color.white};
-          background-color: ${props =>
-            props.inverted
-              ? color("textDark")(props)
-              : color("secondary")(props)};
-          padding: ${spacing.tiny};
-          border-radius: ${borderRadius};
-          transition: box-shadow 0.2s ease;
-          border-bottom: 0;
-
-          &.is-current {
-            border-bottom: 0;
-          }
-
-          &:hover,
-          &:active,
-          &:focus {
-            box-shadow: 0 2px 6px
-              ${p =>
-                p.inverted
-                  ? opacity(color("black")(p), 0.25)
-                  : opacity(color("secondary")(p), 0.25)};
-            border-bottom: 0;
-          }
-        }
-      `};
+    ${p => p.emphasized && Emphasized};
   }
+`
+
+const MenuItemButton = styled(Button)`
+  ${MenuItemCss};
+`
+
+const MenuItem = styled(NavLink)`
+  ${MenuItemCss};
 `
 
 const SubMenuExpandBtn = styled(Button)`
@@ -304,7 +333,7 @@ const SubMenu = styled(List)`
     left: ${spacing.small};
     transform: translateY(100%);
     background-color: ${color.white};
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
     width: calc(100% - ${spacing.small});
     z-index: 50;
     animation: ${SubMenuBounceIn} 0.2s ease forwards 1;

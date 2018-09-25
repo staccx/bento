@@ -40,6 +40,7 @@ class Package extends Component {
     this.openWithWebstorm = this.openWithWebstorm.bind(this)
     this.link = this.link.bind(this)
     this.emit = this.emit.bind(this)
+    this.serve = this.serve.bind(this)
   }
 
   componentDidCatch(error, errorInfo) {
@@ -85,6 +86,12 @@ class Package extends Component {
     copy(`yarn link ${this.props.pkg.name}`)
   }
 
+  serve() {
+    this.emit("serve site", {
+      pkg: this.props.pkg.name
+    })
+  }
+
   emit(id, data) {
     console.log("emitting", id, "with data", data)
     socket.emit(id, data)
@@ -118,9 +125,7 @@ class Package extends Component {
             <Loading />
             Building
             <Wrapper size={"small"}>
-              <TerminalWindow
-                name={pkg.name}
-              />
+              <TerminalWindow name={pkg.name} />
             </Wrapper>
           </React.Fragment>
         )}
@@ -145,6 +150,7 @@ class Package extends Component {
               ))}
             </ExpandListItem>
             <Button onClick={this.link}>Link</Button>
+            <Button onClick={this.serve}>Serve</Button>
             <Button onClick={this.showInFolder}>Open in finder</Button>
             <Button onClick={this.openWithCode}>Open in Code</Button>
             <Button onClick={this.openWithWebstorm}>Open in Webstorm</Button>

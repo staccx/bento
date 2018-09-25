@@ -1,3 +1,5 @@
+const { SYSTEM_NAME } = require("./contants")
+
 const io = require("socket.io-client")
 const electron = window.require("electron")
 
@@ -5,9 +7,7 @@ const socket = io("/")
 
 let pkgs = []
 
-const SYSTEM_NAME = "System"
-
-socket.on("open styleguide", ({ port, pid }) => {
+socket.on("open site", ({ port, pid }) => {
   console.log("Styleguide is running on port", port)
   setTimeout(() => {
     // const w = window.open()
@@ -24,7 +24,7 @@ socket.on("open styleguide", ({ port, pid }) => {
     // const current = electron.remote.getCurrentWindow()
     //
     // current.loadURL(`http://localhost:${port}`)
-  }, 1000) // delay so that serve can spin up
+  }, 2000) // delay so that serve can spin up
 })
 
 electron.ipcRenderer.on("serve styleguide", () => {
@@ -45,7 +45,12 @@ electron.ipcRenderer.on("bootstrap", () => {
   })
 })
 
-const openStyleguide = () => socket.emit("serve styleguide")
+electron.ipcRenderer.on("reset project", () => {
+  socket.emit("reset project")
+})
+
+const openStyleguide = () =>
+  socket.emit("serve site", { pkg: "@staccx/styleguide" })
 
 const getPackages = fn => {
   if (pkgs && pkgs.length) {
@@ -60,4 +65,3 @@ const getPackages = fn => {
 
 module.exports = socket
 module.exports.getPackages = getPackages
-module.exports.SYSTEM_NAME = SYSTEM_NAME

@@ -11,44 +11,41 @@ const PeopleList = () => {
           return <Loading />
         }
         return (
-          <Layout paddingTop="grid" rowGap="grid">
-            <Search
-              indexer={"_id"}
-              documents={result}
-              indicises={["name", "title", ["company", "name"], "email"]}
-            >
-              {({ result: r, search }) => {
-                return (
-                  <React.Fragment>
-                    <Layout rowGap="medium">
-                      <Heading level="2">Looking for someone?</Heading>
-                      <Input
-                        id="peopleSearch"
-                        placeholder="Search employees"
-                        onChange={e => search(e.target.value)}
-                      />
-                    </Layout>
-                    <ul>
-                      {r &&
-                        r.map(person => (
-                          <Person
-                            name={person.name}
-                            image={person.image}
-                            title={person.title}
-                            company={person.company}
-                            phone={person.phone}
-                            email={person.email}
-                            linkedin={person.linkedin}
-                            twitter={person.twitter}
-                            link={person.link}
-                          />
-                        ))}
-                    </ul>
-                  </React.Fragment>
-                )
-              }}
-            </Search>
-          </Layout>
+          <Search
+            indexer={"_id"}
+            documents={result}
+            indicises={["name", "title", ["company", "name"], "email"]}
+          >
+            {({ result: r, search }) => {
+              return (
+                <Layout rowGap="medium">
+                  <Heading level="2">Looking for someone?</Heading>
+                  <Input
+                    id="peopleSearch"
+                    placeholder="Search employees"
+                    onChange={e => search(e.target.value)}
+                  />
+
+                  <ul>
+                    {r &&
+                      r.map(person => (
+                        <Person
+                          name={person.name}
+                          image={person.image}
+                          title={person.title}
+                          company={person.company}
+                          phone={person.phone}
+                          email={person.email}
+                          linkedin={person.linkedin}
+                          twitter={person.twitter}
+                          link={person.link}
+                        />
+                      ))}
+                  </ul>
+                </Layout>
+              )
+            }}
+          </Search>
         )
       }}
     </SanityList>
