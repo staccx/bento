@@ -32,7 +32,8 @@ const mapAddressResults = result =>
 class Property {
   @observable
   property = null
-  @observable isLoading = true
+  @observable
+  isLoading = true
 
   @action
   findPropertyByNumner = async gardNr => {
