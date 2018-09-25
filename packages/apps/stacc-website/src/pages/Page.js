@@ -29,7 +29,7 @@ class Page extends Component {
             <NavigationSubpage
               items={page.subpages}
               name={page.path.current}
-              title={page.title}
+              title={page.pageTitle || page.title}
             />
           )}
         {renderSubpage && <Page page={renderSubpage} />}
