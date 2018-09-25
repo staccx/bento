@@ -23,12 +23,57 @@ class HeaderMenu extends React.Component {
       expanded: false
     }
     this.handleExpand = this.handleExpand.bind(this)
+
+    this.container = React.createRef()
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  componentWillMount() {
+    document.addEventListener("mousedown", this.handleClick, false)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClick, false)
+  }
+
+  handleClick(e) {
+    if (!e.target.dataset) {
+      this.handleExpand(null)
+      return
+    }
+
+    // HACK: Allow links to be clicked before hiding menu
+    if (e.target.dataset.link) {
+      setTimeout(() => this.handleExpand(null), 300)
+      return
+    }
+    
+    const expanded = this.props.items.reduce((acc, item) => {
+      if (item.submenu) {
+        if (e.target.dataset.key === item._key) {
+          acc = item._key
+        }
+      }
+      return acc
+    }, null)
+    this.handleExpand(expanded)
   }
 
   handleExpand = id => {
-    this.setState(prevState => ({
-      expanded: prevState.expanded !== id ? id : null
-    }))
+    clearTimeout(this.timeout)
+    this.setState(
+      prevState => ({
+        expanded: prevState.expanded !== id ? id : null
+      }),
+      () => {
+        if (this.props.closeTimeoutMs) {
+          this.timeout = setTimeout(() => {
+            this.setState({ expanded: null })
+          }, this.props.closeTimeoutMs)
+        }
+      }
+    )
   }
 
   render() {
@@ -60,7 +105,8 @@ class HeaderMenu extends React.Component {
               ) : menuItem.submenu ? (
                 <li key={menuItem._key}>
                   <SubMenuExpandBtn
-                    onClick={() => this.handleExpand(menuItem._key)}
+                    data-key={menuItem._key}
+                    ref={node => (this[menuItem._key] = node)}
                     inverted={inverted || undefined}
                     expanded={this.state.expanded === menuItem._key}
                   >
@@ -69,13 +115,10 @@ class HeaderMenu extends React.Component {
                   <SubMenu
                     expanded={this.state.expanded === menuItem._key}
                     inverted={inverted || undefined}
-                    onClick={() =>
-                      this.setState({ expanded: null }, () => closeMenu())
-                    }
                   >
                     {menuItem.submenu.map(submenuItem => (
                       <li key={submenuItem._key + submenuItem.path.current}>
-                        <SubMenuLink to={submenuItem.path.current}>
+                        <SubMenuLink to={submenuItem.path.current} data-link>
                           {submenuItem.title}
                           {"\u00a0"}
                           <Icon />
@@ -375,7 +418,12 @@ const Icon = styled(IconArrowRight)`
 export default HeaderMenu
 
 HeaderMenu.propTypes = {
-  inverted: PropTypes.bool
+  closeMenu: PropTypes.any,
+  closeTimeoutMs: PropTypes.number,
+  inverted: PropTypes.bool,
+  isOpen: PropTypes.any,
+  items: PropTypes.any,
+  openContactForm: PropTypes.any
 }
 
 HeaderMenu.defaultProps = {
