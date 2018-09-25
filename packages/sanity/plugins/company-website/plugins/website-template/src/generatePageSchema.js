@@ -23,6 +23,12 @@ export default ({
       description: "This will be shown on the website"
     },
     {
+      type: "string",
+      name: "pageTitle",
+      title: "Page Title",
+      description: "What will be shown on top of page with sub pages"
+    },
+    {
       type: "slug",
       name: "path",
       title: "Path",
