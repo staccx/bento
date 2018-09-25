@@ -14,33 +14,21 @@ import { opacity } from "@staccx/color"
 import { Button, List } from "@staccx/base"
 import { BounceIn } from "@staccx/animations"
 import IconArrowRight from "../Icons/IconArrowRight"
-import * as typeformEmbed from "@typeform/embed"
 
 class HeaderMenu extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      expanded: null,
-      popup: typeformEmbed.makePopup("https://stacc.typeform.com/to/esvqjU", {
-        hideFooter: true,
-        hideHeaders: true,
-        autoOpen: false,
-        opacity: 0
-      })
-    }
 
-    this.openContactForm = this.openContactForm.bind(this)
+    this.state = {
+      expanded: false
+    }
+    this.handleExpand = this.handleExpand.bind(this)
   }
 
   handleExpand = id => {
     this.setState(prevState => ({
       expanded: prevState.expanded !== id ? id : null
     }))
-  }
-
-  openContactForm() {
-    console.log("opening form")
-    this.state.popup.open()
   }
 
   render() {
@@ -100,7 +88,7 @@ class HeaderMenu extends React.Component {
           )}
           <li key={"_1231asdafsasd"}>
             <MenuItemButton
-              onClick={this.openContactForm}
+              onClick={this.props.openContactForm}
               activeClassName="is-current"
               inverted={inverted ? inverted.toString() : undefined}
               emphasized

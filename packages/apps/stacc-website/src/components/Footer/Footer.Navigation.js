@@ -2,10 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import { color, font, spacing } from "@staccx/theme"
 import { SanityDocument } from "@staccx/sanity"
-import { Layout, Heading } from "@staccx/base"
+import { Layout, Heading, Button } from "@staccx/base"
 import { NavLink } from "react-router-dom"
 
-const FooterNavigation = ({ heading, callToAction }) => (
+const FooterNavigation = ({ heading, callToAction, openContactForm }) => (
   <SanityDocument
     id={"ffe2cd1d-2fed-4436-9942-ad9674dd80ea"}
     pick={"links[]{link->,submenu[]->,...}, ..."}
@@ -39,6 +39,16 @@ const FooterNavigation = ({ heading, callToAction }) => (
                     </FooterNavLink>
                   </li>
                 ))}
+                <li key={"footer_getinTouch"}>
+                  <FooterButton
+                    onClick={openContactForm}
+                    exact
+                    activeClassName="is-current"
+                    emphasized
+                  >
+                    Get in touch
+                  </FooterButton>
+                </li>
               </FooterNav>
             </nav>
           </div>
@@ -95,5 +105,7 @@ const FooterNavLink = styled(NavLink)`
     color: ${color.primary};
   }
 `
+
+const FooterButton = FooterNavLink.withComponent(Button)
 
 export default FooterNavigation

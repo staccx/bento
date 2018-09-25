@@ -11,6 +11,7 @@ import theme from "./theme/Theme"
 import { Footer, Header } from "./components/_codeSplitting"
 import { Home, Case, Page, Jobs, Overview } from "./pages/_codeSplitting"
 import PreviewLive from "./pages/PreviewLive"
+import * as typeformEmbed from "@typeform/embed/lib/api"
 
 const asciiArt = `
                             \`-ohy+-\`
@@ -49,6 +50,26 @@ const asciiArt = `
 `
 
 class App extends Component {
+  constructor(props, context) {
+    super(props, context)
+    this.state = {
+      expanded: null,
+      popup: typeformEmbed.makePopup("https://stacc.typeform.com/to/esvqjU", {
+        hideFooter: true,
+        hideHeaders: true,
+        autoOpen: false,
+        opacity: 0
+      })
+    }
+
+    this.openContactForm = this.openContactForm.bind(this)
+  }
+
+  openContactForm() {
+    console.log("opening form")
+    this.state.popup.open()
+  }
+
   render() {
     const history = createHistory()
     console.log("%c" + asciiArt, "color: #EB5E55;")
@@ -57,7 +78,7 @@ class App extends Component {
         <SanityProvider dataset={"production"} projectId={"8j24leyc"} useCdn>
           <Router history={history}>
             <PageWrapper>
-              <Header />
+              <Header openContactForm={this.openContactForm} />
               <Wrapper>
                 <Main>
                   <Switch>
@@ -203,7 +224,7 @@ class App extends Component {
                   </React.Fragment>
                 </Main>
               </Wrapper>
-              <Footer />
+              <Footer openContactForm={this.openContactForm} />
             </PageWrapper>
           </Router>
         </SanityProvider>

@@ -5,7 +5,7 @@ import { spacing, color, wrapper, fontFamily } from "@staccx/theme"
 import FooterCompanyInfo from "./Footer.CompanyInfo"
 import FooterNavigation from "./Footer.Navigation"
 
-const Footer = ({ heading, callToAction }) => (
+const Footer = ({ heading, callToAction, openContactForm }) => (
   <Container>
     <Wrapper>
       <Content>
@@ -13,7 +13,7 @@ const Footer = ({ heading, callToAction }) => (
           <FooterCompanyInfo />
         </div>
         <div>
-          <FooterNavigation />
+          <FooterNavigation openContactForm={openContactForm} />
         </div>
       </Content>
     </Wrapper>

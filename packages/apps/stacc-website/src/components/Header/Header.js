@@ -63,6 +63,7 @@ class Header extends React.Component {
                     items={document.links}
                     isOpen={this.state.menuIsVisible}
                     closeMenu={this.closeMenu}
+                    openContactForm={this.props.openContactForm}
                   />
                 </Inner>
               </Wrapper>
