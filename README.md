@@ -35,8 +35,9 @@ lerna bootstrap
 lerna run build
 ```
 
-To create a new app, run `plop App`  
-To create a new base component, run `plop Component`
+~~To create a new app, run `plop App`~~
+
+~~To create a new base component, run `plop Component`~~
 
 ## Help!
 
