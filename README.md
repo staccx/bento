@@ -10,19 +10,19 @@ yarn global add lerna
 yarn global add plop
 ```
 
-1. Development tools that are used by many packages (like prettier and eslint) should be added as `devDependencies` in package root `~/projects/bento`:
+Development tools that are used by many packages (like prettier and eslint) should be added as `devDependencies` in package root `~/projects/bento`:
 ```
 yarn add -WD prettier
 ```
-2. Always use `peerDependencies` when depending on `styled-components` or other global-scope-dependant modules: 
+Always use `peerDependencies` when depending on `styled-components` or other global-scope-dependant modules: 
 ```
 yarn add -P styled-components
 ```
-3. Direct dependencies used in your app or module should be added as dependencies to that package
+Direct dependencies used in your app or module should be added as dependencies to that package
 ```
 yarn add my-dependency
 ```
-4. Dependencies that are not used in production should be added as `devDependencies`
+Dependencies that are not used in production should be added as `devDependencies`
 ```
 yarn add -D my-dev-dependency
 ```
