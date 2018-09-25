@@ -17,6 +17,12 @@ export default {
       type: "string"
     },
     {
+      name: "alias",
+      title: "Alias",
+      type: "slug",
+      description: "Alias for person. Will be use as source for vcard short url"
+    },
+    {
       name: "company",
       title: "Works for",
       type: "reference",

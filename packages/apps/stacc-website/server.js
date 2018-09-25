@@ -86,6 +86,14 @@ config.redirects.forEach(redirect => {
   })
 })
 
+config.aliases.forEach(alias => {
+  console.log("setting up redirect", alias.source, alias.destination)
+  app.get(alias.source, (req, res) => {
+    console.log("here")
+    res.redirect(302, alias.destination)
+  })
+})
+
 app.use(express.static(path.resolve(__dirname, "./build")))
 
 app.get("*", function(request, response) {

@@ -31,7 +31,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "build": "echo 'build done'",
-    "build:app": "react-app-rewired build",
+    "build:app": "react-app-rewired build && node resolveAlias",
     "createVCards": "node createVCards",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
