@@ -5,5 +5,5 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "files": ["server.js", "build", ".npmrc"]
+  "files": ["server.js", "build", ".npmrc", "stacc.config.json"]
 }

@@ -84,29 +84,6 @@ class App extends Component {
               <Wrapper>
                 <Main>
                   <Switch>
-                    {/* Handle old urls and redirect to new ones. Should be 302, but no time @TODO: */}
-                    <Redirect from="/core" to="/products/core/features" />
-                    <Redirect from="/eng/customers" to="/clients" />
-                    <Redirect from="/about" to="/team" />
-                    <Redirect from="/get-in-touch-with-us" to="/contact" />
-                    <Redirect from="/news/" to="/" />
-                    <Redirect from="/eng" to="/" />
-                    <Redirect from="/solutions" to="/products/core/use-cases" />
-                    <Redirect
-                      from="/flow"
-                      to="/products/flow-process/features"
-                    />
-                    <Redirect
-                      from="/privacypolicy"
-                      to="/privacy-and-cookie-policy"
-                    />
-                    <Route
-                      path="/jobs"
-                      render={() =>
-                        (window.location = "https://stacc.workable.com/")
-                      }
-                    />
-
                     <Route
                       path="/preview/:id"
                       exact
