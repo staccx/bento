@@ -43,7 +43,7 @@ const color = {
   primaryMediumDark: "#B72E21",
   secondary: "#467EFF",
   gray: "#B8B8B8",
-  text: "#6C6C6C",
+  text: "#777772",
   textDark: "#2b2b2b",
   white: "#fff",
   line: "#EBE7E7",

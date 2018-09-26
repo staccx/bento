@@ -6,16 +6,8 @@ const IconCheck = () => (
   <Icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
     <g fill="none" fillRule="evenodd">
       <g>
-        <circle
-          id="Oval"
-          cx="16"
-          cy="16"
-          r="16"
-          fill="#E0F3E0"
-          fillRule="nonzero"
-        />
+        <circle cx="16" cy="16" r="16" fill="#E0F3E0" fillRule="nonzero" />
         <polyline
-          id="Shape"
           stroke="#00A806"
           strokeWidth="3"
           points="9 15.936 14.284 21 24 10"
