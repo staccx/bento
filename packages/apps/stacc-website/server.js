@@ -75,8 +75,6 @@ app.use(helmet())
 app.use(cors())
 app.use(compression())
 
-app.use(metaMiddleware)
-
 /**
  * Redirects
  */
@@ -87,12 +85,12 @@ config.redirects.forEach(redirect => {
 })
 
 config.aliases.forEach(alias => {
-  console.log("setting up redirect", alias.source, alias.destination)
   app.get(alias.source, (req, res) => {
-    console.log("here")
     res.redirect(302, alias.destination)
   })
 })
+
+app.use(metaMiddleware)
 
 app.use(express.static(path.resolve(__dirname, "./build")))
 
