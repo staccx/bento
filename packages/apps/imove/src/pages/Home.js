@@ -5,7 +5,6 @@ import Car from "../components/Hero/Hero.Car"
 import CallToAction from "../components/CallToAction/CallToAction"
 import Advantages from "../components/Advantages/Advantages"
 import Features from "../components/Features/Features"
-import Feature from "../components/Features/Features.Feature"
 import Pricing from "../components/Pricing/Pricing"
 import Model from "../components/Pricing/Pricing.Model"
 import Footer from "../components/Footer/Footer"
@@ -57,24 +56,7 @@ const Home = () => (
       secondaryButtonUrl="/newsletter"
     />
 
-    <Features heading="Med imove får du">
-      <Feature
-        heading="Bil når du trenger det"
-        content="En bil benyttes i snitt 4% av tiden man har til rådighet, og behovet kan variere fra dag til dag. Pengene man bruker på bil er derfor ofte dårligere anvendt enn på andre ting. Med et imove-abonnement gis du fleksibiliteten til å bytte bil når behovet ditt endrer seg."
-      />
-      <Feature
-        heading="Vi selger din gamle bil"
-        content="Våre rådgivere tilbyr den beste løsningen for deg. Enten gir vi deg oppskriften på hvordan du selv enklest får solgt bilen, alternativt bistår vi med å selge bilen via våre samarbeidspartnere. Du bestemmer hva som passer deg best!"
-      />
-      <Feature
-        heading="Ett fast, lavt månedsbeløp"
-        content="Ett av våre grunnprinsipper er enkelhet. Vi vet du foretrekker det når ting bare fungerer og er enkelt. Hos oss gir vi deg maksimal frihet med full forutsigbarhet."
-      />
-      <Feature
-        heading="Grønt fotavtrykk"
-        content="imove sine biler er miljøvennlige og sikrer deg som bilist et grønnere fotavtrykk."
-      />
-    </Features>
+    <Features heading={data.featuresHeading} features={data.features} />
 
     <Pricing
       heading="Hva koster det?"

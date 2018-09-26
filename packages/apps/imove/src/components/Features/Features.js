@@ -2,13 +2,21 @@ import React from "react"
 import styled from "styled-components"
 import { spacing } from "@staccx/theme"
 import { Wrapper, Heading } from "@staccx/base"
+import Feature from "./Features.Feature"
 
-const Features = ({ heading, children }) => (
+const Features = ({ heading, features }) => (
   <Content>
     <Wrapper size="full">
       <StyledHeading level={2}>{heading}</StyledHeading>
-      <List>{children}</List>
-      <Cars src="/img/cars@2x.png" alt="BMW i3, VW e-golf and KIA Soul" />
+      <List>
+        {features.map(feature => (
+          <Feature
+            key={feature._key}
+            heading={feature.heading}
+            text={feature.text}
+          />
+        ))}
+      </List>
     </Wrapper>
   </Content>
 )
@@ -28,10 +36,6 @@ const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-`
-
-const Cars = styled.img`
-  padding: 100px ${spacing("largePlusPlus")} 0;
 `
 
 export default Features
