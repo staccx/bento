@@ -9,10 +9,26 @@ import {
 } from "@staccx/theme"
 import { Heading } from "@staccx/base"
 
-const getResponsiveSize = level => {
+const getResponsiveSizeL = level => {
   switch (level) {
     case 1:
+      return font.h2
+
+    case 2:
       return font.h3
+
+    case 3:
+      return font.h4
+
+    default:
+      return font[level]
+  }
+}
+
+const getResponsiveSizeM = level => {
+  switch (level) {
+    case 1:
+      return font.h2
 
     case 2:
       return font.h3
@@ -30,7 +46,11 @@ export const HeadingStyling = registerStyle(
     [VARIANT_DEFAULT]: css`
       color: ${color("textDark")};
       @media only screen and (max-width: ${wrapper.large}) {
-        font-size: ${p => getResponsiveSize(p.level)};
+        font-size: ${p => getResponsiveSizeL(p.level)};
+      }
+
+      @media only screen and (max-width: ${wrapper.medium}) {
+        font-size: ${p => getResponsiveSizeM(p.level)};
       }
     `,
     emphasized: css`

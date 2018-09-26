@@ -60,7 +60,7 @@ const Navigation = styled.nav`
 
 const SubLink = styled(NavLink)`
   text-decoration: none;
-  color: ${color.primary};
+  color: ${color("primaryWcag")};
 
   &.is-current {
     color: ${color("textDark")};
