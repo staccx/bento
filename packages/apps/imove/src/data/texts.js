@@ -1,13 +1,10 @@
 export default {
   /* Hero */
-
   headingMain: "Et bilabonnement med full frihet",
   subHeadingMain: "–en helt ny måte å tenke bil",
   headingSecondary: "Bli pilotbruker og vi hjelper deg å selge bilen din",
-
   buttonCarSale: "Bli kvitt min gamle bil",
   buttonCarSubscribe: "Abonner på ny bil",
-
   hverdagsbilName: "Hverdagsbil",
   hverdagsbilSubtitle: "Fra kr 3100 per måned",
   flyttebilName: "Flyttebil",
