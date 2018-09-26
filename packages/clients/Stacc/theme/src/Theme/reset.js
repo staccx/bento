@@ -7,6 +7,7 @@ export default `
 html {
   background-color: #fff;
   font-size: 16px;
+  line-height: 1.6;
 }
 
 h1, h2 {
