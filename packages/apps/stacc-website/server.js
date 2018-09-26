@@ -7,6 +7,7 @@ const Helper = require("sanity-query-helper")
 const imageUrlBuilder = require("@sanity/image-url")
 const cors = require("cors")
 const helmet = require("helmet")
+const morgan = require("morgan")
 const compression = require("compression")
 const config = require("./stacc.config")
 
@@ -71,6 +72,7 @@ const metaMiddleware = (req, res, next) => {
     })
 }
 
+app.use(morgan("common"))
 app.use(helmet())
 app.use(cors())
 app.use(compression())
@@ -85,7 +87,9 @@ config.redirects.forEach(redirect => {
 })
 
 config.aliases.forEach(alias => {
+  console.log("creating alias redirect", alias)
   app.get(alias.source, (req, res) => {
+    console.log("alias redirect", alias)
     res.redirect(301, alias.destination)
   })
 })

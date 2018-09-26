@@ -1,7 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
-import registerServiceWorker from "./registerServiceWorker"
 import { Provider } from "mobx-react"
 
 ReactDOM.render(
@@ -10,5 +9,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 )
-
-registerServiceWorker()

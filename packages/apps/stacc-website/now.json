@@ -1,6 +1,6 @@
 {
   "name": "stacc-web",
-  "alias": ["stac.cx"],
+  "alias": ["stac.cx", "stacctesting.com"],
   "type": "npm",
   "env": {
     "NODE_ENV": "production"

@@ -26,7 +26,7 @@ helper
     fs.readFile(filePath, (err, data) => {
       const json = JSON.parse(data)
       json.aliases = people.map(person => ({
-        source: `/.${person.alias.current}`,
+        source: `/v/${person.alias.current}`,
         destination: vCardUrl(person.name)
       }))
 
