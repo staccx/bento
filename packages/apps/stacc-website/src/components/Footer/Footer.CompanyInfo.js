@@ -52,7 +52,7 @@ const FooterCompanyInfo = ({ heading }) => (
                 <div>
                   <ul>
                     {doc.outboundLinks.map(link => (
-                      <li>
+                      <li key={link._key}>
                         <FooterA href={link.url}> {link.title}</FooterA>
                       </li>
                     ))}

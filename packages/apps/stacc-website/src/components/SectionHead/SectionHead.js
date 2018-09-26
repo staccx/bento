@@ -74,7 +74,7 @@ SectionHead.propTypes = {
   lede: PropTypes.string,
   breadcrumb: PropTypes.array,
   callToActionUrl: PropTypes.string,
-  illustration: PropTypes.string
+  illustration: PropTypes.object
 }
 
 export default SectionHead

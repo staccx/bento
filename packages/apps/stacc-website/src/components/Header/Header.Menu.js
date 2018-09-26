@@ -134,14 +134,15 @@ class HeaderMenu extends React.Component {
               ) : null
           )}
           <li key={"_1231asdafsasd"}>
-            <MenuItemButton
+            <MenuItem
+              to={window.location}
               onClick={this.props.openContactForm}
               activeClassName="is-current"
               inverted={inverted ? inverted.toString() : undefined}
-              emphasized
+              emphasized={"true"}
             >
               {"Get in touch"}
-            </MenuItemButton>
+            </MenuItem>
           </li>
         </MenuItems>
       </Navigation>
@@ -240,6 +241,9 @@ const Emphasized = css`
     &:hover,
     &:active,
     &:focus {
+      color: ${color.white};
+      background-color: ${props =>
+        props.inverted ? color("textDark")(props) : color("secondary")(props)};
       box-shadow: 0 2px 6px
         ${p =>
           p.inverted
@@ -281,10 +285,6 @@ const MenuItemCss = css`
     }
     ${p => p.emphasized && Emphasized};
   }
-`
-
-const MenuItemButton = styled(Button)`
-  ${MenuItemCss};
 `
 
 const MenuItem = styled(NavLink)`
@@ -336,7 +336,7 @@ const SubMenuExpandBtn = styled(Button)`
         &::after {
           content: "";
           position: absolute;
-          bottom: 4px;
+          bottom: 0;
           left: 50%;
           width: 0;
           height: 0;

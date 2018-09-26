@@ -1,5 +1,5 @@
 import React from "react"
-import styled  from "styled-components"
+import styled from "styled-components"
 import { color, font, spacing } from "@staccx/theme"
 import { SanityDocument } from "@staccx/sanity"
 import { Layout, Heading } from "@staccx/base"
@@ -18,7 +18,6 @@ const FooterNavigation = ({ heading, callToAction, openContactForm }) => (
       const mainMenu = menu.links.filter(menuItem => menuItem.link)
       const subMenus = menu.links.filter(m => m.submenu && m.submenu.length > 0)
 
-      console.log(window.location)
       return (
         <Layout rowGap="large">
           <div>
@@ -30,11 +29,6 @@ const FooterNavigation = ({ heading, callToAction, openContactForm }) => (
                       to={menuItem.link.path.current}
                       exact
                       activeClassName="is-current"
-                      emphasized={
-                        menuItem.emphasized
-                          ? menuItem.emphasized.toString()
-                          : undefined
-                      }
                     >
                       {menuItem.title}
                     </FooterNavLink>
@@ -45,7 +39,6 @@ const FooterNavigation = ({ heading, callToAction, openContactForm }) => (
                     to={window.location}
                     onClick={openContactForm}
                     activeClassName="is-current"
-                    emphasized={false}
                   >
                     Get in touch
                   </FooterNavLink>

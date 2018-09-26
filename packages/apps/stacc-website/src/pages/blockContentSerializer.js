@@ -42,6 +42,7 @@ const serializer = {
         headingLevel={node.isPageHeader ? 1 : 2}
       />
     ),
+
     quote: ({ node }) => (
       <SanityImage image={node.image}>
         {({ image }) => (
@@ -62,16 +63,13 @@ const serializer = {
       return (
         <div>
           <Layout rowGap="large">
-            <SanityImage image={head.image}>
-              {({ image }) => (
-                <SectionHead
-                  heading={head.title}
-                  lede={head.body}
-                  headingLevel={head.isPageHeader ? 1 : 2}
-                  illustration={image.url()}
-                />
-              )}
-            </SanityImage>
+            <SectionHead
+              heading={head.title}
+              lede={head.body}
+              headingLevel={head.isPageHeader ? 1 : 2}
+              illustration={head.image}
+            />
+
             {links && <ContentLinks>{links.map(getLinkItem)}</ContentLinks>}
           </Layout>
         </div>

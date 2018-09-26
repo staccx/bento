@@ -14,7 +14,7 @@ const Story = ({
   isReverse
 }) => (
   <Container>
-    <Inner hasImg={!!illustration} rev={isReverse}>
+    <Inner hasImg={illustration && illustration.asset} rev={isReverse}>
       <div>
         <Layout>
           <div>
@@ -29,13 +29,14 @@ const Story = ({
             )}
         </Layout>
       </div>
-      {illustration && (
-        <div>
-          <SanityImage image={illustration}>
-            {({ image }) => <Illustration src={image.url()} alt="" />}
-          </SanityImage>
-        </div>
-      )}
+      {illustration &&
+        illustration.asset && (
+          <div>
+            <SanityImage image={illustration}>
+              {({ image }) => <Illustration src={image.url()} alt="" />}
+            </SanityImage>
+          </div>
+        )}
     </Inner>
   </Container>
 )

@@ -59,16 +59,22 @@ class App extends Component {
         hideFooter: true,
         hideHeaders: true,
         autoOpen: false,
+        autoClose: 500,
         opacity: 0
       })
     }
 
     this.openContactForm = this.openContactForm.bind(this)
+    this.closeContactForm = this.closeContactForm.bind(this)
   }
 
   openContactForm() {
     console.log("opening form")
     this.state.popup.open()
+  }
+
+  closeContactForm() {
+    this.state.popup.close()
   }
 
   render() {
