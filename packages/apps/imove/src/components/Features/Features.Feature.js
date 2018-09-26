@@ -3,10 +3,10 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import { spacing, font } from "@staccx/theme"
 
-const Feature = ({ heading, content }) => (
+const Feature = ({ heading, text }) => (
   <Content>
     <Heading>{heading}</Heading>
-    <p>{content}</p>
+    <p>{text}</p>
   </Content>
 )
 
