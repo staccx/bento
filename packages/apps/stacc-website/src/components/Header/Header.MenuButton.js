@@ -1,6 +1,7 @@
 import React from "react"
 import styled, { css } from "styled-components"
 import { color, wrapper } from "@staccx/theme"
+import { hideVisually } from "@staccx/base"
 
 const HeaderMenuButton = ({ isOpen, inverted, onClick }) => {
   return (
@@ -9,10 +10,15 @@ const HeaderMenuButton = ({ isOpen, inverted, onClick }) => {
         <Line isOpen={isOpen} inverted={inverted} />
         <Line isOpen={isOpen} inverted={inverted} />
         <Line isOpen={isOpen} inverted={inverted} />
+        <Title>Open menu</Title>
       </Icon>
     </Outer>
   )
 }
+
+const Title = styled.span`
+  ${hideVisually};
+`
 
 const Outer = styled.div`
   position: relative;
