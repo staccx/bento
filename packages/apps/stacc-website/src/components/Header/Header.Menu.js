@@ -329,25 +329,6 @@ const SubMenuExpandBtn = styled(Button)`
             ? opacity(color("white")(p), 0.5)
             : opacity(color("secondary")(p), 0.5)};
     }
-
-    ${p =>
-      p.expanded &&
-      css`
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 0 12px 14px 12px;
-          border-color: transparent transparent ${color.white} transparent;
-          transform: translate(-50%, 100%);
-          z-index: 100;
-          animation: ${SubMenuArrowBounceIn} 0.2s ease forwards 1;
-        }
-      `};
   }
 `
 
