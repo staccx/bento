@@ -54,7 +54,6 @@ const metaMiddleware = (req, res, next) => {
     })
   }
 
-  console.log("query", sender.query)
   sender
     .send()
     .then(result => result[0])
@@ -87,9 +86,7 @@ config.redirects.forEach(redirect => {
 })
 
 config.aliases.forEach(alias => {
-  console.log("creating alias redirect", alias)
   app.get(alias.source, (req, res) => {
-    console.log("alias redirect", alias)
     res.redirect(301, alias.destination)
   })
 })
