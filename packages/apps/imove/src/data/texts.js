@@ -43,6 +43,35 @@ export default {
       _key: "ppsjbs"
     }
   ],
+
+  pricingHeading: "Noen priseksempler",
+  pricingCars: [
+    {
+      img: "/img/vw-e-up.png",
+      name: "VW e-up",
+      price: 3490,
+      type: "Elbil",
+      seats: "4",
+      doors: "5",
+      range: "160km NEDC"
+    },
+    {
+      img: "/img/kia-soul.png",
+      name: "Kia Soul",
+      price: 5490,
+      type: "Elbil",
+      seats: "4",
+      doors: "5",
+      range: "250km NEDC"
+    },
+    {
+      img: "/img/tesla-s-85d.png",
+      name: "Tesla Model S 85D",
+      price: 9990,
+      type: "Elbil",
+      seats: "4",
+      doors: "5",
+      range: "528km NEDC"
     }
   ]
 }

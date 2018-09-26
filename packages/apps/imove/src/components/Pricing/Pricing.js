@@ -3,20 +3,37 @@ import styled from "styled-components"
 import { color, spacing, font } from "@staccx/theme"
 import { Wrapper, Heading } from "@staccx/base"
 
-const Pricing = ({ heading, copy, img, children }) => (
-  <Content bg={img}>
+const Pricing = ({ heading, cars }) => (
+  <Content>
     <Wrapper>
       <StyledHeading level={2}>{heading}</StyledHeading>
-      <Copy>{copy}</Copy>
-      <List>{children}</List>
+      <List>
+        {cars.map(car => (
+          <li>
+            <img src={car.img} alt={car.name} />
+            <Heading level={3}>{car.name}</Heading>
+            <ul>
+              <li>{car.type}</li>
+              <li>{car.seats}</li>
+              <li>{car.doors}</li>
+              <li>{car.range}</li>
+            </ul>
+            <p>
+              fra
+              <br />
+              kr {car.price}
+              <br />
+              /mnd
+            </p>
+          </li>
+        ))}
+      </List>
     </Wrapper>
   </Content>
 )
 
 const Content = styled.div`
-  background-color: ${color("secondary")};
   font-size: ${font("largePlus")};
-  color: ${color("white")};
   text-align: center;
   padding: ${spacing("huge")} 0 calc(${spacing("huge")} + 20px);
   background-image: url(${p => p.bg});
@@ -26,10 +43,6 @@ const Content = styled.div`
 
 const StyledHeading = styled(Heading)`
   padding-bottom: calc(${spacing("medium")});
-`
-
-const Copy = styled.p`
-  padding: 0 0 ${spacing("large")};
 `
 
 const List = styled.ul`

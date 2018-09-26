@@ -58,15 +58,7 @@ const Home = () => (
 
     <Features heading={data.featuresHeading} features={data.features} />
 
-    <Pricing
-      heading="Hva koster det?"
-      copy="Velg melom våre modeller:"
-      img="/img/road03@2x.png"
-    >
-      <Model name="VW e-golf" price="Kr 4 300/mnd" />
-      <Model name="BMW i3" price="Kr 4 900/mnd" />
-      <Model name="KIA Soul" price="Kr 4 200/mnd" />
-    </Pricing>
+    <Pricing heading={data.pricingHeading} cars={data.pricingCars} />
 
     <Footer>
       <Column heading="Finn oss">
