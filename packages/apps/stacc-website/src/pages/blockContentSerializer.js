@@ -76,7 +76,7 @@ const serializer = {
       )
     },
     featureList: ({ node }) => <FeatureList items={node.features} />,
-    stories: ({ node }) => <Stories items={node.list} />,
+    stories: ({ node }) => <Stories items={node.list} heading={node.heading} />,
     timeline: ({ node }) => <Timeline items={node.entries} />,
     contactPerson: ({ node, ...rest }) => {
       return (

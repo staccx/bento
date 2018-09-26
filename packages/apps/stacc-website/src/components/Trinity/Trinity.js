@@ -21,7 +21,7 @@ const Trinity = ({ items, heading }) => (
 )
 
 const TrinityHeading = styled(Heading)`
-  color: ${color.primary};
+  color: ${color("primaryWcag")};
   text-align: center;
 `
 

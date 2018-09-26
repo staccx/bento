@@ -54,7 +54,7 @@ export const HeadingStyling = registerStyle(
       }
     `,
     emphasized: css`
-      color: ${color.primary};
+      color: ${color("primaryWcag")};
       text-transform: uppercase;
       font-size: ${font.base};
       letter-spacing: 0.5;

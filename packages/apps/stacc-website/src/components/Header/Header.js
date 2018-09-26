@@ -91,7 +91,11 @@ const Head = styled.header`
       !p.menuIsVisible ? "transparent" : color("primaryDark")(p)};
     height: ${p => (!p.menuIsVisible ? "auto" : "100vh")};
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: ${p => (p.menuIsVisible ? "scroll" : "hidden")};
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 `
 
