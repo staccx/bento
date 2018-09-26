@@ -44,8 +44,6 @@ const Home = () => (
       width="largePlus"
     />
 
-    <Advantages />
-
     <CallToAction
       heading="Som pilotbruker får du tilgang til imove og alle fordelene"
       lede="Bli en av våre 25 pilotbrukere, og nyt fordelene av tilgang til bilen du ønsker når du trenger det. Bytt inn din gamle bil og selg den gjennom imove."
