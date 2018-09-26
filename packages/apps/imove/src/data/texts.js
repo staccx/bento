@@ -44,7 +44,7 @@ export default {
   pricingHeading: "Noen priseksempler",
   pricingCars: [
     {
-      img: "/img/vw-e-up.png",
+      img: "/img/pricing-vw-e-up2x.png",
       name: "VW e-up",
       price: 3490,
       type: "Elbil",
@@ -53,7 +53,7 @@ export default {
       range: "160km NEDC"
     },
     {
-      img: "/img/kia-soul.png",
+      img: "/img/pricing-kia-soul2x.png",
       name: "Kia Soul",
       price: 5490,
       type: "Elbil",
@@ -62,7 +62,7 @@ export default {
       range: "250km NEDC"
     },
     {
-      img: "/img/tesla-s-85d.png",
+      img: "/img/pricing-tesla-s-85d2x.png",
       name: "Tesla Model S 85D",
       price: 9990,
       type: "Elbil",
