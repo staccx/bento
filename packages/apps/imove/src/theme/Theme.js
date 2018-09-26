@@ -19,20 +19,21 @@ const wrapper = {
 }
 
 const spacing = {
-  grid: "7vh",
+  /* grid: "7vh",
   huge: "130px",
-  largePlusPlus: "100px",
-  largePlus: "72px",
-  large: "48px",
   mediumPlus: "32px",
   medium: "24px",
   small: "12px",
-  tiny: "6px"
+  tiny: "6px" */
+  huge: "130px",
+  largePlusPlus: "100px",
+  largePlus: "72px",
+  large: "48px"
 }
 const color = {
   bg: "#fcfcfc",
   bgGray: "#F9F7F7",
-  primary: "#FF5C3F",
+  primary: "#4FAF73",
   secondary: "#38454B",
   toneDown: "#8C8C8C",
   gray: "#767676",
