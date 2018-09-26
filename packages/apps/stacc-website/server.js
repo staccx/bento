@@ -86,7 +86,7 @@ config.redirects.forEach(redirect => {
 
 config.aliases.forEach(alias => {
   app.get(alias.source, (req, res) => {
-    res.redirect(302, alias.destination)
+    res.redirect(301, alias.destination)
   })
 })
 
