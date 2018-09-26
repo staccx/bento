@@ -13,9 +13,9 @@ const Hero = ({ heading, lede }) => (
           <StyledWrapper>
             <Layout>
               {heading && (
-                <Heading level={1} variant="hero">
+                <HeroHeading level={1} variant="hero">
                   {heading}
-                </Heading>
+                </HeroHeading>
               )}
               {lede && <Lede>{lede}</Lede>}
             </Layout>
@@ -121,6 +121,28 @@ const HeroBG = styled.div`
 const StyledWrapper = styled(Wrapper)`
   padding-left: ${spacing.medium} !important;
   padding-right: ${spacing.medium} !important;
+`
+
+const HeroHeading = styled(Heading)`
+  font-size: 72px;
+
+  @media only screen and (max-width: ${wrapper.large}) {
+    font-size: 54px;
+  }
+
+  @media only screen and (max-width: ${wrapper.medium}) {
+    font-size: ${font.h2};
+  }
+
+  display: block;
+
+`
+
+const Bla = styled.span`
+  display: block;
+  font-smoothing: -we;
+  ANGLE_instanced_arrays
+
 `
 
 const Lede = styled.p`
