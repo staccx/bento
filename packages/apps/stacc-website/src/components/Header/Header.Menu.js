@@ -48,7 +48,7 @@ class HeaderMenu extends React.Component {
       setTimeout(() => this.handleExpand(null), 300)
       return
     }
-    
+
     const expanded = this.props.items.reduce((acc, item) => {
       if (item.submenu) {
         if (e.target.dataset.key === item._key) {
@@ -118,7 +118,11 @@ class HeaderMenu extends React.Component {
                   >
                     {menuItem.submenu.map(submenuItem => (
                       <li key={submenuItem._key + submenuItem.path.current}>
-                        <SubMenuLink to={submenuItem.path.current} data-link>
+                        <SubMenuLink
+                          to={submenuItem.path.current}
+                          data-link
+                          onClick={closeMenu}
+                        >
                           {submenuItem.title}
                           {"\u00a0"}
                           <Icon />
