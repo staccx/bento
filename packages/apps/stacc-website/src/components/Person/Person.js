@@ -17,14 +17,19 @@ const Person = ({
   email,
   linkedin,
   twitter,
-  link
+  link,
+  alias
 }) => (
   <PersonItem key={name}>
     <SanityImage image={image}>
       {({ image }) => {
-        const vCardUrl = encodeURI(
-          `https://s3.eu-west-2.amazonaws.com/stacc-vcards/${dashIt(name)}.vcf`
-        )
+        const vCardUrl = alias
+          ? `/v/${alias.current}`
+          : encodeURI(
+              `https://s3.eu-west-2.amazonaws.com/stacc-vcards/${dashIt(
+                name
+              )}.vcf`
+            )
         return (
           <Layout rowGap="small">
             <div>
