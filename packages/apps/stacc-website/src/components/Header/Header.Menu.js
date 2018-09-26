@@ -376,7 +376,7 @@ const SubMenuLink = styled(NavLink)`
     &:active,
     &:focus {
       background-color: ${color("g4")};
-      color: ${color.primary};
+      color: ${color("primaryWcag")};
 
       > svg {
         color: ${color.primary};

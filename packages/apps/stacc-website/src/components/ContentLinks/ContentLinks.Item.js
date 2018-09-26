@@ -74,7 +74,7 @@ const ItemLink = styled(Link)`
   display: block;
   align-items: center;
   margin-bottom: ${spacing.tiny};
-  color: ${color.primary};
+  color: ${color("primaryWcag")};
   transition: color 0.2s ease;
   white-space: nowrap;
 
