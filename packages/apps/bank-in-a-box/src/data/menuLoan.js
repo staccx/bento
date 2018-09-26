@@ -18,6 +18,13 @@ const menuLoan = accountId => [
     direction: forwards
   },
   {
+    _id: "321dsf345fdsfds4",
+    label: "Nedbetalingsplan",
+    icon: <ThemeComponent tagName={"IconDownpayment"} />,
+    path: `/account/${accountId}/downpayment`,
+    direction: forwards
+  },
+  {
     _id: "hgffghd654h",
     label: "Endre forfallsdag",
     icon: <ThemeComponent tagName={"IconDue"} />,
