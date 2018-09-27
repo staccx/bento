@@ -103,6 +103,10 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/imageFullWidth.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "blocks/quote.js"
     },
     {
