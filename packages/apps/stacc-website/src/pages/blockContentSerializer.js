@@ -18,7 +18,8 @@ import {
   ContactUs,
   Trinity,
   ClientPreview,
-  Typeform
+  Typeform,
+  ImageFullWidth
 } from "../components/_codeSplitting"
 import { ClientsList } from "../components/ClientList/ClientList"
 
@@ -42,7 +43,6 @@ const serializer = {
         headingLevel={node.isPageHeader ? 1 : 2}
       />
     ),
-
     quote: ({ node }) => (
       <SanityImage image={node.image}>
         {({ image }) => (
@@ -120,7 +120,8 @@ const serializer = {
         </ClientsList>
       )
     },
-    typeform: ({ node }) => <Typeform heading={node.heading} url={node.url} />
+    typeform: ({ node }) => <Typeform heading={node.heading} url={node.url} />,
+    imageFullWidth: ({ node }) => <ImageFullWidth image={node} />
   }
 }
 

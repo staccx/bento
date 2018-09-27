@@ -25,5 +25,6 @@ export default {
     { type: "peopleList" },
     { type: "logoSalad" },
     { type: "typeform" },
+    { type: "imageFullWidth" }
   ]
 }

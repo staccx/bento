@@ -5,6 +5,10 @@
   },
   "parts": [
     {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./structure.js"
+    },
+    {
       "implements": "part:@sanity/base/schema-type",
       "path": "page.js"
     },
@@ -100,6 +104,10 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "blocks/productClients.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "blocks/imageFullWidth.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",

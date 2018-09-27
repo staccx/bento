@@ -109,3 +109,10 @@ export const ClientList = LoadableComponents(
     loading: Loading
   }
 )
+
+export const ImageFullWidth = LoadableComponents(
+  () => import("./ImageFullWidth/ImageFullWidth"),
+  {
+    loading: Loading
+  }
+)

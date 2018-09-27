@@ -15,10 +15,11 @@ export default {
       name: "path",
       title: "Path",
       options: {
-        source: "title",
+        source: "name",
         maxLength: 96,
         auto: true
-      }
+      },
+      validation: Rule => Rule.required()
     },
     {
       type: "array",
