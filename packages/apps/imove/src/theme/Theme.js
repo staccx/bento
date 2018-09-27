@@ -1,6 +1,7 @@
 import { css } from "styled-components"
 import { Theme } from "@staccx/theme"
 import { BaseTheme } from "@staccx/base"
+import HeadingStyling from "./Theme.Headings"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -19,20 +20,22 @@ const wrapper = {
 }
 
 const spacing = {
-  /* grid: "7vh",
+  grid: "7vh",
   huge: "130px",
   mediumPlus: "32px",
   medium: "24px",
   small: "12px",
-  tiny: "6px" */
-  huge: "130px",
-  largePlusPlus: "100px",
+  tiny: "6px",
+  largePlusPlus: "96px",
   largePlus: "72px",
-  large: "48px"
+  large: "48px",
+  smallWhitespace: "48px",
+  mediumWhitespace: "96px",
+  largeWhitespace: "192px"
 }
 const color = {
   bg: "#fcfcfc",
-  bgGray: "#F9F7F7",
+  bgGray: "#f6f6f6",
   primary: "#4FAF73",
   secondary: "#38454B",
   toneDown: "#8C8C8C",
@@ -94,5 +97,5 @@ const theme = new Theme(BaseTheme, {
       line-height: 1.2;
     }
   `
-})
+}).add(HeadingStyling)
 export default theme

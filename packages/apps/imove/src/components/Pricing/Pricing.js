@@ -2,16 +2,20 @@ import React from "react"
 import styled from "styled-components"
 import { color, spacing, font } from "@staccx/theme"
 import { Wrapper, Heading } from "@staccx/base"
+import SectionHeading from "../SectionHeading/SectionHeading"
 
 const Pricing = ({ heading, cars }) => (
   <Content>
     <Wrapper size="full">
-      <StyledMainHeading level={2}>{heading}</StyledMainHeading>
+      <SectionHeading text="Noen priseksempler" />
+      <Heading level={2}>{heading}</Heading>
       <List>
         {cars.map(car => (
           <Card>
             <img src={car.img} alt={car.name} />
-            <StyledHeading level={3}>{car.name}</StyledHeading>
+            <Heading level={3} variant="primary">
+              {car.name}
+            </Heading>
             <CarProperties>
               <CarProperty icon="type">{car.type}</CarProperty>
               <CarProperty icon="seats">{car.seats}</CarProperty>
@@ -21,7 +25,7 @@ const Pricing = ({ heading, cars }) => (
             <PriceBlob>
               fra
               <br />
-              kr {car.price}
+              <span>kr {car.price}</span>
               <br />
               /mnd
             </PriceBlob>
@@ -39,10 +43,16 @@ const PriceBlob = styled.div`
   margin: auto;
   background-repeat: no-repeat;
   background-size: contain;
+  color: ${color("white")};
+  font-weight: normal;
+  font-size: ${font("large")};
+  span {
+    font-weight: bold;
+  }
 `
 
 const StyledMainHeading = styled(Heading)`
-  padding-bottom: calc(${spacing("medium")});
+  margin-bottom: ${spacing("medium")};
 `
 
 const StyledHeading = styled(Heading)`
@@ -54,7 +64,7 @@ const CarProperties = styled.ul`
   flex-wrap: wrap;
   font-size: ${font("large")};
   text-align: left;
-  color: ${color("secondary")};
+  color: ${color("gray")};
 `
 
 const CarProperty = styled.li`
