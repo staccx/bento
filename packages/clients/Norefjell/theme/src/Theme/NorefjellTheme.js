@@ -26,6 +26,7 @@ import { IconInsurance } from "./Icons/Icon.Insurance"
 import { IconPdf } from "./Icons/Icon.Pdf"
 import { IconAnnualStatement } from "./Icons/Icon.AnnualStatement"
 import { IconContracts } from "./Icons/Icon.Contracts"
+import { IconDownpayment } from "./Icons/Icon.Downpayment"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -156,5 +157,6 @@ const t = new Theme(BaseTheme, {
   .add(IconPdf)
   .add(IconAnnualStatement)
   .add(IconContracts)
+  .add(IconDownpayment)
 
 export default t.get

@@ -37,29 +37,32 @@ export default registerStyle(
     `,
     accountFilter: css`
       ${defaultBox};
-      padding: ${spacing.medium};
+      padding: 0;
       ${fontSmoothing};
       position: relative;
-      padding-top: 52px;
-      padding-bottom: ${spacing.small};
-      display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-direction: column;
+      overflow: hidden;
     `,
     accountFilterHeader: css`
       display: flex;
       width: 100%;
-      margin-left: -${spacing.medium};
+      margin-left: 0;
       background-color: ${color("accountFilter")};
-      position: absolute;
       justify-content: space-between;
       color: ${color.white};
-      top: 0;
       padding-top: ${spacing.small};
       padding-bottom: ${spacing.small};
       border-top-right-radius: 3px;
       border-top-left-radius: 3px;
       font-weight: ${fontWeight.bold};
+    `,
+    accountFilterFooter: css`
+      padding: ${spacing.small} ${spacing.medium};
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     `,
     profileAdress: css`
       background-color: #f0f0f0;

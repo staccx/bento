@@ -10,6 +10,17 @@ import {
 } from "../components/_codeSplitting"
 
 class Page extends Component {
+  componentWillMount() {
+    if (this.props.change) {
+      const hideMenu = this.props.page._type === "campaignPage"
+      if (hideMenu !== this.props.hideMenu) {
+        this.props.change({
+          hideMenu
+        })
+      }
+    }
+  }
+
   render() {
     const { match, page, blockCredentials = {} } = this.props
     let renderSubpage = null
@@ -23,7 +34,6 @@ class Page extends Component {
 
     return (
       <div>
-
         {page.subpages &&
           page.subpages.length > 0 && (
             <NavigationSubpage

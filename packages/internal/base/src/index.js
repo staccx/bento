@@ -106,6 +106,9 @@ import Poll from "./components/Fetch/Poll"
 import CopyToClipboard from "./components/CopyToClipboard/CopyToClipboard"
 import CopyToClipboardComponent from "./components/CopyToClipboard/CopyToClipboardComponent"
 
+// State
+import State from "./components/State/State"
+
 // Search
 import Search from "./components/Search/Search"
 require("es6-promise").polyfill()
@@ -174,6 +177,7 @@ export {
   Select,
   SelectOption,
   SelectSimple,
+  State,
   Slider,
   SliderKeyboardInput,
   SplitListItem,

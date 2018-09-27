@@ -1,9 +1,9 @@
 export default [
-  { value: "management", title: "Management" },
-  { value: "strategy", title: "Strategy" },
-  { value: "sales", title: "Sales" },
-  { value: "developer", title: "Development" },
-  { value: "designer", title: "Design" },
-  { value: "product", title: "Product" },
-  { value: "test", title: "Test" }
+  { value: "Management", title: "Management" },
+  { value: "Strategy", title: "Strategy" },
+  { value: "Sales", title: "Sales" },
+  { value: "Development", title: "Development" },
+  { value: "Design", title: "Design" },
+  { value: "Product", title: "Product" },
+  { value: "Test", title: "Test" }
 ]

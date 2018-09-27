@@ -22,6 +22,10 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "campaignPage.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "blockContent.js"
     },
 

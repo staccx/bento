@@ -30,7 +30,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { location } = this.props
+    const { location, hideMenu } = this.props
     return (
       <SanityDocument
         id={"ffe2cd1d-2fed-4436-9942-ad9674dd80ea"}
@@ -53,18 +53,23 @@ class Header extends React.Component {
                     />
                     <LogoTitle>Stacc Home</LogoTitle>
                   </LogoLink>
-                  <HeaderMenuButton
-                    inverted={inverted}
-                    onClick={() => this.handleMenu()}
-                    isOpen={this.state.menuIsVisible}
-                  />
-                  <HeaderMenu
-                    inverted={inverted}
-                    items={document.links}
-                    isOpen={this.state.menuIsVisible}
-                    closeMenu={this.closeMenu}
-                    openContactForm={this.props.openContactForm}
-                  />
+                  {!hideMenu && (
+                    <React.Fragment>
+                      <HeaderMenuButton
+                        inverted={inverted}
+                        onClick={() => this.handleMenu()}
+                        isOpen={this.state.menuIsVisible}
+                      />
+
+                      <HeaderMenu
+                        inverted={inverted}
+                        items={document.links}
+                        isOpen={this.state.menuIsVisible}
+                        closeMenu={this.closeMenu}
+                        openContactForm={this.props.openContactForm}
+                      />
+                    </React.Fragment>
+                  )}
                 </Inner>
               </Wrapper>
             </Head>

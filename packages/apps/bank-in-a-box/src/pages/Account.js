@@ -4,6 +4,7 @@ import { toJS } from "mobx/lib/mobx"
 import Withdraw from "./Deposit/Withdraw"
 import AccountStatement from "./Deposit/AccountStatement"
 import Insurance from "./Loan/Insurance"
+import Downpayment from "./Loan/Downpayment"
 import LoanStatement from "./Loan/LoanStatement"
 import Invoice from "./Loan/Invoice"
 import Due from "./Loan/Due"
@@ -23,6 +24,11 @@ const Account = ({ accountStore, history, match }) => {
         path={`${match.url}/invoice`}
         exact
         render={() => <Invoice history={history} account={acc} />}
+      />
+      <Route
+        path={`${match.url}/downpayment`}
+        exact
+        render={() => <Downpayment history={history} account={acc} />}
       />
       <Route
         path={`${match.url}/loan-statement`}
