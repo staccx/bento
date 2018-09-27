@@ -36,22 +36,17 @@ const Home = () => (
     <CallToAction
       heading="Som pilotbruker får du eksklusiv tilgang til imove"
       lede="Litt om hvordan imove fungerer, og hvilke fordeler man får som pilotbruker. Den viktigste og mest attraktive fordelen bør fremheves på én eller annen måte, f.eks. i overskriften. 25 pilotbrukere."
-      img="/img/road01.png"
-      primaryButtonText="Meld meg på"
-      primaryButtonUrl="/signup"
-      secondaryButtonText="Jeg vil vite mer"
-      secondaryButtonUrl="/newsletter"
+      img="/img/road01@2x.png"
+      button1Text="Bli kvitt min gamle bil"
+      button1Url="/"
+      button1Style="primary"
+      button2Text="Abonner på en bil"
+      button2Url="/"
+      button2Style="primary"
+      button3Text="Jeg vil vite mer"
+      button3Url="/"
+      button3Style="secondary"
       width="largePlus"
-    />
-
-    <CallToAction
-      heading="Som pilotbruker får du tilgang til imove og alle fordelene"
-      lede="Bli en av våre 25 pilotbrukere, og nyt fordelene av tilgang til bilen du ønsker når du trenger det. Bytt inn din gamle bil og selg den gjennom imove."
-      img="/img/road02.png"
-      primaryButtonText="Meld meg på"
-      primaryButtonUrl="/signup"
-      secondaryButtonText="Jeg vil vite mer"
-      secondaryButtonUrl="/newsletter"
     />
 
     <Features heading={data.featuresHeading} features={data.features} />

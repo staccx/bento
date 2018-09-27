@@ -1,9 +1,10 @@
-import { css } from "styled-components"
-import { Theme } from "@staccx/theme"
 import { BaseTheme } from "@staccx/base"
-import HeadingStyling from "./Theme.Headings"
+import { Theme } from "@staccx/theme"
+import reset from "./reset"
+import Button from "./Theme.Button"
+import Box from "./Theme.Box"
 
-const borderRadius = "0px"
+const borderRadius = "4px"
 const headerHeight = "70px"
 
 const targetSize = {
@@ -14,28 +15,24 @@ const targetSize = {
 const wrapper = {
   small: "420px",
   medium: "640px",
-  large: "1024px",
-  largePlus: "1280px",
+  large: "1040px",
   breakout: "640px"
 }
 
 const spacing = {
   grid: "7vh",
-  huge: "130px",
+  gridLarge: "7vh",
+  huge: "96px",
+  largePlus: "72px",
+  large: "48px",
   mediumPlus: "32px",
   medium: "24px",
   small: "12px",
-  tiny: "6px",
-  largePlusPlus: "96px",
-  largePlus: "72px",
-  large: "48px",
-  smallWhitespace: "48px",
-  mediumWhitespace: "96px",
-  largeWhitespace: "192px"
+  tiny: "6px"
 }
 const color = {
   bg: "#fcfcfc",
-  bgGray: "#f6f6f6",
+  bgGray: "#F9F7F7",
   primary: "#4FAF73",
   secondary: "#38454B",
   toneDown: "#8C8C8C",
@@ -56,18 +53,17 @@ const color = {
 }
 
 const font = {
-  h1: "36px",
-  h2: "54px",
+  h1: "64px",
+  h2: "36px",
   h3: "22px",
   h4: "18px",
   h5: "16px",
   h6: "14px",
-  base: "14px",
+  base: "16px",
   tiny: "12px",
-  large: "18px",
-  largePlus: "24px",
-  huge: "36px",
-  input: "16px"
+  input: "16px",
+  giga: "64px",
+  huge: "48px"
 }
 
 const webfonts = {
@@ -81,21 +77,26 @@ const fontFamily = {
   body: "Open Sans"
 }
 
-const theme = new Theme(BaseTheme, {
+const fontWeight = {
+  bold: "700",
+  normal: "400"
+}
+
+const t = new Theme(BaseTheme, {
   name: "imove",
-  font,
+  font: { ...font },
+  fontWeight,
   webfonts,
-  color,
-  spacing,
+  color: { ...color },
   wrapper,
   targetSize,
   borderRadius,
   headerHeight,
   fontFamily,
-  global: css`
-    h2 {
-      line-height: 1.2;
-    }
-  `
-}).add(HeadingStyling)
-export default theme
+  spacing,
+  global: reset
+})
+  .add(Button)
+  .add(Box)
+
+export default t

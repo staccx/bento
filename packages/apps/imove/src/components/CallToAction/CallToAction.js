@@ -3,17 +3,21 @@ import PropTypes from "prop-types"
 import LinkButton from "../LinkButton/LinkButton"
 import styled from "styled-components"
 import { color, spacing, font } from "@staccx/theme"
-import { Wrapper } from "@staccx/base"
-import { Heading } from "@staccx/base"
+import { Wrapper, Heading } from "@staccx/base"
 
 const CallToAction = ({
   heading,
   lede,
   img,
-  primaryButtonText,
-  primaryButtonUrl,
-  secondaryButtonText,
-  secondaryButtonUrl,
+  button1Text,
+  button1Url,
+  button1Style,
+  button2Text,
+  button2Url,
+  button2Style,
+  button3Text,
+  button3Url,
+  button3Style,
   width
 }) => (
   <Content bg={img}>
@@ -22,14 +26,19 @@ const CallToAction = ({
         <StyledHeading level={2}>{heading}</StyledHeading>
         <Lede>{lede}</Lede>
       </Container>
-      {primaryButtonText && (
-        <LinkButton variant="primary" uri={primaryButtonUrl}>
-          {primaryButtonText}
+      {button1Text && (
+        <LinkButton variant={button1Style} uri={button1Url}>
+          {button1Text}
         </LinkButton>
       )}
-      {secondaryButtonText && (
-        <LinkButton variant="secondary" uri={secondaryButtonUrl}>
-          {secondaryButtonText}
+      {button2Text && (
+        <LinkButton variant={button2Style} uri={button2Url}>
+          {button2Text}
+        </LinkButton>
+      )}
+      {button3Text && (
+        <LinkButton variant={button3Style} uri={button3Url}>
+          {button3Text}
         </LinkButton>
       )}
     </Wrapper>
@@ -37,12 +46,12 @@ const CallToAction = ({
 )
 
 const Content = styled.div`
-  background-color: ${color("secondary")};
+  background-color: ${color("bgGray")};
   background-image: ${p => p.bg && `url(${p.bg})`};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
-  color: ${color("white")};
+  color: ${color("secondary")};
   padding: ${spacing.huge} 0;
 `
 
