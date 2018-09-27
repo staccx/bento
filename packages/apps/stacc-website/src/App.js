@@ -9,7 +9,8 @@ import createHistory from "history/createBrowserHistory"
 import theme from "./theme/Theme"
 
 import { Footer, Header } from "./components/_codeSplitting"
-import { Home, Case, Page, Jobs, Overview } from "./pages/_codeSplitting"
+import { Home, Case, Page } from "./pages/_codeSplitting"
+import FourOFour from "./pages/404"
 import PreviewLive from "./pages/PreviewLive"
 import * as typeformEmbed from "@typeform/embed/lib/api"
 import ScrollToTop from "./components/ScrollToTop"
@@ -109,8 +110,12 @@ class App extends Component {
                             exact
                             render={() => <Home change={val.change} />}
                           />
-                          <Route path="/careers" component={Jobs} />
-                          <Route path="/overview" component={Overview} />
+
+                          <Route
+                            path="/404"
+                            exact
+                            render={() => <FourOFour />}
+                          />
                         </Switch>
                         <React.Fragment>
                           <SanityList type={"client"} filter={`hide != true`}>

@@ -7,6 +7,7 @@ import PostalCodeInput from "./components/Forms/Input/PostalCodeInput/PostalCode
 import NationalIdInput from "./components/Forms/Input/NationalIdInput/NationalIdInput"
 import CompanyInput from "./components/Forms/Input/CompanyInput/CompanyInput"
 import FileInput from "./components/Forms/Input/FileInput/FileInput"
+import EmailInput from "./components/Forms/Input/EmailInput/EmailInput"
 import Label from "./components/Forms/Label/Label"
 import Legend from "./components/Forms/Legend/Legend"
 import CheckBox from "./components/Forms/CheckBox/CheckBox"
@@ -133,6 +134,7 @@ export {
   CurrencyInput,
   Divider,
   Donut,
+  EmailInput,
   Expand,
   ExpandListItem,
   Fetch,

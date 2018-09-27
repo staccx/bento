@@ -4,6 +4,7 @@ import reset from "./reset"
 import Button from "./Theme.Button"
 import Box from "./Theme.Box"
 import HeadingStyling from "./Theme.Headings"
+import { TextStyling } from "./Theme.Texts"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -53,7 +54,8 @@ const color = {
   disabled: "#BABABA",
   warning: "#c54059",
   black: "#000",
-  subtleHover: "#F7F7FF"
+  subtleHover: "#F7F7FF",
+  darkBlue: "#124F5E"
 }
 
 const font = {
@@ -104,5 +106,6 @@ const t = new Theme(BaseTheme, {
   .add(Button)
   .add(Box)
   .add(HeadingStyling)
+  .add(TextStyling)
 
 export default t
