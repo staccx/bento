@@ -20,7 +20,10 @@ const headerHeight = "82px"
 
 const Outer = styled.div`
   position: relative;
-  margin-top: calc(-${spacing("grid")} - ${headerHeight});
+
+  &:first-child {
+    margin-top: calc(-${spacing("grid")} - ${headerHeight});
+  }
 `
 
 const StyledHeading = styled(Heading)`
