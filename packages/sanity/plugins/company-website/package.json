@@ -14,15 +14,15 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/client": "^0.132.10",
-    "@sanity/base": "^0.132.12",
-    "@sanity/components": "^0.132.12",
-    "@sanity/core": "^0.132.10",
-    "@sanity/default-layout": "^0.132.12",
-    "@sanity/default-login": "^0.132.10",
-    "@sanity/desk-tool": "^0.132.12",
-    "@sanity/google-maps-input": "^0.132.12",
-    "@sanity/production-preview": "^0.132.5",
+    "@sanity/base": "^0.134.0",
+    "@sanity/client": "^0.134.0",
+    "@sanity/components": "^0.134.0",
+    "@sanity/core": "^0.134.0",
+    "@sanity/default-layout": "^0.134.0",
+    "@sanity/default-login": "^0.134.0",
+    "@sanity/desk-tool": "^0.134.0",
+    "@sanity/google-maps-input": "^0.134.0",
+    "@sanity/production-preview": "^0.134.0",
     "@staccx/base": "^7.7.4",
     "airtable": "^0.5.6",
     "image-downloader": "^3.4.1",
@@ -30,5 +30,8 @@
     "react": "^16.3.2",
     "sanity-query-helper": "^0.3.0",
     "shortid": "^2.2.13"
+  },
+  "devDependencies": {
+    "react-icons": "^3.1.0"
   }
 }

@@ -5,6 +5,10 @@
   },
   "parts": [
     {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./structure.js"
+    },
+    {
       "implements": "part:@sanity/base/schema-type",
       "path": "page.js"
     },
