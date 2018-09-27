@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import PriceBlob from "./Pricing.PriceBlob"
 import styled from "styled-components"
 import { color, font, spacing } from "@staccx/theme"
@@ -45,5 +46,9 @@ const CarProperty = styled.li`
   background-position: left center;
   }
 `
+
+PricingCard.propTypes = {
+  car: PropTypes.object
+}
 
 export default PricingCard
