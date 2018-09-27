@@ -8,7 +8,7 @@
     "styleguide": "cd packages/base && styleguidist server",
     "start": "cd packages/internal/styleguide && yarn start",
     "soy": "node packages/internal/soy",
-    "release": "lerna publish --conventional-commits --changelog-preset angular-bitbucket "
+    "release": "lerna publish --no-verify-access --no-verify-registry --conventional-commits --changelog-preset angular-bitbucket"
   },
   "repository": {
     "type": "git",

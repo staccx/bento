@@ -27,16 +27,23 @@ helper
   .send()
   .then(async people => {
     await prepare()
+    counter = 0
     console.log("Preparing cards")
     bar1.start(people.length, 0)
 
     const cards = await getCards(people)
     bar1.stop()
     console.log("Cards created.")
+    counter = 0
     bar1.start(cards.length, 0)
     console.log("Saving cards...")
     cards.forEach(({ card, filename }, index) => {
-      card.saveToFile(`./public/vcards/${filename}.vcf`)
+      // card.saveToFile(`./public/vcards/${filename}.vcf`
+      const contents = card.getFormattedString().toString()
+      const removed = contents.replace("VALUE=uri;", "").replace("tel:", "")
+      console.log(contents)
+      console.log(removed)
+      fs.writeFileSync(`./public/vcards/${filename}.vcf`, removed)
       bar1.update(index)
       // console.log(card.photo)
     })
@@ -54,7 +61,7 @@ const getCards = async people => {
 }
 const createCard = async person => {
   let card = vCard()
-
+  card.version = "4.0"
   const name = person.name.split(" ")
 
   card.firstName = name[0]
@@ -69,8 +76,8 @@ const createCard = async person => {
 
   const imageUrl = imageHelper
     .image(person.image)
-    .width(1024)
-    .format("png")
+    .width(300)
+    .format("jpg")
     .url()
   if (imageUrl) {
     try {
@@ -81,6 +88,9 @@ const createCard = async person => {
       card.photo.embedFromFile(img.filename)
 
       fs.unlink(img.filename, () => null)
+      // card.photo.url = imageUrl
+      // card.photo.mediaType = "JPG"
+      // card.photo.base64 = false
     } catch (ex) {
       console.log(ex.message)
     }
@@ -96,8 +106,10 @@ const createCard = async person => {
 
   if (person.socialLinks) {
     person.socialLinks.forEach(socialLink => {
-      card.socialUrls[socialLink.type] = socialLink.url
+      card.socialUrls[socialLink.type] = decodeURI(socialLink.url)
     })
+
+    console.log(card.socialUrls)
   }
   bar1.update(counter++)
   return {
@@ -124,7 +136,6 @@ const prepare = () => {
 
         bar1.stop()
         console.log("Done deleting")
-        counter = 0
         resolve()
       })
     } else {

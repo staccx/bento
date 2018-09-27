@@ -135,14 +135,6 @@ const HeroHeading = styled(Heading)`
   }
 
   display: block;
-
-`
-
-const Bla = styled.span`
-  display: block;
-  font-smoothing: -we;
-  ANGLE_instanced_arrays
-
 `
 
 const Lede = styled.p`

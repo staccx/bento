@@ -1,0 +1,43 @@
+{
+  "name": "@staccx/imove-theme",
+  "version": "7.7.4",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "license": "UNLICENSED",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build:app": "react-scripts build",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject",
+    "test:watch": "jest --env=jsdom --watch",
+    "build": "yarn prettify && rollup -c",
+    "start:module": "rollup -c -w",
+    "prepublish": "yarn test && yarn build",
+    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
+  },
+  "dependencies": {
+    "@staccx/base": "^7.7.4",
+    "@staccx/theme": "^7.7.4",
+    "polished": "^1.9.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {
+    "@staccx/rollup-config": "^7.7.4",
+    "jest": "^23.5.0",
+    "prettier": "^1.14.2",
+    "react-scripts": "^1.1.4",
+    "rollup": "^0.65.0"
+  },
+  "peerDependencies": {
+    "styled-components": "^3.3.3"
+  }
+}

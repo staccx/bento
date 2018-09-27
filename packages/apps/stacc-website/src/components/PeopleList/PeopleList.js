@@ -39,6 +39,7 @@ const PeopleList = () => {
                           linkedin={person.linkedin}
                           twitter={person.twitter}
                           link={person.link}
+                          alias={person.alias}
                         />
                       ))}
                   </ul>
