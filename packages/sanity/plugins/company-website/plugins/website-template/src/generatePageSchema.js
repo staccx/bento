@@ -41,7 +41,9 @@ export default ({
             .toLowerCase()
             .replace(/\s/g, "-")
             .slice(0, 200)}`
-      }
+      },
+      validation: Rule =>
+        Rule.required("You will now this sh$t up if you don't add a slug")
     },
     ...(additionalFields || []),
     ...(allowSubpages
