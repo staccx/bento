@@ -375,6 +375,7 @@ const SubMenuLink = styled(NavLink)`
 `
 
 const Icon = styled(IconArrowRight)`
+  pointer-events: none;
   display: inline-block;
   vertical-align: middle;
   width: 14px;
