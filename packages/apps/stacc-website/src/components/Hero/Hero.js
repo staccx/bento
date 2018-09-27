@@ -29,7 +29,7 @@ const Hero = ({ heading, lede }) => (
 const triangleHeight = "18vh"
 const triangleHeightLarge = "36vh"
 const triangleHeightHuge = "45vh"
-const HeaderHeight = "88px"
+const HeaderHeight = "82px"
 
 const Container = styled.div`
   position: relative;
