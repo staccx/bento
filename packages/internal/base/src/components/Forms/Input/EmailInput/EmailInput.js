@@ -1,25 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
-import {
-  spacing,
-  themify,
-  ThemeComponent,
-  color,
-  borderRadius,
-  themeProps
-} from "@staccx/theme"
+import styled from "styled-components"
+import { color } from "@staccx/theme"
 
 import Input, { inputCss } from "../Input"
 
 const tProps = {}
 
-const AT_CHARACTER = 64
-const DOT_CHARACTER = 46
-
-const validateInput = value => false
-
-const contains = (value, char) => value.split("").indexOf(char) !== -1
 const getX = value => {
   const temp = document.getElementById("tempLength")
   if (!temp) {
@@ -94,7 +81,7 @@ const AtSymbol = styled.div`
   width: auto;
   color: ${({ isValid }) => (isValid ? color.positive : color.negative)};
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: ${({ x }) => x}px;
   pointer-events: none;
   z-index: 1;

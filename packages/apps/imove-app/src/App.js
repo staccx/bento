@@ -3,6 +3,7 @@ import { Wrapper } from "@staccx/base"
 import { ThemeProxyProvider } from "@staccx/theme"
 import { BrowserRouter as Router } from "react-router-dom"
 import { imoveTheme } from "@staccx/imove-theme"
+import Onboarding from "./components/Onboarding/Onboarding"
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
       <ThemeProxyProvider theme={imoveTheme}>
         <Router>
           <Wrapper>
-            <div>Fresh app smell...</div>
+            <Onboarding />
           </Wrapper>
         </Router>
       </ThemeProxyProvider>
