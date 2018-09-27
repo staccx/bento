@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing, font } from "@staccx/theme"
+import { spacing, font } from "@staccx/theme"
 import { Wrapper, Heading } from "@staccx/base"
 import SectionHeading from "../SectionHeading/SectionHeading"
 import PricingCard from "./Pricing.PricingCard"
