@@ -11,8 +11,8 @@ const Pricing = ({ heading, cars }) => (
       <SectionHeading text="Noen priseksempler" />
       <Heading level={2}>{heading}</Heading>
       <List>
-        {cars.map(car => (
-          <PricingCard car={car} />
+        {cars.map((car, index) => (
+          <PricingCard car={car} key={index} />
         ))}
       </List>
     </Wrapper>
