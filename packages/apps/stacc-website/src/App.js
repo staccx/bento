@@ -172,7 +172,7 @@ class App extends Component {
                                 if (page.subpages && page.subpages.length) {
                                   const baseRoute = `${page.path.current}`
 
-                                  const subPages = (
+                                  return (
                                     <React.Fragment>
                                       <Route
                                         path={`${baseRoute}/:subpage`}
@@ -195,8 +195,6 @@ class App extends Component {
                                       />
                                     </React.Fragment>
                                   )
-
-                                  return <div key={page._id}>{subPages}</div>
                                 }
 
                                 if (subpages.some(s => page._id === s._key)) {
