@@ -162,18 +162,6 @@ const SubMenuBounceIn = keyframes`
   }
 `
 
-const SubMenuArrowBounceIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translate(-50%, calc(100% - 2px));
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(-50%, 100%);
-  }
-`
-
 const Navigation = styled.nav`
   display: ${p => (p.isOpen ? "flex" : "none")};
   align-items: stretch;
