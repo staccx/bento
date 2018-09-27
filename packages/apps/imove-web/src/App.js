@@ -1,14 +1,14 @@
 import React, { Component } from "react"
 import { ThemeProxyProvider } from "@staccx/theme"
 import { BrowserRouter as Router } from "react-router-dom"
-import theme from "./theme/Theme"
+import { imoveTheme } from "@staccx/imove-theme"
 import Header from "./components/Header/Header"
 import Home from "./pages/Home"
 
 class App extends Component {
   render() {
     return (
-      <ThemeProxyProvider theme={theme}>
+      <ThemeProxyProvider theme={imoveTheme}>
         <Router>
           <div>
             <Header />

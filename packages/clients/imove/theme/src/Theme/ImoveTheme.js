@@ -3,6 +3,7 @@ import { Theme } from "@staccx/theme"
 import reset from "./reset"
 import Button from "./Theme.Button"
 import Box from "./Theme.Box"
+import HeadingStyling from "./Theme.Headings"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -28,7 +29,10 @@ const spacing = {
   mediumPlus: "32px",
   medium: "24px",
   small: "12px",
-  tiny: "6px"
+  tiny: "6px",
+  smallWhitespace: "48px",
+  mediumWhitespace: "96px",
+  largeWhitespace: "192px"
 }
 const color = {
   bg: "#fcfcfc",
@@ -53,17 +57,18 @@ const color = {
 }
 
 const font = {
-  h1: "64px",
-  h2: "36px",
+  h1: "36px",
+  h2: "54px",
   h3: "22px",
   h4: "18px",
   h5: "16px",
   h6: "14px",
-  base: "16px",
+  base: "14px",
   tiny: "12px",
-  input: "16px",
-  giga: "64px",
-  huge: "48px"
+  large: "18px",
+  largePlus: "24px",
+  huge: "36px",
+  input: "16px"
 }
 
 const webfonts = {
@@ -78,7 +83,7 @@ const fontFamily = {
 }
 
 const fontWeight = {
-  bold: "700",
+  bold: "800",
   normal: "400"
 }
 
@@ -98,5 +103,6 @@ const t = new Theme(BaseTheme, {
 })
   .add(Button)
   .add(Box)
+  .add(HeadingStyling)
 
 export default t

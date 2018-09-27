@@ -1,5 +1,5 @@
 {
-  "name": "@staccx/imove",
+  "name": "@staccx/imove-web",
   "version": "7.7.4",
   "private": true,
   "main": "dist/index.js",
