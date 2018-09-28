@@ -1,4 +1,5 @@
 import React from "react"
+import { withRouter } from "react-router"
 import {
   Layout,
   Button,
@@ -10,8 +11,9 @@ import {
   PhoneInput
 } from "@staccx/base"
 import profile from "../data/profile"
+import { backwards } from "../components/transitions/transitions"
 
-const Sell = () => {
+const Sell = ({ history }) => {
   const labelWidth = 120
   return (
     <Layout>
@@ -37,8 +39,24 @@ const Sell = () => {
         <Text variant="legalese">Valgfritt</Text>
       </div>
       <ItemGroup>
-        <Button onClick={() => null}>Send</Button>
-        <Button onClick={() => null} variant="secondary">
+        <Button
+          onClick={() =>
+            history.push({
+              pathname: "/sell/confirmation"
+            })
+          }
+        >
+          Send
+        </Button>
+        <Button
+          onClick={() =>
+            history.push({
+              pathname: "/",
+              state: backwards
+            })
+          }
+          variant="secondary"
+        >
           Tilbake
         </Button>
       </ItemGroup>
@@ -46,4 +64,4 @@ const Sell = () => {
   )
 }
 
-export default Sell
+export default withRouter(Sell)
