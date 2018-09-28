@@ -8,9 +8,9 @@ import { Heading } from "@staccx/base"
 const PricingCard = ({ car }) => (
   <Content>
     <img src={car.img} alt={car.name} />
-    <Heading level={3} variant="primary">
+    <StyledHeading level={3} variant="secondary">
       {car.name}
-    </Heading>
+    </StyledHeading>
     <CarProperties>
       <CarProperty icon="type">{car.type}</CarProperty>
       <CarProperty icon="seats">{car.seats}</CarProperty>
@@ -21,6 +21,11 @@ const PricingCard = ({ car }) => (
   </Content>
 )
 
+const StyledHeading = styled(Heading)`
+  font-size: 32px;
+  margin-bottom: ${spacing("medium")};
+`
+
 const Content = styled.div`
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.16);
   border-radius: 10px;
@@ -30,8 +35,10 @@ const Content = styled.div`
 `
 
 const CarProperties = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-row-gap: ${spacing.tiny};
+  grid-column-gap: 0;
+  grid-template-columns: 1fr 1fr;
   font-size: ${font("large")};
   text-align: left;
   color: ${color("gray")};
@@ -39,7 +46,7 @@ const CarProperties = styled.ul`
 
 const CarProperty = styled.li`
   min-width: 50%;
-  margin: ${spacing("small")} 0;
+  margin: 0;
   padding-left: calc(1em + 10px);
   background-image: url(./img/icons/icon-car-${props => props.icon}.svg);
   background-repeat: no-repeat;

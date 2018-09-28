@@ -5,6 +5,7 @@ import Car from "../components/Hero/Hero.Car"
 import CallToAction from "../components/CallToAction/CallToAction"
 import Features from "../components/Features/Features"
 import Pricing from "../components/Pricing/Pricing"
+import Advantages from "../components/Advantages/Advantages"
 import Footer from "../components/Footer/Footer"
 import Column from "../components/Footer/Footer.Column"
 
@@ -50,6 +51,8 @@ const Home = () => (
     <Features heading={data.featuresHeading} features={data.features} />
 
     <Pricing heading={data.pricingHeading} cars={data.pricingCars} />
+
+    <Advantages />
 
     <Footer>
       <Column heading="Finn oss">

@@ -28,12 +28,16 @@ const Content = styled.div`
   color: ${color("white")};
   font-weight: normal;
   font-size: ${font("large")};
+  margin: 60px auto 0;
 `
 
 const Inner = styled.div``
 
 const Price = styled.div`
+  font-family: "Sofia Pro";
   font-weight: bold;
+  line-height: 1;
+  margin-top: 0.4em;
 `
 
 export default PriceBlob
