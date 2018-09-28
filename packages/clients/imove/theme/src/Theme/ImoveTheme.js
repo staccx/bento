@@ -5,6 +5,7 @@ import Button from "./Theme.Button"
 import Box from "./Theme.Box"
 import HeadingStyling from "./Theme.Headings"
 import { TextStyling } from "./Theme.Texts"
+import { LogoStyle } from "./Logo"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -107,5 +108,6 @@ const t = new Theme(BaseTheme, {
   .add(Box)
   .add(HeadingStyling)
   .add(TextStyling)
+  .add(LogoStyle)
 
 export default t
