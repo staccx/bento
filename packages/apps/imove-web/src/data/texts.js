@@ -70,5 +70,33 @@ export default {
       doors: "5",
       range: "528km NEDC"
     }
+  ],
+
+  advantagesHeading: "imove er for deg som ikke ønsker å tenke på",
+  advantages: [
+    {
+      advantage: "Service og reparasjon"
+    },
+    {
+      advantage: "Dekkskift og kjøp av nye dekk"
+    },
+    {
+      advantage: "Forsikring"
+    },
+    {
+      advantage: "EU-kontroll og offentlige avgifter"
+    },
+    {
+      advantage: "Verditapet i bilen"
+    },
+    {
+      advantage: "Skjulte kostnader"
+    },
+    {
+      advantage: "Ny teknologi"
+    },
+    {
+      advantage: "Nye bilavgifter"
+    }
   ]
 }
