@@ -4,15 +4,19 @@ import { ThemeProxyProvider } from "@staccx/theme"
 import { BrowserRouter as Router } from "react-router-dom"
 import { imoveTheme } from "@staccx/imove-theme"
 import Onboarding from "./components/Onboarding/Onboarding"
+import Header from "./components/Header"
 
 class App extends Component {
   render() {
     return (
       <ThemeProxyProvider theme={imoveTheme}>
         <Router>
-          <Wrapper>
-            <Onboarding />
-          </Wrapper>
+          <div>
+            <Header />
+            <Wrapper size="small">
+              <Onboarding />
+            </Wrapper>
+          </div>
         </Router>
       </ThemeProxyProvider>
     )
