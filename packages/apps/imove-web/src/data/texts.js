@@ -46,7 +46,7 @@ export default {
     {
       img: "/img/pricing-vw-e-up2x.png",
       name: "VW e-up",
-      price: 3490,
+      price: "3 490",
       type: "Elbil",
       seats: "4",
       doors: "5",
@@ -55,7 +55,7 @@ export default {
     {
       img: "/img/pricing-kia-soul2x.png",
       name: "Kia Soul",
-      price: 5490,
+      price: "5 490",
       type: "Elbil",
       seats: "4",
       doors: "5",
@@ -64,7 +64,7 @@ export default {
     {
       img: "/img/pricing-tesla-s-85d2x.png",
       name: "Tesla Model S 85D",
-      price: 9990,
+      price: "9 990",
       type: "Elbil",
       seats: "4",
       doors: "5",
