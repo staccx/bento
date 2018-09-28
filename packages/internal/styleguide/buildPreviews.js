@@ -54,6 +54,7 @@ glob("../../**/*.preview.js", {}, (error, files) => {
       const name = basename.replace(".preview.js", "")
       const filename = path.resolve(__dirname, file.replace(".preview", ""))
       const data = fs.readFileSync(filename, "utf8")
+      console.log("running react-docgen on", filename)
       const parsed = reactDocs.parse(data)
 
       source[name] = data
@@ -80,8 +81,8 @@ glob("../../**/*.preview.js", {}, (error, files) => {
             return `${message.source} has an issue`
           }
         })
-        .then(bundle => {
-          return bundle
+        .then(bundle =>
+          bundle
             .write({
               file: `./src/generated/components.js`,
               format: "cjs"
@@ -95,7 +96,7 @@ glob("../../**/*.preview.js", {}, (error, files) => {
               fs.writeSync(fd, data, 0, data.length, insert.length)
               fs.close(fd)
             })
-        })
+        )
         .catch(console.error)
     })
 })
