@@ -76,11 +76,14 @@ const font = {
 const webfonts = {
   google: {
     families: ["Mukta:800", "Open Sans:400"]
+  },
+  typekit: {
+    id: "ykt5nel"
   }
 }
 
 const fontFamily = {
-  heading: "Mukta",
+  heading: "Sofia Pro",
   body: "Open Sans"
 }
 
