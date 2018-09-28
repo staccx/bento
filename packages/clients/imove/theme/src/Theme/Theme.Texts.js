@@ -11,6 +11,10 @@ export const TextStyling = registerStyle(
       display: block;
       font-size: ${font.normal};
       color: ${color.secondary};
+    `,
+    legalese: css`
+      font-size: ${font.tiny};
+      color: ${color.wcag};
     `
   },
   Text.themeProps.text
