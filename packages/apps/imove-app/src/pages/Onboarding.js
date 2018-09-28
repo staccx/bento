@@ -1,9 +1,9 @@
 import React from "react"
 import StepWizard from "react-step-wizard"
-import OnboardingWrapper from "./OnboardingWrapper"
-import Household from "../Household"
-import Contact from "../Contact"
-import Included from "../Included"
+import OnboardingWrapper from "../components/Onboarding/OnboardingWrapper"
+import Household from "../components/Household"
+import Contact from "../components/Contact"
+import Included from "../components/Included"
 
 const Onboarding = () => (
   <StepWizard>
