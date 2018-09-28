@@ -6,7 +6,7 @@ import Feature from "./Features.Feature"
 
 const Features = ({ heading, features }) => (
   <Content>
-    <Wrapper size="full">
+    <Wrapper size="large">
       <Layout rowGap="huge">
         <Heading level={2}>{heading}</Heading>
         <List>
@@ -35,9 +35,10 @@ const StyledHeading = styled(Heading)`
 `
 
 const List = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-row-gap: ${spacing.large};
+  grid-column-gap: ${spacing.huge};
+  grid-template-columns: 1fr 1fr;
 `
 
 export default Features

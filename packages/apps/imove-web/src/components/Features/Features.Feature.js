@@ -12,8 +12,6 @@ const Feature = ({ heading, text }) => (
 
 const Content = styled.li`
   font-size: ${font("large")};
-  width: 50%;
-  padding: 0 ${spacing("largePlusPlus")} ${spacing("largePlus")};
 `
 
 const Heading = styled.h3`
