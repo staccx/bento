@@ -1,5 +1,4 @@
 import React from "react"
-import { withRouter } from "react-router"
 import {
   Layout,
   Button,
@@ -64,4 +63,4 @@ const Sell = ({ history }) => {
   )
 }
 
-export default withRouter(Sell)
+export default Sell

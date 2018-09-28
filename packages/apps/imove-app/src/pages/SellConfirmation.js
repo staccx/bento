@@ -1,6 +1,5 @@
 import React from "react"
 import { Layout, Button, Heading, Text } from "@staccx/base"
-import { withRouter } from "react-router"
 
 const SellConfirmation = ({ history }) => {
   return (
@@ -21,4 +20,4 @@ const SellConfirmation = ({ history }) => {
   )
 }
 
-export default withRouter(SellConfirmation)
+export default SellConfirmation
