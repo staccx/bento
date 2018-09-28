@@ -6,7 +6,7 @@ import Feature from "./Features.Feature"
 
 const Features = ({ heading, features }) => (
   <Content>
-    <Wrapper size="large">
+    <Wrapper size="largePlus">
       <Layout rowGap="huge">
         <Heading level={2}>{heading}</Heading>
         <List>
