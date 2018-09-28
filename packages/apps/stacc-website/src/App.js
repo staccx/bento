@@ -178,7 +178,7 @@ class App extends Component {
                                   const baseRoute = `${page.path.current}`
 
                                   return (
-                                    <React.Fragment>
+                                    <React.Fragment key={page._id}>
                                       <Route
                                         path={`${baseRoute}/:subpage`}
                                         render={({ match }) => (

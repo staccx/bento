@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import PriceBlob from "./Pricing.PriceBlob"
 import styled from "styled-components"
 import { color, font, spacing } from "@staccx/theme"
@@ -7,9 +8,9 @@ import { Heading } from "@staccx/base"
 const PricingCard = ({ car }) => (
   <Content>
     <img src={car.img} alt={car.name} />
-    <Heading level={3} variant="primary">
+    <StyledHeading level={3} variant="secondary">
       {car.name}
-    </Heading>
+    </StyledHeading>
     <CarProperties>
       <CarProperty icon="type">{car.type}</CarProperty>
       <CarProperty icon="seats">{car.seats}</CarProperty>
@@ -19,6 +20,11 @@ const PricingCard = ({ car }) => (
     <PriceBlob price={car.price} />
   </Content>
 )
+
+const StyledHeading = styled(Heading)`
+  font-size: 32px;
+  margin-bottom: ${spacing("medium")};
+`
 
 const Content = styled.div`
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.16);
@@ -45,5 +51,9 @@ const CarProperty = styled.li`
   background-position: left center;
   }
 `
+
+PricingCard.propTypes = {
+  car: PropTypes.object
+}
 
 export default PricingCard

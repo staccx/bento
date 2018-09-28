@@ -5,6 +5,20 @@ import Button from "./Theme.Button"
 import Box from "./Theme.Box"
 import HeadingStyling from "./Theme.Headings"
 import { TextStyling } from "./Theme.Texts"
+import { LogoStyle } from "./Logo"
+import {
+  RadioPillItemHover,
+  RadioPillItemChecked,
+  RadioPillLabel,
+  RadioPillContainer
+} from "./Theme.Radiopill"
+import {
+  InputStyling,
+  LabelStyling,
+  LabelInputStyling,
+  PostalCodeInputStyling,
+  PostalCodeInputLocationStyling
+} from "./Theme.Inputs"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -39,7 +53,7 @@ const color = {
   bg: "#fcfcfc",
   bgGray: "#F9F7F7",
   primary: "#4FAF73",
-  secondary: "#38454B",
+  secondary: "#124F5E",
   toneDown: "#8C8C8C",
   gray: "#767676",
   text: "#2b2b2b",
@@ -75,17 +89,20 @@ const font = {
 
 const webfonts = {
   google: {
-    families: ["Mukta:800", "Open Sans:400"]
+    families: ["Open Sans:400"]
+  },
+  typekit: {
+    id: "ykt5nel"
   }
 }
 
 const fontFamily = {
-  heading: "Mukta",
+  heading: "sofia-pro",
   body: "Open Sans"
 }
 
 const fontWeight = {
-  bold: "800",
+  bold: "700",
   normal: "400"
 }
 
@@ -107,5 +124,15 @@ const t = new Theme(BaseTheme, {
   .add(Box)
   .add(HeadingStyling)
   .add(TextStyling)
+  .add(LogoStyle)
+  .add(RadioPillItemHover)
+  .add(RadioPillItemChecked)
+  .add(RadioPillLabel)
+  .add(RadioPillContainer)
+  .add(InputStyling)
+  .add(LabelStyling)
+  .add(PostalCodeInputStyling)
+  .add(PostalCodeInputLocationStyling)
+  .add(LabelInputStyling)
 
 export default t

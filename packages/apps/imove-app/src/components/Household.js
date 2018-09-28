@@ -6,7 +6,7 @@ import householdPersons from "../data/householdPersons"
 const Household = ({ numberPersons }) => (
   <Layout>
     <Heading level="1">Hvor mange er dere i husstanden?</Heading>
-    <RadioPill onChange={numberPersons} group={"persons"}>
+    <RadioPill onChange={numberPersons} group={"persons"} full>
       {householdPersons.map(listItem => (
         <RadioPillItem
           key={listItem.myUniqueId}
@@ -17,7 +17,7 @@ const Household = ({ numberPersons }) => (
         </RadioPillItem>
       ))}
     </RadioPill>
-    <Input label="Alder" placeholder="0" />
+    <Input labelWidth="48" label="Alder" placeholder="0" />
   </Layout>
 )
 
