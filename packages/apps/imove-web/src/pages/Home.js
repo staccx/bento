@@ -52,7 +52,7 @@ const Home = () => (
 
     <Pricing heading={data.pricingHeading} cars={data.pricingCars} />
 
-    <Advantages />
+    <Advantages heading={data.advantagesHeading} advantages={data.advantages} />
 
     <Footer>
       <Column heading="Finn oss">
