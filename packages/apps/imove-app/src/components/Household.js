@@ -17,7 +17,7 @@ const Household = ({ numberPersons }) => (
         </RadioPillItem>
       ))}
     </RadioPill>
-    <Input label="Alder" placeholder="0" />
+    <Input labelWidth="48" label="Alder" placeholder="0" />
   </Layout>
 )
 
