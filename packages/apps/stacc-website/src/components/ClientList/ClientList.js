@@ -7,7 +7,7 @@ import { ClientPreview } from "../_codeSplitting"
 
 const ClientList = props => {
   return (
-    <SanityList type={"client"} filter={"hide !== true"}>
+    <SanityList type={"client"} filter={"hide != true"}>
       {({ result }) => {
         if (!result) {
           return <Loading />

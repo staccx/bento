@@ -79,7 +79,7 @@ const AtSymbol = styled.div`
   ${inputCss};
   border: 0;
   width: auto;
-  color: ${({ isValid }) => (isValid ? color.positive : color.negative)};
+  color: ${color.text};
   position: absolute;
   bottom: 0;
   left: ${({ x }) => x}px;

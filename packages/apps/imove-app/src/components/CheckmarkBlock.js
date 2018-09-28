@@ -18,7 +18,7 @@ const Checkmark = () => (
 )
 
 const CheckMarkBlock = ({ title, children }) => (
-  <Flag img={<Checkmark />} tiny top>
+  <Flag img={<Checkmark />} small top>
     <Heading level="3" variant="checkMarkBlockHeading">
       {title}
     </Heading>

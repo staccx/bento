@@ -4,7 +4,8 @@ import {
   VARIANT_DEFAULT,
   font,
   color,
-  fontWeight
+  fontWeight,
+  fontFamily
 } from "@staccx/theme"
 import { RadioPillItem, RadioPill } from "@staccx/base"
 import { opacity } from "@staccx/color"
@@ -54,6 +55,7 @@ export const RadioPillLabel = registerStyle(
       font-weight: ${fontWeight.bold};
       border-width: 0 !important;
       color: ${p => opacity(color("primary")(p), 0.5)};
+      font-family: ${fontFamily.heading};
     `
   },
   RadioPillItem.themeProps.label

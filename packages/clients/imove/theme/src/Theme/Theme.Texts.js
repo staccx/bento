@@ -10,7 +10,7 @@ export const TextStyling = registerStyle(
     checkMarkBlock: css`
       display: block;
       font-size: ${font.normal};
-      color: ${color.wcag};
+      color: ${color.secondary};
     `
   },
   Text.themeProps.text
