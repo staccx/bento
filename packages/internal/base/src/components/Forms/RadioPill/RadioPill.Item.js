@@ -100,6 +100,7 @@ const Radio = styled.input`
       background-color: ${color.primary};
       color: ${color.white};
       z-index: 1;
+      ${themify(RadioPillItem.themeProps.checked)};
     }
 
     &:first-child ~ ${Label} {
@@ -109,7 +110,6 @@ const Radio = styled.input`
     &:nth-child(2) ~ ${Label} {
       border-color: ${color.primary};
     }
-    ${themify(RadioPillItem.themeProps.checked)};
   }
 `
 
