@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { Button, Layout, ItemGroup } from "@staccx/base"
+import StepIndicator from "./StepIndicator"
 
 class OnboardingWrapper extends Component {
   render() {
@@ -13,9 +14,10 @@ class OnboardingWrapper extends Component {
     } = this.props
     return (
       <Layout>
-        <h2>Step {this.props.currentStep}</h2>
-        <p>Total Steps: {this.props.totalSteps}</p>
-        <p>Is Active: {this.props.isActive}</p>
+        <StepIndicator
+          totalSteps={this.props.totalSteps}
+          currentStep={this.props.currentStep}
+        />
         {children}
         <ItemGroup>
           <Button onClick={nextStep}>{nextStepText}</Button>

@@ -11,10 +11,10 @@ import { Heading } from "@staccx/base"
 export default registerStyle(
   {
     [VARIANT_DEFAULT]: css`
-      color: ${color("primary")};
+      color: ${color("secondary")};
     `,
     secondary: css`
-      color: ${color("secondary")};
+      color: ${color("primary")};
     `,
     checkMarkBlockHeading: css`
       color: ${color("darkBlue")};

@@ -5,6 +5,13 @@ import Button from "./Theme.Button"
 import Box from "./Theme.Box"
 import HeadingStyling from "./Theme.Headings"
 import { TextStyling } from "./Theme.Texts"
+import { LogoStyle } from "./Logo"
+import {
+  RadioPillItemHover,
+  RadioPillItemChecked,
+  RadioPillLabel,
+  RadioPillContainer
+} from "./Theme.Radiopill"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -75,12 +82,15 @@ const font = {
 
 const webfonts = {
   google: {
-    families: ["Mukta:800", "Open Sans:400"]
+    families: ["Open Sans:400"]
+  },
+  typekit: {
+    id: "ykt5nel"
   }
 }
 
 const fontFamily = {
-  heading: "Mukta",
+  heading: "Sofia Pro",
   body: "Open Sans"
 }
 
@@ -107,5 +117,10 @@ const t = new Theme(BaseTheme, {
   .add(Box)
   .add(HeadingStyling)
   .add(TextStyling)
+  .add(LogoStyle)
+  .add(RadioPillItemHover)
+  .add(RadioPillItemChecked)
+  .add(RadioPillLabel)
+  .add(RadioPillContainer)
 
 export default t
