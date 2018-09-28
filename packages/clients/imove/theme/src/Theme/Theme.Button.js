@@ -5,11 +5,20 @@ import { Button } from "@staccx/base"
 export default registerStyle(
   {
     [VARIANT_DEFAULT]: css`
-      background-color: ${color.secondary};
-
+      background-color: ${color.primary};
+      color: ${color.white};
+      border-radius: 0;
+    `,
+    secondary: css`
+      background-color: transparent;
+      color: ${color.primary};
+      border-radius: 0;
       &:hover,
-      &:focus {
-        background-color: ${color.secondary};
+      &:focus,
+      &:active {
+        background-color: transparent;
+        color: ${color.primary};
+        text-decoration: underline;
       }
     `
   },

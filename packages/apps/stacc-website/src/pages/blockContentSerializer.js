@@ -121,7 +121,10 @@ const serializer = {
       )
     },
     typeform: ({ node }) => <Typeform heading={node.heading} url={node.url} />,
-    imageFullWidth: ({ node }) => <ImageFullWidth image={node} />
+    imageFullWidth: ({ node }) => {
+      console.log(node)
+      return <ImageFullWidth image={node.image} heading={node.heading} />
+    }
   }
 }
 
