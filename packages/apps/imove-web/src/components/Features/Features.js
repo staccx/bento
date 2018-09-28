@@ -1,22 +1,24 @@
 import React from "react"
 import styled from "styled-components"
 import { spacing } from "@staccx/theme"
-import { Wrapper, Heading } from "@staccx/base"
+import { Wrapper, Heading, Layout } from "@staccx/base"
 import Feature from "./Features.Feature"
 
 const Features = ({ heading, features }) => (
   <Content>
     <Wrapper size="full">
-      <StyledHeading level={2}>{heading}</StyledHeading>
-      <List>
-        {features.map(feature => (
-          <Feature
-            key={feature._key}
-            heading={feature.heading}
-            text={feature.text}
-          />
-        ))}
-      </List>
+      <Layout rowGap="huge">
+        <Heading level={2}>{heading}</Heading>
+        <List>
+          {features.map(feature => (
+            <Feature
+              key={feature._key}
+              heading={feature.heading}
+              text={feature.text}
+            />
+          ))}
+        </List>
+      </Layout>
     </Wrapper>
   </Content>
 )
