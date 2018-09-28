@@ -48,23 +48,24 @@ const ContactUs = ({
               </div>
             </Layout>
           </Body>
-          {image && (
-            <ImgContainer imageCutOut={imageCutOut || undefined}>
-              <SanityImage image={image}>
-                {({ image }) => {
-                  if (image.url()) {
-                    return (
-                      <Image
-                        src={image.url()}
-                        alt={person.name}
-                        imageCutOut={imageCutOut || undefined}
-                      />
-                    )
-                  }
-                }}
-              </SanityImage>
-            </ImgContainer>
-          )}
+          {image &&
+            image.asset && (
+              <ImgContainer imageCutOut={imageCutOut || undefined}>
+                <SanityImage image={image}>
+                  {({ image }) => {
+                    if (image.url()) {
+                      return (
+                        <Image
+                          src={image.url()}
+                          alt={person.name}
+                          imageCutOut={imageCutOut || undefined}
+                        />
+                      )
+                    }
+                  }}
+                </SanityImage>
+              </ImgContainer>
+            )}
         </Inner>
       </StyledWrapper>
     </Container>
