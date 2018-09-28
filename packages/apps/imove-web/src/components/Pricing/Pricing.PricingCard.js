@@ -35,8 +35,10 @@ const Content = styled.div`
 `
 
 const CarProperties = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-row-gap: ${spacing.tiny};
+  grid-column-gap: 0;
+  grid-template-columns: 1fr 1fr;
   font-size: ${font("large")};
   text-align: left;
   color: ${color("gray")};
@@ -44,7 +46,7 @@ const CarProperties = styled.ul`
 
 const CarProperty = styled.li`
   min-width: 50%;
-  margin: ${spacing("small")} 0;
+  margin: 0;
   padding-left: calc(1em + 10px);
   background-image: url(./img/icons/icon-car-${props => props.icon}.svg);
   background-repeat: no-repeat;
