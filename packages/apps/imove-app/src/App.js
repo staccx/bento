@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 import { Wrapper } from "@staccx/base"
 import { ThemeProxyProvider } from "@staccx/theme"
-import { Router, Route, Switch } from "react-router-dom"
-import createHistory from "history/createBrowserHistory"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Transitions from "./components/transitions/transitions"
 import { imoveTheme } from "@staccx/imove-theme"
 import Onboarding from "./pages/Onboarding"
@@ -10,13 +9,14 @@ import Header from "./components/Header"
 import Home from "./pages/Home"
 import Sell from "./pages/Sell"
 import SellConfirmation from "./pages/SellConfirmation"
+import WaitingList from "./pages/WaitingList"
+import WaitingListConfirmation from "./pages/WaitingListConfirmation"
 
 class App extends Component {
   render() {
-    const history = createHistory()
     return (
       <ThemeProxyProvider theme={imoveTheme}>
-        <Router history={history}>
+        <Router>
           <Route
             render={({ location }) => (
               <div>
@@ -31,6 +31,16 @@ class App extends Component {
                         path="/sell/confirmation"
                         exact
                         component={SellConfirmation}
+                      />
+                      <Route
+                        path="/waiting-list"
+                        exact
+                        component={WaitingList}
+                      />
+                      <Route
+                        path="/waiting-list/confirmation"
+                        exact
+                        component={WaitingListConfirmation}
                       />
                     </Switch>
                   </Wrapper>
