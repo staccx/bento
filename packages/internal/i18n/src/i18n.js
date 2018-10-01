@@ -39,10 +39,11 @@ class i18n {
     }
 
     if (!this.texts.hasOwnProperty(key)) {
-      throw new Error("Key no part of texts")
+      console.warn(`Key no part of texts: ${key}`, this.texts)
+      return `Missing entry: ${key} in all languages`
     }
 
-    const val = this.texts[key]
+    const val = this.getValue(key)
 
     if (!val.hasOwnProperty(this.language)) {
       console.warn(`${key} does not exist in ${this.language} dataset.`)
@@ -52,7 +53,7 @@ class i18n {
     const formattingData = Object.assign({}, this.data, data)
     // TODO: Handle commonly used us, like currency, phonenumber, date.now etc.
     try {
-      const result = val[this.language]
+      const result = this.convert(val)
       // Run through plugins
       const pluginated = this.runPlugins(result, formattingData)
       return format(pluginated, formattingData)
@@ -63,6 +64,24 @@ class i18n {
         this.language
       } using ${formattingData.toString()}`
     }
+  }
+
+  getValue(key) {
+    return this.texts[key]
+  }
+
+  convert(value) {
+    if (value.hasOwnProperty(this.language)) {
+      return value[this.language]
+    }
+
+    // TODO: What should we return in these cases?
+    /**
+     * We can use a fallback
+     * We can use a value that actually exists on the object
+     * We can send debug string (perhaps only if debug = true)
+     */
+    return null
   }
 
   runPlugins(val, data) {
