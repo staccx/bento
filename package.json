@@ -24,11 +24,10 @@
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
+    "babel-eslint": "^8.2.2",
     "conventional-changelog-angular-bitbucket": "^1.1.2",
     "conventional-changelog-cli": "^2.0.5",
     "eslint": "^5.0.1",
-    "plop": "^2.0.0",
-    "babel-eslint": "^8.2.2",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
@@ -40,6 +39,8 @@
     "eslint-plugin-standard": "^3.0.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.1.2",
+    "ora": "^3.0.0",
+    "plop": "^2.0.0",
     "prettier": "^1.13.7"
   },
   "dependencies": {

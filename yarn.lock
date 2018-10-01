@@ -1894,6 +1894,20 @@
     es6-error "^4.0.2"
     type-of-is "^3.5.1"
 
+"@sanity/vision@^0.134.1":
+  version "0.134.1"
+  resolved "https://registry.npmjs.org/@sanity/vision/-/vision-0.134.1.tgz#14f4901915e206090b8078f1675f2bc1bb37cf2f"
+  dependencies:
+    classnames "^2.2.5"
+    json-lexer "^1.1.1"
+    moment "^2.19.1"
+    query-string "^4.3.2"
+    react-codemirror2 "^1.0.0"
+    react-icon-base "^2.1.2"
+    react-json-inspector "^7.1.1"
+    react-spinner "^0.2.6"
+    react-split-pane "^0.1.63"
+
 "@sanity/webpack-integration@0.132.10":
   version "0.132.10"
   resolved "https://registry.yarnpkg.com/@sanity/webpack-integration/-/webpack-integration-0.132.10.tgz#bb7dee89bc5c1f00662f7bc0f05f4ba081cad2c5"
@@ -4358,6 +4372,10 @@ cli-progress@^2.1.0:
     colors "^1.1.2"
     string-width "^2.1.1"
 
+cli-spinners@^1.1.0:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/cli-spinners/-/cli-spinners-1.3.1.tgz#002c1990912d0d59580c93bd36c056de99e4259a"
+
 cli-table2@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/cli-table2/-/cli-table2-0.2.0.tgz#2d1ef7f218a0e786e214540562d4bd177fe32d97"
@@ -4443,6 +4461,10 @@ coa@~1.0.1:
 code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
+
+codemirror@5.29.0:
+  version "5.29.0"
+  resolved "https://registry.npmjs.org/codemirror/-/codemirror-5.29.0.tgz#e68de1350e2f0ce804a3930576d0ae318736e967"
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -11130,6 +11152,17 @@ optionator@^0.8.1, optionator@^0.8.2:
     type-check "~0.3.2"
     wordwrap "~1.0.0"
 
+ora@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ora/-/ora-3.0.0.tgz#8179e3525b9aafd99242d63cc206fd64732741d0"
+  dependencies:
+    chalk "^2.3.1"
+    cli-cursor "^2.1.0"
+    cli-spinners "^1.1.0"
+    log-symbols "^2.2.0"
+    strip-ansi "^4.0.0"
+    wcwidth "^1.0.1"
+
 original@>=0.0.5, original@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/original/-/original-1.0.2.tgz#e442a61cffe1c5fd20a65f3261c26663b303f25f"
@@ -12483,7 +12516,7 @@ qs@6.5.2, qs@^6.5.1, qs@~6.5.1, qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
-query-string@^4.1.0:
+query-string@^4.1.0, query-string@^4.3.2:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-4.3.4.tgz#bbb693b9ca915c232515b228b1a02b609043dbeb"
   dependencies:
@@ -12631,6 +12664,12 @@ react-click-outside@^3.0.0:
   resolved "https://registry.npmjs.org/react-click-outside/-/react-click-outside-3.0.1.tgz#6e77e84d2f17afaaac26dbad743cbbf909f5e24c"
   dependencies:
     hoist-non-react-statics "^2.1.1"
+
+react-codemirror2@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/react-codemirror2/-/react-codemirror2-1.0.0.tgz#b529a6c5c91219f92c751f43a17721cdaf36b05f"
+  dependencies:
+    codemirror "5.29.0"
 
 react-container-query@^0.8.0:
   version "0.8.1"
@@ -12957,6 +12996,10 @@ react-sparklines@^1.7.0:
   resolved "https://registry.yarnpkg.com/react-sparklines/-/react-sparklines-1.7.0.tgz#9b1d97e8c8610095eeb2ad658d2e1fcf91f91a60"
   dependencies:
     prop-types "^15.5.10"
+
+react-spinner@^0.2.6:
+  version "0.2.7"
+  resolved "https://registry.npmjs.org/react-spinner/-/react-spinner-0.2.7.tgz#ea3ca3375dd7a54edbb5cc01d17496a2e2fc14db"
 
 react-split-pane@^0.1.63:
   version "0.1.84"
@@ -15643,7 +15686,7 @@ wbuf@^1.1.0, wbuf@^1.7.2:
   dependencies:
     minimalistic-assert "^1.0.0"
 
-wcwidth@^1.0.0:
+wcwidth@^1.0.0, wcwidth@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/wcwidth/-/wcwidth-1.0.1.tgz#f0b0dcf915bc5ff1528afadb2c0e17b532da2fe8"
   dependencies:
