@@ -52,7 +52,7 @@ const spacing = {
 }
 const color = {
   bg: "#fcfcfc",
-  bgGray: "#F9F7F7",
+  bgGray: "#F6F6F6",
   primary: "#4FAF73",
   secondary: "#124F5E",
   toneDown: "#8C8C8C",

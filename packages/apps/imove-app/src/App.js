@@ -11,6 +11,10 @@ import Sell from "./pages/Sell"
 import SellConfirmation from "./pages/SellConfirmation"
 import WaitingList from "./pages/WaitingList"
 import WaitingListConfirmation from "./pages/WaitingListConfirmation"
+import Cars from "./pages/Cars"
+import OrderCarDetail from "./pages/Order/Order.CarDetail"
+import OrderBook from "./pages/Order/Order.Book"
+import OrderConfirm from "./pages/Order/Order.Confirm"
 
 class App extends Component {
   render() {
@@ -18,7 +22,7 @@ class App extends Component {
       <ThemeProxyProvider theme={imoveTheme}>
         <Router>
           <Route
-            render={({ location }) => (
+            render={({ location, match }) => (
               <div>
                 <Header />
                 <Transitions pageKey={location.key} {...location.state}>
@@ -41,6 +45,25 @@ class App extends Component {
                         path="/waiting-list/confirmation"
                         exact
                         component={WaitingListConfirmation}
+                      />
+                      <Route path="/cars" exact component={Cars} />
+                      <Route
+                        path="/car/:chassisNumber"
+                        match={match}
+                        exact
+                        component={OrderCarDetail}
+                      />
+                      <Route
+                        path="/car/:chassisNumber/book"
+                        match={match}
+                        exact
+                        component={OrderBook}
+                      />
+                      <Route
+                        path="/car/:chassisNumber/confirm"
+                        match={match}
+                        exact
+                        component={OrderConfirm}
                       />
                     </Switch>
                   </Wrapper>
