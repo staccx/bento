@@ -19,6 +19,9 @@ import {
   PostalCodeInputStyling,
   PostalCodeInputLocationStyling
 } from "./Theme.Inputs"
+import { CarIcon } from "./Icons/CarIcon"
+import { GarageIcon } from "./Icons/GarageIcon"
+import { ProfileIcon } from "./Icons/ProfileIcon"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -51,7 +54,7 @@ const spacing = {
   largeWhitespace: "192px"
 }
 const color = {
-  bg: "#fcfcfc",
+  bg: "#fff",
   bgGray: "#F6F6F6",
   primary: "#4FAF73",
   secondary: "#124F5E",
@@ -75,7 +78,7 @@ const color = {
 
 const font = {
   h1: "36px",
-  h2: "54px",
+  h2: "32px",
   h3: "22px",
   h4: "18px",
   h5: "16px",
@@ -136,5 +139,8 @@ const t = new Theme(BaseTheme, {
   .add(PostalCodeInputStyling)
   .add(PostalCodeInputLocationStyling)
   .add(LabelInputStyling)
+  .add(CarIcon)
+  .add(GarageIcon)
+  .add(ProfileIcon)
 
 export default t

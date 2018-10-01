@@ -24,7 +24,7 @@ const OrderConfirm = ({ match }) => {
         </div>
         <div>{car.pricePerMonth}</div>
       </div>
-      <Link to={`/my-car`}>
+      <Link to={`/`}>
         <Button>Til Min bil</Button> {/* TODO: Replace text */}
       </Link>
     </Layout>

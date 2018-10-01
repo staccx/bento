@@ -6,7 +6,7 @@ import Transitions from "./components/transitions/transitions"
 import { imoveTheme } from "@staccx/imove-theme"
 import Onboarding from "./pages/Onboarding"
 import Header from "./components/Header"
-import Home from "./pages/Home"
+import MyCar from "./pages/MyCar"
 import Sell from "./pages/Sell"
 import SellConfirmation from "./pages/SellConfirmation"
 import WaitingList from "./pages/WaitingList"
@@ -15,6 +15,8 @@ import Cars from "./pages/Cars"
 import OrderCarDetail from "./pages/Order/Order.CarDetail"
 import OrderBook from "./pages/Order/Order.Book"
 import OrderConfirm from "./pages/Order/Order.Confirm"
+import Menu from "./components/Menu/Menu"
+import Profile from "./pages/Profile"
 
 class App extends Component {
   render() {
@@ -25,11 +27,12 @@ class App extends Component {
             render={({ location, match }) => (
               <div>
                 <Header />
+                <Menu />
                 <Transitions pageKey={location.key} {...location.state}>
                   <Wrapper size="small">
                     <Switch location={location}>
                       <Route path="/onboarding" exact component={Onboarding} />
-                      <Route path="/" exact component={Home} />
+                      <Route path="/" exact component={MyCar} />
                       <Route path="/sell" exact component={Sell} />
                       <Route
                         path="/sell/confirmation"
@@ -65,6 +68,7 @@ class App extends Component {
                         exact
                         component={OrderConfirm}
                       />
+                      <Route path="/profile" exact component={Profile} />
                     </Switch>
                   </Wrapper>
                 </Transitions>
