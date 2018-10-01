@@ -13,6 +13,7 @@ import WaitingList from "./pages/WaitingList"
 import WaitingListConfirmation from "./pages/WaitingListConfirmation"
 import Menu from "./components/Menu/Menu"
 import Profile from "./pages/Profile"
+import ProfileEdit from "./pages/ProfileEdit"
 import End from "./pages/End"
 import EndConfirmation from "./pages/EndConfirmation"
 
@@ -48,6 +49,11 @@ class App extends Component {
                         component={WaitingListConfirmation}
                       />
                       <Route path="/profile" exact component={Profile} />
+                      <Route
+                        path="/profile/edit"
+                        exact
+                        component={ProfileEdit}
+                      />
                       <Route path="/end" exact component={End} />
                       <Route
                         path="/end/confirmation"

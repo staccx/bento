@@ -16,7 +16,14 @@ const Profile = ({ history }) => (
         {profile.tel}
       </Text>
       <div>
-        <Button variant="mainNavigation">
+        <Button
+          onClick={() =>
+            history.push({
+              pathname: "/profile/edit"
+            })
+          }
+          variant="mainNavigation"
+        >
           Se og rediger mine detaljer {/* TODO: Sanitytext */}
         </Button>
         <Button
