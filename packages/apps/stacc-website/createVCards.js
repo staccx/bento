@@ -21,6 +21,26 @@ const helper = new SanityHelper({
       "skBqBzqHiXow55HSqs1yFZf8MVCKBDh9VJ4t5LMYr8LstpJe1fScFAqB3S19rHiwqucM6krAZr6oMSMe29uXPQSp20V0hEyvONNV7B4kHGSoaZqWRiYMfIvmeDxnTzdDfovZyNU1yHqM9hHyZm0o8rL4w18LibIGJ5uon68axReHVsEffKWA"
   }
 })
+
+const replaceChars = val => {
+  return val
+  try {
+    const returnValue = val
+      ? val
+          .replace("æ", "ae")
+          .replace("Æ", "Ae")
+          .replace("ø", "oe")
+          .replace("Ø", "Oe")
+          .replace("å", "aa")
+          .replace("Å", "Aa")
+      : val
+
+    return returnValue
+  } catch (ex) {
+    console.log("failed", val)
+    throw ex
+  }
+}
 const imageHelper = imageUrlBuilder(helper.client)
 helper
   .ofType("person")
@@ -39,11 +59,12 @@ helper
     console.log("Saving cards...")
     cards.forEach(({ card, filename }, index) => {
       // card.saveToFile(`./public/vcards/${filename}.vcf`
-      const contents = card.getFormattedString().toString()
-      const removed = contents.replace("VALUE=uri;", "").replace("tel:", "")
-      console.log(contents)
-      console.log(removed)
-      fs.writeFileSync(`./public/vcards/${filename}.vcf`, removed)
+      const contents = card.getFormattedString()
+      const removed = contents
+        .replace("VALUE=uri;", "")
+        .replace("tel:", "")
+        .replace(/CHARSET=UTF-8/g, "")
+      fs.writeFileSync(`./public/vcards/${filename}.vcf`, removed, "utf8")
       bar1.update(index)
       // console.log(card.photo)
     })
@@ -61,16 +82,16 @@ const getCards = async people => {
 }
 const createCard = async person => {
   let card = vCard()
-  card.version = "4.0"
+  // card.version = "4.0"
   const name = person.name.split(" ")
 
-  card.firstName = name[0]
+  card.firstName = replaceChars(name[0])
 
   if (name.length > 2) {
-    card.middleName = name.slice(1, name.length - 2)
+    card.middleName = replaceChars(name.slice(1, name.length - 1).join(" "))
   }
 
-  card.lastName = name[name.length - 1]
+  card.lastName = replaceChars(name[name.length - 1])
 
   card.organization = "Stacc"
 
@@ -108,8 +129,6 @@ const createCard = async person => {
     person.socialLinks.forEach(socialLink => {
       card.socialUrls[socialLink.type] = decodeURI(socialLink.url)
     })
-
-    console.log(card.socialUrls)
   }
   bar1.update(counter++)
   return {
