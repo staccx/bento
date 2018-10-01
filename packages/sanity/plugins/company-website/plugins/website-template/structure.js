@@ -10,6 +10,7 @@ import ClientIcon from "react-icons/lib/md/attach-money"
 import TeamIcon from "react-icons/lib/md/wc"
 import ServiceIcon from "react-icons/lib/md/domain"
 import CampaignIcon from "react-icons/lib/md/toys"
+import PhotoIcon from "react-icons/lib/md/insert-photo"
 
 const singleton = (title, schemaType, documentId) =>
   S.listItem()
@@ -29,6 +30,14 @@ export default () =>
   S.list()
     .title("Stacc CMS")
     .items([
+      S.listItem()
+        .title("Image library")
+        .icon(PhotoIcon)
+        .child(S.documentTypeList("sanity.imageAsset")),
+      S.listItem()
+        .title("File explorer")
+        .icon(PhotoIcon)
+        .child(S.documentTypeList("sanity.fileAsset")),
       S.listItem()
         .title("Pages")
         .icon(PageIcon)
@@ -51,8 +60,12 @@ export default () =>
                 "teamPage",
                 "ae56715e-4e83-4748-b307-524787231b6b"
               ).icon(TeamIcon),
-              S.documentTypeListItem("productPage").title("Solution(Product) Pages"),
-              S.documentTypeListItem("servicePage").title("Service Pages").icon(ServiceIcon),
+              S.documentTypeListItem("productPage").title(
+                "Solution(Product) Pages"
+              ),
+              S.documentTypeListItem("servicePage")
+                .title("Service Pages")
+                .icon(ServiceIcon),
               S.documentTypeListItem("client"),
               S.documentTypeListItem("campaignPage").icon(CampaignIcon),
               S.documentTypeListItem("page")
@@ -65,11 +78,19 @@ export default () =>
           S.list()
             .title("Data")
             .items([
-              singleton("Menu", "menu", "ffe2cd1d-2fed-4436-9942-ad9674dd80ea").title("Main Menu").icon(MenuIcon),
-              S.documentTypeListItem("person").title("People").icon(PeopleIcon),
-              S.documentTypeListItem("product").title("Products").icon(ProcuctIcon),
+              singleton("Menu", "menu", "ffe2cd1d-2fed-4436-9942-ad9674dd80ea")
+                .title("Main Menu")
+                .icon(MenuIcon),
+              S.documentTypeListItem("person")
+                .title("People")
+                .icon(PeopleIcon),
+              S.documentTypeListItem("product")
+                .title("Products")
+                .icon(ProcuctIcon),
 
-              S.documentTypeListItem("company").title("Stacc divisions").icon(CompanyIcon)
+              S.documentTypeListItem("company")
+                .title("Stacc divisions")
+                .icon(CompanyIcon)
             ])
         )
     ])
