@@ -4,7 +4,7 @@ import { Box } from "@staccx/base"
 
 const menuElements = [
   {
-    to: "/order",
+    to: "/cars",
     icon: "car",
     title: "Bestill bil"
   },
