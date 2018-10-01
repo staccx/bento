@@ -11,6 +11,8 @@ export default registerStyle(
       left: 0;
       bottom: 0;
       width: 100%;
+      padding-top: ${spacing.small};
+      padding-bottom: ${spacing.small};
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
     `,
     myCarHeader: css`

@@ -1,17 +1,36 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "react-router-dom"
-import { ThemeComponent, color } from "@staccx/theme"
+import { NavLink } from "react-router-dom"
+import { ThemeComponent, color, spacing, font } from "@staccx/theme"
 
 const Menu = ({ to, icon, title }) => (
-  <Link to={to}>
+  <StyledLink to={to} activeClassName="imoveCurrent">
     <ThemeComponent tagName={icon} />
     <Title>{title}</Title>
-  </Link>
+  </StyledLink>
 )
 
 const Title = styled.span`
+  margin-top: ${spacing.tiny};
+  border-bottom: 2px solid transparent;
+  font-size: ${font.tiny};
+`
+
+const StyledLink = styled(NavLink)`
+  text-decoration: none;
   color: ${color("secondary")};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &.imoveCurrent,
+  &:hover,
+  &:active,
+  &:focus {
+    ${Title} {
+      border-bottom-color: ${color("primary")};
+    }
+  }
 `
 
 export default Menu
