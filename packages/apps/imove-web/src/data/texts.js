@@ -46,7 +46,7 @@ export default {
     {
       img: "/img/pricing-vw-e-up2x.png",
       name: "VW e-up",
-      price: 3490,
+      price: "3 490",
       type: "Elbil",
       seats: "4",
       doors: "5",
@@ -55,7 +55,7 @@ export default {
     {
       img: "/img/pricing-kia-soul2x.png",
       name: "Kia Soul",
-      price: 5490,
+      price: "5 490",
       type: "Elbil",
       seats: "4",
       doors: "5",
@@ -64,11 +64,39 @@ export default {
     {
       img: "/img/pricing-tesla-s-85d2x.png",
       name: "Tesla Model S 85D",
-      price: 9990,
+      price: "9 990",
       type: "Elbil",
       seats: "4",
       doors: "5",
       range: "528km NEDC"
+    }
+  ],
+
+  advantagesHeading: "imove er for deg som ikke ønsker å tenke på",
+  advantages: [
+    {
+      advantage: "Service og reparasjon"
+    },
+    {
+      advantage: "Dekkskift og kjøp av nye dekk"
+    },
+    {
+      advantage: "Forsikring"
+    },
+    {
+      advantage: "EU-kontroll og offentlige avgifter"
+    },
+    {
+      advantage: "Verditapet i bilen"
+    },
+    {
+      advantage: "Skjulte kostnader"
+    },
+    {
+      advantage: "Ny teknologi"
+    },
+    {
+      advantage: "Nye bilavgifter"
     }
   ]
 }

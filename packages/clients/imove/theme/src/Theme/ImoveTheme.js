@@ -12,6 +12,13 @@ import {
   RadioPillLabel,
   RadioPillContainer
 } from "./Theme.Radiopill"
+import {
+  InputStyling,
+  LabelStyling,
+  LabelInputStyling,
+  PostalCodeInputStyling,
+  PostalCodeInputLocationStyling
+} from "./Theme.Inputs"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -25,6 +32,7 @@ const wrapper = {
   small: "420px",
   medium: "640px",
   large: "1040px",
+  largePlus: "1280px",
   breakout: "640px"
 }
 
@@ -46,7 +54,7 @@ const color = {
   bg: "#fcfcfc",
   bgGray: "#F9F7F7",
   primary: "#4FAF73",
-  secondary: "#38454B",
+  secondary: "#124F5E",
   toneDown: "#8C8C8C",
   gray: "#767676",
   text: "#2b2b2b",
@@ -76,6 +84,7 @@ const font = {
   tiny: "12px",
   large: "18px",
   largePlus: "24px",
+  largePlusPlus: "28px",
   huge: "36px",
   input: "16px"
 }
@@ -90,12 +99,12 @@ const webfonts = {
 }
 
 const fontFamily = {
-  heading: "Sofia Pro",
+  heading: "sofia-pro",
   body: "Open Sans"
 }
 
 const fontWeight = {
-  bold: "800",
+  bold: "700",
   normal: "400"
 }
 
@@ -122,5 +131,10 @@ const t = new Theme(BaseTheme, {
   .add(RadioPillItemChecked)
   .add(RadioPillLabel)
   .add(RadioPillContainer)
+  .add(InputStyling)
+  .add(LabelStyling)
+  .add(PostalCodeInputStyling)
+  .add(PostalCodeInputLocationStyling)
+  .add(LabelInputStyling)
 
 export default t

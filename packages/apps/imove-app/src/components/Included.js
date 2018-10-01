@@ -7,14 +7,14 @@ import CheckmarkBlock from "./CheckmarkBlock"
 const Contact = ({ name, phone, email, postalNumber, consent }) => (
   <Layout>
     <Heading level="1">Hva som er inkludert i prisen</Heading>
-
-    <CheckmarkBlock title="Ingen startleie eller bindingstid" />
     <CheckmarkBlock title="Din egen miljøvennlige hverdagsbil">
       Vi ordner alt, unntatt drivstoff og parkering.
     </CheckmarkBlock>
+
     <CheckmarkBlock title="Du kan byttelåne med en hyttebil når du trenger det">
       Du kan disponere stasjonsvogn/SUV 10 dager i året
     </CheckmarkBlock>
+    <CheckmarkBlock title="Ingen startleie eller bindingstid" />
   </Layout>
 )
 

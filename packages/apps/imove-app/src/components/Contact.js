@@ -8,7 +8,9 @@ import {
   PhoneInput,
   EmailInput,
   PostalCodeInput,
-  CheckBox
+  Label,
+  Toggle,
+  Flag
 } from "@staccx/base"
 
 const Contact = ({ name, phone, email, postalNumber, consent }) => (
@@ -19,15 +21,27 @@ const Contact = ({ name, phone, email, postalNumber, consent }) => (
     <PhoneInput label="Telefon" />
     <EmailInput label="Epostadresse" />
     <PostalCodeInput label="Postnr" />
-    <CheckBox
-      group="consent"
-      id="fds45fds54"
-      defaultChecked={consent}
-      onChange={() => null}
+    <Flag
+      img={
+        <Toggle
+          className=""
+          defaultChecked={false}
+          disabled={false}
+          group="testddd"
+          id="Samtykke"
+          input={{}}
+          onChange={() => null}
+        >
+          Jeg samtykker til at imove lagrer informasjon om meg og at jeg kan
+          kontaktes på e-post
+        </Toggle>
+      }
     >
-      Jeg samtykker til at imove lagrer informasjon om meg og at jeg kan
-      kontaktes på e-post
-    </CheckBox>
+      <Label className="" htmlFor="Samtykke">
+        Jeg samtykker til at imove lagrer informasjon om meg og at jeg kan
+        kontaktes på e-post
+      </Label>
+    </Flag>
   </Layout>
 )
 

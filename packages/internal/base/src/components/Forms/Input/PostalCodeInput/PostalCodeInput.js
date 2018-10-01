@@ -91,6 +91,7 @@ PostalCodeInput.themeProps = {
 }
 
 const PostalInputWrapper = styled.div`
+  position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
