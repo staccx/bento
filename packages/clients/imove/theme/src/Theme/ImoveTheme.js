@@ -51,8 +51,8 @@ const spacing = {
   largeWhitespace: "192px"
 }
 const color = {
-  bg: "#fcfcfc",
-  bgGray: "#F9F7F7",
+  bg: "#fff",
+  bgGray: "#F6F6F6",
   primary: "#4FAF73",
   secondary: "#124F5E",
   toneDown: "#8C8C8C",
@@ -75,7 +75,7 @@ const color = {
 
 const font = {
   h1: "36px",
-  h2: "54px",
+  h2: "32px",
   h3: "22px",
   h4: "18px",
   h5: "16px",

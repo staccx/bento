@@ -26,6 +26,16 @@ export default registerStyle(
       font-weight: ${fontWeight.normal};
       font-family: ${fontFamily.body};
       line-height: 1.2;
+    `,
+    preHeader: css`
+      font-size: ${font.base};
+      line-height: 1;
+      color: ${color("secondary")};
+    `,
+    orderStatus: css`
+      font-size: ${font.base};
+      color: ${color("wcag")};
+      text-align: center;
     `
   },
   Heading.themeProps.heading

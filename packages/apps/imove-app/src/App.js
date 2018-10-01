@@ -11,6 +11,8 @@ import Sell from "./pages/Sell"
 import SellConfirmation from "./pages/SellConfirmation"
 import WaitingList from "./pages/WaitingList"
 import WaitingListConfirmation from "./pages/WaitingListConfirmation"
+import Menu from "./components/Menu/Menu"
+import Profile from "./pages/Profile"
 
 class App extends Component {
   render() {
@@ -21,6 +23,7 @@ class App extends Component {
             render={({ location }) => (
               <div>
                 <Header />
+                <Menu />
                 <Transitions pageKey={location.key} {...location.state}>
                   <Wrapper size="small">
                     <Switch location={location}>
@@ -42,6 +45,7 @@ class App extends Component {
                         exact
                         component={WaitingListConfirmation}
                       />
+                      <Route path="/profile" exact component={Profile} />
                     </Switch>
                   </Wrapper>
                 </Transitions>
