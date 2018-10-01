@@ -32,6 +32,7 @@ const wrapper = {
   small: "420px",
   medium: "640px",
   large: "1040px",
+  largePlus: "1280px",
   breakout: "640px"
 }
 
@@ -83,6 +84,7 @@ const font = {
   tiny: "12px",
   large: "18px",
   largePlus: "24px",
+  largePlusPlus: "28px",
   huge: "36px",
   input: "16px"
 }

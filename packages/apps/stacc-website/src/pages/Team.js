@@ -1,5 +1,13 @@
 import React from "react"
-import { Heading, Wrapper, Input, Layout, Loading, Search } from "@staccx/base"
+import {
+  Heading,
+  Wrapper,
+  Input,
+  Layout,
+  Loading,
+  Search,
+  Label
+} from "@staccx/base"
 import { SanityList, SanityDocument, SanityImage } from "@staccx/sanity"
 import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
 import { ContentLinks, Person, SectionHead } from "../components/_codeSplitting"
@@ -43,7 +51,9 @@ const Team = () => (
                       return (
                         <React.Fragment>
                           <Layout rowGap="medium">
-                            <Heading level="2">Looking for someone?</Heading>
+                            <Label htmlFor="peopleSearch">
+                              <Heading level="2">Looking for someone?</Heading>
+                            </Label>
                             <Input
                               id="peopleSearch"
                               placeholder="Search employees"
