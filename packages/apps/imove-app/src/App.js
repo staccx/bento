@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Transitions from "./components/transitions/transitions"
 import { imoveTheme } from "@staccx/imove-theme"
 import Onboarding from "./pages/Onboarding"
-import Header from "./components/Header"
+// import Header from "./components/Header"
 import Home from "./pages/Home"
 import Sell from "./pages/Sell"
 import SellConfirmation from "./pages/SellConfirmation"
@@ -13,6 +13,8 @@ import WaitingList from "./pages/WaitingList"
 import WaitingListConfirmation from "./pages/WaitingListConfirmation"
 import Menu from "./components/Menu/Menu"
 import Profile from "./pages/Profile"
+import End from "./pages/End"
+import EndConfirmation from "./pages/EndConfirmation"
 
 class App extends Component {
   render() {
@@ -22,7 +24,7 @@ class App extends Component {
           <Route
             render={({ location }) => (
               <div>
-                <Header />
+                {/* <Header /> */}
                 <Menu />
                 <Transitions pageKey={location.key} {...location.state}>
                   <Wrapper size="small">
@@ -46,6 +48,12 @@ class App extends Component {
                         component={WaitingListConfirmation}
                       />
                       <Route path="/profile" exact component={Profile} />
+                      <Route path="/end" exact component={End} />
+                      <Route
+                        path="/end/confirmation"
+                        exact
+                        component={EndConfirmation}
+                      />
                     </Switch>
                   </Wrapper>
                 </Transitions>
