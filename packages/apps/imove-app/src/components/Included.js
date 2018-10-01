@@ -9,10 +9,12 @@ const Contact = ({ name, phone, email, postalNumber, consent }) => (
     <Heading level="1">Hva som er inkludert i prisen</Heading>
     <CheckmarkBlock title="Din egen miljøvennlige hverdagsbil">
       Vi ordner alt, unntatt drivstoff og parkering.
+      {/* TODO: Sanitytext */}
     </CheckmarkBlock>
 
     <CheckmarkBlock title="Du kan byttelåne med en hyttebil når du trenger det">
       Du kan disponere stasjonsvogn/SUV 10 dager i året
+      {/* TODO: Sanitytext */}
     </CheckmarkBlock>
     <CheckmarkBlock title="Ingen startleie eller bindingstid" />
   </Layout>

@@ -16,10 +16,10 @@ const Sell = ({ history }) => {
   const labelWidth = 120
   return (
     <Layout>
-      <Heading level="1">Selg min bil</Heading>
+      <Heading level="1">Selg min bil {/* TODO: Sanitytext */}</Heading>
       <Text>
         Send oss en henvendelse, og vi kontakter deg om kort tid med en god
-        løsning på salg av bilen.
+        løsning på salg av bilen. {/* TODO: Sanitytext */}
       </Text>
 
       <Input label="Fullt navn" value={profile.name} labelWidth={labelWidth} />
@@ -31,11 +31,11 @@ const Sell = ({ history }) => {
       />
       <div>
         <Input label="Registreringsnr." labelWidth={labelWidth} />
-        <Text variant="legalese">Valgfritt</Text>
+        <Text variant="legalese">Valgfritt {/* TODO: Sanitytext */}</Text>
       </div>
       <div>
         <Input label="Kilometerstand" labelWidth={labelWidth} />
-        <Text variant="legalese">Valgfritt</Text>
+        <Text variant="legalese">Valgfritt {/* TODO: Sanitytext */}</Text>
       </div>
       <ItemGroup>
         <Button
@@ -45,7 +45,7 @@ const Sell = ({ history }) => {
             })
           }
         >
-          Send
+          Send {/* TODO: Sanitytext */}
         </Button>
         <Button
           onClick={() =>
@@ -56,7 +56,7 @@ const Sell = ({ history }) => {
           }
           variant="secondary"
         >
-          Tilbake
+          Tilbake {/* TODO: Sanitytext */}
         </Button>
       </ItemGroup>
     </Layout>

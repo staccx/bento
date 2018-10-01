@@ -15,7 +15,10 @@ import {
 
 const Contact = ({ name, phone, email, postalNumber, consent }) => (
   <Layout>
-    <Heading level="1">Kontaktinfo</Heading>
+    <Heading level="1">
+      Kontaktinfo
+      {/* TODO: Sanitytext */}
+    </Heading>
 
     <Input label="Fullt navn" value={name} />
     <PhoneInput label="Telefon" />
@@ -34,12 +37,14 @@ const Contact = ({ name, phone, email, postalNumber, consent }) => (
         >
           Jeg samtykker til at imove lagrer informasjon om meg og at jeg kan
           kontaktes på e-post
+          {/* TODO: Sanitytext */}
         </Toggle>
       }
     >
       <Label className="" htmlFor="Samtykke">
         Jeg samtykker til at imove lagrer informasjon om meg og at jeg kan
         kontaktes på e-post
+        {/* TODO: Sanitytext */}
       </Label>
     </Flag>
   </Layout>

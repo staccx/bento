@@ -4,8 +4,11 @@ import { Layout, Button, Heading, Text } from "@staccx/base"
 const SellConfirmation = ({ history }) => {
   return (
     <Layout>
-      <Heading level="1">Selg min bil</Heading>
-      <Text>Takk for henvendelsen! Vi kontakter deg om kort tid.</Text>
+      <Heading level="1">Selg min bil {/* TODO: Sanitytext */}</Heading>
+      <Text>
+        Takk for henvendelsen! Vi kontakter deg om kort tid.{" "}
+        {/* TODO: Sanitytext */}
+      </Text>
 
       <Button
         onClick={() =>
@@ -14,7 +17,7 @@ const SellConfirmation = ({ history }) => {
           })
         }
       >
-        Ferdig
+        Ferdig {/* TODO: Sanitytext */}
       </Button>
     </Layout>
   )
