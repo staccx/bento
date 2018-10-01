@@ -13,7 +13,7 @@ import {
   Flag
 } from "@staccx/base"
 
-const Contact = ({ name, phone, email, postalNumber, consent }) => (
+const Contact = ({ name, tel, mail, postalNumber, consent }) => (
   <Layout>
     <Heading level="1">
       Kontaktinfo
@@ -21,14 +21,14 @@ const Contact = ({ name, phone, email, postalNumber, consent }) => (
     </Heading>
 
     <Input label="Fullt navn" value={name} />
-    <PhoneInput label="Telefon" />
-    <EmailInput label="Epostadresse" />
-    <PostalCodeInput label="Postnr" />
+    <PhoneInput label="Telefon" value={tel} />
+    <EmailInput label="Epostadresse" value={mail} />
+    <PostalCodeInput label="Postnr" value={postalNumber} />
     <Flag
       img={
         <Toggle
           className=""
-          defaultChecked={false}
+          defaultChecked={consent}
           disabled={false}
           group="testddd"
           id="Samtykke"
@@ -52,16 +52,16 @@ const Contact = ({ name, phone, email, postalNumber, consent }) => (
 
 Contact.propTypes = {
   name: PropTypes.string,
-  phone: PropTypes.number,
-  email: PropTypes.string,
+  tel: PropTypes.number,
+  mail: PropTypes.string,
   postalNumber: PropTypes.number,
   consent: PropTypes.bool
 }
 
 Contact.defaultProps = {
   name: "",
-  phone: "",
-  email: "",
+  tel: "",
+  mail: "",
   postalNumber: "",
   consent: false
 }
