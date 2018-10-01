@@ -23,7 +23,7 @@ class OnboardingWrapper extends Component {
           <Button onClick={nextStep}>{nextStepText}</Button>
           {previous && (
             <Button onClick={previousStep} variant="secondary">
-              Tilbake
+              Tilbake {/* TODO: Sanitytext */}
             </Button>
           )}
         </ItemGroup>

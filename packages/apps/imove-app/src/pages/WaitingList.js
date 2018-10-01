@@ -16,11 +16,11 @@ const Sell = ({ history }) => {
   const labelWidth = 120
   return (
     <Layout>
-      <Heading level="1">Bli pilotkunde</Heading>
+      <Heading level="1">Bli pilotkunde {/* TODO: Sanitytext */}</Heading>
       <Text>
         Vi har dessverre ikke plass til flere pilotkunder nå, men håper på å
         åpne opp for flere snart. Skriv inn din epostadresse nedenfor for å
-        komme på vår venteliste.
+        komme på vår venteliste. {/* TODO: Sanitytext */}
       </Text>
 
       <EmailInput label="Epostadresse" labelWidth={labelWidth} />
@@ -35,12 +35,14 @@ const Sell = ({ history }) => {
             input={{}}
             onChange={() => null}
           >
-            Jeg ønsker også å motta tilbud og oppdateringer fra imove på epost
+            Jeg ønsker også å motta tilbud og oppdateringer fra imove på epost{" "}
+            {/* TODO: Sanitytext */}
           </Toggle>
         }
       >
         <Label className="" htmlFor="tilbud">
-          Jeg ønsker også å motta tilbud og oppdateringer fra imove på epost
+          Jeg ønsker også å motta tilbud og oppdateringer fra imove på epost{" "}
+          {/* TODO: Sanitytext */}
         </Label>
       </Flag>
       <ItemGroup>
@@ -51,7 +53,7 @@ const Sell = ({ history }) => {
             })
           }
         >
-          Send
+          Send {/* TODO: Sanitytext */}
         </Button>
         <Button
           onClick={() =>
@@ -62,7 +64,7 @@ const Sell = ({ history }) => {
           }
           variant="secondary"
         >
-          Tilbake
+          Tilbake {/* TODO: Sanitytext */}
         </Button>
       </ItemGroup>
     </Layout>

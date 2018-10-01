@@ -5,7 +5,10 @@ import householdPersons from "../data/householdPersons"
 
 const Household = ({ numberPersons }) => (
   <Layout>
-    <Heading level="1">Hvor mange er dere i husstanden?</Heading>
+    <Heading level="1">
+      Hvor mange er dere i husstanden?
+      {/* TODO: Sanitytext */}
+    </Heading>
     <RadioPill onChange={numberPersons} group={"persons"} full>
       {householdPersons.map(listItem => (
         <RadioPillItem
