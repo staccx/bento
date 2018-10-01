@@ -46,7 +46,12 @@ const Person = ({
               {phone && (
                 <SubtleLink href={`tel:${phone}`}>
                   <Phone />
-                  <span>{formatPhone(phone)}</span>
+                  <span>
+                    {formatPhone(
+                      phone,
+                      phone.length <= 8 ? "XXX XX XXX" : "XXX XXX XX XXX"
+                    )}
+                  </span>
                 </SubtleLink>
               )}
               {vCardUrl && (
