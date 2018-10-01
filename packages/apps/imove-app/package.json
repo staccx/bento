@@ -6,9 +6,9 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@staccx/base": "^6.4.0",
-    "@staccx/soy": "^6.3.0",
-    "@staccx/theme": "^6.3.0",
+    "@staccx/base": "^7.7.4",
+    "@staccx/soy": "^7.7.4",
+    "@staccx/theme": "^7.7.4",
     "history": "^4.7.2",
     "react-step-wizard": "^4.3.1"
   },
@@ -23,6 +23,6 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^6.3.0"
+    "@staccx/rollup-config": "^7.7.4"
   }
 }
