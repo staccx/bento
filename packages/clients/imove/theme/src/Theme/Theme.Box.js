@@ -37,6 +37,14 @@ export default registerStyle(
       svg {
         margin: auto;
       }
+    `,
+    primary: css`
+      background-color: ${color.primary};
+      color: ${color.white};
+    `,
+    subtle: css`
+      background-color: ${color("bgGray")};
+      color: ${color.text};
     `
   },
   Box.themeProps.box

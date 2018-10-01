@@ -1,7 +1,7 @@
 import React from "react"
 import { Button, Text, Heading, Layout, Box, Wrapper } from "@staccx/base"
 
-const Home = ({ history }) => (
+const MyCar = ({ history }) => (
   <Layout>
     <Box variant="myCarHeader">
       <Wrapper size="small">
@@ -83,4 +83,4 @@ const Home = ({ history }) => (
   </Layout>
 )
 
-export default Home
+export default MyCar

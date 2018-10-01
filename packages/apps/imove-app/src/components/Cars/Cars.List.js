@@ -1,16 +1,24 @@
 import React from "react"
-import styled from "styled-components"
-import { ThemeComponent, spacing } from "@staccx/theme"
-import { Wrapper } from "@staccx/base"
+import { Layout } from "@staccx/base"
+import CarsListItem from "./Cars.List.Item"
 
-const CarsFilter = ({ cars }) => (
+const CarsList = ({ cars }) => (
   <div>
-    <ul>
+    <Layout>
       {cars.map(car => (
-        <li>{car.id}</li>
+        <div key={car.id}>
+          <CarsListItem
+            make={car.make}
+            model={car.model}
+            images={car.images}
+            year={car.year}
+            pricePerMonth={car.pricePerMonth}
+            chassisNumber={car.chassisNumber}
+          />
+        </div>
       ))}
-    </ul>
+    </Layout>
   </div>
 )
 
-export default CarsFilter
+export default CarsList

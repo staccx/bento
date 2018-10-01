@@ -6,11 +6,15 @@ import Transitions from "./components/transitions/transitions"
 import { imoveTheme } from "@staccx/imove-theme"
 import Onboarding from "./pages/Onboarding"
 // import Header from "./components/Header"
-import Home from "./pages/Home"
+import MyCar from "./pages/MyCar"
 import Sell from "./pages/Sell"
 import SellConfirmation from "./pages/SellConfirmation"
 import WaitingList from "./pages/WaitingList"
 import WaitingListConfirmation from "./pages/WaitingListConfirmation"
+import Cars from "./pages/Cars"
+import OrderCarDetail from "./pages/Order/Order.CarDetail"
+import OrderBook from "./pages/Order/Order.Book"
+import OrderConfirm from "./pages/Order/Order.Confirm"
 import Menu from "./components/Menu/Menu"
 import Profile from "./pages/Profile"
 import ProfileEdit from "./pages/ProfileEdit"
@@ -23,7 +27,7 @@ class App extends Component {
       <ThemeProxyProvider theme={imoveTheme}>
         <Router>
           <Route
-            render={({ location }) => (
+            render={({ location, match }) => (
               <div>
                 {/* <Header /> */}
                 <Menu />
@@ -31,7 +35,7 @@ class App extends Component {
                   <Wrapper size="small">
                     <Switch location={location}>
                       <Route path="/onboarding" exact component={Onboarding} />
-                      <Route path="/" exact component={Home} />
+                      <Route path="/" exact component={MyCar} />
                       <Route path="/sell" exact component={Sell} />
                       <Route
                         path="/sell/confirmation"
@@ -47,6 +51,25 @@ class App extends Component {
                         path="/waiting-list/confirmation"
                         exact
                         component={WaitingListConfirmation}
+                      />
+                      <Route path="/cars" exact component={Cars} />
+                      <Route
+                        path="/car/:chassisNumber"
+                        match={match}
+                        exact
+                        component={OrderCarDetail}
+                      />
+                      <Route
+                        path="/car/:chassisNumber/book"
+                        match={match}
+                        exact
+                        component={OrderBook}
+                      />
+                      <Route
+                        path="/car/:chassisNumber/confirm"
+                        match={match}
+                        exact
+                        component={OrderConfirm}
                       />
                       <Route path="/profile" exact component={Profile} />
                       <Route
