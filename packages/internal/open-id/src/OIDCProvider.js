@@ -16,6 +16,7 @@ class OIDCProvider extends Component {
     this.createSigninRequest = this.createSigninRequest.bind(this)
     this.login = this.login.bind(this)
     this.logout = this.logout.bind(this)
+    this.renewToken = this.renewToken.bind(this)
 
     console.log("OIDCProvider constructed", props)
   }
@@ -65,6 +66,7 @@ class OIDCProvider extends Component {
     this.authService.getUser().then(user => {
       if (user) {
         console.log("User has been successfully loaded from store.", user)
+        this.shouldCancel = user.expired
       } else {
         console.warn("You are not logged in.")
       }
