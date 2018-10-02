@@ -31,6 +31,9 @@ export default registerStyle(
       background-position: right ${spacing.small} center;
       text-align: left;
       min-height: 60px;
+      @media only screen and (max-width: 430px) {
+        margin-left: -${spacing.medium};
+      }
       & + & {
         margin-top: 1px;
       }
