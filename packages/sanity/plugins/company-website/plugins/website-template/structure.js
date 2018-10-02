@@ -10,7 +10,7 @@ import ClientIcon from "react-icons/lib/md/attach-money"
 import TeamIcon from "react-icons/lib/md/wc"
 import ServiceIcon from "react-icons/lib/md/domain"
 import CampaignIcon from "react-icons/lib/md/toys"
-import PhotoIcon from "react-icons/lib/md/insert-photo"
+import mediaLibGenerator from "../structure-images-and-files"
 
 const singleton = (title, schemaType, documentId) =>
   S.listItem()
@@ -30,14 +30,7 @@ export default () =>
   S.list()
     .title("Stacc CMS")
     .items([
-      S.listItem()
-        .title("Image library")
-        .icon(PhotoIcon)
-        .child(S.documentTypeList("sanity.imageAsset")),
-      S.listItem()
-        .title("File explorer")
-        .icon(PhotoIcon)
-        .child(S.documentTypeList("sanity.fileAsset")),
+      ...mediaLibGenerator("Assets"),
       S.listItem()
         .title("Pages")
         .icon(PageIcon)
