@@ -10,12 +10,14 @@ export default {
         _key: "kzxjh"
       }
     ],
-    hverdagsbilImg: "/img/hero/hverdagsbil-og-hyttebil@2x.png",
-    hverdagsbilImgAlt: "Nissan Leaf og Volvo XC60",
-    hverdagsbilHeading: "Miljøvennlig hverdagsbil",
-    hverdagsbilHeadingSub: "Alt inkludert, utenom strøm og parkering",
-    hyttebilHeading: "+ Hyttebil",
-    hyttebilHeadingSub: "10 dager inkludert",
+    hverdagsbil: {
+      img: "/img/hero/hverdagsbil-og-hyttebil@2x.png",
+      imgAlt: "Nissan Leaf og Volvo XC60",
+      heading: "Miljøvennlig hverdagsbil",
+      headingSub: "Alt inkludert, utenom strøm og parkering",
+      hyttebilHeading: "+ Hyttebil",
+      hyttebilHeadingSub: "10 dager inkludert"
+    },
     logoWhite: "/img/brand/imove logo white.svg",
     headingSecondary: "Et bilabonnement med full frihet",
     headingSecondarySub: "fra 3 490,- per mnd"

@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { Wrapper } from "@staccx/base"
-import HeroBlob from "./Hero.Blob.js"
+import HeroBlob from "./Hero.Blob"
+import CallToAction from "./Hero.CallToAction"
 
 const Hero = ({ heroType, heroMain, heroSecondary, extraCars }) => {
   if (heroMain === "secondary") {
@@ -12,21 +13,12 @@ const Hero = ({ heroType, heroMain, heroSecondary, extraCars }) => {
       <Content>
         <StyledWrapper size="largePlus">
           <CarColumn>
-            <h2>{heroMain.heading}</h2>
-            <div>{heroMain.headingSub}</div>
-            <div>
-              {heroMain.buttons.map(x => (
-                <a href={x.url} key={x._key}>
-                  {x.text}
-                </a>
-              ))}
-            </div>
-            <div>
-              <img
-                src={heroMain.hverdagsbilImg}
-                alt={heroMain.hverdagsbilImgAlt}
-              />
-            </div>
+            <CallToAction
+              heading={heroMain.heading}
+              headingSub={heroMain.headingSub}
+              buttons={heroMain.buttons}
+              hverdagsbil={heroMain.hverdagsbil}
+            />
           </CarColumn>
           <BlobColumn>
             <HeroBlob
