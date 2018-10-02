@@ -39,10 +39,13 @@ export default registerStyle(
       }
     `,
     filter: css`
+      position: absolute;
+      width: 100%;
+      left: 0;
       background-color: ${color.primary};
       color: ${color.white};
       border-radius: 0;
-      margin-top: -${spacing.medium};
+      margin-top: -${spacing.large};
 
       h1,
       h2,

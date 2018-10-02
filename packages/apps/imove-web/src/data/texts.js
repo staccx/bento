@@ -1,19 +1,66 @@
 export default {
   /* Hero */
-  headingMain: "Et bilabonnement med full frihet",
-  subHeadingMain: "–en helt ny måte å tenke bil",
-  headingSecondary: "Bli pilotbruker og vi hjelper deg å selge bilen din",
-  buttonCarSale: "Bli kvitt min gamle bil",
-  buttonCarSubscribe: "Abonner på ny bil",
-  hverdagsbilName: "Hverdagsbil",
-  hverdagsbilSubtitle: "Fra kr 3100 per måned",
-  flyttebilName: "Flyttebil",
-  flyttebilSubtitle: "Fra kr 599 per dag",
-  morobilName: "Morobil",
-  morobilSubtitle: "Fra kr 1599 per dag",
+  heroMain: {
+    headingMain: "Vi forstår at kjøp av bil ikke alltid er enkelt",
+    headingMainSub:
+      "Bilen du trenger i dag er ikke alltid den du trenger i morgen",
+    buttons: [
+      {
+        text: "Kom i gang",
+        url: "#",
+        _key: "kzxjh"
+      }
+    ],
+    hverdagsbilHeading: "Miljøvennlig hverdagsbil",
+    hverdagsbilHeadingSub: "Alt inkludert, utenom strøm og parkering",
+    hyttebilHeading: "+ Hyttebil",
+    hyttebilHeadingSub: "10 dager inkludert",
+    headingSecondary: "Et bilabonnement med full frihet",
+    headingSecondarySub: "fra 3 490,- per mnd"
+  },
+  heroSecondary: {
+    headingMain: "Prøv et  gratis elbilabonnement i 48 timer",
+    headingMainSub: "– mens vi selger din gamle bil",
+    buttons: [
+      {
+        text: "Bli kvitt min gamle bil",
+        url: "#",
+        _key: "maodd"
+      },
+      {
+        text: "Abonner på ny bil",
+        url: "#",
+        _key: "bdpkd"
+      }
+    ],
+    hverdagsbilHeading: "Miljøvennlig hverdagsbil",
+    hverdagsbilHeadingSub: "Alt inkludert, utenom strøm og parkering",
+    hyttebilHeading: "+ Hyttebil",
+    hyttebilHeadingSub: "10 dager inkludert",
+    headingSecondary: "Et bilabonnement med full frihet",
+    headingSecondarySub: "fra 3 490,- per mnd"
+  },
+  extraCars: {
+    heading: "Tilleggsbil når du trenger det",
+    headingSub:
+      "Trenger du en annen bil i en kort periode, er det rimelig å leie gjennom imove.",
+    cars: [
+      {
+        heading: "Flyttebil",
+        headingSub: "Fra kr 599 per dag",
+        img: "",
+        _key: "jhfdk"
+      },
+      {
+        heading: "Morobil",
+        headingSub: "Fra kr 1 599 per dag",
+        img: "",
+        _key: "bsate"
+      }
+    ]
+  },
 
   featuresHeading: "Et abonnement hos imove er",
-
   features: [
     {
       heading: "Enkelt og forutsigbart",

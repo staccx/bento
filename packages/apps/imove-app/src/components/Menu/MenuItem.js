@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 import { ThemeComponent, color, spacing, font } from "@staccx/theme"
 
 const Menu = ({ to, icon, title }) => (
-  <StyledLink to={to} activeClassName="imoveCurrent">
+  <StyledLink to={to} activeClassName="imoveCurrent" exact={to === "/"}>
     <ThemeComponent tagName={icon} />
     <Title>{title}</Title>
   </StyledLink>

@@ -11,7 +11,13 @@ import {
   hideVisually
 } from "@staccx/base"
 
-const CarsFilter = ({ cars }) => {
+const CarsFilter = ({
+  cars,
+  result,
+  handleSearchMake,
+  handleSearchPrice,
+  handleSearchRange
+}) => {
   const maxPrice = Math.max.apply(Math, cars.map(car => car.pricePerMonth))
   const minPrice = Math.min.apply(Math, cars.map(car => car.pricePerMonth))
   const maxRange = Math.max.apply(Math, cars.map(car => car.range))
@@ -29,7 +35,12 @@ const CarsFilter = ({ cars }) => {
             <Filter isOpen={isOpen}>
               <Box variant="filter">
                 <Layout>
-                  <Input placeholder="Søk" variant="search" />{" "}
+                  <Input
+                    id="carSearch"
+                    placeholder="Søk"
+                    variant="search"
+                    onChange={e => handleSearchMake(e.target.value)}
+                  />{" "}
                   {/* TODO: replace text */}
                   <div>
                     <Label>Maks månedspris</Label> {/* TODO: replace text */}
@@ -38,7 +49,7 @@ const CarsFilter = ({ cars }) => {
                       max={maxPrice}
                       min={minPrice}
                       value={maxPrice}
-                      onChange={e => console.log(e.target.value)}
+                      onChange={e => handleSearchPrice(e.target.value)}
                     />
                   </div>
                   <div>
@@ -48,11 +59,11 @@ const CarsFilter = ({ cars }) => {
                       max={maxRange}
                       min={minRange}
                       value={minRange}
-                      onChange={e => console.log(e.target.value)}
+                      onChange={e => handleSearchRange(e.target.value)}
                     />
                   </div>
                 </Layout>
-                {cars.length} biler passer dine kriterier
+                {result.length} biler passer dine kriterier
               </Box>
             </Filter>
           </React.Fragment>
@@ -64,6 +75,8 @@ const CarsFilter = ({ cars }) => {
 
 const Filter = styled.div`
   ${p => !p.isOpen && hideVisually};
+  position: relative;
+  z-index: 50;
 `
 
 export default CarsFilter
