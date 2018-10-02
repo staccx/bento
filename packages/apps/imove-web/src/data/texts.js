@@ -1,9 +1,8 @@
 export default {
   /* Hero */
   heroMain: {
-    headingMain: "Vi forstår at kjøp av bil ikke alltid er enkelt",
-    headingMainSub:
-      "Bilen du trenger i dag er ikke alltid den du trenger i morgen",
+    heading: "Vi forstår at kjøp av bil ikke alltid er enkelt",
+    headingSub: "Bilen du trenger i dag er ikke alltid den du trenger i morgen",
     buttons: [
       {
         text: "Kom i gang",
@@ -11,16 +10,19 @@ export default {
         _key: "kzxjh"
       }
     ],
+    hverdagsbilImg: "/img/hero/hverdagsbil-og-hyttebil@2x.png",
+    hverdagsbilImgAlt: "Nissan Leaf og Volvo XC60",
     hverdagsbilHeading: "Miljøvennlig hverdagsbil",
     hverdagsbilHeadingSub: "Alt inkludert, utenom strøm og parkering",
     hyttebilHeading: "+ Hyttebil",
     hyttebilHeadingSub: "10 dager inkludert",
+    logoWhite: "/img/brand/imove logo white.svg",
     headingSecondary: "Et bilabonnement med full frihet",
     headingSecondarySub: "fra 3 490,- per mnd"
   },
   heroSecondary: {
-    headingMain: "Prøv et  gratis elbilabonnement i 48 timer",
-    headingMainSub: "– mens vi selger din gamle bil",
+    heading: "Prøv et  gratis elbilabonnement i 48 timer",
+    headingSub: "– mens vi selger din gamle bil",
     buttons: [
       {
         text: "Bli kvitt min gamle bil",
