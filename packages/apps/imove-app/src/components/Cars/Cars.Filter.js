@@ -36,6 +36,7 @@ const CarsFilter = ({
               <Box variant="filter">
                 <Layout>
                   <Input
+                    id="carSearch"
                     placeholder="Søk"
                     variant="search"
                     onChange={e => handleSearchMake(e.target.value)}
