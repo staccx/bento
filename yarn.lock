@@ -1894,20 +1894,6 @@
     es6-error "^4.0.2"
     type-of-is "^3.5.1"
 
-"@sanity/vision@^0.134.1":
-  version "0.134.1"
-  resolved "https://registry.npmjs.org/@sanity/vision/-/vision-0.134.1.tgz#14f4901915e206090b8078f1675f2bc1bb37cf2f"
-  dependencies:
-    classnames "^2.2.5"
-    json-lexer "^1.1.1"
-    moment "^2.19.1"
-    query-string "^4.3.2"
-    react-codemirror2 "^1.0.0"
-    react-icon-base "^2.1.2"
-    react-json-inspector "^7.1.1"
-    react-spinner "^0.2.6"
-    react-split-pane "^0.1.63"
-
 "@sanity/webpack-integration@0.132.10":
   version "0.132.10"
   resolved "https://registry.yarnpkg.com/@sanity/webpack-integration/-/webpack-integration-0.132.10.tgz#bb7dee89bc5c1f00662f7bc0f05f4ba081cad2c5"
@@ -4462,10 +4448,6 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codemirror@5.29.0:
-  version "5.29.0"
-  resolved "https://registry.npmjs.org/codemirror/-/codemirror-5.29.0.tgz#e68de1350e2f0ce804a3930576d0ae318736e967"
-
 collection-visit@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/collection-visit/-/collection-visit-1.0.0.tgz#4bc0373c164bc3291b4d368c829cf1a80a59dca0"
@@ -6048,6 +6030,12 @@ entities@^1.1.1, entities@~1.1.1:
 env-paths@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/env-paths/-/env-paths-1.0.0.tgz#4168133b42bb05c38a35b1ae4397c8298ab369e0"
+
+epitath@^1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/epitath/-/epitath-1.0.0-beta.1.tgz#356ae63b1748322f87ee667104aedccbd73c3f84"
+  dependencies:
+    immutagen "^1.0.7"
 
 errno@^0.1.3, errno@~0.1.7:
   version "0.1.7"
@@ -8184,6 +8172,10 @@ immutability-helper@^2.7.1:
 immutable@^3.8.1, immutable@^3.8.2:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
+
+immutagen@^1.0.7:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/immutagen/-/immutagen-1.0.8.tgz#efc32eccab30a833496de43a4ea7aa4353e1097a"
 
 import-cwd@^2.0.0:
   version "2.1.0"
@@ -12516,7 +12508,7 @@ qs@6.5.2, qs@^6.5.1, qs@~6.5.1, qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
-query-string@^4.1.0, query-string@^4.3.2:
+query-string@^4.1.0:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-4.3.4.tgz#bbb693b9ca915c232515b228b1a02b609043dbeb"
   dependencies:
@@ -12664,12 +12656,6 @@ react-click-outside@^3.0.0:
   resolved "https://registry.npmjs.org/react-click-outside/-/react-click-outside-3.0.1.tgz#6e77e84d2f17afaaac26dbad743cbbf909f5e24c"
   dependencies:
     hoist-non-react-statics "^2.1.1"
-
-react-codemirror2@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/react-codemirror2/-/react-codemirror2-1.0.0.tgz#b529a6c5c91219f92c751f43a17721cdaf36b05f"
-  dependencies:
-    codemirror "5.29.0"
 
 react-container-query@^0.8.0:
   version "0.8.1"
@@ -12996,10 +12982,6 @@ react-sparklines@^1.7.0:
   resolved "https://registry.yarnpkg.com/react-sparklines/-/react-sparklines-1.7.0.tgz#9b1d97e8c8610095eeb2ad658d2e1fcf91f91a60"
   dependencies:
     prop-types "^15.5.10"
-
-react-spinner@^0.2.6:
-  version "0.2.7"
-  resolved "https://registry.npmjs.org/react-spinner/-/react-spinner-0.2.7.tgz#ea3ca3375dd7a54edbb5cc01d17496a2e2fc14db"
 
 react-split-pane@^0.1.63:
   version "0.1.84"

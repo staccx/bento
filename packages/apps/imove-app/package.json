@@ -9,6 +9,7 @@
     "@staccx/base": "^7.7.4",
     "@staccx/soy": "^7.7.4",
     "@staccx/theme": "^7.7.4",
+    "epitath": "^1.0.0-beta.1",
     "history": "^4.7.2",
     "react-step-wizard": "^4.3.1"
   },
