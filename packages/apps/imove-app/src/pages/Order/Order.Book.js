@@ -9,8 +9,10 @@ const OrderBook = ({ match }) => {
   )[0]
 
   return (
-    <Layout>
-      <Link to="/cars">Tilbake til listen</Link>
+    <Layout paddingTop="medium" paddingBottom="huge">
+      <Link to="/cars">
+        <Button variant="back">Tilbake til listen</Button>
+      </Link>
       <img src={car.images[0]} alt="" />
       <div>
         <div>

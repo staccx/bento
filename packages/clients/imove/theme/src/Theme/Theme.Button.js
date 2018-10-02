@@ -34,6 +34,17 @@ export default registerStyle(
       & + & {
         margin-top: 1px;
       }
+    `,
+    back: css`
+      min-height: 28px;
+      padding: 3px ${spacing.small} 3px;
+      border-radius: 50px;
+      color: ${color.white};
+
+      &::before {
+        content: "< ";
+        text-indent: -6px;
+      }
     `
   },
   Button.themeProps.button

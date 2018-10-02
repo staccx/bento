@@ -9,8 +9,10 @@ const CarDetail = ({ match }) => {
   )[0]
 
   return (
-    <Layout>
-      <Link to="/cars">Tilbake til listen</Link>
+    <Layout paddingTop="medium" paddingBottom="huge">
+      <Link to="/cars">
+        <Button variant="back">Tilbake til listen</Button>
+      </Link>
       {car.images.map(image => (
         <img src={image} alt="" />
       ))}

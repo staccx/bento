@@ -25,7 +25,12 @@ const Menu = () => (
   <Box variant="menu">
     <MenuList>
       {menuElements.map(item => (
-        <MenuItem to={item.to} icon={item.icon} title={item.title} />
+        <MenuItem
+          key={item.to}
+          to={item.to}
+          icon={item.icon}
+          title={item.title}
+        />
       ))}
     </MenuList>
   </Box>

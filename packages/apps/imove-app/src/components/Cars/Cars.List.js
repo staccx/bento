@@ -4,7 +4,7 @@ import CarsListItem from "./Cars.List.Item"
 
 const CarsList = ({ cars }) => (
   <div>
-    <Layout>
+    <Layout rowGap="large">
       {cars.map(car => (
         <div key={car.id}>
           <CarsListItem

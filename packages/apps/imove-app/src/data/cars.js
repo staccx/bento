@@ -9,10 +9,7 @@ export default [
     pricePerMonth: 3490,
     numberOfSeats: 4,
     trunkCapacityInLiters: 160,
-    images: [
-      "https://source.unsplash.com/320x120/?car",
-      "https://source.unsplash.com/320x120/?car+interior"
-    ]
+    images: ["egolf.png", "https://source.unsplash.com/320x120/?car+interior"]
   },
   {
     id: "12343rwegs-3541-asd-asdas-123erwfs",
@@ -21,12 +18,9 @@ export default [
     model: "i3",
     year: "2018",
     range: 300,
-    pricePerMonth: 3490,
+    pricePerMonth: 5490,
     numberOfSeats: 5,
     trunkCapacityInLiters: 180,
-    images: [
-      "https://source.unsplash.com/320x120/?bmw+car",
-      "https://source.unsplash.com/320x120/?bmw+car+interior"
-    ]
+    images: ["/i3.png", "https://source.unsplash.com/320x120/?bmw+car+interior"]
   }
 ]
