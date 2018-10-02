@@ -10,7 +10,7 @@ const OrderConfirm = ({ match }) => {
 
   // TODO: If not logged in, redirect to auth
   return (
-    <Layout>
+    <Layout paddingTop="medium" paddingBottom="huge">
       <Heading level={1}>Du er i gang!</Heading> {/* TODO: Replace text */}
       <p>
         Vi holder av bilen for deg, og tar kontakt innen to arbeidsdager for å

@@ -38,7 +38,6 @@ class Slider extends React.PureComponent {
     return (
       <SliderInput
         percentage={this.state.percentage}
-        variantStyle={variantStyle}
         variant={variant}
         ignoreBase={ignoreBase}
       >
@@ -120,7 +119,7 @@ const SliderInput = styled.div`
   font-weight: ${fontWeight.bold};
 
   /* Make the default slider invisible */
-  > input[type=range] {
+  > input[type="range"] {
     -webkit-appearance: none;
     width: 100%;
     background-color: transparent;
@@ -132,88 +131,90 @@ const SliderInput = styled.div`
     -webkit-tap-highlight-color: transparent;
   }
 
-  > input[type=range]::-webkit-slider-thumb {
+  > input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
   }
 
-  > input[type=range]::-ms-track {
-    ${SliderHiddenTrackStyle}
+  > input[type="range"]::-ms-track {
+    ${SliderHiddenTrackStyle};
   }
 
-  > input[type=range]::-moz-range-track {
-    ${SliderHiddenTrackStyle}
+  > input[type="range"]::-moz-range-track {
+    ${SliderHiddenTrackStyle};
   }
 
-  > input[type=range]:focus {
+  > input[type="range"]:focus {
     outline: none;
   }
 
-  > input[type=range]:active {
+  > input[type="range"]:active {
     outline: none;
   }
 
-  >input[type=range]:-moz-focusring,
-  >input[type=range]:focusring {
+  > input[type="range"]:-moz-focusring,
+  > input[type="range"]:focusring {
     outline: 1px solid white;
     outline-offset: -1px;
   }
 
   /* Style the thumb */
-  > input[type=range]::-webkit-slider-thumb {
-    ${SliderThumbStyle}
-    margin-top: -3px;
+  > input[type="range"]::-webkit-slider-thumb {
+    ${SliderThumbStyle} margin-top: -3px;
   }
 
-  > input[type=range]::-moz-range-thumb {
-    ${SliderThumbStyle}
+  > input[type="range"]::-moz-range-thumb {
+    ${SliderThumbStyle};
   }
 
-  > input[type=range]::-ms-thumb {
-    ${SliderThumbStyle}
+  > input[type="range"]::-ms-thumb {
+    ${SliderThumbStyle};
   }
 
   /* Style the track for webkit */
-  input[type=range]::-webkit-slider-runnable-track {
-    ${SliderTrackStyle}
-    background: linear-gradient(90deg,
-      ${color.primary} 0%, ${color.primary}
-      ${p => p.percentage * 100}%, ${color.line}
-      ${p => p.percentage * 100 + 0.0}%,
-      ${color.line} 100%) 0 100% no-repeat content-box;
+  input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(
+        90deg,
+        ${color.primary} 0%,
+        ${color.primary} ${p => p.percentage * 100}%,
+        ${color.line} ${p => p.percentage * 100 + 0.0}%,
+        ${color.line} 100%
+      )
+      0 100% no-repeat content-box;
+    ${SliderTrackStyle};
   }
 
-  input[type=range]:focus::-webkit-slider-runnable-track {
+  input[type="range"]:focus::-webkit-slider-runnable-track {
   }
 
   /* Style the track for mozilla */
-  input[type=range]::-moz-range-track {
-    ${SliderTrackStyle}
+  input[type="range"]::-moz-range-track {
+    ${SliderTrackStyle};
   }
 
-  input[type=range]::-moz-range-progress {
+  input[type="range"]::-moz-range-progress {
     background-color: ${color.primary};
     height: 9px;
     border-radius: 4.5px;
   }
 
   /* Style the track for MS */
-  input[type=range]::-ms-track {
-    ${SliderTrackStyle}
+  input[type="range"]::-ms-track {
+    ${SliderTrackStyle};
   }
 
-  input[type=range]::-ms-fill-lower {
+  input[type="range"]::-ms-fill-lower {
     background-color: ${color.primary};
   }
 
-  input[type=range]:focus::-ms-fill-lower {
+  input[type="range"]:focus::-ms-fill-lower {
     background-color: ${color.white};
   }
 
-  input[type=range]::-ms-fill-upper {
+  input[type="range"]::-ms-fill-upper {
     background-color: ${color.white};
   }
 
-  input[type=range]:focus::-ms-fill-upper {
+  input[type="range"]:focus::-ms-fill-upper {
     background-color: ${color.white};
   }
 
@@ -226,9 +227,7 @@ Slider.defaultProps = {
   max: 100,
   min: 0,
   step: 1,
-  variant: null,
-  value: undefined,
-  variantStyle: null
+  value: undefined
 }
 
 Slider.propTypes = {
@@ -241,8 +240,7 @@ Slider.propTypes = {
   onChange: PropTypes.func,
   step: PropTypes.any,
   variant: PropTypes.string,
-  value: PropTypes.any,
-  variantStyle: PropTypes.func
+  value: PropTypes.any
 }
 
 export default Slider

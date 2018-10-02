@@ -38,11 +38,25 @@ export default registerStyle(
         margin: auto;
       }
     `,
-    primary: css`
+    filter: css`
       background-color: ${color.primary};
       color: ${color.white};
+      border-radius: 0;
+      margin-top: -${spacing.medium};
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      label {
+        color: ${color.white};
+      }
     `,
-    subtle: css`
+    subtleLeft: css`
+      margin-left: -${spacing.medium};
+      padding: ${spacing.small} ${spacing.medium};
       background-color: ${color("bgGray")};
       color: ${color.text};
     `

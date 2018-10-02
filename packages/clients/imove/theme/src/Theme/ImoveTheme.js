@@ -22,6 +22,7 @@ import {
 import { CarIcon } from "./Icons/CarIcon"
 import { GarageIcon } from "./Icons/GarageIcon"
 import { ProfileIcon } from "./Icons/ProfileIcon"
+import { SliderThumb, SliderTrack } from "./Theme.Slider"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -142,5 +143,7 @@ const t = new Theme(BaseTheme, {
   .add(CarIcon)
   .add(GarageIcon)
   .add(ProfileIcon)
+  .add(SliderThumb)
+  .add(SliderTrack)
 
 export default t
