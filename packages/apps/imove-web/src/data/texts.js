@@ -99,7 +99,8 @@ export default {
       type: "Elbil",
       seats: "4",
       doors: "5",
-      range: "160km NEDC"
+      range: "160km NEDC",
+      _key: "jhsdv"
     },
     {
       img: "/img/pricing-kia-soul2x.png",
@@ -108,7 +109,8 @@ export default {
       type: "Elbil",
       seats: "4",
       doors: "5",
-      range: "250km NEDC"
+      range: "250km NEDC",
+      _key: "jhsdv"
     },
     {
       img: "/img/pricing-tesla-s-85d2x.png",
@@ -117,35 +119,44 @@ export default {
       type: "Elbil",
       seats: "4",
       doors: "5",
-      range: "528km NEDC"
+      range: "528km NEDC",
+      _key: "jhsdv"
     }
   ],
 
   advantagesHeading: "imove er for deg som ikke ønsker å tenke på",
   advantages: [
     {
-      advantage: "Service og reparasjon"
+      advantage: "Service og reparasjon",
+      _key: "mnsbd0"
     },
     {
-      advantage: "Dekkskift og kjøp av nye dekk"
+      advantage: "Dekkskift og kjøp av nye dekk",
+      _key: "mnsbd1"
     },
     {
-      advantage: "Forsikring"
+      advantage: "Forsikring",
+      _key: "mnsbd2"
     },
     {
-      advantage: "EU-kontroll og offentlige avgifter"
+      advantage: "EU-kontroll og offentlige avgifter",
+      _key: "mnsbd3"
     },
     {
-      advantage: "Verditapet i bilen"
+      advantage: "Verditapet i bilen",
+      _key: "mnsbd4"
     },
     {
-      advantage: "Skjulte kostnader"
+      advantage: "Skjulte kostnader",
+      _key: "mnsbd5"
     },
     {
-      advantage: "Ny teknologi"
+      advantage: "Ny teknologi",
+      _key: "mnsbd6"
     },
     {
-      advantage: "Nye bilavgifter"
+      advantage: "Nye bilavgifter",
+      _key: "mnsbd7"
     }
   ]
 }

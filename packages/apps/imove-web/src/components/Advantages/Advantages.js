@@ -10,7 +10,7 @@ const Advantages = ({ heading, advantages }) => (
         <Heading level={2}>{heading}</Heading>
         <Container>
           {advantages.map(x => (
-            <Advantage>{x.advantage}</Advantage>
+            <Advantage key={x._key}>{x.advantage}</Advantage>
           ))}
         </Container>
       </Layout>
