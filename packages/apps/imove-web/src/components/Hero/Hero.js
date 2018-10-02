@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color } from "@staccx/theme"
-import { Heading, Wrapper } from "@staccx/base"
+import { Wrapper } from "@staccx/base"
 import HeroBlob from "./Hero.Blob.js"
 
 const Hero = ({ heroType, heroMain, heroSecondary, extraCars }) => {
