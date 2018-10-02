@@ -1,16 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import { Heading } from "@staccx/base"
-import { color, font } from "@staccx/theme"
+import { Heading, Layout } from "@staccx/base"
+import { color, font, fontFamily, spacing } from "@staccx/theme"
 
 const HeroBlob = ({ logo, heading, headingSub }) => (
   <Content>
     <Inner>
-      <div>
-        <img src={logo} alt="imove" />
+      <Layout rowGap="medium">
+        <Logo src={logo} alt="imove" />
         <StyledHeading level={2}>{heading}</StyledHeading>
-        <div>{headingSub}</div>
-      </div>
+        <HeadingSub>{headingSub}</HeadingSub>
+      </Layout>
     </Inner>
   </Content>
 )
@@ -34,11 +34,23 @@ const Inner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: ${spacing("large")};
+`
+
+const Logo = styled.img`
+  margin: auto;
 `
 
 const StyledHeading = styled(Heading)`
   color: ${color("white")};
-  font-size: ${font("huge")};
+  font-size: ${font("hugePlus")};
+`
+
+const HeadingSub = styled.p`
+  font-family: ${fontFamily("heading")};
+  color: ${color("white")};
+  font-size: ${font("h2")};
 `
 
 export default HeroBlob

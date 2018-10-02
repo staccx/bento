@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { color } from "@staccx/theme"
-import { Heading } from "@staccx/base"
+import { Heading, Wrapper } from "@staccx/base"
 import HeroBlob from "./Hero.Blob.js"
 
 const Hero = ({ heroType, heroMain, heroSecondary, extraCars }) => {
@@ -10,37 +10,43 @@ const Hero = ({ heroType, heroMain, heroSecondary, extraCars }) => {
   } else {
     // primary:
     return (
-      <HeroInner>
-        <CarColumn>
-          <h2>{heroMain.heading}</h2>
-          <div>{heroMain.headingSub}</div>
-          <div>
-            {heroMain.buttons.map(x => (
-              <a href={x.url} key={x._key}>
-                {x.text}
-              </a>
-            ))}
-          </div>
-          <div>
-            <img
-              src={heroMain.hverdagsbilImg}
-              alt={heroMain.hverdagsbilImgAlt}
+      <Content>
+        <StyledWrapper size="largePlus">
+          <CarColumn>
+            <h2>{heroMain.heading}</h2>
+            <div>{heroMain.headingSub}</div>
+            <div>
+              {heroMain.buttons.map(x => (
+                <a href={x.url} key={x._key}>
+                  {x.text}
+                </a>
+              ))}
+            </div>
+            <div>
+              <img
+                src={heroMain.hverdagsbilImg}
+                alt={heroMain.hverdagsbilImgAlt}
+              />
+            </div>
+          </CarColumn>
+          <BlobColumn>
+            <HeroBlob
+              logo={heroMain.logoWhite}
+              heading={heroMain.headingSecondary}
+              headingSub={heroMain.headingSecondarySub}
             />
-          </div>
-        </CarColumn>
-        <BlobColumn>
-          <HeroBlob
-            logo={heroMain.logoWhite}
-            heading={heroMain.headingSecondary}
-            headingSub={heroMain.headingSecondarySub}
-          />
-        </BlobColumn>
-      </HeroInner>
+          </BlobColumn>
+        </StyledWrapper>
+      </Content>
     )
   }
 }
 
-const HeroInner = styled.div`
+const StyledWrapper = styled(Wrapper)`
+  display: flex;
+`
+
+const Content = styled.div`
   display: flex;
 `
 
