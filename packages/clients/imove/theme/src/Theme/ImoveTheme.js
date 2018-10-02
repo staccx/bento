@@ -91,6 +91,7 @@ const font = {
   largePlus: "24px",
   largePlusPlus: "28px",
   huge: "36px",
+  hugePlus: "52px",
   input: "16px"
 }
 
