@@ -46,19 +46,21 @@ export default {
   },
   extraCars: {
     heading: "Tilleggsbil når du trenger det",
-    headingSub:
+    paragraph:
       "Trenger du en annen bil i en kort periode, er det rimelig å leie gjennom imove.",
     cars: [
       {
         heading: "Flyttebil",
         headingSub: "Fra kr 599 per dag",
-        img: "",
+        img: "/img/hero/flyttebil@2x.png",
+        alt: "Mercedes-Benz Sprinter",
         _key: "jhfdk"
       },
       {
         heading: "Morobil",
         headingSub: "Fra kr 1 599 per dag",
-        img: "",
+        img: "/img/hero/morobil@2x.png",
+        alt: "BMW 435i Convertible",
         _key: "bsate"
       }
     ]
