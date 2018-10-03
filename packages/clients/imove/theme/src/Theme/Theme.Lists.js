@@ -11,6 +11,23 @@ export const ListStyling = registerStyle(
       > li {
         border-bottom: 1px solid ${color.secondary};
       }
+    `,
+    bullets: css`
+      > li {
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background-color: ${color.primary};
+          border-radius: 50%;
+          margin-right: 6px;
+          transform: translateY(-1px);
+        }
+        &:not(:last-child) {
+          margin-bottom: 6px;
+        }
+      }
     `
   },
   List.themeProps.list
