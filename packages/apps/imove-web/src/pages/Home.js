@@ -25,8 +25,8 @@ const Home = () => (
 
     <Comparison
       heading={data.comparisonHeading}
-      comparisonHeaders={data.comparisonHeaders}
-      comparison={data.comparisonRows}
+      headers={data.comparisonHeaders}
+      rows={data.comparisonRows}
     />
 
     <Footer>

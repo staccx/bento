@@ -4,7 +4,7 @@ import { spacing, font, color } from "@staccx/theme"
 import { Wrapper, Layout, Heading } from "@staccx/base"
 import SectionHeading from "../SectionHeading/SectionHeading"
 
-const Comparison = ({ heading, comparison }) => (
+const Comparison = ({ heading, headers, rows }) => (
   <Content>
     <Wrapper size="largePlus">
       <SectionHeading>{heading}</SectionHeading>
@@ -12,19 +12,21 @@ const Comparison = ({ heading, comparison }) => (
         <table>
           <thead>
             <tr>
-              <th>&nbsp;</th>
-              <th>imove</th>
-              <th>Leasing</th>
-              <th>Kjøpe</th>
+              <th>{headers.desc}</th>
+              <th>{headers.imove}</th>
+              <th>{headers.leasing}</th>
+              <th>{headers.kjope}</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Ingen startleie</td>
-              <td>Yes</td>
-              <td>No</td>
-              <td>No</td>
-            </tr>
+            {rows.map(x => (
+              <tr key={x._key}>
+                <td>{x.desc}</td>
+                <td>{x.imove}</td>
+                <td>{x.leasing}</td>
+                <td>{x.kjope}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
