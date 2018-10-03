@@ -4,6 +4,7 @@ import Hero from "../components/Hero/Hero"
 import Features from "../components/Features/Features"
 import Pricing from "../components/Pricing/Pricing"
 import Advantages from "../components/Advantages/Advantages"
+import Comparison from "../components/Comparison/Comparison"
 import Footer from "../components/Footer/Footer"
 import Column from "../components/Footer/Footer.Column"
 
@@ -21,6 +22,12 @@ const Home = () => (
     <Pricing heading={data.pricingHeading} cars={data.pricingCars} />
 
     <Advantages heading={data.advantagesHeading} advantages={data.advantages} />
+
+    <Comparison
+      heading={data.comparisonHeading}
+      comparisonHeaders={data.comparisonHeaders}
+      comparison={data.comparisonRows}
+    />
 
     <Footer>
       <Column heading="Finn oss">
