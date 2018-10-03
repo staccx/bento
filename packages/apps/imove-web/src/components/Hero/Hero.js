@@ -13,22 +13,26 @@ const Hero = ({ heroType, heroMain, heroSecondary, extraCars }) => {
     // primary:
     return (
       <Content>
+        <HeroTop>
+          <StyledWrapper size="largePlus">
+            <CarColumn>
+              <CallToAction
+                heading={heroMain.heading}
+                headingSub={heroMain.headingSub}
+                buttons={heroMain.buttons}
+                hverdagsbil={heroMain.hverdagsbil}
+              />
+            </CarColumn>
+            <BlobColumn>
+              <HeroBlob
+                logo={heroMain.logoWhite}
+                heading={heroMain.headingSecondary}
+                headingSub={heroMain.headingSecondarySub}
+              />
+            </BlobColumn>
+          </StyledWrapper>
+        </HeroTop>
         <StyledWrapper size="largePlus">
-          <CarColumn>
-            <CallToAction
-              heading={heroMain.heading}
-              headingSub={heroMain.headingSub}
-              buttons={heroMain.buttons}
-              hverdagsbil={heroMain.hverdagsbil}
-            />
-          </CarColumn>
-          <BlobColumn>
-            <HeroBlob
-              logo={heroMain.logoWhite}
-              heading={heroMain.headingSecondary}
-              headingSub={heroMain.headingSecondarySub}
-            />
-          </BlobColumn>
           <ExtraCars data={extraCars} />
         </StyledWrapper>
       </Content>
@@ -36,14 +40,22 @@ const Hero = ({ heroType, heroMain, heroSecondary, extraCars }) => {
   }
 }
 
+const Content = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: ${spacing("huge")};
+`
+
+const HeroTop = styled.div`
+  display: block;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(246, 246, 246, 0) 0%, #f6f6f6 100%);
+  padding-bottom: ${spacing("large")};
+`
+
 const StyledWrapper = styled(Wrapper)`
   display: flex;
   flex-wrap: wrap;
-`
-
-const Content = styled.div`
-  display: flex;
-  padding-bottom: ${spacing("huge")};
 `
 
 const CarColumn = styled.div`

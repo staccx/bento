@@ -8,14 +8,12 @@ const Hverdagsbil = ({ data }) => (
     <img src={data.img} alt={data.imgAlt} />
     <Columns>
       <FirstColumn>
-        <HverdagsbilHeading level={2}>{data.heading}</HverdagsbilHeading>
-        <HverdagsbilSub>{data.headingSub}</HverdagsbilSub>
+        <HeroCarHeading level={3}>{data.heading}</HeroCarHeading>
+        <HeroCarSub>{data.headingSub}</HeroCarSub>
       </FirstColumn>
       <SecondColumn>
-        <HverdagsbilHeading level={2}>
-          {data.hyttebilHeading}
-        </HverdagsbilHeading>
-        <HverdagsbilSub>{data.hyttebilHeadingSub}</HverdagsbilSub>
+        <HeroCarHeading level={2}>{data.hyttebilHeading}</HeroCarHeading>
+        <HeroCarSub>{data.hyttebilHeadingSub}</HeroCarSub>
       </SecondColumn>
     </Columns>
   </div>
@@ -34,12 +32,12 @@ const SecondColumn = styled.div`
   top: calc(${spacing("large")} * -1 - 50px);
 `
 
-const HverdagsbilHeading = styled(Heading)`
+const HeroCarHeading = styled(Heading)`
   color: ${color("primary")};
   font-size: ${font("largePlus")};
 `
 
-const HverdagsbilSub = styled.p`
+const HeroCarSub = styled.p`
   color: ${color("gray")};
 `
 

@@ -1,19 +1,60 @@
 import React from "react"
+import styled from "styled-components"
+import { spacing, color, font } from "@staccx/theme"
+import { Heading } from "@staccx/base"
 
 const ExtraCars = ({ data }) => (
-  <div>
-    {data.cars.map(x => (
-      <div key={x._key}>
-        <img src={x.img} alt={x.alt} />
-        <h3>{x.heading}</h3>
-        <p>{x.headingSub}</p>
-      </div>
-    ))}
-    <div>
-      <h3>{data.heading}</h3>
+  <Row>
+    <CarColumn>
+      {data.cars.map(x => (
+        <Car key={x._key}>
+          <img src={x.img} alt={x.alt} />
+          <HeroCarHeading level={3}>{x.heading}</HeroCarHeading>
+          <HeroCarSub>{x.headingSub}</HeroCarSub>
+        </Car>
+      ))}
+    </CarColumn>
+    <Column>
+      <InfoHeading level={2}>{data.heading}</InfoHeading>
       <p>{data.paragraph}</p>
-    </div>
-  </div>
+    </Column>
+  </Row>
 )
+
+const Row = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: ${spacing("large")} calc(${spacing("large")} * -1) 0;
+`
+
+const InfoHeading = styled(Heading)`
+  color: ${color("primary")};
+`
+
+const Column = styled.div`
+  padding: 0 ${spacing("large")};
+`
+
+const CarColumn = styled(Column)`
+  display: flex;
+  width: 66.66%;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 calc(${spacing("large")} * -1);
+`
+
+const Car = styled.div`
+  padding: 0 ${spacing("large")};
+`
+
+const HeroCarHeading = styled(Heading)`
+  color: ${color("primary")};
+  font-size: ${font("largePlus")};
+`
+
+const HeroCarSub = styled.p`
+  color: ${color("gray")};
+`
 
 export default ExtraCars
