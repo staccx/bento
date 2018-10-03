@@ -131,7 +131,7 @@ class PresentOffer extends React.Component {
                 <Box variant="offerTable" size="large">
                   <OfferTable>
                     <tbody>
-                      {this.props.productType === "PRODUCT_LOAN" && (
+                      {this.props.productType === "loan" && (
                         <tr>
                           <OfferTableText>
                             {this.props.loanDurationText}
