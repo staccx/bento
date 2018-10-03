@@ -16,10 +16,10 @@ const Link = styled.a`
   border: ${p =>
     p.variant === "primary" ? "none" : `3px solid ${color("primary")(p)}`};
   color: ${p => (p.variant === "primary" ? color("white") : color("primary"))};
-  font-size: ${font("large")};
+  font-size: ${font("input")};
   text-decoration: none;
   text-align: center;
-  min-width: 270px;
+  min-width: 185px;
   padding: 0.6em 2em 0.7em;
   margin-right: 40px;
 `
