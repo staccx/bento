@@ -3,6 +3,8 @@ export default {
   heroMain: {
     heading: "Vi forstår at kjøp av bil ikke alltid er enkelt",
     headingSub: "Bilen du trenger i dag er ikke alltid den du trenger i morgen",
+    headingSecondary: "Et bilabonnement med full frihet",
+    headingSecondarySub: "fra 3 490,- per mnd",
     buttons: [
       {
         text: "Kom i gang",
@@ -18,13 +20,13 @@ export default {
       hyttebilHeading: "+ Hyttebil",
       hyttebilHeadingSub: "10 dager inkludert"
     },
-    logoWhite: "/img/brand/imove logo white.svg",
-    headingSecondary: "Et bilabonnement med full frihet",
-    headingSecondarySub: "fra 3 490,- per mnd"
+    logoWhite: "/img/brand/imove logo white.svg"
   },
   heroSecondary: {
     heading: "Prøv et  gratis elbilabonnement i 48 timer",
     headingSub: "– mens vi selger din gamle bil",
+    headingSecondary: "Et bilabonnement med full frihet",
+    headingSecondarySub: "fra 3 490,- per mnd",
     buttons: [
       {
         text: "Bli kvitt min gamle bil",
@@ -40,9 +42,7 @@ export default {
     hverdagsbilHeading: "Miljøvennlig hverdagsbil",
     hverdagsbilHeadingSub: "Alt inkludert, utenom strøm og parkering",
     hyttebilHeading: "+ Hyttebil",
-    hyttebilHeadingSub: "10 dager inkludert",
-    headingSecondary: "Et bilabonnement med full frihet",
-    headingSecondarySub: "fra 3 490,- per mnd"
+    hyttebilHeadingSub: "10 dager inkludert"
   },
   extraCars: {
     heading: "Tilleggsbil når du trenger det",
