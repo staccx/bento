@@ -4,6 +4,7 @@ import { Wrapper } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 import HeroBlob from "./Hero.Blob"
 import CallToAction from "./Hero.CallToAction"
+import ExtraCars from "./Hero.ExtraCars"
 
 const Hero = ({ heroType, heroMain, heroSecondary, extraCars }) => {
   if (heroMain === "secondary") {
@@ -28,6 +29,7 @@ const Hero = ({ heroType, heroMain, heroSecondary, extraCars }) => {
               headingSub={heroMain.headingSecondarySub}
             />
           </BlobColumn>
+          <ExtraCars data={extraCars} />
         </StyledWrapper>
       </Content>
     )
@@ -36,10 +38,12 @@ const Hero = ({ heroType, heroMain, heroSecondary, extraCars }) => {
 
 const StyledWrapper = styled(Wrapper)`
   display: flex;
+  flex-wrap: wrap;
 `
 
 const Content = styled.div`
   display: flex;
+  padding-bottom: ${spacing("huge")};
 `
 
 const CarColumn = styled.div`
