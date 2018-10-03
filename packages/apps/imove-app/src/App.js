@@ -20,6 +20,7 @@ import Profile from "./pages/Profile"
 import ProfileEdit from "./pages/ProfileEdit"
 import End from "./pages/End"
 import EndConfirmation from "./pages/EndConfirmation"
+import LogIn from "./pages/LogIn"
 
 class App extends Component {
   render() {
@@ -34,8 +35,9 @@ class App extends Component {
                 <Transitions pageKey={location.key} {...location.state}>
                   <Wrapper size="small">
                     <Switch location={location}>
+                      <Route path="/" exact component={LogIn} />
                       <Route path="/onboarding" exact component={Onboarding} />
-                      <Route path="/" exact component={MyCar} />
+                      <Route path="/my-car" exact component={MyCar} />
                       <Route path="/sell" exact component={Sell} />
                       <Route
                         path="/sell/confirmation"

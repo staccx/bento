@@ -10,7 +10,7 @@ const menuElements = [
     title: "Bestill bil"
   },
   {
-    to: "/",
+    to: "/my-car",
     icon: "Garage",
     title: "Min bil"
   },

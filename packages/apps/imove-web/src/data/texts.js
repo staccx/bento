@@ -1,19 +1,72 @@
 export default {
   /* Hero */
-  headingMain: "Et bilabonnement med full frihet",
-  subHeadingMain: "–en helt ny måte å tenke bil",
-  headingSecondary: "Bli pilotbruker og vi hjelper deg å selge bilen din",
-  buttonCarSale: "Bli kvitt min gamle bil",
-  buttonCarSubscribe: "Abonner på ny bil",
-  hverdagsbilName: "Hverdagsbil",
-  hverdagsbilSubtitle: "Fra kr 3100 per måned",
-  flyttebilName: "Flyttebil",
-  flyttebilSubtitle: "Fra kr 599 per dag",
-  morobilName: "Morobil",
-  morobilSubtitle: "Fra kr 1599 per dag",
+  heroMain: {
+    heading: "Vi forstår at kjøp av bil ikke alltid er enkelt",
+    headingSub: "Bilen du trenger i dag er ikke alltid den du trenger i morgen",
+    headingSecondary: "Et bilabonnement med full frihet",
+    headingSecondarySub: "fra 3 490,- per mnd",
+    buttons: [
+      {
+        text: "Kom i gang",
+        url: "#",
+        _key: "kzxjh"
+      }
+    ],
+    hverdagsbil: {
+      img: "/img/hero/hverdagsbil-og-hyttebil@2x.png",
+      imgAlt: "Nissan Leaf og Volvo XC60",
+      heading: "Miljøvennlig hverdagsbil",
+      headingSub: "Alt inkludert, utenom strøm og parkering",
+      hyttebilHeading: "+ Hyttebil",
+      hyttebilHeadingSub: "10 dager inkludert"
+    },
+    logoWhite: "/img/brand/imove logo white.svg"
+  },
+  heroSecondary: {
+    heading: "Prøv et  gratis elbilabonnement i 48 timer",
+    headingSub: "– mens vi selger din gamle bil",
+    headingSecondary: "Et bilabonnement med full frihet",
+    headingSecondarySub: "fra 3 490,- per mnd",
+    buttons: [
+      {
+        text: "Bli kvitt min gamle bil",
+        url: "#",
+        _key: "maodd"
+      },
+      {
+        text: "Abonner på ny bil",
+        url: "#",
+        _key: "bdpkd"
+      }
+    ],
+    hverdagsbilHeading: "Miljøvennlig hverdagsbil",
+    hverdagsbilHeadingSub: "Alt inkludert, utenom strøm og parkering",
+    hyttebilHeading: "+ Hyttebil",
+    hyttebilHeadingSub: "10 dager inkludert"
+  },
+  extraCars: {
+    heading: "Tilleggsbil når du trenger det",
+    paragraph:
+      "Trenger du en annen bil i en kort periode, er det rimelig å leie gjennom imove.",
+    cars: [
+      {
+        heading: "Flyttebil",
+        headingSub: "Fra kr 599 per dag",
+        img: "/img/hero/flyttebil@2x.png",
+        alt: "Mercedes-Benz Sprinter",
+        _key: "jhfdk"
+      },
+      {
+        heading: "Morobil",
+        headingSub: "Fra kr 1 599 per dag",
+        img: "/img/hero/morobil@2x.png",
+        alt: "BMW 435i Convertible",
+        _key: "bsate"
+      }
+    ]
+  },
 
   featuresHeading: "Et abonnement hos imove er",
-
   features: [
     {
       heading: "Enkelt og forutsigbart",
@@ -50,7 +103,8 @@ export default {
       type: "Elbil",
       seats: "4",
       doors: "5",
-      range: "160km NEDC"
+      range: "160km NEDC",
+      _key: "jhsdv"
     },
     {
       img: "/img/pricing-kia-soul2x.png",
@@ -59,7 +113,8 @@ export default {
       type: "Elbil",
       seats: "4",
       doors: "5",
-      range: "250km NEDC"
+      range: "250km NEDC",
+      _key: "jhsdv"
     },
     {
       img: "/img/pricing-tesla-s-85d2x.png",
@@ -68,35 +123,44 @@ export default {
       type: "Elbil",
       seats: "4",
       doors: "5",
-      range: "528km NEDC"
+      range: "528km NEDC",
+      _key: "jhsdv"
     }
   ],
 
   advantagesHeading: "imove er for deg som ikke ønsker å tenke på",
   advantages: [
     {
-      advantage: "Service og reparasjon"
+      advantage: "Service og reparasjon",
+      _key: "mnsbd0"
     },
     {
-      advantage: "Dekkskift og kjøp av nye dekk"
+      advantage: "Dekkskift og kjøp av nye dekk",
+      _key: "mnsbd1"
     },
     {
-      advantage: "Forsikring"
+      advantage: "Forsikring",
+      _key: "mnsbd2"
     },
     {
-      advantage: "EU-kontroll og offentlige avgifter"
+      advantage: "EU-kontroll og offentlige avgifter",
+      _key: "mnsbd3"
     },
     {
-      advantage: "Verditapet i bilen"
+      advantage: "Verditapet i bilen",
+      _key: "mnsbd4"
     },
     {
-      advantage: "Skjulte kostnader"
+      advantage: "Skjulte kostnader",
+      _key: "mnsbd5"
     },
     {
-      advantage: "Ny teknologi"
+      advantage: "Ny teknologi",
+      _key: "mnsbd6"
     },
     {
-      advantage: "Nye bilavgifter"
+      advantage: "Nye bilavgifter",
+      _key: "mnsbd7"
     }
   ]
 }

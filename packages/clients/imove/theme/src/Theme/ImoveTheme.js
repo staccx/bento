@@ -23,6 +23,7 @@ import { CarIcon } from "./Icons/CarIcon"
 import { GarageIcon } from "./Icons/GarageIcon"
 import { ProfileIcon } from "./Icons/ProfileIcon"
 import { SliderThumb, SliderTrack } from "./Theme.Slider"
+import { LayoutStyling } from "./Theme.Layout"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -90,6 +91,7 @@ const font = {
   largePlus: "24px",
   largePlusPlus: "28px",
   huge: "36px",
+  hugePlus: "52px",
   input: "16px"
 }
 
@@ -145,5 +147,6 @@ const t = new Theme(BaseTheme, {
   .add(ProfileIcon)
   .add(SliderThumb)
   .add(SliderTrack)
+  .add(LayoutStyling)
 
 export default t
