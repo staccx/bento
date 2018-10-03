@@ -8,14 +8,12 @@ import PricingCard from "./Pricing.PricingCard"
 const Pricing = ({ heading, cars }) => (
   <Content>
     <Wrapper size="full">
-      <Layout rowGap="huge">
-        <Heading level={2}>{heading}</Heading>
-        <List>
-          {cars.map((car, index) => (
-            <PricingCard car={car} key={index} />
-          ))}
-        </List>
-      </Layout>
+      <SectionHeading>{heading}</SectionHeading>
+      <List>
+        {cars.map((car, index) => (
+          <PricingCard car={car} key={index} />
+        ))}
+      </List>
     </Wrapper>
   </Content>
 )

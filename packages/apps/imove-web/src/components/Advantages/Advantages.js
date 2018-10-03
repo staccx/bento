@@ -2,18 +2,17 @@ import React from "react"
 import styled from "styled-components"
 import { spacing, font, color } from "@staccx/theme"
 import { Wrapper, Layout, Heading } from "@staccx/base"
+import SectionHeading from "../SectionHeading/SectionHeading"
 
 const Advantages = ({ heading, advantages }) => (
   <Content>
     <Wrapper size="largePlus">
-      <Layout rowGap="huge">
-        <Heading level={2}>{heading}</Heading>
-        <Container>
-          {advantages.map(x => (
-            <Advantage key={x._key}>{x.advantage}</Advantage>
-          ))}
-        </Container>
-      </Layout>
+      <SectionHeading>{heading}</SectionHeading>
+      <Container>
+        {advantages.map(x => (
+          <Advantage key={x._key}>{x.advantage}</Advantage>
+        ))}
+      </Container>
     </Wrapper>
   </Content>
 )
