@@ -8,7 +8,7 @@ const HeroBlob = ({ logo, heading, headingSub }) => (
     <Inner>
       <Layout rowGap="medium">
         <Logo src={logo} alt="imove" />
-        <StyledHeading level={2}>{heading}</StyledHeading>
+        <StyledHeading level={1}>{heading}</StyledHeading>
         <HeadingSub>{headingSub}</HeadingSub>
       </Layout>
     </Inner>
