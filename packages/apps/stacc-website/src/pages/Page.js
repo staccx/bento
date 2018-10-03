@@ -8,6 +8,7 @@ import {
   NavigationSubpage,
   SectionHead
 } from "../components/_codeSplitting"
+import { Redirect, Route } from "react-router-dom"
 
 class Page extends Component {
   componentWillMount() {
@@ -36,33 +37,61 @@ class Page extends Component {
       <div>
         {page.subpages &&
           page.subpages.length > 0 && (
-            <NavigationSubpage
-              items={page.subpages}
-              name={page.path.current}
-              title={page.pageTitle || page.title}
-            />
+            <React.Fragment>
+              {!renderSubpage && (
+                <React.Fragment>
+                  <NavigationSubpage
+                    items={page.subpages}
+                    name={page.path.current}
+                    title={page.pageTitle || page.title}
+                  />
+                  <Route
+                    path={`${page.path.current}/:subpage`}
+                    render={({ match }) => <Page page={page} match={match} />}
+                  />
+                </React.Fragment>
+              )}
+              <Route
+                exact
+                path={`${page.path.current}`}
+                render={() => {
+                  return (
+                    <Redirect
+                      to={`${page.path.current}/${dashIt(
+                        page.subpages[0].title
+                      )}`}
+                    />
+                  )
+                }}
+              />
+            </React.Fragment>
           )}
         {renderSubpage && <Page page={renderSubpage} />}
-        {page.hero && (
-          <Hero
-            heading={page.hero.title}
-            lede={page.hero.body}
-            trinity={page.hero.trinity}
-          />
+        {!renderSubpage && (
+          <React.Fragment>
+            {page.hero && (
+              <Hero
+                heading={page.hero.title}
+                lede={page.hero.body}
+                trinity={page.hero.trinity}
+              />
+            )}
+            {page.sectionHead && (
+              <SectionHead
+                heading={page.sectionHead.title}
+                lede={page.sectionHead.body}
+                trinity={page.sectionHead.trinity}
+              />
+            )}
+
+            <BlockContent
+              blocks={page.blocks}
+              serializers={blockContentSerializer}
+              renderContainerOnSingleChild
+              {...blockCredentials}
+            />
+          </React.Fragment>
         )}
-        {page.sectionHead && (
-          <SectionHead
-            heading={page.sectionHead.title}
-            lede={page.sectionHead.body}
-            trinity={page.sectionHead.trinity}
-          />
-        )}
-        <BlockContent
-          blocks={page.blocks}
-          serializers={blockContentSerializer}
-          renderContainerOnSingleChild
-          {...blockCredentials}
-        />
       </div>
     )
   }
