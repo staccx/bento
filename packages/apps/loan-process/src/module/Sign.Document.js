@@ -41,12 +41,12 @@ const SignedContainer = styled.div`
   display: flex;
 `
 
-const SignButton = styled(Button.withComponent("a"))`
+const SignButton = styled.a`
   margin-bottom: 0;
   &:disabled {
     background: gray;
   }
-`
+`.extend(Button)
 
 const Checkmark = styled.svg`
   display: block;
