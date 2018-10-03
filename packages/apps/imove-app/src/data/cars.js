@@ -9,7 +9,11 @@ export default [
     pricePerMonth: 3490,
     numberOfSeats: 4,
     trunkCapacityInLiters: 160,
-    images: ["egolf.png", "https://source.unsplash.com/320x120/?car+interior"]
+    images: [
+      "/egolf.png",
+      "https://source.unsplash.com/320x120/?car+interior",
+      "https://source.unsplash.com/320x120/?volkswagen+interior"
+    ]
   },
   {
     id: "12343rwegs-3541-asd-asdas-123erwfs",
