@@ -37,9 +37,10 @@ const metaMiddleware = (req, res, next) => {
   const builder = imageUrlBuilder(sanity.client)
 
   const sender = sanity
-    .withFilter("path.current")
-    .equalTo(`"${req.url}"`)
-    .pick("meta")
+    .doCompare(`"${req.url}" match path.current`)
+    .pick("meta, path")
+
+  console.log(sender.query)
 
   const replaceOG = meta => {
     fs.readFile(filePath, "utf8", function(err, data) {
@@ -56,8 +57,21 @@ const metaMiddleware = (req, res, next) => {
 
   sender
     .send()
-    .then(result => result[0])
+    .then(result => {
+      if (req.url === "/") {
+        // We are at the root and can therefore just use the first element
+        return result[0]
+      }
+
+      /**
+       *      Our query will always include root "/".
+       *      This is extremely predictable,
+       *      and we can therefore pick the second element
+       */
+      return result.length > 1 ? result[1] : result[0]
+    })
     .then(({ meta }) => {
+      console.log(meta)
       // read in the index.html file
       replaceOG({
         ...metaFallback,
