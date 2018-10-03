@@ -40,8 +40,8 @@ const Routes = epitath(function*({ change }) {
         <Route
           key={page._id}
           path={`${page.path.current}`}
-          render={({ match }) => (
-            <Page page={page} match={match} change={change} />
+          render={({ match, location }) => (
+            <Page page={page} match={match} location={location} change={change} />
           )}
         />
       ))}

@@ -9,6 +9,7 @@ import {
   SectionHead
 } from "../components/_codeSplitting"
 import { Redirect, Route } from "react-router-dom"
+import FourOFour from "./404"
 
 class Page extends Component {
   componentWillMount() {
@@ -23,34 +24,56 @@ class Page extends Component {
   }
 
   render() {
-    const { match, page, blockCredentials = {} } = this.props
-    let renderSubpage = null
-    if (match) {
-      const { subpage } = match.params
+    const { page, blockCredentials = {} } = this.props
 
-      renderSubpage = page.subpages
-        ? page.subpages.find(s => dashIt(s.title) === subpage)
-        : null
+    const { pathname } = window.location
+    const shouldRender =
+      page.path.current === pathname ||
+      (page.subpages
+        ? page.subpages.some(
+            s =>
+              dashIt(s.title) === pathname.substr(pathname.lastIndexOf("/") + 1)
+          )
+        : false)
+
+    if (!shouldRender) {
+      // We dont have a page, nor subpages. Early out 404
+      return <FourOFour />
     }
 
     return (
-      <div>
+      <React.Fragment>
         {page.subpages &&
           page.subpages.length > 0 && (
             <React.Fragment>
-              {!renderSubpage && (
-                <React.Fragment>
-                  <NavigationSubpage
-                    items={page.subpages}
-                    name={page.path.current}
-                    title={page.pageTitle || page.title}
-                  />
-                  <Route
-                    path={`${page.path.current}/:subpage`}
-                    render={({ match }) => <Page page={page} match={match} />}
-                  />
-                </React.Fragment>
-              )}
+              <NavigationSubpage
+                items={page.subpages}
+                name={page.path.current}
+                title={page.pageTitle || page.title}
+              />
+              <Route
+                path={`${page.path.current}/:subpage`}
+                render={({ match }) => {
+                  const { subpage } = match.params
+
+                  const renderSubpage = page.subpages
+                    ? page.subpages.find(s => dashIt(s.title) === subpage)
+                    : null
+
+                  if (!renderSubpage) {
+                    return <FourOFour />
+                  }
+
+                  return (
+                    <BlockContent
+                      blocks={renderSubpage.blocks}
+                      serializers={blockContentSerializer}
+                      renderContainerOnSingleChild
+                      {...blockCredentials}
+                    />
+                  )
+                }}
+              />
               <Route
                 exact
                 path={`${page.path.current}`}
@@ -66,33 +89,28 @@ class Page extends Component {
               />
             </React.Fragment>
           )}
-        {renderSubpage && <Page page={renderSubpage} />}
-        {!renderSubpage && (
-          <React.Fragment>
-            {page.hero && (
-              <Hero
-                heading={page.hero.title}
-                lede={page.hero.body}
-                trinity={page.hero.trinity}
-              />
-            )}
-            {page.sectionHead && (
-              <SectionHead
-                heading={page.sectionHead.title}
-                lede={page.sectionHead.body}
-                trinity={page.sectionHead.trinity}
-              />
-            )}
-
-            <BlockContent
-              blocks={page.blocks}
-              serializers={blockContentSerializer}
-              renderContainerOnSingleChild
-              {...blockCredentials}
-            />
-          </React.Fragment>
+        {page.hero && (
+          <Hero
+            heading={page.hero.title}
+            lede={page.hero.body}
+            trinity={page.hero.trinity}
+          />
         )}
-      </div>
+        {page.sectionHead && (
+          <SectionHead
+            heading={page.sectionHead.title}
+            lede={page.sectionHead.body}
+            trinity={page.sectionHead.trinity}
+          />
+        )}
+
+        <BlockContent
+          blocks={page.blocks}
+          serializers={blockContentSerializer}
+          renderContainerOnSingleChild
+          {...blockCredentials}
+        />
+      </React.Fragment>
     )
   }
 }
