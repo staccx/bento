@@ -171,7 +171,7 @@ export default {
     leasing: "Leasing",
     kjope: "Kjøpe"
   },
-  comparison: [
+  comparisonRows: [
     {
       desc: "Ingen startleie",
       imove: "true",
