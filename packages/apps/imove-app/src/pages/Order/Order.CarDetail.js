@@ -5,6 +5,7 @@ import { color, font } from "@staccx/theme"
 import { Link } from "react-router-dom"
 import cars from "../../data/cars"
 import Carousel from "../../components/Carousel/Carousel"
+import DetailsList from "../../components/DetailsList/DetailsList"
 
 const CarDetail = ({ match }) => {
   const car = cars.filter(
@@ -30,6 +31,7 @@ const CarDetail = ({ match }) => {
           {/* TODO: get from api */}
         </div>
       </Layout>
+      <DetailsList car={car} />
       <Link to={`/car/${match.params.chassisNumber}/book`}>
         <Button>Neste</Button>
       </Link>

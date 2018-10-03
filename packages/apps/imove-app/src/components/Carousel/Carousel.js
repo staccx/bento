@@ -28,14 +28,14 @@ const ImageCarousel = ({ images }) => (
         return (
           <DotsContainer>
             {[...Array(slideCount)].map((e, index) => (
-              <Dot highlighted={currentSlide === index} />
+              <Dot key={index} highlighted={currentSlide === index} />
             ))}
           </DotsContainer>
         )
       }}
     >
       {images.map(image => (
-        <img src={image} alt="" />
+        <img key={image} src={image} alt="" />
       ))}
     </Carousel>
   </Outer>
