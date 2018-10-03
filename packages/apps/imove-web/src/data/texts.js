@@ -162,5 +162,85 @@ export default {
       advantage: "Nye bilavgifter",
       _key: "mnsbd7"
     }
+  ],
+
+  comparisonHeading: "Sammenlignet med andre alternativer",
+  comparisonHeaders: {
+    desc: "",
+    imove: "imove",
+    leasing: "Leasing",
+    kjope: "Kjøpe"
+  },
+  comparisonRows: [
+    {
+      desc: "Ingen startleie",
+      imove: "true",
+      leasing: "false",
+      kjope: "false",
+      _key: "ksjhd0"
+    },
+    {
+      desc: "Forsikring inkludert",
+      imove: "true",
+      leasing: "false",
+      kjope: "false",
+      _key: "ksjhd1"
+    },
+    {
+      desc: "24/7 veihjelp inkludert",
+      imove: "true",
+      leasing: "false",
+      kjope: "false",
+      _key: "ksjhd2"
+    },
+    {
+      desc: "Bytt bil når du vil",
+      imove: "true",
+      leasing: "false",
+      kjope: "false",
+      _key: "ksjhd3"
+    },
+    {
+      desc: "Ingen bindingstid",
+      imove: "true",
+      leasing: "false",
+      kjope: "true",
+      _key: "ksjhd4"
+    },
+    {
+      desc: "Alltid garanti på bilen",
+      imove: "true",
+      leasing: "true",
+      kjope: "false",
+      _key: "ksjhd5"
+    },
+    {
+      desc: "Dekk, dekkhotell og -skift",
+      imove: "true",
+      leasing: "false",
+      kjope: "false",
+      _key: "ksjhd6"
+    },
+    {
+      desc: "Ingen verditap",
+      imove: "true",
+      leasing: "true",
+      kjope: "false",
+      _key: "ksjhd7"
+    },
+    {
+      desc: "Risikofri tilbakelevering",
+      imove: "true",
+      leasing: "false",
+      kjope: "false",
+      _key: "ksjhd8"
+    },
+    {
+      desc: "Ubegrenset kjørelengde uten tilleggskostnader",
+      imove: "true",
+      leasing: "false",
+      kjope: "false",
+      _key: "ksjhd9"
+    }
   ]
 }
