@@ -6,7 +6,7 @@ import profile from "../data/profile"
 
 const Profile = ({ history }) => (
   <Box variant="center">
-    <Layout>
+    <Layout paddingTop="medium" paddingBottom="huge">
       <ThemeComponent tagName={"logo"} fallback={null} />
 
       <ProfileLarge />
@@ -34,7 +34,7 @@ const Profile = ({ history }) => (
           }
           variant="mainNavigation"
         >
-          Avslutt abonnement {/* TODO: Sanitytext */}
+          Slett min bruker {/* TODO: Sanitytext */}
         </Button>
       </div>
     </Layout>

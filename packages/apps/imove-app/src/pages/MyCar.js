@@ -1,8 +1,9 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import { Button, Text, Heading, Layout, Box, Wrapper } from "@staccx/base"
 
 const MyCar = ({ history }) => (
-  <Layout>
+  <Layout paddingBottom="huge">
     <Box variant="myCarHeader">
       <Wrapper size="small">
         <Layout>
@@ -78,8 +79,12 @@ const MyCar = ({ history }) => (
       </Button>
     </div>
     <Text variant="legalese">Du har 10 dager med gratis hyttebil igjen</Text>
-    <br />
-    <Text variant="legalese">Vilkår og betingelser</Text>
+    <Link to="/vilkar-og-betingelser">
+      <Text variant="legalese">Avslutt abonnement</Text>
+    </Link>
+    <Link to="/vilkar-og-betingelser">
+      <Text variant="legalese">Vilkår og betingelser</Text>
+    </Link>
   </Layout>
 )
 
