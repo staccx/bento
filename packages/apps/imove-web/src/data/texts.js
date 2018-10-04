@@ -174,73 +174,98 @@ export default {
   comparisonRows: [
     {
       desc: "Ingen startleie",
-      imove: "true",
-      leasing: "false",
-      kjope: "false",
+      imove: "ja",
+      leasing: "nei",
+      kjope: "nei",
       _key: "ksjhd0"
     },
     {
       desc: "Forsikring inkludert",
-      imove: "true",
-      leasing: "false",
-      kjope: "false",
+      imove: "ja",
+      leasing: "nei",
+      kjope: "nei",
       _key: "ksjhd1"
     },
     {
       desc: "24/7 veihjelp inkludert",
-      imove: "true",
-      leasing: "false",
-      kjope: "false",
+      imove: "ja",
+      leasing: "nei",
+      kjope: "nei",
       _key: "ksjhd2"
     },
     {
       desc: "Bytt bil når du vil",
-      imove: "true",
-      leasing: "false",
-      kjope: "false",
+      imove: "ja",
+      leasing: "nei",
+      kjope: "nei",
       _key: "ksjhd3"
     },
     {
       desc: "Ingen bindingstid",
-      imove: "true",
-      leasing: "false",
-      kjope: "true",
+      imove: "ja",
+      leasing: "nei",
+      kjope: "ja",
       _key: "ksjhd4"
     },
     {
       desc: "Alltid garanti på bilen",
-      imove: "true",
-      leasing: "true",
-      kjope: "false",
+      imove: "ja",
+      leasing: "ja",
+      kjope: "nei",
       _key: "ksjhd5"
     },
     {
       desc: "Dekk, dekkhotell og -skift",
-      imove: "true",
-      leasing: "false",
-      kjope: "false",
+      imove: "ja",
+      leasing: "nei",
+      kjope: "nei",
       _key: "ksjhd6"
     },
     {
       desc: "Ingen verditap",
-      imove: "true",
-      leasing: "true",
-      kjope: "false",
+      imove: "ja",
+      leasing: "ja",
+      kjope: "nei",
       _key: "ksjhd7"
     },
     {
       desc: "Risikofri tilbakelevering",
-      imove: "true",
-      leasing: "false",
-      kjope: "false",
+      imove: "ja",
+      leasing: "nei",
+      kjope: "nei",
       _key: "ksjhd8"
     },
     {
       desc: "Ubegrenset kjørelengde uten tilleggskostnader",
-      imove: "true",
-      leasing: "false",
-      kjope: "false",
+      imove: "ja",
+      leasing: "nei",
+      kjope: "nei",
       _key: "ksjhd9"
+    }
+  ],
+
+  faqHeading: "Spørsmål og svar",
+  faq: [
+    {
+      question: "Hva skjer hvis jeg bulker bilen?",
+      answer: "Her er svaret på spørsmålet ovenfor.",
+      _key: "msdht0"
+    },
+    {
+      question: "Hva skjer hvis jeg ombestemmer meg?",
+      answer: "Her er svaret på spørsmålet ovenfor.",
+      _key: "msdht1"
+    },
+    {
+      question: "Dette er et av spørsmålene her.",
+      answer: "Her er svaret på spørsmålet ovenfor.",
+      _key: "msdht2"
+    },
+    {
+      question:
+        "Her er det siste spørsmålet av de fire oftest stilte spørsmålene.",
+      answer: "Her er svaret på spørsmålet ovenfor.",
+      _key: "msdht3"
     }
   ]
 }
