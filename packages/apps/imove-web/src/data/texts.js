@@ -242,5 +242,24 @@ export default {
       kjope: "false",
       _key: "ksjhd9"
     }
+  ],
+
+  FAQ: [
+    {
+      q: "Hva skjer hvis jeg bulker bilen?",
+      a: "Her er svaret på spørsmålet ovenfor."
+    },
+    {
+      q: "Hva skjer hvis jeg ombestemmer meg?",
+      a: "Her er svaret på spørsmålet ovenfor."
+    },
+    {
+      q: "Dette er et av spørsmålene her.",
+      a: "Her er svaret på spørsmålet ovenfor."
+    },
+    {
+      q: "Her er det siste spørsmålet av de fire oftest stilte spørsmålene.",
+      a: "Her er svaret på spørsmålet ovenfor."
+    }
   ]
 }
