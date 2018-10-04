@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { spacing } from "@staccx/theme"
-import { Wrapper, Heading, Layout } from "@staccx/base"
+import { Wrapper } from "@staccx/base"
 import Feature from "./Features.Feature"
 import SectionHeading from "../SectionHeading/SectionHeading"
 

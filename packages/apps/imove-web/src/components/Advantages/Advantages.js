@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { spacing, font, color } from "@staccx/theme"
-import { Wrapper, Layout, Heading } from "@staccx/base"
+import { Wrapper } from "@staccx/base"
 import SectionHeading from "../SectionHeading/SectionHeading"
 
 const Advantages = ({ heading, advantages }) => (

@@ -8,7 +8,6 @@ import Comparison from "../components/Comparison/Comparison"
 import FAQ from "../components/FAQ/FAQ"
 import CallToAction from "../components/CallToAction/CallToAction"
 import Footer from "../components/Footer/Footer"
-import Column from "../components/Footer/Footer.Column"
 
 const Home = () => (
   <div>
