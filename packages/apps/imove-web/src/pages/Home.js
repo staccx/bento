@@ -40,30 +40,7 @@ const Home = () => (
       buttons={data.pilotInfoButtons}
     />
 
-    <Footer>
-      <Column heading="Finn oss">
-        <p>
-          imove AS
-          <br />
-          Strandgaten 99
-          <br />
-          5555 Bergen
-          <br />
-          Org.nr. 999 999 999
-          <br />
-        </p>
-      </Column>
-      <Column heading="Hold deg oppdatert">
-        <p>
-          Hold deg oppdatert med <a href="#">nyhetsbrev fra imove</a>.
-        </p>
-      </Column>
-      <Column heading="Bli pilotbruker">
-        <p>
-          For mer info, ta kontakt på vårt kontaktskjema <a href="#">her</a>.
-        </p>
-      </Column>
-    </Footer>
+    <Footer content={data.footer} />
   </div>
 )
 

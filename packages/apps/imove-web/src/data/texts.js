@@ -289,5 +289,20 @@ export default {
       url: "#",
       _key: "pwksg2"
     }
+  ],
+
+  footer: [
+    {
+      heading: "Bli abonnent",
+      text: "En beskrivelse her og en link til å bli abonnent"
+    },
+    {
+      heading: "Hjelp meg å selge bilen",
+      text: "En beskrivelse her og en link til å bli abonnent"
+    },
+    {
+      heading: "Kontakt oss",
+      text: "Adresse og epostlink e.l."
+    }
   ]
 }
