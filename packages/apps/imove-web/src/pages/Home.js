@@ -13,25 +13,19 @@ const Home = () => (
   <div>
     <Hero data={data.hero} />
 
-    <Features heading={data.featuresHeading} features={data.features} />
-    <Pricing heading={data.pricingHeading} cars={data.pricingCars} />
-    <Advantages heading={data.advantagesHeading} advantages={data.advantages} />
+    <Features data={data.features} />
 
-    <Comparison
-      heading={data.comparisonHeading}
-      headers={data.comparisonHeaders}
-      rows={data.comparisonRows}
-    />
+    <Pricing data={data.pricing} />
 
-    <FAQ heading={data.faqHeading} faq={data.faq} />
+    <Advantages data={data.advantages} />
 
-    <CallToAction
-      bgImage="/img/road01@2x.png"
-      heading={data.pilotInfoHeading}
-      copy={data.pilotInfoCopy}
-      buttons={data.pilotInfoButtons}
-    />
-    <Footer content={data.footer} />
+    <Comparison data={data.comparison} />
+
+    <FAQ data={data.faq} />
+
+    <CallToAction data={data.pilotInfo} />
+
+    <Footer data={data.footer} />
   </div>
 )
 

@@ -5,12 +5,12 @@ import { Wrapper } from "@staccx/base"
 import SectionHeading from "../SectionHeading/SectionHeading"
 import PricingCard from "./Pricing.PricingCard"
 
-const Pricing = ({ heading, cars }) => (
+const Pricing = ({ data }) => (
   <Content>
     <Wrapper size="full">
-      <SectionHeading>{heading}</SectionHeading>
+      <SectionHeading>{data.heading}</SectionHeading>
       <List>
-        {cars.map((car, index) => (
+        {data.cars.map((car, index) => (
           <PricingCard car={car} key={index} />
         ))}
       </List>

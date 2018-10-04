@@ -3,14 +3,14 @@ import styled from "styled-components"
 import { Wrapper } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 
-const Footer = ({ content }) => (
+const Footer = ({ data }) => (
   <Content>
     <Wrapper>
       <Row>
-        {content.map(data => (
-          <li key={data._key}>
-            <h2>{data.heading}</h2>
-            <p>{data.text}</p>
+        {data.map(item => (
+          <li key={item._key}>
+            <h2>{item.heading}</h2>
+            <p>{item.text}</p>
           </li>
         ))}
       </Row>

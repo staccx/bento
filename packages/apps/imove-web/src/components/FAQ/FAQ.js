@@ -4,12 +4,12 @@ import { fontWeight, spacing } from "@staccx/theme"
 import { Wrapper } from "@staccx/base"
 import SectionHeading from "../SectionHeading/SectionHeading"
 
-const FAQ = ({ heading, faq }) => (
+const FAQ = ({ data }) => (
   <Content>
     <Wrapper>
-      <SectionHeading>{heading}</SectionHeading>
+      <SectionHeading>{data.heading}</SectionHeading>
       <List>
-        {faq.map(qa => (
+        {data.faq.map(qa => (
           <Item key={qa._key}>
             <Question>{qa.question}</Question>
             <Answer>{qa.answer}</Answer>

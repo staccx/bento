@@ -4,12 +4,12 @@ import { spacing, font, color } from "@staccx/theme"
 import { Wrapper } from "@staccx/base"
 import SectionHeading from "../SectionHeading/SectionHeading"
 
-const Advantages = ({ heading, advantages }) => (
+const Advantages = ({ data }) => (
   <Content>
     <Wrapper size="largePlus">
-      <SectionHeading>{heading}</SectionHeading>
+      <SectionHeading>{data.heading}</SectionHeading>
       <Container>
-        {advantages.map(x => (
+        {data.advantages.map(x => (
           <Advantage key={x._key}>{x.advantage}</Advantage>
         ))}
       </Container>

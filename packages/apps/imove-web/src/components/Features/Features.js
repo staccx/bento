@@ -5,12 +5,12 @@ import { Wrapper } from "@staccx/base"
 import Feature from "./Features.Feature"
 import SectionHeading from "../SectionHeading/SectionHeading"
 
-const Features = ({ heading, features }) => (
+const Features = ({ data }) => (
   <Content>
     <Wrapper size="largePlus">
-      <SectionHeading>{heading}</SectionHeading>
+      <SectionHeading>{data.heading}</SectionHeading>
       <List>
-        {features.map(feature => (
+        {data.features.map(feature => (
           <Feature
             key={feature._key}
             heading={feature.heading}
