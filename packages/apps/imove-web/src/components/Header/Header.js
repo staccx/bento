@@ -57,6 +57,9 @@ const Item = styled.li`
     color: ${color("primary")};
     text-decoration: none;
     padding: 0.4em 1em;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `
 
