@@ -1,7 +1,6 @@
 {
   "name": "@staccx/imove-app",
   "version": "5.2.1",
-  "private": true,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

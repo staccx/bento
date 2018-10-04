@@ -6,7 +6,7 @@ import CarHeader from "../../components/CarHeader/CarHeader"
 import Carousel from "../../components/Carousel/Carousel"
 import DetailsList from "../../components/DetailsList/DetailsList"
 
-const CarDetail = ({ match }) => {
+const OrderCarDetail = ({ match }) => {
   const car = cars.filter(
     car => car.chassisNumber === match.params.chassisNumber
   )[0]
@@ -31,4 +31,4 @@ const CarDetail = ({ match }) => {
   )
 }
 
-export default CarDetail
+export default OrderCarDetail
