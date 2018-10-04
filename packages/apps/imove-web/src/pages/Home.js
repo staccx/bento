@@ -6,6 +6,7 @@ import Pricing from "../components/Pricing/Pricing"
 import Advantages from "../components/Advantages/Advantages"
 import Comparison from "../components/Comparison/Comparison"
 import FAQ from "../components/FAQ/FAQ"
+import CallToAction from "../components/CallToAction/CallToAction"
 import Footer from "../components/Footer/Footer"
 import Column from "../components/Footer/Footer.Column"
 
@@ -32,30 +33,14 @@ const Home = () => (
 
     <FAQ heading={data.faqHeading} faq={data.faq} />
 
-    <Footer>
-      <Column heading="Finn oss">
-        <p>
-          imove AS
-          <br />
-          Strandgaten 99
-          <br />
-          5555 Bergen
-          <br />
-          Org.nr. 999 999 999
-          <br />
-        </p>
-      </Column>
-      <Column heading="Hold deg oppdatert">
-        <p>
-          Hold deg oppdatert med <a href="#">nyhetsbrev fra imove</a>.
-        </p>
-      </Column>
-      <Column heading="Bli pilotbruker">
-        <p>
-          For mer info, ta kontakt på vårt kontaktskjema <a href="#">her</a>.
-        </p>
-      </Column>
-    </Footer>
+    <CallToAction
+      bgImage="/img/road01@2x.png"
+      heading={data.pilotInfoHeading}
+      copy={data.pilotInfoCopy}
+      buttons={data.pilotInfoButtons}
+    />
+
+    <Footer content={data.footer} />
   </div>
 )
 

@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { color, font } from "@staccx/theme"
 
-const LinkButton = ({ variant, children, uri }) => (
-  <Link href={uri} variant={variant}>
+const LinkButton = ({ variant, children, url }) => (
+  <Link href={url} variant={variant}>
     {children}
   </Link>
 )
@@ -31,7 +31,7 @@ LinkButton.defaultProps = {
 LinkButton.propTypes = {
   variant: PropTypes.string,
   children: PropTypes.any.isRequired,
-  uri: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired
 }
 
 export default LinkButton

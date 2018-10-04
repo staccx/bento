@@ -267,5 +267,45 @@ export default {
       answer: "Her er svaret på spørsmålet ovenfor.",
       _key: "msdht3"
     }
+  ],
+
+  pilotInfoHeading: "Som pilotbruker får du eksklusiv tilgang til imove",
+  pilotInfoCopy:
+    "Ikke eie eller lease. Abonnere! Med imove får du et bilabonnement med full frihet. Vi jobber for å gi deg de beste bilene og de beste tjenestene – til den beste prisen. imove hjelper deg til og med å bli kvitt den gamle bilen din. Bli med oss inn inn i fremtiden!",
+  pilotInfoButtons: [
+    {
+      text: "Bli kvitt min gamle bil",
+      url: "#",
+      _key: "pwksg0"
+    },
+    {
+      text: "Abonner på en bil",
+      url: "#",
+      _key: "pwksg1"
+    },
+    {
+      variant: "secondary",
+      text: "Jeg vil vite mer",
+      url: "#",
+      _key: "pwksg2"
+    }
+  ],
+
+  footer: [
+    {
+      heading: "Bli abonnent",
+      text: "En beskrivelse her og en link til å bli abonnent",
+      _key: "nxdgs0"
+    },
+    {
+      heading: "Hjelp meg å selge bilen",
+      text: "En beskrivelse her og en link til å bli abonnent",
+      _key: "nxdgs1"
+    },
+    {
+      heading: "Kontakt oss",
+      text: "Adresse og epostlink e.l.",
+      _key: "nxdgs2"
+    }
   ]
 }
