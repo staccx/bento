@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themify } from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+import { themePropTypes } from "../../../constants/themeContants"
+import { applyVariants } from "../../../theming"
 
 /**
  * The pack object simply causes any number of elements pack up horizontally to automatically fill an equal, fluid width of their parent.
@@ -36,7 +36,7 @@ const PackUl = styled.ul`
   justify-content: ${p => p.justify};
   align-items: ${p => position(p.bottom, p.middle)};
   flex-wrap: ${p => !p.noWrap && "wrap"};
-  ${themify(Pack.themeProps.list)};
+  ${applyVariants(Pack.themeProps.list)};
 `
 
 Pack.defaultProps = {

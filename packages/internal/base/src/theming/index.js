@@ -8,26 +8,24 @@ import { default as grid } from "./convenience/grid"
 import { default as spacing } from "./convenience/spacing"
 import { default as targetSize } from "./convenience/targetSize"
 import { default as wrapper } from "./convenience/wrapper"
-
 // Utils
 import { default as getProp } from "./utils/getProp"
 import { default as mapProp } from "./utils/mapProp"
 import { default as createVariants } from "./utils/createVariants"
 import { default as extendDefault } from "./utils/extendDefault"
 import { default as applyVariants } from "./utils/applyVariants"
-
 // Themes
-import { default as BaseTheme } from "./baseTheme"
+import { default as BaseTheme, StyleguideTheme } from "./baseTheme"
 import { default as CodeTheme } from "./codeTheme"
-
 // Theme class
 import Theme from "./Theme"
 
-import { VARIANT_DEFAULT, commonPropTypes } from "../constants/themeContants"
+import { commonPropTypes, VARIANT_DEFAULT } from "../constants/themeContants"
 
-export const theming = {
+export {
   BaseTheme,
   CodeTheme,
+  StyleguideTheme,
   applyVariants,
   borderRadius,
   color,

@@ -1,17 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  // color,
-  // borderRadius,
-  // font,
-  // fontFamily,
-  // fontWeight,
-  // spacing,
-  // targetSize,
-  themify
-} from "@staccx/theme"
 import styled from "styled-components"
-import themePropTypes from "../../constants/themePropTypes"
+import { themePropTypes } from "../../constants/themeContants"
+import { applyVariants } from "../../theming"
 
 class Table extends React.Component {
   render() {
@@ -95,7 +86,7 @@ Table.themeProps = {
 }
 
 export const TableStyled = styled.table`
-  ${themify(Table.themeProps.table)};
+  ${applyVariants(Table.themeProps.table)};
 `
 
 Table.propTypes = {

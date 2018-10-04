@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
-import { color, font, spacing, themify } from "@staccx/theme"
 import Input, { InputDefaultProps, InputPropTypes } from "../Input"
 import Downshift from "downshift"
 import Flag from "../../../Layout/Flag/Flag"
 import Label from "../../Label/Label"
-import themePropTypes from "../../../../constants/themePropTypes"
+import { color, font, spacing, applyVariants } from "../../../../theming"
+import { themePropTypes } from "../../../../constants/themeContants"
 
 const defaultMapItem = item => {
   if (!item) {
@@ -244,17 +244,17 @@ CompanyInput.themeProps = {
 const Load = () => keyframes`
   from {
     background-color: ${color.bg};
-    ${themify(CompanyInput.themeProps.animateLoadFrom)}
+    ${applyVariants(CompanyInput.themeProps.animateLoadFrom)}
   }
 
   to {
     background-color: ${color.primary};
-    ${themify(CompanyInput.themeProps.animateLoadTo)}
+    ${applyVariants(CompanyInput.themeProps.animateLoadTo)}
   }
 `
 
 const SelectLabel = styled(Label)`
-  ${themify(CompanyInput.themeProps.selectLabel)};
+  ${applyVariants(CompanyInput.themeProps.selectLabel)};
 `
 
 const SelectLoad = styled.div`
@@ -268,7 +268,7 @@ const SelectLoad = styled.div`
   left: 0;
   z-index: 10;
   box-shadow: 0px ${spacing.small} ${spacing.medium} rgba(0, 0, 0, 0.06);
-  ${themify(CompanyInput.themeProps.selectLoad)};
+  ${applyVariants(CompanyInput.themeProps.selectLoad)};
 `
 
 const Close = styled.button`
@@ -285,23 +285,23 @@ const Close = styled.button`
   svg {
     width: ${spacing.medium};
   }
-  ${themify(CompanyInput.themeProps.selectClose)};
+  ${applyVariants(CompanyInput.themeProps.selectClose)};
 `
 const ModifiedFlag = styled(Flag)`
   padding: ${spacing.tiny} ${spacing.tiny} ${spacing.tiny} ${spacing.medium};
   position: relative;
-  ${themify(CompanyInput.themeProps.selectFlag)};
+  ${applyVariants(CompanyInput.themeProps.selectFlag)};
 `
 
 const OrgNo = styled.div`
   font-size: ${font.tiny};
   color: ${color.wcag};
-  ${themify(CompanyInput.themeProps.orgNo)};
+  ${applyVariants(CompanyInput.themeProps.orgNo)};
 `
 
 const SelectWrapper = styled.div`
   position: relative;
-  ${themify(CompanyInput.themeProps.selectWrapper)};
+  ${applyVariants(CompanyInput.themeProps.selectWrapper)};
 `
 const SelectList = styled.ul`
   position: absolute;
@@ -311,13 +311,13 @@ const SelectList = styled.ul`
   z-index: 10;
   width: 100%;
   background: ${color.white};
-  box-shadow: 0px ${spacing.small()} ${spacing.medium()} rgba(0, 0, 0, 0.06);
-  ${themify(CompanyInput.themeProps.selectList)};
+  box-shadow: 0px ${spacing.small} ${spacing.medium} rgba(0, 0, 0, 0.06);
+  ${applyVariants(CompanyInput.themeProps.selectList)};
 `
 
 const SelectItem = styled.li`
   list-style: none;
-  padding: ${spacing.small()} ${spacing.medium()};
+  padding: ${spacing.small} ${spacing.medium};
   background-color: ${p => (p.isSelected ? color.primary : "transparent")};
   color: ${p => (p.isSelected ? color.white : color.black)};
   border-bottom: 1px solid ${color.line};
@@ -329,7 +329,7 @@ const SelectItem = styled.li`
   &:first-child {
     border-top: 1px solid ${color.line};
   }
-  ${themify(CompanyInput.themeProps.selectItem)};
+  ${applyVariants(CompanyInput.themeProps.selectItem)};
 `
 
 CompanyInput.propTypes = {

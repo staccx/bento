@@ -1,4 +1,7 @@
-import { color, fontFamily, fontWeight, font } from "@staccx/theme"
+import { default as color } from "../theming/convenience/color"
+import { default as font } from "../theming/convenience/font"
+import { default as fontFamily } from "../theming/convenience/fontFamily"
+import { default as fontWeight } from "../theming/convenience/fontWeight"
 
 export const reset = props => `
   body, h1, h2, h3, h4, h5, h6,

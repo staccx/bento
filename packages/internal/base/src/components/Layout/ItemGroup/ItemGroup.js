@@ -1,7 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import { spacing as space, themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
+import { applyVariants, spacing } from "../../../theming"
 /**
  * The ItemGroup object creates spacing between all its children and wraps the items when there is no room
  */
@@ -27,22 +30,22 @@ ItemGroup.themeProps = {
 }
 const Wrap = styled.div`
   overflow: hidden;
-  ${themify(ItemGroup.themeProps.wrapper)};
+  ${applyVariants(ItemGroup.themeProps.wrapper)};
 `
 
 const ItemGroupElement = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -${p => space(p.spacing)} -${p => space(p.spacing)};
+  margin: 0 -${p => spacing(p.spacing)} -${p => spacing(p.spacing)};
   & > * {
-    margin: 0 ${p => space(p.spacing)} ${p => space(p.spacing)};
+    margin: 0 ${p => spacing(p.spacing)} ${p => spacing(p.spacing)};
   }
-  ${themify(ItemGroup.themeProps.group)};
+  ${applyVariants(ItemGroup.themeProps.group)};
 `
 
 ItemGroup.propTypes = {
-  children: themeProps.children.isRequired,
-  spacing: themeProps.spacing
+  children: commonPropTypes.children.isRequired,
+  spacing: commonPropTypes.spacing
 }
 
 ItemGroup.defaultProps = {

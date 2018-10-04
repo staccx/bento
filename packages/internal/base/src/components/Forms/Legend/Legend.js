@@ -6,14 +6,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
-  themify,
+  applyVariants,
   font,
   spacing,
   fontFamily,
-  fontWeight,
-  themeProps
-} from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+  fontWeight
+} from "../../../theming"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
 
 const Legend = ({ className, children, ...rest }) => (
   <LegendElement className={className} {...rest}>
@@ -36,7 +38,7 @@ const LegendElement = styled.legend`
   line-height: 1.2;
   padding-bottom: ${spacing.tiny};
   display: block;
-  ${themify(Legend.themeProps.legend)};
+  ${applyVariants(Legend.themeProps.legend)};
 `
 
 Legend.defaultProps = {
@@ -44,7 +46,7 @@ Legend.defaultProps = {
 }
 
 Legend.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   className: PropTypes.string
 }
 

@@ -2,16 +2,18 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
+  applyVariants,
   targetSize,
   spacing,
   fontWeight,
   fontFamily,
   font,
-  color,
-  themify,
-  themeProps
-} from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+  color
+} from "../../../theming"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
 
 const tProps = {
   radio: {
@@ -38,7 +40,7 @@ const Radio = styled.input`
   &:checked ~ label::after {
     transform: scale(1);
   }
-  ${themify(tProps.radio)};
+  ${applyVariants(tProps.radio)};
 `
 
 const Label = styled.label`
@@ -79,7 +81,7 @@ const Label = styled.label`
     transition: all 0.2s ease-in-out;
   }
 
-  ${themify(tProps.label)};
+  ${applyVariants(tProps.label)};
 `
 
 const RadioWrapper = styled.div`
@@ -95,7 +97,7 @@ const RadioWrapper = styled.div`
       }
     }
   }
-  ${themify(tProps.wrapper)};
+  ${applyVariants(tProps.wrapper)};
 `
 
 const RadioButton = ({
@@ -127,7 +129,7 @@ const RadioButton = ({
 )
 
 RadioButton.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   className: PropTypes.string,
   defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,

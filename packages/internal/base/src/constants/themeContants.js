@@ -24,4 +24,9 @@ export const commonPropTypes = {
   children
 }
 
+export const themePropTypes = {
+  style: "style",
+  component: "component"
+}
+
 export const VARIANT_DEFAULT = "_default"

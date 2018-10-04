@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import hideVisually from "../../../Styles/hideVisually"
-import { spacing, color, themify } from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+import { themePropTypes } from "../../../constants/themeContants"
+import { applyVariants, color, spacing } from "../../../theming"
 
 const Fraction = ({
   value,
@@ -70,19 +70,19 @@ const circle = css`
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  ${themify(Fraction.themeProps.circle.name)};
+  ${applyVariants(Fraction.themeProps.circle.name)};
 `
 
 const ColoredDot = styled.div`
   ${circle};
   background-color: ${color.primary};
-  ${themify(Fraction.themeProps.coloredDot.name)};
+  ${applyVariants(Fraction.themeProps.coloredDot.name)};
 `
 
 const DesaturatedDot = styled.div`
   ${circle};
   background-color: ${color.line};
-  ${themify(Fraction.themeProps.desaturatedDot.name)};
+  ${applyVariants(Fraction.themeProps.desaturatedDot.name)};
 `
 
 const FractionWrapper = styled.div`
@@ -91,7 +91,7 @@ const FractionWrapper = styled.div`
   > * {
     margin-right: ${spacing.tiny};
   }
-  ${themify(Fraction.themeProps.wrapper.name)};
+  ${applyVariants(Fraction.themeProps.wrapper.name)};
 `
 
 Fraction.defaultProps = {

@@ -7,16 +7,16 @@ import PropTypes from "prop-types"
 import MaskedInput from "./MaskedInput"
 import styled, { css } from "styled-components"
 import Label from "../Label/Label"
+import { themePropTypes } from "../../../constants/themeContants"
 import {
-  themify,
+  applyVariants,
   color,
   spacing,
   borderRadius,
   font,
   targetSize,
   fontFamily
-} from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+} from "../../../theming"
 
 class Input extends React.Component {
   constructor(props) {
@@ -115,14 +115,14 @@ Input.themeProps = {
 }
 
 const InputLabel = styled(Label)`
-  ${themify(Input.themeProps.label)};
+  ${applyVariants(Input.themeProps.label)};
 `
 
 export const InputWrapper = styled.div`
   display: block;
   margin-bottom: 0;
   position: relative;
-  ${themify(Input.themeProps.wrapper)};
+  ${applyVariants(Input.themeProps.wrapper)};
 `
 
 export const inputCss = css`
@@ -173,7 +173,7 @@ export const inputCss = css`
     -webkit-appearance: none;
     margin: 0;
   }
-  ${themify(Input.themeProps.input)};
+  ${applyVariants(Input.themeProps.input)};
 `
 
 const InputWithMask = styled(MaskedInput)`

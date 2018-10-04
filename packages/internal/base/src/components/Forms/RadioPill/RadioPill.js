@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { themify } from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+import { themePropTypes } from "../../../constants/themeContants"
+import { applyVariants } from "../../../theming"
 
 const RadioPill = ({
   children,
@@ -45,7 +45,7 @@ const RadioPillContainer = styled.div`
   padding: 0;
   outline: 0;
   ${p => p.full && Full};
-  ${themify(RadioPill.themeProps.container)};
+  ${applyVariants(RadioPill.themeProps.container)};
 `
 
 RadioPill.defaultProps = {

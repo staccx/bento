@@ -1,8 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
+import { applyVariants } from "../../../theming"
 
 const Text = ({ level, children, className, ...restProps }) => {
   return (
@@ -23,7 +26,7 @@ Text.themeProps = {
 export const TEXT = "text"
 
 export const Span = styled.span`
-  ${themify(Text.themeProps.text)};
+  ${applyVariants(Text.themeProps.text)};
 `
 
 Text.defaultProps = {
@@ -31,7 +34,7 @@ Text.defaultProps = {
 }
 
 Text.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   className: PropTypes.string
 }
 

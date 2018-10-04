@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import { color, fontWeight, themify, themeProps } from "@staccx/theme"
 import fontSmoothing from "../../Styles/fontsmoothing"
-import themePropTypes from "../../constants/themePropTypes"
+import { color, fontWeight, applyVariants } from "../../theming"
+import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
 
 const NewBadge = ({ number, children, variant }) => (
   <NewBadgeWrapper variant={variant}>
@@ -32,7 +32,7 @@ NewBadge.themeProps = {
 const NewBadgeWrapper = styled.div`
   position: relative;
   display: inline-block;
-  ${themify(NewBadge.themeProps.wrapper)};
+  ${applyVariants(NewBadge.themeProps.wrapper)};
 `
 
 const Badge = styled.span`
@@ -52,12 +52,12 @@ const Badge = styled.span`
   bottom: -12px;
   position: absolute;
   ${fontSmoothing};
-  ${themify(NewBadge.themeProps.badge)};
+  ${applyVariants(NewBadge.themeProps.badge)};
 `
 
 NewBadge.propTypes = {
   number: PropTypes.number.isRequired,
-  children: themeProps.children
+  children: commonPropTypes.children
 }
 
 export default NewBadge

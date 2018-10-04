@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themify } from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+import { themePropTypes } from "../../../constants/themeContants"
+import { applyVariants } from "../../../theming"
 
 const InlineListItem = ({ className, children, ...rest }) => (
   <ListItem className={className} {...rest}>
@@ -20,7 +20,7 @@ InlineListItem.themeProps = {
 
 const ListItem = styled.li`
   display: inline-block;
-  ${themify(InlineListItem.themeProps.listItem)};
+  ${applyVariants(InlineListItem.themeProps.listItem)};
 `
 
 InlineListItem.defaultProps = {

@@ -70,6 +70,6 @@ export const theme = {
   grid: grids
 }
 
-export const styleguideTheme = new Theme(theme, codeTheme)
+export const StyleguideTheme = new Theme(theme, codeTheme)
 
 export default theme

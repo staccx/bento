@@ -2,6 +2,7 @@ import * as JsSearch from "js-search"
 import React from "react"
 import PropTypes from "prop-types"
 
+// TODO: getDerivedStateFromProps
 class Search extends React.Component {
   constructor(props, context) {
     super(props, context)

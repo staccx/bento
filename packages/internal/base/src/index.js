@@ -85,7 +85,7 @@ import fontSmoothing from "./Styles/fontsmoothing"
 import hideVisually from "./Styles/hideVisually"
 
 // Themes
-import { default as theming } from "./theming"
+import * as theming from "./theming"
 
 // Formatters
 import Odometer from "./components/Formatters/Odometer/Odometer"

@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { Formik } from "formik"
-import { themeProps } from "@staccx/theme"
 import Button from "../../Button/Button"
+import { commonPropTypes } from "../../../constants/themeContants"
 const Yup = require("yup")
 
 class Form extends Component {
@@ -86,7 +86,7 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   initialValues: PropTypes.object,
   onSubmit: PropTypes.func,
   renderButton: PropTypes.func

@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { color, themify, fontWeight } from "@staccx/theme"
-import themePropTypes from "../../../../constants/themePropTypes"
+import { applyVariants, color, fontWeight } from "../../../../theming"
+import { themePropTypes } from "../../../../constants/themeContants"
 
 class Slider extends React.PureComponent {
   constructor(props, context) {
@@ -93,7 +93,7 @@ const SliderThumbStyle = css`
     border-color: ${color.white};
     background-color: ${color.secondary};
   }
-  ${themify(Slider.themeProps.thumb)};
+  ${applyVariants(Slider.themeProps.thumb)};
 `
 
 const SliderHiddenTrackStyle = css`
@@ -111,7 +111,7 @@ const SliderTrackStyle = css`
   border-radius: 4.5px;
   color: transparent;
   background-color: ${color.line};
-  ${themify(Slider.themeProps.track)};
+  ${applyVariants(Slider.themeProps.track)};
 `
 
 const SliderInput = styled.div`
@@ -218,7 +218,7 @@ const SliderInput = styled.div`
     background-color: ${color.white};
   }
 
-  ${themify(Slider.themeProps.input)};
+  ${applyVariants(Slider.themeProps.input)};
 `
 
 Slider.defaultProps = {

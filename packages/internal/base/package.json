@@ -37,7 +37,6 @@
     "@staccx/animations": "^7.7.4",
     "@staccx/formatting": "^7.7.4",
     "@staccx/math": "^7.7.4",
-    "@staccx/theme": "^7.7.4",
     "@staccx/utils": "^7.7.4",
     "babel-plugin-prismjs": "^1.0.2",
     "copy-to-clipboard": "^3.0.8",
@@ -68,6 +67,7 @@
     "react-docgen": "^2.21.0",
     "react-scripts": "^1.1.4",
     "rollup": "^0.65.0",
+    "rollup-plugin-alias": "^1.4.0",
     "webpack": "^3.0.0",
     "webpack-blocks": "^1.0.0-rc.2"
   },

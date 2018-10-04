@@ -141,7 +141,7 @@ export const BUTTON = "Button"
 const Style = css`
   background-color: ${color.primary};
   border-width: 0;
-  ... ${themify(BUTTON)}; // This is the magic
+  ... ${applyVariants(BUTTON)}; // This is the magic
 `
 const Button = styled.button`
   ${Style};
@@ -184,7 +184,7 @@ const ExpandIcon = styled(IconComponent)`
   fill: ${color.line};
   transition: transform 0.3s ease-out;
   transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
-  ${themify(EXPAND_LIST_ICON)};
+  ${applyVariants(EXPAND_LIST_ICON)};
 `
 
 ...

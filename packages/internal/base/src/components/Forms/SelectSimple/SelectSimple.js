@@ -5,16 +5,18 @@ import { multiplyPixelValue } from "@staccx/math"
 import Label from "../Label/Label"
 import Caret from "../../Icons/Caret"
 import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
+import {
+  applyVariants,
   borderRadius,
   color,
   font,
   spacing,
-  targetSize,
-  themify,
-  ThemeComponent,
-  themeProps
-} from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+  targetSize
+} from "../../../theming"
+import ThemeComponent from "../../Theme/ThemeComponent"
 
 const tProps = {
   iconComponent: {
@@ -78,12 +80,12 @@ const SelectWrapper = styled.div`
   display: block;
   margin-bottom: 0;
   position: relative;
-  ${themify(tProps.wrapper)};
+  ${applyVariants(tProps.wrapper)};
 `
 
 const SelectIcon = styled(IconComponent)`
   position: absolute;
-  right: ${spacing.small()};
+  right: ${spacing.small};
   bottom: ${p => {
     const value = targetSize.normal()(p)
     return multiplyPixelValue(value, 0.5)
@@ -92,14 +94,14 @@ const SelectIcon = styled(IconComponent)`
   fill: ${color.gray};
   transform: translateY(50%);
   transition: fill 0.2s ease;
-  ${themify(tProps.icon)};
+  ${applyVariants(tProps.icon)};
 `
 
 const Select = styled.select`
   width: 100%;
   min-height: ${targetSize.normal};
   font-size: ${font.input};
-  padding: 10px ${spacing.medium()} 10px ${spacing.small()};
+  padding: 10px ${spacing.medium} 10px ${spacing.small};
   box-shadow: none;
   border-radius: ${borderRadius};
   line-height: 1.4;
@@ -119,7 +121,7 @@ const Select = styled.select`
       fill: ${color.primary};
     }
   }
-  ${themify(tProps.select)};
+  ${applyVariants(tProps.select)};
 `
 
 SelectSimple.defaultProps = {
@@ -130,7 +132,7 @@ SelectSimple.defaultProps = {
 
 SelectSimple.propTypes = {
   label: PropTypes.string,
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   placeholder: PropTypes.string,
   id: PropTypes.string.isRequired,
   className: PropTypes.string

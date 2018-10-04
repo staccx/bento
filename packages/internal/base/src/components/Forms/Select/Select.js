@@ -8,15 +8,15 @@ import Label from "../Label/Label"
 import Input from "../Input/Input"
 import Caret from "../../Icons/Caret"
 import Close from "../../Icons/Close"
+import SelectOption from "./Select.Option"
+import ThemeComponent from "../../Theme/ThemeComponent"
 import {
+  applyVariants,
   color,
   spacing,
   targetSize,
-  borderRadius,
-  ThemeComponent,
-  themify
-} from "@staccx/theme"
-import SelectOption from "./Select.Option"
+  borderRadius
+} from "../../../theming"
 import themeProps from "./Select.themeProps"
 
 const CaretComp = ({ ...props }) => (
@@ -42,7 +42,7 @@ const CloseComp = ({ ...props }) => (
 const CloseIcon = styled(CloseComp)`
   transform: scale(0);
   animation: ${ScaleIn} 0.3s ease-in forwards 1;
-  ${themify(themeProps.iconClose)};
+  ${applyVariants(themeProps.iconClose)};
 `
 
 class Select extends React.PureComponent {
@@ -263,12 +263,12 @@ export const DefaultOptionElementWrapper = styled.ul`
   > *:not(:last-child) {
     border-bottom: 1px solid ${color.line};
   }
-  ${themify(themeProps.defaultOptionWrapper)};
+  ${applyVariants(themeProps.defaultOptionWrapper)};
 `
 
 export const SelectWrapper = styled.div`
   position: relative;
-  ${themify(themeProps.selectWrapper)};
+  ${applyVariants(themeProps.selectWrapper)};
 `
 
 export const SelectedWrapper = styled.div`
@@ -280,7 +280,7 @@ export const SelectedWrapper = styled.div`
       border: 1px solid ${color.line};
       border-radius: ${borderRadius};
     `};
-  ${themify(themeProps.selectedWrapper)};
+  ${applyVariants(themeProps.selectedWrapper)};
 `
 export const IconButton = styled.button`
   position: absolute;
@@ -305,7 +305,7 @@ export const IconButton = styled.button`
       fill: ${color.primary};
     }
   }
-  ${themify(themeProps.iconButton)};
+  ${applyVariants(themeProps.iconButton)};
 `
 
 Select.propTypes = {

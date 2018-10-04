@@ -1,6 +1,6 @@
 import React from "react"
 import { withTheme } from "styled-components"
-import { VARIANT_DEFAULT } from "../../theming/_constants"
+import { VARIANT_DEFAULT } from "../../constants/themeContants"
 
 // TODO: Rename
 class ThemeComponent extends React.Component {

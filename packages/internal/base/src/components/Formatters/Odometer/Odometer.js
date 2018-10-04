@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import hideVisually from "../../../Styles/hideVisually"
 import Digit from "./Digit"
-import { themify } from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+import { themePropTypes } from "../../../constants/themeContants"
+import { applyVariants } from "../../../theming"
 
 class Odometer extends React.PureComponent {
   constructor(...props) {
@@ -108,24 +108,24 @@ Odometer.themeProps = {
 
 const OdometerAnimating = styled.div`
   ${p => (!p.isAnimating ? hideVisually : "display: flex;")};
-  ${themify(Odometer.themeProps.animating)};
+  ${applyVariants(Odometer.themeProps.animating)};
 `
 
 const OdometerStatic = styled.div`
   ${p => (p.isAnimating ? hideVisually : "display: flex;")};
-  ${themify(Odometer.themeProps.static)};
+  ${applyVariants(Odometer.themeProps.static)};
 `
 
 const OdometerContainer = styled.div`
   position: relative;
-  ${themify(Odometer.themeProps.container)};
+  ${applyVariants(Odometer.themeProps.container)};
 `
 
 const OdometerWrapper = styled.div`
   font-size: ${p => p.size}px;
   line-height: 1;
   display: inline-block;
-  ${themify(Odometer.themeProps.wrapper)};
+  ${applyVariants(Odometer.themeProps.wrapper)};
 `
 
 // TODO: Add support for strings?

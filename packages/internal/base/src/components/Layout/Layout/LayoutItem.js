@@ -1,8 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+import { applyVariants } from "../../../theming"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
 
 const LayoutItem = ({ area, children, className, variant, ...rest }) => (
   <LayoutItemContainer
@@ -25,7 +28,7 @@ LayoutItem.themeProps = {
 
 export const LayoutItemContainer = styled.div`
   grid-area: ${props => props.area};
-  ${themify(LayoutItem.themeProps.container)};
+  ${applyVariants(LayoutItem.themeProps.container)};
 `
 
 LayoutItem.defaultProps = {
@@ -35,7 +38,7 @@ LayoutItem.defaultProps = {
 }
 
 LayoutItem.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   className: PropTypes.string,
   area: PropTypes.string,
   variant: PropTypes.string

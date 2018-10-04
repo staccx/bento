@@ -3,16 +3,18 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import hideVisually from "../../../Styles/hideVisually"
 import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
+import {
+  applyVariants,
   targetSize,
   spacing,
   fontWeight,
   fontFamily,
   font,
-  color,
-  themify,
-  themeProps
-} from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+  color
+} from "../../../theming"
 
 const RadioPillItem = ({
   children,
@@ -73,7 +75,7 @@ RadioPillItem.themeProps = {
 }
 const Label = styled.label`
   position: relative;
-  padding: ${spacing.tiny()} ${spacing.small()};
+  padding: ${spacing.tiny} ${spacing.small};
   border: 1px solid ${color.line};
   cursor: pointer;
   font-family: ${fontFamily.body()};
@@ -82,7 +84,7 @@ const Label = styled.label`
   font-weight: ${fontWeight.normal};
   margin-right: -1px;
   background-color: ${color.white};
-  ${themify(RadioPillItem.themeProps.label)};
+  ${applyVariants(RadioPillItem.themeProps.label)};
   ${p =>
     p.full &&
     css`
@@ -100,7 +102,7 @@ const Radio = styled.input`
       background-color: ${color.primary};
       color: ${color.white};
       z-index: 1;
-      ${themify(RadioPillItem.themeProps.checked)};
+      ${applyVariants(RadioPillItem.themeProps.checked)};
     }
 
     &:first-child ~ ${Label} {
@@ -141,10 +143,10 @@ const RadioWrapper = styled.div`
     ${Label} {
       z-index: 1;
       border-color: ${color.primary};
-      ${themify(RadioPillItem.themeProps.hover)};
+      ${applyVariants(RadioPillItem.themeProps.hover)};
     }
   }
-  ${themify(RadioPillItem.themeProps.wrapper)};
+  ${applyVariants(RadioPillItem.themeProps.wrapper)};
 `
 
 RadioPillItem.defaultProps = {
@@ -157,7 +159,7 @@ RadioPillItem.defaultProps = {
 }
 
 RadioPillItem.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   group: PropTypes.string,
