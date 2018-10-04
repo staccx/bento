@@ -6,6 +6,7 @@ import Pricing from "../components/Pricing/Pricing"
 import Advantages from "../components/Advantages/Advantages"
 import Comparison from "../components/Comparison/Comparison"
 import FAQ from "../components/FAQ/FAQ"
+import CallToAction from "../components/CallToAction/CallToAction"
 import Footer from "../components/Footer/Footer"
 import Column from "../components/Footer/Footer.Column"
 
@@ -31,6 +32,13 @@ const Home = () => (
     />
 
     <FAQ heading={data.faqHeading} faq={data.faq} />
+
+    <CallToAction
+      bgImage="/img/road01@2x.png"
+      heading={data.pilotInfoHeading}
+      copy={data.pilotInfoCopy}
+      buttons={data.pilotInfoButtons}
+    />
 
     <Footer>
       <Column heading="Finn oss">
