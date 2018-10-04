@@ -1,8 +1,10 @@
 import React from "react"
 import Carousel from "nuka-carousel"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { color, spacing } from "@staccx/theme"
 import { opacity } from "@staccx/color"
+import ArrowRight from "../Icons/ArrowRight"
+import ArrowLeft from "../Icons/ArrowLeft"
 
 const ImageCarousel = ({ images }) => (
   <Outer>
@@ -12,7 +14,11 @@ const ImageCarousel = ({ images }) => (
         if (currentSlide + 1 >= slideCount) {
           return null
         }
-        return <NextSlide onClick={nextSlide}>Neste</NextSlide>
+        return (
+          <NextSlide onClick={nextSlide}>
+            <ArrowRight />
+          </NextSlide>
+        )
       }}
       renderCenterLeftControls={({
         previousSlide,
@@ -22,7 +28,11 @@ const ImageCarousel = ({ images }) => (
         if (currentSlide === 0 || slideCount === 0) {
           return null
         }
-        return <PrevSlide onClick={previousSlide}>Forrige</PrevSlide>
+        return (
+          <PrevSlide onClick={previousSlide}>
+            <ArrowLeft />
+          </PrevSlide>
+        )
       }}
       renderBottomCenterControls={({ slideCount, currentSlide }) => {
         return (
@@ -45,10 +55,30 @@ const Outer = styled.div`
   position: relative;
   overflow: hidden;
   padding-bottom: ${spacing.large};
+  min-height: 188px;
 `
 
-const NextSlide = styled.button``
-const PrevSlide = styled.button``
+const btnReset = css`
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  &:focus,
+  &:active,
+  &:hover {
+    border: 0;
+    background: transparent;
+    outline: none;
+  }
+`
+const NextSlide = styled.button`
+  ${btnReset};
+  padding-right: ${spacing.small};
+`
+const PrevSlide = styled.button`
+  ${btnReset};
+  padding-left: ${spacing.small};
+`
 
 const DotsContainer = styled.div`
   position: absolute;
