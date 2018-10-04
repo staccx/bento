@@ -1,6 +1,7 @@
 export default {
   /* Hero */
-  heroMain: {
+  hero: {
+    variant: "primary",
     heading: "Vi forstår at kjøp av bil ikke alltid er enkelt",
     headingSub: "Bilen du trenger i dag er ikke alltid den du trenger i morgen",
     headingSecondary: "Et bilabonnement med full frihet",
@@ -20,50 +21,28 @@ export default {
       hyttebilHeading: "+ Hyttebil",
       hyttebilHeadingSub: "10 dager inkludert"
     },
+    extraCars: {
+      heading: "Tilleggsbil når du trenger det",
+      paragraph:
+        "Trenger du en annen bil i en kort periode, er det rimelig å leie gjennom imove.",
+      cars: [
+        {
+          heading: "Flyttebil",
+          headingSub: "Fra kr 599 per dag",
+          img: "/img/hero/flyttebil@2x.png",
+          alt: "Mercedes-Benz Sprinter",
+          _key: "jhfdk"
+        },
+        {
+          heading: "Morobil",
+          headingSub: "Fra kr 1 599 per dag",
+          img: "/img/hero/morobil@2x.png",
+          alt: "BMW 435i Convertible",
+          _key: "bsate"
+        }
+      ]
+    },
     logoWhite: "/img/brand/imove logo white.svg"
-  },
-  heroSecondary: {
-    heading: "Prøv et  gratis elbilabonnement i 48 timer",
-    headingSub: "– mens vi selger din gamle bil",
-    headingSecondary: "Et bilabonnement med full frihet",
-    headingSecondarySub: "fra 3 490,- per mnd",
-    buttons: [
-      {
-        text: "Bli kvitt min gamle bil",
-        url: "#",
-        _key: "maodd"
-      },
-      {
-        text: "Abonner på ny bil",
-        url: "#",
-        _key: "bdpkd"
-      }
-    ],
-    hverdagsbilHeading: "Miljøvennlig hverdagsbil",
-    hverdagsbilHeadingSub: "Alt inkludert, utenom strøm og parkering",
-    hyttebilHeading: "+ Hyttebil",
-    hyttebilHeadingSub: "10 dager inkludert"
-  },
-  extraCars: {
-    heading: "Tilleggsbil når du trenger det",
-    paragraph:
-      "Trenger du en annen bil i en kort periode, er det rimelig å leie gjennom imove.",
-    cars: [
-      {
-        heading: "Flyttebil",
-        headingSub: "Fra kr 599 per dag",
-        img: "/img/hero/flyttebil@2x.png",
-        alt: "Mercedes-Benz Sprinter",
-        _key: "jhfdk"
-      },
-      {
-        heading: "Morobil",
-        headingSub: "Fra kr 1 599 per dag",
-        img: "/img/hero/morobil@2x.png",
-        alt: "BMW 435i Convertible",
-        _key: "bsate"
-      }
-    ]
   },
 
   featuresHeading: "Et abonnement hos imove er",

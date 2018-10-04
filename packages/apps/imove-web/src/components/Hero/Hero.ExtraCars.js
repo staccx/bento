@@ -3,8 +3,12 @@ import styled from "styled-components"
 import { spacing, color, font } from "@staccx/theme"
 import { Heading } from "@staccx/base"
 
-const ExtraCars = ({ data }) => (
-  <Row>
+const ExtraCars = ({ data, isReversed }) => (
+  <Row isReversed={isReversed}>
+    <Column>
+      <InfoHeading level={2}>{data.heading}</InfoHeading>
+      <p>{data.paragraph}</p>
+    </Column>
     <CarColumn>
       {data.cars.map(x => (
         <Car key={x._key}>
@@ -14,10 +18,6 @@ const ExtraCars = ({ data }) => (
         </Car>
       ))}
     </CarColumn>
-    <Column>
-      <InfoHeading level={2}>{data.heading}</InfoHeading>
-      <p>{data.paragraph}</p>
-    </Column>
   </Row>
 )
 
@@ -25,6 +25,7 @@ const Row = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  flex-direction: ${p => (p.isReversed ? "row-reverse" : "row")};
   margin: ${spacing("large")} calc(${spacing("large")} * -1) 0;
 `
 
