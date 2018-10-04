@@ -6,14 +6,14 @@ import { spacing } from "@staccx/theme"
 const Footer = ({ content }) => (
   <Content>
     <Wrapper>
-      <ul>
+      <Row>
         {content.map(data => (
           <li key={data._key}>
             <h2>{data.heading}</h2>
             <p>{data.text}</p>
           </li>
         ))}
-      </ul>
+      </Row>
     </Wrapper>
   </Content>
 )
