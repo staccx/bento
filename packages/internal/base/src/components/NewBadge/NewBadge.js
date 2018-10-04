@@ -3,7 +3,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import { color, fontWeight, themify, themeProps } from "@staccx/theme"
 import fontSmoothing from "../../Styles/fontsmoothing"
-import themePropTypes from "../constants/themePropTypes"
+import themePropTypes from "../../constants/themePropTypes"
 
 const NewBadge = ({ number, children, variant }) => (
   <NewBadgeWrapper variant={variant}>

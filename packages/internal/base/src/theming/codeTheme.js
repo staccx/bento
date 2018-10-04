@@ -1,4 +1,4 @@
-import { Theme } from "@staccx/theme"
+import Theme from "./Theme"
 
 const colors = {
   codeBackground: "#2B2B2B",

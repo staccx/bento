@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { fontFamily, font, themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const Paragraph = ({ children, className, ...restProps }) => {
   return (

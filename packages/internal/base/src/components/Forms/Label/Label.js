@@ -13,7 +13,7 @@ import {
   fontWeight,
   themeProps
 } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const Label = ({ className, children, ...rest }) => (
   <LabelElement className={className} {...rest}>

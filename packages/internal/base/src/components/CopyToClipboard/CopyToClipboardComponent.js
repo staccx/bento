@@ -6,7 +6,7 @@ import Upload from "../Icons/Upload"
 import Check from "../Icons/Check"
 import FileInput from "../Forms/Input/FileInput/FileInput"
 import { themify, ThemeComponent, themeProps } from "@staccx/theme"
-import themePropTypes from "../constants/themePropTypes"
+import themePropTypes from "../../constants/themePropTypes"
 
 class CopyToClipboardComponent extends React.PureComponent {
   constructor(props, context) {

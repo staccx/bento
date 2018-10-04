@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { spacing, themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 /**
  * The flag object is a design pattern similar to the media object, however it

@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { themify } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const InlineListItem = ({ className, children, ...rest }) => (
   <ListItem className={className} {...rest}>

@@ -1,4 +1,5 @@
-import Theme from "./theme"
+import Theme from "./Theme"
+import { theming } from "./"
 // import grids from "../components/Layout/Layout/Layout.Grids"
 
 const example = {
@@ -85,6 +86,9 @@ const other = {
   }
 }
 
+const style1 = theming.createVariants({ subtle: 1 }, "button")
+const style2 = theming.createVariants({ _default: "test" }, "label")
+
 describe("Theme", () => {
   describe("Tests", () => {
     it("Should create new theme", () => {
@@ -103,6 +107,12 @@ describe("Theme", () => {
       expect(theme.spacing.huge).toBe(other.spacing.huge)
       // Second parameter has priority
       expect(theme.name).toBe(other.name)
+    })
+
+    it("Should take array of new styles", () => {
+      const theme = new Theme(example).add([style1, style2])
+      expect(theme.button.subtle).toEqual(1)
+      expect(theme.label._default).toEqual("test")
     })
   })
 })

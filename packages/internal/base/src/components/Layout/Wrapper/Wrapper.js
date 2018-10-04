@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { spacing, wrapper, themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 /**
  * A Wrapper components that centers content and add spacing on the sides

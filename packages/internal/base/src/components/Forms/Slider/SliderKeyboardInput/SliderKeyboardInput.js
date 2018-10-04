@@ -7,7 +7,7 @@ import Label from "../../Label/Label"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
 import { targetSize, fontFamily, font, color, themify } from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+import themePropTypes from "../../../../constants/themePropTypes"
 
 const removeSpaces = value => value.replace(/\s/g, "")
 

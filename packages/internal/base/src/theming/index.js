@@ -20,14 +20,18 @@ import { default as applyVariants } from "./utils/applyVariants"
 import { default as BaseTheme } from "./baseTheme"
 import { default as CodeTheme } from "./codeTheme"
 
-import { VARIANT_DEFAULT } from "./_constants"
+// Theme class
+import Theme from "./Theme"
 
-export default {
+import { VARIANT_DEFAULT, commonPropTypes } from "../constants/themeContants"
+
+export const theming = {
   BaseTheme,
   CodeTheme,
   applyVariants,
   borderRadius,
   color,
+  commonPropTypes,
   extendDefault,
   font,
   fontFamily,
@@ -39,5 +43,6 @@ export default {
   getProp,
   mapProp,
   createVariants,
-  VARIANT_DEFAULT
+  VARIANT_DEFAULT,
+  Theme
 }

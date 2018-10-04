@@ -1,5 +1,5 @@
 import deepfind from "./deepfind"
-import { VARIANT_DEFAULT } from "../_constants"
+import { VARIANT_DEFAULT } from "../../constants/themeContants"
 
 /**
  * Apply variants for a component. Allows for multiple variants

@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { ScaleInX } from "@staccx/animations"
 import { spacing, font, color, themify } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const ProgressBar = ({
   progress,

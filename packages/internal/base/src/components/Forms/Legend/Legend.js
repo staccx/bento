@@ -13,7 +13,7 @@ import {
   fontWeight,
   themeProps
 } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const Legend = ({ className, children, ...rest }) => (
   <LegendElement className={className} {...rest}>

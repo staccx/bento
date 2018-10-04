@@ -6,7 +6,7 @@ import { postalCodeMasks } from "../masks"
 import Loading from "../../../DataViz/Loading/Loading"
 import { spacing, targetSize, color, font, themify } from "@staccx/theme"
 import { FadeIn } from "@staccx/animations"
-import themePropTypes from "../../../constants/themePropTypes"
+import themePropTypes from "../../../../constants/themePropTypes"
 
 /**
  * Input for Norwegian Postal codes. Adds PostalPlace according to the number. Input is imported from Input-component

@@ -11,7 +11,7 @@ import {
   ThemeComponent,
   themeProps
 } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const ExpandButton = ({ title, isExpanded, ...props }) => (
   <ExpandBtn isExpanded={isExpanded} {...props}>

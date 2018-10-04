@@ -16,7 +16,7 @@ import {
   targetSize,
   fontFamily
 } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 class Input extends React.Component {
   constructor(props) {

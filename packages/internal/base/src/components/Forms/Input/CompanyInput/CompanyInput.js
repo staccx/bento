@@ -6,7 +6,7 @@ import Input, { InputDefaultProps, InputPropTypes } from "../Input"
 import Downshift from "downshift"
 import Flag from "../../../Layout/Flag/Flag"
 import Label from "../../Label/Label"
-import themePropTypes from "../../../constants/themePropTypes"
+import themePropTypes from "../../../../constants/themePropTypes"
 
 const defaultMapItem = item => {
   if (!item) {

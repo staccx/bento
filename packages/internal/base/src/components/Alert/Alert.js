@@ -13,7 +13,7 @@ import {
   borderRadius,
   themeProps
 } from "@staccx/theme"
-import themePropTypes from "../constants/themePropTypes"
+import themePropTypes from "../../constants/themePropTypes"
 
 const tProps = {
   alert: {

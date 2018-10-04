@@ -12,7 +12,7 @@ import {
 } from "@staccx/theme"
 import IconClose from "../Icons/Close"
 import { FadeIn } from "@staccx/animations"
-import themePropTypes from "../constants/themePropTypes"
+import themePropTypes from "../../constants/themePropTypes"
 
 class Modal extends Component {
   constructor(props) {

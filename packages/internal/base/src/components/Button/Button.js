@@ -11,7 +11,7 @@ import {
   color,
   themify
 } from "@staccx/theme"
-import themePropTypes from "../constants/themePropTypes"
+import themePropTypes from "../../constants/themePropTypes"
 const tinycolor = require("tinycolor2")
 
 const tProps = {

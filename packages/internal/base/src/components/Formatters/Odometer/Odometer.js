@@ -4,7 +4,7 @@ import styled from "styled-components"
 import hideVisually from "../../../Styles/hideVisually"
 import Digit from "./Digit"
 import { themify } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 class Odometer extends React.PureComponent {
   constructor(...props) {

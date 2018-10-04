@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import applyVariants from "./applyVariants"
-import themePropTypes from "../../components/constants/themePropTypes"
+import themePropTypes from "../../constants/themePropTypes"
 
 const themeProps = {
   button: {

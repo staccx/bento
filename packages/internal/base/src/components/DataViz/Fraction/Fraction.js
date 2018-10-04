@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import hideVisually from "../../../Styles/hideVisually"
 import { spacing, color, themify } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const Fraction = ({
   value,

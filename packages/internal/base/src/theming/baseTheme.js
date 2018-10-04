@@ -1,4 +1,4 @@
-import { Theme } from "@staccx/theme"
+import Theme from "./Theme"
 import { reset } from "../Styles/cssResets"
 import grids from "../components/Layout/Layout/Layout.Grids"
 import codeTheme from "./codeTheme"

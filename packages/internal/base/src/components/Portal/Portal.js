@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { ThemeComponent, spacing, color, themify } from "@staccx/theme"
-import themePropTypes from "../constants/themePropTypes"
+import themePropTypes from "../../constants/themePropTypes"
 
 const Portal = ({ label, tagName, variant, className, ...rest }) => (
   <PortalWrapper className={className} {...rest} variant={variant}>

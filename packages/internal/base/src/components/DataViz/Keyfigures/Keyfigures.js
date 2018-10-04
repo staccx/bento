@@ -3,7 +3,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import { formatCurrency } from "@staccx/formatting"
 import { spacing, color, font, themify } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const KeyFigures = ({ figures }) => (
   <List>

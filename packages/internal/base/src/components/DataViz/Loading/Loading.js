@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
 import { color, spacing, themify, ThemeComponent } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const DefaultLoading = ({ className, variant, ...rest }) => (
   <SignalSpinner className={className} variant={variant} {...rest} />

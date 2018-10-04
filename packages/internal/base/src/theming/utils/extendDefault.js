@@ -1,5 +1,5 @@
 import createVariants from "./createVariants"
-import { VARIANT_DEFAULT } from "../_constants"
+import { VARIANT_DEFAULT } from "../index"
 
 /**
  * Use this to extend default styling

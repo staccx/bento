@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { spacing as space, themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 /**
  * The ItemGroup object creates spacing between all its children and wraps the items when there is no room
  */

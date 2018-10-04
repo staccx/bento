@@ -10,7 +10,7 @@ import {
   themeProps
 } from "@staccx/theme"
 import Caret from "../Icons/Caret"
-import themePropTypes from "../constants/themePropTypes"
+import themePropTypes from "../../constants/themePropTypes"
 
 class Expand extends Component {
   constructor(props) {

@@ -14,7 +14,7 @@ import {
   themeProps,
   ThemeComponent
 } from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+import themePropTypes from "../../../../constants/themePropTypes"
 import Upload from "../../../Icons/Upload"
 const tinycolor = require("tinycolor2")
 

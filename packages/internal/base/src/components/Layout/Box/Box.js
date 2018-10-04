@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { spacing, borderRadius, themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import themePropTypes from "../../../constants/themePropTypes"
 
 const Box = ({ children, className, size, ...otherProps }) => (
   <Boxing className={className} size={size} {...otherProps}>

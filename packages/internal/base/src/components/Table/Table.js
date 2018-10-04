@@ -11,7 +11,7 @@ import {
   themify
 } from "@staccx/theme"
 import styled from "styled-components"
-import themePropTypes from "../constants/themePropTypes"
+import themePropTypes from "../../constants/themePropTypes"
 
 class Table extends React.Component {
   render() {
