@@ -12,17 +12,10 @@ import Column from "../components/Footer/Footer.Column"
 
 const Home = () => (
   <div>
-    <Hero
-      heroType="main"
-      heroMain={data.heroMain}
-      heroSecondary={data.heroSecondary}
-      extraCars={data.extraCars}
-    />
+    <Hero data={data.hero} />
 
     <Features heading={data.featuresHeading} features={data.features} />
-
     <Pricing heading={data.pricingHeading} cars={data.pricingCars} />
-
     <Advantages heading={data.advantagesHeading} advantages={data.advantages} />
 
     <Comparison
@@ -39,7 +32,6 @@ const Home = () => (
       copy={data.pilotInfoCopy}
       buttons={data.pilotInfoButtons}
     />
-
     <Footer content={data.footer} />
   </div>
 )

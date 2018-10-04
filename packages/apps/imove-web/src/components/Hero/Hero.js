@@ -6,38 +6,34 @@ import HeroBlob from "./Hero.Blob"
 import CallToAction from "./Hero.CallToAction"
 import ExtraCars from "./Hero.ExtraCars"
 
-const Hero = ({ heroType, heroMain, heroSecondary, extraCars }) => {
-  if (heroMain === "secondary") {
-    // heroSecondary-stuff
-  } else {
-    // primary:
-    return (
-      <Content>
-        <HeroTop>
-          <StyledWrapper size="largePlus">
-            <CarColumn>
-              <CallToAction
-                heading={heroMain.heading}
-                headingSub={heroMain.headingSub}
-                buttons={heroMain.buttons}
-                hverdagsbil={heroMain.hverdagsbil}
-              />
-            </CarColumn>
-            <BlobColumn>
-              <HeroBlob
-                logo={heroMain.logoWhite}
-                heading={heroMain.headingSecondary}
-                headingSub={heroMain.headingSecondarySub}
-              />
-            </BlobColumn>
-          </StyledWrapper>
-        </HeroTop>
-        <StyledWrapper size="largePlus">
-          <ExtraCars data={extraCars} />
+const Hero = ({ data }) => {
+  const isReversed = data.variant === "secondary"
+  return (
+    <Content>
+      <HeroTop>
+        <StyledWrapper size="largePlus" isReversed={isReversed}>
+          <CarColumn isReversed={isReversed}>
+            <CallToAction
+              heading={data.heading}
+              headingSub={data.headingSub}
+              buttons={data.buttons}
+              hverdagsbil={data.hverdagsbil}
+            />
+          </CarColumn>
+          <BlobColumn>
+            <HeroBlob
+              logo={data.logoWhite}
+              heading={data.headingSecondary}
+              headingSub={data.headingSecondarySub}
+            />
+          </BlobColumn>
         </StyledWrapper>
-      </Content>
-    )
-  }
+      </HeroTop>
+      <StyledWrapper size="largePlus">
+        <ExtraCars data={data.extraCars} isReversed={isReversed} />
+      </StyledWrapper>
+    </Content>
+  )
 }
 
 const Content = styled.div`
@@ -56,13 +52,15 @@ const HeroTop = styled.div`
 const StyledWrapper = styled(Wrapper)`
   display: flex;
   flex-wrap: wrap;
+  flex-direction: ${p => (p.isReversed ? "row-reverse" : "row")};
 `
 
 const CarColumn = styled.div`
   display: flex;
   align-items: bottom;
   width: 50%;
-  padding-right: ${spacing("large")};
+  padding-right: ${p => (p.isReversed ? "0" : `${spacing("large")(p)}`)};
+  padding-left: ${p => (p.isReversed ? `${spacing("large")(p)}` : "0")};
 `
 
 const BlobColumn = styled.div`
