@@ -8,7 +8,7 @@ import { Case, Home, Page } from "./pages/_codeSplitting"
 import FourOFour from "./pages/404"
 import styled from "styled-components"
 
-const Routes = epitath(function*({ change }) {
+const Routes = epitath(function*({ change, inverted }) {
   const { result: clientCaseStudyPages } = yield (
     <SanityList type={"client"} filter={`hide != true`} />
   )
@@ -41,7 +41,12 @@ const Routes = epitath(function*({ change }) {
           key={page._id}
           path={`${page.path.current}`}
           render={({ match, location }) => (
-            <Page page={page} match={match} location={location} change={change} />
+            <Page
+              page={page}
+              match={match}
+              location={location}
+              change={change}
+            />
           )}
         />
       ))}
@@ -62,7 +67,14 @@ const Routes = epitath(function*({ change }) {
             })
           : null
       })}
-      <Route component={FourOFour} />
+      <Route
+        render={() => {
+          if (!inverted) {
+            change({ inverted: true })
+          }
+          return <FourOFour />
+        }}
+      />
     </Switch>
   )
 })

@@ -30,7 +30,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { location, hideMenu } = this.props
+    const { location, hideMenu, inverted } = this.props
     return (
       <SanityDocument
         id={"ffe2cd1d-2fed-4436-9942-ad9674dd80ea"}
@@ -40,15 +40,20 @@ class Header extends React.Component {
           if (!document) {
             return null
           }
-          const inverted =
-            (document.inverted || []).indexOf(location.pathname) !== -1
+          const isInverted =
+            (document.inverted || []).indexOf(location.pathname) !== -1 ||
+            inverted
+
           return (
-            <Head inverted={inverted} menuIsVisible={this.state.menuIsVisible}>
+            <Head
+              inverted={isInverted}
+              menuIsVisible={this.state.menuIsVisible}
+            >
               <Wrapper>
                 <Inner>
                   <LogoLink to="/">
                     <Logo
-                      inverted={inverted}
+                      inverted={isInverted}
                       menuIsVisible={this.state.menuIsVisible}
                     />
                     <LogoTitle>Stacc Home</LogoTitle>
@@ -56,13 +61,13 @@ class Header extends React.Component {
                   {!hideMenu && (
                     <React.Fragment>
                       <HeaderMenuButton
-                        inverted={inverted}
+                        inverted={isInverted}
                         onClick={() => this.handleMenu()}
                         isOpen={this.state.menuIsVisible}
                       />
 
                       <HeaderMenu
-                        inverted={inverted}
+                        inverted={isInverted}
                         items={document.links}
                         isOpen={this.state.menuIsVisible}
                         closeMenu={this.closeMenu}
