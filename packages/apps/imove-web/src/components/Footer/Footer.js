@@ -8,7 +8,7 @@ const Footer = ({ content }) => (
     <Wrapper>
       <ul>
         {content.map(data => (
-          <li>
+          <li key={data._key}>
             <h2>{data.heading}</h2>
             <p>{data.text}</p>
           </li>

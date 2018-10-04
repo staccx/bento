@@ -294,15 +294,18 @@ export default {
   footer: [
     {
       heading: "Bli abonnent",
-      text: "En beskrivelse her og en link til å bli abonnent"
+      text: "En beskrivelse her og en link til å bli abonnent",
+      _key: "nxdgs0"
     },
     {
       heading: "Hjelp meg å selge bilen",
-      text: "En beskrivelse her og en link til å bli abonnent"
+      text: "En beskrivelse her og en link til å bli abonnent",
+      _key: "nxdgs1"
     },
     {
       heading: "Kontakt oss",
-      text: "Adresse og epostlink e.l."
+      text: "Adresse og epostlink e.l.",
+      _key: "nxdgs2"
     }
   ]
 }
