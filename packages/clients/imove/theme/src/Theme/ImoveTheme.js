@@ -98,7 +98,7 @@ const font = {
 
 const webfonts = {
   google: {
-    families: ["Open Sans:400"]
+    families: ["Open Sans:400,700"]
   },
   typekit: {
     id: "ykt5nel"
