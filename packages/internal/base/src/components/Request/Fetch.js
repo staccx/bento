@@ -1,8 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-// TODO: Rename to <Get />
-// TODO: Fix issue with url changing
-class Fetch extends React.Component {
+
+/**
+ * @deprecated Use <Get /> instead
+ */
+class Get extends React.Component {
   constructor(props, context) {
     super(props, context)
 
@@ -56,7 +58,7 @@ class Fetch extends React.Component {
   }
 }
 
-Fetch.propTypes = {
+Get.propTypes = {
   /**
    * Render function
    */
@@ -95,9 +97,9 @@ Fetch.propTypes = {
   pollingInterval: PropTypes.number
 }
 
-export default Fetch
+export default Get
 
-Fetch.defaultProps = {
+Get.defaultProps = {
   mapData: item => item,
   onFailed: console.error,
   options: {},

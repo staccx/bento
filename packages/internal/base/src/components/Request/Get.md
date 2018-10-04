@@ -2,7 +2,7 @@
 
 ## How to use
 ```javascript
-<Fetch url="https://url-to-endpoint.no">
+<Get url="https://url-to-endpoint.no">
 {({result}) => (
 <div>render stuff</div>)
  }

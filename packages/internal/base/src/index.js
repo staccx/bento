@@ -102,8 +102,9 @@ import Pagination from "./components/Pagination"
 // Code
 import CodeRenderer from "./components/Code/CodeRenderer"
 import Table from "./components/Table/Table"
-import Fetch from "./components/Fetch/Fetch"
-import Poll from "./components/Fetch/Poll"
+import Get from "./components/Request/Get"
+import Fetch from "./components/Request/Fetch"
+import Poll from "./components/Request/Poll"
 import CopyToClipboard from "./components/CopyToClipboard/CopyToClipboard"
 import CopyToClipboardComponent from "./components/CopyToClipboard/CopyToClipboardComponent"
 
@@ -137,6 +138,7 @@ export {
   EmailInput,
   Expand,
   ExpandListItem,
+  Get,
   Fetch,
   FileInput,
   Flag,

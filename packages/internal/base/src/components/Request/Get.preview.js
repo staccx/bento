@@ -1,5 +1,5 @@
 import React from "react"
-import Fetch from "./Fetch"
+import Get from "./Get"
 import Input from "../Forms/Input/Input"
 import Button from "../Button/Button"
 import CodeRenderer from "../Code/CodeRenderer"
@@ -10,9 +10,9 @@ const preview = {
   title: "Fetch",
   category: "Components/Render Utilities",
   tags: ["renderProps", "utility"],
-  component: Fetch,
+  component: Get,
   render: ({ url = "https://httpbin.org/get", ...props }) => (
-    <Fetch url={url} mapData={item => item.json()} {...props}>
+    <Get url={url} mapData={item => item.json()} {...props}>
       {({ data }) => (
         <div>
           <Paragraph>{`Url: ${url}`}</Paragraph>
@@ -20,7 +20,7 @@ const preview = {
           <CodeRenderer language="javascript" code={JSON.stringify(data)} />
         </div>
       )}
-    </Fetch>
+    </Get>
   ),
   renderExampleController: ({ setComponentState, urlTemp }) => (
     <Wrapper>
