@@ -25,15 +25,13 @@ const Link = styled.a`
 `
 
 LinkButton.defaultProps = {
-  variant: "primary",
-  children: "",
-  uri: ""
+  variant: "primary"
 }
 
 LinkButton.propTypes = {
   variant: PropTypes.string,
-  children: PropTypes.any,
-  uri: PropTypes.string
+  children: PropTypes.any.isRequired,
+  uri: PropTypes.string.isRequired
 }
 
 export default LinkButton
