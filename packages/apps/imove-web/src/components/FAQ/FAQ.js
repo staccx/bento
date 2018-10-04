@@ -21,7 +21,7 @@ const FAQ = ({ data }) => (
 )
 
 const Content = styled.div`
-  padding: ${spacing.huge} ${spacing("largePlusPlus")};
+  padding: ${spacing.huge} ${spacing("largePlus")};
 `
 
 const List = styled.ul``

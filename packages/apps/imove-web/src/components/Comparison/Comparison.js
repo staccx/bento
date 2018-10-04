@@ -35,7 +35,7 @@ const Comparison = ({ data }) => (
 )
 
 const Content = styled.div`
-  padding: ${spacing.huge} ${spacing("largePlusPlus")};
+  padding: ${spacing.huge} ${spacing("largePlus")};
 `
 
 export default Comparison

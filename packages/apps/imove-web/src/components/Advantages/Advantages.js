@@ -18,7 +18,7 @@ const Advantages = ({ data }) => (
 )
 
 const Content = styled.div`
-  padding: ${spacing.huge} ${spacing("largePlusPlus")};
+  padding: ${spacing.huge} ${spacing("largePlus")};
 `
 
 const Container = styled.ul`
