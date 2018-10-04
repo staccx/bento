@@ -10,7 +10,7 @@ const CallToAction = ({ size, heading, copy, buttons, bgImage }) => (
   <Content bg={bgImage}>
     <Wrapper size={size}>
       <Container>
-        <SectionHeading level={2}>{heading}</SectionHeading>
+        <SectionHeading align="left">{heading}</SectionHeading>
         <Copy>{copy}</Copy>
       </Container>
       {buttons.map(data => (
