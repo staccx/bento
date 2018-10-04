@@ -244,22 +244,28 @@ export default {
     }
   ],
 
-  FAQ: [
+  faqHeading: "Spørsmål og svar",
+  faq: [
     {
-      q: "Hva skjer hvis jeg bulker bilen?",
-      a: "Her er svaret på spørsmålet ovenfor."
+      question: "Hva skjer hvis jeg bulker bilen?",
+      answer: "Her er svaret på spørsmålet ovenfor.",
+      _key: "msdht0"
     },
     {
-      q: "Hva skjer hvis jeg ombestemmer meg?",
-      a: "Her er svaret på spørsmålet ovenfor."
+      question: "Hva skjer hvis jeg ombestemmer meg?",
+      answer: "Her er svaret på spørsmålet ovenfor.",
+      _key: "msdht1"
     },
     {
-      q: "Dette er et av spørsmålene her.",
-      a: "Her er svaret på spørsmålet ovenfor."
+      question: "Dette er et av spørsmålene her.",
+      answer: "Her er svaret på spørsmålet ovenfor.",
+      _key: "msdht2"
     },
     {
-      q: "Her er det siste spørsmålet av de fire oftest stilte spørsmålene.",
-      a: "Her er svaret på spørsmålet ovenfor."
+      question:
+        "Her er det siste spørsmålet av de fire oftest stilte spørsmålene.",
+      answer: "Her er svaret på spørsmålet ovenfor.",
+      _key: "msdht3"
     }
   ]
 }
