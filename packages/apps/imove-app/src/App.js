@@ -90,6 +90,16 @@ class App extends Component {
                         component={EndConfirmation}
                       />
                       <Route
+                        path="/app"
+                        render={() => (
+                          <div>
+                            <h1>404</h1>
+                            <p>No content here (yet)</p>
+                            <Link to={"/app"}>Please log in to the app</Link>
+                          </div>
+                        )}
+                      />
+                      <Route
                         path="/"
                         render={() => (
                           <div>
