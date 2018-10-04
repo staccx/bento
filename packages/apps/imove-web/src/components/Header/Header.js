@@ -1,12 +1,13 @@
 import React from "react"
 import styled from "styled-components"
+import Logo from "../Logo/Logo"
 import { Wrapper } from "@staccx/base"
 import { font, color, spacing } from "@staccx/theme"
 
 const Header = () => (
   <Menu>
     <StyledWrapper size="largePlus">
-      <img src="" alt="" />
+      <Logo height="48px" variant="1" />
       <Navigation>
         <Items>
           <Item>
@@ -36,7 +37,7 @@ const Menu = styled.div`
 
 const StyledWrapper = styled(Wrapper)`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: ${spacing("medium")} $;
   font-size: ${font("large")};
 `
