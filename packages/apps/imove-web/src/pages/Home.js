@@ -5,6 +5,7 @@ import Features from "../components/Features/Features"
 import Pricing from "../components/Pricing/Pricing"
 import Advantages from "../components/Advantages/Advantages"
 import Comparison from "../components/Comparison/Comparison"
+import FAQ from "../components/FAQ/FAQ"
 import Footer from "../components/Footer/Footer"
 import Column from "../components/Footer/Footer.Column"
 
@@ -28,6 +29,8 @@ const Home = () => (
       headers={data.comparisonHeaders}
       rows={data.comparisonRows}
     />
+
+    <FAQ heading={data.faqHeading} faq={data.faq} />
 
     <Footer>
       <Column heading="Finn oss">
