@@ -4,22 +4,22 @@ import { spacing } from "@staccx/theme"
 import { Wrapper } from "@staccx/base"
 import SectionHeading from "../SectionHeading/SectionHeading"
 
-const Comparison = ({ heading, headers, rows }) => (
+const Comparison = ({ data }) => (
   <Content>
     <Wrapper size="largePlus">
-      <SectionHeading>{heading}</SectionHeading>
+      <SectionHeading>{data.heading}</SectionHeading>
       <div>
         <table>
           <thead>
             <tr>
-              <th>{headers.desc}</th>
-              <th>{headers.imove}</th>
-              <th>{headers.leasing}</th>
-              <th>{headers.kjope}</th>
+              <th>{data.headers.desc}</th>
+              <th>{data.headers.imove}</th>
+              <th>{data.headers.leasing}</th>
+              <th>{data.headers.kjope}</th>
             </tr>
           </thead>
           <tbody>
-            {rows.map(x => (
+            {data.rows.map(x => (
               <tr key={x._key}>
                 <td>{x.desc}</td>
                 <td>{x.imove}</td>
@@ -35,7 +35,7 @@ const Comparison = ({ heading, headers, rows }) => (
 )
 
 const Content = styled.div`
-  padding: ${spacing.huge} ${spacing("largePlusPlus")};
+  padding: ${spacing.huge} ${spacing("largePlus")};
 `
 
 export default Comparison

@@ -6,14 +6,14 @@ import SectionHeading from "../SectionHeading/SectionHeading"
 import LinkButton from "../LinkButton/LinkButton"
 import styled from "styled-components"
 
-const CallToAction = ({ size, heading, copy, buttons, bgImage }) => (
-  <Content bg={bgImage}>
-    <Wrapper size={size}>
+const CallToAction = ({ data }) => (
+  <Content variant={data.variant}>
+    <Wrapper size={data.size}>
       <Container>
-        <SectionHeading align="left">{heading}</SectionHeading>
-        <Copy>{copy}</Copy>
+        <SectionHeading align="left">{data.heading}</SectionHeading>
+        <Copy>{data.copy}</Copy>
       </Container>
-      {buttons.map(data => (
+      {data.buttons.map(data => (
         <LinkButton key={data._key} variant={data.variant} url={data.url}>
           {data.text}
         </LinkButton>
@@ -24,7 +24,7 @@ const CallToAction = ({ size, heading, copy, buttons, bgImage }) => (
 
 const Content = styled.div`
   background-color: ${color("bgGray")};
-  background-image: ${p => p.bg && `url(${p.bg})`};
+  background-image: url(${p => p.variant === "1" && "/img/road01@2x.png"});
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
