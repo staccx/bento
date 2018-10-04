@@ -1,6 +1,6 @@
 {
   "name": "@staccx/open-id",
-  "version": "7.7.4",
+  "version": "7.8.0",
   "description": "Open-id components",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -29,7 +29,7 @@
     "react": "^16.3.2"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.7.4",
+    "@staccx/rollup-config": "^7.8.0",
     "prettier": "^1.14.2",
     "rollup": "^0.65.0"
   }

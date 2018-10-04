@@ -1,12 +1,12 @@
 {
   "name": "@staccx/imove-web",
-  "version": "7.7.4",
+  "version": "7.8.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@staccx/base": "^7.7.4",
-    "@staccx/theme": "^7.7.4",
+    "@staccx/base": "^7.8.0",
+    "@staccx/theme": "^7.8.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
@@ -21,7 +21,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.7.4",
+    "@staccx/rollup-config": "^7.8.0",
     "prettier": "^1.14.2",
     "react-app-rewired": "^1.5.2",
     "rollup": "^0.65.0",
