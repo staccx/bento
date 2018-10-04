@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Wrapper } from "@staccx/base"
 import { ThemeProxyProvider } from "@staccx/theme"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 import Transitions from "./components/transitions/transitions"
 import { imoveTheme } from "@staccx/imove-theme"
 import Onboarding from "./pages/Onboarding"
@@ -35,55 +35,68 @@ class App extends Component {
                 <Transitions pageKey={location.key} {...location.state}>
                   <Wrapper size="small">
                     <Switch location={location}>
-                      <Route path="/" exact component={LogIn} />
-                      <Route path="/onboarding" exact component={Onboarding} />
-                      <Route path="/my-car" exact component={MyCar} />
-                      <Route path="/sell" exact component={Sell} />
+                      <Route path="/app/" exact component={LogIn} />
                       <Route
-                        path="/sell/confirmation"
+                        path="/app/onboarding"
+                        exact
+                        component={Onboarding}
+                      />
+                      <Route path="/app/my-car" exact component={MyCar} />
+                      <Route path="/app/sell" exact component={Sell} />
+                      <Route
+                        path="/app/sell/confirmation"
                         exact
                         component={SellConfirmation}
                       />
                       <Route
-                        path="/waiting-list"
+                        path="/app/waiting-list"
                         exact
                         component={WaitingList}
                       />
                       <Route
-                        path="/waiting-list/confirmation"
+                        path="/app/waiting-list/confirmation"
                         exact
                         component={WaitingListConfirmation}
                       />
-                      <Route path="/cars" exact component={Cars} />
+                      <Route path="/app/cars" exact component={Cars} />
                       <Route
-                        path="/car/:chassisNumber"
+                        path="/app/car/:chassisNumber"
                         match={match}
                         exact
                         component={OrderCarDetail}
                       />
                       <Route
-                        path="/car/:chassisNumber/book"
+                        path="/app/car/:chassisNumber/book"
                         match={match}
                         exact
                         component={OrderBook}
                       />
                       <Route
-                        path="/car/:chassisNumber/confirm"
+                        path="/app/car/:chassisNumber/confirm"
                         match={match}
                         exact
                         component={OrderConfirm}
                       />
-                      <Route path="/profile" exact component={Profile} />
+                      <Route path="/app/profile" exact component={Profile} />
                       <Route
-                        path="/profile/edit"
+                        path="/app/profile/edit"
                         exact
                         component={ProfileEdit}
                       />
-                      <Route path="/end" exact component={End} />
+                      <Route path="/app/end" exact component={End} />
                       <Route
-                        path="/end/confirmation"
+                        path="/app/end/confirmation"
                         exact
                         component={EndConfirmation}
+                      />
+                      <Route
+                        path="/"
+                        render={() => (
+                          <div>
+                            This is where the landing pages lives.{" "}
+                            <Link to={"/app"}>Please log in to the app</Link>
+                          </div>
+                        )}
                       />
                     </Switch>
                   </Wrapper>

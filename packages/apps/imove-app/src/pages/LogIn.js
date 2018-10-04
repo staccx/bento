@@ -14,7 +14,7 @@ const LogIn = ({ history }) => {
           <Button
             onClick={() =>
               history.push({
-                pathname: "/my-car"
+                pathname: "/app/my-car"
               })
             }
             variant="mainNavigation"
@@ -24,7 +24,7 @@ const LogIn = ({ history }) => {
           <Button
             onClick={() =>
               history.push({
-                pathname: "/onboarding"
+                pathname: "/app/onboarding"
               })
             }
             variant="mainNavigation"

@@ -49,7 +49,7 @@ const Sell = ({ history }) => {
         <Button
           onClick={() =>
             history.push({
-              pathname: "/waiting-list/confirmation"
+              pathname: "/appwaiting-list/confirmation"
             })
           }
         >
@@ -58,7 +58,7 @@ const Sell = ({ history }) => {
         <Button
           onClick={() =>
             history.push({
-              pathname: "/",
+              pathname: "/app",
               state: backwards
             })
           }

@@ -11,7 +11,7 @@ const OrderBook = ({ match }) => {
 
   return (
     <Layout paddingTop="medium" paddingBottom="huge">
-      <Link to="/cars">
+      <Link to="/app/cars">
         <Button variant="back">Tilbake til listen</Button>
       </Link>
       <img src={car.images[0]} alt="" />
@@ -35,7 +35,7 @@ const OrderBook = ({ match }) => {
         NB: Du kan fortsatt ombestemme deg, trykk hold av for å sikre deg
         muligheten til å abonnere på denne bilen!
       </p>
-      <Link to={`/car/${match.params.chassisNumber}/confirm`}>
+      <Link to={`/app/car/${match.params.chassisNumber}/confirm`}>
         <Button>Hold av</Button>
       </Link>
       {/* TODO: Replace text */}

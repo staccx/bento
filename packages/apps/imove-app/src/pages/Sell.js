@@ -41,7 +41,7 @@ const Sell = ({ history }) => {
         <Button
           onClick={() =>
             history.push({
-              pathname: "/sell/confirmation"
+              pathname: "/app/sell/confirmation"
             })
           }
         >

@@ -19,7 +19,7 @@ const Profile = ({ history }) => (
         <Button
           onClick={() =>
             history.push({
-              pathname: "/profile/edit"
+              pathname: "/app/profile/edit"
             })
           }
           variant="mainNavigation"
@@ -29,7 +29,7 @@ const Profile = ({ history }) => (
         <Button
           onClick={() =>
             history.push({
-              pathname: "/end/"
+              pathname: "/app/end/"
             })
           }
           variant="mainNavigation"

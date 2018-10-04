@@ -13,7 +13,7 @@ const OrderCarDetail = ({ match }) => {
 
   return (
     <Layout paddingTop="medium" paddingBottom="huge">
-      <Link to="/cars">
+      <Link to="/app/cars">
         <Button variant="back">Tilbake til listen</Button>
       </Link>
       <Carousel images={car.images} />
@@ -24,7 +24,7 @@ const OrderCarDetail = ({ match }) => {
         status={"available"}
       />
       <DetailsList car={car} />
-      <Link to={`/car/${match.params.chassisNumber}/book`}>
+      <Link to={`/app/car/${match.params.chassisNumber}/book`}>
         <Button>Neste</Button>
       </Link>
     </Layout>

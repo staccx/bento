@@ -29,27 +29,27 @@ const MyCar = () => (
 
     <div>
       <Menu>
-        <Link to="/order-additional">
+        <Link to="/app/order-additional">
           <Button variant="mainNavigation">
             Bestill hyttebil eller tilleggsbil {/* TODO: Sanitytext */}
           </Button>
         </Link>
-        <Link to="/sell">
+        <Link to="/app/sell">
           <Button variant="mainNavigation">
             Hjelp meg å selge min gamle bil {/* TODO: Sanitytext */}
           </Button>
         </Link>
-        <Link to="/switch">
+        <Link to="/app/switch">
           <Button variant="mainNavigation">
             Bytt bil {/* TODO: Sanitytext */}
           </Button>
         </Link>
-        <Link to="/service">
+        <Link to="/app/service">
           <Button variant="mainNavigation">
             Bestill service {/* TODO: Sanitytext */}
           </Button>
         </Link>
-        <Link to="/tire-change">
+        <Link to="/app/tire-change">
           <Button variant="mainNavigation">
             Bestill dekkskift {/* TODO: Sanitytext */}
           </Button>
@@ -57,10 +57,10 @@ const MyCar = () => (
       </Menu>
     </div>
     <Text variant="legalese">Du har 10 dager med gratis hyttebil igjen</Text>
-    <Link to="/vilkar-og-betingelser">
+    <Link to="/app/vilkar-og-betingelser">
       <Text variant="legalese">Avslutt abonnement</Text>
     </Link>
-    <Link to="/vilkar-og-betingelser">
+    <Link to="/app/vilkar-og-betingelser">
       <Text variant="legalese">Vilkår og betingelser</Text>
     </Link>
   </Layout>

@@ -31,7 +31,7 @@ const CarsListItem = ({
           </CarInfo>
         </div>
         <div>
-          <ReadMore to={`/car/${chassisNumber}`}>Les mer</ReadMore>
+          <ReadMore to={`/app/car/${chassisNumber}`}>Les mer</ReadMore>
           {/* TODO: replace text */}
         </div>
       </Layout>

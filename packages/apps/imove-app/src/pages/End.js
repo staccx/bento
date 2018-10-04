@@ -16,7 +16,7 @@ const End = ({ history }) => {
         <Button
           onClick={() =>
             history.push({
-              pathname: "/end/confirmation"
+              pathname: "/app/end/confirmation"
             })
           }
         >
@@ -25,7 +25,7 @@ const End = ({ history }) => {
         <Button
           onClick={() =>
             history.push({
-              pathname: "/profile",
+              pathname: "/app/profile",
               state: backwards
             })
           }

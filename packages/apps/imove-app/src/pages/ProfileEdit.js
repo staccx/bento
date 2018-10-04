@@ -16,7 +16,7 @@ const Profile = ({ history }) => (
       <Button
         onClick={() =>
           history.push({
-            pathname: "/profile"
+            pathname: "/app/profile"
           })
         }
       >
