@@ -10,10 +10,9 @@ const ImageCarousel = ({ images }) => (
   <Outer>
     <Carousel
       initialSlideWidth={100}
+      heightMode="max"
+      wrapAround
       renderCenterRightControls={({ nextSlide, slideCount, currentSlide }) => {
-        if (currentSlide + 1 >= slideCount) {
-          return null
-        }
         return (
           <NextSlide onClick={nextSlide}>
             <ArrowRight />

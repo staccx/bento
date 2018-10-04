@@ -10,9 +10,19 @@ export default [
     numberOfSeats: 4,
     trunkCapacityInLiters: 160,
     images: [
-      "/egolf.png",
-      "https://source.unsplash.com/320x120/?car+interior",
-      "https://source.unsplash.com/320x120/?volkswagen+interior"
+      "/img/eup/0.png",
+      "/img/eup/1.jpeg",
+      "/img/eup/2.jpeg",
+      "/img/eup/3.jpeg",
+      "/img/eup/4.jpeg",
+      "/img/eup/5.jpeg",
+      "/img/eup/6.jpeg",
+      "/img/eup/7.jpeg",
+      "/img/eup/8.jpeg",
+      "/img/eup/9.jpeg",
+      "/img/eup/10.jpeg",
+      "/img/eup/11.jpeg",
+      "/img/eup/12.jpeg"
     ]
   },
   {
