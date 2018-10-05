@@ -121,7 +121,7 @@ const IconComponent = ({ ...props }) => (
 
 const ExpandIcon = styled(IconComponent)`
   position: absolute;
-  right: ${color.small()};
+  right: ${color.small};
   top: 50%;
   fill: ${color.wcag};
   transition: transform 0.3s ease-out;
