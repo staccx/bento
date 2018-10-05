@@ -5,6 +5,7 @@ import cars from "../../data/cars"
 import CarHeader from "../../components/CarHeader/CarHeader"
 import Carousel from "../../components/Carousel/Carousel"
 import DetailsList from "../../components/DetailsList/DetailsList"
+import BackButton from "../../components/BackButton/BackButton"
 
 const OrderCarDetail = ({ match }) => {
   const car = cars.filter(
@@ -13,9 +14,7 @@ const OrderCarDetail = ({ match }) => {
 
   return (
     <Layout paddingTop="medium" paddingBottom="huge">
-      <Link to="/app/cars">
-        <Button variant="back">Tilbake til listen</Button>
-      </Link>
+      <BackButton to={"/app/cars"} label={"Tilbake til listen"} />
       <Carousel images={car.images} />
       <CarHeader
         make={car.make}
