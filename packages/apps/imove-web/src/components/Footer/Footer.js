@@ -3,16 +3,23 @@ import styled from "styled-components"
 import { Wrapper } from "@staccx/base"
 import { spacing } from "@staccx/theme"
 
-const Footer = ({ children }) => (
-  <Wrapper>
-    <Content>
-      <Row>{children}</Row>
-    </Content>
-  </Wrapper>
+const Footer = ({ data }) => (
+  <Content>
+    <Wrapper>
+      <Row>
+        {data.map(item => (
+          <li key={item._key}>
+            <h2>{item.heading}</h2>
+            <p>{item.text}</p>
+          </li>
+        ))}
+      </Row>
+    </Wrapper>
+  </Content>
 )
 
-const Content = styled.div`
-  padding: ${spacing("huge")} 0;
+const Content = styled.footer`
+  padding: ${spacing.huge} 0;
 `
 
 const Row = styled.ul`

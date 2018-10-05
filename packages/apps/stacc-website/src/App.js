@@ -86,18 +86,19 @@ class App extends Component {
       <ThemeProxyProvider theme={theme}>
         <SanityProvider dataset={"production"} projectId={"8j24leyc"} useCdn>
           <State>
-            {({ change, hideMenu }) => {
+            {({ change, hideMenu, inverted }) => {
               return (
                 <Router history={history}>
                   <PageWrapper>
                     <Header
                       openContactForm={this.openContactForm}
                       hideMenu={hideMenu}
+                      inverted={inverted}
                     />
                     <ScrollToTop />
                     <Wrapper>
                       <Main>
-                        <Routes change={change} />
+                        <Routes inverted={inverted} change={change} />
                       </Main>
                     </Wrapper>
                     <Footer openContactForm={this.openContactForm} />

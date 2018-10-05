@@ -5,17 +5,17 @@ import { Box } from "@staccx/base"
 
 const menuElements = [
   {
-    to: "/cars",
+    to: "/app/cars",
     icon: "Car",
     title: "Bestill bil"
   },
   {
-    to: "/my-car",
+    to: "/app/my-car",
     icon: "Garage",
     title: "Min bil"
   },
   {
-    to: "/profile",
+    to: "/app/profile",
     icon: "Profile",
     title: "Profil"
   }

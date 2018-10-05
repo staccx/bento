@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { color, font } from "@staccx/theme"
 
-const LinkButton = ({ variant, children, uri }) => (
-  <Link href={uri} variant={variant}>
+const LinkButton = ({ variant, children, url }) => (
+  <Link href={url} variant={variant}>
     {children}
   </Link>
 )
@@ -16,24 +16,22 @@ const Link = styled.a`
   border: ${p =>
     p.variant === "primary" ? "none" : `3px solid ${color("primary")(p)}`};
   color: ${p => (p.variant === "primary" ? color("white") : color("primary"))};
-  font-size: ${font("large")};
+  font-size: ${font("input")};
   text-decoration: none;
   text-align: center;
-  min-width: 270px;
+  min-width: 185px;
   padding: 0.6em 2em 0.7em;
   margin-right: 40px;
 `
 
 LinkButton.defaultProps = {
-  variant: "primary",
-  children: "",
-  uri: ""
+  variant: "primary"
 }
 
 LinkButton.propTypes = {
   variant: PropTypes.string,
-  children: PropTypes.any,
-  uri: PropTypes.string
+  children: PropTypes.any.isRequired,
+  url: PropTypes.string.isRequired
 }
 
 export default LinkButton

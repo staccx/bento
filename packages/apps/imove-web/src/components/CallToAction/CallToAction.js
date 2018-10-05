@@ -1,53 +1,30 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Wrapper } from "@staccx/base"
+import { color, spacing, font } from "@staccx/theme"
+import SectionHeading from "../SectionHeading/SectionHeading"
 import LinkButton from "../LinkButton/LinkButton"
 import styled from "styled-components"
-import { color, spacing, font } from "@staccx/theme"
-import { Wrapper, Heading } from "@staccx/base"
 
-const CallToAction = ({
-  heading,
-  lede,
-  img,
-  button1Text,
-  button1Url,
-  button1Style,
-  button2Text,
-  button2Url,
-  button2Style,
-  button3Text,
-  button3Url,
-  button3Style,
-  width
-}) => (
-  <Content bg={img}>
-    <Wrapper size={width}>
+const CallToAction = ({ data }) => (
+  <Content variant={data.variant}>
+    <Wrapper size={data.size}>
       <Container>
-        <StyledHeading level={2}>{heading}</StyledHeading>
-        <Lede>{lede}</Lede>
+        <SectionHeading align="left">{data.heading}</SectionHeading>
+        <Copy>{data.copy}</Copy>
       </Container>
-      {button1Text && (
-        <LinkButton variant={button1Style} uri={button1Url}>
-          {button1Text}
+      {data.buttons.map(data => (
+        <LinkButton key={data._key} variant={data.variant} url={data.url}>
+          {data.text}
         </LinkButton>
-      )}
-      {button2Text && (
-        <LinkButton variant={button2Style} uri={button2Url}>
-          {button2Text}
-        </LinkButton>
-      )}
-      {button3Text && (
-        <LinkButton variant={button3Style} uri={button3Url}>
-          {button3Text}
-        </LinkButton>
-      )}
+      ))}
     </Wrapper>
   </Content>
 )
 
 const Content = styled.div`
   background-color: ${color("bgGray")};
-  background-image: ${p => p.bg && `url(${p.bg})`};
+  background-image: url(${p => p.variant === "1" && "/img/road01@2x.png"});
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
@@ -59,27 +36,20 @@ const Container = styled.div`
   width: 70%;
 `
 
-const StyledHeading = styled(Heading)`
-  padding-bottom: calc(${spacing("large")} - 15px);
-`
-
-const Lede = styled.p`
+const Copy = styled.p`
   font-size: ${font("largePlus")};
   padding-bottom: ${spacing("large")};
 `
 
 CallToAction.defaultProps = {
-  width: "large"
+  size: "large"
 }
 
 CallToAction.propTypes = {
   heading: PropTypes.string,
-  lede: PropTypes.string,
-  img: PropTypes.string,
-  primaryButtonText: PropTypes.string,
-  primaryButtonUrl: PropTypes.string,
-  secondaryButtonText: PropTypes.string,
-  secondaryButtonUrl: PropTypes.string,
+  copy: PropTypes.string,
+  bgImage: PropTypes.string,
+  buttons: PropTypes.array,
   width: PropTypes.string
 }
 

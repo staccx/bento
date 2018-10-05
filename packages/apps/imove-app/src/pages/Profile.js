@@ -6,7 +6,7 @@ import profile from "../data/profile"
 
 const Profile = ({ history }) => (
   <Box variant="center">
-    <Layout>
+    <Layout paddingTop="medium" paddingBottom="huge">
       <ThemeComponent tagName={"logo"} fallback={null} />
 
       <ProfileLarge />
@@ -19,7 +19,7 @@ const Profile = ({ history }) => (
         <Button
           onClick={() =>
             history.push({
-              pathname: "/profile/edit"
+              pathname: "/app/profile/edit"
             })
           }
           variant="mainNavigation"
@@ -29,12 +29,13 @@ const Profile = ({ history }) => (
         <Button
           onClick={() =>
             history.push({
-              pathname: "/end/"
+              pathname: "/app/"
             })
           }
           variant="mainNavigation"
         >
-          Avslutt abonnement {/* TODO: Sanitytext */}
+          {/* TODO: Side må lages. ☝️ */}
+          Slett min bruker {/* TODO: Sanitytext */}
         </Button>
       </div>
     </Layout>

@@ -1,8 +1,10 @@
 import React from "react"
+import styled from "styled-components"
+import { Link } from "react-router-dom"
 import { Button, Text, Heading, Layout, Box, Wrapper } from "@staccx/base"
 
-const MyCar = ({ history }) => (
-  <Layout>
+const MyCar = () => (
+  <Layout paddingBottom="huge">
     <Box variant="myCarHeader">
       <Wrapper size="small">
         <Layout>
@@ -26,61 +28,46 @@ const MyCar = ({ history }) => (
     </Box>
 
     <div>
-      <Button
-        onClick={() =>
-          history.push({
-            pathname: "/order/"
-          })
-        }
-        variant="mainNavigation"
-      >
-        Bestill hyttebil eller tilleggsbil {/* TODO: Sanitytext */}
-      </Button>
-      <Button
-        onClick={() =>
-          history.push({
-            pathname: "/sell/"
-          })
-        }
-        variant="mainNavigation"
-      >
-        Hjelp meg å selge min gamle bil {/* TODO: Sanitytext */}
-      </Button>
-      <Button
-        onClick={() =>
-          history.push({
-            pathname: "/switch/"
-          })
-        }
-        variant="mainNavigation"
-      >
-        Bytt bil {/* TODO: Sanitytext */}
-      </Button>
-      <Button
-        onClick={() =>
-          history.push({
-            pathname: "/service/"
-          })
-        }
-        variant="mainNavigation"
-      >
-        Bestill service {/* TODO: Sanitytext */}
-      </Button>
-      <Button
-        onClick={() =>
-          history.push({
-            pathname: "/tire-change/"
-          })
-        }
-        variant="mainNavigation"
-      >
-        Bestill dekkskift {/* TODO: Sanitytext */}
-      </Button>
+      <Menu>
+        <Link to="/app/order-additional">
+          <Button variant="mainNavigation">
+            Bestill hyttebil eller tilleggsbil {/* TODO: Sanitytext */}
+          </Button>
+        </Link>
+        <Link to="/app/sell">
+          <Button variant="mainNavigation">
+            Hjelp meg å selge min gamle bil {/* TODO: Sanitytext */}
+          </Button>
+        </Link>
+        <Link to="/app/switch">
+          <Button variant="mainNavigation">
+            Bytt bil {/* TODO: Sanitytext */}
+          </Button>
+        </Link>
+        <Link to="/app/service">
+          <Button variant="mainNavigation">
+            Bestill service {/* TODO: Sanitytext */}
+          </Button>
+        </Link>
+        <Link to="/app/tire-change">
+          <Button variant="mainNavigation">
+            Bestill dekkskift {/* TODO: Sanitytext */}
+          </Button>
+        </Link>
+      </Menu>
     </div>
     <Text variant="legalese">Du har 10 dager med gratis hyttebil igjen</Text>
-    <br />
-    <Text variant="legalese">Vilkår og betingelser</Text>
+    <Link to="/app/end/">
+      <Text variant="legalese">Avslutt abonnement</Text>
+    </Link>
+    <Link to="/app/vilkar-og-betingelser">
+      <Text variant="legalese">Vilkår og betingelser</Text>
+    </Link>
   </Layout>
 )
+
+const Menu = styled(Layout)`
+  grid-row-gap: 1px;
+`
 
 export default MyCar

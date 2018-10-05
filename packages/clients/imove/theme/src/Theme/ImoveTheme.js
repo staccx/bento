@@ -24,6 +24,7 @@ import { GarageIcon } from "./Icons/GarageIcon"
 import { ProfileIcon } from "./Icons/ProfileIcon"
 import { SliderThumb, SliderTrack } from "./Theme.Slider"
 import { LayoutStyling } from "./Theme.Layout"
+import { ListStyling } from "./Theme.Lists"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -97,7 +98,7 @@ const font = {
 
 const webfonts = {
   google: {
-    families: ["Open Sans:400"]
+    families: ["Open Sans:400,700"]
   },
   typekit: {
     id: "ykt5nel"
@@ -148,5 +149,6 @@ const t = new Theme(BaseTheme, {
   .add(SliderThumb)
   .add(SliderTrack)
   .add(LayoutStyling)
+  .add(ListStyling)
 
 export default t

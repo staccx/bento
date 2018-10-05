@@ -1,21 +1,19 @@
 import React from "react"
 import styled from "styled-components"
 import { spacing, font } from "@staccx/theme"
-import { Wrapper, Heading, Layout } from "@staccx/base"
+import { Wrapper } from "@staccx/base"
 import SectionHeading from "../SectionHeading/SectionHeading"
 import PricingCard from "./Pricing.PricingCard"
 
-const Pricing = ({ heading, cars }) => (
+const Pricing = ({ data }) => (
   <Content>
     <Wrapper size="full">
-      <Layout rowGap="huge">
-        <Heading level={2}>{heading}</Heading>
-        <List>
-          {cars.map((car, index) => (
-            <PricingCard car={car} key={index} />
-          ))}
-        </List>
-      </Layout>
+      <SectionHeading>{data.heading}</SectionHeading>
+      <List>
+        {data.cars.map((car, index) => (
+          <PricingCard car={car} key={index} />
+        ))}
+      </List>
     </Wrapper>
   </Content>
 )

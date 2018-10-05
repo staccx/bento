@@ -2,6 +2,8 @@ import React from "react"
 import { Layout, List, Heading, Button } from "@staccx/base"
 import { Link } from "react-router-dom"
 import cars from "../../data/cars"
+import CarHeader from "../../components/CarHeader/CarHeader"
+import BackButton from "../../components/BackButton/BackButton"
 
 const OrderBook = ({ match }) => {
   const car = cars.filter(
@@ -10,34 +12,29 @@ const OrderBook = ({ match }) => {
 
   return (
     <Layout paddingTop="medium" paddingBottom="huge">
-      <Link to="/cars">
-        <Button variant="back">Tilbake til listen</Button>
-      </Link>
+      <BackButton to={`/app/car/${car.chassisNumber}`} label={"Tilbake"} />
       <img src={car.images[0]} alt="" />
-      <div>
-        <div>
-          {car.make} {car.model}
-        </div>
-        <div>{car.pricePerMonth}</div>
-      </div>
+      <CarHeader make={car.make} model={car.model} price={car.pricePerMonth} />
       <p>
         Inkludert i prisen er en «hyttebil» 10 dager per år. Hyttebilen er en
         Volvo SUV eller stasjonsvogn.
       </p>{" "}
       {/* TODO: Replace text */}
       <div>
-        <Heading level={6}>Hva skjer etter bestilling</Heading>
-        <List>
-          <li>Du oppretter din bruker.</li>
-          <li>Forhandler kontakter deg om levering.</li>
-          <li>Bilen leveres og moroa kan starte</li>
-        </List>
+        <Layout rowGap="tiny">
+          <Heading level={6}>Hva skjer etter bestilling</Heading>
+          <List variant="bullets">
+            <li>Du oppretter din bruker.</li>
+            <li>Forhandler kontakter deg om levering.</li>
+            <li>Bilen leveres og moroa kan starte</li>
+          </List>
+        </Layout>
       </div>
       <p>
         NB: Du kan fortsatt ombestemme deg, trykk hold av for å sikre deg
         muligheten til å abonnere på denne bilen!
       </p>
-      <Link to={`/car/${match.params.chassisNumber}/confirm`}>
+      <Link to={`/app/car/${match.params.chassisNumber}/confirm`}>
         <Button>Hold av</Button>
       </Link>
       {/* TODO: Replace text */}

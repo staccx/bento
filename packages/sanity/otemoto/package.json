@@ -1,7 +1,7 @@
 {
   "name": "otemoto",
   "private": true,
-  "version": "7.7.4",
+  "version": "7.8.0",
   "description": "",
   "main": "package.json",
   "author": "Espen Thomassen Sæveru <espensaeverud@gmail.com>",
@@ -14,8 +14,6 @@
     "sanity"
   ],
   "dependencies": {
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
     "@sanity/base": "^0.132.12",
     "@sanity/client": "^0.132.10",
     "@sanity/components": "^0.132.12",
@@ -23,7 +21,9 @@
     "@sanity/default-layout": "^0.132.12",
     "@sanity/default-login": "^0.132.10",
     "@sanity/desk-tool": "^0.132.12",
-    "@staccx/sanity": "^7.7.4",
+    "@staccx/sanity": "^7.8.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
     "react-dom": "^16.3.2"
   }
 }

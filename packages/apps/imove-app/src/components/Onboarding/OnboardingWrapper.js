@@ -10,7 +10,9 @@ class OnboardingWrapper extends Component {
       nextStep,
       nextStepText,
       previousStep,
-      previous
+      previous,
+      history,
+      goto
     } = this.props
     return (
       <Layout>
@@ -20,7 +22,18 @@ class OnboardingWrapper extends Component {
         />
         {children}
         <ItemGroup>
-          <Button onClick={nextStep}>{nextStepText}</Button>
+          <Button
+            onClick={
+              goto
+                ? () =>
+                    history.push({
+                      pathname: goto
+                    })
+                : nextStep
+            }
+          >
+            {nextStepText}
+          </Button>
           {previous && (
             <Button onClick={previousStep} variant="secondary">
               Tilbake {/* TODO: Sanitytext */}

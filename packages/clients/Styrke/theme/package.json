@@ -1,6 +1,6 @@
 {
   "name": "@staccx/styrke-theme",
-  "version": "7.7.4",
+  "version": "7.8.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -24,13 +24,13 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/base": "^7.7.4",
-    "@staccx/theme": "^7.7.4",
+    "@staccx/base": "^7.8.0",
+    "@staccx/theme": "^7.8.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.7.4",
+    "@staccx/rollup-config": "^7.8.0",
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
     "react-scripts": "^1.1.4",

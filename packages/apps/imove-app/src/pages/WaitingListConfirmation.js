@@ -4,7 +4,7 @@ import { Layout, Button, Heading, Text } from "@staccx/base"
 const WaitingListConfirmation = ({ history }) => {
   return (
     <Layout>
-      <Heading level="1">Bli polotkunde {/* TODO: Sanitytext */}</Heading>
+      <Heading level="1">Bli pilotkunde {/* TODO: Sanitytext */}</Heading>
       <Text>
         Takk for henvendelsen, du vil få en bekreftelse på epost.{" "}
         {/* TODO: Sanitytext */}
@@ -13,7 +13,7 @@ const WaitingListConfirmation = ({ history }) => {
       <Button
         onClick={() =>
           history.push({
-            pathname: "/"
+            pathname: "/app"
           })
         }
       >
