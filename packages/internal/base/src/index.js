@@ -87,7 +87,7 @@ import hideVisually from "./Styles/hideVisually"
 
 // Themes
 import * as theming from "./theming"
-
+import ThemeComponent from "./components/Theme/ThemeComponent"
 // Formatters
 import Odometer from "./components/Formatters/Odometer/Odometer"
 
@@ -193,6 +193,7 @@ export {
   Table,
   Tag,
   Text,
+  ThemeComponent,
   Toggle,
   Warning,
   Wrapper
