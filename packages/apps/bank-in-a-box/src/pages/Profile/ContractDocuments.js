@@ -8,9 +8,10 @@ import {
   List,
   Flag,
   Button,
-  LayoutItem
+  LayoutItem,
+  ThemeComponent,
+  theming
 } from "@staccx/base"
-import { ThemeComponent, color } from "@staccx/theme"
 import Back from "../../components/Back"
 
 const ContractDocuments = ({ history, accounts }) => (
@@ -46,7 +47,7 @@ const ContractDocuments = ({ history, accounts }) => (
 
 const ListItem = styled.li`
   &:not(:last-child) {
-    border-bottom: 1px solid ${color.line};
+    border-bottom: 1px solid ${theming.color.line};
   }
 `
 

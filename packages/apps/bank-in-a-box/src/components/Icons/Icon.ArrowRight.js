@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const IconArrowRight = () => (
   <Icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -9,9 +9,9 @@ const IconArrowRight = () => (
 )
 
 const Icon = styled.svg`
-  width: ${spacing.small};
-  height: ${spacing.small};
-  fill: ${color.primary};
+  width: ${theming.spacing.small};
+  height: ${theming.spacing.small};
+  fill: ${theming.color.primary};
   vertical-align: middle;
 `
 

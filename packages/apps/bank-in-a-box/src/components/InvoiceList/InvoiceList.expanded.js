@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { color, spacing } from "@staccx/theme"
-import { List, SplitListItem, Button, Flag } from "@staccx/base"
+import { List, SplitListItem, Button, Flag, theming } from "@staccx/base"
 
 const InvoiceListItemExpanded = ({
   amount,
@@ -62,12 +61,12 @@ const InvoiceListItemExpanded = ({
 )
 
 const Outer = styled.div`
-  background-color: ${color("expandedItem")};
+  background-color: ${theming.color("expandedItem")};
 `
 
 const ButtonWrapper = styled.div`
   display: flex;
-  margin: ${spacing.medium} 0;
+  margin: ${theming.spacing.medium} 0;
   justify-content: center;
 `
 

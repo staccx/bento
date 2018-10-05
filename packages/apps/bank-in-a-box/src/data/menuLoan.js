@@ -1,5 +1,5 @@
 import React from "react"
-import { ThemeComponent } from "@staccx/theme"
+import { ThemeComponent } from "@staccx/base"
 import { forwards } from "../components/transitions/transitions"
 
 const menuLoan = accountId => [

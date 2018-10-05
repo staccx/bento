@@ -8,9 +8,9 @@ import {
   Input,
   AccountInput,
   Alert,
-  Heading
+  Heading,
+  theming
 } from "@staccx/base"
-import { color, spacing, font } from "@staccx/theme"
 import Back from "../../components/Back"
 
 const Withdraw = ({ history }) => (
@@ -45,23 +45,23 @@ const Withdraw = ({ history }) => (
 )
 
 const SubTitle = styled.h1`
-  font-size: ${font.h6};
+  font-size: ${theming.font.h6};
   text-align: left;
-  color: ${color.wcag};
+  color: ${theming.color.wcag};
   font-weight: normal;
-  margin-bottom: ${spacing.medium};
+  margin-bottom: ${theming.spacing.medium};
 `
 
 const InputContent = styled.div`
   display: grid;
-  grid-column-gap: ${spacing.small};
-  grid-row-gap: ${spacing.small};
+  grid-column-gap: ${theming.spacing.small};
+  grid-row-gap: ${theming.spacing.small};
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 `
 
 const Number = styled.span`
   display: inline-block;
-  color: ${color.primary};
+  color: ${theming.color.primary};
 `
 
 export default Withdraw

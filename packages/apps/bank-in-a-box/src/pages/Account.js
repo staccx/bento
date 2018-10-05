@@ -13,10 +13,7 @@ import AccountDetail from "./AccountDetail"
 
 const Account = ({ accountStore, history, match }) => {
   const accountId = match.params.id
-  console.log("finding account based on ", accountId, accountStore.transactions)
   const acc = toJS(accountStore.accounts.find(a => a.accountId === accountId))
-
-  console.log(acc)
   return (
     <Switch>
       <Route path={`${match.url}/due`} exact component={Due} />

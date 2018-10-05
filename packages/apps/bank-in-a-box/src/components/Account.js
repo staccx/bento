@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, font, fontWeight, spacing } from "@staccx/theme"
-import { Button } from "@staccx/base"
+import { Button, theming } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
 
 const Account = ({ account, navigate }) => {
@@ -40,32 +39,36 @@ const Account = ({ account, navigate }) => {
 }
 
 const Title = styled.h3`
-  font-size: ${font.input};
-  font-weight: ${fontWeight.bold};
-  color: ${color("accountHeading")};
+  font-size: ${theming.font.input};
+  font-weight: ${theming.fontWeight.bold};
+  color: ${theming.color("accountHeading")};
 `
 
 const Balance = styled.div`
-  font-size: ${font("accountBalance")};
-  font-weight: ${fontWeight.bold};
+  font-size: ${theming.font("accountBalance")};
+  font-weight: ${theming.fontWeight.bold};
   color: ${p =>
-    p.accountType === "LOAN" ? color("accountLoan") : color("accountBalance")};
+    p.accountType === "LOAN"
+      ? theming.color("accountLoan")
+      : theming.color("accountBalance")};
   display: inline;
 `
 
 const Decimal = styled.span`
-  font-size: ${font("accountBalanceDecimals")};
+  font-size: ${theming.font("accountBalanceDecimals")};
   color: ${p =>
-    p.accountType === "LOAN" ? color("accountLoan") : color("accountBalance")};
-  font-weight: ${fontWeight.bold};
+    p.accountType === "LOAN"
+      ? theming.color("accountLoan")
+      : theming.color("accountBalance")};
+  font-weight: ${theming.fontWeight.bold};
 `
 
 const Earned = styled.div`
-  font-size: ${font.input};
-  font-weight: ${fontWeight.bold};
-  color: ${color("accountEarned")};
+  font-size: ${theming.font.input};
+  font-weight: ${theming.fontWeight.bold};
+  color: ${theming.color("accountEarned")};
   line-height: 1;
-  margin-bottom: ${spacing.small};
+  margin-bottom: ${theming.spacing.small};
 `
 
 const Container = styled.div`

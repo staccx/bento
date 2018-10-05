@@ -1,6 +1,5 @@
 import React from "react"
-import { Layout, Wrapper, LayoutItem } from "@staccx/base"
-import { ThemeComponent } from "@staccx/theme"
+import { Layout, Wrapper, LayoutItem, ThemeComponent } from "@staccx/base"
 import menu from "./../data/menu"
 import Account from "./../components/Account"
 

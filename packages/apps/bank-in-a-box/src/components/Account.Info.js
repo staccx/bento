@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { color, fontWeight } from "@staccx/theme"
-import { Box, List, SplitListItem } from "@staccx/base"
+import { Box, List, SplitListItem, theming } from "@staccx/base"
 import { BounceIn } from "@staccx/animations"
 import AccountInfoLoan from "./Account.Info.Loan"
 import AccountInfoDeposit from "./Account.Info.Deposit"
@@ -31,18 +30,18 @@ const Outer = styled.div`
   animation: 0.4s ${BounceIn} cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 1;
 `
 export const Strong = styled.strong`
-  font-weight: ${fontWeight.normal};
+  font-weight: ${theming.fontWeight.normal};
 `
 export const AccountInfoListItem = styled(SplitListItem)`
   padding: 10px 0;
-  border-color: ${color("accountInfoBorder")};
-  color: ${color.wcag};
+  border-color: ${theming.color("accountInfoBorder")};
+  color: ${theming.color.wcag};
   ${p =>
     p.emphasize &&
     css`
       &,
       & ${Strong} {
-        font-weight: ${fontWeight.bold};
+        font-weight: ${theming.fontWeight.bold};
       }
     `};
 `

@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { color } from "@staccx/theme"
-import { List, SplitListItem } from "@staccx/base"
+import { List, SplitListItem, theming } from "@staccx/base"
 
 const TransactionListItem = ({
   amount,
@@ -58,7 +57,7 @@ const TransactionListItem = ({
 )
 
 const Outer = styled.div`
-  background-color: ${color("expandedItem")};
+  background-color: ${theming.color("expandedItem")};
 `
 
 TransactionListItem.propTypes = {
