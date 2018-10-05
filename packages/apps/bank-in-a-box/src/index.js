@@ -5,7 +5,7 @@ import registerServiceWorker from "./registerServiceWorker"
 import { Provider } from "mobx-react"
 import WebFont from "webfontloader"
 import theme from "@staccx/norefjell-theme"
-import { ThemeProxyProvider } from "@staccx/theme"
+import { ThemeProvider } from "styled-components"
 
 WebFont.load({
   google: {
@@ -15,9 +15,9 @@ WebFont.load({
 
 ReactDOM.render(
   <Provider>
-    <ThemeProxyProvider theme={theme}>
+    <ThemeProvider theme={theme}>
       <App />
-    </ThemeProxyProvider>
+    </ThemeProvider>
   </Provider>,
   document.getElementById("root")
 )
