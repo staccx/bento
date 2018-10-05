@@ -9,7 +9,7 @@ export default {
     buttons: [
       {
         text: "Kom i gang",
-        url: "#",
+        url: "/app/onboarding",
         _key: "kzxjh"
       }
     ],

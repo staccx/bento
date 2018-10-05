@@ -57,7 +57,7 @@ const MyCar = () => (
       </Menu>
     </div>
     <Text variant="legalese">Du har 10 dager med gratis hyttebil igjen</Text>
-    <Link to="/app/vilkar-og-betingelser">
+    <Link to="/app/end/">
       <Text variant="legalese">Avslutt abonnement</Text>
     </Link>
     <Link to="/app/vilkar-og-betingelser">

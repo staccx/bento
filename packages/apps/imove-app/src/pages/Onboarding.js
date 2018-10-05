@@ -5,15 +5,20 @@ import Household from "../components/Household"
 import Contact from "../components/Contact"
 import Included from "../components/Included"
 
-const Onboarding = () => (
+const Onboarding = ({ history }) => (
   <StepWizard>
-    <OnboardingWrapper>
+    <OnboardingWrapper history={history}>
       <Household />
     </OnboardingWrapper>
-    <OnboardingWrapper previous>
+    <OnboardingWrapper previous history={history}>
       <Contact />
     </OnboardingWrapper>
-    <OnboardingWrapper previous nextStepText="Vis bilene">
+    <OnboardingWrapper
+      previous
+      nextStepText="Vis bilene"
+      history={history}
+      goto={"/app/cars"}
+    >
       <Included />
     </OnboardingWrapper>
   </StepWizard>
