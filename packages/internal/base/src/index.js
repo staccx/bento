@@ -27,6 +27,7 @@ import Text from "./components/Text/Text/Text"
 import Heading from "./components/Text/Heading/Heading"
 import Paragraph from "./components/Text/Paragraph/Paragraph"
 import Tag from "./components/Text/Tag/Tag"
+import A from "./components/A/A"
 
 // Lists
 import List from "./components/Lists/List"
@@ -117,6 +118,7 @@ require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
 export {
+  A,
   AccountInput,
   Alert,
   theming,
