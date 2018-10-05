@@ -76,7 +76,8 @@ const color = {
   warning: "#c54059",
   black: "#000",
   subtleHover: "#F7F7FF",
-  darkBlue: "#124F5E"
+  darkBlue: "#124F5E",
+  blackBlue: "#171C1E"
 }
 
 const font = {

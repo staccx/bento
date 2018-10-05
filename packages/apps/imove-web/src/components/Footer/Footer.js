@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { Wrapper } from "@staccx/base"
-import { spacing } from "@staccx/theme"
+import { Wrapper, Heading } from "@staccx/base"
+import { spacing, color, fontFamily } from "@staccx/theme"
 
 const Footer = ({ data }) => (
   <Content>
@@ -9,7 +9,7 @@ const Footer = ({ data }) => (
       <Row>
         {data.map(item => (
           <li key={item._key}>
-            <h2>{item.heading}</h2>
+            <StyledHeading level={2}>{item.heading}</StyledHeading>
             <p>{item.text}</p>
           </li>
         ))}
@@ -20,6 +20,8 @@ const Footer = ({ data }) => (
 
 const Content = styled.footer`
   padding: ${spacing.huge} 0;
+  background-color: ${color("blackBlue")};
+  color: ${color("white")};
 `
 
 const Row = styled.ul`
@@ -29,6 +31,13 @@ const Row = styled.ul`
   & li {
     max-width: 220px;
   }
+`
+
+const StyledHeading = styled(Heading)`
+  font-family: ${fontFamily("body")};
+  font-size: inherit;
+  font-weight: bold;
+  color: ${color("white")};
 `
 
 export default Footer
