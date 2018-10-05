@@ -29,11 +29,12 @@ const Profile = ({ history }) => (
         <Button
           onClick={() =>
             history.push({
-              pathname: "/app/end/"
+              pathname: "/app/"
             })
           }
           variant="mainNavigation"
         >
+          {/* TODO: Side må lages. ☝️ */}
           Slett min bruker {/* TODO: Sanitytext */}
         </Button>
       </div>

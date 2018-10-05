@@ -3,6 +3,7 @@ import { Layout, List, Heading, Button } from "@staccx/base"
 import { Link } from "react-router-dom"
 import cars from "../../data/cars"
 import CarHeader from "../../components/CarHeader/CarHeader"
+import BackButton from "../../components/BackButton/BackButton"
 
 const OrderBook = ({ match }) => {
   const car = cars.filter(
@@ -11,9 +12,7 @@ const OrderBook = ({ match }) => {
 
   return (
     <Layout paddingTop="medium" paddingBottom="huge">
-      <Link to="/app/cars">
-        <Button variant="back">Tilbake til listen</Button>
-      </Link>
+      <BackButton to={`/app/car/${car.chassisNumber}`} label={"Tilbake"} />
       <img src={car.images[0]} alt="" />
       <CarHeader make={car.make} model={car.model} price={car.pricePerMonth} />
       <p>

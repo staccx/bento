@@ -39,7 +39,7 @@ const Hero = ({ data }) => {
 const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: ${spacing("huge")};
+  padding: ${spacing("huge")} 0;
 `
 
 const HeroTop = styled.div`

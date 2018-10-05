@@ -28,15 +28,23 @@ class Fetch extends React.Component {
         } else {
           this.setState({ data })
         }
-      })
-      .catch(this.props.onFailed)
 
-    if (this.props.poll) {
-      this.timeout = setTimeout(
-        () => this.fetchData(),
-        this.props.pollingInterval
-      )
-    }
+        if (this.props.poll) {
+          this.timeout = setTimeout(
+            () => this.fetchData(),
+            this.props.pollingInterval
+          )
+        }
+      })
+      .catch(error => {
+        this.props.onFailed(error)
+        if (this.props.poll) {
+          this.timeout = setTimeout(
+            () => this.fetchData(),
+            this.props.pollingInterval
+          )
+        }
+      })
   }
 
   componentWillUnmount() {
