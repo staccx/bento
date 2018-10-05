@@ -1,11 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 import { Wrapper, Heading } from "@staccx/base"
-import { spacing, color, fontFamily } from "@staccx/theme"
+import { spacing, color, font, fontFamily, ThemeComponent } from "@staccx/theme"
 
 const Footer = ({ data }) => (
   <Content>
     <Wrapper>
+      <Logo>
+        <ThemeComponent tagName="logo" inverted />
+      </Logo>
       <Row>
         {data.map(item => (
           <li key={item._key}>
@@ -19,9 +22,15 @@ const Footer = ({ data }) => (
 )
 
 const Content = styled.footer`
+  font-size: ${font("base")};
+  line-height: 1.5;
+  color: ${color("white")};
   padding: ${spacing.huge} 0;
   background-color: ${color("blackBlue")};
-  color: ${color("white")};
+`
+
+const Logo = styled.div`
+  margin-bottom: ${spacing("medium")};
 `
 
 const Row = styled.ul`
@@ -30,6 +39,9 @@ const Row = styled.ul`
 
   & li {
     max-width: 220px;
+    & p:not(:last-child) {
+      margin-bottom: ${spacing("small")};
+    }
   }
 `
 
@@ -38,6 +50,7 @@ const StyledHeading = styled(Heading)`
   font-size: inherit;
   font-weight: bold;
   color: ${color("white")};
+  margin-bottom: ${spacing("small")};
 `
 
 export default Footer
