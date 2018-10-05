@@ -1,13 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import Logo from "../Logo/Logo"
 import { Wrapper } from "@staccx/base"
-import { font, color, spacing } from "@staccx/theme"
+import { font, color, spacing, ThemeComponent } from "@staccx/theme"
 
 const Header = () => (
   <Menu>
     <StyledWrapper size="largePlus">
-      <Logo height="48px" variant="1" />
+      <ThemeComponent tagName="logo" height="48px" />
       <Navigation>
         <Items>
           <Item>
