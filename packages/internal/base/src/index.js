@@ -117,10 +117,12 @@ import Search from "./components/Search/Search"
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
+const { BaseTheme } = theming
 export {
   A,
   AccountInput,
   Alert,
+  BaseTheme,
   theming,
   Box,
   Button,
