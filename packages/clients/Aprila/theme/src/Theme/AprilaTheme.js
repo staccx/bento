@@ -1,5 +1,4 @@
-import { BaseTheme } from "@staccx/base"
-import { Theme } from "@staccx/theme"
+import { BaseTheme, theming } from "@staccx/base"
 import { lighten, rgba } from "polished"
 import reset from "./reset"
 import Button from "./Theme.Button"
@@ -18,6 +17,7 @@ import { AdStyle } from "./Ad"
 import { ExpandListButtonStyle } from "../components/Transaction.ExpandButton"
 import ExpandListExpanded from "../components/ExpandListItem.Expanded"
 import { MenuStyle } from "../components/MenuRow"
+const { Theme } = theming
 
 const borderRadius = "8px"
 const headerHeight = "70px"
@@ -64,11 +64,11 @@ const color = {
 }
 
 const BiBSpecificColor = {
-  accountHeading: color.bgGray,
-  accountEarned: color.bgGray,
-  accountBalance: color.secondary,
-  expandedItem: lighten(0.05, color.line),
-  accountInfoBorder: rgba(color.primary, 0.25)
+  accountHeading: theming.color.bgGray,
+  accountEarned: theming.color.bgGray,
+  accountBalance: theming.color.secondary,
+  expandedItem: lighten(0.05, theming.color.line),
+  accountInfoBorder: rgba(theming.color.primary, 0.25)
 }
 
 const font = {
@@ -93,12 +93,12 @@ const fontWeight = {
 const BiBSpecificFont = {
   accountBalance:
     "calc(" +
-    font.h1 +
+    theming.font.h1 +
     " + (84 - " +
-    font.h1.substring(0, font.h1.indexOf("px")) +
+    theming.font.h1.substring(0, theming.font.h1.indexOf("px")) +
     " ) * ((100vw - 300px) / (2560 - 300)))",
-  accountBalanceDecimals: font.h2,
-  transactionHeading: font.h4
+  accountBalanceDecimals: theming.font.h2,
+  transactionHeading: theming.font.h4
 }
 
 const fontFamily = {

@@ -1,11 +1,10 @@
 import { css } from "styled-components"
-import { registerStyle, VARIANT_DEFAULT, color } from "@staccx/theme"
-import { Alert } from "@staccx/base"
+import { Alert, theming } from "@staccx/base"
 
-export default registerStyle(
+export default theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      background-color: ${color("subtleHover")};
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color("subtleHover")};
     `
   },
   Alert.themeProps.alertInfo

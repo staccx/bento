@@ -1,6 +1,6 @@
 import React from "react"
 import { Outer, Icon } from "./Icon.Styles"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const IconProfile = () => (
   <Outer>
@@ -10,8 +10,8 @@ const IconProfile = () => (
   </Outer>
 )
 
-export const IconProfileStyle = registerStyle(
-  { [VARIANT_DEFAULT]: IconProfile },
+export const IconProfileStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: IconProfile },
   "iconProfile"
 )
 export default IconProfile

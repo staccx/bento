@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import data from "./Menu.data"
-import { ItemGroup, Button } from "@staccx/base"
-import { spacing, VARIANT_DEFAULT, registerStyle } from "@staccx/theme"
+import { ItemGroup, Button, theming } from "@staccx/base"
 
 const Menu = ({ pages }) => {
   const menuOptions = data(pages)
@@ -24,7 +23,7 @@ const Menu = ({ pages }) => {
 }
 
 const MenuWrapper = styled.div`
-  padding: ${spacing.medium} 0;
+  padding: ${theming.spacing.medium} 0;
 `
 
 const ButtonLabel = styled.span`
@@ -37,6 +36,9 @@ const IconOuter = styled.div``
 const ListItem = styled.div`
   flex-grow: 1;
 `
-export const MenuStyle = registerStyle({ [VARIANT_DEFAULT]: Menu }, "menu")
+export const MenuStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Menu },
+  "menu"
+)
 
 export default Menu

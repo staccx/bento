@@ -1,6 +1,5 @@
 import { css } from "styled-components"
-import { registerStyle, color, font, targetSize } from "@staccx/theme"
-import { Button } from "@staccx/base"
+import { Button, theming } from "@staccx/base"
 import { lighten } from "polished"
 
 const invisibleButton = css`
@@ -20,16 +19,16 @@ const invisibleButton = css`
   }
 `
 
-export default registerStyle(
+export default theming.createVariants(
   {
     secondary: css`
-      background-color: ${color.secondary};
-      color: ${color.primary};
+      background-color: ${theming.color.secondary};
+      color: ${theming.color.primary};
       &:hover,
       &:focus,
       &:active {
-        background-color: ${p => lighten(0.2, color("secondary")(p))};
-        color: ${color.primary};
+        background-color: ${p => lighten(0.2, theming.color("secondary")(p))};
+        color: ${theming.color.primary};
       }
     `,
     expand: css`
@@ -37,13 +36,13 @@ export default registerStyle(
       width: 100%;
       margin: 0;
       background-color: transparent;
-      color: ${color.secondary};
+      color: ${theming.color.secondary};
 
       &:hover,
       &:focus,
       &:active {
         background-color: transparent;
-        color: ${color.text};
+        color: ${theming.color.text};
       }
     `,
     invisible: invisibleButton,
@@ -52,18 +51,18 @@ export default registerStyle(
       background-color: transparent;
       width: 100%;
       text-align: center;
-      color: ${color.primary};
-      font-size: ${font.h4};
+      color: ${theming.color.primary};
+      font-size: ${theming.font.h4};
       border-radius: 0;
 
       &:hover,
       &:focus,
       &:active {
         background-color: transparent;
-        color: ${p => lighten(0.05, color("primary")(p))};
+        color: ${p => lighten(0.05, theming.color("primary")(p))};
 
         svg {
-          fill: ${color.secondary};
+          fill: ${theming.color.secondary};
         }
       }
 
@@ -73,16 +72,16 @@ export default registerStyle(
       }
     `,
     accountInfo: css`
-      border: 2px solid ${color.secondary};
-      color: ${color.secondary};
+      border: 2px solid ${theming.color.secondary};
+      color: ${theming.color.secondary};
       position: absolute;
       top: 0;
       right: -64px;
       background-color: transparent;
-      width: ${targetSize.small};
-      height: ${targetSize.small};
-      min-height: ${targetSize.small};
-      line-height: ${targetSize.small};
+      width: ${theming.targetSize.small};
+      height: ${theming.targetSize.small};
+      min-height: ${theming.targetSize.small};
+      line-height: ${theming.targetSize.small};
       border-radius: 50%;
       padding: 0;
 

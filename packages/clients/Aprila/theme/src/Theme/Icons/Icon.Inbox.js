@@ -1,6 +1,6 @@
 import React from "react"
 import { Outer, Icon } from "./Icon.Styles"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const IconInbox = () => (
   <Outer>
@@ -10,8 +10,8 @@ const IconInbox = () => (
   </Outer>
 )
 
-export const IconInboxStyle = registerStyle(
-  { [VARIANT_DEFAULT]: IconInbox },
+export const IconInboxStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: IconInbox },
   "iconInbox"
 )
 export default IconInbox

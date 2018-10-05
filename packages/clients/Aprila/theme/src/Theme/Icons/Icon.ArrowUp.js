@@ -1,6 +1,6 @@
 import React from "react"
 import { Outer, Icon } from "./Icon.Styles"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const IconArrowUp = () => (
   <Outer>
@@ -9,8 +9,8 @@ const IconArrowUp = () => (
     </Icon>
   </Outer>
 )
-export const IconArrowUpStyle = registerStyle(
-  { [VARIANT_DEFAULT]: IconArrowUp },
+export const IconArrowUpStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: IconArrowUp },
   "iconArrowUp"
 )
 export default IconArrowUp

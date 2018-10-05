@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Logo = ({ inverted }) => {
   console.log(inverted)
@@ -44,6 +44,9 @@ const SVG = styled.svg`
   width: 140px;
   height: 40px;
 `
-export const LogoStyle = registerStyle({ [VARIANT_DEFAULT]: Logo }, "logo")
+export const LogoStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Logo },
+  "logo"
+)
 
 export default Logo

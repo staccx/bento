@@ -1,6 +1,12 @@
 import React from "react"
-import { font, VARIANT_DEFAULT, registerStyle } from "@staccx/theme"
-import { Button, Box, Layout, LayoutItem, ItemGroup } from "@staccx/base"
+import {
+  Button,
+  Box,
+  Layout,
+  LayoutItem,
+  ItemGroup,
+  theming
+} from "@staccx/base"
 import styled from "styled-components"
 
 const Ad = () => (
@@ -30,7 +36,10 @@ const Ad = () => (
 )
 
 const AdHeading = styled.h3`
-  font-size: ${font.h3};
+  font-size: ${theming.font.h3};
 `
-export const AdStyle = registerStyle({ [VARIANT_DEFAULT]: Ad }, "ad")
+export const AdStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Ad },
+  "ad"
+)
 export default Ad

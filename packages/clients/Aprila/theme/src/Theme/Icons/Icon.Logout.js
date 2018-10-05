@@ -1,6 +1,6 @@
 import React from "react"
 import { Outer, Icon } from "./Icon.Styles"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const IconLogout = () => (
   <Outer>
@@ -10,8 +10,8 @@ const IconLogout = () => (
   </Outer>
 )
 
-export const IconLogoutStyle = registerStyle(
-  { [VARIANT_DEFAULT]: IconLogout },
+export const IconLogoutStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: IconLogout },
   "iconLogout"
 )
 export default IconLogout

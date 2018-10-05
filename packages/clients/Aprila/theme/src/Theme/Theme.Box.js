@@ -1,18 +1,17 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
-import { Box, fontSmoothing } from "@staccx/base"
+import { Box, fontSmoothing, theming } from "@staccx/base"
 
-export const BoxStyling = registerStyle(
+export const BoxStyling = theming.createVariants(
   {
     adBox: css`
-      background: ${color.primary};
-      color: ${color.white};
+      background: ${theming.color.primary};
+      color: ${theming.color.white};
       border-radius: 8px;
       ${fontSmoothing};
     `,
     accountBox: css`
-      background: ${color.primary};
-      color: ${color.white};
+      background: ${theming.color.primary};
+      color: ${theming.color.white};
       border-radius: 0;
       padding: 0;
       min-height: 25vh;
@@ -22,32 +21,32 @@ export const BoxStyling = registerStyle(
       ${fontSmoothing};
     `,
     dashboardBox: css`
-      background: ${color.bgGray};
-      color: ${color.text};
+      background: ${theming.color.bgGray};
+      color: ${theming.color.text};
       border-radius: 8px;
     `,
     headerContainer: css`
-      background: ${color.primary};
+      background: ${theming.color.primary};
       padding: 0;
       border-radius: 0;
     `,
     modalLeft: css`
-      background-color: ${color.bgGray};
+      background-color: ${theming.color.bgGray};
       text-align: center;
     `,
     modalRight: css`
-      background-color: ${color.white};
+      background-color: ${theming.color.white};
       text-align: center;
     `,
     accountInfo: css`
       position: absolute;
-      bottom: -${spacing.medium};
+      bottom: -${theming.spacing.medium};
       left: 0;
-      width: calc(100vw - ${spacing.medium} - ${spacing.small});
+      width: calc(100vw - ${theming.spacing.medium} - ${theming.spacing.small});
       max-width: 420px;
-      padding: ${spacing.medium};
-      background-color: ${color("secondaryLight")};
-      color: ${color.primary};
+      padding: ${theming.spacing.medium};
+      background-color: ${theming.color("secondaryLight")};
+      color: ${theming.color.primary};
       transform: translateY(100%);
       z-index: 50;
 
@@ -60,7 +59,7 @@ export const BoxStyling = registerStyle(
         height: 0;
         border-style: solid;
         border-width: 0 12px 12px 12px;
-        border-color: transparent transparent ${color("secondaryLight")}
+        border-color: transparent transparent ${theming.color("secondaryLight")}
           transparent;
         transform: translate(-50%, -100%);
       }

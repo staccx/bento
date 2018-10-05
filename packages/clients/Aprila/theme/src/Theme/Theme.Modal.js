@@ -1,13 +1,6 @@
 import { css } from "styled-components"
 import { transparentize } from "polished"
-import {
-  registerStyle,
-  wrapper,
-  spacing,
-  VARIANT_DEFAULT,
-  color
-} from "@staccx/theme"
-import { Modal } from "@staccx/base"
+import { Modal, theming } from "@staccx/base"
 import { BounceIn } from "@staccx/animations"
 
 const boxAnimation = css`
@@ -16,26 +9,26 @@ const boxAnimation = css`
   animation: 0.4s ${BounceIn} cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 1;
 `
 
-export default registerStyle(
+export default theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       ${boxAnimation};
     `,
     small: css`
       ${boxAnimation};
-      max-width: ${wrapper.small};
-      padding-top: ${spacing.medium};
+      max-width: ${theming.wrapper.small};
+      padding-top: ${theming.spacing.medium};
     `
   },
   Modal.themeProps.content
 )
 
 const backdrop = css`
-  background-color: ${p => transparentize(0.1, color("primary")(p))};
+  background-color: ${p => transparentize(0.1, theming.color("primary")(p))};
 `
-export const ModalBackdropStyle = registerStyle(
+export const ModalBackdropStyle = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: backdrop,
+    [theming.VARIANT_DEFAULT]: backdrop,
     small: backdrop
   },
   Modal.themeProps.backdrop

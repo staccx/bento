@@ -1,9 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { color, font, registerStyle, spacing } from "@staccx/theme"
 import { formatCurrency } from "@staccx/formatting"
-import { Caret } from "@staccx/base"
+import { Caret, theming } from "@staccx/base"
 
 const ExpandListBtn = ({ heading, date, amount, isExpanded, ...rest }) => (
   <Item {...rest}>
@@ -28,8 +27,8 @@ const ExpandListBtn = ({ heading, date, amount, isExpanded, ...rest }) => (
 )
 
 const ExpandIcon = styled(Caret)`
-  margin-left: ${spacing.small};
-  fill: ${color.primary};
+  margin-left: ${theming.spacing.small};
+  fill: ${theming.color.primary};
   transition: transform 0.3s ease-out;
   transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
 `
@@ -41,7 +40,7 @@ const Item = styled.button`
   border: 0;
   background-color: transparent;
   align-items: center;
-  padding: ${spacing.small};
+  padding: ${theming.spacing.small};
   transition: background-color 0.2s ease;
   cursor: pointer;
 
@@ -52,7 +51,7 @@ const Item = styled.button`
     background-color: rgba(0, 0, 0, 0.03);
 
     ${ExpandIcon} {
-      fill ${color.secondary};
+      fill ${theming.color.secondary};
     }
   }
 `
@@ -63,17 +62,19 @@ const Icon = styled.div`
   justify-content: center;
   width: 32px;
   height: 32px;
-  margin-right: ${spacing.small};
-  padding: ${spacing.tiny};
+  margin-right: ${theming.spacing.small};
+  padding: ${theming.spacing.tiny};
   background-color: ${props =>
-    props.type === "withdrawal" ? color.negative : color.positive};
+    props.type === "withdrawal"
+      ? theming.color.negative
+      : theming.color.positive};
   border-radius: 50%;
   text-align: center;
   line-height: 32px;
   color: white;
 
   > svg {
-    fill: ${color.white};
+    fill: ${theming.color.white};
     width: 100%;
   }
 `
@@ -85,7 +86,7 @@ const Body = styled.div`
 const Amount = styled.div``
 
 const TransactionHeading = styled.h4`
-  font-size: ${font("transactionHeading")};
+  font-size: ${theming.font("transactionHeading")};
 `
 
 ExpandListBtn.propTypes = {
@@ -94,7 +95,7 @@ ExpandListBtn.propTypes = {
   amount: PropTypes.number
 }
 
-export const ExpandListButtonStyle = registerStyle(
+export const ExpandListButtonStyle = theming.createVariants(
   {
     transactionListItem: ExpandListBtn
   },

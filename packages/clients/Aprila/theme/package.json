@@ -27,7 +27,6 @@
     "@staccx/animations": "^7.8.0",
     "@staccx/base": "^7.8.0",
     "@staccx/formatting": "^7.8.0",
-    "@staccx/theme": "^7.8.0",
     "polished": "^1.9.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
@@ -41,6 +40,6 @@
     "rollup": "^0.65.0"
   },
   "peerDependencies": {
-    "styled-components": "^3.3.3"
+    "styled-components": "^4.0.0-beta.10"
   }
 }
