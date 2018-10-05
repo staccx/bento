@@ -29,9 +29,9 @@ const Hero = ({ data }) => {
           </BlobColumn>
         </StyledWrapper>
       </HeroTop>
-      <StyledWrapper size="largePlus">
+      <ExtraWrapper size="largePlus">
         <ExtraCars data={data.extraCars} isReversed={isReversed} />
-      </StyledWrapper>
+      </ExtraWrapper>
     </Content>
   )
 }
@@ -53,6 +53,10 @@ const StyledWrapper = styled(Wrapper)`
   display: flex;
   flex-wrap: wrap;
   flex-direction: ${p => (p.isReversed ? "row-reverse" : "row")};
+`
+
+const ExtraWrapper = styled(Wrapper)`
+  overflow: hidden;
 `
 
 const CarColumn = styled.div`

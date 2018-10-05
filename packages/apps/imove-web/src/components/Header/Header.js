@@ -2,13 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import { Wrapper } from "@staccx/base"
 import { font, color, spacing, ThemeComponent } from "@staccx/theme"
+import MenuButton from "./Header.MenuButton"
 
 const Header = () => (
   <Menu>
     <StyledWrapper size="largePlus">
       <ThemeComponent tagName="logo" height="48px" />
-      <Navigation>
-        <Items>
+      <Navigation isOpen>
+        <MenuItems>
           <Item>
             <a href="">Hva er inkludert?</a>
           </Item>
@@ -24,7 +25,8 @@ const Header = () => (
           <LoginButton>
             <a href="/app">Logg inn</a>
           </LoginButton>
-        </Items>
+        </MenuItems>
+        <MenuButton onClick={() => this.handleMenu()} isOpen={false} />
       </Navigation>
     </StyledWrapper>
   </Menu>
@@ -42,10 +44,10 @@ const StyledWrapper = styled(Wrapper)`
 `
 
 const Navigation = styled.nav`
-  display: block;
+  display: flex;
 `
 
-const Items = styled.ul`
+const MenuItems = styled.ul`
   display: flex;
   justify-content: right;
 `

@@ -1,6 +1,6 @@
 import React from "react"
 import { Heading } from "@staccx/base"
-import { color, font, spacing } from "@staccx/theme"
+import { color, font, spacing, wrapper } from "@staccx/theme"
 import styled from "styled-components"
 
 const Hverdagsbil = ({ data }) => (
@@ -30,11 +30,17 @@ const FirstColumn = styled.div``
 const SecondColumn = styled.div`
   position: relative;
   top: calc(${spacing("large")} * -1 - 50px);
+  @media only screen and (max-width: ${wrapper("large")}) {
+    position: static;
+  }
 `
 
 const HeroCarHeading = styled(Heading)`
   color: ${color("primary")};
   font-size: ${font("largePlus")};
+  @media only screen and (max-width: ${wrapper("large")}) {
+    font-size: ${font("large")};
+  }
 `
 
 const HeroCarSub = styled.p`

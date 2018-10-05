@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Heading } from "@staccx/base"
-import { color, font, spacing } from "@staccx/theme"
+import { color, font, spacing, wrapper } from "@staccx/theme"
 import LinkButton from "../LinkButton/LinkButton"
 import Hverdagsbil from "./Hero.Hverdagsbil"
 
@@ -22,15 +22,24 @@ const CallToAction = ({ heading, headingSub, buttons, hverdagsbil }) => (
 
 const StyledHeading = styled(Heading)`
   font-size: ${font("huge")};
+  @media only screen and (max-width: ${wrapper("large")}) {
+    font-size: ${font("largePlus")};
+  }
 `
 
 const HeadingSub = styled.div`
   color: ${color("secondary")};
   font-size: ${font("largePlus")};
+  @media only screen and (max-width: ${wrapper("large")}) {
+    font-size: ${font("large")};
+  }
 `
 
 const Buttons = styled.div`
   margin-top: ${spacing("large")};
+  @media only screen and (max-width: ${wrapper("large")}) {
+    margin-top: ${spacing("medium")};
+  }
 `
 
 export default CallToAction
