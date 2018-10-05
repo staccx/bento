@@ -88,6 +88,8 @@ import hideVisually from "./Styles/hideVisually"
 // Themes
 import * as theming from "./theming"
 import ThemeComponent from "./components/Theme/ThemeComponent"
+import GlobalStyle from "./components/Theme/GlobalStyle"
+
 // Formatters
 import Odometer from "./components/Formatters/Odometer/Odometer"
 
@@ -143,6 +145,7 @@ export {
   Expand,
   ExpandListItem,
   Get,
+  GlobalStyle,
   Fetch,
   FileInput,
   Flag,
