@@ -53,8 +53,8 @@ const LogoBlob = styled.path`
 const LogoImg = styled.svg`
   margin-left: ${p => p.centered && "auto"};
   margin-right: ${p => p.centered && "auto"};
-  width: ${p => (!p.width && p.height ? "auto" : !p.width ? "79px" : "auto")};
-  height: ${p => (!p.height && p.width ? "auto" : !p.height ? "22px" : "auto")};
+  width: ${p => (!p.width && p.height ? "auto" : !p.width && "79px")};
+  height: ${p => (!p.height && p.width ? "auto" : !p.height && "22px")};
 
   /* @media (max-width: 450px) {
     width: 75px;

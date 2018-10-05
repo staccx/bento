@@ -7,17 +7,13 @@ const HeroBlob = ({ logo, heading, headingSub }) => (
   <Content>
     <Inner>
       <Layout rowGap="medium">
-        <Logo tagName="logo" inverted centered width="250px" />
+        <ThemeComponent tagName="logo" inverted centered width="250px" />
         <StyledHeading level={1}>{heading}</StyledHeading>
         <HeadingSub>{headingSub}</HeadingSub>
       </Layout>
     </Inner>
   </Content>
 )
-
-const Logo = styled(ThemeComponent)`
-  margin: auto;
-`
 
 const Content = styled.div`
   background-color: ${color("primary")};
