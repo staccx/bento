@@ -1,6 +1,6 @@
 {
   "name": "@staccx/soy",
-  "version": "7.8.0",
+  "version": "7.8.1",
   "description": "I depend, therefore I am (Common dependencies for Stacc X)",
   "license": "UNLICENSED",
   "scripts": {

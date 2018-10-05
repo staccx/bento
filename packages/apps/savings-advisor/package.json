@@ -1,6 +1,6 @@
 {
   "name": "@staccx/savings-advisor",
-  "version": "7.8.1",
+  "version": "7.8.2",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

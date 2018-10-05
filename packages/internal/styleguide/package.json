@@ -1,6 +1,6 @@
 {
   "name": "@staccx/styleguide",
-  "version": "7.8.1",
+  "version": "7.8.2",
   "private": true,
   "dependencies": {
     "@staccx/aprila-theme": "^7.8.1",
