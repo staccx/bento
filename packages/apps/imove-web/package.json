@@ -1,11 +1,11 @@
 {
   "name": "@staccx/imove-web",
-  "version": "7.8.0",
+  "version": "7.8.1",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@staccx/base": "^7.8.0",
+    "@staccx/base": "^7.8.1",
     "@staccx/theme": "^7.8.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
