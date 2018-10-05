@@ -13,6 +13,8 @@ const config = require("./stacc.config")
 
 const filePath = path.resolve(__dirname, "./build", "index.html")
 
+const dashIt = input => input.replace(/\s/g, "-").toLowerCase()
+
 const metaFallback = {
   title: "Stacc",
   description:
@@ -22,6 +24,9 @@ const metaFallback = {
 }
 
 const metaMiddleware = (req, res, next) => {
+  let pathMatch = true
+  let subpageTitleMatch = true
+
   if (req.url.indexOf(".") !== -1) {
     next()
     return
@@ -34,15 +39,35 @@ const metaMiddleware = (req, res, next) => {
       useCdn: true
     }
   })
+
   const builder = imageUrlBuilder(sanity.client)
 
   const sender = sanity
     .doCompare(`"${req.url}" match path.current`)
-    .pick("meta, path")
-
-  console.log(sender.query)
+    .pick("meta, path, subpages")
 
   const replaceOG = meta => {
+    /**
+     * we’re using urls without trailing a "/", redirect if non-slash-ending url matches a valid page/subpage
+     * see recommendations on https://webmasters.googleblog.com/2010/04/to-slash-or-not-to-slash.html
+     */
+    if (
+      req.url !== "/" &&
+      req.url.endsWith("/") &&
+      (pathMatch || subpageTitleMatch)
+    ) {
+      return res.redirect(301, req.url.slice(0, -1))
+    }
+
+    let status = 200
+
+    /**
+     * send the 404 page with a 404 status
+     */
+    if (!(pathMatch || subpageTitleMatch)) {
+      status = 404
+    }
+
     fs.readFile(filePath, "utf8", function(err, data) {
       if (err) {
         return console.log(err)
@@ -51,7 +76,7 @@ const metaMiddleware = (req, res, next) => {
         .replace(/\$OG_TITLE/g, meta.title)
         .replace(/\$OG_DESCRIPTION/g, meta.description)
         .replace(/\$OG_IMAGE/g, meta.image)
-      res.send(page)
+      res.status(status).send(page)
     })
   }
 
@@ -63,6 +88,20 @@ const metaMiddleware = (req, res, next) => {
         return result[0]
       }
 
+      const trimmedUrl = req.url.endsWith("/") ? req.url.slice(0, -1) : req.url
+
+      pathMatch = result.some(
+        resultObject => resultObject.path.current === trimmedUrl
+      )
+
+      subpageTitleMatch = result.some(
+        resultObject =>
+          resultObject.subpages &&
+          resultObject.subpages.some(
+            subpage => dashIt(subpage.title) === trimmedUrl.split("/").pop()
+          )
+      )
+
       /**
        *      Our query will always include root "/".
        *      This is extremely predictable,
@@ -71,7 +110,6 @@ const metaMiddleware = (req, res, next) => {
       return result.length > 1 ? result[1] : result[0]
     })
     .then(({ meta }) => {
-      console.log(meta)
       // read in the index.html file
       replaceOG({
         ...metaFallback,
