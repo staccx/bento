@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { formatCurrency } from "@staccx/formatting"
 import { Caret, theming } from "@staccx/base"
 
-const { color, font, spacing, createVariants } = theming
+const { createVariants } = theming
 
 const ExpandListBtn = ({ heading, date, amount, isExpanded, ...rest }) => (
   <Item {...rest}>
@@ -67,7 +67,9 @@ const Icon = styled.div`
   margin-right: ${theming.spacing.small};
   padding: ${theming.spacing.tiny};
   background-color: ${props =>
-    props.type === "withdrawal" ? theming.color.negative : theming.color.positive};
+    props.type === "withdrawal"
+      ? theming.color.negative
+      : theming.color.positive};
   border-radius: 50%;
   text-align: center;
   line-height: 32px;
@@ -95,7 +97,7 @@ ExpandListBtn.propTypes = {
   amount: PropTypes.number
 }
 
-export const ExpandListButtonStyle = createVariants(
+export const TransactionListButtonStyle = createVariants(
   {
     transactionListItem: ExpandListBtn
   },

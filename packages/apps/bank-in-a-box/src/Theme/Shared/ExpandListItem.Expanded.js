@@ -1,7 +1,7 @@
 import { css } from "styled-components"
 import { ExpandListItem, theming } from "@staccx/base"
 
-export default theming.extendDefault(
+export const ExpandListItemButtonStyle = theming.extendDefault(
   css`
     padding: 0;
   `,

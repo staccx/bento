@@ -4,7 +4,7 @@ import App from "./App"
 import registerServiceWorker from "./registerServiceWorker"
 import { Provider } from "mobx-react"
 import WebFont from "webfontloader"
-import theme from "@staccx/norefjell-theme"
+import BankTheme from "./Theme/theme"
 import { ThemeProvider } from "styled-components"
 
 WebFont.load({
@@ -15,7 +15,7 @@ WebFont.load({
 
 ReactDOM.render(
   <Provider>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={BankTheme}>
       <App />
     </ThemeProvider>
   </Provider>,

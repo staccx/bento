@@ -1,9 +1,14 @@
 import React, { Component } from "react"
 import { Provider } from "mobx-react"
-import { Router, Route, Switch } from "react-router-dom"
-import createHistory from "history/createBrowserHistory"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Transitions, { backwards } from "./components/transitions/transitions"
-import { Layout, LayoutItem, Button, ThemeComponent } from "@staccx/base"
+import {
+  Layout,
+  LayoutItem,
+  Button,
+  ThemeComponent,
+  GlobalStyle
+} from "@staccx/base"
 import Overview from "./pages/Overview"
 import Profile from "./pages/Profile/Profile"
 import ProfileEdit from "./pages/Profile/ProfileEdit"
@@ -17,89 +22,94 @@ import Account from "./pages/Account"
 
 class App extends Component {
   render() {
-    const history = createHistory()
-
     return (
       <Provider customer={customer} account={account}>
-        <Router history={history}>
-          <Route
-            render={({ location }) => (
-              <Layout variant="bibMainLayout">
-                <LayoutItem area="logo">
-                  <Button
-                    variant="styleless"
-                    onClick={() =>
-                      history.push({
-                        pathname: "/",
-                        state: backwards
-                      })
-                    }
-                  >
-                    <ThemeComponent tagName={"logo"} inverted fallback={null} />
-                  </Button>
-                </LayoutItem>
-                <LayoutItem area="main">
-                  <Transitions pageKey={location.key} {...location.state}>
-                    <Switch location={location}>
-                      <Route
-                        path="/"
-                        exact
-                        render={({ history }) => (
-                          <Overview
-                            history={history}
-                            accounts={account.accounts}
-                          />
-                        )}
+        <React.Fragment>
+          <GlobalStyle />
+          <Router>
+            <Route
+              render={({ location, history }) => (
+                <Layout variant="bibMainLayout">
+                  <LayoutItem area="logo">
+                    <Button
+                      variant="styleless"
+                      onClick={() =>
+                        history.push({
+                          pathname: "/",
+                          state: backwards
+                        })
+                      }
+                    >
+                      <ThemeComponent
+                        tagName={"logo"}
+                        inverted
+                        fallback={null}
                       />
-                      <Route
-                        path={"/account/:id"}
-                        render={({ match, history }) => (
-                          <Account
-                            accountStore={account}
-                            match={match}
-                            history={history}
-                          />
-                        )}
-                      />
-                      <Route path="/profile" exact component={Profile} />
-                      <Route path="/logout" exact component={LoggedOut} />
-                      <Route
-                        path="/prices"
-                        exact
-                        render={({ history }) => <Prices history={history} />}
-                      />
+                    </Button>
+                  </LayoutItem>
+                  <LayoutItem area="main">
+                    <Transitions pageKey={location.key} {...location.state}>
+                      <Switch location={location}>
+                        <Route
+                          path="/"
+                          exact
+                          render={({ history }) => (
+                            <Overview
+                              history={history}
+                              accounts={account.accounts}
+                            />
+                          )}
+                        />
+                        <Route
+                          path={"/account/:id"}
+                          render={({ match, history }) => (
+                            <Account
+                              accountStore={account}
+                              match={match}
+                              history={history}
+                            />
+                          )}
+                        />
+                        <Route path="/profile" exact component={Profile} />
+                        <Route path="/logout" exact component={LoggedOut} />
+                        <Route
+                          path="/prices"
+                          exact
+                          render={({ history }) => <Prices history={history} />}
+                        />
 
-                      <Route
-                        path={"/profile/edit"}
-                        exact
-                        render={({ history }) => (
-                          <ProfileEdit history={history} />
-                        )}
-                      />
-                      <Route
-                        path={"/profile/annual-statement"}
-                        exact
-                        render={({ history }) => (
-                          <AnnualStatement history={history} />
-                        )}
-                      />
-                      <Route
-                        path={"/profile/contract-documents"}
-                        exact
-                        render={({ history }) => (
-                          <ContractDocuments history={history} />
-                        )}
-                      />
-                    </Switch>
-                  </Transitions>
-                </LayoutItem>
-                <LayoutItem area="footer">
-                  <ThemeComponent tagName={"footer"} />
-                </LayoutItem>
-              </Layout>
-            )}
-          />
-        </Router>
+                        <Route
+                          path={"/profile/edit"}
+                          exact
+                          render={({ history }) => (
+                            <ProfileEdit history={history} />
+                          )}
+                        />
+                        <Route
+                          path={"/profile/annual-statement"}
+                          exact
+                          render={({ history }) => (
+                            <AnnualStatement history={history} />
+                          )}
+                        />
+                        <Route
+                          path={"/profile/contract-documents"}
+                          exact
+                          render={({ history }) => (
+                            <ContractDocuments history={history} />
+                          )}
+                        />
+                      </Switch>
+                    </Transitions>
+                  </LayoutItem>
+                  <LayoutItem area="footer">
+                    <ThemeComponent tagName={"footer"} />
+                  </LayoutItem>
+                </Layout>
+              )}
+            />
+          </Router>
+        </React.Fragment>
       </Provider>
     )
   }
