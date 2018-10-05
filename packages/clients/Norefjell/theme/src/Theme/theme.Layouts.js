@@ -1,9 +1,8 @@
 import { css } from "styled-components"
-import { registerStyle } from "@staccx/theme"
-import { Layout, LayoutItem } from "@staccx/base"
+import { Layout, LayoutItem, theming } from "@staccx/base"
 import { FadeIn } from "@staccx/animations"
 
-export const LayoutStyling = registerStyle(
+export const LayoutStyling = theming.createVariants(
   {
     bibMainLayout: css`
       min-height: 100vh;
@@ -19,7 +18,7 @@ export const LayoutStyling = registerStyle(
   Layout.themeProps.container
 )
 
-export const LayoutItemStyling = registerStyle(
+export const LayoutItemStyling = theming.createVariants(
   {
     fadeIn: css`
       opacity: 0;

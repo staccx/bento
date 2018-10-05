@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const CaretRight = ({ className }) => (
   <svg className={className} width="7" height="12" viewBox="0 0 20 33">
@@ -10,8 +10,8 @@ const CaretRight = ({ className }) => (
 
 CaretRight.propTypes = { className: PropTypes.string }
 
-export const IconCaretRight = registerStyle(
-  { [VARIANT_DEFAULT]: CaretRight },
+export const IconCaretRight = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: CaretRight },
   "IconCaretRight"
 )
 

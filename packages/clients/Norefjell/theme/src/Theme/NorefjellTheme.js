@@ -1,5 +1,4 @@
-import { BaseTheme } from "@staccx/base"
-import { Theme } from "@staccx/theme"
+import { BaseTheme, theming } from "@staccx/base"
 import reset from "./reset"
 import Button from "./Theme.Button"
 import Modal from "./Theme.Wrapper"
@@ -27,6 +26,7 @@ import { IconPdf } from "./Icons/Icon.Pdf"
 import { IconAnnualStatement } from "./Icons/Icon.AnnualStatement"
 import { IconContracts } from "./Icons/Icon.Contracts"
 import { IconDownpayment } from "./Icons/Icon.Downpayment"
+const { Theme } = theming
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -72,12 +72,12 @@ const color = {
 }
 
 const BiBSpecificColor = {
-  accountHeading: color.disabled,
-  accountEarned: color.secondary,
-  accountBalance: color.primary,
-  accountLoan: color.negative,
-  expandedItem: color.white,
-  accountInfoBorder: color.line,
+  accountHeading: theming.color.disabled,
+  accountEarned: theming.color.secondary,
+  accountBalance: theming.color.primary,
+  accountLoan: theming.color.negative,
+  expandedItem: theming.color.white,
+  accountInfoBorder: theming.color.line,
   accountFilter: "#2EB6BE",
   invoice: "#3297BF",
   mainButton: "#2EB6BE"
@@ -112,7 +112,7 @@ const fontWeight = {
   normal: "400"
 }
 
-const t = new Theme(BaseTheme, {
+export default new Theme(BaseTheme, {
   name: "Norfjell",
   layout: {
     dashboardLayout: "columnNarrow",
@@ -158,5 +158,3 @@ const t = new Theme(BaseTheme, {
   .add(IconAnnualStatement)
   .add(IconContracts)
   .add(IconDownpayment)
-
-export default t.get

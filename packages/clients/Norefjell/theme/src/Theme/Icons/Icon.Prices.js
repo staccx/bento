@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Prices = () => (
   <svg
@@ -16,8 +16,8 @@ const Prices = () => (
   </svg>
 )
 
-export const IconPrices = registerStyle(
-  { [VARIANT_DEFAULT]: Prices },
+export const IconPrices = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Prices },
   "IconPrices"
 )
 

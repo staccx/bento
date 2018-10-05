@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { VARIANT_DEFAULT, registerStyle, spacing } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Logo = ({ className }) => (
   <SVG
@@ -42,10 +42,13 @@ const Logo = ({ className }) => (
 
 const SVG = styled.svg`
   display: block;
-  margin: ${spacing.large} auto 0;
+  margin: ${theming.spacing.large} auto 0;
   width: 140px;
 `
 
-export const LogoStyle = registerStyle({ [VARIANT_DEFAULT]: Logo }, "logo")
+export const LogoStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Logo },
+  "logo"
+)
 
 export default Logo

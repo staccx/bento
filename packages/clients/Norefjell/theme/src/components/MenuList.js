@@ -1,12 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Box, Button, List } from "@staccx/base"
-import {
-  spacing,
-  registerStyle,
-  VARIANT_DEFAULT,
-  ThemeComponent
-} from "@staccx/theme"
+import { Box, Button, List, ThemeComponent, theming } from "@staccx/base"
 
 const Menu = ({ menuElements, history }) => {
   return (
@@ -40,13 +34,16 @@ const Container = styled(Box)`
 `
 
 const IconOuter = styled.div`
-  margin-right: ${spacing.small};
-  margin-left: -${spacing.small};
+  margin-right: ${theming.spacing.small};
+  margin-left: -${theming.spacing.small};
 `
 
 const ButtonLabel = styled.span`
   flex-grow: 1;
   line-height: 1.3;
 `
-export const MenuStyle = registerStyle({ [VARIANT_DEFAULT]: Menu }, "menu")
+export const MenuStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Menu },
+  "menu"
+)
 export default Menu

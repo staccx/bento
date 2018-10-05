@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Profile = () => (
   <svg
@@ -17,8 +17,8 @@ const Profile = () => (
   </svg>
 )
 
-export const IconProfile = registerStyle(
-  { [VARIANT_DEFAULT]: Profile },
+export const IconProfile = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Profile },
   "IconProfile"
 )
 

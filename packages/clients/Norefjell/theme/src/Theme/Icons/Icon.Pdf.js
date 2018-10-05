@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Pdf = () => (
   <svg
@@ -12,6 +12,9 @@ const Pdf = () => (
   </svg>
 )
 
-export const IconPdf = registerStyle({ [VARIANT_DEFAULT]: Pdf }, "IconPdf")
+export const IconPdf = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Pdf },
+  "IconPdf"
+)
 
 export default IconPdf

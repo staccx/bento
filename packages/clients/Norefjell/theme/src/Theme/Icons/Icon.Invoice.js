@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Invoice = () => (
   <svg
@@ -16,8 +16,8 @@ const Invoice = () => (
   </svg>
 )
 
-export const IconInvoice = registerStyle(
-  { [VARIANT_DEFAULT]: Invoice },
+export const IconInvoice = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Invoice },
   "IconInvoice"
 )
 

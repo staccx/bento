@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Insurance = () => (
   <svg
@@ -16,8 +16,8 @@ const Insurance = () => (
   </svg>
 )
 
-export const IconInsurance = registerStyle(
-  { [VARIANT_DEFAULT]: Insurance },
+export const IconInsurance = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Insurance },
   "IconInsurance"
 )
 

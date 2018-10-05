@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Contracts = () => (
   <svg
@@ -16,8 +16,8 @@ const Contracts = () => (
   </svg>
 )
 
-export const IconContracts = registerStyle(
-  { [VARIANT_DEFAULT]: Contracts },
+export const IconContracts = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Contracts },
   "IconContracts"
 )
 

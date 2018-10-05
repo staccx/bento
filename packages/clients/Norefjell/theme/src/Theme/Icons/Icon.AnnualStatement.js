@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const AnnualStatement = () => (
   <svg
@@ -16,8 +16,8 @@ const AnnualStatement = () => (
   </svg>
 )
 
-export const IconAnnualStatement = registerStyle(
-  { [VARIANT_DEFAULT]: AnnualStatement },
+export const IconAnnualStatement = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: AnnualStatement },
   "IconAnnualStatement"
 )
 

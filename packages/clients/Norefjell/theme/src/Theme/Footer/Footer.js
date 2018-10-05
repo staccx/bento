@@ -1,14 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import {
-  color,
-  spacing,
-  ThemeComponent,
-  wrapper,
-  registerStyle,
-  VARIANT_DEFAULT
-} from "@staccx/theme"
-import { Wrapper } from "@staccx/base"
+import { Wrapper, ThemeComponent, theming } from "@staccx/base"
 
 const Footer = () => (
   <Outer>
@@ -39,25 +31,25 @@ const Layout = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   > div {
-    padding: ${spacing.medium};
-    @media only screen and (max-width: ${wrapper.large}) {
+    padding: ${theming.spacing.medium};
+    @media only screen and (max-width: ${theming.wrapper.large}) {
       width: 100%;
     }
   }
 `
 
 const Outer = styled.div`
-  background-color: ${color.bgGray};
-  padding: ${spacing.large} 0;
+  background-color: ${theming.color.bgGray};
+  padding: ${theming.spacing.large} 0;
   display: none;
 `
 
 const FooterMenuItem = styled.p`
-  margin-bottom: ${spacing.small};
+  margin-bottom: ${theming.spacing.small};
 `
 
-export const FooterStyle = registerStyle(
-  { [VARIANT_DEFAULT]: Footer },
+export const FooterStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Footer },
   "footer"
 )
 

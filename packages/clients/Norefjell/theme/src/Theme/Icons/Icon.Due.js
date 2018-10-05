@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Due = () => (
   <svg
@@ -16,6 +16,9 @@ const Due = () => (
   </svg>
 )
 
-export const IconDue = registerStyle({ [VARIANT_DEFAULT]: Due }, "IconDue")
+export const IconDue = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Due },
+  "IconDue"
+)
 
 export default IconDue

@@ -1,9 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { color, font, registerStyle, spacing } from "@staccx/theme"
 import { formatCurrency } from "@staccx/formatting"
-import { Caret } from "@staccx/base"
+import { Caret, theming } from "@staccx/base"
 
 const ExpandListBtn = ({
   heading,
@@ -44,8 +43,8 @@ const ExpandListBtn = ({
 )
 
 const ExpandIcon = styled(Caret)`
-  margin-left: ${spacing.small};
-  fill: ${color.primary};
+  margin-left: ${theming.spacing.small};
+  fill: ${theming.color.primary};
   transition: transform 0.3s ease-out;
   transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
 `
@@ -55,9 +54,9 @@ const Item = styled.button`
   width: 100%;
   text-align: left;
   border: 0;
-  background-color: ${p => (p.isExpanded ? color.bg : "transparent")};;
+  background-color: ${p => (p.isExpanded ? theming.color.bg : "transparent")};;
   align-items: center;
-  padding: ${spacing.small};
+  padding: ${theming.spacing.small};
   transition: background-color 0.2s ease;
   cursor: pointer;
 
@@ -67,10 +66,10 @@ const Item = styled.button`
   &:active,
   &:hover {
     outline: none;
-    background-color: ${color.bg};
+    background-color: ${theming.color.bg};
 
     ${ExpandIcon} {
-      fill ${color.secondary};
+      fill ${theming.color.secondary};
     }
   }
 `
@@ -81,8 +80,8 @@ const Icon = styled.div`
   justify-content: center;
   width: 32px;
   height: 32px;
-  margin-right: ${spacing.small};
-  padding: ${spacing.tiny};
+  margin-right: ${theming.spacing.small};
+  padding: ${theming.spacing.tiny};
 
   border-radius: 50%;
   text-align: center;
@@ -93,17 +92,17 @@ const Icon = styled.div`
     ${p =>
       p.type === "DEPOSIT" &&
       css`
-        fill: ${color.secondary};
+        fill: ${theming.color.secondary};
       `}
   ${p =>
     p.type === "WITHDRAWAL" &&
     css`
-      fill: ${color.negative};
+      fill: ${theming.color.negative};
     `}
   ${p =>
     p.type === "INVOICE" &&
     css`
-      fill: ${color("invoice")};
+      fill: ${theming.color("invoice")};
     `}
     width: 100%;
   }
@@ -118,17 +117,17 @@ const Amount = styled.div`
 `
 
 const Status = styled.div`
-  font-size: ${font.tiny};
+  font-size: ${theming.font.tiny};
   line-height: 1.7;
 `
 
 const Date = styled.div`
-  font-size: ${font.tiny};
+  font-size: ${theming.font.tiny};
   line-height: 1.7;
 `
 
 const TransactionHeading = styled.h4`
-  font-size: ${font("transactionHeading")};
+  font-size: ${theming.font("transactionHeading")};
 `
 
 ExpandListBtn.propTypes = {
@@ -137,7 +136,7 @@ ExpandListBtn.propTypes = {
   amount: PropTypes.number
 }
 
-export const ExpandListButtonStyle = registerStyle(
+export const ExpandListButtonStyle = theming.createVariants(
   {
     transactionListItem: ExpandListBtn
   },

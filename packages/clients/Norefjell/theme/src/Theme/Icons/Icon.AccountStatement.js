@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const AccountStatement = () => (
   <svg
@@ -16,8 +16,8 @@ const AccountStatement = () => (
   </svg>
 )
 
-export const IconAccountStatement = registerStyle(
-  { [VARIANT_DEFAULT]: AccountStatement },
+export const IconAccountStatement = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: AccountStatement },
   "IconAccountStatement"
 )
 

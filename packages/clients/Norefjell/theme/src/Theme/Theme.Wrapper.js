@@ -1,11 +1,10 @@
 import { css } from "styled-components"
-import { registerStyle, wrapper } from "@staccx/theme"
-import { Wrapper } from "@staccx/base"
+import { Wrapper, theming } from "@staccx/base"
 
-export default registerStyle(
+export default theming.createVariants(
   {
     bib: css`
-      max-width: ${wrapper.small};
+      max-width: ${theming.wrapper.small};
     `
   },
   Wrapper.themeProps.wrapper

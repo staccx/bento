@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const ArrowDown = () => (
   <Icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
@@ -9,14 +9,14 @@ const ArrowDown = () => (
 )
 
 const Icon = styled.svg`
-  width: ${spacing.medium};
-  height: ${spacing.medium};
-  fill: ${color.primary};
+  width: ${theming.spacing.medium};
+  height: ${theming.spacing.medium};
+  fill: ${theming.color.primary};
   vertical-align: middle;
 `
 
-export const IconArrowDown = registerStyle(
-  { [VARIANT_DEFAULT]: ArrowDown },
+export const IconArrowDown = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: ArrowDown },
   "IconArrowDown"
 )
 
