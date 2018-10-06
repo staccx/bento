@@ -1,0 +1,40 @@
+{
+  "name": "@staccx/sanity-plugin-i18n",
+  "version": "1.0.2",
+  "description": "",
+  "main": "package.json",
+  "author": "Stacc X",
+  "license": "UNLICENSED",
+  "files": [
+    "lib",
+    "src",
+    "sanity.json"
+  ],
+  "scripts": {
+    "start": "sanity start",
+    "test": "sanity check",
+    "build": "yarn prettify && node build.js && rollup -c",
+    "prepublishOnly": "babel -d lib/ src/"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^0.134.2",
+    "@sanity/components": "^0.134.2",
+    "@sanity/core": "^0.134.2",
+    "@sanity/default-layout": "^0.134.2",
+    "@sanity/default-login": "^0.134.0",
+    "@sanity/desk-tool": "^0.134.2",
+    "prop-types": "^15.6",
+    "react": "^16.2",
+    "react-dom": "^16.2"
+  },
+  "publishConfig": {
+    "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "prettify": "^0.1.7"
+  }
+}
