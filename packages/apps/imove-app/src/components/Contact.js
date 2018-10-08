@@ -12,12 +12,12 @@ import {
   Toggle,
   Flag
 } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 
 const Contact = ({ name, tel, mail, postalNumber, consent }) => (
   <Layout>
     <Heading level="1">
-      Kontaktinfo
-      {/* TODO: Sanitytext */}
+      <TranslatedText i18nKey="heading-kontakt" />
     </Heading>
 
     <Input label="Fullt navn" value={name} />
@@ -35,16 +35,12 @@ const Contact = ({ name, tel, mail, postalNumber, consent }) => (
           input={{}}
           onChange={() => null}
         >
-          Jeg samtykker til at imove lagrer informasjon om meg og at jeg kan
-          kontaktes på e-post
-          {/* TODO: Sanitytext */}
+          <TranslatedText i18nKey="label-samtykke-lagring-kontakt" />
         </Toggle>
       }
     >
       <Label className="" htmlFor="Samtykke">
-        Jeg samtykker til at imove lagrer informasjon om meg og at jeg kan
-        kontaktes på e-post
-        {/* TODO: Sanitytext */}
+        <TranslatedText i18nKey="label-samtykke-lagring-kontakt" />
       </Label>
     </Flag>
   </Layout>

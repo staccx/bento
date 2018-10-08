@@ -1,6 +1,7 @@
 import React from "react"
 import { Layout, Button, EmailInput, Input, Wrapper } from "@staccx/base"
 import { ThemeComponent } from "@staccx/theme"
+import { TranslatedText } from "@staccx/i18n"
 
 const LogIn = ({ history }) => {
   const labelWidth = 90
@@ -20,7 +21,7 @@ const LogIn = ({ history }) => {
               }
               variant="mainNavigation"
             >
-              Login {/* TODO: Sanitytext */}
+              <TranslatedText i18nKey="knapp-logg-inn-side-logg-inn" />
             </Button>
             <Button
               onClick={() =>
@@ -30,7 +31,7 @@ const LogIn = ({ history }) => {
               }
               variant="mainNavigation"
             >
-              Bli kunde {/* TODO: Sanitytext */}
+              <TranslatedText i18nKey="knapp-logg-inn-side-bli-kunde" />
             </Button>
           </div>
         </Layout>

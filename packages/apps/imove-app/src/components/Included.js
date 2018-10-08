@@ -1,39 +1,31 @@
 import React from "react"
-import PropTypes from "prop-types"
 // import styled from "styled-components"
-import { Heading, Layout, CheckBox } from "@staccx/base"
+import { Heading, Layout } from "@staccx/base"
 import CheckmarkBlock from "./CheckmarkBlock"
+import { TranslatedText } from "@staccx/i18n"
 
-const Contact = ({ name, phone, email, postalNumber, consent }) => (
+const Included = () => (
   <Layout>
-    <Heading level="1">Hva som er inkludert i prisen</Heading>
-    <CheckmarkBlock title="Din egen miljøvennlige hverdagsbil">
-      Vi ordner alt, unntatt drivstoff og parkering.
-      {/* TODO: Sanitytext */}
+    <Heading level="1">
+      <TranslatedText i18nKey="heading-intro-hva-er-inkludert" />
+    </Heading>
+    <CheckmarkBlock
+      title={<TranslatedText i18nKey="onboarding-included-heading-1" />}
+    >
+      <TranslatedText i18nKey="onboarding-included-intro-1" />
     </CheckmarkBlock>
 
-    <CheckmarkBlock title="Du kan byttelåne med en hyttebil når du trenger det">
-      Du kan disponere stasjonsvogn/SUV 10 dager i året
-      {/* TODO: Sanitytext */}
+    <CheckmarkBlock
+      title={<TranslatedText i18nKey="onboarding-included-heading-2" />}
+    >
+      <TranslatedText i18nKey="onboarding-included-intro-2" />
     </CheckmarkBlock>
-    <CheckmarkBlock title="Ingen startleie eller bindingstid" />
+    <CheckmarkBlock
+      title={<TranslatedText i18nKey="onboarding-included-heading-3" />}
+    >
+      <TranslatedText i18nKey="onboarding-included-intro-3" />
+    </CheckmarkBlock>
   </Layout>
 )
 
-CheckBox.propTypes = {
-  name: PropTypes.string,
-  phone: PropTypes.number,
-  email: PropTypes.string,
-  postalNumber: PropTypes.number,
-  consent: PropTypes.bool
-}
-
-Contact.defaultProps = {
-  name: "",
-  phone: "",
-  email: "",
-  postalNumber: "",
-  consent: false
-}
-
-export default Contact
+export default Included

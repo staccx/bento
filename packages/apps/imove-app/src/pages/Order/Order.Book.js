@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import cars from "../../data/cars"
 import CarHeader from "../../components/CarHeader/CarHeader"
 import BackButton from "../../components/BackButton/BackButton"
+import { TranslatedText } from "@staccx/i18n"
 
 const OrderBook = ({ match }) => {
   const car = cars.filter(
@@ -16,28 +17,34 @@ const OrderBook = ({ match }) => {
       <img src={car.images[0]} alt="" />
       <CarHeader make={car.make} model={car.model} price={car.pricePerMonth} />
       <p>
-        Inkludert i prisen er en «hyttebil» 10 dager per år. Hyttebilen er en
-        Volvo SUV eller stasjonsvogn.
-      </p>{" "}
-      {/* TODO: Replace text */}
+        <TranslatedText i18nKey="orderbook-intro-included" />
+      </p>
       <div>
         <Layout rowGap="tiny">
-          <Heading level={6}>Hva skjer etter bestilling</Heading>
+          <Heading level={6}>
+            <TranslatedText i18nKey="orderbook-subheading" />
+          </Heading>
           <List variant="bullets">
-            <li>Du oppretter din bruker.</li>
-            <li>Forhandler kontakter deg om levering.</li>
-            <li>Bilen leveres og moroa kan starte</li>
+            <li>
+              <TranslatedText i18nKey="orderbook-listitem-1" />
+            </li>
+            <li>
+              <TranslatedText i18nKey="orderbook-listitem-2" />
+            </li>
+            <li>
+              <TranslatedText i18nKey="orderbook-listitem-3" />
+            </li>
           </List>
         </Layout>
       </div>
       <p>
-        NB: Du kan fortsatt ombestemme deg, trykk hold av for å sikre deg
-        muligheten til å abonnere på denne bilen!
+        <TranslatedText i18nKey="orderbook-subtext" />
       </p>
       <Link to={`/app/car/${match.params.chassisNumber}/confirm`}>
-        <Button>Hold av</Button>
+        <Button>
+          <TranslatedText i18nKey="orderbook-knapp-confirm" />
+        </Button>
       </Link>
-      {/* TODO: Replace text */}
     </Layout>
   )
 }

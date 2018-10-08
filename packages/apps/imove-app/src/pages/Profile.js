@@ -3,6 +3,7 @@ import { Layout, Text, Button, Box, Wrapper } from "@staccx/base"
 import { ThemeComponent } from "@staccx/theme"
 import ProfileLarge from "../components/Illustrations/ProfileLarge"
 import profile from "../data/profile"
+import { TranslatedText } from "@staccx/i18n"
 
 const Profile = ({ history }) => (
   <Wrapper size="small">
@@ -25,7 +26,7 @@ const Profile = ({ history }) => (
             }
             variant="mainNavigation"
           >
-            Se og rediger mine detaljer {/* TODO: Sanitytext */}
+            <TranslatedText i18nKey="nav-se-og-rediger-mine-detaljer" />
           </Button>
           <Button
             onClick={() =>
@@ -36,7 +37,7 @@ const Profile = ({ history }) => (
             variant="mainNavigation"
           >
             {/* TODO: Side må lages. ☝️ */}
-            Slett min bruker {/* TODO: Sanitytext */}
+            <TranslatedText i18nKey="nav-slett-min-bruker" />
           </Button>
         </div>
       </Layout>

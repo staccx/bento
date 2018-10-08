@@ -5,6 +5,7 @@ import OnboardingWrapper from "../components/Onboarding/OnboardingWrapper"
 import Household from "../components/Household"
 import Contact from "../components/Contact"
 import Included from "../components/Included"
+import { TranslatedText } from "@staccx/i18n"
 
 const Onboarding = ({ history }) => (
   <Wrapper size="small">
@@ -15,14 +16,18 @@ const Onboarding = ({ history }) => (
       <OnboardingWrapper previous history={history}>
         <Contact />
       </OnboardingWrapper>
-      <OnboardingWrapper
-        previous
-        nextStepText="Vis bilene"
-        history={history}
-        goto={"/app/cars"}
-      >
-        <Included />
-      </OnboardingWrapper>
+      <TranslatedText i18nKey="knapp-siste-steg-onboarding">
+        {translated => (
+          <OnboardingWrapper
+            previous
+            nextStepText={translated}
+            history={history}
+            goto={"/app/cars"}
+          >
+            <Included />
+          </OnboardingWrapper>
+        )}
+      </TranslatedText>
     </StepWizard>
   </Wrapper>
 )

@@ -2,6 +2,7 @@ import React from "react"
 import { Layout, Button, Box, Wrapper } from "@staccx/base"
 import Contact from "../components/Contact"
 import profile from "../data/profile"
+import { TranslatedText } from "@staccx/i18n"
 
 const Profile = ({ history }) => (
   <Wrapper size="small">
@@ -21,7 +22,7 @@ const Profile = ({ history }) => (
             })
           }
         >
-          Lagre {/* TODO: Sanitytext */}
+          <TranslatedText i18nKey="knapp-lagre-profil" />
         </Button>
       </Layout>
     </Box>

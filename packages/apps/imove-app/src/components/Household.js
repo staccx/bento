@@ -2,12 +2,12 @@ import React from "react"
 // import styled from "styled-components"
 import { Heading, Layout, RadioPill, RadioPillItem, Input } from "@staccx/base"
 import householdPersons from "../data/householdPersons"
+import { TranslatedText } from "@staccx/i18n"
 
 const Household = ({ numberPersons }) => (
   <Layout>
     <Heading level="1">
-      Hvor mange er dere i husstanden?
-      {/* TODO: Sanitytext */}
+      <TranslatedText i18nKey="heading-onboarding-husstand" />
     </Heading>
     <RadioPill onChange={numberPersons} group={"persons"} full>
       {householdPersons.map(listItem => (

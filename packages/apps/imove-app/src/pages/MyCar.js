@@ -2,17 +2,20 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { Button, Text, Heading, Layout, Box, Wrapper } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 
 const MyCar = () => (
   <Layout paddingBottom="huge">
     <Box variant="myCarHeader">
       <Wrapper size="small">
         <Layout>
-          <Heading level="1">Min bil {/* TODO: Sanitytext */}</Heading>
+          <Heading level="1">
+            <TranslatedText i18nKey="heading-min-bil" />
+          </Heading>
 
           <div>
             <Heading level="2" variant="preHeader">
-              Abonnement {/* TODO: Sanitytext */}
+              <TranslatedText i18nKey="subheading-min-side-abonnement" />
             </Heading>
             <Heading level="2">BMW i3 {/* TODO: autopopuleres */}</Heading>
           </div>
@@ -20,7 +23,7 @@ const MyCar = () => (
           <Box variant="carWrapper">
             <img src="/img/i3.png" alt="i3" />
             <Heading variant="orderStatus" level="3">
-              Venter på levering
+              <TranslatedText i18nKey="bestillingsstatus-venter-pa-levering" />
             </Heading>
           </Box>
         </Layout>
@@ -32,39 +35,43 @@ const MyCar = () => (
         <Menu>
           <Link to="/app/order-additional">
             <Button variant="mainNavigation">
-              Bestill hyttebil eller tilleggsbil {/* TODO: Sanitytext */}
+              <TranslatedText i18nKey="nav-bestill-hyttebil-eller-tilleggsbil" />
             </Button>
           </Link>
           <Link to="/app/sell">
             <Button variant="mainNavigation">
-              Hjelp meg å selge min gamle bil {/* TODO: Sanitytext */}
+              <TranslatedText i18nKey="nav-hjelp-meg-a-selge-min-gamle-bil" />
             </Button>
           </Link>
           <Link to="/app/switch">
             <Button variant="mainNavigation">
-              Bytt bil {/* TODO: Sanitytext */}
+              <TranslatedText i18nKey="nav-bytt-bil" />
             </Button>
           </Link>
           <Link to="/app/service">
             <Button variant="mainNavigation">
-              Bestill service {/* TODO: Sanitytext */}
+              <TranslatedText i18nKey="nav-bestill-service" />
             </Button>
           </Link>
           <Link to="/app/tire-change">
             <Button variant="mainNavigation">
-              Bestill dekkskift {/* TODO: Sanitytext */}
+              <TranslatedText i18nKey="nav-bestill-dekkskift" />
             </Button>
           </Link>
         </Menu>
 
         <Text variant="legalese">
-          Du har 10 dager med gratis hyttebil igjen
+          Du har 10 dager med gratis hyttebil igjen {/* TODO: autopopuleres */}
         </Text>
         <Link to="/app/end/">
-          <Text variant="legalese">Avslutt abonnement</Text>
+          <Text variant="legalese">
+            <TranslatedText i18nKey="nav-avslutt-abonnement" />
+          </Text>
         </Link>
         <Link to="/app/vilkar-og-betingelser">
-          <Text variant="legalese">Vilkår og betingelser</Text>
+          <Text variant="legalese">
+            <TranslatedText i18nKey="nav-vilkar-og-betingelser" />
+          </Text>
         </Link>
       </Layout>
     </Wrapper>

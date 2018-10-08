@@ -10,6 +10,7 @@ import {
   Box,
   hideVisually
 } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 
 const CarsFilter = ({
   cars,
@@ -29,21 +30,25 @@ const CarsFilter = ({
         return (
           <React.Fragment>
             <Button onClick={() => change({ isOpen: !isOpen })}>
-              Filtrer biler
+              <TranslatedText i18nKey="knapp-filter" />
             </Button>
-            {/* TODO: replace text */}
             <Filter isOpen={isOpen}>
               <Box variant="filter">
                 <Layout>
-                  <Input
-                    id="carSearch"
-                    placeholder="Søk"
-                    variant="search"
-                    onChange={e => handleSearchMake(e.target.value)}
-                  />{" "}
-                  {/* TODO: replace text */}
+                  <TranslatedText i18nKey="input-filter-sok">
+                    {translated => (
+                      <Input
+                        id="carSearch"
+                        placeholder={translated}
+                        variant="search"
+                        onChange={e => handleSearchMake(e.target.value)}
+                      />
+                    )}
+                  </TranslatedText>
                   <div>
-                    <Label>Maks månedspris</Label> {/* TODO: replace text */}
+                    <Label>
+                      <TranslatedText i18nKey="label-filtrere-bil-maks-manedspris" />
+                    </Label>
                     <Slider
                       name="totalMonthlyFilter"
                       max={maxPrice}
@@ -53,7 +58,9 @@ const CarsFilter = ({
                     />
                   </div>
                   <div>
-                    <Label>Min. rekkevidde</Label> {/* TODO: replace text */}
+                    <Label>
+                      <TranslatedText i18nKey="label-filtrere-bil-min-rekkevidde" />
+                    </Label>
                     <Slider
                       name="rangeFilter"
                       max={maxRange}
@@ -63,7 +70,8 @@ const CarsFilter = ({
                     />
                   </div>
                 </Layout>
-                {result.length} biler passer dine kriterier
+                {result.length}{" "}
+                <TranslatedText i18nKey="filtrere-bil-antall-biler-passer-dine-kriterier" />
               </Box>
             </Filter>
           </React.Fragment>

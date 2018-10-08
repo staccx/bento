@@ -1,21 +1,17 @@
 import React from "react"
 import { Heading, Layout, Text } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 
-const Contact = ({ name, phone, email, postalNumber, consent }) => (
+const NotYourArea = () => (
   <Layout>
     <Heading level="1">
-      imove har ennå ikke kommet til ditt område
-      {/* TODO: Sanitytext */}
+      <TranslatedText i18nKey="heading-ikke-i-ditt-omrade" />
     </Heading>
 
     <Text>
-      Pilotperioden for imove vil inntil videre foregå i Bergen. Vi kan
-      imidlertid lagre dine opplysninger slik at du blir førstemann til å få
-      beskjed når vi er klare til å lansere imove hos deg. Du kan når som helst
-      slette din konto og opplysningene som ligger lagret hos oss.
-      {/* TODO: Sanitytext */}
+      <TranslatedText i18nKey="intro-ikke-i-ditt-omrade" />
     </Text>
   </Layout>
 )
 
-export default Contact
+export default NotYourArea
