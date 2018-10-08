@@ -1,10 +1,11 @@
 import React from "react"
+import styled from "styled-components"
+import { media } from "../../styleUtils"
 import PropTypes from "prop-types"
 import { Wrapper } from "@staccx/base"
 import { color, spacing, font } from "@staccx/theme"
 import SectionHeading from "../SectionHeading/SectionHeading"
 import LinkButton from "../LinkButton/LinkButton"
-import styled from "styled-components"
 
 const CallToAction = ({ data }) => (
   <Content variant={data.variant}>
@@ -30,6 +31,9 @@ const Content = styled.div`
   background-position: right;
   color: ${color("secondary")};
   padding: ${spacing.huge} 0;
+  ${media.chromeTablet`
+    padding: ${spacing.large} 0;
+  `};
 `
 
 const Container = styled.div`

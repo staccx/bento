@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { media } from "../../styleUtils"
 import { Wrapper } from "@staccx/base"
 import { spacing, wrapper } from "@staccx/theme"
 import HeroBlob from "./Hero.Blob"
@@ -40,6 +41,9 @@ const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: ${spacing("huge")} 0;
+  ${media.chromeTablet`
+    padding: ${spacing.large} 0;
+  `};
 `
 
 const HeroTop = styled.div`
@@ -65,18 +69,18 @@ const CarColumn = styled.div`
   width: 50%;
   padding-right: ${p => (p.isReversed ? "0" : `${spacing("large")(p)}`)};
   padding-left: ${p => (p.isReversed ? `${spacing("large")(p)}` : "0")};
-  @media only screen and (max-width: ${wrapper("medium")}) {
+  ${media.medium`
     width: 100%;
     padding-right: 0;
-  }
+  `};
 `
 
 const BlobColumn = styled.div`
   width: 50%;
-  @media only screen and (max-width: ${wrapper("medium")}) {
+  ${media.medium`
     width: 50%;
     margin: ${spacing("large")} auto 0;
-  }
+  `};
 `
 
 export default Hero

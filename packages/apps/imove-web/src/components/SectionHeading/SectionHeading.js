@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { media } from "../../styleUtils"
 import PropTypes from "prop-types"
 import { spacing, font, color } from "@staccx/theme"
 import { Heading } from "@staccx/base"
@@ -16,6 +17,10 @@ const StyledHeading = styled(Heading)`
   color: ${color("secondary")};
   text-align: ${p => (p.align === "left" ? "left" : "center")};
   margin-bottom: ${spacing("huge")};
+  ${media.chromeTablet`
+    font-size: ${font("huge")};
+    margin-bottom: ${spacing("large")};
+  `}
 `
 
 SectionHeading.defaultProps = {
