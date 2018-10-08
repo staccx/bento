@@ -31,8 +31,11 @@ const Content = styled.div`
   background-position: right;
   color: ${color("secondary")};
   padding: ${spacing.huge} 0;
+  ${media.chromeLaptop`
+    padding: ${spacing("largePlus")} 0;
+  `};
   ${media.chromeTablet`
-    padding: ${spacing.large} 0;
+    padding: ${spacing("large")} 0;
   `};
 `
 

@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { media } from "../../styleUtils"
 import { spacing, font } from "@staccx/theme"
 import { Wrapper } from "@staccx/base"
 import SectionHeading from "../SectionHeading/SectionHeading"
@@ -30,6 +31,12 @@ const Content = styled.div`
   background-image: url(${p => p.bg});
   background-size: contain;
   background-repeat: no-repeat;
+  ${media.chromeLaptop`
+    padding: ${spacing("largePlus")} 0;
+  `};
+  ${media.chromeTablet`
+    padding: ${spacing("large")} 0;
+  `};
 `
 
 export default Pricing

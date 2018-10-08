@@ -25,9 +25,13 @@ const FAQ = ({ data }) => (
 )
 
 const Content = styled.div`
-  padding: ${spacing.huge} ${spacing("largePlus")};
+  padding: ${spacing.huge} 0;
+  ${media.chromeLaptop`
+    padding: ${spacing("largePlus")} 0;
+  `};
   ${media.chromeTablet`
-    padding: ${spacing.large} 0;
+    font-size: ${font("base")};
+    padding: ${spacing("large")} 0;
   `};
 `
 
@@ -38,12 +42,19 @@ const List = styled.ul`
   flex-wrap: wrap;
   margin: 0 calc(${spacing("medium")} * -1);
   overflow: hidden;
+  ${media.chromeTablet`
+    font-size: ${font("large")};
+  `};
 `
 
 const Item = styled.li`
   width: 50%;
   margin-bottom: ${spacing.large};
   padding: 0 ${spacing.medium};
+  ${media.chromeMobileL`
+    width: 100%;
+    margin-bottom: ${spacing.medium};
+  `};
 `
 
 const Question = styled.p`
@@ -62,6 +73,9 @@ const More = styled.p`
     color: inherit;
     text-decoration-color: inherit;
   }
+  ${media.chromeTablet`
+    font-size: ${font("large")};
+  `};
 `
 
 export default FAQ

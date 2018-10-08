@@ -37,8 +37,11 @@ const Comparison = ({ data }) => (
 
 const Content = styled.div`
   padding: ${spacing.huge} ${spacing("largePlus")};
+  ${media.chromeLaptop`
+    padding: ${spacing("largePlus")} 0;
+  `};
   ${media.chromeTablet`
-    padding: ${spacing.large} 0;
+    padding: ${spacing("large")} 0;
   `};
 `
 

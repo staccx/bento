@@ -25,6 +25,9 @@ const Features = ({ data }) => (
 
 const Content = styled.div`
   padding: ${spacing("huge")} 0;
+  ${media.chromeLaptop`
+    padding: ${spacing("largePlus")} 0;
+  `};
   ${media.chromeTablet`
     padding: ${spacing.large} 0;
   `};

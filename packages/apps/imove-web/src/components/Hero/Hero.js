@@ -41,8 +41,11 @@ const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: ${spacing("huge")} 0;
+  ${media.chromeLaptop`
+    padding: ${spacing("largePlus")} 0;
+  `};
   ${media.chromeTablet`
-    padding: ${spacing.large} 0;
+    padding: ${spacing("large")} 0;
   `};
 `
 
