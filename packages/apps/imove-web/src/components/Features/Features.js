@@ -35,6 +35,11 @@ const List = styled.ul`
   grid-row-gap: ${spacing.large};
   grid-column-gap: ${spacing.huge};
   grid-template-columns: 1fr 1fr;
+  ${media.chromeLaptop`
+    grid-column-gap: ${spacing.large};
+  `} ${media.chromeTablet`
+    grid-template-columns: 1fr;
+  `};
 `
 
 export default Features

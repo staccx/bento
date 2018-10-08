@@ -69,18 +69,18 @@ const CarColumn = styled.div`
   width: 50%;
   padding-right: ${p => (p.isReversed ? "0" : `${spacing("large")(p)}`)};
   padding-left: ${p => (p.isReversed ? `${spacing("large")(p)}` : "0")};
-  @media only screen and (max-width: ${wrapper("medium")}) {
+  ${media.medium`
     width: 100%;
     padding-right: 0;
-  }
+  `};
 `
 
 const BlobColumn = styled.div`
   width: 50%;
-  @media only screen and (max-width: ${wrapper("medium")}) {
+  ${media.medium`
     width: 50%;
     margin: ${spacing("large")} auto 0;
-  }
+  `};
 `
 
 export default Hero
