@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { media } from "../../styleUtils"
 import { spacing } from "@staccx/theme"
 import { Wrapper } from "@staccx/base"
 import Feature from "./Features.Feature"
@@ -24,6 +25,9 @@ const Features = ({ data }) => (
 
 const Content = styled.div`
   padding: ${spacing("huge")} 0;
+  ${media.chromeTablet`
+    padding: ${spacing.large} 0;
+  `};
 `
 
 const List = styled.ul`

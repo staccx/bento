@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { media } from "../../styleUtils"
 import { Wrapper } from "@staccx/base"
 import { spacing, wrapper } from "@staccx/theme"
 import HeroBlob from "./Hero.Blob"
@@ -40,6 +41,9 @@ const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: ${spacing("huge")} 0;
+  ${media.chromeTablet`
+    padding: ${spacing.large} 0;
+  `};
 `
 
 const HeroTop = styled.div`
