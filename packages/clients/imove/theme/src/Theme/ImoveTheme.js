@@ -25,6 +25,7 @@ import { ProfileIcon } from "./Icons/ProfileIcon"
 import { SliderThumb, SliderTrack } from "./Theme.Slider"
 import { LayoutStyling } from "./Theme.Layout"
 import { ListStyling } from "./Theme.Lists"
+import { CheckBoxLabel } from "./Theme.CheckBox"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -158,5 +159,6 @@ const t = new Theme(BaseTheme, {
   .add(SliderTrack)
   .add(LayoutStyling)
   .add(ListStyling)
+  .add(CheckBoxLabel)
 
 export default t

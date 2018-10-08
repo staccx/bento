@@ -22,6 +22,7 @@ import ProfileEdit from "./pages/ProfileEdit"
 import End from "./pages/End"
 import EndConfirmation from "./pages/EndConfirmation"
 import LogIn from "./pages/LogIn"
+import OrderAdditional from "./pages/OrderAdditional"
 
 const App = epitath(function*() {
   const { result } = yield <SanityList type={"translations"} />
@@ -58,6 +59,11 @@ const App = epitath(function*() {
                         component={Onboarding}
                       />
                       <Route path="/app/my-car" exact component={MyCar} />
+                      <Route
+                        path="/app/order-additional"
+                        exact
+                        component={OrderAdditional}
+                      />
                       <Route path="/app/sell" exact component={Sell} />
                       <Route
                         path="/app/sell/confirmation"
