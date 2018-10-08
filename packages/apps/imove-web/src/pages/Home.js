@@ -1,5 +1,4 @@
 import React from "react"
-import data from "../data/texts"
 import Hero from "../components/Hero/Hero"
 import Features from "../components/Features/Features"
 import Pricing from "../components/Pricing/Pricing"
@@ -9,7 +8,7 @@ import FAQ from "../components/FAQ/FAQ"
 import CallToAction from "../components/CallToAction/CallToAction"
 import Footer from "../components/Footer/Footer"
 
-const Home = () => (
+const Home = ({ data }) => (
   <div>
     <Hero data={data.hero} />
 
