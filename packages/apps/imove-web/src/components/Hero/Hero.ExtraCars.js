@@ -5,10 +5,10 @@ import { Heading } from "@staccx/base"
 
 const ExtraCars = ({ data, isReversed }) => (
   <Row isReversed={isReversed}>
-    <Column>
+    <TextColumn>
       <InfoHeading level={2}>{data.heading}</InfoHeading>
       <p>{data.paragraph}</p>
-    </Column>
+    </TextColumn>
     <CarColumn>
       {data.cars.map(x => (
         <Car key={x._key}>
@@ -37,9 +37,13 @@ const Column = styled.div`
   padding: 0 ${spacing("large")};
 `
 
+const TextColumn = styled(Column)`
+  flex: 1;
+`
+
 const CarColumn = styled(Column)`
   display: flex;
-  width: 66.66%;
+  width: 700px;
   justify-content: space-between;
   align-items: flex-end;
   margin: 0 calc(${spacing("large")} * -1);

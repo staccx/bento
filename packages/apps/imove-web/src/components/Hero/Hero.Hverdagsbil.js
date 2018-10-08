@@ -26,11 +26,18 @@ const Columns = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: ${spacing("large")};
+  @media only screen and (max-width: ${wrapper("large")}) {
+    margin-top: 2vw;
+  }
 `
 
-const FirstColumn = styled.div``
+const FirstColumn = styled.div`
+  width: 75%;
+  padding-right: 20px;
+`
 
 const SecondColumn = styled.div`
+  flex: 1;
   position: relative;
   top: calc(${spacing("large")} * -1 - 50px);
   @media only screen and (max-width: ${wrapper("large")}) {
