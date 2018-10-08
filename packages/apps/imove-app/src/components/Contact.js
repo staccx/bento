@@ -20,10 +20,19 @@ const Contact = ({ name, tel, mail, postalNumber, consent }) => (
       <TranslatedText i18nKey="heading-kontakt" />
     </Heading>
 
-    <Input label="Fullt navn" value={name} />
-    <PhoneInput label="Telefon" value={tel} />
-    <EmailInput label="Epostadresse" value={mail} />
-    <PostalCodeInput label="Postnr" value={postalNumber} />
+    <Input label="Fullt navn" defaultValue={name} id={"fullName"} />
+    <PhoneInput label="Telefon" defaultValue={tel} id={"phone"} />
+    <Input
+      label="Epostadresse"
+      defaultValue={mail}
+      id={"email"}
+      type={"email"}
+    />
+    <PostalCodeInput
+      label="Postnr"
+      defaultValue={postalNumber}
+      id={"postalCode"}
+    />
     <Flag
       img={
         <Toggle
@@ -56,9 +65,9 @@ Contact.propTypes = {
 
 Contact.defaultProps = {
   name: "",
-  tel: "",
+  tel: null,
   mail: "",
-  postalNumber: "",
+  postalNumber: null,
   consent: false
 }
 

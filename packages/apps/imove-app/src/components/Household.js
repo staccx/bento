@@ -41,6 +41,7 @@ const Household = () => (
               labelWidth="48"
               label="Alder"
               placeholder="0"
+              key={index}
             />
           ))}
         </Layout>
