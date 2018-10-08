@@ -25,13 +25,22 @@ import LogIn from "./pages/LogIn"
 
 const App = epitath(function*() {
   const { result } = yield <SanityList type={"translations"} />
-  if(!result) {
+  if (!result) {
     return null
   }
   console.log(result)
+  const texts = result.reduce((acc, curr) => {
+    acc[curr.i18nKey.current] = curr.value[0]
+    return acc
+  }, {})
+
+  if (!texts) {
+    return null
+  }
+  console.log(texts)
   return (
     <ThemeProxyProvider theme={imoveTheme}>
-      <LanguageProvider texts={result}>
+      <LanguageProvider texts={texts} language={"nb"} languages={["nb"]}>
         <Router>
           <Route
             render={({ location, match }) => {
