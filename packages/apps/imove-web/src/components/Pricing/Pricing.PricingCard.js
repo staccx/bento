@@ -4,10 +4,13 @@ import PriceBlob from "./Pricing.PriceBlob"
 import styled from "styled-components"
 import { color, font, spacing } from "@staccx/theme"
 import { Heading } from "@staccx/base"
+import { SanityImage } from "@staccx/sanity"
 
 const PricingCard = ({ car }) => (
   <Content>
-    <img src={car.img} alt={car.name} />
+    <SanityImage image={car.img}>
+      {({ image }) => <img src={image.url()} alt={car.name} />}
+    </SanityImage>
     <StyledHeading level={3} variant="secondary">
       {car.name}
     </StyledHeading>
