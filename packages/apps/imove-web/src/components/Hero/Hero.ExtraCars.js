@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { spacing, color, font } from "@staccx/theme"
 import { Heading } from "@staccx/base"
+import { SanityImage } from "@staccx/sanity"
 
 const ExtraCars = ({ data, isReversed }) => (
   <Row isReversed={isReversed}>
@@ -12,7 +13,9 @@ const ExtraCars = ({ data, isReversed }) => (
     <CarColumn>
       {data.cars.map(x => (
         <Car key={x._key}>
-          <img src={x.img} alt={x.alt} />
+          <SanityImage image={x.img}>
+            {({ image }) => <img src={image.url()} alt={x.alt} />}
+          </SanityImage>
           <HeroCarHeading level={3}>{x.heading}</HeroCarHeading>
           <HeroCarSub>{x.headingSub}</HeroCarSub>
         </Car>
