@@ -1,18 +1,17 @@
 import React from "react"
 import { Layout, Button, Heading, Text, Wrapper } from "@staccx/base"
 import { backwards } from "../components/transitions/transitions"
+import { TranslatedText } from "@staccx/i18n"
 
 const End = ({ history }) => {
   return (
     <Wrapper size="small">
       <Layout>
         <Heading level="1">
-          Avslutt abonnementet {/* TODO: Sanitytext */}
+          <TranslatedText i18nKey="heading-avslutt-abonnementet" />
         </Heading>
         <Text>
-          Klikk nedenfor for å avslutte abonnementet ditt. Ihht vilkårene for
-          tjenesten løper ditt abonnement fram til{" "}
-          <code>dagens dato + 30 dager</code>.{/* TODO: Sanitytext */}
+          <TranslatedText i18nKey="intro-avslutt-abonnement" />
         </Text>
 
         <div>
@@ -23,7 +22,7 @@ const End = ({ history }) => {
               })
             }
           >
-            Avslutt abonnement {/* TODO: Sanitytext */}
+            <TranslatedText i18nKey="knapp-avslutt-abonnement" />
           </Button>
           <Button
             onClick={() =>
@@ -34,7 +33,7 @@ const End = ({ history }) => {
             }
             variant="secondary"
           >
-            Tilbake {/* TODO: Sanitytext */}
+            <TranslatedText i18nKey="tilbake-knapp-avslutt-abonnement" />
           </Button>
         </div>
       </Layout>

@@ -1,18 +1,16 @@
 import React from "react"
 import { Layout, Button, Heading, Text, Wrapper } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 
 const EndConfirmation = ({ history }) => {
   return (
     <Wrapper size="small">
       <Layout>
         <Heading level="1">
-          Avslutt abonnementet {/* TODO: Sanitytext */}
+          <TranslatedText i18nKey="heading-avslutt-abonnementet" />
         </Heading>
         <Text>
-          Oppsigelse mottatt. Abonnememntet ditt løper frem til{" "}
-          <code>dagens dato + 30 dager</code>. Vi kontakter deg for å avtale det
-          praktiske rundt tilbakeleveringen av bilen.
-          {/* TODO: Sanitytext */}
+          <TranslatedText i18nKey="intro-avslutt-abonnement-bekreftelse" />
         </Text>
 
         <Button
@@ -22,7 +20,7 @@ const EndConfirmation = ({ history }) => {
             })
           }
         >
-          Ok {/* TODO: Sanitytext */}
+          <TranslatedText i18nKey="knapp-avslutt-abonnement-bekreftelse" />
         </Button>
       </Layout>
     </Wrapper>
