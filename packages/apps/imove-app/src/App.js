@@ -1,5 +1,8 @@
-import React, { Component } from "react"
+import React from "react"
+import epitath from "epitath"
 import { ThemeProxyProvider } from "@staccx/theme"
+import { SanityList } from "@staccx/sanity"
+import { LanguageProvider } from "@staccx/i18n"
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 import Transitions from "./components/transitions/transitions"
 import { imoveTheme } from "@staccx/imove-theme"
@@ -20,10 +23,15 @@ import End from "./pages/End"
 import EndConfirmation from "./pages/EndConfirmation"
 import LogIn from "./pages/LogIn"
 
-class App extends Component {
-  render() {
-    return (
-      <ThemeProxyProvider theme={imoveTheme}>
+const App = epitath(function*() {
+  const { result } = yield <SanityList type={"translations"} />
+  if(!result) {
+    return null
+  }
+  console.log(result)
+  return (
+    <ThemeProxyProvider theme={imoveTheme}>
+      <LanguageProvider texts={result}>
         <Router>
           <Route
             render={({ location, match }) => {
@@ -114,9 +122,9 @@ class App extends Component {
             }}
           />
         </Router>
-      </ThemeProxyProvider>
-    )
-  }
-}
+      </LanguageProvider>
+    </ThemeProxyProvider>
+  )
+})
 
 export default App
