@@ -1,10 +1,10 @@
 import React from "react"
 import epitath from "epitath"
 import { SanityList } from "@staccx/sanity"
-import { State, Loading } from "@staccx/base"
+import { Loading } from "@staccx/base"
 import { Route, Switch } from "react-router-dom"
 import PreviewLive from "./pages/PreviewLive"
-import { Case, Home, Page } from "./pages/_codeSplitting"
+import { Case, Home, Page, Clients } from "./pages/_codeSplitting"
 import FourOFour from "./pages/404"
 import styled from "styled-components"
 
@@ -36,6 +36,36 @@ const Routes = epitath(function*({ change, inverted }) {
       />
       <Route path="/" exact render={() => <Home change={change} />} />
       <Route path="/404" exact component={FourOFour} />
+      <Route path={"/clients"}>
+        <Switch>
+          <Route path={"/clients"} exact component={Clients} />
+          {clientCaseStudyPages.map(client => {
+            return client.caseStudies
+              ? client.caseStudies.map(caseStudy => {
+                  if (!caseStudy.path) {
+                    return null
+                  }
+                  return (
+                    <Route
+                      key={caseStudy._key}
+                      exact
+                      path={caseStudy.path.current}
+                      render={() => <Case caseStudy={caseStudy} />}
+                    />
+                  )
+                })
+              : null
+          })}
+          <Route
+            render={() => {
+              if (!inverted) {
+                change({ inverted: true })
+              }
+              return <FourOFour />
+            }}
+          />
+        </Switch>
+      </Route>
       {pages.map(page => (
         <Route
           key={page._id}
@@ -51,22 +81,6 @@ const Routes = epitath(function*({ change, inverted }) {
         />
       ))}
       }}
-      {clientCaseStudyPages.map(client => {
-        return client.caseStudies
-          ? client.caseStudies.map(caseStudy => {
-              if (!caseStudy.path) {
-                return null
-              }
-              return (
-                <Route
-                  key={caseStudy._key}
-                  path={caseStudy.path.current}
-                  render={() => <Case caseStudy={caseStudy} />}
-                />
-              )
-            })
-          : null
-      })}
       <Route
         render={() => {
           if (!inverted) {
