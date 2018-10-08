@@ -2,11 +2,11 @@ import React from "react"
 import Header from "./components/Header/Header"
 import Home from "./pages/Home"
 
-const Page = () => (
+const Page = ({ data }) => (
   <div>
     <Header />
     <main>
-      <Home />
+      <Home data={data} />
     </main>
   </div>
 )

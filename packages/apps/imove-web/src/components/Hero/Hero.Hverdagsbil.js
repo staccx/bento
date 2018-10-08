@@ -1,11 +1,14 @@
 import React from "react"
 import { Heading } from "@staccx/base"
 import { color, font, spacing, wrapper } from "@staccx/theme"
+import { SanityImage } from "@staccx/sanity"
 import styled from "styled-components"
 
 const Hverdagsbil = ({ data }) => (
   <div>
-    <img src={data.img} alt={data.imgAlt} />
+    <SanityImage image={data.img}>
+      {({ image }) => <img src={image.url()} alt={data.imgAlt} />}
+    </SanityImage>
     <Columns>
       <FirstColumn>
         <HeroCarHeading level={3}>{data.heading}</HeroCarHeading>

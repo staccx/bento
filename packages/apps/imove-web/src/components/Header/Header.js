@@ -26,7 +26,10 @@ const Header = () => (
             <a href="/app">Logg inn</a>
           </LoginButton>
         </MenuItems>
-        <MenuButton onClick={() => this.handleMenu()} isOpen={false} />
+        <MenuButton
+          onClick={() => console.log("this eksisterer ikke her")}
+          isOpen={false}
+        />
       </Navigation>
     </StyledWrapper>
   </Menu>
