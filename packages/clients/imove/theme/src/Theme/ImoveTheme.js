@@ -39,7 +39,14 @@ const wrapper = {
   medium: "640px",
   large: "1040px",
   largePlus: "1280px",
-  breakout: "640px"
+  breakout: "640px",
+  chromeMobileS: "320px",
+  chromeMobileM: "375px",
+  chromeMobileL: "425px",
+  chromeTablet: "768px",
+  chromeLaptop: "1024px",
+  chromeLaptopL: "1440px",
+  chrome4K: "2560px"
 }
 
 const spacing = {
