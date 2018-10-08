@@ -12,17 +12,18 @@ import {
   Wrapper
 } from "@staccx/base"
 import { backwards } from "../components/transitions/transitions"
+import { TranslatedText } from "@staccx/i18n"
 
 const Sell = ({ history }) => {
   const labelWidth = 120
   return (
     <Wrapper size="small">
       <Layout>
-        <Heading level="1">Bli pilotkunde {/* TODO: Sanitytext */}</Heading>
+        <Heading level="1">
+          <TranslatedText i18nKey="heading-venteliste" />
+        </Heading>
         <Text>
-          Vi har dessverre ikke plass til flere pilotkunder nå, men håper på å
-          åpne opp for flere snart. Skriv inn din epostadresse nedenfor for å
-          komme på vår venteliste. {/* TODO: Sanitytext */}
+          <TranslatedText i18nKey="intro-venteliste" />
         </Text>
 
         <EmailInput label="Epostadresse" labelWidth={labelWidth} />
@@ -37,14 +38,12 @@ const Sell = ({ history }) => {
               input={{}}
               onChange={() => null}
             >
-              Jeg ønsker også å motta tilbud og oppdateringer fra imove på epost{" "}
-              {/* TODO: Sanitytext */}
+              <TranslatedText i18nKey="label-motta-oppdateringer" />
             </Toggle>
           }
         >
           <Label className="" htmlFor="tilbud">
-            Jeg ønsker også å motta tilbud og oppdateringer fra imove på epost{" "}
-            {/* TODO: Sanitytext */}
+            <TranslatedText i18nKey="label-motta-oppdateringer" />
           </Label>
         </Flag>
         <ItemGroup>
@@ -55,7 +54,7 @@ const Sell = ({ history }) => {
               })
             }
           >
-            Send {/* TODO: Sanitytext */}
+            <TranslatedText i18nKey="knapp-ventelist-send" />
           </Button>
           <Button
             onClick={() =>
@@ -66,7 +65,7 @@ const Sell = ({ history }) => {
             }
             variant="secondary"
           >
-            Tilbake {/* TODO: Sanitytext */}
+            <TranslatedText i18nKey="knapp-tilbake" />
           </Button>
         </ItemGroup>
       </Layout>

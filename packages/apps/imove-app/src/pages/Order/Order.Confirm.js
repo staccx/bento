@@ -2,6 +2,7 @@ import React from "react"
 import { Layout, Heading, Button } from "@staccx/base"
 import { Link } from "react-router-dom"
 import cars from "../../data/cars"
+import { TranslatedText } from "@staccx/i18n"
 
 const OrderConfirm = ({ match }) => {
   const car = cars.filter(
@@ -11,11 +12,11 @@ const OrderConfirm = ({ match }) => {
   // TODO: If not logged in, redirect to auth
   return (
     <Layout paddingTop="medium" paddingBottom="huge">
-      <Heading level={1}>Du er i gang!</Heading> {/* TODO: Replace text */}
+      <Heading level={1}>
+        <TranslatedText i18nKey="heading-bestillingsbekreftelse" />
+      </Heading>
       <p>
-        Vi holder av bilen for deg, og tar kontakt innen to arbeidsdager for å
-        avtale levering. Normal leveringstid er 2–4 virkedager. Når bilen er
-        levert kan du se den på Min side.
+        <TranslatedText i18nKey="intro-bestillingsbekreftelse" />
       </p>
       <img src={car.images[0]} alt="" />
       <div>
@@ -25,7 +26,9 @@ const OrderConfirm = ({ match }) => {
         <div>{car.pricePerMonth}</div>
       </div>
       <Link to={`/app/my-car`}>
-        <Button>Til Min bil</Button> {/* TODO: Replace text */}
+        <Button>
+          <TranslatedText i18nKey="knapp-bestillingsbekreftelse-ferdig" />
+        </Button>
       </Link>
     </Layout>
   )

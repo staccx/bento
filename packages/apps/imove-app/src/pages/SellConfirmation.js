@@ -1,14 +1,16 @@
 import React from "react"
 import { Layout, Button, Heading, Text, Wrapper } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 
 const SellConfirmation = ({ history }) => {
   return (
     <Wrapper size="small">
       <Layout>
-        <Heading level="1">Selg min bil {/* TODO: Sanitytext */}</Heading>
+        <Heading level="1">
+          <TranslatedText i18nKey="heading-bekreftelse-selg-bil" />
+        </Heading>
         <Text>
-          Takk for henvendelsen! Vi kontakter deg om kort tid.{" "}
-          {/* TODO: Sanitytext */}
+          <TranslatedText i18nKey="intro-bekreftelse-selge-bil" />
         </Text>
 
         <Button
@@ -18,7 +20,7 @@ const SellConfirmation = ({ history }) => {
             })
           }
         >
-          Ferdig {/* TODO: Sanitytext */}
+          <TranslatedText i18nKey="knapp-bekreftelse-selg-bil" />
         </Button>
       </Layout>
     </Wrapper>

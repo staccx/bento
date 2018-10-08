@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { Heading, Box, Layout } from "@staccx/base"
 import { color, font } from "@staccx/theme"
+import { TranslatedText } from "@staccx/i18n"
 
 const CarsListItem = ({
   images,
@@ -27,12 +28,15 @@ const CarsListItem = ({
             </div>
           </CarInfo>
           <CarInfo>
-            <span>Årsmodell: {year}</span> {/* TODO: replace text */}
+            <span>
+              <TranslatedText i18nKey="billiste-arsmodell" />: {year}
+            </span>
           </CarInfo>
         </div>
         <div>
-          <ReadMore to={`/app/car/${chassisNumber}`}>Les mer</ReadMore>
-          {/* TODO: replace text */}
+          <ReadMore to={`/app/car/${chassisNumber}`}>
+            <TranslatedText i18nKey="billiste-les-mer" />
+          </ReadMore>
         </div>
       </Layout>
     </Box>
