@@ -11,6 +11,7 @@
     "epitath": "^1.0.0-beta.1",
     "history": "^4.7.2",
     "nuka-carousel": "^4.4.0",
+    "react-dom-confetti": "^0.0.10",
     "react-step-wizard": "^4.3.1",
     "react-transition-group": "^2.5.0"
   },
