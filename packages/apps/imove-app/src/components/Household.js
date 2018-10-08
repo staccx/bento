@@ -11,10 +11,9 @@ import {
 import householdPersons from "../data/householdPersons"
 import { TranslatedText } from "@staccx/i18n"
 
-const Household = ({ numberPersons }) => (
+const Household = () => (
   <State>
     {({ change, people = 1 }) => {
-      console.log(people)
       return (
         <Layout>
           <Heading level="1">
