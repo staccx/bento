@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { media } from "../../styleUtils"
 import { spacing, font, color } from "@staccx/theme"
 import { Wrapper } from "@staccx/base"
 import SectionHeading from "../SectionHeading/SectionHeading"
@@ -19,6 +20,9 @@ const Advantages = ({ data }) => (
 
 const Content = styled.div`
   padding: ${spacing.huge} ${spacing("largePlus")};
+  ${media.chromeTablet`
+    padding: ${spacing.large} 0;
+  `};
 `
 
 const Container = styled.ul`

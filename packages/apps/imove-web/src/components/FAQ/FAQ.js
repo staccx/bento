@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { media } from "../../styleUtils"
 import { font, fontWeight, color, spacing } from "@staccx/theme"
 import { Wrapper } from "@staccx/base"
 import SectionHeading from "../SectionHeading/SectionHeading"
@@ -25,6 +26,9 @@ const FAQ = ({ data }) => (
 
 const Content = styled.div`
   padding: ${spacing.huge} ${spacing("largePlus")};
+  ${media.chromeTablet`
+    padding: ${spacing.large} 0;
+  `};
 `
 
 const List = styled.ul`
