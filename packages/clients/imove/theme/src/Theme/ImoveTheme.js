@@ -25,7 +25,11 @@ import { ProfileIcon } from "./Icons/ProfileIcon"
 import { SliderThumb, SliderTrack } from "./Theme.Slider"
 import { LayoutStyling } from "./Theme.Layout"
 import { ListStyling } from "./Theme.Lists"
-import { CheckBoxLabel } from "./Theme.CheckBox"
+import {
+  CheckBoxLabel,
+  CheckBoxCheckContainer,
+  CheckBoxCheck
+} from "./Theme.CheckBox"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -68,6 +72,7 @@ const color = {
   bg: "#fff",
   bgGray: "#F6F6F6",
   primary: "#4FAF73",
+  primaryLight: "#83ECAA",
   secondary: "#124F5E",
   toneDown: "#8C8C8C",
   gray: "#767676",
@@ -160,5 +165,7 @@ const t = new Theme(BaseTheme, {
   .add(LayoutStyling)
   .add(ListStyling)
   .add(CheckBoxLabel)
+  .add(CheckBoxCheckContainer)
+  .add(CheckBoxCheck)
 
 export default t
