@@ -1,7 +1,8 @@
 import React from "react"
 import axios from "axios"
+import PropTypes from "prop-types"
 import qs from "qs"
-import { challengeIdentity } from "./utils"
+import { challengeIdentity, signInRedirectCallback } from "./utils"
 
 class Login extends React.Component {
   constructor(props) {
@@ -17,12 +18,14 @@ class Login extends React.Component {
 
     let stage
     if (hashParams["#id_token"]) {
-      window.sessionStorage.setItem("stacc_id_token", hashParams["#id_token"])
-      window.sessionStorage.setItem(
-        "stacc_access_token",
-        hashParams["access_token"]
-      )
-      window.location.replace(props.config.redirectAfterLogin)
+      signInRedirectCallback()
+        .then(user => {
+          console.log(user)
+          window.location.replace(props.redirectAfterLogin)
+        })
+        .catch(function(e) {
+          console.error(e)
+        })
     } else if (searchParams.state && searchParams.nonce) {
       stage = stages.waitingForValidation
       this.submitDataFromMagicLink(searchParams.state, searchParams.nonce)
@@ -32,7 +35,7 @@ class Login extends React.Component {
       stage = stages.waitingForState
       challengeIdentity({
         ...props.oidcConfig,
-        acr_values: `idp:${props.config.acrValue}`
+        acr_values: `idp:${props.acrValue}`
       })
     }
 
@@ -51,7 +54,7 @@ class Login extends React.Component {
 
   submitDataFromMagicLink(state, nonce) {
     return axios
-      .post(this.props.config.codePostUri, { state, nonce })
+      .post(this.props.codePostUri, { state, nonce })
       .then(res => res.status === 200)
       .catch(console.error)
   }
@@ -64,13 +67,15 @@ class Login extends React.Component {
       stage: stages.submittingCode
     })
 
+    console.log("submitting", state, nonce)
     return axios
-      .post(this.props.config.codePostUri, { state, nonce })
+      .post(this.props.codePostUri, { state, nonce })
       .then(res => {
         if (res.status === 200) {
+          console.log("200 ok!")
           window.location.replace(
-            this.props.config.oidcConfig.authority +
-              this.props.config.callbackPath +
+            this.props.oidcConfig.authority +
+              this.props.callbackPath +
               "?" +
               qs.stringify({ state })
           )
@@ -97,26 +102,27 @@ class Login extends React.Component {
           state
         }
 
+    console.log(postData)
     this.setState({
       stage: stages.submittingId
     })
 
     return axios
-      .post(this.props.config.idPostUri, postData)
+      .post(this.props.idPostUri, postData)
       .then(res => {
         this.setState({
           stage:
             res.status === 200 ? stages.waitingForCode : stages.failedToSubmitId
         })
 
-        if (res.status === 200 && this.props.config.magicPollUri) {
+        if (res.status === 200 && this.props.magicPollUri) {
           const timer = setInterval(() => {
-            axios.post(this.props.config.magicPollUri, { state }).then(res => {
+            axios.post(this.props.magicPollUri, { state }).then(res => {
               if (res.status === 200) {
                 clearInterval(timer)
                 window.location.replace(
-                  this.props.config.oidcConfig.authority +
-                    this.props.config.callbackPath +
+                  this.props.oidcConfig.authority +
+                    this.props.callbackPath +
                     "?" +
                     qs.stringify({ state: this.state.stateToken })
                 )
@@ -163,3 +169,14 @@ export const stages = {
 }
 
 export default Login
+
+Login.propTypes = {
+  acrValue: PropTypes.string.isRequired,
+  callbackPath: PropTypes.string.isRequired,
+  children: PropTypes.func.isRequired,
+  codePostUri: PropTypes.string.isRequired,
+  idPostUri: PropTypes.string.isRequired,
+  magicPollUri: PropTypes.string.isRequired,
+  oidcConfig: PropTypes.any.isRequired,
+  redirectAfterLogin: PropTypes.string.isRequired
+}
