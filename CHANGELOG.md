@@ -3,6 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.9.0"></a>
+# [7.9.0](https://bitbucket.org/stacc-flow/bento/compare/v7.8.1...v7.9.0) (2018-10-09)
+
+
+### Bug Fixes
+
+* **imove-app:** add ids etc ([35cf9d3](https://bitbucket.org/stacc-flow/bento/commits/35cf9d3))
+* **imove-app:** cleaning ([f57ebc5](https://bitbucket.org/stacc-flow/bento/commits/f57ebc5))
+* **imove-web:** fix broken image links ([fc36a09](https://bitbucket.org/stacc-flow/bento/commits/fc36a09))
+* **stacc-website:** fix client case study not rendering ([be9033c](https://bitbucket.org/stacc-flow/bento/commits/be9033c))
+
+
+### Features
+
+* **imove:** general responsivity ([fface44](https://bitbucket.org/stacc-flow/bento/commits/fface44))
+* **imove-app:** add functionality for handling more than one person ([369bb83](https://bitbucket.org/stacc-flow/bento/commits/369bb83))
+* **imove-app:** add i18n ([7b92197](https://bitbucket.org/stacc-flow/bento/commits/7b92197))
+* **imove-app:** add i18n ([f72eda4](https://bitbucket.org/stacc-flow/bento/commits/f72eda4))
+* **imove-app:** add moar 🎉🎊 ([3682423](https://bitbucket.org/stacc-flow/bento/commits/3682423))
+* **imove-app:** add OrderAdditional page ([4cc0106](https://bitbucket.org/stacc-flow/bento/commits/4cc0106))
+* **imove-app:** added Wrapper to all pages again ([4fbbecb](https://bitbucket.org/stacc-flow/bento/commits/4fbbecb))
+* **imove-app:** i18n implemented ([46d51e2](https://bitbucket.org/stacc-flow/bento/commits/46d51e2))
+* **imove-app:** menu now responsive ([d9ff6aa](https://bitbucket.org/stacc-flow/bento/commits/d9ff6aa))
+* **imove-app:** remove Wrapper ([887c60a](https://bitbucket.org/stacc-flow/bento/commits/887c60a))
+* **imove-app:** wip TranslatedText ([29613be](https://bitbucket.org/stacc-flow/bento/commits/29613be))
+* **imove-theme:** add styles for CheckBox variant iconBox ([a45b76f](https://bitbucket.org/stacc-flow/bento/commits/a45b76f))
+* **imove-web:** add chrome devtools responsive widths to theme ([d1be409](https://bitbucket.org/stacc-flow/bento/commits/d1be409))
+* **imove-web:** add data from sanity ([5f5e78f](https://bitbucket.org/stacc-flow/bento/commits/5f5e78f))
+* **imove-web:** add media templates with styleUtils.js ([036e251](https://bitbucket.org/stacc-flow/bento/commits/036e251))
+* **imove-web:** add more responsivity ([049a0a3](https://bitbucket.org/stacc-flow/bento/commits/049a0a3))
+* **imove-web:** add responsivity to sections ([6da19f3](https://bitbucket.org/stacc-flow/bento/commits/6da19f3))
+* **imove-web:** hero responsivity ([c3c8d8e](https://bitbucket.org/stacc-flow/bento/commits/c3c8d8e))
+* **imove-web:** start responsivity [wip] ([b161ffd](https://bitbucket.org/stacc-flow/bento/commits/b161ffd))
+* **imove-web:** style FAQ and footer ([b7b6718](https://bitbucket.org/stacc-flow/bento/commits/b7b6718))
+* **imove-web:** styled footer ([fd91430](https://bitbucket.org/stacc-flow/bento/commits/fd91430))
+* **open-id:** add signInRedirectCallback when logged in ([b838688](https://bitbucket.org/stacc-flow/bento/commits/b838688))
+* **sanity-plugin-i18n:** add sanity plugin for i18n ([bd301b7](https://bitbucket.org/stacc-flow/bento/commits/bd301b7))
+
+
+
+
+
 <a name="7.7.4"></a>
 ## [7.7.4](https://bitbucket.org/projects/stacc-flow/repos/bento/compare/diff?targetBranch=refs%2Ftags%2Fv7.7.3&sourceBranch=refs%2Ftags%2Fv7.7.4) (2018-09-19)
 
