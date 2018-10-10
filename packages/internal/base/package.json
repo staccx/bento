@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "7.9.0",
+  "version": "7.9.5",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -14,9 +14,10 @@
   "scripts": {
     "precommit": "lint-staged",
     "test": "react-scripts test --env=jsdom",
-    "build": "yarn prettify && node build.js && rollup -c",
+    "build:packages": "node build.js",
+    "build": "yarn prettify && rollup -c",
     "start": "node build.js && rollup -c -w",
-    "prepare": "yarn build",
+    "prepare": "yarn build && yarn build:packages",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
