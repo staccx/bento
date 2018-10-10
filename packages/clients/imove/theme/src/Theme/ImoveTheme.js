@@ -40,7 +40,7 @@ const targetSize = {
 }
 
 const wrapper = {
-  small: "420px",
+  small: "540px",
   medium: "640px",
   large: "1040px",
   largePlus: "1280px",
@@ -73,6 +73,7 @@ const color = {
   bgGray: "#F6F6F6",
   primary: "#4FAF73",
   primaryLight: "#83ECAA",
+  primaryDark: "#1C966B",
   secondary: "#124F5E",
   toneDown: "#8C8C8C",
   gray: "#767676",

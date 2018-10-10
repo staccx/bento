@@ -22,6 +22,7 @@ export default registerStyle(
       }
     `,
     mainNavigation: css`
+      display: block;
       background-color: ${color.primary};
       color: ${color.white};
       border-radius: 0;
@@ -47,6 +48,26 @@ export default registerStyle(
       &::before {
         content: "< ";
         text-indent: -6px;
+      }
+    `,
+    filter: css`
+      background-color: ${p =>
+        p.isOpen ? color("primaryDark")(p) : color("primary")(p)};
+      color: ${color.white};
+      border-radius: 0;
+      width: 100%;
+    `,
+    inverted: css`
+      background-color: ${color.white};
+      color: ${color.primary};
+      border-radius: 0;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${color.white};
+        color: ${color.primary};
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
     `
   },
