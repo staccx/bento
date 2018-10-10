@@ -1,15 +1,15 @@
 {
   "name": "@staccx/control-panel",
-  "version": "7.8.2",
+  "version": "7.9.0",
   "private": true,
   "main": "src/main.js",
   "productName": "Bento ctrl",
   "homepage": "./",
   "dependencies": {
     "@lerna/list": "^3.3.2",
-    "@staccx/base": "^7.8.1",
-    "@staccx/soy": "^7.8.0",
-    "@staccx/theme": "^7.8.0",
+    "@staccx/base": "^7.9.0",
+    "@staccx/soy": "^7.9.0",
+    "@staccx/theme": "^7.9.0",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
@@ -30,7 +30,7 @@
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/logo.png.icns --prune=true --out=release-builds"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.8.0",
+    "@staccx/rollup-config": "^7.9.0",
     "electron": "^3.0.0",
     "electron-packager": "^12.1.2",
     "foreman": "^3.0.1",
