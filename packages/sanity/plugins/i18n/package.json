@@ -34,7 +34,9 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "prettify": "^0.1.7"
-  }
+  },
+  "gitHead": "297e66dbf355a6ce9a98fbf31643e11ea6ccbe13"
 }
