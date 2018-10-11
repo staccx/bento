@@ -1,6 +1,6 @@
 {
   "name": "@staccx/code-generator",
-  "version": "7.9.0",
+  "version": "7.10.0",
   "description": "Generates code based on templates",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -33,6 +33,6 @@
     "qs": "^6.5.1"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.9.0"
+    "@staccx/rollup-config": "^7.10.0"
   }
 }

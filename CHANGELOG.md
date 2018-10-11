@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.10.0"></a>
+# [7.10.0](https://bitbucket.org/stacc-flow/bento/compare/v7.9.0...v7.10.0) (2018-10-11)
+
+
+### Bug Fixes
+
+* **sanity-plugin-i18n:** fix build ([deb7ad8](https://bitbucket.org/stacc-flow/bento/commits/deb7ad8))
+
+
+### Features
+
+* **base:** add search can now take new props ([260af98](https://bitbucket.org/stacc-flow/bento/commits/260af98))
+* **imove-theme:** improve Buttons, Box ([380ea90](https://bitbucket.org/stacc-flow/bento/commits/380ea90))
+* **open-id:** add hoc ([64638ca](https://bitbucket.org/stacc-flow/bento/commits/64638ca))
+* **stacc-web:** add scaling to now config ([dd8fce1](https://bitbucket.org/stacc-flow/bento/commits/dd8fce1))
+
+
+
+
+
 <a name="7.9.0"></a>
 # [7.9.0](https://bitbucket.org/stacc-flow/bento/compare/v7.8.1...v7.9.0) (2018-10-09)
 
