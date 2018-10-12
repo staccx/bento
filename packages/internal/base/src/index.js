@@ -110,6 +110,9 @@ import CopyToClipboardComponent from "./components/CopyToClipboard/CopyToClipboa
 // State
 import State from "./components/State/State"
 
+// Wait
+import Wait from "./components/Wait/Wait"
+
 // Search
 import Search from "./components/Search/Search"
 require("es6-promise").polyfill()
@@ -188,6 +191,7 @@ export {
   Tag,
   Text,
   Toggle,
+  Wait,
   Warning,
   Wrapper
 }
