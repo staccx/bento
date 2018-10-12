@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.12.0"></a>
+# [7.12.0](https://bitbucket.org/stacc-flow/bento/compare/v7.11.0...v7.12.0) (2018-10-12)
+
+
+### Features
+
+* **imove-theme:** improve focus, hover states ([b0e5ca3](https://bitbucket.org/stacc-flow/bento/commits/b0e5ca3))
+* **imove-theme:** lighten main enu ([97f4586](https://bitbucket.org/stacc-flow/bento/commits/97f4586))
+* **imove-web:** add font size small ([bb81edd](https://bitbucket.org/stacc-flow/bento/commits/bb81edd))
+
+
+
+
+
 <a name="7.11.0"></a>
 # [7.11.0](https://bitbucket.org/stacc-flow/bento/compare/v7.10.0...v7.11.0) (2018-10-11)
 

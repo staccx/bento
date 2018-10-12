@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.12.0"></a>
+# [7.12.0](https://bitbucket.org/stacc-flow/bento/compare/v7.11.0...v7.12.0) (2018-10-12)
+
+
+### Features
+
+* **base:** add Wait ([83c717e](https://bitbucket.org/stacc-flow/bento/commits/83c717e))
+
+
+
+
+
 <a name="7.11.0"></a>
 # [7.11.0](https://bitbucket.org/stacc-flow/bento/compare/v7.10.0...v7.11.0) (2018-10-11)
 
