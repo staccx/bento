@@ -30,6 +30,7 @@ import {
   CheckBoxCheckContainer,
   CheckBoxCheck
 } from "./Theme.CheckBox"
+import { ToggleElementStyling } from "./Theme.Toggle"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -168,5 +169,6 @@ const t = new Theme(BaseTheme, {
   .add(CheckBoxLabel)
   .add(CheckBoxCheckContainer)
   .add(CheckBoxCheck)
+  .add(ToggleElementStyling)
 
 export default t
