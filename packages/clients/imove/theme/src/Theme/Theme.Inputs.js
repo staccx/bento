@@ -15,10 +15,12 @@ export const InputStyling = registerStyle(
       transition: border-color 0.2s ease-out;
       padding-left: ${p => (p.labelWidth ? p.labelWidth + "px" : spacing.huge)};
       font-weight: 400;
+
       &:hover,
       &:focus,
       &:active {
         background-color: transparent;
+        border-bottom-width: 2px;
         border-color: ${color("darkBlue")};
       }
     `
