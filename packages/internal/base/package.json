@@ -73,6 +73,6 @@
     "webpack-blocks": "^1.0.0-rc.2"
   },
   "peerDependencies": {
-    "styled-components": "^4.0.0-beta.10"
+    "styled-components": "^4.0.0"
   }
 }
