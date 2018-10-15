@@ -4,7 +4,7 @@ import { Provider } from "./context"
 import Api from "./services/api"
 import Auth from "./services/auth"
 
-class OIDCProvider extends Component {
+class OpenIdProvider extends Component {
   constructor(props, context) {
     super(props, context)
 
@@ -107,15 +107,15 @@ class OIDCProvider extends Component {
   }
 }
 
-OIDCProvider.propTypes = {
+OpenIdProvider.propTypes = {
   apiRoot: PropTypes.string,
   children: PropTypes.any,
   oidcConfig: PropTypes.any,
   onUserFetched: PropTypes.func
 }
 
-export default OIDCProvider
+export default OpenIdProvider
 
-OIDCProvider.defaultProps = {
+OpenIdProvider.defaultProps = {
   apiRoot: "/"
 }
