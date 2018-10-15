@@ -40,6 +40,6 @@
     "rollup": "^0.65.0"
   },
   "peerDependencies": {
-    "styled-components": "^4.0.0-beta.10"
+    "styled-components": "^4.0.0"
   }
 }
