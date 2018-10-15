@@ -10,7 +10,8 @@ import {
   RadioPillItemHover,
   RadioPillItemChecked,
   RadioPillLabel,
-  RadioPillContainer
+  RadioPillContainer,
+  RadioPillWrapper
 } from "./Theme.Radiopill"
 import {
   InputStyling,
@@ -170,5 +171,6 @@ const t = new Theme(BaseTheme, {
   .add(CheckBoxCheckContainer)
   .add(CheckBoxCheck)
   .add(ToggleElementStyling)
+  .add(RadioPillWrapper)
 
 export default t

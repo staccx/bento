@@ -20,6 +20,22 @@ export const RadioPillContainer = registerStyle(
   RadioPill.themeProps.container
 )
 
+export const RadioPillWrapper = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      input:checked {
+        &:hover,
+        &:focus {
+          ~ label {
+            color: ${color.secondary} !important;
+          }
+        }
+      }
+    `
+  },
+  RadioPillItem.themeProps.wrapper
+)
+
 export const RadioPillItemHover = registerStyle(
   {
     [VARIANT_DEFAULT]: css`

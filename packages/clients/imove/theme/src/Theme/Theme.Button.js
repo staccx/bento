@@ -8,6 +8,14 @@ export default registerStyle(
       background-color: ${color.primary};
       color: ${color.white};
       border-radius: 0;
+      transition: background 0.2s ease;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: ${color("primaryDark")};
+        outline: none;
+      }
     `,
     secondary: css`
       background-color: transparent;
@@ -17,7 +25,7 @@ export default registerStyle(
       &:focus,
       &:active {
         background-color: transparent;
-        color: ${color.primary};
+        color: ${color.secondary};
         text-decoration: underline;
       }
     `,
