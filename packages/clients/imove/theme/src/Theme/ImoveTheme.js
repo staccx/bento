@@ -105,6 +105,7 @@ const font = {
   h6: "14px",
   base: "14px",
   tiny: "12px",
+  small: "16px",
   large: "18px",
   largePlus: "24px",
   largePlusPlus: "28px",
