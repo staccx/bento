@@ -3,6 +3,9 @@ import axios from "axios"
 import qs from "qs"
 import { challengeIdentity } from "./utils"
 
+/**
+ * @deprecated use @staccx/open-id insted
+ */
 class Login extends React.Component {
   constructor(props) {
     super(props)
