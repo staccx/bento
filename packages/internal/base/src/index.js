@@ -117,6 +117,9 @@ import State from "./components/State/State"
 // Wait
 import Wait from "./components/Wait/Wait"
 
+// Feature Toggle
+import FeatureToggle from "./components/Utilities/FeatureToggle/FeatureToggle"
+
 // Search
 import Search from "./components/Search/Search"
 require("es6-promise").polyfill()
@@ -150,6 +153,7 @@ export {
   Get,
   GlobalStyle,
   Fetch,
+  FeatureToggle,
   FileInput,
   Flag,
   fontSmoothing,
