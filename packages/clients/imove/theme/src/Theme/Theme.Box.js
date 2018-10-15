@@ -6,15 +6,19 @@ export default registerStyle(
   {
     [VARIANT_DEFAULT]: css``,
     menu: css`
-      background: ${color.white};
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
+      position: relative;
+      z-index: 10;
       padding-top: ${spacing.small};
       padding-bottom: ${spacing.small};
-      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-      z-index: 100;
+      width: 100%;
+      @media screen and (max-width: 768px) {
+        background: ${color.white};
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 100;
+      }
     `,
     myCarHeader: css`
       background-color: ${color("bgGray")};
@@ -28,7 +32,7 @@ export default registerStyle(
     `,
     carWrapper: css`
       padding: 0;
-      margin-bottom: -120px;
+      margin-bottom: ${spacing.large};
       text-align: center;
     `,
     center: css`
@@ -45,7 +49,6 @@ export default registerStyle(
       background-color: ${color.primary};
       color: ${color.white};
       border-radius: 0;
-      margin-top: -${spacing.large};
 
       h1,
       h2,
@@ -58,10 +61,15 @@ export default registerStyle(
       }
     `,
     subtleLeft: css`
-      margin-left: -${spacing.medium};
-      padding: ${spacing.small} ${spacing.medium};
-      background-color: ${color("bgGray")};
-      color: ${color.text};
+      padding: 0;
+      flex-basis: 60%;
+
+      @media screen and (max-width: 768px) {
+        margin-left: -${spacing.medium};
+        padding: ${spacing.small} ${spacing.medium};
+        background-color: ${color("bgGray")};
+        color: ${color.text};
+      }
     `
   },
   Box.themeProps.box

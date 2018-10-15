@@ -12,18 +12,27 @@ import {
   Toggle,
   Flag
 } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 
 const Contact = ({ name, tel, mail, postalNumber, consent }) => (
   <Layout>
     <Heading level="1">
-      Kontaktinfo
-      {/* TODO: Sanitytext */}
+      <TranslatedText i18nKey="heading-kontakt" />
     </Heading>
 
-    <Input label="Fullt navn" value={name} />
-    <PhoneInput label="Telefon" value={tel} />
-    <EmailInput label="Epostadresse" value={mail} />
-    <PostalCodeInput label="Postnr" value={postalNumber} />
+    <Input label="Fullt navn" defaultValue={name} id={"fullName"} />
+    <PhoneInput label="Telefon" defaultValue={tel} id={"phone"} />
+    <Input
+      label="Epostadresse"
+      defaultValue={mail}
+      id={"email"}
+      type={"email"}
+    />
+    <PostalCodeInput
+      label="Postnr"
+      defaultValue={postalNumber}
+      id={"postalCode"}
+    />
     <Flag
       img={
         <Toggle
@@ -35,16 +44,12 @@ const Contact = ({ name, tel, mail, postalNumber, consent }) => (
           input={{}}
           onChange={() => null}
         >
-          Jeg samtykker til at imove lagrer informasjon om meg og at jeg kan
-          kontaktes på e-post
-          {/* TODO: Sanitytext */}
+          <TranslatedText i18nKey="label-samtykke-lagring-kontakt" />
         </Toggle>
       }
     >
       <Label className="" htmlFor="Samtykke">
-        Jeg samtykker til at imove lagrer informasjon om meg og at jeg kan
-        kontaktes på e-post
-        {/* TODO: Sanitytext */}
+        <TranslatedText i18nKey="label-samtykke-lagring-kontakt" />
       </Label>
     </Flag>
   </Layout>
@@ -60,9 +65,9 @@ Contact.propTypes = {
 
 Contact.defaultProps = {
   name: "",
-  tel: "",
+  tel: null,
   mail: "",
-  postalNumber: "",
+  postalNumber: null,
   consent: false
 }
 

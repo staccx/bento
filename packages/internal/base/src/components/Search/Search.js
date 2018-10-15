@@ -2,31 +2,49 @@ import * as JsSearch from "js-search"
 import React from "react"
 import PropTypes from "prop-types"
 
-// TODO: getDerivedStateFromProps
+const reset = ({ documents, indices, indexer, term }) => {
+  const searcher = new JsSearch.Search(indexer)
+  indices.forEach(index => searcher.addIndex(index))
+  searcher.addDocuments(documents)
+
+  let result = documents
+  if (term) {
+    result = searcher.search(term)
+  }
+
+  return {
+    result,
+    documents,
+    searcher,
+    term
+  }
+}
+
 class Search extends React.Component {
   constructor(props, context) {
     super(props, context)
-
     this.handleSearch = this.handleSearch.bind(this)
-
-    const searcher = new JsSearch.Search(props.indexer)
-    props.indicises.forEach(index => searcher.addIndex(index))
-    searcher.addDocuments(props.documents)
-
     this.state = {
-      result: props.documents,
-      search: this.handleSearch,
-      searcher
+      ...reset(props),
+      search: this.handleSearch
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.documents !== prevProps.documents) {
+      const newState = { ...reset(this.props), term: this.state.term }
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState(newState)
     }
   }
 
   handleSearch(term) {
     if (!term) {
-      this.setState({ result: this.props.documents })
+      this.setState({ result: this.props.documents, term: null })
       return
     }
     const result = this.state.searcher.search(term)
-    this.setState({ result })
+    this.setState({ result, term })
   }
 
   render() {

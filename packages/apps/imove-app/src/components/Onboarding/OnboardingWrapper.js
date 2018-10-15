@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { Button, Layout, ItemGroup } from "@staccx/base"
 import StepIndicator from "./StepIndicator"
+import { TranslatedText } from "@staccx/i18n"
 
 class OnboardingWrapper extends Component {
   render() {
@@ -36,7 +37,7 @@ class OnboardingWrapper extends Component {
           </Button>
           {previous && (
             <Button onClick={previousStep} variant="secondary">
-              Tilbake {/* TODO: Sanitytext */}
+              <TranslatedText i18nKey="knapp-tilbake" />
             </Button>
           )}
         </ItemGroup>

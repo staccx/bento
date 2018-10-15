@@ -1,25 +1,29 @@
 import React from "react"
-import { Layout, Button, Heading, Text } from "@staccx/base"
+import { Layout, Button, Heading, Text, Wrapper } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 
 const WaitingListConfirmation = ({ history }) => {
   return (
-    <Layout>
-      <Heading level="1">Bli pilotkunde {/* TODO: Sanitytext */}</Heading>
-      <Text>
-        Takk for henvendelsen, du vil få en bekreftelse på epost.{" "}
-        {/* TODO: Sanitytext */}
-      </Text>
+    <Wrapper size="small">
+      <Layout>
+        <Heading level="1">
+          <TranslatedText i18nKey="heading-venteliste-bekreftelse" />
+        </Heading>
+        <Text>
+          <TranslatedText i18nKey="intro-venteliste-bekreftelse" />
+        </Text>
 
-      <Button
-        onClick={() =>
-          history.push({
-            pathname: "/app"
-          })
-        }
-      >
-        Ferdig {/* TODO: Sanitytext */}
-      </Button>
-    </Layout>
+        <Button
+          onClick={() =>
+            history.push({
+              pathname: "/app"
+            })
+          }
+        >
+          <TranslatedText i18nKey="knapp-venteliste-bekreftelse" />
+        </Button>
+      </Layout>
+    </Wrapper>
   )
 }
 

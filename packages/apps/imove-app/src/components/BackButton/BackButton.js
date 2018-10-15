@@ -8,7 +8,6 @@ const BackButton = ({ to, label }) => (
     to={{
       pathname: to,
       state: {
-        duration: 600,
         transition: "backwards"
       }
     }}

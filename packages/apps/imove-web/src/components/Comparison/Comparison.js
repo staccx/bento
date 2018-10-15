@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { media } from "../../styleUtils"
 import { spacing } from "@staccx/theme"
 import { Wrapper } from "@staccx/base"
 import SectionHeading from "../SectionHeading/SectionHeading"
@@ -36,6 +37,12 @@ const Comparison = ({ data }) => (
 
 const Content = styled.div`
   padding: ${spacing.huge} ${spacing("largePlus")};
+  ${media.chromeLaptop`
+    padding: ${spacing("largePlus")} 0;
+  `};
+  ${media.chromeTablet`
+    padding: ${spacing("large")} 0;
+  `};
 `
 
 export default Comparison

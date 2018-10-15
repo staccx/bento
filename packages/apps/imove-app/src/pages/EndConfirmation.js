@@ -1,27 +1,29 @@
 import React from "react"
-import { Layout, Button, Heading, Text } from "@staccx/base"
+import { Layout, Button, Heading, Text, Wrapper } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 
 const EndConfirmation = ({ history }) => {
   return (
-    <Layout>
-      <Heading level="1">Avslutt abonnementet {/* TODO: Sanitytext */}</Heading>
-      <Text>
-        Oppsigelse mottatt. Abonnememntet ditt løper frem til{" "}
-        <code>dagens dato + 30 dager</code>. Vi kontakter deg for å avtale det
-        praktiske rundt tilbakeleveringen av bilen.
-        {/* TODO: Sanitytext */}
-      </Text>
+    <Wrapper size="small">
+      <Layout>
+        <Heading level="1">
+          <TranslatedText i18nKey="heading-avslutt-abonnementet" />
+        </Heading>
+        <Text>
+          <TranslatedText i18nKey="intro-avslutt-abonnement-bekreftelse" />
+        </Text>
 
-      <Button
-        onClick={() =>
-          history.push({
-            pathname: "/app/"
-          })
-        }
-      >
-        Ok {/* TODO: Sanitytext */}
-      </Button>
-    </Layout>
+        <Button
+          onClick={() =>
+            history.push({
+              pathname: "/app/"
+            })
+          }
+        >
+          <TranslatedText i18nKey="knapp-avslutt-abonnement-bekreftelse" />
+        </Button>
+      </Layout>
+    </Wrapper>
   )
 }
 

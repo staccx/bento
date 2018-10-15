@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import { media } from "../../styleUtils"
 import { Wrapper } from "@staccx/base"
-import { spacing } from "@staccx/theme"
+import { spacing, wrapper } from "@staccx/theme"
 import HeroBlob from "./Hero.Blob"
 import CallToAction from "./Hero.CallToAction"
 import ExtraCars from "./Hero.ExtraCars"
@@ -29,9 +30,9 @@ const Hero = ({ data }) => {
           </BlobColumn>
         </StyledWrapper>
       </HeroTop>
-      <StyledWrapper size="largePlus">
+      <ExtraWrapper size="largePlus">
         <ExtraCars data={data.extraCars} isReversed={isReversed} />
-      </StyledWrapper>
+      </ExtraWrapper>
     </Content>
   )
 }
@@ -40,6 +41,12 @@ const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: ${spacing("huge")} 0;
+  ${media.chromeLaptop`
+    padding: ${spacing("largePlus")} 0;
+  `};
+  ${media.chromeTablet`
+    padding: ${spacing("large")} 0;
+  `};
 `
 
 const HeroTop = styled.div`
@@ -55,16 +62,28 @@ const StyledWrapper = styled(Wrapper)`
   flex-direction: ${p => (p.isReversed ? "row-reverse" : "row")};
 `
 
+const ExtraWrapper = styled(Wrapper)`
+  overflow: hidden;
+`
+
 const CarColumn = styled.div`
   display: flex;
   align-items: bottom;
   width: 50%;
   padding-right: ${p => (p.isReversed ? "0" : `${spacing("large")(p)}`)};
   padding-left: ${p => (p.isReversed ? `${spacing("large")(p)}` : "0")};
+  ${media.medium`
+    width: 100%;
+    padding-right: 0;
+  `};
 `
 
 const BlobColumn = styled.div`
   width: 50%;
+  ${media.medium`
+    width: 50%;
+    margin: ${spacing("large")} auto 0;
+  `};
 `
 
 export default Hero

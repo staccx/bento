@@ -8,7 +8,7 @@
     "styleguide": "cd packages/base && styleguidist server",
     "start": "cd packages/internal/styleguide && yarn start",
     "soy": "node packages/internal/soy",
-    "release": "lerna publish --no-verify-access --no-verify-registry --conventional-commits --changelog-preset angular-bitbucket"
+    "release": "lerna publish --no-verify-access --no-verify-registry --conventional-commits"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "packages/**"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
     "babel-eslint": "^8.2.2",

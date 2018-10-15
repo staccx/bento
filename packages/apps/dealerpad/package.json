@@ -1,12 +1,12 @@
 {
   "name": "@staccx/dealerpad",
-  "version": "7.8.0",
+  "version": "7.12.0",
   "dependencies": {
-    "@staccx/animations": "^7.8.0",
-    "@staccx/base": "^7.8.0",
-    "@staccx/formatting": "^7.8.0",
-    "@staccx/nordea-theme": "^7.8.0",
-    "@staccx/theme": "^7.8.0",
+    "@staccx/animations": "^7.12.0",
+    "@staccx/base": "^7.12.0",
+    "@staccx/formatting": "^7.12.0",
+    "@staccx/nordea-theme": "^7.12.0",
+    "@staccx/theme": "^7.12.0",
     "axios": "^0.18.0",
     "history": "^4.7.2",
     "mobx": "^5.0.3",
@@ -34,7 +34,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.8.0",
+    "@staccx/rollup-config": "^7.12.0",
     "prettier": "^1.14.2",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",
@@ -57,5 +57,6 @@
   },
   "peerDependencies": {
     "styled-components": "^3.3.3"
-  }
+  },
+  "gitHead": "297e66dbf355a6ce9a98fbf31643e11ea6ccbe13"
 }

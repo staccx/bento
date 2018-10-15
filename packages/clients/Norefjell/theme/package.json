@@ -1,7 +1,7 @@
 {
   "license": "UNLICENSED",
   "name": "@staccx/norefjell-theme",
-  "version": "7.8.0",
+  "version": "7.12.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -24,16 +24,16 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/animations": "^7.8.0",
-    "@staccx/base": "^7.8.0",
-    "@staccx/formatting": "^7.8.0",
+    "@staccx/animations": "^7.12.0",
+    "@staccx/base": "^7.12.0",
+    "@staccx/formatting": "^7.12.0",
     "polished": "^1.9.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.8.0",
+    "@staccx/rollup-config": "^7.12.0",
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
     "react-scripts": "^1.1.4",

@@ -19,29 +19,29 @@ class ProvideAdditionalInfo extends React.Component {
     super(props, context)
 
     this.state = {
-      si_NetIncome: 0,
-      si_TotalOperatingRevenue: 0,
-      as_Inventories: 0,
-      as_BankDepositsCashInHandEtc: 0,
-      as_CurrentAssets: 0,
-      as_TotalAssets: 0,
-      le_CurrentLiabilities: 0,
-      le_Equity: 0,
-      as_TradeDebtors: 0
+      siNetIncome: 0,
+      siTotalOperatingRevenue: 0,
+      asInventories: 0,
+      asBankDepositsCashInHandEtc: 0,
+      asCurrentAssets: 0,
+      asTotalAssets: 0,
+      leCurrentLiabilities: 0,
+      leEquity: 0,
+      asTradeDebtors: 0
     }
   }
 
   componentWillMount() {
     const validateSchema = Yup.object().shape({
-      si_NetIncome: Yup.number().required(),
-      si_TotalOperatingRevenue: Yup.number().required(),
-      as_Inventories: Yup.number().required(),
-      as_BankDepositsCashInHandEtc: Yup.number().required(),
-      as_CurrentAssets: Yup.number().required(),
-      as_TotalAssets: Yup.number().required(),
-      le_CurrentLiabilities: Yup.number().required(),
-      le_Equity: Yup.number().required(),
-      as_TradeDebtors: Yup.number().required()
+      siNetIncome: Yup.number().required(),
+      siTotalOperatingRevenue: Yup.number().required(),
+      asInventories: Yup.number().required(),
+      asBankDepositsCashInHandEtc: Yup.number().required(),
+      asCurrentAssets: Yup.number().required(),
+      asTotalAssets: Yup.number().required(),
+      leCurrentLiabilities: Yup.number().required(),
+      leEquity: Yup.number().required(),
+      asTradeDebtors: Yup.number().required()
     })
     this.setState({
       validateSchema

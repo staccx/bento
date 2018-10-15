@@ -14,9 +14,6 @@ const getX = value => {
     return 0
   }
   temp.innerText = value
-
-  console.log(temp)
-
   return temp.clientWidth + 1 // magic number, bur seems consisten
 }
 class EmailInput extends React.Component {
@@ -36,7 +33,6 @@ class EmailInput extends React.Component {
   handleChange(e) {
     const { value } = e.target
     const isValid = this.emailInput.current.validity.valid
-    console.log(this.emailInput)
     this.setState({ value, isValid }, () => {
       if (this.props.onChange) {
         this.props.onChange(this.state)

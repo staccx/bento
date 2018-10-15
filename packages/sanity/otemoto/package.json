@@ -1,7 +1,7 @@
 {
   "name": "otemoto",
   "private": true,
-  "version": "7.8.0",
+  "version": "7.12.0",
   "description": "",
   "main": "package.json",
   "author": "Espen Thomassen Sæveru <espensaeverud@gmail.com>",
@@ -21,7 +21,7 @@
     "@sanity/default-layout": "^0.132.12",
     "@sanity/default-login": "^0.132.10",
     "@sanity/desk-tool": "^0.132.12",
-    "@staccx/sanity": "^7.8.0",
+    "@staccx/sanity": "^7.12.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"

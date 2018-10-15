@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { color, font } from "@staccx/theme"
+import { color, font, spacing, wrapper } from "@staccx/theme"
 
 const LinkButton = ({ variant, children, url }) => (
   <Link href={url} variant={variant}>
@@ -21,7 +21,13 @@ const Link = styled.a`
   text-align: center;
   min-width: 185px;
   padding: 0.6em 2em 0.7em;
-  margin-right: 40px;
+  &:not(:last-child) {
+    margin-right: ${spacing("smallWhitespace")};
+  }
+  @media only screen and (max-width: ${wrapper("large")}) {
+    min-width: 150px;
+    padding: 0.4em 1.9em 0.5em;
+  }
 `
 
 LinkButton.defaultProps = {

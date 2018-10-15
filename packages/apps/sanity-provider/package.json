@@ -1,6 +1,6 @@
 {
   "name": "@staccx/sanity",
-  "version": "7.8.0",
+  "version": "7.12.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -10,8 +10,8 @@
     "@sanity/block-content-to-react": "^2.0.4",
     "@sanity/client": "^0.132.10",
     "@sanity/image-url": "^0.132.8",
-    "@staccx/base": "^7.8.0",
-    "@staccx/theme": "^7.8.0",
+    "@staccx/base": "^7.12.0",
+    "@staccx/theme": "^7.12.0",
     "mobx-react": "^5.2.5",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
@@ -30,7 +30,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.8.0",
+    "@staccx/rollup-config": "^7.12.0",
     "prettier": "^1.14.2",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",
@@ -41,5 +41,6 @@
   },
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
-  }
+  },
+  "gitHead": "297e66dbf355a6ce9a98fbf31643e11ea6ccbe13"
 }

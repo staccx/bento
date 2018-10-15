@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import { Provider } from "./context"
 import Api from "./services/api"
 import Auth from "./services/auth"
@@ -67,12 +68,18 @@ class OIDCProvider extends Component {
       if (user) {
         console.log("User has been successfully loaded from store.", user)
         this.shouldCancel = user.expired
+        if (user.expired) {
+          this.renewToken()
+        }
       } else {
         console.warn("You are not logged in.")
       }
 
       if (!this.shouldCancel) {
         this.setState({ user })
+        if (this.props.onUserFetched) {
+          this.props.onUserFetched(user)
+        }
       }
     })
   }
@@ -100,6 +107,15 @@ class OIDCProvider extends Component {
   }
 }
 
-OIDCProvider.propTypes = {}
+OIDCProvider.propTypes = {
+  apiRoot: PropTypes.string,
+  children: PropTypes.any,
+  oidcConfig: PropTypes.any,
+  onUserFetched: PropTypes.func
+}
 
 export default OIDCProvider
+
+OIDCProvider.defaultProps = {
+  apiRoot: "/"
+}

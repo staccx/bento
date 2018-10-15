@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "7.8.0",
+  "version": "7.12.0",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -14,9 +14,10 @@
   "scripts": {
     "precommit": "lint-staged",
     "test": "react-scripts test --env=jsdom",
+    "build:packages": "node build.js",
     "build": "yarn prettify && rollup -c",
     "start": "node build.js && rollup -c -w",
-    "prepare": "yarn build",
+    "prepare": "yarn build && yarn build:packages",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
@@ -34,10 +35,10 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/animations": "^7.8.0",
-    "@staccx/formatting": "^7.8.0",
-    "@staccx/math": "^7.8.0",
-    "@staccx/utils": "^7.8.0",
+    "@staccx/animations": "^7.12.0",
+    "@staccx/formatting": "^7.12.0",
+    "@staccx/math": "^7.12.0",
+    "@staccx/utils": "^7.12.0",
     "babel-plugin-prismjs": "^1.0.2",
     "copy-to-clipboard": "^3.0.8",
     "downshift": "^1.28.0",
@@ -56,7 +57,7 @@
     "yup": "^0.24.1"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.8.0",
+    "@staccx/rollup-config": "^7.12.0",
     "babel-core": "^6.0.0",
     "colors": "^1.3.2",
     "fs-extra": "^6.0.1",
