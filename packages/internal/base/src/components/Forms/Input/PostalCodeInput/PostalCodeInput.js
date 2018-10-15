@@ -21,6 +21,10 @@ class PostalCodeInput extends React.PureComponent {
     }
     this.handleChange = this.handleChange.bind(this)
     this.getPostalPlace = this.getPostalPlace.bind(this)
+
+    if (props.defaultValue) {
+      this.getPostalPlace(props.defaultValue)
+    }
   }
 
   getPostalPlace(postalCode) {
