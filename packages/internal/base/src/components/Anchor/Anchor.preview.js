@@ -1,12 +1,12 @@
 import React from "react"
-import A from "./A"
+import Anchor from "./A"
 
 const preview = {
   title: "Button",
   category: "Components/Buttons",
   tags: ["component", "clickable", "button"],
-  component: A,
-  render: props => <A {...props}>This is just a simple link</A>
+  component: Anchor,
+  render: props => <Anchor {...props}>This is just a simple link</Anchor>
 }
 
 export default preview
