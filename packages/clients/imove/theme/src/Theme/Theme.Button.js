@@ -10,6 +10,18 @@ export default registerStyle(
       border-radius: 0;
     `,
     secondary: css`
+      background-color: ${color.white};
+      color: ${color.primary};
+      border: 2px solig ${color.primary};
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${color.white};
+        color: ${color.white};
+        text-decoration: none;
+      }
+    `,
+    tertiary: css`
       background-color: transparent;
       color: ${color.primary};
       border-radius: 0;
