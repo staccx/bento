@@ -83,7 +83,7 @@ export default registerStyle(
       &:focus,
       &:active {
         background-color: ${color.white};
-        color: ${color.primary};
+        color: ${color.secondary};
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
     `
