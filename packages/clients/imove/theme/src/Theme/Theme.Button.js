@@ -20,11 +20,12 @@ export default registerStyle(
     secondary: css`
       background-color: ${color.white};
       color: ${color.primary};
-      border: 2px solig ${color.primary};
+      border-radius: 0;
+      border: 2px solid ${color.primary};
       &:hover,
       &:focus,
       &:active {
-        background-color: ${color.white};
+        background-color: ${color.primary};
         color: ${color.white};
         text-decoration: none;
       }
