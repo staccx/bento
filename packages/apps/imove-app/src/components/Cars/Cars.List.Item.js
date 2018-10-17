@@ -14,7 +14,6 @@ const CarsListItem = ({
   chassisNumber
 }) => (
   <Layout>
-    <Image src={images[0]} alt={make + " " + model} />
     <Box variant="subtleLeft">
       <Layout rowGap="tiny">
         <div>

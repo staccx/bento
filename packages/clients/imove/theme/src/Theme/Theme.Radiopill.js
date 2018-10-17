@@ -5,7 +5,8 @@ import {
   font,
   color,
   fontWeight,
-  fontFamily
+  fontFamily,
+  spacing
 } from "@staccx/theme"
 import { RadioPillItem, RadioPill } from "@staccx/base"
 import { opacity } from "@staccx/color"
@@ -17,6 +18,22 @@ export const RadioPillContainer = registerStyle(
     `
   },
   RadioPill.themeProps.container
+)
+
+export const RadioPillWrapper = registerStyle(
+  {
+    [VARIANT_DEFAULT]: css`
+      input:checked {
+        &:hover,
+        &:focus {
+          ~ label {
+            color: ${color.secondary} !important;
+          }
+        }
+      }
+    `
+  },
+  RadioPillItem.themeProps.wrapper
 )
 
 export const RadioPillItemHover = registerStyle(
@@ -56,6 +73,8 @@ export const RadioPillLabel = registerStyle(
       border-width: 0 !important;
       color: ${p => opacity(color("primary")(p), 0.5)};
       font-family: ${fontFamily.heading};
+      padding: 0 ${spacing.small} ${spacing.medium};
+      line-height: 1;
     `
   },
   RadioPillItem.themeProps.label

@@ -1,6 +1,6 @@
 {
   "name": "@staccx/login-oidc",
-  "version": "7.9.0",
+  "version": "7.12.0",
   "description": "OTP login using oidc-client",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -29,8 +29,9 @@
     "react": "^16.3.2"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.9.0",
+    "@staccx/rollup-config": "^7.12.0",
     "prettier": "^1.14.2",
     "rollup": "^0.65.0"
-  }
+  },
+  "gitHead": "297e66dbf355a6ce9a98fbf31643e11ea6ccbe13"
 }

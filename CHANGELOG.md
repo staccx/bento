@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.12.0"></a>
+# [7.12.0](https://bitbucket.org/stacc-flow/bento/compare/v7.11.0...v7.12.0) (2018-10-12)
+
+
+### Features
+
+* **base:** add Wait ([83c717e](https://bitbucket.org/stacc-flow/bento/commits/83c717e))
+* **imove-theme:** improve focus, hover states ([b0e5ca3](https://bitbucket.org/stacc-flow/bento/commits/b0e5ca3))
+* **imove-theme:** lighten main enu ([97f4586](https://bitbucket.org/stacc-flow/bento/commits/97f4586))
+* **imove-web:** add font size small ([bb81edd](https://bitbucket.org/stacc-flow/bento/commits/bb81edd))
+* **open-id:** add callback to fetch and handle renewing ([94a4299](https://bitbucket.org/stacc-flow/bento/commits/94a4299))
+
+
+
+
+
+<a name="7.11.0"></a>
+# [7.11.0](https://bitbucket.org/stacc-flow/bento/compare/v7.10.0...v7.11.0) (2018-10-11)
+
+
+### Features
+
+* **imove-theme:** adjust radiopill theming ([5c26ad3](https://bitbucket.org/stacc-flow/bento/commits/5c26ad3))
+
+
+
+
+
+<a name="7.10.0"></a>
+# [7.10.0](https://bitbucket.org/stacc-flow/bento/compare/v7.9.0...v7.10.0) (2018-10-11)
+
+
+### Bug Fixes
+
+* **sanity-plugin-i18n:** fix build ([deb7ad8](https://bitbucket.org/stacc-flow/bento/commits/deb7ad8))
+
+
+### Features
+
+* **base:** add search can now take new props ([260af98](https://bitbucket.org/stacc-flow/bento/commits/260af98))
+* **imove-theme:** improve Buttons, Box ([380ea90](https://bitbucket.org/stacc-flow/bento/commits/380ea90))
+* **open-id:** add hoc ([64638ca](https://bitbucket.org/stacc-flow/bento/commits/64638ca))
+* **stacc-web:** add scaling to now config ([dd8fce1](https://bitbucket.org/stacc-flow/bento/commits/dd8fce1))
+
+
+
+
+
 <a name="7.9.0"></a>
 # [7.9.0](https://bitbucket.org/stacc-flow/bento/compare/v7.8.1...v7.9.0) (2018-10-09)
 

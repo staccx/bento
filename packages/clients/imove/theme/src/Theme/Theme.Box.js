@@ -6,6 +6,8 @@ export default registerStyle(
   {
     [VARIANT_DEFAULT]: css``,
     menu: css`
+      position: relative;
+      z-index: 10;
       padding-top: ${spacing.small};
       padding-bottom: ${spacing.small};
       width: 100%;
@@ -30,7 +32,7 @@ export default registerStyle(
     `,
     carWrapper: css`
       padding: 0;
-      margin-bottom: -120px;
+      margin-bottom: ${spacing.large};
       text-align: center;
     `,
     center: css`
@@ -47,7 +49,6 @@ export default registerStyle(
       background-color: ${color.primary};
       color: ${color.white};
       border-radius: 0;
-      margin-top: -${spacing.large};
 
       h1,
       h2,
@@ -60,10 +61,15 @@ export default registerStyle(
       }
     `,
     subtleLeft: css`
-      margin-left: -${spacing.medium};
-      padding: ${spacing.small} ${spacing.medium};
-      background-color: ${color("bgGray")};
-      color: ${color.text};
+      padding: 0;
+      flex-basis: 60%;
+
+      @media screen and (max-width: 768px) {
+        margin-left: -${spacing.medium};
+        padding: ${spacing.small} ${spacing.medium};
+        background-color: ${color("bgGray")};
+        color: ${color.text};
+      }
     `
   },
   Box.themeProps.box

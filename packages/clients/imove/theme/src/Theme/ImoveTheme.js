@@ -10,7 +10,8 @@ import {
   RadioPillItemHover,
   RadioPillItemChecked,
   RadioPillLabel,
-  RadioPillContainer
+  RadioPillContainer,
+  RadioPillWrapper
 } from "./Theme.Radiopill"
 import {
   InputStyling,
@@ -30,6 +31,7 @@ import {
   CheckBoxCheckContainer,
   CheckBoxCheck
 } from "./Theme.CheckBox"
+import { ToggleElementStyling } from "./Theme.Toggle"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -40,7 +42,7 @@ const targetSize = {
 }
 
 const wrapper = {
-  small: "420px",
+  small: "540px",
   medium: "640px",
   large: "1040px",
   largePlus: "1280px",
@@ -73,6 +75,7 @@ const color = {
   bgGray: "#F6F6F6",
   primary: "#4FAF73",
   primaryLight: "#83ECAA",
+  primaryDark: "#1C966B",
   secondary: "#124F5E",
   toneDown: "#8C8C8C",
   gray: "#767676",
@@ -102,6 +105,7 @@ const font = {
   h6: "14px",
   base: "14px",
   tiny: "12px",
+  small: "16px",
   large: "18px",
   largePlus: "24px",
   largePlusPlus: "28px",
@@ -167,5 +171,7 @@ const t = new Theme(BaseTheme, {
   .add(CheckBoxLabel)
   .add(CheckBoxCheckContainer)
   .add(CheckBoxCheck)
+  .add(ToggleElementStyling)
+  .add(RadioPillWrapper)
 
 export default t
