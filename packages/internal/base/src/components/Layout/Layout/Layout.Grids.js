@@ -63,7 +63,7 @@ export default {
     grid-auto-flow: column;
   `,
   form: css`
-    grid-template-areas: "header main body aside footer";
+    grid-template-areas: initial;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   `,
   centered: css`

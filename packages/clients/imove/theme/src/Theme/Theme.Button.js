@@ -18,6 +18,19 @@ export default registerStyle(
       }
     `,
     secondary: css`
+      background-color: ${color.white};
+      color: ${color.primary};
+      border-radius: 0;
+      border: 2px solid ${color.primary};
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${color.primary};
+        color: ${color.white};
+        text-decoration: none;
+      }
+    `,
+    tertiary: css`
       background-color: transparent;
       color: ${color.primary};
       border-radius: 0;
@@ -83,7 +96,7 @@ export default registerStyle(
       &:focus,
       &:active {
         background-color: ${color.white};
-        color: ${color.primary};
+        color: ${color.secondary};
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
     `
