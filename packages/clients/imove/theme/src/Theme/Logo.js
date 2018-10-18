@@ -55,17 +55,6 @@ const LogoImg = styled.svg`
   margin-right: ${p => p.centered && "auto"};
   width: ${p => (!p.width && p.height ? "auto" : !p.width && "79px")};
   height: ${p => (!p.height && p.width ? "auto" : !p.height && "22px")};
-
-  /* @media (max-width: 450px) {
-    width: 75px;
-  } */
-  &:hover,
-  &:focus {
-    outline: 0;
-    ${LogoText} {
-      fill: ${color.primary};
-    }
-  }
 `
 
 Logo.defaultProps = {

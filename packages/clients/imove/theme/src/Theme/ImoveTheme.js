@@ -32,6 +32,7 @@ import {
   CheckBoxCheck
 } from "./Theme.CheckBox"
 import { ToggleElementStyling } from "./Theme.Toggle"
+import { HelpIcon } from "./Icons/HelpIcon"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -164,6 +165,7 @@ const t = new Theme(BaseTheme, {
   .add(CarIcon)
   .add(GarageIcon)
   .add(ProfileIcon)
+  .add(HelpIcon)
   .add(SliderThumb)
   .add(SliderTrack)
   .add(LayoutStyling)
