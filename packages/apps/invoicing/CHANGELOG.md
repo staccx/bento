@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.13.0"></a>
+# [7.13.0](https://bitbucket.org/stacc-flow/bento/compare/v7.12.0...v7.13.0) (2018-10-18)
+
+**Note:** Version bump only for package @staccx/invoicing
+
+
+
+
+
 <a name="7.12.0"></a>
 # [7.12.0](https://bitbucket.org/stacc-flow/bento/compare/v7.11.0...v7.12.0) (2018-10-12)
 
