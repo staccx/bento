@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.13.0"></a>
+# [7.13.0](https://bitbucket.org/stacc-flow/bento/compare/v7.12.0...v7.13.0) (2018-10-18)
+
+
+### Features
+
+* **imove-theme:** add helpicon ([7d3b30e](https://bitbucket.org/stacc-flow/bento/commits/7d3b30e))
+* **imove-theme:** adjust styles ([758f2e6](https://bitbucket.org/stacc-flow/bento/commits/758f2e6))
+* **imove-theme:** correct styling secondary button ([acb6b5f](https://bitbucket.org/stacc-flow/bento/commits/acb6b5f))
+* **imove-theme:** improve focus ([a1207ca](https://bitbucket.org/stacc-flow/bento/commits/a1207ca))
+* **imove-theme:** new secondary-button ([b45a61e](https://bitbucket.org/stacc-flow/bento/commits/b45a61e))
+* **imove-theme:** removed hover-effect on logo ([de96685](https://bitbucket.org/stacc-flow/bento/commits/de96685))
+* **imove-web:** add font size small to theme ([36085d3](https://bitbucket.org/stacc-flow/bento/commits/36085d3))
+
+
+
+
+
 <a name="7.12.0"></a>
 # [7.12.0](https://bitbucket.org/stacc-flow/bento/compare/v7.11.0...v7.12.0) (2018-10-12)
 

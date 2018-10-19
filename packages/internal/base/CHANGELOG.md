@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.13.0"></a>
+# [7.13.0](https://bitbucket.org/stacc-flow/bento/compare/v7.12.0...v7.13.0) (2018-10-18)
+
+
+### Bug Fixes
+
+* **base:** zero state set if values are set ([85c6ab4](https://bitbucket.org/stacc-flow/bento/commits/85c6ab4))
+
+
+### Features
+
+* **base:** layout grid="form" now works as originally intended ([8c64ced](https://bitbucket.org/stacc-flow/bento/commits/8c64ced))
+
+
+
+
+
 <a name="7.12.0"></a>
 # [7.12.0](https://bitbucket.org/stacc-flow/bento/compare/v7.11.0...v7.12.0) (2018-10-12)
 
