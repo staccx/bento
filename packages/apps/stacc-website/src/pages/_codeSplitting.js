@@ -16,11 +16,6 @@ export const Clients = LoadableVisibility({
   loading: Loading
 })
 
-export const Team = LoadableVisibility({
-  loader: () => import("./Team"),
-  loading: Loading
-})
-
 export const Case = LoadableVisibility({
   loader: () => import("./Case"),
   loading: Loading
