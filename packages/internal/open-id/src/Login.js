@@ -120,6 +120,7 @@ class Login extends React.Component {
             axios.post(this.props.magicPollUri, { state }).then(res => {
               if (res.status === 200) {
                 clearInterval(timer)
+                // TODO: Unnessesary
                 window.location.replace(
                   this.props.oidcConfig.authority +
                     this.props.callbackPath +

@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.13.1"></a>
+## [7.13.1](https://bitbucket.org/stacc-flow/bento/compare/v7.13.0...v7.13.1) (2018-10-19)
+
+
+### Bug Fixes
+
+* **stacc-web:** fix block type image killing the page ([157f88d](https://bitbucket.org/stacc-flow/bento/commits/157f88d))
+
+
+
+
+
+<a name="7.13.0"></a>
+# [7.13.0](https://bitbucket.org/stacc-flow/bento/compare/v7.12.0...v7.13.0) (2018-10-18)
+
+**Note:** Version bump only for package @staccx/stacc-website
+
+
+
+
+
 <a name="7.12.0"></a>
 # [7.12.0](https://bitbucket.org/stacc-flow/bento/compare/v7.11.0...v7.12.0) (2018-10-12)
 
