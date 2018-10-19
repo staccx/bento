@@ -14,7 +14,7 @@ const PeopleList = () => {
           <Search
             indexer={"_id"}
             documents={result}
-            indicises={["name", "title", ["company", "name"], "email"]}
+            indices={["name", "title", ["company", "name"], "email"]}
           >
             {({ result: r, search }) => {
               return (
