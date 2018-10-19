@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { spacing } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const ComponentDocumentation = ({ children, width }) => (
   <ComponentDocumentationWrapper width={width}>
@@ -11,7 +11,7 @@ const ComponentDocumentation = ({ children, width }) => (
 
 const ComponentDocumentationWrapper = styled.div`
   width: ${({ width }) => width};
-  padding: ${spacing.medium};
+  padding: ${theming.spacing.medium};
 `
 export default ComponentDocumentation
 

@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Mail = () => (
   <svg
@@ -13,6 +13,9 @@ const Mail = () => (
   </svg>
 )
 
-export const MailIcon = registerStyle({ [VARIANT_DEFAULT]: Mail }, "Mail")
+export const MailIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Mail },
+  "Mail"
+)
 
 export default Mail

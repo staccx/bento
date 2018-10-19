@@ -1,21 +1,14 @@
 import { css } from "styled-components"
-import {
-  registerStyle,
-  color,
-  targetSize,
-  spacing,
-  VARIANT_DEFAULT
-} from "@staccx/theme"
-import { Button } from "@staccx/base"
+import { Button, theming } from "@staccx/base"
 
 const subtleButton = css`
   background-color: transparent;
-  color: ${color.text};
+  color: ${theming.color.text};
   border-width: 0;
-  border-bottom: 2px solid ${color.primary};
+  border-bottom: 2px solid ${theming.color.primary};
   box-shadow: none;
-  padding-left: ${spacing.small};
-  padding-right: ${spacing.small};
+  padding-left: ${theming.spacing.small};
+  padding-right: ${theming.spacing.small};
   border-radius: 0;
   text-decoration: none;
   padding-bottom: 3px;
@@ -25,17 +18,17 @@ const subtleButton = css`
   &:active,
   &:focus {
     outline: none;
-    color: ${color.primary};
-    border-bottom-color: ${color.primary};
+    color: ${theming.color.primary};
+    border-bottom-color: ${theming.color.primary};
     background-color: transparent;
   }
 `
 
-export const ButtonStyling = registerStyle(
+export const ButtonStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       &:disabled {
-        background-color: ${color.disabled};
+        background-color: ${theming.color.disabled};
       }
     `,
     subtle: subtleButton,
@@ -45,17 +38,17 @@ export const ButtonStyling = registerStyle(
       &:hover,
       &:active,
       &:focus {
-        color: ${color.text};
-        border-bottom-color: ${color.warning};
+        color: ${theming.color.text};
+        border-bottom-color: ${theming.color.warning};
       }
     `,
     deleteSigner: css`
       align-self: flex-end;
       background-color: transparent;
-      color: ${color.primary};
+      color: ${theming.color.primary};
       padding: 0;
-      min-width: ${targetSize.normal};
-      border: 1px solid ${color.white};
+      min-width: ${theming.targetSize.normal};
+      border: 1px solid ${theming.color.white};
 
       > svg {
         fill: currentColor;
@@ -68,9 +61,9 @@ export const ButtonStyling = registerStyle(
       &:focus,
       &:active,
       &:hover {
-        border: 1px solid ${color.primary};
+        border: 1px solid ${theming.color.primary};
         background-color: transparent;
-        color: ${color.primary};
+        color: ${theming.color.primary};
       }
 
       ${p =>
@@ -84,17 +77,17 @@ export const ButtonStyling = registerStyle(
     `,
     addSigner: css`
       background-color: transparent;
-      color: ${color.primary};
-      min-height: ${targetSize.small};
-      padding: 3px ${spacing.small};
-      border: 1px solid ${color.white};
+      color: ${theming.color.primary};
+      min-height: ${theming.targetSize.small};
+      padding: 3px ${theming.spacing.small};
+      border: 1px solid ${theming.color.white};
 
       &:focus,
       &:active,
       &:hover {
-        border: 1px solid ${color.primary};
+        border: 1px solid ${theming.color.primary};
         background-color: transparent;
-        color: ${color.primary};
+        color: ${theming.color.primary};
       }
     `,
     endScreen: subtleButton

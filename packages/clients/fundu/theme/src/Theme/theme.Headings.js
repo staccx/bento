@@ -1,51 +1,51 @@
 import { css } from "styled-components"
-import { color, font, spacing, registerStyle, fontFamily } from "@staccx/theme"
-import { Heading } from "@staccx/base"
+import { Heading, theming } from "@staccx/base"
 
 const centeredHeading = css`
   text-align: center;
-  margin-bottom: ${spacing.medium};
-  color: ${color.primary};
-  font-size: ${font.huge};
+  margin-bottom: ${theming.spacing.medium};
+  color: ${theming.color.primary};
+  font-size: ${theming.font.huge};
 
   @media (max-width: 735px) {
-    font-size: ${font.h1};
+    font-size: ${theming.font.h1};
   }
 
   @media (max-height: 850px) {
-    font-size: ${font.h2};
+    font-size: ${theming.font.h2};
   }
 
   ${p =>
     p.hasBG &&
     `
     @media (min-width: 450px) and (max-width: 2100px) {
-      color: ${color.text};
+      color: ${theming.color.text};
     }
   `};
 `
 
-export const HeadingStyling = registerStyle(
+export const HeadingStyling = theming.createVariants(
   {
     large: centeredHeading,
     stepHeading: centeredHeading,
     endScreen: centeredHeading,
     subHeading: css`
       font-weight: 400;
-      color: ${color.primary};
+      color: ${theming.color.primary};
       line-height: 1.5;
       text-align: ${p => (p.alignLeft ? "left" : "center")};
     `,
     boxHeading: css`
-      font-family: ${fontFamily.body};
-      font-size: ${font.base};
+      font-family: ${theming.fontFamily.body};
+      font-size: ${theming.font.base};
       font-weight: 300;
-      margin-bottom: ${spacing.tiny};
+      margin-bottom: ${theming.spacing.tiny};
     `,
     formSection: css`
-      padding: ${spacing.small} 0 ${spacing.small} ${spacing.medium};
-      font-size: ${font.h3};
-      color: ${color.wcag};
+      padding: ${theming.spacing.small} 0 ${theming.spacing.small}
+        ${theming.spacing.medium};
+      font-size: ${theming.font.h3};
+      color: ${theming.color.wcag};
     `
   },
   Heading.themeProps.heading

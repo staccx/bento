@@ -1,17 +1,16 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
-import { List } from "@staccx/base"
+import { List, theming } from "@staccx/base"
 
-export const ListStyling = registerStyle(
+export const ListStyling = theming.createVariants(
   {
     newsList: css`
       li {
-        padding: ${spacing.small};
+        padding: ${theming.spacing.small};
         a {
           text-decoration: none;
         }
         &:nth-child(even) {
-          background-color: ${color("bg1")};
+          background-color: ${theming.color("bg1")};
         }
       }
     `,
@@ -20,17 +19,17 @@ export const ListStyling = registerStyle(
         a {
           text-decoration: none;
           display: block;
-          padding: ${spacing.small};
+          padding: ${theming.spacing.small};
           transition: background 0.2s ease;
 
           &:hover,
           &:active,
           &:focus {
-            background-color: ${color("subtleHover")};
+            background-color: ${theming.color("subtleHover")};
           }
         }
         &:nth-child(even) {
-          background-color: ${color("concrete")};
+          background-color: ${theming.color("concrete")};
         }
       }
     `

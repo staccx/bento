@@ -1,12 +1,6 @@
 import { css } from "styled-components"
-import {
-  registerStyle,
-  spacing,
-  VARIANT_DEFAULT,
-  color,
-  targetSize
-} from "@staccx/theme"
-import { FileInput, Input, fontSmoothing } from "@staccx/base"
+
+import { FileInput, Input, fontSmoothing, theming } from "@staccx/base"
 
 const defaultStyling = css`
   border-width: 2px;
@@ -15,52 +9,52 @@ const defaultStyling = css`
   &:hover,
   &:focus,
   &:active {
-    border-color: ${color("b4")};
-    background-color: ${color.white};
+    border-color: ${theming.color("b4")};
+    background-color: ${theming.color.white};
   }
 `
 
-export const InputStyling = registerStyle(
+export const InputStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       ${defaultStyling};
     `,
     search: css`
       ${defaultStyling};
-      padding-left: ${spacing.large};
+      padding-left: ${theming.spacing.large};
     `,
     chat: css`
-      height: ${spacing.large};
+      height: ${theming.spacing.large};
       border-color: transparent;
-      padding-right: ${spacing("largePlus")};
+      padding-right: ${theming.spacing("largePlus")};
       ${fontSmoothing};
     `
   },
   Input.themeProps.input
 )
 
-export const InputWrapperStyling = registerStyle(
+export const InputWrapperStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       flex-grow: 1;
     `
   },
   Input.themeProps.wrapper
 )
 
-export const FileInputLabelStyling = registerStyle(
+export const FileInputLabelStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      border-radius: ${targetSize.normal};
-      padding: 0 ${spacing.small};
-      min-height: ${spacing.medium};
+    [theming.VARIANT_DEFAULT]: css`
+      border-radius: ${theming.targetSize.normal};
+      padding: 0 ${theming.spacing.small};
+      min-height: ${theming.spacing.medium};
       background-color: transparent;
-      color: ${color("b4")};
+      color: ${theming.color("b4")};
       &:hover,
       &:focus,
       &:active {
-        color: ${color("b4")};
-        background-color: ${color("bg")};
+        color: ${theming.color("b4")};
+        background-color: ${theming.color("bg")};
       }
     `
   },

@@ -1,12 +1,11 @@
 import { css } from "styled-components"
-import { wrapper, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
-import { Wrapper } from "@staccx/base"
+import { Wrapper, theming } from "@staccx/base"
 
-export default registerStyle(
+export default theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      @media only screen and (min-width: ${wrapper.medium}) {
-        max-width: calc(${wrapper.large} + 17vw);
+    [theming.VARIANT_DEFAULT]: css`
+      @media only screen and (min-width: ${theming.wrapper.medium}) {
+        max-width: calc(${theming.wrapper.large} + 17vw);
         padding-left: 8.5vw;
         padding-right: 8.5vw;
       }

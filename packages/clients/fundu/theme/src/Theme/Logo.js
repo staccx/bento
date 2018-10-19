@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { registerStyle, VARIANT_DEFAULT, color } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Logo = () => (
   <LogoImg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 27">
@@ -29,12 +29,15 @@ const LogoImg = styled.svg`
   &:focus {
     outline: 0;
     ${LogoIcon} {
-      fill: ${color.primary};
+      fill: ${theming.color.primary};
       transform: rotate(180deg);
     }
   }
 `
 
-export const LogoStyle = registerStyle({ [VARIANT_DEFAULT]: Logo }, "logo")
+export const LogoStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Logo },
+  "logo"
+)
 
 export default Logo

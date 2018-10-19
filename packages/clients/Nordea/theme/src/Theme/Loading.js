@@ -1,7 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
-import { Loading } from "@staccx/base"
+import { Loading, theming } from "@staccx/base"
 
 const NordeaLoader = () => (
   <svg xmlns="http://www.w3.org/2000/Svg" viewBox="0 0 292 292" width="72">
@@ -60,7 +59,7 @@ const Path = styled.path`
   }
 `
 
-export const LoadingStyle = registerStyle(
-  { [VARIANT_DEFAULT]: NordeaLoader },
+export const LoadingStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: NordeaLoader },
   Loading.themeProps.component
 )

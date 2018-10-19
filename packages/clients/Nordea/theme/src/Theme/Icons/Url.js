@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Url = () => (
   <svg
@@ -13,6 +13,9 @@ const Url = () => (
   </svg>
 )
 
-export const UrlIcon = registerStyle({ [VARIANT_DEFAULT]: Url }, "Url")
+export const UrlIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Url },
+  "Url"
+)
 
 export default Url

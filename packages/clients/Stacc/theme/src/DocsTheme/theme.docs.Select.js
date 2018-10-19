@@ -1,8 +1,7 @@
 import { css } from "styled-components"
-import { registerStyle } from "@staccx/theme"
-import { Select } from "@staccx/base"
+import { Select, theming } from "@staccx/base"
 
-export const SelectWrapperStyle = registerStyle(
+export const SelectWrapperStyle = theming.createVariants(
   {
     styleguideSwitchTheme: css`
       height: 100%;
@@ -11,7 +10,7 @@ export const SelectWrapperStyle = registerStyle(
   Select.themeProps.selectWrapper
 )
 
-export const SelectedWrapperStyle = registerStyle(
+export const SelectedWrapperStyle = theming.createVariants(
   {
     styleguideSwitchTheme: css`
       height: 100%;
@@ -22,7 +21,7 @@ export const SelectedWrapperStyle = registerStyle(
   Select.themeProps.selectedWrapper
 )
 
-export const SelectedOptionContainer = registerStyle(
+export const SelectedOptionContainer = theming.createVariants(
   {
     styleguideSwitchTheme: css`
       height: 100%;

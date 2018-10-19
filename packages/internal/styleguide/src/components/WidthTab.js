@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { RadioPill, RadioPillItem } from "@staccx/base"
-import { spacing, color } from "@staccx/theme"
+import { RadioPill, RadioPillItem, theming } from "@staccx/base"
 import sizes from "../data/sizes"
 
 const WidthTab = ({ onChange, width }) => (
@@ -28,9 +27,9 @@ const WidthTab = ({ onChange, width }) => (
 const Width = styled.div`
   display: flex;
   align-items: center;
-  padding-left: ${spacing.small};
-  padding-right: ${spacing.small};
-  border-left: 1px solid ${color.line};
+  padding-left: ${theming.spacing.small};
+  padding-right: ${theming.spacing.small};
+  border-left: 1px solid ${theming.color.line};
 `
 
 WidthTab.defaultProps = {

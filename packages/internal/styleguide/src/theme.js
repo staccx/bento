@@ -1,5 +1,5 @@
 import { StaccTheme, StaccDocsTheme } from "@staccx/stacc-theme"
-import { Theme } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const savingsAdvisorColors = {
   waveSelected0: "#4E616C",
@@ -11,6 +11,6 @@ const savingsAdvisorColors = {
   waveDefault: "#D5A021"
 }
 
-export default new Theme(StaccTheme, StaccDocsTheme).add({
+export default new theming.Theme(StaccTheme, StaccDocsTheme).add({
   color: { ...savingsAdvisorColors }
 })

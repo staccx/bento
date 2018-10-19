@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Car = () => (
   <svg
@@ -17,6 +17,9 @@ const Car = () => (
   </svg>
 )
 
-export const CarIcon = registerStyle({ [VARIANT_DEFAULT]: Car }, "Car")
+export const CarIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Car },
+  "Car"
+)
 
 export default Car

@@ -1,38 +1,37 @@
 import { css } from "styled-components"
-import { spacing, color, registerStyle } from "@staccx/theme"
-import { List, SplitListItem } from "@staccx/base"
+import { List, SplitListItem, theming } from "@staccx/base"
 
-export const ListStyling = registerStyle(
+export const ListStyling = theming.createVariants(
   {
     documentationMenu: css`
       li > ul {
-        padding-left: ${spacing.tiny};
-        margin-bottom: ${spacing.small};
-        border-left: 1px solid ${color.line};
+        padding-left: ${theming.spacing.tiny};
+        margin-bottom: ${theming.spacing.small};
+        border-left: 1px solid ${theming.color.line};
       }
       > li > a {
         display: block;
-        margin-bottom: ${spacing.tiny};
+        margin-bottom: ${theming.spacing.tiny};
       }
       a {
-        color: ${color.text};
+        color: ${theming.color.text};
         text-decoration: none;
         &:hover,
         &:active,
         &:focus {
-          color: ${color.primary};
+          color: ${theming.color.primary};
           text-decoration: underline;
         }
       }
     `,
     documentationSubMenu: css`
-      padding-left: ${spacing.small};
-      margin-bottom: ${spacing.medium};
+      padding-left: ${theming.spacing.small};
+      margin-bottom: ${theming.spacing.medium};
       li {
-        margin-bottom: ${spacing.small};
+        margin-bottom: ${theming.spacing.small};
       }
       a {
-        color: ${color.gray};
+        color: ${theming.color.gray};
         text-decoration: none;
       }
     `
@@ -40,7 +39,7 @@ export const ListStyling = registerStyle(
   List.themeProps.list
 )
 
-export const SplitListItemStyling = registerStyle(
+export const SplitListItemStyling = theming.createVariants(
   {
     documentationMethodListItem: css`
       align-items: flex-start;

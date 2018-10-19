@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Calculator = () => (
   <svg
@@ -17,8 +17,8 @@ const Calculator = () => (
   </svg>
 )
 
-export const CalculatorIcon = registerStyle(
-  { [VARIANT_DEFAULT]: Calculator },
+export const CalculatorIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Calculator },
   "Calculator"
 )
 

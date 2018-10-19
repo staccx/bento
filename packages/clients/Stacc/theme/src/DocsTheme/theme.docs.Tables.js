@@ -1,12 +1,11 @@
 import { css } from "styled-components"
-import { font, color, spacing, registerStyle, fontFamily } from "@staccx/theme"
-import { Table, hideVisually } from "@staccx/base"
+import { Table, hideVisually, theming } from "@staccx/base"
 
-export const TableStyling = registerStyle(
+export const TableStyling = theming.createVariants(
   {
     documentationAttr: css`
       width: 100%;
-      font-size: ${font.base};
+      font-size: ${theming.font.base};
 
       thead {
         ${hideVisually};
@@ -14,26 +13,26 @@ export const TableStyling = registerStyle(
 
       td {
         vertical-align: ${p => (p.responses ? "middle" : "top")};
-        padding: ${spacing.tiny} 0;
+        padding: ${theming.spacing.tiny} 0;
       }
 
       tbody tr {
-        border-bottom: 1px solid ${color.line};
+        border-bottom: 1px solid ${theming.color.line};
       }
 
       tr > td:first-child {
         text-align: right;
-        padding-right: ${spacing.medium};
+        padding-right: ${theming.spacing.medium};
         width: 140px;
       }
     `,
     propsDescription: css`
-      font-family: ${fontFamily("mono")};
+      font-family: ${theming.fontFamily("mono")};
       width: 100%;
-      font-size: ${font.tiny};
+      font-size: ${theming.font.tiny};
       td,
       th {
-        padding: ${spacing.tiny};
+        padding: ${theming.spacing.tiny};
         &:first-child {
           padding-left: 0;
         }
@@ -43,12 +42,12 @@ export const TableStyling = registerStyle(
         }
       }
       tr {
-        border-bottom: 1px solid ${color.line};
+        border-bottom: 1px solid ${theming.color.line};
       }
       th {
         text-align: left;
-        color: ${color.wcag};
-        font-size: ${font.tiny};
+        color: ${theming.color.wcag};
+        font-size: ${theming.font.tiny};
       }
     `
   },

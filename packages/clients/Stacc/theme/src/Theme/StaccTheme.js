@@ -1,5 +1,4 @@
-import { BaseTheme } from "@staccx/base"
-import { Theme } from "@staccx/theme"
+import { BaseTheme, theming } from "@staccx/base"
 import reset from "./reset"
 import Button from "./Theme.Button"
 import Box from "./Theme.Box"
@@ -103,7 +102,7 @@ const fontFamily = {
   mono: "IBM Plex Mono"
 }
 
-const t = new Theme(BaseTheme, {
+const theme = new theming.Theme(BaseTheme, {
   name: "Stacc",
   font: { ...font },
   fontWeight,
@@ -126,4 +125,4 @@ const t = new Theme(BaseTheme, {
   .add(HeadingStyling)
   .add(WrapperStyling)
 
-export default t
+export default theme

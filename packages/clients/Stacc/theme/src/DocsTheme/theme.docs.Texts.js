@@ -1,6 +1,5 @@
 import { css } from "styled-components"
-import { color, font, spacing, registerStyle } from "@staccx/theme"
-import { Text } from "@staccx/base"
+import { Text, theming } from "@staccx/base"
 
 const getTypeColor = type => {
   switch (type) {
@@ -18,14 +17,14 @@ const getTypeColor = type => {
   }
 }
 
-export const TextStyling = registerStyle(
+export const TextStyling = theming.createVariants(
   {
     documentationInline: css`
       display: inline-block;
-      color: ${color.primary};
-      border: 1px solid ${color.primary};
+      color: ${theming.color.primary};
+      border: 1px solid ${theming.color.primary};
       padding: 0 2px;
-      background-color: ${color.bgGray};
+      background-color: ${theming.color.bgGray};
       border-radius: 3px;
       line-height: 1.4;
     `,
@@ -33,25 +32,25 @@ export const TextStyling = registerStyle(
       display: block;
     `,
     documentationAttrType: css`
-      color: ${color.wcag};
-      font-size: ${font.tiny};
+      color: ${theming.color.wcag};
+      font-size: ${theming.font.tiny};
       display: block;
     `,
     documentationAttrReq: css`
-      color: ${color("codeError")};
-      font-size: ${font.tiny};
+      color: ${theming.color("codeError")};
+      font-size: ${theming.font.tiny};
     `,
     documentationOperationType: css`
       display: inline-block;
-      font-size: ${font.tiny};
-      background-color: ${p => color(getTypeColor(p.type))};
-      padding: ${spacing.tiny} ${spacing.small};
-      margin-right: ${spacing.small};
+      font-size: ${theming.font.tiny};
+      background-color: ${p => theming.color(getTypeColor(p.type))};
+      padding: ${theming.spacing.tiny} ${theming.spacing.small};
+      margin-right: ${theming.spacing.small};
       text-transform: uppercase;
     `,
 
     documentationOperationPath: css`
-      color: ${color("codePunctuation")};
+      color: ${theming.color("codePunctuation")};
     `
   },
   Text.themeProps.text

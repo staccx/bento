@@ -1,21 +1,14 @@
 import { css } from "styled-components"
 import {
-  color,
-  spacing,
-  registerStyle,
-  targetSize,
-  VARIANT_DEFAULT
-} from "@staccx/theme"
-import {
   Input,
   Label,
   Select,
-  SelectOption,
   RadioPillItem,
   SelectSimple,
   SliderKeyboardInput,
   CompanyInput,
-  PostalCodeInput
+  PostalCodeInput,
+  theming
 } from "@staccx/base"
 
 const floatingLabel = css`
@@ -28,14 +21,14 @@ const floatingLabel = css`
   left: 24px;
 `
 
-export const InputStyling = registerStyle(
+export const InputStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       display: block;
       min-height: 72px;
       border-width: 0;
       border-radius: 0;
-      padding: ${spacing.medium} ${spacing.medium} 0;
+      padding: ${theming.spacing.medium} ${theming.spacing.medium} 0;
       transition: border-color 0.2s ease-out;
     `,
     simple: css``,
@@ -51,29 +44,29 @@ export const InputStyling = registerStyle(
   Input.themeProps.input
 )
 
-export const LabelStyling = registerStyle(
+export const LabelStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: floatingLabel,
+    [theming.VARIANT_DEFAULT]: floatingLabel,
     loanDuration: css`
       padding: 0;
     `,
     radioPill: css`
       display: block;
-      padding-left: ${spacing.medium};
-      padding-top: ${spacing.small};
-      padding-bottom: ${spacing.small};
+      padding-left: ${theming.spacing.medium};
+      padding-top: ${theming.spacing.small};
+      padding-bottom: ${theming.spacing.small};
     `,
     loanPurpose: css`
       display: block;
-      padding-left: ${spacing.medium};
-      padding-top: ${spacing.small};
-      padding-bottom: ${spacing.tiny};
+      padding-left: ${theming.spacing.medium};
+      padding-top: ${theming.spacing.small};
+      padding-bottom: ${theming.spacing.tiny};
     `
   },
   Label.themeProps.label
 )
 
-export const SelectOptionStyling = registerStyle(
+export const SelectOptionStyling = theming.createVariants(
   {
     loanOffer: css`
       &:hover,
@@ -83,31 +76,31 @@ export const SelectOptionStyling = registerStyle(
       }
     `,
     loanPurpose: css`
-      padding-left: ${spacing.medium};
+      padding-left: ${theming.spacing.medium};
     `
   },
   Select.themeProps.optionContainer
 )
 
-export const SelectSelectedWrapperStyling = registerStyle(
+export const SelectSelectedWrapperStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       border-color: transparent;
       padding-right: 0;
     `,
     loanOffer: css`
       border-color: transparent;
-      padding-right: ${spacing.mediumPlus};
+      padding-right: ${theming.spacing.mediumPlus};
 
       &:hover,
       &:active,
       &:focus {
         background-color: transparent;
-        color: ${color.primary};
-        border-color: ${color.primary};
+        color: ${theming.color.primary};
+        border-color: ${theming.color.primary};
 
         svg {
-          fill: ${color.primary};
+          fill: ${theming.color.primary};
         }
       }
     `,
@@ -119,7 +112,7 @@ export const SelectSelectedWrapperStyling = registerStyle(
   Select.themeProps.wrapper
 )
 
-export const SelectIconButtonStyling = registerStyle(
+export const SelectIconButtonStyling = theming.createVariants(
   {
     loanOffer: css`
       right: 0;
@@ -128,7 +121,7 @@ export const SelectIconButtonStyling = registerStyle(
   Select.themeProps.iconButton
 )
 
-export const SelectOptionsWrapperStyling = registerStyle(
+export const SelectOptionsWrapperStyling = theming.createVariants(
   {
     loanOffer: css`
       width: 100%;
@@ -136,14 +129,14 @@ export const SelectOptionsWrapperStyling = registerStyle(
       overflow-y: auto;
       position: absolute;
       z-index: 10;
-      background-color: ${color.white};
+      background-color: ${theming.color.white};
       box-shadow: rgba(0, 0, 75, 0.015) 0px 2px 2px,
         rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
         rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
         rgba(0, 0, 75, 0.015) 0px 64px 64px;
     `,
     loanPurpose: css`
-      border-top: 1px solid ${color.line};
+      border-top: 1px solid ${theming.color.line};
       box-shadow: rgba(0, 0, 75, 0.015) 0px 2px 2px,
         rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
         rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
@@ -153,21 +146,21 @@ export const SelectOptionsWrapperStyling = registerStyle(
   Select.themeProps.defaultOptionWrapper
 )
 
-export const SelectSimpleWrapperStyling = registerStyle(
+export const SelectSimpleWrapperStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css``
+    [theming.VARIANT_DEFAULT]: css``
   },
   SelectSimple.themeProps.wrapper
 )
 
-export const SelectSimpleSelectStyling = registerStyle(
+export const SelectSimpleSelectStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       display: block;
       min-height: 72px;
       border-width: 0;
       border-radius: 0;
-      padding: ${spacing.medium} ${spacing.medium} 0;
+      padding: ${theming.spacing.medium} ${theming.spacing.medium} 0;
       transition: border-color 0.2s ease-out;
 
       & ~ label {
@@ -184,11 +177,11 @@ export const SelectSimpleSelectStyling = registerStyle(
   SelectSimple.themeProps.select
 )
 
-export const RadioPillItemStyling = registerStyle(
+export const RadioPillItemStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       &:first-child {
-        margin-left: ${spacing.medium};
+        margin-left: ${theming.spacing.medium};
         && label {
           border-radius: 0;
           border-top-left-radius: 0;
@@ -196,7 +189,7 @@ export const RadioPillItemStyling = registerStyle(
         }
       }
       &:last-child {
-        margin-right: ${spacing.medium};
+        margin-right: ${theming.spacing.medium};
         && label {
           border-radius: 0;
           border-bottom-right-radius: 0;
@@ -207,12 +200,12 @@ export const RadioPillItemStyling = registerStyle(
   },
   RadioPillItem.themeProps.wrapper
 )
-export const SliderKeyboardWrapperStyling = registerStyle(
+export const SliderKeyboardWrapperStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       max-width: 400px;
       margin: 0 auto;
-      padding: 0 ${spacing.medium};
+      padding: 0 ${theming.spacing.medium};
 
       label {
         display: block;
@@ -226,17 +219,17 @@ export const SliderKeyboardWrapperStyling = registerStyle(
   SliderKeyboardInput.themeProps.wrapper
 )
 
-export const SliderInputStyling = registerStyle(
+export const SliderInputStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       input[type="text"] {
         min-width: 240px;
         max-width: 100%;
-        min-height: ${targetSize.normal};
+        min-height: ${theming.targetSize.normal};
         margin-bottom: 24px;
         border-width: 0;
-        border-bottom: 1px dashed ${color.line};
-        padding: ${spacing.small} 0;
+        border-bottom: 1px dashed ${theming.color.line};
+        padding: ${theming.spacing.small} 0;
         background-color: transparent;
         text-align: center;
         font-size: 40px;
@@ -259,7 +252,7 @@ export const SliderInputStyling = registerStyle(
         }
 
         &:disabled {
-          color: ${color.text};
+          color: ${theming.color.text};
         }
       }
     `
@@ -267,56 +260,57 @@ export const SliderInputStyling = registerStyle(
   SliderKeyboardInput.themeProps.input
 )
 
-export const CompanyInputLoadFromStyling = registerStyle(
+export const CompanyInputLoadFromStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      background-color: ${color("subtleHover")};
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color("subtleHover")};
     `
   },
   CompanyInput.themeProps.animateLoadFrom
 )
 
-export const CompanyInputLoadToStyling = registerStyle(
+export const CompanyInputLoadToStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      background-color: ${color("blue")};
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color("blue")};
     `
   },
   CompanyInput.themeProps.animateLoadTo
 )
 
-export const CompanyInputCloseStyling = registerStyle(
+export const CompanyInputCloseStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      color: ${color("blue")};
+    [theming.VARIANT_DEFAULT]: css`
+      color: ${theming.color("blue")};
     `
   },
   CompanyInput.themeProps.selectClose
 )
 
-export const CompanyInputFlagStyling = registerStyle(
+export const CompanyInputFlagStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      padding: ${spacing.mediumPlus} ${spacing.tiny} ${spacing.tiny}
-        ${spacing.medium};
+    [theming.VARIANT_DEFAULT]: css`
+      padding: ${theming.spacing.mediumPlus} ${theming.spacing.tiny}
+        ${theming.spacing.tiny} ${theming.spacing.medium};
     `
   },
   CompanyInput.themeProps.selectFlag
 )
 
-export const CompanyInputSelectItemStyling = registerStyle(
+export const CompanyInputSelectItemStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      background-color: ${p => (p.isSelected ? color("blue") : "transparent")};
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${p =>
+        p.isSelected ? theming.color("blue") : "transparent"};
     `
   },
   CompanyInput.themeProps.selectItem
 )
 
-export const PostalCodeInputStyling = registerStyle(
+export const PostalCodeInputStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      width: calc(5ch + ${spacing.large});
+    [theming.VARIANT_DEFAULT]: css`
+      width: calc(5ch + ${theming.spacing.large});
     `
   },
   PostalCodeInput.themeProps.input

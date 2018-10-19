@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { color } from "@staccx/theme"
 import Layout from "./Layout"
+import color from "../../../theming/convenience/color"
 import LayoutItem from "./LayoutItem"
 import RadioPill from "../../Forms/RadioPill/RadioPill"
 import RadioPillItem from "../../Forms/RadioPill/RadioPill.Item"

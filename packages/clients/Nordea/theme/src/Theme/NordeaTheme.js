@@ -1,5 +1,4 @@
-import { Theme } from "@staccx/theme"
-import { BaseTheme } from "@staccx/base"
+import { BaseTheme, theming } from "@staccx/base"
 import reset from "./reset"
 import { HeadingStyling } from "./theme.Headings"
 import { ParagraphStyling } from "./theme.Paragraphs"
@@ -117,16 +116,16 @@ const color = {
 }
 
 const DealerpadSpecificColor = {
-  header: color.b5,
-  headerText: color.white,
-  headerActive: color.b1,
-  headerIconActive: color.white,
-  contactIcon: color.p2,
-  contactIconHover: color.p3,
-  chatBubbleBgCurrentUser: color.bg,
-  chatBubbleBgOtherUser: color.b2,
-  chatBubbleBgCurrentUserText: color.text,
-  chatBubbleBgOtherUserText: color.white
+  header: theming.color.b5,
+  headerText: theming.color.white,
+  headerActive: theming.color.b1,
+  headerIconActive: theming.color.white,
+  contactIcon: theming.color.p2,
+  contactIconHover: theming.color.p3,
+  chatBubbleBgCurrentUser: theming.color.bg,
+  chatBubbleBgOtherUser: theming.color.b2,
+  chatBubbleBgCurrentUserText: theming.color.text,
+  chatBubbleBgOtherUserText: theming.color.white
 }
 
 const font = {
@@ -152,7 +151,7 @@ const fontFamily = {
   body: "NordeaSansSmall"
 }
 
-const theme = new Theme(BaseTheme, {
+const theme = new theming.Theme(BaseTheme, {
   name: "Nordea",
   font,
   fontWeight,

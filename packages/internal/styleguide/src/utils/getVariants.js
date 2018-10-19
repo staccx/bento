@@ -1,6 +1,6 @@
-import { VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
-export default (theme, themeProps) =>
+export default (theme, themeProps) => {
   Reflect.ownKeys(themeProps).reduce((acc, curr) => {
     const prop = themeProps[curr]
 
@@ -11,10 +11,11 @@ export default (theme, themeProps) =>
         acc[variant] = {
           name: `${variant}`,
           value: variant,
-          isOverriddenDefault: variant === VARIANT_DEFAULT
+          isOverriddenDefault: variant === theming.VARIANT_DEFAULT
         }
       }, {})
     }
 
     return acc
   }, {})
+}

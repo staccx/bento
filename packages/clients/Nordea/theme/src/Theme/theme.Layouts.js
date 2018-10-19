@@ -1,15 +1,14 @@
 import { css } from "styled-components"
-import { registerStyle, spacing, color } from "@staccx/theme"
-import { Layout, LayoutItem } from "@staccx/base"
+import { Layout, LayoutItem, theming } from "@staccx/base"
 import { FadeIn, BounceIn } from "@staccx/animations"
 
-export const LayoutStyling = registerStyle(
+export const LayoutStyling = theming.createVariants(
   {
     case: css`
       grid-template-columns: 1fr minmax(320px, 512px) 96px minmax(320px, 512px) 1fr;
       grid-template-rows: repeat(7, auto);
-      grid-row-gap: ${spacing.large};
-      grid-column-gap: ${spacing.medium};
+      grid-row-gap: ${theming.spacing.large};
+      grid-column-gap: ${theming.spacing.medium};
       @media only screen and (max-width: 880px) {
         grid-template-columns: 1fr 320px 2fr 320px 1fr;
       }
@@ -22,8 +21,8 @@ export const LayoutStyling = registerStyle(
     stats: css`
       grid-template-columns: 1fr 48px 2fr 1fr;
       grid-template-rows: repeat(3, auto);
-      grid-row-gap: ${spacing.medium};
-      grid-column-gap: ${spacing.medium};
+      grid-row-gap: ${theming.spacing.medium};
+      grid-column-gap: ${theming.spacing.medium};
       @media only screen and (max-width: 920px) {
         grid-template-columns: 1fr 6px 2fr 1fr;
       }
@@ -58,13 +57,13 @@ const fadeInCss = css`
 const responsiveDealerpadHack = css`
   display: flex;
   justify-content: center;
-  background-color: ${color.white};
+  background-color: ${theming.color.white};
   svg {
     max-width: 100%;
   }
 `
 
-export const LayoutItemStyling = registerStyle(
+export const LayoutItemStyling = theming.createVariants(
   {
     statsSelect: css`
       grid-column: 4 / span 1;
@@ -133,7 +132,7 @@ export const LayoutItemStyling = registerStyle(
       @media only screen and (max-width: 750px) {
         display: block;
         grid-row: 3;
-        margin-top: -${spacing.medium};
+        margin-top: -${theming.spacing.medium};
       }
     `,
     caseSummary: css`

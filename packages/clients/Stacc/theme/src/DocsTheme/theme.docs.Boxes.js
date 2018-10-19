@@ -1,11 +1,10 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
-import { Box } from "@staccx/base"
+import { Box, theming } from "@staccx/base"
 
-export const BoxStyling = registerStyle(
+export const BoxStyling = theming.createVariants(
   {
     documentationShortcut: css`
-      color: ${color.text};
+      color: ${theming.color.text};
     `,
     codeBlock: css`
       padding: 0;
@@ -13,7 +12,7 @@ export const BoxStyling = registerStyle(
         rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
         rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
         rgba(0, 0, 75, 0.015) 0px 64px 64px;
-      border: 1px solid ${color.line};
+      border: 1px solid ${theming.color.line};
     `,
     documentationMenu: css`
       position: sticky;
@@ -32,11 +31,11 @@ export const BoxStyling = registerStyle(
       max-width: 100%;
     `,
     apiContainer: css`
-      padding-top: ${spacing.large};
+      padding-top: ${theming.spacing.large};
     `,
     styleGuideHeader: css`
-      height: ${spacing("largePlus")};
-      border-bottom: 1px solid ${color.line};
+      height: ${theming.spacing("largePlus")};
+      border-bottom: 1px solid ${theming.color.line};
       width: 100%;
       display: flex;
       padding-top: 0;
@@ -50,8 +49,8 @@ export const BoxStyling = registerStyle(
       max-width: 806px;
     `,
     customProps: css`
-      border-top: 1px solid ${color.line};
-      background-color: ${color("g4")};
+      border-top: 1px solid ${theming.color.line};
+      background-color: ${theming.color("g4")};
     `
   },
   Box.themeProps.box

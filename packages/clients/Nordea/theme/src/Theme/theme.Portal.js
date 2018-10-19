@@ -1,15 +1,14 @@
 import { css } from "styled-components"
-import { registerStyle, VARIANT_DEFAULT, color } from "@staccx/theme"
-import { Portal } from "@staccx/base"
+import { Portal, theming } from "@staccx/base"
 
-export const PortalIcon = registerStyle(
+export const PortalIcon = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      background-color: ${color.white};
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color.white};
       ${p =>
         p.last &&
         css`
-          border: 2px dashed ${color.white};
+          border: 2px dashed ${theming.color.white};
           background-color: transparent;
         `};
     `,
@@ -20,13 +19,13 @@ export const PortalIcon = registerStyle(
       margin-bottom: 0;
     `,
     newCase: css`
-      background-color: ${color("bg1")};
+      background-color: ${theming.color("bg1")};
     `
   },
   Portal.themeProps.iconWrapper
 )
 
-export const PortalLabel = registerStyle(
+export const PortalLabel = theming.createVariants(
   {
     secondary: css`
       display: none;

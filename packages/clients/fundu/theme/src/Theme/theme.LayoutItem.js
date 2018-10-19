@@ -1,11 +1,10 @@
 import { css } from "styled-components"
-import { color, registerStyle } from "@staccx/theme"
-import { LayoutItem } from "@staccx/base"
+import { LayoutItem, theming } from "@staccx/base"
 
-export const LayoutItemStyling = registerStyle(
+export const LayoutItemStyling = theming.createVariants(
   {
     sidebar: css`
-      background-color: ${color.bgGray};
+      background-color: ${theming.color.bgGray};
     `
   },
   LayoutItem.themeProps.container

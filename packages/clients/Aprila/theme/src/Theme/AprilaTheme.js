@@ -64,11 +64,11 @@ const color = {
 }
 
 const BiBSpecificColor = {
-  accountHeading: theming.color.bgGray,
-  accountEarned: theming.color.bgGray,
-  accountBalance: theming.color.secondary,
-  expandedItem: lighten(0.05, theming.color.line),
-  accountInfoBorder: rgba(theming.color.primary, 0.25)
+  accountHeading: color.bgGray,
+  accountEarned: color.bgGray,
+  accountBalance: color.secondary,
+  expandedItem: lighten(0.05, color.line),
+  accountInfoBorder: rgba(color.primary, 0.25)
 }
 
 const font = {
@@ -93,12 +93,12 @@ const fontWeight = {
 const BiBSpecificFont = {
   accountBalance:
     "calc(" +
-    theming.font.h1 +
+    font.h1 +
     " + (84 - " +
-    theming.font.h1.substring(0, theming.font.h1.indexOf("px")) +
+    font.h1.substring(0, font.h1.indexOf("px")) +
     " ) * ((100vw - 300px) / (2560 - 300)))",
-  accountBalanceDecimals: theming.font.h2,
-  transactionHeading: theming.font.h4
+  accountBalanceDecimals: font.h2,
+  transactionHeading: font.h4
 }
 
 const fontFamily = {

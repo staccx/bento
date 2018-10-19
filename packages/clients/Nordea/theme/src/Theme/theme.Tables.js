@@ -1,18 +1,11 @@
 import { css } from "styled-components"
-import {
-  font,
-  color,
-  spacing,
-  registerStyle,
-  VARIANT_DEFAULT
-} from "@staccx/theme"
-import { Table, hideVisually } from "@staccx/base"
+import { Table, hideVisually, theming } from "@staccx/base"
 
-export const TableStyling = registerStyle(
+export const TableStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       width: 100%;
-      font-size: ${font.base};
+      font-size: ${theming.font.base};
 
       thead {
         ${hideVisually};
@@ -24,27 +17,27 @@ export const TableStyling = registerStyle(
 
       th,
       td {
-        padding: ${spacing.tiny} ${spacing.medium};
+        padding: ${theming.spacing.tiny} ${theming.spacing.medium};
         vertical-align: top;
-        color: ${color.g4};
+        color: ${theming.color.g4};
       }
 
       tr:first-child th,
       tr:first-child td {
-        padding-top: ${spacing.medium};
+        padding-top: ${theming.spacing.medium};
       }
 
       tr:last-child th,
       tr:last-child td {
-        padding-bottom: ${spacing.medium};
+        padding-bottom: ${theming.spacing.medium};
       }
 
       tbody {
         tr:nth-child(odd) {
-          background-color: ${color.white};
+          background-color: ${theming.color.white};
         }
         tr:nth-child(even) {
-          background-color: ${color("primaryLight")};
+          background-color: ${theming.color("primaryLight")};
         }
         td:last-child {
           text-align: right;

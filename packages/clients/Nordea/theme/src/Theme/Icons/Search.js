@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Search = () => (
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -10,8 +10,8 @@ const Search = () => (
   </svg>
 )
 
-export const SearchIcon = registerStyle(
-  { [VARIANT_DEFAULT]: Search },
+export const SearchIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Search },
   "SearchIcon"
 )
 

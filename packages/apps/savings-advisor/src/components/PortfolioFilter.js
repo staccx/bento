@@ -7,9 +7,9 @@ import {
   fontSmoothing,
   Fraction,
   SplitListItem,
-  Wrapper
+  Wrapper,
+  theming
 } from "@staccx/base"
-import { font, getThemeProp, color, spacing, mapProp } from "@staccx/theme"
 import { lerp } from "@staccx/math"
 import {
   getActualRisk,
@@ -174,11 +174,11 @@ const Heading = styled.h4`
 const Expand = styled(ExpandListItem)`
   > button {
     position: relative;
-    color: ${color.white};
+    color: ${theming.color.white};
     background-image: linear-gradient(
       90deg,
-      ${getThemeProp("gradient", "laserStart") || color.white} 8.41%,
-      ${getThemeProp("gradient", "laserEnd")} 95.8%
+      ${theming.getProp("gradient", "laserStart") || theming.color.white} 8.41%,
+      ${theming.getProp("gradient", "laserEnd")} 95.8%
     );
     ${fontSmoothing};
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 4px rgba(0, 0, 0, 0.02),
@@ -189,10 +189,10 @@ const Expand = styled(ExpandListItem)`
 
     &:hover,
     &:focus {
-      color: ${color.white};
+      color: ${theming.color.white};
 
       > svg {
-        fill: ${color.white} !important;
+        fill: ${theming.color.white} !important;
       }
     }
   }
@@ -204,7 +204,7 @@ const Expand = styled(ExpandListItem)`
 `
 
 const FilterContent = styled.div`
-  padding-top: ${spacing.medium};
+  padding-top: ${theming.spacing.medium};
 `
 
 const DotButton = styled.button`
@@ -214,7 +214,8 @@ const DotButton = styled.button`
   height: 16px;
   border: 0;
   border-radius: 50%;
-  background-color: ${({ filled }) => (filled ? color.primary : color.line)};
+  background-color: ${({ filled }) =>
+    filled ? theming.color.primary : theming.color.line};
   cursor: pointer;
 
   &:hover,
@@ -222,13 +223,13 @@ const DotButton = styled.button`
   &:focus {
     outline: none;
     background-color: ${({ filled }) =>
-      filled ? color.primary : color.secondary}
+      filled ? theming.color.primary : theming.color.secondary}
     opacity: ${p => (p.filled ? 1 : 0.6)};
   }
 `
 
 const AnswersListItem = styled(SplitListItem)`
-  padding: ${spacing.small};
+  padding: ${theming.spacing.small};
   align-items: flex-start;
   > * {
     flex-grow: 1;
@@ -246,20 +247,20 @@ const NoWrap = styled.span`
 `
 
 const Subtle = styled.div`
-  color: ${color.wcag};
-  font-size: ${font.tiny};
+  color: ${theming.color.wcag};
+  font-size: ${theming.font.tiny};
   font-style: normal;
   text-transform: uppercase;
 `
 
 const EditLink = styled.a`
   text-decoration: none;
-  color: ${color.primary};
+  color: ${theming.color.primary};
 
   &:hover,
   &:active,
   &:focus {
-    color: ${color.secondary};
+    color: ${theming.color.secondary};
   }
 `
 

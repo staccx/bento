@@ -2,8 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { inject, observer } from "mobx-react"
-import { Button } from "@staccx/base"
-import { color, spacing, wrapper } from "@staccx/theme"
+import { Button, theming } from "@staccx/base"
 
 @inject("uiStore")
 @observer
@@ -57,15 +56,15 @@ class StepNavigation extends Component {
 
 const Center = styled.div`
   text-align: center;
-  margin-top: ${spacing.large};
-  @media (max-width: ${wrapper.medium}) {
-    margin-top: ${spacing.large};
+  margin-top: ${theming.spacing.large};
+  @media (max-width: ${theming.wrapper.medium}) {
+    margin-top: ${theming.spacing.large};
   }
 `
 
 const Next = styled(Button)`
-  color: ${color.primary};
-  border: 2px solid ${color.primary};
+  color: ${theming.color.primary};
+  border: 2px solid ${theming.color.primary};
   border-radius: 15px;
   background-color: transparent;
   transition: color 0.2s ease;
@@ -74,11 +73,11 @@ const Next = styled(Button)`
   &:focus,
   &:active {
     background-color: transparent;
-    color: ${color.secondary};
+    color: ${theming.color.secondary};
   }
 
   &:disabled {
-    color: ${color.disabled};
+    color: ${theming.color.disabled};
     border: 0px;
   }
 `
@@ -86,14 +85,14 @@ const Next = styled(Button)`
 const Previous = styled(Button)`
   border: 2px solid transparent;
   border-radius: 15px;
-  color: ${color.wcag};
+  color: ${theming.color.wcag};
   background-color: transparent;
 
   &:hover,
   &:focus,
   &:active {
     background-color: transparent;
-    color: ${color.black};
+    color: ${theming.color.black};
   }
 `
 

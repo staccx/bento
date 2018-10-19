@@ -1,31 +1,30 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
-import { Box } from "@staccx/base"
+import { Box, theming } from "@staccx/base"
 
 export const tileStyle = css`
-  background: ${color.white};
+  background: ${theming.color.white};
   box-shadow: rgba(0, 0, 75, 0.015) 0px 2px 2px,
     rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
     rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
     rgba(0, 0, 75, 0.015) 0px 64px 64px;
-  border: 1px solid ${color.line};
+  border: 1px solid ${theming.color.line};
   border-radius: 2px;
   -webkit-column-break-inside: avoid;
   break-inside: avoid;
   page-break-inside: avoid;
 `
 
-export const BoxStyling = registerStyle(
+export const BoxStyling = theming.createVariants(
   {
     actionBox: css`
       ${tileStyle};
       padding: 0;
-      margin-bottom: ${spacing.medium};
+      margin-bottom: ${theming.spacing.medium};
     `,
     expandLeadContent: css`
       ${tileStyle};
       padding: 0;
-      margin-bottom: ${spacing.medium};
+      margin-bottom: ${theming.spacing.medium};
     `,
     largeForm: css`
       padding: 0;
@@ -39,27 +38,27 @@ export const BoxStyling = registerStyle(
           flex-basis: 50%;
 
           &:last-child {
-            border-left: 1px solid ${color.line};
+            border-left: 1px solid ${theming.color.line};
           }
         }
       }
 
       @media (max-width: 711px) {
         > *:not(:first-child) {
-          border-top: 1px solid ${color.line};
-          margin-top: ${spacing.large};
+          border-top: 1px solid ${theming.color.line};
+          margin-top: ${theming.spacing.large};
         }
       }
     `,
     paddingVertical: css`
       padding: 0;
-      padding-top: ${spacing.medium};
-      padding-bottom: ${spacing.medium};
+      padding-top: ${theming.spacing.medium};
+      padding-bottom: ${theming.spacing.medium};
     `,
     illustration: css`
       padding: 0;
       text-align: center;
-      margin-bottom: ${spacing.medium};
+      margin-bottom: ${theming.spacing.medium};
     `,
     split: css`
       display: flex;
@@ -73,17 +72,17 @@ export const BoxStyling = registerStyle(
       width: 100%;
     `,
     subtleBox: css`
-      background-color: ${color.subtleHover};
+      background-color: ${theming.color.subtleHover};
     `,
     halves: css`
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: ${spacing.large};
+      grid-gap: ${theming.spacing.large};
       grid-template-areas: "left right";
       padding: 0;
 
       @media (max-width: 735px) {
-        grid-gap: ${spacing.medium};
+        grid-gap: ${theming.spacing.medium};
       }
       @media (max-width: 710px) {
         grid-template-columns: 100%;
@@ -111,12 +110,12 @@ export const BoxStyling = registerStyle(
       padding: 0;
     `,
     addSignerBtn: css`
-      padding-top: ${spacing.small};
-      padding-left: ${spacing.medium};
+      padding-top: ${theming.spacing.small};
+      padding-left: ${theming.spacing.medium};
     `,
     endScreen: css`
       position: relative;
-      background-color: ${color.bgGray};
+      background-color: ${theming.color.bgGray};
 
       &::after {
         content: "";
@@ -136,30 +135,30 @@ export const BoxStyling = registerStyle(
       padding: 0;
 
       > div:first-child {
-        padding: ${spacing.medium} ${spacing.large};
+        padding: ${theming.spacing.medium} ${theming.spacing.large};
       }
     `,
     expandLead: css`
       padding: 0;
       text-align: center;
-      margin-bottom: ${spacing.medium};
+      margin-bottom: ${theming.spacing.medium};
     `,
     signDocument: css`
       padding: 0;
       li {
-        padding: ${spacing.small} ${spacing.medium};
+        padding: ${theming.spacing.small} ${theming.spacing.medium};
       }
     `,
     userDefinedAmount: css`
       padding: 0;
-      border-top: 1px solid ${color.line};
+      border-top: 1px solid ${theming.color.line};
 
       input {
-        padding-left: ${spacing.large};
+        padding-left: ${theming.spacing.large};
       }
 
       label {
-        padding-left: ${spacing.medium};
+        padding-left: ${theming.spacing.medium};
       }
     `,
     loanDurationContainer: css`
@@ -168,15 +167,15 @@ export const BoxStyling = registerStyle(
       grid-column-gap: 24px;
       grid-row-gap: 24px;
       max-width: 244px;
-      margin: ${spacing.medium} auto;
-      border-top: 2px solid ${color.primary};
-      border-bottom: 2px solid ${color.primary};
+      margin: ${theming.spacing.medium} auto;
+      border-top: 2px solid ${theming.color.primary};
+      border-bottom: 2px solid ${theming.color.primary};
       align-items: center;
     `,
     loanTerms: css`
       max-width: 400px;
       margin: 0 auto;
-      padding: 0 ${spacing.medium};
+      padding: 0 ${theming.spacing.medium};
 
       li {
         padding-left: 0;
@@ -184,8 +183,8 @@ export const BoxStyling = registerStyle(
       }
     `,
     header: css`
-      height: ${spacing("largePlus")};
-      border-bottom: 1px solid ${color.line};
+      height: ${theming.spacing("largePlus")};
+      border-bottom: 1px solid ${theming.color.line};
       width: 100%;
       display: flex;
       padding-top: 0;
@@ -194,10 +193,10 @@ export const BoxStyling = registerStyle(
     `,
     radioContainer: css`
       display: flex;
-      padding: ${spacing.mediumPlus} ${spacing.medium} 0;
+      padding: ${theming.spacing.mediumPlus} ${theming.spacing.medium} 0;
 
       > div:not(:first-child):not(:last-child) {
-        margin-right: ${spacing.medium};
+        margin-right: ${theming.spacing.medium};
       }
     `
   },

@@ -1,8 +1,7 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
-import { Input, RadioPillItem, fontSmoothing } from "@staccx/base"
+import { Input, RadioPillItem, fontSmoothing, theming } from "@staccx/base"
 
-export const InputStyling = registerStyle(
+export const InputStyling = theming.createVariants(
   {
     documentationHeaderSearch: css`
       width: 100%;
@@ -12,22 +11,22 @@ export const InputStyling = registerStyle(
 
       input {
         border-width: 0;
-        padding-left: ${spacing.medium};
+        padding-left: ${theming.spacing.medium};
         ${fontSmoothing};
-        background-color: ${color.bg};
+        background-color: ${theming.color.bg};
         &:hover,
         &:active,
         &:focus {
-          background-color: ${color.white};
+          background-color: ${theming.color.white};
         }
         &::-webkit-input-placeholder {
-          color: ${color.wcag};
+          color: ${theming.color.wcag};
         }
         &::-moz-placeholder {
-          color: ${color.wcag};
+          color: ${theming.color.wcag};
         }
         &:-ms-input-placeholder {
-          color: ${color.wcag};
+          color: ${theming.color.wcag};
         }
       }
     `
@@ -35,7 +34,7 @@ export const InputStyling = registerStyle(
   Input.themeProps.wrapper
 )
 
-export const RadioPillItemStyling = registerStyle(
+export const RadioPillItemStyling = theming.createVariants(
   {
     documentationHeaderLang: css`
       label {
@@ -59,8 +58,8 @@ export const RadioPillItemStyling = registerStyle(
 
       input:checked {
         ~ label {
-          background-color: ${color.secondary} !important;
-          color: ${color.white};
+          background-color: ${theming.color.secondary} !important;
+          color: ${theming.color.white};
           z-index: 1;
         }
 
@@ -70,7 +69,7 @@ export const RadioPillItemStyling = registerStyle(
         ~ label:hover,
         ~ label:active,
         ~ label:focus {
-          background-color: ${color.secondary} !important;
+          background-color: ${theming.color.secondary} !important;
         }
       }
     `
@@ -78,11 +77,11 @@ export const RadioPillItemStyling = registerStyle(
   RadioPillItem.themeProps.wrapper
 )
 
-export const RadioPillItemHoverStyling = registerStyle(
+export const RadioPillItemHoverStyling = theming.createVariants(
   {
     documentationHeaderLang: css`
       border-width: 0;
-      background-color: ${color.secondary}4D;
+      background-color: ${theming.color.secondary}4D;
     `
   },
   RadioPillItem.themeProps.hover

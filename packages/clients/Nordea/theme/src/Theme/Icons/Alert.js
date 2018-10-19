@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Alert = () => (
   <svg
@@ -13,6 +13,9 @@ const Alert = () => (
   </svg>
 )
 
-export const AlertIcon = registerStyle({ [VARIANT_DEFAULT]: Alert }, "Alert")
+export const AlertIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Alert },
+  "Alert"
+)
 
 export default Alert

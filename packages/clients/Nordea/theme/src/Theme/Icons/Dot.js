@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Dot = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9">
@@ -7,6 +7,9 @@ const Dot = () => (
   </svg>
 )
 
-export const DotIcon = registerStyle({ [VARIANT_DEFAULT]: Dot }, "Dot")
+export const DotIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Dot },
+  "Dot"
+)
 
 export default Dot

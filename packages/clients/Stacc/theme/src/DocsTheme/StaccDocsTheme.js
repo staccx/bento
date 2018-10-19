@@ -1,4 +1,4 @@
-import { Theme } from "@staccx/theme"
+import { theming } from "@staccx/base"
 import { BoxStyling } from "./theme.docs.Boxes"
 import { HeadingStyling } from "./theme.docs.Headings"
 import { ListStyling, SplitListItemStyling } from "./theme.docs.Lists"
@@ -38,7 +38,7 @@ const color = {
   codeHTMLTag: "#A9B7C6"
 }
 
-const theme = new Theme({ wrapper, color })
+const theme = new theming.Theme({ wrapper, color })
   .add(BoxStyling)
   .add(HeadingStyling)
   .add(ListStyling)

@@ -1,15 +1,14 @@
 import { css } from "styled-components"
-import { registerStyle, VARIANT_DEFAULT, color } from "@staccx/theme"
-import { Button } from "@staccx/base"
+import { Button, theming } from "@staccx/base"
 
-export default registerStyle(
+export default theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      background-color: ${color.secondary};
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color.secondary};
 
       &:hover,
       &:focus {
-        background-color: ${color.secondary};
+        background-color: ${theming.color.secondary};
       }
     `
   },

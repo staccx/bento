@@ -1,5 +1,4 @@
-import { Theme } from "@staccx/theme"
-import { BaseTheme } from "@staccx/base"
+import { BaseTheme, theming } from "@staccx/base"
 import reset from "./reset"
 import { HeadingStyling } from "./theme.Headings"
 import { ParagraphStyling } from "./theme.Paragraphs"
@@ -105,7 +104,7 @@ const fontFamily = {
   body: "Libre Franklin"
 }
 
-const theme = new Theme(BaseTheme, {
+const theme = new theming.Theme(BaseTheme, {
   name: "Fundu",
   font,
   webfonts,

@@ -1,11 +1,10 @@
 import { css } from "styled-components"
-import { spacing, color, registerStyle } from "@staccx/theme"
-import { List, SplitListItem, ExpandListItem } from "@staccx/base"
+import { List, SplitListItem, ExpandListItem, theming } from "@staccx/base"
 
-export const ListStyling = registerStyle(
+export const ListStyling = theming.createVariants(
   {
     offerInfoList: css`
-      margin-top: ${spacing.tiny};
+      margin-top: ${theming.spacing.tiny};
       li {
         padding: 3px 0;
       }
@@ -15,38 +14,38 @@ export const ListStyling = registerStyle(
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: ${spacing.tiny} ${spacing.medium};
+        padding: ${theming.spacing.tiny} ${theming.spacing.medium};
 
         &:not(:last-child) {
-          border-bottom: 1px solid ${color.line};
+          border-bottom: 1px solid ${theming.color.line};
         }
       }
     `,
     documentStatusList: css`
-      background-color: ${color.subtleHover};
+      background-color: ${theming.color.subtleHover};
 
       > li {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: ${spacing.tiny} ${spacing.medium};
+        padding: ${theming.spacing.tiny} ${theming.spacing.medium};
 
         &:not(:first-child) {
-          border-top: 1px solid ${color.line};
+          border-top: 1px solid ${theming.color.line};
         }
       }
     `,
     bottomBorder: css`
-      border-bottom: 1px solid ${color.line};
+      border-bottom: 1px solid ${theming.color.line};
     `,
     topBorder: css`
-      border-top: 1px solid ${color.line};
+      border-top: 1px solid ${theming.color.line};
     `
   },
   List.themeProps.list
 )
 
-export const SplitListItemStyling = registerStyle(
+export const SplitListItemStyling = theming.createVariants(
   {
     signerListItem: css`
       > * {
@@ -54,7 +53,7 @@ export const SplitListItemStyling = registerStyle(
       }
 
       &:last-child {
-        border-bottom: 1px solid ${color.line};
+        border-bottom: 1px solid ${theming.color.line};
       }
 
       ${p =>
@@ -71,13 +70,13 @@ export const SplitListItemStyling = registerStyle(
   SplitListItem.themeProps.listItem
 )
 
-export const ExpandListItemStyling = registerStyle(
+export const ExpandListItemStyling = theming.createVariants(
   {
     signer: css`
-      border-bottom: 1px solid ${color.line};
+      border-bottom: 1px solid ${theming.color.line};
 
       > * {
-        border-top: 1px solid ${color.line};
+        border-top: 1px solid ${theming.color.line};
       }
     `
   },

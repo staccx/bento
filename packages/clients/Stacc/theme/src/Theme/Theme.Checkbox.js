@@ -1,12 +1,11 @@
 import { css } from "styled-components"
-import { registerStyle, VARIANT_DEFAULT, color } from "@staccx/theme"
-import { CheckBox } from "@staccx/base"
+import { CheckBox, theming } from "@staccx/base"
 import { darken } from "polished"
 
-export const CheckboxCheckedIcon = registerStyle(
+export const CheckboxCheckedIcon = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      color: ${color.white};
+    [theming.VARIANT_DEFAULT]: css`
+      color: ${theming.color.white};
       height: 12px;
       width: 12px;
       left: 6px;
@@ -16,12 +15,12 @@ export const CheckboxCheckedIcon = registerStyle(
   CheckBox.themeProps.icon
 )
 
-export const CheckboxCheckedLabel = registerStyle(
+export const CheckboxCheckedLabel = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       &::before {
-        background-color: ${color.primary};
-        border-color: ${color.primary};
+        background-color: ${theming.color.primary};
+        border-color: ${theming.color.primary};
       }
       &:hover,
       &:focus {

@@ -1,22 +1,21 @@
 import { css } from "styled-components"
-import { color, registerStyle, mapProp } from "@staccx/theme"
-import { LayoutItem } from "@staccx/base"
+import { LayoutItem, theming } from "@staccx/base"
 
-export const LayoutItemStyling = registerStyle(
+export const LayoutItemStyling = theming.createVariants(
   {
     sidebar: css`
-      background-color: ${color.bgGray};
-      border-right: 1px solid ${color.line};
+      background-color: ${theming.color.bgGray};
+      border-right: 1px solid ${theming.color.line};
     `,
     styleguidePreview: css`
       padding: 0;
-      background-color: ${mapProp(
+      background-color: ${theming.mapProp(
         "tab",
         {
-          Example: color("white"),
-          Variants: color("white")
+          Example: theming.color("white"),
+          Variants: theming.color("white")
         },
-        color("codeBackground")
+        theming.color("codeBackground")
       )};
     `
   },

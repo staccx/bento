@@ -1,10 +1,10 @@
 import React, { Component } from "react"
-import { Heading, Text, Layout, LayoutItem, Box } from "@staccx/base"
+import { Heading, Text, Layout, LayoutItem, Box, theming } from "@staccx/base"
 import reactElementToJSXString from "react-element-to-jsx-string"
 import pretty from "pretty"
 import wrap from "word-wrap"
 import ReactDOMServer from "react-dom/server"
-import { VARIANT_DEFAULT, ThemeConsumer } from "@staccx/theme"
+import { ThemeProvider } from "styled-components"
 import PropTypes from "prop-types"
 import generatedProps from "../generated/props.json"
 import source from "../generated/source.json"
@@ -21,7 +21,7 @@ class PreviewComponent extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      variant: VARIANT_DEFAULT,
+      variant: theming.VARIANT_DEFAULT,
       tab: tabs.preview,
       componentState: {}
     }
@@ -64,7 +64,85 @@ class PreviewComponent extends Component {
           }
         })
       : []
+    let content = null
+    switch (this.state.tab) {
+      case tabs.preview: {
+        content = (
+          <Layout variant="componentContent">
+            <RenderVariants
+              component={preview}
+              variants={{
+                [theming.VARIANT_DEFAULT]: {
+                  name: "Default",
+                  value: theming.VARIANT_DEFAULT
+                }
+              }}
+              componentProps={componentPropArray}
+              componentState={this.state.componentState}
+              theme={this.props.theme}
+              setComponentState={this.setComponentState}
+              width={width}
+            />
+          </Layout>
+        )
+        break
+      }
+      case tabs.variants: {
+        console.log(this.props.theme)
+        content = (
+          <RenderVariants
+            renderHeading
+            component={preview}
+            variants={{
+              [theming.VARIANT_DEFAULT]: {
+                name: "Default",
+                value: theming.VARIANT_DEFAULT
+              }
+            }}
+            theme={this.props.theme}
+            setComponentState={this.setComponentState}
+            width={width}
+          />
+        )
+        break
+      }
+      case tabs.jsSource: {
+        content = (
+          <Box variant="transparent">
+            <ComponentSource code={source[preview.component.name]} />
+          </Box>
+        )
+        break
+      }
 
+      case tabs.usage: {
+        const code = reactElementToJSXString(
+          preview.render({
+            variant: theming.VARIANT_DEFAULT,
+            ...this.state.componentState
+          })
+        )
+        content = <RenderedSource code={code} />
+        break
+      }
+
+      case tabs.htmlSource: {
+        const code = ReactDOMServer.renderToString(
+          preview.render(...this.state.componentState)
+        )
+
+        const wrappedCode = wrap(code, { width: 80 })
+        const prettified = pretty(wrappedCode, { ocd: true })
+
+        content = <RenderedSource code={prettified} />
+        break
+      }
+
+      default: {
+        content = <div>Not implemented yet</div>
+        break
+      }
+    }
     return (
       <Layout paddingTop="large">
         {preview.title && <Heading>{preview.title}</Heading>}
@@ -85,84 +163,9 @@ class PreviewComponent extends Component {
                   onChange={e => this.setState({ tab: e.target.value })}
                 />
                 <Box variant="overflow">
-                  <ThemeConsumer themeName={this.props.componentThemeName}>
-                    {({ theme, themes }) => {
-                      switch (this.state.tab) {
-                        case tabs.preview: {
-                          return (
-                            <Layout variant="componentContent">
-                              <RenderVariants
-                                component={preview}
-                                variants={{
-                                  [VARIANT_DEFAULT]: {
-                                    name: "Default",
-                                    value: VARIANT_DEFAULT
-                                  }
-                                }}
-                                componentProps={componentPropArray}
-                                componentState={this.state.componentState}
-                                theme={theme}
-                                themeName={this.props.componentThemeName}
-                                themes={themes}
-                                setComponentState={this.setComponentState}
-                                width={width}
-                              />
-                            </Layout>
-                          )
-                        }
-                        case tabs.variants: {
-                          return (
-                            <RenderVariants
-                              renderHeading
-                              component={preview}
-                              variants={getVariants(
-                                theme,
-                                preview.component.themeProps || {}
-                              )}
-                              themeName={this.props.componentThemeName}
-                              themes={themes}
-                              setComponentState={this.setComponentState}
-                              width={width}
-                            />
-                          )
-                        }
-                        case tabs.jsSource: {
-                          return (
-                            <Box variant="transparent">
-                              <ComponentSource
-                                code={source[preview.component.name]}
-                              />
-                            </Box>
-                          )
-                        }
-
-                        case tabs.usage: {
-                          const code = reactElementToJSXString(
-                            preview.render({
-                              variant: VARIANT_DEFAULT,
-                              ...this.state.componentState
-                            })
-                          )
-                          return <RenderedSource code={code} />
-                        }
-
-                        case tabs.htmlSource: {
-                          const code = ReactDOMServer.renderToString(
-                            preview.render(...this.state.componentState)
-                          )
-
-                          const wrappedCode = wrap(code, { width: 80 })
-                          const prettified = pretty(wrappedCode, { ocd: true })
-
-                          return <RenderedSource code={prettified} />
-                        }
-
-                        default: {
-                          return <div>Not implemented yet</div>
-                        }
-                      }
-                    }}
-                  </ThemeConsumer>
+                  <ThemeProvider theme={this.props.theme}>
+                    {content}
+                  </ThemeProvider>
                 </Box>
 
                 {this.state.tab === tabs.preview &&

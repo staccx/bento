@@ -1,8 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 import { Sparklines, SparklinesLine } from "react-sparklines"
-import { List, ExpandListItem, Wrapper, Fraction, Donut } from "@staccx/base"
-import { color, spacing } from "@staccx/theme"
+import {
+  List,
+  ExpandListItem,
+  Wrapper,
+  Fraction,
+  Donut,
+  theming
+} from "@staccx/base"
 
 const Title = ({ fundName, index }) => (
   <React.Fragment>
@@ -19,8 +25,8 @@ const Title = ({ fundName, index }) => (
 )
 
 const ColorIndicator = styled.svg`
-  fill: ${({ index }) => color(`graph${index}`)};
-  margin-right: ${spacing.small};
+  fill: ${({ index }) => theming.color(`graph${index}`)};
+  margin-right: ${theming.spacing.small};
 `
 
 const PortfolioExpand = ({ funds, selectedIndex, onClick }) => (
@@ -91,12 +97,12 @@ const Expand = styled(ExpandListItem)`
   }
   > div {
     background-color: #fcfcfc;
-    border: 1px solid ${color.line};
+    border: 1px solid ${theming.color.line};
     position: relative;
     max-width: 100%;
     margin-bottom: -1px;
     position: relative;
-    padding: ${spacing.medium} 0;
+    padding: ${theming.spacing.medium} 0;
     &::before {
       content: "";
       position: absolute;
@@ -104,7 +110,7 @@ const Expand = styled(ExpandListItem)`
       top: 0;
       height: 100%;
       width: 6px;
-      background-color: ${({ index }) => color("graph" + index)};
+      background-color: ${({ index }) => theming.color("graph" + index)};
     }
   }
 `
@@ -112,12 +118,12 @@ const Expand = styled(ExpandListItem)`
 const Label = styled.div`
   font-weight: bold;
   display: block;
-  color: ${color.wcag};
+  color: ${theming.color.wcag};
 `
 
 const Mb = styled.div`
   &:not(:last-child) {
-    margin-bottom: ${spacing.medium};
+    margin-bottom: ${theming.spacing.medium};
   }
 `
 
@@ -128,7 +134,7 @@ const Halves = styled.div`
   > * {
     flex-basis: 50%;
     &:not(:last-child) {
-      padding-right: ${spacing.medium};
+      padding-right: ${theming.spacing.medium};
     }
   }
 `

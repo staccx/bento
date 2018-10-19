@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const News = () => (
   <svg
@@ -17,6 +17,9 @@ const News = () => (
   </svg>
 )
 
-export const NewsIcon = registerStyle({ [VARIANT_DEFAULT]: News }, "News")
+export const NewsIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: News },
+  "News"
+)
 
 export default News

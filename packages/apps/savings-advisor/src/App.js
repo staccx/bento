@@ -1,7 +1,6 @@
 import React, { Component } from "react"
-import styled from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import { Wrapper } from "@staccx/base"
-import { ThemeProxyProvider } from "@staccx/theme"
 import { BrowserRouter as Router } from "react-router-dom"
 import Stepper from "./components/StepIndicator"
 import themeLaser from "./theme/themeLaser"
@@ -10,7 +9,7 @@ import StepContent from "./components/StepContent"
 class App extends Component {
   render() {
     return (
-      <ThemeProxyProvider theme={themeLaser}>
+      <ThemeProvider theme={themeLaser}>
         <div style={{ paddingTop: "48px" }}>
           <Router>
             <StyledWrapper>
@@ -19,7 +18,7 @@ class App extends Component {
             </StyledWrapper>
           </Router>
         </div>
-      </ThemeProxyProvider>
+      </ThemeProvider>
     )
   }
 }

@@ -1,8 +1,7 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
-import { Input, RadioPillItem } from "@staccx/base"
+import { Input, RadioPillItem, theming } from "@staccx/base"
 
-export const InputStyling = registerStyle(
+export const InputStyling = theming.createVariants(
   {
     documentationHeaderSearch: css`
       width: 100%;
@@ -12,21 +11,21 @@ export const InputStyling = registerStyle(
 
       input {
         border-width: 0;
-        padding-left: ${spacing.medium};
+        padding-left: ${theming.spacing.medium};
       }
     `
   },
   Input.themeProps.wrapper
 )
 
-export const RadioPillItemStyling = registerStyle(
+export const RadioPillItemStyling = theming.createVariants(
   {
     documentationHeaderLang: css`
       label {
         border-width: 0;
         background-color: transparent;
-        margin-left: ${spacing.small};
-        margin-right: ${spacing.small};
+        margin-left: ${theming.spacing.small};
+        margin-right: ${theming.spacing.small};
         border-radius: 50px;
 
         &:first-child,
@@ -40,8 +39,8 @@ export const RadioPillItemStyling = registerStyle(
 
       input:checked {
         ~ label {
-          background-color: ${color.primary};
-          color: ${color.white};
+          background-color: ${theming.color.primary};
+          color: ${theming.color.white};
           z-index: 1;
         }
 
@@ -51,7 +50,7 @@ export const RadioPillItemStyling = registerStyle(
         ~ label:hover,
         ~ label:active,
         ~ label:focus {
-          background-color: ${color.primary} !important;
+          background-color: ${theming.color.primary} !important;
         }
       }
     `
@@ -59,11 +58,11 @@ export const RadioPillItemStyling = registerStyle(
   RadioPillItem.themeProps.wrapper
 )
 
-export const RadioPillItemHoverStyling = registerStyle(
+export const RadioPillItemHoverStyling = theming.createVariants(
   {
     documentationHeaderLang: css`
       border-width: 0;
-      background-color: ${color.primary}4D;
+      background-color: ${theming.color.primary}4D;
     `
   },
   RadioPillItem.themeProps.hover

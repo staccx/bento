@@ -11,7 +11,6 @@
     "@staccx/base": "^7.13.0",
     "@staccx/formatting": "^7.13.0",
     "@staccx/math": "^7.13.0",
-    "@staccx/theme": "^7.13.0",
     "axios": "^0.18.0",
     "chart.js": "^2.7.1",
     "date-fns": "^v2.0.0-alpha.16",

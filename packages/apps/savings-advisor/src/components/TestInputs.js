@@ -53,10 +53,10 @@ class TestInputs extends React.Component {
 
 const Heading = styled.h1`
   font-family: ${p => p.theme.font.body};
-  font-size: ${font.h1};
+  font-size: ${theming.font.h1};
   font-weight: normal;
   text-align: center;
-  margin-bottom: ${spacing.large};
+  margin-bottom: ${theming.spacing.large};
 `
 
 const OuterWrapper = styled.div``
@@ -69,11 +69,11 @@ const InputsWrapper = styled.div`
 
 const InputItem = styled.div`
   position: relative;
-  margin-right: ${spacing.small};
+  margin-right: ${theming.spacing.small};
 
   &:last-child {
     margin-right: 0;
-    margin-left: ${spacing.small};
+    margin-left: ${theming.spacing.small};
   }
 `
 

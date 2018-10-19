@@ -1,11 +1,10 @@
 import { css } from "styled-components"
-import { color, registerStyle } from "@staccx/theme"
-import { Tag } from "@staccx/base"
+import { Tag, theming } from "@staccx/base"
 
-export const TagStyling = registerStyle(
+export const TagStyling = theming.createVariants(
   {
     inverted: css`
-      background-color: ${color.white};
+      background-color: ${theming.color.white};
     `
   },
   Tag.themeProps.tag

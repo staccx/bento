@@ -1,8 +1,7 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
-import { Layout, fontSmoothing } from "@staccx/base"
+import { Layout, fontSmoothing, theming } from "@staccx/base"
 
-export const LayoutStyling = registerStyle(
+export const LayoutStyling = theming.createVariants(
   {
     documentationHeader: css`
       width: 100%;
@@ -14,18 +13,18 @@ export const LayoutStyling = registerStyle(
       grid-column-gap: 0;
 
       > * {
-        padding: ${spacing.medium};
-        background-color: ${color.white};
+        padding: ${theming.spacing.medium};
+        background-color: ${theming.color.white};
 
         &:last-child {
-          border-left: 1px solid ${color.line};
+          border-left: 1px solid ${theming.color.line};
           ${fontSmoothing};
         }
       }
 
       @media only screen and (max-width: 1280px) {
         grid-template-columns: 1fr;
-        grid-row-gap: ${spacing.medium};
+        grid-row-gap: ${theming.spacing.medium};
         grid-column-gap: 0;
       }
     `,
@@ -40,12 +39,12 @@ export const LayoutStyling = registerStyle(
         }
 
         ::-webkit-scrollbar-thumb {
-          background: ${color("codeComment")};
+          background: ${theming.color("codeComment")};
           border-radius: 50px;
         }
 
         &:first-child {
-          margin-bottom: -${spacing.medium};
+          margin-bottom: -${theming.spacing.medium};
         }
       }
     `,
@@ -55,8 +54,8 @@ export const LayoutStyling = registerStyle(
       grid-template-rows: 72px 1fr;
       height: 100%;
       > * {
-        padding-left: ${spacing.medium};
-        padding-right: ${spacing.medium};
+        padding-left: ${theming.spacing.medium};
+        padding-right: ${theming.spacing.medium};
       }
     `,
     centered: css`

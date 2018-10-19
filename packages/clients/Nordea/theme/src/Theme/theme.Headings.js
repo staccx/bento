@@ -1,49 +1,41 @@
 import { css } from "styled-components"
-import {
-  registerStyle,
-  VARIANT_DEFAULT,
-  color,
-  fontWeight,
-  font,
-  spacing
-} from "@staccx/theme"
-import { Heading } from "@staccx/base"
+import { Heading, theming } from "@staccx/base"
 
-export const HeadingStyling = registerStyle(
+export const HeadingStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      color: ${color("b4")};
+    [theming.VARIANT_DEFAULT]: css`
+      color: ${theming.color("b4")};
     `,
     caseHeading: css`
-      color: ${color("b4")};
-      font-weight: ${fontWeight.normal};
+      color: ${theming.color("b4")};
+      font-weight: ${theming.fontWeight.normal};
       line-height: 1.2;
     `,
     subtle: css`
-      color: ${color.wcag};
-      font-size: ${font.tiny};
-      margin-bottom: ${spacing.tiny};
+      color: ${theming.color.wcag};
+      font-size: ${theming.font.tiny};
+      margin-bottom: ${theming.spacing.tiny};
     `,
     ContactName: css`
-      color: ${color.text};
-      font-size: ${font.input};
+      color: ${theming.color.text};
+      font-size: ${theming.font.input};
     `,
     caselist: css`
-      font-size: ${font.base};
+      font-size: ${theming.font.base};
       font-weight: ${p => (p.attention ? "bold" : "normal")};
     `,
     salesOverviewHeading: css`
-      color: ${color("b4")};
+      color: ${theming.color("b4")};
     `,
     carConfiguratorHeading: css`
-      color: ${color("b4")};
-      font-size: ${font.h3};
-      font-weight: ${fontWeight.normal};
+      color: ${theming.color("b4")};
+      font-size: ${theming.font.h3};
+      font-weight: ${theming.fontWeight.normal};
     `,
     carConfiguratorBrand: css`
-      color: ${color("b4")};
-      font-size: ${font.h1};
-      font-weight: ${fontWeight.normal};
+      color: ${theming.color("b4")};
+      font-size: ${theming.font.h1};
+      font-weight: ${theming.fontWeight.normal};
     `
   },
   Heading.themeProps.heading

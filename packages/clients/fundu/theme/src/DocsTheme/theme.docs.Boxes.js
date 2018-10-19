@@ -1,13 +1,12 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
-import { Box } from "@staccx/base"
+import { Box, theming } from "@staccx/base"
 import { tileStyle } from "../Theme/theme.Boxes"
 
-export const BoxStyling = registerStyle(
+export const BoxStyling = theming.createVariants(
   {
     documentationShortcut: css`
       ${tileStyle};
-      color: ${color.text};
+      color: ${theming.color.text};
     `,
     codeBlock: css`
       ${tileStyle};
@@ -28,7 +27,7 @@ export const BoxStyling = registerStyle(
       max-width: 100%;
     `,
     apiContainer: css`
-      padding-top: ${spacing.large};
+      padding-top: ${theming.spacing.large};
     `
   },
   Box.themeProps.box

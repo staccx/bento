@@ -1,12 +1,11 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
-import { Layout, fontSmoothing } from "@staccx/base"
+import { Layout, fontSmoothing, theming } from "@staccx/base"
 
-export const LayoutStyling = registerStyle(
+export const LayoutStyling = theming.createVariants(
   {
     documentationHeader: css`
       width: 100%;
-      grid-template-columns: calc(40% + ${spacing.large}) 1fr;
+      grid-template-columns: calc(40% + ${theming.spacing.large}) 1fr;
       grid-column-gap: 0;
 
       > * {
@@ -15,29 +14,29 @@ export const LayoutStyling = registerStyle(
         &:last-child {
           display: flex;
           align-items: center;
-          background-color: ${color.bgGray};
-          border-left: 1px solid ${color.line};
+          background-color: ${theming.color.bgGray};
+          border-left: 1px solid ${theming.color.line};
         }
       }
     `,
     documentationApiExample: css`
       grid-template-columns: 35% 1fr;
-      grid-column-gap: ${spacing.large};
+      grid-column-gap: ${theming.spacing.large};
 
       > * {
-        padding: ${spacing.medium};
+        padding: ${theming.spacing.medium};
 
         &:last-child {
-          background-color: ${color("codeBackground")};
+          background-color: ${theming.color("codeBackground")};
           color: #f7f9fc;
-          border-left: 1px solid ${color.line};
+          border-left: 1px solid ${theming.color.line};
           ${fontSmoothing};
         }
       }
 
       @media only screen and (max-width: 1280px) {
         grid-template-columns: 1fr;
-        grid-row-gap: ${spacing.medium};
+        grid-row-gap: ${theming.spacing.medium};
         grid-column-gap: 0;
       }
     `,
@@ -52,12 +51,12 @@ export const LayoutStyling = registerStyle(
         }
 
         ::-webkit-scrollbar-thumb {
-          background: ${color("codeComment")};
+          background: ${theming.color("codeComment")};
           border-radius: 50px;
         }
 
         &:first-child {
-          margin-bottom: -${spacing.medium};
+          margin-bottom: -${theming.spacing.medium};
         }
       }
     `

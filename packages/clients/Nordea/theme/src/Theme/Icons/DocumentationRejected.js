@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const DocumentationRejected = () => (
   <svg
@@ -13,8 +13,8 @@ const DocumentationRejected = () => (
   </svg>
 )
 
-export const DocumentationRejectedIcon = registerStyle(
-  { [VARIANT_DEFAULT]: DocumentationRejected },
+export const DocumentationRejectedIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: DocumentationRejected },
   "DocumentationRejected"
 )
 

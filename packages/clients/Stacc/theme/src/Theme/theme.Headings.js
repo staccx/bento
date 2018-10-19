@@ -1,77 +1,69 @@
 import { css } from "styled-components"
-import {
-  registerStyle,
-  color,
-  font,
-  spacing,
-  wrapper,
-  VARIANT_DEFAULT
-} from "@staccx/theme"
-import { Heading } from "@staccx/base"
+import { Heading, theming } from "@staccx/base"
 
 const getResponsiveSizeL = level => {
   switch (level) {
     case 1:
-      return font.h2
+      return theming.font.h2
 
     case 2:
-      return font.h3
+      return theming.font.h3
 
     case 3:
-      return font.h4
+      return theming.font.h4
 
     default:
-      return font[level]
+      return theming.font[level]
   }
 }
 
 const getResponsiveSizeM = level => {
   switch (level) {
     case 1:
-      return font.h2
+      return theming.font.h2
 
     case 2:
-      return font.h3
+      return theming.font.h3
 
     case 3:
-      return font.h4
+      return theming.font.h4
 
     default:
-      return font[level]
+      return theming.font[level]
   }
 }
 
-export const HeadingStyling = registerStyle(
+export const HeadingStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      color: ${color("textDark")};
-      @media only screen and (max-width: ${wrapper.large}) {
+    [theming.VARIANT_DEFAULT]: css`
+      color: ${theming.color("textDark")};
+      @media only screen and (max-width: ${theming.wrapper.large}) {
         font-size: ${p => getResponsiveSizeL(p.level)};
       }
 
-      @media only screen and (max-width: ${wrapper.medium}) {
+      @media only screen and (max-width: ${theming.wrapper.medium}) {
         font-size: ${p => getResponsiveSizeM(p.level)};
       }
     `,
     emphasized: css`
-      color: ${color("primaryWcag")};
+      color: ${theming.color("primaryWcag")};
       text-transform: uppercase;
-      font-size: ${font.base};
+      font-size: ${theming.font.base};
       letter-spacing: 0.5;
     `,
     hero: css`
-      font-size: ${font("huge")};
+      font-size: ${theming.font("huge")};
       font-weight: 700;
-      color: ${color.white};
+      color: ${theming.color.white};
       text-align: center;
 
-      @media only screen and (max-width: ${wrapper.large}) {
-        font-size: ${font.h2};
+      @media only screen and (max-width: ${theming.wrapper.large}) {
+        font-size: ${theming.font.h2};
       }
     `,
     primary: css`
-      color: ${color.primary};
-      margin-bottom: ${spacing.small};
+      color: ${theming.color.primary};
+      margin-bottom: ${theming.spacing.small};
     `
   },
   Heading.themeProps.heading

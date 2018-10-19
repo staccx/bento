@@ -1,55 +1,47 @@
 import { css } from "styled-components"
-import {
-  color,
-  font,
-  spacing,
-  registerStyle,
-  fontFamily,
-  fontWeight
-} from "@staccx/theme"
-import { Heading, fontSmoothing } from "@staccx/base"
+import { Heading, fontSmoothing, theming } from "@staccx/base"
 
-export const HeadingStyling = registerStyle(
+export const HeadingStyling = theming.createVariants(
   {
     documentation: css`
       font-weight: 400;
-      font-family: ${fontFamily.body};
+      font-family: ${theming.fontFamily.body};
       ${p =>
         p.level === 1 &&
         css`
           text-transform: capitalize;
-          color: ${color.primary};
+          color: ${theming.color.primary};
         `};
       ${p =>
         p.level === 2 &&
         css`
-          font-size: ${font.h4};
-          margin-bottom: ${spacing.tiny};
+          font-size: ${theming.font.h4};
+          margin-bottom: ${theming.spacing.tiny};
         `};
 
       ${p =>
         p.level === 3 &&
         css`
-          margin-bottom: ${spacing.tiny};
+          margin-bottom: ${theming.spacing.tiny};
         `};
     `,
     apiExample: css`
       position: relative;
-      margin-bottom: ${spacing.small};
+      margin-bottom: ${theming.spacing.small};
       margin-left: 0;
-      background-color: ${color("codeBackground")};
-      font-family: ${fontFamily.body};
-      font-size: ${font.tiny};
+      background-color: ${theming.color("codeBackground")};
+      font-family: ${theming.fontFamily.body};
+      font-size: ${theming.font.tiny};
       text-transform: uppercase;
-      color: ${color.bg};
+      color: ${theming.color.bg};
       ${fontSmoothing};
 
       > span {
         position: relative;
         z-index: 5;
         display: inline-block;
-        background-color: ${color("codeBackground")};
-        padding-right: ${spacing.small};
+        background-color: ${theming.color("codeBackground")};
+        padding-right: ${theming.spacing.small};
       }
 
       &::after {
@@ -59,39 +51,39 @@ export const HeadingStyling = registerStyle(
         left: 0;
         width: 100%;
         height: 1px;
-        background-color: ${color("codeComment")};
+        background-color: ${theming.color("codeComment")};
       }
     `,
     documentationShortcutHeading: css`
       font-weight: 400;
-      font-family: ${fontFamily.body};
-      font-size: ${font.h4};
-      color: ${color.primary};
+      font-family: ${theming.fontFamily.body};
+      font-size: ${theming.font.h4};
+      color: ${theming.color.primary};
       line-height: 1.5;
     `,
     documentationAttrs: css`
-      color: ${color.text};
-      font-size: ${font.base};
-      font-family: ${fontFamily.body};
-      font-weight: ${fontWeight.bold};
+      color: ${theming.color.text};
+      font-size: ${theming.font.base};
+      font-family: ${theming.fontFamily.body};
+      font-weight: ${theming.fontWeight.bold};
     `,
     documentationAttrType: css`
-      color: ${color.text};
-      font-size: ${font.base};
-      font-family: ${fontFamily.body};
-      font-weight: ${fontWeight.bold};
+      color: ${theming.color.text};
+      font-size: ${theming.font.base};
+      font-family: ${theming.fontFamily.body};
+      font-weight: ${theming.fontWeight.bold};
     `,
     documentationAttrResponse: css`
-      color: ${color.text};
-      font-family: ${fontFamily.body};
-      font-weight: ${fontWeight.bold};
-      font-size: ${font.base};
+      color: ${theming.color.text};
+      font-family: ${theming.fontFamily.body};
+      font-weight: ${theming.fontWeight.bold};
+      font-size: ${theming.font.base};
     `,
     menuHeading: css`
-      color: ${color.primary};
-      font-size: ${font.base};
-      margin-top: ${spacing.tiny};
-      font-family: ${fontFamily("mono")};
+      color: ${theming.color.primary};
+      font-size: ${theming.font.base};
+      margin-top: ${theming.spacing.tiny};
+      font-family: ${theming.fontFamily("mono")};
     `
   },
   Heading.themeProps.heading

@@ -1,12 +1,11 @@
 import { css } from "styled-components"
-import { font, color, spacing, registerStyle } from "@staccx/theme"
-import { Table, hideVisually } from "@staccx/base"
+import { Table, hideVisually, theming } from "@staccx/base"
 
-export const TableStyling = registerStyle(
+export const TableStyling = theming.createVariants(
   {
     documentationAttr: css`
       width: 100%;
-      font-size: ${font.base};
+      font-size: ${theming.font.base};
 
       thead {
         ${hideVisually};
@@ -14,16 +13,16 @@ export const TableStyling = registerStyle(
 
       td {
         vertical-align: ${p => (p.responses ? "middle" : "top")};
-        padding: ${spacing.tiny} 0;
+        padding: ${theming.spacing.tiny} 0;
       }
 
       tbody tr {
-        border-bottom: 1px solid ${color.line};
+        border-bottom: 1px solid ${theming.color.line};
       }
 
       tr > td:first-child {
         text-align: right;
-        padding-right: ${spacing.medium};
+        padding-right: ${theming.spacing.medium};
         width: 140px;
       }
     `

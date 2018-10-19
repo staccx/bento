@@ -1,17 +1,11 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { ThemeProvider } from "@staccx/theme"
+import { ThemeProvider } from "styled-components"
 
 class AppPreview extends Component {
   render() {
-    console.log(this.props.themes[this.props.themeName])
     return (
-      <ThemeProvider
-        themeName={this.props.themeName}
-        themes={this.props.themes}
-      >
-        {this.props.app}
-      </ThemeProvider>
+      <ThemeProvider theme={this.props.theme}>{this.props.app}</ThemeProvider>
     )
   }
 }

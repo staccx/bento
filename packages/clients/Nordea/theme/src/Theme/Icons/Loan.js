@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Loan = () => (
   <svg
@@ -13,6 +13,9 @@ const Loan = () => (
   </svg>
 )
 
-export const LoanIcon = registerStyle({ [VARIANT_DEFAULT]: Loan }, "Loan")
+export const LoanIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Loan },
+  "Loan"
+)
 
 export default Loan
