@@ -1,12 +1,13 @@
 import PropTypes from "prop-types"
 import React from "react"
 
-const Logo = ({ brand, height, width }) => (
+const Logo = ({ brand, height, width, className }) => (
   <img
     height={height}
     width={width}
     src={`https://api.logos.stacctest.com/${brand}`}
     alt={brand}
+    className={className}
   />
 )
 
