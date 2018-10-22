@@ -1,6 +1,6 @@
 {
   "name": "@staccx/savings-advisor",
-  "version": "7.13.1",
+  "version": "7.14.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -8,7 +8,7 @@
     "@sanity/client": "^0.132.10",
     "@sanity/image-url": "^0.132.8",
     "@staccx/animations": "^7.13.1",
-    "@staccx/base": "^7.13.1",
+    "@staccx/base": "^7.14.0",
     "@staccx/formatting": "^7.13.1",
     "@staccx/math": "^7.13.1",
     "@staccx/theme": "^7.13.1",
