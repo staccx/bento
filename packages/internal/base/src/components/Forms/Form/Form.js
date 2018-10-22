@@ -61,21 +61,38 @@ class Form extends Component {
       {}
     )
     const validationSchema = Yup.object().shape(validationShape)
+    const { Container } = this.props
     return (
       <Formik
         initialValues={this.props.initialValues}
         validationSchema={validationSchema}
         onSubmit={this.props.onSubmit}
-        render={({ handleSubmit, values, isValid }) => {
+        render={({ handleSubmit, values, isValid, errors }) => {
           return (
             <form onSubmit={handleSubmit}>
-              {this.props.children}
-              {this.props.renderButton ? (
-                this.props.renderButton({ values, isValid })
-              ) : (
-                <Button type="submit" onClick={() => null}>
-                  {this.props.buttonText}
-                </Button>
+              {Container && (
+                <Container {...this.props.containerProps}>
+                  {this.props.children}
+                  {this.props.renderButton ? (
+                    this.props.renderButton({ values, isValid, errors })
+                  ) : (
+                    <Button type="submit" onClick={() => null}>
+                      {this.props.buttonText}
+                    </Button>
+                  )}
+                </Container>
+              )}
+              {!Container && (
+                <React.Fragment>
+                  {this.props.children}
+                  {this.props.renderButton ? (
+                    this.props.renderButton({ values, isValid, errors })
+                  ) : (
+                    <Button type="submit" onClick={() => null}>
+                      {this.props.buttonText}
+                    </Button>
+                  )}
+                </React.Fragment>
               )}
             </form>
           )
@@ -94,7 +111,8 @@ Form.propTypes = {
 
 Form.defaultProps = {
   initialValues: {},
-  onSubmit: console.log
+  onSubmit: console.log,
+  containerProps: {}
 }
 
 export default Form
