@@ -42,6 +42,7 @@ class Login extends React.Component {
     this.state = {
       id: null,
       code: null,
+      error: null,
       stateToken: searchParams.state,
       stage: stage
     }
@@ -85,7 +86,26 @@ class Login extends React.Component {
           })
         }
       })
-      .catch(console.error)
+      .catch(error => {
+        switch (error.response.status) {
+          case 400: {
+            this.setState({ stage: stages.waitingForCode, error: 400 })
+            break
+          }
+          case 429: {
+            this.setState({ stage: stages.tooManyAttempts, error: 429 })
+            break
+          }
+          default: {
+            // Start over?
+            this.setState({
+              stage: stages.failedToSubmitCode,
+              error: error.response.status
+            })
+            break
+          }
+        }
+      })
   }
 
   submitId() {
@@ -134,7 +154,16 @@ class Login extends React.Component {
           }, 3000)
         }
       })
-      .catch(console.error)
+      .catch(error => {
+        this.setState({ stage: stages.waitingForId }, () => {
+          challengeIdentity({
+            ...this.props.oidcConfig,
+            acr_values: `idp:${this.props.acrValue}`
+          })
+        })
+
+        console.log(error.response.status)
+      })
   }
 
   handleCodeInput(e) {
@@ -150,6 +179,7 @@ class Login extends React.Component {
   render() {
     return this.props.children({
       stage: this.state.stage,
+      error: this.state.error,
       handleIdInput: this.handleIdInput,
       handleCodeInput: this.handleCodeInput,
       submitId: this.submitId,
@@ -166,7 +196,8 @@ export const stages = {
   failedToSubmitId: "FAILED_TO_SUBMIT_ID",
   failedToSubmitCode: "FAILED_TO_SUBMIT_CODE",
   waitingForCode: "WAITING_FOR_CODE",
-  waitingForValidation: "WAITING_FOR_VALIDATION"
+  waitingForValidation: "WAITING_FOR_VALIDATION",
+  tooManyAttempts: "TOO_MANY_ATTEMPTS"
 }
 
 export default Login
