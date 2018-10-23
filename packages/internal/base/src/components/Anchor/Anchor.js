@@ -4,18 +4,16 @@ import styled from "styled-components"
 import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
 import { applyVariants } from "../../theming"
 
-const A = ({ children, className, ...restProps }) => {
-  return (
-    <AComponent className={className} {...restProps}>
-      {children}
-    </AComponent>
-  )
-}
+const Anchor = ({ children, className, ...restProps }) => (
+  <AComponent className={className} {...restProps}>
+    {children}
+  </AComponent>
+)
 
-A.themeProps = {
+Anchor.themeProps = {
   a: {
-    name: "A",
-    description: "Link",
+    name: "Anchor",
+    description: "HTML anchor link",
     type: themePropTypes.style
   }
 }
@@ -29,18 +27,19 @@ export const AComponent = styled.a`
   &:focus {
     text-decoration: none;
     color: currentColor;
+    outline: none;
   }
 
-  ${applyVariants(A.themeProps.a)};
+  ${applyVariants(Anchor.themeProps.anchor)};
 `
 
-A.defaultProps = {
+Anchor.defaultProps = {
   className: ""
 }
 
-A.propTypes = {
+Anchor.propTypes = {
   children: commonPropTypes.children.isRequired,
   className: PropTypes.string
 }
 
-export default A
+export default Anchor
