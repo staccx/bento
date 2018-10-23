@@ -12,8 +12,9 @@ import { default as wrapper } from "./convenience/wrapper"
 import { default as getProp } from "./utils/getProp"
 import { default as mapProp } from "./utils/mapProp"
 import { default as createVariants } from "./utils/createVariants"
-import { default as extendDefault } from "./utils/extendDefault"
+import { default as createGlobal } from "./utils/createGlobal"
 import { default as applyVariants } from "./utils/applyVariants"
+import { default as flattenGlobals } from "./utils/flattenGlobals"
 // Themes
 import { default as BaseTheme, StyleguideTheme } from "./baseTheme"
 import { default as CodeTheme } from "./codeTheme"
@@ -30,7 +31,7 @@ export {
   borderRadius,
   color,
   commonPropTypes,
-  extendDefault,
+  flattenGlobals,
   font,
   fontFamily,
   fontWeight,
@@ -41,6 +42,7 @@ export {
   getProp,
   mapProp,
   createVariants,
+  createGlobal,
   VARIANT_DEFAULT,
   Theme
 }

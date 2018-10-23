@@ -1,4 +1,3 @@
-import { css } from "styled-components"
 const { Map } = require("immutable")
 
 const styleReducer = (acc, curr) => {
@@ -25,7 +24,7 @@ export default class Theme {
     })
   }
 
-  /** TODO: Accept array of styles
+  /**
    * Add whatever you need to the theme
    * @param styles - array or object
    * @returns {Theme}
@@ -33,19 +32,5 @@ export default class Theme {
   add(styles) {
     const val = Array.isArray(styles) ? styles.reduce(styleReducer, {}) : styles
     return new Theme(this, val)
-  }
-
-  /**
-   * Append a style to global
-   * @param globalStyle
-   * @return {Theme}
-   */
-  appendGlobal(globalStyle) {
-    let global = css`
-      ${this.reset ? this.reset(this) : null};
-      ${this.global};
-      ${globalStyle};
-    `
-    return new Theme(this, { global })
   }
 }
