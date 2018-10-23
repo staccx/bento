@@ -1,10 +1,10 @@
 import React from "react"
 import Get from "./Get"
-import Input from "../Forms/Input/Input"
-import Button from "../Button/Button"
-import CodeRenderer from "../Code/CodeRenderer"
-import Wrapper from "../Layout/Wrapper/Wrapper"
-import Paragraph from "../Text/Paragraph/Paragraph"
+import Input from "../../components/Forms/Input/Input"
+import Button from "../../components/Button/Button"
+import CodeRenderer from "../../components/Code/CodeRenderer"
+import Wrapper from "../../components/Layout/Wrapper/Wrapper"
+import Paragraph from "../../components/Text/Paragraph/Paragraph"
 
 const preview = {
   title: "Fetch",

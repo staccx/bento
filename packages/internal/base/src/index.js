@@ -102,28 +102,28 @@ import JsonSchema from "./components/Forms/JsonSchema/JsonSchema"
 import Logo from "./components/Logo/Logo"
 
 // Pagination
-import Pagination from "./components/Pagination"
+import Pagination from "./hoc/Pagination/Pagination"
 
 // Code
 import CodeRenderer from "./components/Code/CodeRenderer"
 import Table from "./components/Table/Table"
-import Get from "./components/Request/Get"
-import Fetch from "./components/Request/Fetch"
-import Poll from "./components/Request/Poll"
-import CopyToClipboard from "./components/CopyToClipboard/CopyToClipboard"
+import Get from "./hoc/Request/Get"
+import Fetch from "./hoc/Request/Fetch"
+import Poll from "./hoc/Request/Poll"
+import CopyToClipboard from "./hoc/Clipboard/CopyToClipboard"
 import CopyToClipboardComponent from "./components/CopyToClipboard/CopyToClipboardComponent"
 
 // State
-import State from "./components/State/State"
+import State from "./hoc/State/State"
 
 // Wait
-import Wait from "./components/Wait/Wait"
+import Wait from "./hoc/Wait/Wait"
 
 // Feature Toggle
-import FeatureToggle from "./components/Utilities/FeatureToggle/FeatureToggle"
+import FeatureToggle from "./hoc/FeatureToggle/FeatureToggle"
 
 // Search
-import Search from "./components/Search/Search"
+import Search from "./hoc/Search/Search"
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 

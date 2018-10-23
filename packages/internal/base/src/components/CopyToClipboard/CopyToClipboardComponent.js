@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import CopyToClipboard from "./CopyToClipboard"
+import CopyToClipboard from "../../hoc/Clipboard/CopyToClipboard"
 import React from "react"
 import Upload from "../Icons/Upload"
 import Check from "../Icons/Check"
