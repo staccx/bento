@@ -1,10 +1,10 @@
 {
-  "name": "otemoto",
+  "name": "@staccx/feature-toggling",
   "private": true,
   "version": "7.15.0",
   "description": "",
   "main": "package.json",
-  "author": "Espen Thomassen Sæveru <espensaeverud@gmail.com>",
+  "author": "Stacc X",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
