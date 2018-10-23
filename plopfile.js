@@ -120,7 +120,7 @@ module.exports = function(plop) {
     actions: [
       {
         type: "add",
-        path: "packages/clients/{{client}}/theme.js",
+        path: "packages/themes/{{client}}/theme.js",
         templateFile: "templates/plop/CreateTheme/theme.hbs",
         force: true
       }
