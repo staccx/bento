@@ -1,5 +1,4 @@
 import { theming } from "@staccx/base"
-import reset from "./reset"
 
 const borderRadius = "0px"
 const headerHeight = "70px"

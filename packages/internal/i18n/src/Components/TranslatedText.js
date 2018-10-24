@@ -4,6 +4,7 @@ import { Consumer } from "./context"
 
 class TranslatedText extends React.Component {
   render() {
+    console.log(this.props)
     const { i18nKey, children, data, fallback } = this.props
     return (
       <Consumer>

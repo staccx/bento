@@ -64,7 +64,7 @@ class App extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <LanguageProvider {...i18nConfig}>
+        <LanguageProvider {...i18nConfig} debug>
           <Wrapper size={"medium"}>
             <Text>
               <TranslatedText i18nKey={"HELLO"} />

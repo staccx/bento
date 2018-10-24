@@ -37,10 +37,11 @@ class LanguageProvider extends React.Component {
    * Translate to text. Use data param for formatting. See https://github.com/alexei/sprintf.js
    * @param key
    * @param data
+   * @param fallback - Pass this to fall back to if not exists. Will still produce warnings
    * @returns {string|*}
    */
-  static translate(key, data) {
-    return i18n.translate(key, data)
+  static translate(key, data, fallback = null) {
+    return i18n.translate(key, data, fallback)
   }
 
   render() {

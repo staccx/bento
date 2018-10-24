@@ -39,7 +39,7 @@ class i18n {
     }
 
     if (!this.texts.hasOwnProperty(key)) {
-      console.warn(`Key no part of texts: ${key}`, this.texts)
+      console.warn(`Key no part of texts: ${key}`, this.texts, fallback)
       if (!fallback) {
         return `Missing entry: ${key} in all languages`
       }
