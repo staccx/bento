@@ -113,8 +113,7 @@ const theme = new theming.Theme(BaseTheme, {
   borderRadius,
   headerHeight,
   fontFamily,
-  spacing,
-  global: reset
+  spacing
 })
   .add(Button)
   .add(Box)
@@ -124,5 +123,7 @@ const theme = new theming.Theme(BaseTheme, {
   .add(CheckboxCheckedLabel)
   .add(HeadingStyling)
   .add(WrapperStyling)
+  .add(reset)
+  .add(theming.createGlobal({ base: theming.cssResets }))
 
 export default theme

@@ -1,4 +1,7 @@
-export default `
+import { theming } from "@staccx/base"
+
+export default theming.createGlobal({
+  reset: `
 ::selection {
   background: rgba(230, 80, 63, 0.3);
   color: #000;
@@ -21,3 +24,4 @@ h3,h4,h5,h6,strong {
   font-weight: 600;
 }
 `
+})
