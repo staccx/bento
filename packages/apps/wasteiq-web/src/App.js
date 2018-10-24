@@ -1,14 +1,23 @@
 import React, { Component } from "react"
-import { Wrapper } from "@staccx/base"
-import { BrowserRouter as Router } from "react-router-dom"
+import { GlobalStyle, WebFonts } from "@staccx/base"
+import { Router, Switch, Route } from "react-router-dom"
+import createHistory from "history/createBrowserHistory"
+import Header from "./components/Header/Header"
+import Home from "./pages/Home"
 
 class App extends Component {
   render() {
+    const history = createHistory()
     return (
-      <Router>
-        <Wrapper>
-          <div>Fresh app smell...</div>
-        </Wrapper>
+      <Router history={history}>
+        <React.Fragment>
+          <GlobalStyle />
+          <WebFonts />
+          <Header />
+          <Switch>
+            <Route path={"/"} exact component={Home} />
+          </Switch>
+        </React.Fragment>
       </Router>
     )
   }

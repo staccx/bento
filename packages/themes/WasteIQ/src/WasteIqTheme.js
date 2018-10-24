@@ -1,5 +1,6 @@
 import { theming } from "@staccx/base"
-import * as BoxVariants from "./Variants/Box.Variants"
+import { BoxVariants } from "./variants/Box.Variants"
+import { LogoComponent } from "./components/Component.Logo"
 
 const borderRadius = "0"
 
@@ -17,6 +18,7 @@ const wrapper = {
 
 const spacing = {
   grid: "7vh",
+  gridSmall: "3.5vh",
   huge: "96px",
   large: "48px",
   medium: "24px",
@@ -87,4 +89,6 @@ export default new theming.Theme({
   borderRadius,
   fontFamily,
   spacing
-}).add([...BoxVariants])
+})
+  .add([BoxVariants, LogoComponent])
+  .add(theming.createGlobal({ base: theming.cssResets }))
