@@ -1,6 +1,5 @@
 import React from "react"
-import { Button } from "@staccx/base"
-import { spacing } from "@staccx/theme"
+import { Button, theming } from "@staccx/base"
 import styled from "styled-components"
 
 // const SIGN_ORDER_STATUS_PENDING = "pending"
@@ -50,9 +49,9 @@ const SignButton = styled(Button)`
 
 const Checkmark = styled.svg`
   display: block;
-  width: ${spacing.medium};
-  height: ${spacing.medium};
-  margin-right: ${spacing.small};
+  width: ${theming.spacing.medium};
+  height: ${theming.spacing.medium};
+  margin-right: ${theming.spacing.small};
 `
 
 export default SignDocument

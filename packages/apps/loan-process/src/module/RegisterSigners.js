@@ -13,12 +13,12 @@ import {
   Paragraph,
   SplitListItem,
   Wrapper,
-  Alert
+  Alert,
+  theming
 } from "@staccx/base"
 import { formatName, removeWhitespace } from "@staccx/formatting"
 import styled, { keyframes } from "styled-components"
 import { Field, FieldArray, Form, Formik } from "formik"
-import { spacing } from "@staccx/theme"
 import { norwegian } from "national-id"
 const Yup = require("yup")
 
@@ -330,7 +330,7 @@ const SignerRoles = styled.span`
 const SplitItem = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: ${spacing.tiny()} ${spacing.medium()};
+  padding: ${theming.spacing.tiny()} ${theming.spacing.medium()};
 
   > * {
     flex-basis: 50%;

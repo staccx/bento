@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components"
+import { theming } from "@staccx/base"
 import Tile from "./Tile"
-import { spacing, color, font } from "@staccx/theme"
 
 export const Halves = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: ${spacing.large};
+  grid-gap: ${theming.spacing.large};
   grid-template-areas: "left right";
   @media (max-width: 735px) {
-    grid-gap: ${spacing.medium};
+    grid-gap: ${theming.spacing.medium};
   }
   @media (max-width: 710px) {
     grid-template-columns: 100%;
@@ -18,14 +18,14 @@ export const Halves = styled.div`
 
 export const ColumnHalves = styled.div`
   columns: 2 320px;
-  column-gap: ${spacing.large};
+  column-gap: ${theming.spacing.large};
   > * {
-    margin-bottom: ${spacing.large};
+    margin-bottom: ${theming.spacing.large};
   }
   @media (max-width: 735px) {
-    column-gap: ${spacing.medium};
+    column-gap: ${theming.spacing.medium};
     > * {
-      margin-bottom: ${spacing.medium};
+      margin-bottom: ${theming.spacing.medium};
     }
   }
 `
@@ -53,7 +53,7 @@ export const Center = styled.div`
 `
 
 export const HorizontalLine = styled.hr`
-  border-top: 1px solid ${color.line};
+  border-top: 1px solid ${theming.color.line};
   border-bottom-width: 0;
 `
 
@@ -78,25 +78,25 @@ export const LinedListItem = styled.li`
   position: relative;
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid ${color.line};
+  border-bottom: 1px solid ${theming.color.line};
   &:last-child {
     border-bottom-width: 0;
   }
 `
 export const Padding = styled.div`
-  padding: ${spacing.medium};
+  padding: ${theming.spacing.medium};
 `
 
 export const PaddingVertical = styled.div`
-  padding-top: ${spacing.medium};
-  padding-bottom: ${spacing.medium};
+  padding-top: ${theming.spacing.medium};
+  padding-bottom: ${theming.spacing.medium};
 `
 
 export const Hr = styled.hr`
   height: 1px;
   width: 100%;
   border-width: 0;
-  background-color: ${color.line};
+  background-color: ${theming.color.line};
 `
 
 export const Hide = css`
@@ -106,29 +106,29 @@ export const Hide = css`
 `
 
 export const ButtonSecondaryCSS = css`
-  background-color: ${color.white};
-  color: ${color.text};
+  background-color: ${theming.color.white};
+  color: ${theming.color.text};
   border-radius: 22px;
-  border: 1px solid ${color.white};
+  border: 1px solid ${theming.color.white};
   transition: box-shadow 0.15s ease-in, border-color 0.2s ease-in;
   display: flex;
   margin-bottom: 0;
 
   &:hover,
   &:focus {
-    background-color: ${color.white};
-    border-color: ${color.blue};
-    color: ${color.blue};
+    background-color: ${theming.color.white};
+    border-color: ${theming.color.blue};
+    color: ${theming.color.blue};
   }
 `
 
 export const H2 = css`
-  font-size: ${font.h2};
+  font-size: ${theming.font.h2};
   font-weight: 300;
 `
 
 export const H3 = css`
-  font-size: ${font.h3};
+  font-size: ${theming.font.h3};
   font-weight: 300;
 `
 
@@ -141,30 +141,30 @@ export const FontSmoothing = css`
 `
 
 export const HeadingLarge = css`
-  color: ${color.primary};
-  font-size: ${font.huge};
+  color: ${theming.color.primary};
+  font-size: ${theming.font.huge};
 
   @media (max-width: 735px) {
-    font-size: ${font.h1};
+    font-size: ${theming.font.h1};
   }
 
   @media (max-height: 850px) {
-    font-size: ${font.h2};
+    font-size: ${theming.font.h2};
   }
 `
 
 export const BodyLarge = css`
   ${FontSmoothing};
-  font-size: ${font.h2};
+  font-size: ${theming.font.h2};
   line-height: 1.7;
-  padding: ${spacing.large} 0 0;
+  padding: ${theming.spacing.large} 0 0;
 
   @media (max-width: 735px) {
-    font-size: ${font.h3};
+    font-size: ${theming.font.h3};
   }
 
   @media (max-height: 850px) {
-    font-size: ${font.h4};
+    font-size: ${theming.font.h4};
   }
 `
 
@@ -174,22 +174,22 @@ export const BodyLargeCentered = css`
   margin-left: auto;
   margin-right: auto;
   p {
-    padding-bottom: ${spacing.small};
+    padding-bottom: ${theming.spacing.small};
   }
 `
 
 export const PaddedContainer = styled.div`
-  padding: ${p => (p.large ? spacing.large : spacing.medium)};
+  padding: ${p => (p.large ? theming.spacing.large : theming.spacing.medium)};
 `
 export const StepHeading = styled.h1`
-  font-size: ${font.h2};
+  font-size: ${theming.font.h2};
   font-weight: 300;
-  margin-bottom: ${spacing.small};
+  margin-bottom: ${theming.spacing.small};
 `
 
 export const GrayBox = styled.div`
-  padding: ${spacing.medium} ${spacing.large};
-  background-color: ${color.subtleHover};
+  padding: ${theming.spacing.medium} ${theming.spacing.large};
+  background-color: ${theming.color.subtleHover};
 `
 
 export const split = css`
@@ -199,16 +199,16 @@ export const split = css`
 `
 export const TileBox = styled(Tile)`
   padding: 0;
-  margin-bottom: ${spacing.medium};
+  margin-bottom: ${theming.spacing.medium};
 `
 export const Illustration = styled.div`
   text-align: center;
-  margin-bottom: ${spacing.medium};
+  margin-bottom: ${theming.spacing.medium};
 `
 
 export const DocumentStatusList = styled.ul`
   list-style-type: none;
-  background-color: ${color.subtleHover};
+  background-color: ${theming.color.subtleHover};
 `
 
 export const DocumentStatusItem = styled.li`
@@ -216,22 +216,22 @@ export const DocumentStatusItem = styled.li`
   justify-content: space-between;
   align-items: center;
   min-height: 70px;
-  padding: ${spacing.small} ${spacing.medium};
-  border-top: 1px solid ${color.line};
+  padding: ${theming.spacing.small} ${theming.spacing.medium};
+  border-top: 1px solid ${theming.color.line};
 `
 export const DocumentStatusContent = styled.div``
 
 export const Heading = styled.h1`
   ${HeadingLarge};
   text-align: center;
-  margin-bottom: ${spacing.medium};
+  margin-bottom: ${theming.spacing.medium};
 `
 
 export const Lead = styled.div`
-  font-size: ${font.h5};
+  font-size: ${theming.font.h5};
   text-align: center;
-  margin-bottom: ${spacing.mediumPlus};
-  padding: 0 ${spacing.small};
+  margin-bottom: ${theming.spacing.mediumPlus};
+  padding: 0 ${theming.spacing.small};
   line-height: 1.7;
   max-width: 500px;
   margin-left: auto;
@@ -247,7 +247,7 @@ export const Split = styled.div`
   ${split};
 `
 export const DetailsHeading = styled.div`
-  margin-bottom: ${spacing.small};
+  margin-bottom: ${theming.spacing.small};
 `
 
 export const OfferTable = styled.table`
@@ -260,8 +260,8 @@ export const OfferTable = styled.table`
 `
 
 export const OfferTableText = styled.td`
-  padding: ${spacing.tiny} 0;
-  border-bottom: 1px solid ${color.line};
+  padding: ${theming.spacing.tiny} 0;
+  border-bottom: 1px solid ${theming.color.line};
   text-align: left;
 `
 
@@ -279,6 +279,6 @@ export const OfferTableDurations = styled.div`
 
 export const OfferTableDurationsItem = styled.div`
   &:not(:last-child) {
-    margin-right: ${spacing.small};
+    margin-right: ${theming.spacing.small};
   }
 `

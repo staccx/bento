@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { spacing, color } from "@staccx/theme"
-import { Box } from "@staccx/base"
+import { Box, theming } from "@staccx/base"
 
 const OfferTable = ({
   loanOfferText,
@@ -62,7 +61,7 @@ const OfferTable = ({
 )
 
 const Details = styled.div`
-  margin-top: ${spacing.medium};
+  margin-top: ${theming.spacing.medium};
 `
 
 const OfferTableTable = styled.table`
@@ -77,14 +76,16 @@ const OfferTableTable = styled.table`
 `
 
 const OfferTableText = styled.td`
-  padding: ${spacing.small} 0 ${spacing.small} ${spacing.small};
-  border-bottom: 1px solid ${color.line};
+  padding: ${theming.spacing.small} 0 ${theming.spacing.small}
+    ${theming.spacing.small};
+  border-bottom: 1px solid ${theming.color.line};
   text-align: left;
 `
 
 const OfferTableData = styled(OfferTableText)`
   text-align: right;
-  padding: ${spacing.small} ${spacing.small} ${spacing.small} 0;
+  padding: ${theming.spacing.small} ${theming.spacing.small}
+    ${theming.spacing.small} 0;
 `
 
 const OfferTableTotal = styled.tr`

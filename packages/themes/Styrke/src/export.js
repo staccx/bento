@@ -55,6 +55,7 @@ const color = {
   bgBlue: "#DCEDF0",
   bgBlueDark: "#CEDEE0",
   primary: "#3c61e7",
+  secondary: "#3c61e7",
   primaryDark: "#1a40c5",
   gray: "#646464",
   text: "#333",

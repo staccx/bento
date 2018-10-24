@@ -1,6 +1,5 @@
 import React, { Component } from "react"
-import styled from "styled-components"
-import { ThemeProxyProvider } from "@staccx/theme"
+import styled, { ThemeProvider } from "styled-components"
 import { ThemeStyrke, ThemeFundu } from "./theme.js"
 import Sign from "./module/Sign"
 // import Authenticate from "./module/Authenticate"
@@ -17,7 +16,7 @@ import Personalia from "./module/Personalia"
 class Content extends Component {
   render() {
     return (
-      <ThemeProxyProvider theme={this.props.theme}>
+      <ThemeProvider theme={this.props.theme}>
         {/* <RegisterSigners />
         <LoanRejected />
         <Sign />
@@ -82,7 +81,7 @@ class Content extends Component {
           <Sign />
           <hr style={{ margin: "64px 0" }} />
         </div>
-      </ThemeProxyProvider>
+      </ThemeProvider>
     )
   }
 }
