@@ -88,17 +88,16 @@ class PreviewComponent extends Component {
         break
       }
       case tabs.variants: {
-        console.log(this.props.theme)
+        const variants = getVariants(
+          this.props.theme,
+          preview.component.themeProps || {}
+        )
+        console.log(variants)
         content = (
           <RenderVariants
             renderHeading
             component={preview}
-            variants={{
-              [theming.VARIANT_DEFAULT]: {
-                name: "Default",
-                value: theming.VARIANT_DEFAULT
-              }
-            }}
+            variants={variants}
             theme={this.props.theme}
             setComponentState={this.setComponentState}
             width={width}

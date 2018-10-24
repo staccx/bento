@@ -12,7 +12,6 @@ export default ({
   width,
   renderHeading
 }) => {
-  console.log(variants)
   return (
     <ComponentDocumentation width={width}>
       <div>
