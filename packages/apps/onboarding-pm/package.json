@@ -32,7 +32,6 @@
     "@staccx/aprila-theme": "^7.15.0",
     "@staccx/base": "^7.15.0",
     "@staccx/norefjell-theme": "^7.15.0",
-    "@staccx/theme": "^8.0.0-alpha.0",
     "countries-list": "^2.3.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
