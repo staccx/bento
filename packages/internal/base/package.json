@@ -54,6 +54,7 @@
     "react-jsonschema-form": "^1.0.3",
     "text-mask-core": "^5.0.1",
     "tinycolor2": "^1.4.1",
+    "webfontloader": "^1.6.28",
     "yup": "^0.24.1"
   },
   "devDependencies": {

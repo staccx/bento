@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { color, font, spacing } from "@staccx/theme"
 import { SanityDocument } from "@staccx/sanity"
-import { Layout, Heading } from "@staccx/base"
+import { Layout, Heading, theming } from "@staccx/base"
 import { NavLink } from "react-router-dom"
 
 const FooterNavigation = ({ heading, callToAction, openContactForm }) => (
@@ -72,12 +71,12 @@ const FooterNavigation = ({ heading, callToAction, openContactForm }) => (
 
 const SubNav = styled.ul`
   display: grid;
-  grid-row-gap: ${spacing.tiny};
-  padding-top: ${spacing.tiny};
+  grid-row-gap: ${theming.spacing.tiny};
+  padding-top: ${theming.spacing.tiny};
 `
 
 const SubNavHeading = styled(Heading)`
-  font-size: ${font.base};
+  font-size: ${theming.font.base};
   color: #929292;
   font-weight: normal;
 `
@@ -85,18 +84,18 @@ const SubNavHeading = styled(Heading)`
 const FooterNav = styled.ul`
   display: flex;
   justify-content: space-between;
-  padding-top: ${spacing.small};
+  padding-top: ${theming.spacing.small};
   flex-wrap: wrap;
 `
 
 const FooterNavLink = styled(NavLink)`
-  color: ${color.white};
+  color: ${theming.color.white};
   text-decoration: none;
 
   &:hover,
   &:active,
   &:focus {
-    color: ${color.primary};
+    color: ${theming.color.primary};
   }
 `
 

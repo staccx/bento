@@ -15,18 +15,20 @@ import { default as createVariants } from "./utils/createVariants"
 import { default as createGlobal } from "./utils/createGlobal"
 import { default as applyVariants } from "./utils/applyVariants"
 import { default as flattenGlobals } from "./utils/flattenGlobals"
-// Themes
-import { default as BaseTheme, StyleguideTheme } from "./baseTheme"
-import { default as CodeTheme } from "./codeTheme"
 // Theme class
 import Theme from "./Theme"
 
 import { commonPropTypes, VARIANT_DEFAULT } from "../constants/themeContants"
 
+// Styles
+import cssResets from "./styles/cssResets"
+import fontSmoothing from "./styles/fontsmoothing"
+import hideVisually from "./styles/hideVisually"
+
 export {
-  BaseTheme,
-  CodeTheme,
-  StyleguideTheme,
+  cssResets,
+  fontSmoothing,
+  hideVisually,
   applyVariants,
   borderRadius,
   color,

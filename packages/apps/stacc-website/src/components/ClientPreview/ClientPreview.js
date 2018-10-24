@@ -2,8 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { color, spacing } from "@staccx/theme"
-import { Heading, Layout } from "@staccx/base"
+import { Heading, Layout, theming } from "@staccx/base"
 import { SanityImage } from "@staccx/sanity"
 
 const ClientsOverviewItem = ({
@@ -46,14 +45,14 @@ const ImageContainer = styled.figure`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${color("g4")};
-  padding: ${spacing.medium} ${spacing.large};
+  background-color: ${theming.color("g4")};
+  padding: ${theming.spacing.medium} ${theming.spacing.large};
   height: 240px;
 `
 
 const ClientLink = styled(Link)`
   display: block;
-  color: ${color.primary};
+  color: ${theming.color.primary};
   text-decoration: none;
   font-weight: 500;
 `

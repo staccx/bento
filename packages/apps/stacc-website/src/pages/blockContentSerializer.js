@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Layout } from "@staccx/base"
-import { spacing, font, color } from "@staccx/theme"
+import { Layout, theming } from "@staccx/base"
 import { SanityImage } from "@staccx/sanity"
 import BlockContent from "@sanity/block-content-to-react"
 import { getLinkItem } from "../components/ContentLinks/ContentLinks.Item"
@@ -138,7 +137,7 @@ const BodyContent = styled.div`
   p,
   ul {
     max-width: 760px;
-    margin-bottom: ${spacing.medium};
+    margin-bottom: ${theming.spacing.medium};
   }
 
   h1,
@@ -147,31 +146,31 @@ const BodyContent = styled.div`
   h4,
   h5,
   h6 {
-    margin-bottom: ${spacing.small};
+    margin-bottom: ${theming.spacing.small};
   }
 
   h1 {
-    font-size: ${font.h1};
+    font-size: ${theming.font.h1};
   }
 
   h2 {
-    font-size: ${font.h2};
+    font-size: ${theming.font.h2};
   }
 
   h3 {
-    font-size: ${font.h3};
+    font-size: ${theming.font.h3};
   }
 
   h4 {
-    font-size: ${font.h4};
+    font-size: ${theming.font.h4};
   }
 
   h5 {
-    font-size: ${font.h5};
+    font-size: ${theming.font.h5};
   }
 
   h6 {
-    font-size: ${font.h6};
+    font-size: ${theming.font.h6};
   }
 
   ul {
@@ -179,7 +178,7 @@ const BodyContent = styled.div`
   }
 
   a {
-    color: ${color.primary};
+    color: ${theming.color.primary};
   }
 `
 

@@ -2,9 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link, withRouter } from "react-router-dom"
 import styled from "styled-components"
-import { color, spacing, wrapper, fontFamily } from "@staccx/theme"
 import { SanityDocument } from "@staccx/sanity"
-import { Wrapper, hideVisually } from "@staccx/base"
+import { Wrapper, theming } from "@staccx/base"
 import Logo from "../Logo/Logo"
 import HeaderMenu from "./Header.Menu"
 import HeaderMenuButton from "./Header.MenuButton"
@@ -87,18 +86,18 @@ class Header extends React.Component {
 
 const LogoLink = styled(Link)`
   text-decoration: none;
-  padding-right: ${spacing.medium};
+  padding-right: ${theming.spacing.medium};
 `
 
 const Head = styled.header`
-  padding-top: ${spacing.mediumPlus};
+  padding-top: ${theming.spacing.mediumPlus};
   z-index: 10;
-  font-family: ${fontFamily.heading};
+  font-family: ${theming.fontFamily.heading};
 
-  @media only screen and (max-width: ${wrapper.large}) {
+  @media only screen and (max-width: ${theming.wrapper.large}) {
     position: ${p => (!p.menuIsVisible ? "relative" : "fixed")};
     background-color: ${p =>
-      !p.menuIsVisible ? "transparent" : color("primaryDark")(p)};
+      !p.menuIsVisible ? "transparent" : theming.color("primaryDark")(p)};
     height: ${p => (!p.menuIsVisible ? "auto" : "100vh")};
     width: 100%;
     overflow-y: ${p => (p.menuIsVisible ? "scroll" : "hidden")};
@@ -114,13 +113,13 @@ const Inner = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media only screen and (max-width: ${wrapper.large}) {
+  @media only screen and (max-width: ${theming.wrapper.large}) {
     flex-wrap: wrap;
   }
 `
 
 const LogoTitle = styled.span`
-  ${hideVisually};
+  ${theming.hideVisually};
 `
 
 Header.defaultProps = {

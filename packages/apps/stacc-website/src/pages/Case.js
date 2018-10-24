@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { spacing, wrapper, font } from "@staccx/theme"
-import { Layout } from "@staccx/base"
+import { Layout, theming } from "@staccx/base"
 import BlockContent from "@sanity/block-content-to-react"
 import blockContentSerializer from "./blockContentSerializer"
 import { NavigationSubpage, SectionHead } from "../components/_codeSplitting"
@@ -33,19 +32,19 @@ const Case = ({ match, location, caseStudy }) => (
 
 const BContenty = styled(Layout)`
   > p {
-    max-width: ${wrapper.medium};
+    max-width: ${theming.wrapper.medium};
     line-height: 1.6;
   }
 
   > blockquote {
-    padding: ${spacing.large} 0;
+    padding: ${theming.spacing.large} 0;
 
     > p {
-      font-size: ${font.h3};
+      font-size: ${theming.font.h3};
       font-style: italic;
       font-weight: 300;
       line-height: 1.6;
-      margin-bottom: ${spacing.small};
+      margin-bottom: ${theming.spacing.small};
     }
     > cite {
       font-style: normal;

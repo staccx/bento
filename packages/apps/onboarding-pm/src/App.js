@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { ThemeProxyProvider } from "@staccx/theme"
+import { ThemeProvider } from "styled-components"
 import NorfjellTheme from "@staccx/norefjell-theme"
 // import AprilaTheme from "@staccx/aprila-theme"
 import ClientInfo from "./Steps/ClientInfo"
@@ -53,7 +53,7 @@ class App extends Component {
       confirmation: () => this.setStep("confirmation")
     }
     return (
-      <ThemeProxyProvider theme={NorfjellTheme}>
+      <ThemeProvider theme={NorfjellTheme}>
         <div>
           {this.state.currentStep === "clientInfo" && (
             <ClientInfo
@@ -71,7 +71,7 @@ class App extends Component {
           {this.state.currentStep === "foreign" && <Foreign steps={steps} />}
           {this.state.currentStep === "confirmation" && <Confirmation />}
         </div>
-      </ThemeProxyProvider>
+      </ThemeProvider>
     )
   }
 }

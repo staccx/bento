@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const IconChevronRight = ({ className }) => (
   <Icon
@@ -13,9 +13,9 @@ const IconChevronRight = ({ className }) => (
 )
 
 const Icon = styled.svg`
-  width: ${spacing.medium};
-  height: ${spacing.medium};
-  fill: ${color.primary};
+  width: ${theming.spacing.medium};
+  height: ${theming.spacing.medium};
+  fill: ${theming.color.primary};
   vertical-align: middle;
 `
 

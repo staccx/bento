@@ -1,5 +1,5 @@
 import Theme from "./Theme"
-import { reset } from "./styles/cssResets"
+import reset from "./styles/cssResets"
 import grids from "../components/Layout/Layout/Layout.Grids"
 import codeTheme from "./codeTheme"
 

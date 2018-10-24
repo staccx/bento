@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { spacing, wrapper } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const ContentLinks = ({ children }) => {
   return <Links>{children}</Links>
@@ -9,10 +9,10 @@ const ContentLinks = ({ children }) => {
 
 const Links = styled.div`
   display: grid;
-  grid-row-gap: ${spacing.large};
-  grid-column-gap: ${spacing.huge};
+  grid-row-gap: ${theming.spacing.large};
+  grid-column-gap: ${theming.spacing.huge};
 
-  @media only screen and (min-width: ${wrapper.medium}) {
+  @media only screen and (min-width: ${theming.wrapper.medium}) {
     grid-template-columns: 1fr 1fr;
   }
 `

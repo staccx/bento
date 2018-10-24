@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { spacing, wrapper } from "@staccx/theme"
-import { List, Loading } from "@staccx/base"
+import { List, Loading, theming } from "@staccx/base"
 import { SanityList } from "@staccx/sanity"
 import { ClientPreview } from "../_codeSplitting"
 
@@ -43,11 +42,11 @@ ClientList.propTypes = {}
 export const ClientsList = styled(List)`
   display: grid;
 
-  row-gap: ${spacing.large};
+  row-gap: ${theming.spacing.large};
 
-  @media only screen and (min-width: ${wrapper.medium}) {
+  @media only screen and (min-width: ${theming.wrapper.medium}) {
     grid-template-columns: 1fr 1fr;
-    column-gap: ${spacing.large};
+    column-gap: ${theming.spacing.large};
   }
 `
 

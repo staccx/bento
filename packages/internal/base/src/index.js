@@ -122,12 +122,15 @@ import Wait from "./hoc/Wait/Wait"
 // Feature Toggle
 import FeatureToggle from "./hoc/FeatureToggle/FeatureToggle"
 
+import BaseTheme from "./theming/baseTheme"
+
+import WebFonts from "./components/Theme/WebFonts"
+
 // Search
 import Search from "./hoc/Search/Search"
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
-const { BaseTheme } = theming
 export {
   Anchor,
   AccountInput,
@@ -211,5 +214,6 @@ export {
   Toggle,
   Wait,
   Warning,
+  WebFonts,
   Wrapper
 }

@@ -2,16 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css, keyframes } from "styled-components"
 import { NavLink } from "react-router-dom"
-import {
-  spacing,
-  color,
-  borderRadius,
-  wrapper,
-  font,
-  fontFamily
-} from "@staccx/theme"
 import { opacity } from "@staccx/color"
-import { Button, List } from "@staccx/base"
+import { Button, List, theming } from "@staccx/base"
 import { BounceIn } from "@staccx/animations"
 import IconArrowRight from "../Icons/IconArrowRight"
 
@@ -168,15 +160,15 @@ const Navigation = styled.nav`
   flex-grow: 1;
   transition: opacity 0.2s ease;
 
-  @media only screen and (max-width: ${wrapper.large}) {
+  @media only screen and (max-width: ${theming.wrapper.large}) {
     flex-basis: 100%;
     flex-direction: column;
-    margin: ${spacing.small} -${spacing.medium} 0;
-    padding: ${spacing.small} 0 0;
+    margin: ${theming.spacing.small} -${theming.spacing.medium} 0;
+    padding: ${theming.spacing.small} 0 0;
     animation: ${BounceIn} 0.5s ease-out forwards 1;
   }
 
-  @media only screen and (min-width: ${wrapper.large}) {
+  @media only screen and (min-width: ${theming.wrapper.large}) {
     display: flex;
     justify-content: flex-end;
   }
@@ -187,8 +179,8 @@ const MenuItems = styled.ul`
 
   ${props =>
     props.inverted
-      ? `color: ${color("white")(props)}`
-      : `color: ${color("textDark")(props)}`};
+      ? `color: ${theming.color("white")(props)}`
+      : `color: ${theming.color("textDark")(props)}`};
 
   > li:last-child {
     > * {
@@ -196,16 +188,16 @@ const MenuItems = styled.ul`
     }
   }
 
-  @media only screen and (max-width: ${wrapper.large}) {
-    color: ${color.white};
-    font-size: ${font.h3};
+  @media only screen and (max-width: ${theming.wrapper.large}) {
+    color: ${theming.color.white};
+    font-size: ${theming.font.h3};
 
     > li:not(:last-child) {
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
   }
 
-  @media only screen and (min-width: ${wrapper.large}) {
+  @media only screen and (min-width: ${theming.wrapper.large}) {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -213,12 +205,14 @@ const MenuItems = styled.ul`
 `
 
 const Emphasized = css`
-  @media only screen and (min-width: ${wrapper.large}) {
-    color: ${color.white};
+  @media only screen and (min-width: ${theming.wrapper.large}) {
+    color: ${theming.color.white};
     background-color: ${props =>
-      props.inverted ? color("textDark")(props) : color("secondary")(props)};
-    padding: ${spacing.tiny};
-    border-radius: ${borderRadius};
+      props.inverted
+        ? theming.color("textDark")(props)
+        : theming.color("secondary")(props)};
+    padding: ${theming.spacing.tiny};
+    border-radius: ${theming.borderRadius};
     transition: box-shadow 0.2s ease;
     border-bottom: 0;
 
@@ -229,14 +223,16 @@ const Emphasized = css`
     &:hover,
     &:active,
     &:focus {
-      color: ${color.white};
+      color: ${theming.color.white};
       background-color: ${props =>
-        props.inverted ? color("textDark")(props) : color("secondary")(props)};
+        props.inverted
+          ? theming.color("textDark")(props)
+          : theming.color("secondary")(props)};
       box-shadow: 0 2px 6px
         ${p =>
           p.inverted
-            ? opacity(color("black")(p), 0.25)
-            : opacity(color("secondary")(p), 0.25)};
+            ? opacity(theming.color("black")(p), 0.25)
+            : opacity(theming.color("secondary")(p), 0.25)};
       border-bottom: 0;
     }
   }
@@ -244,7 +240,7 @@ const Emphasized = css`
 
 const MenuItemCss = css`
   display: block;
-  margin: 0 ${spacing.small};
+  margin: 0 ${theming.spacing.small};
   padding: 3px 0;
   text-decoration: none;
   border-bottom: 2px solid transparent;
@@ -252,14 +248,17 @@ const MenuItemCss = css`
   font-weight: normal;
   color: currentColor;
 
-  @media only screen and (max-width: ${wrapper.large}) {
-    padding: ${spacing.tiny} ${spacing.small};
+  @media only screen and (max-width: ${theming.wrapper.large}) {
+    padding: ${theming.spacing.tiny} ${theming.spacing.small};
   }
 
-  @media only screen and (min-width: ${wrapper.large}) {
+  @media only screen and (min-width: ${theming.wrapper.large}) {
     &.is-current {
       border-bottom: 2px solid
-        ${p => (p.inverted ? color("white")(p) : color("secondary")(p))};
+        ${p =>
+          p.inverted
+            ? theming.color("white")(p)
+            : theming.color("secondary")(p)};
     }
 
     &:hover,
@@ -268,8 +267,8 @@ const MenuItemCss = css`
       border-bottom: 2px solid
         ${p =>
           p.inverted
-            ? opacity(color("white")(p), 0.5)
-            : opacity(color("secondary")(p), 0.5)};
+            ? opacity(theming.color("white")(p), 0.5)
+            : opacity(theming.color("secondary")(p), 0.5)};
     }
     ${p => p.emphasized && Emphasized};
   }
@@ -282,7 +281,7 @@ const MenuItem = styled(NavLink)`
 const SubMenuExpandBtn = styled(Button)`
   position: relative;
   display: block;
-  margin: 0 ${spacing.small};
+  margin: 0 ${theming.spacing.small};
   padding: 3px 0;
   color: currentColor;
   background-color: transparent;
@@ -293,7 +292,7 @@ const SubMenuExpandBtn = styled(Button)`
   min-height: 0;
   line-height: inherit;
   transition: color 0.2s ease;
-  font-family: ${fontFamily.heading};
+  font-family: ${theming.fontFamily.heading};
 
   &:hover,
   &:active,
@@ -302,20 +301,20 @@ const SubMenuExpandBtn = styled(Button)`
     background-color: transparent;
   }
 
-  @media only screen and (max-width: ${wrapper.large}) {
-    padding: ${spacing.tiny} ${spacing.small};
-    font-size: ${font.h3};
+  @media only screen and (max-width: ${theming.wrapper.large}) {
+    padding: ${theming.spacing.tiny} ${theming.spacing.small};
+    font-size: ${theming.font.h3};
   }
 
-  @media only screen and (min-width: ${wrapper.large}) {
+  @media only screen and (min-width: ${theming.wrapper.large}) {
     &:hover,
     &:active,
     &:focus {
       border-bottom: 2px solid
         ${p =>
           p.inverted
-            ? opacity(color("white")(p), 0.5)
-            : opacity(color("secondary")(p), 0.5)};
+            ? opacity(theming.color("white")(p), 0.5)
+            : opacity(theming.color("secondary")(p), 0.5)};
     }
   }
 `
@@ -323,7 +322,7 @@ const SubMenuExpandBtn = styled(Button)`
 const SubMenu = styled(List)`
   display: ${p => (p.expanded ? "block" : "none")};
 
-  @media only screen and (max-width: ${wrapper.large}) {
+  @media only screen and (max-width: ${theming.wrapper.large}) {
     background-color: rgba(0, 0, 0, 0.2);
 
     > li {
@@ -331,14 +330,14 @@ const SubMenu = styled(List)`
     }
   }
 
-  @media only screen and (min-width: ${wrapper.large}) {
+  @media only screen and (min-width: ${theming.wrapper.large}) {
     position: absolute;
-    bottom: -${spacing.tiny};
-    left: ${spacing.small};
+    bottom: -${theming.spacing.tiny};
+    left: ${theming.spacing.small};
     transform: translateY(100%);
-    background-color: ${color.white};
+    background-color: ${theming.color.white};
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-    width: calc(100% - ${spacing.small});
+    width: calc(100% - ${theming.spacing.small});
     z-index: 50;
     animation: ${SubMenuBounceIn} 0.2s ease forwards 1;
 
@@ -352,22 +351,22 @@ const SubMenuLink = styled(NavLink)`
   display: block;
   color: currentColor;
   text-decoration: none;
-  font-size: ${font.base};
-  padding: 16px ${spacing.medium};
+  font-size: ${theming.font.base};
+  padding: 16px ${theming.spacing.medium};
 
-  @media only screen and (min-width: ${wrapper.large}) {
-    color: ${color("textDark")};
+  @media only screen and (min-width: ${theming.wrapper.large}) {
+    color: ${theming.color("textDark")};
     transition: background 0.2s ease, color 0.2s ease;
     padding: 16px;
 
     &:hover,
     &:active,
     &:focus {
-      background-color: ${color("g4")};
-      color: ${color("primaryWcag")};
+      background-color: ${theming.color("g4")};
+      color: ${theming.color("primaryWcag")};
 
       > svg {
-        color: ${color.primary};
+        color: ${theming.color.primary};
         transform: translateX(3px);
       }
     }
@@ -380,11 +379,11 @@ const Icon = styled(IconArrowRight)`
   vertical-align: middle;
   width: 14px;
   height: 14px;
-  margin-left: ${spacing.tiny};
-  color: ${color("g2")};
+  margin-left: ${theming.spacing.tiny};
+  color: ${theming.color("g2")};
   transition: transform 0.2s ease;
 
-  @media only screen and (max-width: ${wrapper.large}) {
+  @media only screen and (max-width: ${theming.wrapper.large}) {
     display: none;
   }
 `

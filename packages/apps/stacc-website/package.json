@@ -24,7 +24,7 @@
     "react-loadable-visibility": "^2.5.0",
     "react-router-dom": "^4.2.2",
     "sanity-query-helper": "^0.3.0",
-    "styled-components": "^3.3.3",
+    "styled-components": "^4.0.2",
     "three": "^0.95.0"
   },
   "scripts": {
@@ -43,13 +43,12 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/base": "^7.15.0",
+    "@staccx/base": "^8.0.0-alpha.0",
     "@staccx/color": "^8.0.0-alpha.0",
     "@staccx/formatting": "^8.0.0-alpha.0",
     "@staccx/rollup-config": "^8.0.0-alpha.0",
     "@staccx/sanity": "^8.0.0-alpha.0",
-    "@staccx/stacc-theme": "^7.15.0",
-    "@staccx/theme": "^8.0.0-alpha.0",
+    "@staccx/stacc-theme": "^8.0.0-alpha.0",
     "cli-progress": "^2.1.0",
     "loadable-components": "^2.2.3",
     "nodemon": "^1.18.4",

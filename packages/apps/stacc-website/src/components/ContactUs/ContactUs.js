@@ -1,7 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import { Heading, Layout, Wrapper } from "@staccx/base"
-import { color, spacing, wrapper } from "@staccx/theme"
+import { Heading, Layout, Wrapper, theming } from "@staccx/base"
 import { SanityImage } from "@staccx/sanity"
 import FullWidth from "../FullWidth/FullWidth"
 import Send from "../Icons/Send"
@@ -78,11 +77,11 @@ const StyledWrapper = styled(Wrapper)`
 `
 
 const Container = styled(FullWidth)`
-  background-color: ${color("blush")};
-  padding: ${p => (!p.imageCutOut ? spacing("grid")(p) : 0)} 0;
-  color: ${color("textDark")};
+  background-color: ${theming.color("blush")};
+  padding: ${p => (!p.imageCutOut ? theming.spacing("grid")(p) : 0)} 0;
+  color: ${theming.color("textDark")};
 
-  @media only screen and (min-width: ${wrapper.medium}) {
+  @media only screen and (min-width: ${theming.wrapper.medium}) {
     ${p =>
       p.imageCutOut &&
       css`
@@ -90,7 +89,7 @@ const Container = styled(FullWidth)`
       `};
   }
   &:last-child {
-    margin-bottom: -${spacing("gridLarge")};
+    margin-bottom: -${theming.spacing("gridLarge")};
   }
 `
 
@@ -98,7 +97,7 @@ const Inner = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media only screen and (min-width: ${wrapper.medium}) {
+  @media only screen and (min-width: ${theming.wrapper.medium}) {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: flex-end;
@@ -108,7 +107,7 @@ const Inner = styled.div`
 const Image = styled.img`
   display: block;
 
-  @media only screen and (min-width: ${wrapper.medium}) {
+  @media only screen and (min-width: ${theming.wrapper.medium}) {
     ${p =>
       p.imageCutOut &&
       css`
@@ -118,22 +117,22 @@ const Image = styled.img`
 `
 
 const Body = styled.div`
-  @media only screen and (max-width: ${wrapper.medium}) {
-    margin-bottom: ${spacing.large};
+  @media only screen and (max-width: ${theming.wrapper.medium}) {
+    margin-bottom: ${theming.spacing.large};
   }
 `
 
 const ImgContainer = styled.div`
-  @media only screen and (min-width: ${wrapper.medium}) {
+  @media only screen and (min-width: ${theming.wrapper.medium}) {
     ${p =>
       p.imageCutOut &&
       css`
         align-self: flex-end;
       `};
-    margin-right: ${spacing.large};
+    margin-right: ${theming.spacing.large};
   }
 
-  @media only screen and (max-width: ${wrapper.large}) {
+  @media only screen and (max-width: ${theming.wrapper.large}) {
     max-width: 50%;
   }
 `
@@ -143,7 +142,7 @@ const SubtleLink = styled.a`
   align-items: center;
   justify-content: flex-start;
   text-decoration: none;
-  color: ${color.wcag};
+  color: ${theming.color.wcag};
 
   > svg {
     display: block;
@@ -153,7 +152,7 @@ const SubtleLink = styled.a`
   &:hover,
   &:focus,
   &:active {
-    color: ${color.primary};
+    color: ${theming.color.primary};
     outline: none;
   }
 `

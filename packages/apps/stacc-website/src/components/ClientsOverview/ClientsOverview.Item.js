@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing } from "@staccx/theme"
-import { Wrapper, ItemGroup, Heading, Layout, Button } from "@staccx/base"
+import { Heading, Layout, theming } from "@staccx/base"
 
 const ClientsOverviewItem = ({
   heading,
@@ -28,8 +27,8 @@ const ImageContainer = styled.figure`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${color("g4")};
-  padding: ${spacing.medium} ${spacing.large};
+  background-color: ${theming.color("g4")};
+  padding: ${theming.spacing.medium} ${theming.spacing.large};
   height: 240px;
 `
 
