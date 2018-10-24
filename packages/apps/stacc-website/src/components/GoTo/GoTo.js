@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { color } from "@staccx/theme"
+import { theming } from "@staccx/base"
 import IconChevronRight from "../Icons/IconChevronRight"
 
 const GoTo = ({ to, children }) => (
@@ -14,13 +14,13 @@ const GoTo = ({ to, children }) => (
 const GoToLink = styled(Link)`
   display: inline-block;
   font-weight: 500;
-  color: ${color.primary};
+  color: ${theming.color.primary};
   text-decoration: none;
 
   &:hover,
   &:active,
   &:focus {
-    color: ${color.text};
+    color: ${theming.color.text};
   }
 `
 

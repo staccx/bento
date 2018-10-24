@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Heading, Layout, fontSmoothing } from "@staccx/base"
-import { spacing, font, fontFamily, wrapper, color } from "@staccx/theme"
+import { Heading, Layout, theming } from "@staccx/base"
 import { SanityImage } from "@staccx/sanity"
 
 const SectionHead = ({ heading, headingLevel, lede, illustration }) => {
@@ -35,22 +34,22 @@ const Body = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media only screen and (max-width: ${wrapper.medium}) {
+  @media only screen and (max-width: ${theming.wrapper.medium}) {
     flex-direction: column-reverse;
     align-items: flex-start;
   }
 `
 
 const Lede = styled.p`
-  font-family: ${fontFamily.heading};
+  font-family: ${theming.fontFamily.heading};
   font-weight: 300;
   line-height: 1.8;
-  color: ${color("textDark")};
-  ${fontSmoothing};
+  color: ${theming.color("textDark")};
+  ${theming.fontSmoothing};
 
-  @media only screen and (min-width: ${wrapper.medium}) {
-    font-size: ${font.h3};
-    margin-right: ${spacing.large};
+  @media only screen and (min-width: ${theming.wrapper.medium}) {
+    font-size: ${theming.font.h3};
+    margin-right: ${theming.spacing.large};
   }
 `
 

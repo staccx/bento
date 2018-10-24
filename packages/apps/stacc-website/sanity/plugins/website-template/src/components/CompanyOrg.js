@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
+import {ThemeProvider} from "styled-components"
 import { CompanyInput, BaseTheme } from "@staccx/base"
-import { ThemeProxyProvider } from "@staccx/theme"
 import PatchEvent, { set, unset } from "part:@sanity/form-builder/patch-event"
 
 const createPatchFrom = ({ organisasjonsnummer: orgNo, navn: name }) =>
@@ -51,7 +51,7 @@ export default class CompanyOrg extends React.Component {
     }
     return (
       <div>
-        <ThemeProxyProvider theme={theme}>
+        <ThemeProvider theme={theme}>
           <CompanyInput
             mapItem={mapItem}
             label={type.title}
@@ -64,7 +64,7 @@ export default class CompanyOrg extends React.Component {
             }}
             ref={element => (this._inputElement = element)}
           />
-        </ThemeProxyProvider>
+        </ThemeProvider>
       </div>
     )
   }

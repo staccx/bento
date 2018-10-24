@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { color, font, spacing, fontFamily, wrapper } from "@staccx/theme"
-import { Heading, Layout, Wrapper } from "@staccx/base"
+import { Heading, Layout, Wrapper, theming } from "@staccx/base"
 import FullWidth from "../FullWidth/FullWidth"
 
 const Hero = ({ heading, lede }) => (
@@ -51,11 +50,11 @@ const HeroBG = styled.div`
   justify-content: center;
   background-image: linear-gradient(
     to bottom,
-    ${color("primaryDark")},
-    ${color("primaryMediumDark")}
+    ${theming.color("primaryDark")},
+    ${theming.color("primaryMediumDark")}
   );
-  color: ${color.white};
-  padding-top: calc(${HeaderHeight} + ${spacing("grid")});
+  color: ${theming.color.white};
+  padding-top: calc(${HeaderHeight} + ${theming.spacing("grid")});
   padding-bottom: ${triangleHeight};
   min-height: 65vh;
 
@@ -72,17 +71,17 @@ const HeroBG = styled.div`
     left: 0;
     border-style: solid;
     border-width: ${triangleHeight} 0 0 50vw;
-    border-color: transparent transparent transparent ${color.white};
+    border-color: transparent transparent transparent ${theming.color.white};
   }
 
   &::after {
     right: 0;
     border-style: solid;
     border-width: 0 0 ${triangleHeight} 50vw;
-    border-color: transparent transparent ${color.white} transparent;
+    border-color: transparent transparent ${theming.color.white} transparent;
   }
 
-  @media only screen and (min-width: ${wrapper.large}) {
+  @media only screen and (min-width: ${theming.wrapper.large}) {
     &::before,
     &::after {
       height: ${triangleHeightLarge};
@@ -99,9 +98,9 @@ const HeroBG = styled.div`
 
   @media only screen and (min-width: 1900px) {
     padding-top: calc(
-      ${HeaderHeight} + ${spacing("grid")} + ${spacing("grid")}
+      ${HeaderHeight} + ${theming.spacing("grid")} + ${theming.spacing("grid")}
     );
-    padding-bottom: calc(${triangleHeight} + ${spacing("grid")});
+    padding-bottom: calc(${triangleHeight} + ${theming.spacing("grid")});
 
     &::before,
     &::after {
@@ -119,35 +118,35 @@ const HeroBG = styled.div`
 `
 
 const StyledWrapper = styled(Wrapper)`
-  padding-left: ${spacing.medium} !important;
-  padding-right: ${spacing.medium} !important;
+  padding-left: ${theming.spacing.medium} !important;
+  padding-right: ${theming.spacing.medium} !important;
 `
 
 const HeroHeading = styled(Heading)`
   font-size: 72px;
 
-  @media only screen and (max-width: ${wrapper.large}) {
+  @media only screen and (max-width: ${theming.wrapper.large}) {
     font-size: 54px;
   }
 
-  @media only screen and (max-width: ${wrapper.medium}) {
-    font-size: ${font.h2};
+  @media only screen and (max-width: ${theming.wrapper.medium}) {
+    font-size: ${theming.font.h2};
   }
 
   display: block;
 `
 
 const Lede = styled.p`
-  font-size: ${font.h4};
-  font-family: ${fontFamily.heading};
+  font-size: ${theming.font.h4};
+  font-family: ${theming.fontFamily.heading};
   font-weight: 300;
   line-height: 1.6;
   text-align: center;
   max-width: 680px;
   margin: 0 auto;
 
-  @media only screen and (min-width: ${wrapper.large}) {
-    font-size: ${font.h3};
+  @media only screen and (min-width: ${theming.wrapper.large}) {
+    font-size: ${theming.font.h3};
   }
 `
 

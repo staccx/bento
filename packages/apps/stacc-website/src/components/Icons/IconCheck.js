@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const IconCheck = () => (
   <Icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -20,7 +20,7 @@ const IconCheck = () => (
 const Icon = styled.svg`
   width: 18px;
   height: 18px;
-  fill: ${color.primary};
+  fill: ${theming.color.primary};
   vertical-align: middle;
 `
 

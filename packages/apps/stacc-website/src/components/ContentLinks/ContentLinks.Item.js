@@ -2,8 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { color, spacing } from "@staccx/theme"
-import { Heading } from "@staccx/base"
+import { Heading, theming } from "@staccx/base"
 import { SanityDocument } from "@staccx/sanity"
 import IconArrowRight from "../Icons/IconArrowRight"
 
@@ -77,19 +76,19 @@ const ItemLink = styled(Link)`
   text-decoration: none;
   display: block;
   align-items: center;
-  margin-bottom: ${spacing.tiny};
-  color: ${color("primaryWcag")};
+  margin-bottom: ${theming.spacing.tiny};
+  color: ${theming.color("primaryWcag")};
   transition: color 0.2s ease;
   white-space: nowrap;
 
   > *:last-child {
-    margin-left: ${spacing.tiny};
+    margin-left: ${theming.spacing.tiny};
   }
 
   &:hover,
   &:active,
   &:focus {
-    color: ${color.text};
+    color: ${theming.color.text};
   }
 `
 

@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Button } from "@staccx/base"
-import { spacing } from "@staccx/theme"
+import { Button, theming } from "@staccx/base"
 import * as typeformEmbed from "@typeform/embed"
 
 class Typeform extends React.Component {
@@ -35,7 +34,9 @@ class Typeform extends React.Component {
 }
 
 const Container = styled.div`
-  margin-top: calc(-${spacing("gridLarge")} + ${spacing.medium});
+  margin-top: calc(
+    -${theming.spacing("gridLarge")} + ${theming.spacing.medium}
+  );
 `
 
 Typeform.propTypes = {

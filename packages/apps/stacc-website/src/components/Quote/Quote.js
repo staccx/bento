@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Wrapper, Flag } from "@staccx/base"
-import { spacing, font } from "@staccx/theme"
+import { Wrapper, Flag, theming } from "@staccx/base"
 import FullWidth from "../FullWidth/FullWidth"
 
 const Quote = ({ quote, img, name, isReverse }) => (
@@ -31,7 +30,7 @@ const Quote = ({ quote, img, name, isReverse }) => (
 
 const Outer = styled.div`
   &:last-child {
-    margin-bottom: -${spacing("grid")};
+    margin-bottom: -${theming.spacing("grid")};
   }
 `
 
@@ -41,26 +40,26 @@ const Image = styled.img`
 `
 
 const StyledWrapper = styled(Wrapper)`
-  padding-left: ${spacing.medium} !important;
-  padding-right: ${spacing.medium} !important;
+  padding-left: ${theming.spacing.medium} !important;
+  padding-right: ${theming.spacing.medium} !important;
 `
 
 const Container = styled.div`
   background-color: #fff1e3;
-  padding-top: ${spacing.huge};
-  padding-bottom: ${spacing.huge};
+  padding-top: ${theming.spacing.huge};
+  padding-bottom: ${theming.spacing.huge};
 `
 
 const BlockQuote = styled.blockquote`
-  font-size: ${font.h2};
+  font-size: ${theming.font.h2};
   @media only screen and (max-width: 850px) {
-    font-size: ${font.h3};
+    font-size: ${theming.font.h3};
   }
 `
 
 const Footer = styled.footer`
-  font-size: ${font.base};
-  margin-top: ${spacing.medium};
+  font-size: ${theming.font.base};
+  margin-top: ${theming.spacing.medium};
 `
 
 Quote.propTypes = {

@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Heading } from "@staccx/base"
-import { spacing, wrapper, font } from "@staccx/theme"
+import { Heading, theming } from "@staccx/base"
 import { SanityImage } from "@staccx/sanity"
 import FullWidth from "../FullWidth/FullWidth"
 
@@ -22,7 +21,7 @@ const Outer = styled.div`
   position: relative;
 
   &:first-child {
-    margin-top: calc(-${spacing("grid")} - ${headerHeight});
+    margin-top: calc(-${theming.spacing("grid")} - ${headerHeight});
   }
 `
 
@@ -32,18 +31,18 @@ const StyledHeading = styled(Heading)`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  max-width: ${wrapper.medium};
+  max-width: ${theming.wrapper.medium};
   z-index: 10;
   text-align: center;
 
   font-size: 86px;
 
-  @media only screen and (max-width: ${wrapper.large}) {
-    font-size: ${font.h1};
+  @media only screen and (max-width: ${theming.wrapper.large}) {
+    font-size: ${theming.font.h1};
   }
 
-  @media only screen and (max-width: ${wrapper.medium}) {
-    font-size: ${font.h2};
+  @media only screen and (max-width: ${theming.wrapper.medium}) {
+    font-size: ${theming.font.h2};
   }
 `
 
@@ -54,7 +53,7 @@ const Image = styled(FullWidth)`
   background-repeat: no-repeat;
   min-height: 40vh;
 
-  @media only screen and (max-width: ${wrapper.large}) {
+  @media only screen and (max-width: ${theming.wrapper.large}) {
     min-height: 60vh;
   }
 `
