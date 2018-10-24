@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "immutable": "^3.8.2",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "rollup": "^0.65.0"
   },
   "peerDependencies": {
-    "styled-components": "^3.3.3"
+    "styled-components": "^4.0.2"
   },
   "gitHead": "297e66dbf355a6ce9a98fbf31643e11ea6ccbe13"
 }

@@ -9,7 +9,7 @@
   "dependencies": {
     "prettier": "^1.14.2",
     "@google/maps": "^0.4.6",
-    "@sanity/client": "^0.132.10",
+    "@sanity/client": "^0.135.0",
     "@sanity/image-url": "^0.132.8",
     "@tedconf/react-show-more": "^1.1.2",
     "accounting": "^0.4.1",
@@ -37,9 +37,9 @@
     "national-id": "^2.0.0",
     "polished": "^1.9.2",
     "prismjs": "^1.15.0",
-    "prop-types": "^15.6.1",
+    "prop-types": "^15.6.2",
     "qs": "^6.5.1",
-    "react": "^16.3.2",
+    "react": "^16.6.0",
     "react-dom-confetti": "^0.0.10",
     "react-element-to-jsx-string": "^14.0.1",
     "react-google-maps": "^9.4.5",
@@ -68,7 +68,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "peerDependencies": {
-    "styled-components": "^3.3.3"
+    "styled-components": "^4.0.2"
   },
   "devDependencies": {
     "prettier": "^1.14.2",

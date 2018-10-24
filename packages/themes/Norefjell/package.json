@@ -28,8 +28,8 @@
     "@staccx/base": "^8.0.0-alpha.0",
     "@staccx/formatting": "^8.0.0-alpha.0",
     "polished": "^1.9.2",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
@@ -40,6 +40,6 @@
     "rollup": "^0.65.0"
   },
   "peerDependencies": {
-    "styled-components": "^4.0.0"
+    "styled-components": "^4.0.2"
   }
 }

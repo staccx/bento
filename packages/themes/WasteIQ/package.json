@@ -26,6 +26,6 @@
     "vcards-js": "^2.9.0"
   },
   "peerDependencies": {
-    "styled-components": "^4.0.0"
+    "styled-components": "^4.0.2"
   }
 }

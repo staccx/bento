@@ -49,8 +49,8 @@
     "js-search": "^1.4.2",
     "polished": "^1.9.2",
     "prismjs": "^1.15.0",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
     "react-jsonschema-form": "^1.0.3",
     "text-mask-core": "^5.0.1",
     "tinycolor2": "^1.4.1",
@@ -73,6 +73,6 @@
     "webpack-blocks": "^1.0.0-rc.2"
   },
   "peerDependencies": {
-    "styled-components": "^4.0.0"
+    "styled-components": "^4.0.2"
   }
 }
