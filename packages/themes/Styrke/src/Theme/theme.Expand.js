@@ -1,8 +1,7 @@
 import { css } from "styled-components"
-import { registerStyle } from "@staccx/theme"
-import { Expand } from "@staccx/base"
+import { Expand, theming } from "@staccx/base"
 
-export const ExpandStyling = registerStyle(
+export const ExpandStyling = theming.createVariants(
   {
     dashboardExpand: css`
       display: block;

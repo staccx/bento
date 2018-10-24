@@ -1,5 +1,4 @@
-import { Theme } from "@staccx/theme"
-import { BaseTheme } from "@staccx/base"
+import { theming } from "@staccx/base"
 import reset from "./Theme/reset"
 import { HeadingStyling } from "./Theme/theme.Headings"
 import { ParagraphStyling } from "./Theme/theme.Paragraphs"
@@ -99,7 +98,7 @@ const fontFamily = {
   body: "Open Sans"
 }
 
-const theme = new Theme(BaseTheme, {
+export default new theming.Theme({
   webfonts,
   font,
   fontWeight,
@@ -112,24 +111,22 @@ const theme = new Theme(BaseTheme, {
   fontFamily,
   global: reset
 })
-  .addStyles(HeadingStyling)
-  .addStyles(ParagraphStyling)
-  .addStyles(BoxStyling)
-  .addStyles(AlertStyling)
-  .addStyles(ListStyling)
-  .addStyles(TextStyling)
-  .addStyles(ButtonStyling)
-  .addStyles(SplitListItemStyling)
-  .addStyles(InputStyling)
-  .addStyles(LabelStyling)
-  .addStyles(ExpandListItemStyling)
-  .addStyles(SelectSelectedStyling)
-  .addStyles(SelectIconButtonStyling)
-  .addStyles(SelectOptionsWrapperStyling)
-  .addStyles(LayoutStyling)
-  .addStyles(LayoutItemStyling)
-  .addStyles(RadioPillStyling)
-  .addStyles(ExpandStyling)
-  .addStyles(DividerStyling)
-
-export default theme.get
+  .add(HeadingStyling)
+  .add(ParagraphStyling)
+  .add(BoxStyling)
+  .add(AlertStyling)
+  .add(ListStyling)
+  .add(TextStyling)
+  .add(ButtonStyling)
+  .add(SplitListItemStyling)
+  .add(InputStyling)
+  .add(LabelStyling)
+  .add(ExpandListItemStyling)
+  .add(SelectSelectedStyling)
+  .add(SelectIconButtonStyling)
+  .add(SelectOptionsWrapperStyling)
+  .add(LayoutStyling)
+  .add(LayoutItemStyling)
+  .add(RadioPillStyling)
+  .add(ExpandStyling)
+  .add(DividerStyling)

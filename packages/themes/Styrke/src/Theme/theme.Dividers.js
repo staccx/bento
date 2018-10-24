@@ -1,11 +1,10 @@
 import { css } from "styled-components"
-import { spacing, registerStyle } from "@staccx/theme"
-import { Divider } from "@staccx/base"
+import { Divider, theming } from "@staccx/base"
 
-export const DividerStyling = registerStyle(
+export const DividerStyling = theming.createVariants(
   {
     calculator: css`
-      margin-bottom: ${spacing.mediumPlus};
+      margin-bottom: ${theming.spacing.mediumPlus};
     `
   },
   Divider.themeProps.rule

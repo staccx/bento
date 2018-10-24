@@ -1,29 +1,28 @@
 import { css } from "styled-components"
-import { color, font, spacing, registerStyle, fontFamily } from "@staccx/theme"
-import { Heading } from "@staccx/base"
+import { Heading, theming } from "@staccx/base"
 
 const stepHeading = css`
   margin-bottom: 0;
-  color: ${color.primary};
-  font-size: ${font.h1};
+  color: ${theming.color.primary};
+  font-size: ${theming.font.h1};
   line-height: 1.25;
 `
 
-export const HeadingStyling = registerStyle(
+export const HeadingStyling = theming.createVariants(
   {
     stepHeading: stepHeading,
     formSection: css`
-      color: ${color.primary};
-      font-size: ${font.h3};
-      margin-top: ${p => (p.flush ? 0 : spacing("medium")(p))};
+      color: ${theming.color.primary};
+      font-size: ${theming.font.h3};
+      margin-top: ${p => (p.flush ? 0 : theming.spacing("medium")(p))};
     `,
     endScreen: stepHeading,
     boxHeading: css`
-      font-family: ${fontFamily.body};
-      font-size: ${font.base};
+      font-family: ${theming.fontFamily.body};
+      font-size: ${theming.font.base};
       font-weight: 300;
-      margin-bottom: ${spacing.tiny};
-      color: ${color.primary};
+      margin-bottom: ${theming.spacing.tiny};
+      color: ${theming.color.primary};
     `
   },
   Heading.themeProps.heading

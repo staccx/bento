@@ -1,29 +1,28 @@
 import { css } from "styled-components"
-import { spacing, color, registerStyle } from "@staccx/theme"
-import { List, SplitListItem, ExpandListItem } from "@staccx/base"
+import { List, SplitListItem, ExpandListItem, theming } from "@staccx/base"
 
-export const ListStyling = registerStyle(
+export const ListStyling = theming.createVariants(
   {
     offerInfoList: css`
-      margin-top: ${spacing.tiny};
+      margin-top: ${theming.spacing.tiny};
       li {
         padding: 3px 0;
       }
     `,
     documentSign: css`
-      margin-bottom: ${spacing.medium};
+      margin-bottom: ${theming.spacing.medium};
 
       > li {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: ${spacing.small};
-        background-color: ${color("bgBlue")};
+        padding: ${theming.spacing.small};
+        background-color: ${theming.color("bgBlue")};
         margin-bottom: 3px;
 
         &::not(:first-child) {
-          border-top: 1px solid ${color.line};
-          padding-top: ${spacing.small};
+          border-top: 1px solid ${theming.color.line};
+          padding-top: ${theming.spacing.small};
         }
       }
     `,
@@ -32,30 +31,30 @@ export const ListStyling = registerStyle(
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: ${spacing.small} ${spacing.medium};
-        background-color: ${color.bgGray};
+        padding: ${theming.spacing.small} ${theming.spacing.medium};
+        background-color: ${theming.color.bgGray};
         margin-bottom: 3px;
       }
     `,
     bottomBorder: css`
-      border-bottom: 1px solid ${color.line};
+      border-bottom: 1px solid ${theming.color.line};
     `,
     topBorder: css`
-      border-top: 1px solid ${color.line};
+      border-top: 1px solid ${theming.color.line};
     `,
     bullet: css`
       list-style-type: disc;
       padding-left: 1.5rem;
 
       > li {
-        margin-bottom: ${spacing.tiny};
+        margin-bottom: ${theming.spacing.tiny};
       }
     `
   },
   List.themeProps.list
 )
 
-export const SplitListItemStyling = registerStyle(
+export const SplitListItemStyling = theming.createVariants(
   {
     signerListItem: css`
       padding-left: 0;
@@ -84,15 +83,15 @@ export const SplitListItemStyling = registerStyle(
   SplitListItem.themeProps.listItem
 )
 
-export const ExpandListItemStyling = registerStyle(
+export const ExpandListItemStyling = theming.createVariants(
   {
     signer: css`
       border-bottom: 1px solid
-        ${p => (p.isExpanded ? "transparent" : color("line")(p))};
+        ${p => (p.isExpanded ? "transparent" : theming.color("line")(p))};
 
       > button {
         padding-left: 0;
-        padding-right: ${spacing.mediumPlus};
+        padding-right: ${theming.spacing.mediumPlus};
       }
     `
   },

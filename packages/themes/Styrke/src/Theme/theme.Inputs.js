@@ -1,8 +1,7 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
-import { Input, SelectOption, Select, RadioPill } from "@staccx/base"
+import { Input, Select, RadioPill, theming } from "@staccx/base"
 
-export const InputStyling = registerStyle(
+export const InputStyling = theming.createVariants(
   {
     loanOffer: css`
       border-width: 0;
@@ -16,24 +15,24 @@ export const InputStyling = registerStyle(
   Input.themeProps.input
 )
 
-export const LabelStyling = registerStyle(Input.themeProps.label)
+export const LabelStyling = theming.createVariants(Input.themeProps.label)
 
-export const SelectSelectedStyling = registerStyle(
+export const SelectSelectedStyling = theming.createVariants(
   {
     loanOffer: css`
       border-color: transparent;
-      padding-right: ${spacing.mediumPlus};
+      padding-right: ${theming.spacing.mediumPlus};
       background-color: transparent;
 
       &:hover,
       &:active,
       &:focus {
         background-color: transparent;
-        color: ${color.primary};
-        border-color: ${color.primary};
+        color: ${theming.color.primary};
+        border-color: ${theming.color.primary};
 
         svg {
-          fill: ${color.primary};
+          fill: ${theming.color.primary};
         }
       }
     `
@@ -41,7 +40,7 @@ export const SelectSelectedStyling = registerStyle(
   Select.themeProps.optionContainer
 )
 
-export const SelectIconButtonStyling = registerStyle(
+export const SelectIconButtonStyling = theming.createVariants(
   {
     loanOffer: css`
       right: 0;
@@ -50,7 +49,7 @@ export const SelectIconButtonStyling = registerStyle(
   Select.themeProps.iconButton
 )
 
-export const SelectOptionsWrapperStyling = registerStyle(
+export const SelectOptionsWrapperStyling = theming.createVariants(
   {
     loanOffer: css`
       width: 100%;
@@ -58,7 +57,7 @@ export const SelectOptionsWrapperStyling = registerStyle(
       overflow-y: auto;
       position: absolute;
       z-index: 10;
-      background-color: ${color.white};
+      background-color: ${theming.color.white};
       box-shadow: rgba(0, 0, 75, 0.015) 0px 2px 2px,
         rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
         rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
@@ -68,12 +67,12 @@ export const SelectOptionsWrapperStyling = registerStyle(
   Select.themeProps.defaultOptionWrapper
 )
 
-export const RadioPillStyling = registerStyle(
+export const RadioPillStyling = theming.createVariants(
   {
     numberOfChildren: css`
-      padding-top: ${spacing.mediumPlus};
-      padding-left: ${spacing.medium};
-      padding-right: ${spacing.medium};
+      padding-top: ${theming.spacing.mediumPlus};
+      padding-left: ${theming.spacing.medium};
+      padding-right: ${theming.spacing.medium};
     `
   },
   RadioPill.themeProps.container

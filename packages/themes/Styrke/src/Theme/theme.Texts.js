@@ -1,14 +1,13 @@
 import { css } from "styled-components"
-import { color, registerStyle } from "@staccx/theme"
-import { Text, hideVisually } from "@staccx/base"
+import { Text, hideVisually, theming } from "@staccx/base"
 
-export const TextStyling = registerStyle(
+export const TextStyling = theming.createVariants(
   {
     visuallyHidden: css`
       ${hideVisually};
     `,
     legalese: css`
-      color: ${color.wcag};
+      color: ${theming.color.wcag};
     `
   },
   Text.themeProps.text

@@ -1,34 +1,33 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
-import { Box } from "@staccx/base"
+import { Box, theming } from "@staccx/base"
 
 const subtleBox = css`
   border-radius: 0;
-  background-color: ${color.bgGray};
-  ${p => p.size === "large" && `padding: ${spacing("medium")(p)}`};
+  background-color: ${theming.color.bgGray};
+  ${p => p.size === "large" && `padding: ${theming.spacing("medium")(p)}`};
 `
 
-export const BoxStyling = registerStyle(
+export const BoxStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       border-radius: 0;
     `,
     section: css`
       border-radius: 0;
-      border-bottom: 1px solid ${color.line};
+      border-bottom: 1px solid ${theming.color.line};
     `,
     actionBox: css`
       padding: 0;
     `,
     actionBoxContent: css`
-      padding: ${spacing.medium} 0 0 0;
+      padding: ${theming.spacing.medium} 0 0 0;
     `,
     expandLeadContent: css`
       padding: 0;
-      background-color: ${color("bgBlue")};
+      background-color: ${theming.color("bgBlue")};
 
       td {
-        border-color: ${color("bgBlueDark")};
+        border-color: ${theming.color("bgBlueDark")};
       }
     `,
     largeForm: css`
@@ -36,13 +35,13 @@ export const BoxStyling = registerStyle(
     `,
     paddingVertical: css`
       padding: 0;
-      padding-top: ${spacing.medium};
-      padding-bottom: ${spacing.medium};
+      padding-top: ${theming.spacing.medium};
+      padding-bottom: ${theming.spacing.medium};
     `,
     illustration: css`
       padding: 0;
       text-align: center;
-      margin-bottom: ${spacing.medium};
+      margin-bottom: ${theming.spacing.medium};
     `,
     split: css`
       display: flex;
@@ -60,12 +59,12 @@ export const BoxStyling = registerStyle(
     halves: css`
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: ${spacing.large};
+      grid-gap: ${theming.spacing.large};
       grid-template-areas: "left right";
       padding: 0;
 
       @media (max-width: 735px) {
-        grid-gap: ${spacing.medium};
+        grid-gap: ${theming.spacing.medium};
       }
       @media (max-width: 710px) {
         grid-template-columns: 100%;
@@ -74,38 +73,38 @@ export const BoxStyling = registerStyle(
     `,
     addSigner: css`
       position: relative;
-      margin: ${spacing.medium} 0 ${spacing.small};
+      margin: ${theming.spacing.medium} 0 ${theming.spacing.small};
       padding: 0;
     `,
     addSignerBtn: css`
-      padding-top: ${spacing.small};
+      padding-top: ${theming.spacing.small};
       padding-left: 0;
     `,
     pickAmounts: css`
-      padding: ${spacing.medium} 0 0;
+      padding: ${theming.spacing.medium} 0 0;
     `,
     offerTable: css`
-      border-top: 3px solid ${color.primary};
-      border-bottom: 3px solid ${color.primary};
-      padding: 0 0 ${spacing.small};
+      border-top: 3px solid ${theming.color.primary};
+      border-bottom: 3px solid ${theming.color.primary};
+      padding: 0 0 ${theming.spacing.small};
       border-radius: 0;
     `,
     expandLead: css`
       padding: 0;
-      margin: ${spacing.medium} 0;
+      margin: ${theming.spacing.medium} 0;
     `,
     signDocument: css`
       padding: 0;
     `,
     userDefinedAmount: css`
-      padding: ${spacing.medium};
-      background-color: ${color("bgBlue")};
+      padding: ${theming.spacing.medium};
+      background-color: ${theming.color("bgBlue")};
     `,
     loanTerms: css`
       margin-top: 34px;
       padding: 31px 0;
-      border-top: 3px solid ${color.primary};
-      border-bottom: 3px solid ${color.primary};
+      border-top: 3px solid ${theming.color.primary};
+      border-bottom: 3px solid ${theming.color.primary};
       border-radius: 0;
     `,
     priceExample: css`
@@ -121,7 +120,7 @@ export const BoxStyling = registerStyle(
       }
 
       > div:not(:first-child):not(:last-child) {
-        margin-right: ${spacing.medium};
+        margin-right: ${theming.spacing.medium};
       }
     `
   },

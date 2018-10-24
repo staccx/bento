@@ -1,13 +1,12 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
-import { Alert } from "@staccx/base"
+import { Alert, theming } from "@staccx/base"
 
-export const AlertStyling = registerStyle(
+export const AlertStyling = theming.createVariants(
   {
     error: css`
-      background-color: ${color.warning};
-      color: ${color.white};
-      padding: ${spacing.small};
+      background-color: ${theming.color.warning};
+      color: ${theming.color.white};
+      padding: ${theming.spacing.small};
       position: relative;
       margin-top: 3px;
 
@@ -17,7 +16,7 @@ export const AlertStyling = registerStyle(
         height: 0;
         border-left: 12px solid transparent;
         border-right: 12px solid transparent;
-        border-bottom: 12px solid ${color.warning};
+        border-bottom: 12px solid ${theming.color.warning};
         top: -12px;
         left: 24px;
         position: absolute;
