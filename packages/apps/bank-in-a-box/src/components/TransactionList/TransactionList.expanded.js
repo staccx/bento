@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { formatCurrency } from "@staccx/formatting"
 import { List, SplitListItem, theming } from "@staccx/base"
 
 const TransactionListItem = ({
@@ -35,8 +36,8 @@ const TransactionListItem = ({
         </SplitListItem>
       )}
       <SplitListItem>
-        <div>Totalt:</div>
-        <div>{amount}</div>
+        <div>Beløp:</div>
+        <div>{formatCurrency(amount, { precision: 2 })}</div>
       </SplitListItem>
       <SplitListItem>
         <div>
@@ -46,12 +47,10 @@ const TransactionListItem = ({
         </div>
         <div>{date}</div>
       </SplitListItem>
-      {!type === "INVOICE" && (
-        <SplitListItem>
-          <div>{toAccount ? "Til konto:" : "Fra konto:"}</div>
-          <div>{toAccount || fromAccount}</div>
-        </SplitListItem>
-      )}
+      <SplitListItem>
+        <div>{toAccount ? "Til konto:" : "Fra konto:"}</div>
+        <div>{toAccount || fromAccount}</div>
+      </SplitListItem>
     </List>
   </Outer>
 )
