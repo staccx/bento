@@ -27,10 +27,9 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/base": "^7.15.0",
+    "@staccx/base": "^8.0.0-alpha.0",
     "@staccx/code-generator": "^8.0.0-alpha.0",
-    "@staccx/fundu-theme": "^7.15.0",
-    "@staccx/theme": "^8.0.0-alpha.0",
+    "@staccx/fundu-theme": "^8.0.0-alpha.0",
     "@staccx/utils": "^8.0.0-alpha.0",
     "axios": "^0.18.0",
     "localforage": "^1.7.2",

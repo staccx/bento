@@ -2,13 +2,13 @@ import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
 import registerServiceWorker from "./registerServiceWorker"
-import { ThemeProxyProvider } from "@staccx/theme"
+import { ThemeProvider } from "styled-components"
 import DocsTheme from "./Theme/Theme"
 
 ReactDOM.render(
-  <ThemeProxyProvider theme={DocsTheme}>
+  <ThemeProvider theme={DocsTheme}>
     <App openApiUrl="/swagger.json" />
-  </ThemeProxyProvider>,
+  </ThemeProvider>,
   document.getElementById("root")
 )
 registerServiceWorker()

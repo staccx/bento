@@ -1,7 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import { spacing, color } from "@staccx/theme"
-import { Layout, RadioPill, RadioPillItem, Input, Box } from "@staccx/base"
+import {
+  theming,
+  Layout,
+  RadioPill,
+  RadioPillItem,
+  Input,
+  Box
+} from "@staccx/base"
 import OpenApiConsumer from "../OpenApiConsumer"
 
 const langs = [
@@ -70,8 +76,8 @@ const HeaderComp = styled.header`
   display: flex;
   justify-content: stretch;
   align-items: stretch;
-  min-height: ${spacing("largePlus")};
-  border-bottom: 1px solid ${color.line};
+  min-height: ${theming.spacing("largePlus")};
+  border-bottom: 1px solid ${theming.color.line};
   width: 100%;
 `
 

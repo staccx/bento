@@ -1954,6 +1954,7 @@
   version "7.13.1"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-7.13.1.tgz#86de47a15c781acc302c8dcdfa82b14359335710"
 
+<<<<<<< Updated upstream
 "@staccx/aprila-theme@^7.15.0":
   version "7.15.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/aprila-theme/-/@staccx/aprila-theme-7.15.0.tgz#d836d26c9e268bbf15cecabeabf4c1f8a3c1cfbc"
@@ -1967,6 +1968,8 @@
     react "^16.3.2"
     react-dom "^16.3.2"
 
+=======
+>>>>>>> Stashed changes
 "@staccx/base@^7.15.0":
   version "7.15.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-7.15.0.tgz#615e55408dc495d84eef51f4f466702a50130573"
@@ -2032,6 +2035,7 @@
     react "^16.3.2"
     react-dom "^16.3.2"
 
+<<<<<<< Updated upstream
 "@staccx/norefjell-theme@^7.15.0":
   version "7.15.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/norefjell-theme/-/@staccx/norefjell-theme-7.15.0.tgz#ebfcc3fc8c4d55f922bedb56b090c0d4cf4e15ec"
@@ -2045,6 +2049,8 @@
     react "^16.3.2"
     react-dom "^16.3.2"
 
+=======
+>>>>>>> Stashed changes
 "@staccx/payment-plan@^1.2.0":
   version "1.2.0"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/payment-plan/-/@staccx/payment-plan-1.2.0.tgz#fa522deb0a490d49813dc454a16e79e1ab6791f1"
