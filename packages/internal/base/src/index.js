@@ -84,8 +84,8 @@ import Box from "./components/Layout/Box/Box"
 import Portal from "./components/Portal/Portal"
 
 // Styles
-import fontSmoothing from "./Styles/fontsmoothing"
-import hideVisually from "./Styles/hideVisually"
+import fontSmoothing from "./theming/styles/fontsmoothing"
+import hideVisually from "./theming/styles/hideVisually"
 
 // Themes
 import * as theming from "./theming"
