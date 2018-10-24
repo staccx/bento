@@ -1,7 +1,7 @@
 import React from "react"
 import Copy from "./CopyToClipboard"
-import Button from "../Button/Button"
-import Input from "../Forms/Input/Input"
+import Button from "../../components/Button/Button"
+import Input from "../../components/Forms/Input/Input"
 
 const defaultValue = "My text"
 export default {
