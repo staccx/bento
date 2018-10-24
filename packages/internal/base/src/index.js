@@ -124,6 +124,8 @@ import FeatureToggle from "./hoc/FeatureToggle/FeatureToggle"
 
 import BaseTheme from "./theming/baseTheme"
 
+import WebFonts from "./components/Theme/WebFonts"
+
 // Search
 import Search from "./hoc/Search/Search"
 require("es6-promise").polyfill()
@@ -212,5 +214,6 @@ export {
   Toggle,
   Wait,
   Warning,
+  WebFonts,
   Wrapper
 }
