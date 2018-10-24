@@ -1,4 +1,3 @@
-import AprilaTheme from "./WasteIqTheme"
-console.log(AprilaTheme)
+import WasteIqTheme from "./WasteIqTheme"
 
-export default AprilaTheme
+export default WasteIqTheme

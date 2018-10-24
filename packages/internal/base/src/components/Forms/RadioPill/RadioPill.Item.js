@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import hideVisually from "../../../Styles/hideVisually"
+import hideVisually from "../../../theming/styles/hideVisually"
 import {
   commonPropTypes,
   themePropTypes
