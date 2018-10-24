@@ -33,27 +33,30 @@ class i18n {
     this.log(`language set to ${language}`)
   }
 
-  translate(key, data) {
+  translate(key, data, fallback) {
     if (!this.texts) {
       return null
     }
 
     if (!this.texts.hasOwnProperty(key)) {
       console.warn(`Key no part of texts: ${key}`, this.texts)
-      return `Missing entry: ${key} in all languages`
+      if (!fallback) {
+        return `Missing entry: ${key} in all languages`
+      }
     }
 
     const val = this.getValue(key)
 
-    if (!val.hasOwnProperty(this.language)) {
+    if (!val || !val.hasOwnProperty(this.language)) {
       console.warn(`${key} does not exist in ${this.language} dataset.`)
-      return `Missing key: ${key}` // TODO: Make fallback?
+      if (!fallback) {
+        return `Missing key: ${key}` // TODO: Make fallback?
+      }
     }
 
     const formattingData = Object.assign({}, this.data, data)
-    // TODO: Handle commonly used us, like currency, phonenumber, date.now etc.
     try {
-      const result = this.convert(val)
+      const result = this.convert(val) || fallback
       // Run through plugins
       const pluginated = this.runPlugins(result, formattingData)
       return format(pluginated, formattingData)
@@ -71,7 +74,7 @@ class i18n {
   }
 
   convert(value) {
-    if (value.hasOwnProperty(this.language)) {
+    if (value && value.hasOwnProperty(this.language)) {
       return value[this.language]
     }
 

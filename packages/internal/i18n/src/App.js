@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Button, Heading, Wrapper, Text } from "@staccx/base"
-import { ThemeProxyProvider } from "@staccx/theme"
+import { ThemeProvider } from "styled-components"
 import theme from "./theme.js"
 import LanguageProvider from "./Components/LanguageProvider"
 import TranslatedText from "./Components/TranslatedText"
@@ -9,7 +9,7 @@ import i18n from "./i18n"
 import dateNowPlugin from "./plugins/date.now"
 import formatCurrencyPlugin from "./plugins/format.currency"
 
-const i18nConfig = {
+export const i18nConfig = {
   texts: {
     HELLO: {
       nb: "Heisann, {name}, dagens dato: {date.now}, {currency(price)}",
@@ -63,11 +63,17 @@ class App extends Component {
 
   render() {
     return (
-      <ThemeProxyProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <LanguageProvider {...i18nConfig}>
           <Wrapper size={"medium"}>
             <Text>
               <TranslatedText i18nKey={"HELLO"} />
+            </Text>
+            <Text>
+              <TranslatedText
+                i18nKey={"ermagerdh"}
+                fallback={"this is using fallback"}
+              />
             </Text>
             <TranslatedText i18nKey={"HELLO"} data={{ name: "Stacc Flow" }}>
               {value => <Heading>{value}</Heading>}
@@ -78,7 +84,7 @@ class App extends Component {
             <LanguageSettings />
           </Wrapper>
         </LanguageProvider>
-      </ThemeProxyProvider>
+      </ThemeProvider>
     )
   }
 }

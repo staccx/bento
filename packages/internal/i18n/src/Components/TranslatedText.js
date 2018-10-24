@@ -4,16 +4,16 @@ import { Consumer } from "./context"
 
 class TranslatedText extends React.Component {
   render() {
-    const { i18nKey, children, data } = this.props
+    const { i18nKey, children, data, fallback } = this.props
     return (
       <Consumer>
         {({ translate, initialized }) => {
           if (!initialized) {
+            // Has not been initialized
             return null
           }
-          const value = translate(i18nKey, data)
+          const value = translate(i18nKey, data, fallback)
           if (!value) {
-            // Has not been initialized
             return null
           }
 
