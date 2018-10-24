@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "react": "^16.6.0",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.6.0"
   },
   "devDependencies": {
     "@staccx/base": "^8.0.0-alpha.0",

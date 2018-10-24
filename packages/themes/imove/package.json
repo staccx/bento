@@ -28,7 +28,7 @@
     "@staccx/theme": "^8.0.0-alpha.0",
     "polished": "^1.9.2",
     "react": "^16.6.0",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.6.0"
   },
   "devDependencies": {
     "@staccx/rollup-config": "^8.0.0-alpha.0",
