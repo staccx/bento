@@ -1,13 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { toJS } from "mobx/lib/mobx"
-import Withdraw from "./Deposit/Withdraw"
-import AccountStatement from "./Deposit/AccountStatement"
-import Insurance from "./Loan/Insurance"
-import Downpayment from "./Loan/Downpayment"
-import LoanStatement from "./Loan/LoanStatement"
-import Invoice from "./Loan/Invoice"
-import Due from "./Loan/Due"
+import Withdraw from "./Withdraw"
+import AccountStatement from "./AccountStatement"
 import { Route, Switch } from "react-router-dom"
 import AccountDetail from "./AccountDetail"
 
@@ -19,27 +14,6 @@ const Account = ({ accountStore, history, match }) => {
   console.log(acc)
   return (
     <Switch>
-      <Route path={`${match.url}/due`} exact component={Due} />
-      <Route
-        path={`${match.url}/invoice`}
-        exact
-        render={() => <Invoice history={history} account={acc} />}
-      />
-      <Route
-        path={`${match.url}/downpayment`}
-        exact
-        render={() => <Downpayment history={history} account={acc} />}
-      />
-      <Route
-        path={`${match.url}/loan-statement`}
-        exact
-        render={() => <LoanStatement account={acc} history={history} />}
-      />
-      <Route
-        path={`${match.url}/insurance`}
-        exact
-        render={() => <Insurance history={history} />}
-      />
       <Route
         path={`${match.url}/account-statement`}
         exact
