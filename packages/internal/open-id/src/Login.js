@@ -60,7 +60,8 @@ class Login extends React.Component {
       .catch(console.error)
   }
 
-  submitCode() {
+  submitCode(e) {
+    e && e.preventDefault()
     const state = this.state.stateToken
     const nonce = this.state.code
 
@@ -108,7 +109,8 @@ class Login extends React.Component {
       })
   }
 
-  submitId() {
+  submitId(e) {
+    e && e.preventDefault()
     const id = this.state.id
     const state = this.state.stateToken
 
