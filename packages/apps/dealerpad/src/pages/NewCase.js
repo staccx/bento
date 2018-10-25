@@ -8,9 +8,10 @@ import {
   List,
   Flag,
   LayoutItem,
-  Button
+  Button,
+  ThemeComponent,
+  theming
 } from "@staccx/base"
-import { spacing, ThemeComponent, color, targetSize } from "@staccx/theme"
 import registerCase from "../data/registerCase"
 import caseStore from "../data/store/caseStore"
 
@@ -65,7 +66,7 @@ const Home = ({ history }) => (
 
 const Left = styled.div`
   text-align: left;
-  margin-bottom: ${spacing.medium};
+  margin-bottom: ${theming.spacing.medium};
 `
 
 const PageWrapper = styled.div`
@@ -78,16 +79,16 @@ const Grid = styled.div`
   display: grid;
   text-align: center;
   grid-template-columns: 200px 1fr;
-  grid-column-gap: ${spacing.medium};
-  grid-row-gap: ${spacing.medium};
+  grid-column-gap: ${theming.spacing.medium};
+  grid-row-gap: ${theming.spacing.medium};
   > ul {
-    padding-left: ${spacing.medium};
+    padding-left: ${theming.spacing.medium};
   }
   @media only screen and (max-width: 760px) {
     grid-template-columns: 1fr;
     li {
       display: inline-block;
-      margin-right: ${spacing.medium};
+      margin-right: ${theming.spacing.medium};
     }
   }
 `
@@ -101,16 +102,16 @@ const Center = styled.div`
 const StyledLink = styled(Link)`
   text-align: left;
   display: block;
-  padding: ${spacing.small} 0;
-  border-bottom: 1px solid ${color.line};
+  padding: ${theming.spacing.small} 0;
+  border-bottom: 1px solid ${theming.color.line};
   svg {
-    width: ${spacing.medium};
-    fill: ${color.primary};
-    height: ${spacing.medium};
+    width: ${theming.spacing.medium};
+    fill: ${theming.color.primary};
+    height: ${theming.spacing.medium};
   }
   @media only screen and (max-width: 760px) {
     border-bottom: 0px transparent solid;
-    height: ${targetSize.normal};
+    height: ${theming.targetSize.normal};
   }
 `
 

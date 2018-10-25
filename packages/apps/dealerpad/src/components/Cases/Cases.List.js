@@ -1,8 +1,16 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-import { Box, List, Heading, Text, NewBadge, Loading } from "@staccx/base"
-import { ThemeComponent, color, spacing } from "@staccx/theme"
+import {
+  Box,
+  List,
+  Heading,
+  Text,
+  NewBadge,
+  Loading,
+  theming,
+  ThemeComponent
+} from "@staccx/base"
 import CasesProgress from "./Cases.Progress"
 import caseStore from "../../data/store/caseStore"
 import { observer } from "mobx-react"
@@ -111,15 +119,15 @@ const CaseContainer = styled.div`
 `
 
 const SpacingLeft = styled.div`
-  margin-left: ${spacing.small};
+  margin-left: ${theming.spacing.small};
 `
 
 export const IconWrapper = styled.div`
-  margin-left: ${spacing.small};
+  margin-left: ${theming.spacing.small};
 
   svg {
     display: block;
-    fill: ${color.primary};
+    fill: ${theming.color.primary};
     width: 10px;
   }
 `

@@ -99,12 +99,7 @@ class Notifications extends Component {
         <audio id="sound" preload="auto">
           <source src="./sound.mp3" type="audio/mpeg" />
           <source src="./sound.ogg" type="audio/ogg" />
-          <embed
-            hidden="true"
-            autostart="false"
-            loop="false"
-            src="./sound.mp3"
-          />
+          <embed hidden autostart="false" loop={false} src="./sound.mp3" />
         </audio>
       </div>
     )

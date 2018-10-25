@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, font } from "@staccx/theme"
-import { Box } from "@staccx/base"
+import { Box, theming } from "@staccx/base"
 import DocumentationIcon from "./DocumentationIcon"
 import DocumentationActions from "./DocumentationActions"
 import fileStatus from "../../data/fileStatus"
@@ -29,8 +28,8 @@ const Label = styled.div`
 `
 
 const Rejected = styled.div`
-  font-size: ${font.tiny};
-  color: ${color("a1")};
+  font-size: ${theming.font.tiny};
+  color: ${theming.color("a1")};
   margin-top: 3px;
 `
 

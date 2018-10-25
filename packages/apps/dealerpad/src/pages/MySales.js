@@ -1,6 +1,12 @@
 import React from "react"
-import { ThemeComponent } from "@staccx/theme"
-import { Heading, Box, Wrapper, Button, LayoutItem } from "@staccx/base"
+import {
+  ThemeComponent,
+  Heading,
+  Box,
+  Wrapper,
+  Button,
+  LayoutItem
+} from "@staccx/base"
 import CasesList from "../components/Cases/Cases.List"
 import Search from "../components/Search/Search"
 

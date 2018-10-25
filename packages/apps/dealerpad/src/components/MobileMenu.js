@@ -1,8 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import { NavLink } from "react-router-dom"
-import { ThemeComponent, color, spacing } from "@staccx/theme"
-import { List, fontSmoothing, Button } from "@staccx/base"
+import {
+  List,
+  fontSmoothing,
+  Button,
+  ThemeComponent,
+  theming
+} from "@staccx/base"
 import routes from "../data/routes"
 
 const MobileMenu = ({ menuOpen, onClick, location }) => (
@@ -42,7 +47,7 @@ const MenuWrapper = styled.div`
   height: 100%;
   left: 0;
   top: 0;
-  background-color: ${color("header")};
+  background-color: ${theming.color("header")};
   ${fontSmoothing};
   z-index: 100;
   justify-content: center;
@@ -56,13 +61,13 @@ const MenuElement = styled(NavLink)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: ${color("headerText")};
-  margin-left: ${spacing.medium};
-  padding: ${spacing.small} 0;
+  color: ${theming.color("headerText")};
+  margin-left: ${theming.spacing.medium};
+  padding: ${theming.spacing.small} 0;
   height: 52px; /* TODO: This is a hack */
   svg {
-    margin-right: ${spacing.small};
-    fill: ${color("headerActive")};
+    margin-right: ${theming.spacing.small};
+    fill: ${theming.color("headerActive")};
   }
 
   &.dpCurrent,
@@ -70,7 +75,7 @@ const MenuElement = styled(NavLink)`
   &:active,
   &:focus {
     svg {
-      fill: ${color("headerIconActive")};
+      fill: ${theming.color("headerIconActive")};
     }
   }
 `

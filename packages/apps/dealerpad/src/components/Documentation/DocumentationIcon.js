@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import { color, spacing, ThemeComponent } from "@staccx/theme"
+import { theming, ThemeComponent } from "@staccx/base"
 import fileStatus from "../../data/fileStatus"
 
 const DocumentationIcon = ({ status }) => {
@@ -31,9 +31,9 @@ const DocumentationIcon = ({ status }) => {
 }
 
 const common = css`
-  width: ${spacing.medium};
-  height: ${spacing.medium};
-  border-radius: ${spacing.small};
+  width: ${theming.spacing.medium};
+  height: ${theming.spacing.medium};
+  border-radius: ${theming.spacing.small};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,29 +41,29 @@ const common = css`
 
 const Empty = styled.div`
   ${common};
-  background-color: ${color("g1")};
+  background-color: ${theming.color("g1")};
 `
 const Uploaded = styled.div`
   ${common};
-  background-color: ${color("a2")};
+  background-color: ${theming.color("a2")};
   svg {
-    fill: ${color("b5")};
+    fill: ${theming.color("b5")};
   }
 `
 
 const Approved = styled.div`
   ${common};
-  background-color: ${color("a3")};
+  background-color: ${theming.color("a3")};
   svg {
-    fill: ${color("white")};
+    fill: ${theming.color("white")};
   }
 `
 
 const Rejected = styled.div`
   ${common};
-  background-color: ${color("a1")};
+  background-color: ${theming.color("a1")};
   svg {
-    fill: ${color("white")};
+    fill: ${theming.color("white")};
   }
 `
 

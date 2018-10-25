@@ -51,6 +51,8 @@ import { LoadingStyle } from "./Loading"
 import { CalculatorIcon } from "./Icons/Calculator"
 import { NcvsIcon } from "./Icons/NCVS"
 import { UrlIcon } from "./Icons/Url"
+import { CloseIcon } from "./Icons/Close"
+import { MenuIcon } from "./Icons/Menu"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -116,16 +118,16 @@ const color = {
 }
 
 const DealerpadSpecificColor = {
-  header: theming.color.b5,
-  headerText: theming.color.white,
-  headerActive: theming.color.b1,
-  headerIconActive: theming.color.white,
-  contactIcon: theming.color.p2,
-  contactIconHover: theming.color.p3,
-  chatBubbleBgCurrentUser: theming.color.bg,
-  chatBubbleBgOtherUser: theming.color.b2,
-  chatBubbleBgCurrentUserText: theming.color.text,
-  chatBubbleBgOtherUserText: theming.color.white
+  header: color.b5,
+  headerText: color.white,
+  headerActive: color.b1,
+  headerIconActive: color.white,
+  contactIcon: color.p2,
+  contactIconHover: color.p3,
+  chatBubbleBgCurrentUser: color.bg,
+  chatBubbleBgOtherUser: color.b2,
+  chatBubbleBgCurrentUserText: color.text,
+  chatBubbleBgOtherUserText: color.white
 }
 
 const font = {
@@ -161,8 +163,7 @@ const theme = new theming.Theme(BaseTheme, {
   targetSize,
   borderRadius,
   headerHeight,
-  fontFamily,
-  global: reset
+  fontFamily
 })
   .add(HeadingStyling)
   .add(ParagraphStyling)
@@ -216,4 +217,7 @@ const theme = new theming.Theme(BaseTheme, {
   .add(CalculatorIcon)
   .add(NcvsIcon)
   .add(UrlIcon)
+  .add(reset)
+  .add(MenuIcon)
+  .add(CloseIcon)
 export default theme

@@ -1,7 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import { Heading, Box, Wrapper, LayoutItem, Button } from "@staccx/base"
-import { ThemeComponent } from "@staccx/theme"
+import {
+  Heading,
+  Box,
+  Wrapper,
+  LayoutItem,
+  Button,
+  ThemeComponent
+} from "@staccx/base"
 import { slideLeft } from "../components/transitions/transitions"
 
 const UnderConstruction = ({ history }) => (

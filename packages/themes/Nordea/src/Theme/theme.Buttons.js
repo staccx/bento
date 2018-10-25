@@ -90,6 +90,9 @@ export const ButtonStyling = theming.createVariants(
       display: flex;
       min-height: 52px;
       background-color: transparent;
+      svg {
+        margin-right: ${theming.spacing.tiny};
+      }
       @media only screen and (min-width: 540px) {
         display: none;
       }
@@ -100,6 +103,9 @@ export const ButtonStyling = theming.createVariants(
       position: absolute;
       top: ${theming.spacing.small};
       right: ${theming.spacing.small};
+      svg {
+        margin-right: ${theming.spacing.tiny};
+      }
     `,
     tabs: css`
       border-radius: 0;
