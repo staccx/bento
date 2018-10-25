@@ -1,5 +1,5 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+import styled, { keyframes, css } from "styled-components"
 import { inject, observer } from "mobx-react"
 import { hideVisually, theming } from "@staccx/base"
 
@@ -161,8 +161,14 @@ const StepBar = styled.div`
   transform-origin: left;
   ${p =>
     p.flipIt
-      ? `animation: ${rubberBand} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1;`
-      : `animation: ${rubberBand2} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1;`}
+      ? css`
+          animation: ${rubberBand} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+            forwards 1;
+        `
+      : css`
+          animation: ${rubberBand2} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+            forwards 1;
+        `}
 }
 `
 
