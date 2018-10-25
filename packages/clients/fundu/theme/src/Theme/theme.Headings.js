@@ -4,9 +4,10 @@ import { Heading } from "@staccx/base"
 
 const centeredHeading = css`
   text-align: center;
-  margin-bottom: ${spacing.medium};
+  margin-bottom: ${spacing.small};
   color: ${color.primary};
   font-size: ${font.huge};
+  font-weight: 400;
 
   @media (max-width: 735px) {
     font-size: ${font.h1};

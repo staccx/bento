@@ -33,6 +33,7 @@ import {
 } from "./Theme.CheckBox"
 import { ToggleElementStyling } from "./Theme.Toggle"
 import { HelpIcon } from "./Icons/HelpIcon"
+import { ModalContentStyling } from "./Theme.Modal"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -175,5 +176,6 @@ const t = new Theme(BaseTheme, {
   .add(CheckBoxCheck)
   .add(ToggleElementStyling)
   .add(RadioPillWrapper)
+  .add(ModalContentStyling)
 
 export default t

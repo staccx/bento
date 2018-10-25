@@ -62,9 +62,9 @@ const spacing = {
   tiny: "6px"
 }
 const color = {
-  bg: "#fcfcfc",
+  bg: "#F5F8FC",
   bgGray: "#F9F7F7",
-  primary: "#23A532",
+  primary: "#1F5D9B",
   gray: "#767676",
   text: "#2b2b2b",
   white: "#fff",
@@ -88,27 +88,20 @@ const font = {
   h4: "18px",
   h5: "16px",
   h6: "14px",
-  base: "14px",
+  base: "16px",
   tiny: "12px",
   input: "16px",
-  huge: "44px"
-}
-
-const webfonts = {
-  google: {
-    families: ["Libre Baskerville:700", "Libre Franklin:400,600"]
-  }
+  huge: "50px"
 }
 
 const fontFamily = {
-  heading: "Libre Baskerville",
-  body: "Libre Franklin"
+  heading: "AvenirLTPro-Black",
+  body: "AvenirLTPro-Roman"
 }
 
 const theme = new Theme(BaseTheme, {
   name: "Fundu",
   font,
-  webfonts,
   color,
   spacing,
   wrapper,

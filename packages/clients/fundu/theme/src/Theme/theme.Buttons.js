@@ -1,6 +1,7 @@
 import { css } from "styled-components"
 import {
   registerStyle,
+  font,
   color,
   targetSize,
   spacing,
@@ -34,6 +35,9 @@ const subtleButton = css`
 export const ButtonStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: css`
+      font-size: ${font.h4};
+      padding: 0.444em 2em;
+      border-radius: 2em;
       &:disabled {
         background-color: ${color.disabled};
       }
