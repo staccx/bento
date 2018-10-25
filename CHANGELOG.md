@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.16.0"></a>
+# [7.16.0](https://bitbucket.org/stacc-flow/bento/compare/v7.15.0...v7.16.0) (2018-10-25)
+
+
+### Bug Fixes
+
+* **bank-in-a-box:** fix some bugs on transactions ([ad9802b](https://bitbucket.org/stacc-flow/bento/commits/ad9802b))
+* **imove-theme:** adjust modal-content ([1a1054f](https://bitbucket.org/stacc-flow/bento/commits/1a1054f))
+* **imove-theme:** fix modal ([193a48f](https://bitbucket.org/stacc-flow/bento/commits/193a48f))
+* **open-id:** prevent default in submitId and submitCode ([355dbf8](https://bitbucket.org/stacc-flow/bento/commits/355dbf8))
+
+
+### Features
+
+* **bank-in-a-box:** autofill to-account now works ([cacb53c](https://bitbucket.org/stacc-flow/bento/commits/cacb53c))
+* **fundu-theme:** styling for redesign ([4b9c92e](https://bitbucket.org/stacc-flow/bento/commits/4b9c92e))
+* **imove-theme:** small button adjustment ([35dea00](https://bitbucket.org/stacc-flow/bento/commits/35dea00))
+* **stacc-website:** add scale to deploy command ([3790627](https://bitbucket.org/stacc-flow/bento/commits/3790627))
+
+
+
+
+
 <a name="7.15.0"></a>
 # [7.15.0](https://bitbucket.org/stacc-flow/bento/compare/v7.14.0...v7.15.0) (2018-10-22)
 

@@ -1,6 +1,6 @@
 {
   "name": "@staccx/loan-process",
-  "version": "7.15.0",
+  "version": "7.16.0",
   "description": "Loan process",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -42,7 +42,7 @@
     "@staccx/animations": "^7.13.1",
     "@staccx/base": "^7.15.0",
     "@staccx/formatting": "^7.13.1",
-    "@staccx/fundu-theme": "^7.15.0",
+    "@staccx/fundu-theme": "^7.16.0",
     "@staccx/payment-plan": "^1.2.0",
     "@staccx/styrke-theme": "^7.15.0",
     "@staccx/theme": "^7.13.1",
