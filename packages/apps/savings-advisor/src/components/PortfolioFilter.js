@@ -4,7 +4,6 @@ import { inject, observer } from "mobx-react"
 import {
   List,
   ExpandListItem,
-  fontSmoothing,
   Fraction,
   SplitListItem,
   Wrapper,
@@ -180,7 +179,7 @@ const Expand = styled(ExpandListItem)`
       ${theming.getProp("gradient", "laserStart") || theming.color.white} 8.41%,
       ${theming.getProp("gradient", "laserEnd")} 95.8%
     );
-    ${fontSmoothing};
+    ${theming.fontSmoothing};
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 4px rgba(0, 0, 0, 0.02),
       0px 8px 8px rgba(0, 0, 0, 0.03), 0px 16px 16px rgba(0, 0, 0, 0.03),
       0px 32px 32px rgba(0, 0, 0, 0.03), 0px 64px 64px rgba(0, 0, 0, 0.03);
