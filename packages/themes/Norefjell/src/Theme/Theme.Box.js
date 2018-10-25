@@ -14,6 +14,7 @@ export default theming.createVariants(
   {
     dashboardBox: defaultBox,
     accountBox: defaultBox,
+    loanBox: defaultBox,
     adBox: defaultBox,
     contractBox: defaultBox,
     headerContainer: css`
@@ -71,6 +72,10 @@ export default theming.createVariants(
       padding-left: 0;
       padding-right: 0;
       color: ${theming.color.wcag};
+    `,
+    relative: css`
+      padding: 0;
+      position: relative;
     `
   },
   Box.themeProps.box

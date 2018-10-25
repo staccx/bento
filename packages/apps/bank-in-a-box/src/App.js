@@ -18,7 +18,8 @@ import LoggedOut from "./pages/LoggedOut"
 import Prices from "./pages/Prices"
 
 import { account, customer } from "./state"
-import Account from "./pages/Account"
+import Account from "./pages/Account/Account"
+import Loan from "./pages/Loan/Loan"
 
 class App extends Component {
   render() {
@@ -64,6 +65,16 @@ class App extends Component {
                           path={"/account/:id"}
                           render={({ match, history }) => (
                             <Account
+                              accountStore={account}
+                              match={match}
+                              history={history}
+                            />
+                          )}
+                        />
+                        <Route
+                          path={"/loan/:id"}
+                          render={({ match, history }) => (
+                            <Loan
                               accountStore={account}
                               match={match}
                               history={history}

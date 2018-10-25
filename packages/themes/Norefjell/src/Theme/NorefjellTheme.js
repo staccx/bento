@@ -26,6 +26,8 @@ import { IconPdf } from "./Icons/Icon.Pdf"
 import { IconAnnualStatement } from "./Icons/Icon.AnnualStatement"
 import { IconContracts } from "./Icons/Icon.Contracts"
 import { IconDownpayment } from "./Icons/Icon.Downpayment"
+import HeadingStyles from "./Theme.Headings"
+import { TextStyling } from "./Theme.Texts"
 const { Theme } = theming
 
 const borderRadius = "0px"
@@ -158,3 +160,5 @@ export default new Theme(BaseTheme, {
   .add(IconAnnualStatement)
   .add(IconContracts)
   .add(IconDownpayment)
+  .add(HeadingStyles)
+  .add(TextStyling)
