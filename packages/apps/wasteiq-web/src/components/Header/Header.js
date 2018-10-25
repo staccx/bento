@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { ThemeComponent } from "@staccx/base"
+import { ThemeComponent, theming } from "@staccx/base"
 
 const Header = () => {
   return (
@@ -17,6 +17,7 @@ const Header = () => {
 const Outer = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: ${theming.spacing("gridSmall")} 0;
 `
 
 const LogoLink = styled(Link)`
