@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { ThemeProxyProvider } from "@staccx/theme"
+import { ThemeProvider } from "styled-components"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import theme from "./theme/Theme"
 import Home from "./pages/Home"
@@ -9,7 +9,7 @@ import AddCustomer from "./components/AddCustomer/AddCustomer" // TODO: Should b
 class App extends Component {
   render() {
     return (
-      <ThemeProxyProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -17,7 +17,7 @@ class App extends Component {
             <Route path="/add-customer" component={AddCustomer} />
           </Switch>
         </Router>
-      </ThemeProxyProvider>
+      </ThemeProvider>
     )
   }
 }

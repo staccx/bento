@@ -1,8 +1,7 @@
 import { css } from "styled-components"
-import { color, registerStyle } from "@staccx/theme"
-import { ItemGroup } from "@staccx/base"
+import { ItemGroup, theming } from "@staccx/base"
 
-export const ItemGroupWrapperStyling = registerStyle(
+export const ItemGroupWrapperStyling = theming.createVariants(
   {
     customerType: css`
       display: inline-block;
@@ -12,10 +11,10 @@ export const ItemGroupWrapperStyling = registerStyle(
   ItemGroup.themeProps.wrapper
 )
 
-export const ItemGroupStyling = registerStyle(
+export const ItemGroupStyling = theming.createVariants(
   {
     customerType: css`
-      background-color: ${color.line};
+      background-color: ${theming.color.line};
       padding: 3px;
       margin-bottom: 0;
     `

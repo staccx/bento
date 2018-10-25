@@ -1,8 +1,7 @@
 import { css } from "styled-components"
-import { registerStyle, color } from "@staccx/theme"
-import { Button } from "@staccx/base"
+import { Button, theming } from "@staccx/base"
 
-export const ButtonStyling = registerStyle(
+export const ButtonStyling = theming.createVariants(
   {
     customerType: css`
       margin-bottom: 0;
@@ -11,7 +10,7 @@ export const ButtonStyling = registerStyle(
         !p.active &&
         css`
           background-color: transparent;
-          color: ${color("text")(p)};
+          color: ${theming.color("text")(p)};
         `};
     `
   },

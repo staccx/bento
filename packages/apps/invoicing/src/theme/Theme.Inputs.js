@@ -1,8 +1,7 @@
 import { css } from "styled-components"
-import { registerStyle } from "@staccx/theme"
-import { Input } from "@staccx/base"
+import { Input, theming } from "@staccx/base"
 
-export const InputStyling = registerStyle(
+export const InputStyling = theming.createVariants(
   {
     invoiceLine: css`
       border-color: transparent;
