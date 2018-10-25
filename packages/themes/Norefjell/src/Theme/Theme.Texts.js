@@ -36,6 +36,10 @@ export const TextStyling = theming.createVariants(
       line-height: 1;
       margin-bottom: ${theming.spacing.small};
       display: block;
+    `,
+    withdrawAlertNumber: css`
+      display: inline-block;
+      color: ${theming.color.primary};
     `
   },
   Text.themeProps.text

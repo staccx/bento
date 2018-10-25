@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
 import { formatPhone, formatCurrency } from "@staccx/formatting"
 import {
   Wrapper,
@@ -11,7 +10,8 @@ import {
   AccountInput,
   Alert,
   Heading,
-  theming
+  Box,
+  Text
 } from "@staccx/base"
 import Back from "../../components/Back"
 
@@ -38,14 +38,16 @@ export class Withdraw extends React.Component {
       <Wrapper variant="bib">
         <LayoutItem variant="fadeIn" delay="200">
           <Back history={history} path="/account/546126722" />
-          <Heading level="2">Ta ut penger</Heading>
-          <SubTitle>
+          <Heading level="1" variant="primary">
+            Ta ut penger
+          </Heading>
+          <Heading level="2" variant="withdrawSubtitle">
             {formatCurrency(saldo, { precision: 2, decimal: "," })} disponibelt
-          </SubTitle>
+          </Heading>
         </LayoutItem>
         <Layout grid="rows">
           <LayoutItem variant="fadeIn" delay="400">
-            <InputContent>
+            <Box variant="withdrawInputs" size="flush">
               <Input
                 label="Beløp"
                 placeholder="0"
@@ -58,7 +60,7 @@ export class Withdraw extends React.Component {
                 id="accountwithdraw"
                 value={toNumber}
               />
-            </InputContent>
+            </Box>
           </LayoutItem>
           <LayoutItem variant="fadeIn" delay="600">
             <Alert
@@ -69,8 +71,10 @@ export class Withdraw extends React.Component {
               aria-pressed="false"
             >
               Siste innskudd kom fra{" "}
-              <Number>{formatPhone(accountNumber, "XXXX XX XXXXX")}</Number>.
-              Klikk her for å sende penger tilbake
+              <Text variant="withdrawAlertNumber">
+                {formatPhone(accountNumber, "XXXX XX XXXXX")}
+              </Text>
+              . Klikk her for å sende penger tilbake
             </Alert>
           </LayoutItem>
           <LayoutItem variant="fadeIn" delay="800">
@@ -81,26 +85,6 @@ export class Withdraw extends React.Component {
     )
   }
 }
-
-const SubTitle = styled.h1`
-  font-size: ${theming.font.h6};
-  text-align: left;
-  color: ${theming.color.wcag};
-  font-weight: normal;
-  margin-bottom: ${theming.spacing.medium};
-`
-
-const InputContent = styled.div`
-  display: grid;
-  grid-column-gap: ${theming.spacing.small};
-  grid-row-gap: ${theming.spacing.small};
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-`
-
-const Number = styled.span`
-  display: inline-block;
-  color: ${theming.color.primary};
-`
 
 Withdraw.propTypes = {
   accountNumber: PropTypes.number,

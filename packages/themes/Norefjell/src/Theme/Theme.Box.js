@@ -76,6 +76,13 @@ export default theming.createVariants(
     relative: css`
       padding: 0;
       position: relative;
+    `,
+    withdrawInputs: css`
+      padding: 0;
+      display: grid;
+      grid-column-gap: ${theming.spacing.small};
+      grid-row-gap: ${theming.spacing.small};
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     `
   },
   Box.themeProps.box
