@@ -6,9 +6,9 @@ import {
   Input,
   Button,
   ItemGroup,
-  Layout
+  Layout,
+  theming
 } from "@staccx/base"
-import { spacing, color } from "@staccx/theme"
 import styled from "styled-components"
 import InvoiceItems from "../components/InvoiceItems/InvoiceItems"
 
@@ -52,12 +52,12 @@ class CreateInvoice extends Component {
 
 const InputFlex = styled.div`
   display: flex;
-  margin-bottom: ${spacing.medium};
+  margin-bottom: ${theming.spacing.medium};
 `
 
 const InputFlexRight = styled.div`
-  margin-left: ${spacing.medium};
-  color: ${color};
+  margin-left: ${theming.spacing.medium};
+  color: ${theming.color};
 `
 
 export default CreateInvoice

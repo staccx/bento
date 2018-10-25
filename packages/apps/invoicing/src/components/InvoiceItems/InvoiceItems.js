@@ -1,6 +1,5 @@
 import React, { Component } from "react"
-import { Button } from "@staccx/base"
-import { color, spacing } from "@staccx/theme"
+import { Button, theming } from "@staccx/base"
 import styled from "styled-components"
 import InvoiceItemsItem from "./InvoiceItems.Item"
 import InvoiceCalculation from "../InvoiceCalculation/InvoiceCalculation"
@@ -140,17 +139,17 @@ class InvoiceItems extends Component {
 
 const Table = styled.table`
   width: 100%;
-  margin-bottom: ${spacing.medium};
+  margin-bottom: ${theming.spacing.medium};
 `
 
 const Thead = styled.thead`
-  color: ${color.wcag};
+  color: ${theming.color.wcag};
   text-align: right;
 
   th {
     font-weight: normal;
-    padding-bottom: ${spacing.small};
-    padding-right: ${spacing.small};
+    padding-bottom: ${theming.spacing.small};
+    padding-right: ${theming.spacing.small};
   }
 
   th:first-child {
