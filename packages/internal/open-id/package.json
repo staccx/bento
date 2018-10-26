@@ -12,8 +12,10 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
+    "test": "true",
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
+    "prepublishOnly": "yarn test && yarn build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "files": [
