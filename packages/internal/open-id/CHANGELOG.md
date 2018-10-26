@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.17.2"></a>
+## [7.17.2](https://bitbucket.org/stacc-flow/bento/compare/v7.17.1...v7.17.2) (2018-10-26)
+
+
+### Bug Fixes
+
+* **open-id:** add prepublishOnly script ([e09f21a](https://bitbucket.org/stacc-flow/bento/commits/e09f21a))
+
+
+
+
+
 <a name="7.17.1"></a>
 ## [7.17.1](https://bitbucket.org/stacc-flow/bento/compare/v7.17.0...v7.17.1) (2018-10-26)
 
