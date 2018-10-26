@@ -28,6 +28,7 @@ import { IconContracts } from "./Icons/Icon.Contracts"
 import { IconDownpayment } from "./Icons/Icon.Downpayment"
 import HeadingStyles from "./Theme.Headings"
 import { TextStyling } from "./Theme.Texts"
+import { IconLoggedOutConfirmation } from "./Icons/Icon.LoggedOutConfirmation"
 const { Theme } = theming
 
 const borderRadius = "0px"
@@ -162,3 +163,4 @@ export default new Theme(BaseTheme, {
   .add(IconDownpayment)
   .add(HeadingStyles)
   .add(TextStyling)
+  .add(IconLoggedOutConfirmation)

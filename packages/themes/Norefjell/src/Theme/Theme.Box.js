@@ -83,6 +83,9 @@ export default theming.createVariants(
       grid-column-gap: ${theming.spacing.small};
       grid-row-gap: ${theming.spacing.small};
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    `,
+    center: css`
+      text-align: center;
     `
   },
   Box.themeProps.box
