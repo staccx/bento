@@ -12,6 +12,7 @@ import {
   ExpandListItemStyling
 } from "./theme.Lists"
 import { TextStyling } from "./theme.Texts"
+import { ImageStyling } from "./theme.Images"
 import { ButtonStyling } from "./theme.Buttons"
 import {
   InputStyling,
@@ -61,6 +62,7 @@ const spacing = {
   small: "12px",
   tiny: "6px"
 }
+
 const color = {
   bg: "#F5F8FC",
   bgGray: "#F9F7F7",
@@ -141,4 +143,5 @@ const theme = new Theme(BaseTheme, {
   .add(LogoStyle)
   .add(SelectSelectedWrapperStyling)
   .add(PostalCodeInputStyling)
+  .add(ImageStyling)
 export default theme
