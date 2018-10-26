@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, spacing, borderRadius } from "../../../theming"
+import { applyVariants, spacing } from "../../../theming"
 import {
   commonPropTypes,
   themePropTypes
@@ -22,14 +22,12 @@ Box.themeProps = {
 }
 
 export const Boxing = styled.div`
-  padding: ${p => (p.size === "flush" ? 0 : spacing(p.size))};
-  border-radius: ${borderRadius};
+  ${p => p.size && `padding: ${spacing(p.size)}`};
   ${applyVariants(Box.themeProps.box)};
 `
 
 Box.defaultProps = {
-  className: "",
-  size: "medium"
+  className: ""
 }
 
 Box.propTypes = {

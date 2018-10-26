@@ -35,7 +35,7 @@ const Header = ({ children, classname }) => (
   <Layout variant="documentationApiReferences">
     <HeaderComp className={classname}>
       <Layout variant="documentationHeader" light>
-        <Box variant="documentationHeaderSearch" size="flush">
+        <Box variant="documentationHeaderSearch">
           <Input
             type="search"
             placeholder="Search our documentation…"

@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { Layout, Input, Box, theming} from "@staccx/base"
+import { Layout, Input, Box, theming } from "@staccx/base"
 
 const Header = ({ children, classname }) => (
   <HeaderComp className={classname}>
     <Layout variant="documentationHeader" light>
-      <Box variant="documentationHeaderSearch" size="flush">
+      <Box variant="documentationHeaderSearch">
         <Input
           type="search"
           placeholder="Search our documentation…"

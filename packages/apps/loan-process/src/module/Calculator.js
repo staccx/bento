@@ -133,10 +133,7 @@ class Calculator extends React.Component {
                                 render={({ field }) => {
                                   const { onChange, ...rest } = field
                                   return (
-                                    <Box
-                                      variant="loanDurationContainer"
-                                      size="flush"
-                                    >
+                                    <Box variant="loanDurationContainer">
                                       <Label
                                         htmlFor="select-loan-duration"
                                         variant="loanDuration"

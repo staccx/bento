@@ -47,7 +47,7 @@ export class Withdraw extends React.Component {
         </LayoutItem>
         <Layout grid="rows">
           <LayoutItem variant="fadeIn" delay="400">
-            <Box variant="withdrawInputs" size="flush">
+            <Box variant="withdrawInputs">
               <Input
                 label="Beløp"
                 placeholder="0"

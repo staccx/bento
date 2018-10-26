@@ -6,7 +6,7 @@ import { IconWrapper } from "../Cases/Cases.List"
 
 const NewsList = ({ articles }) => (
   <Layout rowGap="small">
-    <Box size="flush">
+    <Box>
       <List variant="newsList" ordered>
         {articles.map(article => (
           <li key={article.actionUrl}>

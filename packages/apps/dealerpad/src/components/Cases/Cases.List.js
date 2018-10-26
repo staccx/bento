@@ -31,7 +31,7 @@ class CasesList extends React.Component {
     const { compact } = this.props
 
     return (
-      <Box size="flush">
+      <Box>
         <List variant="casesList">
           {caseStore.cases.map((item, index) => {
             const caseItem = caseStore.getCase(item.id)
