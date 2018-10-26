@@ -1,8 +1,8 @@
 import React from "react"
 import { Layout, Wrapper, LayoutItem, ThemeComponent } from "@staccx/base"
 import menu from "./../data/menu"
-import Account from "./../components/Account"
-import Loan from "./../components/Loan"
+import Account from "../components/Account/Account"
+import Loan from "../components/Loan/Loan"
 
 const Overview = ({ history, accounts }) => (
   <Wrapper variant="bib">

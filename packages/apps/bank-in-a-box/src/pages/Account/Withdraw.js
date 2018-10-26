@@ -14,6 +14,7 @@ import {
   Text
 } from "@staccx/base"
 import Back from "../../components/Back"
+import { TranslatedText } from "@staccx/i18n"
 
 export class Withdraw extends React.Component {
   constructor(props) {
@@ -39,10 +40,14 @@ export class Withdraw extends React.Component {
         <LayoutItem variant="fadeIn" delay="200">
           <Back history={history} path="/account/546126722" />
           <Heading level="1" variant="primary">
-            Ta ut penger
+            <TranslatedText
+              i18nKey="WithDrawMoneyHeading"
+              fallback="Ta ut penger"
+            />
           </Heading>
           <Heading level="2" variant="withdrawSubtitle">
-            {formatCurrency(saldo, { precision: 2, decimal: "," })} disponibelt
+            {formatCurrency(saldo, { precision: 2, decimal: "," })}{" "}
+            <TranslatedText i18nKey="withdrawSubtitle" fallback="disponibelt" />
           </Heading>
         </LayoutItem>
         <Layout grid="rows">
@@ -70,15 +75,27 @@ export class Withdraw extends React.Component {
               tabindex="4"
               aria-pressed="false"
             >
-              Siste innskudd kom fra{" "}
+              <TranslatedText
+                i18nKey="WithdrawAlertLastTransferCameFrom"
+                fallback="Siste innskudd kom fra"
+              />{" "}
               <Text variant="withdrawAlertNumber">
                 {formatPhone(accountNumber, "XXXX XX XXXXX")}
               </Text>
-              . Klikk her for å sende penger tilbake
+              .{" "}
+              <TranslatedText
+                i18nKey="WithdrawAlertClickHereToSendBack"
+                fallback="Klikk her for å sende penger tilbake"
+              />
             </Alert>
           </LayoutItem>
           <LayoutItem variant="fadeIn" delay="800">
-            <Button>Overfør</Button>
+            <Button>
+              <TranslatedText
+                i18nKey="WithdrawConfirmButton"
+                fallback="Overfør"
+              />
+            </Button>
           </LayoutItem>
         </Layout>
       </Wrapper>

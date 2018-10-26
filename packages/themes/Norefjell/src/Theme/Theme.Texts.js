@@ -40,6 +40,9 @@ export const TextStyling = theming.createVariants(
     withdrawAlertNumber: css`
       display: inline-block;
       color: ${theming.color.primary};
+    `,
+    strong: css`
+      font-weight: ${theming.fontWeight.normal};
     `
   },
   Text.themeProps.text

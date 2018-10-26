@@ -1,5 +1,6 @@
 import { css } from "styled-components"
 import { Box, fontSmoothing, theming } from "@staccx/base"
+import { BounceIn } from "@staccx/animations"
 
 const defaultBox = css`
   background: ${theming.color.white};
@@ -86,6 +87,14 @@ export default theming.createVariants(
     `,
     center: css`
       text-align: center;
+    `,
+    accountInfoOuter: css`
+      position: relative;
+      opacity: 0;
+      transform: translateY(-12px);
+      z-index: 50;
+      animation: 0.4s ${BounceIn} cubic-bezier(0.175, 0.885, 0.32, 1.275)
+        forwards 1;
     `
   },
   Box.themeProps.box

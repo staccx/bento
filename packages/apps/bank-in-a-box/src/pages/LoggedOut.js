@@ -1,5 +1,6 @@
 import React from "react"
 import { Layout, Wrapper, LayoutItem, ThemeComponent, Box } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 
 const LoggedOut = ({ history }) => (
   <Wrapper variant="bib">
@@ -10,7 +11,12 @@ const LoggedOut = ({ history }) => (
         </Box>
       </LayoutItem>
       <LayoutItem variant="fadeIn" delay="400">
-        <Box variant="center">Du er nå logget ut</Box>
+        <Box variant="center">
+          <TranslatedText
+            i18nKey="ConfirmLogoutHeading"
+            fallback="Du er nå logget ut"
+          />
+        </Box>
       </LayoutItem>
     </Layout>
   </Wrapper>

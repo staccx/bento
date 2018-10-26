@@ -5,7 +5,7 @@ import ShowMore from "@tedconf/react-show-more"
 import { Button, Box } from "@staccx/base"
 import InvoiceListItem from "./InvoiceList/InvoiceList.item"
 import InvoiceListExpanded from "./InvoiceList/InvoiceList.expanded"
-import invoices from "../data/invoices"
+import invoices from "../../data/invoices"
 
 class Transactions extends Component {
   static propTypes = {

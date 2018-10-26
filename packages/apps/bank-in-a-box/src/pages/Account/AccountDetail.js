@@ -1,9 +1,16 @@
 import React from "react"
-import { Layout, Wrapper, LayoutItem, ThemeComponent } from "@staccx/base"
-import Account from "../../components/Account"
-import AccountInfo from "../../components/Account.Info"
+import {
+  Layout,
+  Wrapper,
+  LayoutItem,
+  ThemeComponent,
+  Box,
+  List
+} from "@staccx/base"
+import Account from "../../components/Account/Account"
 import menuDeposit from "../../data/menuDeposit"
 import Back from "../../components/Back"
+import AccountInfoDeposit from "../../components/Account/Account.Info.Deposit"
 
 const AccountDetail = ({ account, history }) => {
   const menu = menuDeposit(account.accountId)
@@ -25,7 +32,13 @@ const AccountDetail = ({ account, history }) => {
           />
         </LayoutItem>
         <LayoutItem variant="fadeIn" delay="600">
-          <AccountInfo account={account} />
+          <Box variant="accountInfoOuter">
+            <Box variant={"accountInfo"}>
+              <List>
+                <AccountInfoDeposit account={account} />
+              </List>
+            </Box>
+          </Box>
         </LayoutItem>
       </Layout>
     </Wrapper>

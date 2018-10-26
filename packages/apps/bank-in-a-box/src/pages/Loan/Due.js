@@ -41,7 +41,7 @@ const Due = ({ history }) => {
     <Wrapper variant="bib">
       <Layout>
         <LayoutItem variant="fadeIn" delay="200">
-          <Back history={history} path="/account/34551524578" />
+          <Back history={history} path="/loan/34551524578" />
           <Heading level="2">Forfallsdato</Heading>
         </LayoutItem>
         <LayoutItem variant="fadeIn" delay="400">

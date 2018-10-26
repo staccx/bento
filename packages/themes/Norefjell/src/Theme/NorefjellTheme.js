@@ -29,6 +29,7 @@ import { IconDownpayment } from "./Icons/Icon.Downpayment"
 import HeadingStyles from "./Theme.Headings"
 import { TextStyling } from "./Theme.Texts"
 import { IconLoggedOutConfirmation } from "./Icons/Icon.LoggedOutConfirmation"
+import SplitListItem from "./Theme.SplitListItem"
 const { Theme } = theming
 
 const borderRadius = "0px"
@@ -164,3 +165,4 @@ export default new Theme(BaseTheme, {
   .add(HeadingStyles)
   .add(TextStyling)
   .add(IconLoggedOutConfirmation)
+  .add(SplitListItem)

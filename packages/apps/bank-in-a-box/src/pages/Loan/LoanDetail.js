@@ -1,9 +1,16 @@
 import React from "react"
-import { Layout, Wrapper, LayoutItem, ThemeComponent } from "@staccx/base"
-import Loan from "../../components/Loan"
-import AccountInfo from "../../components/Account.Info"
+import {
+  Layout,
+  Wrapper,
+  LayoutItem,
+  ThemeComponent,
+  Box,
+  List
+} from "@staccx/base"
+import Loan from "../../components/Loan/Loan"
 import menuLoan from "../../data/menuLoan"
 import Back from "../../components/Back"
+import AccountInfoLoan from "../../components/Loan/Account.Info.Loan"
 
 const LoanDetail = ({ account, history }) => {
   const menu = menuLoan(account.accountId)
@@ -25,7 +32,13 @@ const LoanDetail = ({ account, history }) => {
           />
         </LayoutItem>
         <LayoutItem variant="fadeIn" delay="600">
-          <AccountInfo account={account} />
+          <Box variant="accountInfoOuter">
+            <Box variant={"accountInfo"}>
+              <List>
+                <AccountInfoLoan account={account} />
+              </List>
+            </Box>
+          </Box>
         </LayoutItem>
       </Layout>
     </Wrapper>

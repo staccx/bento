@@ -7,35 +7,35 @@ const menuLoan = accountId => [
     _id: "s45ht456gcf",
     label: "Kontoutskrift",
     icon: <ThemeComponent tagName={"IconAccountStatement"} />,
-    path: `/account/${accountId}/loan-statement`,
+    path: `/loan/${accountId}/loan-statement`,
     direction: forwards
   },
   {
     _id: "tetr",
     label: "Faktura",
     icon: <ThemeComponent tagName={"IconInvoice"} />,
-    path: `/account/${accountId}/invoice`,
+    path: `/loan/${accountId}/invoice`,
     direction: forwards
   },
   {
     _id: "321dsf345fdsfds4",
     label: "Nedbetalingsplan",
     icon: <ThemeComponent tagName={"IconDownpayment"} />,
-    path: `/account/${accountId}/downpayment`,
+    path: `/loan/${accountId}/downpayment`,
     direction: forwards
   },
   {
     _id: "hgffghd654h",
     label: "Endre forfallsdag",
     icon: <ThemeComponent tagName={"IconDue"} />,
-    path: `/account/${accountId}/due`,
+    path: `/loan/${accountId}/due`,
     direction: forwards
   },
   {
     _id: "hgfdd12dhfg",
     label: "Betalingsforsikring",
     icon: <ThemeComponent tagName={"IconInsurance"} />,
-    path: `/account/${accountId}/insurance`,
+    path: `/loan/${accountId}/insurance`,
     direction: forwards
   }
 ]
