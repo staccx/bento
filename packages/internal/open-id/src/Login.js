@@ -111,7 +111,7 @@ class Login extends React.Component {
 
   submitId(e) {
     e && e.preventDefault()
-    const id = this.state.id
+    const id = this.props.id || this.state.id
     const state = this.state.stateToken
 
     const postData = /^\d+$/.test(id)
