@@ -32,17 +32,27 @@ const subtleButton = css`
   }
 `
 
+const defaultButton = css`
+  font-size: ${font.h4};
+  border-radius: 100px;
+
+  &:disabled {
+    background-color: ${color.disabled};
+  }
+`
+
 export const ButtonStyling = registerStyle(
   {
     [VARIANT_DEFAULT]: css`
-      font-size: ${font.h4};
-      padding: 0.444em 2em;
-      border-radius: 2em;
-      &:disabled {
-        background-color: ${color.disabled};
-      }
+      ${defaultButton};
     `,
     subtle: subtleButton,
+    secondary: css`
+      ${defaultButton};
+      background-color: white;
+      color: ${color.primary};
+      min-width: 200px;
+    `,
     decline: css`
       ${subtleButton};
 
