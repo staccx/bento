@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.17.1"></a>
+## [7.17.1](https://bitbucket.org/stacc-flow/bento/compare/v7.17.0...v7.17.1) (2018-10-26)
+
+
+### Bug Fixes
+
+* **open-id:** fix login preventDefault ([ddc383f](https://bitbucket.org/stacc-flow/bento/commits/ddc383f))
+
+
+
+
+
 <a name="7.17.0"></a>
 # [7.17.0](https://bitbucket.org/stacc-flow/bento/compare/v7.16.0...v7.17.0) (2018-10-26)
 
