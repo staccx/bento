@@ -1,6 +1,8 @@
 import { theming } from "@staccx/base"
 import { BoxVariants } from "./variants/Box.Variants"
+import { LayoutVariants } from "./variants/Layout.Variants"
 import { LogoComponent } from "./components/Component.Logo"
+import { ButtonVariants } from "./variants/Button.Variants"
 
 const borderRadius = "0"
 
@@ -90,5 +92,5 @@ export default new theming.Theme({
   fontFamily,
   spacing
 })
-  .add([BoxVariants, LogoComponent])
   .add(theming.createGlobal({ base: theming.cssResets }))
+  .add([BoxVariants, LogoComponent, LayoutVariants, ButtonVariants])

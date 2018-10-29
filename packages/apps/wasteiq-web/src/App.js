@@ -1,23 +1,26 @@
 import React, { Component } from "react"
-import { GlobalStyle, WebFonts, Wrapper } from "@staccx/base"
+import { GlobalStyle, WebFonts } from "@staccx/base"
 import { Router, Switch, Route } from "react-router-dom"
 import createHistory from "history/createBrowserHistory"
 import Header from "./components/Header/Header"
 import Home from "./pages/Home"
+import Page from "./components/Page/Page"
 
 class App extends Component {
   render() {
     const history = createHistory()
     return (
       <Router history={history}>
-        <Wrapper size={"large"}>
+        <React.Fragment>
           <GlobalStyle />
           <WebFonts />
-          <Header />
+          <Page>
+            <Header />
+          </Page>
           <Switch>
             <Route path={"/"} exact component={Home} />
           </Switch>
-        </Wrapper>
+        </React.Fragment>
       </Router>
     )
   }
