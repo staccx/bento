@@ -64,7 +64,7 @@ glob("../../**/*.preview.js", {}, (error, files) => {
   `
   )
     .then(() => {
-      const data = fs.readFileSync("../theme/src/themeProps.js", "utf8")
+      const data = fs.readFileSync("./Dummy.js", "utf8")
       const parsed = reactDocs.parse(data)
       props.themeProps = parsed
     })

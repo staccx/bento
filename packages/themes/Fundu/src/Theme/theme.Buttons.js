@@ -25,7 +25,7 @@ const subtleButton = css`
 `
 
 const defaultButton = css`
-  font-size: ${font.h4};
+  font-size: ${theming.font.h4};
   border-radius: 100px;
 
   &:disabled {

@@ -1,5 +1,5 @@
 import React from "react"
-import {theming} from "@staccx/base"
+import { theming } from "@staccx/base"
 
 const Help = () => (
   <svg
@@ -16,6 +16,9 @@ const Help = () => (
   </svg>
 )
 
-export const HelpIcon = theming.createVariants({ [theming.VARIANT_DEFAULT]: Help }, "Help")
+export const HelpIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Help },
+  "Help"
+)
 
 export default Help

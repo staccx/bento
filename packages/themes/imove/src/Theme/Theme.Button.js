@@ -83,7 +83,9 @@ export default theming.createVariants(
     `,
     filter: css`
       background-color: ${p =>
-        p.isOpen ? theming.color("primaryDark")(p) : theming.color("primary")(p)};
+        p.isOpen
+          ? theming.color("primaryDark")(p)
+          : theming.color("primary")(p)};
       color: ${theming.color.white};
       border-radius: 0;
       width: 100%;
