@@ -3,9 +3,10 @@ import { Heading, theming } from "@staccx/base"
 
 const centeredHeading = css`
   text-align: center;
-  margin-bottom: ${theming.spacing.medium};
+  margin-bottom: ${theming.spacing.small};
   color: ${theming.color.primary};
   font-size: ${theming.font.huge};
+  font-weight: 400;
 
   @media (max-width: 735px) {
     font-size: ${theming.font.h1};

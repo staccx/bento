@@ -24,14 +24,27 @@ const subtleButton = css`
   }
 `
 
+const defaultButton = css`
+  font-size: ${font.h4};
+  border-radius: 100px;
+
+  &:disabled {
+    background-color: ${theming.color.disabled};
+  }
+`
+
 export const ButtonStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
-      &:disabled {
-        background-color: ${theming.color.disabled};
-      }
+      ${defaultButton};
     `,
     subtle: subtleButton,
+    secondary: css`
+      ${defaultButton};
+      background-color: white;
+      color: ${theming.color.primary};
+      min-width: 200px;
+    `,
     decline: css`
       ${subtleButton};
 

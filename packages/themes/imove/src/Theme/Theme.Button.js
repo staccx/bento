@@ -22,6 +22,8 @@ export default registerStyle(
       color: ${color.primary};
       border-radius: 0;
       border: 2px solid ${color.primary};
+      padding-top: 4px;
+      padding-bottom: 4px;
       &:hover,
       &:focus,
       &:active {

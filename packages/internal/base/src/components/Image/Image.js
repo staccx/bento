@@ -12,13 +12,14 @@ const Image = ({
   aspectRatio,
   stretch,
   width,
+  srcset,
   ...otherProps
 }) => {
   if (aspectRatio) {
     const antecedent = parseInt(aspectRatio.split(":")[0], 10)
     const consequent = parseInt(aspectRatio.split(":")[1], 10)
     const ratio = consequent / antecedent
-    console.log("Image:", consequent, antecedent, ratio)
+
     return (
       <CropContainer
         className={className}
@@ -28,7 +29,12 @@ const Image = ({
         width={width}
         {...otherProps}
       >
-        <CroppedImg src={src} stretch={stretch} />
+        <CroppedImg
+          srcset={srcset}
+          src={src}
+          stretch={stretch}
+          variant={variant}
+        />
       </CropContainer>
     )
   }

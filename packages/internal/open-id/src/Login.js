@@ -60,7 +60,10 @@ class Login extends React.Component {
       .catch(console.error)
   }
 
-  submitCode() {
+  submitCode(e) {
+    if (e) {
+      e.preventDefault()
+    }
     const state = this.state.stateToken
     const nonce = this.state.code
 
@@ -108,8 +111,11 @@ class Login extends React.Component {
       })
   }
 
-  submitId() {
-    const id = this.state.id
+  submitId(e) {
+    if (e) {
+      e.preventDefault()
+    }
+    const id = this.props.id || this.state.id
     const state = this.state.stateToken
 
     const postData = /^\d+$/.test(id)

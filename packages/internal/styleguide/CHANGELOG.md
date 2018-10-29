@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.16.0"></a>
+# [7.16.0](https://bitbucket.org/stacc-flow/bento/compare/v7.15.0...v7.16.0) (2018-10-25)
+
+**Note:** Version bump only for package @staccx/styleguide
+
+
+
+
+
 <a name="7.15.0"></a>
 # [7.15.0](https://bitbucket.org/stacc-flow/bento/compare/v7.14.0...v7.15.0) (2018-10-22)
 

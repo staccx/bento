@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.17.2"></a>
+## [7.17.2](https://bitbucket.org/stacc-flow/bento/compare/v7.17.1...v7.17.2) (2018-10-26)
+
+
+### Bug Fixes
+
+* **open-id:** add prepublishOnly script ([e09f21a](https://bitbucket.org/stacc-flow/bento/commits/e09f21a))
+
+
+
+
+
+<a name="7.17.1"></a>
+## [7.17.1](https://bitbucket.org/stacc-flow/bento/compare/v7.17.0...v7.17.1) (2018-10-26)
+
+
+### Bug Fixes
+
+* **open-id:** fix login preventDefault ([ddc383f](https://bitbucket.org/stacc-flow/bento/commits/ddc383f))
+
+
+
+
+
+<a name="7.17.0"></a>
+# [7.17.0](https://bitbucket.org/stacc-flow/bento/compare/v7.16.0...v7.17.0) (2018-10-26)
+
+
+### Features
+
+* **open-id:** add prop id to Login ([8576794](https://bitbucket.org/stacc-flow/bento/commits/8576794))
+
+
+
+
+
+<a name="7.16.0"></a>
+# [7.16.0](https://bitbucket.org/stacc-flow/bento/compare/v7.15.0...v7.16.0) (2018-10-25)
+
+
+### Bug Fixes
+
+* **open-id:** prevent default in submitId and submitCode ([355dbf8](https://bitbucket.org/stacc-flow/bento/commits/355dbf8))
+
+
+
+
+
 <a name="7.15.0"></a>
 # [7.15.0](https://bitbucket.org/stacc-flow/bento/compare/v7.14.0...v7.15.0) (2018-10-22)
 
