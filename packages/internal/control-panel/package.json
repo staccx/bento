@@ -1,13 +1,13 @@
 {
   "name": "@staccx/control-panel",
-  "version": "7.15.0",
+  "version": "7.18.0",
   "private": true,
   "main": "src/main.js",
   "productName": "Bento ctrl",
   "homepage": "./",
   "dependencies": {
     "@lerna/list": "^3.3.2",
-    "@staccx/base": "^7.15.0",
+    "@staccx/base": "^7.18.0",
     "@staccx/soy": "^7.13.1",
     "@staccx/theme": "^7.13.1",
     "axios": "^0.18.0",
