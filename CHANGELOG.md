@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.19.0"></a>
+# [7.19.0](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v7.19.0) (2018-10-29)
+
+
+### Bug Fixes
+
+* **base:** improve Image ([7acdaa7](https://bitbucket.org/stacc-flow/bento/commits/7acdaa7))
+* **bento:** revert lerna version ([e44941c](https://bitbucket.org/stacc-flow/bento/commits/e44941c))
+
+
+### Features
+
+* **fundu-theme:** add imagestyling variant to theme ([7032ae8](https://bitbucket.org/stacc-flow/bento/commits/7032ae8))
+* **fundu-theme:** add secondary button variant ([989a8a5](https://bitbucket.org/stacc-flow/bento/commits/989a8a5))
+
+
+
+
+
+<a name="7.18.0"></a>
+# [7.18.0](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v7.18.0) (2018-10-29)
+
+
+### Bug Fixes
+
+* **base:** improve Image ([7acdaa7](https://bitbucket.org/stacc-flow/bento/commits/7acdaa7))
+
+
+### Features
+
+* **fundu-theme:** add imagestyling variant to theme ([7032ae8](https://bitbucket.org/stacc-flow/bento/commits/7032ae8))
+* **fundu-theme:** add secondary button variant ([989a8a5](https://bitbucket.org/stacc-flow/bento/commits/989a8a5))
+
+
+
+
+
 <a name="7.17.2"></a>
 ## [7.17.2](https://bitbucket.org/stacc-flow/bento/compare/v7.17.1...v7.17.2) (2018-10-26)
 
