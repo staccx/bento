@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.0.0"></a>
+# [8.0.0](https://bitbucket.org/stacc-flow/bento/compare/v7.19.0...v8.0.0) (2018-10-29)
+
+
+
+<a name="8.0.0-alpha.1"></a>
+# [8.0.0-alpha.1](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v8.0.0-alpha.1) (2018-10-29)
+
+
+### Features
+
+* **bank-in-a-box:** clean up components and how/where they are used ([06fd1ff](https://bitbucket.org/stacc-flow/bento/commits/06fd1ff))
+* **bank-in-a-box:** confirm-symbol themified ([4d271b4](https://bitbucket.org/stacc-flow/bento/commits/4d271b4))
+* **bank-in-a-box:** loan + savings is separated and started themingprep ([815d789](https://bitbucket.org/stacc-flow/bento/commits/815d789))
+* **bank-in-a-box:** themify withdraw: remove styled components ([c9efad3](https://bitbucket.org/stacc-flow/bento/commits/c9efad3))
+* **base:** sunsetting `size="flush"` on `<Box>` ([9ae3b8a](https://bitbucket.org/stacc-flow/bento/commits/9ae3b8a))
+
+
+
+<a name="8.0.0-alpha.0"></a>
+# [8.0.0-alpha.0](https://bitbucket.org/stacc-flow/bento/compare/v7.15.0...v8.0.0-alpha.0) (2018-10-23)
+
+
+### Bug Fixes
+
+* **bank-in-a-box:** fix some bugs on transactions ([63b9090](https://bitbucket.org/stacc-flow/bento/commits/63b9090))
+
+
+### Features
+
+* **bank-in-a-box:** added GlobalStyles ([d18812b](https://bitbucket.org/stacc-flow/bento/commits/d18812b))
+* **bank-in-a-box:** upgrade bbiab to sc4 ([206ee17](https://bitbucket.org/stacc-flow/bento/commits/206ee17))
+* **bank-in-a-box:** upgraded styled-components ([75f6d28](https://bitbucket.org/stacc-flow/bento/commits/75f6d28))
+
+
+
+
+
 <a name="7.19.0"></a>
 # [7.19.0](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v7.19.0) (2018-10-29)
 
