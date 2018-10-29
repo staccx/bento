@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const PrivateRentPlus = () => (
   <svg
@@ -17,8 +17,8 @@ const PrivateRentPlus = () => (
   </svg>
 )
 
-export const PrivateRentPlusIcon = registerStyle(
-  { [VARIANT_DEFAULT]: PrivateRentPlus },
+export const PrivateRentPlusIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: PrivateRentPlus },
   "PrivateRentPlus"
 )
 

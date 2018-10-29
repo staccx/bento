@@ -1954,9 +1954,9 @@
   version "7.13.1"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-7.13.1.tgz#86de47a15c781acc302c8dcdfa82b14359335710"
 
-"@staccx/base@^7.15.0":
-  version "7.15.0"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-7.15.0.tgz#615e55408dc495d84eef51f4f466702a50130573"
+"@staccx/base@^7.15.0", "@staccx/base@^7.19.0":
+  version "7.19.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-7.19.0.tgz#b0fc169cc2d2ff2302a1a1596287d9652f73c98c"
   dependencies:
     "@staccx/animations" "^7.13.1"
     "@staccx/formatting" "^7.13.1"
@@ -2001,11 +2001,11 @@
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/math/-/@staccx/math-7.13.1.tgz#e9eff38facfaea09085121ef9e773f663b84d74e"
 
 "@staccx/nordea-theme@^7.15.0":
-  version "7.15.0"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/nordea-theme/-/@staccx/nordea-theme-7.15.0.tgz#068c7b134b4c13c1178c2edb3fa37bab22c7cc99"
+  version "7.19.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/nordea-theme/-/@staccx/nordea-theme-7.19.0.tgz#3969cac8fe4f7ba15c33f64fea7c11a653b3f9bb"
   dependencies:
     "@staccx/animations" "^7.13.1"
-    "@staccx/base" "^7.15.0"
+    "@staccx/base" "^7.19.0"
     "@staccx/theme" "^7.13.1"
     react "^16.3.2"
     react-dom "^16.3.2"

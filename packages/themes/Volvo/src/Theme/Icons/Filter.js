@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Filter = () => (
   <svg
@@ -18,6 +18,9 @@ const Filter = () => (
   </svg>
 )
 
-export const FilterIcon = registerStyle({ [VARIANT_DEFAULT]: Filter }, "Filter")
+export const FilterIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Filter },
+  "Filter"
+)
 
 export default Filter

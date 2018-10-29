@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Leasing = () => (
   <svg
@@ -17,8 +17,8 @@ const Leasing = () => (
   </svg>
 )
 
-export const LeasingIcon = registerStyle(
-  { [VARIANT_DEFAULT]: Leasing },
+export const LeasingIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Leasing },
   "Leasing"
 )
 

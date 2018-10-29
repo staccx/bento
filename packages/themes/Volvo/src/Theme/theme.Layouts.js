@@ -1,15 +1,14 @@
 import { css } from "styled-components"
-import { registerStyle, spacing, color } from "@staccx/theme"
-import { Layout, LayoutItem } from "@staccx/base"
+import { Layout, LayoutItem, theming } from "@staccx/base"
 import { FadeIn, BounceIn } from "@staccx/animations"
 
-export const LayoutStyling = registerStyle(
+export const LayoutStyling = theming.createVariants(
   {
     case: css`
       grid-template-columns: 1fr 320px 130px 320px 1fr;
       grid-template-rows: repeat(7, auto);
-      grid-row-gap: ${spacing.large};
-      grid-column-gap: ${spacing.medium};
+      grid-row-gap: ${theming.spacing.large};
+      grid-column-gap: ${theming.spacing.medium};
       @media only screen and (max-width: 880px) {
         grid-template-columns: 1fr 320px 48px 320px 1fr;
       }
@@ -39,7 +38,7 @@ const hideCSS = css`
   }
 `
 
-export const LayoutItemStyling = registerStyle(
+export const LayoutItemStyling = theming.createVariants(
   {
     caseHeader: css`
       grid-column: 1 / span 5;
@@ -76,7 +75,7 @@ export const LayoutItemStyling = registerStyle(
       @media only screen and (max-width: 750px) {
         display: block;
         grid-row: 3;
-        margin-top: -${spacing.medium};
+        margin-top: -${theming.spacing.medium};
       }
     `,
     caseDocumentation: css`
@@ -89,7 +88,7 @@ export const LayoutItemStyling = registerStyle(
       ${p => p.hideOnMobile && hideCSS};
 
       > div {
-        border: 1px solid ${color.line};
+        border: 1px solid ${theming.color.line};
       }
     `,
     caseContact: css`
@@ -111,7 +110,7 @@ export const LayoutItemStyling = registerStyle(
       ${p => p.hideOnMobile && hideCSS};
 
       > div {
-        border: 1px solid ${color.line};
+        border: 1px solid ${theming.color.line};
       }
     `,
     caseObject: css`
@@ -124,7 +123,7 @@ export const LayoutItemStyling = registerStyle(
       ${p => p.hideOnMobile && hideCSS};
 
       > div {
-        border: 1px solid ${color.line};
+        border: 1px solid ${theming.color.line};
       }
     `,
     fadeIn: css`

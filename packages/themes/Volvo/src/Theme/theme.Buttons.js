@@ -1,27 +1,19 @@
 import { css } from "styled-components"
-import {
-  registerStyle,
-  VARIANT_DEFAULT,
-  color,
-  targetSize,
-  spacing,
-  fontWeight
-} from "@staccx/theme"
-import { Button } from "@staccx/base"
+import { Button, theming } from "@staccx/base"
 
 const baseStyling = css`
-  border-radius: ${targetSize.normal};
-  background-color: ${color("b5")};
+  border-radius: ${theming.targetSize.normal};
+  background-color: ${theming.color("b5")};
   &:hover,
   &:focus,
   &:active {
-    background-color: ${color("text")};
+    background-color: ${theming.color("text")};
   }
 `
 
-export const ButtonStyling = registerStyle(
+export const ButtonStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       ${baseStyling};
     `,
     chat: css`
@@ -29,65 +21,65 @@ export const ButtonStyling = registerStyle(
       position: absolute;
       right: 0;
       bottom: 0;
-      min-height: ${targetSize.small};
-      right: ${spacing.tiny};
+      min-height: ${theming.targetSize.small};
+      right: ${theming.spacing.tiny};
       bottom: 8px;
-      min-height: ${spacing.mediumPlus};
-      padding: 0 ${spacing.small};
-      background-color: ${color("gray")};
+      min-height: ${theming.spacing.mediumPlus};
+      padding: 0 ${theming.spacing.small};
+      background-color: ${theming.color("gray")};
 
       &:hover {
-        background-color: ${color("black")};
+        background-color: ${theming.color("black")};
       }
     `,
     icon: css`
       background: transparent;
-      padding-left: ${spacing.tiny};
-      padding-right: ${spacing.tiny};
-      color: ${color.primary};
-      font-weight: ${fontWeight.normal};
+      padding-left: ${theming.spacing.tiny};
+      padding-right: ${theming.spacing.tiny};
+      color: ${theming.color.primary};
+      font-weight: ${theming.fontWeight.normal};
       svg {
-        fill: ${color("g2")};
+        fill: ${theming.color("g2")};
       }
       &:hover,
       &:focus,
       &:active {
         background: transparent;
-        color: ${color.primary};
+        color: ${theming.color.primary};
         svg {
-          fill: ${color("g3")};
+          fill: ${theming.color("g3")};
         }
       }
     `,
     subtle: css`
-      border-radius: ${targetSize.normal};
-      padding: 0 ${spacing.small};
-      min-height: ${spacing.medium};
+      border-radius: ${theming.targetSize.normal};
+      padding: 0 ${theming.spacing.small};
+      min-height: ${theming.spacing.medium};
       background-color: transparent;
-      color: ${color("b4")};
+      color: ${theming.color("b4")};
       &:hover,
       &:focus,
       &:active {
-        color: ${color("b4")};
-        background-color: ${color("bg")};
+        color: ${theming.color("b4")};
+        background-color: ${theming.color("bg")};
       }
     `,
     back: css`
       display: flex;
       align-items: center;
       background-color: transparent;
-      color: ${color("b4")};
+      color: ${theming.color("b4")};
       padding: 0;
-      min-height: ${spacing.medium};
+      min-height: ${theming.spacing.medium};
 
       svg {
-        margin-right: ${spacing.tiny};
+        margin-right: ${theming.spacing.tiny};
       }
       &:hover,
       &:active,
       &:focus {
-        color: ${color("text")};
-        color: ${color("b4")};
+        color: ${theming.color("text")};
+        color: ${theming.color("b4")};
         background-color: transparent;
         text-decoration: underline;
       }
@@ -95,15 +87,15 @@ export const ButtonStyling = registerStyle(
     filter: css`
       justify-content: center;
       display: flex;
-      background-color: ${color("black")};
+      background-color: ${theming.color("black")};
       svg {
-        margin-right: ${spacing.tiny};
+        margin-right: ${theming.spacing.tiny};
       }
 
       &:hover,
       &:active,
       &:focus {
-        background-color: ${color("gray")};
+        background-color: ${theming.color("gray")};
       }
     `,
     hamburger: css`
@@ -118,28 +110,28 @@ export const ButtonStyling = registerStyle(
       background-color: transparent;
       display: flex;
       position: absolute;
-      top: ${spacing.small};
-      right: ${spacing.small};
+      top: ${theming.spacing.small};
+      right: ${theming.spacing.small};
     `,
     tabs: css`
       border-radius: 0;
       background-color: transparent;
-      color: ${color.text};
+      color: ${theming.color.text};
       margin-left: 0;
       margin-right: 0;
-      padding: ${spacing.tiny} ${spacing.tiny};
+      padding: ${theming.spacing.tiny} ${theming.spacing.tiny};
       ${p =>
         p.isCurrent &&
         `
-      border-bottom: 2px solid ${color("primary")(p)};
+      border-bottom: 2px solid ${theming.color("primary")(p)};
       `};
 
       &:hover,
       &:active,
       &:focus {
-        color: ${color.primary};
+        color: ${theming.color.primary};
         background-color: transparent;
-        border-bottom: 2px solid ${color("primary")};
+        border-bottom: 2px solid ${theming.color("primary")};
       }
     `,
     emoji: css`
@@ -154,7 +146,7 @@ export const ButtonStyling = registerStyle(
       }
 
       &:nth-child(even) {
-        margin: 0 ${spacing.tiny};
+        margin: 0 ${theming.spacing.tiny};
       }
     `
   },

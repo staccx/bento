@@ -1,34 +1,26 @@
 import { css } from "styled-components"
-import {
-  registerStyle,
-  color,
-  spacing,
-  targetSize,
-  VARIANT_DEFAULT,
-  font
-} from "@staccx/theme"
-import { Box, fontSmoothing } from "@staccx/base"
+import { Box, fontSmoothing, theming } from "@staccx/base"
 
-export const BoxStyling = registerStyle(
+export const BoxStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      background-color: ${color.white};
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color.white};
     `,
     defaultHero: css`
-      color: ${color.white};
-      background-color: ${color.black};
-      padding-top: ${spacing.large};
+      color: ${theming.color.white};
+      background-color: ${theming.color.black};
+      padding-top: ${theming.spacing.large};
       padding-left: 0;
       padding-right: 0;
-      padding-bottom: ${spacing.mediumPlus};
+      padding-bottom: ${theming.spacing.mediumPlus};
       a {
-        color: ${color.white};
+        color: ${theming.color.white};
         text-decoration: underline;
       }
     `,
     caseHero: css`
-      background-color: ${color.secondary};
-      color: ${color.text};
+      background-color: ${theming.color.secondary};
+      color: ${theming.color.text};
       height: 100%;
     `,
     mainSearch: css`
@@ -39,37 +31,38 @@ export const BoxStyling = registerStyle(
     `,
     salesSearch: css`
       padding: 0;
-      margin-top: ${targetSize.normal};
+      margin-top: ${theming.targetSize.normal};
       display: flex;
-      margin-bottom: ${spacing.large};
+      margin-bottom: ${theming.spacing.large};
     `,
     subtle: css`
-      background-color: ${color.white};
+      background-color: ${theming.color.white};
       padding-left: 0;
       padding-right: 0;
     `,
     contact: css`
-      background-color: ${color.white};
-      border: 1px solid ${color.line};
-      margin-bottom: ${spacing.small};
+      background-color: ${theming.color.white};
+      border: 1px solid ${theming.color.line};
+      margin-bottom: ${theming.spacing.small};
     `,
     chat: css`
       background: white;
       height: 100%;
-      border: 1px solid ${color.line};
+      border: 1px solid ${theming.color.line};
       position: relative;
       padding: 0;
     `,
     file: css`
-      background-color: ${color.white};
-      padding: ${spacing.tiny} 0 ${spacing.tiny} ${spacing.tiny};
-      font-size: ${font.small};
-      border-bottom: 1px solid ${color.line};
+      background-color: ${theming.color.white};
+      padding: ${theming.spacing.tiny} 0 ${theming.spacing.tiny}
+        ${theming.spacing.tiny};
+      font-size: ${theming.font.small};
+      border-bottom: 1px solid ${theming.color.line};
       display: grid;
       grid-template-columns: 24px 1fr auto;
-      grid-column-gap: ${spacing.small};
+      grid-column-gap: ${theming.spacing.small};
       align-items: center;
-      ${fontSmoothing};
+      ${theming.fontSmoothing};
     `
   },
   Box.themeProps.box

@@ -1,12 +1,11 @@
 import { css } from "styled-components"
-import { registerStyle, color, font } from "@staccx/theme"
-import { Paragraph } from "@staccx/base"
+import { Paragraph, theming } from "@staccx/base"
 
-export const ParagraphStyling = registerStyle(
+export const ParagraphStyling = theming.createVariants(
   {
     CaseSummary: css`
-      color: ${color("gray")};
-      font-size: ${font.small};
+      color: ${theming.color("gray")};
+      font-size: ${theming.font.small};
     `
   },
   Paragraph.themeProps.paragraph

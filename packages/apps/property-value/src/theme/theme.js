@@ -1,5 +1,4 @@
-import { Theme, registerStyle, color } from "@staccx/theme"
-import { BaseTheme, Box } from "@staccx/base"
+import { BaseTheme, Box, theming } from "@staccx/base"
 import reset from "./reset"
 import { css } from "styled-components"
 
@@ -66,7 +65,7 @@ const fontFamily = {
   body: "Libre Franklin"
 }
 
-const markerStyle = registerStyle(
+const markerStyle = theming.createVariants(
   {
     marker: css`
       &:after {
@@ -77,7 +76,7 @@ const markerStyle = registerStyle(
         margin-left: -20px;
         width: 0;
         height: 0;
-        border-top: solid 20px ${color.primary};
+        border-top: solid 20px ${theming.color.primary};
         border-left: solid 20px transparent;
         border-right: solid 20px transparent;
       }
@@ -86,7 +85,7 @@ const markerStyle = registerStyle(
   Box.themeProps.box
 )
 
-const theme = new Theme(BaseTheme, {
+export default new theming.Theme(BaseTheme, {
   font,
   colors,
   spacing,
@@ -97,5 +96,3 @@ const theme = new Theme(BaseTheme, {
   fontFamily,
   global: reset
 }).add(markerStyle)
-
-export default theme

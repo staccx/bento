@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const ArrowRight = () => (
   <svg
@@ -13,8 +13,8 @@ const ArrowRight = () => (
   </svg>
 )
 
-export const ArrowRightIcon = registerStyle(
-  { [VARIANT_DEFAULT]: ArrowRight },
+export const ArrowRightIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: ArrowRight },
   "ArrowRight"
 )
 

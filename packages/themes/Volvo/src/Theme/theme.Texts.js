@@ -1,20 +1,19 @@
 import { css } from "styled-components"
-import { color, registerStyle, font } from "@staccx/theme"
-import { Text, fontSmoothing } from "@staccx/base"
+import { Text, theming } from "@staccx/base"
 
-export const TextStyling = registerStyle(
+export const TextStyling = theming.createVariants(
   {
     subtle: css`
-      color: ${color.wcag};
+      color: ${theming.color.wcag};
     `,
     inputSize: css`
-      font-size: ${font.input};
+      font-size: ${theming.font.input};
       line-height: 1.4;
-      color: ${color("g4")};
-      ${fontSmoothing};
+      color: ${theming.color("g4")};
+      ${theming.fontSmoothing};
     `,
     legalese: css`
-      font-size: ${font.tiny};
+      font-size: ${theming.font.tiny};
     `
   },
   Text.themeProps.text

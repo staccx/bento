@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { color, spacing, targetSize } from "@staccx/theme"
+import { theming } from "@staccx/base"
 import styled from "styled-components"
 
 const Sidebar = () => (
@@ -16,23 +16,19 @@ const Sidebar = () => (
         </SidebarLink>
       </li> */}
     <li>
-      <SidebarLink to="/settings">
-        Noe her
-      </SidebarLink>
+      <SidebarLink to="/settings">Noe her</SidebarLink>
     </li>
     <li>
-      <SidebarLink to="/profile">
-        Noer her
-      </SidebarLink>
+      <SidebarLink to="/profile">Noer her</SidebarLink>
     </li>
   </SidebarList>
 )
 
 const SidebarList = styled.ul`
   grid-area: sidebar;
-  background-color: ${color.black};
-  color: ${color.white};
-  padding: ${spacing.small};
+  background-color: ${theming.color.black};
+  color: ${theming.color.white};
+  padding: ${theming.spacing.small};
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -44,7 +40,7 @@ const SidebarList = styled.ul`
 
 const SidebarLink = styled(Link)`
   opacity: 0.5;
-  height: ${targetSize.normal};
+  height: ${theming.targetSize.normal};
   display: inline-block;
   &:hover,
   &:focus,

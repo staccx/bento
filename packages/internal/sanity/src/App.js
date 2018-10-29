@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Wrapper } from "@staccx/base"
-import { ThemeProxyProvider } from "@staccx/theme"
+import { ThemeProvider } from "styled-components"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import theme from "./theme/Theme"
 import SanityProvider from "./components/SanityProvider"
@@ -12,7 +12,7 @@ const testQuery = `*[_type == 'i18n']`
 class App extends Component {
   render() {
     return (
-      <ThemeProxyProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <SanityProvider dataset={"production"} projectId={"gwvp4jhb"}>
           <Router>
             <div>
@@ -79,7 +79,7 @@ class App extends Component {
             </div>
           </Router>
         </SanityProvider>
-      </ThemeProxyProvider>
+      </ThemeProvider>
     )
   }
 }

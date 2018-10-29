@@ -1,5 +1,4 @@
-import { BaseTheme } from "@staccx/base"
-import { Theme } from "@staccx/theme"
+import { BaseTheme, theming } from "@staccx/base"
 import reset from "./reset"
 import Button from "./Theme.Button"
 import Box from "./Theme.Box"
@@ -135,7 +134,7 @@ const fontWeight = {
   normal: "400"
 }
 
-const t = new Theme(BaseTheme, {
+export default new theming.Theme(BaseTheme, {
   name: "imove",
   font: { ...font },
   fontWeight,
@@ -177,5 +176,3 @@ const t = new Theme(BaseTheme, {
   .add(ToggleElementStyling)
   .add(RadioPillWrapper)
   .add(ModalContentStyling)
-
-export default t

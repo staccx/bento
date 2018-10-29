@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Checkmark = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 9">
@@ -7,8 +7,8 @@ const Checkmark = () => (
   </svg>
 )
 
-export const CheckmarkIcon = registerStyle(
-  { [VARIANT_DEFAULT]: Checkmark },
+export const CheckmarkIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Checkmark },
   "Checkmark"
 )
 

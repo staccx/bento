@@ -1,16 +1,15 @@
 import { css } from "styled-components"
-import { spacing, registerStyle } from "@staccx/theme"
-import { NewBadge } from "@staccx/base"
+import { NewBadge, theming } from "@staccx/base"
 
-export const NewBadgeBadgeStyling = registerStyle(
+export const NewBadgeBadgeStyling = theming.createVariants(
   {
     casesList: css`
       position: static;
       top: auto;
       left: auto;
       bottom: auto;
-      width: ${spacing.medium};
-      height: ${spacing.medium};
+      width: ${theming.spacing.medium};
+      height: ${theming.spacing.medium};
     `
   },
   NewBadge.themeProps.badge

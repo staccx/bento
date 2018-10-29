@@ -1,11 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import { Box, Image } from "@staccx/base"
-import { themeProps, color } from "@staccx/theme"
+import { Box, Image, theming } from "@staccx/base"
 import { getStreetViewImageUrl } from "../store/property"
 
 const Marker = ({ location }) => (
-  <Box variant={"marker"} size={themeProps.spacing.small}>
+  <Box variant={"marker"} size={theming.commonPropTypes.spacing.small}>
     <Img
       src={getStreetViewImageUrl(location, 128)}
       alt={"streetviewimage"}
@@ -15,7 +14,7 @@ const Marker = ({ location }) => (
 )
 
 const Img = styled(Image)`
-  border: 8px solid ${color.primary};
+  border: 8px solid ${theming.color.primary};
 `
 
 export default Marker

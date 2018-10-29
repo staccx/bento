@@ -1,17 +1,16 @@
 import { css } from "styled-components"
-import { registerStyle, spacing } from "@staccx/theme"
-import { RadioButton } from "@staccx/base"
+import { RadioButton, theming } from "@staccx/base"
 
-export const RadioButtonWrapper = registerStyle(
+export const RadioButtonWrapper = theming.createVariants(
   {
     search: css`
-      margin-right: ${spacing.medium};
+      margin-right: ${theming.spacing.medium};
     `
   },
   RadioButton.themeProps.wrapper
 )
 
-export const RadioButtonLabel = registerStyle(
+export const RadioButtonLabel = theming.createVariants(
   {
     search: css`
       &::before {

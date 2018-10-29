@@ -13,8 +13,7 @@ const external = [
   "react-dom",
   "prop-types",
   "styled-components",
-  "react-jsonschema-form",
-  "@staccx/theme"
+  "react-jsonschema-form"
 ]
 
 const defaultPlugins = [

@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing } from "@staccx/theme"
-import { Button } from "@staccx/base"
+import { Button, theming } from "@staccx/base"
 import { TranslatedText } from "@staccx/i18n"
 import MenuItem, { MenuTitle } from "./MenuItem"
 import Sidebar from "./Sidebar"
@@ -49,7 +48,7 @@ const MenuWrapper = styled.div`
   height: 100%;
   grid-gap: 0px;
   grid-template-areas: "sidebar menu";
-  border-right: 1px solid ${color.line};
+  border-right: 1px solid ${theming.color.line};
   min-height: 100vh;
   max-width: 200px;
 `
@@ -57,9 +56,9 @@ const CloseWrapper = styled.li`
   min-height: 60px;
   text-align: right;
   display: flex;
-  padding: ${spacing.small};
+  padding: ${theming.spacing.small};
   justify-content: flex-end;
-  border-bottom: 1px solid ${color.line};
+  border-bottom: 1px solid ${theming.color.line};
   @media only screen and (min-width: 700px) {
     display: none;
   }

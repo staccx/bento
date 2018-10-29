@@ -1,9 +1,8 @@
-import { Theme, registerStyle, color } from "@staccx/theme"
-import { BaseTheme, LayoutItem, Layout } from "@staccx/base"
+import { BaseTheme, LayoutItem, Layout, theming } from "@staccx/base"
 import { css } from "styled-components"
 import { FadeIn } from "@staccx/animations"
 
-const layoutStyle = registerStyle(
+const layoutStyle = theming.createVariants(
   {
     fourByFour: css`
       grid-template-rows: repeat(4, 1fr);
@@ -13,13 +12,13 @@ const layoutStyle = registerStyle(
   Layout.themeProps.container
 )
 
-const layoutItemStyle = registerStyle(
+const layoutItemStyle = theming.createVariants(
   {
     fourByFour: css`
       opacity: 0;
       animation: ${FadeIn} forwards ease-out 400ms 1;
       animation-delay: 100ms;
-      background-color: ${color.secondary};
+      background-color: ${theming.color.secondary};
     `
   },
   LayoutItem.themeProps.container
@@ -101,7 +100,7 @@ const fontFamily = {
   body: "Libre Franklin"
 }
 
-const theme = new Theme(BaseTheme, {
+export default  new theming.Theme(BaseTheme, {
   name: "control-panel",
   font,
   webfonts,
@@ -116,4 +115,3 @@ const theme = new Theme(BaseTheme, {
 })
   .add(layoutStyle)
   .add(layoutItemStyle)
-export default theme

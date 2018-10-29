@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Phone = () => (
   <svg
@@ -13,6 +13,9 @@ const Phone = () => (
   </svg>
 )
 
-export const PhoneIcon = registerStyle({ [VARIANT_DEFAULT]: Phone }, "Phone")
+export const PhoneIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Phone },
+  "Phone"
+)
 
 export default Phone

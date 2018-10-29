@@ -1,41 +1,40 @@
 import { css } from "styled-components"
-import { registerStyle, VARIANT_DEFAULT, color } from "@staccx/theme"
-import { Portal } from "@staccx/base"
+import { Portal, theming } from "@staccx/base"
 
-export const PortalIcon = registerStyle(
+export const PortalIcon = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      background-color: ${color.black};
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color.black};
       svg {
-        fill: ${color.white};
+        fill: ${theming.color.white};
       }
     `,
     secondary: css`
-      background-color: ${color.black};
+      background-color: ${theming.color.black};
       height: 40px;
       width: 40px;
       margin-bottom: 0;
       svg {
-        fill: ${color.white};
+        fill: ${theming.color.white};
       }
     `
   },
   Portal.themeProps.iconWrapper
 )
 
-export const PortalSVGIcon = registerStyle(
+export const PortalSVGIcon = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      fill: ${color.white};
+    [theming.VARIANT_DEFAULT]: css`
+      fill: ${theming.color.white};
     `,
     secondary: css`
-      fill: ${color.white};
+      fill: ${theming.color.white};
     `
   },
   Portal.themeProps.icon
 )
 
-export const PortalLabel = registerStyle(
+export const PortalLabel = theming.createVariants(
   {
     secondary: css`
       display: none;

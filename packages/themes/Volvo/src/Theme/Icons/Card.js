@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Card = () => (
   <svg
@@ -17,6 +17,9 @@ const Card = () => (
   </svg>
 )
 
-export const CardIcon = registerStyle({ [VARIANT_DEFAULT]: Card }, "Card")
+export const CardIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Card },
+  "Card"
+)
 
 export default Card

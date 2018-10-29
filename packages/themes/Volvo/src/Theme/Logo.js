@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Logo = ({ inverted }) => (
   <svg
@@ -454,6 +454,9 @@ const Logo = ({ inverted }) => (
   </svg>
 )
 
-export const LogoStyle = registerStyle({ [VARIANT_DEFAULT]: Logo }, "logo")
+export const LogoStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Logo },
+  "logo"
+)
 
 export default Logo

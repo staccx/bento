@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Back = () => (
   <svg
@@ -16,6 +16,9 @@ const Back = () => (
   </svg>
 )
 
-export const BackIcon = registerStyle({ [VARIANT_DEFAULT]: Back }, "Back")
+export const BackIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Back },
+  "Back"
+)
 
 export default Back

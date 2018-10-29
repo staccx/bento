@@ -1,39 +1,31 @@
 import { css } from "styled-components"
-import {
-  registerStyle,
-  VARIANT_DEFAULT,
-  color,
-  fontWeight,
-  font,
-  spacing
-} from "@staccx/theme"
-import { Heading } from "@staccx/base"
+import { Heading, theming } from "@staccx/base"
 
-export const HeadingStyling = registerStyle(
+export const HeadingStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      color: ${color("primary")};
+    [theming.VARIANT_DEFAULT]: css`
+      color: ${theming.color("primary")};
     `,
     caseHeading: css`
-      color: ${color("text")};
-      font-weight: ${fontWeight.normal};
+      color: ${theming.color("text")};
+      font-weight: ${theming.fontWeight.normal};
       line-height: 1.2;
     `,
     subtle: css`
-      color: ${color.wcag};
-      font-size: ${font.h4};
-      margin-bottom: ${spacing.tiny};
+      color: ${theming.color.wcag};
+      font-size: ${theming.font.h4};
+      margin-bottom: ${theming.spacing.tiny};
     `,
     ContactName: css`
-      color: ${color.text};
-      font-size: ${font.input};
+      color: ${theming.color.text};
+      font-size: ${theming.font.input};
     `,
     caselist: css`
-      font-size: ${font.base};
+      font-size: ${theming.font.base};
       font-weight: ${p => (p.attention ? "bold" : "normal")};
     `,
     salesOverviewHeading: css`
-      color: ${color.white};
+      color: ${theming.color.white};
     `
   },
   Heading.themeProps.heading

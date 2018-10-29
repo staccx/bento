@@ -7,7 +7,7 @@ import {
   Search,
   Input
 } from "@staccx/base"
-import { ThemeProxyProvider } from "@staccx/theme"
+import { ThemeProvider } from "styled-components"
 import { BrowserRouter as Router } from "react-router-dom"
 import theme from "./theme/Theme"
 // import { instance } from "./api"
@@ -38,7 +38,7 @@ class App extends Component {
 
   render() {
     return (
-      <ThemeProxyProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <Router>
           <Layout grid="dashboard" variant="responsiveDashboard">
             <LayoutItem area="aside" variant="sidebar" menuOpen>
@@ -82,7 +82,7 @@ class App extends Component {
             </LayoutItem>
           </Layout>
         </Router>
-      </ThemeProxyProvider>
+      </ThemeProvider>
     )
   }
 }

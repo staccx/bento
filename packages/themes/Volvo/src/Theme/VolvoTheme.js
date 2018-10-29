@@ -1,5 +1,4 @@
-import { Theme } from "@staccx/theme"
-import { BaseTheme } from "@staccx/base"
+import { theming } from "@staccx/base"
 import reset from "./reset"
 import { HeadingStyling } from "./theme.Headings"
 import { ParagraphStyling } from "./theme.Paragraphs"
@@ -147,19 +146,22 @@ const fontFamily = {
   body: "VolvoSansLight"
 }
 
-const theme = new Theme(BaseTheme, {
-  name: "Volvo",
-  font,
-  fontWeight,
-  color: { ...color, ...DealerpadSpecificColor },
-  spacing,
-  wrapper,
-  targetSize,
-  borderRadius,
-  headerHeight,
-  fontFamily,
-  global: reset
-})
+export default new theming.Theme(
+  {},
+  {
+    name: "Volvo",
+    font,
+    fontWeight,
+    color: { ...color, ...DealerpadSpecificColor },
+    spacing,
+    wrapper,
+    targetSize,
+    borderRadius,
+    headerHeight,
+    fontFamily,
+    global: reset
+  }
+)
   .add(HeadingStyling)
   .add(ParagraphStyling)
   .add(BoxStyling)
@@ -207,4 +209,3 @@ const theme = new Theme(BaseTheme, {
   .add(RadioButtonWrapper)
   .add(RadioButtonLabel)
   .add(FileInputLabelStyling)
-export default theme
