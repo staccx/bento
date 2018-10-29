@@ -1,7 +1,7 @@
 import { theming } from "@staccx/base"
 
 export default theming.createGlobal({
-  reset: `
+  themeReset: `
 ::selection {
   background: rgba(230, 80, 63, 0.3);
   color: #000;

@@ -123,8 +123,8 @@ const SelectedCountry = styled.div`
   min-height: ${theming.targetSize.normal};
   margin: 0 auto;
   border: 1px solid ${theming.color.line};
-  padding: ${theming.spacing.tiny} ${theming.spacing.mediumPlus} ${theming.spacing.tiny}
-    ${theming.spacing.small};
+  padding: ${theming.spacing.tiny} ${theming.spacing.mediumPlus}
+    ${theming.spacing.tiny} ${theming.spacing.small};
   text-align: left;
   font-family: ${theming.fontFamily.body()};
   font-size: ${theming.font.input};

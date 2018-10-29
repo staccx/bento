@@ -1,4 +1,4 @@
-import { BaseTheme, theming } from "@staccx/base"
+import { theming } from "@staccx/base"
 import reset from "./reset"
 import Button from "./Theme.Button"
 import Box from "./Theme.Box"
@@ -102,19 +102,22 @@ const fontFamily = {
   mono: "IBM Plex Mono"
 }
 
-const theme = new theming.Theme(BaseTheme, {
-  name: "Stacc",
-  font: { ...font },
-  fontWeight,
-  webfonts,
-  color: { ...color },
-  wrapper,
-  targetSize,
-  borderRadius,
-  headerHeight,
-  fontFamily,
-  spacing
-})
+const theme = new theming.Theme(
+  {},
+  {
+    name: "Stacc",
+    font: { ...font },
+    fontWeight,
+    webfonts,
+    color: { ...color },
+    wrapper,
+    targetSize,
+    borderRadius,
+    headerHeight,
+    fontFamily,
+    spacing
+  }
+)
   .add(Button)
   .add(Box)
   .add(LogoStyle)
@@ -123,7 +126,7 @@ const theme = new theming.Theme(BaseTheme, {
   .add(CheckboxCheckedLabel)
   .add(HeadingStyling)
   .add(WrapperStyling)
-  .add(reset)
   .add(theming.createGlobal({ base: theming.cssResets }))
+  .add(reset)
 
 export default theme
