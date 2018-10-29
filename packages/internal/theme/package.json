@@ -1,6 +1,6 @@
 {
   "name": "@staccx/theme",
-  "version": "8.0.0-alpha.0",
+  "version": "8.0.0-alpha.1",
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

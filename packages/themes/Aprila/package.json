@@ -1,6 +1,6 @@
 {
   "name": "@staccx/aprila-theme",
-  "version": "8.0.0-alpha.0",
+  "version": "8.0.0-alpha.1",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -24,8 +24,8 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/animations": "^8.0.0-alpha.0",
-    "@staccx/base": "^8.0.0-alpha.0",
+    "@staccx/animations": "^8.0.0-alpha.1",
+    "@staccx/base": "^8.0.0-alpha.1",
     "@staccx/formatting": "^8.0.0-alpha.0",
     "polished": "^1.9.2",
     "prop-types": "^15.6.2",

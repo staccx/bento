@@ -1,6 +1,6 @@
 {
   "name": "@staccx/color",
-  "version": "8.0.0-alpha.0",
+  "version": "8.0.0-alpha.1",
   "description": "Color functions and helpers",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@staccx/base": "^7.15.0",
-    "@staccx/theme": "^8.0.0-alpha.0",
+    "@staccx/theme": "^8.0.0-alpha.1",
     "color": "^3.0.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"

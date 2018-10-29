@@ -1,7 +1,7 @@
 {
   "name": "companywebsitetemplate",
   "private": true,
-  "version": "8.0.0-alpha.0",
+  "version": "8.0.0-alpha.1",
   "description": "",
   "main": "package.json",
   "author": "Espen Thomassen Sæveru <espensaeverud@gmail.com>",
