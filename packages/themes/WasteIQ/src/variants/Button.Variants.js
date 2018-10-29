@@ -8,8 +8,7 @@ export const ButtonVariants = theming.createVariants(
       border: 1px solid ${theming.color.primary};
       color: ${theming.color.primary};
       font-weight: normal;
-      box-shadow: -4px 4px 0
-        ${p => (p.color ? theming.color(p.color) : theming.color("greenLight"))};
+      box-shadow: -${theming.spacing("shadow")} ${theming.spacing("shadow")} 0 ${p => (p.color ? theming.color(p.color) : theming.color("greenLight"))};
 
       &:hover,
       &:focus,
@@ -17,6 +16,7 @@ export const ButtonVariants = theming.createVariants(
         background-color: ${theming.color.white};
         border: 1px solid ${theming.color.primary};
         color: ${theming.color.primary};
+        box-shadow: -${theming.spacing("shadowLarge")} ${theming.spacing("shadowLarge")} 0 ${p => (p.color ? theming.color(p.color) : theming.color("greenLight"))};
       }
     `
   },
