@@ -1,18 +1,17 @@
 import { css } from "styled-components"
-import { registerStyle, VARIANT_DEFAULT, color, spacing } from "@staccx/theme"
-import { Box } from "@staccx/base"
+import { Box, theming } from "@staccx/base"
 
-export default registerStyle(
+export default theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css``,
+    [theming.VARIANT_DEFAULT]: css``,
     menu: css`
       position: relative;
       z-index: 10;
-      padding-top: ${spacing.small};
-      padding-bottom: ${spacing.small};
+      padding-top: ${theming.spacing.small};
+      padding-bottom: ${theming.spacing.small};
       width: 100%;
       @media screen and (max-width: 768px) {
-        background: ${color.white};
+        background: ${theming.color.white};
         position: fixed;
         left: 0;
         bottom: 0;
@@ -21,18 +20,18 @@ export default registerStyle(
       }
     `,
     myCarHeader: css`
-      background-color: ${color("bgGray")};
+      background-color: ${theming.color("bgGray")};
       position: relative;
       width: 100vw;
       left: 50%;
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-      margin-bottom: ${spacing.huge};
+      margin-bottom: ${theming.spacing.huge};
     `,
     carWrapper: css`
       padding: 0;
-      margin-bottom: ${spacing.large};
+      margin-bottom: ${theming.spacing.large};
       text-align: center;
     `,
     center: css`
@@ -46,8 +45,8 @@ export default registerStyle(
       position: absolute;
       width: 100%;
       left: 0;
-      background-color: ${color.primary};
-      color: ${color.white};
+      background-color: ${theming.color.primary};
+      color: ${theming.color.white};
       border-radius: 0;
 
       h1,
@@ -57,7 +56,7 @@ export default registerStyle(
       h5,
       h6,
       label {
-        color: ${color.white};
+        color: ${theming.color.white};
       }
     `,
     subtleLeft: css`
@@ -65,10 +64,10 @@ export default registerStyle(
       flex-basis: 60%;
 
       @media screen and (max-width: 768px) {
-        margin-left: -${spacing.medium};
-        padding: ${spacing.small} ${spacing.medium};
-        background-color: ${color("bgGray")};
-        color: ${color.text};
+        margin-left: -${theming.spacing.medium};
+        padding: ${theming.spacing.small} ${theming.spacing.medium};
+        background-color: ${theming.color("bgGray")};
+        color: ${theming.color.text};
       }
     `
   },

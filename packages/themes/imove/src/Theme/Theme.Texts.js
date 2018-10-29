@@ -1,20 +1,19 @@
 import { css } from "styled-components"
-import { color, font, registerStyle } from "@staccx/theme"
-import { Text, hideVisually } from "@staccx/base"
+import { Text, theming } from "@staccx/base"
 
-export const TextStyling = registerStyle(
+export const TextStyling = theming.createVariants(
   {
     visuallyHidden: css`
-      ${hideVisually};
+      ${theming.hideVisually};
     `,
     checkMarkBlock: css`
       display: block;
-      font-size: ${font.normal};
-      color: ${color.secondary};
+      font-size: ${theming.font.normal};
+      color: ${theming.color.secondary};
     `,
     legalese: css`
-      font-size: ${font.tiny};
-      color: ${color.wcag};
+      font-size: ${theming.font.tiny};
+      color: ${theming.color.wcag};
     `
   },
   Text.themeProps.text

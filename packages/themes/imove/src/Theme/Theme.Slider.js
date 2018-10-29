@@ -1,21 +1,20 @@
 import { css } from "styled-components"
-import { registerStyle, VARIANT_DEFAULT, color, spacing } from "@staccx/theme"
-import { Slider } from "@staccx/base"
+import { Slider, theming } from "@staccx/base"
 
-export const SliderTrack = registerStyle(
+export const SliderTrack = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       background: rgba(0, 0, 0, 0.5);
     `
   },
   Slider.themeProps.track
 )
 
-export const SliderThumb = registerStyle(
+export const SliderThumb = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      background-color: ${color.white};
-      border-color: ${color.white};
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color.white};
+      border-color: ${theming.color.white};
     `
   },
   Slider.themeProps.thumb

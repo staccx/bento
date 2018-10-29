@@ -1,19 +1,9 @@
 import { css } from "styled-components"
-import {
-  registerStyle,
-  VARIANT_DEFAULT,
-  font,
-  color,
-  fontWeight,
-  fontFamily,
-  spacing
-} from "@staccx/theme"
-import { Toggle } from "@staccx/base"
-import { opacity } from "@staccx/color"
+import { Toggle, theming } from "@staccx/base"
 
-export const ToggleElementStyling = registerStyle(
+export const ToggleElementStyling = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       &:hover,
       &:active,
       &:focus {

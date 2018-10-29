@@ -1,14 +1,14 @@
 import React, { Component } from "react"
 import { Button } from "@staccx/base"
-import { ThemeProxyProvider } from "@staccx/theme"
+import { ThemeProvider } from "styled-components"
 import { imoveTheme } from "./export.js"
 
 class App extends Component {
   render() {
     return (
-      <ThemeProxyProvider theme={imoveTheme}>
+      <ThemeProvider theme={imoveTheme}>
         <Button>My X Button</Button>
-      </ThemeProxyProvider>
+      </ThemeProvider>
     )
   }
 }

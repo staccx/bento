@@ -1,33 +1,24 @@
 import { css } from "styled-components"
-import {
-  registerStyle,
-  VARIANT_DEFAULT,
-  font,
-  color,
-  fontWeight,
-  fontFamily,
-  spacing
-} from "@staccx/theme"
-import { RadioPillItem, RadioPill } from "@staccx/base"
+import { RadioPillItem, RadioPill, theming } from "@staccx/base"
 import { opacity } from "@staccx/color"
 
-export const RadioPillContainer = registerStyle(
+export const RadioPillContainer = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       overflow: hidden;
     `
   },
   RadioPill.themeProps.container
 )
 
-export const RadioPillWrapper = registerStyle(
+export const RadioPillWrapper = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       input:checked {
         &:hover,
         &:focus {
           ~ label {
-            color: ${color.secondary} !important;
+            color: ${theming.color.secondary} !important;
           }
         }
       }
@@ -36,26 +27,26 @@ export const RadioPillWrapper = registerStyle(
   RadioPillItem.themeProps.wrapper
 )
 
-export const RadioPillItemHover = registerStyle(
+export const RadioPillItemHover = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      color: ${color.primary};
+    [theming.VARIANT_DEFAULT]: css`
+      color: ${theming.color.primary};
     `
   },
   RadioPillItem.themeProps.hover
 )
 
-export const RadioPillItemChecked = registerStyle(
+export const RadioPillItemChecked = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
+    [theming.VARIANT_DEFAULT]: css`
       background-color: transparent;
-      color: ${color.primary};
+      color: ${theming.color.primary};
       position: relative;
       &::after {
         content: "";
         position: absolute;
         width: 100vw;
-        background-color: ${color.primary};
+        background-color: ${theming.color.primary};
         height: 4px;
         right: 0;
         bottom: 0;
@@ -65,15 +56,15 @@ export const RadioPillItemChecked = registerStyle(
   RadioPillItem.themeProps.checked
 )
 
-export const RadioPillLabel = registerStyle(
+export const RadioPillLabel = theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      font-size: ${font("huge")};
-      font-weight: ${fontWeight.bold};
+    [theming.VARIANT_DEFAULT]: css`
+      font-size: ${theming.font("huge")};
+      font-weight: ${theming.fontWeight.bold};
       border-width: 0 !important;
-      color: ${p => opacity(color("primary")(p), 0.5)};
-      font-family: ${fontFamily.heading};
-      padding: 0 ${spacing.small} ${spacing.medium};
+      color: ${p => opacity(theming.color("primary")(p), 0.5)};
+      font-family: ${theming.fontFamily.heading};
+      padding: 0 ${theming.spacing.small} ${theming.spacing.medium};
       line-height: 1;
     `
   },

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { registerStyle, VARIANT_DEFAULT, color } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Logo = ({ inverted, centered, width, height }) => (
   <LogoImg
@@ -43,11 +43,11 @@ const Logo = ({ inverted, centered, width, height }) => (
 )
 
 const LogoText = styled.path`
-  fill: ${p => (p.inverted ? color.white : color.secondary)};
+  fill: ${p => (p.inverted ? theming.color.white : theming.color.secondary)};
 `
 
 const LogoBlob = styled.path`
-  fill: ${p => (p.inverted ? color.white : `url(#gradient)`)};
+  fill: ${p => (p.inverted ? theming.color.white : `url(#gradient)`)};
 `
 
 const LogoImg = styled.svg`
@@ -61,6 +61,9 @@ Logo.defaultProps = {
   inverted: null
 }
 
-export const LogoStyle = registerStyle({ [VARIANT_DEFAULT]: Logo }, "logo")
+export const LogoStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Logo },
+  "logo"
+)
 
 export default Logo

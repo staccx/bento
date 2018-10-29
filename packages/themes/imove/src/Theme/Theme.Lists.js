@@ -1,15 +1,14 @@
 import { css } from "styled-components"
-import { registerStyle, color } from "@staccx/theme"
-import { List } from "@staccx/base"
+import { List, theming } from "@staccx/base"
 
-export const ListStyling = registerStyle(
+export const ListStyling = theming.createVariants(
   {
     details: css`
-      border-top: 1px solid ${color.secondary};
-      color: ${color.secondary};
+      border-top: 1px solid ${theming.color.secondary};
+      color: ${theming.color.secondary};
 
       > li {
-        border-bottom: 1px solid ${color.secondary};
+        border-bottom: 1px solid ${theming.color.secondary};
       }
     `,
     bullets: css`
@@ -19,7 +18,7 @@ export const ListStyling = registerStyle(
           display: inline-block;
           width: 10px;
           height: 10px;
-          background-color: ${color.primary};
+          background-color: ${theming.color.primary};
           border-radius: 50%;
           margin-right: 6px;
           transform: translateY(-1px);

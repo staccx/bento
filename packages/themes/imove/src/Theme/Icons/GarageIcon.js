@@ -1,5 +1,5 @@
 import React from "react"
-import { registerStyle, VARIANT_DEFAULT } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Garage = () => (
   <svg
@@ -16,6 +16,9 @@ const Garage = () => (
   </svg>
 )
 
-export const GarageIcon = registerStyle({ [VARIANT_DEFAULT]: Garage }, "Garage")
+export const GarageIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Garage },
+  "Garage"
+)
 
 export default Garage

@@ -1,8 +1,7 @@
 import { css } from "styled-components"
-import { registerStyle } from "@staccx/theme"
-import { Layout } from "@staccx/base"
+import { Layout, theming } from "@staccx/base"
 
-export const LayoutStyling = registerStyle(
+export const LayoutStyling = theming.createVariants(
   {
     verticalAlign: css`
       display: flex;

@@ -1,40 +1,32 @@
-import {
-  registerStyle,
-  color,
-  font,
-  fontWeight,
-  VARIANT_DEFAULT,
-  fontFamily
-} from "@staccx/theme"
 import { css } from "styled-components"
-import { Heading } from "@staccx/base"
+import { Heading, theming } from "@staccx/base"
 
-export default registerStyle(
+export default theming.createVariants(
   {
-    [VARIANT_DEFAULT]: css`
-      color: ${color("secondary")};
+    [theming.VARIANT_DEFAULT]: css`
+      color: ${theming.color("secondary")};
     `,
     secondary: css`
-      color: ${color("primary")};
+      color: ${theming.color("primary")};
     `,
     blue: css`
-      color: ${color("darkBlue")};
+      color: ${theming.color("darkBlue")};
     `,
     checkMarkBlockHeading: css`
-      color: ${color("darkBlue")};
-      font-size: ${font.h3};
-      font-weight: ${fontWeight.normal};
-      font-family: ${fontFamily.body};
+      color: ${theming.color("darkBlue")};
+      font-size: ${theming.font.h3};
+      font-weight: ${theming.fontWeight.normal};
+      font-family: ${theming.fontFamily.body};
       line-height: 1.2;
     `,
     preHeader: css`
-      font-size: ${font.base};
+      font-size: ${theming.font.base};
       line-height: 1;
-      color: ${color("secondary")};
+      color: ${theming.color("secondary")};
     `,
     orderStatus: css`
-      font-size: ${font.base};
-      color: ${color("wcag")};
+      font-size: ${theming.font.base};
+      color: ${theming.color("wcag")};
       text-align: center;
     `
   },
