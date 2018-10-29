@@ -1,8 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
-import { color, spacing, themify, ThemeComponent } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import { themePropTypes } from "../../../constants/themeContants"
+import ThemeComponent from "../../Theme/ThemeComponent"
+import { applyVariants, color, spacing } from "../../../theming"
 
 const DefaultLoading = ({ className, variant, ...rest }) => (
   <SignalSpinner className={className} variant={variant} {...rest} />
@@ -86,7 +87,7 @@ const SignalSpinner = styled.div`
   &::after {
     animation: ${spinnerBubble2} 2.6s ease-out 0s infinite;
   }
-  ${themify(themeProps.loading.name)};
+  ${applyVariants(themeProps.loading.name)};
 `
 
 Loading.propTypes = { className: PropTypes.string, variant: PropTypes.string }

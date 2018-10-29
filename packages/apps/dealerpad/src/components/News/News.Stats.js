@@ -6,7 +6,7 @@ import HackTotalSale from "./Hack/Hack.TotalSale"
 import Contact from "../Contact"
 
 const NewsStats = ({ article }) => (
-  <Box variant="statsFloor" size="flush">
+  <Box variant="statsFloor">
     <Wrapper>
       <Layout variant="stats">
         <LayoutItem variant="statsSelect" delay="500">

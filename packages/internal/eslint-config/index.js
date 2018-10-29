@@ -3,7 +3,10 @@ module.exports = {
   rules: {
     "react/prop-types": 0,
     "react/no-unused-prop-types": 0,
-    "new-cap": ["error", { newIsCapExceptions: ["i18n"] }]
+    "new-cap": [
+      "error",
+      { newIsCapExceptions: ["i18n"], capIsNewExceptions: ["Map"] }
+    ]
   },
   extends: [
     "standard",
@@ -14,6 +17,9 @@ module.exports = {
   ],
   globals: {
     sessionStorage: true,
-    localStorage: true
+    localStorage: true,
+    it: true,
+    describe: true,
+    expect: true
   }
 }

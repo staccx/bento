@@ -1,7 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import { color, ThemeComponent } from "@staccx/theme"
-import { hideVisually } from "@staccx/base"
+import { hideVisually, ThemeComponent, theming } from "@staccx/base"
 
 const CasesProgress = ({ progress, max, inverted }) => {
   const progressArray = [...Array(max)].map((e, index) => index < progress)
@@ -44,7 +43,8 @@ const Outer = styled.div`
     width: 100%;
     height: 2px;
     transform: translateY(-50%);
-    background-color: ${p => (p.inverted ? color("white") : color("concrete"))};
+    background-color: ${p =>
+      p.inverted ? theming.color("white") : theming.color("concrete")};
     z-index: 1;
   }
 `
@@ -58,17 +58,18 @@ const dotStyle = css`
 `
 
 const Completed = styled.div`
-  background-color: ${color("a3")};
+  background-color: ${theming.color("a3")};
   ${dotStyle};
 `
 
 const Current = styled.div`
-  background-color: ${color("a2")};
+  background-color: ${theming.color("a2")};
   ${dotStyle};
 `
 
 const Next = styled.div`
-  background-color: ${p => (p.inverted ? color("white") : color("concrete"))};
+  background-color: ${p =>
+    p.inverted ? theming.color("white") : theming.color("concrete")};
   ${dotStyle};
 `
 
@@ -78,7 +79,7 @@ const IconWrapper = styled.div`
     display: block;
     width: 100%;
     height: auto;
-    fill: ${color.white};
+    fill: ${theming.color.white};
   }
 `
 

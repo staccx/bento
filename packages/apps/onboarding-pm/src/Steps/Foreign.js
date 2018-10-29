@@ -13,7 +13,7 @@ import {
   Wrapper,
   Layout
 } from "@staccx/base"
-import { targetSize, color, spacing, fontFamily, font } from "@staccx/theme"
+import { theming } from "@staccx/base"
 import { countries } from "countries-list"
 
 const SelectCountry = ({ selectedItem, ...restProps }) => {
@@ -120,14 +120,14 @@ class Foreign extends Component {
 
 const SelectedCountry = styled.div`
   width: 100%;
-  min-height: ${targetSize.normal};
+  min-height: ${theming.targetSize.normal};
   margin: 0 auto;
-  border: 1px solid ${color.line};
-  padding: ${spacing.tiny} ${spacing.mediumPlus} ${spacing.tiny}
-    ${spacing.small};
+  border: 1px solid ${theming.color.line};
+  padding: ${theming.spacing.tiny} ${theming.spacing.mediumPlus}
+    ${theming.spacing.tiny} ${theming.spacing.small};
   text-align: left;
-  font-family: ${fontFamily.body()};
-  font-size: ${font.input};
+  font-family: ${theming.fontFamily.body()};
+  font-size: ${theming.font.input};
   pointer: cursor;
   transition: border-color 0.2s ease-out;
   display: flex;

@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { formatCurrency } from "@staccx/formatting"
-import { spacing, color, font, themify } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import { themePropTypes } from "../../../constants/themeContants"
+import { applyVariants, spacing, color, font } from "../../../theming"
 
 const KeyFigures = ({ figures }) => (
   <List>
@@ -46,7 +46,7 @@ const List = styled.ul`
   margin-bottom: 0;
   color: currentColor;
   padding: 0;
-  ${themify(KeyFigures.themeProps.list.name)};
+  ${applyVariants(KeyFigures.themeProps.list.name)};
 `
 
 const ListItem = styled.li`
@@ -65,18 +65,18 @@ const ListItem = styled.li`
     width: 1px;
     background-color: ${color.line};
   }
-  ${themify(KeyFigures.themeProps.item.name)};
+  ${applyVariants(KeyFigures.themeProps.item.name)};
 `
 
 const Heading = styled.h3`
   padding-bottom: ${spacing.tiny};
-  ${themify(KeyFigures.themeProps.heading.name)};
+  ${applyVariants(KeyFigures.themeProps.heading.name)};
 `
 
 const Value = styled.span`
   font-size: ${font.h2};
   color: ${color.blue};
-  ${themify(KeyFigures.themeProps.value.name)};
+  ${applyVariants(KeyFigures.themeProps.value.name)};
 `
 
 KeyFigures.propTypes = {

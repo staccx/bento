@@ -1,8 +1,7 @@
 import React from "react"
 import { createPortal } from "react-dom"
 import styled from "styled-components"
-import { Layout, Heading } from "@staccx/base"
-import { color, font, spacing, fontFamily } from "@staccx/theme"
+import { Layout, Heading, theming } from "@staccx/base"
 import Logo from "../Logo/Logo"
 import { SanityDocument } from "@staccx/sanity"
 import { Link } from "react-router-dom"
@@ -100,25 +99,25 @@ const FooterCompanyInfo = ({ heading }) => (
 )
 
 const Container = styled.div`
-  color: ${color("g2")};
+  color: ${theming.color("g2")};
 `
 
 const CompanyName = styled(Heading)`
-  font-size: ${font.h3};
+  font-size: ${theming.font.h3};
   font-weight: normal;
-  color: ${color.white};
-  margin-bottom: ${spacing.medium};
+  color: ${theming.color.white};
+  margin-bottom: ${theming.spacing.medium};
 `
 
 const FooterLink = styled(Link)`
   color: #929292;
   text-decoration: none;
-  font-family: ${fontFamily.heading};
+  font-family: ${theming.fontFamily.heading};
 
   &:hover,
   &:active,
   &:focus {
-    color: ${color.primary};
+    color: ${theming.color.primary};
   }
 `
 

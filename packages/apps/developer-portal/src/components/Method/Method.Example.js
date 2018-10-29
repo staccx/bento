@@ -5,7 +5,7 @@ const MethodExample = ({ code, language, type, path }) => {
   return (
     <Layout variant="documentationExample" rowGap="large">
       <div>
-        <Box variant="documentationTypePath" size="flush">
+        <Box variant="documentationTypePath">
           {type && (
             <Text variant="documentationOperationType" type={type}>
               {type}

@@ -1,8 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { spacing, wrapper, themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
+import { spacing, wrapper, applyVariants } from "../../../theming"
 
 /**
  * A Wrapper components that centers content and add spacing on the sides
@@ -37,8 +40,8 @@ const Wrap = styled.div`
   width: 100%;
   max-width: ${p => (p.size === "full" ? "none" : wrapper(p.size))};
   margin: 0 auto;
-  padding-left: ${spacing.medium()};
-  padding-right: ${spacing.medium()};
+  padding-left: ${spacing.medium};
+  padding-right: ${spacing.medium};
 
   & & {
     padding-left: 0;
@@ -53,7 +56,7 @@ const Wrap = styled.div`
         padding-right: 0;
       }
     `};
-  ${themify(Wrapper.themeProps.wrapper)};
+  ${applyVariants(Wrapper.themeProps.wrapper)};
 `
 
 Wrapper.defaultProps = {
@@ -63,7 +66,7 @@ Wrapper.defaultProps = {
 }
 
 Wrapper.propTypes = {
-  children: themeProps.children,
+  children: commonPropTypes.children,
   className: PropTypes.string,
   size: PropTypes.string,
   breakout: PropTypes.bool

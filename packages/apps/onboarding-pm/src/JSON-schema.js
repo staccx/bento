@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-import styled from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import { JsonSchema, Layout, Wrapper } from "@staccx/base"
-import { ThemeProxyProvider, spacing } from "@staccx/theme"
+import { theming } from "@staccx/base"
 import theme from "./theme.js"
 
 const schema = {
@@ -93,18 +93,18 @@ const uiSchema = {
 class App extends Component {
   render() {
     return (
-      <ThemeProxyProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <Wrapper size="medium">
           <Form schema={schema} uiSchema={uiSchema} />
         </Wrapper>
-      </ThemeProxyProvider>
+      </ThemeProvider>
     )
   }
 }
 
 const Form = styled(JsonSchema)`
   > div {
-    padding-top: ${spacing.large};
+    padding-top: ${theming.spacing.large};
     display: grid;
     grid-template-columns: 1fr;
     grid-column-gap: 24px;

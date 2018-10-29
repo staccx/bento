@@ -6,14 +6,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
-  themify,
+  applyVariants,
   font,
   spacing,
   fontFamily,
-  fontWeight,
-  themeProps
-} from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+  fontWeight
+} from "../../../theming"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
 
 const Label = ({ className, children, ...rest }) => (
   <LabelElement className={className} {...rest}>
@@ -36,7 +38,7 @@ const LabelElement = styled.label`
   line-height: 1.2;
   padding-bottom: ${spacing.tiny};
   display: block;
-  ${themify(Label.themeProps.label)};
+  ${applyVariants(Label.themeProps.label)};
 `
 
 Label.defaultProps = {
@@ -44,7 +46,7 @@ Label.defaultProps = {
 }
 
 Label.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   className: PropTypes.string
 }
 

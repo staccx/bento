@@ -1,18 +1,18 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import hideVisually from "../../Styles/hideVisually"
+import hideVisually from "../../theming/styles/hideVisually"
+import IconClose from "../Icons/Close"
+import { FadeIn } from "@staccx/animations"
+import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
 import {
   spacing,
   color,
   wrapper,
-  themify,
-  ThemeComponent,
+  applyVariants,
   borderRadius
-} from "@staccx/theme"
-import IconClose from "../Icons/Close"
-import { FadeIn } from "@staccx/animations"
-import themePropTypes from "../constants/themePropTypes"
+} from "../../theming"
+import ThemeComponent from "../Theme/ThemeComponent"
 
 class Modal extends Component {
   constructor(props) {
@@ -153,12 +153,11 @@ const ModalItem = styled.dialog`
     ". a a ."
     ". . . .";
   background: transparent;
-  padding: ${spacing.large()} ${spacing.small()} ${spacing.small()}
-    ${spacing.small()};
+  padding: ${spacing.large} ${spacing.small} ${spacing.small} ${spacing.small};
   &:focus {
     outline: none;
   }
-  ${themify(Modal.themeProps.dialog)};
+  ${applyVariants(Modal.themeProps.dialog)};
 `
 
 const ModalContent = styled.div`
@@ -177,7 +176,7 @@ const ModalContent = styled.div`
   &:focus {
     outline: none;
   }
-  ${themify(Modal.themeProps.content)};
+  ${applyVariants(Modal.themeProps.content)};
 `
 
 const Close = styled.button`
@@ -188,7 +187,7 @@ const Close = styled.button`
   background: transparent;
   border-width: 0;
   fill: ${color.primary};
-  padding: ${spacing.small()};
+  padding: ${spacing.small};
   cursor: pointer;
   &:focus,
   &:hover {
@@ -198,7 +197,7 @@ const Close = styled.button`
   span {
     ${hideVisually};
   }
-  ${themify(Modal.themeProps.close)};
+  ${applyVariants(Modal.themeProps.close)};
 `
 
 const ModalBackdrop = styled.div`
@@ -211,7 +210,7 @@ const ModalBackdrop = styled.div`
   background: rgba(0, 0, 0, 0.8);
   opacity: 0;
   animation: 0.2s ${FadeIn} ease-out forwards 1;
-  ${themify(Modal.themeProps.backdrop)};
+  ${applyVariants(Modal.themeProps.backdrop)};
 `
 
 const IconComponent = ({ ...props }) => (
@@ -230,7 +229,7 @@ Modal.defaultProps = {
 }
 
 Modal.propTypes = {
-  children: PropTypes.any.isRequired,
+  children: commonPropTypes.children.isRequired,
   className: PropTypes.string,
   isOpen: PropTypes.bool,
   onClose: PropTypes.func

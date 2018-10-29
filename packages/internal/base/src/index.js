@@ -29,6 +29,7 @@ import Text from "./components/Text/Text/Text"
 import Heading from "./components/Text/Heading/Heading"
 import Paragraph from "./components/Text/Paragraph/Paragraph"
 import Tag from "./components/Text/Tag/Tag"
+import Anchor from "./components/Anchor/Anchor"
 
 // Lists
 import List from "./components/Lists/List"
@@ -83,11 +84,13 @@ import Box from "./components/Layout/Box/Box"
 import Portal from "./components/Portal/Portal"
 
 // Styles
-import fontSmoothing from "./Styles/fontsmoothing"
-import hideVisually from "./Styles/hideVisually"
+import fontSmoothing from "./theming/styles/fontsmoothing"
+import hideVisually from "./theming/styles/hideVisually"
 
 // Themes
-import { default as BaseTheme } from "./theme/baseTheme"
+import * as theming from "./theming"
+import ThemeComponent from "./components/Theme/ThemeComponent"
+import GlobalStyle from "./components/Theme/GlobalStyle"
 
 // Formatters
 import Odometer from "./components/Formatters/Odometer/Odometer"
@@ -99,31 +102,41 @@ import JsonSchema from "./components/Forms/JsonSchema/JsonSchema"
 import Logo from "./components/Logo/Logo"
 
 // Pagination
-import Pagination from "./components/Pagination"
+import Pagination from "./hoc/Pagination/Pagination"
 
 // Code
 import CodeRenderer from "./components/Code/CodeRenderer"
 import Table from "./components/Table/Table"
-import Fetch from "./components/Fetch/Fetch"
-import Poll from "./components/Fetch/Poll"
-import CopyToClipboard from "./components/CopyToClipboard/CopyToClipboard"
+import Get from "./hoc/Request/Get"
+import Fetch from "./hoc/Request/Fetch"
+import Poll from "./hoc/Request/Poll"
+import CopyToClipboard from "./hoc/Clipboard/CopyToClipboard"
 import CopyToClipboardComponent from "./components/CopyToClipboard/CopyToClipboardComponent"
 
 // State
-import State from "./components/State/State"
+import State from "./hoc/State/State"
 
 // Wait
-import Wait from "./components/Wait/Wait"
+import Wait from "./hoc/Wait/Wait"
+
+// Feature Toggle
+import FeatureToggle from "./hoc/FeatureToggle/FeatureToggle"
+
+import BaseTheme from "./theming/baseTheme"
+
+import WebFonts from "./components/Theme/WebFonts"
 
 // Search
-import Search from "./components/Search/Search"
+import Search from "./hoc/Search/Search"
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
 export {
+  Anchor,
   AccountInput,
   Alert,
   BaseTheme,
+  theming,
   Box,
   Button,
   Caret,
@@ -142,7 +155,10 @@ export {
   EmailInput,
   Expand,
   ExpandListItem,
+  Get,
+  GlobalStyle,
   Fetch,
+  FeatureToggle,
   FileInput,
   Flag,
   fontSmoothing,
@@ -194,8 +210,10 @@ export {
   Table,
   Tag,
   Text,
+  ThemeComponent,
   Toggle,
   Wait,
   Warning,
+  WebFonts,
   Wrapper
 }

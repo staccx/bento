@@ -19,7 +19,7 @@ const EndScreen = ({
   }
 
   return (
-    <Box variant={variant} size="flush">
+    <Box variant={variant}>
       <Wrapper size={wrapperSize} variant={variant}>
         <Layout variant={variant}>
           {headingText && (

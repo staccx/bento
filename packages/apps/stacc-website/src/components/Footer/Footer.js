@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Wrapper, fontSmoothing } from "@staccx/base"
-import { spacing, color, wrapper, fontFamily } from "@staccx/theme"
+import { Wrapper, theming } from "@staccx/base"
 import FooterCompanyInfo from "./Footer.CompanyInfo"
 import FooterNavigation from "./Footer.Navigation"
 
@@ -21,24 +20,24 @@ const Footer = ({ heading, callToAction, openContactForm }) => (
 )
 
 const Container = styled.footer`
-  background-color: ${color("textDark")};
-  color: ${color.white};
-  padding: ${spacing.large} 0;
-  ${fontSmoothing};
-  font-family: ${fontFamily.heading};
+  background-color: ${theming.color("textDark")};
+  color: ${theming.color.white};
+  padding: ${theming.spacing.large} 0;
+  ${theming.fontSmoothing};
+  font-family: ${theming.fontFamily.heading};
 `
 
 const Content = styled.div`
   display: flex;
   flex-direction: column-reverse;
 
-  @media only screen and (max-width: ${wrapper.medium}) {
+  @media only screen and (max-width: ${theming.wrapper.medium}) {
     > div:last-child {
-      margin-bottom: ${spacing.large};
+      margin-bottom: ${theming.spacing.large};
     }
   }
 
-  @media only screen and (min-width: ${wrapper.medium}) {
+  @media only screen and (min-width: ${theming.wrapper.medium}) {
     flex-direction: row;
     justify-content: space-between;
 

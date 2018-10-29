@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Heading, Divider } from "@staccx/base"
-import { spacing, color, font, wrapper } from "@staccx/theme"
+import { Heading, Divider, theming } from "@staccx/base"
 import IconCheck from "../Icons/IconCheck"
 
 const FeatureList = ({ items }) => (
@@ -41,7 +40,7 @@ const IconContainer = styled.div`
 
 const DividerContainer = styled.div`
   grid-area: top;
-  padding-bottom: ${spacing.small};
+  padding-bottom: ${theming.spacing.small};
 `
 
 const HeadingContainer = styled.div`
@@ -53,12 +52,12 @@ const Content = styled.div`
 `
 
 const Features = styled.ul`
-  padding-left: ${spacing.medium};
+  padding-left: ${theming.spacing.medium};
   > li {
-    margin-bottom: ${spacing.medium};
+    margin-bottom: ${theming.spacing.medium};
   }
 
-  @media only screen and (min-width: ${wrapper.medium}) {
+  @media only screen and (min-width: ${theming.wrapper.medium}) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -69,12 +68,12 @@ const Features = styled.ul`
       flex-grow: 1;
 
       &:nth-child(odd) {
-        margin-right: ${spacing.large};
+        margin-right: ${theming.spacing.large};
       }
     }
   }
 
-  @media only screen and (min-width: ${wrapper.large}) {
+  @media only screen and (min-width: ${theming.wrapper.large}) {
     padding-left: 0;
   }
 `
@@ -82,8 +81,8 @@ const Features = styled.ul`
 const H = styled(Heading)``
 
 const Body = styled.p`
-  color: ${color.wcag};
-  font-size: ${font.small};
+  color: ${theming.color.wcag};
+  font-size: ${theming.font.small};
 `
 
 const Header = styled.div`

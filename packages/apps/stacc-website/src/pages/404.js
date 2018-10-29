@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing } from "@staccx/theme"
-import { Heading, Wrapper } from "@staccx/base"
+import { Heading, Wrapper, theming } from "@staccx/base"
 import FullWidth from "../components/FullWidth/FullWidth"
 
 const FourOFour = () => (
@@ -25,9 +24,9 @@ const Container = styled.div`
 
 const Outer = styled.div`
   min-height: 100vh;
-  padding: ${spacing("grid")} 0;
-  background-color: ${color.primary};
-  color: ${color.white};
+  padding: ${theming.spacing("grid")} 0;
+  background-color: ${theming.color.primary};
+  color: ${theming.color.white};
 
   display: flex;
   justify-content: center;
@@ -36,12 +35,12 @@ const Outer = styled.div`
 
 const ErrorCode = styled(Heading)`
   font-size: 15vw;
-  color: ${color.white};
+  color: ${theming.color.white};
 `
 
 const Message = styled(Heading)`
   font-size: 5vw;
-  color: ${color.white};
+  color: ${theming.color.white};
 `
 
 export default FourOFour

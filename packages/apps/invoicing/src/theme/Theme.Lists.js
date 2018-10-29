@@ -1,17 +1,16 @@
 import { css } from "styled-components"
-import { color, spacing, registerStyle } from "@staccx/theme"
-import { List } from "@staccx/base"
+import { List, theming } from "@staccx/base"
 
-export const ListStyling = registerStyle(
+export const ListStyling = theming.createVariants(
   {
     invoiceCalculation: css`
       li {
         display: flex;
         justify-content: space-between;
-        margin-bottom: ${spacing.tiny};
+        margin-bottom: ${theming.spacing.tiny};
 
         > span:last-child {
-          margin-left: ${spacing.medium};
+          margin-left: ${theming.spacing.medium};
           text-align: right;
         }
       }

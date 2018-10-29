@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
-import { color, spacing } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const Spinner = ({ className }) => <SignalSpinner className={className} />
 
@@ -38,8 +38,8 @@ const SignalSpinner = styled.div`
   transform: translate(-50%, -50%);
   display: block;
   width: 100%;
-  height: ${spacing.large};
-  color: ${color.primary};
+  height: ${theming.spacing.large};
+  color: ${theming.color.primary};
 
   &::before,
   &::after {

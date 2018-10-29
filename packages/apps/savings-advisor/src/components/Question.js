@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import styled, { keyframes } from "styled-components"
-import { RadioButton, Wrapper } from "@staccx/base"
-import { font, color, spacing, wrapper } from "@staccx/theme"
+import { RadioButton, Wrapper, theming } from "@staccx/base"
 import QuestionLead from "./QuestionLead"
 import ShortTerm from "../components/icons/ShortTerm"
 import Umbrella from "../components/icons/Umbrella"
@@ -113,7 +112,7 @@ const Inner = styled.div`
     animation-fill-mode: forwards;
   }
 
-  @media (max-width: ${wrapper.medium}) {
+  @media (max-width: ${theming.wrapper.medium}) {
     grid-auto-rows: 200px;
 
     &:after {
@@ -123,9 +122,9 @@ const Inner = styled.div`
 `
 
 const Heading = styled.h4`
-  color: ${color.primary};
-  font-size: ${font.h3};
-  margin-bottom: ${spacing.small};
+  color: ${theming.color.primary};
+  font-size: ${theming.font.h3};
+  margin-bottom: ${theming.spacing.small};
 `
 
 const AnswerBox = styled.label`
@@ -138,14 +137,14 @@ const AnswerBox = styled.label`
   &:active,
   & input:focus ~ {
     label::before {
-      border-color: ${color.secondary} !important;
+      border-color: ${theming.color.secondary} !important;
     }
     ${Heading} {
-      color: ${color.secondary};
+      color: ${theming.color.secondary};
     }
   }
 
-  @media (min-width: ${wrapper.medium}) {
+  @media (min-width: ${theming.wrapper.medium}) {
     display: flex;
     align-items: center;
   }
@@ -158,7 +157,7 @@ const AdvisorRadio = styled(RadioButton)`
     position: static;
     display: inline-block;
     width: 100%;
-    padding-left: ${spacing.large};
+    padding-left: ${theming.spacing.large};
 
     &::before,
     &::after {
@@ -166,7 +165,7 @@ const AdvisorRadio = styled(RadioButton)`
       left: auto;
       right: 48px;
       transform: translateY(-50%);
-      border-color: ${color.primary};
+      border-color: ${theming.color.primary};
       border-width: 2px;
     }
 
@@ -176,11 +175,11 @@ const AdvisorRadio = styled(RadioButton)`
     }
 
     &::after {
-      background-color: ${color.secondary};
+      background-color: ${theming.color.secondary};
       transform: translate(-4px, -50%) scale(0);
     }
 
-    @media (max-width: ${wrapper.medium}) {
+    @media (max-width: ${theming.wrapper.medium}) {
       padding: 0;
 
       &::before,
@@ -201,14 +200,14 @@ const AdvisorRadio = styled(RadioButton)`
     &:active,
     &:hover {
       & label::before {
-        border-color: ${color.white} !important;
+        border-color: ${theming.color.white} !important;
       }
     }
   }
 
-  @media (min-width: ${wrapper.medium}) {
+  @media (min-width: ${theming.wrapper.medium}) {
     width: 75%;
-    padding: 0 ${spacing.huge} 0 0;
+    padding: 0 ${theming.spacing.huge} 0 0;
   }
 `
 
@@ -216,7 +215,7 @@ const Image = styled.div`
   svg {
     max-width: 100%;
 
-    @media (max-width: ${wrapper.medium}) {
+    @media (max-width: ${theming.wrapper.medium}) {
       width: 48px;
     }
   }

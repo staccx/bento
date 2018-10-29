@@ -1,9 +1,13 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import hideVisually from "../../../../Styles/hideVisually"
+import hideVisually from "../../../../theming/styles/hideVisually"
+import Upload from "../../../Icons/Upload"
 import {
-  themify,
+  commonPropTypes,
+  themePropTypes
+} from "../../../../constants/themeContants"
+import {
   color,
   font,
   spacing,
@@ -11,11 +15,9 @@ import {
   fontFamily,
   borderRadius,
   fontWeight,
-  themeProps,
-  ThemeComponent
-} from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
-import Upload from "../../../Icons/Upload"
+  applyVariants
+} from "../../../../theming"
+import ThemeComponent from "../../../Theme/ThemeComponent"
 const tinycolor = require("tinycolor2")
 
 class FileInput extends Component {
@@ -115,12 +117,12 @@ FileInput.themeProps = {
 }
 
 const FileWrapper = styled.div`
-  ${themify(FileInput.themeProps.wrapper)};
+  ${applyVariants(FileInput.themeProps.wrapper)};
 `
 
 const Input = styled.input`
   ${hideVisually};
-  ${themify(FileInput.themeProps.input)};
+  ${applyVariants(FileInput.themeProps.input)};
 `
 
 const Label = styled.label`
@@ -175,7 +177,7 @@ const Label = styled.label`
         .toString()};
   }
 
-  ${themify(FileInput.themeProps.label)};
+  ${applyVariants(FileInput.themeProps.label)};
 `
 
 const IconComponent = ({ ...props }) => (
@@ -191,12 +193,12 @@ export const Icon = styled(IconComponent)`
   height: 12px;
   width: 12px;
   margin-right: 3px;
-  ${themify(FileInput.themeProps.icon)};
+  ${applyVariants(FileInput.themeProps.icon)};
 `
 
 FileInput.propTypes = {
   accept: PropTypes.string,
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
   input: PropTypes.any,

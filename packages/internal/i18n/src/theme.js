@@ -1,6 +1,4 @@
-import { Theme } from "@staccx/theme"
-import { BaseTheme } from "@staccx/base"
-import reset from "./reset"
+import { theming } from "@staccx/base"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -65,16 +63,16 @@ const fontFamily = {
   body: "Libre Franklin"
 }
 
-const theme = new Theme(BaseTheme, {
-  font,
-  color,
-  spacing,
-  wrapper,
-  targetSize,
-  borderRadius,
-  headerHeight,
-  fontFamily,
-  global: reset
-})
-
-export default theme.get
+export default new theming.Theme(
+  {},
+  {
+    font,
+    color,
+    spacing,
+    wrapper,
+    targetSize,
+    borderRadius,
+    headerHeight,
+    fontFamily
+  }
+)

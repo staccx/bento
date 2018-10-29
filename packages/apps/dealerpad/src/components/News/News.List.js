@@ -1,13 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { Box, List, Layout } from "@staccx/base"
-import { ThemeComponent } from "@staccx/theme"
+import { Box, List, Layout, ThemeComponent } from "@staccx/base"
 import { IconWrapper } from "../Cases/Cases.List"
 
 const NewsList = ({ articles }) => (
   <Layout rowGap="small">
-    <Box size="flush">
+    <Box>
       <List variant="newsList" ordered>
         {articles.map(article => (
           <li key={article.actionUrl}>

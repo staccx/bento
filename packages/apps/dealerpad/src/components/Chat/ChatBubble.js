@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { color, spacing, font } from "@staccx/theme"
-import { Flag, fontSmoothing } from "@staccx/base"
+import { Flag, fontSmoothing, theming } from "@staccx/base"
 import AvatarInitials from "./AvatarInitials"
 import { SlideInFromLeft } from "@staccx/animations"
 import { formatDate } from "@staccx/formatting"
@@ -34,21 +33,21 @@ const AnimatedFlag = styled(Flag)`
 const Bubble = styled.div`
   background-color: ${p =>
     p.currentUser
-      ? color("chatBubbleBgCurrentUser")
-      : color("chatBubbleBgOtherUser")};
+      ? theming.color("chatBubbleBgCurrentUser")
+      : theming.color("chatBubbleBgOtherUser")};
   color: ${p =>
     p.currentUser
-      ? color("chatBubbleBgCurrentUserText")
-      : color("chatBubbleBgOtherUserText")};
-  padding: ${spacing.small};
-  font-size: ${font.tiny};
+      ? theming.color("chatBubbleBgCurrentUserText")
+      : theming.color("chatBubbleBgOtherUserText")};
+  padding: ${theming.spacing.small};
+  font-size: ${theming.font.tiny};
   border-radius: 4px;
   ${fontSmoothing};
 `
 
 const Time = styled.div`
   font-size: 10px;
-  margin-top: ${spacing.tiny};
+  margin-top: ${theming.spacing.tiny};
 `
 
 export default ChatBubble

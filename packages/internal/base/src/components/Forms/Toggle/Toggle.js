@@ -1,8 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { targetSize, spacing, color, themify } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
+import { targetSize, spacing, color, applyVariants } from "../../../theming"
 
 const Toggle = ({
   children,
@@ -57,10 +60,10 @@ Toggle.themeProps = {
 
 const ToggleWrapper = styled.label`
   min-height: ${targetSize.normal};
-  padding-top: ${spacing.tiny()};
-  padding-bottom: ${spacing.tiny()};
+  padding-top: ${spacing.tiny};
+  padding-bottom: ${spacing.tiny};
   display: block;
-  ${themify(Toggle.themeProps.wrapper)};
+  ${applyVariants(Toggle.themeProps.wrapper)};
 `
 
 const ToggleElement = styled.div`
@@ -78,7 +81,7 @@ const ToggleElement = styled.div`
     background: ${color.white};
     transition: all 0.2s ease;
   }
-  ${themify(Toggle.themeProps.toggleElement)};
+  ${applyVariants(Toggle.themeProps.toggleElement)};
 `
 
 const ToggleInput = styled.input`
@@ -133,9 +136,9 @@ const ToggleInput = styled.input`
     &:after {
       transform: translateX(100%);
     }
-    ${themify(Toggle.themeProps.checked)};
+    ${applyVariants(Toggle.themeProps.checked)};
   }
-  ${themify(Toggle.themeProps.input)};
+  ${applyVariants(Toggle.themeProps.input)};
 `
 
 Toggle.propTypes = {
@@ -146,7 +149,7 @@ Toggle.propTypes = {
   onChange: PropTypes.func,
   className: PropTypes.string,
   defaultChecked: PropTypes.bool,
-  children: PropTypes.any
+  children: commonPropTypes.children
 }
 
 Toggle.defaultProps = {

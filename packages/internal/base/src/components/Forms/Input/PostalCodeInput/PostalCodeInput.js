@@ -4,9 +4,15 @@ import PropTypes from "prop-types"
 import Input, { InputPropTypes } from "../Input"
 import { postalCodeMasks } from "../masks"
 import Loading from "../../../DataViz/Loading/Loading"
-import { spacing, targetSize, color, font, themify } from "@staccx/theme"
 import { FadeIn } from "@staccx/animations"
-import themePropTypes from "../../../constants/themePropTypes"
+import {
+  applyVariants,
+  spacing,
+  targetSize,
+  color,
+  font
+} from "../../../../theming"
+import { themePropTypes } from "../../../../constants/themeContants"
 
 /**
  * Input for Norwegian Postal codes. Adds PostalPlace according to the number. Input is imported from Input-component
@@ -99,7 +105,7 @@ const PostalInputWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  ${themify(PostalCodeInput.themeProps.wrapper)};
+  ${applyVariants(PostalCodeInput.themeProps.wrapper)};
 `
 
 const Location = styled.div`
@@ -112,12 +118,12 @@ const Location = styled.div`
   color: ${p => (p.valid ? color("wcag")(p) : color("warning")(p))};
   opacity: 0;
   animation: ${FadeIn} 0.8s ease-out forwards 1;
-  ${themify(PostalCodeInput.themeProps.location)};
+  ${applyVariants(PostalCodeInput.themeProps.location)};
 `
 
 const PostalInput = styled(Input)`
   width: 5em;
-  ${themify(PostalCodeInput.themeProps.input)};
+  ${applyVariants(PostalCodeInput.themeProps.input)};
 `
 
 // TODO: debounce calls?

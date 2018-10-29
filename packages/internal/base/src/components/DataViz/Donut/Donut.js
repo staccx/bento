@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { color, themify } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import { applyVariants, color } from "../../../theming"
+import { themePropTypes } from "../../../constants/themeContants"
 
 const Donut = ({ progress, className, warningThreshold, ...rest }) => {
   const dash = 57
@@ -53,12 +53,12 @@ Donut.themeProps = {
 
 const Wrapper = styled.svg`
   transform: rotateY(180deg);
-  ${themify(Donut.themeProps.donut.name)};
+  ${applyVariants(Donut.themeProps.donut.name)};
 `
 
 const Bg = styled.circle`
   stroke: ${color.line};
-  ${themify(Donut.themeProps.donutBackground.name)};
+  ${applyVariants(Donut.themeProps.donutBackground.name)};
 `
 
 const Value = styled.circle`
@@ -66,7 +66,7 @@ const Value = styled.circle`
     p.progress >= p.warningThreshold ? color.warning : color.primary};
   stroke-dasharray: ${p => p.dash};
   stroke-dashoffset: ${p => p.dashoffset};
-  ${themify(Donut.themeProps.donutValue.name)};
+  ${applyVariants(Donut.themeProps.donutValue.name)};
 `
 
 Donut.defaultProps = {

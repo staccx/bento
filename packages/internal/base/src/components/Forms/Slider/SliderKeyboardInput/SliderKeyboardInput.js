@@ -6,8 +6,14 @@ import { inverseLerp, clamp } from "@staccx/math"
 import Label from "../../Label/Label"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
-import { targetSize, fontFamily, font, color, themify } from "@staccx/theme"
-import themePropTypes from "../../../constants/themePropTypes"
+import { themePropTypes } from "../../../../constants/themeContants"
+import {
+  applyVariants,
+  targetSize,
+  fontFamily,
+  font,
+  color
+} from "../../../../theming"
 
 const removeSpaces = value => value.replace(/\s/g, "")
 
@@ -178,9 +184,9 @@ SliderKeyboardInput.themeProps = {
 }
 
 const SliderWrapper = styled.div`
-  font-family: ${fontFamily.body()};
+  font-family: ${fontFamily.body};
   font-size: ${font.input};
-  ${themify(SliderKeyboardInput.themeProps.wrapper)};
+  ${applyVariants(SliderKeyboardInput.themeProps.wrapper)};
 `
 
 const SliderInput = styled(Input)`
@@ -209,7 +215,7 @@ const SliderInput = styled(Input)`
   &:disabled {
     color: ${color.text};
   }
-  ${themify(SliderKeyboardInput.themeProps.input)};
+  ${applyVariants(SliderKeyboardInput.themeProps.input)};
 `
 
 SliderKeyboardInput.defaultProps = {

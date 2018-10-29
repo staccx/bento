@@ -8,7 +8,8 @@
     "styleguide": "cd packages/base && styleguidist server",
     "start": "cd packages/internal/styleguide && yarn start",
     "soy": "node packages/internal/soy",
-    "release": "lerna publish --no-verify-access --no-verify-registry --conventional-commits"
+    "release": "lerna publish --no-verify-access --no-verify-registry --conventional-commits",
+    "clean": "rm -rf node_modules && rm yarn.lock && lerna clean --yes && lerna bootstrap && lerna run build"
   },
   "repository": {
     "type": "git",
@@ -45,7 +46,7 @@
     "prettier": "^1.13.7"
   },
   "dependencies": {
-    "react": "^16.3.2",
-    "styled-components": "^3.3.3"
+    "react": "^16.6.0",
+    "styled-components": "^4.0.2"
   }
 }

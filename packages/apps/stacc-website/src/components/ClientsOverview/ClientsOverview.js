@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { spacing } from "@staccx/theme"
+import { theming } from "@staccx/base"
 import ClientsOverviewItem from "./ClientsOverview.Item"
 
 const ClientsOverview = ({ items }) => (
@@ -21,8 +21,8 @@ const ClientsOverview = ({ items }) => (
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-row-gap: ${spacing.large};
-  grid-column-gap: ${spacing.large};
+  grid-row-gap: ${theming.spacing.large};
+  grid-column-gap: ${theming.spacing.large};
 `
 
 export default ClientsOverview

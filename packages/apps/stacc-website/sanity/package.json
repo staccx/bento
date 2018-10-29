@@ -1,0 +1,37 @@
+{
+  "name": "companywebsitetemplate",
+  "private": true,
+  "version": "8.0.0-alpha.1",
+  "description": "",
+  "main": "package.json",
+  "author": "Espen Thomassen Sæveru <espensaeverud@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "test": "sanity check"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^0.134.0",
+    "@sanity/client": "^0.135.0",
+    "@sanity/components": "^0.134.0",
+    "@sanity/core": "^0.134.0",
+    "@sanity/default-layout": "^0.134.0",
+    "@sanity/default-login": "^0.134.0",
+    "@sanity/desk-tool": "^0.134.0",
+    "@sanity/google-maps-input": "^0.134.0",
+    "@sanity/production-preview": "^0.134.0",
+    "@staccx/base": "^7.15.0",
+    "airtable": "^0.5.6",
+    "image-downloader": "^3.4.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "sanity-query-helper": "^0.3.0",
+    "shortid": "^2.2.13"
+  },
+  "devDependencies": {
+    "react-icons": "^3.1.0"
+  }
+}

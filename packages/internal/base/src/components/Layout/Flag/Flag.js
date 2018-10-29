@@ -1,8 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { spacing, themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
+import { applyVariants, spacing } from "../../../theming"
 
 /**
  * The flag object is a design pattern similar to the media object, however it
@@ -52,7 +55,7 @@ const FlagImg = styled.div`
   display: table-cell;
   width: 1px;
   vertical-align: middle;
-  padding-right: ${spacing.medium()};
+  padding-right: ${spacing.medium};
   > img {
     max-width: none;
   }
@@ -80,28 +83,28 @@ const reverse = css`
 
   > ${FlagImg} {
     padding-right: 0;
-    padding-left: ${spacing.medium()};
+    padding-left: ${spacing.medium};
   }
 `
 
 const reverseLarge = css`
   > ${FlagImg} {
     padding-right: 0;
-    padding-left: ${spacing.large()};
+    padding-left: ${spacing.large};
   }
 `
 
 const reverseSmall = css`
   > ${FlagImg} {
     padding-right: 0;
-    padding-left: ${spacing.small()};
+    padding-left: ${spacing.small};
   }
 `
 
 const reverseTiny = css`
   > ${FlagImg} {
     padding-right: 0;
-    padding-left: ${spacing.tiny()};
+    padding-left: ${spacing.tiny};
   }
 `
 
@@ -126,21 +129,21 @@ const flush = css`
 
 const large = css`
   > ${FlagImg} {
-    padding-right: ${spacing.large()};
+    padding-right: ${spacing.large};
   }
   ${props => (props.reverse ? reverseLarge : null)};
 `
 
 const small = css`
   > ${FlagImg} {
-    padding-right: ${spacing.small()};
+    padding-right: ${spacing.small};
   }
   ${props => (props.reverse ? reverseSmall : null)};
 `
 
 const tiny = css`
   > ${FlagImg} {
-    padding-right: ${spacing.tiny()};
+    padding-right: ${spacing.tiny};
   }
   ${props => (props.reverse ? reverseTiny : null)};
 `
@@ -155,7 +158,7 @@ const responsive = css`
     }
     > ${FlagImg} {
       width: auto;
-      padding-bottom: ${spacing.medium()};
+      padding-bottom: ${spacing.medium};
     }
 
     ${FlagImg} > img {
@@ -176,7 +179,7 @@ const FlagObject = styled.div`
   ${props => (props.small ? small : null)};
   ${props => (props.tiny ? tiny : null)};
   ${props => (props.responsive > 0 ? responsive : null)};
-  ${themify(Flag.themeProps.object)};
+  ${applyVariants(Flag.themeProps.object)};
 `
 
 Flag.defaultProps = {
@@ -192,8 +195,8 @@ Flag.defaultProps = {
 }
 
 Flag.propTypes = {
-  children: themeProps.children.isRequired,
-  img: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
+  img: commonPropTypes.children.isRequired,
   className: PropTypes.string,
   reverse: PropTypes.bool,
   top: PropTypes.bool,

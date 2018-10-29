@@ -2,14 +2,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
-  spacing,
-  color,
-  targetSize,
+  themePropTypes,
+  commonPropTypes
+} from "../../../constants/themeContants"
+import {
+  applyVariants,
   font,
-  themify,
-  themeProps
-} from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+  color,
+  spacing,
+  targetSize
+} from "../../../theming"
 
 const Tag = ({ children, className, variant, ...rest }) => (
   <TagWrapper className={className} variant={variant} {...rest}>
@@ -34,7 +36,7 @@ const TagWrapper = styled.span`
   background-color: ${color.subtleHover};
   color: ${color.primary};
   min-height: ${spacing.medium};
-  ${themify(Tag.themeProps.tag)};
+  ${applyVariants(Tag.themeProps.tag)};
 `
 
 Tag.defaultProps = {
@@ -42,7 +44,7 @@ Tag.defaultProps = {
 }
 
 Tag.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   className: PropTypes.string,
   variant: PropTypes.string
 }

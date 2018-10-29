@@ -1,5 +1,4 @@
-import { Theme } from "@staccx/theme"
-import { BaseTheme } from "@staccx/base"
+import { BaseTheme, theming } from "@staccx/base"
 import { InputStyling } from "./Theme.Inputs"
 import { ListStyling } from "./Theme.Lists"
 import { ItemGroupWrapperStyling, ItemGroupStyling } from "./Theme.ItemGroup"
@@ -74,7 +73,7 @@ const fontFamily = {
   body: "Libre Franklin"
 }
 
-const theme = new Theme(BaseTheme, {
+const theme = new theming.Theme(BaseTheme, {
   name: "invoicing",
   font,
   webfonts,

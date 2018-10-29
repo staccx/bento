@@ -6,9 +6,9 @@ import {
   Heading,
   Box,
   List,
-  SplitListItem
+  SplitListItem,
+  theming
 } from "@staccx/base"
-import { color, spacing, font } from "@staccx/theme"
 import styled from "styled-components"
 import Back from "../components/Back"
 
@@ -62,9 +62,9 @@ const Prices = ({ history }) => (
 )
 
 const SubHeading = styled.h3`
-  color: ${color.primary};
-  font-size: ${font.h3};
-  margin-bottom: ${spacing.small};
+  color: ${theming.color.primary};
+  font-size: ${theming.font.h3};
+  margin-bottom: ${theming.spacing.small};
 `
 
 export default Prices

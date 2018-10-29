@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { color, themify } from "@staccx/theme"
-import themePropTypes from "../constants/themePropTypes"
+import { color, applyVariants } from "../../theming"
+import { themePropTypes } from "../../constants/themeContants"
 
 const themeProps = {
   wrapper: {
@@ -62,7 +62,7 @@ const CodeWrapper = styled.pre`
   .attr-name {
     color: ${color("codeHTMLAttrName")};
   }
-  . ${themify(themeProps.wrapper.name)};
+  . ${applyVariants(themeProps.wrapper.name)};
 `
 
 CodeWrapper.themeProps = themeProps

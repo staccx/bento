@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../constants/themePropTypes"
+import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
+import { applyVariants } from "../../theming"
 
 const Image = ({
   src,
@@ -67,7 +67,7 @@ export const IMAGE_CONTAINER = "IMAGE_CONTAINER"
 
 export const Img = styled.img`
   ${p => p.round && "border-radius: 50%"};
-  ${themify(Image.themeProps.image)};
+  ${applyVariants(Image.themeProps.image)};
 `
 
 export const CroppedImg = styled(Img)`
@@ -88,7 +88,7 @@ export const CropContainer = styled.div`
   min-width: 100px;
   ${p => p.width && "width: " + p.width + "px"};
   ${p => p.round && "border-radius: 50%"};
-  ${themify(Image.themeProps.container)};
+  ${applyVariants(Image.themeProps.container)};
 `
 
 Image.defaultProps = {
@@ -99,9 +99,9 @@ Image.defaultProps = {
 }
 
 Image.propTypes = {
-  children: themeProps.children,
+  children: commonPropTypes.children,
   className: PropTypes.string,
-  size: themeProps.spacing,
+  size: commonPropTypes.spacing,
   round: PropTypes.bool,
   aspectRatio: PropTypes.string
 }

@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { spacing, themify } from "@staccx/theme"
+import { applyVariants, spacing } from "../../../theming"
+import { commonPropTypes } from "../../../constants/themeContants"
 
 const PackItem = ({ className, children, ...rest }) => (
   <ListItem className={className} {...rest}>
@@ -12,8 +13,8 @@ const PackItem = ({ className, children, ...rest }) => (
 export const PACK_ITEM = "PACK_ITEM"
 const ListItem = styled.li`
   display: inline-block;
-  padding: ${spacing.small()};
-  ${themify(PACK_ITEM)};
+  padding: ${spacing.small};
+  ${applyVariants(PACK_ITEM)};
 `
 
 PackItem.defaultProps = {
@@ -21,7 +22,7 @@ PackItem.defaultProps = {
 }
 
 PackItem.propTypes = {
-  children: PropTypes.any.isRequired,
+  children: commonPropTypes.children.isRequired,
   className: PropTypes.string
 }
 

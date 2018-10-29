@@ -1,17 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
+import selectThemeProps from "./Select.themeProps"
 import {
+  applyVariants,
   borderRadius,
   targetSize,
   spacing,
   fontFamily,
   font,
-  color,
-  themeProps,
-  themify
-} from "@staccx/theme"
-import selectThemeProps from "./Select.themeProps"
+  color
+} from "../../../theming"
+import { commonPropTypes } from "../../../constants/themeContants"
 
 const SelectOption = ({ children, isSelected, variant, ...restProps }) => {
   return (
@@ -61,7 +61,7 @@ const OptionContainer = styled.button`
     outline: none;
     background-color: ${color.subtleHover};
   }
-  ${themify(selectThemeProps.optionContainer)};
+  ${applyVariants(selectThemeProps.optionContainer)};
 `
 
 SelectOption.defaultProps = {
@@ -69,7 +69,7 @@ SelectOption.defaultProps = {
 }
 
 SelectOption.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   isSelected: PropTypes.bool
 }
 

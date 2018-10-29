@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { ScaleInX } from "@staccx/animations"
-import { spacing, font, color, themify } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import { themePropTypes } from "../../../constants/themeContants"
+import { applyVariants, color, spacing, font } from "../../../theming"
 
 const ProgressBar = ({
   progress,
@@ -58,7 +58,7 @@ const Bg = styled.div`
     black
   ); /* to remove transition-bug */
 
-  ${themify(themeProps.background.name)};
+  ${applyVariants(themeProps.background.name)};
 `
 
 const Bar = styled.div`
@@ -73,7 +73,7 @@ const Bar = styled.div`
   animation: ${ScaleInX} 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 1
     forwards;
   transform-origin: left center;
-  ${themify(themeProps.bar.name)};
+  ${applyVariants(themeProps.bar.name)};
 `
 
 const Progress = styled.span`
@@ -82,7 +82,7 @@ const Progress = styled.span`
   line-height: 18px;
   font-size: ${font.tiny};
   color: ${color.white};
-  ${themify(themeProps.progress.name)};
+  ${applyVariants(themeProps.progress.name)};
 `
 
 ProgressBar.defaultProps = {

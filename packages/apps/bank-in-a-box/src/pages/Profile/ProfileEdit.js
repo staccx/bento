@@ -9,9 +9,9 @@ import {
   Wrapper,
   Box,
   Heading,
-  Flag
+  Flag,
+  theming
 } from "@staccx/base"
-import { spacing } from "@staccx/theme"
 import customer from "../../data/customer"
 import Back from "../../components/Back"
 
@@ -58,8 +58,8 @@ const ProfileEdit = ({ history }) => (
 
 const InputContent = styled.div`
   display: grid;
-  grid-column-gap: ${spacing.small};
-  grid-row-gap: ${spacing.small};
+  grid-column-gap: ${theming.spacing.small};
+  grid-row-gap: ${theming.spacing.small};
   grid-template-columns: auto 110px;
 `
 

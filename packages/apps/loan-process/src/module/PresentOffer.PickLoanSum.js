@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { withFormik } from "formik"
 import { Alert, CurrencyInput, RadioButton, Box } from "@staccx/base"
 import { formatCurrency, removeWhitespace } from "@staccx/formatting"
@@ -109,10 +109,12 @@ const PickLoanSum = props => {
 
 const PickAmounts = styled.div`
   overflow: hidden;
-  ${props =>
+  animation: ${props =>
     props.visible
-      ? "animation: .4s " + BounceIn + " .05s ease-out forwards 1;"
-      : "animation: .4s " + BounceOut + ".05s ease-out forwards 1;"};
+      ? css` 
+        0.4s ${BounceIn} .05s ease-out forwards 1
+      `
+      : css`.4s ${BounceOut} .05s ease-out forwards 1`};
 `
 
 const UserDefinedAmount = styled(Box)`

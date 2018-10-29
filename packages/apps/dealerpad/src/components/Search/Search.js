@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { ThemeComponent, spacing } from "@staccx/theme"
-import { Input, Box } from "@staccx/base"
+import { Input, Box, ThemeComponent, theming } from "@staccx/base"
 
 const Search = ({ placeholder }) => (
   <Box variant="mainSearch">
@@ -21,15 +20,15 @@ const Search = ({ placeholder }) => (
 const IconWrapper = styled.div`
   position: absolute;
   top: 50%;
-  left: ${spacing.small};
+  left: ${theming.spacing.small};
   z-index: 5;
   transform: translateY(-50%);
   pointer-events: none;
 
   svg {
     display: block;
-    width: ${spacing.medium};
-    height: ${spacing.medium};
+    width: ${theming.spacing.medium};
+    height: ${theming.spacing.medium};
   }
 `
 

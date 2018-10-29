@@ -2,15 +2,10 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { BounceIn } from "@staccx/animations"
-import {
-  themify,
-  ThemeComponent,
-  spacing,
-  color,
-  themeProps
-} from "@staccx/theme"
 import Caret from "../Icons/Caret"
-import themePropTypes from "../constants/themePropTypes"
+import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
+import ThemeComponent from "../Theme/ThemeComponent"
+import { applyVariants, color, spacing } from "../../theming"
 
 class Expand extends Component {
   constructor(props) {
@@ -126,7 +121,7 @@ const IconComponent = ({ ...props }) => (
 
 const ExpandIcon = styled(IconComponent)`
   position: absolute;
-  right: ${spacing.small()};
+  right: ${color.small};
   top: 50%;
   fill: ${color.wcag};
   transition: transform 0.3s ease-out;
@@ -134,11 +129,11 @@ const ExpandIcon = styled(IconComponent)`
     p.isExpanded
       ? "translateY(-50%) rotate(180deg)"
       : "translateY(-50%) rotate(0)"};
-  ${themify(Expand.themeProps.icon.name)};
+  ${applyVariants(Expand.themeProps.icon.name)};
 `
 
 export const ExpandWrapper = styled.div`
-  ${themify(Expand.themeProps.wrapper.name)};
+  ${applyVariants(Expand.themeProps.wrapper.name)};
 `
 
 export const ExpandBtn = styled.button`
@@ -164,13 +159,13 @@ export const ExpandBtn = styled.button`
     }
   }
 
-  ${themify(Expand.themeProps.button.name)};
+  ${applyVariants(Expand.themeProps.button.name)};
 `
 
 export const ExpandItem = styled.div`
   opacity: 0;
   animation: 0.4s ${BounceIn} 0.05s ease-out forwards 1;
-  ${themify(Expand.themeProps.item.name)};
+  ${applyVariants(Expand.themeProps.item.name)};
 `
 
 Expand.defaultProps = {
@@ -181,7 +176,7 @@ Expand.defaultProps = {
 }
 
 Expand.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   title: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,

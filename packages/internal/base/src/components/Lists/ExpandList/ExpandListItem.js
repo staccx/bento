@@ -4,14 +4,11 @@ import styled from "styled-components"
 import { BounceIn } from "@staccx/animations"
 import Caret from "../../Icons/Caret"
 import {
-  spacing,
-  font,
-  color,
-  themify,
-  ThemeComponent,
-  themeProps
-} from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
+import { spacing, font, color, applyVariants } from "../../../theming"
+import ThemeComponent from "../../Theme/ThemeComponent"
 
 const ExpandButton = ({ title, isExpanded, ...props }) => (
   <ExpandBtn isExpanded={isExpanded} {...props}>
@@ -133,7 +130,7 @@ const ExpandItem = styled.li`
   &:last-child {
     border-bottom-width: 0;
   }
-  ${themify(tProps.listItem)};
+  ${applyVariants(tProps.listItem)};
 `
 
 const IconComponent = ({ ...props }) => (
@@ -145,11 +142,11 @@ const IconComponent = ({ ...props }) => (
 )
 const ExpandIcon = styled(IconComponent)`
   position: absolute;
-  right: ${spacing.small()};
+  right: ${spacing.small};
   fill: ${color.wcag};
   transition: transform 0.3s ease-out;
   transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
-  ${themify(tProps.listIcon)};
+  ${applyVariants(tProps.listIcon)};
 `
 
 const ExpandBtn = styled.button`
@@ -159,8 +156,7 @@ const ExpandBtn = styled.button`
   font-size: ${font.base};
   font-weight: ${p => (p.isExpanded ? "bold" : "normal")};
   cursor: pointer;
-  padding: ${spacing.small()} ${spacing.large()} ${spacing.small()}
-    ${spacing.medium()};
+  padding: ${spacing.small} ${spacing.large} ${spacing.small} ${spacing.medium};
   width: 100%;
   text-align: left;
   display: flex;
@@ -176,19 +172,19 @@ const ExpandBtn = styled.button`
       fill: ${color.primary};
     }
   }
-  ${themify(tProps.listButton)};
+  ${applyVariants(tProps.listButton)};
 `
 
 const ExpandedItem = styled.div`
   opacity: 0;
   animation: 0.4s ${BounceIn} 0.05s ease-out forwards 1;
-  padding: ${p => (p.flush ? 0 : spacing.small())}
-    ${p => (p.flush ? 0 : spacing.medium())}
-    ${p => (p.flush ? 0 : spacing.medium())};
+  padding: ${p => (p.flush ? 0 : spacing.small)}
+    ${p => (p.flush ? 0 : spacing.medium)}
+    ${p => (p.flush ? 0 : spacing.medium)};
   max-width: ${p => (p.flush ? "auto" : "540px")};
   margin: auto;
   line-height: 1.8;
-  ${themify(tProps.expandedItem)};
+  ${applyVariants(tProps.expandedItem)};
 `
 
 ExpandListItem.defaultProps = {
@@ -198,7 +194,7 @@ ExpandListItem.defaultProps = {
 }
 
 ExpandListItem.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   title: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,

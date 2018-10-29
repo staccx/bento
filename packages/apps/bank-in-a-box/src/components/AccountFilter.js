@@ -1,9 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { color, fontWeight } from "@staccx/theme"
 import { formatCurrency } from "@staccx/formatting"
-import { Box, Button, SplitListItem } from "@staccx/base"
+import { Box, Button, SplitListItem, theming } from "@staccx/base"
 
 const AccountFilter = ({ account, type, duration, details = true }) => (
   <Box variant={"accountFilter"}>
@@ -25,18 +24,18 @@ const AccountFilter = ({ account, type, duration, details = true }) => (
 )
 
 const Strong = styled.strong`
-  font-weight: ${fontWeight.normal};
+  font-weight: ${theming.fontWeight.normal};
 `
 export const AccountInfoListItem = styled(SplitListItem)`
   padding: 10px 0;
-  border-color: ${color("accountInfoBorder")};
-  color: ${color.wcag};
+  border-color: ${theming.color("accountInfoBorder")};
+  color: ${theming.color.wcag};
   ${p =>
     p.emphasize &&
     css`
       &,
       & ${Strong} {
-        font-weight: ${fontWeight.bold};
+        font-weight: ${theming.fontWeight.bold};
       }
     `};
 `

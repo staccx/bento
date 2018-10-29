@@ -1,7 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import { color, wrapper } from "@staccx/theme"
-import { hideVisually } from "@staccx/base"
+import { theming } from "@staccx/base"
 
 const HeaderMenuButton = ({ isOpen, inverted, onClick }) => {
   return (
@@ -17,7 +16,7 @@ const HeaderMenuButton = ({ isOpen, inverted, onClick }) => {
 }
 
 const Title = styled.span`
-  ${hideVisually};
+  ${theming.hideVisually};
 `
 
 const Outer = styled.div`
@@ -36,7 +35,7 @@ const Icon = styled.button`
   padding: 3px 0;
   cursor: pointer;
 
-  @media only screen and (min-width: ${wrapper.large}) {
+  @media only screen and (min-width: ${theming.wrapper.large}) {
     display: none;
   }
 
@@ -52,10 +51,10 @@ const Line = styled.i`
   width: 36px;
   background-color: ${p =>
     p.isOpen
-      ? color("white")(p)
+      ? theming.color("white")(p)
       : p.inverted
-        ? color("white")(p)
-        : color("text")(p)};
+        ? theming.color("white")(p)
+        : theming.color("text")(p)};
   transition: transform 0.3s ease, opacity 0.2s ease;
 
   ${p =>

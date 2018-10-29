@@ -1,13 +1,13 @@
 {
   "name": "@staccx/stacc-website",
-  "version": "7.19.0",
+  "version": "8.0.0-alpha.1",
   "private": true,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@sanity/client": "^0.133.2",
-    "@sanity/image-url": "^0.133.2",
+    "@sanity/client": "^0.135.0",
+    "@sanity/image-url": "^0.132.8",
     "@typeform/embed": "^0.1.6",
     "compression": "^1.7.3",
     "cors": "^2.8.4",
@@ -17,14 +17,14 @@
     "history": "^4.7.2",
     "mobx-react": "^5.2.5",
     "morgan": "^1.9.1",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-loadable": "^5.5.0",
     "react-loadable-visibility": "^2.5.0",
     "react-router-dom": "^4.2.2",
     "sanity-query-helper": "^0.3.0",
-    "styled-components": "^3.3.3",
+    "styled-components": "^4.0.2",
     "three": "^0.95.0"
   },
   "scripts": {
@@ -43,13 +43,12 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/base": "^7.19.0",
-    "@staccx/color": "^7.19.0",
-    "@staccx/formatting": "^7.13.1",
-    "@staccx/rollup-config": "^7.13.1",
-    "@staccx/sanity": "^7.19.0",
-    "@staccx/stacc-theme": "^7.19.0",
-    "@staccx/theme": "^7.13.1",
+    "@staccx/base": "^8.0.0-alpha.1",
+    "@staccx/color": "^8.0.0-alpha.1",
+    "@staccx/formatting": "^8.0.0-alpha.0",
+    "@staccx/rollup-config": "^8.0.0-alpha.0",
+    "@staccx/sanity": "^8.0.0-alpha.1",
+    "@staccx/stacc-theme": "^8.0.0-alpha.1",
     "cli-progress": "^2.1.0",
     "loadable-components": "^2.2.3",
     "nodemon": "^1.18.4",
@@ -62,6 +61,6 @@
     "vcards-js": "^2.9.0"
   },
   "peerDependencies": {
-    "styled-components": "^3.3.3"
+    "styled-components": "^4.0.2"
   }
 }

@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { Layout, Heading } from "@staccx/base"
+import { Layout, Heading, theming } from "@staccx/base"
 import { formatPhone, dashIt } from "@staccx/formatting"
-import { spacing, color, font } from "@staccx/theme"
 import { SanityImage } from "@staccx/sanity"
 import VCard from "../Icons/vCard"
 import Phone from "../Icons/Phone"
@@ -114,10 +113,10 @@ const Person = ({
 )
 
 const PersonItem = styled.li`
-  margin-bottom: ${spacing.mediumPlus};
-  padding-bottom: ${spacing.mediumPlus};
+  margin-bottom: ${theming.spacing.mediumPlus};
+  padding-bottom: ${theming.spacing.mediumPlus};
   &:not(:last-child) {
-    border-bottom: 1px solid ${color.line};
+    border-bottom: 1px solid ${theming.color.line};
   }
 `
 
@@ -126,7 +125,7 @@ const SubtleLink = styled.a`
   align-items: center;
   justify-content: flex-start;
   text-decoration: none;
-  color: ${color.wcag};
+  color: ${theming.color.wcag};
 
   > svg {
     display: block;
@@ -136,15 +135,15 @@ const SubtleLink = styled.a`
   &:hover,
   &:focus,
   &:active {
-    color: ${color.primary};
+    color: ${theming.color.primary};
     outline: none;
   }
 `
 
 const Title = styled.div`
   text-transform: uppercase;
-  color: ${color.primary};
-  font-size: ${font.h6};
+  color: ${theming.color.primary};
+  font-size: ${theming.font.h6};
 `
 
 export default Person

@@ -1,12 +1,13 @@
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import CopyToClipboard from "./CopyToClipboard"
+import CopyToClipboard from "../../hoc/Clipboard/CopyToClipboard"
 import React from "react"
 import Upload from "../Icons/Upload"
 import Check from "../Icons/Check"
 import FileInput from "../Forms/Input/FileInput/FileInput"
-import { themify, ThemeComponent, themeProps } from "@staccx/theme"
-import themePropTypes from "../constants/themePropTypes"
+import ThemeComponent from "../Theme/ThemeComponent"
+import { applyVariants } from "../../theming"
+import { themePropTypes, commonPropTypes } from "../../constants/themeContants"
 
 class CopyToClipboardComponent extends React.PureComponent {
   constructor(props, context) {
@@ -88,15 +89,15 @@ const CopyComponent = ({ ...props }) => (
 )
 
 export const Copy = styled(CopyComponent)`
-  ${themify(FileInput.themeProps.icon)};
+  ${applyVariants(FileInput.themeProps.icon)};
 `
 
 export const Copied = styled(CopiedComponent)`
-  ${themify(FileInput.themeProps.icon)};
+  ${applyVariants(FileInput.themeProps.icon)};
 `
 
 CopyToClipboardComponent.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   copyText: PropTypes.string.isRequired
 }
 

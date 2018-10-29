@@ -3,18 +3,20 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Check from "../../Icons/Check"
 import {
-  themify,
   color,
   font,
   spacing,
-  targetSize,
   fontFamily,
-  borderRadius,
-  ThemeComponent,
   fontWeight,
-  themeProps
-} from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+  applyVariants,
+  targetSize,
+  borderRadius
+} from "../../../theming"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
+import ThemeComponent from "../../Theme/ThemeComponent"
 
 const CheckBox = ({
   children,
@@ -90,7 +92,7 @@ CheckBox.themeProps = {
 }
 
 const CheckWrapper = styled.div`
-  ${themify(CheckBox.themeProps.wrapper)};
+  ${applyVariants(CheckBox.themeProps.wrapper)};
 `
 
 const IconComponent = ({ ...props }) => (
@@ -111,7 +113,7 @@ export const Icon = styled(IconComponent)`
   transform: scale(0);
   transition: all 0.2s ease-in-out;
   color: ${color.primary};
-  ${themify(CheckBox.themeProps.icon)};
+  ${applyVariants(CheckBox.themeProps.icon)};
 `
 
 const InputCheck = styled.input`
@@ -123,7 +125,7 @@ const InputCheck = styled.input`
     > svg {
       transform: scale(1);
     }
-    ${themify(CheckBox.themeProps.labelChecked)};
+    ${applyVariants(CheckBox.themeProps.labelChecked)};
   }
 
   &:focus ~ label {
@@ -132,7 +134,7 @@ const InputCheck = styled.input`
     }
   }
 
-  ${themify(CheckBox.themeProps.input)};
+  ${applyVariants(CheckBox.themeProps.input)};
 `
 
 const Label = styled.label`
@@ -161,7 +163,7 @@ const Label = styled.label`
     position: absolute;
     top: ${spacing.small};
     width: ${spacing.medium};
-    ${themify(CheckBox.themeProps.labelBefore)};
+    ${applyVariants(CheckBox.themeProps.labelBefore)};
   }
 
   &:hover,
@@ -170,11 +172,11 @@ const Label = styled.label`
       border-color: ${color.primary};
     }
   }
-  ${themify(CheckBox.themeProps.label)};
+  ${applyVariants(CheckBox.themeProps.label)};
 `
 
 CheckBox.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   disabled: PropTypes.bool,
   group: PropTypes.string,
   id: PropTypes.string.isRequired,

@@ -1,7 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import { color } from "@staccx/theme"
-import { Wrapper, ItemGroup, Heading, Layout, Button } from "@staccx/base"
+import {
+  Wrapper,
+  ItemGroup,
+  Heading,
+  Layout,
+  Button,
+  theming
+} from "@staccx/base"
 import FullWidth from "../FullWidth/FullWidth"
 
 const LogoSalad = ({ children, className }) => (
@@ -50,7 +56,7 @@ const LogoSalad = ({ children, className }) => (
 
 const Container = styled.div`
   text-align: center;
-  background-color: ${color("g4")};
+  background-color: ${theming.color("g4")};
 `
 
 const Salad = styled(ItemGroup)`

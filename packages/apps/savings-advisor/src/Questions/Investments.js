@@ -1,15 +1,7 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 import { inject, observer } from "mobx-react"
-import { CheckGroup, CheckBox } from "@staccx/base"
-import {
-  font,
-  color,
-  spacing,
-  targetSize,
-  getThemeProp,
-  wrapper
-} from "@staccx/theme"
+import { CheckGroup, CheckBox, theming } from "@staccx/base"
 import QuestionLead from "../components/QuestionLead"
 
 const MAX_SELECTABLE = 3
@@ -86,14 +78,14 @@ const ImageCheck = styled(CheckBox)`
   & ~ label {
     position: relative;
     padding: 0;
-    color: ${color.white};
+    color: ${theming.color.white};
     transition: opacity 0.2s ease-in;
 
     &::before {
       right: 0;
       left: auto;
-      width: ${targetSize.normal};
-      height: ${targetSize.normal};
+      width: ${theming.targetSize.normal};
+      height: ${theming.targetSize.normal};
       border-color: transparent;
       border-radius: 50%;
       background-color: transparent;
@@ -103,7 +95,7 @@ const ImageCheck = styled(CheckBox)`
     }
 
     svg {
-      fill: ${color.white};
+      fill: ${theming.color.white};
       width: 24px;
       height: 24px;
       left: auto;
@@ -137,8 +129,8 @@ const ImageCheck = styled(CheckBox)`
 
   &:checked ~ label {
     &::before {
-      border-color: ${getThemeProp("gradient", "galaxyStart")};
-      background-color: ${getThemeProp("gradient", "galaxyEnd")};
+      border-color: ${theming.getProp("gradient", "galaxyStart")};
+      background-color: ${theming.getProp("gradient", "galaxyEnd")};
       transform: scale(1);
     }
   }
@@ -153,22 +145,22 @@ const Text = styled.span`
   position: absolute;
   left: 50%;
   top: 50%;
-  color: ${color.white};
+  color: ${theming.color.white};
   text-align: center;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   transform: translate(-50%, -50%);
   z-index: 5;
-  @media (max-width: ${wrapper.small}) {
-    font-size: ${font.tiny};
+  @media (max-width: ${theming.wrapper.small}) {
+    font-size: ${theming.font.tiny};
   }
 `
 
 const CheckWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, auto);
-  grid-column-gap: ${spacing.medium};
+  grid-column-gap: ${theming.spacing.medium};
   justify-content: center;
-  @media (max-width: ${wrapper.small}) {
+  @media (max-width: ${theming.wrapper.small}) {
     grid-template-columns: repeat(2, auto);
   }
 `

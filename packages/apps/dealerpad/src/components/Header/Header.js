@@ -1,8 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 import { NavLink } from "react-router-dom"
-import { ThemeComponent, color, spacing } from "@staccx/theme"
-import { Wrapper, List, fontSmoothing, Button } from "@staccx/base"
+import {
+  Wrapper,
+  List,
+  fontSmoothing,
+  Button,
+  ThemeComponent,
+  theming
+} from "@staccx/base"
 import routes from "../../data/routes"
 
 const Header = ({ onClick }) => (
@@ -26,7 +32,7 @@ const Header = ({ onClick }) => (
           )}
           <li>
             <Button variant="hamburger" onClick={() => onClick()}>
-              <ThemeComponent tagName="menu" />
+              <ThemeComponent tagName="Menu" />
               <MenuText>Menu</MenuText>
             </Button>
           </li>
@@ -43,7 +49,7 @@ const DesktopMenuElement = styled.li`
 `
 
 const Head = styled.header`
-  background-color: ${color("header")};
+  background-color: ${theming.color("header")};
   ${fontSmoothing};
 `
 
@@ -61,22 +67,22 @@ const MenuElement = styled(NavLink)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: ${color("headerText")};
-  margin-left: ${spacing.medium};
-  padding: ${spacing.small} 0;
+  color: ${theming.color("headerText")};
+  margin-left: ${theming.spacing.medium};
+  padding: ${theming.spacing.small} 0;
   height: 52px; /* TODO: This is a hack */
   svg {
-    margin-right: ${spacing.small};
-    fill: ${color("headerActive")};
+    margin-right: ${theming.spacing.small};
+    fill: ${theming.color("headerActive")};
   }
   border-bottom: 4px solid transparent;
   &.dpCurrent,
   &:hover,
   &:active,
   &:focus {
-    border-color: ${color("headerActive")};
+    border-color: ${theming.color("headerActive")};
     svg {
-      fill: ${color("headerIconActive")};
+      fill: ${theming.color("headerIconActive")};
     }
   }
 `

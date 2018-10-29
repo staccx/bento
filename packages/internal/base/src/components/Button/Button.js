@@ -2,16 +2,17 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import {
-  targetSize,
-  spacing,
+  color,
   borderRadius,
+  spacing,
+  targetSize,
+  font,
   fontFamily,
   fontWeight,
-  font,
-  color,
-  themify
-} from "@staccx/theme"
-import themePropTypes from "../constants/themePropTypes"
+  applyVariants
+} from "../../theming"
+import { themePropTypes, commonPropTypes } from "../../constants/themeContants"
+
 const tinycolor = require("tinycolor2")
 
 const tProps = {
@@ -68,7 +69,7 @@ const ButtonComp = styled.button`
         .toString()};
   }
 
-  ${themify(tProps.button.name)};
+  ${applyVariants(tProps.button.name)};
 `
 /**
  * Button component. Use to click stuff
@@ -84,13 +85,7 @@ const propTypes = {
   /**
    * The children of the lamb
    */
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.array
-  ]).isRequired,
+  children: commonPropTypes.children.isRequired,
   /**
    * Click callback. Why else have a button?
    * @export

@@ -6,15 +6,11 @@ import {
   List,
   Box,
   Wrapper,
-  Heading
-} from "@staccx/base"
-import styled from "styled-components"
-import {
-  ThemeProvider,
-  ThemeConsumer,
+  Heading,
   ThemeComponent,
-  spacing
-} from "@staccx/theme"
+  theming
+} from "@staccx/base"
+import styled, { ThemeProvider } from "styled-components"
 import Theme from "./theme.js"
 import { NordeaTheme } from "@staccx/nordea-theme"
 import AprilaTheme from "@staccx/aprila-theme"
@@ -27,18 +23,14 @@ import Header from "./components/Header"
 import WidthTab from "./components/WidthTab"
 import AppPreview from "./components/AppPreview"
 
+console.log(Theme)
+
 class App extends Component {
   constructor(props, context) {
     super(props, context)
-    const themes = [Theme, AprilaTheme, NordeaTheme, FunduTheme].reduce(
-      (acc, curr) => {
-        acc[curr.name] = curr
-        return acc
-      },
-      {}
-    )
+    const themes = [Theme, AprilaTheme, NordeaTheme, FunduTheme]
     this.state = {
-      componentThemeName: Theme.name,
+      componentTheme: Theme,
       themes,
       width: props.width
     }
@@ -102,7 +94,7 @@ class App extends Component {
     delete menu.parent
     return (
       <Router>
-        <ThemeProvider themeName={"Stacc"} themes={this.state.themes}>
+        <ThemeProvider theme={Theme}>
           <Layout grid="dashboard">
             <LayoutItem area="aside" variant="sidebar">
               <Box variant="styleGuideHeader">
@@ -127,22 +119,14 @@ class App extends Component {
                     this.setState({ width: e.target.value })
                   }}
                 />
-                <ThemeConsumer themeName={"main"}>
-                  {({ themes }) => {
-                    return (
-                      <Select
-                        variant="styleguideSwitchTheme"
-                        items={Object.keys(themes).map(key => themes[key])}
-                        itemToString={item => item.name}
-                        itemToKey={item => item.name}
-                        selectedItem={themes[this.state.componentThemeName]}
-                        onChange={theme =>
-                          this.setState({ componentThemeName: theme.name })
-                        }
-                      />
-                    )
-                  }}
-                </ThemeConsumer>
+                <Select
+                  variant="styleguideSwitchTheme"
+                  items={this.state.themes}
+                  itemToString={item => item.name}
+                  itemToKey={item => item.name}
+                  selectedItem={this.state.componentTheme}
+                  onChange={theme => this.setState({ componentTheme: theme })}
+                />
               </Header>
               <Main>
                 <Wrapper size="documentation">
@@ -156,8 +140,7 @@ class App extends Component {
                           return (
                             <AppPreview
                               app={<SavingsAdvisor />}
-                              themeName={this.state.componentThemeName}
-                              themes={this.state.themes}
+                              theme={this.state.componentTheme}
                             />
                           )
                         }
@@ -178,7 +161,7 @@ class App extends Component {
                         path={`/${comp.category}/${comp.title}`}
                         render={() => (
                           <PreviewComponent
-                            componentThemeName={this.state.componentThemeName}
+                            theme={this.state.componentTheme}
                             preview={comp}
                             width={this.state.width}
                           />
@@ -199,7 +182,7 @@ class App extends Component {
 const Main = styled.main`
   overflow-y: auto;
   height: calc(100vh - 72px);
-  padding-bottom: ${spacing.huge};
+  padding-bottom: ${theming.spacing.huge};
 `
 
 export default App

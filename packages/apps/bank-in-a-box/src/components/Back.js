@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Button } from "@staccx/base"
 import { backwards } from "./transitions/transitions"
+import { TranslatedText } from "@staccx/i18n"
 
 const Back = ({ path, history }) => {
   return (
@@ -21,7 +22,9 @@ const Back = ({ path, history }) => {
           fill="#55C4B4"
         />
       </svg>
-      <span>Tilbake</span>
+      <span>
+        <TranslatedText i18nKey="BackTextButton" fallback="Tilbake" />
+      </span>
     </Button>
   )
 }

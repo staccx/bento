@@ -1,8 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { font, fontFamily, themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import { font, fontFamily, applyVariants } from "../../../theming"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
 
 const Heading = ({ level, children, className, ...restProps }) => {
   switch (level) {
@@ -84,7 +87,7 @@ Heading.themeProps = {
 }
 export const HeadingsStyle = css`
   font-family: ${fontFamily.heading};
-  ${themify(Heading.themeProps.heading)};
+  ${applyVariants(Heading.themeProps.heading)};
 `
 
 const HeadingH1 = styled.h1`
@@ -123,7 +126,7 @@ Heading.defaultProps = {
 }
 
 Heading.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   level: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string
 }

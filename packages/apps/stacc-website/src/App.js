@@ -1,7 +1,6 @@
 import React, { Component } from "react"
-import styled from "styled-components"
-import { Wrapper, State } from "@staccx/base"
-import { ThemeProxyProvider } from "@staccx/theme"
+import styled, { ThemeProvider } from "styled-components"
+import { Wrapper, State, GlobalStyle, WebFonts } from "@staccx/base"
 import { SanityProvider } from "@staccx/sanity"
 import { Router } from "react-router-dom"
 import createHistory from "history/createBrowserHistory"
@@ -78,13 +77,15 @@ class App extends Component {
     const history = createHistory()
     console.log("%c" + asciiArt, "color: #EB5E55;")
     return (
-      <ThemeProxyProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <SanityProvider dataset={"production"} projectId={"8j24leyc"} useCdn>
           <State>
             {({ change, hideMenu, inverted }) => {
               return (
                 <Router history={history}>
                   <PageWrapper>
+                    <GlobalStyle />
+                    <WebFonts/>
                     <Header
                       openContactForm={this.openContactForm}
                       hideMenu={hideMenu}
@@ -103,7 +104,7 @@ class App extends Component {
             }}
           </State>
         </SanityProvider>
-      </ThemeProxyProvider>
+      </ThemeProvider>
     )
   }
 }

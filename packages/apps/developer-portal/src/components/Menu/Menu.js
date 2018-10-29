@@ -1,8 +1,7 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 import { NavHashLink } from "react-router-hash-link"
-import { List } from "@staccx/base"
-import { color } from "@staccx/theme"
+import { theming, List } from "@staccx/base"
 import styled from "styled-components"
 import OpenApiConsumer from "../OpenApiConsumer"
 
@@ -65,13 +64,13 @@ const MenuWrapper = styled.div`
 
 const MenuLink = styled(NavLink)`
   &.active {
-    color: ${color.primary};
+    color: ${theming.color.primary};
   }
 `
 
 const SubmenuLink = styled(NavHashLink)`
   &.active {
-    color: ${color.primary};
+    color: ${theming.color.primary};
   }
 `
 

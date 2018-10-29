@@ -1,9 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { CurrencyInput, Button } from "@staccx/base"
+import { CurrencyInput, Button, theming } from "@staccx/base"
 import { multiplyPixelValue } from "@staccx/math"
-import { font, color, targetSize, mapProp } from "@staccx/theme"
 
 const CurrencyInputSteppers = ({
   label,
@@ -57,16 +56,16 @@ const Outer = styled.div`
 
 const Input = styled(CurrencyInput)`
   > label {
-    color: ${color.gray};
+    color: ${theming.color.gray};
     font-weight: normal;
   }
 
   > input {
-    min-height: ${targetSize.large};
+    min-height: ${theming.targetSize.large};
     border-radius: 0;
     border-width: 0;
-    border-bottom: 2px solid ${color.secondary};
-    font-size: ${font.h1};
+    border-bottom: 2px solid ${theming.color.secondary};
+    font-size: ${theming.font.h1};
     background-color: transparent;
     transition: border-color 0.2s ease;
 
@@ -74,7 +73,7 @@ const Input = styled(CurrencyInput)`
     &:active,
     &:focus {
       background-color: transparent;
-      border-color: ${color.primary};
+      border-color: ${theming.color.primary};
     }
   }
 `
@@ -82,26 +81,27 @@ const Input = styled(CurrencyInput)`
 const Buttons = styled.div`
   position: absolute;
   right: 0;
-  bottom: ${p => multiplyPixelValue(targetSize.normal()(p), 0.5)};
+  bottom: ${p => multiplyPixelValue(theming.targetSize.normal()(p), 0.5)};
   transform: translateY(50%);
 `
 
 const StepperButton = styled(Button)`
   margin-bottom: 0;
   border-radius: 50%;
-  min-width: ${targetSize.small};
-  min-height: ${targetSize.small};
+  min-width: ${theming.targetSize.small};
+  min-height: ${theming.targetSize.small};
   padding: 0;
-  color: ${({ primary }) => (primary ? color.white : color.text)};
+  color: ${({ primary }) =>
+    primary ? theming.color.white : theming.color.text};
   background-color: ${({ primary }) =>
-    primary ? color.grayDark : color.grayLight};
+    primary ? theming.color.grayDark : theming.color.grayLight};
   transition: background 0.2s ease;
 
   &:hover,
   &:active,
   &:focus {
     background-color: ${({ primary }) =>
-      primary ? color.primary : color.primary};
+      primary ? theming.color.primary : theming.color.primary};
   }
 
   > svg {

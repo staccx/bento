@@ -1,6 +1,4 @@
 import Theme from "./theme"
-import { reset } from "../../base/src/Styles/cssResets"
-import grids from "../../base/src/components/Layout/Layout/Layout.Grids"
 
 const example = {
   name: "Test theme",

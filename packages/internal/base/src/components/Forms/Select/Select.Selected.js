@@ -2,15 +2,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
+  applyVariants,
   targetSize,
   spacing,
   borderRadius,
   fontFamily,
   font,
-  color,
-  themify
-} from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+  color
+} from "../../../theming"
+import { themePropTypes } from "../../../constants/themeContants"
 
 const themeProps = {
   selectedContainer: {
@@ -26,10 +26,10 @@ export const SelectedContainer = styled.button`
   margin: 0 auto;
   border: 1px solid ${color.line};
   border-radius: ${borderRadius};
-  padding-left: ${spacing.small()};
-  padding-right: ${spacing.small()};
+  padding-left: ${spacing.small};
+  padding-right: ${spacing.small};
   text-align: left;
-  font-family: ${fontFamily.body()};
+  font-family: ${fontFamily.body};
   font-size: ${font.input};
   cursor: pointer;
   transition: border-color 0.2s ease-out;
@@ -41,7 +41,7 @@ export const SelectedContainer = styled.button`
     background-color: ${color.subtleHover};
   }
 
-  ${themify(themeProps.selectedContainer)};
+  ${applyVariants(themeProps.selectedContainer)};
 `
 
 const SelectSelected = ({

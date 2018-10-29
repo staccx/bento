@@ -1,8 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { ThemeComponent, spacing, color, themify } from "@staccx/theme"
-import themePropTypes from "../constants/themePropTypes"
+import { themePropTypes } from "../../constants/themeContants"
+import { spacing, color, applyVariants } from "../../theming"
+import ThemeComponent from "../Theme/ThemeComponent"
 
 const Portal = ({ label, tagName, variant, className, ...rest }) => (
   <PortalWrapper className={className} {...rest} variant={variant}>
@@ -39,7 +40,7 @@ Portal.themeProps = {
 }
 
 const Label = styled.div`
-  ${themify(Portal.themeProps.label)};
+  ${applyVariants(Portal.themeProps.label)};
 `
 
 const IconWrapper = styled.div`
@@ -55,16 +56,16 @@ const IconWrapper = styled.div`
   align-items: center;
   svg {
     fill: ${color.primary};
-    ${themify(Portal.themeProps.icon)};
+    ${applyVariants(Portal.themeProps.icon)};
   }
-  ${themify(Portal.themeProps.iconWrapper)};
+  ${applyVariants(Portal.themeProps.iconWrapper)};
 `
 
 const PortalWrapper = styled.div`
   display: inline-block;
   text-align: center;
   color: currentColor;
-  ${themify(Portal.themeProps.portalWrapper)};
+  ${applyVariants(Portal.themeProps.portalWrapper)};
 `
 
 Portal.defaultProps = {

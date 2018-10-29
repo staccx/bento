@@ -2,8 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { NavLink } from "react-router-dom"
 import styled from "styled-components"
-import { List, Heading } from "@staccx/base"
-import { spacing, color, font, wrapper } from "@staccx/theme"
+import { List, Heading, theming } from "@staccx/base"
 import { dashIt } from "@staccx/formatting"
 
 const NavigationSubpage = ({ inverted, items, name, title }) => (
@@ -29,18 +28,18 @@ const NavigationSubpage = ({ inverted, items, name, title }) => (
 )
 
 const Container = styled.div`
-  margin-top: ${spacing.small};
-  border-top: 2px solid ${color.line};
-  padding-top: ${spacing.small};
+  margin-top: ${theming.spacing.small};
+  border-top: 2px solid ${theming.color.line};
+  padding-top: ${theming.spacing.small};
 
-  @media only screen and (min-width: ${wrapper.medium}) {
+  @media only screen and (min-width: ${theming.wrapper.medium}) {
     display: flex;
     justify-content: space-between;
   }
 `
 
 const ProductName = styled(Heading)`
-  font-size: ${font.base};
+  font-size: ${theming.font.base};
 `
 
 const Navigation = styled.nav`
@@ -49,10 +48,10 @@ const Navigation = styled.nav`
     flex-wrap: wrap;
 
     > li:not(:last-child) {
-      margin-right: ${spacing.medium};
+      margin-right: ${theming.spacing.medium};
     }
 
-    @media only screen and (min-width: ${wrapper.medium}) {
+    @media only screen and (min-width: ${theming.wrapper.medium}) {
       justify-content: space-between;
     }
   }
@@ -60,10 +59,10 @@ const Navigation = styled.nav`
 
 const SubLink = styled(NavLink)`
   text-decoration: none;
-  color: ${color("primaryWcag")};
+  color: ${theming.color("primaryWcag")};
 
   &.is-current {
-    color: ${color("textDark")};
+    color: ${theming.color("textDark")};
   }
 `
 

@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { RadioButton, CheckGroup } from "@staccx/base"
-import { spacing } from "@staccx/theme"
+import { RadioButton, CheckGroup, theming } from "@staccx/base"
 import Search from "./Search"
 
 const SearchGlobal = ({ children, classname }) => (
@@ -46,7 +45,7 @@ const SearchGlobal = ({ children, classname }) => (
 const RadioButtonGroup = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: ${spacing.tiny};
+  margin-top: ${theming.spacing.tiny};
 `
 
 export default SearchGlobal

@@ -1,25 +1,25 @@
 {
   "name": "@staccx/bank-in-a-box",
-  "version": "7.19.0",
+  "version": "8.0.0-alpha.1",
   "private": true,
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@staccx/animations": "^7.13.1",
-    "@staccx/aprila-theme": "^7.19.0",
-    "@staccx/base": "^7.19.0",
-    "@staccx/formatting": "^7.13.1",
-    "@staccx/norefjell-theme": "^7.19.0",
-    "@staccx/theme": "^7.13.1",
+    "@staccx/animations": "^8.0.0-alpha.1",
+    "@staccx/aprila-theme": "^8.0.0-alpha.1",
+    "@staccx/base": "^8.0.0-alpha.1",
+    "@staccx/formatting": "^8.0.0-alpha.0",
+    "@staccx/i18n": "^8.0.0-alpha.1",
+    "@staccx/norefjell-theme": "^8.0.0-alpha.1",
     "@tedconf/react-show-more": "^1.1.2",
     "history": "^4.7.2",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.5",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.2.1",
     "webfontloader": "^1.6.28"
@@ -32,7 +32,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.13.1",
+    "@staccx/rollup-config": "^8.0.0-alpha.0",
     "prettier": "^1.14.2",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",
@@ -42,6 +42,6 @@
     "rollup": "^0.65.0"
   },
   "peerDependencies": {
-    "styled-components": "^3.3.3"
+    "styled-components": "^4.0.2"
   }
 }

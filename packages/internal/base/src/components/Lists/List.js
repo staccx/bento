@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themify, themeProps } from "@staccx/theme"
-import themePropTypes from "../constants/themePropTypes"
+import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
+import { applyVariants } from "../../theming"
 
 const List = ({ children, className, ordered, ...restProps }) => {
   if (!ordered) {
@@ -30,7 +30,7 @@ export const ListUl = styled.ul`
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
-  ${themify(List.themeProps.list)};
+  ${applyVariants(List.themeProps.list)};
 `
 
 export const ListOl = ListUl.withComponent("ol")
@@ -41,7 +41,7 @@ List.defaultProps = {
 }
 
 List.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   className: PropTypes.string,
   ordered: PropTypes.bool
 }

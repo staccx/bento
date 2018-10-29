@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { color, spacing } from "@staccx/theme"
+import { theming } from "@staccx/base"
 
 const shortenToInitials = name => {
   const longName = name.toString()
@@ -14,10 +14,10 @@ const AvatarInitials = ({ name, className }) => (
 )
 
 const Avatar = styled.div`
-  background-color: ${color.subtleHover};
-  width: ${spacing.mediumPlus};
-  height: ${spacing.mediumPlus};
-  border-radius: ${spacing.mediumPlus};
+  background-color: ${theming.color.subtleHover};
+  width: ${theming.spacing.mediumPlus};
+  height: ${theming.spacing.mediumPlus};
+  border-radius: ${theming.spacing.mediumPlus};
   display: flex;
   justify-content: center;
   align-items: center;

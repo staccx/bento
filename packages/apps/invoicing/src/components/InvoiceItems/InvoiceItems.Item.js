@@ -1,6 +1,5 @@
 import React from "react"
-import { Input, Select } from "@staccx/base"
-import { color, spacing } from "@staccx/theme"
+import { Input, Select, theming } from "@staccx/base"
 import styled from "styled-components"
 
 const InvoiceItemsItem = ({
@@ -63,7 +62,7 @@ const TableRow = styled.tr`
   }
 
   &:not(:last-child) {
-    border-bottom: 1px solid ${color.line};
+    border-bottom: 1px solid ${theming.color.line};
   }
 
   > td:not(:first-child) {
@@ -72,7 +71,7 @@ const TableRow = styled.tr`
 
   > td:last-child {
     text-align: right;
-    padding-right: ${spacing.small};
+    padding-right: ${theming.spacing.small};
   }
 `
 

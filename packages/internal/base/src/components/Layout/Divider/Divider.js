@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { color, themify } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import { themePropTypes } from "../../../constants/themeContants"
+import { applyVariants, color } from "../../../theming"
 
 const Divider = ({ level, className, height, ...restProps }) => {
   return <Rule className={className} height={height} {...restProps} />
@@ -21,7 +21,7 @@ export const Rule = styled.hr`
   min-width: 100px;
   border: none;
   background-color: ${color.line};
-  ${themify(Divider.themeProps.rule)};
+  ${applyVariants(Divider.themeProps.rule)};
 `
 
 Divider.defaultProps = {

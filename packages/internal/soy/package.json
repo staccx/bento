@@ -1,6 +1,6 @@
 {
   "name": "@staccx/soy",
-  "version": "7.13.1",
+  "version": "8.0.0-alpha.1",
   "description": "I depend, therefore I am (Common dependencies for Stacc X)",
   "license": "UNLICENSED",
   "scripts": {
@@ -17,7 +17,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "peerDependencies": {
-    "styled-components": "^3.3.3"
+    "styled-components": "^4.0.2"
   },
   "gitHead": "297e66dbf355a6ce9a98fbf31643e11ea6ccbe13"
 }

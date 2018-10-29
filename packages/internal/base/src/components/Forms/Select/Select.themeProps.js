@@ -1,4 +1,4 @@
-import themePropTypes from "../../constants/themePropTypes"
+import { themePropTypes } from "../../../constants/themeContants"
 
 const selectThemeProps = {
   iconComponent: {

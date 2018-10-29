@@ -2,16 +2,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import CaretRight from "../../Icons/CaretRight"
+import { themePropTypes } from "../../../constants/themeContants"
 import {
   spacing,
   fontWeight,
   fontFamily,
   font,
   color,
-  themify,
-  ThemeComponent
-} from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+  applyVariants
+} from "../../../theming"
+import ThemeComponent from "../../Theme/ThemeComponent"
 
 const themeProps = {
   iconComponent: {
@@ -79,7 +79,7 @@ const Cursor = styled(IconComponent)`
   fill: ${color.wcag};
   position: absolute;
   right: ${spacing.small};
-  ${themify(themeProps.icon)};
+  ${applyVariants(themeProps.icon)};
 `
 
 const ListItem = styled.li`
@@ -89,7 +89,7 @@ const ListItem = styled.li`
   &:last-child {
     border-bottom: none;
   }
-  ${themify(themeProps.listItem)};
+  ${applyVariants(themeProps.listItem)};
 `
 
 const ButtonStyle = css`
@@ -106,7 +106,7 @@ const ButtonStyle = css`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: pointer;
-  ${themify(themeProps.itemButton)};
+  ${applyVariants(themeProps.itemButton)};
 `
 
 const Button = styled.a`
@@ -115,10 +115,10 @@ const Button = styled.a`
   &:focus {
     ${Cursor} {
       fill: ${color.primary};
-      ${themify(themeProps.hover)};
+      ${applyVariants(themeProps.hover)};
     }
   }
-  ${themify(themeProps.link)};
+  ${applyVariants(themeProps.link)};
 `
 
 export default LinkListItem

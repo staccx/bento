@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Table, Text, Close, Check, Heading } from "@staccx/base"
-import { color } from "@staccx/theme"
+import { Table, Text, Close, Check, Heading, theming } from "@staccx/base"
 import { parseType, valueToString } from "../utils"
 
 export default ({ props }) => {
@@ -52,13 +51,13 @@ export default ({ props }) => {
 }
 
 const DefaultValue = styled.td`
-  color: ${color.primary};
+  color: ${theming.color.primary};
 `
 
 const Positive = styled.span`
-  color: ${color.positive};
+  color: ${theming.color.positive};
 `
 
 const Negative = styled.span`
-  color: ${color.negative};
+  color: ${theming.color.negative};
 `

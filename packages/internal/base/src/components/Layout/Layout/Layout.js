@@ -1,8 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { themify, spacing, grid, themeProps } from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+import { spacing, grid, applyVariants } from "../../../theming"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
 
 /**
  * The default Layout-Component. Can be used with Both LayoutItem inside as well as other components.
@@ -75,7 +78,7 @@ export const LayoutContainer = styled.div`
       padding-top: ${spacing(p.paddingTop)};
     `};
   ${p => p.grid && grid};
-  ${themify(Layout.themeProps.container)};
+  ${applyVariants(Layout.themeProps.container)};
 `
 
 Layout.defaultProps = {
@@ -88,7 +91,7 @@ Layout.defaultProps = {
 }
 
 Layout.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   className: PropTypes.string,
   grid: PropTypes.string,
   columnGap: PropTypes.string,

@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom"
-import { ThemeComponent } from "@staccx/theme"
-import { Layout, LayoutItem, Box, Wrapper } from "@staccx/base"
+import { ThemeComponent, Layout, LayoutItem, Box, Wrapper } from "@staccx/base"
 import SwaggerDocs from "./pages/SwaggerDocs"
 import Introduction from "./pages/Introduction"
 import Menu from "./components/Menu/Menu"

@@ -5,7 +5,7 @@ import { observable } from "mobx"
 import { inject, observer } from "mobx-react"
 import { easeOutQuad } from "easing-utils"
 import { clamp, lerp } from "@staccx/math"
-import { spacing, color, font, wrapper, ThemeComponent } from "@staccx/theme"
+import { theming, ThemeComponent } from "@staccx/base"
 import { FadeInFromTop } from "@staccx/animations"
 import QuestionLead from "../components/QuestionLead"
 
@@ -168,15 +168,16 @@ class Risk extends React.Component {
 const RangeLabel = styled.label`
   position: relative;
   font-weight: bold;
-  color: ${p => (p.current ? color.secondary : color("waveDefault"))};
+  color: ${p =>
+    p.current ? theming.color.secondary : theming.color("waveDefault")};
   flex-basis: 25%;
   text-align: center;
-  padding: ${spacing.tiny};
+  padding: ${theming.spacing.tiny};
   cursor: pointer;
   transition: opacity 0.2s ease;
 
-  @media (max-width: ${wrapper.small}) {
-    font-size: ${font.tiny};
+  @media (max-width: ${theming.wrapper.small}) {
+    font-size: ${theming.font.tiny};
   }
 
   &:hover,
@@ -192,7 +193,7 @@ const RangeLabel = styled.label`
     bottom: 0;
     width: 1px;
     height: 12px;
-    background-color: ${color.line};
+    background-color: ${theming.color.line};
   }
 
   &::after {
@@ -204,24 +205,24 @@ const RangeLabel = styled.label`
 const LabelWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: ${spacing.medium};
+  margin-bottom: ${theming.spacing.medium};
 `
 
 const WaveWrapper = styled.div`
   display: flex;
   justify-content: stretch;
-  margin-bottom: ${spacing.medium};
+  margin-bottom: ${theming.spacing.medium};
 `
 
 const WaveBar = styled.i`
   position: relative;
   width: 3px;
-  background-color: ${color("waveDefault")};
+  background-color: ${theming.color("waveDefault")};
   height: 32px;
   border-radius: 1px;
   display: block;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  @media (max-width: ${wrapper.medium}) {
+  @media (max-width: ${theming.wrapper.medium}) {
     width: 1px;
   }
 `
@@ -230,19 +231,19 @@ const waveStyler = (distanceFromSelected, distanceFromHovered) => {
   switch (distanceFromSelected) {
     case 0:
       return css`
-        background-color: ${color("waveSelected0")};
+        background-color: ${theming.color("waveSelected0")};
         transform: scaleY(1.8);
       `
 
     case 1:
       return css`
-        background-color: ${color("waveSelected1")};
+        background-color: ${theming.color("waveSelected1")};
         transform: scaleY(1.4);
       `
 
     case 2:
       return css`
-        background-color: ${color("waveSelected2")};
+        background-color: ${theming.color("waveSelected2")};
         transform: scaleY(1.1);
       `
 
@@ -250,25 +251,25 @@ const waveStyler = (distanceFromSelected, distanceFromHovered) => {
       switch (distanceFromHovered) {
         case 0:
           return css`
-            background-color: ${color("waveHovered0")};
+            background-color: ${theming.color("waveHovered0")};
             transform: scaleY(0.6);
           `
 
         case 1:
           return css`
-            background-color: ${color("waveHovered1")};
+            background-color: ${theming.color("waveHovered1")};
             transform: scaleY(0.7);
           `
 
         case 2:
           return css`
-            background-color: ${color("waveHovered2")};
+            background-color: ${theming.color("waveHovered2")};
             transform: scaleY(0.9);
           `
 
         default:
           return css`
-            background-color: ${color("waveDefault")};
+            background-color: ${theming.color("waveDefault")};
             transform: scaleY(1);
           `
       }
@@ -284,19 +285,21 @@ const WaveContainer = styled.span`
     ${p =>
       p.distanceFromSelected < 3 || p.distanceFromHovered < 3
         ? waveStyler(p.distanceFromSelected, p.distanceFromHovered)
-        : `background-color: ${color("waveDefault")}; transform: scaleY(1);`};
+        : `background-color: ${theming.color(
+            "waveDefault"
+          )}; transform: scaleY(1);`};
   }
 `
 
 const BodyTextWrapper = styled.div`
-  margin: ${spacing.medium} 0;
+  margin: ${theming.spacing.medium} 0;
 `
 
 const BodyText = styled.span`
   display: block;
   width: 100%;
   text-align: center;
-  color: ${color.gray};
+  color: ${theming.color.gray};
   animation: ${FadeInFromTop} 0.5s ease-out forwards 1;
 `
 

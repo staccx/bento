@@ -1,12 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { spacing, color } from "@staccx/theme"
-import { Layout, Input, Box } from "@staccx/base"
+import { Layout, Input, Box, theming } from "@staccx/base"
 
 const Header = ({ children, classname }) => (
   <HeaderComp className={classname}>
     <Layout variant="documentationHeader" light>
-      <Box variant="documentationHeaderSearch" size="flush">
+      <Box variant="documentationHeaderSearch">
         <Input
           type="search"
           placeholder="Search our documentation…"
@@ -23,8 +22,8 @@ const HeaderComp = styled.header`
   display: flex;
   justify-content: stretch;
   align-items: stretch;
-  min-height: ${spacing("largePlus")};
-  border-bottom: 1px solid ${color.line};
+  min-height: ${theming.spacing("largePlus")};
+  border-bottom: 1px solid ${theming.color.line};
   width: 100%;
 `
 

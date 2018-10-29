@@ -1,6 +1,6 @@
 {
   "name": "@staccx/open-id",
-  "version": "7.17.2",
+  "version": "8.0.0-alpha.1",
   "description": "Open-id components",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -12,10 +12,8 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "test": "true",
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
-    "prepublishOnly": "yarn test && yarn build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "files": [
@@ -28,10 +26,10 @@
     "axios": "^0.18.0",
     "oidc-client": "^1.5.2",
     "qs": "^6.5.1",
-    "react": "^16.3.2"
+    "react": "^16.6.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^7.13.1",
+    "@staccx/rollup-config": "^8.0.0-alpha.0",
     "prettier": "^1.14.2",
     "rollup": "^0.65.0"
   },

@@ -6,7 +6,7 @@ const ApiReferenceInfo = ({ info }) => (
     <Heading id="info" variant="documentation" level={2}>
       {`${info.title} (${info.version})`}
     </Heading>
-    <Box size="flush">
+    <Box>
       <Layout>
         <div>
           <Layout>

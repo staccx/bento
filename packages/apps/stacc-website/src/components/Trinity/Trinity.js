@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { color, spacing, wrapper } from "@staccx/theme"
-import { Heading, Layout, Wrapper, ItemGroup } from "@staccx/base"
+import { Heading, Layout, Wrapper, ItemGroup, theming } from "@staccx/base"
 
 const Trinity = ({ items, heading }) => (
   <Wrapper>
@@ -21,7 +20,7 @@ const Trinity = ({ items, heading }) => (
 )
 
 const TrinityHeading = styled(Heading)`
-  color: ${color("primaryWcag")};
+  color: ${theming.color("primaryWcag")};
   text-align: center;
 `
 
@@ -30,7 +29,7 @@ const Container = styled(ItemGroup)`
   > div {
     justify-content: space-between;
 
-    @media only screen and (max-width: ${wrapper.large}) {
+    @media only screen and (max-width: ${theming.wrapper.large}) {
       display: block;
     }
   }
@@ -40,11 +39,11 @@ const Item = styled.div`
   flex-basis: 28%;
 
   > h3 {
-    margin-bottom: ${spacing.small};
+    margin-bottom: ${theming.spacing.small};
   }
 
-  @media only screen and (max-width: ${wrapper.large}) {
-    margin-bottom: ${spacing.medium};
+  @media only screen and (max-width: ${theming.wrapper.large}) {
+    margin-bottom: ${theming.spacing.medium};
   }
 `
 

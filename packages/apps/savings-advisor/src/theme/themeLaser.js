@@ -1,7 +1,6 @@
-import { BaseTheme } from "@staccx/base"
-import { Theme } from "@staccx/theme"
+import { BaseTheme, theming } from "@staccx/base"
 
-const themeLaser = new Theme(BaseTheme, {
+const themeLaser = new theming.Theme(BaseTheme, {
   name: "Laser",
   webfonts: {
     google: {

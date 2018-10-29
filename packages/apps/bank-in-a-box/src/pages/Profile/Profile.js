@@ -8,9 +8,9 @@ import {
   Label,
   Flag,
   Wrapper,
-  Heading
+  Heading,
+  ThemeComponent
 } from "@staccx/base"
-import { ThemeComponent } from "@staccx/theme"
 import menuProfile from "../../data/menuProfile"
 import Back from "../../components/Back"
 

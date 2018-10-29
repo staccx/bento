@@ -2,14 +2,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
+import {
   spacing,
   fontFamily,
   font,
   color,
-  themify,
-  themeProps
-} from "@staccx/theme"
-import themePropTypes from "../../constants/themePropTypes"
+  applyVariants
+} from "../../../theming"
 
 const SplitListItem = ({ children, className, ...restProps }) => {
   if (React.Children.count(children) > 2) {
@@ -41,14 +43,14 @@ const ListItem = styled.li`
   align-items: center;
   list-style: none;
   border-bottom: 1px solid ${color.line};
-  padding: ${spacing.tiny()} ${spacing.medium()};
+  padding: ${spacing.tiny} ${spacing.medium};
   font-size: ${font.base};
   font-family: ${fontFamily.body()};
 
   &:last-child {
     border-bottom: none;
   }
-  ${themify(SplitListItem.themeProps.listItem)};
+  ${applyVariants(SplitListItem.themeProps.listItem)};
 `
 
 SplitListItem.defaultProps = {
@@ -56,7 +58,7 @@ SplitListItem.defaultProps = {
 }
 
 SplitListItem.propTypes = {
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   className: PropTypes.string
 }
 

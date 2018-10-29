@@ -1,0 +1,31 @@
+{
+  "name": "@staccx/wasteiq-web",
+  "version": "8.0.0-alpha.1",
+  "private": true,
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject",
+    "deploy": "yarn build && surge -p ./build",
+    "serve": "yarn build && serve -s build",
+    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
+  },
+  "dependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  },
+  "devDependencies": {
+    "@staccx/base": "^8.0.0-alpha.1",
+    "@staccx/rollup-config": "^8.0.0-alpha.0",
+    "@staccx/sanity": "^8.0.0-alpha.1",
+    "@staccx/wasteiq-theme": "^8.0.0-alpha.1",
+    "prettier": "^1.14.2",
+    "react-app-rewire-styled-components": "^3.0.2",
+    "react-app-rewired": "^1.5.2",
+    "rollup": "^0.65.0"
+  },
+  "peerDependencies": {
+    "styled-components": "^4.0.2"
+  }
+}

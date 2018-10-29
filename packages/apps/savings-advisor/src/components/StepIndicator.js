@@ -1,8 +1,7 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+import styled, { keyframes, css } from "styled-components"
 import { inject, observer } from "mobx-react"
-import { hideVisually } from "@staccx/base"
-import { font, color, spacing, wrapper, getThemeProp } from "@staccx/theme"
+import { hideVisually, theming } from "@staccx/base"
 
 @inject("uiStore")
 @observer
@@ -100,7 +99,7 @@ const rubberBand2 = keyframes`
 const StepNotLink = styled.span``
 
 const HideMobile = styled.span`
-  @media (max-width: ${wrapper.medium}) {
+  @media (max-width: ${theming.wrapper.medium}) {
     ${p => !p.current && hideVisually};
   }
 `
@@ -111,8 +110,8 @@ const StepperOuter = styled.nav`
   grid-template-columns: repeat(6, auto);
   grid-template-rows: repeat(2, auto);
   max-width: none;
-  border-bottom: 1px solid ${color.grayLight};
-  @media (max-width: ${wrapper.medium}) {
+  border-bottom: 1px solid ${theming.color.grayLight};
+  @media (max-width: ${theming.wrapper.medium}) {
     grid-template-columns: repeat(6, 1fr);
   }
 `
@@ -125,17 +124,17 @@ const StepLink = styled.a`
   &:hover,
   &:active,
   &:focus {
-    color: ${color.primary};
+    color: ${theming.color.primary};
   }
 `
 
 const Step = styled.div`
-  padding-bottom: ${spacing.small};
+  padding-bottom: ${theming.spacing.small};
   text-align: center;
-  font-size: ${font.small};
-  color: ${p => (p.current ? color.text : color.grayLight)};
+  font-size: ${theming.font.small};
+  color: ${p => (p.current ? theming.color.text : theming.color.grayLight)};
   grid-row: 1;
-  @media (max-width: ${wrapper.medium}) {
+  @media (max-width: ${theming.wrapper.medium}) {
     ${StepLink}::before, ${StepNotLink}::before {
       ${p => !p.current && 'content: ""'};
       width: 12px;
@@ -153,17 +152,23 @@ const StepBar = styled.div`
   grid-column-end: ${p => p.progress};
   height: 1px;
   transform: translateY(1px);
-  background-color: ${getThemeProp("gradient", "galaxyStart")};
+  background-color: ${theming.getProp("gradient", "galaxyStart")};
   background-image: linear-gradient(
     to right,
-    ${getThemeProp("gradient", "galaxyStart")} 0%,
-    ${getThemeProp("gradient", "galaxyEnd")} 100%
+    ${theming.getProp("gradient", "galaxyStart")} 0%,
+    ${theming.getProp("gradient", "galaxyEnd")} 100%
   );
   transform-origin: left;
   ${p =>
     p.flipIt
-      ? `animation: ${rubberBand} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1;`
-      : `animation: ${rubberBand2} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1;`}
+      ? css`
+          animation: ${rubberBand} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+            forwards 1;
+        `
+      : css`
+          animation: ${rubberBand2} 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+            forwards 1;
+        `}
 }
 `
 

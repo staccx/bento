@@ -1,7 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import { color, spacing, ThemeComponent, font, fontWeight } from "@staccx/theme"
-import { Text, hideVisually } from "@staccx/base"
+import { Text, hideVisually, ThemeComponent, theming } from "@staccx/base"
 import getStatus from "../../helpers/getStatus"
 
 const CasesProgressLarge = ({
@@ -55,7 +54,7 @@ const Outer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${color.white};
+  background-color: ${theming.color.white};
   border-radius: 3px;
 `
 
@@ -66,12 +65,13 @@ const ProgressItem = styled.div`
   align-self: stretch;
   display: flex;
   justify-content: center;
-  font-size: ${font.tiny};
+  font-size: ${theming.font.tiny};
   font-weight: ${p =>
-    p.status === "next" ? fontWeight.normal : fontWeight.bold};
+    p.status === "next" ? theming.fontWeight.normal : theming.fontWeight.bold};
   align-items: center;
-  padding: ${spacing.small};
-  color: ${p => (p.status === "current" ? color("primary") : color("wcag"))};
+  padding: ${theming.spacing.small};
+  color: ${p =>
+    p.status === "current" ? theming.color("primary") : theming.color("wcag")};
 `
 
 const dotStyle = css`
@@ -83,7 +83,7 @@ const dotStyle = css`
 `
 
 const Completed = styled.div`
-  background-color: ${color("a3")};
+  background-color: ${theming.color("a3")};
   ${dotStyle};
 `
 
@@ -93,14 +93,14 @@ const IconWrapper = styled.div`
     display: block;
     width: 100%;
     height: auto;
-    fill: ${color.white};
+    fill: ${theming.color.white};
   }
 `
 
 const ArrowWrapper = styled.div`
   position: absolute;
   top: 0;
-  right: -${spacing.tiny};
+  right: -${theming.spacing.tiny};
   height: 100%;
   width: 12px;
 
@@ -108,7 +108,7 @@ const ArrowWrapper = styled.div`
     display: block;
     width: 100%;
     height: 100%;
-    fill: ${color("bg1")};
+    fill: ${theming.color("bg1")};
   }
 `
 

@@ -5,15 +5,9 @@ import Flag from "../Layout/Flag/Flag"
 import Warning from "../Icons/Warning"
 import Success from "../Icons/Success"
 import Info from "../Icons/Info"
-import {
-  spacing,
-  themify,
-  ThemeComponent,
-  color,
-  borderRadius,
-  themeProps
-} from "@staccx/theme"
-import themePropTypes from "../constants/themePropTypes"
+import { color, applyVariants, borderRadius, spacing } from "../../theming"
+import { themePropTypes, commonPropTypes } from "../../constants/themeContants"
+import ThemeComponent from "../Theme/ThemeComponent"
 
 const tProps = {
   alert: {
@@ -90,20 +84,20 @@ const colors = ({ type }) => {
       return css`
         background-color: ${color("warning")};
         color: ${color("white")};
-        ${themify(tProps.alertWarning)};
+        ${applyVariants(tProps.alertWarning)};
       `
     case "success":
       return css`
         background-color: ${color("positive")};
         color: ${color("white")};
-        ${themify(tProps.alertSuccess)};
+        ${applyVariants(tProps.alertSuccess)};
       `
     case "info":
     default:
       return css`
         background-color: ${color("line")};
         color: ${color("text")};
-        ${themify(tProps.alertInfo)};
+        ${applyVariants(tProps.alertInfo)};
       `
   }
 }
@@ -123,14 +117,14 @@ const AlertElement = styled.div`
   border-radius: ${borderRadius};
   padding: ${spacing.small};
   ${colors};
-  ${themify(tProps.alert)};
+  ${applyVariants(tProps.alert)};
 `
 
 Alert.propTypes = {
   /**
    * Component or text to render inside the alert
    */
-  children: themeProps.children.isRequired,
+  children: commonPropTypes.children.isRequired,
   /**
    * Alert type
    * @export

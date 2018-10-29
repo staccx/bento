@@ -8,9 +8,9 @@ import {
   LayoutItem,
   Button,
   ItemGroup,
-  Loading
+  Loading,
+  ThemeComponent
 } from "@staccx/base"
-import { ThemeComponent } from "@staccx/theme"
 import getLoanType from "../helpers/getLoanType"
 import { formatCurrency } from "@staccx/formatting"
 import ContactPerson from "../components/ContactPerson"

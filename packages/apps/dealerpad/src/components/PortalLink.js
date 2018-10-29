@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Portal } from "@staccx/base"
-import { color } from "@staccx/theme"
+import { Portal, theming } from "@staccx/base"
 
 const PortalLink = ({ href, tagName }) => (
   <PortalLinkElement href={href}>
@@ -10,11 +9,11 @@ const PortalLink = ({ href, tagName }) => (
 )
 
 const PortalLinkElement = styled.a`
-  color: ${color("contactIcon")};
+  color: ${theming.color("contactIcon")};
   &:hover,
   &:focus,
   &:active {
-    color: ${color("contactIconHover")};
+    color: ${theming.color("contactIconHover")};
   }
 `
 

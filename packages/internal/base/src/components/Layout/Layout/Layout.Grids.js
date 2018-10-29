@@ -1,4 +1,5 @@
-import { wrapper } from "@staccx/theme"
+// NOTE: This needs to be imported directly, not via theming
+import wrapper from "../../../theming/convenience/wrapper"
 import { css } from "styled-components"
 
 export default {

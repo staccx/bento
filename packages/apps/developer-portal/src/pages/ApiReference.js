@@ -9,7 +9,7 @@ const ApiReference = () => (
   <OpenApiConsumer>
     {({ sorted, openapi, info, codeGeneratorInputs, preferredLanguage }) => {
       return (
-        <Box size="flush" variant="apiContainer">
+        <Box variant="apiContainer">
           {/*
             <ApiReferenceInfo info={info} />
             Removed for now, let’s try putting this info in one of the other pages
