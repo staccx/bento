@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.0.0"></a>
+# [8.0.0](https://bitbucket.org/stacc-flow/bento/compare/v7.19.0...v8.0.0) (2018-10-29)
+
+
+
+<a name="8.0.0-alpha.1"></a>
+# [8.0.0-alpha.1](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v8.0.0-alpha.1) (2018-10-29)
+
+
+
+<a name="8.0.0-alpha.0"></a>
+# [8.0.0-alpha.0](https://bitbucket.org/stacc-flow/bento/compare/v7.15.0...v8.0.0-alpha.0) (2018-10-23)
+
+
+### Features
+
+* **open-id:** add error handling and status ([e249b9a](https://bitbucket.org/stacc-flow/bento/commits/e249b9a))
+
+
+
+
+
 <a name="7.17.2"></a>
 ## [7.17.2](https://bitbucket.org/stacc-flow/bento/compare/v7.17.1...v7.17.2) (2018-10-26)
 

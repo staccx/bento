@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.0.0"></a>
+# [8.0.0](https://bitbucket.org/stacc-flow/bento/compare/v7.19.0...v8.0.0) (2018-10-29)
+
+
+
+<a name="8.0.0-alpha.1"></a>
+# [8.0.0-alpha.1](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v8.0.0-alpha.1) (2018-10-29)
+
+
+### Bug Fixes
+
+* **developer-portal:** remove [@staccx](https://bitbucket.org/staccx)/theme ([ba7e0c1](https://bitbucket.org/stacc-flow/bento/commits/ba7e0c1))
+* **onboarding-pm:** remove staccx theme ([bdce2ab](https://bitbucket.org/stacc-flow/bento/commits/bdce2ab))
+* **stacc-website:** fix globals ([f0e6ed8](https://bitbucket.org/stacc-flow/bento/commits/f0e6ed8))
+
+
+
+<a name="8.0.0-alpha.0"></a>
+# [8.0.0-alpha.0](https://bitbucket.org/stacc-flow/bento/compare/v7.15.0...v8.0.0-alpha.0) (2018-10-23)
+
+
+
+
+
 <a name="7.19.0"></a>
 # [7.19.0](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v7.19.0) (2018-10-29)
 

@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.0.0"></a>
+# [8.0.0](https://bitbucket.org/stacc-flow/bento/compare/v7.19.0...v8.0.0) (2018-10-29)
+
+
+
+<a name="8.0.0-alpha.1"></a>
+# [8.0.0-alpha.1](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v8.0.0-alpha.1) (2018-10-29)
+
+
+
+<a name="8.0.0-alpha.0"></a>
+# [8.0.0-alpha.0](https://bitbucket.org/stacc-flow/bento/compare/v7.15.0...v8.0.0-alpha.0) (2018-10-23)
+
+
+### Bug Fixes
+
+* **stacc-web:** fix block type image killing the page ([1772b4a](https://bitbucket.org/stacc-flow/bento/commits/1772b4a))
+* **stacc-web:** rename indifeces to indices ([a158a3e](https://bitbucket.org/stacc-flow/bento/commits/a158a3e))
+* **stacc-website:** fix team pages indices ([4fd128f](https://bitbucket.org/stacc-flow/bento/commits/4fd128f))
+
+
+### Features
+
+* **stacc-website:** add scale to deploy command ([64c96d8](https://bitbucket.org/stacc-flow/bento/commits/64c96d8))
+
+
+
+
+
 <a name="7.19.0"></a>
 # [7.19.0](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v7.19.0) (2018-10-29)
 

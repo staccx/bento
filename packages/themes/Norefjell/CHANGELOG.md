@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.0.0"></a>
+# [8.0.0](https://bitbucket.org/stacc-flow/bento/compare/v7.19.0...v8.0.0) (2018-10-29)
+
+
+
+<a name="8.0.0-alpha.1"></a>
+# [8.0.0-alpha.1](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v8.0.0-alpha.1) (2018-10-29)
+
+
+### Features
+
+* **bank-in-a-box:** clean up components and how/where they are used ([06fd1ff](https://bitbucket.org/stacc-flow/bento/commits/06fd1ff))
+* **bank-in-a-box:** confirm-symbol themified ([4d271b4](https://bitbucket.org/stacc-flow/bento/commits/4d271b4))
+* **bank-in-a-box:** themify withdraw: remove styled components ([c9efad3](https://bitbucket.org/stacc-flow/bento/commits/c9efad3))
+
+
+
+<a name="8.0.0-alpha.0"></a>
+# [8.0.0-alpha.0](https://bitbucket.org/stacc-flow/bento/compare/v7.15.0...v8.0.0-alpha.0) (2018-10-23)
+
+
+
+
+
 <a name="7.19.0"></a>
 # [7.19.0](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v7.19.0) (2018-10-29)
 

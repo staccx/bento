@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.0.0"></a>
+# [8.0.0](https://bitbucket.org/stacc-flow/bento/compare/v7.19.0...v8.0.0) (2018-10-29)
+
+
+
+<a name="8.0.0-alpha.1"></a>
+# [8.0.0-alpha.1](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v8.0.0-alpha.1) (2018-10-29)
+
+
+### Bug Fixes
+
+* **base:** fix some components ([ad8770e](https://bitbucket.org/stacc-flow/bento/commits/ad8770e))
+* **base:** reset default. part of theming ([f2941e2](https://bitbucket.org/stacc-flow/bento/commits/f2941e2))
+* **base:** update paths to styles ([68c65ef](https://bitbucket.org/stacc-flow/bento/commits/68c65ef))
+
+
+### Features
+
+* **base:** add WebFonts. use as GlobalStyle ([f2cc9e7](https://bitbucket.org/stacc-flow/bento/commits/f2cc9e7))
+* **base:** sunsetting `size="flush"` on `<Box>` ([9ae3b8a](https://bitbucket.org/stacc-flow/bento/commits/9ae3b8a))
+
+
+
+<a name="8.0.0-alpha.0"></a>
+# [8.0.0-alpha.0](https://bitbucket.org/stacc-flow/bento/compare/v7.15.0...v8.0.0-alpha.0) (2018-10-23)
+
+
+### Bug Fixes
+
+* **base:** explicitely exporting BaseTheme in the interim ([f243552](https://bitbucket.org/stacc-flow/bento/commits/f243552))
+* **base:** rename autocomplete to autoComplete ([d59c018](https://bitbucket.org/stacc-flow/bento/commits/d59c018))
+
+
+### Features
+
+* **base:** add A component ([39b4e3b](https://bitbucket.org/stacc-flow/bento/commits/39b4e3b))
+* **base:** add FeatureToggle component ([ec1bfff](https://bitbucket.org/stacc-flow/bento/commits/ec1bfff))
+* **base:** add support for containers in form ([ffa28bd](https://bitbucket.org/stacc-flow/bento/commits/ffa28bd))
+* **base:** add theming into base ([950970a](https://bitbucket.org/stacc-flow/bento/commits/950970a))
+* **base:** added Global style. fixed base ([6a5c7ef](https://bitbucket.org/stacc-flow/bento/commits/6a5c7ef))
+* **base:** export Form, Formfield ([44eafa1](https://bitbucket.org/stacc-flow/bento/commits/44eafa1))
+* **base:** export ThemeComponent ([0222eda](https://bitbucket.org/stacc-flow/bento/commits/0222eda))
+* **base:** fetch will postpone poll until prev is back ([5f7488b](https://bitbucket.org/stacc-flow/bento/commits/5f7488b))
+* **base:** logo-component support className ([22ea4f3](https://bitbucket.org/stacc-flow/bento/commits/22ea4f3))
+* **base:** remove all references to [@staccx](https://bitbucket.org/staccx)/theme ([80080d4](https://bitbucket.org/stacc-flow/bento/commits/80080d4))
+* **base:** theme.add can now also take an array ([8e329ab](https://bitbucket.org/stacc-flow/bento/commits/8e329ab))
+* **base:** upgraded styled-components ([6695c4c](https://bitbucket.org/stacc-flow/bento/commits/6695c4c))
+* **base:** upgraded styled-components to v4 ([a4e0c06](https://bitbucket.org/stacc-flow/bento/commits/a4e0c06))
+* **bento:** update themePropTyoes ([7ae339e](https://bitbucket.org/stacc-flow/bento/commits/7ae339e))
+
+
+
+
+
 <a name="7.19.0"></a>
 # [7.19.0](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v7.19.0) (2018-10-29)
 

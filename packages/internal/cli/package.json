@@ -1,6 +1,6 @@
 {
   "name": "@staccx/cli-x",
-  "version": "8.0.0-alpha.0",
+  "version": "8.0.0",
   "description": "",
   "private": true,
   "main": "dist/cli.js",
@@ -24,6 +24,6 @@
     "inquirer": "^5.2.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.0.0-alpha.0"
+    "@staccx/rollup-config": "^8.0.0"
   }
 }
