@@ -10,12 +10,12 @@ const reset = ({
   searchSubstring = false
 }) => {
   const searcher = new JsSearch.Search(indexer)
-  indices.forEach(index => searcher.addIndex(index))
-  searcher.addDocuments(documents)
-
   if (searchSubstring) {
     searcher.indexStrategy = new JsSearch.AllSubstringsIndexStrategy()
   }
+  indices.forEach(index => searcher.addIndex(index))
+  searcher.addDocuments(documents)
+
   let result = documents
   if (term) {
     result = searcher.search(term)
