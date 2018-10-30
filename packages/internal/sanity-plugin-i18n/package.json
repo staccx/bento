@@ -14,7 +14,7 @@
     "start": "sanity start",
     "test": "sanity check",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'",
-    "prepublishOnly": "yarn prettify && babel -d lib/ src/"
+    "prepare": "yarn prettify && babel -d lib/ src/"
   },
   "keywords": [
     "sanity"

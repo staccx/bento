@@ -31,10 +31,12 @@
     "start": "react-app-rewired start",
     "build:app": "react-app-rewired build",
     "build": "yarn prettify && rollup -c",
-    "test": "react-app-rewired test --env=jsdom",
+    "test": "react-app-rewired test --env=jsdom --coverage",
     "eject": "react-app-rewired eject",
     "deploy": "yarn build:app && surge -p ./build -d savings-advisor.surge.sh",
     "serve": "yarn build:app && serve -s build",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {

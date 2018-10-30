@@ -12,10 +12,11 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
-    "prepublish": "yarn build",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"

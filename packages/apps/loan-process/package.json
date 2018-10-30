@@ -20,7 +20,8 @@
     "test:watch": "react-scripts test --env=jsdom",
     "build": "yarn prettify && rollup -c",
     "start:module": "rollup -c -w",
-    "prepublish": "yarn build",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "lint-staged": {
@@ -32,9 +33,6 @@
   "files": [
     "dist"
   ],
-  "jest": {
-    "verbose": true
-  },
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },

@@ -27,8 +27,10 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "yarn prettify && rollup -c",
-    "test": "react-app-rewired test --env=jsdom",
+    "test": "react-app-rewired test --env=jsdom --coverage",
     "eject": "react-app-rewired eject",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {

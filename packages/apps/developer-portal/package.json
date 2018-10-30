@@ -15,9 +15,11 @@
     "start": "react-app-rewired start",
     "build:app": "react-app-rewired build",
     "build": "yarn prettify && rollup -c",
-    "test": "react-app-rewired test --env=jsdom",
+    "test": "react-app-rewired test --env=jsdom --coverage",
+    "test:watch": "react-app-rewired test --env=jsdom --watch",
     "eject": "react-app-rewired eject",
-    "prepublish": "yarn build",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "files": [

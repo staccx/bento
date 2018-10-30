@@ -35,7 +35,7 @@
     "build": "echo 'build done'",
     "build:app": "react-app-rewired build && node resolveAlias",
     "createVCards": "node createVCards",
-    "test": "react-app-rewired test --env=jsdom",
+    "test": "react-app-rewired test --env=jsdom  --coverage",
     "eject": "react-app-rewired eject",
     "deploy": "NODE_ENV=production yarn build:app && now && now alias && now scale",
     "deploy:staging": "yarn run build:app && now --public",

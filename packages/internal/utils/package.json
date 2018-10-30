@@ -14,9 +14,10 @@
   "scripts": {
     "test": "react-scripts test --env=jsdom --coverage",
     "test:watch": "react-scripts test --env=jsdom",
-    "build": "yarn prettify && yarn test && rollup -c && node build.js",
+    "build": "yarn prettify && rollup -c && node build.js",
     "start": "rollup -c -w",
-    "prepublish": "yarn build",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "files": [
