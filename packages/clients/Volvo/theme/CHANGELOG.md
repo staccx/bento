@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.19.1"></a>
+## [7.19.1](https://bitbucket.org/stacc-flow/bento/compare/v7.19.0...v7.19.1) (2018-10-30)
+
+**Note:** Version bump only for package @staccx/volvo-theme
+
+
+
+
+
 <a name="7.19.0"></a>
 # [7.19.0](https://bitbucket.org/stacc-flow/bento/compare/v7.17.2...v7.19.0) (2018-10-29)
 
