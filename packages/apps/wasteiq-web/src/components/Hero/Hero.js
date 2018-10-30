@@ -14,9 +14,11 @@ const Hero = () => {
           infrastructure. The digital foundation for a more sustainable
           tomorrow.
         </Paragraph>
-        <ItemGroup>
-          <Button color={"green"}>WasteIQ for waste management</Button>
-          <Button color={"blue"}>WasteIQ for infrastructure companies</Button>
+        <ItemGroup variant={"buttons"}>
+          <Button color={"greenLight"}>WasteIQ for waste management</Button>
+          <Button color={"blueLight"}>
+            WasteIQ for infrastructure companies
+          </Button>
         </ItemGroup>
       </Layout>
     </Outer>

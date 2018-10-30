@@ -3,7 +3,7 @@ import { Heading, Paragraph, ItemGroup, Box } from "@staccx/base"
 
 const Story = () => {
   return (
-    <Box color={"salmon"} as={"article"}>
+    <Box color={"pinkLight"} as={"article"} size={"medium"}>
       <ItemGroup>
         <header>
           <Heading level={2}>Enabling the circular economy</Heading>
