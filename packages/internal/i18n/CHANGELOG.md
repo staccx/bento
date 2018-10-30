@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.1.0"></a>
+# [8.1.0](https://bitbucket.org/stacc-flow/bento/compare/v8.0.0...v8.1.0) (2018-10-30)
+
+
+### Bug Fixes
+
+* **i18n:** fix config issues and bad test ([5ccb160](https://bitbucket.org/stacc-flow/bento/commits/5ccb160))
+* **i18n:** fixed tests ([a1ae94b](https://bitbucket.org/stacc-flow/bento/commits/a1ae94b))
+
+
+### Features
+
+* **i18n:** extracted auto detect language. introduces middleware ([e0411e7](https://bitbucket.org/stacc-flow/bento/commits/e0411e7))
+
+
+
+
+
 <a name="8.0.0"></a>
 # [8.0.0](https://bitbucket.org/stacc-flow/bento/compare/v7.19.0...v8.0.0) (2018-10-29)
 
