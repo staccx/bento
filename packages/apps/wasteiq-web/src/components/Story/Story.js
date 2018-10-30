@@ -1,25 +1,58 @@
 import React from "react"
-import { Heading, Paragraph, ItemGroup, Box } from "@staccx/base"
+import styled from "styled-components"
+import {
+  Heading,
+  Paragraph,
+  Layout,
+  Box,
+  ThemeComponent,
+  Flag
+} from "@staccx/base"
 
-const Story = () => {
+const Story = ({ color, icon, iconColor }) => {
   return (
-    <Box color={"pinkLight"} as={"article"} size={"medium"}>
-      <ItemGroup>
+    <Box color={color} as={"article"} size={"medium"}>
+      <Layout variant={"storyContent"}>
         <header>
-          <Heading level={2}>Enabling the circular economy</Heading>
+          <Heading level={2}>Harvest data</Heading>
+          <IconContainer>
+            <ThemeComponent tagName={icon} color={iconColor} autoWidth />
+          </IconContainer>
         </header>
         <div>
-          <Paragraph>
-            Reward sustainable behaviour. Spend time on innovation, not
-            integration. WasteIQ is a cloud based platform for public waste
-            management. We collect and upcycle data from urban waste
-            infrastructure. The digital foundation for a more sustainable
-            tomorrow.
-          </Paragraph>
+          <Layout rowGap={"gridSmall"}>
+            <Paragraph>
+              Reward sustainable behaviour. Spend time on innovation, not
+              integration. WasteIQ is a cloud based platform for public waste
+              management. We collect and upcycle data from urban waste
+              infrastructure. The digital foundation for a more sustainable
+              tomorrow.
+            </Paragraph>
+            <div>
+              <Layout rowGap={"small"}>
+                <Heading level={4}>Collect data from</Heading>
+                <Layout as={"ul"} rowGap={"small"}>
+                  <li>
+                    <Flag img={""}>Bin collection trucks</Flag>
+                  </li>
+                  <li>
+                    <Flag img={""}>Underground systems</Flag>
+                  </li>
+                  <li>
+                    <Flag img={""}>Recycling plants</Flag>
+                  </li>
+                </Layout>
+              </Layout>
+            </div>
+          </Layout>
         </div>
-      </ItemGroup>
+      </Layout>
     </Box>
   )
 }
+
+const IconContainer = styled.div`
+  max-height: 25vh;
+`
 
 export default Story

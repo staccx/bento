@@ -11,6 +11,10 @@ export const LayoutVariants = theming.createVariants(
         )
         minmax(${theming.spacing.medium}, 1fr);
       grid-template-areas: ".  main  .";
+    `,
+    storyContent: css`
+      grid-template-columns: 25% 1fr;
+      grid-template-areas: "header  content";
     `
   },
   Layout.themeProps.container

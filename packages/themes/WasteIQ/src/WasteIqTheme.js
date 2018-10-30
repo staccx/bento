@@ -4,6 +4,12 @@ import { LayoutVariants } from "./variants/Layout.Variants"
 import { LogoComponent } from "./components/Component.Logo"
 import { ButtonVariants } from "./variants/Button.Variants"
 import { ItemGroupVariants } from "./variants/ItemGroup.Variants"
+import { ParagraphVariants } from "./variants/Paragraph.Variants"
+import base from "./globals/base"
+import { IconHalfCircleComponent } from "./icons/Icon.HalfCircle"
+import { IconQuarterCircleComponent } from "./icons/Icon.QuarterCircle"
+import { IconDashComponent } from "./icons/Icon.Dash"
+import { DotsPatternComponent } from "./components/Component.DotsPattern"
 
 const borderRadius = "0"
 
@@ -95,11 +101,13 @@ export default new theming.Theme({
   fontFamily,
   spacing
 })
-  .add(theming.createGlobal({ base: theming.cssResets }))
+  .add(theming.createGlobal({ resets: theming.cssResets, base })) // Globals
+  .add([LogoComponent, DotsPatternComponent]) // Components
+  .add([IconHalfCircleComponent, IconQuarterCircleComponent, IconDashComponent]) // Icons
   .add([
     BoxVariants,
-    LogoComponent,
     LayoutVariants,
     ButtonVariants,
-    ItemGroupVariants
-  ])
+    ItemGroupVariants,
+    ParagraphVariants
+  ]) // Variants

@@ -7,7 +7,7 @@ const Hero = () => {
     <Outer>
       <Layout rowGap={"gridSmall"}>
         <Heading level={1}>Enabling the circular economy</Heading>
-        <Paragraph>
+        <Paragraph variant={"lede"}>
           Reward sustainable behaviour. Spend time on innovation, not
           integration. WasteIQ is a cloud based platform for public waste
           management. We collect and upcycle data from urban waste
