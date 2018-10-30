@@ -26,7 +26,7 @@ const SanityList = ({ type, filter, count, pick, children }) => {
 export default SanityList
 
 SanityList.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.func,
   count: PropTypes.number,
   filter: PropTypes.string,
   pick: PropTypes.string,

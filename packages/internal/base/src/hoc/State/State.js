@@ -12,7 +12,7 @@ class State extends React.Component {
 }
 
 State.propTypes = {
-  children: PropTypes.func.isRequired
+  children: PropTypes.func
 }
 
 export default State

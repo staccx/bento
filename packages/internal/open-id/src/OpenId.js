@@ -9,7 +9,7 @@ class OpenId extends React.Component {
 }
 
 OpenId.propTypes = {
-  children: PropTypes.func.isRequired
+  children: PropTypes.func
 }
 
 export default OpenId
