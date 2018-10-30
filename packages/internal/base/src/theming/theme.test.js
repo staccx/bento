@@ -1,5 +1,5 @@
 import Theme from "./Theme"
-import { theming } from "./"
+import createVariants from "./utils/createVariants"
 // import grids from "../components/Layout/Layout/Layout.Grids"
 
 const example = {
@@ -86,8 +86,8 @@ const other = {
   }
 }
 
-const style1 = theming.createVariants({ subtle: 1 }, "button")
-const style2 = theming.createVariants({ _default: "test" }, "label")
+const style1 = createVariants({ subtle: 1 }, "button")
+const style2 = createVariants({ _default: "test" }, "label")
 
 describe("Theme", () => {
   describe("Tests", () => {

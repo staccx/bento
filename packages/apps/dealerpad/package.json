@@ -1,10 +1,10 @@
 {
   "name": "@staccx/dealerpad",
-  "version": "8.1.0",
+  "version": "8.1.1",
   "dependencies": {
-    "@staccx/animations": "^8.0.0",
+    "@staccx/animations": "^8.1.1",
     "@staccx/base": "^7.15.0",
-    "@staccx/formatting": "^8.1.0",
+    "@staccx/formatting": "^8.1.1",
     "@staccx/nordea-theme": "^7.15.0",
     "axios": "^0.18.0",
     "history": "^4.7.2",
@@ -29,11 +29,12 @@
     "test:watch": "react-scripts test --env=jsdom --watch",
     "build": "yarn prettify && rollup -c",
     "start:module": "rollup -c -w",
-    "prepublish": "yarn test && yarn build",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.0.0",
+    "@staccx/rollup-config": "^8.1.1",
     "prettier": "^1.14.2",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",
@@ -57,5 +58,5 @@
   "peerDependencies": {
     "styled-components": "^4.0.2"
   },
-  "gitHead": "297e66dbf355a6ce9a98fbf31643e11ea6ccbe13"
+  "gitHead": "78b68aed23e01f4bfdf93adc69632133935d07f8"
 }

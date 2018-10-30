@@ -1,6 +1,6 @@
 {
   "name": "@staccx/math",
-  "version": "8.0.0",
+  "version": "8.1.1",
   "description": "Convenience functions for math",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -16,7 +16,8 @@
     "test:watch": "react-scripts test --env=jsdom",
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
-    "prepublish": "yarn test && yarn build",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "files": [
@@ -26,7 +27,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.0.0",
+    "@staccx/rollup-config": "^8.1.1",
     "prettier": "^1.14.2",
     "react-scripts": "^1.1.4",
     "rollup": "^0.65.0"

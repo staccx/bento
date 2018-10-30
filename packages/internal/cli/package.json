@@ -1,6 +1,6 @@
 {
   "name": "@staccx/cli-x",
-  "version": "8.0.0",
+  "version": "8.1.1",
   "description": "",
   "private": true,
   "main": "dist/cli.js",
@@ -9,11 +9,12 @@
     "cli-x": "dist/cli.js"
   },
   "scripts": {
-    "test": "jest --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "test:watch": "jest --env=jsdom --watch",
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
-    "prepublish": "yarn test && yarn build",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "author": "",
@@ -24,6 +25,6 @@
     "inquirer": "^5.2.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.0.0"
+    "@staccx/rollup-config": "^8.1.1"
   }
 }

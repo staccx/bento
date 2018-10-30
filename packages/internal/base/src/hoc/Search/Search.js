@@ -2,8 +2,17 @@ import * as JsSearch from "js-search"
 import React from "react"
 import PropTypes from "prop-types"
 
-const reset = ({ documents, indices, indexer, term }) => {
+const reset = ({
+  documents,
+  indices,
+  indexer,
+  term,
+  searchSubstring = false
+}) => {
   const searcher = new JsSearch.Search(indexer)
+  if (searchSubstring) {
+    searcher.indexStrategy = new JsSearch.AllSubstringsIndexStrategy()
+  }
   indices.forEach(index => searcher.addIndex(index))
   searcher.addDocuments(documents)
 

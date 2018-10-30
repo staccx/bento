@@ -1,6 +1,6 @@
 {
   "name": "@staccx/formatting",
-  "version": "8.1.0",
+  "version": "8.1.1",
   "description": "Convenience functions for formatting",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -16,7 +16,8 @@
     "test:watch": "jest --env=jsdom --watch",
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
-    "prepublish": "yarn test && yarn build",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "files": [
@@ -31,11 +32,11 @@
   },
   "jest": {},
   "devDependencies": {
-    "@staccx/rollup-config": "^8.0.0",
+    "@staccx/rollup-config": "^8.1.1",
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
     "react-scripts": "^1.1.4",
     "rollup": "^0.65.0"
   },
-  "gitHead": "297e66dbf355a6ce9a98fbf31643e11ea6ccbe13"
+  "gitHead": "78b68aed23e01f4bfdf93adc69632133935d07f8"
 }

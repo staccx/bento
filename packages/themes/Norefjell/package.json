@@ -1,7 +1,7 @@
 {
   "license": "UNLICENSED",
   "name": "@staccx/norefjell-theme",
-  "version": "8.1.0",
+  "version": "8.1.1",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -20,20 +20,21 @@
     "test:watch": "jest --env=jsdom --watch",
     "build": "yarn prettify && rollup -c",
     "start:module": "rollup -c -w",
-    "prepublish": "yarn test && yarn build",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/animations": "^8.0.0",
-    "@staccx/base": "^8.1.0",
-    "@staccx/formatting": "^8.1.0",
+    "@staccx/animations": "^8.1.1",
+    "@staccx/base": "^8.1.1",
+    "@staccx/formatting": "^8.1.1",
     "polished": "^1.9.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.0.0",
+    "@staccx/rollup-config": "^8.1.1",
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
     "react-scripts": "^1.1.4",
@@ -41,5 +42,6 @@
   },
   "peerDependencies": {
     "styled-components": "^4.0.2"
-  }
+  },
+  "gitHead": "78b68aed23e01f4bfdf93adc69632133935d07f8"
 }

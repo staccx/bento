@@ -1,6 +1,5 @@
-import { css } from "styled-components"
 import applyVariants from "./applyVariants"
-import { themePropTypes } from "../../../constants/themeContants"
+import { themePropTypes } from "../../constants/themeContants"
 
 const themeProps = {
   button: {
@@ -13,18 +12,18 @@ const themeProps = {
 const props = {
   theme: {
     Button: {
-      _default: css`
+      _default: `
         color: blue;
       `,
-      custom: css`
+      custom: `
         color: red;
       `
     },
     Label: {
-      _default: css`
+      _default: `
         color: white;
       `,
-      custom: css`
+      custom: `
         color: palegoldenrod;
       `
     }

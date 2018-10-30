@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "8.1.0",
+  "version": "8.1.1",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -13,11 +13,12 @@
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "precommit": "lint-staged",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "build:packages": "node build.js",
     "build": "yarn prettify && rollup -c",
     "start": "node build.js && rollup -c -w",
     "prepare": "yarn build && yarn build:packages",
+    "prepublishOnly": "yarn test",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
@@ -35,10 +36,10 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/animations": "^8.0.0",
-    "@staccx/formatting": "^8.1.0",
-    "@staccx/math": "^8.0.0",
-    "@staccx/utils": "^8.0.0",
+    "@staccx/animations": "^8.1.1",
+    "@staccx/formatting": "^8.1.1",
+    "@staccx/math": "^8.1.1",
+    "@staccx/utils": "^8.1.1",
     "babel-plugin-prismjs": "^1.0.2",
     "copy-to-clipboard": "^3.0.8",
     "downshift": "^1.28.0",
@@ -58,7 +59,7 @@
     "yup": "^0.24.1"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.0.0",
+    "@staccx/rollup-config": "^8.1.1",
     "babel-core": "^6.0.0",
     "colors": "^1.3.2",
     "fs-extra": "^6.0.1",
@@ -75,5 +76,6 @@
   },
   "peerDependencies": {
     "styled-components": "^4.0.2"
-  }
+  },
+  "gitHead": "78b68aed23e01f4bfdf93adc69632133935d07f8"
 }

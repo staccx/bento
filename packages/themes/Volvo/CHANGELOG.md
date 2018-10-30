@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.1.1"></a>
+## [8.1.1](https://bitbucket.org/stacc-flow/bento/compare/v8.1.0...v8.1.1) (2018-10-30)
+
+
+### Bug Fixes
+
+* **bento:** removed all app.test.js ([34f0b4c](https://bitbucket.org/stacc-flow/bento/commits/34f0b4c))
+
+
+
+
+
 <a name="8.0.0"></a>
 # [8.0.0](https://bitbucket.org/stacc-flow/bento/compare/v7.19.0...v8.0.0) (2018-10-29)
 

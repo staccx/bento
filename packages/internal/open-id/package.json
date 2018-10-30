@@ -1,6 +1,6 @@
 {
   "name": "@staccx/open-id",
-  "version": "8.0.0",
+  "version": "8.1.1",
   "description": "Open-id components",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -14,6 +14,9 @@
   "scripts": {
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "files": [
@@ -29,7 +32,7 @@
     "react": "^16.6.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.0.0",
+    "@staccx/rollup-config": "^8.1.1",
     "prettier": "^1.14.2",
     "rollup": "^0.65.0"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@staccx/sanity-plugin-i18n",
-  "version": "8.0.0",
+  "version": "8.1.1",
   "description": "",
   "main": "dist/translations.js",
   "author": "Stacc X",
@@ -14,7 +14,7 @@
     "start": "sanity start",
     "test": "sanity check",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'",
-    "prepublishOnly": "yarn prettify && babel -d lib/ src/"
+    "prepare": "yarn prettify && babel -d lib/ src/"
   },
   "keywords": [
     "sanity"

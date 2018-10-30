@@ -1,6 +1,6 @@
 {
   "name": "@staccx/animations",
-  "version": "8.0.0",
+  "version": "8.1.1",
   "description": "Animations",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -12,10 +12,11 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
-    "prepublish": "yarn build",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
@@ -27,7 +28,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.0.0",
+    "@staccx/rollup-config": "^8.1.1",
     "prettier": "^1.14.2",
     "react-scripts": "^1.1.4",
     "rollup": "^0.65.0"
