@@ -1,5 +1,4 @@
-import { BaseTheme, theming } from "@staccx/base"
-import reset from "./reset"
+import { theming } from "@staccx/base"
 import { HeadingStyling } from "./theme.Headings"
 import { ParagraphStyling } from "./theme.Paragraphs"
 import { BoxStyling } from "./theme.Boxes"
@@ -100,7 +99,7 @@ const fontFamily = {
   body: "AvenirLTPro-Roman"
 }
 
-const theme = new theming.Theme(BaseTheme, {
+export default new theming.Theme({
   name: "Fundu",
   font,
   color,
@@ -109,9 +108,9 @@ const theme = new theming.Theme(BaseTheme, {
   targetSize,
   borderRadius,
   headerHeight,
-  fontFamily,
-  global: reset
+  fontFamily
 })
+  .add(theming.createGlobal({ cssResets: theming.cssResets }))
   .add(HeadingStyling)
   .add(ParagraphStyling)
   .add(BoxStyling)
@@ -143,4 +142,3 @@ const theme = new theming.Theme(BaseTheme, {
   .add(SelectSelectedWrapperStyling)
   .add(PostalCodeInputStyling)
   .add(ImageStyling)
-export default theme

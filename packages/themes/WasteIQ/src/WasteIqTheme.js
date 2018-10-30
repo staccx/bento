@@ -96,4 +96,10 @@ export default new theming.Theme({
   spacing
 })
   .add(theming.createGlobal({ base: theming.cssResets }))
-  .add([BoxVariants, LogoComponent, LayoutVariants, ButtonVariants, ItemGroupVariants])
+  .add([
+    BoxVariants,
+    LogoComponent,
+    LayoutVariants,
+    ButtonVariants,
+    ItemGroupVariants
+  ])
