@@ -11,8 +11,8 @@ describe("Date", () => {
     it("Should format ISO 8601 with other formats", () => {
       const format = f => formatDate("2018-04-25T00:00:00", f)
 
-      expect(format("YYYY")).toBe("2018")
-      expect(format("MM/YYYY")).toBe("04/2018")
+      expect(format("yyyy")).toBe("2018")
+      expect(format("MM/yyyy")).toBe("04/2018")
       expect(format("dd/MM")).toBe("25/04")
       expect(format("HH:mm")).toBe("00:00")
       expect(format("MMMM")).toBe("april")
