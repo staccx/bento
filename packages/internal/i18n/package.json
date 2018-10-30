@@ -31,7 +31,7 @@
   "dependencies": {
     "@staccx/base": "^8.0.0",
     "prop-types": "^15.6.2",
-    "react": "^16.6.0",
+    "react": "^16.7.0-alpha",
     "react-app-rewire-mobx": "^1.0.8",
     "react-dom": "^16.6.0",
     "string-format-obj": "^1.1.1"
