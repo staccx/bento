@@ -1,30 +1,46 @@
 const format = require("string-format-obj")
-const STACC_X_LANGUAGE_KEY = "stacc-x-bento-locale"
+export const STACC_X_LANGUAGE_KEY = "stacc-x-bento-locale"
+
 /**
  * Class to be used as singleton so that translations can be done out of rendering
  */
 class i18n {
-  init({ texts, language, debug, data, plugins, pluginOptions }) {
-    this.texts = texts
-    this.languages = Object.keys(texts)
-      .map(key => texts[key])
-      .reduce((acc, current) => {
-        if (!current) {
-          return acc
-        }
-        const languages = Object.keys(current).filter(
-          k => acc.indexOf(k) === -1
-        )
-        return [...acc, ...languages]
-      }, [])
+  init({
+    texts,
+    language,
+    debug,
+    data,
+    plugins,
+    pluginOptions,
+    middleware = []
+  }) {
+    return new Promise(resolve => {
+      this.texts = texts
+      this.languages = Object.keys(texts)
+        .map(key => texts[key])
+        .reduce((acc, current) => {
+          if (!current) {
+            return acc
+          }
+          const languages = Object.keys(current).filter(
+            k => acc.indexOf(k) === -1
+          )
+          return [...acc, ...languages]
+        }, [])
 
-    this.language = language
-    this.debug = debug || false
-    this.data = data
-    this.plugins = plugins || []
-    this.pluginOptions = pluginOptions || {}
+      this.language = language
+      this.debug = debug || false
+      this.data = data
+      this.plugins = plugins || []
+      this.pluginOptions = pluginOptions || {}
 
-    return this.detectLanguage()
+      // run middleware
+      middleware.forEach(mid => {
+        mid(this)
+      })
+
+      return resolve(language || this.languages[0])
+    })
   }
 
   setLanguage(language) {
@@ -104,51 +120,6 @@ class i18n {
 
   hasLanguage(language) {
     return this.languages.indexOf(language) !== -1
-  }
-
-  detectLanguage() {
-    this.log(`Finding language`)
-    console.time("detect-language")
-    return new Promise(resolve => {
-      const value = localStorage.getItem(STACC_X_LANGUAGE_KEY)
-      console.timeEnd("detect-language")
-      if (!value) {
-        // Check navigator language
-        if (this.hasLanguage(navigator.language)) {
-          this.log(
-            `Found language in navigator language: ${navigator.language}`
-          )
-          return resolve(navigator.language)
-        }
-        // Check navigator languages
-        for (let i = 0; i < navigator.languages.length; i++) {
-          const locale = navigator.languages[i]
-
-          // Check each language if it exist
-          if (this.hasLanguage(locale)) {
-            this.log(`Found language in navigator languages: ${locale}`)
-            return resolve(locale)
-          }
-
-          // Check if the first part of language exists e.g "en_US" -> "en"
-          if (locale.includes("-")) {
-            const l = locale.split("-")[0] // take first piece of this
-
-            if (this.hasLanguage(l)) {
-              this.log(`Found language by splitting locale ${locale} into ${l}`)
-
-              return resolve(l)
-            }
-          }
-        }
-        const language = this.language || this.languages[0]
-        this.log(`Falling back to ${language}`)
-
-        return resolve(language)
-      }
-      this.log(`Found language in local storage: ${value}`)
-      return resolve(value)
-    })
   }
 }
 
