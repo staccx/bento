@@ -128,6 +128,8 @@ import WebFonts from "./components/Theme/WebFonts"
 
 // Search
 import Search from "./hoc/Search/Search"
+
+import Combobox from "./components/Forms/Combobox/Combobox"
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
@@ -146,6 +148,7 @@ export {
   CheckGroup,
   Close,
   CodeRenderer,
+  Combobox,
   CompanyInput,
   CopyToClipboard,
   CopyToClipboardComponent,
