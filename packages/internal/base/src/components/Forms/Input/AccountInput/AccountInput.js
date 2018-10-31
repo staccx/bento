@@ -4,7 +4,7 @@ import Input, { InputPropTypes } from "../Input"
 import { accountMasks } from "../masks"
 
 const AccountInput = ({ mask, locale = "nb", ...otherProps }) => (
-  <Input type={"tel"} mask={accountMasks[locale]} {...otherProps} />
+  <Input type={"tel"} options={accountMasks[locale]} {...otherProps} />
 )
 
 AccountInput.propTypes = {
