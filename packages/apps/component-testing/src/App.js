@@ -6,6 +6,12 @@ import {
   Label,
   Button,
   List,
+  CreditCardInput,
+  PhoneInput,
+  PostalCodeInput,
+  NationalIdInput,
+  AccountInput,
+  CurrencyInput
 } from "@staccx/base"
 import { ThemeProvider } from "styled-components"
 import { BrowserRouter as Router } from "react-router-dom"
@@ -69,6 +75,12 @@ class App extends Component {
               filter={"value"}
               options={options}
             />
+            <CreditCardInput label={"Credit Card"} />
+            <PhoneInput label={"Phone number"} onChange={console.warn} />
+            <NationalIdInput label={"National Id"} id={"tsa"} />
+            <PostalCodeInput label={"Postal code"} onChange={console.log} />
+            <AccountInput label={"Account number"} />
+            <CurrencyInput label={"Currency"}/>
           </Wrapper>
         </Router>
       </ThemeProvider>
