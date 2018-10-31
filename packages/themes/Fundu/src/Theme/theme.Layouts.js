@@ -20,25 +20,10 @@ export const LayoutStyling = theming.createVariants(
         grid-column-gap: 0;
       }
     `,
-    formElements: css`
-      ${p =>
-        !p.inCalculator &&
-        css`
-          border-top: 1px solid ${theming.color("line")(p)};
-        `};
-      grid-row-gap: 0;
-
-      > * {
-        position: relative;
-      }
-
-      ${p =>
-        p.inCalculator !== "left" &&
-        css`
-          > *:not(:last-child) {
-            border-bottom: 1px solid ${theming.color.line};
-          }
-        `};
+    formElements: css``,
+    columns: css`
+      grid-auto-flow: column;
+      justify-content: start;
     `
   },
   Layout.themeProps.container

@@ -1,6 +1,7 @@
 import React, { Component } from "react"
-import styled, { ThemeProvider } from "styled-components"
-import { ThemeStyrke, ThemeFundu } from "./theme.js"
+import { /* styled, */ ThemeProvider } from "styled-components"
+import { GlobalStyle, WebFonts } from "@staccx/base"
+import { /* ThemeStyrke, */ ThemeFundu } from "./theme.js"
 import Sign from "./module/Sign"
 // import Authenticate from "./module/Authenticate"
 // import PresentOffer from "./module/PresentOffer"
@@ -28,6 +29,8 @@ class Content extends Component {
         <Offer /> */}
 
         <div>
+          <GlobalStyle />
+          <WebFonts />
           <Personalia onValidated={console.log} onClick={console.log} />
           <hr style={{ margin: "64px 0" }} />
           <Calculator onValidated={console.log} />
@@ -89,25 +92,25 @@ class Content extends Component {
 class App extends Component {
   render() {
     return (
-      <Outer>
-        <Item>
-          <Content theme={ThemeFundu} />
-        </Item>
-        <Item>
-          <Content theme={ThemeStyrke} />
-        </Item>
-      </Outer>
+      // <Outer>
+      //   <Item>
+      <Content theme={ThemeFundu} />
+      // </Item>
+      // <Item>
+      // <Content theme={ThemeStyrke} />
+      // </Item>
+      // </Outer>
     )
   }
 }
 
-const Outer = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
+// const Outer = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+// `
 
-const Item = styled.div`
-  flex-basis: 50%;
-`
+// const Item = styled.div`
+//   flex-basis: 50%;
+// `
 
 export default App

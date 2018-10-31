@@ -5,6 +5,7 @@ import createHistory from "history/createBrowserHistory"
 import Header from "./components/Header/Header"
 import Home from "./pages/Home"
 import Page from "./components/Page/Page"
+import Footer from "./components/Footer/Footer"
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Switch>
             <Route path={"/"} exact component={Home} />
           </Switch>
+          <Footer />
         </React.Fragment>
       </Router>
     )

@@ -10,6 +10,8 @@ import { IconHalfCircleComponent } from "./icons/Icon.HalfCircle"
 import { IconQuarterCircleComponent } from "./icons/Icon.QuarterCircle"
 import { IconDashComponent } from "./icons/Icon.Dash"
 import { DotsPatternComponent } from "./components/Component.DotsPattern"
+import { HeadingVariants } from "./variants/Heading.Variants"
+import { ListVariants } from "./variants/List.Variants"
 
 const borderRadius = "0"
 
@@ -21,6 +23,7 @@ const targetSize = {
 const wrapper = {
   small: "420px",
   medium: "1050px",
+  mediumSpacingLarge: "1146px",
   large: "1050px",
   breakout: "640px"
 }
@@ -109,5 +112,7 @@ export default new theming.Theme({
     LayoutVariants,
     ButtonVariants,
     ItemGroupVariants,
-    ParagraphVariants
+    ParagraphVariants,
+    HeadingVariants,
+    ListVariants
   ]) // Variants

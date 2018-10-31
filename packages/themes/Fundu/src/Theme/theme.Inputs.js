@@ -11,30 +11,9 @@ import {
   theming
 } from "@staccx/base"
 
-const floatingLabel = css`
-  font-size: 14px;
-  line-height: 1.2;
-  padding-bottom: 6px;
-  display: block;
-  position: absolute;
-  top: 12px;
-  left: 24px;
-`
-
 export const InputStyling = theming.createVariants(
   {
-    [theming.VARIANT_DEFAULT]: css`
-      display: block;
-      min-height: 72px;
-      border-width: 0;
-      border-radius: 0;
-      padding: ${theming.spacing.medium} ${theming.spacing.medium} 0;
-      transition: border-color 0.2s ease-out;
-    `,
-    simple: css``,
-    loanOffer: css`
-      border-width: 0;
-    `,
+    [theming.VARIANT_DEFAULT]: css``,
     currencyLarge: css`
       input {
         min-height: 96px;
@@ -46,37 +25,15 @@ export const InputStyling = theming.createVariants(
 
 export const LabelStyling = theming.createVariants(
   {
-    [theming.VARIANT_DEFAULT]: floatingLabel,
-    loanDuration: css`
-      padding: 0;
-    `,
-    radioPill: css`
-      display: block;
-      padding-left: ${theming.spacing.medium};
-      padding-top: ${theming.spacing.small};
-      padding-bottom: ${theming.spacing.small};
-    `,
-    loanPurpose: css`
-      display: block;
-      padding-left: ${theming.spacing.medium};
-      padding-top: ${theming.spacing.small};
-      padding-bottom: ${theming.spacing.tiny};
-    `
+    [theming.VARIANT_DEFAULT]: css``
   },
   Label.themeProps.label
 )
 
 export const SelectOptionStyling = theming.createVariants(
   {
-    loanOffer: css`
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: transparent;
-      }
-    `,
-    loanPurpose: css`
-      padding-left: ${theming.spacing.medium};
+    [theming.VARIANT_DEFAULT]: css`
+      padding-left: ${theming.spacing.mediumPlus};
     `
   },
   Select.themeProps.optionContainer
@@ -84,30 +41,7 @@ export const SelectOptionStyling = theming.createVariants(
 
 export const SelectSelectedWrapperStyling = theming.createVariants(
   {
-    [theming.VARIANT_DEFAULT]: css`
-      border-color: transparent;
-      padding-right: 0;
-    `,
-    loanOffer: css`
-      border-color: transparent;
-      padding-right: ${theming.spacing.mediumPlus};
-
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: transparent;
-        color: ${theming.color.primary};
-        border-color: ${theming.color.primary};
-
-        svg {
-          fill: ${theming.color.primary};
-        }
-      }
-    `,
-    loanPurpose: css`
-      padding-right: 0;
-      border-color: transparent;
-    `
+    [theming.VARIANT_DEFAULT]: css``
   },
   Select.themeProps.wrapper
 )
@@ -123,25 +57,7 @@ export const SelectIconButtonStyling = theming.createVariants(
 
 export const SelectOptionsWrapperStyling = theming.createVariants(
   {
-    loanOffer: css`
-      width: 100%;
-      max-height: 150px;
-      overflow-y: auto;
-      position: absolute;
-      z-index: 10;
-      background-color: ${theming.color.white};
-      box-shadow: rgba(0, 0, 75, 0.015) 0px 2px 2px,
-        rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
-        rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
-        rgba(0, 0, 75, 0.015) 0px 64px 64px;
-    `,
-    loanPurpose: css`
-      border-top: 1px solid ${theming.color.line};
-      box-shadow: rgba(0, 0, 75, 0.015) 0px 2px 2px,
-        rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
-        rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
-        rgba(0, 0, 75, 0.015) 0px 64px 64px;
-    `
+    loanOffer: css``
   },
   Select.themeProps.defaultOptionWrapper
 )
@@ -155,48 +71,14 @@ export const SelectSimpleWrapperStyling = theming.createVariants(
 
 export const SelectSimpleSelectStyling = theming.createVariants(
   {
-    [theming.VARIANT_DEFAULT]: css`
-      display: block;
-      min-height: 72px;
-      border-width: 0;
-      border-radius: 0;
-      padding: ${theming.spacing.medium} ${theming.spacing.medium} 0;
-      transition: border-color 0.2s ease-out;
-
-      & ~ label {
-        font-size: 14px;
-        line-height: 1.2;
-        padding-bottom: 6px;
-        display: block;
-        position: absolute;
-        top: 12px;
-        left: 24px;
-      }
-    `
+    [theming.VARIANT_DEFAULT]: css``
   },
   SelectSimple.themeProps.select
 )
 
 export const RadioPillItemStyling = theming.createVariants(
   {
-    [theming.VARIANT_DEFAULT]: css`
-      &:first-child {
-        margin-left: ${theming.spacing.medium};
-        && label {
-          border-radius: 0;
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-        }
-      }
-      &:last-child {
-        margin-right: ${theming.spacing.medium};
-        && label {
-          border-radius: 0;
-          border-bottom-right-radius: 0;
-          border-top-right-radius: 0;
-        }
-      }
-    `
+    [theming.VARIANT_DEFAULT]: css``
   },
   RadioPillItem.themeProps.wrapper
 )

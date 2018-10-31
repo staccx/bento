@@ -1,0 +1,30 @@
+{
+  "name": "wasteiq-web",
+  "alias": ["wasteiq.stac.cx"],
+  "type": "static",
+  "static": {
+    "public": "build",
+    "rewrites": [
+      {
+        "source": "manifest.json",
+        "destination": "manifest.json"
+      },
+      {
+        "source": "robots.txt",
+        "destination": "robots.txt"
+      },
+      {
+        "source": "sitemap.xml",
+        "destination": "sitemap.xml"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "files": ["build"]
+}
