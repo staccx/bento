@@ -45,6 +45,9 @@ export const HeadingStyling = theming.createVariants(
     formSection: css`
       font-size: ${theming.font.h3};
       color: ${theming.color.wcag};
+    `,
+    sectionHeading: css`
+      font-size: ${theming.font.h1};
     `
   },
   Heading.themeProps.heading
