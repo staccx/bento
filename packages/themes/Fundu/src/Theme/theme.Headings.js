@@ -6,7 +6,7 @@ const centeredHeading = css`
   margin-bottom: ${theming.spacing.small};
   color: ${theming.color.primary};
   font-size: ${theming.font.huge};
-  font-weight: 400;
+  font-weight: 600;
 
   @media (max-width: 735px) {
     font-size: ${theming.font.h1};

@@ -44,9 +44,9 @@ const targetSize = {
 }
 
 const wrapper = {
-  small: "420px",
-  medium: "640px",
-  large: "1024px",
+  small: "600px",
+  medium: "1080px",
+  large: "1350px",
   breakout: "640px"
 }
 
@@ -78,7 +78,8 @@ const color = {
   disabled: "#BABABA",
   warning: "#c54059",
   black: "#000",
-  subtleHover: "#F7F7FF"
+  subtleHover: "#F7F7FF",
+  link: "#1F5D9B"
 }
 
 const font = {
@@ -91,17 +92,24 @@ const font = {
   base: "16px",
   tiny: "12px",
   input: "16px",
-  huge: "50px"
+  huge: "50px",
+  lineHeight: "1.4"
 }
 
 const fontFamily = {
-  heading: "AvenirLTPro-Black",
-  body: "AvenirLTPro-Roman"
+  heading: "Avenir",
+  body: "Avenir"
+}
+
+const fontWeight = {
+  normal: "400",
+  bold: "600"
 }
 
 export default new theming.Theme({
   name: "Fundu",
   font,
+  fontWeight,
   color,
   spacing,
   wrapper,
