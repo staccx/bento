@@ -1,42 +1,13 @@
 const rollup = require("rollup")
-const babel = require("rollup-plugin-babel")
-const commonjs = require("rollup-plugin-commonjs")
-const resolve = require("rollup-plugin-node-resolve")
-const json = require("rollup-plugin-json")
+const generateConfig = require("@staccx/rollup-config")
 // const eslint = require("rollup-plugin-eslint")
-// const pkg = require("./package.json")
+const pkg = require("./package.json")
 // const filesize = require("rollup-plugin-filesize")
 const path = require("path")
 const glob = require("glob")
 const ProgressBar = require("progress")
 /* eslint-disable-next-line */
 const colors = require("colors")
-
-const external = [
-  "react",
-  "react-dom",
-  "prop-types",
-  "styled-components",
-  "react-jsonschema-form"
-]
-
-const defaultPlugins = [
-  json(),
-  babel({
-    exclude: ["node_modules/**"],
-    plugins: ["external-helpers"]
-  }),
-  resolve(),
-  commonjs({
-    namedExports: {
-      "../../node_modules/text-mask-core/dist/textMaskCore.js": [
-        "createTextMaskInputElement"
-      ]
-    }
-  })
-  // eslint({})
-  // filesize()
-]
 
 glob("./src/**/!(*.preview).js", {}, function(er, files) {
   const components = files
@@ -61,11 +32,15 @@ glob("./src/**/!(*.preview).js", {}, function(er, files) {
   })
 
   components.forEach(module => {
+    const config = generateConfig({
+      ...pkg,
+      main: `dist/lib/cjs.${module.name}`,
+      module: `dist/lib/es.${module.name}`
+    })
+    config.input = module.path
     rollup
       .rollup({
-        input: module.path,
-        external: external,
-        plugins: defaultPlugins,
+        ...config,
         onwarn: function(message) {
           return `${message.source} has an issue`
         }
@@ -74,7 +49,8 @@ glob("./src/**/!(*.preview).js", {}, function(er, files) {
         return bundle
           .write({
             file: `dist/lib/${module.name}`,
-            format: "cjs"
+            name: module.name,
+            format: "es"
           })
           .then(() => {
             bar.tick({
@@ -86,5 +62,6 @@ glob("./src/**/!(*.preview).js", {}, function(er, files) {
             }
           })
       })
+      .catch(console.error)
   })
 })

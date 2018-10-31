@@ -1,3 +1,5 @@
+const generateConfig = require("@staccx/rollup-config")
+
 const rollup = require("rollup")
 const babel = require("rollup-plugin-babel")
 const commonjs = require("rollup-plugin-commonjs")
@@ -71,11 +73,17 @@ glob("../../**/*.preview.js", {}, (error, files) => {
     .then(() => {
       fs.writeJsonSync("./src/generated/props.json", props)
       fs.writeJsonSync("./src/generated/source.json", source)
+
+      const config = generateConfig({
+        dependencies: [],
+        main: `comps`,
+        module: `comps`
+      })
+      config.input = "./src/generated/previews.js"
+
       rollup
         .rollup({
-          input: "./src/generated/previews.js",
-          external: external,
-          plugins: defaultPlugins,
+          ...config,
           onwarn: function(message) {
             return `${message.source} has an issue`
           }

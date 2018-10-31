@@ -1,6 +1,6 @@
-import * as JsSearch from "js-search"
 import React from "react"
 import PropTypes from "prop-types"
+const JsSearch = require("js-search")
 
 const reset = ({
   documents,
@@ -65,11 +65,9 @@ Search.propTypes = {
   children: PropTypes.func.isRequired,
   documents: PropTypes.array.isRequired,
   indexer: PropTypes.string,
-  indicises: PropTypes.array.isRequired
+  indices: PropTypes.array.isRequired
 }
 
 export default Search
 
-Search.defaultProps = {
-  indexer: "search"
-}
+Search.defaultProps = {}

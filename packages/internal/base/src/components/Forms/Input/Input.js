@@ -69,7 +69,7 @@ class Input extends React.Component {
             placeholder={placeholder}
             variant={variant}
             type={type}
-            innerRef={this.input}
+            ref={this.input}
             autoComplete={autoComplete}
             {...otherProps}
           />
@@ -86,7 +86,7 @@ class Input extends React.Component {
             placeholder={placeholder}
             variant={variant}
             type={type}
-            innerRef={this.input}
+            ref={this.input}
             autoComplete={autoComplete}
             {...otherProps}
           />

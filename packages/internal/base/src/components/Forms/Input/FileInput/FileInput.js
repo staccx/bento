@@ -68,7 +68,7 @@ class FileInput extends Component {
       <FileWrapper variant={variant} className={className}>
         <Input
           type="file"
-          innerRef={this.fileInput} // To get the number of uploaded files from the input in case of multiple files
+          ref={this.fileInput} // To get the number of uploaded files from the input in case of multiple files
           accept={accept}
           id={id}
           disabled={disabled}
