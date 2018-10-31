@@ -43,8 +43,6 @@ export const HeadingStyling = theming.createVariants(
       margin-bottom: ${theming.spacing.tiny};
     `,
     formSection: css`
-      padding: ${theming.spacing.small} 0 ${theming.spacing.small}
-        ${theming.spacing.medium};
       font-size: ${theming.font.h3};
       color: ${theming.color.wcag};
     `

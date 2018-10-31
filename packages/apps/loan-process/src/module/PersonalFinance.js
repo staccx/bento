@@ -93,10 +93,10 @@ class PersonalFinance extends React.Component {
                 <Box variant="actionBox">
                   <Box variant="largeForm">
                     <div>
-                      <Heading level={2} variant="formSection">
-                        {this.props.headingPersonaliaText}
-                      </Heading>
-                      <Layout variant="formElements">
+                      <Layout>
+                        <Heading level={2} variant="formSection">
+                          {this.props.headingPersonaliaText}
+                        </Heading>
                         <LayoutItem>
                           <Field
                             name={`postalCode`}
@@ -187,14 +187,10 @@ class PersonalFinance extends React.Component {
                               </Alert>
                             )}
                         </LayoutItem>
-                      </Layout>
-                    </div>
 
-                    <div>
-                      <Heading level={2} variant="formSection">
-                        {this.props.headingIncomeAndExpensesText}
-                      </Heading>
-                      <Layout variant="formElements">
+                        <Heading level={2} variant="formSection">
+                          {this.props.headingIncomeAndExpensesText}
+                        </Heading>
                         {values.relationshipStatus &&
                           hasPartner(values.relationshipStatus) && (
                             <LayoutItem>

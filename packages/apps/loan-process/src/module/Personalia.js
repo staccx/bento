@@ -196,7 +196,6 @@ class Personalia extends React.Component {
                                     )
                                   }
                                   // onBlur={onBlur}
-                                  variant="loanPurpose"
                                   {...props}
                                 />
                               )
@@ -236,7 +235,6 @@ class Personalia extends React.Component {
                                     )
                                   }
                                   onBlur={onBlur}
-                                  variant="loanPurpose"
                                   {...props}
                                 />
                               )
@@ -255,41 +253,43 @@ class Personalia extends React.Component {
                             render={({ field }) => {
                               const { name } = field
                               return (
-                                <Box variant="radioContainer">
+                                <div>
                                   <Label htmlFor={name}>
                                     Mottar du innbetalinger fra utenfor Norge?
                                   </Label>
-                                  <RadioButton
-                                    name={name}
-                                    id="213ewqs"
-                                    defaultChecked={
-                                      values.paymentsInternational
-                                    }
-                                    onChange={() =>
-                                      setFieldValue(
-                                        "paymentsInternational",
-                                        true
-                                      )
-                                    }
-                                  >
-                                    Ja
-                                  </RadioButton>
-                                  <RadioButton
-                                    name={name}
-                                    id="21iehwdaj"
-                                    defaultChecked={
-                                      !values.paymentsInternational
-                                    }
-                                    onChange={() =>
-                                      setFieldValue(
-                                        "paymentsInternational",
-                                        false
-                                      )
-                                    }
-                                  >
-                                    Nei
-                                  </RadioButton>
-                                </Box>
+                                  <Layout grid="columns" variant="columns">
+                                    <RadioButton
+                                      name={name}
+                                      id="213ewqs"
+                                      defaultChecked={
+                                        values.paymentsInternational
+                                      }
+                                      onChange={() =>
+                                        setFieldValue(
+                                          "paymentsInternational",
+                                          true
+                                        )
+                                      }
+                                    >
+                                      Ja
+                                    </RadioButton>
+                                    <RadioButton
+                                      name={name}
+                                      id="21iehwdaj"
+                                      defaultChecked={
+                                        !values.paymentsInternational
+                                      }
+                                      onChange={() =>
+                                        setFieldValue(
+                                          "paymentsInternational",
+                                          false
+                                        )
+                                      }
+                                    >
+                                      Nei
+                                    </RadioButton>
+                                  </Layout>
+                                </div>
                               )
                             }}
                           />
@@ -306,32 +306,35 @@ class Personalia extends React.Component {
                             render={({ field }) => {
                               const { name } = field
                               return (
-                                <Box variant="radioContainer">
+                                <div>
                                   <Label htmlFor={name}>
                                     Tar du i mot kontanter i betaling fra dine
                                     kunder
                                   </Label>
-                                  <RadioButton
-                                    name={name}
-                                    id="3riejwfjnsldk"
-                                    defaultChecked={values.paymentCash}
-                                    onChange={() =>
-                                      setFieldValue("paymentCash", true)
-                                    }
-                                  >
-                                    Ja
-                                  </RadioButton>
-                                  <RadioButton
-                                    name={name}
-                                    id="okwenfs"
-                                    defaultChecked={!values.paymentCash}
-                                    onChange={() =>
-                                      setFieldValue("paymentCash", false)
-                                    }
-                                  >
-                                    Nei
-                                  </RadioButton>
-                                </Box>
+
+                                  <Layout variant="columns">
+                                    <RadioButton
+                                      name={name}
+                                      id="3riejwfjnsldk"
+                                      defaultChecked={values.paymentCash}
+                                      onChange={() =>
+                                        setFieldValue("paymentCash", true)
+                                      }
+                                    >
+                                      Ja
+                                    </RadioButton>
+                                    <RadioButton
+                                      name={name}
+                                      id="okwenfs"
+                                      defaultChecked={!values.paymentCash}
+                                      onChange={() =>
+                                        setFieldValue("paymentCash", false)
+                                      }
+                                    >
+                                      Nei
+                                    </RadioButton>
+                                  </Layout>
+                                </div>
                               )
                             }}
                           />
