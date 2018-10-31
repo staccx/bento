@@ -1,0 +1,46 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3658499, 2018-10-22T07:07:08-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: AvenirLTPro-Roman by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/avenir/pro-55-roman/
+ *
+ * Webfont: AvenirLTPro-Black by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/avenir/pro-95-black/
+ *
+ *
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3658499
+ * Licensed pageviews: 250,000
+ * Webfonts copyright: Copyright &#x00A9; 2014 Monotype GmbH. All rights reserved.
+ *
+ * © 2018 MyFonts Inc
+*/
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/37d303");
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 400;
+  src: url("avenir/37D303_0_0.eot");
+  src: url("avenir/37D303_0_0.eot?#iefix") format("embedded-opentype"),
+    url("avenir/37D303_0_0.woff2") format("woff2"),
+    url("avenir/37D303_0_0.woff") format("woff"),
+    url("avenir/37D303_0_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 600;
+  src: url("avenir/37D303_1_0.eot");
+  src: url("avenir/37D303_1_0.eot?#iefix") format("embedded-opentype"),
+    url("avenir/37D303_1_0.woff2") format("woff2"),
+    url("avenir/37D303_1_0.woff") format("woff"),
+    url("avenir/37D303_1_0.ttf") format("truetype");
+}
