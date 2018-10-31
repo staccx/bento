@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Button, Heading, Wrapper, Text } from "@staccx/base"
+import { Button, Heading, Wrapper, Text, List } from "@staccx/base"
 import { ThemeProvider } from "styled-components"
 import theme from "./theme.js"
 import LanguageProvider from "./Components/LanguageProvider"
@@ -41,6 +41,28 @@ class App extends Component {
             </TranslatedText>
             <TranslatedText i18nKey={"HELLO"}>
               {value => <Button>{value}</Button>}
+            </TranslatedText>
+            <TranslatedText i18nKey={["listItem1", "listItem2", "listItem3"]}>
+              {values => (
+                <List>
+                  {values.map(value => (
+                    <li>
+                      <Text>{value}</Text>
+                    </li>
+                  ))}
+                </List>
+              )}
+            </TranslatedText>
+            <TranslatedText i18nKey={["listItem4", "listItem5", "listItem6"]} fallback={["fallback1", "fallback2", "fallback3"]}>
+              {values => (
+                <List>
+                  {values.map(value => (
+                    <li>
+                      <Text>{value}</Text>
+                    </li>
+                  ))}
+                </List>
+              )}
             </TranslatedText>
             <LanguageSettings />
           </Wrapper>
