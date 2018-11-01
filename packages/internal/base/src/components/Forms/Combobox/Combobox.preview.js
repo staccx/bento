@@ -52,15 +52,23 @@ const preview = {
   render: props => (
     <Combobox
       onChange={console.log}
-      renderOption={renderOption}
       renderInput={renderInput}
       renderSelected={renderSelected}
       renderLabel={renderLabel}
       listComponent={List}
-      filter={"value"}
+      filter={["value", "misc"]}
       indexer={"value"}
       options={options}
-    />
+      initialSelectedItem={options[1]}
+    >
+      {({ result, getItemProps, highlightedIndex, selectedItem }) => (
+        <List>
+          {result.map(
+            renderOption(getItemProps, highlightedIndex, selectedItem)
+          )}
+        </List>
+      )}
+    </Combobox>
   )
 }
 

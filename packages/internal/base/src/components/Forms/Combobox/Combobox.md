@@ -44,17 +44,26 @@ const renderLabel = getLabelOptions => (
   <Label {...getLabelOptions()}>Fruit</Label>
 )
 
-export default () => (<Combobox
-    onChange={console.log}
-    renderOption={renderOption}
-    renderInput={renderInput}
-    renderSelected={renderSelected}
-    renderLabel={renderLabel}
-    listComponent={List}
-    filter={"value"}
-    indexer={"value"}
-    options={options}
-  />
+export default () =>  <Combobox
+                                   onChange={console.log}
+                                   renderInput={renderInput}
+                                   renderSelected={renderSelected}
+                                   renderLabel={renderLabel}
+                                   listComponent={List}
+                                   filter={["value", "misc"]}
+                                   indexer={"value"}
+                                   options={options}
+                                   initialSelectedItem={options[1]}
+                                 >
+                                   {({ result, getItemProps, highlightedIndex, selectedItem }) => (
+                                     <List>
+                                       {result.map(
+                                         renderOption(getItemProps, highlightedIndex, selectedItem)
+                                       )}
+                                     </List>
+                                   )}
+                                 </Combobox>gs
+                                 
 )
 
 
