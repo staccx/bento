@@ -35,7 +35,7 @@ import { LayoutStyling } from "./theme.Layouts"
 import { LayoutItemStyling } from "./theme.LayoutItem"
 import { LogoStyle } from "./Logo"
 
-const borderRadius = "0px"
+const borderRadius = "2px"
 const headerHeight = "70px"
 
 const targetSize = {

@@ -10,6 +10,15 @@ export const LayoutStyling = theming.createVariants(
     `,
     center: css`
       text-align: center;
+    `,
+    calculator: css`
+      grid-column-gap: ${theming.spacing.large};
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "left right"
+        "button button"
+        "footer footer";
+      grid-auto-flow: column;
     `
   },
   Layout.themeProps.container

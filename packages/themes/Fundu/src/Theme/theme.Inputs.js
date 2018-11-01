@@ -13,7 +13,14 @@ import {
 
 export const InputStyling = theming.createVariants(
   {
-    [theming.VARIANT_DEFAULT]: css``,
+    [theming.VARIANT_DEFAULT]: css`
+      border-color: ${theming.color.primary};
+      &:hover,
+      &:focus,
+      &:active {
+        border-width: 2px;
+      }
+    `,
     currencyLarge: css`
       input {
         min-height: 96px;
@@ -25,7 +32,9 @@ export const InputStyling = theming.createVariants(
 
 export const LabelStyling = theming.createVariants(
   {
-    [theming.VARIANT_DEFAULT]: css``
+    [theming.VARIANT_DEFAULT]: css`
+      font-weight: ${theming.fontWeight.normal};
+    `
   },
   Label.themeProps.label
 )
@@ -85,9 +94,7 @@ export const RadioPillItemStyling = theming.createVariants(
 export const SliderKeyboardWrapperStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 0 ${theming.spacing.medium};
+      margin: 0;
 
       label {
         display: block;

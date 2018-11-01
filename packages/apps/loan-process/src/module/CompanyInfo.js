@@ -1,13 +1,9 @@
 import PropTypes from "prop-types"
 import React from "react"
 import {
-  Input,
   CompanyInput,
-  PhoneInput,
   Select,
   Button,
-  Label,
-  RadioButton,
   Wrapper,
   Heading,
   Layout,
@@ -22,17 +18,14 @@ const mapPurpose = item => item
 
 const mapRepaymentPeriod = item => item
 
-class Personalia extends React.Component {
+const mapPaymentsInternational = item => item
+
+class CompanyInfo extends React.Component {
   componentWillMount() {
     const validateSchema = Yup.object().shape({
-      name: Yup.string().required(this.props.errorNameRequired),
       company: Yup.object()
         .nullable()
         .required(this.props.errorCompanyRequired),
-      email: Yup.string()
-        .email(this.props.errorEmailInvalid)
-        .required(this.props.errorEmailRequired),
-      phone: Yup.string().required(this.props.errorPhoneNumberRequired),
       purpose: Yup.string().required(this.props.errorPurposeRequired),
       repaymentMethod: Yup.string()
         .nullable()
@@ -49,11 +42,7 @@ class Personalia extends React.Component {
     return (
       <Formik
         initialValues={{
-          name: "",
           company: null,
-          revenue: undefined,
-          email: "",
-          phone: "",
           purpose: "",
           repaymentMethod: null,
           paymentCash: false,
@@ -83,25 +72,6 @@ class Personalia extends React.Component {
                   <Layout variant="formElements" inCalculator>
                     <LayoutItem>
                       <Field
-                        name={`name`}
-                        render={({ field }) => (
-                          <Input
-                            id={`name`}
-                            {...field}
-                            placeholder={this.props.namePlaceholder}
-                            label={this.props.nameLabel}
-                          />
-                        )}
-                      />
-                      {touched.name &&
-                        errors.name && (
-                          <Alert variant="error" type="warning">
-                            {errors.name}
-                          </Alert>
-                        )}
-                    </LayoutItem>
-                    <LayoutItem>
-                      <Field
                         name={`company`}
                         render={({ field }) => {
                           const { onChange, ...props } = field
@@ -127,44 +97,7 @@ class Personalia extends React.Component {
                           </Alert>
                         )}
                     </LayoutItem>
-                    <LayoutItem>
-                      <Field
-                        name={`email`}
-                        render={({ field }) => (
-                          <Input
-                            id={"email"}
-                            label={this.props.emailLabel}
-                            placeholder={this.props.emailPlaceholder}
-                            {...field}
-                          />
-                        )}
-                      />
-                      {touched.email &&
-                        errors.email && (
-                          <Alert variant="error" type="warning">
-                            {errors.email}
-                          </Alert>
-                        )}
-                    </LayoutItem>
-                    <LayoutItem>
-                      <Field
-                        name={`phone`}
-                        render={({ field }) => (
-                          <PhoneInput
-                            label={this.props.phoneLabel}
-                            id={"phone"}
-                            placeholder={this.props.phonePlaceholder}
-                            {...field}
-                          />
-                        )}
-                      />
-                      {touched.phone &&
-                        errors.phone && (
-                          <Alert variant="error" type="warning">
-                            {errors.phone}
-                          </Alert>
-                        )}
-                    </LayoutItem>
+
                     <LayoutItem>
                       <Field
                         name={`purpose`}
@@ -217,9 +150,7 @@ class Personalia extends React.Component {
                           return (
                             <Select
                               items={this.props.repaymentMethods}
-                              label={
-                                "Hvordan betaler som oftest kundene dine deg?"
-                              }
+                              label={this.props.repaymentMethodsLabel}
                               placeHolderLabel={"Velg…"}
                               name={name}
                               value={value}
@@ -246,38 +177,29 @@ class Personalia extends React.Component {
                       <Field
                         name={`paymentsInternational`}
                         render={({ field }) => {
-                          const { name } = field
+                          const {
+                            name,
+                            value,
+                            onBlur,
+                            onChange,
+                            ...props
+                          } = field
                           return (
-                            <div>
-                              <Label htmlFor={name}>
-                                Mottar du innbetalinger fra utenfor Norge?
-                              </Label>
-                              <Layout grid="columns" variant="columns">
-                                <RadioButton
-                                  name={name}
-                                  id="213ewqs"
-                                  defaultChecked={values.paymentsInternational}
-                                  onChange={() =>
-                                    setFieldValue("paymentsInternational", true)
-                                  }
-                                >
-                                  Ja
-                                </RadioButton>
-                                <RadioButton
-                                  name={name}
-                                  id="21iehwdaj"
-                                  defaultChecked={!values.paymentsInternational}
-                                  onChange={() =>
-                                    setFieldValue(
-                                      "paymentsInternational",
-                                      false
-                                    )
-                                  }
-                                >
-                                  Nei
-                                </RadioButton>
-                              </Layout>
-                            </div>
+                            <Select
+                              items={this.props.paymentsInternationals}
+                              label={this.props.paymentsInternationalsLabel}
+                              placeHolderLabel={"Velg…"}
+                              name={name}
+                              value={value}
+                              onChange={item =>
+                                setFieldValue(
+                                  "paymentsInternational",
+                                  this.props.mapPaymentsInternational(item)
+                                )
+                              }
+                              onBlur={onBlur}
+                              {...props}
+                            />
                           )
                         }}
                       />
@@ -288,51 +210,7 @@ class Personalia extends React.Component {
                           </Alert>
                         )}
                     </LayoutItem>
-                    <LayoutItem>
-                      <Field
-                        name={`paymentCash`}
-                        render={({ field }) => {
-                          const { name } = field
-                          return (
-                            <div>
-                              <Label htmlFor={name}>
-                                Tar du i mot kontanter i betaling fra dine
-                                kunder
-                              </Label>
 
-                              <Layout variant="columns">
-                                <RadioButton
-                                  name={name}
-                                  id="3riejwfjnsldk"
-                                  defaultChecked={values.paymentCash}
-                                  onChange={() =>
-                                    setFieldValue("paymentCash", true)
-                                  }
-                                >
-                                  Ja
-                                </RadioButton>
-                                <RadioButton
-                                  name={name}
-                                  id="okwenfs"
-                                  defaultChecked={!values.paymentCash}
-                                  onChange={() =>
-                                    setFieldValue("paymentCash", false)
-                                  }
-                                >
-                                  Nei
-                                </RadioButton>
-                              </Layout>
-                            </div>
-                          )
-                        }}
-                      />
-                      {touched.paymentCash &&
-                        errors.paymentCash && (
-                          <Alert variant="error" type="warning">
-                            {errors.paymentCash}
-                          </Alert>
-                        )}
-                    </LayoutItem>
                     <LayoutItem>
                       <Button
                         type={"submit"}
@@ -357,9 +235,9 @@ class Personalia extends React.Component {
   }
 }
 
-export default Personalia
+export default CompanyInfo
 
-Personalia.propTypes = {
+CompanyInfo.propTypes = {
   buttonText: PropTypes.string,
   companyNameLabel: PropTypes.string,
   companyNamePlaceholder: PropTypes.string,
@@ -368,12 +246,7 @@ Personalia.propTypes = {
   defaultTerms: PropTypes.number,
   defaultValue: PropTypes.number,
   downPaymentPerMonthText: PropTypes.string,
-  emailLabel: PropTypes.string,
-  emailPlaceholder: PropTypes.string,
   errorCompanyRequired: PropTypes.string,
-  errorEmailInvalid: PropTypes.string,
-  errorEmailRequired: PropTypes.string,
-  errorNameRequired: PropTypes.string,
   errorPhoneNumberRequired: PropTypes.string,
   errorPurposeRequired: PropTypes.string,
   errorRevenueRequired: PropTypes.string,
@@ -397,8 +270,6 @@ Personalia.propTypes = {
   namePlaceholder: PropTypes.string,
   onClick: PropTypes.func,
   onValidated: PropTypes.func.isRequired,
-  phoneLabel: PropTypes.string,
-  phonePlaceholder: PropTypes.string,
   priceExampleText: PropTypes.string,
   productType: PropTypes.string,
   purposeLabel: PropTypes.string,
@@ -416,34 +287,29 @@ Personalia.propTypes = {
   termFee: PropTypes.number,
   termValues: PropTypes.array,
   totalMonthlyText: PropTypes.string,
-  valueLabel: PropTypes.string
+  valueLabel: PropTypes.string,
+  repaymentMethodsLabel: PropTypes.string,
+  mapPaymentsInternational: PropTypes.any,
+  paymentsInternational: PropTypes.string
 }
 
-Personalia.defaultProps = {
+CompanyInfo.defaultProps = {
   buttonText: "Søk om lån",
   companyNameLabel: "Selskap",
   companyNamePlaceholder: "Navn eller orgnummer",
   downPaymentPerMonthText: "Nedbetaling månedlig",
-  emailLabel: "Epost",
-  emailPlaceholder: "mail@mail.com",
   loanDurationLabel: "Nedbetalingstid",
   loanPurposes: ["party", "hoverboard"],
   mapPurpose: mapPurpose,
   mapRepaymentPeriod: mapRepaymentPeriod,
   monthlyFeesText: "Månedlige gebyr",
-  nameLabel: "Navn",
-  namePlaceholder: "Navn navnesen",
   onClick: () => null,
-  phoneLabel: "Telefonnummer",
-  phonePlaceholder: "xxx xx xxx",
   purposeLabel: "Hva skal lånet brukes til?",
   purposePlaceholder: "Velg...",
   purposeSelectProps: {},
-  repaymentMethods: [
-    "Nettbetaling",
-    "Kortbetaling",
-    "Fakturering",
-    "Kontantbetaling"
-  ],
-  revenueLabel: "Omsetning siste 12 måneder"
+  repaymentMethods: ["Ingen", "Lite", "Halvparten", "Alt", "Vet ikke"],
+  repaymentMethodsLabel: "Hvor mye kontantbetaling mottar dere?",
+  mapPaymentsInternational: mapPaymentsInternational,
+  paymentsInternationals: ["Norge", "Skandinavia", "Europa", "Hele verden"],
+  paymentsInternationalsLabel: "Hvor kommer betalingene deres fra?"
 }

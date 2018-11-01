@@ -14,7 +14,9 @@ import {
   LayoutItem,
   List,
   SplitListItem,
-  Divider
+  Input,
+  Alert,
+  PhoneInput
 } from "@staccx/base"
 import { createCurrencyMask } from "@staccx/formatting"
 import { getPaymentPlan } from "@staccx/payment-plan"
@@ -40,7 +42,12 @@ class Calculator extends React.Component {
         .min(this.props.minValue, this.props.errorValueTooLow)
         .max(this.props.maxValue, this.props.errorValueTooHigh)
         .required(this.props.errorValueRequired),
-      terms: Yup.number().required(this.props.errorTerms)
+      terms: Yup.number().required(this.props.errorTerms),
+      name: Yup.string().required(this.props.errorNameRequired),
+      email: Yup.string()
+        .email(this.props.errorEmailInvalid)
+        .required(this.props.errorEmailRequired),
+      phone: Yup.string().required(this.props.errorPhoneNumberRequired)
     })
     this.setState(
       {
@@ -93,142 +100,188 @@ class Calculator extends React.Component {
               </Heading>
             )}
             <form onSubmit={handleSubmit}>
-              <Box variant="actionBox">
-                <Box variant="largeForm">
-                  <div>
-                    <Layout
-                      variant="formElements"
-                      paddingTop="large"
-                      inCalculator="left"
-                    >
-                      <LayoutItem>
-                        <Layout variant="formElements" inCalculator="left">
-                          <LayoutItem>
-                            <Field
-                              name={`value`}
-                              render={({ field }) => {
-                                const { onChange, ...rest } = field
-                                return (
-                                  <SliderKeyboardInput
-                                    label={this.props.valueLabel}
-                                    max={this.props.maxValue}
-                                    min={this.props.minValue}
-                                    step={5000}
-                                    onChange={value => {
-                                      this.calculate(value, this.state.terms)
-                                      setFieldValue("value", value)
-                                    }}
-                                    {...rest}
-                                    easingFunction={easeInOutBack}
-                                    mask={createCurrencyMask(field.value)}
+              <Layout
+                variant="calculator"
+                paddingTop="large"
+                inCalculator="left"
+              >
+                <LayoutItem area="left">
+                  <Layout>
+                    <Field
+                      name={`value`}
+                      render={({ field }) => {
+                        const { onChange, ...rest } = field
+                        return (
+                          <SliderKeyboardInput
+                            label={this.props.valueLabel}
+                            max={this.props.maxValue}
+                            min={this.props.minValue}
+                            step={5000}
+                            onChange={value => {
+                              this.calculate(value, this.state.terms)
+                              setFieldValue("value", value)
+                            }}
+                            {...rest}
+                            easingFunction={easeInOutBack}
+                            mask={createCurrencyMask(field.value)}
+                          />
+                        )
+                      }}
+                    />
+                    {this.props.productType === "PRODUCT_LOAN" && (
+                      <Field
+                        name={`terms`}
+                        render={({ field }) => {
+                          const { onChange, ...rest } = field
+                          return (
+                            <div>
+                              <Box variant="loanDurationContainer">
+                                <Label
+                                  htmlFor="select-loan-duration"
+                                  variant="loanDuration"
+                                >
+                                  {this.props.loanDurationLabel}
+                                </Label>
+                                <Select
+                                  items={this.props.termValues}
+                                  id={"select-loan-duration"}
+                                  itemToString={this.props.termsValuesToString}
+                                  onChange={item => {
+                                    this.calculate(this.state.value, item)
+                                    setFieldValue("terms", item)
+                                  }}
+                                  {...rest}
+                                />
+                              </Box>
+                            </div>
+                          )
+                        }}
+                      />
+                    )}
+                    {this.props.productType === "PRODUCT_CREDIT" && (
+                      <Box variant="priceExample" size="mediumPlus">
+                        <Text variant="creditExplainer">
+                          {this.props.creditExplanationText}
+                        </Text>
+                      </Box>
+                    )}
+                    {this.state.term && (
+                      <Box variant="loanTerms">
+                        <List>
+                          {this.props.showInterestRate && (
+                            <SplitListItem>
+                              <span>{this.props.interestRateText}</span>
+                              <span>{this.props.interestRate} %</span>
+                            </SplitListItem>
+                          )}
+                          {this.props.showDownpayment && (
+                            <SplitListItem>
+                              <span>{this.props.downPaymentPerMonthText}</span>
+                              <span>
+                                <Odometer
+                                  number={this.state.term.installment}
+                                  size={14}
+                                  seperatorSteps={3}
+                                />
+                              </span>
+                            </SplitListItem>
+                          )}
+                          {this.props.showTotalMonthly && (
+                            <SplitListItem>
+                              <span>
+                                <Text bold>{this.props.totalMonthlyText}</Text>
+                              </span>
+                              <span>
+                                <Text>
+                                  <Odometer
+                                    number={this.state.term.monthlyPayment}
+                                    size={14}
+                                    seperatorSteps={3}
                                   />
-                                )
-                              }}
-                            />
-                          </LayoutItem>
-                          {this.props.productType === "PRODUCT_LOAN" && (
-                            <LayoutItem>
-                              <Field
-                                name={`terms`}
-                                render={({ field }) => {
-                                  const { onChange, ...rest } = field
-                                  return (
-                                    <Box variant="loanDurationContainer">
-                                      <Label
-                                        htmlFor="select-loan-duration"
-                                        variant="loanDuration"
-                                      >
-                                        {this.props.loanDurationLabel}
-                                      </Label>
-                                      <Select
-                                        items={this.props.termValues}
-                                        id={"select-loan-duration"}
-                                        itemToString={
-                                          this.props.termsValuesToString
-                                        }
-                                        onChange={item => {
-                                          this.calculate(this.state.value, item)
-                                          setFieldValue("terms", item)
-                                        }}
-                                        {...rest}
-                                      />
-                                    </Box>
-                                  )
-                                }}
-                              />
-                            </LayoutItem>
+                                </Text>
+                              </span>
+                            </SplitListItem>
                           )}
-                          {this.props.productType === "PRODUCT_CREDIT" && (
-                            <Box variant="priceExample" size="mediumPlus">
-                              <Text variant="creditExplainer">
-                                {this.props.creditExplanationText}
-                              </Text>
-                            </Box>
-                          )}
-                        </Layout>
-                      </LayoutItem>
+                        </List>
+                      </Box>
+                    )}
+                  </Layout>
+                </LayoutItem>
+                <LayoutItem area="right">
+                  <Layout>
+                    <LayoutItem>
+                      <Field
+                        name={`name`}
+                        render={({ field }) => (
+                          <Input
+                            id={`name`}
+                            {...field}
+                            placeholder={this.props.namePlaceholder}
+                            label={this.props.nameLabel}
+                          />
+                        )}
+                      />
+                      {touched.name &&
+                        errors.name && (
+                          <Alert variant="error" type="warning">
+                            {errors.name}
+                          </Alert>
+                        )}
+                    </LayoutItem>
+                    <LayoutItem>
+                      <Field
+                        name={`email`}
+                        render={({ field }) => (
+                          <Input
+                            id={"email"}
+                            label={this.props.emailLabel}
+                            placeholder={this.props.emailPlaceholder}
+                            {...field}
+                          />
+                        )}
+                      />
+                      {touched.email &&
+                        errors.email && (
+                          <Alert variant="error" type="warning">
+                            {errors.email}
+                          </Alert>
+                        )}
+                    </LayoutItem>
+                    <LayoutItem>
+                      <Field
+                        name={`phone`}
+                        render={({ field }) => (
+                          <PhoneInput
+                            label={this.props.phoneLabel}
+                            id={"phone"}
+                            placeholder={this.props.phonePlaceholder}
+                            {...field}
+                          />
+                        )}
+                      />
+                      {touched.phone &&
+                        errors.phone && (
+                          <Alert variant="error" type="warning">
+                            {errors.phone}
+                          </Alert>
+                        )}
+                    </LayoutItem>
+                  </Layout>
+                </LayoutItem>
+                <LayoutItem area="button">
+                  <Button onClick={this.props.onClick}>Neste</Button>
+                </LayoutItem>
 
-                      {this.state.term && (
-                        <LayoutItem>
-                          <Box variant="loanTerms">
-                            <List>
-                              {this.props.showInterestRate && (
-                                <SplitListItem>
-                                  <span>{this.props.interestRateText}</span>
-                                  <span>{this.props.interestRate} %</span>
-                                </SplitListItem>
-                              )}
-                              {this.props.showDownpayment && (
-                                <SplitListItem>
-                                  <span>
-                                    {this.props.downPaymentPerMonthText}
-                                  </span>
-                                  <span>
-                                    <Odometer
-                                      number={this.state.term.installment}
-                                      size={14}
-                                      seperatorSteps={3}
-                                    />
-                                  </span>
-                                </SplitListItem>
-                              )}
-                              {this.props.showTotalMonthly && (
-                                <SplitListItem>
-                                  <span>
-                                    <Text bold>
-                                      {this.props.totalMonthlyText}
-                                    </Text>
-                                  </span>
-                                  <span>
-                                    <Text>
-                                      <Odometer
-                                        number={this.state.term.monthlyPayment}
-                                        size={14}
-                                        seperatorSteps={3}
-                                      />
-                                    </Text>
-                                  </span>
-                                </SplitListItem>
-                              )}
-                            </List>
-                          </Box>
-                        </LayoutItem>
-                      )}
-                      <LayoutItem variant="legaleseContainer">
-                        <Box variant="priceExample" size="mediumPlus">
-                          <Text variant="legalese">
-                            {this.props.renderPriceExample
-                              ? this.props.renderPriceExample()
-                              : this.props.priceExampleText}
-                          </Text>
-                        </Box>
-                      </LayoutItem>
-                    </Layout>
-                    <Divider height={2} variant="calculator" />
-                  </div>
-                </Box>
-              </Box>
-              <Button onClick={this.props.onClick}>Neste</Button>
+                <LayoutItem area="footer">
+                  <Box variant="priceExample" size="mediumPlus">
+                    <Text variant="legalese">
+                      {this.props.renderPriceExample
+                        ? this.props.renderPriceExample()
+                        : this.props.priceExampleText}
+                    </Text>
+                  </Box>
+                </LayoutItem>
+              </Layout>
             </form>
           </Wrapper>
         )}
@@ -265,7 +318,13 @@ Calculator.defaultProps = {
   termsValuesToString: item =>
     item >= 12 ? (item / 12).toPrecision(2) + " år" : item + " mnd",
   totalMonthlyText: "Totalt månedlig",
-  valueLabel: "Ønsket lånebeløp"
+  valueLabel: "Ønsket lånebeløp",
+  emailLabel: "Epost",
+  emailPlaceholder: "mail@mail.com",
+  nameLabel: "Navn",
+  namePlaceholder: "Navn navnesen",
+  phoneLabel: "Telefonnummer",
+  phonePlaceholder: "xxx xx xxx"
 }
 
 Calculator.propTypes = {
@@ -298,5 +357,15 @@ Calculator.propTypes = {
   termValues: PropTypes.array,
   termsValuesToString: PropTypes.func,
   totalMonthlyText: PropTypes.string,
-  valueLabel: PropTypes.string
+  valueLabel: PropTypes.string,
+  emailLabel: PropTypes.string,
+  emailPlaceholder: PropTypes.string,
+  errorEmailInvalid: PropTypes.string,
+  errorEmailRequired: PropTypes.string,
+  errorNameRequired: PropTypes.string,
+  errorPhoneNumberRequired: PropTypes.string,
+  nameLabel: PropTypes.string,
+  namePlaceholder: PropTypes.string,
+  phoneLabel: PropTypes.string,
+  phonePlaceholder: PropTypes.string
 }

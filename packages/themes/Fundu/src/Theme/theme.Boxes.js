@@ -124,16 +124,7 @@ export const BoxStyling = theming.createVariants(
       border-bottom: 2px solid ${theming.color.primary};
       align-items: center;
     `,
-    loanTerms: css`
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 0 ${theming.spacing.medium};
-
-      li {
-        padding-left: 0;
-        padding-right: 0;
-      }
-    `,
+    loanTerms: css``,
     header: css`
       height: ${theming.spacing("largePlus")};
       border-bottom: 1px solid ${theming.color.line};
