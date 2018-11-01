@@ -86,7 +86,7 @@ class Calculator extends React.Component {
           errors,
           setFieldValue
         }) => (
-          <Wrapper size="large" breakout>
+          <Wrapper size="large">
             {this.props.headingText && (
               <Heading level={2} variant="stepHeading">
                 {this.props.headingText}

@@ -21,19 +21,19 @@ const EndScreen = ({
   return (
     <Box variant={variant}>
       <Wrapper size={wrapperSize} variant={variant}>
-        <Layout variant={variant}>
+        <Layout variant="center">
           {headingText && (
-            <LayoutItem area="heading">
-              <Heading variant={variant}>{headingText}</Heading>
+            <LayoutItem>
+              <Heading variant="stepHeading">{headingText}</Heading>
             </LayoutItem>
           )}
 
-          {img && <LayoutItem area="image">{img}</LayoutItem>}
+          {img && <LayoutItem>{img}</LayoutItem>}
 
-          {content && <LayoutItem area="content">{content}</LayoutItem>}
+          {content && <LayoutItem>{content}</LayoutItem>}
 
           {buttonContent && (
-            <LayoutItem area="button">
+            <LayoutItem>
               <Button variant={variant} onClick={onClick}>
                 {buttonContent}
               </Button>
@@ -68,5 +68,5 @@ EndScreen.defaultProps = {
   reverse: true,
   wrapperSize: "medium",
   buttonContent: null,
-  variant: "endScreen"
+  variant: ""
 }
