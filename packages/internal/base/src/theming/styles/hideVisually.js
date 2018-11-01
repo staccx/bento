@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import hidden from "polished/lib/mixins/hideVisually"
+import { hideVisually as hidden } from "polished"
 
 const hideVisually = css`
   ${hidden()};

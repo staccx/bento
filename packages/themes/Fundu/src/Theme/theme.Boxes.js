@@ -1,60 +1,12 @@
 import { css } from "styled-components"
 import { Box, theming } from "@staccx/base"
 
-export const tileStyle = css`
-  background: ${theming.color.white};
-  box-shadow: rgba(0, 0, 75, 0.015) 0px 2px 2px,
-    rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
-    rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
-    rgba(0, 0, 75, 0.015) 0px 64px 64px;
-  border: 1px solid ${theming.color.line};
-  border-radius: 2px;
-  -webkit-column-break-inside: avoid;
-  break-inside: avoid;
-  page-break-inside: avoid;
-`
-
 export const BoxStyling = theming.createVariants(
   {
-    actionBox: css`
-      ${tileStyle};
-      padding: 0;
-      margin-bottom: ${theming.spacing.medium};
-    `,
-    expandLeadContent: css`
-      ${tileStyle};
-      padding: 0;
-      margin-bottom: ${theming.spacing.medium};
-    `,
-    largeForm: css`
-      padding: 0;
-
-      @media (min-width: 711px) {
-        display: flex;
-        justify-content: space-between;
-
-        > * {
-          flex-grow: 1;
-          flex-basis: 50%;
-
-          &:last-child {
-            border-left: 1px solid ${theming.color.line};
-          }
-        }
-      }
-
-      @media (max-width: 711px) {
-        > *:not(:first-child) {
-          border-top: 1px solid ${theming.color.line};
-          margin-top: ${theming.spacing.large};
-        }
-      }
-    `,
-    paddingVertical: css`
-      padding: 0;
-      padding-top: ${theming.spacing.medium};
-      padding-bottom: ${theming.spacing.medium};
-    `,
+    actionBox: css``,
+    expandLeadContent: css``,
+    largeForm: css``,
+    paddingVertical: css``,
     illustration: css`
       padding: 0;
       text-align: center;
@@ -193,11 +145,10 @@ export const BoxStyling = theming.createVariants(
     `,
     radioContainer: css`
       display: flex;
-      padding: ${theming.spacing.mediumPlus} ${theming.spacing.medium} 0;
-
-      > div:not(:first-child):not(:last-child) {
-        margin-right: ${theming.spacing.medium};
-      }
+    `,
+    signerFields: css`
+      background-color: ${theming.color.bgGray};
+      padding: ${theming.spacing.medium};
     `
   },
   Box.themeProps.box

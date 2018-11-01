@@ -1,5 +1,4 @@
-import { Theme } from "@staccx/theme"
-import { BaseTheme } from "@staccx/base"
+import { theming } from "@staccx/base"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -70,7 +69,7 @@ heading: "Libre Baskerville",
 body: "Libre Franklin"
 }
 
-const theme = new Theme(BaseTheme, {
+expot default new theming.Theme({
 name: "{{name}}",
 font,
 webfonts,
@@ -83,4 +82,3 @@ headerHeight,
 fontFamily,
 global: ``
 })
-export default theme

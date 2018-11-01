@@ -6,7 +6,7 @@ const centeredHeading = css`
   margin-bottom: ${theming.spacing.small};
   color: ${theming.color.primary};
   font-size: ${theming.font.huge};
-  font-weight: 400;
+  font-weight: 600;
 
   @media (max-width: 735px) {
     font-size: ${theming.font.h1};
@@ -43,10 +43,11 @@ export const HeadingStyling = theming.createVariants(
       margin-bottom: ${theming.spacing.tiny};
     `,
     formSection: css`
-      padding: ${theming.spacing.small} 0 ${theming.spacing.small}
-        ${theming.spacing.medium};
       font-size: ${theming.font.h3};
       color: ${theming.color.wcag};
+    `,
+    sectionHeading: css`
+      font-size: ${theming.font.h1};
     `
   },
   Heading.themeProps.heading

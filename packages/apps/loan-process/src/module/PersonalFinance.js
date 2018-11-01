@@ -10,7 +10,6 @@ import {
   SelectSimple,
   CurrencyInput,
   Button,
-  Box,
   Heading,
   Layout,
   LayoutItem,
@@ -86,245 +85,235 @@ class PersonalFinance extends React.Component {
         }) => {
           return (
             <form onSubmit={handleSubmit}>
-              <Wrapper size="large" breakout>
+              <Wrapper size="large">
                 <Heading variant="stepHeading">
                   {this.props.headingText}
                 </Heading>
-                <Box variant="actionBox">
-                  <Box variant="largeForm">
-                    <div>
-                      <Heading level={2} variant="formSection">
-                        {this.props.headingPersonaliaText}
-                      </Heading>
-                      <Layout variant="formElements">
-                        <LayoutItem>
-                          <Field
-                            name={`postalCode`}
-                            render={({ field }) => {
-                              const { value, ...rest } = field
-                              return (
-                                <PostalCodeInput
-                                  id={"postalCode"}
-                                  label={this.props.postNumberLabelText}
-                                  {...rest}
-                                  type="tel"
-                                  onChange={({ postalCode }) => {
-                                    setFieldValue("postalCode", postalCode)
-                                  }}
-                                />
-                              )
+              </Wrapper>
+              <Wrapper size="form">
+                <Layout>
+                  <Heading level={2} variant="formSection">
+                    {this.props.headingPersonaliaText}
+                  </Heading>
+                  <LayoutItem>
+                    <Field
+                      name={`postalCode`}
+                      render={({ field }) => {
+                        const { value, ...rest } = field
+                        return (
+                          <PostalCodeInput
+                            id={"postalCode"}
+                            label={this.props.postNumberLabelText}
+                            {...rest}
+                            type="tel"
+                            onChange={({ postalCode }) => {
+                              setFieldValue("postalCode", postalCode)
                             }}
                           />
-                          {touched.postalCode &&
-                            errors.postalCode && (
-                              <Alert variant="error" type="warning">
-                                {errors.postalCode}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
-                            name={`relationshipStatus`}
-                            render={({ field }) => (
-                              <SelectSimple
-                                label="Sivilstatus"
-                                id={"relationshipStatus"}
-                                placeholder="Velg..."
-                                value={values.relationshipStatus}
-                                {...field}
-                              >
-                                {relationshipStatus.map(status => (
-                                  <option value={status.value} key={status.key}>
-                                    {this.props.renderRelationshipOption(
-                                      status.key
-                                    )}
-                                  </option>
-                                ))}
-                              </SelectSimple>
-                            )}
-                          />
-                          {touched.relationshipStatus &&
-                            errors.relationshipStatus && (
-                              <Alert variant="error" type="warning">
-                                {errors.relationshipStatus}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Label variant="radioPill">
-                            {this.props.peopleUnder18Text}
-                          </Label>
-                          <Field
-                            name={`numberOfChildren`}
-                            render={({ field }) => (
-                              <RadioPill
+                        )
+                      }}
+                    />
+                    {touched.postalCode &&
+                      errors.postalCode && (
+                        <Alert variant="error" type="warning">
+                          {errors.postalCode}
+                        </Alert>
+                      )}
+                  </LayoutItem>
+                  <LayoutItem>
+                    <Field
+                      name={`relationshipStatus`}
+                      render={({ field }) => (
+                        <SelectSimple
+                          label="Sivilstatus"
+                          id={"relationshipStatus"}
+                          placeholder="Velg..."
+                          value={values.relationshipStatus}
+                          {...field}
+                        >
+                          {relationshipStatus.map(status => (
+                            <option value={status.value} key={status.key}>
+                              {this.props.renderRelationshipOption(status.key)}
+                            </option>
+                          ))}
+                        </SelectSimple>
+                      )}
+                    />
+                    {touched.relationshipStatus &&
+                      errors.relationshipStatus && (
+                        <Alert variant="error" type="warning">
+                          {errors.relationshipStatus}
+                        </Alert>
+                      )}
+                  </LayoutItem>
+                  <LayoutItem>
+                    <Label variant="radioPill">
+                      {this.props.peopleUnder18Text}
+                    </Label>
+                    <Field
+                      name={`numberOfChildren`}
+                      render={({ field }) => (
+                        <RadioPill group={"numberOfChildren"} full {...field}>
+                          {Array.apply(null, Array(5 + 1))
+                            .map((n, i) => i)
+                            .map(val => (
+                              <RadioPillItem
+                                key={val}
+                                id={val}
+                                value={val}
                                 group={"numberOfChildren"}
-                                full
-                                {...field}
+                                defaultChecked={values.numberOfChildren === val}
                               >
-                                {Array.apply(null, Array(5 + 1))
-                                  .map((n, i) => i)
-                                  .map(val => (
-                                    <RadioPillItem
-                                      key={val}
-                                      id={val}
-                                      value={val}
-                                      group={"numberOfChildren"}
-                                      defaultChecked={
-                                        values.numberOfChildren === val
-                                      }
-                                    >
-                                      {val}
-                                    </RadioPillItem>
-                                  ))}
-                              </RadioPill>
-                            )}
-                          />
-                          {touched.numberOfChildren &&
-                            errors.numberOfChildren && (
-                              <Alert variant="error" type="warning">
-                                {errors.numberOfChildren}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                      </Layout>
-                    </div>
+                                {val}
+                              </RadioPillItem>
+                            ))}
+                        </RadioPill>
+                      )}
+                    />
+                    {touched.numberOfChildren &&
+                      errors.numberOfChildren && (
+                        <Alert variant="error" type="warning">
+                          {errors.numberOfChildren}
+                        </Alert>
+                      )}
+                  </LayoutItem>
 
-                    <div>
-                      <Heading level={2} variant="formSection">
-                        {this.props.headingIncomeAndExpensesText}
-                      </Heading>
-                      <Layout variant="formElements">
-                        {values.relationshipStatus &&
-                          hasPartner(values.relationshipStatus) && (
-                            <LayoutItem>
-                              <Field
-                                name={`incomeOfSpouse`}
-                                render={({ field }) => (
-                                  <CurrencyInput
-                                    id={"incomeOfSpouse"}
-                                    label={this.props.spouseSalaryLabelText}
-                                    placeholder="0"
-                                    locale={"nb"}
-                                    {...field}
-                                  />
-                                )}
-                              />
-                              {touched.incomeOfSpouse &&
-                                errors.incomeOfSpouse && (
-                                  <Alert variant="error" type="warning">
-                                    {errors.incomeOfSpouse}
-                                  </Alert>
-                                )}
-                            </LayoutItem>
+                  <Heading level={2} variant="formSection">
+                    {this.props.headingIncomeAndExpensesText}
+                  </Heading>
+                  {values.relationshipStatus &&
+                    hasPartner(values.relationshipStatus) && (
+                      <LayoutItem>
+                        <Field
+                          name={`incomeOfSpouse`}
+                          render={({ field }) => (
+                            <CurrencyInput
+                              id={"incomeOfSpouse"}
+                              label={this.props.spouseSalaryLabelText}
+                              placeholder="0"
+                              locale={"nb"}
+                              {...field}
+                            />
                           )}
-                        <LayoutItem>
-                          <Field
-                            name={`income`}
-                            render={({ field }) => (
-                              <CurrencyInput
-                                id={"incoincomemeOfSpouse"}
-                                label={this.props.salaryLabelText}
-                                placeholder="0"
-                                locale={"nb"}
-                                {...field}
-                              />
-                            )}
-                          />
-                          {touched.income &&
-                            errors.income && (
-                              <Alert variant="error" type="warning">
-                                {errors.income}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
-                            name={`monthlySalary`}
-                            render={({ field }) => (
-                              <CurrencyInput
-                                id={"monthlySalary"}
-                                label={this.props.salaryMonthlyText}
-                                placeholder="0"
-                                locale={"nb"}
-                                {...field}
-                              />
-                            )}
-                          />
-                          {touched.monthlySalary &&
-                            errors.monthlySalary && (
-                              <Alert variant="error" type="warning">
-                                {errors.monthlySalary}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
-                            name={`mortgageTotal`}
-                            render={({ field }) => (
-                              <CurrencyInput
-                                id={"mortgageTotal"}
-                                label={this.props.mortgageText}
-                                placeholder="0"
-                                locale={"nb"}
-                                {...field}
-                              />
-                            )}
-                          />
-                          {touched.mortgageTotal &&
-                            errors.mortgageTotal && (
-                              <Alert variant="error" type="warning">
-                                {errors.mortgageTotal}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
-                            name={`otherLoansTotal`}
-                            render={({ field }) => (
-                              <CurrencyInput
-                                id={"otherLoansTotal"}
-                                label={this.props.otherLoansTotalText}
-                                placeholder="0"
-                                locale={"nb"}
-                                {...field}
-                              />
-                            )}
-                          />
-                          {touched.otherLoansTotal &&
-                            errors.otherLoansTotal && (
-                              <Alert variant="error" type="warning">
-                                {errors.otherLoansTotal}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
-                            name={`monthlyRentAndExpenses`}
-                            render={({ field }) => (
-                              <CurrencyInput
-                                id={"monthlyRentAndExpenses"}
-                                label={this.props.expensesRentText}
-                                placeholder="0"
-                                locale={"nb"}
-                                {...field}
-                              />
-                            )}
-                          />
-                          {touched.monthlyRentAndExpenses &&
-                            errors.monthlyRentAndExpenses && (
-                              <Alert variant="error" type="warning">
-                                {errors.monthlyRentAndExpenses}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                      </Layout>
-                    </div>
-                  </Box>
-                </Box>
-                <Button disabled={!isValid} type="submit" onClick={() => null}>
-                  {this.props.renderButtonContent()}
-                </Button>
+                        />
+                        {touched.incomeOfSpouse &&
+                          errors.incomeOfSpouse && (
+                            <Alert variant="error" type="warning">
+                              {errors.incomeOfSpouse}
+                            </Alert>
+                          )}
+                      </LayoutItem>
+                    )}
+                  <LayoutItem>
+                    <Field
+                      name={`income`}
+                      render={({ field }) => (
+                        <CurrencyInput
+                          id={"incoincomemeOfSpouse"}
+                          label={this.props.salaryLabelText}
+                          placeholder="0"
+                          locale={"nb"}
+                          {...field}
+                        />
+                      )}
+                    />
+                    {touched.income &&
+                      errors.income && (
+                        <Alert variant="error" type="warning">
+                          {errors.income}
+                        </Alert>
+                      )}
+                  </LayoutItem>
+                  <LayoutItem>
+                    <Field
+                      name={`monthlySalary`}
+                      render={({ field }) => (
+                        <CurrencyInput
+                          id={"monthlySalary"}
+                          label={this.props.salaryMonthlyText}
+                          placeholder="0"
+                          locale={"nb"}
+                          {...field}
+                        />
+                      )}
+                    />
+                    {touched.monthlySalary &&
+                      errors.monthlySalary && (
+                        <Alert variant="error" type="warning">
+                          {errors.monthlySalary}
+                        </Alert>
+                      )}
+                  </LayoutItem>
+                  <LayoutItem>
+                    <Field
+                      name={`mortgageTotal`}
+                      render={({ field }) => (
+                        <CurrencyInput
+                          id={"mortgageTotal"}
+                          label={this.props.mortgageText}
+                          placeholder="0"
+                          locale={"nb"}
+                          {...field}
+                        />
+                      )}
+                    />
+                    {touched.mortgageTotal &&
+                      errors.mortgageTotal && (
+                        <Alert variant="error" type="warning">
+                          {errors.mortgageTotal}
+                        </Alert>
+                      )}
+                  </LayoutItem>
+                  <LayoutItem>
+                    <Field
+                      name={`otherLoansTotal`}
+                      render={({ field }) => (
+                        <CurrencyInput
+                          id={"otherLoansTotal"}
+                          label={this.props.otherLoansTotalText}
+                          placeholder="0"
+                          locale={"nb"}
+                          {...field}
+                        />
+                      )}
+                    />
+                    {touched.otherLoansTotal &&
+                      errors.otherLoansTotal && (
+                        <Alert variant="error" type="warning">
+                          {errors.otherLoansTotal}
+                        </Alert>
+                      )}
+                  </LayoutItem>
+                  <LayoutItem>
+                    <Field
+                      name={`monthlyRentAndExpenses`}
+                      render={({ field }) => (
+                        <CurrencyInput
+                          id={"monthlyRentAndExpenses"}
+                          label={this.props.expensesRentText}
+                          placeholder="0"
+                          locale={"nb"}
+                          {...field}
+                        />
+                      )}
+                    />
+                    {touched.monthlyRentAndExpenses &&
+                      errors.monthlyRentAndExpenses && (
+                        <Alert variant="error" type="warning">
+                          {errors.monthlyRentAndExpenses}
+                        </Alert>
+                      )}
+                  </LayoutItem>
+                  <LayoutItem>
+                    <Button
+                      disabled={!isValid}
+                      type="submit"
+                      onClick={() => null}
+                    >
+                      {this.props.renderButtonContent()}
+                    </Button>
+                  </LayoutItem>
+                </Layout>
               </Wrapper>
             </form>
           )

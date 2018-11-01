@@ -208,7 +208,6 @@ module.exports = function(plop) {
           "@staccx/open-id",
           "@staccx/math",
           "@staccx/utils",
-          "@staccx/theme(deprecated use base instead)",
           "@staccx/dealerpad",
           "@staccx/loan-process",
           "@staccx/aprila-theme",

@@ -4,8 +4,8 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import MaskedInput from "./MaskedInput"
 import styled, { css } from "styled-components"
+import Cleave from "cleave.js"
 import Label from "../Label/Label"
 import { themePropTypes } from "../../../constants/themeContants"
 import {
@@ -37,6 +37,7 @@ class Input extends React.Component {
       id,
       name,
       onBlur,
+      onFocus,
       onChange,
       onKeyDown,
       placeholder,
@@ -46,8 +47,10 @@ class Input extends React.Component {
       mask,
       variant,
       autoComplete,
+      options,
       ...otherProps
     } = this.props
+
     return (
       <InputWrapper className={className} variant={variant}>
         {label && (
@@ -55,42 +58,33 @@ class Input extends React.Component {
             {label}
           </InputLabel>
         )}
-        {mask ? (
-          <InputWithMask
-            mask={mask}
-            autoFocus={autoFocus}
-            value={value}
-            disabled={disabled}
-            id={id}
-            name={name}
-            onBlur={onBlur}
-            onChange={onChange}
-            onKeyDown={onKeyDown}
-            placeholder={placeholder}
-            variant={variant}
-            type={type}
-            innerRef={this.input}
-            autoComplete={autoComplete}
-            {...otherProps}
-          />
-        ) : (
-          <InputNoMask
-            autoFocus={autoFocus}
-            value={value}
-            disabled={disabled}
-            id={id}
-            name={name}
-            onBlur={onBlur}
-            onChange={onChange}
-            onKeyDown={onKeyDown}
-            placeholder={placeholder}
-            variant={variant}
-            type={type}
-            innerRef={this.input}
-            autoComplete={autoComplete}
-            {...otherProps}
-          />
-        )}
+        <InputNoMask
+          autoFocus={autoFocus}
+          value={value}
+          disabled={disabled}
+          id={id}
+          name={name}
+          onFocus={e => {
+            if (options) {
+              this.cleave = new Cleave(this.input.current, {
+                ...options,
+                onValueChanged: onChange
+              })
+            }
+            if (onFocus) {
+              onFocus(e)
+            }
+          }}
+          onBlur={onBlur}
+          onChange={onChange}
+          onKeyDown={onKeyDown}
+          placeholder={placeholder}
+          variant={variant}
+          type={type}
+          ref={this.input}
+          autoComplete={autoComplete}
+          {...otherProps}
+        />
       </InputWrapper>
     )
   }
@@ -176,10 +170,6 @@ export const inputCss = css`
   ${applyVariants(Input.themeProps.input)};
 `
 
-const InputWithMask = styled(MaskedInput)`
-  ${inputCss};
-`
-
 const InputNoMask = styled.input`
   ${inputCss};
 `
@@ -193,7 +183,7 @@ export const InputPropTypes = {
    */
   disabled: PropTypes.bool,
   hidden: PropTypes.bool,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   name: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,

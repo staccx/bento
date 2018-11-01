@@ -9,7 +9,8 @@ import {
   Heading,
   Layout,
   LayoutItem,
-  Alert
+  Alert,
+  Paragraph
 } from "@staccx/base"
 import { removeWhitespace } from "@staccx/formatting"
 const Yup = require("yup")
@@ -42,14 +43,13 @@ const Form = props => {
       <Box variant="illustration">
         {renderIllustration && renderIllustration()}
       </Box>
-      <Wrapper size="medium" breakout>
+      <Wrapper size="medium">
         <Heading variant="stepHeading">{props.headingText}</Heading>
+        <Paragraph variant="lead">{props.loanTypeText}</Paragraph>
       </Wrapper>
-      <Wrapper size="small" breakout>
+      <Wrapper size="form">
         <Box variant="actionBox">
-          <Box variant="actionBoxContent">{props.loanTypeText}</Box>
-
-          <Layout variant="formElements">
+          <Layout>
             <LayoutItem>
               <AccountInput
                 guide={false}
@@ -67,13 +67,15 @@ const Form = props => {
                   </Alert>
                 )}
             </LayoutItem>
+            {!isSubmitting && (
+              <div>
+                <Button type="submit" onClick={() => null}>
+                  {props.continueButtonText}
+                </Button>
+              </div>
+            )}
           </Layout>
         </Box>
-        {!isSubmitting && (
-          <Button type="submit" onClick={() => null}>
-            {props.continueButtonText}
-          </Button>
-        )}
       </Wrapper>
     </form>
   )

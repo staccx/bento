@@ -16,7 +16,8 @@ const children = PropTypes.oneOfType([
   PropTypes.element,
   PropTypes.string,
   PropTypes.number,
-  PropTypes.array
+  PropTypes.array,
+  PropTypes.func
 ])
 
 export const commonPropTypes = {

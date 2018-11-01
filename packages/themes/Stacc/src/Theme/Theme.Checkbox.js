@@ -25,7 +25,7 @@ export const CheckboxCheckedLabel = theming.createVariants(
       &:hover,
       &:focus {
         &::before {
-          border-color: ${p => darken(0.1, color("primary")(p))};
+          border-color: ${p => darken(0.1, theming.color("primary")(p))};
         }
       }
     `

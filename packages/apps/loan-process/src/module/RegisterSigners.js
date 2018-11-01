@@ -97,7 +97,7 @@ class RegisterSigners extends React.Component {
     })
 
     return (
-      <Wrapper size="medium" breakout>
+      <Wrapper size="medium">
         <Heading variant="stepHeading" level={1}>
           {this.props.headingText}
         </Heading>

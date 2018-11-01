@@ -49,7 +49,7 @@ class EmailInput extends React.Component {
           {...this.props}
           value={value}
           onChange={this.handleChange}
-          innerRef={this.emailInput}
+          ref={this.emailInput}
         />
         <AtSymbol isValid={isValid} x={getX(value.split("@")[0])}>
           @

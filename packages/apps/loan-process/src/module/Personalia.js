@@ -1,7 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
 import {
-  Box,
   Input,
   CompanyInput,
   PhoneInput,
@@ -71,278 +70,270 @@ class Personalia extends React.Component {
           setFieldValue
         }) => {
           return (
-            <Wrapper size="large" breakout>
-              {this.props.headingText && (
-                <Heading level={2} variant="stepHeading">
-                  {this.props.headingText}
-                </Heading>
-              )}
-              <form onSubmit={handleSubmit}>
-                <Box variant="actionBox">
-                  <Box variant="largeForm">
-                    <div>
-                      <Layout variant="formElements" inCalculator>
-                        <LayoutItem>
-                          <Field
-                            name={`name`}
-                            render={({ field }) => (
-                              <Input
-                                id={`name`}
-                                {...field}
-                                placeholder={this.props.namePlaceholder}
-                                label={this.props.nameLabel}
-                              />
-                            )}
+            <React.Fragment>
+              <Wrapper size="large">
+                {this.props.headingText && (
+                  <Heading level={2} variant="stepHeading">
+                    {this.props.headingText}
+                  </Heading>
+                )}
+              </Wrapper>
+              <Wrapper size="form">
+                <form onSubmit={handleSubmit}>
+                  <Layout variant="formElements" inCalculator>
+                    <LayoutItem>
+                      <Field
+                        name={`name`}
+                        render={({ field }) => (
+                          <Input
+                            id={`name`}
+                            {...field}
+                            placeholder={this.props.namePlaceholder}
+                            label={this.props.nameLabel}
                           />
-                          {touched.name &&
-                            errors.name && (
-                              <Alert variant="error" type="warning">
-                                {errors.name}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
-                            name={`company`}
-                            render={({ field }) => {
-                              const { onChange, ...props } = field
-                              return (
-                                <CompanyInput
-                                  label={this.props.companyNameLabel}
-                                  placeholder={
-                                    this.props.companyNamePlaceholder
-                                  }
-                                  onSearch={this.props.companySearchFunc}
-                                  mapItem={this.props.mapCompany}
-                                  id="company"
-                                  onSelect={value =>
-                                    setFieldValue("company", value)
-                                  }
-                                  {...props}
-                                />
-                              )
-                            }}
+                        )}
+                      />
+                      {touched.name &&
+                        errors.name && (
+                          <Alert variant="error" type="warning">
+                            {errors.name}
+                          </Alert>
+                        )}
+                    </LayoutItem>
+                    <LayoutItem>
+                      <Field
+                        name={`company`}
+                        render={({ field }) => {
+                          const { onChange, ...props } = field
+                          return (
+                            <CompanyInput
+                              label={this.props.companyNameLabel}
+                              placeholder={this.props.companyNamePlaceholder}
+                              onSearch={this.props.companySearchFunc}
+                              mapItem={this.props.mapCompany}
+                              id="company"
+                              onSelect={value =>
+                                setFieldValue("company", value)
+                              }
+                              {...props}
+                            />
+                          )
+                        }}
+                      />
+                      {touched.company &&
+                        errors.company && (
+                          <Alert variant="error" type="warning">
+                            {errors.company}
+                          </Alert>
+                        )}
+                    </LayoutItem>
+                    <LayoutItem>
+                      <Field
+                        name={`email`}
+                        render={({ field }) => (
+                          <Input
+                            id={"email"}
+                            label={this.props.emailLabel}
+                            placeholder={this.props.emailPlaceholder}
+                            {...field}
                           />
-                          {touched.company &&
-                            errors.company && (
-                              <Alert variant="error" type="warning">
-                                {errors.company}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
-                            name={`email`}
-                            render={({ field }) => (
-                              <Input
-                                id={"email"}
-                                label={this.props.emailLabel}
-                                placeholder={this.props.emailPlaceholder}
-                                {...field}
-                              />
-                            )}
+                        )}
+                      />
+                      {touched.email &&
+                        errors.email && (
+                          <Alert variant="error" type="warning">
+                            {errors.email}
+                          </Alert>
+                        )}
+                    </LayoutItem>
+                    <LayoutItem>
+                      <Field
+                        name={`phone`}
+                        render={({ field }) => (
+                          <PhoneInput
+                            label={this.props.phoneLabel}
+                            id={"phone"}
+                            placeholder={this.props.phonePlaceholder}
+                            {...field}
                           />
-                          {touched.email &&
-                            errors.email && (
-                              <Alert variant="error" type="warning">
-                                {errors.email}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
-                            name={`phone`}
-                            render={({ field }) => (
-                              <PhoneInput
-                                label={this.props.phoneLabel}
-                                id={"phone"}
-                                placeholder={this.props.phonePlaceholder}
-                                {...field}
-                              />
-                            )}
-                          />
-                          {touched.phone &&
-                            errors.phone && (
-                              <Alert variant="error" type="warning">
-                                {errors.phone}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
-                            name={`purpose`}
-                            render={({ field }) => {
-                              const {
-                                name,
-                                value,
-                                onBlur,
-                                onChange,
-                                ...props
-                              } = field
-                              return (
-                                <Select
-                                  items={this.props.loanPurposes}
-                                  label={this.props.purposeLabel}
-                                  placeHolderLabel={
-                                    this.props.purposePlaceholder
-                                  }
-                                  {...this.props.purposeSelectProps}
+                        )}
+                      />
+                      {touched.phone &&
+                        errors.phone && (
+                          <Alert variant="error" type="warning">
+                            {errors.phone}
+                          </Alert>
+                        )}
+                    </LayoutItem>
+                    <LayoutItem>
+                      <Field
+                        name={`purpose`}
+                        render={({ field }) => {
+                          const {
+                            name,
+                            value,
+                            onBlur,
+                            onChange,
+                            ...props
+                          } = field
+                          return (
+                            <Select
+                              items={this.props.loanPurposes}
+                              label={this.props.purposeLabel}
+                              placeHolderLabel={this.props.purposePlaceholder}
+                              {...this.props.purposeSelectProps}
+                              name={name}
+                              value={value}
+                              onChange={item =>
+                                setFieldValue(
+                                  "purpose",
+                                  this.props.mapPurpose(item)
+                                )
+                              }
+                              // onBlur={onBlur}
+                              {...props}
+                            />
+                          )
+                        }}
+                      />
+                      {touched.purpose &&
+                        errors.purpose && (
+                          <Alert variant="error" type="warning">
+                            {errors.purpose}
+                          </Alert>
+                        )}
+                    </LayoutItem>
+                    <LayoutItem>
+                      <Field
+                        name={`repaymentMethod`}
+                        render={({ field }) => {
+                          const {
+                            name,
+                            value,
+                            onBlur,
+                            onChange,
+                            ...props
+                          } = field
+                          return (
+                            <Select
+                              items={this.props.repaymentMethods}
+                              label={
+                                "Hvordan betaler som oftest kundene dine deg?"
+                              }
+                              placeHolderLabel={"Velg…"}
+                              name={name}
+                              value={value}
+                              onChange={item =>
+                                setFieldValue(
+                                  "repaymentMethod",
+                                  this.props.mapRepaymentPeriod(item)
+                                )
+                              }
+                              onBlur={onBlur}
+                              {...props}
+                            />
+                          )
+                        }}
+                      />
+                      {touched.repaymentMethod &&
+                        errors.repaymentMethod && (
+                          <Alert variant="error" type="warning">
+                            {errors.repaymentMethod}
+                          </Alert>
+                        )}
+                    </LayoutItem>
+                    <LayoutItem>
+                      <Field
+                        name={`paymentsInternational`}
+                        render={({ field }) => {
+                          const { name } = field
+                          return (
+                            <div>
+                              <Label htmlFor={name}>
+                                Mottar du innbetalinger fra utenfor Norge?
+                              </Label>
+                              <Layout grid="columns" variant="columns">
+                                <RadioButton
                                   name={name}
-                                  value={value}
-                                  onChange={item =>
+                                  id="213ewqs"
+                                  defaultChecked={values.paymentsInternational}
+                                  onChange={() =>
+                                    setFieldValue("paymentsInternational", true)
+                                  }
+                                >
+                                  Ja
+                                </RadioButton>
+                                <RadioButton
+                                  name={name}
+                                  id="21iehwdaj"
+                                  defaultChecked={!values.paymentsInternational}
+                                  onChange={() =>
                                     setFieldValue(
-                                      "purpose",
-                                      this.props.mapPurpose(item)
+                                      "paymentsInternational",
+                                      false
                                     )
                                   }
-                                  // onBlur={onBlur}
-                                  variant="loanPurpose"
-                                  {...props}
-                                />
-                              )
-                            }}
-                          />
-                          {touched.purpose &&
-                            errors.purpose && (
-                              <Alert variant="error" type="warning">
-                                {errors.purpose}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
-                            name={`repaymentMethod`}
-                            render={({ field }) => {
-                              const {
-                                name,
-                                value,
-                                onBlur,
-                                onChange,
-                                ...props
-                              } = field
-                              return (
-                                <Select
-                                  items={this.props.repaymentMethods}
-                                  label={
-                                    "Hvordan betaler som oftest kundene dine deg?"
-                                  }
-                                  placeHolderLabel={"Velg…"}
+                                >
+                                  Nei
+                                </RadioButton>
+                              </Layout>
+                            </div>
+                          )
+                        }}
+                      />
+                      {touched.paymentsInternational &&
+                        errors.paymentsInternational && (
+                          <Alert variant="error" type="warning">
+                            {errors.paymentsInternational}
+                          </Alert>
+                        )}
+                    </LayoutItem>
+                    <LayoutItem>
+                      <Field
+                        name={`paymentCash`}
+                        render={({ field }) => {
+                          const { name } = field
+                          return (
+                            <div>
+                              <Label htmlFor={name}>
+                                Tar du i mot kontanter i betaling fra dine
+                                kunder
+                              </Label>
+
+                              <Layout variant="columns">
+                                <RadioButton
                                   name={name}
-                                  value={value}
-                                  onChange={item =>
-                                    setFieldValue(
-                                      "repaymentMethod",
-                                      this.props.mapRepaymentPeriod(item)
-                                    )
+                                  id="3riejwfjnsldk"
+                                  defaultChecked={values.paymentCash}
+                                  onChange={() =>
+                                    setFieldValue("paymentCash", true)
                                   }
-                                  onBlur={onBlur}
-                                  variant="loanPurpose"
-                                  {...props}
-                                />
-                              )
-                            }}
-                          />
-                          {touched.repaymentMethod &&
-                            errors.repaymentMethod && (
-                              <Alert variant="error" type="warning">
-                                {errors.repaymentMethod}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
-                            name={`paymentsInternational`}
-                            render={({ field }) => {
-                              const { name } = field
-                              return (
-                                <Box variant="radioContainer">
-                                  <Label htmlFor={name}>
-                                    Mottar du innbetalinger fra utenfor Norge?
-                                  </Label>
-                                  <RadioButton
-                                    name={name}
-                                    id="213ewqs"
-                                    defaultChecked={
-                                      values.paymentsInternational
-                                    }
-                                    onChange={() =>
-                                      setFieldValue(
-                                        "paymentsInternational",
-                                        true
-                                      )
-                                    }
-                                  >
-                                    Ja
-                                  </RadioButton>
-                                  <RadioButton
-                                    name={name}
-                                    id="21iehwdaj"
-                                    defaultChecked={
-                                      !values.paymentsInternational
-                                    }
-                                    onChange={() =>
-                                      setFieldValue(
-                                        "paymentsInternational",
-                                        false
-                                      )
-                                    }
-                                  >
-                                    Nei
-                                  </RadioButton>
-                                </Box>
-                              )
-                            }}
-                          />
-                          {touched.paymentsInternational &&
-                            errors.paymentsInternational && (
-                              <Alert variant="error" type="warning">
-                                {errors.paymentsInternational}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                        <LayoutItem>
-                          <Field
-                            name={`paymentCash`}
-                            render={({ field }) => {
-                              const { name } = field
-                              return (
-                                <Box variant="radioContainer">
-                                  <Label htmlFor={name}>
-                                    Tar du i mot kontanter i betaling fra dine
-                                    kunder
-                                  </Label>
-                                  <RadioButton
-                                    name={name}
-                                    id="3riejwfjnsldk"
-                                    defaultChecked={values.paymentCash}
-                                    onChange={() =>
-                                      setFieldValue("paymentCash", true)
-                                    }
-                                  >
-                                    Ja
-                                  </RadioButton>
-                                  <RadioButton
-                                    name={name}
-                                    id="okwenfs"
-                                    defaultChecked={!values.paymentCash}
-                                    onChange={() =>
-                                      setFieldValue("paymentCash", false)
-                                    }
-                                  >
-                                    Nei
-                                  </RadioButton>
-                                </Box>
-                              )
-                            }}
-                          />
-                          {touched.paymentCash &&
-                            errors.paymentCash && (
-                              <Alert variant="error" type="warning">
-                                {errors.paymentCash}
-                              </Alert>
-                            )}
-                        </LayoutItem>
-                      </Layout>
+                                >
+                                  Ja
+                                </RadioButton>
+                                <RadioButton
+                                  name={name}
+                                  id="okwenfs"
+                                  defaultChecked={!values.paymentCash}
+                                  onChange={() =>
+                                    setFieldValue("paymentCash", false)
+                                  }
+                                >
+                                  Nei
+                                </RadioButton>
+                              </Layout>
+                            </div>
+                          )
+                        }}
+                      />
+                      {touched.paymentCash &&
+                        errors.paymentCash && (
+                          <Alert variant="error" type="warning">
+                            {errors.paymentCash}
+                          </Alert>
+                        )}
+                    </LayoutItem>
+                    <LayoutItem>
                       <Button
                         type={"submit"}
                         disabled={!isValid}
@@ -354,11 +345,11 @@ class Personalia extends React.Component {
                           ? this.props.resolveButtonText(values)
                           : this.props.buttonText}
                       </Button>
-                    </div>
-                  </Box>
-                </Box>
-              </form>
-            </Wrapper>
+                    </LayoutItem>
+                  </Layout>
+                </form>
+              </Wrapper>
+            </React.Fragment>
           )
         }}
       />
