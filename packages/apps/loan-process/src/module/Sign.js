@@ -56,7 +56,7 @@ class Sign extends React.Component {
     const term = plan ? (plan.length > 0 ? plan[0] : null) : null
 
     return (
-      <Wrapper size="medium">
+      <Wrapper size="small">
         <Box variant="illustration">
           {this.props.renderIllustration()}
           {/* <img src="/assets/signing.svg" alt="" width="175" /> */}

@@ -55,16 +55,6 @@ export const SplitListItemStyling = theming.createVariants(
       &:last-child {
         border-bottom: 1px solid ${theming.color.line};
       }
-
-      ${p =>
-        p.hasInput &&
-        `
-        flex-wrap: wrap;
-        padding: 0;
-        > * {
-          flex-basis: 100%;
-        }
-      `};
     `
   },
   SplitListItem.themeProps.listItem
