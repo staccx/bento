@@ -11,7 +11,8 @@ import {
   PostalCodeInput,
   NationalIdInput,
   AccountInput,
-  CurrencyInput
+  CurrencyInput,
+  Select2
 } from "@staccx/base"
 import { ThemeProvider } from "styled-components"
 import { BrowserRouter as Router } from "react-router-dom"
@@ -31,23 +32,27 @@ const options = [
 const renderOption = (getItemProps, highlightedIndex, selectedItem) => (
   item,
   index
-) => (
-  <li
-    {...getItemProps({
-      key: item.value,
-      index,
-      item,
-      style: {
-        backgroundColor: highlightedIndex === index ? "lightgray" : "white",
-        fontWeight: selectedItem === item ? "bold" : "normal"
-      }
-    })}
-  >
-    {item.value}
-  </li>
-)
+) => {
+  return (
+    <li
+      {...getItemProps({
+        key: item.value,
+        index,
+        item,
+        style: {
+          backgroundColor: highlightedIndex === index ? "lightgray" : "white",
+          fontWeight: selectedItem === item ? "bold" : "normal"
+        }
+      })}
+    >
+      {item.value}
+    </li>
+  )
+}
 
-const renderInput = getItemProps => <Input {...getItemProps()} />
+const renderInput = getItemProps => (
+  <Input placeholder={"input here"} {...getItemProps()} />
+)
 
 const renderSelected = (selectedItem, getInputProps, { clearSelection }) => (
   <span>
@@ -68,7 +73,6 @@ class App extends Component {
           <Wrapper>
             <Combobox
               onChange={console.log}
-              renderOption={renderOption}
               renderInput={renderInput}
               renderSelected={renderSelected}
               renderLabel={renderLabel}
@@ -76,13 +80,42 @@ class App extends Component {
               filter={["value", "misc"]}
               indexer={"value"}
               options={options}
-            />
+              initialSelectedItem={options[1]}
+            >
+              {({ result, getItemProps, highlightedIndex, selectedItem }) => (
+                <List>
+                  {result.map(
+                    renderOption(getItemProps, highlightedIndex, selectedItem)
+                  )}
+                </List>
+              )}
+            </Combobox>
+            <Select2
+              options={options}
+              renderSelected={(selectedItem, getToggleButtonProps) => (
+                <Button {...getToggleButtonProps()}>
+                  {selectedItem.value}
+                </Button>
+              )}
+              renderLabel={renderLabel}
+              onChange={console.log}
+            >
+              {({ selectedItem, options, getItemProps, highlightedIndex }) => {
+                return (
+                  <List>
+                    {options.map(
+                      renderOption(getItemProps, highlightedIndex, selectedItem)
+                    )}
+                  </List>
+                )
+              }}
+            </Select2>
             <CreditCardInput label={"Credit Card"} />
             <PhoneInput label={"Phone number"} onChange={console.warn} />
             <NationalIdInput label={"National Id"} id={"tsa"} />
             <PostalCodeInput label={"Postal code"} onChange={console.log} />
             <AccountInput label={"Account number"} />
-            <CurrencyInput label={"Currency"}/>
+            <CurrencyInput label={"Currency"} />
           </Wrapper>
         </Router>
       </ThemeProvider>
