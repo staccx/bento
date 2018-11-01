@@ -188,7 +188,7 @@ class RegisterSigners extends React.Component {
                                                       placeholder="Navn"
                                                       label={
                                                         this.props
-                                                          .newPersonDefaultName
+                                                          .newPersonDefaultNameLabel
                                                       }
                                                       value={null}
                                                       autoFocus
