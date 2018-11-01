@@ -32,6 +32,7 @@ const Select2 = ({
         clearSelection,
         openMenu,
         closeMenu,
+        toggleMenu,
         ...rest
       }) => {
         return (
@@ -39,9 +40,11 @@ const Select2 = ({
             {renderLabel && renderLabel(getLabelProps)}
             {selectedItem &&
               renderSelected(selectedItem, getToggleButtonProps, {
+                isOpen,
                 clearSelection,
                 openMenu,
-                closeMenu
+                closeMenu,
+                toggleMenu
               })}
             {isOpen
               ? children({
@@ -49,7 +52,8 @@ const Select2 = ({
                   getItemProps,
                   highlightedIndex,
                   selectedItem,
-                  selectItem
+                  selectItem,
+                  toggleMenu
                 })
               : null}
           </div>

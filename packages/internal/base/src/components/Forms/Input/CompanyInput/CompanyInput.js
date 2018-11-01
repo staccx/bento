@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
-import Input, { InputDefaultProps, InputPropTypes } from "../Input"
-import Downshift from "downshift"
+import Combobox from "../../Combobox/Combobox"
 import Flag from "../../../Layout/Flag/Flag"
 import Label from "../../Label/Label"
 import { color, font, spacing, applyVariants } from "../../../../theming"
 import { themePropTypes } from "../../../../constants/themeContants"
+import Input from "../Input"
 
 const defaultMapItem = item => {
   if (!item) {
@@ -79,10 +79,9 @@ class CompanyInput extends React.PureComponent {
     }, this.props.searchTimeout)
   }
 
-  handleChange(e) {
-    const value = e.target.value
+  handleChange(value) {
     if (this.props.onChange) {
-      this.props.onChange(e)
+      this.props.onChange(value)
     }
     this.scheduleSearch(value)
   }
@@ -98,92 +97,78 @@ class CompanyInput extends React.PureComponent {
   render() {
     const { onChange, selectedHeader, mapItem, ...otherProps } = this.props
 
-    const { autoComplete, selected, isLoading, searchText } = this.state
+    const { autoComplete, isLoading } = this.state
+
+    const renderSelected = (selectedItem, getItemProps, { clearSelection }) => {
+      const sel = mapItem(selectedItem)
+      return (
+        <ModifiedFlag
+          reverse
+          img={
+            <Close type="button" onClick={clearSelection}>
+              <svg viewBox="0 0 26 26" width="50" height="50">
+                <path
+                  fill="currentColor"
+                  d="M21.7344 19.6406l-2.0977 2.0938c-.3828.3867-1.0078.3867-1.3945 0L13 16.496l-5.2383 5.2383c-.3867.3867-1.0156.3867-1.3984 0l-2.0977-2.0938a.9878.9878 0 0 1 0-1.3984L9.504 13 4.2656 7.7617c-.3828-.3906-.3828-1.0195 0-1.3984l2.0977-2.0977c.3828-.3867 1.0117-.3867 1.3984 0L13 9.5078l5.2422-5.2422c.3867-.3867 1.0156-.3867 1.3945 0l2.0977 2.0938c.3867.3867.3867 1.0156.0039 1.4023L16.496 13l5.2383 5.2422a.9878.9878 0 0 1 0 1.3984z"
+                />
+              </svg>
+            </Close>
+          }
+        >
+          <SelectLabel htmlFor="SelectedName">{selectedHeader}</SelectLabel>
+          <div id="SelectedName">{sel.name}</div>
+          <OrgNo>{sel.orgNo}</OrgNo>
+        </ModifiedFlag>
+      )
+    }
+    const renderInput = getInputProps => (
+      <React.Fragment>
+        <Input {...getInputProps({ ...otherProps })} />
+        {isLoading && (
+          <SelectWrapper>
+            <SelectLoad />
+          </SelectWrapper>
+        )}
+      </React.Fragment>
+    )
     return (
-      <Downshift
-        onSelect={this.handleSelect}
-        itemToString={item => (item ? item.name : "")}
-        defaultIsOpen
-        render={({
-          getInputProps,
-          getItemProps,
-          isOpen,
-          inputValue,
-          selectedItem,
-          highlightedIndex
-        }) => {
-          const sel = mapItem(selected)
-          return (
-            <div>
-              {sel && (
-                <ModifiedFlag
-                  reverse
-                  img={
-                    <Close
-                      type="button"
-                      onClick={() =>
-                        this.setState({ autoComplete: [] }, () =>
-                          this.handleSelect(null)
-                        )
-                      }
-                    >
-                      <svg viewBox="0 0 26 26" width="50" height="50">
-                        <path
-                          fill="currentColor"
-                          d="M21.7344 19.6406l-2.0977 2.0938c-.3828.3867-1.0078.3867-1.3945 0L13 16.496l-5.2383 5.2383c-.3867.3867-1.0156.3867-1.3984 0l-2.0977-2.0938a.9878.9878 0 0 1 0-1.3984L9.504 13 4.2656 7.7617c-.3828-.3906-.3828-1.0195 0-1.3984l2.0977-2.0977c.3828-.3867 1.0117-.3867 1.3984 0L13 9.5078l5.2422-5.2422c.3867-.3867 1.0156-.3867 1.3945 0l2.0977 2.0938c.3867.3867.3867 1.0156.0039 1.4023L16.496 13l5.2383 5.2422a.9878.9878 0 0 1 0 1.3984z"
-                        />
-                      </svg>
-                    </Close>
-                  }
-                >
-                  <SelectLabel htmlFor="SelectedName">
-                    {selectedHeader}
-                  </SelectLabel>
-                  <div id="SelectedName">{sel.name}</div>
-                  <OrgNo>{sel.orgNo}</OrgNo>
-                </ModifiedFlag>
-              )}
-              {!selected && (
-                <React.Fragment>
-                  <Input
-                    {...getInputProps({ ...otherProps })}
-                    value={searchText}
-                    onChange={this.handleChange}
-                  />
-                  {isLoading && (
-                    <SelectWrapper>
-                      <SelectLoad />
-                    </SelectWrapper>
-                  )}
-                  {autoComplete && autoComplete.length ? (
-                    <SelectWrapper>
-                      <SelectList>
-                        {autoComplete.map((item, index) => {
-                          const mappedItem = mapItem(item)
-                          return (
-                            <SelectItem
-                              {...getItemProps({ item })}
-                              key={mappedItem.orgNo}
-                              isSelected={highlightedIndex === index}
-                            >
-                              {`${mappedItem.name}${
-                                mappedItem.orgType !== "AS"
-                                  ? " - " + mappedItem.orgType
-                                  : ""
-                              }`}
-                              <OrgNo>{mappedItem.orgNo}</OrgNo>
-                            </SelectItem>
-                          )
-                        })}
-                      </SelectList>
-                    </SelectWrapper>
-                  ) : null}
-                </React.Fragment>
-              )}
-            </div>
-          )
+      <Combobox
+        onChange={this.handleSelect}
+        renderInput={renderInput}
+        renderSelected={renderSelected}
+        renderLabel={() => null}
+        filter={"name"}
+        indexer={"orgNo"}
+        options={autoComplete}
+        downshiftProps={{
+          defaultIsOpen: true,
+          onInputValueChange: this.handleChange
         }}
-      />
+      >
+        {({ result, getItemProps, selectedItem, highlightedIndex }) => (
+          <SelectWrapper>
+            <SelectList>
+              {result.map((item, index) => {
+                const mappedItem = mapItem(item)
+                return (
+                  <SelectItem
+                    {...getItemProps({ item })}
+                    key={mappedItem.orgNo}
+                    isSelected={highlightedIndex === index}
+                  >
+                    {`${mappedItem.name}${
+                      mappedItem.orgType !== "AS"
+                        ? " - " + mappedItem.orgType
+                        : ""
+                    }`}
+                    <OrgNo>{mappedItem.orgNo}</OrgNo>
+                  </SelectItem>
+                )
+              })}
+            </SelectList>
+          </SelectWrapper>
+        )}
+      </Combobox>
     )
   }
 }
@@ -333,23 +318,19 @@ const SelectItem = styled.li`
 `
 
 CompanyInput.propTypes = {
-  ...InputPropTypes,
   searchTimeout: PropTypes.number,
   onSelect: PropTypes.func,
   selected: PropTypes.object,
   onSearch: PropTypes.func,
   mapItem: PropTypes.func,
-  onInputChange: PropTypes.func,
   selectedHeader: PropTypes.string,
   id: PropTypes.string.isRequired
 }
 
 CompanyInput.defaultProps = {
-  ...InputDefaultProps,
   searchTimeout: 200,
   onSelect: null,
   selected: null,
-  onInputChange: null,
   mapItem: defaultMapItem,
   selectedHeader: "Bedrift"
 }

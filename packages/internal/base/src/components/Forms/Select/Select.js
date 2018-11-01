@@ -1,14 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import Downshift from "downshift"
-import { ScaleIn } from "@staccx/animations"
 import { stringIncludes } from "@staccx/utils"
 import Label from "../Label/Label"
 import Input from "../Input/Input"
 import Caret from "../../Icons/Caret"
-import Close from "../../Icons/Close"
 import SelectOption from "./Select.Option"
+import Select2 from "./Select2"
 import ThemeComponent from "../../Theme/ThemeComponent"
 import {
   applyVariants,
@@ -30,19 +28,6 @@ const CaretComp = ({ ...props }) => (
 const CaretIcon = styled(CaretComp)`
   transition: transform 0.3s ease-out;
   transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
-`
-
-const CloseComp = ({ ...props }) => (
-  <ThemeComponent
-    tagName={themeProps.closeComponent}
-    fallback={Close}
-    {...props}
-  />
-)
-const CloseIcon = styled(CloseComp)`
-  transform: scale(0);
-  animation: ${ScaleIn} 0.3s ease-in forwards 1;
-  ${applyVariants(themeProps.iconClose)};
 `
 
 class Select extends React.PureComponent {
@@ -84,14 +69,12 @@ class Select extends React.PureComponent {
       placeHolderLabel,
       itemToString,
       className,
-      variant,
-      ...restProps
+      variant
     } = this.props
 
     const OptionsWrapper = this.props.OptionsWrapper
     const Option = this.props.Option
     const Selected = this.props.Selected || Option
-    const Placeholder = this.props.Placeholder
 
     const toString = item => {
       if (!item) {
@@ -104,145 +87,88 @@ class Select extends React.PureComponent {
       return placeHolderLabel
     }
 
+    const renderSelected = (selectedItem, getToggleButtonProps, { isOpen }) => (
+      <SelectWrapper className={className} variant={variant}>
+        {this.props.label && (
+          <Label variant={variant}>{this.props.label}</Label>
+        )}
+        <SelectedWrapper variant={variant} isSelected>
+          {this.props.renderSelected ? (
+            this.props.renderSelected({
+              selectedItem,
+              getToggleButtonProps
+            })
+          ) : (
+            <React.Fragment>
+              <Selected
+                {...getToggleButtonProps()}
+                selectedItem={selectedItem}
+                variant={variant}
+                isSelected
+              >
+                {toString(selectedItem)}
+              </Selected>
+              <IconButton
+                {...getToggleButtonProps()}
+                variant={variant}
+                type={"button"}
+                isSelected
+              >
+                <CaretIcon isExpanded={isOpen} variant={variant} />
+              </IconButton>
+            </React.Fragment>
+          )}
+        </SelectedWrapper>
+      </SelectWrapper>
+    )
     return (
-      <Downshift
+      <Select2
+        options={this.props.items}
+        renderSelected={renderSelected}
+        renderLabel={() => null}
         onChange={onChange}
-        itemToString={toString}
-        selectedItem={this.state.selected}
-        onSelect={this.handleSelect}
-        onInputValueChange={this.setFilter}
-        {...restProps}
-        render={({
-          getInputProps,
-          getButtonProps,
+      >
+        {({
+          options,
           getItemProps,
-          isOpen,
-          inputValue,
           selectedItem,
           highlightedIndex,
-          toggleMenu,
-          clearSelection
-        }) => {
-          return (
-            <div>
-              <SelectWrapper className={className} variant={variant}>
-                {this.props.label && (
-                  <Label variant={variant}>{this.props.label}</Label>
-                )}
-                {selectedItem ? (
-                  <SelectedWrapper variant={variant} isSelected>
-                    {this.props.renderSelected ? (
-                      this.props.renderSelected({
-                        selectedItem,
-                        toggleMenu,
-                        getButtonProps,
-                        getInputProps
-                      })
-                    ) : (
-                      <Selected
-                        onClick={() => toggleMenu()}
-                        selectedItem={selectedItem}
-                        buttonProps={{ ...getButtonProps() }}
-                        inputProps={{ ...getInputProps() }}
-                        toggleMenu={toggleMenu}
-                        variant={variant}
-                        isSelected
-                      >
-                        {toString(selectedItem)}
-                      </Selected>
-                    )}
-                    {this.props.combobox ? (
-                      <IconButton
-                        onClick={() => clearSelection()}
-                        variant={variant}
-                        type={"button"}
-                        isSelected
-                      >
-                        <CloseIcon variant={variant} />
-                      </IconButton>
-                    ) : (
-                      <IconButton
-                        onClick={() => toggleMenu()}
-                        variant={variant}
-                        type={"button"}
-                        isSelected
-                      >
-                        <CaretIcon isExpanded={isOpen} variant={variant} />
-                      </IconButton>
-                    )}
-                  </SelectedWrapper>
-                ) : (
-                  <SelectedWrapper
-                    variant={variant}
-                    combobox={this.props.combobox}
-                  >
-                    {this.props.combobox ? (
-                      <Placeholder
-                        {...getInputProps({
-                          placeholder: placeHolderLabel || ""
-                        })}
-                        variant={variant}
-                        onClick={() => toggleMenu()}
-                        autoFocus
-                      />
-                    ) : (
-                      <Selected
-                        onClick={() => toggleMenu()}
-                        selectedItem={selectedItem}
-                        buttonProps={{ ...getButtonProps() }}
-                        inputProps={{ ...getInputProps() }}
-                        toggleMenu={toggleMenu}
-                        variant={variant}
-                      />
-                    )}
-                    <IconButton onClick={() => toggleMenu()} variant={variant}>
-                      <CaretIcon isExpanded={isOpen} variant={variant} />
-                    </IconButton>
-                  </SelectedWrapper>
-                )}
-                {isOpen && (
-                  <OptionsWrapper variant={variant}>
-                    {this.props.items
-                      .filter(
-                        item => (selectedItem ? item : this.filterItem(item))
-                      )
-                      .slice(
-                        0,
-                        this.props.maxItems === -1
-                          ? this.props.items.length
-                          : this.props.maxItems
-                      )
-                      .map((item, index) => {
-                        if (this.props.children) {
-                          return this.props.children({
-                            item,
-                            getItemProps,
-                            highlighted: highlightedIndex === index,
-                            selected: selectedItem === item,
-                            reset: () => {
-                              toggleMenu()
-                            }
-                          })
-                        }
-                        return (
-                          <li key={this.props.itemToKey(item)}>
-                            <Option
-                              data={item}
-                              variant={variant}
-                              {...getItemProps({ item })}
-                            >
-                              <strong>{toString(item)}</strong>
-                            </Option>
-                          </li>
-                        )
-                      })}
-                  </OptionsWrapper>
-                )}
-              </SelectWrapper>
-            </div>
-          )
-        }}
-      />
+          toggleMenu
+        }) => (
+          <OptionsWrapper variant={variant}>
+            {options
+              .filter(item => (selectedItem ? item : this.filterItem(item)))
+              .slice(
+                0,
+                this.props.maxItems === -1
+                  ? this.props.items.length
+                  : this.props.maxItems
+              )
+              .map((item, index) => {
+                if (this.props.children) {
+                  return this.props.children({
+                    item,
+                    getItemProps,
+                    highlighted: highlightedIndex === index,
+                    selected: selectedItem === item,
+                    reset: toggleMenu
+                  })
+                }
+                return (
+                  <li key={this.props.itemToKey(item)}>
+                    <Option
+                      data={item}
+                      variant={variant}
+                      {...getItemProps({ item })}
+                    >
+                      <strong>{toString(item)}</strong>
+                    </Option>
+                  </li>
+                )
+              })}
+          </OptionsWrapper>
+        )}
+      </Select2>
     )
   }
 }
@@ -284,7 +210,7 @@ export const SelectedWrapper = styled.div`
 `
 export const IconButton = styled.button`
   position: absolute;
-  right: ${spacing.micro};
+  right: 3px;
   bottom: 50%;
   width: ${targetSize.small};
   height: ${targetSize.small};
