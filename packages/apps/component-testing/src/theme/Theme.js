@@ -1,3 +1,3 @@
-import {StaccTheme} from "@staccx/stacc-theme"
+import { StaccTheme } from "@staccx/stacc-theme"
 
 export default StaccTheme

@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import {
   Wrapper,
   Combobox,
+  GlobalStyle,
+  WebFonts,
   Input,
   Label,
   Button,
@@ -12,7 +14,9 @@ import {
   NationalIdInput,
   AccountInput,
   CurrencyInput,
-  Select2
+  Select2,
+  Select,
+  CompanyInput
 } from "@staccx/base"
 import { ThemeProvider } from "styled-components"
 import { BrowserRouter as Router } from "react-router-dom"
@@ -71,6 +75,14 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <Router>
           <Wrapper>
+            <GlobalStyle />
+            <WebFonts />
+            <CompanyInput id={"test"} />
+            <Select
+              items={options}
+              itemToString={item => item.value}
+              itemToKey={item => item.value}
+            />
             <Combobox
               onChange={console.log}
               renderInput={renderInput}
