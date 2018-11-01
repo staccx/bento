@@ -74,18 +74,18 @@ class CompanyInfo extends React.Component {
                       <Field
                         name={`company`}
                         render={({ field }) => {
-                          const { onChange, ...props } = field
                           return (
                             <CompanyInput
-                              label={this.props.companyNameLabel}
-                              placeholder={this.props.companyNamePlaceholder}
-                              onSearch={this.props.companySearchFunc}
-                              mapItem={this.props.mapCompany}
+                              // label={this.props.companyNameLabel}
+                              // onSearch={this.props.companySearchFunc}
+                              // mapItem={this.props.mapCompany}
                               id="company"
-                              onSelect={value =>
+                              onSelect={value => {
+                                if (value.target) {
+                                  value = value.target.value
+                                }
                                 setFieldValue("company", value)
-                              }
-                              {...props}
+                              }}
                             />
                           )
                         }}
@@ -115,7 +115,6 @@ class CompanyInfo extends React.Component {
                               label={this.props.purposeLabel}
                               placeHolderLabel={this.props.purposePlaceholder}
                               {...this.props.purposeSelectProps}
-                              name={name}
                               value={value}
                               onChange={item =>
                                 setFieldValue(
