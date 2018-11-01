@@ -6,6 +6,18 @@ export const i18nConfig = {
     HELLO: {
       nb: "Heisann, {name}, dagens dato: {date.now}, {currency(price)}",
       en: "Hi there, {name}, today is {date.now}, {currency(price)}"
+    },
+    listItem1: {
+      nb: "Første element",
+      en: "First element"
+    },
+    listItem2: {
+      nb: "Andre element",
+      en: "2nd"
+    },
+    listItem3: {
+      nb: "Tredje element",
+      en: "3rd"
     }
   },
   language: "en",
