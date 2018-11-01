@@ -14,7 +14,7 @@ const Heading = ({ level, children, className, ...restProps }) => {
     case "1":
     case 1:
       return (
-        <HeadingH1 level={level} className={className} {...restProps}>
+        <HeadingH1 level={1} className={className} {...restProps}>
           {children}
         </HeadingH1>
       )
@@ -24,7 +24,7 @@ const Heading = ({ level, children, className, ...restProps }) => {
     case "2":
     case 2:
       return (
-        <HeadingH2 level={level} className={className} {...restProps}>
+        <HeadingH2 level={2} className={className} {...restProps}>
           {children}
         </HeadingH2>
       )
@@ -34,7 +34,7 @@ const Heading = ({ level, children, className, ...restProps }) => {
     case "3":
     case 3:
       return (
-        <HeadingH3 level={level} className={className} {...restProps}>
+        <HeadingH3 level={3} className={className} {...restProps}>
           {children}
         </HeadingH3>
       )
@@ -44,7 +44,7 @@ const Heading = ({ level, children, className, ...restProps }) => {
     case "4":
     case 4:
       return (
-        <HeadingH4 level={level} className={className} {...restProps}>
+        <HeadingH4 level={4} className={className} {...restProps}>
           {children}
         </HeadingH4>
       )
@@ -54,7 +54,7 @@ const Heading = ({ level, children, className, ...restProps }) => {
     case "5":
     case 5:
       return (
-        <HeadingH5 level={level} className={className} {...restProps}>
+        <HeadingH5 level={5} className={className} {...restProps}>
           {children}
         </HeadingH5>
       )
@@ -64,14 +64,14 @@ const Heading = ({ level, children, className, ...restProps }) => {
     case "6":
     case 6:
       return (
-        <HeadingH6 level={level} className={className} {...restProps}>
+        <HeadingH6 level={6} className={className} {...restProps}>
           {children}
         </HeadingH6>
       )
 
     default:
       return (
-        <HeadingH1 level={level} className={className} {...restProps}>
+        <HeadingH1 level={1} className={className} {...restProps}>
           {children}
         </HeadingH1>
       ) // 👈 we always have to return something

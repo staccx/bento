@@ -13,8 +13,12 @@ export const LayoutVariants = theming.createVariants(
       grid-template-areas: ".  main  .";
     `,
     storyContent: css`
-      grid-template-columns: 25% 1fr;
-      grid-template-areas: "header  content";
+      grid-template-columns: 1fr;
+
+      @media (min-width: ${theming.wrapper("medium")}) {
+        grid-template-columns: 25% 1fr;
+        grid-template-areas: "header  content";
+      }
     `
   },
   Layout.themeProps.container

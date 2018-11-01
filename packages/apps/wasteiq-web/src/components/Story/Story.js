@@ -6,12 +6,18 @@ import {
   Layout,
   Box,
   ThemeComponent,
-  Flag
+  Flag,
+  theming
 } from "@staccx/base"
 
 const Story = ({ color, icon, iconColor }) => {
   return (
-    <Box color={color} as={"article"} size={"medium"}>
+    <Box
+      variant={[theming.VARIANT_DEFAULT, "story"]}
+      color={color}
+      as={"article"}
+      size={"medium"}
+    >
       <Layout variant={"storyContent"}>
         <header>
           <Heading level={2}>Harvest data</Heading>
@@ -52,7 +58,26 @@ const Story = ({ color, icon, iconColor }) => {
 }
 
 const IconContainer = styled.div`
-  max-height: 25vh;
+  @media (min-width: ${theming.wrapper("medium")}) {
+    position: relative;
+    max-height: 25vh;
+    min-height: 250px;
+
+    > * {
+      position: absolute;
+      bottom: -${theming.spacing.large};
+      left: -${theming.spacing.large};
+    }
+  }
+
+  @media (max-width: ${theming.wrapper("medium")}) {
+    > * {
+      position: absolute;
+      max-height: 23vh;
+      bottom: 0;
+      left: 0;
+    }
+  }
 `
 
 export default Story
