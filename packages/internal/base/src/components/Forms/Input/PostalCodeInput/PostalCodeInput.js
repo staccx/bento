@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import Input, { InputPropTypes } from "../Input"
-import { postalCodeMasks } from "../masks"
 import Loading from "../../../DataViz/Loading/Loading"
 import { FadeIn } from "@staccx/animations"
 import {
@@ -50,6 +49,7 @@ class PostalCodeInput extends React.PureComponent {
   }
 
   handleChange(e) {
+    console.log(e)
     const { value } = e.target
     if (value && !isNaN(value)) {
       this.getPostalPlace(value).then(() => {
@@ -66,8 +66,9 @@ class PostalCodeInput extends React.PureComponent {
     return (
       <PostalInputWrapper variant={this.props.variant}>
         <PostalInput
+          id={"postnummer"}
           type={"tel"}
-          mask={postalCodeMasks[this.props.locale]}
+          options={{ blocks: [4] }}
           {...this.props}
           onChange={this.handleChange}
         />

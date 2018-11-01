@@ -66,6 +66,7 @@ const color = {
 const font = {
   h1: "56px",
   h2: "36px",
+  h25: "28px",
   h3: "24px",
   h4: "18px",
   h5: "18px",

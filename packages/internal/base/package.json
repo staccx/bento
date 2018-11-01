@@ -41,6 +41,7 @@
     "@staccx/math": "^8.1.1",
     "@staccx/utils": "^8.1.1",
     "babel-plugin-prismjs": "^1.0.2",
+    "cleave.js": "^1.4.4",
     "copy-to-clipboard": "^3.0.8",
     "downshift": "^3.1.2",
     "easing-utils": "^0.0.7",
@@ -53,7 +54,6 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-jsonschema-form": "^1.0.3",
-    "text-mask-core": "^5.0.1",
     "tinycolor2": "^1.4.1",
     "webfontloader": "^1.6.28",
     "yup": "^0.24.1"

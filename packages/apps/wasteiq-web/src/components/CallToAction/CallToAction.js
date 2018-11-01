@@ -6,14 +6,20 @@ import {
   Paragraph,
   Layout,
   ThemeComponent,
-  Button
+  Button,
+  theming
 } from "@staccx/base"
 import FeaturesList from "../Features/Features.List"
 
 const CallToAction = ({ color, icon, iconColor }) => {
   return (
-    <Box color={color} as={"article"} size={"medium"}>
-      <Layout>
+    <Box
+      color={color}
+      as={"article"}
+      size={"medium"}
+      variant={[theming.VARIANT_DEFAULT, "story"]}
+    >
+      <Layout rowGap={"large"}>
         <header>
           <Layout>
             <Heading level={2}>
@@ -45,17 +51,39 @@ const CallToAction = ({ color, icon, iconColor }) => {
 }
 
 const Body = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
+  @media (min-width: ${theming.wrapper("medium")}) {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
 
-  > div:last-child {
-    flex-basis: 60%;
+    > div:last-child {
+      flex-basis: 75%;
+    }
   }
 `
 
 const IconContainer = styled.div`
-  max-height: 25vh;
+  @media (min-width: ${theming.wrapper("medium")}) {
+    position: relative;
+    max-height: 25vh;
+    min-height: 240px;
+    align-self: flex-end;
+
+    > * {
+      position: absolute;
+      bottom: 0;
+      left: -${theming.spacing.large};
+    }
+  }
+
+  @media (max-width: ${theming.wrapper("medium")}) {
+    > * {
+      position: absolute;
+      max-height: 23vh;
+      bottom: 0;
+      left: 0;
+    }
+  }
 `
 
 export default CallToAction

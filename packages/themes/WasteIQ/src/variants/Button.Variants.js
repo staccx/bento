@@ -10,6 +10,7 @@ export const ButtonVariants = theming.createVariants(
       font-weight: normal;
       box-shadow: -${theming.spacing("shadow")} ${theming.spacing("shadow")} 0 ${p => (p.color ? theming.color(p.color) : theming.color("greenLight"))};
       transition: box-shadow 0.2s ease;
+      white-space: normal;
 
       &:hover,
       &:focus,
