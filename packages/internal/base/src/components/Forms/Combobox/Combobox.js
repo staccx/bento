@@ -7,21 +7,23 @@ import Downshift from "downshift"
 const Combobox = ({
   options,
   onChange,
-  renderOption,
+  children,
   renderInput,
   renderLabel,
   renderSelected,
   filter,
-  listComponent
+  indexer,
+  downshiftProps
 }) => {
   const indices = Array.isArray(filter) ? filter : [filter]
   return (
-    <Search documents={options} indices={indices} indexer={"value"}>
+    <Search documents={options} indices={indices} indexer={indexer}>
       {({ result, search }) => (
         <Downshift
           onChange={selection => onChange(selection)}
           itemToString={item => (item ? item.value : "")}
           onInputValueChange={e => search(e)}
+          {...downshiftProps}
         >
           {({
             getInputProps,
@@ -38,7 +40,6 @@ const Combobox = ({
             closeMenu,
             ...rest
           }) => {
-            const ListComponent = listComponent
             return (
               <div>
                 {renderLabel && renderLabel(getLabelProps)}
@@ -49,18 +50,15 @@ const Combobox = ({
                     openMenu,
                     closeMenu
                   })}
-                {isOpen ? (
-                  <ListComponent>
-                    {result.map(
-                      renderOption(
-                        getItemProps,
-                        highlightedIndex,
-                        selectedItem,
-                        selectItem
-                      )
-                    )}
-                  </ListComponent>
-                ) : null}
+                {isOpen
+                  ? children({
+                      result,
+                      getItemProps,
+                      highlightedIndex,
+                      selectedItem,
+                      selectItem
+                    })
+                  : null}
               </div>
             )
           }}
@@ -72,7 +70,7 @@ const Combobox = ({
 
 Combobox.propTypes = {
   onChange: PropTypes.func,
-  renderOption: PropTypes.func,
+  children: PropTypes.func,
   renderLabel: PropTypes.func,
   renderInput: PropTypes.func,
   renderSelected: PropTypes.func,
@@ -80,7 +78,8 @@ Combobox.propTypes = {
   listComponent: commonPropTypes.children,
   filter: PropTypes.string,
   groupBy: PropTypes.string,
-  options: PropTypes.array
+  options: PropTypes.array,
+  downshiftProps: PropTypes.object
 }
 
 export default Combobox

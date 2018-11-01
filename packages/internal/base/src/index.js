@@ -23,6 +23,8 @@ import SelectOption from "./components/Forms/Select/Select.Option"
 import Toggle from "./components/Forms/Toggle/Toggle"
 import Form from "./components/Forms/Form/Form"
 import FormField from "./components/Forms/Form/FormField"
+import CreditCardInput from "./components/Forms/Input/CreditCard/CreditCardInput"
+import Select2 from "./components/Forms/Select/Select2"
 
 // Text
 import Text from "./components/Text/Text/Text"
@@ -152,6 +154,7 @@ export {
   CompanyInput,
   CopyToClipboard,
   CopyToClipboardComponent,
+  CreditCardInput,
   CurrencyInput,
   Divider,
   Donut,
@@ -203,6 +206,7 @@ export {
   RadioPillItem,
   Search,
   Select,
+  Select2,
   SelectOption,
   SelectSimple,
   State,
