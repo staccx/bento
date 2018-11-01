@@ -13,7 +13,8 @@ const Combobox = ({
   renderSelected,
   filter,
   listComponent,
-  indexer
+  indexer,
+  ...props
 }) => {
   const indices = Array.isArray(filter) ? filter : [filter]
   return (
@@ -23,6 +24,7 @@ const Combobox = ({
           onChange={selection => onChange(selection)}
           itemToString={item => (item ? item.value : "")}
           onInputValueChange={e => search(e)}
+          {...props}
         >
           {({
             getInputProps,
