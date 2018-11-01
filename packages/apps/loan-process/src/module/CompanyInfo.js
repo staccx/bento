@@ -43,10 +43,9 @@ class CompanyInfo extends React.Component {
       <Formik
         initialValues={{
           company: null,
-          purpose: "",
+          purpose: null,
           repaymentMethod: null,
-          paymentCash: false,
-          paymentsInternational: false
+          paymentsInternational: null
         }}
         validationSchema={this.state.validateSchema}
         onSubmit={this.props.onValidated}

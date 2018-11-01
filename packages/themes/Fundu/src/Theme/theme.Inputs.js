@@ -42,7 +42,7 @@ export const LabelStyling = theming.createVariants(
 export const SelectOptionStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
-      padding-left: ${theming.spacing.mediumPlus};
+      padding-left: ${theming.spacing.small};
     `
   },
   Select.themeProps.optionContainer

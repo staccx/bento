@@ -61,7 +61,7 @@ export const ButtonStyling = theming.createVariants(
       color: ${theming.color.primary};
       padding: 0;
       min-width: ${theming.targetSize.normal};
-      border: 1px solid ${theming.color.white};
+      border-width: 0;
 
       > svg {
         fill: currentColor;
@@ -74,9 +74,9 @@ export const ButtonStyling = theming.createVariants(
       &:focus,
       &:active,
       &:hover {
-        border: 1px solid ${theming.color.primary};
+        border-width: 0;
         background-color: transparent;
-        color: ${theming.color.primary};
+        color: ${theming.color.secondary};
       }
 
       ${p =>
@@ -88,17 +88,31 @@ export const ButtonStyling = theming.createVariants(
         transform: translateY(-50%);
       `};
     `,
-    addSigner: css`
+    add: css`
       background-color: transparent;
-      color: ${theming.color.primary};
+      font-weight: ${theming.fontWeight.normal};
+      color: ${theming.color.black};
       min-height: ${theming.targetSize.small};
-      padding: 3px ${theming.spacing.small};
-      border: 1px solid ${theming.color.white};
+      padding: 0;
+      border-width: 0;
+
+      &::before {
+        content: "+";
+        font-weight: ${theming.fontWeight.bold};
+        color: ${theming.color.white};
+        background-color: ${theming.color.secondary};
+        border-radius: 50%;
+        width: ${theming.spacing.medium};
+        height: ${theming.spacing.medium};
+        display: inline-block;
+        line-height: ${theming.spacing.medium};
+        margin-right: ${theming.spacing.small};
+      }
 
       &:focus,
       &:active,
       &:hover {
-        border: 1px solid ${theming.color.primary};
+        border-width: 0;
         background-color: transparent;
         color: ${theming.color.primary};
       }
