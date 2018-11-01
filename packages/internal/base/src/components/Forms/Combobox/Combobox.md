@@ -52,6 +52,7 @@ export default () => (<Combobox
     renderLabel={renderLabel}
     listComponent={List}
     filter={"value"}
+    indexer={"value"}
     options={options}
   />
 )

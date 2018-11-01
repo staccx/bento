@@ -58,6 +58,7 @@ const preview = {
       renderLabel={renderLabel}
       listComponent={List}
       filter={"value"}
+      indexer={"value"}
       options={options}
     />
   )

@@ -12,11 +12,12 @@ const Combobox = ({
   renderLabel,
   renderSelected,
   filter,
-  listComponent
+  listComponent,
+  indexer
 }) => {
   const indices = Array.isArray(filter) ? filter : [filter]
   return (
-    <Search documents={options} indices={indices} indexer={"value"}>
+    <Search documents={options} indices={indices} indexer={indexer}>
       {({ result, search }) => (
         <Downshift
           onChange={selection => onChange(selection)}

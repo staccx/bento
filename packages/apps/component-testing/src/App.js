@@ -18,13 +18,14 @@ import { BrowserRouter as Router } from "react-router-dom"
 import theme from "./theme/Theme"
 
 const options = [
-  { value: "apple" },
-  { value: "pear" },
-  { value: "orange" },
-  { value: "grape" },
-  { value: "banana" },
-  { value: "bananas" },
-  { value: "bananas2" }
+  { value: "apple", misc: "cool" },
+  { value: "pear", misc: "Ermagerdh" },
+  { value: "orange", misc: "Ermagerdh" },
+  { value: "grape", misc: "Ermagerdh" },
+  { value: "banana", misc: "Ermagerdh" },
+  { value: "bananas", misc: "Ermagerdh" },
+  { value: "bananas2", misc: "Ermagerdh" },
+  { value: "coolio", misc: "Ermagerdh" }
 ]
 
 const renderOption = (getItemProps, highlightedIndex, selectedItem) => (
@@ -72,7 +73,8 @@ class App extends Component {
               renderSelected={renderSelected}
               renderLabel={renderLabel}
               listComponent={List}
-              filter={"value"}
+              filter={["value", "misc"]}
+              indexer={"value"}
               options={options}
             />
             <CreditCardInput label={"Credit Card"} />
