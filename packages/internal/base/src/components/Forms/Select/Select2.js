@@ -1,29 +1,32 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Downshift from "downshift"
+import styled from "styled-components"
 
 const Select2 = ({
   options,
   onChange,
   renderLabel,
   renderSelected,
+  renderPlaceholder,
   filter,
   listComponent,
   indexer,
   children,
+  placeholder,
   downshiftProps
 }) => {
   return (
     <Downshift
       onChange={selection => onChange(selection)}
       itemToString={item => (item ? item.value : "")}
-      initialSelectedItem={options[0]}
       {...downshiftProps}
     >
       {({
         getToggleButtonProps,
         getItemProps,
         getLabelProps,
+        getRootProps,
         isOpen,
         inputValue,
         highlightedIndex,
@@ -36,16 +39,17 @@ const Select2 = ({
         ...rest
       }) => {
         return (
-          <div>
+          <Combo {...getRootProps()}>
             {renderLabel && renderLabel(getLabelProps)}
-            {selectedItem &&
-              renderSelected(selectedItem, getToggleButtonProps, {
-                isOpen,
-                clearSelection,
-                openMenu,
-                closeMenu,
-                toggleMenu
-              })}
+            {selectedItem
+              ? renderSelected(selectedItem, getToggleButtonProps, {
+                  isOpen,
+                  clearSelection,
+                  openMenu,
+                  closeMenu,
+                  toggleMenu
+                })
+              : renderPlaceholder(getToggleButtonProps)}
             {isOpen
               ? children({
                   options,
@@ -56,12 +60,17 @@ const Select2 = ({
                   toggleMenu
                 })
               : null}
-          </div>
+          </Combo>
         )
       }}
     </Downshift>
   )
 }
+
+const Combo = styled.div`
+  position: relative;
+`
+
 Select2.propTypes = {
   onChange: PropTypes.func,
   children: PropTypes.func,
@@ -70,6 +79,7 @@ Select2.propTypes = {
   renderGroupHeader: PropTypes.func,
   groupBy: PropTypes.string,
   options: PropTypes.array,
+  placeholder: PropTypes.string,
   downshiftProps: PropTypes.object
 }
 

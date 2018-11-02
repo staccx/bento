@@ -16,7 +16,8 @@ import {
   SplitListItem,
   Input,
   Alert,
-  PhoneInput
+  PhoneInput,
+  Loading
 } from "@staccx/base"
 import { createCurrencyMask } from "@staccx/formatting"
 import { getPaymentPlan } from "@staccx/payment-plan"
@@ -268,8 +269,13 @@ class Calculator extends React.Component {
                     </LayoutItem>
                   </Layout>
                 </LayoutItem>
+
                 <LayoutItem area="button">
-                  <Button onClick={this.props.onClick}>Neste</Button>
+                  {this.props.isLoading ? (
+                    <Loading variant={"buttonLoading"} />
+                  ) : (
+                    <Button onClick={this.props.onClick}>Neste</Button>
+                  )}
                 </LayoutItem>
 
                 <LayoutItem area="footer">

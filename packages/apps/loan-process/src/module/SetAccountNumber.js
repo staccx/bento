@@ -10,7 +10,8 @@ import {
   Layout,
   LayoutItem,
   Alert,
-  Paragraph
+  Paragraph,
+  Loading
 } from "@staccx/base"
 import { removeWhitespace } from "@staccx/formatting"
 const Yup = require("yup")
@@ -69,9 +70,13 @@ const Form = props => {
             </LayoutItem>
             {!isSubmitting && (
               <div>
-                <Button type="submit" onClick={() => null}>
-                  {props.continueButtonText}
-                </Button>
+                {props.isLoading ? (
+                  <Loading variant={"buttonLoading"} />
+                ) : (
+                  <Button type="submit" onClick={() => null}>
+                    {props.continueButtonText}
+                  </Button>
+                )}
               </div>
             )}
           </Layout>
@@ -89,7 +94,8 @@ const FormikForm = withFormik({
   mapPropsToValues: props => {
     return {
       accountNumber: props.accountNumber,
-      onValidated: props.onValidated
+      onValidated: props.onValidated,
+      isLoading: props.isLoading
     }
   },
   validationSchema: props =>
@@ -124,6 +130,7 @@ class SetAccountNumber extends React.PureComponent {
         accountNumberErrorText={this.props.accountNumberErrorText}
         onValidated={this.props.onValidated}
         renderIllustration={this.props.renderIllustration}
+        isLoading={this.props.isLoading}
       />
     )
   }

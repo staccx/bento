@@ -14,7 +14,8 @@ import {
   SplitListItem,
   Wrapper,
   Alert,
-  theming
+  theming,
+  Loading
 } from "@staccx/base"
 import { formatName, removeWhitespace } from "@staccx/formatting"
 import styled from "styled-components"
@@ -295,12 +296,16 @@ class RegisterSigners extends React.Component {
                       )}
                     />
                     <div>
-                      <Button
-                        type="submit"
-                        onClick={() => this.setState({ showErrors: true })}
-                      >
-                        {this.props.continueText}
-                      </Button>
+                      {this.props.isLoading ? (
+                        <Loading variant={"buttonLoading"} />
+                      ) : (
+                        <Button
+                          type="submit"
+                          onClick={() => this.setState({ showErrors: true })}
+                        >
+                          {this.props.continueText}
+                        </Button>
+                      )}
                     </div>
                   </Layout>
                 </Form>

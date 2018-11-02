@@ -8,7 +8,8 @@ import {
   Heading,
   Layout,
   LayoutItem,
-  Alert
+  Alert,
+  Loading
 } from "@staccx/base"
 import { Field, Formik } from "formik"
 
@@ -75,9 +76,10 @@ class CompanyInfo extends React.Component {
                         render={({ field }) => {
                           return (
                             <CompanyInput
-                              // label={this.props.companyNameLabel}
+                              label={this.props.companyNameLabel}
                               // onSearch={this.props.companySearchFunc}
                               // mapItem={this.props.mapCompany}
+
                               id="company"
                               onSelect={value => {
                                 if (value.target) {
@@ -210,17 +212,21 @@ class CompanyInfo extends React.Component {
                     </LayoutItem>
 
                     <LayoutItem>
-                      <Button
-                        type={"submit"}
-                        disabled={!isValid}
-                        onClick={() =>
-                          this.props.onClick({ values, touched, errors })
-                        }
-                      >
-                        {this.props.resolveButtonText
-                          ? this.props.resolveButtonText(values)
-                          : this.props.buttonText}
-                      </Button>
+                      {this.props.isLoading ? (
+                        <Loading variant={"buttonLoading"} />
+                      ) : (
+                        <Button
+                          type={"submit"}
+                          disabled={!isValid}
+                          onClick={() =>
+                            this.props.onClick({ values, touched, errors })
+                          }
+                        >
+                          {this.props.resolveButtonText
+                            ? this.props.resolveButtonText(values)
+                            : this.props.buttonText}
+                        </Button>
+                      )}
                     </LayoutItem>
                   </Layout>
                 </form>

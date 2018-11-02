@@ -121,10 +121,38 @@ class Select extends React.PureComponent {
         </SelectedWrapper>
       </SelectWrapper>
     )
+
+    const renderPlaceholder = getToggleButtonProps => (
+      <SelectWrapper className={className} variant={variant}>
+        {this.props.label && (
+          <Label variant={variant}>{this.props.label}</Label>
+        )}
+        <SelectedWrapper variant={variant} isSelected>
+          <Selected
+            {...getToggleButtonProps()}
+            selectedItem={placeHolderLabel}
+            variant={variant}
+            isSelected
+          >
+            {toString(placeHolderLabel)}
+          </Selected>
+          <IconButton
+            {...getToggleButtonProps()}
+            variant={variant}
+            type={"button"}
+            isSelected
+          >
+            <CaretIcon isExpanded={false} variant={variant} />
+          </IconButton>
+        </SelectedWrapper>
+      </SelectWrapper>
+    )
+
     return (
       <Select2
         options={this.props.items}
         renderSelected={renderSelected}
+        renderPlaceholder={renderPlaceholder}
         renderLabel={() => null}
         onChange={onChange}
       >

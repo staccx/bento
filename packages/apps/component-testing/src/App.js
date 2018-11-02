@@ -82,6 +82,8 @@ class App extends Component {
               items={options}
               itemToString={item => item.value}
               itemToKey={item => item.value}
+              placeHolderLabel={"Velg..."}
+              onChange={() => null}
             />
             <Combobox
               onChange={console.log}
@@ -110,6 +112,9 @@ class App extends Component {
                 </Button>
               )}
               renderLabel={renderLabel}
+              renderPlaceholder={getToggleButtonProps => (
+                <Button {...getToggleButtonProps()}>Velg...</Button>
+              )}
               onChange={console.log}
             >
               {({ selectedItem, options, getItemProps, highlightedIndex }) => {
