@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.2.5"></a>
+## [8.2.5](https://bitbucket.org/stacc-flow/bento/compare/v8.2.4...v8.2.5) (2018-11-02)
+
+
+### Bug Fixes
+
+* **loan-process:** now uses search from props ([67543ad](https://bitbucket.org/stacc-flow/bento/commits/67543ad))
+
+
+
+
+
 <a name="8.2.4"></a>
 ## [8.2.4](https://bitbucket.org/stacc-flow/bento/compare/v8.2.3...v8.2.4) (2018-11-02)
 
