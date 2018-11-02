@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.2.0"></a>
+# [8.2.0](https://bitbucket.org/stacc-flow/bento/compare/v8.1.1...v8.2.0) (2018-11-02)
+
+
+### Features
+
+* **i18n:** add ability to supply TranslatedText array of keys ([c0c8700](https://bitbucket.org/stacc-flow/bento/commits/c0c8700))
+
+
+
+
+
 <a name="8.1.1"></a>
 ## [8.1.1](https://bitbucket.org/stacc-flow/bento/compare/v8.1.0...v8.1.1) (2018-10-30)
 

@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.2.0"></a>
+# [8.2.0](https://bitbucket.org/stacc-flow/bento/compare/v8.1.1...v8.2.0) (2018-11-02)
+
+
+### Bug Fixes
+
+* **base:** add label back to companyInput ([8eb8d5d](https://bitbucket.org/stacc-flow/bento/commits/8eb8d5d))
+* **base:** add support for placeholder again ([269b00b](https://bitbucket.org/stacc-flow/bento/commits/269b00b))
+* **base:** fix Checkbox indexer value ([cd8475e](https://bitbucket.org/stacc-flow/bento/commits/cd8475e))
+* **base:** fix individual builds. change innerRef to ref ([059d8d0](https://bitbucket.org/stacc-flow/bento/commits/059d8d0))
+* **base:** fix search strategy ([e41610f](https://bitbucket.org/stacc-flow/bento/commits/e41610f))
+* **bento:** remove isRequired from children props in hocs ([dfde249](https://bitbucket.org/stacc-flow/bento/commits/dfde249))
+
+
+### Features
+
+* **base:** add Combobox ([cfd8028](https://bitbucket.org/stacc-flow/bento/commits/cfd8028))
+* **base:** add creditcardInput. Remove text-mask ([bf00b8a](https://bitbucket.org/stacc-flow/bento/commits/bf00b8a))
+* **base:** add searchSubstring to Search ([244b791](https://bitbucket.org/stacc-flow/bento/commits/244b791))
+* **base:** add Select2 ([4d0cc64](https://bitbucket.org/stacc-flow/bento/commits/4d0cc64))
+* **base:** allow passing props to downshift component ([8d8ba20](https://bitbucket.org/stacc-flow/bento/commits/8d8ba20))
+* **base:** change how Combox renders list ([2e55e18](https://bitbucket.org/stacc-flow/bento/commits/2e55e18))
+* **base:** fix Select to use Select2 ([62b21c6](https://bitbucket.org/stacc-flow/bento/commits/62b21c6))
+* **wasteiq-web:** styling ([265387d](https://bitbucket.org/stacc-flow/bento/commits/265387d))
+
+
+
+
+
 <a name="8.1.1"></a>
 ## [8.1.1](https://bitbucket.org/stacc-flow/bento/compare/v8.1.0...v8.1.1) (2018-10-30)
 

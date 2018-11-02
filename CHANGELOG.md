@@ -3,6 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.2.0"></a>
+# [8.2.0](https://bitbucket.org/stacc-flow/bento/compare/v8.1.1...v8.2.0) (2018-11-02)
+
+
+### Bug Fixes
+
+* **base:** add label back to companyInput ([8eb8d5d](https://bitbucket.org/stacc-flow/bento/commits/8eb8d5d))
+* **base:** add support for placeholder again ([269b00b](https://bitbucket.org/stacc-flow/bento/commits/269b00b))
+* **base:** fix Checkbox indexer value ([cd8475e](https://bitbucket.org/stacc-flow/bento/commits/cd8475e))
+* **base:** fix individual builds. change innerRef to ref ([059d8d0](https://bitbucket.org/stacc-flow/bento/commits/059d8d0))
+* **base:** fix search strategy ([e41610f](https://bitbucket.org/stacc-flow/bento/commits/e41610f))
+* **bento:** remove isRequired from children props in hocs ([dfde249](https://bitbucket.org/stacc-flow/bento/commits/dfde249))
+* **component-testing:** updated with placeholder ([08567ff](https://bitbucket.org/stacc-flow/bento/commits/08567ff))
+* **component-testing:** updating app to commend ([7f77681](https://bitbucket.org/stacc-flow/bento/commits/7f77681))
+* **fundu-theme:** font fix, and add missing values to theme ([6d92339](https://bitbucket.org/stacc-flow/bento/commits/6d92339))
+* **loan-process:** add label back ([9e7c5fa](https://bitbucket.org/stacc-flow/bento/commits/9e7c5fa))
+* **loan-process:** fix issue with selects ([824ea79](https://bitbucket.org/stacc-flow/bento/commits/824ea79))
+* **loan-process:** label-fix ([981eea0](https://bitbucket.org/stacc-flow/bento/commits/981eea0))
+* **plop:** remove theme from plopfiles ([0c901b3](https://bitbucket.org/stacc-flow/bento/commits/0c901b3))
+* **stacc-theme:** fix color undefined ([23eaa75](https://bitbucket.org/stacc-flow/bento/commits/23eaa75))
+
+
+### Features
+
+* **base:** add Combobox ([cfd8028](https://bitbucket.org/stacc-flow/bento/commits/cfd8028))
+* **base:** add creditcardInput. Remove text-mask ([bf00b8a](https://bitbucket.org/stacc-flow/bento/commits/bf00b8a))
+* **base:** add searchSubstring to Search ([244b791](https://bitbucket.org/stacc-flow/bento/commits/244b791))
+* **base:** add Select2 ([4d0cc64](https://bitbucket.org/stacc-flow/bento/commits/4d0cc64))
+* **base:** allow passing props to downshift component ([8d8ba20](https://bitbucket.org/stacc-flow/bento/commits/8d8ba20))
+* **base:** change how Combox renders list ([2e55e18](https://bitbucket.org/stacc-flow/bento/commits/2e55e18))
+* **base:** fix Select to use Select2 ([62b21c6](https://bitbucket.org/stacc-flow/bento/commits/62b21c6))
+* **component-testing:** add companyInput and select ([969a510](https://bitbucket.org/stacc-flow/bento/commits/969a510))
+* **component-testing:** add new app for component testing ([b13836d](https://bitbucket.org/stacc-flow/bento/commits/b13836d))
+* **component-testing:** add new app for component testing. add files ([d9ee414](https://bitbucket.org/stacc-flow/bento/commits/d9ee414))
+* **component-testing:** test all inputs with options ([2178cb6](https://bitbucket.org/stacc-flow/bento/commits/2178cb6))
+* **fundu-theme:** add heading variant and minor adjustment ([4a46b43](https://bitbucket.org/stacc-flow/bento/commits/4a46b43))
+* **fundu-theme:** add secondary color ([dc95fe0](https://bitbucket.org/stacc-flow/bento/commits/dc95fe0))
+* **fundu-theme:** reset all forms 💥💣 ([ba113ba](https://bitbucket.org/stacc-flow/bento/commits/ba113ba))
+* **i18n:** add ability to supply TranslatedText array of keys ([c0c8700](https://bitbucket.org/stacc-flow/bento/commits/c0c8700))
+* **loan-process:** add isloading flag to all ([58ba061](https://bitbucket.org/stacc-flow/bento/commits/58ba061))
+* **loan-process:** adjusting design on loan ([f048ccc](https://bitbucket.org/stacc-flow/bento/commits/f048ccc))
+* **loan-process:** make fonts and resets work again ([b194ac5](https://bitbucket.org/stacc-flow/bento/commits/b194ac5))
+* **loan-process:** register signers refactor ([fdf825e](https://bitbucket.org/stacc-flow/bento/commits/fdf825e))
+* **loan-process:** styling and refactoring. Personalia -> CompanyInfo ([1acf397](https://bitbucket.org/stacc-flow/bento/commits/1acf397))
+* **loan-process:** styling of signers ([8ca3a3f](https://bitbucket.org/stacc-flow/bento/commits/8ca3a3f))
+* **loan-process:** tweak ([ab74ed5](https://bitbucket.org/stacc-flow/bento/commits/ab74ed5))
+* **wasteiq-web:** add deploy script ([678ced0](https://bitbucket.org/stacc-flow/bento/commits/678ced0))
+* **wasteiq-web:** add more content ([8ab9998](https://bitbucket.org/stacc-flow/bento/commits/8ab9998))
+* **wasteiq-web:** add styles, content ([5927e9c](https://bitbucket.org/stacc-flow/bento/commits/5927e9c))
+* **wasteiq-web:** styling ([265387d](https://bitbucket.org/stacc-flow/bento/commits/265387d))
+
+
+
+
+
 <a name="8.1.1"></a>
 ## [8.1.1](https://bitbucket.org/stacc-flow/bento/compare/v8.1.0...v8.1.1) (2018-10-30)
 

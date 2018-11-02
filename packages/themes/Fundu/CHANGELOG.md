@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.2.0"></a>
+# [8.2.0](https://bitbucket.org/stacc-flow/bento/compare/v8.1.1...v8.2.0) (2018-11-02)
+
+
+### Bug Fixes
+
+* **fundu-theme:** font fix, and add missing values to theme ([6d92339](https://bitbucket.org/stacc-flow/bento/commits/6d92339))
+
+
+### Features
+
+* **fundu-theme:** add heading variant and minor adjustment ([4a46b43](https://bitbucket.org/stacc-flow/bento/commits/4a46b43))
+* **fundu-theme:** add secondary color ([dc95fe0](https://bitbucket.org/stacc-flow/bento/commits/dc95fe0))
+* **fundu-theme:** reset all forms 💥💣 ([ba113ba](https://bitbucket.org/stacc-flow/bento/commits/ba113ba))
+* **loan-process:** adjusting design on loan ([f048ccc](https://bitbucket.org/stacc-flow/bento/commits/f048ccc))
+* **loan-process:** register signers refactor ([fdf825e](https://bitbucket.org/stacc-flow/bento/commits/fdf825e))
+* **loan-process:** styling and refactoring. Personalia -> CompanyInfo ([1acf397](https://bitbucket.org/stacc-flow/bento/commits/1acf397))
+* **loan-process:** styling of signers ([8ca3a3f](https://bitbucket.org/stacc-flow/bento/commits/8ca3a3f))
+* **loan-process:** tweak ([ab74ed5](https://bitbucket.org/stacc-flow/bento/commits/ab74ed5))
+
+
+
+
+
 <a name="8.1.1"></a>
 ## [8.1.1](https://bitbucket.org/stacc-flow/bento/compare/v8.1.0...v8.1.1) (2018-10-30)
 

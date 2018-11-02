@@ -1,8 +1,7 @@
 {
   "name": "@staccx/component-testing",
-  "version": "5.2.1",
+  "version": "8.2.0",
   "private": true,
-  "dependencies": {},
   "scripts": {
     "start": "react-app-rewired start",
     "build:app": "react-app-rewired build",
@@ -11,7 +10,6 @@
     "deploy": "yarn build && surge -p ./build",
     "serve": "yarn build && serve -s build"
   },
-  "devDependencies": {},
   "peerDependencies": {
     "styled-components": "^4.0.3"
   }
