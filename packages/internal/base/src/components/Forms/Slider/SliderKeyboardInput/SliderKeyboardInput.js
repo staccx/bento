@@ -111,7 +111,7 @@ class SliderKeyboardInput extends React.Component {
     const valueInt = parseInt(removeSpaces(value), 10)
     const parsed = clamp(this.props.min, this.props.max, valueInt)
     this.updateState(parsed).then(() => {
-      if (this.props.onChange) {
+      if (this.props.onBlur) {
         this.props.onBlur(this.state.currentValue)
       }
     })
