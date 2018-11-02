@@ -36,7 +36,7 @@ class Content extends Component {
             isLoading
           />
           <hr style={{ margin: "64px 0" }} />
-          <Calculator onValidated={console.log} isLoading />
+          <Calculator onValidated={console.log} />
           <hr style={{ margin: "64px 0" }} />
           <Calculator
             onValidated={console.log}

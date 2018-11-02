@@ -254,7 +254,9 @@ class Calculator extends React.Component {
                             label={this.props.phoneLabel}
                             id={"phone"}
                             placeholder={this.props.phonePlaceholder}
-                            onChange={e => setFieldValue("phone", e.value)}
+                            onChange={e => {
+                              setFieldValue("phone", e.target.value)
+                            }}
                           />
                         )}
                       />
