@@ -10,7 +10,8 @@ import {
   Select,
   Wrapper,
   Layout,
-  LayoutItem
+  LayoutItem,
+  Loading
 } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
 import { getPaymentPlan } from "@staccx/payment-plan"
@@ -252,18 +253,24 @@ class PresentOffer extends React.Component {
             </Layout>
           </Box>
           <ItemGroup>
-            <Button
-              disabled={!this.state.isValid}
-              onClick={() => this.respondToOffer(true)}
-            >
-              {this.props.acceptOfferButtonText}
-            </Button>
-            <Button
-              variant="decline"
-              onClick={() => this.respondToOffer(false)}
-            >
-              {this.props.rejectOfferButtonText}
-            </Button>
+            {this.props.isLoading ? (
+              <Loading variant={"buttonLoading"} />
+            ) : (
+              <React.Fragment>
+                <Button
+                  disabled={!this.state.isValid}
+                  onClick={() => this.respondToOffer(true)}
+                >
+                  {this.props.acceptOfferButtonText}
+                </Button>
+                <Button
+                  variant="decline"
+                  onClick={() => this.respondToOffer(false)}
+                >
+                  {this.props.rejectOfferButtonText}
+                </Button>
+              </React.Fragment>
+            )}
           </ItemGroup>
         </Wrapper>
       </div>

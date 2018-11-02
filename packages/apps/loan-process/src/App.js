@@ -10,7 +10,6 @@ import RegisterSigners from "./module/RegisterSigners"
 import SetAccountNumber from "./module/SetAccountNumber"
 import PresentOffer from "./module/PresentOffer"
 import EndScreen from "./module/EndScreen"
-import PersonalFinance from "./module/PersonalFinance"
 import Calculator from "./module/Calculator"
 import CompanyInfo from "./module/CompanyInfo"
 
@@ -31,9 +30,13 @@ class Content extends Component {
         <div>
           <GlobalStyle />
           <WebFonts />
-          <CompanyInfo onValidated={console.log} onClick={console.log} />
+          <CompanyInfo
+            onValidated={console.log}
+            onClick={console.log}
+            isLoading
+          />
           <hr style={{ margin: "64px 0" }} />
-          <Calculator onValidated={console.log} />
+          <Calculator onValidated={console.log} isLoading />
           <hr style={{ margin: "64px 0" }} />
           <Calculator
             onValidated={console.log}
@@ -44,8 +47,6 @@ class Content extends Component {
             headingText="Fleksibel kreditt når du trenger det"
             showTotalMonthly={false}
           />
-          <hr style={{ margin: "64px 0" }} />
-          <PersonalFinance onValidated={console.log} />
           <hr style={{ margin: "64px 0" }} />
           <EndScreen
             headingText="Søknaden er til behandling"
@@ -65,9 +66,9 @@ class Content extends Component {
             }
           />
           <hr style={{ margin: "64px 0" }} />
-          <SetAccountNumber />
+          <SetAccountNumber isLoading />
           <hr style={{ margin: "64px 0" }} />
-          <PresentOffer />
+          <PresentOffer isLoading />
           <hr style={{ margin: "64px 0" }} />
           <PresentOffer
             productType={"PRODUCT_CREDIT"}
@@ -78,7 +79,7 @@ class Content extends Component {
             payMonthlyText="Renter første måned (hvis hele kreditten er brukt)"
           />
           <hr style={{ margin: "64px 0" }} />
-          <RegisterSigners />
+          <RegisterSigners isLoading />
 
           <hr style={{ margin: "64px 0" }} />
           <Sign />
