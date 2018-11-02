@@ -6,7 +6,6 @@ import { default as Sign } from "./module/Sign"
 import { default as Calculator } from "./module/Calculator"
 import { default as CompanyInfo } from "./module/CompanyInfo"
 import { default as EndScreen } from "./module/EndScreen"
-import { default as PersonalFinance } from "./module/PersonalFinance"
 import { default as OfferTable } from "./module/OfferTable"
 
 export {
@@ -16,7 +15,6 @@ export {
   RegisterSigners,
   Sign,
   EndScreen,
-  PersonalFinance,
   OfferTable,
   Calculator,
   CompanyInfo

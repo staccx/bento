@@ -53,7 +53,10 @@ class App extends Component {
                 </List>
               )}
             </TranslatedText>
-            <TranslatedText i18nKey={["listItem4", "listItem5", "listItem6"]} fallback={["fallback1", "fallback2", "fallback3"]}>
+            <TranslatedText
+              i18nKey={["listItem4", "listItem5", "listItem6"]}
+              fallback={["fallback1", "fallback2", "fallback3"]}
+            >
               {values => (
                 <List>
                   {values.map(value => (
