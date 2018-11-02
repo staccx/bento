@@ -95,7 +95,14 @@ class CompanyInput extends React.PureComponent {
   }
 
   render() {
-    const { onChange, selectedHeader, mapItem, ...otherProps } = this.props
+    const {
+      onChange,
+      selectedHeader,
+      mapItem,
+      inputProps,
+      label,
+      ...otherProps
+    } = this.props
 
     const { autoComplete, isLoading } = this.state
 
@@ -123,7 +130,11 @@ class CompanyInput extends React.PureComponent {
     }
     const renderInput = getInputProps => (
       <React.Fragment>
-        <Input {...getInputProps({ ...otherProps })} />
+        <Input
+          label={label}
+          {...inputProps}
+          {...getInputProps({ ...otherProps })}
+        />
         {isLoading && (
           <SelectWrapper>
             <SelectLoad />
