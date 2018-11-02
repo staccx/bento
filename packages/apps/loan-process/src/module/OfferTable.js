@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Box, theming } from "@staccx/base"
+import { Box, theming, Wrapper } from "@staccx/base"
 
 const OfferTable = ({
   loanOfferText,
@@ -20,7 +20,7 @@ const OfferTable = ({
   showAmount,
   showDuration
 }) => (
-  <Details>
+  <Wrapper size="form">
     <Box variant="expandLeadContent">
       <OfferTableTable>
         <tbody>
@@ -57,12 +57,8 @@ const OfferTable = ({
         </tbody>
       </OfferTableTable>
     </Box>
-  </Details>
+  </Wrapper>
 )
-
-const Details = styled.div`
-  margin-top: ${theming.spacing.medium};
-`
 
 const OfferTableTable = styled.table`
   width: 100%;

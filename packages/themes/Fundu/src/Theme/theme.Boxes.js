@@ -91,9 +91,7 @@ export const BoxStyling = theming.createVariants(
       }
     `,
     expandLead: css`
-      padding: 0;
       text-align: center;
-      margin-bottom: ${theming.spacing.medium};
     `,
     signDocument: css`
       padding: 0;
@@ -139,7 +137,7 @@ export const BoxStyling = theming.createVariants(
     `,
     signerFields: css`
       background-color: ${theming.color.bgGray};
-      padding: ${theming.spacing.medium};
+      padding: ${theming.spacing.medium} 0;
     `
   },
   Box.themeProps.box

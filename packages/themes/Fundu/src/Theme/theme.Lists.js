@@ -22,17 +22,15 @@ export const ListStyling = theming.createVariants(
       }
     `,
     documentStatusList: css`
-      background-color: ${theming.color.subtleHover};
+      padding-top: ${theming.spacing.medium};
+      padding-bottom: ${theming.spacing.medium};
+      background-color: ${theming.color.bgGray};
 
       > li {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: ${theming.spacing.tiny} ${theming.spacing.medium};
-
-        &:not(:first-child) {
-          border-top: 1px solid ${theming.color.line};
-        }
       }
     `,
     bottomBorder: css`
@@ -63,10 +61,13 @@ export const SplitListItemStyling = theming.createVariants(
 export const ExpandListItemStyling = theming.createVariants(
   {
     signer: css`
-      border-bottom: 1px solid ${theming.color.line};
+      border-bottom: 2px solid ${theming.color.primary};
+      > button {
+        padding-left: 0;
+      }
 
       > * {
-        border-top: 1px solid ${theming.color.line};
+        border-top: 2px solid ${theming.color.primary};
       }
     `
   },

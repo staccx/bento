@@ -3,10 +3,9 @@ import { Heading, theming } from "@staccx/base"
 
 const centeredHeading = css`
   text-align: center;
-  margin-bottom: ${theming.spacing.small};
   color: ${theming.color.primary};
   font-size: ${theming.font.huge};
-  font-weight: 600;
+  font-weight: ${theming.fontWeight.bold};
 
   @media (max-width: 735px) {
     font-size: ${theming.font.h1};
@@ -37,10 +36,9 @@ export const HeadingStyling = theming.createVariants(
       text-align: ${p => (p.alignLeft ? "left" : "center")};
     `,
     boxHeading: css`
-      font-family: ${theming.fontFamily.body};
-      font-size: ${theming.font.base};
-      font-weight: 300;
-      margin-bottom: ${theming.spacing.tiny};
+      color: ${theming.color.primary};
+      font-size: ${theming.font.h3};
+      font-weight: ${theming.fontWeight.bold};
     `,
     formSection: css`
       font-size: ${theming.font.h3};

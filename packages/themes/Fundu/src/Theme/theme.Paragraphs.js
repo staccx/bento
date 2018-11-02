@@ -6,7 +6,6 @@ export const ParagraphStyling = theming.createVariants(
     lead: css`
       font-size: ${theming.font.h5};
       text-align: center;
-      margin-bottom: ${theming.spacing.mediumPlus};
       padding: 0 ${theming.spacing.small};
       line-height: 1.7;
       max-width: 500px;

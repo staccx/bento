@@ -17,7 +17,11 @@ const SignDocument = ({
   <li key={order.requestId}>
     <div>{renderDocumentText(order.documentType)}</div>
     <div>
-      {showButton && <SignButton href={order.url}>{signText}</SignButton>}
+      {showButton && (
+        <Button as={"a"} href={order.url}>
+          {signText}
+        </Button>
+      )}
       {user.nationalId !== order.signee &&
         order.status !== signOrderStatusCompleted &&
         waitingForSignatureText}
@@ -39,13 +43,6 @@ const SignDocument = ({
 const SignedContainer = styled.div`
   display: flex;
 `
-
-const SignButton = styled(Button)`
-  margin-bottom: 0;
-  &:disabled {
-    background: gray;
-  }
-`.withComponent("a")
 
 const Checkmark = styled.svg`
   display: block;

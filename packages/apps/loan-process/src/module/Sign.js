@@ -6,7 +6,9 @@ import {
   ExpandListItem,
   Heading,
   List,
-  Wrapper
+  Wrapper,
+  Paragraph,
+  Layout
 } from "@staccx/base"
 import { formatCurrency, formatName } from "@staccx/formatting"
 import { getPaymentPlan } from "@staccx/payment-plan"
@@ -57,46 +59,52 @@ class Sign extends React.Component {
 
     return (
       <Wrapper size="small">
-        <Box variant="illustration">
-          {this.props.renderIllustration()}
-          {/* <img src="/assets/signing.svg" alt="" width="175" /> */}
-        </Box>
-        <Heading variant="stepHeading" level={1}>
-          {this.props.headingText}
-        </Heading>
-        <Box variant="expandLead">
-          <Expand title={this.props.loanDetailsText}>
-            <span>
-              {this.props.loanDetailsText +
-                ` ${formatCurrency(this.props.loanAmount)}`}
-            </span>
-            {/* TODO: vise om det er lån eller kreditt☝️ */}
-            <OfferTable
-              loanOfferText={this.props.loanOfferText}
-              loanAmount={formatCurrency(this.props.loanAmount)}
-              loanDurationText={this.props.loanDurationText}
-              loanRepayment={
-                this.props.repaymentPeriod + this.props.monthSuffix
-              }
-              monthlyFeeText={this.props.monthlyFeeText}
-              interestRate={this.props.interestRate}
-              paybackText={this.props.paybackText}
-              paybackAmount={formatCurrency(
-                plan.reduce((acc, curr) => acc + curr.monthlyPayment, 0)
-              )}
-              payMonthlyText={this.props.payMonthlyText}
-              payMonthlyAmount={formatCurrency(term.monthlyPayment)}
-            />
-          </Expand>
-        </Box>
-        {/* Render users own documents */}
-        {userOrders.length > 0 && (
-          <div>
-            <Heading variant="boxHeading" level={2}>
-              {this.props.userTaskText}
-            </Heading>
-            <Box variant="actionBox">
-              <Box variant="signDocument">
+        <Layout>
+          {this.props.renderIllustration() && (
+            <Box variant="illustration">
+              {this.props.renderIllustration()}
+              {/* <img src="/assets/signing.svg" alt="" width="175" /> */}
+            </Box>
+          )}
+          <Heading variant="stepHeading" level={1}>
+            {this.props.headingText}
+          </Heading>
+          <Layout rowGap="tiny">
+            <Paragraph variant="lead">{this.props.leadText}</Paragraph>
+
+            <Box variant="expandLead">
+              <Expand title={this.props.loanDetailsText}>
+                <span>
+                  {this.props.loanDetailsText +
+                    ` ${formatCurrency(this.props.loanAmount)}`}
+                </span>
+                {/* TODO: vise om det er lån eller kreditt☝️ */}
+                <OfferTable
+                  loanOfferText={this.props.loanOfferText}
+                  loanAmount={formatCurrency(this.props.loanAmount)}
+                  loanDurationText={this.props.loanDurationText}
+                  loanRepayment={
+                    this.props.repaymentPeriod + this.props.monthSuffix
+                  }
+                  monthlyFeeText={this.props.monthlyFeeText}
+                  interestRate={this.props.interestRate}
+                  paybackText={this.props.paybackText}
+                  paybackAmount={formatCurrency(
+                    plan.reduce((acc, curr) => acc + curr.monthlyPayment, 0)
+                  )}
+                  payMonthlyText={this.props.payMonthlyText}
+                  payMonthlyAmount={formatCurrency(term.monthlyPayment)}
+                />
+              </Expand>
+            </Box>
+          </Layout>
+          {/* Render users own documents */}
+          {userOrders.length > 0 && (
+            <Layout rowGap="tiny">
+              <Heading variant="boxHeading" level={2}>
+                {this.props.userTaskText}
+              </Heading>
+              <Box variant="signerFields">
                 <List variant="documentSign">
                   {userOrders.map(order => {
                     const showButton =
@@ -121,58 +129,58 @@ class Sign extends React.Component {
                   })}
                 </List>
               </Box>
-            </Box>
-          </div>
-        )}
-        {/* Render other signers documents */}
-        {otherSigners.length > 0 && (
-          <div>
-            <Heading variant="boxHeading" level={2}>
-              {this.props.othersTaskText}
-            </Heading>
-            <Box variant="actionBox">
-              <List>
-                {otherSigners.map(signer => (
-                  <ExpandListItem
-                    key={signer.id}
-                    title={
-                      <Box variant="split">
-                        <span>{formatName(signer.name)}</span>
-                        <span>{`${signer.signCount}/${
-                          signer.orders.length
-                        }`}</span>
-                      </Box>
-                    }
-                    variant="signer"
-                    flush
-                  >
-                    <List variant="documentStatusList">
-                      {signer.orders.map(order => {
-                        return (
-                          <SignDocument
-                            key={order.requestId}
-                            order={order}
-                            user={this.props.user}
-                            showButton={false}
-                            signText={this.props.signText}
-                            signedText={this.props.signedText}
-                            signOrderStatusCompleted={
-                              this.props.signOrderStatusCompleted
-                            }
-                            waitingForSignatureText={
-                              this.props.waitingForSignatureText
-                            }
-                            renderDocumentText={this.props.renderDocumentText}
-                          />
-                        )
-                      })}
-                    </List>
-                  </ExpandListItem>
-                ))}
-              </List>
-            </Box>
-          </div>
-        )}
+            </Layout>
+          )}
+          {/* Render other signers documents */}
+          {otherSigners.length > 0 && (
+            <Layout rowGap="tiny">
+              <Heading variant="boxHeading" level={2}>
+                {this.props.othersTaskText}
+              </Heading>
+              <Box variant="actionBox">
+                <List>
+                  {otherSigners.map(signer => (
+                    <ExpandListItem
+                      key={signer.id}
+                      title={
+                        <Box variant="split">
+                          <span>{formatName(signer.name)}</span>
+                          <span>{`${signer.signCount}/${
+                            signer.orders.length
+                          }`}</span>
+                        </Box>
+                      }
+                      variant="signer"
+                      flush
+                    >
+                      <List variant="documentStatusList">
+                        {signer.orders.map(order => {
+                          return (
+                            <SignDocument
+                              key={order.requestId}
+                              order={order}
+                              user={this.props.user}
+                              showButton={false}
+                              signText={this.props.signText}
+                              signedText={this.props.signedText}
+                              signOrderStatusCompleted={
+                                this.props.signOrderStatusCompleted
+                              }
+                              waitingForSignatureText={
+                                this.props.waitingForSignatureText
+                              }
+                              renderDocumentText={this.props.renderDocumentText}
+                            />
+                          )
+                        })}
+                      </List>
+                    </ExpandListItem>
+                  ))}
+                </List>
+              </Box>
+            </Layout>
+          )}
+        </Layout>
       </Wrapper>
     )
   }
@@ -212,7 +220,8 @@ Sign.propTypes = {
 
 Sign.defaultProps = {
   headingText: "Signering",
-  leadText: "Vis detaljer",
+  leadText:
+    "For at kreditten kan godkjennes trenger vi signaturer. Alle som skal signere skal ha fått mail.",
   loanDetailsText: "Se detaljer om lånet på ",
   loanDurationText: "Lånelengde",
   loanOfferText: "Lånetilbud",
