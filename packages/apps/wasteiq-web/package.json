@@ -1,6 +1,6 @@
 {
   "name": "@staccx/wasteiq-web",
-  "version": "8.2.1",
+  "version": "8.2.3",
   "private": true,
   "scripts": {
     "start": "react-app-rewired start",
@@ -16,10 +16,10 @@
     "react-dom": "^16.6.0"
   },
   "devDependencies": {
-    "@staccx/base": "^8.2.1",
+    "@staccx/base": "^8.2.3",
     "@staccx/rollup-config": "^8.2.0",
     "@staccx/sanity": "^8.2.0",
-    "@staccx/wasteiq-theme": "^8.2.1",
+    "@staccx/wasteiq-theme": "^8.2.3",
     "prettier": "^1.14.2",
     "react-app-rewire-styled-components": "^3.0.2",
     "react-app-rewired": "^1.5.2",

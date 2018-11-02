@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.2.3"></a>
+## [8.2.3](https://bitbucket.org/stacc-flow/bento/compare/v8.2.2...v8.2.3) (2018-11-02)
+
+
+### Bug Fixes
+
+* **base:** fix companyInput no result ([1397f28](https://bitbucket.org/stacc-flow/bento/commits/1397f28))
+
+
+
+
+
 <a name="8.2.2"></a>
 ## [8.2.2](https://bitbucket.org/stacc-flow/bento/compare/v8.2.1...v8.2.2) (2018-11-02)
 
