@@ -76,9 +76,10 @@ class CompanyInfo extends React.Component {
                         render={({ field }) => {
                           return (
                             <CompanyInput
-                              // label={this.props.companyNameLabel}
+                              label={this.props.companyNameLabel}
                               // onSearch={this.props.companySearchFunc}
                               // mapItem={this.props.mapCompany}
+
                               id="company"
                               onSelect={value => {
                                 if (value.target) {
