@@ -150,7 +150,7 @@ class CompanyInput extends React.PureComponent {
         renderLabel={() => null}
         filter={"name"}
         indexer={"orgNo"}
-        options={autoComplete}
+        options={autoComplete || []}
         downshiftProps={{
           defaultIsOpen: true,
           onInputValueChange: this.handleChange
