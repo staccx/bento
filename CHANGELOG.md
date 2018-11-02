@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.2.2"></a>
+## [8.2.2](https://bitbucket.org/stacc-flow/bento/compare/v8.2.1...v8.2.2) (2018-11-02)
+
+
+### Bug Fixes
+
+* **loan-process:** fix phone ([b2ff890](https://bitbucket.org/stacc-flow/bento/commits/b2ff890))
+
+
+
+
+
 <a name="8.2.1"></a>
 ## [8.2.1](https://bitbucket.org/stacc-flow/bento/compare/v8.2.0...v8.2.1) (2018-11-02)
 
