@@ -19,7 +19,6 @@ import {
   PhoneInput,
   Loading
 } from "@staccx/base"
-import { createCurrencyMask } from "@staccx/formatting"
 import { getPaymentPlan } from "@staccx/payment-plan"
 import { throttle } from "@staccx/utils"
 import { easeInOutBack } from "easing-utils"
@@ -111,20 +110,19 @@ class Calculator extends React.Component {
                     <Field
                       name={`value`}
                       render={({ field }) => {
-                        const { onChange, ...rest } = field
+                        const { value } = field
                         return (
                           <SliderKeyboardInput
                             label={this.props.valueLabel}
                             max={this.props.maxValue}
                             min={this.props.minValue}
+                            value={value}
                             step={5000}
                             onChange={value => {
                               this.calculate(value, this.state.terms)
                               setFieldValue("value", value)
                             }}
-                            {...rest}
                             easingFunction={easeInOutBack}
-                            mask={createCurrencyMask(field.value)}
                           />
                         )
                       }}
@@ -256,7 +254,7 @@ class Calculator extends React.Component {
                             label={this.props.phoneLabel}
                             id={"phone"}
                             placeholder={this.props.phonePlaceholder}
-                            {...field}
+                            onChange={e => setFieldValue("phone", e.value)}
                           />
                         )}
                       />

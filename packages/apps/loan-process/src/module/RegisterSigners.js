@@ -115,7 +115,7 @@ class RegisterSigners extends React.Component {
             }}
             validationSchema={validationSchema}
             onSubmit={this.onSubmit}
-            render={({ values, touched, errors }) => {
+            render={({ values, touched, errors, setFieldValue }) => {
               return (
                 <Form>
                   <Layout>
@@ -205,7 +205,12 @@ class RegisterSigners extends React.Component {
                                                     id={`signers.${index}.nationalId`}
                                                     placeholder="12345678903"
                                                     label={"Fødselsnummer"}
-                                                    {...field}
+                                                    onChange={e =>
+                                                      setFieldValue(
+                                                        `signers.${index}.nationalId`,
+                                                        e.value
+                                                      )
+                                                    }
                                                   />
                                                 )}
                                                 name={`signers.${index}.nationalId`}

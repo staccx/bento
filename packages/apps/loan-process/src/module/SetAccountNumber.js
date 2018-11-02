@@ -22,18 +22,10 @@ const Form = props => {
     touched,
     errors,
     isSubmitting,
-    handleChange,
     handleSubmit,
-    onChange,
-    renderIllustration
+    renderIllustration,
+    setFieldValue
   } = props
-
-  const _handleChange = e => {
-    handleChange(e)
-    if (onChange) {
-      onChange(e)
-    }
-  }
 
   const _handleSubmit = e => {
     handleSubmit(e)
@@ -55,7 +47,7 @@ const Form = props => {
               <AccountInput
                 guide={false}
                 value={values.accountNumber}
-                onChange={_handleChange}
+                onChange={e => setFieldValue("accountNumber", e.value)}
                 label={props.accountNumberText}
                 placeholder="×××× ×× ××××"
                 id="accountNumber"
