@@ -30,10 +30,7 @@ class Content extends Component {
         <div>
           <GlobalStyle />
           <WebFonts />
-          <CompanyInfo
-            onValidated={console.log}
-            onClick={console.log}
-          />
+          <CompanyInfo onValidated={console.log} onClick={console.log} />
           <hr style={{ margin: "64px 0" }} />
           <Calculator onValidated={console.log} />
           <hr style={{ margin: "64px 0" }} />
