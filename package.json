@@ -8,7 +8,7 @@
     "styleguide": "cd packages/base && styleguidist server",
     "start": "cd packages/internal/styleguide && yarn start",
     "soy": "node packages/internal/soy",
-    "release": "yarn verify && lerna publish --no-verify-access --no-verify-registry --conventional-commits",
+    "release": "yarn verify && lerna publish --no-verify-access --no-verify-registry --conventional-commits --yes",
     "clean": "rm -rf node_modules && rm yarn.lock && lerna clean --yes && lerna bootstrap && lerna run build",
     "buildAll": "lerna run prepare",
     "testAll": "lerna run prepublishOnly",
