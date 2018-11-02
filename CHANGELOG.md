@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.2.4"></a>
+## [8.2.4](https://bitbucket.org/stacc-flow/bento/compare/v8.2.3...v8.2.4) (2018-11-02)
+
+
+### Bug Fixes
+
+* **loan-process:** fix company info validation ([82fafef](https://bitbucket.org/stacc-flow/bento/commits/82fafef))
+
+
+
+
+
 <a name="8.2.3"></a>
 ## [8.2.3](https://bitbucket.org/stacc-flow/bento/compare/v8.2.2...v8.2.3) (2018-11-02)
 
