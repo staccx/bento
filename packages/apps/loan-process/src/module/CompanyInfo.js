@@ -28,11 +28,10 @@ class CompanyInfo extends React.Component {
         .nullable()
         .required(this.props.errorCompanyRequired),
       purpose: Yup.string().required(this.props.errorPurposeRequired),
-      repaymentMethod: Yup.string()
+      paymentCash: Yup.string()
         .nullable()
         .required("Påkrevd"),
-      paymentCash: Yup.bool().required("Påkrevd"),
-      paymentsInternational: Yup.bool().required("Påkrevd")
+      paymentsInternational: Yup.string().required("Påkrevd")
     })
     this.setState({
       validateSchema
@@ -138,7 +137,7 @@ class CompanyInfo extends React.Component {
                     </LayoutItem>
                     <LayoutItem>
                       <Field
-                        name={`repaymentMethod`}
+                        name={`paymentCash`}
                         render={({ field }) => {
                           const {
                             name,
@@ -149,14 +148,14 @@ class CompanyInfo extends React.Component {
                           } = field
                           return (
                             <Select
-                              items={this.props.repaymentMethods}
-                              label={this.props.repaymentMethodsLabel}
+                              items={this.props.paymentCash}
+                              label={this.props.paymentCashLabel}
                               placeHolderLabel={"Velg…"}
                               name={name}
                               value={value}
                               onChange={item =>
                                 setFieldValue(
-                                  "repaymentMethod",
+                                  "paymentCash",
                                   this.props.mapRepaymentPeriod(item)
                                 )
                               }
@@ -279,7 +278,7 @@ CompanyInfo.propTypes = {
   purposeLabel: PropTypes.string,
   purposePlaceholder: PropTypes.string,
   purposeSelectProps: PropTypes.object,
-  repaymentMethods: PropTypes.array,
+  paymentCash: PropTypes.array,
   resolveButtonText: PropTypes.func,
   revenueLabel: PropTypes.string,
   revenuePlaceholder: PropTypes.string,
@@ -292,7 +291,7 @@ CompanyInfo.propTypes = {
   termValues: PropTypes.array,
   totalMonthlyText: PropTypes.string,
   valueLabel: PropTypes.string,
-  repaymentMethodsLabel: PropTypes.string,
+  paymentCashLabel: PropTypes.string,
   mapPaymentsInternational: PropTypes.any,
   paymentsInternational: PropTypes.string
 }
@@ -311,8 +310,8 @@ CompanyInfo.defaultProps = {
   purposeLabel: "Hva skal lånet brukes til?",
   purposePlaceholder: "Velg...",
   purposeSelectProps: {},
-  repaymentMethods: ["Ingen", "Lite", "Halvparten", "Alt", "Vet ikke"],
-  repaymentMethodsLabel: "Hvor mye kontantbetaling mottar dere?",
+  paymentCash: ["Ingen", "Lite", "Halvparten", "Alt", "Vet ikke"],
+  paymentCashLabel: "Hvor mye kontantbetaling mottar dere?",
   mapPaymentsInternational: mapPaymentsInternational,
   paymentsInternationals: ["Norge", "Skandinavia", "Europa", "Hele verden"],
   paymentsInternationalsLabel: "Hvor kommer betalingene deres fra?"

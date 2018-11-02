@@ -33,7 +33,6 @@ class Content extends Component {
           <CompanyInfo
             onValidated={console.log}
             onClick={console.log}
-            isLoading
           />
           <hr style={{ margin: "64px 0" }} />
           <Calculator onValidated={console.log} />
