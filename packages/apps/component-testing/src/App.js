@@ -16,7 +16,10 @@ import {
   CurrencyInput,
   Select2,
   Select,
-  CompanyInput
+  CompanyInput,
+  ExpandListItem,
+  Loading,
+  theming
 } from "@staccx/base"
 import { ThemeProvider } from "styled-components"
 import { BrowserRouter as Router } from "react-router-dom"
@@ -77,62 +80,116 @@ class App extends Component {
           <Wrapper>
             <GlobalStyle />
             <WebFonts />
-            <CompanyInput id={"test"} />
-            <Select
-              items={options}
-              itemToString={item => item.value}
-              itemToKey={item => item.value}
-              placeHolderLabel={"Velg..."}
-              onChange={() => null}
-            />
-            <Combobox
-              onChange={console.log}
-              renderInput={renderInput}
-              renderSelected={renderSelected}
-              renderLabel={renderLabel}
-              listComponent={List}
-              filter={["value", "misc"]}
-              indexer={"value"}
-              options={options}
-              initialSelectedItem={options[1]}
-            >
-              {({ result, getItemProps, highlightedIndex, selectedItem }) => (
-                <List>
-                  {result.map(
-                    renderOption(getItemProps, highlightedIndex, selectedItem)
+            <List>
+              <ExpandListItem title={"Inputs"}>
+                <CompanyInput id={"test"} />
+                <Select
+                  items={options}
+                  itemToString={item => item.value}
+                  itemToKey={item => item.value}
+                  placeHolderLabel={"Velg..."}
+                  onChange={() => null}
+                />
+                <Combobox
+                  onChange={console.log}
+                  renderInput={renderInput}
+                  renderSelected={renderSelected}
+                  renderLabel={renderLabel}
+                  listComponent={List}
+                  filter={["value", "misc"]}
+                  indexer={"value"}
+                  options={options}
+                  initialSelectedItem={options[1]}
+                >
+                  {({
+                    result,
+                    getItemProps,
+                    highlightedIndex,
+                    selectedItem
+                  }) => (
+                    <List>
+                      {result.map(
+                        renderOption(
+                          getItemProps,
+                          highlightedIndex,
+                          selectedItem
+                        )
+                      )}
+                    </List>
                   )}
-                </List>
-              )}
-            </Combobox>
-            <Select2
-              options={options}
-              renderSelected={(selectedItem, getToggleButtonProps) => (
-                <Button {...getToggleButtonProps()}>
-                  {selectedItem.value}
-                </Button>
-              )}
-              renderLabel={renderLabel}
-              renderPlaceholder={getToggleButtonProps => (
-                <Button {...getToggleButtonProps()}>Velg...</Button>
-              )}
-              onChange={console.log}
-            >
-              {({ selectedItem, options, getItemProps, highlightedIndex }) => {
-                return (
-                  <List>
-                    {options.map(
-                      renderOption(getItemProps, highlightedIndex, selectedItem)
-                    )}
-                  </List>
-                )
-              }}
-            </Select2>
-            <CreditCardInput label={"Credit Card"} />
-            <PhoneInput label={"Phone number"} onChange={console.warn} />
-            <NationalIdInput label={"National Id"} id={"tsa"} />
-            <PostalCodeInput label={"Postal code"} onChange={console.log} />
-            <AccountInput label={"Account number"} />
-            <CurrencyInput label={"Currency"} />
+                </Combobox>
+                <Select2
+                  options={options}
+                  renderSelected={(selectedItem, getToggleButtonProps) => (
+                    <Button {...getToggleButtonProps()}>
+                      {selectedItem.value}
+                    </Button>
+                  )}
+                  renderLabel={renderLabel}
+                  renderPlaceholder={getToggleButtonProps => (
+                    <Button {...getToggleButtonProps()}>Velg...</Button>
+                  )}
+                  onChange={console.log}
+                >
+                  {({
+                    selectedItem,
+                    options,
+                    getItemProps,
+                    highlightedIndex
+                  }) => {
+                    return (
+                      <List>
+                        {options.map(
+                          renderOption(
+                            getItemProps,
+                            highlightedIndex,
+                            selectedItem
+                          )
+                        )}
+                      </List>
+                    )
+                  }}
+                </Select2>
+                <CreditCardInput label={"Credit Card"} />
+                <PhoneInput label={"Phone number"} onChange={console.warn} />
+                <NationalIdInput label={"National Id"} id={"tsa"} />
+                <PostalCodeInput label={"Postal code"} onChange={console.log} />
+                <AccountInput label={"Account number"} />
+                <CurrencyInput label={"Currency"} />
+              </ExpandListItem>
+              {/* <ExpandListItem title={"Loaders"} isOpen> */}
+              <Loading />
+              <hr style={{ margin: 24 }} />
+              <Loading
+                variant={"circles"}
+                color={theming.color.primary()({ theme })}
+              />
+              <hr style={{ margin: 24 }} />
+              <Loading
+                variant={"atom"}
+                color={theming.color.primary()({ theme })}
+              />
+              <hr style={{ margin: 24 }} />
+              <Loading
+                variant={"breeding"}
+                color={theming.color.primary()({ theme })}
+              />
+
+              <hr style={{margin: 24}}/>
+              <Loading
+                variant={"finger"}
+                color={theming.color.primary()({theme})}
+                size={64}
+              />
+              <hr style={{margin: 24}}/>
+              <Loading
+                variant={"climbing"}
+                color={theming.color.primary()({theme})}
+                size={32}
+                sizeUnit={"px"}
+              />
+              {/* </ExpandListItem> */}
+            </List>
           </Wrapper>
         </Router>
       </ThemeProvider>

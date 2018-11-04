@@ -12,5 +12,9 @@
   },
   "peerDependencies": {
     "styled-components": "^4.0.3"
+  },
+  "dependencies": {
+    "react-epic-spinners": "^0.2.1",
+    "react-spinners": "^0.4.7"
   }
 }
