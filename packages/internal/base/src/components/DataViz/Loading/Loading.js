@@ -24,7 +24,7 @@ const themeProps = {
   }
 }
 
-const Loading = ({ className, variant, ...rest }) => (
+const Loading = ({ className, ...rest }) => (
   <ThemeComponent
     tagName={themeProps.component.name}
     fallback={DefaultLoading}
