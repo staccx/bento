@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.3.3"></a>
+## [8.3.3](https://bitbucket.org/stacc-flow/bento/compare/v8.3.2...v8.3.3) (2018-11-05)
+
+
+### Bug Fixes
+
+* **loan-process:** account number rawvalue ([ce9b488](https://bitbucket.org/stacc-flow/bento/commits/ce9b488))
+
+
+
+
+
 <a name="8.3.2"></a>
 ## [8.3.2](https://bitbucket.org/stacc-flow/bento/compare/v8.3.1...v8.3.2) (2018-11-05)
 
