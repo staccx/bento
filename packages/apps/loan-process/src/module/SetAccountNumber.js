@@ -47,7 +47,7 @@ const Form = props => {
               <AccountInput
                 guide={false}
                 value={values.accountNumber}
-                onChange={e => setFieldValue("accountNumber", e.value)}
+                onChange={e => setFieldValue("accountNumber", e.target.value)}
                 label={props.accountNumberText}
                 placeholder="×××× ×× ××××"
                 id="accountNumber"

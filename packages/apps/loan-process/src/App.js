@@ -62,7 +62,7 @@ class Content extends Component {
             }
           />
           <hr style={{ margin: "64px 0" }} />
-          <SetAccountNumber isLoading />
+          <SetAccountNumber />
           <hr style={{ margin: "64px 0" }} />
           <PresentOffer isLoading />
           <hr style={{ margin: "64px 0" }} />
