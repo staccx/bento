@@ -8,7 +8,8 @@ import {
   Alert,
   Wrapper,
   Box,
-  Heading
+  Heading,
+  Loading
 } from "@staccx/base"
 import { removeWhitespace } from "@staccx/formatting"
 
@@ -107,9 +108,13 @@ class ProvideAdditionalInfo extends React.Component {
                               )}
                           </LayoutItem>
                         ))}
-                        <Button type={"submit"} disabled={!isValid}>
-                          Gå videre
-                        </Button>
+                        {this.props.isLoading ? (
+                          <Loading variant={"buttonLoading"} />
+                        ) : (
+                          <Button type={"submit"} disabled={!isValid}>
+                            Gå videre
+                          </Button>
+                        )}
                       </Layout>
                     </div>
                   </Box>
