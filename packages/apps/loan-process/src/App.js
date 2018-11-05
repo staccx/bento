@@ -67,7 +67,7 @@ class Content extends Component {
           <hr style={{ margin: "64px 0" }} />
           <SetAccountNumber />
           <hr style={{ margin: "64px 0" }} />
-          <PresentOffer isLoading />
+          <PresentOffer maxAmount={750000} loanAmount={750000} />
           <hr style={{ margin: "64px 0" }} />
           <PresentOffer
             productType={"PRODUCT_CREDIT"}

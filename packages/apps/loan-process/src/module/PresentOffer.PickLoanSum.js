@@ -26,10 +26,10 @@ const PickLoanSum = props => {
     chooseLoanAmountText,
     customLoanAmountLabel,
     otherAmountText,
-    handleChange,
     handleBlur,
     resetForm,
-    errors
+    errors,
+    setFieldValue
   } = props
 
   const _handleRadio = e => {
@@ -37,11 +37,6 @@ const PickLoanSum = props => {
     resetForm()
   }
 
-  const _handleChange = e => {
-    const value = e.target.value
-    handleCustomAmount(parseInt(removeWhitespace(value), 10))
-    handleChange(e)
-  }
   return (
     <form>
       <Layout rowGap="small">
@@ -58,7 +53,7 @@ const PickLoanSum = props => {
             >
               {formatCurrency(initialAmount)}
             </RadioPillItem>
-            {max > initialAmount && (
+            {max > initialAmount ? (
               <RadioPillItem
                 key={"maxValue"}
                 id="maxValue"
@@ -68,7 +63,7 @@ const PickLoanSum = props => {
               >
                 {formatCurrency(max)}
               </RadioPillItem>
-            )}
+            ) : null}
             <RadioPillItem
               key={"otherValue"}
               id="otherValue"
@@ -88,8 +83,13 @@ const PickLoanSum = props => {
               id="amount"
               max={max}
               min={min}
-              onChange={_handleChange}
-              value={loanAmount}
+              defaultValue={loanAmount}
+              onChange={e => {
+                handleCustomAmount(
+                  parseInt(removeWhitespace(e.target.value), 10)
+                )
+                setFieldValue("amount", e.target.value)
+              }}
               locale={"nb"}
               onBlur={handleBlur}
             />
