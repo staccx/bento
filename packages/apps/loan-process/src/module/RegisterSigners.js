@@ -208,7 +208,7 @@ class RegisterSigners extends React.Component {
                                                     onChange={e =>
                                                       setFieldValue(
                                                         `signers.${index}.nationalId`,
-                                                        e.value
+                                                        e.target.rawValue
                                                       )
                                                     }
                                                   />

@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.4.0"></a>
+# [8.4.0](https://bitbucket.org/stacc-flow/bento/compare/v8.3.4...v8.4.0) (2018-11-05)
+
+
+### Features
+
+* **open-id:** add debug option to OpenIdProvider ([093fb11](https://bitbucket.org/stacc-flow/bento/commits/093fb11))
+
+
+
+
+
+<a name="8.3.4"></a>
+## [8.3.4](https://bitbucket.org/stacc-flow/bento/compare/v8.3.3...v8.3.4) (2018-11-05)
+
+
+### Bug Fixes
+
+* **loan-process:** fix values for nationalId ([078e5df](https://bitbucket.org/stacc-flow/bento/commits/078e5df))
+
+
+
+
+
 <a name="8.3.3"></a>
 ## [8.3.3](https://bitbucket.org/stacc-flow/bento/compare/v8.3.2...v8.3.3) (2018-11-05)
 

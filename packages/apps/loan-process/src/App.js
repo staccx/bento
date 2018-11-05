@@ -75,7 +75,7 @@ class Content extends Component {
             payMonthlyText="Renter første måned (hvis hele kreditten er brukt)"
           />
           <hr style={{ margin: "64px 0" }} />
-          <RegisterSigners isLoading />
+          <RegisterSigners />
 
           <hr style={{ margin: "64px 0" }} />
           <Sign />
