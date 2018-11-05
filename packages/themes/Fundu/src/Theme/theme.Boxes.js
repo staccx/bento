@@ -138,6 +138,14 @@ export const BoxStyling = theming.createVariants(
     signerFields: css`
       background-color: ${theming.color.bgGray};
       padding: ${theming.spacing.medium} 0;
+      @media (max-width: 450px) {
+        > * {
+          padding-left: ${theming.spacing.medium} !important;
+          padding-right: ${theming.spacing.medium} !important;
+        }
+        margin-left: -${theming.spacing.medium};
+        margin-right: -${theming.spacing.medium};
+      }
     `
   },
   Box.themeProps.box
