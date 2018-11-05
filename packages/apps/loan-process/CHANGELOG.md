@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.3.1"></a>
+## [8.3.1](https://bitbucket.org/stacc-flow/bento/compare/v8.3.0...v8.3.1) (2018-11-05)
+
+
+### Bug Fixes
+
+* **loan-process:** fix animations v4 styled components ([080547f](https://bitbucket.org/stacc-flow/bento/commits/080547f))
+
+
+
+
+
 <a name="8.3.0"></a>
 # [8.3.0](https://bitbucket.org/stacc-flow/bento/compare/v8.2.5...v8.3.0) (2018-11-05)
 
