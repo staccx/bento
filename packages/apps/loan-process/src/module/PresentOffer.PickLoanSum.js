@@ -109,20 +109,26 @@ const PickLoanSum = props => {
 
 const PickAmounts = styled.div`
   overflow: hidden;
-  animation: ${props =>
+  ${props =>
     props.visible
-      ? css` 
-        0.4s ${BounceIn} .05s ease-out forwards 1
-      `
-      : css`.4s ${BounceOut} .05s ease-out forwards 1`};
+      ? css`
+          animation: 0.4s ${BounceIn} 0.05s ease-out forwards 1;
+        `
+      : css`
+          animation: 0.4s ${BounceOut} 0.05s ease-out forwards 1;
+        `};
 `
 
 const UserDefinedAmount = styled(Box)`
   opacity: 0;
   ${props =>
     props.visible
-      ? "animation: .4s " + BounceIn + " .05s ease-out forwards 1;"
-      : "animation: .4s " + BounceOut + " .05s ease-out forwards 1;"};
+      ? css`
+          animation: 0.4s ${BounceIn} 0.05s ease-out forwards 1;
+        `
+      : css`
+          animation: 0.4s ${BounceOut} 0.05s ease-out forwards 1;
+        `};
 `
 
 const InlineRadioButtons = styled.div`
