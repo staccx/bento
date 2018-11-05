@@ -145,6 +145,15 @@ export const BoxStyling = theming.createVariants(
         margin-left: -${theming.spacing.medium};
         margin-right: -${theming.spacing.medium};
       }
+    `,
+    lead: css`
+      font-size: ${theming.font.h5};
+      text-align: center;
+      padding: 0 ${theming.spacing.small};
+      line-height: 1.7;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     `
   },
   Box.themeProps.box

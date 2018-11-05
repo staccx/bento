@@ -10,7 +10,6 @@ import {
   LayoutItem,
   List,
   NationalIdInput,
-  Paragraph,
   SplitListItem,
   Wrapper,
   Alert,
@@ -100,13 +99,17 @@ class RegisterSigners extends React.Component {
     return (
       <React.Fragment>
         <Wrapper size="medium">
-          <Heading variant="stepHeading" level={1}>
-            {this.props.headingText}
-          </Heading>
-          <Paragraph variant="lead">
-            {this.props.leadText} <br />
-            <strong>{this.props.signatureText}</strong>
-          </Paragraph>
+          <Layout rowGap="small" paddingBottom="large">
+            <Heading variant="stepHeading" level={1}>
+              {this.props.headingText}
+            </Heading>
+            <Box variant="lead">
+              {this.props.leadText}
+              <p>
+                <strong>{this.props.signatureText}</strong>
+              </p>
+            </Box>
+          </Layout>
         </Wrapper>
         <Wrapper size="small">
           <Formik
