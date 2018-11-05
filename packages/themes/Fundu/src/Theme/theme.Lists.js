@@ -14,7 +14,7 @@ export const ListStyling = theming.createVariants(
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: ${theming.spacing.tiny} ${theming.spacing.medium};
+        padding: ${theming.spacing.tiny} 0;
 
         &:not(:last-child) {
           border-bottom: 1px solid ${theming.color.line};
@@ -31,6 +31,11 @@ export const ListStyling = theming.createVariants(
         justify-content: space-between;
         align-items: center;
         padding: ${theming.spacing.tiny} ${theming.spacing.medium};
+      }
+
+      @media (max-width: 450px) {
+        margin-left: -${theming.spacing.medium};
+        margin-right: -${theming.spacing.medium};
       }
     `,
     bottomBorder: css`

@@ -137,9 +137,9 @@ export const BoxStyling = theming.createVariants(
     `,
     signerFields: css`
       background-color: ${theming.color.bgGray};
-      padding: ${theming.spacing.medium} 0;
+      padding: ${theming.spacing.medium} ${theming.spacing.medium};
       @media (max-width: 450px) {
-        > * {
+        > div {
           padding-left: ${theming.spacing.medium} !important;
           padding-right: ${theming.spacing.medium} !important;
         }

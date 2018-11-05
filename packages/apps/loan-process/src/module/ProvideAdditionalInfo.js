@@ -74,7 +74,7 @@ class ProvideAdditionalInfo extends React.Component {
 
                 <Layout paddingBottom="medium" variant="formElements">
                   {keys.map(key => (
-                    <LayoutItem>
+                    <LayoutItem key={"additional" + key}>
                       <Field
                         name={key}
                         render={({ onChange, value, ...field }) => (
