@@ -34,6 +34,9 @@ export const LabelStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       font-weight: ${theming.fontWeight.normal};
+    `,
+    loanDuration: css`
+      padding-bottom: 0;
     `
   },
   Label.themeProps.label
