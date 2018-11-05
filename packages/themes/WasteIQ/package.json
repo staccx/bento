@@ -1,6 +1,6 @@
 {
   "name": "@staccx/wasteiq-theme",
-  "version": "8.6.0",
+  "version": "8.7.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -20,7 +20,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/base": "^8.6.0",
+    "@staccx/base": "^8.7.0",
     "@staccx/rollup-config": "^8.2.0",
     "prettier": "^1.14.2",
     "rollup": "^0.65.0",

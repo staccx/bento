@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.7.0"></a>
+# [8.7.0](https://bitbucket.org/stacc-flow/bento/compare/v8.5.0...v8.7.0) (2018-11-05)
+
+
+### Bug Fixes
+
+* **base:** fix Radiopill can now have nullable children ([a46f692](https://bitbucket.org/stacc-flow/bento/commits/a46f692))
+
+
+
+
+
 <a name="8.6.0"></a>
 # [8.6.0](https://bitbucket.org/stacc-flow/bento/compare/v8.5.0...v8.6.0) (2018-11-05)
 
