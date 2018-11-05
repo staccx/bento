@@ -113,6 +113,7 @@ class Calculator extends React.Component {
                         const { value } = field
                         return (
                           <SliderKeyboardInput
+                            name="Kalkis"
                             label={this.props.valueLabel}
                             max={this.props.maxValue}
                             min={this.props.minValue}
