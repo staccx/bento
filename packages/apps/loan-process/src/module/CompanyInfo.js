@@ -80,7 +80,7 @@ class CompanyInfo extends React.Component {
                               mapItem={this.props.mapCompany}
                               id="company"
                               onSelect={value => {
-                                if (value.target) {
+                                if (value && value.target) {
                                   value = value.target.value
                                 }
                                 setFieldValue("company", value)
