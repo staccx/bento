@@ -12,6 +12,7 @@ import PresentOffer from "./module/PresentOffer"
 import EndScreen from "./module/EndScreen"
 import Calculator from "./module/Calculator"
 import CompanyInfo from "./module/CompanyInfo"
+import ProvideAdditionalInfo from "./module/ProvideAdditionalInfo"
 
 class Content extends Component {
   render() {
@@ -30,6 +31,8 @@ class Content extends Component {
         <div>
           <GlobalStyle />
           <WebFonts />
+          <ProvideAdditionalInfo isLoading />
+          <hr style={{ margin: "64px 0" }} />
           <CompanyInfo onValidated={console.log} onClick={console.log} />
           <hr style={{ margin: "64px 0" }} />
           <Calculator onValidated={console.log} />
