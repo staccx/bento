@@ -19,6 +19,14 @@ export const LayoutStyling = theming.createVariants(
         "button button"
         "footer footer";
       grid-auto-flow: column;
+      @media screen and (max-width: 650px) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "left"
+          "right"
+          "button"
+          "footer";
+      }
     `
   },
   Layout.themeProps.container
