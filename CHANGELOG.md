@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.3.0"></a>
+# [8.3.0](https://bitbucket.org/stacc-flow/bento/compare/v8.2.5...v8.3.0) (2018-11-05)
+
+
+### Bug Fixes
+
+* **base:** fix loading not using variants ([12301f4](https://bitbucket.org/stacc-flow/bento/commits/12301f4))
+* **loan-process:** fix value in companyinput ([924a901](https://bitbucket.org/stacc-flow/bento/commits/924a901))
+
+
+### Features
+
+* **component-testing:** add loading to tests ([9a997fd](https://bitbucket.org/stacc-flow/bento/commits/9a997fd))
+
+
+
+
+
 <a name="8.2.5"></a>
 ## [8.2.5](https://bitbucket.org/stacc-flow/bento/compare/v8.2.4...v8.2.5) (2018-11-02)
 
