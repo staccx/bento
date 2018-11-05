@@ -2,7 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { withFormik } from "formik"
-import { Alert, CurrencyInput, RadioButton, Box } from "@staccx/base"
+import {
+  Alert,
+  CurrencyInput,
+  RadioPillItem,
+  Box,
+  RadioPill,
+  Layout
+} from "@staccx/base"
 import { formatCurrency, removeWhitespace } from "@staccx/formatting"
 import { BounceIn, BounceOut } from "@staccx/animations"
 const Yup = require("yup")
@@ -37,53 +44,44 @@ const PickLoanSum = props => {
   }
   return (
     <form>
-      <Box variant="pickAmounts">
+      <Layout rowGap="small">
         <PickAmounts visible>
           <legend>{chooseLoanAmountText}</legend>
-          <InlineRadioButtons>
-            <InlineRadioButtonsItem>
-              <RadioButton
-                key={"userValue"}
-                id="userValue"
-                value={initialAmount}
-                group={"loanSum"}
-                defaultChecked
-                onChange={_handleRadio}
-              >
-                {formatCurrency(initialAmount)}
-              </RadioButton>
-            </InlineRadioButtonsItem>
+          <RadioPill onChange={_handleRadio} group={"radiopills"}>
+            <RadioPillItem
+              key={"userValue"}
+              id="userValue"
+              value={initialAmount}
+              group={"loanSum"}
+              defaultChecked
+              onChange={_handleRadio}
+            >
+              {formatCurrency(initialAmount)}
+            </RadioPillItem>
             {max > initialAmount && (
-              <InlineRadioButtonsItem>
-                <RadioButton
-                  key={"maxValue"}
-                  id="maxValue"
-                  value={max}
-                  group={"loanSum"}
-                  onChange={_handleRadio}
-                >
-                  {formatCurrency(max)}
-                </RadioButton>
-              </InlineRadioButtonsItem>
-            )}
-            <InlineRadioButtonsItem>
-              <RadioButton
-                key={"otherValue"}
-                id="otherValue"
-                value={-1}
+              <RadioPillItem
+                key={"maxValue"}
+                id="maxValue"
+                value={max}
                 group={"loanSum"}
                 onChange={_handleRadio}
               >
-                {otherAmountText}
-              </RadioButton>
-            </InlineRadioButtonsItem>
-          </InlineRadioButtons>
+                {formatCurrency(max)}
+              </RadioPillItem>
+            )}
+            <RadioPillItem
+              key={"otherValue"}
+              id="otherValue"
+              value={-1}
+              group={"loanSum"}
+              onChange={_handleRadio}
+            >
+              {otherAmountText}
+            </RadioPillItem>
+          </RadioPill>
         </PickAmounts>
         {isCustomAmount && (
-          <UserDefinedAmount
-            variant="userDefinedAmount"
-            visible={isCustomAmount}
-          >
+          <UserDefinedAmount visible={isCustomAmount}>
             <CurrencyInput
               label={customLoanAmountLabel}
               placeholder="0"
@@ -102,7 +100,7 @@ const PickLoanSum = props => {
             )}
           </UserDefinedAmount>
         )}
-      </Box>
+      </Layout>
     </form>
   )
 }
@@ -130,12 +128,6 @@ const UserDefinedAmount = styled(Box)`
           animation: 0.4s ${BounceOut} 0.05s ease-out forwards 1;
         `};
 `
-
-const InlineRadioButtons = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-const InlineRadioButtonsItem = styled.div``
 
 PickLoanSum.defaultProps = {
   customAmount: false,

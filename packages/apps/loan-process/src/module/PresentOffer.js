@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import {
-  Box,
   Button,
   Heading,
   ItemGroup,
@@ -11,7 +10,8 @@ import {
   Wrapper,
   Layout,
   LayoutItem,
-  Loading
+  Loading,
+  Paragraph
 } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
 import { getPaymentPlan } from "@staccx/payment-plan"
@@ -102,176 +102,166 @@ class PresentOffer extends React.Component {
     const { term, plan } = this.state
     return (
       <div>
-        <Wrapper size="medium">
-          <Heading variant="stepHeading">{this.props.headingText}</Heading>
-          <Box variant="actionBox">
-            <Box variant="actionBoxContent" size="large">
-              <p>
-                {this.props.maxLoanAmountText}{" "}
-                <strong> {formatCurrency(this.props.maxAmount || 0)}</strong>
-              </p>
-            </Box>
-            <Layout variant="formElements">
-              {this.props.productType === "PRODUCT_LOAN" && (
-                <LayoutItem>
-                  <PickLoanSum
-                    loanAmount={this.state.amount}
-                    repaymentPeriod={this.props.repaymentPeriod}
-                    isCustomAmount={this.state.isCustomAmount}
-                    initialAmount={this.props.loanAmount}
-                    handleRadio={this.handleSetCustom}
-                    handleCustomAmount={this.handleCustomAmount}
-                    min={this.props.minAmount}
-                    max={this.props.maxAmount}
-                    chooseLoanAmountText={"Velg beløp"}
-                    otherAmountText={"Annet beløp"}
-                  />
-                </LayoutItem>
-              )}
+        <Wrapper size="large">
+          <Layout rowGap="small">
+            <Heading variant="stepHeading">{this.props.headingText}</Heading>
+
+            <Paragraph variant="lead">
+              {this.props.maxLoanAmountText}{" "}
+              <strong> {formatCurrency(this.props.maxAmount || 0)}</strong>
+            </Paragraph>
+          </Layout>
+        </Wrapper>
+        <Wrapper size="form">
+          <Layout paddingTop="mediumPlus">
+            {this.props.productType === "PRODUCT_LOAN" && (
               <LayoutItem>
-                <Box variant="offerTable" size="large">
-                  <OfferTable>
-                    <tbody>
-                      {this.props.productType === "loan" && (
-                        <tr>
+                <PickLoanSum
+                  loanAmount={this.state.amount}
+                  repaymentPeriod={this.props.repaymentPeriod}
+                  isCustomAmount={this.state.isCustomAmount}
+                  initialAmount={this.props.loanAmount}
+                  handleRadio={this.handleSetCustom}
+                  handleCustomAmount={this.handleCustomAmount}
+                  min={this.props.minAmount}
+                  max={this.props.maxAmount}
+                  chooseLoanAmountText={"Velg beløp"}
+                  otherAmountText={"Annet beløp"}
+                />
+              </LayoutItem>
+            )}
+            <LayoutItem>
+              <OfferTable>
+                <tbody>
+                  {this.props.productType === "loan" && (
+                    <tr>
+                      <OfferTableText>
+                        {this.props.loanDurationText}
+                      </OfferTableText>
+                      <OfferTableData>
+                        <OfferTableDurations>
+                          <OfferTableDurationsItem>
+                            <Select
+                              id={"select-loan-duration"}
+                              onChange={value =>
+                                this.handleChangeLoanDuration(
+                                  value || this.props.repaymentPeriod
+                                )
+                              }
+                              variant="loanOffer"
+                              items={this.props.potentialDurations}
+                              itemToString={item =>
+                                item >= 12 ? item / 12 + " år" : item + " mnd"
+                              }
+                            />
+                          </OfferTableDurationsItem>
+                        </OfferTableDurations>
+                      </OfferTableData>
+                    </tr>
+                  )}
+                  {term &&
+                    plan && (
+                      <React.Fragment>
+                        {this.props.showInterestRate && (
+                          <tr>
+                            <OfferTableText>
+                              {this.props.interestRateText}
+                            </OfferTableText>
+                            <OfferTableData>
+                              <span>{term.interestRate} %</span>
+                            </OfferTableData>
+                          </tr>
+                        )}
+                        {this.props.showMonthlyFee && (
+                          <tr>
+                            <OfferTableText>
+                              {this.props.monthlyFeeText}
+                            </OfferTableText>
+                            <OfferTableData>
+                              <Odometer number={term.monthlyFees} size={14} />
+                            </OfferTableData>
+                          </tr>
+                        )}
+                        {this.props.showPayback && (
+                          <tr>
+                            <OfferTableText>
+                              {this.props.paybackText}
+                            </OfferTableText>
+                            <OfferTableData>
+                              <Odometer
+                                number={plan.reduce(
+                                  (acc, curr) => acc + curr.monthlyPayment,
+                                  0
+                                )}
+                                size={14}
+                              />
+                            </OfferTableData>
+                          </tr>
+                        )}
+                        <OfferTableTotal>
                           <OfferTableText>
-                            {this.props.loanDurationText}
+                            {this.props.payMonthlyText}
                           </OfferTableText>
                           <OfferTableData>
-                            <OfferTableDurations>
-                              <OfferTableDurationsItem>
-                                <Select
-                                  id={"select-loan-duration"}
-                                  onChange={value =>
-                                    this.handleChangeLoanDuration(
-                                      value || this.props.repaymentPeriod
-                                    )
-                                  }
-                                  variant="loanOffer"
-                                  items={this.props.potentialDurations}
-                                  itemToString={item =>
-                                    item >= 12
-                                      ? item / 12 + " år"
-                                      : item + " mnd"
-                                  }
-                                />
-                              </OfferTableDurationsItem>
-                            </OfferTableDurations>
+                            <Odometer number={term.monthlyPayment} size={14} />
                           </OfferTableData>
-                        </tr>
-                      )}
-                      {term &&
-                        plan && (
-                          <React.Fragment>
-                            {this.props.showInterestRate && (
-                              <tr>
-                                <OfferTableText>
-                                  {this.props.interestRateText}
-                                </OfferTableText>
-                                <OfferTableData>
-                                  <span>{term.interestRate} %</span>
-                                </OfferTableData>
-                              </tr>
-                            )}
-                            {this.props.showMonthlyFee && (
-                              <tr>
-                                <OfferTableText>
-                                  {this.props.monthlyFeeText}
-                                </OfferTableText>
-                                <OfferTableData>
-                                  <Odometer
-                                    number={term.monthlyFees}
-                                    size={14}
-                                  />
-                                </OfferTableData>
-                              </tr>
-                            )}
-                            {this.props.showPayback && (
-                              <tr>
-                                <OfferTableText>
-                                  {this.props.paybackText}
-                                </OfferTableText>
-                                <OfferTableData>
-                                  <Odometer
-                                    number={plan.reduce(
-                                      (acc, curr) => acc + curr.monthlyPayment,
-                                      0
-                                    )}
-                                    size={14}
-                                  />
-                                </OfferTableData>
-                              </tr>
-                            )}
-                            <OfferTableTotal>
-                              <OfferTableText>
-                                {this.props.payMonthlyText}
-                              </OfferTableText>
-                              <OfferTableData>
-                                <Odometer
-                                  number={term.monthlyPayment}
-                                  size={14}
-                                />
-                              </OfferTableData>
-                            </OfferTableTotal>
-                          </React.Fragment>
-                        )}
-                    </tbody>
-                  </OfferTable>
-                </Box>
-              </LayoutItem>
+                        </OfferTableTotal>
+                      </React.Fragment>
+                    )}
+                </tbody>
+              </OfferTable>
+            </LayoutItem>
 
-              {this.props.company && (
-                <LayoutItem>
-                  <Box variant="subtleBox" size="large">
-                    <Box variant="halves">
-                      <div>
-                        <h4>{this.props.companyHeadingPrefixText}</h4>
-                        <List variant="offerInfoList">
-                          <li>{this.props.company.name}</li>
-                          <li>
-                            {this.props.orgNumberPrefixText}{" "}
-                            {this.props.company.orgNo}
-                          </li>
-                        </List>
-                      </div>
-                      {this.props.guarantor && (
-                        <div>
-                          <h4>Kausjonist</h4>
-                          <List variant="offerInfoList">
-                            <li>{this.props.guarantor.name}</li>
-                            <li>
-                              {this.props.nationalIdPrefixText}
-                              {this.props.guarantor.ssn}
-                            </li>
-                          </List>
-                        </div>
-                      )}
-                    </Box>
-                  </Box>
-                </LayoutItem>
-              )}
-            </Layout>
-          </Box>
-          <ItemGroup>
-            {this.props.isLoading ? (
-              <Loading variant={"buttonLoading"} />
-            ) : (
-              <React.Fragment>
-                <Button
-                  disabled={!this.state.isValid}
-                  onClick={() => this.respondToOffer(true)}
-                >
-                  {this.props.acceptOfferButtonText}
-                </Button>
-                <Button
-                  variant="decline"
-                  onClick={() => this.respondToOffer(false)}
-                >
-                  {this.props.rejectOfferButtonText}
-                </Button>
-              </React.Fragment>
+            {this.props.company && (
+              <LayoutItem>
+                <Layout>
+                  <div>
+                    <h4>{this.props.companyHeadingPrefixText}</h4>
+                    <List variant="offerInfoList">
+                      <li>{this.props.company.name}</li>
+                      <li>
+                        {this.props.orgNumberPrefixText}{" "}
+                        {this.props.company.orgNo}
+                      </li>
+                    </List>
+                  </div>
+                  {this.props.guarantor && (
+                    <div>
+                      <h4>Kausjonist</h4>
+                      <List variant="offerInfoList">
+                        <li>{this.props.guarantor.name}</li>
+                        <li>
+                          {this.props.nationalIdPrefixText}
+                          {this.props.guarantor.ssn}
+                        </li>
+                      </List>
+                    </div>
+                  )}
+                </Layout>
+              </LayoutItem>
             )}
-          </ItemGroup>
+
+            <ItemGroup>
+              {this.props.isLoading ? (
+                <Loading variant={"buttonLoading"} />
+              ) : (
+                <React.Fragment>
+                  <Button
+                    disabled={!this.state.isValid}
+                    onClick={() => this.respondToOffer(true)}
+                  >
+                    {this.props.acceptOfferButtonText}
+                  </Button>
+                  <Button
+                    variant="decline"
+                    onClick={() => this.respondToOffer(false)}
+                  >
+                    {this.props.rejectOfferButtonText}
+                  </Button>
+                </React.Fragment>
+              )}
+            </ItemGroup>
+          </Layout>
         </Wrapper>
       </div>
     )

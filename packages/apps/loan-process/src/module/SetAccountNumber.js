@@ -41,40 +41,38 @@ const Form = props => {
         <Paragraph variant="lead">{props.loanTypeText}</Paragraph>
       </Wrapper>
       <Wrapper size="form">
-        <Box variant="actionBox">
-          <Layout>
-            <LayoutItem>
-              <AccountInput
-                guide={false}
-                value={values.accountNumber}
-                onChange={e => {
-                  setFieldValue("accountNumber", e.target.rawValue)
-                }}
-                label={props.accountNumberText}
-                placeholder="×××× ×× ××××"
-                id="accountNumber"
-                locale={"nb"}
-              />
-              {errors.accountNumber &&
-                touched.accountNumber && (
-                  <Alert type="warning" variant="error">
-                    {errors.accountNumber}
-                  </Alert>
-                )}
-            </LayoutItem>
-            {!isSubmitting && (
-              <div>
-                {props.isLoading ? (
-                  <Loading variant={"buttonLoading"} />
-                ) : (
-                  <Button type="submit" onClick={() => null}>
-                    {props.continueButtonText}
-                  </Button>
-                )}
-              </div>
-            )}
-          </Layout>
-        </Box>
+        <Layout paddingTop="medium">
+          <LayoutItem>
+            <AccountInput
+              guide={false}
+              value={values.accountNumber}
+              onChange={e => {
+                setFieldValue("accountNumber", e.target.rawValue)
+              }}
+              label={props.accountNumberText}
+              placeholder="×××× ×× ××××"
+              id="accountNumber"
+              locale={"nb"}
+            />
+            {errors.accountNumber &&
+              touched.accountNumber && (
+                <Alert type="warning" variant="error">
+                  {errors.accountNumber}
+                </Alert>
+              )}
+          </LayoutItem>
+          {!isSubmitting && (
+            <div>
+              {props.isLoading ? (
+                <Loading variant={"buttonLoading"} />
+              ) : (
+                <Button type="submit" onClick={() => null}>
+                  {props.continueButtonText}
+                </Button>
+              )}
+            </div>
+          )}
+        </Layout>
       </Wrapper>
     </form>
   )
