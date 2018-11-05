@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.6.0"></a>
+# [8.6.0](https://bitbucket.org/stacc-flow/bento/compare/v8.5.0...v8.6.0) (2018-11-05)
+
+
+### Bug Fixes
+
+* **base:** fix Radiopill can now have nullable children ([8f3c9dc](https://bitbucket.org/stacc-flow/bento/commits/8f3c9dc))
+* **loan-process:** fix pick loan sum ([841f5a5](https://bitbucket.org/stacc-flow/bento/commits/841f5a5))
+
+
+### Features
+
+* **fundu-theme:** signerFields responsive ([8e99b6a](https://bitbucket.org/stacc-flow/bento/commits/8e99b6a))
+* **loan-process:** bug-fixing ([f8e9ad3](https://bitbucket.org/stacc-flow/bento/commits/f8e9ad3))
+* **loan-process:** provideAdditionalInfo layout-fix ([f5c4631](https://bitbucket.org/stacc-flow/bento/commits/f5c4631))
+* **loan-process:** responsive calculator ([0371d0c](https://bitbucket.org/stacc-flow/bento/commits/0371d0c))
+
+
+
+
+
 <a name="8.5.0"></a>
 # [8.5.0](https://bitbucket.org/stacc-flow/bento/compare/v8.4.0...v8.5.0) (2018-11-05)
 
