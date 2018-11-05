@@ -1,5 +1,6 @@
 import React from "react"
 import { Field, Formik } from "formik"
+import PropTypes from "prop-types"
 import {
   Button,
   LayoutItem,
@@ -8,7 +9,8 @@ import {
   Alert,
   Wrapper,
   Heading,
-  Loading
+  Loading,
+  Paragraph
 } from "@staccx/base"
 import { removeWhitespace } from "@staccx/formatting"
 
@@ -19,15 +21,15 @@ class ProvideAdditionalInfo extends React.Component {
     super(props, context)
 
     this.state = {
-      siNetIncome: 0,
-      siTotalOperatingRevenue: 0,
-      asInventories: 0,
-      asBankDepositsCashInHandEtc: 0,
-      asCurrentAssets: 0,
-      asTotalAssets: 0,
-      leCurrentLiabilities: 0,
-      leEquity: 0,
-      asTradeDebtors: 0
+      siNetIncome: this.props.siNetIncome,
+      siTotalOperatingRevenue: this.props.siTotalOperatingRevenue,
+      asInventories: this.props.asInventories,
+      asBankDepositsCashInHandEtc: this.props.asBankDepositsCashInHandEtc,
+      asCurrentAssets: this.props.asCurrentAssets,
+      asTotalAssets: this.props.asTotalAssets,
+      leCurrentLiabilities: this.props.leCurrentLiabilities,
+      leEquity: this.props.leEquity,
+      asTradeDebtors: this.props.asTradeDebtors
     }
   }
 
@@ -67,11 +69,15 @@ class ProvideAdditionalInfo extends React.Component {
         }) => {
           return (
             <form onSubmit={handleSubmit}>
+              <Wrapper size="large">
+                <Layout rowGap="small" paddingBottom="medium">
+                  <Heading variant="stepHeading">
+                    {this.props.headingText}
+                  </Heading>
+                  <Paragraph variant="lead">{this.props.leadText}</Paragraph>
+                </Layout>
+              </Wrapper>
               <Wrapper size="form">
-                <Heading variant="stepHeading">
-                  {this.props.headingText}
-                </Heading>
-
                 <Layout paddingBottom="medium" variant="formElements">
                   {keys.map(key => (
                     <LayoutItem key={"additional" + key}>
@@ -79,8 +85,8 @@ class ProvideAdditionalInfo extends React.Component {
                         name={key}
                         render={({ onChange, value, ...field }) => (
                           <CurrencyInput
-                            id={key}
-                            label={key}
+                            id={keys}
+                            label={this.props[`${key}Label`]}
                             placeholder="0"
                             locale={"nb"}
                             defaultValue={value}
@@ -117,6 +123,52 @@ class ProvideAdditionalInfo extends React.Component {
       />
     )
   }
+}
+
+ProvideAdditionalInfo.propTypes = {
+  headingText: PropTypes.string,
+  leadText: PropTypes.string,
+  siNetIncome: PropTypes.number,
+  siTotalOperatingRevenue: PropTypes.number,
+  asInventories: PropTypes.number,
+  asBankDepositsCashInHandEtc: PropTypes.number,
+  asCurrentAssets: PropTypes.number,
+  asTotalAssets: PropTypes.number,
+  leCurrentLiabilities: PropTypes.number,
+  leEquity: PropTypes.number,
+  asTradeDebtors: PropTypes.number,
+  siNetIncomeLabel: PropTypes.string,
+  siTotalOperatingRevenueLabel: PropTypes.string,
+  asInventoriesLabel: PropTypes.string,
+  asBankDepositsCashInHandEtcLabel: PropTypes.string,
+  asCurrentAssetsLabel: PropTypes.string,
+  asTotalAssetsLabel: PropTypes.string,
+  leCurrentLiabilitiesLabel: PropTypes.string,
+  leEquityLabel: PropTypes.string,
+  asTradeDebtorsLabel: PropTypes.string
+}
+
+ProvideAdditionalInfo.defaultProps = {
+  headingText: "Legg til info",
+  leadText: "Vi trenger litt mer info",
+  siNetIncome: 0,
+  siTotalOperatingRevenue: 0,
+  asInventories: 0,
+  asBankDepositsCashInHandEtc: 0,
+  asCurrentAssets: 0,
+  asTotalAssets: 0,
+  leCurrentLiabilities: 0,
+  leEquity: 0,
+  asTradeDebtors: 0,
+  siNetIncomeLabel: "Årsresultat",
+  siTotalOperatingRevenueLabel: "Sum driftsinntekter",
+  asInventoriesLabel: "Sum varelager",
+  asBankDepositsCashInHandEtcLabel: "Sum Kasse/Bank/Post",
+  asCurrentAssetsLabel: "Sum omløpsmidler",
+  asTotalAssetsLabel: "Sum eiedeler",
+  leCurrentLiabilitiesLabel: "Sum kortsiktig gjeld",
+  leEquityLabel: "Sum egenkapital",
+  asTradeDebtorsLabel: "Sum kundefordringer"
 }
 
 export default ProvideAdditionalInfo
