@@ -1,9 +1,8 @@
 import axios from "axios"
-import Auth from "./auth"
 
 export default class Api {
-  constructor(apiRoot) {
-    this.authService = new Auth()
+  constructor(apiRoot, authService) {
+    this.authService = authService
     this.apiRoot = apiRoot
   }
 

@@ -1,11 +1,12 @@
 import { Log, UserManager } from "oidc-client"
 
 export default class Auth {
-  constructor(config) {
+  constructor(config, debug = false) {
+    console.log("debug is", debug)
     this.userManager = new UserManager(config)
 
     Log.logger = console
-    Log.level = Log.INFO
+    Log.level = debug ? Log.DEBUG : Log.INFO
   }
 
   getUser() {
