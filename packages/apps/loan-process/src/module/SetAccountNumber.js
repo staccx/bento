@@ -46,7 +46,6 @@ const Form = props => {
             <LayoutItem>
               <AccountInput
                 guide={false}
-                value={values.accountNumber}
                 onChange={e => {
                   setFieldValue("accountNumber", e.target.rawValue)
                 }}
