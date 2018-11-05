@@ -46,7 +46,6 @@ const targetSize = {
 const wrapper = {
   form: "360px",
   small: "700px",
-  calculator: "800px",
   medium: "1080px",
   large: "1350px",
   breakout: "640px"
