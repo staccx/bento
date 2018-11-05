@@ -24,7 +24,7 @@ class i18n {
     this.plugins = plugins || []
     this.pluginOptions = pluginOptions || {}
 
-    return this.detectLanguage()
+    return Promise.resolve(language)
   }
 
   setLanguage(language) {
