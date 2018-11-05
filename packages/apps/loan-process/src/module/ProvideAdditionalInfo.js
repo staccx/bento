@@ -85,7 +85,7 @@ class ProvideAdditionalInfo extends React.Component {
                         name={key}
                         render={({ onChange, value, ...field }) => (
                           <CurrencyInput
-                            id={keys}
+                            id={key}
                             label={this.props[`${key}Label`]}
                             placeholder="0"
                             locale={"nb"}
