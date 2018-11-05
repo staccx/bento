@@ -7,7 +7,6 @@ import {
   CurrencyInput,
   Alert,
   Wrapper,
-  Box,
   Heading,
   Loading
 } from "@staccx/base"
@@ -68,57 +67,49 @@ class ProvideAdditionalInfo extends React.Component {
         }) => {
           return (
             <form onSubmit={handleSubmit}>
-              <Wrapper size="small" breakout>
+              <Wrapper size="form">
                 <Heading variant="stepHeading">
                   {this.props.headingText}
                 </Heading>
-                <Box variant="actionBox">
-                  <Box variant="largeForm">
-                    <div>
-                      <Layout variant="formElements">
-                        {keys.map(key => (
-                          <LayoutItem>
-                            <Field
-                              name={key}
-                              render={({ onChange, value, ...field }) => (
-                                <CurrencyInput
-                                  id={key}
-                                  label={key}
-                                  placeholder="0"
-                                  locale={"nb"}
-                                  defaultValue={value}
-                                  onChange={e => {
-                                    setFieldValue(
-                                      key,
-                                      parseInt(
-                                        removeWhitespace(e.target.value),
-                                        10
-                                      )
-                                    )
-                                  }}
-                                  {...field}
-                                />
-                              )}
-                            />
-                            {touched[key] &&
-                              errors[key] && (
-                                <Alert variant="error" type="warning">
-                                  {errors[key]}
-                                </Alert>
-                              )}
-                          </LayoutItem>
-                        ))}
-                        {this.props.isLoading ? (
-                          <Loading variant={"buttonLoading"} />
-                        ) : (
-                          <Button type={"submit"} disabled={!isValid}>
-                            Gå videre
-                          </Button>
+
+                <Layout paddingBottom="medium" variant="formElements">
+                  {keys.map(key => (
+                    <LayoutItem>
+                      <Field
+                        name={key}
+                        render={({ onChange, value, ...field }) => (
+                          <CurrencyInput
+                            id={key}
+                            label={key}
+                            placeholder="0"
+                            locale={"nb"}
+                            defaultValue={value}
+                            onChange={e => {
+                              setFieldValue(
+                                key,
+                                parseInt(removeWhitespace(e.target.value), 10)
+                              )
+                            }}
+                            {...field}
+                          />
                         )}
-                      </Layout>
-                    </div>
-                  </Box>
-                </Box>
+                      />
+                      {touched[key] &&
+                        errors[key] && (
+                          <Alert variant="error" type="warning">
+                            {errors[key]}
+                          </Alert>
+                        )}
+                    </LayoutItem>
+                  ))}
+                </Layout>
+                {this.props.isLoading ? (
+                  <Loading variant={"buttonLoading"} />
+                ) : (
+                  <Button type={"submit"} disabled={!isValid}>
+                    Gå videre
+                  </Button>
+                )}
               </Wrapper>
             </form>
           )

@@ -31,7 +31,7 @@ class Content extends Component {
         <div>
           <GlobalStyle />
           <WebFonts />
-          <ProvideAdditionalInfo isLoading />
+          <ProvideAdditionalInfo />
           <hr style={{ margin: "64px 0" }} />
           <CompanyInfo onValidated={console.log} onClick={console.log} />
           <hr style={{ margin: "64px 0" }} />

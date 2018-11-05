@@ -68,7 +68,7 @@ class CompanyInfo extends React.Component {
               </Wrapper>
               <Wrapper size="form">
                 <form onSubmit={handleSubmit}>
-                  <Layout variant="formElements" inCalculator>
+                  <Layout inCalculator>
                     <LayoutItem>
                       <Field
                         name={`company`}

@@ -3,7 +3,14 @@ import { Layout, theming } from "@staccx/base"
 
 export const LayoutStyling = theming.createVariants(
   {
-    formElements: css``,
+    formElements: css`
+      grid-template-columns: 1fr;
+
+      @media only screen and (min-width: 730px) {
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+      }
+    `,
     columns: css`
       grid-auto-flow: column;
       justify-content: start;
