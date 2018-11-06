@@ -10,7 +10,7 @@
     "@sanity/block-content-to-react": "^2.0.4",
     "@sanity/client": "^0.135.0",
     "@sanity/image-url": "^0.132.8",
-    "@staccx/base": "^7.15.0",
+    "@staccx/base": "^8.8.0",
     "mobx-react": "^5.2.5",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",

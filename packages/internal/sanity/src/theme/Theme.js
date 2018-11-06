@@ -1,5 +1,4 @@
-import { Theme } from "@staccx/theme"
-import { BaseTheme } from "@staccx/base"
+import { theming } from "@staccx/base"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -70,7 +69,7 @@ const fontFamily = {
   body: "Libre Franklin"
 }
 
-const theme = new Theme(BaseTheme, {
+export default new theming.Theme({
   name: "sanity-provider",
   font,
   webfonts,
@@ -83,4 +82,3 @@ const theme = new Theme(BaseTheme, {
   fontFamily,
   global: ``
 })
-export default theme
