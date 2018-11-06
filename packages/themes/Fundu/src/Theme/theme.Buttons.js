@@ -38,6 +38,15 @@ export const ButtonStyling = theming.createVariants(
     [theming.VARIANT_DEFAULT]: css`
       ${defaultButton};
     `,
+    primary: css`
+      ${defaultButton};
+    `,
+    small: css`
+      min-height: ${theming.targetSize.small};
+      line-height: 1;
+      padding: ${theming.spacing.small};
+      font-size: ${theming.font.h6};
+    `,
     subtle: subtleButton,
     secondary: css`
       ${defaultButton};
