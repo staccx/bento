@@ -51,7 +51,7 @@ const wrapper = {
 }
 
 const spacing = {
-  grid: "7vh",
+  grid: "14vh",
   huge: "96px",
   largePlus: "72px",
   large: "48px",
