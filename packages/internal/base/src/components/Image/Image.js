@@ -30,7 +30,7 @@ const Image = ({
         {...otherProps}
       >
         <CroppedImg
-          srcset={srcset}
+          srcSet={srcset}
           src={src}
           stretch={stretch}
           variant={variant}
