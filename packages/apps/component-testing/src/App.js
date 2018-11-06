@@ -19,6 +19,7 @@ import {
   CompanyInput,
   ExpandListItem,
   Loading,
+  Slider2,
   theming
 } from "@staccx/base"
 import { ThemeProvider } from "styled-components"
@@ -157,38 +158,40 @@ class App extends Component {
                 <AccountInput label={"Account number"} />
                 <CurrencyInput label={"Currency"} />
               </ExpandListItem>
-              {/* <ExpandListItem title={"Loaders"} isOpen> */}
-              <Loading />
-              <hr style={{ margin: 24 }} />
-              <Loading
-                variant={"circles"}
-                color={theming.color.primary()({ theme })}
-              />
-              <hr style={{ margin: 24 }} />
-              <Loading
-                variant={"atom"}
-                color={theming.color.primary()({ theme })}
-              />
-              <hr style={{ margin: 24 }} />
-              <Loading
-                variant={"breeding"}
-                color={theming.color.primary()({ theme })}
-              />
+              <ExpandListItem title={"Loaders"}>
+                {/* <ExpandListItem title={"Loaders"} isOpen> */}
+                <Loading />
+                <hr style={{ margin: 24 }} />
+                <Loading
+                  variant={"circles"}
+                  color={theming.color.primary()({ theme })}
+                />
+                <hr style={{ margin: 24 }} />
+                <Loading
+                  variant={"atom"}
+                  color={theming.color.primary()({ theme })}
+                />
+                <hr style={{ margin: 24 }} />
+                <Loading
+                  variant={"breeding"}
+                  color={theming.color.primary()({ theme })}
+                />
 
-              <hr style={{margin: 24}}/>
-              <Loading
-                variant={"finger"}
-                color={theming.color.primary()({theme})}
-                size={64}
-              />
-              <hr style={{margin: 24}}/>
-              <Loading
-                variant={"climbing"}
-                color={theming.color.primary()({theme})}
-                size={32}
-                sizeUnit={"px"}
-              />
-              {/* </ExpandListItem> */}
+                <hr style={{ margin: 24 }} />
+                <Loading
+                  variant={"finger"}
+                  color={theming.color.primary()({ theme })}
+                  size={64}
+                />
+                <hr style={{ margin: 24 }} />
+                <Loading
+                  variant={"climbing"}
+                  color={theming.color.primary()({ theme })}
+                  size={32}
+                  sizeUnit={"px"}
+                />
+              </ExpandListItem>
+              <Slider2 min={20000} max={100000} step={10000} value={50000} />
             </List>
           </Wrapper>
         </Router>

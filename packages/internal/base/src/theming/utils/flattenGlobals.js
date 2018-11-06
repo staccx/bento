@@ -4,6 +4,7 @@ import { css } from "styled-components"
  * @return {array}
  */
 export default theme => {
+  console.log(theme)
   if (!theme.hasOwnProperty("global")) {
     console.warn("No global styles present")
     return ``

@@ -25,6 +25,7 @@ import Form from "./components/Forms/Form/Form"
 import FormField from "./components/Forms/Form/FormField"
 import CreditCardInput from "./components/Forms/Input/CreditCard/CreditCardInput"
 import Select2 from "./components/Forms/Select/Select2"
+import Slider2 from "./components/Forms/Slider/Slider2/Slider2"
 
 // Text
 import Text from "./components/Text/Text/Text"
@@ -211,6 +212,7 @@ export {
   SelectSimple,
   State,
   Slider,
+  Slider2,
   SliderKeyboardInput,
   SplitListItem,
   Success,
