@@ -63,7 +63,7 @@ class CompanyInput extends React.PureComponent {
         : () =>
             window
               .fetch(
-                `http://data.brreg.no/enhetsregisteret/enhet.json?page=${0}&size=${5}&$filter=${filter}`
+                `https://data.brreg.no/enhetsregisteret/enhet.json?page=${0}&size=${5}&$filter=${filter}`
               )
               .then(result => result.json())
               .then(json => json.data)
