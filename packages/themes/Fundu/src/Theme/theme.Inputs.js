@@ -179,7 +179,7 @@ export const CompanyInputLoadToStyling = theming.createVariants(
 export const CompanyInputCloseStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
-      color: ${theming.color("blue")};
+      color: ${theming.color("primary")};
     `
   },
   CompanyInput.themeProps.selectClose
@@ -188,8 +188,11 @@ export const CompanyInputCloseStyling = theming.createVariants(
 export const CompanyInputFlagStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
-      padding: ${theming.spacing.mediumPlus} ${theming.spacing.tiny}
-        ${theming.spacing.tiny} ${theming.spacing.medium};
+      padding: ${theming.spacing.tiny} 0 ${theming.spacing.tiny}
+        ${theming.spacing.small};
+      border: 1px solid ${theming.color("primary")};
+      border-radius: ${theming.borderRadius};
+      background-color: ${theming.color("white")};
     `
   },
   CompanyInput.themeProps.selectFlag
