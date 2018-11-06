@@ -20,7 +20,7 @@ class Wait extends React.Component {
 }
 
 Wait.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.func,
   waitTime: PropTypes.number
 }
 

@@ -62,7 +62,7 @@ class Search extends React.Component {
 }
 
 Search.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.func,
   documents: PropTypes.array.isRequired,
   indexer: PropTypes.string,
   indices: PropTypes.array.isRequired

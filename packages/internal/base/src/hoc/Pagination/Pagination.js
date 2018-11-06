@@ -51,7 +51,7 @@ class Pagination extends React.Component {
 export default Pagination
 
 Pagination.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.func,
   fuzzyLimit: PropTypes.number,
   items: PropTypes.array.isRequired,
   itemsPerPage: PropTypes.number,

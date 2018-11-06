@@ -68,7 +68,7 @@ Get.propTypes = {
   /**
    * Render function
    */
-  children: PropTypes.func.isRequired,
+  children: PropTypes.func,
   /**
    * Url to data
    */

@@ -9,7 +9,7 @@ class CopyToClipboard extends React.PureComponent {
 }
 
 CopyToClipboard.propTypes = {
-  children: PropTypes.func.isRequired
+  children: PropTypes.func
 }
 CopyToClipboard.defaultProps = {}
 
