@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.8.0"></a>
+# [8.8.0](https://bitbucket.org/stacc-flow/bento/compare/v8.7.0...v8.8.0) (2018-11-06)
+
+
+### Bug Fixes
+
+* **base:** removed isRequired from children prop in HOCs ([4347cdf](https://bitbucket.org/stacc-flow/bento/commits/4347cdf))
+* **loan-process:** fix blockcontent in props ([7e30804](https://bitbucket.org/stacc-flow/bento/commits/7e30804))
+* **loan-process:** fix wrong id ([70abbd9](https://bitbucket.org/stacc-flow/bento/commits/70abbd9))
+* **loan-process:** removed unused wrapper-width ([6fba94a](https://bitbucket.org/stacc-flow/bento/commits/6fba94a))
+
+
+### Features
+
+* **loan-process:** added labels ([be1ed7a](https://bitbucket.org/stacc-flow/bento/commits/be1ed7a))
+* **loan-process:** styling calculator ([d2b0000](https://bitbucket.org/stacc-flow/bento/commits/d2b0000))
+
+
+
+
+
 <a name="8.7.0"></a>
 # [8.7.0](https://bitbucket.org/stacc-flow/bento/compare/v8.5.0...v8.7.0) (2018-11-05)
 
