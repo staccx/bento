@@ -1,6 +1,14 @@
 import React, { Component } from "react"
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom"
-import { ThemeComponent, Layout, LayoutItem, Box, Wrapper } from "@staccx/base"
+import {
+  ThemeComponent,
+  Layout,
+  LayoutItem,
+  Box,
+  Wrapper,
+  WebFonts,
+  GlobalStyle
+} from "@staccx/base"
 import SwaggerDocs from "./pages/SwaggerDocs"
 import Introduction from "./pages/Introduction"
 import Menu from "./components/Menu/Menu"
@@ -29,9 +37,11 @@ class App extends Component {
     return (
       <OpenApiProvider url={this.props.openApiUrl}>
         <Router>
-          <Layout grid="dashboard" variant="responsiveDashboard">
+          <Layout variant={["responsiveDashboard", "dashboard"]}>
+            <GlobalStyle />
+            <WebFonts />
             <LayoutItem area="aside" variant="sidebar">
-              <Box variant="header">
+              <Box variant="devPortalHeader">
                 <ThemeComponent tagName={"logo"} fallback={null} />
               </Box>
               <Box variant="documentationMenu">
