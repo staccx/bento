@@ -143,6 +143,7 @@ class Calculator extends React.Component {
                                   {this.props.loanDurationLabel}
                                 </Label>
                                 <Select
+                                  variant="calculatorTerms"
                                   items={this.props.termValues}
                                   id={"select-loan-duration"}
                                   itemToString={this.props.termsValuesToString}

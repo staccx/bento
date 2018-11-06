@@ -4,7 +4,6 @@ import {
   Label,
   Select,
   RadioPillItem,
-  SelectSimple,
   SliderKeyboardInput,
   CompanyInput,
   PostalCodeInput,
@@ -46,16 +45,35 @@ export const SelectOptionStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       padding-left: ${theming.spacing.small};
+    `,
+    calculatorTerms: css`
+      background-color: transparent;
     `
   },
   Select.themeProps.optionContainer
 )
 
-export const SelectSelectedWrapperStyling = theming.createVariants(
+export const SelectWrapperStyling = theming.createVariants(
   {
-    [theming.VARIANT_DEFAULT]: css``
+    [theming.VARIANT_DEFAULT]: css`
+      border-color: ${theming.color.primary};
+      border-width: 2px;
+    `
   },
   Select.themeProps.wrapper
+)
+
+export const SelectSelectedWrapperStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      border-color: ${theming.color.primary};
+      border-width: 1px;
+    `,
+    calculatorTerms: css`
+      border-width: 0;
+    `
+  },
+  Select.themeProps.selectedWrapper
 )
 
 export const SelectIconButtonStyling = theming.createVariants(
@@ -69,23 +87,11 @@ export const SelectIconButtonStyling = theming.createVariants(
 
 export const SelectOptionsWrapperStyling = theming.createVariants(
   {
-    loanOffer: css``
+    [theming.VARIANT_DEFAULT]: css`
+      border-color: ${theming.color.primary};
+    `
   },
   Select.themeProps.defaultOptionWrapper
-)
-
-export const SelectSimpleWrapperStyling = theming.createVariants(
-  {
-    [theming.VARIANT_DEFAULT]: css``
-  },
-  SelectSimple.themeProps.wrapper
-)
-
-export const SelectSimpleSelectStyling = theming.createVariants(
-  {
-    [theming.VARIANT_DEFAULT]: css``
-  },
-  SelectSimple.themeProps.select
 )
 
 export const RadioPillItemStyling = theming.createVariants(
