@@ -4,7 +4,8 @@ import { Heading, theming } from "@staccx/base"
 const stepHeading = css`
   margin-bottom: 0;
   color: ${theming.color.primary};
-  font-size: ${theming.font.h1};
+  font-size: ${theming.font.h2};
+  font-weight: bold;
   line-height: 1.25;
 `
 

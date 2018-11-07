@@ -58,6 +58,7 @@ export const BoxStyling = theming.createVariants(
     signerFields: css`
       background-color: ${theming.color.bgGray};
       padding: ${theming.spacing.medium} ${theming.spacing.medium};
+      border-radius: 5px;
       @media (max-width: 450px) {
         > div {
           padding-left: ${theming.spacing.medium} !important;
