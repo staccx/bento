@@ -34,7 +34,7 @@ const LoanStatement = ({ history, account, transactions }) => {
               })
             }
           >
-            Tilbake
+            <TranslatedText i18nKey="BackTextButton" fallback="Tilbake" />
           </Button>
         </LayoutItem>
       </Layout>

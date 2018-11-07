@@ -95,6 +95,9 @@ export default theming.createVariants(
       z-index: 50;
       animation: 0.4s ${BounceIn} cubic-bezier(0.175, 0.885, 0.32, 1.275)
         forwards 1;
+    `,
+    expandedItem: css`
+      background-color: ${theming.color("expandedItem")};
     `
   },
   Box.themeProps.box

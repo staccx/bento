@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
 import { formatCurrency } from "@staccx/formatting"
-import { List, SplitListItem, theming } from "@staccx/base"
+import { List, SplitListItem } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 
 const TransactionListItem = ({
   amount,
@@ -15,49 +15,64 @@ const TransactionListItem = ({
   installments,
   type
 }) => (
-  <Outer>
-    <List>
-      {rent && (
-        <SplitListItem>
-          <div>Renter</div>
-          <div>{rent}</div>
-        </SplitListItem>
-      )}
-      {installments && (
-        <SplitListItem>
-          <div>Avdrag</div>
-          <div>{installments}</div>
-        </SplitListItem>
-      )}
-      {fee && (
-        <SplitListItem>
-          <div>Gebyr</div>
-          <div>{fee}</div>
-        </SplitListItem>
-      )}
-      <SplitListItem>
-        <div>Beløp:</div>
-        <div>{formatCurrency(amount, { precision: 2 })}</div>
-      </SplitListItem>
+  <List>
+    {rent && (
       <SplitListItem>
         <div>
-          {type === "DEPOSIT" && "Bokført dato:"}
-          {type === "WITHDRAWAL" && "Bokført dato:"}
-          {type === "INVOICE" && "Forfallsdato:"}
+          <TranslatedText i18nKey="Rent" fallback="Renter" />:
         </div>
-        <div>{date}</div>
+        <div>{rent}</div>
       </SplitListItem>
+    )}
+    {installments && (
       <SplitListItem>
-        <div>{toAccount ? "Til konto:" : "Fra konto:"}</div>
-        <div>{toAccount || fromAccount}</div>
+        <div>
+          <TranslatedText i18nKey="Installments" fallback="Avdrag" />:
+        </div>
+        <div>{installments}</div>
       </SplitListItem>
-    </List>
-  </Outer>
+    )}
+    {fee && (
+      <SplitListItem>
+        <div>
+          <TranslatedText i18nKey="Fee" fallback="Gebyr" />:
+        </div>
+        <div>{fee}</div>
+      </SplitListItem>
+    )}
+    <SplitListItem>
+      <div>
+        <TranslatedText i18nKey="Amount" fallback="Beløp" />:
+      </div>
+      <div>{formatCurrency(amount, { precision: 2 })}</div>
+    </SplitListItem>
+    <SplitListItem>
+      <div>
+        {type === "DEPOSIT" && (
+          <TranslatedText i18nKey="DateDeposit" fallback="Bokført dato" />
+        )}
+        {type === "WITHDRAWAL" && (
+          <TranslatedText i18nKey="DateWithdrawal" fallback="Bokført dato" />
+        )}
+        {type === "INVOICE" && (
+          <TranslatedText i18nKey="DateInvoice" fallback="Forfallsdato" />
+        )}
+        :
+      </div>
+      <div>{date}</div>
+    </SplitListItem>
+    <SplitListItem>
+      <div>
+        {toAccount ? (
+          <TranslatedText i18nKey="toAccount" fallback="Til konto" />
+        ) : (
+          <TranslatedText i18nKey="fromAccount" fallback="Fra konto" />
+        )}
+      </div>
+      <div>{toAccount || fromAccount}</div>
+    </SplitListItem>
+  </List>
 )
-
-const Outer = styled.div`
-  background-color: ${theming.color("expandedItem")};
-`
 
 TransactionListItem.propTypes = {
   date: PropTypes.string.isRequired,

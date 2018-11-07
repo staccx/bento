@@ -23,6 +23,8 @@ const AccountFilter = ({ account, type, duration, details = true }) => (
   </Box>
 )
 
+// TODO: denne komponenten må ekspandere og faktisk filtrere, men burde ikke gjøres før vi har skikkelig data.
+
 const Strong = styled.strong`
   font-weight: ${theming.fontWeight.normal};
 `

@@ -11,9 +11,21 @@ const Overview = ({ history, accounts }) => (
         <Layout>
           {accounts.map(account => {
             if (account.accountType === "LOAN") {
-              return <Loan account={account} navigate={history.push} />
+              return (
+                <Loan
+                  account={account}
+                  navigate={history.push}
+                  key={account.accountId}
+                />
+              )
             } else {
-              return <Account account={account} navigate={history.push} />
+              return (
+                <Account
+                  account={account}
+                  navigate={history.push}
+                  key={account.accountId}
+                />
+              )
             }
           })}
         </Layout>
