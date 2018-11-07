@@ -1,8 +1,8 @@
 import { Log, UserManager } from "oidc-client"
 
-export default class Auth {
+class Auth {
   constructor(config, debug = false) {
-    console.log("debug is", debug)
+    console.log("creating a new usermanager")
     this.userManager = new UserManager(config)
 
     Log.logger = console
@@ -21,6 +21,10 @@ export default class Auth {
     return this.userManager.signinSilent()
   }
 
+  renewTokenCallback() {
+    return this.userManager.signinSilentCallback()
+  }
+
   logout() {
     return this.userManager.signoutRedirect()
   }
@@ -29,3 +33,5 @@ export default class Auth {
     return this.userManager.createSigninRequest()
   }
 }
+
+export default Auth

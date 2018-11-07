@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "8.8.0",
+  "version": "8.9.0",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -53,6 +53,7 @@
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
+    "react-compound-slider": "^0.16.2",
     "react-jsonschema-form": "^1.0.3",
     "tinycolor2": "^1.4.1",
     "webfontloader": "^1.6.28",

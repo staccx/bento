@@ -159,7 +159,8 @@ const SliderInput = styled.div`
 
   /* Style the thumb */
   > input[type="range"]::-webkit-slider-thumb {
-    ${SliderThumbStyle} margin-top: -3px;
+    ${SliderThumbStyle};
+    margin-top: -3px;
   }
 
   > input[type="range"]::-moz-range-thumb {

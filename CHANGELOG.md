@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.9.0"></a>
+# [8.9.0](https://bitbucket.org/stacc-flow/bento/compare/v8.8.0...v8.9.0) (2018-11-07)
+
+
+### Bug Fixes
+
+* **base:** companyInput now checks https not http ([b71608d](https://bitbucket.org/stacc-flow/bento/commits/b71608d))
+* **developer-portal:** fix variants removed from base ([ded6a2f](https://bitbucket.org/stacc-flow/bento/commits/ded6a2f))
+* **fundu-theme:** fix docs theme ([d867903](https://bitbucket.org/stacc-flow/bento/commits/d867903))
+
+
+### Features
+
+* **base:** add slider2 ([abf0403](https://bitbucket.org/stacc-flow/bento/commits/abf0403))
+* **base:** companyInput is now more similar to regular inputs ([0232e92](https://bitbucket.org/stacc-flow/bento/commits/0232e92))
+* **fundu-theme:** companyInput-styling for fundu ([8fa29a3](https://bitbucket.org/stacc-flow/bento/commits/8fa29a3))
+* **fundu-theme:** larger grid spacing ([182bf94](https://bitbucket.org/stacc-flow/bento/commits/182bf94))
+* **loan-process:** better styling of signing multiple documents ([f3b6a07](https://bitbucket.org/stacc-flow/bento/commits/f3b6a07))
+* **loan-process:** removed unused grid ([00daedc](https://bitbucket.org/stacc-flow/bento/commits/00daedc))
+* **loan-process:** select now similar to input ([46dd766](https://bitbucket.org/stacc-flow/bento/commits/46dd766))
+* **open-id:** export auth service and make it a prop for the provider ([0c806d5](https://bitbucket.org/stacc-flow/bento/commits/0c806d5))
+
+
+
+
+
 <a name="8.8.0"></a>
 # [8.8.0](https://bitbucket.org/stacc-flow/bento/compare/v8.7.0...v8.8.0) (2018-11-06)
 
