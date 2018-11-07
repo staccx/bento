@@ -128,7 +128,11 @@ const t = new Theme(BaseTheme, {
   headerHeight,
   fontFamily,
   spacing,
-  global: reset
+  global: reset,
+  bib: {
+    loan: false,
+    deposit: true
+  }
 })
   .add(Button)
   .add(BoxStyling)
