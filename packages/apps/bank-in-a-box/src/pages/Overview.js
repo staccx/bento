@@ -9,8 +9,8 @@ const Overview = ({ history, accounts, theme }) => {
   console.log(theme)
   return (
     <Wrapper variant="bib">
-      <Layout>
-        <LayoutItem variant="fadeIn" delay="200">
+      <Layout variant="bibPage">
+        <LayoutItem variant="fadeIn" delay="200" area="accounts">
           <Layout>
             {accounts.map(account => {
               if (account.accountType === "LOAN") {
@@ -37,14 +37,17 @@ const Overview = ({ history, accounts, theme }) => {
             })}
           </Layout>
         </LayoutItem>
-        <LayoutItem variant="fadeIn" delay="400">
+        <LayoutItem variant="fadeIn" delay="400" area="menu">
           <ThemeComponent
             tagName={"menu"}
             menuElements={menu}
             history={history}
           />
         </LayoutItem>
-        <LayoutItem variant="fadeIn" delay="600">
+        <LayoutItem variant="fadeIn" delay="600" area="featuredOverview">
+          <ThemeComponent tagName={"featuredOverview"} />
+        </LayoutItem>
+        <LayoutItem variant="fadeIn" delay="600" area="featuredAd">
           <ThemeComponent tagName={"ad"} />
         </LayoutItem>
       </Layout>

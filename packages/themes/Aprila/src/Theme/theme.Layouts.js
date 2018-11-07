@@ -15,9 +15,9 @@ export const LayoutStyling = theming.createVariants(
       grid-auto-flow: column;
     `,
     bibPage: css`
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-      grid-template-areas: "accounts" "menu" "featuredOverview" "featuredAd";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas: "accounts accounts" "menu menu" "featuredOverview featuredAd";
     `
   },
   Layout.themeProps.container

@@ -2,21 +2,36 @@ import { BaseTheme, theming } from "@staccx/base"
 import { lighten, rgba } from "polished"
 import reset from "./reset"
 import Button from "./Theme.Button"
-import { BoxStyling } from "./Theme.Box"
+import Box from "./Theme.Box"
 import { LogoStyle } from "./Theme.Logo"
-import ModalStyle, { ModalBackdropStyle } from "./Theme.Modal"
-import AlertStyle from "./Theme.Alert"
-import NewBadgeStyle from "./Theme.NewBadge"
-import { IconArrowDownStyle } from "./Icons/Icon.ArrowDown"
-import { IconArrowUpStyle } from "./Icons/Icon.ArrowUp"
-import { IconLogoutStyle } from "./Icons/Icon.Logout"
-import { IconProfileStyle } from "./Icons/Icon.Profile"
-import { IconInboxStyle } from "./Icons/Icon.Inbox"
+import { CheckboxCheckedIcon, CheckboxCheckedLabel } from "./Theme.Checkbox"
+import { IconArrowDown } from "./Icons/Icon.ArrowDown"
+import { IconArrowUp } from "./Icons/Icon.ArrowUp"
+import { IconLogout } from "./Icons/Icon.Logout"
+import { IconProfile } from "./Icons/Icon.Profile"
 import { FooterStyle } from "./Footer/Footer"
 import { AdStyle } from "./Ad"
 import { ExpandListButtonStyle } from "../components/Transaction.ExpandButton"
 import ExpandListExpanded from "../components/ExpandListItem.Expanded"
 import { MenuStyle } from "../components/MenuRow"
+import { IconArrowRight } from "./Icons/Icon.ArrowRight"
+import { IconPrices } from "./Icons/Icon.Prices"
+import { IconAccountStatement } from "./Icons/Icon.AccountStatement"
+import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
+import { IconCaretRight } from "./Icons/Icon.CaretRight"
+import { IconInvoice } from "./Icons/Icon.Invoice"
+import { IconDue } from "./Icons/Icon.Due"
+import { IconInsurance } from "./Icons/Icon.Insurance"
+import { IconPdf } from "./Icons/Icon.Pdf"
+import { IconAnnualStatement } from "./Icons/Icon.AnnualStatement"
+import { IconContracts } from "./Icons/Icon.Contracts"
+import { IconDownpayment } from "./Icons/Icon.Downpayment"
+import HeadingStyles from "./Theme.Headings"
+import { TextStyling } from "./Theme.Texts"
+import { IconLoggedOutConfirmation } from "./Icons/Icon.LoggedOutConfirmation"
+import { IllustrationAnnualStatement } from "./Illustrations/Illustration.AnnualStatement"
+import SplitListItem from "./Theme.SplitListItem"
+import { ListStyling } from "./Theme.Lists"
 const { Theme } = theming
 
 const borderRadius = "8px"
@@ -135,21 +150,38 @@ const t = new Theme(BaseTheme, {
   }
 })
   .add(Button)
-  .add(BoxStyling)
-  .add(ModalStyle)
-  .add(AlertStyle)
-  .add(ModalBackdropStyle)
+  .add(Box)
   .add(ExpandListExpanded)
-  .add(NewBadgeStyle)
+  .add(MenuStyle)
   .add(ExpandListButtonStyle)
   .add(FooterStyle)
-  .add(MenuStyle)
-  .add(AdStyle)
   .add(LogoStyle)
-  .add(IconInboxStyle)
-  .add(IconLogoutStyle)
-  .add(IconProfileStyle)
-  .add(IconArrowDownStyle)
-  .add(IconArrowUpStyle)
+  .add(LogoStyle)
+  .add(CheckboxCheckedIcon)
+  .add(CheckboxCheckedLabel)
+  .add(IconArrowDown)
+  .add(IconArrowRight)
+  .add(IconArrowUp)
+  .add(IconLogout)
+  .add(IconPrices)
+  .add(IconProfile)
+  .add(LayoutStyling)
+  .add(LayoutItemStyling)
+  .add(IconCaretRight)
+  .add(IconAccountStatement)
+  .add(IconInvoice)
+  .add(IconDue)
+  .add(IconInsurance)
+  .add(IconPdf)
+  .add(IconAnnualStatement)
+  .add(IconContracts)
+  .add(IconDownpayment)
+  .add(HeadingStyles)
+  .add(TextStyling)
+  .add(IconLoggedOutConfirmation)
+  .add(SplitListItem)
+  .add(IllustrationAnnualStatement)
+  .add(AdStyle)
+  .add(ListStyling)
 
 export default t
