@@ -8,7 +8,11 @@ class OpenIdProvider extends Component {
   constructor(props, context) {
     super(props, context)
 
-    this.authService = new Auth(props.oidcConfig, props.debug)
+    if (props.authService) {
+      this.authService = props.authService
+    } else {
+      this.authService = new Auth(props.oidcConfig, props.debug)
+    }
     this.apiService = new Api(props.apiRoot, this.authService)
     this.state = { user: null, api: {}, iFrameUrl: null }
     this.shouldCancel = false
