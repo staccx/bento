@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.10.0"></a>
+# [8.10.0](https://bitbucket.org/stacc-flow/bento/compare/v8.9.0...v8.10.0) (2018-11-07)
+
+
+### Bug Fixes
+
+* **base:** change srcset to srcSet ([cdd1ee6](https://bitbucket.org/stacc-flow/bento/commits/cdd1ee6))
+
+
+### Features
+
+* **aprila-theme:** started refactoring Aprila for Bank-in-box ([0edf12f](https://bitbucket.org/stacc-flow/bento/commits/0edf12f))
+* **bank-in-a-box:** more TranslatedText all over ([7db3c51](https://bitbucket.org/stacc-flow/bento/commits/7db3c51))
+* **bank-in-a-box:** remove some styled-components + svg ([07af474](https://bitbucket.org/stacc-flow/bento/commits/07af474))
+* **bank-in-a-box:** removed unused code ([eb4d23a](https://bitbucket.org/stacc-flow/bento/commits/eb4d23a))
+* **bank-in-a-box:** start on simple (ugly) feature-toggle ([c30e7a3](https://bitbucket.org/stacc-flow/bento/commits/c30e7a3))
+* **sanity:** add short form SanityComponent ([b29fbce](https://bitbucket.org/stacc-flow/bento/commits/b29fbce))
+* **styrke-theme:** added reset + started refactoring Styrke ([9a7f7ca](https://bitbucket.org/stacc-flow/bento/commits/9a7f7ca))
+* **styrke-theme:** correct font + heading sizes ([5b11d4d](https://bitbucket.org/stacc-flow/bento/commits/5b11d4d))
+
+
+
+
+
 <a name="8.9.0"></a>
 # [8.9.0](https://bitbucket.org/stacc-flow/bento/compare/v8.8.0...v8.9.0) (2018-11-07)
 

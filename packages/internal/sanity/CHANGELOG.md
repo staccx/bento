@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.10.0"></a>
+# [8.10.0](https://bitbucket.org/stacc-flow/bento/compare/v8.9.0...v8.10.0) (2018-11-07)
+
+
+### Features
+
+* **sanity:** add short form SanityComponent ([b29fbce](https://bitbucket.org/stacc-flow/bento/commits/b29fbce))
+
+
+
+
+
 <a name="8.2.0"></a>
 # [8.2.0](https://bitbucket.org/stacc-flow/bento/compare/v8.1.1...v8.2.0) (2018-11-02)
 
