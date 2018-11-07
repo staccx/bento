@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.9.0"></a>
+# [8.9.0](https://bitbucket.org/stacc-flow/bento/compare/v8.8.0...v8.9.0) (2018-11-07)
+
+
+### Features
+
+* **open-id:** export auth service and make it a prop for the provider ([0c806d5](https://bitbucket.org/stacc-flow/bento/commits/0c806d5))
+
+
+
+
+
 <a name="8.7.0"></a>
 # [8.7.0](https://bitbucket.org/stacc-flow/bento/compare/v8.5.0...v8.7.0) (2018-11-05)
 

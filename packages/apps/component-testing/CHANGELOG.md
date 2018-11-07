@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.9.0"></a>
+# [8.9.0](https://bitbucket.org/stacc-flow/bento/compare/v8.8.0...v8.9.0) (2018-11-07)
+
+
+### Features
+
+* **base:** add slider2 ([abf0403](https://bitbucket.org/stacc-flow/bento/commits/abf0403))
+
+
+
+
+
 <a name="8.3.0"></a>
 # [8.3.0](https://bitbucket.org/stacc-flow/bento/compare/v8.2.5...v8.3.0) (2018-11-05)
 

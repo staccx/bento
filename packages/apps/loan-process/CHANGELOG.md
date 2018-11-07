@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.9.0"></a>
+# [8.9.0](https://bitbucket.org/stacc-flow/bento/compare/v8.8.0...v8.9.0) (2018-11-07)
+
+
+### Features
+
+* **loan-process:** better styling of signing multiple documents ([f3b6a07](https://bitbucket.org/stacc-flow/bento/commits/f3b6a07))
+* **loan-process:** removed unused grid ([00daedc](https://bitbucket.org/stacc-flow/bento/commits/00daedc))
+* **loan-process:** select now similar to input ([46dd766](https://bitbucket.org/stacc-flow/bento/commits/46dd766))
+
+
+
+
+
 <a name="8.8.0"></a>
 # [8.8.0](https://bitbucket.org/stacc-flow/bento/compare/v8.7.0...v8.8.0) (2018-11-06)
 
