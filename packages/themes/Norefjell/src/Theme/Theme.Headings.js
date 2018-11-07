@@ -17,6 +17,10 @@ export default theming.createVariants(
       color: ${theming.color.wcag};
       font-weight: normal;
       margin-bottom: ${theming.spacing.medium};
+    `,
+    subHeading: css`
+      color: ${theming.color.primary};
+      font-size: ${theming.font.h3};
     `
   },
   Heading.themeProps.heading
