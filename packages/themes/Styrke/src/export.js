@@ -85,12 +85,13 @@ const font = {
 
 const fontWeight = {
   bold: "700",
+  medium: "500",
   normal: "400"
 }
 
 const webfonts = {
   google: {
-    families: ["IBM Plex Sans:400,700"]
+    families: ["IBM Plex Sans:400,500,700"]
   }
 }
 
