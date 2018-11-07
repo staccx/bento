@@ -3,6 +3,13 @@ import { Input, Select, RadioPill, theming } from "@staccx/base"
 
 export const InputStyling = theming.createVariants(
   {
+    [theming.VARIANT_DEFAULT]: css`
+      border-width: 2px;
+      border-radius: 3px;
+      &:focus {
+        border-color: ${theming.color.primary};
+      }
+    `,
     loanOffer: css`
       border-width: 0;
     `,
@@ -15,7 +22,14 @@ export const InputStyling = theming.createVariants(
   Input.themeProps.input
 )
 
-export const LabelStyling = theming.createVariants(Input.themeProps.label)
+export const LabelStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      font-weight: 500;
+    `
+  },
+  Input.themeProps.label
+)
 
 export const SelectSelectedStyling = theming.createVariants(
   {
