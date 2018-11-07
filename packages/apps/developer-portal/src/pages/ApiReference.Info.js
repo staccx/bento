@@ -14,7 +14,7 @@ const ApiReferenceInfo = ({ info }) => (
           </Layout>
         </div>
         <div>
-          <Layout grid="form" rowGap="large">
+          <Layout variant="form" rowGap="large">
             <div>
               <Heading level={4}>
                 <span>Contact</span>

@@ -18,8 +18,6 @@ import {
   SelectIconButtonStyling,
   SelectOptionsWrapperStyling,
   RadioPillItemStyling,
-  SelectSimpleSelectStyling,
-  SelectSimpleWrapperStyling,
   SliderKeyboardWrapperStyling,
   SliderInputStyling,
   CompanyInputLoadFromStyling,
@@ -29,7 +27,8 @@ import {
   CompanyInputSelectItemStyling,
   SelectOptionStyling,
   SelectSelectedWrapperStyling,
-  PostalCodeInputStyling
+  PostalCodeInputStyling,
+  SelectWrapperStyling
 } from "./theme.Inputs"
 import { LayoutStyling } from "./theme.Layouts"
 import { LayoutItemStyling } from "./theme.LayoutItem"
@@ -52,7 +51,7 @@ const wrapper = {
 }
 
 const spacing = {
-  grid: "7vh",
+  grid: "14vh",
   huge: "96px",
   largePlus: "72px",
   large: "48px",
@@ -138,8 +137,6 @@ export default new theming.Theme({
   .add(LayoutStyling)
   .add(LayoutItemStyling)
   .add(RadioPillItemStyling)
-  .add(SelectSimpleSelectStyling)
-  .add(SelectSimpleWrapperStyling)
   .add(SliderKeyboardWrapperStyling)
   .add(SliderInputStyling)
   .add(CompanyInputLoadFromStyling)
@@ -151,5 +148,6 @@ export default new theming.Theme({
   .add(DividerStyling)
   .add(LogoStyle)
   .add(SelectSelectedWrapperStyling)
+  .add(SelectWrapperStyling)
   .add(PostalCodeInputStyling)
   .add(ImageStyling)

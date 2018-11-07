@@ -181,7 +181,7 @@ class RegisterSigners extends React.Component {
                                     <li>
                                       <Box variant="signerFields">
                                         <Wrapper size="form">
-                                          <Layout grid="form">
+                                          <Layout>
                                             {signer.isUserAdded && (
                                               <LayoutItem>
                                                 <Field

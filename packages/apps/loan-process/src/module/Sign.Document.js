@@ -18,7 +18,7 @@ const SignDocument = ({
     <div>{renderDocumentText(order.documentType)}</div>
     <div>
       {showButton && (
-        <Button as={"a"} href={order.url}>
+        <Button as={"a"} variant={["primary", "small"]} href={order.url}>
           {signText}
         </Button>
       )}

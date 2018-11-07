@@ -14,10 +14,10 @@ export const ListStyling = theming.createVariants(
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: ${theming.spacing.tiny} 0;
+        padding: ${theming.spacing.small} 0;
 
         &:not(:last-child) {
-          border-bottom: 1px solid ${theming.color.line};
+          border-bottom: 1px solid ${theming.color.primary};
         }
       }
     `,

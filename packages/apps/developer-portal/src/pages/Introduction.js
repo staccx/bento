@@ -13,7 +13,7 @@ const SwaggerDocs = () => (
         Get familiar with Fundu and our features.
       </Paragraph>
       <LeftWrapper size="medium">
-        <Layout grid="form" paddingTop="medium">
+        <Layout variant="form" paddingTop="medium">
           <Box variant="documentationShortcut">
             <Heading level={2} variant="documentationShortcutHeading">
               Getting started

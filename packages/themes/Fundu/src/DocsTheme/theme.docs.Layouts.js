@@ -59,6 +59,16 @@ export const LayoutStyling = theming.createVariants(
           margin-bottom: -${theming.spacing.medium};
         }
       }
+    `,
+    form: css`
+      grid-template-areas: initial;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    `,
+    dashboard: css`
+      grid-template-columns: 340px 1fr;
+      grid-gap: 0;
+      min-height: 100vh;
+      grid-template-areas: "aside main";
     `
   },
   Layout.themeProps.container

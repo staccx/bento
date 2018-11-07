@@ -12,6 +12,7 @@ const tileStyle = css`
   -webkit-column-break-inside: avoid;
   break-inside: avoid;
   page-break-inside: avoid;
+  padding: ${theming.spacing.medium};
 `
 
 export const BoxStyling = theming.createVariants(
@@ -27,6 +28,7 @@ export const BoxStyling = theming.createVariants(
     documentationMenu: css`
       position: sticky;
       top: 1px;
+      padding: ${theming.spacing.medium};
     `,
     documentationHeaderSearch: css`
       display: flex;
@@ -40,6 +42,9 @@ export const BoxStyling = theming.createVariants(
     `,
     apiContainer: css`
       padding-top: ${theming.spacing.large};
+    `,
+    devPortalHeader: css`
+      padding: ${theming.spacing.small};
     `
   },
   Box.themeProps.box
