@@ -55,7 +55,18 @@ export const BoxStyling = theming.createVariants(
       width: 100%;
     `,
     subtleBox: subtleBox,
-    signerFields: subtleBox,
+    signerFields: css`
+      background-color: ${theming.color.bgGray};
+      padding: ${theming.spacing.medium} ${theming.spacing.medium};
+      @media (max-width: 450px) {
+        > div {
+          padding-left: ${theming.spacing.medium} !important;
+          padding-right: ${theming.spacing.medium} !important;
+        }
+        margin-left: -${theming.spacing.medium};
+        margin-right: -${theming.spacing.medium};
+      }
+    `,
     halves: css`
       display: grid;
       grid-template-columns: repeat(2, 1fr);
