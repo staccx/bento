@@ -63,7 +63,7 @@ class CompanyInput extends React.PureComponent {
         : () =>
             window
               .fetch(
-                `http://data.brreg.no/enhetsregisteret/enhet.json?page=${0}&size=${5}&$filter=${filter}`
+                `https://data.brreg.no/enhetsregisteret/enhet.json?page=${0}&size=${5}&$filter=${filter}`
               )
               .then(result => result.json())
               .then(json => json.data)
@@ -95,37 +95,32 @@ class CompanyInput extends React.PureComponent {
   }
 
   render() {
-    const {
-      onChange,
-      selectedHeader,
-      mapItem,
-      inputProps,
-      label,
-      ...otherProps
-    } = this.props
+    const { onChange, mapItem, inputProps, label, ...otherProps } = this.props
 
     const { autoComplete, isLoading } = this.state
 
     const renderSelected = (selectedItem, getItemProps, { clearSelection }) => {
       const sel = mapItem(selectedItem)
       return (
-        <ModifiedFlag
-          reverse
-          img={
-            <Close type="button" onClick={clearSelection}>
-              <svg viewBox="0 0 26 26" width="50" height="50">
-                <path
-                  fill="currentColor"
-                  d="M21.7344 19.6406l-2.0977 2.0938c-.3828.3867-1.0078.3867-1.3945 0L13 16.496l-5.2383 5.2383c-.3867.3867-1.0156.3867-1.3984 0l-2.0977-2.0938a.9878.9878 0 0 1 0-1.3984L9.504 13 4.2656 7.7617c-.3828-.3906-.3828-1.0195 0-1.3984l2.0977-2.0977c.3828-.3867 1.0117-.3867 1.3984 0L13 9.5078l5.2422-5.2422c.3867-.3867 1.0156-.3867 1.3945 0l2.0977 2.0938c.3867.3867.3867 1.0156.0039 1.4023L16.496 13l5.2383 5.2422a.9878.9878 0 0 1 0 1.3984z"
-                />
-              </svg>
-            </Close>
-          }
-        >
-          <SelectLabel htmlFor="SelectedName">{selectedHeader}</SelectLabel>
-          <div id="SelectedName">{sel.name}</div>
-          <OrgNo>{sel.orgNo}</OrgNo>
-        </ModifiedFlag>
+        <React.Fragment>
+          <SelectLabel htmlFor="SelectedName">{label}</SelectLabel>
+          <ModifiedFlag
+            reverse
+            img={
+              <Close type="button" onClick={clearSelection}>
+                <svg viewBox="0 0 26 26" width="26" height="26">
+                  <path
+                    fill="currentColor"
+                    d="M21.7344 19.6406l-2.0977 2.0938c-.3828.3867-1.0078.3867-1.3945 0L13 16.496l-5.2383 5.2383c-.3867.3867-1.0156.3867-1.3984 0l-2.0977-2.0938a.9878.9878 0 0 1 0-1.3984L9.504 13 4.2656 7.7617c-.3828-.3906-.3828-1.0195 0-1.3984l2.0977-2.0977c.3828-.3867 1.0117-.3867 1.3984 0L13 9.5078l5.2422-5.2422c.3867-.3867 1.0156-.3867 1.3945 0l2.0977 2.0938c.3867.3867.3867 1.0156.0039 1.4023L16.496 13l5.2383 5.2422a.9878.9878 0 0 1 0 1.3984z"
+                  />
+                </svg>
+              </Close>
+            }
+          >
+            <div id="SelectedName">{sel.name}</div>
+            <OrgNo>{sel.orgNo}</OrgNo>
+          </ModifiedFlag>
+        </React.Fragment>
       )
     }
     const renderInput = getInputProps => (
@@ -334,7 +329,6 @@ CompanyInput.propTypes = {
   selected: PropTypes.object,
   onSearch: PropTypes.func,
   mapItem: PropTypes.func,
-  selectedHeader: PropTypes.string,
   id: PropTypes.string.isRequired
 }
 
@@ -342,8 +336,7 @@ CompanyInput.defaultProps = {
   searchTimeout: 200,
   onSelect: null,
   selected: null,
-  mapItem: defaultMapItem,
-  selectedHeader: "Bedrift"
+  mapItem: defaultMapItem
 }
 
 export default CompanyInput

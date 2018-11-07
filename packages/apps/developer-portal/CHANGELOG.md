@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.9.0"></a>
+# [8.9.0](https://bitbucket.org/stacc-flow/bento/compare/v8.8.0...v8.9.0) (2018-11-07)
+
+
+### Bug Fixes
+
+* **developer-portal:** fix variants removed from base ([ded6a2f](https://bitbucket.org/stacc-flow/bento/commits/ded6a2f))
+
+
+
+
+
 <a name="8.8.0"></a>
 # [8.8.0](https://bitbucket.org/stacc-flow/bento/compare/v8.7.0...v8.8.0) (2018-11-06)
 

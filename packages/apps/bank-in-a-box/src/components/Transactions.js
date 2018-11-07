@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import ShowMore from "@tedconf/react-show-more"
 import { Button, Box } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 import TransactionListItem from "./TransactionList/TransactionList.item"
 import TransactionListExpanded from "./TransactionList/TransactionList.expanded"
 
@@ -13,7 +14,7 @@ class Transactions extends Component {
 
   render() {
     return (
-      <Container variant="dashboardBox">
+      <Box variant="dashboardBox">
         <ShowMore items={this.props.transactions} by={3}>
           {({ current, onMore }) => (
             <React.Fragment>
@@ -48,20 +49,19 @@ class Transactions extends Component {
                     if (onMore) onMore()
                   }}
                 >
-                  Flere transaksjoner
+                  <TranslatedText
+                    i18nKey="LoadMoreTransactionButtonText"
+                    fallback="Flere transaksjoner"
+                  />
                 </Button>
               )}
             </React.Fragment>
           )}
         </ShowMore>
-      </Container>
+      </Box>
     )
   }
 }
-
-const Container = styled(Box)`
-  padding: 0;
-`
 
 const List = styled.ol`
   list-style-type: none;

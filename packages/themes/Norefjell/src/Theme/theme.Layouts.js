@@ -13,6 +13,11 @@ export const LayoutStyling = theming.createVariants(
         "main"
         "footer";
       grid-auto-flow: column;
+    `,
+    bibPage: css`
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "accounts" "menu" "featuredOverview" "featuredAd";
     `
   },
   Layout.themeProps.container

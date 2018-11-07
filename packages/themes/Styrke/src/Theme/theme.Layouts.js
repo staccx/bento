@@ -20,9 +20,29 @@ export const LayoutStyling = theming.createVariants(
       }
     `,
     formElements: css`
-      padding-top: ${theming.spacing.small};
-      padding-bottom: ${theming.spacing.medium};
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: 1fr;
+
+      @media only screen and (min-width: 730px) {
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+      }
+    `,
+    calculator: css`
+      grid-column-gap: ${theming.spacing.large};
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "left right"
+        "button button"
+        "footer footer";
+      grid-auto-flow: column;
+      @media screen and (max-width: 650px) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "left"
+          "right"
+          "button"
+          "footer";
+      }
     `
   },
   Layout.themeProps.container

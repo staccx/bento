@@ -1,5 +1,4 @@
 import { theming } from "@staccx/base"
-import reset from "./Theme/reset"
 import { HeadingStyling } from "./Theme/theme.Headings"
 import { ParagraphStyling } from "./Theme/theme.Paragraphs"
 import { BoxStyling } from "./Theme/theme.Boxes"
@@ -32,11 +31,12 @@ const targetSize = {
 }
 
 const wrapper = {
-  small: "460px",
+  small: "700px",
   medium: "460px",
   large: "720px",
   huge: "1284px",
-  breakout: "640px"
+  breakout: "640px",
+  form: "360px"
 }
 
 const spacing = {
@@ -90,13 +90,13 @@ const fontWeight = {
 
 const webfonts = {
   google: {
-    families: ["Montserrat:700", "Open Sans:400,600"]
+    families: ["IBM Plex Sans:400,700"]
   }
 }
 
 const fontFamily = {
-  heading: "Montserrat",
-  body: "Open Sans"
+  heading: "IBM Plex Sans",
+  body: "IBM Plex Sans"
 }
 
 export default new theming.Theme({
@@ -109,9 +109,9 @@ export default new theming.Theme({
   targetSize,
   borderRadius,
   headerHeight,
-  fontFamily,
-  global: reset
+  fontFamily
 })
+  .add(theming.createGlobal({ cssResets: theming.cssResets }))
   .add(HeadingStyling)
   .add(ParagraphStyling)
   .add(BoxStyling)

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { /* styled, */ ThemeProvider } from "styled-components"
 import { GlobalStyle, WebFonts } from "@staccx/base"
-import { /* ThemeStyrke, */ ThemeFundu } from "./theme.js"
+import { ThemeStyrke /* ThemeFundu */ } from "./theme.js"
 import Sign from "./module/Sign"
 // import Authenticate from "./module/Authenticate"
 // import PresentOffer from "./module/PresentOffer"
@@ -94,10 +94,10 @@ class App extends Component {
     return (
       // <Outer>
       //   <Item>
-      <Content theme={ThemeFundu} />
+      // <Content theme={ThemeFundu} />
       // </Item>
       // <Item>
-      // <Content theme={ThemeStyrke} />
+      <Content theme={ThemeStyrke} />
       // </Item>
       // </Outer>
     )

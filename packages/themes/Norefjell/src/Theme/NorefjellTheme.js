@@ -29,6 +29,7 @@ import { IconDownpayment } from "./Icons/Icon.Downpayment"
 import HeadingStyles from "./Theme.Headings"
 import { TextStyling } from "./Theme.Texts"
 import { IconLoggedOutConfirmation } from "./Icons/Icon.LoggedOutConfirmation"
+import { IllustrationAnnualStatement } from "./Illustrations/Illustration.AnnualStatement"
 import SplitListItem from "./Theme.SplitListItem"
 const { Theme } = theming
 
@@ -131,7 +132,11 @@ export default new Theme(BaseTheme, {
   headerHeight,
   fontFamily,
   spacing,
-  global: reset
+  global: reset,
+  bib: {
+    loan: true,
+    deposit: true
+  }
 })
   .add(Button)
   .add(DashboardBox)
@@ -166,3 +171,4 @@ export default new Theme(BaseTheme, {
   .add(TextStyling)
   .add(IconLoggedOutConfirmation)
   .add(SplitListItem)
+  .add(IllustrationAnnualStatement)

@@ -7,10 +7,9 @@ const Menu = ({ menuElements, history }) => {
     <Container variant="dashboardBox">
       <List>
         {menuElements.map(menuElement => (
-          <li>
+          <li key={menuElement._id}>
             <Button
               variant="bibMenuElement"
-              key={menuElement._id}
               onClick={() =>
                 history.push({
                   pathname: menuElement.path,
