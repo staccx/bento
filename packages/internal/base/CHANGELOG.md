@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.11.0"></a>
+# [8.11.0](https://bitbucket.org/stacc-flow/bento/compare/v8.10.0...v8.11.0) (2018-11-08)
+
+
+### Bug Fixes
+
+* **base:** add dep to immutable ([f0ee050](https://bitbucket.org/stacc-flow/bento/commits/f0ee050))
+
+
+
+
+
 <a name="8.10.0"></a>
 # [8.10.0](https://bitbucket.org/stacc-flow/bento/compare/v8.9.0...v8.10.0) (2018-11-07)
 
