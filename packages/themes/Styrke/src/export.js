@@ -10,6 +10,7 @@ import {
   ExpandListItemStyling
 } from "./Theme/theme.Lists"
 import { TextStyling } from "./Theme/theme.Texts"
+import { WrapperStyling } from "./Theme/theme.Wrappers"
 import { ButtonStyling } from "./Theme/theme.Buttons"
 import {
   InputStyling,
@@ -85,12 +86,13 @@ const font = {
 
 const fontWeight = {
   bold: "700",
+  medium: "500",
   normal: "400"
 }
 
 const webfonts = {
   google: {
-    families: ["IBM Plex Sans:400,700"]
+    families: ["IBM Plex Sans:400,500,700"]
   }
 }
 
@@ -118,6 +120,7 @@ export default new theming.Theme({
   .add(AlertStyling)
   .add(ListStyling)
   .add(TextStyling)
+  .add(WrapperStyling)
   .add(ButtonStyling)
   .add(SplitListItemStyling)
   .add(InputStyling)

@@ -98,7 +98,7 @@ class RegisterSigners extends React.Component {
 
     return (
       <React.Fragment>
-        <Wrapper size="medium">
+        <Wrapper size="medium" variant="mediumForm">
           <Layout rowGap="small" paddingBottom="large">
             <Heading variant="stepHeading" level={1}>
               {this.props.headingText}
@@ -111,7 +111,7 @@ class RegisterSigners extends React.Component {
             </Box>
           </Layout>
         </Wrapper>
-        <Wrapper size="small">
+        <Wrapper size="small" variant="mediumForm">
           <Formik
             initialValues={{
               signers: this.state.signers

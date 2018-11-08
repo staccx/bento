@@ -102,7 +102,7 @@ class PresentOffer extends React.Component {
     const { term, plan } = this.state
     return (
       <div>
-        <Wrapper size="large">
+        <Wrapper size="large" variant="formForm">
           <Layout rowGap="small">
             <Heading variant="stepHeading">{this.props.headingText}</Heading>
 
