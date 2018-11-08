@@ -12,6 +12,7 @@ import {
 import { TextStyling } from "./Theme/theme.Texts"
 import { WrapperStyling } from "./Theme/theme.Wrappers"
 import { ItemGroupStyling } from "./Theme/theme.ItemGroups"
+import { RadioPillItemStyling } from "./Theme/theme.RadioPillItems"
 import { ButtonStyling } from "./Theme/theme.Buttons"
 import {
   InputStyling,
@@ -123,6 +124,7 @@ export default new theming.Theme({
   .add(TextStyling)
   .add(WrapperStyling)
   .add(ItemGroupStyling)
+  .add(RadioPillItemStyling)
   .add(ButtonStyling)
   .add(SplitListItemStyling)
   .add(InputStyling)
