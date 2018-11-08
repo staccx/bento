@@ -66,7 +66,7 @@ const color = {
   yellow: "#FFF8BB",
   line: "#d8d8d8",
   wcag: "#777",
-  disabled: "#BABABA",
+  disabled: "#a0a0a0",
   warning: "#E06666",
   black: "#000",
   subtleHover: "#fff"
