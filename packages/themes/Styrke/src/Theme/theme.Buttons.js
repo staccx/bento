@@ -14,7 +14,6 @@ export const ButtonStyling = theming.createVariants(
       &[disabled] {
         background-color: #a0a0a0;
         cursor: default;
-        /* border-bottom: 2px solid transparent; */
       }
     `,
     secondary: css`
@@ -33,16 +32,15 @@ export const ButtonStyling = theming.createVariants(
 
     decline: css`
       background-color: transparent;
-      border-radius: 0;
-      border-bottom: 2px solid ${theming.color("primaryDark")};
-      color: ${theming.color.text};
+      border: 2px solid ${theming.color("primary")};
+      color: ${theming.color.primary};
 
       &:hover,
       &:active,
       &:focus {
-        color: ${theming.color.text};
+        border-color: ${theming.color("primaryDark")};
+        color: ${theming.color("primaryDark")};
         background-color: transparent;
-        border-color: ${theming.color.warning};
       }
     `,
     deleteSigner: css`
@@ -78,19 +76,18 @@ export const ButtonStyling = theming.createVariants(
         bottom: 1px;
       `};
     `,
-    addSigner: css`
+    add: css`
       background-color: transparent;
       color: ${theming.color.primary};
       min-height: ${theming.targetSize.small};
-      padding: 3px ${theming.spacing.small};
-      border: 1px solid transparent;
-
-      &:focus,
-      &:active,
-      &:hover {
-        border: 1px solid ${theming.color.primary};
+      padding: 0 ${theming.spacing.small};
+      border: 2px solid;
+      :active,
+      :hover,
+      :focus {
+        border-color: ${theming.color("primaryDark")};
+        color: ${theming.color("primaryDark")};
         background-color: transparent;
-        color: ${theming.color.primary};
       }
     `
   },

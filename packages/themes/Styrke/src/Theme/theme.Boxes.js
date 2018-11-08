@@ -56,8 +56,8 @@ export const BoxStyling = theming.createVariants(
     `,
     subtleBox: subtleBox,
     signerFields: css`
-      background-color: ${theming.color.bgGray};
-      padding: ${theming.spacing.medium} ${theming.spacing.medium};
+      background-color: transparent;
+      padding: 0;
       border-radius: 5px;
       @media (max-width: 450px) {
         > div {
@@ -89,7 +89,7 @@ export const BoxStyling = theming.createVariants(
       padding: 0;
     `,
     addSignerBtn: css`
-      padding-top: ${theming.spacing.small};
+      padding-top: ${theming.spacing.medium};
       padding-left: 0;
     `,
     pickAmounts: css`

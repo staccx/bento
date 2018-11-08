@@ -1,6 +1,8 @@
 import React from "react"
+import styled from "styled-components"
 import PropTypes from "prop-types"
 import {
+  theming,
   Button,
   Heading,
   ItemGroup,
@@ -108,7 +110,9 @@ class PresentOffer extends React.Component {
 
             <Paragraph variant="lead">
               {this.props.maxLoanAmountText}{" "}
-              <strong> {formatCurrency(this.props.maxAmount || 0)}</strong>
+              <NoWrap>
+                <strong> {formatCurrency(this.props.maxAmount || 0)}</strong>
+              </NoWrap>
             </Paragraph>
           </Layout>
         </Wrapper>
@@ -241,7 +245,7 @@ class PresentOffer extends React.Component {
               </LayoutItem>
             )}
 
-            <ItemGroup>
+            <ItemGroup variant="overflow">
               {this.props.isLoading ? (
                 <Loading variant={"buttonLoading"} />
               ) : (
@@ -253,7 +257,7 @@ class PresentOffer extends React.Component {
                     {this.props.acceptOfferButtonText}
                   </Button>
                   <Button
-                    variant="decline"
+                    variant={[theming.VARIANT_DEFAULT, "decline"]}
                     onClick={() => this.respondToOffer(false)}
                   >
                     {this.props.rejectOfferButtonText}
@@ -267,6 +271,10 @@ class PresentOffer extends React.Component {
     )
   }
 }
+
+const NoWrap = styled.span`
+  white-space: nowrap;
+`
 
 PresentOffer.propTypes = {
   acceptOfferButtonText: PropTypes.string,

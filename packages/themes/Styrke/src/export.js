@@ -11,6 +11,7 @@ import {
 } from "./Theme/theme.Lists"
 import { TextStyling } from "./Theme/theme.Texts"
 import { WrapperStyling } from "./Theme/theme.Wrappers"
+import { ItemGroupStyling } from "./Theme/theme.ItemGroups"
 import { ButtonStyling } from "./Theme/theme.Buttons"
 import {
   InputStyling,
@@ -58,7 +59,7 @@ const color = {
   primary: "#3c61e7",
   secondary: "#3c61e7",
   primaryDark: "#1a40c5",
-  gray: "#646464",
+  gray: "#626271",
   text: "#333",
   white: "#fff",
   red: "#E06666",
@@ -121,6 +122,7 @@ export default new theming.Theme({
   .add(ListStyling)
   .add(TextStyling)
   .add(WrapperStyling)
+  .add(ItemGroupStyling)
   .add(ButtonStyling)
   .add(SplitListItemStyling)
   .add(InputStyling)

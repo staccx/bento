@@ -36,7 +36,7 @@ const Form = props => {
       <Box variant="illustration">
         {renderIllustration && renderIllustration()}
       </Box>
-      <Wrapper size="medium">
+      <Wrapper size="medium" variant="formForm">
         <Heading variant="stepHeading">{props.headingText}</Heading>
         <Paragraph variant="lead">{props.loanTypeText}</Paragraph>
       </Wrapper>

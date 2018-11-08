@@ -69,7 +69,7 @@ class ProvideAdditionalInfo extends React.Component {
         }) => {
           return (
             <form onSubmit={handleSubmit}>
-              <Wrapper size="large" variant="form">
+              <Wrapper size="large" variant="formForm">
                 <Layout rowGap="small" paddingBottom="medium">
                   <Heading variant="stepHeading">
                     {this.props.headingText}
