@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.13.1"></a>
+## [8.13.1](https://bitbucket.org/stacc-flow/bento/compare/v8.13.0...v8.13.1) (2018-11-09)
+
+
+### Bug Fixes
+
+* **developer-portal:** fix lifecycle was async ([1860316](https://bitbucket.org/stacc-flow/bento/commits/1860316))
+
+
+
+
+
 <a name="8.13.0"></a>
 # [8.13.0](https://bitbucket.org/stacc-flow/bento/compare/v8.12.0...v8.13.0) (2018-11-09)
 
