@@ -13,14 +13,14 @@ import { TextStyling } from "./Theme/theme.Texts"
 import { WrapperStyling } from "./Theme/theme.Wrappers"
 import { ItemGroupStyling } from "./Theme/theme.ItemGroups"
 import { RadioPillItemStyling } from "./Theme/theme.RadioPillItems"
+import { SelectStyling } from "./Theme/theme.Selects"
 import { ButtonStyling } from "./Theme/theme.Buttons"
 import {
   InputStyling,
   LabelStyling,
   SelectSelectedStyling,
   SelectIconButtonStyling,
-  SelectOptionsWrapperStyling,
-  RadioPillStyling
+  SelectOptionsWrapperStyling
 } from "./Theme/theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./Theme/theme.Layouts"
 import { ExpandStyling } from "./Theme/theme.Expand"
@@ -125,6 +125,7 @@ export default new theming.Theme({
   .add(WrapperStyling)
   .add(ItemGroupStyling)
   .add(RadioPillItemStyling)
+  .add(SelectStyling)
   .add(ButtonStyling)
   .add(SplitListItemStyling)
   .add(InputStyling)
@@ -135,6 +136,5 @@ export default new theming.Theme({
   .add(SelectOptionsWrapperStyling)
   .add(LayoutStyling)
   .add(LayoutItemStyling)
-  .add(RadioPillStyling)
   .add(ExpandStyling)
   .add(DividerStyling)
