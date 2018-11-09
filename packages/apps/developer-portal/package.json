@@ -42,7 +42,6 @@
     "react-router-hash-link": "^1.2.0"
   },
   "devDependencies": {
-    "@staccx/login-oidc": "^7.13.1",
     "@staccx/rollup-config": "^8.2.0",
     "prettier": "^1.14.2",
     "react-app-rewire-mobx": "^1.0.8",
