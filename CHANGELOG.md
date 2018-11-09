@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.13.0"></a>
+# [8.13.0](https://bitbucket.org/stacc-flow/bento/compare/v8.12.0...v8.13.0) (2018-11-09)
+
+
+### Features
+
+* **developer-portal:** change how module is exported ([89926f1](https://bitbucket.org/stacc-flow/bento/commits/89926f1))
+* **loan-process:** add fileinput to step ([558a7c8](https://bitbucket.org/stacc-flow/bento/commits/558a7c8))
+* **open-id:** change LoginPassword to work as before ([8086c0d](https://bitbucket.org/stacc-flow/bento/commits/8086c0d))
+* **styrke-theme:** add new radio-pill styling ([580177d](https://bitbucket.org/stacc-flow/bento/commits/580177d))
+* **styrke-theme:** button adjustments ([412266f](https://bitbucket.org/stacc-flow/bento/commits/412266f))
+* **styrke-theme:** more loan process styling ([c1fb2c1](https://bitbucket.org/stacc-flow/bento/commits/c1fb2c1))
+* **styrke-theme:** select styling + remove redundant ([bd13885](https://bitbucket.org/stacc-flow/bento/commits/bd13885))
+* **styrke-theme:** styling loan-process WIP ([e867003](https://bitbucket.org/stacc-flow/bento/commits/e867003))
+
+
+
+
+
 <a name="8.12.0"></a>
 # [8.12.0](https://bitbucket.org/stacc-flow/bento/compare/v8.11.0...v8.12.0) (2018-11-08)
 

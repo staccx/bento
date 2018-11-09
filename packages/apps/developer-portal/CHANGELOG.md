@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.13.0"></a>
+# [8.13.0](https://bitbucket.org/stacc-flow/bento/compare/v8.12.0...v8.13.0) (2018-11-09)
+
+
+### Features
+
+* **developer-portal:** change how module is exported ([89926f1](https://bitbucket.org/stacc-flow/bento/commits/89926f1))
+
+
+
+
+
 <a name="8.11.0"></a>
 # [8.11.0](https://bitbucket.org/stacc-flow/bento/compare/v8.10.0...v8.11.0) (2018-11-08)
 

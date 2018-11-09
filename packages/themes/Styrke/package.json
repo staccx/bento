@@ -1,6 +1,6 @@
 {
   "name": "@staccx/styrke-theme",
-  "version": "8.11.0",
+  "version": "8.13.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",

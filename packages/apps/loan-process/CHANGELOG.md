@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.13.0"></a>
+# [8.13.0](https://bitbucket.org/stacc-flow/bento/compare/v8.12.0...v8.13.0) (2018-11-09)
+
+
+### Features
+
+* **loan-process:** add fileinput to step ([558a7c8](https://bitbucket.org/stacc-flow/bento/commits/558a7c8))
+* **styrke-theme:** more loan process styling ([c1fb2c1](https://bitbucket.org/stacc-flow/bento/commits/c1fb2c1))
+* **styrke-theme:** styling loan-process WIP ([e867003](https://bitbucket.org/stacc-flow/bento/commits/e867003))
+
+
+
+
+
 <a name="8.12.0"></a>
 # [8.12.0](https://bitbucket.org/stacc-flow/bento/compare/v8.11.0...v8.12.0) (2018-11-08)
 
