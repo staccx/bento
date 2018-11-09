@@ -10,17 +10,21 @@ import {
   Wrapper,
   Heading,
   Loading,
-  Paragraph
+  Paragraph,
+  FileInput
 } from "@staccx/base"
 import { removeWhitespace } from "@staccx/formatting"
 
 const Yup = require("yup")
+
+// const FILE_SIZE = 40960000
 
 class ProvideAdditionalInfo extends React.Component {
   constructor(props, context) {
     super(props, context)
 
     this.state = {
+      file: null,
       siNetIncome: this.props.siNetIncome,
       siTotalOperatingRevenue: this.props.siTotalOperatingRevenue,
       asInventories: this.props.asInventories,
@@ -35,6 +39,11 @@ class ProvideAdditionalInfo extends React.Component {
 
   componentWillMount() {
     const validateSchema = Yup.object().shape({
+      // file: Yup.mixed().test(
+      //   "fileSize",
+      //   "File Size is too large",
+      //   value => value.size <= FILE_SIZE
+      // ),
       siNetIncome: Yup.number().required(),
       siTotalOperatingRevenue: Yup.number().required(),
       asInventories: Yup.number().required(),
@@ -50,7 +59,7 @@ class ProvideAdditionalInfo extends React.Component {
     })
   }
   render() {
-    const { validateSchema, ...initialValues } = this.state
+    const { validateSchema, file, ...initialValues } = this.state
     const keys = Object.keys(initialValues)
     return (
       <Formik
@@ -79,6 +88,30 @@ class ProvideAdditionalInfo extends React.Component {
               </Wrapper>
               <Wrapper size="form">
                 <Layout paddingBottom="medium" variant="formElements">
+                  <LayoutItem key={"file"}>
+                    <Field
+                      name={"file"}
+                      render={({ onChange, value, ...field }) => (
+                        <FileInput
+                          group="signer"
+                          id="idjadsj"
+                          accept={"image/png"}
+                          onChange={e => {
+                            const file = e.target.files[0] || null
+                            setFieldValue("file", file)
+                          }}
+                          {...field}
+                        >
+                          Finansiell info opplasting
+                        </FileInput>
+                      )}
+                    />
+                    {errors.file && (
+                      <Alert variant="error" type="warning">
+                        {errors.file}
+                      </Alert>
+                    )}
+                  </LayoutItem>
                   {keys.map(key => (
                     <LayoutItem key={"additional" + key}>
                       <Field
