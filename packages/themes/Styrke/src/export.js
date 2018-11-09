@@ -69,7 +69,7 @@ const color = {
   wcag: "#777",
   disabled: "#a0a0a0",
   warning: "#E06666",
-  black: "#000",
+  black: "#333",
   subtleHover: "#fff"
 }
 

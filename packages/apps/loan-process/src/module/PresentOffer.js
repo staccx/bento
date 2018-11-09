@@ -220,7 +220,9 @@ class PresentOffer extends React.Component {
               <LayoutItem>
                 <Layout>
                   <div>
-                    <h4>{this.props.companyHeadingPrefixText}</h4>
+                    <Heading level={4} variant="company">
+                      {this.props.companyHeadingPrefixText}
+                    </Heading>
                     <List variant="offerInfoList">
                       <li>{this.props.company.name}</li>
                       <li>
