@@ -26,3 +26,6 @@ coverage
 
 # vCards :)
 vCards
+
+.yalc/
+yalc.lock
