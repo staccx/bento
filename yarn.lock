@@ -2052,15 +2052,6 @@
     accounting "^0.4.1"
     date-fns "^v2.0.0-alpha.16"
 
-"@staccx/login-oidc@^7.13.1":
-  version "7.13.1"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/login-oidc/-/@staccx/login-oidc-7.13.1.tgz#80ab40bb633591b330195419764857407c0983bf"
-  dependencies:
-    axios "^0.18.0"
-    oidc-client "^1.5.2"
-    qs "^6.5.1"
-    react "^16.3.2"
-
 "@staccx/math@^7.13.1":
   version "7.13.1"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/math/-/@staccx/math-7.13.1.tgz#e9eff38facfaea09085121ef9e773f663b84d74e"

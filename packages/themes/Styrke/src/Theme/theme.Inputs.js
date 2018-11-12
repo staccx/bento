@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { Input, Select, RadioPill, theming } from "@staccx/base"
+import { Input, Select, theming } from "@staccx/base"
 
 export const InputStyling = theming.createVariants(
   {
@@ -79,15 +79,4 @@ export const SelectOptionsWrapperStyling = theming.createVariants(
     `
   },
   Select.themeProps.defaultOptionWrapper
-)
-
-export const RadioPillStyling = theming.createVariants(
-  {
-    numberOfChildren: css`
-      padding-top: ${theming.spacing.mediumPlus};
-      padding-left: ${theming.spacing.medium};
-      padding-right: ${theming.spacing.medium};
-    `
-  },
-  RadioPill.themeProps.container
 )
