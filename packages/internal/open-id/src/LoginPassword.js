@@ -1,5 +1,5 @@
 import React from "react"
-import { challengeIdentity } from "./utils"
+import { challengeIdentity, signInRedirectCallback } from "./utils"
 import axios from "axios"
 import qs from "qs"
 
@@ -16,18 +16,18 @@ class LoginPassword extends React.Component {
     })
 
     if (hashParams["#id_token"]) {
-      window.sessionStorage.setItem("stacc_id_token", hashParams["#id_token"])
-      window.sessionStorage.setItem(
-        "stacc_access_token",
-        hashParams["access_token"]
-      )
-      window.location.replace(props.config.redirectAfterLogin)
+      signInRedirectCallback()
+        .then(user => {
+          console.log(user)
+          window.location.replace(props.redirectAfterLogin)
+        })
+        .catch(console.error)
     }
 
     if (!searchParams.state) {
       const oidcConfig = {
-        ...props.config.oidcConfig,
-        acr_values: `idp:${props.config.acrValue}`
+        ...props.oidcConfig,
+        acr_values: `idp:${props.acrValue}`
       }
 
       challengeIdentity(oidcConfig)
@@ -55,21 +55,21 @@ class LoginPassword extends React.Component {
     this.setState({ username, loginStatus: null })
   }
 
-  submitCredentials() {
-    const { username, password } = this.state
+  submitCredentials(user, pass) {
+    const { username = user, password = pass } = this.state
     const state = this.state.stateToken
-    const authority = this.props.config.oidcConfig.authority
+    const authority = this.props.oidcConfig.authority
     const postData = {
       username,
       password,
       state
     }
     axios
-      .post(this.props.config.codePostUri, postData)
+      .post(this.props.codePostUri, postData)
       .then(response => {
         console.log(response)
         window.location.replace(
-          `${authority}${this.props.config.callbackPath}?${qs.stringify({
+          `${authority}${this.props.callbackPath}?${qs.stringify({
             state
           })}`
         )

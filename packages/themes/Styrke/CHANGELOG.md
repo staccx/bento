@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.13.0"></a>
+# [8.13.0](https://bitbucket.org/stacc-flow/bento/compare/v8.12.0...v8.13.0) (2018-11-09)
+
+
+### Features
+
+* **styrke-theme:** add new radio-pill styling ([580177d](https://bitbucket.org/stacc-flow/bento/commits/580177d))
+* **styrke-theme:** button adjustments ([412266f](https://bitbucket.org/stacc-flow/bento/commits/412266f))
+* **styrke-theme:** more loan process styling ([c1fb2c1](https://bitbucket.org/stacc-flow/bento/commits/c1fb2c1))
+* **styrke-theme:** select styling + remove redundant ([bd13885](https://bitbucket.org/stacc-flow/bento/commits/bd13885))
+* **styrke-theme:** styling loan-process WIP ([e867003](https://bitbucket.org/stacc-flow/bento/commits/e867003))
+
+
+
+
+
 <a name="8.11.0"></a>
 # [8.11.0](https://bitbucket.org/stacc-flow/bento/compare/v8.10.0...v8.11.0) (2018-11-08)
 

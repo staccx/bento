@@ -11,14 +11,16 @@ import {
 } from "./Theme/theme.Lists"
 import { TextStyling } from "./Theme/theme.Texts"
 import { WrapperStyling } from "./Theme/theme.Wrappers"
+import { ItemGroupStyling } from "./Theme/theme.ItemGroups"
+import { RadioPillItemStyling } from "./Theme/theme.RadioPillItems"
+import { SelectStyling } from "./Theme/theme.Selects"
 import { ButtonStyling } from "./Theme/theme.Buttons"
 import {
   InputStyling,
   LabelStyling,
   SelectSelectedStyling,
   SelectIconButtonStyling,
-  SelectOptionsWrapperStyling,
-  RadioPillStyling
+  SelectOptionsWrapperStyling
 } from "./Theme/theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./Theme/theme.Layouts"
 import { ExpandStyling } from "./Theme/theme.Expand"
@@ -58,16 +60,16 @@ const color = {
   primary: "#3c61e7",
   secondary: "#3c61e7",
   primaryDark: "#1a40c5",
-  gray: "#646464",
+  gray: "#626271",
   text: "#333",
   white: "#fff",
   red: "#E06666",
   yellow: "#FFF8BB",
   line: "#d8d8d8",
   wcag: "#777",
-  disabled: "#BABABA",
+  disabled: "#a0a0a0",
   warning: "#E06666",
-  black: "#000",
+  black: "#333",
   subtleHover: "#fff"
 }
 
@@ -121,6 +123,9 @@ export default new theming.Theme({
   .add(ListStyling)
   .add(TextStyling)
   .add(WrapperStyling)
+  .add(ItemGroupStyling)
+  .add(RadioPillItemStyling)
+  .add(SelectStyling)
   .add(ButtonStyling)
   .add(SplitListItemStyling)
   .add(InputStyling)
@@ -131,6 +136,5 @@ export default new theming.Theme({
   .add(SelectOptionsWrapperStyling)
   .add(LayoutStyling)
   .add(LayoutItemStyling)
-  .add(RadioPillStyling)
   .add(ExpandStyling)
   .add(DividerStyling)

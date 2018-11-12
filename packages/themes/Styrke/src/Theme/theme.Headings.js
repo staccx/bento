@@ -24,6 +24,10 @@ export const HeadingStyling = theming.createVariants(
       font-weight: 300;
       margin-bottom: ${theming.spacing.tiny};
       color: ${theming.color.primary};
+    `,
+    company: css`
+      font-size: ${theming.font.input};
+      color: ${theming.color.primary};
     `
   },
   Heading.themeProps.heading

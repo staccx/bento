@@ -149,8 +149,10 @@ class CompanyInfo extends React.Component {
                             <Select
                               items={this.props.paymentCash}
                               label={this.props.paymentCashLabel}
-                              placeHolderLabel={"Velg…"}
-                              name={name}
+                              placeHolderLabel={
+                                this.props.paymentCashPlaceholder
+                              }
+                              {...this.props.paymentSelectProps}
                               value={value}
                               onChange={item =>
                                 setFieldValue(
@@ -158,7 +160,7 @@ class CompanyInfo extends React.Component {
                                   this.props.mapRepaymentPeriod(item)
                                 )
                               }
-                              onBlur={onBlur}
+                              // onBlur={onBlur}
                               {...props}
                             />
                           )
@@ -186,7 +188,10 @@ class CompanyInfo extends React.Component {
                             <Select
                               items={this.props.paymentsInternationals}
                               label={this.props.paymentsInternationalsLabel}
-                              placeHolderLabel={"Velg…"}
+                              placeHolderLabel={
+                                this.props.paymentsInternationalPlaceholder
+                              }
+                              {...this.props.paymentsInternationalSelectProps}
                               name={name}
                               value={value}
                               onChange={item =>
@@ -195,7 +200,7 @@ class CompanyInfo extends React.Component {
                                   this.props.mapPaymentsInternational(item)
                                 )
                               }
-                              onBlur={onBlur}
+                              // onBlur={onBlur}
                               {...props}
                             />
                           )
@@ -259,10 +264,12 @@ CompanyInfo.propTypes = {
   headingText: PropTypes.string,
   interestRate: PropTypes.number,
   interestRateText: PropTypes.string,
+  isLoading: PropTypes.any,
   loanAmount: PropTypes.number,
   loanDurationLabel: PropTypes.string,
   loanPurposes: PropTypes.array,
   mapCompany: PropTypes.func,
+  mapPaymentsInternational: PropTypes.any,
   mapPurpose: PropTypes.func,
   mapRepaymentPeriod: PropTypes.any,
   maxValue: PropTypes.number,
@@ -272,12 +279,20 @@ CompanyInfo.propTypes = {
   namePlaceholder: PropTypes.string,
   onClick: PropTypes.func,
   onValidated: PropTypes.func.isRequired,
+  paymentCash: PropTypes.array,
+  paymentCashLabel: PropTypes.string,
+  paymentCashPlaceholder: PropTypes.string,
+  paymentSelectProps: PropTypes.func,
+  paymentsInternational: PropTypes.string,
+  paymentsInternationalPlaceholder: PropTypes.string,
+  paymentsInternationalSelectProps: PropTypes.func,
+  paymentsInternationals: PropTypes.array,
+  paymentsInternationalsLabel: PropTypes.string,
   priceExampleText: PropTypes.string,
   productType: PropTypes.string,
   purposeLabel: PropTypes.string,
   purposePlaceholder: PropTypes.string,
   purposeSelectProps: PropTypes.object,
-  paymentCash: PropTypes.array,
   resolveButtonText: PropTypes.func,
   revenueLabel: PropTypes.string,
   revenuePlaceholder: PropTypes.string,
@@ -289,10 +304,7 @@ CompanyInfo.propTypes = {
   termFee: PropTypes.number,
   termValues: PropTypes.array,
   totalMonthlyText: PropTypes.string,
-  valueLabel: PropTypes.string,
-  paymentCashLabel: PropTypes.string,
-  mapPaymentsInternational: PropTypes.any,
-  paymentsInternational: PropTypes.string
+  valueLabel: PropTypes.string
 }
 
 CompanyInfo.defaultProps = {
@@ -302,16 +314,20 @@ CompanyInfo.defaultProps = {
   downPaymentPerMonthText: "Nedbetaling månedlig",
   loanDurationLabel: "Nedbetalingstid",
   loanPurposes: ["party", "hoverboard"],
+  mapPaymentsInternational: mapPaymentsInternational,
   mapPurpose: mapPurpose,
   mapRepaymentPeriod: mapRepaymentPeriod,
   monthlyFeesText: "Månedlige gebyr",
   onClick: () => null,
-  purposeLabel: "Hva skal lånet brukes til?",
-  purposePlaceholder: "Velg...",
-  purposeSelectProps: {},
   paymentCash: ["Ingen", "Lite", "Halvparten", "Alt", "Vet ikke"],
   paymentCashLabel: "Hvor mye kontantbetaling mottar dere?",
-  mapPaymentsInternational: mapPaymentsInternational,
+  paymentCashPlaceholder: "Velg...",
+  paymentSelectProps: item => item,
+  paymentsInternationalPlaceholder: "Velg...",
+  paymentsInternationalSelectProps: item => item,
   paymentsInternationals: ["Norge", "Skandinavia", "Europa", "Hele verden"],
-  paymentsInternationalsLabel: "Hvor kommer betalingene deres fra?"
+  paymentsInternationalsLabel: "Hvor kommer betalingene deres fra?",
+  purposeLabel: "Hva skal lånet brukes til?",
+  purposePlaceholder: "Velg...",
+  purposeSelectProps: {}
 }

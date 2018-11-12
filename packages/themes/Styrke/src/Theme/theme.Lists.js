@@ -4,6 +4,7 @@ import { List, SplitListItem, ExpandListItem, theming } from "@staccx/base"
 export const ListStyling = theming.createVariants(
   {
     offerInfoList: css`
+      font-size: ${theming.font.input};
       margin-top: ${theming.spacing.tiny};
       li {
         padding: 3px 0;

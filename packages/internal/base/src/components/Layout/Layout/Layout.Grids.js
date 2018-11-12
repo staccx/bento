@@ -43,10 +43,7 @@ export default {
     grid-template-columns: 1fr;
 
     @media only screen and (min-width: 730px) {
-      grid-template-areas:
-        "header  main"
-        "body aside"
-        "footer footer";
+      grid-template-areas: initial;
       grid-template-columns: 1fr 1fr;
     }
   `,

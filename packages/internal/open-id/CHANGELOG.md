@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.13.0"></a>
+# [8.13.0](https://bitbucket.org/stacc-flow/bento/compare/v8.12.0...v8.13.0) (2018-11-09)
+
+
+### Features
+
+* **open-id:** change LoginPassword to work as before ([8086c0d](https://bitbucket.org/stacc-flow/bento/commits/8086c0d))
+
+
+
+
+
 <a name="8.10.0"></a>
 # [8.10.0](https://bitbucket.org/stacc-flow/bento/compare/v8.9.0...v8.10.0) (2018-11-07)
 

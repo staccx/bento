@@ -6,15 +6,17 @@ export const ButtonStyling = theming.createVariants(
     [theming.VARIANT_DEFAULT]: css`
       /* border-bottom: 2px solid ${theming.color("black")}; */
       font-size: ${theming.font.input};
+      padding: 4px ${theming.spacing.medium};
+      border: 2px solid ${theming.color.primary};
       :focus {
         box-shadow: 0 0 0 8px ${theming.color("primaryDark")}20;
         transition: box-shadow 200ms cubic-bezier(0, 0.28, 0.54, 0.99),
           border-bottom 2000ms ease;
       }
       &[disabled] {
-        background-color: #a0a0a0;
+        background-color: ${theming.color.disabled};
+        border-color: ${theming.color.disabled};
         cursor: default;
-        /* border-bottom: 2px solid transparent; */
       }
     `,
     secondary: css`
@@ -33,16 +35,15 @@ export const ButtonStyling = theming.createVariants(
 
     decline: css`
       background-color: transparent;
-      border-radius: 0;
-      border-bottom: 2px solid ${theming.color("primaryDark")};
-      color: ${theming.color.text};
+      border: 2px solid ${theming.color("primary")};
+      color: ${theming.color.primary};
 
       &:hover,
       &:active,
       &:focus {
-        color: ${theming.color.text};
+        border-color: ${theming.color("primaryDark")};
+        color: ${theming.color("primaryDark")};
         background-color: transparent;
-        border-color: ${theming.color.warning};
       }
     `,
     deleteSigner: css`
@@ -78,19 +79,18 @@ export const ButtonStyling = theming.createVariants(
         bottom: 1px;
       `};
     `,
-    addSigner: css`
+    add: css`
       background-color: transparent;
       color: ${theming.color.primary};
       min-height: ${theming.targetSize.small};
-      padding: 3px ${theming.spacing.small};
-      border: 1px solid transparent;
-
-      &:focus,
-      &:active,
-      &:hover {
-        border: 1px solid ${theming.color.primary};
+      padding: 0 ${theming.spacing.small};
+      border: 2px solid;
+      :active,
+      :hover,
+      :focus {
+        border-color: ${theming.color("primaryDark")};
+        color: ${theming.color("primaryDark")};
         background-color: transparent;
-        color: ${theming.color.primary};
       }
     `
   },

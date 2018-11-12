@@ -295,7 +295,7 @@ class RegisterSigners extends React.Component {
                                   isUserAdded: true
                                 })
                               }
-                              variant="add"
+                              variant={[theming.VARIANT_DEFAULT, "add"]}
                             >
                               {this.props.addPersonText}
                             </Button>

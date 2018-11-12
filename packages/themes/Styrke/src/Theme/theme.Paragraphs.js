@@ -9,8 +9,6 @@ export const ParagraphStyling = theming.createVariants(
       padding: ${theming.spacing.small} 0 0;
       line-height: 1.7;
       max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
     `,
     formIntro: css`
       margin: 0 0 ${theming.spacing.medium};
