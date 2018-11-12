@@ -23,6 +23,19 @@ class Slider2 extends React.Component {
 
   onChange = values => {
     this.setState({ values })
+    this.props.onChange && this.props.onChange(values[0])
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    // Need this to dynamically update state from props
+    if (props.defaultValue !== state.values[0]) {
+      return {
+        values: [props.defaultValue]
+      }
+    }
+
+    // Return null if the state hasn't changed
+    return null
   }
 
   render() {
@@ -133,17 +146,16 @@ Slider2.defaultProps = {
   min: 0,
   max: 100,
   step: 10,
-  defaultValue: 0,
-  hideValueViewer: false
+  defaultValue: 0
 }
 
 Slider2.propTypes = {
   className: PropTypes.string,
-  hideValueViewer: PropTypes.bool,
   min: PropTypes.number,
   max: PropTypes.number,
   step: PropTypes.number,
-  defaultValue: PropTypes.number
+  defaultValue: PropTypes.number,
+  onChange: PropTypes.func
 }
 
 /** @component */

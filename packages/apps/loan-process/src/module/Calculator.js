@@ -3,7 +3,6 @@ import React from "react"
 import {
   Box,
   Select,
-  SliderKeyboardInput,
   Button,
   Label,
   Odometer,
@@ -23,6 +22,7 @@ import { getPaymentPlan } from "@staccx/payment-plan"
 import { throttle } from "@staccx/utils"
 import { easeInOutBack } from "easing-utils"
 import { Field, Formik } from "formik"
+import CalculatorSlider from "./Calculator.Slider"
 const Yup = require("yup")
 
 class Calculator extends React.Component {
@@ -112,12 +112,12 @@ class Calculator extends React.Component {
                       render={({ field }) => {
                         const { value } = field
                         return (
-                          <SliderKeyboardInput
+                          <CalculatorSlider
                             name="Kalkis"
                             label={this.props.valueLabel}
                             max={this.props.maxValue}
                             min={this.props.minValue}
-                            value={value}
+                            defaultValue={value}
                             step={5000}
                             onChange={value => {
                               this.calculate(value, this.state.terms)
