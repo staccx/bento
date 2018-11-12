@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.15.0"></a>
+# [8.15.0](https://bitbucket.org/stacc-flow/bento/compare/v8.14.0...v8.15.0) (2018-11-12)
+
+
+### Features
+
+* **mr-x:** add icon and name ([48ac36d](https://bitbucket.org/stacc-flow/bento/commits/48ac36d))
+
+
+
+
+
 <a name="8.12.0"></a>
 # [8.12.0](https://bitbucket.org/stacc-flow/bento/compare/v8.11.0...v8.12.0) (2018-11-08)
 

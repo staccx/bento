@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.15.0"></a>
+# [8.15.0](https://bitbucket.org/stacc-flow/bento/compare/v8.14.0...v8.15.0) (2018-11-12)
+
+
+### Bug Fixes
+
+* **base:** fix for when using fiftyFifty for grid ([64e3a1f](https://bitbucket.org/stacc-flow/bento/commits/64e3a1f))
+* **developer-portal:** set fallback preferred lang. remove logs ([52e2def](https://bitbucket.org/stacc-flow/bento/commits/52e2def))
+
+
+### Features
+
+* **loan-process:** replace Slider ([3ceafe7](https://bitbucket.org/stacc-flow/bento/commits/3ceafe7))
+* **mr-x:** add icon and name ([48ac36d](https://bitbucket.org/stacc-flow/bento/commits/48ac36d))
+
+
+
+
+
 <a name="8.14.0"></a>
 # [8.14.0](https://bitbucket.org/stacc-flow/bento/compare/v8.13.1...v8.14.0) (2018-11-12)
 
