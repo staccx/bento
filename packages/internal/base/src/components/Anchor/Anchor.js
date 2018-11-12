@@ -11,7 +11,7 @@ const Anchor = ({ children, className, ...restProps }) => (
 )
 
 Anchor.themeProps = {
-  a: {
+  anchor: {
     name: "Anchor",
     description: "HTML anchor link",
     type: themePropTypes.style

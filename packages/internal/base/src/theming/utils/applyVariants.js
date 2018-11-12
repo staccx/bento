@@ -15,7 +15,7 @@ export default themeProps => props => {
   }
 
   if (!themeProps) {
-    console.warn("No theme props!", theme, variant)
+    console.warn("No theme props!", theme, variant, props)
     return null
   }
 
