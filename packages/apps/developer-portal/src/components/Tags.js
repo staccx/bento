@@ -12,7 +12,7 @@ class Tags extends React.Component {
           return (
             <List>
               {tags.map(tag => (
-                <Tag tag={tag} />
+                <Tag key={tag} tag={tag} />
               ))}
             </List>
           )

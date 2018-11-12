@@ -17,22 +17,20 @@ const ApiReference = () => (
 
           {Object.keys(sorted).map(tag => {
             return (
-              <div>
+              <div key={tag}>
                 <Heading id={tag} variant="documentation" level={1}>
                   {tag}
                 </Heading>
-                {openapi.tags ? (
-                  openapi.tags.map(
-                    openApiTag =>
-                      openApiTag.name === tag ? (
-                        <Paragraph variant="documentationLede">
-                          {openApiTag.description}
-                        </Paragraph>
-                      ) : null
-                  )
-                ) : (
-                  <Paragraph variant="documentationLede" />
-                )}
+                {openapi.tags
+                  ? openapi.tags.map(
+                      openApiTag =>
+                        openApiTag.name === tag ? (
+                          <Paragraph variant="documentationLede">
+                            {openApiTag.description}
+                          </Paragraph>
+                        ) : null
+                    )
+                  : null}
                 <Layout
                   rowGap="huge"
                   paddingTop="medium"
