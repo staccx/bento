@@ -14,7 +14,10 @@ const conversationId = "x-notifications"
 web.chat
   .postMessage({
     channel: conversationId,
-    text: "Releasing bento! Please dont push changes to git..."
+    text: "Releasing bento! Please dont push changes to git...",
+    username: "mr-x",
+    bot_id: "BDYGBCERZ",
+    icon_emoji: ":robot-face:"
   })
   .then(res => {
     // `res` contains information about the posted message
