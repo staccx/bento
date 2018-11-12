@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.15.1"></a>
+## [8.15.1](https://bitbucket.org/stacc-flow/bento/compare/v8.15.0...v8.15.1) (2018-11-12)
+
+
+### Bug Fixes
+
+* **base:** fix wrong themeprop name for anchor ([fd6bb6a](https://bitbucket.org/stacc-flow/bento/commits/fd6bb6a))
+
+
+
+
+
 <a name="8.15.0"></a>
 # [8.15.0](https://bitbucket.org/stacc-flow/bento/compare/v8.14.0...v8.15.0) (2018-11-12)
 
