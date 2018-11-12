@@ -4,6 +4,7 @@ import ApiReference from "./pages/ApiReference"
 import OpenApiProvider from "./components/OpenApiProvider"
 import OpenApiConsumer from "./components/OpenApiConsumer"
 import Header from "./components/Header/Header"
+import Tiles from "./components/Tiles"
 
 export {
   SwaggerDocs,
@@ -11,5 +12,6 @@ export {
   ApiReference,
   OpenApiProvider,
   OpenApiConsumer,
-  Header
+  Header,
+  Tiles
 }
