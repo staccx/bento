@@ -65,7 +65,11 @@ class FileInput extends Component {
     } = this.props
 
     return (
-      <FileWrapper variant={variant} className={className}>
+      <FileWrapper
+        variant={variant}
+        className={className}
+        title={this.state.uploadedFile}
+      >
         <Input
           type="file"
           ref={this.fileInput} // To get the number of uploaded files from the input in case of multiple files
@@ -78,8 +82,8 @@ class FileInput extends Component {
           {...restProps}
         />
         <Label htmlFor={id} variant={variant}>
+          <Icon variant={variant} />
           <span>
-            <Icon variant={variant} />
             {this.state.uploadedFile ? this.state.uploadedFile : children}
           </span>
         </Label>

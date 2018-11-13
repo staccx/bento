@@ -7,7 +7,8 @@ import {
   SliderKeyboardInput,
   CompanyInput,
   PostalCodeInput,
-  theming
+  theming,
+  FileInput
 } from "@staccx/base"
 
 export const InputStyling = theming.createVariants(
@@ -215,4 +216,27 @@ export const PostalCodeInputStyling = theming.createVariants(
     `
   },
   PostalCodeInput.themeProps.input
+)
+
+export const FileInputStyles = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      width: 100%;
+      display: flex;
+      padding-left: ${theming.spacing.small};
+      padding-right: ${theming.spacing.small};
+      background-color: ${theming.color.white};
+      color: ${theming.color.primary};
+      border: 1px solid ${theming.color.primary};
+      line-height: inherit;
+      span {
+        max-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+      }
+    `
+  },
+  FileInput.themeProps.label
 )
