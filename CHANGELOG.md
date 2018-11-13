@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.17.0"></a>
+# [8.17.0](https://bitbucket.org/stacc-flow/bento/compare/v8.16.0...v8.17.0) (2018-11-13)
+
+
+### Bug Fixes
+
+* **fundu-theme:** try to reset default autofill-color ([04647f8](https://bitbucket.org/stacc-flow/bento/commits/04647f8))
+* **sanity-web:** remove insigth company adress ([94ce37f](https://bitbucket.org/stacc-flow/bento/commits/94ce37f))
+
+
+### Features
+
+* **stacc-theme:** add input variants and better contrast in input ([c33e87c](https://bitbucket.org/stacc-flow/bento/commits/c33e87c))
+
+
+
+
+
 <a name="8.16.0"></a>
 # [8.16.0](https://bitbucket.org/stacc-flow/bento/compare/v8.15.1...v8.16.0) (2018-11-13)
 

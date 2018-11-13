@@ -1,6 +1,6 @@
 {
   "name": "@staccx/fundu-theme",
-  "version": "8.15.1",
+  "version": "8.17.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
