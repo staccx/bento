@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.18.0"></a>
+# [8.18.0](https://bitbucket.org/stacc-flow/bento/compare/v8.17.0...v8.18.0) (2018-11-13)
+
+
+### Bug Fixes
+
+* **fundu-theme:** margin top for Heading variant="documentation" ([a736b03](https://bitbucket.org/stacc-flow/bento/commits/a736b03))
+* **open-id:** fix issue with race challenge + signin ([06406d2](https://bitbucket.org/stacc-flow/bento/commits/06406d2))
+
+
+### Features
+
+* **loan-process:** styling of fileupload Styrke + Fundu ([77ea74a](https://bitbucket.org/stacc-flow/bento/commits/77ea74a))
+
+
+
+
+
 <a name="8.17.0"></a>
 # [8.17.0](https://bitbucket.org/stacc-flow/bento/compare/v8.16.0...v8.17.0) (2018-11-13)
 
