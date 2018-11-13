@@ -1,6 +1,5 @@
 import React from "react"
-import styled from "styled-components"
-import { Layout, theming } from "@staccx/base"
+import { Layout } from "@staccx/base"
 import BlockContent from "@sanity/block-content-to-react"
 import blockContentSerializer from "./blockContentSerializer"
 import { NavigationSubpage, SectionHead } from "../components/_codeSplitting"

@@ -3,11 +3,14 @@ import React from "react"
 import SanityQuery from "./SanityQuery"
 import SanityQueryHelper from "sanity-query-helper"
 
-const SanityList = ({ type, filter, count, pick, children }) => {
+const SanityList = ({ type, filter, count, pick, children, ...props }) => {
   const helper = new SanityQueryHelper({
     sanityOptions: {}
   })
-  let query = helper.ofType(type)
+  let query = helper
+  if (type) {
+    query = query.ofType(type)
+  }
   if (filter) {
     query = query.doCompare(filter)
   }
@@ -20,7 +23,9 @@ const SanityList = ({ type, filter, count, pick, children }) => {
     query = query.pick(pick)
   }
 
-  return <SanityQuery query={query.query} id={type} children={children} />
+  return (
+    <SanityQuery query={query.query} id={type} children={children} {...props} />
+  )
 }
 
 export default SanityList
@@ -30,5 +35,5 @@ SanityList.propTypes = {
   count: PropTypes.number,
   filter: PropTypes.string,
   pick: PropTypes.string,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string
 }

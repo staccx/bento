@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.16.0"></a>
+# [8.16.0](https://bitbucket.org/stacc-flow/bento/compare/v8.15.1...v8.16.0) (2018-11-13)
+
+
+### Bug Fixes
+
+* **stacc-sanity:** change names and moved around ([c2dd5e8](https://bitbucket.org/stacc-flow/bento/commits/c2dd5e8))
+* **stacc-sanity:** client.caseStudies is now a reference ([a1ee0d7](https://bitbucket.org/stacc-flow/bento/commits/a1ee0d7))
+* **stacc-web:** remove extraneous bodycontent field ([ee69bf9](https://bitbucket.org/stacc-flow/bento/commits/ee69bf9))
+
+
+
+
+
 <a name="8.2.0"></a>
 # [8.2.0](https://bitbucket.org/stacc-flow/bento/compare/v8.1.1...v8.2.0) (2018-11-02)
 
