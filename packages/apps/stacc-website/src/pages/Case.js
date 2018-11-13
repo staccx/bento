@@ -23,26 +23,4 @@ const Case = ({ match, location, caseStudy }) => (
   </div>
 )
 
-const BContenty = styled(Layout)`
-  > p {
-    max-width: ${theming.wrapper.medium};
-    line-height: 1.6;
-  }
-
-  > blockquote {
-    padding: ${theming.spacing.large} 0;
-
-    > p {
-      font-size: ${theming.font.h3};
-      font-style: italic;
-      font-weight: 300;
-      line-height: 1.6;
-      margin-bottom: ${theming.spacing.small};
-    }
-    > cite {
-      font-style: normal;
-    }
-  }
-`
-
 export default Case
