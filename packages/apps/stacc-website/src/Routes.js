@@ -9,9 +9,6 @@ import FourOFour from "./pages/404"
 import styled from "styled-components"
 
 const Routes = epitath(function*({ change, inverted }) {
-  const { result: clientCaseStudyPages } = yield (
-    <SanityList type={"client"} filter={`hide != true`} />
-  )
   const { result: pages } = yield (
     <SanityList
       filter={`_type match "*page"`}
@@ -20,7 +17,7 @@ const Routes = epitath(function*({ change, inverted }) {
     />
   )
 
-  if (!pages || !clientCaseStudyPages) {
+  if (!pages) {
     return (
       <LoadingContainer>
         <Loading />
@@ -40,14 +37,6 @@ const Routes = epitath(function*({ change, inverted }) {
       <Route path={"/clients"} exact component={Clients} />
       {pages.map(page => {
         const exact = !!(!page.subpages || page.subpages.length <= 0)
-
-        console.log(
-          "Creating route for",
-          page.path.current,
-          exact,
-          page.subpages
-        )
-
         return (
           <Route
             key={page._id}
