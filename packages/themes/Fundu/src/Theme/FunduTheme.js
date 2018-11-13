@@ -28,7 +28,8 @@ import {
   SelectOptionStyling,
   SelectSelectedWrapperStyling,
   PostalCodeInputStyling,
-  SelectWrapperStyling
+  SelectWrapperStyling,
+  FileInputStyles
 } from "./theme.Inputs"
 import { LayoutStyling } from "./theme.Layouts"
 import { LayoutItemStyling } from "./theme.LayoutItem"
@@ -44,7 +45,7 @@ const targetSize = {
 }
 
 const wrapper = {
-  form: "360px",
+  form: "400px",
   small: "700px",
   medium: "1080px",
   large: "1350px",
@@ -152,3 +153,4 @@ export default new theming.Theme({
   .add(SelectWrapperStyling)
   .add(PostalCodeInputStyling)
   .add(ImageStyling)
+  .add(FileInputStyles)
