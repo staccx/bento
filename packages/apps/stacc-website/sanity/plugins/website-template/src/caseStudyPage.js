@@ -2,7 +2,7 @@ import generatePageSchema from "./generatePageSchema"
 
 const page = generatePageSchema({
   name: "caseStudyPage",
-  title: "Case Study Page",
+  title: "Case Study Pages",
   allowSubpages: null,
   slugPrefix: "/clients/case-study/",
   slugSource: "name",

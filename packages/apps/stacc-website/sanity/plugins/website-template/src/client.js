@@ -1,7 +1,7 @@
 export default {
   type: "document",
   name: "client",
-  title: "Clients and Case Studies",
+  title: "Clients",
   fields: [
     {
       type: "string",

@@ -59,10 +59,9 @@ export default () =>
               S.documentTypeListItem("servicePage")
                 .title("Service Pages")
                 .icon(ServiceIcon),
-              S.documentTypeListItem("client"),
               S.documentTypeListItem("campaignPage").icon(CampaignIcon),
-              S.documentTypeListItem("page"),
-              S.documentTypeListItem("caseStudyPage")
+              S.documentTypeListItem("caseStudyPage"),
+              S.documentTypeListItem("page")
             ])
         ),
       S.listItem()
@@ -84,7 +83,8 @@ export default () =>
 
               S.documentTypeListItem("company")
                 .title("Stacc divisions")
-                .icon(CompanyIcon)
+                .icon(CompanyIcon),
+              S.documentTypeListItem("client")
             ])
         )
     ])
