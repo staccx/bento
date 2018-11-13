@@ -15,6 +15,7 @@ const createAddress = address => {
       ))}
       <p>
         <FooterA
+          target={"_blank"}
           href={`https://www.google.no/maps/place/${lines[0].replace(
             " ",
             "+"
@@ -52,7 +53,9 @@ const FooterCompanyInfo = ({ heading }) => (
                   <ul>
                     {doc.outboundLinks.map(link => (
                       <li key={link._key}>
-                        <FooterA href={link.url}> {link.title}</FooterA>
+                        <FooterA href={link.url} target={"_blank"}>
+                          {link.title}
+                        </FooterA>
                       </li>
                     ))}
                   </ul>
@@ -68,17 +71,6 @@ const FooterCompanyInfo = ({ heading }) => (
                   {outbound}
                 </div>
               )
-            }}
-          </SanityDocument>
-          <SanityDocument id={"e96b6174-1228-4455-ab76-3d43597961b6"}>
-            {insight => {
-              const { document = null } = insight
-              if (!document) {
-                return null
-              }
-
-              // TODO: This is Stacc Insight document
-              return <div>{createAddress(document.address)}</div>
             }}
           </SanityDocument>
           <div>
