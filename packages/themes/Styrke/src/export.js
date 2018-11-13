@@ -14,6 +14,7 @@ import { WrapperStyling } from "./Theme/theme.Wrappers"
 import { ItemGroupStyling } from "./Theme/theme.ItemGroups"
 import { RadioPillItemStyling } from "./Theme/theme.RadioPillItems"
 import { SelectStyling } from "./Theme/theme.Selects"
+import { TableStyling } from "./Theme/theme.Tables"
 import { ButtonStyling } from "./Theme/theme.Buttons"
 import {
   InputStyling,
@@ -24,6 +25,7 @@ import {
 } from "./Theme/theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./Theme/theme.Layouts"
 import { ExpandStyling } from "./Theme/theme.Expand"
+import { hideVisually } from "polished"
 
 const borderRadius = "5px"
 const headerHeight = "70px"
@@ -69,7 +71,7 @@ const color = {
   wcag: "#777",
   disabled: "#a0a0a0",
   warning: "#E06666",
-  black: "#333",
+  black: "#333333",
   subtleHover: "#fff"
 }
 
@@ -113,7 +115,8 @@ export default new theming.Theme({
   targetSize,
   borderRadius,
   headerHeight,
-  fontFamily
+  fontFamily,
+  hideVisually
 })
   .add(theming.createGlobal({ cssResets: theming.cssResets }))
   .add(HeadingStyling)
@@ -134,6 +137,7 @@ export default new theming.Theme({
   .add(SelectSelectedStyling)
   .add(SelectIconButtonStyling)
   .add(SelectOptionsWrapperStyling)
+  .add(TableStyling)
   .add(LayoutStyling)
   .add(LayoutItemStyling)
   .add(ExpandStyling)
