@@ -6,6 +6,7 @@ import { LogoStyle } from "./Theme.Logo"
 import { CheckboxCheckedIcon, CheckboxCheckedLabel } from "./Theme.Checkbox"
 import { HeadingStyling } from "./theme.Headings"
 import WrapperStyling from "./Theme.Wrapper"
+import InputVariants from "./Input.variants"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -64,7 +65,9 @@ const color = {
   g4: "#F8F8F8",
   g5: "#fff",
   blush: "#FFF1E5",
-  pink: "#FCEEED"
+  pink: "#FCEEED",
+  placeholder: "#b8b8b8",
+  inputLine: "#dcdcdc"
 }
 
 const font = {
@@ -126,6 +129,7 @@ const theme = new theming.Theme(
   .add(CheckboxCheckedLabel)
   .add(HeadingStyling)
   .add(WrapperStyling)
+  .add(InputVariants)
   .add(theming.createGlobal({ base: theming.cssResets }))
   .add(reset)
 
