@@ -96,7 +96,6 @@ const MethodAttrs = ({ responses, parameters, security, requestBody }) => {
                 itemToKey={item => item.name}
               >
                 {({ item }) => {
-                  console.log("item", item)
                   return (
                     <React.Fragment>
                       <td>
@@ -114,9 +113,9 @@ const MethodAttrs = ({ responses, parameters, security, requestBody }) => {
 
                             <List>
                               object{" "}
-                              <ExpandListItem>
-                                {Object.keys(item.properties).map(key => (
-                                  <div>
+                              <ExpandListItem title={""}>
+                                {Object.keys(item.properties || {}).map(key => (
+                                  <div key={key}>
                                     {key} {item.properties[key].type}
                                   </div>
                                 ))}
@@ -156,7 +155,7 @@ const MethodAttrs = ({ responses, parameters, security, requestBody }) => {
                 itemToKey={item => item.name}
               >
                 {({ item }) => (
-                  <React.Fragment>
+                  <React.Fragment key={item.name}>
                     <td>
                       <Heading level={3} variant="documentationAttrType">
                         {item.name}

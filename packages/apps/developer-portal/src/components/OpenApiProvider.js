@@ -16,7 +16,7 @@ class OpenApiProvider extends React.Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      preferredLanguage: null
+      preferredLanguage: "nodeRequest"
     }
 
     this.setPreferredLanguage = this.setPreferredLanguage.bind(this)
@@ -26,7 +26,7 @@ class OpenApiProvider extends React.Component {
     localforage
       .getItem(preferredLangKey)
       .then(preferredLanguage => {
-        this.setState({ preferredLanguage })
+        this.setState({ preferredLanguage: preferredLanguage || "nodeRequest" })
       })
       .catch(() => {
         this.setState({ preferredLanguage: "nodeRequest" })
@@ -56,7 +56,6 @@ class OpenApiProvider extends React.Component {
 
           const tags = findTags(openapi)
           const sorted = sortByTags(openapi, tags)
-
           const { components = {}, info, servers } = openapi
 
           const codeGeneratorInputs = fromOpenApi(openapi)
