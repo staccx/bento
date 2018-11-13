@@ -14,13 +14,6 @@ const Case = ({ match, location, caseStudy }) => (
         lede={caseStudy.header.body}
         illustration={caseStudy.header.image}
       />
-      <BContenty>
-        <BlockContent
-          blocks={caseStudy.body}
-          serializers={blockContentSerializer}
-          renderContainerOnSingleChild
-        />
-      </BContenty>
       <BlockContent
         blocks={caseStudy.blocks}
         serializers={blockContentSerializer}
