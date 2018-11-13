@@ -28,11 +28,13 @@ import {
   SelectOptionStyling,
   SelectSelectedWrapperStyling,
   PostalCodeInputStyling,
-  SelectWrapperStyling
+  SelectWrapperStyling,
+  FileInputStyles
 } from "./theme.Inputs"
 import { LayoutStyling } from "./theme.Layouts"
 import { LayoutItemStyling } from "./theme.LayoutItem"
 import { LogoStyle } from "./Logo"
+import reset from "./Reset"
 
 const borderRadius = "2px"
 const headerHeight = "70px"
@@ -43,7 +45,7 @@ const targetSize = {
 }
 
 const wrapper = {
-  form: "360px",
+  form: "400px",
   small: "700px",
   medium: "1080px",
   large: "1350px",
@@ -120,7 +122,7 @@ export default new theming.Theme({
   headerHeight,
   fontFamily
 })
-  .add(theming.createGlobal({ cssResets: theming.cssResets }))
+  .add(reset)
   .add(HeadingStyling)
   .add(ParagraphStyling)
   .add(BoxStyling)
@@ -151,3 +153,4 @@ export default new theming.Theme({
   .add(SelectWrapperStyling)
   .add(PostalCodeInputStyling)
   .add(ImageStyling)
+  .add(FileInputStyles)

@@ -1,7 +1,7 @@
 export default {
   type: "document",
   name: "client",
-  title: "Clients and Case Studies",
+  title: "Clients",
   fields: [
     {
       type: "string",
@@ -34,7 +34,7 @@ export default {
       type: "array",
       name: "caseStudies",
       title: "Case studies",
-      of: [{ type: "caseStudyPage" }]
+      of: [{ type: "reference", to: [{ type: "caseStudyPage" }] }]
     },
     {
       type: "array",

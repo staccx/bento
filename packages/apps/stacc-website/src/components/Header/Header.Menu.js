@@ -98,7 +98,6 @@ class HeaderMenu extends React.Component {
                 <li key={menuItem._key}>
                   <SubMenuExpandBtn
                     data-key={menuItem._key}
-                    ref={node => (this[menuItem._key] = node)}
                     inverted={inverted || undefined}
                     expanded={this.state.expanded === menuItem._key}
                   >

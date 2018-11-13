@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.18.0"></a>
+# [8.18.0](https://bitbucket.org/stacc-flow/bento/compare/v8.17.0...v8.18.0) (2018-11-13)
+
+
+### Bug Fixes
+
+* **open-id:** fix issue with race challenge + signin ([06406d2](https://bitbucket.org/stacc-flow/bento/commits/06406d2))
+
+
+
+
+
 <a name="8.15.0"></a>
 # [8.15.0](https://bitbucket.org/stacc-flow/bento/compare/v8.14.0...v8.15.0) (2018-11-12)
 
