@@ -118,7 +118,7 @@ class Calculator extends React.Component {
                             max={this.props.maxValue}
                             min={this.props.minValue}
                             defaultValue={value}
-                            step={5000}
+                            step={50000}
                             onChange={value => {
                               this.calculate(value, this.state.terms)
                               setFieldValue("value", value)
@@ -312,7 +312,7 @@ Calculator.defaultProps = {
   interestRateText: "Rente",
   loanDurationLabel: "Nedbetalingstid",
   maxValue: 1000000,
-  minValue: 10000,
+  minValue: 50000,
   priceExampleText:
     "Lånet gis med fastrente i hele lånets løpetid. Priseksempel: 500 000 over 6 mnd, eff. rente 11,56 % kostnader 26 232, totalt 526 232.",
   productType: "PRODUCT_LOAN",
