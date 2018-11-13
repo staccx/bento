@@ -27,6 +27,7 @@ class Page extends Component {
     const { page, blockCredentials = {} } = this.props
 
     const { pathname } = window.location
+    console.log(page.path.current, pathname)
     const shouldRender =
       page.path.current === pathname ||
       (page.subpages
@@ -37,6 +38,7 @@ class Page extends Component {
         : false)
 
     if (!shouldRender) {
+      console.log("Should not render?")
       // We dont have a page, nor subpages. Early out 404
       return <FourOFour />
     }

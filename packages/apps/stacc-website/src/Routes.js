@@ -14,8 +14,9 @@ const Routes = epitath(function*({ change, inverted }) {
   )
   const { result: pages } = yield (
     <SanityList
-      type={`page" || _type == "servicePage" || _type == "productPage" || _type == "teamPage" || _type == "clientsPage" || _type == "campaignPage`}
+      filter={`_type match "*page"`}
       pick={"blocks[]{employee->,...},..."}
+      id={"pages"}
     />
   )
 
@@ -36,51 +37,38 @@ const Routes = epitath(function*({ change, inverted }) {
       />
       <Route path="/" exact render={() => <Home change={change} />} />
       <Route path="/404" exact component={FourOFour} />
-      <Route path={"/clients"}>
-        <Switch>
-          <Route path={"/clients"} exact component={Clients} />
-          {clientCaseStudyPages.map(client => {
-            return client.caseStudies
-              ? client.caseStudies.map(caseStudy => {
-                  if (!caseStudy.path) {
-                    return null
-                  }
-                  return (
-                    <Route
-                      key={caseStudy._key}
-                      exact
-                      path={caseStudy.path.current}
-                      render={() => <Case caseStudy={caseStudy} />}
-                    />
-                  )
-                })
-              : null
-          })}
+      <Route path={"/clients"} exact component={Clients} />
+      {pages.map(page => {
+        const exact = !!(!page.subpages || page.subpages.length <= 0)
+
+        console.log(
+          "Creating route for",
+          page.path.current,
+          exact,
+          page.subpages
+        )
+
+        return (
           <Route
-            render={() => {
-              if (!inverted) {
-                change({ inverted: true })
+            key={page._id}
+            path={`${page.path.current}`}
+            render={({ match, location }) => {
+              if (page._type === "caseStudyPage") {
+                return <Case caseStudy={page} />
               }
-              return <FourOFour />
+              return (
+                <Page
+                  page={page}
+                  match={match}
+                  location={location}
+                  change={change}
+                />
+              )
             }}
+            exact={exact}
           />
-        </Switch>
-      </Route>
-      {pages.map(page => (
-        <Route
-          key={page._id}
-          path={`${page.path.current}`}
-          render={({ match, location }) => (
-            <Page
-              page={page}
-              match={match}
-              location={location}
-              change={change}
-            />
-          )}
-        />
-      ))}
-      }}
+        )
+      })}
       <Route
         render={() => {
           if (!inverted) {

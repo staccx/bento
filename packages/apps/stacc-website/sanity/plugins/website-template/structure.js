@@ -61,7 +61,8 @@ export default () =>
                 .icon(ServiceIcon),
               S.documentTypeListItem("client"),
               S.documentTypeListItem("campaignPage").icon(CampaignIcon),
-              S.documentTypeListItem("page")
+              S.documentTypeListItem("page"),
+              S.documentTypeListItem("caseStudyPage")
             ])
         ),
       S.listItem()

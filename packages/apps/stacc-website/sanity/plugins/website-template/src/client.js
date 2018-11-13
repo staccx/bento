@@ -34,7 +34,7 @@ export default {
       type: "array",
       name: "caseStudies",
       title: "Case studies",
-      of: [{ type: "caseStudyPage" }]
+      of: [{ type: "caseStudyPage", to: [{ type: "caseStudyPage" }] }]
     },
     {
       type: "array",
