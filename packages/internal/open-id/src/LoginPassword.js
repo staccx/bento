@@ -22,9 +22,7 @@ class LoginPassword extends React.Component {
           window.location.replace(props.redirectAfterLogin)
         })
         .catch(console.error)
-    }
-
-    if (!searchParams.state) {
+    } else if (!searchParams.state) {
       const oidcConfig = {
         ...props.oidcConfig,
         acr_values: `idp:${props.acrValue}`
