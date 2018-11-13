@@ -7,6 +7,7 @@ export const HeadingStyling = theming.createVariants(
     documentation: css`
       font-weight: 400;
       font-family: ${theming.fontFamily.body};
+      margin-top: ${theming.spacing.medium};
       ${p =>
         p.level === 1 &&
         css`
