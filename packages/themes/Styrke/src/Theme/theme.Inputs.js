@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { Input, Select, theming, FileInput } from "@staccx/base"
+import { Input, Select, theming, FileInput, Slider2 } from "@staccx/base"
 
 export const InputStyling = theming.createVariants(
   {
@@ -112,4 +112,13 @@ export const FileInputStyles = theming.createVariants(
     `
   },
   FileInput.themeProps.label
+)
+
+export const Slider2RailStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color.line};
+    `
+  },
+  Slider2.themeProps.rail
 )

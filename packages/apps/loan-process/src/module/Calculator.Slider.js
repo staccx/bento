@@ -1,5 +1,5 @@
 import React from "react"
-import { Slider2, CurrencyInput, Layout } from "@staccx/base"
+import { Slider2, CurrencyInput, Layout, theming } from "@staccx/base"
 
 class CalculatorSlider extends React.Component {
   state = {
@@ -12,6 +12,7 @@ class CalculatorSlider extends React.Component {
   onInputChange = value => {
     if (value) {
       this.setState({ sum: parseInt(value, 10) })
+      this.setState({ percentage: parseInt(value, 10) / this.props.max })
       this.props.onChange(parseInt(value, 10))
       if (
         this.state.sum >= this.props.min &&
@@ -27,6 +28,8 @@ class CalculatorSlider extends React.Component {
   onSliderChange = value => {
     this.setState({ sum: parseInt(value, 10) })
     this.setState({ sliderSum: parseInt(value, 10) })
+    this.setState({ percentage: parseInt(value, 10) / this.props.max })
+    this.props.onChange(parseInt(value, 10))
   }
 
   render() {
@@ -42,6 +45,8 @@ class CalculatorSlider extends React.Component {
             value={this.state.sum}
             onChange={e => this.onInputChange(e.target.rawValue)}
             onFocus={() => this.setState({ step: 1 })}
+            variant="calculatorSlider"
+            percentage={this.state.percentage}
           />
           <Slider2
             min={min}
@@ -50,6 +55,7 @@ class CalculatorSlider extends React.Component {
             defaultValue={this.state.sliderSum}
             onUpdate={value => this.onSliderChange(value)}
             onFocus={() => this.setState({ step: this.props.step })}
+            variant={["calculatorSlider", theming.VARIANT_DEFAULT]}
           />
         </Layout>
       </div>

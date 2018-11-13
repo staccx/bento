@@ -29,7 +29,9 @@ import {
   SelectSelectedWrapperStyling,
   PostalCodeInputStyling,
   SelectWrapperStyling,
-  FileInputStyles
+  FileInputStyles,
+  Slider2RailStyling,
+  Slider2TrackStyling
 } from "./theme.Inputs"
 import { LayoutStyling } from "./theme.Layouts"
 import { LayoutItemStyling } from "./theme.LayoutItem"
@@ -74,12 +76,12 @@ const color = {
   white: "#fff",
   red: "#ea526f",
   pink: "#f8d0db",
-  green: "#00a190",
+  green: "#3ECF8E",
   blue: "#188EFB",
   yellow: "#f4da87",
   line: "#EBEBF2",
   wcag: "#777",
-  disabled: "#BABABA",
+  disabled: "#c1c1c1",
   warning: "#c54059",
   black: "#000",
   subtleHover: "#F7F7FF",
@@ -154,3 +156,5 @@ export default new theming.Theme({
   .add(PostalCodeInputStyling)
   .add(ImageStyling)
   .add(FileInputStyles)
+  .add(Slider2RailStyling)
+  .add(Slider2TrackStyling)
