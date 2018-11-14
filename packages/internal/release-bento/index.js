@@ -1,6 +1,9 @@
 const spawn = require("child_process").spawn
 const ora = require("ora")
 const checkWorkingTree = require("@lerna/check-working-tree")
+const username = require("username")
+const program = require("commander")
+const { postMessage } = require("../mr-x")
 
 // TODO: Git state
 const ab2str = function(buf) {
@@ -58,23 +61,40 @@ const onData = data => {
   updated = JSON.parse(data)
 }
 
-async function release() {
+program
+  .option("-d, --debug", "Run without running commands")
+  .parse(process.argv)
+
+async function release(debug) {
   const spinner = ora({
     text: "Setup",
     spinner: "monkey"
   })
   try {
     spinner.start("Checking git for changes")
-    await checkWorkingTree({ cwd: process.cwd() })
+    if (!debug) {
+      await checkWorkingTree({ cwd: process.cwd() })
+    }
     spinner.succeed("No changes. Good person")
   } catch (e) {
     spinner.fail("You have local changes")
     process.exit(1)
   }
+  let packageNames = []
+  let text = ""
   try {
     spinner.start("Finding changed packages")
     await executeAsync("lerna", ["changed", "--json"], onData)
-    spinner.succeed(`Found ${updated.length} packages`)
+    packageNames = updated.map(m => m.name.replace("@staccx/", ""))
+
+    const chosen = packageNames.slice(0, 4)
+    text = `${chosen.join(", ")}${
+      packageNames.length > chosen.length
+        ? ` and ${packageNames.length - chosen.length} others`
+        : ""
+    }`
+
+    spinner.succeed(`Packages with changes: ${text}`)
   } catch (ex) {
     console.error(ex)
     // reject(ex)
@@ -85,7 +105,9 @@ async function release() {
 
   try {
     spinner.start("Validating build for all changed packages")
-    await executeAsync("lerna", ["exec", `--scope`, scope, `yarn prepare`])
+    if (!debug) {
+      await executeAsync("lerna", ["exec", `--scope`, scope, `yarn prepare`])
+    }
     spinner.succeed(`Building was successful`)
   } catch (ex) {
     spinner.fail("Prepare failed")
@@ -94,19 +116,79 @@ async function release() {
 
   try {
     spinner.start("Running tests for all changed packages")
-    await executeAsync("lerna", [
-      "exec",
-      `--scope`,
-      scope,
-      `yarn prepublishOnly`
-    ])
+    if (!debug) {
+      await executeAsync("lerna", [
+        "exec",
+        `--scope`,
+        scope,
+        `yarn prepublishOnly`
+      ])
+    }
     spinner.succeed("Tests performed successfully")
   } catch (e) {
     spinner.fail("Tests failed")
     process.exit(1)
   }
 
-  // execute("lerna", ["updated", "--json"], console.log)
+  /**
+   * Post message to slack
+   */
+  try {
+    spinner.start("Alerting team on Slack")
+    const name = await username()
+    if (!debug) {
+      await postMessage(
+        `@channel ${name} is releasing ${text}. Please do not push changes to git`
+      )
+    }
+    spinner.succeed("Team alerted about the impending release")
+  } catch (e) {
+    spinner.fail("Error whilst sending message to Slack")
+    process.exit(1)
+  }
+
+  /**
+   * Release the beast!
+   */
+
+  try {
+    spinner.start("Releasing packages. Please wait")
+    if (!debug) {
+      await executeAsync("lerna", [
+        "publish",
+        "--no-verify-access",
+        "--no-verify-registry",
+        "--conventional-commits",
+        "--yes"
+      ])
+
+      await executeAsync("lerna", ["ls", "--json"], onData)
+      text = updated.map(pkg => `${pkg.name}: ${pkg.version}`).join("\n")
+    }
+    spinner.succeed("Packages released!")
+  } catch (e) {
+    spinner.fail("Something went wrong during releasing")
+    const name = await username()
+    await postMessage(`@channel @${name}'s release failed. Let them know`)
+    process.exit(1)
+  }
+
+  /**
+   * Post message to slack
+   */
+  try {
+    spinner.start("Alerting team on Slack")
+    const name = await username()
+    if (!debug) {
+      await postMessage(`@channel ${name} has released\n \`\`\`${text}\`\`\``)
+    }
+    spinner.succeed("Team alerted about the awesome")
+  } catch (e) {
+    spinner.fail("Error whilst sending message to Slack")
+    process.exit(1)
+  }
+
+  spinner.succeed("Release done. Have a good day!")
 }
 
-release()
+release(program.debug)
