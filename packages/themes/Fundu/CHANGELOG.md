@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.19.0"></a>
+# [8.19.0](https://bitbucket.org/stacc-flow/bento/compare/v8.18.0...v8.19.0) (2018-11-14)
+
+
+### Features
+
+* **fundu-theme:** add Table variant hideHeader ([0807703](https://bitbucket.org/stacc-flow/bento/commits/0807703))
+* **fundu-theme:** highlight results in tables ([e631325](https://bitbucket.org/stacc-flow/bento/commits/e631325))
+* **fundu-theme:** style selects ([3b8f0c8](https://bitbucket.org/stacc-flow/bento/commits/3b8f0c8))
+* **loan-process:** style slider ([26be5c9](https://bitbucket.org/stacc-flow/bento/commits/26be5c9))
+* **loan-process:** use Table component for tables + style ([5209a37](https://bitbucket.org/stacc-flow/bento/commits/5209a37))
+
+
+
+
+
 <a name="8.18.0"></a>
 # [8.18.0](https://bitbucket.org/stacc-flow/bento/compare/v8.17.0...v8.18.0) (2018-11-13)
 
