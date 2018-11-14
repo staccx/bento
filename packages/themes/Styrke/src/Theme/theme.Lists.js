@@ -33,7 +33,6 @@ export const ListStyling = theming.createVariants(
         justify-content: space-between;
         align-items: center;
         padding: ${theming.spacing.small} ${theming.spacing.medium};
-        background-color: ${theming.color.bgGray};
         margin-bottom: 3px;
       }
     `,
@@ -93,6 +92,10 @@ export const ExpandListItemStyling = theming.createVariants(
       > button {
         padding-left: 0;
         padding-right: ${theming.spacing.mediumPlus};
+      }
+
+      span + span {
+        color: ${theming.color.primary};
       }
     `
   },
