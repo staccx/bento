@@ -2,7 +2,7 @@ import { css } from "styled-components"
 import { Table, theming } from "@staccx/base"
 import { hideVisually } from "polished"
 
-/* Styrke */
+/* Fundu */
 
 export const TableStyling = theming.createVariants(
   {
@@ -21,34 +21,9 @@ export const TableStyling = theming.createVariants(
         text-align: right;
       }
     `,
-    setBorders: css`
-      position: relative;
-
-      tr:first-child td {
-        padding-top: 40px;
-      }
-
-      tr:last-child td {
-        padding-bottom: 40px;
-      }
-
-      ::before,
-      ::after {
-        content: "";
-        display: block;
-        width: 100%;
-        border-top: 3px solid ${theming.color.primary};
-        position: absolute;
-      }
-    `,
-    hideHeader: css`
+    hiddenHeader: css`
       thead {
         ${hideVisually};
-      }
-    `,
-    highlightResult: css`
-      tr:last-child {
-        font-weight: bold;
       }
     `
   },

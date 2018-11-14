@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@staccx/base": "^8.18.0",
+    "polished": "^2.3.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
   },

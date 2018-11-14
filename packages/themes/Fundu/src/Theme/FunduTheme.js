@@ -12,6 +12,7 @@ import {
 import { TextStyling } from "./theme.Texts"
 import { ImageStyling } from "./theme.Images"
 import { ButtonStyling } from "./theme.Buttons"
+import { TableStyling } from "./theme.Tables"
 import {
   InputStyling,
   LabelStyling,
@@ -83,7 +84,7 @@ const color = {
   wcag: "#777",
   disabled: "#c1c1c1",
   warning: "#c54059",
-  black: "#000",
+  black: "#000000",
   subtleHover: "#F7F7FF",
   link: "#1F5D9B"
 }
@@ -158,3 +159,4 @@ export default new theming.Theme({
   .add(FileInputStyles)
   .add(Slider2RailStyling)
   .add(Slider2TrackStyling)
+  .add(TableStyling)
