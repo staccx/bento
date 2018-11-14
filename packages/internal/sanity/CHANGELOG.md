@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.18.0"></a>
+# [8.18.0](https://bitbucket.org/stacc-flow/bento/compare/v8.17.0...v8.18.0) (2018-11-13)
+
+**Note:** Version bump only for package @staccx/sanity
+
+
+
+
+
+<a name="8.16.0"></a>
+# [8.16.0](https://bitbucket.org/stacc-flow/bento/compare/v8.15.1...v8.16.0) (2018-11-13)
+
+
+### Features
+
+* **sanity:** sanitylist no longer requires type ([9d61abe](https://bitbucket.org/stacc-flow/bento/commits/9d61abe))
+
+
+
+
+
 <a name="8.15.1"></a>
 ## [8.15.1](https://bitbucket.org/stacc-flow/bento/compare/v8.15.0...v8.15.1) (2018-11-12)
 

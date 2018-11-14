@@ -27,7 +27,7 @@ const Slider2Track = ({
 Slider2Track.themeProps = {
   track: {
     name: "SLIDER2_TRACK",
-    description: "Handle style",
+    description: "Track style",
     type: themePropTypes.style
   }
 }
@@ -42,7 +42,7 @@ const Track = styled.div`
   border: 0;
   border-radius: 7px;
   background-color: ${color.primary};
-  ${applyVariants(Slider2Track.themeProps.handle)};
+  ${applyVariants(Slider2Track.themeProps.track)};
 `
 
 Slider2Track.defaultProps = {

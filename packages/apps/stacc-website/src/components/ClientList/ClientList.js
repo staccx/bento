@@ -5,16 +5,22 @@ import { SanityList } from "@staccx/sanity"
 import { ClientPreview } from "../_codeSplitting"
 
 const ClientList = props => {
+  console.log("here")
   return (
-    <SanityList type={"client"} filter={"hide != true"}>
+    <SanityList
+      type={"client"}
+      filter={"hide != true"}
+      pick={"caseStudies[]->, ..."}
+    >
       {({ result }) => {
         if (!result) {
           return <Loading />
         }
-
+        console.log(result)
         return (
           <ClientsList>
             {result.map(client => {
+
               return (
                 <li key={client._id}>
                   <ClientPreview

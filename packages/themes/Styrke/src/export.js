@@ -21,7 +21,9 @@ import {
   LabelStyling,
   SelectSelectedStyling,
   SelectIconButtonStyling,
-  SelectOptionsWrapperStyling
+  SelectOptionsWrapperStyling,
+  FileInputStyles,
+  Slider2RailStyling
 } from "./Theme/theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./Theme/theme.Layouts"
 import { ExpandStyling } from "./Theme/theme.Expand"
@@ -142,3 +144,5 @@ export default new theming.Theme({
   .add(LayoutItemStyling)
   .add(ExpandStyling)
   .add(DividerStyling)
+  .add(FileInputStyles)
+  .add(Slider2RailStyling)

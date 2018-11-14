@@ -5,9 +5,12 @@ import {
   Select,
   RadioPillItem,
   SliderKeyboardInput,
+  Slider2,
+  Slider2Track,
   CompanyInput,
   PostalCodeInput,
-  theming
+  theming,
+  FileInput
 } from "@staccx/base"
 
 export const InputStyling = theming.createVariants(
@@ -24,6 +27,23 @@ export const InputStyling = theming.createVariants(
       input {
         min-height: 96px;
       }
+    `,
+    calculatorSlider: css`
+      background-color: coral;
+      background: linear-gradient(
+        to right,
+        ${theming.color("green")} 0%,
+        ${theming.color("green")} ${p => p.percentage * 100}%,
+        transparent ${p => p.percentage * 100}%,
+        transparent 100%
+      );
+      border-color: ${theming.color("green")};
+      border-width: 3px;
+      font-size: ${theming.font.h1};
+      min-height: 75px;
+      line-height: 1;
+      padding-top: 10px;
+      text-align: center;
     `
   },
   Input.themeProps.input
@@ -215,4 +235,49 @@ export const PostalCodeInputStyling = theming.createVariants(
     `
   },
   PostalCodeInput.themeProps.input
+)
+
+export const FileInputStyles = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      width: 100%;
+      display: flex;
+      padding-left: ${theming.spacing.small};
+      padding-right: ${theming.spacing.small};
+      background-color: ${theming.color.white};
+      color: ${theming.color.primary};
+      border: 1px solid ${theming.color.primary};
+      line-height: inherit;
+      span {
+        max-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+      }
+    `
+  },
+  FileInput.themeProps.label
+)
+
+export const Slider2RailStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color.disabled};
+      height: 8px;
+      top: 2px;
+    `
+  },
+  Slider2.themeProps.rail
+)
+
+export const Slider2TrackStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color("green")};
+      height: 8px;
+      top: 2px;
+    `
+  },
+  Slider2Track.themeProps.track
 )

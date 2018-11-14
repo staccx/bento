@@ -19,6 +19,7 @@ class Slider2 extends React.Component {
 
   onUpdate = update => {
     this.setState({ update })
+    this.props.onUpdate && this.props.onUpdate(update[0])
   }
 
   onChange = values => {
@@ -33,24 +34,32 @@ class Slider2 extends React.Component {
         values: [props.defaultValue]
       }
     }
-
     // Return null if the state hasn't changed
     return null
   }
 
   render() {
     const { values } = this.state
-    const { variant } = this.props
+    const {
+      variant,
+      min,
+      max,
+      step,
+      onFocus,
+      onBlur,
+      ...restProps
+    } = this.props
     return (
       <Container>
         <StyledSlider
           mode={1}
-          step={this.props.step}
-          domain={[this.props.min, this.props.max]}
+          step={step}
+          domain={[min, max]}
           onUpdate={this.onUpdate}
           onChange={this.onChange}
           values={values}
           variant={variant}
+          {...restProps}
         >
           <Rail>
             {({ getRailProps }) => <StyledRail {...getRailProps()} />}
@@ -65,6 +74,8 @@ class Slider2 extends React.Component {
                     domain={[this.props.min, this.props.max]}
                     getHandleProps={getHandleProps}
                     variant={variant}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
                   />
                 ))}
               </div>

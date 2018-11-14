@@ -11,7 +11,8 @@ import {
   Heading,
   Loading,
   Paragraph,
-  FileInput
+  FileInput,
+  Label
 } from "@staccx/base"
 import { removeWhitespace } from "@staccx/formatting"
 
@@ -89,20 +90,21 @@ class ProvideAdditionalInfo extends React.Component {
               <Wrapper size="form">
                 <Layout paddingBottom="medium" variant="formElements">
                   <LayoutItem key={"file"}>
+                    <Label for="idjadsj">Eksport av regnskap (pdf)</Label>
                     <Field
                       name={"file"}
                       render={({ onChange, value, ...field }) => (
                         <FileInput
                           group="signer"
                           id="idjadsj"
-                          accept={"image/png"}
+                          accept={"application/pdf"}
                           onChange={e => {
                             const file = e.target.files[0] || null
                             setFieldValue("file", file)
                           }}
                           {...field}
                         >
-                          Finansiell info opplasting
+                          Last opp
                         </FileInput>
                       )}
                     />
