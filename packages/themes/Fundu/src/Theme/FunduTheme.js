@@ -38,6 +38,7 @@ import { LayoutStyling } from "./theme.Layouts"
 import { LayoutItemStyling } from "./theme.LayoutItem"
 import { LogoStyle } from "./Logo"
 import reset from "./Reset"
+import { hideVisually } from "polished"
 
 const borderRadius = "2px"
 const headerHeight = "70px"
@@ -123,7 +124,8 @@ export default new theming.Theme({
   targetSize,
   borderRadius,
   headerHeight,
-  fontFamily
+  fontFamily,
+  hideVisually
 })
   .add(reset)
   .add(HeadingStyling)

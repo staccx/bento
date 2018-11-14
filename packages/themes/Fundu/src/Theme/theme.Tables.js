@@ -21,7 +21,7 @@ export const TableStyling = theming.createVariants(
         text-align: right;
       }
     `,
-    hiddenHeader: css`
+    hideHeader: css`
       thead {
         ${hideVisually};
       }
