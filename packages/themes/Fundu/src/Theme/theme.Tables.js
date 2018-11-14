@@ -25,6 +25,11 @@ export const TableStyling = theming.createVariants(
       thead {
         ${hideVisually};
       }
+    `,
+    highlightResult: css`
+      tr:last-child {
+        font-weight: bold;
+      }
     `
   },
   Table.themeProps.table
