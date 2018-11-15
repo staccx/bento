@@ -1,6 +1,6 @@
 {
   "name": "@staccx/bank-in-a-box",
-  "version": "8.19.0",
+  "version": "8.21.0",
   "private": true,
   "license": "UNLICENSED",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
     "@staccx/aprila-theme": "^8.19.0",
     "@staccx/base": "^8.19.0",
     "@staccx/formatting": "^8.2.0",
-    "@staccx/i18n": "^8.19.0",
+    "@staccx/i18n": "^8.21.0",
     "@staccx/norefjell-theme": "^8.19.0",
     "@tedconf/react-show-more": "^1.1.2",
     "history": "^4.7.2",
