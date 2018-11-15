@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.20.0"></a>
+# [8.20.0](https://bitbucket.org/stacc-flow/bento/compare/v8.19.0...v8.20.0) (2018-11-15)
+
+
+### Bug Fixes
+
+* **release-bento:** add link to changelog in success output ([440d3c8](https://bitbucket.org/stacc-flow/bento/commits/440d3c8))
+
+
+### Features
+
+* **mr-x:** parse text and link_names ([5f11484](https://bitbucket.org/stacc-flow/bento/commits/5f11484))
+* **open-id:** add isLoading flag to LoginPassword ([e878139](https://bitbucket.org/stacc-flow/bento/commits/e878139))
+
+
+
+
+
 <a name="8.19.0"></a>
 # [8.19.0](https://bitbucket.org/stacc-flow/bento/compare/v8.18.0...v8.19.0) (2018-11-14)
 
