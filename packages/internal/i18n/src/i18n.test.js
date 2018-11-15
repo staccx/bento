@@ -26,4 +26,9 @@ describe("i18n instance", () => {
     i18nInstance.init(config)
     expect(i18nInstance.language).toBe("en")
   })
+  it("Should be able to convert data without using a key (process)", () => {
+    expect(
+      i18nInstance.process("konto: {accountNumber}", { accountNumber: 123 })
+    ).toBe("konto: 123")
+  })
 })
