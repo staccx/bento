@@ -20,6 +20,8 @@ const postMessage = (
         text,
         as_user,
         username,
+        link_names: true,
+        parse: "full",
         bot_id: "BDYGBCERZ",
         icon_emoji: ":robot-face:"
       })
