@@ -64,7 +64,11 @@ export const LabelStyling = theming.createVariants(
 export const SelectOptionStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
+      border: 1px solid ${theming.color.primary};
       padding-left: ${theming.spacing.small};
+      &:focus {
+        border: 2px solid ${theming.color.primary};
+      }
     `,
     calculatorTerms: css`
       background-color: transparent;
@@ -86,8 +90,7 @@ export const SelectWrapperStyling = theming.createVariants(
 export const SelectSelectedWrapperStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
-      border-color: ${theming.color.primary};
-      border-width: 1px;
+      border-width: 0;
     `,
     calculatorTerms: css`
       border-width: 0;
@@ -109,6 +112,12 @@ export const SelectOptionsWrapperStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       border-color: ${theming.color.primary};
+      li button {
+        border: 0;
+        &:focus {
+          background-color: ${theming.color.black}10;
+        }
+      }
     `
   },
   Select.themeProps.defaultOptionWrapper

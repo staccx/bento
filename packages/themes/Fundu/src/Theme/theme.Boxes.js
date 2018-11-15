@@ -117,6 +117,7 @@ export const BoxStyling = theming.createVariants(
       grid-column-gap: 24px;
       grid-row-gap: 24px;
       margin: ${theming.spacing.medium} 0;
+      padding: ${theming.spacing.small} 0;
       border-top: 2px solid ${theming.color.primary};
       border-bottom: 2px solid ${theming.color.primary};
       align-items: center;

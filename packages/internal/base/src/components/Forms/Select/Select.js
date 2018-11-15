@@ -112,6 +112,7 @@ class Select extends React.PureComponent {
                 {...getToggleButtonProps()}
                 variant={variant}
                 type={"button"}
+                tabIndex={-1}
                 isSelected
               >
                 <CaretIcon isExpanded={isOpen} variant={variant} />
@@ -141,6 +142,7 @@ class Select extends React.PureComponent {
             variant={variant}
             type={"button"}
             isSelected
+            tabIndex={-1}
           >
             <CaretIcon isExpanded={false} variant={variant} />
           </IconButton>
