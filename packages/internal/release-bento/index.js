@@ -162,7 +162,7 @@ async function release(debug) {
         "--yes"
       ])
 
-      await executeAsync("lerna", ["ls", "--json"], onData)
+      await executeAsync("lerna", ["ls", `--scope`, scope, "--json"], onData)
       text = updated.map(pkg => `${pkg.name}: ${pkg.version}`).join("\n")
     }
     spinner.succeed("Packages released!")
