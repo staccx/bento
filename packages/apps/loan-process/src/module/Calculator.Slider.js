@@ -11,14 +11,17 @@ class CalculatorSlider extends React.Component {
 
   onInputChange = value => {
     if (value) {
-      this.setState({ sum: parseInt(value, 10) })
-      this.setState({ percentage: parseInt(value, 10) / this.props.max })
-      this.props.onChange(parseInt(value, 10))
+      const sum = parseInt(value, 10)
+      this.setState({
+        sum,
+        percentage: sum / this.props.max
+      })
+      this.props.onChange(sum)
       if (
         this.state.sum >= this.props.min &&
         this.state.sum <= this.props.max
       ) {
-        this.setState({ sliderSum: parseInt(value, 10) })
+        this.setState({ sliderSum: sum })
       }
     } else {
       this.setState({ sum: "" })
@@ -26,10 +29,14 @@ class CalculatorSlider extends React.Component {
   }
 
   onSliderChange = value => {
-    this.setState({ sum: parseInt(value, 10) })
-    this.setState({ sliderSum: parseInt(value, 10) })
-    this.setState({ percentage: parseInt(value, 10) / this.props.max })
-    this.props.onChange(parseInt(value, 10))
+    const sum = parseInt(value, 10)
+    this.setState({
+      sum,
+      sliderSum: sum,
+      percentage: sum / this.props.max
+    })
+
+    this.props.onChange(sum)
   }
 
   render() {
