@@ -219,6 +219,7 @@ class CompanyInfo extends React.Component {
                         <Loading variant={"buttonLoading"} />
                       ) : (
                         <Button
+                          variant="forward"
                           type={"submit"}
                           disabled={!isValid}
                           onClick={() =>

@@ -66,7 +66,7 @@ const Form = props => {
               {props.isLoading ? (
                 <Loading variant={"buttonLoading"} />
               ) : (
-                <Button type="submit" onClick={() => null}>
+                <Button variant="forward" type="submit" onClick={() => null}>
                   {props.continueButtonText}
                 </Button>
               )}
