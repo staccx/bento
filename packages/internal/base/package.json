@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "8.19.0",
+  "version": "8.22.0",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -39,7 +39,7 @@
     "@staccx/animations": "^8.2.0",
     "@staccx/formatting": "^8.2.0",
     "@staccx/math": "^8.2.0",
-    "@staccx/utils": "^8.2.0",
+    "@staccx/utils": "^8.22.0",
     "babel-plugin-prismjs": "^1.0.2",
     "cleave.js": "^1.4.4",
     "copy-to-clipboard": "^3.0.8",

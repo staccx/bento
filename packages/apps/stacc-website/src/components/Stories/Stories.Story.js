@@ -1,80 +1,88 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { Heading, Layout } from "@staccx/base"
+import { Heading, Layout, LayoutItem } from "@staccx/base"
 import { SanityImage } from "@staccx/sanity"
 import GoTo from "../GoTo/GoTo"
+import BlockContent from "@sanity/block-content-to-react"
+import serializer from "../../pages/blockContentSerializer"
 
 const Story = ({
   heading,
   body,
   callToAction,
   callToActionUrl,
-  illustration,
+  image,
   isReverse
-}) => (
-  <Container>
-    <Inner hasImg={illustration && illustration.asset} rev={isReverse}>
-      <div>
-        <Layout>
-          <div>
-            {heading && <Heading level={3}>{heading}</Heading>}
-            {body && <Body>{body}</Body>}
-          </div>
-          {callToAction &&
-            callToActionUrl && (
-              <div>
-                <GoTo to={callToActionUrl}>{callToAction}</GoTo>
-              </div>
+}) => {
+  let isRich = false
+  if (body && body._type && body._type === "richText") {
+    isRich = true
+    console.log(serializer.types, body)
+  }
+  let aligment = (image && image.alignment) || "auto"
+  aligment = aligment !== "auto" ? aligment : isReverse ? "right" : "left"
+
+  return (
+    <Inner hasImg={image && image.asset} rev={isReverse}>
+      <Layout variant={aligment}>
+        <LayoutItem area={"content"}>
+          <Layout>
+            <ContentWrapper alignment={aligment}>
+              {heading && <Heading level={3}>{heading}</Heading>}
+              {!isRich && <Body>{body}</Body>}
+              {isRich && (
+                <BlockContent
+                  blocks={body.bodyContent}
+                  serializer={serializer}
+                />
+              )}
+            </ContentWrapper>
+            {callToAction &&
+              callToActionUrl && (
+                <div>
+                  <GoTo to={callToActionUrl}>{callToAction}</GoTo>
+                </div>
+              )}
+          </Layout>
+        </LayoutItem>
+        <LayoutItem area={"image"}>
+          {image &&
+            image.asset && (
+              <ImageWrapper>
+                <SanityImage image={image}>
+                  {({ image: img }) => <Illustration src={img.url()} alt="" />}
+                </SanityImage>
+              </ImageWrapper>
             )}
-        </Layout>
-      </div>
-      {illustration &&
-        illustration.asset && (
-          <div>
-            <SanityImage image={illustration}>
-              {({ image }) => <Illustration src={image.url()} alt="" />}
-            </SanityImage>
-          </div>
-        )}
+        </LayoutItem>
+      </Layout>
     </Inner>
-  </Container>
-)
+  )
+}
 
-const Container = styled.div``
+const Inner = styled.div``
 
-const Inner = styled.div`
-  display: flex;
-  align-items: center;
-  ${p => p.rev && p.hasImg && `flex-direction: row-reverse`};
-  justify-content: space-between;
-
-  ${p =>
-    p.hasImg
-      ? css`
-          > div:first-child {
-            flex-basis: calc(50%);
-          }
+const ContentWrapper = styled.div`
+  ${({ alignment }) => {
+    switch (alignment) {
+      case "above":
+      case "sideBySide":
+        return css`
+          max-width: 400px;
+          margin: 0 auto;
         `
-      : css`
-          text-align: left;
-          justify-content: flex-start;
-          > div:first-child {
-            flex-basis: calc(56%);
-          }
-        `};
+      default:
+        return null
+    }
+  }};
+`
 
-  > div:last-child:not(:first-child) {
-    flex-basis: calc(50% - 48px);
-    text-align: center;
-  }
-  @media only screen and (max-width: 750px) {
-    flex-direction: column-reverse;
-  }
+const ImageWrapper = styled.div`
+  text-align: center;
 `
 
 const Illustration = styled.img`
-  max-width: 320px;
   width: 100%;
 `
 

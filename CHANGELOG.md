@@ -3,6 +3,62 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.22.0"></a>
+# [8.22.0](https://bitbucket.org/stacc-flow/bento/compare/v8.21.0...v8.22.0) (2018-11-16)
+
+
+### Bug Fixes
+
+* **fundu-theme:** fixed dev-header ([4b922f5](https://bitbucket.org/stacc-flow/bento/commits/4b922f5))
+* **utils:** partition now returns accepted first ([9bcbcbe](https://bitbucket.org/stacc-flow/bento/commits/9bcbcbe))
+
+
+### Features
+
+* **base:** make slider handle styleable ([cfb79b1](https://bitbucket.org/stacc-flow/bento/commits/cfb79b1))
+* **fundu-theme:** styling of api-management ([86c033c](https://bitbucket.org/stacc-flow/bento/commits/86c033c))
+* **fundu-theme:** styling of devportal menu, header, search, article ++ ([9a89b75](https://bitbucket.org/stacc-flow/bento/commits/9a89b75))
+* **stacc-theme:** add grid variants for stories ([d40e54f](https://bitbucket.org/stacc-flow/bento/commits/d40e54f))
+* **stacc-website:** add handling of aligment for stories ([f29c7cd](https://bitbucket.org/stacc-flow/bento/commits/f29c7cd))
+* **stacc-website:** add image aligment to story ([4238ab4](https://bitbucket.org/stacc-flow/bento/commits/4238ab4))
+* **styrke-theme:** fields styled for :hover and :focus ([9c4853a](https://bitbucket.org/stacc-flow/bento/commits/9c4853a))
+* **utils:** add partition function ([14162ae](https://bitbucket.org/stacc-flow/bento/commits/14162ae))
+
+
+
+
+
+<a name="8.21.0"></a>
+# [8.21.0](https://bitbucket.org/stacc-flow/bento/compare/v8.20.0...v8.21.0) (2018-11-15)
+
+
+### Features
+
+* **i18n:** add process function to allow for processing non-keyed input ([83503e8](https://bitbucket.org/stacc-flow/bento/commits/83503e8))
+* **release-bento:** add scope to ls after release ([bc25ba8](https://bitbucket.org/stacc-flow/bento/commits/bc25ba8))
+
+
+
+
+
+<a name="8.20.0"></a>
+# [8.20.0](https://bitbucket.org/stacc-flow/bento/compare/v8.19.0...v8.20.0) (2018-11-15)
+
+
+### Bug Fixes
+
+* **release-bento:** add link to changelog in success output ([440d3c8](https://bitbucket.org/stacc-flow/bento/commits/440d3c8))
+
+
+### Features
+
+* **mr-x:** parse text and link_names ([5f11484](https://bitbucket.org/stacc-flow/bento/commits/5f11484))
+* **open-id:** add isLoading flag to LoginPassword ([e878139](https://bitbucket.org/stacc-flow/bento/commits/e878139))
+
+
+
+
+
 <a name="8.19.0"></a>
 # [8.19.0](https://bitbucket.org/stacc-flow/bento/compare/v8.18.0...v8.19.0) (2018-11-14)
 

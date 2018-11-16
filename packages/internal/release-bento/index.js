@@ -162,7 +162,7 @@ async function release(debug) {
         "--yes"
       ])
 
-      await executeAsync("lerna", ["ls", "--json"], onData)
+      await executeAsync("lerna", ["ls", `--scope`, scope, "--json"], onData)
       text = updated.map(pkg => `${pkg.name}: ${pkg.version}`).join("\n")
     }
     spinner.succeed("Packages released!")
@@ -172,7 +172,7 @@ async function release(debug) {
     await postMessage(`@channel @${name}'s release failed. Let them know`)
     process.exit(1)
   }
-  
+
   /**
    * Post message to slack
    */
@@ -180,7 +180,9 @@ async function release(debug) {
     spinner.start("Alerting team on Slack")
     const name = await username()
     if (!debug) {
-      await postMessage(`@channel ${name} has released\n \`\`\`${text}\`\`\`\nYou can find release notes here: https://bitbucket.org/stacc-flow/bento/src/master/CHANGELOG.md`)
+      await postMessage(
+        `@channel ${name} has released\n \`\`\`${text}\`\`\`\nYou can find release notes here: https://bitbucket.org/stacc-flow/bento/src/master/CHANGELOG.md`
+      )
     }
     spinner.succeed("Team alerted about the awesome")
   } catch (e) {

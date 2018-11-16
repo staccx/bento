@@ -60,15 +60,28 @@ export const LayoutStyling = theming.createVariants(
         }
       }
     `,
-    form: css`
+    docForm: css`
       grid-template-areas: initial;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      > a {
+        display: flex;
+      }
     `,
     dashboard: css`
       grid-template-columns: 340px 1fr;
       grid-gap: 0;
       min-height: 100vh;
       grid-template-areas: "aside main";
+    `,
+    createApi: css`
+      grid-template-columns: 1fr 1fr;
+      @media only screen and (max-width: 1000px) {
+        grid-template-columns: 1fr;
+      }
+    `,
+    twoUp: css`
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0;
     `
   },
   Layout.themeProps.container

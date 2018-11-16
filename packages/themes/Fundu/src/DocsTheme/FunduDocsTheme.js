@@ -10,6 +10,7 @@ import {
   RadioPillItemHoverStyling
 } from "./theme.docs.Inputs"
 import { TableStyling } from "./theme.docs.Tables"
+import { ButtonDevStyling } from "./theme.Buttons"
 
 const wrapper = {
   documentation: "1440px"
@@ -29,7 +30,8 @@ const color = {
   codeError: "#E08679",
   codeHTMLTag: "#8FBCBB",
   codeHTMLAttrValue: "#A3BE8C",
-  codeHTMLAttrName: "#81A1C1"
+  codeHTMLAttrName: "#81A1C1",
+  devportalLine: "#D7DBE0"
 }
 
 const theme = new theming.Theme({ wrapper, color })
@@ -43,5 +45,6 @@ const theme = new theming.Theme({ wrapper, color })
   .add(RadioPillItemStyling)
   .add(TableStyling)
   .add(RadioPillItemHoverStyling)
+  .add(ButtonDevStyling)
 
 export default theme

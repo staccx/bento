@@ -24,7 +24,7 @@ const subtleButton = css`
   }
 `
 
-const defaultButton = css`
+export const defaultButton = css`
   font-size: ${theming.font.h4};
   border-radius: 100px;
 
