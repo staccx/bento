@@ -82,6 +82,9 @@ export const HeadingStyling = theming.createVariants(
       font-family: ${theming.fontFamily.body};
       font-weight: ${theming.fontWeight.bold};
       font-size: ${theming.font.base};
+    `,
+    createNewExpand: css`
+      font-size: ${theming.font.base};
     `
   },
   Heading.themeProps.heading
