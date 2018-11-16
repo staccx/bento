@@ -34,6 +34,12 @@ export const BoxStyling = theming.createVariants(
       display: flex;
       justify-content: stretch;
       align-items: stretch;
+      > * {
+        flex-grow: 1;
+      }
+      input {
+        height: 71px;
+      }
     `,
     documentationTypePath: css`
       display: flex;
