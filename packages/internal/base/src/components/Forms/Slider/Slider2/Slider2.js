@@ -68,7 +68,7 @@ class Slider2 extends React.Component {
             {({ handles, getHandleProps }) => (
               <div className="slider-handles">
                 {handles.map(handle => (
-                  <Handle
+                  <StyledHandle
                     key={handle.id}
                     handle={handle}
                     domain={[this.props.min, this.props.max]}
@@ -122,6 +122,11 @@ Slider2.themeProps = {
     name: "SLIDER2_TRACKS",
     description: "Tracks style",
     type: themePropTypes.style
+  },
+  handle: {
+    name: "SLIDER2_HANDLE",
+    description: "Handle style",
+    type: themePropTypes.style
   }
 }
 
@@ -146,6 +151,10 @@ const StyledRail = styled.div`
   cursor: pointer;
   background-color: ${color.gray};
   ${applyVariants(Slider2.themeProps.rail)};
+`
+
+const StyledHandle = styled(Handle)`
+  ${applyVariants(Slider2.themeProps.handle)};
 `
 
 const StyledTracks = styled.div`
