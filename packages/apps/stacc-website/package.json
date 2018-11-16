@@ -8,6 +8,7 @@
   "dependencies": {
     "@sanity/client": "^0.135.0",
     "@sanity/image-url": "^0.132.8",
+    "@staccx/utils": "^8.2.0",
     "@typeform/embed": "^0.1.6",
     "compression": "^1.7.3",
     "cors": "^2.8.4",
