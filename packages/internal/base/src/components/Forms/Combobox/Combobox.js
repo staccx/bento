@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 import PropTypes from "prop-types"
 import Search from "../../../hoc/Search/Search"
 import { commonPropTypes } from "../../../constants/themeContants"
@@ -41,7 +42,7 @@ const Combobox = ({
             ...rest
           }) => {
             return (
-              <div>
+              <ComboWrapper {...getRootProps()}>
                 {renderLabel && renderLabel(getLabelProps)}
                 {!selectedItem && renderInput(getInputProps)}
                 {selectedItem &&
@@ -59,7 +60,7 @@ const Combobox = ({
                       selectItem
                     })
                   : null}
-              </div>
+              </ComboWrapper>
             )
           }}
         </Downshift>
@@ -67,6 +68,10 @@ const Combobox = ({
     </Search>
   )
 }
+
+const ComboWrapper = styled.div`
+  position: relative;
+`
 
 Combobox.propTypes = {
   onChange: PropTypes.func,

@@ -30,7 +30,8 @@ const color = {
   codeError: "#E08679",
   codeHTMLTag: "#8FBCBB",
   codeHTMLAttrValue: "#A3BE8C",
-  codeHTMLAttrName: "#81A1C1"
+  codeHTMLAttrName: "#81A1C1",
+  devportalLine: "#D7DBE0"
 }
 
 const theme = new theming.Theme({ wrapper, color })
