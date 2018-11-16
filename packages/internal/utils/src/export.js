@@ -5,6 +5,7 @@ import deepfind from "./export/deepfind"
 import stringIncludes from "./export/stringIncludes"
 import distinct from "./export/distinct"
 import flatten from "./export/flatten"
+import partition from "./export/partition"
 
 export {
   debounce,
@@ -13,5 +14,6 @@ export {
   deepfind,
   stringIncludes,
   distinct,
-  flatten
+  flatten,
+  partition
 }
