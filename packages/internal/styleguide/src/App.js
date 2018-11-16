@@ -8,7 +8,9 @@ import {
   Wrapper,
   Heading,
   ThemeComponent,
-  theming
+  theming,
+  GlobalStyle,
+  WebFonts
 } from "@staccx/base"
 import styled, { ThemeProvider } from "styled-components"
 import Theme from "./theme.js"
@@ -95,84 +97,90 @@ class App extends Component {
     return (
       <Router>
         <ThemeProvider theme={Theme}>
-          <Layout grid="dashboard">
-            <LayoutItem area="aside" variant="sidebar">
-              <Box variant="styleGuideHeader">
-                <ThemeComponent tagName={"logo"} fallback={null} />
-              </Box>
-              <Box variant="documentationMenu">
-                <List variant="documentationMenu">{this.renderMenu(menu)}</List>
-                <List variant="documentationMenu">
-                  <Heading level="3" variant="menuHeading">
-                    Apps
-                  </Heading>
-                  <li>
-                    <Link to={"/apps/savings-advisor"}>Savings-Advisor</Link>
-                  </li>
-                </List>
-              </Box>
-            </LayoutItem>
-            <LayoutItem area="main">
-              <Header>
-                <WidthTab
-                  onChange={e => {
-                    this.setState({ width: e.target.value })
-                  }}
-                />
-                <Select
-                  variant="styleguideSwitchTheme"
-                  items={this.state.themes}
-                  itemToString={item => item.name}
-                  itemToKey={item => item.name}
-                  selectedItem={this.state.componentTheme}
-                  onChange={theme => this.setState({ componentTheme: theme })}
-                />
-              </Header>
-              <Main>
-                <Wrapper size="documentation">
-                  <Route
-                    path={"/apps/:app"}
-                    exact
-                    render={({ match }) => {
-                      console.log(match.params)
-                      switch (match.params.app) {
-                        case "savings-advisor": {
-                          return (
-                            <AppPreview
-                              app={<SavingsAdvisor />}
-                              theme={this.state.componentTheme}
-                            />
-                          )
-                        }
-                        default: {
-                          return <SavingsAdvisor />
-                        }
-                      }
+          <React.Fragment>
+            <GlobalStyle />
+            <WebFonts />
+            <MainLayout>
+              <LayoutItem area="aside" variant="sidebar">
+                <Box variant="styleGuideHeader">
+                  <ThemeComponent tagName={"logo"} fallback={null} />
+                </Box>
+                <Box variant="documentationMenu">
+                  <List variant="documentationMenu">
+                    {this.renderMenu(menu)}
+                  </List>
+                  <List variant="documentationMenu">
+                    <Heading level="3" variant="menuHeading">
+                      Apps
+                    </Heading>
+                    <li>
+                      <Link to={"/apps/savings-advisor"}>Savings-Advisor</Link>
+                    </li>
+                  </List>
+                </Box>
+              </LayoutItem>
+              <LayoutItem area="main">
+                <Header>
+                  <WidthTab
+                    onChange={e => {
+                      this.setState({ width: e.target.value })
                     }}
                   />
-                  {previewArray.map(comp => {
-                    if (!comp.title) {
-                      console.warn("Has no title", comp)
-                      return null
-                    }
-                    return (
-                      <Route
-                        key={comp.title}
-                        path={`/${comp.category}/${comp.title}`}
-                        render={() => (
-                          <PreviewComponent
-                            theme={this.state.componentTheme}
-                            preview={comp}
-                            width={this.state.width}
-                          />
-                        )}
-                      />
-                    )
-                  })}
-                </Wrapper>
-              </Main>
-            </LayoutItem>
-          </Layout>
+                  <Select
+                    variant="styleguideSwitchTheme"
+                    items={this.state.themes}
+                    itemToString={item => item.name}
+                    itemToKey={item => item.name}
+                    selectedItem={this.state.componentTheme}
+                    onChange={theme => this.setState({ componentTheme: theme })}
+                  />
+                </Header>
+                <Main>
+                  <Wrapper size="documentation">
+                    <Route
+                      path={"/apps/:app"}
+                      exact
+                      render={({ match }) => {
+                        console.log(match.params)
+                        switch (match.params.app) {
+                          case "savings-advisor": {
+                            return (
+                              <AppPreview
+                                app={<SavingsAdvisor />}
+                                theme={this.state.componentTheme}
+                              />
+                            )
+                          }
+                          default: {
+                            return <SavingsAdvisor />
+                          }
+                        }
+                      }}
+                    />
+                    {previewArray.map(comp => {
+                      if (!comp.title) {
+                        console.warn("Has no title", comp)
+                        return null
+                      }
+                      return (
+                        <Route
+                          key={comp.title}
+                          path={`/${comp.category}/${comp.title}`}
+                          render={() => (
+                            <PreviewComponent
+                              theme={this.state.componentTheme}
+                              preview={comp}
+                              width={this.state.width}
+                            />
+                          )}
+                        />
+                      )
+                    })}
+                  </Wrapper>
+                </Main>
+              </LayoutItem>
+            </MainLayout>
+          </React.Fragment>
         </ThemeProvider>
       </Router>
     )
@@ -183,6 +191,13 @@ const Main = styled.main`
   overflow-y: auto;
   height: calc(100vh - 72px);
   padding-bottom: ${theming.spacing.huge};
+`
+
+const MainLayout = styled(Layout)`
+  grid-template-columns: 340px 1fr;
+  grid-gap: 0;
+  min-height: 100vh;
+  grid-template-areas: "aside main";
 `
 
 export default App
