@@ -72,6 +72,16 @@ export const LayoutStyling = theming.createVariants(
       grid-gap: 0;
       min-height: 100vh;
       grid-template-areas: "aside main";
+    `,
+    createApi: css`
+      grid-template-columns: 1fr 1fr;
+      @media only screen and (max-width: 1000px) {
+        grid-template-columns: 1fr;
+      }
+    `,
+    twoUp: css`
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0;
     `
   },
   Layout.themeProps.container

@@ -7,6 +7,7 @@ import { CheckboxCheckedIcon, CheckboxCheckedLabel } from "./Theme.Checkbox"
 import { HeadingStyling } from "./theme.Headings"
 import WrapperStyling from "./Theme.Wrapper"
 import InputVariants from "./Input.variants"
+import LayoutVariants from "./Layout.Variants"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -130,6 +131,7 @@ const theme = new theming.Theme(
   .add(HeadingStyling)
   .add(WrapperStyling)
   .add(InputVariants)
+  .add(LayoutVariants)
   .add(theming.createGlobal({ base: theming.cssResets }))
   .add(reset)
 

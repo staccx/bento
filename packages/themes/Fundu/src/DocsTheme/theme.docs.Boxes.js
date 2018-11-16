@@ -56,6 +56,17 @@ export const BoxStyling = theming.createVariants(
       justify-content: left;
       align-items: center;
       border-bottom: 1px solid ${theming.color("devportalLine")};
+    `,
+    createApi: css`
+      padding: ${theming.spacing.medium};
+      background-color: ${theming.color("bgGray")};
+    `,
+    marginTop: css`
+      margin-top: ${theming.spacing.medium};
+    `,
+    docApiClient: css`
+      background-color: ${theming.color.white};
+      padding: ${theming.spacing.medium};
     `
   },
   Box.themeProps.box

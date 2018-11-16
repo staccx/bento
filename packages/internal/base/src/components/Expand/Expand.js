@@ -125,6 +125,7 @@ const ExpandIcon = styled(IconComponent)`
   top: 50%;
   fill: ${color.wcag};
   transition: transform 0.3s ease-out;
+  right: 0;
   transform: ${p =>
     p.isExpanded
       ? "translateY(-50%) rotate(180deg)"
@@ -142,9 +143,11 @@ export const ExpandBtn = styled.button`
   border-width: 0;
   color: inherit;
   padding: 0;
+  text-align: left;
   padding-right: ${spacing.mediumPlus};
   margin: 0;
   min-height: 0;
+  width: 100%;
 
   &:hover,
   &:focus,

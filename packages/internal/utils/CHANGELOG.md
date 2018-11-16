@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.22.0"></a>
+# [8.22.0](https://bitbucket.org/stacc-flow/bento/compare/v8.21.0...v8.22.0) (2018-11-16)
+
+
+### Bug Fixes
+
+* **utils:** partition now returns accepted first ([9bcbcbe](https://bitbucket.org/stacc-flow/bento/commits/9bcbcbe))
+
+
+### Features
+
+* **utils:** add partition function ([14162ae](https://bitbucket.org/stacc-flow/bento/commits/14162ae))
+
+
+
+
+
 <a name="8.2.0"></a>
 # [8.2.0](https://bitbucket.org/stacc-flow/bento/compare/v8.1.1...v8.2.0) (2018-11-02)
 

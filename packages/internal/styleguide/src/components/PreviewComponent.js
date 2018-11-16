@@ -1,5 +1,14 @@
 import React, { Component } from "react"
-import { Heading, Text, Layout, LayoutItem, Box, theming } from "@staccx/base"
+import {
+  Heading,
+  Text,
+  Layout,
+  LayoutItem,
+  Box,
+  theming,
+  GlobalStyle,
+  WebFonts
+} from "@staccx/base"
 import reactElementToJSXString from "react-element-to-jsx-string"
 import pretty from "pretty"
 import wrap from "word-wrap"
@@ -163,7 +172,11 @@ class PreviewComponent extends Component {
                 />
                 <Box variant="overflow">
                   <ThemeProvider theme={this.props.theme}>
-                    {content}
+                    <React.Fragment>
+                      <GlobalStyle />
+                      <WebFonts />
+                      {content}
+                    </React.Fragment>
                   </ThemeProvider>
                 </Box>
 
