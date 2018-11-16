@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.22.0"></a>
+# [8.22.0](https://bitbucket.org/stacc-flow/bento/compare/v8.21.0...v8.22.0) (2018-11-16)
+
+
+### Features
+
+* **stacc-website:** add handling of aligment for stories ([f29c7cd](https://bitbucket.org/stacc-flow/bento/commits/f29c7cd))
+* **stacc-website:** add image aligment to story ([4238ab4](https://bitbucket.org/stacc-flow/bento/commits/4238ab4))
+* **utils:** add partition function ([14162ae](https://bitbucket.org/stacc-flow/bento/commits/14162ae))
+
+
+
+
+
 <a name="8.19.0"></a>
 # [8.19.0](https://bitbucket.org/stacc-flow/bento/compare/v8.18.0...v8.19.0) (2018-11-14)
 

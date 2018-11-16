@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.22.0"></a>
+# [8.22.0](https://bitbucket.org/stacc-flow/bento/compare/v8.21.0...v8.22.0) (2018-11-16)
+
+
+### Bug Fixes
+
+* **fundu-theme:** fixed dev-header ([4b922f5](https://bitbucket.org/stacc-flow/bento/commits/4b922f5))
+* **utils:** partition now returns accepted first ([9bcbcbe](https://bitbucket.org/stacc-flow/bento/commits/9bcbcbe))
+
+
+### Features
+
+* **base:** make slider handle styleable ([cfb79b1](https://bitbucket.org/stacc-flow/bento/commits/cfb79b1))
+* **fundu-theme:** styling of api-management ([86c033c](https://bitbucket.org/stacc-flow/bento/commits/86c033c))
+* **fundu-theme:** styling of devportal menu, header, search, article ++ ([9a89b75](https://bitbucket.org/stacc-flow/bento/commits/9a89b75))
+* **stacc-theme:** add grid variants for stories ([d40e54f](https://bitbucket.org/stacc-flow/bento/commits/d40e54f))
+* **stacc-website:** add handling of aligment for stories ([f29c7cd](https://bitbucket.org/stacc-flow/bento/commits/f29c7cd))
+* **stacc-website:** add image aligment to story ([4238ab4](https://bitbucket.org/stacc-flow/bento/commits/4238ab4))
+* **styrke-theme:** fields styled for :hover and :focus ([9c4853a](https://bitbucket.org/stacc-flow/bento/commits/9c4853a))
+* **utils:** add partition function ([14162ae](https://bitbucket.org/stacc-flow/bento/commits/14162ae))
+
+
+
+
+
 <a name="8.21.0"></a>
 # [8.21.0](https://bitbucket.org/stacc-flow/bento/compare/v8.20.0...v8.21.0) (2018-11-15)
 
