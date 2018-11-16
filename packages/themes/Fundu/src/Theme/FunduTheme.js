@@ -34,6 +34,7 @@ import {
   Slider2RailStyling,
   Slider2TrackStyling
 } from "./theme.Inputs"
+import { ItemGroupStyling, ItemGroupElementStyling } from "./theme.ItemGroups"
 import { LayoutStyling } from "./theme.Layouts"
 import { LayoutItemStyling } from "./theme.LayoutItem"
 import { LogoStyle } from "./Logo"
@@ -162,3 +163,5 @@ export default new theming.Theme({
   .add(Slider2RailStyling)
   .add(Slider2TrackStyling)
   .add(TableStyling)
+  .add(ItemGroupStyling)
+  .add(ItemGroupElementStyling)
