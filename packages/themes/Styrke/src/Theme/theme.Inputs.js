@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { Input, Select, theming, FileInput } from "@staccx/base"
+import { Input, Select, theming, FileInput, Slider2 } from "@staccx/base"
 
 export const InputStyling = theming.createVariants(
   {
@@ -35,6 +35,12 @@ export const LabelStyling = theming.createVariants(
 
 export const SelectSelectedStyling = theming.createVariants(
   {
+    [theming.VARIANT_DEFAULT]: css`
+      border: 2px solid ${theming.color.line};
+      &:focus {
+        border-color: ${theming.color.primary};
+      }
+    `,
     loanOffer: css`
       border-color: transparent;
       padding-right: ${theming.spacing.mediumPlus};
@@ -65,8 +71,25 @@ export const SelectIconButtonStyling = theming.createVariants(
   Select.themeProps.iconButton
 )
 
+export const SelectedWrapperStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      border: 0;
+    `
+  },
+  Select.themeProps.selectedWrapper
+)
+
 export const SelectOptionsWrapperStyling = theming.createVariants(
   {
+    [theming.VARIANT_DEFAULT]: css`
+      li button {
+        border: 0;
+        &:focus {
+          background-color: ${theming.color.black}10;
+        }
+      }
+    `,
     loanOffer: css`
       width: 100%;
       max-height: 150px;
@@ -112,4 +135,13 @@ export const FileInputStyles = theming.createVariants(
     `
   },
   FileInput.themeProps.label
+)
+
+export const Slider2RailStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color.line};
+    `
+  },
+  Slider2.themeProps.rail
 )

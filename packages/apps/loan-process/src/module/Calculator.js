@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import {
+  theming,
   Box,
   Select,
   Button,
@@ -11,12 +12,11 @@ import {
   Heading,
   Layout,
   LayoutItem,
-  List,
-  SplitListItem,
   Input,
   Alert,
   PhoneInput,
-  Loading
+  Loading,
+  Table
 } from "@staccx/base"
 import { getPaymentPlan } from "@staccx/payment-plan"
 import { throttle } from "@staccx/utils"
@@ -77,6 +77,35 @@ class Calculator extends React.Component {
   }
 
   render() {
+    const { term } = this.state
+    const data = [
+      {
+        ...(term && {
+          ...(this.props.showInterestRate && {
+            label: this.props.interestRateText,
+            value: this.props.interestRate + "\xa0%"
+          })
+        })
+      },
+      {
+        ...(term && {
+          ...(this.props.showDownpayment && {
+            label: this.props.downPaymentPerMonthText,
+            value: term.installment,
+            renderOdometer: true
+          })
+        })
+      },
+      {
+        ...(term && {
+          ...(this.props.showTotalMonthly && {
+            label: this.props.totalMonthlyText,
+            value: term.monthlyPayment,
+            renderOdometer: true
+          })
+        })
+      }
+    ]
     return (
       <Formik
         initialValues={{
@@ -118,7 +147,7 @@ class Calculator extends React.Component {
                             max={this.props.maxValue}
                             min={this.props.minValue}
                             defaultValue={value}
-                            step={5000}
+                            step={50000}
                             onChange={value => {
                               this.calculate(value, this.state.terms)
                               setFieldValue("value", value)
@@ -166,46 +195,32 @@ class Calculator extends React.Component {
                         </Text>
                       </Box>
                     )}
-                    {this.state.term && (
-                      <Box variant="loanTerms">
-                        <List>
-                          {this.props.showInterestRate && (
-                            <SplitListItem>
-                              <span>{this.props.interestRateText}</span>
-                              <span>{this.props.interestRate} %</span>
-                            </SplitListItem>
-                          )}
-                          {this.props.showDownpayment && (
-                            <SplitListItem>
-                              <span>{this.props.downPaymentPerMonthText}</span>
-                              <span>
-                                <Odometer
-                                  number={this.state.term.installment}
-                                  size={14}
-                                  seperatorSteps={3}
-                                />
-                              </span>
-                            </SplitListItem>
-                          )}
-                          {this.props.showTotalMonthly && (
-                            <SplitListItem>
-                              <span>
-                                <Text bold>{this.props.totalMonthlyText}</Text>
-                              </span>
-                              <span>
-                                <Text>
-                                  <Odometer
-                                    number={this.state.term.monthlyPayment}
-                                    size={14}
-                                    seperatorSteps={3}
-                                  />
-                                </Text>
-                              </span>
-                            </SplitListItem>
-                          )}
-                        </List>
-                      </Box>
-                    )}
+                    <Table
+                      className="Table"
+                      data={data.filter(
+                        value => Object.keys(value).length !== 0
+                      )}
+                      blacklist={item => item !== "renderOdometer"}
+                      variant={[
+                        theming.VARIANT_DEFAULT,
+                        "hideHeader",
+                        "setBorders",
+                        "highlightResult"
+                      ]}
+                    >
+                      {({ item }) => (
+                        <React.Fragment>
+                          <td>{item.label}</td>
+                          <td>
+                            {item.renderOdometer ? (
+                              <Odometer number={item.value} size={14} />
+                            ) : (
+                              item.value
+                            )}
+                          </td>
+                        </React.Fragment>
+                      )}
+                    </Table>
                   </Layout>
                 </LayoutItem>
                 <LayoutItem area="right">
@@ -312,7 +327,7 @@ Calculator.defaultProps = {
   interestRateText: "Rente",
   loanDurationLabel: "Nedbetalingstid",
   maxValue: 1000000,
-  minValue: 10000,
+  minValue: 50000,
   priceExampleText:
     "Lånet gis med fastrente i hele lånets løpetid. Priseksempel: 500 000 over 6 mnd, eff. rente 11,56 % kostnader 26 232, totalt 526 232.",
   productType: "PRODUCT_LOAN",

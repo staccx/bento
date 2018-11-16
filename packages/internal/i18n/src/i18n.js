@@ -72,10 +72,7 @@ class i18n {
 
     const formattingData = Object.assign({}, this.data, data)
     try {
-      const result = this.convert(val) || fallback
-      // Run through plugins
-      const pluginated = this.runPlugins(result, formattingData)
-      return format(pluginated, formattingData)
+      return this.process(this.convert(val) || fallback, formattingData)
     } catch (error) {
       console.error(error, data, key)
 
@@ -101,6 +98,12 @@ class i18n {
      * We can send debug string (perhaps only if debug = true)
      */
     return null
+  }
+
+  process(val, data) {
+    const formattingData = Object.assign({}, this.data, data)
+    const pluginated = this.runPlugins(val, formattingData)
+    return format(pluginated, formattingData)
   }
 
   runPlugins(val, data) {

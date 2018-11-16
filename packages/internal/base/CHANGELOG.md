@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.19.0"></a>
+# [8.19.0](https://bitbucket.org/stacc-flow/bento/compare/v8.18.0...v8.19.0) (2018-11-14)
+
+
+### Bug Fixes
+
+* **base:** exclude select icon button from tabindex ([3741b85](https://bitbucket.org/stacc-flow/bento/commits/3741b85))
+
+
+### Features
+
+* **loan-process:** improve slider ([d07933e](https://bitbucket.org/stacc-flow/bento/commits/d07933e))
+* **loan-process:** style slider ([26be5c9](https://bitbucket.org/stacc-flow/bento/commits/26be5c9))
+
+
+
+
+
+<a name="8.18.0"></a>
+# [8.18.0](https://bitbucket.org/stacc-flow/bento/compare/v8.17.0...v8.18.0) (2018-11-13)
+
+
+### Features
+
+* **loan-process:** styling of fileupload Styrke + Fundu ([77ea74a](https://bitbucket.org/stacc-flow/bento/commits/77ea74a))
+
+
+
+
+
 <a name="8.15.1"></a>
 ## [8.15.1](https://bitbucket.org/stacc-flow/bento/compare/v8.15.0...v8.15.1) (2018-11-12)
 

@@ -5,6 +5,8 @@ import {
   Select,
   RadioPillItem,
   SliderKeyboardInput,
+  Slider2,
+  Slider2Track,
   CompanyInput,
   PostalCodeInput,
   theming,
@@ -25,6 +27,23 @@ export const InputStyling = theming.createVariants(
       input {
         min-height: 96px;
       }
+    `,
+    calculatorSlider: css`
+      background-color: coral;
+      background: linear-gradient(
+        to right,
+        ${theming.color("green")} 0%,
+        ${theming.color("green")} ${p => p.percentage * 100}%,
+        transparent ${p => p.percentage * 100}%,
+        transparent 100%
+      );
+      border-color: ${theming.color("green")};
+      border-width: 3px;
+      font-size: ${theming.font.h1};
+      min-height: 75px;
+      line-height: 1;
+      padding-top: 10px;
+      text-align: center;
     `
   },
   Input.themeProps.input
@@ -45,7 +64,11 @@ export const LabelStyling = theming.createVariants(
 export const SelectOptionStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
+      border: 1px solid ${theming.color.primary};
       padding-left: ${theming.spacing.small};
+      &:focus {
+        border: 2px solid ${theming.color.primary};
+      }
     `,
     calculatorTerms: css`
       background-color: transparent;
@@ -67,8 +90,7 @@ export const SelectWrapperStyling = theming.createVariants(
 export const SelectSelectedWrapperStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
-      border-color: ${theming.color.primary};
-      border-width: 1px;
+      border-width: 0;
     `,
     calculatorTerms: css`
       border-width: 0;
@@ -90,6 +112,12 @@ export const SelectOptionsWrapperStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       border-color: ${theming.color.primary};
+      li button {
+        border: 0;
+        &:focus {
+          background-color: ${theming.color.black}10;
+        }
+      }
     `
   },
   Select.themeProps.defaultOptionWrapper
@@ -239,4 +267,26 @@ export const FileInputStyles = theming.createVariants(
     `
   },
   FileInput.themeProps.label
+)
+
+export const Slider2RailStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color.disabled};
+      height: 8px;
+      top: 2px;
+    `
+  },
+  Slider2.themeProps.rail
+)
+
+export const Slider2TrackStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color("green")};
+      height: 8px;
+      top: 2px;
+    `
+  },
+  Slider2Track.themeProps.track
 )

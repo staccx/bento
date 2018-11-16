@@ -26,6 +26,8 @@ import FormField from "./components/Forms/Form/FormField"
 import CreditCardInput from "./components/Forms/Input/CreditCard/CreditCardInput"
 import Select2 from "./components/Forms/Select/Select2"
 import Slider2 from "./components/Forms/Slider/Slider2/Slider2"
+import Slider2Track from "./components/Forms/Slider/Slider2/Slider2.Track"
+import Slider2Handle from "./components/Forms/Slider/Slider2/Slider2.Handle"
 
 // Text
 import Text from "./components/Text/Text/Text"
@@ -208,6 +210,8 @@ export {
   Search,
   Select,
   Select2,
+  Slider2Track,
+  Slider2Handle,
   SelectOption,
   SelectSimple,
   State,

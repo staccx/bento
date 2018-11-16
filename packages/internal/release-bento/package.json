@@ -1,0 +1,13 @@
+{
+  "name": "@staccx/release-bento",
+  "version": "8.21.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@lerna/check-working-tree": "^3.3.0",
+    "commander": "^2.19.0",
+    "ora": "^3.0.0",
+    "username": "^4.0.0"
+  }
+}

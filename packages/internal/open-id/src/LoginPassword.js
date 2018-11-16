@@ -22,9 +22,7 @@ class LoginPassword extends React.Component {
           window.location.replace(props.redirectAfterLogin)
         })
         .catch(console.error)
-    }
-
-    if (!searchParams.state) {
+    } else if (!searchParams.state) {
       const oidcConfig = {
         ...props.oidcConfig,
         acr_values: `idp:${props.acrValue}`
@@ -37,7 +35,8 @@ class LoginPassword extends React.Component {
       username: "",
       password: "",
       stateToken: searchParams.state,
-      loginStatus: null
+      loginStatus: null,
+      isLoggingIn: false
     }
 
     this.handlePasswordInput = this.handlePasswordInput.bind(this)
@@ -64,6 +63,8 @@ class LoginPassword extends React.Component {
       password,
       state
     }
+
+    this.setState({ isLoggingIn: true })
     axios
       .post(this.props.codePostUri, postData)
       .then(response => {
@@ -77,6 +78,7 @@ class LoginPassword extends React.Component {
       .catch(err =>
         this.setState({
           loginStatus: err,
+          isLoggingIn: false,
           username: "",
           password: ""
         })
@@ -89,6 +91,7 @@ class LoginPassword extends React.Component {
       handlePasswordInput: this.handlePasswordInput,
       submitCredentials: this.submitCredentials,
       loginStatus: this.state.loginStatus,
+      isLoading: this.state.isLoggingIn,
       username: this.state.username,
       password: this.state.password
     })

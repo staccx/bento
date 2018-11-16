@@ -3,6 +3,84 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.21.0"></a>
+# [8.21.0](https://bitbucket.org/stacc-flow/bento/compare/v8.20.0...v8.21.0) (2018-11-15)
+
+
+### Features
+
+* **i18n:** add process function to allow for processing non-keyed input ([83503e8](https://bitbucket.org/stacc-flow/bento/commits/83503e8))
+* **release-bento:** add scope to ls after release ([bc25ba8](https://bitbucket.org/stacc-flow/bento/commits/bc25ba8))
+
+
+
+
+
+<a name="8.20.0"></a>
+# [8.20.0](https://bitbucket.org/stacc-flow/bento/compare/v8.19.0...v8.20.0) (2018-11-15)
+
+
+### Bug Fixes
+
+* **release-bento:** add link to changelog in success output ([440d3c8](https://bitbucket.org/stacc-flow/bento/commits/440d3c8))
+
+
+### Features
+
+* **mr-x:** parse text and link_names ([5f11484](https://bitbucket.org/stacc-flow/bento/commits/5f11484))
+* **open-id:** add isLoading flag to LoginPassword ([e878139](https://bitbucket.org/stacc-flow/bento/commits/e878139))
+
+
+
+
+
+<a name="8.19.0"></a>
+# [8.19.0](https://bitbucket.org/stacc-flow/bento/compare/v8.18.0...v8.19.0) (2018-11-14)
+
+
+### Bug Fixes
+
+* **base:** exclude select icon button from tabindex ([3741b85](https://bitbucket.org/stacc-flow/bento/commits/3741b85))
+
+
+### Features
+
+* **bento:** bento now uses release script ([2d6ebc4](https://bitbucket.org/stacc-flow/bento/commits/2d6ebc4))
+* **fundu-theme:** add Table variant hideHeader ([0807703](https://bitbucket.org/stacc-flow/bento/commits/0807703))
+* **fundu-theme:** highlight results in tables ([e631325](https://bitbucket.org/stacc-flow/bento/commits/e631325))
+* **fundu-theme:** style selects ([3b8f0c8](https://bitbucket.org/stacc-flow/bento/commits/3b8f0c8))
+* **loan-process:** improve slider ([d07933e](https://bitbucket.org/stacc-flow/bento/commits/d07933e))
+* **loan-process:** style slider ([26be5c9](https://bitbucket.org/stacc-flow/bento/commits/26be5c9))
+* **loan-process:** use Table component for tables + style ([5209a37](https://bitbucket.org/stacc-flow/bento/commits/5209a37))
+* **mr-x:** expose postMessage function ([e125329](https://bitbucket.org/stacc-flow/bento/commits/e125329))
+* **release-bento:** add release script. not working yet ([bf8d3b4](https://bitbucket.org/stacc-flow/bento/commits/bf8d3b4))
+* **release-bento:** finished release script ([763c7b6](https://bitbucket.org/stacc-flow/bento/commits/763c7b6))
+* **styrke-theme:** add polished + base-table styling ([d2852cf](https://bitbucket.org/stacc-flow/bento/commits/d2852cf))
+* **styrke-theme:** style selects ([273bc68](https://bitbucket.org/stacc-flow/bento/commits/273bc68))
+* **stytrke-theme:** list styling ([0c074ac](https://bitbucket.org/stacc-flow/bento/commits/0c074ac))
+
+
+
+
+
+<a name="8.18.0"></a>
+# [8.18.0](https://bitbucket.org/stacc-flow/bento/compare/v8.17.0...v8.18.0) (2018-11-13)
+
+
+### Bug Fixes
+
+* **fundu-theme:** margin top for Heading variant="documentation" ([a736b03](https://bitbucket.org/stacc-flow/bento/commits/a736b03))
+* **open-id:** fix issue with race challenge + signin ([06406d2](https://bitbucket.org/stacc-flow/bento/commits/06406d2))
+
+
+### Features
+
+* **loan-process:** styling of fileupload Styrke + Fundu ([77ea74a](https://bitbucket.org/stacc-flow/bento/commits/77ea74a))
+
+
+
+
+
 <a name="8.17.0"></a>
 # [8.17.0](https://bitbucket.org/stacc-flow/bento/compare/v8.16.0...v8.17.0) (2018-11-13)
 
