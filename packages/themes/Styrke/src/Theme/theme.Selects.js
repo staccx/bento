@@ -1,7 +1,7 @@
 import { css } from "styled-components"
 import { Select, theming } from "@staccx/base"
 
-export const SelectStyling = theming.createVariants(
+export const SelectWrapperStyling = theming.createVariants(
   {
     calculatorTerms: css`
       height: 44px;

@@ -11,6 +11,11 @@ export const ButtonDevStyling = theming.createVariants(
       font-size: ${theming.font.base};
       margin-left: ${theming.spacing.small};
       margin-right: ${theming.spacing.small};
+    `,
+    deleteClient: css`
+      font-size: ${theming.font.base};
+      background-color: ${theming.color("bgGray")};
+      color: ${theming.color.primary};
     `
   },
   Button.themeProps.button

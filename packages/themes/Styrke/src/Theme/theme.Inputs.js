@@ -19,6 +19,13 @@ export const InputStyling = theming.createVariants(
       input {
         min-height: 96px;
       }
+    `,
+    calculatorSlider: css`
+      border-width: 2px;
+      &:hover,
+      &:focus {
+        border-color: ${theming.color.primary};
+      }
     `
   },
   Input.themeProps.input
@@ -31,6 +38,20 @@ export const LabelStyling = theming.createVariants(
     `
   },
   Input.themeProps.label
+)
+
+export const SelectOptionStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css``,
+    calculatorTerms: css`
+      border: 2px solid ${theming.color.line};
+      &:hover,
+      &:focus {
+        border-color: ${theming.color.primary};
+      }
+    `
+  },
+  Select.themeProps.optionContainer
 )
 
 export const SelectSelectedStyling = theming.createVariants(
@@ -75,9 +96,19 @@ export const SelectedWrapperStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       border: 0;
+    `,
+    calculatorTerms: css`
+      border: 0;
     `
   },
   Select.themeProps.selectedWrapper
+)
+
+export const SelectedStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css``
+  },
+  Select.themeProps.selectedStyling
 )
 
 export const SelectOptionsWrapperStyling = theming.createVariants(
@@ -85,6 +116,7 @@ export const SelectOptionsWrapperStyling = theming.createVariants(
     [theming.VARIANT_DEFAULT]: css`
       li button {
         border: 0;
+        &:hover,
         &:focus {
           background-color: ${theming.color.black}10;
         }
@@ -101,6 +133,15 @@ export const SelectOptionsWrapperStyling = theming.createVariants(
         rgba(0, 0, 75, 0.015) 0px 4px 4px, rgba(0, 0, 75, 0.015) 0px 8px 8px,
         rgba(0, 0, 75, 0.015) 0px 16px 16px, rgba(0, 0, 75, 0.015) 0px 32px 32px,
         rgba(0, 0, 75, 0.015) 0px 64px 64px;
+    `,
+    calculatorTerms: css`
+      li button {
+        border: 0;
+        &:hover,
+        &:focus {
+          background-color: ${theming.color.black}10;
+        }
+      }
     `
   },
   Select.themeProps.defaultOptionWrapper
@@ -145,3 +186,17 @@ export const Slider2RailStyling = theming.createVariants(
   },
   Slider2.themeProps.rail
 )
+
+export const Slider2HandleStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      &:hover,
+      &:focus {
+        border: 2px solid ${theming.color.primary};
+      }
+    `
+  },
+  Slider2.themeProps.handle
+)
+
+export const CompanyInputStyling = theming.createVariants()
