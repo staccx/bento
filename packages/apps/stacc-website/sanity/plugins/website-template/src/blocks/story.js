@@ -1,3 +1,5 @@
+import imageAlignment from "./data/imageAlignment"
+
 export default {
   type: "object",
   name: "story",
@@ -9,7 +11,7 @@ export default {
       title: "Title"
     },
     {
-      type: "text",
+      type: "richText",
       name: "body",
       title: "Body"
     },
@@ -19,7 +21,17 @@ export default {
       type: "image",
       options: {
         hotspot: true
-      }
+      },
+      fields: [
+        {
+          type: "string",
+          name: "alignment",
+          title: "Alignment",
+          options: {
+            list: imageAlignment
+          }
+        }
+      ]
     }
   ],
   preview: {
