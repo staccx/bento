@@ -60,9 +60,12 @@ export const LayoutStyling = theming.createVariants(
         }
       }
     `,
-    form: css`
+    docForm: css`
       grid-template-areas: initial;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      > a {
+        display: flex;
+      }
     `,
     dashboard: css`
       grid-template-columns: 340px 1fr;

@@ -50,7 +50,12 @@ export const BoxStyling = theming.createVariants(
       padding-top: ${theming.spacing.large};
     `,
     devPortalHeader: css`
-      padding: ${theming.spacing.small};
+      padding: ${theming.spacing.medium};
+      height: 72px;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      border-bottom: 1px solid ${theming.color("devportalLine")};
     `
   },
   Box.themeProps.box

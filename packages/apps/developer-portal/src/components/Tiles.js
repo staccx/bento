@@ -7,7 +7,7 @@ const Tiles = ({ tiles }) => (
   <div>
     <Layout paddingTop="large">
       <LeftWrapper size="medium">
-        <Layout variant="form" paddingTop="medium">
+        <Layout variant="docForm" paddingTop="medium">
           {tiles &&
             tiles.map(tile => (
               <Anchor to={tile.to || "#"} key={tile._key} as={Link}>
@@ -26,19 +26,6 @@ const Tiles = ({ tiles }) => (
 )
 
 const LeftWrapper = styled(Wrapper)`
-  margin-left: 0;
   padding: 0;
 `
-
-const onAttention = `&:hover, &:focus, &:active`
-
-const BoxLink = styled(Link)`
-  text-decoration: none;
-  transition: transform 0.2s ease;
-
-  ${onAttention} {
-    transform: translateY(-3px);
-  }
-`
-
 export default Tiles
