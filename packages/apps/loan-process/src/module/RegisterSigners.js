@@ -308,6 +308,7 @@ class RegisterSigners extends React.Component {
                         <Loading variant={"buttonLoading"} />
                       ) : (
                         <Button
+                          variant="forward"
                           type="submit"
                           onClick={() => this.setState({ showErrors: true })}
                         >

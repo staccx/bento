@@ -291,7 +291,9 @@ class Calculator extends React.Component {
                   {this.props.isLoading ? (
                     <Loading variant={"buttonLoading"} />
                   ) : (
-                    <Button onClick={this.props.onClick}>Neste</Button>
+                    <Button variant="forward" onClick={this.props.onClick}>
+                      Neste
+                    </Button>
                   )}
                 </LayoutItem>
 

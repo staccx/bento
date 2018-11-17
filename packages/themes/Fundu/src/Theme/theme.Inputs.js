@@ -20,7 +20,8 @@ export const InputStyling = theming.createVariants(
       &:hover,
       &:focus,
       &:active {
-        border-width: 2px;
+        /* border-width: 2px; */
+        box-shadow: 0 0 0 1px ${theming.color.primary};
       }
     `,
     currencyLarge: css`
@@ -67,7 +68,8 @@ export const SelectOptionStyling = theming.createVariants(
       border: 1px solid ${theming.color.primary};
       padding-left: ${theming.spacing.small};
       &:focus {
-        border: 2px solid ${theming.color.primary};
+        /* border: 2px solid ${theming.color.primary}; */
+        box-shadow: 0 0 0 1px ${theming.color.primary};
       }
     `,
     calculatorTerms: css`

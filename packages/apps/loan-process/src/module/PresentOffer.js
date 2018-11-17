@@ -246,12 +246,13 @@ class PresentOffer extends React.Component {
               </LayoutItem>
             )}
 
-            <ItemGroup variant="overflow">
+            <ItemGroup variant={["overflow", "forward"]}>
               {this.props.isLoading ? (
                 <Loading variant={"buttonLoading"} />
               ) : (
                 <React.Fragment>
                   <Button
+                    variant="forward"
                     disabled={!this.state.isValid}
                     onClick={() => this.respondToOffer(true)}
                   >

@@ -147,7 +147,7 @@ class ProvideAdditionalInfo extends React.Component {
                 {this.props.isLoading ? (
                   <Loading variant={"buttonLoading"} />
                 ) : (
-                  <Button type={"submit"} disabled={!isValid}>
+                  <Button variant="forward" type={"submit"} disabled={!isValid}>
                     Gå videre
                   </Button>
                 )}

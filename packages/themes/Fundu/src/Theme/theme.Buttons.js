@@ -30,6 +30,13 @@ export const defaultButton = css`
 
   &:disabled {
     background-color: ${theming.color.disabled};
+    &:after {
+      content: none;
+    }
+    &:hover,
+    &:focus {
+      padding-right: ${theming.spacing.medium};
+    }
   }
 `
 
@@ -40,6 +47,43 @@ export const ButtonStyling = theming.createVariants(
     `,
     primary: css`
       ${defaultButton};
+    `,
+    forward: css`
+      ${defaultButton};
+      & {
+        margin-right: 36px;
+      }
+      &,
+      &::after {
+        position: relative;
+        transition: all 200ms ease;
+      }
+
+      &:hover,
+      &:focus {
+        padding-right: calc(${theming.spacing.medium} + 20px);
+        margin-right: 16px;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        border: 3px solid #fff;
+        border-left: 0;
+        border-bottom: 0;
+        width: 10px;
+        height: 10px;
+        right: 20px;
+        top: calc(50% - 5px);
+        opacity: 0;
+        transform: rotate(45deg);
+      }
+
+      &:hover::after,
+      &:focus::after {
+        opacity: 1;
+      }
     `,
     small: css`
       min-height: ${theming.targetSize.small};

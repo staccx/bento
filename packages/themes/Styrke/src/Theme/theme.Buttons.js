@@ -1,23 +1,30 @@
 import { css } from "styled-components"
 import { Button, theming } from "@staccx/base"
 
+const defaultStyle = css`
+  /* border-bottom: 2px solid ${theming.color("black")}; */
+  font-size: ${theming.font.input};
+  padding: 4px ${theming.spacing.medium};
+  border: 2px solid ${theming.color.primary};
+  :focus {
+    box-shadow: 0 0 0 8px ${theming.color("primaryDark")}20;
+    transition: box-shadow 200ms cubic-bezier(0, 0.28, 0.54, 0.99),
+      border-bottom 2000ms ease;
+  }
+  &[disabled] {
+    background-color: ${theming.color.disabled};
+    border-color: ${theming.color.disabled};
+    cursor: default;
+  }
+`
+
 export const ButtonStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
-      /* border-bottom: 2px solid ${theming.color("black")}; */
-      font-size: ${theming.font.input};
-      padding: 4px ${theming.spacing.medium};
-      border: 2px solid ${theming.color.primary};
-      :focus {
-        box-shadow: 0 0 0 8px ${theming.color("primaryDark")}20;
-        transition: box-shadow 200ms cubic-bezier(0, 0.28, 0.54, 0.99),
-          border-bottom 2000ms ease;
-      }
-      &[disabled] {
-        background-color: ${theming.color.disabled};
-        border-color: ${theming.color.disabled};
-        cursor: default;
-      }
+      ${defaultStyle};
+    `,
+    forward: css`
+      ${defaultStyle};
     `,
     secondary: css`
       background-color: transparent;
