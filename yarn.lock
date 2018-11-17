@@ -1314,7 +1314,7 @@
 
 "@sanity/client@0.136.0", "@sanity/client@^0.136.0":
   version "0.136.0"
-  resolved "https://registry.npmjs.org/@sanity/client/-/client-0.136.0.tgz#3023dbf228da879003106694ca3c4d3987544a91"
+  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-0.136.0.tgz#3023dbf228da879003106694ca3c4d3987544a91"
   dependencies:
     "@sanity/eventsource" "0.136.0"
     "@sanity/generate-help-url" "0.136.0"
@@ -2892,6 +2892,18 @@ acorn-globals@^4.1.0:
     acorn "^6.0.1"
     acorn-walk "^6.0.1"
 
+acorn-jsx-walk@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/acorn-jsx-walk/-/acorn-jsx-walk-1.0.1.tgz#612803dca9fbd5cdc7134205e12d67a15131ed7e"
+  dependencies:
+    acorn-jsx "^2.0.0"
+
+acorn-jsx@^2.0.0:
+  version "2.0.1"
+  resolved "http://registry.npmjs.org/acorn-jsx/-/acorn-jsx-2.0.1.tgz#0edf9878a5866bca625f52955a1ed9e7d8c5117e"
+  dependencies:
+    acorn "^2.0.1"
+
 acorn-jsx@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-3.0.1.tgz#afdf9488fb1ecefc8348f6fb22f464e32a58b36b"
@@ -2905,6 +2917,10 @@ acorn-jsx@^5.0.0:
 acorn-walk@^6.0.1:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-6.1.0.tgz#c957f4a1460da46af4a0388ce28b4c99355b0cbc"
+
+acorn@^2.0.1:
+  version "2.7.0"
+  resolved "http://registry.npmjs.org/acorn/-/acorn-2.7.0.tgz#ab6e7d9d886aaca8b085bc3312b79a198433f0e7"
 
 acorn@^3.0.4:
   version "3.3.0"
