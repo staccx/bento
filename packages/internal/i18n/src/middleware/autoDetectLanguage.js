@@ -6,7 +6,9 @@ export default instance => {
   if (!value) {
     // Check navigator language
     if (instance.hasLanguage(navigator.language)) {
-      this.log(`Found language in navigator language: ${navigator.language}`)
+      instance.log(
+        `Found language in navigator language: ${navigator.language}`
+      )
       instance.setLanguage(navigator.language)
     }
     // Check navigator languages
@@ -24,7 +26,7 @@ export default instance => {
         const l = locale.split("-")[0] // take first piece of this
 
         if (instance.hasLanguage(l)) {
-          this.log(`Found language by splitting locale ${locale} into ${l}`)
+          instance.log(`Found language by splitting locale ${locale} into ${l}`)
 
           instance.setLanguage(l)
         }

@@ -42,6 +42,9 @@ class TranslatedText extends React.Component {
           }
 
           if (children) {
+            if (typeof children !== "function") {
+              return children // Fallback to children
+            }
             return children(value)
           }
           return value
@@ -52,7 +55,14 @@ class TranslatedText extends React.Component {
 }
 
 TranslatedText.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.array,
+    PropTypes.func
+  ]),
   i18nKey: PropTypes.string.isRequired
 }
 
