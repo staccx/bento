@@ -6,7 +6,7 @@
   "main": "dist/cli.js",
   "module": "dist/cli.es.js",
   "bin": {
-    "cli-x": "dist/cli.js"
+    "bento": "src/cli.js"
   },
   "scripts": {
     "test": "react-scripts test --env=jsdom --coverage",
@@ -25,6 +25,8 @@
     "inquirer": "^5.2.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.2.0"
+    "@sanity/client": "^0.136.0",
+    "@staccx/rollup-config": "^8.2.0",
+    "acorn-jsx-walk": "^1.0.1"
   }
 }
