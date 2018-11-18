@@ -3,94 +3,60 @@
 const program = require("commander")
 const inquirer = require("inquirer")
 const path = require("path")
-const fs = require("fs-extra")
-const sanityClient = require("@sanity/client")
+
+const getTranslations = require("./utils/getTranslations")
 const convertTranslations = require("./utils/convertTranslations")
 const saveToJson = require("./utils/saveToJson")
+const walk = require("./utils/walk")
 
 program.version("0.0.1").description("Command line tool for Stacc X")
 
-program
-  .command(`create <name>`)
-  .alias("c")
-  .description("Create a styleguide")
-  .action(name => {
-    inquirer
-      .prompt({
-        type: "confirm",
-        name: "createModule",
-        message: "Are you sure?"
-      })
-      .then(response => {
-        // console.log({ name })
-        console.log("Dirname", __dirname)
-        console.log(path.dirname(__filename))
-      })
-  })
-
-program
-  .command(`module <name>`)
-  .alias("m")
-  .description("Create a empty module")
-  .action(name => {
-    inquirer
-      .prompt({
-        type: "confirm",
-        name: "createModule",
-        message: "Are you sure?"
-      })
-      .then(response => {
-        const { createModule } = response
-        console.log(response)
-        if (createModule) {
-          // console.log({ name })
-
-          console.log("Copying from", path.dirname("../"))
-          console.log("Dirname", __dirname)
-          console.log(path.dirname(__filename))
-        }
-      })
-  })
+const list = val => {
+  return val.split(",")
+}
 
 program
   .command("i18n")
-  .option("-s, --sync")
+  .option("-s, --save", "Download and save to file")
+  .option("-w, --walk", "Traverse files and find missing")
   .option("-p, --project <projectId>", "Sanity project id")
-  .option("-d, --dataset <dataset>")
-  .option("-f, --filename <file>")
+  .option("-d, --dataset <dataset>", "Dataset for project to compare against")
+  .option("-f, --filename <file>", "Filename of saved file")
+  .option("--pattern <pattern>", "Glob pattern for finding components")
+  .option(
+    "-l, --languages <languages>",
+    "List of languages. Comma-separated",
+    list
+  )
   .description("i18n operations")
   .action(cmd => {
-    if (cmd.sync) {
-      if (!cmd.project) {
-        console.warn("No project provided")
-        process.exit(1)
-      }
-      if (!cmd.dataset) {
-        console.warn("No dataset provided")
-        process.exit(1)
-      }
-      try {
-        const client = sanityClient({
-          projectId: cmd.project,
-          dataset: cmd.dataset,
-          useCdn: true
-        })
+    if (!cmd.project) {
+      console.warn("No project provided")
+      process.exit(1)
+    }
+    if (!cmd.dataset) {
+      console.warn("No dataset provided")
+      process.exit(1)
+    }
+    try {
+      getTranslations(cmd.project, cmd.dataset)
+        .then(convertTranslations)
+        .then(async texts => {
+          if (cmd.save) {
+            await saveToJson(texts, cmd.filename).then(textsSaved =>
+              console.log(`Saved ${Object.keys(textsSaved).length} keys`)
+            )
+          }
 
-        const query = `*[_type == "i18n"] {"id": _id, key, value}`
-        console.log("Fetching texts", query)
-        client
-          .fetch(query)
-          .then(convertTranslations)
-          .then(texts => {
-            return saveToJson(texts, cmd.filename)
-          })
-          .then(textsSaved =>
-            console.log(`Saved ${Object.keys(textsSaved).length} keys`)
-          )
-          .catch(console.error)
-      } catch (e) {
-        throw e
-      }
+          if (cmd.walk) {
+            const { keys } = await walk({ texts, languages: cmd.languages })
+            console.log("Result:", keys)
+            await saveToJson(keys, cmd.filename)
+          }
+        })
+        .catch(console.error)
+    } catch (e) {
+      throw e
     }
   })
 
