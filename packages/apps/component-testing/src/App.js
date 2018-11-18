@@ -98,6 +98,8 @@ class App extends Component {
                   <TranslatedText i18nKey={"INVOICE"}>
                     {value => <Paragraph>{value}</Paragraph>}
                   </TranslatedText>
+                  <TranslatedText />
+                  <TranslatedText>Just doing stuff</TranslatedText>
                 </ExpandListItem>
                 <ExpandListItem title={"Inputs"}>
                   <CompanyInput id={"test"} />
