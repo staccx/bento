@@ -149,9 +149,10 @@ export default theming.createVariants(
     loanBox: css`
       ${Account};
     `,
-    accountFilter: css`
-      background-color: ${theming.color("accountFilter")};
-      color: ${theming.color.white};
+    tag: css`
+      background-color: ${p =>
+        p.selected ? theming.color("accountFilter") : theming.color("line")};
+      color: ${p => (p.selected ? theming.color.white : theming.color.text)};
       padding: ${theming.spacing.tiny} ${theming.spacing.small};
       border-radius: ${theming.spacing.medium};
       min-height: ${theming.spacing.medium};

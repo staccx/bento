@@ -16,7 +16,11 @@ const LoanStatement = ({ history, account, transactions }) => {
           <AccountFilter account={account} />
         </LayoutItem>
         <LayoutItem variant="fadeIn" delay="600">
-          <Transactions transactions={account.transactions} />
+          <Transactions
+            transactions={account.transactions}
+            availableBalance={account.availableBalance}
+            accountType={account.accountType}
+          />
         </LayoutItem>
       </Layout>
     </Wrapper>
