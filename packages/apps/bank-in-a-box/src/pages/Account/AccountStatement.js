@@ -1,6 +1,5 @@
 import React from "react"
-import { Layout, Wrapper, Heading, Button, LayoutItem } from "@staccx/base"
-import { backwards } from "../../components/transitions/transitions"
+import { Layout, Wrapper, Heading, LayoutItem } from "@staccx/base"
 import AccountFilter from "../../components/AccountFilter"
 import Transactions from "../../components/Transactions"
 import Back from "../../components/Back"
@@ -23,19 +22,11 @@ const LoanStatement = ({ history, account, transactions }) => {
           <AccountFilter account={account} />
         </LayoutItem>
         <LayoutItem variant="fadeIn" delay="600">
-          <Transactions transactions={account.transactions} />
-        </LayoutItem>
-        <LayoutItem variant="fadeIn" delay="800">
-          <Button
-            onClick={() =>
-              history.push({
-                pathname: "/account/546126722",
-                state: backwards
-              })
-            }
-          >
-            <TranslatedText i18nKey="BackTextButton" fallback="Tilbake" />
-          </Button>
+          <Transactions
+            transactions={account.transactions}
+            availableBalance={account.availableBalance}
+            accountType={account.accountType}
+          />
         </LayoutItem>
       </Layout>
     </Wrapper>

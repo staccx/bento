@@ -146,7 +146,8 @@ const t = new Theme(BaseTheme, {
   global: reset,
   bib: {
     loan: false,
-    deposit: true
+    deposit: true,
+    transactionsFrontpage: true
   }
 })
   .add(Button)

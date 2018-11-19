@@ -36,35 +36,21 @@ export default theming.createVariants(
       ${fontSmoothing};
       position: relative;
     `,
-    accountFilter: css`
-      ${defaultBox};
-      padding: 0;
-      ${fontSmoothing};
-      position: relative;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: column;
-      overflow: hidden;
-    `,
+    accountFilter: css``,
     accountFilterHeader: css`
       display: flex;
       width: 100%;
       margin-left: 0;
       background-color: ${theming.color("accountFilter")};
+      color: ${theming.color("white")};
       justify-content: space-between;
       color: ${theming.color.white};
-      padding-top: ${theming.spacing.small};
-      padding-bottom: ${theming.spacing.small};
+      padding: ${theming.spacing.small};
       border-top-right-radius: 3px;
       border-top-left-radius: 3px;
       font-weight: ${theming.fontWeight.bold};
     `,
-    accountFilterFooter: css`
-      padding: ${theming.spacing.small} ${theming.spacing.medium};
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    `,
+    accountFilterFooter: css``,
     profileAdress: css`
       background-color: #f0f0f0;
     `,
