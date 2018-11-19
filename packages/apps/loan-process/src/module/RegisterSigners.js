@@ -177,7 +177,7 @@ class RegisterSigners extends React.Component {
                                     </SignerRoles>
                                   </SplitListItem>
                                   {signer.checked && (
-                                    <li>
+                                    <StyledLi>
                                       <Box variant="signerFields">
                                         <Wrapper size="form">
                                           <Layout>
@@ -277,7 +277,7 @@ class RegisterSigners extends React.Component {
                                           </Layout>
                                         </Wrapper>
                                       </Box>
-                                    </li>
+                                    </StyledLi>
                                   )}
                                 </React.Fragment>
                               ))}
@@ -340,6 +340,10 @@ const SplitItem = styled.div`
   > * {
     flex-basis: 50%;
   }
+`
+
+const StyledLi = styled.li`
+  padding-bottom: ${theming.spacing.medium};
 `
 
 export default RegisterSigners

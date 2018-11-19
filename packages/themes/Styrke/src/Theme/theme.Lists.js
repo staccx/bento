@@ -61,19 +61,13 @@ export const SplitListItemStyling = theming.createVariants(
       padding-right: 0;
       border-width: 0;
 
-      > * {
-        flex-basis: 50%;
+      &:not(:first-child) {
+        border-top: 1px solid ${theming.color.line};
       }
 
-      ${p =>
-        p.hasInput &&
-        `
-        flex-wrap: wrap;
-        padding: 0;
-        > * {
-          flex-basis: 100%;
-        }
-      `};
+      & > * {
+        flex-basis: 50%;
+      }
     `,
     flush: css`
       padding-left: 0;
