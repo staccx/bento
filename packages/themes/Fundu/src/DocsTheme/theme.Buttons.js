@@ -14,8 +14,35 @@ export const ButtonDevStyling = theming.createVariants(
     `,
     deleteClient: css`
       font-size: ${theming.font.base};
-      background-color: ${theming.color("bgGray")};
+      background-color: transparent;
       color: ${theming.color.primary};
+      position: absolute;
+      top: ${theming.spacing.medium};
+      right: ${theming.spacing.medium};
+      padding-left: 0;
+      padding-right: 0;
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent;
+        color: ${theming.color.warning};
+      }
+    `,
+    positive: css`
+      background-color: ${theming.color("secondary")};
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${theming.color("green")};
+      }
+    `,
+    negative: css`
+      background-color: ${theming.color("warning")};
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${theming.color("red")};
+      }
     `
   },
   Button.themeProps.button

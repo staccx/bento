@@ -12,6 +12,8 @@ import {
 import { TableStyling } from "./theme.docs.Tables"
 import { ButtonDevStyling } from "./theme.Buttons"
 import { CopyToClipboardComponentStyling } from "./theme.docs.CopyToClipboard"
+import { IconDelete } from "../Icons/Icon.Delete"
+import { ModalStyling } from "./theme.docs.Modal"
 
 const wrapper = {
   documentation: "1440px"
@@ -48,5 +50,7 @@ const theme = new theming.Theme({ wrapper, color })
   .add(RadioPillItemHoverStyling)
   .add(ButtonDevStyling)
   .add(CopyToClipboardComponentStyling)
+  .add(IconDelete)
+  .add(ModalStyling)
 
 export default theme
