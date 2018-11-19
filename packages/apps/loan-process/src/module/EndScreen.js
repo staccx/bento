@@ -67,6 +67,5 @@ EndScreen.defaultProps = {
   img: null,
   reverse: true,
   wrapperSize: "medium",
-  buttonContent: null,
-  variant: ""
+  buttonContent: null
 }

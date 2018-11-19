@@ -164,7 +164,6 @@ class RegisterSigners extends React.Component {
                                       </span>
                                       <Button
                                         type="button"
-                                        className="secondary"
                                         variant="deleteSigner"
                                         onClick={() => remove(index)}
                                       >
