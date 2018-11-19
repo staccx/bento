@@ -4,6 +4,7 @@ import { Layout, Wrapper, LayoutItem, ThemeComponent } from "@staccx/base"
 import menu from "./../data/menu"
 import Account from "../components/Account/Account"
 import Loan from "../components/Loan/Loan"
+import Transactions from "../components/Transactions"
 
 const Overview = ({ history, accounts, theme }) => {
   console.log(theme)
@@ -44,9 +45,14 @@ const Overview = ({ history, accounts, theme }) => {
             history={history}
           />
         </LayoutItem>
-        <LayoutItem variant="fadeIn" delay="600" area="featuredOverview">
-          <ThemeComponent tagName={"featuredOverview"} />
-        </LayoutItem>
+        {theme.bib.transactionsFrontpage && (
+          <LayoutItem variant="fadeIn" delay="600" area="featuredOverview">
+            <Transactions
+              transactions={accounts[0].transactions}
+              header={false}
+            />
+          </LayoutItem>
+        )}
         <LayoutItem variant="fadeIn" delay="600" area="featuredAd">
           <ThemeComponent tagName={"ad"} />
         </LayoutItem>

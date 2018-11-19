@@ -52,22 +52,14 @@ Flag.themeProps = {
 }
 
 const FlagImg = styled.div`
-  display: table-cell;
-  width: 1px;
-  vertical-align: middle;
-  padding-right: ${spacing.medium};
-  > img {
-    max-width: none;
-  }
+  margin-right: ${spacing.medium};
   > svg {
     display: block;
   }
 `
 
 const FlagBody = styled.div`
-  display: table-cell;
-  vertical-align: middle;
-  width: auto;
+  flex: 1 1 0%;
 
   &,
   > :last-child {
@@ -76,48 +68,40 @@ const FlagBody = styled.div`
 `
 
 const reverse = css`
-  direction: rtl;
-  > ${FlagImg}, > ${FlagBody} {
-    direction: ltr;
-  }
-
   > ${FlagImg} {
-    padding-right: 0;
-    padding-left: ${spacing.medium};
+    order: 1;
+    margin-right: 0;
+    margin-left: ${spacing.medium};
   }
 `
 
 const reverseLarge = css`
   > ${FlagImg} {
-    padding-right: 0;
-    padding-left: ${spacing.large};
+    margin-right: 0;
+    margin-left: ${spacing.large};
   }
 `
 
 const reverseSmall = css`
   > ${FlagImg} {
-    padding-right: 0;
-    padding-left: ${spacing.small};
+    margin-right: 0;
+    margin-left: ${spacing.small};
   }
 `
 
 const reverseTiny = css`
   > ${FlagImg} {
-    padding-right: 0;
-    padding-left: ${spacing.tiny};
+    margin-right: 0;
+    margin-left: ${spacing.tiny};
   }
 `
 
 const top = css`
-  > ${FlagImg}, > ${FlagBody} {
-    vertical-align: top;
-  }
+  align-items: flex-start;
 `
 
 const bottom = css`
-  > ${FlagImg}, > ${FlagBody} {
-    vertical-align: bottom;
-  }
+  align-items: flex-end;
 `
 
 const flush = css`
@@ -129,36 +113,36 @@ const flush = css`
 
 const large = css`
   > ${FlagImg} {
-    padding-right: ${spacing.large};
+    margin-right: ${spacing.large};
   }
   ${props => (props.reverse ? reverseLarge : null)};
 `
 
 const small = css`
   > ${FlagImg} {
-    padding-right: ${spacing.small};
+    margin-right: ${spacing.small};
   }
   ${props => (props.reverse ? reverseSmall : null)};
 `
 
 const tiny = css`
   > ${FlagImg} {
-    padding-right: ${spacing.tiny};
+    margin-right: ${spacing.tiny};
   }
   ${props => (props.reverse ? reverseTiny : null)};
 `
 
 const responsive = css`
   @media screen and (max-width: ${props => props.responsive}px) {
-    &,
+    display: block;
+
     > ${FlagImg}, > ${FlagBody} {
       display: block;
-      direction: initial;
-      padding: 0;
+      margin: 0;
     }
     > ${FlagImg} {
       width: auto;
-      padding-bottom: ${spacing.medium};
+      margin-bottom: ${spacing.medium};
     }
 
     ${FlagImg} > img {
@@ -168,9 +152,8 @@ const responsive = css`
 `
 
 const FlagObject = styled.div`
-  display: table;
-  width: 100%;
-  border-spacing: 0;
+  display: flex;
+  align-items: center;
   ${props => (props.reverse ? reverse : null)};
   ${props => (props.top ? top : null)};
   ${props => (props.bottom ? bottom : null)};

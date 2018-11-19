@@ -4,7 +4,6 @@ import CopyToClipboard from "../../hoc/Clipboard/CopyToClipboard"
 import React from "react"
 import Upload from "../Icons/Upload"
 import Check from "../Icons/Check"
-import FileInput from "../Forms/Input/FileInput/FileInput"
 import ThemeComponent from "../Theme/ThemeComponent"
 import { applyVariants } from "../../theming"
 import { themePropTypes, commonPropTypes } from "../../constants/themeContants"
@@ -70,7 +69,12 @@ CopyToClipboardComponent.themeProps = {
   }
 }
 
-const ClipboardWrapper = styled.div``
+const ClipboardWrapper = styled.button`
+  &:hover {
+    outline: none;
+  }
+  ${applyVariants(CopyToClipboardComponent.themeProps.wrapper)};
+`
 
 const CopiedComponent = ({ ...props }) => (
   <ThemeComponent
@@ -89,11 +93,11 @@ const CopyComponent = ({ ...props }) => (
 )
 
 export const Copy = styled(CopyComponent)`
-  ${applyVariants(FileInput.themeProps.icon)};
+  ${applyVariants(CopyToClipboardComponent.themeProps.icon)};
 `
 
 export const Copied = styled(CopiedComponent)`
-  ${applyVariants(FileInput.themeProps.icon)};
+  ${applyVariants(CopyToClipboardComponent.themeProps.icon)};
 `
 
 CopyToClipboardComponent.propTypes = {

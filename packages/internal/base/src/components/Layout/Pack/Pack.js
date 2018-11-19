@@ -8,7 +8,13 @@ import { applyVariants } from "../../../theming"
  * The pack object simply causes any number of elements pack up horizontally to automatically fill an equal, fluid width of their parent.
  */
 const Pack = ({ children, className, bottom, middle, noWrap, justify }) => (
-  <PackUl className={className} bottom={bottom} middle={middle} noWrap={noWrap}>
+  <PackUl
+    className={className}
+    bottom={bottom}
+    middle={middle}
+    noWrap={noWrap}
+    justify={justify}
+  >
     {children}
   </PackUl>
 )

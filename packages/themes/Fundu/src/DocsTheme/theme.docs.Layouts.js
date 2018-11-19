@@ -68,7 +68,7 @@ export const LayoutStyling = theming.createVariants(
       }
     `,
     dashboard: css`
-      grid-template-columns: 340px 1fr;
+      grid-template-columns: 220px 1fr;
       grid-gap: 0;
       min-height: 100vh;
       grid-template-areas: "aside main";

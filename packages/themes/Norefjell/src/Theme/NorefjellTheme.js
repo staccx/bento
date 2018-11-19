@@ -135,7 +135,8 @@ export default new Theme(BaseTheme, {
   global: reset,
   bib: {
     loan: true,
-    deposit: true
+    deposit: true,
+    transactionsFrontpage: false
   }
 })
   .add(Button)
