@@ -17,10 +17,22 @@ import {
   targetSize,
   fontFamily
 } from "../../../theming"
+import ThemeComponent from "../../Theme/ThemeComponent"
+import QuestionMark from "../../Icons/QuestionMark"
+import { FadeIn } from "@staccx/animations"
+
+const HelpBox = ({ onClick }) => (
+  <HelpButton onClick={onClick}>
+    <QuestionMark />
+  </HelpButton>
+)
 
 class Input extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      isVisible: false
+    }
     this.input = React.createRef()
     this.focus = this.focus.bind(this)
   }
@@ -48,6 +60,7 @@ class Input extends React.Component {
       variant,
       autoComplete,
       options,
+      helpText,
       ...otherProps
     } = this.props
 
@@ -56,8 +69,22 @@ class Input extends React.Component {
         {label && (
           <InputLabel variant={variant} htmlFor={id}>
             {label}
+            {helpText && (
+              <NoWrapSpan>
+                &nbsp;
+                <HelpIcon
+                  onClick={() =>
+                    this.setState({ isVisible: !this.state.isVisible })
+                  }
+                />
+              </NoWrapSpan>
+            )}
           </InputLabel>
         )}
+        {helpText && (
+          <HelpText isVisible={this.state.isVisible}>{helpText}</HelpText>
+        )}
+
         <InputNoMask
           autoFocus={autoFocus}
           value={value}
@@ -91,6 +118,16 @@ class Input extends React.Component {
 }
 
 Input.themeProps = {
+  iconComponent: {
+    name: "INPUT_HELP_ICON_COMPONENT",
+    description: "Icon shown. Defaults to Caret",
+    type: themePropTypes.component
+  },
+  icon: {
+    name: "INPUT_HELP_ICON_STYLE",
+    description: "Icon style",
+    type: themePropTypes.style
+  },
   input: {
     name: "INPUT",
     description: "Input style",
@@ -105,8 +142,49 @@ Input.themeProps = {
     name: "INPUT_LABEL",
     description: "Label style",
     type: themePropTypes.style
+  },
+  helpText: {
+    name: "INPUT_HELPTEXT",
+    description: "Helptext style",
+    type: themePropTypes.style
+  },
+  helpButton: {
+    name: "BUTTON_HELP",
+    description: "Help button style",
+    type: themePropTypes.style
   }
 }
+
+const IconComponent = ({ ...props }) => (
+  <ThemeComponent
+    tagName={Input.themeProps.iconComponent.name}
+    fallback={HelpBox}
+    {...props}
+  />
+)
+
+const HelpButton = styled.button`
+  -webkit-appearance: none;
+  border: initial;
+  padding: 0;
+  cursor: pointer;
+  ${applyVariants(Input.themeProps.helpButton)};
+`
+
+const HelpIcon = styled(IconComponent)`
+  ${applyVariants(Input.themeProps.icon.name)};
+`
+
+const NoWrapSpan = styled.span`
+  white-space: nowrap;
+`
+
+const HelpText = styled.div`
+  display: ${p => (p.isVisible ? "block" : "none")};
+  opacity: 0;
+  animation: ${FadeIn} 0.4s ease-out 1 forwards;
+  ${applyVariants(Input.themeProps.helpText)};
+`
 
 const InputLabel = styled(Label)`
   ${applyVariants(Input.themeProps.label)};
@@ -202,6 +280,7 @@ export const InputPropTypes = {
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   label: PropTypes.string,
   className: PropTypes.string,
+  helpText: PropTypes.string,
   mask: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.func,
@@ -229,7 +308,8 @@ export const InputDefaultProps = {
   type: "text",
   value: undefined,
   label: "",
-  mask: null
+  mask: null,
+  helpText: ""
 }
 
 Input.defaultProps = InputDefaultProps

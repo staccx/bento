@@ -19,6 +19,8 @@ import { ButtonStyling } from "./Theme/theme.Buttons"
 import {
   InputStyling,
   LabelStyling,
+  HelpTextStyling,
+  HelpButtonStyling,
   SelectSelectedStyling,
   SelectIconButtonStyling,
   SelectOptionsWrapperStyling,
@@ -139,6 +141,8 @@ export default new theming.Theme({
   .add(SplitListItemStyling)
   .add(InputStyling)
   .add(LabelStyling)
+  .add(HelpTextStyling)
+  .add(HelpButtonStyling)
   .add(ExpandListItemStyling)
   .add(SelectSelectedStyling)
   .add(SelectIconButtonStyling)
