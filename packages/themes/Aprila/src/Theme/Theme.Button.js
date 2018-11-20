@@ -124,6 +124,25 @@ export default theming.createVariants(
         color: ${theming.color.black};
       }
     `,
+    bibMenuColumnElement: css`
+      display: flex;
+      flex-direction: row;
+      background-color: transparent;
+      padding-left: 0;
+      justify-content: space-between;
+      width: 100%;
+      color: ${theming.color.wcag};
+      border-width: 0;
+      text-align: left;
+      border-radius: 0;
+      border-bottom: 1px solid ${theming.color.line};
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${theming.color.bg};
+        color: ${theming.color.black};
+      }
+    `,
     styleless: css`
       &,
       &:hover,

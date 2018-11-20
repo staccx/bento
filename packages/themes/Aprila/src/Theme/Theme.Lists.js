@@ -8,7 +8,8 @@ export const ListStyling = theming.createVariants(
       justify-content: space-around;
       li {
       }
-    `
+    `,
+    menuList: css``
   },
   List.themeProps.list
 )
