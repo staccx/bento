@@ -4,7 +4,7 @@ import { Box, Button, List, theming } from "@staccx/base"
 
 const Menu = ({ menuElements, history }) => {
   return (
-    <Box variant="dashboardBox">
+    <Box variant="menuBox">
       <List variant="menu">
         {menuElements.map(menuElement => (
           <li key={menuElement._id}>
@@ -28,11 +28,17 @@ const Menu = ({ menuElements, history }) => {
 }
 
 const IconOuter = styled.div`
-  margin-right: ${theming.spacing.small};
-  margin-left: -${theming.spacing.small};
+  background-color: ${theming.color.primary};
+  width: ${theming.spacing.large};
+  height: ${theming.spacing.large};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: ${theming.spacing.small};
 `
 
-const ButtonLabel = styled.span`
+const ButtonLabel = styled.div`
   flex-grow: 1;
   line-height: 1.3;
 `

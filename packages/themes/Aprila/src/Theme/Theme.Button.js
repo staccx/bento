@@ -100,6 +100,7 @@ export default theming.createVariants(
     `,
     bibMenuElement: css`
       display: flex;
+      flex-direction: column;
       background-color: transparent;
       justify-content: space-between;
       width: 100%;

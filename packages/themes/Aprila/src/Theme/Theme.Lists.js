@@ -5,6 +5,7 @@ export const ListStyling = theming.createVariants(
   {
     menu: css`
       display: flex;
+      justify-content: space-around;
       li {
       }
     `

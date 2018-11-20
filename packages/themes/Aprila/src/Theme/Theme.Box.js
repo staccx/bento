@@ -13,7 +13,11 @@ const defaultBox = css`
 
 export default theming.createVariants(
   {
-    dashboardBox: css``,
+    dashboardBox: css`
+      background-color: ${theming.color("bgGray")};
+      border-radius: ${theming.borderRadius};
+    `,
+    menuBox: css``,
     accountBox: defaultBox,
     loanBox: defaultBox,
     adBox: css`
