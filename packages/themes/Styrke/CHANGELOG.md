@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.23.0"></a>
+# [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **styrke-theme:** adjustments after fundu and loan-process changes ([921d74e](https://bitbucket.org/stacc-flow/bento/commits/921d74e))
+
+
+### Features
+
+* **styrke-theme:** add checkbox variant iamdisabled ([e8d3ffc](https://bitbucket.org/stacc-flow/bento/commits/e8d3ffc))
+* **styrke-theme:** improved signers styling ([55a3563](https://bitbucket.org/stacc-flow/bento/commits/55a3563))
+
+
+
+
+
 <a name="8.22.0"></a>
 # [8.22.0](https://bitbucket.org/stacc-flow/bento/compare/v8.21.0...v8.22.0) (2018-11-16)
 

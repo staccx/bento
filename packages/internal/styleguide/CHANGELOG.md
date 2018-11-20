@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.23.0"></a>
+# [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **styleguide:** fix globalstyles etc ([d202db2](https://bitbucket.org/stacc-flow/bento/commits/d202db2))
+
+
+
+
+
 <a name="8.22.0"></a>
 # [8.22.0](https://bitbucket.org/stacc-flow/bento/compare/v8.21.0...v8.22.0) (2018-11-16)
 

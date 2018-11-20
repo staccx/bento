@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.23.0"></a>
+# [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
+
+
+### Features
+
+* **component-testing:** add tests for new i18n and cli func ([028ca65](https://bitbucket.org/stacc-flow/bento/commits/028ca65))
+* **component-testing:** adding i18n to comp testing ([baa04a5](https://bitbucket.org/stacc-flow/bento/commits/baa04a5))
+
+
+
+
+
 <a name="8.10.0"></a>
 # [8.10.0](https://bitbucket.org/stacc-flow/bento/compare/v8.9.0...v8.10.0) (2018-11-07)
 
