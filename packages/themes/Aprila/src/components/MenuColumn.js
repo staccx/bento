@@ -29,18 +29,23 @@ const MenuColumn = ({ menuElements, history }) => {
 
 const IconOuter = styled.div`
   background-color: ${theming.color.primary};
-  width: ${theming.spacing.large};
-  height: ${theming.spacing.large};
+  width: ${theming.spacing.medium};
+  height: ${theming.spacing.medium};
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  margin-bottom: ${theming.spacing.small};
+  margin-right: ${theming.spacing.small};
+  svg {
+    width: 12px;
+    height: 12px;
+  }
 `
 
 const ButtonLabel = styled.div`
   flex-grow: 1;
   line-height: 1.3;
+  font-weight: normal;
 `
 export const MenuColumnStyle = theming.createVariants(
   { [theming.VARIANT_DEFAULT]: MenuColumn },

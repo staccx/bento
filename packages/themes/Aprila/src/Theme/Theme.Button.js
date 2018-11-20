@@ -129,6 +129,8 @@ export default theming.createVariants(
       flex-direction: row;
       background-color: transparent;
       padding-left: 0;
+      padding-top: ${theming.spacing.small};
+      padding-bottom: ${theming.spacing.small};
       justify-content: space-between;
       width: 100%;
       color: ${theming.color.wcag};
