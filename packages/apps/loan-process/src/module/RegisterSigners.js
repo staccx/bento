@@ -145,6 +145,12 @@ class RegisterSigners extends React.Component {
                                           id={`signers.${index}.checked`}
                                           {...field}
                                           defaultChecked={signer.checked}
+                                          disabled={signer.disabled}
+                                          variant={
+                                            signer.disabled
+                                              ? "iAmDisabled"
+                                              : undefined
+                                          }
                                         >
                                           {signer.isUserAdded
                                             ? this.props.newPersonDefaultName
@@ -287,6 +293,7 @@ class RegisterSigners extends React.Component {
                               onClick={() =>
                                 push({
                                   checked: true,
+                                  disabled: true,
                                   email: "",
                                   nationalId: "",
                                   positions: [],

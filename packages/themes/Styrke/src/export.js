@@ -31,6 +31,7 @@ import {
 import { LayoutStyling, LayoutItemStyling } from "./Theme/theme.Layouts"
 import { ExpandStyling } from "./Theme/theme.Expand"
 import { hideVisually } from "polished"
+import { CheckBoxStyling } from "./Theme/theme.CheckBoxes"
 
 const borderRadius = "5px"
 const headerHeight = "70px"
@@ -152,3 +153,4 @@ export default new theming.Theme({
   .add(Slider2HandleStyling)
   .add(SelectedWrapperStyling)
   .add(SelectOptionStyling)
+  .add(CheckBoxStyling)

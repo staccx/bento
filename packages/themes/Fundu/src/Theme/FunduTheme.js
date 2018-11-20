@@ -40,6 +40,7 @@ import { LayoutItemStyling } from "./theme.LayoutItem"
 import { LogoStyle } from "./Logo"
 import reset from "./Reset"
 import { hideVisually } from "polished"
+import { CheckBoxStyling } from "./theme.CheckBoxes"
 
 const borderRadius = "2px"
 const headerHeight = "70px"
@@ -165,3 +166,4 @@ export default new theming.Theme({
   .add(TableStyling)
   .add(ItemGroupStyling)
   .add(ItemGroupElementStyling)
+  .add(CheckBoxStyling)
