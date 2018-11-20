@@ -16,10 +16,13 @@ class BirthdateInput extends React.Component {
     this.yearInput = React.createRef()
     this.handleChangeYearInput = this.handleChangeYearInput.bind(this)
 
+    this.createDate = this.createDate.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     this.handleComplete = this.handleComplete.bind(this)
   }
 
   handleChangeDayInput(value) {
+    this.handleChange()
     if (value.toString().length > 1) {
       this.monthInput.current.input.current.focus()
 
@@ -35,6 +38,7 @@ class BirthdateInput extends React.Component {
   }
 
   handleChangeMonthInput(value) {
+    this.handleChange()
     if (value.toString().length > 1) {
       if (
         this.dayInput.current.input.current.value.toString().length > 1 &&
@@ -48,6 +52,7 @@ class BirthdateInput extends React.Component {
   }
 
   handleChangeYearInput(value) {
+    this.handleChange()
     if (value.toString().length > 3) {
       if (this.dayInput.current.input.current.value.toString().length < 1) {
         this.dayInput.current.input.current.focus()
@@ -61,21 +66,37 @@ class BirthdateInput extends React.Component {
     }
   }
 
-  handleComplete() {
-    this.props.onComplete &&
-      this.props.onComplete(
+  createDate(d, m, y) {
+    return new Date(y.toString() + "-" + m.toString() + "-" + d.toString())
+  }
+
+  handleChange() {
+    if (this.props.onChange) {
+      this.props.onChange(
         this.dayInput.current.input.current.value.toString() +
           this.monthInput.current.input.current.value.toString() +
           this.yearInput.current.input.current.value.toString()
       )
+    }
+  }
+
+  handleComplete() {
+    this.props.onComplete &&
+      this.props.onComplete(
+        this.createDate(
+          this.dayInput.current.input.current.value,
+          this.monthInput.current.input.current.value,
+          this.yearInput.current.input.current.value
+        )
+      )
   }
 
   render() {
-    const { id, name } = this.props
+    const { id, name, labels } = this.props
     return (
       <Container>
         <Input
-          label="Dag"
+          label={labels[0] && labels[0]}
           placeholder="dd"
           id={`${id}Day`}
           name={`${name}Day`}
@@ -84,7 +105,7 @@ class BirthdateInput extends React.Component {
           onChange={e => this.handleChangeDayInput(e.target.value)}
         />
         <Input
-          label="Måned"
+          label={labels[1] && labels[1]}
           placeholder="mm"
           id={`${id}Month`}
           name={`${name}Month`}
@@ -93,7 +114,7 @@ class BirthdateInput extends React.Component {
           onChange={e => this.handleChangeMonthInput(e.target.value)}
         />
         <Input
-          label="År"
+          label={labels[2] && labels[2]}
           placeholder="yyyy"
           id={`${id}Year`}
           name={`${name}Year`}
@@ -112,10 +133,10 @@ const Container = styled.div`
 
 BirthdateInput.propTypes = {
   ...InputPropTypes,
-  locale: PropTypes.oneOf(["no"]),
   onChange: PropTypes.func,
-  guide: PropTypes.bool,
-  id: PropTypes.string.isRequired
+  onComplete: PropTypes.func,
+  ids: PropTypes.array.isRequired,
+  labels: PropTypes.array
 }
 
 BirthdateInput.defaultProps = {}

@@ -106,8 +106,10 @@ class App extends Component {
                 <ExpandListItem title={"Inputs"} expanded>
                   <Layout paddingTop="huge" paddingBottom="huge">
                     <BirthdateInput
-                      id="bday"
-                      onComplete={value => console.log(value)}
+                      ids={["bday", "bmnth", "byr"]}
+                      labels={["bday", "bmnth", "byr"]}
+                      onComplete={value => console.log("onComplete: ", value)}
+                      onChange={value => console.log("onChange: ", value)}
                     />
                   </Layout>
                   <CompanyInput id={"test"} />
