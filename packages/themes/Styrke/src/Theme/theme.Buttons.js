@@ -57,10 +57,8 @@ export const ButtonStyling = theming.createVariants(
       align-self: flex-end;
       background-color: transparent;
       color: ${theming.color.primary};
-      padding: 0;
-      min-width: ${theming.targetSize.normal};
+      padding: 6px;
       border: 1px solid transparent;
-      min-height: 42px;
 
       > svg {
         fill: currentColor;
@@ -99,6 +97,13 @@ export const ButtonStyling = theming.createVariants(
         color: ${theming.color("primaryDark")};
         background-color: transparent;
       }
+    `,
+    small: css`
+      ${defaultStyle};
+      text-transform: uppercase;
+      font-size: ${theming.font.tiny};
+      padding: 2px 16px;
+      min-height: 0;
     `
   },
   Button.themeProps.button
