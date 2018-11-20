@@ -51,24 +51,17 @@ export default theming.createVariants(
       flex-direction: column;
       overflow: hidden;
     `,
-    accountFilterHeader: css`
+    transactionHeader: css`
       display: flex;
       width: 100%;
       margin-left: 0;
-      background-color: ${theming.color("accountFilter")};
+      background-color: ${theming.color("transactionHeader")};
       justify-content: space-between;
       color: ${theming.color.white};
-      padding-top: ${theming.spacing.small};
-      padding-bottom: ${theming.spacing.small};
+      padding: ${theming.spacing.small};
       border-top-right-radius: 3px;
       border-top-left-radius: 3px;
       font-weight: ${theming.fontWeight.bold};
-    `,
-    accountFilterFooter: css`
-      padding: ${theming.spacing.small} ${theming.spacing.medium};
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     `,
     profileAdress: css`
       background-color: #f0f0f0;

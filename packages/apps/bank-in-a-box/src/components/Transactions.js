@@ -17,7 +17,7 @@ class Transactions extends Component {
     return (
       <div>
         {this.props.header && (
-          <Box variant={"accountFilterHeader"}>
+          <Box variant={"transactionHeader"}>
             <div>{this.props.accountType === "LOAN" ? "Lån" : "På konto"}</div>
             <div>
               {formatCurrency(this.props.availableBalance, {
