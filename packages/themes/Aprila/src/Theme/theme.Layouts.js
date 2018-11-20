@@ -29,6 +29,10 @@ export const LayoutItemStyling = theming.createVariants(
       opacity: 0;
       animation: ${FadeIn} forwards ease-out 400ms 1;
       animation-delay: ${p => (p.delay ? p.delay : 0)}ms;
+      background-color: ${p => p.area === "logo" && theming.color("primary")};
+    `,
+    logo: css`
+      background-color: ${theming.color.primary};
     `
   },
   LayoutItem.themeProps.container

@@ -212,6 +212,16 @@ export default theming.createVariants(
     attention: css`
       background-color: ${theming.color.secondary};
       color: ${theming.color.text};
+    `,
+    tag: css`
+      background-color: ${p =>
+        p.selected ? theming.color("accountFilter") : theming.color("line")};
+      color: ${p => (p.selected ? theming.color.white : theming.color.text)};
+      padding: ${theming.spacing.tiny} ${theming.spacing.small};
+      border-radius: ${theming.spacing.medium};
+      min-height: ${theming.spacing.medium};
+      height: ${theming.spacing.medium};
+      line-height: 0;
     `
   },
   Button.themeProps.button

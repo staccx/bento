@@ -37,11 +37,11 @@ export default theming.createVariants(
       position: relative;
     `,
     accountFilter: css``,
-    accountFilterHeader: css`
+    transactionHeader: css`
       display: flex;
       width: 100%;
       margin-left: 0;
-      background-color: ${theming.color("accountFilter")};
+      background-color: ${theming.color("transactionHeader")};
       color: ${theming.color("white")};
       justify-content: space-between;
       color: ${theming.color.white};

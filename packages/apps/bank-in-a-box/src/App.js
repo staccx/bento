@@ -33,7 +33,7 @@ class App extends Component {
               <Route
                 render={({ location, history }) => (
                   <Layout variant="bibMainLayout">
-                    <LayoutItem area="logo">
+                    <LayoutItem variant="logo" area="logo">
                       <Button
                         variant="styleless"
                         onClick={() =>
