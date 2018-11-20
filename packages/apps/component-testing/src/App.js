@@ -4,6 +4,7 @@ import {
   Wrapper,
   Combobox,
   GlobalStyle,
+  Layout,
   WebFonts,
   Input,
   Label,
@@ -103,10 +104,12 @@ class App extends Component {
                   <TranslatedText>Just doing stuff</TranslatedText>
                 </ExpandListItem>
                 <ExpandListItem title={"Inputs"} expanded>
-                  <BirthdateInput
-                    id="bday"
-                    onComplete={value => console.log(value)}
-                  />
+                  <Layout paddingTop="huge" paddingBottom="huge">
+                    <BirthdateInput
+                      id="bday"
+                      onComplete={value => console.log(value)}
+                    />
+                  </Layout>
                   <CompanyInput id={"test"} />
                   <Select
                     items={options}
