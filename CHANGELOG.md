@@ -3,6 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.23.0"></a>
+# [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **bank-in-a-box:** remove unused icons ([1cd421f](https://bitbucket.org/stacc-flow/bento/commits/1cd421f))
+* **base:** fix copytoClipBoardComponent + variant for fundu ([74f3b8c](https://bitbucket.org/stacc-flow/bento/commits/74f3b8c))
+* **base:** justify now works as intended on pack ([a81ff4d](https://bitbucket.org/stacc-flow/bento/commits/a81ff4d))
+* **developer-portal:** forgot to add this to tile-fix ([83976fc](https://bitbucket.org/stacc-flow/bento/commits/83976fc))
+* **fundu-theme:** fix for left centered tiles ([e1c027a](https://bitbucket.org/stacc-flow/bento/commits/e1c027a))
+* **loan-process:** enable variant_default for end screen button ([87c21b2](https://bitbucket.org/stacc-flow/bento/commits/87c21b2))
+* **styleguide:** fix globalstyles etc ([d202db2](https://bitbucket.org/stacc-flow/bento/commits/d202db2))
+* **styrke-theme:** adjustments after fundu and loan-process changes ([921d74e](https://bitbucket.org/stacc-flow/bento/commits/921d74e))
+
+
+### Features
+
+* **aprila-theme:** fix menu ([a46892f](https://bitbucket.org/stacc-flow/bento/commits/a46892f))
+* **bank-in-a-box:** added support for two types of menus ([97fa3ca](https://bitbucket.org/stacc-flow/bento/commits/97fa3ca))
+* **bank-in-a-box:** heading on transactions + filter ([d4e5f09](https://bitbucket.org/stacc-flow/bento/commits/d4e5f09))
+* **bank-in-a-box:** refactor filters on transactions ([90f2955](https://bitbucket.org/stacc-flow/bento/commits/90f2955))
+* **base:** reimplement flag with flex ([39858bb](https://bitbucket.org/stacc-flow/bento/commits/39858bb))
+* **cli:** add cli for creating local i18n files ([9889e02](https://bitbucket.org/stacc-flow/bento/commits/9889e02))
+* **cli-x:** add i18n command with options ([eaee47b](https://bitbucket.org/stacc-flow/bento/commits/eaee47b))
+* **component-testing:** add tests for new i18n and cli func ([028ca65](https://bitbucket.org/stacc-flow/bento/commits/028ca65))
+* **component-testing:** adding i18n to comp testing ([baa04a5](https://bitbucket.org/stacc-flow/bento/commits/baa04a5))
+* **fundu-theme:** a lot of adjustments for API Management ([3ba2c45](https://bitbucket.org/stacc-flow/bento/commits/3ba2c45))
+* **fundu-theme:** add checkbox variant iamdisabled ([fe62c6e](https://bitbucket.org/stacc-flow/bento/commits/fe62c6e))
+* **fundu-theme:** minor select focus styling ([c72fe61](https://bitbucket.org/stacc-flow/bento/commits/c72fe61))
+* **fundu-theme:** smaller menu ([6939413](https://bitbucket.org/stacc-flow/bento/commits/6939413))
+* **i18n:** add ability to pass react comp as child for fallback ([253d325](https://bitbucket.org/stacc-flow/bento/commits/253d325))
+* **loan-process:** adapt «forward buttons» for fundu-theme ([2647d49](https://bitbucket.org/stacc-flow/bento/commits/2647d49))
+* **loan-process:** set checkbox disabled for new signers ([11d3b78](https://bitbucket.org/stacc-flow/bento/commits/11d3b78))
+* **styrke-theme:** add checkbox variant iamdisabled ([e8d3ffc](https://bitbucket.org/stacc-flow/bento/commits/e8d3ffc))
+* **styrke-theme:** improved signers styling ([55a3563](https://bitbucket.org/stacc-flow/bento/commits/55a3563))
+* **theme-fundu:** add forward button styling ([ead0388](https://bitbucket.org/stacc-flow/bento/commits/ead0388))
+
+
+
+
+
 <a name="8.22.0"></a>
 # [8.22.0](https://bitbucket.org/stacc-flow/bento/compare/v8.21.0...v8.22.0) (2018-11-16)
 

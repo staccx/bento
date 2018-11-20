@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.23.0"></a>
+# [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **base:** fix copytoClipBoardComponent + variant for fundu ([74f3b8c](https://bitbucket.org/stacc-flow/bento/commits/74f3b8c))
+* **base:** justify now works as intended on pack ([a81ff4d](https://bitbucket.org/stacc-flow/bento/commits/a81ff4d))
+
+
+### Features
+
+* **base:** reimplement flag with flex ([39858bb](https://bitbucket.org/stacc-flow/bento/commits/39858bb))
+
+
+
+
+
 <a name="8.22.0"></a>
 # [8.22.0](https://bitbucket.org/stacc-flow/bento/compare/v8.21.0...v8.22.0) (2018-11-16)
 

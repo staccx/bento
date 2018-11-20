@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.23.0"></a>
+# [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **bank-in-a-box:** remove unused icons ([1cd421f](https://bitbucket.org/stacc-flow/bento/commits/1cd421f))
+
+
+### Features
+
+* **bank-in-a-box:** added support for two types of menus ([97fa3ca](https://bitbucket.org/stacc-flow/bento/commits/97fa3ca))
+* **bank-in-a-box:** heading on transactions + filter ([d4e5f09](https://bitbucket.org/stacc-flow/bento/commits/d4e5f09))
+* **bank-in-a-box:** refactor filters on transactions ([90f2955](https://bitbucket.org/stacc-flow/bento/commits/90f2955))
+
+
+
+
+
 <a name="8.22.0"></a>
 # [8.22.0](https://bitbucket.org/stacc-flow/bento/compare/v8.21.0...v8.22.0) (2018-11-16)
 

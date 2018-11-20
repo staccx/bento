@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.23.0"></a>
+# [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **base:** fix copytoClipBoardComponent + variant for fundu ([74f3b8c](https://bitbucket.org/stacc-flow/bento/commits/74f3b8c))
+* **fundu-theme:** fix for left centered tiles ([e1c027a](https://bitbucket.org/stacc-flow/bento/commits/e1c027a))
+
+
+### Features
+
+* **fundu-theme:** a lot of adjustments for API Management ([3ba2c45](https://bitbucket.org/stacc-flow/bento/commits/3ba2c45))
+* **fundu-theme:** add checkbox variant iamdisabled ([fe62c6e](https://bitbucket.org/stacc-flow/bento/commits/fe62c6e))
+* **fundu-theme:** minor select focus styling ([c72fe61](https://bitbucket.org/stacc-flow/bento/commits/c72fe61))
+* **fundu-theme:** smaller menu ([6939413](https://bitbucket.org/stacc-flow/bento/commits/6939413))
+* **theme-fundu:** add forward button styling ([ead0388](https://bitbucket.org/stacc-flow/bento/commits/ead0388))
+
+
+
+
+
 <a name="8.22.0"></a>
 # [8.22.0](https://bitbucket.org/stacc-flow/bento/compare/v8.21.0...v8.22.0) (2018-11-16)
 

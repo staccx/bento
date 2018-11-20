@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.23.0"></a>
+# [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **loan-process:** enable variant_default for end screen button ([87c21b2](https://bitbucket.org/stacc-flow/bento/commits/87c21b2))
+
+
+### Features
+
+* **loan-process:** adapt «forward buttons» for fundu-theme ([2647d49](https://bitbucket.org/stacc-flow/bento/commits/2647d49))
+* **loan-process:** set checkbox disabled for new signers ([11d3b78](https://bitbucket.org/stacc-flow/bento/commits/11d3b78))
+* **styrke-theme:** improved signers styling ([55a3563](https://bitbucket.org/stacc-flow/bento/commits/55a3563))
+
+
+
+
+
 <a name="8.22.0"></a>
 # [8.22.0](https://bitbucket.org/stacc-flow/bento/compare/v8.21.0...v8.22.0) (2018-11-16)
 
