@@ -8,7 +8,7 @@ import { FooterStyle } from "./Footer/Footer"
 import NewBadgeStyles from "./Theme.NewBadge"
 import { ExpandListButtonStyle } from "../components/Transaction.ExpandButton"
 import ExpandListExpanded from "../components/ExpandListItem.Expanded"
-import { MenuStyle } from "../components/MenuList"
+import { MenuStyle, MenuColumnStyle } from "../components/MenuList"
 import { CheckboxCheckedIcon, CheckboxCheckedLabel } from "./Theme.Checkbox"
 import { IconArrowDown } from "./Icons/Icon.ArrowDown"
 import { IconArrowRight } from "./Icons/Icon.ArrowRight"
@@ -145,6 +145,7 @@ export default new Theme(BaseTheme, {
   .add(ExpandListExpanded)
   .add(NewBadgeStyles)
   .add(MenuStyle)
+  .add(MenuColumnStyle)
   .add(ExpandListButtonStyle)
   .add(FooterStyle)
   .add(LogoStyle)

@@ -1,15 +1,15 @@
 import React from "react"
 import styled from "styled-components"
-import { Box, Button, List, ThemeComponent, theming } from "@staccx/base"
+import { Box, Button, List, theming } from "@staccx/base"
 
-const Menu = ({ menuElements, history }) => {
+const MenuColumn = ({ menuElements, history }) => {
   return (
-    <Container variant="dashboardBox">
-      <List>
+    <Box variant="menuBox">
+      <List variant="menuList">
         {menuElements.map(menuElement => (
           <li key={menuElement._id}>
             <Button
-              variant="bibMenuElement"
+              variant="bibMenuColumnElement"
               onClick={() =>
                 history.push({
                   pathname: menuElement.path,
@@ -19,35 +19,31 @@ const Menu = ({ menuElements, history }) => {
             >
               <IconOuter>{menuElement.icon}</IconOuter>
               <ButtonLabel>{menuElement.label}</ButtonLabel>
-              <ThemeComponent tagName="IconCaretRight" />
             </Button>
           </li>
         ))}
       </List>
-    </Container>
+    </Box>
   )
 }
 
-const Container = styled(Box)`
-  padding: 0;
-`
-
 const IconOuter = styled.div`
-  margin-right: ${theming.spacing.small};
-  margin-left: -${theming.spacing.small};
+  background-color: ${theming.color.primary};
+  width: ${theming.spacing.large};
+  height: ${theming.spacing.large};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: ${theming.spacing.small};
 `
 
-const ButtonLabel = styled.span`
+const ButtonLabel = styled.div`
   flex-grow: 1;
   line-height: 1.3;
 `
-export const MenuStyle = theming.createVariants(
-  { [theming.VARIANT_DEFAULT]: Menu },
-  "menu"
-)
-
 export const MenuColumnStyle = theming.createVariants(
-  { [theming.VARIANT_DEFAULT]: Menu },
+  { [theming.VARIANT_DEFAULT]: MenuColumn },
   "menuColumn"
 )
-export default Menu
+export default MenuColumn

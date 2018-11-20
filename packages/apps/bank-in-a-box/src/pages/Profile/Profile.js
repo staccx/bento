@@ -25,7 +25,7 @@ const Profile = ({ history }) => (
       </LayoutItem>
       <LayoutItem variant="fadeIn" delay="400">
         <ThemeComponent
-          tagName={"menu"}
+          tagName={"menuColumn"}
           menuElements={menuProfile}
           history={history}
         />
