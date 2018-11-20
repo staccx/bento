@@ -63,6 +63,12 @@ export const LayoutStyling = theming.createVariants(
     docForm: css`
       grid-template-areas: initial;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      padding-left: ${theming.spacing.large};
+      padding-right: ${theming.spacing.large};
+      @media only screen and (max-width: 700px) {
+        padding-left: ${theming.spacing.small};
+        padding-right: ${theming.spacing.small};
+      }
       > a {
         display: flex;
       }
