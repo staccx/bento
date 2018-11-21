@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import Label from "../../Label/Label"
 import Input from "../Input"
 import { applyVariants } from "../../../../theming"
 import { themePropTypes } from "../../../../constants/themeContants"
@@ -94,54 +95,94 @@ class BirthdateInput extends React.Component {
   }
 
   render() {
-    const { id, name, labels, variant, ...restProps } = this.props
+    const {
+      id,
+      name,
+      labels,
+      variant,
+      className,
+      autoFocus,
+      disabled,
+      onKeyDown,
+      style,
+      pattern,
+      label,
+      onChange,
+      onComplete,
+      ids,
+      names,
+      ...rest
+    } = this.props
+    console.log({ ...rest })
     return (
-      <Container variant={variant}>
-        <Input
-          label={labels[0] && labels[0]}
-          placeholder="dd"
-          id={`${id}Day`}
-          name={`${name}Day`}
-          type={"tel"}
-          ref={this.dayInput}
-          onChange={e => this.handleChangeDayInput(e.target.value)}
-          variant={variant}
-          {...restProps}
-        />
-        <Input
-          label={labels[1] && labels[1]}
-          placeholder="mm"
-          id={`${id}Month`}
-          name={`${name}Month`}
-          type={"tel"}
-          ref={this.monthInput}
-          onChange={e => this.handleChangeMonthInput(e.target.value)}
-          variant={variant}
-          {...restProps}
-        />
-        <Input
-          label={labels[2] && labels[2]}
-          placeholder="yyyy"
-          id={`${id}Year`}
-          name={`${name}Year`}
-          type={"tel"}
-          ref={this.yearInput}
-          onChange={e => this.handleChangeYearInput(e.target.value)}
-          variant={variant}
-          {...restProps}
-        />
-      </Container>
+      <Outer variant={variant} className={className} style={style}>
+        {label && <Label id={id}>{label}</Label>}
+        <Container variant={variant}>
+          <Input
+            label={labels && labels[0] && labels[0]}
+            placeholder="dd"
+            id={ids ? (ids[0] ? ids[0] : `${id}Day`) : `${id}Day`}
+            name={names ? (names[0] ? names[0] : `${name}Day`) : `${name}Day`}
+            type={"tel"}
+            ref={this.dayInput}
+            onChange={e => this.handleChangeDayInput(e.target.value)}
+            variant={variant}
+            autoFocus={autoFocus}
+            disabled={disabled}
+            onKeyDown={onKeyDown}
+            pattern={pattern}
+            aria-labelledby={label && id}
+          />
+          <Input
+            label={labels && labels[1] && labels[1]}
+            placeholder="mm"
+            id={ids ? (ids[1] ? ids[1] : `${id}Month`) : `${id}Month`}
+            name={`${name}Month`}
+            type={"tel"}
+            ref={this.monthInput}
+            onChange={e => this.handleChangeMonthInput(e.target.value)}
+            variant={variant}
+            disabled={disabled}
+            onKeyDown={onKeyDown}
+            pattern={pattern}
+            aria-labelledby={label && id}
+          />
+          <Input
+            label={labels && labels[2] && labels[2]}
+            placeholder="yyyy"
+            id={ids ? (ids[2] ? ids[2] : `${id}Year`) : `${id}Year`}
+            name={`${name}Year`}
+            type={"tel"}
+            ref={this.yearInput}
+            onChange={e => this.handleChangeYearInput(e.target.value)}
+            variant={variant}
+            disabled={disabled}
+            onKeyDown={onKeyDown}
+            pattern={pattern}
+            aria-labelledby={label && id}
+          />
+        </Container>
+      </Outer>
     )
   }
 }
 
 BirthdateInput.themeProps = {
+  outer: {
+    name: "BIRTHDATE_INPUT_OUTER_STYLE",
+    description: "Outer style",
+    type: themePropTypes.style
+  },
   container: {
     name: "BIRTHDATE_INPUT_CONTAINER_STYLE",
     description: "Container style",
     type: themePropTypes.style
   }
 }
+
+const Outer = styled.div`
+  ${applyVariants(BirthdateInput.themeProps.outer)};
+`
 
 const Container = styled.div`
   display: flex;

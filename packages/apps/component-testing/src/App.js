@@ -104,9 +104,30 @@ class App extends Component {
                   <TranslatedText>Just doing stuff</TranslatedText>
                 </ExpandListItem>
                 <ExpandListItem title={"Inputs"} expanded>
-                  <Layout paddingTop="huge" paddingBottom="huge">
+                  <Layout
+                    paddingTop="huge"
+                    paddingBottom="huge"
+                    rowGap={"large"}
+                  >
+                    <BirthdateInput
+                      id="bdaaaay"
+                      names={["wasd1", "wasd2", "wasd3"]}
+                      label={"Your birthday"}
+                      onComplete={value => console.log("onComplete: ", value)}
+                      onChange={value => console.log("onChange: ", value)}
+                      aria-labelledby="rg1_label"
+                    />
                     <BirthdateInput
                       ids={["bday", "bmnth", "byr"]}
+                      labels={["bday", "bmnth", "byr"]}
+                      onComplete={value => console.log("onComplete: ", value)}
+                      onChange={value => console.log("onChange: ", value)}
+                    />
+                    <BirthdateInput
+                      id={"asnjda"}
+                      ids={["bday", "bmnth", "byr"]}
+                      names={["bday", "bmnth", "byr"]}
+                      label={"Superflous"}
                       labels={["bday", "bmnth", "byr"]}
                       onComplete={value => console.log("onComplete: ", value)}
                       onChange={value => console.log("onChange: ", value)}
