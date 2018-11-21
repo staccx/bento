@@ -31,7 +31,13 @@ export const LayoutStyling = theming.createVariants(
     annualStatment: OneUp,
     profileEdit: OneUp,
     contractDocuments: OneUp,
-    loggedOut: OneUp
+    loggedOut: OneUp,
+    downpayment: OneUp,
+    due: OneUp,
+    insurance: OneUp,
+    invoice: OneUp,
+    loanDetail: OneUp,
+    loanStatement: OneUp
   },
   Layout.themeProps.container
 )

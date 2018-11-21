@@ -1,7 +1,6 @@
 import { BaseTheme, theming } from "@staccx/base"
 import reset from "./reset"
 import Button from "./Theme.Button"
-import Modal from "./Theme.Wrapper"
 import DashboardBox from "./Theme.Box"
 import { LogoStyle } from "./Theme.Logo"
 import { FooterStyle } from "./Footer/Footer"
@@ -142,7 +141,6 @@ export default new Theme(BaseTheme, {
 })
   .add(Button)
   .add(DashboardBox)
-  .add(Modal)
   .add(ExpandListExpanded)
   .add(NewBadgeStyles)
   .add(MenuStyle)

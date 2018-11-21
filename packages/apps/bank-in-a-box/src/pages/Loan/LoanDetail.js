@@ -1,12 +1,5 @@
 import React from "react"
-import {
-  Layout,
-  Wrapper,
-  LayoutItem,
-  ThemeComponent,
-  Box,
-  List
-} from "@staccx/base"
+import { Layout, LayoutItem, ThemeComponent, Box, List } from "@staccx/base"
 import Loan from "../../components/Loan/Loan"
 import menuLoan from "../../data/menuLoan"
 import Back from "../../components/Back"
@@ -16,32 +9,30 @@ const LoanDetail = ({ account, history }) => {
   const menu = menuLoan(account.accountId)
 
   return (
-    <Wrapper variant="bib">
-      <Layout>
-        <LayoutItem variant="fadeIn" delay="200">
-          <div>
-            <Back history={history} path="/" />
-          </div>
-          <Loan account={account} />
-        </LayoutItem>
-        <LayoutItem variant="fadeIn" delay="400">
-          <ThemeComponent
-            tagName={"menu"}
-            menuElements={menu}
-            history={history}
-          />
-        </LayoutItem>
-        <LayoutItem variant="fadeIn" delay="600">
-          <Box variant="accountInfoOuter">
-            <Box variant={"accountInfo"}>
-              <List>
-                <AccountInfoLoan account={account} />
-              </List>
-            </Box>
+    <Layout variant="loanDetail">
+      <LayoutItem variant="fadeIn" delay="200" area="header">
+        <div>
+          <Back history={history} path="/" />
+        </div>
+        <Loan account={account} />
+      </LayoutItem>
+      <LayoutItem variant="fadeIn" delay="400" area="menu">
+        <ThemeComponent
+          tagName={"menu"}
+          menuElements={menu}
+          history={history}
+        />
+      </LayoutItem>
+      <LayoutItem variant="fadeIn" delay="600" area="main">
+        <Box variant="accountInfoOuter">
+          <Box variant={"accountInfo"}>
+            <List>
+              <AccountInfoLoan account={account} />
+            </List>
           </Box>
-        </LayoutItem>
-      </Layout>
-    </Wrapper>
+        </Box>
+      </LayoutItem>
+    </Layout>
   )
 }
 
