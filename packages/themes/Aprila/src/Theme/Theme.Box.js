@@ -93,6 +93,9 @@ export default theming.createVariants(
     `,
     expandedItem: css`
       background-color: ${theming.color("expandedItem")};
+    `,
+    accountHeading: css`
+      text-align: center;
     `
   },
   Box.themeProps.box

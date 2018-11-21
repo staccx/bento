@@ -1,4 +1,4 @@
-import theme from "@staccx/norefjell-theme"
+import theme from "@staccx/aprila-theme"
 import { backwardsStyle } from "../components/transitions/backwards"
 import { forwardsStyle } from "../components/transitions/forwards"
 import { theming } from "@staccx/base"

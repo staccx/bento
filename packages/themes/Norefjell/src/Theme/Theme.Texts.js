@@ -43,6 +43,9 @@ export const TextStyling = theming.createVariants(
     `,
     strong: css`
       font-weight: ${theming.fontWeight.normal};
+    `,
+    accountHeadingAvailable: css`
+      color: ${theming.color("primary")};
     `
   },
   Text.themeProps.text
