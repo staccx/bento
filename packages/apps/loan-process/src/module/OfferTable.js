@@ -20,7 +20,7 @@ const OfferTable = ({
   showAmount,
   showDuration
 }) => (
-  <Wrapper size="form">
+  <Wrapper>
     <Box variant="expandLeadContent">
       <OfferTableTable>
         <tbody>
@@ -62,8 +62,8 @@ const OfferTable = ({
 
 const OfferTableTable = styled.table`
   width: 100%;
+  margin-top: 10px;
   table-layout: fixed;
-
   tr:last-child {
     td {
       border-bottom-width: 0;
