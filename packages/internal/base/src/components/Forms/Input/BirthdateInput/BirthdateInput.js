@@ -94,9 +94,9 @@ class BirthdateInput extends React.Component {
   }
 
   render() {
-    const { id, name, labels } = this.props
+    const { id, name, labels, variant, ...restProps } = this.props
     return (
-      <Container variant={this.props.variant}>
+      <Container variant={variant}>
         <Input
           label={labels[0] && labels[0]}
           placeholder="dd"
@@ -105,7 +105,8 @@ class BirthdateInput extends React.Component {
           type={"tel"}
           ref={this.dayInput}
           onChange={e => this.handleChangeDayInput(e.target.value)}
-          variant={this.props.variant}
+          variant={variant}
+          {...restProps}
         />
         <Input
           label={labels[1] && labels[1]}
@@ -115,7 +116,8 @@ class BirthdateInput extends React.Component {
           type={"tel"}
           ref={this.monthInput}
           onChange={e => this.handleChangeMonthInput(e.target.value)}
-          variant={this.props.variant}
+          variant={variant}
+          {...restProps}
         />
         <Input
           label={labels[2] && labels[2]}
@@ -125,7 +127,8 @@ class BirthdateInput extends React.Component {
           type={"tel"}
           ref={this.yearInput}
           onChange={e => this.handleChangeYearInput(e.target.value)}
-          variant={this.props.variant}
+          variant={variant}
+          {...restProps}
         />
       </Container>
     )
