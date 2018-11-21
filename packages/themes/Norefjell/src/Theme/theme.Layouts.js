@@ -2,6 +2,14 @@ import { css } from "styled-components"
 import { Layout, LayoutItem, theming } from "@staccx/base"
 import { FadeIn } from "@staccx/animations"
 
+const OneUp = css`
+  grid-template-columns:
+    minmax(0px, 1fr)
+    minmax(227px, 400px)
+    minmax(0px, 1fr);
+  grid-template-areas: ". header ." ". menu ." ". main ." ". ad .";
+`
+
 export const LayoutStyling = theming.createVariants(
   {
     bibMainLayout: css`
@@ -14,11 +22,16 @@ export const LayoutStyling = theming.createVariants(
         "footer";
       grid-auto-flow: column;
     `,
-    bibPage: css`
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-      grid-template-areas: "accounts" "menu" "featuredOverview" "featuredAd";
-    `
+    bibPage: OneUp,
+    profile: OneUp,
+    accountDetail: OneUp,
+    accountStatement: OneUp,
+    prices: OneUp,
+    withdraw: OneUp,
+    annualStatment: OneUp,
+    profileEdit: OneUp,
+    contractDocuments: OneUp,
+    loggedOut: OneUp
   },
   Layout.themeProps.container
 )

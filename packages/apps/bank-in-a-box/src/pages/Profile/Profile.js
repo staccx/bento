@@ -7,7 +7,6 @@ import {
   Toggle,
   Label,
   Flag,
-  Wrapper,
   Heading,
   ThemeComponent
 } from "@staccx/base"
@@ -15,22 +14,22 @@ import menuProfile from "../../data/menuProfile"
 import Back from "../../components/Back"
 
 const Profile = ({ history }) => (
-  <Wrapper variant="bib">
-    <Layout>
-      <LayoutItem variant="fadeIn" delay="200">
-        <div>
-          <Back history={history} path="/" />
-          <Heading level="2">Min profil</Heading>
-        </div>
-      </LayoutItem>
-      <LayoutItem variant="fadeIn" delay="400">
-        <ThemeComponent
-          tagName={"menuColumn"}
-          menuElements={menuProfile}
-          history={history}
-        />
-      </LayoutItem>
-      <LayoutItem variant="fadeIn" delay="600">
+  <Layout variant="profile">
+    <LayoutItem variant="fadeIn" delay="200" area="header">
+      <div>
+        <Back history={history} path="/" />
+        <Heading level="2">Min profil</Heading>
+      </div>
+    </LayoutItem>
+    <LayoutItem variant="fadeIn" delay="400" area="menu">
+      <ThemeComponent
+        tagName={"menuColumn"}
+        menuElements={menuProfile}
+        history={history}
+      />
+    </LayoutItem>
+    <LayoutItem variant="fadeIn" delay="600" area="main">
+      <Layout>
         <Flag
           small
           img={
@@ -47,8 +46,7 @@ const Profile = ({ history }) => (
             dokumentene kan sendes til meg elektronisk
           </ModifiedLabel>
         </Flag>
-      </LayoutItem>
-      <LayoutItem variant="fadeIn" delay="800">
+
         <Flag
           small
           img={
@@ -65,12 +63,12 @@ const Profile = ({ history }) => (
             Nordfjell-banken
           </ModifiedLabel>
         </Flag>
-      </LayoutItem>
-      <LayoutItem variant="fadeIn" delay="900">
-        <Button>Lagre</Button>
-      </LayoutItem>
-    </Layout>
-  </Wrapper>
+        <LayoutItem variant="fadeIn" delay="900">
+          <Button>Lagre</Button>
+        </LayoutItem>
+      </Layout>
+    </LayoutItem>
+  </Layout>
 )
 
 const ModifiedLabel = styled(Label)`

@@ -6,7 +6,7 @@ export default theming.createVariants(
     accountInfoListItem: css`
       padding: 10px 0;
       border-color: ${theming.color("accountInfoBorder")};
-      color: ${theming.color.wcag};
+      color: ${theming.color.white};
       ${p =>
         p.emphasize &&
         css`

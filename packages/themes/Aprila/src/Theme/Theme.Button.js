@@ -215,11 +215,16 @@ export default theming.createVariants(
       display: flex;
       padding-left: 0;
       padding-right: 0;
+      justify-content: space-between;
+      span {
+        flex-grow: 1;
+        padding-left: ${theming.spacing.medium};
+      }
       &::after {
-        content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.79292 6L0.637773 1.61701C0.452511 1.42169 0.454402 1.10918 0.641553 0.913857L1.38449 0.146247C1.57542 -0.0490732 1.88167 -0.0490732 2.07071 0.1482L7.35822 5.64647C7.45274 5.74413 7.5 5.87109 7.5 6C7.5 6.12891 7.45274 6.25587 7.35822 6.35353L2.07071 11.8518C1.88167 12.0491 1.57542 12.0491 1.38449 11.8538L0.641553 11.0861C0.454402 10.8908 0.452511 10.5783 0.637773 10.383L4.79292 6Z' fill='%232EB6BE'/%3e%3c/svg%3e ");
+        content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='12' viewBox='0 0 8 12' fill='#FF7E68' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.79292 6L0.637773 1.61701C0.452511 1.42169 0.454402 1.10918 0.641553 0.913857L1.38449 0.146247C1.57542 -0.0490732 1.88167 -0.0490732 2.07071 0.1482L7.35822 5.64647C7.45274 5.74413 7.5 5.87109 7.5 6C7.5 6.12891 7.45274 6.25587 7.35822 6.35353L2.07071 11.8518C1.88167 12.0491 1.57542 12.0491 1.38449 11.8538L0.641553 11.0861C0.454402 10.8908 0.452511 10.5783 0.637773 10.383L4.79292 6Z' fill='%232EB6BE'/%3e%3c/svg%3e ");
       }
       svg {
-        fill: ${theming.color.secondary};
+        color: ${theming.color.primary};
       }
       &:hover,
       &:focus,
@@ -227,7 +232,7 @@ export default theming.createVariants(
         background: transparent;
         color: ${theming.color.text};
         svg {
-          fill: ${theming.color.primary};
+          color: ${theming.color.secondary};
         }
       }
     `,

@@ -85,7 +85,8 @@ const BiBSpecificColor = {
   accountInfoBorder: theming.color.line,
   accountFilter: "#2EB6BE",
   invoice: "#3297BF",
-  mainButton: "#2EB6BE"
+  mainButton: "#2EB6BE",
+  transactionHeader: theming.color.primary
 }
 
 const font = {

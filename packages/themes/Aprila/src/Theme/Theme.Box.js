@@ -1,7 +1,5 @@
 import { css } from "styled-components"
 import { Box, fontSmoothing, theming } from "@staccx/base"
-import { BounceIn } from "@staccx/animations"
-
 const defaultBox = css`
   background: ${theming.color.white};
   box-shadow: 0px 16px 16px rgba(0, 0, 75, 0.002),
@@ -26,7 +24,7 @@ export default theming.createVariants(
       color: ${theming.color.white};
       border-radius: ${theming.borderRadius};
     `,
-    contractBox: defaultBox,
+    contractBox: css``,
     headerContainer: css`
       padding: ${theming.spacing.large} 0 0;
     `,
@@ -44,6 +42,8 @@ export default theming.createVariants(
       padding: ${theming.spacing.medium};
       ${fontSmoothing};
       position: relative;
+      color: ${theming.color.white};
+      background-color: ${theming.color.primary};
     `,
     accountFilter: css`
       ${defaultBox};
@@ -69,6 +69,7 @@ export default theming.createVariants(
     `,
     profileAdress: css`
       background-color: #f0f0f0;
+      padding: ${theming.spacing.small};
     `,
     prices: css`
       ${defaultBox};
@@ -89,14 +90,6 @@ export default theming.createVariants(
     `,
     center: css`
       text-align: center;
-    `,
-    accountInfoOuter: css`
-      position: relative;
-      opacity: 0;
-      transform: translateY(-12px);
-      z-index: 50;
-      animation: 0.4s ${BounceIn} cubic-bezier(0.175, 0.885, 0.32, 1.275)
-        forwards 1;
     `,
     expandedItem: css`
       background-color: ${theming.color("expandedItem")};

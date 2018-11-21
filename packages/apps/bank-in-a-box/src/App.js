@@ -50,7 +50,7 @@ class App extends Component {
                         />
                       </Button>
                     </LayoutItem>
-                    <LayoutItem area="main">
+                    <LayoutItem area="main" variant="minHeight">
                       <Transitions pageKey={location.key} {...location.state}>
                         <Switch location={location}>
                           <Route

@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { formatPhone, formatCurrency } from "@staccx/formatting"
 import {
-  Wrapper,
   Button,
   Layout,
   LayoutItem,
@@ -36,8 +35,8 @@ export class Withdraw extends React.Component {
     const { history, accountNumber, saldo } = this.props
     const { toNumber } = this.state
     return (
-      <Wrapper variant="bib">
-        <LayoutItem variant="fadeIn" delay="200">
+      <Layout variant="withdraw">
+        <LayoutItem variant="fadeIn" delay="200" area="header">
           <Back history={history} path="/account/546126722" />
           <Heading level="1" variant="primary">
             <TranslatedText
@@ -50,55 +49,57 @@ export class Withdraw extends React.Component {
             <TranslatedText i18nKey="withdrawSubtitle" fallback="disponibelt" />
           </Heading>
         </LayoutItem>
-        <Layout grid="rows">
-          <LayoutItem variant="fadeIn" delay="400">
-            <Box variant="withdrawInputs">
-              <Input
-                label="Beløp"
-                placeholder="0"
-                type="tel"
-                id="telwithdraw"
-              />
-              <AccountInput
-                label="Kontonummer"
-                placeholder="XXXX XX XXXXX"
-                id="accountwithdraw"
-                value={toNumber}
-              />
-            </Box>
-          </LayoutItem>
-          <LayoutItem variant="fadeIn" delay="600">
-            <Alert
-              type="info"
-              onClick={() => this.addAccountNumber()}
-              role="button"
-              tabindex="4"
-              aria-pressed="false"
-            >
-              <TranslatedText
-                i18nKey="WithdrawAlertLastTransferCameFrom"
-                fallback="Siste innskudd kom fra"
-              />{" "}
-              <Text variant="withdrawAlertNumber">
-                {formatPhone(accountNumber, "XXXX XX XXXXX")}
-              </Text>
-              .{" "}
-              <TranslatedText
-                i18nKey="WithdrawAlertClickHereToSendBack"
-                fallback="Klikk her for å sende penger tilbake"
-              />
-            </Alert>
-          </LayoutItem>
-          <LayoutItem variant="fadeIn" delay="800">
-            <Button>
-              <TranslatedText
-                i18nKey="WithdrawConfirmButton"
-                fallback="Overfør"
-              />
-            </Button>
-          </LayoutItem>
-        </Layout>
-      </Wrapper>
+        <LayoutItem area="menu">
+          <Layout grid="rows">
+            <LayoutItem variant="fadeIn" delay="400">
+              <Box variant="withdrawInputs">
+                <Input
+                  label="Beløp"
+                  placeholder="0"
+                  type="tel"
+                  id="telwithdraw"
+                />
+                <AccountInput
+                  label="Kontonummer"
+                  placeholder="XXXX XX XXXXX"
+                  id="accountwithdraw"
+                  value={toNumber}
+                />
+              </Box>
+            </LayoutItem>
+            <LayoutItem variant="fadeIn" delay="600">
+              <Alert
+                type="info"
+                onClick={() => this.addAccountNumber()}
+                role="button"
+                tabindex="4"
+                aria-pressed="false"
+              >
+                <TranslatedText
+                  i18nKey="WithdrawAlertLastTransferCameFrom"
+                  fallback="Siste innskudd kom fra"
+                />{" "}
+                <Text variant="withdrawAlertNumber">
+                  {formatPhone(accountNumber, "XXXX XX XXXXX")}
+                </Text>
+                .{" "}
+                <TranslatedText
+                  i18nKey="WithdrawAlertClickHereToSendBack"
+                  fallback="Klikk her for å sende penger tilbake"
+                />
+              </Alert>
+            </LayoutItem>
+            <LayoutItem variant="fadeIn" delay="800">
+              <Button>
+                <TranslatedText
+                  i18nKey="WithdrawConfirmButton"
+                  fallback="Overfør"
+                />
+              </Button>
+            </LayoutItem>
+          </Layout>
+        </LayoutItem>
+      </Layout>
     )
   }
 }
