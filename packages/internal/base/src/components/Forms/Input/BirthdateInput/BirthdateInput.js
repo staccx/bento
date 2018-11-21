@@ -105,6 +105,7 @@ class BirthdateInput extends React.Component {
           type={"tel"}
           ref={this.dayInput}
           onChange={e => this.handleChangeDayInput(e.target.value)}
+          variant={this.props.variant}
         />
         <Input
           label={labels[1] && labels[1]}
@@ -114,6 +115,7 @@ class BirthdateInput extends React.Component {
           type={"tel"}
           ref={this.monthInput}
           onChange={e => this.handleChangeMonthInput(e.target.value)}
+          variant={this.props.variant}
         />
         <Input
           label={labels[2] && labels[2]}
@@ -123,6 +125,7 @@ class BirthdateInput extends React.Component {
           type={"tel"}
           ref={this.yearInput}
           onChange={e => this.handleChangeYearInput(e.target.value)}
+          variant={this.props.variant}
         />
       </Container>
     )
@@ -139,7 +142,7 @@ BirthdateInput.themeProps = {
 
 const Container = styled.div`
   display: flex;
-  ${applyVariants(BirthdateInput.themeProps.input)};
+  ${applyVariants(BirthdateInput.themeProps.container)};
 `
 
 BirthdateInput.propTypes = {
