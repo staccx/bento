@@ -14,7 +14,7 @@ const Account = ({ account, navigate }) => {
         navigate ? () => navigate(`/account/${account.accountId}`) : null
       }
     >
-      <Box variant="relative">
+      <Box variant="accountBox">
         <Heading variant="accountHeading" level="3">
           På konto
         </Heading>

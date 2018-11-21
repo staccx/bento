@@ -14,7 +14,9 @@ const defaultBox = css`
 export default theming.createVariants(
   {
     dashboardBox: defaultBox,
-    accountBox: defaultBox,
+    accountBox: css`
+      position: relative;
+    `,
     loanBox: defaultBox,
     adBox: defaultBox,
     contractBox: defaultBox,

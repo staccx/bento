@@ -40,6 +40,18 @@ const Account = css`
   }
 `
 
+const styleless = css`
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    padding: 0;
+    background-color: transparent;
+    border-width: 0;
+    width: 100%;
+  }
+`
+
 export default theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
@@ -133,15 +145,10 @@ export default theming.createVariants(
       }
     `,
     styleless: css`
-      &,
-      &:hover,
-      &:active,
-      &:focus {
-        padding: 0;
-        background-color: transparent;
-        border-width: 0;
-        width: 100%;
-      }
+      ${styleless};
+    `,
+    logo: css`
+      ${styleless};
     `,
     accountBox: css`
       ${Account};

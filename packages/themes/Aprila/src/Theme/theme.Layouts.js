@@ -32,13 +32,19 @@ export const LayoutStyling = theming.createVariants(
       min-height: 100vh;
       grid-template-columns: 1fr;
       grid-template-rows: auto 1fr auto;
+      grid-row-gap: 0;
       grid-template-areas:
         "logo"
         "main"
         "footer";
       grid-auto-flow: column;
     `,
-    bibPage: TwoUp,
+    overview: css`
+      ${TwoUp};
+      @media (min-width: 715px) {
+        grid-template-areas: "header header header header" ". menu menu ." ". main ad .";
+      }
+    `,
     profile: OneUp,
     accountDetail: TwoUp,
     accountStatement: OneUp,
@@ -62,6 +68,8 @@ export const LayoutItemStyling = theming.createVariants(
     `,
     logo: css`
       background-color: ${theming.color.primary};
+      padding-top: ${theming.spacing.medium};
+      padding-bottom: ${theming.spacing.tiny};
     `,
     minHeight: css`
       min-height: calc(100vh - 48px - 51px - 24px);

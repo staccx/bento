@@ -22,7 +22,7 @@ export const LayoutStyling = theming.createVariants(
         "footer";
       grid-auto-flow: column;
     `,
-    bibPage: OneUp,
+    overview: OneUp,
     profile: OneUp,
     accountDetail: OneUp,
     accountStatement: OneUp,

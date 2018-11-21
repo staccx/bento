@@ -16,7 +16,11 @@ export default theming.createVariants(
       border-radius: ${theming.borderRadius};
     `,
     menuBox: css``,
-    accountBox: defaultBox,
+    accountBox: css`
+      position: relative;
+      max-width: 840px;
+      margin: auto;
+    `,
     loanBox: defaultBox,
     adBox: css`
       padding: ${theming.spacing.medium};

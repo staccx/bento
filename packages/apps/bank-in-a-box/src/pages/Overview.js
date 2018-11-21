@@ -9,7 +9,7 @@ import Transactions from "../components/Transactions"
 const Overview = ({ history, accounts, theme }) => {
   console.log(theme)
   return (
-    <Layout variant="bibPage">
+    <Layout variant="overview">
       <LayoutItem variant="fadeIn" delay="200" area="header">
         <Layout>
           {accounts.map(account => {

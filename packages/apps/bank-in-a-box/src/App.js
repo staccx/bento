@@ -35,7 +35,7 @@ class App extends Component {
                   <Layout variant="bibMainLayout">
                     <LayoutItem variant="logo" area="logo">
                       <Button
-                        variant="styleless"
+                        variant="logo"
                         onClick={() =>
                           history.push({
                             pathname: "/",

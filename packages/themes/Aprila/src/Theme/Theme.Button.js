@@ -21,13 +21,26 @@ const invisibleButton = css`
 const Account = css`
   background: ${theming.color.primary};
   padding: ${theming.spacing.small} ${theming.spacing.medium};
-  border-radius: ${theming.borderRadius};
+  border-radius: 0;
   width: 100%;
   text-align: left;
   transition: box-shadow 0.2s ease-out;
+
   &:hover,
   &:focus,
   &:active {
+  }
+`
+
+const styleless = css`
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    padding: 0;
+    background-color: transparent;
+    border-width: 0;
+    width: 100%;
   }
 `
 
@@ -146,15 +159,15 @@ export default theming.createVariants(
       }
     `,
     styleless: css`
-      &,
-      &:hover,
-      &:active,
-      &:focus {
-        padding: 0;
-        background-color: transparent;
-        border-width: 0;
-        width: 100%;
-      }
+      ${styleless};
+    `,
+    logo: css`
+      ${styleless};
+      height: 44px;
+      max-width: 840px;
+      margin: auto;
+      display: block;
+      text-align: left;
     `,
     accountBox: css`
       ${Account};
@@ -192,6 +205,7 @@ export default theming.createVariants(
       &:hover,
       &:active,
       &:focus {
+        margin-top: ${theming.spacing.medium};
         padding: 0;
         background-color: transparent;
         border-width: 0;
