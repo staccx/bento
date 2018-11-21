@@ -1,7 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Input, { InputPropTypes } from "../Input"
+import Input from "../Input"
+import { applyVariants } from "../../../../theming"
+import { themePropTypes } from "../../../../constants/themeContants"
 
 class BirthdateInput extends React.Component {
   constructor(props) {
@@ -94,7 +96,7 @@ class BirthdateInput extends React.Component {
   render() {
     const { id, name, labels } = this.props
     return (
-      <Container>
+      <Container variant={this.props.variant}>
         <Input
           label={labels[0] && labels[0]}
           placeholder="dd"
@@ -127,12 +129,21 @@ class BirthdateInput extends React.Component {
   }
 }
 
+BirthdateInput.themeProps = {
+  container: {
+    name: "BIRTHDATE_INPUT_CONTAINER_STYLE",
+    description: "Container style",
+    type: themePropTypes.style
+  }
+}
+
 const Container = styled.div`
   display: flex;
+  ${applyVariants(BirthdateInput.themeProps.input)};
 `
 
 BirthdateInput.propTypes = {
-  ...InputPropTypes,
+  variant: PropTypes.string,
   onChange: PropTypes.func,
   onComplete: PropTypes.func,
   ids: PropTypes.array.isRequired,
