@@ -168,6 +168,7 @@ const HelpButton = styled.button`
   border: initial;
   padding: 0;
   cursor: pointer;
+  line-height: 0;
   ${applyVariants(Input.themeProps.helpButton)};
 `
 
