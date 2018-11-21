@@ -1,6 +1,6 @@
 import React from "react"
 import { Layout, LayoutItem, ThemeComponent, Box, List } from "@staccx/base"
-import Loan from "../../components/Loan/Loan"
+import LoanHeading from "../../components/Loan/LoanHeading"
 import menuLoan from "../../data/menuLoan"
 import Back from "../../components/Back"
 import AccountInfoLoan from "../../components/Loan/Account.Info.Loan"
@@ -14,7 +14,7 @@ const LoanDetail = ({ account, history }) => {
         <div>
           <Back history={history} path="/" />
         </div>
-        <Loan account={account} />
+        <LoanHeading account={account} />
       </LayoutItem>
       <LayoutItem variant="fadeIn" delay="400" area="menu">
         <ThemeComponent
