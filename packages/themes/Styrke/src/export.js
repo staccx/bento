@@ -64,7 +64,7 @@ const spacing = {
 }
 const color = {
   bg: "#fcfcfc",
-  bgGray: "#f6f1e5",
+  bgGray: "#f4f4f4",
   bgBlue: "#DCEDF0",
   bgBlueDark: "#CEDEE0",
   primary: "#3c61e7",
@@ -93,6 +93,8 @@ const font = {
   base: "14px",
   tiny: "12px",
   input: "16px",
+  medium: "18px",
+  large: "22px",
   huge: "44px"
 }
 

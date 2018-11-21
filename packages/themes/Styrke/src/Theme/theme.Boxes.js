@@ -24,10 +24,9 @@ export const BoxStyling = theming.createVariants(
     `,
     expandLeadContent: css`
       padding: 0;
-      background-color: ${theming.color("bgBlue")};
 
       td {
-        border-color: ${theming.color("bgBlueDark")};
+        border-color: ${theming.color.line};
       }
     `,
     largeForm: css`

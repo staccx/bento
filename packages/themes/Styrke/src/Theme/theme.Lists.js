@@ -18,7 +18,7 @@ export const ListStyling = theming.createVariants(
         justify-content: space-between;
         align-items: center;
         padding: ${theming.spacing.small};
-        background-color: ${theming.color("bgBlue")};
+        background-color: ${theming.color.bgGray};
         margin-bottom: 3px;
 
         &::not(:first-child) {
@@ -79,7 +79,30 @@ export const SplitListItemStyling = theming.createVariants(
 
 export const ExpandListItemStyling = theming.createVariants(
   {
+    [theming.VARIANT_DEFAULT]: css``,
     signer: css`
+      position: relative;
+
+      & > button::after {
+        content: "";
+        background-color: ${theming.color.bgGray};
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        opacity: 0;
+        transform: scaleY(0);
+        transition: opacity 500ms ease, transform 0ms 200ms;
+        z-index: -1;
+      }
+
+      & > button:focus::after {
+        opacity: 1;
+        transform: scaleY(1);
+        transition: transform 200ms ease;
+      }
+
       border-bottom: 1px solid
         ${p => (p.isExpanded ? "transparent" : theming.color("line")(p))};
 
