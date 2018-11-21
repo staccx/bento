@@ -11,6 +11,9 @@ export default theming.createVariants(
     primary: css`
       font-size: ${theming.font.h2};
     `,
+    accountHeadingText: css`
+      font-size: ${theming.font.h2};
+    `,
     withdrawSubtitle: css`
       font-size: ${theming.font.h6};
       text-align: left;

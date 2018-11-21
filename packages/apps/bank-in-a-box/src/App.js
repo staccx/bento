@@ -35,7 +35,7 @@ class App extends Component {
                   <Layout variant="bibMainLayout">
                     <LayoutItem variant="logo" area="logo">
                       <Button
-                        variant="styleless"
+                        variant="logo"
                         onClick={() =>
                           history.push({
                             pathname: "/",
@@ -50,7 +50,7 @@ class App extends Component {
                         />
                       </Button>
                     </LayoutItem>
-                    <LayoutItem area="main">
+                    <LayoutItem area="main" variant="minHeight">
                       <Transitions pageKey={location.key} {...location.state}>
                         <Switch location={location}>
                           <Route

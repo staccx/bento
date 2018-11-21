@@ -7,6 +7,13 @@ import { TranslatedText } from "@staccx/i18n"
 const AccountInfoDeposit = ({ account }) => (
   <React.Fragment>
     <SplitListItem variant="accountInfoListItem" emphasize>
+      <Text variant="strong">
+        <TranslatedText
+          i18nKey="ACCOUNTNUMBER"
+          fallback="Kontonummer for innbetaling"
+        />
+        :
+      </Text>
       <div>{account.accountNo}</div>
     </SplitListItem>
     <SplitListItem variant="accountInfoListItem" emphasize>

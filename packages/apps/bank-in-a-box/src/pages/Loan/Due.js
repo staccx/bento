@@ -1,7 +1,6 @@
 import React from "react"
 import {
   Layout,
-  Wrapper,
   Heading,
   Button,
   RadioPill,
@@ -38,45 +37,43 @@ const Due = ({ history }) => {
     }
   ]
   return (
-    <Wrapper variant="bib">
-      <Layout>
-        <LayoutItem variant="fadeIn" delay="200">
-          <Back history={history} path="/loan/34551524578" />
-          <Heading level="2">Forfallsdato</Heading>
-        </LayoutItem>
-        <LayoutItem variant="fadeIn" delay="400">
-          <Legend>Hvilken dag vil du ha forfall hver måned?</Legend>
-          <RadioPill
-            onChange={handleRadioPillChange}
-            group={"radiopills"}
-            id="radiopills"
-          >
-            {myList.map(listItem => (
-              <RadioPillItem
-                key={listItem.myUniqueId}
-                value={listItem.value}
-                defaultChecked={listItem.defaultChecked}
-                id={listItem.myUniqueId}
-              >
-                {listItem.label}
-              </RadioPillItem>
-            ))}
-          </RadioPill>
-        </LayoutItem>
-        <LayoutItem variant="fadeIn" delay="600">
-          <Button
-            onClick={() =>
-              history.push({
-                pathname: "/account/34551524578",
-                state: backwards
-              })
-            }
-          >
-            Lagre
-          </Button>
-        </LayoutItem>
-      </Layout>
-    </Wrapper>
+    <Layout variant="due">
+      <LayoutItem variant="fadeIn" delay="200" area="header">
+        <Back history={history} path="/loan/34551524578" />
+        <Heading level="2">Forfallsdato</Heading>
+      </LayoutItem>
+      <LayoutItem variant="fadeIn" delay="400" area="menu">
+        <Legend>Hvilken dag vil du ha forfall hver måned?</Legend>
+        <RadioPill
+          onChange={handleRadioPillChange}
+          group={"radiopills"}
+          id="radiopills"
+        >
+          {myList.map(listItem => (
+            <RadioPillItem
+              key={listItem.myUniqueId}
+              value={listItem.value}
+              defaultChecked={listItem.defaultChecked}
+              id={listItem.myUniqueId}
+            >
+              {listItem.label}
+            </RadioPillItem>
+          ))}
+        </RadioPill>
+      </LayoutItem>
+      <LayoutItem variant="fadeIn" delay="600" area="main">
+        <Button
+          onClick={() =>
+            history.push({
+              pathname: "/account/34551524578",
+              state: backwards
+            })
+          }
+        >
+          Lagre
+        </Button>
+      </LayoutItem>
+    </Layout>
   )
 }
 

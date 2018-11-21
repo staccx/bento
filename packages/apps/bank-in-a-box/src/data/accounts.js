@@ -14,8 +14,8 @@ export default [
     balanceDue: 92120 // Balance due, not paid
   },
   {
-    accountNo: "546126722", // Konto for innbetaling
-    kid: 5461, // kid for inbetaling tilsvarer kontonummer
+    accountNo: "9801 54 58465", // Konto for innbetaling
+    kid: 151611564646, // kid for inbetaling tilsvarer kontonummer
     accountId: "546126722",
     availableBalance: 53400.55, // Disponibelt beløp | LOAN: Same as Booked Balance plus Disbursements not effectuated. DEPOSIT: Booked balance minus Withdrawals not effectuated.
     bookedBalance: 53400.55, // Bokført saldo | Total outstanding balance

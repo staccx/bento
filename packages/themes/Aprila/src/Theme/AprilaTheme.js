@@ -84,7 +84,7 @@ const BiBSpecificColor = {
   accountEarned: color.bgGray,
   accountBalance: color.secondary,
   expandedItem: lighten(0.05, color.line),
-  accountInfoBorder: rgba(color.primary, 0.25),
+  accountInfoBorder: rgba(color.white, 0.25),
   transactionHeader: color.primary
 }
 
