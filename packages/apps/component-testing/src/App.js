@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import {
+  BirthdateInput,
   Wrapper,
   Combobox,
   GlobalStyle,
+  Layout,
   WebFonts,
   Input,
   Label,
@@ -91,7 +93,7 @@ class App extends Component {
               <GlobalStyle />
               <WebFonts />
               <List>
-                <ExpandListItem title={"i18n"} expanded>
+                <ExpandListItem title={"i18n"}>
                   <TranslatedText i18nKey={"bugskey"}>
                     Fallback Text
                   </TranslatedText>
@@ -101,7 +103,13 @@ class App extends Component {
                   <TranslatedText />
                   <TranslatedText>Just doing stuff</TranslatedText>
                 </ExpandListItem>
-                <ExpandListItem title={"Inputs"}>
+                <ExpandListItem title={"Inputs"} expanded>
+                  <Layout paddingTop="huge" paddingBottom="huge">
+                    <BirthdateInput
+                      id="bday"
+                      onComplete={value => console.log(value)}
+                    />
+                  </Layout>
                   <CompanyInput id={"test"} />
                   <Select
                     items={options}

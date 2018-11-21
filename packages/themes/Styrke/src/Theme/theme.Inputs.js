@@ -40,6 +40,38 @@ export const LabelStyling = theming.createVariants(
   Input.themeProps.label
 )
 
+export const HelpButtonStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      position: relative;
+      top: 3px;
+      outline: none;
+      border-radius: 100%;
+      box-shadow: 0 0 0 0 #3c61e730;
+
+      &:focus svg {
+        fill: ${theming.color.primary};
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 1px ${theming.color.primary};
+      }
+    `
+  },
+  Input.themeProps.helpButton
+)
+
+export const HelpTextStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      color: ${theming.color.primary};
+      font-size: ${theming.font.tiny};
+      padding-bottom: ${theming.spacing.small};
+    `
+  },
+  Input.themeProps.helpText
+)
+
 export const SelectOptionStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css``,

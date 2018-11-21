@@ -122,6 +122,7 @@ class ProvideAdditionalInfo extends React.Component {
                           <CurrencyInput
                             id={key}
                             label={this.props[`${key}Label`]}
+                            helpText={this.props[`${key}HelpText`]}
                             placeholder="0"
                             locale={"nb"}
                             defaultValue={value}
@@ -196,10 +197,14 @@ ProvideAdditionalInfo.defaultProps = {
   leEquity: 0,
   asTradeDebtors: 0,
   siNetIncomeLabel: "Årsresultat",
+  siNetIncomeHelpText: "Driftsresultatet minus renter og skatter.",
   siTotalOperatingRevenueLabel: "Sum driftsinntekter",
+  siTotalOperatingRevenueHelpText: "Salgs- og driftsinntekter.",
   asInventoriesLabel: "Sum varelager",
   asBankDepositsCashInHandEtcLabel: "Sum Kasse/Bank/Post",
   asCurrentAssetsLabel: "Sum omløpsmidler",
+  asCurrentAssetsHelpText:
+    "Virksomhetens kortsiktige eiendeler som varelager, betalingsmidler og verdipapirer.",
   asTotalAssetsLabel: "Sum eiedeler",
   leCurrentLiabilitiesLabel: "Sum kortsiktig gjeld",
   leEquityLabel: "Sum egenkapital",

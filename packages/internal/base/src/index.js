@@ -1,5 +1,6 @@
 // Forms
 import Input from "./components/Forms/Input/Input"
+import BirthdateInput from "./components/Forms/Input/BirthdateInput/BirthdateInput"
 import CurrencyInput from "./components/Forms/Input/CurrencyInput/CurrencyInput"
 import AccountInput from "./components/Forms/Input/AccountInput/AccountInput"
 import PhoneInput from "./components/Forms/Input/PhoneInput/PhoneInput"
@@ -143,6 +144,7 @@ export {
   AccountInput,
   Alert,
   BaseTheme,
+  BirthdateInput,
   theming,
   Box,
   Button,
