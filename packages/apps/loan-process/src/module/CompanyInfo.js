@@ -9,7 +9,10 @@ import {
   Layout,
   LayoutItem,
   Alert,
-  Loading
+  Loading,
+  State,
+  RadioButton,
+  Label
 } from "@staccx/base"
 import { Field, Formik } from "formik"
 
@@ -96,7 +99,6 @@ class CompanyInfo extends React.Component {
                           </Alert>
                         )}
                     </LayoutItem>
-
                     <LayoutItem>
                       <Field
                         name={`purpose`}
@@ -146,23 +148,58 @@ class CompanyInfo extends React.Component {
                             ...props
                           } = field
                           return (
-                            <Select
-                              items={this.props.paymentCash}
-                              label={this.props.paymentCashLabel}
-                              placeHolderLabel={
-                                this.props.paymentCashPlaceholder
-                              }
-                              {...this.props.paymentSelectProps}
-                              value={value}
-                              onChange={item =>
-                                setFieldValue(
-                                  "paymentCash",
-                                  this.props.mapRepaymentPeriod(item)
+                            <State>
+                              {({ change, isOpen = false }) => {
+                                return (
+                                  <div>
+                                    <Label as="legend">
+                                      {this.props.paymentCashConditionalLabel}
+                                    </Label>
+                                    <div>
+                                      <RadioButton
+                                        id="cashYes"
+                                        onChange={() =>
+                                          change({ isOpen: true })
+                                        }
+                                        group="cash"
+                                        value="yes"
+                                      >
+                                        Ja
+                                      </RadioButton>
+                                      <RadioButton
+                                        id="cashNo"
+                                        onChange={() =>
+                                          change({ isOpen: false })
+                                        }
+                                        group="cash"
+                                        value="no"
+                                      >
+                                        Nei
+                                      </RadioButton>
+                                    </div>
+                                    {isOpen && (
+                                      <Select
+                                        items={this.props.paymentCash}
+                                        label={this.props.paymentCashLabel}
+                                        placeHolderLabel={
+                                          this.props.paymentCashPlaceholder
+                                        }
+                                        {...this.props.paymentSelectProps}
+                                        value={value}
+                                        onChange={item =>
+                                          setFieldValue(
+                                            "paymentCash",
+                                            this.props.mapRepaymentPeriod(item)
+                                          )
+                                        }
+                                        // onBlur={onBlur}
+                                        {...props}
+                                      />
+                                    )}
+                                  </div>
                                 )
-                              }
-                              // onBlur={onBlur}
-                              {...props}
-                            />
+                              }}
+                            </State>
                           )
                         }}
                       />
@@ -320,6 +357,7 @@ CompanyInfo.defaultProps = {
   mapRepaymentPeriod: mapRepaymentPeriod,
   monthlyFeesText: "Månedlige gebyr",
   onClick: () => null,
+  paymentCashConditionalLabel: "Mottar dere kontantbetaling?",
   paymentCash: ["Ingen", "Lite", "Halvparten", "Alt", "Vet ikke"],
   paymentCashLabel: "Hvor mye kontantbetaling mottar dere?",
   paymentCashPlaceholder: "Velg...",
