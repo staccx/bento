@@ -47,7 +47,7 @@ const Overview = ({ history, accounts, theme }) => {
       {theme.bib.transactionsFrontpage && (
         <LayoutItem variant="fadeIn" delay="600" area="main">
           <Transactions
-            transactions={accounts[0].transactions}
+            transactions={accounts[1].transactions}
             header={false}
           />
         </LayoutItem>

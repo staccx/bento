@@ -41,6 +41,7 @@ export const LayoutStyling = theming.createVariants(
     `,
     overview: css`
       ${TwoUp};
+      grid-template-areas: "header header header" ". menu ." ". main ." ". ad .";
       @media (min-width: 715px) {
         grid-template-areas: "header header header header" ". menu menu ." ". main ad .";
       }
@@ -70,6 +71,7 @@ export const LayoutItemStyling = theming.createVariants(
       background-color: ${theming.color.primary};
       padding-top: ${theming.spacing.medium};
       padding-bottom: ${theming.spacing.tiny};
+      padding-left: ${theming.spacing.medium};
     `,
     minHeight: css`
       min-height: calc(100vh - 48px - 51px - 24px);

@@ -87,6 +87,7 @@ const Amount = styled.div``
 
 const TransactionHeading = styled.h4`
   font-size: ${theming.font("transactionHeading")};
+  margin-bottom: 3px;
 `
 
 ExpandListBtn.propTypes = {

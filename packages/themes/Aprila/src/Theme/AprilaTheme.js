@@ -108,14 +108,9 @@ const fontWeight = {
 }
 
 const BiBSpecificFont = {
-  accountBalance:
-    "calc(" +
-    font.h1 +
-    " + (84 - " +
-    font.h1.substring(0, font.h1.indexOf("px")) +
-    " ) * ((100vw - 300px) / (2560 - 300)))",
+  accountBalance: "48px",
   accountBalanceDecimals: font.h2,
-  transactionHeading: font.h4
+  transactionHeading: font.base
 }
 
 const fontFamily = {
