@@ -62,15 +62,49 @@ export const LabelStyling = theming.createVariants(
   Label.themeProps.label
 )
 
+export const HelpButtonStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      position: relative;
+      top: 3px;
+      outline: none;
+      border-radius: 100%;
+      box-shadow: 0 0 0 0 #3c61e730;
+
+      &:focus svg {
+        fill: ${theming.color.primary};
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 1px ${theming.color.primary};
+      }
+    `
+  },
+  Input.themeProps.helpButton
+)
+
+export const HelpTextStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      color: ${theming.color.primary};
+      font-size: ${theming.font.tiny};
+      padding-bottom: ${theming.spacing.small};
+    `
+  },
+  Input.themeProps.helpText
+)
+
 export const SelectOptionStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       border: 1px solid ${theming.color.primary};
       padding-left: ${theming.spacing.small};
+      &:hover,
       &:focus {
         /* border: 2px solid ${theming.color.primary}; */
         box-shadow: 0 0 0 1px ${theming.color.primary};
       }
+      height: 44px;
     `,
     calculatorTerms: css`
       background-color: transparent;
@@ -114,6 +148,7 @@ export const SelectOptionsWrapperStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       border-color: ${theming.color.primary};
+      box-shadow: 0 0 0 1px ${theming.color.primary};
       li button {
         border: 0;
         &:focus {

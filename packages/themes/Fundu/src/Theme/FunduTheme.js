@@ -16,6 +16,8 @@ import { TableStyling } from "./theme.Tables"
 import {
   InputStyling,
   LabelStyling,
+  HelpButtonStyling,
+  HelpTextStyling,
   SelectIconButtonStyling,
   SelectOptionsWrapperStyling,
   RadioPillItemStyling,
@@ -141,6 +143,8 @@ export default new theming.Theme({
   .add(SplitListItemStyling)
   .add(InputStyling)
   .add(LabelStyling)
+  .add(HelpButtonStyling)
+  .add(HelpTextStyling)
   .add(ExpandListItemStyling)
   .add(SelectIconButtonStyling)
   .add(SelectOptionsWrapperStyling)
