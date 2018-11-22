@@ -28,7 +28,13 @@ class CalculatorSlider extends React.Component {
     }
   }
 
+  onSlideStart = value => {
+    console.log(this.state.sliderSum, this.state.sum)
+    this.setState({ step: this.props.step })
+  }
+
   onSliderChange = value => {
+    console.log(this.state.sliderSum, this.state.sum)
     const sum = parseInt(value, 10)
     this.setState({
       sum,
@@ -61,7 +67,7 @@ class CalculatorSlider extends React.Component {
             step={this.state.step}
             defaultValue={this.state.sliderSum}
             onUpdate={value => this.onSliderChange(value)}
-            onFocus={() => this.setState({ step: this.props.step })}
+            onSlideStart={value => this.onSlideStart(value)}
             variant={["calculatorSlider", theming.VARIANT_DEFAULT]}
           />
         </Layout>
