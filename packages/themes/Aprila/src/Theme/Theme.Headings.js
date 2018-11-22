@@ -24,6 +24,10 @@ export default theming.createVariants(
     subHeading: css`
       color: ${theming.color.primary};
       font-size: ${theming.font.h3};
+    `,
+    annualStatmentHeading: css`
+      font-size: ${theming.font.base};
+      color: ${theming.color.primary};
     `
   },
   Heading.themeProps.heading

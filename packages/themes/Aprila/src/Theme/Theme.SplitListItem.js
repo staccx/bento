@@ -12,6 +12,22 @@ export default theming.createVariants(
         css`
           font-weight: ${theming.fontWeight.bold};
         `};
+    `,
+    annualStatementListItem: css`
+      padding: ${theming.spacing.tiny} 0 ${theming.spacing.small};
+      ${p =>
+        p.heading &&
+        css`
+          border-width: 0;
+          padding-bottom: 0;
+          padding-top: ${theming.spacing.small};
+        `};
+      &:first-child {
+        border-top: 1px solid ${theming.color.line};
+      }
+      &:last-child {
+        border-bottom: 1px solid ${theming.color.line};
+      }
     `
   },
   SplitListItem.themeProps.listItem

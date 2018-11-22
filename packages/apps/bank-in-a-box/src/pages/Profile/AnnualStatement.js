@@ -1,7 +1,8 @@
 import React from "react"
-import styled from "styled-components"
-import { Layout, LayoutItem, ThemeComponent } from "@staccx/base"
+import { Layout, LayoutItem, List } from "@staccx/base"
 import Back from "../../components/Back"
+import AccountFilter from "../../components/AccountFilter"
+import AnnualStatementList from "../../components/AnnualStatementList"
 
 const AnnualStatement = ({ history, accounts }) => (
   <Layout variant="annualStatment">
@@ -9,15 +10,14 @@ const AnnualStatement = ({ history, accounts }) => (
       <Back history={history} path="/profile/" />
     </LayoutItem>
     <LayoutItem variant="fadeIn" delay="400" area="menu">
-      <Center>
-        <ThemeComponent tagName="IllustrationAnnualStatement" />
-      </Center>
+      <AccountFilter years={["2017", "2016"]} />
+    </LayoutItem>
+    <LayoutItem variant="fadeIn" delay="600" area="main">
+      <List>
+        <AnnualStatementList />
+      </List>
     </LayoutItem>
   </Layout>
 )
-
-const Center = styled.div`
-  text-align: center;
-`
 
 export default AnnualStatement
