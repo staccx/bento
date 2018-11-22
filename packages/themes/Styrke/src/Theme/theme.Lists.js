@@ -18,7 +18,7 @@ export const ListStyling = theming.createVariants(
         justify-content: space-between;
         align-items: center;
         padding: ${theming.spacing.small};
-        background-color: ${theming.color.bgGray};
+        background-color: ${theming.color("sideBox")};
         margin-bottom: 3px;
 
         &::not(:first-child) {

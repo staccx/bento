@@ -80,6 +80,7 @@ const color = {
   disabled: "#a0a0a0",
   warning: "#E06666",
   black: "#333333",
+  sideBox: "#f6f1e5",
   subtleHover: "#fff"
 }
 
