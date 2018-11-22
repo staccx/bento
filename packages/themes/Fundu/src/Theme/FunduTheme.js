@@ -41,6 +41,7 @@ import { LogoStyle } from "./Logo"
 import reset from "./Reset"
 import { hideVisually } from "polished"
 import { CheckBoxStyling } from "./theme.CheckBoxes"
+import { RadioButtonStyling } from "./theme.RadioButtons"
 
 const borderRadius = "2px"
 const headerHeight = "70px"
@@ -167,3 +168,4 @@ export default new theming.Theme({
   .add(ItemGroupStyling)
   .add(ItemGroupElementStyling)
   .add(CheckBoxStyling)
+  .add(RadioButtonStyling)
