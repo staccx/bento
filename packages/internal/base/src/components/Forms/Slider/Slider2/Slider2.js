@@ -27,6 +27,11 @@ class Slider2 extends React.Component {
     this.props.onChange && this.props.onChange(values[0])
   }
 
+  onStart = values => {
+    this.setState({ values })
+    this.props.onSlideStart && this.props.onSlideStart(values[0])
+  }
+
   static getDerivedStateFromProps(props, state) {
     // Need this to dynamically update state from props
     if (props.defaultValue !== state.values[0]) {
@@ -57,6 +62,7 @@ class Slider2 extends React.Component {
           domain={[min, max]}
           onUpdate={this.onUpdate}
           onChange={this.onChange}
+          onSlideStart={this.onSlideStart}
           values={values}
           variant={variant}
           {...restProps}

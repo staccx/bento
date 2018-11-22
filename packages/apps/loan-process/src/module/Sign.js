@@ -87,6 +87,7 @@ class Sign extends React.Component {
                     this.props.repaymentPeriod + this.props.monthSuffix
                   }
                   monthlyFeeText={this.props.monthlyFeeText}
+                  interestRateText={this.props.interestRateText}
                   interestRate={this.props.interestRate}
                   paybackText={this.props.paybackText}
                   paybackAmount={formatCurrency(
@@ -230,11 +231,12 @@ Sign.defaultProps = {
   payMonthlyText: "Å betale månedlig",
   paybackText: "Å betale totalt",
   signOrderStatusCompleted: "SIGNED",
-  signText: "Signèr",
+  signText: "Signer",
   signedText: "Signert",
   waitingForSignatureText: "Venter på signering",
   userTaskText: "Du må signere",
   othersTaskText: "Andre som skal signere",
+  interestRateText: "Rente",
   interestRate: 10.4,
   loanAmount: 1000000,
   monthlyPayment: 83000,

@@ -1,7 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Input, { InputPropTypes } from "../Input"
+import Label from "../../Label/Label"
+import Input from "../Input"
+import { applyVariants } from "../../../../theming"
+import { themePropTypes } from "../../../../constants/themeContants"
 
 class BirthdateInput extends React.Component {
   constructor(props) {
@@ -16,10 +19,13 @@ class BirthdateInput extends React.Component {
     this.yearInput = React.createRef()
     this.handleChangeYearInput = this.handleChangeYearInput.bind(this)
 
+    this.createDate = this.createDate.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     this.handleComplete = this.handleComplete.bind(this)
   }
 
   handleChangeDayInput(value) {
+    this.handleChange()
     if (value.toString().length > 1) {
       this.monthInput.current.input.current.focus()
 
@@ -35,6 +41,7 @@ class BirthdateInput extends React.Component {
   }
 
   handleChangeMonthInput(value) {
+    this.handleChange()
     if (value.toString().length > 1) {
       if (
         this.dayInput.current.input.current.value.toString().length > 1 &&
@@ -48,6 +55,7 @@ class BirthdateInput extends React.Component {
   }
 
   handleChangeYearInput(value) {
+    this.handleChange()
     if (value.toString().length > 3) {
       if (this.dayInput.current.input.current.value.toString().length < 1) {
         this.dayInput.current.input.current.focus()
@@ -61,61 +69,132 @@ class BirthdateInput extends React.Component {
     }
   }
 
-  handleComplete() {
-    this.props.onComplete &&
-      this.props.onComplete(
+  createDate(d, m, y) {
+    return new Date(y.toString() + "-" + m.toString() + "-" + d.toString())
+  }
+
+  handleChange() {
+    if (this.props.onChange) {
+      this.props.onChange(
         this.dayInput.current.input.current.value.toString() +
           this.monthInput.current.input.current.value.toString() +
           this.yearInput.current.input.current.value.toString()
       )
+    }
+  }
+
+  handleComplete() {
+    this.props.onComplete &&
+      this.props.onComplete(
+        this.createDate(
+          this.dayInput.current.input.current.value,
+          this.monthInput.current.input.current.value,
+          this.yearInput.current.input.current.value
+        )
+      )
   }
 
   render() {
-    const { id, name } = this.props
+    const {
+      id,
+      name,
+      labels,
+      variant,
+      className,
+      autoFocus,
+      disabled,
+      onKeyDown,
+      style,
+      pattern,
+      label,
+      onChange,
+      onComplete,
+      ids,
+      names,
+      ...rest
+    } = this.props
+    console.log({ ...rest })
     return (
-      <Container>
-        <Input
-          label="Dag"
-          placeholder="dd"
-          id={`${id}Day`}
-          name={`${name}Day`}
-          type={"tel"}
-          ref={this.dayInput}
-          onChange={e => this.handleChangeDayInput(e.target.value)}
-        />
-        <Input
-          label="Måned"
-          placeholder="mm"
-          id={`${id}Month`}
-          name={`${name}Month`}
-          type={"tel"}
-          ref={this.monthInput}
-          onChange={e => this.handleChangeMonthInput(e.target.value)}
-        />
-        <Input
-          label="År"
-          placeholder="yyyy"
-          id={`${id}Year`}
-          name={`${name}Year`}
-          type={"tel"}
-          ref={this.yearInput}
-          onChange={e => this.handleChangeYearInput(e.target.value)}
-        />
-      </Container>
+      <Outer variant={variant} className={className} style={style}>
+        {label && <Label id={id}>{label}</Label>}
+        <Container variant={variant}>
+          <Input
+            label={labels && labels[0] && labels[0]}
+            placeholder="dd"
+            id={ids ? (ids[0] ? ids[0] : `${id}Day`) : `${id}Day`}
+            name={names ? (names[0] ? names[0] : `${name}Day`) : `${name}Day`}
+            type={"tel"}
+            ref={this.dayInput}
+            onChange={e => this.handleChangeDayInput(e.target.value)}
+            variant={variant}
+            autoFocus={autoFocus}
+            disabled={disabled}
+            onKeyDown={onKeyDown}
+            pattern={pattern}
+            aria-labelledby={label && id}
+          />
+          <Input
+            label={labels && labels[1] && labels[1]}
+            placeholder="mm"
+            id={ids ? (ids[1] ? ids[1] : `${id}Month`) : `${id}Month`}
+            name={`${name}Month`}
+            type={"tel"}
+            ref={this.monthInput}
+            onChange={e => this.handleChangeMonthInput(e.target.value)}
+            variant={variant}
+            disabled={disabled}
+            onKeyDown={onKeyDown}
+            pattern={pattern}
+            aria-labelledby={label && id}
+          />
+          <Input
+            label={labels && labels[2] && labels[2]}
+            placeholder="yyyy"
+            id={ids ? (ids[2] ? ids[2] : `${id}Year`) : `${id}Year`}
+            name={`${name}Year`}
+            type={"tel"}
+            ref={this.yearInput}
+            onChange={e => this.handleChangeYearInput(e.target.value)}
+            variant={variant}
+            disabled={disabled}
+            onKeyDown={onKeyDown}
+            pattern={pattern}
+            aria-labelledby={label && id}
+          />
+        </Container>
+      </Outer>
     )
   }
 }
 
+BirthdateInput.themeProps = {
+  outer: {
+    name: "BIRTHDATE_INPUT_OUTER_STYLE",
+    description: "Outer style",
+    type: themePropTypes.style
+  },
+  container: {
+    name: "BIRTHDATE_INPUT_CONTAINER_STYLE",
+    description: "Container style",
+    type: themePropTypes.style
+  }
+}
+
+const Outer = styled.div`
+  ${applyVariants(BirthdateInput.themeProps.outer)};
+`
+
 const Container = styled.div`
   display: flex;
+  ${applyVariants(BirthdateInput.themeProps.container)};
 `
 
 BirthdateInput.propTypes = {
-  ...InputPropTypes,
-  locale: PropTypes.oneOf(["no"]),
+  variant: PropTypes.string,
   onChange: PropTypes.func,
-  guide: PropTypes.bool,
-  id: PropTypes.string.isRequired
+  onComplete: PropTypes.func,
+  ids: PropTypes.array.isRequired,
+  labels: PropTypes.array
 }
 
 BirthdateInput.defaultProps = {}
