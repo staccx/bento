@@ -35,10 +35,29 @@ class Input extends React.Component {
     }
     this.input = React.createRef()
     this.focus = this.focus.bind(this)
+    this.setRawValue = this.setRawValue.bind(this)
+  }
+
+  componentDidMount() {
+    if (this.props.options) {
+      this.cleave = new Cleave(this.input.current, {
+        ...this.props.options,
+        onValueChanged: this.props.onChange
+      })
+    }
   }
 
   focus() {
     this.input.focus()
+  }
+
+  setRawValue(rawValue) {
+    if (!this.cleave) {
+      console.warn("setRawValue not supported for non cleave inputs")
+      return
+    }
+
+    this.cleave.setRawValue(rawValue)
   }
 
   render() {
@@ -91,17 +110,7 @@ class Input extends React.Component {
           disabled={disabled}
           id={id}
           name={name}
-          onFocus={e => {
-            if (options) {
-              this.cleave = new Cleave(this.input.current, {
-                ...options,
-                onValueChanged: onChange
-              })
-            }
-            if (onFocus) {
-              onFocus(e)
-            }
-          }}
+          onFocus={onFocus}
           onBlur={onBlur}
           onChange={onChange}
           onKeyDown={onKeyDown}

@@ -5,16 +5,17 @@ import "cleave.js/dist/addons/cleave-phone.no.js"
 /**
  * Input for Phone-numbers.
  */
-const PhoneInput = ({ locale, ...otherProps }) => (
+const PhoneInput = React.forwardRef(({ locale, ...otherProps }, ref) => (
   <Input
     type={"tel"}
+    ref={ref}
     options={{
       phone: true,
       phoneRegionCode: locale
     }}
     {...otherProps}
   />
-)
+))
 
 PhoneInput.propTypes = {
   ...InputPropTypes,

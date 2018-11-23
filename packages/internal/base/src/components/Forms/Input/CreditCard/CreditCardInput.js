@@ -1,27 +1,17 @@
 import React from "react"
 import Input from "../Input"
 
-class CreditCardInput extends React.Component {
-  constructor(props, context) {
-    super(props, context)
-
-    this.input = React.createRef()
-  }
-
-  render() {
-    return (
-      <Input
-        id="creditCard"
-        ref={this.input}
-        options={{
-          creditCard: true,
-          onCreditCardTypeChanged: console.log
-        }}
-        {...this.props}
-      />
-    )
-  }
-}
+const CreditCardInput = React.forwardRef((props, ref) => (
+  <Input
+    id="creditCard"
+    ref={ref}
+    options={{
+      ...props.options,
+      creditCard: true
+    }}
+    {...props}
+  />
+))
 
 CreditCardInput.propTypes = {}
 export default CreditCardInput

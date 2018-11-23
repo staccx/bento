@@ -8,8 +8,16 @@ const options = {
 /**
  * Input for National ID Numbers.
  */
-const NationalIdInput = ({ mask, id, guide, locale = "nb", ...otherProps }) => (
-  <Input type={"tel"} options={options[locale]} id={id} {...otherProps} />
+const NationalIdInput = React.forwardRef(
+  ({ mask, id, guide, locale = "nb", ...otherProps }, ref) => (
+    <Input
+      type={"tel"}
+      ref={ref}
+      options={options[locale]}
+      id={id}
+      {...otherProps}
+    />
+  )
 )
 
 NationalIdInput.propTypes = {
