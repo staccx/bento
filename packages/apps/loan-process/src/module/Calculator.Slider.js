@@ -4,14 +4,20 @@ import { Slider2, CurrencyInput, Layout, theming } from "@staccx/base"
 class CalculatorSlider extends React.Component {
   state = {
     sum: parseInt(this.props.defaultValue, 10),
+    value: this.props.defaultValue,
     sliderSum: parseInt(this.props.defaultValue, 10),
     step: this.props.step,
     percentage: parseInt(this.props.defaultValue, 10) / this.props.max
   }
 
-  onInputChange = value => {
-    if (value) {
-      const sum = parseInt(value, 10)
+  constructor(props, context) {
+    super(props, context)
+    this.currencyInput = React.createRef()
+  }
+
+  onInputChange = e => {
+    if (e.target.value) {
+      const sum = parseInt(e.target.rawValue, 10)
       this.setState({
         sum,
         percentage: sum / this.props.max
@@ -41,7 +47,7 @@ class CalculatorSlider extends React.Component {
       sliderSum: sum,
       percentage: sum / this.props.max
     })
-
+    this.currencyInput.current.setRawValue(sum)
     this.props.onChange(sum)
   }
 
@@ -55,10 +61,12 @@ class CalculatorSlider extends React.Component {
             name={name}
             id={name}
             label={label}
-            value={this.state.sum}
-            onChange={e => this.onInputChange(e.target.rawValue)}
+            onChange={this.onInputChange}
+            defaultValue={this.props.defaultValue}
+            ref={this.currencyInput}
             onFocus={() => this.setState({ step: 1 })}
             variant="calculatorSlider"
+            options={{ onInit: console.log }}
             percentage={this.state.percentage}
           />
           <Slider2

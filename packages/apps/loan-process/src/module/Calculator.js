@@ -237,12 +237,11 @@ class Calculator extends React.Component {
                           />
                         )}
                       />
-                      {touched.name &&
-                        errors.name && (
-                          <Alert variant="error" type="warning">
-                            {errors.name}
-                          </Alert>
-                        )}
+                      {touched.name && errors.name && (
+                        <Alert variant="error" type="warning">
+                          {errors.name}
+                        </Alert>
+                      )}
                     </LayoutItem>
                     <LayoutItem>
                       <Field
@@ -256,12 +255,11 @@ class Calculator extends React.Component {
                           />
                         )}
                       />
-                      {touched.email &&
-                        errors.email && (
-                          <Alert variant="error" type="warning">
-                            {errors.email}
-                          </Alert>
-                        )}
+                      {touched.email && errors.email && (
+                        <Alert variant="error" type="warning">
+                          {errors.email}
+                        </Alert>
+                      )}
                     </LayoutItem>
                     <LayoutItem>
                       <Field
@@ -277,12 +275,11 @@ class Calculator extends React.Component {
                           />
                         )}
                       />
-                      {touched.phone &&
-                        errors.phone && (
-                          <Alert variant="error" type="warning">
-                            {errors.phone}
-                          </Alert>
-                        )}
+                      {touched.phone && errors.phone && (
+                        <Alert variant="error" type="warning">
+                          {errors.phone}
+                        </Alert>
+                      )}
                     </LayoutItem>
                   </Layout>
                 </LayoutItem>
