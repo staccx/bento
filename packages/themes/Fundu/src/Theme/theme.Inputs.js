@@ -30,6 +30,10 @@ export const InputStyling = theming.createVariants(
       }
     `,
     calculatorSlider: css`
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 0 1px ${theming.color("secondaryLight")};
+      }
       background-color: coral;
       background: linear-gradient(
         to right,
@@ -334,10 +338,21 @@ export const Slider2RailStyling = theming.createVariants(
 export const Slider2TrackStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
-      background-color: ${theming.color("green")};
+      background-color: ${theming.color("secondaryLight")};
       height: 8px;
       top: 2px;
     `
   },
   Slider2Track.themeProps.track
+)
+
+export const Slider2HandleStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      &:focus {
+        box-shadow: 0 0 0 4px ${theming.color("secondaryLight")};
+      }
+    `
+  },
+  Slider2.themeProps.handle
 )

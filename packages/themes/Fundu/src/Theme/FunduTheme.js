@@ -35,7 +35,8 @@ import {
   FileInputInputStyling,
   FileInputLabelStyling,
   Slider2RailStyling,
-  Slider2TrackStyling
+  Slider2TrackStyling,
+  Slider2HandleStyling
 } from "./theme.Inputs"
 import { ItemGroupStyling, ItemGroupElementStyling } from "./theme.ItemGroups"
 import { LayoutStyling } from "./theme.Layouts"
@@ -81,6 +82,7 @@ const color = {
   bgGray: "#EAEEF4",
   primary: "#1F5D9B",
   secondary: "#32A873",
+  secondaryLight: "#3ECF8E",
   gray: "#767676",
   text: "#2b2b2b",
   white: "#fff",
@@ -172,6 +174,7 @@ export default new theming.Theme({
   .add(FileInputLabelStyling)
   .add(Slider2RailStyling)
   .add(Slider2TrackStyling)
+  .add(Slider2HandleStyling)
   .add(TableStyling)
   .add(ItemGroupStyling)
   .add(ItemGroupElementStyling)
