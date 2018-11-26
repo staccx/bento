@@ -80,6 +80,7 @@ class Sign extends React.Component {
                 </span>
                 {/* TODO: vise om det er lån eller kreditt☝️ */}
                 <OfferTable
+                  variant="offerTable"
                   loanOfferText={this.props.loanOfferText}
                   loanAmount={formatCurrency(this.props.loanAmount)}
                   loanDurationText={this.props.loanDurationText}

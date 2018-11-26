@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { Box, theming, Wrapper } from "@staccx/base"
 
 const OfferTable = ({
+  variant,
   loanOfferText,
   loanAmount,
   loanDurationText,
@@ -20,7 +21,7 @@ const OfferTable = ({
   showAmount,
   showDuration
 }) => (
-  <Wrapper>
+  <Wrapper variant={variant}>
     <Box variant="expandLeadContent">
       <OfferTableTable>
         <tbody>
