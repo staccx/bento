@@ -45,6 +45,8 @@ import reset from "./Reset"
 import { hideVisually } from "polished"
 import { CheckBoxStyling } from "./theme.CheckBoxes"
 import { RadioButtonStyling } from "./theme.RadioButtons"
+import { ExpandStyling } from "./theme.Expands"
+import { WrapperStyling } from "./theme.Wrappers"
 
 const borderRadius = "2px"
 const headerHeight = "70px"
@@ -175,3 +177,5 @@ export default new theming.Theme({
   .add(ItemGroupElementStyling)
   .add(CheckBoxStyling)
   .add(RadioButtonStyling)
+  .add(ExpandStyling)
+  .add(WrapperStyling)
