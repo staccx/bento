@@ -34,7 +34,7 @@ const EndScreen = ({
 
           {buttonContent && (
             <LayoutItem>
-              <Button variant={variant} onClick={onClick}>
+              <Button variant="forward" onClick={onClick}>
                 {buttonContent}
               </Button>
             </LayoutItem>

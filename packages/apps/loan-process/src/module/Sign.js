@@ -59,7 +59,7 @@ class Sign extends React.Component {
 
     return (
       <Wrapper size="small">
-        <Layout>
+        <Layout rowGap="medium">
           {this.props.renderIllustration() && (
             <Box variant="illustration">
               {this.props.renderIllustration()}
@@ -69,7 +69,7 @@ class Sign extends React.Component {
           <Heading variant="stepHeading" level={1}>
             {this.props.headingText}
           </Heading>
-          <Layout rowGap="tiny">
+          <Layout rowGap="small">
             <Paragraph variant="lead">{this.props.leadText}</Paragraph>
 
             <Box variant="expandLead">
