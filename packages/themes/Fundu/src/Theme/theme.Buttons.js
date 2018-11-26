@@ -50,13 +50,10 @@ export const ButtonStyling = theming.createVariants(
     `,
     forward: css`
       ${defaultButton};
-      & {
-        margin-right: 36px;
-      }
-      &,
+      margin-right: 36px;
+      position: relative;
+      transition: all 200ms ease;
       &::after {
-        position: relative;
-        transition: all 200ms ease;
       }
 
       &:hover,
@@ -66,6 +63,8 @@ export const ButtonStyling = theming.createVariants(
       }
 
       &::after {
+        position: relative;
+        transition: all 200ms ease;
         content: "";
         display: block;
         position: absolute;
@@ -90,6 +89,10 @@ export const ButtonStyling = theming.createVariants(
       line-height: 1;
       padding: ${theming.spacing.small};
       font-size: ${theming.font.h6};
+      &:focus,
+      &:hover {
+        box-shadow: 0 0 0 2px #1b5086;
+      }
     `,
     subtle: subtleButton,
     secondary: css`

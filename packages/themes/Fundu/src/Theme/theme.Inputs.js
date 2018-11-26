@@ -137,6 +137,9 @@ export const SelectSelectedWrapperStyling = theming.createVariants(
 
 export const SelectIconButtonStyling = theming.createVariants(
   {
+    [theming.VARIANT_DEFAULT]: css`
+      pointer-events: none;
+    `,
     loanOffer: css`
       right: 0;
     `
@@ -283,7 +286,18 @@ export const PostalCodeInputStyling = theming.createVariants(
   PostalCodeInput.themeProps.input
 )
 
-export const FileInputStyles = theming.createVariants(
+export const FileInputInputStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      &:focus + label {
+        box-shadow: 0 0 0 1px ${theming.color.primary};
+      }
+    `
+  },
+  FileInput.themeProps.input
+)
+
+export const FileInputLabelStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       width: 100%;

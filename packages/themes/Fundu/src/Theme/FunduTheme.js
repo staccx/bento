@@ -32,7 +32,8 @@ import {
   SelectSelectedWrapperStyling,
   PostalCodeInputStyling,
   SelectWrapperStyling,
-  FileInputStyles,
+  FileInputInputStyling,
+  FileInputLabelStyling,
   Slider2RailStyling,
   Slider2TrackStyling
 } from "./theme.Inputs"
@@ -165,7 +166,8 @@ export default new theming.Theme({
   .add(SelectWrapperStyling)
   .add(PostalCodeInputStyling)
   .add(ImageStyling)
-  .add(FileInputStyles)
+  .add(FileInputInputStyling)
+  .add(FileInputLabelStyling)
   .add(Slider2RailStyling)
   .add(Slider2TrackStyling)
   .add(TableStyling)
