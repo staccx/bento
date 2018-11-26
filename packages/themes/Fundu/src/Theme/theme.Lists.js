@@ -22,9 +22,8 @@ export const ListStyling = theming.createVariants(
       }
     `,
     documentStatusList: css`
-      padding-top: ${theming.spacing.medium};
+      padding-top: ${theming.spacing.small};
       padding-bottom: ${theming.spacing.medium};
-      background-color: ${theming.color.bgGray};
 
       > li {
         display: flex;
@@ -67,12 +66,35 @@ export const ExpandListItemStyling = theming.createVariants(
   {
     signer: css`
       border-bottom: 2px solid ${theming.color.primary};
-      > button {
-        padding-left: 0;
+      position: relative;
+
+      & > button::after {
+        content: "";
+        background-color: ${theming.color.bgGray};
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        opacity: 0;
+        transform: scaleY(0);
+        transition: opacity 500ms ease, transform 0ms 200ms;
+        z-index: -1;
       }
 
-      > * {
-        border-top: 2px solid ${theming.color.primary};
+      & > button:focus::after {
+        opacity: 1;
+        transform: scaleY(1);
+        transition: transform 200ms ease;
+      }
+
+      > button {
+        padding-left: 0;
+        padding-right: ${theming.spacing.mediumPlus};
+      }
+
+      span + span {
+        color: ${theming.color.primary};
       }
     `
   },
