@@ -112,6 +112,18 @@ export const SelectOptionStyling = theming.createVariants(
     `,
     calculatorTerms: css`
       background-color: transparent;
+      & ~ button {
+        pointer-events: none;
+      }
+
+      &:focus ~ button {
+        border-radius: 100%;
+        background-color: ${theming.color.primary}20;
+      }
+
+      &:focus ~ button > svg {
+        fill: ${theming.color.black};
+      }
     `
   },
   Select.themeProps.optionContainer
