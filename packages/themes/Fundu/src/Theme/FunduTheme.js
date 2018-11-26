@@ -20,7 +20,6 @@ import {
   HelpTextStyling,
   SelectIconButtonStyling,
   SelectOptionsWrapperStyling,
-  RadioPillItemStyling,
   SliderKeyboardWrapperStyling,
   SliderInputStyling,
   CompanyInputLoadFromStyling,
@@ -48,6 +47,7 @@ import { CheckBoxStyling } from "./theme.CheckBoxes"
 import { RadioButtonStyling } from "./theme.RadioButtons"
 import { ExpandStyling } from "./theme.Expands"
 import { WrapperStyling } from "./theme.Wrappers"
+import { RadioPillItemStyling } from "./theme.RadioPillItems"
 
 const borderRadius = "2px"
 const headerHeight = "70px"
@@ -182,3 +182,4 @@ export default new theming.Theme({
   .add(RadioButtonStyling)
   .add(ExpandStyling)
   .add(WrapperStyling)
+  .add(RadioPillItemStyling)

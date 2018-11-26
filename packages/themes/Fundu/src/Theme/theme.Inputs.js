@@ -32,7 +32,7 @@ export const InputStyling = theming.createVariants(
     calculatorSlider: css`
       &:hover,
       &:focus {
-        box-shadow: 0 0 0 1px ${theming.color("secondaryLight")};
+        box-shadow: 0 0 0 2px ${theming.color("secondaryLight")};
       }
       background-color: coral;
       background: linear-gradient(
@@ -179,12 +179,6 @@ export const SelectOptionsWrapperStyling = theming.createVariants(
   Select.themeProps.defaultOptionWrapper
 )
 
-export const RadioPillItemStyling = theming.createVariants(
-  {
-    [theming.VARIANT_DEFAULT]: css``
-  },
-  RadioPillItem.themeProps.wrapper
-)
 export const SliderKeyboardWrapperStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
