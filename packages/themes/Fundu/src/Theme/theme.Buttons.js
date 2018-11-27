@@ -174,6 +174,9 @@ export const ButtonStyling = theming.createVariants(
         text-decoration: underline;
       }
     `,
+    spaceAbove: css`
+      margin-top: ${theming.spacing.large};
+    `,
     endScreen: subtleButton
   },
   Button.themeProps.button

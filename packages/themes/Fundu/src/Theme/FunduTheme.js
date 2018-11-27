@@ -48,6 +48,10 @@ import { RadioButtonStyling } from "./theme.RadioButtons"
 import { ExpandStyling } from "./theme.Expands"
 import { WrapperStyling } from "./theme.Wrappers"
 import { RadioPillItemStyling } from "./theme.RadioPillItems"
+import {
+  ProgressBarBgStyling,
+  ProgressBarBarStyling
+} from "./theme.ProgressBar"
 
 const borderRadius = "2px"
 const headerHeight = "70px"
@@ -183,3 +187,5 @@ export default new theming.Theme({
   .add(ExpandStyling)
   .add(WrapperStyling)
   .add(RadioPillItemStyling)
+  .add(ProgressBarBgStyling)
+  .add(ProgressBarBarStyling)

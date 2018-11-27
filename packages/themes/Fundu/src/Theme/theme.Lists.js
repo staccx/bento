@@ -57,6 +57,11 @@ export const SplitListItemStyling = theming.createVariants(
       &:last-child {
         border-bottom: 1px solid ${theming.color.line};
       }
+    `,
+    tileListItem: css`
+      margin-left: -${theming.spacing.medium};
+      margin-right: -${theming.spacing.medium};
+      padding: ${theming.spacing.medium} ${theming.spacing.medium};
     `
   },
   SplitListItem.themeProps.listItem
