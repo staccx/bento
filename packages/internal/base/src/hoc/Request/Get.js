@@ -47,6 +47,13 @@ class Get extends React.Component {
       })
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.url !== this.props.url) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ url: this.state.url }, this.fetchData)
+    }
+  }
+
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.url !== prevState.url) {
       return { url: nextProps.url }
@@ -54,7 +61,6 @@ class Get extends React.Component {
 
     return null
   }
-
   componentWillUnmount() {
     clearTimeout(this.timeout)
   }

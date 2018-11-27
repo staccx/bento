@@ -38,8 +38,10 @@ const Select2 = ({
         toggleMenu,
         ...rest
       }) => {
+        // TODO: We might have to revisit this. But I think styled takes ref as default
+        const rootProps = getRootProps({}, { suppressRefError: true })
         return (
-          <Combo {...getRootProps()}>
+          <Combo {...rootProps}>
             {renderLabel && renderLabel(getLabelProps)}
             {selectedItem
               ? renderSelected(selectedItem, getToggleButtonProps, {
