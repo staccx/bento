@@ -49,6 +49,9 @@ export const InputStyling = theming.createVariants(
       line-height: 1;
       padding-top: 10px;
       text-align: center;
+    `,
+    inputClean: css`
+      border: 1px solid transparent;
     `
   },
   Input.themeProps.input
@@ -61,6 +64,9 @@ export const LabelStyling = theming.createVariants(
     `,
     loanDuration: css`
       padding-bottom: 0;
+    `,
+    inputClean: css`
+      margin-left: ${theming.spacing.small};
     `
   },
   Label.themeProps.label
