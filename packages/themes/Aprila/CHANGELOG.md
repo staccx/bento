@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.24.0"></a>
+# [8.24.0](https://bitbucket.org/stacc-flow/bento/compare/v8.23.0...v8.24.0) (2018-11-27)
+
+
+### Features
+
+* **aprila-theme:** fix mobile layout + sizing ([a73b13b](https://bitbucket.org/stacc-flow/bento/commits/a73b13b))
+* **aprila-theme:** theme now has full-width header ([5c08456](https://bitbucket.org/stacc-flow/bento/commits/5c08456))
+* **bank-in-a-box:** added an AccountHeading instead of reusing Account ([d6f190b](https://bitbucket.org/stacc-flow/bento/commits/d6f190b))
+* **bank-in-a-box:** annualStatement with values ([e36492a](https://bitbucket.org/stacc-flow/bento/commits/e36492a))
+* **bank-in-a-box:** fix profile-menu for aprila ([2c59e98](https://bitbucket.org/stacc-flow/bento/commits/2c59e98))
+
+
+
+
+
 <a name="8.23.0"></a>
 # [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
 

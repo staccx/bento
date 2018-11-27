@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.24.0"></a>
+# [8.24.0](https://bitbucket.org/stacc-flow/bento/compare/v8.23.0...v8.24.0) (2018-11-27)
+
+
+### Features
+
+* **fundu-theme:** add focus style ++ to sign list ([fb50ef4](https://bitbucket.org/stacc-flow/bento/commits/fb50ef4))
+* **fundu-theme:** add focus styling to calculatorTerms button ([6b6c5a6](https://bitbucket.org/stacc-flow/bento/commits/6b6c5a6))
+* **fundu-theme:** add help button + help text styling ([c9b9fc0](https://bitbucket.org/stacc-flow/bento/commits/c9b9fc0))
+* **fundu-theme:** add radiobuttons styling ([472aaf9](https://bitbucket.org/stacc-flow/bento/commits/472aaf9))
+* **fundu-theme:** add slider input + handle focus ([6e58ada](https://bitbucket.org/stacc-flow/bento/commits/6e58ada))
+* **fundu-theme:** button + focus styling ([7f1cf69](https://bitbucket.org/stacc-flow/bento/commits/7f1cf69))
+* **fundu-theme:** focusable and more user-friendly radio pills ([6ddacda](https://bitbucket.org/stacc-flow/bento/commits/6ddacda))
+* **fundu-theme:** modify focus state for button add variant ([18deaf5](https://bitbucket.org/stacc-flow/bento/commits/18deaf5))
+* **theme-fundu:** add expands + wrappers styling ([438f264](https://bitbucket.org/stacc-flow/bento/commits/438f264))
+
+
+
+
+
 <a name="8.23.0"></a>
 # [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
 

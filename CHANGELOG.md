@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.24.0"></a>
+# [8.24.0](https://bitbucket.org/stacc-flow/bento/compare/v8.23.0...v8.24.0) (2018-11-27)
+
+
+### Bug Fixes
+
+* **base:** fix controlled value for input with formatting ([01eb564](https://bitbucket.org/stacc-flow/bento/commits/01eb564))
+* **loan-process:** fix currency input in calculator ([4a863d2](https://bitbucket.org/stacc-flow/bento/commits/4a863d2))
+
+
+### Features
+
+* **aprila-theme:** fix mobile layout + sizing ([a73b13b](https://bitbucket.org/stacc-flow/bento/commits/a73b13b))
+* **aprila-theme:** theme now has full-width header ([5c08456](https://bitbucket.org/stacc-flow/bento/commits/5c08456))
+* **bank-in-a-box:** added an AccountHeading instead of reusing Account ([d6f190b](https://bitbucket.org/stacc-flow/bento/commits/d6f190b))
+* **bank-in-a-box:** annualStatement with values ([e36492a](https://bitbucket.org/stacc-flow/bento/commits/e36492a))
+* **bank-in-a-box:** fix profile-menu for aprila ([2c59e98](https://bitbucket.org/stacc-flow/bento/commits/2c59e98))
+* **bank-in-a-box:** loan also has it's own header-component now ([e1b24c8](https://bitbucket.org/stacc-flow/bento/commits/e1b24c8))
+* **base:** add BirthdateInput (EXPERIMENTAL) ([46efa71](https://bitbucket.org/stacc-flow/bento/commits/46efa71))
+* **base:** add optional help button + text to input fields ([59727a7](https://bitbucket.org/stacc-flow/bento/commits/59727a7))
+* **base:** add props, lots of props ([10c44a3](https://bitbucket.org/stacc-flow/bento/commits/10c44a3))
+* **base:** add some support for variants in birthdateinputs ([8fa2d96](https://bitbucket.org/stacc-flow/bento/commits/8fa2d96))
+* **base:** forward more props to Inputs in BirthdateInput ([20ea2c6](https://bitbucket.org/stacc-flow/bento/commits/20ea2c6))
+* **base:** forward variant to children in BirthdateInput ([8dc055d](https://bitbucket.org/stacc-flow/bento/commits/8dc055d))
+* **base:** improve BirthdateInput ([8a0b47a](https://bitbucket.org/stacc-flow/bento/commits/8a0b47a))
+* **base:** improve Slider2 focus behaviour ([916de82](https://bitbucket.org/stacc-flow/bento/commits/916de82))
+* **base:** set helpbutton line-height to 0 to control size ([55aa1b3](https://bitbucket.org/stacc-flow/bento/commits/55aa1b3))
+* **component-testing:** add some space to work ([7563a63](https://bitbucket.org/stacc-flow/bento/commits/7563a63))
+* **fundu-theme:** add focus style ++ to sign list ([fb50ef4](https://bitbucket.org/stacc-flow/bento/commits/fb50ef4))
+* **fundu-theme:** add focus styling to calculatorTerms button ([6b6c5a6](https://bitbucket.org/stacc-flow/bento/commits/6b6c5a6))
+* **fundu-theme:** add help button + help text styling ([c9b9fc0](https://bitbucket.org/stacc-flow/bento/commits/c9b9fc0))
+* **fundu-theme:** add radiobuttons styling ([472aaf9](https://bitbucket.org/stacc-flow/bento/commits/472aaf9))
+* **fundu-theme:** add slider input + handle focus ([6e58ada](https://bitbucket.org/stacc-flow/bento/commits/6e58ada))
+* **fundu-theme:** button + focus styling ([7f1cf69](https://bitbucket.org/stacc-flow/bento/commits/7f1cf69))
+* **fundu-theme:** focusable and more user-friendly radio pills ([6ddacda](https://bitbucket.org/stacc-flow/bento/commits/6ddacda))
+* **fundu-theme:** focusable and more user-friendly radio pills ([bedc28e](https://bitbucket.org/stacc-flow/bento/commits/bedc28e))
+* **fundu-theme:** modify focus state for button add variant ([18deaf5](https://bitbucket.org/stacc-flow/bento/commits/18deaf5))
+* **loan-process:** add helptext-possibility to fields ([2462a2c](https://bitbucket.org/stacc-flow/bento/commits/2462a2c))
+* **loan-process:** add radiobuttons for show/hide cash payment field ([4e2e154](https://bitbucket.org/stacc-flow/bento/commits/4e2e154))
+* **loan-process:** add variant prop to OfferTable ([4e0b607](https://bitbucket.org/stacc-flow/bento/commits/4e0b607))
+* **loan-process:** layout adjustment + endscreen button variant ([9e6cb7a](https://bitbucket.org/stacc-flow/bento/commits/9e6cb7a))
+* **loan-process:** small corrections & styling ([573c2bf](https://bitbucket.org/stacc-flow/bento/commits/573c2bf))
+* **styrke-theme:** color addition ([5190dcc](https://bitbucket.org/stacc-flow/bento/commits/5190dcc))
+* **styrke-theme:** label help button and select fields styling ([a77c81a](https://bitbucket.org/stacc-flow/bento/commits/a77c81a))
+* **styrke-theme:** use help text in field labels ([cb158f5](https://bitbucket.org/stacc-flow/bento/commits/cb158f5))
+* **styrke-theme:** various styling, mainly :focus related ([9f766e9](https://bitbucket.org/stacc-flow/bento/commits/9f766e9))
+* **theme-fundu:** add expands + wrappers styling ([438f264](https://bitbucket.org/stacc-flow/bento/commits/438f264))
+
+
+
+
+
 <a name="8.23.0"></a>
 # [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
 

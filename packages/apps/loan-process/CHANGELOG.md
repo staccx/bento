@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.24.0"></a>
+# [8.24.0](https://bitbucket.org/stacc-flow/bento/compare/v8.23.0...v8.24.0) (2018-11-27)
+
+
+### Bug Fixes
+
+* **loan-process:** fix currency input in calculator ([4a863d2](https://bitbucket.org/stacc-flow/bento/commits/4a863d2))
+
+
+### Features
+
+* **base:** improve Slider2 focus behaviour ([916de82](https://bitbucket.org/stacc-flow/bento/commits/916de82))
+* **loan-process:** add helptext-possibility to fields ([2462a2c](https://bitbucket.org/stacc-flow/bento/commits/2462a2c))
+* **loan-process:** add radiobuttons for show/hide cash payment field ([4e2e154](https://bitbucket.org/stacc-flow/bento/commits/4e2e154))
+* **loan-process:** add variant prop to OfferTable ([4e0b607](https://bitbucket.org/stacc-flow/bento/commits/4e0b607))
+* **loan-process:** layout adjustment + endscreen button variant ([9e6cb7a](https://bitbucket.org/stacc-flow/bento/commits/9e6cb7a))
+* **loan-process:** small corrections & styling ([573c2bf](https://bitbucket.org/stacc-flow/bento/commits/573c2bf))
+
+
+
+
+
 <a name="8.23.0"></a>
 # [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
 

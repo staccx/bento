@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.24.0"></a>
+# [8.24.0](https://bitbucket.org/stacc-flow/bento/compare/v8.23.0...v8.24.0) (2018-11-27)
+
+
+### Features
+
+* **base:** add BirthdateInput (EXPERIMENTAL) ([46efa71](https://bitbucket.org/stacc-flow/bento/commits/46efa71))
+* **base:** add props, lots of props ([10c44a3](https://bitbucket.org/stacc-flow/bento/commits/10c44a3))
+* **base:** improve BirthdateInput ([8a0b47a](https://bitbucket.org/stacc-flow/bento/commits/8a0b47a))
+* **component-testing:** add some space to work ([7563a63](https://bitbucket.org/stacc-flow/bento/commits/7563a63))
+
+
+
+
+
 <a name="8.23.0"></a>
 # [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
 

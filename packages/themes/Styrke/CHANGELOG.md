@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.24.0"></a>
+# [8.24.0](https://bitbucket.org/stacc-flow/bento/compare/v8.23.0...v8.24.0) (2018-11-27)
+
+
+### Features
+
+* **styrke-theme:** color addition ([5190dcc](https://bitbucket.org/stacc-flow/bento/commits/5190dcc))
+* **styrke-theme:** label help button and select fields styling ([a77c81a](https://bitbucket.org/stacc-flow/bento/commits/a77c81a))
+* **styrke-theme:** use help text in field labels ([cb158f5](https://bitbucket.org/stacc-flow/bento/commits/cb158f5))
+* **styrke-theme:** various styling, mainly :focus related ([9f766e9](https://bitbucket.org/stacc-flow/bento/commits/9f766e9))
+
+
+
+
+
 <a name="8.23.0"></a>
 # [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
 

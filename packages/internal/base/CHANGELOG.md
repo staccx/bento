@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.24.0"></a>
+# [8.24.0](https://bitbucket.org/stacc-flow/bento/compare/v8.23.0...v8.24.0) (2018-11-27)
+
+
+### Bug Fixes
+
+* **base:** fix controlled value for input with formatting ([01eb564](https://bitbucket.org/stacc-flow/bento/commits/01eb564))
+
+
+### Features
+
+* **base:** add BirthdateInput (EXPERIMENTAL) ([46efa71](https://bitbucket.org/stacc-flow/bento/commits/46efa71))
+* **base:** add optional help button + text to input fields ([59727a7](https://bitbucket.org/stacc-flow/bento/commits/59727a7))
+* **base:** add props, lots of props ([10c44a3](https://bitbucket.org/stacc-flow/bento/commits/10c44a3))
+* **base:** add some support for variants in birthdateinputs ([8fa2d96](https://bitbucket.org/stacc-flow/bento/commits/8fa2d96))
+* **base:** forward more props to Inputs in BirthdateInput ([20ea2c6](https://bitbucket.org/stacc-flow/bento/commits/20ea2c6))
+* **base:** forward variant to children in BirthdateInput ([8dc055d](https://bitbucket.org/stacc-flow/bento/commits/8dc055d))
+* **base:** improve BirthdateInput ([8a0b47a](https://bitbucket.org/stacc-flow/bento/commits/8a0b47a))
+* **base:** improve Slider2 focus behaviour ([916de82](https://bitbucket.org/stacc-flow/bento/commits/916de82))
+* **base:** set helpbutton line-height to 0 to control size ([55aa1b3](https://bitbucket.org/stacc-flow/bento/commits/55aa1b3))
+
+
+
+
+
 <a name="8.23.0"></a>
 # [8.23.0](https://bitbucket.org/stacc-flow/bento/compare/v8.22.0...v8.23.0) (2018-11-20)
 

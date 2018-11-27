@@ -1,6 +1,6 @@
 {
   "name": "@staccx/developer-portal",
-  "version": "8.23.0",
+  "version": "8.24.0",
   "description": "Developer portal white label.",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -29,10 +29,10 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/base": "^8.23.0",
+    "@staccx/base": "^8.24.0",
     "@staccx/code-generator": "^8.2.0",
-    "@staccx/fundu-theme": "^8.23.0",
-    "@staccx/utils": "^8.23.0",
+    "@staccx/fundu-theme": "^8.24.0",
+    "@staccx/utils": "^8.24.0",
     "axios": "^0.18.0",
     "localforage": "^1.7.2",
     "prop-types": "^15.6.2",
