@@ -171,6 +171,7 @@ export const ButtonStyling = theming.createVariants(
         border-width: 0;
         background-color: transparent;
         color: ${theming.color.primary};
+        text-decoration: underline;
       }
     `,
     endScreen: subtleButton
