@@ -22,13 +22,12 @@ const ApiReference = () => (
                   {tag}
                 </Heading>
                 {openapi.tags
-                  ? openapi.tags.map(
-                      openApiTag =>
-                        openApiTag.name === tag ? (
-                          <Paragraph variant="documentationLede">
-                            {openApiTag.description}
-                          </Paragraph>
-                        ) : null
+                  ? openapi.tags.map(openApiTag =>
+                      openApiTag.name === tag ? (
+                        <Paragraph variant="documentationLede">
+                          {openApiTag.description}
+                        </Paragraph>
+                      ) : null
                     )
                   : null}
                 <Layout

@@ -47,7 +47,9 @@ class CalculatorSlider extends React.Component {
       sliderSum: sum,
       percentage: sum / this.props.max
     })
-    this.currencyInput.current.setRawValue(sum)
+    if (this.currencyInput.current) {
+      this.currencyInput.current.setRawValue(sum)
+    }
     this.props.onChange(sum)
   }
 

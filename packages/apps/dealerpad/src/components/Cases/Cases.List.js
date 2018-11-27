@@ -57,13 +57,12 @@ class CasesList extends React.Component {
                         <Text variant="subtle"> {item.applicationId}</Text>
                       </Text>
                     </div>
-                    {item.messages &&
-                      !compact && (
-                        <NewBadge
-                          variant="casesList"
-                          number={item.messages.length}
-                        />
-                      )}
+                    {item.messages && !compact && (
+                      <NewBadge
+                        variant="casesList"
+                        number={item.messages.length}
+                      />
+                    )}
 
                     <div>
                       {!compact &&
@@ -78,15 +77,14 @@ class CasesList extends React.Component {
                             />
                           </SpacingLeft>
                         ))}
-                      {item.messages &&
-                        compact && (
-                          <SpacingLeft>
-                            <NewBadge
-                              variant="casesList"
-                              number={item.messages.length}
-                            />
-                          </SpacingLeft>
-                        )}
+                      {item.messages && compact && (
+                        <SpacingLeft>
+                          <NewBadge
+                            variant="casesList"
+                            number={item.messages.length}
+                          />
+                        </SpacingLeft>
+                      )}
                       <IconWrapper>
                         <ThemeComponent tagName="ArrowRight" />
                       </IconWrapper>

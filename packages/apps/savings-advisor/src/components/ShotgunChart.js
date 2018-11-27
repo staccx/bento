@@ -49,14 +49,13 @@ const shotgunOptions = (duration = 500) => ({
       label: (item, data) => {
         const label = data.datasets
           .sort((a, b) => a.data[item.index].y < b.data[item.index].y)
-          .map(
-            current =>
-              current.label
-                ? `${current.label}: ${formatCurrency(
-                    current.data[item.index].y,
-                    { precision: 0 }
-                  )}`
-                : null
+          .map(current =>
+            current.label
+              ? `${current.label}: ${formatCurrency(
+                  current.data[item.index].y,
+                  { precision: 0 }
+                )}`
+              : null
           ) // TODO: Format currency
 
         if (!label) {

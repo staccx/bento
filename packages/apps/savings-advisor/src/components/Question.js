@@ -101,12 +101,12 @@ const Inner = styled.div`
       p.currentRow === 0
         ? dot0
         : p.currentRow === 1
-          ? dot1
-          : p.currentRow === 2
-            ? dot2
-            : p.currentRow === 3
-              ? dot3
-              : dot4};
+        ? dot1
+        : p.currentRow === 2
+        ? dot2
+        : p.currentRow === 3
+        ? dot3
+        : dot4};
     animation-timing-function: ease-in-out;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;

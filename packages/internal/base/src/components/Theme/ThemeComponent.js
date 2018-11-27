@@ -31,8 +31,8 @@ class ThemeComponent extends React.Component {
     const SubComponent = Component.hasOwnProperty(variant)
       ? Component[variant]
       : typeof Component === "object"
-        ? fallback
-        : Component
+      ? fallback
+      : Component
 
     if (!SubComponent) {
       console.warn(

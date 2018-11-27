@@ -26,11 +26,10 @@ const Fraction = ({
 
   return (
     <FractionWrapper className={className} {...rest}>
-      {fractionArray.map(
-        (dot, index) =>
-          dot
-            ? addKey(filled, index, () => (onClick ? onClick(index) : null))
-            : addKey(unfilled, index, () => (onClick ? onClick(index) : null))
+      {fractionArray.map((dot, index) =>
+        dot
+          ? addKey(filled, index, () => (onClick ? onClick(index) : null))
+          : addKey(unfilled, index, () => (onClick ? onClick(index) : null))
       )}
       <Hide>
         {value} / {max}

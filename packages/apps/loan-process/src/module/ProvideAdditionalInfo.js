@@ -136,12 +136,11 @@ class ProvideAdditionalInfo extends React.Component {
                           />
                         )}
                       />
-                      {touched[key] &&
-                        errors[key] && (
-                          <Alert variant="error" type="warning">
-                            {errors[key]}
-                          </Alert>
-                        )}
+                      {touched[key] && errors[key] && (
+                        <Alert variant="error" type="warning">
+                          {errors[key]}
+                        </Alert>
+                      )}
                     </LayoutItem>
                   ))}
                 </Layout>

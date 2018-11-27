@@ -92,12 +92,11 @@ class CompanyInfo extends React.Component {
                           )
                         }}
                       />
-                      {touched.company &&
-                        errors.company && (
-                          <Alert variant="error" type="warning">
-                            {errors.company}
-                          </Alert>
-                        )}
+                      {touched.company && errors.company && (
+                        <Alert variant="error" type="warning">
+                          {errors.company}
+                        </Alert>
+                      )}
                     </LayoutItem>
                     <LayoutItem>
                       <Field
@@ -129,12 +128,11 @@ class CompanyInfo extends React.Component {
                           )
                         }}
                       />
-                      {touched.purpose &&
-                        errors.purpose && (
-                          <Alert variant="error" type="warning">
-                            {errors.purpose}
-                          </Alert>
-                        )}
+                      {touched.purpose && errors.purpose && (
+                        <Alert variant="error" type="warning">
+                          {errors.purpose}
+                        </Alert>
+                      )}
                     </LayoutItem>
                     <LayoutItem>
                       <Field
@@ -203,12 +201,11 @@ class CompanyInfo extends React.Component {
                           )
                         }}
                       />
-                      {touched.repaymentMethod &&
-                        errors.repaymentMethod && (
-                          <Alert variant="error" type="warning">
-                            {errors.repaymentMethod}
-                          </Alert>
-                        )}
+                      {touched.repaymentMethod && errors.repaymentMethod && (
+                        <Alert variant="error" type="warning">
+                          {errors.repaymentMethod}
+                        </Alert>
+                      )}
                     </LayoutItem>
                     <LayoutItem>
                       <Field

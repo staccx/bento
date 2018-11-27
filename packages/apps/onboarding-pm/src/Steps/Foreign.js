@@ -59,11 +59,10 @@ class Foreign extends Component {
             >
               {Object.keys(countries)
                 .map(key => countries[key])
-                .filter(
-                  item =>
-                    this.state.filter
-                      ? item.name.startsWith(this.state.filter)
-                      : item
+                .filter(item =>
+                  this.state.filter
+                    ? item.name.startsWith(this.state.filter)
+                    : item
                 )
                 .map(item => (
                   <SelectOption key={item.name} data={item}>

@@ -54,12 +54,11 @@ const Form = props => {
               id="accountNumber"
               locale={"nb"}
             />
-            {errors.accountNumber &&
-              touched.accountNumber && (
-                <Alert type="warning" variant="error">
-                  {errors.accountNumber}
-                </Alert>
-              )}
+            {errors.accountNumber && touched.accountNumber && (
+              <Alert type="warning" variant="error">
+                {errors.accountNumber}
+              </Alert>
+            )}
           </LayoutItem>
           {!isSubmitting && (
             <div>

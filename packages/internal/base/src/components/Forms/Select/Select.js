@@ -38,10 +38,10 @@ class Select extends React.PureComponent {
       selected: this.props.selectedItem
         ? this.props.selectedItem
         : !this.props.combobox
+        ? this.props.placeHolderLabel
           ? this.props.placeHolderLabel
-            ? this.props.placeHolderLabel
-            : this.props.items[0]
-          : null
+          : this.props.items[0]
+        : null
     }
 
     this.setFilter = this.setFilter.bind(this)
