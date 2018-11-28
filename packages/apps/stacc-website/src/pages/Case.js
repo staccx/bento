@@ -4,22 +4,21 @@ import BlockContent from "@sanity/block-content-to-react"
 import blockContentSerializer from "./blockContentSerializer"
 import { NavigationSubpage, SectionHead } from "../components/_codeSplitting"
 
-const Case = ({ match, location, caseStudy }) => (
-  <div>
-    <NavigationSubpage name={"Monobank"} />
-    <Layout rowGap="grid" paddingBottom="grid">
-      <SectionHead
-        heading={caseStudy.header.title}
-        lede={caseStudy.header.body}
-        illustration={caseStudy.header.image}
-      />
-      <BlockContent
-        blocks={caseStudy.blocks}
-        serializers={blockContentSerializer}
-        renderContainerOnSingleChild
-      />
-    </Layout>
-  </div>
-)
+const Case = ({ match, location, caseStudy }) => {
+  const content = [caseStudy.header, ...caseStudy.blocks]
+
+  return (
+    <div>
+      <NavigationSubpage name={"Monobank"} />
+      <Layout rowGap="grid" paddingBottom="grid">
+        <BlockContent
+          blocks={content}
+          serializers={blockContentSerializer}
+          renderContainerOnSingleChild
+        />
+      </Layout>
+    </div>
+  )
+}
 
 export default Case
