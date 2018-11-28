@@ -34,7 +34,7 @@ const Routes = epitath(function*({ change, inverted }) {
       />
       <Route path="/" exact render={() => <Home change={change} />} />
       <Route path="/404" exact component={FourOFour} />
-      <Route path={"/clients"} exact component={Clients} />
+      <Route path={"/clients"} exact render={() => <Clients />} />
       {pages.map(page => {
         const exact = !!(!page.subpages || page.subpages.length <= 0)
         return (

@@ -1,8 +1,7 @@
-import React, { Component } from "react"
+import React, { Component, Suspense } from "react"
 import styled, { css } from "styled-components"
-import { Wrapper } from "@staccx/base"
+import { Wrapper, Loading } from "@staccx/base"
 import { Footer, Header } from "./components/_codeSplitting"
-import ScrollToTop from "./components/ScrollToTop"
 import Routes from "./Routes"
 
 class AppInner extends Component {
@@ -20,21 +19,25 @@ class AppInner extends Component {
 
   render() {
     return (
-      <PageWrapper isSubMenuOpen={this.state.subMenuOpen}>
-        <Header
-          openContactForm={this.props.openContactForm}
-          hideMenu={this.props.hideMenu}
-          inverted={this.props.inverted}
-          handleSubmenu={this.handleSubmenu}
-        />
-        <ScrollToTop />
-        <Wrapper>
-          <Main>
-            <Routes inverted={this.props.inverted} change={this.props.change} />
-          </Main>
-        </Wrapper>
-        <Footer openContactForm={this.props.openContactForm} />
-      </PageWrapper>
+      <Suspense fallback={<Loading />}>
+        <PageWrapper isSubMenuOpen={this.state.subMenuOpen}>
+          <Header
+            openContactForm={this.props.openContactForm}
+            hideMenu={this.props.hideMenu}
+            inverted={this.props.inverted}
+            handleSubmenu={this.handleSubmenu}
+          />
+          <Wrapper>
+            <Main>
+              <Routes
+                inverted={this.props.inverted}
+                change={this.props.change}
+              />
+            </Main>
+          </Wrapper>
+          <Footer openContactForm={this.props.openContactForm} />
+        </PageWrapper>
+      </Suspense>
     )
   }
 }

@@ -1,14 +1,11 @@
 import React, { Component } from "react"
 import styled, { ThemeProvider, css } from "styled-components"
-import { Wrapper, State, GlobalStyle, WebFonts } from "@staccx/base"
+import { State, GlobalStyle, WebFonts } from "@staccx/base"
 import { SanityProvider } from "@staccx/sanity"
 import { Router } from "react-router-dom"
 import createHistory from "history/createBrowserHistory"
 import theme from "./theme/Theme"
-import { Footer, Header } from "./components/_codeSplitting"
 import * as typeformEmbed from "@typeform/embed/lib/api"
-import ScrollToTop from "./components/ScrollToTop"
-import Routes from "./Routes"
 import AppInner from "./App.Inner"
 
 const asciiArt = `
@@ -106,22 +103,5 @@ class App extends Component {
     )
   }
 }
-
-const Main = styled.main`
-  min-height: 99vh;
-`
-
-const PageWrapper = styled.div`
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  ${p =>
-    p.isSubMenuOpen &&
-    css`
-      height: 100vh;
-      max-height: 100vh;
-      overflow: hidden;
-    `};
-`
 
 export default App
