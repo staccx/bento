@@ -80,6 +80,7 @@ const font = {
   h5: "16px",
   h6: "14px",
   base: "16px",
+  small: "14px",
   tiny: "12px",
   input: "16px",
   giga: "64px",

@@ -14,8 +14,12 @@ class AppInner extends Component {
     this.handleSubmenu = this.handleSubmenu.bind(this)
   }
 
-  handleSubmenu() {
-    this.setState({ subMenuOpen: !this.state.subMenuOpen })
+  handleSubmenu(open) {
+    if (open !== undefined) {
+      this.setState({ subMenuOpen: open })
+    } else {
+      this.setState({ subMenuOpen: !this.state.subMenuOpen })
+    }
   }
 
   render() {

@@ -14,7 +14,6 @@ const Stories = ({ items, heading }) => {
       item.image.alignment === "sideBySide"
   )
 
-  console.log(sideBySides)
   return (
     <Layout rowGap="large">
       {heading && <Heading level={2}>{heading}</Heading>}
