@@ -68,7 +68,8 @@ const color = {
   blush: "#FFF1E5",
   pink: "#FCEEED",
   placeholder: "#b8b8b8",
-  inputLine: "#dcdcdc"
+  inputLine: "#dcdcdc",
+  link: "#467EFF"
 }
 
 const font = {
@@ -82,7 +83,8 @@ const font = {
   tiny: "12px",
   input: "16px",
   giga: "64px",
-  huge: "48px"
+  huge: "48px",
+  lineHeight: "1.5"
 }
 
 const webfonts = {

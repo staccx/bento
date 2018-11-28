@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import styled, { ThemeProvider } from "styled-components"
+import styled, { ThemeProvider, css } from "styled-components"
 import { Wrapper, State, GlobalStyle, WebFonts } from "@staccx/base"
 import { SanityProvider } from "@staccx/sanity"
 import { Router } from "react-router-dom"
@@ -9,6 +9,7 @@ import { Footer, Header } from "./components/_codeSplitting"
 import * as typeformEmbed from "@typeform/embed/lib/api"
 import ScrollToTop from "./components/ScrollToTop"
 import Routes from "./Routes"
+import AppInner from "./App.Inner"
 
 const asciiArt = `
                             \`-ohy+-\`
@@ -50,6 +51,7 @@ class App extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
+      subMenuOpen: false,
       expanded: null,
       popup: typeformEmbed.makePopup("https://stacc.typeform.com/to/esvqjU", {
         hideFooter: true,
@@ -73,32 +75,28 @@ class App extends Component {
     this.state.popup.close()
   }
 
+  componentDidMount() {
+    console.log("%c" + asciiArt, "color: #EB5E55;")
+  }
+
   render() {
     const history = createHistory()
-    console.log("%c" + asciiArt, "color: #EB5E55;")
+
     return (
       <ThemeProvider theme={theme}>
         <SanityProvider dataset={"production"} projectId={"8j24leyc"} useCdn>
+          <GlobalStyle />
+          <WebFonts />
           <State>
             {({ change, hideMenu, inverted }) => {
               return (
                 <Router history={history}>
-                  <PageWrapper>
-                    <GlobalStyle />
-                    <WebFonts/>
-                    <Header
-                      openContactForm={this.openContactForm}
-                      hideMenu={hideMenu}
-                      inverted={inverted}
-                    />
-                    <ScrollToTop />
-                    <Wrapper>
-                      <Main>
-                        <Routes inverted={inverted} change={change} />
-                      </Main>
-                    </Wrapper>
-                    <Footer openContactForm={this.openContactForm} />
-                  </PageWrapper>
+                  <AppInner
+                    change={change}
+                    hideMenu={hideMenu}
+                    inverted={inverted}
+                    openContactForm={this.openContactForm}
+                  />
                 </Router>
               )
             }}
@@ -117,6 +115,13 @@ const PageWrapper = styled.div`
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  ${p =>
+    p.isSubMenuOpen &&
+    css`
+      height: 100vh;
+      max-height: 100vh;
+      overflow: hidden;
+    `};
 `
 
 export default App

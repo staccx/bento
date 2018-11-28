@@ -71,6 +71,7 @@ class Header extends React.Component {
                         isOpen={this.state.menuIsVisible}
                         closeMenu={this.closeMenu}
                         openContactForm={this.props.openContactForm}
+                        handleSubmenu={this.props.handleSubmenu}
                       />
                     </React.Fragment>
                   )}
@@ -90,7 +91,7 @@ const LogoLink = styled(Link)`
 `
 
 const Head = styled.header`
-  padding-top: ${theming.spacing.mediumPlus};
+  padding: ${theming.spacing.mediumPlus} 0;
   z-index: 10;
   font-family: ${theming.fontFamily.heading};
 

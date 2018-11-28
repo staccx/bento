@@ -28,7 +28,6 @@ const NavigationSubpage = ({ inverted, items, name, title }) => (
 )
 
 const Container = styled.div`
-  margin-top: ${theming.spacing.small};
   border-top: 2px solid ${theming.color.line};
   padding-top: ${theming.spacing.small};
 

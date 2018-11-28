@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled, { css, keyframes } from "styled-components"
+import styled, { css } from "styled-components"
 import { NavLink } from "react-router-dom"
 import { opacity } from "@staccx/color"
-import { Button, List, theming } from "@staccx/base"
+import { Button, theming } from "@staccx/base"
 import { BounceIn } from "@staccx/animations"
-import IconArrowRight from "../Icons/IconArrowRight"
+import HeaderMenuSubMenu from "./Header.Menu.SubMenu"
 
 class HeaderMenu extends React.Component {
   constructor(props) {
@@ -22,11 +22,11 @@ class HeaderMenu extends React.Component {
   }
 
   componentWillMount() {
-    document.addEventListener("mousedown", this.handleClick, false)
+    document.addEventListener("click", this.handleClick, false)
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClick, false)
+    document.removeEventListener("click", this.handleClick, false)
   }
 
   handleClick(e) {
@@ -37,7 +37,7 @@ class HeaderMenu extends React.Component {
 
     // HACK: Allow links to be clicked before hiding menu
     if (e.target.dataset.link) {
-      setTimeout(() => this.handleExpand(null), 300)
+      this.handleExpand(null)
       return
     }
 
@@ -66,6 +66,7 @@ class HeaderMenu extends React.Component {
         }
       }
     )
+    this.props.handleSubmenu()
   }
 
   render() {
@@ -103,24 +104,12 @@ class HeaderMenu extends React.Component {
                   >
                     {menuItem.title}
                   </SubMenuExpandBtn>
-                  <SubMenu
+                  <HeaderMenuSubMenu
                     expanded={this.state.expanded === menuItem._key}
                     inverted={inverted || undefined}
-                  >
-                    {menuItem.submenu.map(submenuItem => (
-                      <li key={submenuItem._key + submenuItem.path.current}>
-                        <SubMenuLink
-                          to={submenuItem.path.current}
-                          data-link
-                          onClick={closeMenu}
-                        >
-                          {submenuItem.title}
-                          {"\u00a0"}
-                          <Icon />
-                        </SubMenuLink>
-                      </li>
-                    ))}
-                  </SubMenu>
+                    subMenuItems={menuItem.submenu}
+                    closeMenu={closeMenu}
+                  />
                 </li>
               ) : null
           )}
@@ -140,18 +129,6 @@ class HeaderMenu extends React.Component {
     )
   }
 }
-
-const SubMenuBounceIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(calc(100% - 12px));
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(100%);
-  }
-`
 
 const Navigation = styled.nav`
   display: ${p => (p.isOpen ? "flex" : "none")};
@@ -174,8 +151,6 @@ const Navigation = styled.nav`
 `
 
 const MenuItems = styled.ul`
-  position: relative;
-
   ${props =>
     props.inverted
       ? `color: ${theming.color("white")(props)}`
@@ -278,7 +253,6 @@ const MenuItem = styled(NavLink)`
 `
 
 const SubMenuExpandBtn = styled(Button)`
-  position: relative;
   display: block;
   margin: 0 ${theming.spacing.small};
   padding: 3px 0;
@@ -315,75 +289,6 @@ const SubMenuExpandBtn = styled(Button)`
             ? opacity(theming.color("white")(p), 0.5)
             : opacity(theming.color("secondary")(p), 0.5)};
     }
-  }
-`
-
-const SubMenu = styled(List)`
-  display: ${p => (p.expanded ? "block" : "none")};
-
-  @media only screen and (max-width: ${theming.wrapper.large}) {
-    background-color: rgba(0, 0, 0, 0.2);
-
-    > li {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-  }
-
-  @media only screen and (min-width: ${theming.wrapper.large}) {
-    position: absolute;
-    bottom: -${theming.spacing.tiny};
-    left: ${theming.spacing.small};
-    transform: translateY(100%);
-    background-color: ${theming.color.white};
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-    width: calc(100% - ${theming.spacing.small});
-    z-index: 50;
-    animation: ${SubMenuBounceIn} 0.2s ease forwards 1;
-
-    > li {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    }
-  }
-`
-
-const SubMenuLink = styled(NavLink)`
-  display: block;
-  color: currentColor;
-  text-decoration: none;
-  font-size: ${theming.font.base};
-  padding: 16px ${theming.spacing.medium};
-
-  @media only screen and (min-width: ${theming.wrapper.large}) {
-    color: ${theming.color("textDark")};
-    transition: background 0.2s ease, color 0.2s ease;
-    padding: 16px;
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: ${theming.color("g4")};
-      color: ${theming.color("primaryWcag")};
-
-      > svg {
-        color: ${theming.color.primary};
-        transform: translateX(3px);
-      }
-    }
-  }
-`
-
-const Icon = styled(IconArrowRight)`
-  pointer-events: none;
-  display: inline-block;
-  vertical-align: middle;
-  width: 14px;
-  height: 14px;
-  margin-left: ${theming.spacing.tiny};
-  color: ${theming.color("g2")};
-  transition: transform 0.2s ease;
-
-  @media only screen and (max-width: ${theming.wrapper.large}) {
-    display: none;
   }
 `
 
