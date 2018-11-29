@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 
 const program = require("commander")
-const inquirer = require("inquirer")
-const path = require("path")
+// const inquirer = require("inquirer")
+// const path = require("path")
 
 const getTranslations = require("./utils/getTranslations")
 const convertTranslations = require("./utils/convertTranslations")
 const saveToJson = require("./utils/saveToJson")
 const walk = require("./utils/walk")
+const release = require("./cmds/release")
+const { version } = require("../package.json")
 
-program.version("0.0.1").description("Command line tool for Stacc X")
+program.version(version).description("Command line tool for Stacc X")
 
 const list = val => {
   return val.split(",")
@@ -58,6 +60,15 @@ program
     } catch (e) {
       throw e
     }
+  })
+
+program
+  .command("release")
+  .alias("r")
+  .description("Helps you release bento")
+  .option("-d, --debug", "Run without running commands")
+  .action(({ debug = false }) => {
+    release(debug)
   })
 
 program.parse(process.argv)
