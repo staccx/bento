@@ -69,7 +69,9 @@ class Select extends React.PureComponent {
       placeHolderLabel,
       itemToString,
       className,
-      variant
+      variant,
+      items,
+      initialSelectedItem
     } = this.props
 
     const OptionsWrapper = this.props.OptionsWrapper
@@ -152,11 +154,14 @@ class Select extends React.PureComponent {
 
     return (
       <Select2
-        options={this.props.items}
+        options={items}
         renderSelected={renderSelected}
         renderPlaceholder={renderPlaceholder}
         renderLabel={() => null}
         onChange={onChange}
+        downshiftProps={{
+          initialSelectedItem
+        }}
       >
         {({
           options,
