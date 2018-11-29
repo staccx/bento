@@ -1,6 +1,6 @@
 {
   "name": "@staccx/component-testing",
-  "version": "8.25.0",
+  "version": "8.26.0",
   "private": true,
   "scripts": {
     "start": "react-app-rewired start",
@@ -14,7 +14,7 @@
     "styled-components": "^4.0.3"
   },
   "dependencies": {
-    "@staccx/i18n": "^8.25.0",
+    "@staccx/i18n": "^8.26.0",
     "react-epic-spinners": "^0.2.1",
     "react-spinners": "^0.4.7"
   }

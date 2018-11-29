@@ -1,7 +1,7 @@
 {
   "name": "@staccx/feature-toggling",
   "private": true,
-  "version": "8.25.0",
+  "version": "8.26.0",
   "description": "",
   "main": "package.json",
   "author": "Stacc X",
@@ -21,7 +21,7 @@
     "@sanity/default-layout": "^0.135.0",
     "@sanity/default-login": "^0.135.0",
     "@sanity/desk-tool": "^0.135.0",
-    "@staccx/sanity": "^8.25.0",
+    "@staccx/sanity": "^8.26.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"

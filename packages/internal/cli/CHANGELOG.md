@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.26.0"></a>
+# [8.26.0](https://bitbucket.org/stacc-flow/bento/compare/v8.25.0...v8.26.0) (2018-11-29)
+
+
+### Features
+
+* **cli:** add release to commands ([c6a2234](https://bitbucket.org/stacc-flow/bento/commits/c6a2234))
+
+
+
+
+
 <a name="8.24.0"></a>
 # [8.24.0](https://bitbucket.org/stacc-flow/bento/compare/v8.23.0...v8.24.0) (2018-11-27)
 

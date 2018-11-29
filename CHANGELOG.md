@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.26.0"></a>
+# [8.26.0](https://bitbucket.org/stacc-flow/bento/compare/v8.25.0...v8.26.0) (2018-11-29)
+
+
+### Bug Fixes
+
+* **base:** allow Select to send initialSelection ([35ab3a3](https://bitbucket.org/stacc-flow/bento/commits/35ab3a3))
+* **loan-process:** fix issues hiding terms and explanation. update demo ([fee07d9](https://bitbucket.org/stacc-flow/bento/commits/fee07d9))
+
+
+### Features
+
+* **cli:** add release to commands ([c6a2234](https://bitbucket.org/stacc-flow/bento/commits/c6a2234))
+* **release-bento:** deprecating release-bento. replaced with cli ([b2efb2a](https://bitbucket.org/stacc-flow/bento/commits/b2efb2a))
+* **stacc-web:** fullsize menu WIP ([3bc2735](https://bitbucket.org/stacc-flow/bento/commits/3bc2735))
+* **stacc-website:** fix whitespace on case-study, clients ([dd59903](https://bitbucket.org/stacc-flow/bento/commits/dd59903))
+* **stacc-website:** lazy loading with suspense ([4496668](https://bitbucket.org/stacc-flow/bento/commits/4496668))
+* **stacc-website:** less broken fullsize menu ([bf1f362](https://bitbucket.org/stacc-flow/bento/commits/bf1f362))
+
+
+
+
+
 <a name="8.25.0"></a>
 # [8.25.0](https://bitbucket.org/stacc-flow/bento/compare/v8.24.0...v8.25.0) (2018-11-27)
 

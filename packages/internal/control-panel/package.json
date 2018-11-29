@@ -1,6 +1,6 @@
 {
   "name": "@staccx/control-panel",
-  "version": "8.2.0",
+  "version": "8.26.0",
   "private": true,
   "main": "src/main.js",
   "productName": "Bento ctrl",
