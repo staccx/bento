@@ -30,7 +30,7 @@ class Calculator extends React.Component {
     super(props, context)
     this.state = {
       value: this.props.defaultValue,
-      terms: this.props.defaultTerms
+      terms: this.props.termsDefault
     }
     this.recalculate = this.recalculate.bind(this)
     this.calculate = throttle(this.recalculate, 250)
@@ -53,7 +53,7 @@ class Calculator extends React.Component {
       {
         validateSchema
       },
-      () => this.calculate(this.props.defaultValue, this.props.defaultTerms)
+      () => this.calculate(this.props.defaultValue, this.props.termsDefault)
     )
   }
 
@@ -157,7 +157,7 @@ class Calculator extends React.Component {
                         )
                       }}
                     />
-                    {this.props.productType === "PRODUCT_LOAN" && (
+                    {this.props.showTerms && (
                       <Field
                         name={`terms`}
                         render={({ field }) => {
@@ -175,6 +175,7 @@ class Calculator extends React.Component {
                                   variant="calculatorTerms"
                                   items={this.props.termValues}
                                   id={"select-loan-duration"}
+                                  initialSelectedItem={this.state.terms}
                                   itemToString={this.props.termsValuesToString}
                                   onChange={item => {
                                     this.calculate(this.state.value, item)
@@ -188,7 +189,7 @@ class Calculator extends React.Component {
                         }}
                       />
                     )}
-                    {this.props.productType === "PRODUCT_CREDIT" && (
+                    {this.props.showExplanation && (
                       <Box variant="priceExample" size="mediumPlus">
                         <Text variant="creditExplainer">
                           {this.props.creditExplanationText}
@@ -334,9 +335,12 @@ Calculator.defaultProps = {
   showInterestRate: true,
   showMonthlyFees: true,
   showTotalMonthly: true,
+  showExplanation: false,
+  showTerms: false,
   startFee: 0,
   termFee: 3000,
   termValues: [6, 12, 18, 24, 36],
+  termsDefault: 11,
   termsValuesToString: item =>
     item >= 12 ? (item / 12).toPrecision(2) + " år" : item + " mnd",
   totalMonthlyText: "Totalt månedlig",
@@ -374,6 +378,8 @@ Calculator.propTypes = {
   showInterestRate: PropTypes.bool,
   showMonthlyFees: PropTypes.bool,
   showTotalMonthly: PropTypes.bool,
+  showExplanation: PropTypes.bool,
+  showTerms: PropTypes.bool,
   startFee: PropTypes.any,
   termFee: PropTypes.number,
   termValues: PropTypes.array,

@@ -35,12 +35,10 @@ class CalculatorSlider extends React.Component {
   }
 
   onSlideStart = value => {
-    console.log(this.state.sliderSum, this.state.sum)
     this.setState({ step: this.props.step })
   }
 
   onSliderChange = value => {
-    console.log(this.state.sliderSum, this.state.sum)
     const sum = parseInt(value, 10)
     this.setState({
       sum,

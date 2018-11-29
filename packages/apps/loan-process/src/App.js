@@ -35,7 +35,7 @@ class Content extends Component {
           <hr style={{ margin: "64px 0" }} />
           <CompanyInfo onValidated={console.log} onClick={console.log} />
           <hr style={{ margin: "64px 0" }} />
-          <Calculator onValidated={console.log} />
+          <Calculator onValidated={console.log} showTerms termsDefault={12} />
           <hr style={{ margin: "64px 0" }} />
           <Calculator
             onValidated={console.log}
@@ -45,6 +45,7 @@ class Content extends Component {
             valueLabel="Kredittramme"
             headingText="Fleksibel kreditt når du trenger det"
             showTotalMonthly={false}
+            showExplanation
           />
           <hr style={{ margin: "64px 0" }} />
           <EndScreen
