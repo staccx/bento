@@ -65,6 +65,11 @@ program
   .option("-d, --debug", "Run without running commands")
   .parse(process.argv)
 
+/**
+ * @deprecated Use bento release instead
+ * @param debug
+ * @return {Promise<void>}
+ */
 async function release(debug) {
   const spinner = ora({
     text: "Setup",
