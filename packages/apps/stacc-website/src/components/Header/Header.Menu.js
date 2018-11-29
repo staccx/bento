@@ -17,56 +17,21 @@ class HeaderMenu extends React.Component {
     this.handleExpand = this.handleExpand.bind(this)
 
     this.container = React.createRef()
-
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  componentWillMount() {
-    document.addEventListener("click", this.handleClick, false)
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("click", this.handleClick, false)
-  }
-
-  handleClick(e) {
-    if (!e.target.dataset) {
-      this.handleExpand(null)
-      return
-    }
-
-    // HACK: Allow links to be clicked before hiding menu
-    if (e.target.dataset.link) {
-      this.handleExpand(null)
-      return
-    }
-
-    const expanded = this.props.items.reduce((acc, item) => {
-      if (item.submenu) {
-        if (e.target.dataset.key === item._key) {
-          acc = item._key
-        }
-      }
-      return acc
-    }, null)
-    this.handleExpand(expanded)
   }
 
   handleExpand = id => {
-    clearTimeout(this.timeout)
     this.setState(
       prevState => ({
-        expanded: prevState.expanded !== id ? id : null
+        expanded: prevState.expanded !== id ? id : null,
+        prevExpanded: prevState.expanded
       }),
-      () => {
-        if (this.props.closeTimeoutMs) {
-          this.timeout = setTimeout(() => {
-            this.setState({ expanded: null })
-          }, this.props.closeTimeoutMs)
-        }
-      }
+      () =>
+        id === this.state.prevExpanded
+          ? this.props.handleSubmenu(false)
+          : id
+            ? this.props.handleSubmenu(true)
+            : this.props.handleSubmenu(false)
     )
-    this.props.handleSubmenu()
   }
 
   render() {
@@ -101,14 +66,17 @@ class HeaderMenu extends React.Component {
                     data-key={menuItem._key}
                     inverted={inverted || undefined}
                     expanded={this.state.expanded === menuItem._key}
+                    onClick={() => this.handleExpand(menuItem._key)}
                   >
                     {menuItem.title}
                   </SubMenuExpandBtn>
                   <HeaderMenuSubMenu
                     expanded={this.state.expanded === menuItem._key}
                     inverted={inverted || undefined}
+                    item={menuItem}
                     subMenuItems={menuItem.submenu}
                     closeMenu={closeMenu}
+                    handleExpand={this.handleExpand}
                   />
                 </li>
               ) : null
@@ -133,7 +101,7 @@ class HeaderMenu extends React.Component {
 const Navigation = styled.nav`
   display: ${p => (p.isOpen ? "flex" : "none")};
   align-items: stretch;
-  flex-grow: 1;
+  flex-basis: 60%;
   transition: opacity 0.2s ease;
 
   @media only screen and (max-width: ${theming.wrapper.large}) {
@@ -173,7 +141,8 @@ const MenuItems = styled.ul`
 
   @media only screen and (min-width: ${theming.wrapper.large}) {
     display: flex;
-    justify-content: flex-end;
+    flex-grow: 1;
+    justify-content: space-between;
     align-items: center;
   }
 `
@@ -253,6 +222,7 @@ const MenuItem = styled(NavLink)`
 `
 
 const SubMenuExpandBtn = styled(Button)`
+  position: relative;
   display: block;
   margin: 0 ${theming.spacing.small};
   padding: 3px 0;
@@ -280,15 +250,28 @@ const SubMenuExpandBtn = styled(Button)`
   }
 
   @media only screen and (min-width: ${theming.wrapper.large}) {
-    &:hover,
-    &:active,
-    &:focus {
+    &:hover {
       border-bottom: 2px solid
         ${p =>
           p.inverted
             ? opacity(theming.color("white")(p), 0.5)
             : opacity(theming.color("secondary")(p), 0.5)};
     }
+
+    ${p =>
+      p.expanded &&
+      css`
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -44px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: ${theming.color.primary};
+          z-index: 100;
+        }
+      `};
   }
 `
 

@@ -9,6 +9,12 @@ export default theming.createVariants(
         padding-left: 8.5vw;
         padding-right: 8.5vw;
       }
+    `,
+    innerPadded: css`
+      @media only screen and (min-width: ${theming.wrapper.medium}) {
+        padding-left: 8.5vw !important;
+        padding-right: 8.5vw !important;
+      }
     `
   },
   Wrapper.themeProps.wrapper

@@ -26,6 +26,7 @@ class Header extends React.Component {
     this.setState(prevState => ({
       menuIsVisible: false
     }))
+    this.props.handleSubmenu()
   }
 
   render() {
