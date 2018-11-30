@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.27.0"></a>
+# [8.27.0](https://bitbucket.org/stacc-flow/bento/compare/v8.26.0...v8.27.0) (2018-11-30)
+
+
+### Bug Fixes
+
+* **loan-process:** add disabled buttons for invalid forms. FUN-239 ([2052500](https://bitbucket.org/stacc-flow/bento/commits/2052500))
+* **loan-process:** fix default value for paymentCash ([70ebd5e](https://bitbucket.org/stacc-flow/bento/commits/70ebd5e))
+* **loan-process:** improve error messaging ([9651620](https://bitbucket.org/stacc-flow/bento/commits/9651620))
+* **loan-process:** slider can now step properly ([8e6c6bc](https://bitbucket.org/stacc-flow/bento/commits/8e6c6bc))
+
+
+### Features
+
+* **base:** add onKeyDown event to Slider2 ([a53a9e5](https://bitbucket.org/stacc-flow/bento/commits/a53a9e5))
+
+
+
+
+
 <a name="8.26.0"></a>
 # [8.26.0](https://bitbucket.org/stacc-flow/bento/compare/v8.25.0...v8.26.0) (2018-11-29)
 

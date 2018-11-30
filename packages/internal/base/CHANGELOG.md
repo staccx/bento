@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.27.0"></a>
+# [8.27.0](https://bitbucket.org/stacc-flow/bento/compare/v8.26.0...v8.27.0) (2018-11-30)
+
+
+### Features
+
+* **base:** add onKeyDown event to Slider2 ([a53a9e5](https://bitbucket.org/stacc-flow/bento/commits/a53a9e5))
+
+
+
+
+
 <a name="8.26.0"></a>
 # [8.26.0](https://bitbucket.org/stacc-flow/bento/compare/v8.25.0...v8.26.0) (2018-11-29)
 
