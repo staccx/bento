@@ -51,6 +51,7 @@ class Slider2 extends React.Component {
       max,
       step,
       onFocus,
+      onKeyDown,
       onBlur,
       ...restProps
     } = this.props
@@ -73,17 +74,31 @@ class Slider2 extends React.Component {
           <Handles>
             {({ handles, getHandleProps }) => (
               <div className="slider-handles">
-                {handles.map(handle => (
-                  <StyledHandle
-                    key={handle.id}
-                    handle={handle}
-                    domain={[this.props.min, this.props.max]}
-                    getHandleProps={getHandleProps}
-                    variant={variant}
-                    onFocus={onFocus}
-                    onBlur={onBlur}
-                  />
-                ))}
+                {handles.map((handle, index) => {
+                  const {
+                    onKeyDown: handleKeyDown,
+                    ...restHandleProps
+                  } = getHandleProps(handle.id)
+                  return (
+                    <StyledHandle
+                      key={handle.id}
+                      handle={handle}
+                      domain={[this.props.min, this.props.max]}
+                      getHandleProps={getHandleProps}
+                      variant={variant}
+                      onFocus={onFocus}
+                      onBlur={onBlur}
+                      {...restHandleProps}
+                      tabIndex={index}
+                      onKeyDown={e => {
+                        if (onKeyDown) {
+                          onKeyDown(e.keyCode)
+                        }
+                        handleKeyDown(e)
+                      }}
+                    />
+                  )
+                })}
               </div>
             )}
           </Handles>
@@ -181,7 +196,8 @@ Slider2.propTypes = {
   max: PropTypes.number,
   step: PropTypes.number,
   defaultValue: PropTypes.number,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  onKeyDown: PropTypes.func
 }
 
 /** @component */

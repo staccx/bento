@@ -12,7 +12,6 @@ const Slider2Handle = ({
   className,
   domain: [min, max],
   handle: { id, value, percent },
-  getHandleProps,
   ...restProps
 }) => (
   <HandleButton
@@ -23,7 +22,6 @@ const Slider2Handle = ({
     aria-valuenow={value}
     percent={percent}
     {...restProps}
-    {...getHandleProps(id)}
   />
 )
 
