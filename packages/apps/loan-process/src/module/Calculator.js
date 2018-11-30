@@ -238,7 +238,7 @@ class Calculator extends React.Component {
                           />
                         )}
                       />
-                      {touched.name && errors.name && (
+                      {values.name && touched.name && errors.name && (
                         <Alert variant="error" type="warning">
                           {errors.name}
                         </Alert>
@@ -256,7 +256,7 @@ class Calculator extends React.Component {
                           />
                         )}
                       />
-                      {touched.email && errors.email && (
+                      {values.email && touched.email && errors.email && (
                         <Alert variant="error" type="warning">
                           {errors.email}
                         </Alert>
@@ -276,7 +276,7 @@ class Calculator extends React.Component {
                           />
                         )}
                       />
-                      {touched.phone && errors.phone && (
+                      {values.phone && touched.phone && errors.phone && (
                         <Alert variant="error" type="warning">
                           {errors.phone}
                         </Alert>
@@ -289,7 +289,11 @@ class Calculator extends React.Component {
                   {this.props.isLoading ? (
                     <Loading variant={"buttonLoading"} />
                   ) : (
-                    <Button variant="forward" onClick={this.props.onClick}>
+                    <Button
+                      disabled={!isValid}
+                      variant="forward"
+                      onClick={this.props.onClick}
+                    >
                       Neste
                     </Button>
                   )}

@@ -118,7 +118,7 @@ class RegisterSigners extends React.Component {
             }}
             validationSchema={validationSchema}
             onSubmit={this.onSubmit}
-            render={({ values, touched, errors, setFieldValue }) => {
+            render={({ values, touched, errors, setFieldValue, isValid }) => {
               return (
                 <Form>
                   <Layout>
@@ -314,6 +314,7 @@ class RegisterSigners extends React.Component {
                         <Loading variant={"buttonLoading"} />
                       ) : (
                         <Button
+                          disabled={!isValid}
                           variant="forward"
                           type="submit"
                           onClick={() => this.setState({ showErrors: true })}

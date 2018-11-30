@@ -21,6 +21,7 @@ const Form = props => {
     values,
     touched,
     errors,
+    isValid,
     isSubmitting,
     handleSubmit,
     renderIllustration,
@@ -65,7 +66,12 @@ const Form = props => {
               {props.isLoading ? (
                 <Loading variant={"buttonLoading"} />
               ) : (
-                <Button variant="forward" type="submit" onClick={() => null}>
+                <Button
+                  disabled={!isValid}
+                  variant="forward"
+                  type="submit"
+                  onClick={() => null}
+                >
                   {props.continueButtonText}
                 </Button>
               )}
