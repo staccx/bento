@@ -26,34 +26,62 @@ class ProvideAdditionalInfo extends React.Component {
 
     this.state = {
       file: null,
-      siNetIncome: this.props.siNetIncome,
-      siTotalOperatingRevenue: this.props.siTotalOperatingRevenue,
-      asInventories: this.props.asInventories,
-      asBankDepositsCashInHandEtc: this.props.asBankDepositsCashInHandEtc,
-      asCurrentAssets: this.props.asCurrentAssets,
-      asTotalAssets: this.props.asTotalAssets,
-      leCurrentLiabilities: this.props.leCurrentLiabilities,
-      leEquity: this.props.leEquity,
-      asTradeDebtors: this.props.asTradeDebtors
+      siNetIncome: null,
+      siTotalOperatingRevenue: null,
+      asInventories: null,
+      asBankDepositsCashInHandEtc: null,
+      asCurrentAssets: null,
+      asTotalAssets: null,
+      leCurrentLiabilities: null,
+      leEquity: null,
+      asTradeDebtors: null
     }
   }
 
   componentWillMount() {
+    const { numberTypeValidationMessage } = this.props
     const validateSchema = Yup.object().shape({
       // file: Yup.mixed().test(
       //   "fileSize",
       //   "File Size is too large",
       //   value => value.size <= FILE_SIZE
       // ),
-      siNetIncome: Yup.number().required(),
-      siTotalOperatingRevenue: Yup.number().required(),
-      asInventories: Yup.number().required(),
-      asBankDepositsCashInHandEtc: Yup.number().required(),
-      asCurrentAssets: Yup.number().required(),
-      asTotalAssets: Yup.number().required(),
-      leCurrentLiabilities: Yup.number().required(),
-      leEquity: Yup.number().required(),
-      asTradeDebtors: Yup.number().required()
+      siNetIncome: Yup.number()
+        .typeError(numberTypeValidationMessage)
+        .nullable()
+        .required(),
+      siTotalOperatingRevenue: Yup.number()
+        .typeError(numberTypeValidationMessage)
+        .nullable()
+        .required(),
+      asInventories: Yup.number()
+        .typeError(numberTypeValidationMessage)
+        .nullable()
+        .required(),
+      asBankDepositsCashInHandEtc: Yup.number()
+        .typeError(numberTypeValidationMessage)
+        .nullable()
+        .required(),
+      asCurrentAssets: Yup.number()
+        .typeError(numberTypeValidationMessage)
+        .nullable()
+        .required(),
+      asTotalAssets: Yup.number()
+        .typeError(numberTypeValidationMessage)
+        .nullable()
+        .required(),
+      leCurrentLiabilities: Yup.number()
+        .typeError(numberTypeValidationMessage)
+        .nullable()
+        .required(),
+      leEquity: Yup.number()
+        .typeError(numberTypeValidationMessage)
+        .nullable()
+        .required(),
+      asTradeDebtors: Yup.number()
+        .typeError(numberTypeValidationMessage)
+        .nullable()
+        .required()
     })
     this.setState({
       validateSchema
@@ -114,35 +142,40 @@ class ProvideAdditionalInfo extends React.Component {
                       </Alert>
                     )}
                   </LayoutItem>
-                  {keys.map(key => (
-                    <LayoutItem key={"additional" + key}>
-                      <Field
-                        name={key}
-                        render={({ onChange, value, ...field }) => (
-                          <CurrencyInput
-                            id={key}
-                            label={this.props[`${key}Label`]}
-                            helpText={this.props[`${key}HelpText`]}
-                            placeholder="0"
-                            locale={"nb"}
-                            defaultValue={value}
-                            onChange={e => {
-                              setFieldValue(
-                                key,
-                                parseInt(removeWhitespace(e.target.value), 10)
-                              )
-                            }}
-                            {...field}
-                          />
+                  {keys.map(key => {
+                    const showError =
+                      (values[key] || Number.isNaN(values[key])) && errors[key]
+                    return (
+                      <LayoutItem key={"additional" + key}>
+                        <Field
+                          name={key}
+                          render={({ onChange, value, ...field }) => (
+                            <CurrencyInput
+                              id={key}
+                              label={this.props[`${key}Label`]}
+                              helpText={this.props[`${key}HelpText`]}
+                              placeholder="0"
+                              locale={"nb"}
+                              defaultValue={value}
+                              onChange={e => {
+                                const { value } = e.target
+                                setFieldValue(
+                                  key,
+                                  parseInt(removeWhitespace(value), 10)
+                                )
+                              }}
+                              {...field}
+                            />
+                          )}
+                        />
+                        {showError && (
+                          <Alert variant="error" type="warning">
+                            {errors[key]}
+                          </Alert>
                         )}
-                      />
-                      {touched[key] && errors[key] && (
-                        <Alert variant="error" type="warning">
-                          {errors[key]}
-                        </Alert>
-                      )}
-                    </LayoutItem>
-                  ))}
+                      </LayoutItem>
+                    )
+                  })}
                 </Layout>
                 {this.props.isLoading ? (
                   <Loading variant={"buttonLoading"} />
@@ -161,53 +194,60 @@ class ProvideAdditionalInfo extends React.Component {
 }
 
 ProvideAdditionalInfo.propTypes = {
-  headingText: PropTypes.string,
-  leadText: PropTypes.string,
-  siNetIncome: PropTypes.number,
-  siTotalOperatingRevenue: PropTypes.number,
-  asInventories: PropTypes.number,
   asBankDepositsCashInHandEtc: PropTypes.number,
-  asCurrentAssets: PropTypes.number,
-  asTotalAssets: PropTypes.number,
-  leCurrentLiabilities: PropTypes.number,
-  leEquity: PropTypes.number,
-  asTradeDebtors: PropTypes.number,
-  siNetIncomeLabel: PropTypes.string,
-  siTotalOperatingRevenueLabel: PropTypes.string,
-  asInventoriesLabel: PropTypes.string,
   asBankDepositsCashInHandEtcLabel: PropTypes.string,
+  asCurrentAssets: PropTypes.number,
+  asCurrentAssetsHelpText: PropTypes.string,
   asCurrentAssetsLabel: PropTypes.string,
+  asInventories: PropTypes.number,
+  asInventoriesLabel: PropTypes.string,
+  asTotalAssets: PropTypes.number,
   asTotalAssetsLabel: PropTypes.string,
+  asTradeDebtors: PropTypes.number,
+  asTradeDebtorsLabel: PropTypes.string,
+  headingText: PropTypes.string,
+  isLoading: PropTypes.any,
+  leCurrentLiabilities: PropTypes.number,
   leCurrentLiabilitiesLabel: PropTypes.string,
+  leEquity: PropTypes.number,
   leEquityLabel: PropTypes.string,
-  asTradeDebtorsLabel: PropTypes.string
+  leadText: PropTypes.string,
+  numberTypeValidationMessage: PropTypes.string,
+  onValidated: PropTypes.any,
+  siNetIncome: PropTypes.number,
+  siNetIncomeHelpText: PropTypes.string,
+  siNetIncomeLabel: PropTypes.string,
+  siTotalOperatingRevenue: PropTypes.number,
+  siTotalOperatingRevenueHelpText: PropTypes.string,
+  siTotalOperatingRevenueLabel: PropTypes.string
 }
 
 ProvideAdditionalInfo.defaultProps = {
-  headingText: "Legg til info",
-  leadText: "Vi trenger litt mer info",
-  siNetIncome: 0,
-  siTotalOperatingRevenue: 0,
-  asInventories: 0,
   asBankDepositsCashInHandEtc: 0,
-  asCurrentAssets: 0,
-  asTotalAssets: 0,
-  leCurrentLiabilities: 0,
-  leEquity: 0,
-  asTradeDebtors: 0,
-  siNetIncomeLabel: "Årsresultat",
-  siNetIncomeHelpText: "Driftsresultatet minus renter og skatter.",
-  siTotalOperatingRevenueLabel: "Sum driftsinntekter",
-  siTotalOperatingRevenueHelpText: "Salgs- og driftsinntekter.",
-  asInventoriesLabel: "Sum varelager",
   asBankDepositsCashInHandEtcLabel: "Sum Kasse/Bank/Post",
-  asCurrentAssetsLabel: "Sum omløpsmidler",
+  asCurrentAssets: 0,
   asCurrentAssetsHelpText:
     "Virksomhetens kortsiktige eiendeler som varelager, betalingsmidler og verdipapirer.",
+  asCurrentAssetsLabel: "Sum omløpsmidler",
+  asInventories: 0,
+  asInventoriesLabel: "Sum varelager",
+  asTotalAssets: 0,
   asTotalAssetsLabel: "Sum eiedeler",
+  asTradeDebtors: 0,
+  asTradeDebtorsLabel: "Sum kundefordringer",
+  headingText: "Legg til info",
+  leCurrentLiabilities: 0,
   leCurrentLiabilitiesLabel: "Sum kortsiktig gjeld",
+  leEquity: 0,
   leEquityLabel: "Sum egenkapital",
-  asTradeDebtorsLabel: "Sum kundefordringer"
+  leadText: "Vi trenger litt mer info",
+  numberTypeValidationMessage: "Feltet må være et tall",
+  siNetIncome: 0,
+  siNetIncomeHelpText: "Driftsresultatet minus renter og skatter.",
+  siNetIncomeLabel: "Årsresultat",
+  siTotalOperatingRevenue: 0,
+  siTotalOperatingRevenueHelpText: "Salgs- og driftsinntekter.",
+  siTotalOperatingRevenueLabel: "Sum driftsinntekter"
 }
 
 export default ProvideAdditionalInfo
