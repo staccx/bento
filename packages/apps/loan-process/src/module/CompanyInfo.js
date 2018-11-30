@@ -47,7 +47,7 @@ class CompanyInfo extends React.Component {
         initialValues={{
           company: null,
           purpose: null,
-          repaymentMethod: null,
+          paymentCash: this.props.paymentCash[0],
           paymentsInternational: null
         }}
         validationSchema={this.state.validateSchema}
@@ -169,6 +169,7 @@ class CompanyInfo extends React.Component {
                                         onChange={() =>
                                           change({ isOpen: false })
                                         }
+                                        defaultChecked
                                         group="cash"
                                         value="no"
                                       >
@@ -179,6 +180,7 @@ class CompanyInfo extends React.Component {
                                       <Select
                                         items={this.props.paymentCash}
                                         label={this.props.paymentCashLabel}
+                                        initialSelectedItem={values.paymentCash}
                                         placeHolderLabel={
                                           this.props.paymentCashPlaceholder
                                         }
@@ -201,9 +203,9 @@ class CompanyInfo extends React.Component {
                           )
                         }}
                       />
-                      {touched.repaymentMethod && errors.repaymentMethod && (
+                      {touched.paymentCash && errors.paymentCash && (
                         <Alert variant="error" type="warning">
-                          {errors.repaymentMethod}
+                          {errors.paymentCash}
                         </Alert>
                       )}
                     </LayoutItem>
