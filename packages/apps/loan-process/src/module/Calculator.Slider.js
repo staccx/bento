@@ -74,8 +74,13 @@ class CalculatorSlider extends React.Component {
             max={max}
             step={this.state.step}
             defaultValue={this.state.sliderSum}
-            onUpdate={value => this.onSliderChange(value)}
-            onSlideStart={value => this.onSlideStart(value)}
+            onUpdate={this.onSliderChange}
+            onSlideStart={this.onSlideStart}
+            onKeyDown={keycode => {
+              if (keycode >= 37 && keycode <= 40) {
+                this.onSlideStart()
+              }
+            }}
             variant={["calculatorSlider", theming.VARIANT_DEFAULT]}
           />
         </Layout>
