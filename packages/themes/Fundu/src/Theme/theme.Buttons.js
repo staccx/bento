@@ -177,7 +177,11 @@ export const ButtonStyling = theming.createVariants(
     spaceAbove: css`
       margin-top: ${theming.spacing.large};
     `,
-    endScreen: subtleButton
+    endScreen: subtleButton,
+    notification: css`
+      ${subtleButton};
+      z-index: 900;
+    `
   },
   Button.themeProps.button
 )
