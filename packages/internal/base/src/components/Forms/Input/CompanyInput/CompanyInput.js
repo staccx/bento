@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
+import debounce from "lodash.debounce"
 import Combobox from "../../Combobox/Combobox"
 import Flag from "../../../Layout/Flag/Flag"
 import Label from "../../Label/Label"
@@ -27,11 +28,14 @@ class CompanyInput extends React.PureComponent {
     this.scheduleSearch = this.scheduleSearch.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSelect = this.handleSelect.bind(this)
+
+    const search = debounce(this.scheduleSearch, 200)
     this.state = {
       autoComplete: [],
       searchText: "",
       selected: null,
-      isLoading: false
+      isLoading: false,
+      search
     }
   }
 
@@ -47,7 +51,6 @@ class CompanyInput extends React.PureComponent {
   }
 
   scheduleSearch(companyName) {
-    clearTimeout(this.timeout)
     this.setState({ searchText: companyName })
     if (!companyName || companyName.length < 2) {
       this.setState({ autoComplete: [], isLoading: false })
@@ -55,35 +58,33 @@ class CompanyInput extends React.PureComponent {
     }
 
     this.setState({ isLoading: true })
-    this.timeout = setTimeout(() => {
-      const filter = `startswith(navn,'${companyName}')`
+    const filter = `startswith(navn,'${companyName}')`
 
-      const search = this.props.onSearch
-        ? this.props.onSearch
-        : () =>
-            window
-              .fetch(
-                `https://data.brreg.no/enhetsregisteret/enhet.json?page=${0}&size=${5}&$filter=${filter}`
-              )
-              .then(result => result.json())
-              .then(json => json.data)
+    const search = this.props.onSearch
+      ? this.props.onSearch
+      : () =>
+          window
+            .fetch(
+              `https://data.brreg.no/enhetsregisteret/enhet.json?page=${0}&size=${5}&$filter=${filter}`
+            )
+            .then(result => result.json())
+            .then(json => json.data)
 
-      search(companyName)
-        .then(companies => {
-          this.setState({
-            autoComplete: companies,
-            isLoading: false
-          })
+    search(companyName)
+      .then(companies => {
+        this.setState({
+          autoComplete: companies,
+          isLoading: false
         })
-        .catch(() => this.setState({ autoComplete: [], isLoading: false }))
-    }, this.props.searchTimeout)
+      })
+      .catch(() => this.setState({ autoComplete: [], isLoading: false }))
   }
 
   handleChange(value) {
     if (this.props.onChange) {
       this.props.onChange(value)
     }
-    this.scheduleSearch(value)
+    this.state.search(value)
   }
 
   handleSelect(selected) {
