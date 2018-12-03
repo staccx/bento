@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.28.0"></a>
+# [8.28.0](https://bitbucket.org/stacc-flow/bento/compare/v8.27.0...v8.28.0) (2018-12-03)
+
+
+### Bug Fixes
+
+* **i18n:** fix children not overriding actual value ([6498669](https://bitbucket.org/stacc-flow/bento/commits/6498669))
+
+
+### Features
+
+* **fundu-theme:** add style for notification button ([2af71fd](https://bitbucket.org/stacc-flow/bento/commits/2af71fd))
+
+
+
+
+
 <a name="8.27.0"></a>
 # [8.27.0](https://bitbucket.org/stacc-flow/bento/compare/v8.26.0...v8.27.0) (2018-11-30)
 
