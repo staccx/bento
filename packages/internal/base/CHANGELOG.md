@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.29.0"></a>
+# [8.29.0](https://bitbucket.org/stacc-flow/bento/compare/v8.28.0...v8.29.0) (2018-12-03)
+
+
+### Features
+
+* **base:** add debouncing to CompanyInput ([8ae8da4](https://bitbucket.org/stacc-flow/bento/commits/8ae8da4))
+
+
+
+
+
 <a name="8.27.0"></a>
 # [8.27.0](https://bitbucket.org/stacc-flow/bento/compare/v8.26.0...v8.27.0) (2018-11-30)
 

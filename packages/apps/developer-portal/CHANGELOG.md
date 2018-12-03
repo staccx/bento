@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.29.0"></a>
+# [8.29.0](https://bitbucket.org/stacc-flow/bento/compare/v8.28.0...v8.29.0) (2018-12-03)
+
+**Note:** Version bump only for package @staccx/developer-portal
+
+
+
+
+
 <a name="8.28.0"></a>
 # [8.28.0](https://bitbucket.org/stacc-flow/bento/compare/v8.27.0...v8.28.0) (2018-12-03)
 
