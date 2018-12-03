@@ -36,16 +36,20 @@ class TranslatedText extends React.Component {
 
             return children(values)
           }
+
           const value = translate(i18nKey, data, fallback)
           if (!value) {
+            if (children) {
+              if (typeof children !== "function") {
+                return children // Fallback to children
+              }
+            }
             return null
           }
-
           if (children) {
-            if (typeof children !== "function") {
-              return children // Fallback to children
+            if (typeof children === "function") {
+              return children(value)
             }
-            return children(value)
           }
           return value
         }}
