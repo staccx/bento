@@ -50,7 +50,8 @@ import { WrapperStyling } from "./theme.Wrappers"
 import { RadioPillItemStyling } from "./theme.RadioPillItems"
 import {
   ProgressBarBgStyling,
-  ProgressBarBarStyling
+  ProgressBarBarStyling,
+  ProgressBarProgressStyling
 } from "./theme.ProgressBar"
 
 const borderRadius = "2px"
@@ -189,3 +190,4 @@ export default new theming.Theme({
   .add(RadioPillItemStyling)
   .add(ProgressBarBgStyling)
   .add(ProgressBarBarStyling)
+  .add(ProgressBarProgressStyling)

@@ -42,12 +42,8 @@ export const defaultButton = css`
 
 export const ButtonStyling = theming.createVariants(
   {
-    [theming.VARIANT_DEFAULT]: css`
-      ${defaultButton};
-    `,
-    primary: css`
-      ${defaultButton};
-    `,
+    [theming.VARIANT_DEFAULT]: defaultButton,
+    primary: defaultButton,
     forward: css`
       ${defaultButton};
       margin-right: 36px;
@@ -82,6 +78,13 @@ export const ButtonStyling = theming.createVariants(
       &:hover::after,
       &:focus::after {
         opacity: 1;
+      }
+    `,
+    forwardNoMargin: css`
+      margin-right: 0;
+      &:hover,
+      &:focus {
+        margin-right: 0;
       }
     `,
     small: css`
@@ -173,9 +176,6 @@ export const ButtonStyling = theming.createVariants(
         color: ${theming.color.primary};
         text-decoration: underline;
       }
-    `,
-    spaceAbove: css`
-      margin-top: ${theming.spacing.large};
     `,
     endScreen: subtleButton,
     notification: css`
