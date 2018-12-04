@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.30.0"></a>
+# [8.30.0](https://bitbucket.org/stacc-flow/bento/compare/v8.29.0...v8.30.0) (2018-12-04)
+
+
+### Features
+
+* **loan-process:** exposed SignDocument as component to export ([1d911a6](https://bitbucket.org/stacc-flow/bento/commits/1d911a6))
+
+
+
+
+
 <a name="8.29.0"></a>
 # [8.29.0](https://bitbucket.org/stacc-flow/bento/compare/v8.28.0...v8.29.0) (2018-12-03)
 

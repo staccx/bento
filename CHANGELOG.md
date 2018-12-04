@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.30.0"></a>
+# [8.30.0](https://bitbucket.org/stacc-flow/bento/compare/v8.29.0...v8.30.0) (2018-12-04)
+
+
+### Features
+
+* **fundu-theme:** add default styling to rich text component ([374b0a8](https://bitbucket.org/stacc-flow/bento/commits/374b0a8))
+* **fundu-theme:** various styling progressbar and buttons ([c8d283d](https://bitbucket.org/stacc-flow/bento/commits/c8d283d))
+* **loan-process:** exposed SignDocument as component to export ([1d911a6](https://bitbucket.org/stacc-flow/bento/commits/1d911a6))
+
+
+
+
+
 <a name="8.29.0"></a>
 # [8.29.0](https://bitbucket.org/stacc-flow/bento/compare/v8.28.0...v8.29.0) (2018-12-03)
 
