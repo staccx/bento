@@ -3,6 +3,11 @@ import { Paragraph, theming } from "@staccx/base"
 
 export const ParagraphStyling = theming.createVariants(
   {
+    [theming.VARIANT_DEFAULT]: css`
+      font-size: ${theming.font.h4};
+      line-height: 1.7;
+      margin-bottom: ${theming.spacing.medium};
+    `,
     lead: css`
       font-size: ${theming.font.h5};
       text-align: center;
