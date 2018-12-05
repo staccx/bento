@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.31.0"></a>
+# [8.31.0](https://bitbucket.org/stacc-flow/bento/compare/v8.30.0...v8.31.0) (2018-12-05)
+
+
+### Features
+
+* **bank-in-a-box:** biab is now a public(private) package ([8fa6804](https://bitbucket.org/stacc-flow/bento/commits/8fa6804))
+
+
+
+
+
 <a name="8.30.0"></a>
 # [8.30.0](https://bitbucket.org/stacc-flow/bento/compare/v8.29.0...v8.30.0) (2018-12-04)
 
