@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
+import isEqual from "lodash.isequal"
 import { Provider } from "./context"
 import Api from "./services/api"
 import Auth from "./services/auth"
@@ -8,13 +9,11 @@ class OpenIdProvider extends Component {
   constructor(props, context) {
     super(props, context)
 
-    if (props.authService) {
-      this.authService = props.authService
-    } else {
-      this.authService = new Auth(props.oidcConfig, props.debug)
+    this.state = {
+      user: null,
+      api: {},
+      iFrameUrl: null
     }
-    this.apiService = new Api(props.apiRoot, this.authService)
-    this.state = { user: null, api: {}, iFrameUrl: null }
     this.shouldCancel = false
     this.callApi = this.callApi.bind(this)
     this.getUser = this.getUser.bind(this)
@@ -22,13 +21,31 @@ class OpenIdProvider extends Component {
     this.login = this.login.bind(this)
     this.logout = this.logout.bind(this)
     this.renewToken = this.renewToken.bind(this)
+    this.initialize = this.initialize.bind(this)
 
-    console.log("OIDCProvider constructed", props)
+    this.initialize()
   }
 
   componentDidMount() {
     this.getUser()
     this.createSigninRequest()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!isEqual(this.props.oidcConfig, prevProps.oidcConfig)) {
+      console.log("Not the same", this.props.oidcConfig, prevProps.oidcConfig)
+      this.initialize()
+      this.createSigninRequest()
+    }
+  }
+
+  initialize() {
+    if (this.props.authService) {
+      this.authService = this.props.authService
+    } else {
+      this.authService = new Auth(this.props.oidcConfig, this.props.debug)
+    }
+    this.apiService = new Api(this.props.apiRoot, this.authService)
   }
 
   login() {
