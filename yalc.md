@@ -12,7 +12,10 @@ combine this with a simple call to build
 and you have shortened the loop
 
 ### Link
-`yalc link <package-name>`
+`yalc link` 👈 in the package you want to link
+
+`yalc link <package-name>` 👈 in the package you want to use the package
+
 
 this links and will cause hot-reloading to rebuild if a linked package is linked
 
