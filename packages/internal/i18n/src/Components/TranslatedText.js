@@ -37,7 +37,14 @@ class TranslatedText extends React.Component {
             return children(values)
           }
 
-          const value = translate(i18nKey, data, fallback)
+          if (!i18nKey) {
+            console.warn("No i18nKey supplied to TranslatedText")
+            return children
+          }
+
+          const fb =
+            fallback || (typeof children !== "function" ? children : null)
+          const value = translate(i18nKey, data, fb)
           if (!value) {
             if (children) {
               if (typeof children !== "function") {
