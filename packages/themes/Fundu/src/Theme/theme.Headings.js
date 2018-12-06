@@ -26,6 +26,9 @@ const centeredHeading = css`
 
 export const HeadingStyling = theming.createVariants(
   {
+    bodyCopy: css`
+      text-align: left;
+    `,
     large: centeredHeading,
     stepHeading: centeredHeading,
     endScreen: centeredHeading,
