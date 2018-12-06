@@ -44,6 +44,9 @@ class Input extends React.Component {
         ...this.props.options,
         onValueChanged: this.props.onChange
       })
+      if (this.props.defaultValue) {
+        this.cleave.setRawValue(this.props.defaultValue)
+      }
     }
   }
 
