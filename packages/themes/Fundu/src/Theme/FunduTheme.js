@@ -53,6 +53,7 @@ import {
   ProgressBarBarStyling,
   ProgressBarProgressStyling
 } from "./theme.ProgressBar"
+import { FlagStyling } from "./theme.Flags"
 
 const borderRadius = "2px"
 const headerHeight = "70px"
@@ -191,3 +192,4 @@ export default new theming.Theme({
   .add(ProgressBarBgStyling)
   .add(ProgressBarBarStyling)
   .add(ProgressBarProgressStyling)
+  .add(FlagStyling)
