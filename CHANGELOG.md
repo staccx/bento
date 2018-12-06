@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.32.0"></a>
+# [8.32.0](https://bitbucket.org/stacc-flow/bento/compare/v8.31.0...v8.32.0) (2018-12-06)
+
+
+### Bug Fixes
+
+* **base:** fix defaultValue for cleave inputs ([a8aa524](https://bitbucket.org/stacc-flow/bento/commits/a8aa524))
+* **bento:** add link info to yalc docs ([a3ff0b5](https://bitbucket.org/stacc-flow/bento/commits/a3ff0b5))
+* **i18n:** fix children not rendering as fallback. fix early no key ([577d05f](https://bitbucket.org/stacc-flow/bento/commits/577d05f))
+
+
+### Features
+
+* **bento:** add yalc how to ([b763454](https://bitbucket.org/stacc-flow/bento/commits/b763454))
+* **fundu-theme:** add body copy variant for headings and lists ([64738e7](https://bitbucket.org/stacc-flow/bento/commits/64738e7))
+* **fundu-theme:** add flag styling ([f82797a](https://bitbucket.org/stacc-flow/bento/commits/f82797a))
+* **open-id:** change how usermanager is init. now can take new props ([981d09b](https://bitbucket.org/stacc-flow/bento/commits/981d09b))
+
+
+
+
+
 <a name="8.31.0"></a>
 # [8.31.0](https://bitbucket.org/stacc-flow/bento/compare/v8.30.0...v8.31.0) (2018-12-05)
 

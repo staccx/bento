@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.32.0"></a>
+# [8.32.0](https://bitbucket.org/stacc-flow/bento/compare/v8.31.0...v8.32.0) (2018-12-06)
+
+**Note:** Version bump only for package @staccx/styrke-theme
+
+
+
+
+
 <a name="8.29.0"></a>
 # [8.29.0](https://bitbucket.org/stacc-flow/bento/compare/v8.28.0...v8.29.0) (2018-12-03)
 

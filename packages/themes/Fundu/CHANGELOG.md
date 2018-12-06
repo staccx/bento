@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.32.0"></a>
+# [8.32.0](https://bitbucket.org/stacc-flow/bento/compare/v8.31.0...v8.32.0) (2018-12-06)
+
+
+### Features
+
+* **fundu-theme:** add body copy variant for headings and lists ([64738e7](https://bitbucket.org/stacc-flow/bento/commits/64738e7))
+* **fundu-theme:** add flag styling ([f82797a](https://bitbucket.org/stacc-flow/bento/commits/f82797a))
+
+
+
+
+
 <a name="8.30.0"></a>
 # [8.30.0](https://bitbucket.org/stacc-flow/bento/compare/v8.29.0...v8.30.0) (2018-12-04)
 

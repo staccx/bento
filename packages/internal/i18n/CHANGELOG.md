@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.32.0"></a>
+# [8.32.0](https://bitbucket.org/stacc-flow/bento/compare/v8.31.0...v8.32.0) (2018-12-06)
+
+
+### Bug Fixes
+
+* **i18n:** fix children not rendering as fallback. fix early no key ([577d05f](https://bitbucket.org/stacc-flow/bento/commits/577d05f))
+
+
+
+
+
 <a name="8.29.0"></a>
 # [8.29.0](https://bitbucket.org/stacc-flow/bento/compare/v8.28.0...v8.29.0) (2018-12-03)
 
