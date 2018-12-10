@@ -69,11 +69,13 @@ async function release(debug) {
   try {
     spinner.start("Checking git for changes")
     if (!debug) {
-      await fetch(process.cwd())
       await checkWorkingTree({ cwd: process.cwd() })
-      const { behind } = await status(process.cwd())
+      await fetch(process.cwd())
+      const { behind, ahead } = await status(process.cwd())
       if (behind > 0) {
-        spinner.fail("Remote changes. Please pull")
+        spinner.fail(
+          `You are behind by ${behind} and ahead by ${ahead}. Please pull`
+        )
         process.exit(1)
       }
     }
