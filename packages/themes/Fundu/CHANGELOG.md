@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.33.0"></a>
+# [8.33.0](https://bitbucket.org/stacc-flow/bento/compare/v8.32.0...v8.33.0) (2018-12-10)
+
+
+### Bug Fixes
+
+* **fundu-theme:** flag, article variant, fix margins for nested wrappers ([426c6a9](https://bitbucket.org/stacc-flow/bento/commits/426c6a9))
+
+
+### Features
+
+* **fundu-theme:** various adjustments to calculator ([1caec29](https://bitbucket.org/stacc-flow/bento/commits/1caec29))
+
+
+
+
+
 <a name="8.32.0"></a>
 # [8.32.0](https://bitbucket.org/stacc-flow/bento/compare/v8.31.0...v8.32.0) (2018-12-06)
 

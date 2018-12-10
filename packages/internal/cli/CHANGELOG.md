@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.33.0"></a>
+# [8.33.0](https://bitbucket.org/stacc-flow/bento/compare/v8.32.0...v8.33.0) (2018-12-10)
+
+
+### Bug Fixes
+
+* **cli:** better status ([bc465fc](https://bitbucket.org/stacc-flow/bento/commits/bc465fc))
+* **cli:** fix fetch not being done before checking status ([399feda](https://bitbucket.org/stacc-flow/bento/commits/399feda))
+
+
+### Features
+
+* **cli:** add check for remote changes ([b8ec4f5](https://bitbucket.org/stacc-flow/bento/commits/b8ec4f5))
+
+
+
+
+
 <a name="8.26.0"></a>
 # [8.26.0](https://bitbucket.org/stacc-flow/bento/compare/v8.25.0...v8.26.0) (2018-11-29)
 
