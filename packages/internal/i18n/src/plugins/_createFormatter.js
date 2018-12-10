@@ -15,10 +15,14 @@ const createFormatter = ({
   if (!match) {
     return value
   }
-  if (match.length > 1) {
-    const field = match[1]
-    if (data.hasOwnProperty(field)) {
-      return value.replace(regex, formatFunction(data[field], opts)) // TODO: format Currency
+  for (const m of match) {
+    const r = new RegExp(regex.source)
+    const mat = m.match(r)
+    if (mat.length > 1) {
+      const field = mat[1]
+      if (data.hasOwnProperty(field)) {
+        return value.replace(regex, formatFunction(data[field], opts)) // TODO: format Currency
+      }
     }
   }
 
