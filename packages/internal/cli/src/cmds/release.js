@@ -3,7 +3,7 @@ const ora = require("ora")
 const checkWorkingTree = require("@lerna/check-working-tree")
 const username = require("username")
 const { postMessage } = require("../../../mr-x")
-const hasRemoteChanges = require("../utils/hasRemoteChanges")
+const { fetch, status } = require("../utils/git")
 
 // TODO: Git state
 const ab2str = function(buf) {
@@ -69,8 +69,9 @@ async function release(debug) {
   try {
     spinner.start("Checking git for changes")
     if (!debug) {
+      await fetch(process.cwd())
       await checkWorkingTree({ cwd: process.cwd() })
-      const { behind } = await hasRemoteChanges(process.cwd())
+      const { behind } = await status(process.cwd())
       if (behind > 0) {
         spinner.fail("Remote changes. Please pull")
         process.exit(1)

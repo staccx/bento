@@ -12,4 +12,15 @@ async function status(workingDir) {
   return statusSummary
 }
 
-module.exports = status
+async function fetch(workingDir) {
+  try {
+    return await git(workingDir).fetch()
+  } catch (e) {
+    throw e
+  }
+}
+
+module.exports = {
+  status,
+  fetch
+}
