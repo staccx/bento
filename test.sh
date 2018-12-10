@@ -1,4 +1,5 @@
 #!/bin/bash
+#testcomment
 rm -f installdev.txt install.txt
 
 soypkg="/Users/torgeir/projects/bento/packages/internal/soy/package.json"
