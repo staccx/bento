@@ -3,7 +3,6 @@ import {
   Input,
   Label,
   Select,
-  RadioPillItem,
   SliderKeyboardInput,
   Slider2,
   Slider2Track,
@@ -20,7 +19,6 @@ export const InputStyling = theming.createVariants(
       &:hover,
       &:focus,
       &:active {
-        /* border-width: 2px; */
         box-shadow: 0 0 0 1px ${theming.color.primary};
       }
     `,
@@ -33,21 +31,22 @@ export const InputStyling = theming.createVariants(
       &:hover,
       &:focus {
         box-shadow: 0 0 0 2px ${theming.color("secondaryLight")};
+        background-color: ${theming.color.white};
       }
-      background-color: coral;
       background: linear-gradient(
         to right,
-        ${theming.color("green")} 0%,
-        ${theming.color("green")} ${p => p.percentage * 100}%,
+        ${theming.color("secondaryLight")} 0%,
+        ${theming.color("secondaryLight")} ${p => p.percentage * 100}%,
         transparent ${p => p.percentage * 100}%,
         transparent 100%
       );
-      border-color: ${theming.color("green")};
+      background-color: ${theming.color.white};
+      border-color: ${theming.color("secondaryLight")};
       border-width: 3px;
       font-size: ${theming.font.h1};
       min-height: 75px;
       line-height: 1;
-      padding-top: 10px;
+      padding-top: 10px 12px;
       text-align: center;
     `,
     inputClean: css`
@@ -185,64 +184,6 @@ export const SelectOptionsWrapperStyling = theming.createVariants(
   Select.themeProps.defaultOptionWrapper
 )
 
-export const SliderKeyboardWrapperStyling = theming.createVariants(
-  {
-    [theming.VARIANT_DEFAULT]: css`
-      margin: 0;
-
-      label {
-        display: block;
-        position: relative;
-        text-align: center;
-        top: auto;
-        left: auto;
-      }
-    `
-  },
-  SliderKeyboardInput.themeProps.wrapper
-)
-
-export const SliderInputStyling = theming.createVariants(
-  {
-    [theming.VARIANT_DEFAULT]: css`
-      input[type="text"] {
-        min-width: 240px;
-        max-width: 100%;
-        min-height: ${theming.targetSize.normal};
-        margin-bottom: 24px;
-        border-width: 0;
-        border-bottom: 1px dashed ${theming.color.line};
-        padding: ${theming.spacing.small} 0;
-        background-color: transparent;
-        text-align: center;
-        font-size: 40px;
-        outline: none;
-        -moz-appearance: textfield;
-
-        &::-webkit-inner-spin-button,
-        &::-webkit-outer-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
-
-        &:hover,
-        &:active,
-        &:focus,
-        &:-moz-ui-invalid,
-        &:invalid {
-          outline: none;
-          box-shadow: none;
-        }
-
-        &:disabled {
-          color: ${theming.color.text};
-        }
-      }
-    `
-  },
-  SliderKeyboardInput.themeProps.input
-)
-
 export const CompanyInputLoadFromStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
@@ -336,10 +277,67 @@ export const FileInputLabelStyling = theming.createVariants(
   FileInput.themeProps.label
 )
 
+export const SliderKeyboardWrapperStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      margin: 0;
+
+      label {
+        display: block;
+        position: relative;
+        text-align: center;
+        top: auto;
+        left: auto;
+      }
+    `
+  },
+  SliderKeyboardInput.themeProps.wrapper
+)
+
+export const SliderInputStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      input[type="text"] {
+        min-width: 240px;
+        max-width: 100%;
+        min-height: ${theming.targetSize.normal};
+        margin-bottom: 24px;
+        border-width: 0;
+        border-bottom: 1px dashed ${theming.color.line};
+        padding: ${theming.spacing.small};
+        background-color: ${theming.spacing.white};
+        text-align: center;
+        font-size: 40px;
+        outline: none;
+        -moz-appearance: textfield;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:-moz-ui-invalid,
+        &:invalid {
+          box-shadow: none;
+        }
+
+        &:disabled {
+          color: ${theming.color.text};
+        }
+      }
+    `
+  },
+  SliderKeyboardInput.themeProps.input
+)
+
 export const Slider2RailStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
-      background-color: ${theming.color.disabled};
+      background-color: ${theming.color.black}50;
       height: 8px;
       top: 2px;
     `
