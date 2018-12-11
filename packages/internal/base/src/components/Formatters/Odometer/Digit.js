@@ -55,8 +55,7 @@ Digit.propTypes = {
   speed: PropTypes.number.isRequired,
   size: PropTypes.number.isRequired,
   isAnimating: PropTypes.bool,
-  single: PropTypes.bool,
-  variant: PropTypes.string
+  single: PropTypes.bool
 }
 
 export default Digit
