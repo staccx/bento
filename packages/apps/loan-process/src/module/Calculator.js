@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
 import {
   theming,
   Box,
@@ -230,9 +231,7 @@ class Calculator extends React.Component {
                     >
                       {({ item }) => (
                         <React.Fragment>
-                          <td className={item.big ? "calc-line--big" : ""}>
-                            {item.label}
-                          </td>
+                          <StyledTD bigText={item.big}>{item.label}</StyledTD>
                           <td>
                             {item.renderOdometer ? (
                               <Odometer
@@ -344,6 +343,10 @@ class Calculator extends React.Component {
     )
   }
 }
+
+const StyledTD = styled.td`
+  font-size: ${p => p.bigText && "17px"};
+`
 
 export default Calculator
 
