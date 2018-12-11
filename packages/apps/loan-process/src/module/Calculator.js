@@ -230,7 +230,9 @@ class Calculator extends React.Component {
                     >
                       {({ item }) => (
                         <React.Fragment>
-                          <td>{item.label}</td>
+                          <td className={item.big ? "calc-line--big" : ""}>
+                            {item.label}
+                          </td>
                           <td>
                             {item.renderOdometer ? (
                               <Odometer
