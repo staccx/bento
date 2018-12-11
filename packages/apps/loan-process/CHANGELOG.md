@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.34.1"></a>
+## [8.34.1](https://bitbucket.org/stacc-flow/bento/compare/v8.34.0...v8.34.1) (2018-12-11)
+
+
+### Bug Fixes
+
+* **loan-process:** fix typo) ([ac0c8bd](https://bitbucket.org/stacc-flow/bento/commits/ac0c8bd))
+
+
+
+
+
 <a name="8.34.0"></a>
 # [8.34.0](https://bitbucket.org/stacc-flow/bento/compare/v8.33.0...v8.34.0) (2018-12-11)
 
