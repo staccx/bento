@@ -98,6 +98,25 @@ class Calculator extends React.Component {
       },
       {
         ...(term && {
+          ...(this.props.showMonthlyFees && {
+            label: this.props.monthlyFeesText,
+            value: term.monthlyFees,
+            renderOdometer: true
+          })
+        })
+      },
+      {
+        ...(term && {
+          ...(this.props.showMontlyInterest && {
+            label: this.props.monthlyInterestText,
+            value: term.interestAmount,
+            renderOdometer: true,
+            big: true
+          })
+        })
+      },
+      {
+        ...(term && {
           ...(this.props.showTotalMonthly && {
             label: this.props.totalMonthlyText,
             value: term.monthlyPayment,
@@ -214,7 +233,14 @@ class Calculator extends React.Component {
                           <td>{item.label}</td>
                           <td>
                             {item.renderOdometer ? (
-                              <Odometer number={item.value} size={14} />
+                              <Odometer
+                                variant={[
+                                  theming.VARIANT_DEFAULT,
+                                  "calculator"
+                                ]}
+                                number={item.value}
+                                size={item.big ? 28 : 14}
+                              />
                             ) : (
                               item.value
                             )}
@@ -330,6 +356,8 @@ Calculator.defaultProps = {
   interestRate: 12.9,
   interestRateText: "Rente",
   loanDurationLabel: "Nedbetalingstid",
+  monthlyInterestText: "Gjennomsnittlig månedlig rentekostnad",
+  monthlyFeesText: "Månedlig",
   maxValue: 1000000,
   minValue: 50000,
   priceExampleText:
@@ -337,10 +365,11 @@ Calculator.defaultProps = {
   productType: "PRODUCT_LOAN",
   showDownpayment: true,
   showInterestRate: true,
-  showMonthlyFees: true,
+  showMonthlyFees: false,
   showTotalMonthly: true,
   showExplanation: false,
   showTerms: false,
+  showMontlyInterest: false,
   startFee: 0,
   termFee: 3000,
   termValues: [6, 12, 18, 24, 36],
@@ -371,6 +400,7 @@ Calculator.propTypes = {
   interestRate: PropTypes.number,
   interestRateText: PropTypes.string,
   loanDurationLabel: PropTypes.string,
+  monthlyInterestText: PropTypes.string,
   maxValue: PropTypes.number,
   minValue: PropTypes.number,
   onClick: PropTypes.any,
@@ -380,9 +410,9 @@ Calculator.propTypes = {
   renderPriceExample: PropTypes.func,
   showDownpayment: PropTypes.bool,
   showInterestRate: PropTypes.bool,
-  showMonthlyFees: PropTypes.bool,
   showTotalMonthly: PropTypes.bool,
   showExplanation: PropTypes.bool,
+  showMontlyInterest: PropTypes.bool,
   showTerms: PropTypes.bool,
   startFee: PropTypes.any,
   termFee: PropTypes.number,

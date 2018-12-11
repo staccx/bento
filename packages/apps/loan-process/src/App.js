@@ -35,7 +35,12 @@ class Content extends Component {
           <hr style={{ margin: "64px 0" }} />
           <CompanyInfo onValidated={console.log} onClick={console.log} />
           <hr style={{ margin: "64px 0" }} />
-          <Calculator onValidated={console.log} showTerms termsDefault={12} />
+          <Calculator
+            onValidated={console.log}
+            showTerms
+            termsDefault={12}
+            showMontlyInterest
+          />
           <hr style={{ margin: "64px 0" }} />
           <Calculator
             onValidated={console.log}
