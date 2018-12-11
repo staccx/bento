@@ -107,7 +107,7 @@ class Calculator extends React.Component {
       },
       {
         ...(term && {
-          ...(this.props.showMontlyInterest && {
+          ...(this.props.showMonthlyInterest && {
             label: this.props.monthlyInterestText,
             value: term.interestAmount,
             renderOdometer: true,
@@ -369,7 +369,7 @@ Calculator.defaultProps = {
   showTotalMonthly: true,
   showExplanation: false,
   showTerms: false,
-  showMontlyInterest: false,
+  showMonthlyInterest: false,
   startFee: 0,
   termFee: 3000,
   termValues: [6, 12, 18, 24, 36],
@@ -412,7 +412,7 @@ Calculator.propTypes = {
   showInterestRate: PropTypes.bool,
   showTotalMonthly: PropTypes.bool,
   showExplanation: PropTypes.bool,
-  showMontlyInterest: PropTypes.bool,
+  showMonthlyInterest: PropTypes.bool,
   showTerms: PropTypes.bool,
   startFee: PropTypes.any,
   termFee: PropTypes.number,
