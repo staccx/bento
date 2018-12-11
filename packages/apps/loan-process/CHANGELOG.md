@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.34.0"></a>
+# [8.34.0](https://bitbucket.org/stacc-flow/bento/compare/v8.33.0...v8.34.0) (2018-12-11)
+
+
+### Features
+
+* **loan-process:** add monthly interest flag and render. + big ([1827787](https://bitbucket.org/stacc-flow/bento/commits/1827787))
+
+
+
+
+
 <a name="8.33.0"></a>
 # [8.33.0](https://bitbucket.org/stacc-flow/bento/compare/v8.32.0...v8.33.0) (2018-12-10)
 
