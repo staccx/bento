@@ -42,7 +42,7 @@ const Combobox = ({
             ...rest
           }) => {
             return (
-              <ComboWrapper {...getRootProps()}>
+              <ComboWrapper {...getRootProps({ refKey: "innerRef" })}>
                 {renderLabel && renderLabel(getLabelProps)}
                 {!selectedItem && renderInput(getInputProps)}
                 {selectedItem &&
@@ -69,7 +69,11 @@ const Combobox = ({
   )
 }
 
-const ComboWrapper = styled.div`
+const ComboWrapper = ({ innerRef, children }) => (
+  <Wrapper ref={innerRef}>{children}</Wrapper>
+)
+
+const Wrapper = styled.div`
   position: relative;
 `
 

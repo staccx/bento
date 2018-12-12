@@ -7,8 +7,7 @@ class Get extends React.Component {
 
     this.fetchData = this.fetchData.bind(this)
     this.state = {
-      data: null,
-      url: props.url
+      data: null
     }
     this.fetchData()
   }
@@ -18,7 +17,7 @@ class Get extends React.Component {
 
     const get = this.props.getFunction || window.fetch
 
-    get(this.state.url, this.props.options)
+    get(this.props.url, this.props.options)
       .then(this.props.mapData)
       .then(data => {
         if (this.props.hasChanged) {
@@ -30,39 +29,46 @@ class Get extends React.Component {
         }
 
         if (this.props.poll) {
-          this.timeout = setTimeout(
-            () => this.fetchData(),
-            this.props.pollingInterval
-          )
+          this.timeout = setTimeout(() => {
+            if (this.mounted) {
+              this.fetchData()
+            }
+          }, this.props.pollingInterval)
         }
       })
       .catch(error => {
         this.props.onFailed(error)
         if (this.props.poll || this.props.retryOnFail) {
-          this.timeout = setTimeout(
-            () => this.fetchData(),
-            this.props.pollingInterval
-          )
+          this.timeout = setTimeout(() => {
+            if (this.mounted) {
+              this.fetchData()
+            }
+          }, this.props.pollingInterval)
         }
       })
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.url !== this.props.url) {
+    if (this.props.stop && this.props.stop !== prevProps.stop) {
+      if (this.timeout) {
+        clearTimeout(this.timeout)
+        this.timeout = null
+      }
       // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ url: this.state.url }, this.fetchData)
+      this.setState({ data: null })
     }
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.url !== prevState.url) {
-      return { url: nextProps.url }
-    }
-
-    return null
+  componentDidMount() {
+    this.mounted = true
   }
+
   componentWillUnmount() {
-    clearTimeout(this.timeout)
+    if (this.timeout) {
+      clearTimeout(this.timeout)
+      this.timeout = null
+    }
+    this.mounted = false
   }
 
   render() {

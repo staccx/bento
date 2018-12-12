@@ -153,7 +153,7 @@ class CompanyInput extends React.PureComponent {
         }}
       >
         {({ result, getItemProps, selectedItem, highlightedIndex }) => (
-          <SelectWrapper>
+          <SelectWrapper ref={"innerRef"}>
             <SelectList>
               {result.map((item, index) => {
                 const mappedItem = mapItem(item)
