@@ -18,7 +18,11 @@ import { default as flattenGlobals } from "./utils/flattenGlobals"
 // Theme class
 import Theme from "./Theme"
 
-import { commonPropTypes, VARIANT_DEFAULT } from "../constants/themeContants"
+import {
+  commonPropTypes,
+  VARIANT_DEFAULT,
+  themePropTypes
+} from "../constants/themeContants"
 
 // Styles
 import cssResets from "./styles/cssResets"
@@ -33,6 +37,7 @@ export {
   borderRadius,
   color,
   commonPropTypes,
+  themePropTypes,
   flattenGlobals,
   font,
   fontFamily,
