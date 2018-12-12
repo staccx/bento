@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.35.0"></a>
+# [8.35.0](https://bitbucket.org/stacc-flow/bento/compare/v8.34.1...v8.35.0) (2018-12-12)
+
+
+### Bug Fixes
+
+* **loan-process:** move localforage to devDeps ([15b93b7](https://bitbucket.org/stacc-flow/bento/commits/15b93b7))
+
+
+### Features
+
+* **loan-process:** big text with prop controlled styled component ([cad7cb0](https://bitbucket.org/stacc-flow/bento/commits/cad7cb0))
+* **loan-process:** test adding className to big item in calculator ([f0638ce](https://bitbucket.org/stacc-flow/bento/commits/f0638ce))
+
+
+
+
+
 <a name="8.34.1"></a>
 ## [8.34.1](https://bitbucket.org/stacc-flow/bento/compare/v8.34.0...v8.34.1) (2018-12-11)
 

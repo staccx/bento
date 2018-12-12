@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.35.0"></a>
+# [8.35.0](https://bitbucket.org/stacc-flow/bento/compare/v8.34.1...v8.35.0) (2018-12-12)
+
+
+### Features
+
+* **cli:** add clean command ([364e96e](https://bitbucket.org/stacc-flow/bento/commits/364e96e))
+
+
+
+
+
 <a name="8.33.0"></a>
 # [8.33.0](https://bitbucket.org/stacc-flow/bento/compare/v8.32.0...v8.33.0) (2018-12-10)
 
