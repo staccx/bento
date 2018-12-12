@@ -9,6 +9,7 @@ const convertTranslations = require("./utils/convertTranslations")
 const saveToJson = require("./utils/saveToJson")
 const walk = require("./utils/walk")
 const release = require("./cmds/release")
+const clean = require("./cmds/clean")
 const { version } = require("../package.json")
 
 program.version(version).description("Command line tool for Stacc X")
@@ -69,6 +70,15 @@ program
   .option("-d, --debug", "Run without running commands")
   .action(({ debug = false }) => {
     release(debug)
+  })
+
+program
+  .command("clean")
+  .alias("c")
+  .description("Removes all dependencies in monorepo and reinstalls them")
+  .option("-d, --debug", "Run without running commands")
+  .action(({ debug = false }) => {
+    clean(debug)
   })
 
 program.parse(process.argv)

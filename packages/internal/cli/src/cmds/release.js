@@ -1,60 +1,9 @@
-const spawn = require("child_process").spawn
 const ora = require("ora")
 const checkWorkingTree = require("@lerna/check-working-tree")
 const username = require("username")
+const { executeAsync } = require("./__helpers")
 const { postMessage } = require("../../../mr-x")
 const { fetch, status } = require("../utils/git")
-
-// TODO: Git state
-const ab2str = function(buf) {
-  return String.fromCharCode.apply(null, new Uint16Array(buf))
-}
-
-const executeAsync = function(cmd, params, onLog, onErr) {
-  return new Promise(function(resolve, reject) {
-    execute(cmd, params, onLog, onErr, resolve, reject)
-  })
-}
-
-const execute = function(
-  cmd,
-  params,
-  onStdOut = function() {
-    return null
-  },
-  onStdErr = function() {
-    return null
-  },
-  onExit = function() {
-    return null
-  },
-  onError = function() {
-    return null
-  }
-) {
-  const env = Object.assign({}, process.env, {
-    FORCE_COLOR: 1,
-    NPM_CONFIG_COLOR: "always"
-  })
-
-  const child = spawn(cmd, params, {
-    shell: true,
-    env,
-    stdio: [null, null, null, "ipc"],
-    detached: true
-  })
-
-  child.stdout.on("data", function(data) {
-    onStdOut(ab2str(data))
-  })
-  child.stderr.on("data", function(data) {
-    onStdErr(ab2str(data))
-  })
-  child.on("close", onExit)
-  child.on("error", onError)
-
-  return child
-}
 
 let updated = []
 const onData = data => {
@@ -88,7 +37,7 @@ async function release(debug) {
   let text = ""
   try {
     spinner.start("Finding changed packages")
-    await executeAsync("lerna", ["changed", "--json"], onData)
+    await executeAsync("lerna", ["changed", "--json"], {}, onData)
     packageNames = updated.map(m => m.name.replace("@staccx/", ""))
 
     const chosen = packageNames.slice(0, 4)
@@ -166,7 +115,12 @@ async function release(debug) {
         "--yes"
       ])
 
-      await executeAsync("lerna", ["ls", `--scope`, scope, "--json"], onData)
+      await executeAsync(
+        "lerna",
+        ["ls", `--scope`, scope, "--json"],
+        {},
+        onData
+      )
       text = updated.map(pkg => `${pkg.name}: ${pkg.version}`).join("\n")
     }
     spinner.succeed("Packages released!")
