@@ -14,5 +14,5 @@ const ArrayField = (...props) => {
 
 export default {
   TitleField: CustomTitleField,
-  DescriptionField: CustomDescriptionField,
+  DescriptionField: CustomDescriptionField
 }
