@@ -1,13 +1,13 @@
 {
   "name": "@staccx/json-schema",
-  "version": "8.34.1",
+  "version": "8.36.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/base": "^8.34.1"
+    "@staccx/base": "^8.36.0"
   },
   "scripts": {
     "build": "yarn prettify && rollup -c",
