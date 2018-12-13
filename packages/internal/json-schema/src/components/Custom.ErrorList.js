@@ -9,7 +9,6 @@ export default props => {
         <Heading level={3}>Errors</Heading>
         <List>
           {errors.map((error, i) => {
-            console.log(error)
             return (
               <ExpandListItem
                 key={i}

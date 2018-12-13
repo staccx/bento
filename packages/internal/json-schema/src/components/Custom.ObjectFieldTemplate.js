@@ -1,5 +1,5 @@
 import React from "react"
-import { Wrapper } from "@staccx/base"
+import { Wrapper, Layout } from "@staccx/base"
 
 const CustomObjectFieldTemplate = ({
   TitleField,
@@ -11,10 +11,17 @@ const CustomObjectFieldTemplate = ({
     <Wrapper>
       <TitleField title={title} />
       <Wrapper size={"small"}>
-        {properties.map(prop => (
-          <React.Fragment key={prop.content.key}>{prop.content}</React.Fragment>
-        ))}
-        {description}
+        <Layout rowGap={"small"}>
+          {properties.map(prop => {
+            console.log(prop.content)
+            return (
+              <React.Fragment key={prop.content.key}>
+                {prop.content}
+              </React.Fragment>
+            )
+          })}
+          {description}
+        </Layout>
       </Wrapper>
     </Wrapper>
   )

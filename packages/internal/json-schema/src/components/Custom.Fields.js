@@ -1,5 +1,5 @@
 import React from "react"
-import { Label, Heading, Button } from "@staccx/base"
+import { Label, Heading, Alert } from "@staccx/base"
 
 const CustomTitleField = ({ title, required }) => {
   return title ? <Heading>{title}</Heading> : null
@@ -7,12 +7,13 @@ const CustomTitleField = ({ title, required }) => {
 const CustomDescriptionField = ({ id, description }) => {
   return description ? <Label id={id}>{description}</Label> : null
 }
-const ArrayField = (...props) => {
-  console.log(props)
-  return <Button>test</Button>
-}
+
+const LatLngField = props => (
+  <Alert>Her kan vi rendre en custom component for custom fields. </Alert>
+)
 
 export default {
   TitleField: CustomTitleField,
-  DescriptionField: CustomDescriptionField
+  DescriptionField: CustomDescriptionField,
+  geo: LatLngField
 }

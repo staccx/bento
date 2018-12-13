@@ -2,7 +2,7 @@ import Form from "react-jsonschema-form"
 import React from "react"
 import styled from "styled-components"
 import { Button, theming } from "@staccx/base"
-import CustomArrayFieldTemplate from "./Custom.ArrayFieldTemplate"
+import ArrayField from "./Custom.Fields.Array"
 import CustomObjectFieldTemplate from "./Custom.ObjectFieldTemplate"
 import CustomFieldTemplate from "./Custom.FieldTemplate"
 import ErrorList from "./Custom.ErrorList"
@@ -19,7 +19,7 @@ const Schema = ({ schema, uiSchema, onSubmit, onError, onChange }) => {
       onChange={onChange}
       onSubmit={onSubmit}
       onError={onError}
-      ArrayFieldTemplate={CustomArrayFieldTemplate}
+      ArrayFieldTemplate={ArrayField}
       ObjectFieldTemplate={CustomObjectFieldTemplate}
       FieldTemplate={CustomFieldTemplate}
       ErrorList={ErrorList}
