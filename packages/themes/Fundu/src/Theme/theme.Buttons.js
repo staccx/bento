@@ -43,7 +43,7 @@ export const defaultButton = css`
 export const bounce = keyframes`
   0% {
     /* 0% */
-    transform: scale(1);
+    transform: scale(0);
   }
   22.85714% {
     /* 80% */
@@ -227,7 +227,7 @@ export const ButtonStyling = theming.createVariants(
       }
     `,
     bounce: css`
-      animation: ${bounce} 7s linear 1 2s;
+      animation: ${bounce} 2s linear 1;
       transform-origin: 50% 50%;
     `
   },
