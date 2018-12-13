@@ -39,7 +39,7 @@ const Select2 = ({
         ...rest
       }) => {
         return (
-          <Combo {...getRootProps({ refKey: "innerRef" })}>
+          <SWrapper {...getRootProps({ refKey: "innerRef" })}>
             {renderLabel && renderLabel(getLabelProps)}
             {selectedItem
               ? renderSelected(selectedItem, getToggleButtonProps, {
@@ -60,14 +60,20 @@ const Select2 = ({
                   toggleMenu
                 })
               : null}
-          </Combo>
+          </SWrapper>
         )
       }}
     </Downshift>
   )
 }
 
-const Combo = styled.div`
+const SWrapper = ({ innerRef, children, ...rest }) => (
+  <Wrapper ref={innerRef} {...rest}>
+    {children}
+  </Wrapper>
+)
+
+const Wrapper = styled.div`
   position: relative;
 `
 

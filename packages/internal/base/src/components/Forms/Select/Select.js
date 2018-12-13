@@ -16,7 +16,6 @@ import {
   borderRadius
 } from "../../../theming"
 import themeProps from "./Select.themeProps"
-import CompanyInput from "../Input/CompanyInput/CompanyInput"
 
 const CaretComp = ({ ...props }) => (
   <ThemeComponent
@@ -170,51 +169,41 @@ class Select extends React.PureComponent {
           highlightedIndex,
           toggleMenu
         }) => (
-          <SWrapper>
-            <DefaultOptionElementWrapper>
-              {options
-                .filter(item => (selectedItem ? item : this.filterItem(item)))
-                .slice(
-                  0,
-                  this.props.maxItems === -1
-                    ? this.props.items.length
-                    : this.props.maxItems
+          <DefaultOptionElementWrapper onClick={console.log}>
+            {options
+              .filter(item => (selectedItem ? item : this.filterItem(item)))
+              .slice(
+                0,
+                this.props.maxItems === -1
+                  ? this.props.items.length
+                  : this.props.maxItems
+              )
+              .map((item, index) => {
+                if (this.props.children) {
+                  return this.props.children({
+                    item,
+                    getItemProps,
+                    highlighted: highlightedIndex === index,
+                    selected: selectedItem === item,
+                    reset: toggleMenu
+                  })
+                }
+                return (
+                  <SelectItem
+                    key={this.props.itemToKey(item)}
+                    isSelected={highlightedIndex === index}
+                    {...getItemProps({ item })}
+                  >
+                    {toString(item)}
+                  </SelectItem>
                 )
-                .map((item, index) => {
-                  if (this.props.children) {
-                    return this.props.children({
-                      item,
-                      getItemProps,
-                      highlighted: highlightedIndex === index,
-                      selected: selectedItem === item,
-                      reset: toggleMenu
-                    })
-                  }
-                  return (
-                    <SelectItem
-                      {...getItemProps({ item })}
-                      key={this.props.itemToKey(item)}
-                      isSelected={highlightedIndex === index}
-                    >
-                      {toString(item)}
-                    </SelectItem>
-                  )
-                })}
-            </DefaultOptionElementWrapper>
-          </SWrapper>
+              })}
+          </DefaultOptionElementWrapper>
         )}
       </Select2>
     )
   }
 }
-
-const SWrapper = ({ innerRef, children }) => (
-  <Wrapper ref={innerRef}>{children}</Wrapper>
-)
-
-const Wrapper = styled.div`
-  position: relative;
-`
 
 const SelectItem = styled.li`
   list-style: none;
@@ -226,7 +215,6 @@ const SelectItem = styled.li`
   &:first-child {
     border-top: 1px solid ${color.line};
   }
-  ${applyVariants(CompanyInput.themeProps.selectItem)};
 `
 
 export const DefaultOptionElementWrapper = styled.ul`
@@ -234,6 +222,7 @@ export const DefaultOptionElementWrapper = styled.ul`
   max-height: 300px;
   overflow: auto;
   width: 100%;
+  cursor: pointer;
   list-style-type: none;
   padding: 0;
   margin: 0;
