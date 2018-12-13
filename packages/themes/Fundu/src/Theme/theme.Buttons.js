@@ -1,4 +1,4 @@
-import { css } from "styled-components"
+import { css, keyframes } from "styled-components"
 import { Button, theming } from "@staccx/base"
 
 const subtleButton = css`
@@ -37,6 +37,36 @@ export const defaultButton = css`
     &:focus {
       padding-right: ${theming.spacing.medium};
     }
+  }
+`
+
+export const bounce = keyframes`
+  0% {
+    /* 0% */
+    transform: scale(1);
+  }
+  22.85714% {
+    /* 80% */
+    transform: scale(1.2);
+  }
+  24.28571% {
+    /* 85% */
+    transform: scale(0.85);
+  }
+  25.71429% {
+    /* 90% */
+    transform: scale(1.1);
+  }
+  27.14286% {
+    /* 95% */
+    transform: scale(0.95);
+  }
+  28.57143% {
+    /* 100% */
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
   }
 `
 
@@ -181,6 +211,24 @@ export const ButtonStyling = theming.createVariants(
     notification: css`
       ${subtleButton};
       z-index: 900;
+      background-color: #fff;
+      color: #32a873;
+      border: 2px solid #32a873;
+      border-radius: 22px;
+      padding: 0 24px;
+      min-height: 0;
+      line-height: 40px;
+
+      &:focus,
+      &:hover {
+        background-color: #32a873;
+        color: #fff;
+        border-color: #32a873;
+      }
+    `,
+    bounce: css`
+      animation: ${bounce} 7s linear 1 2s;
+      transform-origin: 50% 50%;
     `
   },
   Button.themeProps.button
