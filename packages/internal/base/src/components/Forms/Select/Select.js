@@ -16,6 +16,7 @@ import {
   borderRadius
 } from "../../../theming"
 import themeProps from "./Select.themeProps"
+import CompanyInput from "../Input/CompanyInput/CompanyInput"
 
 const CaretComp = ({ ...props }) => (
   <ThemeComponent
@@ -74,7 +75,6 @@ class Select extends React.PureComponent {
       initialSelectedItem
     } = this.props
 
-    const OptionsWrapper = this.props.OptionsWrapper
     const Option = this.props.Option
     const Selected = this.props.Selected || Option
 
@@ -170,43 +170,64 @@ class Select extends React.PureComponent {
           highlightedIndex,
           toggleMenu
         }) => (
-          <OptionsWrapper variant={variant}>
-            {options
-              .filter(item => (selectedItem ? item : this.filterItem(item)))
-              .slice(
-                0,
-                this.props.maxItems === -1
-                  ? this.props.items.length
-                  : this.props.maxItems
-              )
-              .map((item, index) => {
-                if (this.props.children) {
-                  return this.props.children({
-                    item,
-                    getItemProps,
-                    highlighted: highlightedIndex === index,
-                    selected: selectedItem === item,
-                    reset: toggleMenu
-                  })
-                }
-                return (
-                  <li key={this.props.itemToKey(item)}>
-                    <Option
-                      data={item}
-                      variant={variant}
-                      {...getItemProps({ item })}
-                    >
-                      <strong>{toString(item)}</strong>
-                    </Option>
-                  </li>
+          <SWrapper>
+            <DefaultOptionElementWrapper>
+              {options
+                .filter(item => (selectedItem ? item : this.filterItem(item)))
+                .slice(
+                  0,
+                  this.props.maxItems === -1
+                    ? this.props.items.length
+                    : this.props.maxItems
                 )
-              })}
-          </OptionsWrapper>
+                .map((item, index) => {
+                  if (this.props.children) {
+                    return this.props.children({
+                      item,
+                      getItemProps,
+                      highlighted: highlightedIndex === index,
+                      selected: selectedItem === item,
+                      reset: toggleMenu
+                    })
+                  }
+                  return (
+                    <SelectItem
+                      {...getItemProps({ item })}
+                      key={this.props.itemToKey(item)}
+                      isSelected={highlightedIndex === index}
+                    >
+                      {toString(item)}
+                    </SelectItem>
+                  )
+                })}
+            </DefaultOptionElementWrapper>
+          </SWrapper>
         )}
       </Select2>
     )
   }
 }
+
+const SWrapper = ({ innerRef, children }) => (
+  <Wrapper ref={innerRef}>{children}</Wrapper>
+)
+
+const Wrapper = styled.div`
+  position: relative;
+`
+
+const SelectItem = styled.li`
+  list-style: none;
+  padding: ${spacing.small} ${spacing.medium};
+  background-color: ${p => (p.isSelected ? color.primary : "transparent")};
+  color: ${p => (p.isSelected ? color.white : color.black)};
+  border-bottom: 1px solid ${color.line};
+
+  &:first-child {
+    border-top: 1px solid ${color.line};
+  }
+  ${applyVariants(CompanyInput.themeProps.selectItem)};
+`
 
 export const DefaultOptionElementWrapper = styled.ul`
   position: absolute;
