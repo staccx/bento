@@ -712,7 +712,8 @@ export const conditional = {
                     enum: ["Yes: One"]
                   },
                   "How old is your pet?": {
-                    type: "number"
+                    type: "number",
+                    default: 10
                   }
                 },
                 required: ["How old is your pet?"]
@@ -723,7 +724,8 @@ export const conditional = {
                     enum: ["Yes: More than one"]
                   },
                   "Do you want to get rid of any?": {
-                    type: "boolean"
+                    type: "boolean",
+                    default: true
                   }
                 },
                 required: ["Do you want to get rid of any?"]

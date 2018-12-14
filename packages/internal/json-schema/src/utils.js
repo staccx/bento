@@ -149,7 +149,6 @@ function computeDefaults(schema, parentDefaults, definitions = {}) {
         )
         return acc
       }, {})
-
     case "array":
       if (schema.minItems) {
         if (!isMultiSelect(schema, definitions)) {
@@ -169,6 +168,9 @@ function computeDefaults(schema, parentDefaults, definitions = {}) {
           return []
         }
       }
+      break
+    default:
+      break
   }
   return defaults
 }
@@ -583,6 +585,7 @@ function withExactlyOneSubschema(
       const { errors } = validateFormData(formData, conditionSchema)
       return errors.length === 0
     }
+    return false
   })
   if (validSubschemas.length !== 1) {
     console.warn(

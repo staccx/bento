@@ -18,7 +18,7 @@ const Schema = ({ schema, uiSchema, onSubmit, onError, onChange }) => {
       fields={CustomFields}
       uiSchema={uiSchema}
       onChange={onChange}
-      onSubmit={onSubmit}
+      onSubmit={({ formData }) => onSubmit(formData)}
       onError={onError}
       SchemaFieldTemplate={SchemaField}
       ArrayFieldTemplate={ArrayField}

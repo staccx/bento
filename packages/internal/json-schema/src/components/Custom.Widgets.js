@@ -1,6 +1,7 @@
 import React from "react"
 import { Input, CheckBox, PhoneInput } from "@staccx/base"
 import SelectWidget from "./Custom.Widgets.Select"
+import RadioWidget from "./Custom.Widgets.Radio"
 
 const InputWidget = ({
   onChange,
@@ -12,6 +13,7 @@ const InputWidget = ({
   value,
   readonly,
   options,
+  schema: sch,
   ...rest
 }) => (
   <Input
@@ -20,7 +22,7 @@ const InputWidget = ({
     placeholder={placeholder}
     helpText={schema.description}
     required={required}
-    defaultValue={value}
+    defaultValue={sch.default}
     onChange={e => onChange(e.target.value)}
     readOnly={readonly}
     {...rest}
@@ -84,6 +86,6 @@ export default {
   phone: PhoneWidget,
   email: InputWidget,
   geo: () => <div>test</div>,
-  radio: () => <div>radio</div>,
-  SelectWidget
+  SelectWidget,
+  RadioWidget
 }

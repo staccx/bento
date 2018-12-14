@@ -13,7 +13,7 @@ const IconButton = ({ icon, ...rest }) => (
   </Button>
 )
 
-const AddButton = props => <Button {...props}>{props.icon}</Button>
+const AddButton = props => <Button {...props} />
 
 const ArrayFieldTitle = ({ TitleField, idSchema, title, required }) => {
   if (!title) {
@@ -63,7 +63,7 @@ const defaultArrayItem = props => {
 
             {props.hasRemove && (
               <AddButton
-                icon="-"
+                children="-"
                 tabIndex="-1"
                 disabled={props.disabled || props.readonly}
                 onClick={props.onDropIndexClick(props.index)}
@@ -77,6 +77,7 @@ const defaultArrayItem = props => {
 }
 
 export default props => {
+  console.log(props)
   return (
     <Layout>
       <ArrayFieldTitle
@@ -104,10 +105,11 @@ export default props => {
 
       {props.canAdd && (
         <AddButton
-          icon={"+"}
           onClick={props.onAddClick}
           disabled={props.disabled || props.readonly}
-        />
+        >
+          {`+ ${props.canAdd.title || ""}`}
+        </AddButton>
       )}
     </Layout>
   )
