@@ -151,6 +151,17 @@ export const SelectSelectedWrapperStyling = theming.createVariants(
     `,
     calculatorTerms: css`
       border-width: 0;
+    `,
+    breadcrumbSelect: css`
+      border: none;
+      > * {
+        background-color: transparent;
+      }
+      > *:focus,
+      *:hover {
+        background-color: transparent;
+        text-decoration: underline;
+      }
     `
   },
   Select.themeProps.selectedWrapper

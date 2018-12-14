@@ -43,6 +43,13 @@ export const RadioPillItemStyling = theming.createVariants(
       input:focus ~ label[class]::before {
         border-color: ${theming.color.primary};
       }
+    `,
+    breadcrumbSelect: css`
+      &:last-child {
+        label {
+          border-radius: 0;
+        }
+      }
     `
   },
   RadioPillItem.themeProps.wrapper
