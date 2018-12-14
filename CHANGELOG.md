@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.37.0"></a>
+# [8.37.0](https://bitbucket.org/stacc-flow/bento/compare/v8.36.0...v8.37.0) (2018-12-14)
+
+
+### Bug Fixes
+
+* **base:** fix issue with select and wrapping ([fb38852](https://bitbucket.org/stacc-flow/bento/commits/fb38852))
+* **fundu-theme:** tweak notification animation ([11ffa01](https://bitbucket.org/stacc-flow/bento/commits/11ffa01))
+
+
+### Features
+
+* **eslint-config:** add atob and btoa to globals ([eabf9cf](https://bitbucket.org/stacc-flow/bento/commits/eabf9cf))
+* **json-schema:** can now render selects and arrays ([14b9d1c](https://bitbucket.org/stacc-flow/bento/commits/14b9d1c))
+* **json-schema:** support conditionals. control over schema ([fe485f4](https://bitbucket.org/stacc-flow/bento/commits/fe485f4))
+
+
+
+
+
 <a name="8.35.0"></a>
 # [8.35.0](https://bitbucket.org/stacc-flow/bento/compare/v8.34.1...v8.35.0) (2018-12-12)
 
