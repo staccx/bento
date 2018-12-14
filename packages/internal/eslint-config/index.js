@@ -20,6 +20,8 @@ module.exports = {
     localStorage: true,
     it: true,
     describe: true,
-    expect: true
+    expect: true,
+    atob: true,
+    btoa: true
   }
 }
