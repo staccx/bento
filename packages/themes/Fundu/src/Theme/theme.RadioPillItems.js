@@ -43,14 +43,43 @@ export const RadioPillItemStyling = theming.createVariants(
       input:focus ~ label[class]::before {
         border-color: ${theming.color.primary};
       }
-    `,
-    breadcrumbSelect: css`
-      &:last-child {
-        label {
-          border-radius: 0;
-        }
-      }
     `
   },
   RadioPillItem.themeProps.wrapper
+)
+
+/* label */
+
+export const RadioPillItemLabelStyling = theming.createVariants(
+  {
+    breadcrumbSelect: css`
+      background-color: transparent;
+      border: none;
+    `
+  },
+  RadioPillItem.themeProps.label
+)
+
+/* :checked */
+
+export const RadioPillItemCheckedStyling = theming.createVariants(
+  {
+    breadcrumbSelect: css`
+      color: ${theming.color.black};
+      background-color: transparent;
+      font-weight: bold;
+    `
+  },
+  RadioPillItem.themeProps.checked
+)
+
+/* :hover, :focus */
+
+export const RadioPillItemHoverStyling = theming.createVariants(
+  {
+    breadcrumbSelect: css`
+      text-decoration: underline;
+    `
+  },
+  RadioPillItem.themeProps.hover
 )

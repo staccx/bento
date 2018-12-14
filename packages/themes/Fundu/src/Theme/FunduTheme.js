@@ -47,13 +47,19 @@ import { CheckBoxStyling } from "./theme.CheckBoxes"
 import { RadioButtonStyling } from "./theme.RadioButtons"
 import { ExpandStyling } from "./theme.Expands"
 import { WrapperStyling } from "./theme.Wrappers"
-import { RadioPillItemStyling } from "./theme.RadioPillItems"
 import {
   ProgressBarBgStyling,
   ProgressBarBarStyling,
   ProgressBarProgressStyling
 } from "./theme.ProgressBar"
 import { FlagStyling } from "./theme.Flags"
+import {
+  RadioPillItemStyling,
+  RadioPillItemLabelStyling,
+  RadioPillItemCheckedStyling,
+  RadioPillItemHoverStyling
+} from "./theme.RadioPillItems"
+import { RadioPillContainerStyling } from "./theme.RadioPills"
 
 const borderRadius = "2px"
 const headerHeight = "70px"
@@ -161,7 +167,6 @@ export default new theming.Theme({
   .add(SelectOptionsWrapperStyling)
   .add(LayoutStyling)
   .add(LayoutItemStyling)
-  .add(RadioPillItemStyling)
   .add(SliderKeyboardWrapperStyling)
   .add(SliderInputStyling)
   .add(CompanyInputLoadFromStyling)
@@ -193,3 +198,8 @@ export default new theming.Theme({
   .add(ProgressBarBarStyling)
   .add(ProgressBarProgressStyling)
   .add(FlagStyling)
+  .add(RadioPillItemStyling)
+  .add(RadioPillItemLabelStyling)
+  .add(RadioPillItemCheckedStyling)
+  .add(RadioPillItemHoverStyling)
+  .add(RadioPillContainerStyling)
