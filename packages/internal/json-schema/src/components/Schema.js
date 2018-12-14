@@ -8,6 +8,7 @@ import CustomFieldTemplate from "./Custom.FieldTemplate"
 import ErrorList from "./Custom.ErrorList"
 import CustomFields from "./Custom.Fields"
 import CustomWidgets from "./Custom.Widgets"
+import SchemaField from "./Custom.SchemaField"
 
 const Schema = ({ schema, uiSchema, onSubmit, onError, onChange }) => {
   return (
@@ -19,6 +20,7 @@ const Schema = ({ schema, uiSchema, onSubmit, onError, onChange }) => {
       onChange={onChange}
       onSubmit={onSubmit}
       onError={onError}
+      SchemaFieldTemplate={SchemaField}
       ArrayFieldTemplate={ArrayField}
       ObjectFieldTemplate={CustomObjectFieldTemplate}
       FieldTemplate={CustomFieldTemplate}

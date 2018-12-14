@@ -7,7 +7,10 @@
   "jsnext:main": "dist/index.es.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/base": "^8.36.0"
+    "@staccx/base": "^8.36.0",
+    "ajv": "^6.6.1",
+    "core-js": "^2.6.0",
+    "lodash.topath": "^4.5.2"
   },
   "scripts": {
     "build": "yarn prettify && rollup -c",

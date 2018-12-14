@@ -15,7 +15,7 @@ import {
   conditional
 } from "./data/schemas"
 
-const chosen = alternatives
+const chosen = conditional
 class App extends Component {
   render() {
     return (

@@ -13,11 +13,11 @@ const CustomFieldTemplate = props => {
   //   children
   // } = props
   const { help, errors, children } = props
+
   return (
     <React.Fragment>
       {children}
       {errors}
-      {help}
     </React.Fragment>
   )
 }
