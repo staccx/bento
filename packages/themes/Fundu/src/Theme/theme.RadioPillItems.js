@@ -52,7 +52,7 @@ export const RadioPillItemStyling = theming.createVariants(
 
 export const RadioPillItemLabelStyling = theming.createVariants(
   {
-    breadcrumbSelect: css`
+    pageSelect: css`
       background-color: transparent;
       border: none;
     `
@@ -64,7 +64,7 @@ export const RadioPillItemLabelStyling = theming.createVariants(
 
 export const RadioPillItemCheckedStyling = theming.createVariants(
   {
-    breadcrumbSelect: css`
+    pageSelect: css`
       color: ${theming.color.black};
       background-color: transparent;
       font-weight: bold;
@@ -77,7 +77,7 @@ export const RadioPillItemCheckedStyling = theming.createVariants(
 
 export const RadioPillItemHoverStyling = theming.createVariants(
   {
-    breadcrumbSelect: css`
+    pageSelect: css`
       text-decoration: underline;
     `
   },

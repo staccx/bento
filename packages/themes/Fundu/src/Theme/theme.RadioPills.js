@@ -5,7 +5,7 @@ import { RadioPill, theming } from "@staccx/base"
 
 export const RadioPillContainerStyling = theming.createVariants(
   {
-    breadcrumbSelect: css`
+    pageSelect: css`
       text-align: left;
     `
   },

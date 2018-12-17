@@ -152,7 +152,7 @@ export const SelectSelectedWrapperStyling = theming.createVariants(
     calculatorTerms: css`
       border-width: 0;
     `,
-    breadcrumbSelect: css`
+    pageSelect: css`
       border: none;
       > * {
         background-color: transparent;
