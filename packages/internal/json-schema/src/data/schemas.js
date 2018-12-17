@@ -106,9 +106,6 @@ export const simple = {
     date: {
       "ui:widget": "alt-datetime"
     },
-    email: {
-      "ui:widget": "email"
-    },
     telephone: {
       "ui:options": {
         inputType: "tel"
@@ -772,6 +769,11 @@ export const conditional = {
         "Do you want to get rid of any?": {
           "ui:widget": "radio"
         }
+      },
+      "ui:options": {
+        addable: true,
+        orderable: false,
+        removable: true
       }
     },
     fixedArrayOfConditionals: {

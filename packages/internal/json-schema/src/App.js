@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { ThemeProvider } from "styled-components"
 import theme from "@staccx/aprila-theme"
+import { Button } from "@staccx/base"
 import Schema from "./components/Schema"
 
 import {
@@ -24,7 +25,9 @@ class App extends Component {
           schema={chosen.schema}
           uiSchema={chosen.uiSchema}
           onSubmit={console.log}
-        />
+        >
+          <Button type={"submit"}>Hei jeg er overskrevet</Button>
+        </Schema>
       </ThemeProvider>
     )
   }

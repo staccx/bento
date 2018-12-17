@@ -1,5 +1,5 @@
 import React from "react"
-import { Button, Caret, Layout, LayoutItem } from "@staccx/base"
+import { Button, Caret, Layout, LayoutItem, Wrapper } from "@staccx/base"
 import styled from "styled-components"
 
 const CaretIcon = styled(Caret)`
@@ -33,14 +33,22 @@ const ArrayFieldDescription = ({ DescriptionField, idSchema, description }) => {
   return <DescriptionField id={id} description={description} />
 }
 
+const Custom = styled(Layout)`
+  grid-auto-columns: 1fr 0.1fr;
+
+  grid-template-areas:
+    ". toolbar"
+    "children children";
+`
+
 const defaultArrayItem = props => {
   return (
-    <div key={props.index}>
+    <Custom variant={["_default", "arrayItem"]} key={props.index}>
       <LayoutItem area={"children"}>{props.children}</LayoutItem>
 
       {props.hasToolbar && (
         <LayoutItem area={"toolbar"}>
-          <div>
+          <Wrapper>
             {(props.hasMoveUp || props.hasMoveDown) && (
               <IconButton
                 icon="arrow-up"
@@ -69,10 +77,10 @@ const defaultArrayItem = props => {
                 onClick={props.onDropIndexClick(props.index)}
               />
             )}
-          </div>
+          </Wrapper>
         </LayoutItem>
       )}
-    </div>
+    </Custom>
   )
 }
 
