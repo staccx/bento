@@ -5,8 +5,9 @@ import { RadioPill, theming } from "@staccx/base"
 
 export const RadioPillContainerStyling = theming.createVariants(
   {
-    breadcrumbSelect: css`
+    pageSelect: css`
       text-align: left;
+      margin-left: calc(-1 * ${theming.spacing.small});
     `
   },
   RadioPill.themeProps.container

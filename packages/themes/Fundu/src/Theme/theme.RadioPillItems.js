@@ -1,6 +1,7 @@
 import { css } from "styled-components"
 import { RadioPillItem, theming } from "@staccx/base"
 
+// This should probably be refactored to the other objects below.
 export const RadioPillItemStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
@@ -52,19 +53,25 @@ export const RadioPillItemStyling = theming.createVariants(
 
 export const RadioPillItemLabelStyling = theming.createVariants(
   {
-    breadcrumbSelect: css`
+    pageSelect: css`
       background-color: transparent;
       border: none;
+      color: ${theming.color.black}80;
+      display: inline-block;
+      max-width: 200px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     `
   },
   RadioPillItem.themeProps.label
 )
 
-/* :checked */
+/* input:checked ~ label */
 
 export const RadioPillItemCheckedStyling = theming.createVariants(
   {
-    breadcrumbSelect: css`
+    pageSelect: css`
       color: ${theming.color.black};
       background-color: transparent;
       font-weight: bold;
@@ -73,11 +80,12 @@ export const RadioPillItemCheckedStyling = theming.createVariants(
   RadioPillItem.themeProps.checked
 )
 
-/* :hover, :focus */
+/* :hover ~ label,
+   input:focus ~ label */
 
 export const RadioPillItemHoverStyling = theming.createVariants(
   {
-    breadcrumbSelect: css`
+    pageSelect: css`
       text-decoration: underline;
     `
   },
