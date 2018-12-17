@@ -12,6 +12,7 @@ const CustomObjectFieldTemplate = ({
       <TitleField title={title} />
       <Wrapper size={"small"}>
         <Layout rowGap={"small"}>
+          {description}
           {properties.map(prop => {
             return (
               <React.Fragment key={prop.content.key}>
@@ -19,7 +20,6 @@ const CustomObjectFieldTemplate = ({
               </React.Fragment>
             )
           })}
-          {description}
         </Layout>
       </Wrapper>
     </Wrapper>

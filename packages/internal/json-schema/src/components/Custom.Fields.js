@@ -8,6 +8,12 @@ const CustomDescriptionField = ({ id, description }) => {
   return description ? <Label id={id}>{description}</Label> : null
 }
 
+const StringField = props => {
+  console.log(props)
+
+  return null
+}
+
 const LatLngField = props => (
   <Alert>Her kan vi rendre en custom component for custom fields. </Alert>
 )

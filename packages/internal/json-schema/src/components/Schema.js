@@ -8,6 +8,7 @@ import CustomFieldTemplate from "./Custom.FieldTemplate"
 import ErrorList from "./Custom.ErrorList"
 import CustomFields from "./Custom.Fields"
 import CustomWidgets from "./Custom.Widgets"
+import CustomErrors from "./Custom.Errors"
 import SchemaField from "./Custom.SchemaField"
 
 const Schema = ({
@@ -16,22 +17,27 @@ const Schema = ({
   onSubmit,
   onError,
   onChange,
-  children
+  children,
+  widgets = CustomWidgets,
+  fields = CustomFields,
+  html5Validation = false
 }) => {
   return (
     <SchemaForm
       schema={schema}
-      widgets={CustomWidgets}
-      fields={CustomFields}
+      widgets={widgets}
+      fields={fields}
       uiSchema={uiSchema}
       onChange={onChange}
       onSubmit={({ formData }) => onSubmit(formData)}
       onError={onError}
+      noHtml5Validate={html5Validation}
       SchemaFieldTemplate={SchemaField}
       ArrayFieldTemplate={ArrayField}
       ObjectFieldTemplate={CustomObjectFieldTemplate}
       FieldTemplate={CustomFieldTemplate}
       ErrorList={ErrorList}
+      transformErrors={CustomErrors}
     >
       {children || <Button type={"submit"}>Submit</Button>}
     </SchemaForm>
@@ -47,7 +53,6 @@ Schema.themeProps = {
 }
 
 const SchemaForm = styled(Form)`
-
   ${theming.applyVariants(Schema.themeProps.form)};
 `
 

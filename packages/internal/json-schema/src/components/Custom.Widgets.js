@@ -86,6 +86,6 @@ export default {
   phone: PhoneWidget,
   email: InputWidget,
   geo: () => <div>test</div>,
-  SelectWidget,
-  RadioWidget
+  RadioWidget,
+  SelectWidget
 }

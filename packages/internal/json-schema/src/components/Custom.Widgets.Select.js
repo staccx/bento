@@ -2,6 +2,7 @@ import React from "react"
 import { Select } from "@staccx/base"
 
 export default ({ options, onChange, ...rest }) => {
+  console.log(rest)
   return (
     <Select
       items={options.enumOptions}

@@ -790,3 +790,92 @@ export const conditional = {
     }
   }
 }
+
+export const onboardin1 = {
+  schema: {
+    title: "Bli kunde",
+    type: "object",
+    properties: {
+      personalia: {
+        required: ["phone", "email"],
+        title: "Personalia",
+        type: "object",
+        properties: {
+          phone: {
+            type: "string",
+            title: "Mobilnummer"
+          },
+          email: {
+            type: "string",
+            title: "E-post",
+            format: "email"
+          }
+        }
+      },
+      holdings: {
+        type: "object",
+        title: "Om din Sparing",
+        description: "Vi er pliktig blabla",
+        properties: {
+          origin: {
+            type: "object",
+            title: "Hva er opprinnelsen?",
+            properties: {
+              salary: {
+                title: "Lønn/pensjon",
+                type: "boolean",
+                default: false
+              },
+              gift: {
+                title: "Gave/arv",
+                type: "boolean",
+                default: false
+              },
+              savings: {
+                title: "Oppsparte midler",
+                type: "boolean",
+                default: false
+              },
+              sales: {
+                title: "Salg av eiendel",
+                type: "boolean",
+                default: false
+              }
+            }
+          }
+        }
+      },
+      consent: {
+        type: "object",
+        title: "Samtykke",
+        description: "Ønsker du å blabla",
+        properties: {
+          sms: {
+            title: "SMS er ok",
+            type: "boolean",
+            default: false
+          },
+          email: {
+            title: "E-post er ok",
+            type: "boolean",
+            default: false
+          }
+        }
+      }
+    }
+  },
+  uiSchema: {
+    personalia: {
+      phone: {
+        "ui:widget": "phone"
+      }
+    },
+    holdings: {
+      origin: {
+        "ui:options": {
+          backgroundColor: "pink"
+        }
+      }
+    }
+  }
+}

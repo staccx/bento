@@ -13,10 +13,11 @@ import {
   errors,
   large,
   alternatives,
-  conditional
+  conditional,
+  onboardin1
 } from "./data/schemas"
 
-const chosen = conditional
+const chosen = onboardin1
 class App extends Component {
   render() {
     return (
