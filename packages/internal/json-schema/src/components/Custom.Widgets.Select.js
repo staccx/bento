@@ -8,6 +8,7 @@ export default ({ options, onChange, ...rest }) => {
       items={options.enumOptions}
       itemToString={item => item.label}
       itemToKey={item => item.value}
+      placeHolderLabel={"Velg..."}
       onChange={item => onChange(item.value)}
       {...rest}
     />
