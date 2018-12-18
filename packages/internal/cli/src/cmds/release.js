@@ -110,6 +110,8 @@ async function release(debug) {
       await executeAsync("lerna", [
         "version",
         "--conventional-commits",
+        "--force-publish",
+        "--no-push",
         "--yes"
       ])
       await executeAsync("lerna", [
