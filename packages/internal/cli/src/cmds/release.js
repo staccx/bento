@@ -116,7 +116,10 @@ async function release(debug) {
       await executeAsync("lerna", [
         "publish",
         "--no-verify-access",
-        "--no-verify-registry"
+        "--no-verify-registry",
+        "--conventional-commits",
+        "--force-publish",
+        "--yes"
       ])
 
       await executeAsync(
