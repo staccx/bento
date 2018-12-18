@@ -992,10 +992,8 @@ export const onboardin1 = {
       }
     },
     holdings: {
-      origin: {
-        "ui:options": {
-          backgroundColor: "pink"
-        }
+      "ui:options": {
+        highlightBox: true
       },
       security: {
         citizenship: {

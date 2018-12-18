@@ -100,6 +100,12 @@ export default theming.createVariants(
     `,
     accountHeading: css`
       text-align: center;
+    `,
+    highlightBox: css`
+      border: 1px solid black;
+      border-radius: 15px;
+      padding: 10px;
+      background: cornflowerblue;
     `
   },
   Box.themeProps.box

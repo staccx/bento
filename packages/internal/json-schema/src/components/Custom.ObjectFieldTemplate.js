@@ -1,18 +1,19 @@
 import React from "react"
-import { Wrapper, Layout } from "@staccx/base"
+import { Wrapper, Layout, Box, theming } from "@staccx/base"
 
 const CustomObjectFieldTemplate = ({
   TitleField,
   properties,
   title,
   description,
+  uiSchema,
   ...rest
 }) => {
-
+  const highlightBox = uiSchema["ui:options"] ? !!uiSchema["ui:options"].highlightBox : false
   console.log(rest)
   const level = rest.idSchema.$id.split("_").length
   return (
-    <Wrapper>
+    <Box variant={highlightBox ? "highlightBox" : theming.VARIANT_DEFAULT}>
       <TitleField title={title} level={level} variant={"schemaHeading"} />
       <Wrapper size={"small"}>
         <Layout rowGap={"small"}>
@@ -26,7 +27,7 @@ const CustomObjectFieldTemplate = ({
           })}
         </Layout>
       </Wrapper>
-    </Wrapper>
+    </Box>
   )
 }
 
