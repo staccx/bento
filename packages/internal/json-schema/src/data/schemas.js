@@ -842,6 +842,24 @@ export const onboardin1 = {
                 default: false
               }
             }
+          },
+          security: {
+            title: "Huk av kun dersom dette gjelder deg",
+            type: "object",
+            description: "Huk av kun dersom dette gjelder deg",
+            properties: {
+              citizenship: {
+                $ref: "#/definitions/citizen"
+              },
+              pep: {
+                $ref: "#/definitions/pep"
+              },
+              private: {
+                type: "boolean",
+                title: "Kontoen er ikke til privat bruk",
+                default: false
+              }
+            }
           }
         }
       },
@@ -862,6 +880,109 @@ export const onboardin1 = {
           }
         }
       }
+    },
+    definitions: {
+      citizen: {
+        title: "Citizen",
+        type: "object",
+        properties: {
+          citizenship: {
+            title: "Jeg har utenlandsk statsborgerskap",
+            type: "boolean",
+            default: false
+          }
+        },
+        required: ["citizenship"],
+        dependencies: {
+          citizenship: {
+            oneOf: [
+              {
+                properties: {
+                  citizenship: {
+                    enum: [false]
+                  }
+                }
+              },
+              {
+                properties: {
+                  citizenship: {
+                    enum: [true]
+                  },
+                  countries: {
+                    title: "Hvilke statsborgerskap har du?",
+                    type: "array",
+                    items: {
+                      $ref: "#/definitions/citizenship"
+                    }
+                  }
+                },
+                required: ["countries"]
+              }
+            ]
+          }
+        }
+      },
+      pep: {
+        title: "Politically exposed person",
+        type: "object",
+        properties: {
+          isPep: {
+            title: "Jeg er en politisk eksponert person",
+            type: "boolean",
+            default: false
+          }
+        },
+        required: ["isPep"],
+        dependencies: {
+          isPep: {
+            oneOf: [
+              {
+                properties: {
+                  isPep: {
+                    enum: [false]
+                  }
+                }
+              },
+              {
+                properties: {
+                  isPep: {
+                    enum: [true]
+                  },
+                  country: {
+                    type: "string",
+                    title: "Land"
+                  },
+                  position: {
+                    type: "string",
+                    title: "Stilling"
+                  },
+                  relation: {
+                    type: "string",
+                    title: "Din relasjon"
+                  }
+                },
+                required: ["countries"]
+              }
+            ]
+          }
+        }
+      },
+      citizenship: {
+        type: "object",
+        title: "Statsborgerskap",
+        properties: {
+          country: {
+            type: "string",
+            title: "Land",
+            enum: ["Sverige", "Danmark", "Finland"],
+            default: "Sverige"
+          },
+          tin: {
+            type: "string",
+            title: "TIN"
+          }
+        }
+      }
     }
   },
   uiSchema: {
@@ -874,6 +995,20 @@ export const onboardin1 = {
       origin: {
         "ui:options": {
           backgroundColor: "pink"
+        }
+      },
+      security: {
+        citizenship: {
+          countries: {
+            items: {
+              "ui:field": "citizenship"
+            },
+            "ui:options": {
+              addable: true,
+              orderable: false,
+              removable: true
+            }
+          }
         }
       }
     }

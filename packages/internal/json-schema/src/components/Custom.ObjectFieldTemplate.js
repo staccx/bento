@@ -5,11 +5,15 @@ const CustomObjectFieldTemplate = ({
   TitleField,
   properties,
   title,
-  description
+  description,
+  ...rest
 }) => {
+
+  console.log(rest)
+  const level = rest.idSchema.$id.split("_").length
   return (
     <Wrapper>
-      <TitleField title={title} />
+      <TitleField title={title} level={level} variant={"schemaHeading"} />
       <Wrapper size={"small"}>
         <Layout rowGap={"small"}>
           {description}

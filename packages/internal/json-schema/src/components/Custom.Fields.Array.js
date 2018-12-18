@@ -1,5 +1,5 @@
 import React from "react"
-import { Button, Caret, Layout, LayoutItem, Wrapper } from "@staccx/base"
+import { Button, Caret, Layout, LayoutItem, Wrapper, Heading } from "@staccx/base"
 import styled from "styled-components"
 
 const CaretIcon = styled(Caret)`
@@ -21,7 +21,8 @@ const ArrayFieldTitle = ({ TitleField, idSchema, title, required }) => {
     return <div />
   }
   const id = `${idSchema.$id}__title`
-  return <TitleField id={id} title={title} required={required} />
+  // return <Heading level={4}>{title}</Heading>
+  return <TitleField level={4} id={id} title={title} required={required} />
 }
 
 const ArrayFieldDescription = ({ DescriptionField, idSchema, description }) => {
@@ -85,7 +86,6 @@ const defaultArrayItem = props => {
 }
 
 export default props => {
-  console.log(props)
   return (
     <Layout>
       <ArrayFieldTitle

@@ -28,7 +28,8 @@ export default theming.createVariants(
     annualStatmentHeading: css`
       font-size: ${theming.font.base};
       color: ${theming.color.primary};
-    `
+    `,
+    schemaHeading: css``
   },
   Heading.themeProps.heading
 )

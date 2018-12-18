@@ -1,0 +1,44 @@
+{
+  "name": "@staccx/swedbank-theme",
+  "version": "8.37.0",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "license": "UNLICENSED",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build:yalc:watch": "node ./src/dev.js",
+    "push": "yalc push",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject",
+    "test:watch": "jest --env=jsdom --watch",
+    "build": "yarn prettify && rollup -c",
+    "start:module": "rollup -c -w",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
+    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
+  },
+  "dependencies": {
+    "@staccx/base": "^8.37.0",
+    "polished": "^2.3.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  },
+  "devDependencies": {
+    "@staccx/rollup-config": "^8.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.14.2",
+    "react-scripts": "^1.1.4",
+    "rollup": "^0.65.0"
+  },
+  "peerDependencies": {
+    "styled-components": "^4.0.2"
+  }
+}
