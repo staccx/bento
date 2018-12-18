@@ -18,7 +18,7 @@ const CustomObjectFieldTemplate = ({
       {label && (
         <TitleField title={title} level={level} variant={"schemaHeading"} />
       )}
-      <Wrapper size={"small"}>
+      <Wrapper size={"medium"}>
         <Layout rowGap={"small"}>
           <DescriptionField description={description} />
           {properties.map(prop => {

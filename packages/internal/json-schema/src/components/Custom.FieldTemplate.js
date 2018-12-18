@@ -1,4 +1,5 @@
 import React from "react"
+import { Box } from "@staccx/base"
 
 // TODO: Handle errors, help, description manually?
 const CustomFieldTemplate = props => {
@@ -16,10 +17,10 @@ const CustomFieldTemplate = props => {
   const { errors, children } = props
 
   return (
-    <React.Fragment>
+    <Box variant="schemaContainer">
       {children}
       {errors}
-    </React.Fragment>
+    </Box>
   )
 }
 

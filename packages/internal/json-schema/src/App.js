@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { ThemeProvider } from "styled-components"
 import theme from "@staccx/aprila-theme"
-import { Button, WebFonts, GlobalStyle } from "@staccx/base"
+import { Button, WebFonts, GlobalStyle, Wrapper } from "@staccx/base"
 import Schema from "./components/Schema"
 
 import {
@@ -25,13 +25,15 @@ class App extends Component {
         <React.Fragment>
           <GlobalStyle />
           <WebFonts />
-          <Schema
-            schema={chosen.schema}
-            uiSchema={chosen.uiSchema}
-            onSubmit={console.log}
-          >
-            <Button type={"submit"}>Hei jeg er overskrevet</Button>
-          </Schema>
+          <Wrapper size="large" variant="schemaWrapper">
+            <Schema
+              schema={chosen.schema}
+              uiSchema={chosen.uiSchema}
+              onSubmit={console.log}
+            >
+              <Button type={"submit"}>Hei jeg er overskrevet</Button>
+            </Schema>
+          </Wrapper>
         </React.Fragment>
       </ThemeProvider>
     )

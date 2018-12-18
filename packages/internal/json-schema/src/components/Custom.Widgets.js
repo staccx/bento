@@ -26,6 +26,7 @@ const InputWidget = ({
     defaultValue={sch.default}
     onChange={e => onChange(e.target.value)}
     readOnly={readonly}
+    variant="schemaInput"
     {...rest}
   />
 )
@@ -51,6 +52,7 @@ const PhoneWidget = ({
     defaultValue={value}
     onChange={e => onChange(e.target.value)}
     readOnly={readonly}
+    variant={["schemaInput", "shemaInputPhone"]}
     {...rest}
   />
 )
