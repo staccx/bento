@@ -1,6 +1,6 @@
 {
   "name": "@staccx/release-bento",
-  "version": "8.38.1",
+  "version": "8.39.0",
   "main": "index.js",
   "license": "MIT",
   "private": true,

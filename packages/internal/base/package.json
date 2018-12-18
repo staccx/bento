@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "8.38.1",
+  "version": "8.39.0",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -36,10 +36,10 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/animations": "^8.38.1",
-    "@staccx/formatting": "^8.38.1",
-    "@staccx/math": "^8.38.1",
-    "@staccx/utils": "^8.38.1",
+    "@staccx/animations": "^8.39.0",
+    "@staccx/formatting": "^8.39.0",
+    "@staccx/math": "^8.39.0",
+    "@staccx/utils": "^8.39.0",
     "babel-plugin-prismjs": "^1.0.2",
     "cleave.js": "^1.4.4",
     "copy-to-clipboard": "^3.0.8",
@@ -62,7 +62,7 @@
     "yup": "^0.24.1"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.38.1",
+    "@staccx/rollup-config": "^8.39.0",
     "babel-core": "^6.0.0",
     "colors": "^1.3.2",
     "fs-extra": "^6.0.1",
