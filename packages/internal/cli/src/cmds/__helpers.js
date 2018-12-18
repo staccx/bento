@@ -1,4 +1,5 @@
 const spawn = require("child_process").spawn
+const ora = require("ora")
 
 const wait = function(ms = 1000) {
   return new Promise(resolve => setTimeout(resolve, ms))
@@ -90,7 +91,15 @@ const runCommand = async function({
   }
 }
 
+const setupSpinner = function(text = "Starting", spinner = "monkey") {
+  return ora({
+    text,
+    spinner
+  })
+}
+
 module.exports = {
   executeAsync,
-  runCommand
+  runCommand,
+  setupSpinner
 }

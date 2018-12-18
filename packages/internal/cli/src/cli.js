@@ -10,6 +10,7 @@ const saveToJson = require("./utils/saveToJson")
 const walk = require("./utils/walk")
 const release = require("./cmds/release")
 const clean = require("./cmds/clean")
+const link = require("./cmds/link")
 const { version } = require("../package.json")
 
 program.version(version).description("Command line tool for Stacc X")
@@ -79,6 +80,16 @@ program
   .option("-d, --debug", "Run without running commands")
   .action(({ debug = false }) => {
     clean(debug)
+  })
+
+program
+  .command("link")
+  .alias("l")
+  .description("Leverage building and linking with yalc. All in one package")
+  .option("-i, --input <path>", "Entry point for builder")
+  .option("-w, --watch", "Keep the watcher alive")
+  .action(({ input, watch }) => {
+    link({ input, watch })
   })
 
 program.parse(process.argv)
