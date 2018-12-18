@@ -14,7 +14,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "feature-toggle",
-    "feature-toggle-preview"
+    "feature-toggle-preview",
+    "@staccx/sanity-plugin-i18n"
   ],
   "parts": [
     {

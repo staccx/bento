@@ -17,6 +17,27 @@ export default {
           type: "featureToggle"
         }
       ]
+    },
+    {
+      type: "array",
+      name: "products",
+      title: "Products",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              type: "reference",
+              name: "product",
+              to: [{ type: "product" }]
+            },
+            {
+              type: "string",
+              name: "feature"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

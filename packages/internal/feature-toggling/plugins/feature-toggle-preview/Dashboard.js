@@ -15,20 +15,16 @@ class Dashboard extends React.Component {
     return (
       <div className={styles.container}>
         <div>
-          <h1>
-            Aprila
-          </h1>
-          <h2>
-            Deposit Account
-          </h2>
-        <FeatureToggle
-          client={"Aprila"}
-          feature={"Deposit account"}
-          environment={"dev"}
-          sanityClient={client}
-        >
-          <div>Development on</div>
-        </FeatureToggle>
+          <h1>Aprila</h1>
+          <h2>Deposit Account</h2>
+          <FeatureToggle
+            client={"Aprila"}
+            feature={"Deposit account"}
+            environment={"dev"}
+            sanityClient={client}
+          >
+            <div>Development on</div>
+          </FeatureToggle>
           <FeatureToggle
             client={"Aprila"}
             feature={"Deposit account"}
