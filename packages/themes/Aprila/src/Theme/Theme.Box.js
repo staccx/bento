@@ -102,11 +102,12 @@ export default theming.createVariants(
       text-align: center;
     `,
     highlightBox: css`
-      border: 1px solid black;
-      border-radius: 15px;
-      padding: 10px;
-      background: cornflowerblue;
-    `
+      border: none;
+      border-radius: 10px;
+      padding: ${theming.spacing.medium} ${theming.spacing("largePlus")};
+      background: ${theming.color("subtleHover")};
+    `,
+    schemaContainer: css``
   },
   Box.themeProps.box
 )
