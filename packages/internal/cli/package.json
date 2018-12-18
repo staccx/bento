@@ -1,5 +1,5 @@
 {
-  "name": "@staccx/cli-x",
+  "name": "@staccx/cli",
   "version": "8.38.1",
   "description": "",
   "main": "dist/cli.js",

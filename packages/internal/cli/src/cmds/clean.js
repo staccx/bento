@@ -79,7 +79,8 @@ async function clean(debug) {
    */
   await runCommand({
     onFail: console.log,
-    failText: "Something failed while building. NOTE: no need to clean again. Just find what failed whilst building and rebuild",
+    failText:
+      "Something failed while building. NOTE: no need to clean again. Just find what failed whilst building and rebuild",
     startText: "Building",
     succeedText: "Build done",
     spinner,
