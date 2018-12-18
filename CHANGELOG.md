@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.38.1"></a>
+## [8.38.1](https://bitbucket.org/stacc-flow/bento/compare/v8.38.0...v8.38.1) (2018-12-18)
+
+
+### Bug Fixes
+
+* **cli:** remove no-push ([c3af9f7](https://bitbucket.org/stacc-flow/bento/commits/c3af9f7))
+
+
+
+
+
 <a name="8.38.0"></a>
 # [8.38.0](https://bitbucket.org/stacc-flow/bento/compare/v8.37.0...v8.38.0) (2018-12-18)
 

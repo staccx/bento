@@ -1,6 +1,6 @@
 {
   "name": "@staccx/math",
-  "version": "8.38.0",
+  "version": "8.38.1",
   "description": "Convenience functions for math",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -27,7 +27,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.38.0",
+    "@staccx/rollup-config": "^8.38.1",
     "prettier": "^1.14.2",
     "react-scripts": "^1.1.4",
     "rollup": "^0.65.0"
