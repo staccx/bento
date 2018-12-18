@@ -72,7 +72,6 @@ const CheckboxWidget = ({
     {...rest}
     defaultChecked={value}
     onChange={e => {
-      console.log("Change", e)
       onChange(e.target.checked)
     }}
   >

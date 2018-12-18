@@ -1,8 +1,14 @@
 import React from "react"
 import { Select, Input, State } from "@staccx/base"
 
-const Citizenship = ({ onChange, ...props }) => {
-  console.log(props)
+const Citizenship = ({ onChange, registry, ...props }) => {
+  const { definitions = {} } = registry
+  const { country } = definitions
+  const items = country.properties.code.enum.map((code, index) => ({
+    code,
+    name: country.properties.label.enum[index]
+  }))
+
   return (
     <State>
       {({
@@ -12,11 +18,14 @@ const Citizenship = ({ onChange, ...props }) => {
       }) => (
         <div>
           <Select
-            items={["Norge", "Danmark"]}
+            items={items}
             onChange={country => {
               set({ country })
               onChange({ country, tin })
             }}
+            itemToString={item => item.name}
+            itemToKey={item => item.key}
+            placeHolderLabe={"Velg..."}
             initialSelectedItem={country}
           />
           <Input

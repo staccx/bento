@@ -9,8 +9,9 @@ const CustomObjectFieldTemplate = ({
   uiSchema,
   ...rest
 }) => {
-  const highlightBox = uiSchema["ui:options"] ? !!uiSchema["ui:options"].highlightBox : false
-  console.log(rest)
+  const highlightBox = uiSchema["ui:options"]
+    ? !!uiSchema["ui:options"].highlightBox
+    : false
   const level = rest.idSchema.$id.split("_").length
   return (
     <Box variant={highlightBox ? "highlightBox" : theming.VARIANT_DEFAULT}>

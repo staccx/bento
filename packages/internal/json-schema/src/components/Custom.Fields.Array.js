@@ -1,5 +1,5 @@
 import React from "react"
-import { Button, Caret, Layout, LayoutItem, Wrapper, Heading } from "@staccx/base"
+import { Button, Caret, Layout, LayoutItem, Wrapper } from "@staccx/base"
 import styled from "styled-components"
 
 const CaretIcon = styled(Caret)`
