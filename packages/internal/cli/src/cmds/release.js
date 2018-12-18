@@ -108,11 +108,14 @@ async function release(debug) {
     spinner.start("Releasing packages. Please wait")
     if (!debug) {
       await executeAsync("lerna", [
-        "publish",
-        "--no-verify-access",
-        "--no-verify-registry",
+        "version",
         "--conventional-commits",
         "--yes"
+      ])
+      await executeAsync("lerna", [
+        "publish",
+        "--no-verify-access",
+        "--no-verify-registry"
       ])
 
       await executeAsync(
