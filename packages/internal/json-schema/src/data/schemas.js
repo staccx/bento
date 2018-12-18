@@ -883,8 +883,8 @@ export const onboardin1 = {
     },
     definitions: {
       citizen: {
-        title: "Citizen",
         type: "object",
+        title: "Citizen ref",
         properties: {
           citizenship: {
             title: "Jeg har utenlandsk statsborgerskap",
@@ -1508,6 +1508,9 @@ export const onboardin1 = {
       },
       security: {
         citizenship: {
+          "ui:options": {
+            label: false
+          },
           countries: {
             items: {
               "ui:field": "citizenship"
@@ -1517,6 +1520,11 @@ export const onboardin1 = {
               orderable: false,
               removable: true
             }
+          }
+        },
+        pep: {
+          "ui:options": {
+            label: false
           }
         }
       }

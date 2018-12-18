@@ -2,8 +2,12 @@ import React from "react"
 import { Label, Heading, Alert } from "@staccx/base"
 import Citizenship from "./Custom.Widgets.Citizenship"
 
-const CustomTitleField = ({ title, required, level, variant }) => {
-  return title ? <Heading level={level} variant={variant}>{title}</Heading> : null
+const CustomTitleField = ({ title, required, level, variant, ...rest }) => {
+  return title ? (
+    <Heading level={level} variant={variant}>
+      {title}
+    </Heading>
+  ) : null
 }
 const CustomDescriptionField = ({ id, description }) => {
   return description ? <Label id={id}>{description}</Label> : null

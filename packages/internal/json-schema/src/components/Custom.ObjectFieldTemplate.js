@@ -3,22 +3,24 @@ import { Wrapper, Layout, Box, theming } from "@staccx/base"
 
 const CustomObjectFieldTemplate = ({
   TitleField,
+  DescriptionField,
   properties,
   title,
   description,
   uiSchema,
   ...rest
 }) => {
-  const highlightBox = uiSchema["ui:options"]
-    ? !!uiSchema["ui:options"].highlightBox
-    : false
+  const options = uiSchema["ui:options"] || {}
+  const { highlightBox = false, label = true } = options
   const level = rest.idSchema.$id.split("_").length
   return (
     <Box variant={highlightBox ? "highlightBox" : theming.VARIANT_DEFAULT}>
-      <TitleField title={title} level={level} variant={"schemaHeading"} />
+      {label && (
+        <TitleField title={title} level={level} variant={"schemaHeading"} />
+      )}
       <Wrapper size={"small"}>
         <Layout rowGap={"small"}>
-          {description}
+          <DescriptionField description={description} />
           {properties.map(prop => {
             return (
               <React.Fragment key={prop.content.key}>
