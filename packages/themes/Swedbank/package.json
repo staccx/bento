@@ -1,7 +1,6 @@
 {
   "name": "@staccx/swedbank-theme",
   "version": "8.37.0",
-  "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
