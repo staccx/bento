@@ -1,6 +1,6 @@
 {
   "name": "@staccx/formatting",
-  "version": "8.39.0",
+  "version": "8.39.1",
   "description": "Convenience functions for formatting",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -32,7 +32,7 @@
   },
   "jest": {},
   "devDependencies": {
-    "@staccx/rollup-config": "^8.39.0",
+    "@staccx/rollup-config": "^8.39.1",
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
     "react-scripts": "^1.1.4",
