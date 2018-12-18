@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.38.0"></a>
+# [8.38.0](https://bitbucket.org/stacc-flow/bento/compare/v8.37.0...v8.38.0) (2018-12-18)
+
+
+### Features
+
+* **fundu-theme:** add adjustments to pageselect / radiopills ([8a280c6](https://bitbucket.org/stacc-flow/bento/commits/8a280c6))
+* **fundu-theme:** change variant name to reflect changes in fundu web ([9fec439](https://bitbucket.org/stacc-flow/bento/commits/9fec439))
+* **fundu-theme:** radiopill styling ([e9dbad4](https://bitbucket.org/stacc-flow/bento/commits/e9dbad4))
+* **fundu-theme:** stylin’ the pills ([0309b29](https://bitbucket.org/stacc-flow/bento/commits/0309b29))
+
+
+
+
+
 <a name="8.37.0"></a>
 # [8.37.0](https://bitbucket.org/stacc-flow/bento/compare/v8.36.0...v8.37.0) (2018-12-14)
 

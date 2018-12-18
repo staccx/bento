@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.38.0"></a>
+# [8.38.0](https://bitbucket.org/stacc-flow/bento/compare/v8.37.0...v8.38.0) (2018-12-18)
+
+
+### Bug Fixes
+
+* **cli:** fix versioning... i hope ([4ab479d](https://bitbucket.org/stacc-flow/bento/commits/4ab479d))
+
+
+### Features
+
+* **cli:** add call to version to force semantic ([f73c8e7](https://bitbucket.org/stacc-flow/bento/commits/f73c8e7))
+* **cli:** add new command 'link' ([e6645e2](https://bitbucket.org/stacc-flow/bento/commits/e6645e2))
+
+
+
+
+
 <a name="8.35.0"></a>
 # [8.35.0](https://bitbucket.org/stacc-flow/bento/compare/v8.34.1...v8.35.0) (2018-12-12)
 

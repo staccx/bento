@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.38.0"></a>
+# [8.38.0](https://bitbucket.org/stacc-flow/bento/compare/v8.37.0...v8.38.0) (2018-12-18)
+
+
+### Bug Fixes
+
+* **base:** RadioPillItem value now PropTypes.any ([2b00e79](https://bitbucket.org/stacc-flow/bento/commits/2b00e79))
+
+
+
+
+
 <a name="8.37.0"></a>
 # [8.37.0](https://bitbucket.org/stacc-flow/bento/compare/v8.36.0...v8.37.0) (2018-12-14)
 

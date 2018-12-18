@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.38.0"></a>
+# [8.38.0](https://bitbucket.org/stacc-flow/bento/compare/v8.37.0...v8.38.0) (2018-12-18)
+
+**Note:** Version bump only for package @staccx/utils
+
+
+
+
+
 <a name="8.24.0"></a>
 # [8.24.0](https://bitbucket.org/stacc-flow/bento/compare/v8.23.0...v8.24.0) (2018-11-27)
 

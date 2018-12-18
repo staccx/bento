@@ -1,6 +1,6 @@
 {
   "name": "@staccx/cli-x",
-  "version": "8.35.0",
+  "version": "8.38.0",
   "description": "",
   "private": true,
   "main": "dist/cli.js",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@sanity/client": "^0.136.0",
-    "@staccx/rollup-config": "^8.2.0",
+    "@staccx/rollup-config": "^8.38.0",
     "acorn-jsx": "^4.1.1",
     "acorn-jsx-walk": "^1.0.1",
     "get-line-from-pos": "^1.0.0",

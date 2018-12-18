@@ -1,17 +1,17 @@
 {
   "name": "@staccx/bank-in-a-box",
-  "version": "8.37.0",
+  "version": "8.38.0",
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@staccx/animations": "^8.2.0",
-    "@staccx/aprila-theme": "^8.37.0",
-    "@staccx/base": "^8.37.0",
-    "@staccx/formatting": "^8.26.0",
-    "@staccx/i18n": "^8.37.0",
-    "@staccx/norefjell-theme": "^8.37.0",
+    "@staccx/animations": "^8.38.0",
+    "@staccx/aprila-theme": "^8.38.0",
+    "@staccx/base": "^8.38.0",
+    "@staccx/formatting": "^8.38.0",
+    "@staccx/i18n": "^8.38.0",
+    "@staccx/norefjell-theme": "^8.38.0",
     "@tedconf/react-show-more": "^1.1.2",
     "history": "^4.7.2",
     "mobx": "^5.0.3",
@@ -33,7 +33,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.2.0",
+    "@staccx/rollup-config": "^8.38.0",
     "prettier": "^1.14.2",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",

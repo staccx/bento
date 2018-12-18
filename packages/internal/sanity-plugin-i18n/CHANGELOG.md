@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.38.0"></a>
+# [8.38.0](https://bitbucket.org/stacc-flow/bento/compare/v8.37.0...v8.38.0) (2018-12-18)
+
+
+### Features
+
+* **sanity-plugin-i18n:** add translationValue as type ([085c9d1](https://bitbucket.org/stacc-flow/bento/commits/085c9d1))
+
+
+
+
+
 <a name="8.2.0"></a>
 # [8.2.0](https://bitbucket.org/stacc-flow/bento/compare/v8.1.1...v8.2.0) (2018-11-02)
 

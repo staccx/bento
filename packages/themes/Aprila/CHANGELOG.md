@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.38.0"></a>
+# [8.38.0](https://bitbucket.org/stacc-flow/bento/compare/v8.37.0...v8.38.0) (2018-12-18)
+
+
+### Features
+
+* **aprila-theme:** add styling to json-schema [wip] ([7d000fb](https://bitbucket.org/stacc-flow/bento/commits/7d000fb))
+* **json-schema:** finish first draft schema ([841b680](https://bitbucket.org/stacc-flow/bento/commits/841b680))
+* **loan-schema:** add highlight box ([41d9d75](https://bitbucket.org/stacc-flow/bento/commits/41d9d75))
+
+
+
+
+
 <a name="8.37.0"></a>
 # [8.37.0](https://bitbucket.org/stacc-flow/bento/compare/v8.36.0...v8.37.0) (2018-12-14)
 
