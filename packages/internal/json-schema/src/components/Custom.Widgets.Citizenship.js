@@ -49,7 +49,9 @@ const Citizenship = ({ onChange, registry, ...props }) => {
             indexer={"code"}
             filter={["code", "name"]}
             onChange={country => set({ country })}
-            renderInput={getInputProps => <Input label={"Land"} {...getInputProps()} />}
+            renderInput={getInputProps => (
+              <Input label={"Land"} {...getInputProps()} />
+            )}
             renderLabel={null}
             renderSelected={renderSelected}
           >
