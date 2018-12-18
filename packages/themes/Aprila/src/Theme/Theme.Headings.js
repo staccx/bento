@@ -29,7 +29,9 @@ export default theming.createVariants(
       font-size: ${theming.font.base};
       color: ${theming.color.primary};
     `,
-    schemaHeading: css``
+    schemaHeading: css`
+      color: ${theming.color.primary};
+    `
   },
   Heading.themeProps.heading
 )

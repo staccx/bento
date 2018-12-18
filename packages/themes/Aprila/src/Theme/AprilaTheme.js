@@ -32,7 +32,9 @@ import { IconLoggedOutConfirmation } from "./Icons/Icon.LoggedOutConfirmation"
 import { IllustrationAnnualStatement } from "./Illustrations/Illustration.AnnualStatement"
 import SplitListItem from "./Theme.SplitListItem"
 import { ListStyling } from "./Theme.Lists"
+import { LabelStyling } from "./Theme.Labels"
 import { MenuColumnStyle } from "../components/MenuColumn"
+
 const { Theme } = theming
 
 const borderRadius = "8px"
@@ -182,5 +184,6 @@ const t = new Theme(BaseTheme, {
   .add(AdStyle)
   .add(ListStyling)
   .add(MenuColumnStyle)
+  .add(LabelStyling)
 
 export default t
