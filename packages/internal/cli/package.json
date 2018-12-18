@@ -2,7 +2,6 @@
   "name": "@staccx/cli-x",
   "version": "8.38.1",
   "description": "",
-  "private": true,
   "main": "dist/cli.js",
   "module": "dist/cli.es.js",
   "bin": {
