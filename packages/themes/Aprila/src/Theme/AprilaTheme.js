@@ -4,7 +4,12 @@ import reset from "./reset"
 import Button from "./Theme.Button"
 import Box from "./Theme.Box"
 import { LogoStyle } from "./Theme.Logo"
-import { CheckboxCheckedIcon, CheckboxCheckedLabel } from "./Theme.Checkbox"
+import {
+  CheckBoxWrapper,
+  CheckboxCheckedIcon,
+  CheckboxLabel,
+  CheckboxCheckedLabel
+} from "./Theme.Checkbox"
 import { IconArrowDown } from "./Icons/Icon.ArrowDown"
 import { IconArrowUp } from "./Icons/Icon.ArrowUp"
 import { IconLogout } from "./Icons/Icon.Logout"
@@ -33,6 +38,11 @@ import { IllustrationAnnualStatement } from "./Illustrations/Illustration.Annual
 import SplitListItem from "./Theme.SplitListItem"
 import { ListStyling } from "./Theme.Lists"
 import { LabelStyling } from "./Theme.Labels"
+import {
+  InputInputStyling,
+  InputLabelStyling,
+  InputWrapperStyling
+} from "./Theme.Inputs"
 import { MenuColumnStyle } from "../components/MenuColumn"
 
 const { Theme } = theming
@@ -104,7 +114,7 @@ const font = {
 }
 
 const fontWeight = {
-  bold: 500,
+  bold: 700,
   normal: 400,
   light: 400
 }
@@ -157,7 +167,9 @@ const t = new Theme(BaseTheme, {
   .add(FooterStyle)
   .add(LogoStyle)
   .add(LogoStyle)
+  .add(CheckBoxWrapper)
   .add(CheckboxCheckedIcon)
+  .add(CheckboxLabel)
   .add(CheckboxCheckedLabel)
   .add(IconArrowDown)
   .add(IconArrowRight)
@@ -185,5 +197,8 @@ const t = new Theme(BaseTheme, {
   .add(ListStyling)
   .add(MenuColumnStyle)
   .add(LabelStyling)
+  .add(InputInputStyling)
+  .add(InputLabelStyling)
+  .add(InputWrapperStyling)
 
 export default t
