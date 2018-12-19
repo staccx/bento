@@ -20,6 +20,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@sanity/client": "^0.136.0",
+    "@staccx/formatting": "^8.26.0",
     "@staccx/rollup-config": "^8.39.1",
     "acorn-jsx": "^4.1.1",
     "acorn-jsx-walk": "^1.0.1",
