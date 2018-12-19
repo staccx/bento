@@ -117,7 +117,7 @@ async function release(debug) {
       spinner.info("Publishing!")
       await executeAsync("lerna", [
         "publish",
-        "from-package",
+        "from-git",
         "--no-verify-access",
         "--yes"
       ])
