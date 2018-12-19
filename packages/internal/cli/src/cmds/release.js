@@ -108,18 +108,19 @@ async function release(debug) {
     spinner.start("Releasing packages. Please wait")
     if (!debug) {
       spinner.info("Versioning!")
-      await executeAsync("lerna", [
-        "version",
-        "--conventional-commits",
-        "--yes"
-      ])
+      await executeAsync(
+        "lerna",
+        ["version", "--conventional-commits"],
+        {},
+        console.log
+      )
       spinner.info("Publishing!")
-      await executeAsync("lerna", [
-        "publish",
-        "from-package",
-        "--no-verify-access",
-        "--yes"
-      ])
+      await executeAsync(
+        "lerna",
+        ["publish", "from-package", "--no-verify-access"],
+        {},
+        console.log
+      )
 
       await executeAsync(
         "lerna",
