@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.39.10](https://bitbucket.org/stacc-flow/bento/compare/v8.39.9...v8.39.10) (2018-12-19)
+
+
+### Bug Fixes
+
+* **cli:** debug ([41cac2a](https://bitbucket.org/stacc-flow/bento/commits/41cac2a))
+
+
+
+
+
 ## [8.39.9](https://bitbucket.org/stacc-flow/bento/compare/v8.39.8...v8.39.9) (2018-12-19)
 
 
