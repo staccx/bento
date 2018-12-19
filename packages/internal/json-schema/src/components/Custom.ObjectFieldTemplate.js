@@ -1,5 +1,5 @@
 import React from "react"
-import { Wrapper, Layout, Box, theming } from "@staccx/base"
+import { Layout, Box, theming } from "@staccx/base"
 
 const CustomObjectFieldTemplate = ({
   TitleField,

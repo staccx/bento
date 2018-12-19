@@ -6,15 +6,6 @@ import Schema from "./components/Schema"
 import styled from "styled-components"
 
 import {
-  nested,
-  simple,
-  arrays,
-  references,
-  custom,
-  errors,
-  large,
-  alternatives,
-  conditional,
   onboardin1
 } from "./data/schemas"
 

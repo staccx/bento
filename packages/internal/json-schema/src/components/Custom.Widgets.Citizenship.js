@@ -1,5 +1,5 @@
 import React from "react"
-import { Select, Combobox, Input, State, List, Button } from "@staccx/base"
+import { Combobox, Input, State, List, Button } from "@staccx/base"
 
 const renderOption = (getItemProps, highlightedIndex, selectedItem) => (
   item,
