@@ -1,8 +1,9 @@
 import React, { Component } from "react"
 import { ThemeProvider } from "styled-components"
 import theme from "@staccx/aprila-theme"
-import { Button, WebFonts, GlobalStyle, Wrapper } from "@staccx/base"
+import { Button, WebFonts, GlobalStyle, Wrapper, theming } from "@staccx/base"
 import Schema from "./components/Schema"
+import styled from "styled-components"
 
 import {
   nested,
@@ -25,19 +26,30 @@ class App extends Component {
         <React.Fragment>
           <GlobalStyle />
           <WebFonts />
-          <Wrapper size="large" variant="schemaWrapper">
+          <StyledWrapper size="small" variant="schemaWrapper">
             <Schema
               schema={chosen.schema}
               uiSchema={chosen.uiSchema}
               onSubmit={console.log}
             >
-              <Button type={"submit"}>Hei jeg er overskrevet</Button>
+              <StyledButton type={"submit"}>
+                Hei jeg er overskrevet
+              </StyledButton>
             </Schema>
-          </Wrapper>
+          </StyledWrapper>
         </React.Fragment>
       </ThemeProvider>
     )
   }
 }
+
+const StyledWrapper = styled(Wrapper)`
+  padding-left: ${theming.spacing.large};
+  padding-right: ${theming.spacing.large};
+`
+
+const StyledButton = styled(Button)`
+  margin-top: ${theming.spacing.huge};
+`
 
 export default App

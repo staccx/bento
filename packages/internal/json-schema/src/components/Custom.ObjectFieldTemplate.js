@@ -18,18 +18,18 @@ const CustomObjectFieldTemplate = ({
       {label && (
         <TitleField title={title} level={level} variant={"schemaHeading"} />
       )}
-      <Wrapper size={"medium"}>
-        <Layout rowGap={"small"}>
-          <DescriptionField description={description} />
-          {properties.map(prop => {
-            return (
-              <React.Fragment key={prop.content.key}>
-                {prop.content}
-              </React.Fragment>
-            )
-          })}
-        </Layout>
-      </Wrapper>
+      <Layout
+        rowGap={level === 1 ? "largePlus" : level === 2 ? "medium" : "small"}
+      >
+        <DescriptionField description={description} />
+        {properties.map(prop => {
+          return (
+            <React.Fragment key={prop.content.key}>
+              {prop.content}
+            </React.Fragment>
+          )
+        })}
+      </Layout>
     </Box>
   )
 }
