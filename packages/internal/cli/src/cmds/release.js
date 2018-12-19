@@ -112,6 +112,7 @@ async function release(debug) {
         "lerna",
         ["version", "--conventional-commits", "--yes"],
         {},
+        console.log,
         console.log
       )
       spinner.info("Publishing!")
