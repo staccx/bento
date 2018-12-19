@@ -109,7 +109,15 @@ export default theming.createVariants(
       margin-right: -${theming.spacing.large};
       background: ${theming.color("subtleHover")};
     `,
-    schemaContainer: css``
+    schemaContainer: css``,
+    inlineBox: css`
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      > *:not(:last-child) {
+        margin-right: ${theming.spacing.small};
+      }
+    `
   },
   Box.themeProps.box
 )

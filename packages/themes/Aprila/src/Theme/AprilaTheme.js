@@ -76,6 +76,7 @@ const color = {
   bg: "#fff",
   bgGray: "#F2F1FC",
   primary: "#3B2C7C",
+  primaryLight: "#604fa9",
   secondary: "#FF7E68",
   secondaryLight: "#FECDC6",
   gray: "#767676",

@@ -263,6 +263,39 @@ export default theming.createVariants(
       min-height: ${theming.spacing.medium};
       height: ${theming.spacing.medium};
       line-height: 0;
+    `,
+    round: css`
+      border-radius: 66px;
+      height: 44px;
+      width: 44px;
+      flex: 0 0 44px;
+      padding: 0;
+      font-size: ${theming.font.h3};
+    `,
+    positive: css`
+      background-color: ${theming.color.positive}c0;
+      &:focus,
+      &:hover {
+        background-color: ${theming.color.positive};
+      }
+    `,
+    negative: css`
+      background-color: ${theming.color.negative}c0;
+      &:focus,
+      &:hover {
+        background-color: ${theming.color.negative};
+      }
+    `,
+    clearButton: css`
+      position: absolute;
+      right: 0;
+      background-color: transparent;
+      color: ${theming.color.negative}c0;
+      &:focus,
+      &:hover {
+        background-color: transparent;
+        color: ${theming.color.negative};
+      }
     `
   },
   Button.themeProps.button

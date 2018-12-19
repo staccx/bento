@@ -9,7 +9,17 @@ export const ListStyling = theming.createVariants(
       li {
       }
     `,
-    menuList: css``
+    menuList: css``,
+    combo: css`
+      margin-top: 0;
+      padding: 0;
+      background-color: ${theming.color("primaryLight")};
+      color: ${theming.color.white};
+      font-family: "Roboto", sans-serif;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    `
   },
   List.themeProps.list
 )

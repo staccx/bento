@@ -22,6 +22,9 @@ export const InputLabelStyling = theming.createVariants(
 // INPUT
 export const InputInputStyling = theming.createVariants(
   {
+    [theming.VARIANT_DEFAULT]: css`
+      box-sizing: border-box;
+    `,
     schemaInput: css`
       box-sizing: border-box;
       border-radius: 3px;
