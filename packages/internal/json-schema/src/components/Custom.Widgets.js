@@ -1,5 +1,5 @@
 import React from "react"
-import { Input, CheckBox, PhoneInput } from "@staccx/base"
+import { Input, CheckBox, PhoneInput, theming } from "@staccx/base"
 import SelectWidget from "./Custom.Widgets.Select"
 import RadioWidget from "./Custom.Widgets.Radio"
 import Citizenship from "./Custom.Widgets.Citizenship"
@@ -76,6 +76,7 @@ const CheckboxWidget = ({
     onChange={e => {
       onChange(e.target.checked)
     }}
+    variant={[theming.VARIANT_DEFAULT]}
   >
     {label}
   </CheckBox>

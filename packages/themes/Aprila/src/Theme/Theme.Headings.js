@@ -30,7 +30,10 @@ export default theming.createVariants(
       color: ${theming.color.primary};
     `,
     schemaHeading: css`
+      margin-top: 0;
       color: ${theming.color.primary};
+      font-weight: ${p =>
+        p.level === 1 && `${theming.fontWeight("normal")(p)}`};
     `
   },
   Heading.themeProps.heading

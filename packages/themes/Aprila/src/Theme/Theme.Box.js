@@ -103,8 +103,10 @@ export default theming.createVariants(
     `,
     highlightBox: css`
       border: none;
-      border-radius: 10px;
-      padding: ${theming.spacing.medium} ${theming.spacing("largePlus")};
+      border-radius: 8px;
+      padding: ${theming.spacing("mediumPlus")} ${theming.spacing.large};
+      margin-left: -${theming.spacing.large};
+      margin-right: -${theming.spacing.large};
       background: ${theming.color("subtleHover")};
     `,
     schemaContainer: css``
