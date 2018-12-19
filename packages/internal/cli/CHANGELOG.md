@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.39.7](https://bitbucket.org/stacc-flow/bento/compare/v8.39.6...v8.39.7) (2018-12-19)
+
+
+### Bug Fixes
+
+* **cli:** back to from-package (lerna version 3.6 needed) ([5afd09d](https://bitbucket.org/stacc-flow/bento/commits/5afd09d))
+* **cli:** changed to from-git ([49e2b46](https://bitbucket.org/stacc-flow/bento/commits/49e2b46))
+
+
+
+
+
 <a name="8.39.6"></a>
 ## [8.39.6](https://bitbucket.org/stacc-flow/bento/compare/v8.39.5...v8.39.6) (2018-12-19)
 
