@@ -16,9 +16,9 @@ async function release(debug) {
     spinner: "monkey"
   })
 
-  const checkGit = async () => {
+  const checkGit = async (msg = "Checking git for changes") => {
     try {
-      spinner.start("Checking git for changes")
+      spinner.start(msg)
       if (!debug) {
         await checkWorkingTree({ cwd: process.cwd() })
         await fetch(process.cwd())
@@ -105,7 +105,7 @@ async function release(debug) {
     process.exit(1)
   }
 
-  await checkGit()
+  await checkGit("Checking git for changes after linting")
 
   /**
    * Release the beast!
@@ -119,16 +119,13 @@ async function release(debug) {
         "lerna",
         ["version", "--conventional-commits", "--yes"],
         {},
-        console.log,
         console.log
       )
       spinner.info("Publishing!")
       await executeAsync(
         "lerna",
         ["publish", "from-package", "--no-verify-access", "--yes"],
-        {},
-        () => null,
-        console.log
+        {}
       )
       spinner.succeed("Published!")
       await executeAsync(
