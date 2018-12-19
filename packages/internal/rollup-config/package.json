@@ -1,6 +1,6 @@
 {
   "name": "@staccx/rollup-config",
-  "version": "8.39.1",
+  "version": "8.39.2",
   "main": "dist/index.js",
   "license": "UNLICENSED",
   "module": "dist/index.es.js",

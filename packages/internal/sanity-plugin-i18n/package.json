@@ -1,6 +1,6 @@
 {
   "name": "@staccx/sanity-plugin-i18n",
-  "version": "8.39.1",
+  "version": "8.39.2",
   "description": "",
   "main": "dist/translations.js",
   "author": "Stacc X",

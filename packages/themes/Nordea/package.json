@@ -1,6 +1,6 @@
 {
   "name": "@staccx/nordea-theme",
-  "version": "8.39.1",
+  "version": "8.39.2",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -25,13 +25,13 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/animations": "^8.39.1",
-    "@staccx/base": "^8.39.1",
+    "@staccx/animations": "^8.39.2",
+    "@staccx/base": "^8.39.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.39.1",
+    "@staccx/rollup-config": "^8.39.2",
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
     "react-scripts": "^1.1.4",

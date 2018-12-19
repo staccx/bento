@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.39.2"></a>
+## [8.39.2](https://bitbucket.org/stacc-flow/bento/compare/v8.39.1...v8.39.2) (2018-12-19)
+
+**Note:** Version bump only for package mr-x
+
+
+
+
+
 <a name="8.39.1"></a>
 ## [8.39.1](https://bitbucket.org/stacc-flow/bento/compare/v8.39.0...v8.39.1) (2018-12-18)
 
