@@ -2,7 +2,7 @@ const ora = require("ora")
 const checkWorkingTree = require("@lerna/check-working-tree")
 const username = require("username")
 const { executeAsync } = require("./__helpers")
-const { postMessage } = require("../../../mr-x")
+const { postMessage } = require("../utils/slack")
 const { fetch, status } = require("../utils/git")
 
 let updated = []
