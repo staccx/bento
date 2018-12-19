@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.39.6"></a>
+## [8.39.6](https://bitbucket.org/stacc-flow/bento/compare/v8.39.5...v8.39.6) (2018-12-19)
+
+
+### Bug Fixes
+
+* **cli:** add log to stdErr ([1872465](https://bitbucket.org/stacc-flow/bento/commits/1872465))
+
+
+
+
+
 <a name="8.39.5"></a>
 ## [8.39.5](https://bitbucket.org/stacc-flow/bento/compare/v8.39.4...v8.39.5) (2018-12-19)
 
