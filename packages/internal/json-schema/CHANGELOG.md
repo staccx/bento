@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.40.0](https://bitbucket.org/stacc-flow/bento/compare/v8.39.10...v8.40.0) (2018-12-19)
+
+
+### Features
+
+* **json-schema:** adapt to last changes to aprila-theme ([12d430b](https://bitbucket.org/stacc-flow/bento/commits/12d430b))
+
+
+
+
+
 <a name="8.39.3"></a>
 ## [8.39.3](https://bitbucket.org/stacc-flow/bento/compare/v8.39.2...v8.39.3) (2018-12-19)
 

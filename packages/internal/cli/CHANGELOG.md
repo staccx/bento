@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.40.0](https://bitbucket.org/stacc-flow/bento/compare/v8.39.10...v8.40.0) (2018-12-19)
+
+
+### Bug Fixes
+
+* **cli:** logging moar ([2d13132](https://bitbucket.org/stacc-flow/bento/commits/2d13132))
+
+
+
+
+
 ## [8.39.10](https://bitbucket.org/stacc-flow/bento/compare/v8.39.9...v8.39.10) (2018-12-19)
 
 
