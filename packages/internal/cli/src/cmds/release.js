@@ -121,6 +121,7 @@ async function release(debug) {
         {},
         console.log,
         message => {
+          spinner.fail(message)
           throw new Error(message)
         }
       )
