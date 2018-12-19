@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.40.3](https://bitbucket.org/stacc-flow/bento/compare/v8.40.2...v8.40.3) (2018-12-19)
+
+
+### Bug Fixes
+
+* **cli:** add ora dep ([00e1f55](https://bitbucket.org/stacc-flow/bento/commits/00e1f55))
+* **cli:** deps ([e41512a](https://bitbucket.org/stacc-flow/bento/commits/e41512a))
+
+
+
+
+
 ## [8.40.2](https://bitbucket.org/stacc-flow/bento/compare/v8.40.1...v8.40.2) (2018-12-19)
 
 
