@@ -1,31 +1,59 @@
 import React from "react"
-import { Combobox, Input, State, List, Button } from "@staccx/base"
+import {
+  Combobox,
+  Input,
+  State,
+  List,
+  Button,
+  Box,
+  theming
+} from "@staccx/base"
+import styled, { css } from "styled-components"
 
 const renderOption = (getItemProps, highlightedIndex, selectedItem) => (
   item,
   index
 ) => (
-  <li
+  <ListItem
     {...getItemProps({
       key: item.code,
       index,
-      item,
-      style: {
-        backgroundColor: highlightedIndex === index ? "lightgray" : "white",
-        fontWeight: selectedItem === item ? "bold" : "normal",
-        height: 64
-      }
+      item
     })}
+    selected={selectedItem === item}
+    highlighted={highlightedIndex === index}
   >
     {item.name}
-  </li>
+  </ListItem>
 )
 
+const ListItem = styled.li`
+  line-height: 24px;
+  padding: ${theming.spacing.small} ${theming.spacing.medium};
+  cursor: pointer;
+${({ selected }) =>
+  selected
+    ? css`
+        background-color: ${theming.color.primary};
+      `
+    : null}
+
+${({ highlighted }) =>
+  highlighted
+    ? css`
+        background-color: ${theming.color.primary};
+      `
+    : null}
+  border-bottom: 1px solid ${theming.color.line}40;
+`
+
 const renderSelected = (selectedItem, getInputProps, { clearSelection }) => (
-  <span>
+  <Box variant={["inlineBox"]}>
     <Input {...getInputProps({ value: selectedItem.name })} />
-    <Button onClick={clearSelection}>Clear</Button>
-  </span>
+    <Button variant={["clearButton"]} onClick={clearSelection}>
+      X
+    </Button>
+  </Box>
 )
 
 const Citizenship = ({ onChange, registry, ...props }) => {
@@ -43,8 +71,9 @@ const Citizenship = ({ onChange, registry, ...props }) => {
         country = props.schema.properties.country.default,
         tin = null
       }) => (
-        <div>
+        <Box variant={["inlineBox"]}>
           <Combobox
+            variant="schemaFields"
             options={items}
             indexer={"code"}
             filter={["code", "name"]}
@@ -54,9 +83,10 @@ const Citizenship = ({ onChange, registry, ...props }) => {
             )}
             renderLabel={null}
             renderSelected={renderSelected}
+            // downshiftProps={{ isOpen: true }}
           >
             {({ result, getItemProps, highlightedIndex, selectedItem }) => (
-              <List>
+              <List variant={["combo"]}>
                 {result.map(
                   renderOption(getItemProps, highlightedIndex, selectedItem)
                 )}
@@ -71,9 +101,10 @@ const Citizenship = ({ onChange, registry, ...props }) => {
               set({ tin })
               onChange({ country, tin })
             }}
+            label="TIN"
             required={props.required}
           />
-        </div>
+        </Box>
       )}
     </State>
   )

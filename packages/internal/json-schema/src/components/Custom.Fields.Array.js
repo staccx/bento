@@ -1,20 +1,20 @@
 import React from "react"
-import { Button, Caret, Layout, LayoutItem, Wrapper } from "@staccx/base"
-import styled from "styled-components"
+import { Button, Layout, Box } from "@staccx/base"
 
-const CaretIcon = styled(Caret)`
-  transition: transform 0.3s ease-out;
-  transform: ${p => (p.rotate ? "rotate(180deg)" : "rotate(0)")};
-`
+// const CaretIcon = styled(Caret)`
+//   transition: transform 0.3s ease-out;
+//   transform: ${p => (p.rotate ? "rotate(180deg)" : "rotate(0)")};
+// `
 
-const IconButton = ({ icon, ...rest }) => (
-  <Button {...rest}>
-    <CaretIcon rotate={icon === "arrow-up"} />
-  </Button>
-)
+// const IconButton = ({ icon, ...rest }) => (
+//   <Button {...rest}>
+//     <CaretIcon rotate={icon === "arrow-up"} />
+//   </Button>
+// )
 
 const AddButton = props => <Button {...props} />
 
+const RemoveButton = props => <AddButton children="-" {...props} />
 const ArrayFieldTitle = ({ TitleField, idSchema, title, required }) => {
   if (!title) {
     // See #312: Ensure compatibility with old versions of React.
@@ -34,68 +34,44 @@ const ArrayFieldDescription = ({ DescriptionField, idSchema, description }) => {
   return <DescriptionField id={id} description={description} />
 }
 
-const Custom = styled(Layout)`
-  grid-auto-columns: 1fr 0.1fr;
-
-  grid-template-areas:
-    ". toolbar"
-    "children children";
-`
-
 const defaultArrayItem = props => {
   return (
-    <Custom variant={["_default", "arrayItem"]} key={props.index}>
-      <LayoutItem area={"children"}>{props.children}</LayoutItem>
+    <Box variant={["inlineBox"]} key={props.index}>
+      {props.children}
 
-      {props.hasToolbar && (
-        <LayoutItem area={"toolbar"}>
-          <Wrapper>
-            {(props.hasMoveUp || props.hasMoveDown) && (
-              <IconButton
-                icon="arrow-up"
-                tabIndex="-1"
-                disabled={props.disabled || props.readonly || !props.hasMoveUp}
-                onClick={props.onReorderClick(props.index, props.index - 1)}
-              />
-            )}
-
-            {(props.hasMoveUp || props.hasMoveDown) && (
-              <IconButton
-                icon="arrow-down"
-                tabIndex="-1"
-                disabled={
-                  props.disabled || props.readonly || !props.hasMoveDown
-                }
-                onClick={props.onReorderClick(props.index, props.index + 1)}
-              />
-            )}
-
-            {props.hasRemove && (
-              <AddButton
-                children="-"
-                tabIndex="-1"
-                disabled={props.disabled || props.readonly}
-                onClick={props.onDropIndexClick(props.index)}
-              />
-            )}
-          </Wrapper>
-        </LayoutItem>
+      {props.hasToolbar && props.hasRemove && (
+        <RemoveButton
+          variant={["round", "negative"]}
+          tabIndex="-1"
+          disabled={props.disabled || props.readonly}
+          onClick={props.onDropIndexClick(props.index)}
+        />
       )}
-    </Custom>
+    </Box>
   )
 }
 
 export default props => {
   return (
     <Layout>
-      <ArrayFieldTitle
-        key={`array-field-title-${props.idSchema.$id}`}
-        TitleField={props.TitleField}
-        idSchema={props.idSchema}
-        title={props.uiSchema["ui:title"] || props.title}
-        required={props.required}
-      />
-
+      <Box variant={["inlineBox"]}>
+        <ArrayFieldTitle
+          key={`array-field-title-${props.idSchema.$id}`}
+          TitleField={props.TitleField}
+          idSchema={props.idSchema}
+          title={props.uiSchema["ui:title"] || props.title}
+          required={props.required}
+        />
+        {props.canAdd && (
+          <AddButton
+            variant={["round", "positive"]}
+            onClick={props.onAddClick}
+            disabled={props.disabled || props.readonly}
+          >
+            {`+ ${props.canAdd.title || ""}`}
+          </AddButton>
+        )}
+      </Box>
       {(props.uiSchema["ui:description"] || props.schema.description) && (
         <ArrayFieldDescription
           key={`array-field-description-${props.idSchema.$id}`}
@@ -106,19 +82,9 @@ export default props => {
           }
         />
       )}
-
       <div key={`array-item-list-${props.idSchema.$id}`}>
         {props.items && props.items.map(defaultArrayItem)}
       </div>
-
-      {props.canAdd && (
-        <AddButton
-          onClick={props.onAddClick}
-          disabled={props.disabled || props.readonly}
-        >
-          {`+ ${props.canAdd.title || ""}`}
-        </AddButton>
-      )}
     </Layout>
   )
 }
