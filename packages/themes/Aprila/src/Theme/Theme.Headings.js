@@ -34,6 +34,7 @@ export default theming.createVariants(
       color: ${theming.color.primary};
       font-weight: ${p =>
         p.level === 1 && `${theming.fontWeight("normal")(p)}`};
+      margin-top: ${p => p.level === 3 && `${theming.spacing("medium")(p)}`};
     `
   },
   Heading.themeProps.heading
