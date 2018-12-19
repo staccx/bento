@@ -5,9 +5,7 @@ import { Button, WebFonts, GlobalStyle, Wrapper, theming } from "@staccx/base"
 import Schema from "./components/Schema"
 import styled from "styled-components"
 
-import {
-  onboardin1
-} from "./data/schemas"
+import { onboardin1 } from "./data/schemas"
 
 const chosen = onboardin1
 class App extends Component {
