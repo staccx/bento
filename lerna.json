@@ -4,7 +4,7 @@
     "packages/*",
     "templates/*"
   ],
-  "version": "8.39.2",
+  "version": "8.39.3",
   "npmClient": "yarn",
   "useWorkspaces": true
 }

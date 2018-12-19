@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.39.3"></a>
+## [8.39.3](https://bitbucket.org/stacc-flow/bento/compare/v8.39.2...v8.39.3) (2018-12-19)
+
+**Note:** Version bump only for package @staccx/control-panel
+
+
+
+
+
 <a name="8.39.2"></a>
 ## [8.39.2](https://bitbucket.org/stacc-flow/bento/compare/v8.39.1...v8.39.2) (2018-12-19)
 
