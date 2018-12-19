@@ -119,9 +119,13 @@ async function release(debug) {
         "lerna",
         ["publish", "from-package", "--no-verify-access", "--yes"],
         {},
-        console.log
+        console.log,
+        err => {
+          console.error(err)
+          process.exit(1)
+        }
       )
-
+      spinner.succeed("Published!")
       await executeAsync(
         "lerna",
         ["ls", `--scope`, scope, "--json"],
@@ -132,7 +136,7 @@ async function release(debug) {
     }
     spinner.succeed("Packages released!")
   } catch (e) {
-    spinner.fail("Something went wrong during releasing")
+    spinner.fail("Something went wrong during releasing", e)
     const name = await username()
     await postMessage(`@channel @${name}'s release failed. Let them know`)
     process.exit(1)
