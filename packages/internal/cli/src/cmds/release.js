@@ -15,24 +15,29 @@ async function release(debug) {
     text: "Setup",
     spinner: "monkey"
   })
-  try {
-    spinner.start("Checking git for changes")
-    if (!debug) {
-      await checkWorkingTree({ cwd: process.cwd() })
-      await fetch(process.cwd())
-      const { behind, ahead } = await status(process.cwd())
-      if (behind > 0) {
-        spinner.fail(
-          `You are behind by ${behind} and ahead by ${ahead}. Please pull`
-        )
-        process.exit(1)
+
+  const checkGit = async () => {
+    try {
+      spinner.start("Checking git for changes")
+      if (!debug) {
+        await checkWorkingTree({ cwd: process.cwd() })
+        await fetch(process.cwd())
+        const { behind, ahead } = await status(process.cwd())
+        if (behind > 0) {
+          spinner.fail(
+            `You are behind by ${behind} and ahead by ${ahead}. Please pull`
+          )
+          process.exit(1)
+        }
       }
+      spinner.succeed("No changes. 🎉")
+    } catch (e) {
+      spinner.fail("You have local changes")
+      process.exit(1)
     }
-    spinner.succeed("No changes. 🎉")
-  } catch (e) {
-    spinner.fail("You have local changes")
-    process.exit(1)
   }
+
+  await checkGit()
   let packageNames = []
   let text = ""
   try {
@@ -100,6 +105,8 @@ async function release(debug) {
     process.exit(1)
   }
 
+  await checkGit()
+
   /**
    * Release the beast!
    */
@@ -120,7 +127,7 @@ async function release(debug) {
         "lerna",
         ["publish", "from-package", "--no-verify-access", "--yes"],
         {},
-        console.log,
+        () => null,
         console.log
       )
       spinner.succeed("Published!")
