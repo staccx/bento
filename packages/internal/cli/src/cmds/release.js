@@ -120,9 +120,9 @@ async function release(debug) {
         ["publish", "from-package", "--no-verify-access", "--yes"],
         {},
         console.log,
-        message => {
-          spinner.fail(message)
-          throw new Error(message)
+        err => {
+          console.error(err)
+          process.exit(1)
         }
       )
       spinner.succeed("Published!")
