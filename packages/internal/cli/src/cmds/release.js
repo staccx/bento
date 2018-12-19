@@ -111,13 +111,12 @@ async function release(debug) {
       await executeAsync("lerna", [
         "version",
         "--conventional-commits",
-        "--force-publish",
         "--yes"
       ])
       spinner.info("Publishing!")
       await executeAsync("lerna", [
         "publish",
-        "from-git",
+        "from-package",
         "--no-verify-access",
         "--yes"
       ])
