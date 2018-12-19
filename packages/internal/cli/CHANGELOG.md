@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.39.4"></a>
+## [8.39.4](https://bitbucket.org/stacc-flow/bento/compare/v8.39.3...v8.39.4) (2018-12-19)
+
+
+### Bug Fixes
+
+* **cli:** back to package. remove force publish ([34745f0](https://bitbucket.org/stacc-flow/bento/commits/34745f0))
+* **cli:** trying from-git ([b40589e](https://bitbucket.org/stacc-flow/bento/commits/b40589e))
+
+
+
+
+
 <a name="8.39.3"></a>
 ## [8.39.3](https://bitbucket.org/stacc-flow/bento/compare/v8.39.2...v8.39.3) (2018-12-19)
 
