@@ -6,13 +6,13 @@ import {
   retrieveSchema,
   toIdSchema,
   getDefaultRegistry,
-  mergeObjects,
   getUiOptions,
   isFilesArray,
   deepEquals,
   getSchemaType,
   ADDITIONAL_PROPERTY_FLAG
 } from "../utils"
+import mergeObjects from "../utils/mergeObjects"
 import UnsupportedField from "./Custom.Unsupported"
 
 const REQUIRED_FIELD_SYMBOL = "*"

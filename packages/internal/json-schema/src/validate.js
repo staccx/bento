@@ -1,7 +1,7 @@
 import toPath from "lodash.topath"
 import Ajv from "ajv"
-
-import { isObject, mergeObjects } from "./utils"
+import mergeObjects from "./utils/mergeObjects"
+import isObject from "./utils/isObject"
 
 const ajv = new Ajv({
   errorDataPath: "property",

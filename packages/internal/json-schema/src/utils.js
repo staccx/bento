@@ -1,6 +1,10 @@
 import React from "react"
-import validateFormData from "./validate"
+import isObject from "./utils/isObject"
+import mergeObjects from "./utils/mergeObjects"
 import fill from "core-js/library/fn/array/fill"
+import fields from "./components/Custom.Fields"
+import widgets from "./components/Custom.Widgets"
+import validateFormData from "./validate"
 
 export const ADDITIONAL_PROPERTY_FLAG = "__additional_property"
 
@@ -57,8 +61,8 @@ const widgetMap = {
 
 export function getDefaultRegistry() {
   return {
-    fields: require("./components/Custom.Fields").default,
-    widgets: require("./components/Custom.Widgets").default,
+    fields,
+    widgets,
     definitions: {},
     formContext: {}
   }
@@ -214,28 +218,6 @@ export function getUiOptions(uiSchema) {
       }
       return { ...options, [key.substring(3)]: value }
     }, {})
-}
-
-export function isObject(thing) {
-  return typeof thing === "object" && thing !== null && !Array.isArray(thing)
-}
-
-export function mergeObjects(obj1, obj2, concatArrays = false) {
-  // Recursively merge deeply nested objects.
-  var acc = Object.assign({}, obj1) // Prevent mutation of source object.
-  return Object.keys(obj2).reduce((acc, key) => {
-    const left = obj1 ? obj1[key] : {}
-
-    const right = obj2[key]
-    if (obj1 && obj1.hasOwnProperty(key) && isObject(right)) {
-      acc[key] = mergeObjects(left, right, concatArrays)
-    } else if (concatArrays && Array.isArray(left) && Array.isArray(right)) {
-      acc[key] = left.concat(right)
-    } else {
-      acc[key] = right
-    }
-    return acc
-  }, acc)
 }
 
 export function asNumber(value) {
