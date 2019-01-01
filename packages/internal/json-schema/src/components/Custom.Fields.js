@@ -1,6 +1,5 @@
 import React from "react"
 import { Label, Heading, Alert } from "@staccx/base"
-import Citizenship from "./Custom.Widgets.Citizenship"
 
 const CustomTitleField = ({ title, required, level, variant, ...rest }) => {
   return title ? (
@@ -20,6 +19,5 @@ const LatLngField = props => (
 export default {
   TitleField: CustomTitleField,
   DescriptionField: CustomDescriptionField,
-  geo: LatLngField,
-  citizenship: Citizenship
+  geo: LatLngField
 }

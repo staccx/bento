@@ -1,9 +1,8 @@
 import React, { Component } from "react"
-import { ThemeProvider } from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import theme from "@staccx/aprila-theme"
 import { Button, WebFonts, GlobalStyle, Wrapper, theming } from "@staccx/base"
 import Schema from "./components/Schema"
-import styled from "styled-components"
 
 import { onboardin1 } from "./data/schemas"
 
