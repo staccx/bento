@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.41.0](https://bitbucket.org/stacc-flow/bento/compare/v8.40.3...v8.41.0) (2019-01-01)
+
+
+### Bug Fixes
+
+* **json-schema:** fix circular references ([98e51bd](https://bitbucket.org/stacc-flow/bento/commits/98e51bd))
+
+
+### Features
+
+* **json-schema:** add changes mostly related to citizenship selector ([1bbb02b](https://bitbucket.org/stacc-flow/bento/commits/1bbb02b))
+* **json-schema:** ready for usage as module ([bfd9833](https://bitbucket.org/stacc-flow/bento/commits/bfd9833))
+
+
+
+
+
 # [8.40.0](https://bitbucket.org/stacc-flow/bento/compare/v8.39.10...v8.40.0) (2018-12-19)
 
 

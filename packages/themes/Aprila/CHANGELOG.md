@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.41.0](https://bitbucket.org/stacc-flow/bento/compare/v8.40.3...v8.41.0) (2019-01-01)
+
+
+### Features
+
+* **aprila-theme:** manage headings level based styling ([552873b](https://bitbucket.org/stacc-flow/bento/commits/552873b))
+* **aprila-theme:** styling primarily citizenship selector ([694dda4](https://bitbucket.org/stacc-flow/bento/commits/694dda4))
+
+
+
+
+
 # [8.40.0](https://bitbucket.org/stacc-flow/bento/compare/v8.39.10...v8.40.0) (2018-12-19)
 
 

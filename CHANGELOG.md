@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.41.0](https://bitbucket.org/stacc-flow/bento/compare/v8.40.3...v8.41.0) (2019-01-01)
+
+
+### Bug Fixes
+
+* **cli:** fixed link dep ([0d36393](https://bitbucket.org/stacc-flow/bento/commits/0d36393))
+* **json-schema:** fix circular references ([98e51bd](https://bitbucket.org/stacc-flow/bento/commits/98e51bd))
+
+
+### Features
+
+* **aprila-theme:** manage headings level based styling ([552873b](https://bitbucket.org/stacc-flow/bento/commits/552873b))
+* **aprila-theme:** styling primarily citizenship selector ([694dda4](https://bitbucket.org/stacc-flow/bento/commits/694dda4))
+* **json-schema:** add changes mostly related to citizenship selector ([1bbb02b](https://bitbucket.org/stacc-flow/bento/commits/1bbb02b))
+* **json-schema:** ready for usage as module ([bfd9833](https://bitbucket.org/stacc-flow/bento/commits/bfd9833))
+
+
+
+
+
 ## [8.40.3](https://bitbucket.org/stacc-flow/bento/compare/v8.40.2...v8.40.3) (2018-12-19)
 
 
