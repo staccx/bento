@@ -8,11 +8,18 @@ export default theming.createVariants(
       font-weight: ${theming.fontWeight.bold};
       color: ${theming.color("accountHeading")};
     `,
+    accountSubheading: css`
+      font-size: ${theming.font.h2};
+      font-weight: ${theming.fontWeight.normal};
+      color: ${theming.color.primary};
+      margin-bottom: ${theming.spacing.tiny};
+    `,
     primary: css`
       font-size: ${theming.font.h2};
     `,
     accountHeadingText: css`
-      font-size: ${theming.font.h2};
+      font-size: ${theming.font.input};
+      font-weight: normal;
     `,
     withdrawSubtitle: css`
       font-size: ${theming.font.h6};

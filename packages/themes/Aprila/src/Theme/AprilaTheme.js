@@ -19,6 +19,7 @@ import { AdStyle } from "./Ad"
 import { ExpandListButtonStyle } from "../components/Transaction.ExpandButton"
 import ExpandListExpanded from "../components/ExpandListItem.Expanded"
 import { MenuStyle } from "../components/MenuRow"
+import { AccountHeading } from "../components/AccountHeading"
 import { IconArrowRight } from "./Icons/Icon.ArrowRight"
 import { IconPrices } from "./Icons/Icon.Prices"
 import { IconAccountStatement } from "./Icons/Icon.AccountStatement"
@@ -201,5 +202,6 @@ const t = new Theme(BaseTheme, {
   .add(InputInputStyling)
   .add(InputLabelStyling)
   .add(InputWrapperStyling)
+  .add(AccountHeading)
 
 export default t
