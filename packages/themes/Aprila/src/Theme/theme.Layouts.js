@@ -54,7 +54,12 @@ export const LayoutStyling = theming.createVariants(
     annualStatment: OneUp,
     profileEdit: OneUp,
     contractDocuments: OneUp,
-    loggedOut: OneUp
+    loggedOut: OneUp,
+    endAccountConfirmation: css`
+      ${OneUp};
+      text-align: center;
+      margin-top: ${theming.spacing.large};
+    `
   },
   Layout.themeProps.container
 )

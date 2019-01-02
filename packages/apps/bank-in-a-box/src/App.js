@@ -13,6 +13,7 @@ import { LanguageProvider } from "@staccx/i18n"
 import Overview from "./pages/Overview"
 import Profile from "./pages/Profile/Profile"
 import EndAccount from "./pages/Profile/EndAccount"
+import EndAccountConfirmation from "./pages/Profile/EndAccountConfirmation"
 import ProfileEdit from "./pages/Profile/ProfileEdit"
 import AnnualStatement from "./pages/Profile/AnnualStatement"
 import ContractDocuments from "./pages/Profile/ContractDocuments"
@@ -120,6 +121,13 @@ class App extends Component {
                             exact
                             render={({ history }) => (
                               <EndAccount history={history} />
+                            )}
+                          />
+                          <Route
+                            path={"/profile/end/confirmation"}
+                            exact
+                            render={({ history }) => (
+                              <EndAccountConfirmation history={history} />
                             )}
                           />
                         </Switch>

@@ -10,7 +10,7 @@ import {
 } from "@staccx/base"
 import Back from "../../components/Back"
 import EndAccountList from "../../components/EndAccountList"
-import { backwards } from "../../components/transitions/transitions"
+import { backwards, forwards } from "../../components/transitions/transitions"
 
 const EndAccount = ({ history, accounts }) => (
   <Layout variant="annualStatment">
@@ -34,7 +34,17 @@ const EndAccount = ({ history, accounts }) => (
         </div>
         <ItemGroup>
           {/* TODO: disse må lenkes opp og ha en onClick */}
-          <Button variant="primary">Overfør og avslutt konto</Button>
+          <Button
+            variant="primary"
+            onClick={() =>
+              history.push({
+                pathname: "/profile/end/confirmation",
+                state: forwards
+              })
+            }
+          >
+            Overfør og avslutt konto
+          </Button>
           <Button
             variant="secondary"
             onClick={() =>
