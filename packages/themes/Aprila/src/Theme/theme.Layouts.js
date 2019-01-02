@@ -34,7 +34,7 @@ export const LayoutStyling = theming.createVariants(
       grid-template-rows: auto 1fr auto;
       grid-row-gap: 0;
       grid-template-areas:
-        "logo"
+        "header"
         "main"
         "footer";
       grid-auto-flow: column;
@@ -67,11 +67,21 @@ export const LayoutItemStyling = theming.createVariants(
       animation-delay: ${p => (p.delay ? p.delay : 0)}ms;
       background-color: ${p => p.area === "logo" && theming.color("primary")};
     `,
-    logo: css`
+    header: css`
+      padding: ${theming.spacing.tiny} 0;
+      display: grid;
       background-color: ${theming.color.primary};
-      padding-top: ${theming.spacing.medium};
-      padding-bottom: ${theming.spacing.tiny};
-      padding-left: ${theming.spacing.medium};
+      grid-template-columns: minmax(0px, 1fr) 140px minmax(140px, 684px) minmax(
+          0px,
+          1fr
+        );
+      grid-template-areas: ". logo headerMenu .";
+      grid-column-gap: 24px;
+      @media (max-width: 660px) {
+        grid-template-areas:
+          ". logo logo ."
+          ". headerMenu headerMenu .";
+      }
     `,
     minHeight: css`
       min-height: calc(100vh - 48px - 51px - 24px);

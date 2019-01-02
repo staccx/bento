@@ -10,6 +10,13 @@ export const ListStyling = theming.createVariants(
       }
     `,
     menuList: css``,
+    headerMenu: css`
+      grid-area: headerMenu;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+    `,
     combo: css`
       margin-top: 0;
       padding: 0;

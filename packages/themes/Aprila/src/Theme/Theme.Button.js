@@ -137,6 +137,12 @@ export default theming.createVariants(
         color: ${theming.color.black};
       }
     `,
+    bibHeaderMenuElement: css`
+      color: ${theming.color.white};
+      padding: 0 ${theming.spacing.small};
+      min-height: ${theming.targetSize.small};
+      ${theming.fontSmoothing};
+    `,
     bibMenuColumnElement: css`
       display: flex;
       flex-direction: row;
@@ -168,6 +174,7 @@ export default theming.createVariants(
       margin: auto;
       display: block;
       text-align: left;
+      grid-area: logo;
     `,
     accountBox: css`
       ${Account};
