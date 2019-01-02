@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.44.1](https://bitbucket.org/stacc-flow/bento/compare/v8.44.0...v8.44.1) (2019-01-02)
+
+
+### Bug Fixes
+
+* **formatting:** add nbsp as default for thousand seperator ([0dfd4c8](https://bitbucket.org/stacc-flow/bento/commits/0dfd4c8))
+
+
+
+
+
 # [8.44.0](https://bitbucket.org/stacc-flow/bento/compare/v8.43.0...v8.44.0) (2019-01-02)
 
 
