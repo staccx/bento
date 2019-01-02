@@ -3,24 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [8.41.0](https://bitbucket.org/stacc-flow/bento/compare/v8.40.3...v8.41.0) (2019-01-01)
+<a name="8.43.0"></a>
+# [8.43.0](https://bitbucket.org/stacc-flow/bento/compare/v8.42.1...v8.43.0) (2019-01-02)
+
+
+### Bug Fixes
+
+* **aprila-theme:** support for NavLink ([6420f25](https://bitbucket.org/stacc-flow/bento/commits/6420f25))
 
 
 ### Features
 
-* **aprila-theme:** manage headings level based styling ([552873b](https://bitbucket.org/stacc-flow/bento/commits/552873b))
-* **aprila-theme:** styling primarily citizenship selector ([694dda4](https://bitbucket.org/stacc-flow/bento/commits/694dda4))
-
-
-
-
-
-# [8.40.0](https://bitbucket.org/stacc-flow/bento/compare/v8.39.10...v8.40.0) (2018-12-19)
-
-
-### Features
-
-* **aprila-theme:** add various styling for json-schema ([037b49b](https://bitbucket.org/stacc-flow/bento/commits/037b49b))
+* **aprila-theme:** menu in header ([8438314](https://bitbucket.org/stacc-flow/bento/commits/8438314))
+* **fundu-theme:** menu in header responsive ([5d5d4eb](https://bitbucket.org/stacc-flow/bento/commits/5d5d4eb))
 
 
 
