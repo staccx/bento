@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.42.1](https://bitbucket.org/stacc-flow/bento/compare/v8.42.0...v8.42.1) (2019-01-02)
+
+
+### Bug Fixes
+
+* **cli:** add babel-core to deps ([24e9c83](https://bitbucket.org/stacc-flow/bento/commits/24e9c83))
+
+
+
+
+
 # [8.42.0](https://bitbucket.org/stacc-flow/bento/compare/v8.41.0...v8.42.0) (2019-01-02)
 
 
