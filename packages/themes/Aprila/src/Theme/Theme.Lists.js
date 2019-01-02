@@ -10,6 +10,32 @@ export const ListStyling = theming.createVariants(
       }
     `,
     menuList: css``,
+    headerMenu: css`
+      grid-area: headerMenu;
+      display: inline-grid;
+      justify-items: end;
+      grid-template-columns: 140px 1fr 1fr 1fr 1fr;
+      align-items: center;
+      @media (max-width: 660px) {
+        justify-items: center;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+          "logo logo logout"
+          ". . .";
+        /* > li {
+          width: 100%;
+        } */
+        > li:first-child {
+          grid-area: logo;
+          justify-self: start;
+        }
+        > li:last-child {
+          grid-area: logout;
+          justify-self: center;
+        }
+      }
+    `,
     combo: css`
       margin-top: 0;
       padding: 0;
@@ -19,6 +45,14 @@ export const ListStyling = theming.createVariants(
       position: absolute;
       width: 100%;
       z-index: 1;
+    `,
+    open: css`
+      li:first-child {
+        border-top-width: 0;
+      }
+      li:last-child {
+        border-bottom-width: 0;
+      }
     `
   },
   List.themeProps.list

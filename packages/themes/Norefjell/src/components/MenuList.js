@@ -46,6 +46,11 @@ export const MenuStyle = theming.createVariants(
   "menu"
 )
 
+export const SubMenuStyle = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Menu },
+  "subMenu"
+)
+
 export const MenuColumnStyle = theming.createVariants(
   { [theming.VARIANT_DEFAULT]: Menu },
   "menuColumn"

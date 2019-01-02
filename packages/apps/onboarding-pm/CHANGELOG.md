@@ -3,15 +3,8 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [8.41.0](https://bitbucket.org/stacc-flow/bento/compare/v8.40.3...v8.41.0) (2019-01-01)
-
-**Note:** Version bump only for package @staccx/onboarding-pm
-
-
-
-
-
-# [8.40.0](https://bitbucket.org/stacc-flow/bento/compare/v8.39.10...v8.40.0) (2018-12-19)
+<a name="8.43.0"></a>
+# [8.43.0](https://bitbucket.org/stacc-flow/bento/compare/v8.42.1...v8.43.0) (2019-01-02)
 
 **Note:** Version bump only for package @staccx/onboarding-pm
 

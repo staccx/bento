@@ -21,6 +21,9 @@ export default theming.createVariants(
     subHeading: css`
       color: ${theming.color.primary};
       font-size: ${theming.font.h3};
+    `,
+    accountSubheading: css`
+      display: none;
     `
   },
   Heading.themeProps.heading

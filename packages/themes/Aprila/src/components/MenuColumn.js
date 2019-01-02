@@ -19,6 +19,18 @@ const MenuColumn = ({ menuElements, history }) => {
             >
               <IconOuter>{menuElement.icon}</IconOuter>
               <ButtonLabel>{menuElement.label}</ButtonLabel>
+              <svg
+                width="8"
+                height="13"
+                viewBox="0 0 8 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.214844 11.3555L1.71484 12.8555L7.78516 6.78516L1.71484 0.714844L0.214843 2.21484L4.78516 6.78516L0.214844 11.3555Z"
+                  fill="#FF7E69"
+                />
+              </svg>
             </Button>
           </li>
         ))}

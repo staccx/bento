@@ -29,6 +29,13 @@ const menuProfile = [
     icon: <ThemeComponent tagName={"IconContracts"} />,
     path: `/profile/contract-documents`,
     direction: forwards
+  },
+  {
+    _id: "fjdklfgdjkl56454456",
+    label: "Avslutt konto",
+    icon: <ThemeComponent tagName={"IconContracts"} />,
+    path: `/profile/end`,
+    direction: forwards
   }
 ]
 

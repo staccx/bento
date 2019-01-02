@@ -4,7 +4,10 @@ import { theming, Input } from "@staccx/base"
 // Wrapper
 export const InputWrapperStyling = theming.createVariants(
   {
-    schemaInput: css``
+    schemaInput: css``,
+    accountNumber: css`
+      max-width: 210px;
+    `
   },
   Input.themeProps.wrapper
 )

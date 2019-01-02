@@ -1,5 +1,5 @@
 import React from "react"
-import { Heading, Text, Box } from "@staccx/base"
+import { Heading, Text, Box, theming } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
 import { TranslatedText } from "@staccx/i18n"
 
@@ -21,4 +21,7 @@ const Account = ({ account }) => {
   )
 }
 
-export default Account
+export const AccountHeading = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Account },
+  "accountHeading"
+)
