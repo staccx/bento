@@ -9,7 +9,7 @@ import Due from "./Due"
 import { Route, Switch } from "react-router-dom"
 import LoanDetail from "./LoanDetail"
 
-const Account = ({ accountStore, history, match }) => {
+const Loan = ({ accountStore, history, match }) => {
   const accountId = match.params.id
   const acc = toJS(accountStore.accounts.find(a => a.accountId === accountId))
   return (
@@ -43,10 +43,10 @@ const Account = ({ accountStore, history, match }) => {
   )
 }
 
-Account.propTypes = {
+Loan.propTypes = {
   accountStore: PropTypes.any.isRequired,
   history: PropTypes.any.isRequired,
   match: PropTypes.any.isRequired
 }
 
-export default Account
+export default Loan
