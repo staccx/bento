@@ -39,6 +39,9 @@ export const TextStyling = theming.createVariants(
     strong: css`
       font-weight: ${theming.fontWeight.normal};
     `,
+    heavy: css`
+      font-weight: ${theming.fontWeight.bold};
+    `,
     accountHeadingAvailable: css`
       font-size: ${theming.font.h1};
       color: ${theming.color.secondary};

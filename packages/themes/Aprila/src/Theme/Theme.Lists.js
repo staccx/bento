@@ -45,6 +45,14 @@ export const ListStyling = theming.createVariants(
       position: absolute;
       width: 100%;
       z-index: 1;
+    `,
+    open: css`
+      li:first-child {
+        border-top-width: 0;
+      }
+      li:last-child {
+        border-bottom-width: 0;
+      }
     `
   },
   List.themeProps.list

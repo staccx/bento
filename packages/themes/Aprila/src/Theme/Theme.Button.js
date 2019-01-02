@@ -50,6 +50,10 @@ export default theming.createVariants(
       background-color: ${theming.color("mainButton")};
       border-radius: 3px;
     `,
+    secondary: css`
+      color: ${theming.color.primary};
+      background-color: ${theming.color.line};
+    `,
     invisible: invisibleButton,
     expand: css`
       display: block;
@@ -155,6 +159,7 @@ export default theming.createVariants(
       flex-direction: row;
       background-color: transparent;
       padding-left: 0;
+      padding-right: ${theming.spacing.small};
       padding-top: ${theming.spacing.small};
       padding-bottom: ${theming.spacing.small};
       justify-content: space-between;
