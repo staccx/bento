@@ -71,17 +71,12 @@ export const LayoutItemStyling = theming.createVariants(
       padding: ${theming.spacing.tiny} 0;
       display: grid;
       background-color: ${theming.color.primary};
-      grid-template-columns: minmax(0px, 1fr) 140px minmax(140px, 684px) minmax(
+      grid-template-columns: minmax(0px, 1fr) minmax(227px, 824px) minmax(
           0px,
           1fr
         );
-      grid-template-areas: ". logo headerMenu .";
+      grid-template-areas: ". headerMenu .";
       grid-column-gap: 24px;
-      @media (max-width: 660px) {
-        grid-template-areas:
-          ". logo logo ."
-          ". headerMenu headerMenu .";
-      }
     `,
     minHeight: css`
       min-height: calc(100vh - 48px - 51px - 24px);

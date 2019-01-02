@@ -12,10 +12,26 @@ export const ListStyling = theming.createVariants(
     menuList: css``,
     headerMenu: css`
       grid-area: headerMenu;
-      display: flex;
-      justify-content: flex-end;
+      display: inline-grid;
+      justify-items: end;
+      grid-template-columns: 140px 1fr 1fr 1fr 1fr;
       align-items: center;
-      flex-wrap: wrap;
+      @media (max-width: 660px) {
+        justify-items: center;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+          "logo logo logout"
+          ". . .";
+        > li:first-child {
+          grid-area: logo;
+          justify-self: start;
+        }
+        > li:last-child {
+          grid-area: logout;
+          justify-self: end;
+        }
+      }
     `,
     combo: css`
       margin-top: 0;

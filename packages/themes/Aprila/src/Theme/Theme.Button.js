@@ -174,7 +174,6 @@ export default theming.createVariants(
       margin: auto;
       display: block;
       text-align: left;
-      grid-area: logo;
     `,
     accountBox: css`
       ${Account};
