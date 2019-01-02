@@ -4,7 +4,7 @@ import createNumberMask from "./utils/createNumberMask"
 const prefix = ""
 const suffix = ""
 const includeThousandsSeparator = true
-const thousandsSeparatorSymbol = " "
+const thousandsSeparatorSymbol = "\u00a0"
 const allowDecimal = true
 const decimalSymbol = ","
 const decimalLimit = 0
