@@ -139,9 +139,16 @@ export default theming.createVariants(
     `,
     bibHeaderMenuElement: css`
       color: ${theming.color.white};
-      padding: 0 ${theming.spacing.small};
+      padding: 0 ${theming.spacing.medium};
       min-height: ${theming.targetSize.small};
       ${theming.fontSmoothing};
+      @media (max-width: 660px) {
+        display: block;
+      }
+      &.active {
+        background-color: ${theming.color.secondary};
+        color: ${theming.color.primary};
+      }
     `,
     bibMenuColumnElement: css`
       display: flex;

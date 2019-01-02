@@ -23,13 +23,16 @@ export const ListStyling = theming.createVariants(
         grid-template-areas:
           "logo logo logout"
           ". . .";
+        /* > li {
+          width: 100%;
+        } */
         > li:first-child {
           grid-area: logo;
           justify-self: start;
         }
         > li:last-child {
           grid-area: logout;
-          justify-self: end;
+          justify-self: center;
         }
       }
     `,
