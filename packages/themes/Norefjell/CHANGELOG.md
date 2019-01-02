@@ -3,20 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [8.44.1](https://bitbucket.org/stacc-flow/bento/compare/v8.44.0...v8.44.1) (2019-01-02)
+<a name="8.45.0"></a>
+# [8.45.0](https://bitbucket.org/stacc-flow/bento/compare/v8.44.1...v8.45.0) (2019-01-02)
 
 **Note:** Version bump only for package @staccx/norefjell-theme
-
-
-
-
-
-# [8.44.0](https://bitbucket.org/stacc-flow/bento/compare/v8.43.0...v8.44.0) (2019-01-02)
-
-
-### Features
-
-* **bank-in-a-box:** accountHeading moved to each theme ([6e15d1c](https://bitbucket.org/stacc-flow/bento/commits/6e15d1c))
 
 
 

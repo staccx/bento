@@ -3,45 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [8.44.1](https://bitbucket.org/stacc-flow/bento/compare/v8.44.0...v8.44.1) (2019-01-02)
+<a name="8.45.0"></a>
+# [8.45.0](https://bitbucket.org/stacc-flow/bento/compare/v8.44.1...v8.45.0) (2019-01-02)
 
 **Note:** Version bump only for package @staccx/json-schema
-
-
-
-
-
-# [8.44.0](https://bitbucket.org/stacc-flow/bento/compare/v8.43.0...v8.44.0) (2019-01-02)
-
-**Note:** Version bump only for package @staccx/json-schema
-
-
-
-
-
-# [8.41.0](https://bitbucket.org/stacc-flow/bento/compare/v8.40.3...v8.41.0) (2019-01-01)
-
-
-### Bug Fixes
-
-* **json-schema:** fix circular references ([98e51bd](https://bitbucket.org/stacc-flow/bento/commits/98e51bd))
-
-
-### Features
-
-* **json-schema:** add changes mostly related to citizenship selector ([1bbb02b](https://bitbucket.org/stacc-flow/bento/commits/1bbb02b))
-* **json-schema:** ready for usage as module ([bfd9833](https://bitbucket.org/stacc-flow/bento/commits/bfd9833))
-
-
-
-
-
-# [8.40.0](https://bitbucket.org/stacc-flow/bento/compare/v8.39.10...v8.40.0) (2018-12-19)
-
-
-### Features
-
-* **json-schema:** adapt to last changes to aprila-theme ([12d430b](https://bitbucket.org/stacc-flow/bento/commits/12d430b))
 
 
 
