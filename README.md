@@ -1,4 +1,4 @@
-# Bento
+# Bento!
 
 ## Getting started
 
