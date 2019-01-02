@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.44.1](https://bitbucket.org/stacc-flow/bento/compare/v8.44.0...v8.44.1) (2019-01-02)
+
+
+### Bug Fixes
+
+* **formatting:** add nbsp as default for thousand seperator ([0dfd4c8](https://bitbucket.org/stacc-flow/bento/commits/0dfd4c8))
+
+
+
+
+
+# [8.44.0](https://bitbucket.org/stacc-flow/bento/compare/v8.43.0...v8.44.0) (2019-01-02)
+
+
+### Features
+
+* **bank-in-a-box:** accountHeading moved to each theme ([6e15d1c](https://bitbucket.org/stacc-flow/bento/commits/6e15d1c))
+* **bank-in-a-box:** added endAccount-page ([b6efa4a](https://bitbucket.org/stacc-flow/bento/commits/b6efa4a))
+* **open-id:** export signInRedirectCallback ([3286dec](https://bitbucket.org/stacc-flow/bento/commits/3286dec))
+
+
+
+
+
 <a name="8.43.0"></a>
 # [8.43.0](https://bitbucket.org/stacc-flow/bento/compare/v8.42.1...v8.43.0) (2019-01-02)
 
