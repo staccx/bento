@@ -3,7 +3,7 @@ import commonjs from "rollup-plugin-commonjs"
 import resolve from "rollup-plugin-node-resolve"
 import json from "rollup-plugin-json"
 
-const generateConfig = pkg => {
+const generateConfig = (pkg, input = "./src/export.js") => {
   const dependencies = Object.keys(pkg.dependencies || {})
 
   const external = id => {
@@ -16,7 +16,7 @@ const generateConfig = pkg => {
   }
 
   return {
-    input: "./src/export.js",
+    input,
     output: [
       {
         file: pkg.main,
