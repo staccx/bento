@@ -23,7 +23,9 @@ import {
   Loading,
   Slider2,
   Paragraph,
-  theming
+  theming,
+  Form,
+  FormField
 } from "@staccx/base"
 import { LanguageProvider, TranslatedText } from "@staccx/i18n"
 import { ThemeProvider } from "styled-components"
@@ -245,6 +247,42 @@ class App extends Component {
                   />
                 </ExpandListItem>
                 <Slider2 min={20000} max={100000} step={10000} value={50000} />
+                <Form onSubmit={console.log}>
+                  <div>
+                    <FormField name="amount" type="string" required>
+                      {({ name, field, form }) => (
+                        <Input
+                          label="Beløp"
+                          placeholder="0"
+                          type="tel"
+                          id="telwithdraw"
+                          defaultValue={0}
+                          {...field}
+                        />
+                      )}
+                    </FormField>
+                    <div>
+                      <FormField name="omg" type="number" required>
+                        {({ name, field, form }) => {
+                          const {value, ...rest} = field
+                          return (
+                            <Input
+                              label="Wat"
+                              placeholder="0"
+                              type="tel"
+                              id="telwithdraw"
+                              {...rest}
+                              defaultValue={0}
+                              onChange={e =>
+                                form.setFieldValue("omg", e.target.value)
+                              }
+                            />
+                          )
+                        }}
+                      </FormField>
+                    </div>
+                  </div>
+                </Form>
               </List>
             </Wrapper>
           </Router>
