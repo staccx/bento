@@ -57,6 +57,7 @@
     "react": "^16.6.0",
     "react-compound-slider": "^0.16.2",
     "react-jsonschema-form": "^1.0.3",
+    "react-traverse": "^0.0.3",
     "tinycolor2": "^1.4.1",
     "webfontloader": "^1.6.28",
     "yup": "^0.24.1"
