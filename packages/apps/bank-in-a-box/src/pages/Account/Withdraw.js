@@ -5,115 +5,127 @@ import {
   Button,
   Layout,
   LayoutItem,
-  Input,
+  CurrencyInput,
   AccountInput,
   Alert,
   Heading,
   Box,
-  Text
+  Text,
+  State,
+  Form,
+  FormField
 } from "@staccx/base"
-import Back from "../../components/Back"
 import { TranslatedText } from "@staccx/i18n"
 
-export class Withdraw extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      toNumber: null
-    }
-    this.addAccountNumber = this.addAccountNumber.bind(this)
-  }
-
-  addAccountNumber() {
-    console.log("addAccountNumber")
-    this.setState({
-      toNumber: this.props.accountNumber
-    })
-  }
-
-  render() {
-    const { history, accountNumber, saldo } = this.props
-    const { toNumber } = this.state
-    return (
+const Withdraw = ({ lastAccount = null, amount, onSubmit }) => (
+  <State>
+    {({ set, toAccount }) => (
       <Layout variant="withdraw">
         <LayoutItem variant="fadeIn" delay="200" area="header">
-          <Back history={history} path="/account/546126722" />
           <Heading level="1" variant="primary">
-            <TranslatedText
-              i18nKey="WithDrawMoneyHeading"
-              fallback="Ta ut penger"
-            />
+            <TranslatedText i18nKey="WithDrawMoneyHeading">
+              Ta ut penger
+            </TranslatedText>
           </Heading>
           <Heading level="2" variant="withdrawSubtitle">
-            {formatCurrency(saldo, { precision: 2, decimal: "," })}{" "}
+            {formatCurrency(amount, { precision: 2, decimal: "," })}{" "}
             <TranslatedText i18nKey="withdrawSubtitle" fallback="disponibelt" />
           </Heading>
         </LayoutItem>
         <LayoutItem area="menu">
-          <Layout grid="rows">
-            <LayoutItem variant="fadeIn" delay="400">
-              <Box variant="withdrawInputs">
-                <Input
-                  label="Beløp"
-                  placeholder="0"
-                  type="tel"
-                  id="telwithdraw"
-                />
-                <AccountInput
-                  label="Kontonummer"
-                  placeholder="XXXX XX XXXXX"
-                  id="accountwithdraw"
-                  value={toNumber}
-                />
-              </Box>
-            </LayoutItem>
-            <LayoutItem variant="fadeIn" delay="600">
-              <Alert
-                type="info"
-                onClick={() => this.addAccountNumber()}
-                role="button"
-                tabindex="4"
-                aria-pressed="false"
-              >
-                <TranslatedText
-                  i18nKey="WithdrawAlertLastTransferCameFrom"
-                  fallback="Siste innskudd kom fra"
-                />{" "}
-                <Text variant="withdrawAlertNumber">
-                  {formatPhone(accountNumber, "XXXX XX XXXXX")}
-                </Text>
-                .{" "}
-                <TranslatedText
-                  i18nKey="WithdrawAlertClickHereToSendBack"
-                  fallback="Klikk her for å sende penger tilbake"
-                />
-              </Alert>
-            </LayoutItem>
-            <LayoutItem variant="fadeIn" delay="800">
-              <Button>
-                <TranslatedText
-                  i18nKey="WithdrawConfirmButton"
-                  fallback="Overfør"
-                />
-              </Button>
-            </LayoutItem>
-          </Layout>
+          <Form
+            initialValues={{ toAccount, amount }}
+            renderButton={() => (
+              <LayoutItem variant="fadeIn" delay="800">
+                <Button type={"submit"}>
+                  <TranslatedText
+                    i18nKey="WithdrawConfirmButton"
+                    fallback="Overfør"
+                  />
+                </Button>
+              </LayoutItem>
+            )}
+            onSubmit={vals => onSubmit(vals)}
+          >
+            <Layout grid="rows">
+              <LayoutItem variant="fadeIn" delay="400">
+                <Box variant="withdrawInputs">
+                  <FormField name="amount" type="string" required>
+                    {({ name, field, form }) => {
+                      const { value, ...rest } = field
+                      return (
+                        <CurrencyInput
+                          label="Beløp"
+                          placeholder="0"
+                          defaultValue={amount}
+                          {...rest}
+                          onChange={e =>
+                            form.setFieldValue("amount", e.target.rawValue)
+                          }
+                        />
+                      )
+                    }}
+                  </FormField>
+
+                  <FormField name={"toAccount"} type={"string"} required>
+                    {({ name, field, form }) => {
+                      const { value, ...rest } = field
+                      return (
+                        <AccountInput
+                          label="Kontonummer"
+                          placeholder="XXXX XX XXXXX"
+                          defaultValue={toAccount}
+                          {...rest}
+                          onChange={e =>
+                            form.setFieldValue("toAccount", e.target.rawValue)
+                          }
+                        />
+                      )
+                    }}
+                  </FormField>
+                </Box>
+              </LayoutItem>
+              {lastAccount && (
+                <LayoutItem variant="fadeIn" delay="600">
+                  <Alert
+                    type="info"
+                    onClick={() => set({ toAccount: lastAccount })}
+                    role="button"
+                    tabindex="4"
+                    aria-pressed="false"
+                  >
+                    <TranslatedText
+                      i18nKey="WithdrawAlertLastTransferCameFrom"
+                      fallback="Siste innskudd kom fra"
+                    />{" "}
+                    <Text variant="withdrawAlertNumber">
+                      {formatPhone(lastAccount, "XXXX XX XXXXX")}
+                    </Text>
+                    .{" "}
+                    <TranslatedText i18nKey="WithdrawAlertClickHereToSendBack">
+                      Klikk her for å sende penger tilbake
+                    </TranslatedText>
+                  </Alert>
+                </LayoutItem>
+              )}
+            </Layout>
+          </Form>
         </LayoutItem>
       </Layout>
-    )
-  }
-}
+    )}
+  </State>
+)
 
 Withdraw.propTypes = {
-  accountNumber: PropTypes.number,
-  toNumber: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
-  saldo: PropTypes.number
+  toAccount: PropTypes.number,
+  amount: PropTypes.number,
+  onSubmit: PropTypes.func
 }
 
 Withdraw.defaultProps = {
-  accountNumber: 98011574238,
-  toNumber: null,
-  saldo: 0
+  toAccount: null,
+  amount: 0,
+  onSubmit: () => null
 }
 
 export default Withdraw

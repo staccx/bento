@@ -3,12 +3,15 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { Box, Button, SplitListItem, theming, ItemGroup } from "@staccx/base"
 
-const AccountFilter = ({ years }) => (
+const AccountFilter = ({ years, selected, onClick }) => (
   <Box variant="accountFilterFooter">
     <ItemGroup>
       {years.map((year, index) => (
-        <Button variant="tag" selected={index === 0}>
-          {/* TODO: proper select */}
+        <Button
+          variant="tag"
+          selected={index === selected}
+          onClick={() => onClick(index)}
+        >
           {year}
         </Button>
       ))}

@@ -1,38 +1,45 @@
 import React from "react"
 import styled from "styled-components"
 import {
-  Layout,
-  Heading,
+  Anchor,
   Box,
-  List,
   Button,
+  Heading,
+  Layout,
   LayoutItem,
+  List,
   ThemeComponent,
   theming
 } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 import Back from "../../components/Back"
 
-const ContractDocuments = ({ history, accounts }) => (
+const ContractDocuments = ({ documents }) => (
   <Layout variant="contractDocuments">
     <LayoutItem variant="fadeIn" delay="200" area="header">
-      <Back history={history} path="/profile/" />
-      <Heading level="2">Avtaledokumenter</Heading>
+      <Back path="/profile/" />
+      <Heading level="2">
+        <TranslatedText i18nKey={"documents"}>Avtaledokumenter</TranslatedText>
+      </Heading>
     </LayoutItem>
     <LayoutItem variant="fadeIn" delay="400" area="menu">
       <Box variant="contractBox">
         <List>
-          <ListItem>
-            <Button variant="contractList">
-              <ThemeComponent tagName="IconPdf" />
-              <span>Høyrentekonto</span>
-            </Button>
-          </ListItem>
-          <ListItem>
-            <Button variant="contractList">
-              <ThemeComponent tagName="IconPdf" />
-              <span>Forbrukslån</span>
-            </Button>
-          </ListItem>
+          {documents.map(doc => (
+            <ListItem key={doc.downloadUrl}>
+              <Button
+                target={"_blank"}
+                href={doc.downloadUrl}
+                as={Anchor}
+                variant="contractList"
+              >
+                <ThemeComponent tagName="IconPdf" />
+                <TranslatedText>
+                  <span>{doc.title}</span>
+                </TranslatedText>
+              </Button>
+            </ListItem>
+          ))}
         </List>
       </Box>
     </LayoutItem>

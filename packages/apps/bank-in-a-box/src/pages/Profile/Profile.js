@@ -7,26 +7,29 @@ import {
   Toggle,
   Label,
   Flag,
-  Heading,
-  ThemeComponent
+  Heading
 } from "@staccx/base"
-import menuProfile from "../../data/menuProfile"
-import Back from "../../components/Back"
+import { TranslatedText } from "@staccx/i18n"
 
-const Profile = ({ history }) => (
+const Profile = ({
+  renderMenu = () => null,
+  renderPersonalInfo = () => null,
+  onElectronicConsentChange,
+  onMarketingConsentChange
+}) => (
   <Layout variant="profile">
     <LayoutItem variant="fadeIn" delay="200" area="header">
       <div>
-        <Back history={history} path="/" />
-        <Heading level="2">Min profil</Heading>
+        <Heading level="2">
+          <TranslatedText i18nKey={"my-profile"}>Min profil</TranslatedText>
+        </Heading>
       </div>
     </LayoutItem>
+    <LayoutItem variant={"fadeIn"} delay={"300"} area={"misc"}>
+      {renderPersonalInfo()}
+    </LayoutItem>
     <LayoutItem variant="fadeIn" delay="400" area="menu">
-      <ThemeComponent
-        tagName={"menuColumn"}
-        menuElements={menuProfile}
-        history={history}
-      />
+      {renderMenu()}
     </LayoutItem>
     <LayoutItem variant="fadeIn" delay="600" area="main">
       <Layout>
@@ -36,14 +39,16 @@ const Profile = ({ history }) => (
             <Toggle
               group="testddd"
               id="samtykke-elektronisk-komm"
-              onChange={() => null}
+              onChange={onElectronicConsentChange}
               defaultChecked
             />
           }
         >
           <ModifiedLabel htmlFor="samtykke-elektronisk-komm">
-            Jeg samtykker til mottak av elektronisk kommunikasjon og at
-            dokumentene kan sendes til meg elektronisk
+            <TranslatedText i18nKey={"electronic-cosent-message"}>
+              Jeg samtykker til mottak av elektronisk kommunikasjon og at
+              dokumentene kan sendes til meg elektronisk
+            </TranslatedText>
           </ModifiedLabel>
         </Flag>
 
@@ -54,13 +59,15 @@ const Profile = ({ history }) => (
               defaultChecked
               group="news"
               id="tilbud-nyheter"
-              onChange={() => null}
+              onChange={onMarketingConsentChange}
             />
           }
         >
           <ModifiedLabel htmlFor="tilbud-nyheter">
-            Jeg samtykker til mottak av tilbud og nyheter om andre produkter fra
-            Nordfjell-banken
+            <TranslatedText i18nKey={"marketing-consent-message"}>
+              Jeg samtykker til mottak av tilbud og nyheter om andre produkter
+              fra Nordfjell-banken
+            </TranslatedText>
           </ModifiedLabel>
         </Flag>
         <LayoutItem variant="fadeIn" delay="900">
