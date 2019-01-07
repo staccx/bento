@@ -197,7 +197,7 @@ const t = new Theme(BaseTheme, {
   .add(IllustrationAnnualStatement)
   .add(AdStyle)
   .add(ListStyling)
-  .add(MenuColumnStyle)
+  // .add(MenuColumnStyle)
   .add(LabelStyling)
   .add(InputInputStyling)
   .add(InputLabelStyling)

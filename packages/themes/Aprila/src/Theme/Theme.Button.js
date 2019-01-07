@@ -169,6 +169,7 @@ export default theming.createVariants(
       text-align: left;
       border-radius: 0;
       border-bottom: 1px solid ${theming.color.line};
+
       &:hover,
       &:focus,
       &:active {
@@ -314,6 +315,9 @@ export default theming.createVariants(
         background-color: transparent;
         color: ${theming.color.negative};
       }
+    `,
+    submit: css`
+      margin-top: ${theming.spacing.medium};
     `
   },
   Button.themeProps.button

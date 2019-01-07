@@ -3,6 +3,7 @@ import { Layout, LayoutItem, theming } from "@staccx/base"
 import { FadeIn } from "@staccx/animations"
 
 const TwoUp = css`
+  margin-top: ${theming.spacing.large};
   grid-template-columns:
     minmax(0px, 1fr)
     minmax(227px, 480px)
@@ -19,11 +20,17 @@ const TwoUp = css`
 `
 
 const OneUp = css`
+  margin-top: ${theming.spacing.large};
   grid-template-columns:
     minmax(0px, 1fr)
     minmax(227px, 480px)
     minmax(0px, 1fr);
-  grid-template-areas: ". header ." ". menu ." ". main ." ". ad .";
+  grid-template-areas:
+    ". header ."
+    ". misc ."
+    ". menu ."
+    ". main ."
+    ". ad .";
 `
 
 export const LayoutStyling = theming.createVariants(
@@ -41,9 +48,16 @@ export const LayoutStyling = theming.createVariants(
     `,
     overview: css`
       ${TwoUp};
-      grid-template-areas: "header header header" ". menu ." ". main ." ". ad .";
+      grid-template-areas:
+        "header header header"
+        ". menu ."
+        ". main ."
+        ". ad .";
       @media (min-width: 715px) {
-        grid-template-areas: "header header header header" ". menu menu ." ". main ad .";
+        grid-template-areas:
+          "header header header header"
+          ". menu menu ."
+          ". main ad .";
       }
     `,
     profile: OneUp,

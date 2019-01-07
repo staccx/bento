@@ -9,7 +9,11 @@ export const ListStyling = theming.createVariants(
       li {
       }
     `,
-    menuList: css``,
+    menuList: css`
+      button:first-child {
+        border-top: 1px solid ${theming.color.line};
+      }
+    `,
     headerMenu: css`
       grid-area: headerMenu;
       display: inline-grid;

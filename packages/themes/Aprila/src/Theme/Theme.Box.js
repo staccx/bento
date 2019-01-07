@@ -137,6 +137,10 @@ export default theming.createVariants(
       > *:not(:last-child) {
         margin-right: ${theming.spacing.small};
       }
+    `,
+    personalInfo: css`
+      border-top: 1px solid ${theming.color.line};
+      padding-top: ${theming.spacing.medium};
     `
   },
   Box.themeProps.box
