@@ -4,10 +4,11 @@ const generateConfig = require("@staccx/rollup-config")
 
 const { executeAsync, setupSpinner, runCommand } = require("./__helpers")
 
-const link = async function({ input, watch }) {
+const link = async function({ input = "src/export.js", watch }) {
   const fail = function() {
     process.exit(1)
   }
+
   const cwd = process.cwd()
   const spinner = setupSpinner()
   let pkg = null
