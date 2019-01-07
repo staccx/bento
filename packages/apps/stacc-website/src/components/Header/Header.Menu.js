@@ -29,8 +29,8 @@ class HeaderMenu extends React.Component {
         id === this.state.prevExpanded
           ? this.props.handleSubmenu(false)
           : id
-            ? this.props.handleSubmenu(true)
-            : this.props.handleSubmenu(false)
+          ? this.props.handleSubmenu(true)
+          : this.props.handleSubmenu(false)
     )
   }
 
@@ -39,47 +39,46 @@ class HeaderMenu extends React.Component {
     return (
       <Navigation isOpen={isOpen}>
         <MenuItems inverted={inverted ? inverted.toString() : undefined}>
-          {items.map(
-            menuItem =>
-              menuItem.link ? (
-                <li key={menuItem._key}>
-                  <MenuItem
-                    to={menuItem.link.path.current}
-                    exact
-                    activeClassName="is-current"
-                    inverted={inverted ? inverted.toString() : undefined}
-                    emphasized={
-                      menuItem.emphasized
-                        ? menuItem.emphasized.toString()
-                        : undefined
-                    }
-                    onClick={() =>
-                      this.setState({ expanded: null }, () => closeMenu())
-                    }
-                  >
-                    {menuItem.title}
-                  </MenuItem>
-                </li>
-              ) : menuItem.submenu ? (
-                <li key={menuItem._key}>
-                  <SubMenuExpandBtn
-                    data-key={menuItem._key}
-                    inverted={inverted || undefined}
-                    expanded={this.state.expanded === menuItem._key}
-                    onClick={() => this.handleExpand(menuItem._key)}
-                  >
-                    {menuItem.title}
-                  </SubMenuExpandBtn>
-                  <HeaderMenuSubMenu
-                    expanded={this.state.expanded === menuItem._key}
-                    inverted={inverted || undefined}
-                    item={menuItem}
-                    subMenuItems={menuItem.submenu}
-                    closeMenu={closeMenu}
-                    handleExpand={this.handleExpand}
-                  />
-                </li>
-              ) : null
+          {items.map(menuItem =>
+            menuItem.link ? (
+              <li key={menuItem._key}>
+                <MenuItem
+                  to={menuItem.link.path.current}
+                  exact
+                  activeClassName="is-current"
+                  inverted={inverted ? inverted.toString() : undefined}
+                  emphasized={
+                    menuItem.emphasized
+                      ? menuItem.emphasized.toString()
+                      : undefined
+                  }
+                  onClick={() =>
+                    this.setState({ expanded: null }, () => closeMenu())
+                  }
+                >
+                  {menuItem.title}
+                </MenuItem>
+              </li>
+            ) : menuItem.submenu ? (
+              <li key={menuItem._key}>
+                <SubMenuExpandBtn
+                  data-key={menuItem._key}
+                  inverted={inverted || undefined}
+                  expanded={this.state.expanded === menuItem._key}
+                  onClick={() => this.handleExpand(menuItem._key)}
+                >
+                  {menuItem.title}
+                </SubMenuExpandBtn>
+                <HeaderMenuSubMenu
+                  expanded={this.state.expanded === menuItem._key}
+                  inverted={inverted || undefined}
+                  item={menuItem}
+                  subMenuItems={menuItem.submenu}
+                  closeMenu={closeMenu}
+                  handleExpand={this.handleExpand}
+                />
+              </li>
+            ) : null
           )}
           <li key={"_1231asdafsasd"}>
             <MenuItem
@@ -107,7 +106,7 @@ const Navigation = styled.nav`
   @media only screen and (max-width: ${theming.wrapper.large}) {
     flex-basis: 100%;
     flex-direction: column;
-    margin: ${theming.spacing.small} -${theming.spacing.medium} 0;
+    //margin: ${theming.spacing.small} -${theming.spacing.medium} 0;
     padding: ${theming.spacing.small} 0 0;
     animation: ${BounceIn} 0.5s ease-out forwards 1;
   }

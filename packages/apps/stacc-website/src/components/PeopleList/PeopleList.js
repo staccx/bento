@@ -1,11 +1,13 @@
 import React from "react"
 import { Input, Loading, Search, Layout, Heading } from "@staccx/base"
-import { SanityList } from "@staccx/sanity"
+import { SanityQuery } from "@staccx/sanity"
 import { Person } from "../_codeSplitting"
+
+const query = `*[_type == "person"] | order(roles[0] desc, name asc) {company->, ...}`
 
 const PeopleList = () => {
   return (
-    <SanityList type={"person"} pick={"company->, ..."}>
+    <SanityQuery query={query}>
       {({ result }) => {
         if (!result) {
           return <Loading />
@@ -49,7 +51,7 @@ const PeopleList = () => {
           </Search>
         )
       }}
-    </SanityList>
+    </SanityQuery>
   )
 }
 

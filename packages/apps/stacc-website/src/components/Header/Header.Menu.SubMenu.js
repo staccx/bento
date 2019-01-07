@@ -23,10 +23,10 @@ const HeaderMenuSubMenu = ({
       <Wrapper variant={[theming.VARIANT_DEFAULT, "innerPadded"]}>
         <Inner>
           <div>
-            <Heading level={1}>{item.title}</Heading>
+            <SubMenuHeading level={1}>{item.title}</SubMenuHeading>
           </div>
           <div>
-            <Layout as={List}>
+            <SubmenuItems as={List}>
               {subMenuItems.map(submenuItem => (
                 <li key={submenuItem._key + submenuItem.path.current}>
                   <SubMenuLink
@@ -44,15 +44,15 @@ const HeaderMenuSubMenu = ({
                           <Icon />
                         </span>
                       </div>
-                      <Heading level={3} as="h2">
+                      <SubSubMenuHeading level={3} as="h2">
                         {submenuItem.title}
-                      </Heading>
+                      </SubSubMenuHeading>
                       <Description>{submenuItem.meta.description}</Description>
                     </Layout>
                   </SubMenuLink>
                 </li>
               ))}
-            </Layout>
+            </SubmenuItems>
           </div>
         </Inner>
       </Wrapper>
@@ -62,12 +62,33 @@ const HeaderMenuSubMenu = ({
 
 const headerHeight = "114px"
 
+const SubmenuItems = styled(Layout)`
+  @media only screen and (max-width: ${theming.wrapper.large}) {
+    grid-row-gap: 0px;
+  }
+`
+
+const SubMenuHeading = styled(Heading)`
+  @media only screen and (max-width: ${theming.wrapper.large}) {
+    display: none;
+  }
+`
+
+const SubSubMenuHeading = styled(Heading)`
+  @media only screen and (max-width: ${theming.wrapper.large}) {
+    color: ${theming.color("primaryWcag")};
+  }
+`
+
 const Inner = styled.div`
   display: flex;
   justify-content: space-between;
 
   > div:last-child {
     flex-basis: 60%;
+    @media only screen and (max-width: ${theming.wrapper.large}) {
+      flex-basis: 100%;
+    }
   }
 `
 
@@ -93,7 +114,9 @@ const SubMenu = styled.div`
   border-top: 2px solid ${theming.color.line};
   padding: ${theming.spacing("grid")} 0;
   @media only screen and (max-width: ${theming.wrapper.large}) {
+    padding: 0;
     background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
 
     > li {
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -128,7 +151,11 @@ const SubMenuLink = styled(NavLink)`
   text-decoration: none;
   font-size: ${theming.font.base};
   padding: ${theming.spacing.small};
-
+  cursor: pointer;
+  @media only screen and (max-width: ${theming.wrapper.large}) {
+    //border: 1px solid ${theming.color.line};
+    border-bottom: 1px solid ${theming.color.line};
+  }
   @media only screen and (min-width: ${theming.wrapper.large}) {
     color: ${theming.color("textDark")};
     transition: background 0.2s ease, color 0.2s ease;
@@ -151,6 +178,9 @@ const TitleHeading = styled(Heading)`
   color: ${theming.color("g1")};
   font-size: ${theming.font("small")};
   font-weight: 500;
+  @media only screen and (max-width: ${theming.wrapper.large}) {
+    color: ${theming.color.line};
+  }
 `
 
 const Icon = styled(IconArrowRight)`
@@ -161,10 +191,6 @@ const Icon = styled(IconArrowRight)`
   margin-left: ${theming.spacing.tiny};
   color: ${theming.color("primary")};
   transition: transform 0.2s ease;
-
-  @media only screen and (max-width: ${theming.wrapper.large}) {
-    display: none;
-  }
 `
 
 export default HeaderMenuSubMenu

@@ -17,16 +17,24 @@ class Header extends React.Component {
   }
 
   handleMenu = () => {
-    this.setState(prevState => ({
-      menuIsVisible: !prevState.menuIsVisible
-    }))
+    this.setState(
+      prevState => ({
+        menuIsVisible: !prevState.menuIsVisible
+      }),
+      () => {
+        if (!this.state.menuIsVisible) {
+          this.props.handleSubmenu(false)
+        }
+      }
+    )
   }
 
   closeMenu = () => {
     this.setState(prevState => ({
       menuIsVisible: false
     }))
-    this.props.handleSubmenu()
+
+    this.props.handleSubmenu(false)
   }
 
   render() {
