@@ -1,6 +1,6 @@
 {
   "name": "@staccx/control-panel",
-  "version": "8.39.3",
+  "version": "8.46.0",
   "private": true,
   "main": "src/main.js",
   "productName": "Bento ctrl",
@@ -29,7 +29,7 @@
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/logo.png.icns --prune=true --out=release-builds"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.39.3",
+    "@staccx/rollup-config": "^8.46.0",
     "electron": "^3.0.0",
     "electron-packager": "^12.1.2",
     "foreman": "^3.0.1",

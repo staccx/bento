@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.46.0](https://bitbucket.org/stacc-flow/bento/compare/v8.45.0...v8.46.0) (2019-01-07)
+
+
+### Bug Fixes
+
+* **stacc-website:** fix(?) menu ([f486db0](https://bitbucket.org/stacc-flow/bento/commits/f486db0))
+
+
+### Features
+
+* **stacc-website:** updated sanity deps ([fa130f0](https://bitbucket.org/stacc-flow/bento/commits/fa130f0))
+
+
+
+
+
 <a name="8.45.0"></a>
 # [8.45.0](https://bitbucket.org/stacc-flow/bento/compare/v8.44.1...v8.45.0) (2019-01-02)
 

@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.46.0](https://bitbucket.org/stacc-flow/bento/compare/v8.45.0...v8.46.0) (2019-01-07)
+
+
+### Bug Fixes
+
+* **aprila-theme:** fix styles ([e77c613](https://bitbucket.org/stacc-flow/bento/commits/e77c613))
+* **base:** updated react-traverse dep ([b607f3c](https://bitbucket.org/stacc-flow/bento/commits/b607f3c))
+* **stacc-website:** fix(?) menu ([f486db0](https://bitbucket.org/stacc-flow/bento/commits/f486db0))
+
+
+### Features
+
+* **bank-in-a-box:** remove mock data and add props ([6a46ec7](https://bitbucket.org/stacc-flow/bento/commits/6a46ec7))
+* **base:** add Form can now find granchildrend and setup validation ([90826d4](https://bitbucket.org/stacc-flow/bento/commits/90826d4))
+* **cli:** link now has default param for input ([c9ffc14](https://bitbucket.org/stacc-flow/bento/commits/c9ffc14))
+* **component-testing:** add example for forms ([7f4bef8](https://bitbucket.org/stacc-flow/bento/commits/7f4bef8))
+* **rollup-config:** add support for custom input ([b599b47](https://bitbucket.org/stacc-flow/bento/commits/b599b47))
+* **stacc-website:** updated sanity deps ([fa130f0](https://bitbucket.org/stacc-flow/bento/commits/fa130f0))
+
+
+
+
+
 <a name="8.45.0"></a>
 # [8.45.0](https://bitbucket.org/stacc-flow/bento/compare/v8.44.1...v8.45.0) (2019-01-02)
 

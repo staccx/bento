@@ -1,6 +1,6 @@
 {
   "name": "@staccx/loan-process",
-  "version": "8.45.0",
+  "version": "8.46.0",
   "description": "Loan process",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -37,13 +37,13 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/animations": "^8.39.3",
-    "@staccx/base": "^8.45.0",
-    "@staccx/formatting": "^8.45.0",
-    "@staccx/fundu-theme": "^8.45.0",
+    "@staccx/animations": "^8.46.0",
+    "@staccx/base": "^8.46.0",
+    "@staccx/formatting": "^8.46.0",
+    "@staccx/fundu-theme": "^8.46.0",
     "@staccx/payment-plan": "^1.2.0",
-    "@staccx/styrke-theme": "^8.45.0",
-    "@staccx/utils": "^8.39.3",
+    "@staccx/styrke-theme": "^8.46.0",
+    "@staccx/utils": "^8.46.0",
     "easing-utils": "^0.0.7",
     "formik": "^0.11.11",
     "national-id": "^2.0.0",
@@ -54,7 +54,7 @@
     "yup": "^0.24.1"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.39.3",
+    "@staccx/rollup-config": "^8.46.0",
     "lint-staged": "^7.2.2",
     "localforage": "^1.7.2",
     "prettier": "^1.14.2",

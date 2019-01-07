@@ -1,6 +1,6 @@
 {
   "name": "@staccx/color",
-  "version": "8.39.3",
+  "version": "8.46.0",
   "description": "Color functions and helpers",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -36,7 +36,7 @@
     "react-dom": "^16.6.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.39.3",
+    "@staccx/rollup-config": "^8.46.0",
     "colors": "^1.3.2",
     "glob": "^7.1.3",
     "prettier": "^1.14.2",

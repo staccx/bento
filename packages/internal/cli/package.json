@@ -1,6 +1,6 @@
 {
   "name": "@staccx/cli",
-  "version": "8.45.0",
+  "version": "8.46.0",
   "description": "",
   "main": "dist/cli.js",
   "module": "dist/cli.es.js",
@@ -21,8 +21,8 @@
   "dependencies": {
     "@sanity/client": "^0.136.0",
     "@slack/client": "^4.8.0",
-    "@staccx/formatting": "^8.45.0",
-    "@staccx/rollup-config": "^8.39.3",
+    "@staccx/formatting": "^8.46.0",
+    "@staccx/rollup-config": "^8.46.0",
     "acorn-jsx": "^4.1.1",
     "acorn-jsx-walk": "^1.0.1",
     "babel-core": "^6.26.3",
