@@ -13,8 +13,18 @@ const reset = ({
   if (searchSubstring) {
     searcher.indexStrategy = new JsSearch.AllSubstringsIndexStrategy()
   }
-  indices.forEach(index => searcher.addIndex(index))
-  searcher.addDocuments(documents)
+
+  indices.forEach(index => {
+    searcher.addIndex(index)
+  })
+
+  if (documents && documents.length) {
+    searcher.addDocuments(documents)
+  } else {
+    console.warn(
+      "[SEARCH]: No documents provided. This will cause search to fail"
+    )
+  }
 
   let result = documents
   if (term) {
