@@ -15,11 +15,17 @@ class LoginPassword extends React.Component {
       ignoreQueryPrefix: true
     })
 
-    if (hashParams["#id_token"]) {
+    const isLoggingIn = hashParams["#id_token"]
+    let isChallenging = false
+    if (isLoggingIn) {
       signInRedirectCallback()
         .then(user => {
           console.log(user)
-          window.location.replace(props.redirectAfterLogin)
+          if (this.props.onSuccess) {
+            this.props.onSuccess(user)
+          } else {
+            window.location.replace(props.redirectAfterLogin)
+          }
         })
         .catch(console.error)
     } else if (!searchParams.state) {
@@ -27,7 +33,7 @@ class LoginPassword extends React.Component {
         ...props.oidcConfig,
         acr_values: `idp:${props.acrValue}`
       }
-
+      isChallenging = true
       challengeIdentity(oidcConfig)
     }
 
@@ -36,7 +42,8 @@ class LoginPassword extends React.Component {
       password: "",
       stateToken: searchParams.state,
       loginStatus: null,
-      isLoggingIn: false
+      isChallenging,
+      isLoggingIn: !!isLoggingIn
     }
 
     this.handlePasswordInput = this.handlePasswordInput.bind(this)
@@ -93,7 +100,8 @@ class LoginPassword extends React.Component {
       loginStatus: this.state.loginStatus,
       isLoading: this.state.isLoggingIn,
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
+      isChallenging: this.state.isChallenging
     })
   }
 }

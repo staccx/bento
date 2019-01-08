@@ -22,7 +22,7 @@ class OpenIdProvider extends Component {
     this.logout = this.logout.bind(this)
     this.renewToken = this.renewToken.bind(this)
     this.initialize = this.initialize.bind(this)
-
+    this.setUser = this.setUser.bind(this)
     this.initialize()
   }
 
@@ -84,25 +84,27 @@ class OpenIdProvider extends Component {
   }
 
   getUser() {
-    console.log("getting user")
-    this.authService.getUser().then(user => {
-      if (user) {
-        console.log("User has been successfully loaded from store.", user)
-        this.shouldCancel = user.expired
-        if (user.expired) {
-          this.renewToken()
-        }
-      } else {
-        console.warn("You are not logged in.")
-      }
+    console.log("getting user auto")
+    this.authService.getUser().then(this.setUser)
+  }
 
-      if (!this.shouldCancel) {
-        this.setState({ user })
-        if (this.props.onUserFetched) {
-          this.props.onUserFetched(user)
-        }
+  setUser(user) {
+    if (user) {
+      console.log("User has been successfully loaded from store.", user)
+      this.shouldCancel = user.expired
+      if (user.expired) {
+        this.renewToken()
       }
-    })
+    } else {
+      console.warn("You are not logged in.")
+    }
+
+    if (!this.shouldCancel) {
+      this.setState({ user })
+      if (this.props.onUserFetched) {
+        this.props.onUserFetched(user)
+      }
+    }
   }
 
   async createSigninRequest() {
@@ -120,7 +122,8 @@ class OpenIdProvider extends Component {
           call: this.callApi,
           login: this.login,
           logout: this.logout,
-          userManager: this.authService.userManager
+          userManager: this.authService.userManager,
+          setUser: this.setUser
         }}
       >
         {this.props.children}
