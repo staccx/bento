@@ -11,6 +11,6 @@ export default {
       options: { collapsable: true }
     }
   ],
-  fields: getFields("string"),
+  fields: getFields("text"),
   preview: getPreview()
 }

@@ -1,4 +1,8 @@
-const supportedLanguages = [{ id: "nb", title: "Norwegian", isDefault: true }]
+import languages from "part:@staccx/i18n/languages?"
+
+const supportedLanguages = languages || [
+  { id: "nb", title: "Norwegian", isDefault: true }
+]
 
 export const getFields = (type, o = null) =>
   supportedLanguages.map(lang => ({

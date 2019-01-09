@@ -10,6 +10,6 @@ export default {
       collapsable: true
     }
   }],
-  fields: getFields("string"),
+  fields: getFields("text"),
   preview: getPreview()
 };

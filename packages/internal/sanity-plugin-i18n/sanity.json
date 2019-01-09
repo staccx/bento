@@ -5,6 +5,10 @@
   },
   "parts": [
     {
+      "name": "part:@staccx/i18n/languages",
+      "description": "Languages to be used in the app"
+    },
+    {
       "implements": "part:@sanity/base/schema-type",
       "path": "translations.js"
     },
