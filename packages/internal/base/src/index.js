@@ -132,6 +132,8 @@ import BaseTheme from "./theming/baseTheme"
 
 import WebFonts from "./components/Theme/WebFonts"
 
+import Steps from "./hoc/Steps/Steps"
+
 // Search
 import Search from "./hoc/Search/Search"
 
@@ -221,6 +223,7 @@ export {
   Slider2,
   SliderKeyboardInput,
   SplitListItem,
+  Steps,
   Success,
   Table,
   Tag,
