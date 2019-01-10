@@ -15,10 +15,11 @@ const Toggle = ({
   onChange,
   className,
   defaultChecked,
+  variant,
   ...otherProps
 }) => {
   return (
-    <ToggleWrapper htmlFor={id} className={className}>
+    <ToggleWrapper htmlFor={id} className={className} variant={variant}>
       <ToggleInput
         id={id}
         disabled={disabled}
@@ -26,9 +27,10 @@ const Toggle = ({
         name={group}
         onChange={onChange}
         defaultChecked={defaultChecked}
+        variant={variant}
         {...otherProps}
       />
-      <ToggleElement>
+      <ToggleElement variant={variant}>
         <span>{children}</span>
       </ToggleElement>
     </ToggleWrapper>
@@ -67,7 +69,7 @@ const ToggleWrapper = styled.label`
 `
 
 const ToggleElement = styled.div`
-  background: ${color.line};
+  background-color: ${color.line};
   border-radius: 2em;
   padding: 2px;
   transition: all 0.4s ease;
