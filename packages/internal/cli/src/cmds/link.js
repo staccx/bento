@@ -46,6 +46,11 @@ const link = async function({ input = "src/export.js", watch }) {
             }
           })
           break
+        case "ERROR":
+        case "FATAL":
+          console.log(event.error)
+          spinner.fail("Fatal error. Fix and restart")
+          break
         default:
           break
       }
