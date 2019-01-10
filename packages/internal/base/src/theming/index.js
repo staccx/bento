@@ -8,6 +8,7 @@ import { default as grid } from "./convenience/grid"
 import { default as spacing } from "./convenience/spacing"
 import { default as targetSize } from "./convenience/targetSize"
 import { default as wrapper } from "./convenience/wrapper"
+import { default as gradient } from "./convenience/gradient"
 // Utils
 import { default as getProp } from "./utils/getProp"
 import { default as mapProp } from "./utils/mapProp"
@@ -43,6 +44,7 @@ export {
   fontFamily,
   fontWeight,
   grid,
+  gradient,
   spacing,
   targetSize,
   wrapper,
