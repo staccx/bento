@@ -1,29 +1,30 @@
-import React, { Component } from "react"
-// import PropTypes from "prop-types"
-import { apiStore, uiStore } from "./stores"
-import { BrowserRouter as Router } from "react-router-dom"
 import Stepper from "./components/StepIndicator"
-import StepContent from "./components/StepContent"
-import { Provider } from "mobx-react"
-import { StyledWrapper } from "./App"
+import StepsContent from "./components/v2/StepsContent"
+import Investments from "./Questions/Investments"
+import Intro from "./pages/Intro"
+import Start from "./components/v2/Start"
+import Experience from "./components/v2/Experience"
+import Portfolio from "./components/Portfolio"
+import StepsProgress from "./components/v2/StepsProgress"
+import Purpose from "./components/v2/Purpose"
+import Risk from "./components/v2/Risk"
+import Themes from "./components/v2/Themes"
 
-class SavingsAdvisor extends Component {
-  render() {
-    return (
-      <Provider apiStore={apiStore} uiStore={uiStore}>
-        <div style={{ paddingTop: "48px" }}>
-          <Router>
-            <StyledWrapper>
-              <Stepper />
-              <StepContent />
-            </StyledWrapper>
-          </Router>
-        </div>
-      </Provider>
-    )
-  }
+const pages = {
+  Experience,
+  Investments,
+  Purpose,
+  Risk,
+  Themes,
+  Intro,
+  Start,
+  Portfolio
 }
 
-SavingsAdvisor.propTypes = {}
+const components = {
+  Stepper,
+  StepsProgress,
+  StepsContent
+}
 
-export { SavingsAdvisor }
+export { pages, components }

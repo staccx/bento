@@ -1,43 +1,36 @@
 import React from "react"
 import styled from "styled-components"
 import { Toggle, theming } from "@staccx/base"
-import { inject, observer } from "mobx-react"
-import QuestionLead from "../components/QuestionLead"
+import { Convert } from "@staccx/i18n"
+import QuestionLead from "../QuestionLead"
 
-@inject("uiStore")
-@observer
-class Start extends React.Component {
-  render() {
-    const {
-      hasExperience,
-      toggleExperience,
-      translate,
-      cmsExperience
-    } = this.props.uiStore
-    return (
-      <div>
-        <QuestionLead question={translate(cmsExperience.title)}>
-          {translate(cmsExperience.lead)}
-        </QuestionLead>
-        <StyledToggle
-          defaultChecked={hasExperience}
-          group="testddd"
-          id="453346gnkj"
-          onChange={toggleExperience}
-          on={hasExperience}
-        >
-          I have invested before
-        </StyledToggle>
-        <FlexAnswer>
-          {cmsExperience.answers.map(answer => (
-            <label key={answer._key} htmlFor="453346gnkj">
-              {translate(answer.heading)}
-            </label>
-          ))}
-        </FlexAnswer>
-      </div>
-    )
-  }
+const Experience = ({ data, hasExperience, onChange }) => {
+  const { title, name, answers } = data
+
+  return (
+    <div>
+      <QuestionLead question={<Convert data={name} />}>
+        <Convert data={title} />
+      </QuestionLead>
+      <Toggle
+        defaultChecked={hasExperience}
+        group="testddd"
+        id="453346gnkj"
+        onChange={onChange}
+        on={hasExperience}
+        variant={"bigSwitch"}
+      >
+        I have invested before
+      </Toggle>
+      <FlexAnswer>
+        {answers.map(answer => (
+          <label key={answer._key} htmlFor="453346gnkj">
+            <Convert data={answer.heading} />
+          </label>
+        ))}
+      </FlexAnswer>
+    </div>
+  )
 }
 
 const FlexAnswer = styled.div`
@@ -75,11 +68,11 @@ const StyledToggle = styled(Toggle)`
       align-items: center;
     }
   }
-  & > input:checked + div {
+  > input:checked + div {
     &::after {
       content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='27' height='26' viewBox='0 0 27 26' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3ctitle%3eVector%3c/title%3e%3cdesc%3eCreated using Figma%3c/desc%3e%3cg id='Canvas' transform='translate(-16619 -15155)'%3e%3cg id='Vector'%3e%3cuse xlink:href='%23path0_fill' transform='translate(16619 15155)' fill='%231CCBFF'/%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3cpath id='path0_fill' d='M 25.7363 1.84701L 23.3714 0.245909C 22.717 -0.195422 21.8205 -0.0260733 21.3825 0.620525L 9.78959 17.6476L 4.46199 12.3414C 3.90553 11.7872 2.99871 11.7872 2.44224 12.3414L 0.417346 14.3582C -0.139115 14.9124 -0.139115 15.8156 0.417346 16.375L 8.60969 24.5344C 9.06825 24.9912 9.78959 25.3401 10.4388 25.3401C 11.088 25.3401 11.7424 24.9347 12.1649 24.324L 26.1176 3.82273C 26.5607 3.17613 26.3907 2.28834 25.7363 1.84701Z'/%3e%3c/defs%3e%3c/svg%3e ") !important;
     }
   }
 `
 
-export default Start
+export default Experience
