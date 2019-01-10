@@ -1,6 +1,7 @@
 import LanguageProvider from "./Components/LanguageProvider"
 import LanguageSettings from "./Components/LanguageSettings"
 import TranslatedText from "./Components/TranslatedText"
+import Convert from "./Components/Convert"
 import i18n from "./i18n"
 import dateNow from "./plugins/date.now"
 import formatCurrency from "./plugins/format.currency"
@@ -19,6 +20,7 @@ export {
   LanguageProvider,
   LanguageSettings,
   TranslatedText,
+  Convert,
   i18n as i18nInstance,
   plugins,
   middleware

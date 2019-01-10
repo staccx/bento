@@ -91,6 +91,7 @@ class i18n {
       return value[this.language]
     }
 
+    console.warn("Could not convert", value, "Not present in", this.language)
     // TODO: What should we return in these cases?
     /**
      * We can use a fallback
