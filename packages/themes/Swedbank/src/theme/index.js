@@ -46,6 +46,11 @@ const color = {
   wat: "#1234as"
 }
 
+const gradient = {
+  laser: ["#5D3B9F", "#CF27AA"],
+  galaxy: ["#AB93FF", "#1CCBFF"]
+}
+
 const font = {
   h1: "36px",
   h2: "26px",
@@ -80,5 +85,6 @@ export default new theming.Theme({
   targetSize,
   borderRadius,
   headerHeight,
-  fontFamily
+  fontFamily,
+  gradient
 })

@@ -1,4 +1,6 @@
 import { theming } from "@staccx/base"
+import Toggle from "./theme/Toggle.Variants"
+import Layout from "./theme/Layout.Variants"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -26,16 +28,17 @@ const spacing = {
   tiny: "6px"
 }
 const color = {
-  bg: "#fcfcfc",
-  bgGray: "#F9F7F7",
-  primary: "#23A532",
+  bg: "#fbf2ea",
+  bgGray: "#ebe7e2",
+  primary: "#ee7023",
+  secondary: "#31a3ae",
   gray: "#767676",
-  text: "#2b2b2b",
+  text: "#512b2b",
   white: "#fff",
   red: "#ea526f",
   pink: "#f8d0db",
   green: "#00a190",
-  blue: "#188EFB",
+  blue: "#5b8ad6",
   yellow: "#f4da87",
   line: "#EBEBF2",
   wcag: "#777",
@@ -43,6 +46,11 @@ const color = {
   warning: "#c54059",
   black: "#000",
   subtleHover: "#F7F7FF"
+}
+
+const gradient = {
+  laser: ["#5D3B9F", "#CF27AA"],
+  galaxy: ["#fa7f25", "#fdbe13", color.bg]
 }
 
 const font = {
@@ -69,9 +77,16 @@ const fontFamily = {
   body: "Libre Franklin"
 }
 
+const fontWeight = {
+  bold: 700,
+  normal: 400,
+  light: 400
+}
+
 export default new theming.Theme({
   name: "Swedbank",
   font,
+  fontWeight,
   webfonts,
   color,
   spacing,
@@ -79,5 +94,8 @@ export default new theming.Theme({
   targetSize,
   borderRadius,
   headerHeight,
-  fontFamily
+  fontFamily,
+  gradient
 })
+  .add(Toggle)
+  .add(Layout)
