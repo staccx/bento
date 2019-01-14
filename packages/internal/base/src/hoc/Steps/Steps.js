@@ -11,10 +11,12 @@ class Steps extends React.Component {
     this.previous = this.previous.bind(this)
     this.setStep = this.setStep.bind(this)
     this.navigate = this.navigate.bind(this)
+    this.set = this.set.bind(this)
 
     this.state = {
       stepIndex: props.start,
-      direction: 0
+      direction: 0,
+      values: props.initialValues
     }
   }
 
@@ -57,7 +59,6 @@ class Steps extends React.Component {
         index = stepCount - 1
       }
     }
-    console.log(direction)
 
     this.setState({
       stepIndex: index,
@@ -86,12 +87,31 @@ class Steps extends React.Component {
     }
   }
 
+  set(value) {
+    this.setState(
+      {
+        values: {
+          ...this.state.values,
+          ...value
+        }
+      },
+      () => {
+        if (this.props.onChange) {
+          this.props.onChange(this.state.values)
+        }
+      }
+    )
+  }
+
   render() {
     const { next, previous, navigate, setStep } = this
+    const { values, direction } = this.state
     const state = this.resolve(this.state.stepIndex, this.props.steps)
     return this.props.children({
       ...state,
-      direction: this.state.direction,
+      direction,
+      values,
+      setState: this.set,
       next,
       previous,
       navigate,
@@ -113,11 +133,13 @@ Steps.propTypes = {
       validator: PropTypes.func,
       data: PropTypes.any
     })
-  )
+  ),
+  initialValues: PropTypes.any
 }
 
 Steps.defaultProps = {
   start: 0,
   loop: false,
-  steps: []
+  steps: [],
+  initialValues: {}
 }
