@@ -1,4 +1,3 @@
-import React from "react"
 import { css } from "styled-components"
 import { theming, Layout } from "@staccx/base"
 export default theming.createVariants(

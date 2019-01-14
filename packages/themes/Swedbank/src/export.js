@@ -1,6 +1,7 @@
 import { theming } from "@staccx/base"
 import Toggle from "./theme/Toggle.Variants"
 import Layout from "./theme/Layout.Variants"
+import Button from "./theme/Button.Variants"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -46,6 +47,24 @@ const color = {
   warning: "#c54059",
   black: "#000",
   subtleHover: "#F7F7FF"
+}
+
+const graphColor = {
+  pie: [
+    "#2F80ED",
+    "#9B51E0",
+    "#BB6BD9",
+    "#5D3B9F",
+    "#56CCF2",
+    "#EB5757",
+    "#F2994A",
+    "#F2C94C",
+    "#219653",
+    "#6FCF97",
+    "#6FB2CF",
+    "#CF756F",
+    "#FFBDB1"
+  ]
 }
 
 const gradient = {
@@ -95,7 +114,9 @@ export default new theming.Theme({
   borderRadius,
   headerHeight,
   fontFamily,
-  gradient
+  gradient,
+  graphColor
 })
   .add(Toggle)
   .add(Layout)
+  .add(Button)
