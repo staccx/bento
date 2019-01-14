@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.48.0](https://bitbucket.org/stacc-flow/bento/compare/v8.47.0...v8.48.0) (2019-01-14)
+
+
+### Bug Fixes
+
+* **base:** fix toggle variants ([85e43d0](https://bitbucket.org/stacc-flow/bento/commits/85e43d0))
+* **swedbank-theme:** add more styles ([2c226b7](https://bitbucket.org/stacc-flow/bento/commits/2c226b7))
+
+
+### Features
+
+* **base:** add ability to set state to steps ([491fcfe](https://bitbucket.org/stacc-flow/bento/commits/491fcfe))
+* **base:** add new convenience gradient ([4b0632f](https://bitbucket.org/stacc-flow/bento/commits/4b0632f))
+* **base:** add new hoc Steps ([03b0ea8](https://bitbucket.org/stacc-flow/bento/commits/03b0ea8))
+* **base:** getProps can now accept only prop. added test ([91d3a51](https://bitbucket.org/stacc-flow/bento/commits/91d3a51))
+* **cli:** link now alerts build errors and show error ([5a294dc](https://bitbucket.org/stacc-flow/bento/commits/5a294dc))
+* **i18n:** add new component Convert ([698d4b8](https://bitbucket.org/stacc-flow/bento/commits/698d4b8))
+* **sanity-plugin-i18n:** add support for language parts ([d2db33e](https://bitbucket.org/stacc-flow/bento/commits/d2db33e))
+* **savings-advisor:** add more components ([865067f](https://bitbucket.org/stacc-flow/bento/commits/865067f))
+* **savings-advisor:** add more presentation components for steps ([e1c8026](https://bitbucket.org/stacc-flow/bento/commits/e1c8026))
+* **swedbank-theme:** add temp variants ([49a0eff](https://bitbucket.org/stacc-flow/bento/commits/49a0eff))
+
+
+
+
+
 # [8.47.0](https://bitbucket.org/stacc-flow/bento/compare/v8.46.1...v8.47.0) (2019-01-08)
 
 

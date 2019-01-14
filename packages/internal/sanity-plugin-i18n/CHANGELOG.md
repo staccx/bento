@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.48.0](https://bitbucket.org/stacc-flow/bento/compare/v8.47.0...v8.48.0) (2019-01-14)
+
+
+### Features
+
+* **sanity-plugin-i18n:** add support for language parts ([d2db33e](https://bitbucket.org/stacc-flow/bento/commits/d2db33e))
+
+
+
+
+
 <a name="8.39.3"></a>
 ## [8.39.3](https://bitbucket.org/stacc-flow/bento/compare/v8.39.2...v8.39.3) (2018-12-19)
 

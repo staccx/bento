@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.48.0](https://bitbucket.org/stacc-flow/bento/compare/v8.47.0...v8.48.0) (2019-01-14)
+
+
+### Bug Fixes
+
+* **swedbank-theme:** add more styles ([2c226b7](https://bitbucket.org/stacc-flow/bento/commits/2c226b7))
+
+
+### Features
+
+* **swedbank-theme:** add temp variants ([49a0eff](https://bitbucket.org/stacc-flow/bento/commits/49a0eff))
+
+
+
+
+
 ## [8.46.1](https://bitbucket.org/stacc-flow/bento/compare/v8.46.0...v8.46.1) (2019-01-08)
 
 **Note:** Version bump only for package @staccx/swedbank-theme

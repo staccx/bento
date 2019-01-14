@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.48.0](https://bitbucket.org/stacc-flow/bento/compare/v8.47.0...v8.48.0) (2019-01-14)
+
+
+### Features
+
+* **savings-advisor:** add more components ([865067f](https://bitbucket.org/stacc-flow/bento/commits/865067f))
+* **savings-advisor:** add more presentation components for steps ([e1c8026](https://bitbucket.org/stacc-flow/bento/commits/e1c8026))
+
+
+
+
+
 ## [8.46.1](https://bitbucket.org/stacc-flow/bento/compare/v8.46.0...v8.46.1) (2019-01-08)
 
 **Note:** Version bump only for package @staccx/savings-advisor
