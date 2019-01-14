@@ -14,6 +14,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "test": "react-scripts test --env=jsdom --coverage",
+    "test:nocov": "react-scripts test --env=jsdom",
     "build:packages": "node build.js",
     "build": "yarn prettify && rollup -c",
     "start": "node build.js && rollup -c -w",
