@@ -318,6 +318,16 @@ export default theming.createVariants(
     `,
     submit: css`
       margin-top: ${theming.spacing.medium};
+    `,
+    tab: css`
+      width: 100%;
+      height: ${theming.spacing.largePlus};
+      transition: height 1s;
+      border-radius: 5px 5px 0px 0px;
+      background-color: ${({ inverted }) =>
+        inverted ? theming.color.primary : theming.color.bgGray};
+      color: ${({ inverted }) =>
+        inverted ? theming.color.white : theming.color.text};
     `
   },
   Button.themeProps.button

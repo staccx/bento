@@ -73,6 +73,13 @@ export const LayoutStyling = theming.createVariants(
       ${OneUp};
       text-align: center;
       margin-top: ${theming.spacing.large};
+    `,
+    login: css`
+      grid-template-areas:
+        "bankId bankIdMobile"
+        "iframe iframe";
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 0;
     `
   },
   Layout.themeProps.container
@@ -97,8 +104,17 @@ export const LayoutItemStyling = theming.createVariants(
       grid-template-areas: ". headerMenu .";
       grid-column-gap: 24px;
     `,
+    headingOnboarding: css`
+      padding: ${theming.spacing.tiny} 0;
+      background-color: ${theming.color.white};
+      margin-left: ${theming.spacing.huge};
+      margin-bottom: ${theming.spacing("largePlus")};
+    `,
     minHeight: css`
       min-height: calc(100vh - 48px - 51px - 24px);
+    `,
+    marginR: css`
+      margin-right: ${theming.spacing.tiny};
     `
   },
   LayoutItem.themeProps.container

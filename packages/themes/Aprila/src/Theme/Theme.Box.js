@@ -141,6 +141,11 @@ export default theming.createVariants(
     personalInfo: css`
       border-top: 1px solid ${theming.color.line};
       padding-top: ${theming.spacing.medium};
+    `,
+    login: css`
+      background-color: ${theming.color.primary};
+      padding: ${theming.spacing.tiny};
+      border-radius: 0 0 5px 5px;
     `
   },
   Box.themeProps.box
