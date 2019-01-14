@@ -1,4 +1,10 @@
 import React from "react"
 import RadioSelect from "./RadioSelect"
 
-export default props => <RadioSelect groupName={"riskSelect"} {...props} />
+export default ({ setState, ...props }) => (
+  <RadioSelect
+    onChange={({value: risk}) => setState({ risk })}
+    groupName={"riskSelect"}
+    {...props}
+  />
+)

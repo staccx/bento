@@ -17,12 +17,12 @@ const fallbackImages = [
   <Pension />
 ]
 
-const RadioSelect = ({ data, onChange, groupName }) => {
+const RadioSelect = ({ data, onChange, groupName, initialSelected = 0 }) => {
   const { answers, title, name } = data
 
   return (
     <State>
-      {({ set, selected, selectedRow = 0 }) => {
+      {({ set, selected, selectedRow = initialSelected }) => {
         return (
           <Wrapper size="medium" breakout>
             <QuestionLead question={<Convert data={title} />}>

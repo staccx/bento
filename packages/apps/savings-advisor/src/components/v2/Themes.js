@@ -7,15 +7,20 @@ import { SanityImage } from "@staccx/sanity"
 
 const MAX_SELECTABLE = 3
 
-const Themes = ({ data, onChange, selected = {} }) => {
+const Themes = ({ data, setState, themes = {} }) => {
+  const onChange = item => {
+    setState({
+      themes: {
+        ...themes,
+        [item]: !themes[item]
+      }
+    })
+  }
   const { answers, title, name } = data
-  console.log(answers)
-  const isChecked = value => selected[value]
+  const isChecked = value => themes[value]
 
   const isDisabled = value => {
-    console.log(selected)
-    const numSelected = Object.keys(selected).filter(key => selected[key])
-      .length
+    const numSelected = Object.keys(themes).filter(key => themes[key]).length
     return isChecked(value) ? false : numSelected >= MAX_SELECTABLE
   }
 

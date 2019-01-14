@@ -1,4 +1,4 @@
-import React from "react"
+import React, { is } from "react"
 import PropTypes from "prop-types"
 import { SlideInFromRight, SlideInFromLeft } from "@staccx/animations"
 import styled from "styled-components"
@@ -52,14 +52,43 @@ const Slide = ({ children, isIn: inProp, direction = 1 }) => (
   </Transition>
 )
 
-const StepsContent = ({ currentStep, steps, direction }) => {
+const StepsContent = ({
+  currentStep,
+  steps,
+  direction,
+  setState,
+  values,
+  ...props
+}) => {
   return (
     <TransitionGroup component={Wrapper}>
       {steps.map((item, index) => {
         const isIn = index === currentStep
+
+        const render = () => {
+          if (React.isValidElement(<item.component />)) {
+            return (
+              <item.component
+                data={item.data}
+                setState={setState}
+                {...props}
+                {...values}
+                steps={steps}
+              />
+            )
+          }
+
+          return item.component({
+            data: item.data,
+            setState,
+            props,
+            values
+          })
+        }
+
         return (
           <Slide isIn={isIn} key={item.name} direction={direction}>
-            <item.component data={item.data} />
+            {render()}
           </Slide>
         )
       })}

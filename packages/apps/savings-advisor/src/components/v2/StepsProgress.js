@@ -14,7 +14,6 @@ const StepsProgress = ({
   <StepperOuter>
     {steps.map((step, index) => {
       if (index <= maxStep) {
-        console.log(progress)
         return (
           <Step
             key={i18nInstance.convert(step.name)}
