@@ -1302,20 +1302,22 @@
     semver-compare "^1.0.0"
     shallow-equals "^1.0.0"
 
-"@sanity/block-content-to-hyperscript@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@sanity/block-content-to-hyperscript/-/block-content-to-hyperscript-2.0.6.tgz#dc599d6dc94ac980add97f93ba9c3ffd5e7e904e"
+"@sanity/block-content-to-hyperscript@^2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@sanity/block-content-to-hyperscript/-/block-content-to-hyperscript-2.0.7.tgz#aa64d1689fdf5263b03fbd7e377028ec2307f3c2"
+  integrity sha512-En1qjMARu/evRb1BKgzs6RsRPpFqg45NB+odpCGE2H+DDZ/pM7qXZN0Br7ej6RPT7xxPs4IK3222VyrzFcn62g==
   dependencies:
-    "@sanity/generate-help-url" "^0.132.5"
-    "@sanity/image-url" "^0.132.5"
+    "@sanity/generate-help-url" "^0.139.0"
+    "@sanity/image-url" "^0.139.0"
     hyperscript "^2.0.2"
     object-assign "^4.1.1"
 
-"@sanity/block-content-to-react@^2.0.4":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@sanity/block-content-to-react/-/block-content-to-react-2.0.5.tgz#e4f83c89eb39ab6dcd7d3af62d39097f9b113c78"
+"@sanity/block-content-to-react@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@sanity/block-content-to-react/-/block-content-to-react-2.0.6.tgz#be8b090e3c24d7bc66dc6a140dd5ee6ebd70713d"
+  integrity sha512-fLZKU+tZbJVzoKNOeWgRGQjIv9yoiYXOYq+1XhWyUlC167P2e663wCQe8fYhSzoM8Yn6FlsbC7UUtQANtLMNIA==
   dependencies:
-    "@sanity/block-content-to-hyperscript" "^2.0.6"
+    "@sanity/block-content-to-hyperscript" "^2.0.7"
     prop-types "^15.6.2"
 
 "@sanity/block-tools@0.138.0":
@@ -1845,13 +1847,9 @@
   version "0.138.0"
   resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-0.138.0.tgz#a4f10213251b4ec9f08a11e5077f4238b80bb316"
 
-"@sanity/generate-help-url@0.139.0":
+"@sanity/generate-help-url@0.139.0", "@sanity/generate-help-url@^0.139.0":
   version "0.139.0"
   resolved "https://registry.npmjs.org/@sanity/generate-help-url/-/generate-help-url-0.139.0.tgz#cf31df07ec69b645f85284bb83aeb943be0db987"
-
-"@sanity/generate-help-url@^0.132.5":
-  version "0.132.10"
-  resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-0.132.10.tgz#57aafb6bc2ca3331c3a0edb89b850c3d3e5e1e8b"
 
 "@sanity/google-maps-input@^0.139.5":
   version "0.139.5"
@@ -1863,11 +1861,11 @@
   version "0.138.0"
   resolved "https://registry.yarnpkg.com/@sanity/image-url/-/image-url-0.138.0.tgz#092b2beb55f1089cb0f27c7ae1289c435828914c"
 
-"@sanity/image-url@0.139.0":
+"@sanity/image-url@0.139.0", "@sanity/image-url@^0.139.0":
   version "0.139.0"
   resolved "https://registry.npmjs.org/@sanity/image-url/-/image-url-0.139.0.tgz#47cf2f4b583dc48f1ff590e5abdc86947a4c88ca"
 
-"@sanity/image-url@^0.132.5", "@sanity/image-url@^0.132.8":
+"@sanity/image-url@^0.132.8":
   version "0.132.8"
   resolved "https://registry.yarnpkg.com/@sanity/image-url/-/image-url-0.132.8.tgz#cca66e57ecb9352763a2a4b090aa85a83409cea2"
 
