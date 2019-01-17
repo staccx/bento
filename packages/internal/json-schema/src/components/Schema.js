@@ -9,7 +9,6 @@ import ErrorList from "./Custom.ErrorList"
 import CustomFields from "./Custom.Fields"
 import CustomWidgets from "./Custom.Widgets"
 import CustomErrors from "./Custom.Errors"
-import SchemaField from "./Custom.SchemaField"
 
 const Schema = ({
   schema,
@@ -20,10 +19,14 @@ const Schema = ({
   children,
   widgets = CustomWidgets,
   fields = CustomFields,
-  html5Validation = false
+  html5Validation = false,
+  transformErrors = CustomErrors,
+  errorList = ErrorList,
+  ...props
 }) => {
   return (
     <SchemaForm
+      className={"root__element"}
       schema={schema}
       widgets={widgets}
       fields={fields}
@@ -32,12 +35,12 @@ const Schema = ({
       onSubmit={({ formData }) => onSubmit(formData)}
       onError={onError}
       noHtml5Validate={html5Validation}
-      SchemaFieldTemplate={SchemaField}
       ArrayFieldTemplate={ArrayField}
       ObjectFieldTemplate={CustomObjectFieldTemplate}
       FieldTemplate={CustomFieldTemplate}
-      ErrorList={ErrorList}
-      transformErrors={CustomErrors}
+      ErrorList={errorList}
+      transformErrors={transformErrors}
+      {...props}
     >
       {children || <Button type={"submit"}>Submit</Button>}
     </SchemaForm>

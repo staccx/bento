@@ -1,4 +1,5 @@
 import React from "react"
+import SchemaField from "./Custom.SchemaField"
 import { Label, Heading, Alert } from "@staccx/base"
 
 const CustomTitleField = ({ title, required, level, variant, ...rest }) => {
@@ -19,5 +20,6 @@ const LatLngField = props => (
 export default {
   TitleField: CustomTitleField,
   DescriptionField: CustomDescriptionField,
-  geo: LatLngField
+  geo: LatLngField,
+  SchemaField
 }

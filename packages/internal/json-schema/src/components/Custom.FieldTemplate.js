@@ -15,9 +15,8 @@ const CustomFieldTemplate = props => {
   //   children
   // } = props
   const { errors, children } = props
-
   return (
-    <Box variant="schemaContainer">
+    <Box variant="schemaContainer" className={"field__element"}>
       {children}
       {errors}
     </Box>

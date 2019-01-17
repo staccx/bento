@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-
+import { List, Alert } from "@staccx/base"
 import {
   isMultiSelect,
   retrieveSchema,
@@ -91,21 +91,18 @@ function Help(props) {
 function ErrorList(props) {
   const { errors = [] } = props
   if (errors.length === 0) {
-    return <div />
+    return null
   }
   return (
-    <div>
-      <p />
-      <ul className="error-detail bs-callout bs-callout-info">
-        {errors.map((error, index) => {
-          return (
-            <li className="text-danger" key={index}>
-              {error}
-            </li>
-          )
-        })}
-      </ul>
-    </div>
+    <List>
+      {errors.map((error, index) => {
+        return (
+          <li key={index}>
+            <Alert type={"warning"}>{error}</Alert>
+          </li>
+        )
+      })}
+    </List>
   )
 }
 
