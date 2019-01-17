@@ -7,7 +7,7 @@
   "jsnext:main": "dist/index.es.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@sanity/block-content-to-react": "^2.0.4",
+    "@sanity/block-content-to-react": "^2.0.6",
     "@sanity/client": "^0.135.0",
     "@sanity/image-url": "^0.132.8",
     "@staccx/base": "^8.48.0",
