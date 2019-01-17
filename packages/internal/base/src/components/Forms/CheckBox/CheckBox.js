@@ -185,8 +185,7 @@ CheckBox.propTypes = {
   className: PropTypes.string,
   defaultChecked: PropTypes.bool,
   checkIcon: PropTypes.element,
-  ignoreBase: PropTypes.func,
-  variant: PropTypes.string
+  ignoreBase: PropTypes.func
 }
 
 CheckBox.defaultProps = {
