@@ -38,6 +38,7 @@ export default theming.createVariants(
     `,
     schemaHeading: css`
       margin-top: 0;
+      margin-bottom: ${theming.spacing.medium};
       color: ${theming.color.primary};
       font-weight: ${p =>
         p.level === 1 && `${theming.fontWeight("normal")(p)}`};

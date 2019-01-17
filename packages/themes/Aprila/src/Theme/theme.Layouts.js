@@ -108,7 +108,7 @@ export const LayoutItemStyling = theming.createVariants(
       padding: ${theming.spacing.tiny} 0;
       background-color: ${theming.color.white};
       margin-left: ${theming.spacing.huge};
-      margin-bottom: ${theming.spacing("largePlus")};
+      margin-bottom: ${theming.spacing("medium")};
     `,
     minHeight: css`
       min-height: calc(100vh - 48px - 51px - 24px);
@@ -121,6 +121,11 @@ export const LayoutItemStyling = theming.createVariants(
     `,
     colorPrimary: css`
       color: ${theming.color.primary};
+    `,
+    smallMargin: css`
+      > p {
+        margin: ${theming.spacing.small};
+      }
     `
   },
   LayoutItem.themeProps.container

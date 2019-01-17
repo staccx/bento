@@ -333,6 +333,7 @@ export default theming.createVariants(
       background-color: ${theming.color.primary};
       color: ${theming.color.white};
       line-height: 42px;
+      margin-bottom: ${theming.spacing.medium};
     `
   },
   Button.themeProps.button

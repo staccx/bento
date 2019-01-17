@@ -44,7 +44,6 @@ import {
   InputLabelStyling,
   InputWrapperStyling
 } from "./Theme.Inputs"
-import { MenuColumnStyle } from "../components/MenuColumn"
 import ImageVariants from "./Image.Variants"
 import SelectVariants from "./Select.Variants"
 
