@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.50.0](https://bitbucket.org/stacc-flow/bento/compare/v8.49.0...v8.50.0) (2019-01-17)
+
+
+### Bug Fixes
+
+* **base:** remove prop variant. implicit ([b9f9c7c](https://bitbucket.org/stacc-flow/bento/commits/b9f9c7c))
+
+
+
+
+
 # [8.48.0](https://bitbucket.org/stacc-flow/bento/compare/v8.47.0...v8.48.0) (2019-01-14)
 
 
