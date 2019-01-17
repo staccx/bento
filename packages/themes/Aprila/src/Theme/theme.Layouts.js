@@ -115,6 +115,12 @@ export const LayoutItemStyling = theming.createVariants(
     `,
     marginR: css`
       margin-right: ${theming.spacing.tiny};
+    `,
+    centerText: css`
+      text-align: center;
+    `,
+    colorPrimary: css`
+      color: ${theming.color.primary};
     `
   },
   LayoutItem.themeProps.container

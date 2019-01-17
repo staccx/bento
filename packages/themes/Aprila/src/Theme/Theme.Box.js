@@ -146,6 +146,9 @@ export default theming.createVariants(
       background-color: ${theming.color.primary};
       padding: ${theming.spacing.tiny};
       border-radius: 0 0 5px 5px;
+    `,
+    top: css`
+      z-index: 999;
     `
   },
   Box.themeProps.box

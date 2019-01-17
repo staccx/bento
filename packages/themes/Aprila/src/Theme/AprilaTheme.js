@@ -45,6 +45,8 @@ import {
   InputWrapperStyling
 } from "./Theme.Inputs"
 import { MenuColumnStyle } from "../components/MenuColumn"
+import ImageVariants from "./Image.Variants"
+import SelectVariants from "./Select.Variants"
 
 const { Theme } = theming
 
@@ -154,13 +156,13 @@ const t = new Theme(BaseTheme, {
   headerHeight,
   fontFamily,
   spacing,
-  global: reset,
   bib: {
     loan: false,
     deposit: true,
     transactionsFrontpage: true
   }
 })
+  .add(reset)
   .add(Button)
   .add(Box)
   .add(ExpandListExpanded)
@@ -203,5 +205,7 @@ const t = new Theme(BaseTheme, {
   .add(InputLabelStyling)
   .add(InputWrapperStyling)
   .add(AccountHeading)
+  .add(ImageVariants)
+  .add(SelectVariants)
 
 export default t

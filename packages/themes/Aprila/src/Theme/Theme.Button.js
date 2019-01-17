@@ -328,6 +328,11 @@ export default theming.createVariants(
         inverted ? theming.color.primary : theming.color.bgGray};
       color: ${({ inverted }) =>
         inverted ? theming.color.white : theming.color.text};
+    `,
+    link: css`
+      background-color: ${theming.color.primary};
+      color: ${theming.color.white};
+      line-height: 42px;
     `
   },
   Button.themeProps.button
