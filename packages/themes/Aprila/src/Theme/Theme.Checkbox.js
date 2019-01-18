@@ -25,10 +25,11 @@ export const CheckboxLabel = theming.createVariants(
         border-width: 2px;
         border-radius: 3px;
         margin-right: 12px;
+        flex: 0 0 24px;
       }
       > svg {
-        left: 8px;
-        top: 8px;
+        left: 6px;
+        top: 50%;
       }
     `
   },
@@ -47,6 +48,10 @@ export const CheckboxCheckedLabel = theming.createVariants(
         &::before {
           border-color: ${p => darken(0.1, theming.color("primary")(p))};
         }
+      }
+
+      > svg {
+        transform: scale(1) translateY(-50%);
       }
     `
   },
