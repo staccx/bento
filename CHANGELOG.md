@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.50.2](https://bitbucket.org/stacc-flow/bento/compare/v8.50.1...v8.50.2) (2019-01-18)
+
+
+### Bug Fixes
+
+* **aprila-theme:** fix checkboxes with more lines ([7686040](https://bitbucket.org/stacc-flow/bento/commits/7686040))
+
+
+
+
+
 ## [8.50.1](https://bitbucket.org/stacc-flow/bento/compare/v8.50.0...v8.50.1) (2019-01-17)
 
 
