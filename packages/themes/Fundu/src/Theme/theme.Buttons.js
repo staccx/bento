@@ -229,6 +229,17 @@ export const ButtonStyling = theming.createVariants(
     bounce: css`
       animation: ${bounce} 2s linear 1;
       transform-origin: 50% 50%;
+    `,
+    showHide: css`
+      background-color: ${theming.color.white};
+      color: ${theming.color.text};
+      rotation: ${({ hide }) => (hide ? 180 : 90)}deg;
+      &:hover,
+      &:focus {
+        outline: none;
+        background-color: ${theming.color.secondary};
+        color: ${theming.color.white};
+      }
     `
   },
   Button.themeProps.button

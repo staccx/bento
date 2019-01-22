@@ -1,5 +1,6 @@
 import { css } from "styled-components"
 import { Box, theming } from "@staccx/base"
+import { SlideInFromLeft } from "@staccx/animations"
 
 export const BoxStyling = theming.createVariants(
   {
@@ -155,6 +156,22 @@ export const BoxStyling = theming.createVariants(
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
+    `,
+    notification: css`
+      position: fixed;
+      text-align: center;
+      display: flex;
+      margin-top: 100px;
+      top: 0;
+      width: 250px;
+      left: ${({ hide }) => (hide ? -200 : 0)}px;
+      transition: left 300ms;
+      z-index: 900;
+      animation: ${SlideInFromLeft} ease-in-out 1000ms normal forwards 1;
+    `,
+    rotate: css`
+      transform: rotate(${({ rotation }) => rotation}deg);
+      transition: transform 300ms;
     `
   },
   Box.themeProps.box
