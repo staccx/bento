@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.51.0](https://bitbucket.org/stacc-flow/bento/compare/v8.50.2...v8.51.0) (2019-01-22)
+
+
+### Bug Fixes
+
+* **base:** fix slider handle type no form submit ([0b4b5cf](https://bitbucket.org/stacc-flow/bento/commits/0b4b5cf))
+* **cli:** fix link with no target ([4cd9a93](https://bitbucket.org/stacc-flow/bento/commits/4cd9a93))
+
+
+### Features
+
+* **base:** add initialDelay to Get ([18fc57f](https://bitbucket.org/stacc-flow/bento/commits/18fc57f))
+* **cli:** bento link [target] now possible ([6c582b4](https://bitbucket.org/stacc-flow/bento/commits/6c582b4))
+* **fundu-theme:** notifications ([2fa0980](https://bitbucket.org/stacc-flow/bento/commits/2fa0980))
+
+
+
+
+
 ## [8.50.2](https://bitbucket.org/stacc-flow/bento/compare/v8.50.1...v8.50.2) (2019-01-18)
 
 
