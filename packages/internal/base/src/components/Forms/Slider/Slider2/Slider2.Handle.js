@@ -15,6 +15,7 @@ const Slider2Handle = ({
   ...restProps
 }) => (
   <HandleButton
+    type="button"
     role="slider"
     className={className}
     aria-valuemin={min}
