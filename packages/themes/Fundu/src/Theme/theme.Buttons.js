@@ -1,6 +1,39 @@
 import { css, keyframes } from "styled-components"
 import { Button, theming } from "@staccx/base"
 
+const tada = keyframes`
+from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  3%,
+  5% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  8%,
+  13%,
+  18%,
+  23% {
+    transform: scale3d(1.3, 1.3, 1.3) rotate3d(0, 0, 1, 3deg);
+  }
+
+  10%,
+  15%,
+  20% {
+    transform: scale3d(1.3, 1.3, 1.3) rotate3d(0, 0, 1, -3deg);
+  }
+  
+  25%,
+  100%{
+    transform: scale(1, 1, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+`
+
 const subtleButton = css`
   background-color: transparent;
   color: ${theming.color.text};
@@ -231,15 +264,19 @@ export const ButtonStyling = theming.createVariants(
       transform-origin: 50% 50%;
     `,
     showHide: css`
-      background-color: ${theming.color.white};
+      background-color: transparent;
       color: ${theming.color.text};
-      rotation: ${({ hide }) => (hide ? 180 : 90)}deg;
       &:hover,
       &:focus {
         outline: none;
-        background-color: ${theming.color.secondary};
-        color: ${theming.color.white};
+        background-color: transparent;
       }
+
+      fill: ${theming.color.primary};
+      animation: ${({ hide }) => (hide ? tada : null)};
+      animation-duration: 3s;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
     `
   },
   Button.themeProps.button
