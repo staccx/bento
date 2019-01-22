@@ -9,7 +9,12 @@ class Get extends React.Component {
     this.state = {
       data: null
     }
-    this.fetchData()
+
+    if (this.props.initialDelay) {
+      setTimeout(() => this.fetchData(), this.props.initialDelay)
+    } else {
+      this.fetchData()
+    }
   }
 
   fetchData() {
@@ -112,7 +117,11 @@ Get.propTypes = {
   /**
    * Interval in which polling will be done. Ignored if poll == false
    */
-  pollingInterval: PropTypes.number
+  pollingInterval: PropTypes.number,
+  /**
+   * Initial delay
+   */
+  initialDelay: PropTypes.number
 }
 
 export default Get
@@ -122,5 +131,6 @@ Get.defaultProps = {
   onFailed: console.error,
   options: {},
   poll: false,
-  pollingInterval: 5000
+  pollingInterval: 5000,
+  initialDelay: 0
 }
