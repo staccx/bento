@@ -83,13 +83,13 @@ program
   })
 
 program
-  .command("link")
+  .command("link [target...]")
   .alias("l")
   .description("Leverage building and linking with yalc. All in one package")
   .option("-i, --input <path>", "Entry point for builder")
   .option("-w, --watch", "Keep the watcher alive")
-  .action(({ input, watch }) => {
-    link({ input, watch })
+  .action((target, { input, watch }) => {
+    link({ input, watch, target })
   })
 
 program.parse(process.argv)

@@ -4,7 +4,7 @@ const generateConfig = require("@staccx/rollup-config")
 
 const { executeAsync, setupSpinner, runCommand } = require("./__helpers")
 
-const link = async function({ input = "src/export.js", watch }) {
+const link = async function({ input = "src/export.js", watch, target }) {
   const fail = function() {
     process.exit(1)
   }
@@ -12,6 +12,29 @@ const link = async function({ input = "src/export.js", watch }) {
   const cwd = process.cwd()
   const spinner = setupSpinner()
   let pkg = null
+
+  if (target) {
+    if (!Array.isArray(target)) {
+      target = [target]
+    }
+
+    target = target.map(t => {
+      return t.indexOf("@staccx/") === -1 ? `@staccx/${t}` : t
+    })
+
+    await runCommand({
+      onFail: console.log,
+      failText: `Failed to link ${target.join(", ")}`,
+      startText: `Linking to ${target.join(", ")}`,
+      succeedText: `Linked to ${target.join(", ")}`,
+      spinner,
+      debug: false,
+      command: async () => {
+        executeAsync("yalc", ["link", target.join(" ")], { cwd })
+      }
+    })
+    return
+  }
   try {
     pkg = require(path.resolve(cwd, "package.json"))
   } catch (e) {
