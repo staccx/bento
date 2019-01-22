@@ -64,4 +64,32 @@ Pass the `s` and `f` options to save texts to file
 bento -p "project" -d "dataset" -s -f "./src/i18n.json"
 ```
 
+## Link
+Use bento to symlink packages.
 
+### Publish and push package
+```bash
+bento link
+```
+#### Options
+Input
+```
+bento link -i "src/target.js" // defaults to src/exports.js
+```
+Watch
+```
+bento link -w
+```
+*Target*
+If you want to *use* packages use the target param
+
+*NOTE:* Assumes @staccx packages
+```
+bento link base i18n //will pad @staccx/ if you dont provide it
+```
+
+## Clean
+```
+bento clean
+```
+Executes the cleaning process inside bento. Will remove nodemodules, clean all packages and install deps
