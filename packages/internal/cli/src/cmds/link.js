@@ -13,7 +13,7 @@ const link = async function({ input = "src/export.js", watch, target }) {
   const spinner = setupSpinner()
   let pkg = null
 
-  if (target) {
+  if (target && target.length) {
     if (!Array.isArray(target)) {
       target = [target]
     }
