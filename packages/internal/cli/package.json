@@ -38,5 +38,9 @@
     "rollup-plugin-node-resolve": "^4.0.0",
     "simple-git": "^1.107.0",
     "username": "^4.0.0"
+  },
+  "devDependencies": {
+    "conf": "^2.2.0",
+    "opn": "^5.4.0"
   }
 }
