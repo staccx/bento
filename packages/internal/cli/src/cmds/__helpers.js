@@ -98,8 +98,18 @@ const setupSpinner = function(text = "Starting", spinner = "monkey") {
   })
 }
 
+const traverse = function(o, fn) {
+  for (const i in o) {
+    fn.apply(this, [i, o[i], o])
+    if (o[i] !== null && typeof o[i] === "object") {
+      traverse(o[i], fn)
+    }
+  }
+}
+
 module.exports = {
   executeAsync,
   runCommand,
-  setupSpinner
+  setupSpinner,
+  traverse
 }

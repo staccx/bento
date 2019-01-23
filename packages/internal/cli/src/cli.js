@@ -11,6 +11,8 @@ const walk = require("./utils/walk")
 const release = require("./cmds/release")
 const clean = require("./cmds/clean")
 const link = require("./cmds/link")
+const eslint = require("./cmds/eslint")
+const figma = require("./cmds/figma") // TODO: Refactor so that only one figma function is imported and handles all options
 const { version } = require("../package.json")
 
 program.version(version).description("Command line tool for Stacc X")
@@ -91,5 +93,17 @@ program
   .action((target, { input, watch }) => {
     link({ input, watch, target })
   })
+
+program
+  .command("figma")
+  .alias("f")
+  .description("Connect to figma files and do stuff")
+  .action(figma)
+
+program
+  .command("eslint")
+  .alias("e")
+  .description("Install Stacc X eslint setup")
+  .action(eslint)
 
 program.parse(process.argv)
