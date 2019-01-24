@@ -2,8 +2,8 @@ const { executeAsync, setupSpinner, runCommand } = require("./__helpers")
 
 const packages = {
   "@staccx/eslint": "8.39.3",
-  "babel-eslint": ">=8.2.2",
-  eslint: ">=5.0.1",
+  "babel-eslint": "9.0.0",
+  eslint: "5.6.0",
   "eslint-config-prettier": ">=2.9.0",
   "eslint-config-standard": ">=11.0.0",
   "eslint-config-standard-react": ">=6.0.0",
@@ -31,16 +31,12 @@ const install = async () => {
       startText: `Installing ${pkgVersion}`,
       failText: `Failed to install ${pkgVersion}`,
       command: async () =>
-        executeAsync(
-          "yarn",
-          ["add", "-D", pkgVersion],
-          {
-            cwd
-          },
-          console.log
-        )
+        executeAsync("yarn", ["add", "-D", pkgVersion], {
+          cwd
+        })
     })
   }
+  spinner.succeed("You now have eslint")
 }
 
 module.exports = install
