@@ -97,8 +97,11 @@ program
 program
   .command("figma")
   .alias("f")
+  .option("-c, --configPath", "Path for finding config file")
   .description("Connect to figma files and do stuff")
-  .action(figma)
+  .action(configPath => {
+    figma({ configPath })
+  })
 
 program
   .command("eslint")

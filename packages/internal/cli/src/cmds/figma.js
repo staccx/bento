@@ -6,6 +6,7 @@ const Conf = require("conf")
 const inquirer = require("inquirer")
 const { setupSpinner, runCommand, traverse } = require("./__helpers")
 const fs = require("fs-extra")
+const path = require("path")
 
 const config = new Conf()
 
@@ -34,6 +35,8 @@ const generateDate = seconds => {
 
   return today
 }
+
+const spinner = setupSpinner()
 
 const verifyToken = () => {
   return new Promise((resolve, reject) => {
@@ -95,8 +98,6 @@ const auth = () => {
         .post(url)
         .then(result => result.data)
         .then(data => {
-          console.log(data)
-
           const { access_token, refresh_token, expires_in } = data
 
           config.set(FIGMA_ACCESS_TOKEN, access_token)
@@ -117,8 +118,13 @@ const auth = () => {
   })
 }
 
-const getKey = async () => {
+const getKey = async configKey => {
   return new Promise(async (resolve, reject) => {
+    if (configKey) {
+      // Just return what was provided
+      return resolve(configKey)
+    }
+
     let key = null
 
     try {
@@ -156,10 +162,45 @@ const getFile = key => {
     .then(result => result.data)
 }
 
-const figma = async () => {
-  const spinner = setupSpinner()
+const defaultMapFrame = frame => {
+  const { name } = frame
 
-  let key = await getKey()
+  return {
+    meta: {
+      name
+    },
+    name
+  }
+}
+
+const readConfig = async configPath => {
+  spinner.info("Checking for config file")
+  const configFile = path.resolve(process.cwd(), configPath)
+  console.log(configPath, configFile)
+  const exists = await fs.exists(configFile)
+  if (exists) {
+    spinner.succeed("Config file found")
+    const getConfig = await require(configFile)
+    if (getConfig && typeof getConfig === "function") {
+      const { mapFrame, figmaKey } = getConfig()
+
+      return {
+        mapFrame,
+        figmaKey
+      }
+    } else {
+      spinner.fail("Config must return a single function")
+    }
+  }
+
+  return {}
+}
+
+const figma = async ({ configPath = "bento-config.js", ...opts }) => {
+  console.log(opts)
+  const { figmaKey, mapFrame = defaultMapFrame } = await readConfig(configPath)
+
+  let key = await getKey(figmaKey)
 
   if (!key) {
     spinner.fail("No key provided")
@@ -183,11 +224,9 @@ const figma = async () => {
           await auth()
         } else {
           spinner.fail("Failed to authenticate")
-          return
         }
       } catch (e) {
         spinner.fail(`Error: ${e.message.substring(0, 100)}`)
-        return
       }
     }
 
@@ -219,27 +258,31 @@ const figma = async () => {
 
         const data = {
           name: page.name,
+          key,
           initial: page.prototypeStartNodeID,
-          states: page.children.reduce((acc, curr, index) => {
-            const { id, name } = curr
-            acc[id] = {
-              meta: {
-                name
-              },
-              name,
+          states: page.children.reduce((frames, frame, index) => {
+            const { id, type } = frame
+
+            if (type !== "FRAME") {
+              // Only frames will translate to states
+              return frames
+            }
+
+            frames[id] = {
+              ...mapFrame(frame),
               on: {}
             }
 
-            traverse(curr, (key, value, parent) => {
+            traverse(frame, (key, value, parent) => {
               if (key === "transitionNodeID") {
-                acc[id].on = {
-                  ...acc[id].on,
+                frames[id].on = {
+                  ...frames[id].on,
                   [parent.name]: value
                 }
               }
             })
 
-            return acc
+            return frames
           }, {})
         }
 
