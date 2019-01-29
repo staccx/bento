@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { List, Alert } from "@staccx/base"
+import { theming, List, Alert } from "@staccx/base"
 import {
   isMultiSelect,
   retrieveSchema,
@@ -98,7 +98,9 @@ function ErrorList(props) {
       {errors.map((error, index) => {
         return (
           <li key={index}>
-            <Alert type={"warning"}>{error}</Alert>
+            <Alert type={"warning"} variant={theming.VARIANT_DEFAULT}>
+              {error}
+            </Alert>
           </li>
         )
       })}
