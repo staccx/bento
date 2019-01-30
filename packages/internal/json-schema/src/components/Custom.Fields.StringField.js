@@ -1,12 +1,7 @@
 import React from "react"
 import * as types from "../types"
 
-import {
-  getWidget,
-  getUiOptions,
-  isSelect,
-  optionsList,
-} from "../utils"
+import { getWidget, getUiOptions, isSelect, optionsList } from "../utils"
 import { getDefaultRegistry } from "../getDefaultRegistry"
 
 function StringField(props) {

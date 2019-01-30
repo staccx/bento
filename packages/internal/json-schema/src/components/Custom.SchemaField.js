@@ -98,9 +98,7 @@ function ErrorList(props) {
       {errors.map((error, index) => {
         return (
           <li key={index}>
-            <Alert type={"warning"} variant={theming.VARIANT_DEFAULT}>
-              {error}
-            </Alert>
+            <Alert type={"warning"}>{error}</Alert>
           </li>
         )
       })}
