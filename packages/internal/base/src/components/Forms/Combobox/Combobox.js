@@ -85,7 +85,7 @@ Combobox.propTypes = {
   renderSelected: PropTypes.func,
   renderGroupHeader: PropTypes.func,
   listComponent: commonPropTypes.children,
-  filter: PropTypes.string,
+  filter: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   groupBy: PropTypes.string,
   options: PropTypes.array,
   downshiftProps: PropTypes.object
