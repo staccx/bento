@@ -47,6 +47,7 @@ import {
 } from "./Theme.Inputs"
 import ImageVariants from "./Image.Variants"
 import SelectVariants from "./Select.Variants"
+import AlertStyling from "./Theme.Alerts"
 
 const { Theme } = theming
 
@@ -80,6 +81,7 @@ const color = {
   bgGray: "#F2F1FC",
   purpleBg: "#F1EFFE",
   primary: "#3B2C7C",
+  mainButton: "#3B2C7C",
   primaryLight: "#948fc5",
   secondary: "#FF7E68",
   secondaryLight: "#FECDC6",
@@ -89,7 +91,7 @@ const color = {
   line: "#D3D3F4",
   wcag: "#777",
   disabled: "#BABABA",
-  warning: "#FF7E68",
+  warning: "#f53b1c",
   positive: "#3B2C7C",
   negative: "#FF7E68",
   black: "#000",
@@ -209,5 +211,6 @@ const t = new Theme(BaseTheme, {
   .add(AccountHeading)
   .add(ImageVariants)
   .add(SelectVariants)
+  .add(AlertStyling)
 
 export default t
