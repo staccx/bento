@@ -1,5 +1,7 @@
 import { css } from "styled-components"
 import { Box, fontSmoothing, theming } from "@staccx/base"
+import { FadeIn } from "@staccx/animations"
+
 const defaultBox = css`
   background: ${theming.color.white};
   box-shadow: 0px 16px 16px rgba(0, 0, 75, 0.002),
@@ -123,11 +125,11 @@ export default theming.createVariants(
     `,
     highlightBox: css`
       border: none;
-      border-radius: 8px;
+      border-radius: ${theming.borderRadius};
       padding: ${theming.spacing("mediumPlus")} ${theming.spacing.large};
       margin-left: -${theming.spacing.large};
       margin-right: -${theming.spacing.large};
-      background: ${theming.color("subtleHover")};
+      background: ${theming.color("purpleBg")};
     `,
     schemaContainer: css``,
     inlineBox: css`
@@ -149,6 +151,21 @@ export default theming.createVariants(
     `,
     top: css`
       z-index: 999;
+    `,
+    tooltip: css`
+      display: ${({isVisible }) => (isVisible ? "block" : "none")};
+      background-color: #f9f9f9;
+      border-radius: ${theming.borderRadius};
+      min-width: ${theming.wrapper.small};
+      max-width: ${theming.wrapper.small};
+      min-height: ${theming.spacing.small};
+      margin-bottom: ${theming.spacing.small};
+      padding: ${theming.spacing.small};
+      opacity: 0;
+      animation: ${FadeIn} 0.4s ease-out 1 forwards;
+      box-shadow: 0px ${theming.spacing.small} ${theming.spacing.medium}
+        rgba(0, 0, 0, 0.06);
+      border: 1px solid ${theming.color.line};
     `
   },
   Box.themeProps.box

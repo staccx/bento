@@ -40,6 +40,7 @@ import SplitListItem from "./Theme.SplitListItem"
 import { ListStyling } from "./Theme.Lists"
 import { LabelStyling } from "./Theme.Labels"
 import {
+  InputHelpBoxStyling,
   InputInputStyling,
   InputLabelStyling,
   InputWrapperStyling
@@ -49,7 +50,7 @@ import SelectVariants from "./Select.Variants"
 
 const { Theme } = theming
 
-const borderRadius = "8px"
+const borderRadius = "3px"
 const headerHeight = "70px"
 
 const targetSize = {
@@ -77,8 +78,9 @@ const spacing = {
 const color = {
   bg: "#fff",
   bgGray: "#F2F1FC",
+  purpleBg: "#F1EFFE",
   primary: "#3B2C7C",
-  primaryLight: "#604fa9",
+  primaryLight: "#948fc5",
   secondary: "#FF7E68",
   secondaryLight: "#FECDC6",
   gray: "#767676",
@@ -202,6 +204,7 @@ const t = new Theme(BaseTheme, {
   .add(LabelStyling)
   .add(InputInputStyling)
   .add(InputLabelStyling)
+  .add(InputHelpBoxStyling)
   .add(InputWrapperStyling)
   .add(AccountHeading)
   .add(ImageVariants)

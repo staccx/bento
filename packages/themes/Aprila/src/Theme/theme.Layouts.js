@@ -106,7 +106,7 @@ export const LayoutItemStyling = theming.createVariants(
     `,
     headingOnboarding: css`
       padding: ${theming.spacing.tiny} 0;
-      background-color: ${theming.color.white};
+      background-color: transparent;
       margin-left: ${theming.spacing.huge};
       margin-bottom: ${theming.spacing("medium")};
     `,

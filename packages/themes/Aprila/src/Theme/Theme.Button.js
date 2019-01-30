@@ -334,6 +334,11 @@ export default theming.createVariants(
       color: ${theming.color.white};
       line-height: 42px;
       margin-bottom: ${theming.spacing.medium};
+    `,
+    help: css`
+      background-color: transparent;
+      color: ${({ isOn }) =>
+        isOn ? theming.color.secondary : theming.color.text};
     `
   },
   Button.themeProps.button
