@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.53.0](https://bitbucket.org/stacc-flow/bento/compare/v8.52.0...v8.53.0) (2019-01-30)
+
+
+### Bug Fixes
+
+* **base:** combobox filter prop type ([96c0f52](https://bitbucket.org/stacc-flow/bento/commits/96c0f52))
+* **base:** fix help button type. add icons ([398d450](https://bitbucket.org/stacc-flow/bento/commits/398d450))
+
+
+### Features
+
+* **aprila-theme:** add alert theming ([5ef48b3](https://bitbucket.org/stacc-flow/bento/commits/5ef48b3))
+* **aprila-theme:** help box themes ([2074d31](https://bitbucket.org/stacc-flow/bento/commits/2074d31))
+* **cli:** add support for config files for figma command ([5493b00](https://bitbucket.org/stacc-flow/bento/commits/5493b00))
+* **json-schema:** add alert default variant ([1c69539](https://bitbucket.org/stacc-flow/bento/commits/1c69539))
+* **json-schema:** add more custom fields. fix circ ([5920ce4](https://bitbucket.org/stacc-flow/bento/commits/5920ce4))
+* **json-schema:** move add-button below array ([713aa23](https://bitbucket.org/stacc-flow/bento/commits/713aa23))
+
+
+
+
+
 # [8.52.0](https://bitbucket.org/stacc-flow/bento/compare/v8.51.1...v8.52.0) (2019-01-24)
 
 

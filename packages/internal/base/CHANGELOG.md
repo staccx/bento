@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.53.0](https://bitbucket.org/stacc-flow/bento/compare/v8.52.0...v8.53.0) (2019-01-30)
+
+
+### Bug Fixes
+
+* **base:** combobox filter prop type ([96c0f52](https://bitbucket.org/stacc-flow/bento/commits/96c0f52))
+* **base:** fix help button type. add icons ([398d450](https://bitbucket.org/stacc-flow/bento/commits/398d450))
+
+
+
+
+
 # [8.51.0](https://bitbucket.org/stacc-flow/bento/compare/v8.50.2...v8.51.0) (2019-01-22)
 
 
