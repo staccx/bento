@@ -22,7 +22,7 @@ import QuestionMark from "../../Icons/QuestionMark"
 import { FadeIn } from "@staccx/animations"
 
 const HelpBox = ({ onClick }) => (
-  <HelpButton onClick={onClick}>
+  <HelpButton onClick={onClick} type={"button"}>
     <QuestionMark />
   </HelpButton>
 )

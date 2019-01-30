@@ -134,10 +134,20 @@ import WebFonts from "./components/Theme/WebFonts"
 
 import Steps from "./hoc/Steps/Steps"
 
+/**
+ * Icons!
+ */
+import QuestionMark from "./components/Icons/QuestionMark"
+
 // Search
 import Search from "./hoc/Search/Search"
 
 import Combobox from "./components/Forms/Combobox/Combobox"
+
+const icons = {
+  QuestionMark
+}
+
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
@@ -180,6 +190,7 @@ export {
   Fraction,
   Heading,
   hideVisually,
+  icons,
   Image,
   Info,
   InlineListItem,
