@@ -2,8 +2,6 @@ import React from "react"
 import isObject from "./utils/isObject"
 import mergeObjects from "./utils/mergeObjects"
 import fill from "core-js/library/fn/array/fill"
-import fields from "./components/Custom.Fields"
-import widgets from "./components/Custom.Widgets"
 import validateFormData from "./validate"
 
 export const ADDITIONAL_PROPERTY_FLAG = "__additional_property"
@@ -56,15 +54,6 @@ const widgetMap = {
     select: "SelectWidget",
     checkboxes: "CheckboxesWidget",
     files: "FileWidget"
-  }
-}
-
-export function getDefaultRegistry() {
-  return {
-    fields,
-    widgets,
-    definitions: {},
-    formContext: {}
   }
 }
 

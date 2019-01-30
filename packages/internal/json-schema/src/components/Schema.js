@@ -21,6 +21,7 @@ const Schema = ({
   fields = CustomFields,
   html5Validation = false,
   transformErrors = CustomErrors,
+  fieldTemplate = CustomFieldTemplate,
   errorList = ErrorList,
   ...props
 }) => {
@@ -37,7 +38,7 @@ const Schema = ({
       noHtml5Validate={html5Validation}
       ArrayFieldTemplate={ArrayField}
       ObjectFieldTemplate={CustomObjectFieldTemplate}
-      FieldTemplate={CustomFieldTemplate}
+      FieldTemplate={fieldTemplate}
       ErrorList={errorList}
       transformErrors={transformErrors}
       {...props}

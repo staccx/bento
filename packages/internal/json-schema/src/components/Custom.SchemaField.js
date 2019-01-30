@@ -1,19 +1,19 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { List, Alert } from "@staccx/base"
+import { Alert, List } from "@staccx/base"
 import {
-  isMultiSelect,
-  retrieveSchema,
-  toIdSchema,
-  getDefaultRegistry,
-  getUiOptions,
-  isFilesArray,
+  ADDITIONAL_PROPERTY_FLAG,
   deepEquals,
   getSchemaType,
-  ADDITIONAL_PROPERTY_FLAG
+  getUiOptions,
+  isFilesArray,
+  isMultiSelect,
+  retrieveSchema,
+  toIdSchema
 } from "../utils"
 import mergeObjects from "../utils/mergeObjects"
 import UnsupportedField from "./Custom.Unsupported"
+import { getDefaultRegistry } from "../getDefaultRegistry"
 
 const REQUIRED_FIELD_SYMBOL = "*"
 const COMPONENT_TYPES = {
@@ -201,6 +201,7 @@ function SchemaFieldRender(props) {
   )
   const FieldComponent = getFieldComponent(schema, uiSchema, idSchema, fields)
   const { DescriptionField } = fields
+
   const disabled = Boolean(props.disabled || uiSchema["ui:disabled"])
   const readonly = Boolean(props.readonly || uiSchema["ui:readonly"])
   const autofocus = Boolean(props.autofocus || uiSchema["ui:autofocus"])
@@ -229,10 +230,12 @@ function SchemaFieldRender(props) {
 
   const { __errors, ...fieldErrorSchema } = errorSchema
 
+  const help = uiSchema["ui:help"] || props.schema.help || schema.help
   // See #439: uiSchema: Don't pass consumed class names to child components
   const field = (
     <FieldComponent
       {...props}
+      help={help}
       idSchema={idSchema}
       schema={schema}
       uiSchema={{ ...uiSchema, classNames: undefined }}
@@ -247,12 +250,10 @@ function SchemaFieldRender(props) {
 
   const { type } = schema
   const id = idSchema.$id
-  const label =
-    uiSchema["ui:title"] || props.schema.title || schema.title || name
+  const label = uiSchema["ui:title"] || props.schema.title || schema.title
   const description =
     uiSchema["ui:description"] || props.schema.description || schema.description
   const errors = __errors
-  const help = uiSchema["ui:help"]
   const hidden = uiSchema["ui:widget"] === "hidden"
   const classNames = [
     "form-group",
@@ -270,10 +271,11 @@ function SchemaFieldRender(props) {
         id={id + "__description"}
         description={description}
         formContext={formContext}
+        help={help}
       />
     ),
     rawDescription: description,
-    help: <Help help={help} />,
+    help,
     rawHelp: typeof help === "string" ? help : undefined,
     errors: <ErrorList errors={errors} />,
     rawErrors: errors,

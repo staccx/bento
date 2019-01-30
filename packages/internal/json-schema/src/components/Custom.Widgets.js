@@ -14,21 +14,25 @@ const InputWidget = ({
   readonly,
   options,
   schema: sch,
+  help,
   ...rest
-}) => (
-  <Input
-    autoFocus={autofocus}
-    disabled={disabled}
-    placeholder={placeholder}
-    helpText={schema.description}
-    required={required}
-    defaultValue={sch.default}
-    onChange={e => onChange(e.target.value)}
-    readOnly={readonly}
-    variant="schemaInput"
-    {...rest}
-  />
-)
+}) => {
+  // const { help } = sch
+  return (
+    <Input
+      autoFocus={autofocus}
+      disabled={disabled}
+      placeholder={placeholder}
+      helpText={help}
+      required={required}
+      defaultValue={sch.default}
+      onChange={e => onChange(e.target.value)}
+      readOnly={readonly}
+      variant="schemaInput"
+      {...rest}
+    />
+  )
+}
 
 const PhoneWidget = ({
   onChange,
@@ -41,20 +45,22 @@ const PhoneWidget = ({
   readonly,
   options,
   ...rest
-}) => (
-  <PhoneInput
-    autoFocus={autofocus}
-    disabled={disabled}
-    placeholder={placeholder}
-    helpText={schema.description}
-    required={required}
-    defaultValue={value}
-    onChange={e => onChange(e.target.value)}
-    readOnly={readonly}
-    variant={["schemaInput", "shemaInputPhone"]}
-    {...rest}
-  />
-)
+}) => {
+  return (
+    <PhoneInput
+      helpText={schema.help}
+      autoFocus={autofocus}
+      disabled={disabled}
+      placeholder={placeholder}
+      required={required}
+      defaultValue={value}
+      onChange={e => onChange(e.target.value)}
+      readOnly={readonly}
+      variant={["schemaInput", "shemaInputPhone"]}
+      {...rest}
+    />
+  )
+}
 
 const CheckboxWidget = ({
   onChange,

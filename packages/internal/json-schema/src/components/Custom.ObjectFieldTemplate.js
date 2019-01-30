@@ -8,6 +8,7 @@ const CustomObjectFieldTemplate = ({
   title,
   description,
   uiSchema,
+  help,
   ...rest
 }) => {
   const options = uiSchema["ui:options"] || {}
@@ -16,12 +17,17 @@ const CustomObjectFieldTemplate = ({
   return (
     <Box variant={highlightBox ? "highlightBox" : theming.VARIANT_DEFAULT}>
       {label && (
-        <TitleField title={title} level={level} variant={"schemaHeading"} />
+        <TitleField
+          title={title}
+          level={level}
+          variant={"schemaHeading"}
+          help={help}
+        />
       )}
       <Layout
         rowGap={level === 1 ? "largePlus" : level === 2 ? "medium" : "small"}
       >
-        <DescriptionField description={description} />
+        <DescriptionField description={description} help={help} />
         {properties.map(prop => {
           return (
             <React.Fragment key={prop.content.key}>
