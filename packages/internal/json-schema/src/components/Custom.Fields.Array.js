@@ -62,15 +62,6 @@ export default props => {
           title={props.uiSchema["ui:title"] || props.title}
           required={props.required}
         />
-        {props.canAdd && (
-          <AddButton
-            variant={["round", "positive"]}
-            onClick={props.onAddClick}
-            disabled={props.disabled || props.readonly}
-          >
-            {`+ ${props.canAdd.title || ""}`}
-          </AddButton>
-        )}
       </Box>
       {(props.uiSchema["ui:description"] || props.schema.description) && (
         <ArrayFieldDescription
@@ -85,6 +76,15 @@ export default props => {
       <div key={`array-item-list-${props.idSchema.$id}`}>
         {props.items && props.items.map(defaultArrayItem)}
       </div>
+      {props.canAdd && (
+        <AddButton
+          variant={["round", "positive"]}
+          onClick={props.onAddClick}
+          disabled={props.disabled || props.readonly}
+        >
+          {`+ ${props.canAdd.title || ""}`}
+        </AddButton>
+      )}
     </Layout>
   )
 }
