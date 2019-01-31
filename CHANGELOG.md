@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.54.0](https://bitbucket.org/stacc-flow/bento/compare/v8.53.0...v8.54.0) (2019-01-31)
+
+
+### Features
+
+* **aprila-theme:** changes ([6b2074c](https://bitbucket.org/stacc-flow/bento/commits/6b2074c))
+* **base:** input can now have element as helptext ([b932f94](https://bitbucket.org/stacc-flow/bento/commits/b932f94))
+* **fsm:** add empty shell module fsm ([3c96e42](https://bitbucket.org/stacc-flow/bento/commits/3c96e42))
+* **i18n:** add multiple formats in formatters. add test ([7bad7a7](https://bitbucket.org/stacc-flow/bento/commits/7bad7a7))
+* **json-schema:** radios, labels, transforms ([5ff241d](https://bitbucket.org/stacc-flow/bento/commits/5ff241d))
+* **sanity:** add fallback to text if not array ([f58aca5](https://bitbucket.org/stacc-flow/bento/commits/f58aca5))
+
+
+
+
+
 # [8.53.0](https://bitbucket.org/stacc-flow/bento/compare/v8.52.0...v8.53.0) (2019-01-30)
 
 

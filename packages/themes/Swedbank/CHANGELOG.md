@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.54.0](https://bitbucket.org/stacc-flow/bento/compare/v8.53.0...v8.54.0) (2019-01-31)
+
+
+### Features
+
+* **aprila-theme:** changes ([6b2074c](https://bitbucket.org/stacc-flow/bento/commits/6b2074c))
+
+
+
+
+
 # [8.53.0](https://bitbucket.org/stacc-flow/bento/compare/v8.52.0...v8.53.0) (2019-01-30)
 
 **Note:** Version bump only for package @staccx/swedbank-theme

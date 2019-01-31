@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.54.0](https://bitbucket.org/stacc-flow/bento/compare/v8.53.0...v8.54.0) (2019-01-31)
+
+
+### Features
+
+* **i18n:** add multiple formats in formatters. add test ([7bad7a7](https://bitbucket.org/stacc-flow/bento/commits/7bad7a7))
+
+
+
+
+
 # [8.53.0](https://bitbucket.org/stacc-flow/bento/compare/v8.52.0...v8.53.0) (2019-01-30)
 
 **Note:** Version bump only for package @staccx/i18n

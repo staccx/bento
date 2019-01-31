@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.54.0](https://bitbucket.org/stacc-flow/bento/compare/v8.53.0...v8.54.0) (2019-01-31)
+
+
+### Features
+
+* **sanity:** add fallback to text if not array ([f58aca5](https://bitbucket.org/stacc-flow/bento/commits/f58aca5))
+
+
+
+
+
 # [8.53.0](https://bitbucket.org/stacc-flow/bento/compare/v8.52.0...v8.53.0) (2019-01-30)
 
 **Note:** Version bump only for package @staccx/sanity
