@@ -230,12 +230,21 @@ function SchemaFieldRender(props) {
 
   const { __errors, ...fieldErrorSchema } = errorSchema
 
-  const help = uiSchema["ui:help"] || props.schema.help || schema.help
+  let help = uiSchema["ui:help"] || props.schema.help || schema.help
+  let label = uiSchema["ui:title"] || props.schema.title || schema.title
+  const { transforms } = formContext
+  if (label && transforms.label) {
+    label = transforms.label(label)
+  }
+  if (help && transforms.help) {
+    help = transforms.help(help)
+  }
   // See #439: uiSchema: Don't pass consumed class names to child components
   const field = (
     <FieldComponent
       {...props}
       help={help}
+      label={label}
       idSchema={idSchema}
       schema={schema}
       uiSchema={{ ...uiSchema, classNames: undefined }}
@@ -250,7 +259,6 @@ function SchemaFieldRender(props) {
 
   const { type } = schema
   const id = idSchema.$id
-  const label = uiSchema["ui:title"] || props.schema.title || schema.title
   const description =
     uiSchema["ui:description"] || props.schema.description || schema.description
   const errors = __errors

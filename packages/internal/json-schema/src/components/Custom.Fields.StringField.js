@@ -22,22 +22,26 @@ function StringField(props) {
     rawErrors,
     onKeyChange,
     onDropPropertyClick,
+    help,
+    label,
     ...rest
   } = props
-  const { title, format } = schema
+  const { format } = schema
   const { widgets, formContext } = registry
   const enumOptions = isSelect(schema) && optionsList(schema)
   const defaultWidget = format || (enumOptions ? "select" : "text")
   const { widget = defaultWidget, placeholder = "", ...options } = getUiOptions(
     uiSchema
   )
+
   const Widget = getWidget(schema, widget, widgets)
+
   return (
     <Widget
       options={{ ...options, enumOptions }}
       schema={schema}
       id={idSchema && idSchema.$id}
-      label={title === undefined ? name : title}
+      label={label}
       value={formData}
       onChange={onChange}
       onBlur={onBlur}
@@ -50,6 +54,7 @@ function StringField(props) {
       registry={registry}
       placeholder={placeholder}
       rawErrors={rawErrors}
+      help={help}
       {...rest}
     />
   )

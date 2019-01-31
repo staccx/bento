@@ -15,14 +15,14 @@ import { Button, Layout, Box } from "@staccx/base"
 const AddButton = props => <Button {...props} />
 
 const RemoveButton = props => <AddButton children="-" {...props} />
-const ArrayFieldTitle = ({ TitleField, idSchema, title, required }) => {
+const ArrayFieldTitle = ({ TitleField, idSchema, title, required, help }) => {
   if (!title) {
     // See #312: Ensure compatibility with old versions of React.
     return <div />
   }
   const id = `${idSchema.$id}__title`
   // return <Heading level={4}>{title}</Heading>
-  return <TitleField level={4} id={id} title={title} required={required} />
+  return <TitleField level={4} id={id} title={title} required={required} help={help} />
 }
 
 const ArrayFieldDescription = ({ DescriptionField, idSchema, description }) => {
@@ -59,8 +59,9 @@ export default props => {
           key={`array-field-title-${props.idSchema.$id}`}
           TitleField={props.TitleField}
           idSchema={props.idSchema}
-          title={props.uiSchema["ui:title"] || props.title}
+          title={props.uiSchema["ui:title"]}
           required={props.required}
+          help={props.help}
         />
       </Box>
       {(props.uiSchema["ui:description"] || props.schema.description) && (

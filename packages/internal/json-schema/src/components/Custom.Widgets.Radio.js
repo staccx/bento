@@ -1,29 +1,32 @@
-import { Heading, RadioPill, RadioPillItem } from "@staccx/base"
+import {
+  Heading,
+  RadioButton,
+  CheckGroup
+} from "@staccx/base"
 import React from "react"
 
 export default ({ options, label, id, onChange, schema, ...rest }) => {
+  let items = options.enumOptions
+  const { transforms } = rest.formContext
+  if (transforms) {
+    if (transforms.enumOptions) {
+      items = options.enumOptions.map(e => ({
+        ...e,
+        label: transforms.enumOptions(e.label)
+      }))
+    }
+  }
   const def = !!schema.default
   return (
     <div>
-      <Heading level="3">{label}</Heading>
-      <RadioPill
-        onChange={e => {
-          onChange(e.target.value === "true")
-        }}
-        group={id}
-        {...rest}
-      >
-        {options.enumOptions.map(listItem => (
-          <RadioPillItem
-            value={listItem.value}
-            key={listItem.value}
-            defaultChecked={def === listItem.value}
-            id={id + listItem.label}
-          >
-            {listItem.label}
-          </RadioPillItem>
+      {label && <Heading level={3}>{label}</Heading>}
+      <CheckGroup group={id} onChange={onChange}>
+        {items.map(item => (
+          <RadioButton key={`${id}-${item.label}`} id={`${id}-${item.label}`} value={item.value}>
+            {item.label}
+          </RadioButton>
         ))}
-      </RadioPill>
+      </CheckGroup>
     </div>
   )
 }

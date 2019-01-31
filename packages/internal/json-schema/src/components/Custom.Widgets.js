@@ -2,6 +2,7 @@ import React from "react"
 import { Input, CheckBox, PhoneInput, theming } from "@staccx/base"
 import SelectWidget from "./Custom.Widgets.Select"
 import RadioWidget from "./Custom.Widgets.Radio"
+import PillGroup from "./Custom.Widgets.Pillgroup"
 
 const InputWidget = ({
   onChange,
@@ -95,5 +96,6 @@ export default {
   email: InputWidget,
   geo: () => <div>test</div>,
   RadioWidget,
-  SelectWidget
+  SelectWidget,
+  pillGroup: PillGroup
 }
