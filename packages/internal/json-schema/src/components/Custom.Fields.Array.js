@@ -22,7 +22,15 @@ const ArrayFieldTitle = ({ TitleField, idSchema, title, required, help }) => {
   }
   const id = `${idSchema.$id}__title`
   // return <Heading level={4}>{title}</Heading>
-  return <TitleField level={4} id={id} title={title} required={required} help={help} />
+  return (
+    <TitleField
+      level={4}
+      id={id}
+      title={title}
+      required={required}
+      help={help}
+    />
+  )
 }
 
 const ArrayFieldDescription = ({ DescriptionField, idSchema, description }) => {
