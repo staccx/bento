@@ -7,7 +7,10 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import Cleave from "cleave.js"
 import Label from "../Label/Label"
-import { themePropTypes } from "../../../constants/themeContants"
+import {
+  commonPropTypes,
+  themePropTypes
+} from "../../../constants/themeContants"
 import {
   applyVariants,
   color,
@@ -293,7 +296,7 @@ export const InputPropTypes = {
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   label: PropTypes.string,
   className: PropTypes.string,
-  helpText: PropTypes.string,
+  helpText: commonPropTypes.children,
   mask: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.func,
