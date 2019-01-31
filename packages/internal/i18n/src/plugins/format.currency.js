@@ -12,6 +12,7 @@ export default (value, language, options, data = {}) => {
     data,
     value,
     regex,
+    valueParser: val => parseInt(val, 10),
     formatFunction: formatCurrency
   })
 }

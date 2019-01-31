@@ -1,3 +1,4 @@
+import loglevel from "loglevel"
 const format = require("string-format-obj")
 export const STACC_X_LANGUAGE_KEY = "stacc-x-bento-locale"
 
@@ -9,6 +10,7 @@ class i18n {
     texts,
     language,
     debug,
+    logLevel = 5,
     data,
     plugins,
     pluginOptions,
@@ -29,6 +31,10 @@ class i18n {
         }, [])
 
       this.language = language
+      /**
+       * @deprecated
+       * @type {*|boolean}
+       */
       this.debug = debug || false
       this.data = data
       this.plugins = plugins || []
@@ -39,6 +45,8 @@ class i18n {
         mid(this)
       })
 
+      // Keep debug for backwards compability
+      loglevel.setLevel(this.debug ? 0 : logLevel)
       return resolve(language || this.languages[0])
     })
   }
@@ -46,7 +54,7 @@ class i18n {
   setLanguage(language) {
     this.language = language
     localStorage.setItem(STACC_X_LANGUAGE_KEY, language)
-    this.log(`language set to ${language}`)
+    loglevel.info(`language set to ${language}`)
   }
 
   translate(key, data, fallback) {
@@ -55,7 +63,7 @@ class i18n {
     }
 
     if (!this.texts.hasOwnProperty(key)) {
-      console.warn(`Key no part of texts: ${key}`, this.texts, fallback)
+      loglevel.warn(`Key no part of texts: ${key}`, this.texts, fallback)
       if (!fallback) {
         return `Missing entry: ${key} in all languages`
       }
@@ -64,7 +72,7 @@ class i18n {
     const val = this.getValue(key)
 
     if (!val || !val.hasOwnProperty(this.language)) {
-      console.warn(`${key} does not exist in ${this.language} dataset.`)
+      loglevel.warn(`${key} does not exist in ${this.language} dataset.`)
       if (!fallback) {
         return `Missing key: ${key}` // TODO: Make fallback?
       }
@@ -74,8 +82,7 @@ class i18n {
     try {
       return this.process(this.convert(val) || fallback, formattingData)
     } catch (error) {
-      console.error(error, data, key)
-
+      loglevel.error(error, data, key)
       return `${key} seems to be malformed in ${
         this.language
       } using ${formattingData.toString()}`
@@ -91,7 +98,10 @@ class i18n {
       return value[this.language]
     }
 
-    console.warn("Could not convert", value, "Not present in", this.language)
+    loglevel.warn(
+      `Could not convert; ${value}`,
+      `Not present in: ${this.language}`
+    )
     // TODO: What should we return in these cases?
     /**
      * We can use a fallback
@@ -102,8 +112,13 @@ class i18n {
   }
 
   process(val, data) {
+    if (Array.isArray(val)) {
+      return val
+    }
     const formattingData = Object.assign({}, this.data, data)
+    loglevel.debug("Before running plugins", val)
     const pluginated = this.runPlugins(val, formattingData)
+    loglevel.debug(pluginated, formattingData)
     return format(pluginated, formattingData)
   }
 
@@ -111,15 +126,6 @@ class i18n {
     return this.plugins.reduce((acc, current) => {
       return current(acc, this.language, this.pluginOptions, data)
     }, val)
-  }
-
-  log(text, level = "info") {
-    if (this.debug) {
-      switch (level) {
-        default:
-          console.log(text)
-      }
-    }
   }
 
   hasLanguage(language) {
