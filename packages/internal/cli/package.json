@@ -42,5 +42,6 @@
   "devDependencies": {
     "conf": "^2.2.0",
     "opn": "^5.4.0"
-  }
+  },
+  "gitHead": "907f07b5949fe6a3576c773b87982ea73b879b68"
 }
