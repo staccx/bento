@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { theming, Input } from "@staccx/base"
-import {FadeIn} from "@staccx/animations"
+import { FadeIn } from "@staccx/animations"
 
 // Wrapper
 export const InputWrapperStyling = theming.createVariants(

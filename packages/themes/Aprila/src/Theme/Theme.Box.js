@@ -153,7 +153,7 @@ export default theming.createVariants(
       z-index: 999;
     `,
     tooltip: css`
-      display: ${({isVisible }) => (isVisible ? "block" : "none")};
+      display: ${({ isVisible }) => (isVisible ? "block" : "none")};
       background-color: #f9f9f9;
       border-radius: ${theming.borderRadius};
       min-width: ${theming.wrapper.small};
