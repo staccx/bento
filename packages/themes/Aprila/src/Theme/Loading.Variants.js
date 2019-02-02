@@ -3,9 +3,9 @@ import {
   AtomSpinner,
   BreedingRhombusSpinner,
   CirclesToRhombusesSpinner,
-  FingerprintSpinner
+  FingerprintSpinner,
+  PixelSpinner
 } from "react-epic-spinners"
-import { ClimbingBoxLoader } from "react-spinners"
 
 export default theming.createVariants(
   {
@@ -13,7 +13,7 @@ export default theming.createVariants(
     breeding: BreedingRhombusSpinner,
     circles: CirclesToRhombusesSpinner,
     finger: FingerprintSpinner,
-    climbing: ClimbingBoxLoader
+    pixel: PixelSpinner
   },
   Loading.themeProps.component
 )
