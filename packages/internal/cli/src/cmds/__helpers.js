@@ -1,5 +1,24 @@
 const spawn = require("child_process").spawn
 const ora = require("ora")
+const fs = require("fs-extra")
+const path = require("path")
+const sanityClient = require("@sanity/client")
+
+let client = null
+
+const getSanityClient = (projectId, dataset, token = null, useCdn = true) => {
+  if (client) {
+    return client
+  }
+  client = sanityClient({
+    projectId,
+    dataset,
+    token,
+    useCdn
+  })
+
+  return client
+}
 
 const wait = function(ms = 1000) {
   return new Promise(resolve => setTimeout(resolve, ms))
@@ -72,10 +91,11 @@ const runCommand = async function({
   debug = false,
   bail = true
 }) {
+  let result = null
   try {
     spinner.start(startText)
     if (!debug) {
-      await command()
+      result = await command()
     } else {
       await wait()
     }
@@ -89,6 +109,7 @@ const runCommand = async function({
       process.exit(1)
     }
   }
+  return result
 }
 
 const setupSpinner = function(text = "Starting", spinner = "monkey") {
@@ -107,9 +128,35 @@ const traverse = function(o, fn) {
   }
 }
 
+const spinner = setupSpinner()
+
+const readConfig = async configPath => {
+  if (!configPath) {
+    spinner.info("No config path provided")
+    return {}
+  }
+  spinner.info("Checking for config file")
+  const configFile = path.resolve(process.cwd(), configPath)
+  const exists = await fs.exists(configFile)
+  if (exists) {
+    spinner.succeed("Config file found")
+    const getConfig = await require(configFile)
+    if (getConfig && typeof getConfig === "function") {
+      return getConfig()
+    } else {
+      spinner.fail("Config must return a single function")
+    }
+  } else {
+    spinner.info("No config file found")
+  }
+  return {}
+}
+
 module.exports = {
   executeAsync,
   runCommand,
   setupSpinner,
-  traverse
+  traverse,
+  readConfig,
+  getSanityClient
 }

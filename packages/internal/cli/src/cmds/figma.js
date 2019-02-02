@@ -4,9 +4,8 @@ const opn = require("opn")
 const axios = require("axios")
 const Conf = require("conf")
 const inquirer = require("inquirer")
-const { setupSpinner, runCommand, traverse } = require("./__helpers")
+const { setupSpinner, traverse, readConfig } = require("./__helpers")
 const fs = require("fs-extra")
-const path = require("path")
 
 const config = new Conf()
 
@@ -173,31 +172,31 @@ const defaultMapFrame = frame => {
   }
 }
 
-const readConfig = async configPath => {
-  spinner.info("Checking for config file")
-  const configFile = path.resolve(process.cwd(), configPath)
-  console.log(configPath, configFile)
-  const exists = await fs.exists(configFile)
-  if (exists) {
-    spinner.succeed("Config file found")
-    const getConfig = await require(configFile)
-    if (getConfig && typeof getConfig === "function") {
-      const { mapFrame, figmaKey } = getConfig()
+// const readConfig = async configPath => {
+//   spinner.info("Checking for config file")
+//   const configFile = path.resolve(process.cwd(), configPath)
+//   console.log(configPath, configFile)
+//   const exists = await fs.exists(configFile)
+//   if (exists) {
+//     spinner.succeed("Config file found")
+//     const getConfig = await require(configFile)
+//     if (getConfig && typeof getConfig === "function") {
+//       const { mapFrame, figmaKey } = getConfig()
+//
+//       return {
+//         mapFrame,
+//         figmaKey
+//       }
+//     } else {
+//       spinner.fail("Config must return a single function")
+//     }
+//   }
+//
+//   return {}
+// }
 
-      return {
-        mapFrame,
-        figmaKey
-      }
-    } else {
-      spinner.fail("Config must return a single function")
-    }
-  }
-
-  return {}
-}
-
-const figma = async ({ configPath = "bento-config.js", ...opts }) => {
-  console.log(opts)
+const figma = async ({ parent: { configPath } }) => {
+  // console.log(a, configPath, opts)
   const { figmaKey, mapFrame = defaultMapFrame } = await readConfig(configPath)
 
   let key = await getKey(figmaKey)

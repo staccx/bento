@@ -1,13 +1,7 @@
-const sanityClient = require("@sanity/client")
+const { getSanityClient } = require("../cmds/__helpers")
+module.exports = ({ client, projectId, dataset, type = "i18n" }) => {
+  const c = client || getSanityClient(projectId, dataset)
 
-module.exports = (projectId, dataset, type = "i18n") => {
-  const client = sanityClient({
-    projectId,
-    dataset,
-    useCdn: true
-  })
-
-  const query = `*[_type == $i18n] {"id": _id, key, value}`
-  console.log("Fetching texts", query)
-  return client.fetch(query, { i18n: type })
+  const query = `*[_type == $i18n] {"id": _id, key, value, i18nKey}`
+  return c.fetch(query, { i18n: type })
 }

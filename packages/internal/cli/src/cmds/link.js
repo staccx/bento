@@ -4,14 +4,87 @@ const generateConfig = require("@staccx/rollup-config")
 
 const { executeAsync, setupSpinner, runCommand } = require("./__helpers")
 
-const link = async function({ input = "src/export.js", watch, target }) {
+const link = async function({ input = "src/export.js", watch, target, reset }) {
   const fail = function() {
     process.exit(1)
   }
 
+  console.log(reset)
   const cwd = process.cwd()
   const spinner = setupSpinner()
   let pkg = null
+
+  if (reset) {
+    spinner.info("Lets reset")
+
+    await runCommand({
+      spinner,
+      onFail: console.error,
+      startText: "Unlinking",
+      succeedText: "Unlink done",
+      failText: "Could not unlink",
+      command: async () => executeAsync("yalc", ["remove", "--all"], { cwd })
+    })
+
+    /**
+     * Remove node_modules
+     */
+    await runCommand({
+      onFail: console.log,
+      failText: "Something went wrong whilst cleaning node_modules",
+      startText: "Deleting node_modules",
+      succeedText: "Deleted node_modules",
+      spinner,
+      command: async () =>
+        executeAsync("rm", ["-rf", "node_modules"], {
+          cwd
+        })
+    })
+
+    /**
+     * Lock file
+     */
+    await runCommand({
+      onFail: console.log,
+      failText: "Could not delete lock file",
+      startText: "Lock file",
+      succeedText: "Deleted lock file",
+      spinner,
+      command: async () =>
+        executeAsync("rm", ["yarn.lock"], {
+          cwd
+        })
+    })
+
+    /**
+     * yarn install
+     */
+    await runCommand({
+      onFail: console.log,
+      failText: "Could not fetch packages",
+      startText: "Getting fresh packages",
+      succeedText: "Done",
+      spinner,
+      command: async () =>
+        executeAsync("yarn", ["install", "--silent"], {
+          cwd
+        })
+    })
+
+    await runCommand({
+      onFail: console.log,
+      failText: "Could not upgrade",
+      startText: "Upgrading",
+      succeedText: "Upgraded",
+      spinner,
+      command: async () =>
+        executeAsync("yarn", ["upgrade", "-S", "@staccx", "--latest"], {
+          cwd
+        })
+    })
+
+    return
+  }
 
   if (target && target.length) {
     if (!Array.isArray(target)) {

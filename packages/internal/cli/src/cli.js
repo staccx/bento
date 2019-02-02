@@ -4,18 +4,23 @@ const program = require("commander")
 // const inquirer = require("inquirer")
 // const path = require("path")
 
-const getTranslations = require("./utils/getTranslations")
-const convertTranslations = require("./utils/convertTranslations")
-const saveToJson = require("./utils/saveToJson")
-const walk = require("./utils/walk")
 const release = require("./cmds/release")
 const clean = require("./cmds/clean")
 const link = require("./cmds/link")
 const eslint = require("./cmds/eslint")
 const figma = require("./cmds/figma") // TODO: Refactor so that only one figma function is imported and handles all options
+const i18n = require("./cmds/i18n") // TODO: Refactor so that only one figma function is imported and handles all options
 const { version } = require("../package.json")
 
-program.version(version).description("Command line tool for Stacc X")
+program
+  .version(version)
+  .description("Command line tool for Stacc X")
+  .option(
+    "-c, --configPath [path]>",
+    "Path for finding config file",
+    "bento-config.js"
+  )
+  .option("-d, --debug", "Run without running commands")
 
 const list = val => {
   return val.split(",")
@@ -26,52 +31,24 @@ program
   .option("-s, --save", "Download and save to file")
   .option("-w, --walk", "Traverse files and find missing")
   .option("-p, --project <projectId>", "Sanity project id")
-  .option("-d, --dataset <dataset>", "Dataset for project to compare against")
+  .option("-da, --dataset <dataset>", "Dataset for project to compare against")
   .option("-f, --filename <file>", "Filename of saved file")
+  .option("-u, --upload", "Upload missing values to Sanity")
   .option("--pattern <pattern>", "Glob pattern for finding components")
   .option(
     "-l, --languages <languages>",
     "List of languages. Comma-separated",
-    list
+    list,
+    ["nb"]
   )
   .description("i18n operations")
-  .action(cmd => {
-    if (!cmd.project) {
-      console.warn("No project provided")
-      process.exit(1)
-    }
-    if (!cmd.dataset) {
-      console.warn("No dataset provided")
-      process.exit(1)
-    }
-    try {
-      getTranslations(cmd.project, cmd.dataset)
-        .then(convertTranslations)
-        .then(async texts => {
-          if (cmd.save) {
-            await saveToJson(texts, cmd.filename).then(textsSaved =>
-              console.log(`Saved ${Object.keys(textsSaved).length} keys`)
-            )
-          }
-
-          if (cmd.walk) {
-            const { keys } = await walk({ texts, languages: cmd.languages })
-            console.log("Result:", keys)
-            await saveToJson(keys, cmd.filename)
-          }
-        })
-        .catch(console.error)
-    } catch (e) {
-      throw e
-    }
-  })
+  .action(i18n)
 
 program
   .command("release")
   .alias("r")
   .description("Helps you release bento")
-  .option("-d, --debug", "Run without running commands")
-  .action(({ debug = false }) => {
+  .action(({ parent: { debug = false } }) => {
     release(debug)
   })
 
@@ -79,8 +56,7 @@ program
   .command("clean")
   .alias("c")
   .description("Removes all dependencies in monorepo and reinstalls them")
-  .option("-d, --debug", "Run without running commands")
-  .action(({ debug = false }) => {
+  .action(({ parent: { debug = false } }) => {
     clean(debug)
   })
 
@@ -90,18 +66,16 @@ program
   .description("Leverage building and linking with yalc. All in one package")
   .option("-i, --input <path>", "Entry point for builder")
   .option("-w, --watch", "Keep the watcher alive")
-  .action((target, { input, watch }) => {
-    link({ input, watch, target })
+  .option("-r, --reset")
+  .action((target, { input, watch, reset }) => {
+    link({ input, watch, target, reset })
   })
 
 program
   .command("figma")
   .alias("f")
-  .option("-c, --configPath", "Path for finding config file")
   .description("Connect to figma files and do stuff")
-  .action(configPath => {
-    figma({ configPath })
-  })
+  .action(figma)
 
 program
   .command("eslint")

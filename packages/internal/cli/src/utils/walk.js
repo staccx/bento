@@ -3,22 +3,28 @@ const glob = require("glob")
 const walk = require("acorn-jsx-walk").default
 const getLineFromPos = require("get-line-from-pos")
 const { dashIt } = require("@staccx/formatting")
-
-const status = {
-  NO_KEY: "NO_KEY",
-  KEY_NOT_IN_DATASET: "KEY_NOT_IN_DATASET",
-  OK: "OK"
-}
+const { setupSpinner, traverse } = require("../cmds/__helpers")
+const statuses = require("./i18nStatuses")
 
 const getSuggestion = (node, key) => {
   const child = node.children.find(child => child.type === "Literal")
 
-  const value = child ? child.value.replace(/\n/g, "").trim() : null
+  let value = child ? child.value.replace(/\n/g, "").trim() : null
+
+  if (!value) {
+    traverse(node.children, (key, val, parent) => {
+      if (key === "value") {
+        value = val
+      }
+    })
+  }
   return {
     value,
     key: key || (value ? dashIt(value) : null)
   }
 }
+
+const spinner = setupSpinner()
 
 module.exports = ({
   texts,
@@ -30,7 +36,7 @@ module.exports = ({
     const keys = []
     glob(pattern, { ignore: ["**/node_modules/**"] }, async (error, files) => {
       if (error) {
-        console.error(error)
+        spinner.fail(error)
         process.exit(1)
       }
 
@@ -42,39 +48,59 @@ module.exports = ({
             JSXElement: node => {
               try {
                 if (node.openingElement.name.name === component) {
-                  const keyAttr = node.openingElement.attributes.find(
-                    attr => attr.name.name === "i18nKey"
+                  let keyAttr = null
+                  // console.log(typeof node.openingElement.attributes)
+                  traverse(
+                    node.openingElement.attributes,
+                    (key, value, parent) => {
+                      if (key === "name") {
+                        const { name } = value
+                        if (name === "i18nKey") {
+                          keyAttr = parent
+                        }
+                      }
+                    }
                   )
-
+                  // const keyAttr = node.openingElement.attributes.find(
+                  //   attr => attr.name.name === "i18nKey"
+                  // )
+                  let line = getLineFromPos(contents, node.start)
                   if (!keyAttr) {
-                    const line = getLineFromPos(contents, node.start)
                     keys.push({
                       file,
                       line,
-                      status: status.NO_KEY,
+                      status: statuses.NO_KEY,
                       suggestion: getSuggestion(node)
                     })
                     return
                   }
 
-                  const key = keyAttr.value.expression.value
+                  const key = keyAttr.value.expression
+                    ? keyAttr.value.expression.value
+                    : keyAttr.value.value || null
+
+                  if (!key) {
+                    console.log("Not found", keyAttr)
+                  }
 
                   if (key in texts) {
                     const langs = {}
                     for (const lang of languages) {
                       langs[lang] = !!texts[key][lang]
                     }
-                    keys.push({ key, status: status.OK, languages: langs })
+                    keys.push({ key, status: statuses.OK, languages: langs })
                   } else {
                     keys.push({
                       key,
+                      line,
+                      file,
                       suggestion: getSuggestion(node, key),
-                      status: status.KEY_NOT_IN_DATASET
+                      status: statuses.KEY_NOT_IN_DATASET
                     })
                   }
                 }
               } catch (e) {
-                console.log(e)
+                spinner.fail(e.message)
               }
               // node.openingElement.attributes.forEach(console.log)
             }
