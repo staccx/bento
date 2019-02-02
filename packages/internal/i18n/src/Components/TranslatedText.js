@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
+import loglevel from "loglevel"
 import { Consumer } from "./context"
 
 class TranslatedText extends React.Component {
@@ -38,7 +39,7 @@ class TranslatedText extends React.Component {
           }
 
           if (!i18nKey) {
-            console.warn("No i18nKey supplied to TranslatedText")
+            loglevel.warn("No i18nKey supplied to TranslatedText")
             return children
           }
 
@@ -46,7 +47,9 @@ class TranslatedText extends React.Component {
             fallback || (typeof children !== "function" ? children : null)
           const value = translate(i18nKey, data, fb)
           if (!value) {
+            loglevel.warn("No value found for", i18nKey)
             if (children) {
+              loglevel.debug("Falling back to children")
               if (typeof children !== "function") {
                 return children // Fallback to children
               }
