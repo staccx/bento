@@ -1,6 +1,6 @@
 {
   "name": "@staccx/code-generator",
-  "version": "8.46.0",
+  "version": "8.55.0",
   "description": "Generates code based on templates",
   "author": "StaccX",
   "license": "UNLICENSED",

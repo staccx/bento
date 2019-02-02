@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.55.0](https://bitbucket.org/stacc-flow/bento/compare/v8.54.0...v8.55.0) (2019-02-02)
+
+
+### Bug Fixes
+
+* **i18n:** add logging to component ([b4498ba](https://bitbucket.org/stacc-flow/bento/commits/b4498ba))
+
+
+### Features
+
+* **aprila-theme:** add spinner ([28ed8c5](https://bitbucket.org/stacc-flow/bento/commits/28ed8c5))
+* **bank-in-a-box:** continue work with i18n ([488fd48](https://bitbucket.org/stacc-flow/bento/commits/488fd48))
+* **cli:** move i18n to own script. add translate and better traversal ([7d0dbc8](https://bitbucket.org/stacc-flow/bento/commits/7d0dbc8))
+
+
+
+
+
 # [8.54.0](https://bitbucket.org/stacc-flow/bento/compare/v8.53.0...v8.54.0) (2019-01-31)
 
 

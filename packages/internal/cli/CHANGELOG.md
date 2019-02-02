@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.55.0](https://bitbucket.org/stacc-flow/bento/compare/v8.54.0...v8.55.0) (2019-02-02)
+
+
+### Features
+
+* **cli:** move i18n to own script. add translate and better traversal ([7d0dbc8](https://bitbucket.org/stacc-flow/bento/commits/7d0dbc8))
+
+
+
+
+
 # [8.54.0](https://bitbucket.org/stacc-flow/bento/compare/v8.53.0...v8.54.0) (2019-01-31)
 
 **Note:** Version bump only for package @staccx/cli
