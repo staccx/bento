@@ -1,13 +1,13 @@
 {
   "name": "@staccx/bank-in-a-box",
-  "version": "8.55.0",
+  "version": "8.55.1",
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
     "@staccx/animations": "^8.46.0",
-    "@staccx/aprila-theme": "^8.55.0",
+    "@staccx/aprila-theme": "^8.55.1",
     "@staccx/base": "^8.55.0",
     "@staccx/formatting": "^8.46.0",
     "@staccx/i18n": "^8.55.0",

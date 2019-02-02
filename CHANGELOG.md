@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.55.1](https://bitbucket.org/stacc-flow/bento/compare/v8.55.0...v8.55.1) (2019-02-02)
+
+
+### Bug Fixes
+
+* **aprila-theme:** fix spinner ([775cb2a](https://bitbucket.org/stacc-flow/bento/commits/775cb2a))
+
+
+
+
+
 # [8.55.0](https://bitbucket.org/stacc-flow/bento/compare/v8.54.0...v8.55.0) (2019-02-02)
 
 
