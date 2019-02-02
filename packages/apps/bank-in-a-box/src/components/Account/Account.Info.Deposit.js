@@ -12,13 +12,12 @@ const AccountInfoDeposit = ({ account }) => (
           i18nKey="ACCOUNTNUMBER"
           fallback="Kontonummer for innbetaling"
         />
-        :
       </Text>
       <div>{account.accountNo}</div>
     </SplitListItem>
     <SplitListItem variant="accountInfoListItem" emphasize>
       <Text variant="strong">
-        <TranslatedText i18nKey="KID" fallback="KID" />:
+        <TranslatedText i18nKey="KID">KID:</TranslatedText>
       </Text>
       <div>{account.kid}</div>
     </SplitListItem>
@@ -28,13 +27,12 @@ const AccountInfoDeposit = ({ account }) => (
           i18nKey="AvailableBalace"
           fallback="Disponibelt beløp"
         />
-        :{" "}
       </Text>
       <div>{formatCurrency(account.availableBalance, { precision: 2 })}</div>
     </SplitListItem>
     <SplitListItem variant="accountInfoListItem">
       <Text variant="strong">
-        <TranslatedText i18nKey="BookedBalance" fallback="Bokført saldo" />:{" "}
+        <TranslatedText i18nKey="BookedBalance" fallback="Bokført saldo" />
       </Text>
       <div>{formatCurrency(account.bookedBalance, { precision: 2 })}</div>
     </SplitListItem>
@@ -44,19 +42,18 @@ const AccountInfoDeposit = ({ account }) => (
           i18nKey="AccruedInterest"
           fallback="Ikke bokført rente"
         />
-        :{" "}
       </Text>
       <div>{formatCurrency(account.accruedInterest, { precision: 2 })}</div>
     </SplitListItem>
     <SplitListItem variant="accountInfoListItem">
       <Text variant="strong">
-        <TranslatedText i18nKey="effectiveRate" fallback="Effektiv rente" />:{" "}
+        <TranslatedText i18nKey="effectiveRate" fallback="Effektiv rente" />
       </Text>
       <div>{account.effectiveRate}%</div>
     </SplitListItem>
     <SplitListItem variant="accountInfoListItem">
       <Text variant="strong">
-        <TranslatedText i18nKey="InterestRate" fallback="Nominell rente" />:{" "}
+        <TranslatedText i18nKey="InterestRate" fallback="Nominell rente" />
       </Text>
       <div>{account.interestRate}%</div>
     </SplitListItem>
