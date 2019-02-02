@@ -18,16 +18,16 @@ const generate = ({ summary, method, path, headers, body, queryParams }) =>
  */
 OkHttpClient client = new OkHttpClient();
 ${
-    body
-      ? `
+  body
+    ? `
         MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
         RequestBody body = RequestBody.create(mediaType, '${JSON.stringify(
           body
         )}');`
-      : `
+    : `
         RequestBody body = null;
         `
-  }
+}
 
 Request request = new Request.Builder()
   .url("${path}${queryParams ? `?${qs.stringify(queryParams)}` : ""}")
