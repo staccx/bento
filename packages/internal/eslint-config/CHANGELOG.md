@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.57.0](https://bitbucket.org/stacc-flow/bento/compare/v8.56.2...v8.57.0) (2019-02-04)
+
+
+### Features
+
+* **bento:** fix test regime + consolidatet eslint packages ([0cc561a](https://bitbucket.org/stacc-flow/bento/commits/0cc561a))
+
+
+
+
+
 <a name="8.39.3"></a>
 ## [8.39.3](https://bitbucket.org/stacc-flow/bento/compare/v8.39.2...v8.39.3) (2018-12-19)
 
