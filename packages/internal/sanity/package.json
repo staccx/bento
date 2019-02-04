@@ -22,7 +22,7 @@
     "build": "yarn prettify && rollup -c",
     "start": "react-app-rewired start",
     "build:app": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom --coverage",
+    "test": "react-app-rewired test --env=jsdom --coverage --passWithNoTests",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "eject": "react-app-rewired eject",
@@ -43,5 +43,5 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
-  "gitHead": "cd07d3b50ea760c47300624afbf9261245bf7361"
+  "gitHead": "8678698be72a7bacb7813f0d3cb2d497b906c4e1"
 }

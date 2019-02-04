@@ -14,7 +14,7 @@
   "scripts": {
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
-    "test": "react-scripts test --env=jsdom --coverage",
+    "test": "react-scripts test --env=jsdom --coverage --passWithNoTests",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"

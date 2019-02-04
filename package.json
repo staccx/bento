@@ -5,6 +5,7 @@
     "precommit": "lerna run --concurrency 1 --stream precommit --since HEAD",
     "postcommit": "git update-index --again",
     "commitmsg": "commitlint -E GIT_PARAMS",
+    "test": "react-scripts test --env=jsdom --verbose  --testMatch **/packages/**/*.test.js --coverage",
     "styleguide": "cd packages/base && styleguidist server",
     "start": "cd packages/internal/styleguide && yarn start",
     "soy": "node packages/internal/soy",
@@ -29,10 +30,8 @@
     "@babel/cli": "^7.1.2",
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
-    "babel-eslint": "^8.2.2",
     "conventional-changelog-angular-bitbucket": "^1.1.2",
     "conventional-changelog-cli": "^2.0.5",
-    "eslint": "^5.0.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
@@ -51,5 +50,7 @@
   "dependencies": {
     "react": "^16.6.0",
     "styled-components": "^4.0.2"
+  },
+  "jest": {
   }
 }

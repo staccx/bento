@@ -1,12 +1,20 @@
-import { format, formatDistance, formatRelative } from "date-fns"
+import { format, formatDistance, formatRelative, parseISO } from "date-fns"
 import nb from "date-fns/locale/nb"
 
-export const formatDate = (date, frmat = "dd MMMM yyyy", locale = nb) => {
-  return format(date, frmat, { locale })
+const parse = date => {
+  if (typeof date === "string") {
+    return parseISO(date)
+  }
+
+  return date
 }
 
-export const formatDateDistance = (from, to = new Date(), locale = nb, opts) =>
-  formatDistance(from, to, { locale, ...opts })
+export const formatDate = (date, frmat = "dd MMMM yyyy", locale = nb) => {
+  return format(parse(date), frmat, { locale })
+}
 
-export const formatDateRelative = (from, to, locale = nb, opts) =>
-  formatRelative(from, to, { locale, ...opts })
+export const formatDateDistance = (frm, to = new Date(), locale = nb, opts) => {
+  return formatDistance(parse(frm), parse(to), { locale, ...opts })
+}
+export const formatDateRelative = (frm, to, locale = nb, opts) =>
+  formatRelative(parse(frm), parse(to), { locale, ...opts })

@@ -1,5 +1,4 @@
 import format from "./format.currency"
-import loglevel from "loglevel"
 
 import { i18nConfig } from "../config"
 
@@ -28,14 +27,12 @@ describe("Format currency plugin", () => {
   it("Should format single instance", () => {
     const expected = "Price kr 10 000"
     const received = formatter("Price {currency(price)}")
-    loglevel.log(expected.split(), received.split(), expected === received)
     expect(expected).toBe(received)
   })
 
   it("Should format multiple instances", () => {
     const expected = "Price kr 10 000 og kr 10"
     const received = formatter("Price {currency(price)} og {currency(10)}")
-    loglevel.log(expected.split(), received.split(), expected === received)
     expect(expected).toBe(received)
   })
 })

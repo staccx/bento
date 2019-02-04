@@ -9,7 +9,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "peerDependencies": {
-    "babel-eslint": ">=8.2.2",
+    "babel-eslint": ">=9.0.0",
     "eslint": ">=5.0.1",
     "eslint-config-prettier": ">=2.9.0",
     "eslint-config-standard": ">=11.0.0",

@@ -23,7 +23,7 @@
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "start": "react-app-rewired start",
-    "test": "react-app-rewired test --env=jsdom --coverage",
+    "test": "react-app-rewired test --env=jsdom --coverage --passWithNoTests",
     "build:app": "react-scripts build",
     "eject": "react-scripts eject",
     "test:watch": "react-scripts test --env=jsdom --watch",
@@ -39,7 +39,7 @@
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",
     "react-app-rewired": "^1.5.2",
-    "react-scripts": "^1.1.4",
+    "react-scripts": "^2.1.3",
     "rollup": "^0.65.0"
   },
   "license": "UNLICENSED",
@@ -58,5 +58,5 @@
   "peerDependencies": {
     "styled-components": "^4.0.2"
   },
-  "gitHead": "78b68aed23e01f4bfdf93adc69632133935d07f8"
+  "gitHead": "8678698be72a7bacb7813f0d3cb2d497b906c4e1"
 }

@@ -8,7 +8,7 @@ async function clean(debug) {
     spinner: "monkey"
   })
 
-  const bentoRoot = path.resolve(__dirname)
+  const bentoRoot = path.resolve(__dirname, "../../../../../")
 
   /**
    * Remove node_modules

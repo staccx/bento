@@ -27,14 +27,14 @@ describe("Date", () => {
       const date = new Date(1525910400000)
       const old = new Date(1524614400000)
 
-      const formatted = formatDateDistance(old, date)
+      const formatted = formatDateDistance(date, old)
       expect(formatted).toBe("15 dager")
     })
 
     it("Should format ISO 8601 with defaults", () => {
       const formatted = formatDateDistance(
-        "2018-04-25T00:00:00",
-        "2018-05-10T00:00:00"
+        "2018-04-25T00:00:00Z",
+        "2018-05-10T00:00:00Z"
       )
       expect(formatted).toBe("15 dager")
     })
@@ -43,8 +43,8 @@ describe("Date", () => {
       const date = new Date(1524614400000)
       const date2 = new Date(1525910400000)
 
-      expect(formatDateDistance(date, "2018-05-10T00:00:00")).toBe("15 dager")
-      expect(formatDateDistance("2018-04-25T00:00:00", date2)).toBe("15 dager")
+      expect(formatDateDistance(date, "2018-05-10T00:00:00Z")).toBe("15 dager")
+      expect(formatDateDistance("2018-04-25T00:00:00Z", date2)).toBe("15 dager")
     })
 
     it("Should get distance only one input with defaults", () => {

@@ -44,8 +44,8 @@
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",
     "react-app-rewired": "^1.5.2",
-    "react-scripts": "^1.1.4",
+    "react-scripts": "^2.1.3",
     "rollup": "^0.65.0"
   },
-  "gitHead": "cd07d3b50ea760c47300624afbf9261245bf7361"
+  "gitHead": "8678698be72a7bacb7813f0d3cb2d497b906c4e1"
 }
