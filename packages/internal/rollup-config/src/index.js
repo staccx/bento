@@ -38,21 +38,22 @@ const generateConfig = (pkg, input = "./src/export.js") => {
 
         // transform-runtime need to fix "regeneratorRuntime is not defined"
         plugins: [
-          "external-helpers",
-          "transform-runtime",
+          "@babel/plugin-external-helpers",
+          "@babel/plugin-transform-runtime",
           "styled-components",
-          "transform-decorators-legacy"
+          "@babel/plugin-proposal-export-default-from",
+          ["@babel/plugin-proposal-decorators", { legacy: true }],
+          ["@babel/plugin-proposal-class-properties", { loose: true }]
         ],
 
         presets: [
           [
-            "env",
+            "@babel/env",
             {
               modules: false
             }
           ],
-          "stage-0",
-          "react"
+          "@babel/react"
         ]
       }),
       resolve(),

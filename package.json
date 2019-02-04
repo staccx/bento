@@ -28,6 +28,14 @@
   ],
   "devDependencies": {
     "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-decorators": "^7.3.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
     "conventional-changelog-angular-bitbucket": "^1.1.2",
@@ -51,6 +59,9 @@
     "react": "^16.6.0",
     "styled-components": "^4.0.2"
   },
-  "jest": {
+  "jest": {},
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0",
+    "terser": "3.14.1"
   }
 }

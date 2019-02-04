@@ -65,14 +65,13 @@
   },
   "devDependencies": {
     "@staccx/rollup-config": "^8.46.0",
-    "babel-core": "^6.0.0",
     "colors": "^1.3.2",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.3",
     "lint-staged": "^7.2.2",
     "prettier": "^1.14.2",
     "progress": "^2.0.0",
-    "react-docgen": "^2.21.0",
+    "react-docgen": "^3.0.0",
     "react-scripts": "^2.1.3",
     "rollup": "^0.65.0",
     "rollup-plugin-alias": "^1.4.0",
@@ -82,5 +81,5 @@
   "peerDependencies": {
     "styled-components": "^4.0.2"
   },
-  "gitHead": "8678698be72a7bacb7813f0d3cb2d497b906c4e1"
+  "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
 }

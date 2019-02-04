@@ -1,13 +1,6 @@
 {
-  "name": "@staccx/open-id",
-  "version": "8.57.0",
-  "description": "Open-id components",
-  "author": "StaccX",
-  "license": "UNLICENSED",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
-  },
+  "name": "@staccx/react-app-rewire-decorators-legacy",
+  "version": "8.46.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -22,20 +15,16 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "lodash.isequal": "^4.5.0",
-    "oidc-client": "^1.5.2",
-    "qs": "^6.5.1",
-    "react": "^16.6.0"
+
   },
   "devDependencies": {
     "@staccx/rollup-config": "^8.46.0",
     "prettier": "^1.14.2",
     "rollup": "^0.65.0"
-  },
-  "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
+  }
 }

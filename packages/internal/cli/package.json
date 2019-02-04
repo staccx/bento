@@ -25,7 +25,6 @@
     "@staccx/rollup-config": "^8.46.0",
     "acorn-jsx": "^4.1.1",
     "acorn-jsx-walk": "^1.0.1",
-    "babel-core": "^6.26.3",
     "commander": "^2.17.1",
     "fs-extra": "^6.0.1",
     "get-line-from-pos": "^1.0.0",
@@ -45,5 +44,5 @@
     "conf": "^2.2.0",
     "opn": "^5.4.0"
   },
-  "gitHead": "8678698be72a7bacb7813f0d3cb2d497b906c4e1"
+  "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
 }

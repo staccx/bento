@@ -29,7 +29,7 @@
     "prettier": "^1.14.2",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",
-    "react-app-rewired": "^1.5.2",
+    "react-app-rewired": "^2.0.3",
     "rollup": "^0.65.0",
     "serve": "^10.0.0",
     "surge": "^0.20.1"
@@ -37,5 +37,5 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
-  "gitHead": "8678698be72a7bacb7813f0d3cb2d497b906c4e1"
+  "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
 }

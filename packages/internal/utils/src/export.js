@@ -1,4 +1,3 @@
-import debounce from "./export/debounce"
 import delay from "./export/delay"
 import throttle from "./export/throttle"
 import deepfind from "./export/deepfind"
@@ -8,7 +7,6 @@ import flatten from "./export/flatten"
 import partition from "./export/partition"
 
 export {
-  debounce,
   delay,
   throttle,
   deepfind,

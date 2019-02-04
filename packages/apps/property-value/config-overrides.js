@@ -1,10 +1,7 @@
-const rewireMobX = require("react-app-rewire-mobx")
-const rewireStyledComponents = require("react-app-rewire-styled-components")
+const yes = require("@staccx/react-app-rewire-decorators-legacy")
 
-function override(config, env) {
-  config = rewireMobX(config, env)
-  config = rewireStyledComponents(config, env)
-  return config
+function override (config, env) {
+  return yes(config, env)
 }
 
 module.exports = override

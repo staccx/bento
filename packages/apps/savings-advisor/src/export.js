@@ -9,6 +9,7 @@ import Purpose from "./components/v2/Purpose"
 import Risk from "./components/v2/Risk"
 import Themes from "./components/v2/Themes"
 import Summary from "./components/v2/Summary"
+import SavingsAdvisor from "./App"
 
 const pages = {
   Experience,
@@ -27,4 +28,4 @@ const components = {
   StepsContent
 }
 
-export { pages, components }
+export { pages, components, SavingsAdvisor }
