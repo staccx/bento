@@ -125,7 +125,8 @@ async function release(debug) {
       await executeAsync(
         "lerna",
         ["publish", "from-package", "--no-verify-access", "--yes"],
-        {}
+        {},
+        console.log
       )
       spinner.succeed("Published!")
       await executeAsync(
