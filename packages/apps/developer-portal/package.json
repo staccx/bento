@@ -1,6 +1,6 @@
 {
   "name": "@staccx/developer-portal",
-  "version": "8.55.0",
+  "version": "8.56.1",
   "description": "Developer portal white label.",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@staccx/base": "^8.55.0",
-    "@staccx/code-generator": "^8.55.0",
+    "@staccx/code-generator": "^8.56.1",
     "@staccx/fundu-theme": "^8.55.0",
     "@staccx/utils": "^8.46.0",
     "axios": "^0.18.0",
