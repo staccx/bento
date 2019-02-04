@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.56.0](https://bitbucket.org/stacc-flow/bento/compare/v8.55.1...v8.56.0) (2019-02-04)
+
+
+### Features
+
+* **cli:** new command create. only app is supported atm ([dd61079](https://bitbucket.org/stacc-flow/bento/commits/dd61079))
+
+
+
+
+
 ## [8.55.1](https://bitbucket.org/stacc-flow/bento/compare/v8.55.0...v8.55.1) (2019-02-02)
 
 
