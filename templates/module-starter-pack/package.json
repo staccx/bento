@@ -20,7 +20,8 @@
     "test:watch": "react-scripts test --env=jsdom --watch",
     "build": "yarn prettify && rollup -c",
     "start:module": "rollup -c -w",
-    "prepare": "yarn build",     "prepublishOnly": "yarn test",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "peerDependencies": {
@@ -43,7 +44,6 @@
     "babel-preset-stage-0": "^6.24.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard-jsx": "^5.0.0",
-    "jest": "^23.0.0-alpha.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -67,7 +67,5 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }
