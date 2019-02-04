@@ -9,7 +9,8 @@ const clean = require("./cmds/clean")
 const link = require("./cmds/link")
 const eslint = require("./cmds/eslint")
 const figma = require("./cmds/figma") // TODO: Refactor so that only one figma function is imported and handles all options
-const i18n = require("./cmds/i18n") // TODO: Refactor so that only one figma function is imported and handles all options
+const i18n = require("./cmds/i18n")
+const create = require("./cmds/create")
 const { version } = require("../package.json")
 
 program
@@ -82,5 +83,12 @@ program
   .alias("e")
   .description("Install Stacc X eslint setup")
   .action(eslint)
+
+program
+  .command("create <type> <name>")
+  .description("Create stuff")
+  .action((type, name) => {
+    create({ type, name })
+  })
 
 program.parse(process.argv)

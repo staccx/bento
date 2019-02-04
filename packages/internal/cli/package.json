@@ -37,12 +37,13 @@
     "rollup-plugin-json": "^3.1.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "simple-git": "^1.107.0",
-    "username": "^4.0.0"
+    "username": "^4.0.0",
+    "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
     "@google-cloud/translate": "^2.1.3",
     "conf": "^2.2.0",
     "opn": "^5.4.0"
   },
-  "gitHead": "cd07d3b50ea760c47300624afbf9261245bf7361"
+  "gitHead": "de57efa0aa320b8991556daa21a5f740b92dee34"
 }

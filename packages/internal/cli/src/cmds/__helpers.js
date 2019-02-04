@@ -2,6 +2,7 @@ const spawn = require("child_process").spawn
 const ora = require("ora")
 const fs = require("fs-extra")
 const path = require("path")
+const validatePackageName = require("validate-npm-package-name")
 const sanityClient = require("@sanity/client")
 
 let client = null
@@ -152,11 +153,18 @@ const readConfig = async configPath => {
   return {}
 }
 
+const validateNpmName = name => {
+  const { validForNewPackages } = validatePackageName(name)
+
+  return validForNewPackages
+}
+
 module.exports = {
   executeAsync,
   runCommand,
   setupSpinner,
   traverse,
   readConfig,
-  getSanityClient
+  getSanityClient,
+  validateNpmName
 }
