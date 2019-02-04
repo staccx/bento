@@ -1,7 +1,6 @@
-const ora = require("ora")
 const checkWorkingTree = require("@lerna/check-working-tree")
 const username = require("username")
-const { executeAsync } = require("./__helpers")
+const { executeAsync, setupSpinner } = require("./__helpers")
 const { postMessage } = require("../utils/slack")
 const { fetch, status } = require("../utils/git")
 
@@ -11,10 +10,7 @@ const onData = data => {
 }
 
 async function release(debug) {
-  const spinner = ora({
-    text: "Setup",
-    spinner: "monkey"
-  })
+  const spinner = setupSpinner()
 
   const checkGit = async (msg = "Checking git for changes") => {
     try {
@@ -60,6 +56,18 @@ async function release(debug) {
   }
 
   const scope = updated.map(u => u.name).join(" --scope ")
+
+  try {
+    spinner.start("Running prettier")
+    await executeAsync("lerna", ["exec", `--scope`, scope, `yarn prettier`])
+    spinner.succeed("Prettier ran.")
+    spinner.start("Checking if files are changed")
+    await checkGit()
+    spinner.succeed("Good. No changed")
+  } catch (e) {
+    spinner.fail(e.message)
+    throw e
+  }
 
   try {
     spinner.start("Validating build for all changed packages")
