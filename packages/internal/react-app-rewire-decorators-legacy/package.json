@@ -1,6 +1,6 @@
 {
   "name": "@staccx/react-app-rewire-decorators-legacy",
-  "version": "8.46.0",
+  "version": "8.58.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -19,11 +19,8 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
-  "dependencies": {
-
-  },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.46.0",
+    "@staccx/rollup-config": "^8.58.0",
     "prettier": "^1.14.2",
     "rollup": "^0.65.0"
   }
