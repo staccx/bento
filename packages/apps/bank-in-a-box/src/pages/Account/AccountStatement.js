@@ -11,10 +11,7 @@ const LoanStatement = ({ history, account, transactions }) => {
       <LayoutItem variant="fadeIn" delay="200" area="header">
         <Back history={history} path="/account/546126722" />
         <Heading level="2">
-          <TranslatedText
-            i18nKey="AccountStatementHeading"
-            fallback="Kontoutskrift"
-          />
+          <TranslatedText i18nKey="kontoutskrift" fallback="Kontoutskrift" />
         </Heading>
       </LayoutItem>
       <LayoutItem variant="fadeIn" delay="400" area="menu">

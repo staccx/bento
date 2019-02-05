@@ -12,7 +12,7 @@ const LoggedOut = ({ history }) => (
     <LayoutItem variant="fadeIn" delay="400" area="menu">
       <Box variant="center">
         <TranslatedText
-          i18nKey="ConfirmLogoutHeading"
+          i18nKey="du-er-na-logget-ut"
           fallback="Du er nå logget ut"
         />
       </Box>

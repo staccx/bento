@@ -19,7 +19,7 @@ const TransactionListItem = ({
     {rent && (
       <SplitListItem>
         <div>
-          <TranslatedText i18nKey="Rent" fallback="Renter" />:
+          <TranslatedText i18nKey="renter" fallback="Renter" />:
         </div>
         <div>{rent}</div>
       </SplitListItem>
@@ -27,7 +27,7 @@ const TransactionListItem = ({
     {installments && (
       <SplitListItem>
         <div>
-          <TranslatedText i18nKey="Installments" fallback="Avdrag" />:
+          <TranslatedText i18nKey="avdrag" fallback="Avdrag" />:
         </div>
         <div>{installments}</div>
       </SplitListItem>
@@ -35,27 +35,25 @@ const TransactionListItem = ({
     {fee && (
       <SplitListItem>
         <div>
-          <TranslatedText i18nKey="Fee" fallback="Gebyr" />:
+          <TranslatedText i18nKey="gebyr" fallback="Gebyr" />:
         </div>
         <div>{fee}</div>
       </SplitListItem>
     )}
     <SplitListItem>
       <div>
-        <TranslatedText i18nKey="Amount" fallback="Beløp" />:
+        <TranslatedText i18nKey="belop" fallback="Beløp" />:
       </div>
       <div>{formatCurrency(amount, { precision: 2 })}</div>
     </SplitListItem>
     <SplitListItem>
       <div>
-        {type === "DEPOSIT" && (
-          <TranslatedText i18nKey="DateDeposit" fallback="Bokført dato" />
-        )}
-        {type === "WITHDRAWAL" && (
-          <TranslatedText i18nKey="DateWithdrawal" fallback="Bokført dato" />
-        )}
+        {type === "DEPOSIT" ||
+          (type === "WITHDRAWAL" && (
+            <TranslatedText i18nKey="bokfort-datp" fallback="Bokført dato" />
+          ))}
         {type === "INVOICE" && (
-          <TranslatedText i18nKey="DateInvoice" fallback="Forfallsdato" />
+          <TranslatedText i18nKey="forfallsdato" fallback="Forfallsdato" />
         )}
         :
       </div>
@@ -64,9 +62,9 @@ const TransactionListItem = ({
     <SplitListItem>
       <div>
         {toAccount ? (
-          <TranslatedText i18nKey="toAccount" fallback="Til konto" />
+          <TranslatedText i18nKey="til-konto" fallback="Til konto" />
         ) : (
-          <TranslatedText i18nKey="fromAccount" fallback="Fra konto" />
+          <TranslatedText i18nKey="fra-konto" fallback="Fra konto" />
         )}
       </div>
       <div>{toAccount || fromAccount}</div>

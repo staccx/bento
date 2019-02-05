@@ -11,10 +11,10 @@ const Account = ({ account }) => {
   return (
     <Box variant="accountHeading">
       <Heading variant="accountHeadingText" level="3">
-        <TranslatedText i18nKey="LoanHeadingText" fallback="Lån" />
+        <TranslatedText i18nKey="lan">Lån</TranslatedText>
       </Heading>
       <Text variant="accountHeadingAvailable">
-        <TranslatedText i18nKey="AVAILABLE" fallback="Saldo:" />{" "}
+        <TranslatedText i18nKey="saldo">Saldo:</TranslatedText>
         {primary && formatCurrency(parseInt(primary, 10))},{secondary}
       </Text>
     </Box>

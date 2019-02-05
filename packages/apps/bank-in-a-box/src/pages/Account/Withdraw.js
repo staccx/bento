@@ -23,13 +23,11 @@ const Withdraw = ({ lastAccount = null, amount, onSubmit }) => (
       <Layout variant="withdraw">
         <LayoutItem variant="fadeIn" delay="200" area="header">
           <Heading level="1" variant="primary">
-            <TranslatedText i18nKey="WithDrawMoneyHeading">
-              Ta ut penger
-            </TranslatedText>
+            <TranslatedText i18nKey="ta-ut-penger">Ta ut penger</TranslatedText>
           </Heading>
           <Heading level="2" variant="withdrawSubtitle">
             {formatCurrency(amount, { precision: 2, decimal: "," })}{" "}
-            <TranslatedText i18nKey="withdrawSubtitle" fallback="disponibelt" />
+            <TranslatedText i18nKey="disponibelt" fallback="disponibelt" />
           </Heading>
         </LayoutItem>
         <LayoutItem area="menu">
@@ -38,10 +36,7 @@ const Withdraw = ({ lastAccount = null, amount, onSubmit }) => (
             renderButton={() => (
               <LayoutItem variant="fadeIn" delay="800">
                 <Button type={"submit"}>
-                  <TranslatedText
-                    i18nKey="WithdrawConfirmButton"
-                    fallback="Overfør"
-                  />
+                  <TranslatedText i18nKey="overfør" fallback="Overfør" />
                 </Button>
               </LayoutItem>
             )}
@@ -55,6 +50,7 @@ const Withdraw = ({ lastAccount = null, amount, onSubmit }) => (
                       const { value, ...rest } = field
                       return (
                         <CurrencyInput
+                          id={"amount"}
                           label="Beløp"
                           placeholder="0"
                           defaultValue={amount}
@@ -72,6 +68,7 @@ const Withdraw = ({ lastAccount = null, amount, onSubmit }) => (
                       const { value, ...rest } = field
                       return (
                         <AccountInput
+                          id={"account"}
                           label="Kontonummer"
                           placeholder="XXXX XX XXXXX"
                           defaultValue={toAccount}
@@ -95,14 +92,14 @@ const Withdraw = ({ lastAccount = null, amount, onSubmit }) => (
                     aria-pressed="false"
                   >
                     <TranslatedText
-                      i18nKey="WithdrawAlertLastTransferCameFrom"
+                      i18nKey="siste-innskudd-kom-fra"
                       fallback="Siste innskudd kom fra"
                     />{" "}
                     <Text variant="withdrawAlertNumber">
                       {formatPhone(lastAccount, "XXXX XX XXXXX")}
                     </Text>
                     .{" "}
-                    <TranslatedText i18nKey="WithdrawAlertClickHereToSendBack">
+                    <TranslatedText i18nKey="klikk-for-å-sende-penger">
                       Klikk her for å sende penger tilbake
                     </TranslatedText>
                   </Alert>

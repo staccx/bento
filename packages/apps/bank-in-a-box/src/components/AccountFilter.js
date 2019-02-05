@@ -8,6 +8,7 @@ const AccountFilter = ({ years, selected, onClick }) => (
     <ItemGroup>
       {years.map((year, index) => (
         <Button
+          key={"year" + index}
           variant="tag"
           selected={index === selected}
           onClick={() => onClick(index)}

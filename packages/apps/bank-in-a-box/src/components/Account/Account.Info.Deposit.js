@@ -9,7 +9,7 @@ const AccountInfoDeposit = ({ account }) => (
     <SplitListItem variant="accountInfoListItem" emphasize>
       <Text variant="strong">
         <TranslatedText
-          i18nKey="ACCOUNTNUMBER"
+          i18nKey="kontonummer-innbetaling"
           fallback="Kontonummer for innbetaling"
         />
       </Text>
@@ -17,14 +17,14 @@ const AccountInfoDeposit = ({ account }) => (
     </SplitListItem>
     <SplitListItem variant="accountInfoListItem" emphasize>
       <Text variant="strong">
-        <TranslatedText i18nKey="KID">KID:</TranslatedText>
+        <TranslatedText i18nKey="kid">KID:</TranslatedText>
       </Text>
       <div>{account.kid}</div>
     </SplitListItem>
     <SplitListItem variant="accountInfoListItem">
       <Text variant="strong">
         <TranslatedText
-          i18nKey="AvailableBalace"
+          i18nKey="disponibelt-belop"
           fallback="Disponibelt beløp"
         />
       </Text>
@@ -32,14 +32,14 @@ const AccountInfoDeposit = ({ account }) => (
     </SplitListItem>
     <SplitListItem variant="accountInfoListItem">
       <Text variant="strong">
-        <TranslatedText i18nKey="BookedBalance" fallback="Bokført saldo" />
+        <TranslatedText i18nKey="bokfort-saldo" fallback="Bokført saldo" />
       </Text>
       <div>{formatCurrency(account.bookedBalance, { precision: 2 })}</div>
     </SplitListItem>
     <SplitListItem variant="accountInfoListItem">
       <Text variant="strong">
         <TranslatedText
-          i18nKey="AccruedInterest"
+          i18nKey="ikke-bokfort-rente"
           fallback="Ikke bokført rente"
         />
       </Text>
@@ -47,13 +47,13 @@ const AccountInfoDeposit = ({ account }) => (
     </SplitListItem>
     <SplitListItem variant="accountInfoListItem">
       <Text variant="strong">
-        <TranslatedText i18nKey="effectiveRate" fallback="Effektiv rente" />
+        <TranslatedText i18nKey="effektiv-rente" fallback="Effektiv rente" />
       </Text>
       <div>{account.effectiveRate}%</div>
     </SplitListItem>
     <SplitListItem variant="accountInfoListItem">
       <Text variant="strong">
-        <TranslatedText i18nKey="InterestRate" fallback="Nominell rente" />
+        <TranslatedText i18nKey="nominell-rente" fallback="Nominell rente" />
       </Text>
       <div>{account.interestRate}%</div>
     </SplitListItem>

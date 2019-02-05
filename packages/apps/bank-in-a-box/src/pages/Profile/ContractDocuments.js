@@ -19,7 +19,9 @@ const ContractDocuments = ({ documents }) => (
     <LayoutItem variant="fadeIn" delay="200" area="header">
       <Back path="/profile/" />
       <Heading level="2">
-        <TranslatedText i18nKey={"documents"}>Avtaledokumenter</TranslatedText>
+        <TranslatedText i18nKey={"avtaledokumenter"}>
+          Avtaledokumenter
+        </TranslatedText>
       </Heading>
     </LayoutItem>
     <LayoutItem variant="fadeIn" delay="400" area="menu">
@@ -34,7 +36,7 @@ const ContractDocuments = ({ documents }) => (
                 variant="contractList"
               >
                 <ThemeComponent tagName="IconPdf" />
-                <TranslatedText>
+                <TranslatedText i18nKey={"dokumentnavn"}>
                   <span>{doc.title}</span>
                 </TranslatedText>
               </Button>

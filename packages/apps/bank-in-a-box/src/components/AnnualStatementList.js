@@ -7,19 +7,18 @@ const AnnualStatementList = ({ statement }) => {
   if (!statement) {
     return <Loading />
   }
-  console.log(statement)
   return statement.items.map(item => (
-    <React.Fragment>
+    <React.Fragment key={item.name}>
       <SplitListItem variant="annualStatementListItem" heading>
         <Heading level="2" variant="annualStatmentHeading">
-          <TranslatedText i18nKey="ANNUAL_STATEMENT_3">
+          <TranslatedText i18nKey="arsrapport-overskrift">
             {item.name}
           </TranslatedText>
         </Heading>
       </SplitListItem>
       <SplitListItem variant="annualStatementListItem" emphasize>
         <Text>
-          <TranslatedText i18nKey="ANNUAL_STATEMENT_3_1_1">
+          <TranslatedText i18nKey="arsrapport-beskrivelse">
             {item.description}
           </TranslatedText>
         </Text>

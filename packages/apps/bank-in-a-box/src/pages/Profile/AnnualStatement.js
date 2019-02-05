@@ -7,7 +7,6 @@ import AnnualStatementList from "../../components/AnnualStatementList"
 const AnnualStatement = ({ statements = [] }) => (
   <State>
     {({ set, selected = statements.length ? statements[0] : null }) => {
-      console.log(selected)
       return (
         <Layout variant="annualStatment">
           <LayoutItem variant="fadeIn" delay="200" area="header">

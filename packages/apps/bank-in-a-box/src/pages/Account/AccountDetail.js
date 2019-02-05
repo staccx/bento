@@ -26,10 +26,7 @@ const AccountDetail = ({ account, transactions }) => {
       </LayoutItem>
       <LayoutItem variant="fadeIn" delay="600" area="main">
         <Heading variant="accountSubheading" level="2">
-          <TranslatedText
-            i18nKey="accountDetailsHeading"
-            fallback="Kontodetaljer"
-          />
+          <TranslatedText i18nKey="kontodetaljer" fallback="Kontodetaljer" />
         </Heading>
         <Box variant={"accountInfo"}>
           <List>
@@ -39,10 +36,7 @@ const AccountDetail = ({ account, transactions }) => {
       </LayoutItem>
       <LayoutItem variant="fadeIn" delay="800" area="ad">
         <Heading variant="accountSubheading" level="2">
-          <TranslatedText
-            i18nKey="accountTransactionsHeading"
-            fallback="Transaksjoner"
-          />
+          <TranslatedText i18nKey="transaksjoner" fallback="Transaksjoner" />
         </Heading>
         <Transactions transactions={transactions} header={false} />
       </LayoutItem>

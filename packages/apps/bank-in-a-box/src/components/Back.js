@@ -22,7 +22,7 @@ const Back = ({ path }) => {
           />
         </svg>
         <span>
-          <TranslatedText i18nKey="BackTextButton" fallback="Tilbake" />
+          <TranslatedText i18nKey="tilbake">Tilbake</TranslatedText>
         </span>
       </Button>
     </Link>
@@ -30,7 +30,7 @@ const Back = ({ path }) => {
 }
 
 Back.propTypes = {
-  account: PropTypes.object.isRequired
+  path: PropTypes.string
 }
 
 export default Back

@@ -45,7 +45,7 @@ const Profile = ({
           }
         >
           <ModifiedLabel htmlFor="samtykke-elektronisk-komm">
-            <TranslatedText i18nKey={"electronic-cosent-message"}>
+            <TranslatedText i18nKey={"elektronisk-samtykke"}>
               Jeg samtykker til mottak av elektronisk kommunikasjon og at
               dokumentene kan sendes til meg elektronisk
             </TranslatedText>
@@ -64,9 +64,9 @@ const Profile = ({
           }
         >
           <ModifiedLabel htmlFor="tilbud-nyheter">
-            <TranslatedText i18nKey={"marketing-consent-message"}>
+            <TranslatedText i18nKey={"markedsforing-samtykke"}>
               Jeg samtykker til mottak av tilbud og nyheter om andre produkter
-              fra Nordfjell-banken
+              fra Aprila-banken
             </TranslatedText>
           </ModifiedLabel>
         </Flag>

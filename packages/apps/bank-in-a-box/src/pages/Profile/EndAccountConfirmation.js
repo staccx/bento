@@ -12,18 +12,18 @@ const EndAccountConfirmation = ({ accountNumber }) => (
     <LayoutItem variant="fadeIn" delay="400" area="menu">
       <Heading level="1" variant="accountSubheading">
         <TranslatedText
-          i18nKey="EndAccountConfirmationHeading"
+          i18nKey="konto-er-avsluttet"
           fallback="Konto er avsluttet og penger på vei"
         />
       </Heading>
       <Text>
         <TranslatedText
-          i18nKey="EndAccountConfirmationLead"
+          i18nKey="pengene-er-na-sendt-til"
           fallback="Pengene er nå sendt til"
         />{" "}
         {formatPhone(accountNumber, "XXXX XX XXXXX")}. <br />{" "}
         <TranslatedText
-          i18nKey="EndAccountConfirmationEnding"
+          i18nKey="du-kan-regne-med-at"
           fallback="Du kan regne med at de er på konto innen 1 til 2 virkedager"
         />
       </Text>
@@ -31,7 +31,9 @@ const EndAccountConfirmation = ({ accountNumber }) => (
     <LayoutItem variant="fadeIn" delay="600" area="main">
       <div>
         {/* TODO: må linkes opp */}
-        <Button>Logg ut</Button>
+        <Button>
+          <TranslatedText i18nKey={"logg-ut"}>Logg ut</TranslatedText>
+        </Button>
       </div>
     </LayoutItem>
   </Layout>

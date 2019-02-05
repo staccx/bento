@@ -10,11 +10,7 @@ const EndAccountList = ({ bookedBalance, accruedInterest }) => {
     <React.Fragment>
       <SplitListItem variant="annualStatementListItem" emphasize>
         <Text>
-          <TranslatedText
-            i18nKey="BookedBalanceEndText"
-            fallback="Bokført saldo"
-          />
-          :
+          <TranslatedText i18nKey="bokfort-saldo" fallback="Bokført saldo" />:
         </Text>
         <div>
           {formatCurrency(bookedBalance, { precision: 2, decimal: "," })}
@@ -23,7 +19,7 @@ const EndAccountList = ({ bookedBalance, accruedInterest }) => {
       <SplitListItem variant="annualStatementListItem" emphasize>
         <Text variant="strong">
           <TranslatedText
-            i18nKey="AccruedInterestEndText"
+            i18nKey="ikke-bokfort-rente"
             fallback="Ikke bokført rente"
           />
           :
@@ -34,7 +30,7 @@ const EndAccountList = ({ bookedBalance, accruedInterest }) => {
       </SplitListItem>
       <SplitListItem variant="annualStatementListItem" emphasize>
         <Text variant="heavy">
-          <TranslatedText i18nKey="TotalEndText" fallback="Totalt" />:
+          <TranslatedText i18nKey="totalt" fallback="Totalt" />:
         </Text>
         <strong>
           {formatCurrency(payBack, { precision: 2, decimal: "," })}

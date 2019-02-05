@@ -116,10 +116,40 @@
     "_type": "localeString",
     "nb": "Velg..."
   },
-  "AvailableBalace": {
-    "_key": "ywYiFgGpzgIqFPf_T2b0i",
+  "kid": {
+    "_key": "7POxYOTu7tmL8r2ILAJlF",
     "_type": "localeString",
-    "nb": "Tilgjengelig saldo"
+    "nb": "KID:"
+  },
+  "ikke-bokfort-rente": {
+    "_key": "HU-2IYB0fUnPqBsIebibP",
+    "_type": "localeString",
+    "nb": "Ikke bokfort rente"
+  },
+  "arsrapport-overskrift": {
+    "_key": "EXkKZ8jSavMTqnX_vTXpq",
+    "_type": "localeString",
+    "nb": "Arsrapport overskrift"
+  },
+  "forfallsdato": {
+    "_key": "Kg8dEYAqz6PGEMTXsv6Lq",
+    "_type": "localeString",
+    "nb": "Forfallsdato"
+  },
+  "transaksjoner": {
+    "_key": "gLnR08HzCj0rNku7IC5Kk",
+    "_type": "localeString",
+    "nb": "Transaksjoner"
+  },
+  "avtaledokumenter": {
+    "_key": "P4U-1HBkjHlXxzSrnP8HB",
+    "_type": "localeString",
+    "nb": "Avtaledokumenter"
+  },
+  "elektronisk-samtykke": {
+    "_key": "iSzdbjW8-kRMGyWBSzovN",
+    "_type": "localeString",
+    "nb": "Jeg samtykker til mottak av elektronisk kommunikasjon og at              dokumentene kan sendes til meg elektronisk"
   },
   "skatt": {
     "_key": "5d5400a08455",
@@ -301,11 +331,6 @@
     "_type": "localeString",
     "nb": "Mobilnummer"
   },
-  "ACCOUNTNUMBER": {
-    "_type": "localeString",
-    "en": "Account number",
-    "nb": "Kontonummer"
-  },
   "required": {
     "_key": "68d327f0d05f",
     "_type": "localeString",
@@ -326,326 +351,135 @@
     "_type": "localeText",
     "nb": "Innskuddskonto hos Aprila Bank skal være til privat bruk og konto kan ikke opprettes på andres vegne."
   },
-  "KID": {
-    "_key": "cGK7x5HfzX1DkIzY2nP6M",
+  "kontonummer-innbetaling": {
+    "_key": "wKVKVhMe973CRPjbU8sN4",
     "_type": "localeString",
-    "en": "KID:",
-    "nb": "KID:"
+    "nb": "Kontonummer innbetaling"
   },
-  "BookedBalance": {
-    "_key": "lN_dvIkjGHe6WBidvmJRg",
+  "disponibelt-belop": {
+    "_key": "XWdgBDKCHMNjClDaD_9Pn",
     "_type": "localeString",
-    "nb": "Bokført saldo"
+    "nb": "Disponibelt belop"
   },
-  "missing": [
-    {
-      "key": "AccruedInterest",
-      "line": 43,
-      "file": "./src/components/Account/Account.Info.Deposit.js",
-      "suggestion": {
-        "value": null,
-        "key": "AccruedInterest"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "effectiveRate",
-      "line": 53,
-      "file": "./src/components/Account/Account.Info.Deposit.js",
-      "suggestion": {
-        "value": null,
-        "key": "effectiveRate"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "InterestRate",
-      "line": 59,
-      "file": "./src/components/Account/Account.Info.Deposit.js",
-      "suggestion": {
-        "value": null,
-        "key": "InterestRate"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "ANNUAL_STATEMENT_3",
-      "line": 15,
-      "file": "./src/components/AnnualStatementList.js",
-      "suggestion": {
-        "value": "\n          ",
-        "key": "ANNUAL_STATEMENT_3"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "ANNUAL_STATEMENT_3_1_1",
-      "line": 22,
-      "file": "./src/components/AnnualStatementList.js",
-      "suggestion": {
-        "value": "\n          ",
-        "key": "ANNUAL_STATEMENT_3_1_1"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "BookedBalanceEndText",
-      "line": 13,
-      "file": "./src/components/EndAccountList.js",
-      "suggestion": {
-        "value": null,
-        "key": "BookedBalanceEndText"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "AccruedInterestEndText",
-      "line": 25,
-      "file": "./src/components/EndAccountList.js",
-      "suggestion": {
-        "value": null,
-        "key": "AccruedInterestEndText"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "TotalEndText",
-      "line": 37,
-      "file": "./src/components/EndAccountList.js",
-      "suggestion": {
-        "value": null,
-        "key": "TotalEndText"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "LoanHeadingText",
-      "line": 14,
-      "file": "./src/components/Loan/LoanHeading.js",
-      "suggestion": {
-        "value": null,
-        "key": "LoanHeadingText"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "AVAILABLE",
-      "line": 17,
-      "file": "./src/components/Loan/LoanHeading.js",
-      "suggestion": {
-        "value": null,
-        "key": "AVAILABLE"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "Rent",
-      "line": 22,
-      "file": "./src/components/TransactionList/TransactionList.expanded.js",
-      "suggestion": {
-        "value": null,
-        "key": "Rent"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "Installments",
-      "line": 30,
-      "file": "./src/components/TransactionList/TransactionList.expanded.js",
-      "suggestion": {
-        "value": null,
-        "key": "Installments"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "Fee",
-      "line": 38,
-      "file": "./src/components/TransactionList/TransactionList.expanded.js",
-      "suggestion": {
-        "value": null,
-        "key": "Fee"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "Amount",
-      "line": 45,
-      "file": "./src/components/TransactionList/TransactionList.expanded.js",
-      "suggestion": {
-        "value": null,
-        "key": "Amount"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "DateDeposit",
-      "line": 52,
-      "file": "./src/components/TransactionList/TransactionList.expanded.js",
-      "suggestion": {
-        "value": null,
-        "key": "DateDeposit"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "DateWithdrawal",
-      "line": 55,
-      "file": "./src/components/TransactionList/TransactionList.expanded.js",
-      "suggestion": {
-        "value": null,
-        "key": "DateWithdrawal"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "DateInvoice",
-      "line": 58,
-      "file": "./src/components/TransactionList/TransactionList.expanded.js",
-      "suggestion": {
-        "value": null,
-        "key": "DateInvoice"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "toAccount",
-      "line": 67,
-      "file": "./src/components/TransactionList/TransactionList.expanded.js",
-      "suggestion": {
-        "value": null,
-        "key": "toAccount"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "fromAccount",
-      "line": 69,
-      "file": "./src/components/TransactionList/TransactionList.expanded.js",
-      "suggestion": {
-        "value": null,
-        "key": "fromAccount"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "accountDetailsHeading",
-      "line": 29,
-      "file": "./src/pages/Account/AccountDetail.js",
-      "suggestion": {
-        "value": null,
-        "key": "accountDetailsHeading"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "accountTransactionsHeading",
-      "line": 42,
-      "file": "./src/pages/Account/AccountDetail.js",
-      "suggestion": {
-        "value": null,
-        "key": "accountTransactionsHeading"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "AccountStatementHeading",
-      "line": 14,
-      "file": "./src/pages/Account/AccountStatement.js",
-      "suggestion": {
-        "value": null,
-        "key": "AccountStatementHeading"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "ConfirmLogoutHeading",
-      "line": 14,
-      "file": "./src/pages/LoggedOut.js",
-      "suggestion": {
-        "value": null,
-        "key": "ConfirmLogoutHeading"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "documents",
-      "line": 22,
-      "file": "./src/pages/Profile/ContractDocuments.js",
-      "suggestion": {
-        "value": "Avtaledokumenter",
-        "key": "documents"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "file": "./src/pages/Profile/ContractDocuments.js",
-      "line": 37,
-      "status": "NO_KEY",
-      "suggestion": {
-        "value": "\n                ",
-        "key": "-----------------"
-      }
-    },
-    {
-      "key": "EndAccountConfirmationHeading",
-      "line": 14,
-      "file": "./src/pages/Profile/EndAccountConfirmation.js",
-      "suggestion": {
-        "value": null,
-        "key": "EndAccountConfirmationHeading"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "EndAccountConfirmationLead",
-      "line": 20,
-      "file": "./src/pages/Profile/EndAccountConfirmation.js",
-      "suggestion": {
-        "value": null,
-        "key": "EndAccountConfirmationLead"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "EndAccountConfirmationEnding",
-      "line": 25,
-      "file": "./src/pages/Profile/EndAccountConfirmation.js",
-      "suggestion": {
-        "value": null,
-        "key": "EndAccountConfirmationEnding"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "my-profile",
-      "line": 24,
-      "file": "./src/pages/Profile/Profile.js",
-      "suggestion": {
-        "value": "Min profil",
-        "key": "my-profile"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "electronic-cosent-message",
-      "line": 48,
-      "file": "./src/pages/Profile/Profile.js",
-      "suggestion": {
-        "value": "Jeg samtykker til mottak av elektronisk kommunikasjon og at              dokumentene kan sendes til meg elektronisk",
-        "key": "electronic-cosent-message"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    },
-    {
-      "key": "marketing-consent-message",
-      "line": 67,
-      "file": "./src/pages/Profile/Profile.js",
-      "suggestion": {
-        "value": "Jeg samtykker til mottak av tilbud og nyheter om andre produkter              fra Nordfjell-banken",
-        "key": "marketing-consent-message"
-      },
-      "status": "KEY_NOT_IN_DATASET"
-    }
-  ]
+  "effektiv-rente": {
+    "_key": "t39yyqrtBkZtEGFU055zm",
+    "_type": "localeString",
+    "nb": "Effektiv rente"
+  },
+  "nominell-rente": {
+    "_key": "w70mNUdENxi4mAjiY61i8",
+    "_type": "localeString",
+    "nb": "Nominell rente"
+  },
+  "tilbake": {
+    "_key": "HQwYYBT08Oq1Qrn2LLYbO",
+    "_type": "localeString",
+    "nb": "Tilbake"
+  },
+  "bokfort-saldo": {
+    "_key": "MCqjvwGB3uaM3aQAiODl-",
+    "_type": "localeString",
+    "nb": "Bokfort saldo"
+  },
+  "totalt": {
+    "_key": "yDbZhXu9eRBs2kOSR0bW3",
+    "_type": "localeString",
+    "nb": "Totalt"
+  },
+  "saldo": {
+    "_key": "MDtgWcz1E8iRNMsxAaRO4",
+    "_type": "localeString",
+    "nb": "Saldo:"
+  },
+  "renter": {
+    "_key": "zaFPsN9yy9RT2AzSHRdpw",
+    "_type": "localeString",
+    "nb": "Renter"
+  },
+  "avdrag": {
+    "_key": "_egPDD2id3QTqSW29rp3A",
+    "_type": "localeString",
+    "nb": "Avdrag"
+  },
+  "belop": {
+    "_key": "YLBVrE_Aqf9rNrBkvRJUk",
+    "_type": "localeString",
+    "nb": "Belop"
+  },
+  "bokfort-datp": {
+    "_key": "MxFzgYwcuHODE0uOQ1tVE",
+    "_type": "localeString",
+    "nb": "Bokfort datp"
+  },
+  "til-konto": {
+    "_key": "7-HuOD8QbrGyr770eEXUg",
+    "_type": "localeString",
+    "nb": "Til konto"
+  },
+  "fra-konto": {
+    "_key": "gqHX4qpI1jpn6X2xDLW7c",
+    "_type": "localeString",
+    "nb": "Fra konto"
+  },
+  "kontoutskrift": {
+    "_key": "vbUOr01xp9ATMc6mSLaI3",
+    "_type": "localeString",
+    "nb": "Kontoutskrift"
+  },
+  "du-er-na-logget-ut": {
+    "_key": "Yc_Ax53_n4sp5-H2L8Lgk",
+    "_type": "localeString",
+    "nb": "Du er na logget ut"
+  },
+  "konto-er-avsluttet": {
+    "_key": "QkKS84NyOvWGUelk18GXm",
+    "_type": "localeString",
+    "nb": "Konto er avsluttet"
+  },
+  "my-profile": {
+    "_key": "okGynXXystz5syVxj0F_p",
+    "_type": "localeString",
+    "nb": "Min profil"
+  },
+  "markedsforing-samtykke": {
+    "_key": "UHOAHy9Ilt9HzOSEmlswI",
+    "_type": "localeString",
+    "nb": "Jeg samtykker til mottak av tilbud og nyheter om andre produkter              fra Aprila-banken"
+  },
+  "arsrapport-beskrivelse": {
+    "_key": "JHFIJtdhwct514jlnwNX3",
+    "_type": "localeString",
+    "nb": "Arsrapport beskrivelse"
+  },
+  "lan": {
+    "_key": "XyvJEjKyZI_PkSXiox8Br",
+    "_type": "localeString",
+    "nb": "Lån"
+  },
+  "gebyr": {
+    "_key": "5r-pyQc5PyYncxJTnTT3l",
+    "_type": "localeString",
+    "nb": "Gebyr"
+  },
+  "kontodetaljer": {
+    "_key": "iTW1Tq3r7xOX_WScVEPHg",
+    "_type": "localeString",
+    "nb": "Kontodetaljer"
+  },
+  "pengene-er-na-sendt-til": {
+    "_key": "tWtUpfCledNFB6aUcQZvk",
+    "_type": "localeString",
+    "nb": "Pengene er na sendt til"
+  },
+  "du-kan-regne-med-at": {
+    "_key": "ZmEXPo5SG46g93JGQ2m5v",
+    "_type": "localeString",
+    "nb": "Du kan regne med at"
+  },
+  "dokumentnavn": {
+    "_key": "y-ZeoBpi4a5r4rnM7b4OA",
+    "_type": "localeString",
+    "nb": "Dokumentnavn"
+  },
+  "missing": []
 }

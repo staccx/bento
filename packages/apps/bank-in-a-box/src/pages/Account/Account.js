@@ -11,7 +11,6 @@ const Account = ({ accountStore, history, match }) => {
   console.log("finding account based on ", accountId, accountStore.transactions)
   const acc = toJS(accountStore.accounts.find(a => a.accountId === accountId))
 
-  console.log(acc)
   return (
     <Switch>
       <Route
