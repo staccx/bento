@@ -9,7 +9,6 @@ const link = async function({ input = "src/export.js", watch, target, reset }) {
     process.exit(1)
   }
 
-  console.log(reset)
   const cwd = process.cwd()
   const spinner = setupSpinner()
   let pkg = null

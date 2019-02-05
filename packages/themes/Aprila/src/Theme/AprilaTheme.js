@@ -49,6 +49,7 @@ import ImageVariants from "./Image.Variants"
 import SelectVariants from "./Select.Variants"
 import AlertStyling from "./Theme.Alerts"
 import LoadingVariants from "./Loading.Variants"
+import JSONSchemaVariants from "./JSONSchema.Variants"
 
 const { Theme } = theming
 
@@ -214,5 +215,6 @@ const t = new Theme(BaseTheme, {
   .add(SelectVariants)
   .add(AlertStyling)
   .add(LoadingVariants)
+  .add(JSONSchemaVariants)
 
 export default t

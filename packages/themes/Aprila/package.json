@@ -29,6 +29,7 @@
     "@staccx/base": "^8.58.0",
     "@staccx/formatting": "^8.58.0",
     "@staccx/i18n": "^8.58.0",
+    "@staccx/json-schema": "^8.58.0",
     "polished": "^1.9.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
