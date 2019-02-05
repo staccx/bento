@@ -21,14 +21,14 @@ const Account = ({ account }) => {
   return (
     <Box variant="accountHeading">
       <Heading variant="accountHeadingText" level="3">
-        <TranslatedText i18nKey="AccountHeadingText" fallback="På konto" />
+        <TranslatedText i18nKey="pa-konto" fallback="På konto" />
       </Heading>
       <Text variant="accountHeadingAvailable">
         {primary && formatCurrency(parseInt(primary, 10))},{secondary}
       </Text>
       <Text variant="accountHeadingSubtext">
         <TranslatedText
-          i18nKey="accruedInterestText"
+          i18nKey="ikke-bokforte-renter"
           fallback="Ikke bokførte renter"
         />
         :{" "}

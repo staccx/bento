@@ -97,7 +97,8 @@ const color = {
   positive: "#3B2C7C",
   negative: "#FF7E68",
   black: "#000",
-  subtleHover: "#F2F1FC"
+  subtleHover: "#F2F1FC",
+  accountFilter: "#3B2C7C"
 }
 
 const BiBSpecificColor = {
