@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import React  from "react"
+import React from "react"
 import styled from "styled-components"
 import ShowMore from "@tedconf/react-show-more"
 import { Button, Box } from "@staccx/base"
