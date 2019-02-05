@@ -13,7 +13,7 @@ const getSuggestion = (node, key) => {
 
   if (!value) {
     traverse(node.children, (key, val, parent) => {
-      if (key === "value") {
+      if (key === "value" && !val.includes("\n")) {
         value = val
       }
     })

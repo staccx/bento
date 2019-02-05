@@ -35,6 +35,7 @@ program
   .option("-da, --dataset <dataset>", "Dataset for project to compare against")
   .option("-f, --filename <file>", "Filename of saved file")
   .option("-u, --upload", "Upload missing values to Sanity")
+  .option("--yes", "Confirm all yeses")
   .option("--pattern <pattern>", "Glob pattern for finding components")
   .option(
     "-l, --languages <languages>",

@@ -22,6 +22,12 @@ const t = new Translate({
   key: "AIzaSyCuMeUlqN_3P4x3SzICBq73n5qgD2lMAgQ"
 })
 
+const dashToRegular = text =>
+  (text.charAt(0).toUpperCase() + text.substr(1)).replace(
+    /-([a-z])/g,
+    g => ` ${g[1]}`
+  )
+
 const camelToRegular = text =>
   (text.charAt(0).toUpperCase() + text.substr(1))
     .replace(/([A-Z])/g, " $1")
@@ -41,6 +47,7 @@ const i18n = async ({
   type,
   upload,
   token,
+  yes,
   parent: { configPath, debug }
 }) => {
   const {
@@ -92,26 +99,6 @@ const i18n = async ({
     })
 
     if (save) {
-      const getLangData = (name, lang) => ({
-        name: name,
-        value: lang,
-        checked: languages.indexOf(lang) !== -1
-      })
-      const { langs } = await inquirer.prompt([
-        {
-          type: "checkbox",
-          name: "langs",
-          message: "Which languages do you want to use",
-          choices: [
-            getLangData("Norsk", "nb"),
-            getLangData("English", "en"),
-            getLangData("Francois", "fr"),
-            getLangData("Swedish", "sw")
-          ],
-          default: [...languages.map(l => ({ [l]: { checked: true } }))]
-        }
-      ])
-
       let keys = null
       if (walk) {
         const w = await runCommand({
@@ -125,6 +112,26 @@ const i18n = async ({
         keys = w.keys.filter(c => c.status !== statuses.OK)
 
         if (upload) {
+          const getLangData = (name, lang) => ({
+            name: name,
+            value: lang,
+            checked: languages.indexOf(lang) !== -1
+          })
+          const { langs } = await inquirer.prompt([
+            {
+              type: "checkbox",
+              name: "langs",
+              message: "Which languages do you want to use",
+              choices: [
+                getLangData("Norsk", "nb"),
+                getLangData("English", "en"),
+                getLangData("Francois", "fr"),
+                getLangData("Swedish", "sw")
+              ],
+              default: [...languages.map(l => ({ [l]: { checked: true } }))]
+            }
+          ])
+
           const { cont } = await inquirer.prompt([
             {
               type: "confirm",
@@ -141,16 +148,17 @@ const i18n = async ({
               spinner.info(`Anomaly #${i + 1}`)
               const node = keys[i]
               try {
-                const { key, line, file, suggestion, status } = node
+                const { key, file, suggestion, status } = node
                 if (status === statuses.KEY_NOT_IN_DATASET) {
                   spinner.info(`${key} ${file}`)
 
-                  const { name } = await inquirer.prompt([
+                  const { name = dashToRegular(key) } = await inquirer.prompt([
                     {
                       type: "input",
                       name: "name",
                       message: "Please give this entry a name (for humans)",
-                      default: key
+                      default: dashToRegular(key),
+                      when: !yes
                     }
                   ])
                   const suggestions = langs.reduce((acc, curr) => {
@@ -162,9 +170,12 @@ const i18n = async ({
                     {
                       type: "confirm",
                       name: "doTranslate",
-                      message: "Do you want me to translate?"
+                      message: "Do you want me to translate?",
+                      default: false,
+                      when: !yes
                     }
                   ])
+
                   if (doTranslate) {
                     for (let j = 0; j < langs.length; j++) {
                       const lang = langs[j]
@@ -182,14 +193,22 @@ const i18n = async ({
                     }
                   }
 
-                  const { ...values } = await inquirer.prompt([
+                  let { ...values } = await inquirer.prompt([
                     ...langs.map(l => ({
                       type: "input",
                       name: l,
                       message: `Set value for ${l}`,
-                      default: suggestions[l]
+                      default: suggestions[l],
+                      when: !yes
                     }))
                   ])
+
+                  if (yes) {
+                    values = langs.reduce((acc, curr) => {
+                      acc[curr] = suggestions[curr] || dashToRegular(key)
+                      return acc
+                    }, {})
+                  }
 
                   spinner.succeed(
                     `Translations: ${languages
@@ -197,11 +216,12 @@ const i18n = async ({
                       .join("; ")}`
                   )
 
-                  const { doUpload } = await inquirer.prompt([
+                  const { doUpload = yes } = await inquirer.prompt([
                     {
                       type: "confirm",
                       name: "doUpload",
-                      message: "Ready to upload?"
+                      message: "Ready to upload?",
+                      when: !yes
                     }
                   ])
 
