@@ -24,7 +24,6 @@ const findFormFields = node => {
 class Form extends Component {
   render() {
     const formFields = findFormFields(this.props.children)
-    console.log(formFields)
     const validationShape = formFields.reduce((validator, curr) => {
       const { type, required, nullable, name, min, max, integer } = curr.props
 
