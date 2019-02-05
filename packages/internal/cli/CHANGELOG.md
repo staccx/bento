@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.59.0](https://bitbucket.org/stacc-flow/bento/compare/v8.58.1...v8.59.0) (2019-02-05)
+
+
+### Features
+
+* **cli:** improvements to i18n command ([3c9a133](https://bitbucket.org/stacc-flow/bento/commits/3c9a133))
+
+
+
+
+
 ## [8.58.1](https://bitbucket.org/stacc-flow/bento/compare/v8.58.0...v8.58.1) (2019-02-05)
 
 

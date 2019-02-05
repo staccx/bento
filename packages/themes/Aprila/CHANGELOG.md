@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.59.0](https://bitbucket.org/stacc-flow/bento/compare/v8.58.1...v8.59.0) (2019-02-05)
+
+
+### Bug Fixes
+
+* **aprila-theme:** fix for i18n stuff ([7ee443e](https://bitbucket.org/stacc-flow/bento/commits/7ee443e))
+
+
+
+
+
 ## [8.58.1](https://bitbucket.org/stacc-flow/bento/compare/v8.58.0...v8.58.1) (2019-02-05)
 
 
