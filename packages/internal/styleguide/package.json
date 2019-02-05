@@ -1,9 +1,9 @@
 {
   "name": "@staccx/styleguide",
-  "version": "8.58.0",
+  "version": "8.58.1",
   "private": true,
   "dependencies": {
-    "@staccx/aprila-theme": "^8.58.0",
+    "@staccx/aprila-theme": "^8.58.1",
     "@staccx/base": "^8.58.0",
     "@staccx/fundu-theme": "^8.58.0",
     "@staccx/nordea-theme": "^8.58.0",

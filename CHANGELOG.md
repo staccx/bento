@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.58.1](https://bitbucket.org/stacc-flow/bento/compare/v8.58.0...v8.58.1) (2019-02-05)
+
+
+### Bug Fixes
+
+* **aprila:** fix select absolute being ugly ([9845ae5](https://bitbucket.org/stacc-flow/bento/commits/9845ae5))
+
+
+
+
+
 # [8.58.0](https://bitbucket.org/stacc-flow/bento/compare/v8.57.0...v8.58.0) (2019-02-05)
 
 
