@@ -139,6 +139,11 @@ import Steps from "./hoc/Steps/Steps"
  */
 import QuestionMark from "./components/Icons/QuestionMark"
 
+/**
+ * Hooks!
+ */
+import useSearch from "./hooks/useSearch"
+
 // Search
 import Search from "./hoc/Search/Search"
 
@@ -241,6 +246,7 @@ export {
   Text,
   ThemeComponent,
   Toggle,
+  useSearch,
   Wait,
   Warning,
   WebFonts,
