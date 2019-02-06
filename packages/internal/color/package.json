@@ -32,8 +32,8 @@
   "dependencies": {
     "@staccx/base": "^7.15.0",
     "color": "^3.0.0",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "@staccx/rollup-config": "^8.58.0",

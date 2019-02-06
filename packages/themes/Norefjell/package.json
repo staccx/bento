@@ -30,8 +30,8 @@
     "@staccx/formatting": "^8.58.0",
     "polished": "^1.9.2",
     "prop-types": "^15.6.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "@staccx/rollup-config": "^8.58.0",

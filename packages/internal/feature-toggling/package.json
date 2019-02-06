@@ -24,7 +24,7 @@
     "@staccx/sanity": "^8.59.0",
     "@staccx/sanity-plugin-i18n": "^8.48.0",
     "prop-types": "^15.6.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   }
 }

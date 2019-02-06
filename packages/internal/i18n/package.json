@@ -33,9 +33,9 @@
     "@staccx/base": "^8.59.0",
     "loglevel": "^1.6.1",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0-alpha",
+    "react": "^16.8.0",
     "react-app-rewire-mobx": "^1.0.8",
-    "react-dom": "^16.6.0",
+    "react-dom": "^16.8.0",
     "string-format-obj": "^1.1.1"
   },
   "devDependencies": {

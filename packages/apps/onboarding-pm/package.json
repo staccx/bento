@@ -36,8 +36,8 @@
     "@staccx/norefjell-theme": "^8.59.0",
     "countries-list": "^2.3.2",
     "prop-types": "^15.6.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "react-spring": "^5.3.8"
   },
   "devDependencies": {
