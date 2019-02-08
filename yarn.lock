@@ -15803,6 +15803,15 @@ react-app-rewired@^2.0.3:
     dotenv "^6.2.0"
     semver "^5.6.0"
 
+react-app-rewired@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-app-rewired/-/react-app-rewired-2.1.0.tgz#8451acbf5e9d3d2252b259d4d531f60845817df4"
+  integrity sha512-eq0okL3shrAsg0u8HQQA1bYk/He/j4vNEQWZJyVZN7Lpb0/TOHSR0kyo8geGecIlUfgR0ABlw2X9sdxgm/beKQ==
+  dependencies:
+    cross-spawn "^6.0.5"
+    dotenv "^6.2.0"
+    semver "^5.6.0"
+
 react-click-outside@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/react-click-outside/-/react-click-outside-3.0.1.tgz#6e77e84d2f17afaaac26dbad743cbbf909f5e24c"
