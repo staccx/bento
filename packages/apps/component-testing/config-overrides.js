@@ -1,6 +1,6 @@
 const yes = require("@staccx/react-app-rewire-decorators-legacy")
 
-function override (config, env) {
+function override(config, env) {
   return yes(config, env)
 }
 
