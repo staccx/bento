@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import Search from "../../../hoc/Search/Search"
 import { commonPropTypes } from "../../../constants/themeContants"
 import Downshift from "downshift"
+import { applyVariants } from "../../../theming"
+import Wrapper from "../../Layout/Wrapper/Wrapper"
 
 const Combobox = ({
   options,
@@ -14,7 +16,8 @@ const Combobox = ({
   renderSelected,
   filter,
   indexer,
-  downshiftProps
+  downshiftProps,
+  variant
 }) => {
   const indices = Array.isArray(filter) ? filter : [filter]
   return (
@@ -42,14 +45,18 @@ const Combobox = ({
             ...rest
           }) => {
             return (
-              <ComboWrapper {...getRootProps({ refKey: "innerRef" })}>
+              <ComboWrapper
+                variant={variant}
+                {...getRootProps({ refKey: "innerRef" })}
+              >
                 {renderLabel && renderLabel(getLabelProps)}
                 {!selectedItem && renderInput(getInputProps)}
                 {selectedItem &&
                   renderSelected(selectedItem, getInputProps, {
                     clearSelection,
                     openMenu,
-                    closeMenu
+                    closeMenu,
+                    variant
                   })}
                 {isOpen
                   ? children({
@@ -57,7 +64,8 @@ const Combobox = ({
                       getItemProps,
                       highlightedIndex,
                       selectedItem,
-                      selectItem
+                      selectItem,
+                      variant
                     })
                   : null}
               </ComboWrapper>
@@ -69,12 +77,15 @@ const Combobox = ({
   )
 }
 
-const ComboWrapper = ({ innerRef, children }) => (
-  <Wrapper ref={innerRef}>{children}</Wrapper>
+const ComboWrapper = ({ innerRef, children, variant }) => (
+  <Wrap variant={variant} ref={innerRef}>
+    {children}
+  </Wrap>
 )
 
-const Wrapper = styled.div`
+const Wrap = styled.div`
   position: relative;
+  ${applyVariants(Wrapper.themeProps.wrapper)}
 `
 
 Combobox.propTypes = {
