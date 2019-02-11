@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.60.3](https://bitbucket.org/stacc-flow/bento/compare/v8.60.2...v8.60.3) (2019-02-11)
+
+
+### Bug Fixes
+
+* **aprila-theme:** fix styling for combo ([7d7e286](https://bitbucket.org/stacc-flow/bento/commits/7d7e286))
+* **base:** fix variant for combo wrapper ([776f957](https://bitbucket.org/stacc-flow/bento/commits/776f957))
+* **cli:** skip prettier since its f ing broken ([712e416](https://bitbucket.org/stacc-flow/bento/commits/712e416))
+* **json-schema:** fix render prop validate ([c87e37b](https://bitbucket.org/stacc-flow/bento/commits/c87e37b))
+
+
+
+
+
 ## [8.60.2](https://bitbucket.org/stacc-flow/bento/compare/v8.60.1...v8.60.2) (2019-02-11)
 
 
