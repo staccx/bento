@@ -144,6 +144,7 @@ export default theming.createVariants(
             return 0
         }
       }};
+      flex-grow: 1;
     }
     `,
     inlineBox: css`

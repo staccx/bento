@@ -8,6 +8,9 @@ export const InputWrapperStyling = theming.createVariants(
     schemaInput: css``,
     accountNumber: css`
       max-width: 210px;
+    `,
+    grow: css`
+      flex-grow: 1;
     `
   },
   Input.themeProps.wrapper

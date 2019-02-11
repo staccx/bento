@@ -7,6 +7,10 @@ const wrapperVariants = theming.createVariants(
       padding-left: ${theming.spacing.large};
       padding-right: ${theming.spacing.large};
       list-style-type: disc;
+    `,
+    grow: css`
+      width: 100%;
+      position: relative;
     `
   },
   Wrapper.themeProps.wrapper
