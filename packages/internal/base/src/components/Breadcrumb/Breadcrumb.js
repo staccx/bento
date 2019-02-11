@@ -205,14 +205,17 @@ const SmuleHeading = styled.h1`
 
   /* Unique for SmuleHeading: */
 
-  background-color: var(--active-bg-color);
-  color: var(--active-color);
-  ::before {
-    border-top-color: var(--active-bg-color);
-    border-bottom-color: var(--active-bg-color);
-  }
-  ::after {
-    border-left-color: var(--active-bg-color);
+  &,
+  :hover {
+    background-color: var(--active-bg-color);
+    color: var(--active-color);
+    ::before {
+      border-top-color: var(--active-bg-color);
+      border-bottom-color: var(--active-bg-color);
+    }
+    ::after {
+      border-left-color: var(--active-bg-color);
+    }
   }
 
   ${applyVariants(tProps.smuleHeading.name)};
