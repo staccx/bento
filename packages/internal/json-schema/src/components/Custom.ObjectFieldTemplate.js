@@ -24,14 +24,12 @@ const CustomObjectFieldTemplate = ({
           help={help}
         />
       )}
-      <Layout
-        rowGap={level === 1 ? "largePlus" : level === 2 ? "medium" : "small"}
-      >
+      <Layout variant={"schemaLayout"} rowGap={"tiny"} level={level}>
         <DescriptionField description={description} help={help} />
         {properties.map(prop => {
           return (
             <React.Fragment key={prop.content.key}>
-              {prop.content}
+              {React.cloneElement(prop.content, { level })}
             </React.Fragment>
           )
         })}

@@ -1,5 +1,5 @@
 import Form from "react-jsonschema-form"
-import React from "react"
+import React, { useRef, useState, useEffect } from "react"
 import styled from "styled-components"
 import { Button, theming } from "@staccx/base"
 import ArrayField from "./Custom.Fields.Array"
@@ -9,6 +9,7 @@ import ErrorList from "./Custom.ErrorList"
 import CustomFields from "./Custom.Fields"
 import CustomWidgets from "./Custom.Widgets"
 import CustomErrors from "./Custom.Errors"
+import validateFormData from "../validate"
 
 const Schema = ({
   schema,
@@ -25,8 +26,30 @@ const Schema = ({
   errorList = ErrorList,
   ...props
 }) => {
+  const form = useRef(null)
+
+  const [isValid, setIsValid] = useState(false)
+
+  useEffect(() => {
+    const { formData, schema } = form.current.state
+    const validation = validateFormData(formData, schema, false, false)
+
+    console.log(validation)
+    setIsValid(validation.errors.length <= 0)
+  }, [])
+
+  let render = () => <Button type={"submit"}>Submit</Button>
+  if (children) {
+    if (typeof children === "function") {
+      render = () => children({ isValid })
+    } else {
+      render = () => children
+    }
+  }
+
   return (
     <SchemaForm
+      ref={form}
       className={"root__element"}
       schema={schema}
       widgets={widgets}
@@ -43,7 +66,7 @@ const Schema = ({
       transformErrors={transformErrors}
       {...props}
     >
-      {children || <Button type={"submit"}>Submit</Button>}
+      {render()}
     </SchemaForm>
   )
 }

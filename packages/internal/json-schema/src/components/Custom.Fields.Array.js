@@ -12,13 +12,12 @@ import { Button, Layout, Box } from "@staccx/base"
 //   </Button>
 // )
 
-const AddButton = props => <Button {...props} />
+export const AddButton = props => <Button {...props} />
 
-const RemoveButton = props => <AddButton children="-" {...props} />
+export const RemoveButton = props => <AddButton children="-" {...props} />
 const ArrayFieldTitle = ({ TitleField, idSchema, title, required, help }) => {
   if (!title) {
-    // See #312: Ensure compatibility with old versions of React.
-    return <div />
+    return null
   }
   const id = `${idSchema.$id}__title`
   // return <Heading level={4}>{title}</Heading>
@@ -60,18 +59,21 @@ const defaultArrayItem = props => {
 }
 
 export default props => {
+  const title = props.uiSchema["ui:title"]
   return (
     <Layout>
-      <Box variant={["inlineBox"]}>
-        <ArrayFieldTitle
-          key={`array-field-title-${props.idSchema.$id}`}
-          TitleField={props.TitleField}
-          idSchema={props.idSchema}
-          title={props.uiSchema["ui:title"]}
-          required={props.required}
-          help={props.help}
-        />
-      </Box>
+      {title && (
+        <Box variant={["inlineBox"]}>
+          <ArrayFieldTitle
+            key={`array-field-title-${props.idSchema.$id}`}
+            TitleField={props.TitleField}
+            idSchema={props.idSchema}
+            title={title}
+            required={props.required}
+            help={props.help}
+          />
+        </Box>
+      )}
       {(props.uiSchema["ui:description"] || props.schema.description) && (
         <ArrayFieldDescription
           key={`array-field-description-${props.idSchema.$id}`}
@@ -87,11 +89,11 @@ export default props => {
       </div>
       {props.canAdd && (
         <AddButton
-          variant={["round", "positive"]}
+          variant={["positive"]}
           onClick={props.onAddClick}
           disabled={props.disabled || props.readonly}
         >
-          {`+ ${props.canAdd.title || ""}`}
+          {`${props.uiSchema["ui:add-label"] || "+"}`}
         </AddButton>
       )}
     </Layout>
