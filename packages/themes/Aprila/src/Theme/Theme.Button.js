@@ -317,7 +317,13 @@ export default theming.createVariants(
       }
     `,
     submit: css`
-      margin-top: ${theming.spacing.medium};
+      margin-top: ${theming.spacing.large};
+      margin-bottom: ${theming.spacing.medium};
+
+      &:disabled {
+        background-color: ${theming.color.disabled};
+        cursor: no-drop;
+      }
     `,
     tab: css`
       width: 100%;

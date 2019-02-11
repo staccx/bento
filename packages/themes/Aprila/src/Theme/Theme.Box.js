@@ -144,6 +144,7 @@ export default theming.createVariants(
             return 0
         }
       }};
+    }
     `,
     inlineBox: css`
       display: flex;
@@ -179,6 +180,21 @@ export default theming.createVariants(
       box-shadow: 0px ${theming.spacing.small} ${theming.spacing.medium}
         rgba(0, 0, 0, 0.06);
       border: 1px solid ${theming.color.line};
+
+      > ul {
+        list-style-type: disc;
+        li {
+          list-style-type: disc;
+        }
+      }
+    `,
+    increaseMargin: css`
+      margin-bottom: ${theming.spacing.medium};
+    `,
+    frame: css`
+      border: 1px solid ${theming.color.line};
+      padding: ${theming.spacing.small};
+      border-radius: ${theming.borderRadius};
     `
   },
   Box.themeProps.box

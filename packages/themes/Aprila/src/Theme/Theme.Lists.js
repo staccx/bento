@@ -57,6 +57,12 @@ export const ListStyling = theming.createVariants(
       li:last-child {
         border-bottom-width: 0;
       }
+    `,
+    block: css`
+      margin-left: ${theming.spacing.medium};
+      li {
+        list-style-type: disc;
+      }
     `
   },
   List.themeProps.list
