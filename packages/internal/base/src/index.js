@@ -149,6 +149,9 @@ import Search from "./hoc/Search/Search"
 
 import Combobox from "./components/Forms/Combobox/Combobox"
 
+// Navigation
+import Breadcrumb from "./components/Breadcrumb/Breadcrumb"
+
 const icons = {
   QuestionMark
 }
@@ -164,6 +167,7 @@ export {
   BirthdateInput,
   theming,
   Box,
+  Breadcrumb,
   Button,
   Caret,
   CaretRight,
