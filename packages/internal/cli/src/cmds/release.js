@@ -134,6 +134,7 @@ async function release(debug) {
         "lerna",
         ["publish", "from-package", "--no-verify-access", "--yes"],
         {},
+        () => null,
         console.log
       )
       spinner.succeed("Published!")
