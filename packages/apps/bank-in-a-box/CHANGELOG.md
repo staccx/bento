@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.60.4](https://bitbucket.org/stacc-flow/bento/compare/v8.60.3...v8.60.4) (2019-02-11)
+
+
+### Bug Fixes
+
+* **bank-in-a-box:** fix translations where none nec ([cab735f](https://bitbucket.org/stacc-flow/bento/commits/cab735f))
+
+
+
+
+
 ## [8.60.3](https://bitbucket.org/stacc-flow/bento/compare/v8.60.2...v8.60.3) (2019-02-11)
 
 **Note:** Version bump only for package @staccx/bank-in-a-box
