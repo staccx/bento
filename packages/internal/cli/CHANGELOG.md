@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.60.2](https://bitbucket.org/stacc-flow/bento/compare/v8.60.1...v8.60.2) (2019-02-11)
+
+
+### Bug Fixes
+
+* **cli:** fix for prettier bug ([0e02786](https://bitbucket.org/stacc-flow/bento/commits/0e02786))
+
+
+
+
+
 ## [8.60.1](https://bitbucket.org/stacc-flow/bento/compare/v8.60.0...v8.60.1) (2019-02-11)
 
 **Note:** Version bump only for package @staccx/cli

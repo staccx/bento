@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.60.2](https://bitbucket.org/stacc-flow/bento/compare/v8.60.1...v8.60.2) (2019-02-11)
+
+
+### Bug Fixes
+
+* **base:** breadcrumb: hover and current should be separate conserns ([a6711b3](https://bitbucket.org/stacc-flow/bento/commits/a6711b3))
+* **base:** fix overflow problem on small line height + optimize code ([a2b6ffd](https://bitbucket.org/stacc-flow/bento/commits/a2b6ffd))
+
+
+
+
+
 # [8.60.0](https://bitbucket.org/stacc-flow/bento/compare/v8.59.0...v8.60.0) (2019-02-11)
 
 
