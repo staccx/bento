@@ -1,6 +1,6 @@
 {
   "name": "@staccx/dealerpad",
-  "version": "8.58.0",
+  "version": "8.60.0",
   "dependencies": {
     "@staccx/animations": "^8.58.0",
     "@staccx/base": "^7.15.0",

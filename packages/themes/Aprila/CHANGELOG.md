@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.60.0](https://bitbucket.org/stacc-flow/bento/compare/v8.59.0...v8.60.0) (2019-02-11)
+
+
+### Features
+
+* **aprila-theme:** layouting by level ([1bbabe4](https://bitbucket.org/stacc-flow/bento/commits/1bbabe4))
+* **bento:** updated react to 16.8 ([89e8a70](https://bitbucket.org/stacc-flow/bento/commits/89e8a70))
+
+
+
+
+
 # [8.59.0](https://bitbucket.org/stacc-flow/bento/compare/v8.58.1...v8.59.0) (2019-02-05)
 
 

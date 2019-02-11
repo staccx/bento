@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.60.0](https://bitbucket.org/stacc-flow/bento/compare/v8.59.0...v8.60.0) (2019-02-11)
+
+
+### Bug Fixes
+
+* **component-testing:** fix issue with react-scripts ([c4e6de7](https://bitbucket.org/stacc-flow/bento/commits/c4e6de7))
+
+
+
+
+
 # [8.59.0](https://bitbucket.org/stacc-flow/bento/compare/v8.58.1...v8.59.0) (2019-02-05)
 
 **Note:** Version bump only for package @staccx/component-testing

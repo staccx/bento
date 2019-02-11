@@ -1,6 +1,6 @@
 {
   "name": "@staccx/nordea-theme",
-  "version": "8.59.0",
+  "version": "8.60.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@staccx/animations": "^8.58.0",
-    "@staccx/base": "^8.59.0",
+    "@staccx/base": "^8.60.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
   },

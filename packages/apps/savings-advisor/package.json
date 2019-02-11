@@ -1,6 +1,6 @@
 {
   "name": "@staccx/savings-advisor",
-  "version": "8.59.0",
+  "version": "8.60.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -8,9 +8,9 @@
     "@sanity/client": "^0.135.0",
     "@sanity/image-url": "^0.132.8",
     "@staccx/animations": "^8.58.0",
-    "@staccx/base": "^8.59.0",
+    "@staccx/base": "^8.60.0",
     "@staccx/formatting": "^8.58.0",
-    "@staccx/i18n": "^8.59.0",
+    "@staccx/i18n": "^8.60.0",
     "@staccx/math": "^8.58.0",
     "axios": "^0.18.0",
     "chart.js": "^2.7.1",
@@ -41,7 +41,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/eslint-config": "^8.58.0",
+    "@staccx/eslint-config": "^8.60.0",
     "prettier": "^1.14.2",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",

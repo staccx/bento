@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.60.0](https://bitbucket.org/stacc-flow/bento/compare/v8.59.0...v8.60.0) (2019-02-11)
+
+
+### Bug Fixes
+
+* **component-testing:** fix issue with react-scripts ([c4e6de7](https://bitbucket.org/stacc-flow/bento/commits/c4e6de7))
+
+
+### Features
+
+* **aprila-theme:** layouting by level ([1bbabe4](https://bitbucket.org/stacc-flow/bento/commits/1bbabe4))
+* **base:** add Breadcrumb base component ([3e52473](https://bitbucket.org/stacc-flow/bento/commits/3e52473))
+* **base:** added first hook, useSearch ([74137c6](https://bitbucket.org/stacc-flow/bento/commits/74137c6))
+* **base:** useSearch now bundled in base ([5246e4c](https://bitbucket.org/stacc-flow/bento/commits/5246e4c))
+* **bento:** updated react to 16.8 ([89e8a70](https://bitbucket.org/stacc-flow/bento/commits/89e8a70))
+* **json-schema:** add better customization for array fields ([f40d182](https://bitbucket.org/stacc-flow/bento/commits/f40d182))
+
+
+
+
+
 # [8.59.0](https://bitbucket.org/stacc-flow/bento/compare/v8.58.1...v8.59.0) (2019-02-05)
 
 
