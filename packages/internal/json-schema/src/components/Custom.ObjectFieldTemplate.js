@@ -12,10 +12,15 @@ const CustomObjectFieldTemplate = ({
   ...rest
 }) => {
   const options = uiSchema["ui:options"] || {}
-  const { highlightBox = false, label = true } = options
+  const { highlightBox = false, label = true, variant = [] } = options
   const level = rest.idSchema.$id.split("_").length
   return (
-    <Box variant={highlightBox ? "highlightBox" : theming.VARIANT_DEFAULT}>
+    <Box
+      variant={[
+        highlightBox ? "highlightBox" : theming.VARIANT_DEFAULT,
+        ...variant
+      ]}
+    >
       {label && (
         <TitleField
           title={title}

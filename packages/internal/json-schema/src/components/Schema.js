@@ -1,5 +1,5 @@
 import Form from "react-jsonschema-form"
-import React, { useRef, useState, useEffect } from "react"
+import React, { useRef } from "react"
 import styled from "styled-components"
 import { Button, theming } from "@staccx/base"
 import ArrayField from "./Custom.Fields.Array"
@@ -28,20 +28,21 @@ const Schema = ({
 }) => {
   const form = useRef(null)
 
-  const [isValid, setIsValid] = useState(false)
-
-  useEffect(() => {
+  const validate = () => {
+    if (!form.current) {
+      return
+    }
     const { formData, schema } = form.current.state
+    if (!formData || !schema) return false
     const validation = validateFormData(formData, schema, false, false)
 
-    console.log(validation)
-    setIsValid(validation.errors.length <= 0)
-  }, [])
+    return validation.errors.length <= 0
+  }
 
   let render = () => <Button type={"submit"}>Submit</Button>
   if (children) {
     if (typeof children === "function") {
-      render = () => children({ isValid })
+      render = () => children({ validate })
     } else {
       render = () => children
     }
