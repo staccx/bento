@@ -36,9 +36,7 @@ const ContractDocuments = ({ documents }) => (
                 variant="contractList"
               >
                 <ThemeComponent tagName="IconPdf" />
-                <TranslatedText i18nKey={"dokumentnavn"}>
-                  <span>{doc.title}</span>
-                </TranslatedText>
+                <span>{doc.title}</span>
               </Button>
             </ListItem>
           ))}
