@@ -80,6 +80,18 @@ export const LayoutStyling = theming.createVariants(
         "iframe iframe";
       grid-template-columns: 1fr 1fr;
       grid-row-gap: 0;
+    `,
+    schemaLayout: css`
+      grid-row-gap: ${({ level = 1 }) => {
+        switch (level) {
+          case 2:
+            return theming.spacing.large
+          case 3:
+            return theming.spacing.tiny
+          default:
+            return theming.spacing.medium
+        }
+      }};
     `
   },
   Layout.themeProps.container

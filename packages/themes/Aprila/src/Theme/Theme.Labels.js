@@ -5,6 +5,9 @@ export const LabelStyling = theming.createVariants(
   {
     schemaDescription: css`
       background-color: red;
+    `,
+    description: css`
+      padding-bottom: 0;
     `
   },
   Label.themeProps.label

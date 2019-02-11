@@ -131,7 +131,21 @@ export default theming.createVariants(
       margin-right: -${theming.spacing.large};
       background: ${theming.color("purpleBg")};
     `,
-    schemaContainer: css``,
+    schemaContainer: css`
+      margin-bottom: ${p => {
+      console.log(p.level)
+      switch (p.level) {
+          case 1:
+            return theming.spacing.medium
+          case 2:
+            return theming.spacing.large
+          case 3:
+            return theming.spacing.tin7
+          default:
+            return 0
+        }
+      }};
+    `,
     inlineBox: css`
       display: flex;
       justify-content: space-between;
