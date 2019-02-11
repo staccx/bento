@@ -9,7 +9,7 @@ import ErrorList from "./Custom.ErrorList"
 import CustomFields from "./Custom.Fields"
 import CustomWidgets from "./Custom.Widgets"
 import CustomErrors from "./Custom.Errors"
-import validateFormData from "../validate"
+// import validateFormData from "../validate"
 
 const Schema = ({
   schema,
@@ -34,8 +34,7 @@ const Schema = ({
     }
     const { formData, schema } = form.current.state
     if (!formData || !schema) return false
-    const validation = validateFormData(formData, schema, false, false)
-
+    const validation = form.current.validate(formData, schema, false, false)
     return validation.errors.length <= 0
   }
 
