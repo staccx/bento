@@ -57,22 +57,22 @@ async function release(debug) {
 
   const scope = updated.map(u => u.name).join(" --scope ")
 
-  try {
-    spinner.start("Running prettier")
-    await executeAsync(
-      "lerna",
-      ["exec", `--scope`, scope, `yarn prettier`],
-      {},
-      console.log
-    )
-    spinner.succeed("Prettier ran.")
-    spinner.start("Checking if files are changed")
-    await checkGit()
-    spinner.succeed("Good. No changed")
-  } catch (e) {
-    spinner.fail(e.message)
-    throw e
-  }
+  // try {
+  //   spinner.start("Running prettier")
+  //   await executeAsync(
+  //     "lerna",
+  //     ["exec", `--scope`, scope, `yarn prettier`],
+  //     {},
+  //     console.log
+  //   )
+  //   spinner.succeed("Prettier ran.")
+  //   spinner.start("Checking if files are changed")
+  //   await checkGit()
+  //   spinner.succeed("Good. No changed")
+  // } catch (e) {
+  //   spinner.fail(e.message)
+  //   throw e
+  // }
 
   try {
     spinner.start("Validating build for all changed packages")
