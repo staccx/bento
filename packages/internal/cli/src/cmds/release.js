@@ -59,7 +59,12 @@ async function release(debug) {
 
   try {
     spinner.start("Running prettier")
-    await executeAsync("lerna", ["exec", `--scope`, scope, `yarn prettier`])
+    await executeAsync(
+      "lerna",
+      ["exec", `--scope`, scope, `yarn prettier`],
+      {},
+      console.log
+    )
     spinner.succeed("Prettier ran.")
     spinner.start("Checking if files are changed")
     await checkGit()
