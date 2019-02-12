@@ -15,7 +15,7 @@ const Nori = ({
   theme,
   children,
   i18nConfig = {
-    translationSchemaType: "translation"
+    translationSchemaType: "translations"
   },
   logLevel = 5,
   parseTexts = defaultParseTexts,
