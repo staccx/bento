@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.61.0](https://bitbucket.org/stacc-flow/bento/compare/v8.60.4...v8.61.0) (2019-02-12)
+
+
+### Features
+
+* **nori:** meet nori, your new app boilerplater ([545a249](https://bitbucket.org/stacc-flow/bento/commits/545a249))
+
+
+
+
+
 ## [8.60.3](https://bitbucket.org/stacc-flow/bento/compare/v8.60.2...v8.60.3) (2019-02-11)
 
 **Note:** Version bump only for package @staccx/fsm
