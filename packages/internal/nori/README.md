@@ -1,96 +1,36 @@
-# Sanity React Declarative Components
+# App Boilerplate
 
-## Components
-
-### Sanity-Provider
-This is imperative to the others. Without it there is no data
-Use it as any other context provider
-
+## Install
 ```javascript
-import {SanityProvider} from "@staccx/sanity"
-
-...
-
-<SanityProvider dataset={"nameofdataset"} projectId={"alkfla"}>
-    Your lovely UI
-</SanityProvider>
-
+yarn add @staccx/nori
 ```
 
-### Sanity-List
-This is for a list of a single type.
-It has optional props for filter, count and picks
-It produces a render function
-Requires a id (could be anything, but keep it unique)
-
+## Usage
 ```javascript
-<SanityList type={"myType"} count={10} id="my-list-of-stuff">
-{({result}) => {
-    if(result) {
-        return renderMyList(result)
-    }
-    return <div>Loading...</div>
-}
+const sanityConfig = {
+  dataset: "production",
+  projectId: "qweqweq",
+  useCdn: true
 }
 
-</SanityList>
-
-```
-
-
-### Sanity-Document
-
-Fetches single document and serves it in a lovely render function
-
-```javascript
-<SanityDocument id={"someid"}>
-{({document}) => {
-    if(document) {
-    return renderMyDocument(document)
-    }
-    return null
-}}
-</SanityDocument>
-```
-
-
-### Sanity-Query
-
-For all needs not meet by ☝️ Takes a GROQ query. Have at it.
-
-```javascript
-<SanityQuery id={"someid"} query={"*[_type == 'myType']{...}"}>
-{({result}) => {
-    if(result) {
-        return renderMyList(result)
-    }
-    return <div>Loading...</div>
-}
-}
-</SanityDocument>
-```
-
-### Combine!
-
-```javascript
-<SanityList type={"myType"} count={10} id="my-list-of-stuff">
-{({result}) => {
-    if(result) {
-        return result.map(item => (
-        <SanityDocument id={item._id}>
-        {({document}) => {
-            if(document) {
-            return renderMyDocument(document)
-            }
-            return null
-        }}
-        </SanityDocument>
-        ))
-    }
-    return <div>Loading...</div>
-}
+const i18nConfig = {
+  language: "nb",
+  languages: ["nb"],
+  translationSchemaType: "translations"
 }
 
-</SanityList>
-
+class App extends Component {
+  render() {
+    return (
+      <Nori
+        theme={MyTheme}
+        sanityConfig={sanityConfig}
+        i18nConfig={i18nConfig}
+        logLevel={5}
+      >
+        <Routing? />
+      </Nori>
+    )
+  }
+}
 ```
