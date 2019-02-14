@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react"
 import { Wrapper } from "@staccx/base"
 import { ThemeProvider } from "styled-components"
-import { FunduTheme } from "@staccx/fundu-theme"
 import Gauge from "./components/Gauge"
 import { getResult } from "./data/api"
+import theme from "./theme"
 
-const App = () => {
+const App = ({ graphWeight = "1 1 1", country = null }) => {
+  const weights = graphWeight.split(" ").map(v => parseFloat(v, 10))
+
+  console.log(weights)
+  const [isLoading, setIsLoading] = useState(false)
   const [otherData, setOtherData] = useState({
     us: {
       comment: ""
@@ -16,19 +20,24 @@ const App = () => {
   })
 
   const get = async () => {
+    setIsLoading(true)
+    console.log("getting")
     const { us, no } = await getResult()
     setOtherData({ us, no })
   }
 
   useEffect(() => {
-    get()
+    if (!isLoading) {
+      get()
+    }
     return () => null
   }, [])
   return (
-    <ThemeProvider theme={FunduTheme}>
-      <Wrapper size="small">
-        {otherData.no && (
+    <ThemeProvider theme={theme}>
+      <Wrapper size="small" variant={["container"]}>
+        {(country === "no" || !country) && otherData.no && (
           <Gauge
+            weights={weights}
             data={otherData.no}
             header={"Status AI Macro"}
             country={"Norway"}
@@ -37,14 +46,17 @@ const App = () => {
             {otherData.no.comment}
           </Gauge>
         )}
-        <Gauge
-          data={otherData.us}
-          header={"Status AI Macro"}
-          country={"USA"}
-          indexName={"S&P 500 PM"}
-        >
-          {otherData.us.comment}
-        </Gauge>
+        {(country === "us" || !country) && otherData.us && (
+          <Gauge
+            weights={weights}
+            data={otherData.us}
+            header={"Status AI Macro"}
+            country={"USA"}
+            indexName={"S&P 500 PM"}
+          >
+            {otherData.us.comment}
+          </Gauge>
+        )}
       </Wrapper>
     </ThemeProvider>
   )

@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import { theming, Button, Heading, LayoutItem } from "@staccx/base"
+import {
+  theming,
+  Button,
+  Heading,
+  LayoutItem,
+  hideVisually
+} from "@staccx/base"
 import { PieChart, Pie, Cell } from "recharts"
 import TabPanel from "./Tabs"
 import anime from "animejs"
 import Chart from "./Chart"
-
-const positiveMin = 0.9
-const neutralMin = 0.75
 
 const negativeColor = "#C0392B"
 const neutralColor = "#F39C12"
@@ -21,19 +24,38 @@ const tick = {
   fontSize: "8pt"
 }
 
-const gaugeData = [
-  { value: 75, color: negativeColor },
-  { value: 15, color: neutralColor },
-  { value: 10, color: positiveColor }
-]
+const colors = [negativeColor, neutralColor, positiveColor]
 
-const Gauge = ({ data, children, header, country, indexName }) => {
+const Gauge = ({
+  data,
+  children,
+  header,
+  country,
+  indexName,
+  weights = [1, 1, 1]
+}) => {
   const [show, setShow] = useState(false)
   const [tab, setTab] = useState(0)
   const [status, setStatus] = useState(0.0)
   const [isAnimating, setIsAnimating] = useState(false)
+  const [hasAnimatedIn, setHasAnimatedIn] = useState(false)
+  const [showGraph, setShowGraph] = useState(false)
+  const [gaugeData, setGaugeData] = useState([])
+  const [total, setTotal] = useState(1)
+
   useEffect(() => {
     if (data.status && !isAnimating) {
+      const gauge = colors.map((color, i) => {
+        const value = weights[i]
+        return {
+          value,
+          color
+        }
+      })
+      setTotal(gauge.reduce((acc, curr) => acc + curr.value, 0))
+
+      setGaugeData(gauge)
+
       setIsAnimating(true)
       const values = {
         status
@@ -47,12 +69,45 @@ const Gauge = ({ data, children, header, country, indexName }) => {
         easing: "easeOutCubic",
         update: function() {
           setStatus(values.status * 0.01)
+        },
+        complete: function(anim) {
+          setHasAnimatedIn(true)
+          setShowGraph(true)
+          // anime
+          //   .timeline({
+          //     targets: ".tablist .tab",
+          //     delay: anime.stagger(400, { start: 500, direction: "reverse" }),
+          //     translateX: [-1000, 0],
+          //     easing: "easeOutCubic",
+          //     duration: 1500
+          //   })
+          //   .add(
+          //     {
+          //       targets: ".tabpanel",
+          //       height: [0, 155],
+          //       easing: "easeOutCubic",
+          //       duration: 500,
+          //       complete: () => setShowGraph(true)
+          //     },
+          //     600
+          //   )
         }
       })
     }
 
     return () => null
   })
+
+  if (!gaugeData.length) {
+    return null
+  }
+
+  const positiveMin = gaugeData.length
+    ? gaugeData.reduce((acc, curr, index) => {
+        return index < 2 ? acc + curr.value : acc
+      }, 0) / total
+    : 0
+  const neutralMin = gaugeData.length ? gaugeData[0].value / total : 0
 
   const value = data.status || 0
 
@@ -134,8 +189,8 @@ const Gauge = ({ data, children, header, country, indexName }) => {
           )}
         </Info>
       </GaugeWrapper>
-      <TabList>
-        <Tab onClick={() => setTab(0)} isActive={tab === 0}>
+      <TabList className={"tablist"}>
+        <Tab onClick={() => setTab(0)} isActive={tab === 0} className={"tab"}>
           <TabIcon>
             <svg
               width="20"
@@ -149,7 +204,7 @@ const Gauge = ({ data, children, header, country, indexName }) => {
           </TabIcon>
           <TabText isActive={tab === 0}>Macro score</TabText>
         </Tab>
-        <Tab onClick={() => setTab(1)} isActive={tab === 1}>
+        <Tab onClick={() => setTab(1)} isActive={tab === 1} className={"tab"}>
           <TabIcon>
             <svg
               width="20"
@@ -162,7 +217,7 @@ const Gauge = ({ data, children, header, country, indexName }) => {
           </TabIcon>
           <TabText isActive={tab === 1}>{indexName}</TabText>
         </Tab>
-        <Tab onClick={() => setTab(2)} isActive={tab === 2}>
+        <Tab onClick={() => setTab(2)} isActive={tab === 2} className={"tab"}>
           <TabIcon>
             <svg
               width="20"
@@ -177,26 +232,32 @@ const Gauge = ({ data, children, header, country, indexName }) => {
         </Tab>
       </TabList>
       <TabPanel current={tab}>
-        <StyledLayoutItem>
-          <Chart
-            data={data.statusChartData}
-            tick={tick}
-            stroke={positiveColor}
-          />
+        <StyledLayoutItem className={"tabpanel"} hide={!hasAnimatedIn}>
+          {showGraph && (
+            <Chart
+              data={data.statusChartData}
+              tick={tick}
+              stroke={positiveColor}
+            />
+          )}
         </StyledLayoutItem>
         <StyledLayoutItem>
-          <Chart
-            data={data.indexChartData}
-            tick={tick}
-            stroke={positiveColor}
-          />
+          {showGraph && (
+            <Chart
+              data={data.indexChartData}
+              tick={tick}
+              stroke={positiveColor}
+            />
+          )}
         </StyledLayoutItem>
         <StyledLayoutItem>
-          <Chart
-            data={data.backtestChartData}
-            tick={tick}
-            stroke={positiveColor}
-          />
+          {showGraph && (
+            <Chart
+              data={data.backtestChartData}
+              tick={tick}
+              stroke={positiveColor}
+            />
+          )}
         </StyledLayoutItem>
       </TabPanel>
     </GaugeBox>
@@ -206,6 +267,7 @@ const Gauge = ({ data, children, header, country, indexName }) => {
 const GaugeBox = styled.div`
   width: calc(232px + ${theming.spacing.large} * 2);
   position: relative;
+  margin-right: ${theming.spacing.small};
 `
 
 const GaugeWrapper = styled.div`
@@ -327,6 +389,7 @@ const InfoOverlay = styled.div`
 `
 
 const TabList = styled.div`
+  ${({ hide }) => (hide ? hideVisually : null)};
   display: flex;
   position: relative;
   margin-bottom: -${theming.spacing.tiny};
@@ -374,9 +437,10 @@ const TabText = styled.div`
 `
 
 const StyledLayoutItem = styled(LayoutItem)`
+  ${({ hide }) => (hide ? hideVisually : null)};
   background-color: #1b252a;
   color: white;
-  padding-top: calc(${theming.spacing.small} + ${theming.spacing.tiny});
+  //padding-top: calc(${theming.spacing.small} + ${theming.spacing.tiny});
 `
 
 export default Gauge
