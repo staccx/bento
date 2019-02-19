@@ -48,7 +48,7 @@ import {
 import ImageVariants from "./Image.Variants"
 import SelectVariants from "./Select.Variants"
 import AlertStyling from "./Theme.Alerts"
-import LoadingVariants from "./Loading.Variants"
+import LoadingVariants, { loadingStyle } from "./Loading.Variants"
 import JSONSchemaVariants from "./JSONSchema.Variants"
 import WrapperVariants from "./Wrapper.Variants"
 
@@ -216,7 +216,7 @@ const t = new Theme(BaseTheme, {
   .add(ImageVariants)
   .add(SelectVariants)
   .add(AlertStyling)
-  .add(LoadingVariants)
+  .add([LoadingVariants, loadingStyle])
   .add(JSONSchemaVariants)
   .add(WrapperVariants)
 

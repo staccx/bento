@@ -1,4 +1,6 @@
-import { theming, Loading } from "@staccx/base"
+import React from "react"
+import { theming, Loading, Image, Wrapper } from "@staccx/base"
+import { css } from "styled-components"
 import {
   AtomSpinner,
   BreedingRhombusSpinner,
@@ -7,8 +9,19 @@ import {
   PixelSpinner
 } from "react-epic-spinners"
 
+// We assume the loader exists
+const DefaultLoader = props => (
+  <Wrapper variant={"centerAlign"}>
+    <Image
+      {...props}
+      src={"spinner-looped.gif"}
+      alt={"Laster. Vennligst vent"}
+    />
+  </Wrapper>
+)
 export default theming.createVariants(
   {
+    [theming.VARIANT_DEFAULT]: DefaultLoader,
     atom: AtomSpinner,
     breeding: BreedingRhombusSpinner,
     circles: CirclesToRhombusesSpinner,
@@ -16,4 +29,13 @@ export default theming.createVariants(
     pixel: PixelSpinner
   },
   Loading.themeProps.component
+)
+
+export const loadingStyle = theming.createVariants(
+  {
+    centerAlign: css`
+      text-align: center;
+    `
+  },
+  Wrapper.themeProps.wrapper
 )

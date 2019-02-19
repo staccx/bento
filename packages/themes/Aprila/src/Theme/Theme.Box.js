@@ -160,9 +160,11 @@ export default theming.createVariants(
       padding-top: ${theming.spacing.medium};
     `,
     login: css`
-      background-color: ${theming.color.primary};
       padding: ${theming.spacing.tiny};
       border-radius: 0 0 5px 5px;
+      border: 1px solid ${theming.color.primary};
+      min-height: 306px;
+      position: relative;
     `,
     top: css`
       z-index: 999;
