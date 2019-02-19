@@ -4,6 +4,7 @@ import styled, { keyframes } from "styled-components"
 import { themePropTypes } from "../../../constants/themeContants"
 import ThemeComponent from "../../Theme/ThemeComponent"
 import { applyVariants, color, spacing } from "../../../theming"
+import useTimer from "../../../hooks/useTimer"
 
 const DefaultLoading = ({ className, variant, ...rest }) => (
   <SignalSpinner className={className} variant={variant} {...rest} />
@@ -24,13 +25,21 @@ const themeProps = {
   }
 }
 
-const Loading = ({ className, ...rest }) => (
-  <ThemeComponent
-    tagName={themeProps.component.name}
-    fallback={DefaultLoading}
-    {...rest}
-  />
-)
+const Loading = ({ className, idleTime, ...rest }) => {
+  const isReady = useTimer(idleTime)
+
+  // Wait before rendering
+  if (!isReady) {
+    return null
+  }
+  return (
+    <ThemeComponent
+      tagName={themeProps.component.name}
+      fallback={DefaultLoading}
+      {...rest}
+    />
+  )
+}
 
 const spinnerBubble1 = keyframes`
   0% {
