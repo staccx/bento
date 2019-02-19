@@ -25,6 +25,7 @@ module.exports = {
     expect: true,
     afterEach: true,
     atob: true,
-    btoa: true
+    btoa: true,
+    jest: true
   }
 }
