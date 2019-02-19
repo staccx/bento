@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.62.0](https://bitbucket.org/stacc-flow/bento/compare/v8.61.0...v8.62.0) (2019-02-19)
+
+
+### Features
+
+* **eslint-config:** add jest to globalsd ([cd88c3a](https://bitbucket.org/stacc-flow/bento/commits/cd88c3a))
+
+
+
+
+
 # [8.60.0](https://bitbucket.org/stacc-flow/bento/compare/v8.59.0...v8.60.0) (2019-02-11)
 
 

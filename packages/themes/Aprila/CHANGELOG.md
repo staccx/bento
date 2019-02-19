@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.62.0](https://bitbucket.org/stacc-flow/bento/compare/v8.61.0...v8.62.0) (2019-02-19)
+
+
+### Features
+
+* **aprila-theme:** add loading theming ([34861dd](https://bitbucket.org/stacc-flow/bento/commits/34861dd))
+
+
+
+
+
 ## [8.60.3](https://bitbucket.org/stacc-flow/bento/compare/v8.60.2...v8.60.3) (2019-02-11)
 
 

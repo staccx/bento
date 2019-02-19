@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.62.0](https://bitbucket.org/stacc-flow/bento/compare/v8.61.0...v8.62.0) (2019-02-19)
+
+
+### Bug Fixes
+
+* **quantfolio-widgets:** fix scripts ([d64315e](https://bitbucket.org/stacc-flow/bento/commits/d64315e))
+
+
+### Features
+
+* **aprila-theme:** add loading theming ([34861dd](https://bitbucket.org/stacc-flow/bento/commits/34861dd))
+* **base:** add hook, useTimer ([bc8d6c7](https://bitbucket.org/stacc-flow/bento/commits/bc8d6c7))
+* **base:** add support for country code and additionalCSS ([2cf502b](https://bitbucket.org/stacc-flow/bento/commits/2cf502b))
+* **base:** loading now waits (default 1s) before rendering ([12dde7c](https://bitbucket.org/stacc-flow/bento/commits/12dde7c))
+* **eslint-config:** add jest to globalsd ([cd88c3a](https://bitbucket.org/stacc-flow/bento/commits/cd88c3a))
+* **quantfolio-widgets:** add quantfolio widgets ([7ba7287](https://bitbucket.org/stacc-flow/bento/commits/7ba7287))
+* **quantfolio-widgets:** added widgets. readying for export ([c9df2d6](https://bitbucket.org/stacc-flow/bento/commits/c9df2d6))
+
+
+
+
+
 # [8.61.0](https://bitbucket.org/stacc-flow/bento/compare/v8.60.4...v8.61.0) (2019-02-12)
 
 

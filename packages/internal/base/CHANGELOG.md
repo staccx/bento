@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.62.0](https://bitbucket.org/stacc-flow/bento/compare/v8.61.0...v8.62.0) (2019-02-19)
+
+
+### Features
+
+* **base:** add hook, useTimer ([bc8d6c7](https://bitbucket.org/stacc-flow/bento/commits/bc8d6c7))
+* **base:** add support for country code and additionalCSS ([2cf502b](https://bitbucket.org/stacc-flow/bento/commits/2cf502b))
+* **base:** loading now waits (default 1s) before rendering ([12dde7c](https://bitbucket.org/stacc-flow/bento/commits/12dde7c))
+
+
+
+
+
 ## [8.60.3](https://bitbucket.org/stacc-flow/bento/compare/v8.60.2...v8.60.3) (2019-02-11)
 
 
