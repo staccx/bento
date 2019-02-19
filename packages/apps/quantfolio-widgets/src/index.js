@@ -2,7 +2,7 @@ import ReactHabitat from "react-habitat"
 import QuantfolioMacros from "./App"
 
 class QuantfolioWidgets extends ReactHabitat.Bootstrapper {
-  constructor () {
+  constructor() {
     super()
 
     // Create a new container builder:
