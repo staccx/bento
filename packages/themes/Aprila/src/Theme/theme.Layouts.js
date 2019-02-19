@@ -20,7 +20,7 @@ const TwoUp = css`
 `
 
 const OneUp = css`
-  margin-top: ${theming.spacing.large};
+  margin-top: ${theming.spacing.medium};
   grid-template-columns:
     minmax(0px, 1fr)
     minmax(227px, 480px)
