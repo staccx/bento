@@ -10,11 +10,11 @@ import {
 } from "react-epic-spinners"
 
 // We assume the loader exists
-const DefaultLoader = props => (
+const DefaultLoader = ({ src, ...props }) => (
   <Wrapper variant={"centerAlign"}>
     <Image
       {...props}
-      src={"spinner-looped.gif"}
+      src={src || "/spinner-looped.gif"}
       alt={"Laster. Vennligst vent"}
     />
   </Wrapper>
