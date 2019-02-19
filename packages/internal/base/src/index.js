@@ -134,6 +134,8 @@ import WebFonts from "./components/Theme/WebFonts"
 
 import Steps from "./hoc/Steps/Steps"
 
+// import Accordion from "./components/Accordion/Accordion"
+
 /**
  * Icons!
  */
