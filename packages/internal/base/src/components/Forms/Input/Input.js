@@ -261,6 +261,8 @@ export const inputCss = css`
     -webkit-appearance: none;
     margin: 0;
   }
+
+  ${p => p.additionalCSS || null};
   ${applyVariants(Input.themeProps.input)};
 `
 
