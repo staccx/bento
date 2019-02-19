@@ -1,5 +1,6 @@
 import React from "react"
-import { Layout, LayoutItem, List, State } from "@staccx/base"
+import { Layout, LayoutItem, List, State, Heading } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 import Back from "../../components/Back"
 import AccountFilter from "../../components/AccountFilter"
 import AnnualStatementList from "../../components/AnnualStatementList"
@@ -11,6 +12,11 @@ const AnnualStatement = ({ statements = [] }) => (
         <Layout variant="annualStatment">
           <LayoutItem variant="fadeIn" delay="200" area="header">
             <Back path="/profile/" />
+            <Heading level="2">
+              <TranslatedText i18nKey={"arsoppgaver"}>
+                Årsoppgaver
+              </TranslatedText>
+            </Heading>
           </LayoutItem>
           <LayoutItem variant="fadeIn" delay="400" area="menu">
             <AccountFilter
