@@ -33,7 +33,7 @@
     "start": "react-scripts start",
     "build:app": "react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage --passWithNoTests",
-    "prepare": "yarn build",
+    "prepare": "yarn build:app",
     "prepublishOnly": "yarn test",
     "eject": "react-scripts eject",
     "deploy": "yarn build && surge -p ./build",
