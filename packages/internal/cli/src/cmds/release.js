@@ -1,7 +1,7 @@
 const checkWorkingTree = require("@lerna/check-working-tree")
 const username = require("username")
 const { executeAsync, setupSpinner } = require("./__helpers")
-const { postMessage } = require("../utils/slack")
+const { postMessage, getGiphy } = require("../utils/slack")
 const { fetch, status } = require("../utils/git")
 
 let updated = []
@@ -108,10 +108,11 @@ async function release(debug) {
     spinner.start("Alerting team on Slack")
     const name = await username()
     if (!debug) {
-      await postMessage(
-        `@channel ${name} is releasing ${text}. Please do not push changes to git`
-      )
-      await postMessage("/giphy releasing")
+      const giphy = await getGiphy()
+      await postMessage({
+        text: `@channel ${name} is releasing ${text}. Please do not push changes to git`,
+        attachments: [giphy]
+      })
     }
     spinner.succeed("Team alerted about the impending release")
   } catch (e) {
@@ -156,7 +157,9 @@ async function release(debug) {
   } catch (e) {
     spinner.fail("Something went wrong during releasing", e)
     const name = await username()
-    await postMessage(`@channel @${name}'s release failed. Let them know`)
+    await postMessage({
+      text: `@channel @${name}'s release failed. Let them know`
+    })
     process.exit(1)
   }
 
@@ -167,9 +170,9 @@ async function release(debug) {
     spinner.start("Alerting team on Slack")
     const name = await username()
     if (!debug) {
-      await postMessage(
-        `@channel ${name} has released\n \`\`\`${text}\`\`\`\nYou can find release notes here: https://bitbucket.org/stacc-flow/bento/src/master/CHANGELOG.md`
-      )
+      await postMessage({
+        text: `@channel ${name} has released\n \`\`\`${text}\`\`\`\nYou can find release notes here: https://bitbucket.org/stacc-flow/bento/src/master/CHANGELOG.md`
+      })
     }
     spinner.succeed("Team alerted about the awesome")
   } catch (e) {
