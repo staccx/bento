@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.64.2](https://bitbucket.org/stacc-flow/bento/compare/v8.64.1...v8.64.2) (2019-02-20)
+
+
+### Bug Fixes
+
+* **aprila-theme:** select and move ([55213ab](https://bitbucket.org/stacc-flow/bento/commits/55213ab))
+* **bank-in-a-box:** add variant in profile ([222b714](https://bitbucket.org/stacc-flow/bento/commits/222b714))
+
+
+
+
+
 ## [8.64.1](https://bitbucket.org/stacc-flow/bento/compare/v8.64.0...v8.64.1) (2019-02-20)
 
 
