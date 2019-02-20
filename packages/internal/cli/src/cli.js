@@ -76,6 +76,7 @@ program
 program
   .command("figma")
   .alias("f")
+  .option("-i, --includePageData")
   .description("Connect to figma files and do stuff")
   .action(figma)
 

@@ -195,7 +195,7 @@ const defaultMapFrame = frame => {
 //   return {}
 // }
 
-const figma = async ({ parent: { configPath } }) => {
+const figma = async ({ parent: { configPath }, includePageData }) => {
   // console.log(a, configPath, opts)
   const { figmaKey, mapFrame = defaultMapFrame } = await readConfig(configPath)
 
@@ -259,6 +259,7 @@ const figma = async ({ parent: { configPath } }) => {
           name: page.name,
           key,
           initial: page.prototypeStartNodeID,
+          ...(includePageData && { data: page }),
           states: page.children.reduce((frames, frame, index) => {
             const { id, type } = frame
 
