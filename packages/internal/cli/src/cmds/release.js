@@ -111,6 +111,7 @@ async function release(debug) {
       await postMessage(
         `@channel ${name} is releasing ${text}. Please do not push changes to git`
       )
+      await postMessage("/giphy releasing")
     }
     spinner.succeed("Team alerted about the impending release")
   } catch (e) {
