@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.64.1](https://bitbucket.org/stacc-flow/bento/compare/v8.64.0...v8.64.1) (2019-02-20)
+
+
+### Bug Fixes
+
+* **base:** fix logging of countries ([9a10458](https://bitbucket.org/stacc-flow/bento/commits/9a10458))
+
+
+
+
+
 # [8.64.0](https://bitbucket.org/stacc-flow/bento/compare/v8.63.1...v8.64.0) (2019-02-20)
 
 

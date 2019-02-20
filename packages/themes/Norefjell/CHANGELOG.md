@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.64.1](https://bitbucket.org/stacc-flow/bento/compare/v8.64.0...v8.64.1) (2019-02-20)
+
+**Note:** Version bump only for package @staccx/norefjell-theme
+
+
+
+
+
 # [8.63.0](https://bitbucket.org/stacc-flow/bento/compare/v8.62.3...v8.63.0) (2019-02-20)
 
 **Note:** Version bump only for package @staccx/norefjell-theme
