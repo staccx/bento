@@ -1,12 +1,22 @@
 import { theming, Select } from "@staccx/base"
 import { css } from "styled-components"
 
-export default theming.createVariants(
-  {
-    [theming.VARIANT_DEFAULT]: css`
-      font-family: "Roboto", sans-serif;
-      position: relative;
-    `
-  },
-  Select.themeProps.defaultOptionWrapper
-)
+export default [
+  theming.createVariants(
+    {
+      [theming.VARIANT_DEFAULT]: css`
+        font-family: "Roboto", sans-serif;
+        //position: relative;
+      `
+    },
+    Select.themeProps.defaultOptionWrapper
+  ),
+  theming.createVariants(
+    {
+      [theming.VARIANT_DEFAULT]: css`
+        background-color: ${theming.white};
+      `
+    },
+    Select.themeProps.listItem
+  )
+]

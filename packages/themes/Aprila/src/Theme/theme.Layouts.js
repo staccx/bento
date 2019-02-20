@@ -105,6 +105,12 @@ export const LayoutItemStyling = theming.createVariants(
       animation-delay: ${p => (p.delay ? p.delay : 0)}ms;
       background-color: ${p => p.area === "logo" && theming.color("primary")};
     `,
+    moveForwards: css`
+      z-index: 1;
+    `,
+    moveBackwards: css`
+      z-index: 0;
+    `,
     header: css`
       padding: ${theming.spacing.tiny} 0;
       display: grid;

@@ -17,7 +17,8 @@ export default theming.createVariants(
       background-color: ${theming.color("bgGray")};
       border-radius: ${theming.borderRadius};
     `,
-    menuBox: css``,
+    menuBox: css`
+    `,
     accountBox: css`
       position: relative;
       max-width: 840px;
