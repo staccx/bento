@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.64.0](https://bitbucket.org/stacc-flow/bento/compare/v8.63.1...v8.64.0) (2019-02-20)
+
+
+### Features
+
+* **cli:** add giphy ([4936a44](https://bitbucket.org/stacc-flow/bento/commits/4936a44))
+
+
+
+
+
 ## [8.63.1](https://bitbucket.org/stacc-flow/bento/compare/v8.63.0...v8.63.1) (2019-02-20)
 
 
