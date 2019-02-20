@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.63.0](https://bitbucket.org/stacc-flow/bento/compare/v8.62.3...v8.63.0) (2019-02-20)
+
+
+### Features
+
+* **base:** add country select to phoneinput ([bf0ed43](https://bitbucket.org/stacc-flow/bento/commits/bf0ed43))
+
+
+
+
+
 # [8.62.0](https://bitbucket.org/stacc-flow/bento/compare/v8.61.0...v8.62.0) (2019-02-19)
 
 

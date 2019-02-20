@@ -1,6 +1,6 @@
 {
   "name": "@staccx/stacc-website",
-  "version": "8.62.0",
+  "version": "8.63.0",
   "private": true,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -42,12 +42,12 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/base": "^8.62.0",
+    "@staccx/base": "^8.63.0",
     "@staccx/color": "^8.60.0",
     "@staccx/formatting": "^8.58.0",
     "@staccx/rollup-config": "^8.58.0",
-    "@staccx/sanity": "^8.62.0",
-    "@staccx/stacc-theme": "^8.62.0",
+    "@staccx/sanity": "^8.63.0",
+    "@staccx/stacc-theme": "^8.63.0",
     "cli-progress": "^2.1.0",
     "nodemon": "^1.18.4",
     "prettier": "^1.14.2",
