@@ -169,7 +169,7 @@ class Select extends React.PureComponent {
           highlightedIndex,
           toggleMenu
         }) => (
-          <DefaultOptionElementWrapper onClick={console.log}>
+          <DefaultOptionElementWrapper>
             {options
               .filter(item => (selectedItem ? item : this.filterItem(item)))
               .slice(

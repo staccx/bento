@@ -52,6 +52,7 @@
     "immutable": "^4.0.0-rc.12",
     "isomorphic-fetch": "^2.2.1",
     "js-search": "^1.4.2",
+    "libphonenumber-js": "^1.7.8",
     "lodash.debounce": "^4.0.8",
     "polished": "^2.3.0",
     "prismjs": "^1.15.0",
