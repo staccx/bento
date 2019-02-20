@@ -14,7 +14,6 @@ import countries, { NORWAY } from "../../../../data/countries"
 import Select from "../../Select/Select"
 import Label from "../../Label/Label"
 
-console.log(countries)
 /**
  * Input for Phone-numbers.
  * TODO: normalize country code and locale
