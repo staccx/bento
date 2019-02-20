@@ -25,10 +25,10 @@ const Profile = ({
         </Heading>
       </div>
     </LayoutItem>
-    <LayoutItem variant={"fadeIn"} delay={"300"} area={"misc"}>
+    <LayoutItem variant={["fadeIn", "moveForwards"]} delay={"300"} area={"misc"}>
       {renderPersonalInfo()}
     </LayoutItem>
-    <LayoutItem variant="fadeIn" delay="400" area="menu">
+    <LayoutItem variant={["fadeIn", "moveBackwards"]} delay="400" area="menu">
       {renderMenu()}
     </LayoutItem>
     <LayoutItem variant="fadeIn" delay="600" area="main">
