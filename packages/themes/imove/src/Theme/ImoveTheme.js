@@ -145,9 +145,9 @@ export default new theming.Theme(BaseTheme, {
   borderRadius,
   headerHeight,
   fontFamily,
-  spacing,
-  global: reset
+  spacing
 })
+  .add(reset)
   .add(Button)
   .add(Box)
   .add(HeadingStyling)

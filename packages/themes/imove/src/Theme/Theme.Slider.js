@@ -15,6 +15,7 @@ export const SliderThumb = theming.createVariants(
     [theming.VARIANT_DEFAULT]: css`
       background-color: ${theming.color.white};
       border-color: ${theming.color.white};
+      border-bottom-right-radius: 0;
     `
   },
   Slider.themeProps.thumb

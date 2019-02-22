@@ -1,6 +1,5 @@
 import { css } from "styled-components"
 import { RadioPillItem, RadioPill, theming } from "@staccx/base"
-import { opacity } from "@staccx/color"
 
 export const RadioPillContainer = theming.createVariants(
   {
@@ -62,7 +61,7 @@ export const RadioPillLabel = theming.createVariants(
       font-size: ${theming.font("huge")};
       font-weight: ${theming.fontWeight.bold};
       border-width: 0 !important;
-      color: ${p => opacity(theming.color("primary")(p), 0.5)};
+      color: ${p => theming.color("primary")(p)};
       font-family: ${theming.fontFamily.heading};
       padding: 0 ${theming.spacing.small} ${theming.spacing.medium};
       line-height: 1;

@@ -1,6 +1,5 @@
 import { css } from "styled-components"
 import { CheckBox, theming } from "@staccx/base"
-import { opacity } from "@staccx/color"
 
 export const CheckBoxLabel = theming.createVariants(
   {
