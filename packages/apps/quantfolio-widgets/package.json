@@ -7,6 +7,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@staccx/base": "^8.64.1",
+    "@staccx/quantfolio": "^8.65.0",
     "animejs": "^3.0.1",
     "axios": "^0.18.0",
     "d3": "^5.9.1",
