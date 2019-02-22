@@ -3,11 +3,13 @@ import { getPortfolio } from "./portfolio"
 import { getCategories } from "./categories"
 
 class QuantfolioClient {
-  constructor(backend, apiKey) {
+  constructor(backend, apiKey, autoInit = true) {
     this.backend = backend
     this.apiKey = apiKey
 
-    this.init()
+    if (autoInit) {
+      this.init()
+    }
   }
 
   init = async () => {

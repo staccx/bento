@@ -13,12 +13,12 @@
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "precommit": "lint-staged",
-    "test": "react-scripts test --env=jsdom --coverage",
+    "test": "react-scripts test --env=jsdom --coverage --passWithNoTests",
     "test:nocov": "react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom --watch",
     "build": "yarn prettify && rollup -c",
     "start": "node build.js && rollup -c -w",
-    "prepare": "yarn build && yarn build:packages",
+    "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
@@ -37,5 +37,6 @@
   "devDependencies": {
     "@staccx/rollup-config": "^8.58.0",
     "rollup": "^0.65.0"
-  }
+  },
+  "gitHead": "d3ad09c840856345a172069e15da8082f8253de3"
 }
