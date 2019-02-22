@@ -1,0 +1,43 @@
+{
+  "name": "@staccx/quantfolio",
+  "version": "8.64.1",
+  "description": "Functions related to quantfolio",
+  "author": "StaccX",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "scripts": {
+    "precommit": "lint-staged",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "test:nocov": "react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom --watch",
+    "build": "yarn prettify && rollup -c",
+    "start": "node build.js && rollup -c -w",
+    "prepare": "yarn build && yarn build:packages",
+    "prepublishOnly": "yarn test",
+    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "git add"
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@staccx/rollup-config": "^8.58.0",
+    "rollup": "^0.65.0"
+  }
+}
