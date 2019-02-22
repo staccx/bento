@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.66.0](https://bitbucket.org/stacc-flow/bento/compare/v8.65.0...v8.66.0) (2019-02-22)
+
+
+### Features
+
+* **quantfolio-widgets:** add dep ([4e6023a](https://bitbucket.org/stacc-flow/bento/commits/4e6023a))
+
+
+
+
+
 ## [8.64.1](https://bitbucket.org/stacc-flow/bento/compare/v8.64.0...v8.64.1) (2019-02-20)
 
 **Note:** Version bump only for package @staccx/quantfolio-widgets
