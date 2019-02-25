@@ -39,7 +39,8 @@ const parseData = data => country => {
       indexTS: JSON.parse(data[`${country}-index-ts`]),
       comment: data[`${country}-status-comment`],
       statusTS: JSON.parse(data[`${country}-status-ts`]),
-      backTestTS: JSON.parse(data[`${country}-backtest-ts`])
+      backTestTS: JSON.parse(data[`${country}-backtest-ts`]),
+      tableData: JSON.parse(data[`${country}-table`])
     }
 
     const indices = toArray(d.indexTS)
@@ -83,11 +84,22 @@ const parseData = data => country => {
       }
     })
 
+    const tableData = Object.keys(d.tableData).map(key => {
+      const { ID: id, CStatus, Indicator: indicator } = d.tableData[key]
+      return {
+        id,
+        status: CStatus === "Bullish" ? 1 : -1,
+        indicator,
+        statusText: CStatus
+      }
+    })
+
     console.timeEnd("dating" + country)
     // console.log(indexChartData)
     // console.log(backtestChartData)
     return resolve({
       ...d,
+      tableData,
       indexChartData,
       statusChartData,
       backtestChartData

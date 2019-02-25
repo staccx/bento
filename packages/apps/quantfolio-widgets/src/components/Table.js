@@ -1,11 +1,19 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import { theming, Box, Heading } from "@staccx/base"
+import { theming, Box, Heading, Image } from "@staccx/base"
 
-const Table = ({ data }) => {
+const Table = ({ data = [] }) => {
+  const [id, setId] = useState(null)
+
   return (
     <Box>
       <Heading>Macro Table</Heading>
+      {id && (
+        <Image
+          src={`https://quantfolio-5b43.restdb.io/media/${id}`}
+          alt={"image"}
+        />
+      )}
       <StyledTable>
         <thead>
           <tr>
@@ -29,16 +37,15 @@ const Table = ({ data }) => {
           </tr>
         </tbody>
         <tbody>
-          <tr>
-            <td>a</td>
-            <td>b</td>
-            <td>c</td>
-            <td>d</td>
-            <td>d</td>
-          </tr>
-          <tr>
-            <td colSpan="5">a</td>
-          </tr>
+          {data.map(entry => (
+            <tr onClick={() => setId(entry.id)}>
+              <td>{entry.indicator}</td>
+              <td>{entry.status}</td>
+              <td>c</td>
+              <td>d</td>
+              <td>d</td>
+            </tr>
+          ))}
         </tbody>
       </StyledTable>
     </Box>

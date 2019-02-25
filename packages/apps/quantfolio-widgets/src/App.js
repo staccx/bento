@@ -64,7 +64,7 @@ const App = ({ graphWeight = "1 1 1", country = null }) => {
         <hr />
         <hr />
         <div>
-          <Table />
+          <Table data={otherData.us.tableData} />
         </div>
       </div>
     </ThemeProvider>
