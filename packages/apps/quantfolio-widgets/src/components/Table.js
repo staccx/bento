@@ -1,19 +1,15 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { theming, Box, Heading, Image } from "@staccx/base"
+import TableRow from "./Table.Row"
 
 const Table = ({ data = [] }) => {
-  const [id, setId] = useState(null)
+  const [expandedId, setExpandedId] = useState(null)
 
   return (
     <Box>
       <Heading>Macro Table</Heading>
-      {id && (
-        <Image
-          src={`https://quantfolio-5b43.restdb.io/media/${id}`}
-          alt={"image"}
-        />
-      )}
+
       <StyledTable>
         <thead>
           <tr>
@@ -21,32 +17,26 @@ const Table = ({ data = [] }) => {
             <td>Status</td>
             <td>Updated</td>
             <td>Current</td>
-            <td>Treshhold</td>
+            <td>Threshold</td>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>a</td>
-            <td>b</td>
-            <td>c</td>
-            <td>d</td>
-            <td>d</td>
-          </tr>
-          <tr>
-            <td colSpan="5">a</td>
-          </tr>
-        </tbody>
-        <tbody>
-          {data.map(entry => (
-            <tr onClick={() => setId(entry.id)}>
-              <td>{entry.indicator}</td>
-              <td>{entry.status}</td>
-              <td>c</td>
-              <td>d</td>
-              <td>d</td>
-            </tr>
-          ))}
-        </tbody>
+        {data.map(entry => (
+          <TableRow
+            onClick={() =>
+              expandedId === entry.id
+                ? setExpandedId(null)
+                : setExpandedId(entry.id)
+            }
+            indicator={entry.indicator}
+            status={entry.status}
+            updated={"Missing data"}
+            current={0}
+            threshold={0}
+            id={entry.id}
+            expanded={expandedId === entry.id}
+            key={entry.id}
+          />
+        ))}
       </StyledTable>
     </Box>
   )

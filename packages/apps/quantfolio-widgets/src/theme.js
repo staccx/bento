@@ -1,5 +1,7 @@
 import { theming, hideVisually, Wrapper } from "@staccx/base"
 import { css } from "styled-components"
+import { BullIcon, BearIcon } from "./theme.Icons"
+
 const borderRadius = "2px"
 const headerHeight = "70px"
 
@@ -90,15 +92,18 @@ export default new theming.Theme({
   headerHeight,
   fontFamily,
   hideVisually
-}).add(
-  theming.createVariants(
-    {
-      container: css`
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      `
-    },
-    Wrapper.themeProps.wrapper
+})
+  .add(
+    theming.createVariants(
+      {
+        container: css`
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        `
+      },
+      Wrapper.themeProps.wrapper
+    )
   )
-)
+  .add(BullIcon)
+  .add(BearIcon)
