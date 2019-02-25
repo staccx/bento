@@ -48,6 +48,7 @@ export default theming.createVariants(
       background-color: ${theming.color.primary};
       color: ${theming.color.white};
       border-radius: 0;
+      padding: ${theming.spacing.medium};
 
       h1,
       h2,

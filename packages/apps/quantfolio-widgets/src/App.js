@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Wrapper } from "@staccx/base"
 import { ThemeProvider } from "styled-components"
 import Gauge from "./components/Gauge"
+import Table from "./components/Table"
 import { getResult } from "./data/api"
 import theme from "./theme"
 
@@ -34,30 +35,38 @@ const App = ({ graphWeight = "1 1 1", country = null }) => {
   }, [])
   return (
     <ThemeProvider theme={theme}>
-      <Wrapper size="small" variant={["container"]}>
-        {(country === "no" || !country) && otherData.no && (
-          <Gauge
-            weights={weights}
-            data={otherData.no}
-            header={"Status AI Macro"}
-            country={"Norway"}
-            indexName={"OSE OBX Index"}
-          >
-            {otherData.no.comment}
-          </Gauge>
-        )}
-        {(country === "us" || !country) && otherData.us && (
-          <Gauge
-            weights={weights}
-            data={otherData.us}
-            header={"Status AI Macro"}
-            country={"USA"}
-            indexName={"S&P 500 PM"}
-          >
-            {otherData.us.comment}
-          </Gauge>
-        )}
-      </Wrapper>
+      <div>
+        <Wrapper size="small" variant={["container"]}>
+          {(country === "no" || !country) && otherData.no && (
+            <Gauge
+              weights={weights}
+              data={otherData.no}
+              header={"Status AI Macro"}
+              country={"Norway"}
+              indexName={"OSE OBX Index"}
+            >
+              {otherData.no.comment}
+            </Gauge>
+          )}
+          {(country === "us" || !country) && otherData.us && (
+            <Gauge
+              weights={weights}
+              data={otherData.us}
+              header={"Status AI Macro"}
+              country={"USA"}
+              indexName={"S&P 500 PM"}
+            >
+              {otherData.us.comment}
+            </Gauge>
+          )}
+        </Wrapper>
+        <hr />
+        <hr />
+        <hr />
+        <div>
+          <Table />
+        </div>
+      </div>
     </ThemeProvider>
   )
 }
