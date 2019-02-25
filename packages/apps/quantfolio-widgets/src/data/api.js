@@ -33,7 +33,6 @@ const toArray = (
 
 const parseData = data => country => {
   return new Promise((resolve, reject) => {
-    console.log("parsing")
     const d = {
       status: data[`${country}-status`],
       indexTS: JSON.parse(data[`${country}-index-ts`]),
@@ -71,7 +70,6 @@ const parseData = data => country => {
       }
       return -1
     }
-    console.time("dating" + country)
     const indexChartData = indices.map(point => {
       const find = backtestChartData.find(i => i.rawDate === point.rawDate)
 
@@ -97,7 +95,6 @@ const parseData = data => country => {
       }
     })
 
-    console.timeEnd("dating" + country)
     // console.log(indexChartData)
     // console.log(backtestChartData)
     return resolve({

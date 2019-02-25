@@ -9,7 +9,6 @@ import theme from "./theme"
 const App = ({ graphWeight = "1 1 1", country = null }) => {
   const weights = graphWeight.split(" ").map(v => parseFloat(v, 10))
 
-  console.log(weights)
   const [isLoading, setIsLoading] = useState(false)
   const [otherData, setOtherData] = useState({
     us: {
@@ -22,7 +21,6 @@ const App = ({ graphWeight = "1 1 1", country = null }) => {
 
   const get = async () => {
     setIsLoading(true)
-    console.log("getting")
     const { us, no } = await getResult()
     setOtherData({ us, no })
   }

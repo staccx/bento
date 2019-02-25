@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import ShowMore from "@tedconf/react-show-more"
+import sortBy from "lodash.sortby"
+import reverse from "lodash.reverse"
 import {
   theming,
   Box,
@@ -9,31 +11,55 @@ import {
   Layout,
   RadioPill,
   RadioPillItem,
-  ThemeComponent
+  ThemeComponent,
+  Loading
 } from "@staccx/base"
 import TableRow from "./Table.Row"
 import SortButton from "./Table.SortButton"
+import theme from "../theme"
 
 const filterFunc = filter => item =>
   filter === 0 ? true : item.status === filter
 
 const Table = ({ data = [] }) => {
   const [expandedId, setExpandedId] = useState(null)
+  const [sortRow, setSortRow] = useState("indicator")
+  const [isReverse, setIsReverse] = useState(false)
 
   const [filter, setFilter] = useState(0)
+
   const [dataFiltered, setData] = useState(data)
+
+  const handleSort = row => {
+    if (sortRow === row) {
+      setIsReverse(!isReverse)
+    } else {
+      setSortRow(row)
+      setIsReverse(false)
+    }
+  }
 
   const filterData = () => {
     const func = filterFunc(filter)
     const d = data.filter(item => func(item))
-    setData(d)
+    const sorted = sortBy(d, sortRow)
+
+    setData(isReverse ? reverse(sorted) : sorted)
   }
 
   useEffect(() => {
-    console.log("called")
     filterData()
-  }, [filter, data])
+  }, [filter, data, sortRow, isReverse])
 
+  if (dataFiltered.length === 0) {
+    return (
+      <Loading
+        variant={"finger"}
+        idleTime={0}
+        color={theming.color.primary()({ theme })}
+      />
+    )
+  }
   return (
     <Box>
       <Heading>Macro Table</Heading>
@@ -62,19 +88,49 @@ const Table = ({ data = [] }) => {
               <thead>
                 <HeadRow>
                   <th>
-                    <SortButton label={"Indicator"} active />
+                    <SortButton
+                      label={"Indicator"}
+                      name={"indicator"}
+                      isReverse={isReverse}
+                      sortRow={sortRow}
+                      onClick={handleSort}
+                    />
                   </th>
                   <th>
-                    <SortButton label={"Status"} />
+                    <SortButton
+                      label={"Status"}
+                      name={"status"}
+                      isReverse={isReverse}
+                      sortRow={sortRow}
+                      onClick={handleSort}
+                    />
                   </th>
                   <th>
-                    <SortButton label={"Updated"} />
+                    <SortButton
+                      label={"Updated"}
+                      name={"updated"}
+                      isReverse={isReverse}
+                      sortRow={sortRow}
+                      onClick={handleSort}
+                    />
                   </th>
                   <th>
-                    <SortButton label={"Current"} />
+                    <SortButton
+                      label={"Current"}
+                      name={"current"}
+                      isReverse={isReverse}
+                      sortRow={sortRow}
+                      onClick={handleSort}
+                    />
                   </th>
                   <th>
-                    <SortButton label={"Threshold"} />
+                    <SortButton
+                      label={"Threshold"}
+                      name={"threshold"}
+                      isReverse={isReverse}
+                      sortRow={sortRow}
+                      onClick={handleSort}
+                    />
                   </th>
                   <th />
                 </HeadRow>

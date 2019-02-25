@@ -2,6 +2,7 @@ import { theming, hideVisually, Wrapper } from "@staccx/base"
 import { css } from "styled-components"
 import { BullIcon, BearIcon, CaretIcon, SortOrderIcon } from "./theme.Icons"
 import ButtonVariants from "./theme.Buttons"
+import { LoadingVariants } from "./theme.Loading"
 
 const borderRadius = "2px"
 const headerHeight = "70px"
@@ -114,3 +115,4 @@ export default new theming.Theme({
   .add(CaretIcon)
   .add(SortOrderIcon)
   .add(ButtonVariants)
+  .add(LoadingVariants)
