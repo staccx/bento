@@ -11,17 +11,15 @@ import {
   Layout,
   RadioPill,
   RadioPillItem,
-  ThemeComponent,
-  Loading
+  ThemeComponent
 } from "@staccx/base"
 import TableRow from "./Table.Row"
 import SortButton from "./Table.SortButton"
-import theme from "../theme"
 
 const filterFunc = filter => item =>
   filter === 0 ? true : item.status === filter
 
-const Table = ({ data = [] }) => {
+const Table = ({ data = [], label }) => {
   const [expandedId, setExpandedId] = useState(null)
   const [sortRow, setSortRow] = useState("indicator")
   const [isReverse, setIsReverse] = useState(false)
@@ -51,18 +49,9 @@ const Table = ({ data = [] }) => {
     filterData()
   }, [filter, data, sortRow, isReverse])
 
-  if (dataFiltered.length === 0) {
-    return (
-      <Loading
-        variant={"finger"}
-        idleTime={0}
-        color={theming.color.primary()({ theme })}
-      />
-    )
-  }
   return (
     <Box>
-      <Heading>Macro Table</Heading>
+      <Heading>{label}</Heading>
 
       <RadioPill
         onChange={e => {

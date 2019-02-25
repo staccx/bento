@@ -1,5 +1,6 @@
 import ReactHabitat from "react-habitat"
-import QuantfolioMacros from "./App"
+import Gauges from "./components/Gauges"
+import Tables from "./components/Tables"
 
 class QuantfolioWidgets extends ReactHabitat.Bootstrapper {
   constructor() {
@@ -9,7 +10,8 @@ class QuantfolioWidgets extends ReactHabitat.Bootstrapper {
     const builder = new ReactHabitat.ContainerBuilder()
 
     // Register a component:
-    builder.register(QuantfolioMacros).as("QuantfolioMacros")
+    builder.register(Gauges).as("Gauges")
+    builder.register(Tables).as("Tables")
 
     // Or register a component to load on demand asynchronously:
     // builder.registerAsync(() => System.import('./AnotherReactComponent')).as('AnotherReactComponent');
