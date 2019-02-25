@@ -8,6 +8,7 @@
   "dependencies": {
     "@staccx/base": "^8.64.1",
     "@staccx/quantfolio": "^8.66.0",
+    "@tedconf/react-show-more": "^1.1.2",
     "animejs": "^3.0.1",
     "axios": "^0.18.0",
     "d3": "^5.9.1",

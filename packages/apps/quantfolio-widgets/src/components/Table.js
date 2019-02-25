@@ -1,7 +1,18 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { theming, Box, Heading, Image } from "@staccx/base"
+import ShowMore from "@tedconf/react-show-more"
+import {
+  theming,
+  Box,
+  Heading,
+  Button,
+  Layout,
+  RadioPill,
+  RadioPillItem,
+  ThemeComponent
+} from "@staccx/base"
 import TableRow from "./Table.Row"
+import SortButton from "./Table.SortButton"
 
 const Table = ({ data = [] }) => {
   const [expandedId, setExpandedId] = useState(null)
@@ -10,48 +21,101 @@ const Table = ({ data = [] }) => {
     <Box>
       <Heading>Macro Table</Heading>
 
-      <StyledTable>
-        <thead>
-          <tr>
-            <td>Indicator</td>
-            <td>Status</td>
-            <td>Updated</td>
-            <td>Current</td>
-            <td>Threshold</td>
-          </tr>
-        </thead>
-        {data.map(entry => (
-          <TableRow
-            onClick={() =>
-              expandedId === entry.id
-                ? setExpandedId(null)
-                : setExpandedId(entry.id)
-            }
-            indicator={entry.indicator}
-            status={entry.status}
-            updated={"Missing data"}
-            current={0}
-            threshold={0}
-            id={entry.id}
-            expanded={expandedId === entry.id}
-            key={entry.id}
-          />
-        ))}
-      </StyledTable>
+      <RadioPill
+        onChange={e => {
+          console.log(e.target.value)
+        }}
+        group={"filter"}
+      >
+        <RadioPillItem value={0} defaultChecked id={"all"}>
+          All
+        </RadioPillItem>
+        <RadioPillItem value={1} defaultChecked id={"bull"}>
+          <ThemeComponent tagName={"Bull"} fallback={null} />
+        </RadioPillItem>
+        <RadioPillItem value={2} defaultChecked id={"bear"}>
+          <ThemeComponent tagName={"Bear"} fallback={null} />
+        </RadioPillItem>
+      </RadioPill>
+
+      <ShowMore items={data} by={10}>
+        {({ current, onMore }) => (
+          <Layout>
+            <StyledTable>
+              <thead>
+                <HeadRow>
+                  <th>
+                    <SortButton label={"Indicator"} active />
+                  </th>
+                  <th>
+                    <SortButton label={"Status"} />
+                  </th>
+                  <th>
+                    <SortButton label={"Updated"} />
+                  </th>
+                  <th>
+                    <SortButton label={"Current"} />
+                  </th>
+                  <th>
+                    <SortButton label={"Threshold"} />
+                  </th>
+                  <th />
+                </HeadRow>
+              </thead>
+              {current.map(entry => (
+                <TableRow
+                  onClick={() =>
+                    expandedId === entry.id
+                      ? setExpandedId(null)
+                      : setExpandedId(entry.id)
+                  }
+                  indicator={entry.indicator}
+                  status={entry.status}
+                  updated={"Missing data"}
+                  current={0}
+                  threshold={0}
+                  id={entry.id}
+                  expanded={expandedId === entry.id}
+                  key={entry.id}
+                />
+              ))}
+            </StyledTable>
+
+            <Button
+              disabled={!onMore}
+              onClick={() => {
+                if (onMore) onMore()
+              }}
+            >
+              Show more
+            </Button>
+          </Layout>
+        )}
+      </ShowMore>
     </Box>
   )
 }
 
 const StyledTable = styled.table`
   width: 100%;
+  font-family: ${theming.fontFamily.body};
+  border-spacing: 0;
 
   > thead {
     font-weight: bold;
   }
+`
 
-  > tbody {
-    &:nth-of-type(even) {
-      background-color: ${theming.color.gray};
+const HeadRow = styled.tr`
+  th {
+    padding: ${theming.spacing.small} ${theming.spacing.small};
+
+    &:nth-last-child(-n + 4) {
+      text-align: right;
+    }
+
+    &:first-child {
+      text-align: left;
     }
   }
 `

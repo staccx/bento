@@ -13,8 +13,8 @@ const TableRow = ({
   expanded
 }) => {
   return (
-    <Body>
-      <tr onClick={() => onClick()}>
+    <Body expanded={expanded}>
+      <DataRow onClick={() => onClick()}>
         <td>{indicator}</td>
         <td>
           {status >= 1 ? (
@@ -23,28 +23,84 @@ const TableRow = ({
             <ThemeComponent tagName={"Bear"} fallback={null} />
           )}
         </td>
-        <td>{updated}</td>
+        <td>
+          <NoBreak>{updated}</NoBreak>
+        </td>
         <td>{current}</td>
         <td>{threshold}</td>
-      </tr>
+        <td>
+          <ThemeComponent tagName={"Caret"} fallback={null} />
+        </td>
+      </DataRow>
       {expanded && (
-        <tr>
-          <td colSpan="5">
-            <Image
+        <ExpandedRow>
+          <td colSpan="6">
+            <StyledImage
               src={`https://quantfolio-5b43.restdb.io/media/${id}`}
               alt={"image"}
             />
           </td>
-        </tr>
+        </ExpandedRow>
       )}
     </Body>
   )
 }
 
 const Body = styled.tbody`
+  background-color: ${p =>
+    p.expanded ? theming.color("subtleHover") : theming.color("white")};
+
   &:nth-of-type(even) {
-    background-color: ${theming.color.gray};
+    background-color: ${p =>
+      p.expanded ? theming.color("subtleHover") : theming.color("grayXLight")};
   }
+
+  tr:first-child {
+    cursor: pointer;
+
+    &:hover {
+      background-color: ${p =>
+        p.expanded
+          ? theming.color("subtleHoverDark")
+          : theming.color("subtleHover")};
+    }
+  }
+`
+
+const DataRow = styled.tr`
+  td {
+    padding: ${theming.spacing.small} ${theming.spacing.small};
+
+    &:nth-last-child(-n + 4) {
+      text-align: right;
+    }
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+
+    &:last-child {
+      text-align: center;
+    }
+  }
+`
+
+const ExpandedRow = styled.tr`
+  background-color: ${theming.color("dark")};
+
+  td {
+    padding: ${theming.spacing.medium};
+  }
+`
+
+const NoBreak = styled.span`
+  white-space: nowrap;
+`
+
+const StyledImage = styled(Image)`
+  display: block;
+  margin: 0 auto;
+  max-width: 504px;
 `
 
 export default TableRow

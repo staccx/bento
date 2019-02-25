@@ -1,6 +1,7 @@
 import { theming, hideVisually, Wrapper } from "@staccx/base"
 import { css } from "styled-components"
-import { BullIcon, BearIcon } from "./theme.Icons"
+import { BullIcon, BearIcon, CaretIcon, SortOrderIcon } from "./theme.Icons"
+import ButtonVariants from "./theme.Buttons"
 
 const borderRadius = "2px"
 const headerHeight = "70px"
@@ -36,7 +37,7 @@ const color = {
   secondary: "#CF27AA",
   gray: "#767676",
   grayLight: "#C7C7C7",
-  grayXLight: "#F4F4F4",
+  grayXLight: "#F5F5F5",
   grayDark: "#4F4F4F",
   text: "#2b2b2b",
   white: "#fff",
@@ -45,7 +46,8 @@ const color = {
   disabled: "#BABABA",
   warning: "#E32367",
   black: "#000",
-  subtleHover: "#C7C7C7",
+  subtleHover: "#D2D9D9",
+  subtleHoverDark: "#C3CCCC",
   btnColor: "#fe83ac",
   waveSelected0: "#ff00c8",
   waveSelected1: "#c030ff",
@@ -53,7 +55,9 @@ const color = {
   waveHovered0: "#4cf7ff",
   waveHovered1: "#3bbdf8",
   waveHovered2: "#2f92f3",
-  waveDefault: "#2f80ed"
+  waveDefault: "#2f80ed",
+  dark: "#1B252A",
+  greenDark: "#04744A"
 }
 
 const font = {
@@ -107,3 +111,6 @@ export default new theming.Theme({
   )
   .add(BullIcon)
   .add(BearIcon)
+  .add(CaretIcon)
+  .add(SortOrderIcon)
+  .add(ButtonVariants)

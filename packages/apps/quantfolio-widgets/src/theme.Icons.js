@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 import { theming } from "@staccx/base"
 
 const Bull = () => (
@@ -39,4 +40,48 @@ const Bear = () => (
 export const BearIcon = theming.createVariants(
   { [theming.VARIANT_DEFAULT]: Bear },
   "Bear"
+)
+
+const Caret = () => (
+  <svg
+    width="12"
+    height="6"
+    viewBox="0 0 12 6"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.375 0.219007L6.00005 3.71901L1.62505 0.219007C1.52249 0.13693 1.40476 0.0758591 1.2786 0.0392795C1.15243 0.00269992 1.0203 -0.0086716 0.88974 0.00581434C0.759181 0.0203003 0.632754 0.0603598 0.517676 0.123706C0.402599 0.187052 0.301125 0.272444 0.219049 0.375006C0.136973 0.477569 0.0759014 0.595293 0.0393218 0.721457C0.00274224 0.847622 -0.0086292 0.979756 0.00585674 1.11032C0.0203427 1.24087 0.0604023 1.3673 0.123748 1.48238C0.187095 1.59746 0.272487 1.69893 0.375049 1.78101L5.37505 5.78101C5.55241 5.92301 5.77284 6.00038 6.00005 6.00038C6.22725 6.00038 6.44769 5.92301 6.62505 5.78101L11.625 1.78101C11.8322 1.61525 11.965 1.37399 11.9942 1.11032C12.0235 0.846639 11.9468 0.582141 11.781 0.375006C11.699 0.272444 11.5975 0.187052 11.4824 0.123706C11.3673 0.0603598 11.2409 0.0203003 11.1104 0.00581434C10.8467 -0.0234413 10.5822 0.0532463 10.375 0.219007Z"
+      fill="#04744A"
+    />
+  </svg>
+)
+
+export const CaretIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: Caret },
+  "Caret"
+)
+
+const SortOrder = ({ direction, active }) => (
+  <SortSVG
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    direction={direction}
+    active={active}
+  >
+    <path d="M7 10L12 15L17 10H7Z" />
+  </SortSVG>
+)
+
+const SortSVG = styled.svg`
+  transform: rotate(${p => (p.direction === "DESC" ? "0deg" : "180deg")});
+  fill: ${p => (p.active ? theming.color.text : theming.color("grayLight"))};
+  vertical-align: text-bottom;
+`
+
+export const SortOrderIcon = theming.createVariants(
+  { [theming.VARIANT_DEFAULT]: SortOrder },
+  "SortOrder"
 )
