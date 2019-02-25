@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import ShowMore from "@tedconf/react-show-more"
 import {
@@ -14,8 +14,25 @@ import {
 import TableRow from "./Table.Row"
 import SortButton from "./Table.SortButton"
 
+const filterFunc = filter => item =>
+  filter === 0 ? true : item.status === filter
+
 const Table = ({ data = [] }) => {
   const [expandedId, setExpandedId] = useState(null)
+
+  const [filter, setFilter] = useState(0)
+  const [dataFiltered, setData] = useState(data)
+
+  const filterData = () => {
+    const func = filterFunc(filter)
+    const d = data.filter(item => func(item))
+    setData(d)
+  }
+
+  useEffect(() => {
+    console.log("called")
+    filterData()
+  }, [filter, data])
 
   return (
     <Box>
@@ -23,22 +40,22 @@ const Table = ({ data = [] }) => {
 
       <RadioPill
         onChange={e => {
-          console.log(e.target.value)
+          setFilter(parseInt(e.target.value, 10))
         }}
         group={"filter"}
       >
         <RadioPillItem value={0} defaultChecked id={"all"}>
           All
         </RadioPillItem>
-        <RadioPillItem value={1} defaultChecked id={"bull"}>
+        <RadioPillItem value={1} id={"bull"}>
           <ThemeComponent tagName={"Bull"} fallback={null} />
         </RadioPillItem>
-        <RadioPillItem value={2} defaultChecked id={"bear"}>
+        <RadioPillItem value={-1} id={"bear"}>
           <ThemeComponent tagName={"Bear"} fallback={null} />
         </RadioPillItem>
       </RadioPill>
 
-      <ShowMore items={data} by={10}>
+      <ShowMore items={dataFiltered} by={10}>
         {({ current, onMore }) => (
           <Layout>
             <StyledTable>
@@ -71,9 +88,9 @@ const Table = ({ data = [] }) => {
                   }
                   indicator={entry.indicator}
                   status={entry.status}
-                  updated={"Missing data"}
-                  current={0}
-                  threshold={0}
+                  updated={entry.date.toLocaleDateString()}
+                  current={entry.current}
+                  threshold={entry.threshold}
                   id={entry.id}
                   expanded={expandedId === entry.id}
                   key={entry.id}
@@ -81,20 +98,26 @@ const Table = ({ data = [] }) => {
               ))}
             </StyledTable>
 
-            <Button
+            <StyledButton
               disabled={!onMore}
               onClick={() => {
                 if (onMore) onMore()
               }}
             >
               Show more
-            </Button>
+            </StyledButton>
           </Layout>
         )}
       </ShowMore>
     </Box>
   )
 }
+
+const StyledButton = styled(Button)`
+  &:disabled {
+    background-color: ${theming.color.disabled};
+  }
+`
 
 const StyledTable = styled.table`
   width: 100%;

@@ -85,12 +85,15 @@ const parseData = data => country => {
     })
 
     const tableData = Object.keys(d.tableData).map(key => {
-      const { ID: id, CStatus, Indicator: indicator } = d.tableData[key]
+      const { ID: id, CStatus, Indicator: indicator, CDate, Current: current, Threshold: threshold } = d.tableData[key]
       return {
         id,
         status: CStatus === "Bullish" ? 1 : -1,
         indicator,
-        statusText: CStatus
+        statusText: CStatus,
+        date: new Date(CDate),
+        current,
+        threshold
       }
     })
 
