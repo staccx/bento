@@ -11,7 +11,10 @@ const eslint = require("./cmds/eslint")
 const figma = require("./cmds/figma") // TODO: Refactor so that only one figma function is imported and handles all options
 const i18n = require("./cmds/i18n")
 const create = require("./cmds/create")
+const s3 = require("./cmds/s3")
 const { version } = require("../package.json")
+
+// TODO: Each command should return a function called command with takes the program and adds its command?
 
 program
   .version(version)
@@ -91,6 +94,18 @@ program
   .description("Create stuff")
   .action((type, name) => {
     create({ type, name })
+  })
+
+program
+  .command("s3 <action>")
+  .option("-f, --file <file>")
+  .option("--directory <directory>")
+  .option("-n, --name <name>")
+  .option("-b, --bucket <bucket>")
+  .option("--ignorePattern <ignorePattern>")
+  .description("Interact with Amazon S3")
+  .action(({ action }, cmd) => {
+    s3(cmd)
   })
 
 program.parse(process.argv)
