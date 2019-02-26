@@ -40,10 +40,18 @@ const Tables = ({ country = null }) => {
           />
         )}
         {(country === "no" || !country) && data.no && data.no.tableData && (
-          <Table data={data.no.tableData} label={getCountryLabel("no")} />
+          <Table
+            data={data.no.tableData}
+            label={getCountryLabel("no")}
+            country={"no"}
+          />
         )}
         {(country === "us" || !country) && data.us && data.us.tableData && (
-          <Table data={data.us.tableData} label={getCountryLabel("us")} />
+          <Table
+            data={data.us.tableData}
+            label={getCountryLabel("us")}
+            country={"us"}
+          />
         )}
       </div>
     </ThemeProvider>

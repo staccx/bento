@@ -42,7 +42,7 @@ const Gauges = ({ graphWeight = "1 1 1", country = null }) => {
             color={theming.color.primary()({ theme })}
           />
         )}
-        <Wrapper size="small" variant={["container"]}>
+        <Wrapper size="full" variant={["container"]}>
           {(country === "no" || !country) && otherData.no && (
             <Gauge
               weights={weights}
