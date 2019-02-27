@@ -3,157 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [8.64.1](https://bitbucket.org/stacc-flow/bento/compare/v8.64.0...v8.64.1) (2019-02-20)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
+<a name="8.67.0"></a>
+# [8.67.0](https://bitbucket.org/stacc-flow/bento/compare/v8.66.0...v8.67.0) (2019-02-27)
 
 
+### Bug Fixes
 
-
-# [8.63.0](https://bitbucket.org/stacc-flow/bento/compare/v8.62.3...v8.63.0) (2019-02-20)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.62.0](https://bitbucket.org/stacc-flow/bento/compare/v8.61.0...v8.62.0) (2019-02-19)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-## [8.60.3](https://bitbucket.org/stacc-flow/bento/compare/v8.60.2...v8.60.3) (2019-02-11)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-## [8.60.2](https://bitbucket.org/stacc-flow/bento/compare/v8.60.1...v8.60.2) (2019-02-11)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.60.0](https://bitbucket.org/stacc-flow/bento/compare/v8.59.0...v8.60.0) (2019-02-11)
+* **imove-theme:** fixes playing nice with base 8 ([499822a](https://bitbucket.org/stacc-flow/bento/commits/499822a))
 
 
 ### Features
 
-* **bento:** updated react to 16.8 ([89e8a70](https://bitbucket.org/stacc-flow/bento/commits/89e8a70))
-
-
-
-
-
-# [8.59.0](https://bitbucket.org/stacc-flow/bento/compare/v8.58.1...v8.59.0) (2019-02-05)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.58.0](https://bitbucket.org/stacc-flow/bento/compare/v8.57.0...v8.58.0) (2019-02-05)
-
-
-### Features
-
-* **bento:** consolidation ([c524bc9](https://bitbucket.org/stacc-flow/bento/commits/c524bc9))
-
-
-
-
-
-# [8.57.0](https://bitbucket.org/stacc-flow/bento/compare/v8.56.2...v8.57.0) (2019-02-04)
-
-
-### Features
-
-* **bento:** fix test regime + consolidatet eslint packages ([0cc561a](https://bitbucket.org/stacc-flow/bento/commits/0cc561a))
-
-
-
-
-
-## [8.56.2](https://bitbucket.org/stacc-flow/bento/compare/v8.56.1...v8.56.2) (2019-02-04)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.55.0](https://bitbucket.org/stacc-flow/bento/compare/v8.54.0...v8.55.0) (2019-02-02)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.54.0](https://bitbucket.org/stacc-flow/bento/compare/v8.53.0...v8.54.0) (2019-01-31)
-
-
-### Features
-
-* **aprila-theme:** changes ([6b2074c](https://bitbucket.org/stacc-flow/bento/commits/6b2074c))
-
-
-
-
-
-# [8.53.0](https://bitbucket.org/stacc-flow/bento/compare/v8.52.0...v8.53.0) (2019-01-30)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.51.0](https://bitbucket.org/stacc-flow/bento/compare/v8.50.2...v8.51.0) (2019-01-22)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.50.0](https://bitbucket.org/stacc-flow/bento/compare/v8.49.0...v8.50.0) (2019-01-17)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.48.0](https://bitbucket.org/stacc-flow/bento/compare/v8.47.0...v8.48.0) (2019-01-14)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-## [8.46.1](https://bitbucket.org/stacc-flow/bento/compare/v8.46.0...v8.46.1) (2019-01-08)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.46.0](https://bitbucket.org/stacc-flow/bento/compare/v8.45.0...v8.46.0) (2019-01-07)
-
-**Note:** Version bump only for package @staccx/imove-theme
+* **imove-theme:** add new variant ([f52b790](https://bitbucket.org/stacc-flow/bento/commits/f52b790))
+* **quantfolio-widgets:** add table ([cc27d10](https://bitbucket.org/stacc-flow/bento/commits/cc27d10))
 
 
 
