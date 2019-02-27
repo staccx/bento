@@ -7,9 +7,9 @@ export default theming.createVariants(
     menu: css`
       position: relative;
       z-index: 10;
-      padding-top: ${theming.spacing.small};
-      padding-bottom: ${theming.spacing.small};
+      padding: ${theming.spacing.small} ${theming.spacing.medium};
       width: 100%;
+
       @media screen and (max-width: 768px) {
         background: ${theming.color.white};
         position: fixed;

@@ -82,13 +82,18 @@ export default theming.createVariants(
       }
     `,
     filter: css`
+      min-height: 34px;
+      line-height: 22px;
+      border-top-left-radius: 17px;
+      border-bottom-left-radius: 17px;
+      border-bottom-right-radius: 17px;
+      border-top-right-radius: 0;
       background-color: ${p =>
         p.isOpen
           ? theming.color("primaryDark")(p)
           : theming.color("primary")(p)};
       color: ${theming.color.white};
-      border-radius: 0;
-      width: 100%;
+      width: auto;
     `,
     inverted: css`
       background-color: ${theming.color.white};
