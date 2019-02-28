@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.68.0](https://bitbucket.org/stacc-flow/bento/compare/v8.67.0...v8.68.0) (2019-02-28)
+
+
+### Features
+
+* **base:** add themeprop to CheckBox for easier future styling ([9fcb6b5](https://bitbucket.org/stacc-flow/bento/commits/9fcb6b5))
+
+
+
+
+
 ## [8.64.1](https://bitbucket.org/stacc-flow/bento/compare/v8.64.0...v8.64.1) (2019-02-20)
 
 

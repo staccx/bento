@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.68.0](https://bitbucket.org/stacc-flow/bento/compare/v8.67.0...v8.68.0) (2019-02-28)
+
+
+### Bug Fixes
+
+* **biab:** fix email&sms + default values ([7eab626](https://bitbucket.org/stacc-flow/bento/commits/7eab626))
+
+
+### Features
+
+* **base:** add themeprop to CheckBox for easier future styling ([9fcb6b5](https://bitbucket.org/stacc-flow/bento/commits/9fcb6b5))
+* **imove-theme:** adjust styles ([a332d34](https://bitbucket.org/stacc-flow/bento/commits/a332d34))
+
+
+
+
+
 <a name="8.67.0"></a>
 # [8.67.0](https://bitbucket.org/stacc-flow/bento/compare/v8.66.0...v8.67.0) (2019-02-27)
 
