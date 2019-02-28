@@ -14,8 +14,11 @@ import { TranslatedText } from "@staccx/i18n"
 const Profile = ({
   renderMenu = () => null,
   renderPersonalInfo = () => null,
-  onElectronicConsentChange,
-  onMarketingConsentChange
+  onSave,
+  onEmailChange,
+  onSmsChange,
+  email,
+  sms
 }) => (
   <Layout variant="profile">
     <LayoutItem variant="fadeIn" delay="200" area="header">
@@ -43,15 +46,14 @@ const Profile = ({
             <Toggle
               group="testddd"
               id="samtykke-elektronisk-komm"
-              onChange={onElectronicConsentChange}
-              defaultChecked
+              onChange={onEmailChange}
+              defaultChecked={email}
             />
           }
         >
           <ModifiedLabel htmlFor="samtykke-elektronisk-komm">
-            <TranslatedText i18nKey={"elektronisk-samtykke"}>
-              Jeg samtykker til mottak av elektronisk kommunikasjon og at
-              dokumentene kan sendes til meg elektronisk
+            <TranslatedText i18nKey={"samtykke-epost"}>
+              Ja, jeg ønsker å motta tilpasset markedsføring på e-post
             </TranslatedText>
           </ModifiedLabel>
         </Flag>
@@ -60,22 +62,23 @@ const Profile = ({
           small
           img={
             <Toggle
-              defaultChecked
+              defaultChecked={sms}
               group="news"
               id="tilbud-nyheter"
-              onChange={onMarketingConsentChange}
+              onChange={onSmsChange}
             />
           }
         >
           <ModifiedLabel htmlFor="tilbud-nyheter">
-            <TranslatedText i18nKey={"markedsforing-samtykke"}>
-              Jeg samtykker til mottak av tilbud og nyheter om andre produkter
-              fra Aprila-banken
+            <TranslatedText i18nKey={"samtykke-sms"}>
+              Ja, jeg ønsker å motta tilpasset markedsføring på SMS
             </TranslatedText>
           </ModifiedLabel>
         </Flag>
         <LayoutItem variant="fadeIn" delay="900">
-          <Button>Lagre</Button>
+          <Button onClick={onSave}>
+            <TranslatedText i18nKey={"lagre"}>Lagre</TranslatedText>
+          </Button>
         </LayoutItem>
       </Layout>
     </LayoutItem>

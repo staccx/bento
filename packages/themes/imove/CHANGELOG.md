@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.68.0](https://bitbucket.org/stacc-flow/bento/compare/v8.67.0...v8.68.0) (2019-02-28)
+
+
+### Features
+
+* **imove-theme:** adjust styles ([a332d34](https://bitbucket.org/stacc-flow/bento/commits/a332d34))
+
+
+
+
+
 <a name="8.67.0"></a>
 # [8.67.0](https://bitbucket.org/stacc-flow/bento/compare/v8.66.0...v8.67.0) (2019-02-27)
 
