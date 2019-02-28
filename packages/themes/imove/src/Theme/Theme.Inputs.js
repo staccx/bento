@@ -23,6 +23,16 @@ export const InputStyling = theming.createVariants(
         border-bottom-width: 2px;
         border-color: ${theming.color("darkBlue")};
       }
+    `,
+    conventional: css`
+      display: block;
+      border-top-width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
+      border-bottom-width: 1px;
+      border-color: ${theming.color.primary};
+      border-radius: 0;
+      padding-left: 0;
     `
   },
   Input.themeProps.input
@@ -36,6 +46,9 @@ export const LabelInputStyling = theming.createVariants(
       bottom: 0;
       padding-bottom: 13px;
       color: ${theming.color.primary};
+    `,
+    conventional: css`
+      color: ${theming.color.secondary};
     `
   },
   Input.themeProps.label

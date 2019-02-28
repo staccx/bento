@@ -128,6 +128,10 @@ const InputCheck = styled.input`
     ${applyVariants(CheckBox.themeProps.labelChecked)};
   }
 
+  &:checked ~ label::before {
+    ${applyVariants(CheckBox.themeProps.labelBeforeChecked)};
+  }
+
   &:focus ~ label {
     &::before {
       border-color: ${color.primary};

@@ -19,7 +19,7 @@ import SortButton from "./Table.SortButton"
 const filterFunc = filter => item =>
   filter === 0 ? true : item.status === filter
 
-const Table = ({ data = [], label }) => {
+const Table = ({ data = [], label, country }) => {
   const [expandedId, setExpandedId] = useState(null)
   const [sortRow, setSortRow] = useState("indicator")
   const [isReverse, setIsReverse] = useState(false)
@@ -57,16 +57,16 @@ const Table = ({ data = [], label }) => {
         onChange={e => {
           setFilter(parseInt(e.target.value, 10))
         }}
-        group={"filter"}
+        group={`filter-${country}`}
       >
-        <RadioPillItem value={0} defaultChecked id={"all"}>
+        <RadioPillItem value={0} defaultChecked id={`all-${country}`}>
           All
         </RadioPillItem>
-        <RadioPillItem value={1} id={"bull"}>
-          <ThemeComponent tagName={"Bull"} fallback={null} />
+        <RadioPillItem value={1} id={`bull-${country}`}>
+          <StyledSVG tagName={"Bull"} fallback={null} />
         </RadioPillItem>
-        <RadioPillItem value={-1} id={"bear"}>
-          <ThemeComponent tagName={"Bear"} fallback={null} />
+        <RadioPillItem value={-1} id={`bear-${country}`}>
+          <StyledSVG tagName={"Bear"} fallback={null} />
         </RadioPillItem>
       </RadioPill>
 
@@ -159,6 +159,10 @@ const Table = ({ data = [], label }) => {
 }
 
 const StyledButton = styled(Button)`
+  background-color: ${theming.color.white};
+  border: 1px solid ${theming.color.primary};
+  color: ${theming.color.primary};
+
   &:disabled {
     background-color: ${theming.color.disabled};
   }
@@ -176,6 +180,7 @@ const StyledTable = styled.table`
 
 const HeadRow = styled.tr`
   th {
+    background-color: ${theming.color.white};
     padding: ${theming.spacing.small} ${theming.spacing.small};
 
     &:nth-last-child(-n + 4) {
@@ -186,6 +191,10 @@ const HeadRow = styled.tr`
       text-align: left;
     }
   }
+`
+
+const StyledSVG = styled(ThemeComponent)`
+  vertical-align: middle;
 `
 
 export default Table

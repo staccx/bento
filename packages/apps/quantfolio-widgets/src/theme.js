@@ -103,7 +103,7 @@ export default new theming.Theme({
       {
         container: css`
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
           flex-wrap: wrap;
         `
       },

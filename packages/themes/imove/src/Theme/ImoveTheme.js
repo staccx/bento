@@ -74,7 +74,7 @@ const spacing = {
 const color = {
   bg: "#fff",
   bgGray: "#F6F6F6",
-  primary: "#4FAF73",
+  primary: "#1C966B",
   primaryLight: "#83ECAA",
   primaryDark: "#1C966B",
   secondary: "#124F5E",

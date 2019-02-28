@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { Heading, theming } from "@staccx/base"
+import { Heading, theming, hideVisually } from "@staccx/base"
 
 export default theming.createVariants(
   {
@@ -28,6 +28,9 @@ export default theming.createVariants(
       font-size: ${theming.font.base};
       color: ${theming.color("wcag")};
       text-align: center;
+    `,
+    hideVisually: css`
+      ${hideVisually};
     `
   },
   Heading.themeProps.heading

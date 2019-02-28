@@ -7,9 +7,9 @@ export default theming.createVariants(
     menu: css`
       position: relative;
       z-index: 10;
-      padding-top: ${theming.spacing.small};
-      padding-bottom: ${theming.spacing.small};
+      padding: ${theming.spacing.small} ${theming.spacing.medium};
       width: 100%;
+
       @media screen and (max-width: 768px) {
         background: ${theming.color.white};
         position: fixed;
@@ -70,6 +70,14 @@ export default theming.createVariants(
         background-color: ${theming.color("bgGray")};
         color: ${theming.color.text};
       }
+    `,
+    splash: css`
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-image: url("https://source.unsplash.com/375x812/?road,car");
+      background-size: cover;
     `
   },
   Box.themeProps.box
