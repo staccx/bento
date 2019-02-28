@@ -28,6 +28,13 @@ export const CheckBoxLabel = theming.createVariants(
 
 export const CheckBoxCheckContainer = theming.createVariants(
   {
+    [theming.VARIANT_DEFAULT]: css`
+      width: 28px;
+      height: 28px;
+      border-width: 2px;
+      border-color: ${theming.color.primary}4d;
+      border-radius: 50% 50% 0;
+    `,
     iconBox: css`
       top: -9px;
       right: -9px;
@@ -41,6 +48,12 @@ export const CheckBoxCheckContainer = theming.createVariants(
 
 export const CheckBoxCheck = theming.createVariants(
   {
+    [theming.VARIANT_DEFAULT]: css`
+      fill: ${theming.color.white};
+      width: 10px;
+      left: 9px;
+      top: 17px;
+    `,
     iconBox: css`
       top: -7px;
       right: -7px;
@@ -48,4 +61,15 @@ export const CheckBoxCheck = theming.createVariants(
     `
   },
   CheckBox.themeProps.icon
+)
+
+export const CheckBoxChecked = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      &:checked ~ label::before {
+        background-color: ${theming.color.primary};
+      }
+    `
+  },
+  CheckBox.themeProps.input
 )

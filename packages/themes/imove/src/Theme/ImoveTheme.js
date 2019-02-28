@@ -28,11 +28,19 @@ import { ListStyling } from "./Theme.Lists"
 import {
   CheckBoxLabel,
   CheckBoxCheckContainer,
-  CheckBoxCheck
+  CheckBoxCheck,
+  CheckBoxChecked
 } from "./Theme.CheckBox"
+import { CheckmarkIcon } from "./Icons/Checkmark"
 import { ToggleElementStyling } from "./Theme.Toggle"
 import { HelpIcon } from "./Icons/HelpIcon"
 import { ModalContentStyling } from "./Theme.Modal"
+import {
+  RadioButtonHole,
+  RadioButtonDot,
+  RadioButtonInput,
+  RadioButtonWrapper
+} from "./Theme.RadioButton"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -173,6 +181,12 @@ export default new theming.Theme(BaseTheme, {
   .add(CheckBoxLabel)
   .add(CheckBoxCheckContainer)
   .add(CheckBoxCheck)
+  .add(CheckBoxChecked)
   .add(ToggleElementStyling)
   .add(RadioPillWrapper)
   .add(ModalContentStyling)
+  .add(CheckmarkIcon)
+  .add(RadioButtonHole)
+  .add(RadioButtonDot)
+  .add(RadioButtonInput)
+  .add(RadioButtonWrapper)
