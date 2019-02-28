@@ -3,6 +3,9 @@ import { CheckBox, theming } from "@staccx/base"
 
 export const CheckBoxLabel = theming.createVariants(
   {
+    [theming.VARIANT_DEFAULT]: css`
+      padding-left: 51px;
+    `,
     iconBox: css`
       position: relative;
       display: flex;
@@ -31,6 +34,7 @@ export const CheckBoxCheckContainer = theming.createVariants(
     [theming.VARIANT_DEFAULT]: css`
       width: 28px;
       height: 28px;
+      top: 8px;
       border-width: 2px;
       border-color: ${theming.color.primary}4d;
       border-radius: 50% 50% 0;
@@ -52,7 +56,7 @@ export const CheckBoxCheck = theming.createVariants(
       fill: ${theming.color.white};
       width: 10px;
       left: 9px;
-      top: 17px;
+      top: 14px;
     `,
     iconBox: css`
       top: -7px;
