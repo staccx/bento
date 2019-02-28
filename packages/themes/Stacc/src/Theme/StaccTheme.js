@@ -69,7 +69,8 @@ const color = {
   pink: "#FCEEED",
   placeholder: "#b8b8b8",
   inputLine: "#dcdcdc",
-  link: "#467EFF"
+  link: "#467EFF",
+  espen: "313131"
 }
 
 const font = {
