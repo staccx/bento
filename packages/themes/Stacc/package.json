@@ -1,6 +1,6 @@
 {
   "name": "@staccx/stacc-theme",
-  "version": "8.68.0",
+  "version": "8.68.1",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
