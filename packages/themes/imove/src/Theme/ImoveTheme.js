@@ -99,7 +99,7 @@ const color = {
 
 const font = {
   h1: "36px",
-  h2: "32px",
+  h2: "24px",
   h3: "22px",
   h4: "18px",
   h5: "16px",

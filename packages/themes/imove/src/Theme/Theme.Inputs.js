@@ -33,6 +33,14 @@ export const InputStyling = theming.createVariants(
       border-color: ${theming.color.primary};
       border-radius: 0;
       padding-left: 0;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent;
+        border-bottom-width: 2px;
+        border-color: ${theming.color("darkBlue")};
+      }
     `
   },
   Input.themeProps.input

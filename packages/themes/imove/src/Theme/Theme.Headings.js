@@ -5,6 +5,14 @@ export default theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       color: ${theming.color("secondary")};
+
+      ${p =>
+        p.level === 1 &&
+        css`
+          @media (max-width: 735px) {
+            font-size: ${theming.font.h2};
+          }
+        `};
     `,
     secondary: css`
       color: ${theming.color("primary")};
