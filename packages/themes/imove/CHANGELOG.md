@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.69.0](https://bitbucket.org/stacc-flow/bento/compare/v8.68.1...v8.69.0) (2019-03-01)
+
+
+### Features
+
+* **imove-theme:** add inbfobutton ([812f9b1](https://bitbucket.org/stacc-flow/bento/commits/812f9b1))
+
+
+
+
+
 # [8.68.0](https://bitbucket.org/stacc-flow/bento/compare/v8.67.0...v8.68.0) (2019-02-28)
 
 

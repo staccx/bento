@@ -145,6 +145,7 @@ import QuestionMark from "./components/Icons/QuestionMark"
  * Hooks!
  */
 import useSearch from "./hooks/useSearch"
+import useTimer from "./hooks/useTimer"
 
 // Search
 import Search from "./hoc/Search/Search"
@@ -253,6 +254,7 @@ export {
   ThemeComponent,
   Toggle,
   useSearch,
+  useTimer,
   Wait,
   Warning,
   WebFonts,
