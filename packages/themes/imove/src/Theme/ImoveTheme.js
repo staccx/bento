@@ -28,11 +28,19 @@ import { ListStyling } from "./Theme.Lists"
 import {
   CheckBoxLabel,
   CheckBoxCheckContainer,
-  CheckBoxCheck
+  CheckBoxCheck,
+  CheckBoxChecked
 } from "./Theme.CheckBox"
+import { CheckmarkIcon } from "./Icons/Checkmark"
 import { ToggleElementStyling } from "./Theme.Toggle"
 import { HelpIcon } from "./Icons/HelpIcon"
 import { ModalContentStyling } from "./Theme.Modal"
+import {
+  RadioButtonHole,
+  RadioButtonDot,
+  RadioButtonInput,
+  RadioButtonWrapper
+} from "./Theme.RadioButton"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -87,7 +95,7 @@ const color = {
   green: "#00a190",
   blue: "#188EFB",
   yellow: "#f4da87",
-  line: "#EBEBF2",
+  line: "#B8CACF",
   wcag: "#777",
   disabled: "#BABABA",
   warning: "#c54059",
@@ -99,7 +107,7 @@ const color = {
 
 const font = {
   h1: "36px",
-  h2: "32px",
+  h2: "24px",
   h3: "22px",
   h4: "18px",
   h5: "16px",
@@ -173,6 +181,12 @@ export default new theming.Theme(BaseTheme, {
   .add(CheckBoxLabel)
   .add(CheckBoxCheckContainer)
   .add(CheckBoxCheck)
+  .add(CheckBoxChecked)
   .add(ToggleElementStyling)
   .add(RadioPillWrapper)
   .add(ModalContentStyling)
+  .add(CheckmarkIcon)
+  .add(RadioButtonHole)
+  .add(RadioButtonDot)
+  .add(RadioButtonInput)
+  .add(RadioButtonWrapper)

@@ -11,6 +11,13 @@ export const ListStyling = theming.createVariants(
         border-bottom: 1px solid ${theming.color.secondary};
       }
     `,
+    lineItems: css`
+      color: ${theming.color.secondary};
+
+      > li:not(:last-child) {
+        border-bottom: 1px solid ${theming.color.secondary};
+      }
+    `,
     bullets: css`
       > li {
         &::before {

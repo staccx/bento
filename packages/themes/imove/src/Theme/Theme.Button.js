@@ -6,7 +6,7 @@ export default theming.createVariants(
     [theming.VARIANT_DEFAULT]: css`
       background-color: ${theming.color.primary};
       color: ${theming.color.white};
-      border-radius: 0;
+      border-radius: 50px;
       transition: background 0.2s ease;
 
       &:hover,
@@ -19,7 +19,7 @@ export default theming.createVariants(
     secondary: css`
       background-color: ${theming.color.white};
       color: ${theming.color.primary};
-      border-radius: 0;
+      border-radius: 50px;
       border: 2px solid ${theming.color.primary};
       padding-top: 4px;
       padding-bottom: 4px;
