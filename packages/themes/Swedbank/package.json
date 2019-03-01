@@ -1,6 +1,6 @@
 {
   "name": "@staccx/swedbank-theme",
-  "version": "8.69.1",
+  "version": "8.70.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -25,7 +25,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/base": "^8.69.1",
+    "@staccx/base": "^8.70.0",
     "polished": "^2.3.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
