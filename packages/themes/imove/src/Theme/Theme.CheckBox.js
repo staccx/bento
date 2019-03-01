@@ -7,6 +7,16 @@ export const CheckBoxChecked = theming.createVariants(
       &:checked ~ label::before {
         background-color: ${theming.color.primary};
       }
+    `,
+    light: css`
+      :focus ~ label::before,
+      ~ label:hover::before {
+        border-color: ${theming.color.white};
+        background-color: #0000004d;
+      }
+      ~ label {
+        color: ${theming.color.white};
+      }
     `
   },
   CheckBox.themeProps.input
@@ -54,6 +64,10 @@ export const CheckBoxCheckContainer = theming.createVariants(
       border-width: 2px;
       border-color: ${theming.color.primary}4d;
       border-radius: 50% 50% 0;
+    `,
+    light: css`
+      border-color: ${theming.color.white};
+      background-color: transparent;
     `,
     infoButton: css`
       border: none;
