@@ -4,19 +4,7 @@ import { formatCurrency } from "@staccx/formatting"
 import { TranslatedText } from "@staccx/i18n"
 
 const Account = ({ account }) => {
-  const { availableBalance, accruedInterest } = account
-  const split = availableBalance ? availableBalance.toString().split(".") : []
-  const primary = split.length ? split[0] : ""
-  const secondary = split.length > 1 ? split[1] : "00"
-
-  const accruedInterestSplit = accruedInterest
-    ? accruedInterest.toString().split(".")
-    : []
-  const accruedInterestPrimary = accruedInterestSplit.length
-    ? accruedInterestSplit[0]
-    : ""
-  const accruedInterestSecondary =
-    accruedInterestSplit.length > 1 ? accruedInterestSplit[1] : "00"
+  const { availableBalance } = account
 
   return (
     <Box variant="accountHeading">
@@ -24,17 +12,14 @@ const Account = ({ account }) => {
         <TranslatedText i18nKey="pa-konto" fallback="På konto" />
       </Heading>
       <Text variant="accountHeadingAvailable">
-        {primary && formatCurrency(parseInt(primary, 10))},{secondary}
+        {formatCurrency(parseInt(availableBalance, 10))}
       </Text>
       <Text variant="accountHeadingSubtext">
         <TranslatedText
           i18nKey="ikke-bokforte-renter"
           fallback="Ikke bokførte renter"
+          data={account}
         />
-        :{" "}
-        {accruedInterestPrimary &&
-          formatCurrency(parseInt(accruedInterestPrimary, 10))}
-        ,{accruedInterestSecondary}
       </Text>
     </Box>
   )

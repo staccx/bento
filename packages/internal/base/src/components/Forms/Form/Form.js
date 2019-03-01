@@ -6,15 +6,17 @@ import { commonPropTypes } from "../../../constants/themeContants"
 import traverse from "react-traverse"
 const Yup = require("yup")
 
-const findFormFields = node => {
-  const formFields = []
+const findFormFields = (node, startFields = []) => {
+  const formFields = startFields
   const isFormField = name => name === "FormField"
 
   traverse(node, {
     ComponentElement(path) {
+      console.log(path.node)
       if (isFormField(path.node.type.name)) {
         formFields.push(path.node)
       }
+      path.traverseChildren()
     }
   })
 
