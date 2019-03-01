@@ -159,6 +159,8 @@ const icons = {
   QuestionMark
 }
 
+import Development from "./hoc/Development/Development"
+
 require("es6-promise").polyfill()
 require("isomorphic-fetch")
 
@@ -185,6 +187,7 @@ export {
   CopyToClipboardComponent,
   CreditCardInput,
   CurrencyInput,
+  Development,
   Divider,
   Donut,
   EmailInput,
