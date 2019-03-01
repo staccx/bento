@@ -4,10 +4,25 @@ import { SelectSimple, theming } from "@staccx/base"
 export const SelectWrapper = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
+      display: flex;
+      border-bottom: 1px solid ${theming.color.primary};
+      :focus-within,
+      :hover {
+        border-bottom: 2px solid ${theming.color.black};
+      }
       label {
+        :hover {
+          pointer-events: ignore;
+        }
         position: absolute;
-        top: 14px;
         color: ${theming.color.primary};
+        position: static;
+        display: flex;
+        padding-bottom: 0;
+        line-height: 1.4;
+        align-items: center;
+        margin-right: 20px;
+        flex-basis: 80px;
       }
     `
   },
@@ -18,15 +33,12 @@ export const Select = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       border-radius: 0;
-      border-width: 0 0 1px;
+      border: none;
       border-color: ${theming.color.primary};
-      padding-left: 80px;
-      padding-right: 0;
+      padding: 0;
       font-size: ${theming.font.base};
       :hover,
       :focus {
-        border-bottom-width: 2px;
-        border-bottom-color: ${theming.color.black};
         color: initial;
       }
     `
