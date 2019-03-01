@@ -7,8 +7,6 @@ class Auth {
 
     console.log("creating a new usermanager")
     this.userManager = new UserManager(config)
-
-
   }
 
   getUser() {
