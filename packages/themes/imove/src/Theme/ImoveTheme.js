@@ -84,7 +84,7 @@ const color = {
   bgGray: "#F6F6F6",
   primary: "#1C966B",
   primaryLight: "#83ECAA",
-  primaryDark: "#1C966B",
+  primaryDark: "#1E5C35",
   secondary: "#124F5E",
   toneDown: "#8C8C8C",
   gray: "#767676",
