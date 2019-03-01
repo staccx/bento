@@ -41,6 +41,7 @@ import {
   RadioButtonInput,
   RadioButtonWrapper
 } from "./Theme.RadioButton"
+import { SelectWrapper, Select } from "./Theme.SelectSimple"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -190,3 +191,5 @@ export default new theming.Theme(BaseTheme, {
   .add(RadioButtonDot)
   .add(RadioButtonInput)
   .add(RadioButtonWrapper)
+  .add(SelectWrapper)
+  .add(Select)
