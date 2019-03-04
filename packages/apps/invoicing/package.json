@@ -1,12 +1,12 @@
 {
   "name": "@staccx/invoicing",
-  "version": "8.69.1",
+  "version": "8.70.0",
   "private": true,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@staccx/base": "^8.69.1",
+    "@staccx/base": "^8.70.0",
     "mobx-react": "^5.2.5",
     "prop-types": "^15.6.2",
     "react": "^16.8.0",

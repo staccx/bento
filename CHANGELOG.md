@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.70.0](https://bitbucket.org/stacc-flow/bento/compare/v8.69.1...v8.70.0) (2019-03-01)
+
+
+### Features
+
+* **base:** new component development ([2c25521](https://bitbucket.org/stacc-flow/bento/commits/2c25521))
+* **imove-theme:** add SelectSimple to theme ([8a234d2](https://bitbucket.org/stacc-flow/bento/commits/8a234d2))
+
+
+
+
+
 ## [8.69.1](https://bitbucket.org/stacc-flow/bento/compare/v8.69.0...v8.69.1) (2019-03-01)
 
 
