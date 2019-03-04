@@ -6,6 +6,8 @@ export const ListStyling = theming.createVariants(
     details: css`
       border-top: 1px solid ${theming.color.secondary};
       color: ${theming.color.secondary};
+      padding-left: 0;
+      padding-right: 0;
 
       > li {
         border-bottom: 1px solid ${theming.color.secondary};

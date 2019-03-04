@@ -42,6 +42,7 @@ import {
   RadioButtonWrapper
 } from "./Theme.RadioButton"
 import { SelectWrapper, Select } from "./Theme.SelectSimple"
+import { ExpandButton, ExpandedItem, ExpandIcon } from "./Theme.ExpandListItem"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -126,7 +127,7 @@ const font = {
 
 const webfonts = {
   google: {
-    families: ["Open Sans:400,700"]
+    families: ["Open Sans:400,600,700"]
   },
   typekit: {
     id: "ykt5nel"
@@ -139,6 +140,7 @@ const fontFamily = {
 }
 
 const fontWeight = {
+  semiBold: "600",
   bold: "700",
   normal: "400"
 }
@@ -193,3 +195,6 @@ export default new theming.Theme(BaseTheme, {
   .add(RadioButtonWrapper)
   .add(SelectWrapper)
   .add(Select)
+  .add(ExpandButton)
+  .add(ExpandedItem)
+  .add(ExpandIcon)
