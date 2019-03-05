@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import {
-  Anchor,
   Box,
   Button,
   Heading,
@@ -14,7 +13,7 @@ import {
 import { TranslatedText } from "@staccx/i18n"
 import Back from "../../components/Back"
 
-const ContractDocuments = ({ documents }) => (
+const ContractDocuments = ({ documents, onClick }) => (
   <Layout variant="contractDocuments">
     <LayoutItem variant="fadeIn" delay="200" area="header">
       <Back path="/profile/" />
@@ -28,13 +27,8 @@ const ContractDocuments = ({ documents }) => (
       <Box variant="contractBox">
         <List>
           {documents.map(doc => (
-            <ListItem key={doc.downloadUrl}>
-              <Button
-                target={"_blank"}
-                href={doc.downloadUrl}
-                as={Anchor}
-                variant="contractList"
-              >
+            <ListItem key={doc.title}>
+              <Button variant="contractList" onClick={onClick}>
                 <ThemeComponent tagName="IconPdf" />
                 <span>{doc.title}</span>
               </Button>

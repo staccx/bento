@@ -84,6 +84,11 @@ CheckBox.themeProps = {
     description: "Label checked style",
     type: themePropTypes.style
   },
+  labelBeforeChecked: {
+    name: "CHECKBOX_LABEL_BEFORE_CHECKED",
+    description: "Label before checked style",
+    type: themePropTypes.style
+  },
   input: {
     name: "checkbox_input",
     description: "Inputstyle",

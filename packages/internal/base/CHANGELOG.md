@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.70.1](https://bitbucket.org/stacc-flow/bento/compare/v8.70.0...v8.70.1) (2019-03-05)
+
+
+### Bug Fixes
+
+* **base:** fix missing theme prop ([dacff35](https://bitbucket.org/stacc-flow/bento/commits/dacff35))
+
+
+
+
+
 # [8.70.0](https://bitbucket.org/stacc-flow/bento/compare/v8.69.1...v8.70.0) (2019-03-01)
 
 
