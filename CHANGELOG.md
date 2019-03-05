@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.71.0](https://bitbucket.org/stacc-flow/bento/compare/v8.70.1...v8.71.0) (2019-03-05)
+
+
+### Features
+
+* **imove-theme:** add divider, fix buttons nd layout ([45d0576](https://bitbucket.org/stacc-flow/bento/commits/45d0576))
+
+
+
+
+
 ## [8.70.1](https://bitbucket.org/stacc-flow/bento/compare/v8.70.0...v8.70.1) (2019-03-05)
 
 
