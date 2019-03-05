@@ -23,6 +23,7 @@ export const SelectWrapper = theming.createVariants(
         align-items: center;
         margin-right: 20px;
         flex-basis: 80px;
+        white-space: nowrap;
       }
     `
   },
