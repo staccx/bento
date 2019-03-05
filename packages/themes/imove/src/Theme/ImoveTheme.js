@@ -43,6 +43,7 @@ import {
 } from "./Theme.RadioButton"
 import { SelectWrapper, Select } from "./Theme.SelectSimple"
 import { ExpandButton, ExpandedItem, ExpandIcon } from "./Theme.ExpandListItem"
+import { Rule } from "./Theme.Divider"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -97,7 +98,7 @@ const color = {
   green: "#00a190",
   blue: "#188EFB",
   yellow: "#f4da87",
-  line: "#B8CACF",
+  line: "#A7A7A7",
   wcag: "#777",
   disabled: "#BABABA",
   warning: "#c54059",
@@ -198,3 +199,4 @@ export default new theming.Theme(BaseTheme, {
   .add(ExpandButton)
   .add(ExpandedItem)
   .add(ExpandIcon)
+  .add(Rule)

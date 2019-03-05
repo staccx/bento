@@ -71,10 +71,11 @@ export default theming.createVariants(
       }
     `,
     back: css`
-      min-height: 28px;
-      padding: 3px ${theming.spacing.small} 3px;
-      border-radius: 50px;
-      color: ${theming.color.white};
+      min-height: 0;
+      padding: 0;
+      border-radius: 0;
+      color: ${theming.color.primary};
+      background-color: transparent;
 
       &::before {
         content: "< ";
