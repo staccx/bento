@@ -36,8 +36,7 @@ import { ToggleElementStyling } from "./Theme.Toggle"
 import { HelpIcon } from "./Icons/HelpIcon"
 import { ModalContentStyling } from "./Theme.Modal"
 import {
-  RadioButtonHole,
-  RadioButtonDot,
+  RadioButtonLabel,
   RadioButtonInput,
   RadioButtonWrapper
 } from "./Theme.RadioButton"
@@ -190,8 +189,7 @@ export default new theming.Theme(BaseTheme, {
   .add(RadioPillWrapper)
   .add(ModalContentStyling)
   .add(CheckmarkIcon)
-  .add(RadioButtonHole)
-  .add(RadioButtonDot)
+  .add(RadioButtonLabel)
   .add(RadioButtonInput)
   .add(RadioButtonWrapper)
   .add(SelectWrapper)
