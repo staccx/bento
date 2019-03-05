@@ -26,6 +26,7 @@ export const RadioButtonLabel = theming.createVariants(
     [theming.VARIANT_DEFAULT]: css`
       display: inline-block;
       padding-left: 51px;
+      width: 100%;
       /* Unchecked -> "RadioButtonHole" */
       &::before {
         top: -5px;
