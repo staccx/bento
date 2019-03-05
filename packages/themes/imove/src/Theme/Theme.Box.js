@@ -66,9 +66,11 @@ export default theming.createVariants(
 
       @media screen and (max-width: 768px) {
         margin-left: -${theming.spacing.medium};
-        padding: ${theming.spacing.small} ${theming.spacing.medium};
+        padding: ${theming.spacing.mediumPlus} ${theming.spacing.mediumPlus};
         background-color: ${theming.color("bgGray")};
         color: ${theming.color.text};
+        border-top-right-radius: 22px;
+        border-bottom-right-radius: 22px;
       }
     `,
     splash: css`

@@ -90,7 +90,7 @@ const color = {
   secondary: "#124F5E",
   toneDown: "#8C8C8C",
   gray: "#767676",
-  text: "#2b2b2b",
+  text: "#124F5E",
   white: "#fff",
   red: "#ea526f",
   pink: "#f8d0db",

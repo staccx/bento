@@ -14,7 +14,8 @@ export const InputStyling = theming.createVariants(
       transition: border-color 0.2s ease-out;
       padding-left: ${p =>
         p.labelWidth ? p.labelWidth + "px" : theming.spacing.huge};
-      font-weight: 400;
+      font-weight: ${theming.fontWeight.normal};
+      font-size: ${theming.font.base};
 
       &:hover,
       &:focus,
