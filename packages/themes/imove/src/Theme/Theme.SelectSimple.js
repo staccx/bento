@@ -8,7 +8,7 @@ export const SelectWrapper = theming.createVariants(
       border-bottom: 1px solid ${theming.color.primary};
       :focus-within,
       :hover {
-        border-bottom: 2px solid ${theming.color.black};
+        border-bottom: 2px solid ${theming.color.secondary};
       }
       label {
         :hover {
@@ -41,8 +41,20 @@ export const Select = theming.createVariants(
       :hover,
       :focus {
         color: initial;
+        ~ svg {
+          fill: ${theming.color.secondary} !important;
+        }
       }
     `
   },
   SelectSimple.themeProps.select
+)
+
+export const SelectIcon = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      fill: ${theming.color.primary};
+    `
+  },
+  SelectSimple.themeProps.icon
 )

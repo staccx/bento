@@ -40,7 +40,7 @@ import {
   RadioButtonInput,
   RadioButtonWrapper
 } from "./Theme.RadioButton"
-import { SelectWrapper, Select } from "./Theme.SelectSimple"
+import { SelectWrapper, Select, SelectIcon } from "./Theme.SelectSimple"
 import { ExpandButton, ExpandedItem, ExpandIcon } from "./Theme.ExpandListItem"
 import { Rule } from "./Theme.Divider"
 
@@ -194,6 +194,7 @@ export default new theming.Theme(BaseTheme, {
   .add(RadioButtonWrapper)
   .add(SelectWrapper)
   .add(Select)
+  .add(SelectIcon)
   .add(ExpandButton)
   .add(ExpandedItem)
   .add(ExpandIcon)
