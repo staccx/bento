@@ -18,7 +18,7 @@
     "word-wrap": "^1.2.3"
   },
   "scripts": {
-    "start": "node buildPreviews.js && react-app-rewired start",
+    "start": "node buildPreviews.js && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage --passWithNoTests",
     "prepare": "yarn build",
