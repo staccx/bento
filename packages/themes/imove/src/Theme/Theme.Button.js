@@ -71,10 +71,11 @@ export default theming.createVariants(
       }
     `,
     back: css`
-      min-height: 28px;
-      padding: 3px ${theming.spacing.small} 3px;
-      border-radius: 50px;
-      color: ${theming.color.white};
+      min-height: 0;
+      padding: 0;
+      border-radius: 0;
+      color: ${theming.color.primary};
+      background-color: transparent;
 
       &::before {
         content: "< ";
@@ -106,6 +107,20 @@ export default theming.createVariants(
         background-color: ${theming.color.white};
         color: ${theming.color.secondary};
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+    `,
+    postCode: css`
+      width: 54px;
+      height: 54px;
+      padding: 0;
+      border-top-left-radius: 32px;
+      border-top-right-radius: 32px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 32px;
+      transform: translateY(-4px);
+
+      &:disabled {
+        background-color: ${theming.color.disabled};
       }
     `
   },

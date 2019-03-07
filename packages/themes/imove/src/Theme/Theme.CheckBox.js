@@ -1,6 +1,14 @@
 import { css } from "styled-components"
 import { CheckBox, theming } from "@staccx/base"
 
+/***
+ * DOC
+ * ---
+ * layoutList: Use for cases where checkboxes are
+ * wrapped by Layout, and vertical spacing is
+ * determined by it.
+ * **/
+
 export const CheckBoxChecked = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
@@ -26,6 +34,11 @@ export const CheckBoxLabel = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       padding-left: 51px;
+    `,
+    layoutList: css`
+      padding-top: 0;
+      padding-bottom: 0;
+      min-height: 28px;
     `,
     infoButton: css`
       &::before {
@@ -64,6 +77,10 @@ export const CheckBoxCheckContainer = theming.createVariants(
       border-width: 2px;
       border-color: ${theming.color.primary}4d;
       border-radius: 50% 50% 0;
+      background-color: transparent;
+    `,
+    layoutList: css`
+      top: 0;
     `,
     light: css`
       border-color: ${theming.color.white};
@@ -95,6 +112,9 @@ export const CheckBoxCheck = theming.createVariants(
       width: 10px;
       left: 9px;
       top: 14px;
+    `,
+    layoutList: css`
+      top: 6px;
     `,
     infoButton: css`
       display: none;

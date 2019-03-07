@@ -4,13 +4,16 @@ import { List, theming } from "@staccx/base"
 export const ListStyling = theming.createVariants(
   {
     details: css`
-      border-top: 1px solid ${theming.color.secondary};
+      border-top: 1px solid ${theming.color.line};
       color: ${theming.color.secondary};
       padding-left: 0;
       padding-right: 0;
 
       > li {
-        border-bottom: 1px solid ${theming.color.secondary};
+        border-bottom: 1px solid ${theming.color.line};
+        :last-child {
+          border: none;
+        }
       }
     `,
     lineItems: css`

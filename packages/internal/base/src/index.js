@@ -155,11 +155,11 @@ import Combobox from "./components/Forms/Combobox/Combobox"
 // Navigation
 import Breadcrumb from "./components/Breadcrumb/Breadcrumb"
 
+import Development from "./hoc/Development/Development"
+
 const icons = {
   QuestionMark
 }
-
-import Development from "./hoc/Development/Development"
 
 require("es6-promise").polyfill()
 require("isomorphic-fetch")

@@ -47,7 +47,7 @@ const LogoText = styled.path`
 `
 
 const LogoBlob = styled.path`
-  fill: ${p => (p.inverted ? theming.color.white : `url(#gradient)`)};
+  fill: url(#gradient);
 `
 
 const LogoImg = styled.svg`
