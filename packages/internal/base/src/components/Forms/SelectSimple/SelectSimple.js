@@ -94,6 +94,7 @@ const SelectIcon = styled(IconComponent)`
   fill: ${color.gray};
   transform: translateY(50%);
   transition: fill 0.2s ease;
+  pointer-events: none;
   ${applyVariants(tProps.icon)};
 `
 
