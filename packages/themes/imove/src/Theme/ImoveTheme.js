@@ -36,11 +36,13 @@ import { ToggleElementStyling } from "./Theme.Toggle"
 import { HelpIcon } from "./Icons/HelpIcon"
 import { ModalContentStyling } from "./Theme.Modal"
 import {
-  RadioButtonHole,
-  RadioButtonDot,
+  RadioButtonLabel,
   RadioButtonInput,
   RadioButtonWrapper
 } from "./Theme.RadioButton"
+import { SelectWrapper, Select, SelectIcon } from "./Theme.SelectSimple"
+import { ExpandButton, ExpandedItem, ExpandIcon } from "./Theme.ExpandListItem"
+import { Rule } from "./Theme.Divider"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -84,19 +86,18 @@ const color = {
   bgGray: "#F6F6F6",
   primary: "#1C966B",
   primaryLight: "#83ECAA",
-  primaryDark: "#1C966B",
+  primaryDark: "#1E5C35",
   secondary: "#124F5E",
   toneDown: "#8C8C8C",
   gray: "#767676",
-  text: "#2b2b2b",
+  text: "#124F5E",
   white: "#fff",
   red: "#ea526f",
   pink: "#f8d0db",
   green: "#00a190",
   blue: "#188EFB",
   yellow: "#f4da87",
-  line: "#B8CACF",
-  link: "#1C966B",
+  line: "#A7A7A7",
   wcag: "#777",
   disabled: "#BABABA",
   warning: "#c54059",
@@ -126,7 +127,7 @@ const font = {
 
 const webfonts = {
   google: {
-    families: ["Open Sans:400,700"]
+    families: ["Open Sans:400,600,700"]
   },
   typekit: {
     id: "ykt5nel"
@@ -139,6 +140,7 @@ const fontFamily = {
 }
 
 const fontWeight = {
+  semiBold: "600",
   bold: "700",
   normal: "400"
 }
@@ -187,7 +189,13 @@ export default new theming.Theme(BaseTheme, {
   .add(RadioPillWrapper)
   .add(ModalContentStyling)
   .add(CheckmarkIcon)
-  .add(RadioButtonHole)
-  .add(RadioButtonDot)
+  .add(RadioButtonLabel)
   .add(RadioButtonInput)
   .add(RadioButtonWrapper)
+  .add(SelectWrapper)
+  .add(Select)
+  .add(SelectIcon)
+  .add(ExpandButton)
+  .add(ExpandedItem)
+  .add(ExpandIcon)
+  .add(Rule)

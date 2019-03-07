@@ -7,3 +7,6 @@ export const challengeIdentity = oidcConfig => {
 export const signInRedirectCallback = oidcConfig => {
   return new oidc.UserManager(oidcConfig).signinRedirectCallback()
 }
+
+export const signInSilentCallback = oidcConfig =>
+  new oidc.UserManager(oidcConfig).signinSilentCallback()

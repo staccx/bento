@@ -10,6 +10,9 @@ export const LayoutStyling = theming.createVariants(
       > * {
         width: 100%;
       }
+    `,
+    bottomButtons: css`
+      padding-top: ${theming.spacing.large};
     `
   },
   Layout.themeProps.container

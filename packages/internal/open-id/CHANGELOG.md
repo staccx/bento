@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.71.0](https://bitbucket.org/stacc-flow/bento/compare/v8.70.1...v8.71.0) (2019-03-05)
+
+**Note:** Version bump only for package @staccx/open-id
+
+
+
+
+
+# [8.69.0](https://bitbucket.org/stacc-flow/bento/compare/v8.68.1...v8.69.0) (2019-03-01)
+
+
+### Features
+
+* **open-id:** add signinSilentCallback to export ([a11011f](https://bitbucket.org/stacc-flow/bento/commits/a11011f))
+
+
+
+
+
 # [8.60.0](https://bitbucket.org/stacc-flow/bento/compare/v8.59.0...v8.60.0) (2019-02-11)
 
 

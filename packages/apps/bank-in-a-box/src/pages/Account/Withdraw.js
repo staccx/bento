@@ -17,7 +17,7 @@ import {
 } from "@staccx/base"
 import { TranslatedText } from "@staccx/i18n"
 
-const Withdraw = ({ lastAccount = null, amount, onSubmit }) => (
+const Withdraw = ({ lastAccount = null, balance, onSubmit }) => (
   <State>
     {({ set, toAccount }) => (
       <Layout variant="withdraw">
@@ -26,13 +26,16 @@ const Withdraw = ({ lastAccount = null, amount, onSubmit }) => (
             <TranslatedText i18nKey="ta-ut-penger">Ta ut penger</TranslatedText>
           </Heading>
           <Heading level="2" variant="withdrawSubtitle">
-            {formatCurrency(amount, { precision: 2, decimal: "," })}{" "}
-            <TranslatedText i18nKey="disponibelt" fallback="disponibelt" />
+            <TranslatedText
+              i18nKey="disponibelt"
+              fallback="disponibelt"
+              data={{ balance }}
+            />
           </Heading>
         </LayoutItem>
         <LayoutItem area="menu">
           <Form
-            initialValues={{ toAccount, amount }}
+            initialValues={{ toAccount, amount: balance }}
             renderButton={() => (
               <LayoutItem variant="fadeIn" delay="800">
                 <Button type={"submit"}>
@@ -45,7 +48,7 @@ const Withdraw = ({ lastAccount = null, amount, onSubmit }) => (
             <Layout grid="rows">
               <LayoutItem variant="fadeIn" delay="400">
                 <Box variant="withdrawInputs">
-                  <FormField name="amount" type="string" required>
+                  <FormField name="amount" type="string" required min={1}>
                     {({ name, field, form }) => {
                       const { value, ...rest } = field
                       return (
@@ -53,7 +56,7 @@ const Withdraw = ({ lastAccount = null, amount, onSubmit }) => (
                           id={"amount"}
                           label="Beløp"
                           placeholder="0"
-                          defaultValue={amount}
+                          defaultValue={balance}
                           {...rest}
                           onChange={e =>
                             form.setFieldValue("amount", e.target.rawValue)
@@ -115,13 +118,13 @@ const Withdraw = ({ lastAccount = null, amount, onSubmit }) => (
 
 Withdraw.propTypes = {
   toAccount: PropTypes.number,
-  amount: PropTypes.number,
+  balance: PropTypes.number,
   onSubmit: PropTypes.func
 }
 
 Withdraw.defaultProps = {
   toAccount: null,
-  amount: 0,
+  balance: 0,
   onSubmit: () => null
 }
 

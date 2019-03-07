@@ -48,13 +48,7 @@ const TransactionListItem = ({
     </SplitListItem>
     <SplitListItem>
       <div>
-        {(type === "DEPOSIT" || type === "WITHDRAWAL") && (
-          <TranslatedText i18nKey="bokfort-dato" fallback="Bokført dato" />
-        )}
-        {type === "INVOICE" && (
-          <TranslatedText i18nKey="forfallsdato" fallback="Forfallsdato" />
-        )}
-        :
+        <TranslatedText i18nKey="bokfort-dato" fallback="Bokført dato" />
       </div>
       <div>{date}</div>
     </SplitListItem>

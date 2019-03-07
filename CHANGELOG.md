@@ -3,6 +3,98 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.71.3](https://bitbucket.org/stacc-flow/bento/compare/v8.71.2...v8.71.3) (2019-03-07)
+
+
+### Bug Fixes
+
+* **styleguide:** fix error in script ([61c4e0e](https://bitbucket.org/stacc-flow/bento/commits/61c4e0e))
+
+
+
+
+
+## [8.71.2](https://bitbucket.org/stacc-flow/bento/compare/v8.71.1...v8.71.2) (2019-03-06)
+
+**Note:** Version bump only for package @staccx/bento
+
+
+
+
+
+## [8.71.1](https://bitbucket.org/stacc-flow/bento/compare/v8.71.0...v8.71.1) (2019-03-06)
+
+**Note:** Version bump only for package @staccx/bento
+
+
+
+
+
+# [8.71.0](https://bitbucket.org/stacc-flow/bento/compare/v8.70.1...v8.71.0) (2019-03-05)
+
+
+### Features
+
+* **imove-theme:** add divider, fix buttons nd layout ([45d0576](https://bitbucket.org/stacc-flow/bento/commits/45d0576))
+
+
+
+
+
+## [8.70.1](https://bitbucket.org/stacc-flow/bento/compare/v8.70.0...v8.70.1) (2019-03-05)
+
+
+### Bug Fixes
+
+* **base:** fix missing theme prop ([dacff35](https://bitbucket.org/stacc-flow/bento/commits/dacff35))
+* **biab:** fix i18n and onclick for documents ([399c1d3](https://bitbucket.org/stacc-flow/bento/commits/399c1d3))
+
+
+
+
+
+# [8.70.0](https://bitbucket.org/stacc-flow/bento/compare/v8.69.1...v8.70.0) (2019-03-01)
+
+
+### Features
+
+* **base:** new component development ([2c25521](https://bitbucket.org/stacc-flow/bento/commits/2c25521))
+* **imove-theme:** add SelectSimple to theme ([8a234d2](https://bitbucket.org/stacc-flow/bento/commits/8a234d2))
+
+
+
+
+
+## [8.69.1](https://bitbucket.org/stacc-flow/bento/compare/v8.69.0...v8.69.1) (2019-03-01)
+
+
+### Bug Fixes
+
+* **aprila-theme:** fix accountheading ([80028e0](https://bitbucket.org/stacc-flow/bento/commits/80028e0))
+* **base:** form traversechildren ([c3b42fd](https://bitbucket.org/stacc-flow/bento/commits/c3b42fd))
+* **biab:** fix withdraw ([c4324cf](https://bitbucket.org/stacc-flow/bento/commits/c4324cf))
+
+
+
+
+
+# [8.69.0](https://bitbucket.org/stacc-flow/bento/compare/v8.68.1...v8.69.0) (2019-03-01)
+
+
+### Bug Fixes
+
+* **biab:** fix endaccount ([5a4a8e8](https://bitbucket.org/stacc-flow/bento/commits/5a4a8e8))
+
+
+### Features
+
+* **imove-theme:** add inbfobutton ([812f9b1](https://bitbucket.org/stacc-flow/bento/commits/812f9b1))
+* **open-id:** add signinSilentCallback to export ([a11011f](https://bitbucket.org/stacc-flow/bento/commits/a11011f))
+
+
+
+
+
 ## [8.68.1](https://bitbucket.org/stacc-flow/bento/compare/v8.68.0...v8.68.1) (2019-02-28)
 
 **Note:** Version bump only for package @staccx/bento

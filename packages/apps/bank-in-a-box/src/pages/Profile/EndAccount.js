@@ -8,11 +8,18 @@ import {
   Button,
   ItemGroup
 } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 import Back from "../../components/Back"
 import EndAccountList from "../../components/EndAccountList"
-import { backwards, forwards } from "../../components/transitions/transitions"
 
-const EndAccount = ({ history, accounts }) => (
+const EndAccount = ({
+  history,
+  bookedBalance,
+  accruedInterest,
+  onAccountChange,
+  onConfirm,
+  onCancel
+}) => (
   <Layout variant="annualStatment">
     <LayoutItem variant="fadeIn" delay="200" area="header">
       <Back history={history} path="/profile/" />
@@ -24,37 +31,27 @@ const EndAccount = ({ history, accounts }) => (
       <Layout>
         <List variant="open">
           {/* TODO: This is hacked together */}
-          <EndAccountList bookedBalance={12776.94} accruedInterest={1} />
+          <EndAccountList
+            bookedBalance={bookedBalance}
+            accruedInterest={accruedInterest}
+          />
         </List>
         <div>
           <AccountInput
             label="Send beløp til kontonummer"
             variant="accountNumber"
+            onChange={e => onAccountChange(e.target.rawValue)}
           />
         </div>
         <ItemGroup>
           {/* TODO: disse må lenkes opp og ha en onClick */}
-          <Button
-            variant="primary"
-            onClick={() =>
-              history.push({
-                pathname: "/profile/end/confirmation",
-                state: forwards
-              })
-            }
-          >
-            Overfør og avslutt konto
+          <Button variant="primary" onClick={onConfirm}>
+            <TranslatedText i18nKey={"overfor-og-avslutt"}>
+              Overfør og avslutt konto
+            </TranslatedText>
           </Button>
-          <Button
-            variant="secondary"
-            onClick={() =>
-              history.push({
-                pathname: "/profile",
-                state: backwards
-              })
-            }
-          >
-            Avbryt
+          <Button variant="secondary" onClick={onCancel}>
+            <TranslatedText i18nKey={"avbryt"}>Avbryt</TranslatedText>
           </Button>
         </ItemGroup>
       </Layout>

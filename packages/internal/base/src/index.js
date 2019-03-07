@@ -145,6 +145,7 @@ import QuestionMark from "./components/Icons/QuestionMark"
  * Hooks!
  */
 import useSearch from "./hooks/useSearch"
+import useTimer from "./hooks/useTimer"
 
 // Search
 import Search from "./hoc/Search/Search"
@@ -153,6 +154,8 @@ import Combobox from "./components/Forms/Combobox/Combobox"
 
 // Navigation
 import Breadcrumb from "./components/Breadcrumb/Breadcrumb"
+
+import Development from "./hoc/Development/Development"
 
 const icons = {
   QuestionMark
@@ -184,6 +187,7 @@ export {
   CopyToClipboardComponent,
   CreditCardInput,
   CurrencyInput,
+  Development,
   Divider,
   Donut,
   EmailInput,
@@ -253,6 +257,7 @@ export {
   ThemeComponent,
   Toggle,
   useSearch,
+  useTimer,
   Wait,
   Warning,
   WebFonts,
