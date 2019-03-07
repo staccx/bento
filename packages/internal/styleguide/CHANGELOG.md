@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.71.3](https://bitbucket.org/stacc-flow/bento/compare/v8.71.2...v8.71.3) (2019-03-07)
+
+
+### Bug Fixes
+
+* **styleguide:** fix error in script ([61c4e0e](https://bitbucket.org/stacc-flow/bento/commits/61c4e0e))
+
+
+
+
+
 # [8.71.0](https://bitbucket.org/stacc-flow/bento/compare/v8.70.1...v8.71.0) (2019-03-05)
 
 **Note:** Version bump only for package @staccx/styleguide
