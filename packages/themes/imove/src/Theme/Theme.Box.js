@@ -92,6 +92,7 @@ export default theming.createVariants(
       display: flex;
       flex-direction: column;
       justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5);
     `,
     postCodeInput: css`
       position: relative;

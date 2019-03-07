@@ -104,7 +104,8 @@ const color = {
   black: "#000",
   subtleHover: "#F7F7FF",
   darkBlue: "#124F5E",
-  blackBlue: "#171C1E"
+  blackBlue: "#171C1E",
+  link: "#1C966B"
 }
 
 const font = {

@@ -83,14 +83,14 @@ export const LabelInputStyling = theming.createVariants(
       bottom: 0;
       padding-bottom: 13px;
       color: ${theming.color.primary};
-      font-weight: 500;
+      font-weight: 600;
     `,
     conventional: css`
       color: ${theming.color.secondary};
-      font-weight: 500;
+      font-weight: 600;
     `,
     postCode: css`
-      font-weight: 500;
+      font-weight: 600;
     `
   },
   Input.themeProps.label
