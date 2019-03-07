@@ -42,23 +42,35 @@ export const InputInputStyling = theming.createVariants(
   Input.themeProps.input
 )
 
-export const InputHelpBoxStyling = theming.createVariants(
-  {
-    [theming.VARIANT_DEFAULT]: css`
-      display: ${({ isVisible }) => (isVisible ? "block" : "none")};
-      background-color: #f9f9f9;
-      border-radius: ${theming.borderRadius};
-      min-width: ${theming.wrapper.small};
-      max-width: ${theming.wrapper.small};
-      min-height: ${theming.spacing.small};
-      margin-bottom: ${theming.spacing.small};
-      padding: ${theming.spacing.small};
-      opacity: 0;
-      animation: ${FadeIn} 0.4s ease-out 1 forwards;
-      box-shadow: 0px ${theming.spacing.small} ${theming.spacing.medium}
-        rgba(0, 0, 0, 0.06);
-      border: 1px solid ${theming.color.line};
-    `
-  },
-  Input.themeProps.helpText
-)
+export const InputHelpBoxStyling = [
+  theming.createVariants(
+    {
+      [theming.VARIANT_DEFAULT]: css`
+        display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+        background-color: #f9f9f9;
+        border-radius: ${theming.borderRadius};
+        min-width: ${theming.wrapper.small};
+        max-width: ${theming.wrapper.small};
+        min-height: ${theming.spacing.small};
+        margin-bottom: ${theming.spacing.small};
+        padding: ${theming.spacing.small};
+        opacity: 0;
+        animation: ${FadeIn} 0.4s ease-out 1 forwards;
+        box-shadow: 0px ${theming.spacing.small} ${theming.spacing.medium}
+          rgba(0, 0, 0, 0.06);
+        border: 1px solid ${theming.color.line};
+      `
+    },
+    Input.themeProps.helpText
+  ),
+  theming.createVariants(
+    {
+      [theming.VARIANT_DEFAULT]: css`
+        background-color: transparent;
+        color: ${({ isOn }) =>
+          isOn ? theming.color.secondary : theming.color.text};
+      `
+    },
+    Input.themeProps.helpButton
+  )
+]
