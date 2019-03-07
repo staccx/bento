@@ -41,6 +41,10 @@ export const InputStyling = theming.createVariants(
         border-bottom-width: 2px;
         border-color: ${theming.color("darkBlue")};
       }
+    `,
+    postCode: css`
+      background-color: transparent;
+      border-width: 0;
     `
   },
   Input.themeProps.input

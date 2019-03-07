@@ -96,6 +96,7 @@ const color = {
   blue: "#188EFB",
   yellow: "#f4da87",
   line: "#B8CACF",
+  link: "#1C966B",
   wcag: "#777",
   disabled: "#BABABA",
   warning: "#c54059",

@@ -42,12 +42,6 @@ export default theming.createVariants(
       }
     `,
     filter: css`
-      position: absolute;
-      width: 100%;
-      left: 0;
-      background-color: ${theming.color.primary};
-      color: ${theming.color.white};
-      border-radius: 0;
       padding: ${theming.spacing.medium};
 
       h1,
@@ -60,6 +54,26 @@ export default theming.createVariants(
         color: ${theming.color.white};
       }
     `,
+    filterContainer: css`
+      position: absolute;
+      width: auto;
+      left: 0;
+      background-color: ${theming.color.primary};
+      color: ${theming.color.white};
+      border-radius: 22px;
+      border-top-right-radius: 0;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      label {
+        color: ${theming.color.white};
+      }
+    `,
+
     subtleLeft: css`
       padding: 0;
       flex-basis: 60%;
@@ -76,8 +90,6 @@ export default theming.createVariants(
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background-image: url("https://source.unsplash.com/375x812/?road,car");
-      background-size: cover;
     `
   },
   Box.themeProps.box
