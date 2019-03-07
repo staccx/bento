@@ -92,6 +92,17 @@ export default theming.createVariants(
       display: flex;
       flex-direction: column;
       justify-content: center;
+    `,
+    postCodeInput: css`
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      color: ${theming.color.white};
+      border-bottom: 1px solid ${theming.color.white};
+
+      :focus-within {
+        border-color: ${theming.color("dark")};
+      }
     `
   },
   Box.themeProps.box
