@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.72.3](https://bitbucket.org/stacc-flow/bento/compare/v8.72.2...v8.72.3) (2019-03-08)
+
+
+### Bug Fixes
+
+* **base:** propagate variant ([ab9e913](https://bitbucket.org/stacc-flow/bento/commits/ab9e913))
+
+
+
+
+
 # [8.72.0](https://bitbucket.org/stacc-flow/bento/compare/v8.71.3...v8.72.0) (2019-03-08)
 
 

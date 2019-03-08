@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.72.3](https://bitbucket.org/stacc-flow/bento/compare/v8.72.2...v8.72.3) (2019-03-08)
+
+
+### Bug Fixes
+
+* **aprila-theme:** fix spacing + phoneInput ([3b24ef4](https://bitbucket.org/stacc-flow/bento/commits/3b24ef4))
+* **base:** propagate variant ([ab9e913](https://bitbucket.org/stacc-flow/bento/commits/ab9e913))
+* **json-schema:** propagate variant to layout ([88b1300](https://bitbucket.org/stacc-flow/bento/commits/88b1300))
+
+
+
+
+
 ## [8.72.2](https://bitbucket.org/stacc-flow/bento/compare/v8.72.1...v8.72.2) (2019-03-08)
 
 

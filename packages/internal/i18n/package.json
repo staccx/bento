@@ -1,6 +1,6 @@
 {
   "name": "@staccx/i18n",
-  "version": "8.72.0",
+  "version": "8.72.3",
   "description": "intl for base",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -30,7 +30,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/base": "^8.72.0",
+    "@staccx/base": "^8.72.3",
     "loglevel": "^1.6.1",
     "prop-types": "^15.6.2",
     "react": "^16.8.0",
