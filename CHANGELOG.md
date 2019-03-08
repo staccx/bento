@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.72.0](https://bitbucket.org/stacc-flow/bento/compare/v8.71.3...v8.72.0) (2019-03-08)
+
+
+### Bug Fixes
+
+* **aprila-theme:** fix help button theming ([ebaeefe](https://bitbucket.org/stacc-flow/bento/commits/ebaeefe))
+* **base:** fix pointer events on selectsimple caret ([aa22f57](https://bitbucket.org/stacc-flow/bento/commits/aa22f57))
+
+
+### Features
+
+* **base:** theming is now exported as part ([12f9e4c](https://bitbucket.org/stacc-flow/bento/commits/12f9e4c))
+
+
+
+
+
 ## [8.71.3](https://bitbucket.org/stacc-flow/bento/compare/v8.71.2...v8.71.3) (2019-03-07)
 
 
