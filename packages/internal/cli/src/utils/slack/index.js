@@ -46,8 +46,9 @@ const getGiphy = async (input = "", rating = "R") => {
     )
     .then(result => result.data)
 
+  console.log(data)
   return {
-    image_url: data.image_original_url,
+    image_url: data.fixed_height_downsampled_url,
     fallback: input,
     color: "#727272",
     ts: new Date().getTime()
