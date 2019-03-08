@@ -92,6 +92,9 @@ export const LayoutStyling = theming.createVariants(
             return theming.spacing.medium
         }
       }};
+    `,
+    rowGapSmall: css`
+      grid-row-gap: 6px;
     `
   },
   Layout.themeProps.container

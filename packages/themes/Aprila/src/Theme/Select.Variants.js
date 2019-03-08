@@ -18,5 +18,23 @@ export default [
       `
     },
     Select.themeProps.listItem
+  ),
+  theming.createVariants(
+    {
+      schemaInputPhone: css`
+        border-width: 2px;
+        min-height: 44px;
+      `
+    },
+    Select.themeProps.selectedWrapper
+  ),
+  theming.createVariants(
+    {
+      schemaInputPhone: css`
+        padding: 10px 12px 10px 12px;
+        min-height: auto;
+      `
+    },
+    Select.themeProps.optionContainer
   )
 ]
