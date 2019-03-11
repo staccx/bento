@@ -14,52 +14,52 @@ import { themePropTypes } from "../../constants/themeContants"
 
 const tinycolor = require("tinycolor2")
 
-const tProps = {
+const Breadcrumb = ({ path }) => (
+  <List>
+    {path.map(pathItem =>
+      pathItem.to ? (
+        <Item key={pathItem.name}>
+          <ItemButton to={pathItem.to}>{pathItem.name}</ItemButton>
+        </Item>
+      ) : (
+        <ItemCurrent key={pathItem.name}>
+          <ItemHeading key={pathItem.name}>{pathItem.name}</ItemHeading>
+        </ItemCurrent>
+      )
+    )}
+  </List>
+)
+
+Breadcrumb.themeProps = {
   container: {
     name: "BREADCRUMB_CONTAINER",
     description:
       "The container for the crumbs, which also contains custom CSS properties.",
     type: themePropTypes.style
   },
-  smule: {
-    name: "BREADCRUMB_CRUMB",
-    description: "One single crumb.",
+  item: {
+    name: "BREADCRUMB_ITEM",
+    description: "One single item.",
     type: themePropTypes.style
   },
-  smuleCurrent: {
-    name: "BREADCRUMB_CURRENT_CRUMB",
-    description: "The current location crumb.",
+  itemCurrent: {
+    name: "BREADCRUMB_CURRENT_ITEM",
+    description: "Active breadcrumb item.",
     type: themePropTypes.style
   },
-  smuleButton: {
-    name: "CRUMB_BUTTON",
-    description: "The clickable elements in the single crumb.",
+  itemButton: {
+    name: "ITEM_BUTTON",
+    description: "The clickable elements in the single item.",
     type: themePropTypes.style
   },
-  smuleHeading: {
-    name: "CRUMB_HEADING",
-    description: "The non-clickable element in the current crumb.",
+  itemHeading: {
+    name: "ITEM_HEADING",
+    description: "The non-clickable element in the current item.",
     type: themePropTypes.style
   }
 }
 
-const Breadcrumb = ({ path }) => (
-  <LunchBox>
-    {path.map(pathItem =>
-      pathItem.to ? (
-        <Smule key={pathItem.name}>
-          <SmuleButton to={pathItem.to}>{pathItem.name}</SmuleButton>
-        </Smule>
-      ) : (
-        <SmuleCurrent key={pathItem.name}>
-          <SmuleHeading key={pathItem.name}>{pathItem.name}</SmuleHeading>
-        </SmuleCurrent>
-      )
-    )}
-  </LunchBox>
-)
-
-const LunchBox = styled.ol`
+const List = styled.ol`
   display: flex;
   flex-wrap: wrap;
   font-size: ${font.base};
@@ -96,10 +96,10 @@ const LunchBox = styled.ol`
   ---height: calc(var(--line-height) + var(--padding-ver) * 2);
   ---push: calc(var(--sep-width) + var(--distance));
 
-  ${applyVariants(tProps.container.name)};
+  ${applyVariants(Breadcrumb.container)};
 `
 
-const smuleStyle = css`
+const itemStyle = css`
   background: var(--bg-color);
   margin-left: var(---push);
   white-space: nowrap;
@@ -128,19 +128,19 @@ const smuleStyle = css`
   }
 `
 
-const Smule = styled.li`
-  ${smuleStyle};
-  ${applyVariants(tProps.smule.name)};
+const Item = styled.li`
+  ${itemStyle};
+  ${applyVariants(Breadcrumb.item)};
 `
 
-const SmuleCurrent = styled(Smule)`
-  ${smuleStyle};
+const ItemCurrent = styled(Item)`
+  ${itemStyle};
 
-  /* Unique for SmuleCurrent: */
-  ${applyVariants(tProps.smuleCurrent.name)};
+  /* Unique for ItemCurrent: */
+  ${applyVariants(Breadcrumb.itemCurrent)};
 `
 
-const smuleInsideStyle = css`
+const itemInsideStyle = css`
   display: block;
   text-decoration: none;
   max-width: var(--max-width);
@@ -195,15 +195,15 @@ const smuleInsideStyle = css`
   }
 `
 
-const SmuleButton = styled(Link)`
-  ${smuleInsideStyle};
-  ${applyVariants(tProps.smuleButton.name)};
+const ItemButton = styled(Link)`
+  ${itemInsideStyle};
+  ${applyVariants(Breadcrumb.themeProps.itemButton)};
 `
 
-const SmuleHeading = styled.h1`
-  ${smuleInsideStyle};
+const ItemHeading = styled.h1`
+  ${itemInsideStyle};
 
-  /* Unique for SmuleHeading: */
+  /* Unique for ItemHeading: */
 
   &,
   :hover {
@@ -218,13 +218,11 @@ const SmuleHeading = styled.h1`
     }
   }
 
-  ${applyVariants(tProps.smuleHeading.name)};
+  ${applyVariants(Breadcrumb.themeProps.itemHeading)};
 `
 
 Breadcrumb.propTypes = {
   path: PropTypes.array
 }
-
-Breadcrumb.themeProps = tProps
 
 export default Breadcrumb

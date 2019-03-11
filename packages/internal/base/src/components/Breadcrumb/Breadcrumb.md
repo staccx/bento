@@ -18,7 +18,7 @@
     },
     {
       name: "Current page"
-    }
+    },
    {
      name: "Last page",
      to: "/level-4"
