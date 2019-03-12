@@ -21,6 +21,9 @@ export default [
   ),
   theming.createVariants(
     {
+      combo: css`
+        max-width: ${theming.wrapper.small};
+      `,
       schemaInputPhone: css`
         border-width: 2px;
         min-height: 44px;
