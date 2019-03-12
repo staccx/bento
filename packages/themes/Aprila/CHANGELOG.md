@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.73.0](https://bitbucket.org/stacc-flow/bento/compare/v8.72.4...v8.73.0) (2019-03-12)
+
+
+### Bug Fixes
+
+* **aprila-theme:** max with for selected ([29ff77d](https://bitbucket.org/stacc-flow/bento/commits/29ff77d))
+
+
+
+
+
 ## [8.72.4](https://bitbucket.org/stacc-flow/bento/compare/v8.72.3...v8.72.4) (2019-03-08)
 
 
