@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.72.2](https://bitbucket.org/stacc-flow/bento/compare/v8.72.1...v8.72.2) (2019-03-08)
+
+
+### Bug Fixes
+
+* **cli:** add input to giphy ([fba27d4](https://bitbucket.org/stacc-flow/bento/commits/fba27d4))
+
+
+
+
+
+## [8.72.1](https://bitbucket.org/stacc-flow/bento/compare/v8.72.0...v8.72.1) (2019-03-08)
+
+
+### Bug Fixes
+
+* **cli:** use downsampled version of gif to avoid it now showing ([af77bf6](https://bitbucket.org/stacc-flow/bento/commits/af77bf6))
+
+
+
+
+
+# [8.72.0](https://bitbucket.org/stacc-flow/bento/compare/v8.71.3...v8.72.0) (2019-03-08)
+
+**Note:** Version bump only for package @staccx/cli
+
+
+
+
+
 # [8.71.0](https://bitbucket.org/stacc-flow/bento/compare/v8.70.1...v8.71.0) (2019-03-05)
 
 **Note:** Version bump only for package @staccx/cli

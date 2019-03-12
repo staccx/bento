@@ -3,6 +3,69 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.72.4](https://bitbucket.org/stacc-flow/bento/compare/v8.72.3...v8.72.4) (2019-03-08)
+
+
+### Bug Fixes
+
+* **aprila-theme:** remove margin top from submit button ([f1cfd91](https://bitbucket.org/stacc-flow/bento/commits/f1cfd91))
+
+
+
+
+
+## [8.72.3](https://bitbucket.org/stacc-flow/bento/compare/v8.72.2...v8.72.3) (2019-03-08)
+
+
+### Bug Fixes
+
+* **aprila-theme:** fix spacing + phoneInput ([3b24ef4](https://bitbucket.org/stacc-flow/bento/commits/3b24ef4))
+* **base:** propagate variant ([ab9e913](https://bitbucket.org/stacc-flow/bento/commits/ab9e913))
+* **json-schema:** propagate variant to layout ([88b1300](https://bitbucket.org/stacc-flow/bento/commits/88b1300))
+
+
+
+
+
+## [8.72.2](https://bitbucket.org/stacc-flow/bento/compare/v8.72.1...v8.72.2) (2019-03-08)
+
+
+### Bug Fixes
+
+* **cli:** add input to giphy ([fba27d4](https://bitbucket.org/stacc-flow/bento/commits/fba27d4))
+
+
+
+
+
+## [8.72.1](https://bitbucket.org/stacc-flow/bento/compare/v8.72.0...v8.72.1) (2019-03-08)
+
+
+### Bug Fixes
+
+* **cli:** use downsampled version of gif to avoid it now showing ([af77bf6](https://bitbucket.org/stacc-flow/bento/commits/af77bf6))
+
+
+
+
+
+# [8.72.0](https://bitbucket.org/stacc-flow/bento/compare/v8.71.3...v8.72.0) (2019-03-08)
+
+
+### Bug Fixes
+
+* **aprila-theme:** fix help button theming ([ebaeefe](https://bitbucket.org/stacc-flow/bento/commits/ebaeefe))
+* **base:** fix pointer events on selectsimple caret ([aa22f57](https://bitbucket.org/stacc-flow/bento/commits/aa22f57))
+
+
+### Features
+
+* **base:** theming is now exported as part ([12f9e4c](https://bitbucket.org/stacc-flow/bento/commits/12f9e4c))
+
+
+
+
+
 ## [8.71.3](https://bitbucket.org/stacc-flow/bento/compare/v8.71.2...v8.71.3) (2019-03-07)
 
 

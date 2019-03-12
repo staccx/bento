@@ -10,6 +10,11 @@ const ProgressBar = require("progress")
 const colors = require("colors")
 
 glob("./src/**/!(*.preview).js", {}, function(er, files) {
+  const theming = {
+    path: path.resolve("./src/theming/index.js"),
+    name: "Theming.js"
+  }
+
   const components = files
     .map(file => {
       const basename = path.basename(file)
@@ -23,6 +28,7 @@ glob("./src/**/!(*.preview).js", {}, function(er, files) {
       return null
     })
     .filter(file => file)
+    .concat([theming])
 
   console.log("Building individual Base components".underline.white)
   const bar = new ProgressBar("building :name [:bar] :current :etas".white, {

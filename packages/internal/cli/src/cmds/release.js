@@ -108,7 +108,7 @@ async function release(debug) {
     spinner.start("Alerting team on Slack")
     const name = await username()
     if (!debug) {
-      const giphy = await getGiphy()
+      const giphy = await getGiphy(`release ${name}`)
       await postMessage({
         text: `@channel ${name} is releasing ${text}. Please do not push changes to git`,
         attachments: [giphy]

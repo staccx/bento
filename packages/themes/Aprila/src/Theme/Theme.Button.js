@@ -317,7 +317,6 @@ export default theming.createVariants(
       }
     `,
     submit: css`
-      margin-top: ${theming.spacing.large};
       margin-bottom: ${theming.spacing.medium};
 
       &:disabled {

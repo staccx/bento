@@ -1,15 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import Input, { InputPropTypes } from "../Input"
 import "cleave.js/dist/addons/cleave-phone.no.js"
-import {
-  applyVariants,
-  themePropTypes,
-  spacing,
-  color,
-  font
-} from "../../../../theming"
+import { applyVariants, spacing, themePropTypes } from "../../../../theming"
 import countries, { NORWAY } from "../../../../data/countries"
 import Select from "../../Select/Select"
 import Label from "../../Label/Label"
@@ -37,6 +31,7 @@ const PhoneInput = React.forwardRef(
           {showCountryCode && (
             <CountryCode>
               <Select
+                {...otherProps}
                 items={countries}
                 itemToString={item => `+${item.code}`}
                 itemToKey={item => item.code}

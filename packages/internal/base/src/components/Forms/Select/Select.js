@@ -169,7 +169,7 @@ class Select extends React.PureComponent {
           highlightedIndex,
           toggleMenu
         }) => (
-          <DefaultOptionElementWrapper>
+          <DefaultOptionElementWrapper variant={variant}>
             {options
               .filter(item => (selectedItem ? item : this.filterItem(item)))
               .slice(
@@ -190,6 +190,7 @@ class Select extends React.PureComponent {
                 }
                 return (
                   <SelectItem
+                    variant={variant}
                     key={this.props.itemToKey(item)}
                     isSelected={highlightedIndex === index}
                     {...getItemProps({ item })}

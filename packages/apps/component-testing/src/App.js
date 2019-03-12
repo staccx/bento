@@ -25,10 +25,11 @@ import {
   Paragraph,
   theming,
   Form,
-  FormField
+  FormField,
+  Breadcrumb
 } from "@staccx/base"
 import { LanguageProvider, TranslatedText } from "@staccx/i18n"
-import { ThemeProvider } from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import { BrowserRouter as Router } from "react-router-dom"
 import theme from "./theme/Theme"
 import texts from "./i18n.json"
@@ -94,6 +95,27 @@ class App extends Component {
             <Wrapper>
               <GlobalStyle />
               <WebFonts />
+              <PadBox>
+                <Breadcrumb
+                  path={[
+                    {
+                      name: "Home",
+                      to: "/"
+                    },
+                    {
+                      name: "Level 2",
+                      to: "/level-2"
+                    },
+                    {
+                      name: "Current page"
+                    },
+                    {
+                      name: "Last page",
+                      to: "/level-4"
+                    }
+                  ]}
+                />
+              </PadBox>
               <List>
                 <ExpandListItem title={"i18n"}>
                   <TranslatedText i18nKey={"bugskey"}>
@@ -264,7 +286,7 @@ class App extends Component {
                     <div>
                       <FormField name="omg" type="number" required>
                         {({ name, field, form }) => {
-                          const {value, ...rest} = field
+                          const { value, ...rest } = field
                           return (
                             <Input
                               label="Wat"
@@ -291,5 +313,9 @@ class App extends Component {
     )
   }
 }
+
+const PadBox = styled.div`
+  padding: ${theming.spacing.huge} 0;
+`
 
 export default App

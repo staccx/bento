@@ -29,7 +29,11 @@ const CustomObjectFieldTemplate = ({
           help={help}
         />
       )}
-      <Layout variant={"schemaLayout"} rowGap={"tiny"} level={level}>
+      <Layout
+        variant={["schemaLayout", ...variant]}
+        rowGap={"tiny"}
+        level={level}
+      >
         <DescriptionField description={description} help={help} />
         {properties.map(prop => {
           return (
