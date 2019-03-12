@@ -42,22 +42,8 @@ export default theming.createVariants(
       }
     `,
     filter: css`
-      padding: ${theming.spacing.medium};
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      label {
-        color: ${theming.color.white};
-      }
-    `,
-    filterContainer: css`
-      position: absolute;
-      width: auto;
-      left: 0;
+      padding: ${theming.spacing.large} ${theming.spacing.medium}
+        ${theming.spacing.medium}eb;
       background-color: ${theming.color.primary};
       color: ${theming.color.white};
       border-radius: 22px;
@@ -73,7 +59,30 @@ export default theming.createVariants(
         color: ${theming.color.white};
       }
     `,
+    filterContainer: css`
+      position: relative;
+      z-index: 51;
+      width: auto;
+      background-color: ${theming.color.primary};
+      color: ${theming.color.white};
+      border-radius: 22px;
+      border-top-right-radius: 0;
 
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      label {
+        color: ${theming.color.white};
+      }
+    `,
+    filterOuter: css`
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+    `,
     subtleLeft: css`
       padding: 0;
       flex-basis: 60%;
@@ -103,6 +112,14 @@ export default theming.createVariants(
 
       :focus-within {
         border-color: ${theming.color("dark")};
+      }
+    `,
+    bottomButtons: css`
+      > * {
+        &:not-last-child {
+          display: inline-block;
+          margin-right: ${theming.spacing.medium};
+        }
       }
     `
   },

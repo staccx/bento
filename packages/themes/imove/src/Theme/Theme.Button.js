@@ -85,16 +85,15 @@ export default theming.createVariants(
     filter: css`
       min-height: 34px;
       line-height: 22px;
-      border-top-left-radius: 17px;
-      border-bottom-left-radius: 17px;
-      border-bottom-right-radius: 17px;
-      border-top-right-radius: 0;
-      background-color: ${p =>
-        p.isOpen
-          ? theming.color("primaryDark")(p)
-          : theming.color("primary")(p)};
+      background-color: transparent;
       color: ${theming.color.white};
       width: auto;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent;
+      }
     `,
     inverted: css`
       background-color: ${theming.color.white};
