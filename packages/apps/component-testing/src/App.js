@@ -226,7 +226,7 @@ class App extends Component {
                     }}
                   </Select2>
                   <CreditCardInput label={"Credit Card"} />
-                  <PhoneInput label={"Phone number"} onChange={console.warn} />
+                  <PhoneInput placeholder={"This has a variant on it"} variant={"cool"} label={"Phone number"} onChange={console.warn} />
                   <NationalIdInput label={"National Id"} id={"tsa"} />
                   <PostalCodeInput
                     label={"Postal code"}
