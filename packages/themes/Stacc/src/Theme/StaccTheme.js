@@ -8,6 +8,7 @@ import { HeadingStyling } from "./theme.Headings"
 import WrapperStyling from "./Theme.Wrapper"
 import InputVariants from "./Input.variants"
 import LayoutVariants from "./Layout.Variants"
+import LabelVariants from "./Label.Variants"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -136,6 +137,7 @@ const theme = new theming.Theme(
   .add(WrapperStyling)
   .add(InputVariants)
   .add(LayoutVariants)
+  .add(LabelVariants)
   .add(theming.createGlobal({ base: theming.cssResets }))
   .add(reset)
 
