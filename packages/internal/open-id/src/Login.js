@@ -20,10 +20,9 @@ class Login extends React.Component {
     if (hashParams["#id_token"]) {
       signInRedirectCallback()
         .then(user => {
-          console.log(user)
           window.location.replace(props.redirectAfterLogin)
         })
-        .catch(function(e) {
+        .catch(e => {
           console.error(e)
         })
     } else if (searchParams.state && searchParams.nonce) {
@@ -57,7 +56,35 @@ class Login extends React.Component {
     return axios
       .post(this.props.codePostUri, { state, nonce })
       .then(res => res.status === 200)
-      .catch(console.error)
+      .catch(this.handleCodeSubmissionError)
+  }
+
+  handleCodeSubmissionError = error => {
+    switch (error.response.status) {
+      case 400: {
+        this.setState({ stage: stages.waitingForCode, error: 400 })
+        break
+      }
+      case 429: {
+        this.setState({ stage: stages.tooManyAttempts, error: 429 })
+        break
+      }
+      case 403:
+        this.setState({ stage: stages.alreadySucceeded })
+        break
+      case 500:
+        this.setState({ stage: stages.errorDuringLogin })
+        break
+
+      default: {
+        // Start over?
+        this.setState({
+          stage: stages.failedToSubmitCode,
+          error: error.response.status
+        })
+        break
+      }
+    }
   }
 
   submitCode(e) {
@@ -71,12 +98,14 @@ class Login extends React.Component {
       stage: stages.submittingCode
     })
 
-    console.log("submitting", state, nonce)
+    if (this.state.pollTimer) {
+      clearInterval(this.state.pollTimer)
+    }
+
     return axios
       .post(this.props.codePostUri, { state, nonce })
       .then(res => {
         if (res.status === 200) {
-          console.log("200 ok!")
           window.location.replace(
             this.props.oidcConfig.authority +
               this.props.callbackPath +
@@ -89,26 +118,7 @@ class Login extends React.Component {
           })
         }
       })
-      .catch(error => {
-        switch (error.response.status) {
-          case 400: {
-            this.setState({ stage: stages.waitingForCode, error: 400 })
-            break
-          }
-          case 429: {
-            this.setState({ stage: stages.tooManyAttempts, error: 429 })
-            break
-          }
-          default: {
-            // Start over?
-            this.setState({
-              stage: stages.failedToSubmitCode,
-              error: error.response.status
-            })
-            break
-          }
-        }
-      })
+      .catch(this.handleCodeSubmissionError)
   }
 
   submitId(e) {
@@ -128,7 +138,6 @@ class Login extends React.Component {
           state
         }
 
-    console.log(postData)
     this.setState({
       stage: stages.submittingId
     })
@@ -167,8 +176,7 @@ class Login extends React.Component {
             acr_values: `idp:${this.props.acrValue}`
           })
         })
-
-        console.log(error.response.status)
+        console.error(error)
       })
   }
 
@@ -203,7 +211,9 @@ export const stages = {
   failedToSubmitCode: "FAILED_TO_SUBMIT_CODE",
   waitingForCode: "WAITING_FOR_CODE",
   waitingForValidation: "WAITING_FOR_VALIDATION",
-  tooManyAttempts: "TOO_MANY_ATTEMPTS"
+  tooManyAttempts: "TOO_MANY_ATTEMPTS",
+  alreadySucceeded: "ALREADY_SUCCEEDED",
+  errorDuringLogin: "ERROR_DURING_LOGIN"
 }
 
 export default Login
