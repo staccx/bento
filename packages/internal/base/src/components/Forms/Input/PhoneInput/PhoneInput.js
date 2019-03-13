@@ -26,8 +26,8 @@ const PhoneInput = React.forwardRef(
   ) => {
     return (
       <PhoneInputWrapper {...otherProps}>
-        <Label>{label}</Label>
-        <Wrap>
+        <Label {...otherProps}>{label}</Label>
+        <Wrap {...otherProps}>
           {showCountryCode && (
             <CountryCode>
               <Select
