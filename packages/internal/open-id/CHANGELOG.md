@@ -3,78 +3,8 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [8.72.0](https://bitbucket.org/stacc-flow/bento/compare/v8.71.3...v8.72.0) (2019-03-08)
-
-**Note:** Version bump only for package @staccx/open-id
-
-
-
-
-
-# [8.71.0](https://bitbucket.org/stacc-flow/bento/compare/v8.70.1...v8.71.0) (2019-03-05)
-
-**Note:** Version bump only for package @staccx/open-id
-
-
-
-
-
-# [8.69.0](https://bitbucket.org/stacc-flow/bento/compare/v8.68.1...v8.69.0) (2019-03-01)
-
-
-### Features
-
-* **open-id:** add signinSilentCallback to export ([a11011f](https://bitbucket.org/stacc-flow/bento/commits/a11011f))
-
-
-
-
-
-# [8.60.0](https://bitbucket.org/stacc-flow/bento/compare/v8.59.0...v8.60.0) (2019-02-11)
-
-
-### Features
-
-* **bento:** updated react to 16.8 ([89e8a70](https://bitbucket.org/stacc-flow/bento/commits/89e8a70))
-
-
-
-
-
-# [8.58.0](https://bitbucket.org/stacc-flow/bento/compare/v8.57.0...v8.58.0) (2019-02-05)
-
-
-### Features
-
-* **bento:** consolidation ([c524bc9](https://bitbucket.org/stacc-flow/bento/commits/c524bc9))
-
-
-
-
-
-# [8.57.0](https://bitbucket.org/stacc-flow/bento/compare/v8.56.2...v8.57.0) (2019-02-04)
-
-
-### Features
-
-* **bento:** fix test regime + consolidatet eslint packages ([0cc561a](https://bitbucket.org/stacc-flow/bento/commits/0cc561a))
-
-
-
-
-
-# [8.47.0](https://bitbucket.org/stacc-flow/bento/compare/v8.46.1...v8.47.0) (2019-01-08)
-
-
-### Features
-
-* **open-api:** add more state flags. add setuser to provider ([c611580](https://bitbucket.org/stacc-flow/bento/commits/c611580))
-
-
-
-
-
-# [8.46.0](https://bitbucket.org/stacc-flow/bento/compare/v8.45.0...v8.46.0) (2019-01-07)
+<a name="8.73.1"></a>
+## [8.73.1](https://bitbucket.org/stacc-flow/bento/compare/v8.73.0...v8.73.1) (2019-03-13)
 
 **Note:** Version bump only for package @staccx/open-id
 
