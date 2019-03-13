@@ -12,7 +12,6 @@ const findFormFields = (node, startFields = []) => {
 
   traverse(node, {
     ComponentElement(path) {
-      console.log(path.node)
       if (isFormField(path.node.type.name)) {
         formFields.push(path.node)
       }
