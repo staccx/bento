@@ -3,101 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [8.73.0](https://bitbucket.org/stacc-flow/bento/compare/v8.72.4...v8.73.0) (2019-03-12)
+<a name="8.73.1"></a>
+## [8.73.1](https://bitbucket.org/stacc-flow/bento/compare/v8.73.0...v8.73.1) (2019-03-13)
 
 **Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-## [8.72.3](https://bitbucket.org/stacc-flow/bento/compare/v8.72.2...v8.72.3) (2019-03-08)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.72.0](https://bitbucket.org/stacc-flow/bento/compare/v8.71.3...v8.72.0) (2019-03-08)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-## [8.71.2](https://bitbucket.org/stacc-flow/bento/compare/v8.71.1...v8.71.2) (2019-03-06)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-## [8.71.1](https://bitbucket.org/stacc-flow/bento/compare/v8.71.0...v8.71.1) (2019-03-06)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.71.0](https://bitbucket.org/stacc-flow/bento/compare/v8.70.1...v8.71.0) (2019-03-05)
-
-
-### Features
-
-* **imove-theme:** add divider, fix buttons nd layout ([45d0576](https://bitbucket.org/stacc-flow/bento/commits/45d0576))
-
-
-
-
-
-## [8.70.1](https://bitbucket.org/stacc-flow/bento/compare/v8.70.0...v8.70.1) (2019-03-05)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.70.0](https://bitbucket.org/stacc-flow/bento/compare/v8.69.1...v8.70.0) (2019-03-01)
-
-
-### Features
-
-* **imove-theme:** add SelectSimple to theme ([8a234d2](https://bitbucket.org/stacc-flow/bento/commits/8a234d2))
-
-
-
-
-
-## [8.69.1](https://bitbucket.org/stacc-flow/bento/compare/v8.69.0...v8.69.1) (2019-03-01)
-
-**Note:** Version bump only for package @staccx/imove-theme
-
-
-
-
-
-# [8.69.0](https://bitbucket.org/stacc-flow/bento/compare/v8.68.1...v8.69.0) (2019-03-01)
-
-
-### Features
-
-* **imove-theme:** add inbfobutton ([812f9b1](https://bitbucket.org/stacc-flow/bento/commits/812f9b1))
-
-
-
-
-
-# [8.68.0](https://bitbucket.org/stacc-flow/bento/compare/v8.67.0...v8.68.0) (2019-02-28)
-
-
-### Features
-
-* **imove-theme:** adjust styles ([a332d34](https://bitbucket.org/stacc-flow/bento/commits/a332d34))
 
 
 
