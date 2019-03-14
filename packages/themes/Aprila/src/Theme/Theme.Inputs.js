@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { theming, Input } from "@staccx/base"
+import { theming, Input, Toggle } from "@staccx/base"
 import { FadeIn } from "@staccx/animations"
 
 // Wrapper
@@ -27,20 +27,30 @@ export const InputLabelStyling = theming.createVariants(
 )
 
 // INPUT
-export const InputInputStyling = theming.createVariants(
-  {
-    [theming.VARIANT_DEFAULT]: css`
-      box-sizing: border-box;
-    `,
-    schemaInput: css`
-      box-sizing: border-box;
-      border-radius: 3px;
-      border-width: 2px;
-      font-size: ${theming.font.input};
-    `
-  },
-  Input.themeProps.input
-)
+export const InputInputStyling = [
+  theming.createVariants(
+    {
+      [theming.VARIANT_DEFAULT]: css`
+        box-sizing: border-box;
+      `,
+      schemaInput: css`
+        box-sizing: border-box;
+        border-radius: 3px;
+        border-width: 2px;
+        font-size: ${theming.font.input};
+      `
+    },
+    Input.themeProps.input
+  ),
+  theming.createVariants(
+    {
+      [theming.VARIANT_DEFAULT]: css`
+        width: 3.5em !important;
+      `
+    },
+    Toggle.themeProps.toggleElement
+  )
+]
 
 export const InputHelpBoxStyling = [
   theming.createVariants(
