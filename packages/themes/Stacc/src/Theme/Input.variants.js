@@ -34,8 +34,7 @@ export default [
   ),
   theming.createVariants(
     {
-      cool: css`
-      `
+      cool: css``
     },
     PhoneInput.themeProps.input
   )
