@@ -3,13 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [8.73.3](https://bitbucket.org/stacc-flow/bento/compare/v8.73.2...v8.73.3) (2019-03-14)
+<a name="8.73.4"></a>
+## [8.73.4](https://bitbucket.org/stacc-flow/bento/compare/v8.73.3...v8.73.4) (2019-03-14)
 
-
-### Bug Fixes
-
-* **base:** phoneInput now passes props on to label and wrap ([423ee8b](https://bitbucket.org/stacc-flow/bento/commits/423ee8b))
-* **json-schema:** fix where arrays get label from ([8b475f0](https://bitbucket.org/stacc-flow/bento/commits/8b475f0))
+**Note:** Version bump only for package @staccx/bento
 
 
 

@@ -3,7 +3,8 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [8.73.3](https://bitbucket.org/stacc-flow/bento/compare/v8.73.2...v8.73.3) (2019-03-14)
+<a name="8.73.4"></a>
+## [8.73.4](https://bitbucket.org/stacc-flow/bento/compare/v8.73.3...v8.73.4) (2019-03-14)
 
 **Note:** Version bump only for package @staccx/savings-advisor
 
