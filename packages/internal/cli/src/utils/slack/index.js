@@ -46,7 +46,6 @@ const getGiphy = async (input = "", rating = "R") => {
     )
     .then(result => result.data)
 
-  console.log(data)
   return {
     image_url: data.fixed_height_downsampled_url,
     fallback: input,

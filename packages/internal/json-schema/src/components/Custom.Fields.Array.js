@@ -59,7 +59,7 @@ const defaultArrayItem = props => {
 }
 
 export default props => {
-  const title = props.uiSchema["ui:title"]
+  const title = props.label || props.schema.title || props.uiSchema["ui:title"]
   return (
     <Layout>
       {title && (

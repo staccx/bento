@@ -20,15 +20,14 @@ const PhoneInput = React.forwardRef(
       showCountryCode = false,
       initialCountry = NORWAY,
       onCountryChange,
-      variant,
       ...otherProps
     },
     ref
   ) => {
     return (
-      <PhoneInputWrapper {...otherProps} variant={variant}>
-        <Label variant={variant}>{label}</Label>
-        <Wrap>
+      <PhoneInputWrapper {...otherProps}>
+        <Label {...otherProps}>{label}</Label>
+        <Wrap {...otherProps}>
           {showCountryCode && (
             <CountryCode>
               <Select
@@ -42,7 +41,6 @@ const PhoneInput = React.forwardRef(
                     onCountryChange(country)
                   }
                 }}
-                variant={variant}
               />
             </CountryCode>
           )}
@@ -53,7 +51,6 @@ const PhoneInput = React.forwardRef(
               phone: true,
               phoneRegionCode: locale
             }}
-            variant={variant}
             {...otherProps}
           />
         </Wrap>
