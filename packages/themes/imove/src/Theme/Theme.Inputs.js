@@ -100,6 +100,15 @@ export const LabelStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       color: ${theming.color("darkBlue")};
+    `,
+    phone: css`
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding-bottom: 13px;
+      color: ${theming.color.primary};
+      font-weight: 600;
+      z-index: 5;
     `
   },
   Label.themeProps.label
