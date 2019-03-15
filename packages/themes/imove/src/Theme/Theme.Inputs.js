@@ -70,6 +70,33 @@ export const InputStyling = theming.createVariants(
         -webkit-text-fill-color: ${theming.color.white};
         background-color: transparent;
       }
+    `,
+    waitingList: css`
+      background-color: transparent;
+      border-width: 0;
+      padding: 4px 0 12px;
+      min-height: 32px;
+      border-radius: 0;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent;
+        border-width: 0;
+      }
+
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus textarea:-webkit-autofill,
+      textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+      select:-webkit-autofill,
+      select:-webkit-autofill:hover,
+      select:-webkit-autofill:focus {
+        border: 0;
+        -webkit-box-shadow: 0 0 0 30px rgba(0, 0, 0, 0) inset !important;
+        -webkit-text-fill-color: ${theming.color.white};
+        background-color: transparent;
+      }
     `
   },
   Input.themeProps.input

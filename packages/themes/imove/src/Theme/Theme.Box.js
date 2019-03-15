@@ -124,7 +124,34 @@ export default theming.createVariants(
       border-bottom: 1px solid ${theming.color.white};
 
       :focus-within {
-        border-color: ${theming.color("dark")};
+        border-color: ${theming.color("white")};
+      }
+
+      > div {
+        flex-basis: calc(100% - 54px);
+
+        > div {
+          width: 100%;
+        }
+      }
+    `,
+    waitingListInput: css`
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid ${theming.color.primary};
+
+      :focus-within {
+        border-color: ${theming.color("darkBlue")};
+      }
+
+      > div {
+        flex-basis: calc(100% - 54px);
+
+        > div {
+          width: 100%;
+        }
       }
     `,
     bottomButtons: css`
