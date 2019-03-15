@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.73.5](https://bitbucket.org/stacc-flow/bento/compare/v8.73.4...v8.73.5) (2019-03-14)
+
+
+### Bug Fixes
+
+* **aprila-theme:** hack fix width Toggle ([22c60a9](https://bitbucket.org/stacc-flow/bento/commits/22c60a9))
+
+
+
+
+
 <a name="8.73.4"></a>
 ## [8.73.4](https://bitbucket.org/stacc-flow/bento/compare/v8.73.3...v8.73.4) (2019-03-14)
 
