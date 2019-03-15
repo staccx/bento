@@ -43,7 +43,7 @@ export default theming.createVariants(
     `,
     filter: css`
       padding: ${theming.spacing.large} ${theming.spacing.medium}
-        ${theming.spacing.medium}eb;
+        ${theming.spacing.medium};
       background-color: ${theming.color.primary};
       color: ${theming.color.white};
       border-radius: 22px;
@@ -57,6 +57,10 @@ export default theming.createVariants(
       h6,
       label {
         color: ${theming.color.white};
+      }
+
+      @media screen and (min-width: 768px) {
+        border-radius: 0;
       }
     `,
     filterContainer: css`
@@ -77,11 +81,20 @@ export default theming.createVariants(
       label {
         color: ${theming.color.white};
       }
+
+      @media screen and (min-width: 768px) {
+        width: 100%;
+        border-radius: 0;
+      }
     `,
     filterOuter: css`
       position: relative;
       display: flex;
       justify-content: flex-end;
+
+      @media screen and (min-width: 768px) {
+        justify-content: center;
+      }
     `,
     subtleLeft: css`
       padding: 0;

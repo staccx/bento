@@ -94,6 +94,11 @@ export default theming.createVariants(
       &:active {
         background-color: transparent;
       }
+
+      @media screen and (min-width: 768px) {
+        width: 100%;
+        min-height: ${theming.targetSize.normal};
+      }
     `,
     inverted: css`
       background-color: ${theming.color.white};
