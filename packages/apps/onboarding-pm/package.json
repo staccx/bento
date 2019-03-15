@@ -1,6 +1,6 @@
 {
   "name": "@staccx/onboarding-pm",
-  "version": "8.73.5",
+  "version": "8.73.6",
   "description": "",
   "private": true,
   "author": "StaccX",
@@ -31,7 +31,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/aprila-theme": "^8.73.5",
+    "@staccx/aprila-theme": "^8.73.6",
     "@staccx/base": "^8.73.5",
     "@staccx/norefjell-theme": "^8.73.5",
     "countries-list": "^2.3.2",
