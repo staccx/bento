@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.74.0](https://bitbucket.org/stacc-flow/bento/compare/v8.73.7...v8.74.0) (2019-03-18)
+
+
+### Features
+
+* **base:** initial country code in PhoneInput ([99e7500](https://bitbucket.org/stacc-flow/bento/commits/99e7500))
+
+
+
+
+
 <a name="8.73.7"></a>
 ## [8.73.7](https://bitbucket.org/stacc-flow/bento/compare/v8.73.6...v8.73.7) (2019-03-15)
 
