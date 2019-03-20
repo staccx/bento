@@ -1,6 +1,6 @@
 {
   "name": "@staccx/nori",
-  "version": "8.76.1",
+  "version": "8.77.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -8,7 +8,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@staccx/base": "^8.76.1",
-    "@staccx/i18n": "^8.76.1",
+    "@staccx/i18n": "^8.77.0",
     "@staccx/sanity": "^8.76.1",
     "@staccx/stacc-theme": "^8.76.1",
     "prop-types": "^15.6.2",
