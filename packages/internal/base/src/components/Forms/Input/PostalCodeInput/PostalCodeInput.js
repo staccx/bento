@@ -43,14 +43,16 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   useEffect(() => {
     if (postalCode && !isNaN(postalCode) && postalCode > 999) {
       getPostalPlace(postalCode)
+    } else {
+      setPlace(null)
     }
   }, [postalCode])
 
   useEffect(() => {
-    if (onChange && place) {
+    if (onChange) {
       onChange({ place, postalCode })
     }
-  }, [place])
+  }, [place, postalCode])
 
   useEffect(() => {
     if (defaultValue && !isNaN(defaultValue) && defaultValue > 999)
