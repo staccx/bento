@@ -19,6 +19,7 @@ const PhoneInput = React.forwardRef(
       label,
       showCountryCode = false,
       initialCountry = NORWAY,
+      initialCountryCode = NORWAY.code,
       onCountryChange,
       ...otherProps
     },
@@ -35,7 +36,11 @@ const PhoneInput = React.forwardRef(
                 items={countries}
                 itemToString={item => `+${item.code}`}
                 itemToKey={item => item.code}
-                initialSelectedItem={initialCountry}
+                initialSelectedItem={
+                  initialCountryCode
+                    ? countries.find(c => c.code === initialCountryCode)
+                    : initialCountry
+                }
                 onChange={country => {
                   if (onCountryChange) {
                     onCountryChange(country)
