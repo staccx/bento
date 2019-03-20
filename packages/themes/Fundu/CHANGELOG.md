@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.76.1](https://bitbucket.org/stacc-flow/bento/compare/v8.76.0...v8.76.1) (2019-03-20)
+
+**Note:** Version bump only for package @staccx/fundu-theme
+
+
+
+
+
 ## [8.75.1](https://bitbucket.org/stacc-flow/bento/compare/v8.75.0...v8.75.1) (2019-03-20)
 
 **Note:** Version bump only for package @staccx/fundu-theme
