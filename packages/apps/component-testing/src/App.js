@@ -106,7 +106,13 @@ const App = () => {
                 />
               </div>
               <div>
-                <PostalCodeInput label={"Ingen default value"} id={"1"} />
+                <PostalCodeInput
+                  label={"Ingen default value"}
+                  id={"1"}
+                  onChange={({ postalCode, place }) =>
+                    console.log(postalCode, place)
+                  }
+                />
                 <PostalCodeInput
                   label={"Med default value"}
                   id={"2"}

@@ -19,31 +19,38 @@ import { themePropTypes } from "../../../../constants/themeContants"
  */
 const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   const [place, setPlace] = useState(null)
+  const [postalCode, setPostalCode] = useState(defaultValue)
   const [isLoading, setIsLoading] = useState(false)
   const inputRef = useRef(null)
 
-  const getPostalPlace = async postalCode => {
+  const getPostalPlace = async () => {
     setIsLoading(true)
-    const result = await axios
+    const place = await axios
       .get(
         `https://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&pnr=${postalCode}`
       )
       .then(result => result.data)
 
-    setPlace(result)
-
-    if (onChange) {
-      onChange(place)
-    }
+    setPlace(place)
     setIsLoading(false)
   }
 
   const handleChange = e => {
     const { value } = e.target
-    if (value && !isNaN(value) && value > 999) {
-      getPostalPlace(value)
-    }
+    setPostalCode(value)
   }
+
+  useEffect(() => {
+    if (postalCode && !isNaN(postalCode) && postalCode > 999) {
+      getPostalPlace(postalCode)
+    }
+  }, [postalCode])
+
+  useEffect(() => {
+    if (onChange && place) {
+      onChange({ place, postalCode })
+    }
+  }, [place])
 
   useEffect(() => {
     if (defaultValue && !isNaN(defaultValue) && defaultValue > 999)
