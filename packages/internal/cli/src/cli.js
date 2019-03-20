@@ -53,8 +53,9 @@ program
   .command("release")
   .alias("r")
   .description("Helps you release bento")
-  .action(({ parent: { debug = false } }) => {
-    release(debug)
+  .option("-s, --skip", "skips version testing")
+  .action(({ parent: { debug = false }, skip }) => {
+    release(debug, skip)
   })
 
 program

@@ -9,13 +9,13 @@ const onData = data => {
   updated = JSON.parse(data)
 }
 
-async function release(debug) {
+async function release(debug, skip = false) {
   const spinner = setupSpinner()
 
   const checkGit = async (msg = "Checking git for changes") => {
     try {
       spinner.start(msg)
-      if (!debug) {
+      if (!debug || skip) {
         await checkWorkingTree({ cwd: process.cwd() })
         await fetch(process.cwd())
         const { behind, ahead } = await status(process.cwd())
