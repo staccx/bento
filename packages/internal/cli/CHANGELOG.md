@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.76.0](https://bitbucket.org/stacc-flow/bento/compare/v8.75.1...v8.76.0) (2019-03-20)
+
+
+### Features
+
+* **cli:** add skip option ([5db4bc4](https://bitbucket.org/stacc-flow/bento/commits/5db4bc4))
+
+
+
+
+
 <a name="8.73.7"></a>
 ## [8.73.7](https://bitbucket.org/stacc-flow/bento/compare/v8.73.6...v8.73.7) (2019-03-15)
 
