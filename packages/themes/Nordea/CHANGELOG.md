@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.75.1](https://bitbucket.org/stacc-flow/bento/compare/v8.75.0...v8.75.1) (2019-03-20)
+
+**Note:** Version bump only for package @staccx/nordea-theme
+
+
+
+
+
 # [8.75.0](https://bitbucket.org/stacc-flow/bento/compare/v8.74.0...v8.75.0) (2019-03-20)
 
 **Note:** Version bump only for package @staccx/nordea-theme
