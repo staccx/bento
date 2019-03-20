@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, useState } from "react"
 import {
   BirthdateInput,
   Wrapper,
@@ -81,109 +81,155 @@ const renderLabel = getLabelOptions => (
   <Label {...getLabelOptions()}>Fruit</Label>
 )
 
-class App extends Component {
-  render() {
-    return (
-      <LanguageProvider
-        texts={texts}
-        language={"nb"}
-        languages={["nb", "en"]}
-        debug
-      >
-        <ThemeProvider theme={theme}>
-          <Router>
-            <Wrapper>
-              <GlobalStyle />
-              <WebFonts />
-              <PadBox>
-                <Breadcrumb
-                  path={[
-                    {
-                      name: "Home",
-                      to: "/"
-                    },
-                    {
-                      name: "Level 2",
-                      to: "/level-2"
-                    },
-                    {
-                      name: "Current page"
-                    },
-                    {
-                      name: "Last page",
-                      to: "/level-4"
-                    }
-                  ]}
+const App = () => {
+  const [postalDefault, setPostalDefault] = useState(2000)
+  console.log(postalDefault)
+
+  return (
+    <LanguageProvider
+      texts={texts}
+      language={"nb"}
+      languages={["nb", "en"]}
+      debug
+    >
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Wrapper>
+            <GlobalStyle />
+            <WebFonts />
+
+            <Layout>
+              <div>
+                <Input
+                  defaultValue={postalDefault}
+                  onChange={e => setPostalDefault(e.target.value)}
                 />
-              </PadBox>
-              <List>
-                <ExpandListItem title={"i18n"}>
-                  <TranslatedText i18nKey={"bugskey"}>
-                    Fallback Text
-                  </TranslatedText>
-                  <TranslatedText i18nKey={"INVOICE"}>
-                    {value => <Paragraph>{value}</Paragraph>}
-                  </TranslatedText>
-                  <TranslatedText />
-                  <TranslatedText>Just doing stuff</TranslatedText>
-                </ExpandListItem>
-                <ExpandListItem title={"Inputs"} expanded>
-                  <Layout
-                    paddingTop="huge"
-                    paddingBottom="huge"
-                    rowGap={"large"}
-                  >
-                    <BirthdateInput
-                      id="bdaaaay"
-                      names={["wasd1", "wasd2", "wasd3"]}
-                      label={"Your birthday"}
-                      onComplete={value => console.log("onComplete: ", value)}
-                      onChange={value => console.log("onChange: ", value)}
-                      aria-labelledby="rg1_label"
-                    />
-                    <BirthdateInput
-                      ids={["bday", "bmnth", "byr"]}
-                      labels={["bday", "bmnth", "byr"]}
-                      onComplete={value => console.log("onComplete: ", value)}
-                      onChange={value => console.log("onChange: ", value)}
-                    />
-                    <BirthdateInput
-                      id={"asnjda"}
-                      ids={["bday", "bmnth", "byr"]}
-                      names={["bday", "bmnth", "byr"]}
-                      label={"Superflous"}
-                      labels={["bday", "bmnth", "byr"]}
-                      onComplete={value => console.log("onComplete: ", value)}
-                      onChange={value => console.log("onChange: ", value)}
-                    />
-                  </Layout>
-                  <CompanyInput id={"test"} />
-                  <Select
-                    items={options}
-                    itemToString={item => item.value}
-                    itemToKey={item => item.value}
-                    placeHolderLabel={"Velg..."}
-                    onChange={() => null}
+              </div>
+              <div>
+                <PostalCodeInput label={"Ingen default value"} id={"1"} />
+                <PostalCodeInput
+                  label={"Med default value"}
+                  id={"2"}
+                  defaultValue={postalDefault}
+                />
+              </div>
+            </Layout>
+            <PadBox>
+              <Breadcrumb
+                path={[
+                  {
+                    name: "Home",
+                    to: "/"
+                  },
+                  {
+                    name: "Level 2",
+                    to: "/level-2"
+                  },
+                  {
+                    name: "Current page"
+                  },
+                  {
+                    name: "Last page",
+                    to: "/level-4"
+                  }
+                ]}
+              />
+            </PadBox>
+            <List>
+              <ExpandListItem title={"i18n"}>
+                <TranslatedText i18nKey={"bugskey"}>
+                  Fallback Text
+                </TranslatedText>
+                <TranslatedText i18nKey={"INVOICE"}>
+                  {value => <Paragraph>{value}</Paragraph>}
+                </TranslatedText>
+                <TranslatedText />
+                <TranslatedText>Just doing stuff</TranslatedText>
+              </ExpandListItem>
+              <ExpandListItem title={"Inputs"} expanded>
+                <Layout paddingTop="huge" paddingBottom="huge" rowGap={"large"}>
+                  <BirthdateInput
+                    id="bdaaaay"
+                    names={["wasd1", "wasd2", "wasd3"]}
+                    label={"Your birthday"}
+                    onComplete={value => console.log("onComplete: ", value)}
+                    onChange={value => console.log("onChange: ", value)}
+                    aria-labelledby="rg1_label"
                   />
-                  <Combobox
-                    onChange={console.log}
-                    renderInput={renderInput}
-                    renderSelected={renderSelected}
-                    renderLabel={renderLabel}
-                    listComponent={List}
-                    filter={["value", "misc"]}
-                    indexer={"value"}
-                    options={options}
-                    initialSelectedItem={options[1]}
-                  >
-                    {({
-                      result,
-                      getItemProps,
-                      highlightedIndex,
-                      selectedItem
-                    }) => (
+                  <BirthdateInput
+                    ids={["bday", "bmnth", "byr"]}
+                    labels={["bday", "bmnth", "byr"]}
+                    onComplete={value => console.log("onComplete: ", value)}
+                    onChange={value => console.log("onChange: ", value)}
+                  />
+                  <BirthdateInput
+                    id={"asnjda"}
+                    ids={["bday", "bmnth", "byr"]}
+                    names={["bday", "bmnth", "byr"]}
+                    label={"Superflous"}
+                    labels={["bday", "bmnth", "byr"]}
+                    onComplete={value => console.log("onComplete: ", value)}
+                    onChange={value => console.log("onChange: ", value)}
+                  />
+                </Layout>
+                <CompanyInput id={"test"} />
+                <Select
+                  items={options}
+                  itemToString={item => item.value}
+                  itemToKey={item => item.value}
+                  placeHolderLabel={"Velg..."}
+                  onChange={() => null}
+                />
+                <Combobox
+                  onChange={console.log}
+                  renderInput={renderInput}
+                  renderSelected={renderSelected}
+                  renderLabel={renderLabel}
+                  listComponent={List}
+                  filter={["value", "misc"]}
+                  indexer={"value"}
+                  options={options}
+                  initialSelectedItem={options[1]}
+                >
+                  {({
+                    result,
+                    getItemProps,
+                    highlightedIndex,
+                    selectedItem
+                  }) => (
+                    <List>
+                      {result.map(
+                        renderOption(
+                          getItemProps,
+                          highlightedIndex,
+                          selectedItem
+                        )
+                      )}
+                    </List>
+                  )}
+                </Combobox>
+                <Select2
+                  options={options}
+                  renderSelected={(selectedItem, getToggleButtonProps) => (
+                    <Button {...getToggleButtonProps()}>
+                      {selectedItem.value}
+                    </Button>
+                  )}
+                  renderLabel={renderLabel}
+                  renderPlaceholder={getToggleButtonProps => (
+                    <Button {...getToggleButtonProps()}>Velg...</Button>
+                  )}
+                  onChange={console.log}
+                >
+                  {({
+                    selectedItem,
+                    options,
+                    getItemProps,
+                    highlightedIndex
+                  }) => {
+                    return (
                       <List>
-                        {result.map(
+                        {options.map(
                           renderOption(
                             getItemProps,
                             highlightedIndex,
@@ -191,127 +237,97 @@ class App extends Component {
                           )
                         )}
                       </List>
-                    )}
-                  </Combobox>
-                  <Select2
-                    options={options}
-                    renderSelected={(selectedItem, getToggleButtonProps) => (
-                      <Button {...getToggleButtonProps()}>
-                        {selectedItem.value}
-                      </Button>
-                    )}
-                    renderLabel={renderLabel}
-                    renderPlaceholder={getToggleButtonProps => (
-                      <Button {...getToggleButtonProps()}>Velg...</Button>
-                    )}
-                    onChange={console.log}
-                  >
-                    {({
-                      selectedItem,
-                      options,
-                      getItemProps,
-                      highlightedIndex
-                    }) => {
-                      return (
-                        <List>
-                          {options.map(
-                            renderOption(
-                              getItemProps,
-                              highlightedIndex,
-                              selectedItem
-                            )
-                          )}
-                        </List>
-                      )
-                    }}
-                  </Select2>
-                  <CreditCardInput label={"Credit Card"} />
-                  <PhoneInput placeholder={"This has a variant on it"} variant={"cool"} label={"Phone number"} onChange={console.warn} />
-                  <NationalIdInput label={"National Id"} id={"tsa"} />
-                  <PostalCodeInput
-                    label={"Postal code"}
-                    onChange={console.log}
-                  />
-                  <AccountInput label={"Account number"} />
-                  <CurrencyInput label={"Currency"} />
-                </ExpandListItem>
-                <ExpandListItem title={"Loaders"}>
-                  {/* <ExpandListItem title={"Loaders"} isOpen> */}
-                  <Loading />
-                  <hr style={{ margin: 24 }} />
-                  <Loading
-                    variant={"circles"}
-                    color={theming.color.primary()({ theme })}
-                  />
-                  <hr style={{ margin: 24 }} />
-                  <Loading
-                    variant={"atom"}
-                    color={theming.color.primary()({ theme })}
-                  />
-                  <hr style={{ margin: 24 }} />
-                  <Loading
-                    variant={"breeding"}
-                    color={theming.color.primary()({ theme })}
-                  />
+                    )
+                  }}
+                </Select2>
+                <CreditCardInput label={"Credit Card"} />
+                <PhoneInput
+                  placeholder={"This has a variant on it"}
+                  variant={"cool"}
+                  label={"Phone number"}
+                  onChange={console.warn}
+                />
+                <NationalIdInput label={"National Id"} id={"tsa"} />
+                <PostalCodeInput label={"Postal code"} onChange={console.log} />
+                <AccountInput label={"Account number"} />
+                <CurrencyInput label={"Currency"} />
+              </ExpandListItem>
+              <ExpandListItem title={"Loaders"}>
+                {/* <ExpandListItem title={"Loaders"} isOpen> */}
+                <Loading />
+                <hr style={{ margin: 24 }} />
+                <Loading
+                  variant={"circles"}
+                  color={theming.color.primary()({ theme })}
+                />
+                <hr style={{ margin: 24 }} />
+                <Loading
+                  variant={"atom"}
+                  color={theming.color.primary()({ theme })}
+                />
+                <hr style={{ margin: 24 }} />
+                <Loading
+                  variant={"breeding"}
+                  color={theming.color.primary()({ theme })}
+                />
 
-                  <hr style={{ margin: 24 }} />
-                  <Loading
-                    variant={"finger"}
-                    color={theming.color.primary()({ theme })}
-                    size={64}
-                  />
-                  <hr style={{ margin: 24 }} />
-                  <Loading
-                    variant={"climbing"}
-                    color={theming.color.primary()({ theme })}
-                    size={32}
-                    sizeUnit={"px"}
-                  />
-                </ExpandListItem>
-                <Slider2 min={20000} max={100000} step={10000} value={50000} />
-                <Form onSubmit={console.log}>
+                <hr style={{ margin: 24 }} />
+                <Loading
+                  variant={"finger"}
+                  color={theming.color.primary()({ theme })}
+                  size={64}
+                />
+                <hr style={{ margin: 24 }} />
+                <Loading
+                  variant={"climbing"}
+                  color={theming.color.primary()({ theme })}
+                  size={32}
+                  sizeUnit={"px"}
+                />
+              </ExpandListItem>
+              <Slider2 min={20000} max={100000} step={10000} value={50000} />
+              <Form onSubmit={console.log}>
+                <div>
+                  <FormField name="amount" type="string" required>
+                    {({ name, field, form }) => (
+                      <Input
+                        label="Beløp"
+                        placeholder="0"
+                        type="tel"
+                        id="telwithdraw"
+                        defaultValue={0}
+                        {...field}
+                      />
+                    )}
+                  </FormField>
                   <div>
-                    <FormField name="amount" type="string" required>
-                      {({ name, field, form }) => (
-                        <Input
-                          label="Beløp"
-                          placeholder="0"
-                          type="tel"
-                          id="telwithdraw"
-                          defaultValue={0}
-                          {...field}
-                        />
-                      )}
+                    <FormField name="omg" type="number" required>
+                      {({ name, field, form }) => {
+                        const { value, ...rest } = field
+                        return (
+                          <Input
+                            label="Wat"
+                            placeholder="0"
+                            type="tel"
+                            id="telwithdraw"
+                            {...rest}
+                            defaultValue={0}
+                            onChange={e =>
+                              form.setFieldValue("omg", e.target.value)
+                            }
+                          />
+                        )
+                      }}
                     </FormField>
-                    <div>
-                      <FormField name="omg" type="number" required>
-                        {({ name, field, form }) => {
-                          const { value, ...rest } = field
-                          return (
-                            <Input
-                              label="Wat"
-                              placeholder="0"
-                              type="tel"
-                              id="telwithdraw"
-                              {...rest}
-                              defaultValue={0}
-                              onChange={e =>
-                                form.setFieldValue("omg", e.target.value)
-                              }
-                            />
-                          )
-                        }}
-                      </FormField>
-                    </div>
                   </div>
-                </Form>
-              </List>
-            </Wrapper>
-          </Router>
-        </ThemeProvider>
-      </LanguageProvider>
-    )
-  }
+                </div>
+              </Form>
+            </List>
+          </Wrapper>
+        </Router>
+      </ThemeProvider>
+    </LanguageProvider>
+  )
 }
 
 const PadBox = styled.div`

@@ -42,6 +42,7 @@
     "@staccx/formatting": "^8.58.0",
     "@staccx/math": "^8.58.0",
     "@staccx/utils": "^8.58.0",
+    "axios": "^0.18.0",
     "babel-plugin-prismjs": "^1.0.2",
     "cleave.js": "^1.4.4",
     "copy-to-clipboard": "^3.0.8",

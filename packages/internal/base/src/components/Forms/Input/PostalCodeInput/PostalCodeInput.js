@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from "react"
+import axios from "axios"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import Input, { InputPropTypes } from "../Input"
@@ -16,71 +17,59 @@ import { themePropTypes } from "../../../../constants/themeContants"
 /**
  * Input for Norwegian Postal codes. Adds PostalPlace according to the number. Input is imported from Input-component
  */
-class PostalCodeInput extends React.PureComponent {
-  constructor(props, context) {
-    super(props, context)
+const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
+  const [place, setPlace] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const inputRef = useRef(null)
 
-    this.state = {
-      place: null,
-      isLoading: false
-    }
-    this.handleChange = this.handleChange.bind(this)
-    this.getPostalPlace = this.getPostalPlace.bind(this)
-
-    if (props.defaultValue) {
-      this.getPostalPlace(props.defaultValue)
-    }
-  }
-
-  getPostalPlace(postalCode) {
-    this.setState({ isLoading: true })
-    return window
-      .fetch(
+  const getPostalPlace = async postalCode => {
+    setIsLoading(true)
+    const result = await axios
+      .get(
         `https://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&pnr=${postalCode}`
       )
-      .then(result => result.json())
-      .then(
-        place =>
-          new Promise(resolve =>
-            this.setState({ place, postalCode, isLoading: false }, resolve)
-          )
-      )
-      .catch(() => this.setState({ isLoading: false }))
+      .then(result => result.data)
+
+    setPlace(result)
+
+    if (onChange) {
+      onChange(place)
+    }
+    setIsLoading(false)
   }
 
-  handleChange(e) {
-    console.log(e)
+  const handleChange = e => {
     const { value } = e.target
-    if (value && !isNaN(value)) {
-      this.getPostalPlace(value).then(() => {
-        if (this.props.onChange) {
-          this.props.onChange(this.state)
-        }
-      })
-    } else if (this.state.place) {
-      this.setState({ place: null })
+    if (value && !isNaN(value) && value > 999) {
+      getPostalPlace(value)
     }
   }
 
-  render() {
-    return (
-      <PostalInputWrapper variant={this.props.variant}>
-        <PostalInput
-          id={"postnummer"}
-          type={"tel"}
-          options={{ blocks: [4] }}
-          {...this.props}
-          onChange={this.handleChange}
-        />
-        {this.state.isLoading && <Loading />}
-        {this.state.place && (
-          <Location valid={this.state.place.valid} variant={this.props.variant}>
-            {this.state.place.result}
-          </Location>
-        )}
-      </PostalInputWrapper>
-    )
-  }
+  useEffect(() => {
+    if (defaultValue && !isNaN(defaultValue) && defaultValue > 999)
+      getPostalPlace(defaultValue)
+    inputRef.current.setRawValue(defaultValue)
+  }, [defaultValue])
+
+  return (
+    <PostalInputWrapper variant={variant}>
+      <PostalInput
+        id={"postnummer"}
+        type={"tel"}
+        options={{ blocks: [4] }}
+        defaultValue={defaultValue}
+        {...restProps}
+        onChange={handleChange}
+        ref={inputRef}
+      />
+      {isLoading && <Loading />}
+      {place && (
+        <Location valid={place.valid} variant={variant}>
+          {place.result}
+        </Location>
+      )}
+    </PostalInputWrapper>
+  )
 }
 
 PostalCodeInput.themeProps = {
