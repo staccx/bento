@@ -14,6 +14,10 @@ import {
 } from "../../../../theming"
 import { themePropTypes } from "../../../../constants/themeContants"
 
+const axiosInstance = axios.create({
+  baseURL: `https://fraktguide.bring.no/fraktguide/api`
+})
+
 /**
  * Input for Norwegian Postal codes. Adds PostalPlace according to the number. Input is imported from Input-component
  */
@@ -25,13 +29,18 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
 
   const getPostalPlace = async () => {
     setIsLoading(true)
-    const place = await axios
-      .get(
-        `https://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&pnr=${postalCode}`
-      )
-      .then(result => result.data)
+    try {
+      if (axiosInstance.defaults.headers.common["Authorization"]) {
+        delete axiosInstance.defaults.headers.common["Authorization"]
+      }
+      const place = await axiosInstance
+        .get(`/postalCode.json?country=no&pnr=${postalCode}`)
+        .then(result => result.data)
+      setPlace(place)
+    } catch (e) {
+      console.error(e)
+    }
 
-    setPlace(place)
     setIsLoading(false)
   }
 
@@ -55,9 +64,10 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   }, [place, postalCode])
 
   useEffect(() => {
-    if (defaultValue && !isNaN(defaultValue) && defaultValue > 999)
-      getPostalPlace(defaultValue)
-    inputRef.current.setRawValue(defaultValue)
+    if (postalCode !== defaultValue) {
+      setPostalCode(defaultValue)
+      inputRef.current.setRawValue(defaultValue)
+    }
   }, [defaultValue])
 
   return (

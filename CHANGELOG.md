@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.77.0](https://bitbucket.org/stacc-flow/bento/compare/v8.76.1...v8.77.0) (2019-03-20)
+
+
+### Features
+
+* **i18n:** remove reference to base ot enable in native ([7ed55bd](https://bitbucket.org/stacc-flow/bento/commits/7ed55bd))
+
+
+
+
+
+## [8.76.1](https://bitbucket.org/stacc-flow/bento/compare/v8.76.0...v8.76.1) (2019-03-20)
+
+
+### Bug Fixes
+
+* **base:** fix axios using defaults set by app causing calls to fail ([c9ca367](https://bitbucket.org/stacc-flow/bento/commits/c9ca367))
+
+
+
+
+
 # [8.76.0](https://bitbucket.org/stacc-flow/bento/compare/v8.75.1...v8.76.0) (2019-03-20)
 
 

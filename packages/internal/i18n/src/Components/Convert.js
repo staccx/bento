@@ -1,7 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Consumer } from "./context"
-import { theming } from "@staccx/base"
 import i18n from "../i18n"
 
 class Convert extends React.Component {
@@ -37,7 +36,6 @@ class Convert extends React.Component {
 }
 
 Convert.propTypes = {
-  children: theming.commonPropTypes.children,
   data: PropTypes.object.isRequired,
   fallback: PropTypes.string
 }
