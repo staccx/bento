@@ -15,7 +15,7 @@ export const InputStyling = theming.createVariants(
       padding-left: ${p =>
         p.labelWidth ? p.labelWidth + "px" : theming.spacing.huge};
       font-weight: ${theming.fontWeight.normal};
-      font-size: ${theming.font.base};
+      font-size: ${theming.font.input};
 
       &:hover,
       &:focus,
@@ -34,6 +34,7 @@ export const InputStyling = theming.createVariants(
       border-color: ${theming.color.primary};
       border-radius: 0;
       padding-left: 0;
+      font-size: ${theming.font.input};
 
       &:hover,
       &:focus,
@@ -145,6 +146,14 @@ export const PostalCodeInputStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       width: 100%;
+      font-size: ${theming.font.input};
+      background-color: transparent;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+      }
     `
   },
   PostalCodeInput.themeProps.input
