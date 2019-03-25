@@ -73,10 +73,10 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   return (
     <PostalInputWrapper variant={variant}>
       <PostalInput
-        id={"postnummer"}
         type={"tel"}
         options={{ blocks: [4] }}
         defaultValue={defaultValue}
+        variant={variant}
         {...restProps}
         onChange={handleChange}
         ref={inputRef}
