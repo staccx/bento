@@ -82,7 +82,8 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   return (
     <PostalInputWrapper variant={variant}>
       <PostalInput
-        type={"tel"}
+        type={"text"}
+        pattern={"[0-9]{4}"}
         options={{ blocks: [4] }}
         defaultValue={defaultValue}
         variant={variant}
