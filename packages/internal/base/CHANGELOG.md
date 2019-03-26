@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.78.1](https://bitbucket.org/stacc-flow/bento/compare/v8.78.0...v8.78.1) (2019-03-26)
+
+
+### Bug Fixes
+
+* **postalcodeinput:** dont delete Auth headers ([f347ce3](https://bitbucket.org/stacc-flow/bento/commits/f347ce3))
+
+
+
+
+
 # [8.78.0](https://bitbucket.org/stacc-flow/bento/compare/v8.77.1...v8.78.0) (2019-03-25)
 
 

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.78.1](https://bitbucket.org/stacc-flow/bento/compare/v8.78.0...v8.78.1) (2019-03-26)
+
+**Note:** Version bump only for package @staccx/styleguide
+
+
+
+
+
 # [8.78.0](https://bitbucket.org/stacc-flow/bento/compare/v8.77.1...v8.78.0) (2019-03-25)
 
 **Note:** Version bump only for package @staccx/styleguide
