@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.78.2](https://bitbucket.org/stacc-flow/bento/compare/v8.78.1...v8.78.2) (2019-03-26)
+
+
+### Bug Fixes
+
+* **postcodeinput:** fix header issue ([b62d499](https://bitbucket.org/stacc-flow/bento/commits/b62d499))
+
+
+
+
+
 ## [8.78.1](https://bitbucket.org/stacc-flow/bento/compare/v8.78.0...v8.78.1) (2019-03-26)
 
 
