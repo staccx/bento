@@ -30,11 +30,12 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   const getPostalPlace = async () => {
     setIsLoading(true)
     try {
-      if (axiosInstance.defaults.headers.common["Authorization"]) {
-        delete axiosInstance.defaults.headers.common["Authorization"]
-      }
       const place = await axiosInstance
-        .get(`/postalCode.json?country=no&pnr=${postalCode}`)
+        .get(`/postalCode.json?country=no&pnr=${postalCode}`, {
+          headers: {
+            Authorization: ""
+          }
+        })
         .then(result => result.data)
       setPlace(place)
     } catch (e) {
