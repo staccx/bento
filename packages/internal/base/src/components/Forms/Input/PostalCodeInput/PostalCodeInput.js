@@ -18,6 +18,18 @@ const axiosInstance = axios.create({
   baseURL: `https://fraktguide.bring.no/fraktguide/api`
 })
 
+function getAxiosOptions() {
+  const opt = {
+    transformRequest: [
+      function(data, headers) {
+        delete headers.common.Authorization
+        return data
+      }
+    ]
+  }
+  return opt
+}
+
 /**
  * Input for Norwegian Postal codes. Adds PostalPlace according to the number. Input is imported from Input-component
  */
@@ -31,11 +43,7 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
     setIsLoading(true)
     try {
       const place = await axiosInstance
-        .get(`/postalCode.json?country=no&pnr=${postalCode}`, {
-          headers: {
-            Authorization: ""
-          }
-        })
+        .get(`/postalCode.json?country=no&pnr=${postalCode}`, getAxiosOptions())
         .then(result => result.data)
       setPlace(place)
     } catch (e) {
