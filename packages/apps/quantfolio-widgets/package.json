@@ -43,5 +43,6 @@
     "deploy": "yarn build && surge -p ./build",
     "serve": "yarn build && serve -s build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
-  }
+  },
+  "gitHead": "fba5600ec9535ef0f12004463f3f99ff9427495b"
 }

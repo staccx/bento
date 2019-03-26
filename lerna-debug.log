@@ -4,692 +4,521 @@
 0 silly argv   yes: true,
 0 silly argv   y: true,
 0 silly argv   composed: 'publish',
-0 silly argv   lernaVersion: '3.6.0',
+0 silly argv   lernaVersion: '3.13.1',
 0 silly argv   '$0': '/usr/local/bin/lerna',
 0 silly argv   bump: 'from-package' }
-1 notice cli v3.6.0
-2 verbose rootPath /Users/espen/Projects/bento
-3 info Verifying npm credentials
-4 verbose Retrieving npm user profile
-5 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 846ms
-6 silly npm profile get received {"tfa":false,"name":"slem","email":"espensaeverud@gmail.com","email_verified":true,"created":"2015-06-05T09:44:07.001Z","updated":"2017-11-08T21:01:37.924Z","cidr_whitelist":null,"fullname":"","homepage":"","freenode":"","twitter":"xslemx","github":"https://github.com/XSlemX/"}
-7 silly npm whoami received {"username":"slem"}
-8 verbose git-describe undefined => "v8.57.0-0-gee05669c"
-9 silly git-describe parsed => {"lastTagName":"v8.57.0","lastVersion":"v8.57.0","refCount":"0","sha":"ee05669c","isDirty":false}
-10 silly getPackageVersions
-11 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fbank-in-a-box 1784ms
-12 silly pacote registry packument for @staccx/bank-in-a-box@latest fetched in 1935ms
-13 http fetch GET 404 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fcomponent-testing 822ms
-14 warn Unable to determine published versions, assuming unpublished.
-15 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fdealerpad 977ms
-16 silly pacote registry packument for @staccx/dealerpad@latest fetched in 979ms
-17 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fdeveloper-portal 1665ms
-18 silly pacote registry packument for @staccx/developer-portal@latest fetched in 1669ms
-19 http fetch GET 404 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2finvoicing 832ms
-20 warn Unable to determine published versions, assuming unpublished.
-21 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2floan-process 2007ms
-22 silly pacote registry packument for @staccx/loan-process@latest fetched in 2011ms
-23 http fetch GET 404 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fonboarding-pm 699ms
-24 warn Unable to determine published versions, assuming unpublished.
-25 http fetch GET 404 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fproperty-value 716ms
-26 warn Unable to determine published versions, assuming unpublished.
-27 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fsavings-advisor 1545ms
-28 silly pacote registry packument for @staccx/savings-advisor@latest fetched in 1547ms
-29 http fetch GET 404 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fstacc-website 734ms
-30 warn Unable to determine published versions, assuming unpublished.
-31 http fetch GET 404 https://registry.npmjs.org/companywebsitetemplate 716ms
-32 warn Unable to determine published versions, assuming unpublished.
-33 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fanimations 1002ms
-34 silly pacote registry packument for @staccx/animations@latest fetched in 1003ms
-35 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fbase 2356ms
-36 silly pacote registry packument for @staccx/base@latest fetched in 2367ms
-37 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fcli 863ms
-38 silly pacote registry packument for @staccx/cli@latest fetched in 864ms
-39 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fcode-generator 862ms
-40 silly pacote registry packument for @staccx/code-generator@latest fetched in 862ms
-41 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fcolor 953ms
-42 silly pacote registry packument for @staccx/color@latest fetched in 954ms
-43 http fetch GET 404 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fcontrol-panel 764ms
-44 warn Unable to determine published versions, assuming unpublished.
-45 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2feslint-config 893ms
-46 silly pacote registry packument for @staccx/eslint-config@latest fetched in 894ms
-47 http fetch GET 404 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2ffeature-toggling 761ms
-48 warn Unable to determine published versions, assuming unpublished.
-49 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fformatting 1086ms
-50 silly pacote registry packument for @staccx/formatting@latest fetched in 1087ms
-51 http fetch GET 404 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2ffsm 907ms
-52 warn Unable to determine published versions, assuming unpublished.
-53 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fi18n 1598ms
-54 silly pacote registry packument for @staccx/i18n@latest fetched in 1601ms
-55 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fjson-schema 882ms
-56 silly pacote registry packument for @staccx/json-schema@latest fetched in 882ms
-57 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fmath 969ms
-58 silly pacote registry packument for @staccx/math@latest fetched in 970ms
-59 http fetch GET 404 https://registry.npmjs.org/mr-x 871ms
-60 warn Unable to determine published versions, assuming unpublished.
-61 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fopen-id 1062ms
-62 silly pacote registry packument for @staccx/open-id@latest fetched in 1063ms
-63 http fetch GET 404 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2frelease-bento 747ms
-64 warn Unable to determine published versions, assuming unpublished.
-65 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2frollup-config 1039ms
-66 silly pacote registry packument for @staccx/rollup-config@latest fetched in 1040ms
-67 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fsanity-plugin-i18n 1037ms
-68 silly pacote registry packument for @staccx/sanity-plugin-i18n@latest fetched in 1039ms
-69 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fsanity 1418ms
-70 silly pacote registry packument for @staccx/sanity@latest fetched in 1420ms
-71 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fsoy 918ms
-72 silly pacote registry packument for @staccx/soy@latest fetched in 919ms
-73 http fetch GET 404 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fstyleguide 803ms
-74 warn Unable to determine published versions, assuming unpublished.
-75 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2futils 963ms
-76 silly pacote registry packument for @staccx/utils@latest fetched in 965ms
-77 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2faprila-theme 1448ms
-78 silly pacote registry packument for @staccx/aprila-theme@latest fetched in 1450ms
-79 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2ffundu-theme 1672ms
-80 silly pacote registry packument for @staccx/fundu-theme@latest fetched in 1676ms
-81 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fnordea-theme 1375ms
-82 silly pacote registry packument for @staccx/nordea-theme@latest fetched in 1377ms
-83 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fnorefjell-theme 1628ms
-84 silly pacote registry packument for @staccx/norefjell-theme@latest fetched in 1631ms
-85 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fstacc-theme 1424ms
-86 silly pacote registry packument for @staccx/stacc-theme@latest fetched in 1426ms
-87 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fstyrke-theme 1656ms
-88 silly pacote registry packument for @staccx/styrke-theme@latest fetched in 1659ms
-89 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fswedbank-theme 1159ms
-90 silly pacote registry packument for @staccx/swedbank-theme@latest fetched in 1160ms
-91 http fetch GET 304 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fvolvo-theme 1025ms
-92 silly pacote registry packument for @staccx/volvo-theme@latest fetched in 1027ms
-93 http fetch GET 200 https://stacc.jfrog.io/stacc/api/npm/npm/@staccx%2fimove-theme 1317ms
-94 silly pacote registry packument for @staccx/imove-theme@latest fetched in 1320ms
-95 silly batched [ PackageGraphNode {
-95 silly batched     name: '@staccx/animations',
-95 silly batched     externalDependencies: Map {},
-95 silly batched     localDependencies: Map {},
-95 silly batched     localDependents:
-95 silly batched      Map {
-95 silly batched        '@staccx/bank-in-a-box' => [PackageGraphNode],
-95 silly batched        '@staccx/dealerpad' => [PackageGraphNode],
-95 silly batched        '@staccx/loan-process' => [PackageGraphNode],
-95 silly batched        '@staccx/savings-advisor' => [PackageGraphNode],
-95 silly batched        '@staccx/base' => [PackageGraphNode],
-95 silly batched        '@staccx/aprila-theme' => [PackageGraphNode],
-95 silly batched        '@staccx/nordea-theme' => [PackageGraphNode],
-95 silly batched        '@staccx/norefjell-theme' => [PackageGraphNode],
-95 silly batched        '@staccx/volvo-theme' => [PackageGraphNode] } },
-95 silly batched   PackageGraphNode {
-95 silly batched     name: '@staccx/code-generator',
-95 silly batched     externalDependencies: Map { 'prettier' => [Object], 'qs' => [Object] },
-95 silly batched     localDependencies: Map {},
-95 silly batched     localDependents: Map { '@staccx/developer-portal' => [PackageGraphNode] } },
-95 silly batched   PackageGraphNode {
-95 silly batched     name: '@staccx/color',
-95 silly batched     externalDependencies:
-95 silly batched      Map {
-95 silly batched        '@staccx/base' => [Object],
-95 silly batched        'color' => [Object],
-95 silly batched        'react' => [Object],
-95 silly batched        'react-dom' => [Object] },
-95 silly batched     localDependencies: Map {},
-95 silly batched     localDependents: Map {} },
-95 silly batched   PackageGraphNode {
-95 silly batched     name: '@staccx/eslint-config',
-95 silly batched     externalDependencies: Map {},
-95 silly batched     localDependencies: Map {},
-95 silly batched     localDependents: Map {} },
-95 silly batched   PackageGraphNode {
-95 silly batched     name: '@staccx/formatting',
-95 silly batched     externalDependencies: Map { 'accounting' => [Object], 'date-fns' => [Object] },
-95 silly batched     localDependencies: Map {},
-95 silly batched     localDependents:
-95 silly batched      Map {
-95 silly batched        '@staccx/bank-in-a-box' => [PackageGraphNode],
-95 silly batched        '@staccx/dealerpad' => [PackageGraphNode],
-95 silly batched        '@staccx/loan-process' => [PackageGraphNode],
-95 silly batched        '@staccx/savings-advisor' => [PackageGraphNode],
-95 silly batched        '@staccx/base' => [PackageGraphNode],
-95 silly batched        '@staccx/cli' => [PackageGraphNode],
-95 silly batched        '@staccx/aprila-theme' => [PackageGraphNode],
-95 silly batched        '@staccx/norefjell-theme' => [PackageGraphNode] } },
-95 silly batched   PackageGraphNode {
-95 silly batched     name: '@staccx/math',
-95 silly batched     externalDependencies: Map {},
-95 silly batched     localDependencies: Map {},
-95 silly batched     localDependents:
-95 silly batched      Map {
-95 silly batched        '@staccx/savings-advisor' => [PackageGraphNode],
-95 silly batched        '@staccx/base' => [PackageGraphNode] } },
-95 silly batched   PackageGraphNode {
-95 silly batched     name: '@staccx/open-id',
-95 silly batched     externalDependencies:
-95 silly batched      Map {
-95 silly batched        'axios' => [Object],
-95 silly batched        'lodash.isequal' => [Object],
-95 silly batched        'oidc-client' => [Object],
-95 silly batched        'qs' => [Object],
-95 silly batched        'react' => [Object] },
-95 silly batched     localDependencies: Map {},
-95 silly batched     localDependents: Map {} },
-95 silly batched   PackageGraphNode {
-95 silly batched     name: '@staccx/soy',
-95 silly batched     externalDependencies:
-95 silly batched      Map {
-95 silly batched        'chalk' => [Object],
-95 silly batched        'commander' => [Object],
-95 silly batched        'depcheck' => [Object],
-95 silly batched        'globby' => [Object],
-95 silly batched        'semver' => [Object] },
-95 silly batched     localDependencies: Map {},
-95 silly batched     localDependents: Map {} },
-95 silly batched   PackageGraphNode {
-95 silly batched     name: '@staccx/utils',
-95 silly batched     externalDependencies: Map {},
-95 silly batched     localDependencies: Map {},
-95 silly batched     localDependents:
-95 silly batched      Map {
-95 silly batched        '@staccx/developer-portal' => [PackageGraphNode],
-95 silly batched        '@staccx/loan-process' => [PackageGraphNode],
-95 silly batched        '@staccx/base' => [PackageGraphNode] } } ]
-96 silly batched [ PackageGraphNode {
-96 silly batched     name: '@staccx/dealerpad',
-96 silly batched     externalDependencies:
-96 silly batched      Map {
-96 silly batched        '@staccx/base' => [Object],
-96 silly batched        '@staccx/nordea-theme' => [Object],
-96 silly batched        'axios' => [Object],
-96 silly batched        'history' => [Object],
-96 silly batched        'mobx' => [Object],
-96 silly batched        'mobx-react' => [Object],
-96 silly batched        'prop-types' => [Object],
-96 silly batched        'react' => [Object],
-96 silly batched        'react-dom' => [Object],
-96 silly batched        'react-router-dom' => [Object],
-96 silly batched        'react-transition-group' => [Object],
-96 silly batched        'react-web-notification' => [Object],
-96 silly batched        'socket.io-client' => [Object] },
-96 silly batched     localDependencies: Map {},
-96 silly batched     localDependents: Map {} },
-96 silly batched   PackageGraphNode {
-96 silly batched     name: '@staccx/base',
-96 silly batched     externalDependencies:
-96 silly batched      Map {
-96 silly batched        'babel-plugin-prismjs' => [Object],
-96 silly batched        'cleave.js' => [Object],
-96 silly batched        'copy-to-clipboard' => [Object],
-96 silly batched        'downshift' => [Object],
-96 silly batched        'easing-utils' => [Object],
-96 silly batched        'es6-promise' => [Object],
-96 silly batched        'formik' => [Object],
-96 silly batched        'immutable' => [Object],
-96 silly batched        'isomorphic-fetch' => [Object],
-96 silly batched        'js-search' => [Object],
-96 silly batched        'lodash.debounce' => [Object],
-96 silly batched        'polished' => [Object],
-96 silly batched        'prismjs' => [Object],
-96 silly batched        'prop-types' => [Object],
-96 silly batched        'react' => [Object],
-96 silly batched        'react-compound-slider' => [Object],
-96 silly batched        'react-jsonschema-form' => [Object],
-96 silly batched        'react-traverse' => [Object],
-96 silly batched        'tinycolor2' => [Object],
-96 silly batched        'webfontloader' => [Object],
-96 silly batched        'yup' => [Object] },
-96 silly batched     localDependencies: Map {},
-96 silly batched     localDependents:
-96 silly batched      Map {
-96 silly batched        '@staccx/bank-in-a-box' => [PackageGraphNode],
-96 silly batched        '@staccx/developer-portal' => [PackageGraphNode],
-96 silly batched        '@staccx/loan-process' => [PackageGraphNode],
-96 silly batched        '@staccx/savings-advisor' => [PackageGraphNode],
-96 silly batched        '@staccx/fsm' => [PackageGraphNode],
-96 silly batched        '@staccx/i18n' => [PackageGraphNode],
-96 silly batched        '@staccx/json-schema' => [PackageGraphNode],
-96 silly batched        '@staccx/sanity' => [PackageGraphNode],
-96 silly batched        '@staccx/aprila-theme' => [PackageGraphNode],
-96 silly batched        '@staccx/fundu-theme' => [PackageGraphNode],
-96 silly batched        '@staccx/nordea-theme' => [PackageGraphNode],
-96 silly batched        '@staccx/norefjell-theme' => [PackageGraphNode],
-96 silly batched        '@staccx/stacc-theme' => [PackageGraphNode],
-96 silly batched        '@staccx/styrke-theme' => [PackageGraphNode],
-96 silly batched        '@staccx/swedbank-theme' => [PackageGraphNode],
-96 silly batched        '@staccx/imove-theme' => [PackageGraphNode] } },
-96 silly batched   PackageGraphNode {
-96 silly batched     name: '@staccx/cli',
-96 silly batched     externalDependencies:
-96 silly batched      Map {
-96 silly batched        '@sanity/client' => [Object],
-96 silly batched        '@slack/client' => [Object],
-96 silly batched        '@staccx/rollup-config' => [Object],
-96 silly batched        'acorn-jsx' => [Object],
-96 silly batched        'acorn-jsx-walk' => [Object],
-96 silly batched        'babel-core' => [Object],
-96 silly batched        'commander' => [Object],
-96 silly batched        'fs-extra' => [Object],
-96 silly batched        'get-line-from-pos' => [Object],
-96 silly batched        'inquirer' => [Object],
-96 silly batched        'ora' => [Object],
-96 silly batched        'rollup' => [Object],
-96 silly batched        'rollup-plugin-babel' => [Object],
-96 silly batched        'rollup-plugin-commonjs' => [Object],
-96 silly batched        'rollup-plugin-json' => [Object],
-96 silly batched        'rollup-plugin-node-resolve' => [Object],
-96 silly batched        'simple-git' => [Object],
-96 silly batched        'username' => [Object],
-96 silly batched        'validate-npm-package-name' => [Object] },
-96 silly batched     localDependencies: Map {},
-96 silly batched     localDependents: Map {} },
-96 silly batched   PackageGraphNode {
-96 silly batched     name: '@staccx/volvo-theme',
-96 silly batched     externalDependencies:
-96 silly batched      Map {
-96 silly batched        '@staccx/base' => [Object],
-96 silly batched        'react' => [Object],
-96 silly batched        'react-dom' => [Object] },
-96 silly batched     localDependencies: Map {},
-96 silly batched     localDependents: Map {} } ]
-97 silly batched [ PackageGraphNode {
-97 silly batched     name: '@staccx/fsm',
-97 silly batched     externalDependencies:
-97 silly batched      Map {
-97 silly batched        'prop-types' => [Object],
-97 silly batched        'react' => [Object],
-97 silly batched        'react-dom' => [Object] },
-97 silly batched     localDependencies: Map {},
-97 silly batched     localDependents: Map {} },
-97 silly batched   PackageGraphNode {
-97 silly batched     name: '@staccx/i18n',
-97 silly batched     externalDependencies:
-97 silly batched      Map {
-97 silly batched        'loglevel' => [Object],
-97 silly batched        'prop-types' => [Object],
-97 silly batched        'react' => [Object],
-97 silly batched        'react-app-rewire-mobx' => [Object],
-97 silly batched        'react-dom' => [Object],
-97 silly batched        'string-format-obj' => [Object] },
-97 silly batched     localDependencies: Map {},
-97 silly batched     localDependents:
-97 silly batched      Map {
-97 silly batched        '@staccx/bank-in-a-box' => [PackageGraphNode],
-97 silly batched        '@staccx/savings-advisor' => [PackageGraphNode] } },
-97 silly batched   PackageGraphNode {
-97 silly batched     name: '@staccx/json-schema',
-97 silly batched     externalDependencies:
-97 silly batched      Map {
-97 silly batched        'ajv' => [Object],
-97 silly batched        'core-js' => [Object],
-97 silly batched        'lodash.topath' => [Object] },
-97 silly batched     localDependencies: Map {},
-97 silly batched     localDependents: Map {} },
-97 silly batched   PackageGraphNode {
-97 silly batched     name: '@staccx/sanity',
-97 silly batched     externalDependencies:
-97 silly batched      Map {
-97 silly batched        '@sanity/block-content-to-react' => [Object],
-97 silly batched        '@sanity/client' => [Object],
-97 silly batched        '@sanity/image-url' => [Object],
-97 silly batched        'mobx-react' => [Object],
-97 silly batched        'prop-types' => [Object],
-97 silly batched        'react' => [Object],
-97 silly batched        'react-dom' => [Object],
-97 silly batched        'react-router-dom' => [Object],
-97 silly batched        'sanity-query-helper' => [Object] },
-97 silly batched     localDependencies: Map {},
-97 silly batched     localDependents: Map {} },
-97 silly batched   PackageGraphNode {
-97 silly batched     name: '@staccx/aprila-theme',
-97 silly batched     externalDependencies:
-97 silly batched      Map {
-97 silly batched        'polished' => [Object],
-97 silly batched        'prop-types' => [Object],
-97 silly batched        'react' => [Object],
-97 silly batched        'react-dom' => [Object],
-97 silly batched        'react-epic-spinners' => [Object] },
-97 silly batched     localDependencies: Map {},
-97 silly batched     localDependents: Map { '@staccx/bank-in-a-box' => [PackageGraphNode] } },
-97 silly batched   PackageGraphNode {
-97 silly batched     name: '@staccx/fundu-theme',
-97 silly batched     externalDependencies:
-97 silly batched      Map {
-97 silly batched        'polished' => [Object],
-97 silly batched        'react' => [Object],
-97 silly batched        'react-dom' => [Object] },
-97 silly batched     localDependencies: Map {},
-97 silly batched     localDependents:
-97 silly batched      Map {
-97 silly batched        '@staccx/developer-portal' => [PackageGraphNode],
-97 silly batched        '@staccx/loan-process' => [PackageGraphNode] } },
-97 silly batched   PackageGraphNode {
-97 silly batched     name: '@staccx/nordea-theme',
-97 silly batched     externalDependencies: Map { 'react' => [Object], 'react-dom' => [Object] },
-97 silly batched     localDependencies: Map {},
-97 silly batched     localDependents: Map {} },
-97 silly batched   PackageGraphNode {
-97 silly batched     name: '@staccx/norefjell-theme',
-97 silly batched     externalDependencies:
-97 silly batched      Map {
-97 silly batched        'polished' => [Object],
-97 silly batched        'prop-types' => [Object],
-97 silly batched        'react' => [Object],
-97 silly batched        'react-dom' => [Object] },
-97 silly batched     localDependencies: Map {},
-97 silly batched     localDependents: Map { '@staccx/bank-in-a-box' => [PackageGraphNode] } },
-97 silly batched   PackageGraphNode {
-97 silly batched     name: '@staccx/stacc-theme',
-97 silly batched     externalDependencies:
-97 silly batched      Map {
-97 silly batched        'polished' => [Object],
-97 silly batched        'react' => [Object],
-97 silly batched        'react-dom' => [Object] },
-97 silly batched     localDependencies: Map {},
-97 silly batched     localDependents: Map {} },
-97 silly batched   PackageGraphNode {
-97 silly batched     name: '@staccx/styrke-theme',
-97 silly batched     externalDependencies:
-97 silly batched      Map {
-97 silly batched        'polished' => [Object],
-97 silly batched        'react' => [Object],
-97 silly batched        'react-dom' => [Object] },
-97 silly batched     localDependencies: Map {},
-97 silly batched     localDependents: Map { '@staccx/loan-process' => [PackageGraphNode] } },
-97 silly batched   PackageGraphNode {
-97 silly batched     name: '@staccx/swedbank-theme',
-97 silly batched     externalDependencies:
-97 silly batched      Map {
-97 silly batched        'polished' => [Object],
-97 silly batched        'react' => [Object],
-97 silly batched        'react-dom' => [Object] },
-97 silly batched     localDependencies: Map {},
-97 silly batched     localDependents: Map {} },
-97 silly batched   PackageGraphNode {
-97 silly batched     name: '@staccx/imove-theme',
-97 silly batched     externalDependencies:
-97 silly batched      Map {
-97 silly batched        'polished' => [Object],
-97 silly batched        'react' => [Object],
-97 silly batched        'react-dom' => [Object] },
-97 silly batched     localDependencies: Map {},
-97 silly batched     localDependents: Map {} } ]
-98 silly batched [ PackageGraphNode {
-98 silly batched     name: '@staccx/bank-in-a-box',
-98 silly batched     externalDependencies:
-98 silly batched      Map {
-98 silly batched        '@tedconf/react-show-more' => [Object],
-98 silly batched        'history' => [Object],
-98 silly batched        'mobx' => [Object],
-98 silly batched        'mobx-react' => [Object],
-98 silly batched        'prop-types' => [Object],
-98 silly batched        'react' => [Object],
-98 silly batched        'react-dom' => [Object],
-98 silly batched        'react-router-dom' => [Object],
-98 silly batched        'react-transition-group' => [Object],
-98 silly batched        'webfontloader' => [Object] },
-98 silly batched     localDependencies: Map {},
-98 silly batched     localDependents: Map {} },
-98 silly batched   PackageGraphNode {
-98 silly batched     name: '@staccx/developer-portal',
-98 silly batched     externalDependencies:
-98 silly batched      Map {
-98 silly batched        'axios' => [Object],
-98 silly batched        'localforage' => [Object],
-98 silly batched        'prop-types' => [Object],
-98 silly batched        'react' => [Object],
-98 silly batched        'react-dom' => [Object],
-98 silly batched        'react-router-dom' => [Object],
-98 silly batched        'react-router-hash-link' => [Object] },
-98 silly batched     localDependencies: Map {},
-98 silly batched     localDependents: Map {} },
-98 silly batched   PackageGraphNode {
-98 silly batched     name: '@staccx/loan-process',
-98 silly batched     externalDependencies:
-98 silly batched      Map {
-98 silly batched        '@staccx/payment-plan' => [Object],
-98 silly batched        'easing-utils' => [Object],
-98 silly batched        'formik' => [Object],
-98 silly batched        'national-id' => [Object],
-98 silly batched        'prop-types' => [Object],
-98 silly batched        'react' => [Object],
-98 silly batched        'react-dom' => [Object],
-98 silly batched        'react-loadable' => [Object],
-98 silly batched        'yup' => [Object] },
-98 silly batched     localDependencies: Map {},
-98 silly batched     localDependents: Map {} },
-98 silly batched   PackageGraphNode {
-98 silly batched     name: '@staccx/savings-advisor',
-98 silly batched     externalDependencies:
-98 silly batched      Map {
-98 silly batched        '@sanity/client' => [Object],
-98 silly batched        '@sanity/image-url' => [Object],
-98 silly batched        'axios' => [Object],
-98 silly batched        'chart.js' => [Object],
-98 silly batched        'date-fns' => [Object],
-98 silly batched        'easing-utils' => [Object],
-98 silly batched        'mobx' => [Object],
-98 silly batched        'mobx-react' => [Object],
-98 silly batched        'prop-types' => [Object],
-98 silly batched        'qs' => [Object],
-98 silly batched        'react' => [Object],
-98 silly batched        'react-dom' => [Object],
-98 silly batched        'react-router-dom' => [Object],
-98 silly batched        'react-sparklines' => [Object],
-98 silly batched        'react-tabs' => [Object],
-98 silly batched        'react-transition-group' => [Object],
-98 silly batched        'tinycolor2' => [Object] },
-98 silly batched     localDependencies: Map {},
-98 silly batched     localDependents: Map {} } ]
-99 info auto-confirmed
-100 info publish Publishing packages to npm...
-101 warn ENOLICENSE Packages @staccx/bank-in-a-box, @staccx/dealerpad, @staccx/developer-portal, @staccx/loan-process, @staccx/savings-advisor, @staccx/animations, @staccx/base, @staccx/cli, @staccx/code-generator, @staccx/color, @staccx/eslint-config, @staccx/formatting, @staccx/fsm, @staccx/i18n, @staccx/json-schema, @staccx/math, @staccx/open-id, @staccx/sanity, @staccx/soy, @staccx/utils, @staccx/aprila-theme, @staccx/fundu-theme, @staccx/nordea-theme, @staccx/norefjell-theme, @staccx/stacc-theme, @staccx/styrke-theme, @staccx/swedbank-theme, @staccx/volvo-theme, @staccx/imove-theme are missing a license
-102 silly getCurrentSHA
-103 verbose getCurrentSHA ee05669cf859d32658d43e9ac484a3d6f4b8b2e5
-104 silly getExecOpts /Users/espen/Projects/bento undefined
-105 silly exec npm options { cwd: '/Users/espen/Projects/bento',
-105 silly exec   env: { npm_config_json: true },
-105 silly exec   stdio: [ 'ignore', 'pipe', 'inherit' ] }
-106 silly run-lifecycle prepublishOnly @staccx/animations
-107 info lifecycle @staccx/animations@8.57.0~prepublishOnly: @staccx/animations@8.57.0
-108 silly run-lifecycle prepublishOnly @staccx/code-generator
-109 info lifecycle @staccx/code-generator@8.57.0~prepublishOnly: @staccx/code-generator@8.57.0
-110 silly run-lifecycle prepublishOnly @staccx/color
-111 info lifecycle @staccx/color@8.57.0~prepublishOnly: @staccx/color@8.57.0
-112 silly run-lifecycle prepublishOnly @staccx/formatting
-113 info lifecycle @staccx/formatting@8.57.0~prepublishOnly: @staccx/formatting@8.57.0
-114 silly run-lifecycle prepublishOnly @staccx/math
-115 info lifecycle @staccx/math@8.57.0~prepublishOnly: @staccx/math@8.57.0
-116 silly run-lifecycle prepublishOnly @staccx/open-id
-117 info lifecycle @staccx/open-id@8.57.0~prepublishOnly: @staccx/open-id@8.57.0
-118 silly run-lifecycle prepublishOnly @staccx/utils
-119 info lifecycle @staccx/utils@8.57.0~prepublishOnly: @staccx/utils@8.57.0
-120 verbose lifecycle @staccx/animations@8.57.0~prepublishOnly: unsafe-perm in lifecycle true
-121 verbose lifecycle @staccx/animations@8.57.0~prepublishOnly: PATH: /Users/espen/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/espen/Projects/bento/packages/internal/animations/node_modules/.bin:/Users/espen/.nvm/versions/node/v10.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands
-122 verbose lifecycle @staccx/animations@8.57.0~prepublishOnly: CWD: /Users/espen/Projects/bento/packages/internal/animations
-123 silly lifecycle @staccx/animations@8.57.0~prepublishOnly: Args: [ '-c', 'yarn test' ]
-124 silly lifecycle @staccx/animations@8.57.0~prepublishOnly: Returned: code: 0  signal: null
-125 verbose lifecycle @staccx/code-generator@8.57.0~prepublishOnly: unsafe-perm in lifecycle true
-126 verbose lifecycle @staccx/code-generator@8.57.0~prepublishOnly: PATH: /Users/espen/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/espen/Projects/bento/packages/internal/code-generator/node_modules/.bin:/Users/espen/.nvm/versions/node/v10.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands
-127 verbose lifecycle @staccx/code-generator@8.57.0~prepublishOnly: CWD: /Users/espen/Projects/bento/packages/internal/code-generator
-128 silly lifecycle @staccx/code-generator@8.57.0~prepublishOnly: Args: [ '-c', 'yarn test' ]
-129 silly lifecycle @staccx/code-generator@8.57.0~prepublishOnly: Returned: code: 0  signal: null
-130 verbose lifecycle @staccx/color@8.57.0~prepublishOnly: unsafe-perm in lifecycle true
-131 verbose lifecycle @staccx/color@8.57.0~prepublishOnly: PATH: /Users/espen/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/espen/Projects/bento/packages/internal/color/node_modules/.bin:/Users/espen/.nvm/versions/node/v10.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands
-132 verbose lifecycle @staccx/color@8.57.0~prepublishOnly: CWD: /Users/espen/Projects/bento/packages/internal/color
-133 silly lifecycle @staccx/color@8.57.0~prepublishOnly: Args: [ '-c', 'yarn test' ]
-134 silly lifecycle @staccx/color@8.57.0~prepublishOnly: Returned: code: 0  signal: null
-135 verbose lifecycle @staccx/formatting@8.57.0~prepublishOnly: unsafe-perm in lifecycle true
-136 verbose lifecycle @staccx/formatting@8.57.0~prepublishOnly: PATH: /Users/espen/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/espen/Projects/bento/packages/internal/formatting/node_modules/.bin:/Users/espen/.nvm/versions/node/v10.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands
-137 verbose lifecycle @staccx/formatting@8.57.0~prepublishOnly: CWD: /Users/espen/Projects/bento/packages/internal/formatting
-138 silly lifecycle @staccx/formatting@8.57.0~prepublishOnly: Args: [ '-c', 'yarn test' ]
-139 silly lifecycle @staccx/formatting@8.57.0~prepublishOnly: Returned: code: 0  signal: null
-140 verbose lifecycle @staccx/math@8.57.0~prepublishOnly: unsafe-perm in lifecycle true
-141 verbose lifecycle @staccx/math@8.57.0~prepublishOnly: PATH: /Users/espen/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/espen/Projects/bento/packages/internal/math/node_modules/.bin:/Users/espen/.nvm/versions/node/v10.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands
-142 verbose lifecycle @staccx/math@8.57.0~prepublishOnly: CWD: /Users/espen/Projects/bento/packages/internal/math
-143 silly lifecycle @staccx/math@8.57.0~prepublishOnly: Args: [ '-c', 'yarn test' ]
-144 silly lifecycle @staccx/math@8.57.0~prepublishOnly: Returned: code: 0  signal: null
-145 verbose lifecycle @staccx/utils@8.57.0~prepublishOnly: unsafe-perm in lifecycle true
-146 verbose lifecycle @staccx/utils@8.57.0~prepublishOnly: PATH: /Users/espen/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/espen/Projects/bento/packages/internal/utils/node_modules/.bin:/Users/espen/.nvm/versions/node/v10.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands
-147 verbose lifecycle @staccx/utils@8.57.0~prepublishOnly: CWD: /Users/espen/Projects/bento/packages/internal/utils
-148 silly lifecycle @staccx/utils@8.57.0~prepublishOnly: Args: [ '-c', 'yarn test' ]
-149 silly lifecycle @staccx/utils@8.57.0~prepublishOnly: Returned: code: 0  signal: null
-150 verbose lifecycle @staccx/open-id@8.57.0~prepublishOnly: unsafe-perm in lifecycle true
-151 verbose lifecycle @staccx/open-id@8.57.0~prepublishOnly: PATH: /Users/espen/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/espen/Projects/bento/packages/internal/open-id/node_modules/.bin:/Users/espen/.nvm/versions/node/v10.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands
-152 verbose lifecycle @staccx/open-id@8.57.0~prepublishOnly: CWD: /Users/espen/Projects/bento/packages/internal/open-id
-153 silly lifecycle @staccx/open-id@8.57.0~prepublishOnly: Args: [ '-c', 'yarn test' ]
-154 silly lifecycle @staccx/open-id@8.57.0~prepublishOnly: Returned: code: 0  signal: null
-155 verbose pack [ '@staccx/animations',
-155 verbose pack   '@staccx/code-generator',
-155 verbose pack   '@staccx/color',
-155 verbose pack   '@staccx/eslint-config',
-155 verbose pack   '@staccx/formatting',
-155 verbose pack   '@staccx/math',
-155 verbose pack   '@staccx/open-id',
-155 verbose pack   '@staccx/soy',
-155 verbose pack   '@staccx/utils' ]
-156 silly exec npm [ 'pack',
-156 silly exec   '/Users/espen/Projects/bento/packages/internal/animations',
-156 silly exec   '/Users/espen/Projects/bento/packages/internal/code-generator',
-156 silly exec   '/Users/espen/Projects/bento/packages/internal/color',
-156 silly exec   '/Users/espen/Projects/bento/packages/internal/eslint-config',
-156 silly exec   '/Users/espen/Projects/bento/packages/internal/formatting',
-156 silly exec   '/Users/espen/Projects/bento/packages/internal/math',
-156 silly exec   '/Users/espen/Projects/bento/packages/internal/open-id',
-156 silly exec   '/Users/espen/Projects/bento/packages/internal/soy',
-156 silly exec   '/Users/espen/Projects/bento/packages/internal/utils' ]
-157 error Error: Command failed: npm pack /Users/espen/Projects/bento/packages/internal/animations /Users/espen/Projects/bento/packages/internal/code-generator /Users/espen/Projects/bento/packages/internal/color /Users/espen/Projects/bento/packages/internal/eslint-config /Users/espen/Projects/bento/packages/internal/formatting /Users/espen/Projects/bento/packages/internal/math /Users/espen/Projects/bento/packages/internal/open-id /Users/espen/Projects/bento/packages/internal/soy /Users/espen/Projects/bento/packages/internal/utils
-157 error
-157 error > @staccx/code-generator@8.57.0 prepare /Users/espen/Projects/bento/packages/internal/code-generator
-157 error > yarn build
-157 error
-157 error yarn run v1.13.0
-157 error $ yarn prettify && rollup -c
-157 error $ prettier --write '{src,__{tests,mocks}__}/**/*.js'
-157 error src/export.js 38ms
-157 error src/languages/language-c-sharp-restsharp.js 29ms
-157 error src/languages/language-java-okhttp.js 16ms
-157 error src/languages/language-node-request.js 14ms
-157 error src/utils.js 35ms
-157 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-157 error
-157 error > @staccx/color@8.57.0 prepare /Users/espen/Projects/bento/packages/internal/color
-157 error > yarn build
-157 error
-157 error {
-157 error   "error": {
-157 error     "code": "ELIFECYCLE",
-157 error     "summary": "@staccx/code-generator@8.57.0 prepare: `yarn build`\nExit status 1",
-157 error     "detail": "\nFailed at the @staccx/code-generator@8.57.0 prepare script.\nThis is probably not a problem with npm. There is likely additional logging output above."
-157 error   }
-157 error }
-157 error yarn run v1.13.0
-157 error $ yarn prettify && rollup -c
-157 error $ prettier --write '{src,__{tests,mocks}__}/**/*.js'
-157 error src/App.js 46ms
-157 error src/color/colorNames.js 29ms
-157 error src/color/darken.js 12ms
-157 error src/color/darken.test.js 10ms
-157 error src/color/lighten.js 8ms
-157 error src/color/lighten.test.js 7ms
-157 error src/color/opacity.js 7ms
-157 error src/color/opacity.test.js 8ms
-157 error src/export.js 9ms
-157 error src/helpers/alphaToHex.js 14ms
-157 error src/helpers/hexToRgb.js 13ms
-157 error src/index.js 7ms
-157 error src/registerServiceWorker.js 32ms
-157 error src/reset.js 11ms
-157 error src/theme.js 18ms
-157 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-157 error
-157 error > @staccx/open-id@8.57.0 prepare /Users/espen/Projects/bento/packages/internal/open-id
-157 error > yarn build
-157 error
-157 error yarn run v1.13.0
-157 error $ yarn prettify && rollup -c
-157 error $ prettier --write '{src,__{tests,mocks}__}/**/*.js'
-157 error src/context.js 51ms
-157 error src/export.js 9ms
-157 error src/Login.js 72ms
-157 error src/LoginPassword.js 29ms
-157 error src/OpenId.js 13ms
-157 error src/OpenIdProvider.js 32ms
-157 error src/services/api.js 15ms
-157 error src/services/auth.js 12ms
-157 error src/utils.js 11ms
-157 error src/withOpenId.js 11ms
-157 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-157 error
-157 error > @staccx/formatting@8.57.0 prepare /Users/espen/Projects/bento/packages/internal/formatting
-157 error > yarn build
-157 error
-157 error yarn run v1.13.0
-157 error $ yarn prettify && rollup -c
-157 error $ prettier --write '{src,__{tests,mocks}__}/**/*.js'
-157 error src/currency.js 68ms
-157 error src/currency.test.js 14ms
-157 error src/dashIt.js 8ms
-157 error src/dashIt.test.js 9ms
-157 error src/date.js 13ms
-157 error src/date.test.js 19ms
-157 error src/export.js 10ms
-157 error src/formatName.js 14ms
-157 error src/formatName.test.js 11ms
-157 error src/phone.js 10ms
-157 error src/phone.test.js 9ms
-157 error src/removeWhitespace.js 7ms
-157 error src/removeWhitespace.test.js 11ms
-157 error src/truncate.js 8ms
-157 error src/truncate.test.js 11ms
-157 error src/utils/createNumberMask.js 39ms
-157 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-157 error
-157 error > @staccx/utils@8.57.0 prepare /Users/espen/Projects/bento/packages/internal/utils
-157 error > yarn build
-157 error
-157 error yarn run v1.13.0
-157 error $ yarn prettify && rollup -c && node build.js
-157 error $ prettier --write '{src,__{tests,mocks}__}/**/*.js'
-157 error src/export.js 41ms
-157 error src/export/debounce.js 21ms
-157 error src/export/debounce.test.js 17ms
-157 error src/export/deepfind.js 10ms
-157 error src/export/deepfind.test.js 12ms
-157 error src/export/delay.js 7ms
-157 error src/export/delay.test.js 12ms
-157 error src/export/distinct.js 12ms
-157 error src/export/distinct.test.js 12ms
-157 error src/export/flatten.js 12ms
-157 error src/export/flatten.test.js 9ms
-157 error src/export/partition.js 9ms
-157 error src/export/partition.test.js 12ms
-157 error src/export/stringIncludes.js 8ms
-157 error src/export/stringIncludes.test.js 10ms
-157 error src/export/throttle.js 16ms
-157 error src/export/throttle.test.js 12ms
-157 error src/helpers/restArguments.js 14ms
-157 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-157 error
-157 error > @staccx/math@8.57.0 prepare /Users/espen/Projects/bento/packages/internal/math
-157 error > yarn build
-157 error
-157 error yarn run v1.13.0
-157 error $ yarn prettify && rollup -c
-157 error $ prettier --write '{src,__{tests,mocks}__}/**/*.js'
-157 error src/clamp.js 41ms
-157 error src/clamp.test.js 16ms
-157 error src/cosineInterpolate.js 13ms
-157 error src/export.js 10ms
-157 error src/inverseLerp.js 8ms
-157 error src/isNumber.js 6ms
-157 error src/isNumber.test.js 11ms
-157 error src/lerp.js 7ms
-157 error src/multiplyPixelValue.js 9ms
-157 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-157 error
-157 error > @staccx/animations@8.57.0 prepare /Users/espen/Projects/bento/packages/internal/animations
-157 error > yarn build
-157 error
-157 error yarn run v1.13.0
-157 error $ yarn prettify && rollup -c
-157 error $ prettier --write '{src,__{tests,mocks}__}/**/*.js'
-157 error src/export.js 49ms
-157 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-157 error
-157 error     at makeError (/Users/espen/.config/yarn/global/node_modules/@lerna/child-process/node_modules/execa/index.js:174:9)
-157 error     at Promise.all.then.arr (/Users/espen/.config/yarn/global/node_modules/@lerna/child-process/node_modules/execa/index.js:278:16)
+1 notice cli v3.13.1
+2 verbose rootPath /Users/robin/Projects/staccx/bento
+3 verbose session 0785a50db74e8941
+4 verbose user-agent lerna/3.13.1/node@v8.11.3+x64 (darwin)
+5 verbose git-describe undefined => "v8.78.1-0-gfba5600e"
+6 silly git-describe parsed => {"lastTagName":"v8.78.1","lastVersion":"v8.78.1","refCount":"0","sha":"fba5600e","isDirty":false}
+7 silly getUnpublishedPackages
+8 silly batched [ PackageGraphNode {
+8 silly batched     name: '@staccx/base',
+8 silly batched     externalDependencies:
+8 silly batched      Map {
+8 silly batched        '@staccx/animations' => [Object],
+8 silly batched        '@staccx/formatting' => [Object],
+8 silly batched        '@staccx/math' => [Object],
+8 silly batched        '@staccx/utils' => [Object],
+8 silly batched        'axios' => [Object],
+8 silly batched        'babel-plugin-prismjs' => [Object],
+8 silly batched        'cleave.js' => [Object],
+8 silly batched        'copy-to-clipboard' => [Object],
+8 silly batched        'downshift' => [Object],
+8 silly batched        'easing-utils' => [Object],
+8 silly batched        'es6-promise' => [Object],
+8 silly batched        'formik' => [Object],
+8 silly batched        'immutable' => [Object],
+8 silly batched        'isomorphic-fetch' => [Object],
+8 silly batched        'js-search' => [Object],
+8 silly batched        'libphonenumber-js' => [Object],
+8 silly batched        'lodash.debounce' => [Object],
+8 silly batched        'polished' => [Object],
+8 silly batched        'prismjs' => [Object],
+8 silly batched        'prop-types' => [Object],
+8 silly batched        'react' => [Object],
+8 silly batched        'react-compound-slider' => [Object],
+8 silly batched        'react-jsonschema-form' => [Object],
+8 silly batched        'react-traverse' => [Object],
+8 silly batched        'tinycolor2' => [Object],
+8 silly batched        'webfontloader' => [Object],
+8 silly batched        'yup' => [Object] },
+8 silly batched     localDependencies: Map {},
+8 silly batched     localDependents:
+8 silly batched      Map {
+8 silly batched        '@staccx/bank-in-a-box' => [Object],
+8 silly batched        '@staccx/developer-portal' => [Object],
+8 silly batched        '@staccx/loan-process' => [Object],
+8 silly batched        '@staccx/quantfolio-widgets' => [Object],
+8 silly batched        '@staccx/savings-advisor' => [Object],
+8 silly batched        '@staccx/fsm' => [Object],
+8 silly batched        '@staccx/json-schema' => [Object],
+8 silly batched        '@staccx/nori' => [Object],
+8 silly batched        '@staccx/sanity' => [Object],
+8 silly batched        '@staccx/aprila-theme' => [Object],
+8 silly batched        '@staccx/fundu-theme' => [Object],
+8 silly batched        '@staccx/nordea-theme' => [Object],
+8 silly batched        '@staccx/norefjell-theme' => [Object],
+8 silly batched        '@staccx/stacc-theme' => [Object],
+8 silly batched        '@staccx/styrke-theme' => [Object],
+8 silly batched        '@staccx/swedbank-theme' => [Object],
+8 silly batched        '@staccx/imove-theme' => [Object] } } ]
+9 silly batched [ PackageGraphNode {
+9 silly batched     name: '@staccx/quantfolio-widgets',
+9 silly batched     externalDependencies:
+9 silly batched      Map {
+9 silly batched        '@staccx/quantfolio' => [Object],
+9 silly batched        '@tedconf/react-show-more' => [Object],
+9 silly batched        'animejs' => [Object],
+9 silly batched        'axios' => [Object],
+9 silly batched        'd3' => [Object],
+9 silly batched        'date-fns' => [Object],
+9 silly batched        'lodash.reverse' => [Object],
+9 silly batched        'lodash.sortby' => [Object],
+9 silly batched        'react' => [Object],
+9 silly batched        'react-dom' => [Object],
+9 silly batched        'react-habitat' => [Object],
+9 silly batched        'react-scripts' => [Object],
+9 silly batched        'recharts' => [Object],
+9 silly batched        'styled-components' => [Object] },
+9 silly batched     localDependencies: Map {},
+9 silly batched     localDependents: Map {} },
+9 silly batched   PackageGraphNode {
+9 silly batched     name: '@staccx/savings-advisor',
+9 silly batched     externalDependencies:
+9 silly batched      Map {
+9 silly batched        '@sanity/client' => [Object],
+9 silly batched        '@sanity/image-url' => [Object],
+9 silly batched        '@staccx/animations' => [Object],
+9 silly batched        '@staccx/formatting' => [Object],
+9 silly batched        '@staccx/i18n' => [Object],
+9 silly batched        '@staccx/math' => [Object],
+9 silly batched        'axios' => [Object],
+9 silly batched        'chart.js' => [Object],
+9 silly batched        'date-fns' => [Object],
+9 silly batched        'easing-utils' => [Object],
+9 silly batched        'mobx' => [Object],
+9 silly batched        'mobx-react' => [Object],
+9 silly batched        'prop-types' => [Object],
+9 silly batched        'qs' => [Object],
+9 silly batched        'react' => [Object],
+9 silly batched        'react-dom' => [Object],
+9 silly batched        'react-router-dom' => [Object],
+9 silly batched        'react-sparklines' => [Object],
+9 silly batched        'react-tabs' => [Object],
+9 silly batched        'react-transition-group' => [Object],
+9 silly batched        'tinycolor2' => [Object] },
+9 silly batched     localDependencies: Map {},
+9 silly batched     localDependents: Map {} },
+9 silly batched   PackageGraphNode {
+9 silly batched     name: '@staccx/fsm',
+9 silly batched     externalDependencies:
+9 silly batched      Map {
+9 silly batched        'prop-types' => [Object],
+9 silly batched        'react' => [Object],
+9 silly batched        'react-dom' => [Object] },
+9 silly batched     localDependencies: Map {},
+9 silly batched     localDependents: Map {} },
+9 silly batched   PackageGraphNode {
+9 silly batched     name: '@staccx/json-schema',
+9 silly batched     externalDependencies:
+9 silly batched      Map {
+9 silly batched        'ajv' => [Object],
+9 silly batched        'core-js' => [Object],
+9 silly batched        'lodash.topath' => [Object] },
+9 silly batched     localDependencies: Map {},
+9 silly batched     localDependents: Map { '@staccx/aprila-theme' => [Object] } },
+9 silly batched   PackageGraphNode {
+9 silly batched     name: '@staccx/sanity',
+9 silly batched     externalDependencies:
+9 silly batched      Map {
+9 silly batched        '@sanity/block-content-to-react' => [Object],
+9 silly batched        '@sanity/client' => [Object],
+9 silly batched        '@sanity/image-url' => [Object],
+9 silly batched        'mobx-react' => [Object],
+9 silly batched        'prop-types' => [Object],
+9 silly batched        'react' => [Object],
+9 silly batched        'react-dom' => [Object],
+9 silly batched        'react-router-dom' => [Object],
+9 silly batched        'sanity-query-helper' => [Object] },
+9 silly batched     localDependencies: Map {},
+9 silly batched     localDependents: Map { '@staccx/nori' => [Object] } },
+9 silly batched   PackageGraphNode {
+9 silly batched     name: '@staccx/fundu-theme',
+9 silly batched     externalDependencies:
+9 silly batched      Map {
+9 silly batched        'polished' => [Object],
+9 silly batched        'react' => [Object],
+9 silly batched        'react-dom' => [Object] },
+9 silly batched     localDependencies: Map {},
+9 silly batched     localDependents:
+9 silly batched      Map {
+9 silly batched        '@staccx/developer-portal' => [Object],
+9 silly batched        '@staccx/loan-process' => [Object] } },
+9 silly batched   PackageGraphNode {
+9 silly batched     name: '@staccx/nordea-theme',
+9 silly batched     externalDependencies:
+9 silly batched      Map {
+9 silly batched        '@staccx/animations' => [Object],
+9 silly batched        'react' => [Object],
+9 silly batched        'react-dom' => [Object] },
+9 silly batched     localDependencies: Map {},
+9 silly batched     localDependents: Map {} },
+9 silly batched   PackageGraphNode {
+9 silly batched     name: '@staccx/norefjell-theme',
+9 silly batched     externalDependencies:
+9 silly batched      Map {
+9 silly batched        '@staccx/animations' => [Object],
+9 silly batched        '@staccx/formatting' => [Object],
+9 silly batched        'polished' => [Object],
+9 silly batched        'prop-types' => [Object],
+9 silly batched        'react' => [Object],
+9 silly batched        'react-dom' => [Object] },
+9 silly batched     localDependencies: Map {},
+9 silly batched     localDependents: Map { '@staccx/bank-in-a-box' => [Object] } },
+9 silly batched   PackageGraphNode {
+9 silly batched     name: '@staccx/stacc-theme',
+9 silly batched     externalDependencies:
+9 silly batched      Map {
+9 silly batched        'polished' => [Object],
+9 silly batched        'react' => [Object],
+9 silly batched        'react-dom' => [Object] },
+9 silly batched     localDependencies: Map {},
+9 silly batched     localDependents: Map { '@staccx/nori' => [Object] } },
+9 silly batched   PackageGraphNode {
+9 silly batched     name: '@staccx/styrke-theme',
+9 silly batched     externalDependencies:
+9 silly batched      Map {
+9 silly batched        'polished' => [Object],
+9 silly batched        'react' => [Object],
+9 silly batched        'react-dom' => [Object] },
+9 silly batched     localDependencies: Map {},
+9 silly batched     localDependents: Map { '@staccx/loan-process' => [Object] } },
+9 silly batched   PackageGraphNode {
+9 silly batched     name: '@staccx/swedbank-theme',
+9 silly batched     externalDependencies:
+9 silly batched      Map {
+9 silly batched        'polished' => [Object],
+9 silly batched        'react' => [Object],
+9 silly batched        'react-dom' => [Object] },
+9 silly batched     localDependencies: Map {},
+9 silly batched     localDependents: Map {} },
+9 silly batched   PackageGraphNode {
+9 silly batched     name: '@staccx/imove-theme',
+9 silly batched     externalDependencies:
+9 silly batched      Map {
+9 silly batched        'polished' => [Object],
+9 silly batched        'react' => [Object],
+9 silly batched        'react-dom' => [Object] },
+9 silly batched     localDependencies: Map {},
+9 silly batched     localDependents: Map {} } ]
+10 silly batched [ PackageGraphNode {
+10 silly batched     name: '@staccx/developer-portal',
+10 silly batched     externalDependencies:
+10 silly batched      Map {
+10 silly batched        '@staccx/code-generator' => [Object],
+10 silly batched        '@staccx/utils' => [Object],
+10 silly batched        'axios' => [Object],
+10 silly batched        'localforage' => [Object],
+10 silly batched        'prop-types' => [Object],
+10 silly batched        'react' => [Object],
+10 silly batched        'react-dom' => [Object],
+10 silly batched        'react-router-dom' => [Object],
+10 silly batched        'react-router-hash-link' => [Object] },
+10 silly batched     localDependencies: Map {},
+10 silly batched     localDependents: Map {} },
+10 silly batched   PackageGraphNode {
+10 silly batched     name: '@staccx/loan-process',
+10 silly batched     externalDependencies:
+10 silly batched      Map {
+10 silly batched        '@staccx/animations' => [Object],
+10 silly batched        '@staccx/formatting' => [Object],
+10 silly batched        '@staccx/payment-plan' => [Object],
+10 silly batched        '@staccx/utils' => [Object],
+10 silly batched        'easing-utils' => [Object],
+10 silly batched        'formik' => [Object],
+10 silly batched        'national-id' => [Object],
+10 silly batched        'prop-types' => [Object],
+10 silly batched        'react' => [Object],
+10 silly batched        'react-dom' => [Object],
+10 silly batched        'react-loadable' => [Object],
+10 silly batched        'yup' => [Object] },
+10 silly batched     localDependencies: Map {},
+10 silly batched     localDependents: Map {} },
+10 silly batched   PackageGraphNode {
+10 silly batched     name: '@staccx/nori',
+10 silly batched     externalDependencies:
+10 silly batched      Map {
+10 silly batched        '@staccx/i18n' => [Object],
+10 silly batched        'prop-types' => [Object],
+10 silly batched        'react' => [Object],
+10 silly batched        'react-dom' => [Object],
+10 silly batched        'styled-components' => [Object] },
+10 silly batched     localDependencies: Map {},
+10 silly batched     localDependents: Map {} },
+10 silly batched   PackageGraphNode {
+10 silly batched     name: '@staccx/aprila-theme',
+10 silly batched     externalDependencies:
+10 silly batched      Map {
+10 silly batched        '@staccx/animations' => [Object],
+10 silly batched        '@staccx/formatting' => [Object],
+10 silly batched        '@staccx/i18n' => [Object],
+10 silly batched        'polished' => [Object],
+10 silly batched        'prop-types' => [Object],
+10 silly batched        'react' => [Object],
+10 silly batched        'react-dom' => [Object],
+10 silly batched        'react-epic-spinners' => [Object] },
+10 silly batched     localDependencies: Map {},
+10 silly batched     localDependents: Map { '@staccx/bank-in-a-box' => [Object] } } ]
+11 silly batched [ PackageGraphNode {
+11 silly batched     name: '@staccx/bank-in-a-box',
+11 silly batched     externalDependencies:
+11 silly batched      Map {
+11 silly batched        '@staccx/animations' => [Object],
+11 silly batched        '@staccx/formatting' => [Object],
+11 silly batched        '@staccx/i18n' => [Object],
+11 silly batched        '@tedconf/react-show-more' => [Object],
+11 silly batched        'history' => [Object],
+11 silly batched        'mobx' => [Object],
+11 silly batched        'mobx-react' => [Object],
+11 silly batched        'prop-types' => [Object],
+11 silly batched        'react' => [Object],
+11 silly batched        'react-dom' => [Object],
+11 silly batched        'react-router-dom' => [Object],
+11 silly batched        'react-transition-group' => [Object],
+11 silly batched        'webfontloader' => [Object] },
+11 silly batched     localDependencies: Map {},
+11 silly batched     localDependents: Map {} } ]
+12 info auto-confirmed
+13 info publish Publishing packages to npm...
+14 warn ENOLICENSE Packages @staccx/bank-in-a-box, @staccx/developer-portal, @staccx/loan-process, @staccx/quantfolio-widgets, @staccx/savings-advisor, @staccx/base, @staccx/fsm, @staccx/json-schema, @staccx/nori, @staccx/sanity, @staccx/aprila-theme, @staccx/fundu-theme, @staccx/nordea-theme, @staccx/norefjell-theme, @staccx/stacc-theme, @staccx/styrke-theme, @staccx/swedbank-theme, and @staccx/imove-theme are missing a license.
+14 warn ENOLICENSE One way to fix this is to add a LICENSE.md file to the root of this repository.
+14 warn ENOLICENSE See https://choosealicense.com for additional guidance.
+15 silly getCurrentSHA
+16 verbose getCurrentSHA fba5600ec9535ef0f12004463f3f99ff9427495b
+17 silly lifecycle No script for "prepublish" in "@staccx/bento", continuing
+18 silly lifecycle No script for "prepare" in "@staccx/bento", continuing
+19 silly lifecycle No script for "prepublishOnly" in "@staccx/bento", continuing
+20 silly lifecycle No script for "prepack" in "@staccx/bento", continuing
+21 verbose pack-directory packages/internal/base
+22 silly lifecycle No script for "prepublish" in "@staccx/base", continuing
+23 silly lifecycle "prepare" starting in "@staccx/base"
+24 info lifecycle @staccx/base@8.78.1~prepare: @staccx/base@8.78.1
+25 verbose lifecycle @staccx/base@8.78.1~prepare: unsafe-perm in lifecycle true
+26 verbose lifecycle @staccx/base@8.78.1~prepare: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/internal/base/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+27 verbose lifecycle @staccx/base@8.78.1~prepare: CWD: /Users/robin/Projects/staccx/bento/packages/internal/base
+28 silly lifecycle @staccx/base@8.78.1~prepare: Args: [ '-c', 'yarn build && yarn build:packages' ]
+29 silly lifecycle @staccx/base@8.78.1~prepare: Returned: code: 0  signal: null
+30 silly lifecycle "prepare" finished in "@staccx/base"
+31 silly lifecycle "prepublishOnly" starting in "@staccx/base"
+32 info lifecycle @staccx/base@8.78.1~prepublishOnly: @staccx/base@8.78.1
+33 verbose lifecycle @staccx/base@8.78.1~prepublishOnly: unsafe-perm in lifecycle true
+34 verbose lifecycle @staccx/base@8.78.1~prepublishOnly: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/internal/base/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+35 verbose lifecycle @staccx/base@8.78.1~prepublishOnly: CWD: /Users/robin/Projects/staccx/bento/packages/internal/base
+36 silly lifecycle @staccx/base@8.78.1~prepublishOnly: Args: [ '-c', 'yarn test' ]
+37 silly lifecycle @staccx/base@8.78.1~prepublishOnly: Returned: code: 0  signal: null
+38 silly lifecycle "prepublishOnly" finished in "@staccx/base"
+39 silly lifecycle No script for "prepack" in "@staccx/base", continuing
+40 silly lifecycle No script for "postpack" in "@staccx/base", continuing
+41 verbose packed @staccx/base packages/internal/base
+42 verbose pack-directory packages/apps/quantfolio-widgets
+43 verbose pack-directory packages/apps/savings-advisor
+44 verbose pack-directory packages/internal/fsm
+45 verbose pack-directory packages/internal/json-schema
+46 verbose pack-directory packages/internal/sanity
+47 verbose pack-directory packages/themes/Fundu
+48 verbose pack-directory packages/themes/Nordea
+49 verbose pack-directory packages/themes/Norefjell
+50 verbose pack-directory packages/themes/Stacc
+51 verbose pack-directory packages/themes/Styrke
+52 silly lifecycle No script for "prepublish" in "@staccx/quantfolio-widgets", continuing
+53 silly lifecycle No script for "prepublish" in "@staccx/savings-advisor", continuing
+54 silly lifecycle No script for "prepublish" in "@staccx/fsm", continuing
+55 silly lifecycle No script for "prepublish" in "@staccx/json-schema", continuing
+56 silly lifecycle No script for "prepublish" in "@staccx/sanity", continuing
+57 silly lifecycle No script for "prepublish" in "@staccx/fundu-theme", continuing
+58 silly lifecycle No script for "prepublish" in "@staccx/nordea-theme", continuing
+59 silly lifecycle No script for "prepublish" in "@staccx/norefjell-theme", continuing
+60 silly lifecycle No script for "prepublish" in "@staccx/stacc-theme", continuing
+61 silly lifecycle No script for "prepublish" in "@staccx/styrke-theme", continuing
+62 silly lifecycle "prepare" starting in "@staccx/quantfolio-widgets"
+63 info lifecycle @staccx/quantfolio-widgets@8.78.1~prepare: @staccx/quantfolio-widgets@8.78.1
+64 silly lifecycle "prepare" starting in "@staccx/savings-advisor"
+65 info lifecycle @staccx/savings-advisor@8.78.1~prepare: @staccx/savings-advisor@8.78.1
+66 silly lifecycle "prepare" starting in "@staccx/fsm"
+67 info lifecycle @staccx/fsm@8.78.1~prepare: @staccx/fsm@8.78.1
+68 silly lifecycle "prepare" starting in "@staccx/json-schema"
+69 info lifecycle @staccx/json-schema@8.78.1~prepare: @staccx/json-schema@8.78.1
+70 silly lifecycle "prepare" starting in "@staccx/sanity"
+71 info lifecycle @staccx/sanity@8.78.1~prepare: @staccx/sanity@8.78.1
+72 silly lifecycle "prepare" starting in "@staccx/fundu-theme"
+73 info lifecycle @staccx/fundu-theme@8.78.1~prepare: @staccx/fundu-theme@8.78.1
+74 silly lifecycle "prepare" starting in "@staccx/nordea-theme"
+75 info lifecycle @staccx/nordea-theme@8.78.1~prepare: @staccx/nordea-theme@8.78.1
+76 silly lifecycle "prepare" starting in "@staccx/norefjell-theme"
+77 info lifecycle @staccx/norefjell-theme@8.78.1~prepare: @staccx/norefjell-theme@8.78.1
+78 silly lifecycle "prepare" starting in "@staccx/stacc-theme"
+79 info lifecycle @staccx/stacc-theme@8.78.1~prepare: @staccx/stacc-theme@8.78.1
+80 silly lifecycle "prepare" starting in "@staccx/styrke-theme"
+81 info lifecycle @staccx/styrke-theme@8.78.1~prepare: @staccx/styrke-theme@8.78.1
+82 verbose lifecycle @staccx/quantfolio-widgets@8.78.1~prepare: unsafe-perm in lifecycle true
+83 verbose lifecycle @staccx/quantfolio-widgets@8.78.1~prepare: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/apps/quantfolio-widgets/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+84 verbose lifecycle @staccx/quantfolio-widgets@8.78.1~prepare: CWD: /Users/robin/Projects/staccx/bento/packages/apps/quantfolio-widgets
+85 silly lifecycle @staccx/quantfolio-widgets@8.78.1~prepare: Args: [ '-c', 'yarn build:app' ]
+86 silly lifecycle @staccx/quantfolio-widgets@8.78.1~prepare: Returned: code: 0  signal: null
+87 verbose lifecycle @staccx/savings-advisor@8.78.1~prepare: unsafe-perm in lifecycle true
+88 verbose lifecycle @staccx/savings-advisor@8.78.1~prepare: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/apps/savings-advisor/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+89 verbose lifecycle @staccx/savings-advisor@8.78.1~prepare: CWD: /Users/robin/Projects/staccx/bento/packages/apps/savings-advisor
+90 silly lifecycle @staccx/savings-advisor@8.78.1~prepare: Args: [ '-c', 'yarn build' ]
+91 silly lifecycle "prepare" finished in "@staccx/quantfolio-widgets"
+92 silly lifecycle "prepublishOnly" starting in "@staccx/quantfolio-widgets"
+93 info lifecycle @staccx/quantfolio-widgets@8.78.1~prepublishOnly: @staccx/quantfolio-widgets@8.78.1
+94 silly lifecycle @staccx/savings-advisor@8.78.1~prepare: Returned: code: 0  signal: null
+95 verbose lifecycle @staccx/fsm@8.78.1~prepare: unsafe-perm in lifecycle true
+96 verbose lifecycle @staccx/fsm@8.78.1~prepare: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/internal/fsm/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+97 verbose lifecycle @staccx/fsm@8.78.1~prepare: CWD: /Users/robin/Projects/staccx/bento/packages/internal/fsm
+98 silly lifecycle @staccx/fsm@8.78.1~prepare: Args: [ '-c', 'yarn build' ]
+99 silly lifecycle "prepare" finished in "@staccx/savings-advisor"
+100 silly lifecycle "prepublishOnly" starting in "@staccx/savings-advisor"
+101 info lifecycle @staccx/savings-advisor@8.78.1~prepublishOnly: @staccx/savings-advisor@8.78.1
+102 silly lifecycle @staccx/fsm@8.78.1~prepare: Returned: code: 0  signal: null
+103 verbose lifecycle @staccx/json-schema@8.78.1~prepare: unsafe-perm in lifecycle true
+104 verbose lifecycle @staccx/json-schema@8.78.1~prepare: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/internal/json-schema/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+105 verbose lifecycle @staccx/json-schema@8.78.1~prepare: CWD: /Users/robin/Projects/staccx/bento/packages/internal/json-schema
+106 silly lifecycle @staccx/json-schema@8.78.1~prepare: Args: [ '-c', 'yarn build' ]
+107 silly lifecycle "prepare" finished in "@staccx/fsm"
+108 silly lifecycle "prepublishOnly" starting in "@staccx/fsm"
+109 info lifecycle @staccx/fsm@8.78.1~prepublishOnly: @staccx/fsm@8.78.1
+110 silly lifecycle @staccx/json-schema@8.78.1~prepare: Returned: code: 0  signal: null
+111 verbose lifecycle @staccx/sanity@8.78.1~prepare: unsafe-perm in lifecycle true
+112 verbose lifecycle @staccx/sanity@8.78.1~prepare: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/internal/sanity/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+113 verbose lifecycle @staccx/sanity@8.78.1~prepare: CWD: /Users/robin/Projects/staccx/bento/packages/internal/sanity
+114 silly lifecycle @staccx/sanity@8.78.1~prepare: Args: [ '-c', 'yarn build' ]
+115 silly lifecycle "prepare" finished in "@staccx/json-schema"
+116 silly lifecycle "prepublishOnly" starting in "@staccx/json-schema"
+117 info lifecycle @staccx/json-schema@8.78.1~prepublishOnly: @staccx/json-schema@8.78.1
+118 silly lifecycle @staccx/sanity@8.78.1~prepare: Returned: code: 0  signal: null
+119 verbose lifecycle @staccx/fundu-theme@8.78.1~prepare: unsafe-perm in lifecycle true
+120 verbose lifecycle @staccx/fundu-theme@8.78.1~prepare: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/themes/Fundu/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+121 verbose lifecycle @staccx/fundu-theme@8.78.1~prepare: CWD: /Users/robin/Projects/staccx/bento/packages/themes/Fundu
+122 silly lifecycle @staccx/fundu-theme@8.78.1~prepare: Args: [ '-c', 'yarn build' ]
+123 silly lifecycle "prepare" finished in "@staccx/sanity"
+124 silly lifecycle "prepublishOnly" starting in "@staccx/sanity"
+125 info lifecycle @staccx/sanity@8.78.1~prepublishOnly: @staccx/sanity@8.78.1
+126 silly lifecycle @staccx/fundu-theme@8.78.1~prepare: Returned: code: 0  signal: null
+127 verbose lifecycle @staccx/nordea-theme@8.78.1~prepare: unsafe-perm in lifecycle true
+128 verbose lifecycle @staccx/nordea-theme@8.78.1~prepare: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/themes/Nordea/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+129 verbose lifecycle @staccx/nordea-theme@8.78.1~prepare: CWD: /Users/robin/Projects/staccx/bento/packages/themes/Nordea
+130 silly lifecycle @staccx/nordea-theme@8.78.1~prepare: Args: [ '-c', 'yarn build' ]
+131 silly lifecycle "prepare" finished in "@staccx/fundu-theme"
+132 silly lifecycle "prepublishOnly" starting in "@staccx/fundu-theme"
+133 info lifecycle @staccx/fundu-theme@8.78.1~prepublishOnly: @staccx/fundu-theme@8.78.1
+134 silly lifecycle @staccx/nordea-theme@8.78.1~prepare: Returned: code: 0  signal: null
+135 verbose lifecycle @staccx/norefjell-theme@8.78.1~prepare: unsafe-perm in lifecycle true
+136 verbose lifecycle @staccx/norefjell-theme@8.78.1~prepare: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/themes/Norefjell/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+137 verbose lifecycle @staccx/norefjell-theme@8.78.1~prepare: CWD: /Users/robin/Projects/staccx/bento/packages/themes/Norefjell
+138 silly lifecycle @staccx/norefjell-theme@8.78.1~prepare: Args: [ '-c', 'yarn build' ]
+139 silly lifecycle "prepare" finished in "@staccx/nordea-theme"
+140 silly lifecycle "prepublishOnly" starting in "@staccx/nordea-theme"
+141 info lifecycle @staccx/nordea-theme@8.78.1~prepublishOnly: @staccx/nordea-theme@8.78.1
+142 silly lifecycle @staccx/norefjell-theme@8.78.1~prepare: Returned: code: 0  signal: null
+143 verbose lifecycle @staccx/stacc-theme@8.78.1~prepare: unsafe-perm in lifecycle true
+144 verbose lifecycle @staccx/stacc-theme@8.78.1~prepare: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/themes/Stacc/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+145 verbose lifecycle @staccx/stacc-theme@8.78.1~prepare: CWD: /Users/robin/Projects/staccx/bento/packages/themes/Stacc
+146 silly lifecycle @staccx/stacc-theme@8.78.1~prepare: Args: [ '-c', 'yarn build' ]
+147 silly lifecycle "prepare" finished in "@staccx/norefjell-theme"
+148 silly lifecycle "prepublishOnly" starting in "@staccx/norefjell-theme"
+149 info lifecycle @staccx/norefjell-theme@8.78.1~prepublishOnly: @staccx/norefjell-theme@8.78.1
+150 silly lifecycle @staccx/stacc-theme@8.78.1~prepare: Returned: code: 0  signal: null
+151 verbose lifecycle @staccx/styrke-theme@8.78.1~prepare: unsafe-perm in lifecycle true
+152 verbose lifecycle @staccx/styrke-theme@8.78.1~prepare: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/themes/Styrke/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+153 verbose lifecycle @staccx/styrke-theme@8.78.1~prepare: CWD: /Users/robin/Projects/staccx/bento/packages/themes/Styrke
+154 silly lifecycle @staccx/styrke-theme@8.78.1~prepare: Args: [ '-c', 'yarn build' ]
+155 silly lifecycle "prepare" finished in "@staccx/stacc-theme"
+156 silly lifecycle "prepublishOnly" starting in "@staccx/stacc-theme"
+157 info lifecycle @staccx/stacc-theme@8.78.1~prepublishOnly: @staccx/stacc-theme@8.78.1
+158 silly lifecycle @staccx/styrke-theme@8.78.1~prepare: Returned: code: 0  signal: null
+159 verbose lifecycle @staccx/quantfolio-widgets@8.78.1~prepublishOnly: unsafe-perm in lifecycle true
+160 verbose lifecycle @staccx/quantfolio-widgets@8.78.1~prepublishOnly: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/apps/quantfolio-widgets/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+161 verbose lifecycle @staccx/quantfolio-widgets@8.78.1~prepublishOnly: CWD: /Users/robin/Projects/staccx/bento/packages/apps/quantfolio-widgets
+162 silly lifecycle @staccx/quantfolio-widgets@8.78.1~prepublishOnly: Args: [ '-c', 'yarn test' ]
+163 silly lifecycle "prepare" finished in "@staccx/styrke-theme"
+164 silly lifecycle "prepublishOnly" starting in "@staccx/styrke-theme"
+165 info lifecycle @staccx/styrke-theme@8.78.1~prepublishOnly: @staccx/styrke-theme@8.78.1
+166 silly lifecycle @staccx/quantfolio-widgets@8.78.1~prepublishOnly: Returned: code: 0  signal: null
+167 verbose lifecycle @staccx/savings-advisor@8.78.1~prepublishOnly: unsafe-perm in lifecycle true
+168 verbose lifecycle @staccx/savings-advisor@8.78.1~prepublishOnly: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/apps/savings-advisor/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+169 verbose lifecycle @staccx/savings-advisor@8.78.1~prepublishOnly: CWD: /Users/robin/Projects/staccx/bento/packages/apps/savings-advisor
+170 silly lifecycle @staccx/savings-advisor@8.78.1~prepublishOnly: Args: [ '-c', 'yarn test' ]
+171 silly lifecycle "prepublishOnly" finished in "@staccx/quantfolio-widgets"
+172 silly lifecycle No script for "prepack" in "@staccx/quantfolio-widgets", continuing
+173 silly lifecycle No script for "postpack" in "@staccx/quantfolio-widgets", continuing
+174 verbose packed @staccx/quantfolio-widgets packages/apps/quantfolio-widgets
+175 verbose pack-directory packages/themes/Swedbank
+176 silly lifecycle No script for "prepublish" in "@staccx/swedbank-theme", continuing
+177 silly lifecycle "prepare" starting in "@staccx/swedbank-theme"
+178 info lifecycle @staccx/swedbank-theme@8.78.1~prepare: @staccx/swedbank-theme@8.78.1
+179 silly lifecycle @staccx/savings-advisor@8.78.1~prepublishOnly: Returned: code: 0  signal: null
+180 verbose lifecycle @staccx/fsm@8.78.1~prepublishOnly: unsafe-perm in lifecycle true
+181 verbose lifecycle @staccx/fsm@8.78.1~prepublishOnly: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/internal/fsm/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+182 verbose lifecycle @staccx/fsm@8.78.1~prepublishOnly: CWD: /Users/robin/Projects/staccx/bento/packages/internal/fsm
+183 silly lifecycle @staccx/fsm@8.78.1~prepublishOnly: Args: [ '-c', 'yarn test' ]
+184 silly lifecycle "prepublishOnly" finished in "@staccx/savings-advisor"
+185 silly lifecycle No script for "prepack" in "@staccx/savings-advisor", continuing
+186 silly lifecycle No script for "postpack" in "@staccx/savings-advisor", continuing
+187 verbose packed @staccx/savings-advisor packages/apps/savings-advisor
+188 verbose pack-directory packages/themes/imove
+189 silly lifecycle No script for "prepublish" in "@staccx/imove-theme", continuing
+190 silly lifecycle "prepare" starting in "@staccx/imove-theme"
+191 info lifecycle @staccx/imove-theme@8.78.1~prepare: @staccx/imove-theme@8.78.1
+192 silly lifecycle @staccx/fsm@8.78.1~prepublishOnly: Returned: code: 0  signal: null
+193 verbose lifecycle @staccx/json-schema@8.78.1~prepublishOnly: unsafe-perm in lifecycle true
+194 verbose lifecycle @staccx/json-schema@8.78.1~prepublishOnly: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/internal/json-schema/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+195 verbose lifecycle @staccx/json-schema@8.78.1~prepublishOnly: CWD: /Users/robin/Projects/staccx/bento/packages/internal/json-schema
+196 silly lifecycle @staccx/json-schema@8.78.1~prepublishOnly: Args: [ '-c', 'yarn test' ]
+197 silly lifecycle "prepublishOnly" finished in "@staccx/fsm"
+198 silly lifecycle No script for "prepack" in "@staccx/fsm", continuing
+199 silly lifecycle No script for "postpack" in "@staccx/fsm", continuing
+200 verbose packed @staccx/fsm packages/internal/fsm
+201 silly lifecycle @staccx/json-schema@8.78.1~prepublishOnly: Returned: code: 0  signal: null
+202 verbose lifecycle @staccx/sanity@8.78.1~prepublishOnly: unsafe-perm in lifecycle true
+203 verbose lifecycle @staccx/sanity@8.78.1~prepublishOnly: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/internal/sanity/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+204 verbose lifecycle @staccx/sanity@8.78.1~prepublishOnly: CWD: /Users/robin/Projects/staccx/bento/packages/internal/sanity
+205 silly lifecycle @staccx/sanity@8.78.1~prepublishOnly: Args: [ '-c', 'yarn test' ]
+206 silly lifecycle "prepublishOnly" finished in "@staccx/json-schema"
+207 silly lifecycle No script for "prepack" in "@staccx/json-schema", continuing
+208 silly lifecycle No script for "postpack" in "@staccx/json-schema", continuing
+209 verbose packed @staccx/json-schema packages/internal/json-schema
+210 silly lifecycle @staccx/sanity@8.78.1~prepublishOnly: Returned: code: 0  signal: null
+211 verbose lifecycle @staccx/fundu-theme@8.78.1~prepublishOnly: unsafe-perm in lifecycle true
+212 verbose lifecycle @staccx/fundu-theme@8.78.1~prepublishOnly: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/themes/Fundu/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+213 verbose lifecycle @staccx/fundu-theme@8.78.1~prepublishOnly: CWD: /Users/robin/Projects/staccx/bento/packages/themes/Fundu
+214 silly lifecycle @staccx/fundu-theme@8.78.1~prepublishOnly: Args: [ '-c', 'yarn test' ]
+215 silly lifecycle "prepublishOnly" finished in "@staccx/sanity"
+216 silly lifecycle No script for "prepack" in "@staccx/sanity", continuing
+217 silly lifecycle No script for "postpack" in "@staccx/sanity", continuing
+218 verbose packed @staccx/sanity packages/internal/sanity
+219 silly lifecycle @staccx/fundu-theme@8.78.1~prepublishOnly: Returned: code: 0  signal: null
+220 verbose lifecycle @staccx/nordea-theme@8.78.1~prepublishOnly: unsafe-perm in lifecycle true
+221 verbose lifecycle @staccx/nordea-theme@8.78.1~prepublishOnly: PATH: /Users/robin/.config/yarn/global/node_modules/npm-lifecycle/node-gyp-bin:/Users/robin/Projects/staccx/bento/packages/themes/Nordea/node_modules/.bin:/Users/robin/.yarn/bin:/Users/robin/.nvm/versions/node/v8.11.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+222 verbose lifecycle @staccx/nordea-theme@8.78.1~prepublishOnly: CWD: /Users/robin/Projects/staccx/bento/packages/themes/Nordea
+223 silly lifecycle @staccx/nordea-theme@8.78.1~prepublishOnly: Args: [ '-c', 'yarn test' ]
+224 silly lifecycle "prepublishOnly" finished in "@staccx/fundu-theme"
+225 silly lifecycle No script for "prepack" in "@staccx/fundu-theme", continuing
+226 error ZlibError: zlib: unexpected end of file
+226 error     at Unzip.Zlib.(anonymous function) (/Users/robin/.config/yarn/global/node_modules/minizlib/index.js:126:21)
+226 error     at Unzip.write (/Users/robin/.config/yarn/global/node_modules/minizlib/index.js:247:21)
+226 error     at Unzip.flush (/Users/robin/.config/yarn/global/node_modules/minizlib/index.js:206:10)
+226 error     at Unzip.end (/Users/robin/.config/yarn/global/node_modules/minizlib/index.js:213:10)
+226 error     at Object.end (/Users/robin/.config/yarn/global/node_modules/@lerna/get-packed/node_modules/tar/lib/parse.js:416:21)
+226 error     at Yallist.pipes.forEach.p (/Users/robin/.config/yarn/global/node_modules/minipass/index.js:288:18)
+226 error     at Yallist.forEach (/Users/robin/.config/yarn/global/node_modules/yallist/yallist.js:154:8)
+226 error     at ReadStream.emit (/Users/robin/.config/yarn/global/node_modules/minipass/index.js:285:18)
+226 error     at ReadStream.emit (/Users/robin/.config/yarn/global/node_modules/fs-minipass/index.js:153:22)
+226 error     at ReadStream.[maybeEmitEnd] (/Users/robin/.config/yarn/global/node_modules/minipass/index.js:255:12)
+226 error     at ReadStream.end (/Users/robin/.config/yarn/global/node_modules/minipass/index.js:165:27)
+226 error     at ReadStream.[_handleChunk] (/Users/robin/.config/yarn/global/node_modules/fs-minipass/index.js:135:13)
+226 error     at ReadStream.[_onread] (/Users/robin/.config/yarn/global/node_modules/fs-minipass/index.js:108:32)
+226 error     at fs.read (/Users/robin/.config/yarn/global/node_modules/fs-minipass/index.js:100:22)
