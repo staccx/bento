@@ -53,7 +53,6 @@ class i18n {
 
   setLanguage(language) {
     this.language = language
-    localStorage.setItem(STACC_X_LANGUAGE_KEY, language)
     loglevel.info(`language set to ${language}`)
   }
 
@@ -113,6 +112,7 @@ class i18n {
 
   process(val, data) {
     if (Array.isArray(val)) {
+      loglevel.warn("Value is array")
       return val
     }
     const formattingData = Object.assign({}, this.data, data)

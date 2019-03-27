@@ -11,6 +11,7 @@ class TranslatedText extends React.Component {
         {({ translate, initialized }) => {
           if (!initialized) {
             // Has not been initialized
+            loglevel.debug("Not initiazed")
             return null
           }
           if (Array.isArray(i18nKey)) {

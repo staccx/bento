@@ -13,8 +13,11 @@ const createFormatter = ({
 }) => {
   const opts = getLocaleOptions(name, language, options)
 
+  logLevel.debug("Running plugin", name)
+
   const match = value.match(regex)
   if (!match) {
+    logLevel.debug("No match found", value, regex)
     return value
   }
   logLevel.debug("createFormatter - ", "Found match", match)
