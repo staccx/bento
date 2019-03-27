@@ -111,6 +111,8 @@ const fontFamily = {
   mono: "IBM Plex Mono"
 }
 
+const boxShadow = `0px 3px 10px rgba(0,0,0,0.2)`
+
 const theme = new theming.Theme(
   {},
   {
@@ -124,7 +126,8 @@ const theme = new theming.Theme(
     borderRadius,
     headerHeight,
     fontFamily,
-    spacing
+    spacing,
+    boxShadow
   }
 )
   .add(Button)
