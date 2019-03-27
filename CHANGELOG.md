@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.80.1](https://bitbucket.org/stacc-flow/bento/compare/v8.80.0...v8.80.1) (2019-03-27)
+
+
+### Bug Fixes
+
+* **stacc-web:** fix typo in proptypes ([827821c](https://bitbucket.org/stacc-flow/bento/commits/827821c))
+
+
+
+
+
 # [8.80.0](https://bitbucket.org/stacc-flow/bento/compare/v8.79.0...v8.80.0) (2019-03-27)
 
 

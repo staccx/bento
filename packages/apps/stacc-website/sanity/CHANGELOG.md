@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.80.1](https://bitbucket.org/stacc-flow/bento/compare/v8.80.0...v8.80.1) (2019-03-27)
+
+**Note:** Version bump only for package companywebsitetemplate
+
+
+
+
+
 # [8.79.0](https://bitbucket.org/stacc-flow/bento/compare/v8.78.4...v8.79.0) (2019-03-27)
 
 **Note:** Version bump only for package companywebsitetemplate
