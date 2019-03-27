@@ -9,7 +9,7 @@ export default theming.createGlobal({
 
 html {
   background-color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
 }
 
