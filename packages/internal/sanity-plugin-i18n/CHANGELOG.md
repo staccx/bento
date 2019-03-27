@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.79.0](https://bitbucket.org/stacc-flow/bento/compare/v8.78.4...v8.79.0) (2019-03-27)
+
+
+### Features
+
+* **sanity-plugin-i18n:** add support decorations for localeRichText ([d688022](https://bitbucket.org/stacc-flow/bento/commits/d688022))
+
+
+
+
+
 # [8.60.0](https://bitbucket.org/stacc-flow/bento/compare/v8.59.0...v8.60.0) (2019-02-11)
 
 

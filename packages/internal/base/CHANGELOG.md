@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.79.0](https://bitbucket.org/stacc-flow/bento/compare/v8.78.4...v8.79.0) (2019-03-27)
+
+
+### Bug Fixes
+
+* **base:** remove usage of react-router ([8ae8bd4](https://bitbucket.org/stacc-flow/bento/commits/8ae8bd4))
+
+
+
+
+
 ## [8.78.4](https://bitbucket.org/stacc-flow/bento/compare/v8.78.3...v8.78.4) (2019-03-27)
 
 
