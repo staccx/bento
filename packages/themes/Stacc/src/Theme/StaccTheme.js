@@ -21,13 +21,13 @@ const targetSize = {
 const wrapper = {
   small: "420px",
   medium: "640px",
-  large: "1040px",
+  large: "1280px",
   breakout: "640px"
 }
 
 const spacing = {
-  grid: "7vh",
-  gridLarge: "7vh",
+  grid: "20px",
+  gridLarge: "20px",
   huge: "96px",
   largePlus: "72px",
   large: "48px",
