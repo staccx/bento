@@ -66,7 +66,7 @@ Quote.propTypes = {
   quote: PropTypes.string,
   img: PropTypes.string,
   name: PropTypes.string,
-  isReverse: PropTypes.boolean
+  isReverse: PropTypes.bool
 }
 
 Quote.defaultProps = {
