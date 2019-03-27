@@ -3,6 +3,73 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.78.4](https://bitbucket.org/stacc-flow/bento/compare/v8.78.3...v8.78.4) (2019-03-27)
+
+
+### Bug Fixes
+
+* **postalcodeinput:** prevent casting to number ([7dcb789](https://bitbucket.org/stacc-flow/bento/commits/7dcb789))
+
+
+
+
+
+## [8.78.3](https://bitbucket.org/stacc-flow/bento/compare/v8.78.2...v8.78.3) (2019-03-26)
+
+
+### Bug Fixes
+
+* **postalcodeinput:** fix type and pattern ([a646f7a](https://bitbucket.org/stacc-flow/bento/commits/a646f7a))
+
+
+
+
+
+## [8.78.2](https://bitbucket.org/stacc-flow/bento/compare/v8.78.1...v8.78.2) (2019-03-26)
+
+
+### Bug Fixes
+
+* **postcodeinput:** fix header issue ([b62d499](https://bitbucket.org/stacc-flow/bento/commits/b62d499))
+
+
+
+
+
+## [8.78.1](https://bitbucket.org/stacc-flow/bento/compare/v8.78.0...v8.78.1) (2019-03-26)
+
+
+### Bug Fixes
+
+* **postalcodeinput:** dont delete Auth headers ([f347ce3](https://bitbucket.org/stacc-flow/bento/commits/f347ce3))
+
+
+
+
+
+# [8.78.0](https://bitbucket.org/stacc-flow/bento/compare/v8.77.1...v8.78.0) (2019-03-25)
+
+
+### Features
+
+* **form:** add touched ([e0463e1](https://bitbucket.org/stacc-flow/bento/commits/e0463e1))
+
+
+
+
+
+## [8.77.1](https://bitbucket.org/stacc-flow/bento/compare/v8.77.0...v8.77.1) (2019-03-25)
+
+
+### Bug Fixes
+
+* **base:** pass variant to input, remove id ([53ad534](https://bitbucket.org/stacc-flow/bento/commits/53ad534))
+* **postalcodeinput:** setplace null ([551fc58](https://bitbucket.org/stacc-flow/bento/commits/551fc58))
+
+
+
+
+
 # [8.77.0](https://bitbucket.org/stacc-flow/bento/compare/v8.76.1...v8.77.0) (2019-03-20)
 
 

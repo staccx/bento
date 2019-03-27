@@ -43,6 +43,7 @@ import {
 import { SelectWrapper, Select, SelectIcon } from "./Theme.SelectSimple"
 import { ExpandButton, ExpandedItem, ExpandIcon } from "./Theme.ExpandListItem"
 import { Rule } from "./Theme.Divider"
+import { AlertStyling } from "./Theme.Alert"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -200,3 +201,4 @@ export default new theming.Theme(BaseTheme, {
   .add(ExpandedItem)
   .add(ExpandIcon)
   .add(Rule)
+  .add(AlertStyling)

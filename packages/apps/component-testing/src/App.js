@@ -118,6 +118,11 @@ const App = () => {
                   id={"2"}
                   defaultValue={postalDefault}
                 />
+                <PostalCodeInput
+                  label={"Med value"}
+                  id={"2"}
+                  value={postalDefault}
+                />
               </div>
             </Layout>
             <PadBox>

@@ -1,12 +1,12 @@
 {
   "name": "@staccx/quantfolio-widgets",
-  "version": "8.76.1",
+  "version": "8.78.4",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/base": "^8.76.1",
+    "@staccx/base": "^8.78.4",
     "@staccx/quantfolio": "^8.66.0",
     "@tedconf/react-show-more": "^1.1.2",
     "animejs": "^3.0.1",
@@ -43,5 +43,6 @@
     "deploy": "yarn build && surge -p ./build",
     "serve": "yarn build && serve -s build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
-  }
+  },
+  "gitHead": "fba5600ec9535ef0f12004463f3f99ff9427495b"
 }

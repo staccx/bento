@@ -1,6 +1,6 @@
 {
   "name": "@staccx/styrke-theme",
-  "version": "8.76.1",
+  "version": "8.78.4",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -25,7 +25,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/base": "^8.76.1",
+    "@staccx/base": "^8.78.4",
     "polished": "^2.3.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
@@ -39,5 +39,5 @@
   "peerDependencies": {
     "styled-components": "^4.0.2"
   },
-  "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
+  "gitHead": "fba5600ec9535ef0f12004463f3f99ff9427495b"
 }

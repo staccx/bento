@@ -82,14 +82,19 @@ class Form extends Component {
         initialValues={this.props.initialValues}
         validationSchema={validationSchema}
         onSubmit={this.props.onSubmit}
-        render={({ handleSubmit, values, isValid, errors }) => {
+        render={({ handleSubmit, values, isValid, errors, touched }) => {
           return (
             <form onSubmit={handleSubmit}>
               {Container && (
                 <Container {...this.props.containerProps}>
                   {this.props.children}
                   {this.props.renderButton ? (
-                    this.props.renderButton({ values, isValid, errors })
+                    this.props.renderButton({
+                      values,
+                      isValid,
+                      errors,
+                      touched
+                    })
                   ) : (
                     <Button type="submit" onClick={() => null}>
                       {this.props.buttonText}

@@ -1,13 +1,13 @@
 {
   "name": "@staccx/fsm",
-  "version": "8.76.1",
+  "version": "8.78.4",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/base": "^8.76.1",
+    "@staccx/base": "^8.78.4",
     "prop-types": "^15.6.2",
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
@@ -37,5 +37,5 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
-  "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
+  "gitHead": "fba5600ec9535ef0f12004463f3f99ff9427495b"
 }

@@ -18,6 +18,18 @@ const axiosInstance = axios.create({
   baseURL: `https://fraktguide.bring.no/fraktguide/api`
 })
 
+function getAxiosOptions() {
+  const opt = {
+    transformRequest: [
+      function(data, headers) {
+        delete headers.common.Authorization
+        return data
+      }
+    ]
+  }
+  return opt
+}
+
 /**
  * Input for Norwegian Postal codes. Adds PostalPlace according to the number. Input is imported from Input-component
  */
@@ -30,11 +42,8 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   const getPostalPlace = async () => {
     setIsLoading(true)
     try {
-      if (axiosInstance.defaults.headers.common["Authorization"]) {
-        delete axiosInstance.defaults.headers.common["Authorization"]
-      }
       const place = await axiosInstance
-        .get(`/postalCode.json?country=no&pnr=${postalCode}`)
+        .get(`/postalCode.json?country=no&pnr=${postalCode}`, getAxiosOptions())
         .then(result => result.data)
       setPlace(place)
     } catch (e) {
@@ -45,12 +54,12 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   }
 
   const handleChange = e => {
-    const { value } = e.target
+    const { rawValue: value } = e.target
     setPostalCode(value)
   }
 
   useEffect(() => {
-    if (postalCode && !isNaN(postalCode) && postalCode > 999) {
+    if (postalCode && !isNaN(postalCode) && postalCode.length >= 4) {
       getPostalPlace(postalCode)
     } else {
       setPlace(null)
@@ -58,10 +67,10 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   }, [postalCode])
 
   useEffect(() => {
-    if (onChange && place) {
+    if (onChange) {
       onChange({ place, postalCode })
     }
-  }, [place])
+  }, [place, postalCode])
 
   useEffect(() => {
     if (postalCode !== defaultValue) {
@@ -73,10 +82,11 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   return (
     <PostalInputWrapper variant={variant}>
       <PostalInput
-        id={"postnummer"}
-        type={"tel"}
+        type={"text"}
+        pattern={"[0-9]{4}"}
         options={{ blocks: [4] }}
         defaultValue={defaultValue}
+        variant={variant}
         {...restProps}
         onChange={handleChange}
         ref={inputRef}
