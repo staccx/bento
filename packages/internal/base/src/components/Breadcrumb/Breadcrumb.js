@@ -1,6 +1,5 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { Link } from "react-router-dom"
 import styled, { css } from "styled-components"
 import {
   applyVariants,
@@ -195,7 +194,7 @@ const itemInsideStyle = css`
   }
 `
 
-const ItemButton = styled(Link)`
+const ItemButton = styled.a`
   ${itemInsideStyle};
   ${applyVariants(Breadcrumb.themeProps.itemButton)};
 `
