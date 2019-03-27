@@ -9,6 +9,10 @@
       "description": "Languages to be used in the app"
     },
     {
+      "name": "part:@staccx/i18n/blockOptions",
+      "description": "Blockoptions for localeRichText"
+    },
+    {
       "implements": "part:@sanity/base/schema-type",
       "path": "translations.js"
     },

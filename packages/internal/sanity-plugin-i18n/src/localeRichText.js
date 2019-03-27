@@ -1,15 +1,26 @@
+import blockOptions from "part:@staccx/i18n/blockOptions?"
+
 import { getFields, fieldsets } from "./supportedLanguages"
 
+const options = blockOptions || {}
+
+console.log(options)
+
+console.log("here")
 export default {
   title: "Localized Rich text",
   name: "localeRichText",
   type: "object",
   fieldsets,
-  fields: getFields("array", { type: "block" }),
+  fields: getFields("array", {
+    type: "block",
+    ...options
+  }),
   preview: {
     select: {
       title: "nb"
     },
+
     prepare(selection) {
       const { _type, title } = selection
       return {
