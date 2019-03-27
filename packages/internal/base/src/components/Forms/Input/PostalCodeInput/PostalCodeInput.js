@@ -54,12 +54,12 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   }
 
   const handleChange = e => {
-    const { value } = e.target
+    const { rawValue: value } = e.target
     setPostalCode(value)
   }
 
   useEffect(() => {
-    if (postalCode && !isNaN(postalCode) && postalCode > 999) {
+    if (postalCode && !isNaN(postalCode) && postalCode.length >= 4) {
       getPostalPlace(postalCode)
     } else {
       setPlace(null)
