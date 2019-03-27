@@ -10,6 +10,17 @@ export default theming.createVariants(
       &:focus {
         background-color: ${theming.color.secondary};
       }
+    `,
+    inverted: css`
+      background-color: ${theming.color.white};
+      color: ${theming.color("primaryDark")};
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: ${theming.color.white};
+        color: ${theming.color("text")};
+      }
     `
   },
   Button.themeProps.button

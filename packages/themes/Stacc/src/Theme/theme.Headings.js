@@ -55,7 +55,6 @@ export const HeadingStyling = theming.createVariants(
       font-size: ${theming.font("huge")};
       font-weight: 700;
       color: ${theming.color.white};
-      text-align: center;
 
       @media only screen and (max-width: ${theming.wrapper.large}) {
         font-size: ${theming.font.h2};
