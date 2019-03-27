@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.79.0](https://bitbucket.org/stacc-flow/bento/compare/v8.78.4...v8.79.0) (2019-03-27)
+
+
+### Bug Fixes
+
+* **i18n:** now works on native ([355b6c5](https://bitbucket.org/stacc-flow/bento/commits/355b6c5))
+
+
+
+
+
 ## [8.77.1](https://bitbucket.org/stacc-flow/bento/compare/v8.77.0...v8.77.1) (2019-03-25)
 
 **Note:** Version bump only for package @staccx/i18n
