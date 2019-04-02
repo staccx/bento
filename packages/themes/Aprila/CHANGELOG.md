@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.81.1](https://bitbucket.org/stacc-flow/bento/compare/v8.81.0...v8.81.1) (2019-04-02)
+
+**Note:** Version bump only for package @staccx/aprila-theme
+
+
+
+
+
 # [8.81.0](https://bitbucket.org/stacc-flow/bento/compare/v8.80.1...v8.81.0) (2019-03-28)
 
 **Note:** Version bump only for package @staccx/aprila-theme

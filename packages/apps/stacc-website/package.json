@@ -1,6 +1,6 @@
 {
   "name": "@staccx/stacc-website",
-  "version": "8.81.0",
+  "version": "8.81.1",
   "private": true,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -47,7 +47,7 @@
     "@staccx/formatting": "^8.58.0",
     "@staccx/rollup-config": "^8.58.0",
     "@staccx/sanity": "^8.80.1",
-    "@staccx/stacc-theme": "^8.81.0",
+    "@staccx/stacc-theme": "^8.81.1",
     "cli-progress": "^2.1.0",
     "nodemon": "^1.18.4",
     "prettier": "^1.14.2",
