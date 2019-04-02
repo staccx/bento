@@ -34,13 +34,13 @@ const Transactions = ({
                 <TransactionListItem
                   title={transaction._id}
                   heading={transaction.heading}
-                  date={transaction.friendlyDate}
+                  date={transaction.transactionFriendlyDate}
                   amount={transaction.amount}
                   key={transaction._id}
                   type={transaction.type}
                 >
                   <TransactionListExpanded
-                    date={transaction.date}
+                    date={transaction.bookFriendlyDate}
                     amount={transaction.amount}
                     message={transaction.message}
                     toAccount={transaction.toAccount}

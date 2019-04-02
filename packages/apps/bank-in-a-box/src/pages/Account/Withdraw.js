@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { formatPhone, formatCurrency } from "@staccx/formatting"
+import { formatPhone } from "@staccx/formatting"
 import {
   Button,
   Layout,
@@ -17,7 +17,12 @@ import {
 } from "@staccx/base"
 import { TranslatedText } from "@staccx/i18n"
 
-const Withdraw = ({ lastAccount = null, balance, onSubmit }) => (
+const Withdraw = ({
+  initialAmount = 0,
+  lastAccount = null,
+  balance,
+  onSubmit
+}) => (
   <State>
     {({ set, toAccount }) => (
       <Layout variant="withdraw">
@@ -56,7 +61,7 @@ const Withdraw = ({ lastAccount = null, balance, onSubmit }) => (
                           id={"amount"}
                           label="Beløp"
                           placeholder="0"
-                          defaultValue={balance}
+                          defaultValue={initialAmount}
                           {...rest}
                           onChange={e =>
                             form.setFieldValue("amount", e.target.rawValue)
@@ -119,7 +124,8 @@ const Withdraw = ({ lastAccount = null, balance, onSubmit }) => (
 Withdraw.propTypes = {
   toAccount: PropTypes.number,
   balance: PropTypes.number,
-  onSubmit: PropTypes.func
+  onSubmit: PropTypes.func,
+  initialAmount: PropTypes.number
 }
 
 Withdraw.defaultProps = {

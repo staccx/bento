@@ -13,14 +13,6 @@ const Footer = () => (
           <FooterMenuItem>Kirkegata 5, 0153 Oslo</FooterMenuItem>
           <FooterMenuItem>hei@aprila.no</FooterMenuItem>
         </div>
-        <div>
-          <FooterMenuItem>Ofte stilte spørsmål</FooterMenuItem>
-          <FooterMenuItem>Personvern og informasjonskapsler</FooterMenuItem>
-        </div>
-        <div>
-          <FooterMenuItem>Har du spørsmål om faktura?</FooterMenuItem>
-          <FooterMenuItem>Kundeklage</FooterMenuItem>
-        </div>
       </Layout>
     </Wrapper>
   </Outer>

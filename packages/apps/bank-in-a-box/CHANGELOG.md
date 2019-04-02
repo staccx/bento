@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.81.0](https://bitbucket.org/stacc-flow/bento/compare/v8.80.1...v8.81.0) (2019-03-28)
+
+
+### Features
+
+* **bank-in-a-box:** add initialAmount prop to Withdraw ([e390c38](https://bitbucket.org/stacc-flow/bento/commits/e390c38))
+
+
+
+
+
 ## [8.80.1](https://bitbucket.org/stacc-flow/bento/compare/v8.80.0...v8.80.1) (2019-03-27)
 
 **Note:** Version bump only for package @staccx/bank-in-a-box
