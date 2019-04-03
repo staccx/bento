@@ -18,7 +18,8 @@ const EndAccount = ({
   accruedInterest,
   onAccountChange,
   onConfirm,
-  onCancel
+  onCancel,
+  accountNoIsValid = true
 }) => (
   <Layout variant="annualStatment">
     <LayoutItem variant="fadeIn" delay="200" area="header">
@@ -45,7 +46,11 @@ const EndAccount = ({
         </div>
         <ItemGroup>
           {/* TODO: disse må lenkes opp og ha en onClick */}
-          <Button variant="primary" onClick={onConfirm}>
+          <Button
+            disabled={!accountNoIsValid}
+            variant="primary"
+            onClick={onConfirm}
+          >
             <TranslatedText i18nKey={"overfor-og-avslutt"}>
               Overfør og avslutt konto
             </TranslatedText>
