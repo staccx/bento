@@ -1,6 +1,6 @@
 {
   "name": "@staccx/bank-in-a-box",
-  "version": "8.81.1",
+  "version": "8.82.0",
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
