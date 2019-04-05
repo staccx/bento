@@ -6,9 +6,7 @@ import { TranslatedText } from "@staccx/i18n"
 
 const TransactionListItem = ({
   amount,
-  fromAccount,
-  toAccount,
-  message,
+  accountNo,
   date,
   fee,
   rent,
@@ -52,16 +50,14 @@ const TransactionListItem = ({
       </div>
       <div>{date}</div>
     </SplitListItem>
-    <SplitListItem>
-      <div>
-        {toAccount ? (
-          <TranslatedText i18nKey="til-konto" fallback="Til konto" />
-        ) : (
-          <TranslatedText i18nKey="fra-konto" fallback="Fra konto" />
-        )}
-      </div>
-      <div>{toAccount || fromAccount}</div>
-    </SplitListItem>
+    {type === "Transactions" && (
+      <SplitListItem>
+        <div>
+          <TranslatedText i18nKey="kontonummer" fallback="Fra konto" />
+        </div>
+        <div>{accountNo}</div>
+      </SplitListItem>
+    )}
   </List>
 )
 
