@@ -1,6 +1,6 @@
 {
   "name": "@staccx/aprila-theme",
-  "version": "8.81.1",
+  "version": "8.83.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",

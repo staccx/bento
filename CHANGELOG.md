@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.83.0](https://bitbucket.org/stacc-flow/bento/compare/v8.82.0...v8.83.0) (2019-04-05)
+
+
+### Features
+
+* **aprila-theme:** use translated text for heading ([374356c](https://bitbucket.org/stacc-flow/bento/commits/374356c))
+
+
+
+
+
 # [8.82.0](https://bitbucket.org/stacc-flow/bento/compare/v8.81.1...v8.82.0) (2019-04-03)
 
 
