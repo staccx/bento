@@ -1,8 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { formatCurrency } from "@staccx/formatting"
+import { formatCurrency, dashIt } from "@staccx/formatting"
 import { Caret, theming } from "@staccx/base"
+import { TranslatedText } from "@staccx/i18n"
 
 const ExpandListBtn = ({ heading, date, amount, isExpanded, ...rest }) => (
   <Item {...rest}>
@@ -18,7 +19,13 @@ const ExpandListBtn = ({ heading, date, amount, isExpanded, ...rest }) => (
       )}
     </Icon>
     <Body>
-      <TransactionHeading>{heading}</TransactionHeading>
+      <TransactionHeading>
+        {heading ? (
+          <TranslatedText i18nKey={dashIt(heading)} fallback={heading} />
+        ) : (
+          ""
+        )}
+      </TransactionHeading>
       <div>{date}</div>
     </Body>
     <Amount>{formatCurrency(amount || 0)}</Amount>
