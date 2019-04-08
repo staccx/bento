@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "accounting": "^0.4.1",
-    "date-fns": "^v2.0.0-alpha.16"
+    "date-fns": "v2.0.0-alpha.16"
   },
   "jest": {},
   "devDependencies": {
