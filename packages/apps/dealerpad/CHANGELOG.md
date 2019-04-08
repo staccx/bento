@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.83.2](https://bitbucket.org/stacc-flow/bento/compare/v8.83.1...v8.83.2) (2019-04-08)
+
+**Note:** Version bump only for package @staccx/dealerpad
+
+
+
+
+
 ## [8.83.1](https://bitbucket.org/stacc-flow/bento/compare/v8.83.0...v8.83.1) (2019-04-08)
 
 **Note:** Version bump only for package @staccx/dealerpad
