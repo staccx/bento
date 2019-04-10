@@ -28,8 +28,8 @@
     "@sanity/default-login": "^0.138.0",
     "@sanity/desk-tool": "^0.138.0",
     "prop-types": "^15.6.2",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"

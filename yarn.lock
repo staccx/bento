@@ -6727,7 +6727,7 @@ date-fns@^1.27.2, date-fns@^1.29.0, date-fns@^1.30.1:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
-date-fns@^v2.0.0-alpha.16:
+date-fns@^v2.0.0-alpha.16, date-fns@v2.0.0-alpha.27:
   version "2.0.0-alpha.27"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.0.0-alpha.27.tgz#5ecd4204ef0e7064264039570f6e8afbc014481c"
   integrity sha512-cqfVLS+346P/Mpj2RpDrBv0P4p2zZhWWvfY5fuWrXNR/K38HaAGEkeOwb47hIpQP9Jr/TIxjZ2/sNMQwdXuGMg==
@@ -16012,7 +16012,7 @@ react-docgen@^3.0.0:
     node-dir "^0.1.10"
     recast "^0.16.0"
 
-react-dom@^16.3.2, react-dom@^16.8.0:
+react-dom@^16.3.2, react-dom@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.6.tgz#71d6303f631e8b0097f56165ef608f051ff6e10f"
   integrity sha512-1nL7PIq9LTL3fthPqwkvr2zY7phIPjYrT0jp4HjyEQrEROnw4dG41VVwi/wfoCneoleqrNX7iAD+pXebJZwrwA==
@@ -16465,7 +16465,7 @@ react-web-notification@^0.3.2:
   resolved "https://registry.yarnpkg.com/react-web-notification/-/react-web-notification-0.3.2.tgz#d496bde85d2b74225f1b39a66efc4cdd599b09f8"
   integrity sha512-Tn48fH2JTkqjXI0b2Wwj0BV64RTqMMo6ZAUY2xWVQuJtC4SXFBSz+3zKccrNZSDju1giFncfClCI9bWIPt776A==
 
-react@>=0.14.x, react@^16.3.2, react@^16.6.0, react@^16.8.0:
+react@>=0.14.x, react@^16.3.2, react@^16.6.0, react@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
   integrity sha512-pC0uMkhLaHm11ZSJULfOBqV4tIZkx87ZLvbbQYunNixAAvjnC+snJCg0XQXn9VIsttVsbZP/H/ewzgsd5fxKXw==

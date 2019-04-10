@@ -9,8 +9,8 @@
   "dependencies": {
     "@staccx/base": "^8.83.2",
     "prop-types": "^15.6.2",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "scripts": {
     "build": "yarn prettify && rollup -c",
