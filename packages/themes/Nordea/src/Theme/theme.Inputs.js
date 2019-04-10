@@ -20,14 +20,34 @@ export const InputStyling = theming.createVariants(
       ${defaultStyling};
     `,
     search: css`
-      ${defaultStyling};
-      padding-left: ${theming.spacing.large};
+      background-color: ${theming.color.subtleHover};
+      border: 0;
+      border-radius: 50px;
+      padding-left: ${theming.spacing.medium};
+
+      &::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: ${theming.color.wcag};
+      }
+      &:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: ${theming.color.wcag};
+      }
+      &::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: ${theming.color.wcag};
+      }
+      &:-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: ${theming.color.wcag};
+      }
+      &:-webkit-autofill {
+        background-color: ${theming.color.subtleHover};
+      }
     `,
     chat: css`
       height: ${theming.spacing.large};
       border-color: transparent;
-      padding-right: ${theming.spacing("largePlus")};
-      ${fontSmoothing};
     `
   },
   Input.themeProps.input

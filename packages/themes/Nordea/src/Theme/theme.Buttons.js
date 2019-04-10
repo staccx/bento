@@ -17,15 +17,21 @@ export const ButtonStyling = theming.createVariants(
       ${baseStyling};
     `,
     chat: css`
-      ${baseStyling};
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      min-height: ${theming.targetSize.small};
-      right: ${theming.spacing.tiny};
-      bottom: 8px;
-      min-height: ${theming.spacing.mediumPlus};
-      padding: 0 ${theming.spacing.small};
+      background-color: ${theming.color.white};
+      padding-left: ${theming.spacing.small};
+      padding-right: ${theming.spacing.small};
+      color: ${theming.color("g2")};
+
+      > svg {
+        vertical-align: middle;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${theming.color.white};
+        color: ${theming.color.primary};
+      }
     `,
     icon: css`
       background: transparent;

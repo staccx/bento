@@ -55,6 +55,7 @@ import { CloseIcon } from "./Icons/Close"
 import { MenuIcon } from "./Icons/Menu"
 
 const borderRadius = "0px"
+const borderRadiusLarge = "0px"
 const headerHeight = "70px"
 
 const targetSize = {
@@ -96,7 +97,7 @@ const color = {
   disabled: "#E4E4E4",
   warning: "#FC6161",
   black: "#000",
-  subtleHover: "#E5F2FF",
+  subtleHover: "#EDF2F7",
   b5: "#00005E",
   b4: "#0000A0",
   b3: "#0000FF",
