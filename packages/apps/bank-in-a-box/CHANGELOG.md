@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.83.2](https://bitbucket.org/stacc-flow/bento/compare/v8.83.1...v8.83.2) (2019-04-08)
+
+**Note:** Version bump only for package @staccx/bank-in-a-box
+
+
+
+
+
+## [8.83.1](https://bitbucket.org/stacc-flow/bento/compare/v8.83.0...v8.83.1) (2019-04-08)
+
+**Note:** Version bump only for package @staccx/bank-in-a-box
+
+
+
+
+
+# [8.83.0](https://bitbucket.org/stacc-flow/bento/compare/v8.82.0...v8.83.0) (2019-04-05)
+
+**Note:** Version bump only for package @staccx/bank-in-a-box
+
+
+
+
+
+# [8.82.0](https://bitbucket.org/stacc-flow/bento/compare/v8.81.1...v8.82.0) (2019-04-03)
+
+
+### Features
+
+* **bank-in-a-box:** enable validation of account number ([f630b9c](https://bitbucket.org/stacc-flow/bento/commits/f630b9c))
+
+
+
+
+
+## [8.81.1](https://bitbucket.org/stacc-flow/bento/compare/v8.81.0...v8.81.1) (2019-04-02)
+
+
+### Bug Fixes
+
+* **biab:** fix user feedback on save ([d2d16c2](https://bitbucket.org/stacc-flow/bento/commits/d2d16c2))
+
+
+
+
+
 # [8.81.0](https://bitbucket.org/stacc-flow/bento/compare/v8.80.1...v8.81.0) (2019-03-28)
 
 

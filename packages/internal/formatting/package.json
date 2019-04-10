@@ -1,6 +1,6 @@
 {
   "name": "@staccx/formatting",
-  "version": "8.58.0",
+  "version": "8.83.2",
   "description": "Convenience functions for formatting",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "accounting": "^0.4.1",
-    "date-fns": "^v2.0.0-alpha.16"
+    "date-fns": "v2.0.0-alpha.27"
   },
   "jest": {},
   "devDependencies": {

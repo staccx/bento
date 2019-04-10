@@ -15,6 +15,7 @@ const Profile = ({
   renderMenu = () => null,
   renderPersonalInfo = () => null,
   onSave,
+  isLoading,
   onEmailChange,
   onSmsChange,
   email,
@@ -76,7 +77,7 @@ const Profile = ({
           </ModifiedLabel>
         </Flag>
         <LayoutItem variant="fadeIn" delay="900">
-          <Button onClick={onSave}>
+          <Button onClick={onSave} disabled={isLoading} variant={"submit"}>
             <TranslatedText i18nKey={"lagre"}>Lagre</TranslatedText>
           </Button>
         </LayoutItem>

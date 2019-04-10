@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.83.2](https://bitbucket.org/stacc-flow/bento/compare/v8.83.1...v8.83.2) (2019-04-08)
+
+
+### Bug Fixes
+
+* **formatting:** hold the phone ([416d3f3](https://bitbucket.org/stacc-flow/bento/commits/416d3f3))
+
+
+
+
+
+## [8.83.1](https://bitbucket.org/stacc-flow/bento/compare/v8.83.0...v8.83.1) (2019-04-08)
+
+
+### Bug Fixes
+
+* **formatting:** locking version for date-fns ([85cc693](https://bitbucket.org/stacc-flow/bento/commits/85cc693))
+
+
+
+
+
 # [8.58.0](https://bitbucket.org/stacc-flow/bento/compare/v8.57.0...v8.58.0) (2019-02-05)
 
 

@@ -21,7 +21,8 @@ const Withdraw = ({
   initialAmount = 0,
   lastAccount = null,
   balance,
-  onSubmit
+  onSubmit,
+  validateAccountNo
 }) => (
   <State>
     {({ set, toAccount }) => (
@@ -41,13 +42,18 @@ const Withdraw = ({
         <LayoutItem area="menu">
           <Form
             initialValues={{ toAccount, amount: balance }}
-            renderButton={() => (
-              <LayoutItem variant="fadeIn" delay="800">
-                <Button type={"submit"}>
-                  <TranslatedText i18nKey="overfør" fallback="Overfør" />
-                </Button>
-              </LayoutItem>
-            )}
+            renderButton={({ values }) => {
+              const valid = validateAccountNo
+                ? validateAccountNo(values.toAccount)
+                : true
+              return (
+                <LayoutItem variant="fadeIn" delay="800">
+                  <Button disabled={!valid} type={"submit"}>
+                    <TranslatedText i18nKey="overfør" fallback="Overfør" />
+                  </Button>
+                </LayoutItem>
+              )
+            }}
             onSubmit={vals => onSubmit(vals)}
           >
             <Layout grid="rows">
@@ -71,7 +77,12 @@ const Withdraw = ({
                     }}
                   </FormField>
 
-                  <FormField name={"toAccount"} type={"string"} required>
+                  <FormField
+                    name={"toAccount"}
+                    type={"string"}
+                    validate={validateAccountNo}
+                    required
+                  >
                     {({ name, field, form }) => {
                       const { value, ...rest } = field
                       return (
@@ -124,8 +135,7 @@ const Withdraw = ({
 Withdraw.propTypes = {
   toAccount: PropTypes.number,
   balance: PropTypes.number,
-  onSubmit: PropTypes.func,
-  initialAmount: PropTypes.number
+  onSubmit: PropTypes.func
 }
 
 Withdraw.defaultProps = {
