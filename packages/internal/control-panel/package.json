@@ -1,6 +1,6 @@
 {
   "name": "@staccx/control-panel",
-  "version": "8.60.0",
+  "version": "9.0.0-alpha.0",
   "private": true,
   "main": "src/main.js",
   "productName": "Bento ctrl",
@@ -8,7 +8,7 @@
   "dependencies": {
     "@lerna/list": "^3.3.2",
     "@staccx/base": "^7.15.0",
-    "@staccx/soy": "^8.60.0",
+    "@staccx/soy": "^9.0.0-alpha.0",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",

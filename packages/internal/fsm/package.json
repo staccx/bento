@@ -1,13 +1,13 @@
 {
   "name": "@staccx/fsm",
-  "version": "8.83.2",
+  "version": "9.0.0-alpha.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/base": "^8.83.2",
+    "@staccx/base": "^9.0.0-alpha.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
