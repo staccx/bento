@@ -98,8 +98,8 @@ class Login extends React.Component {
       stage: stages.submittingCode
     })
 
-    if (this.state.pollTimer) {
-      clearInterval(this.state.pollTimer)
+    if (this.pollTimer) {
+      clearInterval(this.pollTimer)
     }
 
     return axios
@@ -151,10 +151,11 @@ class Login extends React.Component {
         })
 
         if (res.status === 200 && this.props.magicPollUri) {
-          const timer = setInterval(() => {
+          if (this.pollTimer) clearInterval(this.pollTimer)
+          this.pollTimer = setInterval(() => {
             axios.post(this.props.magicPollUri, { state }).then(res => {
               if (res.status === 200) {
-                clearInterval(timer)
+                clearInterval(this.pollTimer)
                 // TODO: Unnessesary
                 window.location.replace(
                   this.props.oidcConfig.authority +
@@ -163,7 +164,7 @@ class Login extends React.Component {
                     qs.stringify({ state: this.state.stateToken })
                 )
               } else if (res.status !== 204) {
-                clearInterval(timer)
+                clearInterval(this.pollTimer)
               }
             })
           }, 3000)
