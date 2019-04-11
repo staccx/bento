@@ -2,7 +2,7 @@
  * @class Input
  */
 
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import Cleave from "cleave.js"
@@ -13,12 +13,12 @@ import {
 } from "../../../constants/themeContants"
 import {
   applyVariants,
-  color,
-  spacing,
   borderRadius,
+  color,
   font,
-  targetSize,
-  fontFamily
+  fontFamily,
+  spacing,
+  targetSize
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 import QuestionMark from "../../Icons/QuestionMark"
@@ -30,44 +30,11 @@ const HelpBox = ({ onClick }) => (
   </HelpButton>
 )
 
-class Input extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isVisible: false
-    }
-    this.input = React.createRef()
-    this.focus = this.focus.bind(this)
-    this.setRawValue = this.setRawValue.bind(this)
-  }
-
-  componentDidMount() {
-    if (this.props.options) {
-      this.cleave = new Cleave(this.input.current, {
-        ...this.props.options,
-        onValueChanged: this.props.onChange
-      })
-      if (this.props.defaultValue) {
-        this.cleave.setRawValue(this.props.defaultValue)
-      }
-    }
-  }
-
-  focus() {
-    this.input.focus()
-  }
-
-  setRawValue(rawValue) {
-    if (!this.cleave) {
-      console.warn("setRawValue not supported for non cleave inputs")
-      return
-    }
-
-    this.cleave.setRawValue(rawValue)
-  }
-
-  render() {
-    const {
+const Input = React.forwardRef(
+  (
+    {
+      options,
+      onChange,
       autoFocus,
       className,
       disabled,
@@ -75,7 +42,6 @@ class Input extends React.Component {
       name,
       onBlur,
       onFocus,
-      onChange,
       onKeyDown,
       placeholder,
       type,
@@ -84,10 +50,35 @@ class Input extends React.Component {
       mask,
       variant,
       autoComplete,
-      options,
       helpText,
+      defaultValue,
       ...otherProps
-    } = this.props
+    },
+    ref
+  ) => {
+    const [showHelp, setShowHelp] = useState(false)
+    const cleave = useRef(null)
+
+    const setRawValue = rawValue => {
+      if (!cleave.current) {
+        console.warn("setRawValue not supported for non cleave inputs")
+        return
+      }
+
+      cleave.current.setRawValue(rawValue)
+    }
+
+    useEffect(() => {
+      if (options) {
+        cleave.current = new Cleave(ref.current, {
+          ...options,
+          onValueChanged: onChange
+        })
+        if (defaultValue) {
+          setRawValue(defaultValue)
+        }
+      }
+    }, [])
 
     return (
       <InputWrapper className={className} variant={variant}>
@@ -97,18 +88,12 @@ class Input extends React.Component {
             {helpText && (
               <NoWrapSpan>
                 &nbsp;
-                <HelpIcon
-                  onClick={() =>
-                    this.setState({ isVisible: !this.state.isVisible })
-                  }
-                />
+                <HelpIcon onClick={() => setShowHelp(!showHelp)} />
               </NoWrapSpan>
             )}
           </InputLabel>
         )}
-        {helpText && (
-          <HelpText isVisible={this.state.isVisible}>{helpText}</HelpText>
-        )}
+        {helpText && <HelpText isVisible={showHelp}>{helpText}</HelpText>}
 
         <InputNoMask
           autoFocus={autoFocus}
@@ -123,14 +108,14 @@ class Input extends React.Component {
           placeholder={placeholder}
           variant={variant}
           type={type}
-          ref={this.input}
+          ref={ref}
           autoComplete={autoComplete}
           {...otherProps}
         />
       </InputWrapper>
     )
   }
-}
+)
 
 Input.themeProps = {
   iconComponent: {
