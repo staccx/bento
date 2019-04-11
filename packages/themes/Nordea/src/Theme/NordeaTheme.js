@@ -14,6 +14,12 @@ import {
 } from "./theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { NewBadgeBadgeStyling } from "./theme.NewBadges"
+import {
+  ExpandBtnStyling,
+  ExpandItemStyling,
+  ExpandIconStyling
+} from "./theme.Expands"
+
 import { LogoStyle } from "./Logo"
 import { AddIcon } from "./Icons/Add"
 import { SearchIcon } from "./Icons/Search"
@@ -99,6 +105,7 @@ const color = {
   black: "#000",
   subtleHover: "#EDF2F7",
   veryLightGray: "#FAFAFA",
+  tableGray: "#F5F5F5",
   b5: "#00005E",
   b4: "#0000A0",
   b3: "#0000FF",
@@ -222,4 +229,8 @@ const theme = new theming.Theme(BaseTheme, {
   .add(reset)
   .add(MenuIcon)
   .add(CloseIcon)
+  .add(ExpandBtnStyling)
+  .add(ExpandItemStyling)
+  .add(ExpandIconStyling)
+
 export default theme
