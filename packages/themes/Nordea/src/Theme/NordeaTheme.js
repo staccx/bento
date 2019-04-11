@@ -98,6 +98,7 @@ const color = {
   warning: "#FC6161",
   black: "#000",
   subtleHover: "#EDF2F7",
+  veryLightGray: "#FAFAFA",
   b5: "#00005E",
   b4: "#0000A0",
   b3: "#0000FF",
