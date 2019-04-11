@@ -15,7 +15,7 @@ const RefTest = () => {
   )
 }
 
-storiesOf("Base/Components/Forms/Input", module)
+storiesOf("Components|Base/Forms/Input", module)
   .add("No props", () => <Input />)
   .add("With label", () => <Input label={"Your label"} />)
   .add("Log", () => <Input label={"Your label"} onChange={console.log} />)
