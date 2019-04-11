@@ -40,9 +40,12 @@
     "@babel/preset-react": "^7.0.0",
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
+    "@storybook/addon-a11y": "^5.0.6",
     "@storybook/addon-actions": "^5.0.6",
+    "@storybook/addon-backgrounds": "^5.0.6",
     "@storybook/addon-info": "^5.0.6",
     "@storybook/addon-links": "^5.0.6",
+    "@storybook/addon-viewport": "^5.0.6",
     "@storybook/addons": "^5.0.6",
     "@storybook/react": "^5.0.6",
     "babel-loader": "^8.0.5",
@@ -62,7 +65,8 @@
     "ora": "^3.0.0",
     "plop": "^2.0.0",
     "prettier": "^1.13.7",
-    "react-testing-library": "^5.4.4"
+    "react-testing-library": "^5.4.4",
+    "storybook-host": "^5.0.3"
   },
   "dependencies": {
     "react": "^16.6.0",
