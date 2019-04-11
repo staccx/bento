@@ -12,6 +12,7 @@ const figma = require("./cmds/figma") // TODO: Refactor so that only one figma f
 const i18n = require("./cmds/i18n")
 const create = require("./cmds/create")
 const s3 = require("./cmds/s3")
+const { startStorybook } = require("./cmds/storybook")
 const { version } = require("../package.json")
 
 // TODO: Each command should return a function called command with takes the program and adds its command?
@@ -108,5 +109,9 @@ program
   .action(({ action }, cmd) => {
     s3(cmd)
   })
+
+program.command("storybook <action>").action((action, cmd) => {
+  startStorybook({ action, cmd })
+})
 
 program.parse(process.argv)

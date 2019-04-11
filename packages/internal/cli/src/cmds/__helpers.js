@@ -166,5 +166,6 @@ module.exports = {
   traverse,
   readConfig,
   getSanityClient,
-  validateNpmName
+  validateNpmName,
+  wait
 }
