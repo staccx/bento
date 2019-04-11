@@ -70,6 +70,10 @@ const execute = function(
 
   const child = spawn(cmd, params, opts)
 
+  if (opts.pipe) {
+    child.stdout.pipe(process.stdout)
+    child.stderr.pipe(process.stderr)
+  }
   child.stdout.on("data", function(data) {
     onStdOut(ab2str(data))
   })
