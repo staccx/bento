@@ -14,6 +14,12 @@ import {
 } from "./theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { NewBadgeBadgeStyling } from "./theme.NewBadges"
+import {
+  ExpandBtnStyling,
+  ExpandItemStyling,
+  ExpandIconStyling
+} from "./theme.Expands"
+
 import { LogoStyle } from "./Logo"
 import { AddIcon } from "./Icons/Add"
 import { SearchIcon } from "./Icons/Search"
@@ -46,7 +52,11 @@ import { CarIcon } from "./Icons/Car"
 import { BackIcon } from "./Icons/Back"
 import { FilterIcon } from "./Icons/Filter"
 import { DividerStyling } from "./theme.Divider"
-import { RadioButtonWrapper, RadioButtonLabel } from "./theme.RadioButton"
+import {
+  RadioButtonWrapper,
+  RadioButtonLabel,
+  RadioButtonInput
+} from "./theme.RadioButton"
 import { LoadingStyle } from "./Loading"
 import { CalculatorIcon } from "./Icons/Calculator"
 import { NcvsIcon } from "./Icons/NCVS"
@@ -98,6 +108,8 @@ const color = {
   warning: "#FC6161",
   black: "#000",
   subtleHover: "#EDF2F7",
+  veryLightGray: "#FAFAFA",
+  tableGray: "#F5F5F5",
   b5: "#00005E",
   b4: "#0000A0",
   b3: "#0000FF",
@@ -212,6 +224,7 @@ const theme = new theming.Theme(BaseTheme, {
   .add(DividerStyling)
   .add(RadioButtonWrapper)
   .add(RadioButtonLabel)
+  .add(RadioButtonInput)
   .add(FileInputLabelStyling)
   .add(LoadingStyle)
   .add(CarIcon)
@@ -221,4 +234,8 @@ const theme = new theming.Theme(BaseTheme, {
   .add(reset)
   .add(MenuIcon)
   .add(CloseIcon)
+  .add(ExpandBtnStyling)
+  .add(ExpandItemStyling)
+  .add(ExpandIconStyling)
+
 export default theme

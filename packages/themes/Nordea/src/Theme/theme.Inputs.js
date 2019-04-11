@@ -24,6 +24,7 @@ export const InputStyling = theming.createVariants(
       border: 0;
       border-radius: 50px;
       padding-left: ${theming.spacing.medium};
+      padding-right: 66px;
 
       &::-webkit-input-placeholder {
         /* WebKit browsers */

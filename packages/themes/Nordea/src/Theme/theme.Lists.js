@@ -32,6 +32,10 @@ export const ListStyling = theming.createVariants(
           background-color: ${theming.color("concrete")};
         }
       }
+    `,
+    contactHours: css`
+      color: ${theming.color.wcag};
+      font-size: ${theming.font.input};
     `
   },
   List.themeProps.list
