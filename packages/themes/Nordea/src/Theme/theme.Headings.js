@@ -46,6 +46,9 @@ export const HeadingStyling = theming.createVariants(
       font-size: ${theming.font.h4};
       font-weight: normal;
       color: ${theming.color("b5")};
+    `,
+    hero: css`
+      color: ${theming.color.white};
     `
   },
   Heading.themeProps.heading

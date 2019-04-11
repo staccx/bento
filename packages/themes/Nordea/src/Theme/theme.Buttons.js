@@ -191,6 +191,25 @@ export const ButtonStyling = theming.createVariants(
         background-color: ${theming.color("b1")};
         color: ${theming.color.primary};
       }
+    `,
+    goto: css`
+      display: flex;
+      justify-content: space-evenly;
+      background-color: ${theming.color("primaryLight")};
+      color: ${theming.color.primary};
+      border-radius: 50px;
+      min-height: ${theming.targetSize.small};
+
+      > :last-child {
+        margin-left: ${theming.spacing.tiny};
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: ${theming.color("b1")};
+        color: ${theming.color.primary};
+      }
     `
   },
   Button.themeProps.button
