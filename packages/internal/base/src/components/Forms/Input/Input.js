@@ -74,9 +74,10 @@ const Input = React.forwardRef(
           ...options,
           onValueChanged: onChange
         })
-        if (defaultValue) {
-          setRawValue(defaultValue)
-        }
+      }
+      if (defaultValue) {
+        console.log("setting default value")
+        setRawValue(defaultValue)
       }
     }, [])
 
@@ -109,6 +110,7 @@ const Input = React.forwardRef(
           variant={variant}
           type={type}
           ref={ref}
+          defaultValue={defaultValue}
           autoComplete={autoComplete}
           {...otherProps}
         />
