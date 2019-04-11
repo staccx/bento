@@ -3,6 +3,7 @@ const { executeAsync, setupSpinner, runCommand, wait } = require("./__helpers")
 const { postMessage, getGiphy } = require("../utils/slack")
 const { fetch, status } = require("../utils/git")
 const path = require("path")
+const opn = require("opn")
 
 async function startStorybook({ action, cmd }) {
   const bentoRoot = path.resolve(__dirname, "../../../../../")
@@ -17,8 +18,12 @@ async function startStorybook({ action, cmd }) {
     case "deploy":
       deploy(bentoRoot, spinner)
       break
+
+    case "open":
+      opn(decodeURI("https://bento.stac.cx"))
+      break
     default:
-      console.log("Not supported")
+      console.log(action, "not supported")
       break
   }
 }
