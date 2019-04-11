@@ -168,6 +168,29 @@ export const ButtonStyling = theming.createVariants(
         color: ${theming.color("b4")};
         background-color: ${theming.color("bg")};
       }
+    `,
+    search: css`
+      position: absolute;
+      top: 50%;
+      right: 0;
+      background-color: transparent;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+      padding-left: ${theming.spacing.medium};
+      padding-right: ${theming.spacing.medium};
+      color: ${theming.color.primary};
+      transform: translateY(-50%);
+
+      > svg {
+        vertical-align: middle;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${theming.color("b1")};
+        color: ${theming.color.primary};
+      }
     `
   },
   Button.themeProps.button
