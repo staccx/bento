@@ -8,7 +8,7 @@ import { formatDateDistance, formatDateRelative, formatDate } from "./date"
 import { default as removeWhitespace } from "./removeWhitespace"
 import { default as formatName } from "./formatName"
 import { default as truncate } from "./truncate"
-import { default as formatPhone } from "./phone"
+import { default as formatPhone } from "./maskFormat"
 import { default as dashIt } from "./dashIt"
 
 export {
