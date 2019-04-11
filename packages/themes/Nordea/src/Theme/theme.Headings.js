@@ -36,6 +36,19 @@ export const HeadingStyling = theming.createVariants(
       color: ${theming.color("b4")};
       font-size: ${theming.font.h1};
       font-weight: ${theming.fontWeight.normal};
+    `,
+    newsList: css`
+      font-size: ${theming.font.base};
+      color: ${theming.color.text};
+      font-weight: normal;
+    `,
+    contact: css`
+      font-size: ${theming.font.h4};
+      font-weight: normal;
+      color: ${theming.color("b5")};
+    `,
+    hero: css`
+      color: ${theming.color.white};
     `
   },
   Heading.themeProps.heading

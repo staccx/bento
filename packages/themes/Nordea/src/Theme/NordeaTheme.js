@@ -52,7 +52,11 @@ import { CarIcon } from "./Icons/Car"
 import { BackIcon } from "./Icons/Back"
 import { FilterIcon } from "./Icons/Filter"
 import { DividerStyling } from "./theme.Divider"
-import { RadioButtonWrapper, RadioButtonLabel } from "./theme.RadioButton"
+import {
+  RadioButtonWrapper,
+  RadioButtonLabel,
+  RadioButtonInput
+} from "./theme.RadioButton"
 import { LoadingStyle } from "./Loading"
 import { CalculatorIcon } from "./Icons/Calculator"
 import { NcvsIcon } from "./Icons/NCVS"
@@ -220,6 +224,7 @@ const theme = new theming.Theme(BaseTheme, {
   .add(DividerStyling)
   .add(RadioButtonWrapper)
   .add(RadioButtonLabel)
+  .add(RadioButtonInput)
   .add(FileInputLabelStyling)
   .add(LoadingStyle)
   .add(CarIcon)
