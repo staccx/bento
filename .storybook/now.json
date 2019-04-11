@@ -1,0 +1,69 @@
+{
+  "name": "bento",
+  "version": 2,
+  "alias": [
+    "bento.stac.cx"
+  ],
+  "scope": "staccx",
+  "builds": [
+    {
+      "src": "dist/**/*",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/sb_dll/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=31536000,immutable"
+      },
+      "dest": "dist/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "dist/favicon.ico"
+    },
+    {
+      "src": "/asset-manifest.json",
+      "dest": "dist/asset-manifest.json"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "dist/manifest.json"
+    },
+    {
+      "src": "/precache-manifest.(.*)",
+      "dest": "dist/precache-manifest.$1"
+    },
+    {
+      "src": "/main.(.*)",
+      "dest": "dist/main.$1"
+    },
+    {
+      "src": "/runtime~main.(.*)",
+      "dest": "dist/runtime~main.$1"
+    },
+    {
+      "src": "/vendors~main.(.*)",
+      "dest": "dist/vendors~main.$1"
+    },
+    {
+      "src": "/iframe.html",
+      "dest": "dist/iframe.html"
+    },
+    {
+      "src": "/service-worker.js",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "dist/service-worker.js"
+    },
+    {
+      "src": "/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "dist/index.html"
+    }
+  ]
+}
