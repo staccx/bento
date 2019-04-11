@@ -42,7 +42,7 @@ async function deploy(root, spinner) {
     startText: `Building storybook`,
     succeedText: "Storybook builded",
     command: async () =>
-      executeAsync("yarn", ["build-storybook"], { cwd: root })
+      executeAsync("yarn", ["build-storybook"], { cwd: root, pipe: true })
   })
 
   const {
@@ -63,7 +63,7 @@ async function deploy(root, spinner) {
     startText: `Deploying storybook`,
     succeedText: "Storybook deployed",
     command: async () =>
-      executeAsync("now", ["--target", "production"], { cwd: storybookPath })
+      executeAsync("now", ["--target", "production"], { cwd: storybookPath, pipe: true })
   })
   // TODO: Make tooling for employees to add link
 
