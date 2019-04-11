@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.84.0](https://bitbucket.org/stacc-flow/bento/compare/v8.83.2...v8.84.0) (2019-04-11)
+
+
+### Features
+
+* **nordea-theme:** add verylightgray ([9041a02](https://bitbucket.org/stacc-flow/bento/commits/9041a02))
+
+
+
+
+
 ## [8.83.2](https://bitbucket.org/stacc-flow/bento/compare/v8.83.1...v8.83.2) (2019-04-08)
 
 **Note:** Version bump only for package @staccx/nordea-theme
