@@ -5,7 +5,6 @@ import { storiesOf } from "@storybook/react"
 // Import you component(s)
 import Button from "./Button"
 
-// Write stories. Use | to place in category and / to create hiearchy
 // NOTE: Please try to test as many permutations and use cases as possible. There is no limit to stories
 
 /**
@@ -23,6 +22,7 @@ import Button from "./Button"
  */
 
 
+// Write stories. Use | to place in category and / to create hiearchy
 storiesOf("Components|Base/Button", module).add("No props", () => (
   <Button>Button</Button>
 ))
