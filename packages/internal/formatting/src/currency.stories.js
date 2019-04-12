@@ -16,3 +16,8 @@ storiesOf("Functions/Formatting/Currency", module)
       {formatCurrency(1000, { symbol: "$", format: "$s  $v" })}
     </CurrencyText>
   ))
+  .add("Norwegian", () => (
+    <CurrencyText>
+      {formatCurrency(100000, { symbol: "kr", format: "$s  $v", suffix: ",-" })}
+    </CurrencyText>
+  ))
