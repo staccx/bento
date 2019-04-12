@@ -221,7 +221,11 @@ const ItemHeading = styled.h1`
 `
 
 Breadcrumb.propTypes = {
-  path: PropTypes.array
+  path: PropTypes.array.isRequired
+}
+
+Breadcrumb.defaultProps = {
+  path: []
 }
 
 export default Breadcrumb
