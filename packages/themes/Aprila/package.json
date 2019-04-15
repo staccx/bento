@@ -1,6 +1,6 @@
 {
   "name": "@staccx/aprila-theme",
-  "version": "8.83.2",
+  "version": "8.84.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -26,10 +26,10 @@
   },
   "dependencies": {
     "@staccx/animations": "^8.58.0",
-    "@staccx/base": "^8.83.2",
-    "@staccx/formatting": "^8.83.2",
+    "@staccx/base": "^8.84.0",
+    "@staccx/formatting": "^8.84.0",
     "@staccx/i18n": "^8.80.1",
-    "@staccx/json-schema": "^8.83.2",
+    "@staccx/json-schema": "^8.84.0",
     "polished": "^1.9.2",
     "prop-types": "^15.6.2",
     "react": "^16.8.0",

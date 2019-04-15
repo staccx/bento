@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.85.0](https://bitbucket.org/stacc-flow/bento/compare/v8.84.0...v8.85.0) (2019-04-15)
+
+
+### Features
+
+* **bank-in-a-box:** show messages in withdraw ([60e638a](https://bitbucket.org/stacc-flow/bento/commits/60e638a))
+
+
+
+
+
+# [8.84.0](https://bitbucket.org/stacc-flow/bento/compare/v8.83.2...v8.84.0) (2019-04-11)
+
+
+### Bug Fixes
+
+* **aprila-theme:** set min-width for country code ([3fbd2e4](https://bitbucket.org/stacc-flow/bento/commits/3fbd2e4))
+
+
+### Features
+
+* **nordea-theme:** add verylightgray ([9041a02](https://bitbucket.org/stacc-flow/bento/commits/9041a02))
+
+
+
+
+
 ## [8.83.2](https://bitbucket.org/stacc-flow/bento/compare/v8.83.1...v8.83.2) (2019-04-08)
 
 
