@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.86.0](https://bitbucket.org/stacc-flow/bento/compare/v8.85.0...v8.86.0) (2019-04-15)
+
+
+### Features
+
+* **eslint-config:** make eslint-config compatible with latest CRA ([190fe70](https://bitbucket.org/stacc-flow/bento/commits/190fe70))
+
+
+
+
+
 # [8.62.0](https://bitbucket.org/stacc-flow/bento/compare/v8.61.0...v8.62.0) (2019-02-19)
 
 
