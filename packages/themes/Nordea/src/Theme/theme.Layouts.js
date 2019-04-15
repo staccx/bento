@@ -4,6 +4,21 @@ import { FadeIn, BounceIn } from "@staccx/animations"
 
 export const LayoutStyling = theming.createVariants(
   {
+    dashboard: css`
+      grid-template-columns: 1fr minmax(540px, 720px) minmax(320px, 340px) 1fr;
+      grid-template-areas: ". main aside .";
+      grid-column-gap: ${theming.spacing.large};
+
+      @media only screen and (max-width: 980px) {
+        grid-template-areas:
+          ". main ."
+          ". aside .";
+        grid-template-columns: ${theming.spacing.small} auto ${theming.spacing
+            .small};
+        grid-template-rows: auto;
+        grid-column-gap: 0;
+      }
+    `,
     case: css`
       grid-template-columns: 1fr minmax(320px, 512px) 96px minmax(320px, 512px) 1fr;
       grid-template-rows: repeat(7, auto);
