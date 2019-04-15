@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.86.0](https://bitbucket.org/stacc-flow/bento/compare/v8.85.0...v8.86.0) (2019-04-15)
+
+
+### Features
+
+* **bank-in-a-box:** show messages in end account ([9250603](https://bitbucket.org/stacc-flow/bento/commits/9250603))
+
+
+
+
+
 # [8.85.0](https://bitbucket.org/stacc-flow/bento/compare/v8.84.0...v8.85.0) (2019-04-15)
 
 

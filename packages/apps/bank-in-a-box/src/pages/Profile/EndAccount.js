@@ -6,7 +6,8 @@ import {
   Heading,
   AccountInput,
   Button,
-  ItemGroup
+  ItemGroup,
+  Alert
 } from "@staccx/base"
 import { TranslatedText } from "@staccx/i18n"
 import Back from "../../components/Back"
@@ -19,7 +20,7 @@ const EndAccount = ({
   onAccountChange,
   onConfirm,
   onCancel,
-  accountNoIsValid = true
+  messages
 }) => (
   <Layout variant="annualStatment">
     <LayoutItem variant="fadeIn" delay="200" area="header">
@@ -43,14 +44,16 @@ const EndAccount = ({
             variant="accountNumber"
             onChange={e => onAccountChange(e.target.rawValue)}
           />
+          {messages &&
+            messages.map(message => (
+              <Alert key={message} type="info">
+                <TranslatedText i18nKey={message} />
+              </Alert>
+            ))}
         </div>
         <ItemGroup>
           {/* TODO: disse må lenkes opp og ha en onClick */}
-          <Button
-            disabled={!accountNoIsValid}
-            variant="primary"
-            onClick={onConfirm}
-          >
+          <Button variant="primary" onClick={onConfirm}>
             <TranslatedText i18nKey={"overfor-og-avslutt"}>
               Overfør og avslutt konto
             </TranslatedText>
