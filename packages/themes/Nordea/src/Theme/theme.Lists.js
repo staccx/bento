@@ -46,6 +46,7 @@ export const ListStyling = theming.createVariants(
 
       dt {
         flex-basis: 50%;
+        width: 50%;
         padding: ${theming.spacing.small} ${theming.spacing.medium};
 
         &:nth-of-type(2n + 2) {
@@ -55,6 +56,7 @@ export const ListStyling = theming.createVariants(
 
       dd {
         flex-basis: 50%;
+        width: 50%;
         padding: ${theming.spacing.small} ${theming.spacing.medium};
         text-align: right;
 

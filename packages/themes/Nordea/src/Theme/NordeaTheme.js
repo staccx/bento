@@ -66,7 +66,6 @@ import { MenuIcon } from "./Icons/Menu"
 import { WrapperStyling } from "./theme.Wrapper"
 
 const borderRadius = "0px"
-const borderRadiusLarge = "0px"
 const headerHeight = "70px"
 
 const targetSize = {
@@ -239,6 +238,5 @@ const theme = new theming.Theme(BaseTheme, {
   .add(ExpandBtnStyling)
   .add(ExpandItemStyling)
   .add(ExpandIconStyling)
-
 
 export default theme
