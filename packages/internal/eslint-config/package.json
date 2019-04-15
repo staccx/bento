@@ -9,20 +9,18 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "peerDependencies": {
-    "babel-eslint": ">=9.0.0",
-    "eslint": ">=5.0.1",
-    "eslint-config-prettier": ">=2.9.0",
-    "eslint-config-standard": ">=11.0.0",
-    "eslint-config-standard-react": ">=6.0.0",
-    "eslint-plugin-import": ">=2.9.0",
-    "eslint-plugin-node": ">=6.0.1",
-    "eslint-plugin-prettier": ">=2.6.0",
-    "eslint-plugin-promise": ">=3.6.0",
-    "eslint-plugin-react": ">=7.7.0",
-    "eslint-plugin-standard": ">=3.0.1"
+    "babel-eslint": "9.0.0",
+    "eslint": "5.12.0",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-config-standard-react": "7.0.2",
+    "eslint-plugin-import": "2.17.1",
+    "eslint-plugin-node": "8.0.1",
+    "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-promise": "4.1.1",
+    "eslint-plugin-react": "7.12.4",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "eslint-plugin-standard": "4.0.0"
   },
-  "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5",
-  "devDependencies": {
-    "eslint-plugin-react-hooks": "^0.0.0"
-  }
+  "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
 }

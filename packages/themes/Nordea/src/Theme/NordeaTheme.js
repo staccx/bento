@@ -57,6 +57,7 @@ import { NcvsIcon } from "./Icons/NCVS"
 import { UrlIcon } from "./Icons/Url"
 import { CloseIcon } from "./Icons/Close"
 import { MenuIcon } from "./Icons/Menu"
+import { WrapperStyling } from "./theme.Wrapper"
 
 const borderRadius = "0px"
 const borderRadiusLarge = "0px"
@@ -227,4 +228,5 @@ const theme = new theming.Theme(BaseTheme, {
   .add(reset)
   .add(MenuIcon)
   .add(CloseIcon)
+  .add(WrapperStyling)
 export default theme
