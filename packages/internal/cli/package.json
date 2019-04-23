@@ -8,7 +8,7 @@
     "bento": "src/cli.js"
   },
   "scripts": {
-    "test": "jest test --env=jsdom --coverage",
+    "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "test:watch": "jest --env=jsdom --watch",
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
@@ -45,5 +45,5 @@
     "conf": "^2.2.0",
     "opn": "^5.4.0"
   },
-  "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
+  "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e"
 }

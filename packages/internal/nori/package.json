@@ -21,7 +21,7 @@
     "build": "yarn prettify && rollup -c",
     "start": "react-scripts start",
     "build:app": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --coverage --passWithNoTests",
+    "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "eject": "react-scripts eject",
@@ -39,7 +39,7 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
-  "gitHead": "fba5600ec9535ef0f12004463f3f99ff9427495b",
+  "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e",
   "browserslist": [
     ">0.2%",
     "not dead",

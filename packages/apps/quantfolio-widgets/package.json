@@ -18,12 +18,12 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-habitat": "^1.0.1",
-    "react-scripts": "2.1.5",
     "recharts": "^1.4.2",
     "styled-components": "^4.1.3"
   },
   "devDependencies": {
-    "babel-plugin-recharts": "^1.2.0"
+    "babel-plugin-recharts": "^1.2.0",
+    "react-scripts": "^3.0.0"
   },
   "browserslist": [
     ">0.2%",
@@ -36,7 +36,7 @@
     "build": "yarn prettify && rollup -c",
     "start": "react-scripts start",
     "build:app": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --coverage --passWithNoTests",
+    "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "prepare": "yarn build:app",
     "prepublishOnly": "yarn test",
     "eject": "react-scripts eject",
@@ -44,5 +44,5 @@
     "serve": "yarn build && serve -s build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
-  "gitHead": "fba5600ec9535ef0f12004463f3f99ff9427495b"
+  "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e"
 }

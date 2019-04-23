@@ -12,7 +12,7 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "test": "react-scripts test --env=jsdom --coverage --passWithNoTests",
+    "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "build": "yarn prettify && rollup -c",
     "start": "rollup -c -w",
     "prepare": "yarn build",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@staccx/rollup-config": "^8.58.0",
     "prettier": "^1.14.2",
-    "react-scripts": "^2.1.3",
+    "react-scripts": "^3.0.0",
     "rollup": "^0.65.0"
   },
   "peerDependencies": {

@@ -15,7 +15,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "start": "react-app-rewired start",
-    "test": "react-app-rewired test --env=jsdom --coverage --passWithNoTests",
+    "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "build:app": "react-scripts build",
     "eject": "react-scripts eject",
     "test:watch": "react-scripts test --env=jsdom --watch",

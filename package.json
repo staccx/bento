@@ -5,7 +5,7 @@
     "precommit": "lerna run --concurrency 1 --stream precommit --since HEAD",
     "postcommit": "git update-index --again",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "test": "react-scripts test --env=jsdom --verbose  --testMatch **/packages/**/*.test.js --coverage",
+    "test": "react-scripts test --coverage --watchAll=false --verbose  --testMatch **/packages/**/*.test.js --coverage",
     "styleguide": "cd packages/base && styleguidist server",
     "start": "cd packages/internal/styleguide && yarn start",
     "soy": "node packages/internal/soy",
@@ -76,6 +76,7 @@
   "jest": {},
   "resolutions": {
     "babel-core": "7.0.0-bridge.0",
-    "terser": "3.14.1"
+    "terser": "3.14.1",
+    "webpack": "4.29.6"
   }
 }

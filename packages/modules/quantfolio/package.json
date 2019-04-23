@@ -13,7 +13,7 @@
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "precommit": "lint-staged",
-    "test": "react-scripts test --env=jsdom --coverage --passWithNoTests",
+    "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "test:nocov": "react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom --watch",
     "build": "yarn prettify && rollup -c",

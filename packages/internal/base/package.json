@@ -13,7 +13,7 @@
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "precommit": "lint-staged",
-    "test": "react-scripts test --env=jsdom --coverage",
+    "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "test:nocov": "react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom --watch",
     "build:packages": "node build.js",
@@ -75,14 +75,12 @@
     "prettier": "^1.14.2",
     "progress": "^2.0.0",
     "react-docgen": "^3.0.0",
-    "react-scripts": "^2.1.3",
+    "react-scripts": "^3.0.0",
     "rollup": "^0.65.0",
-    "rollup-plugin-alias": "^1.4.0",
-    "webpack": "^3.0.0",
-    "webpack-blocks": "^1.0.0-rc.2"
+    "rollup-plugin-alias": "^1.4.0"
   },
   "peerDependencies": {
     "styled-components": "^4.0.2"
   },
-  "gitHead": "fba5600ec9535ef0f12004463f3f99ff9427495b"
+  "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e"
 }
