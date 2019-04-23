@@ -77,7 +77,7 @@ const targetSize = {
 const wrapper = {
   small: "460px",
   medium: "840px",
-  large: "888px",
+  large: "1158px",
   huge: "1440px",
   breakout: "640px"
 }
