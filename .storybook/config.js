@@ -4,9 +4,7 @@ import { host } from 'storybook-host';
 import {withInfo} from "@storybook/addon-info"
 import { withA11y } from '@storybook/addon-a11y';
 import { themes as storybookThemes} from '@storybook/theming';
-import themes from "./themes"
 import {withTheme} from "./withThemes"
-import ThemesProvider from "./ThemesProvider"
 
 const req = require.context('../packages', true, /\.stories\.js$/);
 
@@ -20,18 +18,21 @@ addParameters({
   options: {
     name: 'Bento',
     theme: storybookThemes.dark,
-    showPanel: false
+    showPanel: true,
+    addonPanelInRight: true
   },
   backgrounds: [
     { name: 'twitter', value: '#00aced' },
     { name: 'facebook', value: '#3b5998' },
   ],
+  info:{ inline: false}
 });
 
 // addDecorator((story) => (
 //   <ThemesProvider themes={themes} story={story}/>
 // ))
 
+addDecorator(withInfo);
 addDecorator(withTheme)
 addDecorator(
   host({
@@ -44,5 +45,4 @@ addDecorator(
 )
 addDecorator(withA11y)
 
-// addDecorator(withInfo, { inline: true});
 configure(loadStories, module);
