@@ -1,6 +1,6 @@
 {
   "name": "@staccx/react-app-rewire-decorators-legacy",
-  "version": "8.58.0",
+  "version": "9.0.0-alpha.2",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
