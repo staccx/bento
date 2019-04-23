@@ -19,7 +19,6 @@ addons.register('storybook/theme-switcher', api => {
     title: 'theme-switcher',
     type: types.TOOL,
     match: ({ viewMode }) => {
-      console.log(viewMode)
       return viewMode === 'story'
     },
     render: () => <ThemeSwitcher api={api}/>,
@@ -43,20 +42,19 @@ export const withTheme = makeDecorator({
 });
 
 export const ThemeSwitcher = ({ api }) => {
-  console.log("Is rendering")
-  const [activeTheme, setTheme] = useState(getLocalTheme()[0]);
+  const [activeTheme, setTheme] = useState(getLocalTheme()[1]);
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => bindThemeOverride(api), []);
 
-  const themeList = Object.keys(themes).map(key => ({
-    id: key,
-    title: key,
+  const themeList = themes.map((theme, index) => ({
+    id: theme.name,
+    title: theme.name,
     onClick: () => {
-      setTheme(key);
-      setLocalTheme({ api, theme: key, rerender: true });
+      setTheme(themes[index]);
+      setLocalTheme({ api, theme: index, rerender: true });
     },
-    right: <ThemeIcon/>,
+    right: <ThemeIcon theme={theme}/>,
   }));
 
   return (
@@ -68,16 +66,38 @@ export const ThemeSwitcher = ({ api }) => {
       tooltip={<TooltipLinkList links={themeList}/>}
       closeOnClick
     >
-      <IconButton key="theme-switcher">{activeTheme}</IconButton>
+      <FlexIt>
+        <IconButton key="theme-switcher">{activeTheme.name} </IconButton>
+        <ThemeIcon theme={activeTheme}/>
+      </FlexIt>
     </WithTooltip>
   );
 };
 
+const FlexIt = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0,0,0,.2);
+  border-radius: 8px;
+  padding: 0 12px;
+  min-width: 100px;
+`
+
+
 const ThemeIcon = styled.span`
-  height: 1rem;
-  width: 1rem;
   display: block;
-  background: red;
+  border-right-color: ${({theme}) => theme.color.primary};
+  border-top-color: ${({ theme }) => theme.color.secondary};
+  border-bottom-color: ${({ theme }) => theme.color.text};
+  border-left-color: ${({ theme }) => theme.color.bg};
+  border-width: 8px;
+  border-radius: 8px;
+  border-style: solid;
+  height: 0px;
+  width: 0px;
+  transform: rotate(45deg);
+
 `;
 
 function bindThemeOverride (api) {
@@ -112,6 +132,6 @@ function getLocalTheme () {
   const theme =
     typeof themes[savedTheme] === 'object'
       ? themes[savedTheme]
-      : themes.Stacc;
-  return [savedTheme, theme || themes.Stacc];
+      : themes[0];
+  return [savedTheme, theme || themes[0]];
 }

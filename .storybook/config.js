@@ -5,6 +5,7 @@ import {withInfo} from "@storybook/addon-info"
 import { withA11y } from '@storybook/addon-a11y';
 import { themes as storybookThemes} from '@storybook/theming';
 import themes from "./themes"
+import {withTheme} from "./withThemes"
 import ThemesProvider from "./ThemesProvider"
 
 const req = require.context('../packages', true, /\.stories\.js$/);
@@ -27,9 +28,11 @@ addParameters({
   ],
 });
 
-addDecorator((story) => (
-  <ThemesProvider themes={themes} story={story}/>
-))
+// addDecorator((story) => (
+//   <ThemesProvider themes={themes} story={story}/>
+// ))
+
+addDecorator(withTheme)
 addDecorator(
   host({
     align: 'center middle',
