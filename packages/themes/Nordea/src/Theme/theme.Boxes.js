@@ -90,6 +90,16 @@ export const BoxStyling = theming.createVariants(
       background-color: ${theming.color("bg1")};
       padding-left: 0;
       padding-right: 0;
+    `,
+    filter: css`
+      position: absolute;
+      background-color: ${theming.color.white};
+      border: 1px solid ${theming.color("g1")};
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
+      padding: ${theming.spacing.medium};
+      min-width: 296px;
+      transform: translateY(${theming.spacing.tiny});
     `
   },
   Box.themeProps.box

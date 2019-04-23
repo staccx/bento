@@ -64,6 +64,7 @@ import { UrlIcon } from "./Icons/Url"
 import { CloseIcon } from "./Icons/Close"
 import { MenuIcon } from "./Icons/Menu"
 import { WrapperStyling } from "./theme.Wrapper"
+import { CheckBoxLabelStyling } from "./theme.Checkbox"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -238,5 +239,6 @@ const theme = new theming.Theme(BaseTheme, {
   .add(ExpandBtnStyling)
   .add(ExpandItemStyling)
   .add(ExpandIconStyling)
+  .add(CheckBoxLabelStyling)
 
 export default theme

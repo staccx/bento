@@ -85,13 +85,6 @@ export const ButtonStyling = theming.createVariants(
         text-decoration: underline;
       }
     `,
-    filter: css`
-      justify-content: center;
-      display: flex;
-      svg {
-        margin-right: ${theming.spacing.tiny};
-      }
-    `,
     hamburger: css`
       display: flex;
       min-height: 52px;
@@ -208,6 +201,40 @@ export const ButtonStyling = theming.createVariants(
       &:active,
       &:focus {
         background-color: ${theming.color("b1")};
+        color: ${theming.color.primary};
+      }
+    `,
+    filter: css`
+      background-color: ${theming.color.white};
+      border: 1px solid ${theming.color("g1")};
+      color: ${theming.color("g4")};
+      min-height: 28px;
+      line-height: 1;
+      border-radius: 50px;
+      padding: ${theming.spacing.tiny} ${theming.spacing.small};
+      font-weight: normal;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: ${theming.color.subtleHover};
+        border: 1px solid ${theming.color("g1")};
+        color: ${theming.color("g4")};
+      }
+    `,
+    filterAction: css`
+      background-color: transparent;
+      border: 0;
+      color: ${p => (p.primary ? theming.color("b2") : theming.color.wcag)};
+      padding: 0;
+      line-height: ${theming.targetSize.small};
+      min-height: ${theming.targetSize.small};
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+        border: 0;
         color: ${theming.color.primary};
       }
     `
