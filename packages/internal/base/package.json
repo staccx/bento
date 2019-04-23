@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "9.0.0-alpha.0",
+  "version": "9.0.0-alpha.1",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -39,9 +39,9 @@
   },
   "dependencies": {
     "@staccx/animations": "^8.58.0",
-    "@staccx/formatting": "^8.83.2",
+    "@staccx/formatting": "^9.0.0-alpha.1",
     "@staccx/math": "^8.58.0",
-    "@staccx/utils": "^8.58.0",
+    "@staccx/utils": "^9.0.0-alpha.1",
     "axios": "^0.18.0",
     "babel-plugin-prismjs": "^1.0.2",
     "cleave.js": "^1.4.4",
