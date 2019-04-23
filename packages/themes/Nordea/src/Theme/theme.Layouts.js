@@ -8,6 +8,9 @@ export const LayoutStyling = theming.createVariants(
       grid-template-columns: 1fr minmax(540px, 720px) minmax(320px, 340px) 1fr;
       grid-template-areas: ". main aside .";
       grid-column-gap: ${theming.spacing.large};
+      grid-row-gap: ${theming.spacing.large};
+      padding-top: ${theming.spacing.large};
+      padding-bottom: ${theming.spacing.large};
 
       @media only screen and (max-width: 980px) {
         grid-template-areas:
@@ -17,6 +20,29 @@ export const LayoutStyling = theming.createVariants(
             .small};
         grid-template-rows: auto;
         grid-column-gap: 0;
+        grid-row-gap: ${theming.spacing.medium};
+        padding-top: ${theming.spacing.medium};
+        padding-bottom: ${theming.spacing.medium};
+      }
+    `,
+    dashboardItems: css`
+      grid-row-gap: ${theming.spacing.large};
+
+      @media only screen and (max-width: 980px) {
+        grid-row-gap: ${theming.spacing.medium};
+      }
+    `,
+    fourCol: css`
+      grid-template-columns:
+        1fr [first firstHalf-start] 241px [second] 241px
+        [third firstHalf-end secondHalf-start] 241px
+        [fourth] 241px [secondHalf-end] 1fr;
+      grid-column-gap: ${theming.spacing.large};
+      grid-row-gap: 0;
+
+      @media only screen and (max-width: 980px) {
+        grid-column-gap: 0;
+        grid-row-gap: ${theming.spacing.medium};
       }
     `,
     case: css`
