@@ -63,7 +63,10 @@ async function deploy(root, spinner) {
     startText: `Deploying storybook`,
     succeedText: "Storybook deployed",
     command: async () =>
-      executeAsync("now", ["--target", "production"], { cwd: storybookPath, pipe: true })
+      executeAsync("now", ["--target", "production"], {
+        cwd: storybookPath,
+        pipe: true
+      })
   })
   // TODO: Make tooling for employees to add link
 
