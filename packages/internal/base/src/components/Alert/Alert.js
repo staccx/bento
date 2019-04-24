@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
+import loglevel from "loglevel"
 import Flag from "../Layout/Flag/Flag"
 import Warning from "../Icons/Warning"
 import Success from "../Icons/Success"
@@ -103,6 +104,11 @@ const colors = ({ type }) => {
 }
 
 const Alert = ({ children, type, ...restProps }) => {
+  if (!children) {
+    // TODO: What do we do here
+    loglevel.warn("No children defined")
+    return null
+  }
   return (
     <AlertElement type={type} role="alert" {...restProps}>
       <Flag small img={<Icon type={type} />}>
@@ -134,7 +140,7 @@ Alert.propTypes = {
 
 Alert.defaultProps = {
   type: "info",
-  children: "This is a warning"
+  children: null
 }
 
 Alert.themeProps = tProps

@@ -55,6 +55,7 @@
     "js-search": "^1.4.2",
     "libphonenumber-js": "^1.7.8",
     "lodash.debounce": "^4.0.8",
+    "loglevel": "^1.6.1",
     "polished": "^2.3.0",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",

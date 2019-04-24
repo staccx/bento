@@ -1,11 +1,7 @@
-import {StaccTheme, Norefjell} from "../packages/themes"
+import {StaccTheme, Norefjell, Aprila} from "../packages/themes"
 
 export default [
   StaccTheme,
-  Norefjell
+  Norefjell,
+  Aprila
 ]
-
-export const themeDict = {
-  Stacc: StaccTheme,
-  Norefjell
-}
