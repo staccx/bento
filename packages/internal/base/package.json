@@ -61,7 +61,6 @@
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
     "react-compound-slider": "^0.16.2",
-    "react-jsonschema-form": "^1.0.3",
     "react-traverse": "^1.0.0",
     "tinycolor2": "^1.4.1",
     "webfontloader": "^1.6.28",

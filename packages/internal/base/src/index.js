@@ -101,9 +101,6 @@ import GlobalStyle from "./components/Theme/GlobalStyle"
 // Formatters
 import Odometer from "./components/Formatters/Odometer/Odometer"
 
-// Utils
-import JsonSchema from "./components/Forms/JsonSchema/JsonSchema"
-
 // Logo
 import Logo from "./components/Logo/Logo"
 
@@ -211,7 +208,6 @@ export {
   InlineListItem,
   Input,
   ItemGroup,
-  JsonSchema,
   KeyFigures,
   Label,
   Layout,
