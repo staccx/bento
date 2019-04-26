@@ -34,15 +34,24 @@ export const LayoutStyling = theming.createVariants(
     `,
     fourCol: css`
       grid-template-columns:
-        1fr [first firstHalf-start] 241px [second] 241px
+        [first firstHalf-start] 241px [second] 241px
         [third firstHalf-end secondHalf-start] 241px
-        [fourth] 241px [secondHalf-end] 1fr;
+        [fourth] 241px [secondHalf-end];
       grid-column-gap: ${theming.spacing.large};
       grid-row-gap: 0;
 
-      @media only screen and (max-width: 980px) {
-        grid-column-gap: 0;
+      @media only screen and (max-width: 1110px) {
+        grid-template-columns: [first firstHalf-start third secondHalf-start] 1fr [second fourth] 1fr [firstHalf-end secondHalf-end];
+        grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+        grid-column-gap: ${theming.spacing.medium};
         grid-row-gap: ${theming.spacing.medium};
+        padding-top: ${theming.spacing.medium};
+        padding-bottom: ${theming.spacing.medium};
+      }
+
+      @media only screen and (max-width: 580px) {
+        grid-template-columns: 1fr;
+        grid-column-gap: 0;
       }
     `,
     newsOverview: css`
@@ -131,6 +140,73 @@ export const LayoutStyling = theming.createVariants(
 
 export const LayoutItemStyling = theming.createVariants(
   {
+    firstHalf: css`
+      grid-area: firstHalf;
+
+      @media only screen and (max-width: 1110px) and (min-width: 580px) {
+        grid-area: 1 / firstHalf / 1 / firstHalf;
+      }
+
+      @media only screen and (max-width: 580px) {
+        grid-area: unset;
+      }
+    `,
+    secondHalf: css`
+      grid-area: secondHalf;
+
+      @media only screen and (max-width: 1110px) and (min-width: 580px) {
+        grid-area: 2 / secondHalf / 2 / secondHalf;
+      }
+
+      @media only screen and (max-width: 580px) {
+        grid-area: unset;
+      }
+    `,
+    first: css`
+      grid-area: first;
+
+      @media only screen and (max-width: 1110px) and (min-width: 580px) {
+        grid-area: 1 / first / 1 / first;
+      }
+
+      @media only screen and (max-width: 580px) {
+        grid-area: unset;
+      }
+    `,
+    second: css`
+      grid-area: second;
+
+      @media only screen and (max-width: 1110px) and (min-width: 580px) {
+        grid-area: 1 / second / 1 / second;
+      }
+
+      @media only screen and (max-width: 580px) {
+        grid-area: unset;
+      }
+    `,
+    third: css`
+      grid-area: third;
+
+      @media only screen and (max-width: 1110px) and (min-width: 580px) {
+        grid-area: 2 / third / 2 / third;
+      }
+
+      @media only screen and (max-width: 580px) {
+        grid-area: unset;
+      }
+    `,
+    fourth: css`
+      grid-area: fourth;
+
+      @media only screen and (max-width: 1110px) and (min-width: 580px) {
+        grid-area: 2 / fourth / 2 / fourth;
+      }
+
+      @media only screen and (max-width: 580px) {
+        grid-area: unset;
+      }
+    `
+
     // statsSelect: css`
     //   grid-column: 4 / span 1;
     //   grid-row: 1 / span 1;

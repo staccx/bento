@@ -100,6 +100,9 @@ export const BoxStyling = theming.createVariants(
       padding: ${theming.spacing.medium};
       min-width: 296px;
       transform: translateY(${theming.spacing.tiny});
+    `,
+    statsContainer: css`
+      background-color: ${theming.color("b1")};
     `
   },
   Box.themeProps.box
