@@ -1,4 +1,4 @@
-import { BaseTheme, theming } from "@staccx/base"
+import { theming } from "@staccx/base"
 import reset from "./reset"
 import { HeadingStyling } from "./theme.Headings"
 import { ParagraphStyling } from "./theme.Paragraphs"
@@ -76,7 +76,7 @@ const targetSize = {
 
 const wrapper = {
   small: "460px",
-  medium: "840px",
+  medium: "720px",
   large: "1158px",
   huge: "1440px",
   breakout: "640px"
@@ -131,7 +131,7 @@ const color = {
   concrete: "#F4F2F1"
 }
 
-const DealerpadSpecificColor = {
+const appSpecificColor = {
   header: color.b5,
   headerText: color.white,
   headerActive: color.b1,
@@ -141,7 +141,8 @@ const DealerpadSpecificColor = {
   chatBubbleBgCurrentUser: color.bg,
   chatBubbleBgOtherUser: color.b2,
   chatBubbleBgCurrentUserText: color.text,
-  chatBubbleBgOtherUserText: color.white
+  chatBubbleBgOtherUserText: color.white,
+  progressDone: color.a3
 }
 
 const font = {
@@ -167,11 +168,11 @@ const fontFamily = {
   body: "NordeaSansSmall"
 }
 
-const theme = new theming.Theme(BaseTheme, {
+const theme = new theming.Theme({
   name: "Nordea",
   font,
   fontWeight,
-  color: { ...color, ...DealerpadSpecificColor },
+  color: { ...color, ...appSpecificColor },
   spacing,
   wrapper,
   targetSize,
