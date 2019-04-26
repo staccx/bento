@@ -39,7 +39,7 @@ export const HeadingStyling = theming.createVariants(
     `,
     newsList: css`
       font-size: ${theming.font.base};
-      color: ${theming.color.text};
+      color: currentColor;
       font-weight: normal;
     `,
     contact: css`
