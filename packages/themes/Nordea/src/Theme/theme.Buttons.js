@@ -247,6 +247,20 @@ export const ButtonStyling = theming.createVariants(
         border: 0;
         color: ${theming.color.primary};
       }
+    `,
+    caseTab: css`
+      background-color: transparent;
+      padding: 0;
+      color: ${theming.color.primary};
+      border-bottom: 3px solid currentColor;
+      min-height: 26px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: ${theming.color("b3")};
+        background-color: transparent;
+      }
     `
   },
   Button.themeProps.button
