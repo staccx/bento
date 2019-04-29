@@ -6,7 +6,7 @@ module.exports = {
     "react/no-unused-prop-types": 0,
     "new-cap": [
       "error",
-      { newIsCapExceptions: ["i18n"], capIsNewExceptions: ["Map"] }
+      { newIsCapExceptions: ["i18n"], capIsNewExceptions: ["Map", "Children"] }
     ],
     "react-hooks/rules-of-hooks": "error"
   },
