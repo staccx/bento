@@ -261,6 +261,44 @@ export const ButtonStyling = theming.createVariants(
         color: ${theming.color("b3")};
         background-color: transparent;
       }
+    `,
+    caseListItem: css`
+      display: flex;
+      width: 100%;
+      padding: ${theming.spacing.small};
+      border: none;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+      background-color: ${theming.color("veryLightGray")};
+      justify-content: space-between;
+      align-items: stretch;
+      font-size: ${theming.font.base};
+      font-weight: normal;
+      color: ${theming.color.text};
+      cursor: pointer;
+      transition: transform 500ms ease;
+      line-height: initial;
+
+      :hover,
+      :focus {
+        transform: translateX(10px);
+        background-color: ${theming.color("veryLightGray")};
+        color: ${theming.color.text};
+      }
+
+      @media (min-width: 720px) {
+        padding: ${theming.spacing.medium};
+      }
+
+      @media (max-width: 719px) {
+        position: relative;
+        flex-wrap: wrap;
+        padding-left: 48px;
+        padding-right: 32px;
+      }
+
+      @media (max-width: 359px) {
+        padding-right: ${theming.spacing.small};
+      }
     `
   },
   Button.themeProps.button
