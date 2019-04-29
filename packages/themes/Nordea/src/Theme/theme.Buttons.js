@@ -16,16 +16,32 @@ export const ButtonStyling = theming.createVariants(
     [theming.VARIANT_DEFAULT]: css`
       ${baseStyling};
     `,
-    chat: css`
+    todoList: css`
       ${baseStyling};
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      min-height: ${theming.targetSize.small};
-      right: ${theming.spacing.tiny};
-      bottom: 8px;
-      min-height: ${theming.spacing.mediumPlus};
+      display: flex;
+      min-height: 0;
       padding: 0 ${theming.spacing.small};
+      font-weight: ${theming.fontWeight.normal};
+      > span:not(:only-child) {
+        padding-right: ${theming.spacing.tiny};
+      }
+    `,
+    chat: css`
+      background-color: ${theming.color.white};
+      padding-left: ${theming.spacing.small};
+      padding-right: ${theming.spacing.small};
+      color: ${theming.color("g2")};
+
+      > svg {
+        vertical-align: middle;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${theming.color.white};
+        color: ${theming.color.primary};
+      }
     `,
     icon: css`
       background: transparent;
@@ -77,13 +93,6 @@ export const ButtonStyling = theming.createVariants(
         color: ${theming.color("b4")};
         background-color: transparent;
         text-decoration: underline;
-      }
-    `,
-    filter: css`
-      justify-content: center;
-      display: flex;
-      svg {
-        margin-right: ${theming.spacing.tiny};
       }
     `,
     hamburger: css`
@@ -161,6 +170,82 @@ export const ButtonStyling = theming.createVariants(
       &:active {
         color: ${theming.color("b4")};
         background-color: ${theming.color("bg")};
+      }
+    `,
+    search: css`
+      position: absolute;
+      top: 50%;
+      right: 0;
+      background-color: transparent;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+      padding-left: ${theming.spacing.medium};
+      padding-right: ${theming.spacing.medium};
+      color: ${theming.color.primary};
+      transform: translateY(-50%);
+
+      > svg {
+        vertical-align: middle;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${theming.color("b1")};
+        color: ${theming.color.primary};
+      }
+    `,
+    goto: css`
+      display: flex;
+      justify-content: space-evenly;
+      background-color: ${theming.color("primaryLight")};
+      color: ${theming.color.primary};
+      border-radius: 50px;
+      min-height: ${theming.targetSize.small};
+
+      > :last-child {
+        margin-left: ${theming.spacing.tiny};
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: ${theming.color("b1")};
+        color: ${theming.color.primary};
+      }
+    `,
+    filter: css`
+      background-color: ${theming.color.white};
+      border: 1px solid ${theming.color("g1")};
+      color: ${theming.color("g4")};
+      min-height: 28px;
+      line-height: 1;
+      border-radius: 50px;
+      padding: ${theming.spacing.tiny} ${theming.spacing.small};
+      font-weight: normal;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: ${theming.color.subtleHover};
+        border: 1px solid ${theming.color("g1")};
+        color: ${theming.color("g4")};
+      }
+    `,
+    filterAction: css`
+      background-color: transparent;
+      border: 0;
+      color: ${p => (p.primary ? theming.color("b2") : theming.color.wcag)};
+      padding: 0;
+      line-height: ${theming.targetSize.small};
+      min-height: ${theming.targetSize.small};
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+        border: 0;
+        color: ${theming.color.primary};
       }
     `
   },

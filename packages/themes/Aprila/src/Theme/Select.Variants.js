@@ -27,6 +27,7 @@ export default [
       schemaInputPhone: css`
         border-width: 2px;
         min-height: 44px;
+        min-width: 75px;
       `
     },
     Select.themeProps.selectedWrapper

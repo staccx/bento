@@ -20,6 +20,9 @@ export const TextStyling = theming.createVariants(
       line-height: 1.4;
       color: ${theming.color("g4")};
       ${fontSmoothing};
+    `,
+    menu: css`
+      white-space: nowrap;
     `
   },
   Text.themeProps.text

@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.86.0](https://bitbucket.org/stacc-flow/bento/compare/v8.85.0...v8.86.0) (2019-04-15)
+
+
+### Bug Fixes
+
+* **nordea-theme:** fix responsive layout of financingTable ([82fbe3e](https://bitbucket.org/stacc-flow/bento/commits/82fbe3e))
+
+
+### Features
+
+* **eslint-config:** make eslint-config compatible with latest CRA ([190fe70](https://bitbucket.org/stacc-flow/bento/commits/190fe70))
+
+
+
+
+
+# [8.84.0](https://bitbucket.org/stacc-flow/bento/compare/v8.83.2...v8.84.0) (2019-04-11)
+
+
+### Features
+
+* **nordea-theme:** add verylightgray ([9041a02](https://bitbucket.org/stacc-flow/bento/commits/9041a02))
+
+
+
+
+
 ## [8.83.2](https://bitbucket.org/stacc-flow/bento/compare/v8.83.1...v8.83.2) (2019-04-08)
 
 **Note:** Version bump only for package @staccx/nordea-theme

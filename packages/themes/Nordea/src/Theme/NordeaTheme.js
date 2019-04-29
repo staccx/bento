@@ -1,4 +1,4 @@
-import { BaseTheme, theming } from "@staccx/base"
+import { theming } from "@staccx/base"
 import reset from "./reset"
 import { HeadingStyling } from "./theme.Headings"
 import { ParagraphStyling } from "./theme.Paragraphs"
@@ -14,6 +14,12 @@ import {
 } from "./theme.Inputs"
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { NewBadgeBadgeStyling } from "./theme.NewBadges"
+import {
+  ExpandBtnStyling,
+  ExpandItemStyling,
+  ExpandIconStyling
+} from "./theme.Expands"
+
 import { LogoStyle } from "./Logo"
 import { AddIcon } from "./Icons/Add"
 import { SearchIcon } from "./Icons/Search"
@@ -46,13 +52,19 @@ import { CarIcon } from "./Icons/Car"
 import { BackIcon } from "./Icons/Back"
 import { FilterIcon } from "./Icons/Filter"
 import { DividerStyling } from "./theme.Divider"
-import { RadioButtonWrapper, RadioButtonLabel } from "./theme.RadioButton"
+import {
+  RadioButtonWrapper,
+  RadioButtonLabel,
+  RadioButtonInput
+} from "./theme.RadioButton"
 import { LoadingStyle } from "./Loading"
 import { CalculatorIcon } from "./Icons/Calculator"
 import { NcvsIcon } from "./Icons/NCVS"
 import { UrlIcon } from "./Icons/Url"
 import { CloseIcon } from "./Icons/Close"
 import { MenuIcon } from "./Icons/Menu"
+import { WrapperStyling } from "./theme.Wrapper"
+import { CheckBoxLabelStyling } from "./theme.Checkbox"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -64,8 +76,8 @@ const targetSize = {
 
 const wrapper = {
   small: "460px",
-  medium: "840px",
-  large: "888px",
+  medium: "720px",
+  large: "1158px",
   huge: "1440px",
   breakout: "640px"
 }
@@ -96,7 +108,9 @@ const color = {
   disabled: "#E4E4E4",
   warning: "#FC6161",
   black: "#000",
-  subtleHover: "#E5F2FF",
+  subtleHover: "#EDF2F7",
+  veryLightGray: "#FAFAFA",
+  tableGray: "#F5F5F5",
   b5: "#00005E",
   b4: "#0000A0",
   b3: "#0000FF",
@@ -117,7 +131,7 @@ const color = {
   concrete: "#F4F2F1"
 }
 
-const DealerpadSpecificColor = {
+const appSpecificColor = {
   header: color.b5,
   headerText: color.white,
   headerActive: color.b1,
@@ -127,7 +141,8 @@ const DealerpadSpecificColor = {
   chatBubbleBgCurrentUser: color.bg,
   chatBubbleBgOtherUser: color.b2,
   chatBubbleBgCurrentUserText: color.text,
-  chatBubbleBgOtherUserText: color.white
+  chatBubbleBgOtherUserText: color.white,
+  progressDone: color.a3
 }
 
 const font = {
@@ -153,11 +168,11 @@ const fontFamily = {
   body: "NordeaSansSmall"
 }
 
-const theme = new theming.Theme(BaseTheme, {
+const theme = new theming.Theme({
   name: "Nordea",
   font,
   fontWeight,
-  color: { ...color, ...DealerpadSpecificColor },
+  color: { ...color, ...appSpecificColor },
   spacing,
   wrapper,
   targetSize,
@@ -211,6 +226,7 @@ const theme = new theming.Theme(BaseTheme, {
   .add(DividerStyling)
   .add(RadioButtonWrapper)
   .add(RadioButtonLabel)
+  .add(RadioButtonInput)
   .add(FileInputLabelStyling)
   .add(LoadingStyle)
   .add(CarIcon)
@@ -220,4 +236,10 @@ const theme = new theming.Theme(BaseTheme, {
   .add(reset)
   .add(MenuIcon)
   .add(CloseIcon)
+  .add(WrapperStyling)
+  .add(ExpandBtnStyling)
+  .add(ExpandItemStyling)
+  .add(ExpandIconStyling)
+  .add(CheckBoxLabelStyling)
+
 export default theme

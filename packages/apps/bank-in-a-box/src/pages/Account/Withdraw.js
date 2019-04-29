@@ -22,7 +22,7 @@ const Withdraw = ({
   lastAccount = null,
   balance,
   onSubmit,
-  validateAccountNo
+  messages
 }) => (
   <State>
     {({ set, toAccount }) => (
@@ -42,13 +42,10 @@ const Withdraw = ({
         <LayoutItem area="menu">
           <Form
             initialValues={{ toAccount, amount: balance }}
-            renderButton={({ values }) => {
-              const valid = validateAccountNo
-                ? validateAccountNo(values.toAccount)
-                : true
+            renderButton={() => {
               return (
                 <LayoutItem variant="fadeIn" delay="800">
-                  <Button disabled={!valid} type={"submit"}>
+                  <Button type={"submit"}>
                     <TranslatedText i18nKey="overfør" fallback="Overfør" />
                   </Button>
                 </LayoutItem>
@@ -59,7 +56,12 @@ const Withdraw = ({
             <Layout grid="rows">
               <LayoutItem variant="fadeIn" delay="400">
                 <Box variant="withdrawInputs">
-                  <FormField name="amount" type="string" required min={1}>
+                  <FormField
+                    renderError={() => null}
+                    name="amount"
+                    type="string"
+                    required
+                  >
                     {({ name, field, form }) => {
                       const { value, ...rest } = field
                       return (
@@ -80,8 +82,8 @@ const Withdraw = ({
                   <FormField
                     name={"toAccount"}
                     type={"string"}
-                    validate={validateAccountNo}
                     required
+                    renderError={() => null}
                   >
                     {({ name, field, form }) => {
                       const { value, ...rest } = field
@@ -124,6 +126,12 @@ const Withdraw = ({
                   </Alert>
                 </LayoutItem>
               )}
+              {messages &&
+                messages.map(msg => (
+                  <Alert type="info" key={msg}>
+                    <TranslatedText i18nKey={msg} />
+                  </Alert>
+                ))}
             </Layout>
           </Form>
         </LayoutItem>

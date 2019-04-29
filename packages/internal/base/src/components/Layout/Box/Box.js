@@ -22,7 +22,7 @@ Box.themeProps = {
 }
 
 export const Boxing = styled.div`
-  ${p => p.size && `padding: ${spacing(p.size)}`};
+  ${p => p.size && `padding: ${spacing(p.size)(p)}`};
   ${applyVariants(Box.themeProps.box)};
 `
 

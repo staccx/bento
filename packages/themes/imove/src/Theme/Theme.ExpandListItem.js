@@ -11,8 +11,10 @@ export const ExpandButton = theming.createVariants(
 
       :focus,
       :hover {
+        color: ${theming.color.secondary};
+
         > svg {
-          fill: ${theming.color.black} !important;
+          fill: ${theming.color.secondary} !important;
         }
       }
     `
