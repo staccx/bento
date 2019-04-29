@@ -16,6 +16,16 @@ export const ButtonStyling = theming.createVariants(
     [theming.VARIANT_DEFAULT]: css`
       ${baseStyling};
     `,
+    todoList: css`
+      ${baseStyling};
+      display: flex;
+      min-height: 0;
+      padding: 0 ${theming.spacing.small};
+      font-weight: ${theming.fontWeight.normal};
+      > span:not(:only-child) {
+        padding-right: ${theming.spacing.tiny};
+      }
+    `,
     chat: css`
       background-color: ${theming.color.white};
       padding-left: ${theming.spacing.small};
