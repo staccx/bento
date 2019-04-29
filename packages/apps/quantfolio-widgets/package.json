@@ -1,12 +1,12 @@
 {
   "name": "@staccx/quantfolio-widgets",
-  "version": "9.0.0-alpha.3",
+  "version": "9.0.0-alpha.4",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.3",
+    "@staccx/base": "^9.0.0-alpha.4",
     "@staccx/quantfolio": "^9.0.0-alpha.2",
     "@tedconf/react-show-more": "^1.1.2",
     "animejs": "^3.0.1",
