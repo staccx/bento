@@ -10,11 +10,6 @@ const actions = {
   initialize: "INIT"
 }
 
-const initialState = {
-  language: "nb",
-  namespace: "default"
-}
-
 const reducer = (state, action) =>
   produce(state, draft => {
     switch (action.type) {
@@ -27,19 +22,21 @@ const reducer = (state, action) =>
     }
   })
 
-const I18n = ({ children, texts }) => {
-  const i18n = useReducer(reducer, initialState)
-  const { language } = i18n
-
+const I18n = ({ children, ...props }) => {
+  const { texts = null } = props
   const translate = ({ key, data, fallback, namespace }) =>
     t({ texts, language, key, data, fallback, namespace })
   const convert = value => c(value, language)
 
-  return (
-    <I18nContext.Provider value={{ ...i18n, translate, convert }}>
-      {children}
-    </I18nContext.Provider>
-  )
+  const initialState = {
+    ...props,
+    translate,
+    convert
+  }
+  const i18n = useReducer(reducer, initialState)
+  const { language } = i18n
+
+  return <I18nContext.Provider value={i18n}>{children}</I18nContext.Provider>
 }
 
 I18n.propTypes = {

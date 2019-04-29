@@ -154,6 +154,9 @@ import Breadcrumb from "./components/Breadcrumb/Breadcrumb"
 
 import Development from "./hoc/Development/Development"
 
+import I18n, { useI18n } from "./components/i18n/I18n"
+import Translate from "./components/i18n/Translate"
+
 const icons = {
   QuestionMark
 }
@@ -202,6 +205,7 @@ export {
   Fraction,
   Heading,
   hideVisually,
+  I18n,
   icons,
   Image,
   Info,
@@ -252,6 +256,8 @@ export {
   Text,
   ThemeComponent,
   Toggle,
+  Translate,
+  useI18n,
   useSearch,
   useTimer,
   Wait,
