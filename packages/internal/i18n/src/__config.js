@@ -18,6 +18,10 @@ export const i18nConfig = {
     listItem3: {
       nb: "Tredje element",
       en: "3rd"
+    },
+    next: {
+      nb: "Neste",
+      en: "Next"
     }
   },
   language: "en",

@@ -1,6 +1,6 @@
 import format from "./format.currency"
 
-import { i18nConfig } from "../config"
+import { i18nConfig } from "../__config"
 
 const formatter = value => {
   return format(

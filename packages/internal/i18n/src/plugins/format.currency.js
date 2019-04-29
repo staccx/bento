@@ -1,10 +1,10 @@
 // import getLocaleOptions from "./_getLocaleOptions"
-import { formatCurrency } from "@staccx/formatting"
+import { formatCurrency as formatFunction } from "@staccx/formatting"
 import _createFormatter from "./_createFormatter"
 
 const regex = new RegExp(/{currency\(\s*(\w+)\)}/, "g")
 
-export default (value, language, options, data = {}) => {
+const formatCurrency = (value, language, options, data = {}) => {
   return _createFormatter({
     name: "currency",
     options,
@@ -13,6 +13,8 @@ export default (value, language, options, data = {}) => {
     value,
     regex,
     valueParser: val => parseInt(val, 10),
-    formatFunction: formatCurrency
+    formatFunction
   })
 }
+
+export default formatCurrency
