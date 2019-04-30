@@ -103,6 +103,22 @@ export const BoxStyling = theming.createVariants(
     `,
     statsContainer: css`
       background-color: ${theming.color("b1")};
+    `,
+    layoutBox: css`
+      background-color: ${theming.color.white};
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+
+      /* Small-screen Dissolve */
+      @media (max-width: 489px) {
+        padding: ${p =>
+          p.smallScreenDissolve
+            ? "0"
+            : p.size === "flush"
+            ? "0"
+            : theming.spacing.medium};
+        background-color: ${p => p.smallScreenDissolve && "transparent"};
+        box-shadow: ${p => p.smallScreenDissolve && "none"};
+      }
     `
   },
   Box.themeProps.box
