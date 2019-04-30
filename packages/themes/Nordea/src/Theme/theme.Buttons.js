@@ -16,7 +16,7 @@ export const ButtonStyling = theming.createVariants(
     [theming.VARIANT_DEFAULT]: css`
       ${baseStyling};
     `,
-    todoList: css`
+    taskList: css`
       ${baseStyling};
       display: flex;
       min-height: 0;
