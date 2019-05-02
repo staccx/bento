@@ -274,15 +274,19 @@ export const ButtonStyling = theming.createVariants(
       font-size: ${theming.font.base};
       font-weight: normal;
       color: ${theming.color.text};
-      cursor: pointer;
       transition: transform 500ms ease;
       line-height: initial;
 
       :hover,
       :focus {
-        transform: translateX(10px);
         background-color: ${theming.color("veryLightGray")};
-        color: ${theming.color.text};
+        ${p =>
+          !p.disabled &&
+          css`
+            transform: translateX(10px);
+
+            color: ${theming.color.text};
+          `}
       }
 
       @media (min-width: 720px) {
