@@ -1,4 +1,3 @@
-```jsx
 <div>
   <p style={{ marginBottom: "24px" }}>
     This is a component that gets out of your way. The first child will be used
@@ -16,4 +15,3 @@
     </div>
   </Expand>
 </div>
-```

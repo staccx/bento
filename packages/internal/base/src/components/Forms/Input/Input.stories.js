@@ -27,3 +27,5 @@ storiesOf("Components|Base/Forms/Input", module)
   .add("Help text", () => (
     <Input label={"Helping you"} helpText={"This is a helping text"} />
   ))
+  .add("Email", () => <Input label={"Your Email..."} type={"email"} />)
+  .add("Text", () => <Input label={"Some text"} type={"text"} />)
