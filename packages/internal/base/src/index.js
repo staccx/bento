@@ -157,6 +157,9 @@ import Development from "./hoc/Development/Development"
 import I18n, { useI18n } from "./components/i18n/I18n"
 import Translate from "./components/i18n/Translate"
 
+import SkeletonPulse from "./components/Skeleton/Skeleton.Pulse"
+import SkeletonLine from "./components/Skeleton/Skeleton.Line"
+
 const icons = {
   QuestionMark
 }
@@ -244,6 +247,8 @@ export {
   Slider2Handle,
   SelectOption,
   SelectSimple,
+  SkeletonPulse,
+  SkeletonLine,
   State,
   Slider,
   Slider2,
