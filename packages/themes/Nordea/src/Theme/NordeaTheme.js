@@ -15,6 +15,7 @@ import {
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { NewBadgeBadgeStyling } from "./theme.NewBadges"
 import {
+  ExpandWrapperStyling,
   ExpandBtnStyling,
   ExpandItemStyling,
   ExpandIconStyling
@@ -243,6 +244,7 @@ const theme = new theming.Theme({
   .add(MenuIcon)
   .add(CloseIcon)
   .add(WrapperStyling)
+  .add(ExpandWrapperStyling)
   .add(ExpandBtnStyling)
   .add(ExpandItemStyling)
   .add(ExpandIconStyling)

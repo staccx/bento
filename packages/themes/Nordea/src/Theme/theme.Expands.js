@@ -1,6 +1,15 @@
 import { css } from "styled-components"
 import { Expand, theming } from "@staccx/base"
 
+export const ExpandWrapperStyling = theming.createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      background-color: ${theming.color("tableGray")};
+    `
+  },
+  Expand.themeProps.wrapper.name
+)
+
 const expandBtnStyling = css`
   cursor: pointer;
   padding: ${theming.spacing.small} ${theming.spacing.medium};
