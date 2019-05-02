@@ -91,7 +91,8 @@ const spacing = {
   mediumPlus: "32px",
   medium: "24px",
   small: "12px",
-  tiny: "6px"
+  tiny: "6px",
+  flush: "0"
 }
 
 const color = {
