@@ -159,6 +159,7 @@ import Translate from "./components/i18n/Translate"
 
 import SkeletonPulse from "./components/Skeleton/Skeleton.Pulse"
 import SkeletonLine from "./components/Skeleton/Skeleton.Line"
+import SkeletonCircle from "./components/Skeleton/Skeleton.Circle"
 
 const icons = {
   QuestionMark
@@ -249,6 +250,7 @@ export {
   SelectSimple,
   SkeletonPulse,
   SkeletonLine,
+  SkeletonCircle,
   State,
   Slider,
   Slider2,
