@@ -5,8 +5,10 @@ import { themePropTypes } from "../../constants/themeContants"
 import { applyVariants, borderRadius } from "../../theming"
 import SkeletonPulse from "./Skeleton.Pulse"
 
-const SkeletonLine = ({ className, width, ...restProps }) => {
-  return <Line className={className} width={width} {...restProps} />
+const SkeletonLine = ({ className, width, height, ...restProps }) => {
+  return (
+    <Line className={className} width={width} height={height} {...restProps} />
+  )
 }
 
 SkeletonLine.themeProps = {
@@ -20,7 +22,7 @@ SkeletonLine.themeProps = {
 export const SKELETONLINE = "skeletonline"
 
 export const Line = styled(SkeletonPulse)`
-  height: 1em;
+  height: ${p => (p.height ? p.height : "1em")};
   width: ${p => (p.width ? p.width : "5.5em")};
   max-width: ${p => (p.width ? p.width : "none")};
   border-radius: ${borderRadius};

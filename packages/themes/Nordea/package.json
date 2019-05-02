@@ -27,6 +27,7 @@
   "dependencies": {
     "@staccx/animations": "^9.0.0-alpha.2",
     "@staccx/base": "^9.0.0-alpha.5",
+    "@staccx/color": "^9.0.0-alpha.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },

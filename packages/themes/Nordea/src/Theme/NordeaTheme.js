@@ -66,6 +66,7 @@ import { MenuIcon } from "./Icons/Menu"
 import { WrapperStyling } from "./theme.Wrapper"
 import { CheckBoxLabelStyling } from "./theme.Checkbox"
 import { ItemGroupStyling, ItemGroupWrapperStyling } from "./theme.ItemGroup"
+import { SkeletonPulseStyling } from "./theme.Skeleton"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -247,5 +248,6 @@ const theme = new theming.Theme({
   .add(CheckBoxLabelStyling)
   .add(ItemGroupStyling)
   .add(ItemGroupWrapperStyling)
+  .add(SkeletonPulseStyling)
 
 export default theme
