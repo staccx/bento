@@ -252,7 +252,7 @@ export const ButtonStyling = theming.createVariants(
       background-color: transparent;
       padding: 0;
       color: ${theming.color.primary};
-      border-bottom: 3px solid currentColor;
+      border-bottom: ${p => (p.isActive ? "3px solid currentColor" : "none")};
       min-height: 26px;
 
       &:hover,
@@ -260,6 +260,13 @@ export const ButtonStyling = theming.createVariants(
       &:focus {
         color: ${theming.color("b3")};
         background-color: transparent;
+      }
+
+      @media (max-width: 489px) {
+        :hover,
+        :active {
+          color: ${theming.color.primary};
+        }
       }
     `,
     caseListItem: css`
