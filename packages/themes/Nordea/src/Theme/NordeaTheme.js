@@ -121,6 +121,7 @@ const color = {
   b1: "#99CCFF",
   bg1: "#E5F2FF",
   bg2: "#F5F5F5",
+  bg3: "#CAE5FF",
   p3: "#F0C1AE",
   p2: "#FBD9CA",
   p1: "#FDECE4",
@@ -145,6 +146,7 @@ const appSpecificColor = {
   chatBubbleBgOtherUser: color.b2,
   chatBubbleBgCurrentUserText: color.text,
   chatBubbleBgOtherUserText: color.white,
+  iconChatBubblesBg: color.bg3,
   progressDone: color.a3
 }
 
