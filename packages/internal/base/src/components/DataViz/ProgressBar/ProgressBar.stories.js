@@ -11,21 +11,29 @@ storiesOf("components|base/DataViz/ProgressBar", module)
       text: docs
     }
   })
-  .add("props with knobs", () => {
-    const label = "Progress"
-    const defaultValue = "0.5"
-    const options = {
-      range: true,
-      min: 0,
-      max: 1,
-      warningThreshold: 0.85,
-      step: 0.01
+  .add(
+    "props with knobs",
+    () => {
+      const label = "Progress"
+      const defaultValue = "0.5"
+      const options = {
+        range: true,
+        min: 0,
+        max: 1,
+        warningThreshold: 0.85,
+        step: 0.01
+      }
+      const value = number(label, defaultValue, options)
+      return (
+        <ProgressBar
+          progress={value}
+          warningThreshold={options.warningThreshold}
+        />
+      )
+    },
+    {
+      info: {
+        text: docs
+      }
     }
-    const value = number(label, defaultValue, options)
-    return (
-      <ProgressBar
-        progress={value}
-        warningThreshold={options.warningThreshold}
-      />
-    )
-  })
+  )
