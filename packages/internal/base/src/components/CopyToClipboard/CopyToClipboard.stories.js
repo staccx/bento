@@ -11,7 +11,7 @@ storiesOf("components|base/CopyToClipboard", module)
     </Copy>
   ))
   .add("with CopyText", () => (
-    <Copy copyText={"This will be copied"}>
+    <Copy copyText={"This is changed"}>
       <Text> This is some text</Text>{" "}
     </Copy>
   ))
