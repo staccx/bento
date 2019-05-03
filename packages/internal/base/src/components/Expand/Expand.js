@@ -22,8 +22,8 @@ const Expand = ({
   const handleExpand = event => {
     setIsExpanded(!isExpanded)
 
-    if (this.props.onClick) {
-      this.props.onClick(event)
+    if (onClick) {
+      onClick(event)
     }
   }
 
