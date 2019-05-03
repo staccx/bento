@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react"
 import Label from "./Label"
 import docs from "./Label.md"
 
-storiesOf("components|base/Label", module)
+storiesOf("components|base/Forms/Label", module)
   .add("No props", () => <Label>This is a label</Label>, {
     info: {
       text: docs
