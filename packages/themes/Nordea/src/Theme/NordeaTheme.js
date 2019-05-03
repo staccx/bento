@@ -172,7 +172,7 @@ const fontWeight = {
 }
 
 const fontFamily = {
-  heading: "NordeaSansSmall",
+  heading: "NordeaSansLarge",
   body: "NordeaSansSmall"
 }
 
