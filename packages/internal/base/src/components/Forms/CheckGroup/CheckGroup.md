@@ -1,4 +1,4 @@
-```jsx harmony
+
 const handleRadioChange = value => {
   console.log("You radioed " + value)
 };
@@ -43,4 +43,4 @@ const handleCheckboxChange = value => {
     </CheckBox>
   </CheckGroup>
 </div>
-```
+
