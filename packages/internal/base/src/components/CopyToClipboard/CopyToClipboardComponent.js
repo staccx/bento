@@ -1,49 +1,43 @@
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import CopyToClipboard from "../../hoc/Clipboard/CopyToClipboard"
-import React from "react"
+import React, { useState } from "react"
 import Upload from "../Icons/Upload"
 import Check from "../Icons/Check"
 import ThemeComponent from "../Theme/ThemeComponent"
 import { applyVariants } from "../../theming"
 import { themePropTypes, commonPropTypes } from "../../constants/themeContants"
 
-class CopyToClipboardComponent extends React.PureComponent {
-  constructor(props, context) {
-    super(props, context)
+const CopyToClipboardComponent = ({ children, copyText }) => {
+  const [copied, setCopied] = useState(false)
 
-    this.handleClick = this.handleClick.bind(this)
-
-    this.state = {
-      copied: false
-    }
+  if (!copyText) {
+    throw new Error("Copy text is required")
   }
 
-  handleClick(copy) {
-    copy(this.props.copyText)
-    this.setState({ copied: true }, () => {
-      setTimeout(() => {
-        this.setState({ copied: false })
-      }, 1000)
-    })
+  const handleClick = copy => {
+    copy(copyText)
+
+    setCopied(true)
+    setTimeout(() => {
+      setCopied(false)
+    }, 1000)
   }
 
-  render() {
-    return (
-      <CopyToClipboard children={this.props.children}>
-        {({ copy }) => (
-          <ClipboardWrapper
-            onClick={() => {
-              this.handleClick(copy)
-            }}
-          >
-            {this.props.children}
-            {this.state.copied ? <Copied /> : <Copy />}
-          </ClipboardWrapper>
-        )}
-      </CopyToClipboard>
-    )
-  }
+  return (
+    <CopyToClipboard children={children}>
+      {({ copy }) => (
+        <ClipboardWrapper
+          onClick={() => {
+            handleClick(copy)
+          }}
+        >
+          {children}
+          {copied ? <Copied /> : <Copy />}
+        </ClipboardWrapper>
+      )}
+    </CopyToClipboard>
+  )
 }
 
 CopyToClipboardComponent.themeProps = {
