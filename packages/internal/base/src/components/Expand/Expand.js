@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { BounceIn } from "@staccx/animations"
@@ -7,80 +7,62 @@ import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
 import ThemeComponent from "../Theme/ThemeComponent"
 import { applyVariants, color, spacing } from "../../theming"
 
-class Expand extends Component {
-  constructor(props) {
-    super(props)
-    this.handleExpand = this.handleExpand.bind(this)
-    this.state = {
-      isExpanded: this.props.expanded
-    }
-  }
+const Expand = ({
+  className,
+  expanded = false,
+  onClick,
+  children,
+  title,
+  hideIcon,
+  variant,
+  ...restProps
+}) => {
+  const [isExpanded, setIsExpanded] = useState(expanded)
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.expanded !== undefined) {
-      this.setState({ isExpanded: nextProps.expanded })
-    }
-  }
+  const handleExpand = event => {
+    setIsExpanded(!isExpanded)
 
-  handleExpand(event) {
-    this.setState({
-      isExpanded: !this.state.isExpanded
-    })
     if (this.props.onClick) {
       this.props.onClick(event)
     }
   }
 
-  render() {
-    const {
-      children,
-      className,
-      onClick,
-      title,
-      hideIcon,
-      variant,
-      ...restProps
-    } = this.props
-
-    const { isExpanded } = this.state
-
-    return (
-      <ExpandWrapper className={className} variant={variant} {...restProps}>
-        {React.Children.map(children, (child, i) => {
-          // Ignore the first child
-          if (i < 1) {
-            return (
-              <ExpandBtn
-                title={title}
-                isExpanded={isExpanded}
-                onClick={this.handleExpand}
-                aria-expanded={isExpanded}
-                aria-controls={title}
-                id={title + "2"}
-                variant={variant}
-              >
-                {child}
-                {!hideIcon && (
-                  <ExpandIcon variant={variant} isExpanded={isExpanded} />
-                )}
-              </ExpandBtn>
-            )
-          }
+  return (
+    <ExpandWrapper className={className} variant={variant} {...restProps}>
+      {React.Children.map(children, (child, i) => {
+        // Ignore the first child
+        if (i < 1) {
           return (
-            isExpanded && (
-              <ExpandItem
-                id={title}
-                aria-labelledby={title + "2"}
-                variant={variant}
-              >
-                {child}
-              </ExpandItem>
-            )
+            <ExpandBtn
+              title={title}
+              isExpanded={isExpanded}
+              onClick={e => handleExpand(e)}
+              aria-expanded={isExpanded}
+              aria-controls={title}
+              id={title + "2"}
+              variant={variant}
+            >
+              {child}
+              {!hideIcon && (
+                <ExpandIcon variant={variant} isExpanded={isExpanded} />
+              )}
+            </ExpandBtn>
           )
-        })}
-      </ExpandWrapper>
-    )
-  }
+        }
+        return (
+          isExpanded && (
+            <ExpandItem
+              id={title}
+              aria-labelledby={title + "2"}
+              variant={variant}
+            >
+              {child}
+            </ExpandItem>
+          )
+        )
+      })}
+    </ExpandWrapper>
+  )
 }
 
 Expand.themeProps = {
