@@ -12,21 +12,33 @@ storiesOf("components|base/DataViz/Fraction", module)
       text: docs
     }
   })
-  .add("with sliding knob", () => {
-    const label = "progress"
-    const defaultValue = "5"
-    const options = {
-      range: true,
-      min: 0,
-      max: 10,
-      step: 1
+  .add(
+    "with sliding knob",
+    () => {
+      const label = "progress"
+      const defaultValue = "5"
+      const options = {
+        range: true,
+        min: 0,
+        max: 10,
+        step: 1
+      }
+      const value = number(label, defaultValue, options)
+      return (
+        <div>
+          <Label>Progress</Label> <Fraction value={value} max={options.max} />
+        </div>
+      )
+    },
+    {
+      info: {
+        text: docs
+      }
     }
-    const value = number(label, defaultValue, options)
-    return (
-      <div>
-        <Label>Progress</Label> <Fraction value={value} max={options.max} />
-      </div>
-    )
-  })
+  )
 
-  .add("with props at 5", () => <Fraction value={5} max={10} />)
+  .add("with props at 5", () => <Fraction value={5} max={10} />, {
+    info: {
+      text: docs
+    }
+  })
