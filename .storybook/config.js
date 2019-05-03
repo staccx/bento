@@ -25,6 +25,7 @@ addParameters({
   backgrounds: [
     { name: 'twitter', value: '#00aced' },
     { name: 'facebook', value: '#3b5998' },
+    { name: 'white', value:'#FFFFFF'}
   ],
   info:{ inline: false},
   knobs: {
