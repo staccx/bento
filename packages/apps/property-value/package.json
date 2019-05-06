@@ -13,7 +13,6 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "precommit": "lint-staged",
     "start": "react-app-rewired start",
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "build:app": "react-scripts build",
@@ -24,12 +23,6 @@
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint",
-      "git add"
-    ]
   },
   "files": [
     "dist"

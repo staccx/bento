@@ -12,7 +12,6 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "precommit": "lint-staged",
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "test:nocov": "react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom --watch",
@@ -21,12 +20,6 @@
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint",
-      "git add"
-    ]
   },
   "files": [
     "dist"
