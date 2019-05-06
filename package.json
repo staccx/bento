@@ -2,7 +2,7 @@
   "name": "@staccx/bento",
   "private": true,
   "scripts": {
-    "precommit": "lerna run --concurrency 1 --stream precommit --since HEAD && lint-staged",
+    "precommit": "lint-staged",
     "postcommit": "git update-index --again",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "test": "react-scripts test --coverage --watchAll=false --verbose  --testMatch **/packages/**/*.test.js --coverage",
@@ -28,12 +28,6 @@
   "workspaces": [
     "packages/**"
   ],
-  "lint-staged": {
-    "*.js": [
-      "eslint",
-      "git add"
-    ]
-  },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.2.2",
