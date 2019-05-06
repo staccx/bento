@@ -1340,7 +1340,7 @@
 
 "@icons/material@^0.2.4":
   version "0.2.4"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
+  resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha1-6QyfcXaLNzbnbX3WeD/Gwq+oi8g=
 
 "@jest/console@^24.7.1":
@@ -2504,7 +2504,7 @@
 
 "@storybook/addon-knobs@^5.0.11":
   version "5.0.11"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@storybook/addon-knobs/-/addon-knobs-5.0.11.tgz#1f093560ceec78f4906e0575ded0ac03b4494b09"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.0.11.tgz#1f093560ceec78f4906e0575ded0ac03b4494b09"
   integrity sha1-Hwk1YM7sePSQbgV13tCsA7RJSwk=
   dependencies:
     "@storybook/addons" "5.0.11"
@@ -2579,7 +2579,7 @@
 
 "@storybook/addons@5.0.11":
   version "5.0.11"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@storybook/addons/-/addons-5.0.11.tgz#86de70747e0a692d9dd8ea431daa1147d8785697"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.0.11.tgz#86de70747e0a692d9dd8ea431daa1147d8785697"
   integrity sha1-ht5wdH4KaS2d2OpDHaoRR9h4Vpc=
   dependencies:
     "@storybook/channels" "5.0.11"
@@ -2608,7 +2608,7 @@
 
 "@storybook/channels@5.0.11":
   version "5.0.11"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@storybook/channels/-/channels-5.0.11.tgz#fae33809ed14187e7962bb10b813085c6838538c"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.0.11.tgz#fae33809ed14187e7962bb10b813085c6838538c"
   integrity sha1-+uM4Ce0UGH55YrsQuBMIXGg4U4w=
   dependencies:
     core-js "^2.6.5"
@@ -2642,7 +2642,7 @@
 
 "@storybook/client-logger@5.0.11":
   version "5.0.11"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@storybook/client-logger/-/client-logger-5.0.11.tgz#1211421355188f418cc421893f760a2feaf22d27"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.0.11.tgz#1211421355188f418cc421893f760a2feaf22d27"
   integrity sha1-EhFCE1UYj0GMxCGJP3YKL+ryLSc=
   dependencies:
     core-js "^2.6.5"
@@ -2680,7 +2680,7 @@
 
 "@storybook/components@5.0.11":
   version "5.0.11"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@storybook/components/-/components-5.0.11.tgz#0cf3aad5df92bae9d896a4d6cc376d4445bbe27f"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.0.11.tgz#0cf3aad5df92bae9d896a4d6cc376d4445bbe27f"
   integrity sha1-DPOq1d+SuunYlqTWzDdtREW74n8=
   dependencies:
     "@storybook/addons" "5.0.11"
@@ -2718,7 +2718,7 @@
 
 "@storybook/core-events@5.0.11":
   version "5.0.11"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@storybook/core-events/-/core-events-5.0.11.tgz#c7f10df6de6eb9a92cb4fe30b77e956f11b971e6"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.0.11.tgz#c7f10df6de6eb9a92cb4fe30b77e956f11b971e6"
   integrity sha1-x/EN9t5uuakstP4wt36VbxG5ceY=
   dependencies:
     core-js "^2.6.5"
@@ -2848,7 +2848,7 @@
 
 "@storybook/router@5.0.11":
   version "5.0.11"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@storybook/router/-/router-5.0.11.tgz#e742ec567f623877bdb45b5b26551cb9380c1bf2"
+  resolved "https://registry.yarnpkg.com/@storybook/router/-/router-5.0.11.tgz#e742ec567f623877bdb45b5b26551cb9380c1bf2"
   integrity sha1-50LsVn9iOHe9tFtbJlUcuTgMG/I=
   dependencies:
     "@reach/router" "^1.2.1"
@@ -2880,7 +2880,7 @@
 
 "@storybook/theming@5.0.11":
   version "5.0.11"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@storybook/theming/-/theming-5.0.11.tgz#46e243c36324676c36393c01695bdbd6369e79b4"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.0.11.tgz#46e243c36324676c36393c01695bdbd6369e79b4"
   integrity sha1-RuJDw2MkZ2w2OTwBaVvb1jaeebQ=
   dependencies:
     "@emotion/core" "^10.0.7"
@@ -4146,7 +4146,7 @@ babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
 
 babel-core@7.0.0-bridge.0:
   version "7.0.0-bridge.0"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/babel-core/-/babel-core-7.0.0-bridge.0.tgz#95a492ddd90f9b4e9a4a1da14eb335b87b634ece"
+  resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-7.0.0-bridge.0.tgz#95a492ddd90f9b4e9a4a1da14eb335b87b634ece"
   integrity sha1-laSS3dkPm06aSh2hTrM1uHtjTs4=
 
 babel-eslint@10.0.1:
@@ -12863,7 +12863,7 @@ marksy@^6.1.0:
 
 material-colors@^1.2.1:
   version "1.2.6"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
+  resolved "https://registry.yarnpkg.com/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
   integrity sha1-bRlYhxEmmSzuzHL0vMTY8BCGX0Y=
 
 math-expression-evaluator@^1.2.14:
@@ -16357,7 +16357,7 @@ react-clientside-effect@^1.2.0:
 
 react-color@^2.17.0:
   version "2.17.3"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/react-color/-/react-color-2.17.3.tgz#b8556d744f95193468c7061d2aa19180118d4a48"
+  resolved "https://registry.yarnpkg.com/react-color/-/react-color-2.17.3.tgz#b8556d744f95193468c7061d2aa19180118d4a48"
   integrity sha1-uFVtdE+VGTRoxwYdKqGRgBGNSkg=
   dependencies:
     "@icons/material" "^0.2.4"
@@ -16600,7 +16600,7 @@ react-ink@^6.1.0:
 
 react-input-autosize@^2.2.1:
   version "2.2.1"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/react-input-autosize/-/react-input-autosize-2.2.1.tgz#ec428fa15b1592994fb5f9aa15bb1eb6baf420f8"
+  resolved "https://registry.yarnpkg.com/react-input-autosize/-/react-input-autosize-2.2.1.tgz#ec428fa15b1592994fb5f9aa15bb1eb6baf420f8"
   integrity sha1-7EKPoVsVkplPtfmqFbsetrr0IPg=
   dependencies:
     prop-types "^15.5.8"
@@ -16818,7 +16818,7 @@ react-scripts@^3.0.0:
 
 react-select@^2.3.0:
   version "2.4.3"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/react-select/-/react-select-2.4.3.tgz#62efdf76d7e33e9bde22d907a0cc8abd0aeab656"
+  resolved "https://registry.yarnpkg.com/react-select/-/react-select-2.4.3.tgz#62efdf76d7e33e9bde22d907a0cc8abd0aeab656"
   integrity sha1-Yu/fdtfjPpveItkHoMyKvQrqtlY=
   dependencies:
     classnames "^2.2.5"
@@ -16988,7 +16988,7 @@ react@>=0.14.x, react@^16.3.2, react@^16.6.0, react@^16.8.1, react@^16.8.6:
 
 reactcss@^1.2.0:
   version "1.2.3"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/reactcss/-/reactcss-1.2.3.tgz#c00013875e557b1cf0dfd9a368a1c3dab3b548dd"
+  resolved "https://registry.yarnpkg.com/reactcss/-/reactcss-1.2.3.tgz#c00013875e557b1cf0dfd9a368a1c3dab3b548dd"
   integrity sha1-wAATh15Vexzw39mjaKHD2rO1SN0=
   dependencies:
     lodash "^4.0.1"
@@ -19256,7 +19256,7 @@ terser-webpack-plugin@1.2.3, terser-webpack-plugin@^1.1.0, terser-webpack-plugin
 
 terser@3.14.1, terser@^3.10.11, terser@^3.16.1:
   version "3.14.1"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/terser/-/terser-3.14.1.tgz#cc4764014af570bc79c79742358bd46926018a32"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-3.14.1.tgz#cc4764014af570bc79c79742358bd46926018a32"
   integrity sha1-zEdkAUr1cLx5x5dCNYvUaSYBijI=
   dependencies:
     commander "~2.17.1"
