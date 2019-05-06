@@ -1,4 +1,5 @@
-```jsx
+```jsx harmony
+Alert
 <div>
   <Alert type="warning">This is a warning</Alert>
   <Alert type="success">This is a Success-message</Alert>

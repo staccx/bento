@@ -9,7 +9,7 @@ const ProgressBar = require("progress")
 /* eslint-disable-next-line */
 const colors = require("colors")
 
-glob("./src/**/!(*.preview).js", {}, function(er, files) {
+glob("./src/**/!(*.preview|*.stories).js", {}, function(er, files) {
   const theming = {
     path: path.resolve("./src/theming/index.js"),
     name: "Theming.js"
