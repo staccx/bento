@@ -15,21 +15,25 @@ const RefTest = () => {
   )
 }
 
+const StorybookInput = props => (
+  <div>
+    <Input {...props} />
+  </div>
+)
+
 storiesOf("Components|Base/Forms/Input", module)
-  .add("No props", () => (
-    <div>
-      <Input />
-    </div>
+  .add("No props", () => <StorybookInput />)
+  .add("With label", () => <StorybookInput label={"Your label"} />)
+  .add("Log", () => (
+    <StorybookInput label={"Your label"} onChange={console.log} />
   ))
-  .add("With label", () => <Input label={"Your label"} />)
-  .add("Log", () => <Input label={"Your label"} onChange={console.log} />)
   .add("Focus", () => <RefTest />)
   .add("Default value", () => (
-    <Input defaultValue={"This is the default value"} />
+    <StorybookInput defaultValue={"This is the default value"} />
   ))
-  .add("Placeholder", () => <Input placeholder={"Placeholder"} />)
+  .add("Placeholder", () => <StorybookInput placeholder={"Placeholder"} />)
   .add("Help text", () => (
-    <Input label={"Helping you"} helpText={"This is a helping text"} />
+    <StorybookInput label={"Helping you"} helpText={"This is a helping text"} />
   ))
-  .add("Email", () => <Input label={"Your Email..."} type={"email"} />)
-  .add("Text", () => <Input label={"Some text"} type={"text"} />)
+  .add("Email", () => <StorybookInput label={"Your Email..."} type={"email"} />)
+  .add("Text", () => <StorybookInput label={"Some text"} type={"text"} />)
