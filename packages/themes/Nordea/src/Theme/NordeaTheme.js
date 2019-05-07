@@ -68,6 +68,7 @@ import { WrapperStyling } from "./theme.Wrapper"
 import { CheckBoxLabelStyling } from "./theme.Checkbox"
 import { ItemGroupStyling, ItemGroupWrapperStyling } from "./theme.ItemGroup"
 import { SkeletonPulseStyling } from "./theme.Skeleton"
+import { AnchorStyling } from "./theme.Anchors"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -253,5 +254,6 @@ const theme = new theming.Theme({
   .add(ItemGroupStyling)
   .add(ItemGroupWrapperStyling)
   .add(SkeletonPulseStyling)
+  .add(AnchorStyling)
 
 export default theme
