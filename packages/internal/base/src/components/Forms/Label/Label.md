@@ -1,3 +1,3 @@
-
-  <Label>Labeltekst</Label>
-
+```jsx
+<Label>Labeltekst</Label>
+```

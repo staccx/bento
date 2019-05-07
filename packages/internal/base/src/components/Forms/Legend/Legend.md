@@ -1,3 +1,3 @@
-
+```jsx
 <Legend>Legendtekst</Legend>
-
+```
