@@ -27,10 +27,10 @@ SkeletonCircle.themeProps = {
 export const SKELETONCIRCLE = "skeletoncircle"
 
 export const Circle = styled(SkeletonPulse)`
-  height: ${p => (p.height ? p.height : spacing.medium)(p)};
-  width: ${p => (p.width ? p.width : spacing.medium)(p)};
+  height: ${p => (p.height ? p.height : spacing.medium)};
+  width: ${p => (p.width ? p.width : spacing.medium)};
   border-radius: 50%;
-  max-width: ${p => (p.width ? p.width : spacing.medium)(p)};
+  max-width: ${p => (p.width ? p.width : spacing.medium)};
 
   &::before {
     content: "\\00a0";
