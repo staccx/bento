@@ -12,7 +12,7 @@ storiesOf("components|base/Image", module)
       const label = "Width"
       const defaultValue = "1"
       const options = {
-        min: 10,
+        min: 1,
         max: 300,
         step: 5
       }
