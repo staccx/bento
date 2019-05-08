@@ -1,83 +1,129 @@
+import React, { createContext, useReducer, useMemo } from "react"
 import PropTypes from "prop-types"
-import React from "react"
-import { Provider } from "../context"
-import SanityQueryHelper from "sanity-query-helper"
+import produce from "immer"
+import imageUrlBuilder from "@sanity/image-url"
+import sanityClient from "@sanity/client"
+import { groqGetDocumentById, groqGetType } from "./groqs"
 
-class SanityProvider extends React.Component {
-  constructor(props, context) {
-    super(props, context)
-    const helper = new SanityQueryHelper({
-      sanityOptions: {
-        projectId: props.projectId,
-        dataset: props.dataset,
-        useCdn: props.useCdn,
-        withCredentials: props.withCredentials
-      }
-    })
+export const Context = createContext({})
 
-    this.state = {
-      helper,
-      results: {}
-    }
-    this.requests = {}
+const actionTypes = {
+  setDocument: "setDocument",
+  setType: "setType",
+  fetch: "fetch"
+}
 
-    this.send = this.send.bind(this)
-    this.queryHelper = this.queryHelper.bind(this)
-  }
+const initialState = {
+  documents: {},
+  types: {},
+  queries: {}
+}
 
-  send(query, id) {
-    if (this.state.results[id] || this.requests[id]) {
-      // Early out. Probably just the same component mounting again
-      return
-    }
-    // reserve for other requests with same id
-    this.requests[id] = true
-
-    this.state.helper.client
-      .fetch(query)
-      .then(result => {
-        this.setState({
-          results: {
-            ...this.state.results,
-            [id]: result
-          }
-        })
-      })
-      .catch(console.error)
-  }
-
-  queryHelper(helper, id) {
-    if (this.state.results[id] || this.requests[id]) {
-      // Early out. Probably just the same component mounting again
-      return
-    }
-    // reserve for other requests with same id
-    this.requests[id] = true
-
-    helper.send().then(result =>
-      this.setState({
-        results: {
-          ...this.state.results,
-          [id]: result
+const reducer = (state, action) =>
+  produce(state, draft => {
+    switch (action.type) {
+      case actionTypes.setDocument:
+        if (!action.document) {
+          break
         }
-      })
-    )
+        draft.documents[action.document._id] = action.document
+        const { _type } = action.document
+        if (!draft.types[_type]) {
+          draft.types[_type] = []
+        }
+        draft.types[_type].push(action.document)
+        break
+      case actionTypes.setType:
+        const { documentType, documents } = action
+
+        if (!draft.types[documentType]) {
+          draft.types[documentType] = documents
+        }
+
+        documents.forEach(document => {
+          draft.documents[document._id] = document
+        })
+        break
+      case actionTypes.fetch:
+        draft.queries[action.id] = action.result
+        break
+      default:
+        break
+    }
+  })
+
+// TODO: Revamp sanity query help
+const SanityProvider = ({
+  children,
+  projectId,
+  dataset,
+  useCdn,
+  withCredentials
+}) => {
+  const [data, dispatch] = useReducer(reducer, initialState)
+  const client = sanityClient({
+    projectId,
+    dataset,
+    useCdn,
+    withCredentials
+  })
+
+  const builder = imageUrlBuilder(client)
+
+  const getImageUrl = (image, options = {}) =>
+    builder
+      .image(image)
+      .withOptions(options)
+      .url()
+
+  const getDocument = async id => {
+    if (data.documents[id]) {
+      return
+    }
+
+    const document = await client.fetch(groqGetDocumentById(), { id })
+
+    dispatch({ type: actionTypes.setDocument, document })
   }
 
-  render() {
-    return (
-      <Provider
-        value={{
-          helper: this.state.helper,
-          results: this.state.results,
-          send: this.send,
-          queryHelper: this.queryHelper
-        }}
-      >
-        {this.props.children}
-      </Provider>
-    )
+  const getType = async type => {
+    if (data.types[type]) {
+      return
+    }
+    const documents = await client.fetch(groqGetType(), { type })
+
+    dispatch({ type: actionTypes.setType, documents, documentType: type })
   }
+
+  const query = async (groq, id) => {
+    if (data.queries[groq]) {
+    }
+
+    const result = await client.fetch(groq)
+
+    dispatch({ type: actionTypes.fetch, result, id })
+  }
+
+  const value = useMemo(() => {
+    return data
+  }, [data])
+
+  console.log("Rerendering")
+  return (
+    <Context.Provider
+      value={{
+        ...value,
+        getImageUrl,
+        buildImage: builder.image,
+        getDocument,
+        getType,
+        query,
+        fetch: client ? client.fetch : null
+      }}
+    >
+      {children}
+    </Context.Provider>
+  )
 }
 
 export default SanityProvider
