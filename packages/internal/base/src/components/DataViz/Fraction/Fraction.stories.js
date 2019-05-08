@@ -7,13 +7,8 @@ import Label from "../../Forms/Label/Label"
 
 storiesOf("components|base/DataViz/Fraction", module)
   .addDecorator(withKnobs)
-  .add("no props", () => <Fraction />, {
-    info: {
-      text: docs
-    }
-  })
   .add(
-    "with sliding knob",
+    "DefaultValue 5",
     () => {
       const label = "progress"
       const defaultValue = "5"
@@ -37,7 +32,13 @@ storiesOf("components|base/DataViz/Fraction", module)
     }
   )
 
-  .add("with props at 5", () => <Fraction value={5} max={10} />, {
+  .add("With 20 as max", () => <Fraction value={10} max={20} />, {
+    info: {
+      text: docs
+    }
+  })
+
+  .add("With 2 as max", () => <Fraction value={1} max={2} />, {
     info: {
       text: docs
     }
