@@ -95,11 +95,11 @@ const SanityProvider = ({
     dispatch({ type: actionTypes.setType, documents, documentType: type })
   }
 
-  const query = async (groq, id) => {
+  const query = async (groq, id, params) => {
     if (data.queries[groq]) {
     }
 
-    const result = await client.fetch(groq)
+    const result = await client.fetch(groq, params)
 
     dispatch({ type: actionTypes.fetch, result, id })
   }
