@@ -49,3 +49,49 @@ storiesOf("components|base/DataViz/Donut", module)
       }
     }
   )
+  .add(
+    "DefaultValue 0",
+    () => {
+      const label = "Progress"
+      const defaultValue = 0
+      const options = {
+        range: true,
+        min: 0,
+        max: 1,
+        step: 0.01,
+        warningThreshold: 0.2
+      }
+      const value = number(label, defaultValue, options)
+      return (
+        <Donut progress={value} warningThreshold={options.warningThreshold} />
+      )
+    },
+    {
+      info: {
+        text: docs
+      }
+    }
+  )
+  .add(
+    "DefaultValue over max",
+    () => {
+      const label = "Progress"
+      const defaultValue = 11
+      const options = {
+        range: true,
+        min: 0,
+        max: 1,
+        step: 0.01,
+        warningThreshold: 0.2
+      }
+      const value = number(label, defaultValue, options)
+      return (
+        <Donut progress={value} warningThreshold={options.warningThreshold} />
+      )
+    },
+    {
+      info: {
+        text: docs
+      }
+    }
+  )

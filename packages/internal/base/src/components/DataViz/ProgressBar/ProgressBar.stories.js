@@ -84,3 +84,55 @@ storiesOf("components|base/DataViz/ProgressBar", module)
       }
     }
   )
+  .add(
+    "DefaultValue max",
+    () => {
+      const label = "Progress"
+      const defaultValue = 1
+      const options = {
+        range: true,
+        min: 0,
+        max: 1,
+        warningThreshold: 0.8,
+        step: 0.01
+      }
+      const value = number(label, defaultValue, options)
+      return (
+        <ProgressBar
+          progress={value}
+          warningThreshold={options.warningThreshold}
+        />
+      )
+    },
+    {
+      info: {
+        text: docs
+      }
+    }
+  )
+  .add(
+    "DefaultValue over max",
+    () => {
+      const label = "Progress"
+      const defaultValue = 200
+      const options = {
+        range: true,
+        min: 0,
+        max: 1,
+        warningThreshold: 0.2,
+        step: 0.01
+      }
+      const value = number(label, defaultValue, options)
+      return (
+        <ProgressBar
+          progress={value}
+          warningThreshold={options.warningThreshold}
+        />
+      )
+    },
+    {
+      info: {
+        text: docs
+      }
+    }
+  )

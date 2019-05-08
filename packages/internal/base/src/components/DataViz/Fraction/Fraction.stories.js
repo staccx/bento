@@ -43,3 +43,75 @@ storiesOf("components|base/DataViz/Fraction", module)
       text: docs
     }
   })
+  .add(
+    "DefaultValue 0",
+    () => {
+      const label = "progress"
+      const defaultValue = "0"
+      const options = {
+        range: true,
+        min: 0,
+        max: 10,
+        step: 1
+      }
+      const value = number(label, defaultValue, options)
+      return (
+        <div>
+          <Label>Progress</Label> <Fraction value={value} max={options.max} />
+        </div>
+      )
+    },
+    {
+      info: {
+        text: docs
+      }
+    }
+  )
+  .add(
+    "Max as 0",
+    () => {
+      const label = "progress"
+      const defaultValue = "1"
+      const options = {
+        range: true,
+        min: 0,
+        max: 0,
+        step: 1
+      }
+      const value = number(label, defaultValue, options)
+      return (
+        <div>
+          <Label>Progress</Label> <Fraction value={value} max={options.max} />
+        </div>
+      )
+    },
+    {
+      info: {
+        text: docs
+      }
+    }
+  )
+  .add(
+    "DefaultValue max",
+    () => {
+      const label = "progress"
+      const defaultValue = "10"
+      const options = {
+        range: true,
+        min: 0,
+        max: 10,
+        step: 1
+      }
+      const value = number(label, defaultValue, options)
+      return (
+        <div>
+          <Label>Progress</Label> <Fraction value={value} max={options.max} />
+        </div>
+      )
+    },
+    {
+      info: {
+        text: docs
+      }
+    }
+  )
