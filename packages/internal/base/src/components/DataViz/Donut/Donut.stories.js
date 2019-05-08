@@ -27,7 +27,7 @@ storiesOf("components|base/DataViz/Donut", module)
     }
   )
   .add(
-    "WarningThreshold Low",
+    "WarningThreshold 0.2",
     () => {
       const label = "Progress"
       const defaultValue = 0.8
