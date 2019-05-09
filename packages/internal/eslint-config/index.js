@@ -8,7 +8,8 @@ module.exports = {
       "error",
       { newIsCapExceptions: ["i18n"], capIsNewExceptions: ["Map", "Children"] }
     ],
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": 0
   },
   extends: [
     "standard",
