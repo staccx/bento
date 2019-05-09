@@ -50,13 +50,15 @@ const i18n = async ({
   yes,
   parent: { configPath, debug }
 }) => {
+  const { config } = await readConfig(configPath)
+
   const {
     sanityProjectId = project,
     sanityDataset = dataset,
     sanityDocType = type,
     sanityToken = token,
     translationReducer = convertTranslations
-  } = await readConfig(configPath)
+  } = config
 
   if (!sanityProjectId) {
     console.warn("No project provided")

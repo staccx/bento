@@ -1,7 +1,6 @@
 const spawn = require("child_process").spawn
+const cosmiconfig = require("cosmiconfig")
 const ora = require("ora")
-const fs = require("fs-extra")
-const path = require("path")
 const validatePackageName = require("validate-npm-package-name")
 const sanityClient = require("@sanity/client")
 
@@ -135,25 +134,26 @@ const traverse = function(o, fn) {
 
 const spinner = setupSpinner()
 
-const readConfig = async configPath => {
-  if (!configPath) {
-    spinner.info("No config path provided")
+const readConfig = async name => {
+  if (!name) {
+    spinner.info("No name provided")
     return {}
   }
+  const explorer = cosmiconfig(name)
   spinner.info("Checking for config file")
-  const configFile = path.resolve(process.cwd(), configPath)
-  const exists = await fs.exists(configFile)
-  if (exists) {
-    spinner.succeed("Config file found")
-    const getConfig = await require(configFile)
-    if (getConfig && typeof getConfig === "function") {
-      return getConfig()
+
+  try {
+    const config = await explorer.search()
+    if (config) {
+      spinner.succeed("Config file found")
+      return config
     } else {
-      spinner.fail("Config must return a single function")
+      spinner.info("No config file found")
     }
-  } else {
-    spinner.info("No config file found")
+  } catch (e) {
+    throw e
   }
+
   return {}
 }
 
