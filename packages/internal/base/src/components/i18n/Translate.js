@@ -6,21 +6,22 @@ import { commonPropTypes } from "../../constants/themeContants"
 /**
  * Component for translation
  * @param children
- * @param key
+ * @param i18n
  * @param data
  * @return {*}
  * @constructor
  */
-const Translate = ({ children, key, data }) => {
-  const [{ translate }] = useI18n()
+const Translate = ({ children, i18n, data }) => {
+  const { translate, texts } = useI18n()
 
-  if (!key) {
+  if (!i18n) {
+    console.log("Testing")
     loglevel.warn("No key supplied to I18n")
     return children
   }
 
-  if (Array.isArray(key)) {
-    const values = key.map((k, index) =>
+  if (Array.isArray(i18n)) {
+    const values = i18n.map((k, index) =>
       translate({
         key: k,
         data,
@@ -36,9 +37,10 @@ const Translate = ({ children, key, data }) => {
   }
 
   const fb = typeof children !== "function" ? children : null
-  const value = translate(key, data, fb)
+  const value = translate({ texts, key: i18n, data, fallback: fb })
+
   if (!value) {
-    loglevel.warn("No value found for", key)
+    loglevel.warn("No value found for", i18n)
     if (children) {
       loglevel.debug("Falling back to children")
       if (typeof children !== "function") {
