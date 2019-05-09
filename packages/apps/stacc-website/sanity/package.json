@@ -1,7 +1,7 @@
 {
   "name": "companywebsitetemplate",
   "private": true,
-  "version": "8.84.0",
+  "version": "8.87.0",
   "description": "",
   "main": "package.json",
   "author": "Espen Thomassen Sæveru <espensaeverud@gmail.com>",
@@ -23,7 +23,7 @@
     "@sanity/desk-tool": "^0.139.5",
     "@sanity/google-maps-input": "^0.139.5",
     "@sanity/production-preview": "^0.139.0",
-    "@staccx/base": "^8.84.0",
+    "@staccx/base": "^8.87.0",
     "airtable": "^0.5.6",
     "image-downloader": "^3.4.1",
     "prop-types": "^15.6.2",

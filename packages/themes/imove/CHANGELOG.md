@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.87.0](https://bitbucket.org/stacc-flow/bento/compare/v8.86.0...v8.87.0) (2019-05-09)
+
+
+### Bug Fixes
+
+* **imove-theme:** fix imove logo ([a78e5c0](https://bitbucket.org/stacc-flow/bento/commits/a78e5c0))
+
+
+
+
+
 # [8.84.0](https://bitbucket.org/stacc-flow/bento/compare/v8.83.2...v8.84.0) (2019-04-11)
 
 **Note:** Version bump only for package @staccx/imove-theme
