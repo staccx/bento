@@ -12,7 +12,7 @@ const SanityList = ({ type, children }) => {
 
   return useMemo(() => {
     return children(documents)
-  }, documents.length)
+  }, [documents.length])
 }
 
 export default SanityList
