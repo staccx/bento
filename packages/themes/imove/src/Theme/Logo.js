@@ -24,21 +24,7 @@ const Logo = ({ inverted, centered, width, height }) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M2.523 5.037H5.05V2.518A2.521 2.521 0 0 0 2.523 0 2.52 2.52 0 0 0 0 2.518c0 .698.285 1.326.74 1.78a2.507 2.507 0 0 0 1.783.739z"
-      fill="url(#gradient)"
     />
-    <defs>
-      <linearGradient
-        id="gradient"
-        x1="1.714"
-        y1="6.038"
-        x2=".309"
-        y2=".703"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#92F8B8" />
-        <stop offset="1" stopColor="#1D966C" />
-      </linearGradient>
-    </defs>
   </LogoImg>
 )
 
@@ -47,7 +33,7 @@ const LogoText = styled.path`
 `
 
 const LogoBlob = styled.path`
-  fill: url(#gradient);
+  fill: #5bca95;
 `
 
 const LogoImg = styled.svg`
