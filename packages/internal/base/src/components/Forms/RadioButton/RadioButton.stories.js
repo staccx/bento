@@ -6,7 +6,10 @@ storiesOf("Components|Base/Forms/RadioButton")
   .add("no props", () => <RadioButton>RadioButton</RadioButton>)
   .add("ID", () => <RadioButton id={"123123"}>Radiobutton</RadioButton>)
   .add("log", () => (
-    <RadioButton id={"3424"} onChange={() => console.log("Something")}>
+    <RadioButton
+      id={"3424"}
+      onChange={e => console.log("Something", e.target.value, e.target.id)}
+    >
       {" "}
       RadioButton{" "}
     </RadioButton>

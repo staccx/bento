@@ -20,11 +20,7 @@ const { version } = require("../package.json")
 program
   .version(version)
   .description("Command line tool for Stacc X")
-  .option(
-    "-c, --configPath [path]>",
-    "Path for finding config file",
-    "bento-config.js"
-  )
+  .option("-c, --configPath [path]>", "Path for finding config file", "bento")
   .option("-d, --debug", "Run without running commands")
 
 const list = val => {

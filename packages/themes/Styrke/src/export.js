@@ -117,6 +117,7 @@ const fontFamily = {
 }
 
 export default new theming.Theme({
+  name: "Styke",
   webfonts,
   font,
   fontWeight,

@@ -1,23 +1,20 @@
-import React from "react"
+import React, { useMemo } from "react"
 import PropTypes from "prop-types"
-import imageUrlBuilder from "@sanity/image-url"
-import { Consumer } from "../context"
 import { Image } from "@staccx/base"
+import useSanity from "./useSanity"
 
-const SanityImage = ({ children, image, metadata, ...props }) => {
-  return (
-    <Consumer>
-      {({ helper }) => {
-        const builder = imageUrlBuilder(helper.client)
+const SanityImage = ({ children, image, options, ...props }) => {
+  const { getImageUrl } = useSanity()
 
-        const img = builder.image(image)
-        if (!children) {
-          return <Image {...props} src={img.withOptions(props).url()} />
-        }
-        return children({ image: img })
-      }}
-    </Consumer>
-  )
+  const url = getImageUrl(image, options)
+
+  return useMemo(() => {
+    console.log("Rerendering image", url)
+    if (!children) {
+      return <Image {...props} src={url} />
+    }
+    return children(url)
+  }, [url])
 }
 
 SanityImage.propTypes = {

@@ -1,4 +1,4 @@
-```jsx
+
 <div>
   <CheckBox
     group="signer"
@@ -12,4 +12,3 @@
     You could also check off here
   </CheckBox>
 </div>
-```

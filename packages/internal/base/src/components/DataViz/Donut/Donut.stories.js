@@ -6,9 +6,8 @@ import docs from "./Donut.md"
 
 storiesOf("components|base/DataViz/Donut", module)
   .addDecorator(withKnobs)
-  .add("no props", () => <Donut />)
   .add(
-    "with slider knob",
+    "Default Value 0.5",
     () => {
       const label = "Progress"
       const defaultValue = 0.5
@@ -20,6 +19,75 @@ storiesOf("components|base/DataViz/Donut", module)
       }
       const value = number(label, defaultValue, options)
       return <Donut progress={value} />
+    },
+    {
+      info: {
+        text: docs
+      }
+    }
+  )
+  .add(
+    "WarningThreshold 0.2",
+    () => {
+      const label = "Progress"
+      const defaultValue = 0.8
+      const options = {
+        range: true,
+        min: 0,
+        max: 1,
+        step: 0.01,
+        warningThreshold: 0.2
+      }
+      const value = number(label, defaultValue, options)
+      return (
+        <Donut progress={value} warningThreshold={options.warningThreshold} />
+      )
+    },
+    {
+      info: {
+        text: docs
+      }
+    }
+  )
+  .add(
+    "DefaultValue 0",
+    () => {
+      const label = "Progress"
+      const defaultValue = 0
+      const options = {
+        range: true,
+        min: 0,
+        max: 1,
+        step: 0.01,
+        warningThreshold: 0.2
+      }
+      const value = number(label, defaultValue, options)
+      return (
+        <Donut progress={value} warningThreshold={options.warningThreshold} />
+      )
+    },
+    {
+      info: {
+        text: docs
+      }
+    }
+  )
+  .add(
+    "DefaultValue over max",
+    () => {
+      const label = "Progress"
+      const defaultValue = 11
+      const options = {
+        range: true,
+        min: 0,
+        max: 1,
+        step: 0.01,
+        warningThreshold: 0.2
+      }
+      const value = number(label, defaultValue, options)
+      return (
+        <Donut progress={value} warningThreshold={options.warningThreshold} />
+      )
     },
     {
       info: {

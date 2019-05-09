@@ -6,17 +6,30 @@ import docs from "./Button.md"
 
 storiesOf("Components|Base/Button", module)
   .addDecorator(withKnobs)
-  .add("No props", () => <Button>Button</Button>, {
+  .add("No text", () => <Button />, {
     info: {
       text: docs
     }
   })
   .add(
-    "log",
+    "Log",
     () => (
       <Button onClick={() => console.log("Knappen er trykket")}>
         {" "}
         {text("Label", "Hello Storybook")}
+      </Button>
+    ),
+    {
+      info: {
+        text: docs
+      }
+    }
+  )
+  .add(
+    "Long text",
+    () => (
+      <Button>
+        ButtonButtonButtonButtonButtonButtonButtonButtonButtonButtonButton
       </Button>
     ),
     {
