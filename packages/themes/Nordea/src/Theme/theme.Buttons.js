@@ -215,21 +215,23 @@ export const ButtonStyling = theming.createVariants(
       }
     `,
     filter: css`
-      background-color: ${theming.color.white};
-      border: 1px solid ${theming.color("g1")};
-      color: ${theming.color("g4")};
-      min-height: 28px;
-      line-height: 1;
-      border-radius: 50px;
-      padding: ${theming.spacing.tiny} ${theming.spacing.small};
-      font-weight: normal;
-
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: ${theming.color.subtleHover};
+      &,
+      :hover,
+      :focus {
+        background-color: ${p =>
+          !p.isOpen ? theming.color.white : theming.color("b2")};
         border: 1px solid ${theming.color("g1")};
-        color: ${theming.color("g4")};
+        color: ${p => (!p.isOpen ? theming.color("g4") : theming.color.white)};
+        min-height: 28px;
+        line-height: 1;
+        border-radius: 50px;
+        padding: ${theming.spacing.tiny} ${theming.spacing.small};
+        font-weight: normal;
+
+        &:focus {
+          border-color: ${theming.color("b1")};
+          box-shadow: 0 0 0 3px ${theming.color("b1")};
+        }
       }
     `,
     filterAction: css`

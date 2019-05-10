@@ -4,6 +4,7 @@ import { CheckBox, theming } from "@staccx/base"
 export const CheckBoxInputStyling = theming.createVariants(
   {
     filter: css`
+      :active ~ label::before,
       :focus ~ label::before {
         outline: 3px solid ${theming.color("b1")};
         outline-offset: 0;
