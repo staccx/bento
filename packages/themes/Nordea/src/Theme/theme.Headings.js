@@ -6,6 +6,11 @@ export const HeadingStyling = theming.createVariants(
     [theming.VARIANT_DEFAULT]: css`
       color: ${theming.color("b4")};
     `,
+    chartAmount: css`
+      font-weight: ${theming.fontWeight.normal};
+      font-size: ${theming.font.h3};
+      margin-bottom: ${theming.spacing.medium};
+    `,
     caseHeading: css`
       color: ${theming.color("b4")};
       font-weight: ${theming.fontWeight.normal};
