@@ -221,7 +221,10 @@ export const ButtonStyling = theming.createVariants(
       :focus {
         background-color: ${p =>
           !p.isOpen ? theming.color.white : theming.color("b2")};
-        border: ${p => !p.isOpen && `1px solid ${theming.color("g1")(p)}`};
+        border: ${p =>
+          !p.isOpen
+            ? `1px solid ${theming.color("g1")(p)}`
+            : "1px solid transparent"};
         color: ${p => (!p.isOpen ? theming.color("g4") : theming.color.white)};
         min-height: 28px;
         line-height: 1;
