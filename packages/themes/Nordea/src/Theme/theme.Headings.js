@@ -43,14 +43,15 @@ export const HeadingStyling = theming.createVariants(
       font-weight: ${theming.fontWeight.normal};
     `,
     layoutBox: css`
-      font-size: ${theming.font.h4};
+      font-size: ${p => (p.smallHeading ? theming.font.h5 : theming.font.h4)};
       font-weight: ${theming.fontWeight.normal};
       color: ${theming.color("g3")};
       line-height: 1.3;
       margin-bottom: 0;
 
       @media (min-width: 720px) {
-        font-size: ${theming.font.h2};
+        font-size: ${p =>
+          p.smallHeading ? theming.font.input : theming.font.h2};
         line-height: 1;
         margin-top: -6px;
       }
