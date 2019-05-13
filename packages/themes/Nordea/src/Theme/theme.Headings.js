@@ -37,6 +37,24 @@ export const HeadingStyling = theming.createVariants(
       font-size: ${theming.font.h1};
       font-weight: ${theming.fontWeight.normal};
     `,
+    layoutBox: css`
+      font-size: ${theming.font.h4};
+      font-weight: ${theming.fontWeight.normal};
+      color: ${theming.color("g3")};
+      line-height: 1.3;
+      margin-bottom: 0;
+
+      @media (min-width: 720px) {
+        font-size: ${theming.font.h2};
+        line-height: 1;
+        margin-top: -6px;
+      }
+
+      /* Small-screen Dissolve */
+      @media (max-width: 489px) {
+        color: ${p => p.smallScreenDissolve && theming.color.gray};
+      }
+    `,
     newsList: css`
       font-size: ${theming.font.base};
       color: currentColor;
@@ -49,6 +67,17 @@ export const HeadingStyling = theming.createVariants(
     `,
     hero: css`
       color: ${theming.color.white};
+    `,
+    notifications: css`
+      font-size: ${theming.font.h4};
+      font-weight: ${theming.fontWeight.normal};
+      color: ${theming.color("g3")};
+      line-height: 1.3;
+      margin-bottom: 0;
+    `,
+    notificationName: css`
+      color: ${theming.color("b4")};
+      font-size: ${theming.font.h6};
     `
   },
   Heading.themeProps.heading

@@ -313,6 +313,16 @@ export const ButtonStyling = theming.createVariants(
       @media (max-width: 359px) {
         padding-right: ${theming.spacing.small};
       }
+    `,
+    notificationBadge: css`
+      padding: 0;
+      background-color: transparent;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+      }
     `
   },
   Button.themeProps.button

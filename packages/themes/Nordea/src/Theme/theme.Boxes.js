@@ -105,6 +105,7 @@ export const BoxStyling = theming.createVariants(
       background-color: ${theming.color("b1")};
     `,
     layoutBox: css`
+      color: ${theming.color.text};
       background-color: ${theming.color.white};
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
 
@@ -118,6 +119,43 @@ export const BoxStyling = theming.createVariants(
             : theming.spacing.medium};
         background-color: ${p => p.smallScreenDissolve && "transparent"};
         box-shadow: ${p => p.smallScreenDissolve && "none"};
+      }
+    `,
+    notificationMsgs: css`
+      position: absolute;
+      width: 460px;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      color: ${theming.color.text};
+      background-color: ${theming.color.white};
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+      z-index: 500;
+      max-height: 390px;
+      overflow-y: scroll;
+      overscroll-behavior: contain;
+
+      &::-webkit-scrollbar-track {
+        background-color: ${theming.color.white};
+      }
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        background-color: ${theming.color.white};
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: ${theming.color("bg3")};
+      }
+
+      @media (min-width: 580px) {
+        right: 0;
+        transform: translate(-100%, 100%);
+      }
+
+      @media (min-width: 1520px) {
+        left: 50%;
+        transform: translate(-50%, 100%);
       }
     `
   },
