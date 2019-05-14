@@ -9,7 +9,8 @@ const onData = data => {
   updated = JSON.parse(data)
 }
 
-async function release(debug, skip = false) {
+async function release(bumpiness = "conventional", debug, skip = false) {
+  console.log("bumpiness", bumpiness)
   const spinner = setupSpinner()
 
   const checkGit = async (msg = "Checking git for changes") => {
@@ -130,12 +131,23 @@ async function release(debug, skip = false) {
     spinner.start("Releasing packages. Please wait")
     if (!debug) {
       spinner.info("Versioning!")
-      await executeAsync(
-        "lerna",
-        ["version", "--conventional-commits", "--yes"],
-        {},
-        console.log
-      )
+
+      if (bumpiness === "conventional") {
+        await executeAsync(
+          "lerna",
+          ["version", "--conventional-commits", "--yes"],
+          {},
+          console.log
+        )
+      } else if (bumpiness === "prerelease") {
+        await executeAsync(
+          "lerna",
+          ["version", "prerelease", "--yes"],
+          {},
+          console.log
+        )
+      }
+
       spinner.info("Publishing!")
       await executeAsync(
         "lerna",
