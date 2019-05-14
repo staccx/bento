@@ -84,6 +84,10 @@ export const HeadingStyling = theming.createVariants(
     notificationName: css`
       color: ${theming.color("b4")};
       font-size: ${theming.font.h6};
+    `,
+    pageHeading: css`
+      font-size: ${theming.font.h1};
+      font-weight: ${theming.fontWeight.normal};
     `
   },
   Heading.themeProps.heading
