@@ -15,7 +15,7 @@ storiesOf("Components|Base/Forms/RadioButton")
     </RadioButton>
   ))
   .add("Default checked", () => (
-    <RadioButton id={"32423423"} defaultChecked={"true"}>
+    <RadioButton id={"32423423"} defaultChecked>
       Radiobutton
     </RadioButton>
   ))
