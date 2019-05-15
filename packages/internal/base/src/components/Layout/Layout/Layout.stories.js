@@ -14,9 +14,9 @@ storiesOf("components|base/Layout/Layout", module)
   .add("With header,main,body,aside,footer", () => {
     const Block = styled.div`
       background-color: ${color.primary};
-      min-height: 48px;
+      min-height: 50px;
       width: 100%;
-      min-width: 48px;
+      min-width: 50px;
       height: 100%;
     `
 
