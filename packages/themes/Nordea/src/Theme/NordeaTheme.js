@@ -65,7 +65,12 @@ import { UrlIcon } from "./Icons/Url"
 import { CloseIcon } from "./Icons/Close"
 import { MenuIcon } from "./Icons/Menu"
 import { WrapperStyling } from "./theme.Wrapper"
-import { CheckBoxLabelStyling } from "./theme.Checkbox"
+import {
+  CheckBoxLabelStyling,
+  CheckBoxLabelCheckedStyling,
+  CheckBoxLabelBeforeStyling,
+  CheckBoxInputStyling
+} from "./theme.Checkbox"
 import { ItemGroupStyling, ItemGroupWrapperStyling } from "./theme.ItemGroup"
 import { SkeletonPulseStyling } from "./theme.Skeleton"
 import { AnchorStyling } from "./theme.Anchors"
@@ -251,6 +256,9 @@ const theme = new theming.Theme({
   .add(ExpandItemStyling)
   .add(ExpandIconStyling)
   .add(CheckBoxLabelStyling)
+  .add(CheckBoxLabelCheckedStyling)
+  .add(CheckBoxLabelBeforeStyling)
+  .add(CheckBoxInputStyling)
   .add(ItemGroupStyling)
   .add(ItemGroupWrapperStyling)
   .add(SkeletonPulseStyling)

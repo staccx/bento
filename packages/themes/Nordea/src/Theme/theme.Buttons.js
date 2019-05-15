@@ -215,21 +215,27 @@ export const ButtonStyling = theming.createVariants(
       }
     `,
     filter: css`
-      background-color: ${theming.color.white};
-      border: 1px solid ${theming.color("g1")};
-      color: ${theming.color("g4")};
-      min-height: 28px;
-      line-height: 1;
-      border-radius: 50px;
-      padding: ${theming.spacing.tiny} ${theming.spacing.small};
-      font-weight: normal;
+      pointer-events: ${p => (!p.isOpen ? "auto" : "none")};
+      &,
+      :hover,
+      :focus {
+        background-color: ${p =>
+          !p.isOpen ? theming.color.white : theming.color("b2")};
+        border: ${p =>
+          !p.isOpen
+            ? `1px solid ${theming.color("g1")(p)}`
+            : "1px solid transparent"};
+        color: ${p => (!p.isOpen ? theming.color("g4") : theming.color.white)};
+        min-height: 28px;
+        line-height: 1;
+        border-radius: 50px;
+        padding: ${theming.spacing.tiny} ${theming.spacing.small};
+        font-weight: normal;
 
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: ${theming.color.subtleHover};
-        border: 1px solid ${theming.color("g1")};
-        color: ${theming.color("g4")};
+        &:focus {
+          border-color: ${theming.color("b1")};
+          box-shadow: 0 0 0 3px ${theming.color("b1")};
+        }
       }
     `,
     filterAction: css`
@@ -306,6 +312,16 @@ export const ButtonStyling = theming.createVariants(
 
       @media (max-width: 359px) {
         padding-right: ${theming.spacing.small};
+      }
+    `,
+    notificationBadge: css`
+      padding: 0;
+      background-color: transparent;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
       }
     `
   },
