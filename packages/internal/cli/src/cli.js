@@ -47,12 +47,12 @@ program
   .action(i18n)
 
 program
-  .command("release")
+  .command("release [bumpiness]")
   .alias("r")
   .description("Helps you release bento")
   .option("-s, --skip", "skips version testing")
-  .action(({ parent: { debug = false }, skip }) => {
-    release(debug, skip)
+  .action((bumpiness, { parent: { debug = false }, skip }) => {
+    release(bumpiness, debug, skip)
   })
 
 program

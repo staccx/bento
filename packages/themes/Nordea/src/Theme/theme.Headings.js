@@ -43,7 +43,7 @@ export const HeadingStyling = theming.createVariants(
       font-weight: ${theming.fontWeight.normal};
     `,
     layoutBox: css`
-      font-size: ${p =>
+      font-size: ${p => (p.smallHeading ? theming.font.h5 : theming.font.h4)};
         p.smallHeading ? theming.font.input : theming.font.h2};
       font-weight: ${theming.fontWeight.normal};
       color: ${theming.color("g3")};
@@ -51,7 +51,8 @@ export const HeadingStyling = theming.createVariants(
       margin-bottom: 0;
 
       @media (min-width: 720px) {
-        font-size: ${theming.font.h2};
+        font-size: ${p =>
+          p.smallHeading ? theming.font.input : theming.font.h2};
         line-height: 1;
         margin-top: -6px;
       }
@@ -84,6 +85,10 @@ export const HeadingStyling = theming.createVariants(
     notificationName: css`
       color: ${theming.color("b4")};
       font-size: ${theming.font.h6};
+    `,
+    pageHeading: css`
+      font-size: ${theming.font.h1};
+      font-weight: ${theming.fontWeight.normal};
     `
   },
   Heading.themeProps.heading
