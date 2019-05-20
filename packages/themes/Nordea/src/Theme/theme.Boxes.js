@@ -1,5 +1,31 @@
-import { css } from "styled-components"
+import { css, keyframes } from "styled-components"
 import { Box, fontSmoothing, theming } from "@staccx/base"
+
+const fadeInLarge = keyframes`
+  from {
+    opacity: 0;
+    transform:  translate(-50%, 90%);
+
+  }
+
+  to {
+    opacity: 1;
+    transform:  translate(-50%, 100%);
+  }
+`
+
+const fadeInMedium = keyframes`
+  from {
+    opacity: 0;
+    transform:  translate(-100%, 90%);
+
+  }
+
+  to {
+    opacity: 1;
+    transform:  translate(-100%, 100%);
+  }
+`
 
 export const BoxStyling = theming.createVariants(
   {
@@ -151,11 +177,13 @@ export const BoxStyling = theming.createVariants(
       @media (min-width: 580px) {
         right: 0;
         transform: translate(-100%, 100%);
+        animation: ${fadeInMedium} 0.2s ease-out forwards;
       }
 
       @media (min-width: 1520px) {
         left: 50%;
         transform: translate(-50%, 100%);
+        animation: ${fadeInLarge} 0.2s ease-out forwards;
       }
     `
   },

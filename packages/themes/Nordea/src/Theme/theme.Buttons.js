@@ -323,6 +323,21 @@ export const ButtonStyling = theming.createVariants(
       &:focus {
         background-color: transparent;
       }
+    `,
+    searchSuggestionItem: css`
+      padding: ${theming.spacing.small};
+      color: currentColor;
+      background-color: transparent;
+      text-align: left;
+      font-weight: normal;
+      line-height: 1.4;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: currentColor;
+        background-color: transparent;
+      }
     `
   },
   Button.themeProps.button

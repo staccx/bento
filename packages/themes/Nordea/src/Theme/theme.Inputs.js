@@ -21,10 +21,16 @@ export const InputStyling = theming.createVariants(
     `,
     search: css`
       background-color: ${theming.color.subtleHover};
-      border: 0;
+      border: 1px solid ${theming.color.subtleHover};
       border-radius: 50px;
       padding-left: ${theming.spacing.medium};
       padding-right: 66px;
+
+      &:focus,
+      &:hover,
+      &:active {
+        background-color: ${theming.color.white};
+      }
 
       &::-webkit-input-placeholder {
         /* WebKit browsers */
