@@ -21,6 +21,15 @@ export const AnchorStyling = theming.createVariants(
         transform: translateX(10px);
         color: ${theming.color.text};
       }
+    `,
+    searchSuggestionItem: css`
+      display: block;
+
+      &:hover,
+      &:focus {
+        background-color: ${theming.color("bg3")};
+        color: ${theming.color("link")};
+      }
     `
   },
   Anchor.themeProps.anchor
