@@ -35,6 +35,10 @@ export const LayoutStyling = theming.createVariants(
     customer: css`
       padding-top: ${theming.spacing.medium};
     `,
+    customerSubNav: css`
+      padding-top: ${theming.spacing.medium};
+      padding-bottom: 0;
+    `,
     fourCol: css`
       grid-template-columns:
         [first firstHalf-start] 241px [second] 241px
