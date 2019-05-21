@@ -96,14 +96,14 @@ export const ButtonStyling = theming.createVariants(
       }
     `,
     hamburger: css`
-      display: flex;
-      min-height: 52px;
-      background-color: transparent;
-      svg {
-        margin-right: ${theming.spacing.tiny};
-      }
-      @media only screen and (min-width: 540px) {
-        display: none;
+      display: none;
+      @media only screen and (max-width: ${p => p.mediaWidth}) {
+        display: flex;
+        min-height: 52px;
+        background-color: transparent;
+        svg {
+          margin-right: ${theming.spacing.tiny};
+        }
       }
     `,
     closeMobileMenu: css`
