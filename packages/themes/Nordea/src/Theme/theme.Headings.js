@@ -89,6 +89,13 @@ export const HeadingStyling = theming.createVariants(
     pageHeading: css`
       font-size: ${theming.font.h1};
       font-weight: ${theming.fontWeight.normal};
+    `,
+    searchSection: css`
+      padding-top: ${theming.spacing.small};
+      padding-left: ${theming.spacing.small};
+      color: ${theming.color("g3")};
+      font-size: ${theming.font.h6};
+      border-bottom: 1px solid ${theming.color("concrete")};
     `
   },
   Heading.themeProps.heading
