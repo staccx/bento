@@ -161,6 +161,9 @@ import SkeletonPulse from "./components/Skeleton/Skeleton.Pulse"
 import SkeletonLine from "./components/Skeleton/Skeleton.Line"
 import SkeletonCircle from "./components/Skeleton/Skeleton.Circle"
 
+export { default as useInterval } from "./hooks/useInterval"
+export { default as useDebounce } from "./hooks/useDebounce"
+
 const icons = {
   QuestionMark
 }

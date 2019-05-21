@@ -74,6 +74,7 @@ import {
 import { ItemGroupStyling, ItemGroupWrapperStyling } from "./theme.ItemGroup"
 import { SkeletonPulseStyling } from "./theme.Skeleton"
 import { AnchorStyling } from "./theme.Anchors"
+import { LabelStyling } from "./theme.Labels"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -263,5 +264,6 @@ const theme = new theming.Theme({
   .add(ItemGroupWrapperStyling)
   .add(SkeletonPulseStyling)
   .add(AnchorStyling)
+  .add(LabelStyling)
 
 export default theme

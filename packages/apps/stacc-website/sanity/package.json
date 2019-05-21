@@ -1,7 +1,7 @@
 {
   "name": "@staccx/stacc-dot-com",
   "private": true,
-  "version": "9.0.0-alpha.14",
+  "version": "9.0.0-alpha.17",
   "description": "",
   "main": "package.json",
   "author": "Espen Thomassen Sæverud <espensaeverud@gmail.com>",
@@ -23,7 +23,7 @@
     "@sanity/desk-tool": "^0.140.14",
     "@sanity/google-maps-input": "^0.140.14",
     "@sanity/production-preview": "^0.140.0",
-    "@staccx/base": "^9.0.0-alpha.14",
+    "@staccx/base": "^9.0.0-alpha.17",
     "airtable": "^0.5.6",
     "image-downloader": "^3.4.1",
     "prop-types": "^15.6.2",
