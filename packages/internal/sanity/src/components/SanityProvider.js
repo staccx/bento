@@ -97,6 +97,7 @@ const SanityProvider = ({
 
   const query = async (groq, id, params) => {
     if (data.queries[groq]) {
+      return
     }
 
     const result = await client.fetch(groq, params)
