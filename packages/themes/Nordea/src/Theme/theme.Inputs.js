@@ -27,9 +27,9 @@ export const InputStyling = theming.createVariants(
       padding-right: 66px;
 
       &:focus,
-      &:hover,
       &:active {
         background-color: ${theming.color.white};
+        box-shadow: 0 0 0 3px ${theming.color("b1")};
       }
 
       &::-webkit-input-placeholder {
