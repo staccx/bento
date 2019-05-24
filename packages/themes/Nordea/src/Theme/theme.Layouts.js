@@ -60,6 +60,7 @@ export const LayoutStyling = theming.createVariants(
         grid-template-columns: 1fr;
         grid-column-gap: 0;
       }
+      }
     `,
     newsOverview: css`
       grid-template-columns: repeat(3, 1fr);
