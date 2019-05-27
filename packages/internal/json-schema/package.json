@@ -32,5 +32,5 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
-  "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e"
+  "gitHead": "879a42d2c730577f80734a3994226c496fc669db"
 }
