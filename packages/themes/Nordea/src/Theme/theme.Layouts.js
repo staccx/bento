@@ -92,10 +92,9 @@ export const LayoutStyling = theming.createVariants(
       grid-column-gap: ${theming.spacing.medium};
       grid-row-gap: ${theming.spacing.medium};
       padding-bottom: ${theming.spacing.large};
-      margin: ${theming.spacing.small};
-      margin-bottom: 0;
+      margin: 0 ${theming.spacing.small};
 
-      @media only screen and (max-width: 1110px) {
+      @media only screen and (max-width: 400px) {
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: ${theming.spacing.medium};
         grid-row-gap: ${theming.spacing.medium};
@@ -103,7 +102,7 @@ export const LayoutStyling = theming.createVariants(
         padding-bottom: ${theming.spacing.medium};
       }
 
-      @media only screen and (max-width: 580px) {
+      @media only screen and (max-width: 350px) {
         grid-template-columns: 1fr;
         grid-column-gap: 0;
       }
