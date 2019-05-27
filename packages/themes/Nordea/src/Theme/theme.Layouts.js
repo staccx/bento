@@ -84,6 +84,27 @@ export const LayoutStyling = theming.createVariants(
     `,
     newsArticle: css`
       grid-column-gap: ${theming.spacing.huge};
+    `,
+    leaderBoardPodium: css`
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: auto;
+      grid-column-gap: ${theming.spacing.medium};
+      grid-row-gap: ${theming.spacing.medium};
+      padding-top: ${theming.spacing.large};
+      padding-bottom: ${theming.spacing.large};
+
+      @media only screen and (max-width: 1110px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: ${theming.spacing.medium};
+        grid-row-gap: ${theming.spacing.medium};
+        padding-top: ${theming.spacing.medium};
+        padding-bottom: ${theming.spacing.medium};
+      }
+
+      @media only screen and (max-width: 580px) {
+        grid-template-columns: 1fr;
+        grid-column-gap: 0;
+      }
     `
     // ,
     // case: css`
