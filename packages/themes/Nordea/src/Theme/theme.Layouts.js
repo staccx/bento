@@ -91,8 +91,9 @@ export const LayoutStyling = theming.createVariants(
       grid-auto-rows: auto;
       grid-column-gap: ${theming.spacing.medium};
       grid-row-gap: ${theming.spacing.medium};
-      padding-top: ${theming.spacing.large};
       padding-bottom: ${theming.spacing.large};
+      margin: ${theming.spacing.small};
+      margin-bottom: 0;
 
       @media only screen and (max-width: 1110px) {
         grid-template-columns: repeat(2, 1fr);
