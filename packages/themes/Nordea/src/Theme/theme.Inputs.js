@@ -3,14 +3,15 @@ import { css } from "styled-components"
 import { FileInput, Input, fontSmoothing, theming } from "@staccx/base"
 
 const defaultStyling = css`
-  border-width: 2px;
+  border-width: 1px;
   border-color: transparent;
+  background-color: ${theming.color.subtleHover};
   ${fontSmoothing};
   &:hover,
   &:focus,
   &:active {
-    border-color: ${theming.color("b4")};
-    background-color: ${theming.color.white};
+    border-color: ${theming.color("b1")};
+    background-color: ${theming.color("primaryLight")};
   }
 `
 
