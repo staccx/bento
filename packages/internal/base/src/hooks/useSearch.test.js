@@ -1,5 +1,5 @@
 import React from "react"
-import { render, cleanup, getByTestId, fireEvent } from "react-testing-library"
+import { render, cleanup, getByTestId } from "react-testing-library"
 import useSearch from "./useSearch"
 
 const testData = [
@@ -34,22 +34,14 @@ const testData = [
 
 // Test component that uses the Hook
 function TestComp({ term }) {
-  const [result, search] = useSearch({
-    uniqueProp: "_id",
+  const [result] = useSearch({
+    input: term,
     documents: testData,
-    indices: [["name", "first"], "company"]
+    keys: ["name.first", "company"]
   })
 
   return (
     <div>
-      <button
-        data-testid={"button"}
-        onClick={() => {
-          search(term)
-        }}
-      >
-        search
-      </button>
       <span data-testid={"result"}>{result.length}</span>
     </div>
   )
@@ -60,21 +52,13 @@ describe("useSearch", () => {
   it("Should work", () => {
     const { container, rerender } = render(<TestComp />)
     const span = getByTestId(container, "result")
-    const button = getByTestId(container, "button")
 
-    expect(span.textContent).toBe("0")
-
-    fireEvent.click(button)
-    expect(span.textContent).toBe("0")
+    expect(span.textContent).toBe("3")
 
     rerender(<TestComp term={"Roberta"} />)
-    expect(span.textContent).toBe("0")
-    fireEvent.click(button)
     expect(span.textContent).toBe("1")
 
     rerender(<TestComp term={"Sulfax"} />)
-    expect(span.textContent).toBe("1")
-    fireEvent.click(button)
     expect(span.textContent).toBe("2")
   })
 })

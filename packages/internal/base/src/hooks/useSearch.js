@@ -1,46 +1,35 @@
-import { useEffect, useState } from "react"
-const JsSearch = require("js-search")
+import { useEffect, useMemo, useState } from "react"
+import Fuse from "fuse.js"
 
-const useSearch = ({
-  uniqueProp,
-  indices,
-  documents,
-  searchSubstring = false
-}) => {
-  const [result, setResult] = useState([])
-  const [searcher, setSearcher] = useState(null)
+const defaultFuseProps = {
+  shouldSort: true,
+  threshold: 0.3,
+  matchAllTokens: true,
+  tokenize: true,
+  location: 0,
+  distance: 100,
+  maxPatternLength: 32,
+  minMatchCharLength: 2
+}
+const useSearch = ({ input, documents, keys, fuseProps = {} }) => {
+  const [result, setResult] = useState(documents)
 
-  let searchInstance = new JsSearch.Search(uniqueProp)
-  if (searchSubstring) {
-    searchInstance.indexStrategy = new JsSearch.AllSubstringsIndexStrategy()
-  }
+  const fuse = useMemo(() => {
+    const fProps = Object.assign({}, defaultFuseProps, fuseProps)
+    return new Fuse(documents, {
+      ...fProps,
+      keys
+    })
+  }, [documents, keys, fuseProps])
 
-  const search = term => {
-    if (!searcher) {
-      return null
-    }
-    const res = searcher.search(term)
-    setResult(res)
+  const search = i => {
+    const searchResult = i ? fuse.search(i) : documents
+    setResult(searchResult)
   }
 
   useEffect(() => {
-    indices.forEach(index => {
-      searchInstance.addIndex(index)
-    })
-
-    if (documents && documents.length) {
-      searchInstance.addDocuments(documents)
-    } else {
-      console.warn(
-        "[SEARCH]: No documents provided. This will cause search to fail"
-      )
-    }
-    setSearcher(searchInstance)
-
-    return () => {
-      return null
-    }
-  }, [])
+    search(input)
+  }, [input, fuse])
 
   return [result, search]
 }
