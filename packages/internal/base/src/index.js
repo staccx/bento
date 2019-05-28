@@ -141,7 +141,7 @@ import QuestionMark from "./components/Icons/QuestionMark"
 /**
  * Hooks!
  */
-import useSearch from "./hooks/useSearch"
+import useSearch from "./hooks/useSearch/useSearch"
 import useTimer from "./hooks/useTimer"
 
 // Search

@@ -11,7 +11,7 @@ const defaultFuseProps = {
   maxPatternLength: 32,
   minMatchCharLength: 2
 }
-const useSearch = ({ input, documents, keys, fuseProps = {} }) => {
+const useSearch = ({ input, documents = [], keys = [], fuseProps = {} }) => {
   const [result, setResult] = useState(documents)
 
   const fuse = useMemo(() => {
