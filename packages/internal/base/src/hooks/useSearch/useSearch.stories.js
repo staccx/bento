@@ -59,7 +59,7 @@ storiesOf("hooks|base/useSearch", module)
   .add(
     "Dynamic input",
     () => {
-      const value = text("input", "", "1")
+      const value = text("input", "", "controls")
       return <Component term={value} />
     },
     {
@@ -71,8 +71,8 @@ storiesOf("hooks|base/useSearch", module)
   .add(
     "Dynamic keys and input",
     () => {
-      const value = text("input", "", "1")
-      const keys = array(keysLabel, defaultKeysValue)
+      const value = text("input", "", "controls")
+      const keys = array(keysLabel, defaultKeysValue, ",", "controls")
       return <Component term={value} keys={keys} />
     },
     {
