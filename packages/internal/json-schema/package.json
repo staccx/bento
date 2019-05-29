@@ -1,13 +1,13 @@
 {
   "name": "@staccx/json-schema",
-  "version": "9.0.0-alpha.19",
+  "version": "9.0.0-alpha.20",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.19",
+    "@staccx/base": "^9.0.0-alpha.20",
     "ajv": "^6.6.1",
     "core-js": "^2.6.0",
     "lodash.topath": "^4.5.2"
