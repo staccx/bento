@@ -164,7 +164,9 @@ import SkeletonCircle from "./components/Skeleton/Skeleton.Circle"
 export { default as useInterval } from "./hooks/useInterval"
 export { default as useDebounce } from "./hooks/useDebounce"
 
-export { default as dataFetcherFactory } from "./context/dataFetcherFactory"
+export {
+  default as dataFetcherFactory
+} from "./context/dataFetcherFactory/dataFetcherFactory"
 
 const icons = {
   QuestionMark
