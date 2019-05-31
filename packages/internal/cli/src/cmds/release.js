@@ -1,3 +1,4 @@
+import { startStorybook } from "./storybook"
 const checkWorkingTree = require("@lerna/check-working-tree")
 const username = require("username")
 const { executeAsync, setupSpinner } = require("./__helpers")
@@ -189,6 +190,16 @@ async function release(bumpiness = "conventional", debug, skip = false) {
     spinner.succeed("Team alerted about the awesome")
   } catch (e) {
     spinner.fail("Error whilst sending message to Slack")
+    process.exit(1)
+  }
+
+  try {
+    spinner.start("Deploying storybook")
+    if (!debug) {
+      await startStorybook({ action: "deploy" })
+    }
+  } catch (e) {
+    spinner.fail("Failed to deploy storybook")
     process.exit(1)
   }
 
