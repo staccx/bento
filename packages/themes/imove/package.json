@@ -1,6 +1,6 @@
 {
   "name": "@staccx/imove-theme",
-  "version": "9.0.0-alpha.22",
+  "version": "9.0.0-alpha.23",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -25,7 +25,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.22",
+    "@staccx/base": "^9.0.0-alpha.23",
     "polished": "^1.9.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
