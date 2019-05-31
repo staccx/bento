@@ -11,6 +11,7 @@ const req = require.context('../packages', true, /\.stories\.js$/);
 
 function loadStories () {
   req.keys().forEach(filename => req(filename));
+  require('../stories/index.js');
 }
 
 
@@ -18,7 +19,7 @@ function loadStories () {
 addParameters({
   options: {
     name: 'Bento',
-    theme: storybookThemes.dark,
+    theme: storybookThemes.light,
     showPanel: true,
     addonPanelInRight: true
   },
