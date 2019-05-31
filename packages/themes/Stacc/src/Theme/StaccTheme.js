@@ -117,6 +117,7 @@ const theme = new theming.Theme(
   {},
   {
     name: "Stacc",
+    storybookName: "Stacc",
     font: { ...font },
     fontWeight,
     webfonts,

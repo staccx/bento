@@ -185,6 +185,7 @@ const fontFamily = {
 
 const theme = new theming.Theme({
   name: "Nordea",
+  storybookName: "NOR Blue",
   font,
   fontWeight,
   color: { ...color, ...appSpecificColor },

@@ -104,6 +104,7 @@ const fontWeight = {
 
 export default new theming.Theme({
   name: "Swedbank",
+  storybookName: "SWE",
   font,
   fontWeight,
   webfonts,

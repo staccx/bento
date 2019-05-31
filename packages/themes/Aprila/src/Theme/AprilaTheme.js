@@ -149,6 +149,7 @@ const webfonts = {
 
 export default new Theme(BaseTheme, {
   name: "Aprila",
+  storybookName: "APR",
   layout: {
     dashboardLayout: "stonehenge",
     menuArea: "main"

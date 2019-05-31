@@ -25,6 +25,8 @@ addons.register('storybook/theme-switcher', api => {
   });
 });
 
+const getName = theme => theme.storybookName || "NO NAME"
+
 
 export const withTheme = makeDecorator({
   name: 'withTheme',
@@ -48,8 +50,8 @@ export const ThemeSwitcher = ({ api }) => {
   useEffect(() => bindThemeOverride(api), []);
 
   const themeList = themes.map((theme, index) => ({
-    id: theme.name,
-    title: theme.name,
+    id: getName(theme),
+    title: getName(theme),
     onClick: () => {
       setTheme(themes[index]);
       setLocalTheme({ api, theme: index, rerender: true });
@@ -67,7 +69,7 @@ export const ThemeSwitcher = ({ api }) => {
       closeOnClick
     >
       <FlexIt>
-        <IconButton key="theme-switcher">{activeTheme.name} </IconButton>
+        <IconButton key="theme-switcher">{getName(activeTheme)} </IconButton>
         <ThemeIcon theme={activeTheme}/>
       </FlexIt>
     </WithTooltip>

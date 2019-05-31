@@ -150,6 +150,7 @@ export default new theming.Theme(
   {},
   {
     name: "Volvo",
+    storybookName: "VOL",
     font,
     fontWeight,
     color: { ...color, ...DealerpadSpecificColor },

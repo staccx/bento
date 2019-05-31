@@ -118,6 +118,7 @@ const fontFamily = {
 
 export default new theming.Theme({
   name: "Styke",
+  storybookName: "STY",
   webfonts,
   font,
   fontWeight,
