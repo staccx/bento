@@ -1,6 +1,6 @@
 {
   "name": "@staccx/swedbank-theme",
-  "version": "9.0.0-alpha.23",
+  "version": "9.0.0-alpha.24",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
