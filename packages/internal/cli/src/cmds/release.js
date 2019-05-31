@@ -152,7 +152,14 @@ async function release(bumpiness = "conventional", debug, skip = false) {
       spinner.info("Publishing!")
       await executeAsync(
         "lerna",
-        ["publish", "from-package", "--no-verify-access", "--yes"],
+        [
+          "publish",
+          "from-package",
+          "--registry",
+          "https://stacc.jfrog.io/stacc/api/npm/npm/",
+          "--no-verify-access",
+          "--yes"
+        ],
         {},
         () => null,
         console.log
