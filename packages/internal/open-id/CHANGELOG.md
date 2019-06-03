@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.87.2](https://bitbucket.org/stacc-flow/bento/compare/v8.87.1...v8.87.2) (2019-06-03)
+
+
+### Bug Fixes
+
+* **bento:** upgrade to axios ^0.19.0 ([b83df06](https://bitbucket.org/stacc-flow/bento/commits/b83df06))
+
+
+
+
+
 <a name="8.73.7"></a>
 ## [8.73.7](https://bitbucket.org/stacc-flow/bento/compare/v8.73.6...v8.73.7) (2019-03-15)
 

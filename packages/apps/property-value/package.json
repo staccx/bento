@@ -1,6 +1,6 @@
 {
   "name": "@staccx/property-value",
-  "version": "8.87.0",
+  "version": "8.87.2",
   "description": "Widget for showing property value based on person nationalId (Norway only)",
   "private": true,
   "author": "StaccX",
