@@ -26,7 +26,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "lodash.isequal": "^4.5.0",
     "oidc-client": "^1.5.2",
     "qs": "^6.5.1",

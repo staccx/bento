@@ -41,7 +41,7 @@
     "@google/maps": "^0.4.6",
     "@staccx/base": "^7.15.0",
     "@staccx/formatting": "^8.87.0",
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.5",
     "react": "^16.8.0",
