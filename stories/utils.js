@@ -1,1 +1,1 @@
-export const DOCUMENTATION_ROOT_PATH = "Documentation|"
+export const DOCUMENTATION_ROOT_PATH = "Bento|"
