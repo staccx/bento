@@ -13,8 +13,6 @@ import {
 } from "../../theming"
 import { themePropTypes, commonPropTypes } from "../../constants/themeContants"
 
-const tinycolor = require("tinycolor2")
-
 const tProps = {
   button: {
     name: "Button",
@@ -25,14 +23,7 @@ const tProps = {
 
 const ButtonComp = styled.button`
   background-color: ${color.primary};
-  color: ${p =>
-    tinycolor
-      .mostReadable(color.primary()(p), ["#fff"], {
-        includeFallbackColors: true,
-        level: "AA",
-        size: "large"
-      })
-      .toString()};
+  color: ${color.white};
   border-width: 0;
   border-radius: ${borderRadius};
   padding: ${spacing.tiny} ${spacing.medium};
@@ -55,18 +46,8 @@ const ButtonComp = styled.button`
   &:hover,
   &:focus {
     outline: none;
-    background-color: ${p =>
-      tinycolor(color.primary()(p))
-        .darken(5)
-        .toString()};
-    color: ${p =>
-      tinycolor
-        .mostReadable(tinycolor(color.primary()(p)).darken(5), ["#fff"], {
-          includeFallbackColors: true,
-          level: "AA",
-          size: "large"
-        })
-        .toString()};
+    background-color: ${color.primary};
+    color: ${color.white};
   }
 
   ${applyVariants(tProps.button.name)};

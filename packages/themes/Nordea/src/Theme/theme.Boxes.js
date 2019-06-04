@@ -27,6 +27,29 @@ const fadeInMedium = keyframes`
   }
 `
 
+const popInFromBottom = keyframes`
+from {
+  transform:  translate(0, 90%);
+
+}
+
+to {
+  transform:  translate(0,0);
+}
+`
+
+const fadeOut = keyframes`
+from {
+  opacity: 1;
+  transform:  translate(0,0);
+}
+
+to {
+  opacity: 0;
+  transform:  translate(0,60%);
+}
+`
+
 export const BoxStyling = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
@@ -185,6 +208,29 @@ export const BoxStyling = theming.createVariants(
         transform: translate(-50%, 100%);
         animation: ${fadeInLarge} 0.2s ease-out forwards;
       }
+    `,
+    uploadNotificationOuter: css`
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 901;
+      background-color: ${theming.color.white};
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+      animation: ${popInFromBottom} 0.4s ease-out forwards;
+
+      ${p =>
+        p.animateOut &&
+        css`
+          animation: ${fadeOut} 0.4s ease-out forwards;
+        `}
+    `,
+    uploadNotificationInner: css`
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: ${theming.spacing.medium};
+      color: ${theming.color.wcag};
     `
   },
   Box.themeProps.box

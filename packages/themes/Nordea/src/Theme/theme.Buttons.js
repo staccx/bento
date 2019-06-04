@@ -338,6 +338,26 @@ export const ButtonStyling = theming.createVariants(
         color: currentColor;
         background-color: transparent;
       }
+    `,
+    uploadNotification: css`
+      color: ${theming.color.text};
+      background-color: transparent;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: ${theming.color.text};
+        background-color: transparent;
+      }
+    `,
+    uploadNotificationPrimary: css`
+      color: ${theming.color.primary};
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: ${theming.color.primary};
+      }
     `
   },
   Button.themeProps.button
