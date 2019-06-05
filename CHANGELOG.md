@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.88.0](https://bitbucket.org/stacc-flow/bento/compare/v8.87.2...v8.88.0) (2019-06-05)
+
+
+### Features
+
+* **stacc-theme:** add hero color ([57f1bba](https://bitbucket.org/stacc-flow/bento/commits/57f1bba))
+
+
+
+
+
 ## [8.87.2](https://bitbucket.org/stacc-flow/bento/compare/v8.87.1...v8.87.2) (2019-06-03)
 
 
