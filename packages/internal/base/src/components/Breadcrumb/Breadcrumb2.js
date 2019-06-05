@@ -28,12 +28,13 @@ const Breadcrumb2 = ({ path, ...restProps }) => (
 
 const BreadcrumbEl = styled.ol`
   /* -- parameters: sizes -- */
-  --v-padding: ${spacing.tiny};
-  --h-padding: ${spacing.small};
+  --item-h-padding: ${spacing.small};
+  --item-v-padding: ${spacing.tiny};
+  --item-distance: 4px;
+  --bottom-spacing: 3px; /* bottom spacing – only visible when breadcrumb wraps */
   --line-px-height: 24px;
-  --edge: 14px;
-  --distance: 4px;
-  --v-distance: 6px; /* vertical distance – only visible when breadcrumb wraps */
+  --pointy-ends: 14px;
+  --end-padding: 6px; /* extra padding on the ends */
 
   /* -- parameters: colors -- */
   --c-bg: #ddd;
@@ -58,24 +59,23 @@ const BreadcrumbEl = styled.ol`
   --c-hover-txt: ${color.white};
 
   /* -- calculations -- */
-  --height: calc(var(--line-px-height) + var(--v-padding) * 2);
+  --height: calc(var(--line-px-height) + var(--item-v-padding) * 2);
 
   /* -- styling -- */
   font-family: ${fontFamily.body};
   font-size: ${font.base};
-  padding-left: 0;
-  padding-right: calc(var(--edge) - var(--distance));
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: calc(var(--bottom-spacing) * -1);
 `
 
 const Item = styled.li`
   background-color: var(--c-bg);
   color: var(--c-txt);
-  margin-left: var(--edge);
-  margin-right: var(--distance);
-  margin-bottom: var(--v-distance);
+  margin-left: var(--pointy-ends);
+  margin-right: var(--item-distance);
+  margin-bottom: var(--bottom-spacing);
 
   &:hover a {
     border-color: var(--c-hover-bg);
@@ -88,19 +88,24 @@ const Item = styled.li`
 
   &:first-child {
     margin-left: 0;
-    a::before {
-      content: none;
+
+    a {
+      padding-left: var(--end-padding);
+      ::before {
+        content: none;
+      }
     }
   }
 
   &:last-child {
     cursor: default;
-    margin-right: calc((var(--edge) - var(--distance)) * -1);
+    margin-right: 0;
     background-color: var(--c-active-bg);
     color: var(--c-active-txt);
 
-    div {
+    > div {
       border-color: var(--c-active-bg);
+      padding-right: var(--end-padding);
     }
 
     ${applyVariants(Breadcrumb2.listItemLast)};
@@ -123,14 +128,14 @@ const linkStyle = css`
     display: block;
     position: absolute;
     height: 100%;
-    border: var(--edge) solid;
+    border: var(--pointy-ends) solid;
     border-color: inherit;
     border-left-color: transparent;
     border-top-width: calc(var(--height) / 2);
     border-bottom-width: calc(var(--height) / 2);
     border-right-width: 0;
     box-sizing: border-box;
-    left: calc(var(--edge) * -1);
+    left: calc(var(--pointy-ends) * -1);
     z-index: -1;
   }
 
@@ -138,7 +143,7 @@ const linkStyle = css`
     display: flex;
     align-items: center;
     line-height: var(--line-px-height);
-    padding: var(--v-padding) var(--h-padding);
+    padding: var(--item-v-padding) var(--item-h-padding);
     white-space: nowrap;
 
     ${applyVariants(Breadcrumb2.itemText)};
@@ -154,14 +159,14 @@ const Link = styled.a`
     display: block;
     position: absolute;
     height: 100%;
-    border: var(--edge) solid transparent;
+    border: var(--pointy-ends) solid transparent;
     border-left-color: inherit;
     border-top-width: calc(var(--height) / 2);
     border-bottom-width: calc(var(--height) / 2);
     border-right-width: 0;
     box-sizing: border-box;
     top: 0;
-    right: calc(var(--edge) * -1);
+    right: calc(var(--pointy-ends) * -1);
   }
 `
 
