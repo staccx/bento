@@ -1,231 +1,207 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled, { css } from "styled-components"
-import {
-  applyVariants,
-  font,
-  fontFamily,
-  fontWeight,
-  spacing,
-  color
-} from "../../theming"
+import { applyVariants, font, fontFamily, spacing, color } from "../../theming"
 import { themePropTypes } from "../../constants/themeContants"
 
 const tinycolor = require("tinycolor2")
 
-const Breadcrumb = ({ path }) => (
-  <List>
-    {path.map(pathItem =>
-      pathItem.to ? (
-        <Item key={pathItem.name}>
-          <ItemButton to={pathItem.to}>{pathItem.name}</ItemButton>
+const Breadcrumb = ({ path, ...restProps }) => (
+  <BreadcrumbEl {...restProps}>
+    {path.map((item, index, arr) =>
+      arr.length !== index + 1 ? (
+        <Item key={`${item.name}_${index}`}>
+          <Link href={item.to}>
+            <div>{item.name}</div>
+          </Link>
         </Item>
       ) : (
-        <ItemCurrent key={pathItem.name}>
-          <ItemHeading key={pathItem.name}>{pathItem.name}</ItemHeading>
-        </ItemCurrent>
+        <Item key={`${item.name}_${index}`}>
+          <LastItemContent>
+            <div>{item.name}</div>
+          </LastItemContent>
+        </Item>
       )
     )}
-  </List>
+  </BreadcrumbEl>
 )
 
-Breadcrumb.themeProps = {
-  container: {
-    name: "BREADCRUMB_CONTAINER",
-    description:
-      "The container for the crumbs, which also contains custom CSS properties.",
-    type: themePropTypes.style
-  },
-  item: {
-    name: "BREADCRUMB_ITEM",
-    description: "One single item.",
-    type: themePropTypes.style
-  },
-  itemCurrent: {
-    name: "BREADCRUMB_CURRENT_ITEM",
-    description: "Active breadcrumb item.",
-    type: themePropTypes.style
-  },
-  itemButton: {
-    name: "ITEM_BUTTON",
-    description: "The clickable elements in the single item.",
-    type: themePropTypes.style
-  },
-  itemHeading: {
-    name: "ITEM_HEADING",
-    description: "The non-clickable element in the current item.",
-    type: themePropTypes.style
-  }
-}
+const BreadcrumbEl = styled.ol`
+  /* -- parameters: sizes -- */
+  --item-h-padding: ${spacing.small};
+  --item-v-padding: ${spacing.tiny};
+  --item-distance: 4px;
+  --bottom-spacing: 3px; /* bottom spacing – only visible when breadcrumb wraps */
+  --line-px-height: 24px;
+  --separators: 14px;
+  --end-padding: 6px; /* extra padding on the ends */
 
-const List = styled.ol`
-  display: flex;
-  flex-wrap: wrap;
-  font-size: ${font.base};
-  font-family: ${fontFamily.body};
-  font-weight: ${fontWeight.normal};
-
-  /* Custom CSS properties – use for customization: */
-
-  --max-width: 150px;
-  --bg-color: ${color.white};
-  --color: ${color.black};
-  --hover-bg-color: ${p =>
-    tinycolor(color.primary()(p))
-      .darken(0)
-      .toString()};
-  --hover-color: ${p =>
+  /* -- parameters: colors -- */
+  --c-bg: #ddd;
+  --c-txt: ${p =>
     tinycolor
-      .mostReadable(tinycolor(color.primary()(p)).darken(0), ["#fff"], {
+      .mostReadable("#ddd", ["#333"], {
         includeFallbackColors: true,
-        level: "AA",
-        size: "large"
+        level: "AAA",
+        size: "small"
       })
       .toString()};
-  --active-bg-color: ${color.primary};
-  --active-color: ${color.white};
-  --sep-width: 18px;
-  --distance: 3px;
-  --line-height: ${font.base};
-  --padding-ver: ${spacing.small};
-  --padding-hor: ${spacing.small};
+  --c-active-bg: ${color.primary};
+  --c-active-txt: ${p =>
+    tinycolor
+      .mostReadable(color.primary()(p), ["#333", "#fff"], {
+        includeFallbackColors: false,
+        level: "AA",
+        size: "small"
+      })
+      .toString()};
+  --c-hover-bg: ${color.primary};
+  --c-hover-txt: ${color.white};
 
-  /* Calculations – leave alone: */
+  /* -- calculations -- */
+  --height: calc(var(--line-px-height) + var(--item-v-padding) * 2);
 
-  ---height: calc(var(--line-height) + var(--padding-ver) * 2);
-  ---push: calc(var(--sep-width) + var(--distance));
-
-  ${applyVariants(Breadcrumb.container)};
+  /* -- styling -- */
+  font-family: ${fontFamily.body};
+  font-size: ${font.base};
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: calc(var(--bottom-spacing) * -1);
 `
 
-const itemStyle = css`
-  background: var(--bg-color);
-  margin-left: var(---push);
-  white-space: nowrap;
-  position: relative;
+const Item = styled.li`
+  background-color: var(--c-bg);
+  color: var(--c-txt);
+  margin-left: var(--separators);
+  margin-right: var(--item-distance);
+  margin-bottom: var(--bottom-spacing);
 
-  :first-child {
+  &:hover a {
+    border-color: var(--c-hover-bg);
+  }
+
+  &:not(:last-child):hover {
+    background-color: var(--c-hover-bg);
+    color: var(--c-hover-txt);
+  }
+
+  &:first-child {
     margin-left: 0;
-    > * {
-      padding-left: calc(var(--padding-hor) + var(--sep-width) * 0.5);
+
+    a {
+      padding-left: var(--end-padding);
       ::before {
         content: none;
       }
     }
   }
 
-  :last-child > * {
-    padding-right: calc(var(--padding-hor) + var(--sep-width) * 0.5);
-    ::after {
-      content: none;
+  &:last-child {
+    cursor: default;
+    margin-right: 0;
+    background-color: var(--c-active-bg);
+    color: var(--c-active-txt);
+
+    > div {
+      border-color: var(--c-active-bg);
+      padding-right: var(--end-padding);
     }
+
+    ${applyVariants(Breadcrumb.listItemLast)};
   }
 
-  :last-child:not(:only-child)::before {
-    border-color: var(--active-bg-color);
-    border-left-color: transparent;
-  }
+  ${applyVariants(Breadcrumb.listItem)}
+
+  ${applyVariants(Breadcrumb.main)};
 `
 
-const Item = styled.li`
-  ${itemStyle};
-  ${applyVariants(Breadcrumb.item)};
-`
-
-const ItemCurrent = styled(Item)`
-  ${itemStyle};
-
-  /* Unique for ItemCurrent: */
-  ${applyVariants(Breadcrumb.itemCurrent)};
-`
-
-const itemInsideStyle = css`
+const linkStyle = css`
   display: block;
   text-decoration: none;
-  max-width: var(--max-width);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: var(--line-height);
-  color: var(--color);
-  padding: var(--padding-ver) var(--padding-hor);
-  text-align: center;
+  color: inherit;
+  border-color: var(--c-bg);
+  position: relative;
 
-  ::before {
+  ${Item}:not(:first-child) &::before {
     content: "";
     display: block;
     position: absolute;
-    width: 0;
     height: 100%;
-    top: 0;
-    left: calc(var(--sep-width) * -1);
-    border: var(--sep-width) solid var(--bg-color);
+    border: var(--separators) solid;
+    border-color: inherit;
     border-left-color: transparent;
-    border-width: calc(var(---height) / 2) var(--sep-width);
+    border-top-width: calc(var(--height) / 2);
+    border-bottom-width: calc(var(--height) / 2);
+    border-right-width: 0;
+    box-sizing: border-box;
+    left: calc(var(--separators) * -1);
     z-index: -1;
   }
 
+  div {
+    display: flex;
+    align-items: center;
+    line-height: var(--line-px-height);
+    padding: var(--item-v-padding) var(--item-h-padding);
+    white-space: nowrap;
+
+    ${applyVariants(Breadcrumb.itemText)};
+  }
+
+  ${applyVariants(Breadcrumb.itemAnchor)};
+`
+
+const Link = styled.a`
+  ${linkStyle};
   ::after {
     content: "";
     display: block;
     position: absolute;
-    width: 0;
     height: 100%;
+    border: var(--separators) solid transparent;
+    border-left-color: inherit;
+    border-top-width: calc(var(--height) / 2);
+    border-bottom-width: calc(var(--height) / 2);
+    border-right-width: 0;
+    box-sizing: border-box;
     top: 0;
-    right: calc(var(--sep-width) * -2);
-    border: var(--sep-width) solid transparent;
-    border-left-color: var(--bg-color);
-    border-width: calc(var(---height) / 2) var(--sep-width);
-  }
-
-  :hover,
-  :focus {
-    outline: none;
-    background-color: var(--hover-bg-color);
-    color: var(--hover-color);
-    text-decoration: none;
-    ::before {
-      border-color: var(--hover-bg-color);
-      border-left-color: transparent;
-    }
-    ::after {
-      border-left-color: var(--hover-bg-color);
-    }
+    right: calc(var(--separators) * -1);
   }
 `
 
-const ItemButton = styled.a`
-  ${itemInsideStyle};
-  ${applyVariants(Breadcrumb.themeProps.itemButton)};
+const LastItemContent = styled.div`
+  ${linkStyle};
 `
 
-const ItemHeading = styled.h1`
-  ${itemInsideStyle};
-
-  /* Unique for ItemHeading: */
-
-  &,
-  :hover {
-    background-color: var(--active-bg-color);
-    color: var(--active-color);
-    ::before {
-      border-top-color: var(--active-bg-color);
-      border-bottom-color: var(--active-bg-color);
-    }
-    ::after {
-      border-left-color: var(--active-bg-color);
-    }
+Breadcrumb.themeProps = {
+  main: {
+    name: "BREADCRUMB_CONTAINER",
+    description:
+      "The main <ol> element, which also contains custom CSS properties.",
+    type: themePropTypes.style
+  },
+  listItem: {
+    name: "BREADCRUMB_ITEM",
+    description: "One <li> list item.",
+    type: themePropTypes.style
+  },
+  itemAnchor: {
+    name: "BREADCRUMB_LINK",
+    description:
+      "Item <a> tag. Will also apply to the last item, which uses a <div>.",
+    type: themePropTypes.style
+  },
+  itemText: {
+    name: "BREADCRUMB_TEXT",
+    description: "Item inner <div>.",
+    type: themePropTypes.style
   }
-
-  ${applyVariants(Breadcrumb.themeProps.itemHeading)};
-`
-
-Breadcrumb.propTypes = {
-  path: PropTypes.array.isRequired
 }
 
-Breadcrumb.defaultProps = {
-  path: []
+Breadcrumb.propTypes = {
+  path: PropTypes.array.isRequired,
+  separator: PropTypes.bool
 }
 
 export default Breadcrumb
