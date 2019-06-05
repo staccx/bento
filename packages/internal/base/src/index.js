@@ -151,6 +151,7 @@ import Combobox from "./components/Forms/Combobox/Combobox"
 
 // Navigation
 import Breadcrumb from "./components/Breadcrumb/Breadcrumb"
+import Breadcrumb2 from "./components/Breadcrumb/Breadcrumb2"
 
 import Development from "./hoc/Development/Development"
 
@@ -184,6 +185,7 @@ export {
   theming,
   Box,
   Breadcrumb,
+  Breadcrumb2,
   Button,
   Caret,
   CaretRight,
