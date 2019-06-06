@@ -68,8 +68,9 @@ program
   .alias("r")
   .description("Helps you release bento")
   .option("-s, --skip", "skips version testing")
-  .action((bumpiness, { parent: { debug = false }, skip }) => {
-    release(bumpiness, debug, skip)
+  .option("-t, --tag <tag>", "Npm dist tag")
+  .action((bumpiness, { parent: { debug = false }, skip, tag }) => {
+    release({ bumpiness, debug, skip, tag })
   })
 
 program

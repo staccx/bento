@@ -11,7 +11,12 @@ const onData = data => {
   updated = JSON.parse(data)
 }
 
-async function release(bumpiness = "conventional", debug, skip = false) {
+async function release({
+  bumpiness = "conventional",
+  debug,
+  skip = false,
+  tag = "latest"
+}) {
   const spinner = setupSpinner()
 
   const checkGit = async (msg = "Checking git for changes") => {
@@ -166,6 +171,8 @@ async function release(bumpiness = "conventional", debug, skip = false) {
           "--registry",
           "https://stacc.jfrog.io/stacc/api/npm/npm/",
           "--no-verify-access",
+          "--dist-tag",
+          tag,
           "--yes"
         ],
         {},
