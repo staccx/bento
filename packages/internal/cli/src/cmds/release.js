@@ -2,7 +2,7 @@ const checkWorkingTree = require("@lerna/check-working-tree")
 const username = require("username")
 const inquirer = require("inquirer")
 const { startStorybook } = require("./storybook")
-const { executeAsync, setupSpinner } = require("./__helpers")
+const { executeAsync, setupSpinner, getBentoRoot } = require("./__helpers")
 const { postMessage, getGiphy } = require("../utils/slack")
 const { fetch, status } = require("../utils/git")
 
@@ -19,10 +19,12 @@ async function release({
 }) {
   const spinner = setupSpinner()
 
+  const cwd = getBentoRoot()
+
   const checkGit = async (msg = "Checking git for changes") => {
     try {
       spinner.start(msg)
-      if (!debug || skip) {
+      if (!debug && !skip) {
         await checkWorkingTree({ cwd: process.cwd() })
         await fetch(process.cwd())
         const { behind, ahead } = await status(process.cwd())
@@ -57,34 +59,22 @@ async function release({
 
     spinner.succeed(`Packages with changes: ${text}`)
   } catch (ex) {
-    console.error(ex)
+    // spinner.fail(ex)
     // reject(ex)
     throw ex
   }
 
   const scope = updated.map(u => u.name).join(" --scope ")
-
-  // try {
-  //   spinner.start("Running prettier")
-  //   await executeAsync(
-  //     "lerna",
-  //     ["exec", `--scope`, scope, `yarn prettier`],
-  //     {},
-  //     console.log
-  //   )
-  //   spinner.succeed("Prettier ran.")
-  //   spinner.start("Checking if files are changed")
-  //   await checkGit()
-  //   spinner.succeed("Good. No changed")
-  // } catch (e) {
-  //   spinner.fail(e.message)
-  //   throw e
-  // }
-
   try {
     spinner.start("Validating build for all changed packages")
     if (!debug) {
-      await executeAsync("lerna", ["exec", `--scope`, scope, `yarn prepare`])
+      await executeAsync(
+        "lerna",
+        ["run", "prepare", "--scope", scope],
+        { cwd },
+        m => spinner.info(m),
+        () => null
+      )
     }
     spinner.succeed(`Building was successful`)
   } catch (ex) {
@@ -95,12 +85,9 @@ async function release({
   try {
     spinner.start("Running tests for all changed packages")
     if (!debug) {
-      await executeAsync("lerna", [
-        "exec",
-        `--scope`,
-        scope,
-        `yarn prepublishOnly`
-      ])
+      await executeAsync("lerna", ["run", "prepublishOnly", `--scope`, scope], {
+        cwd
+      })
     }
     spinner.succeed("Tests performed successfully")
   } catch (e) {
@@ -146,19 +133,13 @@ async function release({
         })
 
         if (confirm) {
-          await executeAsync(
-            "lerna",
-            ["version", bumpiness, "--yes"],
-            {},
-            console.log
-          )
+          await executeAsync("lerna", ["version", bumpiness, "--yes"], { cwd })
         }
       } else {
         await executeAsync(
           "lerna",
           ["version", "--conventional-commits", "--yes"],
-          {},
-          console.log
+          { cwd }
         )
       }
 
@@ -173,11 +154,11 @@ async function release({
           "--no-verify-access",
           "--dist-tag",
           tag,
+          "--pre-dist-tag",
+          "next",
           "--yes"
         ],
-        {},
-        () => null,
-        console.log
+        { cwd }
       )
       spinner.succeed("Published!")
       await executeAsync(

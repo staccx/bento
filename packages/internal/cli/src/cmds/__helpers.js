@@ -6,6 +6,7 @@ const sanityClient = require("@sanity/client")
 const Conf = require("conf")
 const fs = require("fs-extra")
 const os = require("os")
+const { BENTO_ROOT_KEY } = require("../constants")
 
 let client = null
 const config = new Conf({
@@ -175,6 +176,12 @@ const createRC = async (p, bentoRoot, name) => {
   return readRC(name)
 }
 
+const getBentoRoot = () => {
+  const root = config.get(BENTO_ROOT_KEY)
+
+  return root || null
+}
+
 const validateNpmName = name => {
   const { validForNewPackages } = validatePackageName(name)
 
@@ -184,6 +191,7 @@ const validateNpmName = name => {
 module.exports = {
   executeAsync,
   runCommand,
+  getBentoRoot,
   setupSpinner,
   traverse,
   readRC,

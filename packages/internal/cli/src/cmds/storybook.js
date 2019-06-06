@@ -23,13 +23,9 @@ async function startStorybook({ action, cmd }) {
 
   switch (action) {
     case "start":
-      start(bentoRoot, spinner)
-      break
-
+      return start(bentoRoot, spinner)
     case "deploy":
-      deploy(bentoRoot, spinner)
-      break
-
+      return deploy(bentoRoot, spinner)
     case "open":
       opn(decodeURI("https://bento.stac.cx"))
       break
@@ -37,6 +33,8 @@ async function startStorybook({ action, cmd }) {
       console.log(action, "not supported")
       break
   }
+
+  return null
 }
 
 async function start(root, spinner) {
