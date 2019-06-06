@@ -1,13 +1,23 @@
 const username = require("username")
-const storybook = require("@storybook/react/standalone")
-const { executeAsync, setupSpinner, runCommand } = require("./__helpers")
+// const storybook = require("@storybook/react/standalone")
+const {
+  executeAsync,
+  setupSpinner,
+  runCommand,
+  config
+} = require("./__helpers")
 const { postMessage, getGiphy } = require("../utils/slack")
 const { latestLog } = require("../utils/git")
+const { BENTO_ROOT_KEY } = require("../constants")
 const path = require("path")
 const opn = require("opn")
 
 async function startStorybook({ action, cmd }) {
-  const bentoRoot = path.resolve(__dirname, "../../../../../")
+  const bentoRoot = config.get(BENTO_ROOT_KEY)
+
+  if (!bentoRoot) {
+    throw new Error("No bento root is set!")
+  }
 
   const spinner = setupSpinner("Storybook")
 
@@ -30,29 +40,38 @@ async function startStorybook({ action, cmd }) {
 }
 
 async function start(root, spinner) {
-  // executeAsync("yarn", ["storybook"], { cwd: root, pipe: true })
+  executeAsync("yarn", ["storybook"], { cwd: root, pipe: true })
   spinner.info("Starting storybook")
-  process.env.NODE_ENV = "dev"
-  storybook({
-    mode: "dev",
-    port: 9009,
-    configDir: "./.storybook",
-    quiet: true
-  })
+  // process.env.NODE_ENV = "dev"
+  // storybook({
+  //   mode: "dev",
+  //   port: 9009,
+  //   configDir: "./.storybook",
+  //   quiet: true
+  // })
 }
 
 async function deploy(root, spinner) {
   const storybookPath = path.resolve(root, ".storybook")
 
   spinner.info("Building and deploying storybook")
-  process.env.NODE_ENV = "production"
+  // process.env.NODE_ENV = "production"
 
-  await storybook({
-    mode: "static",
-    configDir: storybookPath,
-    outputDir: path.resolve(storybookPath, "dist"),
-    quiet: true
+  await runCommand({
+    spinner,
+    debug: false,
+    failText: "Could not build Storybook",
+    startText: `Building storybook`,
+    succeedText: "Storybook builded",
+    command: async () =>
+      executeAsync("yarn", ["build-storybook"], { cwd: root, pipe: true })
   })
+  // await storybook({
+  //   mode: "static",
+  //   configDir: storybookPath,
+  //   outputDir: path.resolve(storybookPath, "dist"),
+  //   quiet: true
+  // })
 
   spinner.info("Storybook built")
 

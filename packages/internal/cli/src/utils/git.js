@@ -28,8 +28,17 @@ async function latestLog(workingDir) {
   }
 }
 
+const cloneBento = async () => {
+  try {
+    console.log("cloning into")
+  } catch (e) {
+    throw e
+  }
+}
+
 module.exports = {
   status,
   fetch,
-  latestLog
+  latestLog,
+  cloneBento
 }

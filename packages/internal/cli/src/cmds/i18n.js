@@ -7,7 +7,7 @@ const convertTranslations = require("../utils/convertTranslations")
 const saveToJson = require("../utils/saveToJson")
 const walkFunc = require("../utils/walk")
 const {
-  readConfig,
+  readRC,
   runCommand,
   setupSpinner,
   getSanityClient
@@ -50,7 +50,7 @@ const i18n = async ({
   yes,
   parent: { configPath, debug }
 }) => {
-  const { config } = await readConfig(configPath)
+  const { config } = await readRC(configPath)
 
   const {
     sanityProjectId = project,

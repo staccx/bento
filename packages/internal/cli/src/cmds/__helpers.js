@@ -3,8 +3,16 @@ const cosmiconfig = require("cosmiconfig")
 const ora = require("ora")
 const validatePackageName = require("validate-npm-package-name")
 const sanityClient = require("@sanity/client")
+const Conf = require("conf")
+const fs = require("fs-extra")
+const os = require("os")
 
 let client = null
+const config = new Conf({
+  fileExtension: "bentorc",
+  configName: "",
+  cwd: os.homedir()
+})
 
 const getSanityClient = (projectId, dataset, token = null, useCdn = true) => {
   if (client) {
@@ -134,7 +142,7 @@ const traverse = function(o, fn) {
 
 const spinner = setupSpinner()
 
-const readConfig = async name => {
+const readRC = async name => {
   if (!name) {
     spinner.info("No name provided")
     return {}
@@ -157,6 +165,16 @@ const readConfig = async name => {
   return {}
 }
 
+const createRC = async (p, bentoRoot, name) => {
+  const content = {
+    bentoRoot
+  }
+
+  await fs.writeJSON(p, content)
+
+  return readRC(name)
+}
+
 const validateNpmName = name => {
   const { validForNewPackages } = validatePackageName(name)
 
@@ -168,8 +186,10 @@ module.exports = {
   runCommand,
   setupSpinner,
   traverse,
-  readConfig,
+  readRC,
+  createRC,
   getSanityClient,
   validateNpmName,
-  wait
+  wait,
+  config
 }

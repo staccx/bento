@@ -2,8 +2,7 @@
 
 const program = require("commander")
 // const inquirer = require("inquirer")
-// const path = require("path")
-
+const init = require("./cmds/init")
 const release = require("./cmds/release")
 const clean = require("./cmds/clean")
 const link = require("./cmds/link")
@@ -13,19 +12,37 @@ const i18n = require("./cmds/i18n")
 const create = require("./cmds/create")
 const s3 = require("./cmds/s3")
 const { startStorybook } = require("./cmds/storybook")
+const { config, readRC } = require("./cmds/__helpers")
 const { version } = require("../package.json")
-
+const { BENTO_ROOT_KEY } = require("./constants")
 // TODO: Each command should return a function called command with takes the program and adds its command?
+
+const validateBentoRoot = async value => {
+  const root = config.get(BENTO_ROOT_KEY)
+  console.log(config.path, root)
+
+  if (value) {
+    config.set(BENTO_ROOT_KEY, value)
+  }
+
+  return config.get(BENTO_ROOT_KEY)
+}
 
 program
   .version(version)
   .description("Command line tool for Stacc X")
+  .option("--path <path>", "Path for bento root", validateBentoRoot)
   .option("-c, --configPath [path]>", "Path for finding config file", "bento")
   .option("-d, --debug", "Run without running commands")
 
 const list = val => {
   return val.split(",")
 }
+
+program.command("config").action(async () => {
+  const config = await readRC("bento")
+  console.log("Config", config)
+})
 
 program
   .command("i18n")
@@ -108,6 +125,10 @@ program
 
 program.command("storybook <action>").action((action, cmd) => {
   startStorybook({ action, cmd })
+})
+
+program.command("init").action(props => {
+  init(props)
 })
 
 program.parse(process.argv)
