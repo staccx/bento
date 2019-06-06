@@ -126,7 +126,7 @@ async function release({
       spinner.info("Versioning!")
 
       if (bumpiness) {
-        const { confirm } = inquirer.prompt({
+        const { confirm } = await inquirer.prompt({
           name: "confirm",
           type: "confirm",
           message: `Bump to ${bumpiness}?`
@@ -158,7 +158,9 @@ async function release({
           "next",
           "--yes"
         ],
-        { cwd }
+        { cwd },
+        console.log,
+        console.log
       )
       spinner.succeed("Published!")
       await executeAsync(
