@@ -1,6 +1,6 @@
 {
   "name": "@staccx/cli",
-  "version": "9.0.0-alpha.26",
+  "version": "9.0.0-alpha.25",
   "description": "",
   "main": "src/cli.js",
   "module": "src/cli.js",
