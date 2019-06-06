@@ -104,7 +104,7 @@ async function release({
     if (!debug) {
       const giphy = await getGiphy(`release ${name}`)
       await postMessage({
-        text: `@channel ${name} is releasing ${text}. Please do not push changes to git`,
+        text: `${name} is releasing ${text}. Please do not push changes to git`,
         attachments: [giphy]
       })
     }
@@ -176,7 +176,7 @@ async function release({
     spinner.fail("Something went wrong during releasing", e)
     const name = await username()
     await postMessage({
-      text: `@channel @${name}'s release failed. Let them know`
+      text: `@${name}'s release failed. Let them know`
     })
     process.exit(1)
   }
@@ -189,7 +189,7 @@ async function release({
     const name = await username()
     if (!debug) {
       await postMessage({
-        text: `@channel ${name} has released\n \`\`\`${text}\`\`\`\nYou can find release notes here: https://bitbucket.org/stacc-flow/bento/src/master/CHANGELOG.md`
+        text: `${name} has released\n \`\`\`${text}\`\`\`\nYou can find release notes here: https://bitbucket.org/stacc-flow/bento/src/master/CHANGELOG.md`
       })
     }
     spinner.succeed("Team alerted about the awesome")
