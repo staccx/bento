@@ -80,7 +80,7 @@ async function deploy(root, spinner) {
   const giphy = await getGiphy(message)
   const name = await username()
   await postMessage({
-    text: `@channel ${name} is releasing new storybook. Latest log: ${message}`,
+    text: `${name} is releasing new storybook. Latest log: ${message}`,
     attachments: [giphy]
   })
 
@@ -99,7 +99,7 @@ async function deploy(root, spinner) {
   // TODO: Make tooling for employees to add link
 
   await postMessage({
-    text: `@channel ${name} has released new storybook`,
+    text: `${name} has released new storybook`,
     attachments: [
       {
         fallback: "Required plain-text summary of the attachment.",
