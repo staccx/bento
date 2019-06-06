@@ -1,5 +1,6 @@
 const checkWorkingTree = require("@lerna/check-working-tree")
 const username = require("username")
+const inquirer = require("inquirer")
 const { startStorybook } = require("./storybook")
 const { executeAsync, setupSpinner } = require("./__helpers")
 const { postMessage, getGiphy } = require("../utils/slack")
@@ -11,7 +12,6 @@ const onData = data => {
 }
 
 async function release(bumpiness = "conventional", debug, skip = false) {
-  console.log("bumpiness", bumpiness)
   const spinner = setupSpinner()
 
   const checkGit = async (msg = "Checking git for changes") => {
@@ -133,17 +133,25 @@ async function release(bumpiness = "conventional", debug, skip = false) {
     if (!debug) {
       spinner.info("Versioning!")
 
-      if (bumpiness === "conventional") {
+      if (bumpiness) {
+        const { confirm } = inquirer.prompt({
+          name: "confirm",
+          type: "confirm",
+          message: `Bump to ${bumpiness}?`
+        })
+
+        if (confirm) {
+          await executeAsync(
+            "lerna",
+            ["version", bumpiness, "--yes"],
+            {},
+            console.log
+          )
+        }
+      } else {
         await executeAsync(
           "lerna",
           ["version", "--conventional-commits", "--yes"],
-          {},
-          console.log
-        )
-      } else if (bumpiness === "prerelease") {
-        await executeAsync(
-          "lerna",
-          ["version", "prerelease", "--yes"],
           {},
           console.log
         )
