@@ -36,15 +36,11 @@
     "axios": "^0.18.0",
     "localforage": "^1.7.2",
     "prop-types": "^15.6.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "react-router-dom": "^4.2.2",
     "react-router-hash-link": "^1.2.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0",
-    "prettier": "^1.14.2",
-    "rollup": "^0.65.0"
+    "@staccx/rollup-config": "^8.58.0"
   },
   "proxy": {
     "/api/": {

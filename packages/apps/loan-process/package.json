@@ -41,20 +41,13 @@
     "formik": "^0.11.11",
     "national-id": "^2.0.0",
     "prop-types": "^15.6.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "react-loadable": "^5.5.0",
     "yup": "^0.24.1"
   },
   "devDependencies": {
     "@staccx/rollup-config": "^8.58.0",
-    "localforage": "^1.7.2",
-    "prettier": "^1.14.2",
-    "react-scripts": "^3.0.0",
-    "rollup": "^0.65.0"
+    "localforage": "^1.7.2"
   },
-  "peerDependencies": {
-    "styled-components": "^4.0.2"
-  },
+  "peerDependencies": {},
   "gitHead": "879a42d2c730577f80734a3994226c496fc669db"
 }

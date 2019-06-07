@@ -27,9 +27,7 @@
     "@sanity/default-layout": "^0.140.14",
     "@sanity/default-login": "^0.140.15",
     "@sanity/desk-tool": "^0.140.14",
-    "prop-types": "^15.6.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "prop-types": "^15.6.2"
   },
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"

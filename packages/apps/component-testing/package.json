@@ -10,17 +10,13 @@
     "deploy": "yarn build && surge -p ./build",
     "serve": "yarn build && serve -s build"
   },
-  "peerDependencies": {
-    "styled-components": "^4.0.3"
-  },
+  "peerDependencies": {},
   "dependencies": {
     "@staccx/i18n": "^9.0.0-alpha.3",
     "react-epic-spinners": "^0.2.1",
     "react-spinners": "^0.4.7"
   },
-  "devDependencies": {
-    "react-scripts": "^3.0.0"
-  },
+  "devDependencies": {},
   "browserslist": [
     ">0.2%",
     "not dead",

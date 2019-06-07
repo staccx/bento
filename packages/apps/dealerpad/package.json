@@ -11,8 +11,6 @@
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.5",
     "prop-types": "^15.6.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.2.1",
     "react-web-notification": "^0.3.2",
@@ -35,12 +33,9 @@
   },
   "devDependencies": {
     "@staccx/rollup-config": "^8.58.0",
-    "prettier": "^1.14.2",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",
-    "react-app-rewired": "^2.0.3",
-    "react-scripts": "^3.0.0",
-    "rollup": "^0.65.0"
+    "react-app-rewired": "^2.0.3"
   },
   "license": "UNLICENSED",
   "proxy": {
@@ -55,8 +50,6 @@
       "changeOrigin": true
     }
   },
-  "peerDependencies": {
-    "styled-components": "^4.0.2"
-  },
+  "peerDependencies": {},
   "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e"
 }

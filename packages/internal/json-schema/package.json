@@ -25,9 +25,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0",
-    "prettier": "^1.14.2",
-    "rollup": "^0.65.0"
+    "@staccx/rollup-config": "^8.58.0"
   },
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"

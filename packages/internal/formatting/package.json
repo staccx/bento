@@ -32,10 +32,7 @@
   },
   "jest": {},
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0",
-    "prettier": "^1.14.2",
-    "react-scripts": "^3.0.0",
-    "rollup": "^0.65.0"
+    "@staccx/rollup-config": "^8.58.0"
   },
   "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e"
 }
