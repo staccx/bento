@@ -12,7 +12,7 @@ const i18n = require("./cmds/i18n")
 const create = require("./cmds/create")
 const s3 = require("./cmds/s3")
 const { startStorybook } = require("./cmds/storybook")
-const { config, readRC } = require("./cmds/__helpers")
+const { config, readRC, getBentoRoot } = require("./cmds/__helpers")
 const { version } = require("../package.json")
 const { BENTO_ROOT_KEY } = require("./constants")
 // TODO: Each command should return a function called command with takes the program and adds its command?
@@ -26,6 +26,14 @@ const validateBentoRoot = async value => {
   }
 
   return config.get(BENTO_ROOT_KEY)
+}
+
+const bentoRoot = getBentoRoot()
+
+if (!bentoRoot && process.argv[2] !== "init") {
+  console.log("Bento root not set")
+  console.log("Please run `bento init`")
+  process.exit(1)
 }
 
 program
