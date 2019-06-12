@@ -27,10 +27,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0",
-    "prettier": "^1.14.2",
-    "react-scripts": "^3.0.0",
-    "rollup": "^0.65.0"
+    "@staccx/rollup-config": "^8.58.0"
   },
   "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
 }

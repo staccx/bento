@@ -147,9 +147,7 @@ class Sign extends React.Component {
                       title={
                         <Box variant="split">
                           <span>{formatName(signer.name)}</span>
-                          <span>{`${signer.signCount}/${
-                            signer.orders.length
-                          }`}</span>
+                          <span>{`${signer.signCount}/${signer.orders.length}`}</span>
                         </Box>
                       }
                       variant="signer"

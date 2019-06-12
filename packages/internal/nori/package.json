@@ -11,10 +11,7 @@
     "@staccx/i18n": "^9.0.0-alpha.3",
     "@staccx/sanity": "^9.0.0-alpha.27",
     "@staccx/stacc-theme": "^9.0.0-alpha.35",
-    "prop-types": "^15.6.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^4.1.3"
+    "prop-types": "^15.6.2"
   },
   "scripts": {
     "analyze": "source-map-explorer dist/index.js",
@@ -31,8 +28,6 @@
   },
   "devDependencies": {
     "@staccx/rollup-config": "^8.58.0",
-    "prettier": "^1.14.2",
-    "rollup": "^0.65.0",
     "serve": "^10.0.0",
     "surge": "^0.20.1"
   },

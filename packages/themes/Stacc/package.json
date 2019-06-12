@@ -26,18 +26,10 @@
   },
   "dependencies": {
     "@staccx/base": "^9.0.0-alpha.27",
-    "polished": "^1.9.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "polished": "^1.9.2"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0",
-    "prettier": "^1.14.2",
-    "react-scripts": "^3.0.0",
-    "rollup": "^0.65.0"
-  },
-  "peerDependencies": {
-    "styled-components": "^4.0.2"
+    "@staccx/rollup-config": "^8.58.0"
   },
   "gitHead": "f5ee32c6def3d76c1aa85a162588c1455b13563e"
 }
