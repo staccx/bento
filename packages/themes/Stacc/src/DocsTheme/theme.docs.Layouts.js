@@ -58,6 +58,12 @@ export const LayoutStyling = theming.createVariants(
         padding-right: ${theming.spacing.medium};
       }
     `,
+    dashboard: css`
+      grid-template-columns: 220px 1fr;
+      grid-gap: 0;
+      min-height: 100vh;
+      grid-template-areas: "aside main";
+    `,
     centered: css`
       justify-content: center;
       align-items: center;

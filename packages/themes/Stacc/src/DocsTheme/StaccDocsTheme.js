@@ -16,6 +16,7 @@ import {
   SelectedWrapperStyle,
   SelectedOptionContainer
 } from "./theme.docs.Select"
+import WrapperVariants from "./Wrapper.variants"
 
 const wrapper = {
   documentation: "1440px"
@@ -53,5 +54,6 @@ const theme = new theming.Theme({ wrapper, color })
   .add(SelectWrapperStyle)
   .add(SelectedWrapperStyle)
   .add(SelectedOptionContainer)
+  .add(WrapperVariants)
 
 export default theme
