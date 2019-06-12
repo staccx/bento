@@ -82,6 +82,7 @@
     "babel-core": "7.0.0-bridge.0",
     "terser": "3.14.1",
     "webpack": "4.29.6",
-    "babel-jest": "24.7.1"
+    "babel-jest": "24.8.0",
+    "babel-loader": "8.0.5"
   }
 }
