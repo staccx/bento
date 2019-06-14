@@ -12,9 +12,10 @@
   },
   "peerDependencies": {},
   "dependencies": {
+    "@staccx/base": "^9.0.0-alpha.27",
+    "@staccx/fundu-theme": "^9.0.0-alpha.27",
     "@staccx/i18n": "^9.0.0-alpha.3",
-    "react-epic-spinners": "^0.2.1",
-    "react-spinners": "^0.4.7"
+    "@staccx/nordea-theme": "^9.0.0-alpha.27"
   },
   "devDependencies": {},
   "browserslist": [
