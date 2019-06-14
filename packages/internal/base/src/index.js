@@ -36,6 +36,7 @@ import Heading from "./components/Text/Heading/Heading"
 import Paragraph from "./components/Text/Paragraph/Paragraph"
 import Tag from "./components/Text/Tag/Tag"
 import Anchor from "./components/Anchor/Anchor"
+import WidowFix from "./components/Text/WidowFix/WidowFix"
 
 // Lists
 import List from "./components/Lists/List"
@@ -277,5 +278,6 @@ export {
   Wait,
   Warning,
   WebFonts,
+  WidowFix,
   Wrapper
 }
