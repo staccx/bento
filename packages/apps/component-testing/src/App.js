@@ -1,34 +1,35 @@
-import React, { Component, useState } from "react"
+import React, { useState } from "react"
 import {
-  BirthdateInput,
-  Wrapper,
-  Combobox,
-  GlobalStyle,
-  Layout,
-  WebFonts,
-  Input,
-  Label,
-  Button,
-  List,
-  CreditCardInput,
-  PhoneInput,
-  PostalCodeInput,
-  NationalIdInput,
   AccountInput,
-  CurrencyInput,
-  Select2,
-  Select,
+  Breadcrumb,
+  Button,
+  Combobox,
   CompanyInput,
+  CreditCardInput,
+  CurrencyInput,
   ExpandListItem,
-  Loading,
-  Slider2,
-  Paragraph,
-  theming,
   Form,
   FormField,
-  Breadcrumb
+  GlobalStyle,
+  I18n,
+  I18nConsumer,
+  Input,
+  Label,
+  Layout,
+  List,
+  Loading,
+  NationalIdInput,
+  PhoneInput,
+  PostalCodeInput,
+  Select,
+  Select2,
+  Slider2,
+  theming,
+  Translate,
+  WebFonts,
+  withI18n,
+  Wrapper
 } from "@staccx/base"
-import { LanguageProvider, TranslatedText } from "@staccx/i18n"
 import styled, { ThemeProvider } from "styled-components"
 import { BrowserRouter as Router } from "react-router-dom"
 import theme from "./theme/Theme"
@@ -81,17 +82,15 @@ const renderLabel = getLabelOptions => (
   <Label {...getLabelOptions()}>Fruit</Label>
 )
 
+const Dummy = ({ translate }) => <div>{translate("hoc")}</div>
+
+const WrappedWithI18n = withI18n(Dummy)
 const App = () => {
   const [postalDefault, setPostalDefault] = useState(2000)
   console.log(postalDefault)
 
   return (
-    <LanguageProvider
-      texts={texts}
-      language={"nb"}
-      languages={["nb", "en"]}
-      debug
-    >
+    <I18n texts={texts} language={"en"} languages={["en", "nb"]} debug>
       <ThemeProvider theme={theme}>
         <Router>
           <Wrapper>
@@ -147,42 +146,58 @@ const App = () => {
               />
             </PadBox>
             <List>
-              <ExpandListItem title={"i18n"}>
-                <TranslatedText i18nKey={"bugskey"}>
-                  Fallback Text
-                </TranslatedText>
-                <TranslatedText i18nKey={"INVOICE"}>
-                  {value => <Paragraph>{value}</Paragraph>}
-                </TranslatedText>
-                <TranslatedText />
-                <TranslatedText>Just doing stuff</TranslatedText>
+              <ExpandListItem title={"i18n"} expanded>
+                {/* <Translate i18n={"fallback"}> */}
+                {/* <Loading> */}
+                {/* <div>fallback</div> */}
+                {/* </Loading> */}
+                {/* </Translate> */}
+                <hr />
+                <Translate i18n={"no_child"} />
+                <hr />
+                <Translate
+                  i18n={"postprocess"}
+                  data={{ value: 100 * Math.random() }}
+                >
+                  {value => {
+                    return <div>{value}</div>
+                  }}
+                </Translate>
+                <hr />
+                <I18nConsumer>
+                  {({ translate }) => {
+                    return <div>{translate("inline_function")}</div>
+                  }}
+                </I18nConsumer>
+                <hr />
+                <WrappedWithI18n />
               </ExpandListItem>
-              <ExpandListItem title={"Inputs"} expanded>
-                <Layout paddingTop="huge" paddingBottom="huge" rowGap={"large"}>
-                  <BirthdateInput
-                    id="bdaaaay"
-                    names={["wasd1", "wasd2", "wasd3"]}
-                    label={"Your birthday"}
-                    onComplete={value => console.log("onComplete: ", value)}
-                    onChange={value => console.log("onChange: ", value)}
-                    aria-labelledby="rg1_label"
-                  />
-                  <BirthdateInput
-                    ids={["bday", "bmnth", "byr"]}
-                    labels={["bday", "bmnth", "byr"]}
-                    onComplete={value => console.log("onComplete: ", value)}
-                    onChange={value => console.log("onChange: ", value)}
-                  />
-                  <BirthdateInput
-                    id={"asnjda"}
-                    ids={["bday", "bmnth", "byr"]}
-                    names={["bday", "bmnth", "byr"]}
-                    label={"Superflous"}
-                    labels={["bday", "bmnth", "byr"]}
-                    onComplete={value => console.log("onComplete: ", value)}
-                    onChange={value => console.log("onChange: ", value)}
-                  />
-                </Layout>
+              <ExpandListItem title={"Inputs"}>
+                {/* <Layout paddingTop="huge" paddingBottom="huge" rowGap={"large"}> */}
+                {/* <BirthdateInput */}
+                {/* id="bdaaaay" */}
+                {/* names={["wasd1", "wasd2", "wasd3"]} */}
+                {/* label={"Your birthday"} */}
+                {/* onComplete={value => console.log("onComplete: ", value)} */}
+                {/* onChange={value => console.log("onChange: ", value)} */}
+                {/* aria-labelledby="rg1_label" */}
+                {/* /> */}
+                {/* <BirthdateInput */}
+                {/* ids={["bday", "bmnth", "byr"]} */}
+                {/* labels={["bday", "bmnth", "byr"]} */}
+                {/* onComplete={value => console.log("onComplete: ", value)} */}
+                {/* onChange={value => console.log("onChange: ", value)} */}
+                {/* /> */}
+                {/* <BirthdateInput */}
+                {/* id={"asnjda"} */}
+                {/* ids={["bday", "bmnth", "byr"]} */}
+                {/* names={["bday", "bmnth", "byr"]} */}
+                {/* label={"Superflous"} */}
+                {/* labels={["bday", "bmnth", "byr"]} */}
+                {/* onComplete={value => console.log("onComplete: ", value)} */}
+                {/* onChange={value => console.log("onChange: ", value)} */}
+                {/* /> */}
+                {/* </Layout> */}
                 <CompanyInput id={"test"} />
                 <Select
                   items={options}
@@ -337,7 +352,7 @@ const App = () => {
           </Wrapper>
         </Router>
       </ThemeProvider>
-    </LanguageProvider>
+    </I18n>
   )
 }
 

@@ -154,7 +154,7 @@ import Breadcrumb from "./components/Breadcrumb/Breadcrumb"
 
 import Development from "./hoc/Development/Development"
 
-import I18n, { useI18n } from "./components/i18n/I18n"
+import I18n, { useI18n, I18nConsumer, withI18n } from "./components/i18n/I18n"
 import Translate from "./components/i18n/Translate"
 
 import SkeletonPulse from "./components/Skeleton/Skeleton.Pulse"
@@ -217,6 +217,7 @@ export {
   Heading,
   hideVisually,
   I18n,
+  I18nConsumer,
   icons,
   Image,
   Info,
@@ -277,5 +278,6 @@ export {
   Wait,
   Warning,
   WebFonts,
+  withI18n,
   Wrapper
 }

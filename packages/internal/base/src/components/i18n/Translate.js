@@ -12,21 +12,20 @@ import { commonPropTypes } from "../../constants/themeContants"
  * @constructor
  */
 const Translate = ({ children, i18n, data }) => {
-  const { translate, texts } = useI18n()
+  const { translate, ready } = useI18n()
 
+  if (!ready) {
+    loglevel.debug("Not ready yet")
+    return null
+  }
   if (!i18n) {
-    console.log("Testing")
     loglevel.warn("No key supplied to I18n")
     return children
   }
 
   if (Array.isArray(i18n)) {
-    const values = i18n.map((k, index) =>
-      translate({
-        key: k,
-        data,
-        fallback: React.Children(children)[index] || null
-      })
+    const values = i18n.map(
+      (k, index) => translate(k, data) || React.Children(children)[index]
     )
 
     if (typeof children === "function") {
@@ -37,7 +36,8 @@ const Translate = ({ children, i18n, data }) => {
   }
 
   const fb = typeof children !== "function" ? children : null
-  const value = translate({ texts, key: i18n, data, fallback: fb })
+
+  const value = translate(i18n, data)
 
   if (!value) {
     loglevel.warn("No value found for", i18n)
@@ -49,7 +49,7 @@ const Translate = ({ children, i18n, data }) => {
       return children(null)
     }
 
-    return null
+    return fb
   }
 
   if (children) {
@@ -61,7 +61,7 @@ const Translate = ({ children, i18n, data }) => {
 }
 
 Translate.propTypes = {
-  children: commonPropTypes.children.isRequired
+  children: commonPropTypes.children
 }
 
 export default Translate

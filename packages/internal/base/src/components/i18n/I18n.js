@@ -1,36 +1,54 @@
-import React, { createContext, useReducer, useContext, useMemo } from "react"
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState
+} from "react"
+import i18next from "i18next"
 import PropTypes from "prop-types"
-import produce from "immer"
-import { translate as t, convert as c } from "@staccx/i18n"
+import { convert as c } from "@staccx/i18n"
+import loglevel from "loglevel"
+import SanityBackend from "./SanityBackend"
 
 const I18nContext = createContext({})
 
-const actions = {
-  setLanguage: "SEND",
-  initialize: "INIT"
-}
-
-const reducer = (state, action) =>
-  produce(state, draft => {
-    switch (action.type) {
-      case actions.setLanguage:
-        draft.language = action.language
-        break
-      case actions.initialize:
-        draft = Object.assign(draft, action.payload)
-        break
-    }
-  })
-
 const I18n = ({ children, ...props }) => {
-  const [i18n] = useReducer(reducer, props)
-  const { texts = null } = props
+  // const [i18n] = useReducer(reducer, props)
+  const [ready, setReady] = useState(false)
+  const { texts = null, language = "en", debug = true } = props
+  const initialize = async () => {
+    await i18next.use(SanityBackend).init({
+      lng: language,
+      debug,
+      resources: texts,
+      // returnObjects: true,
+      // saveMissing: true, // Must be set to true
+      // parseMissingKeyHandler: key => {
+      //   loglevel.warn(`No translation found for "${key}"`)
+      //   return null
+      // },
+      backend: {
+        sanity: {
+          projectId: "1pb4gkca",
+          dataset: "production"
+        }
+      }
+    })
+    loglevel.log("i18n ready to use", i18next)
+    setReady(true)
+  }
+
+  useEffect(() => {
+    initialize()
+  }, [])
 
   return (
     <I18nContext.Provider
       value={{
         texts,
-        ...i18n
+        i18n: i18next,
+        ready
       }}
     >
       {children}
@@ -46,11 +64,12 @@ I18n.propTypes = {
 export const useI18n = () => {
   const value = useContext(I18nContext)
 
-  const { language = "no", texts, level } = value
+  const { i18n, ready } = value
 
-  const translate = ({ key, data, fallback, namespace }) =>
-    t({ texts, language, key, data, fallback, namespace, level })
-  const convert = value => c(value, language)
+  const translate = (key, data) => i18n.t(key, data)
+
+  // t({ texts, language, key, data, fallback, namespace, level })
+  const convert = value => c(value, i18n.language)
 
   return useMemo(() => {
     return {
@@ -58,7 +77,30 @@ export const useI18n = () => {
       convert,
       ...value
     }
-  }, [value])
+  }, [value, ready])
 }
+
+export const I18nConsumer = ({ children }) => {
+  const { ready, translate, convert } = useI18n()
+
+  if (!children) {
+    return null
+  }
+
+  if (!ready) {
+    return null
+  }
+
+  return children({ translate, convert, ready })
+}
+
+// TODO: Split into seperate files
+export const withI18n = Component => props => (
+  <I18nConsumer>
+    {({ convert, translate }) => (
+      <Component {...props} translate={translate} convert={convert} />
+    )}
+  </I18nConsumer>
+)
 
 export default I18n
