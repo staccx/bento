@@ -1,6 +1,6 @@
 {
   "name": "@staccx/formatting",
-  "version": "9.0.0-alpha.4",
+  "version": "9.0.0-alpha.38",
   "description": "Convenience functions for formatting",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -32,7 +32,7 @@
   },
   "jest": {},
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0"
+    "@staccx/rollup-config": "^9.0.0-alpha.38"
   },
   "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e"
 }

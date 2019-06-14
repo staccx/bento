@@ -1,6 +1,6 @@
 {
   "name": "@staccx/stacc-website",
-  "version": "9.0.0-alpha.35",
+  "version": "9.0.0-alpha.38",
   "private": true,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -8,7 +8,7 @@
   "dependencies": {
     "@sanity/client": "^0.135.0",
     "@sanity/image-url": "^0.132.8",
-    "@staccx/utils": "^9.0.0-alpha.2",
+    "@staccx/utils": "^9.0.0-alpha.38",
     "@typeform/embed": "^0.1.6",
     "compression": "^1.7.3",
     "cors": "^2.8.4",
@@ -39,18 +39,17 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/base": "^9.0.0-alpha.27",
-    "@staccx/color": "^9.0.0-alpha.2",
-    "@staccx/formatting": "^9.0.0-alpha.4",
-    "@staccx/rollup-config": "^8.58.0",
-    "@staccx/sanity": "^9.0.0-alpha.27",
-    "@staccx/stacc-theme": "^9.0.0-alpha.35",
+    "@staccx/base": "^9.0.0-alpha.38",
+    "@staccx/color": "^9.0.0-alpha.38",
+    "@staccx/formatting": "^9.0.0-alpha.38",
+    "@staccx/rollup-config": "^9.0.0-alpha.38",
+    "@staccx/sanity": "^9.0.0-alpha.38",
+    "@staccx/stacc-theme": "^9.0.0-alpha.38",
     "cli-progress": "^2.1.0",
     "nodemon": "^1.18.4",
     "react-snap": "^1.19.0",
     "vcards-js": "^2.9.0"
   },
-  "peerDependencies": {},
   "browserslist": [
     ">0.2%",
     "not dead",

@@ -1,6 +1,6 @@
 {
   "name": "@staccx/component-testing",
-  "version": "9.0.0-alpha.3",
+  "version": "9.0.0-alpha.38",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -10,13 +10,11 @@
     "deploy": "yarn build && surge -p ./build",
     "serve": "yarn build && serve -s build"
   },
-  "peerDependencies": {},
   "dependencies": {
-    "@staccx/i18n": "^9.0.0-alpha.3",
+    "@staccx/i18n": "^9.0.0-alpha.38",
     "react-epic-spinners": "^0.2.1",
     "react-spinners": "^0.4.7"
   },
-  "devDependencies": {},
   "browserslist": [
     ">0.2%",
     "not dead",
