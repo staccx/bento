@@ -7,18 +7,15 @@ export default (openapi, tags) => {
       const path = openapi.paths[key]
       Object.keys(path).forEach(opKey => {
         const operation = path[opKey]
-        if (operation.tags && operation.tags.indexOf(name) !== -1) {
-          if (!operations[name]) {
-            operations[name] = []
-          }
-
-          operations[name].push({
-            ...operation,
-            tag: name,
-            path: key, // key.replace(`/${name}`, ""),
-            type: opKey
-          })
+        if (!operations.hasOwnProperty(name)) {
+          operations[name] = []
         }
+        operations[name].push({
+          ...operation,
+          tag: name,
+          path: key, // key.replace(`/${name}`, ""),
+          type: opKey
+        })
       })
     })
   }

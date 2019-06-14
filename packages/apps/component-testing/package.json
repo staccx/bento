@@ -1,6 +1,6 @@
 {
   "name": "@staccx/component-testing",
-  "version": "9.0.0-alpha.3",
+  "version": "9.0.0-alpha.38",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -10,14 +10,12 @@
     "deploy": "yarn build && surge -p ./build",
     "serve": "yarn build && serve -s build"
   },
-  "peerDependencies": {},
   "dependencies": {
     "@staccx/base": "^9.0.0-alpha.27",
     "@staccx/fundu-theme": "^9.0.0-alpha.27",
     "@staccx/i18n": "^9.0.0-alpha.3",
     "@staccx/nordea-theme": "^9.0.0-alpha.27"
   },
-  "devDependencies": {},
   "browserslist": [
     ">0.2%",
     "not dead",

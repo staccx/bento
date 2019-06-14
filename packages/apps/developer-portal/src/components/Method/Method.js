@@ -44,15 +44,9 @@ const Method = ({ codeGeneratorInputs, operation, language }) => {
 
   return (
     <div>
-      {operation.name ? (
-        <Heading variant="documentation" level={3}>
-          {operation.name}
-        </Heading>
-      ) : (
-        <Heading variant="documentation" level={3}>
-          MISSING NAME!
-        </Heading>
-      )}
+      <Heading variant="documentation" level={3}>
+        {operation.name || operation.operationId || "Missing name"}
+      </Heading>
 
       <Box variant="codeBlock" flush>
         <Layout variant="documentationApiExample">

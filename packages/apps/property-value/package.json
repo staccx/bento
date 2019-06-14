@@ -1,6 +1,6 @@
 {
   "name": "@staccx/property-value",
-  "version": "9.0.0-alpha.16",
+  "version": "9.0.0-alpha.38",
   "description": "Widget for showing property value based on person nationalId (Norway only)",
   "private": true,
   "author": "StaccX",
@@ -33,16 +33,15 @@
   "dependencies": {
     "@google/maps": "^0.4.6",
     "@staccx/base": "^7.15.0",
-    "@staccx/formatting": "^9.0.0-alpha.4",
+    "@staccx/formatting": "^9.0.0-alpha.38",
     "axios": "^0.18.0",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.5",
     "recompose": "^0.27.1"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0",
+    "@staccx/rollup-config": "^9.0.0-alpha.38",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2"
-  },
-  "peerDependencies": {}
+  }
 }

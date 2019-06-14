@@ -1,6 +1,6 @@
 {
   "name": "@staccx/rollup-config",
-  "version": "8.58.0",
+  "version": "9.0.0-alpha.38",
   "main": "dist/index.js",
   "license": "UNLICENSED",
   "module": "dist/index.es.js",
@@ -20,6 +20,5 @@
     "rollup-plugin-json": "^3.0.0",
     "rollup-plugin-node-resolve": "^3.3.0"
   },
-  "devDependencies": {},
   "gitHead": "297e66dbf355a6ce9a98fbf31643e11ea6ccbe13"
 }

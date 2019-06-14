@@ -17,7 +17,7 @@ export default openapi => {
                 name: tag
               }
             })
-          : []
+          : [{ name: key }]
       )
     })
   })

@@ -1,6 +1,6 @@
 {
   "name": "@staccx/fundu-theme",
-  "version": "9.0.0-alpha.27",
+  "version": "9.0.0-alpha.38",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -25,12 +25,11 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.27",
+    "@staccx/base": "^9.0.0-alpha.38",
     "polished": "^2.3.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0"
+    "@staccx/rollup-config": "^9.0.0-alpha.38"
   },
-  "peerDependencies": {},
   "gitHead": "879a42d2c730577f80734a3994226c496fc669db"
 }

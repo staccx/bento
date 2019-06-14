@@ -1,16 +1,16 @@
 {
   "name": "@staccx/nori",
-  "version": "9.0.0-alpha.35",
+  "version": "9.0.0-alpha.38",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.27",
-    "@staccx/i18n": "^9.0.0-alpha.3",
-    "@staccx/sanity": "^9.0.0-alpha.27",
-    "@staccx/stacc-theme": "^9.0.0-alpha.35",
+    "@staccx/base": "^9.0.0-alpha.38",
+    "@staccx/i18n": "^9.0.0-alpha.38",
+    "@staccx/sanity": "^9.0.0-alpha.38",
+    "@staccx/stacc-theme": "^9.0.0-alpha.38",
     "prop-types": "^15.6.2"
   },
   "scripts": {
@@ -27,7 +27,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0",
+    "@staccx/rollup-config": "^9.0.0-alpha.38",
     "serve": "^10.0.0",
     "surge": "^0.20.1"
   },
