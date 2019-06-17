@@ -38,6 +38,7 @@
     "@babel/preset-react": "^7.0.0",
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
+    "@staccx/cli": "^9.0.0-alpha.28",
     "@staccx/eslint-config": "^9.0.0-alpha.16",
     "@staccx/rollup-config": "^8.58.0",
     "@storybook/addon-a11y": "^5.0.6",
