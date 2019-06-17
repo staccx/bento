@@ -14,6 +14,11 @@
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-9.0.0-alpha.2.tgz#127f185b1cc86be16a7fe2f6b8d2682f572be496"
   integrity sha1-En8YWxzIa+Fqf+L2uNJoL1cr5JY=
 
+"@staccx/animations@^9.0.0-alpha.39":
+  version "9.0.0-alpha.39"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-9.0.0-alpha.39.tgz#8daef80d5243f3714692d3d050c5e237a3b7c7a6"
+  integrity sha1-ja74DVJD83FGktPQUMXiN6O3x6Y=
+
 "@staccx/base@^9.0.0-alpha.27":
   version "9.0.0-alpha.27"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-9.0.0-alpha.27.tgz#45542e79f9213e4b3b5339f64f10223a4feadf98"
@@ -50,6 +55,49 @@
     webfontloader "^1.6.28"
     yup "^0.24.1"
 
+"@staccx/base@^9.0.0-alpha.39":
+  version "9.0.0-alpha.39"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-9.0.0-alpha.39.tgz#b8771989e5d02e5b3356e0426837205d43733ff7"
+  integrity sha1-uHcZieXQLlszVuBCaDcgXUNzP/c=
+  dependencies:
+    "@staccx/animations" "^9.0.0-alpha.39"
+    "@staccx/formatting" "^9.0.0-alpha.39"
+    "@staccx/i18n" "^9.0.0-alpha.39"
+    "@staccx/math" "^9.0.0-alpha.39"
+    "@staccx/utils" "^9.0.0-alpha.39"
+    axios "^0.18.0"
+    babel-plugin-prismjs "^1.0.2"
+    cleave.js "^1.4.4"
+    copy-to-clipboard "^3.0.8"
+    downshift "^3.1.2"
+    easing-utils "^0.0.7"
+    es6-promise "^4.2.4"
+    formik "^0.11.11"
+    fuse.js "^3.4.4"
+    immutable "^4.0.0-rc.12"
+    isomorphic-fetch "^2.2.1"
+    js-search "^1.4.2"
+    libphonenumber-js "^1.7.8"
+    lodash.debounce "^4.0.8"
+    lodash.isequal "^4.5.0"
+    loglevel "^1.6.1"
+    polished "^2.3.0"
+    prismjs "^1.15.0"
+    prop-types "^15.6.2"
+    react-compound-slider "^0.16.2"
+    react-traverse "^1.0.0"
+    tinycolor2 "^1.4.1"
+    webfontloader "^1.6.28"
+    yup "^0.24.1"
+
+"@staccx/formatting@^9.0.0-alpha.39":
+  version "9.0.0-alpha.39"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-9.0.0-alpha.39.tgz#b3f498e0a675f4f7505c4e867c47f9546b10ed3d"
+  integrity sha1-s/SY4KZ19PdQXE6GfEf5VGsQ7T0=
+  dependencies:
+    accounting "^0.4.1"
+    date-fns v2.0.0-alpha.27
+
 "@staccx/formatting@^9.0.0-alpha.4":
   version "9.0.0-alpha.4"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-9.0.0-alpha.4.tgz#3fbbb31e107b6859f6ff7fc1ff652d42474b290d"
@@ -58,15 +106,13 @@
     accounting "^0.4.1"
     date-fns v2.0.0-alpha.27
 
-"@staccx/fundu-theme@^9.0.0-alpha.27":
-  version "9.0.0-alpha.27"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/fundu-theme/-/@staccx/fundu-theme-9.0.0-alpha.27.tgz#f8e89f6b083365b4bb480ea6cafa1bc71ad9345b"
-  integrity sha1-+OifawgzZbS7SA6myvobxxrZNFs=
+"@staccx/fundu-theme@^9.0.0-alpha.39":
+  version "9.0.0-alpha.39"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/fundu-theme/-/@staccx/fundu-theme-9.0.0-alpha.39.tgz#48c7addd6e94754eedb30c028bacfc072a4ec4f7"
+  integrity sha1-SMet3W6UdU7tswwCi6z8BypOxPc=
   dependencies:
-    "@staccx/base" "^9.0.0-alpha.27"
+    "@staccx/base" "^9.0.0-alpha.39"
     polished "^2.3.0"
-    react "^16.8.6"
-    react-dom "^16.8.6"
 
 "@staccx/i18n@^9.0.0-alpha.3":
   version "9.0.0-alpha.3"
@@ -76,25 +122,41 @@
     loglevel "^1.6.1"
     string-format-obj "^1.1.1"
 
+"@staccx/i18n@^9.0.0-alpha.39":
+  version "9.0.0-alpha.39"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/i18n/-/@staccx/i18n-9.0.0-alpha.39.tgz#40c262d122b141fd0b08d458992a2ebc8451d6c0"
+  integrity sha1-QMJi0SKxQf0LCNRYmSouvIRR1sA=
+  dependencies:
+    loglevel "^1.6.1"
+    string-format-obj "^1.1.1"
+
 "@staccx/math@^9.0.0-alpha.2":
   version "9.0.0-alpha.2"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/math/-/@staccx/math-9.0.0-alpha.2.tgz#e9d6ec66446a90e80e6910937ce9c97f4ba6d97f"
   integrity sha1-6dbsZkRqkOgOaRCTfOnJf0um2X8=
 
-"@staccx/nordea-theme@^9.0.0-alpha.27":
-  version "9.0.0-alpha.27"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/nordea-theme/-/@staccx/nordea-theme-9.0.0-alpha.27.tgz#6040c1e5fd61dede5cff822b1d3072ecf1f744ce"
-  integrity sha1-YEDB5f1h3t5c/4IrHTBy7PH3RM4=
+"@staccx/math@^9.0.0-alpha.39":
+  version "9.0.0-alpha.39"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/math/-/@staccx/math-9.0.0-alpha.39.tgz#9f949f75369c2a9ac5f1f77a537cca027c1bea68"
+  integrity sha1-n5SfdTacKprF8fd6U3zKAnwb6mg=
+
+"@staccx/nordea-theme@^9.0.0-alpha.39":
+  version "9.0.0-alpha.39"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/nordea-theme/-/@staccx/nordea-theme-9.0.0-alpha.39.tgz#7b5d8a3aa83a3215357563be4aff9ae3da208829"
+  integrity sha1-e12KOqg6MhU1dWO+Sv+a49ogiCk=
   dependencies:
-    "@staccx/animations" "^9.0.0-alpha.2"
-    "@staccx/base" "^9.0.0-alpha.27"
-    react "^16.8.6"
-    react-dom "^16.8.6"
+    "@staccx/animations" "^9.0.0-alpha.39"
+    "@staccx/base" "^9.0.0-alpha.39"
 
 "@staccx/utils@^9.0.0-alpha.2":
   version "9.0.0-alpha.2"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/utils/-/@staccx/utils-9.0.0-alpha.2.tgz#23c2779c6426c0e696733654b8063bc299315fbd"
   integrity sha1-I8J3nGQmwOaWczZUuAY7wpkxX70=
+
+"@staccx/utils@^9.0.0-alpha.39":
+  version "9.0.0-alpha.39"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/utils/-/@staccx/utils-9.0.0-alpha.39.tgz#56c573393a07dea3a84ae347410a498b71bc2553"
+  integrity sha1-VsVzOToH3qOoSuNHQQpJi3G8JVM=
 
 accounting@^0.4.1:
   version "0.4.1"
@@ -373,16 +435,6 @@ react-compound-slider@^0.16.2:
     d3-array "^1.2.4"
     prop-types "^15.6.2"
     warning "^3.0.0"
-
-react-dom@^16.8.6:
-  version "16.8.6"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.6.tgz#71d6303f631e8b0097f56165ef608f051ff6e10f"
-  integrity sha512-1nL7PIq9LTL3fthPqwkvr2zY7phIPjYrT0jp4HjyEQrEROnw4dG41VVwi/wfoCneoleqrNX7iAD+pXebJZwrwA==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
-    scheduler "^0.13.6"
 
 react-is@^16.5.2, react-is@^16.8.1:
   version "16.8.6"
