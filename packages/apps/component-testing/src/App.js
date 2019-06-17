@@ -18,13 +18,35 @@ const App = () => {
         <GlobalStyle />
         <WebFonts />
         <Layout>
+          <p />
+          <p>
+            <strong>Uten WidowFix:</strong>
+          </p>
+          <Heading level={2}>General Data Protection Regulation</Heading>
+          <Heading level={2}>Payment Service Directive 2</Heading>
+          <hr />
+          <p>
+            <strong>Default WidowFix (threshold = 7):</strong>
+          </p>
           <Heading level={2}>
-            <WidowFix threshold={1}>
+            <WidowFix threshold={7}>
               General Data Protection Regulation
             </WidowFix>
           </Heading>
           <Heading level={2}>
-            <WidowFix threshold={1}>Payment Service Directive 2</WidowFix>
+            <WidowFix threshold={7}>Payment Service Directive 2</WidowFix>
+          </Heading>
+          <hr />
+          <p>
+            <strong>&#60;WidowFix threshold={11}&#62;</strong>
+          </p>
+          <Heading level={2}>
+            <WidowFix threshold={11}>
+              General Data Protection Regulation
+            </WidowFix>
+          </Heading>
+          <Heading level={2}>
+            <WidowFix threshold={11}>Payment Service Directive 2</WidowFix>
           </Heading>
         </Layout>
       </Wrapper>
