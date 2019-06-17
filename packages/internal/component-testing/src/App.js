@@ -1,12 +1,14 @@
 import React from "react"
-import { ThemeProvider } from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import {
   GlobalStyle,
   WebFonts,
   Wrapper,
+  Breadcrumb,
   Heading,
   Layout,
-  WidowFix
+  WidowFix,
+  theming
 } from "@staccx/base"
 // import { NordeaTheme } from "@staccx/nordea-theme"
 import theme from "./theme/Theme"
@@ -18,6 +20,26 @@ const App = () => {
         <GlobalStyle />
         <WebFonts />
         <Layout>
+          <StyledBreadcrumb
+            path={[
+              {
+                name: "First",
+                to: "/"
+              },
+              {
+                name: "Second",
+                to: "/"
+              },
+              {
+                name: "Third",
+                to: "/"
+              },
+              {
+                name: "Fourth",
+                to: "/"
+              }
+            ]}
+          />
           <p />
           <p>
             <strong>Uten WidowFix:</strong>
@@ -53,5 +75,17 @@ const App = () => {
     </ThemeProvider>
   )
 }
+
+const StyledBreadcrumb = styled(Breadcrumb)`
+  --item-distance: 20px;
+  --end-padding: 10px;
+  --full-width: 1;
+  --col-bg: #ddd;
+  --col-txt: ${theming.color.primary};
+  --col-hover-bg: ${theming.color.primary};
+  --col-hover-txt: ${theming.color.white};
+  --col-current-bg: transparent;
+  --col-current-txt: ${theming.color.primary};
+`
 
 export default App
