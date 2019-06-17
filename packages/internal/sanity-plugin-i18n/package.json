@@ -1,6 +1,6 @@
 {
   "name": "@staccx/sanity-plugin-i18n",
-  "version": "9.0.0-alpha.38",
+  "version": "9.0.0-alpha.39",
   "description": "",
   "main": "lib/translations.js",
   "module": "lib/translations.js",

@@ -1,0 +1,25 @@
+{
+  "name": "@staccx/component-testing",
+  "version": "9.0.0-alpha.40",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build:app": "react-scripts build",
+    "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
+    "eject": "react-scripts eject",
+    "deploy": "yarn build && surge -p ./build",
+    "serve": "yarn build && serve -s build"
+  },
+  "dependencies": {
+    "@staccx/base": "^9.0.0-alpha.39",
+    "@staccx/fundu-theme": "^9.0.0-alpha.39",
+    "@staccx/i18n": "^9.0.0-alpha.39",
+    "@staccx/nordea-theme": "^9.0.0-alpha.39"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

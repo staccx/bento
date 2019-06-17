@@ -1,6 +1,6 @@
 {
   "name": "@staccx/cli",
-  "version": "9.0.0-alpha.38",
+  "version": "9.0.0-alpha.39",
   "description": "",
   "main": "src/cli.js",
   "module": "src/cli.js",
@@ -22,8 +22,8 @@
     "@lerna/check-working-tree": "^3.14.2",
     "@sanity/client": "^0.136.0",
     "@slack/client": "^4.8.0",
-    "@staccx/formatting": "^9.0.0-alpha.38",
-    "@staccx/rollup-config": "^9.0.0-alpha.38",
+    "@staccx/formatting": "^9.0.0-alpha.39",
+    "@staccx/rollup-config": "^9.0.0-alpha.39",
     "acorn-jsx": "^4.1.1",
     "acorn-jsx-walk": "^1.0.1",
     "aws-sdk": "^2.410.0",
