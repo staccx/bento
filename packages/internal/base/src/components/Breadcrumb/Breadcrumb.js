@@ -27,18 +27,19 @@ const Breadcrumb = ({ path, ...restProps }) => (
 )
 
 const BreadcrumbEl = styled.ol`
-  /* -- parameters: sizes -- */
+  /* -- sizes -- */
   --item-h-padding: ${spacing.small};
   --item-v-padding: ${spacing.tiny};
+  --line-px-height: 24px;
   --item-distance: 4px;
   --bottom-spacing: 3px; /* bottom spacing – only visible when breadcrumb wraps */
-  --line-px-height: 24px;
-  --separators: 14px;
+  --separators: 14px; /* distance between items */
   --end-padding: 6px; /* extra padding on the ends */
+  --full-width: 0; /* set to 1 for full width */
 
-  /* -- parameters: colors -- */
-  --c-bg: #ddd;
-  --c-txt: ${p =>
+  /* -- colors -- */
+  --col-bg: #ddd;
+  --col-txt: ${p =>
     tinycolor
       .mostReadable("#ddd", ["#333"], {
         includeFallbackColors: true,
@@ -46,8 +47,10 @@ const BreadcrumbEl = styled.ol`
         size: "small"
       })
       .toString()};
-  --c-active-bg: ${color.primary};
-  --c-active-txt: ${p =>
+  --col-hover-bg: ${color.primary};
+  --col-hover-txt: ${color.white};
+  --col-current-bg: ${color.primary};
+  --col-current-txt: ${p =>
     tinycolor
       .mostReadable(color.primary()(p), ["#333", "#fff"], {
         includeFallbackColors: false,
@@ -55,8 +58,6 @@ const BreadcrumbEl = styled.ol`
         size: "small"
       })
       .toString()};
-  --c-hover-bg: ${color.primary};
-  --c-hover-txt: ${color.white};
 
   /* -- calculations -- */
   --height: calc(var(--line-px-height) + var(--item-v-padding) * 2);
@@ -64,6 +65,7 @@ const BreadcrumbEl = styled.ol`
   /* -- styling -- */
   font-family: ${fontFamily.body};
   font-size: ${font.base};
+  user-select: none;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -71,19 +73,20 @@ const BreadcrumbEl = styled.ol`
 `
 
 const Item = styled.li`
-  background-color: var(--c-bg);
-  color: var(--c-txt);
+  background-color: var(--col-bg);
+  color: var(--col-txt);
   margin-left: var(--separators);
   margin-right: var(--item-distance);
   margin-bottom: var(--bottom-spacing);
+  flex-grow: var(--full-width);
 
   &:hover a {
-    border-color: var(--c-hover-bg);
+    border-color: var(--col-hover-bg);
   }
 
   &:not(:last-child):hover {
-    background-color: var(--c-hover-bg);
-    color: var(--c-hover-txt);
+    background-color: var(--col-hover-bg);
+    color: var(--col-hover-txt);
   }
 
   &:first-child {
@@ -100,11 +103,11 @@ const Item = styled.li`
   &:last-child {
     cursor: default;
     margin-right: 0;
-    background-color: var(--c-active-bg);
-    color: var(--c-active-txt);
+    background-color: var(--col-current-bg);
+    color: var(--col-current-txt);
 
     > div {
-      border-color: var(--c-active-bg);
+      border-color: var(--col-current-bg);
       padding-right: var(--end-padding);
     }
 
@@ -120,7 +123,7 @@ const linkStyle = css`
   display: block;
   text-decoration: none;
   color: inherit;
-  border-color: var(--c-bg);
+  border-color: var(--col-bg);
   position: relative;
 
   ${Item}:not(:first-child) &::before {
@@ -142,6 +145,7 @@ const linkStyle = css`
   div {
     display: flex;
     align-items: center;
+    justify-content: center;
     line-height: var(--line-px-height);
     padding: var(--item-v-padding) var(--item-h-padding);
     white-space: nowrap;
@@ -200,8 +204,7 @@ Breadcrumb.themeProps = {
 }
 
 Breadcrumb.propTypes = {
-  path: PropTypes.array.isRequired,
-  separator: PropTypes.bool
+  path: PropTypes.array.isRequired
 }
 
 export default Breadcrumb
