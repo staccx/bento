@@ -1,6 +1,6 @@
 {
   "name": "@staccx/aprila-theme",
-  "version": "9.0.0-alpha.38",
+  "version": "9.0.0-alpha.39",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -25,17 +25,17 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/animations": "^9.0.0-alpha.38",
-    "@staccx/base": "^9.0.0-alpha.38",
-    "@staccx/formatting": "^9.0.0-alpha.38",
-    "@staccx/i18n": "^9.0.0-alpha.38",
-    "@staccx/json-schema": "^9.0.0-alpha.38",
+    "@staccx/animations": "^9.0.0-alpha.39",
+    "@staccx/base": "^9.0.0-alpha.39",
+    "@staccx/formatting": "^9.0.0-alpha.39",
+    "@staccx/i18n": "^9.0.0-alpha.39",
+    "@staccx/json-schema": "^9.0.0-alpha.39",
     "polished": "^1.9.2",
     "prop-types": "^15.6.2",
     "react-epic-spinners": "^0.2.1"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^9.0.0-alpha.38"
+    "@staccx/rollup-config": "^9.0.0-alpha.39"
   },
   "gitHead": "879a42d2c730577f80734a3994226c496fc669db"
 }

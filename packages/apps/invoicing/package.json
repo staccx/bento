@@ -1,12 +1,12 @@
 {
   "name": "@staccx/invoicing",
-  "version": "9.0.0-alpha.38",
+  "version": "9.0.0-alpha.39",
   "private": true,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.38",
+    "@staccx/base": "^9.0.0-alpha.39",
     "mobx-react": "^5.2.5",
     "prop-types": "^15.6.2",
     "react-router-dom": "^4.2.2"
@@ -24,7 +24,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^9.0.0-alpha.38",
+    "@staccx/rollup-config": "^9.0.0-alpha.39",
     "serve": "^10.0.0",
     "surge": "^0.20.1"
   }

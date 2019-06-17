@@ -1,17 +1,17 @@
 {
   "name": "@staccx/savings-advisor",
-  "version": "9.0.0-alpha.38",
+  "version": "9.0.0-alpha.39",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
     "@sanity/client": "^0.135.0",
     "@sanity/image-url": "^0.132.8",
-    "@staccx/animations": "^9.0.0-alpha.38",
-    "@staccx/base": "^9.0.0-alpha.38",
-    "@staccx/formatting": "^9.0.0-alpha.38",
-    "@staccx/i18n": "^9.0.0-alpha.38",
-    "@staccx/math": "^9.0.0-alpha.38",
+    "@staccx/animations": "^9.0.0-alpha.39",
+    "@staccx/base": "^9.0.0-alpha.39",
+    "@staccx/formatting": "^9.0.0-alpha.39",
+    "@staccx/i18n": "^9.0.0-alpha.39",
+    "@staccx/math": "^9.0.0-alpha.39",
     "axios": "^0.18.0",
     "chart.js": "^2.7.1",
     "date-fns": "^v2.0.0-alpha.16",
@@ -39,7 +39,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/eslint-config": "^9.0.0-alpha.38",
+    "@staccx/eslint-config": "^9.0.0-alpha.39",
     "serve": "^10.0.0",
     "surge": "^0.20.1"
   },

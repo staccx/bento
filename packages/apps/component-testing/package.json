@@ -1,6 +1,6 @@
 {
   "name": "@staccx/component-testing",
-  "version": "9.0.0-alpha.38",
+  "version": "9.0.0-alpha.39",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -11,10 +11,10 @@
     "serve": "yarn build && serve -s build"
   },
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.27",
-    "@staccx/fundu-theme": "^9.0.0-alpha.27",
-    "@staccx/i18n": "^9.0.0-alpha.3",
-    "@staccx/nordea-theme": "^9.0.0-alpha.27"
+    "@staccx/base": "^9.0.0-alpha.39",
+    "@staccx/fundu-theme": "^9.0.0-alpha.39",
+    "@staccx/i18n": "^9.0.0-alpha.39",
+    "@staccx/nordea-theme": "^9.0.0-alpha.39"
   },
   "browserslist": [
     ">0.2%",

@@ -1,10 +1,10 @@
 {
   "name": "@staccx/dealerpad",
-  "version": "9.0.0-alpha.38",
+  "version": "9.0.0-alpha.39",
   "dependencies": {
-    "@staccx/animations": "^9.0.0-alpha.38",
+    "@staccx/animations": "^9.0.0-alpha.39",
     "@staccx/base": "^7.15.0",
-    "@staccx/formatting": "^9.0.0-alpha.38",
+    "@staccx/formatting": "^9.0.0-alpha.39",
     "@staccx/nordea-theme": "^7.15.0",
     "axios": "^0.18.0",
     "history": "^4.7.2",
@@ -32,7 +32,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^9.0.0-alpha.38",
+    "@staccx/rollup-config": "^9.0.0-alpha.39",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewire-styled-components": "^3.0.2",
     "react-app-rewired": "^2.0.3"

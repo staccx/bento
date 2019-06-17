@@ -1,6 +1,6 @@
 {
   "name": "@staccx/loan-process",
-  "version": "9.0.0-alpha.38",
+  "version": "9.0.0-alpha.39",
   "description": "Loan process",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -30,13 +30,13 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/animations": "^9.0.0-alpha.38",
-    "@staccx/base": "^9.0.0-alpha.38",
-    "@staccx/formatting": "^9.0.0-alpha.38",
-    "@staccx/fundu-theme": "^9.0.0-alpha.38",
+    "@staccx/animations": "^9.0.0-alpha.39",
+    "@staccx/base": "^9.0.0-alpha.39",
+    "@staccx/formatting": "^9.0.0-alpha.39",
+    "@staccx/fundu-theme": "^9.0.0-alpha.39",
     "@staccx/payment-plan": "^1.2.0",
-    "@staccx/styrke-theme": "^9.0.0-alpha.38",
-    "@staccx/utils": "^9.0.0-alpha.38",
+    "@staccx/styrke-theme": "^9.0.0-alpha.39",
+    "@staccx/utils": "^9.0.0-alpha.39",
     "easing-utils": "^0.0.7",
     "formik": "^0.11.11",
     "national-id": "^2.0.0",
@@ -45,7 +45,7 @@
     "yup": "^0.24.1"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^9.0.0-alpha.38",
+    "@staccx/rollup-config": "^9.0.0-alpha.39",
     "localforage": "^1.7.2"
   },
   "gitHead": "879a42d2c730577f80734a3994226c496fc669db"
