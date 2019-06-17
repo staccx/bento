@@ -1,6 +1,6 @@
 {
   "name": "@staccx/component-testing",
-  "version": "9.0.0-alpha.39",
+  "version": "9.0.0-alpha.40",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
