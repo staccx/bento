@@ -1,12 +1,9 @@
 {
   "name": "@staccx/react-app-rewire-decorators-legacy",
   "version": "9.0.0-alpha.39",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/export.js",
   "scripts": {
-    "build": "yarn prettify && rollup -c",
-    "start": "rollup -c -w",
+    "build": "babel --root-mode upward src -d dist",
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
@@ -19,7 +16,5 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
-  "devDependencies": {
-    "@staccx/rollup-config": "^9.0.0-alpha.39"
-  }
+  "devDependencies": {}
 }

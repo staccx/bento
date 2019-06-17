@@ -2,9 +2,7 @@
   "name": "@staccx/fundu-theme",
   "version": "9.0.0-alpha.39",
   "private": false,
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/export.js",
   "license": "UNLICENSED",
   "files": [
     "dist"
@@ -18,8 +16,7 @@
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "eject": "react-scripts eject",
     "test:watch": "jest --env=jsdom --watch",
-    "build": "yarn prettify && rollup -c",
-    "start:module": "rollup -c -w",
+    "build": "babel --root-mode upward src -d dist",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
@@ -28,8 +25,6 @@
     "@staccx/base": "^9.0.0-alpha.39",
     "polished": "^2.3.0"
   },
-  "devDependencies": {
-    "@staccx/rollup-config": "^9.0.0-alpha.39"
-  },
+  "devDependencies": {},
   "gitHead": "879a42d2c730577f80734a3994226c496fc669db"
 }

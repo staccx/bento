@@ -2,9 +2,7 @@
   "name": "@staccx/nori",
   "version": "9.0.0-alpha.39",
   "private": false,
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/export.js",
   "license": "UNLICENSED",
   "dependencies": {
     "@staccx/base": "^9.0.0-alpha.39",
@@ -15,19 +13,16 @@
   },
   "scripts": {
     "analyze": "source-map-explorer dist/index.js",
-    "build": "yarn prettify && rollup -c",
+    "build": "babel --root-mode upward src -d dist",
     "start": "react-scripts start",
     "build:app": "react-scripts build",
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "eject": "react-scripts eject",
-    "deploy": "yarn build && surge -p ./build",
-    "serve": "yarn build && serve -s build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^9.0.0-alpha.39",
     "serve": "^10.0.0",
     "surge": "^0.20.1"
   },

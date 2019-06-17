@@ -2,9 +2,7 @@
   "name": "@staccx/sanity",
   "version": "9.0.0-alpha.39",
   "private": false,
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/export.js",
   "license": "UNLICENSED",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.6",
@@ -17,7 +15,7 @@
     "sanity-query-helper": "^0.3.0"
   },
   "scripts": {
-    "build": "yarn prettify && rollup -c",
+    "build": "babel --root-mode upward src -d dist",
     "start": "react-scripts start",
     "build:app": "react-scripts build",
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
@@ -29,7 +27,6 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^9.0.0-alpha.39",
     "serve": "^10.0.0",
     "surge": "^0.20.1"
   },

@@ -8,20 +8,14 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/export.js",
   "scripts": {
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "test:nocov": "react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom --watch",
-    "build:packages": "node build.js",
-    "build": "yarn prettify && rollup -c",
-    "start": "node build.js && rollup -c -w",
+    "build": "babel --root-mode upward src -d dist",
     "prepare": "yarn build && yarn build:packages",
     "prepublishOnly": "yarn test",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "files": [
@@ -62,7 +56,6 @@
     "yup": "^0.24.1"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^9.0.0-alpha.39",
     "colors": "^1.3.2",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.3",
