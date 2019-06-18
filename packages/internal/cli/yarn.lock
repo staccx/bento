@@ -169,14 +169,6 @@
     retry "^0.12.0"
     ws "^5.2.0"
 
-"@staccx/formatting@^9.0.0-alpha.39":
-  version "9.0.0-alpha.39"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-9.0.0-alpha.39.tgz#b3f498e0a675f4f7505c4e867c47f9546b10ed3d"
-  integrity sha1-s/SY4KZ19PdQXE6GfEf5VGsQ7T0=
-  dependencies:
-    accounting "^0.4.1"
-    date-fns v2.0.0-alpha.27
-
 "@types/caseless@*":
   version "0.12.2"
   resolved "https://registry.yarnpkg.com/@types/caseless/-/caseless-0.12.2.tgz#f65d3d6389e01eeb458bd54dc8f52b95a9463bc8"
@@ -286,11 +278,6 @@ accepts@~1.3.7:
   dependencies:
     mime-types "~2.1.24"
     negotiator "0.6.2"
-
-accounting@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/accounting/-/accounting-0.4.1.tgz#87dd4103eff7f4460f1e186f5c677ed6cf566883"
-  integrity sha1-h91BA+/39EYPHhhvXGd+1s9WaIM=
 
 acorn-jsx-walk@^1.0.1:
   version "1.0.1"
@@ -865,11 +852,6 @@ crypto-random-string@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
   integrity sha1-ojD2T1aDEOFJgAmUB5DsmVRbyn4=
-
-date-fns@v2.0.0-alpha.27:
-  version "2.0.0-alpha.27"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.0.0-alpha.27.tgz#5ecd4204ef0e7064264039570f6e8afbc014481c"
-  integrity sha512-cqfVLS+346P/Mpj2RpDrBv0P4p2zZhWWvfY5fuWrXNR/K38HaAGEkeOwb47hIpQP9Jr/TIxjZ2/sNMQwdXuGMg==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8:
   version "2.6.9"
