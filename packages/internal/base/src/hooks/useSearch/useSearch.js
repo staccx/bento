@@ -29,7 +29,7 @@ const useSearch = ({ input, documents = [], keys = [], fuseProps = {} }) => {
 
   useEffect(() => {
     search(input)
-  }, [input, fuse])
+  }, [input])
 
   return [result, search]
 }
