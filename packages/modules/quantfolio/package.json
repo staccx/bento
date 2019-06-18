@@ -8,15 +8,12 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/export.js",
   "scripts": {
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "test:nocov": "react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom --watch",
-    "build": "yarn prettify && rollup -c",
-    "start": "node build.js && rollup -c -w",
+    "build": "babel --root-mode upward src -d dist",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
@@ -27,8 +24,6 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
-  "devDependencies": {
-    "@staccx/rollup-config": "^9.0.0-alpha.39"
-  },
+  "devDependencies": {},
   "gitHead": "d3ad09c840856345a172069e15da8082f8253de3"
 }

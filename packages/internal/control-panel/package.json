@@ -29,7 +29,6 @@
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/logo.png.icns --prune=true --out=release-builds"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^9.0.0-alpha.39",
     "electron": "^3.0.0",
     "electron-packager": "^12.1.2",
     "foreman": "^3.0.1",
