@@ -1,6 +1,5 @@
 const path = require("path")
-const rollup = require("rollup")
-const generateConfig = require("@staccx/rollup-config")
+const nodemon = require("nodemon")
 
 const { executeAsync, setupSpinner, runCommand } = require("./__helpers")
 
@@ -125,31 +124,7 @@ const link = async function({ input = "src/export.js", watch, target, reset }) {
   }
 
   if (watch) {
-    const watcher = rollup.watch(generateConfig(pkg, input))
-    watcher.on("event", async event => {
-      switch (event.code) {
-        case "END":
-          await runCommand({
-            onFail: console.log,
-            failText: "Failed to build",
-            startText: "Building...",
-            succeedText: "Built and pushed",
-            spinner,
-            debug: false,
-            command: async () => {
-              executeAsync("yalc", ["push"], { cwd })
-            }
-          })
-          break
-        case "ERROR":
-        case "FATAL":
-          console.log(event.error)
-          spinner.fail("Fatal error. Fix and restart")
-          break
-        default:
-          break
-      }
-    })
+    nodemon('--watch src/ --exec "yarn build && yalc push"')
   } else {
     await runCommand({
       onFail: console.log,
@@ -159,8 +134,8 @@ const link = async function({ input = "src/export.js", watch, target, reset }) {
       spinner,
       debug: false,
       command: async () => {
-        await rollup.rollup(generateConfig(pkg, input))
-        executeAsync("yalc", ["push"], { cwd })
+        await executeAsync("yarn", ["build"])
+        await executeAsync("yalc", ["push"], { cwd })
       }
     })
   }

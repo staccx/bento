@@ -94,6 +94,8 @@ const execute = function(
   return child
 }
 
+const dashIt = input => input.replace(/\s/g, "-").toLowerCase()
+
 const runCommand = async function({
   spinner,
   startText,
@@ -199,5 +201,6 @@ module.exports = {
   getSanityClient,
   validateNpmName,
   wait,
-  config
+  config,
+  dashIt
 }

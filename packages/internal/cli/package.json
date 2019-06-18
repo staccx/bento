@@ -10,7 +10,6 @@
   "scripts": {
     "test": "jest test --coverage --watchAll=false --passWithNoTests",
     "test:watch": "jest --env=jsdom --watch",
-    "start": "rollup -c -w",
     "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
@@ -23,7 +22,6 @@
     "@sanity/client": "^0.136.0",
     "@slack/client": "^4.8.0",
     "@staccx/formatting": "^9.0.0-alpha.39",
-    "@staccx/rollup-config": "^9.0.0-alpha.39",
     "acorn-jsx": "^4.1.1",
     "acorn-jsx-walk": "^1.0.1",
     "aws-sdk": "^2.410.0",
@@ -36,6 +34,7 @@
     "get-line-from-pos": "^1.0.0",
     "inquirer": "^5.2.0",
     "nanoid": "^2.0.3",
+    "nodemon": "^1.19.1",
     "opn": "^5.4.0",
     "ora": "^3.0.0",
     "rollup-plugin-babel": "^4.1.0",
