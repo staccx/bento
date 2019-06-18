@@ -1,6 +1,6 @@
 {
   "name": "@staccx/code-generator",
-  "version": "9.0.0-alpha.39",
+  "version": "9.0.0-alpha.41",
   "description": "Generates code based on templates",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -29,6 +29,5 @@
   "dependencies": {
     "qs": "^6.5.1"
   },
-  "devDependencies": {},
   "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
 }

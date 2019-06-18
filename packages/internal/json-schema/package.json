@@ -1,11 +1,11 @@
 {
   "name": "@staccx/json-schema",
-  "version": "9.0.0-alpha.39",
+  "version": "9.0.0-alpha.41",
   "private": false,
   "main": "dist/export.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.39",
+    "@staccx/base": "^9.0.0-alpha.41",
     "ajv": "^6.6.1",
     "core-js": "^2.6.0",
     "lodash.topath": "^4.5.2"
@@ -20,7 +20,6 @@
     "eject": "react-scripts eject",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
-  "devDependencies": {},
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },

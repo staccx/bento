@@ -1,6 +1,6 @@
 {
   "name": "@staccx/animations",
-  "version": "9.0.0-alpha.39",
+  "version": "9.0.0-alpha.41",
   "description": "Animations",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -24,6 +24,5 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
-  "devDependencies": {},
   "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
 }

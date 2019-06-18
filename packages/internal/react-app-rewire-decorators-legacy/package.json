@@ -1,6 +1,6 @@
 {
   "name": "@staccx/react-app-rewire-decorators-legacy",
-  "version": "9.0.0-alpha.39",
+  "version": "9.0.0-alpha.41",
   "main": "dist/export.js",
   "scripts": {
     "build": "babel --root-mode upward src -d dist",
@@ -15,6 +15,5 @@
   "repository": {
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
-  },
-  "devDependencies": {}
+  }
 }

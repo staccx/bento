@@ -1,6 +1,6 @@
 {
   "name": "@staccx/quantfolio",
-  "version": "9.0.0-alpha.39",
+  "version": "9.0.0-alpha.41",
   "description": "Functions related to quantfolio",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -24,6 +24,5 @@
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
-  "devDependencies": {},
   "gitHead": "d3ad09c840856345a172069e15da8082f8253de3"
 }

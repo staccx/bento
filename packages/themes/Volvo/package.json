@@ -1,6 +1,6 @@
 {
   "name": "@staccx/volvo-theme",
-  "version": "9.0.0-alpha.39",
+  "version": "9.0.0-alpha.41",
   "private": false,
   "main": "dist/export.js",
   "license": "UNLICENSED",
@@ -22,9 +22,8 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/animations": "^9.0.0-alpha.39",
-    "@staccx/base": "^9.0.0-alpha.39"
+    "@staccx/animations": "^9.0.0-alpha.41",
+    "@staccx/base": "^9.0.0-alpha.41"
   },
-  "devDependencies": {},
   "gitHead": "879a42d2c730577f80734a3994226c496fc669db"
 }

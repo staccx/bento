@@ -1,6 +1,6 @@
 {
   "name": "@staccx/formatting",
-  "version": "9.0.0-alpha.39",
+  "version": "9.0.0-alpha.41",
   "description": "Convenience functions for formatting",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -28,6 +28,5 @@
     "date-fns": "v2.0.0-alpha.27"
   },
   "jest": {},
-  "devDependencies": {},
   "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e"
 }

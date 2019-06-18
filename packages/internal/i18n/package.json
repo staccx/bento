@@ -1,6 +1,6 @@
 {
   "name": "@staccx/i18n",
-  "version": "9.0.0-alpha.39",
+  "version": "9.0.0-alpha.41",
   "description": "intl for base",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -27,7 +27,6 @@
     "loglevel": "^1.6.1",
     "string-format-obj": "^1.1.1"
   },
-  "devDependencies": {},
   "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e",
   "browserslist": [
     ">0.2%",
