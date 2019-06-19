@@ -1,7 +1,7 @@
 {
   "license": "UNLICENSED",
   "name": "@staccx/norefjell-theme",
-  "version": "9.0.0-alpha.41",
+  "version": "9.0.0-alpha.42",
   "private": false,
   "main": "dist/export.js",
   "files": [
@@ -23,9 +23,9 @@
   },
   "dependencies": {
     "@staccx/animations": "^9.0.0-alpha.41",
-    "@staccx/base": "^9.0.0-alpha.41",
+    "@staccx/base": "^9.0.0-alpha.42",
     "@staccx/formatting": "^9.0.0-alpha.41",
-    "@staccx/i18n": "^9.0.0-alpha.3",
+    "@staccx/i18n": "^9.0.0-alpha.42",
     "polished": "^1.9.2",
     "prop-types": "^15.6.2"
   },

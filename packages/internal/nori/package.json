@@ -1,14 +1,14 @@
 {
   "name": "@staccx/nori",
-  "version": "9.0.0-alpha.41",
+  "version": "9.0.0-alpha.42",
   "private": false,
   "main": "dist/export.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.41",
-    "@staccx/i18n": "^9.0.0-alpha.41",
-    "@staccx/sanity": "^9.0.0-alpha.41",
-    "@staccx/stacc-theme": "^9.0.0-alpha.41",
+    "@staccx/base": "^9.0.0-alpha.42",
+    "@staccx/i18n": "^9.0.0-alpha.42",
+    "@staccx/sanity": "^9.0.0-alpha.42",
+    "@staccx/stacc-theme": "^9.0.0-alpha.42",
     "prop-types": "^15.6.2"
   },
   "scripts": {

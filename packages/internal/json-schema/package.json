@@ -1,11 +1,11 @@
 {
   "name": "@staccx/json-schema",
-  "version": "9.0.0-alpha.41",
+  "version": "9.0.0-alpha.42",
   "private": false,
   "main": "dist/export.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.41",
+    "@staccx/base": "^9.0.0-alpha.42",
     "ajv": "^6.6.1",
     "core-js": "^2.6.0",
     "lodash.topath": "^4.5.2",

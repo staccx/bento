@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "9.0.0-alpha.41",
+  "version": "9.0.0-alpha.42",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -27,7 +27,7 @@
   "dependencies": {
     "@staccx/animations": "^9.0.0-alpha.41",
     "@staccx/formatting": "^9.0.0-alpha.41",
-    "@staccx/i18n": "^9.0.0-alpha.3",
+    "@staccx/i18n": "^9.0.0-alpha.42",
     "@staccx/math": "^9.0.0-alpha.41",
     "@staccx/utils": "^9.0.0-alpha.41",
     "axios": "^0.18.0",

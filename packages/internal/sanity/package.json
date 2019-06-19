@@ -1,6 +1,6 @@
 {
   "name": "@staccx/sanity",
-  "version": "9.0.0-alpha.41",
+  "version": "9.0.0-alpha.42",
   "private": false,
   "main": "dist/export.js",
   "license": "UNLICENSED",
@@ -8,7 +8,7 @@
     "@sanity/block-content-to-react": "^2.0.6",
     "@sanity/client": "^0.135.0",
     "@sanity/image-url": "^0.132.8",
-    "@staccx/base": "^9.0.0-alpha.41",
+    "@staccx/base": "^9.0.0-alpha.42",
     "mobx-react": "^5.2.5",
     "prop-types": "^15.6.2",
     "react-router-dom": "^4.2.2",
