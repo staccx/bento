@@ -14,10 +14,10 @@
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-9.0.0-alpha.2.tgz#127f185b1cc86be16a7fe2f6b8d2682f572be496"
   integrity sha1-En8YWxzIa+Fqf+L2uNJoL1cr5JY=
 
-"@staccx/animations@^9.0.0-alpha.39":
-  version "9.0.0-alpha.39"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-9.0.0-alpha.39.tgz#8daef80d5243f3714692d3d050c5e237a3b7c7a6"
-  integrity sha1-ja74DVJD83FGktPQUMXiN6O3x6Y=
+"@staccx/animations@^9.0.0-alpha.41":
+  version "9.0.0-alpha.41"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-9.0.0-alpha.41.tgz#f1dbe39a5e90f2cc6dd625c0a40e022e41e4fffb"
+  integrity sha1-8dvjml6Q8sxt1iXApA4CLkHk//s=
 
 "@staccx/base@^9.0.0-alpha.27":
   version "9.0.0-alpha.27"
@@ -55,16 +55,16 @@
     webfontloader "^1.6.28"
     yup "^0.24.1"
 
-"@staccx/base@^9.0.0-alpha.39":
-  version "9.0.0-alpha.39"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-9.0.0-alpha.39.tgz#b8771989e5d02e5b3356e0426837205d43733ff7"
-  integrity sha1-uHcZieXQLlszVuBCaDcgXUNzP/c=
+"@staccx/base@^9.0.0-alpha.41":
+  version "9.0.0-alpha.41"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/base/-/@staccx/base-9.0.0-alpha.41.tgz#abbd0f23264e72cb3dfd1829ff9ed63081e98abb"
+  integrity sha1-q70PIyZOcss9/Rgp/57WMIHpirs=
   dependencies:
-    "@staccx/animations" "^9.0.0-alpha.39"
-    "@staccx/formatting" "^9.0.0-alpha.39"
-    "@staccx/i18n" "^9.0.0-alpha.39"
-    "@staccx/math" "^9.0.0-alpha.39"
-    "@staccx/utils" "^9.0.0-alpha.39"
+    "@staccx/animations" "^9.0.0-alpha.41"
+    "@staccx/formatting" "^9.0.0-alpha.41"
+    "@staccx/i18n" "^9.0.0-alpha.41"
+    "@staccx/math" "^9.0.0-alpha.41"
+    "@staccx/utils" "^9.0.0-alpha.41"
     axios "^0.18.0"
     babel-plugin-prismjs "^1.0.2"
     cleave.js "^1.4.4"
@@ -90,14 +90,6 @@
     webfontloader "^1.6.28"
     yup "^0.24.1"
 
-"@staccx/formatting@^9.0.0-alpha.39":
-  version "9.0.0-alpha.39"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-9.0.0-alpha.39.tgz#b3f498e0a675f4f7505c4e867c47f9546b10ed3d"
-  integrity sha1-s/SY4KZ19PdQXE6GfEf5VGsQ7T0=
-  dependencies:
-    accounting "^0.4.1"
-    date-fns v2.0.0-alpha.27
-
 "@staccx/formatting@^9.0.0-alpha.4":
   version "9.0.0-alpha.4"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-9.0.0-alpha.4.tgz#3fbbb31e107b6859f6ff7fc1ff652d42474b290d"
@@ -106,12 +98,20 @@
     accounting "^0.4.1"
     date-fns v2.0.0-alpha.27
 
-"@staccx/fundu-theme@^9.0.0-alpha.39":
-  version "9.0.0-alpha.39"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/fundu-theme/-/@staccx/fundu-theme-9.0.0-alpha.39.tgz#48c7addd6e94754eedb30c028bacfc072a4ec4f7"
-  integrity sha1-SMet3W6UdU7tswwCi6z8BypOxPc=
+"@staccx/formatting@^9.0.0-alpha.41":
+  version "9.0.0-alpha.41"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-9.0.0-alpha.41.tgz#4f347334d74aa5dbc2f5e758dad6c3ce1a08cdfa"
+  integrity sha1-TzRzNNdKpdvC9edY2tbDzhoIzfo=
   dependencies:
-    "@staccx/base" "^9.0.0-alpha.39"
+    accounting "^0.4.1"
+    date-fns v2.0.0-alpha.27
+
+"@staccx/fundu-theme@^9.0.0-alpha.41":
+  version "9.0.0-alpha.41"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/fundu-theme/-/@staccx/fundu-theme-9.0.0-alpha.41.tgz#cce845cf83c75671ce973c4fbeeff43ac336e61f"
+  integrity sha1-zOhFz4PHVnHOlzxPvu/0OsM25h8=
+  dependencies:
+    "@staccx/base" "^9.0.0-alpha.41"
     polished "^2.3.0"
 
 "@staccx/i18n@^9.0.0-alpha.3":
@@ -122,10 +122,10 @@
     loglevel "^1.6.1"
     string-format-obj "^1.1.1"
 
-"@staccx/i18n@^9.0.0-alpha.39":
-  version "9.0.0-alpha.39"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/i18n/-/@staccx/i18n-9.0.0-alpha.39.tgz#40c262d122b141fd0b08d458992a2ebc8451d6c0"
-  integrity sha1-QMJi0SKxQf0LCNRYmSouvIRR1sA=
+"@staccx/i18n@^9.0.0-alpha.41":
+  version "9.0.0-alpha.41"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/i18n/-/@staccx/i18n-9.0.0-alpha.41.tgz#4cfc4ca0f42aca2fb2a5b8d5d243ee10f1b3bfdd"
+  integrity sha1-TPxMoPQqyi+ypbjV0kPuEPGzv90=
   dependencies:
     loglevel "^1.6.1"
     string-format-obj "^1.1.1"
@@ -135,28 +135,28 @@
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/math/-/@staccx/math-9.0.0-alpha.2.tgz#e9d6ec66446a90e80e6910937ce9c97f4ba6d97f"
   integrity sha1-6dbsZkRqkOgOaRCTfOnJf0um2X8=
 
-"@staccx/math@^9.0.0-alpha.39":
-  version "9.0.0-alpha.39"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/math/-/@staccx/math-9.0.0-alpha.39.tgz#9f949f75369c2a9ac5f1f77a537cca027c1bea68"
-  integrity sha1-n5SfdTacKprF8fd6U3zKAnwb6mg=
+"@staccx/math@^9.0.0-alpha.41":
+  version "9.0.0-alpha.41"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/math/-/@staccx/math-9.0.0-alpha.41.tgz#32ada16a23043566b3bc322f452ee50502e0d86f"
+  integrity sha1-Mq2haiMENWazvDIvRS7lBQLg2G8=
 
-"@staccx/nordea-theme@^9.0.0-alpha.39":
-  version "9.0.0-alpha.39"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/nordea-theme/-/@staccx/nordea-theme-9.0.0-alpha.39.tgz#7b5d8a3aa83a3215357563be4aff9ae3da208829"
-  integrity sha1-e12KOqg6MhU1dWO+Sv+a49ogiCk=
+"@staccx/nordea-theme@^9.0.0-alpha.41":
+  version "9.0.0-alpha.41"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/nordea-theme/-/@staccx/nordea-theme-9.0.0-alpha.41.tgz#689a8bf3e443f5f8e3816fcb83157b83dffc4978"
+  integrity sha1-aJqL8+RD9fjjgW/LgxV7g9/8SXg=
   dependencies:
-    "@staccx/animations" "^9.0.0-alpha.39"
-    "@staccx/base" "^9.0.0-alpha.39"
+    "@staccx/animations" "^9.0.0-alpha.41"
+    "@staccx/base" "^9.0.0-alpha.41"
 
 "@staccx/utils@^9.0.0-alpha.2":
   version "9.0.0-alpha.2"
   resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/utils/-/@staccx/utils-9.0.0-alpha.2.tgz#23c2779c6426c0e696733654b8063bc299315fbd"
   integrity sha1-I8J3nGQmwOaWczZUuAY7wpkxX70=
 
-"@staccx/utils@^9.0.0-alpha.39":
-  version "9.0.0-alpha.39"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/utils/-/@staccx/utils-9.0.0-alpha.39.tgz#56c573393a07dea3a84ae347410a498b71bc2553"
-  integrity sha1-VsVzOToH3qOoSuNHQQpJi3G8JVM=
+"@staccx/utils@^9.0.0-alpha.41":
+  version "9.0.0-alpha.41"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/utils/-/@staccx/utils-9.0.0-alpha.41.tgz#222f2c2dda9aa8b91b8a01c75fc0183a939884ef"
+  integrity sha1-Ii8sLdqaqLkbigHHX8AYOpOYhO8=
 
 accounting@^0.4.1:
   version "0.4.1"

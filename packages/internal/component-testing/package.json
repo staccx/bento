@@ -11,7 +11,7 @@
     "serve": "yarn build && serve -s build"
   },
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.41",
+    "@staccx/base": "^9.0.0-alpha.27",
     "@staccx/fundu-theme": "^9.0.0-alpha.41",
     "@staccx/i18n": "^9.0.0-alpha.41",
     "@staccx/nordea-theme": "^9.0.0-alpha.41"
