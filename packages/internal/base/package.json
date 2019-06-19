@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "9.0.0-alpha.27",
+  "version": "9.0.0-alpha.41",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -8,20 +8,14 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/export.js",
   "scripts": {
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "test:nocov": "react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom --watch",
-    "build:packages": "node build.js",
-    "build": "yarn prettify && rollup -c",
-    "start": "node build.js && rollup -c -w",
-    "prepare": "yarn build && yarn build:packages",
+    "build": "babel --root-mode upward src -d dist",
+    "prepare": "yarn build",
     "prepublishOnly": "yarn test",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "files": [
@@ -31,11 +25,11 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/animations": "^9.0.0-alpha.2",
-    "@staccx/formatting": "^9.0.0-alpha.4",
+    "@staccx/animations": "^9.0.0-alpha.41",
+    "@staccx/formatting": "^9.0.0-alpha.41",
     "@staccx/i18n": "^9.0.0-alpha.3",
-    "@staccx/math": "^9.0.0-alpha.2",
-    "@staccx/utils": "^9.0.0-alpha.2",
+    "@staccx/math": "^9.0.0-alpha.41",
+    "@staccx/utils": "^9.0.0-alpha.41",
     "axios": "^0.18.0",
     "babel-plugin-prismjs": "^1.0.2",
     "cleave.js": "^1.4.4",
@@ -56,7 +50,6 @@
     "polished": "^2.3.0",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
-    "react": "^16.8.6",
     "react-compound-slider": "^0.16.2",
     "react-traverse": "^1.0.0",
     "tinycolor2": "^1.4.1",
@@ -64,20 +57,13 @@
     "yup": "^0.24.1"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0",
     "colors": "^1.3.2",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.3",
     "lint-staged": "^7.2.2",
-    "prettier": "^1.14.2",
     "progress": "^2.0.0",
     "react-docgen": "^3.0.0",
-    "react-scripts": "^3.0.0",
-    "rollup": "^0.65.0",
     "rollup-plugin-alias": "^1.4.0"
-  },
-  "peerDependencies": {
-    "styled-components": "^4.0.2"
   },
   "gitHead": "879a42d2c730577f80734a3994226c496fc669db"
 }

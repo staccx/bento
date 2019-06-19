@@ -1,6 +1,6 @@
 {
   "name": "@staccx/animations",
-  "version": "9.0.0-alpha.2",
+  "version": "9.0.0-alpha.41",
   "description": "Animations",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -8,13 +8,10 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/export.js",
   "scripts": {
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
-    "build": "yarn prettify && rollup -c",
-    "start": "rollup -c -w",
+    "build": "babel --root-mode upward src -d dist",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "styleguide": "styleguidist server",
@@ -26,15 +23,6 @@
   ],
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
-  },
-  "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0",
-    "prettier": "^1.14.2",
-    "react-scripts": "^3.0.0",
-    "rollup": "^0.65.0"
-  },
-  "peerDependencies": {
-    "styled-components": "^4.0.2"
   },
   "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
 }

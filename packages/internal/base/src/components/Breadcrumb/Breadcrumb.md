@@ -1,28 +1,24 @@
-- Omit `to:` to define current level.
-- Set Smule to `flex-grow: 1` for full width breadcrumb.
-- Set `--max-width` to define the width of each Smule.
-- `--sep-width`: The width of the pointy end of each Smule.
-- `--distance`: The distance between each Smule.
-- `--line-height`: Sets the height of the breadcrumbs and must be in px.
+- Last level will always be _current_ level ('to'-prop can be omitted).
+- Key properties are controlled with custom CSS properties assigned to main parent element.
 
 ```jsx
 <Breadcrumb
   path={[
     {
-      name: "Home",
+      name: "First level",
       to: "/"
     },
     {
-      name: "Level 2",
+      name: "Second level",
       to: "/level-2"
     },
     {
-      name: "Current page"
+      name: "Third level",
+      to: "/level-3"
     },
-   {
-     name: "Last page",
-     to: "/level-4"
-   }
+    {
+      name: "Fourth level"
+    }
   ]}
 />
 ```

@@ -1,6 +1,10 @@
 module.exports = {
   parser: "babel-eslint",
   plugins: ["react-hooks"],
+  env: {
+    jest: true,
+    browser: true
+  },
   rules: {
     "react/prop-types": 0,
     "react/no-unused-prop-types": 0,
@@ -19,14 +23,7 @@ module.exports = {
     "prettier/react"
   ],
   globals: {
-    sessionStorage: true,
-    localStorage: true,
-    it: true,
-    describe: true,
-    expect: true,
-    afterEach: true,
     atob: true,
-    btoa: true,
-    jest: true
+    btoa: true
   }
 }

@@ -1,9 +1,7 @@
 {
   "name": "@staccx/swedbank-theme",
-  "version": "9.0.0-alpha.27",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "version": "9.0.0-alpha.41",
+  "main": "dist/export.js",
   "license": "UNLICENSED",
   "files": [
     "dist"
@@ -18,27 +16,17 @@
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "eject": "react-scripts eject",
     "test:watch": "jest --env=jsdom --watch",
-    "build": "yarn prettify && rollup -c",
-    "start:module": "rollup -c -w",
+    "build": "babel --root-mode upward src -d dist",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.27",
-    "polished": "^2.3.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "@staccx/base": "^9.0.0-alpha.41",
+    "polished": "^2.3.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^1.14.2",
-    "react-scripts": "^3.0.0",
-    "rollup": "^0.65.0"
-  },
-  "peerDependencies": {
-    "styled-components": "^4.0.2"
+    "npm-run-all": "^4.1.5"
   },
   "gitHead": "879a42d2c730577f80734a3994226c496fc669db"
 }

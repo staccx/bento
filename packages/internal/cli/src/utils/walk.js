@@ -2,8 +2,7 @@ const fs = require("fs-extra")
 const glob = require("glob")
 const walk = require("acorn-jsx-walk").default
 const getLineFromPos = require("get-line-from-pos")
-const { dashIt } = require("@staccx/formatting")
-const { setupSpinner, traverse } = require("../cmds/__helpers")
+const { setupSpinner, traverse, dashIt } = require("../cmds/__helpers")
 const statuses = require("./i18nStatuses")
 
 const getSuggestion = (node, key) => {

@@ -9,40 +9,19 @@ storiesOf("Components|Base/Breadcrumb", module)
     <Breadcrumb
       path={[
         {
-          name: "Home",
+          name: "First level",
           to: "/"
         },
         {
-          name: "Level 2",
+          name: "Second level",
           to: "/level-2"
         },
         {
-          name: "Current page"
-        },
-        {
-          name: "Last page",
-          to: "/level-4"
-        }
-      ]}
-    />
-  ))
-  .add("Initial selected", () => (
-    <Breadcrumb
-      path={[
-        {
-          name: "Home"
-        },
-        {
-          name: "Level 2",
-          to: "/level-2"
-        },
-        {
-          name: "Current page",
+          name: "Third level",
           to: "/level-3"
         },
         {
-          name: "Last page",
-          to: "/level-4"
+          name: "Fourth level"
         }
       ]}
     />

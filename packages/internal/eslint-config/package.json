@@ -1,6 +1,6 @@
 {
   "name": "@staccx/eslint-config",
-  "version": "9.0.0-alpha.16",
+  "version": "9.0.0-alpha.41",
   "description": "JavaScript linting setup for @staccx",
   "main": "index.js",
   "author": "StaccX",
@@ -21,8 +21,7 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "1.x",
-    "eslint-plugin-standard": "^4.0.0",
-    "prettier": "1.16.4"
+    "eslint-plugin-standard": "^4.0.0"
   },
   "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e"
 }
