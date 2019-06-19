@@ -1,3 +1,4 @@
+import loglevel from "loglevel"
 import deepfind from "./deepfind"
 import { VARIANT_DEFAULT } from "../../constants/themeContants"
 
@@ -10,19 +11,19 @@ export default themeProps => props => {
   const { variant = VARIANT_DEFAULT, theme } = props
 
   if (!theme) {
-    console.warn("No theme!", variant)
+    loglevel.warn("No theme!", variant)
     return null
   }
 
   if (!themeProps) {
-    console.warn("No theme props!", theme, variant, props)
+    loglevel.error("No theme props!", theme, variant, props)
     return null
   }
 
   const name = themeProps.hasOwnProperty("name") ? themeProps.name : themeProps
 
   if (!name) {
-    console.warn("No name!", variant, theme)
+    loglevel.warn("No name!", variant, theme)
     return null
   }
 

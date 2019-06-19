@@ -1,4 +1,5 @@
 import deepfind from "./deepfind"
+import loglevel from "loglevel"
 
 export default (prop, field) => ({ theme }) => {
   if (!field) {
@@ -8,7 +9,7 @@ export default (prop, field) => ({ theme }) => {
     return null
   }
   if (!deepfind(theme, [prop, field].join("."))) {
-    console.warn("Could not find", field, "in", prop)
+    loglevel.warn("Could not find", field, "in", prop)
     return null
   }
   return theme[prop][field]

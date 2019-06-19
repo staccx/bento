@@ -155,12 +155,11 @@ import Breadcrumb from "./components/Breadcrumb/Breadcrumb"
 
 import Development from "./hoc/Development/Development"
 
-import I18n, { useI18n } from "./components/i18n/I18n"
-import Translate from "./components/i18n/Translate"
-
 import SkeletonPulse from "./components/Skeleton/Skeleton.Pulse"
 import SkeletonLine from "./components/Skeleton/Skeleton.Line"
 import SkeletonCircle from "./components/Skeleton/Skeleton.Circle"
+
+import * as i18n from "./components/i18n"
 
 export { default as useInterval } from "./hooks/useInterval"
 export { default as useDebounce } from "./hooks/useDebounce"
@@ -217,7 +216,7 @@ export {
   Fraction,
   Heading,
   hideVisually,
-  I18n,
+  i18n,
   icons,
   Image,
   Info,
@@ -271,8 +270,6 @@ export {
   Text,
   ThemeComponent,
   Toggle,
-  Translate,
-  useI18n,
   useSearch,
   useTimer,
   Wait,

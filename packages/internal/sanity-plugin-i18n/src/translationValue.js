@@ -7,5 +7,5 @@ export default {
     { type: "localeText" },
     { type: "localeRichText" }
   ],
-  validation: Rule => Rule.length(1).required()
+  validation: Rule => Rule.required()
 }

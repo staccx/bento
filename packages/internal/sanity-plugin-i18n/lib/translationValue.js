@@ -2,12 +2,18 @@ export default {
   title: "Value",
   name: "translationValue",
   type: "array",
-  of: [{
-    type: "localeString"
-  }, {
-    type: "localeText"
-  }, {
-    type: "localeRichText"
-  }],
-  validation: Rule => Rule.length(1).required()
-};
+  of: [
+    {
+      type: "localeString"
+    },
+    {
+      type: "localeText"
+    },
+    {
+      type: "localeRichText"
+    }
+  ],
+  validation: function validation(Rule) {
+    return Rule.required()
+  }
+}

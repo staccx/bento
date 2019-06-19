@@ -24,6 +24,11 @@ export default {
       title: "Value",
       name: "value",
       type: "translationValue"
+    },
+    {
+      title: "Namespace",
+      name: "namespace",
+      type: "string"
     }
   ]
 }
