@@ -1,5 +1,6 @@
 import sanityClient from "@sanity/client"
 import loglevel from "loglevel"
+
 const Backend = {
   init(services, options) {
     this.services = services
@@ -14,7 +15,7 @@ const Backend = {
     })
 
     const {
-      query = `*[_type == "translations"]{...}`,
+      query = `*[_type == "translations" && (!defined(namespace) || namespace == $namespace)]{value, "key": i18nKey.current}`,
       params = {}
     } = options.sanity
     this.query = query
@@ -24,24 +25,29 @@ const Backend = {
   },
 
   readMulti: function(languages, namespaces, callback) {
-    console.log("here?")
+    throw new Error("Not supported yet")
   },
 
   read: function(language, namespace, callback) {
-    console.log("read")
     this.getTranslations(language, namespace, callback)
   },
 
   getTranslations: function(language, namespace, callback) {
-    console.log("Getting translations")
-    this.client.fetch(this.query, this.params).then(result => {
-      console.log(result)
-      callback(null, result)
-    })
+    this.client
+      .fetch(this.query, { ...this.params, namespace })
+      .then(result => {
+        const resources = result.reduce((acc, current) => {
+          acc[current.key] = current.value.map(item => item[language])
+
+          return acc
+        }, {})
+
+        callback(null, resources)
+      })
   },
 
   create: function(languages, namespace, key, fallbackValue) {
-    console.log("key", key)
+    console.log("TODO:", "create new entry if missing", key)
     if (typeof languages === "string") languages = [languages]
 
     let payload = {}

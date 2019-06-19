@@ -1,7 +1,48 @@
 import React from "react"
-import { useI18n } from "./I18n"
 import loglevel from "loglevel"
+import SanityRichText from "../Sanity/SanityRichText"
+import { useI18n } from "./I18n"
+import Text from "../Text/Text/Text"
 import { commonPropTypes } from "../../constants/themeContants"
+
+const isBlock = item => item._type && item._type === "block"
+
+const isRichText = val =>
+  Array.isArray(val) &&
+  val.some(
+    arr =>
+      typeof arr !== "string" &&
+      Array.isArray(arr) &&
+      arr.some(item => item._type)
+  )
+
+const getComp = val => {
+  return Array.isArray(val) ? (
+    val.map(getComp)
+  ) : isBlock(val) ? (
+    <SanityRichText key={val._key} blocks={val} />
+  ) : (
+    <Text key={val}>{val}</Text>
+  )
+}
+
+const handleArray = (value, data, children, translate) => {
+  const values = value.map(
+    (k, index) => translate(k, data) || React.Children(children)[index]
+  )
+
+  if (typeof children === "function") {
+    return children(values)
+  }
+
+  return values.map(value =>
+    isRichText(value) ? (
+      <SanityRichText key={value[0]._key} blocks={value[0]} />
+    ) : (
+      <Text key={value}>value</Text>
+    )
+  )
+}
 
 /**
  * Component for translation
@@ -24,23 +65,13 @@ const Translate = ({ children, i18n, data }) => {
   }
 
   if (Array.isArray(i18n)) {
-    const values = i18n.map(
-      (k, index) => translate(k, data) || React.Children(children)[index]
-    )
-
-    if (typeof children === "function") {
-      return children(values)
-    }
-
-    return values.map(value => value)
+    return handleArray(i18n, data, children, translate)
   }
 
-  const fb = typeof children !== "function" ? children : null
+  const fallback = typeof children !== "function" ? children : null
 
   const value = translate(i18n, data)
-
   if (!value) {
-    loglevel.warn("No value found for", i18n)
     if (children) {
       loglevel.debug("Falling back to children")
       if (typeof children !== "function") {
@@ -49,7 +80,7 @@ const Translate = ({ children, i18n, data }) => {
       return children(null)
     }
 
-    return fb
+    return fallback || null
   }
 
   if (children) {
@@ -57,7 +88,13 @@ const Translate = ({ children, i18n, data }) => {
       return children(value)
     }
   }
-  return value
+
+  let result = value
+  if (Array.isArray(value)) {
+    result = value.map(getComp)
+  }
+
+  return result
 }
 
 Translate.propTypes = {
