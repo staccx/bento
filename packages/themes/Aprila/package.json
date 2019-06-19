@@ -1,6 +1,6 @@
 {
   "name": "@staccx/aprila-theme",
-  "version": "9.0.0-alpha.42",
+  "version": "9.0.0-alpha.43",
   "private": false,
   "main": "dist/export.js",
   "license": "UNLICENSED",
@@ -23,10 +23,10 @@
   },
   "dependencies": {
     "@staccx/animations": "^9.0.0-alpha.41",
-    "@staccx/base": "^9.0.0-alpha.42",
+    "@staccx/base": "^9.0.0-alpha.43",
     "@staccx/formatting": "^9.0.0-alpha.41",
     "@staccx/i18n": "^9.0.0-alpha.42",
-    "@staccx/json-schema": "^9.0.0-alpha.42",
+    "@staccx/json-schema": "^9.0.0-alpha.43",
     "polished": "^1.9.2",
     "prop-types": "^15.6.2",
     "react-epic-spinners": "^0.2.1"
