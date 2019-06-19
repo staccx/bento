@@ -21,6 +21,42 @@
   dependencies:
     any-observable "^0.3.0"
 
+"@staccx/animations@^9.0.0-alpha.41":
+  version "9.0.0-alpha.41"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-9.0.0-alpha.41.tgz#f1dbe39a5e90f2cc6dd625c0a40e022e41e4fffb"
+  integrity sha1-8dvjml6Q8sxt1iXApA4CLkHk//s=
+
+"@staccx/formatting@^9.0.0-alpha.41":
+  version "9.0.0-alpha.41"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-9.0.0-alpha.41.tgz#4f347334d74aa5dbc2f5e758dad6c3ce1a08cdfa"
+  integrity sha1-TzRzNNdKpdvC9edY2tbDzhoIzfo=
+  dependencies:
+    accounting "^0.4.1"
+    date-fns v2.0.0-alpha.27
+
+"@staccx/i18n@^9.0.0-alpha.3":
+  version "9.0.0-alpha.3"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/i18n/-/@staccx/i18n-9.0.0-alpha.3.tgz#6ed4689cc5febbe141203a9f5519c7dbe35d39cf"
+  integrity sha1-btRonMX+u+FBIDqfVRnH2+NdOc8=
+  dependencies:
+    loglevel "^1.6.1"
+    string-format-obj "^1.1.1"
+
+"@staccx/math@^9.0.0-alpha.41":
+  version "9.0.0-alpha.41"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/math/-/@staccx/math-9.0.0-alpha.41.tgz#32ada16a23043566b3bc322f452ee50502e0d86f"
+  integrity sha1-Mq2haiMENWazvDIvRS7lBQLg2G8=
+
+"@staccx/utils@^9.0.0-alpha.41":
+  version "9.0.0-alpha.41"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/utils/-/@staccx/utils-9.0.0-alpha.41.tgz#222f2c2dda9aa8b91b8a01c75fc0183a939884ef"
+  integrity sha1-Ii8sLdqaqLkbigHHX8AYOpOYhO8=
+
+accounting@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/accounting/-/accounting-0.4.1.tgz#87dd4103eff7f4460f1e186f5c677ed6cf566883"
+  integrity sha1-h91BA+/39EYPHhhvXGd+1s9WaIM=
+
 ansi-escapes@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-3.2.0.tgz#8780b98ff9dbf5638152d1f1fe5c1d7b4442976b"
@@ -345,6 +381,11 @@ date-fns@^1.27.2:
   version "1.30.1"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
+
+date-fns@v2.0.0-alpha.27:
+  version "2.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.0.0-alpha.27.tgz#5ecd4204ef0e7064264039570f6e8afbc014481c"
+  integrity sha512-cqfVLS+346P/Mpj2RpDrBv0P4p2zZhWWvfY5fuWrXNR/K38HaAGEkeOwb47hIpQP9Jr/TIxjZ2/sNMQwdXuGMg==
 
 debug@=3.1.0:
   version "3.1.0"
@@ -1666,6 +1707,11 @@ string-argv@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.0.2.tgz#dac30408690c21f3c3630a3ff3a05877bdcbd736"
   integrity sha1-2sMECGkMIfPDYwo/86BYd73L1zY=
+
+string-format-obj@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/string-format-obj/-/string-format-obj-1.1.1.tgz#c7612ca4e2ad923812a81db192dc291850aa1f65"
+  integrity sha512-Mm+sROy+pHJmx0P/0Bs1uxIX6UhGJGj6xDGQZ5zh9v/SZRmLGevp+p0VJxV7lirrkAmQ2mvva/gHKpnF/pTb+Q==
 
 string-width@^1.0.1:
   version "1.0.2"

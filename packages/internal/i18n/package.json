@@ -24,6 +24,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
+    "@staccx/formatting": "^8.87.0",
     "loglevel": "^1.6.1",
     "string-format-obj": "^1.1.1"
   },

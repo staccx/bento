@@ -25,6 +25,7 @@
     "@staccx/animations": "^9.0.0-alpha.41",
     "@staccx/base": "^9.0.0-alpha.41",
     "@staccx/formatting": "^9.0.0-alpha.41",
+    "@staccx/i18n": "^9.0.0-alpha.3",
     "polished": "^1.9.2",
     "prop-types": "^15.6.2"
   },
