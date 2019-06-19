@@ -7,9 +7,7 @@ export default {
       title: "Name",
       name: "name",
       type: "string",
-      validation: function validation(Rule) {
-        return Rule.required()
-      }
+      validation: Rule => Rule.required()
     },
     {
       title: "Key",
@@ -20,9 +18,7 @@ export default {
         maxLength: 96,
         auto: true
       },
-      validation: function validation(Rule) {
-        return Rule.required()
-      }
+      validation: Rule => Rule.required()
     },
     {
       title: "Value",

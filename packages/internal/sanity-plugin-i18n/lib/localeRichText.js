@@ -32,14 +32,14 @@ function _defineProperty(obj, key, value) {
   }
   return obj
 }
-var options = blockOptions || {}
+const options = blockOptions || {}
 console.log(options)
 console.log("here")
 export default {
   title: "Localized Rich text",
   name: "localeRichText",
   type: "object",
-  fieldsets: fieldsets,
+  fieldsets,
   fields: getFields(
     "array",
     _objectSpread(
@@ -53,15 +53,13 @@ export default {
     select: {
       title: "nb"
     },
-    prepare: function prepare(selection) {
-      var _type = selection._type
-      var title = selection.title
+
+    prepare(selection) {
+      const { _type, title } = selection
       return {
         title: title.length
           ? title[0].children
-              .reduce(function(acc, current) {
-                return acc + current.text
-              }, "")
+              .reduce((acc, current) => acc + current.text, "")
               .substring(0, 20)
           : "denne er tom",
         subtitle: _type

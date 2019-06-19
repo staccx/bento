@@ -13,7 +13,5 @@ export default {
       type: "localeRichText"
     }
   ],
-  validation: function validation(Rule) {
-    return Rule.required()
-  }
+  validation: Rule => Rule.required()
 }

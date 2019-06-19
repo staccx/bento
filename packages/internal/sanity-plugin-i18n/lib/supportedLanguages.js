@@ -36,18 +36,16 @@ function _defineProperty(obj, key, value) {
   return obj
 }
 
-var supportedLanguages = languages || [
+const supportedLanguages = languages || [
   {
     id: "nb",
     title: "Norwegian",
     isDefault: true
   }
 ]
-export var getFields = function getFields(type) {
-  var o =
-    arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null
-  return supportedLanguages.map(function(lang) {
-    return _objectSpread(
+export const getFields = (type, o = null) =>
+  supportedLanguages.map(lang =>
+    _objectSpread(
       {
         title: lang.title,
         name: lang.id,
@@ -60,24 +58,21 @@ export var getFields = function getFields(type) {
         fieldset: lang.isDefault ? null : "translations"
       }
     )
-  })
-}
-export var getPreview = function getPreview() {
-  return {
-    select: {
-      title: supportedLanguages[0].id
-    },
-    prepare: function prepare(selection) {
-      var _type = selection._type
-      var title = selection.title
-      return {
-        title: title,
-        subtitle: _type
-      }
+  )
+export const getPreview = () => ({
+  select: {
+    title: supportedLanguages[0].id
+  },
+
+  prepare(selection) {
+    const { _type, title } = selection
+    return {
+      title,
+      subtitle: _type
     }
   }
-}
-var fieldsets = [
+})
+const fieldsets = [
   {
     title: "Translations",
     name: "translations",
