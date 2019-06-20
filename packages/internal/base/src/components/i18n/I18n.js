@@ -1,36 +1,79 @@
-import React, { createContext, useReducer, useContext, useMemo } from "react"
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState
+} from "react"
+import i18next from "i18next"
 import PropTypes from "prop-types"
-import produce from "immer"
-import { translate as t, convert as c } from "@staccx/i18n"
+import loglevel from "loglevel"
+import { formatCurrency } from "@staccx/formatting"
+import SanityRichText from "../Sanity/SanityRichText"
 
 const I18nContext = createContext({})
 
-const actions = {
-  setLanguage: "SEND",
-  initialize: "INIT"
+const defaultFormat = {
+  currency: value => {
+    return formatCurrency(parseInt(value, 10))
+  }
 }
 
-const reducer = (state, action) =>
-  produce(state, draft => {
-    switch (action.type) {
-      case actions.setLanguage:
-        draft.language = action.language
-        break
-      case actions.initialize:
-        draft = Object.assign(draft, action.payload)
-        break
+const Provider = ({ children, ...props }) => {
+  // const [i18n] = useReducer(reducer, props)
+  const [ready, setReady] = useState(false)
+  const {
+    texts = null,
+    language = "en",
+    formatFunctions = {},
+    backend,
+    backendOptions = {},
+    debug = true
+  } = props
+  const initialize = async () => {
+    if (backend) {
+      i18next.use(backend)
     }
-  })
+    await i18next.init({
+      ...(texts && { resources: texts }),
+      lng: language,
+      debug,
+      backend: {
+        ...backendOptions
+      },
+      returnObjects: true,
+      saveMissing: true, // Must be set to true
+      parseMissingKeyHandler: key => {
+        loglevel.warn(`No translation found for "${key}"`)
+        return null
+      },
+      interpolation: {
+        format: function(value, format, lng) {
+          if (formatFunctions.hasOwnProperty(format)) {
+            return formatFunctions[format](value)
+          }
+          if (defaultFormat.hasOwnProperty(format)) {
+            return defaultFormat[format](value)
+          }
+          return value
+        }
+      }
+    })
 
-const I18n = ({ children, ...props }) => {
-  const [i18n] = useReducer(reducer, props)
-  const { texts = null } = props
+    loglevel.log("i18n ready to use", i18next)
+    setReady(true)
+  }
+
+  useEffect(() => {
+    initialize()
+  }, [])
 
   return (
     <I18nContext.Provider
       value={{
         texts,
-        ...i18n
+        i18n: i18next,
+        ready
       }}
     >
       {children}
@@ -38,27 +81,59 @@ const I18n = ({ children, ...props }) => {
   )
 }
 
-I18n.propTypes = {
+Provider.propTypes = {
   children: PropTypes.element.isRequired,
-  texts: PropTypes.object.isRequired
+  texts: PropTypes.object,
+  language: PropTypes.string.isRequired,
+  formatFunctions: PropTypes.object,
+  backend: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+  backendOptions: PropTypes.object,
+  debug: PropTypes.bool
 }
 
 export const useI18n = () => {
   const value = useContext(I18nContext)
 
-  const { language = "no", texts, level } = value
+  const { i18n, ready } = value
 
-  const translate = ({ key, data, fallback, namespace }) =>
-    t({ texts, language, key, data, fallback, namespace, level })
-  const convert = value => c(value, language)
+  const translate = (key, data) => i18n.t(key, data)
+
+  // t({ texts, language, key, data, fallback, namespace, level })
+  const transform = value => {
+    if (!value.hasOwnProperty(i18n.language)) {
+      return null
+    }
+    return <SanityRichText blocks={value[i18n.language]} />
+  }
 
   return useMemo(() => {
     return {
       translate,
-      convert,
+      transform,
       ...value
     }
-  }, [value])
+  }, [value, ready])
 }
 
-export default I18n
+export const I18nConsumer = ({ children }) => {
+  const props = useI18n()
+
+  if (!children) {
+    return null
+  }
+
+  if (!props.ready) {
+    return null
+  }
+
+  return children(props)
+}
+
+// TODO: Split into seperate files
+export const withI18n = Component => props => (
+  <I18nConsumer>
+    {i18nProps => <Component {...props} {...i18nProps} />}
+  </I18nConsumer>
+)
+
+export default Provider

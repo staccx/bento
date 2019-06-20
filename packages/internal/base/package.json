@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "9.0.0-alpha.42",
+  "version": "9.0.0-alpha.43",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -25,6 +25,8 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.6",
+    "@sanity/client": "^0.140.32",
     "@staccx/animations": "^9.0.0-alpha.41",
     "@staccx/formatting": "^9.0.0-alpha.41",
     "@staccx/i18n": "^9.0.0-alpha.42",
@@ -39,6 +41,7 @@
     "es6-promise": "^4.2.4",
     "formik": "^0.11.11",
     "fuse.js": "^3.4.4",
+    "i18next": "^17.0.3",
     "immutable": "^4.0.0-rc.12",
     "isomorphic-fetch": "^2.2.1",
     "js-search": "^1.4.2",

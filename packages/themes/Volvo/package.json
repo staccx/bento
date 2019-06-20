@@ -1,6 +1,6 @@
 {
   "name": "@staccx/volvo-theme",
-  "version": "9.0.0-alpha.42",
+  "version": "9.0.0-alpha.43",
   "private": false,
   "main": "dist/export.js",
   "license": "UNLICENSED",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@staccx/animations": "^9.0.0-alpha.41",
-    "@staccx/base": "^9.0.0-alpha.42"
+    "@staccx/base": "^9.0.0-alpha.43"
   },
   "gitHead": "879a42d2c730577f80734a3994226c496fc669db"
 }
