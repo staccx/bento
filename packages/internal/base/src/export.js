@@ -78,6 +78,9 @@ import KeyFigures from "./components/DataViz/Keyfigures/Keyfigures"
 import NewBadge from "./components/NewBadge/NewBadge"
 import Loading from "./components/DataViz/Loading/Loading"
 
+// Loaders
+import FullScreenLoader from "./components/Loaders/FullScreenLoader/FullScreenLoader"
+
 // Modal
 import Modal from "./components/Modal/Modal"
 
@@ -205,6 +208,7 @@ export {
   EmailInput,
   Expand,
   ExpandListItem,
+  FullScreenLoader,
   Get,
   GlobalStyle,
   Fetch,
