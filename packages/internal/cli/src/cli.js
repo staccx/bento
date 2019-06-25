@@ -6,6 +6,7 @@ const init = require("./cmds/init")
 const release = require("./cmds/release")
 const clean = require("./cmds/clean")
 const link = require("./cmds/link")
+const watch = require("./cmds/watch")
 const eslint = require("./cmds/eslint")
 const figma = require("./cmds/figma") // TODO: Refactor so that only one figma function is imported and handles all options
 const i18n = require("./cmds/i18n")
@@ -139,5 +140,12 @@ program.command("storybook <action>").action((action, cmd) => {
 program.command("init").action(props => {
   init(props)
 })
+
+program
+  .command("watch [target...]")
+  .option("--single", "Run only once?")
+  .action((target, { single }) => {
+    watch({ target, once: single })
+  })
 
 program.parse(process.argv)
