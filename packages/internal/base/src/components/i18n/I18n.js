@@ -28,9 +28,12 @@ const Provider = ({ children, ...props }) => {
     formatFunctions = {},
     backend,
     backendOptions = {},
-    debug = true
+    debug = false,
+    level = null
   } = props
+
   const initialize = async () => {
+    loglevel.setLevel(level || (debug ? "DEBUG" : "SILENT"))
     if (backend) {
       i18next.use(backend)
     }
@@ -43,6 +46,7 @@ const Provider = ({ children, ...props }) => {
       },
       returnObjects: true,
       saveMissing: true, // Must be set to true
+      missingKeyHandler: key => null,
       parseMissingKeyHandler: key => {
         loglevel.warn(`No translation found for "${key}"`)
         return null
