@@ -8,6 +8,8 @@ const onData = data => {
   packages = JSON.parse(data)
 }
 
+const spinner = setupSpinner()
+
 const watchInstance = ({ name, location }, folder = "src/") => {
   const proc = spawn(
     "nodemon",
@@ -25,18 +27,22 @@ const watchInstance = ({ name, location }, folder = "src/") => {
 
   proc.on("message", function(event) {
     if (event.type === "start") {
-      console.log(`${name} has started`)
+      spinner.info(`${name} has started`)
     } else if (event.type === "crash") {
-      console.log(`${name} has crashed`)
+      spinner.info(`${name} has crashed`)
     }
   })
 
   proc.on("error", function(e) {
-    console.log(`${name} has error ${e}`)
+    spinner.fail(`${name} has error ${e}`)
   })
 
   proc.on("exit", function() {
-    console.log(`${name} has quit`)
+    spinner.succeed(`${name} has quit`)
+  })
+
+  proc.once("SIGINT", function() {
+    console.log("Shutting down")
   })
 }
 
@@ -47,7 +53,6 @@ const watch = async function({ target, once = false }) {
 
   const bentoRoot = getBentoRoot()
   const cwd = process.cwd()
-  const spinner = setupSpinner()
   let pkg = null
 
   if (target && target.length) {
@@ -89,13 +94,12 @@ const watch = async function({ target, once = false }) {
     //   }
     // })
   } else {
-    console.log(target)
-
     target.forEach(async t => {
       spinner.info(`Trying to find ${t} in packages`)
       const pt = packages.find(p => p.name === t)
 
       if (pt) {
+        spinner.succeed(`Found ${t}`)
         watchInstance(pt)
       }
     })
@@ -113,6 +117,12 @@ const watch = async function({ target, once = false }) {
     command: async () => {
       executeAsync("yalc", ["link", target.join(" ")], { cwd })
     }
+  })
+
+  process.on("SIGINT", () => {
+    spinner.succeed(
+      "Closing down. Remember to release your changes and update the dependencies"
+    )
   })
 }
 
