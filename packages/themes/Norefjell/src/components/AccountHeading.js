@@ -1,7 +1,6 @@
 import React from "react"
-import { Heading, Text, Box, theming } from "@staccx/base"
+import { Heading, Text, Box, theming, i18n } from "@staccx/base"
 import { formatCurrency } from "@staccx/formatting"
-import { TranslatedText } from "@staccx/i18n"
 
 const Account = ({ account }) => {
   const { availableBalance } = account
@@ -11,10 +10,10 @@ const Account = ({ account }) => {
   return (
     <Box variant="accountHeading">
       <Heading variant="accountHeadingText" level="3">
-        <TranslatedText i18nKey="AccountHeadingText" fallback="Sparekonto" />
+        <i18n.Translate i18n="AccountHeadingText" fallback="Sparekonto" />
       </Heading>
       <Text variant="accountHeadingAvailable">
-        <TranslatedText i18nKey="AVAILABLE" fallback="Saldo:" />{" "}
+        <i18n.Translate i18n="AVAILABLE" fallback="Saldo:" />{" "}
         {primary && formatCurrency(parseInt(primary, 10))},{secondary}
       </Text>
     </Box>

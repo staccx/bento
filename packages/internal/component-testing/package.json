@@ -13,7 +13,6 @@
   "dependencies": {
     "@staccx/base": "^9.0.0-alpha.43",
     "@staccx/fundu-theme": "^9.0.0-alpha.43",
-    "@staccx/i18n": "^9.0.0-alpha.41",
     "@staccx/nordea-theme": "^9.0.0-alpha.43"
   },
   "browserslist": [

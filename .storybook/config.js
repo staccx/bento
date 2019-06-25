@@ -5,7 +5,6 @@ import {withInfo} from "@storybook/addon-info"
 import { withA11y } from '@storybook/addon-a11y';
 import { themes as storybookThemes} from '@storybook/theming';
 import {withTheme} from "./withThemes"
-import { withKnobs } from "@storybook/addon-knobs"
 import {components} from "./syntaxHighlighterWorkaround";
 
 const req = require.context('../packages', true, /\.stories\.js$/);

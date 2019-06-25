@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { StaccTheme } from "@staccx/stacc-theme"
-import { Button, ThemeComponent } from "@staccx/base"
-import { TranslatedText } from "@staccx/i18n"
+import { Button, ThemeComponent, i18n } from "@staccx/base"
 import Nori from "./components/Nori"
 
 const sanityConfig = {
@@ -26,7 +25,7 @@ class App extends Component {
         logLevel={5}
       >
         <Button>
-          <TranslatedText i18nKey={"annet"}>Bekreft</TranslatedText>
+          <i18n.Translate i18n={"annet"}>Bekreft</i18n.Translate>
         </Button>
         <ThemeComponent tagName={"logo"} />
       </Nori>
