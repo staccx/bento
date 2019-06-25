@@ -27,23 +27,7 @@ async function clean(debug) {
   })
 
   /**
-   * Lock file
-   */
-  await runCommand({
-    onFail: console.log,
-    failText: "Could not delete lock file",
-    startText: "Lock file",
-    succeedText: "Deleted lock file",
-    spinner,
-    debug,
-    command: async () =>
-      executeAsync("rm", ["yarn.lock"], {
-        cwd: bentoRoot
-      })
-  })
-
-  /**
-   * Lerna clea
+   * Lerna clean
    */
   await runCommand({
     onFail: console.log,
