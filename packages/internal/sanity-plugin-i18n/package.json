@@ -15,8 +15,7 @@
     "start": "sanity start",
     "test": "sanity check",
     "build": "babel --root-mode upward src -d lib",
-    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'",
-    "prepare": "yarn prettify && babel -d lib/ src/"
+    "prepare": "yarn build"
   },
   "keywords": [
     "sanity"
@@ -32,11 +31,5 @@
   },
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "prettify": "^0.1.7"
-  },
-  "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e"
+  }
 }
