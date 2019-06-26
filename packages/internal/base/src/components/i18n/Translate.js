@@ -4,27 +4,7 @@ import SanityRichText from "../Sanity/SanityRichText"
 import { useI18n } from "./I18n"
 import Text from "../Text/Text/Text"
 import { commonPropTypes } from "../../constants/themeContants"
-
-const isBlock = item => item._type && item._type === "block"
-
-const isRichText = val =>
-  Array.isArray(val) &&
-  val.some(
-    arr =>
-      typeof arr !== "string" &&
-      Array.isArray(arr) &&
-      arr.some(item => item._type)
-  )
-
-const getComp = val => {
-  return Array.isArray(val) ? (
-    val.map(getComp)
-  ) : isBlock(val) ? (
-    <SanityRichText key={val._key} blocks={val} />
-  ) : (
-    <Text key={val}>{val}</Text>
-  )
-}
+import { getComponent, isRichText } from "./utils"
 
 const handleArray = (value, data, children, translate) => {
   const values = value.map(
@@ -91,7 +71,7 @@ const Translate = ({ children, i18n, data }) => {
 
   let result = value
   if (Array.isArray(value)) {
-    result = value.map(getComp)
+    result = value.map(getComponent)
   }
 
   return result
