@@ -12,7 +12,7 @@
   },
   "scripts": {
     "analyze": "source-map-explorer dist/index.js",
-    "build": "babel --root-mode upward src -d dist",
+    "build": "rm -rf dist && babel --root-mode upward src -d dist",
     "start": "react-scripts start",
     "build:app": "react-scripts build",
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",

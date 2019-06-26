@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import useInterval from "../../../hooks/useInterval"
 // Also add applyVariants:
 import { color, font, spacing } from "../../../theming"
 import Loading from "../../DataViz/Loading/Loading"
 
-const FullScreenLoader = ({ messages, delay = 1000 }) => {
+const FullScreenLoader = ({ messages, delay = 5000, animation = 1000 }) => {
   // state variables
   const [count, setCount] = useState(0)
   const [currentMsg, setCurrentMsg] = useState(messages[0])
@@ -27,12 +27,11 @@ const FullScreenLoader = ({ messages, delay = 1000 }) => {
 
   useEffect(() => {
     setCurrentMsg(messages[count])
-
     if (count === 0 && hasLooped) {
       setPreviousMsg(messages[maxCount])
+    } else if (count > 0) {
+      setPreviousMsg(messages[count - 1])
     }
-
-    count > 0 && setPreviousMsg(messages[count - 1])
   }, [count, hasLooped])
 
   return (
@@ -40,8 +39,16 @@ const FullScreenLoader = ({ messages, delay = 1000 }) => {
       <Container>
         <Loading />
         <LoadingMessage>
-          {previousMsg && <PreviousMsg>{previousMsg}</PreviousMsg>}
-          <CurrentMsg>{currentMsg}</CurrentMsg>
+          {previousMsg && (
+            <PreviousMsg key={previousMsg} animation={animation}>
+              {previousMsg}
+            </PreviousMsg>
+          )}
+          {currentMsg && (
+            <CurrentMsg key={currentMsg} animation={animation}>
+              {currentMsg}
+            </CurrentMsg>
+          )}
         </LoadingMessage>
       </Container>
     </FullScreenDiv>
@@ -65,16 +72,30 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `
 
 const LoadingMessage = styled.div`
   color: ${color.white};
   font-size: ${font.h2};
-  padding-top: ${spacing.large};
+  padding-top: ${spacing.large} ${spacing.medium} 0;
+  position: relative;
+  width: 100%;
+`
+
+const messageStyle = css`
+  text-align: center;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
 `
 
 const PreviousMsg = styled.div`
-  animation: fadeout 500ms ease;
+  ${messageStyle};
+
+  animation: fadeout ${p => p.animation}ms linear;
+  animation-fill-mode: forwards;
   @keyframes fadeout {
     0% {
       opacity: 1;
@@ -86,7 +107,9 @@ const PreviousMsg = styled.div`
 `
 
 const CurrentMsg = styled.div`
-  animation: fadein 500ms ease;
+  ${messageStyle};
+
+  animation: fadein ${p => p.animation}ms linear;
   @keyframes fadein {
     0% {
       opacity: 0;

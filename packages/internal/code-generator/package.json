@@ -15,7 +15,7 @@
     "build:app": "react-scripts build",
     "eject": "react-scripts eject",
     "test:watch": "react-scripts test --env=jsdom --watch",
-    "build": "babel --root-mode upward src -d dist",
+    "build": "rm -rf dist && babel --root-mode upward src -d dist",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"

@@ -3,7 +3,7 @@
   "version": "9.0.0-alpha.41",
   "main": "dist/export.js",
   "scripts": {
-    "build": "babel --root-mode upward src -d dist",
+    "build": "rm -rf dist && babel --root-mode upward src -d dist",
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
