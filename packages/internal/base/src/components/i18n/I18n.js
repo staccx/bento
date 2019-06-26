@@ -9,7 +9,6 @@ import i18next from "i18next"
 import PropTypes from "prop-types"
 import loglevel from "loglevel"
 import { formatCurrency } from "@staccx/formatting"
-import SanityRichText from "../Sanity/SanityRichText"
 
 const I18nContext = createContext({})
 
@@ -102,12 +101,11 @@ export const useI18n = () => {
 
   const translate = (key, data) => i18n.t(key, data)
 
-  // t({ texts, language, key, data, fallback, namespace, level })
   const transform = value => {
     if (!value.hasOwnProperty(i18n.language)) {
       return null
     }
-    return <SanityRichText blocks={value[i18n.language]} />
+    return value[i18n.language]
   }
 
   return useMemo(() => {

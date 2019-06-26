@@ -9,7 +9,8 @@ import {
   theming,
   WebFonts,
   WidowFix,
-  Wrapper
+  Wrapper,
+  SanityRichText
 } from "@staccx/base"
 // import { NordeaTheme } from "@staccx/nordea-theme"
 import theme from "./theme/Theme"
@@ -56,7 +57,9 @@ const testData = {
 const TestTransformFunction = () => {
   const { transform } = useI18n()
 
-  return transform(testData)
+  const result = transform(testData)
+
+  return <SanityRichText blocks={result} />
 }
 
 const App = () => {
@@ -136,7 +139,7 @@ const App = () => {
             </span>{" "}
             uses raw block content to render
             <TestTransformFunction />
-            <Transform value={testData} />
+            <Transform data={testData} />
           </div>
           <hr />
           <Translate i18n={"string"} />
