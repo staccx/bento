@@ -4,6 +4,7 @@
   "main": "dist/export.js",
   "scripts": {
     "build": "rm -rf dist && babel --root-mode upward src -d dist",
+    "build:watch": "nodemon --watch src/ --exec \"babel --root-mode upward src -d dist\"",
     "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",

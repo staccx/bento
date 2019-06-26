@@ -14,6 +14,7 @@
     "test:nocov": "react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom --watch",
     "build": "rm -rf dist && babel --root-mode upward src -d dist",
+    "build:watch": "nodemon --watch src/ --exec \"babel --root-mode upward src -d dist\"",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
