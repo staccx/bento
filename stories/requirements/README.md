@@ -32,7 +32,6 @@ describe("Add two numbers", () => {
 ```jsx
 // test a component
 import React from "react"
-import { render, fireEvent } from "react-testing-library"
 import Input from "./Input"
 
 describe("Input", () => {

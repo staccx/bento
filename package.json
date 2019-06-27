@@ -72,11 +72,11 @@
     "react-json-view": "^1.19.1",
     "react-markdown": "^4.0.8",
     "react-scripts": "^3.0.1",
-    "react-testing-library": "^5.4.4",
     "rollup": "^1.14.2",
     "storybook-host": "^5.0.3"
   },
   "dependencies": {
+    "@testing-library/react": "^8.0.4",
     "react": "^16.6.0",
     "styled-components": "^4.0.2"
   },
