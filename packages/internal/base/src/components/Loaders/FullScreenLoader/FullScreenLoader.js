@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react"
+import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import useInterval from "../../../hooks/useInterval"
-// Also add applyVariants:
-import { color, font, spacing } from "../../../theming"
+import { applyVariants, color, font, spacing } from "../../../theming"
 import Loading from "../../DataViz/Loading/Loading"
+import { themePropTypes } from "../../../constants/themeContants"
 
-const FullScreenLoader = ({ messages, delay = 5000, animation = 1000 }) => {
+const FullScreenLoader = ({
+  messages,
+  delay = 50000,
+  animation = 1000,
+  variant
+}) => {
   // state variables
   const [count, setCount] = useState(0)
   const [currentMsg, setCurrentMsg] = useState(messages[0])
@@ -35,27 +41,68 @@ const FullScreenLoader = ({ messages, delay = 5000, animation = 1000 }) => {
   }, [count, hasLooped])
 
   return (
-    <FullScreenDiv>
-      <Container>
+    <FullScreenContainer variant={variant}>
+      <InnerContainer variant={variant}>
         <Loading />
-        <LoadingMessage>
+        <MessagesContainer variant={variant}>
           {previousMsg && (
-            <PreviousMsg key={previousMsg} animation={animation}>
+            <PreviousMsg
+              key={previousMsg}
+              animation={animation}
+              variant={variant}
+            >
               {previousMsg}
             </PreviousMsg>
           )}
           {currentMsg && (
-            <CurrentMsg key={currentMsg} animation={animation}>
+            <CurrentMsg
+              key={currentMsg}
+              animation={animation}
+              variant={variant}
+            >
               {currentMsg}
             </CurrentMsg>
           )}
-        </LoadingMessage>
-      </Container>
-    </FullScreenDiv>
+        </MessagesContainer>
+      </InnerContainer>
+    </FullScreenContainer>
   )
 }
 
-const FullScreenDiv = styled.div`
+FullScreenLoader.themeProps = {
+  mainContainer: {
+    name: "FULLSCREENLOADER_MAINCONTAINER",
+    description: "",
+    type: themePropTypes.style
+  },
+  innerContainer: {
+    name: "FULLSCREENLOADER_INNERCONTAINER",
+    description: "",
+    type: themePropTypes.style
+  },
+  messagesContainer: {
+    name: "FULLSCREENLOADER_MESSAGESCONTAINER",
+    description: "",
+    type: themePropTypes.style
+  },
+  message: {
+    name: "FULLSCREENLOADER_MESSAGESSTYLE",
+    description: "",
+    type: themePropTypes.style
+  },
+  previousMessage: {
+    name: "FULLSCREENLOADER_PREVIOUSMESSAGE",
+    description: "",
+    type: themePropTypes.style
+  },
+  currentMessage: {
+    name: "FULLSCREENLOADER_CURRENTMESSAGE",
+    description: "",
+    type: themePropTypes.style
+  }
+}
+
+const FullScreenContainer = styled.div`
   position: fixed;
   left: 0;
   top: 0;
@@ -66,29 +113,39 @@ const FullScreenDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${applyVariants(FullScreenLoader.themeProps.mainContainer)};
 `
 
-const Container = styled.div`
+const InnerContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  ${applyVariants(FullScreenLoader.themeProps.innerContainer)};
 `
 
-const LoadingMessage = styled.div`
-  color: ${color.white};
-  font-size: ${font.h2};
-  padding-top: ${spacing.large} ${spacing.medium} 0;
+const MessagesContainer = styled.div`
+  margin-top: ${spacing.large};
   position: relative;
   width: 100%;
+  ${applyVariants(FullScreenLoader.themeProps.messagesContainer)};
 `
 
 const messageStyle = css`
+  color: ${color.white};
+  font-size: ${font.h2};
   text-align: center;
   position: absolute;
-  top: 48px;
+  top: 0;
   left: 0;
   right: 0;
+  padding: 0 ${spacing.medium};
+
+  @media (max-width: 425px) {
+    font-size: ${font.input};
+  }
+
+  ${applyVariants(FullScreenLoader.themeProps.message)};
 `
 
 const PreviousMsg = styled.div`
@@ -104,6 +161,7 @@ const PreviousMsg = styled.div`
       opacity: 0;
     }
   }
+  ${applyVariants(FullScreenLoader.themeProps.previousMessage)};
 `
 
 const CurrentMsg = styled.div`
@@ -118,6 +176,11 @@ const CurrentMsg = styled.div`
       opacity: 1;
     }
   }
+  ${applyVariants(FullScreenLoader.themeProps.currentMessage)};
 `
+
+FullScreenLoader.propTypes = {
+  messages: PropTypes.array.isRequired
+}
 
 export default FullScreenLoader
