@@ -2,7 +2,9 @@ import SanityRichText from "../Sanity/SanityRichText"
 import Text from "../Text/Text/Text"
 import React from "react"
 
-export const isBlock = item => item._type && item._type === "block"
+export const isBlock = item =>
+  item.hasOwnProperty("_type") &&
+  (item._type === "block" || item._type === "image")
 
 export const isRichText = val =>
   Array.isArray(val) &&
@@ -14,7 +16,6 @@ export const isRichText = val =>
   )
 
 export const getComponent = val => {
-  console.log(val)
   return Array.isArray(val) ? (
     val.map(getComponent)
   ) : isBlock(val) ? (

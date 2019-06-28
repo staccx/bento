@@ -21,9 +21,16 @@ const defaultFormat = {
 const Provider = ({ children, ...props }) => {
   // const [i18n] = useReducer(reducer, props)
   const [ready, setReady] = useState(false)
+  const [language, setLanguage] = useState(props.language)
+
+  const changeLanguage = async language => {
+    await i18next.changeLanguage(language)
+    setLanguage(language)
+  }
+
   const {
     texts = null,
-    language = "en",
+    languages = ["en"],
     formatFunctions = {},
     backend,
     backendOptions = {},
@@ -76,7 +83,9 @@ const Provider = ({ children, ...props }) => {
       value={{
         texts,
         i18n: i18next,
-        ready
+        ready,
+        languages,
+        changeLanguage
       }}
     >
       {children}
@@ -112,6 +121,7 @@ export const useI18n = () => {
     return {
       translate,
       transform,
+      languages: i18n.languages,
       ...value
     }
   }, [value, ready])
