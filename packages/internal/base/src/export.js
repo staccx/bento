@@ -40,6 +40,8 @@ import {
   I18nConsumer
 } from "./components/i18n"
 
+import * as Sanity from "./components/Sanity"
+
 export { default as Input } from "./components/Forms/Input/Input"
 export {
   default as BirthdateInput
@@ -282,7 +284,7 @@ export const i18n = {
   I18nConsumer
 }
 
-export { default as SanityRichText } from "./components/Sanity/SanityRichText"
+export { Sanity }
 
 export { default as useInterval } from "./hooks/useInterval"
 export { default as useDebounce } from "./hooks/useDebounce"

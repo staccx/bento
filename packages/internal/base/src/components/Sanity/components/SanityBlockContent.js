@@ -4,9 +4,6 @@ import useSanity from "./useSanity"
 
 const SanityBlockContent = ({ blocks }) => {
   const { serializers, sanityOptions } = useSanity()
-  if (!Array.isArray(blocks)) {
-    return blocks
-  }
   return (
     <BlockContent
       blocks={blocks}

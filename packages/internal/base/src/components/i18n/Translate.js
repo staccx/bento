@@ -1,10 +1,8 @@
 import React from "react"
 import loglevel from "loglevel"
-import SanityRichText from "../Sanity/SanityRichText"
 import { useI18n } from "./I18n"
-import Text from "../Text/Text/Text"
 import { commonPropTypes } from "../../constants/themeContants"
-import { getComponent, isRichText } from "./utils"
+import { getComponent } from "./utils"
 
 const handleArray = (value, data, children, translate) => {
   const values = value.map(
@@ -15,13 +13,7 @@ const handleArray = (value, data, children, translate) => {
     return children(values)
   }
 
-  return values.map(value =>
-    isRichText(value) ? (
-      <SanityRichText key={value[0]._key} blocks={value[0]} />
-    ) : (
-      <Text key={value}>value</Text>
-    )
-  )
+  return values.map(getComponent)
 }
 
 /**
@@ -51,8 +43,6 @@ const Translate = ({ children, i18n, data }) => {
   const fallback = typeof children !== "function" ? children : null
 
   const value = translate(i18n, data)
-
-  console.log(value)
   if (!value) {
     if (children) {
       loglevel.debug("Falling back to children")

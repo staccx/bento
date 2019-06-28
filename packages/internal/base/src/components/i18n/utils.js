@@ -1,4 +1,4 @@
-import SanityRichText from "../Sanity/SanityRichText"
+import SanityBlockContent from "../Sanity/components/SanityBlockContent"
 import Text from "../Text/Text/Text"
 import React from "react"
 
@@ -19,7 +19,7 @@ export const getComponent = val => {
   return Array.isArray(val) ? (
     val.map(getComponent)
   ) : isBlock(val) ? (
-    <SanityRichText key={val._key} blocks={val} />
+    <SanityBlockContent key={val._key} blocks={val} />
   ) : (
     <Text key={val}>{val}</Text>
   )
