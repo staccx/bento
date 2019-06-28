@@ -10,13 +10,13 @@ const Breadcrumb = ({ path, ...restProps }) => (
   <BreadcrumbEl {...restProps}>
     {path.map((item, index, arr) =>
       arr.length !== index + 1 ? (
-        <Item key={`${item.name}_${index}`}>
-          <Link href={item.to}>
+        <Item key={`${item.name}_${index}`} variant={restProps.variant}>
+          <Link href={item.to} variant={restProps.variant}>
             <div>{item.name}</div>
           </Link>
         </Item>
       ) : (
-        <Item key={`${item.name}_${index}`}>
+        <Item key={`${item.name}_${index}`} variant={restProps.variant}>
           <LastItemContent>
             <div>{item.name}</div>
           </LastItemContent>
@@ -25,6 +25,31 @@ const Breadcrumb = ({ path, ...restProps }) => (
     )}
   </BreadcrumbEl>
 )
+
+Breadcrumb.themeProps = {
+  main: {
+    name: "BREADCRUMB_CONTAINER",
+    description:
+      "The main <ol> element, which also contains custom CSS properties.",
+    type: themePropTypes.style
+  },
+  listItem: {
+    name: "BREADCRUMB_ITEM",
+    description: "One <li> list item.",
+    type: themePropTypes.style
+  },
+  itemAnchor: {
+    name: "BREADCRUMB_LINK",
+    description:
+      "Item <a> tag. Will also apply to the last item, which uses a <div>.",
+    type: themePropTypes.style
+  },
+  itemText: {
+    name: "BREADCRUMB_TEXT",
+    description: "Item inner <div>.",
+    type: themePropTypes.style
+  }
+}
 
 const BreadcrumbEl = styled.ol`
   /* -- sizes -- */
@@ -70,6 +95,8 @@ const BreadcrumbEl = styled.ol`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: calc(var(--bottom-spacing) * -1);
+
+  ${applyVariants(Breadcrumb.themeProps.main)};
 `
 
 const Item = styled.li`
@@ -111,12 +138,10 @@ const Item = styled.li`
       padding-right: var(--end-padding);
     }
 
-    ${applyVariants(Breadcrumb.listItemLast)};
+    ${applyVariants(Breadcrumb.themeProps.listItemLast)};
   }
 
-  ${applyVariants(Breadcrumb.listItem)}
-
-  ${applyVariants(Breadcrumb.main)};
+  ${applyVariants(Breadcrumb.themeProps.listItem)}
 `
 
 const linkStyle = css`
@@ -150,10 +175,10 @@ const linkStyle = css`
     padding: var(--item-v-padding) var(--item-h-padding);
     white-space: nowrap;
 
-    ${applyVariants(Breadcrumb.itemText)};
+    ${applyVariants(Breadcrumb.themeProps.itemText)};
   }
 
-  ${applyVariants(Breadcrumb.itemAnchor)};
+  ${applyVariants(Breadcrumb.themeProps.itemAnchor)};
 `
 
 const Link = styled.a`
@@ -177,31 +202,6 @@ const Link = styled.a`
 const LastItemContent = styled.div`
   ${linkStyle};
 `
-
-Breadcrumb.themeProps = {
-  main: {
-    name: "BREADCRUMB_CONTAINER",
-    description:
-      "The main <ol> element, which also contains custom CSS properties.",
-    type: themePropTypes.style
-  },
-  listItem: {
-    name: "BREADCRUMB_ITEM",
-    description: "One <li> list item.",
-    type: themePropTypes.style
-  },
-  itemAnchor: {
-    name: "BREADCRUMB_LINK",
-    description:
-      "Item <a> tag. Will also apply to the last item, which uses a <div>.",
-    type: themePropTypes.style
-  },
-  itemText: {
-    name: "BREADCRUMB_TEXT",
-    description: "Item inner <div>.",
-    type: themePropTypes.style
-  }
-}
 
 Breadcrumb.propTypes = {
   path: PropTypes.array.isRequired
