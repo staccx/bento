@@ -12,10 +12,13 @@ export default {
   name: "localeRichText",
   type: "object",
   fieldsets,
-  fields: getFields("array", {
-    type: "block",
-    ...options
-  }),
+  fields: getFields("array", [
+    {
+      type: "block",
+      ...options
+    },
+    { type: "image" }
+  ]),
   preview: {
     select: {
       title: "nb"
