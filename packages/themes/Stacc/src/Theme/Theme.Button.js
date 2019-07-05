@@ -21,6 +21,14 @@ export default theming.createVariants(
         background-color: ${theming.color.white};
         color: ${theming.color("text")};
       }
+    `,
+    menuItem: css`
+      display: block;
+      margin: 0 auto;
+      margin-left: ${theming.spacing.medium};
+      @media (max-width: 500px) {
+        width: 100%;
+      }
     `
   },
   Button.themeProps.button
