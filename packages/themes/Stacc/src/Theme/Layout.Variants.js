@@ -3,6 +3,9 @@ import { css } from "styled-components"
 
 export default theming.createVariants(
   {
+    head: css`
+      padding-bottom: ${theming.spacing.large};
+    `,
     left: css`
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;

@@ -70,7 +70,7 @@ const color = {
   blush: "#FFF1E5",
   pink: "#FCEEED",
   placeholder: "#b8b8b8",
-  inputLine: "#dcdcdc",
+  inputLine: "#6c6c6c",
   link: "#467EFF",
   espen: "313131"
 }
