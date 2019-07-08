@@ -58,6 +58,7 @@ const Input = React.forwardRef(
   ) => {
     const [showHelp, setShowHelp] = useState(false)
     const cleave = useRef(null)
+    const inputRef = useRef(ref)
 
     const setRawValue = rawValue => {
       if (!cleave.current) {
@@ -70,7 +71,7 @@ const Input = React.forwardRef(
 
     useEffect(() => {
       if (options) {
-        cleave.current = new Cleave(ref.current, {
+        cleave.current = new Cleave(inputRef.current, {
           ...options,
           onValueChanged: onChange
         })
@@ -109,7 +110,7 @@ const Input = React.forwardRef(
           placeholder={placeholder}
           variant={variant}
           type={type}
-          ref={ref}
+          ref={inputRef}
           defaultValue={defaultValue}
           autoComplete={autoComplete}
           {...otherProps}
