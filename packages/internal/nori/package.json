@@ -1,6 +1,6 @@
 {
   "name": "@staccx/nori",
-  "version": "8.88.0",
+  "version": "8.89.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -10,7 +10,7 @@
     "@staccx/base": "^8.87.2",
     "@staccx/i18n": "^8.80.1",
     "@staccx/sanity": "^8.87.2",
-    "@staccx/stacc-theme": "^8.88.0",
+    "@staccx/stacc-theme": "^8.89.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
