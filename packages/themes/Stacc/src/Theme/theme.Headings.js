@@ -63,6 +63,9 @@ export const HeadingStyling = theming.createVariants(
     primary: css`
       color: ${theming.color.primary};
       margin-bottom: ${theming.spacing.small};
+    `,
+    storyHeading: css`
+      margin-top: ${theming.spacing.large};
     `
   },
   Heading.themeProps.heading
