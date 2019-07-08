@@ -17,7 +17,8 @@ import {
   Alert,
   PhoneInput,
   Loading,
-  Table
+  Table,
+  NationalIdInput
 } from "@staccx/base"
 import { getPaymentPlan } from "@staccx/payment-plan"
 import { throttle } from "@staccx/utils"
@@ -48,6 +49,7 @@ class Calculator extends React.Component {
       email: Yup.string()
         .email(this.props.errorEmailInvalid)
         .required(this.props.errorEmailRequired),
+      nationalId: Yup.string().required(this.props.errorNationalIdRequired),
       phone: Yup.string().required(this.props.errorPhoneNumberRequired)
     })
     this.setState(
@@ -291,6 +293,26 @@ class Calculator extends React.Component {
                     </LayoutItem>
                     <LayoutItem>
                       <Field
+                        name={`nationalId`}
+                        render={({ field }) => (
+                          <NationalIdInput
+                            label={this.props.nationalIdLabel}
+                            id={"nationalId"}
+                            placeholder={this.props.nationalIdPlaceholder}
+                            onChange={e => {
+                              setFieldValue("nationalId", e.target.value)
+                            }}
+                          />
+                        )}
+                      />
+                      {values.phone && touched.phone && errors.phone && (
+                        <Alert variant="error" type="warning">
+                          {errors.phone}
+                        </Alert>
+                      )}
+                    </LayoutItem>
+                    <LayoutItem>
+                      <Field
                         name={`phone`}
                         render={({ field }) => (
                           <PhoneInput
@@ -357,24 +379,32 @@ Calculator.defaultProps = {
   defaultTerms: 6,
   defaultValue: 250000,
   downPaymentPerMonthText: "Nedbetaling månedlig",
+  emailLabel: "Epost",
+  emailPlaceholder: "mail@mail.com",
   headingText: "Se hva lånet koster",
   interestRate: 12.9,
   interestRateText: "Rente",
   loanDurationLabel: "Nedbetalingstid",
-  monthlyInterestText: "Gjennomsnittlig månedlig rentekostnad",
-  monthlyFeesText: "Månedlig",
   maxValue: 1000000,
   minValue: 50000,
+  monthlyFeesText: "Månedlig",
+  monthlyInterestText: "Gjennomsnittlig månedlig rentekostnad",
+  nameLabel: "Navn",
+  namePlaceholder: "Navn navnesen",
+  nationalIdLabel: "Fødselsnummer",
+  nationalIdPlaceholder: "xxxxxx xxxxx",
+  phoneLabel: "Telefonnummer",
+  phonePlaceholder: "xxx xx xxx",
   priceExampleText:
     "Lånet gis med fastrente i hele lånets løpetid. Priseksempel: 500 000 over 6 mnd, eff. rente 11,56 % kostnader 26 232, totalt 526 232.",
   productType: "PRODUCT_LOAN",
   showDownpayment: true,
+  showExplanation: false,
   showInterestRate: true,
   showMonthlyFees: false,
-  showTotalMonthly: true,
-  showExplanation: false,
-  showTerms: false,
   showMonthlyInterest: false,
+  showTerms: false,
+  showTotalMonthly: true,
   startFee: 0,
   termFee: 3000,
   termValues: [6, 12, 18, 24, 36],
@@ -382,21 +412,22 @@ Calculator.defaultProps = {
   termsValuesToString: item =>
     item >= 12 ? (item / 12).toPrecision(2) + " år" : item + " mnd",
   totalMonthlyText: "Totalt månedlig",
-  valueLabel: "Ønsket lånebeløp",
-  emailLabel: "Epost",
-  emailPlaceholder: "mail@mail.com",
-  nameLabel: "Navn",
-  namePlaceholder: "Navn navnesen",
-  phoneLabel: "Telefonnummer",
-  phonePlaceholder: "xxx xx xxx"
+  valueLabel: "Ønsket lånebeløp"
 }
 
 Calculator.propTypes = {
   buttonText: PropTypes.string,
   creditExplanationText: PropTypes.string,
-  defaultTerms: PropTypes.any,
+  defaultTerms: PropTypes.number,
   defaultValue: PropTypes.number,
   downPaymentPerMonthText: PropTypes.string,
+  emailLabel: PropTypes.string,
+  emailPlaceholder: PropTypes.string,
+  errorEmailInvalid: PropTypes.string,
+  errorEmailRequired: PropTypes.string,
+  errorNameRequired: PropTypes.string,
+  errorNationalIdRequired: PropTypes.string,
+  errorPhoneNumberRequired: PropTypes.string,
   errorTerms: PropTypes.any,
   errorValueRequired: PropTypes.any,
   errorValueTooHigh: PropTypes.any,
@@ -404,35 +435,36 @@ Calculator.propTypes = {
   headingText: PropTypes.string,
   interestRate: PropTypes.number,
   interestRateText: PropTypes.string,
+  isLoading: PropTypes.any,
   loanDurationLabel: PropTypes.string,
-  monthlyInterestText: PropTypes.string,
   maxValue: PropTypes.number,
   minValue: PropTypes.number,
+  monthlyFeesText: PropTypes.string,
+  monthlyInterestText: PropTypes.string,
+  nameLabel: PropTypes.string,
+  namePlaceholder: PropTypes.string,
+  nationalIdLabel: PropTypes.string,
+  nationalIdPlaceholder: PropTypes.string,
+  nationalIsLabel: PropTypes.string,
   onClick: PropTypes.any,
   onValidated: PropTypes.any,
+  phoneLabel: PropTypes.string,
+  phonePlaceholder: PropTypes.string,
   priceExampleText: PropTypes.string,
   productType: PropTypes.string,
   renderPriceExample: PropTypes.func,
   showDownpayment: PropTypes.bool,
-  showInterestRate: PropTypes.bool,
-  showTotalMonthly: PropTypes.bool,
   showExplanation: PropTypes.bool,
+  showInterestRate: PropTypes.bool,
+  showMonthlyFees: PropTypes.bool,
   showMonthlyInterest: PropTypes.bool,
   showTerms: PropTypes.bool,
-  startFee: PropTypes.any,
+  showTotalMonthly: PropTypes.bool,
+  startFee: PropTypes.number,
   termFee: PropTypes.number,
   termValues: PropTypes.array,
+  termsDefault: PropTypes.number,
   termsValuesToString: PropTypes.func,
   totalMonthlyText: PropTypes.string,
-  valueLabel: PropTypes.string,
-  emailLabel: PropTypes.string,
-  emailPlaceholder: PropTypes.string,
-  errorEmailInvalid: PropTypes.string,
-  errorEmailRequired: PropTypes.string,
-  errorNameRequired: PropTypes.string,
-  errorPhoneNumberRequired: PropTypes.string,
-  nameLabel: PropTypes.string,
-  namePlaceholder: PropTypes.string,
-  phoneLabel: PropTypes.string,
-  phonePlaceholder: PropTypes.string
+  valueLabel: PropTypes.string
 }

@@ -64,5 +64,11 @@
   "peerDependencies": {
     "styled-components": "^4.0.2"
   },
-  "gitHead": "fba5600ec9535ef0f12004463f3f99ff9427495b"
+  "gitHead": "fba5600ec9535ef0f12004463f3f99ff9427495b",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

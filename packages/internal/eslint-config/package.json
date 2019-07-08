@@ -22,5 +22,8 @@
     "eslint-plugin-react-hooks": "^1.6.0",
     "eslint-plugin-standard": "4.0.0"
   },
-  "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
+  "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5",
+  "dependencies": {
+    "eslint-plugin-react-hooks": "^1.6.1"
+  }
 }
