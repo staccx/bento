@@ -1,6 +1,6 @@
 {
   "name": "@staccx/code-generator",
-  "version": "9.0.0-alpha.41",
+  "version": "9.0.0-alpha.47",
   "description": "Generates code based on templates",
   "author": "StaccX",
   "license": "UNLICENSED",
