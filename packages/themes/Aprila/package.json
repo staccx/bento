@@ -1,6 +1,6 @@
 {
   "name": "@staccx/aprila-theme",
-  "version": "9.0.0-alpha.47",
+  "version": "9.0.0-alpha.48",
   "private": false,
   "main": "dist/export.js",
   "license": "UNLICENSED",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@staccx/animations": "^9.0.0-alpha.47",
-    "@staccx/base": "^9.0.0-alpha.47",
+    "@staccx/base": "^9.0.0-alpha.48",
     "@staccx/formatting": "^9.0.0-alpha.47",
     "@staccx/json-schema": "^9.0.0-alpha.43",
     "polished": "^1.9.2",
