@@ -1,25 +1,62 @@
 import React, { useState, createContext, useContext, useEffect } from "react"
 import Oidc, { UserManager } from "oidc-client"
+import loglevel from "loglevel"
 import Context from "./context"
 
 export default createContext()
 
-Oidc.Log.level = Oidc.Log.DEBUG
-Oidc.Log.logger = console
+// TODO: Make prop `debug`
+Oidc.Log.logger = loglevel
 
-export const OpenId = ({ children, config, ...props }) => {
-  console.log("rendering openid")
-  const initialConfigName = sessionStorage.getItem("openIdConfigName")
-  const [configName, _setConfigName] = useState(initialConfigName)
+const OPEN_ID_CONFIG_NAME = "openIdConfigName"
 
-  const initialConfig = configName ? config[configName].oidc : void 0
-  const [userManager, setUserManager] = useState(new UserManager(initialConfig))
+export const OpenId = ({
+  children,
+  config,
+  storage,
+  level = Oidc.Log.DEBUG,
+  ...props
+}) => {
+  Oidc.Log.level = level
+  loglevel.setLevel(level)
+  loglevel.debug("rendering openid")
 
-  const setConfigName = name => {
-    console.log("creating new usermanager", name)
-    sessionStorage.setItem("openIdConfigName", name)
+  if (!storage) {
+    storage = sessionStorage
+  }
+
+  const [configName, _setConfigName] = useState(null)
+  const [userManager, setUserManager] = useState(null)
+
+  const setItem = async (key, value) => {
+    return storage.setItem(key, value)
+  }
+
+  const getItem = async key => {
+    return storage.getItem(key)
+  }
+
+  useEffect(() => {
+    init()
+  }, [])
+
+  const init = async () => {
+    const configName = await getItem(OPEN_ID_CONFIG_NAME)
+    await setConfigName(configName)
+  }
+
+  const setConfigName = async name => {
+    loglevel.debug("creating new usermanager", name)
+    await setItem(OPEN_ID_CONFIG_NAME, name)
+    if (!config.hasOwnProperty(name)) {
+      loglevel.warn("Config does not contain value for", name)
+    }
     setUserManager(new UserManager(config[name].oidc))
     _setConfigName(name)
+  }
+
+  if (!userManager) {
+    return null
   }
 
   return (
