@@ -21,7 +21,7 @@ const getState = userManager => {
 }
 
 export const useOtpLogin = () => {
-  const { userManager, config } = useContext(Context)
+  const { userManager, extraConfig } = useContext(Context)
   const [stage, setStage] = useState()
   const [input, setInput] = useState()
   const [state, setState] = useState()
@@ -30,8 +30,8 @@ export const useOtpLogin = () => {
     userManager.getUser().then(user => {
       if (user) {
         console.log("already logged in")
-      } else if (!state && config) {
-        console.log("user was not logged in", user, state, config)
+      } else if (!state && extraConfig) {
+        console.log("user was not logged in", user, state, extraConfig)
         setState(getState(userManager))
       }
     })
@@ -44,9 +44,10 @@ export const useOtpLogin = () => {
   const next = () => {
     switch (stage) {
       case stages.WAITING_FOR_USERNAME:
+        console.log("posting id", input)
         axios
-          .post(config.idPostUri, {
-            [config.userField]: input,
+          .post(extraConfig.idPostUri, {
+            [extraConfig.userField]: input,
             state
           })
           .then(() => setStage(stages.WAITING_FOR_PASSWORD))
@@ -56,13 +57,13 @@ export const useOtpLogin = () => {
       case stages.WAITING_FOR_PASSWORD:
       case stages.WRONG_PASSWORD:
         axios
-          .post(config.codePostUri, { nonce: input, state })
+          .post(extraConfig.codePostUri, { nonce: input, state })
           .then(() => {
             setStage(stages.SIGNING_IN)
 
             window.location.replace(
               `${userManager.settings.authority}${
-                config.callbackPath
+                extraConfig.callbackPath
               }?${qs.stringify({ state })}`
             )
           })

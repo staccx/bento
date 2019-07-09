@@ -10,6 +10,7 @@ Oidc.Log.logger = loglevel
 export const OpenId = ({
   children,
   config,
+  extraConfig,
   level = Oidc.Log.DEBUG,
   ...props
 }) => {
@@ -24,6 +25,7 @@ export const OpenId = ({
       value={{
         userManager,
         config,
+        extraConfig,
         ...props
       }}
     >
