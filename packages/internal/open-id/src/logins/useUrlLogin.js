@@ -6,7 +6,7 @@ export const useUrlLogin = (redirectParentOnCallback = true) => {
   const [url, setUrl] = useState()
 
   useEffect(() => {
-    if (userManager) {
+    if (userManager && userManager.settings.authority) {
       userManager.createSigninRequest().then(req => setUrl(req.url))
     }
   }, [userManager])
