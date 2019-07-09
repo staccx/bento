@@ -2,14 +2,14 @@ import { useContext } from "react"
 import Context from "./context"
 
 export const CallbackLogin = () => {
-  const { userManager, afterLogin, onError } = useContext(Context)
+  const {
+    userManager,
+    afterLogin,
+    onError,
+    reloadParentAfterLogin
+  } = useContext(Context)
 
-  const _window =
-    sessionStorage.getItem("callbackLoginUseParent") !== null
-      ? window.parent
-      : window
-
-  sessionStorage.removeItem("callbackLoginUseParent")
+  const _window = reloadParentAfterLogin ? window.parent : window
 
   userManager &&
     userManager
