@@ -64,6 +64,8 @@ export const OpenId = ({
       value={{
         userManager,
         configName,
+        getItem,
+        setItem,
         setConfigName,
         config: config[configName],
         ...props

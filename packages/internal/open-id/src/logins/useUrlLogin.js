@@ -1,19 +1,26 @@
 import { useState, useEffect } from "react"
 import { useOpenId } from "../context"
 
+const CALLBACK_LOGIN_USE_PARENT = "callbackLoginUseParent"
+
 export const useUrlLogin = (redirectParentOnCallback = true) => {
-  const { userManager, onError } = useOpenId()
+  const { userManager, onError, setItem } = useOpenId()
   const [url, setUrl] = useState()
 
-  redirectParentOnCallback &&
-    sessionStorage.setItem("callbackLoginUseParent", true)
+  redirectParentOnCallback && setItem(CALLBACK_LOGIN_USE_PARENT, true)
 
   useEffect(() => {
     if (userManager) {
       userManager
         .createSigninRequest()
         .then(req => setUrl(req.url))
-        .catch(() => window.location.replace(onError))
+        .catch(() => {
+          if (window) {
+            window.location.replace(onError)
+          } else {
+            throw new Error("Could not create sign in request")
+          }
+        })
     }
   }, [userManager])
 

@@ -3,6 +3,7 @@ import axios from "axios"
 import qs from "qs"
 import Context from "../context"
 
+// TODO: Refactor to be storage agnostic
 const getState = userManager => {
   const { state } = qs.parse(window.location.search, {
     ignoreQueryPrefix: true
