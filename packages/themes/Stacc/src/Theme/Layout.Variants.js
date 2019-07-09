@@ -46,8 +46,8 @@ export default theming.createVariants(
         grid-template-rows: auto auto;
         grid-template-areas: "image" "content";
         img {
-          max-width: 240px;
-          margin-top: 8vw;
+          max-width: 320px;
+          margin-top: 6vw;
         }
       }
     `

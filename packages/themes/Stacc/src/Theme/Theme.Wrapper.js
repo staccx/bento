@@ -15,6 +15,9 @@ export default theming.createVariants(
         padding-left: 8.5vw !important;
         padding-right: 8.5vw !important;
       }
+    `,
+    trinity: css`
+      margin-top: ${theming.spacing.huge};
     `
   },
   Wrapper.themeProps.wrapper
