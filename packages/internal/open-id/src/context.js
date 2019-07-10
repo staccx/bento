@@ -39,7 +39,7 @@ export const useOpenId = () => useContext(Context)
 export const useUser = () => {
   const { userManager } = useContext(Context)
   const [user, setUser] = useState()
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
     userManager.getUser().then(user => {
       setUser(user)
