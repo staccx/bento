@@ -11,10 +11,11 @@ export const OpenId = ({
   children,
   config,
   extraConfig,
-  level = Oidc.Log.DEBUG,
+  level = "warn",
   ...props
 }) => {
-  Oidc.Log.level = level
+  Oidc.Log.level = Oidc.Log.DEBUG
+
   loglevel.setLevel(level)
   loglevel.debug("rendering openid")
 
