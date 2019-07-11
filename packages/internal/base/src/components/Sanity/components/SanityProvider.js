@@ -70,7 +70,6 @@ const SanityProvider = ({
     return data
   }, [data])
 
-  console.log("Rerendering")
   return (
     <Context.Provider
       value={{

@@ -9,7 +9,6 @@ const SanityImage = ({ children, image, options, ...props }) => {
   const url = getImageUrl(image, options)
 
   return useMemo(() => {
-    console.log("Rerendering image", url)
     if (!children) {
       return <Image {...props} src={url} />
     }
