@@ -17,7 +17,6 @@ export const OpenId = ({
   Oidc.Log.level = Oidc.Log.DEBUG
 
   loglevel.setLevel(level)
-  loglevel.debug("rendering openid")
 
   const userManager = new UserManager(config)
 
