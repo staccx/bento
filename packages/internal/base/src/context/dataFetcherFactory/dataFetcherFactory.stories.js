@@ -27,20 +27,14 @@ storiesOf("context|base/dataFetcherFactory", module).add(
     <DataProvider>
       <AnotherDataProvider>
         <ComponentA
-          path={"/uuid"}
+          path={"https://httpbin.org/uuid"}
           initialData={[]}
           loop={3000}
-          axiosOptions={{
-            baseUrl: "https://httpbin.org/"
-          }}
         />
         <ComponentB
-          path={"/uuid"}
+          path={"https://httpbin.org/uuid"}
           initialData={[]}
           loop={5000}
-          axiosOptions={{
-            baseUrl: "https://httpbin.org/"
-          }}
         />
       </AnotherDataProvider>
     </DataProvider>
