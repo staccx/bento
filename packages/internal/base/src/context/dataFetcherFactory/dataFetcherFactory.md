@@ -2,13 +2,13 @@
 ```jsx
 import { dataFetcherFactory } from "@staccx/base"
 
-const [CaselistProvider, useCaselist] = dataFetcherFactory("/cases", [], { loop: 5000 })
-const [NotificationsProvider, useNotifications] = dataFetcherFactory("/notifications", [])
+const [CaselistProvider, useCaselist] = dataFetcherFactory()
+const [NotificationsProvider, useNotifications] = dataFetcherFactory()
 
 const StateProvider = ({ children }) => {
   return (
-    <CaselistProvider>
-      <NotificationsProvider>
+    <CaselistProvider path={"/api/cases"} initialData={[]} loop={3000}>
+      <NotificationsProvider path={"/api/notifications"} initialData={[]} loop={5000}>
         {children}
       </NotificationsProvider>
     </CaselistProvider>

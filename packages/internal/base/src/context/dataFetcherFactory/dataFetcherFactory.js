@@ -8,11 +8,17 @@ import isEqual from "lodash.isequal"
 const create = () => {
   const Context = createContext()
 
-  const DataProvider = ({ path, loop, initialData, children }) => {
+  const DataProvider = ({
+    path,
+    loop,
+    initialData,
+    axiosOptions = {},
+    children
+  }) => {
     const [state, setState] = useState({ data: initialData, isLoading: true })
 
     const fetch = async () => {
-      await axios({ method: "get", url: path })
+      await axios({ method: "get", url: path, ...axiosOptions })
         .then(
           ({ data }) =>
             isEqual(data, state.data) || setState({ data, isLoading: false })
@@ -40,7 +46,8 @@ const create = () => {
     path: PropTypes.string,
     loop: PropTypes.number,
     initialData: PropTypes.any,
-    children: commonPropTypes.children
+    children: commonPropTypes.children,
+    axiosOptions: PropTypes.object
   }
 
   const useData = () => useContext(Context)

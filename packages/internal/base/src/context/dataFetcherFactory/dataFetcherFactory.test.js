@@ -2,13 +2,15 @@ import React from "react"
 import ReactDOM from "react-dom"
 import factory from "./dataFetcherFactory"
 
-const [AProvider, useA] = factory("/a", [], { loop: 5000 })
-const [BProvider, useB] = factory("/b", [], { loop: 5000 })
+const [AProvider, useA] = factory()
+const [BProvider, useB] = factory()
 
 const StateProvider = ({ children }) => {
   return (
-    <AProvider>
-      <BProvider>{children}</BProvider>
+    <AProvider path={"/api/a"} initialData={[]} loop={5000}>
+      <BProvider path={"/api/b"} initialData={[]} loop={5000}>
+        {children}
+      </BProvider>
     </AProvider>
   )
 }

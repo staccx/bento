@@ -3,15 +3,9 @@ import { storiesOf } from "@storybook/react"
 import doc from "./dataFetcherFactory.md"
 import ReactJson from "react-json-view"
 import factory from "./dataFetcherFactory"
-const [DataProvider, useData] = factory("/uuid", [], {
-  baseUrl: "https://httpbin.org/",
-  loop: 5000
-})
 
-const [AnotherDataProvider, useOtherData] = factory("/uuid", [], {
-  baseUrl: "https://httpbin.org/",
-  loop: 3000
-})
+const [DataProvider, useData] = factory()
+const [AnotherDataProvider, useOtherData] = factory()
 
 const ComponentA = () => {
   const { data, isLoading } = useData()
@@ -32,8 +26,22 @@ storiesOf("context|base/dataFetcherFactory", module).add(
   () => (
     <DataProvider>
       <AnotherDataProvider>
-        <ComponentA />
-        <ComponentB />
+        <ComponentA
+          path={"/uuid"}
+          initialData={[]}
+          loop={3000}
+          axiosOptions={{
+            baseUrl: "https://httpbin.org/"
+          }}
+        />
+        <ComponentB
+          path={"/uuid"}
+          initialData={[]}
+          loop={5000}
+          axiosOptions={{
+            baseUrl: "https://httpbin.org/"
+          }}
+        />
       </AnotherDataProvider>
     </DataProvider>
   ),
