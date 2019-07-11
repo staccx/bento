@@ -14,7 +14,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "loglevel": "^1.6.3",
     "oidc-client": "^1.7.1",
     "qs": "^6.7.0"
