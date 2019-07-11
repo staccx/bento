@@ -1,34 +1,18 @@
 import React, { createContext, useState, useContext, useEffect } from "react"
+import PropTypes from "prop-types"
 import { commonPropTypes } from "../../constants/themeContants"
 import useInterval from "../../hooks/useInterval"
 import axios from "axios"
 import isEqual from "lodash.isequal"
 
-const create = (
-  initialPath,
-  initialData,
-  options = {
-    baseUrl: "/api",
-    headers: {
-      "stacc-scenario": localStorage.getItem("scenario") || "basic"
-    },
-    loop: 5000
-  }
-) => {
+const create = () => {
   const Context = createContext()
 
-  const api = axios.create({
-    baseURL: options.baseUrl,
-    headers: options.headers
-  })
-
-  const DataProvider = ({ children }) => {
+  const DataProvider = ({ path, loop, initialData, children }) => {
     const [state, setState] = useState({ data: initialData, isLoading: true })
-    const [path, setPath] = useState(initialPath)
 
     const fetch = async () => {
-      await api
-        .get(path)
+      await axios({ method: "get", url: path })
         .then(
           ({ data }) =>
             isEqual(data, state.data) || setState({ data, isLoading: false })
@@ -42,21 +26,22 @@ const create = (
       fetch()
     }, [path])
 
-    if (options.loop) {
+    if (loop) {
       // eslint-disable-next-line
       useInterval(async () => {
         await fetch()
-      }, options.loop)
+      }, loop)
     }
 
-    return (
-      <Context.Provider value={{ ...state, setPath }}>
-        {children}
-      </Context.Provider>
-    )
+    return <Context.Provider value={{ ...state }}>{children}</Context.Provider>
   }
 
-  DataProvider.propTypes = { children: commonPropTypes.children }
+  DataProvider.propTypes = {
+    path: PropTypes.string,
+    loop: PropTypes.number,
+    initialData: PropTypes.any,
+    children: commonPropTypes.children
+  }
 
   const useData = () => useContext(Context)
 
