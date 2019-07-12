@@ -23,21 +23,22 @@ const ComponentB = () => {
 
 storiesOf("context|base/dataFetcherFactory", module).add(
   "Data",
-  () => (
-    <DataProvider>
-      <AnotherDataProvider>
-        <ComponentA
-          path={"https://httpbin.org/uuid"}
-          initialData={[]}
-          loop={3000}
-        />
-        <ComponentB
-          path={"https://httpbin.org/uuid"}
-          initialData={[]}
-          loop={5000}
-        />
-      </AnotherDataProvider>
-    </DataProvider>
-  ),
+  () => {
+    const options = {
+      loop: 5000,
+      initialData: [],
+      axiosOptions: {
+        baseURL: "https://httpbin.org/"
+      }
+    }
+    return (
+      <DataProvider {...options} path={"/uuid"} loop={3000}>
+        <AnotherDataProvider {...options} path={"/uuid"} loop={5000}>
+          <ComponentA />
+          <ComponentB />
+        </AnotherDataProvider>
+      </DataProvider>
+    )
+  },
   { info: { text: doc } }
 )

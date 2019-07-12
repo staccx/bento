@@ -30,7 +30,7 @@ const create = () => {
 
     useEffect(() => {
       fetch()
-    }, [path])
+    }, [])
 
     if (loop) {
       // eslint-disable-next-line
