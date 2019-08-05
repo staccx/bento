@@ -1,9 +1,15 @@
 // @flow
 import React from "react"
 import { ThemeProvider } from "styled-components"
-import { GlobalStyle, WebFonts, Loading, theming, Alert } from "@staccx/base"
+import {
+  GlobalStyle,
+  WebFonts,
+  Loading,
+  theming,
+  Alert,
+  i18n
+} from "@staccx/base"
 import { SanityList, SanityProvider } from "@staccx/sanity"
-import { LanguageProvider } from "@staccx/i18n"
 
 const defaultParseTexts = (acc, curr) => {
   acc[curr.i18nKey.current] = curr.value[0]
@@ -41,13 +47,13 @@ const Nori = ({
               }
 
               return (
-                <LanguageProvider
+                <i18n.Provider
                   logLevel={logLevel}
                   texts={result.reduce(parseTexts)}
                   {...i18nConfig}
                 >
                   {children}
-                </LanguageProvider>
+                </i18n.Provider>
               )
             }}
           </SanityList>

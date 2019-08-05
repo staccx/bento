@@ -1,6 +1,4 @@
-Button
-
-```jsx harmony
+```jsx
 <div>
   <Button>Tester</Button>
 </div>

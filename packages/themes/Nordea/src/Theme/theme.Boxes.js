@@ -1,5 +1,54 @@
-import { css } from "styled-components"
+import { css, keyframes } from "styled-components"
 import { Box, fontSmoothing, theming } from "@staccx/base"
+
+const fadeInLarge = keyframes`
+  from {
+    opacity: 0;
+    transform:  translate(-50%, 90%);
+
+  }
+
+  to {
+    opacity: 1;
+    transform:  translate(-50%, 100%);
+  }
+`
+
+const fadeInMedium = keyframes`
+  from {
+    opacity: 0;
+    transform:  translate(-100%, 90%);
+
+  }
+
+  to {
+    opacity: 1;
+    transform:  translate(-100%, 100%);
+  }
+`
+
+const popInFromBottom = keyframes`
+from {
+  transform:  translate(0, 90%);
+
+}
+
+to {
+  transform:  translate(0,0);
+}
+`
+
+const fadeOut = keyframes`
+from {
+  opacity: 1;
+  transform:  translate(0,0);
+}
+
+to {
+  opacity: 0;
+  transform:  translate(0,60%);
+}
+`
 
 export const BoxStyling = theming.createVariants(
   {
@@ -103,6 +152,85 @@ export const BoxStyling = theming.createVariants(
     `,
     statsContainer: css`
       background-color: ${theming.color("b1")};
+    `,
+    layoutBox: css`
+      color: ${theming.color.text};
+      background-color: ${theming.color.white};
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+
+      /* Small-screen Dissolve */
+      @media (max-width: 489px) {
+        padding: ${p =>
+          p.smallScreenDissolve
+            ? "0"
+            : p.size === "flush"
+            ? "0"
+            : theming.spacing.medium};
+        background-color: ${p => p.smallScreenDissolve && "transparent"};
+        box-shadow: ${p => p.smallScreenDissolve && "none"};
+      }
+    `,
+    notificationMsgs: css`
+      position: absolute;
+      width: 460px;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      color: ${theming.color.text};
+      background-color: ${theming.color.white};
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+      z-index: 500;
+      max-height: 390px;
+      overflow-y: scroll;
+      overscroll-behavior: contain;
+
+      &::-webkit-scrollbar-track {
+        background-color: ${theming.color.white};
+      }
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        background-color: ${theming.color.white};
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: ${theming.color("bg3")};
+      }
+
+      @media (min-width: 580px) {
+        right: 0;
+        transform: translate(-100%, 100%);
+        animation: ${fadeInMedium} 0.2s ease-out forwards;
+      }
+
+      @media (min-width: 1520px) {
+        left: 50%;
+        transform: translate(-50%, 100%);
+        animation: ${fadeInLarge} 0.2s ease-out forwards;
+      }
+    `,
+    uploadNotificationOuter: css`
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 901;
+      background-color: ${theming.color.white};
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+      animation: ${popInFromBottom} 0.4s ease-out forwards;
+
+      ${p =>
+        p.animateOut &&
+        css`
+          animation: ${fadeOut} 0.4s ease-out forwards;
+        `}
+    `,
+    uploadNotificationInner: css`
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: ${theming.spacing.medium};
+      color: ${theming.color.wcag};
     `
   },
   Box.themeProps.box

@@ -15,6 +15,7 @@ import {
 import { LayoutStyling, LayoutItemStyling } from "./theme.Layouts"
 import { NewBadgeBadgeStyling } from "./theme.NewBadges"
 import {
+  ExpandWrapperStyling,
   ExpandBtnStyling,
   ExpandItemStyling,
   ExpandIconStyling
@@ -64,7 +65,16 @@ import { UrlIcon } from "./Icons/Url"
 import { CloseIcon } from "./Icons/Close"
 import { MenuIcon } from "./Icons/Menu"
 import { WrapperStyling } from "./theme.Wrapper"
-import { CheckBoxLabelStyling } from "./theme.Checkbox"
+import {
+  CheckBoxLabelStyling,
+  CheckBoxLabelCheckedStyling,
+  CheckBoxLabelBeforeStyling,
+  CheckBoxInputStyling
+} from "./theme.Checkbox"
+import { ItemGroupStyling, ItemGroupWrapperStyling } from "./theme.ItemGroup"
+import { SkeletonPulseStyling } from "./theme.Skeleton"
+import { AnchorStyling } from "./theme.Anchors"
+import { LabelStyling } from "./theme.Labels"
 
 const borderRadius = "0px"
 const headerHeight = "70px"
@@ -90,7 +100,8 @@ const spacing = {
   mediumPlus: "32px",
   medium: "24px",
   small: "12px",
-  tiny: "6px"
+  tiny: "6px",
+  flush: "0"
 }
 
 const color = {
@@ -101,6 +112,7 @@ const color = {
   gray: "#646464",
   text: "#000040",
   white: "#fff",
+  link: "#0000A0",
   red: "#FC6161",
   yellow: "#FFE184",
   line: "#C9C7C7",
@@ -118,6 +130,7 @@ const color = {
   b1: "#99CCFF",
   bg1: "#E5F2FF",
   bg2: "#F5F5F5",
+  bg3: "#CAE5FF",
   p3: "#F0C1AE",
   p2: "#FBD9CA",
   p1: "#FDECE4",
@@ -142,6 +155,7 @@ const appSpecificColor = {
   chatBubbleBgOtherUser: color.b2,
   chatBubbleBgCurrentUserText: color.text,
   chatBubbleBgOtherUserText: color.white,
+  iconChatBubblesBg: color.bg3,
   progressDone: color.a3
 }
 
@@ -155,7 +169,8 @@ const font = {
   base: "14px",
   tiny: "12px",
   input: "16px",
-  huge: "44px"
+  huge: "44px",
+  lineHeight: "1.5"
 }
 
 const fontWeight = {
@@ -164,12 +179,13 @@ const fontWeight = {
 }
 
 const fontFamily = {
-  heading: "NordeaSansSmall",
+  heading: "NordeaSansLarge",
   body: "NordeaSansSmall"
 }
 
 const theme = new theming.Theme({
   name: "Nordea",
+  storybookName: "NOR Blue",
   font,
   fontWeight,
   color: { ...color, ...appSpecificColor },
@@ -237,9 +253,18 @@ const theme = new theming.Theme({
   .add(MenuIcon)
   .add(CloseIcon)
   .add(WrapperStyling)
+  .add(ExpandWrapperStyling)
   .add(ExpandBtnStyling)
   .add(ExpandItemStyling)
   .add(ExpandIconStyling)
   .add(CheckBoxLabelStyling)
+  .add(CheckBoxLabelCheckedStyling)
+  .add(CheckBoxLabelBeforeStyling)
+  .add(CheckBoxInputStyling)
+  .add(ItemGroupStyling)
+  .add(ItemGroupWrapperStyling)
+  .add(SkeletonPulseStyling)
+  .add(AnchorStyling)
+  .add(LabelStyling)
 
 export default theme

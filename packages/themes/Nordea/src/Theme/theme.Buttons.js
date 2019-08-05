@@ -16,7 +16,7 @@ export const ButtonStyling = theming.createVariants(
     [theming.VARIANT_DEFAULT]: css`
       ${baseStyling};
     `,
-    todoList: css`
+    taskList: css`
       ${baseStyling};
       display: flex;
       min-height: 0;
@@ -96,14 +96,14 @@ export const ButtonStyling = theming.createVariants(
       }
     `,
     hamburger: css`
-      display: flex;
-      min-height: 52px;
-      background-color: transparent;
-      svg {
-        margin-right: ${theming.spacing.tiny};
-      }
-      @media only screen and (min-width: 540px) {
-        display: none;
+      display: none;
+      @media only screen and (max-width: ${p => p.mediaWidth}) {
+        display: flex;
+        min-height: 52px;
+        background-color: transparent;
+        svg {
+          margin-right: ${theming.spacing.tiny};
+        }
       }
     `,
     closeMobileMenu: css`
@@ -215,21 +215,27 @@ export const ButtonStyling = theming.createVariants(
       }
     `,
     filter: css`
-      background-color: ${theming.color.white};
-      border: 1px solid ${theming.color("g1")};
-      color: ${theming.color("g4")};
-      min-height: 28px;
-      line-height: 1;
-      border-radius: 50px;
-      padding: ${theming.spacing.tiny} ${theming.spacing.small};
-      font-weight: normal;
+      pointer-events: ${p => (!p.isOpen ? "auto" : "none")};
+      &,
+      :hover,
+      :focus {
+        background-color: ${p =>
+          !p.isOpen ? theming.color.white : theming.color("b2")};
+        border: ${p =>
+          !p.isOpen
+            ? `1px solid ${theming.color("g1")(p)}`
+            : "1px solid transparent"};
+        color: ${p => (!p.isOpen ? theming.color("g4") : theming.color.white)};
+        min-height: 28px;
+        line-height: 1;
+        border-radius: 50px;
+        padding: ${theming.spacing.tiny} ${theming.spacing.small};
+        font-weight: normal;
 
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: ${theming.color.subtleHover};
-        border: 1px solid ${theming.color("g1")};
-        color: ${theming.color("g4")};
+        &:focus {
+          border-color: ${theming.color("b1")};
+          box-shadow: 0 0 0 3px ${theming.color("b1")};
+        }
       }
     `,
     filterAction: css`
@@ -245,6 +251,111 @@ export const ButtonStyling = theming.createVariants(
       &:focus {
         background-color: transparent;
         border: 0;
+        color: ${theming.color.primary};
+      }
+    `,
+    caseTab: css`
+      background-color: transparent;
+      padding: 0;
+      color: ${theming.color.primary};
+      border-bottom: ${p => (p.isActive ? "3px solid currentColor" : "none")};
+      min-height: 26px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: ${theming.color("b3")};
+        background-color: transparent;
+      }
+
+      @media (max-width: 489px) {
+        :hover,
+        :active {
+          color: ${theming.color.primary};
+        }
+      }
+    `,
+    caseListItem: css`
+      display: flex;
+      width: 100%;
+      padding: ${theming.spacing.small};
+      border: none;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+      background-color: ${theming.color("veryLightGray")};
+      justify-content: space-between;
+      align-items: stretch;
+      font-size: ${theming.font.base};
+      font-weight: normal;
+      color: ${theming.color.text};
+      line-height: initial;
+
+      :hover,
+      :focus {
+        background-color: ${theming.color("veryLightGray")};
+        ${p =>
+          !p.disabled &&
+          css`
+            color: ${theming.color.text};
+          `}
+      }
+
+      @media (min-width: 720px) {
+        padding: ${theming.spacing.medium};
+      }
+
+      @media (max-width: 719px) {
+        position: relative;
+        flex-wrap: wrap;
+        padding-left: 48px;
+        padding-right: 32px;
+      }
+
+      @media (max-width: 359px) {
+        padding-right: ${theming.spacing.small};
+      }
+    `,
+    notificationBadge: css`
+      padding: 0;
+      background-color: transparent;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+      }
+    `,
+    searchSuggestionItem: css`
+      padding: ${theming.spacing.small};
+      color: currentColor;
+      background-color: transparent;
+      text-align: left;
+      font-weight: normal;
+      line-height: 1.4;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: currentColor;
+        background-color: transparent;
+      }
+    `,
+    uploadNotification: css`
+      color: ${theming.color.text};
+      background-color: transparent;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: ${theming.color.text};
+        background-color: transparent;
+      }
+    `,
+    uploadNotificationPrimary: css`
+      color: ${theming.color.primary};
+
+      &:hover,
+      &:active,
+      &:focus {
         color: ${theming.color.primary};
       }
     `

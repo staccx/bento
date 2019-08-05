@@ -124,6 +124,7 @@ const fontWeight = {
 
 export default new Theme(BaseTheme, {
   name: "Norfjell",
+  storybookName: "Norfjell",
   layout: {
     dashboardLayout: "columnNarrow",
     menuArea: "aside"

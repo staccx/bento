@@ -6,7 +6,8 @@ const {
   executeAsync,
   runCommand,
   setupSpinner,
-  validateNpmName
+  validateNpmName,
+  getBentoRoot
 } = require("./__helpers")
 
 let themes = []
@@ -48,6 +49,7 @@ const create = async ({ type, name }) => {
 
 const app = async ({ name, debug = false }) => {
   spinner.info("Checking name")
+
   const valid = validateNpmName(name)
 
   if (!valid) {
@@ -67,8 +69,16 @@ const app = async ({ name, debug = false }) => {
     startText: `Running npx create-react-app ${name}`,
     succeedText: "React app created",
     command: async () =>
-      executeAsync("npx", ["create-react-app", name], { cwd })
+      executeAsync(
+        "npx",
+        ["create-react-app", name, "--ignore-engines"],
+        { cwd },
+        console.log,
+        console.log
+      )
   })
+
+  console.log("Bento root", getBentoRoot())
 
   await runCommand({
     spinner,
@@ -76,11 +86,17 @@ const app = async ({ name, debug = false }) => {
     startText: `Getting packages to install`,
     succeedText: "Packages fetched",
     command: async () =>
-      executeAsync("lerna", ["list", "--json"], { cwd: __dirname }, onLerna)
+      executeAsync(
+        "lerna",
+        ["list", "--json"],
+        { cwd: getBentoRoot() },
+        onLerna
+      )
   })
 
   const p = path.resolve(cwd, name)
 
+  console.log("path", p)
   await runCommand({
     spinner,
     debug,

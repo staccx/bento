@@ -2,8 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { formatCurrency, dashIt } from "@staccx/formatting"
-import { Caret, theming } from "@staccx/base"
-import { TranslatedText } from "@staccx/i18n"
+import { Caret, theming, i18n } from "@staccx/base"
 
 const ExpandListBtn = ({ heading, date, amount, isExpanded, ...rest }) => (
   <Item {...rest}>
@@ -21,7 +20,7 @@ const ExpandListBtn = ({ heading, date, amount, isExpanded, ...rest }) => (
     <Body>
       <TransactionHeading>
         {heading ? (
-          <TranslatedText i18nKey={dashIt(heading)} fallback={heading} />
+          <i18n.Translate i18n={dashIt(heading)} fallback={heading} />
         ) : (
           ""
         )}

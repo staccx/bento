@@ -44,9 +44,7 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
     try {
       const place = await axiosInstance
         .get(
-          `/postalCode.json?clientUrl=${
-            window.location.href
-          }&pnr=${postalCode}`,
+          `/postalCode.json?clientUrl=${window.location.href}&pnr=${postalCode}`,
           getAxiosOptions()
         )
         .then(result => result.data)

@@ -149,6 +149,7 @@ const fontWeight = {
 
 export default new theming.Theme(BaseTheme, {
   name: "imove",
+  storybookName: "Move it, move it",
   font: { ...font },
   fontWeight,
   webfonts,

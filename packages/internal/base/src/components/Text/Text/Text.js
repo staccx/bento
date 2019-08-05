@@ -35,6 +35,11 @@ Text.defaultProps = {
 
 Text.propTypes = {
   children: commonPropTypes.children.isRequired,
+  /**
+   * Will translate text given context and language.
+   * Ignore is not set
+   */
+  i18n: PropTypes.string,
   className: PropTypes.string
 }
 

@@ -3,14 +3,15 @@ import { css } from "styled-components"
 import { FileInput, Input, fontSmoothing, theming } from "@staccx/base"
 
 const defaultStyling = css`
-  border-width: 2px;
+  border-width: 1px;
   border-color: transparent;
+  background-color: ${theming.color.subtleHover};
   ${fontSmoothing};
   &:hover,
   &:focus,
   &:active {
-    border-color: ${theming.color("b4")};
-    background-color: ${theming.color.white};
+    border-color: ${theming.color("b1")};
+    background-color: ${theming.color("primaryLight")};
   }
 `
 
@@ -21,10 +22,16 @@ export const InputStyling = theming.createVariants(
     `,
     search: css`
       background-color: ${theming.color.subtleHover};
-      border: 0;
+      border: 1px solid ${theming.color.subtleHover};
       border-radius: 50px;
       padding-left: ${theming.spacing.medium};
       padding-right: 66px;
+
+      &:focus,
+      &:active {
+        background-color: ${theming.color.white};
+        box-shadow: 0 0 0 3px ${theming.color("b1")};
+      }
 
       &::-webkit-input-placeholder {
         /* WebKit browsers */

@@ -1,11 +1,19 @@
 const spawn = require("child_process").spawn
+const cosmiconfig = require("cosmiconfig")
 const ora = require("ora")
-const fs = require("fs-extra")
-const path = require("path")
 const validatePackageName = require("validate-npm-package-name")
 const sanityClient = require("@sanity/client")
+const Conf = require("conf")
+const fs = require("fs-extra")
+const os = require("os")
+const { BENTO_ROOT_KEY } = require("../constants")
 
 let client = null
+const config = new Conf({
+  fileExtension: "bentorc",
+  configName: "",
+  cwd: os.homedir()
+})
 
 const getSanityClient = (projectId, dataset, token = null, useCdn = true) => {
   if (client) {
@@ -70,6 +78,10 @@ const execute = function(
 
   const child = spawn(cmd, params, opts)
 
+  if (opts.pipe) {
+    child.stdout.pipe(process.stdout)
+    child.stderr.pipe(process.stderr)
+  }
   child.stdout.on("data", function(data) {
     onStdOut(ab2str(data))
   })
@@ -81,6 +93,8 @@ const execute = function(
 
   return child
 }
+
+const dashIt = input => input.replace(/\s/g, "-").toLowerCase()
 
 const runCommand = async function({
   spinner,
@@ -131,26 +145,43 @@ const traverse = function(o, fn) {
 
 const spinner = setupSpinner()
 
-const readConfig = async configPath => {
-  if (!configPath) {
-    spinner.info("No config path provided")
+const readRC = async name => {
+  if (!name) {
+    spinner.info("No name provided")
     return {}
   }
+  const explorer = cosmiconfig(name)
   spinner.info("Checking for config file")
-  const configFile = path.resolve(process.cwd(), configPath)
-  const exists = await fs.exists(configFile)
-  if (exists) {
-    spinner.succeed("Config file found")
-    const getConfig = await require(configFile)
-    if (getConfig && typeof getConfig === "function") {
-      return getConfig()
+
+  try {
+    const config = await explorer.search()
+    if (config) {
+      spinner.succeed("Config file found")
+      return config
     } else {
-      spinner.fail("Config must return a single function")
+      spinner.info("No config file found")
     }
-  } else {
-    spinner.info("No config file found")
+  } catch (e) {
+    throw e
   }
+
   return {}
+}
+
+const createRC = async (p, bentoRoot, name) => {
+  const content = {
+    bentoRoot
+  }
+
+  await fs.writeJSON(p, content)
+
+  return readRC(name)
+}
+
+const getBentoRoot = () => {
+  const root = config.get(BENTO_ROOT_KEY)
+
+  return root || null
 }
 
 const validateNpmName = name => {
@@ -162,9 +193,14 @@ const validateNpmName = name => {
 module.exports = {
   executeAsync,
   runCommand,
+  getBentoRoot,
   setupSpinner,
   traverse,
-  readConfig,
+  readRC,
+  createRC,
   getSanityClient,
-  validateNpmName
+  validateNpmName,
+  wait,
+  config,
+  dashIt
 }

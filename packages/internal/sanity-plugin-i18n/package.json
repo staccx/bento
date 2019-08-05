@@ -1,6 +1,6 @@
 {
   "name": "@staccx/sanity-plugin-i18n",
-  "version": "8.80.1",
+  "version": "9.0.0-alpha.47",
   "description": "",
   "main": "lib/translations.js",
   "module": "lib/translations.js",
@@ -14,30 +14,23 @@
   "scripts": {
     "start": "sanity start",
     "test": "sanity check",
-    "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'",
-    "prepare": "yarn prettify && babel -d lib/ src/"
+    "build": "babel --root-mode upward src -d lib",
+    "build:watch": "nodemon --watch src/ --exec \"babel --root-mode upward src -d dist\"",
+    "prepare": "yarn build"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^0.138.0",
-    "@sanity/components": "^0.138.0",
-    "@sanity/core": "^0.138.0",
-    "@sanity/default-layout": "^0.138.0",
-    "@sanity/default-login": "^0.138.0",
-    "@sanity/desk-tool": "^0.138.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "@sanity/base": "^0.140.12",
+    "@sanity/components": "^0.140.12",
+    "@sanity/core": "^0.140.12",
+    "@sanity/default-layout": "^0.140.14",
+    "@sanity/default-login": "^0.140.15",
+    "@sanity/desk-tool": "^0.140.14",
+    "prop-types": "^15.6.2"
   },
   "publishConfig": {
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "prettify": "^0.1.7"
-  },
-  "gitHead": "297e66dbf355a6ce9a98fbf31643e11ea6ccbe13"
+  }
 }

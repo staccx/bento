@@ -1,0 +1,12 @@
+{
+  "en": {
+    "translation": {
+      "key":  "value of key",
+      "no_child": "Will render to DOM",
+      "postprocess": "Insert {{value}} here",
+      "postprocess_function": "Insert {{currency(value)}} here",
+      "inline_function": "This can be wrapped around anyting, enabling `translate` and `convert`",
+      "hoc": "this component has translate and convert as props via withI18n"
+    }
+  }
+}

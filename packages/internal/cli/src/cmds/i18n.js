@@ -7,7 +7,7 @@ const convertTranslations = require("../utils/convertTranslations")
 const saveToJson = require("../utils/saveToJson")
 const walkFunc = require("../utils/walk")
 const {
-  readConfig,
+  readRC,
   runCommand,
   setupSpinner,
   getSanityClient
@@ -50,13 +50,15 @@ const i18n = async ({
   yes,
   parent: { configPath, debug }
 }) => {
+  const { config } = await readRC(configPath)
+
   const {
     sanityProjectId = project,
     sanityDataset = dataset,
     sanityDocType = type,
     sanityToken = token,
     translationReducer = convertTranslations
-  } = await readConfig(configPath)
+  } = config
 
   if (!sanityProjectId) {
     console.warn("No project provided")
@@ -269,17 +271,28 @@ const i18n = async ({
         ...texts,
         ...(keys && { missing: keys })
       }
-      await runCommand({
-        spinner,
-        failText: "Could not save to JSON",
-        startText: "Saving to JSON",
-        succeedText: "File saved",
-        debug: debug,
-        command: async () =>
-          saveToJson(saved, filename).then(textsSaved =>
-            spinner.info(`Saved ${Object.keys(textsSaved).length} keys`)
-          )
-      })
+      const { save = yes } = await inquirer.prompt([
+        {
+          type: "confirm",
+          name: "save",
+          message: `Ready to save to ${filename}?`,
+          when: !yes
+        }
+      ])
+      if (save) {
+        await runCommand({
+          spinner,
+          failText: "Could not save to JSON",
+          startText: "Saving to JSON",
+          succeedText: "File saved",
+          debug: debug,
+          command: async () => {
+            saveToJson(saved, filename).then(textsSaved =>
+              spinner.info(`Saved ${Object.keys(textsSaved).length} keys`)
+            )
+          }
+        })
+      }
     }
 
     if (walk) {

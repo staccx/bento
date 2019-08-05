@@ -1,6 +1,6 @@
 {
   "name": "@staccx/color",
-  "version": "8.60.0",
+  "version": "9.0.0-alpha.47",
   "description": "Color functions and helpers",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -8,17 +8,15 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/export.js",
   "scripts": {
     "start": "react-scripts start",
     "build:app": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --coverage",
+    "test": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "test:watch": "react-scripts test --env=jsdom --watch",
-    "build": "yarn prettify && rollup -c",
-    "start:module": "rollup -c -w",
+    "build": "rm -rf dist && babel --root-mode upward src -d dist",
+    "build:watch": "nodemon --watch src/ --exec \"babel --root-mode upward src -d dist\"",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
@@ -31,18 +29,12 @@
   },
   "dependencies": {
     "@staccx/base": "^7.15.0",
-    "color": "^3.0.0",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "color": "^3.0.0"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0",
     "colors": "^1.3.2",
     "glob": "^7.1.3",
-    "prettier": "^1.14.2",
-    "progress": "^2.0.0",
-    "react-scripts": "^2.1.3",
-    "rollup": "^0.65.0"
+    "progress": "^2.0.0"
   },
-  "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
+  "gitHead": "26437ce6498d4e18242f9a8e99f313c0108c077e"
 }

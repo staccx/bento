@@ -138,6 +138,7 @@ const fontWeight = {
 
 export default new theming.Theme({
   name: "Fundu",
+  storybookName: "FUN",
   font,
   fontWeight,
   color,

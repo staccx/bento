@@ -38,29 +38,27 @@ export const ListStyling = theming.createVariants(
       font-size: ${theming.font.input};
     `,
     financingTable: css`
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr auto;
       color: ${theming.color("g4")};
       font-size: ${theming.font.input};
       margin: 0 -${theming.spacing.medium};
 
       dt {
-        flex-basis: 50%;
-        width: 50%;
         padding: ${theming.spacing.small} ${theming.spacing.medium};
+        padding-right: ${theming.spacing.medium};
 
-        &:nth-of-type(2n + 2) {
+        &:nth-of-type(2n) {
           background-color: ${theming.color("bg2")};
         }
       }
 
       dd {
-        flex-basis: 50%;
-        width: 50%;
         padding: ${theming.spacing.small} ${theming.spacing.medium};
+        padding-left: 0;
         text-align: right;
 
-        &:nth-of-type(2n + 2) {
+        &:nth-of-type(2n) {
           background-color: ${theming.color("bg2")};
         }
       }

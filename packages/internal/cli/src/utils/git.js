@@ -20,7 +20,25 @@ async function fetch(workingDir) {
   }
 }
 
+async function latestLog(workingDir) {
+  try {
+    return await git(workingDir).log()
+  } catch (e) {
+    throw e
+  }
+}
+
+const cloneBento = async () => {
+  try {
+    console.log("cloning into")
+  } catch (e) {
+    throw e
+  }
+}
+
 module.exports = {
   status,
-  fetch
+  fetch,
+  latestLog,
+  cloneBento
 }

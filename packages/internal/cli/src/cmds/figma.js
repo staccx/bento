@@ -2,12 +2,9 @@ const express = require("express")
 const router = express.Router
 const opn = require("opn")
 const axios = require("axios")
-const Conf = require("conf")
 const inquirer = require("inquirer")
-const { setupSpinner, traverse, readConfig } = require("./__helpers")
+const { setupSpinner, traverse, readRC, config } = require("./__helpers")
 const fs = require("fs-extra")
-
-const config = new Conf()
 
 const clientId = "2ES42WtZhStuyjrwA0MEee"
 const secret = "tvZfEyRuJ2N575L0tJJjA6sysCNwUL"
@@ -62,12 +59,12 @@ const verifyToken = () => {
           .post(refreshUrl)
           .then(result => result.data)
           .then(data => {
-            const { access_token, expires_in } = data
+            const { access_token: accessToken, expires_in: expiresIn } = data
 
-            config.set(FIGMA_ACCESS_TOKEN, access_token)
-            config.set(FIGMA_EXPIRES, generateDate(expires_in))
+            config.set(FIGMA_ACCESS_TOKEN, accessToken)
+            config.set(FIGMA_EXPIRES, generateDate(expiresIn))
 
-            return resolve(access_token)
+            return resolve(accessToken)
           })
       } else {
         return resolve(accessToken)
@@ -97,11 +94,15 @@ const auth = () => {
         .post(url)
         .then(result => result.data)
         .then(data => {
-          const { access_token, refresh_token, expires_in } = data
+          const {
+            access_token: accessToken,
+            refresh_token: refreshToken,
+            expires_in: expiresIn
+          } = data
 
-          config.set(FIGMA_ACCESS_TOKEN, access_token)
-          config.set(FIGMA_REFRESH_TOKEN, refresh_token)
-          config.set(FIGMA_EXPIRES, generateDate(expires_in))
+          config.set(FIGMA_ACCESS_TOKEN, accessToken)
+          config.set(FIGMA_REFRESH_TOKEN, refreshToken)
+          config.set(FIGMA_EXPIRES, generateDate(expiresIn))
 
           return resolve()
         })
@@ -172,32 +173,9 @@ const defaultMapFrame = frame => {
   }
 }
 
-// const readConfig = async configPath => {
-//   spinner.info("Checking for config file")
-//   const configFile = path.resolve(process.cwd(), configPath)
-//   console.log(configPath, configFile)
-//   const exists = await fs.exists(configFile)
-//   if (exists) {
-//     spinner.succeed("Config file found")
-//     const getConfig = await require(configFile)
-//     if (getConfig && typeof getConfig === "function") {
-//       const { mapFrame, figmaKey } = getConfig()
-//
-//       return {
-//         mapFrame,
-//         figmaKey
-//       }
-//     } else {
-//       spinner.fail("Config must return a single function")
-//     }
-//   }
-//
-//   return {}
-// }
-
 const figma = async ({ parent: { configPath }, includePageData }) => {
   // console.log(a, configPath, opts)
-  const { figmaKey, mapFrame = defaultMapFrame } = await readConfig(configPath)
+  const { figmaKey, mapFrame = defaultMapFrame } = await readRC(configPath)
 
   let key = await getKey(figmaKey)
 

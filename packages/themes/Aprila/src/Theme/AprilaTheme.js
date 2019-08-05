@@ -147,8 +147,9 @@ const webfonts = {
   }
 }
 
-const t = new Theme(BaseTheme, {
+export default new Theme(BaseTheme, {
   name: "Aprila",
+  storybookName: "APR",
   layout: {
     dashboardLayout: "stonehenge",
     menuArea: "main"
@@ -219,5 +220,3 @@ const t = new Theme(BaseTheme, {
   .add([LoadingVariants, loadingStyle])
   .add(JSONSchemaVariants)
   .add(WrapperVariants)
-
-export default t

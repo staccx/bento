@@ -1,6 +1,6 @@
 {
   "name": "@staccx/code-generator",
-  "version": "8.58.0",
+  "version": "9.0.0-alpha.47",
   "description": "Generates code based on templates",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -8,17 +8,15 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/export.js",
   "scripts": {
     "start": "react-scripts start",
-    "test": "react-scripts test --env=jsdom --coverage --passWithNoTests",
+    "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "build:app": "react-scripts build",
     "eject": "react-scripts eject",
     "test:watch": "react-scripts test --env=jsdom --watch",
-    "build": "yarn prettify && rollup -c",
-    "start:module": "rollup -c -w",
+    "build": "rm -rf dist && babel --root-mode upward src -d dist",
+    "build:watch": "nodemon --watch src/ --exec \"babel --root-mode upward src -d dist\"",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
@@ -30,11 +28,7 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "prettier": "^1.14.2",
     "qs": "^6.5.1"
-  },
-  "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0"
   },
   "gitHead": "ee05669cf859d32658d43e9ac484a3d6f4b8b2e5"
 }

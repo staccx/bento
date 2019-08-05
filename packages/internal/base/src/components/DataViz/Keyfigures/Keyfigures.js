@@ -5,12 +5,12 @@ import { formatCurrency } from "@staccx/formatting"
 import { themePropTypes } from "../../../constants/themeContants"
 import { applyVariants, spacing, color, font } from "../../../theming"
 
-const KeyFigures = ({ figures }) => (
-  <List>
+const KeyFigures = ({ figures, variant }) => (
+  <List variant={variant}>
     {figures.map(figure => (
-      <ListItem key={figure.key}>
-        <Heading>{figure.label}</Heading>
-        <Value>{formatCurrency(figure.amount)}</Value>
+      <ListItem key={figure.key} variant={variant}>
+        <Heading variant={variant}>{figure.label}</Heading>
+        <Value variant={variant}> {formatCurrency(figure.amount)}</Value>
       </ListItem>
     ))}
   </List>

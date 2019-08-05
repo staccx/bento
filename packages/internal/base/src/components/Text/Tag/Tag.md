@@ -1,4 +1,4 @@
-```js
+```jsx
 <div>
   <Tag>Ost</Tag>
   <Tag>Kjeks</Tag>

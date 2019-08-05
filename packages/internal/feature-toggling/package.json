@@ -1,7 +1,7 @@
 {
   "name": "@staccx/feature-toggling",
   "private": true,
-  "version": "8.87.2",
+  "version": "9.0.0-alpha.47",
   "description": "",
   "main": "package.json",
   "author": "Stacc X",
@@ -14,17 +14,15 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^0.138.0",
-    "@sanity/client": "^0.138.0",
-    "@sanity/components": "^0.138.0",
-    "@sanity/core": "^0.138.0",
-    "@sanity/default-layout": "^0.138.0",
-    "@sanity/default-login": "^0.138.0",
-    "@sanity/desk-tool": "^0.138.0",
-    "@staccx/sanity": "^8.87.2",
-    "@staccx/sanity-plugin-i18n": "^8.80.1",
-    "prop-types": "^15.6.2",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "@sanity/base": "^0.140.12",
+    "@sanity/client": "^0.140.11",
+    "@sanity/components": "^0.140.12",
+    "@sanity/core": "^0.140.12",
+    "@sanity/default-layout": "^0.140.14",
+    "@sanity/default-login": "^0.140.15",
+    "@sanity/desk-tool": "^0.140.14",
+    "@staccx/sanity": "^9.0.0-alpha.44",
+    "@staccx/sanity-plugin-i18n": "^9.0.0-alpha.47",
+    "prop-types": "^15.6.2"
   }
 }

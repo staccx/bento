@@ -1,3 +1,3 @@
 ```jsx
-  <Label>Labeltekst</Label>
+<Label>Labeltekst</Label>
 ```

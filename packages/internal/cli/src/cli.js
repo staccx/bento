@@ -2,33 +2,56 @@
 
 const program = require("commander")
 // const inquirer = require("inquirer")
-// const path = require("path")
-
+const init = require("./cmds/init")
 const release = require("./cmds/release")
 const clean = require("./cmds/clean")
 const link = require("./cmds/link")
+const watch = require("./cmds/watch")
 const eslint = require("./cmds/eslint")
 const figma = require("./cmds/figma") // TODO: Refactor so that only one figma function is imported and handles all options
 const i18n = require("./cmds/i18n")
 const create = require("./cmds/create")
 const s3 = require("./cmds/s3")
+const { startStorybook } = require("./cmds/storybook")
+const { config, readRC, getBentoRoot } = require("./cmds/__helpers")
 const { version } = require("../package.json")
-
+const { BENTO_ROOT_KEY } = require("./constants")
 // TODO: Each command should return a function called command with takes the program and adds its command?
+
+const validateBentoRoot = async value => {
+  const root = config.get(BENTO_ROOT_KEY)
+  console.log(config.path, root)
+
+  if (value) {
+    config.set(BENTO_ROOT_KEY, value)
+  }
+
+  return config.get(BENTO_ROOT_KEY)
+}
+
+const bentoRoot = getBentoRoot()
+
+if (!bentoRoot && process.argv[2] !== "init") {
+  console.log("Bento root not set")
+  console.log("Please run `bento init`")
+  process.exit(1)
+}
 
 program
   .version(version)
   .description("Command line tool for Stacc X")
-  .option(
-    "-c, --configPath [path]>",
-    "Path for finding config file",
-    "bento-config.js"
-  )
+  .option("--path <path>", "Path for bento root", validateBentoRoot)
+  .option("-c, --configPath [path]>", "Path for finding config file", "bento")
   .option("-d, --debug", "Run without running commands")
 
 const list = val => {
   return val.split(",")
 }
+
+program.command("config").action(async () => {
+  const config = await readRC("bento")
+  console.log("Config", config)
+})
 
 program
   .command("i18n")
@@ -50,12 +73,13 @@ program
   .action(i18n)
 
 program
-  .command("release")
+  .command("release [bumpiness]")
   .alias("r")
   .description("Helps you release bento")
   .option("-s, --skip", "skips version testing")
-  .action(({ parent: { debug = false }, skip }) => {
-    release(debug, skip)
+  .option("-t, --tag <tag>", "Npm dist tag")
+  .action((bumpiness, { parent: { debug = false }, skip, tag }) => {
+    release({ bumpiness, debug, skip, tag })
   })
 
 program
@@ -107,6 +131,21 @@ program
   .description("Interact with Amazon S3")
   .action(({ action }, cmd) => {
     s3(cmd)
+  })
+
+program.command("storybook <action>").action((action, cmd) => {
+  startStorybook({ action, cmd })
+})
+
+program.command("init").action(props => {
+  init(props)
+})
+
+program
+  .command("watch [target...]")
+  .option("--single", "Run only once?")
+  .action((target, { single }) => {
+    watch({ target, once: single })
   })
 
 program.parse(process.argv)

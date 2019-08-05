@@ -1,6 +1,8 @@
 const checkWorkingTree = require("@lerna/check-working-tree")
 const username = require("username")
-const { executeAsync, setupSpinner } = require("./__helpers")
+const inquirer = require("inquirer")
+const { startStorybook } = require("./storybook")
+const { executeAsync, setupSpinner, getBentoRoot } = require("./__helpers")
 const { postMessage, getGiphy } = require("../utils/slack")
 const { fetch, status } = require("../utils/git")
 
@@ -9,13 +11,20 @@ const onData = data => {
   updated = JSON.parse(data)
 }
 
-async function release(debug, skip = false) {
+async function release({
+  bumpiness = "conventional",
+  debug,
+  skip = false,
+  tag = "latest"
+}) {
   const spinner = setupSpinner()
+
+  const cwd = getBentoRoot()
 
   const checkGit = async (msg = "Checking git for changes") => {
     try {
       spinner.start(msg)
-      if (!debug || skip) {
+      if (!debug && !skip) {
         await checkWorkingTree({ cwd: process.cwd() })
         await fetch(process.cwd())
         const { behind, ahead } = await status(process.cwd())
@@ -50,34 +59,22 @@ async function release(debug, skip = false) {
 
     spinner.succeed(`Packages with changes: ${text}`)
   } catch (ex) {
-    console.error(ex)
+    // spinner.fail(ex)
     // reject(ex)
     throw ex
   }
 
   const scope = updated.map(u => u.name).join(" --scope ")
-
-  // try {
-  //   spinner.start("Running prettier")
-  //   await executeAsync(
-  //     "lerna",
-  //     ["exec", `--scope`, scope, `yarn prettier`],
-  //     {},
-  //     console.log
-  //   )
-  //   spinner.succeed("Prettier ran.")
-  //   spinner.start("Checking if files are changed")
-  //   await checkGit()
-  //   spinner.succeed("Good. No changed")
-  // } catch (e) {
-  //   spinner.fail(e.message)
-  //   throw e
-  // }
-
   try {
     spinner.start("Validating build for all changed packages")
     if (!debug) {
-      await executeAsync("lerna", ["exec", `--scope`, scope, `yarn prepare`])
+      await executeAsync(
+        "lerna",
+        ["run", "prepare", "--scope", scope],
+        { cwd },
+        m => spinner.info(m),
+        () => null
+      )
     }
     spinner.succeed(`Building was successful`)
   } catch (ex) {
@@ -88,12 +85,9 @@ async function release(debug, skip = false) {
   try {
     spinner.start("Running tests for all changed packages")
     if (!debug) {
-      await executeAsync("lerna", [
-        "exec",
-        `--scope`,
-        scope,
-        `yarn prepublishOnly`
-      ])
+      await executeAsync("lerna", ["run", "prepublishOnly", `--scope`, scope], {
+        cwd
+      })
     }
     spinner.succeed("Tests performed successfully")
   } catch (e) {
@@ -110,7 +104,7 @@ async function release(debug, skip = false) {
     if (!debug) {
       const giphy = await getGiphy(`release ${name}`)
       await postMessage({
-        text: `@channel ${name} is releasing ${text}. Please do not push changes to git`,
+        text: `${name} is releasing ${text}. Please do not push changes to git`,
         attachments: [giphy]
       })
     }
@@ -130,18 +124,42 @@ async function release(debug, skip = false) {
     spinner.start("Releasing packages. Please wait")
     if (!debug) {
       spinner.info("Versioning!")
-      await executeAsync(
-        "lerna",
-        ["version", "--conventional-commits", "--yes"],
-        {},
-        console.log
-      )
+
+      if (bumpiness) {
+        const { confirm } = await inquirer.prompt({
+          name: "confirm",
+          type: "confirm",
+          message: `Bump to ${bumpiness}?`
+        })
+
+        if (confirm) {
+          await executeAsync("lerna", ["version", bumpiness, "--yes"], { cwd })
+        }
+      } else {
+        await executeAsync(
+          "lerna",
+          ["version", "--conventional-commits", "--yes"],
+          { cwd }
+        )
+      }
+
       spinner.info("Publishing!")
       await executeAsync(
         "lerna",
-        ["publish", "from-package", "--no-verify-access", "--yes"],
-        {},
-        () => null,
+        [
+          "publish",
+          "from-package",
+          "--registry",
+          "https://stacc.jfrog.io/stacc/api/npm/npm/",
+          "--no-verify-access",
+          "--dist-tag",
+          tag,
+          "--pre-dist-tag",
+          "next",
+          "--yes"
+        ],
+        { cwd },
+        console.log,
         console.log
       )
       spinner.succeed("Published!")
@@ -158,7 +176,7 @@ async function release(debug, skip = false) {
     spinner.fail("Something went wrong during releasing", e)
     const name = await username()
     await postMessage({
-      text: `@channel @${name}'s release failed. Let them know`
+      text: `@${name}'s release failed. Let them know`
     })
     process.exit(1)
   }
@@ -171,12 +189,22 @@ async function release(debug, skip = false) {
     const name = await username()
     if (!debug) {
       await postMessage({
-        text: `@channel ${name} has released\n \`\`\`${text}\`\`\`\nYou can find release notes here: https://bitbucket.org/stacc-flow/bento/src/master/CHANGELOG.md`
+        text: `${name} has released\n \`\`\`${text}\`\`\`\nYou can find release notes here: https://bitbucket.org/stacc-flow/bento/src/master/CHANGELOG.md`
       })
     }
     spinner.succeed("Team alerted about the awesome")
   } catch (e) {
     spinner.fail("Error whilst sending message to Slack")
+    process.exit(1)
+  }
+
+  try {
+    spinner.start("Deploying storybook")
+    if (!debug) {
+      await startStorybook({ action: "deploy" })
+    }
+  } catch (e) {
+    spinner.fail("Failed to deploy storybook")
     process.exit(1)
   }
 

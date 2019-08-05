@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "8.87.2",
+  "version": "9.0.0-alpha.57",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -8,28 +8,16 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/export.js",
   "scripts": {
-    "precommit": "lint-staged",
-    "test": "react-scripts test --env=jsdom --coverage",
+    "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "test:nocov": "react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom --watch",
-    "build:packages": "node build.js",
-    "build": "yarn prettify && rollup -c",
-    "start": "node build.js && rollup -c -w",
-    "prepare": "yarn build && yarn build:packages",
+    "build": "rm -rf dist && babel --root-mode upward src -d dist",
+    "build:watch": "nodemon --watch src/ --exec \"babel --root-mode upward src -d dist\"",
+    "prepare": "yarn build",
     "prepublishOnly": "yarn test",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint",
-      "git add"
-    ]
   },
   "files": [
     "dist"
@@ -38,10 +26,12 @@
     "registry": "https://stacc.jfrog.io/stacc/api/npm/npm/"
   },
   "dependencies": {
-    "@staccx/animations": "^8.58.0",
-    "@staccx/formatting": "^8.87.0",
-    "@staccx/math": "^8.58.0",
-    "@staccx/utils": "^8.58.0",
+    "@sanity/block-content-to-react": "^2.0.6",
+    "@sanity/client": "^0.140.32",
+    "@staccx/animations": "^9.0.0-alpha.47",
+    "@staccx/formatting": "^9.0.0-alpha.47",
+    "@staccx/math": "^9.0.0-alpha.47",
+    "@staccx/utils": "^9.0.0-alpha.47",
     "axios": "^0.19.0",
     "babel-plugin-prismjs": "^1.0.2",
     "cleave.js": "^1.4.4",
@@ -50,39 +40,26 @@
     "easing-utils": "^0.0.7",
     "es6-promise": "^4.2.4",
     "formik": "^0.11.11",
+    "fuse.js": "^3.4.4",
+    "i18next": "^17.0.3",
     "immutable": "^4.0.0-rc.12",
     "isomorphic-fetch": "^2.2.1",
     "js-search": "^1.4.2",
     "libphonenumber-js": "^1.7.8",
     "lodash.debounce": "^4.0.8",
+    "lodash.isequal": "^4.5.0",
+    "loglevel": "^1.6.1",
     "polished": "^2.3.0",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
-    "react": "^16.8.0",
     "react-compound-slider": "^0.16.2",
-    "react-jsonschema-form": "^1.0.3",
     "react-traverse": "^1.0.0",
     "tinycolor2": "^1.4.1",
     "webfontloader": "^1.6.28",
     "yup": "^0.24.1"
   },
   "devDependencies": {
-    "@staccx/rollup-config": "^8.58.0",
-    "colors": "^1.3.2",
-    "fs-extra": "^6.0.1",
-    "glob": "^7.1.3",
-    "lint-staged": "^7.2.2",
-    "prettier": "^1.14.2",
-    "progress": "^2.0.0",
-    "react-docgen": "^3.0.0",
-    "react-scripts": "^2.1.3",
-    "rollup": "^0.65.0",
-    "rollup-plugin-alias": "^1.4.0",
-    "webpack": "^3.0.0",
-    "webpack-blocks": "^1.0.0-rc.2"
+    "colors": "^1.3.2"
   },
-  "peerDependencies": {
-    "styled-components": "^4.0.2"
-  },
-  "gitHead": "fba5600ec9535ef0f12004463f3f99ff9427495b"
+  "gitHead": "879a42d2c730577f80734a3994226c496fc669db"
 }

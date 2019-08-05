@@ -14,9 +14,7 @@ const addBody = body => {
   if (body) {
     let result = ""
     Object.keys(body).map(key => {
-      result += `request.AddParameter("${key}", "${
-        body[key]
-      }", ParameterType.RequestBody);\n`
+      result += `request.AddParameter("${key}", "${body[key]}", ParameterType.RequestBody);\n`
     })
     return result
   }
