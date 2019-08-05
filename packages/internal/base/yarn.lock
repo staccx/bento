@@ -66,28 +66,28 @@
     object-assign "^4.1.1"
     rxjs "^6.1.0"
 
-"@staccx/animations@^9.0.0-alpha.47":
-  version "9.0.0-alpha.47"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-9.0.0-alpha.47.tgz#7a5399c5f0b923df74aa1d3d5efbbda32e900ecc"
-  integrity sha1-elOZxfC5I990qh09Xvu9oy6QDsw=
+"@staccx/animations@^9.0.0":
+  version "9.0.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/animations/-/@staccx/animations-9.0.0.tgz#8899ea970a1ffea26a7a679d34a4939cf62329fe"
+  integrity sha1-iJnqlwof/qJqemedNKSTnPYjKf4=
 
-"@staccx/formatting@^9.0.0-alpha.47":
-  version "9.0.0-alpha.47"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-9.0.0-alpha.47.tgz#703d7209e3228d7571ba5097b7e38f0ff620e70a"
-  integrity sha1-cD1yCeMijXVxulCXt+OPD/Yg5wo=
+"@staccx/formatting@^9.0.0":
+  version "9.0.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/formatting/-/@staccx/formatting-9.0.0.tgz#f61dbfba0e885f62acd85249c7f073d53db3f6cc"
+  integrity sha1-9h2/ug6IX2Ks2FJJx/Bz1T2z9sw=
   dependencies:
     accounting "^0.4.1"
     date-fns v2.0.0-alpha.27
 
-"@staccx/math@^9.0.0-alpha.47":
-  version "9.0.0-alpha.47"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/math/-/@staccx/math-9.0.0-alpha.47.tgz#e1a59eddaeeb1346320a5f376c21320c153dd1f3"
-  integrity sha1-4aWe3a7rE0YyCl83bCEyDBU90fM=
+"@staccx/math@^9.0.0":
+  version "9.0.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/math/-/@staccx/math-9.0.0.tgz#c37f7605ce0d9482e2da1ae317c9af204cb5b203"
+  integrity sha1-w392Bc4NlILi2hrjF8mvIEy1sgM=
 
-"@staccx/utils@^9.0.0-alpha.47":
-  version "9.0.0-alpha.47"
-  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/utils/-/@staccx/utils-9.0.0-alpha.47.tgz#7c1919adda2e831e1ad5aae23c08082502320a35"
-  integrity sha1-fBkZrdougx4a1ariPAgIJQIyCjU=
+"@staccx/utils@^9.0.0":
+  version "9.0.0"
+  resolved "https://stacc.jfrog.io/stacc/api/npm/npm/@staccx/utils/-/@staccx/utils-9.0.0.tgz#dfd012f0139ae0dceef268962f4afdddccf6a1ac"
+  integrity sha1-39AS8BOa4Nzu8miWL0r93cz2oaw=
 
 accounting@^0.4.1:
   version "0.4.1"
@@ -422,6 +422,11 @@ iconv-lite@~0.4.13:
   integrity sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
+
+immer@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-3.2.0.tgz#53686471e9dd2b070e0fb5500c6fdecd3a99375f"
+  integrity sha512-+a2R8z9eELHst6aht++nzVzJ8LJ+Hsg49qttfg9Kc/vmoxEdPXw5/rV6+4DYWGgnq+B36KbLr4OTaGtS9mDjtg==
 
 immutable@^4.0.0-rc.12:
   version "4.0.0-rc.12"
