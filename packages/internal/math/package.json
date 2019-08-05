@@ -1,6 +1,6 @@
 {
   "name": "@staccx/math",
-  "version": "9.0.0-alpha.47",
+  "version": "9.0.0",
   "description": "Convenience functions for math",
   "author": "StaccX",
   "license": "UNLICENSED",

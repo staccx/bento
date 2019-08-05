@@ -1,6 +1,6 @@
 {
   "name": "@staccx/stacc-theme",
-  "version": "9.0.0-alpha.57",
+  "version": "9.0.0",
   "private": false,
   "main": "dist/export.js",
   "license": "UNLICENSED",
@@ -22,7 +22,7 @@
     "prettify": "prettier --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
-    "@staccx/base": "^9.0.0-alpha.57",
+    "@staccx/base": "^9.0.0",
     "polished": "^1.9.2"
   },
   "gitHead": "f5ee32c6def3d76c1aa85a162588c1455b13563e"
