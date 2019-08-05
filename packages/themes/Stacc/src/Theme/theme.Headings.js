@@ -52,17 +52,21 @@ export const HeadingStyling = theming.createVariants(
       letter-spacing: 0.5;
     `,
     hero: css`
-      font-size: ${theming.font("huge")};
+      font-size: 56px;
+      margin-bottom: -0.25em;
       font-weight: 700;
       color: ${theming.color.white};
 
-      @media only screen and (max-width: ${theming.wrapper.large}) {
+      @media only screen and (max-width: ${theming.wrapper.medium}) {
         font-size: ${theming.font.h2};
       }
     `,
     primary: css`
       color: ${theming.color.primary};
       margin-bottom: ${theming.spacing.small};
+    `,
+    storyHeading: css`
+      margin-top: ${theming.spacing.large};
     `
   },
   Heading.themeProps.heading

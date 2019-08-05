@@ -27,7 +27,7 @@ const wrapper = {
 
 const spacing = {
   grid: "20px",
-  gridLarge: "20px",
+  gridLarge: "40px",
   huge: "96px",
   largePlus: "72px",
   large: "48px",
@@ -47,6 +47,7 @@ const color = {
   gray: "#B8B8B8",
   text: "#777772",
   textDark: "#2b2b2b",
+  hero: "#2b2b2b",
   white: "#fff",
   line: "#EBE7E7",
   wcag: "#777",
@@ -69,7 +70,7 @@ const color = {
   blush: "#FFF1E5",
   pink: "#FCEEED",
   placeholder: "#b8b8b8",
-  inputLine: "#dcdcdc",
+  inputLine: "#6c6c6c",
   link: "#467EFF",
   espen: "313131"
 }

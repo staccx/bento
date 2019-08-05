@@ -3,6 +3,56 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.88.0](https://bitbucket.org/stacc-flow/bento/compare/v8.87.2...v8.88.0) (2019-06-05)
+
+
+### Features
+
+* **stacc-theme:** add hero color ([57f1bba](https://bitbucket.org/stacc-flow/bento/commits/57f1bba))
+
+
+
+
+
+## [8.87.2](https://bitbucket.org/stacc-flow/bento/compare/v8.87.1...v8.87.2) (2019-06-03)
+
+
+### Bug Fixes
+
+* **bento:** upgrade to axios ^0.19.0 ([b83df06](https://bitbucket.org/stacc-flow/bento/commits/b83df06))
+
+
+
+
+
+## [8.87.1](https://bitbucket.org/stacc-flow/bento/compare/v8.87.0...v8.87.1) (2019-05-13)
+
+
+### Bug Fixes
+
+* **base:** update postal code api server address ([aafb960](https://bitbucket.org/stacc-flow/bento/commits/aafb960))
+
+
+
+
+
+# [8.87.0](https://bitbucket.org/stacc-flow/bento/compare/v8.86.0...v8.87.0) (2019-05-09)
+
+
+### Bug Fixes
+
+* **base:** fix Box size prop not working ([34e7095](https://bitbucket.org/stacc-flow/bento/commits/34e7095))
+* **imove-theme:** fix imove logo ([a78e5c0](https://bitbucket.org/stacc-flow/bento/commits/a78e5c0))
+
+
+### Features
+
+* **nordea-theme:** remove BaseTheme ([8d68f4e](https://bitbucket.org/stacc-flow/bento/commits/8d68f4e))
+
+
+
+
+
 # [8.86.0](https://bitbucket.org/stacc-flow/bento/compare/v8.85.0...v8.86.0) (2019-04-15)
 
 

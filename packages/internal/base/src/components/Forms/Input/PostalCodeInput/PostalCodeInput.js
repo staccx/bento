@@ -15,7 +15,7 @@ import {
 import { themePropTypes } from "../../../../constants/themeContants"
 
 const axiosInstance = axios.create({
-  baseURL: `https://fraktguide.bring.no/fraktguide/api`
+  baseURL: `https://api.bring.com/shippingguide/api`
 })
 
 function getAxiosOptions() {
@@ -43,7 +43,10 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
     setIsLoading(true)
     try {
       const place = await axiosInstance
-        .get(`/postalCode.json?country=no&pnr=${postalCode}`, getAxiosOptions())
+        .get(
+          `/postalCode.json?clientUrl=${window.location.href}&pnr=${postalCode}`,
+          getAxiosOptions()
+        )
         .then(result => result.data)
       setPlace(place)
     } catch (e) {

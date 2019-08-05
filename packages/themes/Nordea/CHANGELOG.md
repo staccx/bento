@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.87.2](https://bitbucket.org/stacc-flow/bento/compare/v8.87.1...v8.87.2) (2019-06-03)
+
+**Note:** Version bump only for package @staccx/nordea-theme
+
+
+
+
+
+## [8.87.1](https://bitbucket.org/stacc-flow/bento/compare/v8.87.0...v8.87.1) (2019-05-13)
+
+**Note:** Version bump only for package @staccx/nordea-theme
+
+
+
+
+
+# [8.87.0](https://bitbucket.org/stacc-flow/bento/compare/v8.86.0...v8.87.0) (2019-05-09)
+
+
+### Features
+
+* **nordea-theme:** remove BaseTheme ([8d68f4e](https://bitbucket.org/stacc-flow/bento/commits/8d68f4e))
+
+
+
+
+
 # [8.86.0](https://bitbucket.org/stacc-flow/bento/compare/v8.85.0...v8.86.0) (2019-04-15)
 
 
