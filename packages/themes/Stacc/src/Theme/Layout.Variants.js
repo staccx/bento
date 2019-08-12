@@ -4,7 +4,7 @@ import { css } from "styled-components"
 export default theming.createVariants(
   {
     head: css`
-      padding-bottom: ${theming.spacing.large};
+      /* padding-bottom: ${theming.spacing.large}; */
     `,
     left: css`
       grid-template-columns: fit-content(550px) minmax(300px, 600px);
