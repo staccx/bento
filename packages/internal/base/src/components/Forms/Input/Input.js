@@ -76,6 +76,9 @@ const Input = React.forwardRef(
           onValueChanged: onChange
         })
       }
+      if (ref) {
+        ref.current = inputRef.current
+      }
       if (defaultValue) {
         console.log("setting default value")
         setRawValue(defaultValue)
