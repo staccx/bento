@@ -1,6 +1,6 @@
 {
   "name": "@staccx/component-testing",
-  "version": "9.1.1",
+  "version": "9.2.0",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -11,9 +11,9 @@
     "serve": "yarn build && serve -s build"
   },
   "dependencies": {
-    "@staccx/base": "^9.1.1",
-    "@staccx/fundu-theme": "^9.1.1",
-    "@staccx/nordea-theme": "^9.1.1",
+    "@staccx/base": "^9.2.0",
+    "@staccx/fundu-theme": "^9.2.0",
+    "@staccx/nordea-theme": "^9.2.0",
     "react-scripts": "^3.0.1"
   },
   "browserslist": [

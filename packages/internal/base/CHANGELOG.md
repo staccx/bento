@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.2.0](https://bitbucket.org/stacc-flow/bento/compare/v9.1.1...v9.2.0) (2019-08-28)
+
+
+### Features
+
+* **base:** add fetchToken prop to dataprovider ([9c71560](https://bitbucket.org/stacc-flow/bento/commits/9c71560))
+
+
+
+
+
 ## [8.87.2](https://bitbucket.org/stacc-flow/bento/compare/v8.87.1...v8.87.2) (2019-06-03)
 
 
