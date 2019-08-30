@@ -26,3 +26,41 @@ storiesOf("Components|Base/Breadcrumb", module)
       ]}
     />
   ))
+  .add("With many objects", () => (
+    <Breadcrumb
+      path={[
+        {
+          name: "First level",
+          to: "/"
+        },
+        {
+          name: "Second level",
+          to: "/"
+        },
+        {
+          name: "Third level",
+          to: "/"
+        },
+        {
+          name: "Fourth level",
+          to: "/"
+        },
+        {
+          name: "Fifth level",
+          to: "/"
+        },
+        {
+          name: "Sixth level",
+          to: "/"
+        },
+        {
+          name: "Sevent level",
+          to: "/"
+        },
+        {
+          name: "Eight level",
+          to: "/"
+        }
+      ]}
+    />
+  ))
