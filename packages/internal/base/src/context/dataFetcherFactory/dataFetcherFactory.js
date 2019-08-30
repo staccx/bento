@@ -13,11 +13,18 @@ const create = () => {
     loop,
     initialData,
     axiosOptions = {},
+    fetchToken,
     children
   }) => {
     const [state, setState] = useState({ data: initialData, isLoading: true })
 
     const fetch = async () => {
+      if (fetchToken) {
+        let token = await fetchToken()
+        if (!axiosOptions.headers) axiosOptions.headers = {}
+        axiosOptions.headers.authorization = `Bearer ${token}`
+      }
+
       await axios({ method: "get", url: path, ...axiosOptions })
         .then(
           ({ data }) =>
@@ -44,6 +51,7 @@ const create = () => {
 
   DataProvider.propTypes = {
     path: PropTypes.string,
+    fetchToken: PropTypes.func,
     loop: PropTypes.number,
     initialData: PropTypes.any,
     children: commonPropTypes.children,

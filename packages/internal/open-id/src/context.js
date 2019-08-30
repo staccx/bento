@@ -20,12 +20,18 @@ export const OpenId = ({
 
   const userManager = new UserManager(config)
 
+  const fetchToken = async () => {
+    const user = await userManager.getUser()
+    return user ? user.access_token : null
+  }
+
   return (
     <Context.Provider
       value={{
         userManager,
         config,
         extraConfig,
+        fetchToken,
         ...props
       }}
     >
