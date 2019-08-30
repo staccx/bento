@@ -16,7 +16,10 @@ const create = () => {
     fetchToken,
     children
   }) => {
-    const [state, setState] = useState({ data: initialData, isLoading: true })
+    const [state, setState] = useState({
+      data: initialData,
+      isLoading: true
+    })
 
     const fetch = async () => {
       if (fetchToken) {
@@ -26,13 +29,11 @@ const create = () => {
       }
 
       await axios({ method: "get", url: path, ...axiosOptions })
-        .then(
-          ({ data }) =>
-            isEqual(data, state.data) || setState({ data, isLoading: false })
-        )
-        .catch(() =>
-          setState(prevState => ({ ...prevState, isLoading: false }))
-        )
+        .then(({ data }) => {
+          if (!isEqual(data, state.data) || state.isLoading)
+            setState({ data, isLoading: false })
+        })
+        .catch(() => null)
     }
 
     useEffect(() => {
