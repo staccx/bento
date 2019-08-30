@@ -11,7 +11,8 @@ storiesOf("components|base/Logo", module)
       kiwi: "kiwi",
       telenor: "Telenor",
       meny: "meny",
-      rema: "rema"
+      rema: "rema",
+      dnb: "dnb"
     }
     const defaultValue = "kiwi"
     const value = select(label, options, defaultValue)
