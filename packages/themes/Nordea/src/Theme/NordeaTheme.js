@@ -169,6 +169,7 @@ const font = {
   base: "14px",
   tiny: "12px",
   input: "16px",
+  bodyText: "18px",
   huge: "44px",
   lineHeight: "1.5"
 }
