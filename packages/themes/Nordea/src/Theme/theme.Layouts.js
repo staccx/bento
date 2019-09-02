@@ -83,9 +83,7 @@ export const LayoutStyling = theming.createVariants(
         grid-column-gap: 0;
       }
     `,
-    newsArticle: css`
-      grid-column-gap: ${theming.spacing.huge};
-    `,
+    newsArticle: css``,
     leaderBoardPodium: css`
       grid-template-columns: repeat(3, 1fr);
       grid-auto-rows: auto;
