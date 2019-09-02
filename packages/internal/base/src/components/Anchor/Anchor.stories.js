@@ -14,3 +14,8 @@ storiesOf("Components|Base/Anchor", module)
       text: docs
     }
   })
+  .add("with a-tag as input", () => (
+    <Anchor>
+      <a> this is a link</a>
+    </Anchor>
+  ))
