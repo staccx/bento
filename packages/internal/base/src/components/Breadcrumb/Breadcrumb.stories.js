@@ -3,9 +3,7 @@ import { storiesOf } from "@storybook/react"
 import Breadcrumb from "./Breadcrumb"
 
 storiesOf("Components|Base/Breadcrumb", module)
-  .add("No props", () => <Breadcrumb />)
-  .add("Strings as input", () => <Breadcrumb path={["Home", "My Car"]} />)
-  .add("Object as input", () => (
+  .add("Some objects", () => (
     <Breadcrumb
       path={[
         {

@@ -10,7 +10,7 @@ storiesOf("Components|Base/Forms/Form", module).add("With FormField", () => (
       name="epost"
       type="email"
       required
-      rnderError={({ error, touched }) => (
+      renderError={({ error, touched }) => (
         <span>
           {error}-{touched}
         </span>

@@ -4,18 +4,21 @@ import Anchor from "./Anchor"
 import docs from "./Anchor.md"
 
 storiesOf("Components|Base/Anchor", module)
-  .add("No props", () => <Anchor>Anchor</Anchor>, {
+  .add("Without href", () => <Anchor>Anchor</Anchor>, {
     info: {
       text: docs
     }
   })
-  .add("With string input", () => <Anchor>This is a string</Anchor>, {
-    info: {
-      text: docs
+  .add(
+    "With href",
+    () => (
+      <Anchor className="Anchor" href="https://www.nrk.no">
+        Anchor
+      </Anchor>
+    ),
+    {
+      info: {
+        text: docs
+      }
     }
-  })
-  .add("with a-tag as input", () => (
-    <Anchor>
-      <a> this is a link</a>
-    </Anchor>
-  ))
+  )

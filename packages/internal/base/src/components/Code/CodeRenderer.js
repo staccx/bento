@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import Prism from "prismjs"
 import CodeWrapper from "./CodeWrapper"
 import "prismjs/components/prism-markup"
+import "prismjs/components/prism-java"
+import "prismjs/components/prism-csharp"
 
 class CodeRenderer extends Component {
   render() {
