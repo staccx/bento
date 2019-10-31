@@ -48,6 +48,11 @@ Breadcrumb.themeProps = {
     name: "BREADCRUMB_TEXT",
     description: "Item inner <div>.",
     type: themePropTypes.style
+  },
+  listItemLast: {
+    name: "BREADCRUMB_ITEMLAST",
+    description: "Item inner <div>.",
+    type: themePropTypes.style
   }
 }
 
