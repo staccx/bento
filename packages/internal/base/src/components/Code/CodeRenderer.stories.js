@@ -1,6 +1,7 @@
 import React from "react"
 import { storiesOf } from "@storybook/react"
 import CodeRenderer from "./CodeRenderer"
+import docs from "./CodeRenderer.md"
 
 const javaCode = `public class MyClass {
   int x = 5;
@@ -51,9 +52,17 @@ class MyApp extends React.Component {
 export default MyApp`
 
 storiesOf("Components|Base/Code Renderer", module)
-  .add("Javascript", () => (
-    <CodeRenderer language="javascript" code={javascriptCode} />
-  ))
-  .add("Markup", () => <CodeRenderer language="markup" code={markupCode} />)
-  .add("Csharp", () => <CodeRenderer language={"csharp"} code={csharpCode} />)
-  .add("java", () => <CodeRenderer language={"java"} code={javaCode} />)
+  .add(
+    "Javascript",
+    () => <CodeRenderer language="javascript" code={javascriptCode} />,
+    { info: { text: docs } }
+  )
+  .add("Markup", () => <CodeRenderer language="markup" code={markupCode} />, {
+    info: { text: docs }
+  })
+  .add("Csharp", () => <CodeRenderer language={"csharp"} code={csharpCode} />, {
+    info: { text: docs }
+  })
+  .add("java", () => <CodeRenderer language={"java"} code={javaCode} />, {
+    info: { text: docs }
+  })
