@@ -1,4 +1,4 @@
-
+```
 <div>
   <CheckBox
     group="signer"
