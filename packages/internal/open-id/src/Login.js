@@ -42,6 +42,7 @@ class Login extends React.Component {
       id: null,
       code: null,
       error: null,
+      lastError: null,
       stateToken: searchParams.state,
       stage: stage
     }
@@ -60,30 +61,46 @@ class Login extends React.Component {
   }
 
   handleCodeSubmissionError = error => {
-    switch (error.response.status) {
-      case 400: {
-        this.setState({ stage: stages.waitingForCode, error: 400 })
-        break
-      }
-      case 429: {
-        this.setState({ stage: stages.tooManyAttempts, error: 429 })
-        break
-      }
-      case 403:
-        this.setState({ stage: stages.alreadySucceeded })
-        break
-      case 500:
-        this.setState({ stage: stages.errorDuringLogin })
-        break
+    if (error.response) {
+      switch (error.response.status) {
+        case 400: {
+          this.setState({
+            lastError: errors.wrongCode,
+            stage: stages.waitingForCode,
+            error: 400
+          })
+          break
+        }
+        case 429: {
+          this.setState({
+            lastError: errors.tooManyAttempts,
+            stage: stages.tooManyAttempts,
+            error: 429
+          })
+          break
+        }
+        case 403:
+          this.setState({ stage: stages.alreadySucceeded })
+          break
+        case 500:
+          this.setState({ stage: stages.errorDuringLogin })
+          break
 
-      default: {
-        // Start over?
-        this.setState({
-          stage: stages.failedToSubmitCode,
-          error: error.response.status
-        })
-        break
+        default: {
+          // Start over?
+          this.setState({
+            stage: stages.failedToSubmitCode,
+            error: error.response.status
+          })
+          break
+        }
       }
+    } else {
+      this.setState({
+        lastError: errors.failedToSubmitCode,
+        stage: stages.failedToSubmitCode,
+        error: error.message
+      })
     }
   }
 
@@ -95,6 +112,7 @@ class Login extends React.Component {
     const nonce = this.state.code
 
     this.setState({
+      lastError: null,
       stage: stages.submittingCode
     })
 
@@ -139,6 +157,7 @@ class Login extends React.Component {
         }
 
     this.setState({
+      lastError: null,
       stage: stages.submittingId
     })
 
@@ -171,11 +190,9 @@ class Login extends React.Component {
         }
       })
       .catch(error => {
-        this.setState({ stage: stages.waitingForId }, () => {
-          challengeIdentity({
-            ...this.props.oidcConfig,
-            acr_values: `idp:${this.props.acrValue}`
-          })
+        this.setState({
+          lastError: errors.failedToSubmitId,
+          stage: stages.waitingForId
         })
         console.error(error)
       })
@@ -198,7 +215,8 @@ class Login extends React.Component {
       handleIdInput: this.handleIdInput,
       handleCodeInput: this.handleCodeInput,
       submitId: this.submitId,
-      submitCode: this.submitCode
+      submitCode: this.submitCode,
+      lastError: this.state.lastError
     })
   }
 }
@@ -215,6 +233,13 @@ export const stages = {
   tooManyAttempts: "TOO_MANY_ATTEMPTS",
   alreadySucceeded: "ALREADY_SUCCEEDED",
   errorDuringLogin: "ERROR_DURING_LOGIN"
+}
+
+export const errors = {
+  failedToSubmitId: "FAILED_TO_SUBMIT_ID",
+  failedToSubmitCode: "FAILED_TO_SUBMIT_CODE",
+  tooManyAttempts: "TOO_MANY_ATTEMPTS",
+  wrongCode: "WRONG_CODE"
 }
 
 export default Login
