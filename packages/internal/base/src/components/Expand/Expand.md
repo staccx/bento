@@ -1,3 +1,4 @@
+```
 <div>
   <p style={{ marginBottom: "24px" }}>
     This is a component that gets out of your way. The first child will be used
@@ -14,4 +15,5 @@
       <button onClick={() => console.log("Yo")}>Ikke klikk på meg</button>
     </div>
   </Expand>
+
 </div>

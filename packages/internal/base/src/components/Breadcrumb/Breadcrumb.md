@@ -1,7 +1,7 @@
 - Last level will always be _current_ level ('to'-prop can be omitted).
 - Key properties are controlled with custom CSS properties assigned to main parent element.
-
-```jsx
+```
+jsx
 <Breadcrumb
   path={[
     {

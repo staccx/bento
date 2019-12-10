@@ -12,7 +12,7 @@ storiesOf("Components|Base/Button", module)
     }
   })
   .add(
-    "Log",
+    "With onClick",
     () => (
       <Button onClick={() => console.log("Knappen er trykket")}>
         {" "}

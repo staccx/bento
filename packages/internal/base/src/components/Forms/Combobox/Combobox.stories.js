@@ -5,6 +5,7 @@ import List from "../../Lists/List"
 import Label from "../Label/Label"
 import Input from "../Input/Input"
 import Combobox from "./Combobox"
+import docs from "./Combobox.md"
 
 const options = [
   { value: "apple" },
@@ -71,5 +72,6 @@ storiesOf("components|base/Forms/Combobox", module).add(
         )}
       </Combobox>
     )
-  }
+  },
+  { info: { text: docs } }
 )

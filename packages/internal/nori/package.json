@@ -1,13 +1,13 @@
 {
   "name": "@staccx/nori",
-  "version": "9.3.0",
+  "version": "9.4.0",
   "private": false,
   "main": "dist/export.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "@staccx/base": "^9.3.0",
+    "@staccx/base": "^9.4.0",
     "@staccx/sanity": "^9.0.0-alpha.44",
-    "@staccx/stacc-theme": "^9.3.0",
+    "@staccx/stacc-theme": "^9.4.0",
     "prop-types": "^15.6.2"
   },
   "scripts": {

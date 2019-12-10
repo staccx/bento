@@ -1,5 +1,6 @@
 ```jsx harmony
-<CodeRenderer code={  `
+<CodeRenderer
+  code={`
                       /**
                     * Some summary
                     */
@@ -20,5 +21,5 @@
                           console.log(body);
                         });
                       `}
-                      />
+/>
 ```

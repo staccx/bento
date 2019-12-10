@@ -9,4 +9,8 @@ storiesOf("components|base/Forms/Label", module)
       text: docs
     }
   })
-  .add("with props", () => <Label className={"a Label"}>This is label</Label>)
+  .add("with props", () => <Label className={"a Label"}>This is label</Label>, {
+    info: {
+      text: docs
+    }
+  })
