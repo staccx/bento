@@ -1,6 +1,6 @@
 {
   "name": "@staccx/base",
-  "version": "9.4.0",
+  "version": "9.5.0",
   "description": "Base componentes",
   "author": "StaccX",
   "license": "UNLICENSED",
@@ -29,7 +29,7 @@
     "@sanity/block-content-to-react": "^2.0.6",
     "@sanity/client": "^0.140.32",
     "@staccx/animations": "^9.0.0",
-    "@staccx/formatting": "^9.4.0",
+    "@staccx/formatting": "^9.5.0",
     "@staccx/math": "^9.0.0",
     "@staccx/utils": "^9.0.0",
     "axios": "^0.19.0",
