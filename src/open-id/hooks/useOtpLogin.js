@@ -1,7 +1,15 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import axios from "axios"
 import qs from "qs"
-import Context from "../context"
+import { useOpenId } from "../components/OpenId"
+
+const stages = {
+  WAITING_FOR_USERNAME: Symbol("WAITING_FOR_USERNAME"),
+  WAITING_FOR_PASSWORD: Symbol("WAITING_FOR_PASSWORD"),
+  WRONG_PASSWORD: Symbol("WRONG_PASSWORD"),
+  NO_MORE_PASSWORD_ATTEMPTS: Symbol("NO_MORE_PASSWORD_ATTEMPTS"),
+  ERROR: Symbol("ERROR")
+}
 
 // TODO: Refactor to be storage agnostic
 const getState = userManager => {
@@ -20,8 +28,8 @@ const getState = userManager => {
   return state
 }
 
-export const useOtpLogin = () => {
-  const { userManager, extraConfig } = useContext(Context)
+const useOtpLogin = () => {
+  const { userManager, extraConfig } = useOpenId()
   const [stage, setStage] = useState()
   const [input, setInput] = useState()
   const [state, setState] = useState()
@@ -96,10 +104,4 @@ export const useOtpLogin = () => {
   }
 }
 
-const stages = {
-  WAITING_FOR_USERNAME: Symbol("WAITING_FOR_USERNAME"),
-  WAITING_FOR_PASSWORD: Symbol("WAITING_FOR_PASSWORD"),
-  WRONG_PASSWORD: Symbol("WRONG_PASSWORD"),
-  NO_MORE_PASSWORD_ATTEMPTS: Symbol("NO_MORE_PASSWORD_ATTEMPTS"),
-  ERROR: Symbol("ERROR")
-}
+export default useOtpLogin
