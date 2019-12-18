@@ -1,4 +1,4 @@
-import restArguments from "../helpers/restArguments"
+import restArguments from "./helpers/restArguments"
 
 export default () =>
   restArguments((func, wait, args) => {

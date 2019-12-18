@@ -12,8 +12,8 @@ storiesOf("Functions|Utils/Partition", module).add("Simple", () => {
   console.log(data)
   return (
     <div>
-      {data.map(item => (
-        <div>isVisible: {item.isVisible ? "yes" : "no"}</div>
+      {data.map((item, index) => (
+        <div key={item + index}>isVisible: {item.isVisible ? "yes" : "no"}</div>
       ))}
       <Text>Array length: {data.length}</Text>
       <Text>Visible: {visible.length}</Text>
