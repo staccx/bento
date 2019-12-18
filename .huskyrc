@@ -1,5 +1,6 @@
 {
   "hooks": {
+    "commitmsg": "commitlint -e $HUSKY_PARAMS",
     "precommit": "lint-staged",
     "postcommit": "git update-index --again"
   }

@@ -2,7 +2,6 @@
   "name": "@staccx/bento",
   "private": true,
   "scripts": {
-    "commitmsg": "commitlint -e $HUSKY_PARAMS",
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false --verbose --coverage",
     "build": "babel --root-mode upward src -d lib",
