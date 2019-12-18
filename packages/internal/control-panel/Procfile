@@ -1,3 +1,0 @@
-react: yarn cra
-electron: node src/electron-wait-react
-server: yarn server
