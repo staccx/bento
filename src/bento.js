@@ -24,6 +24,11 @@ export * as math from "./math"
 export * as openId from "./open-id"
 
 /**
+ * Sanity specific
+ */
+export * as sanity from "./sanity"
+
+/**
  * Theming
  */
 

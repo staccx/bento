@@ -1,6 +1,6 @@
 import React, { useMemo } from "react"
 import PropTypes from "prop-types"
-import Image from "../../Image/Image"
+import Image from "../../components/Image/Image"
 import useSanity from "./useSanity"
 
 const SanityImage = ({ children, image, options, ...props }) => {
