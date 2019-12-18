@@ -1,6 +1,6 @@
 const unique = (value, index, self) => self.indexOf(value) === index
 
-export default (list, distinctor = null, func = item => item) => {
+export const distinct = (list, distinctor = null, func = item => item) => {
   const items = list.map(func).filter(unique)
 
   if (!distinctor) {
@@ -14,5 +14,5 @@ export default (list, distinctor = null, func = item => item) => {
     return accumulator
   }, {})
 
-  return Object.keys(dict).map(key => dict[key])
+  return Object.values(dict)
 }

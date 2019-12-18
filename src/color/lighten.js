@@ -1,6 +1,6 @@
 import color from "color"
 
-export default (colorString, amount) =>
+export const lighten = (colorString, amount) =>
   color(colorString)
     .lighten(amount)
     .string()

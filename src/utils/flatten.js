@@ -3,4 +3,4 @@
  * @param listOfArrays
  * @returns {*[]}
  */
-export default listOfArrays => [].concat.apply([], listOfArrays)
+export const flatten = listOfArrays => [].concat.apply([], listOfArrays)

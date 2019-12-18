@@ -1,4 +1,12 @@
-export default (obj, propertyPath, separator = ".") => {
+/**
+ * @deprecated use lodash.get
+ * @param obj
+ * @param propertyPath
+ * @param separator
+ * @return {null|*}
+ */
+
+export const deepFind = (obj, propertyPath, separator = ".") => {
   if (!propertyPath) return null
 
   const properties = propertyPath.split(separator)

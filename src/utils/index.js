@@ -1,17 +1,6 @@
-import delay from "./export/delay"
-import throttle from "./export/throttle"
-import deepfind from "./export/deepfind"
-import stringIncludes from "./export/stringIncludes"
-import distinct from "./export/distinct"
-import flatten from "./export/flatten"
-import partition from "./export/partition"
-
-export {
-  delay,
-  throttle,
-  deepfind,
-  stringIncludes,
-  distinct,
-  flatten,
-  partition
-}
+export { delay } from "./delay"
+export { deepFind } from "./deepfind"
+export { stringIncludes } from "./stringIncludes"
+export { distinct } from "./distinct"
+export { flatten } from "./flatten"
+export { partition } from "./partition"

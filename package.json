@@ -1,11 +1,12 @@
 {
   "name": "@staccx/bento",
+  "version": "10.0.0",
   "private": true,
   "scripts": {
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false --verbose --coverage",
-    "build": "babel --root-mode upward src -d lib",
-    "build:watch": "nodemon --watch src/ --exec \"babel src -d dist\"",
+    "build": "export NODE_ENV='production' && babel src -d lib",
+    "build:watch": "export NODE_ENV='development' && nodemon --watch src/ --exec \"babel src -d dist\"",
     "storybook:genreq": "node stories/generateRequireStories",
     "storybook": "yarn storybook:genreq && start-storybook -p 9009",
     "build-storybook": "yarn storybook:genreq && build-storybook -o ./.storybook/dist"
@@ -14,6 +15,10 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
   },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
   "author": "",
   "license": "UNLICENSED",
   "homepage": "https://bitbucket.org/stacc-flow/bento#readme",
@@ -25,6 +30,7 @@
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/plugin-proposal-decorators": "^7.3.0",
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.7.4",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
@@ -100,6 +106,6 @@
     "yup": "^0.24.1"
   },
   "peerDependencies": {
-    "styled-components":"^4.4.1"
+    "styled-components": "^4.4.1"
   }
 }

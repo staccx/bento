@@ -1,5 +1,5 @@
 import React from "react"
-import { Button, Input, Label, List } from "../../../index"
+import { Button, Input, Label, List } from "../../../bento"
 import Combobox from "./Combobox"
 
 const options = [
