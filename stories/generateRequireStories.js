@@ -6,7 +6,7 @@
 const fs = require("fs")
 const glob = require("glob")
 
-const stories = glob.sync("packages/**/*.stories.js", {
+const stories = glob.sync("src/**/*.stories.js", {
   ignore: "**/node_modules"
 })
 

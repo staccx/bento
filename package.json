@@ -5,19 +5,10 @@
     "precommit": "lint-staged",
     "postcommit": "git update-index --again",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "test": "react-scripts test --coverage --watchAll=false --verbose  --testMatch **/packages/**/*.test.js --coverage",
-    "styleguide": "cd packages/base && styleguidist server",
-    "start": "cd packages/internal/styleguide && yarn start",
-    "soy": "node packages/internal/soy",
-    "release": "node ./packages/internal/release-bento/index.js",
-    "clean": "rm -rf node_modules && rm yarn.lock && lerna clean --yes && lerna bootstrap && lerna run build",
-    "buildAll": "lerna run prepare",
-    "testAll": "lerna run prepublishOnly",
-    "verify": "yarn buildAll && yarn testAll",
+    "test": "react-scripts test --coverage --watchAll=false --verbose --coverage",
     "storybook:genreq": "node stories/generateRequireStories",
     "storybook": "yarn storybook:genreq && start-storybook -p 9009",
-    "build-storybook": "yarn storybook:genreq && build-storybook -o ./.storybook/dist",
-    "lint": "eslint ./packages/internal/base"
+    "build-storybook": "yarn storybook:genreq && build-storybook -o ./.storybook/dist"
   },
   "repository": {
     "type": "git",
@@ -40,7 +31,14 @@
     "@babel/preset-react": "^7.0.0",
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
+    "@staccx/aprila-theme": "^9.5.0",
     "@staccx/eslint-config": "^10.0.0",
+    "@staccx/fundu-theme": "^9.5.0",
+    "@staccx/imove-theme": "^9.5.0",
+    "@staccx/nordea-theme": "^9.5.0",
+    "@staccx/norefjell-theme": "^9.5.0",
+    "@staccx/stacc-theme": "^9.5.0",
+    "@staccx/volvo-theme": "^9.5.0",
     "@storybook/addon-a11y": "5.2.0-alpha.30",
     "@storybook/addon-actions": "5.2.0-alpha.30",
     "@storybook/addon-backgrounds": "5.2.0-alpha.30",
@@ -84,10 +82,7 @@
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.6",
     "@sanity/client": "^0.140.32",
-    "@staccx/math": "^9.0.0",
-    "@staccx/utils": "^9.0.0",
     "axios": "^0.19.0",
-    "babel-plugin-prismjs": "^1.0.2",
     "cleave.js": "^1.4.4",
     "copy-to-clipboard": "^3.0.8",
     "downshift": "^3.1.2",
@@ -114,12 +109,5 @@
     "tinycolor2": "^1.4.1",
     "webfontloader": "^1.6.28",
     "yup": "^0.24.1"
-  },
-  "resolutions": {
-    "babel-core": "7.0.0-bridge.0",
-    "terser": "3.14.1",
-    "webpack": "4.29.6",
-    "babel-jest": "24.8.0",
-    "babel-loader": "8.0.5"
   }
 }
