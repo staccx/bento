@@ -2,11 +2,11 @@
   "name": "@staccx/bento",
   "private": true,
   "scripts": {
-    "precommit": "lint-staged",
-    "postcommit": "git update-index --again",
-    "commitmsg": "commitlint -E GIT_PARAMS",
+    "commitmsg": "commitlint -E $HUSKY_PARAMS",
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false --verbose --coverage",
+    "build": "babel --root-mode upward src -d lib",
+    "build:watch": "nodemon --watch src/ --exec \"babel src -d dist\"",
     "storybook:genreq": "node stories/generateRequireStories",
     "storybook": "yarn storybook:genreq && start-storybook -p 9009",
     "build-storybook": "yarn storybook:genreq && build-storybook -o ./.storybook/dist"
@@ -30,8 +30,8 @@
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
-    "@commitlint/cli": "^7.0.0",
-    "@commitlint/config-conventional": "^7.0.1",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@staccx/aprila-theme": "^9.5.0",
     "@staccx/eslint-config": "^10.0.1",
     "@staccx/fundu-theme": "^9.5.0",
@@ -52,23 +52,22 @@
     "@storybook/react": "5.2.8",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
+    "babel-preset-react-app": "^9.1.0",
     "conventional-changelog-angular-bitbucket": "^1.1.2",
     "conventional-changelog-cli": "^2.0.5",
     "fs-extra": "^8.0.1",
     "glob": "^7.1.4",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.1.2",
-    "nodemon": "^1.19.1",
-    "ora": "^3.0.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "nodemon": "^2.0.2",
+    "ora": "^4.0.3",
     "plop": "^2.0.0",
     "prettier": "^1.17.1",
-    "react": "^16.6.0",
-    "react-dom": "^16.8.6",
     "react-json-view": "^1.19.1",
     "react-markdown": "^4.0.8",
     "react-scripts": "^3.3.0",
     "storybook-host": "^5.1.0",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.4.1"
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.6",
@@ -93,12 +92,15 @@
     "polished": "^2.3.0",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
-    "react": "^16.8.6",
+    "react": "^16.12.0",
     "react-compound-slider": "^0.16.2",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.12.0",
     "react-traverse": "^1.0.0",
     "tinycolor2": "^1.4.1",
     "webfontloader": "^1.6.28",
     "yup": "^0.24.1"
+  },
+  "peerDependencies": {
+    "styled-components":"^4.4.1"
   }
 }

@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "precommit": "lint-staged",
+    "postcommit": "git update-index --again"
+  }
+}
