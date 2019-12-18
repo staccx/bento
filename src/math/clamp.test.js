@@ -1,4 +1,4 @@
-import clamp from "./clamp"
+import { clamp } from "./clamp"
 
 describe("Clamp", () => {
   it("Should clamp down high values", () => {

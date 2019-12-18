@@ -1,3 +1,3 @@
-export default (min, max, value) => {
+export const inverseLerp = (min, max, value) => {
   return (value - min) / (max - min)
 }

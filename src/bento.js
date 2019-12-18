@@ -9,6 +9,16 @@ export * as animations from "./animations"
 export * as color from "./color"
 
 /**
+ * Formatting
+ */
+export * as formatting from "./formatting"
+
+/**
+ * Math functions
+ */
+export * as math from "./math"
+
+/**
  * Open-Id
  */
 export * as openId from "./open-id"
