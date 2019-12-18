@@ -1,5 +1,5 @@
-import lighten from "./lighten"
-import colorNames from "./colorNames"
+import { lighten } from "./lighten"
+import { colorNames } from "./colorNames"
 
 describe("Lighten", () => {
   it("Work", () => {

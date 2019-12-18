@@ -1,4 +1,4 @@
-import distinct from "./distinct"
+import { distinct } from "./distinct"
 
 const arrayOfInts = [1, 2, 3, 4, 5, 1, 2]
 

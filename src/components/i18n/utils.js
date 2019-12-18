@@ -1,4 +1,4 @@
-import SanityBlockContent from "../Sanity/components/SanityBlockContent"
+import SanityBlockContent from "../../sanity/components/SanityBlockContent"
 import Text from "../Text/Text/Text"
 import React from "react"
 

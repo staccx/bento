@@ -1,7 +1,7 @@
 import React from "react"
-// import Text from "../Text/Text/Text"
 import { render, cleanup, waitForElement, act } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
+import renderer from "react-test-renderer"
 import { isBlock } from "./utils"
 import {
   // withI18n,
@@ -10,7 +10,7 @@ import {
   // useI18n,
   Provider
   // Translate,
-  // Transform
+  // TransformFG
 } from "./index"
 
 afterEach(cleanup)
@@ -77,9 +77,9 @@ describe("i18n", () => {
   })
   describe("Context", () => {
     describe("Provider", () => {
-      it("Consumer shows value from provider", async () => {
+      it("Consumer shows value from provider", () => {
         let tree = null
-        act(async () => {
+        act(() => {
           tree = render(
             <Provider language="en">
               <I18nConsumer>
@@ -90,11 +90,29 @@ describe("i18n", () => {
               </I18nConsumer>
             </Provider>
           )
-          const { getByText } = tree
-          const wait = await waitForElement(() => getByText(/^Ready:/))
+        })
+        const { getByText } = tree
+        waitForElement(() => getByText(/^Ready:/)).then(wait => {
           expect(wait.textContent).toBe("Ready: true")
         })
       })
+    })
+  })
+  describe("Snapshots", () => {
+    it("Normal render", () => {
+      let tree = null
+      renderer.act(() => {
+        tree = renderer.create(
+          <Provider language="en">
+            <I18nConsumer>
+              {value => {
+                return <span>Ready: {value.ready}</span>
+              }}
+            </I18nConsumer>
+          </Provider>
+        )
+      })
+      expect(tree.toJSON()).toMatchSnapshot()
     })
   })
 })

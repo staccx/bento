@@ -1,4 +1,4 @@
-import stringIncludes from "./stringIncludes"
+import { stringIncludes } from "./stringIncludes"
 
 const text = "The quick brown fox jumps over the lazy dog"
 const snippet = "Quick brown"

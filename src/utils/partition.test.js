@@ -1,4 +1,4 @@
-import partition from "./partition"
+import { partition } from "./partition"
 
 const list = [
   { flag: true, string: "foo" },

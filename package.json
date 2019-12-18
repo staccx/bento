@@ -71,6 +71,7 @@
     "react-json-view": "^1.19.1",
     "react-markdown": "^4.0.8",
     "react-scripts": "^3.3.0",
+    "react-test-renderer": "^16.12.0",
     "storybook-host": "^5.1.0",
     "styled-components": "^4.4.1"
   },

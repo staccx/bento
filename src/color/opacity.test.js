@@ -1,5 +1,5 @@
-import opacity from "./opacity"
-import colorNames from "./colorNames"
+import { opacity } from "./opacity"
+import { colorNames } from "./colorNames"
 
 describe("Opacity", () => {
   it("Set", () => {
