@@ -1,8 +1,8 @@
-import { useContext, useEffect } from "react"
-import Context from "../context"
+import { useEffect } from "react"
+import { useOpenId } from "./OpenId"
 
-const CallbackLogout = () => {
-  const { userManager, afterLogout, onError } = useContext(Context)
+export const CallbackLogout = () => {
+  const { userManager, afterLogout, onError } = useOpenId()
   useEffect(() => {
     if (userManager) {
       userManager
@@ -13,5 +13,3 @@ const CallbackLogout = () => {
   }, [userManager])
   return null
 }
-
-export default CallbackLogout

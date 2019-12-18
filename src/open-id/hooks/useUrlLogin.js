@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useOpenId } from "../context"
+import { useOpenId } from ".."
 
 export const useUrlLogin = (redirectParentOnCallback = true) => {
   const { userManager } = useOpenId()

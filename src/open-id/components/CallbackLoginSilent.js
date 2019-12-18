@@ -1,8 +1,8 @@
-import { useContext, useEffect } from "react"
-import Context from "../context"
+import { useEffect } from "react"
+import { useOpenId } from "./OpenId"
 
-const CallbackLoginSilent = () => {
-  const { userManager } = useContext(Context)
+export const CallbackLoginSilent = () => {
+  const { userManager } = useOpenId()
 
   useEffect(() => {
     if (userManager) {
@@ -12,5 +12,3 @@ const CallbackLoginSilent = () => {
 
   return null
 }
-
-export default CallbackLoginSilent

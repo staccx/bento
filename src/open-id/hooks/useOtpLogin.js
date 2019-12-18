@@ -1,7 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 import qs from "qs"
-import { useOpenId } from "../components/OpenId"
+import { useOpenId } from ".."
 
 const stages = {
   WAITING_FOR_USERNAME: Symbol("WAITING_FOR_USERNAME"),
@@ -28,7 +28,7 @@ const getState = userManager => {
   return state
 }
 
-const useOtpLogin = () => {
+export const useOtpLogin = () => {
   const { userManager, extraConfig } = useOpenId()
   const [stage, setStage] = useState()
   const [input, setInput] = useState()
@@ -103,5 +103,3 @@ const useOtpLogin = () => {
     setInput
   }
 }
-
-export default useOtpLogin

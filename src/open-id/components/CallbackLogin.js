@@ -1,13 +1,12 @@
-import { useContext } from "react"
-import Context from "../context"
+import { useOpenId } from ".."
 
-const CallbackLogin = () => {
+export const CallbackLogin = () => {
   const {
     userManager,
     afterLogin,
     onError,
     reloadParentAfterLogin
-  } = useContext(Context)
+  } = useOpenId()
 
   const _window = reloadParentAfterLogin ? window.parent : window
 
@@ -19,5 +18,3 @@ const CallbackLogin = () => {
 
   return null
 }
-
-export default CallbackLogin

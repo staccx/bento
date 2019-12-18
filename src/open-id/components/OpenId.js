@@ -39,5 +39,3 @@ export const OpenId = ({
 }
 
 export const useOpenId = () => useContext(OpenIdContext)
-
-export default OpenId

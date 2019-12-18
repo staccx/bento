@@ -15,8 +15,8 @@ import { default as dashIt } from "./dashIt"
  * @deprecated use maskFormat instead
  * @type {Function}
  */
-
 const formatPhone = maskFormat
+
 export {
   formatCurrency,
   createCurrencyMask,

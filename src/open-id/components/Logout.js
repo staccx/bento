@@ -1,8 +1,8 @@
-import { useContext, useEffect } from "react"
-import Context from "../context"
+import { useEffect } from "react"
+import { useOpenId } from "./OpenId"
 
-const Logout = () => {
-  const { userManager, onError } = useContext(Context)
+export const Logout = () => {
+  const { userManager, onError } = useOpenId()
   useEffect(() => {
     if (userManager) {
       userManager
@@ -15,5 +15,3 @@ const Logout = () => {
 
   return null
 }
-
-export default Logout
