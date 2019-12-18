@@ -1,7 +1,7 @@
 import React from "react"
 // import Text from "../Text/Text/Text"
-import { render, cleanup, waitForElement } from "@testing-library/react"
-import "jest-dom/extend-expect"
+import { render, cleanup, waitForElement, act } from "@testing-library/react"
+import "@testing-library/jest-dom/extend-expect"
 import { isBlock } from "./utils"
 import {
   // withI18n,
@@ -78,19 +78,22 @@ describe("i18n", () => {
   describe("Context", () => {
     describe("Provider", () => {
       it("Consumer shows value from provider", async () => {
-        const tree = (
-          <Provider value="C3P0" language={"en"}>
-            <I18nConsumer>
-              {value => {
-                console.log(value)
-                return <span>Received: {value}</span>
-              }}
-            </I18nConsumer>
-          </Provider>
-        )
-        const { getByText } = render(tree)
-        const wait = await waitForElement(() => getByText(/^Received:/))
-        expect(wait.textContent).toBe("Received: Boba Fett")
+        let tree = null
+        act(async () => {
+          tree = render(
+            <Provider language="en">
+              <I18nConsumer>
+                {value => {
+                  console.log(value.ready)
+                  return <span>Ready: {value.ready}</span>
+                }}
+              </I18nConsumer>
+            </Provider>
+          )
+          const { getByText } = tree
+          const wait = await waitForElement(() => getByText(/^Ready:/))
+          expect(wait.textContent).toBe("Ready: true")
+        })
       })
     })
   })
