@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
 import debounce from "lodash.debounce"
-import Combobox from "../../Combobox/Combobox"
 import Flag from "../../../Layout/Flag/Flag"
 import Label from "../../Label/Label"
 import { color, font, spacing, applyVariants } from "../../../../theming"
@@ -103,7 +102,7 @@ class CompanyInput extends React.PureComponent {
     const renderSelected = (selectedItem, getItemProps, { clearSelection }) => {
       const sel = mapItem(selectedItem)
       return (
-        <React.Fragment>
+        <>
           <SelectLabel htmlFor="SelectedName">{label}</SelectLabel>
           <ModifiedFlag
             reverse
@@ -121,11 +120,11 @@ class CompanyInput extends React.PureComponent {
             <div id="SelectedName">{sel.name}</div>
             <OrgNo>{sel.orgNo}</OrgNo>
           </ModifiedFlag>
-        </React.Fragment>
+        </>
       )
     }
     const renderInput = getInputProps => (
-      <React.Fragment>
+      <>
         <Input
           label={label}
           {...inputProps}
@@ -136,46 +135,49 @@ class CompanyInput extends React.PureComponent {
             <SelectLoad />
           </SelectWrapper>
         )}
-      </React.Fragment>
+      </>
     )
     return (
-      <Combobox
-        onChange={this.handleSelect}
-        renderInput={renderInput}
-        renderSelected={renderSelected}
-        renderLabel={() => null}
-        filter={"name"}
-        indexer={"orgNo"}
-        options={autoComplete || []}
-        downshiftProps={{
-          defaultIsOpen: true,
-          onInputValueChange: this.handleChange
-        }}
-      >
-        {({ result, getItemProps, selectedItem, highlightedIndex }) => (
-          <SelectWrapper>
-            <SelectList>
-              {result.map((item, index) => {
-                const mappedItem = mapItem(item)
-                return (
-                  <SelectItem
-                    {...getItemProps({ item })}
-                    key={mappedItem.orgNo}
-                    isSelected={highlightedIndex === index}
-                  >
-                    {`${mappedItem.name}${
-                      mappedItem.orgType !== "AS"
-                        ? " - " + mappedItem.orgType
-                        : ""
-                    }`}
-                    <OrgNo>{mappedItem.orgNo}</OrgNo>
-                  </SelectItem>
-                )
-              })}
-            </SelectList>
-          </SelectWrapper>
-        )}
-      </Combobox>
+      <div>
+        This component has been deprecated and will be replaced by a hook
+      </div>
+      // <Combobox
+      //   onChange={this.handleSelect}
+      //   renderInput={renderInput}
+      //   renderSelected={renderSelected}
+      //   renderLabel={() => null}
+      //   filter="name"
+      //   indexer="orgNo"
+      //   options={autoComplete || []}
+      //   downshiftProps={{
+      //     defaultIsOpen: true,
+      //     onInputValueChange: this.handleChange
+      //   }}
+      // >
+      //   {({ result, getItemProps, selectedItem, highlightedIndex }) => (
+      //     <SelectWrapper>
+      //       <SelectList>
+      //         {result.map((item, index) => {
+      //           const mappedItem = mapItem(item)
+      //           return (
+      //             <SelectItem
+      //               {...getItemProps({ item })}
+      //               key={mappedItem.orgNo}
+      //               isSelected={highlightedIndex === index}
+      //             >
+      //               {`${mappedItem.name}${
+      //                 mappedItem.orgType !== "AS"
+      //                   ? " - " + mappedItem.orgType
+      //                   : ""
+      //               }`}
+      //               <OrgNo>{mappedItem.orgNo}</OrgNo>
+      //             </SelectItem>
+      //           )
+      //         })}
+      //       </SelectList>
+      //     </SelectWrapper>
+      //   )}
+      // </Combobox>
     )
   }
 }

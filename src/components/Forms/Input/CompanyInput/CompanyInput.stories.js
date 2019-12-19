@@ -5,6 +5,6 @@ import CompanyInput from "./CompanyInput"
 storiesOf("components|base/Forms/Input/CompanyInput", module).add(
   "no props",
   () => {
-    return <CompanyInput label={"CompanyInput"} id="9852145" />
+    return <CompanyInput label="CompanyInput" id="9852145" />
   }
 )

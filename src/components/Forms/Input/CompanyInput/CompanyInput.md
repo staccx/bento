@@ -1,3 +1,3 @@
 ```jsx harmony
-<CompanyInput id="sdioj" />
+This component has been deprecated and will be replaced with a hook.
 ```
