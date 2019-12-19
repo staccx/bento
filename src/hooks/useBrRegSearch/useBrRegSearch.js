@@ -25,10 +25,13 @@ const useBrRegSearch = searchTerm => {
       return companies
     }
 
-    getCompaniesByName(searchTerm).then(companies => console.log(companies))
-
     getCompaniesByName(searchTerm).then(companies => {
-      setResults(companies)
+      if (companies) {
+        setResults(companies)
+      } else {
+        setResults([])
+      }
+
       setIsLoading(false)
     })
   }, [searchTerm])
