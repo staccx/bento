@@ -16,7 +16,7 @@ const Component = ({ term }) => {
           ? "Loading..."
           : results.map(item => (
               <ReactJson
-                key={item}
+                key={item.organisasjonsnummer}
                 src={item}
                 name={`${item}`}
                 theme="monokai"

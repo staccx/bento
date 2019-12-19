@@ -7,6 +7,7 @@ const useBrRegSearch = searchTerm => {
   useEffect(() => {
     if (!searchTerm || searchTerm.length < 2) {
       setIsLoading(false)
+      setResults([])
       return
     }
 
