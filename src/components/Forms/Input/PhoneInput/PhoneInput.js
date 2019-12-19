@@ -5,7 +5,7 @@ import Input, { InputPropTypes } from "../Input"
 import "cleave.js/dist/addons/cleave-phone.no.js"
 import { applyVariants, spacing, themePropTypes } from "../../../../theming"
 import countries, { NORWAY } from "../../../../data/countries"
-import Select from "../../Select/Select"
+import SelectSimple from "../../SelectSimple/SelectSimple"
 import Label from "../../Label/Label"
 
 /**
@@ -31,7 +31,7 @@ const PhoneInput = React.forwardRef(
         <Wrap {...otherProps}>
           {showCountryCode && (
             <CountryCode>
-              <Select
+              <SelectSimple
                 {...otherProps}
                 items={countries}
                 itemToString={item => `+${item.code}`}
@@ -46,11 +46,15 @@ const PhoneInput = React.forwardRef(
                     onCountryChange(country)
                   }
                 }}
-              />
+              >
+                {countries.map(country => (
+                  <option key={country}>{country}</option>
+                ))}
+              </SelectSimple>
             </CountryCode>
           )}
           <PInput
-            type={"tel"}
+            type="tel"
             ref={ref}
             options={{
               phone: true,
