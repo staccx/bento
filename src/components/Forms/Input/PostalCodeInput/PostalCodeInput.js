@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react"
-import axios from "axios"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import Input, { InputPropTypes } from "../Input"
 import Loading from "../../../DataViz/Loading/Loading"
-import { FadeIn } from "@staccx/animations"
+import { FadeIn } from "../../../../animations"
 import {
   applyVariants,
   spacing,
@@ -13,74 +12,27 @@ import {
   font
 } from "../../../../theming"
 import { themePropTypes } from "../../../../constants/themeContants"
-
-const axiosInstance = axios.create({
-  baseURL: `https://api.bring.com/shippingguide/api`
-})
-
-function getAxiosOptions() {
-  const opt = {
-    transformRequest: [
-      function(data, headers) {
-        delete headers.common.Authorization
-        return data
-      }
-    ]
-  }
-  return opt
-}
+import { usePostalCode } from "../../../../hooks/usePostalCode/usePostalCode"
+import Alert from "../../../Alert/Alert"
 
 /**
  * Input for Norwegian Postal codes. Adds PostalPlace according to the number. Input is imported from Input-component
  */
 const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
-  const [place, setPlace] = useState(null)
-  const [postalCode, setPostalCode] = useState(defaultValue)
-  const [isLoading, setIsLoading] = useState(false)
   const inputRef = useRef(null)
-
-  const getPostalPlace = async () => {
-    setIsLoading(true)
-    try {
-      const place = await axiosInstance
-        .get(
-          `/postalCode.json?clientUrl=${window.location.href}&pnr=${postalCode}`,
-          getAxiosOptions()
-        )
-        .then(result => result.data)
-      setPlace(place)
-    } catch (e) {
-      console.error(e)
-    }
-
-    setIsLoading(false)
-  }
+  const [input, setInput] = useState(defaultValue)
+  const [place, error] = usePostalCode(input)
 
   const handleChange = e => {
     const { rawValue: value } = e.target
-    setPostalCode(value)
+    setInput(value)
   }
 
   useEffect(() => {
-    if (postalCode && !isNaN(postalCode) && postalCode.length >= 4) {
-      getPostalPlace(postalCode)
-    } else {
-      setPlace(null)
-    }
-  }, [postalCode])
-
-  useEffect(() => {
-    if (onChange) {
-      onChange({ place, postalCode })
-    }
-  }, [place, postalCode])
-
-  useEffect(() => {
-    if (postalCode !== defaultValue) {
-      setPostalCode(defaultValue)
+    if (inputRef.current && defaultValue) {
       inputRef.current.setRawValue(defaultValue)
     }
-  }, [defaultValue])
+  }, [inputRef, defaultValue])
 
   return (
     <PostalInputWrapper variant={variant}>
@@ -94,7 +46,8 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
         onChange={handleChange}
         ref={inputRef}
       />
-      {isLoading && <Loading />}
+      {error && <Alert type={"warning"}>Error</Alert>}
+      {!place && input?.length && <Loading />}
       {place && (
         <Location valid={place.valid} variant={variant}>
           {place.result}
@@ -148,7 +101,6 @@ const PostalInput = styled(Input)`
   ${applyVariants(PostalCodeInput.themeProps.input)};
 `
 
-// TODO: debounce calls?
 PostalCodeInput.propTypes = {
   ...InputPropTypes,
   locale: PropTypes.oneOf(["nb"]),
