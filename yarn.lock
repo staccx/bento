@@ -297,7 +297,7 @@
     "@babel/helper-remap-async-to-generator" "^7.7.4"
     "@babel/plugin-syntax-async-generators" "^7.7.4"
 
-"@babel/plugin-proposal-class-properties@7.7.4", "@babel/plugin-proposal-class-properties@^7.3.0", "@babel/plugin-proposal-class-properties@^7.7.0":
+"@babel/plugin-proposal-class-properties@7.7.4", "@babel/plugin-proposal-class-properties@^7.7.0", "@babel/plugin-proposal-class-properties@^7.7.4":
   version "7.7.4"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.7.4.tgz#2f964f0cb18b948450362742e33e15211e77c2ba"
   integrity sha512-EcuXeV4Hv1X3+Q1TsuOmyyxeTRiSqurGJ26+I/FW1WbymmRRapVORm6x1Zl3iDIHyRxEs+VXWp6qnlcfcJSbbw==
@@ -382,6 +382,14 @@
   version "7.7.4"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-optional-chaining/-/plugin-proposal-optional-chaining-7.7.4.tgz#3f04c2de1a942cbd3008324df8144b9cbc0ca0ba"
   integrity sha512-JmgaS+ygAWDR/STPe3/7y0lNlHgS+19qZ9aC06nYLwQ/XB7c0q5Xs+ksFU3EDnp9EiEsO0dnRAOKeyLHTZuW3A==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-syntax-optional-chaining" "^7.7.4"
+
+"@babel/plugin-proposal-optional-chaining@^7.7.5":
+  version "7.7.5"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-optional-chaining/-/plugin-proposal-optional-chaining-7.7.5.tgz#f0835f044cef85b31071a924010a2a390add11d4"
+  integrity sha512-sOwFqT8JSchtJeDD+CjmWCaiFoLxY4Ps7NjvwHC/U7l4e9i5pTRNt8nDMIFSOUL+ncFbYSwruHM8WknYItWdXw==
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-optional-chaining" "^7.7.4"
