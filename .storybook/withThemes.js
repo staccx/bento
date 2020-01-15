@@ -54,6 +54,7 @@ export const ThemeSwitcher = ({ api }) => {
     title: getName(theme),
     onClick: () => {
       setTheme(themes[index]);
+      window.theme = themes[index]
       setLocalTheme({ api, theme: index, rerender: true });
     },
     right: <ThemeIcon theme={theme}/>,

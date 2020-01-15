@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import { ThemeProvider } from "styled-components"
 import RadioPill from "@staccx/base/src/components/Forms/RadioPill/RadioPill";
 import RadioPillItem from "@staccx/base/src/components/Forms/RadioPill/RadioPill.Item";
@@ -12,9 +12,15 @@ const ThemesProvider = ({themes, initialTheme = null, story}) => {
   const [theme, setTheme] = useState(index ? themes[index] : themes[0])
 
   const handleTheme = e => {
-    window.localStorage.setItem(key, e.target.value)
-    setTheme(themes[e.target.value])
+      window.localStorage.setItem(key, e.target.value)
+      setTheme(themes[e.target.value])
+      window.theme = themes[e.target.value]
   }
+
+  useEffect(() => {
+    window.theme = theme
+console.log("set theme")
+  }, [])
   return (
     <ThemeProvider theme={theme}>
     <React.Fragment>

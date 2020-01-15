@@ -4,7 +4,5 @@ import PhoneInput from "./PhoneInput"
 
 storiesOf("components|base/Forms/Input/PhoneInput", module).add(
   "no props",
-  () => {
-    return <PhoneInput label={"PhoneInput"} id="9852145" />
-  }
+  () => <PhoneInput label={"PhoneInput"} id="9852145" />
 )

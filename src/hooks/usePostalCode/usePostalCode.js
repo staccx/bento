@@ -1,5 +1,5 @@
 import useDebounce from "../useDebounce"
-import { useRequest } from "../useRequest"
+import { useRequest } from "../useRequest/useRequest"
 
 export const usePostalCode = (
   code,
