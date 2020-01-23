@@ -37,3 +37,8 @@ export * as theming from "./theming"
  * Utils
  */
 export * as utils from "./utils"
+
+/**
+ * Utils
+ */
+export * as i18n from "./i18n"

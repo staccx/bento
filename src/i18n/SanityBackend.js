@@ -50,7 +50,7 @@ const Backend = {
     console.log("TODO:", "create new entry if missing", key)
     if (typeof languages === "string") languages = [languages]
 
-    let payload = {}
+    const payload = {}
     payload[key] = fallbackValue || ""
 
     languages.forEach(lng => {

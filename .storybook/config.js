@@ -9,11 +9,7 @@ import { withTheme } from "./withThemes"
 
 // const req = require.context('../packages', true, /\.stories\.js$/);
 
-function loadStories() {
-  require("../stories/index.js")
-  require("../stories/stories.generated.js")
-  // req.keys().forEach(filename => req(filename));
-}
+
 
 // Option defaults.
 addParameters({
@@ -51,4 +47,3 @@ addDecorator(
   })
 )
 addDecorator(withA11y)
-configure(loadStories, module)
