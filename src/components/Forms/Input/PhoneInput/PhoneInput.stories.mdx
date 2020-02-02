@@ -1,5 +1,5 @@
 import PhoneInput from "./PhoneInput"
-import { ThemeProvider } from "styled-components"
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 
 <Meta title="Components|Forms/Input/PhoneInput" component={PhoneInput} />
 
@@ -7,9 +7,7 @@ import { ThemeProvider } from "styled-components"
 <Props of={PhoneInput} />
 
 <Story name="default">
-<ThemeProvider theme={window.theme || {}}>
   <PhoneInput id="test" label="Telefonnummer" />
-  </ThemeProvider>
  </Story>
 
 
