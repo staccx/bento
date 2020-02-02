@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/stacc-flow/bento.git"
+    "url": "git@github.com:staccx/bento.git"
   },
   "files": [
     "lib"
@@ -22,7 +22,7 @@
   "main": "lib/index.js",
   "author": "",
   "license": "UNLICENSED",
-  "homepage": "https://bitbucket.org/stacc-flow/bento#readme",
+  "homepage": "https://github.com/staccx/bento/blob/master/README.md",
   "description": "",
   "devDependencies": {
     "@babel/cli": "^7.8.3",
