@@ -116,6 +116,8 @@
   "peerDependencies": {
     "styled-components": "^4.4.1"
   },
+  "publishConfig": {
+  },
   "jest": {
     "transform": {
       "^.+\\.[tj]sx?$": "babel-jest",
