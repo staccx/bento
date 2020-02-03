@@ -10,7 +10,7 @@
     "start": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 9009",
-    "publish": "yarn build && npm publish"
+    "prepare": "yarn build"
   },
   "repository": {
     "type": "git",
