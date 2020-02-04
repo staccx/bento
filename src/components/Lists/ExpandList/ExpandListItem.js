@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { BounceIn } from "@staccx/animations"
+import { BounceIn } from "../../../animations"
 import Caret from "../../Icons/Caret"
 import {
   commonPropTypes,
@@ -79,6 +79,7 @@ class ExpandListItem extends Component {
       this.props.onClick(event)
     }
   }
+
   render() {
     const {
       title,

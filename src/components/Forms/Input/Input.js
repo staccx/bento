@@ -22,10 +22,10 @@ import {
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 import QuestionMark from "../../Icons/QuestionMark"
-import { FadeIn } from "@staccx/animations"
+import { FadeIn } from "../../../animations"
 
 const HelpBox = ({ onClick }) => (
-  <HelpButton onClick={onClick} type={"button"}>
+  <HelpButton onClick={onClick} type="button">
     <QuestionMark />
   </HelpButton>
 )

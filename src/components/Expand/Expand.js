@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { BounceIn } from "@staccx/animations"
+import { BounceIn } from "../../animations"
 import Caret from "../Icons/Caret"
 import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
 import ThemeComponent from "../Theme/ThemeComponent"

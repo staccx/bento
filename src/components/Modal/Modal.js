@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import hideVisually from "../../theming/styles/hideVisually"
 import IconClose from "../Icons/Close"
-import { FadeIn } from "@staccx/animations"
+import { FadeIn } from "../../animations"
 import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
 import {
   spacing,
@@ -62,6 +62,7 @@ class Modal extends Component {
   componentDidMount() {
     document.addEventListener("keydown", this.escFunction, false)
   }
+
   componentWillUnmount() {
     document.removeEventListener("keydown", this.escFunction, false)
   }
@@ -72,7 +73,7 @@ class Modal extends Component {
     this.fixOverflow()
     if (isOpen) {
       return (
-        <React.Fragment>
+        <>
           <ModalItem
             className={className}
             {...otherProps}
@@ -101,7 +102,7 @@ class Modal extends Component {
             </ModalContent>
           </ModalItem>
           <ModalBackdrop onClick={this.handleChange} variant={variant} />
-        </React.Fragment>
+        </>
       )
     }
     return null
