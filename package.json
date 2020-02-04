@@ -21,9 +21,12 @@
     "lib"
   ],
   "main": "lib/bento.js",
+  "jsnext:main": "lib/bento.js",
+  "module": "lib/bento.js",
   "author": "",
   "license": "UNLICENSED",
   "homepage": "https://github.com/staccx/bento/blob/master/README.md",
+  "sideEffects": false,
   "description": "",
   "devDependencies": {
     "@babel/cli": "^7.8.3",
