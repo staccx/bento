@@ -1,6 +1,6 @@
 {
   "name": "@staccx/bento",
-  "version": "10.0.1-alpha.1",
+  "version": "10.0.1-alpha.2",
   "scripts": {
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false --verbose --coverage",
