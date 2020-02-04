@@ -1,5 +1,5 @@
-import SanityBlockContent from "../../sanity/components/SanityBlockContent"
-import Text from "../Text/Text/Text"
+import SanityBlockContent from "../sanity/components/SanityBlockContent"
+import Text from "../components/Text/Text/Text"
 import React from "react"
 
 export const isBlock = item =>

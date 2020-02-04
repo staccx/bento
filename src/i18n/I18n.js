@@ -8,7 +8,7 @@ import React, {
 import i18next from "i18next"
 import PropTypes from "prop-types"
 import loglevel from "loglevel"
-import { formatCurrency } from "../../formatting/currency"
+import { formatCurrency } from "../formatting/currency"
 
 const I18nContext = createContext({})
 

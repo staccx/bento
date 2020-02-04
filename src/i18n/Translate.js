@@ -1,7 +1,7 @@
 import React from "react"
 import loglevel from "loglevel"
 import { useI18n } from "./I18n"
-import { commonPropTypes } from "../../constants/themeContants"
+import { commonPropTypes } from "../constants/themeContants"
 import { getComponent } from "./utils"
 
 const handleArray = (value, data, children, translate) => {
