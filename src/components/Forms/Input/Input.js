@@ -83,6 +83,7 @@ const Input = React.forwardRef(
         console.log("setting default value")
         setRawValue(defaultValue)
       }
+      // eslint-disable-next-line
     }, [])
 
     return (
