@@ -1,0 +1,8 @@
+{
+  "name": "bento",
+  "version": 2,
+  "alias": [
+    "bento.stac.cx"
+  ],
+  "scope": "staccx"
+}

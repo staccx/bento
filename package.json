@@ -8,7 +8,7 @@
     "build:watch": "export NODE_ENV='development' && nodemon --watch src/ --exec \"babel src -d dist\"",
     "storybook:genreq": "node stories/generateRequireStories",
     "start": "start-storybook -p 9009",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -c .storybook -o build",
     "storybook": "start-storybook -p 9009",
     "prepare": "yarn build",
     "alpha": "npm version prerelease --preid=alpha && npm publish"
