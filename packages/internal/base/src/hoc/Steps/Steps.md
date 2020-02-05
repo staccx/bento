@@ -1,2 +1,0 @@
-# Steps
-`the stepping wizard`
