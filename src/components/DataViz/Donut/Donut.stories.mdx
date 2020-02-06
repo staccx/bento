@@ -3,10 +3,12 @@ import Donut from "./Donut.js"
 
 <Meta title="Components|DataViz/Donut" component={Donut}/>
 
-# Stories for Donut
+# Donut
 
+range from 0-1
 
 ## Donut with progress 0%
+
 <Preview>
   <Story name="0%">
    <Donut progress="0"/>
@@ -33,6 +35,7 @@ import Donut from "./Donut.js"
 
 
 ## Donut with progress 110%
+This gives wierdness because progress is above 1/100%
 <Preview>
   <Story name="110%">
    <Donut progress="1.1"/>
@@ -41,6 +44,7 @@ import Donut from "./Donut.js"
 
 
 ## Donut with progress -10%
+Progress less than 0 will return wierdness
 <Preview>
   <Story name="-10%">
    <Donut progress="-0.1"/>

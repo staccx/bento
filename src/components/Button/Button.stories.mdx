@@ -4,15 +4,49 @@ import Button from "./Button"
 <Meta title="Components|Button" component={Button}/>
 
 
-# Tester dette!
+# Button
+Forklaring på hva det er og hvordan den kan brukes
+
+
+# import
+
+````javascript
+Import {Button} from "@staccx/bento"
+````
+
+# Types of buttons
+
+
+## Standard Button
+This is the standard button
+
 <Preview>
   <Story name="Standard">
-   <Button>Knapp</Button>-
+   <Button>Knapp</Button>
   </Story>
 </Preview>
 
-<Story name="test">
- <Button>Knapp</Button>
-</Story>
 
+## Two buttons
+check console for onClick event
+
+<Preview>
+  <Story name="Two Buttons">
+  <>
+   <Button>Knapp</Button>
+   <Button>Knapp</Button>
+   </>
+  </Story>
+</Preview>
+
+## Long String
+<Preview>
+  <Story name="Long String">
+   <Button>KnappKnappKnappKnappKnappKnappKnappKnappKnappKnappKnappKnappKnappKnappKnapp</Button>
+  </Story>
+</Preview>
+
+
+
+# Props for button
 <Props of={Button} />
