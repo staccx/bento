@@ -49,13 +49,13 @@ const AccountInfoDeposit = ({ account }) => (
       <Text variant="strong">
         <TranslatedText i18nKey="effektiv-rente" fallback="Effektiv rente" />
       </Text>
-      <div>{account.effectiveRate}%</div>
+      <div>{formatCurrency(account.effectiveRate, { precision: 2 })}%</div>
     </SplitListItem>
     <SplitListItem variant="accountInfoListItem">
       <Text variant="strong">
         <TranslatedText i18nKey="nominell-rente" fallback="Nominell rente" />
       </Text>
-      <div>{account.interestRate}%</div>
+      <div>{formatCurrency(account.interestRate, { precision: 2 })}%</div>
     </SplitListItem>
   </React.Fragment>
 )
