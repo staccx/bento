@@ -1,0 +1,51 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import CheckBox from "./CheckBox.js"
+
+<Meta title="Components|Forms/CheckBox" component={CheckBox}/>
+
+# Stories for CheckBox
+```javascript
+import Checkbox from "@staccx/bento"
+```
+
+## Checkbox
+<Preview>
+  <Story name="Checkbox">
+   <CheckBox id={"ID"}>
+           CheckBox
+         </CheckBox>
+  </Story>
+</Preview>
+
+## Checkbox disabled
+<Preview>
+  <Story name="Checkbox disabled">
+   <CheckBox id={"ID1"} disabled>
+           CheckBox
+         </CheckBox>
+  </Story>
+</Preview>
+
+## Checkbox default checked 
+<Preview>
+  <Story name="Checkbox default checked">
+   <CheckBox id={"ID2"} defaultChecked>
+           CheckBox
+         </CheckBox>
+  </Story>
+</Preview>
+
+
+## Checkbox ConsoleLog on change 
+<Preview>
+  <Story name="Checkbox ConsoleLog">
+   <CheckBox id={"ID3"} onChange={e => console.log("test", e.target.value, e.target.id)}>
+           CheckBox
+         </CheckBox>
+  </Story>
+</Preview>
+
+
+
+
+<Props of={CheckBox} />
