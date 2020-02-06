@@ -1,0 +1,167 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import KeyFigures from "./Keyfigures.js"
+
+<Meta title="Components|DataViz/Keyfigures" component={KeyFigures}/>
+
+# Stories for Keyfigures
+
+## Keyfigures with Normal numbers
+
+<Preview>
+  <Story name="Normal numbers">
+      <KeyFigures
+              figures={[
+                {
+                  label: "Label",
+                  amount: 45854,
+                  key: 546456 + "booked"
+                },
+                {
+                  label: "Tilgjengelig",
+                  amount: 456486,
+                  key: 56456 + "available"
+                },
+                {
+                  label: "Annen sum",
+                  amount: 346,
+                  key: 364 + "available"
+                }
+              ]}
+            />    
+  </Story>
+</Preview>
+
+
+## Keyfigures with low numbers
+
+<Preview>
+  <Story name="Low numbers">
+      <KeyFigures
+              figures={[
+                {
+                            label: "Label",
+                            amount: 1,
+                            key: 1 + "booked"
+                          },
+                          {
+                            label: "Tilgjengelig",
+                            amount: 2,
+                            key: 2 + "available"
+                          },
+                          {
+                            label: "Annen sum",
+                            amount: 3,
+                            key: 3 + "available"
+                          }
+              ]}
+            />    
+  </Story>
+</Preview>
+
+## Keyfigures with high numbers
+
+<Preview>
+  <Story name="High numbers">
+      <KeyFigures
+              figures={[
+                {
+                            label: "Label",
+                            amount: 10000000000,
+                            key: 10000000000 + "booked"
+                          },
+                          {
+                            label: "Tilgjengelig",
+                            amount: 20000000000,
+                            key: 20000000000 + "available"
+                          },
+                          {
+                            label: "Annen sum",
+                            amount: 30000000000,
+                            key: 30000000000 + "available"
+                          }
+              ]}
+            />    
+  </Story>
+</Preview>
+
+
+## Keyfigures with Long Labels and hight numbers
+
+<Preview>
+  <Story name="Long Labels and hight numbers">
+      <KeyFigures
+              figures={[
+                {
+                            label: "LabelLabelLabelLabelLabelLabelLabelLabelLabel",
+                            amount: 10000000000,
+                            key: 10000000000 + "booked"
+                          },
+                          {
+                            label: "TilgjengeligTilgjengeligTilgjengeligTilgjengeligTilgjengelig",
+                            amount: 20000000000,
+                            key: 20000000000 + "available"
+                          },
+                          {
+                            label: "Annen sumAnnen sumAnnen sumAnnen sumAnnen sumAnnen sum",
+                            amount: 30000000000,
+                            key: 30000000000 + "available"
+                          }
+              ]}
+            />    
+  </Story>
+</Preview>
+
+## Keyfigures with Long Labels and short numbers
+
+<Preview>
+  <Story name="Long Labels and short numbers">
+      <KeyFigures
+              figures={[
+                {
+                            label: "LabelLabelLabelLabelLabelLabelLabelLabelLabel",
+                            amount: 1,
+                            key: 1 + "booked"
+                          },
+                          {
+                            label: "TilgjengeligTilgjengeligTilgjengeligTilgjengeligTilgjengelig",
+                            amount: 2,
+                            key: 2 + "available"
+                          },
+                          {
+                            label: "Annen sumAnnen sumAnnen sumAnnen sumAnnen sumAnnen sum",
+                            amount: 3,
+                            key: 3 + "available"
+                          }
+              ]}
+            />    
+  </Story>
+</Preview>
+
+## Keyfigures with short labels
+
+<Preview>
+  <Story name="Short Labels">
+      <KeyFigures
+              figures={[
+                {
+                            label: "L",
+                            amount: 10000000000,
+                            key: 10000000000 + "booked"
+                          },
+                          {
+                            label: "Ti",
+                            amount: 20000000000,
+                            key: 20000000000 + "available"
+                          },
+                          {
+                            label: "Ann",
+                            amount: 30000000000,
+                            key: 30000000000 + "available"
+                          }
+              ]}
+            />    
+  </Story>
+</Preview>
+
+
+<Props of={KeyFigures} />
