@@ -1,0 +1,76 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Donut from "./Donut.js"
+
+<Meta title="Components|DataViz/Donut" component={Donut}/>
+
+# Stories for Donut
+
+
+## Donut with progress 0%
+<Preview>
+  <Story name="0%">
+   <Donut progress="0"/>
+  </Story>
+</Preview>
+
+   
+## Donut with progress 50%
+<Preview>
+  <Story name="50%">
+   <Donut progress="0.5"/>
+  </Story>
+</Preview>
+
+
+
+## Donut with progress 100%
+<Preview>
+  <Story name="100%">
+   <Donut progress="1"/>
+  </Story>
+</Preview>
+
+
+
+## Donut with progress 110%
+<Preview>
+  <Story name="110%">
+   <Donut progress="1.1"/>
+  </Story>
+</Preview>
+
+
+## Donut with progress -10%
+<Preview>
+  <Story name="-10%">
+   <Donut progress="-0.1"/>
+  </Story>
+</Preview>
+
+## Donut with threshold set to 10%
+<Preview>
+    <Story name="Threshold low">
+       <Donut progress="0.2" warningThreshold="0.1"/>
+     </Story>
+</Preview>
+
+
+## Donut with threshold set to -10%
+<Preview>
+    <Story name="Threshold under 0%">
+       <Donut progress="0.2" warningThreshold="-0.1"/>
+     </Story>
+</Preview>
+
+
+## Donut with threshold set to over 100%
+<Preview>
+    <Story name="Threshold over 100%">
+       <Donut progress="1" warningThreshold="1.5"/>
+     </Story>
+</Preview>           
+
+
+<Props of={Donut} />
+
+
