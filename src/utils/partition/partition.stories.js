@@ -1,7 +1,7 @@
 import React from "react"
 import { storiesOf } from "@storybook/react"
 import partition from "./partition"
-import { Text } from "./__storyComponents"
+import { Text } from "../__storyComponents"
 
 const data = new Array(10).fill(0).map(i => ({
   isVisible: Math.random() > 0.5
