@@ -1,0 +1,76 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import ProgressBar from "./ProgressBar.js"
+
+<Meta title="Components|DataViz/ProgressBar" component={ProgressBar}/>
+
+# Stories for ProgressBar
+
+
+## ProgressBar with progress 0%
+<Preview>
+  <Story name="0%">
+   <ProgressBar progress="0"/>
+  </Story>
+</Preview>
+
+   
+## ProgressBar with progress 50%
+<Preview>
+  <Story name="50%">
+   <ProgressBar progress="0.5"/>
+  </Story>
+</Preview>
+
+
+
+## ProgressBar with progress 100%
+<Preview>
+  <Story name="100%">
+   <ProgressBar progress="1"/>
+  </Story>
+</Preview>
+
+
+
+## ProgressBar with progress 110%
+<Preview>
+  <Story name="110%">
+   <ProgressBar progress="1.1"/>
+  </Story>
+</Preview>
+
+
+## ProgressBar with progress -10%
+<Preview>
+  <Story name="-10%">
+   <ProgressBar progress="-0.1"/>
+  </Story>
+</Preview>
+
+## ProgressBar with threshold set to 10%
+<Preview>
+    <Story name="Threshold low">
+       <ProgressBar progress="0.2" warningThreshold="0.1"/>
+     </Story>
+</Preview>
+
+
+## ProgressBar with threshold set to -10%
+<Preview>
+    <Story name="Threshold under 0%">
+       <ProgressBar progress="0.2" warningThreshold="-0.1"/>
+     </Story>
+</Preview>
+
+
+## ProgressBar with threshold set to over 100%
+<Preview>
+    <Story name="Threshold over 100%">
+       <ProgressBar progress="1" warningThreshold="1.5"/>
+     </Story>
+</Preview>           
+
+
+<Props of={ProgressBar} />
+
+
