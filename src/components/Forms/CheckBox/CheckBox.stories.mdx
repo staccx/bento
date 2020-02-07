@@ -3,7 +3,12 @@ import CheckBox from "./CheckBox.js"
 
 <Meta title="Components|Forms/CheckBox" component={CheckBox}/>
 
-# Stories for CheckBox
+# CheckBox
+The Checkbox is shown as a square box that is checked when activated.
+Checkboxes are used to let a user select one or more options of a limited number of choices.
+
+# Import 
+
 ```javascript
 import Checkbox from "@staccx/bento"
 ```
@@ -45,7 +50,35 @@ import Checkbox from "@staccx/bento"
   </Story>
 </Preview>
 
+## Multiple Checkboxes
+Each CheckBox needs an individual unique id for it to work as expected. When you have multiple checkboxes 
+it is also normal to place them in a group, assigning them to eachother. 
+
+<Preview>
+    <Story name="Multiple">
+    <>
+        <CheckBox id="1ID" group="test">Checkbox 1 </CheckBox>
+        <CheckBox id="2ID" group="test">Checkbox 2 </CheckBox>
+        </>
+    </Story>
+</Preview>
+
+# Pitfalls
+Here are examples of pitfalls you can encounter using the Checkbox component.
+
+## Same ID
+two Checkboxes are created with the same ID they will check and uncheck only the first checkbox with that ID
+
+<Preview>
+    <Story name="Same ID">
+    <>
+        <CheckBox id="1">Checkbox 1 </CheckBox>
+        <CheckBox id="1">Checkbox 2 </CheckBox>
+        </>
+    </Story>
+</Preview>
 
 
+# Props for Checkbox
 
 <Props of={CheckBox} />

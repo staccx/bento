@@ -186,13 +186,31 @@ const Label = styled.label`
 
 CheckBox.propTypes = {
   children: commonPropTypes.children.isRequired,
+  /**
+   * If set to true, it cannot be checked
+   */
   disabled: PropTypes.bool,
+  /**
+   * Used to group together multiple checkboxes
+   */
   group: PropTypes.string,
+  /**
+   * Refers to the spesific checkbox, must be unique
+   */
   id: PropTypes.string.isRequired,
   input: PropTypes.any,
+  /**
+   * allows you to preform an action when the component changes
+   */
   onChange: PropTypes.func,
   className: PropTypes.string,
+  /**
+   * if set to true, the component wil render as checked
+   */
   defaultChecked: PropTypes.bool,
+  /**
+   * Allows you to alter the checkmark
+   */
   checkIcon: PropTypes.element,
   ignoreBase: PropTypes.func
 }
