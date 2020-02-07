@@ -4,24 +4,31 @@ import Odometer from "./Odometer.js"
 <Meta title="Components|Formatters/Odometer" component={Odometer}/>
 
 # Stories for Odometer
+Displays numbers, and when they change it rolls up to the new value
+
+# Import
+
+```javascript
+Import {Odometer} from "@staccx/bento"
+```
 
 ## Odometer with number
 <Preview>
-  <Story name="number: 1000">
+  <Story name="Default">
    <Odometer number="1000"/>
   </Story>
 </Preview>
 
 ## Odometer with high number
 <Preview>
-  <Story name="Number: 10000000">
+  <Story name="High number">
    <Odometer number="10000000"/>
   </Story>
 </Preview>
 
 ## Odometer with low Number
 <Preview>
-  <Story name="Number: 1">
+  <Story name="Low number">
    <Odometer number="1"/>
   </Story>
 </Preview>
@@ -47,12 +54,7 @@ import Odometer from "./Odometer.js"
   </Story>
 </Preview>
 
-## Odometer with very large size
-<Preview>
-  <Story name="Very large size">
-   <Odometer number="100000" size={400}/>
-  </Story>
-</Preview>
 
 
+# Props for Odometer
 <Props of={Odometer}/>

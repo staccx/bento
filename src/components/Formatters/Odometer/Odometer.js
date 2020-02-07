@@ -131,11 +131,20 @@ const OdometerWrapper = styled.div`
 // TODO: Add support for strings?
 Odometer.propTypes = {
   /**
-   * Value to tween to
+   * The value it rolls to
    */
   number: PropTypes.number.isRequired,
+  /**
+   * Number seperator, normaly used as thousand seperator
+   */
   separatorSteps: PropTypes.number,
+  /**
+   * Speed of the rolling numbers
+   */
   speed: PropTypes.number,
+  /**
+   * Size of the number displayed
+   */
   size: PropTypes.number.isRequired
 }
 
