@@ -1,0 +1,113 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks"
+import Breadcrumb from "./Breadcrumb"
+
+<Meta title="Components|Breadcrumb" component={Breadcrumb} />
+
+# Breadcrumb
+
+Breadcrumb is a type of secondary navigation scheme that 
+reveals the user’s location in a website or Web application.
+Breadcrumbs offer users a way to trace the path back to their original landing point.
+
+# import
+
+```javascript
+Import {Breadcrumb} from "@staccx/bento"
+```
+
+# Types of Breadcrumbs
+
+## Standard Breadcrumb
+
+This is a breadcrumb showing the user that they are at the forth page in the line
+
+<Preview>
+  <Story name="Standard">
+    <Breadcrumb
+            path={[
+              {
+                name: "First page",
+                to: "/"
+              },
+              {
+                name: "Second page",
+                to: "/level-2"
+              },
+              {
+                name: "Third page",
+                to: "/level-3"
+              },
+              {
+                name: "Fourth page"
+              }
+            ]}
+          />
+  </Story>
+</Preview>
+
+## Multiple Breadcrumbs
+Displaying breadcrumbs for mulitple pages. Each of these would be at their own page, showing the uses its
+progression through the application
+
+<Preview>
+  <Story name="Multiple breadcrumbs">
+  <>
+    <Breadcrumb
+            path={[
+              {
+                name: "First page",
+              }
+            ]}
+          />
+   <Breadcrumb
+          path={[
+            {
+               name: "First page",
+               to: "/"
+            },
+            {
+               name: "Second page",
+            }
+               ]}
+            />
+   <Breadcrumb
+          path={[
+            {
+               name: "First page",
+               to: "/"
+            },
+            {
+               name: "Second page",
+               to: "/level-2"
+            },
+            {
+               name: "Third page",
+            }
+               ]}
+            />
+       <Breadcrumb
+            path={[
+            {
+             name: "First page",
+             to: "/"
+            },
+            {
+              name: "Second page",
+              to: "/level-2"
+            },
+            {
+              name: "Third page",
+              to: "/level-3"
+            },
+            {
+              name: "Fourth page"
+            }
+               ]}
+            />
+          </>
+  </Story>
+</Preview>
+
+# Props for Breadcrumb
+
+<Props of={Breadcrumb} />

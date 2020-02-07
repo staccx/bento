@@ -207,9 +207,18 @@ const Link = styled.a`
 const LastItemContent = styled.div`
   ${linkStyle};
 `
+const defaultProps = {
+  path: [{}]
+}
 
 Breadcrumb.propTypes = {
+  /**
+   * Takes an array of objects, each object having a name and to string
+   * name is what will be displayed on the breadcrumb
+   * to is the URL link
+   */
   path: PropTypes.array.isRequired
 }
+Breadcrumb.defaultProps = defaultProps
 
 export default Breadcrumb
