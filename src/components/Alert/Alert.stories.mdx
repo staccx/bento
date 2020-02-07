@@ -1,0 +1,57 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks"
+import Alert from "./Alert"
+
+<Meta title="Components|Alert" component={Alert} />
+
+# Alert
+
+Simple component for rendering an alert giving users feedback based on the result of an action
+
+# import
+
+```javascript
+Import {Alert} from "@staccx/bento"
+```
+
+# Types of Alerts
+
+## Warning alert
+
+<Preview>
+  <Story name="Warning">
+    <Alert type="warning">This is a warning!</Alert>
+  </Story>
+</Preview>
+
+## Success alert
+
+<Preview>
+  <Story name="Success">
+    <Alert type="success">Success, something has happend!</Alert>
+  </Story>
+</Preview>
+
+## Info alert
+
+<Preview>
+  <Story name="Info">
+    <Alert type="info">This is a piece of information</Alert>
+  </Story>
+</Preview>
+
+## All alerts
+
+<Preview>
+  <Story name="All">
+  <>
+    <Alert type="warning">Something has gone wrong!</Alert>
+    <Alert type="success">success, the item is sendt!</Alert>
+    <Alert type="info">This is a piece of information</Alert>
+    </>
+  </Story>
+</Preview>
+
+
+# Props for Alert
+
+<Props of={Alert} />
