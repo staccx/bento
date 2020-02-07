@@ -3,8 +3,14 @@ import ProgressBar from "./ProgressBar.js"
 
 <Meta title="Components|DataViz/ProgressBar" component={ProgressBar}/>
 
-# Stories for ProgressBar
+# ProgressBar
+Displays progress from 0 to 100%, with warningThreshold. Default value for threshold set to 0.9
 
+# Import
+
+```javascript
+Import {ProgressBar} from "@staccx/bento"
+```
 
 ## ProgressBar with progress 0%
 <Preview>
@@ -30,23 +36,6 @@ import ProgressBar from "./ProgressBar.js"
   </Story>
 </Preview>
 
-
-
-## ProgressBar with progress 110%
-<Preview>
-  <Story name="110%">
-   <ProgressBar progress="1.1"/>
-  </Story>
-</Preview>
-
-
-## ProgressBar with progress -10%
-<Preview>
-  <Story name="-10%">
-   <ProgressBar progress="-0.1"/>
-  </Story>
-</Preview>
-
 ## ProgressBar with threshold set to 10%
 <Preview>
     <Story name="Threshold low">
@@ -54,8 +43,28 @@ import ProgressBar from "./ProgressBar.js"
      </Story>
 </Preview>
 
+# Different possible pitfalls 
+These are examples showing what happends if the component recieves props that are
+out of range
 
-## ProgressBar with threshold set to -10%
+## ProgressBar with progress over 100%
+<Preview>
+  <Story name="110%">
+   <ProgressBar progress="1.1"/>
+  </Story>
+</Preview>
+
+
+## ProgressBar with progress under 0%
+<Preview>
+  <Story name="-10%">
+   <ProgressBar progress="-0.1"/>
+  </Story>
+</Preview>
+
+
+
+## ProgressBar with threshold under 0%
 <Preview>
     <Story name="Threshold under 0%">
        <ProgressBar progress="0.2" warningThreshold="-0.1"/>
@@ -63,13 +72,14 @@ import ProgressBar from "./ProgressBar.js"
 </Preview>
 
 
-## ProgressBar with threshold set to over 100%
+## ProgressBar with threshold over 100%
 <Preview>
     <Story name="Threshold over 100%">
        <ProgressBar progress="1" warningThreshold="1.5"/>
      </Story>
 </Preview>           
 
+# Props for ProgressBar
 
 <Props of={ProgressBar} />
 

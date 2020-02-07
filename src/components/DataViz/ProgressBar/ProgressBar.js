@@ -92,9 +92,12 @@ ProgressBar.defaultProps = {
 
 ProgressBar.propTypes = {
   /**
-   * Progress normalized (0-1)
+   * Progress with rage from 0-1
    */
   progress: PropTypes.number.isRequired,
+  /**
+   * Warns the user when over threshold in range
+   */
   warningThreshold: PropTypes.number,
   className: PropTypes.string
 }
