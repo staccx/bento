@@ -104,11 +104,11 @@ Fraction.defaultProps = {
 
 Fraction.propTypes = {
   /**
-   * Value
+   * Value/Progress for component
    */
   value: PropTypes.number.isRequired,
   /**
-   * Max
+   * Max decides how long the component is
    */
   max: PropTypes.number.isRequired,
   maxComponent: PropTypes.element,
