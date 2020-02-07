@@ -3,7 +3,16 @@ import Expand from "./Expand.js"
 
 <Meta title="Components|Expand" component={Expand}/>
 
-# Stories for Expand
+# Expand
+
+Expand is a component that lets you simply create the posibility to have a heading with an onClick that displays 
+an underlying object
+
+# Import 
+
+```javascript
+Import {Expand} from "@staccx/bento"
+```
 
 ## Expand with span as element
 <Preview>
@@ -60,6 +69,9 @@ import Expand from "./Expand.js"
 </Preview>
 
 ## Expand without hideIcon
+The expand component a prop called hideIcon. This allowes you to remove or show the icon next to the text
+on the Expand element. Default for hideIcon is set to false
+
 <Preview>
   <Story name="Expand no hideIcon">
     <Expand hideIcon={true}>
@@ -71,7 +83,7 @@ import Expand from "./Expand.js"
   </Story>
 </Preview>
 
-## Expand with expanded as default
+## Expand that is expanded as default
 <Preview>
   <Story name="Expand expanded default">
     <Expand expanded={true}>
@@ -83,5 +95,7 @@ import Expand from "./Expand.js"
   </Story>
 </Preview>
 
+
+# Props for Expand
 
 <Props of={Expand}/>

@@ -162,13 +162,22 @@ Expand.defaultProps = {
 
 Expand.propTypes = {
   children: commonPropTypes.children.isRequired,
+  /**
+   * Title element
+   */
   title: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
     PropTypes.array
   ]),
   className: PropTypes.string,
+  /**
+   * Boolean, set to true opens the Expand
+   */
   expanded: PropTypes.bool,
+  /**
+   * Boolean, set to true hides the Icon
+   */
   hideIcon: PropTypes.bool
 }
 
