@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import useInterval from "../../../hooks/useInterval"
 import { applyVariants, color, font, spacing } from "../../../theming"
-import Loading from "../../DataViz/Loading/Loading"
+import Loading from "../Loading/Loading"
 import { themePropTypes } from "../../../constants/themeContants"
 
 const FullScreenLoader = ({

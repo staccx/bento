@@ -99,7 +99,13 @@ const SignalSpinner = styled.div`
   ${applyVariants(themeProps.loading.name)};
 `
 
-Loading.propTypes = { className: PropTypes.string, variant: PropTypes.string }
+Loading.propTypes = {
+  className: PropTypes.string,
+  /**
+   * Allows different styles
+   */
+  variant: PropTypes.string
+}
 Loading.themeProps = themeProps
 
 export default Loading

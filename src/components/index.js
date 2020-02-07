@@ -74,7 +74,7 @@ export { default as Fraction } from "./DataViz/Fraction/Fraction"
 export { default as Donut } from "./DataViz/Donut/Donut"
 export { default as KeyFigures } from "./DataViz/Keyfigures/Keyfigures"
 export { default as NewBadge } from "./NewBadge/NewBadge"
-export { default as Loading } from "./DataViz/Loading/Loading"
+export { default as Loading } from "./Loaders/Loading/Loading"
 
 // Loaders
 export { default as FullScreenLoader } from "./Loaders/FullScreenLoader/FullScreenLoader"

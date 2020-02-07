@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import Input, { InputPropTypes } from "../Input"
-import Loading from "../../../DataViz/Loading/Loading"
+import Loading from "../../../Loaders/Loading/Loading"
 import { FadeIn } from "../../../../animations"
 import {
   applyVariants,
@@ -37,7 +37,7 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   return (
     <PostalInputWrapper variant={variant}>
       <PostalInput
-        type={"text"}
+        type="text"
         pattern={"[0-9]{4}"}
         options={{ blocks: [4] }}
         defaultValue={defaultValue}
@@ -46,7 +46,7 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
         onChange={handleChange}
         ref={inputRef}
       />
-      {error && <Alert type={"warning"}>Error</Alert>}
+      {error && <Alert type="warning">Error</Alert>}
       {!place && input?.length && <Loading />}
       {place && (
         <Location valid={place.valid} variant={variant}>
