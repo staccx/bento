@@ -10,7 +10,7 @@ const CheckGroup = ({ children, group, onChange }) => {
   }
 
   return (
-    <React.Fragment>
+    <>
       {children.map(child =>
         React.cloneElement(child, {
           ...child.props,
@@ -18,13 +18,22 @@ const CheckGroup = ({ children, group, onChange }) => {
           group
         })
       )}
-    </React.Fragment>
+    </>
   )
 }
 
 CheckGroup.propTypes = {
+  /**
+   * Children of CheckGroup would normaly be CheckBox or radioButton
+   */
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  /**
+   * Name for the group, needed when you have multiple groups
+   */
   group: PropTypes.string.isRequired,
+  /**
+   * When something happends to the children, you can call a function
+   */
   onChange: PropTypes.func.isRequired
 }
 

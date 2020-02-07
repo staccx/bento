@@ -1,0 +1,64 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import CheckGroup from "./CheckGroup"
+import CheckBox from "../CheckBox/CheckBox.js"
+
+<Meta title="Components|Forms/CheckGroup" component={CheckGroup}/>
+
+
+# CheckGroup
+ This component acts as a wrapper for a group of CheckBoxes. This allows us to pick up all changes that happends
+ to every CheckBox inside the CheckGroup.
+
+# import
+
+```javascript
+Import {CheckGroup} from "@staccx/bento"
+```
+
+# Types of CheckGroups
+
+
+## Standard CheckGroup
+This a the standard CheckGroup
+
+<Preview>
+  <Story name="Standard">
+           <CheckGroup onChange={() => console.log("you checked")} group={"checkboxgroup1"}>
+             <CheckBox id="asdt43" key="key_vdvsew" value="Alpha">
+               Checkbox Alpha
+             </CheckBox>
+             <CheckBox id="nrff2" key="key_rthjn" value="Bravo">
+               Checkbox Bravo
+             </CheckBox>
+           </CheckGroup>
+  </Story>
+</Preview>
+
+## Large CheckGroup`
+
+
+<Preview>
+  <Story name="Large">
+           <CheckGroup onChange={() => console.log("you checked")} group={"checkboxgroup2"}>
+             <CheckBox id="asderft43" key="key_vdvsfevew" value="Alpha">
+               Checkbox Alpha
+             </CheckBox>
+             <CheckBox id="nrrefff2" key="key_rthfvefjn" value="Bravo">
+               Checkbox Bravo
+             </CheckBox>
+             <CheckBox id="wqdefeqwd" key="key_vdeergfsew" value="Charlie">
+                Checkbox Charlie
+              </CheckBox>
+             <CheckBox id="nrfeff2" key="key_refeergebgevgjn" value="Delta">
+                Checkbox Delta
+              </CheckBox>
+           </CheckGroup>
+  </Story>
+</Preview>
+
+
+
+
+
+# Props for CheckGroup
+<Props of={CheckGroup} />
