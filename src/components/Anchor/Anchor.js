@@ -34,11 +34,16 @@ export const AComponent = styled.a`
 `
 
 Anchor.defaultProps = {
-  className: ""
+  className: "",
+  href: ""
 }
 
 Anchor.propTypes = {
   children: commonPropTypes.children.isRequired,
+  /**
+   * URL prop
+   */
+  href: PropTypes.string,
   className: PropTypes.string
 }
 

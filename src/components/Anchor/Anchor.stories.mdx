@@ -1,0 +1,62 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Anchor from "./Anchor"
+
+<Meta title="Components|Anchor" component={Anchor}/>
+
+
+# Anchor
+Anchor is an HTML tag, that is used to define the beginning and end of a hypertext link.
+Anchor helps search engines to determine the subject matter of the destination URL.
+Users can click on the tag to react the link target, like with a normal `<a>` -tag 
+
+
+# import
+
+```javascript
+Import {Anchor} from "@staccx/bento"
+```
+
+# Types of Anchors
+
+
+## Standard Anchor
+This is the standard Anchor
+
+<Preview>
+  <Story name="Standard">
+   <Anchor href="https://www.stacc.com">Check out our page!</Anchor>
+  </Story>
+</Preview>
+
+
+## Inline anchor
+An achor tag will place itself inline with other text making it possible to create links
+inside text
+
+<Preview>
+  <Story name="Inline">
+  <p>
+    this text contains an Anchor tag, that you can click to get more 
+    information about the subject, 
+   <Anchor href="https://www.stacc.com"> check out our page!</Anchor>
+  </p>
+  </Story>
+</Preview>
+
+
+## Multiple anchors
+Multiple anchor tags will also place themselves inline with the other tags.
+
+<Preview>
+  <Story name="Multiple">
+    <>
+    <Anchor href="https://www.stacc.com">This is a link</Anchor>
+    <Anchor href="https://www.stacc.com">This is another</Anchor>
+    <Anchor href="https://www.stacc.com">this is a third </Anchor>
+  </>
+  </Story>
+</Preview>
+
+
+# Props for Anchor
+<Props of={Anchor} />
