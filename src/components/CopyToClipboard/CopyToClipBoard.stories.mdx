@@ -1,0 +1,34 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import CopyToClipboard from "./CopyToClipboard"
+
+<Meta title="Components|CopyToClipboard" component={CopyToClipboard}/>
+
+
+# CopyToClipboard
+This components is used when you would like the user to copy a text to the clipboard.
+The component must have a child component to make it functional.
+
+
+# import
+
+```javascript
+Import { CopyToClipboard } from "@staccx/bento"
+```
+
+# Types of clipboard
+There are variants of the CopyToClipboard.
+
+## Standard type
+This is the standard version of the CopyToClipboard component
+
+<Preview>
+  <Story name="Standard">
+   <CopyToClipboard copyText="This is the text you copied to your clipboard via the CopyToClickboard component!">
+      <p>Click me!</p>
+   </CopyToClipboard>
+  </Story>
+</Preview>
+
+
+# Props for CopyToClipboard
+<Props of={CopyToClipboard} />

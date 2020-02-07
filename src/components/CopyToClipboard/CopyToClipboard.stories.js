@@ -1,6 +1,6 @@
 import React from "react"
 import { storiesOf } from "@storybook/react"
-import Copy from "./CopyToClipboardComponent"
+import Copy from "./CopyToClipboard"
 import Text from "../Text/Text/Text"
 import docs from "./CopyToClipboard.md"
 
@@ -18,7 +18,7 @@ storiesOf("components|base/CopyToClipboard", module)
   .add(
     "with CopyText",
     () => (
-      <Copy copyText={"This is changed"}>
+      <Copy copyText="This is changed">
         <Text> This is some text</Text>{" "}
       </Copy>
     ),

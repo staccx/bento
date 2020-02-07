@@ -90,7 +90,13 @@ export const Copied = styled(CopiedComponent)`
   ${applyVariants(CopyToClipboardComponent.themeProps.icon)};
 `
 CopyToClipboardComponent.propTypes = {
+  /**
+   * The component must hava a child component, such as a button.
+   */
   children: commonPropTypes.children.isRequired,
+  /**
+   * The string you feed to the clipboard
+   */
   copyText: PropTypes.string.isRequired
 }
 export default CopyToClipboardComponent
