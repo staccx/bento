@@ -70,12 +70,19 @@ const Value = styled.circle`
 `
 
 Donut.defaultProps = {
+  progress: 0,
   className: "",
   warningThreshold: 0.9
 }
 
 Donut.propTypes = {
+  /**
+   * progress for the action range: 0-1
+   */
   progress: PropTypes.number.isRequired,
+  /**
+   * Component gives a warning (changes color) at this threshold
+   */
   warningThreshold: PropTypes.number,
   className: PropTypes.string
 }
