@@ -1,0 +1,51 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Form from "./Form"
+import FormField from "./FormField"
+
+<Meta title="Components|Forms/Form" component={Form}/>
+
+
+# Form
+Forklaring på hva det er og hvordan den kan brukes
+
+
+# import
+
+```javascript
+Import {Form} from "@staccx/bento"
+```
+
+# Types of Forms
+
+
+## Standard Form
+This is the standard Form
+
+<Preview>
+  <Story name="Standard">
+       <Form initialValues={{ epost: "" }} buttonText="Søk nå">
+             <FormField
+               name="epost"
+               type="email"
+               required
+               renderError={({ error, touched }) => (
+                 <span>
+                   {error} {touched}
+                 </span>
+               )}
+             >
+               {({ name, field, form }) => (
+                 <Input {...field} placeholder="ola@nordmann.no" id={name} />
+               )}
+             </FormField>
+           </Form>
+  </Story>
+</Preview>
+
+
+
+
+
+
+# Props for Form
+<Props of={Form} />
