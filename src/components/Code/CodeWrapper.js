@@ -62,7 +62,7 @@ const CodeWrapper = styled.pre`
   .attr-name {
     color: ${color("codeHTMLAttrName")};
   }
-  . ${applyVariants(themeProps.wrapper.name)};
+  ${applyVariants(themeProps.wrapper.name)};
 `
 
 CodeWrapper.themeProps = themeProps

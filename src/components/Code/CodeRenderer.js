@@ -52,10 +52,18 @@ class CodeRenderer extends Component {
   }
 }
 
-CodeRenderer.propTypes = {
+const propTypes = {
+  /**
+   * The string conatining the code
+   */
   code: PropTypes.string.isRequired,
+  /**
+   * The string conatining what type of code to display
+   */
   language: PropTypes.oneOf(["markup", "javascript", "java", "csharp"])
     .isRequired
 }
+
+CodeRenderer.propTypes = propTypes
 
 export default CodeRenderer
