@@ -104,7 +104,7 @@ export { default as Logo } from "./Logo/Logo"
 export { default as CodeRenderer } from "./Code/CodeRenderer"
 export { default as Table } from "./Table/Table"
 export { default as CopyToClipboard } from "../hoc/CopyToClipboard"
-export { default as CopyToClipboardComponent } from "./CopyToClipboard/CopyToClipboardComponent"
+export { default as CopyToClipboardComponent } from "./CopyToClipboard/CopyToClipboard"
 
 export { default as WebFonts } from "./Theme/WebFonts"
 

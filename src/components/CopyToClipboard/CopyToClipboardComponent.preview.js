@@ -1,5 +1,5 @@
 import React from "react"
-import Copy from "./CopyToClipboardComponent"
+import Copy from "./CopyToClipboard"
 import Text from "../Text/Text/Text"
 
 export default {
@@ -8,7 +8,7 @@ export default {
   tags: ["utility"],
   component: Copy,
   render: props => (
-    <Copy copyText={"OmgRoflLmao"}>
+    <Copy copyText="OmgRoflLmao">
       <Text>This is the text you will have in clipboard: OmgRoflLmao</Text>
     </Copy>
   )
