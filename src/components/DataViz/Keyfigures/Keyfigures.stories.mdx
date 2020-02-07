@@ -3,9 +3,17 @@ import KeyFigures from "./Keyfigures.js"
 
 <Meta title="Components|DataViz/Keyfigures" component={KeyFigures}/>
 
-# Stories for Keyfigures
+# Keyfigures
+Keyfigures takes an array of objects, containing label, amount and key. It lets you display key figures with a label
+in a way that makes sense
 
-## Keyfigures with Normal numbers
+# Import
+```javascript
+Import {KeyFigures} from "@staccx/bento"
+```
+
+## Keyfigures Standard
+Three objects displayed
 
 <Preview>
   <Story name="Normal numbers">
@@ -17,12 +25,12 @@ import KeyFigures from "./Keyfigures.js"
                   key: 546456 + "booked"
                 },
                 {
-                  label: "Tilgjengelig",
+                  label: "Available",
                   amount: 456486,
                   key: 56456 + "available"
                 },
                 {
-                  label: "Annen sum",
+                  label: "New Label",
                   amount: 346,
                   key: 364 + "available"
                 }
@@ -30,6 +38,46 @@ import KeyFigures from "./Keyfigures.js"
             />    
   </Story>
 </Preview>
+
+## Keyfigure single
+One object displayed
+
+<Preview>
+  <Story name="Only one">
+      <KeyFigures
+              figures={[
+                {
+                  label: "Single",
+                  amount: 45854,
+                  key: 546456 + "booked"
+                }
+              ]}
+            />    
+  </Story>
+</Preview>
+
+## Keyfigure with two objects
+Two objects displayed
+
+<Preview>
+  <Story name="Two">
+      <KeyFigures
+              figures={[
+                {
+                  label: "One",
+                  amount: 45854,
+                  key: 546456 + "One"
+                },
+                {
+                  label: "Two",
+                  amount: 24241,
+                  key: 24241 + "Two"
+                }
+              ]}
+            />    
+  </Story>
+</Preview>
+
 
 
 ## Keyfigures with low numbers
@@ -44,12 +92,12 @@ import KeyFigures from "./Keyfigures.js"
                             key: 1 + "booked"
                           },
                           {
-                            label: "Tilgjengelig",
+                            label: "Available",
                             amount: 2,
                             key: 2 + "available"
                           },
                           {
-                            label: "Annen sum",
+                            label: "New Label",
                             amount: 3,
                             key: 3 + "available"
                           }
@@ -70,67 +118,14 @@ import KeyFigures from "./Keyfigures.js"
                             key: 10000000000 + "booked"
                           },
                           {
-                            label: "Tilgjengelig",
+                            label: "Available",
                             amount: 20000000000,
                             key: 20000000000 + "available"
                           },
                           {
-                            label: "Annen sum",
+                            label: "New Label",
                             amount: 30000000000,
                             key: 30000000000 + "available"
-                          }
-              ]}
-            />    
-  </Story>
-</Preview>
-
-
-## Keyfigures with Long Labels and hight numbers
-
-<Preview>
-  <Story name="Long Labels and hight numbers">
-      <KeyFigures
-              figures={[
-                {
-                            label: "LabelLabelLabelLabelLabelLabelLabelLabelLabel",
-                            amount: 10000000000,
-                            key: 10000000000 + "booked"
-                          },
-                          {
-                            label: "TilgjengeligTilgjengeligTilgjengeligTilgjengeligTilgjengelig",
-                            amount: 20000000000,
-                            key: 20000000000 + "available"
-                          },
-                          {
-                            label: "Annen sumAnnen sumAnnen sumAnnen sumAnnen sumAnnen sum",
-                            amount: 30000000000,
-                            key: 30000000000 + "available"
-                          }
-              ]}
-            />    
-  </Story>
-</Preview>
-
-## Keyfigures with Long Labels and short numbers
-
-<Preview>
-  <Story name="Long Labels and short numbers">
-      <KeyFigures
-              figures={[
-                {
-                            label: "LabelLabelLabelLabelLabelLabelLabelLabelLabel",
-                            amount: 1,
-                            key: 1 + "booked"
-                          },
-                          {
-                            label: "TilgjengeligTilgjengeligTilgjengeligTilgjengeligTilgjengelig",
-                            amount: 2,
-                            key: 2 + "available"
-                          },
-                          {
-                            label: "Annen sumAnnen sumAnnen sumAnnen sumAnnen sumAnnen sum",
-                            amount: 3,
-                            key: 3 + "available"
                           }
               ]}
             />    
@@ -163,5 +158,62 @@ import KeyFigures from "./Keyfigures.js"
   </Story>
 </Preview>
 
+# Long labels
+The component wil replace the objects depending on the length of the label. If the label makes the objects too large
+to stay in one line, it will place them under.
 
+## Keyfigures with Long Labels and hight numbers
+
+<Preview>
+  <Story name="Long Labels and hight numbers">
+      <KeyFigures
+              figures={[
+                {
+                            label: "This label is longer than it should be",
+                            amount: 10000000000,
+                            key: 10000000000 + "booked"
+                          },
+                          {
+                            label: "This label is also longer than it should be",
+                            amount: 20000000000,
+                            key: 20000000000 + "available"
+                          },
+                          {
+                            label: "They are all way to long, make them shorter! it should indeed be shorter",
+                            amount: 30000000000,
+                            key: 30000000000 + "available"
+                          }
+              ]}
+            />    
+  </Story>
+</Preview>
+
+## Keyfigures with Long Labels and short numbers
+
+<Preview>
+  <Story name="Long Labels and short numbers">
+      <KeyFigures
+              figures={[
+                {
+                            label: "This label is longer than it should be, it should indeed be shorter",
+                            amount: 1,
+                            key: 1 + "booked"
+                          },
+                          {
+                            label: "This label is also longer than it should be, it should indeed be shorter",
+                            amount: 2,
+                            key: 2 + "available"
+                          },
+                          {
+                            label: "They are all way to long, make them shorter! it should indeed be shorter",
+                            amount: 3,
+                            key: 3 + "available"
+                          }
+              ]}
+            />    
+  </Story>
+</Preview>
+
+
+# Props for KeyFigures
 <Props of={KeyFigures} />

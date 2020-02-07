@@ -79,7 +79,15 @@ const Value = styled.span`
   ${applyVariants(KeyFigures.themeProps.value.name)};
 `
 
+const defaultProps = {
+  figures: [{}]
+}
+
 KeyFigures.propTypes = {
+  /**
+   * Takes an array of objects
+   * objects containg value and heading
+   */
   figures: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string,
@@ -87,5 +95,6 @@ KeyFigures.propTypes = {
     })
   ).isRequired
 }
+KeyFigures.defaultProps = defaultProps
 
 export default KeyFigures
