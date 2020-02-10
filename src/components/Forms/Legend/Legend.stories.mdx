@@ -1,0 +1,43 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Legend from "./Legend"
+import Input from "../Input/Input"
+
+<Meta title="Components|Forms/Legend" component={Legend}/>
+
+
+# Legend
+The legend component represents a caption for the content of its parent component.
+
+# import
+
+```javascript
+import {Legend} from "@staccx/bento"
+```
+
+# Types of Legends
+
+
+## Standard Legend
+
+<Preview>
+  <Story name="Standard">
+   <Legend >This is a legend</Legend>
+  </Story>
+</Preview>
+
+## Use Case
+This is a normal usage of Legend where it acts to describe a form
+
+<Preview>
+    <Story name="Used with an input form">
+        <>
+        <Legend>Tell us about yourself</Legend>
+        <Input label="First name" />
+        <Input label="Last name" />
+        </>
+    </Story>
+</Preview>
+
+
+# Props for Legend
+<Props of={Legend} />
