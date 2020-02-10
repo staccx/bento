@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { BounceIn } from "../../../animations"
-import Caret from "../../Icons/Caret"
+import Caret from "../../Icons/Caret/Caret"
 import {
   commonPropTypes,
   themePropTypes

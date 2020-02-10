@@ -7,6 +7,11 @@ const Caret = ({ className }) => (
   </svg>
 )
 
-Caret.propTypes = { className: PropTypes.string }
+Caret.propTypes = {
+  /**
+   * This is the selection of a class to style the Caret.
+   */
+  className: PropTypes.string
+}
 
 export default Caret
