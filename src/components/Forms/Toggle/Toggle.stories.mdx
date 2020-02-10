@@ -1,0 +1,38 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Toggle from "./Toggle"
+
+
+<Meta title="Components|Forms/Toggle" component={Toggle}/>
+
+# Toggle
+Toggle is a component often used to activate and deactivate something. 
+
+```javascript
+import { Toggle } from "@staccx/bento"
+```
+
+## Standard Toggle
+
+<Preview>
+  <Story name="Standard">
+            <Toggle name="Toggle"/>
+  </Story>
+</Preview>
+
+## Toggle group
+
+<Preview>
+  <Story name="Group">
+  <>
+            <Toggle id="1" group="test"/>
+            <Toggle id="2" group="test"/>
+            <Toggle id="3" group="test"/>
+    </>
+  </Story>
+</Preview>
+
+
+
+# Props for Toggle
+
+<Props of={Toggle} />
