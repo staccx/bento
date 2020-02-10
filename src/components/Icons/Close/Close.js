@@ -14,6 +14,11 @@ const Close = ({ className }) => (
   </CloseIcon>
 )
 
-Close.propTypes = { className: PropTypes.string }
+Close.propTypes = {
+  /**
+   * This is the selection of a class to style the Close icon.
+   */
+  className: PropTypes.string
+}
 
 export default Close

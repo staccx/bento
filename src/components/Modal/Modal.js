@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import hideVisually from "../../theming/styles/hideVisually"
-import IconClose from "../Icons/Close"
+import IconClose from "../Icons/Close/Close"
 import { FadeIn } from "../../animations"
 import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
 import {
