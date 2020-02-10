@@ -1,0 +1,35 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import SelectSimple from "./SelectSimple"
+
+
+<Meta title="Components|Forms/SelectSimple" component={SelectSimple}/>
+
+# SelectSimple
+A Component that makes it easy to create a selector. it contains a selector and its options.
+
+```javascript
+import { SelectSimple } from "@staccx/bento"
+```
+
+## Standard SelectSimple
+Here SelectSimple takes 6 options that are placed in the dropdown menu It also contains a label for the field
+
+<Preview>
+  <Story name="Standard">
+   <>
+        <SelectSimple label={"Sivilstatus"} placeholder="Velg..." id="simpleSelect">
+          <option value={1}>Gift </option>
+          <option value={2}>Samober</option>
+          <option value={3}>Skilt</option>
+          <option value={4}>Partnerskap</option>
+          <option value={5}>Enke/Enkemann</option>
+          <option value={6}>Separert</option>
+        </SelectSimple>
+   </>
+  </Story>
+</Preview>
+
+
+# Props for SelectSimple
+
+<Props of={SelectSimple} />
