@@ -14,6 +14,11 @@ const Check = ({ className }) => (
   </CheckIcon>
 )
 
-Check.propTypes = { className: PropTypes.string }
+Check.propTypes = {
+  /**
+   * This is the selection of a class to style the Check-icon.
+   */
+  className: PropTypes.string
+}
 
 export default Check

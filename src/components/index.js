@@ -57,10 +57,10 @@ export { default as ItemGroup } from "./Layout/ItemGroup/ItemGroup"
 export { default as Divider } from "./Layout/Divider/Divider"
 
 // Icons
-export { default as Caret } from "./Icons/Caret"
-export { default as CaretRight } from "./Icons/CaretRight"
+export { default as Caret } from "./Icons/Caret/Caret"
+export { default as CaretRight } from "./Icons/CarerRight/CaretRight"
 export { default as Close } from "./Icons/Close"
-export { default as Check } from "./Icons/Check"
+export { default as Check } from "./Icons/Check/Check"
 export { default as Warning } from "./Icons/Warning"
 export { default as Info } from "./Icons/Info"
 export { default as Success } from "./Icons/Success"

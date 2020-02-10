@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { multiplyPixelValue } from "../../../math"
 import Label from "../Label/Label"
-import Caret from "../../Icons/Caret"
+import Caret from "../../Icons/Caret/Caret"
 import {
   commonPropTypes,
   themePropTypes
