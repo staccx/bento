@@ -27,12 +27,22 @@ export const Boxing = styled.div`
 `
 
 Box.defaultProps = {
-  className: ""
+  className: "",
+  size: ""
 }
 
 Box.propTypes = {
+  /**
+   * The component can be nested.
+   */
   children: commonPropTypes.children,
+  /**
+   * The class that can be assigned to the Box component.
+   */
   className: PropTypes.string,
+  /**
+   * The size of the box.
+   */
   size: commonPropTypes.spacing
 }
 

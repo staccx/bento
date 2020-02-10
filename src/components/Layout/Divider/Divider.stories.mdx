@@ -1,0 +1,39 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks"
+import Divider from "./Divider"
+
+<Meta title="Components|Layout/Divider" component={Divider} />
+
+# Divider
+This is the Divider component. The component can be used to structure content such as chunks of text, input-groups or to create a thematic section. 
+
+
+# import
+
+```javascript
+import { Divider } from "@staccx/bento"
+```
+
+# Types of Dividers
+There are several ways to display the Divider component.
+
+## Standard Divider
+The standard Divider uses the height of "1", but it can be modified as desired. 
+
+<Preview>
+  <Story name="Standard">
+    <Divider height="1"/>
+  </Story>
+</Preview>
+
+## Modified height
+The Divider below uses the height of "5".
+
+<Preview>
+  <Story name="Modified height">
+    <Divider height="5"/>
+  </Story>
+</Preview>
+
+# Props for Divider
+
+<Props of={Divider} />

@@ -1,0 +1,136 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks"
+import Box from "./Box"
+
+<Meta title="Components|Layout/Box" component={Box} />
+
+# Box
+This is the Box component. The component can take size as a prop to scale!
+
+# import
+
+```javascript
+import { Box } from "@staccx/bento"
+```
+
+# Types of Boxes
+There are several ways to display the Box component. The box can be sized with these props: flush, macro, tiny, small, medium, mediumPlus, large and huge.
+
+## Nested Boxes
+The Box component can be also be nested.
+
+<Preview>
+  <Story name="Nested box">
+    <Box size="flush">
+        <div style={{ backgroundColor: "#38618C", padding: 24, color: "white" }}>
+        Content inside box flush
+            <Box size="macro">
+                <div style={{ backgroundColor: "#35A7FF", padding: 24, color: "white" }}>
+                    Content inside box flush
+                </div>
+            </Box>
+        </div>
+    </Box>
+  </Story>
+</Preview>
+
+## Flush Box
+
+<Preview>
+  <Story name="Flush">
+    <Box size="flush">
+        <div style={{ backgroundColor: "#38618C", padding: 24, color: "white" }}>
+        Content inside box flush
+        </div>
+    </Box>
+  </Story>
+</Preview>
+
+## Macro Box
+
+<Preview>
+  <Story name="Macro">
+    <Box size="macro">
+        <div style={{ backgroundColor: "#38618C", padding: 24, color: "white" }}>
+        Content inside box macro
+        </div>
+    </Box>
+  </Story>
+</Preview>
+
+
+## Tiny Box
+
+<Preview>
+  <Story name="Tiny">
+    <Box size="tiny">
+        <div style={{ backgroundColor: "#35A7FF", padding: 24 }}>
+        Content inside box tiny
+        </div>
+    </Box>
+  </Story>
+</Preview>
+
+
+## Small Box
+
+<Preview>
+  <Story name="Small">
+    <Box size="small">
+        <div style={{ backgroundColor: "#FFE74C", padding: 24 }}>
+        Content inside box small
+        </div>
+    </Box>
+  </Story>
+</Preview>
+
+## Medium Box
+
+<Preview>
+  <Story name="Medium">
+    <Box size="medium">
+        <div style={{ backgroundColor: "#38618C", padding: 24, color: "white" }}>
+        Content inside box medium
+        </div>
+    </Box>
+  </Story>
+</Preview>
+
+## MediumPlus Box
+
+<Preview>
+  <Story name="Medium plus">
+    <Box size="mediumPlus">
+        <div style={{ backgroundColor: "#FFE74C", padding: 24 }}>
+        Content inside box medium plus
+        </div>
+    </Box>
+  </Story>
+</Preview>
+
+## Large Box
+
+<Preview>
+<Story name="Large">
+    <Box size="large">
+        <div style={{ backgroundColor: "#38618C", padding: 24, color: "white" }}>
+        Content inside box large
+        </div>
+    </Box>
+  </Story>
+</Preview>
+
+## Huge Box
+
+<Preview>
+    <Story name="Huge">
+        <Box size="huge">
+            <div style={{ backgroundColor: "#35A7FF", padding: 24, color: "white" }}>
+            Content inside box huge
+            </div>
+        </Box>
+    </Story>
+</Preview>
+
+# Props for Box
+
+<Props of={Box} />

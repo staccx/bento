@@ -30,7 +30,13 @@ Divider.defaultProps = {
 }
 
 Divider.propTypes = {
+  /**
+   * The component can be assigned a class to set the styling.
+   */
   className: PropTypes.string,
+  /**
+   * The height of the Divider.
+   */
   height: PropTypes.number
 }
 
