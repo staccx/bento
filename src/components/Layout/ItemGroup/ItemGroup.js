@@ -44,7 +44,13 @@ const ItemGroupElement = styled.div`
 `
 
 ItemGroup.propTypes = {
+  /**
+   * The component need children inside it.
+   */
   children: commonPropTypes.children.isRequired,
+  /**
+   * The spacing betweeen the children. The prop handle eight types listed above.
+   */
   spacing: commonPropTypes.spacing
 }
 
