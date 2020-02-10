@@ -14,6 +14,11 @@ const Success = ({ className }) => (
   </svg>
 )
 
-Success.propTypes = { className: PropTypes.string }
+Success.propTypes = {
+  /**
+   * This is the selection of the class that styles the success component
+   */
+  className: PropTypes.string
+}
 
 export default Success

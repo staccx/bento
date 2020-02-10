@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import hideVisually from "../../../../theming/styles/hideVisually"
-import Upload from "../../../Icons/Upload"
+import Upload from "../../../Icons/Upload/Upload"
 import {
   commonPropTypes,
   themePropTypes

@@ -13,6 +13,11 @@ const Warning = ({ className }) => (
   </svg>
 )
 
-Warning.propTypes = { className: PropTypes.string }
+Warning.propTypes = {
+  /**
+   * This is the selection of the class that styles the success component
+   */
+  className: PropTypes.string
+}
 
 export default Warning

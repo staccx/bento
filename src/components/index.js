@@ -1,4 +1,4 @@
-import QuestionMark from "./Icons/QuestionMark"
+import QuestionMark from "./Icons/QuestionMark/QuestionMark"
 
 export { default as Input } from "./Forms/Input/Input"
 export { default as BirthdateInput } from "./Forms/Input/BirthdateInput/BirthdateInput"
@@ -61,9 +61,9 @@ export { default as Caret } from "./Icons/Caret/Caret"
 export { default as CaretRight } from "./Icons/CarerRight/CaretRight"
 export { default as Close } from "./Icons/Close/Close"
 export { default as Check } from "./Icons/Check/Check"
-export { default as Warning } from "./Icons/Warning"
-export { default as Info } from "./Icons/Info"
-export { default as Success } from "./Icons/Success"
+export { default as Warning } from "./Icons/Warning/Warning"
+export { default as Info } from "./Icons/Info/Info"
+export { default as Success } from "./Icons/Success/Success"
 
 // Images
 export { default as Image } from "./Image/Image"

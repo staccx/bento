@@ -14,6 +14,11 @@ const Info = ({ className }) => (
   </svg>
 )
 
-Info.propTypes = { className: PropTypes.string }
+Info.propTypes = {
+  /**
+   * This is the selection of a class to style the Info icon.
+   */
+  className: PropTypes.string
+}
 
 export default Info

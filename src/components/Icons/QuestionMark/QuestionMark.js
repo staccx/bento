@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const Info = ({ className, color }) => (
+const QuestionMark = ({ className, color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 18 18"
@@ -19,6 +19,11 @@ const Info = ({ className, color }) => (
   </svg>
 )
 
-Info.propTypes = { className: PropTypes.string }
+QuestionMark.propTypes = {
+  /**
+   * This is the selection of the class that styles the Questionmark component
+   */
+  className: PropTypes.string
+}
 
-export default Info
+export default QuestionMark
