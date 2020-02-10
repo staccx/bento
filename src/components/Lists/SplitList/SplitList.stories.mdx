@@ -1,0 +1,73 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import splitListItem from "./SplitListItem"
+import List from "../List"
+
+<Meta title="Components|Lists/SplitList" component={splitListItem}/>
+
+# SplitList
+SplitList takes an array of objects and renders them in a list
+
+```javascript
+import { splitListItem } from "@staccx/bento"
+```
+
+export const myList = [
+      {
+        myUniqueId: "221e98j",
+        myLeftProp: "Amount",
+        myRightProp: 500
+      },
+      {
+        myUniqueId: "addw23",
+        myLeftProp: "Amount",
+        myRightProp: 1500
+      },
+      {
+        myUniqueId: "h213",
+        myLeftProp: "Has three children!",
+        myRightProp: "500",
+        myThirdProp: "1500"
+      }
+    ]
+
+
+## Standard SplitList
+Uses myList and maps parts of the objects to the list
+<Preview>
+  <List>
+          {myList.map(listItem => (
+            <splitListItem key={listItem.myUniqueId}>
+              {listItem.myLeftProp}
+              {listItem.myRightProp}
+              {listItem.myThirdProp ? listItem.myThirdProp : null}
+            </splitListItem>
+          ))}
+        </List>
+</Preview>
+
+
+### List
+```javascript
+const myList = [
+      {
+        myUniqueId: "221e98j",
+        myLeftProp: "Amount",
+        myRightProp: 500
+      },
+      {
+        myUniqueId: "addw23",
+        myLeftProp: "Amount",
+        myRightProp: 1500
+      },
+      {
+        myUniqueId: "h213",
+        myLeftProp: "Has three children!",
+        myRightProp: "500",
+        myThirdProp: "1500"
+      }
+    ]
+```
+
+
+## Props for SplitListItem
+<Props of={splitListItem} />
