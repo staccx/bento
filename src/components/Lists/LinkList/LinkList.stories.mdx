@@ -1,0 +1,51 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import LinkListItem from "./LinkListItem"
+import List from "../List.js"
+
+<Meta title="Components|Lists/LinkList" component={LinkListItem}/>
+
+# LinkList
+LinkList wil render the elements inside the list inline.
+
+```javascript
+import { LinkListItem } from "@staccx/bento"
+```
+
+## Standard LinkList
+Two LinkListItems, LinkList renders them inline
+
+<Preview>
+  <Story name="Standard">
+       <List>
+          <LinkListItem to={"/"}>One ListElement</LinkListItem>
+          <LinkListItem to={"/"}>Another List Element</LinkListItem>
+        </List>
+  </Story>
+</Preview>
+
+## Long Inline List
+
+<Preview>
+  <Story name="Long List">
+       <List>
+          <LinkListItem to={"/"}>One ListElement</LinkListItem>
+          <LinkListItem to={"/"}>Another List Element</LinkListItem>
+          <LinkListItem to={"/"}>One ListElement</LinkListItem>
+          <LinkListItem to={"/"}>Another List Element</LinkListItem>
+          <LinkListItem to={"/"}>One ListElement</LinkListItem>
+          <LinkListItem to={"/"}>Another List Element</LinkListItem>
+          <LinkListItem to={"/"}>One ListElement</LinkListItem>
+          <LinkListItem to={"/"}>Another List Element</LinkListItem>         
+          <LinkListItem to={"/"}>One ListElement</LinkListItem>
+          <LinkListItem to={"/"}>Another List Element</LinkListItem>
+          <LinkListItem to={"/"}>One ListElement</LinkListItem>
+          <LinkListItem to={"/"}>Another List Element</LinkListItem>                     
+        </List>
+  </Story>
+</Preview>
+
+
+
+
+## Props for LinkList
+<Props of={LinkListItem} />
