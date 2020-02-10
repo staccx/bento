@@ -1,0 +1,51 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import InlineListItem from "./InlineListItem"
+import List from "../List.js"
+
+<Meta title="Components|Lists/ExpandList" component={InlineListItem}/>
+
+# InlineList
+InlineList wil render the elements inside the list inline.
+
+```javascript
+import { InlineListItem } from "@staccx/bento"
+```
+
+## Standard InlineList
+Two InlineListItems, InlineList renders them inline
+
+<Preview>
+  <Story name="Standard">
+       <List>
+          <InlineListItem>One ListElement</InlineListItem>
+          <InlineListItem>Another List Element</InlineListItem>
+        </List>
+  </Story>
+</Preview>
+
+## Long Inline List
+
+<Preview>
+  <Story name="Long List">
+       <List>
+          <InlineListItem>One ListElement</InlineListItem>
+          <InlineListItem>Another List Element</InlineListItem>
+          <InlineListItem>One ListElement</InlineListItem>
+          <InlineListItem>Another List Element</InlineListItem>
+          <InlineListItem>One ListElement</InlineListItem>
+          <InlineListItem>Another List Element</InlineListItem>
+          <InlineListItem>One ListElement</InlineListItem>
+          <InlineListItem>Another List Element</InlineListItem>         
+          <InlineListItem>One ListElement</InlineListItem>
+          <InlineListItem>Another List Element</InlineListItem>
+          <InlineListItem>One ListElement</InlineListItem>
+          <InlineListItem>Another List Element</InlineListItem>                     
+        </List>
+  </Story>
+</Preview>
+
+
+
+
+## Props for InlineList
+<Props of={InlineListItem} />
