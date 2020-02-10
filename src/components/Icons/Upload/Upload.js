@@ -14,6 +14,11 @@ const Upload = ({ className }) => (
   </UploadIcon>
 )
 
-Upload.propTypes = { className: PropTypes.string }
+Upload.propTypes = {
+  /**
+   * This is the selection of the class that styles the success component
+   */
+  className: PropTypes.string
+}
 
 export default Upload
