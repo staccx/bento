@@ -1,0 +1,88 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import RadioButton from "./RadioButton"
+
+
+<Meta title="Components|Forms/RadioButton" component={RadioButton}/>
+
+
+# RadioButton
+Radio buttons are normally presented in radio groups to describe and select related settings. Only one radio button in a group can be selected at the same time.
+
+# import
+
+```javascript
+import {RadioButton} from "@staccx/bento"
+```
+
+# Types of RadioButtons
+
+
+## Standard RadioButton
+<Preview>
+  <Story name="Standard">
+   <RadioButton id="123">RadioButton</RadioButton>
+  </Story>
+</Preview>
+
+## RadioButtons in a group
+<Preview>
+  <Story name="Group">
+  <>
+   <RadioButton id="124" group="test">Radio1</RadioButton>
+   <RadioButton id="125" group="test">Radio2</RadioButton>
+   <RadioButton id="126" group="test">Radio3</RadioButton>
+   </>
+  </Story>
+</Preview>
+
+## Disabled
+if you set the radioButton to disabled it cannot be checked
+
+<Preview>
+  <Story name="Disabled">
+   <RadioButton id="130" disabled>Disabled RadioButton</RadioButton>
+  </Story>
+</Preview>
+
+## Default Checked
+If you default check a radioButton, it will render as checked
+
+<Preview>
+  <Story name="Default Checked">
+     <>
+      <RadioButton id="134" group="test" defaultChecked>Radio1</RadioButton>
+      <RadioButton id="135" group="test">Radio2</RadioButton>
+      <RadioButton id="136" group="test">Radio3</RadioButton>
+      </>
+  </Story>
+</Preview>
+
+## Pitfalls
+if you need multiple radioButtons in a group, they need the group prop to assign them if not they wil not be assigned together
+
+
+<Preview>
+  <Story name="NoGroup">
+  <>
+   <RadioButton id="127">Radio1</RadioButton>
+   <RadioButton id="128">Radio2</RadioButton>
+   <RadioButton id="129">Radio3</RadioButton>
+   </>
+  </Story>
+</Preview>
+
+## If two radioButtons has the same ID they wil only check the first one
+
+<Preview>
+  <Story name="sameId">
+  <>
+   <RadioButton id="120">Radio1</RadioButton>
+   <RadioButton id="120">Radio2</RadioButton>
+   </>
+  </Story>
+</Preview>
+
+
+
+# Props for RadioButton
+<Props of={RadioButton} />

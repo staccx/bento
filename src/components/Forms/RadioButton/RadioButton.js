@@ -131,9 +131,21 @@ const RadioButton = ({
 RadioButton.propTypes = {
   children: commonPropTypes.children.isRequired,
   className: PropTypes.string,
+  /**
+   * Will render as checked
+   */
   defaultChecked: PropTypes.bool,
+  /**
+   * Will disable the radioButton
+   */
   disabled: PropTypes.bool,
+  /**
+   * Assigns multiple groups together
+   */
   group: PropTypes.string,
+  /**
+   * Must be unique
+   */
   id: PropTypes.string.isRequired,
   input: PropTypes.any,
   onChange: PropTypes.func,
