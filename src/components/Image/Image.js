@@ -100,9 +100,21 @@ Image.defaultProps = {
 
 Image.propTypes = {
   children: commonPropTypes.children,
+  /**
+   * This is the selection of the class to style the component.
+   */
   className: PropTypes.string,
+  /**
+   * This prop is used to set the size of the component.
+   */
   size: commonPropTypes.spacing,
+  /**
+   * This prop is used to make the component round.
+   */
   round: PropTypes.bool,
+  /**
+   * This prop is used to set the aspect ratio of the component.
+   */
   aspectRatio: PropTypes.string
 }
 

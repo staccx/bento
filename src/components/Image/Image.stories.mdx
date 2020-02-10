@@ -1,0 +1,48 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks"
+import Image from "./Image"
+
+<Meta title="Components|Image" component={Image} />
+
+# Image
+This is the Image component. Remember to use the src prop!
+
+# import
+
+```javascript
+import { Image } from "@staccx/bento"
+```
+
+# Types of Images
+There are several ways to display an image with the Image component: round, aspectRatio, size, and children.
+
+## Standard Image
+
+<Preview>
+  <Story name="Standard">
+    <Image src="http://via.placeholder.com/150x150"/>
+  </Story>
+</Preview>
+
+## Rounded Image
+The rounded image uses the prop round and is a boolean.
+
+<Preview>
+  <Story name="Rounded">
+    <Image src="http://via.placeholder.com/150x150" round/>
+  </Story>
+</Preview>
+
+## Aspect ratio
+You can use the aspect ratio that takes a String.
+
+<Preview>
+    <Story name="Aspect ratio">
+        <Image src="http://via.placeholder.com/150x150" aspectRatio={"16:9"}/>
+    </Story>
+</Preview>
+
+
+
+# Props for Image
+
+<Props of={Image} />
