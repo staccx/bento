@@ -61,7 +61,7 @@ export { default as Caret } from "./Icons/Caret/Caret"
 export { default as CaretRight } from "./Icons/CarerRight/CaretRight"
 export { default as Close } from "./Icons/Close/Close"
 export { default as Check } from "./Icons/Check/Check"
-export { default as Warning } from "./Icons/Warning"
+export { default as Warning } from "./Icons/Warning/Warning"
 export { default as Info } from "./Icons/Info/Info"
 export { default as Success } from "./Icons/Success/Success"
 
