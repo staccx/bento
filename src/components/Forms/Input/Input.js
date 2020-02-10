@@ -263,10 +263,13 @@ const InputNoMask = styled.input`
 `
 
 export const InputPropTypes = {
+  /**
+   * Set this to set focus to field on render
+   */
   autoFocus: PropTypes.bool,
   callback: PropTypes.func,
   /**
-   * Disabled prop
+   * Disabled prop deactiovates functionality
    * @export
    */
   disabled: PropTypes.bool,

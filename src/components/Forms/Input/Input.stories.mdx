@@ -1,0 +1,48 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Input from "./Input"
+
+<Meta title="Components|Forms/Input/Input" component={Input}/>
+
+
+# Input
+
+
+# import
+
+```javascript
+import {Input} from "@staccx/bento"
+```
+
+# Types of Inputs
+
+
+## Standard Input
+
+<Preview>
+  <Story name="Standard">
+   <Input label={"Input"} />
+  </Story>
+</Preview>
+
+
+## AutoFocus
+With props autoFocus, will set focus to the input field when the page renders
+
+<Preview>
+  <Story name="AutoFocus">
+   <Input label={"Input"}  autoFocus/>
+  </Story>
+</Preview>
+
+## Disabled
+With disabled prop, Input field can not be used
+
+<Preview>
+  <Story name="Disabled">
+   <Input label={"Input"}  disabled/>
+  </Story>
+</Preview>
+
+
+# Props for Input
+<Props of={Input} />
