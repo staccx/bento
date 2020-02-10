@@ -63,7 +63,7 @@ export { default as Close } from "./Icons/Close/Close"
 export { default as Check } from "./Icons/Check/Check"
 export { default as Warning } from "./Icons/Warning"
 export { default as Info } from "./Icons/Info/Info"
-export { default as Success } from "./Icons/Success"
+export { default as Success } from "./Icons/Success/Success"
 
 // Images
 export { default as Image } from "./Image/Image"
