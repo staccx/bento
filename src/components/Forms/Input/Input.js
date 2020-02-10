@@ -21,7 +21,7 @@ import {
   targetSize
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
-import QuestionMark from "../../Icons/QuestionMark"
+import QuestionMark from "../../Icons/QuestionMark/QuestionMark"
 import { FadeIn } from "../../../animations"
 
 const HelpBox = ({ onClick }) => (

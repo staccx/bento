@@ -1,4 +1,4 @@
-import QuestionMark from "./Icons/QuestionMark"
+import QuestionMark from "./Icons/QuestionMark/QuestionMark"
 
 export { default as Input } from "./Forms/Input/Input"
 export { default as BirthdateInput } from "./Forms/Input/BirthdateInput/BirthdateInput"
