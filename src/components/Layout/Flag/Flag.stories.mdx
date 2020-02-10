@@ -1,0 +1,57 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks"
+import Flag from "./Flag"
+
+<Meta title="Components|Layout/Flag" component={Flag} />
+
+# Flag
+This is the Flag component. The component can be used to display a list with images.
+
+```javascript
+import { Flag } from "@staccx/bento"
+```
+
+## Types of Flags
+There are several ways to display the Flag component.
+
+## Standard Flag
+
+<Preview>
+  <Story name="Standard">
+    <Flag
+    responsive={800}
+    img={<img src="http://via.placeholder.com/150x150" widt="100" height="100" />}>
+    Text for flag-object, the standard way.
+  </Flag>
+  </Story>
+</Preview>
+
+## Reversed Flag
+
+<Preview>
+  <Story name="Reversed">
+    <Flag
+    reverse
+    responsive={800}
+    img={<img src="http://via.placeholder.com/150x150" widt="100" height="100" />}>
+    Text for flag-object when the image is reversed
+  </Flag>
+  </Story>
+</Preview>
+
+## Positioning the text
+There are three ways to position the text: top, bottom and flush.
+
+<Preview>
+  <Story name="top">
+    <Flag
+    top
+    responsive={800}
+    img={<img src="http://via.placeholder.com/150x150" widt="100" height="100" />}>
+    Text for flag-object positioned to the top
+  </Flag>
+  </Story>
+</Preview>
+
+# Props for Flag
+
+<Props of={Flag} />
