@@ -195,13 +195,22 @@ ExpandListItem.defaultProps = {
 }
 
 ExpandListItem.propTypes = {
+  /**
+   * Will be shown when expanding
+   */
   children: commonPropTypes.children.isRequired,
+  /**
+   * Title for the expand (what is shown before expanding)
+   */
   title: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
     PropTypes.array
   ]).isRequired,
   className: PropTypes.string,
+  /**
+   * Expanded true or false, if true it renders open
+   */
   expanded: PropTypes.bool,
   flush: PropTypes.bool
 }

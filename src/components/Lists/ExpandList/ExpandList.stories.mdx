@@ -1,0 +1,122 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import ExpandListItem from "./ExpandListItem"
+import List from "../List.js"
+
+<Meta title="Components|Lists/ExpandList" component={ExpandListItem}/>
+
+# ExpandList
+ExpandListItem is a component that can be used with the List component. 
+Its behaviour is the same as with the Expand component, and allowes you to list 
+Expands.
+
+```javascript
+import { ExpandListItem } from "@staccx/bento"
+```
+
+## Standard ExpandList
+Two ExpandListItems together, both hiding underlying data until they are clicked
+
+<Preview>
+  <Story name="Standard">
+   <List>
+             <ExpandListItem
+               title={
+                 "Hvor lang tid tar det før jeg får svar på søknaden?"
+               }
+             >
+               Du får umiddelbart svar på søknaden og kan se hvor mye du får i lån
+             </ExpandListItem>
+             <ExpandListItem
+               title="Hvor lang tid tar det før lånet blir utbetalt?"
+             >
+               Normalt vil du ha pengene på din konto i annen bank en til to
+               virkedager etter vi har mottatt søknad og godkjent all
+               dokumentasjon. Om du ønsker utbetaling på dagen kontakter du vårt
+               kundesenter.
+              </ExpandListItem>
+    </List>
+  </Story>
+</Preview>
+
+## Long ExpandList
+There are no limits to the amout of ExpandListItems you can put in one list
+
+<Preview>
+  <Story name="Long List">
+   <List>
+         <ExpandListItem variant={"variant"} title={"This is an ExpandListItem"}>
+                    This is hidden untill it has been expanded
+                  </ExpandListItem>
+                  <ExpandListItem variant={"variant"} title={"This is an ExpandListItem"}>
+                    This is hidden
+                  </ExpandListItem>
+                  <ExpandListItem variant={"variant"} title={"This is an ExpandListItem"}>
+                    This is hidden
+                  </ExpandListItem>
+                  <ExpandListItem variant={"variant"} title={"This is an ExpandListItem"}>
+                    This is hidden
+                  </ExpandListItem>
+                  <ExpandListItem variant={"variant"} title={"This is an ExpandListItem"}>
+                    This is hidden
+                  </ExpandListItem>
+                  <ExpandListItem variant={"variant"} title={"This is an ExpandListItem"}>
+                    This is hidden
+                  </ExpandListItem>
+                  <ExpandListItem variant={"variant"} title={"This is an ExpandListItem"}>
+                    This is hidden
+                  </ExpandListItem>
+                  <ExpandListItem variant={"variant"} title={"This is an ExpandListItem"}>
+                    This is hidden
+                  </ExpandListItem>
+                  <ExpandListItem variant={"variant"} title={"This is an ExpandListItem"}>
+                    This is hidden
+                  </ExpandListItem>
+                  <ExpandListItem variant={"variant"} title={"This is an ExpandListItem"}>
+                    This is hidden
+                  </ExpandListItem>
+    </List>
+  </Story>
+</Preview>
+
+## Long Expand title
+There are no limits to the amout of ExpandListItems you can put in one list
+
+<Preview>
+  <Story name="Long Title">
+   <List>
+         <ExpandListItem variant={"variant"} title={"This expand title is very long, does that matter? it might do, but i dont know, lets find out. i am now just typing random words to make this title longer, so far it seemes fine"}>
+                    This is hidden untill it has been expanded
+                  </ExpandListItem>
+    </List>
+  </Story>
+</Preview>
+
+## Default expanded
+ExpandListItem takes expanded as a prop, allowing you to render the component expanded
+
+<Preview>
+  <Story name="Default expanded">
+   <List>
+         <ExpandListItem title={"A Title"} expanded>
+                    Since i am default open, you can see me on render, click to hide me
+                  </ExpandListItem>
+    </List>
+  </Story>
+</Preview>
+
+## Flush
+ExpandListItem takes flush as a prop, this will remove padding from the expanded text
+
+<Preview>
+  <Story name="Flush">
+   <List>
+         <ExpandListItem title={"A Title"} flush>
+                    This container is flush, so i am closer to the header
+                  </ExpandListItem> 
+    </List>
+  </Story>
+</Preview>
+
+
+## Props for ExpandList
+<Props of={ExpandListItem} />
