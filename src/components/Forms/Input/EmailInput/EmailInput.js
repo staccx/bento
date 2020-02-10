@@ -45,7 +45,7 @@ class EmailInput extends React.Component {
     return (
       <Wrapper isValid={value && isValid}>
         <Input
-          type={"email"}
+          type="email"
           {...this.props}
           value={value}
           onChange={this.handleChange}
@@ -57,7 +57,7 @@ class EmailInput extends React.Component {
         <AtSymbol isValid={isValid} x={getX(value.split(".")[0])}>
           .
         </AtSymbol>
-        <Hidden id={"tempLength"} />
+        <Hidden id="tempLength" />
       </Wrapper>
     )
   }

@@ -1,0 +1,38 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import FileInput from "./FileInput"
+
+<Meta title="Components|Forms/Input/FileInput" component={FileInput}/>
+
+
+# FileInput
+
+# import
+
+```javascript
+import {FileInput} from "@staccx/bento"
+```
+
+# Types of FileInputs
+
+
+## Standard FileInput
+
+<Preview>
+  <Story name="Standard">
+   <FileInput id="9852145" >Last opp</FileInput>
+  </Story>
+</Preview>
+
+## Disabled FileInput
+Component takes a disabled prop to deactivate the button
+
+<Preview>
+  <Story name="Disabled">
+   <FileInput id="98521ewf45" disabled={true}>Last opp</FileInput>
+  </Story>
+</Preview>
+
+
+
+# Props for FileInput
+<Props of={FileInput} />
