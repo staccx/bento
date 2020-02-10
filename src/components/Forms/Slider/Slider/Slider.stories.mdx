@@ -1,0 +1,61 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Slider from "./Slider"
+
+
+<Meta title="Components|Forms/Slider" component={Slider}/>
+
+# Slider
+Slider is an input method where you set the value on something. Often used for tings like, volume, light or other similar things
+
+```javascript
+import { Slider } from "@staccx/bento"
+```
+
+## Standard Slider
+
+<Preview>
+  <Story name="Standard">
+            <Slider
+              name="Slider"
+              onChange={e => console.log("Sliiiiide", e.target.value)}
+              min={0}
+              max={100}
+              step={1}
+            />
+  </Story>
+</Preview>
+
+## Highter step
+Slider has a step prop, that allowed you to controll how many steps it jumps when it moves. here it jumps 20 each time
+
+<Preview>
+  <Story name="High step">
+            <Slider
+              name="Step"
+              onChange={e => console.log("Sliiiiide", e.target.value)}
+              min={0}
+              max={100}
+              step={20}
+            />
+  </Story>
+</Preview>
+
+## Disabled
+
+<Preview>
+  <Story name="Disabled">
+            <Slider
+              name="Disabled"
+              onChange={e => console.log("Sliiiiide", e.target.value)}
+              min={0}
+              max={100}
+              disabled
+            />
+  </Story>
+</Preview>
+
+
+
+# Props for Slider
+
+<Props of={Slider} />
