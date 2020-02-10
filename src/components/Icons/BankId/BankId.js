@@ -3,7 +3,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 
 const BankId = ({ className }) => (
-  <SVG
+  <svg
     width="16"
     height="16"
     viewBox="0 0 16 16"
@@ -17,14 +17,17 @@ const BankId = ({ className }) => (
     <rect x="6" y="9" width="4" height="2" />
     <rect y="12" width="5" height="2" />
     <rect x="11" y="12" width="5" height="2" />
-  </SVG>
+  </svg>
 )
 
-const SVG = styled.svg`
+const svg = styled.svg`
   fill: currentColor;
 `
 
 BankId.propTypes = {
+  /**
+   * This is the selection of a class to style the BankId icon.
+   */
   className: PropTypes.string
 }
 
