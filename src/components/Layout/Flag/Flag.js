@@ -178,16 +178,49 @@ Flag.defaultProps = {
 }
 
 Flag.propTypes = {
+  /**
+   * The component can be nested and is a requirement.
+   */
   children: commonPropTypes.children.isRequired,
+  /**
+   * The component must have an img and is a requirement.
+   */
   img: commonPropTypes.children.isRequired,
+  /**
+   * The component can be styled by assigning a class.
+   */
   className: PropTypes.string,
+  /**
+   * The reversed prop makes the image be reversed.
+   */
   reverse: PropTypes.bool,
+  /**
+   * This prop aligns the text to the top.
+   */
   top: PropTypes.bool,
+  /**
+   * This prop aligns the text to the bottom.
+   */
   bottom: PropTypes.bool,
+  /**
+   * This prop is set to fit the current viewport size.
+   */
   responsive: PropTypes.number,
+  /**
+   * Position of the text baseline.
+   */
   flush: PropTypes.bool,
+  /**
+   * The size of the text.
+   */
   large: PropTypes.bool,
+  /**
+   * The size of the text.
+   */
   small: PropTypes.bool,
+  /**
+   * The size of the text.
+   */
   tiny: PropTypes.bool
 }
 
