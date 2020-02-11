@@ -232,6 +232,9 @@ Modal.defaultProps = {
 Modal.propTypes = {
   children: commonPropTypes.children.isRequired,
   className: PropTypes.string,
+  /**
+   * When isOpen is true, the modal is displayed
+   */
   isOpen: PropTypes.bool,
   onClose: PropTypes.func
 }

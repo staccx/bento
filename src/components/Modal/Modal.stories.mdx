@@ -1,0 +1,60 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Modal from "./Modal"
+import Button from "../Button/Button"
+
+<Meta title="Components|Modal" component={Modal}/>
+
+# Modal
+Modal is a dialog box/popup window that is displayed on top of the current page
+
+```javascript
+import { Modal } from "@staccx/bento"
+```
+
+
+## Standard Modal
+Modal is open, and closes if you click outside the modal. Klick the button to reopen the modal.
+
+export let value = true
+
+export const handleClick = () => {
+    value = true
+    console.log(value)
+}
+
+  <Story name="Standard">
+  <>
+   <Modal isOpen={value}>
+               <p>
+               {" "}
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+               iaculis erat ipsum, ut euismod orci luctus sit amet. Donec et
+               tincidunt dolor, at vehicula mauris. Nullam eleifend tristique arcu
+               ac scelerisque. Pellentesque sapien ex, faucibus sit amet nulla
+               eget, sollicitudin fringilla arcu. Suspendisse imperdiet urna eu
+               nulla tincidunt pretium. Nunc a blandit nulla, ac feugiat nulla.
+               Nulla nisl nunc, ornare quis odio gravida, sodales mattis enim.
+               Aenean turpis dui, fringilla in arcu a, consectetur placerat sapien.
+               Aenean nec augue quis ipsum feugiat maximus. Interdum et malesuada
+               fames ac ante ipsum primis in faucibus. Suspendisse vitae nisl
+               vehicula ante gravida scelerisque faucibus ac enim. Suspendisse
+               imperdiet tellus id tristique scelerisque.
+             </p>
+             <p>
+               Ut rutrum ex ante, ut posuere arcu pellentesque vel. Mauris sodales
+               urna enim, a sodales lorem fringilla sit amet. Vivamus ultricies non
+               mauris ac maximus. Donec sit amet eleifend nibh, eu mollis lorem.
+               Praesent tincidunt, mauris pharetra facilisis molestie, urna nisi
+               cursus enim, vitae congue ligula eros tempor felis. Sed sit amet
+               felis nulla. Quisque dictum aliquet quam vitae venenatis. Donec eu
+               nibh quis magna auctor cursus. Duis malesuada arcu mi, facilisis
+               accumsan risus iaculis eu. Sed a lacinia mauris.
+             </p>
+   </Modal>
+        <Button onClick={() => handleClick()}>Open Modal </Button>
+   </>
+  </Story>
+
+
+## Props for Modal
+<Props of={Modal} />
