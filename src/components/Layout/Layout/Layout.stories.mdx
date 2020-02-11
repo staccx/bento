@@ -1,25 +1,66 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Layout from './Layout';
+import LayoutItem from './LayoutItem';
 
-<Meta title="Components|Layout/Layout" component={Layout}/>
+<Meta title="Components|Layout/Layout" component={Layout, LayoutItem}/>
 
-# Layout
-Forklaring på hva det er og hvordan den kan brukes
+# Layout and LayoutItem
+This component can be used to create a page and structure it accordingly.
 
 ```javascript
-import { Layout } from "@staccx/bento"
+import { Layout, LayoutItem } from "@staccx/bento"
 ```
 
-## Standard Layout
-This is the standard Layout
+## Standard Layout and LayoutItem
+This is the standard Layout. The Layout component must have a child and it can work with any component. Below, the LayoutItem component is the child.
+
+The Layout component can be styled with the props to create layouts with rows, columns and insert padding top and bottom. The grid prop accept following values: columns and rows.
+
+The LayoutItem component has a prop to set the area, and the values are: header, body, aside and footer.
 
 <Preview>
-  <Story name="Standard">
-   <Layout area="header">
-    <p>I'm the header!</p>
-   </Layout>
+  <Story name="Standard Layout and LayoutItem">
+    <div>
+        <Layout 
+            grid="rows" 
+            style={{ backgroundColor: "#38618C", padding: 24, color: "white" }}>
+            <LayoutItem 
+                area="header"
+                style={{ backgroundColor: "#FFFFFF", padding: 24, color: "black" }}>
+                I'm the header inside a row!
+            </LayoutItem>
+        </Layout>
+        <Layout 
+            grid="columns"
+            columnGap="large"
+            style={{ backgroundColor: "#35A7FF", padding: 24, color: "white" }}
+            >
+            <LayoutItem 
+                area="body"
+                style={{ backgroundColor: "#FFFFFF", padding: 24, color: "black" }}>
+                I'm the body inside a column!
+            </LayoutItem>
+            <LayoutItem 
+                area="aside"
+                style={{ backgroundColor: "#FFFFFF", padding: 24, color: "black" }}>
+                I'm the aside inside a column!
+            </LayoutItem>
+        </Layout>
+        <Layout 
+            grid="rows" 
+            style={{ backgroundColor: "#38618C", padding: 24, color: "white" }}>
+            <LayoutItem 
+                area="header"
+                style={{ backgroundColor: "#FFFFFF", padding: 24, color: "black" }}>
+                I'm the footer inside a row!
+            </LayoutItem>
+        </Layout>
+    </div>
   </Story>
 </Preview>
 
 ## Props for Layout
 <Props of={Layout} />
+
+## Props for LayoutItem
+<Props of={LayoutItem} />

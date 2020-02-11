@@ -91,12 +91,33 @@ Layout.defaultProps = {
 }
 
 Layout.propTypes = {
+  /**
+   * The component must have a child to structure the layout.
+   */
   children: commonPropTypes.children.isRequired,
+  /**
+   * This prop assign a class to the component to style it.
+   */
   className: PropTypes.string,
+  /**
+   * The prop accept columns and rows.
+   */
   grid: PropTypes.string,
+  /**
+   * The spacing between columns.
+   */
   columnGap: PropTypes.string,
+  /**
+   * The spacing between rows.
+   */
   rowGap: PropTypes.string,
+  /**
+   * The padding-bottom of the component.
+   */
   paddingBottom: PropTypes.string,
+  /**
+   * The padding-top of the component.
+   */
   paddingTop: PropTypes.string
 }
 
