@@ -99,6 +99,9 @@ Image.defaultProps = {
 }
 
 Image.propTypes = {
+  /**
+   * The component can be nested around children, but is not required.
+   */
   children: commonPropTypes.children,
   /**
    * This is the selection of the class to style the component.
