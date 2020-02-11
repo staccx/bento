@@ -1,0 +1,31 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import List from "./List"
+
+<Meta title="Components|Lists/List" component={List}/>
+
+# List
+List is the base list component all the other lists are based on, without List as a wrapper they would not work as
+intended
+
+```javascript
+import { List } from "@staccx/bento"
+```
+
+## Standard List
+This is the standard List
+    
+<Preview>
+  <Story name="standard">
+      <List>
+        <li>Test</li>
+        <li>Test2</li>
+      </List>
+  </Story>
+</Preview>
+
+
+## Flere stories her
+Hva er spesielt med denne storien?
+
+## Props for List
+<Props of={List} />

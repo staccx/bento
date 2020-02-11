@@ -43,6 +43,9 @@ List.defaultProps = {
 List.propTypes = {
   children: commonPropTypes.children.isRequired,
   className: PropTypes.string,
+  /**
+   * Prop to set ordered or unordered List (ul/ol)
+   */
   ordered: PropTypes.bool
 }
 
