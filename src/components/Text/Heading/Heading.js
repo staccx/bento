@@ -127,6 +127,9 @@ Heading.defaultProps = {
 
 Heading.propTypes = {
   children: commonPropTypes.children.isRequired,
+  /**
+   * The level prop determines the size of the heading, default is set to level 1 or h1
+   */
   level: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string
 }
