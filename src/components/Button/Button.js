@@ -63,12 +63,9 @@ const defaultProps = {
 }
 
 const propTypes = {
-  /**
-   * The children of the lamb
-   */
   children: commonPropTypes.children.isRequired,
   /**
-   * Click callback. Why else have a button?
+   * Click callback. Lets you do stuff onClick
    * @export
    */
   onClick: PropTypes.func

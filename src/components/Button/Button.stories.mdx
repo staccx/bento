@@ -5,7 +5,7 @@ import Button from "./Button"
 
 
 # Button
-Forklaring på hva det er og hvordan den kan brukes
+Bento Button Component
 
 ```javascript
 import {Button} from "@staccx/bento"
@@ -14,8 +14,6 @@ import {Button} from "@staccx/bento"
 
 ## Standard Button
 This is the standard button
-
-
 
 <Preview>
   <Story name="Standard">
@@ -27,10 +25,15 @@ This is the standard button
 ## Two buttons
 check console for onClick event
 
+
+export const handleClick = () => {
+    console.log("hei")
+}
+
 <Preview>
   <Story name="Two Buttons">
   <>
-   <Button>Knapp</Button>
+   <Button onclick={handleClick()}>Knapp</Button>
    <Button>Knapp</Button>
    </>
   </Story>
