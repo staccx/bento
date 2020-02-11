@@ -38,9 +38,21 @@ LayoutItem.defaultProps = {
 }
 
 LayoutItem.propTypes = {
+  /**
+   * The component require a child component.
+   */
   children: commonPropTypes.children.isRequired,
+  /**
+   * This prop assign a class to the component to style it.
+   */
   className: PropTypes.string,
+  /**
+   * The area of the component, e.g. header, body, aside or footer.
+   */
   area: PropTypes.string,
+  /**
+   * The variant get assigned from the theme, so it basically is styling.
+   */
   variant: PropTypes.string
 }
 
