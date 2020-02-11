@@ -1,0 +1,32 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import ItemGroup from "./ItemGroup";
+
+<Meta title="Components|Layout/ItemGroup" component={ItemGroup}/>
+
+# ItemGroup
+The ItemGroup object creates spacing between all its children and wraps the items when there is no room.
+
+```javascript
+import { ItemGroup } from "@staccx/bento"
+```
+
+## Standard ItemGroup
+This is the standard ItemGroup. The spacing is default "tiny".
+
+The spacing prop take up to eight types: macro, tiny, small, medium, mediumPlus, large and huge.
+
+<Preview>
+  <Story name="Standard">
+   <ItemGroup spacing="medium">
+        <Button>Loan</Button>
+        <Button>Credit</Button>
+        <Button>Saving</Button>
+        <Button>About this bank</Button>
+        <Button>Contact</Button>
+   </ItemGroup>
+  </Story>
+</Preview>
+
+
+## Props for ItemGroup
+<Props of={ItemGroup} />
