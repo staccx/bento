@@ -56,6 +56,9 @@ const Badge = styled.span`
 `
 
 NewBadge.propTypes = {
+  /**
+   * Number will be displayed on the badge
+   */
   number: PropTypes.number.isRequired,
   children: commonPropTypes.children
 }
