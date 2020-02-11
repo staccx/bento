@@ -1,0 +1,23 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import FullScreenLoader from "./FullScreenLoader"
+
+<Meta title="Components|Loaders/FullScreenLoader" component={FullScreenLoader}/>
+
+# FullScreenLoader
+FullScreenLoader is a LoadingComponent great for transitions when also doing something Async, like 
+API requests.
+
+```javascript
+import { FullScreenLoader } from "@staccx/bento"
+```
+
+## Standard FullScreenLoader
+This is the standard FullScreenLoader
+
+  <Story name="Standard">
+   <FullScreenLoader messages={["Loading"]} />
+  </Story>
+
+
+## Props for FullScreenLoader
+<Props of={FullScreenLoader} />
