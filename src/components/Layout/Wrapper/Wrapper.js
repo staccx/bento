@@ -66,9 +66,21 @@ Wrapper.defaultProps = {
 }
 
 Wrapper.propTypes = {
+  /**
+   * The component can have children, but is not required.
+   */
   children: commonPropTypes.children,
+  /**
+   * The component can be assigned a class.
+   */
   className: PropTypes.string,
+  /**
+   * The component accept the following sizes: small, medium and large.
+   */
   size: PropTypes.string,
+  /**
+   * The component can set the padding left and right to 0px.
+   */
   breakout: PropTypes.bool
 }
 
