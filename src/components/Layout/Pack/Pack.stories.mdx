@@ -1,0 +1,46 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Pack from './Pack';
+import PackItem from './PackItem';
+
+<Meta title="Components|Layout/Pack and PackItem" component={Pack, PackItem}/>
+
+# Pack and PackItem
+The pack object simply causes any number of elements pack up horizontally to automatically fill an equal, fluid width of their parent.
+
+```javascript
+import { Pack, PackItem } from "@staccx/bento"
+```
+
+## Standard Pack and PackItem
+This is the standard Pack and PackItem.
+
+<Preview>
+  <Story name="Standard">
+   <Pack justify="flex-start">
+        <PackItem>Loan</PackItem>
+        <PackItem>Credit</PackItem>
+        <PackItem>Saving</PackItem>
+        <PackItem>About this bank</PackItem>
+    </Pack>
+  </Story>
+</Preview>
+
+## NoWrap Pack and PackItem
+This is the Pack with noWrap and PackItem.
+
+<Preview>
+  <Story name="NoWrap">
+   <Pack middle noWrap>
+        <PackItem>Loan</PackItem>
+        <PackItem>Credit</PackItem>
+        <PackItem>Saving</PackItem>
+        <PackItem>About this bank</PackItem>
+    </Pack>
+  </Story>
+</Preview>
+
+## Props for Pack
+<Props of={Pack} />
+
+## Props for PackItem
+<Props of={PackItem} />
