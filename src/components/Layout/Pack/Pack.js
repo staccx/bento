@@ -54,14 +54,32 @@ Pack.defaultProps = {
 }
 
 Pack.propTypes = {
+  /**
+   * The component require a child and it can be an array of elements or one element.
+   */
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element
   ]).isRequired,
+  /**
+   * The component can be assigned a class.
+   */
   className: PropTypes.string,
+  /**
+   * The position of the Pack
+   */
   bottom: PropTypes.bool,
+  /**
+   * The position of the Pack, a boolean
+   */
   middle: PropTypes.bool,
+  /**
+   * The position of the Pack, a boolean
+   */
   noWrap: PropTypes.bool,
+  /**
+   * The prop accepts a string, e.g. justify="flex-start".
+   */
   justify: PropTypes.string
 }
 

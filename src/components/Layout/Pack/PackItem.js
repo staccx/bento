@@ -22,7 +22,13 @@ PackItem.defaultProps = {
 }
 
 PackItem.propTypes = {
+  /**
+   * The component require a child.
+   */
   children: commonPropTypes.children.isRequired,
+  /**
+   * The component can be assigned a class.
+   */
   className: PropTypes.string
 }
 
