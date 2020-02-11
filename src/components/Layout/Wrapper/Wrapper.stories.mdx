@@ -1,0 +1,36 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Wrapper from './Wrapper';
+
+<Meta title="Components|Layout/Wrapper" component={Wrapper}/>
+
+# Wrapper
+This is a component that centers content and add spacing on the sides. It can be used to wrap content when aligning text or similar. 
+
+```javascript
+import { Wrapper } from "@staccx/bento"
+```
+
+## Standard Wrapper
+This is the standard Wrapper with divs inside to illustrate how it works.
+
+<Preview>
+  <Story name="Standard">
+    <Wrapper>
+        <Wrapper size="small">
+            <div style={{ backgroundColor: "#FFE74C", padding: 10 }}>Wrapper small</div>
+        </Wrapper>
+        <Wrapper size="medium">
+            <div style={{ backgroundColor: "#FF5964", padding: 10 }}>Wrapper medium</div>
+        </Wrapper>
+        <Wrapper size="large">
+            <div style={{ backgroundColor: "#38618C", padding: 10, color: "white" }}>Wrapper large</div>
+        </Wrapper>
+        <Wrapper breakout>
+            <div style={{ backgroundColor: "#35A7FF", padding: 10, color: "white" }}>Wrapper default with breakout</div>
+        </Wrapper>
+    </Wrapper>
+  </Story>
+</Preview>
+
+## Props for Wrapper
+<Props of={Wrapper} />
