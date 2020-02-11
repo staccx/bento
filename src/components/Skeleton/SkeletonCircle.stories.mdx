@@ -1,0 +1,28 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import SkeletonCircle from "./Skeleton.Circle"
+import SkeletonPulse from "./Skeleton.Pulse"
+
+<Meta title="Components|Skeleton/SkeletonCircle" component={SkeletonCircle}/>
+
+# SkeletonCircle
+Skeleton is used as a placeholder and a illustrator that the page is loading components.
+It is suppost to take the shape of the loading component and render a skeleton of that component,
+also with a pulsing effect to illustrate loading.
+
+```javascript
+import { SkeletonCircle } from "@staccx/bento"
+```
+
+## Standard Skeleton
+
+<Preview>
+  <Story name="Standard">
+  <>
+       <SkeletonCircle style={{ padding: 40 }}/>
+       <SkeletonPulse />
+   </>
+  </Story>
+</Preview>
+
+## Props for Skeleton
+<Props of={SkeletonCircle} />
