@@ -40,6 +40,9 @@ WidowFix.defaultProps = {
 
 WidowFix.propTypes = {
   children: commonPropTypes.children.isRequired,
+  /**
+   * Determines minimum how many carrecters will go to a new line
+   */
   threshold: PropTypes.number
 }
 

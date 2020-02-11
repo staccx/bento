@@ -1,0 +1,61 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import WidowFix from "./WidowFix"
+
+<Meta title="Components|Text/WidowFix" component={WidowFix}/>
+
+# WidowFix
+This component determines how long the final word will have to be to be allowed to go to a new line. 
+If the final word is shorter than the threshold, it will also bring the second last word with it 
+down to the new line.
+
+```javascript
+import { WidowFix } from "@staccx/bento"
+```
+
+## Standard WidowFix
+Last word is long enought to go to a new line alone
+
+<Preview>
+  <Story name="Standard">
+   <WidowFix threshold={3}>
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                   iaculis erat ipsum, ut euismod orci luctus sit amet. Donec et
+                   tincidunt dolor, at vehicula mauris. Nullam eleifend tristique arcu
+                   ac scelerisque. Pellentesque sapien ex, faucibus sit amet nulla
+                   eget, sollicitudin fringilla arcu. Suspendisse imperdiet urna eu
+                   nulla tincidunt pretium. Nunc a blandit nulla, ac feugiat nulla.
+                   Nulla nisl nunc, ornare quis odio gravida, sodales mattis enim.
+                   Aenean turpis dui, fringilla in arcu a, consectetur placerat sapien.
+                   Aenean nec augue quis ipsum feugiat maximus. Interdum et malesuada
+                   fames ac ante ipsum primis in faucibus. Suspendisse vitae nisl
+                   vehicula ante gravida scelerisque faucibus ac enim. Suspendisse
+                   imperdiet tellus id tristique
+   </WidowFix>
+  </Story>
+</Preview>
+
+
+## Standard WidowFix
+Last word is not long enought to go to the new line alone
+
+<Preview>
+  <Story name="To short">
+   <WidowFix threshold={30}>
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                   iaculis erat ipsum, ut euismod orci luctus sit amet. Donec et
+                   tincidunt dolor, at vehicula mauris. Nullam eleifend tristique arcu
+                   ac scelerisque. Pellentesque sapien ex, faucibus sit amet nulla
+                   eget, sollicitudin fringilla arcu. Suspendisse imperdiet urna eu
+                   nulla tincidunt pretium. Nunc a blandit nulla, ac feugiat nulla.
+                   Nulla nisl nunc, ornare quis odio gravida, sodales mattis enim.
+                   Aenean turpis dui, fringilla in arcu a, consectetur placerat sapien.
+                   Aenean nec augue quis ipsum feugiat maximus. Interdum et malesuada
+                   fames ac ante ipsum primis in faucibus. Suspendisse vitae nisl
+                   vehicula ante gravida scelerisque faucibus ac enim. Suspendisse
+                   imperdiet tellus id tristique
+   </WidowFix>
+  </Story>
+</Preview>
+
+## Props for WidowFix
+<Props of={WidowFix} />
