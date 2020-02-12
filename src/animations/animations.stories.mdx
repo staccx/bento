@@ -1,0 +1,248 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import styled, {css} from "styled-components";
+import { AppearIn } from './Appear';
+import { BounceIn, BounceOut } from './Bounce';
+import { FadeIn, FadeInFromTop } from './Fade';
+import { ScaleIn, ScaleInY, ScaleInX } from './Scale';
+import { SlideInFromTop, SlideInFromLeft, SlideInFromRight } from './Slide';
+import {
+  color,
+  borderRadius,
+  spacing,
+  targetSize,
+  font,
+  fontFamily,
+  fontWeight,
+  applyVariants
+} from "../theming"
+
+export const commonCSS = css`
+    background-color: ${color.primary};
+    color: ${color.white};
+    border-width: 0;
+    border-radius: ${borderRadius};
+    padding: ${spacing.tiny} ${spacing.medium};
+    min-height: ${targetSize.normal};
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    font-size: ${font.base};
+    font-family: ${fontFamily.body};
+    line-height: 32px;
+    font-weight: ${fontWeight.bold};
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+`
+
+<Meta title="Styling|/Animations" component={AppearIn, BounceIn, BounceOut, FadeIn, FadeInFromTop, ScaleIn, ScaleInY, ScaleInX, SlideInFromTop, SlideInFromLeft, SlideInFromRight}/>
+
+export const AppearComp = styled.div`
+  animation: ${AppearIn} 2s ease-out forwards;
+  transform: translateX(-100px);
+  ${commonCSS};
+  `
+
+export const BounceInComp = styled.div`
+  animation: ${BounceIn} 2s ease-out forwards;
+  transform: translateY(-12px);
+  ${commonCSS};
+  `
+
+export const BounceOutComp = styled.div`
+  animation: ${BounceOut} 2s ease-out forwards;
+  transform: translateY(0);
+  ${commonCSS};
+  `
+
+export const FadeInComp = styled.div`
+  animation: ${FadeIn} 2s ease-in forwards;
+  opacity: 0;
+  ${commonCSS};
+  `
+
+export const FadeInFromTopComp = styled.div`
+  animation: ${FadeInFromTop} 2s ease-in forwards;
+  opacity: 0;
+  transform: translateY(-100%);
+  ${commonCSS};
+  `
+
+
+export const ScaleInComp = styled.div`
+  animation: ${ScaleIn} 2s ease-in forwards;
+  transform: scale(0);
+  ${commonCSS};
+  `
+
+export const ScaleInYComp = styled.div`
+  animation: ${ScaleInY} 2s ease-in forwards;
+  transform: scale(0);
+  ${commonCSS};
+  `
+
+export const ScaleInXComp = styled.div`
+  animation: ${ScaleInX} 2s ease-in forwards;
+  transform: scale(0);
+  ${commonCSS};
+  `
+
+export const SlideInFromLeftComp = styled.div`
+  animation: ${SlideInFromLeft} 2s ease-in forwards;
+  opacity: 0;
+  transform: translateX(-100%);
+  ${commonCSS};
+  `
+
+
+export const SlideInFromRightComp = styled.div`
+  animation: ${SlideInFromRight} 2s ease-in forwards;
+  opacity: 0;
+  transform: translateX(100%);
+  ${commonCSS};
+  `
+
+export const SlideInFromTopComp = styled.div`
+  animation: ${SlideInFromTop} 2s ease-in forwards;
+  opacity: 0;
+  transform: translateY(100%);
+  ${commonCSS};
+  `
+
+# Animations
+This story contains several animations that can be used as a global variable in our styled components.
+
+`Protip:` Remember to set the initial placing of the component in addition to the values from the imported keyframe animation! Sometimes when the code is used in production, the animation can "glitch" and make the overall impression bad.
+
+```javascript
+import { AppearIn, BounceIn, BounceOut, Fade, Scale, Slide } from "@staccx/bento"
+```
+
+## AppearIn 
+This is the AppearIn keyframe with a div.
+
+  <Story name="AppearIn">
+   <AppearComp>AppearIn</AppearComp>
+  </Story>
+
+```css
+    animation: ${Bounce} 2s ease-out forwards;
+    transform: translateX(-100px);
+```
+
+## BounceIn 
+This is the BounceIn keyframe with a div.
+
+  <Story name="BounceIn">
+   <BounceInComp>BounceIn</BounceInComp>
+  </Story>
+
+```css
+    animation: ${BounceIn} 2s ease-out forwards;
+    transform: translateY(-12px);
+```
+
+## BounceOut 
+This is the BounceOut keyframe with a div.
+
+  <Story name="BounceOut">
+   <BounceOutComp>BounceOut</BounceOutComp>
+  </Story>
+
+```css
+    animation: ${BounceOut} 2s ease-out forwards;
+    transform: translateY(0);
+```
+
+
+## FadeIn 
+This is the FadeIn keyframe with a div.
+
+  <Story name="FadeIn">
+   <FadeInComp>FadeIn</FadeInComp>
+  </Story>
+
+```css
+    animation: ${FadeIn} 2s ease-in forwards;
+    opacity: 0;
+```
+
+## FadeInFromTop
+This is the FadeInFromTop keyframe with a div.
+
+  <Story name="FadeInFromTop">
+   <FadeInFromTopComp>FadeInFromTop</FadeInFromTopComp>
+  </Story>
+
+```css
+    animation: ${FadeInFromTop} 2s ease-in forwards;
+    transform: translateY(-100%);
+    opacity: 0;
+```
+
+## ScaleIn
+This is the ScaleIn keyframe with a div.
+
+  <Story name="ScaleIn">
+   <ScaleInComp>ScaleIn</ScaleInComp>
+  </Story>
+
+```css
+    animation: ${ScaleIn} 2s ease-in forwards;
+    transform: scale(0);
+```
+
+
+## ScaleInY
+This is the ScaleInY keyframe with a div.
+
+  <Story name="ScaleInY">
+   <ScaleInYComp>ScaleInY</ScaleInYComp>
+  </Story>
+
+```css
+    animation: ${ScaleInY} 2s ease-in forwards;
+    transform: scale(0);
+```
+
+
+## ScaleInX
+This is the ScaleInX keyframe with a div.
+
+  <Story name="ScaleInX">
+   <ScaleInXComp>ScaleInX</ScaleInXComp>
+  </Story>
+
+```css
+    animation: ${ScaleInX} 2s ease-in forwards;
+    transform: scale(0);
+```
+
+## SlideInFromLeft
+This is the SlideInFromLeft keyframe with a div.
+
+  <Story name="SlideInFromLeft">
+   <SlideInFromLeftComp>SlideInFromLeft</SlideInFromLeftComp>
+  </Story>
+
+```css
+    animation: ${SlideInFromLeft} 2s ease-in forwards;
+    opacity: 0;
+    transform: translateX(-100%);
+```
+
+
+## SlideInFromRight
+This is the SlideInFromRight keyframe with a div.
+
+  <Story name="SlideInFromRight">
+   <SlideInFromRightComp>SlideInFromRight</SlideInFromRightComp>
+  </Story>
+
+```css
+    animation: ${SlideInFromRight} 2s ease-in forwards;
+    opacity: 0;
+    transform: translateX(100%);
+```
