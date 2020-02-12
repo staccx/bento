@@ -1,0 +1,36 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import theme from "./baseTheme"
+
+<Meta title="Colors|ThemeColors" component={theme}/>
+
+# ColorNames
+These are the colors used in Bentos Base theme. These colors will vary between the different themes that are in use. 
+The colors are used just like the rest of the theme component. We use colors from theme to controll the color palette within the project 
+
+Example usage and import(using styled-component):
+```javascript
+import { theming } from "@staccx/bento"
+
+const xxx () => {
+  return (
+    <ColoredBox/> 
+)
+}
+export default xxx
+
+const ColoredBox = styled.div
+background-color: theming.color.secondary
+```
+
+## All colorNames
+These are the themes colors. As seen above, they are used in styling as: background-colors: theming.color.bg, theming.color.primary.
+
+export let colors = Object.keys(theme.color).map(function(key){
+return <div key={key} style={{marginRight:5, border:1, borderColor:"black", borderStyle:"solid", marginBottom:20, height:150, width:150, textAlign:"center", backgroundColor: theme.color[key]}}><p style={{marginTop: 150}}>{key}</p></div> });
+
+
+   <Story name="ThemeColors">
+    <div style={{display:"flex",flexDirection:"row",flexWrap:"wrap"}}>
+    {colors}
+    </div>
+  </Story>
