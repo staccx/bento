@@ -1,0 +1,43 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import formatName from "./formatName"
+
+<Meta title="Formatting|FormatName" component={formatName}/>
+
+# formatName
+Simple name formatter, takes a string and formats it lastname, firstname
+
+```javascript
+import { formatName } from "@staccx/bento"
+```
+
+## Standard formatName
+Here formatName takes the name Jane doe and formats it.
+The result will be:
+
+<Preview>
+  <Story name="Standard">
+   <p>{formatName("Jane doe")}</p>
+  </Story>
+</Preview>
+
+
+## Uppercase as input
+FormatName will also work from uppercase
+input: JANE DOE.
+Result:
+
+<Preview>
+  <Story name="Uppercase">
+   <p>{formatName("JANE DOE")}</p>
+  </Story>
+</Preview>
+
+
+## Custom separator
+Format name also allows for custom separators
+
+<Preview>
+  <Story name="Custom separator">
+   <p>{formatName("Jane doe", { separator: "-"})}</p>
+  </Story>
+</Preview>
