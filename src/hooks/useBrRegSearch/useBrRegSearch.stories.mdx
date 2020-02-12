@@ -1,0 +1,31 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import ReactJson from "react-json-view"
+import List from "../../components/Lists/List"
+import useBrRegSearch from "./useBrRegSearch"
+import {Component} from "./BregStoryComp"
+import Input from "../../components/Forms/Input/Input"
+
+<Meta title="Functions|hooks/UseBrRegSearch" component={useBrRegSearch}/>
+
+# UseBrRegSearch
+useBrRegSearch
+
+```javascript
+import { useBrRegSearch } from "@staccx/bento"
+```
+
+
+## Standard useBrRegSearch
+
+
+export let value = ""
+
+<Preview>
+  <Story name="Standard">
+  <div>
+    <Component term={value}/>
+    <Input onChange={e => value = e.target.value}/>
+  </div>
+  </Story>
+</Preview>
+
