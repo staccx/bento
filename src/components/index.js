@@ -1,5 +1,3 @@
-import QuestionMark from "./Icons/QuestionMark/QuestionMark"
-
 export { default as Input } from "./Forms/Input/Input"
 export { default as BirthdateInput } from "./Forms/Input/BirthdateInput/BirthdateInput"
 export { default as CurrencyInput } from "./Forms/Input/CurrencyInput/CurrencyInput"
@@ -57,6 +55,7 @@ export { default as ItemGroup } from "./Layout/ItemGroup/ItemGroup"
 export { default as Divider } from "./Layout/Divider/Divider"
 
 // Icons
+export { default as QuestionMark } from "./Icons/QuestionMark/QuestionMark"
 export { default as Caret } from "./Icons/Caret/Caret"
 export { default as CaretRight } from "./Icons/CarerRight/CaretRight"
 export { default as Close } from "./Icons/Close/Close"
@@ -108,28 +107,17 @@ export { default as CopyToClipboardComponent } from "./CopyToClipboard/CopyToCli
 
 export { default as WebFonts } from "./Theme/WebFonts"
 
-// import Accordion from "./Accordion/Accordion"
-
 /**
  * Hooks!
  */
 export { default as useSearch } from "../hooks/useSearch/useSearch"
 export { default as useTimer } from "../hooks/useTimer"
 
-// Search
-
 // Navigation
 export { default as Breadcrumb } from "./Breadcrumb/Breadcrumb"
-
 export { default as SkeletonPulse } from "./Skeleton/Skeleton.Pulse"
 export { default as SkeletonLine } from "./Skeleton/Skeleton.Line"
 export { default as SkeletonCircle } from "./Skeleton/Skeleton.Circle"
-
 export { default as useInterval } from "../hooks/useInterval"
 export { default as useDebounce } from "../hooks/useDebounce"
-
 export { default as dataFetcherFactory } from "../context/dataFetcherFactory/dataFetcherFactory"
-
-export const icons = {
-  QuestionMark
-}
