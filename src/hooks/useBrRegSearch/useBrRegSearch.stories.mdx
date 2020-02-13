@@ -1,11 +1,12 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, text } from "@storybook/addon-knobs"
 import ReactJson from "react-json-view"
 import List from "../../components/Lists/List"
 import useBrRegSearch from "./useBrRegSearch"
-import {Component} from "./BregStoryComp"
+import {Component} from "./useBrRegSearch.story.function.js"
 import Input from "../../components/Forms/Input/Input"
 
-<Meta title="Functions|hooks/UseBrRegSearch" component={useBrRegSearch}/>
+<Meta title="Functions|hooks/UseBrRegSearch" component={useBrRegSearch} decorators={[withKnobs]}/>
 
 # UseBrRegSearch
 useBrRegSearch
@@ -23,8 +24,7 @@ export let value = ""
 <Preview>
   <Story name="Standard">
   <div>
-    <Component term={value}/>
-    <Input onChange={e => value = e.target.value}/>
+    <Component term={text("Search", "test", "search")}/>
   </div>
   </Story>
 </Preview>
