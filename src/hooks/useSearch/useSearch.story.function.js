@@ -12,6 +12,7 @@ const Component = ({ term, keys = defaultKeysValue }) => {
 
   return (
     <div>
+      <Heading level={3}>Result:</Heading>
       <List>
         {result.map(item => (
           <ReactJson
@@ -24,7 +25,7 @@ const Component = ({ term, keys = defaultKeysValue }) => {
         ))}
       </List>
 
-      <Heading>All items</Heading>
+      <Heading level={3}>All items:</Heading>
 
       <List>
         {data.map(item => (
