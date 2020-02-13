@@ -88,7 +88,6 @@ export { default as Alert } from "./Alert/Alert"
 
 // Boxes
 export { default as Box } from "./Layout/Box/Box"
-export { default as Portal } from "./Portal/Portal"
 
 export { default as ThemeComponent } from "./Theme/ThemeComponent"
 export { default as GlobalStyle } from "./Theme/GlobalStyle"
