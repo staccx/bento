@@ -1,7 +1,8 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, number } from "@storybook/addon-knobs"
 import ProgressBar from "./ProgressBar.js"
 
-<Meta title="Components|DataViz/ProgressBar" component={ProgressBar}/>
+<Meta title="Components|DataViz/ProgressBar" component={ProgressBar} decorators={[withKnobs]}/>
 
 # ProgressBar
 Displays progress from 0 to 100%, with warningThreshold. Default value for threshold set to 0.9
@@ -11,18 +12,19 @@ Displays progress from 0 to 100%, with warningThreshold. Default value for thres
 import {ProgressBar} from "@staccx/bento"
 ```
 
-## ProgressBar with progress 0%
+
+## ProgressBar with progress 0% withKnobs
 <Preview>
   <Story name="0%">
-   <ProgressBar progress="0"/>
+   <ProgressBar progress={number("default0%",0.0, "default0")}/>
   </Story>
 </Preview>
 
    
-## ProgressBar with progress 50%
+## ProgressBar with progress 50% withKnobs
 <Preview>
   <Story name="50%">
-   <ProgressBar progress="0.5"/>
+   <ProgressBar progress={number("default50%", 0.5, "default50")}/>
   </Story>
 </Preview>
 
