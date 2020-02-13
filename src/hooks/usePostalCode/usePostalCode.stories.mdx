@@ -1,0 +1,57 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, array } from "@storybook/addon-knobs"
+import { usePostalCode } from "./usePostalCode"
+import Button from "../../components/Button/Button"
+
+
+<Meta title="Functions|hooks/usePostalCode" component={usePostalCode} decorators={[withKnobs]}/>
+
+# usePostalCode
+
+
+```javascript
+import {usePostalCode} from "@staccx/bento"
+```
+
+## usePostalCode setup component
+This is the function that holds all the functionality for usePostalCode
+
+```javascript
+import useDebounce from "../useDebounce"
+import { useRequest } from "../useRequest/useRequest"
+
+export const usePostalCode = (
+  code,
+  validator = value => value?.length === 4
+) => {
+  const [debouncedCode] = useDebounce(code, 500)
+  const { data, error } = useRequest(
+    validator(debouncedCode)
+      ? {
+          url: `https://api.bring.com/shippingguide/api/postalCode.json`,
+          params: {
+            clientUrl: window.location.href,
+            pnr: debouncedCode
+          },
+          transformRequest: [
+            function(data, headers) {
+              delete headers.common.Authorization
+              return data
+            }
+          ]
+        }
+      : null
+  )
+
+  return [data, error]
+}
+
+```
+
+
+
+
+## usePostalCode
+Needs work
+
+  
