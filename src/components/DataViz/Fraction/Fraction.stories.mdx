@@ -1,7 +1,8 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks"
+import { withKnobs, text } from "@storybook/addon-knobs"
 import Fraction from "./Fraction.js"
 
-<Meta title="Components|DataViz/Fraction" component={Fraction} />
+<Meta title="Components|DataViz/Fraction" component={Fraction} decorators={[withKnobs]}/>
 
 # Fraction
 Component showing progression, with posibility to change amount of fractions, value range from 0 to max.
@@ -18,7 +19,7 @@ value set to 0 with max as default 5
 
 <Preview>
   <Story name="Fraction 0">
-    <Fraction value="0" />
+    <Fraction value={text("value","0","value")} />
   </Story>
 </Preview>
 
