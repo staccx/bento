@@ -4,15 +4,177 @@ import Image from "./components/Image/Image";
 <Meta title="Intro|How to use Bento" component={Image} />
 
 # How to use Bento
-Bento is, well, the only toolbox you will need when working with frontend!
+Here we'll got through how to get your app up and runnning with Bento.
 
-## What is Bento?
-Bento is a toolbox containing styled components such as inputfields, buttons, icons layouts and much more.
+## Installation
+We often start with a fresh [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) template, but this is not a requirement. We also have a bento-template for create-react-app that does everything for you. If this is your first time setting up a fresh Bento project, we suggest doing it manually or at least looking throught what the cra-template actually does.
+If you use the cra-template, you should create your own theme as described below.
 
-## How to use Bento?
+```bash
+npx create-react-app my-app --template bento
+```
+
+## Manual installation
+Bento has peer dependencies to styled-components, so we'll have to install that as well as Bento itself.
+
+#### Yarn
+```bash
+yarn add styled-components @staccx/bento
+```
+
+#### NPM
+```bash
+npm install --save styled-components @staccx/bento
+```
+
+### Create your theme
+Bento is pretty ugly without a theme. If you've ever tried to get Boostrap to not look like Bootstrap, you'll appreciate why. 
+Create a js-file to hold your theme. For example at `/src/theme/theme.js`. 
+
+<details><summary>theme.js example</summary>
+<p>
+
+```js
+import { css } from "styled-components"
+import { theming } from "@staccx/base"
+
+const reset = theming.createGlobal({
+  baseReset: theming.cssResets
+})
+
+const borderRadius = "0px"
+const headerHeight = "70px"
+
+const targetSize = {
+  small: "36px",
+  normal: "44px"
+}
+
+const wrapper = {
+  small: "460px",
+  medium: "720px",
+  large: "1158px",
+  huge: "1440px",
+  breakout: "640px"
+}
+
+const spacing = {
+  grid: "7vh",
+  huge: "96px",
+  largePlus: "72px",
+  large: "48px",
+  mediumPlus: "32px",
+  medium: "24px",
+  small: "12px",
+  tiny: "6px",
+  flush: "0"
+}
+
+const color = {
+  bg: "#F4F2F1",
+  primary: "#0000A0",
+  primaryLight: "#DCEDFF",
+  secondary: "#FDECE4",
+  gray: "#646464",
+  text: "#000040",
+  white: "#fff",
+  link: "#0000A0",
+  red: "#FC6161",
+  yellow: "#FFE184",
+  line: "#C9C7C7",
+  wcag: "#777",
+  disabled: "#E4E4E4",
+  warning: "#FC6161",
+  black: "#000",
+  subtleHover: "#EDF2F7"
+}
+
+const font = {
+  h1: "32px",
+  h2: "26px",
+  h3: "22px",
+  h4: "18px",
+  h5: "16px",
+  h6: "14px",
+  base: "14px"
+}
+
+const fontWeight = {
+  bold: "700",
+  normal: "400"
+}
+
+const webfonts = {
+  google: {
+    families: [
+      "Montserrat:400,500,600,700"
+    ]
+  }
+}
+
+const fontFamily = {
+  heading: "Montserrat",
+  body: "Montserrat"
+}
+
+const theme = new theming.Theme(
+    {},
+    {
+      name: "My theme",
+      font,
+      fontWeight,
+      webfonts,
+      color,
+      wrapper,
+      targetSize,
+      borderRadius,
+      headerHeight,
+      fontFamily,
+      spacing
+    }
+  )
+  .add(reset)
+
+export default theme
+```
+
+</p>
+</details>
+
+Then we need to import our theme into our app and make it accessible to all the components. This is done by using styled-components' theme-provider.
+
+
+
+```js
+
+import React from "react"
+import { ThemeProvider } from "styled-components"
+import { Button, CheckBox } from "@staccx/bento"
+import theme from "./theme/theme"
+
+
+function App () {
+  return (
+    <ThemeProvider theme={theme}>
+      <Button onClick={() => console.log("Something")}>This is a button</Button>
+      <CheckBox id={"test"}>Tester</CheckBox>
+    </ThemeProvider>
+  )
+}
+
+export default App
+
+```
+
+
+
+#### Eslint
+Here at @staccx we have our own eslint-config based on standardjs and prettier. Please use that, installation procedures will be located at that repo.
+
+# How to use Bento's storybook?
 Each component has documentation on how to use it with code examples, and information that is nice to know. However, in order to keep Bento up to date we all have a responsibility to adjust and add new components to the Bento library.
 
-If there is documentation that is unclear or does not make any sense, do fix it or ask some of your teammembers to help you make it understandable for all. Remember taht we document all our source code in the English language to increase the readability for all members of the team.
+If there is documentation that is unclear or does not make any sense, do fix it or ask some of your teammembers to help you make it understandable for all. Remember that we document all our source code in the English language to increase the readability for all members of the team.
 
 For example, if you come across two components almost looking the same and does almost the same, you should seek to generalise those two components into one. Then you can use for example props to customize the component to do the same job. That way, Bento will have components
 that is specific for its purpose, and we can focus on improving components rather than rewriting common patterns.
