@@ -1,12 +1,22 @@
 import React from "react"
+import styled from "styled-components"
 import { Layout, LayoutItem, List, State, Heading, Text } from "@staccx/base"
-import { TranslatedText } from "@staccx/i18n"
+import { SanityBlockContent, serializers } from "@staccx/sanity"
+import { TranslatedText, i18nInstance } from "@staccx/i18n"
 import Back from "../../components/Back"
 import AccountFilter from "../../components/AccountFilter"
 import { formatPhone } from "@staccx/formatting"
 import AnnualStatementList from "../../components/AnnualStatementList"
 
-const AnnualStatement = ({ statements = [], footerText }) => {
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  & > p {
+    margin-bottom: ${p => p.theme.spacing.tiny};
+  }
+`
+
+const AnnualStatement = ({ statements = [], footerText, footer }) => {
   return (
     <State>
       {({ set, selected = statements.length ? statements[0] : null }) => {
@@ -33,22 +43,39 @@ const AnnualStatement = ({ statements = [], footerText }) => {
             </LayoutItem>
             <LayoutItem variant="fadeIn" delay="600" area="main">
               {selected && (
-                <div style={{ marginBottom: "40px" }}>
-                  <Heading level="2" variant="annualStatmentHeading">
-                    Registreringsnummer
-                  </Heading>
+                <>
+                  <strong>Registreringsnummer: </strong>
                   <Text>
                     {formatPhone(selected.socialSecurityNo, "XXXXXX XXXXX")}
                   </Text>
-                </div>
+                </>
               )}
               <List>
                 <AnnualStatementList statement={selected} />
               </List>
+              {selected && (
+                <>
+                  <div style={{ marginTop: "30px" }}>
+                    <strong>
+                      <TranslatedText i18nKey="til-bruk-ved-kontroll-selvangivelse">
+                        Til bruk ved kontroll/utfylling av selvangivelse
+                      </TranslatedText>
+                    </strong>
+                  </div>
+                  <List>
+                    <AnnualStatementList
+                      statement={{ items: selected.controlItems }}
+                    />
+                  </List>
+                </>
+              )}
             </LayoutItem>
             {selected && (
-              <LayoutItem area="ad" style={{ marginTop: "40px" }}>
-                <Text>{footerText}</Text>
+              <LayoutItem area="ad" style={{ marginTop: "30px" }}>
+                <SanityBlockContent
+                  blocks={footer}
+                  serializers={{ ...serializers, container: Container }}
+                />
               </LayoutItem>
             )}
           </Layout>
