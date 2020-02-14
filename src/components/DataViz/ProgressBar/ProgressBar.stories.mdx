@@ -43,7 +43,7 @@ Use the slider to set the progress of the progressBar
     return <div>
     <p>Set value for progress bar</p>
     <Slider name="Progress" min={0} max={1} step={0.01} value={1} onChange={e => setProgress(e.target.value)} label="Set Progress"/>
-    <ProgressBar progress={progress}  />
+    <ProgressBar progress={Number(progress)}  />
     </div>
    }}
   </Story>
