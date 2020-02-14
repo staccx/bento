@@ -2894,21 +2894,21 @@
     ts-dedent "^1.1.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-actions@^6.0.0-alpha.5":
-  version "6.0.0-alpha.5"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.0.0-alpha.5.tgz#23d31eafd60ad073c9084036e3e1c6775d3e6819"
-  integrity sha512-jueidByRQnPuYhSKNq16igoVMFBsSk09c0jCnBWjXtx9UkVyk1CEjRYsvHdjllAyDQFCb9a4nEkryywOZ8SgTQ==
+"@storybook/addon-actions@^5.3.13":
+  version "5.3.13"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-5.3.13.tgz#faf57ca14a46ce0c69168c631fbfc3d79d294b38"
+  integrity sha512-NoKTI/7Zf/IpbfeIFPWQT3eN0As1yICLcSklj9BjHq7itSssaqZzvP/vxmeAvdagIBcPM58GaN9XXXLQIn5HLg==
   dependencies:
-    "@storybook/addons" "6.0.0-alpha.5"
-    "@storybook/api" "6.0.0-alpha.5"
-    "@storybook/client-api" "6.0.0-alpha.5"
-    "@storybook/components" "6.0.0-alpha.5"
-    "@storybook/core-events" "6.0.0-alpha.5"
-    "@storybook/theming" "6.0.0-alpha.5"
+    "@storybook/addons" "5.3.13"
+    "@storybook/api" "5.3.13"
+    "@storybook/client-api" "5.3.13"
+    "@storybook/components" "5.3.13"
+    "@storybook/core-events" "5.3.13"
+    "@storybook/theming" "5.3.13"
     core-js "^3.0.1"
-    fast-deep-equal "^3.1.1"
+    fast-deep-equal "^2.0.1"
     global "^4.3.2"
-    polished "^3.4.4"
+    polished "^3.3.1"
     prop-types "^15.7.2"
     react "^16.8.3"
     react-inspector "^4.0.0"
