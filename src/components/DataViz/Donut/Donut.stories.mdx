@@ -45,7 +45,7 @@ import {Donut} from "@staccx/bento"
    {() => {
        const [progress, setProgress] = useState(1);
        return <div>
-       <p>Set value for progress bar</p>
+       <p>Set value for Donut</p>
        <Slider min={0} name={"progress"} max={1} step={0.01} value={1} onChange={e => setProgress(e.target.value)} label="Set Progress"/>
        <Donut progress={Number(progress)}  />
        </div>
