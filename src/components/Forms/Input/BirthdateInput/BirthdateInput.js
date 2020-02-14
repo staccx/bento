@@ -67,9 +67,6 @@ class BirthdateInput extends React.Component {
   }
 
   createDate(d, m, y) {
-    console.log(
-      new Date(y.toString() + "-" + m.toString() + "-" + d.toString())
-    )
     return new Date(y.toString() + "-" + m.toString() + "-" + d.toString())
   }
 
