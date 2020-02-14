@@ -1,6 +1,9 @@
+import {useState} from "react"
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { withKnobs, text } from "@storybook/addon-knobs"
+import { action } from "@storybook/addon-actions"
 import Donut from "./Donut.js"
+import Slider from "../../Forms/Slider/Slider/Slider"
 
 <Meta title="Components|DataViz/Donut" component={Donut} decorators={[withKnobs]}/>
 
@@ -37,7 +40,7 @@ import {Donut} from "@staccx/bento"
 
 
 
-## Donut with progress 100%
+## Donut with progress 100% with Slider for progress
 <Preview>
   <Story name="100%">
    <Donut progress="1"/>
