@@ -27,15 +27,14 @@ class BirthdateInput extends React.Component {
   handleChangeDayInput(value) {
     this.handleChange()
     if (value.toString().length > 1) {
-      this.monthInput.current.input.current.focus()
-
+      this.monthInput.current.focus()
       if (
-        this.monthInput.current.input.current.value.toString().length > 1 &&
-        this.yearInput.current.input.current.value.toString().length > 1
+        this.monthInput.current.value.toString().length > 1 &&
+        this.yearInput.current.value.toString().length > 1
       ) {
         this.handleComplete()
       } else {
-        this.monthInput.current.input.current.focus()
+        this.monthInput.current.focus()
       }
     }
   }
@@ -44,12 +43,12 @@ class BirthdateInput extends React.Component {
     this.handleChange()
     if (value.toString().length > 1) {
       if (
-        this.dayInput.current.input.current.value.toString().length > 1 &&
-        this.yearInput.current.input.current.value.toString().length > 1
+        this.dayInput.current.value.toString().length > 1 &&
+        this.yearInput.current.value.toString().length > 1
       ) {
         this.handleComplete()
       } else {
-        this.yearInput.current.input.current.focus()
+        this.yearInput.current.focus()
       }
     }
   }
@@ -57,12 +56,10 @@ class BirthdateInput extends React.Component {
   handleChangeYearInput(value) {
     this.handleChange()
     if (value.toString().length > 3) {
-      if (this.dayInput.current.input.current.value.toString().length < 1) {
-        this.dayInput.current.input.current.focus()
-      } else if (
-        this.monthInput.current.input.current.value.toString().length < 1
-      ) {
-        this.monthInput.current.input.current.focus()
+      if (this.dayInput.current.value.toString().length < 1) {
+        this.dayInput.current.focus()
+      } else if (this.monthInput.current.value.toString().length < 1) {
+        this.monthInput.current.current.focus()
       } else {
         this.handleComplete()
       }
@@ -76,22 +73,19 @@ class BirthdateInput extends React.Component {
   handleChange() {
     if (this.props.onChange) {
       this.props.onChange(
-        this.dayInput.current.input.current.value.toString() +
-          this.monthInput.current.input.current.value.toString() +
-          this.yearInput.current.input.current.value.toString()
+        this.dayInput.current.value.toString() +
+          this.monthInput.current.value.toString() +
+          this.yearInput.current.value.toString()
       )
     }
   }
 
   handleComplete() {
-    this.props.onComplete &&
-      this.props.onComplete(
-        this.createDate(
-          this.dayInput.current.input.current.value,
-          this.monthInput.current.input.current.value,
-          this.yearInput.current.input.current.value
-        )
-      )
+    this.createDate(
+      this.dayInput.current.value,
+      this.monthInput.current.value,
+      this.yearInput.current.value
+    )
   }
 
   render() {
@@ -123,7 +117,7 @@ class BirthdateInput extends React.Component {
             placeholder="dd"
             id={ids ? (ids[0] ? ids[0] : `${id}Day`) : `${id}Day`}
             name={names ? (names[0] ? names[0] : `${name}Day`) : `${name}Day`}
-            type={"tel"}
+            type="tel"
             ref={this.dayInput}
             onChange={e => this.handleChangeDayInput(e.target.value)}
             variant={variant}
@@ -138,7 +132,7 @@ class BirthdateInput extends React.Component {
             placeholder="mm"
             id={ids ? (ids[1] ? ids[1] : `${id}Month`) : `${id}Month`}
             name={`${name}Month`}
-            type={"tel"}
+            type="tel"
             ref={this.monthInput}
             onChange={e => this.handleChangeMonthInput(e.target.value)}
             variant={variant}
@@ -152,7 +146,7 @@ class BirthdateInput extends React.Component {
             placeholder="yyyy"
             id={ids ? (ids[2] ? ids[2] : `${id}Year`) : `${id}Year`}
             name={`${name}Year`}
-            type={"tel"}
+            type="tel"
             ref={this.yearInput}
             onChange={e => this.handleChangeYearInput(e.target.value)}
             variant={variant}

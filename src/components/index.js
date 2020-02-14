@@ -7,7 +7,6 @@ export { default as PostalCodeInput } from "./Forms/Input/PostalCodeInput/Postal
 export { default as NationalIdInput } from "./Forms/Input/NationalIdInput/NationalIdInput"
 export { default as CompanyInput } from "./Forms/Input/CompanyInput/CompanyInput"
 export { default as FileInput } from "./Forms/Input/FileInput/FileInput"
-export { default as EmailInput } from "./Forms/Input/EmailInput/EmailInput"
 export { default as Label } from "./Forms/Label/Label"
 export { default as Legend } from "./Forms/Legend/Legend"
 export { default as CheckBox } from "./Forms/CheckBox/CheckBox"
