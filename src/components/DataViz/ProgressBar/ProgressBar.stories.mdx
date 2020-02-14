@@ -42,7 +42,7 @@ Use the slider to set the progress of the progressBar
     const [progress, setProgress] = useState(1);
     return <div>
     <p>Set value for progress bar</p>
-    <Slider min="0" max="1" step="0.01" value="1" onChange={e => setProgress(e.target.value)} label="Set Progress"/>
+    <Slider name="Progress" min={0} max={1} step={0.01} value={1} onChange={e => setProgress(e.target.value)} label="Set Progress"/>
     <ProgressBar progress={progress}  />
     </div>
    }}
@@ -53,7 +53,7 @@ Use the slider to set the progress of the progressBar
 ## ProgressBar with threshold set to 10%
 <Preview>
     <Story name="Threshold low">
-       <ProgressBar progress="0.2" warningThreshold="0.1"/>
+       <ProgressBar progress={0.2} warningThreshold={0.1}/>
      </Story>
 </Preview>
 
@@ -64,7 +64,7 @@ out of range
 ## ProgressBar with progress over 100%
 <Preview>
   <Story name="110%">
-   <ProgressBar progress="1.1"/>
+   <ProgressBar progress={1.1}/>
   </Story>
 </Preview>
 
@@ -72,7 +72,7 @@ out of range
 ## ProgressBar with progress under 0%
 <Preview>
   <Story name="-10%">
-   <ProgressBar progress="-0.1"/>
+   <ProgressBar progress={-0.1}/>
   </Story>
 </Preview>
 
@@ -81,7 +81,7 @@ out of range
 ## ProgressBar with threshold under 0%
 <Preview>
     <Story name="Threshold under 0%">
-       <ProgressBar progress="0.2" warningThreshold="-0.1"/>
+       <ProgressBar progress={0.2} warningThreshold={-0.1}/>
      </Story>
 </Preview>
 
@@ -89,7 +89,7 @@ out of range
 ## ProgressBar with threshold over 100%
 <Preview>
     <Story name="Threshold over 100%">
-       <ProgressBar progress="1" warningThreshold="1.5"/>
+       <ProgressBar progress={1} warningThreshold={1.5}/>
      </Story>
 </Preview>           
 
