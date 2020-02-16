@@ -1,5 +1,5 @@
 import { countries } from "libphonenumber-js/metadata.min.json"
-import { distinct } from "../utils/distinct"
+import { distinct } from "../../../../utils/distinct"
 export const NORWAY = {
   name: "NO",
   code: "47"
