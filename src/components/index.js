@@ -5,7 +5,6 @@ export { default as AccountInput } from "./Forms/Input/AccountInput/AccountInput
 export { default as PhoneInput } from "./Forms/Input/PhoneInput/PhoneInput"
 export { default as PostalCodeInput } from "./Forms/Input/PostalCodeInput/PostalCodeInput"
 export { default as NationalIdInput } from "./Forms/Input/NationalIdInput/NationalIdInput"
-export { default as CompanyInput } from "./Forms/Input/CompanyInput/CompanyInput"
 export { default as FileInput } from "./Forms/Input/FileInput/FileInput"
 export { default as Label } from "./Forms/Label/Label"
 export { default as Legend } from "./Forms/Legend/Legend"
@@ -100,8 +99,6 @@ export { default as Logo } from "./Logo/Logo"
 // Code
 export { default as CodeRenderer } from "./Code/CodeRenderer"
 export { default as Table } from "./Table/Table"
-export { default as CopyToClipboard } from "../hoc/CopyToClipboard"
-export { default as CopyToClipboardComponent } from "./CopyToClipboard/CopyToClipboard"
 
 export { default as WebFonts } from "./Theme/WebFonts"
 
