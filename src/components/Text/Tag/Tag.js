@@ -2,15 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
-  themePropTypes,
-  commonPropTypes
-} from "../../../constants/themeContants"
-import {
   applyVariants,
   font,
   color,
   spacing,
-  targetSize
+  targetSize,
+  themePropTypes,
+  commonPropTypes
 } from "../../../theming"
 
 const Tag = ({ children, className, variant, ...rest }) => (

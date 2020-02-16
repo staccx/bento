@@ -2,8 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import hideVisually from "../../../theming/styles/hideVisually"
-import { themePropTypes } from "../../../constants/themeContants"
-import { applyVariants, color, spacing } from "../../../theming"
+import { applyVariants, color, spacing, themePropTypes } from "../../../theming"
 
 const Fraction = ({
   value,

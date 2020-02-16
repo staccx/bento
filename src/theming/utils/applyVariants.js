@@ -1,6 +1,6 @@
 import loglevel from "loglevel"
 import deepfind from "./deepfind"
-import { VARIANT_DEFAULT } from "../../constants/themeContants"
+import { VARIANT_DEFAULT } from "../themeContants"
 
 /**
  * Apply variants for a component. Allows for multiple variants

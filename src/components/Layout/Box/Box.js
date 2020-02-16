@@ -1,11 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, spacing } from "../../../theming"
 import {
+  applyVariants,
+  spacing,
   commonPropTypes,
   themePropTypes
-} from "../../../constants/themeContants"
+} from "../../../theming"
 
 const Box = ({ children, className, size, ...otherProps }) => (
   <Boxing className={className} size={size} {...otherProps}>

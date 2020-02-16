@@ -1,8 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { applyVariants, color, fontWeight } from "../../../../theming"
-import { themePropTypes } from "../../../../constants/themeContants"
+import {
+  applyVariants,
+  color,
+  fontWeight,
+  themePropTypes
+} from "../../../../theming"
 
 class Slider extends React.PureComponent {
   constructor(props, context) {

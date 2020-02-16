@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themePropTypes } from "../../../constants/themeContants"
-import { applyVariants, color } from "../../../theming"
+import { applyVariants, color, themePropTypes } from "../../../theming"
 
 const Divider = ({ level, className, height, ...restProps }) => {
   return <Rule className={className} height={height} {...restProps} />

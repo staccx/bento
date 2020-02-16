@@ -1,6 +1,5 @@
 import styled from "styled-components"
-import { color, applyVariants } from "../../theming"
-import { themePropTypes } from "../../constants/themeContants"
+import { color, applyVariants, themePropTypes } from "../../theming"
 
 const themeProps = {
   wrapper: {

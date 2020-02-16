@@ -5,8 +5,7 @@ import React, { useState } from "react"
 import Upload from "../Icons/Upload/Upload"
 import Check from "../Icons/Check/Check"
 import ThemeComponent from "../Theme/ThemeComponent"
-import { applyVariants } from "../../theming"
-import { themePropTypes, commonPropTypes } from "../../constants/themeContants"
+import { applyVariants, themePropTypes, commonPropTypes } from "../../theming"
 const CopyToClipboardComponent = ({
   children,
   copyText,

@@ -4,8 +4,7 @@ import styled from "styled-components"
 import { parseISO } from "date-fns"
 import Label from "../../Label/Label"
 import Input from "../Input"
-import { applyVariants } from "../../../../theming"
-import { themePropTypes } from "../../../../constants/themeContants"
+import { applyVariants, themePropTypes } from "../../../../theming"
 
 const BirthdateInput = ({
   id,

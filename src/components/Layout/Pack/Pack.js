@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themePropTypes } from "../../../constants/themeContants"
-import { applyVariants } from "../../../theming"
+import { applyVariants, themePropTypes } from "../../../theming"
 
 /**
  * The pack object simply causes any number of elements pack up horizontally to automatically fill an equal, fluid width of their parent.

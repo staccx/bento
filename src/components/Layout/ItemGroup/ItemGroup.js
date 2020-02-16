@@ -1,10 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 import {
+  applyVariants,
+  spacing,
   commonPropTypes,
   themePropTypes
-} from "../../../constants/themeContants"
-import { applyVariants, spacing } from "../../../theming"
+} from "../../../theming"
 /**
  * The ItemGroup object creates spacing between all its children and wraps the items when there is no room
  */

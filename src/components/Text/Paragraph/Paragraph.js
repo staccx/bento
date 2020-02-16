@@ -2,10 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
+  fontFamily,
+  font,
+  applyVariants,
   commonPropTypes,
   themePropTypes
-} from "../../../constants/themeContants"
-import { fontFamily, font, applyVariants } from "../../../theming"
+} from "../../../theming"
 
 const Paragraph = ({ children, className, ...restProps }) => {
   return (

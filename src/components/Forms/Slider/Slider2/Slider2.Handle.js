@@ -5,8 +5,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, color, spacing } from "../../../../theming"
-import { themePropTypes } from "../../../../constants/themeContants"
+import {
+  applyVariants,
+  color,
+  spacing,
+  themePropTypes
+} from "../../../../theming"
 
 const Slider2Handle = ({
   className,

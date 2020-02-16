@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, spacing } from "../../../theming"
-import { commonPropTypes } from "../../../constants/themeContants"
+import { applyVariants, spacing, commonPropTypes } from "../../../theming"
 
 const PackItem = ({ className, children, ...rest }) => (
   <ListItem className={className} {...rest}>

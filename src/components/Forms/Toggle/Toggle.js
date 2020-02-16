@@ -2,10 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
+  targetSize,
+  spacing,
+  color,
+  applyVariants,
   commonPropTypes,
   themePropTypes
-} from "../../../constants/themeContants"
-import { targetSize, spacing, color, applyVariants } from "../../../theming"
+} from "../../../theming"
 
 const Toggle = ({
   children,

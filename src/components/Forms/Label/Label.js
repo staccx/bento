@@ -10,12 +10,10 @@ import {
   font,
   spacing,
   fontFamily,
-  fontWeight
-} from "../../../theming"
-import {
+  fontWeight,
   commonPropTypes,
   themePropTypes
-} from "../../../constants/themeContants"
+} from "../../../theming"
 
 const Label = ({ className, children, ...rest }) => (
   <LabelElement className={className} {...rest}>

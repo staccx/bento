@@ -6,8 +6,14 @@ import Flag from "../Layout/Flag/Flag"
 import Warning from "../Icons/Warning/Warning"
 import Success from "../Icons/Success/Success"
 import Info from "../Icons/Info/Info"
-import { color, applyVariants, borderRadius, spacing } from "../../theming"
-import { themePropTypes, commonPropTypes } from "../../constants/themeContants"
+import {
+  color,
+  applyVariants,
+  borderRadius,
+  spacing,
+  themePropTypes,
+  commonPropTypes
+} from "../../theming"
 import ThemeComponent from "../Theme/ThemeComponent"
 
 const tProps = {

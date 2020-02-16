@@ -2,14 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import CaretRight from "../../Icons/CarerRight/CaretRight"
-import { themePropTypes } from "../../../constants/themeContants"
 import {
   spacing,
   fontWeight,
   fontFamily,
   font,
   color,
-  applyVariants
+  applyVariants,
+  themePropTypes
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 

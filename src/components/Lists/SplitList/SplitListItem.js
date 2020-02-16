@@ -2,15 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
-  commonPropTypes,
-  themePropTypes
-} from "../../../constants/themeContants"
-import {
   spacing,
   fontFamily,
   font,
   color,
-  applyVariants
+  applyVariants,
+  commonPropTypes,
+  themePropTypes
 } from "../../../theming"
 
 const SplitListItem = ({ children, className, ...restProps }) => {

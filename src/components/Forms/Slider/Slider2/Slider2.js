@@ -6,8 +6,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Slider, Rail, Handles, Tracks } from "react-compound-slider"
-import { applyVariants, spacing, color } from "../../../../theming"
-import { themePropTypes } from "../../../../constants/themeContants"
+import {
+  applyVariants,
+  spacing,
+  color,
+  themePropTypes
+} from "../../../../theming"
 import Handle from "./Slider2.Handle"
 import Track from "./Slider2.Track"
 

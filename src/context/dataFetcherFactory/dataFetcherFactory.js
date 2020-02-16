@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from "react"
 import PropTypes from "prop-types"
-import { commonPropTypes } from "../../constants/themeContants"
+import { commonPropTypes } from "../../theming"
 import useInterval from "../../hooks/useInterval"
 import axios from "axios"
 import isEqual from "lodash.isequal"
@@ -23,7 +23,7 @@ const create = () => {
 
     const fetch = async () => {
       if (fetchToken) {
-        let token = await fetchToken()
+        const token = await fetchToken()
         if (!axiosOptions.headers) axiosOptions.headers = {}
         axiosOptions.headers.authorization = `Bearer ${token}`
       }

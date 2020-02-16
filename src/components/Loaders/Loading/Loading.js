@@ -1,9 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
-import { themePropTypes } from "../../../constants/themeContants"
 import ThemeComponent from "../../Theme/ThemeComponent"
-import { applyVariants, color, spacing } from "../../../theming"
+import { applyVariants, color, spacing, themePropTypes } from "../../../theming"
 import useTimer from "../../../hooks/useTimer"
 
 const DefaultLoading = ({ className, variant, ...rest }) => (

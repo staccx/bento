@@ -8,12 +8,10 @@ import {
   fontWeight,
   fontFamily,
   font,
-  color
-} from "../../../theming"
-import {
+  color,
   commonPropTypes,
   themePropTypes
-} from "../../../constants/themeContants"
+} from "../../../theming"
 
 const tProps = {
   radio: {

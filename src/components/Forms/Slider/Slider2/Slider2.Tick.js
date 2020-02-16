@@ -5,8 +5,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, color, font } from "../../../../theming"
-import { themePropTypes } from "../../../../constants/themeContants"
+import { applyVariants, color, font, themePropTypes } from "../../../../theming"
 
 const Slider2Tick = ({ tick, count, format, className, ...restProps }) => (
   <div>

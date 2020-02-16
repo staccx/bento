@@ -8,17 +8,15 @@ import styled, { css } from "styled-components"
 import Cleave from "cleave.js"
 import Label from "../Label/Label"
 import {
-  commonPropTypes,
-  themePropTypes
-} from "../../../constants/themeContants"
-import {
   applyVariants,
   borderRadius,
   color,
   font,
   fontFamily,
   spacing,
-  targetSize
+  targetSize,
+  commonPropTypes,
+  themePropTypes
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 import QuestionMark from "../../Icons/QuestionMark/QuestionMark"

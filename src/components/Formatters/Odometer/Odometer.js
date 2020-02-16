@@ -1,10 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import hideVisually from "../../../theming/styles/hideVisually"
 import Digit from "./Digit"
-import { themePropTypes } from "../../../constants/themeContants"
-import { applyVariants } from "../../../theming"
+import { applyVariants, themePropTypes, hideVisually } from "../../../theming"
 
 class Odometer extends React.PureComponent {
   constructor(...props) {

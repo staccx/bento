@@ -5,16 +5,14 @@ import { multiplyPixelValue } from "../../../math"
 import Label from "../Label/Label"
 import Caret from "../../Icons/Caret/Caret"
 import {
-  commonPropTypes,
-  themePropTypes
-} from "../../../constants/themeContants"
-import {
   applyVariants,
   borderRadius,
   color,
   font,
   spacing,
-  targetSize
+  targetSize,
+  commonPropTypes,
+  themePropTypes
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 
