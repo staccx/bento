@@ -7,18 +7,20 @@ export const theme = {
   name: "Stacc Theme",
   storybookName: "Test Theme",
   spacing: {
+    grid: "20px",
+    gridLarge: "40px",
     huge: "96px",
+    largePlus: "72px",
     large: "48px",
     mediumPlus: "32px",
     medium: "24px",
     small: "12px",
-    tiny: "6px",
-    micro: "3px"
+    tiny: "6px"
   },
   wrapper: {
     small: "420px",
     medium: "640px",
-    large: "1024px",
+    large: "1280px",
     breakout: "640px"
   },
   color: {
@@ -64,16 +66,18 @@ export const theme = {
     body: "sans-serif"
   },
   font: {
-    h1: "36px",
-    h2: "26px",
+    h1: "64px",
+    h2: "36px",
     h3: "22px",
     h4: "18px",
     h5: "16px",
     h6: "14px",
-    base: "14px",
+    base: "16px",
+    small: "14px",
     tiny: "12px",
     input: "16px",
-    huge: "44px",
+    giga: "64px",
+    huge: "48px",
     lineHeight: "1.5"
   },
   fontWeight: {
