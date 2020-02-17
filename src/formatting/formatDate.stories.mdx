@@ -34,11 +34,14 @@ the code snippet below is the formatted date string.
 
 When converted with default format will look like this:
 
-export const formatted = formatDate("2020-02-12T00:00:00")
-
+  <Preview>
   <Story name="Standard">
-   <p>{formatted}</p>
+   {() => {
+    const formatted = formatDate("2020-02-12T00:00:00")
+    return <p>{formatted}</p>
+   }}
   </Story>
+  </Preview>
   
 
 
@@ -50,13 +53,16 @@ adding yyyy will return the full year
 ```javascript
 export const year = formatDate("2020-02-12T00:00:00", "yyyy")
 ```
-now returns:
 
-export const year = formatDate("2020-02-12T00:00:00", "yyyy")
 
-  <Story name="Custom format">
-   <p>{year}</p>
+  <Preview>
+  <Story name="custom Format">
+   {() => {
+    const year = formatDate("2020-02-12T00:00:00", "yyyy")
+    return <p>{year}</p>
+   }}
   </Story>
+  </Preview>
 
 
 adding MMMM wil return the full month as a string
@@ -64,13 +70,15 @@ adding MMMM wil return the full month as a string
 export const month = formatDate("2020-02-12T00:00:00", "MMMM")
 ```
 
-now returns:
 
-export const month = formatDate("2020-02-12T00:00:00", "MMMM")
-
-  <Story name="format month">
-   <p>{month}</p>
+  <Preview>
+  <Story name="Month">
+   {() => {
+    const month = formatDate("2020-02-12T00:00:00", "MMMM")
+    return <p>{month}</p>
+   }}
   </Story>
+  </Preview>
   
 
 
@@ -80,13 +88,14 @@ HH:mm will return hours and minutes
 export const month = formatDate("2020-02-12T15:30:00", "HH:mm")
 ```
 
-now returns:
-
-export const time = formatDate("2020-02-12T15:30:00", "HH:mm")
-
-  <Story name="format time">
-   <p>{time}</p>
-  </Story>  
+  <Preview>
+  <Story name="Hour">
+   {() => {
+    const time = formatDate("2020-02-12T15:30:00", "HH:mm")
+    return <p>{time}</p>
+   }}
+  </Story>
+  </Preview>
   
 
 
@@ -95,13 +104,14 @@ dd/MMMM/yyyy would then return the whole date with day, month and year
 export const month = formatDate("2020-02-12T15:30:00", "dd/MMM/yyyy")
 ```
 
-now returns:
-
-export const full = formatDate("2020-02-12T15:30:00", "dd/MMMM/yyyy")
-
-  <Story name="common">
-   <p>{full}</p>
-  </Story>  
+  <Preview>
+  <Story name="Full date">
+   {() => {
+    const full = formatDate("2020-02-12T15:30:00", "dd/MMMM/yyyy")
+    return <p>{full}</p>
+   }}
+  </Story>
+  </Preview> 
   
 
 ## date object
@@ -113,13 +123,13 @@ const date = new Date(1525968057000)
 export const dateO = formatDate(date, "dd/MMM/yyyy")
 ```
 
-now returns:
-
-
-export const date = new Date(1525968057000)
-export const dateO = formatDate(date, "dd/MMMM/yyyy")
-
-  <Story name="date object">
-   <p>{dateO}</p>
-  </Story>  
+  <Preview>
+  <Story name="Date object">
+   {() => {
+    const date = new Date(1525968057000)
+    const dateO = formatDate(date, "dd/MMMM/yyyy")
+    return <p>{dateO}</p>
+   }}
+  </Story>
+  </Preview>   
   
