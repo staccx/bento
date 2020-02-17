@@ -1,49 +1,61 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import themes from './themes';
-import {
-  IconButton,
-  WithTooltip,
-  TooltipLinkList,
-} from '@storybook/components';
-import addons, { types, makeDecorator } from '@storybook/addons';
-import { FORCE_RE_RENDER } from '@storybook/core-events';
-import styled, { ThemeProvider } from 'styled-components';
+import React, { useEffect, useState } from "react";
+import themes from "./themes";
+import { IconButton, TooltipLinkList, WithTooltip } from "@storybook/components";
+import addons, { makeDecorator, types } from "@storybook/addons";
+import { FORCE_RE_RENDER } from "@storybook/core-events";
+import styled, { ThemeProvider } from "styled-components";
+import { useAddonState } from "@storybook/api";
 
 // credit: https://github.com/storybooks/storybook/issues/5889#issuecomment-471240086
 
-const TOOL_NAME = "bento-sb-theme"
+const TOOL_NAME = "bento-sb-theme";
 
-addons.register('storybook/theme-switcher', api => {
-  addons.addPanel('storybook/theme-switcher', {
-    title: 'theme-switcher',
+addons.register("storybook/theme-switcher", api => {
+  addons.addPanel("storybook/theme-switcher", {
+    title: "theme-switcher",
     type: types.TOOL,
-    render: () => <ThemeSwitcher api={api}/>,
+    render: () => <ThemeSwitcher api={api}/>
   });
 });
-const getName = theme => theme.storybookName || "NO NAME"
-
+const getName = theme => theme.storybookName || "NO NAME";
 
 export const withTheme = makeDecorator({
-  name: 'withTheme',
-  parameterName: 'theme',
+  name: "withTheme",
+  parameterName: "theme",
   skipIfNoParametersOrOptions: false,
   allowDeprecatedUsage: false,
   wrapper: (getStory, context) => {
-    const [saved, theme] = getLocalTheme()
-    return(
+    const [saved, theme] = getLocalTheme();
+    const [variant, setVariant] = useState(null);
+    useEffect(() => {
+      const channel = addons.getChannel();
+      channel.on("variant_changed", setVariant);
+      return () => {
+        channel.off("variant_changed", setVariant);
+      };
+    }, []);
+
+    console.log("variant", variant);
+    const component = getStory(context);
+    return (
       <ThemeProvider theme={theme}>
-        {getStory(context)}
+        {React.cloneElement(component, { ...(variant && { variant }) })}
       </ThemeProvider>
-    )
-  },
+    );
+  }
 });
 
 export const ThemeSwitcher = ({ api }) => {
   const [activeTheme, setTheme] = useState(getLocalTheme()[1]);
   const [expanded, setExpanded] = useState(false);
+  const [, setT] = useAddonState("theme-switcher", null);
 
   useEffect(() => bindThemeOverride(api), []);
+  useEffect(() => {
+    if (activeTheme) {
+      setT(activeTheme);
+    }
+  }, [activeTheme]);
 
   const themeList = themes.map((theme, index) => ({
     id: getName(theme),
@@ -52,7 +64,7 @@ export const ThemeSwitcher = ({ api }) => {
       setTheme(themes[index]);
       setLocalTheme({ api, theme: index, rerender: true });
     },
-    right: <ThemeIcon theme={theme}/>,
+    right: <ThemeIcon theme={theme}/>
   }));
 
   return (
@@ -72,7 +84,7 @@ export const ThemeSwitcher = ({ api }) => {
   );
 };
 
-const FlexIt = styled.div`
+export const FlexIt = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -80,12 +92,11 @@ const FlexIt = styled.div`
   border-radius: 8px;
   padding: 0 12px;
   min-width: 100px;
-`
+`;
 
-
-const ThemeIcon = styled.span`
+export const ThemeIcon = styled.span`
   display: block;
-  border-right-color: ${({theme}) => theme.color.primary};
+  border-right-color: ${({ theme }) => theme.color.primary};
   border-top-color: ${({ theme }) => theme.color.secondary};
   border-bottom-color: ${({ theme }) => theme.color.text};
   border-left-color: ${({ theme }) => theme.color.bg};
@@ -101,10 +112,10 @@ const ThemeIcon = styled.span`
 function bindThemeOverride (api) {
   const channel = api.getChannel();
 
-  channel.on('storiesConfigured', () => {
+  channel.on("storiesConfigured", () => {
     setLocalTheme({ api });
   });
-  channel.on('storyChanged', () => {
+  channel.on("storyChanged", () => {
     setLocalTheme({ api });
   });
 }
@@ -112,12 +123,12 @@ function bindThemeOverride (api) {
 function setLocalTheme ({
                           api,
                           theme = getLocalTheme()[0],
-                          rerender = false,
+                          rerender = false
                         }) {
   window.localStorage.setItem(TOOL_NAME, theme);
 
   api.setOptions({
-    theme: getLocalTheme()[1],
+    theme: getLocalTheme()[1]
   });
 
   if (rerender) {
@@ -125,10 +136,10 @@ function setLocalTheme ({
   }
 }
 
-function getLocalTheme () {
+export function getLocalTheme () {
   const savedTheme = window.localStorage.getItem(TOOL_NAME);
   const theme =
-    typeof themes[savedTheme] === 'object'
+    typeof themes[savedTheme] === "object"
       ? themes[savedTheme]
       : themes[0];
   return [savedTheme, theme || themes[0]];

@@ -1,3 +1,4 @@
+import { css } from "styled-components"
 import Theme from "../Theme"
 import reset from "../styles/cssResets"
 import grids from "../../components/Layout/Layout/Layout.Grids"
@@ -87,7 +88,18 @@ export const theme = {
   },
   borderRadius: "2px",
   reset,
-  grid: grids
+  grid: grids,
+  ALERT: {
+    rounded: css`
+      border-radius: 30px;
+    `,
+    inverted: css`
+      filter: invert(100%);
+    `,
+    blurred: css`
+      filter: blur(5px);
+    `
+  }
 }
 
 export const StyleguideTheme = new Theme(theme, codeTheme)
