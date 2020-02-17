@@ -84,6 +84,8 @@
     "@sanity/block-content-to-react": "^2.0.6",
     "@sanity/client": "^0.147.3",
     "@sanity/image-url": "^0.140.17",
+    "@storybook/components": "^5.3.13",
+    "@storybook/core-events": "^5.3.13",
     "@storybook/theming": "^5.3.13",
     "accounting": "^0.4.1",
     "axios": "^0.19.1",

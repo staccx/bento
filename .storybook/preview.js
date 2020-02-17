@@ -1,8 +1,11 @@
 import React from "react";
 import { addDecorator, addParameters } from '@storybook/react';
 import {ThemeProvider} from "styled-components";
-import baseTheme from "../src/theming/baseTheme"
-addDecorator(story => <ThemeProvider theme={baseTheme}>{story()}</ThemeProvider>)
+import baseTheme from "../src/theming/themes/baseTheme"
+import { withTheme } from "./withThemes"
+
+//addDecorator(story => <ThemeProvider theme={baseTheme} story={story}>)
+addDecorator(withTheme)
 addParameters({
   options: {
     storySort: (a, b) =>
@@ -11,3 +14,4 @@ addParameters({
     name: "Bento"
   },
 });
+

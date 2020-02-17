@@ -1,10 +1,11 @@
-import Theme from "./Theme"
-import reset from "./styles/cssResets"
-import grids from "../components/Layout/Layout/Layout.Grids"
-import codeTheme from "./codeTheme"
+import Theme from "../Theme"
+import reset from "../styles/cssResets"
+import grids from "../../components/Layout/Layout/Layout.Grids"
+import codeTheme from "../codeTheme"
 
 export const theme = {
-  name: "Default theme",
+  name: "Base Theme",
+  storybookName: "Base Theme",
   spacing: {
     huge: "96px",
     large: "48px",
