@@ -5,6 +5,8 @@ import addons, { makeDecorator, types } from "@storybook/addons";
 import { FORCE_RE_RENDER } from "@storybook/core-events";
 import styled, { ThemeProvider } from "styled-components";
 import { useAddonState } from "@storybook/api";
+import WebFonts from "../src/components/Theme/WebFonts"
+import GlobalStyle from "../src/components/Theme/GlobalStyle"
 
 // credit: https://github.com/storybooks/storybook/issues/5889#issuecomment-471240086
 
@@ -39,9 +41,11 @@ export const withTheme = makeDecorator({
     const component = getStory(context);
     return (
       <ThemeProvider theme={theme}>
+        <WebFonts />
+        <GlobalStyle />
         {React.cloneElement(component, { ...(variant && { variant }) })}
       </ThemeProvider>
-    );
+    )
   }
 });
 
