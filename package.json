@@ -129,7 +129,7 @@
       "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
     },
     "collectCoverageFrom": [
-      "src/**/{!(*.stories|*.preview),}.js"
+      "src/**/{!(*.stories|*.preview|bento),}.js"
     ]
   }
 }
