@@ -6,13 +6,13 @@ import { inverseLerp, clamp } from "../../../../math"
 import Label from "../../Label/Label"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
-import { themePropTypes } from "../../../../constants/themeContants"
 import {
   applyVariants,
   targetSize,
   fontFamily,
   font,
-  color
+  color,
+  themePropTypes
 } from "../../../../theming"
 
 const removeSpaces = value => value.replace(/\s/g, "")

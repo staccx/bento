@@ -14,9 +14,9 @@ const Component = ({ term, keys = defaultKeysValue }) => {
     <div>
       <Heading level={3}>Result:</Heading>
       <List>
-        {result.map(item => (
+        {result.map((item, index) => (
           <ReactJson
-            key={item}
+            key={item + index}
             src={item}
             name={`${item.name.first} ${item.name.last}`}
             theme="monokai"
@@ -28,9 +28,9 @@ const Component = ({ term, keys = defaultKeysValue }) => {
       <Heading level={3}>All items:</Heading>
 
       <List>
-        {data.map(item => (
+        {data.map((item, index) => (
           <ReactJson
-            key={item}
+            key={item + index}
             src={item}
             name={`${item.name.first} ${item.name.last}`}
             theme="monokai"

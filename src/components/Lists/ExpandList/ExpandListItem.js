@@ -4,10 +4,13 @@ import styled from "styled-components"
 import { BounceIn } from "../../../animations"
 import Caret from "../../Icons/Caret/Caret"
 import {
+  spacing,
+  font,
+  color,
+  applyVariants,
   commonPropTypes,
   themePropTypes
-} from "../../../constants/themeContants"
-import { spacing, font, color, applyVariants } from "../../../theming"
+} from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 
 const ExpandButton = ({ title, isExpanded, ...props }) => (

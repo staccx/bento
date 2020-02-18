@@ -1,33 +1,35 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks"
 import BirthdateInput from "./BirthdateInput"
 
-<Meta title="Components|Forms/Input/BirthdateInput" component={BirthdateInput}/>
-
+<Meta
+  title="Components|Forms/Input/BirthdateInput"
+  component={BirthdateInput}
+/>
 
 # BirthdateInput
+
 This components lets the user write inn their birthdate in seperated fields. The component also take a label prop, that sets
 the label for the input field
 
-
 ```javascript
-import {BirthdateInput} from "@staccx/bento"
+import { BirthdateInput } from "@staccx/bento"
 ```
 
-
-
 ## Standard BirthdateInput
-The components creates three input fields, day, mont, year. 
 
+The components creates three input fields, day, mont, year.
 
 <Preview>
   <Story name="Standard">
-   <BirthdateInput label={"BirthdateInput"} id="9852145" />
+    <BirthdateInput
+      label={"BirthdateInput"}
+      ids={["Day1","Month1", "Year1"]}
+      labels={["Day", "Month", "Year"]}
+      onChange={console.log}
+    />
   </Story>
 </Preview>
 
-
-
-
-
 ## Props for BirthdateInput
+
 <Props of={BirthdateInput} />

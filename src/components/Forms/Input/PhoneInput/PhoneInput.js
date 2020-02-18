@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Input, { InputPropTypes } from "../Input"
 import "cleave.js/dist/addons/cleave-phone.no.js"
 import { applyVariants, spacing, themePropTypes } from "../../../../theming"
-import countries, { NORWAY } from "../../../../data/countries"
+import countries, { NORWAY } from "./countries"
 import SelectSimple from "../../SelectSimple/SelectSimple"
 import Label from "../../Label/Label"
 

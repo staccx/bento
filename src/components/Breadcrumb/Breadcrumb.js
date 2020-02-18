@@ -1,8 +1,14 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled, { css } from "styled-components"
-import { applyVariants, font, fontFamily, spacing, color } from "../../theming"
-import { themePropTypes } from "../../constants/themeContants"
+import {
+  applyVariants,
+  font,
+  fontFamily,
+  spacing,
+  color,
+  themePropTypes
+} from "../../theming"
 
 const tinycolor = require("tinycolor2")
 

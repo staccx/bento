@@ -1,12 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import hideVisually from "../../../../theming/styles/hideVisually"
 import Upload from "../../../Icons/Upload/Upload"
-import {
-  commonPropTypes,
-  themePropTypes
-} from "../../../../constants/themeContants"
 import {
   color,
   font,
@@ -15,7 +10,10 @@ import {
   fontFamily,
   borderRadius,
   fontWeight,
-  applyVariants
+  applyVariants,
+  commonPropTypes,
+  themePropTypes,
+  hideVisually
 } from "../../../../theming"
 import ThemeComponent from "../../../Theme/ThemeComponent"
 const tinycolor = require("tinycolor2")

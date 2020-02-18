@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { themePropTypes } from "../../../constants/themeContants"
-import { applyVariants } from "../../../theming"
+import { applyVariants, themePropTypes } from "../../../theming"
 
 const RadioPill = ({
   children,

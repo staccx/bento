@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants } from "../../../theming"
 import {
+  applyVariants,
   commonPropTypes,
   themePropTypes
-} from "../../../constants/themeContants"
+} from "../../../theming"
 
 const LayoutItem = ({ area, children, className, variant, ...rest }) => (
   <LayoutItemContainer

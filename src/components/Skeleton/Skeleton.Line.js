@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themePropTypes } from "../../constants/themeContants"
-import { applyVariants, borderRadius } from "../../theming"
+import { applyVariants, borderRadius, themePropTypes } from "../../theming"
 import SkeletonPulse from "./Skeleton.Pulse"
 
 const SkeletonLine = ({ className, width, height, ...restProps }) => {

@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants } from "../../../theming"
-import { themePropTypes } from "../../../constants/themeContants"
+import { applyVariants, themePropTypes } from "../../../theming"
 
 const Digit = ({ isAnimating, digit, speed, size, single, variant }) => (
   <DigitWrapper isAnimating size={size} isEmpty={!digit} variant={variant}>

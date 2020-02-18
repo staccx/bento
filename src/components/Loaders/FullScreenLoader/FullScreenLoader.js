@@ -2,9 +2,14 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import useInterval from "../../../hooks/useInterval"
-import { applyVariants, color, font, spacing } from "../../../theming"
+import {
+  applyVariants,
+  color,
+  font,
+  spacing,
+  themePropTypes
+} from "../../../theming"
 import Loading from "../Loading/Loading"
-import { themePropTypes } from "../../../constants/themeContants"
 
 const FullScreenLoader = ({
   messages,

@@ -3,9 +3,14 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { BounceIn } from "../../animations"
 import Caret from "../Icons/Caret/Caret"
-import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
 import ThemeComponent from "../Theme/ThemeComponent"
-import { applyVariants, color, spacing } from "../../theming"
+import {
+  applyVariants,
+  color,
+  spacing,
+  commonPropTypes,
+  themePropTypes
+} from "../../theming"
 
 const Expand = ({
   className,

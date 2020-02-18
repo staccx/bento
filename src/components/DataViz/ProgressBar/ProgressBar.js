@@ -2,8 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { ScaleInX } from "../../../animations"
-import { themePropTypes } from "../../../constants/themeContants"
-import { applyVariants, color, spacing, font } from "../../../theming"
+import {
+  applyVariants,
+  color,
+  spacing,
+  font,
+  themePropTypes
+} from "../../../theming"
 
 const ProgressBar = ({
   progress,

@@ -2,10 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import {
+  applyVariants,
+  spacing,
   commonPropTypes,
   themePropTypes
-} from "../../../constants/themeContants"
-import { applyVariants, spacing } from "../../../theming"
+} from "../../../theming"
 
 /**
  * The flag object is a design pattern similar to the media object, however it

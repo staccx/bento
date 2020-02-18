@@ -2,8 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { formatCurrency } from "../../../formatting"
-import { themePropTypes } from "../../../constants/themeContants"
-import { applyVariants, spacing, color, font } from "../../../theming"
+import {
+  applyVariants,
+  spacing,
+  color,
+  font,
+  themePropTypes
+} from "../../../theming"
 
 const KeyFigures = ({ figures, variant }) => (
   <List variant={variant}>

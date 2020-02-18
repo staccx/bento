@@ -5,9 +5,7 @@ export { default as AccountInput } from "./Forms/Input/AccountInput/AccountInput
 export { default as PhoneInput } from "./Forms/Input/PhoneInput/PhoneInput"
 export { default as PostalCodeInput } from "./Forms/Input/PostalCodeInput/PostalCodeInput"
 export { default as NationalIdInput } from "./Forms/Input/NationalIdInput/NationalIdInput"
-export { default as CompanyInput } from "./Forms/Input/CompanyInput/CompanyInput"
 export { default as FileInput } from "./Forms/Input/FileInput/FileInput"
-export { default as EmailInput } from "./Forms/Input/EmailInput/EmailInput"
 export { default as Label } from "./Forms/Label/Label"
 export { default as Legend } from "./Forms/Legend/Legend"
 export { default as CheckBox } from "./Forms/CheckBox/CheckBox"
@@ -88,7 +86,6 @@ export { default as Alert } from "./Alert/Alert"
 
 // Boxes
 export { default as Box } from "./Layout/Box/Box"
-export { default as Portal } from "./Portal/Portal"
 
 export { default as ThemeComponent } from "./Theme/ThemeComponent"
 export { default as GlobalStyle } from "./Theme/GlobalStyle"
@@ -102,8 +99,6 @@ export { default as Logo } from "./Logo/Logo"
 // Code
 export { default as CodeRenderer } from "./Code/CodeRenderer"
 export { default as Table } from "./Table/Table"
-export { default as CopyToClipboard } from "../hoc/CopyToClipboard"
-export { default as CopyToClipboardComponent } from "./CopyToClipboard/CopyToClipboard"
 
 export { default as WebFonts } from "./Theme/WebFonts"
 
@@ -120,4 +115,3 @@ export { default as SkeletonLine } from "./Skeleton/Skeleton.Line"
 export { default as SkeletonCircle } from "./Skeleton/Skeleton.Circle"
 export { default as useInterval } from "../hooks/useInterval"
 export { default as useDebounce } from "../hooks/useDebounce"
-export { default as dataFetcherFactory } from "../context/dataFetcherFactory/dataFetcherFactory"

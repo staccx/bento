@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, color } from "../../../theming"
-import { themePropTypes } from "../../../constants/themeContants"
+import { applyVariants, color, themePropTypes } from "../../../theming"
 
 const Donut = ({ progress, className, warningThreshold, ...rest }) => {
   const dash = 57

@@ -10,12 +10,10 @@ import {
   fontWeight,
   applyVariants,
   targetSize,
-  borderRadius
-} from "../../../theming"
-import {
+  borderRadius,
   commonPropTypes,
   themePropTypes
-} from "../../../constants/themeContants"
+} from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 
 const CheckBox = ({

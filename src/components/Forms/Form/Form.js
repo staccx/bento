@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { Formik } from "formik"
 import Button from "../../Button/Button"
-import { commonPropTypes } from "../../../constants/themeContants"
+import { commonPropTypes } from "../../../theming/themeContants"
 import traverse from "react-traverse"
 const Yup = require("yup")
 
@@ -103,7 +103,7 @@ class Form extends Component {
                 </Container>
               )}
               {!Container && (
-                <React.Fragment>
+                <>
                   {this.props.children}
                   {this.props.renderButton ? (
                     this.props.renderButton({ values, isValid, errors })
@@ -112,7 +112,7 @@ class Form extends Component {
                       {this.props.buttonText}
                     </Button>
                   )}
-                </React.Fragment>
+                </>
               )}
             </form>
           )

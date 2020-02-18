@@ -1,3 +1,9 @@
 {
-  "extends": "@staccx"
+  "extends": "@staccx",
+  "overrides": [{
+    "files": ["*.js"],
+    "rules": {
+      "react/jsx-handler-names": 0
+    }
+  }]
 }

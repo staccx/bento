@@ -2,10 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
+  applyVariants,
   commonPropTypes,
   themePropTypes
-} from "../../../constants/themeContants"
-import { applyVariants } from "../../../theming"
+} from "../../../theming"
 
 const Text = ({ level, children, className, ...restProps }) => {
   return (

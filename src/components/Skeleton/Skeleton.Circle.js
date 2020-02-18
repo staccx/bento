@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { themePropTypes } from "../../constants/themeContants"
-import { applyVariants, spacing } from "../../theming"
+import { applyVariants, spacing, themePropTypes } from "../../theming"
 import SkeletonPulse from "./Skeleton.Pulse"
 
 const SkeletonCircle = ({ className, width, height, ...restProps }) => {

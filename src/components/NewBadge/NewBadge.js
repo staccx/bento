@@ -2,8 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import fontSmoothing from "../../theming/styles/fontsmoothing"
-import { color, fontWeight, applyVariants } from "../../theming"
-import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
+import {
+  color,
+  fontWeight,
+  applyVariants,
+  commonPropTypes,
+  themePropTypes
+} from "../../theming"
 
 const NewBadge = ({ number, children, variant }) => (
   <NewBadgeWrapper variant={variant}>

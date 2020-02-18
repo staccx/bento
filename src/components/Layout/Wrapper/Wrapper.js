@@ -2,10 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import {
+  spacing,
+  wrapper,
+  applyVariants,
   commonPropTypes,
   themePropTypes
-} from "../../../constants/themeContants"
-import { spacing, wrapper, applyVariants } from "../../../theming"
+} from "../../../theming"
 
 /**
  * A Wrapper components that centers content and add spacing on the sides

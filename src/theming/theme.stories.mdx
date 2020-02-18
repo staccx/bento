@@ -1,8 +1,11 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import {useTheme} from "styled-components"
-import theme from "./baseTheme"
+import styled from "styled-components"
+import themes from "../../.storybook/themes"
+import {
+  color
+} from "./index"
 
-<Meta title="Styling|/ThemeColors" component={theme}/>
+<Meta title="Styling|/ThemeColors" component={themes}/>
 
 # ColorNames
 These are the colors used in Bentos Base theme. These colors will vary between the different themes that are in use. 
@@ -26,12 +29,117 @@ background-color: theming.color.secondary
 ## All colorNames
 These are the themes colors. As seen above, they are used in styling as: background-colors: theming.color.bg, theming.color.primary.
 
-export let colors = Object.keys(theme.color).map(function(key){
-return <div key={key} style={{marginRight:5, border:1, borderColor:"black", borderStyle:"solid", marginBottom:20, height:150, width:150, textAlign:"center", backgroundColor: theme.color[key]}}><p style={{marginTop: 150}}>{key}</p></div> });
 
-
-   <Story name="ThemeColors">
-    <div style={{display:"flex",flexDirection:"row",flexWrap:"wrap"}}>
-    {colors}
-    </div>
+   <Story name="few">
+    {() => {
+    const Box = styled.div`
+    margin-right: 5px;
+        border: 1px solid black;
+        margin-bottom: 20px;
+        height: 150px;
+        width: 150px;
+        text-align: center;
+    `
+    console.log(color)
+    const Primary = styled(Box)`
+    background-color: ${color("primary")};
+    `
+    const Secondary = styled(Box)`
+    background-color: ${color("secondary")};
+    `
+    const Bg = styled(Box)`
+    background-color: ${color("bg")};
+        `
+    const SubtleHover = styled(Box)`
+    background-color: ${color("subtleHover")};   
+            `
+    const BgGray = styled(Box)`
+    background-color: ${color("bgGray")};   
+            `
+    const Line = styled(Box)`
+    background-color: ${color("line")};   
+            `
+    const Gray = styled(Box)`
+    background-color: ${color("gray")};   
+            `     
+    const Wcag = styled(Box)`
+    background-color: ${color("wcag")};   
+            `      
+    const Disabled = styled(Box)`
+    background-color: ${color("disabled")};   
+            ` 
+     const Textcol = styled(Box)`
+     background-color: ${color("text")};   
+             `
+     const Negative = styled(Box)`
+     background-color: ${color("negative")};   
+             `      
+     const Positive = styled(Box)`
+     background-color: ${color("positive")};   
+             `      
+     const Warning = styled(Box)`
+     background-color: ${color("warning")};   
+             `  
+      const Black = styled(Box)`
+      background-color: ${color("black")};   
+              `    
+        const Green = styled(Box)`
+        background-color: ${color("green")};   
+                `  
+        const Link = styled(Box)`
+        background-color: ${color("link")};   
+                `                                                                                           
+    const Text = styled.p`
+        margin-top: 150px
+    `         
+    return <div style={{display:"flex",flexDirection:"row",flexWrap:"wrap"}}><Primary>
+        <Text >primary</Text>
+        </Primary>
+        <Secondary>
+        <Text>Secondary</Text>
+        </Secondary>
+        <Bg>
+          <Text>bg</Text>
+        </Bg>
+        <SubtleHover>
+            <Text>subtleHover</Text>
+        </SubtleHover>
+        <BgGray>
+            <Text>bgGray</Text>
+        </BgGray>
+        <Line>
+            <Text>line</Text>
+        </Line>
+        <Gray>
+            <Text>gray</Text>
+        </Gray> 
+        <Wcag>
+            <Text>wcag</Text>
+        </Wcag>     
+        <Disabled>
+            <Text>disabled</Text>
+        </Disabled>  
+        <Textcol>
+            <Text>text</Text>
+        </Textcol> 
+        <Negative>
+            <Text>negative</Text>
+        </Negative> 
+        <Positive>
+            <Text>negative</Text>
+        </Positive>
+        <Warning>
+            <Text>warning</Text>
+        </Warning>   
+        <Black>
+            <Text>black</Text>
+        </Black>    
+        <Green>
+            <Text>green</Text>
+        </Green>  
+        <Link>
+            <Text>link</Text>
+        </Link>                                             
+        </div>
+    }}
   </Story>

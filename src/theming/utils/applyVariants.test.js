@@ -1,5 +1,5 @@
 import applyVariants from "./applyVariants"
-import { themePropTypes } from "../../constants/themeContants"
+import { themePropTypes } from "../themeContants"
 
 const themeProps = {
   button: {

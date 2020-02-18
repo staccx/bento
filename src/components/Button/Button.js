@@ -9,9 +9,10 @@ import {
   font,
   fontFamily,
   fontWeight,
-  applyVariants
+  applyVariants,
+  themePropTypes,
+  commonPropTypes
 } from "../../theming"
-import { themePropTypes, commonPropTypes } from "../../constants/themeContants"
 
 const tProps = {
   button: {

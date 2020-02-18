@@ -9,9 +9,9 @@ import {
   spacing,
   targetSize,
   color,
-  font
+  font,
+  themePropTypes
 } from "../../../../theming"
-import { themePropTypes } from "../../../../constants/themeContants"
 import { usePostalCode } from "../../../../hooks/usePostalCode/usePostalCode"
 import Alert from "../../../Alert/Alert"
 

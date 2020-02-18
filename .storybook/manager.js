@@ -1,5 +1,9 @@
-import { addons } from '@storybook/addons';
+import React from "react"
+import { addons } from "@storybook/addons"
 import StoryBookTheme from "./bentoStorybookTheme"
+import "./withThemes"
+import "./tools/variants"
+import "./tools/rerender"
 
 addons.setConfig({
   theme: StoryBookTheme,
@@ -11,3 +15,4 @@ addons.setConfig({
     }, // canvas is here simply listed so its place as first tab
   },
 });
+

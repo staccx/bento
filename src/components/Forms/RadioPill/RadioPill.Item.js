@@ -1,11 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import hideVisually from "../../../theming/styles/hideVisually"
-import {
-  commonPropTypes,
-  themePropTypes
-} from "../../../constants/themeContants"
 import {
   applyVariants,
   targetSize,
@@ -13,7 +8,10 @@ import {
   fontWeight,
   fontFamily,
   font,
-  color
+  color,
+  commonPropTypes,
+  themePropTypes,
+  hideVisually
 } from "../../../theming"
 
 const RadioPillItem = ({

@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { commonPropTypes, themePropTypes } from "../../constants/themeContants"
-import { applyVariants } from "../../theming"
+import { applyVariants, commonPropTypes, themePropTypes } from "../../theming"
 
 const Image = ({
   src,
