@@ -25,11 +25,8 @@ yarn-error.log*
 gs
 coverage
 
-# vCards :)
-vCards
+.now
 
 .yalc/
 yalc.lock
 
-temp
-/stories/stories.generated.js
