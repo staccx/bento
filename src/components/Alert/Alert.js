@@ -11,55 +11,17 @@ import {
   applyVariants,
   borderRadius,
   spacing,
-  themePropTypes,
   commonPropTypes
 } from "../../theming"
 import ThemeComponent from "../Theme/ThemeComponent"
-
-const tProps = {
-  alert: {
-    name: "ALERT",
-    description: "Alert style",
-    type: themePropTypes.style
-  },
-  componentAlertInfo: {
-    name: "COMPONENT_ALERT_INFO",
-    description: "Theme component for info alert",
-    type: themePropTypes.component
-  },
-  componentAlertWarning: {
-    name: "COMPONENT_ALERT_WARNING",
-    description: "Theme component for warning alert",
-    type: themePropTypes.component
-  },
-  componentAlertSuccess: {
-    name: "COMPONENT_ALERT_SUCCESS",
-    description: "Theme component for success alert",
-    type: themePropTypes.component
-  },
-  alertInfo: {
-    name: "ALERT_INFO",
-    description: "Styles for info alert",
-    type: themePropTypes.style
-  },
-  alertWarning: {
-    name: "ALERT_WARNING",
-    description: "Styles for warning alert",
-    type: themePropTypes.style
-  },
-  alertSuccess: {
-    name: "ALERT_SUCCESS",
-    description: "Styles for success alert",
-    type: themePropTypes.style
-  }
-}
+import themeProps from "./Alert.themeProps"
 
 const Icon = ({ type, props }) => {
   switch (type) {
     case "info":
       return (
         <ThemeComponent
-          tagName={tProps.componentAlertInfo}
+          tagName={themeProps.componentAlertInfo}
           fallback={Info}
           {...props}
         />
@@ -67,7 +29,7 @@ const Icon = ({ type, props }) => {
     case "warning":
       return (
         <ThemeComponent
-          tagName={tProps.componentAlertWarning}
+          tagName={themeProps.componentAlertWarning}
           fallback={Warning}
           {...props}
         />
@@ -75,7 +37,7 @@ const Icon = ({ type, props }) => {
     case "success":
       return (
         <ThemeComponent
-          tagName={tProps.componentAlertSuccess}
+          tagName={themeProps.componentAlertSuccess}
           fallback={Success}
           {...props}
         />
@@ -91,20 +53,20 @@ const colors = ({ type }) => {
       return css`
         background-color: ${color("warning")};
         color: ${color("white")};
-        ${applyVariants(tProps.alertWarning)};
+        ${applyVariants(themeProps.alertWarning)};
       `
     case "success":
       return css`
         background-color: ${color("positive")};
         color: ${color("white")};
-        ${applyVariants(tProps.alertSuccess)};
+        ${applyVariants(themeProps.alertSuccess)};
       `
     case "info":
     default:
       return css`
         background-color: ${color("line")};
         color: ${color("text")};
-        ${applyVariants(tProps.alertInfo)};
+        ${applyVariants(themeProps.alertInfo)};
       `
   }
 }
@@ -129,7 +91,7 @@ const AlertElement = styled.div`
   border-radius: ${borderRadius};
   padding: ${spacing.small};
   ${colors};
-  ${applyVariants(tProps.alert)};
+  ${applyVariants(themeProps.alert)};
 `
 
 Alert.propTypes = {
@@ -149,6 +111,6 @@ Alert.defaultProps = {
   children: null
 }
 
-Alert.themeProps = tProps
+Alert.themeProps = themeProps
 
 export default Alert
