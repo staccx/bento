@@ -2,13 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { formatCurrency } from "../../../formatting"
-import {
-  applyVariants,
-  spacing,
-  color,
-  font,
-  themePropTypes
-} from "../../../theming"
+import { applyVariants, spacing, color, font } from "../../../theming"
+import themeProps from "./Keyfigures.themeProps"
 
 const KeyFigures = ({ figures, variant }) => (
   <List variant={variant}>
@@ -21,29 +16,6 @@ const KeyFigures = ({ figures, variant }) => (
   </List>
 )
 
-KeyFigures.themeProps = {
-  list: {
-    name: "KEYFIGURES",
-    description: "list style",
-    type: themePropTypes.style
-  },
-  item: {
-    name: "KEYFIGURES_ITEM",
-    description: "item style",
-    type: themePropTypes.style
-  },
-  heading: {
-    name: "KEYFIGURES_HEADING",
-    description: "heading style",
-    type: themePropTypes.style
-  },
-  value: {
-    name: "KEYFIGURES_VALUE",
-    description: "value style",
-    type: themePropTypes.style
-  }
-}
-
 const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -51,7 +23,7 @@ const List = styled.ul`
   margin-bottom: 0;
   color: currentColor;
   padding: 0;
-  ${applyVariants(KeyFigures.themeProps.list.name)};
+  ${applyVariants(themeProps.list.name)};
 `
 
 const ListItem = styled.li`
@@ -70,18 +42,18 @@ const ListItem = styled.li`
     width: 1px;
     background-color: ${color.line};
   }
-  ${applyVariants(KeyFigures.themeProps.item.name)};
+  ${applyVariants(themeProps.item.name)};
 `
 
 const Heading = styled.h3`
   padding-bottom: ${spacing.tiny};
-  ${applyVariants(KeyFigures.themeProps.heading.name)};
+  ${applyVariants(themeProps.heading.name)};
 `
 
 const Value = styled.span`
   font-size: ${font.h2};
   color: ${color.blue};
-  ${applyVariants(KeyFigures.themeProps.value.name)};
+  ${applyVariants(themeProps.value.name)};
 `
 
 const defaultProps = {
@@ -101,5 +73,6 @@ KeyFigures.propTypes = {
   ).isRequired
 }
 KeyFigures.defaultProps = defaultProps
+KeyFigures.themeProps = themeProps
 
 export default KeyFigures
