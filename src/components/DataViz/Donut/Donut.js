@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, color, themePropTypes } from "../../../theming"
+import { applyVariants, color } from "../../../theming"
+import themeProps from "./Donut.themeProps"
 
 const Donut = ({ progress, className, warningThreshold, ...rest }) => {
   const dash = 57
@@ -32,32 +33,14 @@ const Donut = ({ progress, className, warningThreshold, ...rest }) => {
   )
 }
 
-Donut.themeProps = {
-  donut: {
-    name: "donut",
-    description: "Wrapper style for donut",
-    type: themePropTypes.style
-  },
-  donutBackground: {
-    name: "donut_bg",
-    description: "Circle style for donut background",
-    type: themePropTypes.style
-  },
-  donutValue: {
-    name: "donut_value",
-    description: "Value style for donut",
-    type: themePropTypes.style
-  }
-}
-
 const Wrapper = styled.svg`
   transform: rotateY(180deg);
-  ${applyVariants(Donut.themeProps.donut.name)};
+  ${applyVariants(themeProps.donut.name)};
 `
 
 const Bg = styled.circle`
   stroke: ${color.line};
-  ${applyVariants(Donut.themeProps.donutBackground.name)};
+  ${applyVariants(themeProps.donutBackground.name)};
 `
 
 const Value = styled.circle`
@@ -65,7 +48,7 @@ const Value = styled.circle`
     p.progress >= p.warningThreshold ? color.warning : color.primary};
   stroke-dasharray: ${p => p.dash};
   stroke-dashoffset: ${p => p.dashoffset};
-  ${applyVariants(Donut.themeProps.donutValue.name)};
+  ${applyVariants(themeProps.donutValue.name)};
 `
 
 Donut.defaultProps = {
@@ -85,5 +68,6 @@ Donut.propTypes = {
   warningThreshold: PropTypes.number,
   className: PropTypes.string
 }
+Donut.themeProps = themeProps
 
 export default Donut
