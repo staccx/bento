@@ -15,12 +15,12 @@ import {
   fontFamily,
   spacing,
   targetSize,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 import QuestionMark from "../../Icons/QuestionMark/QuestionMark"
 import { FadeIn } from "../../../animations"
+import themeProps from "./Input.themeProps"
 
 const HelpBox = ({ onClick }) => (
   <HelpButton onClick={onClick} type="button">
@@ -122,47 +122,9 @@ const Input = React.forwardRef(
   }
 )
 
-Input.themeProps = {
-  iconComponent: {
-    name: "INPUT_HELP_ICON_COMPONENT",
-    description: "Icon shown. Defaults to Caret",
-    type: themePropTypes.component
-  },
-  icon: {
-    name: "INPUT_HELP_ICON_STYLE",
-    description: "Icon style",
-    type: themePropTypes.style
-  },
-  input: {
-    name: "INPUT",
-    description: "Input style",
-    type: themePropTypes.style
-  },
-  wrapper: {
-    name: "INPUT_WRAPPER",
-    description: "Wrapper style",
-    type: themePropTypes.style
-  },
-  label: {
-    name: "INPUT_LABEL",
-    description: "Label style",
-    type: themePropTypes.style
-  },
-  helpText: {
-    name: "INPUT_HELPTEXT",
-    description: "Helptext style",
-    type: themePropTypes.style
-  },
-  helpButton: {
-    name: "BUTTON_HELP",
-    description: "Help button style",
-    type: themePropTypes.style
-  }
-}
-
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
-    tagName={Input.themeProps.iconComponent.name}
+    tagName={themeProps.iconComponent.name}
     fallback={HelpBox}
     {...props}
   />
@@ -174,11 +136,11 @@ const HelpButton = styled.button`
   padding: 0;
   cursor: pointer;
   line-height: 0;
-  ${applyVariants(Input.themeProps.helpButton)};
+  ${applyVariants(themeProps.helpButton)};
 `
 
 const HelpIcon = styled(IconComponent)`
-  ${applyVariants(Input.themeProps.icon.name)};
+  ${applyVariants(themeProps.icon.name)};
 `
 
 const NoWrapSpan = styled.span`
@@ -189,18 +151,18 @@ const HelpText = styled.div`
   display: ${p => (p.isVisible ? "block" : "none")};
   opacity: 0;
   animation: ${FadeIn} 0.4s ease-out 1 forwards;
-  ${applyVariants(Input.themeProps.helpText)};
+  ${applyVariants(themeProps.helpText)};
 `
 
 const InputLabel = styled(Label)`
-  ${applyVariants(Input.themeProps.label)};
+  ${applyVariants(themeProps.label)};
 `
 
 export const InputWrapper = styled.div`
   display: block;
   margin-bottom: 0;
   position: relative;
-  ${applyVariants(Input.themeProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 export const inputCss = css`
@@ -253,7 +215,7 @@ export const inputCss = css`
   }
 
   ${p => p.additionalCSS || null};
-  ${applyVariants(Input.themeProps.input)};
+  ${applyVariants(themeProps.input)};
 `
 
 const InputNoMask = styled.input`
@@ -322,6 +284,7 @@ export const InputDefaultProps = {
   mask: null,
   helpText: ""
 }
+Input.themeProps = themeProps
 
 Input.defaultProps = InputDefaultProps
 /** @component */

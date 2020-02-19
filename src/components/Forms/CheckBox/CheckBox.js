@@ -11,10 +11,10 @@ import {
   applyVariants,
   targetSize,
   borderRadius,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
+import themeProps from "./CheckBox.themeProps"
 
 const CheckBox = ({
   children,
@@ -51,56 +51,13 @@ const CheckBox = ({
   )
 }
 
-CheckBox.themeProps = {
-  wrapper: {
-    name: "checkbox",
-    description: "Checkbox style",
-    type: themePropTypes.style
-  },
-  icon: {
-    name: "checkbox_checked_icon",
-    description: "Icon style",
-    type: themePropTypes.style
-  },
-  iconComponent: {
-    name: "COMPONENT_CHECKBOX_ICON",
-    description: "Icon component",
-    type: themePropTypes.component
-  },
-  label: {
-    name: "checkbox_label",
-    description: "Label style",
-    type: themePropTypes.style
-  },
-  labelBefore: {
-    name: "CHECKBOX_LABEL_BEFORE",
-    description: "Label before style",
-    type: themePropTypes.style
-  },
-  labelChecked: {
-    name: "CHECKBOX_LABEL_CHECKED",
-    description: "Label checked style",
-    type: themePropTypes.style
-  },
-  labelBeforeChecked: {
-    name: "CHECKBOX_LABEL_BEFORE_CHECKED",
-    description: "Label before checked style",
-    type: themePropTypes.style
-  },
-  input: {
-    name: "checkbox_input",
-    description: "Inputstyle",
-    type: themePropTypes.style
-  }
-}
-
 const CheckWrapper = styled.div`
-  ${applyVariants(CheckBox.themeProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
-    tagName={CheckBox.themeProps.iconComponent}
+    tagName={themeProps.iconComponent}
     fallback={Check}
     {...props}
   />
@@ -116,7 +73,7 @@ export const Icon = styled(IconComponent)`
   transform: scale(0);
   transition: all 0.2s ease-in-out;
   color: ${color.primary};
-  ${applyVariants(CheckBox.themeProps.icon)};
+  ${applyVariants(themeProps.icon)};
 `
 
 const InputCheck = styled.input`
@@ -128,11 +85,11 @@ const InputCheck = styled.input`
     > svg {
       transform: scale(1);
     }
-    ${applyVariants(CheckBox.themeProps.labelChecked)};
+    ${applyVariants(themeProps.labelChecked)};
   }
 
   &:checked ~ label::before {
-    ${applyVariants(CheckBox.themeProps.labelBeforeChecked)};
+    ${applyVariants(themeProps.labelBeforeChecked)};
   }
 
   &:focus ~ label {
@@ -141,7 +98,7 @@ const InputCheck = styled.input`
     }
   }
 
-  ${applyVariants(CheckBox.themeProps.input)};
+  ${applyVariants(themeProps.input)};
 `
 
 const Label = styled.label`
@@ -170,7 +127,7 @@ const Label = styled.label`
     position: absolute;
     top: ${spacing.small};
     width: ${spacing.medium};
-    ${applyVariants(CheckBox.themeProps.labelBefore)};
+    ${applyVariants(themeProps.labelBefore)};
   }
 
   &:hover,
@@ -179,7 +136,7 @@ const Label = styled.label`
       border-color: ${color.primary};
     }
   }
-  ${applyVariants(CheckBox.themeProps.label)};
+  ${applyVariants(themeProps.label)};
 `
 
 CheckBox.propTypes = {
@@ -221,5 +178,6 @@ CheckBox.defaultProps = {
   defaultChecked: false,
   checkIcon: null
 }
+CheckBox.themeProps = themeProps
 
 export default CheckBox
