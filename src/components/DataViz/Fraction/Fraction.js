@@ -2,7 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import hideVisually from "../../../theming/styles/hideVisually"
-import { applyVariants, color, spacing, themePropTypes } from "../../../theming"
+import { applyVariants, color, spacing } from "../../../theming"
+import themeProps from "./Fraction.themeProps"
 
 const Fraction = ({
   value,
@@ -41,46 +42,23 @@ const Hide = styled.span`
   ${hideVisually};
 `
 
-Fraction.themeProps = {
-  wrapper: {
-    name: "fraction",
-    description: "Wrapper style",
-    type: themePropTypes.style
-  },
-  circle: {
-    name: "fraction_circle",
-    description: "Circle style",
-    type: themePropTypes.style
-  },
-  coloredDot: {
-    name: "fraction_colored_dot",
-    description: "Colored dot style",
-    type: themePropTypes.style
-  },
-  desaturatedDot: {
-    name: "fraction_desaturated_dot",
-    description: "Desaturated dot style",
-    type: themePropTypes.style
-  }
-}
-
 const circle = css`
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  ${applyVariants(Fraction.themeProps.circle.name)};
+  ${applyVariants(themeProps.circle.name)};
 `
 
 const ColoredDot = styled.div`
   ${circle};
   background-color: ${color.primary};
-  ${applyVariants(Fraction.themeProps.coloredDot.name)};
+  ${applyVariants(themeProps.coloredDot.name)};
 `
 
 const DesaturatedDot = styled.div`
   ${circle};
   background-color: ${color.line};
-  ${applyVariants(Fraction.themeProps.desaturatedDot.name)};
+  ${applyVariants(themeProps.desaturatedDot.name)};
 `
 
 const FractionWrapper = styled.div`
@@ -89,7 +67,7 @@ const FractionWrapper = styled.div`
   > * {
     margin-right: ${spacing.tiny};
   }
-  ${applyVariants(Fraction.themeProps.wrapper.name)};
+  ${applyVariants(themeProps.wrapper.name)};
 `
 
 Fraction.defaultProps = {
@@ -115,5 +93,6 @@ Fraction.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func
 }
+Fraction.themeProps = themeProps
 
 export default Fraction
