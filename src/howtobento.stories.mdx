@@ -171,6 +171,82 @@ export default App
 #### Eslint
 Here at @staccx we have our own eslint-config based on standardjs and prettier. Please use that, installation procedures will be located at that repo.
 
+# Creating variants
+Every component has a default variant. Unless a different variant is supplied, the default will be used. You can, and should add your own styles to the default variants if you want your app to look good.
+
+Components have their own themeProps. These props allow you to add styles to the different HTML-elements that make up a component. Some components (like Button) only have one, while others (like CheckBox) have more. When you supply a variant to a component, that variant will be applied to all parts of the component, and can be targeted through themeProps.
+
+Let's start by modifying the defaults for an Input. Generally, we put all the variants for a component in one file. Start by creating a new file, for example in `/src/theme/variants/input.variants.js`. 
+
+Heres an example of new defaults for an input:
+
+```bash
+import { css } from "styled-components"
+import {Input, theming} from "@staccx/bento"
+
+export const inputVariants = createVariants(
+  {
+    [theming.VARIANT_DEFAULT]: css`
+      transition: border 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover,
+      &:focus {
+        background-color: ${theming.color.white};
+      }
+
+      &:hover {
+        border-color: ${theming.color.primary};
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 2px ${theming.color.primary};
+      }
+
+      &[disabled] {
+        background-color: ${theming.color("bgGray")};
+        cursor: not-allowed;
+
+        &:hover {
+          border-color: ${color.line};
+        }
+      }
+    `
+  },
+  Input.themeProps.input
+)
+```
+
+Now we have our variant, but we need to add that variant to your theme. Go to your theme file, import your variant and add it to the theme like so:
+
+```js
+import { css } from "styled-components"
+import { theming } from "@staccx/base"
+import { inputVariants } from "./variants/input.variants.js" # Import your variant
+
+...heres your theme stuff...
+
+const theme = new theming.Theme(
+    {},
+    {
+      name: "My theme",
+      font,
+      fontWeight,
+      webfonts,
+      color,
+      wrapper,
+      targetSize,
+      borderRadius,
+      headerHeight,
+      fontFamily,
+      spacing
+    }
+  )
+  .add(reset)
+  .add([inputVariants]) ## Add it to your theme. For convenience, you can put it in an array like here so you can easily differentiate what your're adding where.
+
+export default theme
+```
+
 # How to use Bento's storybook?
 Each component has documentation on how to use it with code examples, and information that is nice to know. However, in order to keep Bento up to date we all have a responsibility to adjust and add new components to the Bento library.
 
