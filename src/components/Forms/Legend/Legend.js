@@ -11,23 +11,15 @@ import {
   spacing,
   fontFamily,
   fontWeight,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../../theming"
+import themeProps from "./Legend.themeProps"
 
 const Legend = ({ className, children, ...rest }) => (
   <LegendElement className={className} {...rest}>
     {children}
   </LegendElement>
 )
-
-Legend.themeProps = {
-  legend: {
-    name: "LEGEND",
-    description: "Legend style",
-    type: themePropTypes.style
-  }
-}
 
 const LegendElement = styled.legend`
   font-weight: ${fontWeight.bold};
@@ -36,7 +28,7 @@ const LegendElement = styled.legend`
   line-height: 1.2;
   padding-bottom: ${spacing.tiny};
   display: block;
-  ${applyVariants(Legend.themeProps.legend)};
+  ${applyVariants(themeProps.legend)};
 `
 
 Legend.defaultProps = {
@@ -47,6 +39,7 @@ Legend.propTypes = {
   children: commonPropTypes.children.isRequired,
   className: PropTypes.string
 }
+Legend.themeProps = themeProps
 
 /** @component */
 export default Legend

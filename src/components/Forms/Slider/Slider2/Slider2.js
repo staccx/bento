@@ -6,14 +6,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Slider, Rail, Handles, Tracks } from "react-compound-slider"
-import {
-  applyVariants,
-  spacing,
-  color,
-  themePropTypes
-} from "../../../../theming"
+import { applyVariants, spacing, color } from "../../../../theming"
 import Handle from "./Slider2.Handle"
 import Track from "./Slider2.Track"
+import themeProps from "./Slider2.themeProps"
 
 class Slider2 extends React.Component {
   state = {
@@ -127,45 +123,17 @@ class Slider2 extends React.Component {
   }
 }
 
-Slider2.themeProps = {
-  container: {
-    name: "SLIDER2_CONTAINER",
-    description: "Container style",
-    type: themePropTypes.style
-  },
-  slider: {
-    name: "SLIDER2_SLIDER",
-    description: "Slider outer style",
-    type: themePropTypes.style
-  },
-  rail: {
-    name: "SLIDER2_RAIL",
-    description: "Rail style",
-    type: themePropTypes.style
-  },
-  tracks: {
-    name: "SLIDER2_TRACKS",
-    description: "Tracks style",
-    type: themePropTypes.style
-  },
-  handle: {
-    name: "SLIDER2_HANDLE",
-    description: "Handle style",
-    type: themePropTypes.style
-  }
-}
-
 const Container = styled.div`
   height: ${spacing.medium};
   padding-top: ${spacing.tiny};
   width: 100%;
-  ${applyVariants(Slider2.themeProps.container)};
+  ${applyVariants(themeProps.container)};
 `
 
 const StyledSlider = styled(Slider)`
   position: relative;
   width: 100%;
-  ${applyVariants(Slider2.themeProps.slider)};
+  ${applyVariants(themeProps.slider)};
 `
 
 const StyledRail = styled.div`
@@ -175,15 +143,15 @@ const StyledRail = styled.div`
   border-radius: 7px;
   cursor: pointer;
   background-color: ${color.gray};
-  ${applyVariants(Slider2.themeProps.rail)};
+  ${applyVariants(themeProps.rail)};
 `
 
 const StyledHandle = styled(Handle)`
-  ${applyVariants(Slider2.themeProps.handle)};
+  ${applyVariants(themeProps.handle)};
 `
 
 const StyledTracks = styled.div`
-  ${applyVariants(Slider2.themeProps.tracks)};
+  ${applyVariants(themeProps.tracks)};
 `
 
 Slider2.defaultProps = {
@@ -203,6 +171,7 @@ Slider2.propTypes = {
   onChange: PropTypes.func,
   onKeyDown: PropTypes.func
 }
+Slider2.themeProps = themeProps
 
 /** @component */
 export default Slider2

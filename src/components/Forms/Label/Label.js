@@ -11,23 +11,15 @@ import {
   spacing,
   fontFamily,
   fontWeight,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../../theming"
+import themeProps from "./Label.themeProps"
 
 const Label = ({ className, children, ...rest }) => (
   <LabelElement className={className} {...rest}>
     {children}
   </LabelElement>
 )
-
-Label.themeProps = {
-  label: {
-    name: "LABEL",
-    description: "Label style",
-    type: themePropTypes.style
-  }
-}
 
 const LabelElement = styled.label`
   font-weight: ${fontWeight.bold};
@@ -36,7 +28,7 @@ const LabelElement = styled.label`
   line-height: 1.2;
   padding-bottom: ${spacing.tiny};
   display: block;
-  ${applyVariants(Label.themeProps.label)};
+  ${applyVariants(themeProps.label)};
 `
 
 Label.defaultProps = {
@@ -47,6 +39,6 @@ Label.propTypes = {
   children: commonPropTypes.children.isRequired,
   className: PropTypes.string
 }
-
+Label.themeProps = themeProps
 /** @component */
 export default Label

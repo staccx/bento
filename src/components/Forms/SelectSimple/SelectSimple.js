@@ -11,35 +11,17 @@ import {
   font,
   spacing,
   targetSize,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
+import themeProps from "./SelectSimple.themeProps"
 
-const tProps = {
-  iconComponent: {
-    name: "COMPONENT_SELECT_SIMPLE_ICON",
-    description: "Icon component",
-    type: themePropTypes.component
-  },
-  wrapper: {
-    name: "SELECT_SIMPLE_WRAPPER",
-    description: "Wrapper style",
-    type: themePropTypes.style
-  },
-  icon: {
-    name: "SELECT_SIMPLE_ICON",
-    description: "Icon style",
-    type: themePropTypes.style
-  },
-  select: {
-    name: "SELECT_SIMPLE_SELECT",
-    description: "Icon style",
-    type: themePropTypes.style
-  }
-}
 const IconComponent = ({ ...props }) => (
-  <ThemeComponent tagName={tProps.iconComponent} fallback={Caret} {...props} />
+  <ThemeComponent
+    tagName={themeProps.iconComponent}
+    fallback={Caret}
+    {...props}
+  />
 )
 
 const SelectSimple = ({
@@ -78,7 +60,7 @@ const SelectWrapper = styled.div`
   display: block;
   margin-bottom: 0;
   position: relative;
-  ${applyVariants(tProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 const SelectIcon = styled(IconComponent)`
@@ -93,7 +75,7 @@ const SelectIcon = styled(IconComponent)`
   transform: translateY(50%);
   transition: fill 0.2s ease;
   pointer-events: none;
-  ${applyVariants(tProps.icon)};
+  ${applyVariants(themeProps.icon)};
 `
 
 const Select = styled.select`
@@ -120,10 +102,10 @@ const Select = styled.select`
       fill: ${color.primary};
     }
   }
-  ${applyVariants(tProps.select)};
+  ${applyVariants(themeProps.select)};
 `
 
-SelectSimple.defaultProps = {
+SelectSimple.defaulthemeProps = {
   className: "",
   placeholder: "",
   label: null
@@ -137,6 +119,6 @@ SelectSimple.propTypes = {
   className: PropTypes.string
 }
 
-SelectSimple.themeProps = tProps
+SelectSimple.themeProps = themeProps
 
 export default SelectSimple

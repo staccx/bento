@@ -10,9 +10,9 @@ import {
   font,
   color,
   commonPropTypes,
-  themePropTypes,
   hideVisually
 } from "../../../theming"
+import themeProps from "./RadioPill.item.themeProps"
 
 const RadioPillItem = ({
   children,
@@ -49,28 +49,6 @@ const RadioPillItem = ({
   </RadioWrapper>
 )
 
-RadioPillItem.themeProps = {
-  label: {
-    name: "RADIO_PILL_ITEM_LABEL",
-    description: "Label style",
-    type: themePropTypes.style
-  },
-  checked: {
-    name: "RADIO_PILL_ITEM_CHECKED",
-    description: "Checked style",
-    type: themePropTypes.style
-  },
-  wrapper: {
-    name: "RADIO_PILL_ITEM_WRAPPER",
-    description: "Checked style",
-    type: themePropTypes.style
-  },
-  hover: {
-    name: "RADIO_PILL_ITEM_HOVER",
-    description: "Checked style",
-    type: themePropTypes.style
-  }
-}
 const Label = styled.label`
   position: relative;
   padding: ${spacing.tiny} ${spacing.small};
@@ -82,7 +60,7 @@ const Label = styled.label`
   font-weight: ${fontWeight.normal};
   margin-right: -1px;
   background-color: ${color.white};
-  ${applyVariants(RadioPillItem.themeProps.label)};
+  ${applyVariants(themeProps.label)};
   ${p =>
     p.full &&
     css`
@@ -100,7 +78,7 @@ const Radio = styled.input`
       background-color: ${color.primary};
       color: ${color.white};
       z-index: 1;
-      ${applyVariants(RadioPillItem.themeProps.checked)};
+      ${applyVariants(themeProps.checked)};
     }
 
     &:first-child ~ ${Label} {
@@ -141,10 +119,10 @@ const RadioWrapper = styled.div`
     ${Label} {
       z-index: 1;
       border-color: ${color.primary};
-      ${applyVariants(RadioPillItem.themeProps.hover)};
+      ${applyVariants(themeProps.hover)};
     }
   }
-  ${applyVariants(RadioPillItem.themeProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 RadioPillItem.defaultProps = {
@@ -168,5 +146,6 @@ RadioPillItem.propTypes = {
   value: PropTypes.any,
   full: PropTypes.bool
 }
+RadioPillItem.themeProps = themeProps
 
 export default RadioPillItem

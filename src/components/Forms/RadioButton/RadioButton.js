@@ -9,27 +9,10 @@ import {
   fontFamily,
   font,
   color,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../../theming"
+import themeProps from "./RadioButton.themeProps"
 
-const tProps = {
-  radio: {
-    name: "RADIO_BUTTON_RADIO",
-    description: "Radio button style",
-    type: themePropTypes.style
-  },
-  label: {
-    name: "RADIO_BUTTON_LABEL",
-    description: "Label style",
-    type: themePropTypes.style
-  },
-  wrapper: {
-    name: "RADIO_BUTTON_WRAPPER",
-    description: "Wrapper style",
-    type: themePropTypes.style
-  }
-}
 const Radio = styled.input`
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -38,7 +21,7 @@ const Radio = styled.input`
   &:checked ~ label::after {
     transform: scale(1);
   }
-  ${applyVariants(tProps.radio)};
+  ${applyVariants(themeProps.radio)};
 `
 
 const Label = styled.label`
@@ -79,7 +62,7 @@ const Label = styled.label`
     transition: all 0.2s ease-in-out;
   }
 
-  ${applyVariants(tProps.label)};
+  ${applyVariants(themeProps.label)};
 `
 
 const RadioWrapper = styled.div`
@@ -95,7 +78,7 @@ const RadioWrapper = styled.div`
       }
     }
   }
-  ${applyVariants(tProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 const RadioButton = ({
@@ -163,6 +146,6 @@ RadioButton.defaultProps = {
   value: ""
 }
 
-RadioButton.themeProps = tProps
+RadioButton.themeProps = themeProps
 
 export default RadioButton

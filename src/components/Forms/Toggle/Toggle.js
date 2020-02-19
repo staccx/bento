@@ -6,9 +6,9 @@ import {
   spacing,
   color,
   applyVariants,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../../theming"
+import themeProps from "./Toggle.themeProps"
 
 const Toggle = ({
   children,
@@ -40,35 +40,12 @@ const Toggle = ({
   )
 }
 
-Toggle.themeProps = {
-  wrapper: {
-    name: "TOGGLE",
-    description: "Toggle style",
-    type: themePropTypes.style
-  },
-  toggleElement: {
-    name: "TOGGLE_ELEMENT",
-    description: "Toggle element style",
-    type: themePropTypes.style
-  },
-  input: {
-    name: "TOGGLE_INPUT",
-    description: "Toggle input style",
-    type: themePropTypes.style
-  },
-  checked: {
-    name: "  TOGGLE_ELEMENT_CHECKED",
-    description: "Toggle element checked style",
-    type: themePropTypes.style
-  }
-}
-
 const ToggleWrapper = styled.label`
   min-height: ${targetSize.normal};
   padding-top: ${spacing.tiny};
   padding-bottom: ${spacing.tiny};
   display: block;
-  ${applyVariants(Toggle.themeProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 const ToggleElement = styled.div`
@@ -86,7 +63,7 @@ const ToggleElement = styled.div`
     background: ${color.white};
     transition: all 0.2s ease;
   }
-  ${applyVariants(Toggle.themeProps.toggleElement)};
+  ${applyVariants(themeProps.toggleElement)};
 `
 
 const ToggleInput = styled.input`
@@ -141,9 +118,9 @@ const ToggleInput = styled.input`
     &:after {
       transform: translateX(100%);
     }
-    ${applyVariants(Toggle.themeProps.checked)};
+    ${applyVariants(themeProps.checked)};
   }
-  ${applyVariants(Toggle.themeProps.input)};
+  ${applyVariants(themeProps.input)};
 `
 
 Toggle.propTypes = {
@@ -165,5 +142,6 @@ Toggle.defaultProps = {
   defaultChecked: false,
   children: ""
 }
+Toggle.themeProps = themeProps
 
 export default Toggle
