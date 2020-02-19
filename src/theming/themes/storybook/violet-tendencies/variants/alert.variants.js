@@ -29,4 +29,5 @@ const alertVariants = createVariants(
   },
   Alert.themeProps.alert
 )
+
 export default alertVariants

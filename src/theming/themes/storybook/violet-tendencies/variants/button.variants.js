@@ -16,12 +16,13 @@ const btnVariants = createVariants(
       }
     `,
     primary: css`
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+      transition: border 0.2s ease, box-shadow 0.2s ease;
 
       &:hover,
       &:active,
       &:focus {
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 0 0 4px ${color.primary}66;
       }
     `,
     secondary: css`

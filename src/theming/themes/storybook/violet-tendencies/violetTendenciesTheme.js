@@ -18,6 +18,11 @@ import {
   radioButtonWrapperVariants
 } from "./variants/radioButton.variants"
 import { inputVariants } from "./variants/input.variants"
+import {
+  breadCrumbWrapperVariants,
+  breadCrumbItemVariants,
+  breadCrumbLastItemVariants
+} from "./variants/breadcrumb.variants"
 
 const borderRadius = "6px"
 const headerHeight = "70px"
@@ -134,7 +139,10 @@ const theme = new Theme(
     checkBoxBoxVariants,
     radioButtonVariants,
     radioButtonWrapperVariants,
-    inputVariants
+    inputVariants,
+    breadCrumbWrapperVariants,
+    breadCrumbItemVariants,
+    breadCrumbLastItemVariants
   ])
 
 export default theme
