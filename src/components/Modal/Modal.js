@@ -10,10 +10,10 @@ import {
   applyVariants,
   borderRadius,
   commonPropTypes,
-  themePropTypes,
   hideVisually
 } from "../../theming"
 import ThemeComponent from "../Theme/ThemeComponent"
+import themeProps from "./Modal.themeProps"
 
 class Modal extends Component {
   constructor(props) {
@@ -110,33 +110,6 @@ class Modal extends Component {
   }
 }
 
-Modal.themeProps = {
-  dialog: {
-    name: "modal_item",
-    description: "",
-    type: themePropTypes.style
-  },
-  content: {
-    name: "modal_content",
-    description: "",
-    type: themePropTypes.style
-  },
-  close: {
-    name: "modal_close",
-    description: "",
-    type: themePropTypes.style
-  },
-  backdrop: {
-    name: "modal_backdrop",
-    description: "",
-    type: themePropTypes.style
-  },
-  closeIcon: {
-    name: "COMPONENT_MODAL_CLOSE_ICON",
-    description: "",
-    type: themePropTypes.component
-  }
-}
 const ModalItem = styled.dialog`
   border-width: 0;
   height: 100%;
@@ -159,7 +132,7 @@ const ModalItem = styled.dialog`
   &:focus {
     outline: none;
   }
-  ${applyVariants(Modal.themeProps.dialog)};
+  ${applyVariants(themeProps.dialog)};
 `
 
 const ModalContent = styled.div`
@@ -178,7 +151,7 @@ const ModalContent = styled.div`
   &:focus {
     outline: none;
   }
-  ${applyVariants(Modal.themeProps.content)};
+  ${applyVariants(themeProps.content)};
 `
 
 const Close = styled.button`
@@ -199,7 +172,7 @@ const Close = styled.button`
   span {
     ${hideVisually};
   }
-  ${applyVariants(Modal.themeProps.close)};
+  ${applyVariants(themeProps.close)};
 `
 
 const ModalBackdrop = styled.div`
@@ -212,12 +185,12 @@ const ModalBackdrop = styled.div`
   background: rgba(0, 0, 0, 0.8);
   opacity: 0;
   animation: 0.2s ${FadeIn} ease-out forwards 1;
-  ${applyVariants(Modal.themeProps.backdrop)};
+  ${applyVariants(themeProps.backdrop)};
 `
 
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
-    tagName={Modal.themeProps.closeIcon}
+    tagName={themeProps.closeIcon}
     fallback={IconClose}
     {...props}
   />

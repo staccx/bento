@@ -1,12 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import {
-  applyVariants,
-  spacing,
-  commonPropTypes,
-  themePropTypes
-} from "../../../theming"
+import { applyVariants, spacing, commonPropTypes } from "../../../theming"
+import themeProps from "./Flag.themeProps"
 
 /**
  * The flag object is a design pattern similar to the media object, however it
@@ -43,14 +39,6 @@ const Flag = ({
     <FlagBody>{children}</FlagBody>
   </FlagObject>
 )
-
-Flag.themeProps = {
-  object: {
-    name: "FLAG_OBJECT",
-    description: "",
-    type: themePropTypes.style
-  }
-}
 
 const FlagImg = styled.div`
   margin-right: ${spacing.medium};
@@ -163,7 +151,7 @@ const FlagObject = styled.div`
   ${props => (props.small ? small : null)};
   ${props => (props.tiny ? tiny : null)};
   ${props => (props.responsive > 0 ? responsive : null)};
-  ${applyVariants(Flag.themeProps.object)};
+  ${applyVariants(themeProps.object)};
 `
 
 Flag.defaultProps = {
@@ -224,5 +212,6 @@ Flag.propTypes = {
    */
   tiny: PropTypes.bool
 }
+Flag.themeProps = themeProps
 
 export default Flag

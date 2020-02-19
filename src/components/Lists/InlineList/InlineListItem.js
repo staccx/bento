@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, themePropTypes } from "../../../theming"
+import { applyVariants } from "../../../theming"
+import themeProps from "./InlineList.themeProps"
 
 const InlineListItem = ({ className, children, ...rest }) => (
   <ListItem className={className} {...rest}>
@@ -9,17 +10,9 @@ const InlineListItem = ({ className, children, ...rest }) => (
   </ListItem>
 )
 
-InlineListItem.themeProps = {
-  listItem: {
-    name: "INLINE_LIST_ITEM",
-    description: "",
-    type: themePropTypes.style
-  }
-}
-
 const ListItem = styled.li`
   display: inline-block;
-  ${applyVariants(InlineListItem.themeProps.listItem)};
+  ${applyVariants(themeProps.listItem)};
 `
 
 InlineListItem.defaultProps = {
@@ -30,5 +23,6 @@ InlineListItem.propTypes = {
   children: PropTypes.any.isRequired,
   className: PropTypes.string
 }
+InlineListItem.themeProps = themeProps
 
 export default InlineListItem

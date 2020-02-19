@@ -5,9 +5,9 @@ import {
   spacing,
   wrapper,
   applyVariants,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../../theming"
+import themeProps from "./Wrapper.themeProps"
 
 /**
  * A Wrapper components that centers content and add spacing on the sides
@@ -31,13 +31,6 @@ const Wrapper = ({
   </Wrap>
 )
 
-Wrapper.themeProps = {
-  wrapper: {
-    name: "WRAPPER",
-    description: "",
-    type: themePropTypes.style
-  }
-}
 const Wrap = styled.div`
   width: 100%;
   max-width: ${p => (p.size === "full" ? "none" : wrapper(p.size))};
@@ -58,7 +51,7 @@ const Wrap = styled.div`
         padding-right: 0;
       }
     `};
-  ${applyVariants(Wrapper.themeProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 Wrapper.defaultProps = {
@@ -85,5 +78,6 @@ Wrapper.propTypes = {
    */
   breakout: PropTypes.bool
 }
+Wrapper.themeProps = themeProps
 
 export default Wrapper

@@ -7,23 +7,15 @@ import {
   color,
   spacing,
   targetSize,
-  themePropTypes,
   commonPropTypes
 } from "../../../theming"
+import themeProps from "./Tag.themeProps"
 
 const Tag = ({ children, className, variant, ...rest }) => (
   <TagWrapper className={className} variant={variant} {...rest}>
     {children}
   </TagWrapper>
 )
-
-Tag.themeProps = {
-  tag: {
-    name: "tag",
-    description: "A span with padding around it",
-    type: themePropTypes.style
-  }
-}
 
 const TagWrapper = styled.span`
   display: inline-block;
@@ -34,7 +26,7 @@ const TagWrapper = styled.span`
   background-color: ${color.subtleHover};
   color: ${color.primary};
   min-height: ${spacing.medium};
-  ${applyVariants(Tag.themeProps.tag)};
+  ${applyVariants(themeProps.tag)};
 `
 
 Tag.defaultProps = {
@@ -46,5 +38,6 @@ Tag.propTypes = {
   className: PropTypes.string,
   variant: PropTypes.string
 }
+Tag.themeProps = themeProps
 
 export default Tag

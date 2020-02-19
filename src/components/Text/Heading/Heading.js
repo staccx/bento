@@ -5,9 +5,9 @@ import {
   font,
   fontFamily,
   applyVariants,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../../theming"
+import themeProps from "./Headling.themeProps"
 
 const Heading = ({ level, children, className, ...restProps }) => {
   switch (level) {
@@ -80,16 +80,9 @@ const Heading = ({ level, children, className, ...restProps }) => {
   }
 }
 
-Heading.themeProps = {
-  heading: {
-    name: "heading",
-    description: "",
-    type: themePropTypes.style
-  }
-}
 export const HeadingsStyle = css`
   font-family: ${fontFamily.heading};
-  ${applyVariants(Heading.themeProps.heading)};
+  ${applyVariants(themeProps.heading)};
 `
 
 const HeadingH1 = styled.h1`
@@ -135,5 +128,6 @@ Heading.propTypes = {
   level: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string
 }
+Heading.themeProps = themeProps
 
 export default Heading

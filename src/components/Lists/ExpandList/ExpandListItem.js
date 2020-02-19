@@ -8,10 +8,10 @@ import {
   font,
   color,
   applyVariants,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
+import themeProps from "./ExpandListItem.themeProps"
 
 const ExpandButton = ({ title, isExpanded, ...props }) => (
   <ExpandBtn isExpanded={isExpanded} {...props}>
@@ -19,42 +19,9 @@ const ExpandButton = ({ title, isExpanded, ...props }) => (
   </ExpandBtn>
 )
 
-const tProps = {
-  listItemButtonComponent: {
-    name: "COMPONENT_EXPAND_LIST_ITEM_BTN",
-    description: "",
-    type: themePropTypes.component
-  },
-  listItem: {
-    name: "EXPAND_LIST_ITEM",
-    description: "",
-    type: themePropTypes.style
-  },
-  listIcon: {
-    name: "EXPAND_LIST_ICON",
-    description: "",
-    type: themePropTypes.style
-  },
-  listButton: {
-    name: "EXPAND_LIST_BUTTON",
-    description: "",
-    type: themePropTypes.style
-  },
-  expandedItem: {
-    name: "EXPAND_LIST_EXPANDED_ITEM",
-    description: "",
-    type: themePropTypes.style
-  },
-  expandListIconComponent: {
-    name: "COMPONENT_EXPAND_LIST_ICON",
-    description: "",
-    type: themePropTypes.component
-  }
-}
-
 const BtnComponent = ({ ...props }) => (
   <ThemeComponent
-    tagName={tProps.listItemButtonComponent}
+    tagName={themeProps.listItemButtonComponent}
     fallback={ExpandButton}
     {...props}
   />
@@ -134,12 +101,12 @@ const ExpandItem = styled.li`
   &:last-child {
     border-bottom-width: 0;
   }
-  ${applyVariants(tProps.listItem)};
+  ${applyVariants(themeProps.listItem)};
 `
 
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
-    tagName={tProps.expandListIconComponent}
+    tagName={themeProps.expandListIconComponent}
     fallback={Caret}
     {...props}
   />
@@ -150,7 +117,7 @@ const ExpandIcon = styled(IconComponent)`
   fill: ${color.wcag};
   transition: transform 0.3s ease-out;
   transform: ${p => (p.isExpanded ? "rotate(180deg)" : "rotate(0)")};
-  ${applyVariants(tProps.listIcon)};
+  ${applyVariants(themeProps.listIcon)};
 `
 
 const ExpandBtn = styled.button`
@@ -176,7 +143,7 @@ const ExpandBtn = styled.button`
       fill: ${color.primary};
     }
   }
-  ${applyVariants(tProps.listButton)};
+  ${applyVariants(themeProps.listButton)};
 `
 
 const ExpandedItem = styled.div`
@@ -188,7 +155,7 @@ const ExpandedItem = styled.div`
   max-width: ${p => (p.flush ? "auto" : "540px")};
   margin: auto;
   line-height: 1.8;
-  ${applyVariants(tProps.expandedItem)};
+  ${applyVariants(themeProps.expandedItem)};
 `
 
 ExpandListItem.defaultProps = {
@@ -218,6 +185,6 @@ ExpandListItem.propTypes = {
   flush: PropTypes.bool
 }
 
-ExpandListItem.themeProps = tProps
+ExpandListItem.themeProps = themeProps
 
 export default ExpandListItem

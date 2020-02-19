@@ -5,9 +5,9 @@ import {
   fontFamily,
   font,
   applyVariants,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../../theming"
+import themeProps from "./Paragraph.themeProps"
 
 const Paragraph = ({ children, className, ...restProps }) => {
   return (
@@ -17,18 +17,10 @@ const Paragraph = ({ children, className, ...restProps }) => {
   )
 }
 
-Paragraph.themeProps = {
-  paragraph: {
-    name: "paragraph",
-    description: "",
-    type: themePropTypes.style
-  }
-}
-
 export const P = styled.p`
   font-family: ${fontFamily.body};
   line-height: ${font.lineHeight};
-  ${applyVariants(Paragraph.themeProps.paragraph)};
+  ${applyVariants(themeProps.paragraph)};
 `
 
 Paragraph.defaultProps = {
@@ -39,5 +31,5 @@ Paragraph.propTypes = {
   children: commonPropTypes.children.isRequired,
   className: PropTypes.string
 }
-
+Paragraph.themeProps = themeProps
 export default Paragraph

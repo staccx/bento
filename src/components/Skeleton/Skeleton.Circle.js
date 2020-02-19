@@ -1,8 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, spacing, themePropTypes } from "../../theming"
+import { applyVariants, spacing } from "../../theming"
 import SkeletonPulse from "./Skeleton.Pulse"
+import themeProps from "./Skeleton.Circle.themeProps"
 
 const SkeletonCircle = ({ className, width, height, ...restProps }) => {
   return (
@@ -13,14 +14,6 @@ const SkeletonCircle = ({ className, width, height, ...restProps }) => {
       {...restProps}
     />
   )
-}
-
-SkeletonCircle.themeProps = {
-  circle: {
-    name: "circle",
-    description: "The skeleton circle",
-    type: themePropTypes.style
-  }
 }
 
 export const SKELETONCIRCLE = "skeletoncircle"
@@ -35,7 +28,7 @@ export const Circle = styled(SkeletonPulse)`
     content: "\\00a0";
   }
 
-  ${applyVariants(SkeletonCircle.themeProps.circle)};
+  ${applyVariants(themeProps.circle)};
 `
 
 SkeletonCircle.defaultProps = {
@@ -45,5 +38,6 @@ SkeletonCircle.defaultProps = {
 SkeletonCircle.propTypes = {
   className: PropTypes.string
 }
+SkeletonCircle.themeProps = themeProps
 
 export default SkeletonCircle
