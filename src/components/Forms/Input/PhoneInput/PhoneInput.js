@@ -3,10 +3,11 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Input, { InputPropTypes } from "../Input"
 import "cleave.js/dist/addons/cleave-phone.no.js"
-import { applyVariants, spacing, themePropTypes } from "../../../../theming"
+import { applyVariants, spacing } from "../../../../theming"
 import countries, { NORWAY } from "./countries"
 import SelectSimple from "../../SelectSimple/SelectSimple"
 import Label from "../../Label/Label"
+import themeProps from "./PhoneInput.themeProps"
 
 /**
  * Input for Phone-numbers.
@@ -68,24 +69,6 @@ const PhoneInput = React.forwardRef(
   }
 )
 
-PhoneInput.themeProps = {
-  wrapper: {
-    name: "PHONE_WRAPPER",
-    description: "Wrapper style",
-    type: themePropTypes.style
-  },
-  countryCode: {
-    name: "PHONE_COUNTRY_CODE",
-    description: "Country code style",
-    type: themePropTypes.style
-  },
-  input: {
-    name: "PHONE_INPUT",
-    description: "Specific Input style",
-    type: themePropTypes.style
-  }
-}
-
 const PhoneInputWrapper = styled.div`
   position: relative;
 `
@@ -96,7 +79,7 @@ const Wrap = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  ${applyVariants(PhoneInput.themeProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 const CountryCode = styled.div`
@@ -106,7 +89,7 @@ const CountryCode = styled.div`
 
 const PInput = styled(Input)`
   flex-grow: 1;
-  ${applyVariants(PhoneInput.themeProps.input)};
+  ${applyVariants(themeProps.input)};
 `
 
 PhoneInput.propTypes = {
@@ -121,5 +104,6 @@ PhoneInput.defaultProps = {
   locale: "no",
   guide: false
 }
+PhoneInput.themeProps = themeProps
 
 export default PhoneInput

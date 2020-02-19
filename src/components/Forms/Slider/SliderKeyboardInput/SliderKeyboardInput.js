@@ -11,9 +11,9 @@ import {
   targetSize,
   fontFamily,
   font,
-  color,
-  themePropTypes
+  color
 } from "../../../../theming"
+import themeProps from "./SliderKeyboardInput.themeProps"
 
 const removeSpaces = value => value.replace(/\s/g, "")
 
@@ -170,19 +170,6 @@ class SliderKeyboardInput extends React.Component {
   }
 }
 
-SliderKeyboardInput.themeProps = {
-  wrapper: {
-    name: "SLIDER_KEYBOARD_WRAPPER",
-    description: "Wrapper style",
-    type: themePropTypes.style
-  },
-  input: {
-    name: "SLIDER_KEYBOARD_INPUT",
-    description: "Wrapper style",
-    type: themePropTypes.style
-  }
-}
-
 const SliderWrapper = styled.div`
   font-family: ${fontFamily.body};
   font-size: ${font.input};
@@ -248,5 +235,6 @@ SliderKeyboardInput.propTypes = {
   value: PropTypes.number,
   showLabel: PropTypes.bool
 }
+SliderKeyboardInput.themeProps = themeProps
 
 export default SliderKeyboardInput

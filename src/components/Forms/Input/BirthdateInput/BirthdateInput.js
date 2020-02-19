@@ -4,7 +4,8 @@ import styled from "styled-components"
 import { parseISO } from "date-fns"
 import Label from "../../Label/Label"
 import Input from "../Input"
-import { applyVariants, themePropTypes } from "../../../../theming"
+import { applyVariants } from "../../../../theming"
+import themeProps from "./BirthdateInput.themeProps"
 
 const BirthdateInput = ({
   id,
@@ -110,26 +111,13 @@ const BirthdateInput = ({
   )
 }
 
-BirthdateInput.themeProps = {
-  outer: {
-    name: "BIRTHDATE_INPUT_OUTER_STYLE",
-    description: "Outer style",
-    type: themePropTypes.style
-  },
-  container: {
-    name: "BIRTHDATE_INPUT_CONTAINER_STYLE",
-    description: "Container style",
-    type: themePropTypes.style
-  }
-}
-
 const Outer = styled.div`
-  ${applyVariants(BirthdateInput.themeProps.outer)};
+  ${applyVariants(themeProps.outer)};
 `
 
 const Container = styled.div`
   display: flex;
-  ${applyVariants(BirthdateInput.themeProps.container)};
+  ${applyVariants(themeProps.container)};
 `
 
 BirthdateInput.propTypes = {
@@ -141,5 +129,6 @@ BirthdateInput.propTypes = {
 }
 
 BirthdateInput.defaultProps = {}
+BirthdateInput.themeProps = themeProps
 
 export default BirthdateInput

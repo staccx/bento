@@ -1,12 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import {
-  applyVariants,
-  color,
-  fontWeight,
-  themePropTypes
-} from "../../../../theming"
+import { applyVariants, color, fontWeight } from "../../../../theming"
+import themeProps from "./Slider.themeProps"
 
 class Slider extends React.PureComponent {
   constructor(props, context) {
@@ -61,24 +57,6 @@ class Slider extends React.PureComponent {
   }
 }
 
-Slider.themeProps = {
-  thumb: {
-    name: "SLIDER_THUMB_STYLE",
-    description: "Thumb style",
-    type: themePropTypes.style
-  },
-  track: {
-    name: "SLIDER_TRACK_STYLE",
-    description: "Track style",
-    type: themePropTypes.style
-  },
-  input: {
-    name: "SLIDER_INPUT",
-    description: "Input style",
-    type: themePropTypes.style
-  }
-}
-
 const SliderThumbStyle = css`
   -webkit-appearance: none;
   border: 2px solid ${color.line};
@@ -97,7 +75,7 @@ const SliderThumbStyle = css`
     border-color: ${color.white};
     background-color: ${color.secondary};
   }
-  ${applyVariants(Slider.themeProps.thumb)};
+  ${applyVariants(themeProps.thumb)};
 `
 
 const SliderHiddenTrackStyle = css`
@@ -115,7 +93,7 @@ const SliderTrackStyle = css`
   border-radius: 4.5px;
   color: transparent;
   background-color: ${color.line};
-  ${applyVariants(Slider.themeProps.track)};
+  ${applyVariants(themeProps.track)};
 `
 
 const SliderInput = styled.div`
@@ -223,7 +201,7 @@ const SliderInput = styled.div`
     background-color: ${color.white};
   }
 
-  ${applyVariants(Slider.themeProps.input)};
+  ${applyVariants(themeProps.input)};
 `
 
 Slider.defaultProps = {
@@ -247,5 +225,6 @@ Slider.propTypes = {
   variant: PropTypes.string,
   value: PropTypes.any
 }
+Slider.themeProps = themeProps
 
 export default Slider

@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { applyVariants, themePropTypes } from "../../../theming"
+import { applyVariants } from "../../../theming"
+import themeProps from "./RadioPill.themeProps"
 
 const RadioPill = ({
   children,
@@ -27,14 +28,6 @@ const RadioPill = ({
   </RadioPillContainer>
 )
 
-RadioPill.themeProps = {
-  container: {
-    name: "RADIO_PILL",
-    description: "Container style",
-    type: themePropTypes.style
-  }
-}
-
 const Full = css`
   display: flex;
   width: 100%;
@@ -46,7 +39,7 @@ const RadioPillContainer = styled.div`
   padding: 0;
   outline: 0;
   ${p => p.full && Full};
-  ${applyVariants(RadioPill.themeProps.container)};
+  ${applyVariants(themeProps.container)};
 `
 
 RadioPill.defaultProps = {
@@ -61,5 +54,6 @@ RadioPill.propTypes = {
   onChange: PropTypes.func,
   full: PropTypes.bool
 }
+RadioPill.themeProps = themeProps
 
 export default RadioPill
