@@ -16,7 +16,7 @@ const Container = styled.div`
   }
 `
 
-const AnnualStatement = ({ statements = [], footerText, footer }) => {
+const AnnualStatement = ({ statements = [], footer, profile }) => {
   return (
     <State>
       {({ set, selected = statements.length ? statements[0] : null }) => {
@@ -43,12 +43,17 @@ const AnnualStatement = ({ statements = [], footerText, footer }) => {
             </LayoutItem>
             <LayoutItem variant="fadeIn" delay="600" area="main">
               {selected && (
-                <>
-                  <strong>Registreringsnummer: </strong>
+                <div style={{ marginBottom: "10px" }}>
+                  <strong>Fødselsnummer: </strong>
                   <Text>
                     {formatPhone(selected.socialSecurityNo, "XXXXXX XXXXX")}
                   </Text>
-                </>
+                  <br />
+                  <strong>Navn: </strong>
+                  <Text>
+                    {profile.firstName} {profile.lastName}
+                  </Text>
+                </div>
               )}
               <List>
                 <AnnualStatementList statement={selected} />
