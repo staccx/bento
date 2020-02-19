@@ -12,10 +12,10 @@ import {
   fontWeight,
   applyVariants,
   commonPropTypes,
-  themePropTypes,
   hideVisually
 } from "../../../../theming"
 import ThemeComponent from "../../../Theme/ThemeComponent"
+import themeProps from "./FileInput.themeProps"
 const tinycolor = require("tinycolor2")
 
 class FileInput extends Component {
@@ -90,41 +90,13 @@ class FileInput extends Component {
   }
 }
 
-FileInput.themeProps = {
-  wrapper: {
-    name: "FileInput_Wrapper",
-    description: "FileInput wrapper style",
-    type: themePropTypes.style
-  },
-  input: {
-    name: "FileInput_Input",
-    description: "Input style – default is hidden! Style the label instead.",
-    type: themePropTypes.style
-  },
-  label: {
-    name: "FileInput_Label",
-    description: "Label style",
-    type: themePropTypes.style
-  },
-  icon: {
-    name: "FileInput_Icon_Style",
-    description: "Icon style",
-    type: themePropTypes.style
-  },
-  iconComponent: {
-    name: "FileInput_Icon_Component",
-    description: "Icon component",
-    type: themePropTypes.component
-  }
-}
-
 const FileWrapper = styled.div`
-  ${applyVariants(FileInput.themeProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 const Input = styled.input`
   ${hideVisually};
-  ${applyVariants(FileInput.themeProps.input)};
+  ${applyVariants(themeProps.input)};
 `
 
 const Label = styled.label`
@@ -179,12 +151,12 @@ const Label = styled.label`
         .toString()};
   }
 
-  ${applyVariants(FileInput.themeProps.label)};
+  ${applyVariants(themeProps.label)};
 `
 
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
-    tagName={FileInput.themeProps.iconComponent}
+    tagName={themeProps.iconComponent}
     fallback={Upload}
     {...props}
   />
@@ -195,7 +167,7 @@ export const Icon = styled(IconComponent)`
   height: 12px;
   width: 12px;
   margin-right: 3px;
-  ${applyVariants(FileInput.themeProps.icon)};
+  ${applyVariants(themeProps.icon)};
 `
 
 FileInput.propTypes = {
@@ -222,5 +194,5 @@ FileInput.defaultProps = {
   singleFileLabel: "file",
   showFileName: true
 }
-
+FileInput.themeProps = themeProps
 export default FileInput

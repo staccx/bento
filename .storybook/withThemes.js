@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react";
-import themes from "./themes";
-import { IconButton, TooltipLinkList, WithTooltip } from "@storybook/components";
-import addons, { makeDecorator, types } from "@storybook/addons";
-import { FORCE_RE_RENDER } from "@storybook/core-events";
-import styled, { ThemeProvider } from "styled-components";
-import { useAddonState } from "@storybook/api";
+import React, { useEffect, useState } from "react"
+import themes from "./themes"
+import { IconButton, TooltipLinkList, WithTooltip } from "@storybook/components"
+import addons, { makeDecorator, types } from "@storybook/addons"
+import { FORCE_RE_RENDER } from "@storybook/core-events"
+import styled, { ThemeProvider } from "styled-components"
+import { useAddonState } from "@storybook/api"
 import WebFonts from "../src/components/Theme/WebFonts"
 import GlobalStyle from "../src/components/Theme/GlobalStyle"
 
 // credit: https://github.com/storybooks/storybook/issues/5889#issuecomment-471240086
 
-const TOOL_NAME = "bento-sb-theme";
+const TOOL_NAME = "bento-sb-theme"
 
 addons.register("storybook/theme-switcher", api => {
   addons.addPanel("storybook/theme-switcher", {
     title: "theme-switcher",
     type: types.TOOL,
-    render: () => <ThemeSwitcher api={api}/>
-  });
-});
-const getName = theme => theme.storybookName || "NO NAME";
+    render: () => <ThemeSwitcher api={api} />
+  })
+})
+const getName = theme => theme.storybookName || "NO NAME"
 
 export const withTheme = makeDecorator({
   name: "withTheme",
@@ -27,18 +27,18 @@ export const withTheme = makeDecorator({
   skipIfNoParametersOrOptions: false,
   allowDeprecatedUsage: false,
   wrapper: (getStory, context) => {
-    const [saved, theme] = getLocalTheme();
-    const [variant, setVariant] = useState(null);
+    const [saved, theme] = getLocalTheme()
+    const [variant, setVariant] = useState(null)
     useEffect(() => {
-      const channel = addons.getChannel();
-      channel.on("variant_changed", setVariant);
+      const channel = addons.getChannel()
+      channel.on("variant_changed", setVariant)
       return () => {
-        channel.off("variant_changed", setVariant);
-      };
-    }, []);
+        channel.off("variant_changed", setVariant)
+      }
+    }, [])
 
-    console.log("variant", variant);
-    const component = getStory(context);
+    console.log("variant", variant)
+    const component = getStory(context)
     return (
       <ThemeProvider theme={theme}>
         <WebFonts />
@@ -47,29 +47,29 @@ export const withTheme = makeDecorator({
       </ThemeProvider>
     )
   }
-});
+})
 
 export const ThemeSwitcher = ({ api }) => {
-  const [activeTheme, setTheme] = useState(getLocalTheme()[1]);
-  const [expanded, setExpanded] = useState(false);
-  const [, setT] = useAddonState("theme-switcher", null);
+  const [activeTheme, setTheme] = useState(getLocalTheme()[1])
+  const [expanded, setExpanded] = useState(false)
+  const [, setT] = useAddonState("theme-switcher", null)
 
-  useEffect(() => bindThemeOverride(api), []);
+  useEffect(() => bindThemeOverride(api), [])
   useEffect(() => {
     if (activeTheme) {
-      setT(activeTheme);
+      setT(activeTheme)
     }
-  }, [activeTheme]);
+  }, [activeTheme])
 
   const themeList = themes.map((theme, index) => ({
     id: getName(theme),
     title: getName(theme),
     onClick: () => {
-      setTheme(themes[index]);
-      setLocalTheme({ api, theme: index, rerender: true });
+      setTheme(themes[index])
+      setLocalTheme({ api, theme: index, rerender: true })
     },
-    right: <ThemeIcon theme={theme}/>
-  }));
+    right: <ThemeIcon theme={theme} />
+  }))
 
   return (
     <WithTooltip
@@ -77,26 +77,26 @@ export const ThemeSwitcher = ({ api }) => {
       trigger="click"
       tooltipShown={expanded}
       onVisibilityChange={s => setExpanded(s)}
-      tooltip={<TooltipLinkList links={themeList}/>}
+      tooltip={<TooltipLinkList links={themeList} />}
       closeOnClick
     >
       <FlexIt>
         <IconButton key="theme-switcher">{getName(activeTheme)} </IconButton>
-        <ThemeIcon theme={activeTheme}/>
+        <ThemeIcon theme={activeTheme} />
       </FlexIt>
     </WithTooltip>
-  );
-};
+  )
+}
 
 export const FlexIt = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0,0,0,.2);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding: 0 12px;
   min-width: 100px;
-`;
+`
 
 export const ThemeIcon = styled.span`
   display: block;
@@ -110,41 +110,34 @@ export const ThemeIcon = styled.span`
   height: 0px;
   width: 0px;
   transform: rotate(45deg);
+`
 
-`;
-
-function bindThemeOverride (api) {
-  const channel = api.getChannel();
+function bindThemeOverride(api) {
+  const channel = api.getChannel()
 
   channel.on("storiesConfigured", () => {
-    setLocalTheme({ api });
-  });
+    setLocalTheme({ api })
+  })
   channel.on("storyChanged", () => {
-    setLocalTheme({ api });
-  });
+    setLocalTheme({ api })
+  })
 }
 
-function setLocalTheme ({
-                          api,
-                          theme = getLocalTheme()[0],
-                          rerender = false
-                        }) {
-  window.localStorage.setItem(TOOL_NAME, theme);
+function setLocalTheme({ api, theme = getLocalTheme()[0], rerender = false }) {
+  window.localStorage.setItem(TOOL_NAME, theme)
 
   api.setOptions({
     theme: getLocalTheme()[1]
-  });
+  })
 
   if (rerender) {
-    addons.getChannel().emit(FORCE_RE_RENDER);
+    addons.getChannel().emit(FORCE_RE_RENDER)
   }
 }
 
-export function getLocalTheme () {
-  const savedTheme = window.localStorage.getItem(TOOL_NAME);
+export function getLocalTheme() {
+  const savedTheme = window.localStorage.getItem(TOOL_NAME)
   const theme =
-    typeof themes[savedTheme] === "object"
-      ? themes[savedTheme]
-      : themes[0];
-  return [savedTheme, theme || themes[0]];
+    typeof themes[savedTheme] === "object" ? themes[savedTheme] : themes[0]
+  return [savedTheme, theme || themes[0]]
 }

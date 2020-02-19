@@ -9,11 +9,11 @@ import {
   spacing,
   targetSize,
   color,
-  font,
-  themePropTypes
+  font
 } from "../../../../theming"
 import { usePostalCode } from "../../../../hooks/usePostalCode/usePostalCode"
 import Alert from "../../../Alert/Alert"
+import themeProps from "./PostalCode.themeProps"
 
 /**
  * Input for Norwegian Postal codes. Adds PostalPlace according to the number. Input is imported from Input-component
@@ -57,30 +57,12 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   )
 }
 
-PostalCodeInput.themeProps = {
-  wrapper: {
-    name: "POSTAL_WRAPPER",
-    description: "Wrapper style",
-    type: themePropTypes.style
-  },
-  location: {
-    name: "POSTAL_LOCATION",
-    description: "Location style",
-    type: themePropTypes.style
-  },
-  input: {
-    name: "POSTAL_INPUT",
-    description: "Specific Input style",
-    type: themePropTypes.style
-  }
-}
-
 const PostalInputWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  ${applyVariants(PostalCodeInput.themeProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 const Location = styled.div`
@@ -93,12 +75,12 @@ const Location = styled.div`
   color: ${p => (p.valid ? color("wcag")(p) : color("warning")(p))};
   opacity: 0;
   animation: ${FadeIn} 0.8s ease-out forwards 1;
-  ${applyVariants(PostalCodeInput.themeProps.location)};
+  ${applyVariants(themeProps.location)};
 `
 
 const PostalInput = styled(Input)`
   width: 5em;
-  ${applyVariants(PostalCodeInput.themeProps.input)};
+  ${applyVariants(themeProps.input)};
 `
 
 PostalCodeInput.propTypes = {
@@ -110,5 +92,6 @@ PostalCodeInput.propTypes = {
 PostalCodeInput.defaultProps = {
   locale: "nb"
 }
+PostalCodeInput.themeProps = themeProps
 
 export default PostalCodeInput
