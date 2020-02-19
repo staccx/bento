@@ -15,7 +15,7 @@ const ItemGroup = ({ children, spacing, variant, className, ...restProps }) => (
 
 const Wrap = styled.div`
   overflow: hidden;
-  ${applyVariants(ItemGroup.themeProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 const ItemGroupElement = styled.div`

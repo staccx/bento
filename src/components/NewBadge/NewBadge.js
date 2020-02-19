@@ -6,9 +6,9 @@ import {
   color,
   fontWeight,
   applyVariants,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../theming"
+import themeProps from "./NewBadge.themeProps"
 
 const NewBadge = ({ number, children, variant }) => (
   <NewBadgeWrapper variant={variant}>
@@ -21,23 +21,10 @@ const NewBadge = ({ number, children, variant }) => (
   </NewBadgeWrapper>
 )
 
-NewBadge.themeProps = {
-  wrapper: {
-    name: "NEW_BADGE_WRAPPER",
-    description: "",
-    type: themePropTypes.style
-  },
-  badge: {
-    name: "NEW_BADGE_BADGE",
-    description: "",
-    type: themePropTypes.style
-  }
-}
-
 const NewBadgeWrapper = styled.div`
   position: relative;
   display: inline-block;
-  ${applyVariants(NewBadge.themeProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 const Badge = styled.span`
@@ -57,7 +44,7 @@ const Badge = styled.span`
   bottom: -12px;
   position: absolute;
   ${fontSmoothing};
-  ${applyVariants(NewBadge.themeProps.badge)};
+  ${applyVariants(themeProps.badge)};
 `
 
 NewBadge.propTypes = {
@@ -67,5 +54,5 @@ NewBadge.propTypes = {
   number: PropTypes.number.isRequired,
   children: commonPropTypes.children
 }
-
+NewBadge.themeProps = themeProps
 export default NewBadge

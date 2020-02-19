@@ -1,11 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import {
-  applyVariants,
-  commonPropTypes,
-  themePropTypes
-} from "../../../theming"
+import { applyVariants, commonPropTypes } from "../../../theming"
+import themeProps from "./Text.themeProps"
 
 const Text = ({ level, children, className, ...restProps }) => {
   return (
@@ -15,18 +12,10 @@ const Text = ({ level, children, className, ...restProps }) => {
   )
 }
 
-Text.themeProps = {
-  text: {
-    name: "text",
-    description: "",
-    type: themePropTypes.style
-  }
-}
-
 export const TEXT = "text"
 
 export const Span = styled.span`
-  ${applyVariants(Text.themeProps.text)};
+  ${applyVariants(themeProps.text)};
 `
 
 Text.defaultProps = {
@@ -42,5 +31,6 @@ Text.propTypes = {
   i18n: PropTypes.string,
   className: PropTypes.string
 }
+Text.themeProps = themeProps
 
 export default Text

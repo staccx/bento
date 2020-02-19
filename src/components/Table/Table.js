@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, themePropTypes } from "../../theming"
+import { applyVariants } from "../../theming"
+import themeProps from "./Table.themeProps"
 
 class Table extends React.Component {
   render() {
@@ -76,16 +77,8 @@ class Table extends React.Component {
   }
 }
 
-Table.themeProps = {
-  table: {
-    name: "base-component-table",
-    description: "",
-    type: themePropTypes.style
-  }
-}
-
 export const TableStyled = styled.table`
-  ${applyVariants(Table.themeProps.table)};
+  ${applyVariants(themeProps.table)};
 `
 
 Table.propTypes = {
@@ -99,6 +92,7 @@ Table.propTypes = {
   renderHeader: PropTypes.func,
   overrideHeaders: PropTypes.array
 }
+Table.themeProps = themeProps
 
 export default Table
 

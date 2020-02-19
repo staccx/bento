@@ -1,21 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, borderRadius, themePropTypes } from "../../theming"
+import { applyVariants, borderRadius } from "../../theming"
 import SkeletonPulse from "./Skeleton.Pulse"
+import themeProps from "./Skeleton.Line.themeProps"
 
 const SkeletonLine = ({ className, width, height, ...restProps }) => {
   return (
     <Line className={className} width={width} height={height} {...restProps} />
   )
-}
-
-SkeletonLine.themeProps = {
-  line: {
-    name: "line",
-    description: "The skeleton line",
-    type: themePropTypes.style
-  }
 }
 
 export const SKELETONLINE = "skeletonline"
@@ -30,7 +23,7 @@ export const Line = styled(SkeletonPulse)`
     content: "\\00a0";
   }
 
-  ${applyVariants(SkeletonLine.themeProps.line)};
+  ${applyVariants(themeProps.line)};
 `
 
 SkeletonLine.defaultProps = {
@@ -40,5 +33,6 @@ SkeletonLine.defaultProps = {
 SkeletonLine.propTypes = {
   className: PropTypes.string
 }
+SkeletonLine.themeProps = themeProps
 
 export default SkeletonLine

@@ -1,18 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
-import { applyVariants, themePropTypes } from "../../theming"
+import { applyVariants } from "../../theming"
+import themeProps from "./Skeleton.Pulse.themeProps"
 
 const SkeletonPulse = ({ className, ...restProps }) => {
   return <PulseStyle className={className} {...restProps} />
-}
-
-SkeletonPulse.themeProps = {
-  pulse: {
-    name: "pulse",
-    description: "The pulse animation",
-    type: themePropTypes.style
-  }
 }
 
 export const SKELETONPULSE = "skeletonpulse"
@@ -39,7 +32,7 @@ export const PulseStyle = styled.div`
   background-size: 400% 400%;
   animation: ${pulseAnimation} 1.2s ease-in-out infinite;
 
-  ${applyVariants(SkeletonPulse.themeProps.pulse)};
+  ${applyVariants(themeProps.pulse)};
 `
 
 SkeletonPulse.defaultProps = {
@@ -49,5 +42,6 @@ SkeletonPulse.defaultProps = {
 SkeletonPulse.propTypes = {
   className: PropTypes.string
 }
+SkeletonPulse.themeProps = themeProps
 
 export default SkeletonPulse

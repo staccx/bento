@@ -2,14 +2,9 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import useInterval from "../../../hooks/useInterval"
-import {
-  applyVariants,
-  color,
-  font,
-  spacing,
-  themePropTypes
-} from "../../../theming"
+import { applyVariants, color, font, spacing } from "../../../theming"
 import Loading from "../Loading/Loading"
+import themeProps from "./FullScreenLoader.themeProps"
 
 const FullScreenLoader = ({
   messages,
@@ -74,39 +69,6 @@ const FullScreenLoader = ({
   )
 }
 
-FullScreenLoader.themeProps = {
-  mainContainer: {
-    name: "FULLSCREENLOADER_MAINCONTAINER",
-    description: "",
-    type: themePropTypes.style
-  },
-  innerContainer: {
-    name: "FULLSCREENLOADER_INNERCONTAINER",
-    description: "",
-    type: themePropTypes.style
-  },
-  messagesContainer: {
-    name: "FULLSCREENLOADER_MESSAGESCONTAINER",
-    description: "",
-    type: themePropTypes.style
-  },
-  message: {
-    name: "FULLSCREENLOADER_MESSAGESSTYLE",
-    description: "",
-    type: themePropTypes.style
-  },
-  previousMessage: {
-    name: "FULLSCREENLOADER_PREVIOUSMESSAGE",
-    description: "",
-    type: themePropTypes.style
-  },
-  currentMessage: {
-    name: "FULLSCREENLOADER_CURRENTMESSAGE",
-    description: "",
-    type: themePropTypes.style
-  }
-}
-
 const FullScreenContainer = styled.div`
   position: fixed;
   left: 0;
@@ -118,7 +80,7 @@ const FullScreenContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${applyVariants(FullScreenLoader.themeProps.mainContainer)};
+  ${applyVariants(themeProps.mainContainer)};
 `
 
 const InnerContainer = styled.div`
@@ -126,14 +88,14 @@ const InnerContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  ${applyVariants(FullScreenLoader.themeProps.innerContainer)};
+  ${applyVariants(themeProps.innerContainer)};
 `
 
 const MessagesContainer = styled.div`
   margin-top: ${spacing.large};
   position: relative;
   width: 100%;
-  ${applyVariants(FullScreenLoader.themeProps.messagesContainer)};
+  ${applyVariants(themeProps.messagesContainer)};
 `
 
 const messageStyle = css`
@@ -150,7 +112,7 @@ const messageStyle = css`
     font-size: ${font.input};
   }
 
-  ${applyVariants(FullScreenLoader.themeProps.message)};
+  ${applyVariants(themeProps.message)};
 `
 
 const PreviousMsg = styled.div`
@@ -166,7 +128,7 @@ const PreviousMsg = styled.div`
       opacity: 0;
     }
   }
-  ${applyVariants(FullScreenLoader.themeProps.previousMessage)};
+  ${applyVariants(themeProps.previousMessage)};
 `
 
 const CurrentMsg = styled.div`
@@ -181,11 +143,12 @@ const CurrentMsg = styled.div`
       opacity: 1;
     }
   }
-  ${applyVariants(FullScreenLoader.themeProps.currentMessage)};
+  ${applyVariants(themeProps.currentMessage)};
 `
 
 FullScreenLoader.propTypes = {
   messages: PropTypes.array.isRequired
 }
+FullScreenContainer.themeProps = themeProps
 
 export default FullScreenLoader

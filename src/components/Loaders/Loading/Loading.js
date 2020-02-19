@@ -2,27 +2,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
 import ThemeComponent from "../../Theme/ThemeComponent"
-import { applyVariants, color, spacing, themePropTypes } from "../../../theming"
+import { applyVariants, color, spacing } from "../../../theming"
 import useTimer from "../../../hooks/useTimer"
+import themeProps from "./Loading.themeProps"
 
 const DefaultLoading = ({ className, variant, ...rest }) => (
   <SignalSpinner className={className} variant={variant} {...rest} />
 )
 
 export const COMPONENT_LOADING = "COMPONENT_LOADING"
-
-const themeProps = {
-  component: {
-    name: "COMPONENT_LOADING",
-    description: "Component for loading",
-    type: themePropTypes.component
-  },
-  loading: {
-    name: "LOADING",
-    description: "Loading style",
-    type: themePropTypes.style
-  }
-}
 
 const Loading = ({ className, idleTime, ...rest }) => {
   const isReady = useTimer(idleTime)
