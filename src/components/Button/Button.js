@@ -10,17 +10,9 @@ import {
   fontFamily,
   fontWeight,
   applyVariants,
-  themePropTypes,
   commonPropTypes
 } from "../../theming"
-
-const tProps = {
-  button: {
-    name: "Button",
-    description: "Button styles",
-    type: themePropTypes.style
-  }
-}
+import themeProps from "./Button.themeProps"
 
 const ButtonComp = styled.button`
   background-color: ${color.primary};
@@ -51,7 +43,7 @@ const ButtonComp = styled.button`
     color: ${color.white};
   }
 
-  ${applyVariants(tProps.button.name)};
+  ${applyVariants(themeProps.button.name)};
 `
 /**
  * Button component. Use to click stuff
@@ -74,6 +66,6 @@ const propTypes = {
 
 Button.defaultProps = defaultProps
 Button.propTypes = propTypes
-Button.themeProps = tProps
+Button.themeProps = themeProps
 
 export default Button
