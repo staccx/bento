@@ -17,8 +17,9 @@ import {
   radioButtonVariants,
   radioButtonWrapperVariants
 } from "./variants/radioButton.variants"
+import { inputVariants } from "./variants/input.variants"
 
-const borderRadius = "0"
+const borderRadius = "6px"
 const headerHeight = "70px"
 
 const targetSize = {
@@ -132,7 +133,8 @@ const theme = new Theme(
     checkBoxIconVariants,
     checkBoxBoxVariants,
     radioButtonVariants,
-    radioButtonWrapperVariants
+    radioButtonWrapperVariants,
+    inputVariants
   ])
 
 export default theme

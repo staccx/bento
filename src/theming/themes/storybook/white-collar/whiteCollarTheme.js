@@ -10,7 +10,7 @@ import {
 import alertVariants from "./variants/alert.variants"
 import progressBarVariants from "./variants/progressbar.variants"
 
-const borderRadius = "6px"
+const borderRadius = "0"
 const headerHeight = "70px"
 
 const targetSize = {
