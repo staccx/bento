@@ -9,8 +9,17 @@ import {
 } from "./variants/expand.variants"
 import alertVariants from "./variants/alert.variants"
 import progressBarVariants from "./variants/progressbar.variants"
+import {
+  checkBoxIconVariants,
+  checkBoxBoxVariants
+} from "./variants/checkbox.variants"
+import {
+  radioButtonVariants,
+  radioButtonWrapperVariants
+} from "./variants/radioButton.variants"
+import { inputVariants } from "./variants/input.variants"
 
-const borderRadius = "0"
+const borderRadius = "6px"
 const headerHeight = "70px"
 
 const targetSize = {
@@ -47,7 +56,7 @@ const color = {
   gray: "#B8B8B8",
   text: "#2D2D2D",
   white: "#fff",
-  line: "#F3F2FA",
+  line: "#E7E4FB",
   wcag: "#777",
   disabled: "#B8B8B8",
   warning: "#CF1D1A",
@@ -120,7 +129,12 @@ const theme = new Theme(
     expandBtnVariants,
     expandItemVariants,
     expandIconVariants,
-    progressBarVariants
+    progressBarVariants,
+    checkBoxIconVariants,
+    checkBoxBoxVariants,
+    radioButtonVariants,
+    radioButtonWrapperVariants,
+    inputVariants
   ])
 
 export default theme
