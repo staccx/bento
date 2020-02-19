@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anchor Snapshots href 1`] = `
+<a
+  className="sc-AykKC jICarN"
+  href="https://stacc.com"
+>
+  <p>
+    Body
+  </p>
+</a>
+`;
+
+exports[`Anchor Snapshots no children 1`] = `
+<a
+  className="sc-AykKC jICarN"
+  href="https://stacc.com"
+/>
+`;
+
+exports[`Anchor Snapshots no props 1`] = `
+<a
+  className="sc-AykKC jICarN"
+  href=""
+>
+  <p>
+    Body
+  </p>
+</a>
+`;
