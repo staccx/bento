@@ -87,7 +87,7 @@ export const LayoutStyling = theming.createVariants(
           case 2:
             return theming.spacing.large
           case 3:
-            return theming.spacing.tiny
+            return theming.spacing("mediumPlus")
           default:
             return theming.spacing.medium
         }
