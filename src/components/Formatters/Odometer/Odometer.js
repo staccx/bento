@@ -2,7 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Digit from "./Digit"
-import { applyVariants, themePropTypes, hideVisually } from "../../../theming"
+import { applyVariants, hideVisually } from "../../../theming"
+import themeProps from "./Odometer.themeProps"
 
 class Odometer extends React.PureComponent {
   constructor(...props) {
@@ -81,49 +82,26 @@ class Odometer extends React.PureComponent {
   }
 }
 
-Odometer.themeProps = {
-  animating: {
-    name: "odometer_animating",
-    description: "Style for the animating odometer",
-    type: themePropTypes.style
-  },
-  static: {
-    name: "odometer_static",
-    description: "Style for the static odometer",
-    type: themePropTypes.style
-  },
-  container: {
-    name: "odometer_container",
-    description: "Style for the container",
-    type: themePropTypes.style
-  },
-  wrapper: {
-    name: "odometer_wrapper",
-    description: "Style for the wrapper",
-    type: themePropTypes.style
-  }
-}
-
 const OdometerAnimating = styled.div`
   ${p => (!p.isAnimating ? hideVisually : "display: flex;")};
-  ${applyVariants(Odometer.themeProps.animating)};
+  ${applyVariants(themeProps.animating)};
 `
 
 const OdometerStatic = styled.div`
   ${p => (p.isAnimating ? hideVisually : "display: flex;")};
-  ${applyVariants(Odometer.themeProps.static)};
+  ${applyVariants(themeProps.static)};
 `
 
 const OdometerContainer = styled.div`
   position: relative;
-  ${applyVariants(Odometer.themeProps.container)};
+  ${applyVariants(themeProps.container)};
 `
 
 const OdometerWrapper = styled.div`
   font-size: ${p => p.size}px;
   line-height: 1;
   display: inline-block;
-  ${applyVariants(Odometer.themeProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 // TODO: Add support for strings?
@@ -152,5 +130,7 @@ Odometer.defaultProps = {
   size: 32,
   speed: 500
 }
+
+Odometer.themeProps = themeProps
 
 export default Odometer

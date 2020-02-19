@@ -4,13 +4,8 @@ import styled from "styled-components"
 import { BounceIn } from "../../animations"
 import Caret from "../Icons/Caret/Caret"
 import ThemeComponent from "../Theme/ThemeComponent"
-import {
-  applyVariants,
-  color,
-  spacing,
-  commonPropTypes,
-  themePropTypes
-} from "../../theming"
+import { applyVariants, color, spacing, commonPropTypes } from "../../theming"
+import themeProps from "./Expand.themeProps"
 
 const Expand = ({
   className,
@@ -70,37 +65,9 @@ const Expand = ({
   )
 }
 
-Expand.themeProps = {
-  iconComponent: {
-    name: "COMPONENT_EXPAND_ICON",
-    description: "Icon shown. Defaults to Caret",
-    type: themePropTypes.component
-  },
-  icon: {
-    name: "EXPAND_ICON",
-    description: "Icon style",
-    type: themePropTypes.style
-  },
-  wrapper: {
-    name: "EXPAND_WRAPPER",
-    description: "Wrapper style",
-    type: themePropTypes.style
-  },
-  button: {
-    name: "EXPAND_BTN",
-    description: "Button style",
-    type: themePropTypes.style
-  },
-  item: {
-    name: "EXPAND_ITEM",
-    description: "Item style",
-    type: themePropTypes.style
-  }
-}
-
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
-    tagName={Expand.themeProps.iconComponent.name}
+    tagName={themeProps.iconComponent.name}
     fallback={Caret}
     {...props}
   />
@@ -117,11 +84,11 @@ const ExpandIcon = styled(IconComponent)`
     p.isExpanded
       ? "translateY(-50%) rotate(180deg)"
       : "translateY(-50%) rotate(0)"};
-  ${applyVariants(Expand.themeProps.icon.name)};
+  ${applyVariants(themeProps.icon.name)};
 `
 
 export const ExpandWrapper = styled.div`
-  ${applyVariants(Expand.themeProps.wrapper.name)};
+  ${applyVariants(themeProps.wrapper.name)};
 `
 
 export const ExpandBtn = styled.button`
@@ -149,13 +116,13 @@ export const ExpandBtn = styled.button`
     }
   }
 
-  ${applyVariants(Expand.themeProps.button.name)};
+  ${applyVariants(themeProps.button.name)};
 `
 
 export const ExpandItem = styled.div`
   opacity: 0;
   animation: 0.4s ${BounceIn} 0.05s ease-out forwards 1;
-  ${applyVariants(Expand.themeProps.item.name)};
+  ${applyVariants(themeProps.item.name)};
 `
 
 Expand.defaultProps = {
@@ -185,5 +152,6 @@ Expand.propTypes = {
    */
   hideIcon: PropTypes.bool
 }
+Expand.themeProps = themeProps
 
 export default Expand
