@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fraction Snapshots No props 1`] = `
+<div
+  className="sc-AykKF fyPjMc"
+>
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <span
+    className="sc-AykKC gkCCzp"
+  >
+    5
+     / 
+    5
+  </span>
+</div>
+`;
+
+exports[`Fraction Snapshots Value 1`] = `
+<div
+  className="sc-AykKF fyPjMc"
+>
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKE ilHNFM"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKE ilHNFM"
+    onClick={[Function]}
+  />
+  <span
+    className="sc-AykKC gkCCzp"
+  >
+    3
+     / 
+    5
+  </span>
+</div>
+`;
+
+exports[`Fraction Snapshots Value over Max 1`] = `
+<div
+  className="sc-AykKF fyPjMc"
+>
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <span
+    className="sc-AykKC gkCCzp"
+  >
+    12
+     / 
+    10
+  </span>
+</div>
+`;
+
+exports[`Fraction Snapshots With Max 1`] = `
+<div
+  className="sc-AykKF fyPjMc"
+>
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <span
+    className="sc-AykKC gkCCzp"
+  >
+    10
+     / 
+    10
+  </span>
+</div>
+`;
+
+exports[`Fraction Snapshots With children 1`] = `
+<div
+  className="sc-AykKF fyPjMc"
+>
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKD cMtsCg"
+    onClick={[Function]}
+  />
+  <span
+    className="sc-AykKC gkCCzp"
+  >
+    10
+     / 
+    10
+  </span>
+</div>
+`;
+
+exports[`Fraction Snapshots invalid Value 1`] = `
+<div
+  className="sc-AykKF fyPjMc"
+>
+  <div
+    className="sc-AykKE ilHNFM"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKE ilHNFM"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKE ilHNFM"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKE ilHNFM"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKE ilHNFM"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKE ilHNFM"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKE ilHNFM"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKE ilHNFM"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKE ilHNFM"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-AykKE ilHNFM"
+    onClick={[Function]}
+  />
+  <span
+    className="sc-AykKC gkCCzp"
+  >
+     / 
+    10
+  </span>
+</div>
+`;
