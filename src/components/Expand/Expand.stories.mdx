@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Expand from "./Expand.js"
 
-<Meta title="Components|Expand" component={Expand}/>
+<Meta title="Components|Expand" component={Expand} parameters={{component: Expand.themeProps.button.name}} />
 
 # Expand
 
@@ -16,10 +16,10 @@ import {Expand} from "@staccx/bento"
 ## Expand with span as element
 <Preview>
   <Story name="Expand span">
-    <Expand>
+    <Expand title="click to see">
         <span>Click me to see</span>
             <div>
-                <p>this</p>
+                <p>Some more text</p>
             </div>
     </Expand>
   </Story>
@@ -31,7 +31,7 @@ import {Expand} from "@staccx/bento"
     <Expand>
         <p>Click me to see</p>
             <div>
-                <p>this</p>
+                <p>Even more text</p>
             </div>
     </Expand>
   </Story>
@@ -43,10 +43,10 @@ import {Expand} from "@staccx/bento"
     <Expand>
         <div>
            <p>All of me</p>
-           <p> Can be clicked to show</p>
+           <p>Can be clicked to show</p>
         </div>
             <div>
-                <p>this</p>
+                This text is also possible to read
             </div>
     </Expand>
   </Story>

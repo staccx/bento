@@ -2,14 +2,19 @@ import Theme from "../../../Theme"
 import reset from "./reset"
 import btnVariants from "./variants/button.variants"
 import anchorVariants from "./variants/anchor.variants"
+import {
+  expandBtnVariants,
+  expandItemVariants,
+  expandIconVariants
+} from "./variants/expand.variants"
 import alertVariants from "./variants/alert.variants"
 
-const borderRadius = "4px"
+const borderRadius = "0"
 const headerHeight = "70px"
 
 const targetSize = {
   small: "36px",
-  normal: "44px"
+  normal: "36px"
 }
 
 const wrapper = {
@@ -25,10 +30,10 @@ const spacing = {
   huge: "96px",
   largePlus: "72px",
   large: "48px",
-  mediumPlus: "32px",
-  medium: "24px",
-  small: "12px",
-  tiny: "6px"
+  mediumPlus: "36px",
+  medium: "32px",
+  small: "16px",
+  tiny: "8px"
 }
 
 const color = {
@@ -107,6 +112,13 @@ const theme = new Theme(
   }
 )
   .add(reset)
-  .add([btnVariants, anchorVariants, alertVariants])
+  .add([
+    btnVariants,
+    anchorVariants,
+    alertVariants,
+    expandBtnVariants,
+    expandItemVariants,
+    expandIconVariants
+  ])
 
 export default theme
