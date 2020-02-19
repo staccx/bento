@@ -1,13 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import {
-  spacing,
-  grid,
-  applyVariants,
-  commonPropTypes,
-  themePropTypes
-} from "../../../theming"
+import { spacing, grid, applyVariants, commonPropTypes } from "../../../theming"
+import themeProps from "./Layout.themeProps"
 
 /**
  * The default Layout-Component. Can be used with Both LayoutItem inside as well as other components.
@@ -39,14 +34,6 @@ const Layout = ({
     {children}
   </LayoutContainer>
 )
-
-Layout.themeProps = {
-  container: {
-    name: "LAYOUT",
-    description: "",
-    type: themePropTypes.style
-  }
-}
 
 const isNotFlush = space => {
   switch (space) {
@@ -80,7 +67,7 @@ export const LayoutContainer = styled.div`
       padding-top: ${spacing(p.paddingTop)};
     `};
   ${p => p.grid && grid};
-  ${applyVariants(Layout.themeProps.container)};
+  ${applyVariants(themeProps.container)};
 `
 
 Layout.defaultProps = {
@@ -122,5 +109,6 @@ Layout.propTypes = {
    */
   paddingTop: PropTypes.string
 }
+Layout.themeProps = themeProps
 
 export default Layout

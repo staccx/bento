@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, themePropTypes } from "../../../theming"
+import { applyVariants } from "../../../theming"
+import themeProps from "./Pack.themeProps"
 
 /**
  * The pack object simply causes any number of elements pack up horizontally to automatically fill an equal, fluid width of their parent.
@@ -18,14 +19,6 @@ const Pack = ({ children, className, bottom, middle, noWrap, justify }) => (
   </PackUl>
 )
 
-Pack.themeProps = {
-  list: {
-    name: "PACK",
-    description: "",
-    type: themePropTypes.style
-  }
-}
-
 const position = (bottom, middle) => {
   if (bottom === true && middle === true)
     console.warn("Pack cannot be middle and bottom at the same time")
@@ -41,7 +34,7 @@ const PackUl = styled.ul`
   justify-content: ${p => p.justify};
   align-items: ${p => position(p.bottom, p.middle)};
   flex-wrap: ${p => !p.noWrap && "wrap"};
-  ${applyVariants(Pack.themeProps.list)};
+  ${applyVariants(themeProps.list)};
 `
 
 Pack.defaultProps = {
@@ -81,5 +74,6 @@ Pack.propTypes = {
    */
   justify: PropTypes.string
 }
+Pack.themeProps = themeProps
 
 export default Pack

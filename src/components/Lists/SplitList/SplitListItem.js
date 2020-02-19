@@ -7,9 +7,9 @@ import {
   font,
   color,
   applyVariants,
-  commonPropTypes,
-  themePropTypes
+  commonPropTypes
 } from "../../../theming"
+import themeProps from "./SplitListItem.themeProps"
 
 const SplitListItem = ({ children, className, ...restProps }) => {
   if (React.Children.count(children) > 2) {
@@ -26,14 +26,6 @@ const SplitListItem = ({ children, className, ...restProps }) => {
   )
 }
 
-SplitListItem.themeProps = {
-  listItem: {
-    name: "split_list",
-    description: "",
-    type: themePropTypes.style
-  }
-}
-
 const ListItem = styled.li`
   position: relative;
   display: flex;
@@ -48,7 +40,7 @@ const ListItem = styled.li`
   &:last-child {
     border-bottom: none;
   }
-  ${applyVariants(SplitListItem.themeProps.listItem)};
+  ${applyVariants(themeProps.listItem)};
 `
 
 SplitListItem.defaultProps = {
@@ -59,5 +51,6 @@ SplitListItem.propTypes = {
   children: commonPropTypes.children.isRequired,
   className: PropTypes.string
 }
+SplitListItem.themeProps = themeProps
 
 export default SplitListItem

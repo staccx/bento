@@ -1,12 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import {
-  applyVariants,
-  spacing,
-  commonPropTypes,
-  themePropTypes
-} from "../../../theming"
+import { applyVariants, spacing, commonPropTypes } from "../../../theming"
+import themeProps from "./Box.themeProps"
 
 const Box = ({ children, className, size, ...otherProps }) => (
   <Boxing className={className} size={size} {...otherProps}>
@@ -14,17 +10,9 @@ const Box = ({ children, className, size, ...otherProps }) => (
   </Boxing>
 )
 
-Box.themeProps = {
-  box: {
-    name: "BOX",
-    description: "Box style",
-    type: themePropTypes.style
-  }
-}
-
 export const Boxing = styled.div`
   ${p => p.size && `padding: ${spacing(p.size)(p)}`};
-  ${applyVariants(Box.themeProps.box)};
+  ${applyVariants(themeProps.box)};
 `
 
 Box.defaultProps = {
@@ -46,5 +34,6 @@ Box.propTypes = {
    */
   size: commonPropTypes.spacing
 }
+Box.themeProps = themeProps
 
 export default Box

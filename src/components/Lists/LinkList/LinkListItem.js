@@ -8,43 +8,10 @@ import {
   fontFamily,
   font,
   color,
-  applyVariants,
-  themePropTypes
+  applyVariants
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
-
-const themeProps = {
-  iconComponent: {
-    name: "COMPONENT_LINK_LIST_ITEM_ICON",
-    description: "",
-    type: themePropTypes.component
-  },
-  icon: {
-    name: "LINK_LIST_ITEM_CARET",
-    description: "",
-    type: themePropTypes.style
-  },
-  listItem: {
-    name: "LINK_LIST_ITEM",
-    description: "",
-    type: themePropTypes.style
-  },
-  itemButton: {
-    name: "LINK_LIST_ITEM_BUTTON_STYLE",
-    description: "",
-    type: themePropTypes.style
-  },
-  link: {
-    name: "LINK_LIST_ITEM_BUTTON",
-    description: "",
-    type: themePropTypes.style
-  },
-  hover: {
-    name: "LINK_LIST_ITEM_BUTTON_HOVER_ICON",
-    description: "",
-    type: themePropTypes.style
-  }
-}
+import themeProps from "./LinkListItem.themeProps"
 
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
@@ -120,5 +87,5 @@ const Button = styled.a`
   }
   ${applyVariants(themeProps.link)};
 `
-
+LinkListItem.themeProps = themeProps
 export default LinkListItem

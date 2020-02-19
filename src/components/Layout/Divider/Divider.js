@@ -1,26 +1,20 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, color, themePropTypes } from "../../../theming"
+import { applyVariants, color } from "../../../theming"
+import themeProps from "./Divider.themeProps"
 
 const Divider = ({ level, className, height, ...restProps }) => {
   return <Rule className={className} height={height} {...restProps} />
 }
 
-Divider.themeProps = {
-  rule: {
-    name: "divider",
-    description: "horizontal line style",
-    type: themePropTypes.style
-  }
-}
 export const Rule = styled.hr`
   height: ${p => p.height}px;
   width: 100%;
   min-width: 100px;
   border: none;
   background-color: ${color.line};
-  ${applyVariants(Divider.themeProps.rule)};
+  ${applyVariants(themeProps.rule)};
 `
 
 Divider.defaultProps = {
@@ -38,5 +32,6 @@ Divider.propTypes = {
    */
   height: PropTypes.number
 }
+Divider.themeProps = themeProps
 
 export default Divider

@@ -1,11 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import {
-  applyVariants,
-  spacing,
-  commonPropTypes,
-  themePropTypes
-} from "../../../theming"
+import { applyVariants, spacing, commonPropTypes } from "../../../theming"
+import themeProps from "./ItemGroup.themeProps"
 /**
  * The ItemGroup object creates spacing between all its children and wraps the items when there is no room
  */
@@ -17,18 +13,6 @@ const ItemGroup = ({ children, spacing, variant, className, ...restProps }) => (
   </Wrap>
 )
 
-ItemGroup.themeProps = {
-  wrapper: {
-    name: "ITEM_GROUP_WRAPPER",
-    description: "",
-    type: themePropTypes.style
-  },
-  group: {
-    name: "ITEM_GROUP",
-    description: "",
-    type: themePropTypes.style
-  }
-}
 const Wrap = styled.div`
   overflow: hidden;
   ${applyVariants(ItemGroup.themeProps.wrapper)};
@@ -41,7 +25,7 @@ const ItemGroupElement = styled.div`
   & > * {
     margin: 0 ${p => spacing(p.spacing)} ${p => spacing(p.spacing)};
   }
-  ${applyVariants(ItemGroup.themeProps.group)};
+  ${applyVariants(themeProps.group)};
 `
 
 ItemGroup.propTypes = {
@@ -58,5 +42,6 @@ ItemGroup.propTypes = {
 ItemGroup.defaultProps = {
   spacing: "tiny"
 }
+ItemGroup.themeProps = themeProps
 
 export default ItemGroup

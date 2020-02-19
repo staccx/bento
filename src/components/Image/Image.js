@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, commonPropTypes, themePropTypes } from "../../theming"
+import { applyVariants, commonPropTypes } from "../../theming"
+import themeProps from "./Image.themeProps"
 
 const Image = ({
   src,
@@ -48,25 +49,12 @@ const Image = ({
   )
 }
 
-Image.themeProps = {
-  image: {
-    name: "IMAGE",
-    description: "image style",
-    type: themePropTypes.style
-  },
-  container: {
-    name: "IMAGE_CONTAINER",
-    description: "image container style",
-    type: themePropTypes.style
-  }
-}
-
 export const IMAGE = "IMAGE"
 export const IMAGE_CONTAINER = "IMAGE_CONTAINER"
 
 export const Img = styled.img`
   ${p => p.round && "border-radius: 50%"};
-  ${applyVariants(Image.themeProps.image)};
+  ${applyVariants(themeProps.image)};
 `
 
 export const CroppedImg = styled(Img)`
@@ -87,7 +75,7 @@ export const CropContainer = styled.div`
   min-width: 100px;
   ${p => p.width && "width: " + p.width + "px"};
   ${p => p.round && "border-radius: 50%"};
-  ${applyVariants(Image.themeProps.container)};
+  ${applyVariants(themeProps.container)};
 `
 
 Image.defaultProps = {
@@ -119,5 +107,6 @@ Image.propTypes = {
    */
   aspectRatio: PropTypes.string
 }
+Image.themeProps = themeProps
 
 export default Image
