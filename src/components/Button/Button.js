@@ -43,7 +43,7 @@ const ButtonComp = styled.button`
     color: ${color.white};
   }
 
-  ${applyVariants(themeProps.button.name)};
+  ${applyVariants(themeProps.button)};
 `
 /**
  * Button component. Use to click stuff

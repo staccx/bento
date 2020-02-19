@@ -1,21 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, commonPropTypes, themePropTypes } from "../../theming"
+import { applyVariants, commonPropTypes } from "../../theming"
+import themeProps from "./anchor.themeProps"
 
 const Anchor = ({ children, className, ...restProps }) => (
   <AComponent className={className} {...restProps}>
     {children}
   </AComponent>
 )
-
-Anchor.themeProps = {
-  anchor: {
-    name: "Anchor",
-    description: "HTML anchor link",
-    type: themePropTypes.style
-  }
-}
 
 export const AComponent = styled.a`
   text-decoration: none;
@@ -29,7 +22,7 @@ export const AComponent = styled.a`
     outline: none;
   }
 
-  ${applyVariants(Anchor.themeProps.anchor)};
+  ${applyVariants(themeProps.anchor)};
 `
 
 Anchor.defaultProps = {
@@ -45,5 +38,5 @@ Anchor.propTypes = {
   href: PropTypes.string,
   className: PropTypes.string
 }
-
+Anchor.themeProps = themeProps
 export default Anchor
