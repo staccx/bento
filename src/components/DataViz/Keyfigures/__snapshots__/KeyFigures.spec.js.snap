@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KeyFigures Snapshots Empty Array 1`] = `
+<ul
+  className="sc-AykKC hEeApa"
+/>
+`;
+
+exports[`KeyFigures Snapshots With children 1`] = `
+<ul
+  className="sc-AykKC hEeApa"
+>
+  <li
+    className="sc-AykKD jubovb"
+  >
+    <h3
+      className="sc-AykKE cOBxxr"
+    >
+      Label
+    </h3>
+    <span
+      className="sc-AykKF iTgtqP"
+    >
+       
+      45 854
+    </span>
+  </li>
+  <li
+    className="sc-AykKD jubovb"
+  >
+    <h3
+      className="sc-AykKE cOBxxr"
+    >
+      Available
+    </h3>
+    <span
+      className="sc-AykKF iTgtqP"
+    >
+       
+      456 486
+    </span>
+  </li>
+  <li
+    className="sc-AykKD jubovb"
+  >
+    <h3
+      className="sc-AykKE cOBxxr"
+    >
+      New Label
+    </h3>
+    <span
+      className="sc-AykKF iTgtqP"
+    >
+       
+      346
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`KeyFigures Snapshots With figures 1`] = `
+<ul
+  className="sc-AykKC hEeApa"
+>
+  <li
+    className="sc-AykKD jubovb"
+  >
+    <h3
+      className="sc-AykKE cOBxxr"
+    >
+      Label
+    </h3>
+    <span
+      className="sc-AykKF iTgtqP"
+    >
+       
+      45 854
+    </span>
+  </li>
+  <li
+    className="sc-AykKD jubovb"
+  >
+    <h3
+      className="sc-AykKE cOBxxr"
+    >
+      Available
+    </h3>
+    <span
+      className="sc-AykKF iTgtqP"
+    >
+       
+      456 486
+    </span>
+  </li>
+  <li
+    className="sc-AykKD jubovb"
+  >
+    <h3
+      className="sc-AykKE cOBxxr"
+    >
+      New Label
+    </h3>
+    <span
+      className="sc-AykKF iTgtqP"
+    >
+       
+      346
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`KeyFigures Snapshots With one figure 1`] = `
+<ul
+  className="sc-AykKC hEeApa"
+>
+  <li
+    className="sc-AykKD jubovb"
+  >
+    <h3
+      className="sc-AykKE cOBxxr"
+    >
+      Label
+    </h3>
+    <span
+      className="sc-AykKF iTgtqP"
+    >
+       
+      45 854
+    </span>
+  </li>
+</ul>
+`;

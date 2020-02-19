@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar Progress over 1 1`] = `
+<div
+  className="sc-AykKC gRcktS"
+>
+  <div
+    className="sc-AykKD dPeLhB"
+    width={0.012}
+  >
+    <span
+      className="sc-AykKE ehmgcE"
+    >
+      1
+      %
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ProgressBar Progress under 1 1`] = `
+<div
+  className="sc-AykKC gRcktS"
+>
+  <div
+    className="sc-AykKD exAHcK"
+    width={-0.9}
+  >
+    <span
+      className="sc-AykKE ehmgcE"
+    >
+      -90
+      %
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ProgressBar Snapshots No props 1`] = `
+<div
+  className="sc-AykKC gRcktS"
+>
+  <div
+    className="sc-AykKD hTEptx"
+  >
+    <span
+      className="sc-AykKE ehmgcE"
+    >
+      NaN
+      %
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ProgressBar Snapshots Progress 1`] = `
+<div
+  className="sc-AykKC gRcktS"
+>
+  <div
+    className="sc-AykKD fReWhs"
+    width={0.9}
+  >
+    <span
+      className="sc-AykKE ehmgcE"
+    >
+      90
+      %
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ProgressBar Snapshots Progress&WarningTreshold 1`] = `
+<div
+  className="sc-AykKC gRcktS"
+>
+  <div
+    className="sc-AykKD cqiqwe"
+    width={0.7}
+  >
+    <span
+      className="sc-AykKE ehmgcE"
+    >
+      70
+      %
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ProgressBar With children 1`] = `
+<div
+  className="sc-AykKC gRcktS"
+>
+  <div
+    className="sc-AykKD fReWhs"
+    width={0.9}
+  >
+    <span
+      className="sc-AykKE ehmgcE"
+    >
+      90
+      %
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ProgressBar invalid progress 1`] = `
+<div
+  className="sc-AykKC gRcktS"
+>
+  <div
+    className="sc-AykKD ccpplQ"
+    width={null}
+  >
+    <span
+      className="sc-AykKE ehmgcE"
+    >
+      0
+      %
+    </span>
+  </div>
+</div>
+`;

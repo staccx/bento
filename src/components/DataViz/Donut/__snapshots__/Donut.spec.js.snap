@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Donut Progress over 1 1`] = `
+<svg
+  className="sc-AykKC gSjWPx"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+>
+  <title>
+    120
+    %
+  </title>
+  <g
+    fill="none"
+    fillRule="evenodd"
+    strokeWidth="6"
+  >
+    <circle
+      className="sc-AykKD kxRZHs"
+      cx="12"
+      cy="12"
+      r="9"
+    />
+    <circle
+      className="sc-AykKE kANkFC"
+      cx="12"
+      cy="12"
+      r="9"
+      transform="rotate(-90 12 12)"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Donut Progress under 1 1`] = `
+<svg
+  className="sc-AykKC gSjWPx"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+>
+  <title>
+    -90
+    %
+  </title>
+  <g
+    fill="none"
+    fillRule="evenodd"
+    strokeWidth="6"
+  >
+    <circle
+      className="sc-AykKD kxRZHs"
+      cx="12"
+      cy="12"
+      r="9"
+    />
+    <circle
+      className="sc-AykKE RuubK"
+      cx="12"
+      cy="12"
+      r="9"
+      transform="rotate(-90 12 12)"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Donut Snapshots No props 1`] = `
+<svg
+  className="sc-AykKC gSjWPx"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+>
+  <title>
+    0
+    %
+  </title>
+  <g
+    fill="none"
+    fillRule="evenodd"
+    strokeWidth="6"
+  >
+    <circle
+      className="sc-AykKD kxRZHs"
+      cx="12"
+      cy="12"
+      r="9"
+    />
+    <circle
+      className="sc-AykKE juIqZD"
+      cx="12"
+      cy="12"
+      r="9"
+      transform="rotate(-90 12 12)"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Donut Snapshots Progress 1`] = `
+<svg
+  className="sc-AykKC gSjWPx"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+>
+  <title>
+    90
+    %
+  </title>
+  <g
+    fill="none"
+    fillRule="evenodd"
+    strokeWidth="6"
+  >
+    <circle
+      className="sc-AykKD kxRZHs"
+      cx="12"
+      cy="12"
+      r="9"
+    />
+    <circle
+      className="sc-AykKE jljpya"
+      cx="12"
+      cy="12"
+      r="9"
+      transform="rotate(-90 12 12)"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Donut Snapshots Progress&WarningTreshold 1`] = `
+<svg
+  className="sc-AykKC gSjWPx"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+>
+  <title>
+    70
+    %
+  </title>
+  <g
+    fill="none"
+    fillRule="evenodd"
+    strokeWidth="6"
+  >
+    <circle
+      className="sc-AykKD kxRZHs"
+      cx="12"
+      cy="12"
+      r="9"
+    />
+    <circle
+      className="sc-AykKE cVpuSZ"
+      cx="12"
+      cy="12"
+      r="9"
+      transform="rotate(-90 12 12)"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Donut With children 1`] = `
+<svg
+  className="sc-AykKC gSjWPx"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+>
+  <title>
+    90
+    %
+  </title>
+  <g
+    fill="none"
+    fillRule="evenodd"
+    strokeWidth="6"
+  >
+    <circle
+      className="sc-AykKD kxRZHs"
+      cx="12"
+      cy="12"
+      r="9"
+    />
+    <circle
+      className="sc-AykKE jljpya"
+      cx="12"
+      cy="12"
+      r="9"
+      transform="rotate(-90 12 12)"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Donut invalid progress 1`] = `
+<svg
+  className="sc-AykKC gSjWPx"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+>
+  <title>
+    0
+    %
+  </title>
+  <g
+    fill="none"
+    fillRule="evenodd"
+    strokeWidth="6"
+  >
+    <circle
+      className="sc-AykKD kxRZHs"
+      cx="12"
+      cy="12"
+      r="9"
+    />
+    <circle
+      className="sc-AykKE juIqZD"
+      cx="12"
+      cy="12"
+      r="9"
+      transform="rotate(-90 12 12)"
+    />
+  </g>
+</svg>
+`;
