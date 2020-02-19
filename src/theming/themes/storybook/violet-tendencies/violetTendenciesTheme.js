@@ -2,6 +2,7 @@ import Theme from "../../../Theme"
 import reset from "./reset"
 import btnVariants from "./variants/button.variants"
 import anchorVariants from "./variants/anchor.variants"
+import alertVariants from "./variants/alert.variants"
 
 const borderRadius = "4px"
 const headerHeight = "70px"
@@ -106,6 +107,6 @@ const theme = new Theme(
   }
 )
   .add(reset)
-  .add([btnVariants, anchorVariants])
+  .add([btnVariants, anchorVariants, alertVariants])
 
 export default theme
