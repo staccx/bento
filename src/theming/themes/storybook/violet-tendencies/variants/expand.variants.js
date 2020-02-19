@@ -2,7 +2,6 @@ import { css } from "styled-components"
 import Expand from "../../../../../components/Expand/Expand"
 import createVariants from "../../../../utils/createVariants"
 import { spacing, color, VARIANT_DEFAULT, fontWeight } from "../../../../index"
-import opacity from "../../../../../color/opacity"
 
 export const expandBtnVariants = createVariants(
   {

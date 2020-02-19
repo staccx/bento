@@ -8,6 +8,7 @@ import {
   expandIconVariants
 } from "./variants/expand.variants"
 import alertVariants from "./variants/alert.variants"
+import progressBarVariants from "./variants/progressbar.variants"
 
 const borderRadius = "0"
 const headerHeight = "70px"
@@ -118,7 +119,8 @@ const theme = new Theme(
     alertVariants,
     expandBtnVariants,
     expandItemVariants,
-    expandIconVariants
+    expandIconVariants,
+    progressBarVariants
   ])
 
 export default theme
