@@ -52,11 +52,12 @@ const BirthdateInput = ({
       setYear(value)
     }
   }
+
   useEffect(() => {
-    if (day && month && year) {
+    if (day ?? month ?? year) {
       onChange(parseISO(year + month + day))
     }
-  }, [day, month, year])
+  }, [day, month, year, onChange])
 
   return (
     <Outer variant={variant} className={className} style={style}>
