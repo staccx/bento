@@ -7,13 +7,7 @@ import { ThemeIcon } from "../withThemes";
 
 export const VARIANTS_TOOL_NAME = "bento-variants";
 
-addons.register(VARIANTS_TOOL_NAME, api => {
-  addons.addPanel(VARIANTS_TOOL_NAME, {
-    title: "variant-switcher",
-    type: types.TOOL,
-    render: () => <Variants api={api}/>
-  });
-});
+
 
 export const Variants = ({ api }) => {
   const [expanded, setExpanded] = useState(false);

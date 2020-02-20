@@ -12,13 +12,7 @@ import GlobalStyle from "../src/components/Theme/GlobalStyle"
 
 const TOOL_NAME = "bento-sb-theme"
 
-addons.register("storybook/theme-switcher", api => {
-  addons.addPanel("storybook/theme-switcher", {
-    title: "theme-switcher",
-    type: types.TOOL,
-    render: () => <ThemeSwitcher api={api} />
-  })
-})
+
 const getName = theme => theme.storybookName || "NO NAME"
 
 export const withTheme = makeDecorator({
