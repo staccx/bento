@@ -23,6 +23,7 @@ import {
   breadCrumbItemVariants,
   breadCrumbLastItemVariants
 } from "./variants/breadcrumb.variants"
+import Logo from "./components/Logo.components"
 
 const borderRadius = "6px"
 const headerHeight = "70px"
@@ -144,5 +145,6 @@ const theme = new Theme(
     breadCrumbItemVariants,
     breadCrumbLastItemVariants
   ])
+  .add(Logo)
 
 export default theme
