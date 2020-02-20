@@ -3,6 +3,7 @@ import { addons, types } from "@storybook/addons"
 import StoryBookTheme from "./bentoStorybookTheme"
 import "./withThemes"
 import "./tools/variants"
+import "./tools/rerender"
 
 
 
