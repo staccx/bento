@@ -1,0 +1,48 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Intro|Linting" />
+
+# What is linting and why is it important?
+Linting is the process of programmatically checking your code for programmatic and stylistic errors. It helps us catch common mistakes, and makes sure your code is readable for other developers. There's no hard rule that says you have to use `@staccx/eslint-config`, if your team as a whole prefers something else, go ahead! But it is really important that you use a linter. If one person on your team uses a linter and someone else doesn't, you'll get a lot of changes in your commits that are just linting. This can be distracting and make it harder to see where a bug was introduced.
+
+
+## @staccx/eslint-config
+Our philosophy when decing on rules for linting was to use something actively maintained by someone else. Not all of the rules in our setup are rules we'd choose ourselves, but we really don't want to maintain hundreds of rules.
+[JavaScript Standard Style](https://standardjs.com/) was chosen as the basis for our setup because it was close enough to our preferences while still having a large user base. In addition, we settled on prettier for other stylistic rules that aren't covered by standard.js.
+
+
+## Setting up a linter in your project
+When creating a new project with create-react-app, you already get eslint with that. So we just have to add our own config to it in order to get our rules installed. If you're starting without create-react-app, you`ll need some more dependencies than described here.
+
+1. Install the config in your project: `yarn add @staccx/eslint-config --dev`
+2. Check if you have `"eslintConfig"` in your package.json. If so, remove it.
+3. Create a new file called `.eslintrc` in the root of your project
+4. Add the following in `.eslintrc`: 
+   ```json
+  {
+    "extends": "@staccx"
+  }
+  ```
+5. Create a new file called `.prettierrc` in the root of your project
+6. Add the following in `.prettierrc`: 
+  ```json
+  {
+    "semi": false
+  }
+  ```
+
+
+## Setting up linting with VS code
+1. Install the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+2. Open the VSCode settings in Code > Preferences > Settings
+3. Make sure `Eslint: Enable` as well as `Eslint > Format: Enable` are checked, and `Eslint: Package manager` is set to Yarn if using Yarn. 
+4. In settings.json (You can find a link to it in settings) you might want to add:
+  ```json
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+  ```
+
+
+## Setting up linting with WebStorm
+Someone else needs to write this… AFAIK you need to enable using Eslint from node_modules and Eslint --fix  on some hotkey of your choosing.

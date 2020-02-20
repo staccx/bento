@@ -12,7 +12,7 @@
     "storybook": "start-storybook -p 9009",
     "prepare": "yarn build",
     "alpha": "npm version prerelease --preid=alpha && npm publish",
-    "dirty-deploy-storybook": "yarn build-storybook && cp now.json public/ && cd public && now --prod && cd.."
+    "dirty-deploy-storybook": "yarn build-storybook && cp now.json public/ && cd public && now --prod"
   },
   "repository": {
     "type": "git",
