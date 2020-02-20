@@ -28,15 +28,15 @@ npm install --save styled-components @staccx/bento
 ```
 
 ### Create your theme
-Bento is pretty ugly without a theme. If you've ever tried to get Boostrap to not look like Bootstrap, you'll appreciate why. 
-Create a js-file to hold your theme. For example at `/src/theme/theme.js`. 
+Bento is pretty ugly without a theme. If you've ever tried to get Boostrap to not look like Bootstrap, you'll appreciate why.
+Create a js-file to hold your theme. For example at `/src/theme/theme.js`.
 
 <details><summary>theme.js example</summary>
 <p>
 
 ```js
 import { css } from "styled-components"
-import { theming } from "@staccx/base"
+import { theming } from "@staccx/bento"
 
 const reset = theming.createGlobal({
   baseReset: theming.cssResets
@@ -180,7 +180,7 @@ Every component has a default variant. Unless a different variant is supplied, t
 
 Components have their own themeProps. These props allow you to add styles to the different HTML-elements that make up a component. Some components (like Button) only have one, while others (like CheckBox) have more. When you supply a variant to a component, that variant will be applied to all parts of the component, and can be targeted through themeProps.
 
-Let's start by modifying the defaults for an Input. Generally, we put all the variants for a component in one file. Start by creating a new file, for example in `/src/theme/variants/input.variants.js`. 
+Let's start by modifying the defaults for an Input. Generally, we put all the variants for a component in one file. Start by creating a new file, for example in `/src/theme/variants/input.variants.js`.
 
 Heres an example of new defaults for an input:
 
@@ -188,7 +188,7 @@ Heres an example of new defaults for an input:
 import { css } from "styled-components"
 import {Input, theming} from "@staccx/bento"
 
-export const inputVariants = createVariants(
+export const inputVariants = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
       transition: border 0.2s ease, box-shadow 0.2s ease;
@@ -224,7 +224,7 @@ Now we have our variant, but we need to add that variant to your theme. Go to yo
 
 ```js
 import { css } from "styled-components"
-import { theming } from "@staccx/base"
+import { theming } from "@staccx/bento"
 import { inputVariants } from "./variants/input.variants.js" # Import your variant
 
 ...heres your theme stuff...
@@ -267,4 +267,4 @@ Then go to the folder of the component you want to write a story for and create 
 
 <Image src="https://media1.tenor.com/images/e9f8cbc1f7700ba31de15769b1fb9377/tenor.gif?itemid=6213101" />
 
-(ask for help if you get stuck). 
+(ask for help if you get stuck).
