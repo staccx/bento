@@ -141,7 +141,7 @@ export default theme
 </p>
 </details>
 
-Then we need to import our theme into our app and make it accessible to all the components. This is done by using styled-components' theme-provider.
+Then we need to import our theme into our app and make it accessible to all the components. This is done by using styled-components' theme-provider. We should also import WebFonts and GlobalStyle from bento so that we get these global styles in our app.
 
 
 
@@ -149,15 +149,19 @@ Then we need to import our theme into our app and make it accessible to all the 
 
 import React from "react"
 import { ThemeProvider } from "styled-components"
-import { Button, CheckBox } from "@staccx/bento"
+import { WebFonts, GlobalStyle, Button, CheckBox } from "@staccx/bento"
 import theme from "./theme/theme"
 
 
 function App () {
   return (
     <ThemeProvider theme={theme}>
-      <Button onClick={() => console.log("Something")}>This is a button</Button>
-      <CheckBox id={"test"}>Tester</CheckBox>
+      <WebFonts />
+      <GlobalStyle />
+      <div>
+        <Button onClick={() => console.log("Something")}>This is a button</Button>
+        <CheckBox id={"test"}>Tester</CheckBox>
+      </div>
     </ThemeProvider>
   )
 }
