@@ -151,6 +151,9 @@ export default theming.createVariants(
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
       > *:not(:last-child) {
         margin-right: ${theming.spacing.small};
       }
