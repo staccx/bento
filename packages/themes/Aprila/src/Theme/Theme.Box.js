@@ -137,7 +137,7 @@ export default theming.createVariants(
           case 1:
             return theming.spacing.medium
           case 2:
-            return theming.spacing.large
+            return theming.spacing.small
           case 3:
             return theming.spacing.tiny
           default:

@@ -85,11 +85,11 @@ export const LayoutStyling = theming.createVariants(
       grid-row-gap: ${({ level = 1 }) => {
         switch (level) {
           case 2:
-            return theming.spacing.large
+            return theming.spacing.medium
           case 3:
             return theming.spacing("mediumPlus")
           default:
-            return theming.spacing.medium
+            return theming.spacing("tiny")
         }
       }};
     `,
