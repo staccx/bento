@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import themes from "./themes"
 import { IconButton, TooltipLinkList, WithTooltip } from "@storybook/components"
-import addons, { makeDecorator } from "@storybook/addons"
+import addons, { makeDecorator, types } from "@storybook/addons"
 import { FORCE_RE_RENDER } from "@storybook/core-events"
 import styled, { ThemeProvider } from "styled-components"
 import { useAddonState } from "@storybook/api"
@@ -12,6 +12,13 @@ import GlobalStyle from "../src/components/Theme/GlobalStyle"
 
 const TOOL_NAME = "bento-sb-theme"
 
+addons.register("storybook/theme-switcher", api => {
+  addons.addPanel("storybook/theme-switcher", {
+    title: "theme-switcher",
+    type: types.TOOL,
+    render: () => <ThemeSwitcher api={api} />
+  })
+})
 const getName = theme => theme.storybookName || "NO NAME"
 
 export const withTheme = makeDecorator({
