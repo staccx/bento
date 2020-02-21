@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BirthdateInput Snapshots All props 1`] = `
+<div
+  className="sc-AykKK gngxPY"
+>
+  <label
+    className="sc-AykKC bonmue"
+  >
+    BirthdateInput
+  </label>
+  <div
+    className="sc-fzXfLO fSfKbe"
+  >
+    <div
+      className="sc-AykKI iDYrmt"
+    >
+      <label
+        className="sc-AykKC bonmue sc-AykKH hciGUB"
+        htmlFor="Day1"
+      >
+        Day
+        
+      </label>
+      
+      <input
+        autoFocus={null}
+        className="sc-AykKJ gjiytr"
+        disabled={false}
+        hidden={false}
+        id="Day1"
+        name="undefinedDay"
+        onBlur={null}
+        onChange={[Function]}
+        onKeyDown={null}
+        placeholder="dd"
+        style={null}
+        type="tel"
+        value=""
+      />
+    </div>
+    <div
+      className="sc-AykKI iDYrmt"
+    >
+      <label
+        className="sc-AykKC bonmue sc-AykKH hciGUB"
+        htmlFor="Month1"
+      >
+        Month
+        
+      </label>
+      
+      <input
+        autoFocus={null}
+        className="sc-AykKJ gjiytr"
+        disabled={false}
+        hidden={false}
+        id="Month1"
+        name="undefinedMonth"
+        onBlur={null}
+        onChange={[Function]}
+        onKeyDown={null}
+        placeholder="mm"
+        style={null}
+        type="tel"
+        value=""
+      />
+    </div>
+    <div
+      className="sc-AykKI iDYrmt"
+    >
+      <label
+        className="sc-AykKC bonmue sc-AykKH hciGUB"
+        htmlFor="Year1"
+      >
+        Year
+        
+      </label>
+      
+      <input
+        autoFocus={null}
+        className="sc-AykKJ gjiytr"
+        disabled={false}
+        hidden={false}
+        id="Year1"
+        name="undefinedYear"
+        onBlur={null}
+        onChange={[Function]}
+        onKeyDown={null}
+        placeholder="yyyy"
+        style={null}
+        type="tel"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;

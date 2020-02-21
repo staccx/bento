@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhoneInput Snapshots ID, children and label 1`] = `
+<div
+  className="sc-fzXfLQ bbGLVI"
+  id="test"
+>
+  <label
+    className="sc-AykKC bonmue"
+    id="test"
+  >
+    test
+  </label>
+  <div
+    className="sc-fzXfLR OATHa"
+    id="test"
+  >
+    <div
+      className="sc-AykKI iDYrmt sc-fzXfLT fiXeCu"
+    >
+      
+      
+      <input
+        autoFocus={null}
+        className="sc-AykKJ gjiytr"
+        disabled={false}
+        hidden={false}
+        id="test"
+        name={null}
+        onBlur={null}
+        onChange={null}
+        onKeyDown={null}
+        placeholder={null}
+        style={null}
+        type="tel"
+      >
+        <p>
+          test
+        </p>
+      </input>
+    </div>
+  </div>
+</div>
+`;

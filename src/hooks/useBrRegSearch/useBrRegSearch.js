@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 
 const useBrRegSearch = searchTerm => {
   const [results, setResults] = useState([])
+  const [errors, setErrors] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
@@ -14,15 +15,21 @@ const useBrRegSearch = searchTerm => {
     setIsLoading(true)
 
     const getCompaniesByName = async searchTerm => {
-      const filter = `startswith(navn,'${searchTerm}')`
-      const companies = await window
-        .fetch(
-          `https://data.brreg.no/enhetsregisteret/enhet.json?page=${0}&size=${5}&$filter=${filter}`
-        )
-        .then(result => result.json())
-        .then(json => json.data)
+      let companies
 
-      return companies
+      try {
+        companies = await window
+          .fetch(
+            `https://data.brreg.no/enhetsregisteret/api/enheter?navn=${searchTerm}`
+          )
+          .then(result => result.json())
+      } catch (e) {
+        setErrors(e.message)
+      }
+
+      console.log("xxxxxxxx", companies)
+
+      return companies._embedded.enheter
     }
 
     getCompaniesByName(searchTerm).then(companies => {
@@ -36,7 +43,7 @@ const useBrRegSearch = searchTerm => {
     })
   }, [searchTerm])
 
-  return { isLoading, results }
+  return { isLoading, results, errors }
 }
 
 export default useBrRegSearch

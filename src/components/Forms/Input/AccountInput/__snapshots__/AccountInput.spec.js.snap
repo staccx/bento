@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountInput Snapshots No props 1`] = `
+<div
+  className="sc-AykKI iDYrmt"
+>
+  
+  
+  <input
+    autoFocus={null}
+    className="sc-AykKJ gjiytr"
+    disabled={false}
+    hidden={false}
+    id="wegwf"
+    name={null}
+    onBlur={null}
+    onChange={null}
+    onKeyDown={null}
+    placeholder={null}
+    style={null}
+    type="tel"
+  />
+</div>
+`;
