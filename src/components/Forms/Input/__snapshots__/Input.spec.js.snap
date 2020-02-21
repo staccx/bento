@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Snapshots Disabled 1`] = `
+<div
+  className="sc-AykKI iDYrmt"
+>
+  <label
+    className="sc-AykKC bonmue sc-AykKH hciGUB"
+  >
+    Input
+    
+  </label>
+  
+  <input
+    autoFocus={null}
+    className="sc-AykKJ gjiytr"
+    disabled={true}
+    hidden={false}
+    name={null}
+    onBlur={null}
+    onChange={null}
+    onKeyDown={null}
+    placeholder={null}
+    style={null}
+    type="text"
+  />
+</div>
+`;
+
+exports[`Alert Snapshots No props 1`] = `
+<div
+  className="sc-AykKI iDYrmt"
+>
+  
+  
+  <input
+    autoFocus={null}
+    className="sc-AykKJ gjiytr"
+    disabled={false}
+    hidden={false}
+    name={null}
+    onBlur={null}
+    onChange={null}
+    onKeyDown={null}
+    placeholder={null}
+    style={null}
+    type="text"
+  />
+</div>
+`;
+
+exports[`Alert Snapshots PlaceHolder 1`] = `
+<div
+  className="sc-AykKI iDYrmt"
+>
+  <label
+    className="sc-AykKC bonmue sc-AykKH hciGUB"
+  >
+    Secret question
+    
+  </label>
+  
+  <input
+    autoFocus={null}
+    className="sc-AykKJ gjiytr"
+    disabled={false}
+    hidden={false}
+    name={null}
+    onBlur={null}
+    onChange={null}
+    onKeyDown={null}
+    placeholder="Your favourite animal"
+    style={null}
+    type="text"
+  />
+</div>
+`;
+
+exports[`Alert Snapshots label 1`] = `
+<div
+  className="sc-AykKI iDYrmt"
+>
+  <label
+    className="sc-AykKC bonmue sc-AykKH hciGUB"
+  >
+    Input
+    
+  </label>
+  
+  <input
+    autoFocus={null}
+    className="sc-AykKJ gjiytr"
+    disabled={false}
+    hidden={false}
+    name={null}
+    onBlur={null}
+    onChange={null}
+    onKeyDown={null}
+    placeholder={null}
+    style={null}
+    type="text"
+  />
+</div>
+`;
