@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider2 Snapshots No props 1`] = `
+<div
+  className="sc-AykKE kVPEkP"
+>
+  <div
+    className="sc-AykKF iekZtk"
+    style={Object {}}
+  >
+    <div
+      className="sc-AykKG biqBdE"
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
+    />
+    <div
+      className="slider-handles"
+    >
+      <button
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={0}
+        className="sc-AykKC gpEQp sc-AykKH hciGUB"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+        type="button"
+      />
+    </div>
+    <div
+      className="sc-AykKI kCphbq"
+    >
+      <div
+        className="sc-AykKD fpYdiF"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        target={
+          Object {
+            "id": "$$-0",
+            "percent": 0,
+            "value": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider2 Snapshots className 1`] = `
+<div
+  className="sc-AykKE kVPEkP"
+>
+  <div
+    className="sc-AykKF iekZtk slider2"
+    style={Object {}}
+  >
+    <div
+      className="sc-AykKG biqBdE"
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
+    />
+    <div
+      className="slider-handles"
+    >
+      <button
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={0}
+        className="sc-AykKC gpEQp sc-AykKH hciGUB"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+        type="button"
+      />
+    </div>
+    <div
+      className="sc-AykKI kCphbq"
+    >
+      <div
+        className="sc-AykKD fpYdiF"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        target={
+          Object {
+            "id": "$$-0",
+            "percent": 0,
+            "value": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider2 Snapshots max 1`] = `
+<div
+  className="sc-AykKE kVPEkP"
+>
+  <div
+    className="sc-AykKF iekZtk"
+    style={Object {}}
+  >
+    <div
+      className="sc-AykKG biqBdE"
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
+    />
+    <div
+      className="slider-handles"
+    >
+      <button
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={0}
+        className="sc-AykKC gpEQp sc-AykKH hciGUB"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+        type="button"
+      />
+    </div>
+    <div
+      className="sc-AykKI kCphbq"
+    >
+      <div
+        className="sc-AykKD fpYdiF"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        target={
+          Object {
+            "id": "$$-0",
+            "percent": 0,
+            "value": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider2 Snapshots min 1`] = `
+<div
+  className="sc-AykKE kVPEkP"
+>
+  <div
+    className="sc-AykKF iekZtk"
+    style={Object {}}
+  >
+    <div
+      className="sc-AykKG biqBdE"
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
+    />
+    <div
+      className="slider-handles"
+    >
+      <button
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={0}
+        className="sc-AykKC gpEQp sc-AykKH hciGUB"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+        type="button"
+      />
+    </div>
+    <div
+      className="sc-AykKI kCphbq"
+    >
+      <div
+        className="sc-AykKD fpYdiF"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        target={
+          Object {
+            "id": "$$-0",
+            "percent": 0,
+            "value": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider2 Snapshots step 1`] = `
+<div
+  className="sc-AykKE kVPEkP"
+>
+  <div
+    className="sc-AykKF iekZtk"
+    style={Object {}}
+  >
+    <div
+      className="sc-AykKG biqBdE"
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
+    />
+    <div
+      className="slider-handles"
+    >
+      <button
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={0}
+        className="sc-AykKC gpEQp sc-AykKH hciGUB"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+        type="button"
+      />
+    </div>
+    <div
+      className="sc-AykKI kCphbq"
+    >
+      <div
+        className="sc-AykKD fpYdiF"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        target={
+          Object {
+            "id": "$$-0",
+            "percent": 0,
+            "value": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider2 Snapshots step 2`] = `
+<div
+  className="sc-AykKE kVPEkP"
+>
+  <div
+    className="sc-AykKF iekZtk slider2"
+    style={Object {}}
+  >
+    <div
+      className="sc-AykKG biqBdE"
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
+    />
+    <div
+      className="slider-handles"
+    >
+      <button
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={0}
+        className="sc-AykKC gpEQp sc-AykKH hciGUB"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+        type="button"
+      />
+    </div>
+    <div
+      className="sc-AykKI kCphbq"
+    >
+      <div
+        className="sc-AykKD fpYdiF"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        target={
+          Object {
+            "id": "$$-0",
+            "percent": 0,
+            "value": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
