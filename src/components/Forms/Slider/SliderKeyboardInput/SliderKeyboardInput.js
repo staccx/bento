@@ -173,7 +173,7 @@ class SliderKeyboardInput extends React.Component {
 const SliderWrapper = styled.div`
   font-family: ${fontFamily.body};
   font-size: ${font.input};
-  ${applyVariants(SliderKeyboardInput.themeProps.wrapper)};
+  ${applyVariants(themeProps.wrapper)};
 `
 
 const SliderInput = styled(Input)`
@@ -202,7 +202,7 @@ const SliderInput = styled(Input)`
   &:disabled {
     color: ${color.text};
   }
-  ${applyVariants(SliderKeyboardInput.themeProps.input)};
+  ${applyVariants(themeProps.input)};
 `
 
 SliderKeyboardInput.defaultProps = {
