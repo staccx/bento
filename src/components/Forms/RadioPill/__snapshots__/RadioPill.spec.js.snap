@@ -1,0 +1,248 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioPill Snapshots RadioPillItem no children 1`] = `
+<div
+  className="sc-AykKC cfaLwb"
+>
+  <div
+    className="sc-AykKF ifaKFh"
+  >
+    <input
+      className="sc-AykKE cBGZYe"
+      defaultChecked={false}
+      disabled={false}
+      onChange={null}
+      type="radio"
+      value=""
+    />
+    <label
+      className="sc-AykKD bLnaxp"
+    />
+  </div>
+  <div
+    className="sc-AykKF ifaKFh"
+  >
+    <input
+      className="sc-AykKE cBGZYe"
+      defaultChecked={false}
+      disabled={false}
+      onChange={null}
+      type="radio"
+      value=""
+    />
+    <label
+      className="sc-AykKD bLnaxp"
+    />
+  </div>
+  <div
+    className="sc-AykKF ifaKFh"
+  >
+    <input
+      className="sc-AykKE cBGZYe"
+      defaultChecked={false}
+      disabled={false}
+      onChange={null}
+      type="radio"
+      value=""
+    />
+    <label
+      className="sc-AykKD bLnaxp"
+    />
+  </div>
+</div>
+`;
+
+exports[`RadioPill Snapshots RadioPillItem no props 1`] = `
+<div
+  className="sc-AykKC cfaLwb"
+>
+  <div
+    className="sc-AykKF ifaKFh"
+  >
+    <input
+      className="sc-AykKE cBGZYe"
+      defaultChecked={false}
+      disabled={false}
+      onChange={null}
+      type="radio"
+      value=""
+    />
+    <label
+      className="sc-AykKD bLnaxp"
+    >
+      1
+    </label>
+  </div>
+  <div
+    className="sc-AykKF ifaKFh"
+  >
+    <input
+      className="sc-AykKE cBGZYe"
+      defaultChecked={false}
+      disabled={false}
+      onChange={null}
+      type="radio"
+      value=""
+    />
+    <label
+      className="sc-AykKD bLnaxp"
+    >
+      2
+    </label>
+  </div>
+  <div
+    className="sc-AykKF ifaKFh"
+  >
+    <input
+      className="sc-AykKE cBGZYe"
+      defaultChecked={false}
+      disabled={false}
+      onChange={null}
+      type="radio"
+      value=""
+    />
+    <label
+      className="sc-AykKD bLnaxp"
+    >
+      3 +
+    </label>
+  </div>
+</div>
+`;
+
+exports[`RadioPill Snapshots Standard 1`] = `
+<div
+  className="sc-AykKC cfaLwb"
+>
+  <div
+    className="sc-AykKF ifaKFh"
+  >
+    <input
+      className="sc-AykKE cBGZYe"
+      defaultChecked={true}
+      disabled={false}
+      id="221e98j"
+      name="Radiopills"
+      onChange={null}
+      type="radio"
+      value={1}
+    />
+    <label
+      className="sc-AykKD bLnaxp"
+      htmlFor="221e98j"
+    >
+      1
+    </label>
+  </div>
+  <div
+    className="sc-AykKF ifaKFh"
+  >
+    <input
+      className="sc-AykKE cBGZYe"
+      defaultChecked={false}
+      disabled={false}
+      id="ads31"
+      name="Radiopills"
+      onChange={null}
+      type="radio"
+      value={2}
+    />
+    <label
+      className="sc-AykKD bLnaxp"
+      htmlFor="ads31"
+    >
+      2
+    </label>
+  </div>
+  <div
+    className="sc-AykKF ifaKFh"
+  >
+    <input
+      className="sc-AykKE cBGZYe"
+      defaultChecked={false}
+      disabled={false}
+      id="h14"
+      name="Radiopills"
+      onChange={null}
+      type="radio"
+      value={3}
+    />
+    <label
+      className="sc-AykKD bLnaxp"
+      htmlFor="h14"
+    >
+      3 +
+    </label>
+  </div>
+</div>
+`;
+
+exports[`RadioPill Snapshots no children 1`] = `
+<div
+  className="sc-AykKC cfaLwb"
+/>
+`;
+
+exports[`RadioPill Snapshots no group 1`] = `
+<div
+  className="sc-AykKC cfaLwb"
+>
+  <div
+    className="sc-AykKF ifaKFh"
+  >
+    <input
+      className="sc-AykKE cBGZYe"
+      defaultChecked={true}
+      disabled={false}
+      id="221e98j"
+      onChange={null}
+      type="radio"
+      value={1}
+    />
+    <label
+      className="sc-AykKD bLnaxp"
+      htmlFor="221e98j"
+    >
+      1
+    </label>
+  </div>
+  <div
+    className="sc-AykKF ifaKFh"
+  >
+    <input
+      className="sc-AykKE cBGZYe"
+      defaultChecked={false}
+      disabled={false}
+      id="ads31"
+      onChange={null}
+      type="radio"
+      value={2}
+    />
+    <label
+      className="sc-AykKD bLnaxp"
+      htmlFor="ads31"
+    >
+      2
+    </label>
+  </div>
+  <div
+    className="sc-AykKF ifaKFh"
+  >
+    <input
+      className="sc-AykKE cBGZYe"
+      defaultChecked={false}
+      disabled={false}
+      id="h14"
+      onChange={null}
+      type="radio"
+      value={3}
+    />
+    <label
+      className="sc-AykKD bLnaxp"
+      htmlFor="h14"
+    >
+      3 +
+    </label>
+  </div>
+</div>
+`;

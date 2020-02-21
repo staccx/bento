@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton Snapshots ID 1`] = `
+<div
+  className="sc-AykKE bQGpBr"
+>
+  <input
+    className="sc-AykKC bTMeqx"
+    defaultChecked={false}
+    disabled={false}
+    id="ID"
+    onChange={null}
+    type="radio"
+    value=""
+  />
+  <label
+    className="sc-AykKD jxFrdn"
+    htmlFor="ID"
+  >
+    RadioButton
+  </label>
+</div>
+`;
+
+exports[`RadioButton Snapshots No children 1`] = `
+<div
+  className="sc-AykKE bQGpBr"
+>
+  <input
+    className="sc-AykKC bTMeqx"
+    defaultChecked={false}
+    disabled={false}
+    id="ID"
+    onChange={null}
+    type="radio"
+    value=""
+  />
+  <label
+    className="sc-AykKD jxFrdn"
+    htmlFor="ID"
+  />
+</div>
+`;
+
+exports[`RadioButton Snapshots No props 1`] = `
+<div
+  className="sc-AykKE bQGpBr"
+>
+  <input
+    className="sc-AykKC bTMeqx"
+    defaultChecked={false}
+    disabled={false}
+    onChange={null}
+    type="radio"
+    value=""
+  />
+  <label
+    className="sc-AykKD jxFrdn"
+  >
+    RadioButton
+  </label>
+</div>
+`;
+
+exports[`RadioButton Snapshots group 1`] = `
+<div
+  className="sc-AykKE bQGpBr"
+>
+  <input
+    className="sc-AykKC bTMeqx"
+    defaultChecked={false}
+    disabled={false}
+    id="ID"
+    name="ID1"
+    onChange={null}
+    type="radio"
+    value=""
+  />
+  <label
+    className="sc-AykKD jxFrdn"
+    htmlFor="ID"
+  >
+    RadioButton
+  </label>
+</div>
+`;

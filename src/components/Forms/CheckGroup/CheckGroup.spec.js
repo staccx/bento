@@ -28,7 +28,10 @@ describe("Checkbox", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <CheckGroup group="test" onChange={() => console.log("hei")}>
+            <CheckGroup
+              group="test"
+              onChange={e => console.log(e.target.value)}
+            >
               <CheckBox id="12" key="key_vdvsew">
                 test
               </CheckBox>
