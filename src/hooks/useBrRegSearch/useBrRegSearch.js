@@ -5,8 +5,6 @@ const useBrRegSearch = searchTerm => {
   const [errors, setErrors] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
-  console.log("Hello")
-
   useEffect(() => {
     if (!searchTerm || searchTerm.length < 2) {
       setIsLoading(false)
