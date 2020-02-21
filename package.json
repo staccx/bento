@@ -3,7 +3,7 @@
   "version": "10.0.1-alpha.11",
   "scripts": {
     "test": "react-scripts test",
-    "test:ci": "react-scripts test --watchAll=false --verbose --coverage",
+    "test:ci": "react-scripts test --watchAll=false --silent --coverage",
     "build": "export NODE_ENV='production' && babel src -d lib",
     "build:watch": "export NODE_ENV='development' && nodemon --watch src/ --exec \"babel src -d dist\"",
     "storybook:genreq": "node stories/generateRequireStories",
@@ -130,7 +130,7 @@
       "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
     },
     "collectCoverageFrom": [
-      "src/**/{!(*.stories|*.preview|bento),}.js"
+      "src/**/{!(*.stories|*.preview|bento|index),}.js"
     ]
   }
 }
