@@ -6,6 +6,11 @@ const themeProps = {
     name: "Button",
     description: "Button styles",
     type: themePropTypes.style
+  },
+  noName: {
+    name: null,
+    description: "no name description",
+    type: themePropTypes.style
   }
 }
 
@@ -43,6 +48,25 @@ describe("Apply Variants", () => {
           variant: "custom"
         })
       ).toEqual(props.theme.Button.custom)
+    })
+
+    it("No name", () => {
+      const variantFunc = applyVariants(themeProps.noName)
+      expect(variantFunc({ ...props, variant: "test" })).toBeNull()
+    })
+
+    it("No themeprops", () => {
+      const variantFunc = applyVariants(null)
+      expect(variantFunc({ ...props, variant: "test" })).toBeNull()
+    })
+    it("Invalid variant type", () => {
+      const variantFunc = applyVariants(themeProps.button)
+      expect(variantFunc({ ...props, variant: 12 })).toBeNull()
+    })
+
+    it("No theme!", () => {
+      const variantFunc = applyVariants(themeProps.button)
+      expect(variantFunc({ variant: "variant" })).toBeNull()
     })
   })
 
