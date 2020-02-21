@@ -74,6 +74,11 @@ const Withdraw = ({
                           onChange={e =>
                             form.setFieldValue("amount", e.target.rawValue)
                           }
+                          type="text"
+                          options={{
+                            numeralDecimalMark: ",",
+                            numeralDecimalScale: 2
+                          }}
                         />
                       )
                     }}
