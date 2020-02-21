@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Snapshots No props 1`] = `
+<div
+  className="sc-fzXfLS kBOdwV"
+>
+  <div
+    className="sc-AykKI iDYrmt sc-fzXfLU fNGghu"
+  >
+    
+    
+    <input
+      autoFocus={null}
+      className="sc-AykKJ gjiytr"
+      disabled={false}
+      hidden={false}
+      name={null}
+      onBlur={null}
+      onChange={[Function]}
+      onKeyDown={null}
+      pattern="[0-9]{4}"
+      placeholder={null}
+      style={null}
+      type="text"
+    />
+  </div>
+</div>
+`;
