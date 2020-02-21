@@ -16,5 +16,26 @@ describe("AccountInput", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+    it("Type", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <AccountInput id="wegwf" type="text" />
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+
+    it("Label", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <AccountInput id="wegwf" label="Balance" />
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
   })
 })

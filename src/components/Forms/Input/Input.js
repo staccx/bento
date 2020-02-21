@@ -68,7 +68,8 @@ const Input = React.forwardRef(
     }
 
     useEffect(() => {
-      if (options) {
+      if (options && inputRef.current) {
+        console.log(inputRef.current)
         cleave.current = new Cleave(inputRef.current, {
           ...options,
           onValueChanged: onChange
