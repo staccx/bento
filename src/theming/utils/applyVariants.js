@@ -40,6 +40,7 @@ export default themeProps => props => {
  */
 const getVariants = (theme, variant, name) => {
   const type = typeof variant
+  console.log(type)
   if (Array.isArray(variant)) {
     return variant.map(v => getVariant(theme, v, name))
   } else if (type === "function") {
@@ -60,14 +61,6 @@ const getVariants = (theme, variant, name) => {
  * @returns {object}
  */
 const getVariant = (theme, variant, name) => {
-  if (!variant) {
-    return null
-  }
-
-  if (!name) {
-    return null
-  }
-
   const styles = deepfind(theme, name)
   if (!styles || !styles[variant]) {
     return null
