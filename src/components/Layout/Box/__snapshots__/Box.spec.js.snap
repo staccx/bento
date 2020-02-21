@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box Snapshots No props 1`] = `
+<div
+  className="sc-AykKC pywwI"
+  size=""
+>
+  <p>
+    Body
+  </p>
+</div>
+`;
+
+exports[`Box Snapshots Size 1`] = `
+<div
+  className="sc-AykKC dvROKY"
+  size="huge"
+>
+  <p>
+    Body
+  </p>
+</div>
+`;
+
+exports[`Box Snapshots invalid Size 1`] = `
+<div
+  className="sc-AykKC YDVGw"
+  size={100}
+>
+  <p>
+    Body
+  </p>
+</div>
+`;
