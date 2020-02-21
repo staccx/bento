@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form Snapshots Form 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="sc-fzXfLQ iBomcT"
+  >
+    
+    
+    <input
+      autoFocus={null}
+      className="sc-fzXfLR fHisbB"
+      disabled={false}
+      hidden={false}
+      id="epost"
+      name="epost"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={null}
+      placeholder="ola@nordmann.no"
+      style={null}
+      type="text"
+      value=""
+    />
+  </div>
+  <span>
+     
+  </span>
+  <button
+    className="sc-AykKC bJpIai"
+    onClick={[Function]}
+    type="submit"
+  >
+    Søk nå
+  </button>
+</form>
+`;
