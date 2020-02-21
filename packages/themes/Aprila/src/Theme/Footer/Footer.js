@@ -31,6 +31,7 @@ const Layout = styled.div`
 `
 
 const Outer = styled.div`
+  z-index: 3;
   background-color: ${theming.color.bgGray};
   padding: ${theming.spacing.large} 0;
 `
