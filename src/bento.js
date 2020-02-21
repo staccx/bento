@@ -47,3 +47,5 @@ export * as i18n from "./i18n"
  * Components
  */
 export * from "./components"
+
+export { Translate } from "./i18n"
