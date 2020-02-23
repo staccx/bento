@@ -2,6 +2,7 @@ import React, {
   createContext,
   useContext,
   useEffect,
+  useCallback,
   useMemo,
   useState
 } from "react"
@@ -19,7 +20,6 @@ const defaultFormat = {
 }
 
 const Provider = ({ children, ...props }) => {
-  // const [i18n] = useReducer(reducer, props)
   const [ready, setReady] = useState(false)
   const [language, setLanguage] = useState(props.language)
 
@@ -38,8 +38,8 @@ const Provider = ({ children, ...props }) => {
     level = null
   } = props
 
-  const initialize = async () => {
-    loglevel.setLevel(level || (debug ? "DEBUG" : "SILENT"))
+  const initialize = useCallback(async () => {
+    loglevel.setLevel(level || (debug ? "debug" : "silent"))
     if (backend) {
       i18next.use(backend)
     }
@@ -52,7 +52,7 @@ const Provider = ({ children, ...props }) => {
       },
       returnObjects: true,
       saveMissing: true, // Must be set to true
-      missingKeyHandler: key => null,
+      missingKeyHandler: key => loglevel.warn("Missing key", key),
       parseMissingKeyHandler: key => {
         loglevel.warn(`No translation found for "${key}"`)
         return null
@@ -72,11 +72,11 @@ const Provider = ({ children, ...props }) => {
 
     loglevel.log("i18n ready to use", i18next)
     setReady(true)
-  }
+  }, [backend, backendOptions, debug, formatFunctions, language, level, texts])
 
   useEffect(() => {
     initialize()
-  }, [])
+  }, [initialize])
 
   return (
     <I18nContext.Provider
@@ -124,7 +124,7 @@ export const useI18n = () => {
       languages: i18n.languages,
       ...value
     }
-  }, [value, ready])
+  }, [value, ready, i18n])
 }
 
 export const I18nConsumer = ({ children }) => {
