@@ -1,8 +1,9 @@
 import React from "react"
 import loglevel from "loglevel"
-import { useI18n } from "./I18n"
-import { commonPropTypes } from "../theming"
-import { getComponent } from "./utils"
+import PropTypes from "prop-types"
+import { useI18n } from "../I18n"
+import { commonPropTypes } from "../../theming"
+import { getComponent } from "../utils"
 
 const handleArray = (value, data, children, translate) => {
   const values = value.map(
@@ -31,6 +32,7 @@ const Translate = ({ children, i18n, data }) => {
     loglevel.debug("Not ready yet")
     return null
   }
+
   if (!i18n) {
     loglevel.warn("No key supplied to I18n")
     return children
@@ -70,7 +72,20 @@ const Translate = ({ children, i18n, data }) => {
 }
 
 Translate.propTypes = {
-  children: commonPropTypes.children
+  /**
+   * Children will in this case work as a fallback
+   */
+  children: commonPropTypes.children,
+  /**
+   * Key to look in the store
+   */
+  i18n: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  /**
+   * Data provided in case of interpolation or custom input
+   */
+  data: PropTypes.object
 }
+
+Translate.defaultProps = {}
 
 export default Translate
