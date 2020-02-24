@@ -40,7 +40,6 @@ export default themeProps => props => {
  */
 const getVariants = (theme, variant, name) => {
   const type = typeof variant
-  console.log(type)
   if (Array.isArray(variant)) {
     return variant.map(v => getVariant(theme, v, name))
   } else if (type === "function") {
