@@ -90,7 +90,6 @@
     "@storybook/components": "^5.3.13",
     "@storybook/core-events": "^5.3.13",
     "@storybook/theming": "^5.3.13",
-    "accounting": "^0.4.1",
     "axios": "^0.19.1",
     "cleave.js": "^1.4.4",
     "color": "^3.1.2",
