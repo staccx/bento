@@ -1,12 +1,10 @@
 import React from "react"
 import { addons, types } from "@storybook/addons"
-import StoryBookTheme from "./bentoStorybookTheme"
-import "./withThemes"
-import "./tools/variants"
-import { ThemeSwitcher } from "./withThemes"
-import { Variants, VARIANTS_TOOL_NAME } from "./tools/variants"
 import { Button } from "@storybook/components"
 import { FORCE_RE_RENDER } from "@storybook/core-events"
+import StoryBookTheme from "./bentoStorybookTheme"
+import { ThemeSwitcher } from "./addons/withThemes"
+import { Variants, VARIANTS_TOOL_NAME } from "./tools/variants"
 
 addons.register("storybook/theme-switcher", api => {
   addons.addPanel("storybook/theme-switcher", {
@@ -34,9 +32,10 @@ addons.setConfig({
   theme: StoryBookTheme,
   previewTabs: {
     // the order of the tabs is configured by the order here
-    'storybook/docs/panel': 'Documentation', // the configuration is either an object or a title string
+    'storybook/docs/panel': 'Documentation',
+ // the configuration is either an object or a title string
     canvas: {
-      hidden: false
+      index: 1
     }, // canvas is here simply listed so its place as first tab
   },
 });

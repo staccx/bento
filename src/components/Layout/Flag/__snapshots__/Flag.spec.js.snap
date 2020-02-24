@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flag Snapshots All 1`] = `
+<div
+  className="sc-AykKE eTMsJU className"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  >
+    <img
+      height="100"
+      src="http://via.placeholder.com/150x150"
+      width="100"
+    />
+  </div>
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots No props 1`] = `
+<div
+  className="sc-AykKE iBDoun"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots bottom 1`] = `
+<div
+  className="sc-AykKE eudLoR"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots className 1`] = `
+Array [
+  <div
+    className="sc-AykKE iBDoun className"
+  >
+    <div
+      className="sc-AykKC gBHBhD"
+    />
+    <div
+      className="sc-AykKD gSfILM"
+    />
+  </div>,
+  <p>
+    Body
+  </p>,
+]
+`;
+
+exports[`Flag Snapshots flush 1`] = `
+<div
+  className="sc-AykKE kNYaPW"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots img 1`] = `
+Array [
+  <div
+    className="sc-AykKE iBDoun"
+  >
+    <div
+      className="sc-AykKC gBHBhD"
+    >
+      <img
+        height="100"
+        src="http://via.placeholder.com/150x150"
+        width="100"
+      />
+    </div>
+    <div
+      className="sc-AykKD gSfILM"
+    />
+  </div>,
+  <p>
+    Body
+  </p>,
+]
+`;
+
+exports[`Flag Snapshots large 1`] = `
+<div
+  className="sc-AykKE fcYeqw"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots large reverse 1`] = `
+<div
+  className="sc-AykKE gmPGLQ"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots responsive 1`] = `
+<div
+  className="sc-AykKE iWZIOr"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots reverse 1`] = `
+<div
+  className="sc-AykKE gnQGZG"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots small 1`] = `
+<div
+  className="sc-AykKE helqsf"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots small reverse 1`] = `
+<div
+  className="sc-AykKE gcVUku"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots tiny 1`] = `
+<div
+  className="sc-AykKE HELAO"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots tiny reverse 1`] = `
+<div
+  className="sc-AykKE ftQefE"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots top 1`] = `
+<div
+  className="sc-AykKE fjOPFo"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;

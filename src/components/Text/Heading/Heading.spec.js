@@ -1,16 +1,86 @@
 import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
-import baseTheme from "../../theming/themes/baseTheme"
-import Image from "./Image"
+import baseTheme from "../../../theming/themes/baseTheme"
+import Heading from "./Heading"
 
-describe("Image", () => {
+describe("Heading", () => {
   describe("Snapshots", () => {
     it("No props", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Image />
+            <Heading>Hei</Heading>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("level 1", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Heading level={1}>Hei</Heading>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("level 2", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Heading level={2}>Hei</Heading>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("level 3", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Heading level={3}>Hei</Heading>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("level 4", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Heading level={4}>Hei</Heading>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("level 5", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Heading level={5}>Hei</Heading>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("level 6", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Heading level={6}>Hei</Heading>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("no Children", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Heading />
           </ThemeProvider>
         )
         .toJSON()
@@ -20,67 +90,7 @@ describe("Image", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Image className="Name" />
-          </ThemeProvider>
-        )
-        .toJSON()
-      expect(tree).toMatchSnapshot()
-    })
-    it("size", () => {
-      const tree = renderer
-        .create(
-          <ThemeProvider theme={baseTheme}>
-            <Image size="huge" />
-          </ThemeProvider>
-        )
-        .toJSON()
-      expect(tree).toMatchSnapshot()
-    })
-    it("invalid size", () => {
-      const tree = renderer
-        .create(
-          <ThemeProvider theme={baseTheme}>
-            <Image size={100} />
-          </ThemeProvider>
-        )
-        .toJSON()
-      expect(tree).toMatchSnapshot()
-    })
-    it("round", () => {
-      const tree = renderer
-        .create(
-          <ThemeProvider theme={baseTheme}>
-            <Image round />
-          </ThemeProvider>
-        )
-        .toJSON()
-      expect(tree).toMatchSnapshot()
-    })
-    it("aspectRatio", () => {
-      const tree = renderer
-        .create(
-          <ThemeProvider theme={baseTheme}>
-            <Image aspectRatio="16:9" />
-          </ThemeProvider>
-        )
-        .toJSON()
-      expect(tree).toMatchSnapshot()
-    })
-    it("width", () => {
-      const tree = renderer
-        .create(
-          <ThemeProvider theme={baseTheme}>
-            <Image width={10} />
-          </ThemeProvider>
-        )
-        .toJSON()
-      expect(tree).toMatchSnapshot()
-    })
-    it("all", () => {
-      const tree = renderer
-        .create(
-          <ThemeProvider theme={baseTheme}>
-            <Image className="Name" size="huge" round aspectRatio="16:9" />
+            <Heading className="test">hei</Heading>
           </ThemeProvider>
         )
         .toJSON()

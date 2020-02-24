@@ -56,3 +56,10 @@ exports[`Image Snapshots size 1`] = `
   size="huge"
 />
 `;
+
+exports[`Image Snapshots width 1`] = `
+<img
+  className="sc-AykKC pywwI"
+  size="medium"
+/>
+`;

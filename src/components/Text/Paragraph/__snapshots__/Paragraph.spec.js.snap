@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paragraph Snapshots No Children 1`] = `
+<p
+  className="sc-AykKC ecIodL"
+/>
+`;
+
+exports[`Paragraph Snapshots No props 1`] = `
+<p
+  className="sc-AykKC ecIodL"
+>
+  Hei
+</p>
+`;
+
+exports[`Paragraph Snapshots className 1`] = `
+<p
+  className="sc-AykKC ecIodL className"
+>
+  Hei
+</p>
+`;

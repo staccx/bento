@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react"
-import themes from "./themes"
+import themes from "../themes"
 import { IconButton, TooltipLinkList, WithTooltip } from "@storybook/components"
 import addons, { makeDecorator, types } from "@storybook/addons"
 import { FORCE_RE_RENDER } from "@storybook/core-events"
 import styled, { ThemeProvider } from "styled-components"
 import { useAddonState } from "@storybook/api"
-import WebFonts from "../src/components/Theme/WebFonts"
-import GlobalStyle from "../src/components/Theme/GlobalStyle"
+import WebFonts from "../../src/components/Theme/WebFonts"
+import GlobalStyle from "../../src/components/Theme/GlobalStyle"
 
 // credit: https://github.com/storybooks/storybook/issues/5889#issuecomment-471240086
 

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkeletonCircle Snapshots No props 1`] = `
+<div
+  className="sc-AykKC hKxeYY sc-AykKD jLpAhR"
+/>
+`;
+
+exports[`SkeletonCircle Snapshots with className 1`] = `
+<div
+  className="sc-AykKC hKxeYY sc-AykKD jLpAhR className"
+/>
+`;
+
+exports[`SkeletonCircle Snapshots with height 1`] = `
+<div
+  className="sc-AykKC hKxeYY sc-AykKD OVSIs className"
+  height={100}
+/>
+`;
+
+exports[`SkeletonCircle Snapshots with width 1`] = `
+<div
+  className="sc-AykKC hKxeYY sc-AykKD kcdppH className"
+  width={100}
+/>
+`;

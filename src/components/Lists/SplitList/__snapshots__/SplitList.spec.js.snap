@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`splitListItem Snapshots More than 2 children 1`] = `
+<ul
+  className="sc-AykKD jpnaqQ"
+>
+  <li
+    className="sc-AykKC doyRde"
+  >
+    <span>
+      Amount
+    </span>
+    <span>
+      500
+    </span>
+  </li>
+  <li
+    className="sc-AykKC doyRde"
+  >
+    <span>
+      Amount
+    </span>
+    <span>
+      1500
+    </span>
+  </li>
+  <li
+    className="sc-AykKC doyRde"
+  >
+    <span>
+      Has three children!
+    </span>
+    <span>
+      500
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`splitListItem Snapshots No props 1`] = `
+<ul
+  className="sc-AykKD jpnaqQ"
+>
+  <li
+    className="sc-AykKC doyRde"
+  >
+    <span>
+      Amount
+    </span>
+    <span>
+      500
+    </span>
+  </li>
+  <li
+    className="sc-AykKC doyRde"
+  >
+    <span>
+      Amount
+    </span>
+    <span>
+      1500
+    </span>
+  </li>
+  <li
+    className="sc-AykKC doyRde"
+  >
+    <span>
+      Has three children!
+    </span>
+    <span>
+      500
+    </span>
+  </li>
+</ul>
+`;

@@ -1,26 +1,32 @@
 import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
-import baseTheme from "../../theming/themes/baseTheme"
-import Image from "./Image"
+import baseTheme from "../../../theming/themes/baseTheme"
+import Wrapper from "./Wrapper"
 
-describe("Image", () => {
+const Child = () => <p>Body</p>
+
+describe("Wrapper", () => {
   describe("Snapshots", () => {
     it("No props", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Image />
+            <Wrapper>
+              <Child />
+            </Wrapper>
           </ThemeProvider>
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
-    it("ClassName", () => {
+    it("className", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Image className="Name" />
+            <Wrapper className="className">
+              <Child />
+            </Wrapper>
           </ThemeProvider>
         )
         .toJSON()
@@ -30,57 +36,45 @@ describe("Image", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Image size="huge" />
+            <Wrapper size="large">
+              <Child />
+            </Wrapper>
           </ThemeProvider>
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
-    it("invalid size", () => {
+    it("size full", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Image size={100} />
+            <Wrapper size="full">
+              <Child />
+            </Wrapper>
           </ThemeProvider>
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
-    it("round", () => {
+    it("breakout", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Image round />
+            <Wrapper breakout>
+              <Child />
+            </Wrapper>
           </ThemeProvider>
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
-    it("aspectRatio", () => {
+    it("All", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Image aspectRatio="16:9" />
-          </ThemeProvider>
-        )
-        .toJSON()
-      expect(tree).toMatchSnapshot()
-    })
-    it("width", () => {
-      const tree = renderer
-        .create(
-          <ThemeProvider theme={baseTheme}>
-            <Image width={10} />
-          </ThemeProvider>
-        )
-        .toJSON()
-      expect(tree).toMatchSnapshot()
-    })
-    it("all", () => {
-      const tree = renderer
-        .create(
-          <ThemeProvider theme={baseTheme}>
-            <Image className="Name" size="huge" round aspectRatio="16:9" />
+            <Wrapper className="className" size="large" breakout>
+              <Child />
+            </Wrapper>
           </ThemeProvider>
         )
         .toJSON()
