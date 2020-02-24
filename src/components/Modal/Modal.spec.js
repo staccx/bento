@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components"
 import baseTheme from "../../theming/themes/baseTheme"
 import Modal from "./Modal"
 
-describe("Alert", () => {
+describe("Modal", () => {
   describe("Snapshots", () => {
     it("No props", () => {
       const tree = renderer
