@@ -100,32 +100,32 @@ Can compact numbers
   </Story>
 </Preview>
 
-## Unit formatting
-A lot of units can be used to format
+<!-- ## Unit formatting -->
+<!-- A lot of units can be used to format -->
 
-<Preview>
-  <Story name="Units">
-   <p>{formatNumber(25, {
-               style: STYLE.unit,
-               unit: UNITS.celsius
-             })}</p>
-  </Story>
-</Preview>
+<!-- <Preview> -->
+<!--   <Story name="Units"> -->
+<!--    <p>{formatNumber(25, { -->
+<!--                style: STYLE.unit, -->
+<!--                unit: UNITS.celsius -->
+<!--              })}</p> -->
+<!--   </Story> -->
+<!-- </Preview> -->
 
-export const UnitGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
-`
+<!-- export const UnitGrid = styled.div` -->
+<!--   display: grid; -->
+<!--   grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) ); -->
+<!-- ` -->
 
-Full list of units can be found in `./number.constants.js` and 👇
-<Preview>
-<Story name="List of units">
-   {() => {
-   return <UnitGrid>{Object.keys(UNITS).map(unit => <div>{unit}</div>)}</UnitGrid>
-   }
- }
-  </Story>
-</Preview>
+<!-- Full list of units can be found in `./number.constants.js` and 👇 -->
+<!-- <Preview> -->
+<!-- <Story name="List of units"> -->
+<!--    {() => { -->
+<!--    return <UnitGrid>{Object.keys(UNITS).map(unit => <div>{unit}</div>)}</UnitGrid> -->
+<!--    } -->
+<!--  } -->
+<!--   </Story> -->
+<!-- </Preview> -->
 
 ## Percentage
 Percentage formatting. Remember it uses normalized values (0-1)
