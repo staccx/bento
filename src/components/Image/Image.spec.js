@@ -66,6 +66,16 @@ describe("Image", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+    it("width", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Image width={10} />
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
     it("all", () => {
       const tree = renderer
         .create(
