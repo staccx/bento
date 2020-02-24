@@ -18,7 +18,10 @@ export const formatNumber = (value, opts) => {
     ...defaults,
     ...opts
   }
-  const { locale } = options
+  const { locale, style } = options
+  if (style === STYLE.unit) {
+    throw new Error("Unit is not yet supported")
+  }
   const formatter = new Intl.NumberFormat(locale, options)
   const formattedValue = formatter.format(value)
   return `${formattedValue}${options.suffix ?? ""}`
