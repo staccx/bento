@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Snapshots All 1`] = `
+<div
+  className="sc-AykKC iSYdQW"
+>
+  <div
+    className="sc-AykKD bHyrrD ClassName"
+  >
+    I'm the header inside a row!
+  </div>
+</div>
+`;
+
+exports[`Layout Snapshots ClassName 1`] = `
+<div
+  className="sc-AykKC bcKUMo ClassName"
+>
+  <div
+    className="sc-AykKD bHyrrD ClassName"
+  >
+    I'm the header inside a row!
+  </div>
+</div>
+`;
+
+exports[`Layout Snapshots Item area 1`] = `
+<div
+  className="sc-AykKC dxRRlQ"
+>
+  <div
+    className="sc-AykKD bUfcVE ClassName"
+  >
+    I'm the header inside a row!
+  </div>
+</div>
+`;
+
+exports[`Layout Snapshots No Children 1`] = `
+<div
+  className="sc-AykKC bcKUMo"
+/>
+`;
+
+exports[`Layout Snapshots No props 1`] = `
+<div
+  className="sc-AykKC bcKUMo"
+>
+  <div
+    className="sc-AykKD bHyrrD"
+  >
+    I'm the header inside a row!
+  </div>
+</div>
+`;
+
+exports[`Layout Snapshots columnGap 1`] = `
+<div
+  className="sc-AykKC hceKEx"
+>
+  <div
+    className="sc-AykKD bHyrrD ClassName"
+  >
+    I'm the header inside a row!
+  </div>
+</div>
+`;
+
+exports[`Layout Snapshots grid 1`] = `
+<div
+  className="sc-AykKC dxRRlQ"
+>
+  <div
+    className="sc-AykKD bHyrrD ClassName"
+  >
+    I'm the header inside a row!
+  </div>
+</div>
+`;
+
+exports[`Layout Snapshots isNotFlush 1`] = `
+<div
+  className="sc-AykKC fqZrUx"
+>
+  <div
+    className="sc-AykKD bHyrrD ClassName"
+  >
+    I'm the header inside a row!
+  </div>
+</div>
+`;
+
+exports[`Layout Snapshots paddingBottom 1`] = `
+<div
+  className="sc-AykKC bcKUMo"
+>
+  <div
+    className="sc-AykKD bHyrrD ClassName"
+  >
+    I'm the header inside a row!
+  </div>
+</div>
+`;
+
+exports[`Layout Snapshots paddingTop 1`] = `
+<div
+  className="sc-AykKC bcKUMo"
+>
+  <div
+    className="sc-AykKD bHyrrD ClassName"
+  >
+    I'm the header inside a row!
+  </div>
+</div>
+`;
+
+exports[`Layout Snapshots rowGap 1`] = `
+<div
+  className="sc-AykKC iQdCeF"
+>
+  <div
+    className="sc-AykKD bHyrrD ClassName"
+  >
+    I'm the header inside a row!
+  </div>
+</div>
+`;
