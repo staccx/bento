@@ -133,6 +133,23 @@ exports[`Flag Snapshots large 1`] = `
 </div>
 `;
 
+exports[`Flag Snapshots large reverse 1`] = `
+<div
+  className="sc-AykKE gmPGLQ"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Flag Snapshots responsive 1`] = `
 <div
   className="sc-AykKE iWZIOr"
@@ -184,9 +201,43 @@ exports[`Flag Snapshots small 1`] = `
 </div>
 `;
 
+exports[`Flag Snapshots small reverse 1`] = `
+<div
+  className="sc-AykKE gcVUku"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Flag Snapshots tiny 1`] = `
 <div
   className="sc-AykKE HELAO"
+>
+  <div
+    className="sc-AykKC gBHBhD"
+  />
+  <div
+    className="sc-AykKD gSfILM"
+  >
+    <p>
+      Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Flag Snapshots tiny reverse 1`] = `
+<div
+  className="sc-AykKE ftQefE"
 >
   <div
     className="sc-AykKC gBHBhD"

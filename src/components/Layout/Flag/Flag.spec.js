@@ -146,6 +146,42 @@ describe("Flag", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+    it("tiny reverse", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Flag tiny reverse>
+              <Child />
+            </Flag>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("small reverse", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Flag small reverse>
+              <Child />
+            </Flag>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("large reverse", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Flag large reverse>
+              <Child />
+            </Flag>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
     it("All", () => {
       const tree = renderer
         .create(
