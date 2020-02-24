@@ -1,4 +1,4 @@
-[logo]: https://cdn.sanity.io/images/8j24leyc/production/4fdac3349ebe1799c7104608a6cd9727fb9e25f9-2188x1378.png
+![Bento logo](https://cdn.sanity.io/images/8j24leyc/production/4fdac3349ebe1799c7104608a6cd9727fb9e25f9-2188x1378.png)
 
 # What is Bento?
 Bento is a set of UI components, utility functions, hooks, and other reusable parts that make up your typical React project. There are also some utilities that are made for our customers in the financial sector. When developing Bento we set out to solve some issues we had with other alternatives:
