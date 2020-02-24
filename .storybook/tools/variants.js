@@ -40,6 +40,7 @@ export const Variants = ({ api }) => {
       }
     }
     return () => {
+      setVariants([])
       setCurrentVariant(null)
       api.getChannel().emit("variant_changed", null)
     }
