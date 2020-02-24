@@ -52,5 +52,15 @@ describe("WidowFix", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+    it("children not string", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <WidowFix threshold={9}>{Number(100)}</WidowFix>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
   })
 })
