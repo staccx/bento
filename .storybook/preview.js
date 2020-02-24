@@ -1,6 +1,6 @@
 import React from "react";
 import { addDecorator, addParameters } from "@storybook/react";
-import { withTheme } from "./withThemes";
+import { withTheme } from "./addons/withThemes";
 
 //addDecorator(story => <ThemeProvider theme={baseTheme} story={story}>)
 addDecorator(withTheme);
