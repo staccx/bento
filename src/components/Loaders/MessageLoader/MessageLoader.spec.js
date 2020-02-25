@@ -2,7 +2,8 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
-import FullScreenLoader from "./FullScreenLoader"
+import MessageLoader from "./MessageLoader"
+import { messages } from "../loaders.messages"
 
 describe("FullScreenLoader", () => {
   describe("Snapshots", () => {
@@ -10,7 +11,7 @@ describe("FullScreenLoader", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <FullScreenLoader messages={["hei"]} />
+            <MessageLoader messages={["hei"]} />
           </ThemeProvider>
         )
         .toJSON()
@@ -20,10 +21,7 @@ describe("FullScreenLoader", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <FullScreenLoader
-              messages={["hei", "test", "noe", "et", "navn"]}
-              delay={1000}
-            />
+            <MessageLoader messages={messages} delay={1000} />
           </ThemeProvider>
         )
         .toJSON()
@@ -33,7 +31,7 @@ describe("FullScreenLoader", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <FullScreenLoader messages="hei" />
+            <MessageLoader messages="hei" />
           </ThemeProvider>
         )
         .toJSON()
