@@ -20,7 +20,14 @@ export default themeProps => props => {
     return null
   }
 
-  const name = themeProps.hasOwnProperty("name") ? themeProps.name : themeProps
+  let name = null
+  if (themeProps.hasOwnProperty("references")) {
+    name = themeProps.references?.name ?? name
+  } else if (themeProps.hasOwnProperty("name")) {
+    name = themeProps.name
+  } else {
+    name = themeProps
+  }
 
   if (!name) {
     loglevel.warn("No name!", variant, theme)
