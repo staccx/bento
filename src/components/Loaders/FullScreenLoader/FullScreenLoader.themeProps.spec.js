@@ -1,7 +1,28 @@
 import themeProps from "./FullScreenLoader.themeProps"
+import messageLoaderThemeProps from "../MessageLoader/MessageLoader.themeProps"
 
 describe("FullScreenLoader", () => {
   describe("Theme props", () => {
+    it("references", () => {
+      expect(themeProps.innerContainer.references).toBe(
+        messageLoaderThemeProps.container
+      )
+      expect(themeProps.messagesContainer.references).toBe(
+        messageLoaderThemeProps.messagesContainer
+      )
+
+      expect(themeProps.message.references).toBe(
+        messageLoaderThemeProps.message
+      )
+
+      expect(themeProps.previousMessage.references).toBe(
+        messageLoaderThemeProps.previousMessage
+      )
+
+      expect(themeProps.currentMessage.references).toBe(
+        messageLoaderThemeProps.currentMessage
+      )
+    })
     it("mainContainer", () => {
       expect(themeProps.mainContainer).not.toBeNull()
       expect(themeProps.mainContainer.hasOwnProperty("createVariants")).toBe(
@@ -25,8 +46,12 @@ describe("FullScreenLoader", () => {
       const variant = themeProps.innerContainer.createVariants({
         myVariant: style
       })
-      expect(variant.hasOwnProperty(themeProps.innerContainer.name)).toBe(true)
-      expect(variant[themeProps.innerContainer.name].myVariant).toEqual(style)
+      expect(
+        variant.hasOwnProperty(messageLoaderThemeProps.container.name)
+      ).toBe(true)
+      expect(variant[messageLoaderThemeProps.container.name].myVariant).toEqual(
+        style
+      )
     })
     it("messagesContainer", () => {
       expect(themeProps.messagesContainer).not.toBeNull()
@@ -38,12 +63,12 @@ describe("FullScreenLoader", () => {
       const variant = themeProps.messagesContainer.createVariants({
         myVariant: style
       })
-      expect(variant.hasOwnProperty(themeProps.messagesContainer.name)).toBe(
-        true
-      )
-      expect(variant[themeProps.messagesContainer.name].myVariant).toEqual(
-        style
-      )
+      expect(
+        variant.hasOwnProperty(messageLoaderThemeProps.messagesContainer.name)
+      ).toBe(true)
+      expect(
+        variant[messageLoaderThemeProps.messagesContainer.name].myVariant
+      ).toEqual(style)
     })
     it("message", () => {
       expect(themeProps.message).not.toBeNull()
@@ -53,8 +78,12 @@ describe("FullScreenLoader", () => {
       const variant = themeProps.message.createVariants({
         myVariant: style
       })
-      expect(variant.hasOwnProperty(themeProps.message.name)).toBe(true)
-      expect(variant[themeProps.message.name].myVariant).toEqual(style)
+      expect(variant.hasOwnProperty(messageLoaderThemeProps.message.name)).toBe(
+        true
+      )
+      expect(variant[messageLoaderThemeProps.message.name].myVariant).toEqual(
+        style
+      )
     })
     it("previousMessage", () => {
       expect(themeProps.previousMessage).not.toBeNull()
@@ -66,8 +95,12 @@ describe("FullScreenLoader", () => {
       const variant = themeProps.previousMessage.createVariants({
         myVariant: style
       })
-      expect(variant.hasOwnProperty(themeProps.previousMessage.name)).toBe(true)
-      expect(variant[themeProps.previousMessage.name].myVariant).toEqual(style)
+      expect(
+        variant.hasOwnProperty(messageLoaderThemeProps.previousMessage.name)
+      ).toBe(true)
+      expect(
+        variant[messageLoaderThemeProps.previousMessage.name].myVariant
+      ).toEqual(style)
     })
     it("currentMessage", () => {
       expect(themeProps.currentMessage).not.toBeNull()
@@ -79,8 +112,12 @@ describe("FullScreenLoader", () => {
       const variant = themeProps.currentMessage.createVariants({
         myVariant: style
       })
-      expect(variant.hasOwnProperty(themeProps.currentMessage.name)).toBe(true)
-      expect(variant[themeProps.currentMessage.name].myVariant).toEqual(style)
+      expect(
+        variant.hasOwnProperty(messageLoaderThemeProps.currentMessage.name)
+      ).toBe(true)
+      expect(
+        variant[messageLoaderThemeProps.currentMessage.name].myVariant
+      ).toEqual(style)
     })
   })
 })
