@@ -5,7 +5,7 @@ import baseTheme from "../../../theming/themes/baseTheme"
 import MessageLoader from "./MessageLoader"
 import { messages } from "../loaders.messages"
 
-describe("FullScreenLoader", () => {
+describe("MessageLoader", () => {
   describe("Snapshots", () => {
     it("Messages", () => {
       const tree = renderer

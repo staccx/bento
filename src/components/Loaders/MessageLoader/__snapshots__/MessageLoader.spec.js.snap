@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FullScreenLoader Snapshots Messages 1`] = `
+exports[`MessageLoader Snapshots Messages 1`] = `
 <div
   className="sc-AykKD ggtnrM"
 >
@@ -10,7 +10,7 @@ exports[`FullScreenLoader Snapshots Messages 1`] = `
 </div>
 `;
 
-exports[`FullScreenLoader Snapshots Multiple words 1`] = `
+exports[`MessageLoader Snapshots Multiple words 1`] = `
 <div
   className="sc-AykKD ggtnrM"
 >
@@ -26,7 +26,7 @@ exports[`FullScreenLoader Snapshots Multiple words 1`] = `
 </div>
 `;
 
-exports[`FullScreenLoader Snapshots invalid Messages 1`] = `
+exports[`MessageLoader Snapshots invalid Messages 1`] = `
 <div
   className="sc-AykKD ggtnrM"
 >
