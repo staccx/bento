@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import PostalCodeInput from "./PostalCodeInput"
 
-describe("Alert", () => {
+describe("PostalCodeInput", () => {
   describe("Snapshots", () => {
     it("No props", () => {
       const tree = renderer

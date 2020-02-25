@@ -8,7 +8,7 @@ import Input from "../Input/Input"
 
 describe("Form", () => {
   describe("Snapshots", () => {
-    it("Form", () => {
+    it("Email", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
@@ -16,6 +16,158 @@ describe("Form", () => {
               <FormField
                 name="epost"
                 type="email"
+                required
+                renderError={({ error, touched }) => (
+                  <span>
+                    {error} {touched}
+                  </span>
+                )}
+              >
+                {({ name, field, form }) => (
+                  <Input {...field} placeholder="ola@nordmann.no" id={name} />
+                )}
+              </FormField>
+            </Form>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("Form", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Form initialValues={{ epost: "" }} buttonText="Søk nå">
+              <FormField
+                name="epost"
+                required
+                renderError={({ error, touched }) => (
+                  <span>
+                    {error} {touched}
+                  </span>
+                )}
+              >
+                {({ name, field, form }) => (
+                  <Input {...field} placeholder="ola@nordmann.no" id={name} />
+                )}
+              </FormField>
+            </Form>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("Form", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Form initialValues={{ epost: "" }} buttonText="Søk nå">
+              <FormField
+                name="epost"
+                type="date"
+                required
+                renderError={({ error, touched }) => (
+                  <span>
+                    {error} {touched}
+                  </span>
+                )}
+              >
+                {({ name, field, form }) => (
+                  <Input {...field} placeholder="ola@nordmann.no" id={name} />
+                )}
+              </FormField>
+            </Form>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("url", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Form initialValues={{ epost: "" }} buttonText="Søk nå">
+              <FormField
+                name="epost"
+                type="url"
+                required
+                renderError={({ error, touched }) => (
+                  <span>
+                    {error} {touched}
+                  </span>
+                )}
+              >
+                {({ name, field, form }) => (
+                  <Input {...field} placeholder="ola@nordmann.no" id={name} />
+                )}
+              </FormField>
+            </Form>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("bool", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Form initialValues={{ epost: "" }} buttonText="Søk nå">
+              <FormField
+                name="epost"
+                type="bool"
+                required
+                renderError={({ error, touched }) => (
+                  <span>
+                    {error} {touched}
+                  </span>
+                )}
+              >
+                {({ name, field, form }) => (
+                  <Input {...field} placeholder="ola@nordmann.no" id={name} />
+                )}
+              </FormField>
+            </Form>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("number", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Form initialValues={{ epost: "" }} buttonText="Søk nå">
+              <FormField
+                name="epost"
+                type="number"
+                required
+                renderError={({ error, touched }) => (
+                  <span>
+                    {error} {touched}
+                  </span>
+                )}
+              >
+                {({ name, field, form }) => (
+                  <Input {...field} placeholder="ola@nordmann.no" id={name} />
+                )}
+              </FormField>
+            </Form>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("string", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Form initialValues={{ epost: "" }} buttonText="Søk nå">
+              <FormField
+                name="epost"
+                type="string"
+                min={0}
+                max={100}
+                integer
                 required
                 renderError={({ error, touched }) => (
                   <span>
