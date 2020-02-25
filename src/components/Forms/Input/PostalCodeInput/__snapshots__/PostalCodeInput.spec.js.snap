@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert Snapshots No props 1`] = `
+exports[`PostalCodeInput Snapshots No props 1`] = `
 <div
   className="sc-fzXfLS kBOdwV"
 >

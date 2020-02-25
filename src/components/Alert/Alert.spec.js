@@ -2,6 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../theming/themes/baseTheme"
+import testTheme from "../../theming/themes/testTheme"
 import Alert from "./Alert"
 
 const Child = () => <p>Body</p>
@@ -78,6 +79,18 @@ describe("Alert", () => {
         .create(
           <ThemeProvider theme={baseTheme}>
             <Alert type="warning" />
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+    it("use Test Theme", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={testTheme}>
+            <Alert type="warning">
+              <Child />
+            </Alert>
           </ThemeProvider>
         )
         .toJSON()
