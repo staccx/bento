@@ -33,4 +33,18 @@ export default class Theme {
     const val = Array.isArray(styles) ? styles.reduce(styleReducer, {}) : styles
     return new Theme(this, val)
   }
+
+  append(styles) {
+    const val = Array.isArray(styles) ? styles.reduce(styleReducer, {}) : styles
+    const map = Map({})
+    const newTheme = map.mergeDeep(this, val).toJS()
+
+    // TODO: Should we reset the theme here before setting the attributes?
+    // for (const key of Object.keys(this)) {
+    //   delete this[key]
+    // }
+    Object.keys(newTheme).forEach(key => {
+      this[key] = newTheme[key]
+    })
+  }
 }
