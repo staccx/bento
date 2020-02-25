@@ -32,7 +32,7 @@ describe("Table", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Table>
+            <Table onClick={e => console.log(e.target.value)}>
               {({ value }) => (
                 <td onClick={e => console.log(e.target.value)}>
                   <h3>{value}</h3>

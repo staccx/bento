@@ -3,6 +3,7 @@
 exports[`Table Snapshots Tab 1`] = `
 <table
   className="sc-AykKC QXPLA"
+  onClick={[Function]}
 >
   <thead>
     <tr>
