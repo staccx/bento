@@ -1,4 +1,6 @@
 import Theme from "./Theme"
+import { theme as instance } from "./"
+import Alert from "../components/Alert/Alert"
 import createVariants from "./utils/createVariants"
 // import grids from "../components/Layout/Layout/Layout.Grids"
 
@@ -113,6 +115,27 @@ describe("Theme", () => {
       const theme = new Theme(example).add([style1, style2])
       expect(theme.button.subtle).toEqual(1)
       expect(theme.label._default).toEqual("test")
+    })
+
+    it("instance", () => {
+      instance.append(style1)
+
+      expect(instance.button).not.toBeNull()
+      expect(instance.button).toStrictEqual({ subtle: 1 })
+      expect(instance.label).toBeUndefined()
+
+      instance.append(style2)
+      expect(instance.label).toStrictEqual({ _default: "test" })
+    })
+
+    it("Themeprop creating", () => {
+      Alert.themeProps.alert.createVariants({
+        scream: "test"
+      })
+
+      expect(instance[Alert.themeProps.alert.name]).toStrictEqual({
+        scream: "test"
+      })
     })
   })
 })
