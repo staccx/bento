@@ -17,3 +17,33 @@ export default themeProps =>
       }
     }
   }, {})
+
+export const componentCreateFactory = component => variants => {
+  if (!component) {
+    throw new Error("No component")
+  }
+
+  if (!component.hasOwnProperty("themeProps")) {
+    throw new Error(
+      "Theme props not defined. Called before asssigment? <Component>.themeProps = themeProps"
+    )
+  }
+
+  if (!variants) {
+    throw new Error("Why? No variants? 🤷")
+  }
+
+  for (const key of Object.keys(variants)) {
+    if (!component.themeProps.hasOwnProperty(key)) {
+      throw new Error(
+        `${key} no a valid themeProp for ${
+          component.name
+        }. Valid themeProps are ${Object.keys(component.themeProps).join(", ")}`
+      )
+    }
+    const variant = variants[key]
+
+    const styles = createVariants(variant, key)
+    instance.append(styles)
+  }
+}
