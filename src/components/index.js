@@ -87,8 +87,11 @@ export { default as Alert } from "./Alert/Alert"
 // Boxes
 export { default as Box } from "./Layout/Box/Box"
 
+// Theming
 export { default as ThemeComponent } from "./Theme/ThemeComponent"
+export { default as ThemeProvider } from "./Theme/ThemeProvider/ThemeProvider"
 export { default as GlobalStyle } from "./Theme/GlobalStyle"
+export { default as WebFonts } from "./Theme/WebFonts"
 
 // Formatters
 export { default as Odometer } from "./Formatters/Odometer/Odometer"
@@ -99,8 +102,6 @@ export { default as Logo } from "./Logo/Logo"
 // Code
 export { default as CodeRenderer } from "./Code/CodeRenderer"
 export { default as Table } from "./Table/Table"
-
-export { default as WebFonts } from "./Theme/WebFonts"
 
 /**
  * Hooks!
