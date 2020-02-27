@@ -15,6 +15,7 @@ import {
 } from "../../theming"
 import ThemeComponent from "../Theme/ThemeComponent"
 import themeProps from "./Alert.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 const Icon = ({ type, props }) => {
   switch (type) {
@@ -77,6 +78,7 @@ const Alert = ({ children, type, ...restProps }) => {
     loglevel.warn("No children defined")
     return null
   }
+
   return (
     <AlertElement type={type} role="alert" {...restProps}>
       <Flag small img={<Icon type={type} />}>
@@ -112,5 +114,6 @@ Alert.defaultProps = {
 }
 
 Alert.themeProps = themeProps
+Alert.createVariants = componentCreateFactory(Alert)
 
 export default Alert
