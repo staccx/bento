@@ -129,10 +129,11 @@ describe("Theme", () => {
     })
 
     it("Themeprop creating", () => {
-      Alert.themeProps.alert.createVariants({
-        scream: "test"
+      Alert.createVariants({
+        alert: {
+          scream: "test"
+        }
       })
-
       expect(instance[Alert.themeProps.alert.name]).toStrictEqual({
         scream: "test"
       })

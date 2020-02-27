@@ -41,9 +41,10 @@ export const componentCreateFactory = component => variants => {
         }. Valid themeProps are ${Object.keys(component.themeProps).join(", ")}`
       )
     }
+    const themeProp = component.themeProps[key]
     const variant = variants[key]
 
-    const styles = createVariants(variant, key)
+    const styles = createVariants(variant, themeProp.name)
     instance.append(styles)
   }
 }

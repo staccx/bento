@@ -142,7 +142,7 @@ describe("Alert", () => {
           }
         })
       }).not.toThrow()
-      expect(instance.alert).toStrictEqual({
+      expect(instance.ALERT).toStrictEqual({
         _default: "background-color: blue;"
       })
     })
