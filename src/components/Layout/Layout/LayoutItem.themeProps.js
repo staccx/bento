@@ -1,11 +1,10 @@
 import { themePropTypes } from "../../../theming"
 
 const themeProps = {
-  list: {
-    name: "PACK",
+  container: {
+    name: "LAYOUT_ITEM",
     description: "",
     type: themePropTypes.style
   }
 }
-
 export default themeProps

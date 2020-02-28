@@ -5,12 +5,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import {
-  applyVariants,
-  color,
-  spacing,
-  themePropTypes
-} from "../../../../theming"
+import { applyVariants, color, spacing } from "../../../../theming"
+import themeProps from "./Slider2.Handle.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
 const Slider2Handle = ({
   className,
@@ -29,14 +26,6 @@ const Slider2Handle = ({
     {...restProps}
   />
 )
-
-Slider2Handle.themeProps = {
-  handle: {
-    name: "SLIDER2_HANDLE",
-    description: "Handle style",
-    type: themePropTypes.style
-  }
-}
 
 const HandleButton = styled.button`
   position: absolute;
@@ -78,6 +67,8 @@ Slider2Handle.propTypes = {
   }).isRequired,
   getHandleProps: PropTypes.func.isRequired
 }
+Slider2Handle.themeProps = themeProps
+Slider2Handle.createVariants = componentCreateFactory(Slider2Handle)
 
 /** @component */
 export default Slider2Handle

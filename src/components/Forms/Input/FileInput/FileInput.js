@@ -16,6 +16,7 @@ import {
 } from "../../../../theming"
 import ThemeComponent from "../../../Theme/ThemeComponent"
 import themeProps from "./FileInput.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 const tinycolor = require("tinycolor2")
 
 class FileInput extends Component {
@@ -195,4 +196,6 @@ FileInput.defaultProps = {
   showFileName: true
 }
 FileInput.themeProps = themeProps
+FileInput.createVariants = componentCreateFactory(FileInput)
+
 export default FileInput

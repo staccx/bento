@@ -14,6 +14,7 @@ import {
 import { usePostalCode } from "../../../../hooks/usePostalCode/usePostalCode"
 import Alert from "../../../Alert/Alert"
 import themeProps from "./PostalCode.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
 /**
  * Input for Norwegian Postal codes. Adds PostalPlace according to the number. Input is imported from Input-component
@@ -93,5 +94,6 @@ PostalCodeInput.defaultProps = {
   locale: "nb"
 }
 PostalCodeInput.themeProps = themeProps
+PostalCodeInput.createVariants = componentCreateFactory(PostalCodeInput)
 
 export default PostalCodeInput

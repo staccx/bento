@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { applyVariants, color, fontWeight } from "../../../../theming"
 import themeProps from "./Slider.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
 class Slider extends React.PureComponent {
   constructor(props, context) {
@@ -226,5 +227,6 @@ Slider.propTypes = {
   value: PropTypes.any
 }
 Slider.themeProps = themeProps
+Slider.createVariants = componentCreateFactory(Slider)
 
 export default Slider

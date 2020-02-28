@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { spacing, grid, applyVariants, commonPropTypes } from "../../../theming"
 import themeProps from "./Layout.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 /**
  * The default Layout-Component. Can be used with Both LayoutItem inside as well as other components.
@@ -110,5 +111,6 @@ Layout.propTypes = {
   paddingTop: PropTypes.string
 }
 Layout.themeProps = themeProps
+Layout.createVariants = componentCreateFactory(Layout)
 
 export default Layout

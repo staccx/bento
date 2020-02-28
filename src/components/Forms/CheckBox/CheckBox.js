@@ -15,6 +15,7 @@ import {
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 import themeProps from "./CheckBox.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const CheckBox = ({
   children,
@@ -179,5 +180,6 @@ CheckBox.defaultProps = {
   checkIcon: null
 }
 CheckBox.themeProps = themeProps
+CheckBox.createVariants = componentCreateFactory(CheckBox)
 
 export default CheckBox

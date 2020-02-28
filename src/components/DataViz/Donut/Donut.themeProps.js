@@ -1,4 +1,4 @@
-import { themePropTypes, createVariantsFunctionFactory } from "../../../theming"
+import { themePropTypes } from "../../../theming"
 
 const themeProps = {
   donut: {
@@ -17,4 +17,4 @@ const themeProps = {
     type: themePropTypes.style
   }
 }
-export default createVariantsFunctionFactory(themeProps)
+export default themeProps

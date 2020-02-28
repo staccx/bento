@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { applyVariants, spacing } from "../../theming"
 import SkeletonPulse from "./Skeleton.Pulse"
 import themeProps from "./Skeleton.Circle.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 const SkeletonCircle = ({ className, width, height, ...restProps }) => {
   return (
@@ -39,5 +40,6 @@ SkeletonCircle.propTypes = {
   className: PropTypes.string
 }
 SkeletonCircle.themeProps = themeProps
+SkeletonCircle.createVariants = componentCreateFactory(SkeletonCircle)
 
 export default SkeletonCircle

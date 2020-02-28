@@ -14,6 +14,7 @@ import {
   commonPropTypes
 } from "../../../theming"
 import themeProps from "./Legend.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Legend = ({ className, children, ...rest }) => (
   <LegendElement className={className} {...rest}>
@@ -40,6 +41,7 @@ Legend.propTypes = {
   className: PropTypes.string
 }
 Legend.themeProps = themeProps
+Legend.createVariants = componentCreateFactory(Legend)
 
 /** @component */
 export default Legend

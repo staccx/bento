@@ -14,6 +14,7 @@ import {
   color
 } from "../../../../theming"
 import themeProps from "./SliderKeyboardInput.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
 const removeSpaces = value => value.replace(/\s/g, "")
 
@@ -236,5 +237,6 @@ SliderKeyboardInput.propTypes = {
   showLabel: PropTypes.bool
 }
 SliderKeyboardInput.themeProps = themeProps
+SliderKeyboardInput.createVariants = componentCreateFactory(SliderKeyboardInput)
 
 export default SliderKeyboardInput

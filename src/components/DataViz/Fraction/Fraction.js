@@ -4,6 +4,7 @@ import styled, { css } from "styled-components"
 import hideVisually from "../../../theming/styles/hideVisually"
 import { applyVariants, color, spacing } from "../../../theming"
 import themeProps from "./Fraction.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Fraction = ({
   value,
@@ -94,5 +95,6 @@ Fraction.propTypes = {
   onClick: PropTypes.func
 }
 Fraction.themeProps = themeProps
+Fraction.createVariants = componentCreateFactory(Fraction)
 
 export default Fraction

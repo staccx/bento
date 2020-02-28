@@ -10,6 +10,7 @@ import { applyVariants, spacing, color } from "../../../../theming"
 import Handle from "./Slider2.Handle"
 import Track from "./Slider2.Track"
 import themeProps from "./Slider2.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
 class Slider2 extends React.Component {
   state = {
@@ -172,6 +173,7 @@ Slider2.propTypes = {
   onKeyDown: PropTypes.func
 }
 Slider2.themeProps = themeProps
+Slider2.createVariants = componentCreateFactory(Slider2)
 
 /** @component */
 export default Slider2

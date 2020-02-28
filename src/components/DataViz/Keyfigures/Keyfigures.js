@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { formatCurrency } from "../../../formatting"
 import { applyVariants, spacing, color, font } from "../../../theming"
 import themeProps from "./Keyfigures.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const KeyFigures = ({ figures, variant }) => (
   <List variant={variant}>
@@ -74,5 +75,6 @@ KeyFigures.propTypes = {
 }
 KeyFigures.defaultProps = defaultProps
 KeyFigures.themeProps = themeProps
+KeyFigures.createVariants = componentCreateFactory(KeyFigures)
 
 export default KeyFigures

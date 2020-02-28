@@ -1,11 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import {
-  applyVariants,
-  commonPropTypes,
-  themePropTypes
-} from "../../../theming"
+import { applyVariants, commonPropTypes } from "../../../theming"
+import themeProps from "./LayoutItem.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const LayoutItem = ({ area, children, className, variant, ...rest }) => (
   <LayoutItemContainer
@@ -17,14 +15,6 @@ const LayoutItem = ({ area, children, className, variant, ...rest }) => (
     {children}
   </LayoutItemContainer>
 )
-
-LayoutItem.themeProps = {
-  container: {
-    name: "LAYOUT_ITEM",
-    description: "",
-    type: themePropTypes.style
-  }
-}
 
 export const LayoutItemContainer = styled.div`
   grid-area: ${props => props.area};
@@ -55,5 +45,7 @@ LayoutItem.propTypes = {
    */
   variant: PropTypes.string
 }
+LayoutItem.themeProps = themeProps
+LayoutItem.createVariants = componentCreateFactory(LayoutItem)
 
 export default LayoutItem

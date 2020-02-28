@@ -12,6 +12,7 @@ import {
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 import themeProps from "./LinkListItem.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
@@ -88,4 +89,6 @@ const Button = styled.a`
   ${applyVariants(themeProps.link)};
 `
 LinkListItem.themeProps = themeProps
+LinkListItem.createVariants = componentCreateFactory(LinkListItem)
+
 export default LinkListItem

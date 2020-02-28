@@ -12,6 +12,7 @@ import {
   commonPropTypes
 } from "../../../theming"
 import themeProps from "./RadioButton.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Radio = styled.input`
   position: absolute;
@@ -147,5 +148,6 @@ RadioButton.defaultProps = {
 }
 
 RadioButton.themeProps = themeProps
+RadioButton.createVariants = componentCreateFactory(RadioButton)
 
 export default RadioButton

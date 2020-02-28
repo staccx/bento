@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { applyVariants } from "../../theming"
 import themeProps from "./Table.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 class Table extends React.Component {
   render() {
@@ -93,6 +94,7 @@ Table.propTypes = {
   overrideHeaders: PropTypes.array
 }
 Table.themeProps = themeProps
+Table.createVariants = componentCreateFactory(Table)
 
 export default Table
 
