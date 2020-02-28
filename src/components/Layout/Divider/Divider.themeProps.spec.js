@@ -1,17 +1,21 @@
 import themeProps from "./Divider.themeProps"
+import { theme as instance } from "../../../theming"
+import Divider from "./Divider"
 
 describe("Divider", () => {
   describe("Theme props", () => {
     it("rule", () => {
       expect(themeProps.rule).not.toBeNull()
-      expect(themeProps.rule.hasOwnProperty("createVariants")).toBe(true)
+      expect(Divider.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.rule.createVariants({
-        myVariant: style
+      Divider.createVariants({
+        rule: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.rule.name)).toBe(true)
-      expect(variant[themeProps.rule.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.rule.name)).toBe(true)
+      expect(instance[themeProps.rule.name].myVariant).toEqual(style)
     })
   })
 })

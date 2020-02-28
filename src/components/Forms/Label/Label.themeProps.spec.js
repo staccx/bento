@@ -1,17 +1,21 @@
 import themeProps from "./Label.themeProps"
+import { theme as instance } from "../../../theming"
+import Label from "./Label"
 
 describe("Label", () => {
   describe("Theme props", () => {
     it("label", () => {
       expect(themeProps.label).not.toBeNull()
-      expect(themeProps.label.hasOwnProperty("createVariants")).toBe(true)
+      expect(Label.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.label.createVariants({
-        myVariant: style
+      Label.createVariants({
+        label: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.label.name)).toBe(true)
-      expect(variant[themeProps.label.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.label.name)).toBe(true)
+      expect(instance[themeProps.label.name].myVariant).toEqual(style)
     })
   })
 })

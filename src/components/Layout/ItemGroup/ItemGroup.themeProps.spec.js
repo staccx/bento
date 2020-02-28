@@ -1,28 +1,34 @@
 import themeProps from "./ItemGroup.themeProps"
+import { theme as instance } from "../../../theming"
+import ItemGroup from "./ItemGroup"
 
 describe("ItemGroup", () => {
   describe("Theme props", () => {
     it("wrapper", () => {
       expect(themeProps.wrapper).not.toBeNull()
-      expect(themeProps.wrapper.hasOwnProperty("createVariants")).toBe(true)
+      expect(ItemGroup.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.wrapper.createVariants({
-        myVariant: style
+      ItemGroup.createVariants({
+        wrapper: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
-      expect(variant[themeProps.wrapper.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
+      expect(instance[themeProps.wrapper.name].myVariant).toEqual(style)
     })
     it("group", () => {
       expect(themeProps.group).not.toBeNull()
-      expect(themeProps.group.hasOwnProperty("createVariants")).toBe(true)
+      expect(ItemGroup.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.group.createVariants({
-        myVariant: style
+      ItemGroup.createVariants({
+        group: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.group.name)).toBe(true)
-      expect(variant[themeProps.group.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.group.name)).toBe(true)
+      expect(instance[themeProps.group.name].myVariant).toEqual(style)
     })
   })
 })

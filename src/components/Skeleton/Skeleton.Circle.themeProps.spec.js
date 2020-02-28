@@ -1,17 +1,21 @@
 import themeProps from "./Skeleton.Circle.themeProps"
+import { theme as instance } from "../../theming"
+import SkeletonCircle from "./Skeleton.Circle"
 
 describe("Circle", () => {
   describe("Theme props", () => {
     it("circle", () => {
       expect(themeProps.circle).not.toBeNull()
-      expect(themeProps.circle.hasOwnProperty("createVariants")).toBe(true)
+      expect(SkeletonCircle.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.circle.createVariants({
-        myVariant: style
+      SkeletonCircle.createVariants({
+        circle: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.circle.name)).toBe(true)
-      expect(variant[themeProps.circle.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.circle.name)).toBe(true)
+      expect(instance[themeProps.circle.name].myVariant).toEqual(style)
     })
   })
 })

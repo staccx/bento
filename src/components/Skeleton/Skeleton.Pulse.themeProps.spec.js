@@ -1,17 +1,21 @@
 import themeProps from "./Skeleton.Pulse.themeProps"
+import { theme as instance } from "../../theming"
+import SkeletonPulse from "./Skeleton.Pulse"
 
 describe("Pulse", () => {
   describe("Theme props", () => {
     it("pulse", () => {
       expect(themeProps.pulse).not.toBeNull()
-      expect(themeProps.pulse.hasOwnProperty("createVariants")).toBe(true)
+      expect(SkeletonPulse.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.pulse.createVariants({
-        myVariant: style
+      SkeletonPulse.createVariants({
+        pulse: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.pulse.name)).toBe(true)
-      expect(variant[themeProps.pulse.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.pulse.name)).toBe(true)
+      expect(instance[themeProps.pulse.name].myVariant).toEqual(style)
     })
   })
 })

@@ -35,7 +35,7 @@ const Track = styled.div`
   border: 0;
   border-radius: 7px;
   background-color: ${color.primary};
-  ${applyVariants(Slider2Track.themeProps.track)};
+  ${applyVariants(themeProps.track)};
 `
 
 Slider2Track.defaultProps = {

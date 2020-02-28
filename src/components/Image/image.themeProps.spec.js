@@ -1,28 +1,34 @@
 import themeProps from "./Image.themeProps"
+import { theme as instance } from "../../theming"
+import Image from "./Image"
 
 describe("Image", () => {
   describe("Theme props", () => {
     it("image", () => {
       expect(themeProps.image).not.toBeNull()
-      expect(themeProps.image.hasOwnProperty("createVariants")).toBe(true)
+      expect(Image.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.image.createVariants({
-        myVariant: style
+      Image.createVariants({
+        image: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.image.name)).toBe(true)
-      expect(variant[themeProps.image.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.image.name)).toBe(true)
+      expect(instance[themeProps.image.name].myVariant).toEqual(style)
     })
     it("container", () => {
       expect(themeProps.container).not.toBeNull()
-      expect(themeProps.container.hasOwnProperty("createVariants")).toBe(true)
+      expect(Image.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.container.createVariants({
-        myVariant: style
+      Image.createVariants({
+        container: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.container.name)).toBe(true)
-      expect(variant[themeProps.container.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.container.name)).toBe(true)
+      expect(instance[themeProps.container.name].myVariant).toEqual(style)
     })
   })
 })

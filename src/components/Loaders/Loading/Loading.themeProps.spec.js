@@ -1,28 +1,34 @@
 import themeProps from "./Loading.themeProps"
+import { theme as instance } from "../../../theming"
+import Loading from "./Loading"
 
 describe("Loading", () => {
   describe("Theme props", () => {
     it("component", () => {
       expect(themeProps.component).not.toBeNull()
-      expect(themeProps.component.hasOwnProperty("createVariants")).toBe(true)
+      expect(Loading.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.component.createVariants({
-        myVariant: style
+      Loading.createVariants({
+        component: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.component.name)).toBe(true)
-      expect(variant[themeProps.component.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.component.name)).toBe(true)
+      expect(instance[themeProps.component.name].myVariant).toEqual(style)
     })
     it("loading", () => {
       expect(themeProps.loading).not.toBeNull()
-      expect(themeProps.loading.hasOwnProperty("createVariants")).toBe(true)
+      expect(Loading.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.loading.createVariants({
-        myVariant: style
+      Loading.createVariants({
+        loading: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.loading.name)).toBe(true)
-      expect(variant[themeProps.loading.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.loading.name)).toBe(true)
+      expect(instance[themeProps.loading.name].myVariant).toEqual(style)
     })
   })
 })

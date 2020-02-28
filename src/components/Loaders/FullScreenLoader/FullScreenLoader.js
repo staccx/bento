@@ -150,7 +150,7 @@ const CurrentMsg = styled.div`
 FullScreenLoader.propTypes = {
   messages: PropTypes.array.isRequired
 }
-FullScreenContainer.themeProps = themeProps
-FullScreenContainer.createVariants = componentCreateFactory(FullScreenContainer)
+FullScreenLoader.themeProps = themeProps
+FullScreenLoader.createVariants = componentCreateFactory(FullScreenLoader)
 
 export default FullScreenLoader

@@ -1,39 +1,47 @@
 import themeProps from "./RadioButton.themeProps"
+import { theme as instance } from "../../../theming"
+import RadioButton from "./RadioButton"
 
 describe("RadioButton", () => {
   describe("Theme props", () => {
     it("radio", () => {
       expect(themeProps.radio).not.toBeNull()
-      expect(themeProps.radio.hasOwnProperty("createVariants")).toBe(true)
+      expect(RadioButton.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.radio.createVariants({
-        myVariant: style
+      RadioButton.createVariants({
+        radio: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.radio.name)).toBe(true)
-      expect(variant[themeProps.radio.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.radio.name)).toBe(true)
+      expect(instance[themeProps.radio.name].myVariant).toEqual(style)
     })
     it("label", () => {
       expect(themeProps.label).not.toBeNull()
-      expect(themeProps.label.hasOwnProperty("createVariants")).toBe(true)
+      expect(RadioButton.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.label.createVariants({
-        myVariant: style
+      RadioButton.createVariants({
+        label: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.label.name)).toBe(true)
-      expect(variant[themeProps.label.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.label.name)).toBe(true)
+      expect(instance[themeProps.label.name].myVariant).toEqual(style)
     })
     it("wrapper", () => {
       expect(themeProps.wrapper).not.toBeNull()
-      expect(themeProps.wrapper.hasOwnProperty("createVariants")).toBe(true)
+      expect(RadioButton.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.wrapper.createVariants({
-        myVariant: style
+      RadioButton.createVariants({
+        wrapper: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
-      expect(variant[themeProps.wrapper.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
+      expect(instance[themeProps.wrapper.name].myVariant).toEqual(style)
     })
   })
 })

@@ -50,7 +50,7 @@ const HandleButton = styled.button`
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
   }
 
-  ${applyVariants(Slider2Handle.themeProps.handle)};
+  ${applyVariants(themeProps.handle)};
 `
 
 Slider2Handle.defaultProps = {

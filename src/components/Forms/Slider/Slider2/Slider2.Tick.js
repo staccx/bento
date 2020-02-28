@@ -24,7 +24,7 @@ const StartTick = styled.button`
   width: 1px;
   height: 5px;
   background-color: ${color.gray};
-  ${applyVariants(Slider2Tick.themeProps.startTick)};
+  ${applyVariants(themeProps.startTick)};
 `
 const EndTick = styled.button`
   position: absolute;
@@ -34,7 +34,7 @@ const EndTick = styled.button`
   text-align: center;
   font-size: ${font.small};
   background-color: ${color.gray};
-  ${applyVariants(Slider2Tick.themeProps.endTick)};
+  ${applyVariants(themeProps.endTick)};
 `
 
 Slider2Tick.defaultProps = {

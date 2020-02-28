@@ -23,7 +23,7 @@ const DigitWrapper = styled.div`
   height: ${p => p.size}px;
   width: ${p => (p.isEmpty ? p.size / 2 : p.size / 1.5)}px;
   overflow: hidden;
-  ${applyVariants(Digit.themeProps.wrapper.name)};
+  ${applyVariants(themeProps.wrapper.name)};
 `
 
 const DigitContainer = styled.div`
@@ -35,7 +35,7 @@ const DigitContainer = styled.div`
       transform: translateY(-${p.digit}em);
       transition: transform ${p.speed}ms cubic-bezier(0, 0, 0.2, 1);
       `};
-  ${applyVariants(Digit.themeProps.container.name)};
+  ${applyVariants(themeProps.container.name)};
 `
 
 Digit.propTypes = {

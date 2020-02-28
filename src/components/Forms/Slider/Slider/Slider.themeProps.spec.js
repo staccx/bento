@@ -1,39 +1,47 @@
 import themeProps from "./Slider.themeProps"
+import { theme as instance } from "../../../../theming"
+import Slider from "./Slider"
 
 describe("Slider", () => {
   describe("Theme props", () => {
     it("thumb", () => {
       expect(themeProps.thumb).not.toBeNull()
-      expect(themeProps.thumb.hasOwnProperty("createVariants")).toBe(true)
+      expect(Slider.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.thumb.createVariants({
-        myVariant: style
+      Slider.createVariants({
+        thumb: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.thumb.name)).toBe(true)
-      expect(variant[themeProps.thumb.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.thumb.name)).toBe(true)
+      expect(instance[themeProps.thumb.name].myVariant).toEqual(style)
     })
     it("track", () => {
       expect(themeProps.track).not.toBeNull()
-      expect(themeProps.track.hasOwnProperty("createVariants")).toBe(true)
+      expect(Slider.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.track.createVariants({
-        myVariant: style
+      Slider.createVariants({
+        track: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.track.name)).toBe(true)
-      expect(variant[themeProps.track.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.track.name)).toBe(true)
+      expect(instance[themeProps.track.name].myVariant).toEqual(style)
     })
     it("input", () => {
       expect(themeProps.input).not.toBeNull()
-      expect(themeProps.input.hasOwnProperty("createVariants")).toBe(true)
+      expect(Slider.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.input.createVariants({
-        myVariant: style
+      Slider.createVariants({
+        input: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.input.name)).toBe(true)
-      expect(variant[themeProps.input.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.input.name)).toBe(true)
+      expect(instance[themeProps.input.name].myVariant).toEqual(style)
     })
   })
 })

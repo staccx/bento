@@ -1,17 +1,21 @@
 import themeProps from "./Tag.themeProps"
+import { theme as instance } from "../../../theming"
+import Tag from "./Tag"
 
 describe("Tag", () => {
   describe("Theme props", () => {
     it("tag", () => {
       expect(themeProps.tag).not.toBeNull()
-      expect(themeProps.tag.hasOwnProperty("createVariants")).toBe(true)
+      expect(Tag.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.tag.createVariants({
-        myVariant: style
+      Tag.createVariants({
+        tag: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.tag.name)).toBe(true)
-      expect(variant[themeProps.tag.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.tag.name)).toBe(true)
+      expect(instance[themeProps.tag.name].myVariant).toEqual(style)
     })
   })
 })

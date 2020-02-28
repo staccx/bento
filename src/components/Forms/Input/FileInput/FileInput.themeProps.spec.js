@@ -1,63 +1,73 @@
 import themeProps from "./FileInput.themeProps"
+import { theme as instance } from "../../../../theming"
+import FileInput from "./FileInput"
 
 describe("FileInput", () => {
   describe("Theme props", () => {
     it("wrapper", () => {
       expect(themeProps.wrapper).not.toBeNull()
-      expect(themeProps.wrapper.hasOwnProperty("createVariants")).toBe(true)
+      expect(FileInput.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.wrapper.createVariants({
-        myVariant: style
+      FileInput.createVariants({
+        wrapper: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
-      expect(variant[themeProps.wrapper.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
+      expect(instance[themeProps.wrapper.name].myVariant).toEqual(style)
     })
     it("input", () => {
       expect(themeProps.input).not.toBeNull()
-      expect(themeProps.input.hasOwnProperty("createVariants")).toBe(true)
+      expect(FileInput.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.input.createVariants({
-        myVariant: style
+      FileInput.createVariants({
+        input: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.input.name)).toBe(true)
-      expect(variant[themeProps.input.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.input.name)).toBe(true)
+      expect(instance[themeProps.input.name].myVariant).toEqual(style)
     })
     it("label", () => {
       expect(themeProps.label).not.toBeNull()
-      expect(themeProps.label.hasOwnProperty("createVariants")).toBe(true)
+      expect(FileInput.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.label.createVariants({
-        myVariant: style
+      FileInput.createVariants({
+        label: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.label.name)).toBe(true)
-      expect(variant[themeProps.label.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.label.name)).toBe(true)
+      expect(instance[themeProps.label.name].myVariant).toEqual(style)
     })
     it("icon", () => {
       expect(themeProps.icon).not.toBeNull()
-      expect(themeProps.icon.hasOwnProperty("createVariants")).toBe(true)
+      expect(FileInput.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.icon.createVariants({
-        myVariant: style
+      FileInput.createVariants({
+        icon: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.icon.name)).toBe(true)
-      expect(variant[themeProps.icon.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.icon.name)).toBe(true)
+      expect(instance[themeProps.icon.name].myVariant).toEqual(style)
     })
     it("iconComponent", () => {
       expect(themeProps.iconComponent).not.toBeNull()
-      expect(themeProps.iconComponent.hasOwnProperty("createVariants")).toBe(
-        true
-      )
+      expect(FileInput.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.iconComponent.createVariants({
-        myVariant: style
+      FileInput.createVariants({
+        iconComponent: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.iconComponent.name)).toBe(true)
-      expect(variant[themeProps.iconComponent.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.iconComponent.name)).toBe(true)
+      expect(instance[themeProps.iconComponent.name].myVariant).toEqual(style)
     })
   })
 })

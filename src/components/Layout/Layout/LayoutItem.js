@@ -18,7 +18,7 @@ const LayoutItem = ({ area, children, className, variant, ...rest }) => (
 
 export const LayoutItemContainer = styled.div`
   grid-area: ${props => props.area};
-  ${applyVariants(LayoutItem.themeProps.container)};
+  ${applyVariants(themeProps.container)};
 `
 
 LayoutItem.defaultProps = {

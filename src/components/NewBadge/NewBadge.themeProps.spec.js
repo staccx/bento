@@ -1,28 +1,34 @@
 import themeProps from "./NewBadge.themeProps"
+import { theme as instance } from "../../theming"
+import NewBadge from "./NewBadge"
 
 describe("NewBadge", () => {
   describe("Theme props", () => {
     it("wrapper", () => {
       expect(themeProps.wrapper).not.toBeNull()
-      expect(themeProps.wrapper.hasOwnProperty("createVariants")).toBe(true)
+      expect(NewBadge.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.wrapper.createVariants({
-        myVariant: style
+      NewBadge.createVariants({
+        wrapper: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
-      expect(variant[themeProps.wrapper.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
+      expect(instance[themeProps.wrapper.name].myVariant).toEqual(style)
     })
     it("badge", () => {
       expect(themeProps.badge).not.toBeNull()
-      expect(themeProps.badge.hasOwnProperty("createVariants")).toBe(true)
+      expect(NewBadge.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.badge.createVariants({
-        myVariant: style
+      NewBadge.createVariants({
+        badge: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.badge.name)).toBe(true)
-      expect(variant[themeProps.badge.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.badge.name)).toBe(true)
+      expect(instance[themeProps.badge.name].myVariant).toEqual(style)
     })
   })
 })

@@ -1,28 +1,34 @@
 import themeProps from "./SliderKeyboardInput.themeProps"
+import { theme as instance } from "../../../../theming"
+import SliderKeyboardInput from "./SliderKeyboardInput"
 
 describe("SliderKeyboardInput", () => {
   describe("Theme props", () => {
     it("wrapper", () => {
       expect(themeProps.wrapper).not.toBeNull()
-      expect(themeProps.wrapper.hasOwnProperty("createVariants")).toBe(true)
+      expect(SliderKeyboardInput.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.wrapper.createVariants({
-        myVariant: style
+      SliderKeyboardInput.createVariants({
+        wrapper: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
-      expect(variant[themeProps.wrapper.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
+      expect(instance[themeProps.wrapper.name].myVariant).toEqual(style)
     })
     it("input", () => {
       expect(themeProps.input).not.toBeNull()
-      expect(themeProps.input.hasOwnProperty("createVariants")).toBe(true)
+      expect(SliderKeyboardInput.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.input.createVariants({
-        myVariant: style
+      SliderKeyboardInput.createVariants({
+        input: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.input.name)).toBe(true)
-      expect(variant[themeProps.input.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.input.name)).toBe(true)
+      expect(instance[themeProps.input.name].myVariant).toEqual(style)
     })
   })
 })
