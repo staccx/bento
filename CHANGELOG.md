@@ -1,3 +1,33 @@
+## [10.0.1-alpha.14](https://github.com/staccx/bento/compare/v10.0.1-alpha.13...v10.0.1-alpha.14) (2020-02-28)
+
+
+### Features
+
+* **components:** add createVariants to all components ([b73705f](https://github.com/staccx/bento/commit/b73705f))
+* **components:** add createVariants to Anchor ([cdd3b0e](https://github.com/staccx/bento/commit/cdd3b0e))
+
+
+
+## [10.0.1-alpha.13](https://github.com/staccx/bento/compare/v10.0.1-alpha.12...v10.0.1-alpha.13) (2020-02-27)
+
+
+### Bug Fixes
+
+* **formatting:** remove support for experimental unit style ([a9f416d](https://github.com/staccx/bento/commit/a9f416d))
+* **storybook:** fixes [#3](https://github.com/staccx/bento/issues/3) and resets variants when unmounting ([90a7f99](https://github.com/staccx/bento/commit/90a7f99))
+* **theming:** fix theming add styles to keyname ([6bcde96](https://github.com/staccx/bento/commit/6bcde96))
+
+
+### Features
+
+* **components:** add new ThemeProvider ([09f51e2](https://github.com/staccx/bento/commit/09f51e2))
+* **components:** add ThemeProvider to exports ([93a623a](https://github.com/staccx/bento/commit/93a623a))
+* **components:** alert now has createVariants ([9faa783](https://github.com/staccx/bento/commit/9faa783))
+* **theming:** add function to allow componennts to have createVariants ([351103f](https://github.com/staccx/bento/commit/351103f))
+* **theming:** add instance to export ([626f7f0](https://github.com/staccx/bento/commit/626f7f0))
+
+
+
 ## [10.0.1-alpha.12](https://github.com/staccx/bento/compare/v10.0.1-alpha.11...v10.0.1-alpha.12) (2020-02-24)
 
 
