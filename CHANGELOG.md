@@ -1,3 +1,13 @@
+## [10.0.1-alpha.15](https://github.com/staccx/bento/compare/v10.0.1-alpha.14...v10.0.1-alpha.15) (2020-03-01)
+
+
+### Bug Fixes
+
+* **components:** remove unecessary theme with default props ([4a96c5b](https://github.com/staccx/bento/commit/4a96c5b))
+* **theming:** multi theme support in new paradigm ([61e05dd](https://github.com/staccx/bento/commit/61e05dd))
+
+
+
 ## [10.0.1-alpha.14](https://github.com/staccx/bento/compare/v10.0.1-alpha.13...v10.0.1-alpha.14) (2020-02-28)
 
 
