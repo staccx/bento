@@ -1,6 +1,7 @@
 // Convenience
 // Theme class
 import Theme from "./Theme"
+
 export { default as borderRadius } from "./convenience/borderRadius"
 export { default as color } from "./convenience/color"
 export { default as font } from "./convenience/font"
@@ -32,5 +33,8 @@ export { default as fontSmoothing } from "./styles/fontsmoothing"
 export { default as hideVisually } from "./styles/hideVisually"
 
 const instance = new Theme()
+const themes = {
+  _default: instance
+}
 
-export { instance as theme, Theme }
+export { themes, instance as theme, Theme }

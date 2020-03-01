@@ -1,8 +1,9 @@
 import Theme from "./Theme"
-import { theme as instance } from "./"
+import { themes } from "./"
 import Alert from "../components/Alert/Alert"
 import createVariants from "./utils/createVariants"
 // import grids from "../components/Layout/Layout/Layout.Grids"
+const instance = themes._default
 
 const example = {
   name: "Test theme",

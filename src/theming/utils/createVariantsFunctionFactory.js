@@ -1,6 +1,7 @@
 import curry from "lodash.curry"
+import loglevel from "loglevel"
 import createVariants from "./createVariants"
-import { theme as instance } from "../index"
+import { themes, theme as instance, Theme } from "../index"
 
 export default themeProps =>
   Object.entries(themeProps).reduce((acc, curr) => {
@@ -18,7 +19,18 @@ export default themeProps =>
     }
   }, {})
 
-export const componentCreateFactory = component => variants => {
+export const componentCreateFactory = component => (
+  variants,
+  name = "_default"
+) => {
+  if (!themes.hasOwnProperty(name)) {
+    loglevel.warn(
+      `Theme with name ${name} does not exists. One will be created`
+    )
+    themes[name] = new Theme()
+  }
+  const theme = themes[name]
+
   if (!component) {
     throw new Error("No component")
   }
@@ -45,6 +57,6 @@ export const componentCreateFactory = component => variants => {
     const variant = variants[key]
 
     const styles = createVariants(variant, themeProp.name)
-    instance.append(styles)
+    theme.append(styles)
   }
 }
