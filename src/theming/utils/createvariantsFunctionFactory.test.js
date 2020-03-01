@@ -63,4 +63,16 @@ describe("createVariants Function Factory", () => {
       secondary: "something else entirly"
     })
   })
+
+  it("Doesnt work without a component", () => {
+    expect(componentCreateFactory(null)).toThrow()
+  })
+
+  it("Component must have themeprops", () => {
+    expect(componentCreateFactory({})).toThrow()
+  })
+
+  it("Should not work without variants", () => {
+    expect(createVariants).toThrow() // will call function without parameters
+  })
 })
