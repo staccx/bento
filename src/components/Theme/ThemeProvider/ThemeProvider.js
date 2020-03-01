@@ -15,7 +15,7 @@ import { theme as instance } from "../../../theming"
  */
 const ThemeProvider = ({ children, theme }) => {
   return (
-    <StyledThemeProvider theme={theme ?? instance}>
+    <StyledThemeProvider theme={theme}>
       <>
         <GlobalStyle />
         <WebFonts />
