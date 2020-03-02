@@ -1,3 +1,13 @@
+## [10.0.1-alpha.16](https://github.com/staccx/bento/compare/v10.0.1-alpha.15...v10.0.1-alpha.16) (2020-03-02)
+
+
+### Features
+
+* **hooks:** export hooks from bento.js ([4dabfc0](https://github.com/staccx/bento/commit/4dabfc0))
+* **theming:** remove unused factory function ([5f48e6e](https://github.com/staccx/bento/commit/5f48e6e))
+
+
+
 ## [10.0.1-alpha.15](https://github.com/staccx/bento/compare/v10.0.1-alpha.14...v10.0.1-alpha.15) (2020-03-01)
 
 
