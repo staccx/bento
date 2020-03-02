@@ -44,6 +44,11 @@ export * as utils from "./utils"
 export * as i18n from "./i18n"
 
 /**
+ * Hooks
+ */
+export * as hooks from "./hooks"
+
+/**
  * Components
  */
 export * from "./components"
