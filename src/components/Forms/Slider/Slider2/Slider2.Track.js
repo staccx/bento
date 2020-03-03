@@ -5,7 +5,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, color, themePropTypes } from "../../../../theming"
+import { applyVariants, color } from "../../../../theming"
+import themeProps from "./Slider2.Track.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
 const Slider2Track = ({
   source,
@@ -23,14 +25,6 @@ const Slider2Track = ({
   />
 )
 
-Slider2Track.themeProps = {
-  track: {
-    name: "SLIDER2_TRACK",
-    description: "Track style",
-    type: themePropTypes.style
-  }
-}
-
 const Track = styled.div`
   position: absolute;
   left: ${p => p.source.percent}%;
@@ -41,7 +35,7 @@ const Track = styled.div`
   border: 0;
   border-radius: 7px;
   background-color: ${color.primary};
-  ${applyVariants(Slider2Track.themeProps.track)};
+  ${applyVariants(themeProps.track)};
 `
 
 Slider2Track.defaultProps = {
@@ -62,6 +56,7 @@ Slider2Track.propTypes = {
   }).isRequired,
   getTrackProps: PropTypes.func.isRequired
 }
-
+Slider2Track.themeProps = themeProps
+Slider2Track.createVariants = componentCreateFactory(Slider2Track)
 /** @component */
 export default Slider2Track

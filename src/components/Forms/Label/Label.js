@@ -14,6 +14,7 @@ import {
   commonPropTypes
 } from "../../../theming"
 import themeProps from "./Label.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Label = ({ className, children, ...rest }) => (
   <LabelElement className={className} {...rest}>
@@ -40,5 +41,7 @@ Label.propTypes = {
   className: PropTypes.string
 }
 Label.themeProps = themeProps
+Label.createVariants = componentCreateFactory(Label)
+
 /** @component */
 export default Label

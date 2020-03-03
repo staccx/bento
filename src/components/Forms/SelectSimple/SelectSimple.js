@@ -15,6 +15,7 @@ import {
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 import themeProps from "./SelectSimple.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
@@ -120,5 +121,6 @@ SelectSimple.propTypes = {
 }
 
 SelectSimple.themeProps = themeProps
+SelectSimple.createVariants = componentCreateFactory(SelectSimple)
 
 export default SelectSimple

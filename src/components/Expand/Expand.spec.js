@@ -38,6 +38,21 @@ describe("Expand", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+    it("With console", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Expand title="Title" onClick={e => console.log("console")}>
+              <span>
+                <Child />
+              </span>
+              <Child />
+            </Expand>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
     it("No children", () => {
       const tree = renderer
         .create(

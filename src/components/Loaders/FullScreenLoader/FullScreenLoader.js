@@ -5,6 +5,7 @@ import useInterval from "../../../hooks/useInterval"
 import { applyVariants, color, font, spacing } from "../../../theming"
 import Loading from "../Loading/Loading"
 import themeProps from "./FullScreenLoader.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const FullScreenLoader = ({
   messages,
@@ -149,6 +150,7 @@ const CurrentMsg = styled.div`
 FullScreenLoader.propTypes = {
   messages: PropTypes.array.isRequired
 }
-FullScreenContainer.themeProps = themeProps
+FullScreenLoader.themeProps = themeProps
+FullScreenLoader.createVariants = componentCreateFactory(FullScreenLoader)
 
 export default FullScreenLoader

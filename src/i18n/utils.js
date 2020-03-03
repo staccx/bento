@@ -3,6 +3,7 @@ import Text from "../components/Text/Text/Text"
 import React from "react"
 
 export const isBlock = item =>
+  item &&
   item.hasOwnProperty("_type") &&
   (item._type === "block" || item._type === "image")
 

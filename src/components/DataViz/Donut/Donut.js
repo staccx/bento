@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { applyVariants, color } from "../../../theming"
 import themeProps from "./Donut.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Donut = ({ progress, className, warningThreshold, ...rest }) => {
   const dash = 57
@@ -69,5 +70,6 @@ Donut.propTypes = {
   className: PropTypes.string
 }
 Donut.themeProps = themeProps
+Donut.createVariants = componentCreateFactory(Donut)
 
 export default Donut

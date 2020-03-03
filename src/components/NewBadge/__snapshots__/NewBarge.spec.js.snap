@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewBadge Snapshots No props 1`] = `
+<div
+  className="sc-AykKC leOVLw"
+/>
+`;
+
+exports[`NewBadge Snapshots number 1`] = `
+<div
+  className="sc-AykKC leOVLw"
+>
+  <span
+    className="sc-AykKD hJgzdT"
+  >
+    <span>
+      1000
+    </span>
+  </span>
+</div>
+`;
+
+exports[`NewBadge Snapshots number 2`] = `
+<div
+  className="sc-AykKC leOVLw"
+>
+  <span
+    className="sc-AykKD bBaxDh"
+  >
+    <span>
+      10
+    </span>
+  </span>
+</div>
+`;
+
+exports[`NewBadge Snapshots with children 1`] = `
+<div
+  className="sc-AykKC leOVLw"
+>
+  test
+  <span
+    className="sc-AykKD hJgzdT"
+  >
+    <span>
+      1000
+    </span>
+  </span>
+</div>
+`;

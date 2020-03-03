@@ -3,6 +3,7 @@ import React from "react"
 import styled, { css } from "styled-components"
 import { applyVariants, font, fontFamily, spacing, color } from "../../theming"
 import themeProps from "./Breadcrumb.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 const tinycolor = require("tinycolor2")
 
@@ -191,5 +192,6 @@ Breadcrumb.propTypes = {
 }
 Breadcrumb.defaultProps = defaultProps
 Breadcrumb.themeProps = themeProps
+Breadcrumb.createVariants = componentCreateFactory(Breadcrumb)
 
 export default Breadcrumb

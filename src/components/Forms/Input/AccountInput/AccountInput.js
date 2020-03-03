@@ -1,17 +1,20 @@
-import React from "react"
+import React, { useRef } from "react"
 import PropTypes from "prop-types"
 import Input, { InputPropTypes } from "../Input"
 import { accountMasks } from "../masks"
 
 const AccountInput = React.forwardRef(
-  ({ mask, locale = "nb", ...otherProps }, ref) => (
-    <Input
-      type={"tel"}
-      ref={ref}
-      options={accountMasks[locale]}
-      {...otherProps}
-    />
-  )
+  ({ mask, locale = "nb", ...otherProps }, ref) => {
+    const inputRef = useRef(ref)
+    return (
+      <Input
+        type="tel"
+        ref={inputRef}
+        options={accountMasks[locale]}
+        {...otherProps}
+      />
+    )
+  }
 )
 
 AccountInput.propTypes = {

@@ -14,6 +14,7 @@ import {
 } from "../../theming"
 import ThemeComponent from "../Theme/ThemeComponent"
 import themeProps from "./Modal.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 class Modal extends Component {
   constructor(props) {
@@ -212,5 +213,7 @@ Modal.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func
 }
+Modal.themeProps = themeProps
+Modal.createVariants = componentCreateFactory(Modal)
 
 export default Modal

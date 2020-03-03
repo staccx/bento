@@ -60,14 +60,6 @@ const getVariants = (theme, variant, name) => {
  * @returns {object}
  */
 const getVariant = (theme, variant, name) => {
-  if (!variant) {
-    return null
-  }
-
-  if (!name) {
-    return null
-  }
-
   const styles = deepfind(theme, name)
   if (!styles || !styles[variant]) {
     return null

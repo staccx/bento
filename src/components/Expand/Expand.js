@@ -6,6 +6,7 @@ import Caret from "../Icons/Caret/Caret"
 import ThemeComponent from "../Theme/ThemeComponent"
 import { applyVariants, color, spacing, commonPropTypes } from "../../theming"
 import themeProps from "./Expand.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 const Expand = ({
   className,
@@ -153,5 +154,6 @@ Expand.propTypes = {
   hideIcon: PropTypes.bool
 }
 Expand.themeProps = themeProps
+Expand.createVariants = componentCreateFactory(Expand)
 
 export default Expand

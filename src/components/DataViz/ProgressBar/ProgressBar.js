@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { ScaleInX } from "../../../animations"
 import { applyVariants, color, spacing, font } from "../../../theming"
 import themeProps from "./ProgressBar.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const ProgressBar = ({
   progress,
@@ -85,5 +86,6 @@ ProgressBar.propTypes = {
 }
 
 ProgressBar.themeProps = themeProps
+ProgressBar.createVariants = componentCreateFactory(ProgressBar)
 
 export default ProgressBar

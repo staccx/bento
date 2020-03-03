@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { applyVariants, commonPropTypes } from "../../../theming"
 import themeProps from "./Text.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Text = ({ level, children, className, ...restProps }) => {
   return (
@@ -32,5 +33,6 @@ Text.propTypes = {
   className: PropTypes.string
 }
 Text.themeProps = themeProps
+Text.createVariants = componentCreateFactory(Text)
 
 export default Text

@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Digit from "./Digit"
 import { applyVariants, hideVisually } from "../../../theming"
 import themeProps from "./Odometer.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 class Odometer extends React.PureComponent {
   constructor(...props) {
@@ -132,5 +133,6 @@ Odometer.defaultProps = {
 }
 
 Odometer.themeProps = themeProps
+Odometer.createVariants = componentCreateFactory(Odometer)
 
 export default Odometer

@@ -5,6 +5,7 @@ import ThemeComponent from "../../Theme/ThemeComponent"
 import { applyVariants, color, spacing } from "../../../theming"
 import useTimer from "../../../hooks/useTimer"
 import themeProps from "./Loading.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const DefaultLoading = ({ className, variant, ...rest }) => (
   <SignalSpinner className={className} variant={variant} {...rest} />
@@ -94,5 +95,6 @@ Loading.propTypes = {
   variant: PropTypes.string
 }
 Loading.themeProps = themeProps
+Loading.createVariants = componentCreateFactory(Loading)
 
 export default Loading

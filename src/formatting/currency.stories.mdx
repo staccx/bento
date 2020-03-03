@@ -42,7 +42,7 @@ passing symbol, and the symbol of your choice to the function, lets you tack on 
 </Preview>
 
 ## Formatting
-when passing format, you are also able to do more custom formatting of the currencyString. 
+when passing format, you are also able to do more custom formatting of the currencyString.
 This example passes a symbol: "$", and formats it so that the dollar sign is at the front.
 
 <Preview>
@@ -57,7 +57,7 @@ Here is an example of how we generally would format a norwegian currency string
 <Preview>
   <Story name="Norweigan format">
    <CurrencyText>
-   {formatCurrency(100000, { symbol: "kr", format: "$s  $v", suffix:",-" })}
+   {formatCurrency(100000, { symbol: "kr", format: "$s  $v,-", suffix:",-" })}
    </CurrencyText>
   </Story>
 </Preview>

@@ -1,0 +1,525 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SliderKeyboardInput Snapshots Name 1`] = `
+<div
+  className="sc-fzXfLO hOFdXp"
+>
+  <label
+    className="sc-AykKC bonmue"
+    htmlFor="slider"
+  />
+  <div
+    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+  >
+    
+    <input
+      autoFocus={null}
+      className="sc-AykKJ gjiytr"
+      disabled={true}
+      hidden={false}
+      id="slider-keyboard"
+      max={100}
+      min={0}
+      name="slider-keyboard"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={null}
+      placeholder={null}
+      style={null}
+      type="text"
+      value={0}
+    />
+  </div>
+  <div
+    className="sc-AykKK flFszy"
+  >
+    <input
+      defaultValue={0}
+      disabled={false}
+      id="slider"
+      max={100}
+      min={0}
+      name="slider"
+      onChange={[Function]}
+      percentage={0}
+      step={1}
+      type="range"
+    />
+  </div>
+</div>
+`;
+
+exports[`SliderKeyboardInput Snapshots No props 1`] = `
+<div
+  className="sc-fzXfLO hOFdXp"
+>
+  <label
+    className="sc-AykKC bonmue"
+  />
+  <div
+    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+  >
+    
+    <input
+      autoFocus={null}
+      className="sc-AykKJ gjiytr"
+      disabled={true}
+      hidden={false}
+      id="undefined-keyboard"
+      max={100}
+      min={0}
+      name="undefined-keyboard"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={null}
+      placeholder={null}
+      style={null}
+      type="text"
+      value={0}
+    />
+  </div>
+  <div
+    className="sc-AykKK flFszy"
+  >
+    <input
+      defaultValue={0}
+      disabled={false}
+      max={100}
+      min={0}
+      onChange={[Function]}
+      percentage={0}
+      step={1}
+      type="range"
+    />
+  </div>
+</div>
+`;
+
+exports[`SliderKeyboardInput Snapshots all 1`] = `
+<div
+  className="sc-fzXfLO hOFdXp"
+>
+  <label
+    className="sc-AykKC bonmue"
+    htmlFor="slider"
+  >
+    Label
+  </label>
+  <div
+    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+  >
+    <label
+      className="sc-AykKC bonmue sc-AykKH hciGUB"
+      htmlFor="slider-keyboard"
+    >
+      Label
+      
+    </label>
+    
+    <input
+      autoFocus={null}
+      className="sc-AykKJ gjiytr"
+      disabled={true}
+      hidden={false}
+      id="slider-keyboard"
+      max={1000}
+      min={0}
+      name="slider-keyboard"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={null}
+      placeholder={null}
+      style={null}
+      type="text"
+      value={0}
+    />
+  </div>
+  <div
+    className="sc-AykKK cZMSha"
+  >
+    <input
+      defaultValue={0}
+      disabled={false}
+      id="slider"
+      max={1000}
+      min={0}
+      name="slider"
+      onChange={[Function]}
+      percentage={0}
+      step={1}
+      type="range"
+    />
+  </div>
+</div>
+`;
+
+exports[`SliderKeyboardInput Snapshots label 1`] = `
+<div
+  className="sc-fzXfLO hOFdXp"
+>
+  <label
+    className="sc-AykKC bonmue"
+  >
+    Label
+  </label>
+  <div
+    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+  >
+    
+    <input
+      autoFocus={null}
+      className="sc-AykKJ gjiytr"
+      disabled={true}
+      hidden={false}
+      id="undefined-keyboard"
+      max={100}
+      min={0}
+      name="undefined-keyboard"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={null}
+      placeholder={null}
+      style={null}
+      type="text"
+      value={0}
+    />
+  </div>
+  <div
+    className="sc-AykKK flFszy"
+  >
+    <input
+      defaultValue={0}
+      disabled={false}
+      max={100}
+      min={0}
+      onChange={[Function]}
+      percentage={0}
+      step={1}
+      type="range"
+    />
+  </div>
+</div>
+`;
+
+exports[`SliderKeyboardInput Snapshots max 1`] = `
+<div
+  className="sc-fzXfLO hOFdXp"
+>
+  <label
+    className="sc-AykKC bonmue"
+  />
+  <div
+    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+  >
+    
+    <input
+      autoFocus={null}
+      className="sc-AykKJ gjiytr"
+      disabled={true}
+      hidden={false}
+      id="undefined-keyboard"
+      max={1000}
+      min={0}
+      name="undefined-keyboard"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={null}
+      placeholder={null}
+      style={null}
+      type="text"
+      value={0}
+    />
+  </div>
+  <div
+    className="sc-AykKK cZMSha"
+  >
+    <input
+      defaultValue={0}
+      disabled={false}
+      max={1000}
+      min={0}
+      onChange={[Function]}
+      percentage={0}
+      step={1}
+      type="range"
+    />
+  </div>
+</div>
+`;
+
+exports[`SliderKeyboardInput Snapshots min 1`] = `
+<div
+  className="sc-fzXfLO hOFdXp"
+>
+  <label
+    className="sc-AykKC bonmue"
+  />
+  <div
+    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+  >
+    
+    <input
+      autoFocus={null}
+      className="sc-AykKJ gjiytr"
+      disabled={true}
+      hidden={false}
+      id="undefined-keyboard"
+      max={100}
+      min={0}
+      name="undefined-keyboard"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={null}
+      placeholder={null}
+      style={null}
+      type="text"
+      value={0}
+    />
+  </div>
+  <div
+    className="sc-AykKK flFszy"
+  >
+    <input
+      defaultValue={0}
+      disabled={false}
+      max={100}
+      min={0}
+      onChange={[Function]}
+      percentage={0}
+      step={1}
+      type="range"
+    />
+  </div>
+</div>
+`;
+
+exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
+<div
+  className="sc-fzXfLO hOFdXp"
+>
+  <label
+    className="sc-AykKC bonmue"
+  />
+  <div
+    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+  >
+    
+    <input
+      autoFocus={null}
+      className="sc-AykKJ gjiytr"
+      disabled={true}
+      hidden={false}
+      id="undefined-keyboard"
+      max={100}
+      min={0}
+      name="undefined-keyboard"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={null}
+      placeholder={null}
+      style={null}
+      type="text"
+      value={0}
+    />
+  </div>
+  <div
+    className="sc-AykKK flFszy"
+  >
+    <input
+      defaultValue={0}
+      disabled={false}
+      max={100}
+      min={0}
+      onChange={[Function]}
+      percentage={0}
+      step={1}
+      type="range"
+    />
+  </div>
+</div>
+`;
+
+exports[`SliderKeyboardInput Snapshots onChange 1`] = `
+<div
+  className="sc-fzXfLO hOFdXp"
+>
+  <label
+    className="sc-AykKC bonmue"
+  />
+  <div
+    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+  >
+    
+    <input
+      autoFocus={null}
+      className="sc-AykKJ gjiytr"
+      disabled={true}
+      hidden={false}
+      id="undefined-keyboard"
+      max={100}
+      min={0}
+      name="undefined-keyboard"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={null}
+      placeholder={null}
+      style={null}
+      type="text"
+      value={0}
+    />
+  </div>
+  <div
+    className="sc-AykKK flFszy"
+  >
+    <input
+      defaultValue={0}
+      disabled={false}
+      max={100}
+      min={0}
+      onChange={[Function]}
+      percentage={0}
+      step={1}
+      type="range"
+    />
+  </div>
+</div>
+`;
+
+exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
+<div
+  className="sc-fzXfLO hOFdXp"
+>
+  <label
+    className="sc-AykKC bonmue"
+  />
+  <div
+    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+  >
+    
+    
+    <input
+      autoFocus={null}
+      className="sc-AykKJ gjiytr"
+      disabled={true}
+      hidden={false}
+      id="undefined-keyboard"
+      max={100}
+      min={0}
+      name="undefined-keyboard"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={null}
+      placeholder={null}
+      style={null}
+      type="text"
+      value={0}
+    />
+  </div>
+  <div
+    className="sc-AykKK flFszy"
+  >
+    <input
+      defaultValue={0}
+      disabled={false}
+      max={100}
+      min={0}
+      onChange={[Function]}
+      percentage={0}
+      step={1}
+      type="range"
+    />
+  </div>
+</div>
+`;
+
+exports[`SliderKeyboardInput Snapshots step 1`] = `
+<div
+  className="sc-fzXfLO hOFdXp"
+>
+  <label
+    className="sc-AykKC bonmue"
+  />
+  <div
+    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+  >
+    
+    <input
+      autoFocus={null}
+      className="sc-AykKJ gjiytr"
+      disabled={true}
+      hidden={false}
+      id="undefined-keyboard"
+      max={100}
+      min={0}
+      name="undefined-keyboard"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={null}
+      placeholder={null}
+      style={null}
+      type="text"
+      value={0}
+    />
+  </div>
+  <div
+    className="sc-AykKK flFszy"
+  >
+    <input
+      defaultValue={0}
+      disabled={false}
+      max={100}
+      min={0}
+      onChange={[Function]}
+      percentage={0}
+      step={1}
+      type="range"
+    />
+  </div>
+</div>
+`;
+
+exports[`SliderKeyboardInput Snapshots value 1`] = `
+<div
+  className="sc-fzXfLO hOFdXp"
+>
+  <label
+    className="sc-AykKC bonmue"
+  />
+  <div
+    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+  >
+    
+    <input
+      autoFocus={null}
+      className="sc-AykKJ gjiytr"
+      disabled={true}
+      hidden={false}
+      id="undefined-keyboard"
+      max={100}
+      min={0}
+      name="undefined-keyboard"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={null}
+      placeholder={null}
+      style={null}
+      type="text"
+      value={0}
+    />
+  </div>
+  <div
+    className="sc-AykKK flFszy"
+  >
+    <input
+      defaultValue={0}
+      disabled={false}
+      max={100}
+      min={0}
+      onChange={[Function]}
+      percentage={0}
+      step={1}
+      type="range"
+    />
+  </div>
+</div>
+`;

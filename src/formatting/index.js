@@ -1,34 +1,19 @@
-import {
+export {
   formatCurrency,
   createCurrencyMask,
   currencyMaskOptions,
   abbreviateCurrency
 } from "./currency"
-import { formatDateDistance, formatDateRelative, formatDate } from "./date"
-import { default as removeWhitespace } from "./removeWhitespace"
-import { default as formatName } from "./formatName"
-import { default as truncate } from "./truncate"
-import { default as maskFormat } from "./maskFormat"
-import { default as dashIt } from "./dashIt"
-
-/**
- * @deprecated use maskFormat instead
- * @type {Function}
- */
-const formatPhone = maskFormat
-
+export { formatDateDistance, formatDateRelative, formatDate } from "./date"
+export { default as removeWhitespace } from "./removeWhitespace"
+export { default as formatName } from "./formatName"
+export { default as truncate } from "./truncate"
+export { default as maskFormat } from "./maskFormat"
+export { default as dashIt } from "./dashIt"
+export { formatNumber } from "./number"
 export {
-  formatCurrency,
-  createCurrencyMask,
-  currencyMaskOptions,
-  abbreviateCurrency,
-  formatDateRelative,
-  formatDateDistance,
-  formatDate,
-  removeWhitespace,
-  formatName,
-  maskFormat,
-  formatPhone,
-  truncate,
-  dashIt
-}
+  CURRENCY_DISPLAY,
+  STYLE,
+  UNIT_DISPLAY,
+  UNITS
+} from "./number.constants"

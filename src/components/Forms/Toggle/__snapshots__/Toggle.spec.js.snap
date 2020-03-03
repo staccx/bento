@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle Snapshots All 1`] = `
+<label
+  className="sc-AykKC jfIGqs Toggle"
+>
+  <input
+    className="sc-AykKE jyWUNd"
+    defaultChecked={true}
+    disabled={true}
+    name="Group"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <div
+    className="sc-AykKD kUVwnW"
+  >
+    <span>
+      
+    </span>
+  </div>
+</label>
+`;
+
+exports[`Toggle Snapshots Children 1`] = `
+<label
+  className="sc-AykKC jfIGqs"
+>
+  <input
+    className="sc-AykKE jyWUNd"
+    defaultChecked={false}
+    disabled={false}
+    onChange={null}
+    type="checkbox"
+  />
+  <div
+    className="sc-AykKD kUVwnW"
+  >
+    <span>
+      <p>
+        hei
+      </p>
+    </span>
+  </div>
+</label>
+`;
+
+exports[`Toggle Snapshots No props 1`] = `
+<label
+  className="sc-AykKC jfIGqs"
+>
+  <input
+    className="sc-AykKE jyWUNd"
+    defaultChecked={false}
+    disabled={false}
+    onChange={null}
+    type="checkbox"
+  />
+  <div
+    className="sc-AykKD kUVwnW"
+  >
+    <span>
+      
+    </span>
+  </div>
+</label>
+`;
+
+exports[`Toggle Snapshots Toggle 1`] = `
+<label
+  className="sc-AykKC jfIGqs Toggle"
+>
+  <input
+    className="sc-AykKE jyWUNd"
+    defaultChecked={false}
+    disabled={false}
+    onChange={null}
+    type="checkbox"
+  />
+  <div
+    className="sc-AykKD kUVwnW"
+  >
+    <span>
+      
+    </span>
+  </div>
+</label>
+`;
+
+exports[`Toggle Snapshots defaultChecked 1`] = `
+<label
+  className="sc-AykKC jfIGqs"
+>
+  <input
+    className="sc-AykKE jyWUNd"
+    defaultChecked={true}
+    disabled={false}
+    onChange={null}
+    type="checkbox"
+  />
+  <div
+    className="sc-AykKD kUVwnW"
+  >
+    <span>
+      
+    </span>
+  </div>
+</label>
+`;
+
+exports[`Toggle Snapshots disabled 1`] = `
+<label
+  className="sc-AykKC jfIGqs"
+>
+  <input
+    className="sc-AykKE jyWUNd"
+    defaultChecked={false}
+    disabled={true}
+    onChange={null}
+    type="checkbox"
+  />
+  <div
+    className="sc-AykKD kUVwnW"
+  >
+    <span>
+      
+    </span>
+  </div>
+</label>
+`;
+
+exports[`Toggle Snapshots group 1`] = `
+<label
+  className="sc-AykKC jfIGqs"
+>
+  <input
+    className="sc-AykKE jyWUNd"
+    defaultChecked={false}
+    disabled={false}
+    name="Group"
+    onChange={null}
+    type="checkbox"
+  />
+  <div
+    className="sc-AykKD kUVwnW"
+  >
+    <span>
+      
+    </span>
+  </div>
+</label>
+`;
+
+exports[`Toggle Snapshots id 1`] = `
+<label
+  className="sc-AykKC jfIGqs"
+  htmlFor="Group"
+>
+  <input
+    className="sc-AykKE jyWUNd"
+    defaultChecked={false}
+    disabled={false}
+    id="Group"
+    onChange={null}
+    type="checkbox"
+  />
+  <div
+    className="sc-AykKD kUVwnW"
+  >
+    <span>
+      
+    </span>
+  </div>
+</label>
+`;
+
+exports[`Toggle Snapshots input 1`] = `
+<label
+  className="sc-AykKC jfIGqs"
+>
+  <input
+    className="sc-AykKE jyWUNd"
+    defaultChecked={false}
+    disabled={false}
+    onChange={null}
+    type="checkbox"
+  />
+  <div
+    className="sc-AykKD kUVwnW"
+  >
+    <span>
+      
+    </span>
+  </div>
+</label>
+`;
+
+exports[`Toggle Snapshots input 2`] = `
+<label
+  className="sc-AykKC jfIGqs"
+>
+  <input
+    className="sc-AykKE jyWUNd"
+    defaultChecked={false}
+    disabled={false}
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <div
+    className="sc-AykKD kUVwnW"
+  >
+    <span>
+      
+    </span>
+  </div>
+</label>
+`;

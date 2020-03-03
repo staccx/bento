@@ -8,6 +8,7 @@ import countries, { NORWAY } from "./countries"
 import SelectSimple from "../../SelectSimple/SelectSimple"
 import Label from "../../Label/Label"
 import themeProps from "./PhoneInput.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
 /**
  * Input for Phone-numbers.
@@ -105,5 +106,6 @@ PhoneInput.defaultProps = {
   guide: false
 }
 PhoneInput.themeProps = themeProps
+PhoneInput.createVariants = componentCreateFactory(PhoneInput)
 
 export default PhoneInput

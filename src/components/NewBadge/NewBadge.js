@@ -9,6 +9,7 @@ import {
   commonPropTypes
 } from "../../theming"
 import themeProps from "./NewBadge.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 const NewBadge = ({ number, children, variant }) => (
   <NewBadgeWrapper variant={variant}>
@@ -55,4 +56,6 @@ NewBadge.propTypes = {
   children: commonPropTypes.children
 }
 NewBadge.themeProps = themeProps
+NewBadge.createVariants = componentCreateFactory(NewBadge)
+
 export default NewBadge

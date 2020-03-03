@@ -5,7 +5,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, color, font, themePropTypes } from "../../../../theming"
+import { applyVariants, color, font } from "../../../../theming"
+import themeProps from "./Slider2.Tick.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
 const Slider2Tick = ({ tick, count, format, className, ...restProps }) => (
   <div>
@@ -15,19 +17,6 @@ const Slider2Tick = ({ tick, count, format, className, ...restProps }) => (
   </div>
 )
 
-Slider2Tick.themeProps = {
-  startTick: {
-    name: "SLIDER2_START_TICK",
-    description: "Tick style",
-    type: themePropTypes.style
-  },
-  endTick: {
-    name: "SLIDER2_END_TICK",
-    description: "Tick style",
-    type: themePropTypes.style
-  }
-}
-
 const StartTick = styled.button`
   position: absolute;
   left: ${p => p.tick.percent}%;
@@ -35,7 +24,7 @@ const StartTick = styled.button`
   width: 1px;
   height: 5px;
   background-color: ${color.gray};
-  ${applyVariants(Slider2Tick.themeProps.startTick)};
+  ${applyVariants(themeProps.startTick)};
 `
 const EndTick = styled.button`
   position: absolute;
@@ -45,7 +34,7 @@ const EndTick = styled.button`
   text-align: center;
   font-size: ${font.small};
   background-color: ${color.gray};
-  ${applyVariants(Slider2Tick.themeProps.endTick)};
+  ${applyVariants(themeProps.endTick)};
 `
 
 Slider2Tick.defaultProps = {
@@ -62,6 +51,8 @@ Slider2Tick.propTypes = {
   }).isRequired,
   getHandleProps: PropTypes.func.isRequired
 }
+Slider2Tick.themeProps = themeProps
+Slider2Tick.createVariants = componentCreateFactory(Slider2Tick)
 
 /** @component */
 export default Slider2Tick

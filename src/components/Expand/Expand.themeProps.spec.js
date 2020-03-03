@@ -1,63 +1,73 @@
 import themeProps from "./Expand.themeProps"
+import { theme as instance } from "../../theming"
+import Expand from "./Expand"
 
 describe("Expand", () => {
   describe("Theme props", () => {
-    it("apenx", () => {
+    it("iconComponent", () => {
       expect(themeProps.iconComponent).not.toBeNull()
-      expect(themeProps.iconComponent.hasOwnProperty("createVariants")).toBe(
-        true
-      )
+      expect(Expand.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.iconComponent.createVariants({
-        myVariant: style
+      Expand.createVariants({
+        iconComponent: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.iconComponent.name)).toBe(true)
-      expect(variant[themeProps.iconComponent.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.iconComponent.name)).toBe(true)
+      expect(instance[themeProps.iconComponent.name].myVariant).toEqual(style)
     })
-    it("Icon", () => {
+    it("icon", () => {
       expect(themeProps.icon).not.toBeNull()
-      expect(themeProps.icon.hasOwnProperty("createVariants")).toBe(true)
+      expect(Expand.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.icon.createVariants({
-        myVariant: style
+      Expand.createVariants({
+        icon: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.icon.name)).toBe(true)
-      expect(variant[themeProps.icon.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.icon.name)).toBe(true)
+      expect(instance[themeProps.icon.name].myVariant).toEqual(style)
     })
     it("Wrapper", () => {
       expect(themeProps.wrapper).not.toBeNull()
-      expect(themeProps.wrapper.hasOwnProperty("createVariants")).toBe(true)
+      expect(Expand.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.wrapper.createVariants({
-        myVariant: style
+      Expand.createVariants({
+        wrapper: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
-      expect(variant[themeProps.wrapper.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
+      expect(instance[themeProps.wrapper.name].myVariant).toEqual(style)
     })
     it("Button", () => {
       expect(themeProps.button).not.toBeNull()
-      expect(themeProps.button.hasOwnProperty("createVariants")).toBe(true)
+      expect(Expand.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.button.createVariants({
-        myVariant: style
+      Expand.createVariants({
+        button: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.button.name)).toBe(true)
-      expect(variant[themeProps.button.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.button.name)).toBe(true)
+      expect(instance[themeProps.button.name].myVariant).toEqual(style)
     })
     it("Item", () => {
       expect(themeProps.item).not.toBeNull()
-      expect(themeProps.item.hasOwnProperty("createVariants")).toBe(true)
+      expect(Expand.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.item.createVariants({
-        myVariant: style
+      Expand.createVariants({
+        item: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.item.name)).toBe(true)
-      expect(variant[themeProps.item.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.item.name)).toBe(true)
+      expect(instance[themeProps.item.name].myVariant).toEqual(style)
     })
   })
 })

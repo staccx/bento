@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image Snapshots ClassName 1`] = `
+<img
+  className="sc-AykKC pywwI Name"
+  size="medium"
+/>
+`;
+
+exports[`Image Snapshots No props 1`] = `
+<img
+  className="sc-AykKC pywwI"
+  size="medium"
+/>
+`;
+
+exports[`Image Snapshots all 1`] = `
+<div
+  className="sc-AykKE jrtjkV Name"
+  size="huge"
+>
+  <img
+    className="sc-AykKC sc-AykKD fKziJC"
+  />
+</div>
+`;
+
+exports[`Image Snapshots aspectRatio 1`] = `
+<div
+  className="sc-AykKE clwzYy"
+  size="medium"
+>
+  <img
+    className="sc-AykKC sc-AykKD fKziJC"
+  />
+</div>
+`;
+
+exports[`Image Snapshots invalid size 1`] = `
+<img
+  className="sc-AykKC pywwI"
+  size={100}
+/>
+`;
+
+exports[`Image Snapshots round 1`] = `
+<img
+  className="sc-AykKC igjITT"
+  size="medium"
+/>
+`;
+
+exports[`Image Snapshots size 1`] = `
+<img
+  className="sc-AykKC pywwI"
+  size="huge"
+/>
+`;
+
+exports[`Image Snapshots width 1`] = `
+<img
+  className="sc-AykKC pywwI"
+  size="medium"
+/>
+`;

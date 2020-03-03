@@ -3,7 +3,7 @@ import { Badge, Button, IconButton, TooltipLinkList, WithTooltip } from "@storyb
 import addons, { types } from "@storybook/addons";
 import styled from "styled-components";
 import { useAddonState, useChannel, useParameter, useStorybookState } from "@storybook/api";
-import { ThemeIcon } from "../withThemes";
+import { ThemeIcon } from "../addons/withThemes";
 
 export const VARIANTS_TOOL_NAME = "bento-variants";
 
@@ -40,6 +40,7 @@ export const Variants = ({ api }) => {
       }
     }
     return () => {
+      setVariants([])
       setCurrentVariant(null)
       api.getChannel().emit("variant_changed", null)
     }

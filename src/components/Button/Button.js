@@ -13,6 +13,7 @@ import {
   commonPropTypes
 } from "../../theming"
 import themeProps from "./Button.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 const ButtonComp = styled.button`
   background-color: ${color.primary};
@@ -67,5 +68,6 @@ const propTypes = {
 Button.defaultProps = defaultProps
 Button.propTypes = propTypes
 Button.themeProps = themeProps
+Button.createVariants = componentCreateFactory(Button)
 
 export default Button

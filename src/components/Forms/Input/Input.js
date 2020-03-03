@@ -21,6 +21,7 @@ import ThemeComponent from "../../Theme/ThemeComponent"
 import QuestionMark from "../../Icons/QuestionMark/QuestionMark"
 import { FadeIn } from "../../../animations"
 import themeProps from "./Input.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const HelpBox = ({ onClick }) => (
   <HelpButton onClick={onClick} type="button">
@@ -68,7 +69,8 @@ const Input = React.forwardRef(
     }
 
     useEffect(() => {
-      if (options) {
+      if (options && inputRef.current) {
+        console.log(inputRef.current)
         cleave.current = new Cleave(inputRef.current, {
           ...options,
           onValueChanged: onChange
@@ -286,6 +288,7 @@ export const InputDefaultProps = {
   helpText: ""
 }
 Input.themeProps = themeProps
+Input.createVariants = componentCreateFactory(Input)
 
 Input.defaultProps = InputDefaultProps
 /** @component */

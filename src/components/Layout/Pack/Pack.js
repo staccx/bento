@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { applyVariants } from "../../../theming"
 import themeProps from "./Pack.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 /**
  * The pack object simply causes any number of elements pack up horizontally to automatically fill an equal, fluid width of their parent.
@@ -75,5 +76,6 @@ Pack.propTypes = {
   justify: PropTypes.string
 }
 Pack.themeProps = themeProps
+Pack.createVariants = componentCreateFactory(Pack)
 
 export default Pack

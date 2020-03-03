@@ -8,6 +8,7 @@ import {
   commonPropTypes
 } from "../../../theming"
 import themeProps from "./Wrapper.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 /**
  * A Wrapper components that centers content and add spacing on the sides
@@ -79,5 +80,6 @@ Wrapper.propTypes = {
   breakout: PropTypes.bool
 }
 Wrapper.themeProps = themeProps
+Wrapper.createVariants = componentCreateFactory(Wrapper)
 
 export default Wrapper

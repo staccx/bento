@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkeletonPulse Snapshots No props 1`] = `
+<div
+  className="sc-AykKC hKxeYY"
+/>
+`;
+
+exports[`SkeletonPulse Snapshots with className 1`] = `
+<div
+  className="sc-AykKC hKxeYY className"
+/>
+`;

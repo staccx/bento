@@ -8,6 +8,7 @@ import {
   commonPropTypes
 } from "../../../theming"
 import themeProps from "./Headling.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Heading = ({ level, children, className, ...restProps }) => {
   switch (level) {
@@ -129,5 +130,6 @@ Heading.propTypes = {
   className: PropTypes.string
 }
 Heading.themeProps = themeProps
+Heading.createVariants = componentCreateFactory(Heading)
 
 export default Heading

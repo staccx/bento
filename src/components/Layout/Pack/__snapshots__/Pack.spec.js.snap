@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pack Snapshots Middle&Bottom 1`] = `
+<ul
+  className="sc-AykKC gmVKvP"
+>
+  <li
+    className="sc-AykKD jxXobp test"
+  >
+    Loan
+  </li>
+  <li
+    className="sc-AykKD jxXobp test"
+  >
+    Credit
+  </li>
+  <li
+    className="sc-AykKD jxXobp test"
+  >
+    Saving
+  </li>
+  <li
+    className="sc-AykKD jxXobp test"
+  >
+    About this bank
+  </li>
+</ul>
+`;
+
+exports[`Pack Snapshots No props 1`] = `
+<ul
+  className="sc-AykKC gmVKvP"
+>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Loan
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Credit
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Saving
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    About this bank
+  </li>
+</ul>
+`;
+
+exports[`Pack Snapshots bottom 1`] = `
+<ul
+  className="sc-AykKC jjfWXS"
+>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Loan
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Credit
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Saving
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    About this bank
+  </li>
+</ul>
+`;
+
+exports[`Pack Snapshots className 1`] = `
+<ul
+  className="sc-AykKC gmVKvP className"
+>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Loan
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Credit
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Saving
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    About this bank
+  </li>
+</ul>
+`;
+
+exports[`Pack Snapshots justify 1`] = `
+<ul
+  className="sc-AykKC hhkfZi"
+>
+  <li
+    className="sc-AykKD jxXobp test"
+  >
+    Loan
+  </li>
+  <li
+    className="sc-AykKD jxXobp test"
+  >
+    Credit
+  </li>
+  <li
+    className="sc-AykKD jxXobp test"
+  >
+    Saving
+  </li>
+  <li
+    className="sc-AykKD jxXobp test"
+  >
+    About this bank
+  </li>
+</ul>
+`;
+
+exports[`Pack Snapshots middle 1`] = `
+<ul
+  className="sc-AykKC dliJQw"
+>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Loan
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Credit
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Saving
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    About this bank
+  </li>
+</ul>
+`;
+
+exports[`Pack Snapshots no Children 1`] = `
+<ul
+  className="sc-AykKC gmVKvP"
+/>
+`;
+
+exports[`Pack Snapshots noWrap 1`] = `
+<ul
+  className="sc-AykKC hCvsud"
+>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Loan
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Credit
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    Saving
+  </li>
+  <li
+    className="sc-AykKD jxXobp"
+  >
+    About this bank
+  </li>
+</ul>
+`;

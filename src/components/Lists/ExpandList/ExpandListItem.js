@@ -12,6 +12,7 @@ import {
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 import themeProps from "./ExpandListItem.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const ExpandButton = ({ title, isExpanded, ...props }) => (
   <ExpandBtn isExpanded={isExpanded} {...props}>
@@ -186,5 +187,6 @@ ExpandListItem.propTypes = {
 }
 
 ExpandListItem.themeProps = themeProps
+ExpandListItem.createVariants = componentCreateFactory(ExpandListItem)
 
 export default ExpandListItem

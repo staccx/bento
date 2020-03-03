@@ -13,6 +13,7 @@ import {
   hideVisually
 } from "../../../theming"
 import themeProps from "./RadioPill.item.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const RadioPillItem = ({
   children,
@@ -147,5 +148,6 @@ RadioPillItem.propTypes = {
   full: PropTypes.bool
 }
 RadioPillItem.themeProps = themeProps
+RadioPillItem.createVariants = componentCreateFactory(RadioPillItem)
 
 export default RadioPillItem
