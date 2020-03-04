@@ -1,7 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, commonPropTypes, themePropTypes } from "../../theming"
+import { applyVariants, commonPropTypes } from "../../theming"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
+import themeProps from "./List.themeProps"
 
 const List = ({ children, className, ordered, ...restProps }) => {
   if (!ordered) {
@@ -18,28 +20,20 @@ const List = ({ children, className, ordered, ...restProps }) => {
   )
 }
 
-List.themeProps = {
-  list: {
-    name: "LIST",
-    description: "",
-    type: themePropTypes.style
-  }
-}
 export const ListUl = styled.ul`
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
-  ${applyVariants(List.themeProps.list)};
+  ${applyVariants(themeProps.list)};
 `
 
 export const ListOl = ListUl.withComponent("ol")
 
-List.defaultProps = {
-  className: "",
+const defaultProps = {
   ordered: false
 }
 
-List.propTypes = {
+const propTypes = {
   children: commonPropTypes.children.isRequired,
   className: PropTypes.string,
   /**
@@ -47,5 +41,10 @@ List.propTypes = {
    */
   ordered: PropTypes.bool
 }
+
+List.defaultProps = defaultProps
+List.propTypes = propTypes
+List.themeProps = themeProps
+List.createVariants = componentCreateFactory(List)
 
 export default List
