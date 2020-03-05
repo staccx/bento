@@ -5,7 +5,7 @@ import { applyVariants, color } from "../../../theming"
 import themeProps from "./Donut.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
-const Donut = ({ progress, className, warningThreshold, ...rest }) => {
+const Donut = ({ variant, progress, className, warningThreshold, ...rest }) => {
   const dash = 57
   const dashoffset = dash * progress - dash
   return (
@@ -14,11 +14,12 @@ const Donut = ({ progress, className, warningThreshold, ...rest }) => {
       width="24"
       height="24"
       className={className}
+      variant
       {...rest}
     >
       <title>{progress * 100}%</title>
       <g fill="none" fillRule="evenodd" strokeWidth="6">
-        <Bg cx="12" cy="12" r="9" />
+        <Bg cx="12" cy="12" r="9" variant={variant} />
         <Value
           cx="12"
           cy="12"
@@ -28,6 +29,7 @@ const Donut = ({ progress, className, warningThreshold, ...rest }) => {
           dashoffset={dashoffset}
           progress={progress}
           warningThreshold={warningThreshold}
+          variant={variant}
         />
       </g>
     </Wrapper>
