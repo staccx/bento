@@ -1,232 +1,166 @@
-import React from "react"
+/**
+ * @class Slider
+ */
+
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
-import { applyVariants, color, fontWeight } from "../../../../theming"
+import styled from "styled-components"
+import {
+  Slider as CompoundSlider,
+  Rail,
+  Handles,
+  Tracks
+} from "react-compound-slider"
+import { applyVariants, spacing, color } from "../../../../theming"
+import Handle from "./Slider.Handle"
+import Track from "./Slider.Track"
 import themeProps from "./Slider.themeProps"
 import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
-class Slider extends React.PureComponent {
-  constructor(props, context) {
-    super(props, context)
+const Slider = ({
+  variant,
+  min = 0,
+  max = 100,
+  step = 10,
+  onFocus,
+  onKeyDown,
+  onBlur,
+  onUpdate,
+  onChange,
+  onSlideStart,
+  defaultValue = 0,
+  value,
+  ...restProps
+}) => {
+  const [values, setValues] = useState([value || defaultValue])
+  const [update, setUpdate] = useState([defaultValue])
 
-    this.state = {
-      percentage: props.value ? props.value / props.max : props.max * 0.5
-    }
-
-    this.handleChange = this.handleChange.bind(this)
+  const handleUpdate = value => {
+    setUpdate(value)
+    onUpdate && onUpdate(update[0])
   }
 
-  handleChange(e) {
-    const { value } = e.target
-    const percentage = value / this.props.max
-    this.setState({ percentage })
-    this.props.onChange(e)
+  const handleChange = value => {
+    setValues(values)
+    onChange && onChange(value[0])
   }
 
-  render() {
-    const {
-      disabled,
-      max,
-      min,
-      name,
-      step,
-      value,
-      variantStyle,
-      variant,
-      ignoreBase,
-      ...restProps
-    } = this.props
-    return (
-      <SliderInput
-        percentage={this.state.percentage}
+  const handleStart = values => {
+    setValues(values)
+    onSlideStart && onSlideStart(values[0])
+  }
+
+  useEffect(() => {
+    setValues([value])
+  }, [value])
+
+  return (
+    <Container>
+      <StyledSlider
+        mode={1}
+        step={step}
+        domain={[min, max]}
+        onUpdate={handleUpdate}
+        onChange={handleChange}
+        onSlideStart={handleStart}
+        values={values}
         variant={variant}
-        ignoreBase={ignoreBase}
+        {...restProps}
       >
-        <input
-          type="range"
-          name={name}
-          defaultValue={value}
-          min={min}
-          max={max}
-          step={step}
-          disabled={disabled}
-          {...restProps}
-          onChange={this.handleChange}
-        />
-      </SliderInput>
-    )
-  }
+        <Rail>{({ getRailProps }) => <StyledRail {...getRailProps()} />}</Rail>
+        <Handles>
+          {({ handles, getHandleProps }) => (
+            <div className="slider-handles">
+              {handles.map((handle, index) => {
+                const {
+                  onKeyDown: handleKeyDown,
+                  ...restHandleProps
+                } = getHandleProps(handle.id)
+                return (
+                  <StyledHandle
+                    key={handle.id}
+                    handle={handle}
+                    domain={[min, max]}
+                    getHandleProps={getHandleProps}
+                    variant={variant}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                    {...restHandleProps}
+                    tabIndex={index}
+                    onKeyDown={e => {
+                      if (onKeyDown) {
+                        onKeyDown(e.keyCode)
+                      }
+                      handleKeyDown(e)
+                    }}
+                  />
+                )
+              })}
+            </div>
+          )}
+        </Handles>
+        <Tracks right={false}>
+          {({ tracks, getTrackProps }) => (
+            <StyledTracks variant={variant}>
+              {tracks.map(({ id, source, target }) => (
+                <Track
+                  key={id}
+                  source={source}
+                  target={target}
+                  getTrackProps={getTrackProps}
+                  variant={variant}
+                />
+              ))}
+            </StyledTracks>
+          )}
+        </Tracks>
+      </StyledSlider>
+    </Container>
+  )
 }
 
-const SliderThumbStyle = css`
-  -webkit-appearance: none;
-  border: 2px solid ${color.line};
-  height: 20px;
-  width: 20px;
-  transform: translateY(-2px);
-  border-radius: 50%;
-  background-color: ${color.white};
-  cursor: pointer;
-  &:hover {
-    background-color: ${color.bg};
-    border-color: ${color.disabled};
-  }
-  &:active,
-  &:focus {
-    border-color: ${color.white};
-    background-color: ${color.secondary};
-  }
-  ${applyVariants(themeProps.thumb)};
-`
-
-const SliderHiddenTrackStyle = css`
+const Container = styled.div`
+  height: ${spacing.medium};
+  padding-top: ${spacing.tiny};
   width: 100%;
-  cursor: pointer;
-  background-color: transparent;
-  border-color: transparent;
-  color: transparent;
+  ${applyVariants(themeProps.container)};
 `
 
-const SliderTrackStyle = css`
-  width: 100%;
-  height: 9px;
-  cursor: pointer;
-  border-radius: 4.5px;
-  color: transparent;
-  background-color: ${color.line};
-  ${applyVariants(themeProps.track)};
-`
-
-const SliderInput = styled.div`
+const StyledSlider = styled(CompoundSlider)`
   position: relative;
-  font-weight: ${fontWeight.bold};
-
-  /* Make the default slider invisible */
-  > input[type="range"] {
-    -webkit-appearance: none;
-    width: 100%;
-    background-color: transparent;
-    margin: 0;
-    background-clip: content-box;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-radius: 6px;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  > input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-  }
-
-  > input[type="range"]::-ms-track {
-    ${SliderHiddenTrackStyle};
-  }
-
-  > input[type="range"]::-moz-range-track {
-    ${SliderHiddenTrackStyle};
-  }
-
-  > input[type="range"]:focus {
-    outline: none;
-  }
-
-  > input[type="range"]:active {
-    outline: none;
-  }
-
-  > input[type="range"]:-moz-focusring,
-  > input[type="range"]:focusring {
-    outline: 1px solid white;
-    outline-offset: -1px;
-  }
-
-  /* Style the thumb */
-  > input[type="range"]::-webkit-slider-thumb {
-    ${SliderThumbStyle};
-    margin-top: -3px;
-  }
-
-  > input[type="range"]::-moz-range-thumb {
-    ${SliderThumbStyle};
-  }
-
-  > input[type="range"]::-ms-thumb {
-    ${SliderThumbStyle};
-  }
-
-  /* Style the track for webkit */
-  input[type="range"]::-webkit-slider-runnable-track {
-    background: linear-gradient(
-        90deg,
-        ${color.primary} 0%,
-        ${color.primary} ${p => p.percentage * 100}%,
-        ${color.line} ${p => p.percentage * 100 + 0.0}%,
-        ${color.line} 100%
-      )
-      0 100% no-repeat content-box;
-    ${SliderTrackStyle};
-  }
-
-  input[type="range"]:focus::-webkit-slider-runnable-track {
-  }
-
-  /* Style the track for mozilla */
-  input[type="range"]::-moz-range-track {
-    ${SliderTrackStyle};
-  }
-
-  input[type="range"]::-moz-range-progress {
-    background-color: ${color.primary};
-    height: 9px;
-    border-radius: 4.5px;
-  }
-
-  /* Style the track for MS */
-  input[type="range"]::-ms-track {
-    ${SliderTrackStyle};
-  }
-
-  input[type="range"]::-ms-fill-lower {
-    background-color: ${color.primary};
-  }
-
-  input[type="range"]:focus::-ms-fill-lower {
-    background-color: ${color.white};
-  }
-
-  input[type="range"]::-ms-fill-upper {
-    background-color: ${color.white};
-  }
-
-  input[type="range"]:focus::-ms-fill-upper {
-    background-color: ${color.white};
-  }
-
-  ${applyVariants(themeProps.input)};
+  width: 100%;
+  ${applyVariants(themeProps.slider)};
 `
 
-Slider.defaultProps = {
-  disabled: false,
-  ignoreBase: null,
-  max: 100,
-  min: 0,
-  step: 1,
-  value: undefined
-}
+const StyledRail = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: ${color.gray};
+  ${applyVariants(themeProps.rail)};
+`
+
+const StyledHandle = styled(Handle)`
+  ${applyVariants(themeProps.handle)};
+`
+
+const StyledTracks = styled.div`
+  ${applyVariants(themeProps.tracks)};
+`
 
 Slider.propTypes = {
-  animationTicks: PropTypes.number,
-  disabled: PropTypes.bool,
-  ignoreBase: PropTypes.bool,
-  max: PropTypes.number,
+  className: PropTypes.string,
   min: PropTypes.number,
-  name: PropTypes.string.isRequired,
+  max: PropTypes.number,
+  step: PropTypes.number,
+  defaultValue: PropTypes.number,
   onChange: PropTypes.func,
-  step: PropTypes.any,
-  variant: PropTypes.string,
-  value: PropTypes.any
+  onKeyDown: PropTypes.func
 }
 Slider.themeProps = themeProps
 Slider.createVariants = componentCreateFactory(Slider)
 
+/** @component */
 export default Slider

@@ -16,21 +16,11 @@ describe("Slider", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
-    it("Name", () => {
+    it("className", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Slider name="Slider" />
-          </ThemeProvider>
-        )
-        .toJSON()
-      expect(tree).toMatchSnapshot()
-    })
-    it("onChange", () => {
-      const tree = renderer
-        .create(
-          <ThemeProvider theme={baseTheme}>
-            <Slider name="Slider" onChange={e => console.log(e.target.value)} />
+            <Slider className="Slider" />
           </ThemeProvider>
         )
         .toJSON()
@@ -40,11 +30,7 @@ describe("Slider", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Slider
-              name="Slider"
-              onChange={e => console.log(e.target.value)}
-              min={100}
-            />
+            <Slider min={0} />
           </ThemeProvider>
         )
         .toJSON()
@@ -54,68 +40,27 @@ describe("Slider", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Slider
-              name="Slider"
-              onChange={e => console.log(e.target.value)}
-              min={0}
-              max={100}
-            />
-          </ThemeProvider>
-        )
-        .toJSON()
-      expect(tree).toMatchSnapshot()
-    })
-    it("Step", () => {
-      const tree = renderer
-        .create(
-          <ThemeProvider theme={baseTheme}>
-            <Slider
-              name="Slider"
-              onChange={e => console.log(e.target.value)}
-              min={0}
-              max={100}
-              step={20}
-            />
-          </ThemeProvider>
-        )
-        .toJSON()
-      expect(tree).toMatchSnapshot()
-    })
-    it("Step -", () => {
-      const tree = renderer
-        .create(
-          <ThemeProvider theme={baseTheme}>
-            <Slider step={20} />
-          </ThemeProvider>
-        )
-        .toJSON()
-      expect(tree).toMatchSnapshot()
-    })
-    it("max -", () => {
-      const tree = renderer
-        .create(
-          <ThemeProvider theme={baseTheme}>
             <Slider max={100} />
           </ThemeProvider>
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
-    it("min -", () => {
+    it("step", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Slider min={100} />
+            <Slider step={1} />
           </ThemeProvider>
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
-    it("onChange -", () => {
+    it("step", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Slider onChange={e => console.log(e.target.value)} />
+            <Slider className="Slider" min={0} max={100} step={1} />
           </ThemeProvider>
         )
         .toJSON()

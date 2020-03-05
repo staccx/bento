@@ -2,7 +2,7 @@ import { themePropTypes } from "../../../../theming"
 
 const themeProps = {
   handle: {
-    name: "SLIDER2_HANDLE",
+    name: "Slider_HANDLE",
     description: "Handle style",
     type: themePropTypes.style
   }

@@ -1,19 +1,29 @@
 import { themePropTypes } from "../../../../theming"
 
 const themeProps = {
-  thumb: {
-    name: "SLIDER_THUMB_STYLE",
-    description: "Thumb style",
+  container: {
+    name: "Slider_CONTAINER",
+    description: "Container style",
     type: themePropTypes.style
   },
-  track: {
-    name: "SLIDER_TRACK_STYLE",
-    description: "Track style",
+  slider: {
+    name: "Slider_SLIDER",
+    description: "Slider outer style",
     type: themePropTypes.style
   },
-  input: {
-    name: "SLIDER_INPUT",
-    description: "Input style",
+  rail: {
+    name: "Slider_RAIL",
+    description: "Rail style",
+    type: themePropTypes.style
+  },
+  tracks: {
+    name: "Slider_TRACKS",
+    description: "Tracks style",
+    type: themePropTypes.style
+  },
+  handle: {
+    name: "Slider_HANDLE",
+    description: "Handle style",
     type: themePropTypes.style
   }
 }

@@ -1,15 +1,15 @@
 /**
- * @class Slider2Handle
+ * @class SliderHandle
  */
 
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { applyVariants, color, spacing } from "../../../../theming"
-import themeProps from "./Slider2.Handle.themeProps"
+import themeProps from "./Slider.Handle.themeProps"
 import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
-const Slider2Handle = ({
+const SliderHandle = ({
   className,
   domain: [min, max],
   handle: { id, value, percent },
@@ -53,11 +53,11 @@ const HandleButton = styled.button`
   ${applyVariants(themeProps.handle)};
 `
 
-Slider2Handle.defaultProps = {
+SliderHandle.defaultProps = {
   className: ""
 }
 
-Slider2Handle.propTypes = {
+SliderHandle.propTypes = {
   className: PropTypes.string,
   domain: PropTypes.array.isRequired,
   handle: PropTypes.shape({
@@ -67,8 +67,8 @@ Slider2Handle.propTypes = {
   }).isRequired,
   getHandleProps: PropTypes.func.isRequired
 }
-Slider2Handle.themeProps = themeProps
-Slider2Handle.createVariants = componentCreateFactory(Slider2Handle)
+SliderHandle.themeProps = themeProps
+SliderHandle.createVariants = componentCreateFactory(SliderHandle)
 
 /** @component */
-export default Slider2Handle
+export default SliderHandle

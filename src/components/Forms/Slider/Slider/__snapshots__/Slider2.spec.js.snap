@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Slider2 Snapshots No props 1`] = `
+exports[`Slider Snapshots No props 1`] = `
 <div
   className="sc-AykKE kVPEkP"
 >
@@ -49,12 +49,12 @@ exports[`Slider2 Snapshots No props 1`] = `
 </div>
 `;
 
-exports[`Slider2 Snapshots className 1`] = `
+exports[`Slider Snapshots className 1`] = `
 <div
   className="sc-AykKE kVPEkP"
 >
   <div
-    className="sc-AykKF iekZtk slider2"
+    className="sc-AykKF iekZtk Slider"
     style={Object {}}
   >
     <div
@@ -98,7 +98,7 @@ exports[`Slider2 Snapshots className 1`] = `
 </div>
 `;
 
-exports[`Slider2 Snapshots max 1`] = `
+exports[`Slider Snapshots max 1`] = `
 <div
   className="sc-AykKE kVPEkP"
 >
@@ -147,7 +147,7 @@ exports[`Slider2 Snapshots max 1`] = `
 </div>
 `;
 
-exports[`Slider2 Snapshots min 1`] = `
+exports[`Slider Snapshots min 1`] = `
 <div
   className="sc-AykKE kVPEkP"
 >
@@ -196,7 +196,7 @@ exports[`Slider2 Snapshots min 1`] = `
 </div>
 `;
 
-exports[`Slider2 Snapshots step 1`] = `
+exports[`Slider Snapshots step 1`] = `
 <div
   className="sc-AykKE kVPEkP"
 >
@@ -245,12 +245,12 @@ exports[`Slider2 Snapshots step 1`] = `
 </div>
 `;
 
-exports[`Slider2 Snapshots step 2`] = `
+exports[`Slider Snapshots step 2`] = `
 <div
   className="sc-AykKE kVPEkP"
 >
   <div
-    className="sc-AykKF iekZtk slider2"
+    className="sc-AykKF iekZtk Slider"
     style={Object {}}
   >
     <div

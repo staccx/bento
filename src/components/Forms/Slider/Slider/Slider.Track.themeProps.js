@@ -2,7 +2,7 @@ import { themePropTypes } from "../../../../theming"
 
 const themeProps = {
   track: {
-    name: "SLIDER2_TRACK",
+    name: "Slider_TRACK",
     description: "Track style",
     type: themePropTypes.style
   }

@@ -1,0 +1,22 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import SliderKeyboardInput from "./SliderKeyboardInput"
+
+<Meta title="Components|Forms/SliderKeyboardInput" component={SliderKeyboardInput}/>
+
+
+# Slider
+
+
+```javascript
+import {SliderKeyboardInput} from "@staccx/bento"
+```
+
+## Example usage
+<Preview>
+  <Story name="Example">
+    <SliderKeyboardInput label="Slider with keyboard input" min={100} max={500} step={50} defaultValue={250} onChange={(value) => console.log("The value is ",value)} onUpdate={(value) => console.log("Current position is ",value)} />
+  </Story>
+</Preview>
+
+## Props for Slider
+<Props of={SliderKeyboardInput} />

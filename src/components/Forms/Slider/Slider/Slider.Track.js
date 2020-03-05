@@ -1,15 +1,15 @@
 /**
- * @class Slider2
+ * @class Slider
  */
 
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { applyVariants, color } from "../../../../theming"
-import themeProps from "./Slider2.Track.themeProps"
+import themeProps from "./Slider.Track.themeProps"
 import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
-const Slider2Track = ({
+const SliderTrack = ({
   source,
   target,
   getTrackProps,
@@ -38,11 +38,11 @@ const Track = styled.div`
   ${applyVariants(themeProps.track)};
 `
 
-Slider2Track.defaultProps = {
+SliderTrack.defaultProps = {
   className: ""
 }
 
-Slider2Track.propTypes = {
+SliderTrack.propTypes = {
   className: PropTypes.string,
   source: PropTypes.shape({
     id: PropTypes.string.isRequired,
@@ -56,7 +56,7 @@ Slider2Track.propTypes = {
   }).isRequired,
   getTrackProps: PropTypes.func.isRequired
 }
-Slider2Track.themeProps = themeProps
-Slider2Track.createVariants = componentCreateFactory(Slider2Track)
+SliderTrack.themeProps = themeProps
+SliderTrack.createVariants = componentCreateFactory(SliderTrack)
 /** @component */
-export default Slider2Track
+export default SliderTrack
