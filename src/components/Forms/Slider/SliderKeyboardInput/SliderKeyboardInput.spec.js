@@ -70,7 +70,7 @@ describe("SliderKeyboardInput", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <SliderKeyboardInput onChange={e => console.log(e.target.value)} />
+            <SliderKeyboardInput onChange={() => console.log("test")} />
           </ThemeProvider>
         )
         .toJSON()
