@@ -30,7 +30,6 @@ export const withTheme = makeDecorator({
       }
     }, [])
 
-    console.log("variant", variant)
     const component = getStory(context)
     return (
       <ThemeProvider theme={theme}>
