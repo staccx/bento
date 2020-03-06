@@ -14,7 +14,7 @@ const Donut = ({ variant, progress, className, warningThreshold, ...rest }) => {
       width="24"
       height="24"
       className={className}
-      variant
+      variant={variant}
       {...rest}
     >
       <title>{progress * 100}%</title>
