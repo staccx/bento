@@ -63,6 +63,16 @@ describe("Alert", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+    it("HelpText", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Input label="Input" helpText="This is an input" />
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
     it("simulate input", () => {
       const { input } = setup()
       fireEvent.change(input, { target: { value: "hei" } })
