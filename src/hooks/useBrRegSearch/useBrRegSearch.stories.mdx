@@ -55,9 +55,6 @@ export const Component = ({ term }) => {
 
 <Preview>
   <Story name="Standard">
-  <div>
-    <Component term={text("Search", "stacc", "search")}/>
-  </div>
     {() => {
       const [search, setSearch] = useState("")
       const { isLoading, results } = useBrRegSearch(search)
