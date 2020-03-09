@@ -1,8 +1,28 @@
 import React from "react"
+import { fireEvent, render } from "@testing-library/react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import SliderKeyboardInput from "./SliderKeyboardInput"
+
+const setup = () => {
+  const utils = render(
+    <ThemeProvider theme={baseTheme}>
+      <SliderKeyboardInput
+        name="slider"
+        label="slider"
+        min={0}
+        max={200}
+        step={1}
+      />
+    </ThemeProvider>
+  )
+  const sliderKeyboardLabel = utils.getByLabelText("slider")
+  return {
+    sliderKeyboardLabel,
+    ...utils
+  }
+}
 
 describe("SliderKeyboardInput", () => {
   describe("Snapshots", () => {
@@ -117,7 +137,7 @@ describe("SliderKeyboardInput", () => {
               name="slider"
               label="Label"
               onBlur={() => console.log("test")}
-              onChange={e => console.log(e.target.value)}
+              onChange={console.log("virker")}
               max={1000}
               min={0}
             />
@@ -125,6 +145,15 @@ describe("SliderKeyboardInput", () => {
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
+    })
+    it("simulated keyboard Input", () => {
+      const { sliderKeyboardLabel } = setup()
+      fireEvent.change(sliderKeyboardLabel, { target: { value: 100 } })
+      expect(sliderKeyboardLabel.value).toBe("100")
+    })
+    it("simulated keyboard with no value", () => {
+      const { sliderKeyboardLabel } = setup()
+      expect(sliderKeyboardLabel.value).toBe("NaN")
     })
   })
 })
