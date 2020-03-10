@@ -141,8 +141,8 @@ describe("Theme", () => {
     })
 
     it("Font size", () => {
-      instance.setFontSize(16)
-      expect(instance.fontSize).toBe(16)
+      instance.setBaseSize(16)
+      expect(instance.baseSize).toBe(16)
       expect(instance.global.fontSize.length).toBe(3)
       /*
       [

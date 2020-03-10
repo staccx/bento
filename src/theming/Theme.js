@@ -51,12 +51,12 @@ export default class Theme {
     })
   }
 
-  setFontSize(fontSize) {
-    this.fontSize = fontSize
+  setBaseSize(baseSize) {
+    this.baseSize = baseSize
     this.append(
       createGlobal({
         fontSize: css`
-          font-size: ${fontSize}px;
+          font-size: ${baseSize}px;
         `
       })
     )

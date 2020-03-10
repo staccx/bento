@@ -1,7 +1,7 @@
 import { pxToRem } from "./pxToRem"
 
 const theme = {
-  fontSize: 24
+  baseSize: 24
 }
 describe("pxToRem", () => {
   it("Should handle numeric values", () => {
@@ -19,7 +19,7 @@ describe("pxToRem", () => {
     expect(
       func({
         theme: {
-          fontSize: 12
+          baseSize: 12
         }
       })
     ).toBe("1rem")
