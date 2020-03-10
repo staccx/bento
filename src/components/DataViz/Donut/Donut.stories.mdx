@@ -23,7 +23,7 @@ import {Donut} from "@staccx/bento"
   </Story>
 </Preview>
 
-   
+
 ## Donut with progress 50%
 <Preview>
   <Story name="50%">
@@ -39,14 +39,14 @@ import {Donut} from "@staccx/bento"
 </Preview>
 
 
-## Donut with progress 100% with Slider for progress
+## Donut with progress 50% with Slider for progress
 <Preview>
   <Story name="100%">
    {() => {
        const [progress, setProgress] = useState(1);
        return <div>
        <p>Set value for Donut</p>
-       <Slider min={0} name={"progress"} max={1} step={0.01} value={1} onChange={e => setProgress(e.target.value)} label="Set Progress"/>
+       <Slider min={0} max={1} step={0.01} defaultValue={0.5} onChange={(value) => setProgress(value)} onUpdate={(value) => setProgress(value)} label="set progress"/>
        <Donut progress={Number(progress)}  />
        </div>
       }}
@@ -63,7 +63,7 @@ import {Donut} from "@staccx/bento"
 
 
 
-## Different possible pitfalls 
+## Different possible pitfalls
 These are examples showing what happends if the component recieves props that are
 out of range
 
@@ -99,7 +99,7 @@ out of range
     <Story name="Threshold over 100%">
        <Donut progress={1} warningThreshold={1.5}/>
      </Story>
-</Preview>           
+</Preview>
 
 ## Props for Donut
 

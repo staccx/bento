@@ -2,111 +2,163 @@
 
 exports[`SliderKeyboardInput Snapshots Name 1`] = `
 <div
-  className="sc-fzXfLO hOFdXp"
+  className="sc-fzXfLU dsFUbL"
 >
-  <label
-    className="sc-AykKC bonmue"
-    htmlFor="slider"
-  />
   <div
-    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+    className="sc-AykKI iDYrmt sc-fzXfLV hicBTo"
   >
+    
     
     <input
       autoFocus={null}
       className="sc-AykKJ gjiytr"
-      disabled={true}
+      disabled={false}
       hidden={false}
       id="slider-keyboard"
       max={100}
       min={0}
       name="slider-keyboard"
-      onBlur={[Function]}
+      onBlur={null}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={null}
       placeholder={null}
       style={null}
       type="text"
-      value={0}
+      value={NaN}
     />
   </div>
   <div
-    className="sc-AykKK flFszy"
+    className="sc-fzXfLP TLbY"
   >
-    <input
-      defaultValue={0}
-      disabled={false}
-      id="slider"
-      max={100}
-      min={0}
-      name="slider"
-      onChange={[Function]}
-      percentage={0}
-      step={1}
-      type="range"
-    />
+    <div
+      className="sc-fzXfLQ kuAMaB"
+      style={Object {}}
+    >
+      <div
+        className="sc-fzXfLR gMdHUN"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+      />
+      <div
+        className="slider-handles"
+      >
+        <button
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={NaN}
+          className="sc-AykKK fQxNoe sc-fzXfLS djxtxC"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          role="slider"
+          tabIndex={0}
+          type="button"
+        />
+      </div>
+      <div
+        className="sc-fzXfLT gJDTEr"
+      >
+        <div
+          className="sc-fzXfLO hqHBeH"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          target={
+            Object {
+              "id": "$$-0",
+              "percent": NaN,
+              "value": NaN,
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`SliderKeyboardInput Snapshots No props 1`] = `
 <div
-  className="sc-fzXfLO hOFdXp"
+  className="sc-fzXfLU dsFUbL"
 >
-  <label
-    className="sc-AykKC bonmue"
-  />
   <div
-    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+    className="sc-AykKI iDYrmt sc-fzXfLV hicBTo"
   >
+    
     
     <input
       autoFocus={null}
       className="sc-AykKJ gjiytr"
-      disabled={true}
+      disabled={false}
       hidden={false}
       id="undefined-keyboard"
       max={100}
       min={0}
       name="undefined-keyboard"
-      onBlur={[Function]}
+      onBlur={null}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={null}
       placeholder={null}
       style={null}
       type="text"
-      value={0}
     />
   </div>
   <div
-    className="sc-AykKK flFszy"
+    className="sc-fzXfLP TLbY"
   >
-    <input
-      defaultValue={0}
-      disabled={false}
-      max={100}
-      min={0}
-      onChange={[Function]}
-      percentage={0}
-      step={1}
-      type="range"
-    />
+    <div
+      className="sc-fzXfLQ kuAMaB"
+      style={Object {}}
+    >
+      <div
+        className="sc-fzXfLR gMdHUN"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+      />
+      <div
+        className="slider-handles"
+      >
+        <button
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={0}
+          className="sc-AykKK glxnfR sc-fzXfLS djxtxC"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          role="slider"
+          tabIndex={0}
+          type="button"
+        />
+      </div>
+      <div
+        className="sc-fzXfLT gJDTEr"
+      >
+        <div
+          className="sc-fzXfLO jzbrdi"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          target={
+            Object {
+              "id": "$$-0",
+              "percent": 0,
+              "value": 0,
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`SliderKeyboardInput Snapshots all 1`] = `
 <div
-  className="sc-fzXfLO hOFdXp"
+  className="sc-fzXfLU dsFUbL"
 >
-  <label
-    className="sc-AykKC bonmue"
-    htmlFor="slider"
-  >
-    Label
-  </label>
   <div
-    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+    className="sc-AykKI iDYrmt sc-fzXfLV hicBTo"
   >
     <label
       className="sc-AykKC bonmue sc-AykKH hciGUB"
@@ -119,407 +171,680 @@ exports[`SliderKeyboardInput Snapshots all 1`] = `
     <input
       autoFocus={null}
       className="sc-AykKJ gjiytr"
-      disabled={true}
+      disabled={false}
       hidden={false}
       id="slider-keyboard"
       max={1000}
       min={0}
       name="slider-keyboard"
-      onBlur={[Function]}
+      onBlur={null}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={null}
       placeholder={null}
       style={null}
       type="text"
-      value={0}
     />
   </div>
   <div
-    className="sc-AykKK cZMSha"
+    className="sc-fzXfLP TLbY"
   >
-    <input
-      defaultValue={0}
-      disabled={false}
-      id="slider"
-      max={1000}
-      min={0}
-      name="slider"
-      onChange={[Function]}
-      percentage={0}
-      step={1}
-      type="range"
-    />
+    <div
+      className="sc-fzXfLQ kuAMaB"
+      style={Object {}}
+    >
+      <div
+        className="sc-fzXfLR gMdHUN"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+      />
+      <div
+        className="slider-handles"
+      >
+        <button
+          aria-valuemax={1000}
+          aria-valuemin={0}
+          aria-valuenow={0}
+          className="sc-AykKK glxnfR sc-fzXfLS djxtxC"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          role="slider"
+          tabIndex={0}
+          type="button"
+        />
+      </div>
+      <div
+        className="sc-fzXfLT gJDTEr"
+      >
+        <div
+          className="sc-fzXfLO jzbrdi"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          target={
+            Object {
+              "id": "$$-0",
+              "percent": 0,
+              "value": 0,
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`SliderKeyboardInput Snapshots label 1`] = `
 <div
-  className="sc-fzXfLO hOFdXp"
+  className="sc-fzXfLU dsFUbL"
 >
-  <label
-    className="sc-AykKC bonmue"
-  >
-    Label
-  </label>
   <div
-    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+    className="sc-AykKI iDYrmt sc-fzXfLV hicBTo"
   >
+    <label
+      className="sc-AykKC bonmue sc-AykKH hciGUB"
+      htmlFor="undefined-keyboard"
+    >
+      Label
+      
+    </label>
     
     <input
       autoFocus={null}
       className="sc-AykKJ gjiytr"
-      disabled={true}
+      disabled={false}
       hidden={false}
       id="undefined-keyboard"
       max={100}
       min={0}
       name="undefined-keyboard"
-      onBlur={[Function]}
+      onBlur={null}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={null}
       placeholder={null}
       style={null}
       type="text"
-      value={0}
     />
   </div>
   <div
-    className="sc-AykKK flFszy"
+    className="sc-fzXfLP TLbY"
   >
-    <input
-      defaultValue={0}
-      disabled={false}
-      max={100}
-      min={0}
-      onChange={[Function]}
-      percentage={0}
-      step={1}
-      type="range"
-    />
+    <div
+      className="sc-fzXfLQ kuAMaB"
+      style={Object {}}
+    >
+      <div
+        className="sc-fzXfLR gMdHUN"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+      />
+      <div
+        className="slider-handles"
+      >
+        <button
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={0}
+          className="sc-AykKK glxnfR sc-fzXfLS djxtxC"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          role="slider"
+          tabIndex={0}
+          type="button"
+        />
+      </div>
+      <div
+        className="sc-fzXfLT gJDTEr"
+      >
+        <div
+          className="sc-fzXfLO jzbrdi"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          target={
+            Object {
+              "id": "$$-0",
+              "percent": 0,
+              "value": 0,
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`SliderKeyboardInput Snapshots max 1`] = `
 <div
-  className="sc-fzXfLO hOFdXp"
+  className="sc-fzXfLU dsFUbL"
 >
-  <label
-    className="sc-AykKC bonmue"
-  />
   <div
-    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+    className="sc-AykKI iDYrmt sc-fzXfLV hicBTo"
   >
+    
     
     <input
       autoFocus={null}
       className="sc-AykKJ gjiytr"
-      disabled={true}
+      disabled={false}
       hidden={false}
       id="undefined-keyboard"
       max={1000}
       min={0}
       name="undefined-keyboard"
-      onBlur={[Function]}
+      onBlur={null}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={null}
       placeholder={null}
       style={null}
       type="text"
-      value={0}
     />
   </div>
   <div
-    className="sc-AykKK cZMSha"
+    className="sc-fzXfLP TLbY"
   >
-    <input
-      defaultValue={0}
-      disabled={false}
-      max={1000}
-      min={0}
-      onChange={[Function]}
-      percentage={0}
-      step={1}
-      type="range"
-    />
+    <div
+      className="sc-fzXfLQ kuAMaB"
+      style={Object {}}
+    >
+      <div
+        className="sc-fzXfLR gMdHUN"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+      />
+      <div
+        className="slider-handles"
+      >
+        <button
+          aria-valuemax={1000}
+          aria-valuemin={0}
+          aria-valuenow={0}
+          className="sc-AykKK glxnfR sc-fzXfLS djxtxC"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          role="slider"
+          tabIndex={0}
+          type="button"
+        />
+      </div>
+      <div
+        className="sc-fzXfLT gJDTEr"
+      >
+        <div
+          className="sc-fzXfLO jzbrdi"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          target={
+            Object {
+              "id": "$$-0",
+              "percent": 0,
+              "value": 0,
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`SliderKeyboardInput Snapshots min 1`] = `
 <div
-  className="sc-fzXfLO hOFdXp"
+  className="sc-fzXfLU dsFUbL"
 >
-  <label
-    className="sc-AykKC bonmue"
-  />
   <div
-    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+    className="sc-AykKI iDYrmt sc-fzXfLV hicBTo"
   >
+    
     
     <input
       autoFocus={null}
       className="sc-AykKJ gjiytr"
-      disabled={true}
+      disabled={false}
       hidden={false}
       id="undefined-keyboard"
       max={100}
       min={0}
       name="undefined-keyboard"
-      onBlur={[Function]}
+      onBlur={null}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={null}
       placeholder={null}
       style={null}
       type="text"
-      value={0}
     />
   </div>
   <div
-    className="sc-AykKK flFszy"
+    className="sc-fzXfLP TLbY"
   >
-    <input
-      defaultValue={0}
-      disabled={false}
-      max={100}
-      min={0}
-      onChange={[Function]}
-      percentage={0}
-      step={1}
-      type="range"
-    />
+    <div
+      className="sc-fzXfLQ kuAMaB"
+      style={Object {}}
+    >
+      <div
+        className="sc-fzXfLR gMdHUN"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+      />
+      <div
+        className="slider-handles"
+      >
+        <button
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={0}
+          className="sc-AykKK glxnfR sc-fzXfLS djxtxC"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          role="slider"
+          tabIndex={0}
+          type="button"
+        />
+      </div>
+      <div
+        className="sc-fzXfLT gJDTEr"
+      >
+        <div
+          className="sc-fzXfLO jzbrdi"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          target={
+            Object {
+              "id": "$$-0",
+              "percent": 0,
+              "value": 0,
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
 <div
-  className="sc-fzXfLO hOFdXp"
+  className="sc-fzXfLU dsFUbL"
 >
-  <label
-    className="sc-AykKC bonmue"
-  />
   <div
-    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+    className="sc-AykKI iDYrmt sc-fzXfLV hicBTo"
   >
+    
     
     <input
       autoFocus={null}
       className="sc-AykKJ gjiytr"
-      disabled={true}
+      disabled={false}
       hidden={false}
       id="undefined-keyboard"
       max={100}
       min={0}
       name="undefined-keyboard"
-      onBlur={[Function]}
+      onBlur={null}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={null}
       placeholder={null}
       style={null}
       type="text"
-      value={0}
     />
   </div>
   <div
-    className="sc-AykKK flFszy"
+    className="sc-fzXfLP TLbY"
   >
-    <input
-      defaultValue={0}
-      disabled={false}
-      max={100}
-      min={0}
-      onChange={[Function]}
-      percentage={0}
-      step={1}
-      type="range"
-    />
+    <div
+      className="sc-fzXfLQ kuAMaB"
+      style={Object {}}
+    >
+      <div
+        className="sc-fzXfLR gMdHUN"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+      />
+      <div
+        className="slider-handles"
+      >
+        <button
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={0}
+          className="sc-AykKK glxnfR sc-fzXfLS djxtxC"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          role="slider"
+          tabIndex={0}
+          type="button"
+        />
+      </div>
+      <div
+        className="sc-fzXfLT gJDTEr"
+      >
+        <div
+          className="sc-fzXfLO jzbrdi"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          target={
+            Object {
+              "id": "$$-0",
+              "percent": 0,
+              "value": 0,
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`SliderKeyboardInput Snapshots onChange 1`] = `
 <div
-  className="sc-fzXfLO hOFdXp"
+  className="sc-fzXfLU dsFUbL"
 >
-  <label
-    className="sc-AykKC bonmue"
-  />
   <div
-    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+    className="sc-AykKI iDYrmt sc-fzXfLV hicBTo"
   >
+    
     
     <input
       autoFocus={null}
       className="sc-AykKJ gjiytr"
-      disabled={true}
+      disabled={false}
       hidden={false}
       id="undefined-keyboard"
       max={100}
       min={0}
       name="undefined-keyboard"
-      onBlur={[Function]}
+      onBlur={null}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={null}
       placeholder={null}
       style={null}
       type="text"
-      value={0}
     />
   </div>
   <div
-    className="sc-AykKK flFszy"
+    className="sc-fzXfLP TLbY"
   >
-    <input
-      defaultValue={0}
-      disabled={false}
-      max={100}
-      min={0}
-      onChange={[Function]}
-      percentage={0}
-      step={1}
-      type="range"
-    />
+    <div
+      className="sc-fzXfLQ kuAMaB"
+      style={Object {}}
+    >
+      <div
+        className="sc-fzXfLR gMdHUN"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+      />
+      <div
+        className="slider-handles"
+      >
+        <button
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={0}
+          className="sc-AykKK glxnfR sc-fzXfLS djxtxC"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          role="slider"
+          tabIndex={0}
+          type="button"
+        />
+      </div>
+      <div
+        className="sc-fzXfLT gJDTEr"
+      >
+        <div
+          className="sc-fzXfLO jzbrdi"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          target={
+            Object {
+              "id": "$$-0",
+              "percent": 0,
+              "value": 0,
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
 <div
-  className="sc-fzXfLO hOFdXp"
+  className="sc-fzXfLU dsFUbL"
 >
-  <label
-    className="sc-AykKC bonmue"
-  />
   <div
-    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+    className="sc-AykKI iDYrmt sc-fzXfLV hicBTo"
   >
     
     
     <input
       autoFocus={null}
       className="sc-AykKJ gjiytr"
-      disabled={true}
+      disabled={false}
       hidden={false}
       id="undefined-keyboard"
       max={100}
       min={0}
       name="undefined-keyboard"
-      onBlur={[Function]}
+      onBlur={null}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={null}
       placeholder={null}
       style={null}
       type="text"
-      value={0}
     />
   </div>
   <div
-    className="sc-AykKK flFszy"
+    className="sc-fzXfLP TLbY"
   >
-    <input
-      defaultValue={0}
-      disabled={false}
-      max={100}
-      min={0}
-      onChange={[Function]}
-      percentage={0}
-      step={1}
-      type="range"
-    />
+    <div
+      className="sc-fzXfLQ kuAMaB"
+      style={Object {}}
+    >
+      <div
+        className="sc-fzXfLR gMdHUN"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+      />
+      <div
+        className="slider-handles"
+      >
+        <button
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={0}
+          className="sc-AykKK glxnfR sc-fzXfLS djxtxC"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          role="slider"
+          tabIndex={0}
+          type="button"
+        />
+      </div>
+      <div
+        className="sc-fzXfLT gJDTEr"
+      >
+        <div
+          className="sc-fzXfLO jzbrdi"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          target={
+            Object {
+              "id": "$$-0",
+              "percent": 0,
+              "value": 0,
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`SliderKeyboardInput Snapshots step 1`] = `
 <div
-  className="sc-fzXfLO hOFdXp"
+  className="sc-fzXfLU dsFUbL"
 >
-  <label
-    className="sc-AykKC bonmue"
-  />
   <div
-    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+    className="sc-AykKI iDYrmt sc-fzXfLV hicBTo"
   >
+    
     
     <input
       autoFocus={null}
       className="sc-AykKJ gjiytr"
-      disabled={true}
+      disabled={false}
       hidden={false}
       id="undefined-keyboard"
       max={100}
       min={0}
       name="undefined-keyboard"
-      onBlur={[Function]}
+      onBlur={null}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={null}
       placeholder={null}
       style={null}
       type="text"
-      value={0}
     />
   </div>
   <div
-    className="sc-AykKK flFszy"
+    className="sc-fzXfLP TLbY"
   >
-    <input
-      defaultValue={0}
-      disabled={false}
-      max={100}
-      min={0}
-      onChange={[Function]}
-      percentage={0}
-      step={1}
-      type="range"
-    />
+    <div
+      className="sc-fzXfLQ kuAMaB"
+      style={Object {}}
+    >
+      <div
+        className="sc-fzXfLR gMdHUN"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+      />
+      <div
+        className="slider-handles"
+      >
+        <button
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={0}
+          className="sc-AykKK glxnfR sc-fzXfLS djxtxC"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          role="slider"
+          tabIndex={0}
+          type="button"
+        />
+      </div>
+      <div
+        className="sc-fzXfLT gJDTEr"
+      >
+        <div
+          className="sc-fzXfLO jzbrdi"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          target={
+            Object {
+              "id": "$$-0",
+              "percent": 0,
+              "value": 0,
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`SliderKeyboardInput Snapshots value 1`] = `
 <div
-  className="sc-fzXfLO hOFdXp"
+  className="sc-fzXfLU dsFUbL"
 >
-  <label
-    className="sc-AykKC bonmue"
-  />
   <div
-    className="sc-AykKI iDYrmt sc-fzXfLP huDoJG"
+    className="sc-AykKI iDYrmt sc-fzXfLV hicBTo"
   >
+    
     
     <input
       autoFocus={null}
       className="sc-AykKJ gjiytr"
-      disabled={true}
+      disabled={false}
       hidden={false}
       id="undefined-keyboard"
       max={100}
       min={0}
       name="undefined-keyboard"
-      onBlur={[Function]}
+      onBlur={null}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={null}
       placeholder={null}
       style={null}
       type="text"
-      value={0}
     />
   </div>
   <div
-    className="sc-AykKK flFszy"
+    className="sc-fzXfLP TLbY"
   >
-    <input
-      defaultValue={0}
-      disabled={false}
-      max={100}
-      min={0}
-      onChange={[Function]}
-      percentage={0}
-      step={1}
-      type="range"
-    />
+    <div
+      className="sc-fzXfLQ kuAMaB"
+      style={Object {}}
+    >
+      <div
+        className="sc-fzXfLR gMdHUN"
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+      />
+      <div
+        className="slider-handles"
+      >
+        <button
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={0}
+          className="sc-AykKK glxnfR sc-fzXfLS djxtxC"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          role="slider"
+          tabIndex={0}
+          type="button"
+        />
+      </div>
+      <div
+        className="sc-fzXfLT gJDTEr"
+      >
+        <div
+          className="sc-fzXfLO jzbrdi"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          target={
+            Object {
+              "id": "$$-0",
+              "percent": 0,
+              "value": 0,
+            }
+          }
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;

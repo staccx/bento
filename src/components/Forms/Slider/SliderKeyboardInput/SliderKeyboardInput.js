@@ -1,9 +1,6 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { linear } from "easing-utils"
-import { inverseLerp, clamp } from "../../../../math"
-import Label from "../../Label/Label"
 import Input from "../../Input/Input"
 import Slider from "../Slider/Slider"
 import {
@@ -34,12 +31,15 @@ const SliderKeyboardInput = ({
   const [sliderValue, setSliderValue] = useState(defaultValue)
   const [stepValue, setStepValue] = useState(step)
 
+  const handleInputFocus = () => {
+    setStepValue(1)
+  }
+
   const handleInputChange = value => {
     if (!value) {
       setInputValue("")
     } else {
       setInputValue(value)
-      setStepValue(1)
 
       if (parseInt(value, 10) >= min && parseInt(value, 10) <= max) {
         setSliderValue(value)
@@ -52,12 +52,15 @@ const SliderKeyboardInput = ({
       if (parseInt(value, 10) <= min) {
         setSliderValue(min)
       }
+
+      onChange && onChange(value)
     }
   }
 
   const handleSliderChange = value => {
     setInputValue(parseInt(value, 10))
     setSliderValue(value)
+    onChange && onChange(value)
   }
 
   const handleSliderStart = () => {
@@ -72,6 +75,7 @@ const SliderKeyboardInput = ({
         id={`${name}-keyboard`}
         value={inputValue}
         onChange={e => handleInputChange(e.target.value)}
+        onFocus={handleInputFocus}
         // onBlur={handleBlur}
         label={showLabel ? label : null}
         min={min}
