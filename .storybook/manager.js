@@ -40,4 +40,3 @@ addons.setConfig({
 
   },
 });
-

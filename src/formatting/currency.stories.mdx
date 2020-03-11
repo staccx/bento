@@ -1,5 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { formatCurrency } from "./currency"
+import {formatMoney} from "./currency"
+import {STYLE} from "./number.constants"
 import { Text as CurrencyText } from "./__storyComponents"
 
 <Meta title="Formatting|FormatCurrency" component={formatCurrency}/>
@@ -66,7 +68,18 @@ Here is an example of how we generally would format a norwegian currency string
 <Preview>
   <Story name="Norweigan format">
    <CurrencyText>
-   {formatCurrency(100000, { symbol: "kr", format: "$s  $v,-", suffix:",-" })}
+   {formatMoney(100000, { locale: "nb-NO", suffix: ",-"})}
+   </CurrencyText>
+  </Story>
+</Preview>
+
+## English
+with decimal
+
+<Preview>
+  <Story name="English format">
+   <CurrencyText>
+   {formatMoney(100000.12, { locale: "en", suffix: ",-", style: STYLE.decimal})}
    </CurrencyText>
   </Story>
 </Preview>
