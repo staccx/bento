@@ -12,8 +12,16 @@ import Button from "../../components/Button/Button"
 usePostalCode is a hook that allows you to pass an input or a value, then the hook searches brings api
 after norwegian postalCodes. usePostalCode takes the prop "code", a 4 digit code, and returns the postAreaName
 
+### Import
+All Hooks are imported via hooks. to use a spesific hook you would
+use ```hooks.hookYouWant```
+
 ```javascript
-import {useCopyToClipboard} from "@staccx/bento"
+import { hooks } from "@staccx/bento"
+```
+usage
+```javascript
+hooks.useCopyToClipboard
 ```
 
 

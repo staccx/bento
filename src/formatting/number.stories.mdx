@@ -8,8 +8,17 @@ import {UNITS, STYLE, CURRENCY_DISPLAY} from "./number.constants"
 # Format number
 Number formatter for all your needs
 
+### Import
+All exports under formatting is imported via formatting. to use a spesific formatter you would
+use ```formatting.FormatterYouWant```
+
+
 ```javascript
-import { formatNumber } from "@staccx/bento"
+import { formatting } from "@staccx/bento"
+```
+usage
+```javascript
+formatting.formatNumber
 ```
 
 ### Defaults
@@ -25,6 +34,13 @@ const defaults = {
   unit: null,
   minimumFractionDigits: 0
 }
+```
+### Usage of number constants
+```javascript
+  formatting.CURRENCY_DISPLAY,
+  formatting.STYLE,
+  formatting.UNIT_DISPLAY,
+  formatting.UNITS
 ```
 
 

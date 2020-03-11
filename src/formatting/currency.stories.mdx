@@ -8,8 +8,17 @@ import { Text as CurrencyText } from "./__storyComponents"
 FormatCurrency is a bento tool to help us easily format a number into currency, either by adding thousand seperators,
 or by adding symbols such as $ or "kr".
 
+### Import
+All exports under formatting is imported via formatting. to use a spesific formatter you would
+use ```formatting.FormatterYouWant```
+
+
 ```javascript
-import { formatCurrency } from "@staccx/bento"
+import { formatting } from "@staccx/bento"
+```
+usage
+```javascript
+formatting.formatCurrency
 ```
 
 ## Standard formatCurrency

@@ -7,19 +7,28 @@ import { formatDate } from "./date"
 Format date is used to format date from ISO 8601 or a date object to be displayed in a more readable way in an application.
 
 
+### Import
+All exports under formatting is imported via formatting. to use a spesific formatter you would
+use ```formatting.FormatterYouWant```
+
+
 ```javascript
-import { formatDate } from "@staccx/bento"
+import { formatting } from "@staccx/bento"
+```
+usage
+```javascript
+formatting.formatDate
 ```
 
-## Formatters 
+## Formatters
 The way to decide how the formatting wil become is by the format string that is passed to formatDate
 there are several different ways to display a date string, and they can all be formatted with formatDate
 ```javascript
 const date = "2020-02-12T00:00:00"
-formatDate(date, "dd.MM.yy") returns "12.02.20"
-formatDate(date, "dd.MMMM.yy") returns "12.februar.20"
-formatDate(date, "dd.MM.yyyy") returns "12.02.2020"
-formatDate(date, "dd.MMMM.yyyy") returns "12.februar.2020"
+formatting.formatDate(date, "dd.MM.yy") returns "12.02.20"
+formatting.formatDate(date, "dd.MMMM.yy") returns "12.februar.20"
+formatting.formatDate(date, "dd.MM.yyyy") returns "12.02.2020"
+formatting.formatDate(date, "dd.MMMM.yyyy") returns "12.februar.2020"
 ```
 
 
@@ -29,7 +38,7 @@ Takes in an ISO 8601 formatted date and converts it into a more readable date fo
 the code snippet below is the formatted date string.
 
 ```javascript
-    export const formatted = formatDate("2020-02-12T00:00:00")
+    export const formatted = formatting.formatDate("2020-02-12T00:00:00")
 ```
 
 When converted with default format will look like this:
@@ -42,7 +51,7 @@ When converted with default format will look like this:
    }}
   </Story>
   </Preview>
-  
+
 
 
 ## Custom format
@@ -51,7 +60,7 @@ With the format date function you are also able to add your own format on the re
 
 adding yyyy will return the full year
 ```javascript
-export const year = formatDate("2020-02-12T00:00:00", "yyyy")
+export const year = formatting.formatDate("2020-02-12T00:00:00", "yyyy")
 ```
 
 
@@ -67,7 +76,7 @@ export const year = formatDate("2020-02-12T00:00:00", "yyyy")
 
 adding MMMM wil return the full month as a string
 ```javascript
-export const month = formatDate("2020-02-12T00:00:00", "MMMM")
+export const month = formatting.formatDate("2020-02-12T00:00:00", "MMMM")
 ```
 
 
@@ -79,13 +88,13 @@ export const month = formatDate("2020-02-12T00:00:00", "MMMM")
    }}
   </Story>
   </Preview>
-  
+
 
 
 HH:mm will return hours and minutes
 
 ```javascript
-export const month = formatDate("2020-02-12T15:30:00", "HH:mm")
+export const month = formatting.formatDate("2020-02-12T15:30:00", "HH:mm")
 ```
 
   <Preview>
@@ -96,12 +105,12 @@ export const month = formatDate("2020-02-12T15:30:00", "HH:mm")
    }}
   </Story>
   </Preview>
-  
+
 
 
 dd/MMMM/yyyy would then return the whole date with day, month and year
 ```javascript
-export const month = formatDate("2020-02-12T15:30:00", "dd/MMM/yyyy")
+export const month = formatting.formatDate("2020-02-12T15:30:00", "dd/MMM/yyyy")
 ```
 
   <Preview>
@@ -111,16 +120,16 @@ export const month = formatDate("2020-02-12T15:30:00", "dd/MMM/yyyy")
     return <p>{full}</p>
    }}
   </Story>
-  </Preview> 
-  
+  </Preview>
+
 
 ## date object
-formatDate can also take in a dateObject and format that, the functionality will be the same as with 
+formatDate can also take in a dateObject and format that, the functionality will be the same as with
 a date string in ISO 8601 format.
 
 ```javascript
 const date = new Date(1525968057000)
-export const dateO = formatDate(date, "dd/MMM/yyyy")
+export const dateO = formatting.formatDate(date, "dd/MMM/yyyy")
 ```
 
   <Preview>
@@ -131,5 +140,5 @@ export const dateO = formatDate(date, "dd/MMM/yyyy")
     return <p>{dateO}</p>
    }}
   </Story>
-  </Preview>   
-  
+  </Preview>
+
