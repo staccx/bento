@@ -6,10 +6,12 @@ export const useOpenIdUser = () => {
   const [user, setUser] = useState()
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    userManager.getUser().then(user => {
-      setUser(user)
-      setLoading(false)
-    })
+    if (userManager) {
+      userManager.getUser().then(user => {
+        setUser(user)
+        setLoading(false)
+      })
+    }
   }, [userManager])
 
   return [user, loading]

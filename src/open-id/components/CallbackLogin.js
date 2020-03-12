@@ -1,3 +1,4 @@
+import React from "react"
 import { useOpenId } from ".."
 
 export const CallbackLogin = () => {
@@ -10,11 +11,14 @@ export const CallbackLogin = () => {
 
   const _window = reloadParentAfterLogin ? window.parent : window
 
-  userManager &&
-    userManager
-      .signinRedirectCallback()
-      .then(() => _window.location.replace(afterLogin))
-      .catch(() => _window.location.replace(onError))
+  React.useEffect(() => {
+    if (userManager) {
+      userManager
+        .signinRedirectCallback()
+        .then(() => _window.location.replace(afterLogin))
+        .catch(() => _window.location.replace(onError))
+    }
+  }, [userManager])
 
   return null
 }
