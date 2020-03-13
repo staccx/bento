@@ -20,8 +20,16 @@ export const keysLabel = "Keys"
 export const defaultKeysValue = ["name.first", "company", "email"]
 
 
+### Import
+All Hooks are imported via hooks. to use a spesific hook you would
+use ```hooks.hookYouWant```
+
 ```javascript
-import {useSearch} from "@staccx/bento"
+import { hooks } from "@staccx/bento"
+```
+usage
+```javascript
+hooks.useSearch
 ```
 
 ## useSearch setup component
@@ -79,4 +87,4 @@ Example with a fixed search string set to "Blake"
     </Story>
 </Preview>
 
-  
+

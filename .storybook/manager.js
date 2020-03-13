@@ -37,6 +37,6 @@ addons.setConfig({
     canvas: {
       index: 1
     }, // canvas is here simply listed so its place as first tab
+
   },
 });
-

@@ -22,5 +22,40 @@ This is the standard Logo
 ## Flere stories her
 Hva er spesielt med denne storien?
 
+### Source code
+<details><summary>Logo</summary>
+<p>
+
+```bash
+import PropTypes from "prop-types"
+import React from "react"
+
+const Logo = ({ brand, height, width, className }) => (
+  <img
+    height={height}
+    width={width}
+    src={`https://api.logos.staccsandbox.com/${brand}`}
+    alt={brand}
+    className={className}
+  />
+)
+
+export default Logo
+
+Logo.propTypes = {
+  brand: PropTypes.string.isRequired,
+  height: PropTypes.number,
+  width: PropTypes.number
+}
+
+Logo.defaultProps = {
+  height: 48
+}
+
+```
+
+</p>
+</details>
+
 ## Props for Logo
 <Props of={Logo} />

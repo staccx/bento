@@ -35,7 +35,7 @@ Three objects displayed
                   key: 364 + "available"
                 }
               ]}
-            />    
+            />
   </Story>
 </Preview>
 
@@ -52,7 +52,7 @@ One object displayed
                   key: 546456 + "booked"
                 }
               ]}
-            />    
+            />
   </Story>
 </Preview>
 
@@ -74,7 +74,7 @@ Two objects displayed
                   key: 24241 + "Two"
                 }
               ]}
-            />    
+            />
   </Story>
 </Preview>
 
@@ -102,7 +102,7 @@ Two objects displayed
                             key: 3 + "available"
                           }
               ]}
-            />    
+            />
   </Story>
 </Preview>
 
@@ -128,7 +128,7 @@ Two objects displayed
                             key: 30000000000 + "available"
                           }
               ]}
-            />    
+            />
   </Story>
 </Preview>
 
@@ -154,7 +154,7 @@ Two objects displayed
                             key: 30000000000 + "available"
                           }
               ]}
-            />    
+            />
   </Story>
 </Preview>
 
@@ -184,7 +184,7 @@ to stay in one line, it will place them under.
                             key: 30000000000 + "available"
                           }
               ]}
-            />    
+            />
   </Story>
 </Preview>
 
@@ -210,10 +210,101 @@ to stay in one line, it will place them under.
                             key: 3 + "available"
                           }
               ]}
-            />    
+            />
   </Story>
 </Preview>
 
+### Source code
+
+<details><summary>KeyFigures</summary>
+<p>
+
+```bash
+import React from "react"
+import styled from "styled-components"
+import PropTypes from "prop-types"
+import { formatCurrency } from "../../../formatting"
+import { applyVariants, spacing, color, font } from "../../../theming"
+import themeProps from "./Keyfigures.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
+
+const KeyFigures = ({ figures, variant }) => (
+  <List variant={variant}>
+    {figures.map(figure => (
+      <ListItem key={figure.key} variant={variant}>
+        <Heading variant={variant}>{figure.label}</Heading>
+        <Value variant={variant}> {formatCurrency(figure.amount)}</Value>
+      </ListItem>
+    ))}
+  </List>
+)
+
+const List = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0;
+  color: currentColor;
+  padding: 0;
+  ${applyVariants(themeProps.list.name)};
+`
+
+const ListItem = styled.li`
+  position: relative;
+  display: flex;
+  padding: ${spacing.tiny} ${spacing.medium};
+  flex-direction: column;
+  text-align: center;
+
+  &:not(:first-child)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: ${color.line};
+  }
+  ${applyVariants(themeProps.item.name)};
+`
+
+const Heading = styled.h3`
+  padding-bottom: ${spacing.tiny};
+  ${applyVariants(themeProps.heading.name)};
+`
+
+const Value = styled.span`
+  font-size: ${font.h2};
+  color: ${color.blue};
+  ${applyVariants(themeProps.value.name)};
+`
+
+const defaultProps = {
+  figures: [{}]
+}
+
+KeyFigures.propTypes = {
+  /**
+   * Takes an array of objects
+   * objects containg value and heading
+   */
+  figures: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string,
+      heading: PropTypes.string
+    })
+  ).isRequired
+}
+KeyFigures.defaultProps = defaultProps
+KeyFigures.themeProps = themeProps
+KeyFigures.createVariants = componentCreateFactory(KeyFigures)
+
+export default KeyFigures
+
+```
+
+</p>
+</details>
 
 ## Props for KeyFigures
 <Props of={KeyFigures} />

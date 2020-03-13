@@ -6,9 +6,20 @@ import truncate from "./truncate"
 # Truncate
 Turncate helps deside the length of a string
 
+### Import
+All exports under formatting is imported via formatting. to use a spesific formatter you would
+use ```formatting.FormatterYouWant```
+
+
 ```javascript
-import { truncate } from "@staccx/bento"
+import { formatting } from "@staccx/bento"
 ```
+usage
+```javascript
+formatting.turncate
+```
+
+
 ```javascript
 const longString = "The quick brown fox jumps over the lazy dog"
 const shortString = "The quick brown fox"
@@ -25,7 +36,7 @@ export const shortString = "The quick brown fox"
   </Story>
 </Preview>
 
-## Set turncate length 
+## Set turncate length
 
 <Preview>
   <Story name="Set length">
