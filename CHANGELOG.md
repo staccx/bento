@@ -1,3 +1,7 @@
+## [10.0.1-alpha.20](https://github.com/staccx/bento/compare/v10.0.1-alpha.19...v10.0.1-alpha.20) (2020-03-16)
+
+
+
 ## [10.0.1-alpha.19](https://github.com/staccx/bento/compare/v10.0.1-alpha.18...v10.0.1-alpha.19) (2020-03-13)
 
 
