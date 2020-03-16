@@ -5,21 +5,24 @@ import PropTypes from "prop-types"
 import { logLevelFromNumber } from "../utils/logLevelFromString"
 
 export const OpenIdContext = createContext({})
-
+export const logger = loglevel.getLogger("open-id")
 export const OpenId = ({ children, config, extraConfig, level, ...props }) => {
   useEffect(() => {
     Oidc.Log.level = Math.min(level, Oidc.Log.DEBUG) // 4 and 5 produce DEBUG log level
-    loglevel.setLevel(logLevelFromNumber(level))
+    logger.setLevel(logLevelFromNumber(level))
   }, [level])
 
   const userManager = React.useMemo(() => new UserManager(config), [config])
 
   const fetchToken = async () => {
+    logger.debug("Fetching token")
     if (!userManager) {
-      loglevel.error("UserManager not initialized")
+      logger.error("UserManager not initialized")
       return
     }
+
     const user = await userManager.getUser()
+    logger.debug("user found", user)
     return user?.access_token
   }
 
