@@ -1,3 +1,18 @@
+## [10.0.1-alpha.21](https://github.com/staccx/bento/compare/v10.0.1-alpha.20...v10.0.1-alpha.21) (2020-03-16)
+
+
+### Bug Fixes
+
+* **i18n:** fix issue where dev was made fallbackNS ([5bbd652](https://github.com/staccx/bento/commit/5bbd652))
+
+
+### Features
+
+* **open-id:** added loggers to CBLoginSilent, callbackLogout & Logout ([567ab61](https://github.com/staccx/bento/commit/567ab61))
+* **open-id:** added logging for open-id hooks ([e4abfc1](https://github.com/staccx/bento/commit/e4abfc1))
+
+
+
 ## [10.0.1-alpha.20](https://github.com/staccx/bento/compare/v10.0.1-alpha.19...v10.0.1-alpha.20) (2020-03-16)
 
 
