@@ -10,6 +10,7 @@ import i18next from "i18next"
 import PropTypes from "prop-types"
 import loglevel from "loglevel"
 import { formatCurrency } from "../formatting/currency"
+import { logLevelFromNumber } from "../open-id/utils/logLevelFromString"
 
 const I18nContext = createContext({})
 
@@ -19,7 +20,9 @@ const defaultFormat = {
   }
 }
 
-const Provider = ({ children, ...props }) => {
+export const i18nLogger = loglevel.getLogger("i18n")
+
+const Provider = ({ children, level, ...props }) => {
   const [ready, setReady] = useState(false)
   const [language, setLanguage] = useState(props.language)
 
@@ -28,18 +31,21 @@ const Provider = ({ children, ...props }) => {
     setLanguage(language)
   }
 
+  useEffect(() => {
+    i18nLogger.setLevel(logLevelFromNumber(level))
+  }, [])
+
   const {
     texts = null,
     languages = ["en"],
     formatFunctions = {},
     backend,
     backendOptions = {},
-    debug = false,
-    level = null
+    debug = false
   } = props
 
   const initialize = useCallback(async () => {
-    loglevel.setLevel(level || (debug ? "debug" : "silent"))
+    i18nLogger.info("Initializing i18n")
     if (backend) {
       i18next.use(backend)
     }
@@ -52,9 +58,9 @@ const Provider = ({ children, ...props }) => {
       },
       returnObjects: true,
       saveMissing: true, // Must be set to true
-      missingKeyHandler: key => loglevel.warn("Missing key", key),
+      missingKeyHandler: key => i18nLogger.warn("Missing key", key),
       parseMissingKeyHandler: key => {
-        loglevel.warn(`No translation found for "${key}"`)
+        i18nLogger.warn(`No translation found for "${key}"`)
         return null
       },
       interpolation: {
@@ -70,7 +76,7 @@ const Provider = ({ children, ...props }) => {
       }
     })
 
-    loglevel.log("i18n ready to use", i18next)
+    i18nLogger.info("i18n ready to use", i18next)
     setReady(true)
   }, [backend, backendOptions, debug, formatFunctions, language, level, texts])
 
@@ -100,7 +106,12 @@ Provider.propTypes = {
   formatFunctions: PropTypes.object,
   backend: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   backendOptions: PropTypes.object,
-  debug: PropTypes.bool
+  debug: PropTypes.bool,
+  level: PropTypes.oneOf([...loglevel.levels])
+}
+
+Provider.defaultProps = {
+  level: loglevel.levels.SILENT
 }
 
 export const useI18n = () => {
