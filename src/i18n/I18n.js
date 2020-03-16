@@ -31,7 +31,6 @@ const Provider = ({ children, level, ...props }) => {
     setLanguage(language)
   }
 
-  console.log("Testing")
   useEffect(() => {
     i18nLogger.setLevel(logLevelFromNumber(level))
     i18nLogger.info("i18n levels updated")
