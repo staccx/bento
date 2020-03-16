@@ -80,6 +80,7 @@
     "react-markdown": "^4.3.1",
     "react-scripts": "^3.3.0",
     "react-test-renderer": "^16.12.0",
+    "storybook-chromatic": "^3.5.2",
     "storybook-host": "^5.1.0",
     "styled-components": "^5.0.0"
   },
