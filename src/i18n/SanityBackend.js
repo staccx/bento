@@ -1,5 +1,5 @@
 import sanityClient from "@sanity/client"
-import { i18nLogger } from "i18n.js"
+import { i18nLogger } from "./I18n"
 
 const Backend = {
   init(services, options) {
