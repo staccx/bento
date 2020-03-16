@@ -14,7 +14,7 @@ export const OpenId = ({ children, config, extraConfig, level, ...props }) => {
 
   const userManager = React.useMemo(() => new UserManager(config), [config])
 
-  const fetchToken = async () => {
+  const fetchToken = React.useCallback(async () => {
     logger.debug("Fetching token")
     if (!userManager) {
       logger.error("UserManager not initialized")
@@ -24,7 +24,7 @@ export const OpenId = ({ children, config, extraConfig, level, ...props }) => {
     const user = await userManager.getUser()
     logger.debug("user found", user)
     return user?.access_token
-  }
+  }, [userManager])
 
   return (
     <OpenIdContext.Provider
