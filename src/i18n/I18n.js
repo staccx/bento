@@ -59,7 +59,6 @@ const Provider = ({ children, level, ...props }) => {
       ...(texts && { resources: texts }),
       lng: language,
       fallbackLng: [language],
-      ns: ["app"],
       debug: level >= loglevel.levels.INFO,
       backend: {
         ...backendOptions
