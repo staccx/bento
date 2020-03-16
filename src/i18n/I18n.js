@@ -126,12 +126,17 @@ export const useI18n = () => {
 
   const { i18n, ready } = value
 
-  const translate = (key, data) => i18n.t(key, data)
+  const translate = (key, data) => {
+    i18nLogger.debug(`Translating ${key}`, data)
+    return i18n.t(key, data)
+  }
 
   const transform = value => {
     if (!value.hasOwnProperty(i18n.language)) {
+      i18nLogger.warn(`Could not find key in language`, value, i18n.language)
       return null
     }
+    i18nLogger.debug(`Transforming in ${i18n.language}`, value)
     return value[i18n.language]
   }
 
