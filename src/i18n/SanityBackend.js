@@ -1,5 +1,5 @@
 import sanityClient from "@sanity/client"
-import loglevel from "loglevel"
+import { i18nLogger } from "i18n.js"
 
 const Backend = {
   init(services, options) {
@@ -20,7 +20,7 @@ const Backend = {
     } = options.sanity
     this.query = query
 
-    loglevel.info("created")
+    i18nLogger.info("created")
     this.params = params
   },
 

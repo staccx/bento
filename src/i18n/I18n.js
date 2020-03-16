@@ -154,13 +154,15 @@ export const I18nConsumer = ({ children }) => {
   const props = useI18n()
 
   if (!children) {
+    i18nLogger.debug("I18nConsumer has no children")
     return null
   }
 
   if (!props.ready) {
+    i18nLogger.debug("i18nConsumer is not ready")
     return null
   }
-
+  i18nLogger.debug(`Returning ${children} with`, props)
   return children(props)
 }
 
