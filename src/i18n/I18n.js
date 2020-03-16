@@ -107,7 +107,14 @@ Provider.propTypes = {
   backend: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   backendOptions: PropTypes.object,
   debug: PropTypes.bool,
-  level: PropTypes.oneOf([...loglevel.levels])
+  level: PropTypes.oneOf([
+    loglevel.levels.TRACE,
+    loglevel.levels.DEBUG,
+    loglevel.levels.INFO,
+    loglevel.levels.WARN,
+    loglevel.levels.ERROR,
+    loglevel.levels.SILENT
+  ])
 }
 
 Provider.defaultProps = {
