@@ -31,8 +31,10 @@ const Provider = ({ children, level, ...props }) => {
     setLanguage(language)
   }
 
+  console.log("Testing")
   useEffect(() => {
     i18nLogger.setLevel(logLevelFromNumber(level))
+    i18nLogger.info("i18n levels updated")
   }, [])
 
   const {
@@ -45,6 +47,10 @@ const Provider = ({ children, level, ...props }) => {
   } = props
 
   const initialize = useCallback(async () => {
+    if (ready) {
+      i18nLogger.info("Alredy completed initializion. Aborting")
+      return
+    }
     i18nLogger.info("Initializing i18n")
     if (backend) {
       i18next.use(backend)
@@ -52,13 +58,22 @@ const Provider = ({ children, level, ...props }) => {
     await i18next.init({
       ...(texts && { resources: texts }),
       lng: language,
-      debug,
+      fallbackLng: [language],
+      ns: ["app"],
+      debug: level >= loglevel.levels.INFO,
       backend: {
         ...backendOptions
       },
       returnObjects: true,
       saveMissing: true, // Must be set to true
-      missingKeyHandler: key => i18nLogger.warn("Missing key", key),
+      missingKeyHandler: (lng, ns, key, fallbackValue) =>
+        i18nLogger.warn(
+          `Missing key: ${key} in ${lng}[${ns}]. Fallbackvalue: ${fallbackValue}`,
+          lng,
+          ns,
+          key,
+          fallbackValue
+        ),
       parseMissingKeyHandler: key => {
         i18nLogger.warn(`No translation found for "${key}"`)
         return null
@@ -78,7 +93,16 @@ const Provider = ({ children, level, ...props }) => {
 
     i18nLogger.info("i18n ready to use", i18next)
     setReady(true)
-  }, [backend, backendOptions, debug, formatFunctions, language, level, texts])
+  }, [
+    backend,
+    backendOptions,
+    debug,
+    formatFunctions,
+    language,
+    level,
+    texts,
+    ready
+  ])
 
   useEffect(() => {
     initialize()

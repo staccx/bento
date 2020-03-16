@@ -33,6 +33,7 @@ const Backend = {
   },
 
   getTranslations: function(language, namespace, callback) {
+    i18nLogger.debug("SanityBackend::getTranslations", language, namespace)
     this.client
       .fetch(this.query, { ...this.params, namespace })
       .then(result => {
@@ -47,7 +48,7 @@ const Backend = {
   },
 
   create: function(languages, namespace, key, fallbackValue) {
-    console.log("TODO:", "create new entry if missing", key)
+    i18nLogger.debug("TODO:", "create new entry if missing", key)
     if (typeof languages === "string") languages = [languages]
 
     const payload = {}
