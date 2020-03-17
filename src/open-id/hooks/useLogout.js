@@ -1,23 +1,17 @@
 import React from "react"
 import { useOpenId } from ".."
 import { logger } from "../components/OpenId"
-import { useTimer } from "../../hooks"
 
-export const useLogout = ({
-  minTimeBeforeRedirect = 0,
-  onSuccess,
-  onFailure
-}) => {
-  const ready = useTimer(minTimeBeforeRedirect)
+export const useLogout = ({ onSuccess, onFailure }) => {
   const { userManager } = useOpenId()
-  React.useEffect(() => {
-    logger.debug("Logout")
-    if (userManager && ready) {
+
+  return React.useCallback(() => {
+    if (userManager) {
       logger.debug("Logout called")
       userManager
         .signoutRedirect()
         .then(onSuccess)
         .catch(onFailure)
     }
-  }, [userManager, ready])
+  }, [userManager])
 }
