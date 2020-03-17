@@ -9,3 +9,4 @@ export { useOtpLogin } from "./hooks/useOtpLogin"
 export { useUrlLogin } from "./hooks/useUrlLogin"
 
 export { useCallbackLogin } from "./hooks/useCallbackLogin"
+export { useCallbackLoginSilent } from "./hooks/useCallbackLoginSilent"
