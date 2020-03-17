@@ -1,8 +1,9 @@
 import React from "react"
 import { useTimer } from "../../hooks"
-import { logger, useOpenId } from "../components/OpenId"
+import { useOpenId } from ".."
+import { logger } from "../components/OpenId"
 
-export const useCallbackLoginSilent = ({
+export const useCallbackLogout = ({
   minTimeBeforeRedirect = 0,
   onSucces,
   onFailure
@@ -11,11 +12,11 @@ export const useCallbackLoginSilent = ({
   const { userManager } = useOpenId()
 
   React.useEffect(() => {
-    logger.debug("CallbackLoginSilent")
+    logger.debug("CallbackLogout")
     if (userManager && ready) {
-      logger.debug("CallbackLoginSilent called")
+      logger.debug("CallbackLogout called")
       userManager
-        .signinSilentCallback()
+        .signoutRedirectCallback()
         .then(onSucces)
         .catch(onFailure)
     }

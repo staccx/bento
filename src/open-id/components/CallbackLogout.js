@@ -1,23 +1,36 @@
-import { useEffect } from "react"
 import { useOpenId, logger } from "./OpenId"
+import { useCallbackLogout } from "../hooks/useCallbackLogout"
 
-export const CallbackLogout = () => {
-  const { userManager, afterLogout, onError } = useOpenId()
-  useEffect(() => {
-    logger.debug("CallbackLogout")
-    if (userManager) {
-      logger.debug("CallbackLogout called")
-      userManager
-        .signoutRedirectCallback()
-        .then(() => {
-          logger.debug("CallbackLogout successful rederection to", afterLogout)
-          window.location.replace(afterLogout)
-        })
-        .catch(error => {
-          logger.debug("Could not log out redirect", error)
-          window.location.replace(onError)
-        })
+export const CallbackLogout = ({
+  minTimeBeforeRedirect,
+  onSuccess,
+  onFailure
+}) => {
+  const { afterLogout, onError } = useOpenId()
+
+  useCallbackLogout({
+    minTimeBeforeRedirect,
+    onSucces: result => {
+      logger.debug("CallbackLogout successful rederection to", afterLogout)
+      if (onSuccess) {
+        logger.info("Using success callback", afterLogout)
+        onSuccess(result)
+      } else {
+        logger.info("Replacing location with", afterLogout)
+        window.location.replace(afterLogout)
+      }
+    },
+    onFailure: error => {
+      logger.debug("Could not log out redirect", error)
+      if (onFailure) {
+        logger.info("Using failure callback", onError)
+        onFailure(error)
+      } else {
+        logger.info("Fallback to replace location", onError)
+        window.location.replace(onError)
+      }
     }
-  }, [userManager])
+  })
+
   return null
 }
