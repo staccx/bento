@@ -1,23 +1,25 @@
-import { useEffect } from "react"
 import { useOpenId, logger } from "./OpenId"
+import { useLogout } from "../hooks/useLogout"
 
-export const Logout = () => {
+export const Logout = ({ minTimeBeforeRedirect, onSuccess, onFailure }) => {
   const { userManager, onError } = useOpenId()
-  useEffect(() => {
-    logger.debug("Logout")
-    if (userManager) {
-      logger.debug("Logout called")
-      userManager
-        .signoutRedirect()
-        .then(() => {
-          logger.debug("SignoutRedirect successful")
-        })
-        .catch(error => {
-          logger.error("failed to Logout ", error)
-          userManager.removeUser().then(() => window.location.replace(onError))
-        })
+
+  useLogout({
+    minTimeBeforeRedirect,
+    onSuccess: result => {
+      logger.debug("SignoutRedirect successful")
+      onSuccess(result)
+    },
+    onFailure: error => {
+      if (onFailure) {
+        logger.info("Using failure callback", onError)
+        onFailure(error)
+      } else {
+        logger.info("Fallback to replace location", onError)
+        userManager.removeUser().then(() => window.location.replace(onError))
+      }
     }
-  }, [userManager])
+  })
 
   return null
 }
