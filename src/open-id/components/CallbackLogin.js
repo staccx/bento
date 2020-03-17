@@ -1,8 +1,15 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { useOpenId } from ".."
 import { logger } from "./OpenId"
+import { useTimer } from "../../hooks"
 
-export const CallbackLogin = () => {
+const CallbackLogin = ({
+  minTimeBeforeRedirect,
+  onSuccess,
+  onFailure,
+  element
+}) => {
   const {
     userManager,
     afterLogin,
@@ -10,24 +17,66 @@ export const CallbackLogin = () => {
     reloadParentAfterLogin
   } = useOpenId()
 
+  const ready = useTimer(minTimeBeforeRedirect)
   const _window = reloadParentAfterLogin ? window.parent : window
 
   React.useEffect(() => {
     logger.debug("CallbackLogin")
-    if (userManager) {
-      logger.debug("SigningRedirect being called")
+    if (userManager && ready) {
+      logger.debug("SigningRedirectCallback being called")
       userManager
         .signinRedirectCallback()
-        .then(() => {
-          logger.info("Signin redirect successful. Redirecting to", afterLogin)
-          _window.location.replace(afterLogin)
+        .then(result => {
+          logger.info("SigninRedirectCallback successful", result)
+          if (onSuccess) {
+            logger.info("Using success callback", afterLogin)
+            onSuccess(result)
+          } else {
+            logger.info("Replacing location with", afterLogin)
+            _window.location.replace(afterLogin)
+          }
         })
         .catch(error => {
-          logger.error("Could not signin redirect", error)
-          _window.location.replace(onError)
+          logger.info("SigninRedirectCallback unsuccessful", error)
+          if (onFailure) {
+            logger.info("Using failure callback", onError)
+            onFailure(error)
+          } else {
+            logger.error("Fallback to replace location", onError)
+            _window.location.replace(onError)
+          }
         })
     }
-  }, [userManager])
+  }, [userManager, ready])
+
+  if (element) {
+    return element
+  }
 
   return null
 }
+
+CallbackLogin.propTypes = {
+  /**
+   * will postpone redirect for x ms
+   */
+  minTimeBeforeRedirect: PropTypes.number,
+  /**
+   * Callback when redirect callback succeeds
+   */
+  onSucces: PropTypes.func,
+  /**
+   * Callback when redirect callback fails
+   */
+  onFailure: PropTypes.func,
+  /**
+   * If you want to render something whilst the redirect callback happens
+   */
+  element: PropTypes.element
+}
+
+CallbackLogin.defaultProps = {
+  minTimeBeforeRedirect: 0
+}
+
+export { CallbackLogin }
