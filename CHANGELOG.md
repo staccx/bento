@@ -1,3 +1,34 @@
+## [10.0.1-alpha.25](https://github.com/staccx/bento/compare/v10.0.1-alpha.24...v10.0.1-alpha.25) (2020-03-17)
+
+
+### Features
+
+* **openid:** add callbacks to callback login ([2c08200](https://github.com/staccx/bento/commit/2c08200))
+
+
+
+## [10.0.1-alpha.24](https://github.com/staccx/bento/compare/v10.0.1-alpha.23...v10.0.1-alpha.24) (2020-03-16)
+
+
+### Bug Fixes
+
+* **openid:** made fetchToken memoized ([aab4ba2](https://github.com/staccx/bento/commit/aab4ba2))
+
+
+
+## [10.0.1-alpha.23](https://github.com/staccx/bento/compare/v10.0.1-alpha.22...v10.0.1-alpha.23) (2020-03-16)
+
+
+
+## [10.0.1-alpha.22](https://github.com/staccx/bento/compare/v10.0.1-alpha.21...v10.0.1-alpha.22) (2020-03-16)
+
+
+### Bug Fixes
+
+* namespace ([8a95f10](https://github.com/staccx/bento/commit/8a95f10))
+
+
+
 ## [10.0.1-alpha.21](https://github.com/staccx/bento/compare/v10.0.1-alpha.20...v10.0.1-alpha.21) (2020-03-16)
 
 
