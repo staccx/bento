@@ -16,6 +16,7 @@ const Expand = ({
   title,
   hideIcon,
   variant,
+  id,
   ...restProps
 }) => {
   const [isExpanded, setIsExpanded] = useState(expanded)
@@ -40,7 +41,7 @@ const Expand = ({
               onClick={e => handleExpand(e)}
               aria-expanded={isExpanded}
               aria-controls={title}
-              id={title + "2"}
+              id={(id ?? title) + "2"}
               variant={variant}
             >
               {child}
@@ -53,8 +54,8 @@ const Expand = ({
         return (
           isExpanded && (
             <ExpandItem
-              id={title}
-              aria-labelledby={title + "2"}
+              id={id ?? title}
+              aria-labelledby={(id ?? title) + "2"}
               variant={variant}
             >
               {child}
