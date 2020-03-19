@@ -10,5 +10,12 @@ export default theming.createVariants(
       padding-top: 6px;
     `
   },
+  {
+    banner: css`
+      background-color: ${theming.color("bgGray")};
+      padding-left: 0;
+      padding-top: 6px;
+    `
+  },
   Alert.themeProps.alert
 )

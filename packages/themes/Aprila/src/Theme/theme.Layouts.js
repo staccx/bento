@@ -42,6 +42,7 @@ export const LayoutStyling = theming.createVariants(
       grid-row-gap: 0;
       grid-template-areas:
         "header"
+        "banner"
         "main"
         "footer";
       grid-auto-flow: column;
