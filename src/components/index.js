@@ -13,16 +13,12 @@ export { default as RadioButton } from "./Forms/RadioButton/RadioButton"
 export { default as RadioPill } from "./Forms/RadioPill/RadioPill"
 export { default as RadioPillItem } from "./Forms/RadioPill/RadioPill.Item"
 export { default as CheckGroup } from "./Forms/CheckGroup/CheckGroup"
-export { default as Slider } from "./Forms/Slider/Slider/Slider"
 export { default as SliderKeyboardInput } from "./Forms/Slider/SliderKeyboardInput/SliderKeyboardInput"
 export { default as SelectSimple } from "./Forms/SelectSimple/SelectSimple"
 export { default as Toggle } from "./Forms/Toggle/Toggle"
 export { default as Form } from "./Forms/Form/Form"
 export { default as FormField } from "./Forms/Form/FormField"
 export { default as CreditCardInput } from "./Forms/Input/CreditCard/CreditCardInput"
-export { default as Slider2 } from "./Forms/Slider/Slider2/Slider2"
-export { default as Slider2Track } from "./Forms/Slider/Slider2/Slider2.Track"
-export { default as Slider2Handle } from "./Forms/Slider/Slider2/Slider2.Handle"
 
 // Text
 export { default as Text } from "./Text/Text/Text"
@@ -87,8 +83,11 @@ export { default as Alert } from "./Alert/Alert"
 // Boxes
 export { default as Box } from "./Layout/Box/Box"
 
+// Theming
 export { default as ThemeComponent } from "./Theme/ThemeComponent"
+export { default as ThemeProvider } from "./Theme/ThemeProvider/ThemeProvider"
 export { default as GlobalStyle } from "./Theme/GlobalStyle"
+export { default as WebFonts } from "./Theme/WebFonts"
 
 // Formatters
 export { default as Odometer } from "./Formatters/Odometer/Odometer"
@@ -99,8 +98,6 @@ export { default as Logo } from "./Logo/Logo"
 // Code
 export { default as CodeRenderer } from "./Code/CodeRenderer"
 export { default as Table } from "./Table/Table"
-
-export { default as WebFonts } from "./Theme/WebFonts"
 
 /**
  * Hooks!

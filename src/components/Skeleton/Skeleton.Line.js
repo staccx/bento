@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { applyVariants, borderRadius } from "../../theming"
 import SkeletonPulse from "./Skeleton.Pulse"
 import themeProps from "./Skeleton.Line.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 const SkeletonLine = ({ className, width, height, ...restProps }) => {
   return (
@@ -34,5 +35,6 @@ SkeletonLine.propTypes = {
   className: PropTypes.string
 }
 SkeletonLine.themeProps = themeProps
+SkeletonLine.createVariants = componentCreateFactory(SkeletonLine)
 
 export default SkeletonLine

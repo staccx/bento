@@ -1,17 +1,21 @@
 import themeProps from "./RadioPill.themeProps"
+import { theme as instance } from "../../../theming"
+import RadioPill from "./RadioPill"
 
 describe("RadioPill", () => {
   describe("Theme props", () => {
     it("container", () => {
       expect(themeProps.container).not.toBeNull()
-      expect(themeProps.container.hasOwnProperty("createVariants")).toBe(true)
+      expect(RadioPill.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.container.createVariants({
-        myVariant: style
+      RadioPill.createVariants({
+        container: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.container.name)).toBe(true)
-      expect(variant[themeProps.container.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.container.name)).toBe(true)
+      expect(instance[themeProps.container.name].myVariant).toEqual(style)
     })
   })
 })

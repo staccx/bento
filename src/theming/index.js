@@ -1,6 +1,7 @@
 // Convenience
 // Theme class
 import Theme from "./Theme"
+
 export { default as borderRadius } from "./convenience/borderRadius"
 export { default as color } from "./convenience/color"
 export { default as font } from "./convenience/font"
@@ -15,7 +16,6 @@ export { default as gradient } from "./convenience/gradient"
 export { default as getProp } from "./utils/getProp"
 export { default as mapProp } from "./utils/mapProp"
 export { default as createVariants } from "./utils/createVariants"
-export { default as createVariantsFunctionFactory } from "./utils/createVariantsFunctionFactory"
 export { default as createGlobal } from "./utils/createGlobal"
 export { default as applyVariants } from "./utils/applyVariants"
 export { default as flattenGlobals } from "./utils/flattenGlobals"
@@ -32,5 +32,8 @@ export { default as fontSmoothing } from "./styles/fontsmoothing"
 export { default as hideVisually } from "./styles/hideVisually"
 
 const instance = new Theme()
+const themes = {
+  _default: instance
+}
 
-export { instance as theme, Theme }
+export { themes, instance as theme, Theme }

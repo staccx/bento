@@ -1,7 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, themePropTypes } from "../../../theming"
+import { applyVariants } from "../../../theming"
+import themeProps from "./Digit.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Digit = ({ isAnimating, digit, speed, size, single, variant }) => (
   <DigitWrapper isAnimating size={size} isEmpty={!digit} variant={variant}>
@@ -17,24 +19,11 @@ const Digit = ({ isAnimating, digit, speed, size, single, variant }) => (
   </DigitWrapper>
 )
 
-Digit.themeProps = {
-  wrapper: {
-    name: "digit",
-    description: "Wrapper style",
-    type: themePropTypes.style
-  },
-  container: {
-    name: "digit_container",
-    description: "Container style",
-    type: themePropTypes.style
-  }
-}
-
 const DigitWrapper = styled.div`
   height: ${p => p.size}px;
   width: ${p => (p.isEmpty ? p.size / 2 : p.size / 1.5)}px;
   overflow: hidden;
-  ${applyVariants(Digit.themeProps.wrapper.name)};
+  ${applyVariants(themeProps.wrapper.name)};
 `
 
 const DigitContainer = styled.div`
@@ -46,7 +35,7 @@ const DigitContainer = styled.div`
       transform: translateY(-${p.digit}em);
       transition: transform ${p.speed}ms cubic-bezier(0, 0, 0.2, 1);
       `};
-  ${applyVariants(Digit.themeProps.container.name)};
+  ${applyVariants(themeProps.container.name)};
 `
 
 Digit.propTypes = {
@@ -56,5 +45,7 @@ Digit.propTypes = {
   isAnimating: PropTypes.bool,
   single: PropTypes.bool
 }
+Digit.themeProps = themeProps
+Digit.createVariants = componentCreateFactory(Digit)
 
 export default Digit

@@ -10,6 +10,7 @@ import {
   commonPropTypes
 } from "../../../theming"
 import themeProps from "./SplitListItem.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const SplitListItem = ({ children, className, ...restProps }) => {
   if (React.Children.count(children) > 2) {
@@ -52,5 +53,6 @@ SplitListItem.propTypes = {
   className: PropTypes.string
 }
 SplitListItem.themeProps = themeProps
+SplitListItem.createVariants = componentCreateFactory(SplitListItem)
 
 export default SplitListItem

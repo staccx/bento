@@ -1,28 +1,34 @@
 import themeProps from "./BirthdateInput.themeProps"
+import { theme as instance } from "../../../../theming"
+import BirthdateInput from "./BirthdateInput"
 
 describe("BirthdateInput", () => {
   describe("Theme props", () => {
     it("outer", () => {
       expect(themeProps.outer).not.toBeNull()
-      expect(themeProps.outer.hasOwnProperty("createVariants")).toBe(true)
+      expect(BirthdateInput.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.outer.createVariants({
-        myVariant: style
+      BirthdateInput.createVariants({
+        outer: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.outer.name)).toBe(true)
-      expect(variant[themeProps.outer.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.outer.name)).toBe(true)
+      expect(instance[themeProps.outer.name].myVariant).toEqual(style)
     })
     it("container", () => {
       expect(themeProps.container).not.toBeNull()
-      expect(themeProps.container.hasOwnProperty("createVariants")).toBe(true)
+      expect(BirthdateInput.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.container.createVariants({
-        myVariant: style
+      BirthdateInput.createVariants({
+        container: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.container.name)).toBe(true)
-      expect(variant[themeProps.container.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.container.name)).toBe(true)
+      expect(instance[themeProps.container.name].myVariant).toEqual(style)
     })
   })
 })

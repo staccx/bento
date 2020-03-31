@@ -1,32 +1,21 @@
 /**
- * @class Slider2
+ * @class Slider
  */
 
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { applyVariants, color, font, themePropTypes } from "../../../../theming"
+import { applyVariants, color, font } from "../../../../theming"
+import themeProps from "./Slider.Tick.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
-const Slider2Tick = ({ tick, count, format, className, ...restProps }) => (
+const SliderTick = ({ tick, count, format, className, ...restProps }) => (
   <div>
     <StartTick className={className} tick={tick} />
     <EndTick className={className} tick={tick} />
     {format(tick.value)}
   </div>
 )
-
-Slider2Tick.themeProps = {
-  startTick: {
-    name: "SLIDER2_START_TICK",
-    description: "Tick style",
-    type: themePropTypes.style
-  },
-  endTick: {
-    name: "SLIDER2_END_TICK",
-    description: "Tick style",
-    type: themePropTypes.style
-  }
-}
 
 const StartTick = styled.button`
   position: absolute;
@@ -35,7 +24,7 @@ const StartTick = styled.button`
   width: 1px;
   height: 5px;
   background-color: ${color.gray};
-  ${applyVariants(Slider2Tick.themeProps.startTick)};
+  ${applyVariants(themeProps.startTick)};
 `
 const EndTick = styled.button`
   position: absolute;
@@ -45,14 +34,14 @@ const EndTick = styled.button`
   text-align: center;
   font-size: ${font.small};
   background-color: ${color.gray};
-  ${applyVariants(Slider2Tick.themeProps.endTick)};
+  ${applyVariants(themeProps.endTick)};
 `
 
-Slider2Tick.defaultProps = {
+SliderTick.defaultProps = {
   className: ""
 }
 
-Slider2Tick.propTypes = {
+SliderTick.propTypes = {
   className: PropTypes.string,
   domain: PropTypes.array.isRequired,
   handle: PropTypes.shape({
@@ -62,6 +51,8 @@ Slider2Tick.propTypes = {
   }).isRequired,
   getHandleProps: PropTypes.func.isRequired
 }
+SliderTick.themeProps = themeProps
+SliderTick.createVariants = componentCreateFactory(SliderTick)
 
 /** @component */
-export default Slider2Tick
+export default SliderTick

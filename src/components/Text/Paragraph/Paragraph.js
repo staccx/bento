@@ -8,6 +8,7 @@ import {
   commonPropTypes
 } from "../../../theming"
 import themeProps from "./Paragraph.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Paragraph = ({ children, className, ...restProps }) => {
   return (
@@ -32,4 +33,6 @@ Paragraph.propTypes = {
   className: PropTypes.string
 }
 Paragraph.themeProps = themeProps
+Paragraph.createVariants = componentCreateFactory(Paragraph)
+
 export default Paragraph

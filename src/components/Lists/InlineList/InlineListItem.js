@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { applyVariants } from "../../../theming"
 import themeProps from "./InlineList.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const InlineListItem = ({ className, children, ...rest }) => (
   <ListItem className={className} {...rest}>
@@ -24,5 +25,6 @@ InlineListItem.propTypes = {
   className: PropTypes.string
 }
 InlineListItem.themeProps = themeProps
+InlineListItem.createVariants = componentCreateFactory(InlineListItem)
 
 export default InlineListItem

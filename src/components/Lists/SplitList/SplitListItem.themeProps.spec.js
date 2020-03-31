@@ -1,17 +1,21 @@
 import themeProps from "./SplitListItem.themeProps"
+import { theme as instance } from "../../../theming"
+import SplitListItem from "./SplitListItem"
 
 describe("SplitListItem", () => {
   describe("Theme props", () => {
     it("listItem", () => {
       expect(themeProps.listItem).not.toBeNull()
-      expect(themeProps.listItem.hasOwnProperty("createVariants")).toBe(true)
+      expect(SplitListItem.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.listItem.createVariants({
-        myVariant: style
+      SplitListItem.createVariants({
+        listItem: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.listItem.name)).toBe(true)
-      expect(variant[themeProps.listItem.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.listItem.name)).toBe(true)
+      expect(instance[themeProps.listItem.name].myVariant).toEqual(style)
     })
   })
 })

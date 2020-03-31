@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { applyVariants, spacing, commonPropTypes } from "../../../theming"
 import themeProps from "./Box.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Box = ({ children, className, size, ...otherProps }) => (
   <Boxing className={className} size={size} {...otherProps}>
@@ -17,7 +18,7 @@ export const Boxing = styled.div`
 
 Box.defaultProps = {
   className: "",
-  size: ""
+  size: null
 }
 
 Box.propTypes = {
@@ -35,5 +36,6 @@ Box.propTypes = {
   size: commonPropTypes.spacing
 }
 Box.themeProps = themeProps
+Box.createVariants = componentCreateFactory(Box)
 
 export default Box

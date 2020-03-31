@@ -10,6 +10,7 @@ import {
   commonPropTypes
 } from "../../../theming"
 import themeProps from "./Tag.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Tag = ({ children, className, variant, ...rest }) => (
   <TagWrapper className={className} variant={variant} {...rest}>
@@ -39,5 +40,6 @@ Tag.propTypes = {
   variant: PropTypes.string
 }
 Tag.themeProps = themeProps
+Tag.createVariants = componentCreateFactory(Tag)
 
 export default Tag

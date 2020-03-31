@@ -9,6 +9,7 @@ import {
   commonPropTypes
 } from "../../../theming"
 import themeProps from "./Toggle.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Toggle = ({
   children,
@@ -143,5 +144,6 @@ Toggle.defaultProps = {
   children: ""
 }
 Toggle.themeProps = themeProps
+Toggle.createVariants = componentCreateFactory(Toggle)
 
 export default Toggle

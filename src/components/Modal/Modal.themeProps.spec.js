@@ -1,61 +1,73 @@
 import themeProps from "./Modal.themeProps"
+import { theme as instance } from "../../theming"
+import Modal from "./Modal"
 
 describe("Modal", () => {
   describe("Theme props", () => {
     it("dialog", () => {
       expect(themeProps.dialog).not.toBeNull()
-      expect(themeProps.dialog.hasOwnProperty("createVariants")).toBe(true)
+      expect(Modal.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.dialog.createVariants({
-        myVariant: style
+      Modal.createVariants({
+        dialog: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.dialog.name)).toBe(true)
-      expect(variant[themeProps.dialog.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.dialog.name)).toBe(true)
+      expect(instance[themeProps.dialog.name].myVariant).toEqual(style)
     })
     it("content", () => {
       expect(themeProps.content).not.toBeNull()
-      expect(themeProps.content.hasOwnProperty("createVariants")).toBe(true)
+      expect(Modal.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.content.createVariants({
-        myVariant: style
+      Modal.createVariants({
+        content: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.content.name)).toBe(true)
-      expect(variant[themeProps.content.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.content.name)).toBe(true)
+      expect(instance[themeProps.content.name].myVariant).toEqual(style)
     })
     it("close", () => {
       expect(themeProps.close).not.toBeNull()
-      expect(themeProps.close.hasOwnProperty("createVariants")).toBe(true)
+      expect(Modal.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.close.createVariants({
-        myVariant: style
+      Modal.createVariants({
+        close: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.close.name)).toBe(true)
-      expect(variant[themeProps.close.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.close.name)).toBe(true)
+      expect(instance[themeProps.close.name].myVariant).toEqual(style)
     })
     it("backdrop", () => {
       expect(themeProps.backdrop).not.toBeNull()
-      expect(themeProps.backdrop.hasOwnProperty("createVariants")).toBe(true)
+      expect(Modal.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.backdrop.createVariants({
-        myVariant: style
+      Modal.createVariants({
+        backdrop: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.backdrop.name)).toBe(true)
-      expect(variant[themeProps.backdrop.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.backdrop.name)).toBe(true)
+      expect(instance[themeProps.backdrop.name].myVariant).toEqual(style)
     })
     it("closeIcon", () => {
       expect(themeProps.closeIcon).not.toBeNull()
-      expect(themeProps.closeIcon.hasOwnProperty("createVariants")).toBe(true)
+      expect(Modal.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.closeIcon.createVariants({
-        myVariant: style
+      Modal.createVariants({
+        closeIcon: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.closeIcon.name)).toBe(true)
-      expect(variant[themeProps.closeIcon.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.closeIcon.name)).toBe(true)
+      expect(instance[themeProps.closeIcon.name].myVariant).toEqual(style)
     })
   })
 })

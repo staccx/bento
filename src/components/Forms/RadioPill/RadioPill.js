@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { applyVariants } from "../../../theming"
 import themeProps from "./RadioPill.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const RadioPill = ({
   children,
@@ -55,5 +56,6 @@ RadioPill.propTypes = {
   full: PropTypes.bool
 }
 RadioPill.themeProps = themeProps
+RadioPill.createVariants = componentCreateFactory(RadioPill)
 
 export default RadioPill

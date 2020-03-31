@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { applyVariants, color } from "../../../theming"
 import themeProps from "./Divider.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const Divider = ({ level, className, height, ...restProps }) => {
   return <Rule className={className} height={height} {...restProps} />
@@ -33,5 +34,6 @@ Divider.propTypes = {
   height: PropTypes.number
 }
 Divider.themeProps = themeProps
+Divider.createVariants = componentCreateFactory(Divider)
 
 export default Divider

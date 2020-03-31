@@ -1,39 +1,47 @@
 import themeProps from "./PostalCode.themeProps"
+import { theme as instance } from "../../../../theming"
+import PostalCodeInput from "./PostalCodeInput"
 
 describe("PostalCodeInput", () => {
   describe("Theme props", () => {
     it("wrapper", () => {
       expect(themeProps.wrapper).not.toBeNull()
-      expect(themeProps.wrapper.hasOwnProperty("createVariants")).toBe(true)
+      expect(PostalCodeInput.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.wrapper.createVariants({
-        myVariant: style
+      PostalCodeInput.createVariants({
+        wrapper: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
-      expect(variant[themeProps.wrapper.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.wrapper.name)).toBe(true)
+      expect(instance[themeProps.wrapper.name].myVariant).toEqual(style)
     })
     it("location", () => {
       expect(themeProps.location).not.toBeNull()
-      expect(themeProps.location.hasOwnProperty("createVariants")).toBe(true)
+      expect(PostalCodeInput.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.location.createVariants({
-        myVariant: style
+      PostalCodeInput.createVariants({
+        location: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.location.name)).toBe(true)
-      expect(variant[themeProps.location.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.location.name)).toBe(true)
+      expect(instance[themeProps.location.name].myVariant).toEqual(style)
     })
     it("input", () => {
       expect(themeProps.input).not.toBeNull()
-      expect(themeProps.input.hasOwnProperty("createVariants")).toBe(true)
+      expect(PostalCodeInput.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `background-color: blue;`
-      const variant = themeProps.input.createVariants({
-        myVariant: style
+      PostalCodeInput.createVariants({
+        input: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.input.name)).toBe(true)
-      expect(variant[themeProps.input.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.input.name)).toBe(true)
+      expect(instance[themeProps.input.name].myVariant).toEqual(style)
     })
   })
 })

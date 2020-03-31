@@ -4,11 +4,12 @@ import styled from "styled-components"
 import { applyVariants, color } from "../../../theming"
 import themeProps from "./FullScreenLoader.themeProps"
 import MessageLoader from "../MessageLoader/MessageLoader"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
-const FullScreenLoader = ({ variant, ...props }) => {
+const FullScreenLoader = props => {
   return (
-    <FullScreenContainer variant={variant}>
-      <MessageLoader variant={variant} textColor="white" {...props} />
+    <FullScreenContainer {...props}>
+      <MessageLoader textColor="white" {...props} />
     </FullScreenContainer>
   )
 }
@@ -50,6 +51,7 @@ FullScreenLoader.defaultProps = {
   randomOrder: false,
   messagePosition: "bottom"
 }
-FullScreenContainer.themeProps = themeProps
+FullScreenLoader.themeProps = themeProps
+FullScreenLoader.createVariants = componentCreateFactory(FullScreenLoader)
 
 export default FullScreenLoader

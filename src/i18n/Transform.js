@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
-import { useI18n } from "./I18n"
-import loglevel from "loglevel"
+import { useI18n, i18nLogger } from "./I18n"
+
 import { getComponent } from "./utils"
 
 /**
@@ -12,18 +12,18 @@ const Transform = ({ children, data }) => {
   const { transform, ready } = useI18n()
 
   if (!ready) {
-    loglevel.debug("Not ready yet")
+    i18nLogger.debug("Not ready yet")
     return null
   }
   if (!data) {
-    loglevel.warn("No value provided")
+    i18nLogger.warn("No value provided")
     return children
   }
 
   const value = transform(data)
   if (!value) {
     if (children) {
-      loglevel.debug("Falling back to children")
+      i18nLogger.debug("Falling back to children")
       if (typeof children !== "function") {
         return children // Fallback to children
       }

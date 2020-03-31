@@ -11,24 +11,30 @@ import Input from "../../components/Forms/Input/Input"
   component={useBrRegSearch}
 />
 
-# UseBrRegSearch
+# useBrRegSearch
 
-useBrRegSearch
+### Import
+All Hooks are imported via hooks. to use a spesific hook you would
+use ```hooks.hookYouWant```
 
 ```javascript
-import { useBrRegSearch } from "@staccx/bento"
+import { hooks } from "@staccx/bento"
 ```
+usage
+```javascript
+hooks.useBrRegSearch
+```
+
 
 ## useBrRegSearch setup component
 
 ```javascript
-import useBrRegSearch from "./useBrRegSearch"
-import List from "../../components/Lists/List"
+import {hooks, List} from "@stacc/bento"
 import ReactJson from "react-json-view"
 import React from "react"
 
 export const Component = ({ term }) => {
-  const { isLoading, results } = useBrRegSearch(term)
+  const { isLoading, results } = hooks.useBrRegSearch(term)
 
   return (
     <div>

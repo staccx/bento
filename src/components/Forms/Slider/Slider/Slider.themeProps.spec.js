@@ -1,39 +1,73 @@
 import themeProps from "./Slider.themeProps"
+import { theme as instance } from "../../../../theming"
+import Slider from "./Slider"
 
 describe("Slider", () => {
   describe("Theme props", () => {
-    it("thumb", () => {
-      expect(themeProps.thumb).not.toBeNull()
-      expect(themeProps.thumb.hasOwnProperty("createVariants")).toBe(true)
+    it("container", () => {
+      expect(themeProps.container).not.toBeNull()
+      expect(Slider.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.thumb.createVariants({
-        myVariant: style
+      Slider.createVariants({
+        container: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.thumb.name)).toBe(true)
-      expect(variant[themeProps.thumb.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.container.name)).toBe(true)
+      expect(instance[themeProps.container.name].myVariant).toEqual(style)
     })
-    it("track", () => {
-      expect(themeProps.track).not.toBeNull()
-      expect(themeProps.track.hasOwnProperty("createVariants")).toBe(true)
+    it("slider", () => {
+      expect(themeProps.slider).not.toBeNull()
+      expect(Slider.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.track.createVariants({
-        myVariant: style
+      Slider.createVariants({
+        slider: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.track.name)).toBe(true)
-      expect(variant[themeProps.track.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.slider.name)).toBe(true)
+      expect(instance[themeProps.slider.name].myVariant).toEqual(style)
     })
-    it("input", () => {
-      expect(themeProps.input).not.toBeNull()
-      expect(themeProps.input.hasOwnProperty("createVariants")).toBe(true)
+    it("rail", () => {
+      expect(themeProps.rail).not.toBeNull()
+      expect(Slider.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.input.createVariants({
-        myVariant: style
+      Slider.createVariants({
+        rail: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.input.name)).toBe(true)
-      expect(variant[themeProps.input.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.rail.name)).toBe(true)
+      expect(instance[themeProps.rail.name].myVariant).toEqual(style)
+    })
+    it("tracks", () => {
+      expect(themeProps.tracks).not.toBeNull()
+      expect(Slider.hasOwnProperty("createVariants")).toBe(true)
+
+      const style = `color: blue;`
+      Slider.createVariants({
+        tracks: {
+          myVariant: style
+        }
+      })
+      expect(instance.hasOwnProperty(themeProps.tracks.name)).toBe(true)
+      expect(instance[themeProps.tracks.name].myVariant).toEqual(style)
+    })
+    it("handle", () => {
+      expect(themeProps.handle).not.toBeNull()
+      expect(Slider.hasOwnProperty("createVariants")).toBe(true)
+
+      const style = `color: blue;`
+      Slider.createVariants({
+        handle: {
+          myVariant: style
+        }
+      })
+      expect(instance.hasOwnProperty(themeProps.handle.name)).toBe(true)
+      expect(instance[themeProps.handle.name].myVariant).toEqual(style)
     })
   })
 })

@@ -1,5 +1,6 @@
-import { themePropTypes, createVariantsFunctionFactory } from "../../../theming"
+import { themePropTypes } from "../../../theming"
 import messageLoaderThemeProps from "../MessageLoader/MessageLoader.themeProps"
+
 const themeProps = {
   mainContainer: {
     name: "FULLSCREENLOADER_MAINCONTAINER",
@@ -38,4 +39,4 @@ const themeProps = {
   }
 }
 
-export default createVariantsFunctionFactory(themeProps)
+export default themeProps

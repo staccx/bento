@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
 import { applyVariants } from "../../theming"
 import themeProps from "./Skeleton.Pulse.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 const SkeletonPulse = ({ className, ...restProps }) => {
   return <PulseStyle className={className} {...restProps} />
@@ -43,5 +44,6 @@ SkeletonPulse.propTypes = {
   className: PropTypes.string
 }
 SkeletonPulse.themeProps = themeProps
+SkeletonPulse.createVariants = componentCreateFactory(SkeletonPulse)
 
 export default SkeletonPulse

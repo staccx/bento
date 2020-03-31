@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import { applyVariants, spacing, commonPropTypes } from "../../../theming"
 import themeProps from "./Flag.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 /**
  * The flag object is a design pattern similar to the media object, however it
@@ -213,5 +214,6 @@ Flag.propTypes = {
   tiny: PropTypes.bool
 }
 Flag.themeProps = themeProps
+Flag.createVariants = componentCreateFactory(Flag)
 
 export default Flag

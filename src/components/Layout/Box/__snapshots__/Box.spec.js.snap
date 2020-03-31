@@ -3,7 +3,7 @@
 exports[`Box Snapshots No props 1`] = `
 <div
   className="sc-AykKC pywwI"
-  size=""
+  size={null}
 >
   <p>
     Body

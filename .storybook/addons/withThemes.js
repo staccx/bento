@@ -12,7 +12,6 @@ import GlobalStyle from "../../src/components/Theme/GlobalStyle"
 
 const TOOL_NAME = "bento-sb-theme"
 
-
 const getName = theme => theme.storybookName || "NO NAME"
 
 export const withTheme = makeDecorator({
@@ -31,7 +30,6 @@ export const withTheme = makeDecorator({
       }
     }, [])
 
-    console.log("variant", variant)
     const component = getStory(context)
     return (
       <ThemeProvider theme={theme}>
@@ -47,7 +45,6 @@ export const ThemeSwitcher = ({ api }) => {
   const [activeTheme, setTheme] = useState(getLocalTheme()[1])
   const [expanded, setExpanded] = useState(false)
   const [, setT] = useAddonState("theme-switcher", null)
-
   useEffect(() => bindThemeOverride(api), [])
   useEffect(() => {
     if (activeTheme) {

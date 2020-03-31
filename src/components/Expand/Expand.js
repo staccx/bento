@@ -6,6 +6,7 @@ import Caret from "../Icons/Caret/Caret"
 import ThemeComponent from "../Theme/ThemeComponent"
 import { applyVariants, color, spacing, commonPropTypes } from "../../theming"
 import themeProps from "./Expand.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 const Expand = ({
   className,
@@ -15,6 +16,7 @@ const Expand = ({
   title,
   hideIcon,
   variant,
+  id,
   ...restProps
 }) => {
   const [isExpanded, setIsExpanded] = useState(expanded)
@@ -39,7 +41,7 @@ const Expand = ({
               onClick={e => handleExpand(e)}
               aria-expanded={isExpanded}
               aria-controls={title}
-              id={title + "2"}
+              id={(id ?? title) + "2"}
               variant={variant}
             >
               {child}
@@ -52,8 +54,8 @@ const Expand = ({
         return (
           isExpanded && (
             <ExpandItem
-              id={title}
-              aria-labelledby={title + "2"}
+              id={id ?? title}
+              aria-labelledby={(id ?? title) + "2"}
               variant={variant}
             >
               {child}
@@ -153,5 +155,6 @@ Expand.propTypes = {
   hideIcon: PropTypes.bool
 }
 Expand.themeProps = themeProps
+Expand.createVariants = componentCreateFactory(Expand)
 
 export default Expand

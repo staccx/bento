@@ -1,3 +1,187 @@
+## [10.0.1-alpha.28](https://github.com/staccx/bento/compare/v10.0.1-alpha.27...v10.0.1-alpha.28) (2020-03-31)
+
+
+### Bug Fixes
+
+* **bento:** removed log for phoneinput ([05579e1](https://github.com/staccx/bento/commit/05579e1))
+* **components:** drill variant to modal close button ([f3dd18b](https://github.com/staccx/bento/commit/f3dd18b))
+
+
+
+## [10.0.1-alpha.27](https://github.com/staccx/bento/compare/v10.0.1-alpha.26...v10.0.1-alpha.27) (2020-03-26)
+
+
+### Bug Fixes
+
+* **bento:** countrycode and select simple ([c57c149](https://github.com/staccx/bento/commit/c57c149))
+* **bento:** update snapshot for selectsimple ([b815057](https://github.com/staccx/bento/commit/b815057))
+
+
+
+## [10.0.1-alpha.26](https://github.com/staccx/bento/compare/v10.0.1-alpha.25...v10.0.1-alpha.26) (2020-03-18)
+
+
+### Bug Fixes
+
+* **components:** expand title to id ([63722ef](https://github.com/staccx/bento/commit/63722ef))
+* **openid:** useLogout now returns function ([beab282](https://github.com/staccx/bento/commit/beab282))
+
+
+### Features
+
+* **openid:** add useCallbackLogin. refactor Callbacklogin ([6328f25](https://github.com/staccx/bento/commit/6328f25))
+* **openid:** add useCallbackLoginSilent, refactor CallbackLoginSilent ([0e3c027](https://github.com/staccx/bento/commit/0e3c027))
+* **openid:** add useCallbackLogut, refactor CallbackLogout ([ecb4c56](https://github.com/staccx/bento/commit/ecb4c56))
+* **openid:** add useLogout, refactor Logout ([f762346](https://github.com/staccx/bento/commit/f762346))
+
+
+
+## [10.0.1-alpha.25](https://github.com/staccx/bento/compare/v10.0.1-alpha.24...v10.0.1-alpha.25) (2020-03-17)
+
+
+### Features
+
+* **openid:** add callbacks to callback login ([2c08200](https://github.com/staccx/bento/commit/2c08200))
+
+
+
+## [10.0.1-alpha.24](https://github.com/staccx/bento/compare/v10.0.1-alpha.23...v10.0.1-alpha.24) (2020-03-16)
+
+
+### Bug Fixes
+
+* **openid:** made fetchToken memoized ([aab4ba2](https://github.com/staccx/bento/commit/aab4ba2))
+
+
+
+## [10.0.1-alpha.23](https://github.com/staccx/bento/compare/v10.0.1-alpha.22...v10.0.1-alpha.23) (2020-03-16)
+
+
+
+## [10.0.1-alpha.22](https://github.com/staccx/bento/compare/v10.0.1-alpha.21...v10.0.1-alpha.22) (2020-03-16)
+
+
+### Bug Fixes
+
+* namespace ([8a95f10](https://github.com/staccx/bento/commit/8a95f10))
+
+
+
+## [10.0.1-alpha.21](https://github.com/staccx/bento/compare/v10.0.1-alpha.20...v10.0.1-alpha.21) (2020-03-16)
+
+
+### Bug Fixes
+
+* **i18n:** fix issue where dev was made fallbackNS ([5bbd652](https://github.com/staccx/bento/commit/5bbd652))
+
+
+### Features
+
+* **open-id:** added loggers to CBLoginSilent, callbackLogout & Logout ([567ab61](https://github.com/staccx/bento/commit/567ab61))
+* **open-id:** added logging for open-id hooks ([e4abfc1](https://github.com/staccx/bento/commit/e4abfc1))
+
+
+
+## [10.0.1-alpha.20](https://github.com/staccx/bento/compare/v10.0.1-alpha.19...v10.0.1-alpha.20) (2020-03-16)
+
+
+
+## [10.0.1-alpha.19](https://github.com/staccx/bento/compare/v10.0.1-alpha.18...v10.0.1-alpha.19) (2020-03-13)
+
+
+### Bug Fixes
+
+* **bento:** updated to correct import statements ([46f3ae9](https://github.com/staccx/bento/commit/46f3ae9))
+* **components:** fix default value size on Box ([35069d6](https://github.com/staccx/bento/commit/35069d6))
+* **openid:** fix loglevels and refactor ([5db4d05](https://github.com/staccx/bento/commit/5db4d05))
+* **storybook:** refactor stories using slider to new slider ([a6286b7](https://github.com/staccx/bento/commit/a6286b7))
+
+
+### Features
+
+* **components:** all source code displayed in storybook ([070a7fe](https://github.com/staccx/bento/commit/070a7fe))
+* **theming:** add fontSize field to theme. add pxToRem ([91288d9](https://github.com/staccx/bento/commit/91288d9))
+* **theming:** deprecating convenience methods ([1a28b26](https://github.com/staccx/bento/commit/1a28b26))
+* **theming:** deprecating convenience methods for spcaing ([f331a6f](https://github.com/staccx/bento/commit/f331a6f))
+
+
+
+## [10.0.1-alpha.18](https://github.com/staccx/bento/compare/v10.0.1-alpha.17...v10.0.1-alpha.18) (2020-03-06)
+
+
+### Bug Fixes
+
+* **components:** fix bug in Donut wrapper variant ([36189e8](https://github.com/staccx/bento/commit/36189e8))
+* **components:** fix bug in SliderKeyBoardInput ([e69223e](https://github.com/staccx/bento/commit/e69223e))
+
+
+
+## [10.0.1-alpha.17](https://github.com/staccx/bento/compare/v10.0.1-alpha.16...v10.0.1-alpha.17) (2020-03-05)
+
+
+### Bug Fixes
+
+* **bento:** Inputs should accept file as type ([e9e75b6](https://github.com/staccx/bento/commit/e9e75b6))
+* **components:** pass down variant in Donut ([5633e37](https://github.com/staccx/bento/commit/5633e37))
+* **storybook:** fix example data ([71a9e93](https://github.com/staccx/bento/commit/71a9e93))
+
+
+### Features
+
+* **components:** add componentCreateFactory to List ([4f80c29](https://github.com/staccx/bento/commit/4f80c29))
+
+
+
+## [10.0.1-alpha.16](https://github.com/staccx/bento/compare/v10.0.1-alpha.15...v10.0.1-alpha.16) (2020-03-02)
+
+
+### Features
+
+* **hooks:** export hooks from bento.js ([4dabfc0](https://github.com/staccx/bento/commit/4dabfc0))
+* **theming:** remove unused factory function ([5f48e6e](https://github.com/staccx/bento/commit/5f48e6e))
+
+
+
+## [10.0.1-alpha.15](https://github.com/staccx/bento/compare/v10.0.1-alpha.14...v10.0.1-alpha.15) (2020-03-01)
+
+
+### Bug Fixes
+
+* **components:** remove unecessary theme with default props ([4a96c5b](https://github.com/staccx/bento/commit/4a96c5b))
+* **theming:** multi theme support in new paradigm ([61e05dd](https://github.com/staccx/bento/commit/61e05dd))
+
+
+
+## [10.0.1-alpha.14](https://github.com/staccx/bento/compare/v10.0.1-alpha.13...v10.0.1-alpha.14) (2020-02-28)
+
+
+### Features
+
+* **components:** add createVariants to all components ([b73705f](https://github.com/staccx/bento/commit/b73705f))
+* **components:** add createVariants to Anchor ([cdd3b0e](https://github.com/staccx/bento/commit/cdd3b0e))
+
+
+
+## [10.0.1-alpha.13](https://github.com/staccx/bento/compare/v10.0.1-alpha.12...v10.0.1-alpha.13) (2020-02-27)
+
+
+### Bug Fixes
+
+* **formatting:** remove support for experimental unit style ([a9f416d](https://github.com/staccx/bento/commit/a9f416d))
+* **storybook:** fixes [#3](https://github.com/staccx/bento/issues/3) and resets variants when unmounting ([90a7f99](https://github.com/staccx/bento/commit/90a7f99))
+* **theming:** fix theming add styles to keyname ([6bcde96](https://github.com/staccx/bento/commit/6bcde96))
+
+
+### Features
+
+* **components:** add new ThemeProvider ([09f51e2](https://github.com/staccx/bento/commit/09f51e2))
+* **components:** add ThemeProvider to exports ([93a623a](https://github.com/staccx/bento/commit/93a623a))
+* **components:** alert now has createVariants ([9faa783](https://github.com/staccx/bento/commit/9faa783))
+* **theming:** add function to allow componennts to have createVariants ([351103f](https://github.com/staccx/bento/commit/351103f))
+* **theming:** add instance to export ([626f7f0](https://github.com/staccx/bento/commit/626f7f0))
+
+
+
 ## [10.0.1-alpha.12](https://github.com/staccx/bento/compare/v10.0.1-alpha.11...v10.0.1-alpha.12) (2020-02-24)
 
 

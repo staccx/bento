@@ -14,6 +14,7 @@ import {
 } from "../../theming"
 import ThemeComponent from "../Theme/ThemeComponent"
 import themeProps from "./Modal.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 class Modal extends Component {
   constructor(props) {
@@ -95,6 +96,7 @@ class Modal extends Component {
                 id="modal-close"
                 aria-label="Close (Press escape to close)"
                 onClick={this.handleChange}
+                variant={variant}
               >
                 <span>Close</span>
                 <Icon />
@@ -212,5 +214,7 @@ Modal.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func
 }
+Modal.themeProps = themeProps
+Modal.createVariants = componentCreateFactory(Modal)
 
 export default Modal

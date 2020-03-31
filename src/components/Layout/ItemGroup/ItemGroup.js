@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { applyVariants, spacing, commonPropTypes } from "../../../theming"
 import themeProps from "./ItemGroup.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 /**
  * The ItemGroup object creates spacing between all its children and wraps the items when there is no room
  */
@@ -43,5 +44,6 @@ ItemGroup.defaultProps = {
   spacing: "tiny"
 }
 ItemGroup.themeProps = themeProps
+ItemGroup.createVariants = componentCreateFactory(ItemGroup)
 
 export default ItemGroup

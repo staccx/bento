@@ -3,6 +3,7 @@ import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../theming/themes/baseTheme"
 import testTheme from "../../theming/themes/testTheme"
+import { theme as instance } from "../../theming/index"
 import violetTendencies from "../../theming/themes/storybook/violet-tendencies/violetTendenciesTheme"
 import whiteCollar from "../../theming/themes/storybook/white-collar/whiteCollarTheme"
 import Alert from "./Alert"
@@ -121,6 +122,29 @@ describe("Alert", () => {
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
+    })
+  })
+  describe("Signature", () => {
+    it("createVariants", () => {
+      expect(Alert.createVariants).not.toBeNull()
+
+      // This should fail as we provide a non-existant variant. Shoul
+      expect(() =>
+        Alert.createVariants({
+          notAValidThemProps: "test"
+        })
+      ).toThrow()
+
+      expect(() => {
+        Alert.createVariants({
+          alert: {
+            _default: "background-color: blue;"
+          }
+        })
+      }).not.toThrow()
+      expect(instance.ALERT).toStrictEqual({
+        _default: "background-color: blue;"
+      })
     })
   })
 })

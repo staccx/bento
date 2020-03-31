@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import useInterval from "../../../hooks/useInterval"
 import { applyVariants, color, font, mapProp, spacing } from "../../../theming"
 import Loading from "../Loading/Loading"
 import themeProps from "./MessageLoader.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const MessageLoader = ({
   messages = [],
@@ -168,5 +169,6 @@ MessageLoader.propTypes = {
   randomOrder: PropTypes.bool
 }
 MessageLoader.themeProps = themeProps
+MessageLoader.createVariants = componentCreateFactory(MessageLoader)
 
 export default MessageLoader

@@ -1,17 +1,21 @@
 import themeProps from "./Skeleton.Line.themeProps"
+import { theme as instance } from "../../theming"
+import SkeletonLine from "./Skeleton.Line"
 
 describe("Line", () => {
   describe("Theme props", () => {
     it("line", () => {
-      expect(themeProps.line).not.toBeNull()
-      expect(themeProps.line.hasOwnProperty("createVariants")).toBe(true)
+      expect(themeProps.Line).not.toBeNull()
+      expect(SkeletonLine.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.line.createVariants({
-        myVariant: style
+      SkeletonLine.createVariants({
+        line: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.line.name)).toBe(true)
-      expect(variant[themeProps.line.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.line.name)).toBe(true)
+      expect(instance[themeProps.line.name].myVariant).toEqual(style)
     })
   })
 })

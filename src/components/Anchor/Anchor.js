@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { applyVariants, commonPropTypes } from "../../theming"
 import themeProps from "./anchor.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 const Anchor = ({ children, className, ...restProps }) => (
   <AComponent className={className} {...restProps}>
@@ -39,4 +40,6 @@ Anchor.propTypes = {
   className: PropTypes.string
 }
 Anchor.themeProps = themeProps
+Anchor.createVariants = componentCreateFactory(Anchor)
+
 export default Anchor

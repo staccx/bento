@@ -1,17 +1,21 @@
 import themeProps from "./Text.themeProps"
+import { theme as instance } from "../../../theming"
+import Text from "./Text"
 
 describe("Text", () => {
   describe("Theme props", () => {
     it("text", () => {
       expect(themeProps.text).not.toBeNull()
-      expect(themeProps.text.hasOwnProperty("createVariants")).toBe(true)
+      expect(Text.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.text.createVariants({
-        myVariant: style
+      Text.createVariants({
+        text: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.text.name)).toBe(true)
-      expect(variant[themeProps.text.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.text.name)).toBe(true)
+      expect(instance[themeProps.text.name].myVariant).toEqual(style)
     })
   })
 })

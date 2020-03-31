@@ -1,16 +1,20 @@
+import Anchor from "./Anchor"
+import { theme as instance } from "../../theming"
 import themeProps from "./anchor.themeProps"
 
 describe("Anchor", () => {
   describe("Theme props", () => {
     it("Anchor", () => {
       expect(themeProps.anchor).not.toBeNull()
-      expect(themeProps.anchor.hasOwnProperty("createVariants")).toBe(true)
+      expect(Anchor.hasOwnProperty("createVariants")).toBe(true)
       const style = `color: orange;`
-      const variant = themeProps.anchor.createVariants({
-        myVariant: style
+      Anchor.createVariants({
+        anchor: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.anchor.name)).toBe(true)
-      expect(variant[themeProps.anchor.name].myVariant).toEqual(style)
+      expect(instance.hasOwnProperty(themeProps.anchor.name)).toBe(true)
+      expect(instance[themeProps.anchor.name].myVariant).toEqual(style)
     })
   })
 })

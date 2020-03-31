@@ -15,6 +15,7 @@ import {
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent"
 import themeProps from "./SelectSimple.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const IconComponent = ({ ...props }) => (
   <ThemeComponent
@@ -65,6 +66,7 @@ const SelectWrapper = styled.div`
 
 const SelectIcon = styled(IconComponent)`
   position: absolute;
+  top: 37px;
   right: ${spacing.small};
   bottom: ${p => {
     const value = targetSize.normal()(p)
@@ -120,5 +122,6 @@ SelectSimple.propTypes = {
 }
 
 SelectSimple.themeProps = themeProps
+SelectSimple.createVariants = componentCreateFactory(SelectSimple)
 
 export default SelectSimple

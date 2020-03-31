@@ -8,11 +8,13 @@ import countries, { NORWAY } from "./countries"
 import SelectSimple from "../../SelectSimple/SelectSimple"
 import Label from "../../Label/Label"
 import themeProps from "./PhoneInput.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
 /**
  * Input for Phone-numbers.
  * TODO: normalize country code and locale
  */
+
 const PhoneInput = React.forwardRef(
   (
     {
@@ -49,7 +51,7 @@ const PhoneInput = React.forwardRef(
                 }}
               >
                 {countries.map(country => (
-                  <option key={country}>{country}</option>
+                  <option key={country.code}>{country.code}</option>
                 ))}
               </SelectSimple>
             </CountryCode>
@@ -105,5 +107,6 @@ PhoneInput.defaultProps = {
   guide: false
 }
 PhoneInput.themeProps = themeProps
+PhoneInput.createVariants = componentCreateFactory(PhoneInput)
 
 export default PhoneInput

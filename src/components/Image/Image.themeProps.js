@@ -1,4 +1,4 @@
-import { themePropTypes, createVariantsFunctionFactory } from "../../theming"
+import { themePropTypes } from "../../theming"
 
 const themeProps = {
   image: {
@@ -13,4 +13,4 @@ const themeProps = {
   }
 }
 
-export default createVariantsFunctionFactory(themeProps)
+export default themeProps

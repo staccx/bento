@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { applyVariants, commonPropTypes } from "../../theming"
 import themeProps from "./Image.themeProps"
+import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 const Image = ({
   src,
@@ -108,5 +109,6 @@ Image.propTypes = {
   aspectRatio: PropTypes.string
 }
 Image.themeProps = themeProps
+Image.createVariants = componentCreateFactory(Image)
 
 export default Image

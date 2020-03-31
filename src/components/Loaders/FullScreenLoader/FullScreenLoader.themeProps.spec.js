@@ -1,5 +1,7 @@
 import themeProps from "./FullScreenLoader.themeProps"
 import messageLoaderThemeProps from "../MessageLoader/MessageLoader.themeProps"
+import { theme as instance } from "../../../theming"
+import FullScreenLoader from "./FullScreenLoader"
 
 describe("FullScreenLoader", () => {
   describe("Theme props", () => {
@@ -25,98 +27,101 @@ describe("FullScreenLoader", () => {
     })
     it("mainContainer", () => {
       expect(themeProps.mainContainer).not.toBeNull()
-      expect(themeProps.mainContainer.hasOwnProperty("createVariants")).toBe(
-        true
-      )
+      expect(FullScreenLoader.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.mainContainer.createVariants({
-        myVariant: style
+      FullScreenLoader.createVariants({
+        mainContainer: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(themeProps.mainContainer.name)).toBe(true)
-      expect(variant[themeProps.mainContainer.name].myVariant).toEqual(style)
+      console.log(instance)
+      expect(instance.hasOwnProperty(themeProps.mainContainer.name)).toBe(true)
+      expect(instance[themeProps.mainContainer.name].myVariant).toEqual(style)
     })
     it("innerContainer", () => {
-      expect(themeProps.innerContainer).not.toBeNull()
-      expect(themeProps.innerContainer.hasOwnProperty("createVariants")).toBe(
-        true
-      )
+      expect(messageLoaderThemeProps.innerContainer).not.toBeNull()
+      expect(FullScreenLoader.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.innerContainer.createVariants({
-        myVariant: style
+      FullScreenLoader.createVariants({
+        innerContainer: {
+          myVariant: style
+        }
       })
       expect(
-        variant.hasOwnProperty(messageLoaderThemeProps.container.name)
+        instance.hasOwnProperty(messageLoaderThemeProps.container.name)
       ).toBe(true)
-      expect(variant[messageLoaderThemeProps.container.name].myVariant).toEqual(
-        style
-      )
+      expect(
+        instance[messageLoaderThemeProps.container.name].myVariant
+      ).toEqual(style)
     })
     it("messagesContainer", () => {
       expect(themeProps.messagesContainer).not.toBeNull()
-      expect(
-        themeProps.messagesContainer.hasOwnProperty("createVariants")
-      ).toBe(true)
+      expect(FullScreenLoader.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.messagesContainer.createVariants({
-        myVariant: style
+      FullScreenLoader.createVariants({
+        messagesContainer: {
+          myVariant: style
+        }
       })
       expect(
-        variant.hasOwnProperty(messageLoaderThemeProps.messagesContainer.name)
+        instance.hasOwnProperty(messageLoaderThemeProps.messagesContainer.name)
       ).toBe(true)
       expect(
-        variant[messageLoaderThemeProps.messagesContainer.name].myVariant
+        instance[messageLoaderThemeProps.messagesContainer.name].myVariant
       ).toEqual(style)
     })
     it("message", () => {
       expect(themeProps.message).not.toBeNull()
-      expect(themeProps.message.hasOwnProperty("createVariants")).toBe(true)
+      expect(FullScreenLoader.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.message.createVariants({
-        myVariant: style
+      FullScreenLoader.createVariants({
+        message: {
+          myVariant: style
+        }
       })
-      expect(variant.hasOwnProperty(messageLoaderThemeProps.message.name)).toBe(
-        true
-      )
-      expect(variant[messageLoaderThemeProps.message.name].myVariant).toEqual(
+      expect(
+        instance.hasOwnProperty(messageLoaderThemeProps.message.name)
+      ).toBe(true)
+      expect(instance[messageLoaderThemeProps.message.name].myVariant).toEqual(
         style
       )
     })
     it("previousMessage", () => {
       expect(themeProps.previousMessage).not.toBeNull()
-      expect(themeProps.previousMessage.hasOwnProperty("createVariants")).toBe(
-        true
-      )
+      expect(FullScreenLoader.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.previousMessage.createVariants({
-        myVariant: style
+      FullScreenLoader.createVariants({
+        previousMessage: {
+          myVariant: style
+        }
       })
       expect(
-        variant.hasOwnProperty(messageLoaderThemeProps.previousMessage.name)
+        instance.hasOwnProperty(messageLoaderThemeProps.previousMessage.name)
       ).toBe(true)
       expect(
-        variant[messageLoaderThemeProps.previousMessage.name].myVariant
+        instance[messageLoaderThemeProps.previousMessage.name].myVariant
       ).toEqual(style)
     })
     it("currentMessage", () => {
       expect(themeProps.currentMessage).not.toBeNull()
-      expect(themeProps.currentMessage.hasOwnProperty("createVariants")).toBe(
-        true
-      )
+      expect(FullScreenLoader.hasOwnProperty("createVariants")).toBe(true)
 
       const style = `color: blue;`
-      const variant = themeProps.currentMessage.createVariants({
-        myVariant: style
+      FullScreenLoader.createVariants({
+        currentMessage: {
+          myVariant: style
+        }
       })
       expect(
-        variant.hasOwnProperty(messageLoaderThemeProps.currentMessage.name)
+        instance.hasOwnProperty(messageLoaderThemeProps.currentMessage.name)
       ).toBe(true)
       expect(
-        variant[messageLoaderThemeProps.currentMessage.name].myVariant
+        instance[messageLoaderThemeProps.currentMessage.name].myVariant
       ).toEqual(style)
     })
   })

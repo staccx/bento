@@ -6,6 +6,7 @@ import Label from "../../Label/Label"
 import Input from "../Input"
 import { applyVariants } from "../../../../theming"
 import themeProps from "./BirthdateInput.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
 const BirthdateInput = ({
   id,
@@ -131,5 +132,6 @@ BirthdateInput.propTypes = {
 
 BirthdateInput.defaultProps = {}
 BirthdateInput.themeProps = themeProps
+BirthdateInput.createVariants = componentCreateFactory(BirthdateInput)
 
 export default BirthdateInput

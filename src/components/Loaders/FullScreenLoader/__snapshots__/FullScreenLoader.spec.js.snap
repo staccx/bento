@@ -8,6 +8,9 @@ exports[`FullScreenLoader Snapshots Messages 1`] = `
     className="sc-AykKD ggtnrM"
   >
     <div
+      className="sc-AykKC jPvcjs"
+    />
+    <div
       className="sc-AykKE fffipx"
     />
   </div>
@@ -21,6 +24,9 @@ exports[`FullScreenLoader Snapshots Multiple words 1`] = `
   <div
     className="sc-AykKD ggtnrM"
   >
+    <div
+      className="sc-AykKC jPvcjs"
+    />
     <div
       className="sc-AykKE fffipx"
     >
@@ -41,6 +47,9 @@ exports[`FullScreenLoader Snapshots invalid Messages 1`] = `
   <div
     className="sc-AykKD ggtnrM"
   >
+    <div
+      className="sc-AykKC jPvcjs"
+    />
     <div
       className="sc-AykKE fffipx"
     />

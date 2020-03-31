@@ -1,8 +1,9 @@
 import Theme from "./Theme"
-import { theme as instance } from "./"
+import { themes } from "./"
 import Alert from "../components/Alert/Alert"
 import createVariants from "./utils/createVariants"
 // import grids from "../components/Layout/Layout/Layout.Grids"
+const instance = themes._default
 
 const example = {
   name: "Test theme",
@@ -129,13 +130,27 @@ describe("Theme", () => {
     })
 
     it("Themeprop creating", () => {
-      Alert.themeProps.alert.createVariants({
-        scream: "test"
+      Alert.createVariants({
+        alert: {
+          scream: "test"
+        }
       })
-
       expect(instance[Alert.themeProps.alert.name]).toStrictEqual({
         scream: "test"
       })
+    })
+
+    it("Font size", () => {
+      instance.setBaseSize(16)
+      expect(instance.baseSize).toBe(16)
+      expect(instance.global.fontSize.length).toBe(3)
+      /*
+      [
+        "font-size:",
+        "16",
+        "px;"
+      ]
+       */
     })
   })
 })

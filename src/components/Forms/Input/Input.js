@@ -21,6 +21,7 @@ import ThemeComponent from "../../Theme/ThemeComponent"
 import QuestionMark from "../../Icons/QuestionMark/QuestionMark"
 import { FadeIn } from "../../../animations"
 import themeProps from "./Input.themeProps"
+import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 const HelpBox = ({ onClick }) => (
   <HelpButton onClick={onClick} type="button">
@@ -249,7 +250,8 @@ export const InputPropTypes = {
     "tel",
     "url",
     "search",
-    "date"
+    "date",
+    "file"
   ]),
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   label: PropTypes.string,
@@ -286,6 +288,7 @@ export const InputDefaultProps = {
   helpText: ""
 }
 Input.themeProps = themeProps
+Input.createVariants = componentCreateFactory(Input)
 
 Input.defaultProps = InputDefaultProps
 /** @component */
