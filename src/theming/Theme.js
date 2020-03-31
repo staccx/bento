@@ -1,3 +1,6 @@
+import { css } from "styled-components"
+import createGlobal from "./utils/createGlobal"
+
 const { Map } = require("immutable")
 
 const styleReducer = (acc, curr) => {
@@ -46,5 +49,16 @@ export default class Theme {
     Object.keys(newTheme).forEach(key => {
       this[key] = newTheme[key]
     })
+  }
+
+  setBaseSize(baseSize) {
+    this.baseSize = baseSize
+    this.append(
+      createGlobal({
+        fontSize: css`
+          font-size: ${baseSize}px;
+        `
+      })
+    )
   }
 }

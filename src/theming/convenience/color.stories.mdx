@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import color from "./color"
+
+<Meta title="Styling|/Convenience/Color" component={color}/>
+
+# Color convenience function
+Function to easily extract color from theme.
+
+Example usage
+```bash
+import { theming } from "@staccx/bento"
+
+const ColoredBox = styled.div`
+background-color: ${theming.color`secondary`};
+`
+//or
+const ColoredBox2 = styled.div`
+background-color: ${theming.color("secondary")};
+`
+```

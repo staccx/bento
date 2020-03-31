@@ -1,14 +1,22 @@
-import { useEffect } from "react"
-import { useOpenId } from "./OpenId"
+import { logger } from "./OpenId"
+import { useCallbackLoginSilent } from ".."
 
-export const CallbackLoginSilent = () => {
-  const { userManager } = useOpenId()
-
-  useEffect(() => {
-    if (userManager) {
-      userManager.signinSilentCallback()
+export const CallbackLoginSilent = ({
+  minTimeBeforeRedirect,
+  onSuccess,
+  onFailure
+}) => {
+  useCallbackLoginSilent({
+    minTimeBeforeRedirect,
+    onSuccess: result => {
+      logger.debug("LoginSilent successful")
+      onSuccess(result)
+    },
+    onFailure: error => {
+      logger.error("LoginSilent failed", error)
+      onFailure(error)
     }
-  }, [userManager])
+  })
 
   return null
 }

@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react"
 
 const useTimer = (time = 1000) => {
-  const [isReady, setIsReady] = useState(false)
+  const [isReady, setIsReady] = useState(time === 0)
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsReady(true)
-    }, time)
+    let timeout = null
+    if (!isReady) {
+      timeout = setTimeout(() => {
+        setIsReady(true)
+      }, time)
+    }
 
     return () => {
       clearTimeout(timeout)

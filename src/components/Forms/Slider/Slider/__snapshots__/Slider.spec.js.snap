@@ -68,8 +68,8 @@ exports[`Slider Snapshots className 1`] = `
       <button
         aria-valuemax={100}
         aria-valuemin={0}
-        aria-valuenow={0}
-        className="sc-AykKC gpEQp sc-AykKH hciGUB"
+        aria-valuenow={NaN}
+        className="sc-AykKC gslHJy sc-AykKH hciGUB"
         onKeyDown={[Function]}
         onMouseDown={[Function]}
         onTouchStart={[Function]}
@@ -82,14 +82,14 @@ exports[`Slider Snapshots className 1`] = `
       className="sc-AykKI kCphbq"
     >
       <div
-        className="sc-AykKD fpYdiF"
+        className="sc-AykKD cKRPMu"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
         target={
           Object {
             "id": "$$-0",
-            "percent": 0,
-            "value": 0,
+            "percent": NaN,
+            "value": NaN,
           }
         }
       />
@@ -117,8 +117,8 @@ exports[`Slider Snapshots max 1`] = `
       <button
         aria-valuemax={100}
         aria-valuemin={0}
-        aria-valuenow={0}
-        className="sc-AykKC gpEQp sc-AykKH hciGUB"
+        aria-valuenow={NaN}
+        className="sc-AykKC gslHJy sc-AykKH hciGUB"
         onKeyDown={[Function]}
         onMouseDown={[Function]}
         onTouchStart={[Function]}
@@ -131,14 +131,14 @@ exports[`Slider Snapshots max 1`] = `
       className="sc-AykKI kCphbq"
     >
       <div
-        className="sc-AykKD fpYdiF"
+        className="sc-AykKD cKRPMu"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
         target={
           Object {
             "id": "$$-0",
-            "percent": 0,
-            "value": 0,
+            "percent": NaN,
+            "value": NaN,
           }
         }
       />
@@ -264,8 +264,8 @@ exports[`Slider Snapshots step 2`] = `
       <button
         aria-valuemax={100}
         aria-valuemin={0}
-        aria-valuenow={0}
-        className="sc-AykKC gpEQp sc-AykKH hciGUB"
+        aria-valuenow={NaN}
+        className="sc-AykKC gslHJy sc-AykKH hciGUB"
         onKeyDown={[Function]}
         onMouseDown={[Function]}
         onTouchStart={[Function]}
@@ -278,14 +278,14 @@ exports[`Slider Snapshots step 2`] = `
       className="sc-AykKI kCphbq"
     >
       <div
-        className="sc-AykKD fpYdiF"
+        className="sc-AykKD cKRPMu"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
         target={
           Object {
             "id": "$$-0",
-            "percent": 0,
-            "value": 0,
+            "percent": NaN,
+            "value": NaN,
           }
         }
       />

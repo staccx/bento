@@ -1,64 +1,83 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { formatCurrency } from "./currency"
+import {formatMoney} from "./currency"
+import {STYLE} from "./number.constants"
 import { Text as CurrencyText } from "./__storyComponents"
 
-<Meta title="Formatting|FormatCurrency" component={formatCurrency}/>
+<Meta title="Formatting|FormatMoney" component={formatMoney}/>
 
-# formatCurrency
-FormatCurrency is a bento tool to help us easily format a number into currency, either by adding thousand seperators,
-or by adding symbols such as $ or "kr".
+# formatMoney
+formatMoney is a bento tool that helps you format numbers to currency. It takes a value, and options.
+
+### Import
+All exports under formatting is imported via formatting. to use a spesific formatter you would
+use ```formatting.FormatterYouWant```
+
 
 ```javascript
-import { formatCurrency } from "@staccx/bento"
+import { formatting } from "@staccx/bento"
+```
+usage
+```javascript
+formatting.formatMoney
 ```
 
-## Standard formatCurrency
-This is the standard formatCurrency with no options, as standard, formatCurrency adds a space as thousand separator
+## Standard formatMoney
+This is the standard formatMoney with no options, as standard, formatMoney adds a space as thousand separator
 
 <Preview>
   <Story name="Standard">
-   <CurrencyText>{formatCurrency(1000)}</CurrencyText>
-  </Story>
-</Preview>
-
-## Thousand Separator
-with the option prop that can be passed to formatCurrency, we can do things like change the thousand separator from
-space to a dot, or whatever you want.
-
-<Preview>
-  <Story name="Thousand Separator">
-   <CurrencyText>{formatCurrency(1000, {thousand: "."})}</CurrencyText>
-  </Story>
-</Preview>
-
-
-## Currency symbol
-passing symbol, and the symbol of your choice to the function, lets you tack on a symbol at the end of the number
-
-<Preview>
-  <Story name="Currency symbol">
-   <CurrencyText>{formatCurrency(1000, {symbol: "$"})}</CurrencyText>
-  </Story>
-</Preview>
-
-## Formatting
-when passing format, you are also able to do more custom formatting of the currencyString.
-This example passes a symbol: "$", and formats it so that the dollar sign is at the front.
-
-<Preview>
-  <Story name="Formatting">
-   <CurrencyText>{formatCurrency(1000, { symbol: "$", format: "$s  $v" })}</CurrencyText>
+   <CurrencyText>{formatMoney(1000)}</CurrencyText>
   </Story>
 </Preview>
 
 ## Norwegian
-Here is an example of how we generally would format a norwegian currency string
+Here is an example of how we generally would format a norwegian currency string. Here we use locale from
+options, to format the currency to the norwegian standard
 
 <Preview>
   <Story name="Norweigan format">
    <CurrencyText>
-   {formatCurrency(100000, { symbol: "kr", format: "$s  $v,-", suffix:",-" })}
+   {formatMoney(100000, { locale: "nb-NO", suffix: ",-"})}
    </CurrencyText>
   </Story>
 </Preview>
 
+<Preview>
+  <Story name="kr suffix">
+   <CurrencyText>
+   {formatMoney(100000, { locale:"nb-NO", suffix: "kr", style: STYLE.decimal})}
+   </CurrencyText>
+  </Story>
+</Preview>
+
+## English
+Here we use locale to give the currency an english standard, it also takes style, to format how decimals
+are displayed
+
+<Preview>
+  <Story name="English format">
+   <CurrencyText>
+   {formatMoney(100000.12, { locale: "en", suffix: ",-", style: STYLE.decimal})}
+   </CurrencyText>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="NOK suffix ">
+   <CurrencyText>
+   {formatMoney(100000, { locale:"en", suffix:"NOK", style: STYLE.decimal})}
+   </CurrencyText>
+  </Story>
+</Preview>
+
+## More from STYLE
+Here we use locale to give the currency an english standard, it also takes style, to format how decimals
+are displayed
+Style currency gives a prefix
+<Preview>
+  <Story name="STYLE.currency">
+   <CurrencyText>
+   {formatMoney(100000, { locale: "nb-NO", suffix: ",-", style: STYLE.currency})}
+   </CurrencyText>
+  </Story>
+</Preview>

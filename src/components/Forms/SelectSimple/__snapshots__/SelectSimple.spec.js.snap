@@ -45,7 +45,7 @@ exports[`SelectSimple Snapshots Label 1`] = `
     </option>
   </select>
   <svg
-    className="sc-AykKE gjPnxd"
+    className="sc-AykKE gzanLV"
     height="7"
     viewBox="0 0 33 20"
     width="12"
@@ -97,7 +97,7 @@ exports[`SelectSimple Snapshots No props 1`] = `
     </option>
   </select>
   <svg
-    className="sc-AykKE gjPnxd"
+    className="sc-AykKE gzanLV"
     height="7"
     viewBox="0 0 33 20"
     width="12"
@@ -160,7 +160,7 @@ exports[`SelectSimple Snapshots Placeholder 1`] = `
     </option>
   </select>
   <svg
-    className="sc-AykKE gjPnxd"
+    className="sc-AykKE gzanLV"
     height="7"
     viewBox="0 0 33 20"
     width="12"
@@ -225,7 +225,7 @@ exports[`SelectSimple Snapshots id 1`] = `
     </option>
   </select>
   <svg
-    className="sc-AykKE gjPnxd"
+    className="sc-AykKE gzanLV"
     height="7"
     viewBox="0 0 33 20"
     width="12"
@@ -260,7 +260,7 @@ exports[`SelectSimple Snapshots no Children 1`] = `
     </option>
   </select>
   <svg
-    className="sc-AykKE gjPnxd"
+    className="sc-AykKE gzanLV"
     height="7"
     viewBox="0 0 33 20"
     width="12"

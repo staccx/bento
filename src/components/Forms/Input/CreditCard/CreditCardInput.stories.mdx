@@ -25,7 +25,33 @@ The inputfield only allowed numbers and takes number in a 4-4-4-4 format with sp
 </Preview>
 
 
+### Source code
+<details><summary>CreditCardInput</summary>
+<p>
 
+```bash
+import React from "react"
+import Input from "../Input"
+
+const CreditCardInput = React.forwardRef((props, ref) => (
+  <Input
+    id="creditCard"
+    ref={ref}
+    options={{
+      ...props.options,
+      creditCard: true
+    }}
+    {...props}
+  />
+))
+
+CreditCardInput.propTypes = {}
+export default CreditCardInput
+
+```
+
+</p>
+</details>
 
 
 ## Props for CreditCardInput

@@ -6,7 +6,7 @@ const gradient = (name, func = defaultFunc) => ({ theme }) => {
     console.warn("Could not find", name, "in gradient")
     return null
   }
-  return func(theme["gradient"][name])
+  return func(theme.gradient[name])
 }
 
 gradient.first = name => gradient(name, g => g[0]) // TODO: ensure these are value. will crash if not

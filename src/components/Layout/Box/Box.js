@@ -18,7 +18,7 @@ export const Boxing = styled.div`
 
 Box.defaultProps = {
   className: "",
-  size: ""
+  size: null
 }
 
 Box.propTypes = {

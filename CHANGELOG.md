@@ -1,3 +1,99 @@
+## [10.0.1-alpha.25](https://github.com/staccx/bento/compare/v10.0.1-alpha.24...v10.0.1-alpha.25) (2020-03-17)
+
+
+### Features
+
+* **openid:** add callbacks to callback login ([2c08200](https://github.com/staccx/bento/commit/2c08200))
+
+
+
+## [10.0.1-alpha.24](https://github.com/staccx/bento/compare/v10.0.1-alpha.23...v10.0.1-alpha.24) (2020-03-16)
+
+
+### Bug Fixes
+
+* **openid:** made fetchToken memoized ([aab4ba2](https://github.com/staccx/bento/commit/aab4ba2))
+
+
+
+## [10.0.1-alpha.23](https://github.com/staccx/bento/compare/v10.0.1-alpha.22...v10.0.1-alpha.23) (2020-03-16)
+
+
+
+## [10.0.1-alpha.22](https://github.com/staccx/bento/compare/v10.0.1-alpha.21...v10.0.1-alpha.22) (2020-03-16)
+
+
+### Bug Fixes
+
+* namespace ([8a95f10](https://github.com/staccx/bento/commit/8a95f10))
+
+
+
+## [10.0.1-alpha.21](https://github.com/staccx/bento/compare/v10.0.1-alpha.20...v10.0.1-alpha.21) (2020-03-16)
+
+
+### Bug Fixes
+
+* **i18n:** fix issue where dev was made fallbackNS ([5bbd652](https://github.com/staccx/bento/commit/5bbd652))
+
+
+### Features
+
+* **open-id:** added loggers to CBLoginSilent, callbackLogout & Logout ([567ab61](https://github.com/staccx/bento/commit/567ab61))
+* **open-id:** added logging for open-id hooks ([e4abfc1](https://github.com/staccx/bento/commit/e4abfc1))
+
+
+
+## [10.0.1-alpha.20](https://github.com/staccx/bento/compare/v10.0.1-alpha.19...v10.0.1-alpha.20) (2020-03-16)
+
+
+
+## [10.0.1-alpha.19](https://github.com/staccx/bento/compare/v10.0.1-alpha.18...v10.0.1-alpha.19) (2020-03-13)
+
+
+### Bug Fixes
+
+* **bento:** updated to correct import statements ([46f3ae9](https://github.com/staccx/bento/commit/46f3ae9))
+* **components:** fix default value size on Box ([35069d6](https://github.com/staccx/bento/commit/35069d6))
+* **openid:** fix loglevels and refactor ([5db4d05](https://github.com/staccx/bento/commit/5db4d05))
+* **storybook:** refactor stories using slider to new slider ([a6286b7](https://github.com/staccx/bento/commit/a6286b7))
+
+
+### Features
+
+* **components:** all source code displayed in storybook ([070a7fe](https://github.com/staccx/bento/commit/070a7fe))
+* **theming:** add fontSize field to theme. add pxToRem ([91288d9](https://github.com/staccx/bento/commit/91288d9))
+* **theming:** deprecating convenience methods ([1a28b26](https://github.com/staccx/bento/commit/1a28b26))
+* **theming:** deprecating convenience methods for spcaing ([f331a6f](https://github.com/staccx/bento/commit/f331a6f))
+
+
+
+## [10.0.1-alpha.18](https://github.com/staccx/bento/compare/v10.0.1-alpha.17...v10.0.1-alpha.18) (2020-03-06)
+
+
+### Bug Fixes
+
+* **components:** fix bug in Donut wrapper variant ([36189e8](https://github.com/staccx/bento/commit/36189e8))
+* **components:** fix bug in SliderKeyBoardInput ([e69223e](https://github.com/staccx/bento/commit/e69223e))
+
+
+
+## [10.0.1-alpha.17](https://github.com/staccx/bento/compare/v10.0.1-alpha.16...v10.0.1-alpha.17) (2020-03-05)
+
+
+### Bug Fixes
+
+* **bento:** Inputs should accept file as type ([e9e75b6](https://github.com/staccx/bento/commit/e9e75b6))
+* **components:** pass down variant in Donut ([5633e37](https://github.com/staccx/bento/commit/5633e37))
+* **storybook:** fix example data ([71a9e93](https://github.com/staccx/bento/commit/71a9e93))
+
+
+### Features
+
+* **components:** add componentCreateFactory to List ([4f80c29](https://github.com/staccx/bento/commit/4f80c29))
+
+
+
 ## [10.0.1-alpha.16](https://github.com/staccx/bento/compare/v10.0.1-alpha.15...v10.0.1-alpha.16) (2020-03-02)
 
 

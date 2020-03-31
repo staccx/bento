@@ -49,4 +49,13 @@ describe("Color", () => {
   it("Should work with added colors", () => {
     expect(color("staccRed")(props)).toBe(props.theme.color.staccRed)
   })
+
+  it("Should work with string literals", () => {
+    expect(color`primary`(props)).toBe(props.theme.color.primary)
+    expect(color`black`(props)).toBe(props.theme.color.black)
+  })
+
+  it("Should not work with mulitple string literals", () => {
+    expect(color`primary secondary`(props)).toBe(null)
+  })
 })

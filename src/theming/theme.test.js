@@ -139,5 +139,18 @@ describe("Theme", () => {
         scream: "test"
       })
     })
+
+    it("Font size", () => {
+      instance.setBaseSize(16)
+      expect(instance.baseSize).toBe(16)
+      expect(instance.global.fontSize.length).toBe(3)
+      /*
+      [
+        "font-size:",
+        "16",
+        "px;"
+      ]
+       */
+    })
   })
 })

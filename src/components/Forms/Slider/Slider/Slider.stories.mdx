@@ -27,5 +27,408 @@ import {Slider} from "@staccx/bento"
   </Story>
 </Preview>
 
+### Source code
+
+<details><summary>Slider</summary>
+<p>
+
+```bash
+
+/**
+ * @class Slider
+ */
+
+import React, { useState, useEffect } from "react"
+import PropTypes from "prop-types"
+import styled from "styled-components"
+import {
+  Slider as CompoundSlider,
+  Rail,
+  Handles,
+  Tracks
+} from "react-compound-slider"
+import { applyVariants, spacing, color } from "../../../../theming"
+import Handle from "./Slider.Handle"
+import Track from "./Slider.Track"
+import themeProps from "./Slider.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
+
+const Slider = ({
+  variant,
+  min = 0,
+  max = 100,
+  step = 10,
+  onFocus,
+  onKeyDown,
+  onBlur,
+  onUpdate,
+  onChange,
+  onSlideStart,
+  defaultValue = 0,
+  value,
+  ...restProps
+}) => {
+  const [values, setValues] = useState([value || defaultValue])
+  const [update, setUpdate] = useState([defaultValue])
+
+  const handleUpdate = value => {
+    setUpdate(value)
+    onUpdate && onUpdate(update[0])
+  }
+
+  const handleChange = value => {
+    setValues(values)
+    onChange && onChange(value[0])
+  }
+
+  const handleStart = values => {
+    setValues(values)
+    onSlideStart && onSlideStart(values[0])
+  }
+
+  useEffect(() => {
+    setValues([value])
+  }, [value])
+
+  return (
+    <Container>
+      <StyledSlider
+        mode={1}
+        step={step}
+        domain={[min, max]}
+        onUpdate={handleUpdate}
+        onChange={handleChange}
+        onSlideStart={handleStart}
+        values={values}
+        variant={variant}
+        {...restProps}
+      >
+        <Rail>{({ getRailProps }) => <StyledRail {...getRailProps()} />}</Rail>
+        <Handles>
+          {({ handles, getHandleProps }) => (
+            <div className="slider-handles">
+              {handles.map((handle, index) => {
+                const {
+                  onKeyDown: handleKeyDown,
+                  ...restHandleProps
+                } = getHandleProps(handle.id)
+                return (
+                  <StyledHandle
+                    key={handle.id}
+                    handle={handle}
+                    domain={[min, max]}
+                    getHandleProps={getHandleProps}
+                    variant={variant}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                    {...restHandleProps}
+                    tabIndex={index}
+                    onKeyDown={e => {
+                      if (onKeyDown) {
+                        onKeyDown(e.keyCode)
+                      }
+                      handleKeyDown(e)
+                    }}
+                  />
+                )
+              })}
+            </div>
+          )}
+        </Handles>
+        <Tracks right={false}>
+          {({ tracks, getTrackProps }) => (
+            <StyledTracks variant={variant}>
+              {tracks.map(({ id, source, target }) => (
+                <Track
+                  key={id}
+                  source={source}
+                  target={target}
+                  getTrackProps={getTrackProps}
+                  variant={variant}
+                />
+              ))}
+            </StyledTracks>
+          )}
+        </Tracks>
+      </StyledSlider>
+    </Container>
+  )
+}
+
+const Container = styled.div`
+  height: ${spacing.medium};
+  padding-top: ${spacing.tiny};
+  width: 100%;
+  ${applyVariants(themeProps.container)};
+`
+
+const StyledSlider = styled(CompoundSlider)`
+  position: relative;
+  width: 100%;
+  ${applyVariants(themeProps.slider)};
+`
+
+const StyledRail = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: ${color.gray};
+  ${applyVariants(themeProps.rail)};
+`
+
+const StyledHandle = styled(Handle)`
+  ${applyVariants(themeProps.handle)};
+`
+
+const StyledTracks = styled.div`
+  ${applyVariants(themeProps.tracks)};
+`
+
+Slider.propTypes = {
+  className: PropTypes.string,
+  min: PropTypes.number,
+  max: PropTypes.number,
+  step: PropTypes.number,
+  defaultValue: PropTypes.number,
+  onChange: PropTypes.func,
+  onKeyDown: PropTypes.func
+}
+Slider.themeProps = themeProps
+Slider.createVariants = componentCreateFactory(Slider)
+
+/** @component */
+export default Slider
+
+```
+
+</p>
+</details>
+
+<details><summary>Slider.Handle</summary>
+<p>
+
+```bash
+/**
+ * @class SliderHandle
+ */
+
+import React from "react"
+import PropTypes from "prop-types"
+import styled from "styled-components"
+import { applyVariants, color, spacing } from "../../../../theming"
+import themeProps from "./Slider.Handle.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
+
+const SliderHandle = ({
+  className,
+  domain: [min, max],
+  handle: { id, value, percent },
+  ...restProps
+}) => (
+  <HandleButton
+    type="button"
+    role="slider"
+    className={className}
+    aria-valuemin={min}
+    aria-valuemax={max}
+    aria-valuenow={value}
+    percent={percent}
+    {...restProps}
+  />
+)
+
+const HandleButton = styled.button`
+  position: absolute;
+  left: ${p => p.percent}%;
+  margin-left: -11px;
+  margin-top: -6px;
+  z-index: 2;
+  width: ${spacing.medium};
+  height: ${spacing.medium};
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: ${color.white};
+  border: 1px solid ${color.line};
+  transition: box-shadow 0.2s ease;
+
+  &:focus,
+  &:active,
+  &:hover {
+    outline: 0;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
+  }
+
+  ${applyVariants(themeProps.handle)};
+`
+
+SliderHandle.defaultProps = {
+  className: ""
+}
+
+SliderHandle.propTypes = {
+  className: PropTypes.string,
+  domain: PropTypes.array.isRequired,
+  handle: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    percent: PropTypes.number.isRequired
+  }).isRequired,
+  getHandleProps: PropTypes.func.isRequired
+}
+SliderHandle.themeProps = themeProps
+SliderHandle.createVariants = componentCreateFactory(SliderHandle)
+
+/** @component */
+export default SliderHandle
+
+```
+
+</p>
+</details>
+
+<details><summary>Slider.Tick</summary>
+<p>
+
+```bash
+/**
+ * @class Slider
+ */
+
+import React from "react"
+import PropTypes from "prop-types"
+import styled from "styled-components"
+import { applyVariants, color, font } from "../../../../theming"
+import themeProps from "./Slider.Tick.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
+
+const SliderTick = ({ tick, count, format, className, ...restProps }) => (
+  <div>
+    <StartTick className={className} tick={tick} />
+    <EndTick className={className} tick={tick} />
+    {format(tick.value)}
+  </div>
+)
+
+const StartTick = styled.button`
+  position: absolute;
+  left: ${p => p.tick.percent}%;
+  margin-top: 14px;
+  width: 1px;
+  height: 5px;
+  background-color: ${color.gray};
+  ${applyVariants(themeProps.startTick)};
+`
+const EndTick = styled.button`
+  position: absolute;
+  left: ${p => p.tick.percent}%;
+  margin-top: 22px;
+  width: ${p => 100 / p.count};
+  text-align: center;
+  font-size: ${font.small};
+  background-color: ${color.gray};
+  ${applyVariants(themeProps.endTick)};
+`
+
+SliderTick.defaultProps = {
+  className: ""
+}
+
+SliderTick.propTypes = {
+  className: PropTypes.string,
+  domain: PropTypes.array.isRequired,
+  handle: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    percent: PropTypes.number.isRequired
+  }).isRequired,
+  getHandleProps: PropTypes.func.isRequired
+}
+SliderTick.themeProps = themeProps
+SliderTick.createVariants = componentCreateFactory(SliderTick)
+
+/** @component */
+export default SliderTick
+
+```
+
+</p>
+</details>
+
+<details><summary>Slider.Track</summary>
+<p>
+
+```bash
+/**
+ * @class Slider
+ */
+
+import React from "react"
+import PropTypes from "prop-types"
+import styled from "styled-components"
+import { applyVariants, color } from "../../../../theming"
+import themeProps from "./Slider.Track.themeProps"
+import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
+
+const SliderTrack = ({
+  source,
+  target,
+  getTrackProps,
+  className,
+  ...restProps
+}) => (
+  <Track
+    className={className}
+    source={source}
+    target={target}
+    {...restProps}
+    {...getTrackProps()}
+  />
+)
+
+const Track = styled.div`
+  position: absolute;
+  left: ${p => p.source.percent}%;
+  z-index: 1;
+  width: ${p => p.target.percent - p.source.percent}%;
+  height: 14px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 7px;
+  background-color: ${color.primary};
+  ${applyVariants(themeProps.track)};
+`
+
+SliderTrack.defaultProps = {
+  className: ""
+}
+
+SliderTrack.propTypes = {
+  className: PropTypes.string,
+  source: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    percent: PropTypes.number.isRequired
+  }).isRequired,
+  target: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    percent: PropTypes.number.isRequired
+  }).isRequired,
+  getTrackProps: PropTypes.func.isRequired
+}
+SliderTrack.themeProps = themeProps
+SliderTrack.createVariants = componentCreateFactory(SliderTrack)
+/** @component */
+export default SliderTrack
+
+```
+
+</p>
+</details>
+
 ## Props for Slider
 <Props of={Slider} />

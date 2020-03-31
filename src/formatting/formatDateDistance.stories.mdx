@@ -7,9 +7,17 @@ import { formatDateDistance } from "./date"
 FormatDateDistance lets you pass in two date strings and returns the difference between the two dates
 
 
+### Import
+All exports under formatting is imported via formatting. to use a spesific formatter you would
+use ```formatting.FormatterYouWant```
+
 
 ```javascript
-import { formatDateDistance } from "@staccx/bento"
+import { formatting } from "@staccx/bento"
+```
+usage
+```javascript
+formatting.formatDateDistance
 ```
 
 
@@ -37,7 +45,7 @@ export const distance = formatDateDistance(date1, date2)
   </Story>
 </Preview>
 
-  
+
 
 ## Both ISO and date Object
 
@@ -57,4 +65,4 @@ export const distance1 = formatDateDistance(date, "2018-05-10T00:00:00Z")
    <p>{distance1}</p>
   </Story>
 </Preview>
-  
+
