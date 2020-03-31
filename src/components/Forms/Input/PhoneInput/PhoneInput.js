@@ -15,7 +15,6 @@ import { componentCreateFactory } from "../../../../theming/utils/createVariants
  * TODO: normalize country code and locale
  */
 
-console.log(countries)
 const PhoneInput = React.forwardRef(
   (
     {

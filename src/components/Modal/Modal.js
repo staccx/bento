@@ -96,6 +96,7 @@ class Modal extends Component {
                 id="modal-close"
                 aria-label="Close (Press escape to close)"
                 onClick={this.handleChange}
+                variant={variant}
               >
                 <span>Close</span>
                 <Icon />
