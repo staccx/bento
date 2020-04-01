@@ -1,3 +1,12 @@
+## [10.0.1-alpha.29](https://github.com/staccx/bento/compare/v10.0.1-alpha.28...v10.0.1-alpha.29) (2020-04-01)
+
+
+### Features
+
+* **i18n:** add resource reducer ([3b8e7d2](https://github.com/staccx/bento/commit/3b8e7d2))
+
+
+
 ## [10.0.1-alpha.28](https://github.com/staccx/bento/compare/v10.0.1-alpha.27...v10.0.1-alpha.28) (2020-03-31)
 
 
