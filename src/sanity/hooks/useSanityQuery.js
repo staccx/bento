@@ -11,7 +11,7 @@ export const useSanityQuery = (query, params, defaultValue = null) => {
       .fetch(query, params)
       .then(setData)
       .catch(setError)
-  }, [query, params, client])
+  }, [query, params])
 
   return { data, error }
 }
