@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import useDeepCompareEffect from "use-deep-compare-effect"
 import { Context } from "../components/SanityProvider"
 
 export const useSanityQuery = (query, params, defaultValue = null) => {
@@ -6,15 +7,12 @@ export const useSanityQuery = (query, params, defaultValue = null) => {
   const [data, setData] = React.useState(defaultValue)
   const [error, setError] = React.useState(null)
 
-  // 🤷‍
-  const paramsMemoized = React.useMemo(() => params, [params])
-
-  React.useEffect(() => {
+  useDeepCompareEffect(() => {
     client
-      .fetch(query, paramsMemoized)
+      .fetch(query, params)
       .then(setData)
       .catch(setError)
-  }, [query, paramsMemoized, client])
+  }, [query, params, client])
 
   return { data, error }
 }
