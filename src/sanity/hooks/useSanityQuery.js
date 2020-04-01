@@ -6,12 +6,15 @@ export const useSanityQuery = (query, params, defaultValue = null) => {
   const [data, setData] = React.useState(defaultValue)
   const [error, setError] = React.useState(null)
 
+  // 🤷‍
+  const paramsMemoized = React.useMemo(() => params, [params])
+
   React.useEffect(() => {
     client
-      .fetch(query, params)
+      .fetch(query, paramsMemoized)
       .then(setData)
       .catch(setError)
-  }, [query, params])
+  }, [query, paramsMemoized, client])
 
   return { data, error }
 }
