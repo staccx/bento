@@ -22,12 +22,16 @@ const SanityProvider = ({
   withCredentials
 }) => {
   const [data, dispatch] = useReducer(reducer, initialState)
-  const client = sanityClient({
-    projectId,
-    dataset,
-    useCdn,
-    withCredentials
-  })
+  const client = React.useMemo(
+    () =>
+      sanityClient({
+        projectId,
+        dataset,
+        useCdn,
+        withCredentials
+      }),
+    [projectId, dataset, useCdn, withCredentials]
+  )
 
   const builder = imageUrlBuilder(client)
 
@@ -84,7 +88,8 @@ const SanityProvider = ({
           dataset
         },
         serializers,
-        fetch: client ? client.fetch : null
+        fetch: client ? client.fetch : null,
+        client
       }}
     >
       {children}
