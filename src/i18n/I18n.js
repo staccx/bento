@@ -64,14 +64,16 @@ const Provider = ({ children, level, ...props }) => {
       },
       returnObjects: true,
       saveMissing: true, // Must be set to true
-      missingKeyHandler: (lng, ns, key, fallbackValue) =>
+      missingKeyHandler: (lng, ns, key, fallbackValue) => {
         i18nLogger.warn(
           `Missing key: ${key} in ${lng}[${ns}]. Fallbackvalue: ${fallbackValue}`,
           lng,
           ns,
           key,
           fallbackValue
-        ),
+        )
+        return null
+      },
       parseMissingKeyHandler: key => {
         i18nLogger.warn(`No translation found for "${key}"`)
         return null
