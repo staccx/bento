@@ -150,7 +150,9 @@ export const useI18n = () => {
 
   const translate = (key, data, fallback = null) => {
     i18nLogger.debug(`Translating ${key}`, data)
-    return i18n.t(key, data) || fallback
+    const value = i18n.t(key, data)
+    i18nLogger.debug(`Translated ${key} into ${value}`)
+    return value || fallback
   }
 
   const transform = value => {
