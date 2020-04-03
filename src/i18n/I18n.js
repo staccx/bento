@@ -148,9 +148,9 @@ export const useI18n = () => {
 
   const { i18n, ready } = value
 
-  const translate = (key, data) => {
+  const translate = (key, data, fallback = null) => {
     i18nLogger.debug(`Translating ${key}`, data)
-    return i18n.t(key, data)
+    return i18n.t(key, data) ?? fallback
   }
 
   const transform = value => {
