@@ -1,3 +1,50 @@
+## [10.0.1-alpha.29](https://github.com/staccx/bento/compare/v10.0.1-alpha.28...v10.0.1-alpha.29) (2020-04-01)
+
+
+### Features
+
+* **i18n:** add resource reducer ([3b8e7d2](https://github.com/staccx/bento/commit/3b8e7d2))
+
+
+
+## [10.0.1-alpha.28](https://github.com/staccx/bento/compare/v10.0.1-alpha.27...v10.0.1-alpha.28) (2020-03-31)
+
+
+### Bug Fixes
+
+* **bento:** removed log for phoneinput ([05579e1](https://github.com/staccx/bento/commit/05579e1))
+* **components:** drill variant to modal close button ([f3dd18b](https://github.com/staccx/bento/commit/f3dd18b))
+
+
+
+## [10.0.1-alpha.27](https://github.com/staccx/bento/compare/v10.0.1-alpha.26...v10.0.1-alpha.27) (2020-03-26)
+
+
+### Bug Fixes
+
+* **bento:** countrycode and select simple ([c57c149](https://github.com/staccx/bento/commit/c57c149))
+* **bento:** update snapshot for selectsimple ([b815057](https://github.com/staccx/bento/commit/b815057))
+
+
+
+## [10.0.1-alpha.26](https://github.com/staccx/bento/compare/v10.0.1-alpha.25...v10.0.1-alpha.26) (2020-03-18)
+
+
+### Bug Fixes
+
+* **components:** expand title to id ([63722ef](https://github.com/staccx/bento/commit/63722ef))
+* **openid:** useLogout now returns function ([beab282](https://github.com/staccx/bento/commit/beab282))
+
+
+### Features
+
+* **openid:** add useCallbackLogin. refactor Callbacklogin ([6328f25](https://github.com/staccx/bento/commit/6328f25))
+* **openid:** add useCallbackLoginSilent, refactor CallbackLoginSilent ([0e3c027](https://github.com/staccx/bento/commit/0e3c027))
+* **openid:** add useCallbackLogut, refactor CallbackLogout ([ecb4c56](https://github.com/staccx/bento/commit/ecb4c56))
+* **openid:** add useLogout, refactor Logout ([f762346](https://github.com/staccx/bento/commit/f762346))
+
+
+
 ## [10.0.1-alpha.25](https://github.com/staccx/bento/compare/v10.0.1-alpha.24...v10.0.1-alpha.25) (2020-03-17)
 
 

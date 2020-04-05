@@ -66,6 +66,7 @@ const SelectWrapper = styled.div`
 
 const SelectIcon = styled(IconComponent)`
   position: absolute;
+  top: 37px;
   right: ${spacing.small};
   bottom: ${p => {
     const value = targetSize.normal()(p)
