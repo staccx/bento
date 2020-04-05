@@ -26,9 +26,6 @@ const useBrRegSearch = searchTerm => {
       } catch (e) {
         setErrors(e.message)
       }
-
-      console.log("xxxxxxxx", companies)
-
       return companies._embedded.enheter
     }
 
