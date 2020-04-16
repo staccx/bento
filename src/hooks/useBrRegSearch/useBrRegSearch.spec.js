@@ -1,7 +1,19 @@
 import { renderHook } from "@testing-library/react-hooks"
 import useBrRegSearch from "./useBrRegSearch"
 
-it("search", () => {
-  const { results } = renderHook(() => useBrRegSearch("Stacc"))
-  expect(results).not.toBeNull()
+describe("useBrregSearch", () => {
+  it("search", async () => {
+    const { result, waitForNextUpdate } = renderHook(() =>
+      useBrRegSearch("Stacc")
+    )
+    await waitForNextUpdate()
+    expect(result.current.results).not.toBeUndefined()
+  })
+  it("Should work with org nr", async () => {
+    const { result, waitForNextUpdate } = renderHook(() =>
+      useBrRegSearch("920318886")
+    )
+    await waitForNextUpdate()
+    expect(result.current.results).not.toBeUndefined()
+  })
 })

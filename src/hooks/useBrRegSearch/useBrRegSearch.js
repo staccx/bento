@@ -18,17 +18,15 @@ const useBrRegSearch = searchTerm => {
       let companies
 
       try {
-        companies = await window
-          .fetch(
-            `https://data.brreg.no/enhetsregisteret/api/enheter?navn=${searchTerm}`
-          )
-          .then(result => result.json())
+        const query = `https://data.brreg.no/enhetsregisteret/api/enheter?${
+          Number.isInteger(parseInt(searchTerm))
+            ? "organisasjonsnummer"
+            : "navn"
+        }=${searchTerm}`
+        companies = await window.fetch(query).then(result => result.json())
       } catch (e) {
         setErrors(e.message)
       }
-
-      console.log("xxxxxxxx", companies)
-
       return companies._embedded.enheter
     }
 
