@@ -1,7 +1,8 @@
 import Theme from "./Theme"
-import { themes } from "./"
+import { themes, themeLogger, setLogLevel } from "./"
 import Alert from "../components/Alert/Alert"
 import createVariants from "./utils/createVariants"
+import { normalizeLevel } from "../utils/loglevelUtils"
 // import grids from "../components/Layout/Layout/Layout.Grids"
 const instance = themes._default
 
@@ -151,6 +152,33 @@ describe("Theme", () => {
         "px;"
       ]
        */
+    })
+  })
+  describe("Logger", () => {
+    beforeEach(() => {
+      setLogLevel(0)
+    })
+    it("Should set loglevel", () => {
+      // We flip the loglevel to make 0 silent, and 5 the highest
+      let level = normalizeLevel(themeLogger.getLevel())
+      expect(level).toBe(0)
+      setLogLevel(0)
+      level = normalizeLevel(themeLogger.getLevel())
+      expect(level).toBe(0)
+    })
+
+    it("Should not set level if invalid input", () => {
+      expect(normalizeLevel(themeLogger.getLevel())).toBe(0)
+      const shouldThrow = () => {
+        setLogLevel("alarm")
+      }
+      expect(shouldThrow).toThrow()
+    })
+
+    it("Should allow strings", () => {
+      expect(themeLogger.getLevel()).toBe(5)
+      setLogLevel("error")
+      expect(themeLogger.getLevel()).toBe(1)
     })
   })
 })
