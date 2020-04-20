@@ -1,115 +1,97 @@
-import React, { Component } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import IconClose from "../Icons/Close/Close"
 import { FadeIn } from "../../animations"
 import {
-  spacing,
-  color,
-  wrapper,
   applyVariants,
   borderRadius,
+  color,
   commonPropTypes,
-  hideVisually
+  hideVisually,
+  spacing,
+  wrapper
 } from "../../theming"
 import ThemeComponent from "../Theme/ThemeComponent"
 import themeProps from "./Modal.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
-class Modal extends Component {
-  constructor(props) {
-    super(props)
-    this.handleChange = this.handleChange.bind(this)
-    this.escFunction = this.escFunction.bind(this)
-    this.state = {
-      isOpen: this.props.isOpen
+const Modal = ({ children, className, isOpen, onClose, variant, ...props }) => {
+  const [open, setOpen] = React.useState(isOpen)
+
+  const handleClose = event => {
+    if (onClose) {
+      onClose(event)
     }
+
+    setOpen(!open)
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.isOpen !== this.state.isOpen) {
-      this.setState({ isOpen: nextProps.isOpen })
-    }
+  const fixOverflow = () => {
+    document.documentElement.style.overflow = open ? "hidden" : ""
   }
 
-  escFunction(event) {
-    if (event.keyCode === 27) {
-      if (this.props.onClose) {
-        this.props.onClose(event)
+  React.useEffect(() => {
+    const escFunction = event => {
+      if (event.keyCode === 27) {
+        if (onClose) {
+          onClose(event)
+        }
+        setOpen(false)
       }
-      this.setState({
-        isOpen: false
-      })
     }
-  }
-
-  handleChange(event) {
-    if (this.props.onClose) {
-      this.props.onClose(event)
+    document.addEventListener("keydown", escFunction)
+    return () => {
+      document.removeEventListener("keydown", escFunction)
     }
-    // TODO: Make controllable/uncontrollable toggle.
-    this.setState({
-      isOpen: !this.state.isOpen
-    })
-  }
+  }, [])
 
-  fixOverflow(event) {
-    if (this.state.isOpen) {
-      document.documentElement.style.overflow = "hidden"
-    } else {
-      document.documentElement.style.overflow = ""
+  React.useEffect(fixOverflow, [open])
+  React.useEffect(() => {
+    if (isOpen !== open) {
+      setOpen(isOpen)
     }
-  }
+  }, [isOpen])
 
-  componentDidMount() {
-    document.addEventListener("keydown", this.escFunction, false)
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.escFunction, false)
-  }
-
-  render() {
-    const { children, className, variant, ...otherProps } = this.props
-    const { isOpen } = this.state
-    this.fixOverflow()
-    if (isOpen) {
-      return (
-        <>
-          <ModalItem
-            className={className}
-            {...otherProps}
-            role="dialog"
+  if (open) {
+    return (
+      <>
+        <ModalItem
+          className={className}
+          {...props}
+          role="dialog"
+          tabIndex="0"
+          open="open"
+          aria-labelledby="modal"
+          variant={variant}
+        >
+          <ModalContent
+            role="document"
             tabIndex="0"
-            open="open"
-            aria-labelledby="modal"
+            id="modal"
             variant={variant}
           >
-            <ModalContent
-              role="document"
-              tabIndex="0"
-              id="modal"
+            <Close
+              type="button"
+              id="modal-close"
+              aria-label="Close (Press escape to close)"
+              onClick={handleClose}
               variant={variant}
             >
-              <Close
-                type="button"
-                id="modal-close"
-                aria-label="Close (Press escape to close)"
-                onClick={this.handleChange}
-                variant={variant}
-              >
-                <span>Close</span>
-                <Icon />
-              </Close>
-              {children}
-            </ModalContent>
-          </ModalItem>
-          <ModalBackdrop onClick={this.handleChange} variant={variant} />
-        </>
-      )
-    }
-    return null
+              <span>Close</span>
+              <Icon />
+            </Close>
+            {children}
+          </ModalContent>
+        </ModalItem>
+        <ModalBackdrop
+          onClick={e => console.log("Clicked") || handleClose(e)}
+          variant={variant}
+        />
+      </>
+    )
   }
+  return null
 }
 
 const ModalItem = styled.dialog`
@@ -118,6 +100,7 @@ const ModalItem = styled.dialog`
   width: 100%;
   overflow: auto;
   position: fixed;
+  pointer-events: none;
   top: 0;
   left: 0;
   z-index: 9999;
@@ -150,6 +133,7 @@ const ModalContent = styled.div`
   width: 100%;
   overflow-y: auto;
   position: relative;
+  pointer-events: all;
   &:focus {
     outline: none;
   }
