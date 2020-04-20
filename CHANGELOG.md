@@ -1,3 +1,101 @@
+## [10.0.1-alpha.39](https://github.com/staccx/bento/compare/v10.0.1-alpha.38...v10.0.1-alpha.39) (2020-04-20)
+
+
+### Bug Fixes
+
+* **components:** fix modal backdrop click + refactor to function ([94d4b96](https://github.com/staccx/bento/commit/94d4b96))
+* **hooks:** let to const ([720e6df](https://github.com/staccx/bento/commit/720e6df))
+* **hooks:** usePostalCode can now take integers ([4ea14cf](https://github.com/staccx/bento/commit/4ea14cf))
+
+
+### Features
+
+* **theming:** add logger and setLevel. Log moar ([5edd8c2](https://github.com/staccx/bento/commit/5edd8c2))
+* **utils:** add utils for loglevel handling ([6bf7860](https://github.com/staccx/bento/commit/6bf7860))
+
+
+
+## [10.0.1-alpha.38](https://github.com/staccx/bento/compare/v10.0.1-alpha.37...v10.0.1-alpha.38) (2020-04-16)
+
+
+### Bug Fixes
+
+* **hooks:** useBrregsearch now support org numbers ([b71f2b4](https://github.com/staccx/bento/commit/b71f2b4))
+
+
+
+## [10.0.1-alpha.37](https://github.com/staccx/bento/compare/v10.0.1-alpha.36...v10.0.1-alpha.37) (2020-04-03)
+
+
+### Bug Fixes
+
+* **i18n:** fix missing key handler bug ([2df5e75](https://github.com/staccx/bento/commit/2df5e75))
+
+
+
+## [10.0.1-alpha.36](https://github.com/staccx/bento/compare/v10.0.1-alpha.35...v10.0.1-alpha.36) (2020-04-03)
+
+
+
+## [10.0.1-alpha.35](https://github.com/staccx/bento/compare/v10.0.1-alpha.34...v10.0.1-alpha.35) (2020-04-03)
+
+
+### Bug Fixes
+
+* **i18n:** fallback should occur if t is null ([e84169a](https://github.com/staccx/bento/commit/e84169a))
+
+
+
+## [10.0.1-alpha.34](https://github.com/staccx/bento/compare/v10.0.1-alpha.33...v10.0.1-alpha.34) (2020-04-03)
+
+
+### Bug Fixes
+
+* **i18n:** transform prop name ([59221a1](https://github.com/staccx/bento/commit/59221a1))
+
+
+### Features
+
+* **i18n:** add fallback to translate function ([d92112c](https://github.com/staccx/bento/commit/d92112c))
+
+
+
+## [10.0.1-alpha.33](https://github.com/staccx/bento/compare/v10.0.1-alpha.32...v10.0.1-alpha.33) (2020-04-01)
+
+
+### Bug Fixes
+
+* **sanity:** defeat! use dodds ([c8e69a7](https://github.com/staccx/bento/commit/c8e69a7))
+
+
+
+## [10.0.1-alpha.32](https://github.com/staccx/bento/compare/v10.0.1-alpha.31...v10.0.1-alpha.32) (2020-04-01)
+
+
+### Bug Fixes
+
+* memoize object dependency ([71b36e0](https://github.com/staccx/bento/commit/71b36e0))
+
+
+
+## [10.0.1-alpha.31](https://github.com/staccx/bento/compare/v10.0.1-alpha.30...v10.0.1-alpha.31) (2020-04-01)
+
+
+### Bug Fixes
+
+* no longer dep on client ([7635853](https://github.com/staccx/bento/commit/7635853))
+
+
+
+## [10.0.1-alpha.30](https://github.com/staccx/bento/compare/v10.0.1-alpha.29...v10.0.1-alpha.30) (2020-04-01)
+
+
+### Features
+
+* **sanity:** add useSanityQuery hook. memoize and expose client ([19f53c8](https://github.com/staccx/bento/commit/19f53c8))
+
+
+
 ## [10.0.1-alpha.29](https://github.com/staccx/bento/compare/v10.0.1-alpha.28...v10.0.1-alpha.29) (2020-04-01)
 
 
