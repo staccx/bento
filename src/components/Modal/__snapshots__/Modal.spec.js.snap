@@ -8,13 +8,13 @@ exports[`Modal Snapshots isOpen 1`] = `
 Array [
   <dialog
     aria-labelledby="modal"
-    className="sc-AykKD FnDLD className"
+    className="sc-AykKD cEnwHV className"
     open="open"
     role="dialog"
     tabIndex="0"
   >
     <div
-      className="sc-AykKE jfbgmf"
+      className="sc-AykKE jBAoTm"
       id="modal"
       role="document"
       tabIndex="0"
@@ -55,54 +55,3 @@ Array [
 `;
 
 exports[`Modal Snapshots onClose 1`] = `null`;
-
-exports[`Modal Snapshots onClose 2`] = `
-Array [
-  <dialog
-    aria-labelledby="modal"
-    className="sc-AykKD FnDLD className"
-    onClose={[Function]}
-    open="open"
-    role="dialog"
-    tabIndex="0"
-  >
-    <div
-      className="sc-AykKE jfbgmf"
-      id="modal"
-      role="document"
-      tabIndex="0"
-    >
-      <button
-        aria-label="Close (Press escape to close)"
-        className="sc-AykKF iytTGw"
-        id="modal-close"
-        onClick={[Function]}
-        type="button"
-      >
-        <span>
-          Close
-        </span>
-        <svg
-          className="sc-AykKC fxMzgc sc-AykKH fMQdlv"
-          viewBox="0 0 24 24"
-          width={12}
-        >
-          <path
-            d="M11.96 8a.54.54 0 0 1 .08 0L19.8.17a.54.54 0 0 1 .77 0l3.27 3.3c.21.22.21.56 0 .78L16.18 12l7.66 7.76c.2.21.2.56 0 .78l-3.27 3.3a.54.54 0 0 1-.77 0L12.04 16a.54.54 0 0 1-.08 0L4.2 23.85a.54.54 0 0 1-.77 0L.16 20.54a.56.56 0 0 1 0-.78L7.82 12 .16 4.25a.56.56 0 0 1 0-.78L3.43.16a.54.54 0 0 1 .77 0L11.96 8z"
-          />
-        </svg>
-      </button>
-      <p>
-         Lorem ipsum dolor sit amet
-      </p>
-      <p>
-        Ut rutrum ex ante, ut posuere arcu pellentesque vel.
-      </p>
-    </div>
-  </dialog>,
-  <div
-    className="sc-AykKG fCpIjo"
-    onClick={[Function]}
-  />,
-]
-`;
