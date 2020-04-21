@@ -1,8 +1,6 @@
 // Convenience
 // Theme class
-import loglevel from "loglevel"
 import Theme from "./Theme"
-import { normalizeLevel } from "../utils/loglevelUtils"
 
 export { default as borderRadius } from "./convenience/borderRadius"
 export { default as color } from "./convenience/color"
@@ -32,13 +30,9 @@ export {
 export { default as cssResets } from "./styles/cssResets"
 export { default as fontSmoothing } from "./styles/fontsmoothing"
 export { default as hideVisually } from "./styles/hideVisually"
-
-export const themeLogger = loglevel.getLogger("theme")
-export const setLogLevel = level => {
-  themeLogger.setLevel(normalizeLevel(level))
-}
-
+export { themeLogger as logger } from "./theme.logger"
 const instance = new Theme()
+
 const themes = {
   _default: instance
 }
