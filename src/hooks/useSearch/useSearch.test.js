@@ -1,4 +1,5 @@
 import React from "react"
+import { renderHook } from "@testing-library/react-hooks"
 import { render, cleanup, getByTestId } from "@testing-library/react"
 import useSearch from "./useSearch"
 
@@ -42,7 +43,7 @@ function TestComp({ term }) {
 
   return (
     <div>
-      <span data-testid={"result"}>{result.length}</span>
+      <span data-testid="result">{result.length}</span>
     </div>
   )
 }
@@ -55,10 +56,83 @@ describe("useSearch", () => {
 
     expect(span.textContent).toBe("3")
 
-    rerender(<TestComp term={"Roberta"} />)
+    rerender(<TestComp term="Roberta" />)
     expect(span.textContent).toBe("1")
 
-    rerender(<TestComp term={"Sulfax"} />)
+    rerender(<TestComp term="Sulfax" />)
     expect(span.textContent).toBe("2")
+  })
+
+  describe("Hook", () => {
+    it("Should receive results", () => {
+      const { result } = renderHook(() =>
+        useSearch({
+          input: "Rivers",
+          documents: testData,
+          keys: ["name.first"]
+        })
+      )
+
+      const [searchResult] = result.current
+      expect(Array.isArray(searchResult)).toBe(true)
+      expect(searchResult.length).toBe(1)
+      expect(searchResult[0].name.first).toBe("Rivers")
+    })
+
+    it("Should receive no results if none match", () => {
+      const { result } = renderHook(() =>
+        useSearch({
+          input: "Hauken",
+          documents: testData,
+          keys: ["name.first"]
+        })
+      )
+
+      const [searchResult] = result.current
+      expect(Array.isArray(searchResult)).toBe(true)
+      expect(searchResult.length).toBe(0)
+    })
+
+    it("Should support any key", () => {
+      const { result } = renderHook(() =>
+        useSearch({
+          input: "SULFAX",
+          documents: testData,
+          keys: ["company"]
+        })
+      )
+
+      const [searchResult] = result.current
+      expect(Array.isArray(searchResult)).toBe(true)
+      expect(searchResult.length).toBe(2)
+    })
+
+    it("Should support any case", () => {
+      const { result } = renderHook(() =>
+        useSearch({
+          input: "sulfax",
+          documents: testData,
+          keys: ["company"]
+        })
+      )
+
+      const [searchResult] = result.current
+      expect(Array.isArray(searchResult)).toBe(true)
+      expect(searchResult.length).toBe(2)
+    })
+
+    it("Should return all docs if no input", () => {
+      const { result } = renderHook(() =>
+        useSearch({
+          input: null,
+          documents: testData,
+          keys: ["company"]
+        })
+      )
+
+      const [searchResult] = result.current
+      expect(Array.isArray(searchResult)).toBe(true)
+      expect(searchResult.length).toBe(3)
+    })
   })
 })
