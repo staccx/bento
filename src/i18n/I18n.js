@@ -158,6 +158,10 @@ export const useI18n = () => {
   }
 
   const transform = value => {
+    if (!value) {
+      i18nLogger.warn(`Cannot transform null or undefined`)
+      return null
+    }
     if (!value.hasOwnProperty(i18n.language)) {
       i18nLogger.warn(`Could not find key in language`, value, i18n.language)
       return null
