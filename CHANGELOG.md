@@ -1,3 +1,22 @@
+## [10.0.1-alpha.41](https://github.com/staccx/bento/compare/v10.0.1-alpha.40...v10.0.1-alpha.41) (2020-04-28)
+
+
+### Features
+
+* **i18n:** add new backend to i18n. add tests. expose Transform to root ([02ec2ee](https://github.com/staccx/bento/commit/02ec2ee))
+
+
+
+## [10.0.1-alpha.40](https://github.com/staccx/bento/compare/v10.0.1-alpha.39...v10.0.1-alpha.40) (2020-04-27)
+
+
+### Bug Fixes
+
+* **components:** annoying pixelated loading now gone! 🔥🎉 ([ef9a9c8](https://github.com/staccx/bento/commit/ef9a9c8))
+* **i18n:** fix issue where trying to transform null or undefined ([ea014dd](https://github.com/staccx/bento/commit/ea014dd))
+
+
+
 ## [10.0.1-alpha.39](https://github.com/staccx/bento/compare/v10.0.1-alpha.38...v10.0.1-alpha.39) (2020-04-20)
 
 
