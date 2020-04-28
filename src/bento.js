@@ -54,3 +54,4 @@ export * as hooks from "./hooks"
 export * from "./components"
 
 export { Translate } from "./i18n"
+export { Transform } from "./i18n"

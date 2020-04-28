@@ -1,28 +1,24 @@
-import sanityClient from "@sanity/client"
+import axios from "axios"
 import { i18nLogger } from "./I18n"
 import { resourceReducer } from "./backend.utils"
 
-const Backend = {
+const RESTBackend = {
   init(services, options) {
     this.services = services
     // this.options = Object.assign({}, options, this.options || {})
-    if (!options.sanity) {
-      throw new Error("This backend requires sanity options")
+    if (!options.rest) {
+      throw new Error("This backend requires rest options")
     }
 
-    this.client = sanityClient({
-      ...options.sanity,
-      ...(options.useCdn === undefined && { useCdn: true })
-    })
+    const { headers = {}, url } = options.rest
 
-    const {
-      query = `*[_type == "translations" && (!defined(namespace) || namespace == $namespace)]{value, "key": i18nKey.current}`,
-      params = {}
-    } = options.sanity
-    this.query = query
-
-    i18nLogger.info("created")
-    this.params = params
+    i18nLogger.info("RESTBacked created")
+    this.url = url
+    this.headers = headers
+    i18nLogger.debug(
+      `Got options for RESTBackend: url: ${url} & headers: ${headers}`,
+      options
+    )
   },
 
   readMulti: function(languages, namespaces, callback) {
@@ -34,11 +30,14 @@ const Backend = {
   },
 
   getTranslations: function(language, namespace, callback) {
-    i18nLogger.debug("SanityBackend::getTranslations", language, namespace)
-    this.client
-      .fetch(this.query, { ...this.params, namespace })
-      .then(result => {
-        const resources = result.reduce(resourceReducer(language), {})
+    i18nLogger.debug("RESTBackend::getTranslations", language, namespace)
+    axios
+      .get(this.url, {
+        ...(this.headers && { headers: this.headers })
+      })
+      .then(result => result.data)
+      .then(data => {
+        const resources = data.reduce(resourceReducer(language), {})
 
         callback(null, resources)
       })
@@ -64,6 +63,6 @@ const Backend = {
   }
 }
 
-Backend.type = "backend"
+RESTBackend.type = "backend"
 
-export default Backend
+export default RESTBackend
