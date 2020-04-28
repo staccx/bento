@@ -1,13 +1,13 @@
-import loglevel from "loglevel"
 import createVariants from "./createVariants"
 import { Theme, themes } from "../index"
+import { themeLogger } from "../theme.logger"
 
 export const componentCreateFactory = component => (
   variants,
   name = "_default"
 ) => {
   if (!themes.hasOwnProperty(name)) {
-    loglevel.warn(
+    themeLogger.warn(
       `Theme with name ${name} does not exists. One will be created`
     )
     themes[name] = new Theme()

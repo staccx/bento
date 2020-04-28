@@ -1,5 +1,6 @@
 import Theme from "./Theme"
-import { themes, themeLogger, setLogLevel } from "./"
+import { themes } from "./index"
+import { themeLogger, setLogLevel } from "./theme.logger"
 import Alert from "../components/Alert/Alert"
 import createVariants from "./utils/createVariants"
 import { normalizeLevel } from "../utils/loglevelUtils"
