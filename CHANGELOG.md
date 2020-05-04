@@ -1,3 +1,49 @@
+## [10.0.1-alpha.46](https://github.com/staccx/bento/compare/v10.0.1-alpha.45...v10.0.1-alpha.46) (2020-05-04)
+
+
+### Bug Fixes
+
+* **components:** no default value for level ([1503605](https://github.com/staccx/bento/commit/1503605))
+
+
+
+## [10.0.1-alpha.45](https://github.com/staccx/bento/compare/v10.0.1-alpha.44...v10.0.1-alpha.45) (2020-05-04)
+
+
+### Bug Fixes
+
+* **utils:** fix loglevel null and undefined ([c581c69](https://github.com/staccx/bento/commit/c581c69))
+
+
+
+## [10.0.1-alpha.44](https://github.com/staccx/bento/compare/v10.0.1-alpha.43...v10.0.1-alpha.44) (2020-05-04)
+
+
+### Bug Fixes
+
+* **components:** default log level for themes ([a3f3561](https://github.com/staccx/bento/commit/a3f3561))
+* **utils:** fix undefined level ([3a59757](https://github.com/staccx/bento/commit/3a59757))
+
+
+
+## [10.0.1-alpha.43](https://github.com/staccx/bento/compare/v10.0.1-alpha.42...v10.0.1-alpha.43) (2020-05-04)
+
+
+### Bug Fixes
+
+* **i18n:** default loglevel set to 0 ([82a7cbf](https://github.com/staccx/bento/commit/82a7cbf))
+
+
+### Features
+
+* **components:** themeProvider now sets logger level ([abcaa2c](https://github.com/staccx/bento/commit/abcaa2c))
+
+
+
+## [10.0.1-alpha.42](https://github.com/staccx/bento/compare/v10.0.1-alpha.41...v10.0.1-alpha.42) (2020-04-29)
+
+
+
 ## [10.0.1-alpha.41](https://github.com/staccx/bento/compare/v10.0.1-alpha.40...v10.0.1-alpha.41) (2020-04-28)
 
 
