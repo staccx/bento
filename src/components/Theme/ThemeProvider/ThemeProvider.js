@@ -15,7 +15,7 @@ import { normalizeLevel } from "../../../utils/loglevelUtils"
  * @return {*}
  * @constructor
  */
-const ThemeProvider = ({ children, theme, level }) => {
+const ThemeProvider = ({ children, theme, level = 0 }) => {
   React.useEffect(() => {
     // NOTE: This sets loglevel for THEME and not COMPONENTS.
     setLogLevel(normalizeLevel(level))
