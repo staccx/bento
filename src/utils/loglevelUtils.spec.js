@@ -14,6 +14,9 @@ describe("Loglevel", () => {
     expect(isValidLoglevel("info")).toBe(true)
     expect(isValidLoglevel("debug")).toBe(true)
     expect(isValidLoglevel("trace")).toBe(true)
+
+    expect(isValidLoglevel(undefined)).toBe(false)
+    expect(isValidLoglevel(null)).toBe(false)
   })
 
   it("Should fail on invalid", () => {
@@ -26,5 +29,19 @@ describe("Loglevel", () => {
     expect(normalizeLevel(0)).toBe(5)
     expect(normalizeLevel("ERROR")).toBe(1)
     expect(normalizeLevel("INFO")).toBe(3)
+  })
+
+  it("Null and undefined", () => {
+    const shouldThrow = () => {
+      normalizeLevel(null)
+    }
+
+    expect(shouldThrow).toThrow()
+
+    const undefinedThrow = () => {
+      normalizeLevel(undefined)
+    }
+
+    expect(undefinedThrow).toThrow()
   })
 })

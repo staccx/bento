@@ -7,7 +7,8 @@ const logLevels = {
   SILENT: 5
 }
 export const isValidLoglevel = level =>
-  level &&
+  level !== undefined &&
+  level !== null &&
   (logLevels.hasOwnProperty(level.toString().toUpperCase()) ||
     Object.entries(logLevels).some(([, val]) => val === level))
 
