@@ -7,8 +7,9 @@ const logLevels = {
   SILENT: 5
 }
 export const isValidLoglevel = level =>
-  logLevels.hasOwnProperty(level.toString().toUpperCase()) ||
-  Object.entries(logLevels).some(([, val]) => val === level)
+  level &&
+  (logLevels.hasOwnProperty(level.toString().toUpperCase()) ||
+    Object.entries(logLevels).some(([, val]) => val === level))
 
 const flipLevel = level => {
   if (!isValidLoglevel(level)) {
