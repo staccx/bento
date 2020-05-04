@@ -6,3 +6,4 @@ export const setLogLevel = level => {
   themeLogger.setLevel(normalizeLevel(level))
 }
 themeLogger.setDefaultLevel(normalizeLevel(0))
+themeLogger.info("Set default loglevel")

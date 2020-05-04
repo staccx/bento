@@ -16,7 +16,7 @@ import { setLogLevel } from "../../../theming/theme.logger"
  */
 const ThemeProvider = ({ children, theme, level }) => {
   React.useEffect(() => {
-    if (level) {
+    if (level ?? false) {
       setLogLevel(level)
     }
   }, [level])
