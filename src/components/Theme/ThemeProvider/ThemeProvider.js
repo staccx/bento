@@ -5,7 +5,6 @@ import WebFonts from "../WebFonts"
 import GlobalStyle from "../GlobalStyle"
 import { theme as instance } from "../../../theming"
 import { setLogLevel } from "../../../theming/theme.logger"
-import { normalizeLevel } from "../../../utils/loglevelUtils"
 
 /**
  * ThemeProvider is used to wrap you app. It will provide children with correct context
@@ -15,10 +14,11 @@ import { normalizeLevel } from "../../../utils/loglevelUtils"
  * @return {*}
  * @constructor
  */
-const ThemeProvider = ({ children, theme, level = 0 }) => {
+const ThemeProvider = ({ children, theme, level }) => {
   React.useEffect(() => {
-    // NOTE: This sets loglevel for THEME and not COMPONENTS.
-    setLogLevel(normalizeLevel(level))
+    if (level) {
+      setLogLevel(level)
+    }
   }, [level])
   return (
     <StyledThemeProvider theme={theme}>
@@ -41,7 +41,8 @@ ThemeProvider.propTypes = {
   /**
    * Theme to override instance
    */
-  theme: PropTypes.object
+  theme: PropTypes.object,
+  level: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }
 ThemeProvider.defaultProps = {
   theme: instance
