@@ -1,26 +1,27 @@
 import React, {
   createContext,
+  useCallback,
   useContext,
   useEffect,
-  useCallback,
   useMemo,
   useState
 } from "react"
 import i18next from "i18next"
 import PropTypes from "prop-types"
 import loglevel from "loglevel"
-import { formatCurrency } from "../formatting/currency"
-import { logLevelFromNumber } from "../open-id/utils/logLevelFromString"
+import { formatMoney } from "../formatting/currency"
+import { normalizeLevel } from "../utils/loglevelUtils"
 
 const I18nContext = createContext({})
 
 const defaultFormat = {
   currency: value => {
-    return formatCurrency(parseInt(value, 10))
+    return formatMoney(parseInt(value, 10))
   }
 }
 
 export const i18nLogger = loglevel.getLogger("i18n")
+i18nLogger.setDefaultLevel(normalizeLevel(0))
 
 const Provider = ({ children, level, ...props }) => {
   const [ready, setReady] = useState(false)
@@ -32,7 +33,7 @@ const Provider = ({ children, level, ...props }) => {
   }
 
   useEffect(() => {
-    i18nLogger.setLevel(logLevelFromNumber(level))
+    i18nLogger.setLevel(normalizeLevel(level))
     i18nLogger.info("i18n levels updated")
   }, [])
 
