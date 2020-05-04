@@ -1,5 +1,5 @@
 import deepfind from "./deepfind"
-import { logger } from "../index"
+import { themeLogger } from "../theme.logger"
 import { VARIANT_DEFAULT } from "../themeContants"
 
 /**
@@ -11,19 +11,19 @@ export default themeProps => props => {
   const { variant = VARIANT_DEFAULT, theme } = props
 
   if (!theme) {
-    logger.warn("No theme!", variant)
+    themeLogger.warn("No theme!", variant)
     return null
   }
 
   if (!themeProps) {
-    logger.error("No theme props!", theme, variant, props)
+    themeLogger.error("No theme props!", theme, variant, props)
     return null
   }
 
   const name = themeProps.hasOwnProperty("name") ? themeProps.name : themeProps
 
   if (!name) {
-    logger.warn("No name!", variant, theme)
+    themeLogger.warn("No name!", variant, theme)
     return null
   }
 
@@ -41,20 +41,20 @@ export default themeProps => props => {
 const getVariants = (theme, variant, name) => {
   const type = typeof variant
   if (Array.isArray(variant)) {
-    logger.info("Variant is an array", variant)
+    themeLogger.info("Variant is an array", variant)
     return variant.map(v => getVariant(theme, v, name))
   } else if (type === "function") {
-    logger.info("Variant is a function", variant)
+    themeLogger.info("Variant is a function", variant)
     return getVariant(theme, variant({ name, theme }), name)
   } else if (type === "string") {
-    logger.info("Variant is a string", variant)
+    themeLogger.info("Variant is a string", variant)
     return getVariant(theme, variant, name)
   } else if (type === "object") {
-    logger.info("Variant is an object", variant)
+    themeLogger.info("Variant is an object", variant)
     const keys = Object.keys(variant)
     return keys.map(key => getVariant(theme, variant[key], key))
   }
-  logger.warn("Unsupported variant type", type, variant, name)
+  themeLogger.warn("Unsupported variant type", type, variant, name)
   return null
 }
 /**
@@ -67,7 +67,7 @@ const getVariants = (theme, variant, name) => {
 const getVariant = (theme, variant, name) => {
   const styles = deepfind(theme, name)
   if (!styles || !styles[variant]) {
-    logger.warn("Could not find any styles for variant", variant, name)
+    themeLogger.warn("Could not find any styles for variant", variant, name)
     return null
   }
 
