@@ -113,15 +113,6 @@ const fromOperation = (
           break
         }
 
-        case "path": {
-          // replace {name} in path
-          result.path = result.path.replace(
-            new RegExp(`\{${parameter.name}\}`, "g"),
-            parameter.name + "_testPathValue"
-          )
-          break
-        }
-
         case "cookie": {
           // Cookie: name=value; name2=value2; name3=value3
           if (!result.headers.Cookie) {
@@ -141,10 +132,3 @@ const fromOperation = (
 
   return result
 }
-
-const getDummyValue = type => {
-  switch (type) {
-  }
-}
-
-const resolveReference = (openApi, ref) => {}
