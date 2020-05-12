@@ -12,7 +12,8 @@
     "storybook": "start-storybook -p 9009",
     "prepare": "yarn build",
     "alpha": "npm version prerelease --preid=alpha && npm publish",
-    "dirty-deploy-storybook": "yarn build-storybook && cp now.json public/ && cd public && now --prod"
+    "dirty-deploy-storybook": "yarn build-storybook && cp now.json public/ && cd public && now --prod",
+    "chromatic": "CHROMATIC_APP_CODE=e5op6dsgv2n chromatic --exit-zero-on-changes"
   },
   "repository": {
     "type": "git",
@@ -63,6 +64,7 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-preset-react-app": "^9.1.0",
+    "chromatic": "^4.0.2",
     "conventional-changelog-angular-bitbucket": "^1.1.2",
     "conventional-changelog-cli": "^2.0.5",
     "cross-env": "^7.0.0",
