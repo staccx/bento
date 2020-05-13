@@ -2,13 +2,13 @@
 
 exports[`CreditCardInput Snapshots No props 1`] = `
 <div
-  className="sc-AykKI iDYrmt"
+  className="sc-AxheI jmeqRy"
 >
   
   
   <input
     autoFocus={null}
-    className="sc-AykKJ gjiytr"
+    className="sc-Axmtr bDDSAq"
     disabled={false}
     hidden={false}
     id="creditCard"

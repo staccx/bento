@@ -2,54 +2,54 @@
 
 exports[`KeyFigures Snapshots Empty Array 1`] = `
 <ul
-  className="sc-AykKC hEeApa"
+  className="sc-AxjAm bsVHNb"
 />
 `;
 
 exports[`KeyFigures Snapshots With children 1`] = `
 <ul
-  className="sc-AykKC hEeApa"
+  className="sc-AxjAm bsVHNb"
 >
   <li
-    className="sc-AykKD jubovb"
+    className="sc-AxirZ kCFYzC"
   >
     <h3
-      className="sc-AykKE cOBxxr"
+      className="sc-AxiKw dJsfJr"
     >
       Label
     </h3>
     <span
-      className="sc-AykKF iTgtqP"
+      className="sc-AxhCb zWhnK"
     >
        
       45 854
     </span>
   </li>
   <li
-    className="sc-AykKD jubovb"
+    className="sc-AxirZ kCFYzC"
   >
     <h3
-      className="sc-AykKE cOBxxr"
+      className="sc-AxiKw dJsfJr"
     >
       Available
     </h3>
     <span
-      className="sc-AykKF iTgtqP"
+      className="sc-AxhCb zWhnK"
     >
        
       456 486
     </span>
   </li>
   <li
-    className="sc-AykKD jubovb"
+    className="sc-AxirZ kCFYzC"
   >
     <h3
-      className="sc-AykKE cOBxxr"
+      className="sc-AxiKw dJsfJr"
     >
       New Label
     </h3>
     <span
-      className="sc-AykKF iTgtqP"
+      className="sc-AxhCb zWhnK"
     >
        
       346
@@ -60,48 +60,48 @@ exports[`KeyFigures Snapshots With children 1`] = `
 
 exports[`KeyFigures Snapshots With figures 1`] = `
 <ul
-  className="sc-AykKC hEeApa"
+  className="sc-AxjAm bsVHNb"
 >
   <li
-    className="sc-AykKD jubovb"
+    className="sc-AxirZ kCFYzC"
   >
     <h3
-      className="sc-AykKE cOBxxr"
+      className="sc-AxiKw dJsfJr"
     >
       Label
     </h3>
     <span
-      className="sc-AykKF iTgtqP"
+      className="sc-AxhCb zWhnK"
     >
        
       45 854
     </span>
   </li>
   <li
-    className="sc-AykKD jubovb"
+    className="sc-AxirZ kCFYzC"
   >
     <h3
-      className="sc-AykKE cOBxxr"
+      className="sc-AxiKw dJsfJr"
     >
       Available
     </h3>
     <span
-      className="sc-AykKF iTgtqP"
+      className="sc-AxhCb zWhnK"
     >
        
       456 486
     </span>
   </li>
   <li
-    className="sc-AykKD jubovb"
+    className="sc-AxirZ kCFYzC"
   >
     <h3
-      className="sc-AykKE cOBxxr"
+      className="sc-AxiKw dJsfJr"
     >
       New Label
     </h3>
     <span
-      className="sc-AykKF iTgtqP"
+      className="sc-AxhCb zWhnK"
     >
        
       346
@@ -112,18 +112,18 @@ exports[`KeyFigures Snapshots With figures 1`] = `
 
 exports[`KeyFigures Snapshots With one figure 1`] = `
 <ul
-  className="sc-AykKC hEeApa"
+  className="sc-AxjAm bsVHNb"
 >
   <li
-    className="sc-AykKD jubovb"
+    className="sc-AxirZ kCFYzC"
   >
     <h3
-      className="sc-AykKE cOBxxr"
+      className="sc-AxiKw dJsfJr"
     >
       Label
     </h3>
     <span
-      className="sc-AykKF iTgtqP"
+      className="sc-AxhCb zWhnK"
     >
        
       45 854

@@ -2,19 +2,19 @@
 
 exports[`Breadcrumb Snapshots empty array 1`] = `
 <ol
-  className="sc-AykKC hieLbK"
+  className="sc-AxjAm gfMvZV"
 />
 `;
 
 exports[`Breadcrumb Snapshots no props 1`] = `
 <ol
-  className="sc-AykKC hieLbK"
+  className="sc-AxjAm gfMvZV"
 >
   <li
-    className="sc-AykKD duMGmI"
+    className="sc-AxirZ kMtyOB"
   >
     <div
-      className="sc-AykKF fgdujz"
+      className="sc-AxhCb vdNOW"
     >
       <div />
     </div>
@@ -24,19 +24,19 @@ exports[`Breadcrumb Snapshots no props 1`] = `
 
 exports[`Breadcrumb Snapshots with child 1`] = `
 <ol
-  className="sc-AykKC hieLbK"
+  className="sc-AxjAm gfMvZV"
 />
 `;
 
 exports[`Breadcrumb Snapshots with path 1`] = `
 <ol
-  className="sc-AykKC hieLbK"
+  className="sc-AxjAm gfMvZV"
 >
   <li
-    className="sc-AykKD duMGmI"
+    className="sc-AxirZ kMtyOB"
   >
     <a
-      className="sc-AykKE bmJenU"
+      className="sc-AxiKw bBrtjg"
       href="/"
     >
       <div>
@@ -45,10 +45,10 @@ exports[`Breadcrumb Snapshots with path 1`] = `
     </a>
   </li>
   <li
-    className="sc-AykKD duMGmI"
+    className="sc-AxirZ kMtyOB"
   >
     <a
-      className="sc-AykKE bmJenU"
+      className="sc-AxiKw bBrtjg"
       href="/level-2"
     >
       <div>
@@ -57,10 +57,10 @@ exports[`Breadcrumb Snapshots with path 1`] = `
     </a>
   </li>
   <li
-    className="sc-AykKD duMGmI"
+    className="sc-AxirZ kMtyOB"
   >
     <a
-      className="sc-AykKE bmJenU"
+      className="sc-AxiKw bBrtjg"
       href="/level-3"
     >
       <div>
@@ -69,10 +69,10 @@ exports[`Breadcrumb Snapshots with path 1`] = `
     </a>
   </li>
   <li
-    className="sc-AykKD duMGmI"
+    className="sc-AxirZ kMtyOB"
   >
     <div
-      className="sc-AykKF fgdujz"
+      className="sc-AxhCb vdNOW"
     >
       <div>
         Fourth page

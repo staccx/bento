@@ -2,26 +2,26 @@
 
 exports[`SkeletonLine Snapshots No props 1`] = `
 <div
-  className="sc-AykKC hKxeYY sc-AykKD bGbLSu"
+  className="sc-AxjAm ibqlzg sc-AxirZ cHZTnP"
 />
 `;
 
 exports[`SkeletonLine Snapshots with className 1`] = `
 <div
-  className="sc-AykKC hKxeYY sc-AykKD bGbLSu className"
+  className="sc-AxjAm ibqlzg sc-AxirZ cHZTnP className"
 />
 `;
 
 exports[`SkeletonLine Snapshots with height 1`] = `
 <div
-  className="sc-AykKC hKxeYY sc-AykKD dIBEvE className"
+  className="sc-AxjAm ibqlzg sc-AxirZ llbXDb className"
   height={100}
 />
 `;
 
 exports[`SkeletonLine Snapshots with width 1`] = `
 <div
-  className="sc-AykKC hKxeYY sc-AykKD hfgQhW className"
+  className="sc-AxjAm ibqlzg sc-AxirZ jGGHgj className"
   width={100}
 />
 `;

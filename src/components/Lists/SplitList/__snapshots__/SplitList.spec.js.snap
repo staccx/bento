@@ -2,10 +2,10 @@
 
 exports[`splitListItem Snapshots More than 2 children 1`] = `
 <ul
-  className="sc-AykKD jpnaqQ"
+  className="sc-AxirZ hryhsZ"
 >
   <li
-    className="sc-AykKC doyRde"
+    className="sc-AxjAm kbYePN"
   >
     <span>
       Amount
@@ -15,7 +15,7 @@ exports[`splitListItem Snapshots More than 2 children 1`] = `
     </span>
   </li>
   <li
-    className="sc-AykKC doyRde"
+    className="sc-AxjAm kbYePN"
   >
     <span>
       Amount
@@ -25,7 +25,7 @@ exports[`splitListItem Snapshots More than 2 children 1`] = `
     </span>
   </li>
   <li
-    className="sc-AykKC doyRde"
+    className="sc-AxjAm kbYePN"
   >
     <span>
       Has three children!
@@ -39,10 +39,10 @@ exports[`splitListItem Snapshots More than 2 children 1`] = `
 
 exports[`splitListItem Snapshots No props 1`] = `
 <ul
-  className="sc-AykKD jpnaqQ"
+  className="sc-AxirZ hryhsZ"
 >
   <li
-    className="sc-AykKC doyRde"
+    className="sc-AxjAm kbYePN"
   >
     <span>
       Amount
@@ -52,7 +52,7 @@ exports[`splitListItem Snapshots No props 1`] = `
     </span>
   </li>
   <li
-    className="sc-AykKC doyRde"
+    className="sc-AxjAm kbYePN"
   >
     <span>
       Amount
@@ -62,7 +62,7 @@ exports[`splitListItem Snapshots No props 1`] = `
     </span>
   </li>
   <li
-    className="sc-AykKC doyRde"
+    className="sc-AxjAm kbYePN"
   >
     <span>
       Has three children!

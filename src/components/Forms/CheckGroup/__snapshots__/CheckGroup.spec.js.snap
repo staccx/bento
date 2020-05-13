@@ -3,10 +3,10 @@
 exports[`Checkbox Snapshots group 1`] = `
 Array [
   <div
-    className="sc-AykKD erepSp"
+    className="sc-AxirZ feQoIa"
   >
     <input
-      className="sc-AykKF awyBD"
+      className="sc-AxhCb fFfhJi"
       defaultChecked={false}
       disabled={false}
       id="12"
@@ -15,11 +15,11 @@ Array [
       type="checkbox"
     />
     <label
-      className="sc-AykKG iOBVcY"
+      className="sc-AxhUy faXawR"
       htmlFor="12"
     >
       <svg
-        className="sc-AykKC fxMzgc sc-AykKE jjgDBj"
+        className="sc-AxjAm bGsByD sc-AxiKw uciiB"
         viewBox="0 0 24 24"
       >
         <path
@@ -30,10 +30,10 @@ Array [
     </label>
   </div>,
   <div
-    className="sc-AykKD erepSp"
+    className="sc-AxirZ feQoIa"
   >
     <input
-      className="sc-AykKF awyBD"
+      className="sc-AxhCb fFfhJi"
       defaultChecked={false}
       disabled={false}
       id="13"
@@ -42,11 +42,11 @@ Array [
       type="checkbox"
     />
     <label
-      className="sc-AykKG iOBVcY"
+      className="sc-AxhUy faXawR"
       htmlFor="13"
     >
       <svg
-        className="sc-AykKC fxMzgc sc-AykKE jjgDBj"
+        className="sc-AxjAm bGsByD sc-AxiKw uciiB"
         viewBox="0 0 24 24"
       >
         <path
@@ -62,10 +62,10 @@ Array [
 exports[`Checkbox Snapshots onChange 1`] = `
 Array [
   <div
-    className="sc-AykKD erepSp"
+    className="sc-AxirZ feQoIa"
   >
     <input
-      className="sc-AykKF awyBD"
+      className="sc-AxhCb fFfhJi"
       defaultChecked={false}
       disabled={false}
       id="12"
@@ -74,11 +74,11 @@ Array [
       type="checkbox"
     />
     <label
-      className="sc-AykKG iOBVcY"
+      className="sc-AxhUy faXawR"
       htmlFor="12"
     >
       <svg
-        className="sc-AykKC fxMzgc sc-AykKE jjgDBj"
+        className="sc-AxjAm bGsByD sc-AxiKw uciiB"
         viewBox="0 0 24 24"
       >
         <path
@@ -89,10 +89,10 @@ Array [
     </label>
   </div>,
   <div
-    className="sc-AykKD erepSp"
+    className="sc-AxirZ feQoIa"
   >
     <input
-      className="sc-AykKF awyBD"
+      className="sc-AxhCb fFfhJi"
       defaultChecked={false}
       disabled={false}
       id="13"
@@ -101,11 +101,11 @@ Array [
       type="checkbox"
     />
     <label
-      className="sc-AykKG iOBVcY"
+      className="sc-AxhUy faXawR"
       htmlFor="13"
     >
       <svg
-        className="sc-AykKC fxMzgc sc-AykKE jjgDBj"
+        className="sc-AxjAm bGsByD sc-AxiKw uciiB"
         viewBox="0 0 24 24"
       >
         <path
