@@ -5,7 +5,6 @@ import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import CreditCardInput from "./CreditCardInput"
 import "@testing-library/jest-dom"
-import AccountInput from "../AccountInput/AccountInput"
 
 const setup = () => {
   const utils = render(
