@@ -3,6 +3,8 @@ import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import FileInput from "./FileInput"
+import { render, screen } from "@testing-library/react"
+import "@testing-library/jest-dom"
 
 const Child = () => <p>Body</p>
 
@@ -42,5 +44,18 @@ describe("FileInput", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("Should render", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <FileInput id="test" data-testid="testID">
+          <Child />
+        </FileInput>
+      </ThemeProvider>
+    )
+    expect(screen.getByTestId("testID")).toBeInTheDocument()
   })
 })
