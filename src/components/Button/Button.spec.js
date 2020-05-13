@@ -1,7 +1,9 @@
 import React from "react"
 import renderer from "react-test-renderer"
+import { fireEvent, render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../theming/themes/baseTheme"
+import "@testing-library/jest-dom"
 import Button from "./Button"
 
 const text = "Test"
@@ -37,6 +39,18 @@ describe("Button", () => {
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
+    })
+  })
+  describe("Rendering", () => {
+    it("Should click", () => {
+      console.log = jest.fn()
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Button onClick={() => console.log("click")}>{text}</Button>
+        </ThemeProvider>
+      )
+      fireEvent.click(screen.getByText("Test"))
+      expect(console.log.mock.calls[0][0]).toBe("click")
     })
   })
 })
