@@ -1,11 +1,13 @@
 import React from "react"
 import renderer from "react-test-renderer"
+import { render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../theming/themes/baseTheme"
 import testTheme from "../../theming/themes/testTheme"
 import { theme as instance } from "../../theming/index"
 import violetTendencies from "../../theming/themes/storybook/violet-tendencies/violetTendenciesTheme"
 import whiteCollar from "../../theming/themes/storybook/white-collar/whiteCollarTheme"
+import "@testing-library/jest-dom"
 import Alert from "./Alert"
 
 const Child = () => <p>Body</p>
@@ -145,6 +147,20 @@ describe("Alert", () => {
       expect(instance.ALERT).toStrictEqual({
         _default: "background-color: blue;"
       })
+    })
+  })
+  describe("Rendering", () => {
+    it("Should show child", () => {
+      const Child = () => <p>My message</p>
+
+      render(
+        <ThemeProvider theme={violetTendencies}>
+          <Alert>
+            <Child />
+          </Alert>
+        </ThemeProvider>
+      )
+      expect(screen.getByText("My message")).toBeInTheDocument()
     })
   })
 })
