@@ -27,7 +27,7 @@ const useBrRegSearch = searchTerm => {
       } catch (e) {
         setErrors(e.message)
       }
-      return companies._embedded.enheter
+      return companies?._embedded?.enheter
     }
 
     getCompaniesByName(searchTerm).then(companies => {
