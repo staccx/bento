@@ -78,6 +78,27 @@ describe("CodeRenderer", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+    it("Default break", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <CodeRenderer
+              language="none"
+              code={`class Example {
+        ctor
+        }
+        class Program
+        {
+            static void Main()
+            {
+            }
+        }`}
+            />
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
     it("Markup with codeWrapper", () => {
       const tree = renderer
         .create(

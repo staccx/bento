@@ -23,6 +23,8 @@ exports[`CodeRenderer Snapshots CSharp 1`] = `
 </pre>
 `;
 
+exports[`CodeRenderer Snapshots Default break 1`] = `null`;
+
 exports[`CodeRenderer Snapshots Java 1`] = `
 <pre
   className="sc-AykKC bRxQFK language-java"

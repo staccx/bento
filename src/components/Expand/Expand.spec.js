@@ -127,10 +127,10 @@ describe("Expand", () => {
       fireEvent.click(screen.getByText("header"))
       expect(screen.getByText("Body")).toBeInTheDocument()
     })
-    it.skip("should not show child", () => {
+    it("should not show child", () => {
       render(
         <ThemeProvider theme={baseTheme}>
-          <Expand>
+          <Expand onClick={event => console.log(event)}>
             <span>
               <SpanContent />
             </span>
@@ -138,7 +138,7 @@ describe("Expand", () => {
           </Expand>
         </ThemeProvider>
       )
-      expect(screen.getByText("Body")).toBeNull()
+      expect(screen.queryBy * "Body").toBeNaN()
     })
   })
 })

@@ -38,7 +38,7 @@ class CodeRenderer extends Component {
       }
 
       default:
-        break
+        return null
     }
 
     const html = {
