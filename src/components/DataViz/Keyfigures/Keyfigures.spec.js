@@ -2,7 +2,6 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
-import "@testing-library/jest-dom"
 import baseTheme from "../../../theming/themes/baseTheme"
 import KeyFigures from "./Keyfigures"
 

@@ -3,7 +3,6 @@ import renderer from "react-test-renderer"
 import { fireEvent, render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../theming/themes/baseTheme"
-import "@testing-library/jest-dom"
 import Button from "./Button"
 
 const text = "Test"

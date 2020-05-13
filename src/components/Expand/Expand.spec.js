@@ -2,7 +2,6 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import { fireEvent, render, screen } from "@testing-library/react"
-import "@testing-library/jest-dom"
 import baseTheme from "../../theming/themes/baseTheme"
 import Expand from "./Expand"
 

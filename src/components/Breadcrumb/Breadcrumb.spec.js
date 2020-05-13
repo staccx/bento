@@ -1,7 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
 import { render, screen } from "@testing-library/react"
-import "@testing-library/jest-dom"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../theming/themes/baseTheme"
 import Breadcrumb from "./Breadcrumb"
