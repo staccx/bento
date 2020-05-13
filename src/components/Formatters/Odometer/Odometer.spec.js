@@ -1,7 +1,9 @@
 import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
+import { render, screen } from "@testing-library/react"
 import baseTheme from "../../../theming/themes/baseTheme"
+import "@testing-library/jest-dom"
 import Odometer from "./Odometer"
 
 describe("Odometer", () => {
@@ -66,5 +68,13 @@ describe("Odometer", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+  })
+  describe("Rendering", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <Odometer number={10000} />
+      </ThemeProvider>
+    )
+    expect(screen.getByText("1")).toBeInTheDocument()
   })
 })
