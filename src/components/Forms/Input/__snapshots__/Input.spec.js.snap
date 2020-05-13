@@ -2,10 +2,10 @@
 
 exports[`Alert Snapshots Disabled 1`] = `
 <div
-  className="sc-AykKI iDYrmt"
+  className="sc-AxheI jmeqRy"
 >
   <label
-    className="sc-AykKC bonmue sc-AykKH hciGUB"
+    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
   >
     Input
     
@@ -13,7 +13,7 @@ exports[`Alert Snapshots Disabled 1`] = `
   
   <input
     autoFocus={null}
-    className="sc-AykKJ gjiytr"
+    className="sc-Axmtr bDDSAq"
     disabled={true}
     hidden={false}
     name={null}
@@ -29,18 +29,18 @@ exports[`Alert Snapshots Disabled 1`] = `
 
 exports[`Alert Snapshots HelpText 1`] = `
 <div
-  className="sc-AykKI iDYrmt"
+  className="sc-AxheI jmeqRy"
 >
   <label
-    className="sc-AykKC bonmue sc-AykKH hciGUB"
+    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
   >
     Input
     <span
-      className="sc-AykKF kiTHMX"
+      className="sc-AxhCb bPJBWs"
     >
        
       <button
-        className="sc-AykKD iRXgyw"
+        className="sc-AxirZ bIEvhd"
         onClick={[Function]}
         type="button"
       >
@@ -64,13 +64,13 @@ exports[`Alert Snapshots HelpText 1`] = `
     </span>
   </label>
   <div
-    className="sc-AykKG jcBelw"
+    className="sc-AxhUy iybIOV"
   >
     This is an input
   </div>
   <input
     autoFocus={null}
-    className="sc-AykKJ gjiytr"
+    className="sc-Axmtr bDDSAq"
     disabled={false}
     hidden={false}
     name={null}
@@ -86,13 +86,13 @@ exports[`Alert Snapshots HelpText 1`] = `
 
 exports[`Alert Snapshots No props 1`] = `
 <div
-  className="sc-AykKI iDYrmt"
+  className="sc-AxheI jmeqRy"
 >
   
   
   <input
     autoFocus={null}
-    className="sc-AykKJ gjiytr"
+    className="sc-Axmtr bDDSAq"
     disabled={false}
     hidden={false}
     name={null}
@@ -108,10 +108,10 @@ exports[`Alert Snapshots No props 1`] = `
 
 exports[`Alert Snapshots PlaceHolder 1`] = `
 <div
-  className="sc-AykKI iDYrmt"
+  className="sc-AxheI jmeqRy"
 >
   <label
-    className="sc-AykKC bonmue sc-AykKH hciGUB"
+    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
   >
     Secret question
     
@@ -119,7 +119,7 @@ exports[`Alert Snapshots PlaceHolder 1`] = `
   
   <input
     autoFocus={null}
-    className="sc-AykKJ gjiytr"
+    className="sc-Axmtr bDDSAq"
     disabled={false}
     hidden={false}
     name={null}
@@ -135,10 +135,10 @@ exports[`Alert Snapshots PlaceHolder 1`] = `
 
 exports[`Alert Snapshots label 1`] = `
 <div
-  className="sc-AykKI iDYrmt"
+  className="sc-AxheI jmeqRy"
 >
   <label
-    className="sc-AykKC bonmue sc-AykKH hciGUB"
+    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
   >
     Input
     
@@ -146,7 +146,7 @@ exports[`Alert Snapshots label 1`] = `
   
   <input
     autoFocus={null}
-    className="sc-AykKJ gjiytr"
+    className="sc-Axmtr bDDSAq"
     disabled={false}
     hidden={false}
     name={null}

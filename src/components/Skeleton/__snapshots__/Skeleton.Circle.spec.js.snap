@@ -2,26 +2,26 @@
 
 exports[`SkeletonCircle Snapshots No props 1`] = `
 <div
-  className="sc-AykKC hKxeYY sc-AykKD jLpAhR"
+  className="sc-AxjAm ibqlzg sc-AxirZ egQmmu"
 />
 `;
 
 exports[`SkeletonCircle Snapshots with className 1`] = `
 <div
-  className="sc-AykKC hKxeYY sc-AykKD jLpAhR className"
+  className="sc-AxjAm ibqlzg sc-AxirZ egQmmu className"
 />
 `;
 
 exports[`SkeletonCircle Snapshots with height 1`] = `
 <div
-  className="sc-AykKC hKxeYY sc-AykKD OVSIs className"
+  className="sc-AxjAm ibqlzg sc-AxirZ eEPvhF className"
   height={100}
 />
 `;
 
 exports[`SkeletonCircle Snapshots with width 1`] = `
 <div
-  className="sc-AykKC hKxeYY sc-AykKD kcdppH className"
+  className="sc-AxjAm ibqlzg sc-AxirZ ljdSpy className"
   width={100}
 />
 `;

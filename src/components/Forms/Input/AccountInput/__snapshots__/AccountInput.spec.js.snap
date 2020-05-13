@@ -2,10 +2,10 @@
 
 exports[`AccountInput Snapshots Label 1`] = `
 <div
-  className="sc-AykKI iDYrmt"
+  className="sc-AxheI jmeqRy"
 >
   <label
-    className="sc-AykKC bonmue sc-AykKH hciGUB"
+    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
     htmlFor="wegwf"
   >
     Balance
@@ -14,7 +14,7 @@ exports[`AccountInput Snapshots Label 1`] = `
   
   <input
     autoFocus={null}
-    className="sc-AykKJ gjiytr"
+    className="sc-Axmtr bDDSAq"
     disabled={false}
     hidden={false}
     id="wegwf"
@@ -31,13 +31,13 @@ exports[`AccountInput Snapshots Label 1`] = `
 
 exports[`AccountInput Snapshots No props 1`] = `
 <div
-  className="sc-AykKI iDYrmt"
+  className="sc-AxheI jmeqRy"
 >
   
   
   <input
     autoFocus={null}
-    className="sc-AykKJ gjiytr"
+    className="sc-Axmtr bDDSAq"
     disabled={false}
     hidden={false}
     id="wegwf"
@@ -54,13 +54,13 @@ exports[`AccountInput Snapshots No props 1`] = `
 
 exports[`AccountInput Snapshots Type 1`] = `
 <div
-  className="sc-AykKI iDYrmt"
+  className="sc-AxheI jmeqRy"
 >
   
   
   <input
     autoFocus={null}
-    className="sc-AykKJ gjiytr"
+    className="sc-Axmtr bDDSAq"
     disabled={false}
     hidden={false}
     id="wegwf"

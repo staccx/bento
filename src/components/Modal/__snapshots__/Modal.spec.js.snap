@@ -8,20 +8,20 @@ exports[`Modal Snapshots isOpen 1`] = `
 Array [
   <dialog
     aria-labelledby="modal"
-    className="sc-AykKD cEnwHV className"
+    className="sc-AxirZ dtEqNM className"
     open="open"
     role="dialog"
     tabIndex="0"
   >
     <div
-      className="sc-AykKE jBAoTm"
+      className="sc-AxiKw iWbpVk"
       id="modal"
       role="document"
       tabIndex="0"
     >
       <button
         aria-label="Close (Press escape to close)"
-        className="sc-AykKF iytTGw"
+        className="sc-AxhCb jJUFbv"
         id="modal-close"
         onClick={[Function]}
         type="button"
@@ -30,7 +30,7 @@ Array [
           Close
         </span>
         <svg
-          className="sc-AykKC fxMzgc sc-AykKH fMQdlv"
+          className="sc-AxjAm bGsByD sc-AxgMl fFPQpl"
           viewBox="0 0 24 24"
           width={12}
         >
@@ -48,7 +48,7 @@ Array [
     </div>
   </dialog>,
   <div
-    className="sc-AykKG fCpIjo"
+    className="sc-AxhUy duPYpd"
     onClick={[Function]}
   />,
 ]

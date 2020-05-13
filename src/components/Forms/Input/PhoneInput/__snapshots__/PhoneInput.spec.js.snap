@@ -2,27 +2,27 @@
 
 exports[`PhoneInput Snapshots ID, children and label 1`] = `
 <div
-  className="sc-fzXfLQ bbGLVI"
+  className="sc-fzpans jRCOFi"
   id="test"
 >
   <label
-    className="sc-AykKC bonmue"
+    className="sc-AxjAm hjwNwx"
     id="test"
   >
     test
   </label>
   <div
-    className="sc-fzXfLR OATHa"
+    className="sc-fzplWN hkvTOA"
     id="test"
   >
     <div
-      className="sc-AykKI iDYrmt sc-fzXfLT fiXeCu"
+      className="sc-AxheI jmeqRy sc-fznKkj fyCGGL"
     >
       
       
       <input
         autoFocus={null}
-        className="sc-AykKJ gjiytr"
+        className="sc-Axmtr bDDSAq"
         disabled={false}
         hidden={false}
         id="test"

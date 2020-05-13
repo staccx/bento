@@ -2,10 +2,10 @@
 
 exports[`Flag Snapshots All 1`] = `
 <div
-  className="sc-AykKE eTMsJU className"
+  className="sc-AxiKw kSCNI className"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   >
     <img
       height="100"
@@ -14,7 +14,7 @@ exports[`Flag Snapshots All 1`] = `
     />
   </div>
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
@@ -25,13 +25,13 @@ exports[`Flag Snapshots All 1`] = `
 
 exports[`Flag Snapshots No props 1`] = `
 <div
-  className="sc-AykKE iBDoun"
+  className="sc-AxiKw jqePkp"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   />
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
@@ -42,13 +42,13 @@ exports[`Flag Snapshots No props 1`] = `
 
 exports[`Flag Snapshots bottom 1`] = `
 <div
-  className="sc-AykKE eudLoR"
+  className="sc-AxiKw cqpOYn"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   />
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
@@ -60,13 +60,13 @@ exports[`Flag Snapshots bottom 1`] = `
 exports[`Flag Snapshots className 1`] = `
 Array [
   <div
-    className="sc-AykKE iBDoun className"
+    className="sc-AxiKw jqePkp className"
   >
     <div
-      className="sc-AykKC gBHBhD"
+      className="sc-AxjAm hBateQ"
     />
     <div
-      className="sc-AykKD gSfILM"
+      className="sc-AxirZ gunZf"
     />
   </div>,
   <p>
@@ -77,13 +77,13 @@ Array [
 
 exports[`Flag Snapshots flush 1`] = `
 <div
-  className="sc-AykKE kNYaPW"
+  className="sc-AxiKw pIBQk"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   />
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
@@ -95,10 +95,10 @@ exports[`Flag Snapshots flush 1`] = `
 exports[`Flag Snapshots img 1`] = `
 Array [
   <div
-    className="sc-AykKE iBDoun"
+    className="sc-AxiKw jqePkp"
   >
     <div
-      className="sc-AykKC gBHBhD"
+      className="sc-AxjAm hBateQ"
     >
       <img
         height="100"
@@ -107,7 +107,7 @@ Array [
       />
     </div>
     <div
-      className="sc-AykKD gSfILM"
+      className="sc-AxirZ gunZf"
     />
   </div>,
   <p>
@@ -118,13 +118,13 @@ Array [
 
 exports[`Flag Snapshots large 1`] = `
 <div
-  className="sc-AykKE fcYeqw"
+  className="sc-AxiKw bHnqFO"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   />
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
@@ -135,13 +135,13 @@ exports[`Flag Snapshots large 1`] = `
 
 exports[`Flag Snapshots large reverse 1`] = `
 <div
-  className="sc-AykKE gmPGLQ"
+  className="sc-AxiKw iMqEqQ"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   />
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
@@ -152,13 +152,13 @@ exports[`Flag Snapshots large reverse 1`] = `
 
 exports[`Flag Snapshots responsive 1`] = `
 <div
-  className="sc-AykKE iWZIOr"
+  className="sc-AxiKw eDcKhj"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   />
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
@@ -169,13 +169,13 @@ exports[`Flag Snapshots responsive 1`] = `
 
 exports[`Flag Snapshots reverse 1`] = `
 <div
-  className="sc-AykKE gnQGZG"
+  className="sc-AxiKw hIQzje"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   />
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
@@ -186,13 +186,13 @@ exports[`Flag Snapshots reverse 1`] = `
 
 exports[`Flag Snapshots small 1`] = `
 <div
-  className="sc-AykKE helqsf"
+  className="sc-AxiKw fkuugJ"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   />
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
@@ -203,13 +203,13 @@ exports[`Flag Snapshots small 1`] = `
 
 exports[`Flag Snapshots small reverse 1`] = `
 <div
-  className="sc-AykKE gcVUku"
+  className="sc-AxiKw dmOrvw"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   />
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
@@ -220,13 +220,13 @@ exports[`Flag Snapshots small reverse 1`] = `
 
 exports[`Flag Snapshots tiny 1`] = `
 <div
-  className="sc-AykKE HELAO"
+  className="sc-AxiKw gGpGSE"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   />
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
@@ -237,13 +237,13 @@ exports[`Flag Snapshots tiny 1`] = `
 
 exports[`Flag Snapshots tiny reverse 1`] = `
 <div
-  className="sc-AykKE ftQefE"
+  className="sc-AxiKw irORNo"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   />
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
@@ -254,13 +254,13 @@ exports[`Flag Snapshots tiny reverse 1`] = `
 
 exports[`Flag Snapshots top 1`] = `
 <div
-  className="sc-AykKE fjOPFo"
+  className="sc-AxiKw gmGek"
 >
   <div
-    className="sc-AykKC gBHBhD"
+    className="sc-AxjAm hBateQ"
   />
   <div
-    className="sc-AykKD gSfILM"
+    className="sc-AxirZ gunZf"
   >
     <p>
       Body
