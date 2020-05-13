@@ -3,7 +3,6 @@ import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
 import { fireEvent, render, screen } from "@testing-library/react"
-import "@testing-library/jest-dom"
 import CheckGroup from "./CheckGroup"
 import CheckBox from "../CheckBox/CheckBox"
 

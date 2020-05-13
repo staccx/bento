@@ -4,7 +4,6 @@ import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import NationalIdInput from "./NationalIdInput"
 import { render, screen } from "@testing-library/react"
-import "@testing-library/jest-dom"
 
 describe("Alert", () => {
   describe("Snapshots", () => {

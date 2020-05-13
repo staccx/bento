@@ -4,7 +4,6 @@ import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import PostalCodeInput from "./PostalCodeInput"
 import { render, screen } from "@testing-library/react"
-import "@testing-library/jest-dom"
 
 describe("PostalCodeInput", () => {
   describe("Snapshots", () => {

@@ -4,7 +4,6 @@ import { fireEvent, render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import CurrencyInput from "./CurrencyInput"
-import "@testing-library/jest-dom"
 
 const setup = () => {
   const utils = render(

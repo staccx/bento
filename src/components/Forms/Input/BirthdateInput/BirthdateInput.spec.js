@@ -4,7 +4,6 @@ import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import BirthdateInput from "./BirthdateInput"
-import "@testing-library/jest-dom"
 
 const setup = () => {
   const utils = render(

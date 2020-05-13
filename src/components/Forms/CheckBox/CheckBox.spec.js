@@ -3,7 +3,6 @@ import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
 import { render, fireEvent, screen } from "@testing-library/react"
-import "@testing-library/jest-dom"
 import CheckBox from "./CheckBox"
 
 const Child = () => <p>Body</p>
