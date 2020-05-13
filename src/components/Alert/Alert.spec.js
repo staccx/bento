@@ -151,8 +151,6 @@ describe("Alert", () => {
   })
   describe("Rendering", () => {
     it("Should show child", () => {
-      const Child = () => <p>My message</p>
-
       render(
         <ThemeProvider theme={violetTendencies}>
           <Alert>
@@ -160,7 +158,7 @@ describe("Alert", () => {
           </Alert>
         </ThemeProvider>
       )
-      expect(screen.getByText("My message")).toBeInTheDocument()
+      expect(screen.getByText("Body")).toBeInTheDocument()
     })
   })
 })
