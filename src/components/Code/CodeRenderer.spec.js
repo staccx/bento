@@ -1,9 +1,19 @@
 import React from "react"
 import renderer from "react-test-renderer"
+import { render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
+import "@testing-library/jest-dom"
 import baseTheme from "../../theming/themes/baseTheme"
 import CodeRenderer from "./CodeRenderer"
 import CodeWrapper from "./CodeWrapper"
+
+const code = `public class MyClass {
+                      int x = 5;
+                      public static void main(String[] args) {
+                      MyClass myObj = new MyClass();
+                      System.out.println(myObj.x);
+                        }
+                      }`
 
 describe("CodeRenderer", () => {
   describe("Snapshots", () => {
@@ -96,6 +106,16 @@ describe("CodeRenderer", () => {
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
+    })
+  })
+  describe("Rendering", () => {
+    it("Should show code", () => {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <CodeRenderer language="java" code={code} />
+        </ThemeProvider>
+      )
+      expect(screen.getByText("void")).toBeInTheDocument()
     })
   })
 })
