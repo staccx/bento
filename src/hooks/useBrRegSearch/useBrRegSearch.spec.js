@@ -38,5 +38,16 @@ describe("useBrregSearch", () => {
       expect(screen.getByText("STACC AS")).toBeInTheDocument()
       expect(screen.getByText("STACC X AS")).toBeInTheDocument()
     })
+    it("should render empty array", async () => {
+      const { result } = renderHook(() => useBrRegSearch("S"))
+      render(
+        <div>
+          {result.current.results.map(result => {
+            return <p key={result.navn}>{result.navn}</p>
+          })}
+        </div>
+      )
+      expect(screen.getAllBy * "STACC").toBeNaN()
+    })
   })
 })
