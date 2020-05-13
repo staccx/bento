@@ -1,7 +1,6 @@
 import React from "react"
 import { renderHook } from "@testing-library/react-hooks"
 import { render, screen } from "@testing-library/react"
-import "@testing-library/jest-dom"
 import useBrRegSearch from "./useBrRegSearch"
 
 describe.skip("useBrregSearch", () => {
