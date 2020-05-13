@@ -49,5 +49,19 @@ describe("useBrregSearch", () => {
       )
       expect(screen.getAllBy * "STACC").toBeNaN()
     })
+    it("should render empty array not exisiting company", async () => {
+      const { result, waitForNextUpdate } = renderHook(() =>
+        useBrRegSearch("ThisCompanyHopeFullyDontExist")
+      )
+      await waitForNextUpdate()
+      render(
+        <div>
+          {result.current.results.map(result => {
+            return <p key={result.navn}>{result.navn}</p>
+          })}
+        </div>
+      )
+      expect(screen.getAllBy * "ThisCompanyHopeFullyDontExist").toBeNaN()
+    })
   })
 })
