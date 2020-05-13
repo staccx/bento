@@ -1,9 +1,12 @@
 import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
+import { fireEvent, render, screen } from "@testing-library/react"
+import "@testing-library/jest-dom"
 import baseTheme from "../../theming/themes/baseTheme"
 import Expand from "./Expand"
 
+const SpanContent = () => <p>header</p>
 const Child = () => <p>Body</p>
 
 describe("Expand", () => {
@@ -107,6 +110,35 @@ describe("Expand", () => {
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
+    })
+  })
+  describe("Rendering", () => {
+    it("should show child onClick", () => {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Expand>
+            <span>
+              <SpanContent />
+            </span>
+            <Child />
+          </Expand>
+        </ThemeProvider>
+      )
+      fireEvent.click(screen.getByText("header"))
+      expect(screen.getByText("Body")).toBeInTheDocument()
+    })
+    it.skip("should not show child", () => {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Expand>
+            <span>
+              <SpanContent />
+            </span>
+            <Child />
+          </Expand>
+        </ThemeProvider>
+      )
+      expect(screen.getByText("Body")).toBeNull()
     })
   })
 })
