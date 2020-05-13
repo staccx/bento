@@ -1,7 +1,9 @@
 import React from "react"
 import renderer from "react-test-renderer"
+import { render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
+import "@testing-library/jest-dom"
 import ProgressBar from "./ProgressBar"
 
 describe("ProgressBar", () => {
@@ -78,5 +80,15 @@ describe("ProgressBar", () => {
       )
       .toJSON()
     expect(tree).toMatchSnapshot()
+  })
+  describe("Rendering", () => {
+    it("should show progressBar", () => {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <ProgressBar progress={0.1} />
+        </ThemeProvider>
+      )
+      expect(screen.getByText("10%")).toBeInTheDocument()
+    })
   })
 })
