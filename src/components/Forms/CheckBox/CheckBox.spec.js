@@ -62,8 +62,7 @@ describe("CheckBox", () => {
 
 describe("Rendering", () => {
   it("Should click", () => {
-    const handleChange = jest.fn()
-    console.log = handleChange
+    console.log = jest.fn()
     render(
       <ThemeProvider theme={baseTheme}>
         <CheckBox
@@ -76,7 +75,6 @@ describe("Rendering", () => {
       </ThemeProvider>
     )
     fireEvent.click(screen.getByTestId("test"))
-    expect(handleChange).toHaveBeenCalledTimes(1)
     expect(console.log.mock.calls[0][0]).toBe("click")
   })
 })
