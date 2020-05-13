@@ -1,9 +1,10 @@
 import React from "react"
-import { fireEvent, render } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import AccountInput from "./AccountInput"
+import "@testing-library/jest-dom"
 
 const setup = () => {
   const utils = render(
@@ -56,5 +57,16 @@ describe("AccountInput", () => {
       fireEvent.change(input, { target: { value: 11018420038 } })
       expect(input.value).toBe("11018420038")
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("Should render", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <AccountInput id="test" data-testid="testID" label="Balance" />
+      </ThemeProvider>
+    )
+    expect(screen.getByTestId("testID")).toBeInTheDocument()
   })
 })
