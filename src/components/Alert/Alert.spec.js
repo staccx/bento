@@ -7,7 +7,6 @@ import testTheme from "../../theming/themes/testTheme"
 import { theme as instance } from "../../theming/index"
 import violetTendencies from "../../theming/themes/storybook/violet-tendencies/violetTendenciesTheme"
 import whiteCollar from "../../theming/themes/storybook/white-collar/whiteCollarTheme"
-import "@testing-library/jest-dom"
 import Alert from "./Alert"
 
 const Child = () => <p>Body</p>

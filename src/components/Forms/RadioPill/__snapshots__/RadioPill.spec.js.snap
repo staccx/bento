@@ -2,13 +2,13 @@
 
 exports[`RadioPill Snapshots RadioPillItem no children 1`] = `
 <div
-  className="sc-AykKC cfaLwb"
+  className="sc-AxjAm gPwfEs"
 >
   <div
-    className="sc-AykKF ifaKFh"
+    className="sc-AxhCb kuGEFz"
   >
     <input
-      className="sc-AykKE cBGZYe"
+      className="sc-AxiKw lghSkM"
       defaultChecked={false}
       disabled={false}
       onChange={null}
@@ -16,14 +16,14 @@ exports[`RadioPill Snapshots RadioPillItem no children 1`] = `
       value=""
     />
     <label
-      className="sc-AykKD bLnaxp"
+      className="sc-AxirZ jnENIO"
     />
   </div>
   <div
-    className="sc-AykKF ifaKFh"
+    className="sc-AxhCb kuGEFz"
   >
     <input
-      className="sc-AykKE cBGZYe"
+      className="sc-AxiKw lghSkM"
       defaultChecked={false}
       disabled={false}
       onChange={null}
@@ -31,14 +31,14 @@ exports[`RadioPill Snapshots RadioPillItem no children 1`] = `
       value=""
     />
     <label
-      className="sc-AykKD bLnaxp"
+      className="sc-AxirZ jnENIO"
     />
   </div>
   <div
-    className="sc-AykKF ifaKFh"
+    className="sc-AxhCb kuGEFz"
   >
     <input
-      className="sc-AykKE cBGZYe"
+      className="sc-AxiKw lghSkM"
       defaultChecked={false}
       disabled={false}
       onChange={null}
@@ -46,7 +46,7 @@ exports[`RadioPill Snapshots RadioPillItem no children 1`] = `
       value=""
     />
     <label
-      className="sc-AykKD bLnaxp"
+      className="sc-AxirZ jnENIO"
     />
   </div>
 </div>
@@ -54,13 +54,13 @@ exports[`RadioPill Snapshots RadioPillItem no children 1`] = `
 
 exports[`RadioPill Snapshots RadioPillItem no props 1`] = `
 <div
-  className="sc-AykKC cfaLwb"
+  className="sc-AxjAm gPwfEs"
 >
   <div
-    className="sc-AykKF ifaKFh"
+    className="sc-AxhCb kuGEFz"
   >
     <input
-      className="sc-AykKE cBGZYe"
+      className="sc-AxiKw lghSkM"
       defaultChecked={false}
       disabled={false}
       onChange={null}
@@ -68,16 +68,16 @@ exports[`RadioPill Snapshots RadioPillItem no props 1`] = `
       value=""
     />
     <label
-      className="sc-AykKD bLnaxp"
+      className="sc-AxirZ jnENIO"
     >
       1
     </label>
   </div>
   <div
-    className="sc-AykKF ifaKFh"
+    className="sc-AxhCb kuGEFz"
   >
     <input
-      className="sc-AykKE cBGZYe"
+      className="sc-AxiKw lghSkM"
       defaultChecked={false}
       disabled={false}
       onChange={null}
@@ -85,16 +85,16 @@ exports[`RadioPill Snapshots RadioPillItem no props 1`] = `
       value=""
     />
     <label
-      className="sc-AykKD bLnaxp"
+      className="sc-AxirZ jnENIO"
     >
       2
     </label>
   </div>
   <div
-    className="sc-AykKF ifaKFh"
+    className="sc-AxhCb kuGEFz"
   >
     <input
-      className="sc-AykKE cBGZYe"
+      className="sc-AxiKw lghSkM"
       defaultChecked={false}
       disabled={false}
       onChange={null}
@@ -102,7 +102,7 @@ exports[`RadioPill Snapshots RadioPillItem no props 1`] = `
       value=""
     />
     <label
-      className="sc-AykKD bLnaxp"
+      className="sc-AxirZ jnENIO"
     >
       3 +
     </label>
@@ -112,13 +112,13 @@ exports[`RadioPill Snapshots RadioPillItem no props 1`] = `
 
 exports[`RadioPill Snapshots Standard 1`] = `
 <div
-  className="sc-AykKC cfaLwb"
+  className="sc-AxjAm gPwfEs"
 >
   <div
-    className="sc-AykKF ifaKFh"
+    className="sc-AxhCb kuGEFz"
   >
     <input
-      className="sc-AykKE cBGZYe"
+      className="sc-AxiKw lghSkM"
       defaultChecked={true}
       disabled={false}
       id="221e98j"
@@ -128,17 +128,17 @@ exports[`RadioPill Snapshots Standard 1`] = `
       value={1}
     />
     <label
-      className="sc-AykKD bLnaxp"
+      className="sc-AxirZ jnENIO"
       htmlFor="221e98j"
     >
       1
     </label>
   </div>
   <div
-    className="sc-AykKF ifaKFh"
+    className="sc-AxhCb kuGEFz"
   >
     <input
-      className="sc-AykKE cBGZYe"
+      className="sc-AxiKw lghSkM"
       defaultChecked={false}
       disabled={false}
       id="ads31"
@@ -148,17 +148,17 @@ exports[`RadioPill Snapshots Standard 1`] = `
       value={2}
     />
     <label
-      className="sc-AykKD bLnaxp"
+      className="sc-AxirZ jnENIO"
       htmlFor="ads31"
     >
       2
     </label>
   </div>
   <div
-    className="sc-AykKF ifaKFh"
+    className="sc-AxhCb kuGEFz"
   >
     <input
-      className="sc-AykKE cBGZYe"
+      className="sc-AxiKw lghSkM"
       defaultChecked={false}
       disabled={false}
       id="h14"
@@ -168,7 +168,7 @@ exports[`RadioPill Snapshots Standard 1`] = `
       value={3}
     />
     <label
-      className="sc-AykKD bLnaxp"
+      className="sc-AxirZ jnENIO"
       htmlFor="h14"
     >
       3 +
@@ -179,19 +179,19 @@ exports[`RadioPill Snapshots Standard 1`] = `
 
 exports[`RadioPill Snapshots no children 1`] = `
 <div
-  className="sc-AykKC cfaLwb"
+  className="sc-AxjAm gPwfEs"
 />
 `;
 
 exports[`RadioPill Snapshots no group 1`] = `
 <div
-  className="sc-AykKC cfaLwb"
+  className="sc-AxjAm gPwfEs"
 >
   <div
-    className="sc-AykKF ifaKFh"
+    className="sc-AxhCb kuGEFz"
   >
     <input
-      className="sc-AykKE cBGZYe"
+      className="sc-AxiKw lghSkM"
       defaultChecked={true}
       disabled={false}
       id="221e98j"
@@ -200,17 +200,17 @@ exports[`RadioPill Snapshots no group 1`] = `
       value={1}
     />
     <label
-      className="sc-AykKD bLnaxp"
+      className="sc-AxirZ jnENIO"
       htmlFor="221e98j"
     >
       1
     </label>
   </div>
   <div
-    className="sc-AykKF ifaKFh"
+    className="sc-AxhCb kuGEFz"
   >
     <input
-      className="sc-AykKE cBGZYe"
+      className="sc-AxiKw lghSkM"
       defaultChecked={false}
       disabled={false}
       id="ads31"
@@ -219,17 +219,17 @@ exports[`RadioPill Snapshots no group 1`] = `
       value={2}
     />
     <label
-      className="sc-AykKD bLnaxp"
+      className="sc-AxirZ jnENIO"
       htmlFor="ads31"
     >
       2
     </label>
   </div>
   <div
-    className="sc-AykKF ifaKFh"
+    className="sc-AxhCb kuGEFz"
   >
     <input
-      className="sc-AykKE cBGZYe"
+      className="sc-AxiKw lghSkM"
       defaultChecked={false}
       disabled={false}
       id="h14"
@@ -238,7 +238,7 @@ exports[`RadioPill Snapshots no group 1`] = `
       value={3}
     />
     <label
-      className="sc-AykKD bLnaxp"
+      className="sc-AxirZ jnENIO"
       htmlFor="h14"
     >
       3 +

@@ -2,21 +2,21 @@
 
 exports[`BirthdateInput Snapshots All props 1`] = `
 <div
-  className="sc-AykKK gngxPY"
+  className="sc-AxmLO jrQzKN"
 >
   <label
-    className="sc-AykKC bonmue"
+    className="sc-AxjAm hjwNwx"
   >
     BirthdateInput
   </label>
   <div
-    className="sc-fzXfLO fSfKbe"
+    className="sc-fzozJi kgIqAu"
   >
     <div
-      className="sc-AykKI iDYrmt"
+      className="sc-AxheI jmeqRy"
     >
       <label
-        className="sc-AykKC bonmue sc-AykKH hciGUB"
+        className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
         htmlFor="Day1"
       >
         Day
@@ -25,7 +25,7 @@ exports[`BirthdateInput Snapshots All props 1`] = `
       
       <input
         autoFocus={null}
-        className="sc-AykKJ gjiytr"
+        className="sc-Axmtr bDDSAq"
         disabled={false}
         hidden={false}
         id="Day1"
@@ -40,10 +40,10 @@ exports[`BirthdateInput Snapshots All props 1`] = `
       />
     </div>
     <div
-      className="sc-AykKI iDYrmt"
+      className="sc-AxheI jmeqRy"
     >
       <label
-        className="sc-AykKC bonmue sc-AykKH hciGUB"
+        className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
         htmlFor="Month1"
       >
         Month
@@ -52,7 +52,7 @@ exports[`BirthdateInput Snapshots All props 1`] = `
       
       <input
         autoFocus={null}
-        className="sc-AykKJ gjiytr"
+        className="sc-Axmtr bDDSAq"
         disabled={false}
         hidden={false}
         id="Month1"
@@ -67,10 +67,10 @@ exports[`BirthdateInput Snapshots All props 1`] = `
       />
     </div>
     <div
-      className="sc-AykKI iDYrmt"
+      className="sc-AxheI jmeqRy"
     >
       <label
-        className="sc-AykKC bonmue sc-AykKH hciGUB"
+        className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
         htmlFor="Year1"
       >
         Year
@@ -79,7 +79,7 @@ exports[`BirthdateInput Snapshots All props 1`] = `
       
       <input
         autoFocus={null}
-        className="sc-AykKJ gjiytr"
+        className="sc-Axmtr bDDSAq"
         disabled={false}
         hidden={false}
         id="Year1"

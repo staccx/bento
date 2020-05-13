@@ -5,13 +5,13 @@ exports[`Form Snapshots Email 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="sc-fzXfLQ iBomcT"
+    className="sc-fzpans hIlNMX"
   >
     
     
     <input
       autoFocus={null}
-      className="sc-fzXfLR fHisbB"
+      className="sc-fzplWN kUtfRN"
       disabled={false}
       hidden={false}
       id="epost"
@@ -29,7 +29,7 @@ exports[`Form Snapshots Email 1`] = `
      
   </span>
   <button
-    className="sc-AykKC bJpIai"
+    className="sc-AxjAm ecAfij"
     onClick={[Function]}
     type="submit"
   >
@@ -43,13 +43,13 @@ exports[`Form Snapshots Form 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="sc-fzXfLQ iBomcT"
+    className="sc-fzpans hIlNMX"
   >
     
     
     <input
       autoFocus={null}
-      className="sc-fzXfLR fHisbB"
+      className="sc-fzplWN kUtfRN"
       disabled={false}
       hidden={false}
       id="epost"
@@ -67,7 +67,7 @@ exports[`Form Snapshots Form 1`] = `
      
   </span>
   <button
-    className="sc-AykKC bJpIai"
+    className="sc-AxjAm ecAfij"
     onClick={[Function]}
     type="submit"
   >
@@ -81,13 +81,13 @@ exports[`Form Snapshots Form 2`] = `
   onSubmit={[Function]}
 >
   <div
-    className="sc-fzXfLQ iBomcT"
+    className="sc-fzpans hIlNMX"
   >
     
     
     <input
       autoFocus={null}
-      className="sc-fzXfLR fHisbB"
+      className="sc-fzplWN kUtfRN"
       disabled={false}
       hidden={false}
       id="epost"
@@ -105,7 +105,7 @@ exports[`Form Snapshots Form 2`] = `
      
   </span>
   <button
-    className="sc-AykKC bJpIai"
+    className="sc-AxjAm ecAfij"
     onClick={[Function]}
     type="submit"
   >
@@ -119,13 +119,13 @@ exports[`Form Snapshots bool 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="sc-fzXfLQ iBomcT"
+    className="sc-fzpans hIlNMX"
   >
     
     
     <input
       autoFocus={null}
-      className="sc-fzXfLR fHisbB"
+      className="sc-fzplWN kUtfRN"
       disabled={false}
       hidden={false}
       id="epost"
@@ -143,7 +143,7 @@ exports[`Form Snapshots bool 1`] = `
      
   </span>
   <button
-    className="sc-AykKC bJpIai"
+    className="sc-AxjAm ecAfij"
     onClick={[Function]}
     type="submit"
   >
@@ -157,13 +157,13 @@ exports[`Form Snapshots number 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="sc-fzXfLQ iBomcT"
+    className="sc-fzpans hIlNMX"
   >
     
     
     <input
       autoFocus={null}
-      className="sc-fzXfLR fHisbB"
+      className="sc-fzplWN kUtfRN"
       disabled={false}
       hidden={false}
       id="epost"
@@ -181,7 +181,7 @@ exports[`Form Snapshots number 1`] = `
      
   </span>
   <button
-    className="sc-AykKC bJpIai"
+    className="sc-AxjAm ecAfij"
     onClick={[Function]}
     type="submit"
   >
@@ -195,13 +195,13 @@ exports[`Form Snapshots string 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="sc-fzXfLQ iBomcT"
+    className="sc-fzpans hIlNMX"
   >
     
     
     <input
       autoFocus={null}
-      className="sc-fzXfLR fHisbB"
+      className="sc-fzplWN kUtfRN"
       disabled={false}
       hidden={false}
       id="epost"
@@ -219,7 +219,7 @@ exports[`Form Snapshots string 1`] = `
      
   </span>
   <button
-    className="sc-AykKC bJpIai"
+    className="sc-AxjAm ecAfij"
     onClick={[Function]}
     type="submit"
   >
@@ -233,13 +233,13 @@ exports[`Form Snapshots url 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="sc-fzXfLQ iBomcT"
+    className="sc-fzpans hIlNMX"
   >
     
     
     <input
       autoFocus={null}
-      className="sc-fzXfLR fHisbB"
+      className="sc-fzplWN kUtfRN"
       disabled={false}
       hidden={false}
       id="epost"
@@ -257,7 +257,7 @@ exports[`Form Snapshots url 1`] = `
      
   </span>
   <button
-    className="sc-AykKC bJpIai"
+    className="sc-AxjAm ecAfij"
     onClick={[Function]}
     type="submit"
   >

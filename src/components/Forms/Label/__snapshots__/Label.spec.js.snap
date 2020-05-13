@@ -2,13 +2,13 @@
 
 exports[`Label Snapshots No Children 1`] = `
 <label
-  className="sc-AykKC bonmue"
+  className="sc-AxjAm hjwNwx"
 />
 `;
 
 exports[`Label Snapshots No props 1`] = `
 <label
-  className="sc-AykKC bonmue"
+  className="sc-AxjAm hjwNwx"
 >
   This is a label
 </label>
