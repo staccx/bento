@@ -3,11 +3,13 @@
 exports[`Toggle Snapshots All 1`] = `
 <label
   className="sc-AxjAm juJlSJ Toggle"
+  htmlFor="test"
 >
   <input
     className="sc-AxiKw jvsQrJ"
     defaultChecked={true}
     disabled={true}
+    id="test"
     name="Group"
     onChange={[Function]}
     type="checkbox"
@@ -25,11 +27,13 @@ exports[`Toggle Snapshots All 1`] = `
 exports[`Toggle Snapshots Children 1`] = `
 <label
   className="sc-AxjAm juJlSJ"
+  htmlFor="test"
 >
   <input
     className="sc-AxiKw jvsQrJ"
     defaultChecked={false}
     disabled={false}
+    id="test"
     onChange={null}
     type="checkbox"
   />
@@ -48,11 +52,13 @@ exports[`Toggle Snapshots Children 1`] = `
 exports[`Toggle Snapshots No props 1`] = `
 <label
   className="sc-AxjAm juJlSJ"
+  htmlFor="test"
 >
   <input
     className="sc-AxiKw jvsQrJ"
     defaultChecked={false}
     disabled={false}
+    id="test"
     onChange={null}
     type="checkbox"
   />
@@ -69,11 +75,13 @@ exports[`Toggle Snapshots No props 1`] = `
 exports[`Toggle Snapshots Toggle 1`] = `
 <label
   className="sc-AxjAm juJlSJ Toggle"
+  htmlFor="test"
 >
   <input
     className="sc-AxiKw jvsQrJ"
     defaultChecked={false}
     disabled={false}
+    id="test"
     onChange={null}
     type="checkbox"
   />
@@ -90,11 +98,13 @@ exports[`Toggle Snapshots Toggle 1`] = `
 exports[`Toggle Snapshots defaultChecked 1`] = `
 <label
   className="sc-AxjAm juJlSJ"
+  htmlFor="test"
 >
   <input
     className="sc-AxiKw jvsQrJ"
     defaultChecked={true}
     disabled={false}
+    id="test"
     onChange={null}
     type="checkbox"
   />
@@ -111,11 +121,13 @@ exports[`Toggle Snapshots defaultChecked 1`] = `
 exports[`Toggle Snapshots disabled 1`] = `
 <label
   className="sc-AxjAm juJlSJ"
+  htmlFor="test"
 >
   <input
     className="sc-AxiKw jvsQrJ"
     defaultChecked={false}
     disabled={true}
+    id="test"
     onChange={null}
     type="checkbox"
   />
@@ -132,11 +144,13 @@ exports[`Toggle Snapshots disabled 1`] = `
 exports[`Toggle Snapshots group 1`] = `
 <label
   className="sc-AxjAm juJlSJ"
+  htmlFor="test"
 >
   <input
     className="sc-AxiKw jvsQrJ"
     defaultChecked={false}
     disabled={false}
+    id="test"
     name="Group"
     onChange={null}
     type="checkbox"
@@ -177,11 +191,13 @@ exports[`Toggle Snapshots id 1`] = `
 exports[`Toggle Snapshots input 1`] = `
 <label
   className="sc-AxjAm juJlSJ"
+  htmlFor="test"
 >
   <input
     className="sc-AxiKw jvsQrJ"
     defaultChecked={false}
     disabled={false}
+    id="test"
     onChange={null}
     type="checkbox"
   />
@@ -198,11 +214,13 @@ exports[`Toggle Snapshots input 1`] = `
 exports[`Toggle Snapshots input 2`] = `
 <label
   className="sc-AxjAm juJlSJ"
+  htmlFor="test"
 >
   <input
     className="sc-AxiKw jvsQrJ"
     defaultChecked={false}
     disabled={false}
+    id="test"
     onChange={[Function]}
     type="checkbox"
   />
