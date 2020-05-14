@@ -61,8 +61,14 @@ describe("CheckBox", () => {
 })
 
 describe("Rendering", () => {
-  it("Should click", () => {
+  const tempConsole = console.log
+  beforeAll(() => {
     console.log = jest.fn()
+  })
+  afterAll(() => {
+    console.log = tempConsole
+  })
+  it("Should click", () => {
     render(
       <ThemeProvider theme={baseTheme}>
         <CheckBox
@@ -74,7 +80,11 @@ describe("Rendering", () => {
         </CheckBox>
       </ThemeProvider>
     )
-    fireEvent.click(screen.getByTestId("test"))
+    const checkbox = screen.getByTestId("test")
+    expect(checkbox).toBeInTheDocument()
+    expect(checkbox.checked).toBe(false)
+    fireEvent.click(checkbox)
     expect(console.log.mock.calls[0][0]).toBe("click")
+    expect(checkbox.checked).toBe(true)
   })
 })
