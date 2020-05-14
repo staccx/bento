@@ -1,9 +1,10 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import { fireEvent, render, screen } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import CreditCardInput from "./CreditCardInput"
+import userEvent from "@testing-library/user-event"
 
 const setup = () => {
   const utils = render(
@@ -30,21 +31,41 @@ describe("CreditCardInput", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
-    it("simulate input", () => {
-      const { input } = setup()
-      fireEvent.change(input, { target: { value: 11018420038 } })
-      expect(input.value).toBe("11018420038")
-    })
   })
 })
 
 describe("Rendering", () => {
-  it("Should render", () => {
+  it("Should render and type in value", () => {
     render(
       <ThemeProvider theme={baseTheme}>
         <CreditCardInput id="1" data-testid="testID" label="input" />
       </ThemeProvider>
     )
     expect(screen.getByTestId("testID")).toBeInTheDocument()
+    const input = screen.getByTestId("testID")
+    userEvent.type(input, "11018420038")
+    expect(input.value).toBe("1101 84200 38")
+  })
+  it("Should only accept numeric", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <CreditCardInput id="1" data-testid="testID" label="input" />
+      </ThemeProvider>
+    )
+    expect(screen.getByTestId("testID")).toBeInTheDocument()
+    const input = screen.getByTestId("testID")
+    userEvent.type(input, "1234abcs")
+    expect(input.value).toBe("1234 ")
+  })
+  it("Should only allow 15digits", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <CreditCardInput id="1" data-testid="testID" label="input" />
+      </ThemeProvider>
+    )
+    expect(screen.getByTestId("testID")).toBeInTheDocument()
+    const input = screen.getByTestId("testID")
+    userEvent.type(input, "11018420038123453462")
+    expect(input.value).toBe("1101 84200 381234")
   })
 })
