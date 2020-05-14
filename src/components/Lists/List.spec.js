@@ -2,6 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../theming/themes/baseTheme"
+import { render, screen } from "@testing-library/react"
 import List from "./List"
 
 describe("List", () => {
@@ -58,5 +59,19 @@ describe("List", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("Should render", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <List className="className" ordered>
+          <li>Test</li>
+          <li>Test2</li>
+        </List>
+      </ThemeProvider>
+    )
+    expect(screen.getByText("Test")).toBeInTheDocument()
   })
 })
