@@ -2,6 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
+import { render, screen } from "@testing-library/react"
 import SplitListItem from "./SplitListItem"
 import List from "../List"
 
@@ -62,5 +63,25 @@ describe("splitListItem", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("Should render", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <List data-testid="test">
+          {myList.map(listItem => (
+            <SplitListItem key={listItem.myUniqueId}>
+              {listItem.myLeftProp}
+              {listItem.myRightProp}
+              {listItem.myLeftProp}
+              {listItem.myRightProp}
+            </SplitListItem>
+          ))}
+        </List>
+      </ThemeProvider>
+    )
+    expect(screen.getByTestId("test")).toBeInTheDocument()
   })
 })
