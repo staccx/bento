@@ -1,5 +1,5 @@
 import React from "react"
-import { fireEvent, render } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
@@ -155,5 +155,16 @@ describe("SliderKeyboardInput", () => {
       const { sliderKeyboardLabel } = setup()
       expect(sliderKeyboardLabel.value).toBe("NaN")
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("No props", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <SliderKeyboardInput showLabel name="slider" label="Label" />
+      </ThemeProvider>
+    )
+    expect(screen.getByLabelText("Label")).toBeInTheDocument()
   })
 })
