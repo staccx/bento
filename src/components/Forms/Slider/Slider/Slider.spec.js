@@ -2,6 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
+import { render, screen } from "@testing-library/react"
 import Slider from "./Slider"
 
 describe("Slider", () => {
@@ -66,5 +67,16 @@ describe("Slider", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("Should render", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <Slider className="Slider" min={0} max={100} step={1} />
+      </ThemeProvider>
+    )
+    expect(screen.getByRole("slider")).toBeInTheDocument()
   })
 })
