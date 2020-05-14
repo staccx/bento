@@ -1,5 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
+import { fireEvent, render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../theming/themes/baseTheme"
 import Modal from "./Modal"
@@ -75,7 +76,6 @@ describe("Modal", () => {
         testRenderer.root.findByProps({ className: "testValue" }).children
       ).toStrictEqual(["Tester"])
 
-      console.log(testRenderer.root.children.length)
       expect(testRenderer.root.children.length).toBe(2)
     })
 
@@ -88,6 +88,22 @@ describe("Modal", () => {
 
       expect(testRenderer.root.props.isOpen).toBe(false)
       expect(testRenderer.root.children).toStrictEqual([])
+    })
+  })
+  describe("Rendering", () => {
+    it("should close on ESC", () => {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Modal isOpen onClose={() => console.log("closed")}>
+            <div className="testValue">Tester</div>
+          </Modal>
+        </ThemeProvider>
+      )
+      fireEvent.keyPress(screen.getByText("Tester"), {
+        key: "Esc",
+        code: "Esc"
+      })
+      expect(screen.queryBy * "Tester").toBeNaN()
     })
   })
 })
