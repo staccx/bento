@@ -2,6 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
+import { render, screen } from "@testing-library/react"
 import SelectSimple from "./SelectSimple"
 
 describe("SelectSimple", () => {
@@ -92,5 +93,20 @@ describe("SelectSimple", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("Should render", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <SelectSimple
+          label="Sivilstatus"
+          placeholder="Velg..."
+          id="simpleSelect"
+        />
+      </ThemeProvider>
+    )
+    expect(screen.getByLabelText("Sivilstatus")).toBeInTheDocument()
   })
 })
