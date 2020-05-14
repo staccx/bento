@@ -5,7 +5,7 @@ exports[`MessageLoader Snapshots Messages 1`] = `
   className="sc-AxirZ jMKBgx"
 >
   <div
-    className="sc-AxjAm icExq"
+    className="sc-AxjAm gsPtCs"
   />
   <div
     className="sc-AxiKw kTArkf"
@@ -18,7 +18,7 @@ exports[`MessageLoader Snapshots Multiple words 1`] = `
   className="sc-AxirZ jMKBgx"
 >
   <div
-    className="sc-AxjAm icExq"
+    className="sc-AxjAm gsPtCs"
   />
   <div
     className="sc-AxiKw kTArkf"
@@ -37,7 +37,7 @@ exports[`MessageLoader Snapshots invalid Messages 1`] = `
   className="sc-AxirZ jMKBgx"
 >
   <div
-    className="sc-AxjAm icExq"
+    className="sc-AxjAm gsPtCs"
   />
   <div
     className="sc-AxiKw kTArkf"

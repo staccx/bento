@@ -8,7 +8,7 @@ exports[`FullScreenLoader Snapshots Messages 1`] = `
     className="sc-AxirZ jMKBgx"
   >
     <div
-      className="sc-AxjAm icExq"
+      className="sc-AxjAm gsPtCs"
     />
     <div
       className="sc-AxiKw kTArkf"
@@ -25,7 +25,7 @@ exports[`FullScreenLoader Snapshots Multiple words 1`] = `
     className="sc-AxirZ jMKBgx"
   >
     <div
-      className="sc-AxjAm icExq"
+      className="sc-AxjAm gsPtCs"
     />
     <div
       className="sc-AxiKw kTArkf"
@@ -48,7 +48,7 @@ exports[`FullScreenLoader Snapshots invalid Messages 1`] = `
     className="sc-AxirZ jMKBgx"
   >
     <div
-      className="sc-AxjAm icExq"
+      className="sc-AxjAm gsPtCs"
     />
     <div
       className="sc-AxiKw kTArkf"
