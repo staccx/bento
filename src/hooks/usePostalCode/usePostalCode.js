@@ -5,7 +5,7 @@ export const usePostalCode = (
   code,
   validator = value => value?.length === 4
 ) => {
-  const [debouncedCode] = useDebounce(code, 500)
+  const [debouncedCode] = useDebounce(code?.toString(), 500)
   const { data, error } = useRequest(
     validator(debouncedCode)
       ? {

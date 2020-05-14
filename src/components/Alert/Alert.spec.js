@@ -1,5 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
+import { render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../theming/themes/baseTheme"
 import testTheme from "../../theming/themes/testTheme"
@@ -145,6 +146,18 @@ describe("Alert", () => {
       expect(instance.ALERT).toStrictEqual({
         _default: "background-color: blue;"
       })
+    })
+  })
+  describe("Rendering", () => {
+    it("Should show child", () => {
+      render(
+        <ThemeProvider theme={violetTendencies}>
+          <Alert>
+            <Child />
+          </Alert>
+        </ThemeProvider>
+      )
+      expect(screen.getByText("Body")).toBeInTheDocument()
     })
   })
 })

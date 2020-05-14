@@ -2,7 +2,7 @@
 
 exports[`CodeRenderer Snapshots CSharp 1`] = `
 <pre
-  className="sc-AykKC bRxQFK language-csharp"
+  className="sc-AxjAm btqMOR language-csharp"
 >
   <code
     className="language-csharp"
@@ -13,7 +13,7 @@ exports[`CodeRenderer Snapshots CSharp 1`] = `
         <span class=\\"token punctuation\\">}</span>
         <span class=\\"token keyword\\">class</span> <span class=\\"token class-name\\">Program</span>
         <span class=\\"token punctuation\\">{</span>
-            <span class=\\"token keyword\\">static</span> <span class=\\"token keyword\\">void</span> <span class=\\"token function\\">Main</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span>
+            <span class=\\"token keyword\\">static</span> <span class=\\"token return-type class-name\\"><span class=\\"token keyword\\">void</span></span> <span class=\\"token function\\">Main</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span>
             <span class=\\"token punctuation\\">{</span>
             <span class=\\"token punctuation\\">}</span>
         <span class=\\"token punctuation\\">}</span>",
@@ -23,9 +23,11 @@ exports[`CodeRenderer Snapshots CSharp 1`] = `
 </pre>
 `;
 
+exports[`CodeRenderer Snapshots Default break 1`] = `null`;
+
 exports[`CodeRenderer Snapshots Java 1`] = `
 <pre
-  className="sc-AykKC bRxQFK language-java"
+  className="sc-AxjAm btqMOR language-java"
 >
   <code
     className="language-java"
@@ -46,10 +48,10 @@ exports[`CodeRenderer Snapshots Java 1`] = `
 
 exports[`CodeRenderer Snapshots JavaScript with codeWrapper 1`] = `
 <pre
-  className="sc-AykKC bRxQFK language-javascript"
+  className="sc-AxjAm btqMOR language-javascript"
 >
   <pre
-    className="sc-AykKC bRxQFK language-js"
+    className="sc-AxjAm btqMOR language-js"
   >
     <code
       className="language-js"
@@ -71,10 +73,10 @@ exports[`CodeRenderer Snapshots JavaScript with codeWrapper 1`] = `
 
 exports[`CodeRenderer Snapshots Markup with codeWrapper 1`] = `
 <pre
-  className="sc-AykKC bRxQFK language-markup"
+  className="sc-AxjAm btqMOR language-markup"
 >
   <pre
-    className="sc-AykKC bRxQFK language-markup"
+    className="sc-AxjAm btqMOR language-markup"
   >
     <code
       className="language-markup"

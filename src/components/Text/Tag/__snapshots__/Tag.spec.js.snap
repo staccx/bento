@@ -2,7 +2,7 @@
 
 exports[`Tag Snapshots ClassName 1`] = `
 <span
-  className="sc-AykKC jifFQv className"
+  className="sc-AxjAm gOOnnA className"
 >
   hei
 </span>
@@ -10,7 +10,7 @@ exports[`Tag Snapshots ClassName 1`] = `
 
 exports[`Tag Snapshots No props 1`] = `
 <span
-  className="sc-AykKC jifFQv"
+  className="sc-AxjAm gOOnnA"
 >
   This is a tag
 </span>
@@ -18,6 +18,6 @@ exports[`Tag Snapshots No props 1`] = `
 
 exports[`Tag Snapshots no Children 1`] = `
 <span
-  className="sc-AykKC jifFQv"
+  className="sc-AxjAm gOOnnA"
 />
 `;

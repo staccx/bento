@@ -1,6 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import { fireEvent, render } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import CreditCardInput from "./CreditCardInput"
@@ -35,5 +35,16 @@ describe("CreditCardInput", () => {
       fireEvent.change(input, { target: { value: 11018420038 } })
       expect(input.value).toBe("11018420038")
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("Should render", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <CreditCardInput id="1" data-testid="testID" label="input" />
+      </ThemeProvider>
+    )
+    expect(screen.getByTestId("testID")).toBeInTheDocument()
   })
 })

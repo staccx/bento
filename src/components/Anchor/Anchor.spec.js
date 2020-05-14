@@ -1,5 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
+import { render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../theming/themes/baseTheme"
 import Anchor from "./Anchor"
@@ -41,6 +42,18 @@ describe("Anchor", () => {
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
+    })
+  })
+  describe("Rendering", () => {
+    it("Should render child", () => {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Anchor>
+            <Child />
+          </Anchor>
+        </ThemeProvider>
+      )
+      expect(screen.getByText("Body")).toBeInTheDocument()
     })
   })
 })

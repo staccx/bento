@@ -1,5 +1,5 @@
 import React from "react"
-import { fireEvent, render } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
@@ -61,5 +61,22 @@ describe("BirthdateInput", () => {
       expect(month.value).toBe("12")
       expect(year.value).toBe("1995")
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("Should render", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <BirthdateInput
+          data-testid="testID"
+          label="BirthdateInput"
+          ids={["Day1", "Month1", "Year1"]}
+          labels={["Day", "Month", "Year"]}
+          onChange={console.log}
+        />
+      </ThemeProvider>
+    )
+    expect(screen.getByPlaceholderText("dd")).toBeInTheDocument()
   })
 })

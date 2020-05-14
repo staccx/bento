@@ -61,7 +61,7 @@ export const formatMoney = (value, options = {}) => {
   return formatNumber(value, {
     locale: "nb-NO",
     suffix: null,
-    style: STYLE.currency,
+    ...(options.currencyDisplay && { style: STYLE.currency }),
     ...options
   })
 }

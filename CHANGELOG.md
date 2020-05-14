@@ -1,3 +1,193 @@
+## [10.0.1-alpha.48](https://github.com/staccx/bento/compare/v10.0.1-alpha.47...v10.0.1-alpha.48) (2020-05-04)
+
+
+### Bug Fixes
+
+* **theming:** fix logging in applyVariants ([1cac36b](https://github.com/staccx/bento/commit/1cac36b))
+
+
+
+## [10.0.1-alpha.47](https://github.com/staccx/bento/compare/v10.0.1-alpha.46...v10.0.1-alpha.47) (2020-05-04)
+
+
+### Bug Fixes
+
+* **components:** fix falsy check ([dcc70ba](https://github.com/staccx/bento/commit/dcc70ba))
+
+
+
+## [10.0.1-alpha.46](https://github.com/staccx/bento/compare/v10.0.1-alpha.45...v10.0.1-alpha.46) (2020-05-04)
+
+
+### Bug Fixes
+
+* **components:** no default value for level ([1503605](https://github.com/staccx/bento/commit/1503605))
+
+
+
+## [10.0.1-alpha.45](https://github.com/staccx/bento/compare/v10.0.1-alpha.44...v10.0.1-alpha.45) (2020-05-04)
+
+
+### Bug Fixes
+
+* **utils:** fix loglevel null and undefined ([c581c69](https://github.com/staccx/bento/commit/c581c69))
+
+
+
+## [10.0.1-alpha.44](https://github.com/staccx/bento/compare/v10.0.1-alpha.43...v10.0.1-alpha.44) (2020-05-04)
+
+
+### Bug Fixes
+
+* **components:** default log level for themes ([a3f3561](https://github.com/staccx/bento/commit/a3f3561))
+* **utils:** fix undefined level ([3a59757](https://github.com/staccx/bento/commit/3a59757))
+
+
+
+## [10.0.1-alpha.43](https://github.com/staccx/bento/compare/v10.0.1-alpha.42...v10.0.1-alpha.43) (2020-05-04)
+
+
+### Bug Fixes
+
+* **i18n:** default loglevel set to 0 ([82a7cbf](https://github.com/staccx/bento/commit/82a7cbf))
+
+
+### Features
+
+* **components:** themeProvider now sets logger level ([abcaa2c](https://github.com/staccx/bento/commit/abcaa2c))
+
+
+
+## [10.0.1-alpha.42](https://github.com/staccx/bento/compare/v10.0.1-alpha.41...v10.0.1-alpha.42) (2020-04-29)
+
+
+
+## [10.0.1-alpha.41](https://github.com/staccx/bento/compare/v10.0.1-alpha.40...v10.0.1-alpha.41) (2020-04-28)
+
+
+### Features
+
+* **i18n:** add new backend to i18n. add tests. expose Transform to root ([02ec2ee](https://github.com/staccx/bento/commit/02ec2ee))
+
+
+
+## [10.0.1-alpha.40](https://github.com/staccx/bento/compare/v10.0.1-alpha.39...v10.0.1-alpha.40) (2020-04-27)
+
+
+### Bug Fixes
+
+* **components:** annoying pixelated loading now gone! 🔥🎉 ([ef9a9c8](https://github.com/staccx/bento/commit/ef9a9c8))
+* **i18n:** fix issue where trying to transform null or undefined ([ea014dd](https://github.com/staccx/bento/commit/ea014dd))
+
+
+
+## [10.0.1-alpha.39](https://github.com/staccx/bento/compare/v10.0.1-alpha.38...v10.0.1-alpha.39) (2020-04-20)
+
+
+### Bug Fixes
+
+* **components:** fix modal backdrop click + refactor to function ([94d4b96](https://github.com/staccx/bento/commit/94d4b96))
+* **hooks:** let to const ([720e6df](https://github.com/staccx/bento/commit/720e6df))
+* **hooks:** usePostalCode can now take integers ([4ea14cf](https://github.com/staccx/bento/commit/4ea14cf))
+
+
+### Features
+
+* **theming:** add logger and setLevel. Log moar ([5edd8c2](https://github.com/staccx/bento/commit/5edd8c2))
+* **utils:** add utils for loglevel handling ([6bf7860](https://github.com/staccx/bento/commit/6bf7860))
+
+
+
+## [10.0.1-alpha.38](https://github.com/staccx/bento/compare/v10.0.1-alpha.37...v10.0.1-alpha.38) (2020-04-16)
+
+
+### Bug Fixes
+
+* **hooks:** useBrregsearch now support org numbers ([b71f2b4](https://github.com/staccx/bento/commit/b71f2b4))
+
+
+
+## [10.0.1-alpha.37](https://github.com/staccx/bento/compare/v10.0.1-alpha.36...v10.0.1-alpha.37) (2020-04-03)
+
+
+### Bug Fixes
+
+* **i18n:** fix missing key handler bug ([2df5e75](https://github.com/staccx/bento/commit/2df5e75))
+
+
+
+## [10.0.1-alpha.36](https://github.com/staccx/bento/compare/v10.0.1-alpha.35...v10.0.1-alpha.36) (2020-04-03)
+
+
+
+## [10.0.1-alpha.35](https://github.com/staccx/bento/compare/v10.0.1-alpha.34...v10.0.1-alpha.35) (2020-04-03)
+
+
+### Bug Fixes
+
+* **i18n:** fallback should occur if t is null ([e84169a](https://github.com/staccx/bento/commit/e84169a))
+
+
+
+## [10.0.1-alpha.34](https://github.com/staccx/bento/compare/v10.0.1-alpha.33...v10.0.1-alpha.34) (2020-04-03)
+
+
+### Bug Fixes
+
+* **i18n:** transform prop name ([59221a1](https://github.com/staccx/bento/commit/59221a1))
+
+
+### Features
+
+* **i18n:** add fallback to translate function ([d92112c](https://github.com/staccx/bento/commit/d92112c))
+
+
+
+## [10.0.1-alpha.33](https://github.com/staccx/bento/compare/v10.0.1-alpha.32...v10.0.1-alpha.33) (2020-04-01)
+
+
+### Bug Fixes
+
+* **sanity:** defeat! use dodds ([c8e69a7](https://github.com/staccx/bento/commit/c8e69a7))
+
+
+
+## [10.0.1-alpha.32](https://github.com/staccx/bento/compare/v10.0.1-alpha.31...v10.0.1-alpha.32) (2020-04-01)
+
+
+### Bug Fixes
+
+* memoize object dependency ([71b36e0](https://github.com/staccx/bento/commit/71b36e0))
+
+
+
+## [10.0.1-alpha.31](https://github.com/staccx/bento/compare/v10.0.1-alpha.30...v10.0.1-alpha.31) (2020-04-01)
+
+
+### Bug Fixes
+
+* no longer dep on client ([7635853](https://github.com/staccx/bento/commit/7635853))
+
+
+
+## [10.0.1-alpha.30](https://github.com/staccx/bento/compare/v10.0.1-alpha.29...v10.0.1-alpha.30) (2020-04-01)
+
+
+### Features
+
+* **sanity:** add useSanityQuery hook. memoize and expose client ([19f53c8](https://github.com/staccx/bento/commit/19f53c8))
+
+
+
+## [10.0.1-alpha.29](https://github.com/staccx/bento/compare/v10.0.1-alpha.28...v10.0.1-alpha.29) (2020-04-01)
+
+
+### Features
+
+* **i18n:** add resource reducer ([3b8e7d2](https://github.com/staccx/bento/commit/3b8e7d2))
+
+
+
 ## [10.0.1-alpha.28](https://github.com/staccx/bento/compare/v10.0.1-alpha.27...v10.0.1-alpha.28) (2020-03-31)
 
 
@@ -316,6 +506,8 @@
 
 ### Bug Fixes
 
+* **storybook:** fix AccountInput ([94c7ac6](https://github.com/staccx/bento/commit/94c7ac6))
+* storybook is working ([871e2ed](https://github.com/staccx/bento/commit/871e2ed))
 * **storybok:** expand ([8f8f358](https://github.com/staccx/bento/commit/8f8f358))
 * **storybook:** added caret story ([e7b0e6b](https://github.com/staccx/bento/commit/e7b0e6b))
 * **storybook:** added codewrapper and coderenderer ([6539465](https://github.com/staccx/bento/commit/6539465))
@@ -324,17 +516,17 @@
 * **storybook:** adjusted story for layout and layoutitem ([9bcdf35](https://github.com/staccx/bento/commit/9bcdf35))
 * **storybook:** adjusted texts for animation ([0c2cdd4](https://github.com/staccx/bento/commit/0c2cdd4))
 * **storybook:** alert import ([9d61d46](https://github.com/staccx/bento/commit/9d61d46))
-* **storybook:** fix AccountInput ([94c7ac6](https://github.com/staccx/bento/commit/94c7ac6))
 * **storybook:** fix import ([c02ad5b](https://github.com/staccx/bento/commit/c02ad5b))
 * **storybook:** menuitems ([1f01296](https://github.com/staccx/bento/commit/1f01296))
 * **storybook:** removed breakout parent ([3d21ac2](https://github.com/staccx/bento/commit/3d21ac2))
 * **storybook:** something is wonky with hidden: true for canvas ([89f8564](https://github.com/staccx/bento/commit/89f8564))
 * **storybook:** start on Form + fix import ([ec0f562](https://github.com/staccx/bento/commit/ec0f562))
-* storybook is working ([871e2ed](https://github.com/staccx/bento/commit/871e2ed))
 
 
 ### Features
 
+* **storybook:** stories for RadioPill ([1647bbb](https://github.com/staccx/bento/commit/1647bbb))
+* enabled deployement to now ([2aa7520](https://github.com/staccx/bento/commit/2aa7520))
 * **storybook:**  added itemgroup story ([60d694d](https://github.com/staccx/bento/commit/60d694d))
 * **storybook:** add knobs as searchstring useBrRegSearch ([43f8d14](https://github.com/staccx/bento/commit/43f8d14))
 * **storybook:** added box layout story ([d7960ad](https://github.com/staccx/bento/commit/d7960ad))
@@ -409,7 +601,6 @@
 * **storybook:** stories for PostalCodeInput ([4badd97](https://github.com/staccx/bento/commit/4badd97))
 * **storybook:** stories for progressBar ([6f1e226](https://github.com/staccx/bento/commit/6f1e226))
 * **storybook:** stories for radioButton ([2aa3b05](https://github.com/staccx/bento/commit/2aa3b05))
-* **storybook:** stories for RadioPill ([1647bbb](https://github.com/staccx/bento/commit/1647bbb))
 * **storybook:** stories for removeWhitespace ([55d1d4e](https://github.com/staccx/bento/commit/55d1d4e))
 * **storybook:** stories for SelectSimple ([6e54497](https://github.com/staccx/bento/commit/6e54497))
 * **storybook:** stories for Skeleton ([3c81408](https://github.com/staccx/bento/commit/3c81408))
@@ -426,7 +617,6 @@
 * **storybook:** update splitList ([3277cf0](https://github.com/staccx/bento/commit/3277cf0))
 * **storybook:** update template ([5b519bb](https://github.com/staccx/bento/commit/5b519bb))
 * **storybook:** updated stories to new template ([c91309f](https://github.com/staccx/bento/commit/c91309f))
-* enabled deployement to now ([2aa7520](https://github.com/staccx/bento/commit/2aa7520))
 
 
 
@@ -488,29 +678,30 @@
 
 ### Bug Fixes
 
-* fix git hooks not running ([24476e1](https://github.com/staccx/bento/commit/24476e1))
+* commitlint ([350ad88](https://github.com/staccx/bento/commit/350ad88))
 * **base:** add missing files ([c9239c3](https://github.com/staccx/bento/commit/c9239c3))
 * **components:** fix import of HOC ([a2c0605](https://github.com/staccx/bento/commit/a2c0605))
 * **hooks:** handle zero results in brRegSearch ([31bcc42](https://github.com/staccx/bento/commit/31bcc42))
 * **hooks:** unset results if searchterm too short ([bc7c994](https://github.com/staccx/bento/commit/bc7c994))
-* commitlint ([350ad88](https://github.com/staccx/bento/commit/350ad88))
+* fix git hooks not running ([24476e1](https://github.com/staccx/bento/commit/24476e1))
 * updated ([c722baf](https://github.com/staccx/bento/commit/c722baf))
 
 
 ### Features
 
+* move utils ([67bd3a3](https://github.com/staccx/bento/commit/67bd3a3))
+* **base:** removed lerna stuff and sunset animations ([6c242db](https://github.com/staccx/bento/commit/6c242db))
 * add swr and useRequest. add usePostalCode and implemented in PostalCodeInput ([59fbc0a](https://github.com/staccx/bento/commit/59fbc0a))
 * export open id ns ([02940e0](https://github.com/staccx/bento/commit/02940e0))
 * move base to root ([56f1388](https://github.com/staccx/bento/commit/56f1388))
-* move utils ([67bd3a3](https://github.com/staccx/bento/commit/67bd3a3))
 * stash ([1875437](https://github.com/staccx/bento/commit/1875437))
 * storybook 5.3 ([df6c010](https://github.com/staccx/bento/commit/df6c010))
 * storybook now works ([19cb604](https://github.com/staccx/bento/commit/19cb604))
 * updated and husky ([16b6cb8](https://github.com/staccx/bento/commit/16b6cb8))
 * updated storybook deps ([54dfc2f](https://github.com/staccx/bento/commit/54dfc2f))
 * upgrade all the things 🔥 ([3d10130](https://github.com/staccx/bento/commit/3d10130))
+* **bento:** remove nori ([e94aecc](https://github.com/staccx/bento/commit/e94aecc))
 * upgrade styled-components to latest ([1278a0f](https://github.com/staccx/bento/commit/1278a0f))
-* **base:** removed lerna stuff and sunset animations ([6c242db](https://github.com/staccx/bento/commit/6c242db))
 * **bento:** delete component testing ([8f37994](https://github.com/staccx/bento/commit/8f37994))
 * **bento:** delete control-panel ([f2db644](https://github.com/staccx/bento/commit/f2db644))
 * **bento:** delete feature-toggling ([7e5e5da](https://github.com/staccx/bento/commit/7e5e5da))
@@ -519,7 +710,6 @@
 * **bento:** move open-id ([13900dc](https://github.com/staccx/bento/commit/13900dc))
 * **bento:** remove code-generator ([61aa54b](https://github.com/staccx/bento/commit/61aa54b))
 * **bento:** remove mr-x ([bef8690](https://github.com/staccx/bento/commit/bef8690))
-* **bento:** remove nori ([e94aecc](https://github.com/staccx/bento/commit/e94aecc))
 * **components:** remove combobox ([a3891b7](https://github.com/staccx/bento/commit/a3891b7))
 * **components:** remove Select ([033ca05](https://github.com/staccx/bento/commit/033ca05))
 * **hooks:** add useBrRegSearch hook ([2003af8](https://github.com/staccx/bento/commit/2003af8))
@@ -3556,8 +3746,8 @@
 * **bento:** upgraded to styled-components@beta4 ([9ae5526](https://github.com/staccx/bento/commit/9ae5526))
 * **imove:** general responsivity ([fface44](https://github.com/staccx/bento/commit/fface44))
 * **imove-app:** add functionality for handling more than one person ([369bb83](https://github.com/staccx/bento/commit/369bb83))
-* **imove-app:** add i18n ([f72eda4](https://github.com/staccx/bento/commit/f72eda4))
 * **imove-app:** add i18n ([7b92197](https://github.com/staccx/bento/commit/7b92197))
+* **imove-app:** add i18n ([f72eda4](https://github.com/staccx/bento/commit/f72eda4))
 * **imove-app:** add moar 🎉🎊 ([3682423](https://github.com/staccx/bento/commit/3682423))
 * **imove-app:** add OrderAdditional page ([4cc0106](https://github.com/staccx/bento/commit/4cc0106))
 * **imove-app:** added Wrapper to all pages again ([4fbbecb](https://github.com/staccx/bento/commit/4fbbecb))
@@ -3620,8 +3810,8 @@
 * **base:** make slider themable ([33e3e12](https://github.com/staccx/bento/commit/33e3e12))
 * **base:** revert button to funcponent ([ccb1437](https://github.com/staccx/bento/commit/ccb1437))
 * **bento:** fix readme numbering ([1b407f5](https://github.com/staccx/bento/commit/1b407f5))
-* **bento:** update readme ([30e6136](https://github.com/staccx/bento/commit/30e6136))
 * **bento:** update readme ([29a5c52](https://github.com/staccx/bento/commit/29a5c52))
+* **bento:** update readme ([30e6136](https://github.com/staccx/bento/commit/30e6136))
 * **companywebsitetemplate:** fix broken build ([8200bb7](https://github.com/staccx/bento/commit/8200bb7))
 * **developer-portal:** determine oidc authority from hostname ([82739c9](https://github.com/staccx/bento/commit/82739c9))
 * **i18n:** fix for null possibility ([7472578](https://github.com/staccx/bento/commit/7472578))
@@ -3800,8 +3990,8 @@
 * **stacc-website:** add GTM ([0868062](https://github.com/staccx/bento/commit/0868062))
 * **stacc-website:** add ImageFullWidth block ([5ec08a1](https://github.com/staccx/bento/commit/5ec08a1))
 * **stacc-website:** add outbound links to company ([3185f8e](https://github.com/staccx/bento/commit/3185f8e))
-* **stacc-website:** add redirects ([1fd421e](https://github.com/staccx/bento/commit/1fd421e))
 * **stacc-website:** add redirects ([13b5110](https://github.com/staccx/bento/commit/13b5110))
+* **stacc-website:** add redirects ([1fd421e](https://github.com/staccx/bento/commit/1fd421e))
 * **stacc-website:** add support for logoSalad. Fix main height ([5f7da06](https://github.com/staccx/bento/commit/5f7da06))
 * **stacc-website:** add support for Stories Heading ([6478189](https://github.com/staccx/bento/commit/6478189))
 * **stacc-website:** add support for typeform ([704a32c](https://github.com/staccx/bento/commit/704a32c))
@@ -3818,8 +4008,8 @@
 * **stacc-website:** fix vcard script. add icons ([de09e7d](https://github.com/staccx/bento/commit/de09e7d))
 * **stacc-website:** if you cant make it red, make it bigger ([d14cc78](https://github.com/staccx/bento/commit/d14cc78))
 * **stacc-website:** implement [@eivindk](https://github.com/eivindk)’s adjustments ([a3c102a](https://github.com/staccx/bento/commit/a3c102a))
-* **stacc-website:** improve a11y ([43646bb](https://github.com/staccx/bento/commit/43646bb))
 * **stacc-website:** improve a11y ([9759c8a](https://github.com/staccx/bento/commit/9759c8a))
+* **stacc-website:** improve a11y ([43646bb](https://github.com/staccx/bento/commit/43646bb))
 * **stacc-website:** improve design of contactus content ([fe8e931](https://github.com/staccx/bento/commit/fe8e931))
 * **stacc-website:** improve handling of stories without images ([6605c93](https://github.com/staccx/bento/commit/6605c93))
 * **stacc-website:** improve person layout ([64a892f](https://github.com/staccx/bento/commit/64a892f))
@@ -3882,13 +4072,13 @@
 * **stacc-website:** add gtm ([edec77a](https://github.com/staccx/bento/commit/edec77a))
 * **stacc-website:** add working mobile menu ([f56f60e](https://github.com/staccx/bento/commit/f56f60e))
 * **stacc-website:** adjust lede font-family ([0438c76](https://github.com/staccx/bento/commit/0438c76))
+* add components hero and hero.car ([59d964a](https://github.com/staccx/bento/commit/59d964a))
 * **stacc-website:** improve mobile menu ([87bafae](https://github.com/staccx/bento/commit/87bafae))
 * **stacc-website:** improve responsive behaviour ([7157dd5](https://github.com/staccx/bento/commit/7157dd5))
 * **stacc-website:** improve responsive design ([fd44191](https://github.com/staccx/bento/commit/fd44191))
 * **stacc-website:** improve trinity responsive ([679b7d8](https://github.com/staccx/bento/commit/679b7d8))
 * **stacc-website:** no longer fetching clients with hide ([e7d153a](https://github.com/staccx/bento/commit/e7d153a))
 * **stacc-website:** remove trinity from hero, add trinity block ([f7681fb](https://github.com/staccx/bento/commit/f7681fb))
-* add components hero and hero.car ([59d964a](https://github.com/staccx/bento/commit/59d964a))
 
 
 
@@ -4003,8 +4193,8 @@
 * **bank-in-a-box:** added routing, new theming ([73322ab](https://github.com/staccx/bento/commit/73322ab))
 * **bank-in-a-box:** added transactions ([4c6d99c](https://github.com/staccx/bento/commit/4c6d99c))
 * **bank-in-a-box:** loan + deposit + removed some files ([bbb4f73](https://github.com/staccx/bento/commit/bbb4f73))
-* **company-website:** improve previews ([38c4d7d](https://github.com/staccx/bento/commit/38c4d7d))
 * **company-website:** improve previews ([3ad8046](https://github.com/staccx/bento/commit/3ad8046))
+* **company-website:** improve previews ([38c4d7d](https://github.com/staccx/bento/commit/38c4d7d))
 * **company-website-template:** add company address ([754326d](https://github.com/staccx/bento/commit/754326d))
 * **developer-portal:** add login using username and password ([cd70122](https://github.com/staccx/bento/commit/cd70122))
 * **login-oidc:** add component for login with username and password ([fc67813](https://github.com/staccx/bento/commit/fc67813))
@@ -4047,8 +4237,8 @@
 * **bank-in-a-box:** removed inbox and deposit ([a1e831c](https://github.com/staccx/bento/commit/a1e831c))
 * **company-website:** add description to Client ([32bea86](https://github.com/staccx/bento/commit/32bea86))
 * **sanity:** add otemoto, new dashboard for feature toggling ([2f4ca2c](https://github.com/staccx/bento/commit/2f4ca2c))
-* **sanity:** add pick and filter to SanityDocument ([9ee0dc8](https://github.com/staccx/bento/commit/9ee0dc8))
 * **sanity:** add pick and filter to SanityDocument ([7652ffb](https://github.com/staccx/bento/commit/7652ffb))
+* **sanity:** add pick and filter to SanityDocument ([9ee0dc8](https://github.com/staccx/bento/commit/9ee0dc8))
 * **stacc-website:** add arrrow to submenu ([c3e06c3](https://github.com/staccx/bento/commit/c3e06c3))
 * **stacc-website:** add code splitting ([6a5a1d0](https://github.com/staccx/bento/commit/6a5a1d0))
 * **stacc-website:** add link to clientpreview ([ebdc3ed](https://github.com/staccx/bento/commit/ebdc3ed))
@@ -4418,13 +4608,13 @@
 * **dealerpad:** added styling for empty chat ([67b2ad2](https://github.com/staccx/bento/commit/67b2ad2))
 * **dealerpad:** document uploading ([41ee9c4](https://github.com/staccx/bento/commit/41ee9c4))
 * **dealerpad:** fetch cases from api ([95f9c8e](https://github.com/staccx/bento/commit/95f9c8e))
+* overrideHeaders ([898e023](https://github.com/staccx/bento/commit/898e023))
 * **dealerpad:** first chat version ([84686ba](https://github.com/staccx/bento/commit/84686ba))
 * **dealerpad:** moved cases to mobx store ([4c50707](https://github.com/staccx/bento/commit/4c50707))
 * **invoicing:** add basic routing ([1fa6bdd](https://github.com/staccx/bento/commit/1fa6bdd))
 * **invoicing:** add CreateInvoice page ([92a7bdc](https://github.com/staccx/bento/commit/92a7bdc))
 * **invoicing:** add feature for adding items to invoice ([244d312](https://github.com/staccx/bento/commit/244d312))
 * **invoicing:** add new package for invoicing app ([df694a0](https://github.com/staccx/bento/commit/df694a0))
-* overrideHeaders ([898e023](https://github.com/staccx/bento/commit/898e023))
 
 
 
@@ -4767,10 +4957,10 @@
 
 ### Features
 
-* **savings-advisor:** Updated app name ([98cb570](https://github.com/staccx/bento/commit/98cb570))
-* Updated to current version of bento ([ed47a99](https://github.com/staccx/bento/commit/ed47a99))
 * **developer-portal:** Added csharp language support and fixed theme ([e6115e4](https://github.com/staccx/bento/commit/e6115e4))
 * **developer-portal:** Added java-okHTTP language support ([cba7ba9](https://github.com/staccx/bento/commit/cba7ba9))
+* Updated to current version of bento ([ed47a99](https://github.com/staccx/bento/commit/ed47a99))
+* **savings-advisor:** Updated app name ([98cb570](https://github.com/staccx/bento/commit/98cb570))
 * **styleguide:** Added start of CodeRenderer ([3491e1a](https://github.com/staccx/bento/commit/3491e1a))
 
 
@@ -4854,9 +5044,9 @@
 
 ### Bug Fixes
 
+* Added valid auth token to Logo docs ([86fb993](https://github.com/staccx/bento/commit/86fb993))
 * **i18n:** i18n no longer complains about not having texts. Removed dep to @staccx/base in export ([8991fd3](https://github.com/staccx/bento/commit/8991fd3))
 * **i18n:** Removed consolling ([053a394](https://github.com/staccx/bento/commit/053a394))
-* Added valid auth token to Logo docs ([86fb993](https://github.com/staccx/bento/commit/86fb993))
 
 
 ### Features
@@ -5146,20 +5336,20 @@
 
 ### Bug Fixes
 
-* **loan-process:** Fixed issue with radio disappearing if sum was changed to max ([bbd7304](https://github.com/staccx/bento/commit/bbd7304))
-* Added iterator keys. Removed console log ([ade9d1d](https://github.com/staccx/bento/commit/ade9d1d))
 * **base:** Added default theme to ThemeWrapper ([3da22dc](https://github.com/staccx/bento/commit/3da22dc))
 * **base:** HiddenVisually is now imported directly instead of via polished index ([147543e](https://github.com/staccx/bento/commit/147543e))
 * **developer-portal:** Fixed issue with developer portal not working ([28aa55c](https://github.com/staccx/bento/commit/28aa55c))
 * **fundu-theme:** Fixed export for fundu-theme. ([16a8af5](https://github.com/staccx/bento/commit/16a8af5))
+* **loan-process:** Fixed issue with radio disappearing if sum was changed to max ([bbd7304](https://github.com/staccx/bento/commit/bbd7304))
 * **loan-process:** Loan-process now uses formatting lib ([c1da6c7](https://github.com/staccx/bento/commit/c1da6c7))
+* Added iterator keys. Removed console log ([ade9d1d](https://github.com/staccx/bento/commit/ade9d1d))
+* RegisterSigners is now working albeit with very stern validation¨ ([5273e37](https://github.com/staccx/bento/commit/5273e37))
+* Sign now has working example ([0f79386](https://github.com/staccx/bento/commit/0f79386))
+* **loan-process:** Now renders ([c1b7343](https://github.com/staccx/bento/commit/c1b7343))
 * **loan-process:** SetAccountNumber now renders ([eb51b31](https://github.com/staccx/bento/commit/eb51b31))
 * **loan-process:** Sign now shows correct sign count. Cleaned up rendering ([03657f3](https://github.com/staccx/bento/commit/03657f3))
 * **loan-process:** Validation in RegisterSigners ([9215cab](https://github.com/staccx/bento/commit/9215cab))
-* Sign now has working example ([0f79386](https://github.com/staccx/bento/commit/0f79386))
-* **loan-process:** Now renders ([c1b7343](https://github.com/staccx/bento/commit/c1b7343))
 * **loan-process:** Work on Sign ([435e5fa](https://github.com/staccx/bento/commit/435e5fa))
-* RegisterSigners is now working albeit with very stern validation¨ ([5273e37](https://github.com/staccx/bento/commit/5273e37))
 
 
 ### Features
@@ -5169,16 +5359,16 @@
 * **formatting:** Added truncate ([2244a19](https://github.com/staccx/bento/commit/2244a19))
 * **loan-process:** Loan process now builds as proper module ([2b20c57](https://github.com/staccx/bento/commit/2b20c57))
 * **loan-process:** PresentOffer defaultProps ([e5fa9ac](https://github.com/staccx/bento/commit/e5fa9ac))
+* Getting ready for publish ([aa56b67](https://github.com/staccx/bento/commit/aa56b67))
 * **loan-process:** PresentOffer now has better period handling and styling. Plus cacluations ([f278c64](https://github.com/staccx/bento/commit/f278c64))
+* 'Fixed' Register-Signers. Added new formatting method ([899e143](https://github.com/staccx/bento/commit/899e143))
+* Added logo component ([ab7c6ef](https://github.com/staccx/bento/commit/ab7c6ef))
+* Complete is complete ([ec71989](https://github.com/staccx/bento/commit/ec71989))
+* PresentOffer (formerly ApplicationFormOffer) now works ([2db0102](https://github.com/staccx/bento/commit/2db0102))
 * **loan-process:** PresentOffer will now calculate monthly costs ([7c84de4](https://github.com/staccx/bento/commit/7c84de4))
 * **loan-process:** RegisterSigners defaultProps ([55f4ff1](https://github.com/staccx/bento/commit/55f4ff1))
 * **loan-process:** SetAccountNumber  and COmplete  defaultProps ([1a37aa8](https://github.com/staccx/bento/commit/1a37aa8))
 * **loan-process:** Sign defaultProps ([8a1f6c9](https://github.com/staccx/bento/commit/8a1f6c9))
-* 'Fixed' Register-Signers. Added new formatting method ([899e143](https://github.com/staccx/bento/commit/899e143))
-* Added logo component ([ab7c6ef](https://github.com/staccx/bento/commit/ab7c6ef))
-* Complete is complete ([ec71989](https://github.com/staccx/bento/commit/ec71989))
-* Getting ready for publish ([aa56b67](https://github.com/staccx/bento/commit/aa56b67))
-* PresentOffer (formerly ApplicationFormOffer) now works ([2db0102](https://github.com/staccx/bento/commit/2db0102))
 * **onboarding:** Added onboarding for privat marked ([2e720e1](https://github.com/staccx/bento/commit/2e720e1))
 * **templates:** Module starter pack now has CRA ([2c4082c](https://github.com/staccx/bento/commit/2c4082c))
 
@@ -5189,22 +5379,22 @@
 
 ### Bug Fixes
 
-* **cli:** Cli now builds correctly ([3e220ed](https://github.com/staccx/bento/commit/3e220ed))
 * abbreviate is now exported ([c8476c9](https://github.com/staccx/bento/commit/c8476c9))
 * Added formatDateDistance to export ([63d1004](https://github.com/staccx/bento/commit/63d1004))
 * Fixed formatting not building bc of jest ([7c23e02](https://github.com/staccx/bento/commit/7c23e02))
 * stage 0 ([01a0aa2](https://github.com/staccx/bento/commit/01a0aa2))
+* **cli:** Cli now builds correctly ([3e220ed](https://github.com/staccx/bento/commit/3e220ed))
 
 
 ### Features
 
-* **formatting:** Added new function removeWhiteSpace ([799f431](https://github.com/staccx/bento/commit/799f431))
 * Added date formatting and tests ([4c4044c](https://github.com/staccx/bento/commit/4c4044c))
 * Added isNumber function and tests ([3bf4600](https://github.com/staccx/bento/commit/3bf4600))
 * Added new function, abbreviateCurrency ([e6933d4](https://github.com/staccx/bento/commit/e6933d4))
 * Added new project for client Fundu: Loan-Process ([e4206e2](https://github.com/staccx/bento/commit/e4206e2))
 * MOved from bento ([45eb4d1](https://github.com/staccx/bento/commit/45eb4d1))
 * Moved math into own package ([633f4d3](https://github.com/staccx/bento/commit/633f4d3))
+* **formatting:** Added new function removeWhiteSpace ([799f431](https://github.com/staccx/bento/commit/799f431))
 
 
 
@@ -5308,8 +5498,8 @@
 
 ### Features
 
-* **styleguide:** Added automatic creation of new fixtures. ([f7113b5](https://github.com/staccx/bento/commit/f7113b5))
 * Added new styleguide project ([e280d08](https://github.com/staccx/bento/commit/e280d08))
+* **styleguide:** Added automatic creation of new fixtures. ([f7113b5](https://github.com/staccx/bento/commit/f7113b5))
 
 
 
@@ -5318,16 +5508,16 @@
 
 ### Bug Fixes
 
+* Removed test usage of ThemeComponent. Added ThemeComponent for logo rendering ([7985b1c](https://github.com/staccx/bento/commit/7985b1c))
 * **base:** ThemeWrapper will now apply resets ([33ae303](https://github.com/staccx/bento/commit/33ae303))
 * **theme:** Fallback null for ThemeComponent now works ([5362d1b](https://github.com/staccx/bento/commit/5362d1b))
-* Removed test usage of ThemeComponent. Added ThemeComponent for logo rendering ([7985b1c](https://github.com/staccx/bento/commit/7985b1c))
 
 
 ### Features
 
-* **base:** Resets now take theme ([7bbfb15](https://github.com/staccx/bento/commit/7bbfb15))
 * Decimal in Account is now tiny ([43411fe](https://github.com/staccx/bento/commit/43411fe))
 * Showed how ThemeComponent can be used to change entire components ([9f7ac9a](https://github.com/staccx/bento/commit/9f7ac9a))
+* **base:** Resets now take theme ([7bbfb15](https://github.com/staccx/bento/commit/7bbfb15))
 
 
 
@@ -5489,9 +5679,9 @@
 
 ### Features
 
-* Removed button style as export ([a88b93b](https://github.com/staccx/bento/commit/a88b93b))
-* **base:** ButtonStyles are now exported as part of base ([b3af3f8](https://github.com/staccx/bento/commit/b3af3f8))
 * Improved merging. Will now merge deep ([e9323d5](https://github.com/staccx/bento/commit/e9323d5))
+* **base:** ButtonStyles are now exported as part of base ([b3af3f8](https://github.com/staccx/bento/commit/b3af3f8))
+* Removed button style as export ([a88b93b](https://github.com/staccx/bento/commit/a88b93b))
 
 
 
@@ -5592,10 +5782,10 @@
 
 ### Features
 
-* Updated api host ([c3442eb](https://github.com/staccx/bento/commit/c3442eb))
-* **base:** Slider + SliderKeyboardInput + withTheme additions ([518130e](https://github.com/staccx/bento/commit/518130e))
 * Changed deps to different x packages. Fixed fallback ([ba638e3](https://github.com/staccx/bento/commit/ba638e3))
 * new theming solution ([e7c38b2](https://github.com/staccx/bento/commit/e7c38b2))
+* **base:** Slider + SliderKeyboardInput + withTheme additions ([518130e](https://github.com/staccx/bento/commit/518130e))
+* Updated api host ([c3442eb](https://github.com/staccx/bento/commit/c3442eb))
 
 
 
@@ -5624,8 +5814,8 @@
 
 ### Bug Fixes
 
-* Footer ([c19f361](https://github.com/staccx/bento/commit/c19f361))
 * **fail:** Fail safe if no data ([225de71](https://github.com/staccx/bento/commit/225de71))
+* Footer ([c19f361](https://github.com/staccx/bento/commit/c19f361))
 
 
 ### Features
@@ -5644,14 +5834,14 @@
 
 ### Bug Fixes
 
-* Small improvements ([1d5fb62](https://github.com/staccx/bento/commit/1d5fb62))
 * **api:** Horizon should default be 1 ([8ca2462](https://github.com/staccx/bento/commit/8ca2462))
 * **chart:** Colors ([8c97bef](https://github.com/staccx/bento/commit/8c97bef))
+* mock data savingsplan ([506faff](https://github.com/staccx/bento/commit/506faff))
 * **instrument:** Selectedinstrument is now null ([c995492](https://github.com/staccx/bento/commit/c995492))
 * **Risk:** Removed setState calls in Risk ([d48a2af](https://github.com/staccx/bento/commit/d48a2af))
-* mock data savingsplan ([506faff](https://github.com/staccx/bento/commit/506faff))
 * **Risk:** State is now set at mount in Risk ([fb20002](https://github.com/staccx/bento/commit/fb20002))
 * **sort:** Portfolio is now sorted ([a0e5f55](https://github.com/staccx/bento/commit/a0e5f55))
+* Small improvements ([1d5fb62](https://github.com/staccx/bento/commit/1d5fb62))
 
 
 ### Features
@@ -5693,10 +5883,10 @@
 
 ### Features
 
-* **base:** Animations now exported ([2798b4f](https://github.com/staccx/bento/commit/2798b4f))
-* **steps:** Added transitions ([02055bd](https://github.com/staccx/bento/commit/02055bd))
 * Added deposit inputs ([fc93816](https://github.com/staccx/bento/commit/fc93816))
 * CurrencyInput now works with both in/decrement buttons and custom input ([cbf6e16](https://github.com/staccx/bento/commit/cbf6e16))
+* **base:** Animations now exported ([2798b4f](https://github.com/staccx/bento/commit/2798b4f))
+* **steps:** Added transitions ([02055bd](https://github.com/staccx/bento/commit/02055bd))
 
 
 
@@ -5750,8 +5940,8 @@
 
 ### Bug Fixes
 
-* **shotgun:** More work on shotgun ([beaa3eb](https://github.com/staccx/bento/commit/beaa3eb))
 * Removed idea files ([b75cc67](https://github.com/staccx/bento/commit/b75cc67))
+* **shotgun:** More work on shotgun ([beaa3eb](https://github.com/staccx/bento/commit/beaa3eb))
 
 
 ### Features
@@ -5766,11 +5956,11 @@
 
 ### Features
 
+* CRA ran ([3e258c7](https://github.com/staccx/bento/commit/3e258c7))
 * **mobx:** Added mobx and store. ([a05e4f7](https://github.com/staccx/bento/commit/a05e4f7))
 * **resets:** Resets can now be applied globally after base ([dbfb826](https://github.com/staccx/bento/commit/dbfb826))
 * **routing:** Added routing ([96684f3](https://github.com/staccx/bento/commit/96684f3))
 * **state:** Mobx provider defined ([411306b](https://github.com/staccx/bento/commit/411306b))
-* CRA ran ([3e258c7](https://github.com/staccx/bento/commit/3e258c7))
 
 
 

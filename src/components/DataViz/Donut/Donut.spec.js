@@ -1,5 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
+import { render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
 import Donut from "./Donut"
@@ -78,5 +79,15 @@ describe("Donut", () => {
       )
       .toJSON()
     expect(tree).toMatchSnapshot()
+  })
+  describe("Rendering", () => {
+    it("Should render donut", () => {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Donut progress={0.8} />
+        </ThemeProvider>
+      )
+      expect(screen.getByText("80%")).toBeInTheDocument()
+    })
   })
 })

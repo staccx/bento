@@ -1,5 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
+import { render, screen } from "@testing-library/react"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
 import Fraction from "./Fraction"
@@ -67,6 +68,16 @@ describe("Fraction", () => {
         )
         .toJSON()
       expect(tree).toMatchSnapshot()
+    })
+  })
+  describe("Rendering", () => {
+    it("should show Fraction", function() {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Fraction data-testid="test" value={10} max={10} />
+        </ThemeProvider>
+      )
+      expect(screen.getByTestId("test")).toBeInTheDocument()
     })
   })
 })

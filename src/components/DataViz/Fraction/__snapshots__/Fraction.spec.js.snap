@@ -2,30 +2,30 @@
 
 exports[`Fraction Snapshots No props 1`] = `
 <div
-  className="sc-AykKF fyPjMc"
+  className="sc-AxhCb brTbkZ"
 >
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <span
-    className="sc-AykKC gkCCzp"
+    className="sc-AxjAm kLNFlt"
   >
     5
      / 
@@ -36,30 +36,30 @@ exports[`Fraction Snapshots No props 1`] = `
 
 exports[`Fraction Snapshots Value 1`] = `
 <div
-  className="sc-AykKF fyPjMc"
+  className="sc-AxhCb brTbkZ"
 >
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKE ilHNFM"
+    className="sc-AxiKw gxuXjq"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKE ilHNFM"
+    className="sc-AxiKw gxuXjq"
     onClick={[Function]}
   />
   <span
-    className="sc-AykKC gkCCzp"
+    className="sc-AxjAm kLNFlt"
   >
     3
      / 
@@ -70,50 +70,50 @@ exports[`Fraction Snapshots Value 1`] = `
 
 exports[`Fraction Snapshots Value over Max 1`] = `
 <div
-  className="sc-AykKF fyPjMc"
+  className="sc-AxhCb brTbkZ"
 >
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <span
-    className="sc-AykKC gkCCzp"
+    className="sc-AxjAm kLNFlt"
   >
     12
      / 
@@ -124,50 +124,50 @@ exports[`Fraction Snapshots Value over Max 1`] = `
 
 exports[`Fraction Snapshots With Max 1`] = `
 <div
-  className="sc-AykKF fyPjMc"
+  className="sc-AxhCb brTbkZ"
 >
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <span
-    className="sc-AykKC gkCCzp"
+    className="sc-AxjAm kLNFlt"
   >
     10
      / 
@@ -178,50 +178,50 @@ exports[`Fraction Snapshots With Max 1`] = `
 
 exports[`Fraction Snapshots With children 1`] = `
 <div
-  className="sc-AykKF fyPjMc"
+  className="sc-AxhCb brTbkZ"
 >
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKD cMtsCg"
+    className="sc-AxirZ dXpOWn"
     onClick={[Function]}
   />
   <span
-    className="sc-AykKC gkCCzp"
+    className="sc-AxjAm kLNFlt"
   >
     10
      / 
@@ -232,50 +232,50 @@ exports[`Fraction Snapshots With children 1`] = `
 
 exports[`Fraction Snapshots invalid Value 1`] = `
 <div
-  className="sc-AykKF fyPjMc"
+  className="sc-AxhCb brTbkZ"
 >
   <div
-    className="sc-AykKE ilHNFM"
+    className="sc-AxiKw gxuXjq"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKE ilHNFM"
+    className="sc-AxiKw gxuXjq"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKE ilHNFM"
+    className="sc-AxiKw gxuXjq"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKE ilHNFM"
+    className="sc-AxiKw gxuXjq"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKE ilHNFM"
+    className="sc-AxiKw gxuXjq"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKE ilHNFM"
+    className="sc-AxiKw gxuXjq"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKE ilHNFM"
+    className="sc-AxiKw gxuXjq"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKE ilHNFM"
+    className="sc-AxiKw gxuXjq"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKE ilHNFM"
+    className="sc-AxiKw gxuXjq"
     onClick={[Function]}
   />
   <div
-    className="sc-AykKE ilHNFM"
+    className="sc-AxiKw gxuXjq"
     onClick={[Function]}
   />
   <span
-    className="sc-AykKC gkCCzp"
+    className="sc-AxjAm kLNFlt"
   >
      / 
     10

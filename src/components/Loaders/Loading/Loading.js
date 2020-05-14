@@ -32,12 +32,12 @@ const Loading = ({ className, idleTime, ...rest }) => {
 const spinnerBubble1 = keyframes`
   0% {
     color: ${color.primary};
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(0.2);
     opacity: 1;
   }
   100% {
     color:  ${color.secondary};
-    transform: translate(-50%, -50%) scale(4.8);
+    transform: translate(-50%, -50%) scale(1);
     opacity: 0;
   }
 `
@@ -45,12 +45,12 @@ const spinnerBubble1 = keyframes`
 const spinnerBubble2 = keyframes`
   0% {
     color: ${color.secondary};
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(0.2);
     opacity: 1;
   }
   100% {
     color: ${color.primary};
-    transform: translate(-50%, -50%) scale(4.8);
+    transform: translate(-50%, -50%) scale(1);
     opacity: 0;
   }
 `
@@ -68,12 +68,12 @@ const SignalSpinner = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 10px;
-    height: 10px;
+    width: 40px;
+    height: 40px;
     opacity: 0;
-    box-shadow: 0 0 0 1px;
+    border: 4px solid currentColor;
     border-radius: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(0.2);
     transform-origin: center;
   }
 

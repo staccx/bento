@@ -2,29 +2,29 @@
 
 exports[`MessageLoader Snapshots Messages 1`] = `
 <div
-  className="sc-AykKD ggtnrM"
+  className="sc-AxirZ jMKBgx"
 >
   <div
-    className="sc-AykKC ifApnH"
+    className="sc-AxjAm icExq"
   />
   <div
-    className="sc-AykKE fffipx"
+    className="sc-AxiKw kTArkf"
   />
 </div>
 `;
 
 exports[`MessageLoader Snapshots Multiple words 1`] = `
 <div
-  className="sc-AykKD ggtnrM"
+  className="sc-AxirZ jMKBgx"
 >
   <div
-    className="sc-AykKC ifApnH"
+    className="sc-AxjAm icExq"
   />
   <div
-    className="sc-AykKE fffipx"
+    className="sc-AxiKw kTArkf"
   >
     <div
-      className="sc-AykKG hyXFcy"
+      className="sc-AxhUy jKtIrn"
     >
       Reticulating splines...
     </div>
@@ -34,13 +34,13 @@ exports[`MessageLoader Snapshots Multiple words 1`] = `
 
 exports[`MessageLoader Snapshots invalid Messages 1`] = `
 <div
-  className="sc-AykKD ggtnrM"
+  className="sc-AxirZ jMKBgx"
 >
   <div
-    className="sc-AykKC ifApnH"
+    className="sc-AxjAm icExq"
   />
   <div
-    className="sc-AykKE fffipx"
+    className="sc-AxiKw kTArkf"
   />
 </div>
 `;

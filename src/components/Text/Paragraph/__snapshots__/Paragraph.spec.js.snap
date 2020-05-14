@@ -2,13 +2,13 @@
 
 exports[`Paragraph Snapshots No Children 1`] = `
 <p
-  className="sc-AykKC ecIodL"
+  className="sc-AxjAm klEnBW"
 />
 `;
 
 exports[`Paragraph Snapshots No props 1`] = `
 <p
-  className="sc-AykKC ecIodL"
+  className="sc-AxjAm klEnBW"
 >
   Hei
 </p>
@@ -16,7 +16,7 @@ exports[`Paragraph Snapshots No props 1`] = `
 
 exports[`Paragraph Snapshots className 1`] = `
 <p
-  className="sc-AykKC ecIodL className"
+  className="sc-AxjAm klEnBW className"
 >
   Hei
 </p>

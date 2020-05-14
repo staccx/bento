@@ -1,5 +1,6 @@
 import sanityClient from "@sanity/client"
 import { i18nLogger } from "./I18n"
+import { resourceReducer } from "./backend.utils"
 
 const Backend = {
   init(services, options) {
@@ -37,11 +38,7 @@ const Backend = {
     this.client
       .fetch(this.query, { ...this.params, namespace })
       .then(result => {
-        const resources = result.reduce((acc, current) => {
-          acc[current.key] = current.value.map(item => item[language])
-
-          return acc
-        }, {})
+        const resources = result.reduce(resourceReducer(language), {})
 
         callback(null, resources)
       })

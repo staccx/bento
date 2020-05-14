@@ -2,20 +2,21 @@
 
 exports[`FileInput Snapshots No props 1`] = `
 <div
-  className="sc-AykKD erepSp"
+  className="sc-AxirZ feQoIa"
   title={null}
 >
   <input
-    className="sc-AykKE dzWrRj"
+    className="sc-AxiKw dVCywc"
     disabled={false}
     onChange={[Function]}
     type="file"
   />
   <label
-    className="sc-AykKF pwLr"
+    className="sc-AxhCb iAZYUs"
+    disabled={false}
   >
     <svg
-      className="sc-AykKC fxMzgc sc-AykKG dVAGiI"
+      className="sc-AxjAm bGsByD sc-AxhUy Vwrgh"
       viewBox="0 0 24 24"
     >
       <path
@@ -29,22 +30,23 @@ exports[`FileInput Snapshots No props 1`] = `
 
 exports[`FileInput Snapshots child and ID 1`] = `
 <div
-  className="sc-AykKD erepSp"
+  className="sc-AxirZ feQoIa"
   title={null}
 >
   <input
-    className="sc-AykKE dzWrRj"
+    className="sc-AxiKw dVCywc"
     disabled={false}
     id="test"
     onChange={[Function]}
     type="file"
   />
   <label
-    className="sc-AykKF pwLr"
+    className="sc-AxhCb iAZYUs"
+    disabled={false}
     htmlFor="test"
   >
     <svg
-      className="sc-AykKC fxMzgc sc-AykKG dVAGiI"
+      className="sc-AxjAm bGsByD sc-AxhUy Vwrgh"
       viewBox="0 0 24 24"
     >
       <path
@@ -62,20 +64,21 @@ exports[`FileInput Snapshots child and ID 1`] = `
 
 exports[`FileInput Snapshots with children 1`] = `
 <div
-  className="sc-AykKD erepSp"
+  className="sc-AxirZ feQoIa"
   title={null}
 >
   <input
-    className="sc-AykKE dzWrRj"
+    className="sc-AxiKw dVCywc"
     disabled={false}
     onChange={[Function]}
     type="file"
   />
   <label
-    className="sc-AykKF pwLr"
+    className="sc-AxhCb iAZYUs"
+    disabled={false}
   >
     <svg
-      className="sc-AykKC fxMzgc sc-AykKG dVAGiI"
+      className="sc-AxjAm bGsByD sc-AxhUy Vwrgh"
       viewBox="0 0 24 24"
     >
       <path

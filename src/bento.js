@@ -1,56 +1,71 @@
 /**
  * Animations
  */
-export * as animations from "./animations"
+import * as animations from "./animations"
 
 /**
  * Color
  */
-export * as color from "./color"
+import * as color from "./color"
 
 /**
  * Formatting
  */
-export * as formatting from "./formatting"
+import * as formatting from "./formatting"
 
 /**
  * Math functions
  */
-export * as math from "./math"
+import * as math from "./math"
 
 /**
  * Open-Id
  */
-export * as openId from "./open-id"
+import * as openId from "./open-id"
 
 /**
  * Sanity specific
  */
-export * as sanity from "./sanity"
+import * as sanity from "./sanity"
 
 /**
  * Theming
  */
 
-export * as theming from "./theming"
+import * as theming from "./theming"
 /**
  * Utils
  */
-export * as utils from "./utils"
+import * as utils from "./utils"
 
 /**
  * Utils
  */
-export * as i18n from "./i18n"
+import * as i18n from "./i18n"
 
 /**
  * Hooks
  */
-export * as hooks from "./hooks"
+import * as hooks from "./hooks"
+
+const { Transform, Translate } = i18n
 
 /**
  * Components
  */
 export * from "./components"
 
-export { Translate } from "./i18n"
+export {
+  Transform,
+  Translate,
+  animations,
+  color,
+  formatting,
+  math,
+  openId,
+  sanity,
+  theming,
+  utils,
+  i18n,
+  hooks
+}

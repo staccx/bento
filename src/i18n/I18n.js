@@ -1,26 +1,27 @@
 import React, {
   createContext,
+  useCallback,
   useContext,
   useEffect,
-  useCallback,
   useMemo,
   useState
 } from "react"
 import i18next from "i18next"
 import PropTypes from "prop-types"
 import loglevel from "loglevel"
-import { formatCurrency } from "../formatting/currency"
-import { logLevelFromNumber } from "../open-id/utils/logLevelFromString"
+import { formatMoney } from "../formatting/currency"
+import { normalizeLevel } from "../utils/loglevelUtils"
 
 const I18nContext = createContext({})
 
 const defaultFormat = {
   currency: value => {
-    return formatCurrency(parseInt(value, 10))
+    return formatMoney(parseInt(value, 10))
   }
 }
 
 export const i18nLogger = loglevel.getLogger("i18n")
+i18nLogger.setDefaultLevel(normalizeLevel(0))
 
 const Provider = ({ children, level, ...props }) => {
   const [ready, setReady] = useState(false)
@@ -32,7 +33,7 @@ const Provider = ({ children, level, ...props }) => {
   }
 
   useEffect(() => {
-    i18nLogger.setLevel(logLevelFromNumber(level))
+    i18nLogger.setLevel(normalizeLevel(level))
     i18nLogger.info("i18n levels updated")
   }, [])
 
@@ -64,14 +65,16 @@ const Provider = ({ children, level, ...props }) => {
       },
       returnObjects: true,
       saveMissing: true, // Must be set to true
-      missingKeyHandler: (lng, ns, key, fallbackValue) =>
+      missingKeyHandler: (lng, ns, key, fallbackValue) => {
         i18nLogger.warn(
           `Missing key: ${key} in ${lng}[${ns}]. Fallbackvalue: ${fallbackValue}`,
           lng,
           ns,
           key,
           fallbackValue
-        ),
+        )
+        return null
+      },
       parseMissingKeyHandler: key => {
         i18nLogger.warn(`No translation found for "${key}"`)
         return null
@@ -148,12 +151,18 @@ export const useI18n = () => {
 
   const { i18n, ready } = value
 
-  const translate = (key, data) => {
+  const translate = (key, data, fallback = null) => {
     i18nLogger.debug(`Translating ${key}`, data)
-    return i18n.t(key, data)
+    const value = i18n.t(key, data)
+    i18nLogger.debug(`Translated ${key} into ${value}`)
+    return value || fallback
   }
 
   const transform = value => {
+    if (!value) {
+      i18nLogger.warn(`Cannot transform null or undefined`)
+      return null
+    }
     if (!value.hasOwnProperty(i18n.language)) {
       i18nLogger.warn(`Could not find key in language`, value, i18n.language)
       return null

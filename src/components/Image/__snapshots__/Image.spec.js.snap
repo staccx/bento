@@ -2,64 +2,64 @@
 
 exports[`Image Snapshots ClassName 1`] = `
 <img
-  className="sc-AykKC pywwI Name"
+  className="sc-AxjAm eVwfbv Name"
   size="medium"
 />
 `;
 
 exports[`Image Snapshots No props 1`] = `
 <img
-  className="sc-AykKC pywwI"
+  className="sc-AxjAm eVwfbv"
   size="medium"
 />
 `;
 
 exports[`Image Snapshots all 1`] = `
 <div
-  className="sc-AykKE jrtjkV Name"
+  className="sc-AxiKw bqfajF Name"
   size="huge"
 >
   <img
-    className="sc-AykKC sc-AykKD fKziJC"
+    className="sc-AxjAm sc-AxirZ brxlsN"
   />
 </div>
 `;
 
 exports[`Image Snapshots aspectRatio 1`] = `
 <div
-  className="sc-AykKE clwzYy"
+  className="sc-AxiKw dWLjYy"
   size="medium"
 >
   <img
-    className="sc-AykKC sc-AykKD fKziJC"
+    className="sc-AxjAm sc-AxirZ brxlsN"
   />
 </div>
 `;
 
 exports[`Image Snapshots invalid size 1`] = `
 <img
-  className="sc-AykKC pywwI"
+  className="sc-AxjAm eVwfbv"
   size={100}
 />
 `;
 
 exports[`Image Snapshots round 1`] = `
 <img
-  className="sc-AykKC igjITT"
+  className="sc-AxjAm jcpECQ"
   size="medium"
 />
 `;
 
 exports[`Image Snapshots size 1`] = `
 <img
-  className="sc-AykKC pywwI"
+  className="sc-AxjAm eVwfbv"
   size="huge"
 />
 `;
 
 exports[`Image Snapshots width 1`] = `
 <img
-  className="sc-AykKC pywwI"
+  className="sc-AxjAm eVwfbv"
   size="medium"
 />
 `;

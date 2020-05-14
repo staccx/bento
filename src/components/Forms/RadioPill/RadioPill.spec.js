@@ -2,6 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
+import { render, screen } from "@testing-library/react"
 import RadioPill from "./RadioPill"
 import RadioPillItem from "./RadioPill.Item"
 
@@ -107,5 +108,27 @@ describe("RadioPill", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("Should render", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <RadioPill group="Radiopills">
+          {myList.map(listItem => (
+            <RadioPillItem
+              key={listItem.myUniqueId}
+              value={listItem.value}
+              defaultChecked={listItem.defaultChecked}
+              id={listItem.myUniqueId}
+            >
+              {listItem.label}
+            </RadioPillItem>
+          ))}
+        </RadioPill>
+      </ThemeProvider>
+    )
+    expect(screen.getByText("1")).toBeInTheDocument()
   })
 })

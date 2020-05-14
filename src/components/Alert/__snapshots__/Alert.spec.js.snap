@@ -2,15 +2,15 @@
 
 exports[`Alert Snapshots Info 1`] = `
 <div
-  className="sc-fzXfLO kglSKS"
+  className="sc-fzozJi gcxywK"
   role="alert"
   type="info"
 >
   <div
-    className="sc-AykKK ZTror"
+    className="sc-AxmLO hYsIHo"
   >
     <div
-      className="sc-AykKI cwlBXB"
+      className="sc-AxheI iCMBga"
     >
       <svg
         fill="currentColor"
@@ -25,7 +25,7 @@ exports[`Alert Snapshots Info 1`] = `
       </svg>
     </div>
     <div
-      className="sc-AykKJ leFvmq"
+      className="sc-Axmtr bfHAPN"
     >
       <p>
         Body
@@ -37,18 +37,18 @@ exports[`Alert Snapshots Info 1`] = `
 
 exports[`Alert Snapshots Invalid type 1`] = `
 <div
-  className="sc-fzXfLO kglSKS"
+  className="sc-fzozJi gcxywK"
   role="alert"
   type={null}
 >
   <div
-    className="sc-AykKK ZTror"
+    className="sc-AxmLO hYsIHo"
   >
     <div
-      className="sc-AykKI cwlBXB"
+      className="sc-AxheI iCMBga"
     />
     <div
-      className="sc-AykKJ leFvmq"
+      className="sc-Axmtr bfHAPN"
     >
       <p>
         Body
@@ -62,15 +62,15 @@ exports[`Alert Snapshots No children 1`] = `null`;
 
 exports[`Alert Snapshots No props 1`] = `
 <div
-  className="sc-fzXfLO kglSKS"
+  className="sc-fzozJi gcxywK"
   role="alert"
   type="info"
 >
   <div
-    className="sc-AykKK ZTror"
+    className="sc-AxmLO hYsIHo"
   >
     <div
-      className="sc-AykKI cwlBXB"
+      className="sc-AxheI iCMBga"
     >
       <svg
         fill="currentColor"
@@ -85,7 +85,7 @@ exports[`Alert Snapshots No props 1`] = `
       </svg>
     </div>
     <div
-      className="sc-AykKJ leFvmq"
+      className="sc-Axmtr bfHAPN"
     >
       <p>
         Body
@@ -97,15 +97,15 @@ exports[`Alert Snapshots No props 1`] = `
 
 exports[`Alert Snapshots Success 1`] = `
 <div
-  className="sc-fzXfLO nBaX"
+  className="sc-fzozJi hCenbX"
   role="alert"
   type="success"
 >
   <div
-    className="sc-AykKK ZTror"
+    className="sc-AxmLO hYsIHo"
   >
     <div
-      className="sc-AykKI cwlBXB"
+      className="sc-AxheI iCMBga"
     >
       <svg
         fill="currentColor"
@@ -120,7 +120,7 @@ exports[`Alert Snapshots Success 1`] = `
       </svg>
     </div>
     <div
-      className="sc-AykKJ leFvmq"
+      className="sc-Axmtr bfHAPN"
     >
       <p>
         Body
@@ -132,15 +132,15 @@ exports[`Alert Snapshots Success 1`] = `
 
 exports[`Alert Snapshots Warning 1`] = `
 <div
-  className="sc-fzXfLO cREgjI"
+  className="sc-fzozJi iUmBuG"
   role="alert"
   type="warning"
 >
   <div
-    className="sc-AykKK ZTror"
+    className="sc-AxmLO hYsIHo"
   >
     <div
-      className="sc-AykKI cwlBXB"
+      className="sc-AxheI iCMBga"
     >
       <svg
         fill="currentColor"
@@ -154,7 +154,7 @@ exports[`Alert Snapshots Warning 1`] = `
       </svg>
     </div>
     <div
-      className="sc-AykKJ leFvmq"
+      className="sc-Axmtr bfHAPN"
     >
       <p>
         Body
@@ -166,15 +166,15 @@ exports[`Alert Snapshots Warning 1`] = `
 
 exports[`Alert Snapshots use Test Theme 1`] = `
 <div
-  className="sc-fzXfLO jBhqQp"
+  className="sc-fzozJi eQkogr"
   role="alert"
   type="warning"
 >
   <div
-    className="sc-AykKK ZTror"
+    className="sc-AxmLO hYsIHo"
   >
     <div
-      className="sc-AykKI cwlBXB"
+      className="sc-AxheI iCMBga"
     >
       <svg
         fill="currentColor"
@@ -188,7 +188,7 @@ exports[`Alert Snapshots use Test Theme 1`] = `
       </svg>
     </div>
     <div
-      className="sc-AykKJ leFvmq"
+      className="sc-Axmtr bfHAPN"
     >
       <p>
         Body
@@ -200,15 +200,15 @@ exports[`Alert Snapshots use Test Theme 1`] = `
 
 exports[`Alert Snapshots use VioletTendencies 1`] = `
 <div
-  className="sc-fzXfLO gqsMtW"
+  className="sc-fzozJi gHhNre"
   role="alert"
   type="warning"
 >
   <div
-    className="sc-AykKK bthtFb"
+    className="sc-AxmLO eQbtZA"
   >
     <div
-      className="sc-AykKI ggBlYg"
+      className="sc-AxheI kkLVbR"
     >
       <svg
         fill="currentColor"
@@ -222,7 +222,7 @@ exports[`Alert Snapshots use VioletTendencies 1`] = `
       </svg>
     </div>
     <div
-      className="sc-AykKJ leFvmq"
+      className="sc-Axmtr bfHAPN"
     >
       <p>
         Body
@@ -234,15 +234,15 @@ exports[`Alert Snapshots use VioletTendencies 1`] = `
 
 exports[`Alert Snapshots use whiteCollar 1`] = `
 <div
-  className="sc-fzXfLO cKbjbo"
+  className="sc-fzozJi giuuAm"
   role="alert"
   type="warning"
 >
   <div
-    className="sc-AykKK ZTror"
+    className="sc-AxmLO hYsIHo"
   >
     <div
-      className="sc-AykKI cwlBXB"
+      className="sc-AxheI iCMBga"
     >
       <svg
         fill="currentColor"
@@ -256,7 +256,7 @@ exports[`Alert Snapshots use whiteCollar 1`] = `
       </svg>
     </div>
     <div
-      className="sc-AykKJ leFvmq"
+      className="sc-Axmtr bfHAPN"
     >
       <p>
         Body

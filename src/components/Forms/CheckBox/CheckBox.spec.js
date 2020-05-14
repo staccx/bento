@@ -2,6 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
+import { render, fireEvent, screen } from "@testing-library/react"
 import CheckBox from "./CheckBox"
 
 const Child = () => <p>Body</p>
@@ -56,5 +57,34 @@ describe("CheckBox", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+  })
+})
+
+describe("Rendering", () => {
+  const tempConsole = console.log
+  beforeAll(() => {
+    console.log = jest.fn()
+  })
+  afterAll(() => {
+    console.log = tempConsole
+  })
+  it("Should click", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <CheckBox
+          data-testid="test"
+          id="ID"
+          onChange={() => console.log("click")}
+        >
+          <Child />
+        </CheckBox>
+      </ThemeProvider>
+    )
+    const checkbox = screen.getByTestId("test")
+    expect(checkbox).toBeInTheDocument()
+    expect(checkbox.checked).toBe(false)
+    fireEvent.click(checkbox)
+    expect(console.log.mock.calls[0][0]).toBe("click")
+    expect(checkbox.checked).toBe(true)
   })
 })

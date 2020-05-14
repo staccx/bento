@@ -2,16 +2,16 @@
 
 exports[`FullScreenLoader Snapshots Messages 1`] = `
 <div
-  className="sc-AykKH hsMHTL"
+  className="sc-AxgMl iKPYEv"
 >
   <div
-    className="sc-AykKD ggtnrM"
+    className="sc-AxirZ jMKBgx"
   >
     <div
-      className="sc-AykKC ifApnH"
+      className="sc-AxjAm icExq"
     />
     <div
-      className="sc-AykKE fffipx"
+      className="sc-AxiKw kTArkf"
     />
   </div>
 </div>
@@ -19,19 +19,19 @@ exports[`FullScreenLoader Snapshots Messages 1`] = `
 
 exports[`FullScreenLoader Snapshots Multiple words 1`] = `
 <div
-  className="sc-AykKH hsMHTL"
+  className="sc-AxgMl iKPYEv"
 >
   <div
-    className="sc-AykKD ggtnrM"
+    className="sc-AxirZ jMKBgx"
   >
     <div
-      className="sc-AykKC ifApnH"
+      className="sc-AxjAm icExq"
     />
     <div
-      className="sc-AykKE fffipx"
+      className="sc-AxiKw kTArkf"
     >
       <div
-        className="sc-AykKG dJwxro"
+        className="sc-AxhUy cISrBP"
       >
         hei
       </div>
@@ -42,16 +42,16 @@ exports[`FullScreenLoader Snapshots Multiple words 1`] = `
 
 exports[`FullScreenLoader Snapshots invalid Messages 1`] = `
 <div
-  className="sc-AykKH hsMHTL"
+  className="sc-AxgMl iKPYEv"
 >
   <div
-    className="sc-AykKD ggtnrM"
+    className="sc-AxirZ jMKBgx"
   >
     <div
-      className="sc-AykKC ifApnH"
+      className="sc-AxjAm icExq"
     />
     <div
-      className="sc-AykKE fffipx"
+      className="sc-AxiKw kTArkf"
     />
   </div>
 </div>

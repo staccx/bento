@@ -2,10 +2,10 @@
 
 exports[`Alert Snapshots No props 1`] = `
 <div
-  className="sc-AykKC bIbiJr"
+  className="sc-AxjAm hrntKs"
 >
   <div
-    className="sc-AykKD croRbF"
+    className="sc-AxirZ dzqsui"
     spacing="tiny"
   >
     <p>
@@ -20,10 +20,10 @@ exports[`Alert Snapshots No props 1`] = `
 
 exports[`Alert Snapshots Spacing 1`] = `
 <div
-  className="sc-AykKC bIbiJr"
+  className="sc-AxjAm hrntKs"
 >
   <div
-    className="sc-AykKD kdSPhR"
+    className="sc-AxirZ bVmwvu"
     spacing="huge"
   >
     <p>
@@ -38,10 +38,10 @@ exports[`Alert Snapshots Spacing 1`] = `
 
 exports[`Alert Snapshots invalid spacing 1`] = `
 <div
-  className="sc-AykKC bIbiJr"
+  className="sc-AxjAm hrntKs"
 >
   <div
-    className="sc-AykKD fruWvN"
+    className="sc-AxirZ eBvUEG"
     spacing={10}
   />
 </div>
@@ -49,10 +49,10 @@ exports[`Alert Snapshots invalid spacing 1`] = `
 
 exports[`Alert Snapshots no children 1`] = `
 <div
-  className="sc-AykKC bIbiJr"
+  className="sc-AxjAm hrntKs"
 >
   <div
-    className="sc-AykKD croRbF"
+    className="sc-AxirZ dzqsui"
     spacing="tiny"
   />
 </div>

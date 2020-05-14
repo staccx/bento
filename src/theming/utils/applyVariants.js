@@ -1,5 +1,5 @@
-import loglevel from "loglevel"
 import deepfind from "./deepfind"
+import { themeLogger } from "../theme.logger"
 import { VARIANT_DEFAULT } from "../themeContants"
 
 /**
@@ -11,12 +11,12 @@ export default themeProps => props => {
   const { variant = VARIANT_DEFAULT, theme } = props
 
   if (!theme) {
-    loglevel.warn("No theme!", variant)
+    themeLogger.warn("No theme!", variant)
     return null
   }
 
   if (!themeProps) {
-    loglevel.error("No theme props!", theme, variant, props)
+    themeLogger.error("No theme props!", theme, variant, props)
     return null
   }
 
@@ -30,7 +30,7 @@ export default themeProps => props => {
   }
 
   if (!name) {
-    loglevel.warn("No name!", variant, theme)
+    themeLogger.warn("No name!", variant, theme)
     return null
   }
 
@@ -48,15 +48,20 @@ export default themeProps => props => {
 const getVariants = (theme, variant, name) => {
   const type = typeof variant
   if (Array.isArray(variant)) {
+    themeLogger.info("Variant is an array", variant)
     return variant.map(v => getVariant(theme, v, name))
   } else if (type === "function") {
+    themeLogger.info("Variant is a function", variant)
     return getVariant(theme, variant({ name, theme }), name)
   } else if (type === "string") {
+    themeLogger.info("Variant is a string", variant)
     return getVariant(theme, variant, name)
   } else if (type === "object") {
+    themeLogger.info("Variant is an object", variant)
     const keys = Object.keys(variant)
     return keys.map(key => getVariant(theme, variant[key], key))
   }
+  themeLogger.warn("Unsupported variant type", type, variant, name)
   return null
 }
 /**
@@ -69,6 +74,7 @@ const getVariants = (theme, variant, name) => {
 const getVariant = (theme, variant, name) => {
   const styles = deepfind(theme, name)
   if (!styles || !styles[variant]) {
+    themeLogger.warn("Could not find any styles for variant", variant, name)
     return null
   }
 

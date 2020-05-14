@@ -47,7 +47,7 @@ const Transform = ({ children, data }) => {
 }
 
 Transform.propTypes = {
-  value: PropTypes.any.isRequired
+  data: PropTypes.any.isRequired
 }
 
 export default Transform
