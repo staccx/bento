@@ -2,6 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
+import { render, screen } from "@testing-library/react"
 import Toggle from "./Toggle"
 
 describe("Toggle", () => {
@@ -10,7 +11,7 @@ describe("Toggle", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Toggle />
+            <Toggle id="test" />
           </ThemeProvider>
         )
         .toJSON()
@@ -20,7 +21,7 @@ describe("Toggle", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Toggle disabled />
+            <Toggle id="test" disabled />
           </ThemeProvider>
         )
         .toJSON()
@@ -30,7 +31,7 @@ describe("Toggle", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Toggle group="Group" />
+            <Toggle id="test" group="Group" />
           </ThemeProvider>
         )
         .toJSON()
@@ -50,7 +51,7 @@ describe("Toggle", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Toggle input="" />
+            <Toggle id="test" input="" />
           </ThemeProvider>
         )
         .toJSON()
@@ -60,7 +61,7 @@ describe("Toggle", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Toggle onChange={e => console.log(e.target.value)} />
+            <Toggle id="test" onChange={e => console.log(e.target.value)} />
           </ThemeProvider>
         )
         .toJSON()
@@ -70,7 +71,7 @@ describe("Toggle", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Toggle className="Toggle" />
+            <Toggle id="test" className="Toggle" />
           </ThemeProvider>
         )
         .toJSON()
@@ -80,7 +81,7 @@ describe("Toggle", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Toggle defaultChecked />
+            <Toggle id="test" defaultChecked />
           </ThemeProvider>
         )
         .toJSON()
@@ -90,7 +91,7 @@ describe("Toggle", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Toggle>
+            <Toggle id="test">
               <p>hei</p>
             </Toggle>
           </ThemeProvider>
@@ -103,6 +104,7 @@ describe("Toggle", () => {
         .create(
           <ThemeProvider theme={baseTheme}>
             <Toggle
+              id="test"
               disabled
               group="Group"
               input=""
@@ -115,5 +117,16 @@ describe("Toggle", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("Should render", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <Toggle id="test" data-testid="testID" />
+      </ThemeProvider>
+    )
+    expect(screen.getByTestId("testID")).toBeInTheDocument()
   })
 })
