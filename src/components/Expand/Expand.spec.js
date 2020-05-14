@@ -123,21 +123,9 @@ describe("Expand", () => {
           </Expand>
         </ThemeProvider>
       )
+      expect(() => screen.getByText("Body")).toThrow()
       fireEvent.click(screen.getByText("header"))
       expect(screen.getByText("Body")).toBeInTheDocument()
-    })
-    it("should not show child", () => {
-      render(
-        <ThemeProvider theme={baseTheme}>
-          <Expand onClick={event => console.log(event)}>
-            <span>
-              <SpanContent />
-            </span>
-            <Child />
-          </Expand>
-        </ThemeProvider>
-      )
-      expect(screen.queryBy * "Body").toBeNaN()
     })
   })
 })
