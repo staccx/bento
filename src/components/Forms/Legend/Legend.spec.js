@@ -2,6 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
+import { render, screen } from "@testing-library/react"
 import Legend from "./Legend"
 
 describe("Legend", () => {
@@ -26,5 +27,16 @@ describe("Legend", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("Should render", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <Legend>This is a legend</Legend>
+      </ThemeProvider>
+    )
+    expect(screen.getByText("This is a legend")).toBeInTheDocument()
   })
 })
