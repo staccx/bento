@@ -2,6 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../theming/themes/baseTheme"
+import { render, screen } from "@testing-library/react"
 import RadioButton from "./RadioButton"
 
 describe("RadioButton", () => {
@@ -48,5 +49,18 @@ describe("RadioButton", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+  })
+})
+
+describe("Rendering", () => {
+  it("Should render", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <RadioButton id="ID" group="ID1">
+          RadioButton
+        </RadioButton>
+      </ThemeProvider>
+    )
+    expect(screen.getByText("RadioButton")).toBeInTheDocument()
   })
 })
