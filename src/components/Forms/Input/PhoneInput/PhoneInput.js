@@ -30,9 +30,7 @@ const PhoneInput = React.forwardRef(
   ) => {
     return (
       <PhoneInputWrapper {...otherProps}>
-        <Label htmlFor="test" {...otherProps}>
-          {label}
-        </Label>
+        <Label {...otherProps}>{label}</Label>
         <Wrap {...otherProps}>
           {showCountryCode && (
             <CountryCode>
@@ -59,7 +57,6 @@ const PhoneInput = React.forwardRef(
             </CountryCode>
           )}
           <PInput
-            id="test"
             type="tel"
             ref={ref}
             options={{
