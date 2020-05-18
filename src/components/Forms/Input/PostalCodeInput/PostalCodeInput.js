@@ -23,7 +23,6 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   const inputRef = useRef(null)
   const [input, setInput] = useState(defaultValue)
   const [place, error] = usePostalCode(input)
-
   const handleChange = e => {
     const { rawValue: value } = e.target
     setInput(value)

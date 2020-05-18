@@ -3,7 +3,7 @@ import { renderHook } from "@testing-library/react-hooks"
 import { render, screen } from "@testing-library/react"
 import useBrRegSearch from "./useBrRegSearch"
 
-describe.skip("useBrregSearch", () => {
+describe("useBrregSearch", () => {
   it("search", async () => {
     const { result, waitForNextUpdate } = renderHook(() =>
       useBrRegSearch("Stacc")
