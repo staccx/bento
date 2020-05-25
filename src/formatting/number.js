@@ -9,7 +9,7 @@ const defaults = {
   currency: "NOK", // http://www.currency-iso.org/en/home/tables/table-a1.html,
   useGrouping: true,
   locale: "nb-no",
-  unit: null,
+  unit: undefined,
   minimumFractionDigits: 0
 }
 
