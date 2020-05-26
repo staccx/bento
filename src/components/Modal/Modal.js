@@ -43,6 +43,7 @@ const Modal = ({ children, className, isOpen, onClose, variant, ...props }) => {
     document.addEventListener("keydown", escFunction)
     return () => {
       document.removeEventListener("keydown", escFunction)
+      document.documentElement.style.overflow = ""
     }
   }, [])
 
