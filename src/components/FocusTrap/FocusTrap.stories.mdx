@@ -1,0 +1,37 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import FocusTrap from "./FocusTrap.js"
+
+<Meta title="Components|FocusTrap" component={FocusTrap} parameters={{component: FocusTrap.themeProps.container.name}} />
+
+# FocusTrap
+
+FocusTrap that lets you keep focus within it.
+
+
+```javascript
+import {FocusTrap} from "@staccx/bento"
+```
+
+## FocusTrap default
+<Preview>
+  <Story name="FocusTrap default">
+  <div tabindex="0">
+  This is outside the focus trap
+    <FocusTrap options={{clickOutsideDeactivates:false}}>
+    <>
+        <span>This is within</span>
+            <div>
+                <p>Some more text</p>
+            </div>
+            <button>
+                This is focusable
+                </button>
+                 <button>
+                                This is focusable
+                                </button>
+                </>
+    </FocusTrap>
+    </div>
+  </Story>
+</Preview>
+
