@@ -15,9 +15,14 @@ import {
 import ThemeComponent from "../Theme/ThemeComponent"
 import themeProps from "./Modal.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
+import { useFocusTrap } from "../../hooks/useFocusTrap/useFocusTrap"
 
 const Modal = ({ children, className, isOpen, onClose, variant, ...props }) => {
   const [open, setOpen] = React.useState(isOpen)
+  const containerRef = React.useRef(null)
+  const { activate } = useFocusTrap(containerRef, {
+    activateOnReady: false
+  })
 
   const handleClose = event => {
     if (onClose) {
@@ -47,52 +52,58 @@ const Modal = ({ children, className, isOpen, onClose, variant, ...props }) => {
     }
   }, [])
 
-  React.useEffect(fixOverflow, [open])
+  React.useEffect(() => {
+    fixOverflow()
+    if (open) {
+      activate()
+    }
+  }, [open])
   React.useEffect(() => {
     if (isOpen !== open) {
       setOpen(isOpen)
     }
   }, [isOpen])
 
-  if (open) {
-    return (
-      <>
-        <ModalItem
-          className={className}
-          {...props}
-          role="dialog"
-          tabIndex="0"
-          open="open"
-          aria-labelledby="modal"
-          variant={variant}
-        >
-          <ModalContent
-            role="document"
+  return (
+    <div ref={containerRef}>
+      {open && (
+        <>
+          <ModalItem
+            className={className}
+            {...props}
+            role="dialog"
             tabIndex="0"
-            id="modal"
+            open="open"
+            aria-labelledby="modal"
             variant={variant}
           >
-            <Close
-              type="button"
-              id="modal-close"
-              aria-label="Close (Press escape to close)"
-              onClick={handleClose}
+            <ModalContent
+              role="document"
+              tabIndex="0"
+              id="modal"
               variant={variant}
             >
-              <span>Close</span>
-              <Icon />
-            </Close>
-            {children}
-          </ModalContent>
-        </ModalItem>
-        <ModalBackdrop
-          onClick={e => console.log("Clicked") || handleClose(e)}
-          variant={variant}
-        />
-      </>
-    )
-  }
-  return null
+              <Close
+                type="button"
+                id="modal-close"
+                aria-label="Close (Press escape to close)"
+                onClick={handleClose}
+                variant={variant}
+              >
+                <span>Close</span>
+                <Icon />
+              </Close>
+              {children}
+            </ModalContent>
+          </ModalItem>
+          <ModalBackdrop
+            onClick={e => console.log("Clicked") || handleClose(e)}
+            variant={variant}
+          />
+        </>
+      )}
+    </div>
+  )
 }
 
 const ModalItem = styled.dialog`
@@ -148,13 +159,13 @@ const Close = styled.button`
   z-index: 9999;
   background: transparent;
   border-width: 0;
-  fill: ${color.primary};
+  color: ${color.primary};
   padding: ${spacing.small};
   cursor: pointer;
   &:focus,
   &:hover {
     outline: none;
-    fill: ${color.primary};
+    color: ${color.secondary};
   }
   span {
     ${hideVisually};
