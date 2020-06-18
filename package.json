@@ -1,6 +1,6 @@
 {
   "name": "@staccx/bento",
-  "version": "10.0.1-alpha.50",
+  "version": "10.0.1-alpha.51",
   "scripts": {
     "test": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test --env=jsdom-sixteen",
     "test:ci": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test --watchAll=false --silent --coverage --env=jsdom-sixteen",
