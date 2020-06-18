@@ -1,3 +1,14 @@
+## [10.0.1-alpha.51](https://github.com/staccx/bento/compare/v10.0.1-alpha.50...v10.0.1-alpha.51) (2020-06-18)
+
+
+### Features
+
+* **components:** modal now has focus trap ([7a28991](https://github.com/staccx/bento/commit/7a28991))
+* **components:** modal now uses hook for focus ([2f32509](https://github.com/staccx/bento/commit/2f32509))
+* **hooks:** add new hook useFocusTrap ([d678b10](https://github.com/staccx/bento/commit/d678b10))
+
+
+
 ## [10.0.1-alpha.50](https://github.com/staccx/bento/compare/v10.0.1-alpha.49...v10.0.1-alpha.50) (2020-05-26)
 
 
