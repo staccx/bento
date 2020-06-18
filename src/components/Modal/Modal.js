@@ -18,11 +18,17 @@ import { componentCreateFactory } from "../../theming/utils/createVariantsFuncti
 import { useFocusTrap } from "../../hooks/useFocusTrap/useFocusTrap"
 
 const Modal = ({ children, className, isOpen, onClose, variant, ...props }) => {
-  const [open, setOpen] = React.useState(isOpen)
+  const [open, setOpen] = React.useState(false)
   const containerRef = React.useRef(null)
-  const { activate } = useFocusTrap(containerRef, {
-    activateOnReady: false
-  })
+  const { ready, activate } = useFocusTrap(
+    containerRef,
+    {
+      activateOnReady: false
+    },
+    {
+      fallbackFocus: "#modal"
+    }
+  )
 
   const handleClose = event => {
     if (onClose) {
@@ -54,10 +60,10 @@ const Modal = ({ children, className, isOpen, onClose, variant, ...props }) => {
 
   React.useEffect(() => {
     fixOverflow()
-    if (open) {
+    if (open && ready) {
       activate()
     }
-  }, [open])
+  }, [open, ready])
   React.useEffect(() => {
     if (isOpen !== open) {
       setOpen(isOpen)
@@ -96,10 +102,7 @@ const Modal = ({ children, className, isOpen, onClose, variant, ...props }) => {
               {children}
             </ModalContent>
           </ModalItem>
-          <ModalBackdrop
-            onClick={e => console.log("Clicked") || handleClose(e)}
-            variant={variant}
-          />
+          <ModalBackdrop onClick={handleClose} variant={variant} />
         </>
       )}
     </div>
