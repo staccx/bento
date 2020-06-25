@@ -2,7 +2,8 @@ export {
   formatCurrency,
   createCurrencyMask,
   currencyMaskOptions,
-  abbreviateCurrency
+  abbreviateCurrency,
+  formatMoney
 } from "./currency"
 export { formatDateDistance, formatDateRelative, formatDate } from "./date"
 export { default as removeWhitespace } from "./removeWhitespace"
