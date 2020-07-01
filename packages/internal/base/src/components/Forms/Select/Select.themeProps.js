@@ -40,6 +40,11 @@ const selectThemeProps = {
     name: "SELECT_DEFAULT_OPTION",
     description: "Select default Button-style",
     type: themePropTypes.style
+  },
+  helpButton: {
+    name: "BUTTON_HELP",
+    description: "Help button style",
+    type: themePropTypes.style
   }
 }
 

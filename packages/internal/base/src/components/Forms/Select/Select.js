@@ -16,6 +16,9 @@ import {
   borderRadius
 } from "../../../theming"
 import themeProps from "./Select.themeProps"
+import { commonPropTypes } from "../../../constants/themeContants"
+import QuestionMark from "../../Icons/QuestionMark"
+import { FadeIn } from "@staccx/animations"
 
 const CaretComp = ({ ...props }) => (
   <ThemeComponent
@@ -41,7 +44,8 @@ class Select extends React.PureComponent {
         ? this.props.placeHolderLabel
           ? this.props.placeHolderLabel
           : this.props.items[0]
-        : null
+        : null,
+      showHelp: false
     }
 
     this.setFilter = this.setFilter.bind(this)
@@ -127,7 +131,24 @@ class Select extends React.PureComponent {
     const renderPlaceholder = getToggleButtonProps => (
       <SelectWrapper className={className} variant={variant}>
         {this.props.label && (
-          <Label variant={variant}>{this.props.label}</Label>
+          <Label variant={variant}>
+            {this.props.label}
+            {this.props.helpText && (
+              <NoWrapSpan>
+                &nbsp;
+                <HelpIcon
+                  onClick={() =>
+                    this.setState({ showHelp: !this.state.showHelp })
+                  }
+                />
+              </NoWrapSpan>
+            )}
+          </Label>
+        )}
+        {this.props.helpText && (
+          <HelpText isVisible={this.state.showHelp}>
+            {this.props.helpText}
+          </HelpText>
         )}
         <SelectedWrapper variant={variant} isSelected>
           <Selected
@@ -205,6 +226,44 @@ class Select extends React.PureComponent {
     )
   }
 }
+
+const HelpText = styled.div`
+  display: ${p => (p.isVisible ? "block" : "none")};
+  opacity: 0;
+  animation: ${FadeIn} 0.4s ease-out 1 forwards;
+  ${applyVariants(Input.themeProps.helpText)};
+`
+
+const HelpButton = styled.button`
+  -webkit-appearance: none;
+  border: initial;
+  padding: 0;
+  cursor: pointer;
+  line-height: 0;
+  ${applyVariants(Input.themeProps.helpButton)};
+`
+
+const HelpBox = ({ onClick }) => (
+  <HelpButton onClick={onClick} type={"button"}>
+    <QuestionMark />
+  </HelpButton>
+)
+
+const IconComponent = ({ ...props }) => (
+  <ThemeComponent
+    tagName={Input.themeProps.iconComponent.name}
+    fallback={HelpBox}
+    {...props}
+  />
+)
+
+const HelpIcon = styled(IconComponent)`
+  ${applyVariants(Input.themeProps.icon.name)};
+`
+
+const NoWrapSpan = styled.span`
+  white-space: nowrap;
+`
 
 const SelectItem = styled.li`
   list-style: none;
@@ -300,7 +359,8 @@ Select.propTypes = {
   placeHolderLabel: PropTypes.any,
   renderSelected: PropTypes.func,
   selectedItem: PropTypes.any,
-  variant: PropTypes.string
+  variant: PropTypes.string,
+  helpText: commonPropTypes.children
 }
 
 Select.defaultProps = {
@@ -310,7 +370,8 @@ Select.defaultProps = {
   combobox: false,
   itemToKey: item => item,
   itemToString: item => item,
-  maxItems: -1
+  maxItems: -1,
+  helpText: ""
 }
 
 Select.themeProps = themeProps
