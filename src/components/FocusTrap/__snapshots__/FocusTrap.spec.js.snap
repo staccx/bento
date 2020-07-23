@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FocusTrap Snapshots First 1`] = `
+<div>
+  <p>
+    this is outside of the trap
+  </p>
+  <div
+    className="sc-AxjAm jzbbdJ"
+  >
+    <span>
+      this is inside the trap
+    </span>
+    <div>
+      <p>
+        Some more text
+      </p>
+    </div>
+    <button>
+      This is focusable
+    </button>
+    <button>
+      This is focusable
+    </button>
+  </div>
+</div>
+`;
