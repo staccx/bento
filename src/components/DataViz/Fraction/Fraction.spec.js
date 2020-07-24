@@ -79,5 +79,26 @@ describe("Fraction", () => {
       )
       expect(screen.getByTestId("test")).toBeInTheDocument()
     })
+    it("should show 50% fraction", function() {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Fraction data-testid="test" value={5} max={10} />
+        </ThemeProvider>
+      )
+      expect(screen.getByTestId("test")).toBeInTheDocument()
+    })
+    it("should handleClick", function() {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Fraction
+            data-testid="test"
+            value={5}
+            max={10}
+            onClick={() => console.log("Fraction onClick")}
+          />
+        </ThemeProvider>
+      )
+      expect(screen.getByTestId("test")).toBeInTheDocument()
+    })
   })
 })
