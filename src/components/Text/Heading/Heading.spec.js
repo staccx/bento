@@ -76,6 +76,16 @@ describe("Heading", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
+    it("Should default to h1", () => {
+      const tree = renderer
+        .create(
+          <ThemeProvider theme={baseTheme}>
+            <Heading level={9}>Hei</Heading>
+          </ThemeProvider>
+        )
+        .toJSON()
+      expect(tree).toMatchSnapshot()
+    })
     it("no Children", () => {
       const tree = renderer
         .create(
