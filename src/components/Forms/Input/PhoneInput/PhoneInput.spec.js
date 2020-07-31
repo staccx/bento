@@ -57,4 +57,15 @@ describe("Rendering", () => {
     userEvent.type(input, "47474747858585")
     expect(input.value).toBe("474 74 747")
   })
+  it("PhoneInput with contrycode", () => {
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <PhoneInput id="test" label="test" alt="test" showCountryCode />
+      </ThemeProvider>
+    )
+    expect(screen.getByAltText("test")).toBeInTheDocument()
+    const input = screen.getByAltText("test")
+    userEvent.type(input, "+4793092069")
+    expect(input.value).toBe("+47 930 92 069")
+  })
 })
