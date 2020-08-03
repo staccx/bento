@@ -8,3 +8,21 @@ exports[`Theme Provider Button Button 1`] = `
   Click me
 </button>
 `;
+
+exports[`Theme Provider Button everything 1`] = `
+<button
+  className="sc-AxjAm kHAlBU"
+  onClick={null}
+>
+  Click me
+</button>
+`;
+
+exports[`Theme Provider Button logLevel 1`] = `
+<button
+  className="sc-AxjAm kHAlBU"
+  onClick={null}
+>
+  Click me
+</button>
+`;
