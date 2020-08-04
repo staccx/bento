@@ -45,7 +45,7 @@ Then, navigate to your project folder and run this command:
 
   ```
 
-Now you will have access to the bento-cli from your project folder. this will allow you to import themes and variants you have created in Figma with the following commands
+You now have access to the bento-cli from your project folder. This will allow you to import themes and variants you have created in Figma with the following commands
 
 ```
 
@@ -60,8 +60,7 @@ This will import your theme from Figma
 
 ```
 Will import all variants you have created of the Button component.
-For this to work its important that your Figma project has been structured in the correct way. If you dont know the right way to structure the project, theme and variants, please
-refer to the Figma project "Bento Components".
+
 
 
 ## Bento-cli eslint
@@ -74,3 +73,18 @@ refer to the Figma project "Bento Components".
 
 
   The above command will install our eslint-config to your project, it will also add the .eslintrc file with the right config into your project.
+
+
+## Structure of Figma
+
+For this to work its important that your Figma project has been structured in the correct way. If you dont know the right way to structure the project, theme and variants, please
+refer to the Figma project "Bento Components".
+But the headlines are:
+  - Your Theme properties will have to be placed in a page called "Theme".
+  - Each Theme property will have to be placed in a frame with the name of the property, example: Create a frame with the name spacing, and place boxes inside this frame.
+    These will have to be named what you want to call the spacing property, for example "huge, large, small". The boxes height will determine the size of the spacing property in px.
+
+    ## overwrite px
+
+    We have also created a way of overwriting the px height of the box if you need to use other types like vh. This is done with the name of the component. just name the property "custom /7vh" then the value behind / will become the new spacing size.
+
