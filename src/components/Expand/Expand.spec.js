@@ -127,5 +127,39 @@ describe("Expand", () => {
       fireEvent.click(screen.getByText("header"))
       expect(screen.getByText("Body")).toBeInTheDocument()
     })
+    it("pass onClick", () => {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Expand
+            onClick={() => {
+              console.log("onClick")
+            }}
+          >
+            <span>
+              <SpanContent />
+            </span>
+            <Child />
+          </Expand>
+        </ThemeProvider>
+      )
+      expect(() => screen.getByText("Body")).toThrow()
+      fireEvent.click(screen.getByText("header"))
+      expect(screen.getByText("Body")).toBeInTheDocument()
+    })
+    it("Expanded false", () => {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Expand expanded={false}>
+            <span>
+              <SpanContent />
+            </span>
+            <Child />
+          </Expand>
+        </ThemeProvider>
+      )
+      expect(() => screen.getByText("Body")).toThrow()
+      fireEvent.click(screen.getByText("header"))
+      expect(screen.getByText("Body")).toBeInTheDocument()
+    })
   })
 })

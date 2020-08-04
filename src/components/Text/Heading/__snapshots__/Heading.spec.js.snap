@@ -16,6 +16,14 @@ exports[`Heading Snapshots No props 1`] = `
 </h1>
 `;
 
+exports[`Heading Snapshots Should default to h1 1`] = `
+<h1
+  className="sc-AxjAm gToDFS"
+>
+  Hei
+</h1>
+`;
+
 exports[`Heading Snapshots level 1 1`] = `
 <h1
   className="sc-AxjAm gToDFS"
