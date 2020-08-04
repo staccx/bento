@@ -39,11 +39,11 @@ export const waitError = (response, delay = 1000) =>
    return (
         <div>
        <div>State: {state}</div>
-  {state === "idle" && <Button onClick={submit}>Submit</Button>}
-      {state === "requesting" && <Loading idleTime={0}/>}
-      {state === "success" && <span>Result was {result}</span>}
-      {state === "success" && <Button onClick={retry}>Retry</Button>}
-      {state === "error" && <span>Error is {error}</span>}
+  {state === useApiRequest.states.IDLE && <Button onClick={submit}>Submit</Button>}
+    {state === useApiRequest.states.REQUESTING && <Loading idleTime={0}/>}
+      {state === useApiRequest.states.SUCCESS && <span>Result was {result}</span>}
+      {state === useApiRequest.states.SUCCESS && <Button onClick={retry}>Retry</Button>}
+      {state === useApiRequest.states.ERROR && <span>Error is {error}</span>}
         </div>
       )
    }}
@@ -59,10 +59,10 @@ export const waitError = (response, delay = 1000) =>
    return (
         <div>
   <div>State: {state}</div>
-  {state === "idle" && <Button onClick={submit}>Submit</Button>}
-      {state === "requesting" && <Loading idleTime={0}/>}
-      {state === "error" && <Button onClick={retry}>Retry</Button>}
-      {state === "error" && <span>Error is {error}</span>}
+  {state === useApiRequest.states.IDLE && <Button onClick={submit}>Submit</Button>}
+      {state === useApiRequest.states.REQUESTING && <Loading idleTime={0}/>}
+      {state === useApiRequest.states.ERROR && <Button onClick={retry}>Retry</Button>}
+      {state === useApiRequest.states.ERROR && <span>Error is {error}</span>}
         </div>
       )
    }}
