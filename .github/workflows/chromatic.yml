@@ -5,8 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: |
-          yarn && yarn build
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
       - uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.chromatic }}
