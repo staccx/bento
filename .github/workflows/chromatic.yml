@@ -16,5 +16,5 @@ jobs:
       - name: Chromatic run
         uses: chromaui/action@v1
         with:
-          projectToken: ${{ secrets.CHROMATIC_BENTO }}
+          projectToken: ${{ secrets.CHROMATIC }}
           token: ${{ secrets.GITHUB_TOKEN }}
