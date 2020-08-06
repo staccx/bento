@@ -2,16 +2,16 @@
  * @class Slider
  */
 
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
-  Slider as CompoundSlider,
-  Rail,
   Handles,
+  Rail,
+  Slider as CompoundSlider,
   Tracks
 } from "react-compound-slider"
-import { applyVariants, spacing, color } from "../../../../theming"
+import { applyVariants, color, spacing } from "../../../../theming"
 import Handle from "./Slider.Handle"
 import Track from "./Slider.Track"
 import themeProps from "./Slider.themeProps"
@@ -34,20 +34,39 @@ const Slider = ({
 }) => {
   const [values, setValues] = useState([value || defaultValue])
   const [update, setUpdate] = useState([defaultValue])
+  /* Since CompoundSlider triggers onChange and onUpdate on initialRender we ignore the
+    first updates as they will overwrite our defaultValue with a step normalized value
+  */
+  const [initialized, initializedSet] = useState({
+    update: false,
+    change: false
+  })
 
   const handleUpdate = value => {
-    setUpdate(value)
-    onUpdate && onUpdate(update[0])
+    if (initialized.update) {
+      setUpdate(value)
+      onUpdate && onUpdate(update[0])
+    } else {
+      initializedSet(prevState => {
+        initializedSet({ ...prevState, update: true })
+      })
+    }
   }
 
-  const handleChange = value => {
-    setValues(values)
-    onChange && onChange(value[0])
+  const handleChange = val => {
+    if (initialized.change) {
+      setValues(val)
+      onChange && onChange(val[0])
+    } else {
+      initializedSet(prevState => {
+        initializedSet({ ...prevState, change: true })
+      })
+    }
   }
 
-  const handleStart = values => {
-    setValues(values)
-    onSlideStart && onSlideStart(values[0])
+  const handleStart = val => {
+    setValues(val)
+    onSlideStart && onSlideStart(val[0])
   }
 
   useEffect(() => {
@@ -60,7 +79,7 @@ const Slider = ({
         mode={1}
         step={step}
         domain={[min, max]}
-        onUpdate={handleUpdate}
+        onUpdate={onUpdate ? handleUpdate : () => null}
         onChange={handleChange}
         onSlideStart={handleStart}
         values={values}
