@@ -1,15 +1,20 @@
-name: Chromatic
-on: push
+name: Perform tests
+on:
+  push:
+    branches:
+      - master
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  chromatic:
+    runs-on: ubuntu-16.04
     steps:
-      - uses: actions/checkout@v1
-      - name: Install dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - uses: chromaui/action@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Yarn install
+        run: yarn install
+
+      - name: Chromatic run
+        uses: chromaui/action@v1
         with:
-          projectToken: ${{ secrets.chromatic }}
+          appCode: ${{ secrets.chromatic }}
           token: ${{ secrets.GITHUB_TOKEN }}
