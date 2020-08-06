@@ -10,6 +10,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Set environment
+        run: |
+          cat > .npmrc <<EOF
+          @sanity:registry=https://registry.npmjs.org/
+          @xstate:registry=https://registry.npmjs.org/
+          EOF
+
       - name: Yarn install
         run: yarn install
 
