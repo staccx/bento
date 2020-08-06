@@ -1,6 +1,6 @@
 {
   "name": "@staccx/bento",
-  "version": "10.0.1-alpha.54",
+  "version": "0.0.0-development",
   "scripts": {
     "test": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test --env=jsdom-sixteen",
     "test:ci": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test --watchAll=false --silent --coverage --env=jsdom-sixteen",
@@ -13,11 +13,12 @@
     "prepare": "yarn build",
     "alpha": "npm version prerelease --preid=alpha && npm publish",
     "dirty-deploy-storybook": "yarn build-storybook && cp now.json public/ && cd public && now --prod",
-    "chromatic": "CHROMATIC_APP_CODE=e5op6dsgv2n chromatic --exit-zero-on-changes"
+    "chromatic": "CHROMATIC_APP_CODE=e5op6dsgv2n chromatic --exit-zero-on-changes",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:staccx/bento.git"
+    "url": "https://github.com/staccx/bento.git"
   },
   "files": [
     "lib"
@@ -90,6 +91,7 @@
     "react-markdown": "^4.3.1",
     "react-scripts": "^3.3.0",
     "react-test-renderer": "^16.12.0",
+    "semantic-release": "^17.1.1",
     "storybook-chromatic": "^3.5.2",
     "storybook-host": "^5.1.0",
     "styled-components": "^5.0.0"
