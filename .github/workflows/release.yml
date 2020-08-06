@@ -1,15 +1,14 @@
 name: Release bento
 on: push
 jobs:
-  test:
+  release:
     runs-on: ubuntu-16.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - run: npm test:ci
-      - run: npm chromatic
+      - run: yarn test:ci
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
