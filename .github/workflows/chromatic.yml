@@ -1,11 +1,8 @@
 name: Perform tests
 on:
-  workflow_run:
-    workflows: ["Setup Environment"]
-    branches: [master]
-    types:
-      - completed
-      - requested
+  push:
+    branches:
+      - master
 jobs:
   chromatic:
     runs-on: ubuntu-16.04
