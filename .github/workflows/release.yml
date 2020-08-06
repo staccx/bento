@@ -5,14 +5,17 @@ jobs:
     runs-on: ubuntu-16.04
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v1
         with:
-          node-version: '12'
+          always-auth: true
+          node-version: '12.x'
+          registry-url: https://registry.npmjs.org
+          scope: '@xstate'
       - name: Install dependencies
         run: npm install
       - name: Run tests
         run: npm run test:ci
-      - run: npm set registry https://registry.npmjs.org/
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
