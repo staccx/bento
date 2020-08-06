@@ -1,8 +1,11 @@
 name: Perform tests
 on:
-  push:
-    branches:
-      - master
+  workflow_run:
+    workflows: ["Setup Environment"]
+    branches: [master]
+    types:
+      - completed
+      - requested
 jobs:
   chromatic:
     runs-on: ubuntu-16.04
@@ -10,18 +13,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set environment
-        run: |
-          cat > .npmrc <<EOF
-          @sanity:registry=https://registry.npmjs.org/
-          @xstate:registry=https://registry.npmjs.org/
-          EOF
-
       - name: Yarn install
         run: yarn install
 
       - name: Chromatic run
         uses: chromaui/action@v1
         with:
-          appCode: ${{ secrets.chromatic }}
+          projectToken: ${{ secrets.chromatic }}
           token: ${{ secrets.GITHUB_TOKEN }}
