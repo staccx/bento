@@ -11,7 +11,7 @@ jobs:
           always-auth: true
           node-version: '12.x'
           registry-url: https://registry.npmjs.org
-          scope: '@xstate'
+          scope: '@xstate @sanity'
       - name: Install dependencies
         run: npm install
       - name: Run tests
