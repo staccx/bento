@@ -101,7 +101,7 @@
     "@sanity/block-content-to-react": "^2.0.6",
     "@sanity/client": "^0.147.3",
     "@sanity/image-url": "^0.140.17",
-    "@xstate/react": "^0.8.1",
+    "@xstate/react": "^1.0.0-rc.6",
     "axios": "^0.19.1",
     "cleave.js": "^1.4.4",
     "color": "^3.1.2",
