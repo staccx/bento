@@ -12,6 +12,7 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm run test:ci
+      - run: npm set registry https://registry.npmjs.org/
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
