@@ -25,7 +25,6 @@ exports[`SliderKeyboardInput Snapshots Name 1`] = `
       placeholder={null}
       style={null}
       type="text"
-      value={NaN}
     />
   </div>
   <div
