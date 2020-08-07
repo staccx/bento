@@ -92,7 +92,7 @@ const Provider = ({ children, level, ...props }) => {
       }
     })
 
-    i18nLogger.info("i18n ready to use", i18next)
+    i18nLogger.info("i18n ready to use")
     setReady(true)
   }, [
     backend,
@@ -116,6 +116,7 @@ const Provider = ({ children, level, ...props }) => {
         i18n: i18next,
         ready,
         languages,
+        language,
         changeLanguage
       }}
     >
@@ -193,7 +194,7 @@ export const I18nConsumer = ({ children }) => {
     i18nLogger.debug("i18nConsumer is not ready")
     return null
   }
-  i18nLogger.debug(`Returning ${children} with`, props)
+  i18nLogger.debug(`Returning ${children} with`)
   return children(props)
 }
 

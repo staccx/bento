@@ -68,7 +68,7 @@ const data = {
   ]
 }
 
-xdescribe("i18n", () => {
+describe("i18n", () => {
   describe("utils", () => {
     it("isBlock", () => {
       expect(isBlock("test")).toBe(false)
@@ -90,10 +90,10 @@ xdescribe("i18n", () => {
               </I18nConsumer>
             </Provider>
           )
-        })
-        const { getByText } = tree
-        waitForElement(() => getByText(/^Ready:/)).then(wait => {
-          expect(wait.textContent).toBe("Ready: true")
+          const { getByText } = tree
+          waitForElement(() => getByText(/^Ready:/)).then(wait => {
+            expect(wait.textContent).toBe("Ready: true")
+          })
         })
       })
     })
