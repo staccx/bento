@@ -4,13 +4,14 @@ import styled from "styled-components"
 import { BounceIn } from "../../animations"
 import Caret from "../Icons/Caret/Caret"
 import ThemeComponent from "../Theme/ThemeComponent"
-import { applyVariants, color, spacing, commonPropTypes } from "../../theming"
+import { applyVariants, color, commonPropTypes, spacing } from "../../theming"
 import themeProps from "./Expand.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
 const Expand = ({
   className,
   expanded = false,
+  closeOnItemClick,
   onClick,
   children,
   title,
@@ -21,6 +22,12 @@ const Expand = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(expanded)
 
+  const handleItemClick = e => {
+    if (closeOnItemClick) {
+      setIsExpanded(false)
+    }
+  }
+
   const handleExpand = event => {
     setIsExpanded(!isExpanded)
 
@@ -28,6 +35,10 @@ const Expand = ({
       onClick(event)
     }
   }
+
+  React.useEffect(() => {
+    setIsExpanded(expanded)
+  }, [expanded])
 
   return (
     <ExpandWrapper className={className} variant={variant} {...restProps}>
@@ -38,7 +49,7 @@ const Expand = ({
             <ExpandBtn
               title={title}
               isExpanded={isExpanded}
-              onClick={e => handleExpand(e)}
+              onClick={handleExpand}
               aria-expanded={isExpanded}
               aria-controls={title}
               id={(id ?? title) + "2"}
@@ -54,9 +65,10 @@ const Expand = ({
         return (
           isExpanded && (
             <ExpandItem
-              id={id ?? title}
+              id={`item-${i}`}
               aria-labelledby={(id ?? title) + "2"}
               variant={variant}
+              onClick={handleItemClick}
             >
               {child}
             </ExpandItem>
@@ -131,7 +143,8 @@ Expand.defaultProps = {
   expanded: false,
   className: "",
   title: "",
-  hideIcon: false
+  hideIcon: false,
+  closeOnItemClick: false
 }
 
 Expand.propTypes = {
@@ -152,7 +165,11 @@ Expand.propTypes = {
   /**
    * Boolean, set to true hides the Icon
    */
-  hideIcon: PropTypes.bool
+  hideIcon: PropTypes.bool,
+  /**
+   * Set this to true if you want the expand to close after an element has been clicked
+   */
+  closeOnItemClick: PropTypes.bool
 }
 Expand.themeProps = themeProps
 Expand.createVariants = componentCreateFactory(Expand)
