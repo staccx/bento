@@ -19,8 +19,6 @@ export { default as SliderTrack } from "./Forms/Slider/Slider/Slider.Track"
 export { default as SliderTick } from "./Forms/Slider/Slider/Slider.Tick"
 export { default as SelectSimple } from "./Forms/SelectSimple/SelectSimple"
 export { default as Toggle } from "./Forms/Toggle/Toggle"
-export { default as Form } from "./Forms/Form/Form"
-export { default as FormField } from "./Forms/Form/FormField"
 export { default as CreditCardInput } from "./Forms/Input/CreditCard/CreditCardInput"
 
 // Text
