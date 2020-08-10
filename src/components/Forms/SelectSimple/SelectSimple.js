@@ -13,7 +13,7 @@ import {
   targetSize,
   commonPropTypes
 } from "../../../theming"
-import ThemeComponent from "../../Theme/ThemeComponent"
+import ThemeComponent from "../../Theme/ThemeComponent/ThemeComponent"
 import themeProps from "./SelectSimple.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 

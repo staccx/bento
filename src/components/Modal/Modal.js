@@ -12,7 +12,7 @@ import {
   spacing,
   wrapper
 } from "../../theming"
-import ThemeComponent from "../Theme/ThemeComponent"
+import ThemeComponent from "../Theme/ThemeComponent/ThemeComponent"
 import themeProps from "./Modal.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 import { useFocusTrap } from "../../hooks/useFocusTrap/useFocusTrap"

@@ -13,7 +13,7 @@ import {
   borderRadius,
   commonPropTypes
 } from "../../../theming"
-import ThemeComponent from "../../Theme/ThemeComponent"
+import ThemeComponent from "../../Theme/ThemeComponent/ThemeComponent"
 import themeProps from "./CheckBox.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
