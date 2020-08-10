@@ -1,3 +1,4 @@
+import React from "react"
 import Theme from "../Theme"
 import reset from "../styles/cssResets"
 import grids from "../../components/Layout/Layout/Layout.Grids"
@@ -68,7 +69,8 @@ export const theme = {
   },
   borderRadius: "2px",
   reset,
-  grid: grids
+  grid: grids,
+  logo: () => <div>ThemeComponent for BaseTheme</div>
 }
 
 export const StyleguideTheme = new Theme(theme, codeTheme)

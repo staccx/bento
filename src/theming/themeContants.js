@@ -20,9 +20,17 @@ const children = PropTypes.oneOfType([
   PropTypes.func
 ])
 
+export const variant = PropTypes.oneOf([
+  PropTypes.string,
+  PropTypes.func,
+  PropTypes.arrayOf(PropTypes.string),
+  PropTypes.object
+])
+
 export const commonPropTypes = {
   spacing,
-  children
+  children,
+  variant
 }
 
 export const themePropTypes = {
