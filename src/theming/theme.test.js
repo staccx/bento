@@ -100,6 +100,19 @@ describe("Theme", () => {
       const theme = new Theme(example, {})
       expect(theme).toEqual(example)
     })
+
+    it("Should create objects on the root", () => {
+      const theme = new Theme({})
+      console.log = jest.fn()
+      const func = () => console.log("Ran function")
+      theme.add({
+        logo: func
+      })
+
+      expect(theme.logo).not.toBeUndefined()
+      theme.logo()
+      expect(console.log.mock.calls[0][0]).toBe("Ran function")
+    })
     it("Should be able to add new things", () => {
       const theme = new Theme(example, {})
       const alteredTheme = theme.add({ button: { subtle: 1 } })
