@@ -105,7 +105,7 @@ describe("Theme", () => {
       const theme = new Theme({})
       console.log = jest.fn()
       const func = () => console.log("Ran function")
-      theme.add({
+      theme.append({
         logo: func
       })
 
