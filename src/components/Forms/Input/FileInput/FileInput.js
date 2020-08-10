@@ -14,7 +14,7 @@ import {
   spacing,
   targetSize
 } from "../../../../theming"
-import ThemeComponent from "../../../Theme/ThemeComponent"
+import ThemeComponent from "../../../Theme/ThemeComponent/ThemeComponent"
 import themeProps from "./FileInput.themeProps"
 import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 

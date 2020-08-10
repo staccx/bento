@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
-import ThemeComponent from "../../Theme/ThemeComponent"
+import ThemeComponent from "../../Theme/ThemeComponent/ThemeComponent"
 import { applyVariants, color, spacing } from "../../../theming"
 import useTimer from "../../../hooks/useTimer"
 import themeProps from "./Loading.themeProps"

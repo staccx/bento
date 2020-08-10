@@ -85,7 +85,7 @@ export { default as Alert } from "./Alert/Alert"
 export { default as Box } from "./Layout/Box/Box"
 
 // Theming
-export { default as ThemeComponent } from "./Theme/ThemeComponent"
+export { default as ThemeComponent } from "./Theme/ThemeComponent/ThemeComponent"
 export { default as ThemeProvider } from "./Theme/ThemeProvider/ThemeProvider"
 export { default as GlobalStyle } from "./Theme/GlobalStyle"
 export { default as WebFonts } from "./Theme/WebFonts"

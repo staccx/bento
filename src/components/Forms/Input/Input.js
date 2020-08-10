@@ -17,7 +17,7 @@ import {
   targetSize,
   commonPropTypes
 } from "../../../theming"
-import ThemeComponent from "../../Theme/ThemeComponent"
+import ThemeComponent from "../../Theme/ThemeComponent/ThemeComponent"
 import QuestionMark from "../../Icons/QuestionMark/QuestionMark"
 import { FadeIn } from "../../../animations"
 import themeProps from "./Input.themeProps"
