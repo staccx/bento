@@ -14,8 +14,7 @@
     "alpha": "npm version prerelease --preid=alpha && npm publish",
     "dirty-deploy-storybook": "yarn build-storybook && cp now.json public/ && cd public && now --prod",
     "chromatic": "CHROMATIC_APP_CODE=e5op6dsgv2n chromatic --exit-zero-on-changes",
-    "semantic-release": "semantic-release",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -47,6 +46,7 @@
     "@babel/preset-react": "^7.8.3",
     "@commitlint/cli": "^8.3.4",
     "@commitlint/config-conventional": "^8.3.4",
+    "@semantic-release/changelog": "^5.0.1",
     "@staccx/eslint-config": "^10.0.1",
     "@storybook/addon-a11y": "^6.0.0-alpha.5",
     "@storybook/addon-actions": "^5.3.13",
