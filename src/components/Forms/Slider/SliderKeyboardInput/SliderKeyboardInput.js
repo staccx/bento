@@ -68,7 +68,7 @@ const SliderKeyboardInput = ({
   }
 
   return (
-    <SliderWrapper className={className} variant={variant}>
+    <SliderWrapper className={className} variant={variant} {...restProps}>
       <SliderInput
         type="text"
         name={`${name}-keyboard`}
