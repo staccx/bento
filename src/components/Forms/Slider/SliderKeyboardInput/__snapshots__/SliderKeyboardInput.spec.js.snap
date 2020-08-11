@@ -3,6 +3,7 @@
 exports[`SliderKeyboardInput Snapshots Name 1`] = `
 <div
   className="sc-fznZeY hRKcZz"
+  value={0}
 >
   <div
     className="sc-AxheI jmeqRy sc-fzokOt jFjwOo"
@@ -79,6 +80,7 @@ exports[`SliderKeyboardInput Snapshots Name 1`] = `
 exports[`SliderKeyboardInput Snapshots No props 1`] = `
 <div
   className="sc-fznZeY hRKcZz"
+  value={0}
 >
   <div
     className="sc-AxheI jmeqRy sc-fzokOt jFjwOo"
@@ -155,6 +157,8 @@ exports[`SliderKeyboardInput Snapshots No props 1`] = `
 exports[`SliderKeyboardInput Snapshots all 1`] = `
 <div
   className="sc-fznZeY hRKcZz"
+  onBlur={[Function]}
+  value={100}
 >
   <div
     className="sc-AxheI jmeqRy sc-fzokOt jFjwOo"
@@ -237,6 +241,7 @@ exports[`SliderKeyboardInput Snapshots all 1`] = `
 exports[`SliderKeyboardInput Snapshots label 1`] = `
 <div
   className="sc-fznZeY hRKcZz"
+  value={0}
 >
   <div
     className="sc-AxheI jmeqRy sc-fzokOt jFjwOo"
@@ -319,6 +324,7 @@ exports[`SliderKeyboardInput Snapshots label 1`] = `
 exports[`SliderKeyboardInput Snapshots max 1`] = `
 <div
   className="sc-fznZeY hRKcZz"
+  value={0}
 >
   <div
     className="sc-AxheI jmeqRy sc-fzokOt jFjwOo"
@@ -395,6 +401,7 @@ exports[`SliderKeyboardInput Snapshots max 1`] = `
 exports[`SliderKeyboardInput Snapshots min 1`] = `
 <div
   className="sc-fznZeY hRKcZz"
+  value={0}
 >
   <div
     className="sc-AxheI jmeqRy sc-fzokOt jFjwOo"
@@ -471,6 +478,8 @@ exports[`SliderKeyboardInput Snapshots min 1`] = `
 exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
 <div
   className="sc-fznZeY hRKcZz"
+  onBlur={[Function]}
+  value={0}
 >
   <div
     className="sc-AxheI jmeqRy sc-fzokOt jFjwOo"
@@ -547,6 +556,7 @@ exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
 exports[`SliderKeyboardInput Snapshots onChange 1`] = `
 <div
   className="sc-fznZeY hRKcZz"
+  value={0}
 >
   <div
     className="sc-AxheI jmeqRy sc-fzokOt jFjwOo"
@@ -623,6 +633,7 @@ exports[`SliderKeyboardInput Snapshots onChange 1`] = `
 exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
 <div
   className="sc-fznZeY hRKcZz"
+  value={0}
 >
   <div
     className="sc-AxheI jmeqRy sc-fzokOt jFjwOo"
@@ -699,6 +710,7 @@ exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
 exports[`SliderKeyboardInput Snapshots step 1`] = `
 <div
   className="sc-fznZeY hRKcZz"
+  value={0}
 >
   <div
     className="sc-AxheI jmeqRy sc-fzokOt jFjwOo"
@@ -775,6 +787,7 @@ exports[`SliderKeyboardInput Snapshots step 1`] = `
 exports[`SliderKeyboardInput Snapshots value 1`] = `
 <div
   className="sc-fznZeY hRKcZz"
+  value={100}
 >
   <div
     className="sc-AxheI jmeqRy sc-fzokOt jFjwOo"
