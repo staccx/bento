@@ -2,19 +2,34 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const CheckGroup = ({ children, group, onChange }) => {
+  const [, valuesSet] = React.useState(
+    React.Children.map(children, child =>
+      child.props.defaultChecked ? child.props.value : null
+    ).filter(item => item)
+  )
+
   const handleChange = event => {
-    const value = event.target.value
-    if (onChange) {
-      onChange(value)
-    }
+    const { checked, value } = event.target
+    valuesSet(prevState => {
+      const vals = checked
+        ? [...prevState, value]
+        : prevState.filter(v => v !== value)
+      if (onChange) {
+        onChange(vals)
+      }
+      return vals
+    })
   }
 
   return (
     <>
-      {children.map(child =>
+      {React.Children.map(children, child =>
         React.cloneElement(child, {
           ...child.props,
-          onChange: handleChange,
+          onChange: event => {
+            handleChange(event)
+            child.props.onChange && child.props.onChange(event)
+          },
           group
         })
       )}

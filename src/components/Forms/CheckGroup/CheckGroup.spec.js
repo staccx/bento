@@ -50,23 +50,155 @@ describe("Checkbox", () => {
 
 describe("Rendering", () => {
   it("Should be checked", () => {
-    console.log = jest.fn()
+    const onChangeMock = jest.fn()
+
     render(
       <ThemeProvider theme={baseTheme}>
-        <CheckGroup group="test" onChange={() => console.log("checked")}>
-          <CheckBox data-testid="first-element" id="1" key="first_test_value">
+        <CheckGroup group="test" onChange={onChangeMock}>
+          <CheckBox
+            data-testid="first-element"
+            id="1"
+            key="first_test_value"
+            value="first"
+          >
             Test Value 1
           </CheckBox>
-          <CheckBox data-testid="second-element" id="2" key="second_test_value">
+          <CheckBox
+            data-testid="second-element"
+            id="2"
+            key="second_test_value"
+            value="2nd"
+          >
             Test Value 2
           </CheckBox>
-          <CheckBox data-testid="third-element" id="3" key="third_test_value">
+          <CheckBox
+            data-testid="third-element"
+            id="3"
+            key="third_test_value"
+            value="3rd"
+          >
             Test Value 3
           </CheckBox>
         </CheckGroup>
       </ThemeProvider>
     )
-    fireEvent.click(screen.getByTestId("first-element"))
-    expect(console.log.mock.calls[0][0]).toBe("checked")
+    fireEvent.click(screen.getByTestId("second-element"))
+    expect(onChangeMock).toBeCalledWith(["2nd"])
+  })
+
+  it("Should respect default defaultChecked", () => {
+    const onChangeMock = jest.fn()
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <CheckGroup group="test" onChange={onChangeMock}>
+          <CheckBox
+            data-testid="first-element"
+            id="1"
+            key="first_test_value"
+            value="first"
+            defaultChecked
+          >
+            Test Value 1
+          </CheckBox>
+          <CheckBox
+            data-testid="second-element"
+            id="2"
+            key="second_test_value"
+            value="2nd"
+            defaultChecked
+          >
+            Test Value 2
+          </CheckBox>
+          <CheckBox
+            data-testid="third-element"
+            id="3"
+            key="third_test_value"
+            value="3rd"
+            defaultChecked
+          >
+            Test Value 3
+          </CheckBox>
+        </CheckGroup>
+      </ThemeProvider>
+    )
+    fireEvent.click(screen.getByTestId("second-element"))
+    expect(onChangeMock).toBeCalledWith(["first", "3rd"])
+  })
+  it("Should respect default defaultChecked", () => {
+    const onChangeMock = jest.fn()
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <CheckGroup group="test" onChange={onChangeMock}>
+          <CheckBox
+            data-testid="first-element"
+            id="1"
+            key="first_test_value"
+            value="first"
+          >
+            Test Value 1
+          </CheckBox>
+          <CheckBox
+            data-testid="second-element"
+            id="2"
+            key="second_test_value"
+            value="2nd"
+            defaultChecked
+          >
+            Test Value 2
+          </CheckBox>
+          <CheckBox
+            data-testid="third-element"
+            id="3"
+            key="third_test_value"
+            value="3rd"
+          >
+            Test Value 3
+          </CheckBox>
+        </CheckGroup>
+      </ThemeProvider>
+    )
+    fireEvent.click(screen.getByTestId("second-element"))
+    expect(onChangeMock).toBeCalledWith([])
+  })
+
+  it("Individual onChange handlers", () => {
+    const onChangeMock = jest.fn()
+    const onChangeMockChild = jest.fn()
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <CheckGroup group="test" onChange={onChangeMock}>
+          <CheckBox
+            data-testid="first-element"
+            id="1"
+            key="first_test_value"
+            value="first"
+          >
+            Test Value 1
+          </CheckBox>
+          <CheckBox
+            data-testid="second-element"
+            id="2"
+            key="second_test_value"
+            value="2nd"
+            defaultChecked
+            onChange={onChangeMockChild}
+          >
+            Test Value 2
+          </CheckBox>
+          <CheckBox
+            data-testid="third-element"
+            id="3"
+            key="third_test_value"
+            value="3rd"
+          >
+            Test Value 3
+          </CheckBox>
+        </CheckGroup>
+      </ThemeProvider>
+    )
+    fireEvent.click(screen.getByTestId("second-element"))
+    expect(onChangeMock).toBeCalledWith([])
+    expect(onChangeMockChild).toBeCalledTimes(1)
+    expect(onChangeMock).toBeCalledTimes(1)
   })
 })
