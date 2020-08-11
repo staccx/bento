@@ -58,7 +58,14 @@ ThemeComponent.propTypes = {
   /**
    * Name to look after in theme
    */
-  tagName: PropTypes.string.isRequired,
+  tagName: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      name: PropTypes.string,
+      description: PropTypes.string,
+      type: PropTypes.string
+    })
+  ]).isRequired,
   /**
    * variant(s)
    */
