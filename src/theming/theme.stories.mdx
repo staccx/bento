@@ -5,11 +5,11 @@ import {
   color
 } from "./index"
 
-<Meta title="Styling|/ThemeColors" component={themes}/>
+<Meta title="Styling/ThemeColors" component={themes}/>
 
 # ColorNames
-These are the colors used in Bentos Base theme. These colors will vary between the different themes that are in use. 
-The colors are used just like the rest of the theme component. We use colors from theme to controll the color palette within the project 
+These are the colors used in Bentos Base theme. These colors will vary between the different themes that are in use.
+The colors are used just like the rest of the theme component. We use colors from theme to controll the color palette within the project
 
 Example usage and import(using styled-component):
 ```javascript
@@ -17,7 +17,7 @@ import { theming } from "@staccx/bento"
 
 const xxx () => {
   return (
-    <ColoredBox/> 
+    <ColoredBox/>
 )
 }
 export default xxx
@@ -51,47 +51,47 @@ These are the themes colors. As seen above, they are used in styling as: backgro
     background-color: ${color("bg")};
         `
     const SubtleHover = styled(Box)`
-    background-color: ${color("subtleHover")};   
+    background-color: ${color("subtleHover")};
             `
     const BgGray = styled(Box)`
-    background-color: ${color("bgGray")};   
+    background-color: ${color("bgGray")};
             `
     const Line = styled(Box)`
-    background-color: ${color("line")};   
+    background-color: ${color("line")};
             `
     const Gray = styled(Box)`
-    background-color: ${color("gray")};   
-            `     
+    background-color: ${color("gray")};
+            `
     const Wcag = styled(Box)`
-    background-color: ${color("wcag")};   
-            `      
+    background-color: ${color("wcag")};
+            `
     const Disabled = styled(Box)`
-    background-color: ${color("disabled")};   
-            ` 
+    background-color: ${color("disabled")};
+            `
      const Textcol = styled(Box)`
-     background-color: ${color("text")};   
+     background-color: ${color("text")};
              `
      const Negative = styled(Box)`
-     background-color: ${color("negative")};   
-             `      
+     background-color: ${color("negative")};
+             `
      const Positive = styled(Box)`
-     background-color: ${color("positive")};   
-             `      
+     background-color: ${color("positive")};
+             `
      const Warning = styled(Box)`
-     background-color: ${color("warning")};   
-             `  
+     background-color: ${color("warning")};
+             `
       const Black = styled(Box)`
-      background-color: ${color("black")};   
-              `    
+      background-color: ${color("black")};
+              `
         const Green = styled(Box)`
-        background-color: ${color("green")};   
-                `  
+        background-color: ${color("green")};
+                `
         const Link = styled(Box)`
-        background-color: ${color("link")};   
-                `                                                                                           
+        background-color: ${color("link")};
+                `
     const Text = styled.p`
         margin-top: 150px
-    `         
+    `
     return <div style={{display:"flex",flexDirection:"row",flexWrap:"wrap"}}><Primary>
         <Text >primary</Text>
         </Primary>
@@ -112,34 +112,34 @@ These are the themes colors. As seen above, they are used in styling as: backgro
         </Line>
         <Gray>
             <Text>gray</Text>
-        </Gray> 
+        </Gray>
         <Wcag>
             <Text>wcag</Text>
-        </Wcag>     
+        </Wcag>
         <Disabled>
             <Text>disabled</Text>
-        </Disabled>  
+        </Disabled>
         <Textcol>
             <Text>text</Text>
-        </Textcol> 
+        </Textcol>
         <Negative>
             <Text>negative</Text>
-        </Negative> 
+        </Negative>
         <Positive>
             <Text>negative</Text>
         </Positive>
         <Warning>
             <Text>warning</Text>
-        </Warning>   
+        </Warning>
         <Black>
             <Text>black</Text>
-        </Black>    
+        </Black>
         <Green>
             <Text>green</Text>
-        </Green>  
+        </Green>
         <Link>
             <Text>link</Text>
-        </Link>                                             
+        </Link>
         </div>
     }}
   </Story>

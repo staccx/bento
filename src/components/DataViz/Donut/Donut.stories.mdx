@@ -1,11 +1,10 @@
 import {useState} from "react"
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { withKnobs, number } from "@storybook/addon-knobs"
 import { action } from "@storybook/addon-actions"
 import Donut from "./Donut.js"
 import Slider from "../../Forms/Slider/Slider/Slider"
 
-<Meta title="Components|DataViz/Donut" component={Donut} decorators={[withKnobs]}/>
+<Meta title="components/DataViz/Donut" component={Donut} />
 
 # Donut
 
@@ -14,14 +13,6 @@ Donut displays progress from 0 to 100%, as a radial progressbar
 ```javascript
 import {Donut} from "@staccx/bento"
 ```
-
-## Donut with progress 0% (withKnobs)
-
-<Preview>
-  <Story name="0%">
-   <Donut progress={number("Donut",0.0,"Donut")}/>
-  </Story>
-</Preview>
 
 
 ## Donut with progress 50%
