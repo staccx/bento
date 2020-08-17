@@ -8,7 +8,7 @@ const CurrencyInput = React.forwardRef(
   ({ prefix = null, delimiter = " ", options = {}, ...props }, ref) => {
     return (
       <Input
-        type="tel"
+        pattern="\d*"
         options={{ ...options, numeral: true, delimiter, prefix }}
         ref={ref}
         {...props}
@@ -19,13 +19,15 @@ const CurrencyInput = React.forwardRef(
 
 /* TODO: Should have a pattern so that we get number-keyboard: added this: https://stackoverflow.com/questions/6178556/phone-numeric-keyboard-for-text-input */
 
-CurrencyInput.propTypes = {
+export const CurrencyInputProps = PropTypes.shape({
   ...InputPropTypes,
   id: PropTypes.string.isRequired,
   suffix: PropTypes.string,
   prefix: PropTypes.string,
   thousandsSeparatorSymbol: PropTypes.string
-}
+})
+
+CurrencyInput.propTypes = CurrencyInputProps
 
 CurrencyInput.defaultProps = {
   suffix: "",

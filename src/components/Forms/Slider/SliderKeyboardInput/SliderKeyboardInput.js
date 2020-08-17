@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Input from "../../Input/Input"
-import Slider from "../Slider/Slider"
+import Slider, { SliderProps } from "../Slider/Slider"
 import {
   applyVariants,
   targetSize,
@@ -12,6 +11,9 @@ import {
 } from "../../../../theming"
 import themeProps from "./SliderKeyboardInput.themeProps"
 import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
+import CurrencyInput, {
+  CurrencyInputProps
+} from "../../Input/CurrencyInput/CurrencyInput"
 
 const SliderKeyboardInput = ({
   label,
@@ -25,6 +27,8 @@ const SliderKeyboardInput = ({
   onChange,
   showLabel,
   defaultValue,
+  inputProps,
+  sliderProps,
   ...restProps
 }) => {
   const [inputValue, setInputValue] = useState(defaultValue)
@@ -74,7 +78,7 @@ const SliderKeyboardInput = ({
         name={`${name}-keyboard`}
         id={`${name}-keyboard`}
         value={inputValue}
-        onChange={e => handleInputChange(e.target.value)}
+        onChange={e => handleInputChange(e.target.rawValue)}
         onFocus={handleInputFocus}
         // onBlur={handleBlur}
         label={showLabel ? label : null}
@@ -93,6 +97,7 @@ const SliderKeyboardInput = ({
         max={max}
         onChange={handleSliderChange}
         onSlideStart={handleSliderStart}
+        onSlideEnd={handleSliderChange}
         defaultValue={defaultValue}
         variant={variant}
       />
@@ -106,7 +111,7 @@ const SliderWrapper = styled.div`
   ${applyVariants(themeProps.wrapper)};
 `
 
-const SliderInput = styled(Input)`
+const SliderInput = styled(CurrencyInput)`
   background-color: transparent;
   border: 0;
   min-height: ${targetSize.normal};
@@ -159,7 +164,9 @@ SliderKeyboardInput.propTypes = {
   step: PropTypes.number,
   variant: PropTypes.string,
   value: PropTypes.number,
-  showLabel: PropTypes.bool
+  showLabel: PropTypes.bool,
+  inputProps: CurrencyInputProps,
+  sliderProps: PropTypes.shape(SliderProps)
 }
 SliderKeyboardInput.themeProps = themeProps
 SliderKeyboardInput.createVariants = componentCreateFactory(SliderKeyboardInput)
