@@ -7,4 +7,3 @@ export default {
 }
 
 export const text = () => <Button> Button </Button>
-export const emoji = () => <Button>😀😎👍💯</Button>

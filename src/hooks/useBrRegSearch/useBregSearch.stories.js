@@ -9,7 +9,7 @@ export default {
   component: useBrRegSearch
 }
 
-export const useBrRegSearchView = args => {
+export const UseBrRegSearchView = () => {
   const [search, setSearch] = useState("")
   const { isLoading, results } = useBrRegSearch(search)
   return (
