@@ -22,3 +22,5 @@ export const ImageAspectRatio = args => (
     {...args}
   />
 )
+
+ImageAspectRatio.args = { aspectRatio: "16:9" }
