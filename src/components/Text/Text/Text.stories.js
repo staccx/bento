@@ -2,7 +2,7 @@ import React from "react"
 import Text from "./Text"
 
 export default {
-  title: "New/Text",
+  title: "New/Text/Text",
   component: Text
 }
 

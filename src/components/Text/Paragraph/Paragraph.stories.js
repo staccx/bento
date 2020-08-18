@@ -2,7 +2,7 @@ import React from "react"
 import Paragraph from "./Paragraph"
 
 export default {
-  title: "New/Paragraph",
+  title: "New/Text/Paragraph",
   component: Paragraph
 }
 

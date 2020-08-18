@@ -2,7 +2,7 @@ import React from "react"
 import Heading from "./Heading"
 
 export default {
-  title: "New/Heading",
+  title: "New/Text/Heading",
   component: Heading
 }
 
