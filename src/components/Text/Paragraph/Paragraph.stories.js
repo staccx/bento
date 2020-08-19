@@ -6,6 +6,9 @@ export default {
   component: Paragraph
 }
 
+/**
+ * Dette er Bentos paragraph component. Den er tilsvarende til HTMLs "p"-Tag
+ */
 export const Standard = () => (
   <Paragraph>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis

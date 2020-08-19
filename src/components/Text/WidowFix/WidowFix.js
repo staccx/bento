@@ -3,6 +3,11 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { commonPropTypes } from "../../../theming/index"
 
+/**
+ * This component determines how long the final word will have to be to be allowed to go to a new line.
+ * If the final word is shorter than the threshold, it will also bring the second last word with it
+ * down to the new line.
+ */
 const WidowFix = ({ children, threshold = 7 }) => {
   return React.Children.map(children, (child, i) => {
     if (typeof child === "string") {

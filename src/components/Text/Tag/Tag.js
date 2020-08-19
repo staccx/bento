@@ -12,6 +12,9 @@ import {
 import themeProps from "./Tag.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Tag are used to add content and additional info to objects.
+ */
 const Tag = ({ children, className, variant, ...rest }) => (
   <TagWrapper className={className} variant={variant} {...rest}>
     {children}
