@@ -4,7 +4,7 @@ import Button from "../../components/Button/Button"
 import Loading from "../../components/Loaders/Loading/Loading"
 
 export default {
-  title: "New/useApiRequest",
+  title: "New/Hooks/useApiRequest",
   component: useApiRequest
 }
 

@@ -5,7 +5,7 @@ import Input from "../../components/Forms/Input/Input"
 import ReactJson from "react-json-view"
 
 export default {
-  title: "new/useBrRegSearch",
+  title: "new/Hooks/useBrRegSearch",
   component: useBrRegSearch
 }
 

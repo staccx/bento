@@ -7,7 +7,7 @@ import Heading from "../../components/Text/Heading/Heading"
 import { data } from "./useSearch.storyData"
 
 export default {
-  title: "new/useSearch",
+  title: "new/Hooks/useSearch",
   component: useSearch
 }
 
