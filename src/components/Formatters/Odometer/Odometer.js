@@ -6,6 +6,9 @@ import { applyVariants, hideVisually } from "../../../theming"
 import themeProps from "./Odometer.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Displays numbers, and when they change it rolls up to the new value
+ */
 class Odometer extends React.PureComponent {
   constructor(...props) {
     super(...props)
