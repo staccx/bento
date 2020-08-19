@@ -6,6 +6,7 @@ import themeProps from "./Flag.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 /**
+ * This is the Flag component. The component can be used to display a list with images.
  * The flag object is a design pattern similar to the media object, however it
  * utilises `display: table[-cell];` to give us control over the vertical
  * alignments of the text and image.

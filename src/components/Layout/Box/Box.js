@@ -5,6 +5,9 @@ import { applyVariants, spacing, commonPropTypes } from "../../../theming"
 import themeProps from "./Box.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * This is the Box component. The component can take size as a prop to scale!
+ */
 const Box = ({ children, className, size, ...otherProps }) => (
   <Boxing className={className} size={size} {...otherProps}>
     {children}
