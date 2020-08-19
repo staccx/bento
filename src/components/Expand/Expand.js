@@ -8,6 +8,10 @@ import { applyVariants, color, commonPropTypes, spacing } from "../../theming"
 import themeProps from "./Expand.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Expand is a component that lets you simply create the posibility to have a heading with an onClick that displays
+ an underlying object
+ */
 const Expand = ({
   className,
   expanded = false,

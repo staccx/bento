@@ -16,6 +16,9 @@ import {
 import themeProps from "./Label.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Label defines an element, often input fields or loaders and acts as a description for that element
+ */
 const Label = ({ className, children, ...rest }) => (
   <LabelElement className={className} {...rest}>
     {children}

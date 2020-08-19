@@ -6,6 +6,9 @@ import { applyVariants, color, spacing, font } from "../../../theming"
 import themeProps from "./ProgressBar.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Displays progress from 0 to 100%, with warningThreshold. Default value for threshold set to 0.9
+ **/
 const ProgressBar = ({
   progress,
   className,
