@@ -5,6 +5,9 @@ import { applyVariants, color } from "../../../theming"
 import themeProps from "./Donut.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Donut displays progress from 0 to 100%, as a radial progressbar
+ */
 const Donut = ({ variant, progress, className, warningThreshold, ...rest }) => {
   const dash = 57
   const dashoffset = dash * progress - dash
