@@ -2,7 +2,7 @@ import React from "react"
 import NewBadge from "./NewBadge"
 
 export default {
-  title: "New/NewBadge",
+  title: "New/Components/NewBadge",
   component: NewBadge
 }
 

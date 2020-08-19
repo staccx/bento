@@ -2,7 +2,7 @@ import React from "react"
 import Box from "./Box"
 
 export default {
-  title: "New/Layout/Box",
+  title: "New/Components/Layout/Box",
   component: Box
 }
 

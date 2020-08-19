@@ -2,7 +2,7 @@ import React from "react"
 import Logo from "./Logo"
 
 export default {
-  title: "new/Logo",
+  title: "New/Components/Logo",
   component: Logo
 }
 

@@ -2,7 +2,7 @@ import React from "react"
 import Loading from "./Loading"
 
 export default {
-  title: "new/Loaders/Loading",
+  title: "New/Components/Loaders/Loading",
   component: Loading
 }
 

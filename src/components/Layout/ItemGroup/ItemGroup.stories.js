@@ -3,7 +3,7 @@ import ItemGroup from "./ItemGroup"
 import Button from "../../Button/Button"
 
 export default {
-  title: "New/Layout/ItemGroup",
+  title: "New/Components/Layout/ItemGroup",
   component: ItemGroup
 }
 

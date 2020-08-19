@@ -2,7 +2,7 @@ import React from "react"
 import NationalIdInput from "./NationalIdInput"
 
 export default {
-  title: "new/Forms/Input/NationalIdInput",
+  title: "New/Components/Forms/Input/NationalIdInput",
   component: NationalIdInput
 }
 

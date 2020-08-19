@@ -2,7 +2,7 @@ import React from "react"
 import FullScreenLoader from "./FullScreenLoader"
 
 export default {
-  title: "new/Loaders/FullScreenLoader",
+  title: "New/Components/Loaders/FullScreenLoader",
   component: FullScreenLoader
 }
 

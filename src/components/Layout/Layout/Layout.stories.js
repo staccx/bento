@@ -3,7 +3,7 @@ import Layout from "./Layout"
 import LayoutItem from "./LayoutItem"
 
 export default {
-  title: "New/Layout/Layout",
+  title: "New/Components/Layout/Layout",
   component: Layout
 }
 

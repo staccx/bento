@@ -3,7 +3,7 @@ import InlineListItem from "./InlineListItem"
 import List from "../List"
 
 export default {
-  title: "New/Lists/InlineList",
+  title: "New/Components/Lists/InlineList",
   component: InlineListItem
 }
 

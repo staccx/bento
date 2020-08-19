@@ -2,7 +2,7 @@ import React from "react"
 import SkeletonLine from "./Skeleton.Line"
 
 export default {
-  title: "New/Skeleton/SkeletonLine",
+  title: "New/Components/Skeleton/SkeletonLine",
   component: SkeletonLine
 }
 

@@ -2,7 +2,7 @@ import React from "react"
 import WidowFix from "./WidowFix"
 
 export default {
-  title: "New/Text/WidowFix",
+  title: "New/Components/Text/WidowFix",
   component: WidowFix
 }
 

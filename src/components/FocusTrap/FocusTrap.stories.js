@@ -2,7 +2,7 @@ import React from "react"
 import FocusTrap from "./FocusTrap"
 
 export default {
-  title: "New/FocusTrap",
+  title: "New/Components/FocusTrap",
   component: FocusTrap
 }
 

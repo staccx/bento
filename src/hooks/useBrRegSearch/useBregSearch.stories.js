@@ -5,7 +5,7 @@ import Input from "../../components/Forms/Input/Input"
 import ReactJson from "react-json-view"
 
 export default {
-  title: "new/Hooks/useBrRegSearch",
+  title: "New/Hooks/useBrRegSearch",
   component: useBrRegSearch
 }
 
@@ -14,6 +14,7 @@ export const UseBrRegSearchView = () => {
   const { isLoading, results } = useBrRegSearch(search)
   return (
     <div>
+      <p>docs her</p>
       <Input
         onChange={e => setSearch(e.target.value)}
         placeholder="Search here"

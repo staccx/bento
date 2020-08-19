@@ -2,7 +2,7 @@ import React from "react"
 import Image from "./Image"
 
 export default {
-  title: "New/Image",
+  title: "New/Components/Image",
   component: Image
 }
 

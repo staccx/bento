@@ -3,7 +3,7 @@ import SplitListItem from "./SplitListItem"
 import List from "../List"
 
 export default {
-  title: "New/Lists/SplitList",
+  title: "New/Components/Lists/SplitList",
   component: SplitListItem
 }
 

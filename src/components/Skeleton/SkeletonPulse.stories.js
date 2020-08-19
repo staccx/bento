@@ -3,7 +3,7 @@ import SkeletonPulse from "./Skeleton.Pulse"
 import SkeletonLine from "./Skeleton.Line"
 
 export default {
-  title: "New/Skeleton/SkeletonPulse",
+  title: "New/Components/Skeleton/SkeletonPulse",
   component: SkeletonPulse,
   SkeletonLine
 }

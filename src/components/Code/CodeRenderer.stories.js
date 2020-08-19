@@ -2,7 +2,7 @@ import React from "react"
 import CodeRenderer from "./CodeRenderer"
 
 export default {
-  title: "New/CodeRenderer",
+  title: "New/Components/CodeRenderer",
   component: CodeRenderer
 }
 

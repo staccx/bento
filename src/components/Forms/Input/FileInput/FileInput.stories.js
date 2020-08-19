@@ -2,7 +2,7 @@ import React from "react"
 import FileInput from "./FileInput"
 
 export default {
-  title: "new/Forms/Input/FileInput",
+  title: "New/Components/Forms/Input/FileInput",
   component: FileInput
 }
 

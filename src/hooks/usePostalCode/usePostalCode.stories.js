@@ -3,7 +3,7 @@ import { usePostalCode } from "./usePostalCode"
 import Input from "../../components/Forms/Input/Input"
 
 export default {
-  title: "new/Hooks/usePostalCode",
+  title: "New/Hooks/usePostalCode",
   component: usePostalCode
 }
 

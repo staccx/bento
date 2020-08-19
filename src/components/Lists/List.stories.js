@@ -1,7 +1,7 @@
 import React from "react"
 import List from "./List"
 export default {
-  title: "New/Lists/List",
+  title: "New/Components/Lists/List",
   component: List
 }
 

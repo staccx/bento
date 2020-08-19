@@ -2,7 +2,7 @@ import React from "react"
 import PhoneInput from "./PhoneInput"
 
 export default {
-  title: "new/Forms/Input/PhoneInput",
+  title: "New/Components/Forms/Input/PhoneInput",
   component: PhoneInput
 }
 

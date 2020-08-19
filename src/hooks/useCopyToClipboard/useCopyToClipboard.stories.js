@@ -4,7 +4,7 @@ import Button from "../../components/Button/Button"
 import Input from "../../components/Forms/Input/Input"
 
 export default {
-  title: "new/Hooks/useCopyToClipboard",
+  title: "New/Hooks/useCopyToClipboard",
   component: useCopyToClipboard
 }
 

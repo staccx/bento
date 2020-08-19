@@ -2,7 +2,7 @@ import React from "react"
 import Toggle from "./Toggle"
 
 export default {
-  title: "new/Forms/Toggle",
+  title: "New/Components/Forms/Toggle",
   component: Toggle
 }
 

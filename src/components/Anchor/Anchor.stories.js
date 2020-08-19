@@ -2,7 +2,7 @@ import React from "react"
 import Anchor from "./Anchor"
 
 export default {
-  title: "New/Anchor",
+  title: "New/Components/Anchor",
   component: Anchor
 }
 

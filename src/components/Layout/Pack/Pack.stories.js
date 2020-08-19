@@ -3,7 +3,7 @@ import Pack from "./Pack"
 import PackItem from "./PackItem"
 
 export default {
-  title: "New/Layout/PackAndPackItem",
+  title: "New/Components/Layout/PackAndPackItem",
   component: Pack
 }
 

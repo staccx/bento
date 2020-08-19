@@ -2,7 +2,7 @@ import React from "react"
 import Fraction from "./Fraction"
 
 export default {
-  title: "New/DataViz/Fraction",
+  title: "New/Components/DataViz/Fraction",
   component: Fraction
 }
 

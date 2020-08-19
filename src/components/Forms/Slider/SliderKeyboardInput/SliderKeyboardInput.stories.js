@@ -2,7 +2,7 @@ import React from "react"
 import SliderKeyboardInput from "./SliderKeyboardInput"
 
 export default {
-  title: "new/Forms/Slider/SliderKeyboardInput",
+  title: "New/Components/Forms/Slider/SliderKeyboardInput",
   component: SliderKeyboardInput
 }
 

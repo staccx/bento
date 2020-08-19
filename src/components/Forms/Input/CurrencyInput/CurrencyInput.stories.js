@@ -2,7 +2,7 @@ import React from "react"
 import CurrencyInput from "./CurrencyInput"
 
 export default {
-  title: "new/Forms/Input/CurrencyInput",
+  title: "New/Components/Forms/Input/CurrencyInput",
   component: CurrencyInput
 }
 

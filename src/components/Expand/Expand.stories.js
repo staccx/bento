@@ -2,7 +2,7 @@ import React from "react"
 import Expand from "./Expand"
 
 export default {
-  title: "New/Expand",
+  title: "New/Components/Expand",
   component: Expand
 }
 

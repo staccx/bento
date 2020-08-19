@@ -3,7 +3,7 @@ import Modal from "./Modal"
 import Button from "../Button/Button"
 
 export default {
-  title: "new/Modal",
+  title: "New/Components/Modal",
   component: Modal
 }
 

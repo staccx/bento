@@ -2,7 +2,7 @@ import React from "react"
 import Breadcrumb from "./Breadcrumb"
 
 export default {
-  title: "New/Breadcrumb",
+  title: "New/Components/Breadcrumb",
   component: Breadcrumb
 }
 export const BreadcrumbStandard = args => (

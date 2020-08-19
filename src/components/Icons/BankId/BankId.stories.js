@@ -2,7 +2,7 @@ import React from "react"
 import BankId from "./BankId"
 
 export default {
-  title: "New/Icons/BankId",
+  title: "New/Components/Icons/BankId",
   component: BankId
 }
 

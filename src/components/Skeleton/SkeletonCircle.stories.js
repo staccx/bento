@@ -2,7 +2,7 @@ import React from "react"
 import SkeletonCircle from "./Skeleton.Circle"
 
 export default {
-  title: "New/Skeleton/SkeletonCircle",
+  title: "New/Components/Skeleton/SkeletonCircle",
   component: SkeletonCircle
 }
 

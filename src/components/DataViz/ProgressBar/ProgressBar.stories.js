@@ -2,7 +2,7 @@ import React from "react"
 import ProgressBar from "./ProgressBar"
 
 export default {
-  title: "New/DataViz/ProgressBar",
+  title: "New/Components/DataViz/ProgressBar",
   component: ProgressBar
 }
 

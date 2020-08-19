@@ -3,7 +3,7 @@ import ExpandListItem from "./ExpandListItem"
 import List from "../List"
 
 export default {
-  title: "New/Lists/ExpandList",
+  title: "New/Components/Lists/ExpandList",
   component: ExpandListItem
 }
 

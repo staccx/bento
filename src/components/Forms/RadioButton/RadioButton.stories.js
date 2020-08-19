@@ -2,7 +2,7 @@ import React from "react"
 import RadioButton from "./RadioButton"
 
 export default {
-  title: "new/Forms/RadioButton",
+  title: "New/Components/Forms/RadioButton",
   component: RadioButton
 }
 
