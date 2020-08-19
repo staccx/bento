@@ -1,6 +1,9 @@
 import { useEffect, useMemo, useState } from "react"
 import Fuse from "fuse.js"
 
+/**
+ * useSearch lets you search Json files/APIs
+ */
 const defaultFuseProps = {
   shouldSort: true,
   threshold: 0.3,

@@ -1,6 +1,10 @@
 import useDebounce from "../useDebounce"
 import { useRequest } from "../useRequest/useRequest"
 
+/**
+ * usePostalCode is a hook that allows you to pass an input or a value, then the hook searches brings api
+ * after norwegian postalCodes. usePostalCode takes the prop "code", a 4 digit code, and returns the postAreaName
+ */
 export const usePostalCode = (
   code,
   validator = value => value?.length === 4
