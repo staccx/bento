@@ -5,6 +5,11 @@ import { applyVariants, commonPropTypes } from "../../theming"
 import themeProps from "./anchor.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
+/** Anchor
+ Anchor is an HTML tag, that is used to define the beginning and end of a hypertext link.
+ Anchor helps search engines to determine the subject matter of the destination URL.
+ Users can click on the tag to react the link target, like with a normal `<a>` -tag
+ **/
 const Anchor = ({ children, className, ...restProps }) => (
   <AComponent className={className} {...restProps}>
     {children}
