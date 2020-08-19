@@ -3,6 +3,9 @@ import { useTheme } from "styled-components"
 import { commonPropTypes, VARIANT_DEFAULT } from "../../../theming"
 import PropTypes from "prop-types"
 
+/**
+ * When you need a component inside the theme. E.g a logo that changes between themes or whatever you need
+ */
 const ThemeComponent = ({
   tagName,
   fallback,
