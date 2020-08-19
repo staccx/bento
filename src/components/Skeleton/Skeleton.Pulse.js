@@ -5,6 +5,11 @@ import { applyVariants } from "../../theming"
 import themeProps from "./Skeleton.Pulse.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Skeleton is used as a placeholder and a illustrator that the page is loading components.
+ * It is suppost to take the shape of the loading component and render a skeleton of that component,
+ * also with a pulsing effect to illustrate loading.
+ */
 const SkeletonPulse = ({ className, ...restProps }) => {
   return <PulseStyle className={className} {...restProps} />
 }
