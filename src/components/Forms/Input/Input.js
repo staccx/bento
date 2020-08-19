@@ -29,6 +29,9 @@ const HelpBox = ({ onClick }) => (
   </HelpButton>
 )
 
+/**
+ * Input component
+ **/
 const Input = React.forwardRef(
   (
     {

@@ -11,6 +11,9 @@ import {
 import themeProps from "./Toggle.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Toggle is a component often used to activate and deactivate something.
+ **/
 const Toggle = ({
   children,
   id,

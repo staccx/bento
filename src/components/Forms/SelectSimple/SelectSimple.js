@@ -25,6 +25,9 @@ const IconComponent = ({ ...props }) => (
   />
 )
 
+/**
+ * A Component that makes it easy to create a selector. it contains a selector and its options.
+ */
 const SelectSimple = ({
   children,
   label,

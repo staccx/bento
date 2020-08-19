@@ -15,6 +15,9 @@ import {
 import themeProps from "./RadioPill.item.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Radiopill
+ */
 const RadioPillItem = ({
   children,
   id,

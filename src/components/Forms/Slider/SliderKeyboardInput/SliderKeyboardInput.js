@@ -13,6 +13,9 @@ import {
 import themeProps from "./SliderKeyboardInput.themeProps"
 import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Slider component which can be defined by various properties, i.e. min, max, step, and can be controlled by keyboard inputs
+ */
 const SliderKeyboardInput = ({
   label,
   name,

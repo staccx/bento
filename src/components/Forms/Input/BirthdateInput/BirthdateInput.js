@@ -8,6 +8,10 @@ import { applyVariants } from "../../../../theming"
 import themeProps from "./BirthdateInput.themeProps"
 import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * This components lets the user write inn their birthdate in seperated fields. The component also take a label prop, that sets
+ the label for the input field
+ */
 const BirthdateInput = ({
   id,
   name,
