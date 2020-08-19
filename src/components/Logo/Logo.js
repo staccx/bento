@@ -1,6 +1,9 @@
 import PropTypes from "prop-types"
 import React from "react"
 
+/**
+ * Forklaring på hva det er og hvordan den kan brukes
+ */
 const Logo = ({ brand, height, width, className }) => (
   <img
     height={height}
