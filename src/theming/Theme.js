@@ -1,8 +1,6 @@
 import { css } from "styled-components"
 import createGlobal from "./utils/createGlobal"
 
-const { Map } = require("immutable")
-
 const styleReducer = (acc, curr) => {
   Object.keys(curr).forEach(key => {
     acc[key] = {
@@ -18,8 +16,7 @@ const styleReducer = (acc, curr) => {
  */
 export default class Theme {
   constructor(theme, ...props) {
-    const map = Map({})
-    const newTheme = map.mergeDeep(theme, ...props).toJS()
+    const newTheme = Object.assign({}, theme, ...props)
 
     // v5 All keys should be added to root.
     Object.keys(newTheme).forEach(key => {
@@ -39,8 +36,7 @@ export default class Theme {
 
   append(styles) {
     const val = Array.isArray(styles) ? styles.reduce(styleReducer, {}) : styles
-    const map = Map({})
-    const newTheme = map.mergeDeep(this, val).toJS()
+    const newTheme = Object.assign({}, this, val)
 
     // TODO: Should we reset the theme here before setting the attributes?
     // for (const key of Object.keys(this)) {
