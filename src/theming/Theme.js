@@ -1,4 +1,5 @@
 import { css } from "styled-components"
+import merge from "lodash.merge"
 import createGlobal from "./utils/createGlobal"
 
 const styleReducer = (acc, curr) => {
@@ -16,7 +17,7 @@ const styleReducer = (acc, curr) => {
  */
 export default class Theme {
   constructor(theme, ...props) {
-    const newTheme = Object.assign({}, theme, ...props)
+    const newTheme = merge(theme, ...props)
 
     // v5 All keys should be added to root.
     Object.keys(newTheme).forEach(key => {
@@ -36,7 +37,7 @@ export default class Theme {
 
   append(styles) {
     const val = Array.isArray(styles) ? styles.reduce(styleReducer, {}) : styles
-    const newTheme = Object.assign({}, this, val)
+    const newTheme = merge(this, val)
 
     // TODO: Should we reset the theme here before setting the attributes?
     // for (const key of Object.keys(this)) {
