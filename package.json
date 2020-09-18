@@ -104,7 +104,7 @@
     "@sanity/image-url": "^0.140.17",
     "@xstate/react": "^1.0.0-rc.6",
     "axios": "^0.19.1",
-    "cleave.js": "^1.4.4",
+    "cleave.js": "^1.6.0",
     "color": "^3.1.2",
     "copy-to-clipboard": "^3.0.8",
     "date-fns": "^2.9.0",
