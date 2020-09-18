@@ -2,20 +2,20 @@
  * @class Input
  */
 
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import Cleave from "cleave.js/react"
+import Cleave from "cleave.js"
 import Label from "../Label/Label"
 import {
   applyVariants,
   borderRadius,
   color,
-  commonPropTypes,
   font,
   fontFamily,
   spacing,
-  targetSize
+  targetSize,
+  commonPropTypes
 } from "../../../theming"
 import ThemeComponent from "../../Theme/ThemeComponent/ThemeComponent"
 import QuestionMark from "../../Icons/QuestionMark/QuestionMark"
@@ -56,7 +56,34 @@ const Input = React.forwardRef(
     ref
   ) => {
     const [showHelp, setShowHelp] = useState(false)
+    const cleave = useRef(null)
     const inputRef = useRef(ref)
+
+    const setRawValue = rawValue => {
+      if (!cleave.current) {
+        console.warn("setRawValue not supported for non cleave inputs")
+        return
+      }
+
+      cleave.current.setRawValue(rawValue)
+    }
+
+    useEffect(() => {
+      if (options && inputRef.current) {
+        cleave.current = new Cleave(inputRef.current, {
+          ...options,
+          onValueChanged: onChange
+        })
+      }
+      if (ref) {
+        ref.current = inputRef.current
+      }
+      if (defaultValue) {
+        console.log("setting default value")
+        setRawValue(defaultValue)
+      }
+      // eslint-disable-next-line
+    }, [])
 
     return (
       <InputWrapper className={className} variant={variant}>
@@ -73,7 +100,7 @@ const Input = React.forwardRef(
         )}
         {helpText && <HelpText isVisible={showHelp}>{helpText}</HelpText>}
 
-        <InputComponent
+        <InputNoMask
           autoFocus={autoFocus}
           value={value}
           disabled={disabled}
@@ -89,7 +116,6 @@ const Input = React.forwardRef(
           ref={inputRef}
           defaultValue={defaultValue}
           autoComplete={autoComplete}
-          options={options}
           {...otherProps}
         />
       </InputWrapper>
@@ -193,7 +219,7 @@ export const inputCss = css`
   ${applyVariants(themeProps.input)};
 `
 
-const InputComponent = styled(Cleave)`
+const InputNoMask = styled.input`
   ${inputCss};
 `
 
