@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageLoader Snapshots Messages 1`] = `
+<div
+  className="sc-AxirZ jMKBgx"
+>
+  <div
+    className="sc-AxjAm gsPtCs"
+  />
+  <div
+    className="sc-AxiKw kTArkf"
+  />
+</div>
+`;
+
+exports[`MessageLoader Snapshots Multiple words 1`] = `
+<div
+  className="sc-AxirZ jMKBgx"
+>
+  <div
+    className="sc-AxjAm gsPtCs"
+  />
+  <div
+    className="sc-AxiKw kTArkf"
+  >
+    <div
+      className="sc-AxhUy jKtIrn"
+    >
+      Reticulating splines...
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MessageLoader Snapshots invalid Messages 1`] = `
+<div
+  className="sc-AxirZ jMKBgx"
+>
+  <div
+    className="sc-AxjAm gsPtCs"
+  />
+  <div
+    className="sc-AxiKw kTArkf"
+  />
+</div>
+`;

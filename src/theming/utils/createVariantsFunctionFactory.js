@@ -39,7 +39,10 @@ export const componentCreateFactory = component => (
     const themeProp = component.themeProps[key]
     const variant = variants[key]
 
-    const styles = createVariants(variant, themeProp.name)
+    const styles = createVariants(
+      variant,
+      themeProp?.references?.name ?? themeProp.name
+    )
     theme.append(styles)
   }
 }

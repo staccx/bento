@@ -1,0 +1,24 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import MessageLoader from "./MessageLoader"
+import {messages} from "../loaders.messages"
+
+
+<Meta title="Components|Loaders/MessageLoader" component={MessageLoader}/>
+
+# MessageLoader
+MessageLoader is like the FullScreenLoader only that it only takes up the full amount of its parent.
+
+```javascript
+import { MessageLoader } from "@staccx/bento"
+```
+
+## Standard MessageLoader
+This is the standard MessageLoader
+
+  <Story name="Standard">
+   <MessageLoader messages={messages} random/>
+  </Story>
+
+
+## Props for MessageLoader
+<Props of={MessageLoader} />
