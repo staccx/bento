@@ -253,7 +253,8 @@ export const InputPropTypes = {
     "url",
     "search",
     "date",
-    "file"
+    "file",
+    "password"
   ]),
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   label: PropTypes.string,

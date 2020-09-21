@@ -11,6 +11,7 @@ import {
   Slider as CompoundSlider,
   Tracks
 } from "react-compound-slider"
+import throttle from "lodash.throttle"
 import { applyVariants, color, spacing } from "../../../../theming"
 import Handle from "./Slider.Handle"
 import Track from "./Slider.Track"
@@ -25,51 +26,47 @@ const Slider = ({
   min = 0,
   max = 100,
   step = 10,
+  throttleMs = 100,
   onFocus,
   onKeyDown,
   onBlur,
-  onUpdate,
   onChange,
   onSlideStart,
+  onSlideEnd,
   defaultValue = 0,
   value,
   ...restProps
 }) => {
   const [values, setValues] = useState([value || defaultValue])
-  const [update, setUpdate] = useState([defaultValue])
-  /* Since CompoundSlider triggers onChange and onUpdate on initialRender we ignore the
-    first updates as they will overwrite our defaultValue with a step normalized value
-  */
-  const [initialized, initializedSet] = useState({
-    update: false,
-    change: false
-  })
+  /* Since CompoundSlider triggers onUpdate on initialRender (twice!) we ignore the
+   first updates as they will overwrite our defaultValue with a step normalized value
+ */
+  const [ignore, ignoreSet] = React.useState(2)
 
   const handleUpdate = value => {
-    if (initialized.update) {
-      setUpdate(value)
-      onUpdate && onUpdate(update[0])
-    } else {
-      initializedSet(prevState => {
-        initializedSet({ ...prevState, update: true })
-      })
-    }
+    setValues(value)
+    onChange && onChange(value[0])
   }
 
-  const handleChange = val => {
-    if (initialized.change) {
-      setValues(val)
-      onChange && onChange(val[0])
-    } else {
-      initializedSet(prevState => {
-        initializedSet({ ...prevState, change: true })
-      })
+  const updateThrottled = React.useRef(throttle(handleUpdate, throttleMs))
+
+  const onUpdate = args => {
+    if (ignore > 0) {
+      ignoreSet(ignore - 1)
+      return
     }
+
+    return updateThrottled.current(args)
   }
 
-  const handleStart = val => {
-    setValues(val)
-    onSlideStart && onSlideStart(val[0])
+  const handleEnd = value => {
+    setValues(value)
+    onSlideEnd && onSlideEnd(value[0])
+  }
+
+  const handleStart = value => {
+    setValues(value)
+    onSlideStart && onSlideStart(value[0])
   }
 
   useEffect(() => {
@@ -82,8 +79,8 @@ const Slider = ({
         mode={1}
         step={step}
         domain={[min, max]}
-        onUpdate={onUpdate ? handleUpdate : () => null}
-        onChange={handleChange}
+        onUpdate={onUpdate}
+        onSlideEnd={handleEnd}
         onSlideStart={handleStart}
         values={values}
         variant={variant}
@@ -172,15 +169,32 @@ const StyledTracks = styled.div`
   ${applyVariants(themeProps.tracks)};
 `
 
-Slider.propTypes = {
+export const SliderProps = {
   className: PropTypes.string,
   min: PropTypes.number,
   max: PropTypes.number,
   step: PropTypes.number,
   defaultValue: PropTypes.number,
+  /**
+   * Event when slider starts dragging.
+   */
+  onSlideStart: PropTypes.func,
+  /**
+   * Event when slider ends dragging.
+   */
+  onSlideEnd: PropTypes.func,
+  /**
+   * Event called every time the slider
+   */
   onChange: PropTypes.func,
+  /**
+   * How often do we allow the change function to be called
+   */
+  throttleMs: PropTypes.number,
   onKeyDown: PropTypes.func
 }
+
+Slider.propTypes = SliderProps
 Slider.themeProps = themeProps
 Slider.createVariants = componentCreateFactory(Slider)
 

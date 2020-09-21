@@ -16,9 +16,10 @@ exports[`Alert Snapshots No props 1`] = `
     onBlur={null}
     onChange={null}
     onKeyDown={null}
+    pattern="\\\\d*"
     placeholder={null}
     style={null}
-    type="tel"
+    type="text"
   />
 </div>
 `;

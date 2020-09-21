@@ -2,7 +2,7 @@
 
 exports[`CodeRenderer Snapshots CSharp 1`] = `
 <pre
-  className="sc-AxjAm btqMOR language-csharp"
+  className="sc-AxjAm eKgtDb language-csharp"
 >
   <code
     className="language-csharp"
@@ -27,7 +27,7 @@ exports[`CodeRenderer Snapshots Default break 1`] = `null`;
 
 exports[`CodeRenderer Snapshots Java 1`] = `
 <pre
-  className="sc-AxjAm btqMOR language-java"
+  className="sc-AxjAm eKgtDb language-java"
 >
   <code
     className="language-java"
@@ -48,10 +48,10 @@ exports[`CodeRenderer Snapshots Java 1`] = `
 
 exports[`CodeRenderer Snapshots JavaScript with codeWrapper 1`] = `
 <pre
-  className="sc-AxjAm btqMOR language-javascript"
+  className="sc-AxjAm eKgtDb language-javascript"
 >
   <pre
-    className="sc-AxjAm btqMOR language-js"
+    className="sc-AxjAm eKgtDb language-js"
   >
     <code
       className="language-js"
@@ -73,10 +73,10 @@ exports[`CodeRenderer Snapshots JavaScript with codeWrapper 1`] = `
 
 exports[`CodeRenderer Snapshots Markup with codeWrapper 1`] = `
 <pre
-  className="sc-AxjAm btqMOR language-markup"
+  className="sc-AxjAm eKgtDb language-markup"
 >
   <pre
-    className="sc-AxjAm btqMOR language-markup"
+    className="sc-AxjAm eKgtDb language-markup"
   >
     <code
       className="language-markup"
