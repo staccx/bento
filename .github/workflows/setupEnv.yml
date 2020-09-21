@@ -1,0 +1,15 @@
+name: Setup Environment
+on:
+  push:
+    branches:
+      - master
+jobs:
+  chromatic:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Set environment
+        run: |
+          cat > .npmrc <<EOF
+          @sanity:registry=https://registry.npmjs.org/
+          @xstate:registry=https://registry.npmjs.org/
+          EOF

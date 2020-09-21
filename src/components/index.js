@@ -14,10 +14,11 @@ export { default as RadioPill } from "./Forms/RadioPill/RadioPill"
 export { default as RadioPillItem } from "./Forms/RadioPill/RadioPill.Item"
 export { default as CheckGroup } from "./Forms/CheckGroup/CheckGroup"
 export { default as SliderKeyboardInput } from "./Forms/Slider/SliderKeyboardInput/SliderKeyboardInput"
+export { default as Slider } from "./Forms/Slider/Slider/Slider"
+export { default as SliderTrack } from "./Forms/Slider/Slider/Slider.Track"
+export { default as SliderTick } from "./Forms/Slider/Slider/Slider.Tick"
 export { default as SelectSimple } from "./Forms/SelectSimple/SelectSimple"
 export { default as Toggle } from "./Forms/Toggle/Toggle"
-export { default as Form } from "./Forms/Form/Form"
-export { default as FormField } from "./Forms/Form/FormField"
 export { default as CreditCardInput } from "./Forms/Input/CreditCard/CreditCardInput"
 
 // Text
@@ -84,7 +85,7 @@ export { default as Alert } from "./Alert/Alert"
 export { default as Box } from "./Layout/Box/Box"
 
 // Theming
-export { default as ThemeComponent } from "./Theme/ThemeComponent"
+export { default as ThemeComponent } from "./Theme/ThemeComponent/ThemeComponent"
 export { default as ThemeProvider } from "./Theme/ThemeProvider/ThemeProvider"
 export { default as GlobalStyle } from "./Theme/GlobalStyle"
 export { default as WebFonts } from "./Theme/WebFonts"

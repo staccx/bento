@@ -1,0 +1,23 @@
+name: Release bento
+on:
+  workflow_run:
+    workflows: ["Setup Environment"]
+    branches: [master]
+    types:
+      - completed
+jobs:
+  release:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        run: yarn
+      - name: Run tests
+        run: yarn test:ci
+      - name: Release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npx semantic-release

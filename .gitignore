@@ -30,3 +30,6 @@ coverage
 .yalc/
 yalc.lock
 
+
+
+.vercel

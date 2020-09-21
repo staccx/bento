@@ -69,12 +69,14 @@ describe("Rendering", () => {
     console.log = tempConsole
   })
   it("Should click", () => {
+    const onChangeMock = jest.fn()
     render(
       <ThemeProvider theme={baseTheme}>
         <CheckBox
           data-testid="test"
           id="ID"
-          onChange={() => console.log("click")}
+          value="test"
+          onChange={e => onChangeMock(e.target.value)}
         >
           <Child />
         </CheckBox>
@@ -84,7 +86,29 @@ describe("Rendering", () => {
     expect(checkbox).toBeInTheDocument()
     expect(checkbox.checked).toBe(false)
     fireEvent.click(checkbox)
-    expect(console.log.mock.calls[0][0]).toBe("click")
+    expect(onChangeMock).toBeCalledWith("test")
     expect(checkbox.checked).toBe(true)
+  })
+
+  it("DefaultChecked", () => {
+    const onChangeMock = jest.fn()
+    render(
+      <ThemeProvider theme={baseTheme}>
+        <CheckBox
+          data-testid="test"
+          id="ID"
+          defaultChecked
+          onChange={onChangeMock}
+        >
+          <Child />
+        </CheckBox>
+      </ThemeProvider>
+    )
+    const checkbox = screen.getByTestId("test")
+    expect(checkbox).toBeInTheDocument()
+    expect(checkbox.checked).toBe(true)
+    fireEvent.click(checkbox)
+    expect(onChangeMock).toBeCalledTimes(1)
+    expect(checkbox.checked).toBe(false)
   })
 })

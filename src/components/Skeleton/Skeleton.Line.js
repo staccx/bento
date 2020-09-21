@@ -6,6 +6,12 @@ import SkeletonPulse from "./Skeleton.Pulse"
 import themeProps from "./Skeleton.Line.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ *  Skeleton is used as a placeholder and a illustrator that the page is loading components.
+ *  It is suppost to take the shape of the loading component and render a skeleton of that component,
+ *  also with a pulsing effect to illustrate loading.
+ */
+
 const SkeletonLine = ({ className, width, height, ...restProps }) => {
   return (
     <Line className={className} width={width} height={height} {...restProps} />

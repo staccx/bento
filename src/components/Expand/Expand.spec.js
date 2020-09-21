@@ -6,7 +6,7 @@ import baseTheme from "../../theming/themes/baseTheme"
 import Expand from "./Expand"
 
 const SpanContent = () => <p>header</p>
-const Child = () => <p>Body</p>
+const Child = ({ text = "Body" }) => <p>{text}</p>
 
 describe("Expand", () => {
   describe("Snapshots", () => {
@@ -126,6 +126,57 @@ describe("Expand", () => {
       expect(() => screen.getByText("Body")).toThrow()
       fireEvent.click(screen.getByText("header"))
       expect(screen.getByText("Body")).toBeInTheDocument()
+    })
+    it("pass onClick", () => {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Expand
+            onClick={() => {
+              console.log("onClick")
+            }}
+          >
+            <span>
+              <SpanContent />
+            </span>
+            <Child />
+          </Expand>
+        </ThemeProvider>
+      )
+      expect(() => screen.getByText("Body")).toThrow()
+      fireEvent.click(screen.getByText("header"))
+      expect(screen.getByText("Body")).toBeInTheDocument()
+    })
+    it("Expanded false", () => {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Expand expanded={false}>
+            <span>
+              <SpanContent />
+            </span>
+            <Child />
+          </Expand>
+        </ThemeProvider>
+      )
+      expect(() => screen.getByText("Body")).toThrow()
+      fireEvent.click(screen.getByText("header"))
+      expect(screen.getByText("Body")).toBeInTheDocument()
+    })
+
+    it("Should close on item click if closeOnItemClick is set", () => {
+      render(
+        <ThemeProvider theme={baseTheme}>
+          <Expand expanded closeOnItemClick>
+            <span>
+              <SpanContent />
+            </span>
+            <Child />
+            <Child text="Second child" />
+          </Expand>
+        </ThemeProvider>
+      )
+      expect(screen.getByText("Body")).toBeInTheDocument()
+      fireEvent.click(screen.getByText("Second child"))
+      expect(() => screen.getByText("Body")).toThrow()
     })
   })
 })

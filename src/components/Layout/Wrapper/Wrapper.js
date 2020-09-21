@@ -11,7 +11,7 @@ import themeProps from "./Wrapper.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
 /**
- * A Wrapper components that centers content and add spacing on the sides
+ * This is a wrapper component that centers content and add spacing on the sides. It can be used to wrap content when aligning text or similar.
  */
 const Wrapper = ({
   children,

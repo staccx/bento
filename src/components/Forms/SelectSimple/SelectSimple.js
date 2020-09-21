@@ -13,7 +13,7 @@ import {
   targetSize,
   commonPropTypes
 } from "../../../theming"
-import ThemeComponent from "../../Theme/ThemeComponent"
+import ThemeComponent from "../../Theme/ThemeComponent/ThemeComponent"
 import themeProps from "./SelectSimple.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
@@ -25,6 +25,9 @@ const IconComponent = ({ ...props }) => (
   />
 )
 
+/**
+ * A Component that makes it easy to create a selector. it contains a selector and its options.
+ */
 const SelectSimple = ({
   children,
   label,

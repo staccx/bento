@@ -13,10 +13,14 @@ import {
   borderRadius,
   commonPropTypes
 } from "../../../theming"
-import ThemeComponent from "../../Theme/ThemeComponent"
+import ThemeComponent from "../../Theme/ThemeComponent/ThemeComponent"
 import themeProps from "./CheckBox.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * The Checkbox is shown as a square box that is checked when activated.
+ Checkboxes are used to let a user select one or more options of a limited number of choices.
+ */
 const CheckBox = ({
   children,
   id,

@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/addon-docs/blocks";
 
-<Meta title="Intro|Linting" />
+<Meta title="Intro/Linting" />
 
 # What is linting and why is it important?
 Linting is the process of programmatically checking your code for programmatic and stylistic errors. It helps us catch common mistakes, and makes sure your code is readable for other developers. There's no hard rule that says you have to use `@staccx/eslint-config`, if your team as a whole prefers something else, go ahead! But it is really important that you use a linter. If one person on your team uses a linter and someone else doesn't, you'll get a lot of changes in your commits that are just linting. This can be distracting and make it harder to see where a bug was introduced.
@@ -17,14 +17,14 @@ When creating a new project with create-react-app, you already get eslint with t
 1. Install the config in your project: `yarn add @staccx/eslint-config --dev`
 2. Check if you have `"eslintConfig"` in your package.json. If so, remove it.
 3. Create a new file called `.eslintrc` in the root of your project
-4. Add the following in `.eslintrc`: 
+4. Add the following in `.eslintrc`:
    ```json
   {
     "extends": "@staccx"
   }
   ```
 5. Create a new file called `.prettierrc` in the root of your project
-6. Add the following in `.prettierrc`: 
+6. Add the following in `.prettierrc`:
   ```json
   {
     "semi": false
@@ -35,7 +35,7 @@ When creating a new project with create-react-app, you already get eslint with t
 ## Setting up linting with VS code
 1. Install the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 2. Open the VSCode settings in Code > Preferences > Settings
-3. Make sure `Eslint: Enable` as well as `Eslint > Format: Enable` are checked, and `Eslint: Package manager` is set to Yarn if using Yarn. 
+3. Make sure `Eslint: Enable` as well as `Eslint > Format: Enable` are checked, and `Eslint: Package manager` is set to Yarn if using Yarn.
 4. In settings.json (You can find a link to it in settings) you might want to add:
   ```json
   "editor.codeActionsOnSave": {

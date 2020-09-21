@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import SliderKeyboardInput from "./SliderKeyboardInput"
 
-<Meta title="Components|Forms/SliderKeyboardInput" component={SliderKeyboardInput}/>
+<Meta title="components/Forms/SliderKeyboardInput" component={SliderKeyboardInput}/>
 
 
 # Slider
@@ -13,190 +13,22 @@ import {SliderKeyboardInput} from "@staccx/bento"
 
 ## Example usage
 <Preview>
-  <Story name="Example">
-    <SliderKeyboardInput label="Slider with keyboard input" min={100} max={500} step={50} defaultValue={250} onChange={(value) => console.log("The value is ",value)}  />
+  <Story name="Default">
+    <SliderKeyboardInput label="Slider with keyboard input" min={100} max={500} step={50} defaultValue={250}  />
   </Story>
 </Preview>
 
-### Source code
-<details><summary>SliderKeyboardInput</summary>
-<p>
+<Preview>
+  <Story name="Default value outside of step increment">
+    <SliderKeyboardInput name="stepoutside" label="Default value outside of step increment" min={100} max={500} step={50} defaultValue={251}  />
+  </Story>
+</Preview>
 
-```bash
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import Input from "../../Input/Input"
-import Slider from "../Slider/Slider"
-import {
-  applyVariants,
-  targetSize,
-  fontFamily,
-  font,
-  color
-} from "../../../../theming"
-import themeProps from "./SliderKeyboardInput.themeProps"
-import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
-
-const SliderKeyboardInput = ({
-  label,
-  name,
-  min,
-  max,
-  step,
-  mask,
-  className,
-  variant,
-  onChange,
-  showLabel,
-  defaultValue,
-  ...restProps
-}) => {
-  const [inputValue, setInputValue] = useState(defaultValue)
-  const [sliderValue, setSliderValue] = useState(defaultValue)
-  const [stepValue, setStepValue] = useState(step)
-
-  const handleInputFocus = () => {
-    setStepValue(1)
-  }
-
-  const handleInputChange = value => {
-    if (!value) {
-      setInputValue("")
-    } else {
-      setInputValue(value)
-
-      if (parseInt(value, 10) >= min && parseInt(value, 10) <= max) {
-        setSliderValue(value)
-      }
-
-      if (parseInt(value, 10) >= max) {
-        setSliderValue(max)
-      }
-
-      if (parseInt(value, 10) <= min) {
-        setSliderValue(min)
-      }
-
-      onChange && onChange(value)
-    }
-  }
-
-  const handleSliderChange = value => {
-    setInputValue(parseInt(value, 10))
-    setSliderValue(value)
-    onChange && onChange(value)
-  }
-
-  const handleSliderStart = () => {
-    setStepValue(step)
-  }
-
-  return (
-    <SliderWrapper className={className} variant={variant}>
-      <SliderInput
-        type="text"
-        name={`${name}-keyboard`}
-        id={`${name}-keyboard`}
-        value={inputValue}
-        onChange={e => handleInputChange(e.target.value)}
-        onFocus={handleInputFocus}
-        // onBlur={handleBlur}
-        label={showLabel ? label : null}
-        min={min}
-        max={max}
-        mask={mask || null}
-        // disabled={isAnimatingIn}
-        variant={variant}
-      />
-      <Slider
-        value={sliderValue}
-        name={name}
-        id={name}
-        step={stepValue}
-        min={min}
-        max={max}
-        onChange={handleSliderChange}
-        onSlideStart={handleSliderStart}
-        defaultValue={defaultValue}
-        variant={variant}
-      />
-    </SliderWrapper>
-  )
-}
-
-const SliderWrapper = styled.div`
-  font-family: ${fontFamily.body};
-  font-size: ${font.input};
-  ${applyVariants(themeProps.wrapper)};
-`
-
-const SliderInput = styled(Input)`
-  background-color: transparent;
-  border: 0;
-  min-height: ${targetSize.normal};
-  max-width: 100%;
-  -moz-appearance: textfield;
-  outline: none;
-
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  &:hover,
-  &:active,
-  &:focus,
-  &:-moz-ui-invalid,
-  &:invalid {
-    outline: none;
-    box-shadow: none;
-  }
-
-  &:disabled {
-    color: ${color.text};
-  }
-  ${applyVariants(themeProps.input)};
-`
-
-SliderKeyboardInput.defaultProps = {
-  className: "",
-  mask: null,
-  max: 100,
-  min: 0,
-  onChange: null,
-  step: 1,
-  value: 0,
-  showLabel: true
-}
-
-SliderKeyboardInput.propTypes = {
-  className: PropTypes.string,
-  easingFunction: PropTypes.func,
-  label: PropTypes.string.isRequired,
-  mask: PropTypes.func,
-  max: PropTypes.number,
-  min: PropTypes.number,
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
-  onBlur: PropTypes.func,
-  step: PropTypes.number,
-  variant: PropTypes.string,
-  value: PropTypes.number,
-  showLabel: PropTypes.bool
-}
-SliderKeyboardInput.themeProps = themeProps
-SliderKeyboardInput.createVariants = componentCreateFactory(SliderKeyboardInput)
-
-export default SliderKeyboardInput
-
-```
-
-</p>
-</details>
-
-
+<Preview>
+  <Story name="Big un">
+    <SliderKeyboardInput name="big" label="Large range, low step" min={10} max={100000} step={10} defaultValue={65356}  />
+  </Story>
+</Preview>
 
 ## Props for SliderKeyboardInput
 <Props of={SliderKeyboardInput} />

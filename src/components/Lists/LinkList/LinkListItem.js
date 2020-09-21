@@ -10,7 +10,7 @@ import {
   color,
   applyVariants
 } from "../../../theming"
-import ThemeComponent from "../../Theme/ThemeComponent"
+import ThemeComponent from "../../Theme/ThemeComponent/ThemeComponent"
 import themeProps from "./LinkListItem.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
@@ -22,6 +22,9 @@ const IconComponent = ({ ...props }) => (
   />
 )
 
+/**
+ * LinkList is a list of links
+ */
 const LinkListItem = ({ className, children, onClick, to }) => (
   <ListItem className={className}>
     <Button onClick={onClick && onClick} href={to}>

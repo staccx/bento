@@ -1,11 +1,11 @@
 import React from "react"
-import { fireEvent, render, screen } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import SliderKeyboardInput from "./SliderKeyboardInput"
 
-const setup = () => {
+const setup = (props = {}) => {
   const utils = render(
     <ThemeProvider theme={baseTheme}>
       <SliderKeyboardInput
@@ -14,6 +14,7 @@ const setup = () => {
         min={0}
         max={200}
         step={1}
+        {...props}
       />
     </ThemeProvider>
   )
@@ -146,14 +147,13 @@ describe("SliderKeyboardInput", () => {
         .toJSON()
       expect(tree).toMatchSnapshot()
     })
-    it("simulated keyboard Input", () => {
-      const { sliderKeyboardLabel } = setup()
-      fireEvent.change(sliderKeyboardLabel, { target: { value: 100 } })
-      expect(sliderKeyboardLabel.value).toBe("100")
-    })
     it("simulated keyboard with no value", () => {
       const { sliderKeyboardLabel } = setup()
-      expect(sliderKeyboardLabel.value).toBe("NaN")
+      expect(sliderKeyboardLabel.value).toBe("")
+    })
+    it("simulated keyboard with default value", () => {
+      const { sliderKeyboardLabel } = setup({ defaultValue: 1337 })
+      expect(sliderKeyboardLabel.value).toBe("1337")
     })
   })
 })

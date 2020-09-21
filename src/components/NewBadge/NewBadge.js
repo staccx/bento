@@ -11,6 +11,9 @@ import {
 import themeProps from "./NewBadge.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Badge are used to add additional information to content
+ */
 const NewBadge = ({ number, children, variant }) => (
   <NewBadgeWrapper variant={variant}>
     {children}

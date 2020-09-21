@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
-import ThemeComponent from "../../Theme/ThemeComponent"
+import ThemeComponent from "../../Theme/ThemeComponent/ThemeComponent"
 import { applyVariants, color, spacing } from "../../../theming"
 import useTimer from "../../../hooks/useTimer"
 import themeProps from "./Loading.themeProps"
@@ -13,6 +13,9 @@ const DefaultLoading = ({ className, variant, ...rest }) => (
 
 export const COMPONENT_LOADING = "COMPONENT_LOADING"
 
+/**
+ * Component to illustrate that the application is loading. Often used while loading api data and other async operations
+ */
 const Loading = ({ className, idleTime, ...rest }) => {
   const isReady = useTimer(idleTime)
 

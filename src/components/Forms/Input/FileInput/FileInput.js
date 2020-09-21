@@ -14,12 +14,15 @@ import {
   spacing,
   targetSize
 } from "../../../../theming"
-import ThemeComponent from "../../../Theme/ThemeComponent"
+import ThemeComponent from "../../../Theme/ThemeComponent/ThemeComponent"
 import themeProps from "./FileInput.themeProps"
 import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
 const tinycolor = require("tinycolor2")
 
+/**
+ * Component for uploading files from the user's computer
+ */
 const FileInput = ({
   onChange,
   showFileName,

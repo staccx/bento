@@ -1,47 +1,41 @@
-import { useEffect, useState } from "react"
+import { useRequest } from ".."
+import useDebounce from "../useDebounce"
 
+/**
+ * Search in The Brønnøysund Register Centre(Brønnøysundregisteret).
+ * Input a search term and it returns an object with the search results.
+ */
 const useBrRegSearch = searchTerm => {
-  const [results, setResults] = useState([])
-  const [errors, setErrors] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const [debouncedSearchTerm] = useDebounce(searchTerm, 500)
 
-  useEffect(() => {
-    if (!searchTerm || searchTerm.length < 2) {
-      setIsLoading(false)
-      setResults([])
-      return
-    }
+  const { data, error: errors } = useRequest(
+    debouncedSearchTerm.length >= 2
+      ? {
+          url: `https://data.brreg.no/enhetsregisteret/api/enheter?${
+            Number.isInteger(parseInt(searchTerm))
+              ? "organisasjonsnummer"
+              : "navn"
+          }=${debouncedSearchTerm}`,
+          params: {},
+          transformRequest: [
+            function(data, headers) {
+              delete headers.common.Authorization
+              return data
+            }
+          ]
+        }
+      : null
+  )
 
-    setIsLoading(true)
-
-    const getCompaniesByName = async searchTerm => {
-      let companies
-
-      try {
-        const query = `https://data.brreg.no/enhetsregisteret/api/enheter?${
-          Number.isInteger(parseInt(searchTerm))
-            ? "organisasjonsnummer"
-            : "navn"
-        }=${searchTerm}`
-        companies = await window.fetch(query).then(result => result.json())
-      } catch (e) {
-        setErrors(e.message)
-      }
-      return companies?._embedded?.enheter
-    }
-
-    getCompaniesByName(searchTerm).then(companies => {
-      if (companies) {
-        setResults(companies)
-      } else {
-        setResults([])
-      }
-
-      setIsLoading(false)
-    })
-  }, [searchTerm])
-
-  return { isLoading, results, errors }
+  return {
+    isLoading: !data && !errors,
+    results: data
+      ? data?._embedded?.enheter?.length > 0
+        ? data?._embedded?.enheter
+        : []
+      : [],
+    errors: errors ?? []
+  }
 }
 
 export default useBrRegSearch

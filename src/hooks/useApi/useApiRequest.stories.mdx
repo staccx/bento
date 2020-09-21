@@ -1,0 +1,72 @@
+import {useState} from "react"
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, array } from "@storybook/addon-knobs"
+import { action } from "@storybook/addon-actions"
+import { useApiRequest } from "./useApiRequest"
+import Button from "../../components/Button/Button"
+import Loading from "../../components/Loaders/Loading/Loading"
+
+<Meta title="hooks/useApiRequest" component={useApiRequest} decorators={[withKnobs]}/>
+
+# useApiRequest
+api request with states
+
+### Import
+All Hooks are imported via hooks. to use a spesific hook you would
+use ```hooks.hookYouWant```
+
+```javascript
+import { hooks } from "@staccx/bento"
+```
+usage
+```javascript
+hooks.useApiRequest
+```
+
+export const wait = (response, delay = 1000) =>
+                        new Promise(resolve => setTimeout(() => resolve(response), delay))
+
+export const waitError = (response, delay = 1000) =>
+                        new Promise((resolve, reject) => setTimeout(() => reject(response), delay))
+
+
+
+## useApiRequest
+<Preview>
+  <Story name="Default">
+   {() =>  {
+   const {state, error, result, submit, retry} = useApiRequest(() => wait({result: "somedata", code: 200}))
+   return (
+        <div>
+       <div>State: {state}</div>
+  {state === useApiRequest.states.IDLE && <Button onClick={submit}>Submit</Button>}
+    {state === useApiRequest.states.REQUESTING && <Loading idleTime={0}/>}
+      {state === useApiRequest.states.SUCCESS && <span>Result was {result}</span>}
+      {state === useApiRequest.states.SUCCESS && <Button onClick={retry}>Retry</Button>}
+      {state === useApiRequest.states.ERROR && <span>Error is {error}</span>}
+        </div>
+      )
+   }}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Fail">
+   {() =>  {
+   const e = new Error("Some error from axios")
+   e.code = 502
+   const {state, error, result, submit, retry} = useApiRequest(() => waitError(e))
+   return (
+        <div>
+  <div>State: {state}</div>
+  {state === useApiRequest.states.IDLE && <Button onClick={submit}>Submit</Button>}
+      {state === useApiRequest.states.REQUESTING && <Loading idleTime={0}/>}
+      {state === useApiRequest.states.ERROR && <Button onClick={retry}>Retry</Button>}
+      {state === useApiRequest.states.ERROR && <span>Error is {error}</span>}
+        </div>
+      )
+   }}
+  </Story>
+</Preview>
+
+

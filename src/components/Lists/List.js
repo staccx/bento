@@ -5,6 +5,10 @@ import { applyVariants, commonPropTypes } from "../../theming"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 import themeProps from "./List.themeProps"
 
+/**
+ * List is the base list component all the other lists are based on, without List as a wrapper they would not work as
+ * intended
+ */
 const List = ({ children, className, ordered, ...restProps }) => {
   if (!ordered) {
     return (

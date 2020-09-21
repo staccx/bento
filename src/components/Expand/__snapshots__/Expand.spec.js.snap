@@ -31,7 +31,8 @@ exports[`Expand Snapshots Expanded true 1`] = `
   <div
     aria-labelledby="2"
     className="sc-AxhCb fnwEPP"
-    id=""
+    id="item-1"
+    onClick={[Function]}
   >
     <p>
       Body
@@ -191,7 +192,8 @@ exports[`Expand Snapshots invalid Expand 1`] = `
   <div
     aria-labelledby="2"
     className="sc-AxhCb fnwEPP"
-    id=""
+    id="item-1"
+    onClick={[Function]}
   >
     <p>
       Body

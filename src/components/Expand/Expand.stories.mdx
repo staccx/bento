@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Expand from "./Expand.js"
 
-<Meta title="Components|Expand" component={Expand} parameters={{component: Expand.themeProps.button.name}} />
+<Meta title="components/Expand" component={Expand} parameters={{component: Expand.themeProps.button.name}} />
 
 # Expand
 
@@ -89,6 +89,24 @@ on the Expand element. Default for hideIcon is set to false
         <span>Click me to hide</span>
             <div>
                 <p>this</p>
+            </div>
+    </Expand>
+  </Story>
+</Preview>
+
+## Expand that close when auto when an item is clicked
+<Preview>
+  <Story name="Expand closeOnItemClick">
+    <Expand closeOnItemClick>
+        <span>Header item</span>
+            <div>
+                <p>Click any item to close</p>
+            </div>
+            <div>
+                <p>Click any item to close</p>
+            </div>
+            <div>
+                <p>Click any item to close</p>
             </div>
     </Expand>
   </Story>

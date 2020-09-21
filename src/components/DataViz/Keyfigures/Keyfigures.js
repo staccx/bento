@@ -6,6 +6,10 @@ import { applyVariants, spacing, color, font } from "../../../theming"
 import themeProps from "./Keyfigures.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Keyfigures takes an array of objects, containing label, amount and key. It lets you display key figures with a label
+ in a way that makes sense
+ */
 const KeyFigures = ({ figures, variant }) => (
   <List variant={variant}>
     {figures.map(figure => (

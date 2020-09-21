@@ -13,7 +13,7 @@ import {
   spacing,
   commonPropTypes
 } from "../../theming"
-import ThemeComponent from "../Theme/ThemeComponent"
+import ThemeComponent from "../Theme/ThemeComponent/ThemeComponent"
 import themeProps from "./Alert.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
@@ -72,6 +72,9 @@ const colors = ({ type }) => {
   }
 }
 
+/**
+ * Simple component for rendering an alert giving users feedback based on the result of an action
+ */
 const Alert = ({ children, type, ...restProps }) => {
   if (!children) {
     // TODO: What do we do here

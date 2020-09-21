@@ -10,7 +10,7 @@ import {
   applyVariants,
   commonPropTypes
 } from "../../../theming"
-import ThemeComponent from "../../Theme/ThemeComponent"
+import ThemeComponent from "../../Theme/ThemeComponent/ThemeComponent"
 import themeProps from "./ExpandListItem.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
@@ -27,6 +27,12 @@ const BtnComponent = ({ ...props }) => (
     {...props}
   />
 )
+
+/**
+ * ExpandListItem is a component that can be used with the List component.
+ * Its behaviour is the same as with the Expand component, and allows you to list
+ * Expands.
+ */
 class ExpandListItem extends Component {
   constructor(props) {
     super(props)
