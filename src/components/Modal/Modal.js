@@ -17,6 +17,9 @@ import themeProps from "./Modal.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 import { useFocusTrap } from "../../hooks/useFocusTrap/useFocusTrap"
 
+/**
+ * Modal is a dialog box/popup window that is displayed on top of the current page
+ */
 const Modal = ({ children, className, isOpen, onClose, variant, ...props }) => {
   const [open, setOpen] = React.useState(false)
   const containerRef = React.useRef(null)

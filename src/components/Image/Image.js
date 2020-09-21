@@ -5,6 +5,9 @@ import { applyVariants, commonPropTypes } from "../../theming"
 import themeProps from "./Image.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Image component, which enables setting round, aspectRatio, size, and children properties.
+ */
 const Image = ({
   src,
   className,

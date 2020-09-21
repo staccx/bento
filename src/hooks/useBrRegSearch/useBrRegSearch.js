@@ -1,6 +1,10 @@
 import { useRequest } from ".."
 import useDebounce from "../useDebounce"
 
+/**
+ * Search in The Brønnøysund Register Centre(Brønnøysundregisteret).
+ * Input a search term and it returns an object with the search results.
+ */
 const useBrRegSearch = searchTerm => {
   const [debouncedSearchTerm] = useDebounce(searchTerm, 500)
 

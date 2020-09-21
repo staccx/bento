@@ -5,6 +5,9 @@ import { applyVariants, color } from "../../../theming"
 import themeProps from "./Divider.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * This is the Divider component. The component can be used to structure content such as chunks of text, input-groups or to create a thematic section.
+ */
 const Divider = ({ level, className, height, ...restProps }) => {
   return <Rule className={className} height={height} {...restProps} />
 }

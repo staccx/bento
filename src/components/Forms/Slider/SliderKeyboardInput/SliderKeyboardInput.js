@@ -15,6 +15,9 @@ import CurrencyInput, {
   CurrencyInputProps
 } from "../../Input/CurrencyInput/CurrencyInput"
 
+/**
+ * Slider component which can be defined by various properties, i.e. min, max, step, and can be controlled by keyboard inputs
+ */
 const SliderKeyboardInput = ({
   label,
   name,

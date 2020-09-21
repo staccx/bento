@@ -6,6 +6,10 @@ import { applyVariants, color, spacing } from "../../../theming"
 import themeProps from "./Fraction.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Component showing progression, with posibility to change amount of fractions, value range from 0 to max.
+ Max sets range on this component
+ */
 const Fraction = ({
   value,
   max,

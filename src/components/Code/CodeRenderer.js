@@ -6,6 +6,11 @@ import "prismjs/components/prism-markup"
 import "prismjs/components/prism-java"
 import "prismjs/components/prism-csharp"
 
+/**
+ * CodeRenderer can be use to display code snippets to simplify the process of making something new, or just to display code examples.
+
+ The component is used with CodeWrapper, where the CodeWrapper wraps the CodeRenderer component.
+*/
 class CodeRenderer extends Component {
   render() {
     const { code, language } = this.props

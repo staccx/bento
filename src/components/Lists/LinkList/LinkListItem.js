@@ -22,6 +22,9 @@ const IconComponent = ({ ...props }) => (
   />
 )
 
+/**
+ * LinkList is a list of links
+ */
 const LinkListItem = ({ className, children, onClick, to }) => (
   <ListItem className={className}>
     <Button onClick={onClick && onClick} href={to}>

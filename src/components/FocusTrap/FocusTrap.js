@@ -4,6 +4,9 @@ import styled from "styled-components"
 import { applyVariants } from "../../theming"
 import { useFocusTrap } from "../../hooks/useFocusTrap/useFocusTrap"
 
+/**
+ * FocusTrap that lets you keep focus within it.
+ */
 const FocusTrap = React.forwardRef(
   ({ children, options = {}, activateOnReady = true }, ref) => {
     const refToTrapAround = React.useRef(null)

@@ -20,6 +20,9 @@ import { componentCreateFactory } from "../../../../theming/utils/createVariants
 
 const tinycolor = require("tinycolor2")
 
+/**
+ * Component for uploading files from the user's computer
+ */
 const FileInput = ({
   onChange,
   showFileName,

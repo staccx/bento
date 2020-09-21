@@ -16,6 +16,9 @@ import {
 import themeProps from "./Legend.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * The legend component represents a caption for the content of its parent component.
+ */
 const Legend = ({ className, children, ...rest }) => (
   <LegendElement className={className} {...rest}>
     {children}

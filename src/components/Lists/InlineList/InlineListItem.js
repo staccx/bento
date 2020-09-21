@@ -5,6 +5,9 @@ import { applyVariants } from "../../../theming"
 import themeProps from "./InlineList.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * InlineList wil render the elements inside the list inline.
+ */
 const InlineListItem = ({ className, children, ...rest }) => (
   <ListItem className={className} {...rest}>
     {children}

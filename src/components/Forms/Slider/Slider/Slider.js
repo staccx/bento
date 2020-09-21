@@ -18,6 +18,9 @@ import Track from "./Slider.Track"
 import themeProps from "./Slider.themeProps"
 import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Slider component which can be defined by various properties, i.e. min, max, step
+ */
 const Slider = ({
   variant,
   min = 0,
