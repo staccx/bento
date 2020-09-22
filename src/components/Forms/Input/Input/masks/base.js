@@ -19,7 +19,6 @@ export const baseMask = {
         .join(" ")
         .trimEnd()
     }
-    console.log("Created mask", mask)
     return {
       mask: value => (mask ? maskFormat(value, mask) : value),
       replace: input => {
