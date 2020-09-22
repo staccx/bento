@@ -69,6 +69,7 @@
     "@testing-library/user-event": "^10.2.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-react-app": "^9.1.0",
     "chromatic": "^4.0.2",
     "conventional-changelog-angular-bitbucket": "^1.1.2",
