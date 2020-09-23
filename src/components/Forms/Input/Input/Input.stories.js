@@ -26,7 +26,7 @@ Disabled.args = {
 export const Account = args => <Input {...args} mode="account" />
 Account.args = {
   label: "Account",
-  level: 5,
+  level: 1,
   placeholder: "xxxx-xx-xxxxx"
 }
 
@@ -35,7 +35,7 @@ export const AccountDanish = args => (
 )
 AccountDanish.args = {
   label: "Account",
-  level: 5,
+  level: 1,
   placeholder: "xxxx-xxxxxxxxx"
 }
 
@@ -44,18 +44,26 @@ export const Custom = args => (
 )
 Custom.args = {
   label: "This uses a custom locale [a-s]",
-  level: 5,
+  level: 1,
   placeholder: "aa aa aa"
 }
 
 export const Funny = args => <Input {...args} pattern={/[s]+/gi} />
 Funny.args = {
   label: "Does not allow the use of the letter 's'",
-  level: 5
+  level: 1
 }
 
-export const MaskProperty = args => <Input {...args} mask="XX.XX.XX.XX.XXX" />
+export const MaskProperty = args => (
+  <Input {...args} mask="XX.XX.XX.XX.XXX" delimiter="." />
+)
 MaskProperty.args = {
   label: "Uses the mask property to define its mask custom",
-  level: 5
+  level: 1
+}
+
+export const CreditCard = args => <Input {...args} mode="creditcard" />
+CreditCard.args = {
+  label: "Vanilla credit card",
+  level: 1
 }

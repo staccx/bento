@@ -8,7 +8,7 @@ import {
   NoWrapSpan,
   StyledInput
 } from "./Input.styles"
-import { createMaskFactory } from "./Input.utils"
+import { resolveMask } from "./masks"
 
 const Input = React.forwardRef(
   (
@@ -30,44 +30,34 @@ const Input = React.forwardRef(
   ) => {
     const logger = useLogging("components.Input", level)
     const [showHelp, showHelpSet] = useState(false)
-    const [maskFactory, maskFactorySet] = React.useState(() =>
-      createMaskFactory(mode, logger)
-    )
-    const mask = React.useRef(() => null)
+
+    const mask = React.useRef(() => resolveMask(mode, logger))
+
     const [internalValue, internalValueSet] = React.useState(() => {
-      const factory = createMaskFactory(mode, logger)
-      const m = factory.createMask(props)
+      const createMask = resolveMask(mode, logger)
+      const initialValue = createMask(props)
       return {
-        ...(value && { rawValue: value || "" }),
-        ...(m?.mask ? { value: m.mask(value || "") } : { value: value || "" })
+        ...initialValue(value)
       }
     })
 
     React.useEffect(() => {
-      maskFactorySet(createMaskFactory(mode, logger))
+      const createMask = resolveMask(mode, logger)
+      mask.current = createMask(props)
     }, [mode, logger])
-
-    React.useEffect(() => {
-      if (maskFactory) {
-        mask.current = maskFactory.createMask(props)
-      }
-    }, [maskFactory])
 
     const handleChange = e => {
       if (!mask.current) {
         throw new Error("This component should have a mask")
       }
-      const rawValue = mask.current.replace(e.target.value)
-      const value = mask.current.mask(rawValue)
+      const value = mask.current(e.target.value)
       if (value && onChange) {
         onChange({
-          value,
-          rawValue
+          ...value
         })
       }
       internalValueSet({
-        value,
-        rawValue
+        ...value
       })
     }
 
@@ -95,7 +85,6 @@ const Input = React.forwardRef(
           defaultValue={defaultValue}
           {...props}
           value={internalValue.value}
-          {...maskFactory?.inputProps}
         />
       </InputWrapper>
     )

@@ -31,19 +31,12 @@ const locales = {
     replaceWhitespace: true
   }
 }
-
-export const accountMask = {
-  createMask: ({ locale = "NO", ...options }) => {
-    let config = locales.hasOwnProperty(locale) ? locales[locale] : {}
-    config = {
-      ...config,
-      ...options
-    }
-
-    if (!config.blocks) {
-      throw new Error("No blocks defined in config")
-    }
-
-    return baseMask.createMask(config)
+export const accountMask = ({ locale = "NO", ...options }) => {
+  let config = locales.hasOwnProperty(locale) ? locales[locale] : {}
+  config = {
+    ...config,
+    ...options
   }
+
+  return baseMask(config)
 }
