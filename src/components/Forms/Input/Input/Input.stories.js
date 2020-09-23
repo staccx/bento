@@ -29,22 +29,6 @@ Disabled.args = {
   disabled: true
 }
 
-export const Account = args => <Input {...args} mode="account" />
-Account.args = {
-  label: "Account",
-  level: 1,
-  placeholder: "xxxx-xx-xxxxx"
-}
-
-export const AccountDanish = args => (
-  <Input {...args} mode="account" locale="DK" />
-)
-AccountDanish.args = {
-  label: "Account",
-  level: 1,
-  placeholder: "xxxx-xxxxxxxxx"
-}
-
 export const Custom = args => (
   <Input {...args} blocks={[2, 2, 2]} pattern={/[^a-s]+/gi} />
 )
