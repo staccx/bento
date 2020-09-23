@@ -24,6 +24,7 @@ const Input = React.forwardRef(
       mode,
       value,
       level,
+      locale,
       ...props
     },
     ref
@@ -31,24 +32,37 @@ const Input = React.forwardRef(
     const logger = useLogging("components.Input", level)
     const [showHelp, showHelpSet] = useState(false)
 
-    const mask = React.useRef(() => resolveMask(mode, logger))
+    const maskConfig = React.useMemo(
+      () => ({
+        ...props,
+        ...(locale && { locale })
+      }),
+      [locale]
+    )
+
+    const mask = React.useRef(() => {
+      const createMask = resolveMask(mode, logger)
+      return createMask(maskConfig)
+    })
 
     const [internalValue, internalValueSet] = React.useState(() => {
-      const createMask = resolveMask(mode, logger)
-      const initialValue = createMask(props)
+      const initialValue = mask.current(props)
       return {
-        ...initialValue(value)
+        ...(initialValue && { ...initialValue(value) }),
+        ...(!initialValue && { value })
       }
     })
 
     React.useEffect(() => {
       const createMask = resolveMask(mode, logger)
-      mask.current = createMask(props)
-    }, [mode, logger])
+      mask.current = createMask(maskConfig)
+    }, [mode, logger, maskConfig])
 
     const handleChange = e => {
       if (!mask.current) {
-        throw new Error("This component should have a mask")
+        return {
+          value: e.target.value
+        }
       }
       const value = mask.current(e.target.value)
       if (value && onChange) {

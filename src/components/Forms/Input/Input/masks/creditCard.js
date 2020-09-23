@@ -64,6 +64,7 @@ export const creditCardMask = options => {
         value,
         ...(card && { card: { name: card.name } })
       }
-    }
+    },
+    name: "Credit card mask"
   })
 }

@@ -35,7 +35,8 @@ export const accountMask = ({ locale = "NO", ...options }) => {
   let config = locales.hasOwnProperty(locale) ? locales[locale] : {}
   config = {
     ...config,
-    ...options
+    ...options,
+    name: "Account mask"
   }
 
   return baseMask(config)

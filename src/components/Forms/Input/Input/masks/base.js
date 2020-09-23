@@ -36,6 +36,7 @@ const resolveDelimiterString = ({ delimiter = null }) => {
 export const baseMask = options => {
   const delimiter = resolveDelimiterString(options)
   const config = {
+    name: "Base mask",
     prepareConfig: (config, input) => config,
     prepare: (input, config) => {
       if (!input) {
@@ -60,7 +61,6 @@ export const baseMask = options => {
 
   return input => {
     const configPrepared = config.prepareConfig(config, input)
-    console.log(configPrepared)
     const { prepare, format, settle } = configPrepared
 
     const rawValue = prepare(input, configPrepared)

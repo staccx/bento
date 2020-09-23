@@ -11,6 +11,12 @@ Standard.args = {
   label: "Input"
 }
 
+export const Controlled = args => <Input {...args} />
+Controlled.args = {
+  label: "Input",
+  value: "Sphinx of black quartz, judge my vow"
+}
+
 export const Placeholder = args => <Input {...args} />
 Placeholder.args = {
   label: "Secret question",
@@ -66,4 +72,26 @@ export const CreditCard = args => <Input {...args} mode="creditcard" />
 CreditCard.args = {
   label: "Vanilla credit card",
   level: 1
+}
+
+export const CurrencyDefaultLocale = args => <Input {...args} mode="currency" />
+CurrencyDefaultLocale.args = {
+  label: "Currency formatting default locale",
+  level: 1
+}
+
+export const CurrencyLocaleSet = args => <Input {...args} mode="currency" />
+CurrencyLocaleSet.args = {
+  label: "Currency formatting",
+  level: 1,
+  locale: "en-US"
+}
+
+export const CurrencyCustomProps = args => <Input {...args} mode="currency" />
+CurrencyCustomProps.args = {
+  label: "Set currencydisplay to name",
+  level: 1,
+  locale: "en-US",
+  currencyDisplay: "name",
+  currency: "USD"
 }
