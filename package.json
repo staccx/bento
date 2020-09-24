@@ -2,8 +2,9 @@
   "name": "@staccx/bento",
   "version": "10.0.0",
   "scripts": {
-    "test": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test --env=jsdom-sixteen",
-    "test:ci": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test --watchAll=false --silent --coverage --env=jsdom-sixteen --updateSnapshot",
+    "test": "is-ci \"test:coverage\" \"test:watch\"",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --watch=false --coverage --passWithNoTests --updateSnapshot",
     "build": "export NODE_ENV='production' && babel src -d lib",
     "build:watch": "export NODE_ENV='development' && nodemon --watch src/ --exec \"babel src -d dist\"",
     "storybook:genreq": "node stories/generateRequireStories",
@@ -115,6 +116,9 @@
     "i18next": "^19.0.3",
     "immer": "^5.3.2",
     "immutable": "^4.0.0-rc.12",
+    "is-ci": "^2.0.0",
+    "is-ci-cli": "^2.1.2",
+    "jest": "^26.4.2",
     "libphonenumber-js": "^1.7.30",
     "lodash.merge": "^4.6.2",
     "lodash.throttle": "^4.1.1",
@@ -138,14 +142,5 @@
     "react-is": "^16.12.0",
     "styled-components": "^5.0.0"
   },
-  "publishConfig": {},
-  "jest": {
-    "transform": {
-      "^.+\\.[tj]sx?$": "babel-jest",
-      "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
-    },
-    "collectCoverageFrom": [
-      "src/**/{!(*.stories|*.preview|bento|index),}.js"
-    ]
-  }
+  "publishConfig": {}
 }

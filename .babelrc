@@ -16,7 +16,6 @@
       "root": ["./src"],
       "alias": {
         "animations": "./animations",
-        "color": "./color",
         "components": "./components",
         "formatting": "./formatting",
         "hooks": "./hooks",
