@@ -21,7 +21,6 @@ module.exports = {
     config = disableEsLint(config)
     config.resolve.alias = {
         "animations": path.resolve(__dirname, "..", "src", "animations"),
-        "color": path.resolve(__dirname, "..", "src", "color"),
         "components": path.resolve(__dirname, "..", "src", "components"),
         "formatting": path.resolve(__dirname, "..", "src", "formatting"),
         "hooks": path.resolve(__dirname, "..", "src", "hooks"),
