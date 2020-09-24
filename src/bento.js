@@ -9,11 +9,6 @@ import "regenerator-runtime/runtime.js"
 export * as animations from "./animations"
 
 /**
- * Color
- */
-export * as color from "./color"
-
-/**
  * Formatting
  */
 export * as formatting from "./formatting"
@@ -58,5 +53,4 @@ export * as hooks from "./hooks"
  */
 export * from "./components"
 
-export { Translate } from "./i18n"
-export { Transform } from "./i18n"
+export { Translate, Transform } from "./i18n"
