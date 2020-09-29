@@ -55,7 +55,8 @@ const Provider = ({
   const changeLanguage = async language => {
     const lang = resolveLanguage(language)
     await i18next.changeLanguage(lang)
-    setLanguage(lang)
+    // set whatever language is set. No resolving. We want the consumer to get this
+    setLanguage(language)
   }
 
   useEffect(() => {
@@ -74,7 +75,7 @@ const Provider = ({
     }
     await i18next.init({
       ...(texts && { resources: texts }),
-      lng: lang,
+      lng: resolveLanguage(language),
       fallbackLng: [lang],
       debug: level >= loglevel.levels.INFO,
       backend: {
@@ -207,7 +208,7 @@ export const useI18n = () => {
     return {
       translate,
       transform,
-      languages: i18n.languages,
+      languages: i18n ? i18n.languages : [],
       ...value
     }
   }, [value, ready, i18n])
