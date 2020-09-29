@@ -4,6 +4,7 @@ import { creditCardMask } from "./creditCard"
 import { currencyMask } from "./currency"
 import { nationalIdMask } from "./nationalId"
 import { phoneMask } from "./phone"
+import { postalCodeMask } from "./postalCode"
 
 const resolveMask = (mode, logger = null) => {
   if (!mode) {
@@ -25,6 +26,10 @@ const resolveMask = (mode, logger = null) => {
     case "phone":
       logger?.debug("Choosing the phone mask")
       return phoneMask
+    case "postal":
+    case "postalcode":
+      logger?.debug("Choosing the postalCode mask")
+      return postalCodeMask
     default:
       logger?.warn("Mode not supported:", mode)
       return baseMask

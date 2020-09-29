@@ -1,5 +1,4 @@
 export { default as Input } from "./Forms/Input/Input"
-export { default as PhoneInput } from "./Forms/Input/PhoneInput/PhoneInput"
 export { default as PostalCodeInput } from "./Forms/Input/PostalCodeInput/PostalCodeInput"
 export { default as FileInput } from "./Forms/Input/FileInput/FileInput"
 export { default as Label } from "./Forms/Label/Label"
