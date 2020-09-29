@@ -9,8 +9,9 @@ import React, {
 import i18next from "i18next"
 import PropTypes from "prop-types"
 import loglevel from "loglevel"
-import { formatMoney } from "../formatting/currency"
-import { normalizeLevel } from "../utils/loglevelUtils"
+import { formatMoney } from "formatting/currency"
+import { normalizeLevel } from "utils/loglevelUtils"
+import { countries } from "./countries"
 
 const I18nContext = createContext({})
 
@@ -23,28 +24,44 @@ const defaultFormat = {
 export const i18nLogger = loglevel.getLogger("i18n")
 i18nLogger.setDefaultLevel(normalizeLevel(0))
 
-const Provider = ({ children, level, ...props }) => {
+const resolveLanguage = language => {
+  if (typeof language === "string") {
+    return language
+  }
+  if (typeof language === "object") {
+    if (language.hasOwnProperty("alpha2")) {
+      return language.alpha2
+    }
+  }
+
+  return null
+}
+
+const Provider = ({
+  children,
+  level,
+  language,
+  texts = null,
+  languages = ["en"],
+  formatFunctions = {},
+  backend,
+  backendOptions = {},
+  debug = false,
+  ...props
+}) => {
   const [ready, setReady] = useState(false)
-  const [language, setLanguage] = useState(props.language)
+  const [lang, setLanguage] = useState(() => resolveLanguage(language))
 
   const changeLanguage = async language => {
-    await i18next.changeLanguage(language)
-    setLanguage(language)
+    const lang = resolveLanguage(language)
+    await i18next.changeLanguage(lang)
+    setLanguage(lang)
   }
 
   useEffect(() => {
     i18nLogger.setLevel(normalizeLevel(level))
     i18nLogger.info("i18n levels updated")
   }, [])
-
-  const {
-    texts = null,
-    languages = ["en"],
-    formatFunctions = {},
-    backend,
-    backendOptions = {},
-    debug = false
-  } = props
 
   const initialize = useCallback(async () => {
     if (ready) {
@@ -57,8 +74,8 @@ const Provider = ({ children, level, ...props }) => {
     }
     await i18next.init({
       ...(texts && { resources: texts }),
-      lng: language,
-      fallbackLng: [language],
+      lng: lang,
+      fallbackLng: [lang],
       debug: level >= loglevel.levels.INFO,
       backend: {
         ...backendOptions
@@ -99,7 +116,7 @@ const Provider = ({ children, level, ...props }) => {
     backendOptions,
     debug,
     formatFunctions,
-    language,
+    lang,
     level,
     texts,
     ready
@@ -116,7 +133,7 @@ const Provider = ({ children, level, ...props }) => {
         i18n: i18next,
         ready,
         languages,
-        language,
+        language: lang,
         changeLanguage
       }}
     >
@@ -128,7 +145,20 @@ const Provider = ({ children, level, ...props }) => {
 Provider.propTypes = {
   children: PropTypes.element.isRequired,
   texts: PropTypes.object,
-  language: PropTypes.string.isRequired,
+  language: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      name: PropTypes.string,
+      native: PropTypes.string,
+      phone: PropTypes.string,
+      continent: PropTypes.string,
+      capital: PropTypes.string,
+      currency: PropTypes.string,
+      languages: PropTypes.arrayOf(PropTypes.string),
+      alpha2: PropTypes.string,
+      key: PropTypes.string
+    })
+  ]),
   formatFunctions: PropTypes.object,
   backend: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   backendOptions: PropTypes.object,
@@ -144,7 +174,8 @@ Provider.propTypes = {
 }
 
 Provider.defaultProps = {
-  level: loglevel.levels.SILENT
+  level: loglevel.levels.SILENT,
+  language: countries.Norway
 }
 
 export const useI18n = () => {
