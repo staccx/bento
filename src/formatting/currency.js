@@ -1,7 +1,9 @@
+import loglevel from "loglevel"
 import { formatNumber } from "./number"
 import createNumberMask from "./utils/createNumberMask"
 import { STYLE } from "./number.constants"
 
+const logger = loglevel.getLogger("formatting")
 const prefix = ""
 const suffix = ""
 const includeThousandsSeparator = true
@@ -54,7 +56,13 @@ export const formatCurrency = (number, options = {}) => {
     suffix: options.symbol ?? null,
     maximumFractionDigits: options.precision ?? 0
   }
-  return formatNumber(number, opts)
+  try {
+    const value = formatNumber(number, opts)
+    return value
+  } catch (e) {
+    logger.error(e.message)
+    return number
+  }
 }
 
 export const formatMoney = (value, options = {}) => {
