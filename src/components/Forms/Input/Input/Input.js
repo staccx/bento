@@ -1,5 +1,7 @@
 import React, { useState } from "react"
+import PropTypes from "prop-types"
 import { useLogging } from "hooks"
+import { validLogLevels } from "utils/loglevelUtils"
 import {
   HelpIcon,
   HelpText,
@@ -8,6 +10,7 @@ import {
   NoWrapSpan,
   StyledInput
 } from "./Input.styles"
+import { useI18n } from "i18n"
 import { resolveMask } from "./masks"
 
 const Input = React.forwardRef(
@@ -29,16 +32,17 @@ const Input = React.forwardRef(
     },
     ref
   ) => {
+    const { language } = useI18n()
     const logger = useLogging("components.Input", level)
     const [showHelp, showHelpSet] = useState(false)
 
-    const maskConfig = React.useMemo(
-      () => ({
+    const maskConfig = React.useMemo(() => {
+      return {
         ...props,
+        ...(language && { locale: language }),
         ...(locale && { locale })
-      }),
-      [locale]
-    )
+      }
+    }, [locale, language])
 
     const mask = React.useRef(() => {
       const createMask = resolveMask(mode, logger)
@@ -108,5 +112,41 @@ const Input = React.forwardRef(
     )
   }
 )
+
+Input.propTypes = {
+  className: PropTypes.string,
+  variant: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.object
+  ]),
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  /**
+   * Define this is you want ? next to the label
+   */
+  helpText: PropTypes.string,
+  placeholder: PropTypes.string,
+  defaultValue: PropTypes.string,
+  onChange: PropTypes.func,
+  mode: PropTypes.oneOf([
+    "account",
+    "creditcard",
+    "currency",
+    "nationalid",
+    "phone",
+    "postal",
+    "postalcode"
+  ]),
+  value: PropTypes.string,
+  level: PropTypes.oneOf([...validLogLevels]),
+  locale: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      alpha2: PropTypes.string
+    })
+  ])
+}
 
 export default Input
