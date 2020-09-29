@@ -58,6 +58,10 @@ const Input = React.forwardRef(
       mask.current = createMask(maskConfig)
     }, [mode, logger, maskConfig])
 
+    React.useEffect(() => {
+      handleChange({ target: { value: internalValue.rawValue } })
+    }, [locale])
+
     const handleChange = e => {
       if (!mask.current) {
         return {
