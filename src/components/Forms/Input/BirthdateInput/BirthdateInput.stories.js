@@ -2,7 +2,7 @@ import React from "react"
 import BirthdateInput from "./BirthdateInput"
 
 export default {
-  title: "New/Components/Forms/Input/BirthdateInput",
+  title: "Components/Forms/Input/BirthdateInput",
   component: BirthdateInput
 }
 
