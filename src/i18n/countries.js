@@ -1826,14 +1826,31 @@ export const countries = {
     key: "NL"
   },
   Norway: {
+    account: {
+      type: "BBAN",
+      blocks: [4, 2, 5],
+      maxLength: 11,
+      pattern: /[^0-9]+/gi
+    },
+    currency: {
+      locale: "no-NB",
+      name: "NOK"
+    },
+    nationalId: {
+      blocks: [6, 5],
+      pattern: /[^0-9]+/gi
+    },
+    postalCode: {
+      blocks: [4],
+      maxLength: 4,
+      pattern: /[^0-9]+/gi
+    },
     name: "Norway",
     native: "Norge",
     phone: "47",
     continent: "EU",
     capital: "Oslo",
-    currency: "NOK",
     languages: ["no", "nb", "nn"],
-    alpha2: "NO",
     key: "NO"
   },
   Nepal: {
