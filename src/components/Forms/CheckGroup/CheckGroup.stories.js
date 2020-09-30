@@ -3,7 +3,7 @@ import CheckGroup from "./CheckGroup"
 import CheckBox from "../CheckBox/CheckBox"
 
 export default {
-  title: "New/Components/Forms/CheckGroup",
+  title: "Components/Forms/CheckGroup",
   component: CheckGroup
 }
 
