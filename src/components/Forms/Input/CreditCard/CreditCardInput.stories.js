@@ -2,7 +2,7 @@ import React from "react"
 import CreditCardInput from "./CreditCardInput"
 
 export default {
-  title: "New/Components/Forms/Input/CreditCardInput",
+  title: "Components/Forms/Input/CreditCardInput",
   component: CreditCardInput
 }
 
