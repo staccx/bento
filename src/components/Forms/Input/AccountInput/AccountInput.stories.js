@@ -2,7 +2,7 @@ import React from "react"
 import AccountInput from "./AccountInput"
 
 export default {
-  title: "New/Components/Forms/Input/AccountInput",
+  title: "Components/Forms/Input/AccountInput",
   component: AccountInput
 }
 
