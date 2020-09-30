@@ -2,7 +2,7 @@ import React from "react"
 import Legend from "./Legend"
 
 export default {
-  title: "New/Components/Forms/Legend",
+  title: "Components/Forms/Legend",
   component: Legend
 }
 
