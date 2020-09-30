@@ -2,7 +2,7 @@ import React from "react"
 import KeyFigures from "./Keyfigures.js"
 
 export default {
-  title: "New/Components/DataViz/Keyfigures",
+  title: "Components/DataViz/Keyfigures",
   component: KeyFigures
 }
 
