@@ -2,7 +2,7 @@ import React from "react"
 import Slider from "./Slider"
 
 export default {
-  title: "New/Components/Forms/Slider/Slider",
+  title: "Components/Forms/Slider/Slider",
   component: Slider
 }
 
