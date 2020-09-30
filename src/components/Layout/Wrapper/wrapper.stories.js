@@ -2,7 +2,7 @@ import React from "react"
 import Wrapper from "./Wrapper"
 
 export default {
-  title: "New/Components/Layout/Wrapper",
+  title: "Components/Layout/Wrapper",
   component: Wrapper
 }
 
