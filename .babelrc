@@ -33,6 +33,7 @@
     "src/**/*.spec.js",
     "src/**/*.stories.js",
     "src/**/*.md",
+    "src/**/*.mdx",
     "src/**/*.preview.js"
   ]
 }
