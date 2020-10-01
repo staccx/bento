@@ -1,28 +1,14 @@
-import React from "react"
 import loglevel from "loglevel"
 import PropTypes from "prop-types"
 import { useI18n } from "../I18n"
-import { commonPropTypes } from "../../theming"
-import { getComponent } from "../utils"
-
-const handleArray = (value, data, children, translate) => {
-  const values = value.map(
-    (k, index) => translate(k, data) || React.Children(children)[index]
-  )
-
-  if (typeof children === "function") {
-    return children(values)
-  }
-
-  return values.map(getComponent)
-}
+import { getComponent, handleArray } from "../utils"
 
 /**
- * Component for translation
+ * Jsx Component for translating
  * @param children
  * @param i18n
  * @param data
- * @return {*}
+ * @returns {null|*}
  * @constructor
  */
 const Translate = ({ children, i18n, data }) => {
@@ -75,7 +61,14 @@ Translate.propTypes = {
   /**
    * Children will in this case work as a fallback
    */
-  children: commonPropTypes.children,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.array,
+    PropTypes.func
+  ]),
   /**
    * Key to look in the store
    */
