@@ -32,6 +32,7 @@ export const accountMask = ({ locale = "NO", ...options }) => {
   config = {
     ...config,
     ...options,
+    ...locale,
     name: "Account mask"
   }
 
