@@ -16,7 +16,7 @@ import Upload from "./Upload/Upload"
 import Warning from "./Warning/Warning"
 
 export default {
-  title: "new/Components/Icons",
+  title: "Components/Icons",
   component: [
     BankId,
     BankIdMobile,
