@@ -50,8 +50,9 @@ const Provider = ({
   ...props
 }) => {
   const [ready, setReady] = useState(false)
-  const [lang, setLanguage] = useState(null)
+  const [lang, setLanguage] = useState(language)
 
+  console.log(language, lang)
   const changeLanguage = async language => {
     if (resolveLanguage(language) === i18next.language) {
       i18nLogger.debug("No need to change language. Already", i18next.language)
