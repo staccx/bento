@@ -82,10 +82,10 @@ describe("i18n", () => {
               </I18nConsumer>
             </Provider>
           )
-          const { getByText } = tree
-          waitForElement(() => getByText(/^Ready:/)).then(wait => {
-            expect(wait.textContent).toBe("Ready: true")
-          })
+        })
+        const { getByText } = tree
+        waitForElement(() => getByText(/^Ready:/)).then(wait => {
+          expect(wait.textContent).toBe("Ready: true")
         })
       })
     })

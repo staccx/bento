@@ -646,7 +646,7 @@ export const countries = {
     currency: "DKK",
     languages: ["da"],
     alpha2: "DK",
-    key: "DK"
+    key: "da"
   },
   Dominica: {
     name: "Dominica",
@@ -1851,7 +1851,7 @@ export const countries = {
     continent: "EU",
     capital: "Oslo",
     languages: ["no", "nb", "nn"],
-    key: "NO"
+    key: "no"
   },
   Nepal: {
     name: "Nepal",
@@ -2577,7 +2577,7 @@ export const countries = {
     currency: "USD,USN,USS",
     languages: ["en"],
     alpha2: "US",
-    key: "US"
+    key: "en"
   },
   Uruguay: {
     name: "Uruguay",
