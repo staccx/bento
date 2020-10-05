@@ -7,7 +7,7 @@ import { ThemeProvider } from "styled-components";
 import { locales } from "./locales";
 
 const texts = {
-  NO: {
+  no: {
     translation: {
       key: "En nøkkel",
       key2: "other value",
@@ -64,7 +64,7 @@ const texts = {
       ]
     }
   },
-  DK: {
+  da: {
     translation: {
       key: "Kamelåså",
       key2: "other value",
@@ -121,7 +121,7 @@ const texts = {
       ]
     }
   },
-  SE: {
+  se: {
     translation: {
       key: "Surströmming",
       key2: "other value",
@@ -178,7 +178,7 @@ const texts = {
       ]
     }
   },
-  FI: {
+  fi: {
     translation: {
       key: "Ei saa peittää",
       key2: "other value",
@@ -235,7 +235,7 @@ const texts = {
       ]
     }
   },
-  US: {
+  en: {
     translation: {
       key: "Leaders of the free world",
       key2: "other value",
@@ -303,7 +303,7 @@ const withContext = (Story, context) => {
   const theme = themes[context.globals.theme.id];
   const locale = locales[context.globals.locale.id];
   return (<ThemeProvider theme={theme}>
-    <I18nProvider level={0} language={locale?.data ?? "nb"} texts={texts}>
+    <I18nProvider level={5} language={locale?.data ?? "nb"} texts={texts}>
       <>
         <WebFonts/>
         <GlobalStyle/>
