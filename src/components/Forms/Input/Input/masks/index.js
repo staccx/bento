@@ -30,6 +30,7 @@ const resolveMask = (mode, logger = null) => {
     case "postalcode":
       logger?.debug("Choosing the postalCode mask")
       return postalCodeMask
+    case "custom":
     default:
       logger?.warn("Mode not supported:", mode)
       return baseMask

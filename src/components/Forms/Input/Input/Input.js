@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useLogging } from "hooks"
-import { validLogLevels } from "utils/loglevelUtils"
 import {
   HelpIcon,
   HelpText,
@@ -137,16 +136,29 @@ Input.propTypes = {
     "nationalid",
     "phone",
     "postal",
-    "postalcode"
+    "postalcode",
+    "custom"
   ]),
   value: PropTypes.string,
-  level: PropTypes.oneOf([...validLogLevels]),
+  /**
+   * Logger level. Higher is more detail
+   */
+  level: PropTypes.oneOf([0, 1, 2, 3, 4, 5]),
   locale: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.shape({
       alpha2: PropTypes.string
     })
-  ])
+  ]),
+  /**
+   * Use with custom mode. To block out text
+   */
+  blocks: PropTypes.arrayOf(PropTypes.number),
+  /**
+   * Max length of inputted string (raw value)
+   */
+  maxLength: PropTypes.number,
+  pattern: PropTypes.instanceOf(RegExp)
 }
 
 export default Input

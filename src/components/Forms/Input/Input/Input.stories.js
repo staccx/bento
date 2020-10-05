@@ -2,7 +2,7 @@ import React from "react"
 import Input from "./Input"
 
 export default {
-  title: "Components/Input/",
+  title: "/Components/Input/Component",
   component: Input
 }
 
@@ -35,13 +35,15 @@ export const Custom = args => (
 Custom.args = {
   label: "This uses a custom locale [a-s]",
   level: 1,
-  placeholder: "aa aa aa"
+  placeholder: "aa aa aa",
+  mode: "custom"
 }
 
 export const Funny = args => <Input {...args} pattern={/[s]+/gi} />
 Funny.args = {
   label: "Does not allow the use of the letter 's'",
-  level: 1
+  level: 1,
+  mode: "custom"
 }
 
 export const MaskProperty = args => (

@@ -6,7 +6,9 @@ export default {
   component: Input
 }
 
-export const Vanilla = args => <Input {...args} mode="phone" />
+export const Vanilla = args => (
+  <Input {...args} mode="phone" onChange={console.log} />
+)
 Vanilla.args = {}
 
 export const Locale = args => <Input {...args} mode="phone" />

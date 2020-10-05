@@ -6,10 +6,14 @@ export const currencyMask = ({
   currency = "NOK",
   ...options
 }) => {
+  const currencyConfig = {
+    locale: locale?.currency?.locale ?? locale,
+    currency: locale?.currency?.name ?? currency
+  }
   const config = {
     ...options,
     format: input =>
-      input ? formatMoney(input, { locale, currency, ...options }) : "",
+      input ? formatMoney(input, { ...currencyConfig, ...options }) : "",
     pattern: /[^0-9]+/gi,
     name: "Currency mask"
   }
