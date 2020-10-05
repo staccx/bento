@@ -1,8 +1,8 @@
 import React from "react";
 import { IconButton, TooltipLinkList, WithTooltip } from "@storybook/components";
-import styled from "styled-components";
 import { useGlobals } from "@storybook/api";
 import { locales } from "../locales";
+import { FlexIt } from "./ThemeSwitcher";
 
 export const LocaleSelector = ({ api }) => {
   const [{ locale: activeLocale }, setGlobal] = useGlobals();
@@ -19,7 +19,7 @@ export const LocaleSelector = ({ api }) => {
           data: null
         }
       });
-      expandedSet(false)
+      expandedSet(false);
     }
   })), []);
 
@@ -36,18 +36,8 @@ export const LocaleSelector = ({ api }) => {
       closeOnClick
     >
       <FlexIt>
-        <IconButton key="locale-selector">{locale.title} {locale?.right}</IconButton>
+        <IconButton key="locale-selector">{locale.title} </IconButton><span>{locale?.right}</span>
       </FlexIt>
     </WithTooltip>
   );
 };
-
-export const FlexIt = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  padding: 0 12px;
-  min-width: 100px;
-`;

@@ -52,6 +52,8 @@ export const FlexIt = styled.div`
   border-radius: 8px;
   padding: 0 12px;
   min-width: 100px;
+  margin: 0 6px;
+  width: 100%;
 `;
 
 export const ThemeIcon = styled.span`
