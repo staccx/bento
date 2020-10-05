@@ -7,13 +7,13 @@ import {
   fontFamily,
   spacing,
   targetSize
-} from "../../../../theming"
+} from "../../../theming"
 import themeProps from "./Input.themeProps"
-import { FadeIn } from "../../../../animations"
-import Label from "../../Label/Label"
-import ThemeComponent from "../../../Theme/ThemeComponent/ThemeComponent"
+import { FadeIn } from "../../../animations"
+import Label from "../Label/Label"
+import ThemeComponent from "../../Theme/ThemeComponent/ThemeComponent"
 import React from "react"
-import QuestionMark from "../../../Icons/QuestionMark/QuestionMark"
+import QuestionMark from "../../Icons/QuestionMark/QuestionMark"
 
 const HelpButton = styled.button`
   -webkit-appearance: none;

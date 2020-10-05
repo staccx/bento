@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import { formatCurrency } from "../../../formatting"
+import { formatMoney } from "../../../formatting"
 import { applyVariants, spacing, color, font } from "../../../theming"
 import themeProps from "./Keyfigures.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
@@ -15,7 +15,7 @@ const KeyFigures = ({ figures, variant }) => (
     {figures.map(figure => (
       <ListItem key={figure.key} variant={variant}>
         <Heading variant={variant}>{figure.label}</Heading>
-        <Value variant={variant}> {formatCurrency(figure.amount)}</Value>
+        <Value variant={variant}> {formatMoney(figure.amount)}</Value>
       </ListItem>
     ))}
   </List>

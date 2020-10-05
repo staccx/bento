@@ -1,6 +1,6 @@
 import React from "react"
 import Input from "../Input"
-import { countries, Provider } from "i18n"
+import { countries, Provider } from "../../../../i18n"
 
 export default {
   title: "Components/Input/Masks/Account",

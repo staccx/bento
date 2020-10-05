@@ -94,16 +94,8 @@ export { default as Logo } from "./Logo/Logo"
 export { default as CodeRenderer } from "./Code/CodeRenderer"
 export { default as Table } from "./Table/Table"
 
-/**
- * Hooks!
- */
-export { default as useSearch } from "../hooks/useSearch/useSearch"
-export { default as useTimer } from "../hooks/useTimer"
-
 // Navigation
 export { default as Breadcrumb } from "./Breadcrumb/Breadcrumb"
 export { default as SkeletonPulse } from "./Skeleton/Skeleton.Pulse"
 export { default as SkeletonLine } from "./Skeleton/Skeleton.Line"
 export { default as SkeletonCircle } from "./Skeleton/Skeleton.Circle"
-export { default as useInterval } from "../hooks/useInterval"
-export { default as useDebounce } from "../hooks/useDebounce"

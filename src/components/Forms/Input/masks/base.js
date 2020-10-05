@@ -1,4 +1,4 @@
-import { maskFormat } from "formatting"
+import { maskFormat } from "../../../../formatting"
 
 const mapBlocks = block =>
   new Array(block)

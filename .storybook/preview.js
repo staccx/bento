@@ -303,7 +303,7 @@ const withContext = (Story, context) => {
   const theme = themes[context.globals.theme.id];
   const locale = locales[context.globals.locale.id];
   return (<ThemeProvider theme={theme}>
-    <I18nProvider level={5} language={locale?.data ?? "nb"} texts={texts}>
+    <I18nProvider level={0} language={locale?.data ?? "nb"} texts={texts}>
       <>
         <WebFonts/>
         <GlobalStyle/>

@@ -1,4 +1,4 @@
-import { useRequest } from ".."
+import { useRequest } from "../useRequest/useRequest"
 import useDebounce from "../useDebounce"
 
 /**

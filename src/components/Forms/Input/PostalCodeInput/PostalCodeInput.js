@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import Input, { InputPropTypes } from "../Input"
+import Input from "../Input"
 import Loading from "../../../Loaders/Loading/Loading"
 import { FadeIn } from "../../../../animations"
 import {
@@ -11,13 +11,14 @@ import {
   color,
   font
 } from "../../../../theming"
-import { usePostalCode } from "../../../../hooks/usePostalCode/usePostalCode"
+import { usePostalCode } from "../../../../hooks"
 import Alert from "../../../Alert/Alert"
 import themeProps from "./PostalCode.themeProps"
 import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
 
 /**
  * Input for Norwegian Postal codes. Adds PostalPlace according to the number. Input is imported from Input-component
+ * @deprecated Use <Input mode="postal" />
  */
 const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   const inputRef = useRef(null)
@@ -84,7 +85,6 @@ const PostalInput = styled(Input)`
 `
 
 PostalCodeInput.propTypes = {
-  ...InputPropTypes,
   locale: PropTypes.oneOf(["nb"]),
   onChange: PropTypes.func
 }
