@@ -2,7 +2,7 @@ import React from "react"
 import Input from "./Input"
 
 export default {
-  title: "New/Components/Forms/Input/Input",
+  title: "Components/Forms/Input/Input",
   component: Input
 }
 

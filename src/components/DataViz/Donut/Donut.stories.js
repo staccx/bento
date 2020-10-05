@@ -2,7 +2,7 @@ import React from "react"
 import Donut from "./Donut"
 
 export default {
-  title: "New/Components/DataViz/Donut",
+  title: "Components/DataViz/Donut",
   component: Donut
 }
 

@@ -2,7 +2,7 @@ import React from "react"
 import Odometer from "./Odometer"
 
 export default {
-  title: "New/Components/Formatters/Odometer",
+  title: "Components/Formatters/Odometer",
   component: Odometer
 }
 

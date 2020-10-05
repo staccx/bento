@@ -2,7 +2,7 @@ import React from "react"
 import Label from "./Label"
 
 export default {
-  title: "New/Components/Forms/Label",
+  title: "Components/Forms/Label",
   component: Label
 }
 

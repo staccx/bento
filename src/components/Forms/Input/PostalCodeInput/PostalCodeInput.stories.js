@@ -2,7 +2,7 @@ import React from "react"
 import PostalCodeInput from "./PostalCodeInput"
 
 export default {
-  title: "New/Components/Forms/Input/PostalCodeInput",
+  title: "Components/Forms/Input/PostalCodeInput",
   component: PostalCodeInput
 }
 

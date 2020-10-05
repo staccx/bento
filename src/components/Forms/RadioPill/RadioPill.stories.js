@@ -3,7 +3,7 @@ import RadioPill from "./RadioPill.Item"
 import { RadioPillItem } from "../../index"
 
 export default {
-  title: "New/Components/Forms/RadioPill",
+  title: "Components/Forms/RadioPill",
   component: RadioPill
 }
 

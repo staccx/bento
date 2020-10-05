@@ -2,7 +2,7 @@ import React from "react"
 import Tag from "./Tag"
 
 export default {
-  title: "New/Components/Text/Tag",
+  title: "Components/Text/Tag",
   component: Tag
 }
 

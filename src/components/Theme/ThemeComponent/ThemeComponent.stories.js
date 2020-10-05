@@ -2,7 +2,7 @@ import React from "react"
 import ThemeComponent from "./ThemeComponent"
 
 export default {
-  title: "New/Components/Theme/ThemeComponent",
+  title: "Components/Theme/ThemeComponent",
   component: ThemeComponent
 }
 

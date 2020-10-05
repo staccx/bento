@@ -3,7 +3,7 @@ import LinkListItem from "./LinkListItem"
 import List from "../List"
 
 export default {
-  title: "New/Components/Lists/LinkList",
+  title: "Components/Lists/LinkList",
   component: LinkListItem
 }
 

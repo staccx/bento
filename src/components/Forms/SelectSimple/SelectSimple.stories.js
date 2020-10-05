@@ -2,7 +2,7 @@ import React from "react"
 import SelectSimple from "./SelectSimple"
 
 export default {
-  title: "New/Components/Forms/SelectSimple",
+  title: "Components/Forms/SelectSimple",
   component: SelectSimple
 }
 
