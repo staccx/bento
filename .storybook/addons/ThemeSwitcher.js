@@ -19,6 +19,7 @@ export const ThemeSwitcher = ({ api }) => {
           name: getName(t)
         }
       });
+      expandedSet(false)
     },
     right: <ThemeIcon theme={t}/>
   }));
