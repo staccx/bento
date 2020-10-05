@@ -11,9 +11,7 @@ import {
 } from "../../../../theming"
 import themeProps from "./SliderKeyboardInput.themeProps"
 import { componentCreateFactory } from "../../../../theming/utils/createVariantsFunctionFactory"
-import CurrencyInput, {
-  CurrencyInputProps
-} from "../../Input/CurrencyInput/CurrencyInput"
+import Input from "../../Input/Input"
 
 /**
  * Slider component which can be defined by various properties, i.e. min, max, step, and can be controlled by keyboard inputs
@@ -81,6 +79,7 @@ const SliderKeyboardInput = ({
         name={`${name}-keyboard`}
         id={`${name}-keyboard`}
         value={inputValue}
+        mode="currency"
         onChange={e => handleInputChange(e.target.rawValue)}
         onFocus={handleInputFocus}
         // onBlur={handleBlur}
@@ -114,7 +113,7 @@ const SliderWrapper = styled.div`
   ${applyVariants(themeProps.wrapper)};
 `
 
-const SliderInput = styled(CurrencyInput)`
+const SliderInput = styled(Input)`
   background-color: transparent;
   border: 0;
   min-height: ${targetSize.normal};
@@ -168,7 +167,6 @@ SliderKeyboardInput.propTypes = {
   variant: PropTypes.string,
   value: PropTypes.number,
   showLabel: PropTypes.bool,
-  inputProps: CurrencyInputProps,
   sliderProps: PropTypes.shape(SliderProps)
 }
 SliderKeyboardInput.themeProps = themeProps

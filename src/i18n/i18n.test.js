@@ -3,15 +3,7 @@ import { render, cleanup, waitForElement, act } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
 import renderer from "react-test-renderer"
 import { isBlock } from "./utils"
-import {
-  // withI18n,
-  I18nConsumer,
-  // SanityBackend,
-  // useI18n,
-  Provider
-  // Translate,
-  // TransformFG
-} from "./index"
+import { I18nConsumer, Provider } from "./index"
 
 afterEach(cleanup)
 
@@ -90,10 +82,10 @@ describe("i18n", () => {
               </I18nConsumer>
             </Provider>
           )
-          const { getByText } = tree
-          waitForElement(() => getByText(/^Ready:/)).then(wait => {
-            expect(wait.textContent).toBe("Ready: true")
-          })
+        })
+        const { getByText } = tree
+        waitForElement(() => getByText(/^Ready:/)).then(wait => {
+          expect(wait.textContent).toBe("Ready: true")
         })
       })
     })

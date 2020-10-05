@@ -1,40 +1,25 @@
-import React from "react"
-import loglevel from "loglevel"
 import PropTypes from "prop-types"
-import { useI18n } from "../I18n"
-import { commonPropTypes } from "../../theming"
-import { getComponent } from "../utils"
-
-const handleArray = (value, data, children, translate) => {
-  const values = value.map(
-    (k, index) => translate(k, data) || React.Children(children)[index]
-  )
-
-  if (typeof children === "function") {
-    return children(values)
-  }
-
-  return values.map(getComponent)
-}
+import { i18nLogger, useI18n } from "../I18n"
+import { getComponent, handleArray } from "../utils"
 
 /**
- * Component for translation
+ * Jsx Component for translating
  * @param children
  * @param i18n
  * @param data
- * @return {*}
+ * @returns {null|*}
  * @constructor
  */
 const Translate = ({ children, i18n, data }) => {
   const { translate, ready } = useI18n()
 
   if (!ready) {
-    loglevel.debug("Not ready yet")
+    i18nLogger.debug("Not ready yet")
     return null
   }
 
   if (!i18n) {
-    loglevel.warn("No key supplied to I18n")
+    i18nLogger.warn("No key supplied to I18n")
     return children
   }
 
@@ -47,7 +32,7 @@ const Translate = ({ children, i18n, data }) => {
   const value = translate(i18n, data)
   if (!value) {
     if (children) {
-      loglevel.debug("Falling back to children")
+      i18nLogger.debug("Falling back to children")
       if (typeof children !== "function") {
         return children // Fallback to children
       }
@@ -75,7 +60,14 @@ Translate.propTypes = {
   /**
    * Children will in this case work as a fallback
    */
-  children: commonPropTypes.children,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.array,
+    PropTypes.func
+  ]),
   /**
    * Key to look in the store
    */

@@ -1,4 +1,6 @@
-const logLevels = {
+export const validLogLevels = [0, 1, 2, 3, 4, 5]
+
+export const logLevels = {
   TRACE: 0,
   DEBUG: 1,
   INFO: 2,

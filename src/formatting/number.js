@@ -1,5 +1,8 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat/NumberFormat
 import { STYLE, UNIT_DISPLAY, CURRENCY_DISPLAY } from "./number.constants"
+import loglevel from "loglevel"
+
+const logger = loglevel.getLogger("formatting")
 
 const defaults = {
   style: STYLE.decimal,
@@ -22,7 +25,12 @@ export const formatNumber = (value, opts) => {
   if (style === STYLE.unit) {
     throw new Error("Unit is not yet supported")
   }
-  const formatter = new Intl.NumberFormat(locale, options)
-  const formattedValue = formatter.format(value)
-  return `${formattedValue}${options.suffix ?? ""}`
+  try {
+    const formatter = new Intl.NumberFormat(locale, options)
+    const formattedValue = formatter.format(value)
+    return `${formattedValue}${options.suffix ?? ""}`
+  } catch (e) {
+    logger.error(e.message)
+    return value
+  }
 }

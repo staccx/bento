@@ -1,10 +1,5 @@
 export { default as Input } from "./Forms/Input/Input"
-export { default as BirthdateInput } from "./Forms/Input/BirthdateInput/BirthdateInput"
-export { default as CurrencyInput } from "./Forms/Input/CurrencyInput/CurrencyInput"
-export { default as AccountInput } from "./Forms/Input/AccountInput/AccountInput"
-export { default as PhoneInput } from "./Forms/Input/PhoneInput/PhoneInput"
 export { default as PostalCodeInput } from "./Forms/Input/PostalCodeInput/PostalCodeInput"
-export { default as NationalIdInput } from "./Forms/Input/NationalIdInput/NationalIdInput"
 export { default as FileInput } from "./Forms/Input/FileInput/FileInput"
 export { default as Label } from "./Forms/Label/Label"
 export { default as Legend } from "./Forms/Legend/Legend"
@@ -19,7 +14,6 @@ export { default as SliderTrack } from "./Forms/Slider/Slider/Slider.Track"
 export { default as SliderTick } from "./Forms/Slider/Slider/Slider.Tick"
 export { default as SelectSimple } from "./Forms/SelectSimple/SelectSimple"
 export { default as Toggle } from "./Forms/Toggle/Toggle"
-export { default as CreditCardInput } from "./Forms/Input/CreditCard/CreditCardInput"
 
 // Text
 export { default as Text } from "./Text/Text/Text"

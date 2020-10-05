@@ -2,14 +2,12 @@ import axios from "axios"
 import { renderHook } from "@testing-library/react-hooks"
 import { useExchangeRates } from "./useExchangeRates"
 
+jest.mock("axios")
 describe("Use exchange rates", () => {
-  beforeAll(() => {
-    axios.get = jest.fn(() =>
+  it("Should convert to US", async () => {
+    axios.get.mockResolvedValue(
       Promise.resolve({ data: { rates: { USD: 10, CAD: 7.42 } } })
     )
-  })
-
-  it("Should convert to US", async () => {
     const { result, waitForNextUpdate } = renderHook(() =>
       useExchangeRates("NOK")
     )
