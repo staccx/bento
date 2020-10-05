@@ -25,3 +25,15 @@ export const getComponent = val => {
     <Text key={val}>{val}</Text>
   )
 }
+
+export const handleArray = (value, data, children, translate) => {
+  const values = value.map(
+    (k, index) => translate(k, data) || React.Children(children)[index]
+  )
+
+  if (typeof children === "function") {
+    return children(values)
+  }
+
+  return values.map(getComponent)
+}

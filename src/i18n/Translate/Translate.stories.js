@@ -24,7 +24,7 @@ InvalidKeyWithFallback.args = {}
 export const Plurality = args => <Translate {...args} i18n="car" />
 Plurality.args = {
   data: {
-    count: 1
+    count: 3
   }
 }
 

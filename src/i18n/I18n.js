@@ -29,8 +29,8 @@ const resolveLanguage = language => {
     return language
   }
   if (typeof language === "object") {
-    if (language.hasOwnProperty("alpha2")) {
-      return language.alpha2
+    if (language.hasOwnProperty("key")) {
+      return language.key
     }
   }
 
@@ -50,23 +50,40 @@ const Provider = ({
   ...props
 }) => {
   const [ready, setReady] = useState(false)
-  const [lang, setLanguage] = useState(() => resolveLanguage(language))
+  const [lang, setLanguage] = useState(null)
 
   const changeLanguage = async language => {
-    const lang = resolveLanguage(language)
-    await i18next.changeLanguage(lang)
+    if (resolveLanguage(language) === i18next.language) {
+      i18nLogger.debug("No need to change language. Already", i18next.language)
+      return Promise.reject(new Error("No need to change language"))
+    }
+    await i18next.changeLanguage(resolveLanguage(language))
     // set whatever language is set. No resolving. We want the consumer to get this
     setLanguage(language)
   }
 
   useEffect(() => {
-    i18nLogger.setLevel(normalizeLevel(level))
-    i18nLogger.info("i18n levels updated")
-  }, [])
+    if (language && ready) {
+      changeLanguage(language)
+        .then(() => {
+          i18nLogger.debug("Language changed by props", language)
+        })
+        .catch(e => {
+          i18nLogger.debug("Language change rejected:", e.message)
+        })
+    }
+  }, [language, ready])
+
+  useEffect(() => {
+    if (level) {
+      i18nLogger.setLevel(normalizeLevel(level))
+      i18nLogger.info("i18n levels updated")
+    }
+  }, [level])
 
   const initialize = useCallback(async () => {
     if (ready) {
-      i18nLogger.info("Alredy completed initializion. Aborting")
+      i18nLogger.debug("Already completed initializion. Aborting")
       return
     }
     i18nLogger.info("Initializing i18n")
@@ -149,14 +166,6 @@ Provider.propTypes = {
   language: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.shape({
-      name: PropTypes.string,
-      native: PropTypes.string,
-      phone: PropTypes.string,
-      continent: PropTypes.string,
-      capital: PropTypes.string,
-      currency: PropTypes.string,
-      languages: PropTypes.arrayOf(PropTypes.string),
-      alpha2: PropTypes.string,
       key: PropTypes.string
     })
   ]),
