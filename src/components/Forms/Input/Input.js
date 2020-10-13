@@ -72,6 +72,7 @@ const Input = React.forwardRef(
         onChange({
           value: e.target.value
         })
+        return
       }
       const value = mask.current(e.target.value)
       if (value && onChange) {
