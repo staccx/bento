@@ -29,7 +29,7 @@ const Translate = ({ children, i18n, data }) => {
 
   const fallback = typeof children !== "function" ? children : null
 
-  const value = translate(i18n, data)
+  const value = translate(i18n, data, fallback)
   if (!value) {
     if (children) {
       i18nLogger.debug("Falling back to children")

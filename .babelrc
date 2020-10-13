@@ -21,6 +21,7 @@
     "src/**/*.md",
     "src/**/*.mdx",
     "src/**/*.preview.js",
-    "src/setupTests.js"
+    "src/setupTests.js",
+    "CHANGELOG.md"
   ]
 }
