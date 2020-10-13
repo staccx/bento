@@ -1,5 +1,6 @@
 import React from "react"
 import { Translate } from "../index"
+import { Button } from "../../components"
 
 export default {
   title: "Components/i18n/Translate",
@@ -8,6 +9,18 @@ export default {
 
 export const Key = args => <Translate {...args} i18n="key" />
 Key.args = {}
+
+export const Multiple = args => <Translate {...args} i18n={["key", "car"]} />
+Multiple.args = {}
+
+export const MultipleWithFallback = args => (
+  <Translate {...args} i18n={["notakey", "thiseither"]}>
+    <div>Fallback for first key</div>
+    <div>Fallback for second key</div>
+    <span>Not rendered</span>
+  </Translate>
+)
+MultipleWithFallback.args = {}
 
 export const InvalidKeyNoFallback = args => (
   <Translate {...args} i18n="invalidKey" />
@@ -43,6 +56,17 @@ Context.args = {
 }
 
 export const StructuredContent = args => <Translate i18n="blocks" {...args} />
+StructuredContent.args = {
+  data: {
+    balance: 100000
+  }
+}
+
+export const ButtonWithTranslate = args => (
+  <Button>
+    <Translate i18n="key" {...args} />
+  </Button>
+)
 StructuredContent.args = {
   data: {
     balance: 100000

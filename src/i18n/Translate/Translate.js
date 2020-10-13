@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import { i18nLogger, useI18n } from "../I18n"
 import { getComponent, handleArray } from "../utils"
+import { useMemo } from "react"
 
 /**
  * Jsx Component for translating
@@ -13,47 +14,22 @@ import { getComponent, handleArray } from "../utils"
 const Translate = ({ children, i18n, data }) => {
   const { translate, ready } = useI18n()
 
-  if (!ready) {
-    i18nLogger.debug("Not ready yet")
-    return null
-  }
-
-  if (!i18n) {
-    i18nLogger.warn("No key supplied to I18n")
-    return children
-  }
-
-  if (Array.isArray(i18n)) {
-    return handleArray(i18n, data, children, translate)
-  }
-
-  const fallback = typeof children !== "function" ? children : null
-
-  const value = translate(i18n, data, fallback)
-  if (!value) {
-    if (children) {
-      i18nLogger.debug("Falling back to children")
-      if (typeof children !== "function") {
-        return children // Fallback to children
-      }
-      return children(null)
+  const renderResult = useMemo(() => {
+    if (Array.isArray(i18n)) {
+      i18nLogger.debug("Handling i18n key is array")
+      return handleArray(i18n, data, children, translate)
+    }
+    const value = translate(i18n, data, children ?? null)
+    if (Array.isArray(value)) {
+      i18nLogger.debug("Handling value is array")
+      return value.map(getComponent)
     }
 
-    return fallback || null
-  }
+    i18nLogger.debug("Key:", i18n, "resolved to:", value)
+    return value
+  }, [ready, translate, i18n])
 
-  if (children) {
-    if (typeof children === "function") {
-      return children(value)
-    }
-  }
-
-  let result = value
-  if (Array.isArray(value)) {
-    result = value.map(getComponent)
-  }
-
-  return result
+  return renderResult
 }
 
 Translate.propTypes = {

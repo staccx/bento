@@ -1,5 +1,4 @@
 import SanityBlockContent from "../sanity/components/SanityBlockContent"
-import Text from "../components/Text/Text/Text"
 import React from "react"
 
 export const isBlock = item =>
@@ -22,13 +21,17 @@ export const getComponent = val => {
   ) : isBlock(val) ? (
     <SanityBlockContent key={val._key} blocks={val} />
   ) : (
-    <Text key={val}>{val}</Text>
+    val
   )
 }
 
 export const handleArray = (value, data, children, translate) => {
   const values = value.map(
-    (k, index) => translate(k, data) || React.Children(children)[index]
+    (k, index) =>
+      translate(k, data) ||
+      (React.Children.count(children) > index
+        ? React.Children.toArray(children)[index]
+        : null)
   )
 
   if (typeof children === "function") {

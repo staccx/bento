@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from "react"
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState
+} from "react"
 import i18next from "i18next"
 import PropTypes from "prop-types"
 import loglevel from "loglevel"
@@ -35,7 +41,6 @@ const Provider = ({
   level,
   language,
   texts = null,
-  languages = ["en"],
   formatFunctions = {},
   backend,
   backendOptions = {},
@@ -119,25 +124,35 @@ const Provider = ({
       })
   }, [])
 
-  const translate = (key, data, fallback = null) => {
-    i18nLogger.debug(`Translating ${key}`, data)
-    const value = i18next.t(key, data)
-    i18nLogger.debug(`Translated ${key} into ${value}`)
-    return value || fallback
-  }
+  const translate = useCallback(
+    (key, data, fallback = null) => {
+      i18nLogger.debug(`Translating ${key}`, data)
+      const value = i18next.t(key, data)
+      i18nLogger.debug(`Translated ${key} into ${value}`)
+      return value || fallback
+    },
+    [i18next]
+  )
 
-  const transform = (value, fallback) => {
-    if (!value) {
-      i18nLogger.warn(`Cannot transform null or undefined`)
-      return fallback ?? null
-    }
-    if (!value.hasOwnProperty(i18next.language)) {
-      i18nLogger.warn(`Could not find key in language`, value, i18next.language)
-      return fallback ?? null
-    }
-    i18nLogger.debug(`Transforming in ${i18next.language}`, value)
-    return value[i18next.language] ?? fallback ?? null
-  }
+  const transform = useCallback(
+    (value, fallback) => {
+      if (!value) {
+        i18nLogger.warn(`Cannot transform null or undefined`)
+        return fallback ?? null
+      }
+      if (!value.hasOwnProperty(i18next.language)) {
+        i18nLogger.warn(
+          `Could not find key in language`,
+          value,
+          i18next.language
+        )
+        return fallback ?? null
+      }
+      i18nLogger.debug(`Transforming in ${i18next.language}`, value)
+      return value[i18next.language] ?? fallback ?? null
+    },
+    [i18next]
+  )
 
   return (
     <I18nContext.Provider
