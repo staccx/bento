@@ -158,6 +158,7 @@ const Provider = ({
     <I18nContext.Provider
       value={{
         ready,
+        level,
         i18n: i18next,
         language,
         languages: i18next.languages || [],

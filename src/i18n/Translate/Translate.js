@@ -12,22 +12,29 @@ import { useMemo } from "react"
  * @constructor
  */
 const Translate = ({ children, i18n, data }) => {
-  const { translate, ready } = useI18n()
+  const { translate, ready, level } = useI18n()
 
   const renderResult = useMemo(() => {
-    if (Array.isArray(i18n)) {
-      i18nLogger.debug("Handling i18n key is array")
-      return handleArray(i18n, data, children, translate)
+    if (ready) {
+      if (Array.isArray(i18n)) {
+        i18nLogger.debug("Handling i18n key is array")
+        return handleArray(i18n, data, children, translate)
+      }
+      const value = translate(i18n, data, children ?? null)
+      if (Array.isArray(value)) {
+        i18nLogger.debug("Handling value is array")
+        return value.map(getComponent)
+      }
+
+      i18nLogger.debug("Key:", i18n, "resolved to:", value)
+      return value
     }
-    const value = translate(i18n, data, children ?? null)
-    if (Array.isArray(value)) {
-      i18nLogger.debug("Handling value is array")
-      return value.map(getComponent)
+    if (level === 5) {
+      return i18n
     }
 
-    i18nLogger.debug("Key:", i18n, "resolved to:", value)
-    return value
-  }, [ready, translate, i18n])
+    return null
+  }, [ready, translate, i18n, level])
 
   return renderResult
 }
