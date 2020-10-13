@@ -30,10 +30,11 @@ const Translate = ({ children, i18n, data }) => {
       return value
     }
     if (level === 5) {
+      i18nLogger.debug("Returning key instead")
       return i18n
     }
 
-    return null
+    return children || null
   }, [ready, translate, i18n, level])
 
   return renderResult
