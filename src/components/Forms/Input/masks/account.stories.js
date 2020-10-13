@@ -14,8 +14,9 @@ Vanilla.args = {
 
 export const Locale = args => <Input {...args} mode="account" />
 Locale.args = {
-  label: "Locale set explistely",
-  locale: "DK"
+  label: "Locale set explistely (Danish)",
+  locale: countries.Denmark,
+  onChange: console.log
 }
 
 export const i18nEnabled = args => (

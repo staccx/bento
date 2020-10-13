@@ -53,7 +53,7 @@ export const baseMask = options => {
       )
     },
     format: (input, { mask }) => (mask ? maskFormat(input, mask) : input),
-    settle: (value, config) => ({ value }),
+    settle: (value, config, rawValue) => ({ value }),
     mask: options?.mask ?? resolveBlocks(options?.blocks) ?? "",
     ...options,
     delimiter // Keep delimiter last since we resolve it at the top.
@@ -65,7 +65,7 @@ export const baseMask = options => {
 
     const rawValue = prepare(input, configPrepared)
     const masked = format(rawValue, configPrepared)
-    const value = settle(masked, configPrepared)
+    const value = settle(masked, configPrepared, rawValue)
     return {
       ...value,
       rawValue

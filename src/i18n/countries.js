@@ -646,7 +646,13 @@ export const countries = {
     currency: "DKK",
     languages: ["da"],
     alpha2: "DK",
-    key: "da"
+    key: "da",
+    account: {
+      type: "BBAN",
+      blocks: [4, 9],
+      maxLength: 13,
+      pattern: /[^0-9]+/gi
+    }
   },
   Dominica: {
     name: "Dominica",
@@ -1845,9 +1851,13 @@ export const countries = {
       maxLength: 4,
       pattern: /[^0-9]+/gi
     },
+    phone: {
+      blocks: [3, 2, 3],
+      maxLength: 8,
+      pattern: /[^0-9]+/gi
+    },
     name: "Norway",
     native: "Norge",
-    phone: "47",
     continent: "EU",
     capital: "Oslo",
     languages: ["no", "nb", "nn"],

@@ -10,6 +10,7 @@ export const nationalIdMask = ({ locale = "no-NB", ...options }) => {
   config = {
     ...config,
     ...options,
+    ...(locale?.nationalId && { ...locale.nationalId }),
     name: "NationalId mask"
   }
 

@@ -26,7 +26,8 @@ const locales = {
 export const postalCodeMask = ({ locale = "NO", ...options }) => {
   const config = {
     ...options,
-    ...(locales.hasOwnProperty(locale) ? locales[locale] : {})
+    ...(locales.hasOwnProperty(locale) ? locales[locale] : {}),
+    ...(locale?.postalCode && { ...locale.postalCode })
   }
 
   return baseMask({
