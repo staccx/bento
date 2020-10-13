@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
-import { useI18n, i18nLogger } from "./I18n"
+import { useI18n, i18nLogger } from "../I18n"
 
-import { getComponent } from "./utils"
+import { getComponent } from "../utils"
 
 /**
  * Component for transformation
@@ -9,18 +9,9 @@ import { getComponent } from "./utils"
  * @param value
  */
 const Transform = ({ children, data }) => {
-  const { transform, ready } = useI18n()
+  const { transform } = useI18n()
 
-  if (!ready) {
-    i18nLogger.debug("Not ready yet")
-    return null
-  }
-  if (!data) {
-    i18nLogger.warn("No value provided")
-    return children
-  }
-
-  const value = transform(data)
+  const value = transform(data, children)
   if (!value) {
     if (children) {
       i18nLogger.debug("Falling back to children")
@@ -31,12 +22,6 @@ const Transform = ({ children, data }) => {
     }
 
     return null
-  }
-
-  if (children) {
-    if (typeof children === "function") {
-      return children(value)
-    }
   }
   let result = value
   if (Array.isArray(value)) {

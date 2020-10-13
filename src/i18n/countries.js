@@ -646,7 +646,7 @@ export const countries = {
     currency: "DKK",
     languages: ["da"],
     alpha2: "DK",
-    key: "da",
+    key: "dk",
     account: {
       type: "BBAN",
       blocks: [4, 9],
@@ -2587,7 +2587,7 @@ export const countries = {
     currency: "USD,USN,USS",
     languages: ["en"],
     alpha2: "US",
-    key: "en"
+    key: "us"
   },
   Uruguay: {
     name: "Uruguay",
