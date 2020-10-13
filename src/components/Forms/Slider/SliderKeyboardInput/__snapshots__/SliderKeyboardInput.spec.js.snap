@@ -2,31 +2,23 @@
 
 exports[`SliderKeyboardInput Snapshots Name 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-fzokOt fwTwKs"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
+      className="sc-fznZeY hyyIgg"
       id="slider-keyboard"
+      mask={null}
       max={100}
       min={0}
-      mode="currency"
       name="slider-keyboard"
-      onBlur={null}
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      placeholder={null}
-      style={null}
       type="text"
+      value=""
     />
   </div>
   <div
@@ -80,31 +72,23 @@ exports[`SliderKeyboardInput Snapshots Name 1`] = `
 
 exports[`SliderKeyboardInput Snapshots No props 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-fzokOt fwTwKs"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-fznZeY hyyIgg"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      mode="currency"
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      placeholder={null}
-      style={null}
       type="text"
+      value=""
     />
   </div>
   <div
@@ -158,38 +142,30 @@ exports[`SliderKeyboardInput Snapshots No props 1`] = `
 
 exports[`SliderKeyboardInput Snapshots all 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-fzokOt fwTwKs"
   onBlur={[Function]}
   value={100}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
   >
     <label
-      className="sc-Axmtr dsOguc sc-fzplWN ldbKvL"
+      className="sc-AxmLO iqPTex sc-fznyAO ecoJvb"
       htmlFor="slider-keyboard"
     >
       Label
-      
     </label>
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
+      className="sc-fznZeY hyyIgg"
       id="slider-keyboard"
+      mask={null}
       max={1000}
       min={0}
-      mode="currency"
       name="slider-keyboard"
-      onBlur={null}
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      placeholder={null}
-      style={null}
       type="text"
+      value=""
     />
   </div>
   <div
@@ -243,37 +219,29 @@ exports[`SliderKeyboardInput Snapshots all 1`] = `
 
 exports[`SliderKeyboardInput Snapshots label 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-fzokOt fwTwKs"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
   >
     <label
-      className="sc-Axmtr dsOguc sc-fzplWN ldbKvL"
-      htmlFor="undefined-keyboard"
+      className="sc-AxmLO iqPTex sc-fznyAO ecoJvb"
+      htmlFor="sliderKeyboard-keyboard"
     >
       Label
-      
     </label>
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-fznZeY hyyIgg"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      mode="currency"
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      placeholder={null}
-      style={null}
       type="text"
+      value=""
     />
   </div>
   <div
@@ -327,31 +295,23 @@ exports[`SliderKeyboardInput Snapshots label 1`] = `
 
 exports[`SliderKeyboardInput Snapshots max 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-fzokOt fwTwKs"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-fznZeY hyyIgg"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={1000}
       min={0}
-      mode="currency"
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      placeholder={null}
-      style={null}
       type="text"
+      value=""
     />
   </div>
   <div
@@ -405,31 +365,23 @@ exports[`SliderKeyboardInput Snapshots max 1`] = `
 
 exports[`SliderKeyboardInput Snapshots min 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-fzokOt fwTwKs"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-fznZeY hyyIgg"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      mode="currency"
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      placeholder={null}
-      style={null}
       type="text"
+      value=""
     />
   </div>
   <div
@@ -483,32 +435,24 @@ exports[`SliderKeyboardInput Snapshots min 1`] = `
 
 exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-fzokOt fwTwKs"
   onBlur={[Function]}
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-fznZeY hyyIgg"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      mode="currency"
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      placeholder={null}
-      style={null}
       type="text"
+      value=""
     />
   </div>
   <div
@@ -562,31 +506,23 @@ exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
 
 exports[`SliderKeyboardInput Snapshots onChange 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-fzokOt fwTwKs"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-fznZeY hyyIgg"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      mode="currency"
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      placeholder={null}
-      style={null}
       type="text"
+      value=""
     />
   </div>
   <div
@@ -640,31 +576,23 @@ exports[`SliderKeyboardInput Snapshots onChange 1`] = `
 
 exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-fzokOt fwTwKs"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-fznZeY hyyIgg"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      mode="currency"
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      placeholder={null}
-      style={null}
       type="text"
+      value=""
     />
   </div>
   <div
@@ -718,31 +646,23 @@ exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
 
 exports[`SliderKeyboardInput Snapshots step 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-fzokOt fwTwKs"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-fznZeY hyyIgg"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      mode="currency"
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      placeholder={null}
-      style={null}
       type="text"
+      value=""
     />
   </div>
   <div
@@ -796,31 +716,23 @@ exports[`SliderKeyboardInput Snapshots step 1`] = `
 
 exports[`SliderKeyboardInput Snapshots value 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-fzokOt fwTwKs"
   value={100}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-fznZeY hyyIgg"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      mode="currency"
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      placeholder={null}
-      style={null}
       type="text"
+      value=""
     />
   </div>
   <div

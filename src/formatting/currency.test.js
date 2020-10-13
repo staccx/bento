@@ -4,11 +4,6 @@ import { CURRENCY_DISPLAY } from "./number.constants"
 // const space = \u00a0
 
 describe("Currency", () => {
-  describe("Formatting", () => {
-    it("Should format have good defaults", () => {
-      expect(formatCurrency(100000)).toBe("100\u00a0000")
-    })
-  })
   describe("Abbreviations", () => {
     it("Should not abbreviate values less than 1000", () => {
       expect(abbreviateCurrency(999)).toBe("999")

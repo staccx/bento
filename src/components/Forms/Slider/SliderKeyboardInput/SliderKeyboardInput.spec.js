@@ -4,6 +4,7 @@ import renderer from "react-test-renderer"
 import { ThemeProvider } from "styled-components"
 import baseTheme from "../../../../theming/themes/baseTheme"
 import SliderKeyboardInput from "./SliderKeyboardInput"
+import { replaceWhiteSpaceForMatcher } from "../../../../utils/_testReplaceWhitespace";
 
 const setup = (props = {}) => {
   const utils = render(
@@ -153,7 +154,7 @@ describe("SliderKeyboardInput", () => {
     })
     it("simulated keyboard with default value", () => {
       const { sliderKeyboardLabel } = setup({ defaultValue: 1337 })
-      expect(sliderKeyboardLabel.value).toBe("1337")
+      expect(sliderKeyboardLabel.value).toBe(replaceWhiteSpaceForMatcher("1 337"))
     })
   })
 })

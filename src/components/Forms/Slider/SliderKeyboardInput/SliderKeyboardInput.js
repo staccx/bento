@@ -78,9 +78,9 @@ const SliderKeyboardInput = ({
         type="text"
         name={`${name}-keyboard`}
         id={`${name}-keyboard`}
-        value={inputValue}
+        value={inputValue?.toString()}
         mode="currency"
-        onChange={e => handleInputChange(e.target.rawValue)}
+        onChange={e => handleInputChange(e.rawValue)}
         onFocus={handleInputFocus}
         // onBlur={handleBlur}
         label={showLabel ? label : null}
@@ -144,6 +144,7 @@ const SliderInput = styled(Input)`
 
 SliderKeyboardInput.defaultProps = {
   className: "",
+  name: "sliderKeyboard",
   mask: null,
   max: 100,
   min: 0,
@@ -156,7 +157,7 @@ SliderKeyboardInput.defaultProps = {
 SliderKeyboardInput.propTypes = {
   className: PropTypes.string,
   easingFunction: PropTypes.func,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   mask: PropTypes.func,
   max: PropTypes.number,
   min: PropTypes.number,

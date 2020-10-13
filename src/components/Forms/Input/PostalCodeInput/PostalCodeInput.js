@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useRef, useState } from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import Input from "../Input"
@@ -6,10 +6,10 @@ import Loading from "../../../Loaders/Loading/Loading"
 import { FadeIn } from "../../../../animations"
 import {
   applyVariants,
-  spacing,
-  targetSize,
   color,
-  font
+  font,
+  spacing,
+  targetSize
 } from "../../../../theming"
 import { usePostalCode } from "../../../../hooks"
 import Alert from "../../../Alert/Alert"
@@ -25,22 +25,18 @@ const PostalCodeInput = ({ defaultValue, onChange, variant, ...restProps }) => {
   const [input, setInput] = useState(defaultValue)
   const [place, error] = usePostalCode(input)
   const handleChange = e => {
-    const { rawValue: value } = e.target
+    const { rawValue: value } = e
     setInput(value)
   }
-
-  useEffect(() => {
-    if (inputRef.current && defaultValue) {
-      inputRef.current.setRawValue(defaultValue)
-    }
-  }, [inputRef, defaultValue])
 
   return (
     <PostalInputWrapper variant={variant}>
       <PostalInput
         type="text"
+        mode="postal"
         pattern={"[0-9]{4}"}
-        options={{ blocks: [4] }}
+        blocks={[4]}
+        maxLength={4}
         defaultValue={defaultValue}
         variant={variant}
         {...restProps}

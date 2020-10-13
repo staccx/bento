@@ -2,26 +2,17 @@
 
 exports[`Alert Snapshots Disabled 1`] = `
 <div
-  className="sc-AxheI jmeqRy"
+  className="sc-Axmtr iKdPUt"
 >
   <label
-    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
+    className="sc-AxirZ dauLTK sc-AxheI fcSpvz"
   >
     Input
-    
   </label>
-  
   <input
-    autoFocus={null}
-    className="sc-Axmtr bDDSAq"
+    className="sc-AxmLO Ngia-D"
     disabled={true}
-    hidden={false}
-    name={null}
-    onBlur={null}
-    onChange={null}
-    onKeyDown={null}
-    placeholder={null}
-    style={null}
+    onChange={[Function]}
     type="text"
   />
 </div>
@@ -29,18 +20,18 @@ exports[`Alert Snapshots Disabled 1`] = `
 
 exports[`Alert Snapshots HelpText 1`] = `
 <div
-  className="sc-AxheI jmeqRy"
+  className="sc-Axmtr iKdPUt"
 >
   <label
-    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
+    className="sc-AxirZ dauLTK sc-AxheI fcSpvz"
   >
     Input
     <span
-      className="sc-AxhCb bPJBWs"
+      className="sc-AxhUy eeiDuV"
     >
        
       <button
-        className="sc-AxirZ bIEvhd"
+        className="sc-AxiKw jYGlNV"
         onClick={[Function]}
         type="button"
       >
@@ -64,21 +55,13 @@ exports[`Alert Snapshots HelpText 1`] = `
     </span>
   </label>
   <div
-    className="sc-AxhUy iybIOV"
+    className="sc-AxgMl guNHML"
   >
     This is an input
   </div>
   <input
-    autoFocus={null}
-    className="sc-Axmtr bDDSAq"
-    disabled={false}
-    hidden={false}
-    name={null}
-    onBlur={null}
-    onChange={null}
-    onKeyDown={null}
-    placeholder={null}
-    style={null}
+    className="sc-AxmLO Ngia-D"
+    onChange={[Function]}
     type="text"
   />
 </div>
@@ -86,21 +69,11 @@ exports[`Alert Snapshots HelpText 1`] = `
 
 exports[`Alert Snapshots No props 1`] = `
 <div
-  className="sc-AxheI jmeqRy"
+  className="sc-Axmtr iKdPUt"
 >
-  
-  
   <input
-    autoFocus={null}
-    className="sc-Axmtr bDDSAq"
-    disabled={false}
-    hidden={false}
-    name={null}
-    onBlur={null}
-    onChange={null}
-    onKeyDown={null}
-    placeholder={null}
-    style={null}
+    className="sc-AxmLO Ngia-D"
+    onChange={[Function]}
     type="text"
   />
 </div>
@@ -108,26 +81,17 @@ exports[`Alert Snapshots No props 1`] = `
 
 exports[`Alert Snapshots PlaceHolder 1`] = `
 <div
-  className="sc-AxheI jmeqRy"
+  className="sc-Axmtr iKdPUt"
 >
   <label
-    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
+    className="sc-AxirZ dauLTK sc-AxheI fcSpvz"
   >
     Secret question
-    
   </label>
-  
   <input
-    autoFocus={null}
-    className="sc-Axmtr bDDSAq"
-    disabled={false}
-    hidden={false}
-    name={null}
-    onBlur={null}
-    onChange={null}
-    onKeyDown={null}
+    className="sc-AxmLO Ngia-D"
+    onChange={[Function]}
     placeholder="Your favourite animal"
-    style={null}
     type="text"
   />
 </div>
@@ -135,26 +99,16 @@ exports[`Alert Snapshots PlaceHolder 1`] = `
 
 exports[`Alert Snapshots label 1`] = `
 <div
-  className="sc-AxheI jmeqRy"
+  className="sc-Axmtr iKdPUt"
 >
   <label
-    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
+    className="sc-AxirZ dauLTK sc-AxheI fcSpvz"
   >
     Input
-    
   </label>
-  
   <input
-    autoFocus={null}
-    className="sc-Axmtr bDDSAq"
-    disabled={false}
-    hidden={false}
-    name={null}
-    onBlur={null}
-    onChange={null}
-    onKeyDown={null}
-    placeholder={null}
-    style={null}
+    className="sc-AxmLO Ngia-D"
+    onChange={[Function]}
     type="text"
   />
 </div>

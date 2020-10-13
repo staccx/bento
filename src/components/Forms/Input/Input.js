@@ -169,7 +169,7 @@ Input.propTypes = {
 }
 
 Input.themeProps = themeProps
-Input.createVariatns = componentCreateFactory(Input)
+Input.createVariants = componentCreateFactory(Input)
 
 Input.defaultProps = {
   type: "text"
