@@ -140,16 +140,14 @@ const Provider = ({
         i18nLogger.warn(`Cannot transform null or undefined`)
         return fallback ?? null
       }
-      if (!value.hasOwnProperty(i18next.language)) {
-        i18nLogger.warn(
-          `Could not find key in language`,
-          value,
-          i18next.language
-        )
-        return fallback ?? null
-      }
       i18nLogger.debug(`Transforming in ${i18next.language}`, value)
-      return value[i18next.language] ?? fallback ?? null
+      return (
+        value[i18next.language] ??
+        value[i18next.language.toLowerCase()] ??
+        value[i18next.language.toUpperCase()] ??
+        fallback ??
+        null
+      )
     },
     [i18next]
   )
