@@ -47,9 +47,10 @@ Funny.args = {
 }
 
 export const MaskProperty = args => (
-  <Input {...args} mask="XX.XX.XX.XX.XXX" delimiter="." />
+  <Input {...args} mask="XX XXXXXX" delimiter="." />
 )
 MaskProperty.args = {
   label: "Uses the mask property to define its mask custom",
+  mode: "custom",
   level: 1
 }

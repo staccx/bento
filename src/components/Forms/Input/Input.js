@@ -69,9 +69,10 @@ const Input = React.forwardRef(
 
     const handleChange = e => {
       if (!mask.current) {
-        onChange({
-          value: e.target.value
-        })
+        onChange &&
+          onChange({
+            value: e.target.value
+          })
         return
       }
       const value = mask.current(e.target.value)

@@ -1,5 +1,6 @@
 import React from "react"
 import Input from "../Input"
+import { countries } from "../../../../i18n"
 
 export default {
   title: "Components/Input/Masks/National Id",
@@ -11,5 +12,5 @@ Vanilla.args = {}
 
 export const Locale = args => <Input {...args} mode="nationalid" />
 Locale.args = {
-  locale: "da-DK"
+  locale: countries.Finland
 }
