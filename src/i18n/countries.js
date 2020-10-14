@@ -773,7 +773,10 @@ export const countries = {
     currency: "EUR",
     languages: ["fi", "sv"],
     alpha2: "FI",
-    key: "FI"
+    key: "FI",
+    nationalId: {
+      blocks: [6, 1, 5]
+    }
   },
   Fiji: {
     name: "Fiji",

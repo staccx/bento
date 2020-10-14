@@ -140,6 +140,10 @@ const Provider = ({
         i18nLogger.warn(`Cannot transform null or undefined`)
         return fallback ?? null
       }
+      if (!i18next?.language) {
+        i18nLogger.warn(`Language not yet set`)
+        return fallback ?? null
+      }
       i18nLogger.debug(`Transforming in ${i18next.language}`, value)
       return (
         value[i18next.language] ??
