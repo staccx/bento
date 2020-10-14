@@ -68,10 +68,6 @@ const Input = React.forwardRef(
     }, [locale])
 
     const handleChange = e => {
-      if (value) {
-        // controlled mode
-        return
-      }
       if (!mask.current) {
         onChange &&
           onChange({
