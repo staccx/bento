@@ -68,6 +68,10 @@ const Input = React.forwardRef(
     }, [locale])
 
     const handleChange = e => {
+      if (value) {
+        // controlled mode
+        return
+      }
       if (!mask.current) {
         onChange &&
           onChange({
@@ -75,14 +79,14 @@ const Input = React.forwardRef(
           })
         return
       }
-      const value = mask.current(e.target.value)
-      if (value && onChange) {
+      const val = mask.current(e.target.value)
+      if (val && onChange) {
         onChange({
-          ...value
+          ...val
         })
       }
       internalValueSet({
-        ...value
+        ...val
       })
     }
 

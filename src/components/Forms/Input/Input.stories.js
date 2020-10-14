@@ -17,6 +17,19 @@ Controlled.args = {
   value: "Sphinx of black quartz, judge my vow"
 }
 
+export const ControlledWithMode = args => <Input {...args} />
+ControlledWithMode.args = {
+  label: "Input",
+  value: 100000,
+  mode: "currency"
+}
+
+export const DefaultValue = args => <Input {...args} />
+DefaultValue.args = {
+  label: "Default Value set Input",
+  defaultValue: "Sphinx of black quartz, judge my vow"
+}
+
 export const Placeholder = args => <Input {...args} />
 Placeholder.args = {
   label: "Secret question",

@@ -43,7 +43,7 @@ export const baseMask = options => {
         return ""
       }
 
-      return pipe(input)(
+      return pipe(input?.toString() ?? "")(
         _ => (config?.delimiter && _ ? _.replace(config?.delimiter, "") : _),
         _ => (config?.pattern ? _.replace(config?.pattern, "") : _),
         _ =>
