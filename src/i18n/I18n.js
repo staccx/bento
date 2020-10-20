@@ -95,6 +95,7 @@ const Provider = ({
         saveMissing: true, // Must be set to true
         missingKeyHandler: (lng, ns, key, fallbackValue) => {
           i18nLogger.warn(
+            "missingKeyHandler",
             `Missing key: ${key} in ${lng}[${ns}]. Fallbackvalue: ${fallbackValue}`,
             lng,
             ns,
@@ -104,7 +105,10 @@ const Provider = ({
           return null
         },
         parseMissingKeyHandler: key => {
-          i18nLogger.warn(`No translation found for "${key}"`)
+          i18nLogger.warn(
+            "parseMissingKeyHandler",
+            `No translation found for "${key}"`
+          )
           return null
         },
         interpolation: {
@@ -125,17 +129,25 @@ const Provider = ({
   }, [])
 
   const translate = useCallback(
-    (key, data, fallback = null) => {
+    (key, fallback = null, data = null) => {
+      if (!i18next.isInitialized) {
+        i18nLogger.debug("translate", `i18n not initialized`, key)
+        return fallback
+      }
       i18nLogger.debug(`Translating ${key}`, data)
       const value = i18next.t(key, data)
       i18nLogger.debug(`Translated ${key} into ${value}`)
       return value || fallback
     },
-    [i18next]
+    [i18next.isInitialized]
   )
 
   const transform = useCallback(
     (value, fallback) => {
+      if (!i18next.isInitialized) {
+        i18nLogger.debug("transform", "i18n not initialized")
+        return fallback
+      }
       if (!value) {
         i18nLogger.warn(`Cannot transform null or undefined`)
         return fallback ?? null
@@ -153,7 +165,7 @@ const Provider = ({
         null
       )
     },
-    [i18next]
+    [i18next.isInitialized]
   )
 
   return (

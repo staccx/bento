@@ -38,7 +38,11 @@ const RESTBackend = {
       .then(result => result.data)
       .then(data => {
         const resources = data.reduce(resourceReducer(language), {})
-
+        i18nLogger.debug(
+          "RESTBackend::getTranslations",
+          "Resources loaded",
+          resources
+        )
         callback(null, resources)
       })
   },
