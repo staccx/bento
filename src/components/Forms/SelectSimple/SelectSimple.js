@@ -28,32 +28,14 @@ const IconComponent = ({ ...props }) => (
 /**
  * A Component that makes it easy to create a selector. it contains a selector and its options.
  */
-const SelectSimple = ({
-  children,
-  label,
-  placeholder,
-  className,
-  id,
-  variant,
-  ...rest
-}) => (
+const SelectSimple = ({ children, label, className, id, variant, ...rest }) => (
   <SelectWrapper className={className} variant={variant}>
     {label && (
       <Label htmlFor={id} variant={variant}>
         {label}
       </Label>
     )}
-    <Select
-      id={id}
-      defaultValue={placeholder || ""}
-      variant={variant}
-      {...rest}
-    >
-      {placeholder && (
-        <option disabled value={placeholder}>
-          {placeholder}
-        </option>
-      )}
+    <Select id={id} variant={variant} {...rest}>
       {children}
     </Select>
     <SelectIcon />
@@ -112,14 +94,12 @@ const Select = styled.select`
 
 SelectSimple.defaulthemeProps = {
   className: "",
-  placeholder: "",
   label: null
 }
 
 SelectSimple.propTypes = {
   label: PropTypes.string,
   children: commonPropTypes.children.isRequired,
-  placeholder: PropTypes.string,
   id: PropTypes.string.isRequired,
   className: PropTypes.string
 }

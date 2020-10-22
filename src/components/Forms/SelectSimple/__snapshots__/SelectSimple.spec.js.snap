@@ -11,7 +11,6 @@ exports[`SelectSimple Snapshots Label 1`] = `
   </label>
   <select
     className="sc-AxhCb kLGhTM"
-    defaultValue=""
   >
     <option
       value={1}
@@ -63,7 +62,6 @@ exports[`SelectSimple Snapshots No props 1`] = `
 >
   <select
     className="sc-AxhCb kLGhTM"
-    defaultValue=""
   >
     <option
       value={1}
@@ -120,14 +118,8 @@ exports[`SelectSimple Snapshots Placeholder 1`] = `
   </label>
   <select
     className="sc-AxhCb kLGhTM"
-    defaultValue="Velg..."
+    placeholder="Velg..."
   >
-    <option
-      disabled={true}
-      value="Velg..."
-    >
-      Velg...
-    </option>
     <option
       value={1}
     >
@@ -184,15 +176,9 @@ exports[`SelectSimple Snapshots id 1`] = `
   </label>
   <select
     className="sc-AxhCb kLGhTM"
-    defaultValue="Velg..."
     id="simpleSelect"
+    placeholder="Velg..."
   >
-    <option
-      disabled={true}
-      value="Velg..."
-    >
-      Velg...
-    </option>
     <option
       value={1}
     >
@@ -249,16 +235,9 @@ exports[`SelectSimple Snapshots no Children 1`] = `
   </label>
   <select
     className="sc-AxhCb kLGhTM"
-    defaultValue="Velg..."
     id="simpleSelect"
-  >
-    <option
-      disabled={true}
-      value="Velg..."
-    >
-      Velg...
-    </option>
-  </select>
+    placeholder="Velg..."
+  />
   <svg
     className="sc-AxiKw gYAEwv"
     height="7"

@@ -2,14 +2,14 @@
 
 exports[`SliderKeyboardInput Snapshots Name 1`] = `
 <div
-  className="sc-fzokOt fwTwKs"
+  className="sc-fznZeY hRKcZz"
   value={0}
 >
   <div
-    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
+    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
   >
     <input
-      className="sc-fznZeY hyyIgg"
+      className="sc-fznKkj cEcbQA"
       id="slider-keyboard"
       mask={null}
       max={100}
@@ -72,14 +72,14 @@ exports[`SliderKeyboardInput Snapshots Name 1`] = `
 
 exports[`SliderKeyboardInput Snapshots No props 1`] = `
 <div
-  className="sc-fzokOt fwTwKs"
+  className="sc-fznZeY hRKcZz"
   value={0}
 >
   <div
-    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
+    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
   >
     <input
-      className="sc-fznZeY hyyIgg"
+      className="sc-fznKkj cEcbQA"
       id="sliderKeyboard-keyboard"
       mask={null}
       max={100}
@@ -142,21 +142,21 @@ exports[`SliderKeyboardInput Snapshots No props 1`] = `
 
 exports[`SliderKeyboardInput Snapshots all 1`] = `
 <div
-  className="sc-fzokOt fwTwKs"
+  className="sc-fznZeY hRKcZz"
   onBlur={[Function]}
   value={100}
 >
   <div
-    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
+    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
   >
     <label
-      className="sc-AxmLO iqPTex sc-fznyAO ecoJvb"
+      className="sc-Axmtr dsOguc sc-fzplWN ldbKvL"
       htmlFor="slider-keyboard"
     >
       Label
     </label>
     <input
-      className="sc-fznZeY hyyIgg"
+      className="sc-fznKkj cEcbQA"
       id="slider-keyboard"
       mask={null}
       max={1000}
@@ -219,20 +219,20 @@ exports[`SliderKeyboardInput Snapshots all 1`] = `
 
 exports[`SliderKeyboardInput Snapshots label 1`] = `
 <div
-  className="sc-fzokOt fwTwKs"
+  className="sc-fznZeY hRKcZz"
   value={0}
 >
   <div
-    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
+    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
   >
     <label
-      className="sc-AxmLO iqPTex sc-fznyAO ecoJvb"
+      className="sc-Axmtr dsOguc sc-fzplWN ldbKvL"
       htmlFor="sliderKeyboard-keyboard"
     >
       Label
     </label>
     <input
-      className="sc-fznZeY hyyIgg"
+      className="sc-fznKkj cEcbQA"
       id="sliderKeyboard-keyboard"
       mask={null}
       max={100}
@@ -295,14 +295,14 @@ exports[`SliderKeyboardInput Snapshots label 1`] = `
 
 exports[`SliderKeyboardInput Snapshots max 1`] = `
 <div
-  className="sc-fzokOt fwTwKs"
+  className="sc-fznZeY hRKcZz"
   value={0}
 >
   <div
-    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
+    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
   >
     <input
-      className="sc-fznZeY hyyIgg"
+      className="sc-fznKkj cEcbQA"
       id="sliderKeyboard-keyboard"
       mask={null}
       max={1000}
@@ -365,14 +365,14 @@ exports[`SliderKeyboardInput Snapshots max 1`] = `
 
 exports[`SliderKeyboardInput Snapshots min 1`] = `
 <div
-  className="sc-fzokOt fwTwKs"
+  className="sc-fznZeY hRKcZz"
   value={0}
 >
   <div
-    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
+    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
   >
     <input
-      className="sc-fznZeY hyyIgg"
+      className="sc-fznKkj cEcbQA"
       id="sliderKeyboard-keyboard"
       mask={null}
       max={100}
@@ -435,15 +435,15 @@ exports[`SliderKeyboardInput Snapshots min 1`] = `
 
 exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
 <div
-  className="sc-fzokOt fwTwKs"
+  className="sc-fznZeY hRKcZz"
   onBlur={[Function]}
   value={0}
 >
   <div
-    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
+    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
   >
     <input
-      className="sc-fznZeY hyyIgg"
+      className="sc-fznKkj cEcbQA"
       id="sliderKeyboard-keyboard"
       mask={null}
       max={100}
@@ -506,14 +506,14 @@ exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
 
 exports[`SliderKeyboardInput Snapshots onChange 1`] = `
 <div
-  className="sc-fzokOt fwTwKs"
+  className="sc-fznZeY hRKcZz"
   value={0}
 >
   <div
-    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
+    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
   >
     <input
-      className="sc-fznZeY hyyIgg"
+      className="sc-fznKkj cEcbQA"
       id="sliderKeyboard-keyboard"
       mask={null}
       max={100}
@@ -576,14 +576,14 @@ exports[`SliderKeyboardInput Snapshots onChange 1`] = `
 
 exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
 <div
-  className="sc-fzokOt fwTwKs"
+  className="sc-fznZeY hRKcZz"
   value={0}
 >
   <div
-    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
+    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
   >
     <input
-      className="sc-fznZeY hyyIgg"
+      className="sc-fznKkj cEcbQA"
       id="sliderKeyboard-keyboard"
       mask={null}
       max={100}
@@ -646,14 +646,14 @@ exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
 
 exports[`SliderKeyboardInput Snapshots step 1`] = `
 <div
-  className="sc-fzokOt fwTwKs"
+  className="sc-fznZeY hRKcZz"
   value={0}
 >
   <div
-    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
+    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
   >
     <input
-      className="sc-fznZeY hyyIgg"
+      className="sc-fznKkj cEcbQA"
       id="sliderKeyboard-keyboard"
       mask={null}
       max={100}
@@ -716,14 +716,14 @@ exports[`SliderKeyboardInput Snapshots step 1`] = `
 
 exports[`SliderKeyboardInput Snapshots value 1`] = `
 <div
-  className="sc-fzokOt fwTwKs"
+  className="sc-fznZeY hRKcZz"
   value={100}
 >
   <div
-    className="sc-fznKkj fMLoOr sc-fzqBZW euVggx"
+    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
   >
     <input
-      className="sc-fznZeY hyyIgg"
+      className="sc-fznKkj cEcbQA"
       id="sliderKeyboard-keyboard"
       mask={null}
       max={100}
