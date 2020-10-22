@@ -62,9 +62,6 @@ const Provider = ({
           })
       }
     }
-    if (i18next.isInitialized !== ready) {
-      readySet(i18next.isInitialized)
-    }
   }, [language, i18next.isInitialized])
 
   useEffect(() => {
@@ -79,6 +76,7 @@ const Provider = ({
     }
     i18nLogger.info("Initializing i18n")
     if (backend) {
+      i18nLogger.info("Using backend", backend)
       i18next.use(backend)
     }
     const lng = resolveLanguage(language)
@@ -124,6 +122,7 @@ const Provider = ({
         }
       })
       .then(() => {
+        readySet(true)
         i18nLogger.info("i18n ready to use")
       })
   }, [])

@@ -1,7 +1,8 @@
 import PropTypes from "prop-types"
-import { useI18n, i18nLogger } from "../I18n"
-
+import { useI18n } from "../I18n"
+import i18next from "i18next"
 import { getComponent } from "../utils"
+import { useEffect, useState } from "react"
 
 /**
  * Component for transformation
@@ -10,25 +11,17 @@ import { getComponent } from "../utils"
  */
 const Transform = ({ children, data }) => {
   const { transform } = useI18n()
+  const [value, valueSet] = useState(children ?? null)
 
-  const value = transform(data, children)
-  if (!value) {
-    if (children) {
-      i18nLogger.debug("Falling back to children")
-      if (typeof children !== "function") {
-        return children // Fallback to children
-      }
-      return children(null)
-    }
+  useEffect(() => {
+    valueSet(transform(data, children))
+  }, [i18next, data, transform])
 
-    return null
-  }
-  let result = value
   if (Array.isArray(value)) {
-    result = value.map(getComponent)
+    return value.map(getComponent)
   }
 
-  return result
+  return value
 }
 
 Transform.propTypes = {

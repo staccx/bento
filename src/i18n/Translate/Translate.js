@@ -1,6 +1,8 @@
 import PropTypes from "prop-types"
+import i18next from "i18next"
 import { i18nLogger, useI18n } from "../I18n"
 import { getComponent, handleArray } from "../utils"
+import { useEffect, useState } from "react"
 
 /**
  * Jsx Component for translating
@@ -12,17 +14,24 @@ import { getComponent, handleArray } from "../utils"
  */
 const Translate = ({ children, i18n, data }) => {
   const { translate } = useI18n()
+  const [value, valueSet] = useState(children ?? null)
+  useEffect(() => {
+    if (!i18next.isInitialized) return
 
-  if (Array.isArray(i18n)) {
-    i18nLogger.debug("Handling i18n key is array")
-    return handleArray(i18n, data, children, translate)
-  }
-  const value = translate(i18n, data, children ?? null)
+    let result = null
+    if (Array.isArray(i18n)) {
+      i18nLogger.debug("Handling i18n key is array")
+      result = handleArray(i18n, data, children, translate)
+    } else {
+      result = translate(i18n, children, data)
+    }
+    valueSet(result)
+  }, [i18next, i18n, translate])
+
   if (Array.isArray(value)) {
     i18nLogger.debug("Handling value is array")
     return value.map(getComponent)
   }
-
   i18nLogger.debug("Key:", i18n, "resolved to:", value)
   return value
 }

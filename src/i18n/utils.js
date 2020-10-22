@@ -26,12 +26,14 @@ export const getComponent = val => {
 }
 
 export const handleArray = (value, data, children, translate) => {
-  const values = value.map(
-    (k, index) =>
-      translate(k, data) ||
-      (React.Children.count(children) > index
+  const values = value.map((k, index) =>
+    translate(
+      k,
+      React.Children.count(children) > index
         ? React.Children.toArray(children)[index]
-        : null)
+        : null,
+      data
+    )
   )
 
   if (typeof children === "function") {
