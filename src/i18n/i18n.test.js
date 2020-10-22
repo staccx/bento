@@ -67,29 +67,6 @@ describe("i18n", () => {
       expect(isBlock(data.value[0].nb[0])).toBe(true)
     })
   })
-  describe("Context", () => {
-    describe("Provider", () => {
-      it("Consumer shows value from provider", () => {
-        let tree = null
-        act(() => {
-          tree = render(
-            <Provider language="en">
-              <I18nConsumer>
-                {value => {
-                  console.log(value.ready)
-                  return <span>Ready: {value.ready}</span>
-                }}
-              </I18nConsumer>
-            </Provider>
-          )
-        })
-        const { getByText } = tree
-        waitForElement(() => getByText(/^Ready:/)).then(wait => {
-          expect(wait.textContent).toBe("Ready: true")
-        })
-      })
-    })
-  })
   describe("Snapshots", () => {
     it("Normal render", () => {
       let tree = null
