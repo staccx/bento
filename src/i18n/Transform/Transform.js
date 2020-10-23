@@ -21,7 +21,7 @@ const Transform = ({ children, data }) => {
     return value.map(getComponent)
   }
 
-  return value
+  return value || null
 }
 
 Transform.propTypes = {
