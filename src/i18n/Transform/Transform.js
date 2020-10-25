@@ -25,7 +25,15 @@ const Transform = ({ children, data }) => {
 }
 
 Transform.propTypes = {
-  data: PropTypes.any.isRequired
+  data: PropTypes.any.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.array,
+    PropTypes.func
+  ]).isRequired
 }
 
 export default Transform

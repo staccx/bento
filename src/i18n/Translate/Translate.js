@@ -47,7 +47,7 @@ Translate.propTypes = {
     PropTypes.number,
     PropTypes.array,
     PropTypes.func
-  ]),
+  ]).isRequired,
   /**
    * Key to look in the store
    */
