@@ -10,7 +10,8 @@ import {
   font,
   color,
   commonPropTypes,
-  hideVisually
+  hideVisually,
+  borderRadius
 } from "../../../theming"
 import themeProps from "./RadioPill.item.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
@@ -101,15 +102,15 @@ const RadioWrapper = styled.div`
 
   &:first-child {
     ${Label} {
-      border-top-left-radius: ${spacing.tiny};
-      border-bottom-left-radius: ${spacing.tiny};
+      border-top-left-radius: ${borderRadius};
+      border-bottom-left-radius: ${borderRadius};
     }
   }
 
   &:last-child {
     ${Label} {
-      border-top-right-radius: ${spacing.tiny};
-      border-bottom-right-radius: ${spacing.tiny};
+      border-top-right-radius: ${borderRadius};
+      border-bottom-right-radius: ${borderRadius};
       border-right-width: 1px;
       margin-right: 0;
     }
