@@ -2,10 +2,10 @@
 
 exports[`Layout Snapshots All 1`] = `
 <div
-  className="sc-AxjAm dUQemZ"
+  className="sc-bdfBwQ XOvfA"
 >
   <div
-    className="sc-AxirZ kzBiBQ ClassName"
+    className="sc-gsTCUz cGZqIC ClassName"
   >
     I'm the header inside a row!
   </div>
@@ -14,10 +14,10 @@ exports[`Layout Snapshots All 1`] = `
 
 exports[`Layout Snapshots ClassName 1`] = `
 <div
-  className="sc-AxjAm jIzdZp ClassName"
+  className="sc-bdfBwQ dmzwTs ClassName"
 >
   <div
-    className="sc-AxirZ kzBiBQ ClassName"
+    className="sc-gsTCUz cGZqIC ClassName"
   >
     I'm the header inside a row!
   </div>
@@ -26,10 +26,10 @@ exports[`Layout Snapshots ClassName 1`] = `
 
 exports[`Layout Snapshots Item area 1`] = `
 <div
-  className="sc-AxjAm fikrkR"
+  className="sc-bdfBwQ dSeEYg"
 >
   <div
-    className="sc-AxirZ bDkLgX ClassName"
+    className="sc-gsTCUz gkDsJ ClassName"
   >
     I'm the header inside a row!
   </div>
@@ -38,16 +38,16 @@ exports[`Layout Snapshots Item area 1`] = `
 
 exports[`Layout Snapshots No Children 1`] = `
 <div
-  className="sc-AxjAm jIzdZp"
+  className="sc-bdfBwQ dmzwTs"
 />
 `;
 
 exports[`Layout Snapshots No props 1`] = `
 <div
-  className="sc-AxjAm jIzdZp"
+  className="sc-bdfBwQ dmzwTs"
 >
   <div
-    className="sc-AxirZ kzBiBQ"
+    className="sc-gsTCUz cGZqIC"
   >
     I'm the header inside a row!
   </div>
@@ -56,10 +56,10 @@ exports[`Layout Snapshots No props 1`] = `
 
 exports[`Layout Snapshots columnGap 1`] = `
 <div
-  className="sc-AxjAm bsehrU"
+  className="sc-bdfBwQ gePjHB"
 >
   <div
-    className="sc-AxirZ kzBiBQ ClassName"
+    className="sc-gsTCUz cGZqIC ClassName"
   >
     I'm the header inside a row!
   </div>
@@ -68,10 +68,10 @@ exports[`Layout Snapshots columnGap 1`] = `
 
 exports[`Layout Snapshots grid 1`] = `
 <div
-  className="sc-AxjAm fikrkR"
+  className="sc-bdfBwQ dSeEYg"
 >
   <div
-    className="sc-AxirZ kzBiBQ ClassName"
+    className="sc-gsTCUz cGZqIC ClassName"
   >
     I'm the header inside a row!
   </div>
@@ -80,10 +80,10 @@ exports[`Layout Snapshots grid 1`] = `
 
 exports[`Layout Snapshots isNotFlush 1`] = `
 <div
-  className="sc-AxjAm NRtaa"
+  className="sc-bdfBwQ cLpGST"
 >
   <div
-    className="sc-AxirZ kzBiBQ ClassName"
+    className="sc-gsTCUz cGZqIC ClassName"
   >
     I'm the header inside a row!
   </div>
@@ -92,10 +92,10 @@ exports[`Layout Snapshots isNotFlush 1`] = `
 
 exports[`Layout Snapshots paddingBottom 1`] = `
 <div
-  className="sc-AxjAm jIzdZp"
+  className="sc-bdfBwQ dmzwTs"
 >
   <div
-    className="sc-AxirZ kzBiBQ ClassName"
+    className="sc-gsTCUz cGZqIC ClassName"
   >
     I'm the header inside a row!
   </div>
@@ -104,10 +104,10 @@ exports[`Layout Snapshots paddingBottom 1`] = `
 
 exports[`Layout Snapshots paddingTop 1`] = `
 <div
-  className="sc-AxjAm jIzdZp"
+  className="sc-bdfBwQ dmzwTs"
 >
   <div
-    className="sc-AxirZ kzBiBQ ClassName"
+    className="sc-gsTCUz cGZqIC ClassName"
   >
     I'm the header inside a row!
   </div>
@@ -116,10 +116,10 @@ exports[`Layout Snapshots paddingTop 1`] = `
 
 exports[`Layout Snapshots rowGap 1`] = `
 <div
-  className="sc-AxjAm iWqqdw"
+  className="sc-bdfBwQ gdbDtt"
 >
   <div
-    className="sc-AxirZ kzBiBQ ClassName"
+    className="sc-gsTCUz cGZqIC ClassName"
   >
     I'm the header inside a row!
   </div>

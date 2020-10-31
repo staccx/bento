@@ -2,7 +2,7 @@
 
 exports[`Donut Progress over 1 1`] = `
 <svg
-  className="sc-AxjAm dESvVA"
+  className="sc-bdfBwQ dYXJBV"
   height="24"
   viewBox="0 0 24 24"
   width="24"
@@ -17,13 +17,13 @@ exports[`Donut Progress over 1 1`] = `
     strokeWidth="6"
   >
     <circle
-      className="sc-AxirZ MZXYp"
+      className="sc-gsTCUz fEWccD"
       cx="12"
       cy="12"
       r="9"
     />
     <circle
-      className="sc-AxiKw eqEwrc"
+      className="sc-dlfnbm iDUDqt"
       cx="12"
       cy="12"
       r="9"
@@ -35,7 +35,7 @@ exports[`Donut Progress over 1 1`] = `
 
 exports[`Donut Progress under 1 1`] = `
 <svg
-  className="sc-AxjAm dESvVA"
+  className="sc-bdfBwQ dYXJBV"
   height="24"
   viewBox="0 0 24 24"
   width="24"
@@ -50,13 +50,13 @@ exports[`Donut Progress under 1 1`] = `
     strokeWidth="6"
   >
     <circle
-      className="sc-AxirZ MZXYp"
+      className="sc-gsTCUz fEWccD"
       cx="12"
       cy="12"
       r="9"
     />
     <circle
-      className="sc-AxiKw kJmevy"
+      className="sc-dlfnbm eiYfKP"
       cx="12"
       cy="12"
       r="9"
@@ -68,7 +68,7 @@ exports[`Donut Progress under 1 1`] = `
 
 exports[`Donut Snapshots No props 1`] = `
 <svg
-  className="sc-AxjAm dESvVA"
+  className="sc-bdfBwQ dYXJBV"
   height="24"
   viewBox="0 0 24 24"
   width="24"
@@ -83,13 +83,13 @@ exports[`Donut Snapshots No props 1`] = `
     strokeWidth="6"
   >
     <circle
-      className="sc-AxirZ MZXYp"
+      className="sc-gsTCUz fEWccD"
       cx="12"
       cy="12"
       r="9"
     />
     <circle
-      className="sc-AxiKw eRhFxV"
+      className="sc-dlfnbm cXZelI"
       cx="12"
       cy="12"
       r="9"
@@ -101,7 +101,7 @@ exports[`Donut Snapshots No props 1`] = `
 
 exports[`Donut Snapshots Progress 1`] = `
 <svg
-  className="sc-AxjAm dESvVA"
+  className="sc-bdfBwQ dYXJBV"
   height="24"
   viewBox="0 0 24 24"
   width="24"
@@ -116,13 +116,13 @@ exports[`Donut Snapshots Progress 1`] = `
     strokeWidth="6"
   >
     <circle
-      className="sc-AxirZ MZXYp"
+      className="sc-gsTCUz fEWccD"
       cx="12"
       cy="12"
       r="9"
     />
     <circle
-      className="sc-AxiKw eZOBHO"
+      className="sc-dlfnbm fanwX"
       cx="12"
       cy="12"
       r="9"
@@ -134,7 +134,7 @@ exports[`Donut Snapshots Progress 1`] = `
 
 exports[`Donut Snapshots Progress&WarningTreshold 1`] = `
 <svg
-  className="sc-AxjAm dESvVA"
+  className="sc-bdfBwQ dYXJBV"
   height="24"
   viewBox="0 0 24 24"
   width="24"
@@ -149,13 +149,13 @@ exports[`Donut Snapshots Progress&WarningTreshold 1`] = `
     strokeWidth="6"
   >
     <circle
-      className="sc-AxirZ MZXYp"
+      className="sc-gsTCUz fEWccD"
       cx="12"
       cy="12"
       r="9"
     />
     <circle
-      className="sc-AxiKw ouiXJ"
+      className="sc-dlfnbm cUtrhg"
       cx="12"
       cy="12"
       r="9"
@@ -167,7 +167,7 @@ exports[`Donut Snapshots Progress&WarningTreshold 1`] = `
 
 exports[`Donut With children 1`] = `
 <svg
-  className="sc-AxjAm dESvVA"
+  className="sc-bdfBwQ dYXJBV"
   height="24"
   viewBox="0 0 24 24"
   width="24"
@@ -182,13 +182,13 @@ exports[`Donut With children 1`] = `
     strokeWidth="6"
   >
     <circle
-      className="sc-AxirZ MZXYp"
+      className="sc-gsTCUz fEWccD"
       cx="12"
       cy="12"
       r="9"
     />
     <circle
-      className="sc-AxiKw eZOBHO"
+      className="sc-dlfnbm fanwX"
       cx="12"
       cy="12"
       r="9"
@@ -200,7 +200,7 @@ exports[`Donut With children 1`] = `
 
 exports[`Donut invalid progress 1`] = `
 <svg
-  className="sc-AxjAm dESvVA"
+  className="sc-bdfBwQ dYXJBV"
   height="24"
   viewBox="0 0 24 24"
   width="24"
@@ -215,13 +215,13 @@ exports[`Donut invalid progress 1`] = `
     strokeWidth="6"
   >
     <circle
-      className="sc-AxirZ MZXYp"
+      className="sc-gsTCUz fEWccD"
       cx="12"
       cy="12"
       r="9"
     />
     <circle
-      className="sc-AxiKw eRhFxV"
+      className="sc-dlfnbm cXZelI"
       cx="12"
       cy="12"
       r="9"

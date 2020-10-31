@@ -2,7 +2,7 @@
 
 exports[`Heading Snapshots ClassName 1`] = `
 <h1
-  className="sc-AxjAm gToDFS test"
+  className="sc-bdfBwQ dDsNNP test"
 >
   hei
 </h1>
@@ -10,7 +10,7 @@ exports[`Heading Snapshots ClassName 1`] = `
 
 exports[`Heading Snapshots No props 1`] = `
 <h1
-  className="sc-AxjAm gToDFS"
+  className="sc-bdfBwQ dDsNNP"
 >
   Hei
 </h1>
@@ -18,7 +18,7 @@ exports[`Heading Snapshots No props 1`] = `
 
 exports[`Heading Snapshots Should default to h1 1`] = `
 <h1
-  className="sc-AxjAm gToDFS"
+  className="sc-bdfBwQ dDsNNP"
 >
   Hei
 </h1>
@@ -26,7 +26,7 @@ exports[`Heading Snapshots Should default to h1 1`] = `
 
 exports[`Heading Snapshots level 1 1`] = `
 <h1
-  className="sc-AxjAm gToDFS"
+  className="sc-bdfBwQ dDsNNP"
 >
   Hei
 </h1>
@@ -34,7 +34,7 @@ exports[`Heading Snapshots level 1 1`] = `
 
 exports[`Heading Snapshots level 2 1`] = `
 <h2
-  className="sc-AxirZ decXcw"
+  className="sc-gsTCUz iyVzUe"
 >
   Hei
 </h2>
@@ -42,7 +42,7 @@ exports[`Heading Snapshots level 2 1`] = `
 
 exports[`Heading Snapshots level 3 1`] = `
 <h3
-  className="sc-AxiKw cAQZNI"
+  className="sc-dlfnbm iPoRAZ"
 >
   Hei
 </h3>
@@ -50,7 +50,7 @@ exports[`Heading Snapshots level 3 1`] = `
 
 exports[`Heading Snapshots level 4 1`] = `
 <h4
-  className="sc-AxhCb cWSRul"
+  className="sc-hKgILt kTtiFm"
 >
   Hei
 </h4>
@@ -58,7 +58,7 @@ exports[`Heading Snapshots level 4 1`] = `
 
 exports[`Heading Snapshots level 5 1`] = `
 <h5
-  className="sc-AxhUy jDbDPK"
+  className="sc-eCssSg jpSlaH"
 >
   Hei
 </h5>
@@ -66,7 +66,7 @@ exports[`Heading Snapshots level 5 1`] = `
 
 exports[`Heading Snapshots level 6 1`] = `
 <h6
-  className="sc-AxgMl dSPlcW"
+  className="sc-jSgupP crYbUc"
 >
   Hei
 </h6>
@@ -74,6 +74,6 @@ exports[`Heading Snapshots level 6 1`] = `
 
 exports[`Heading Snapshots no Children 1`] = `
 <h1
-  className="sc-AxjAm gToDFS"
+  className="sc-bdfBwQ dDsNNP"
 />
 `;

@@ -2,13 +2,13 @@
 
 exports[`Legend Snapshots No Children 1`] = `
 <legend
-  className="sc-AxjAm kISvsf"
+  className="sc-bdfBwQ jPVsea"
 />
 `;
 
 exports[`Legend Snapshots No props 1`] = `
 <legend
-  className="sc-AxjAm kISvsf"
+  className="sc-bdfBwQ jPVsea"
 >
   This is a legend
 </legend>

@@ -2,25 +2,25 @@
 
 exports[`Alert Snapshots No Children 1`] = `
 <ul
-  className="sc-AxirZ hryhsZ"
+  className="sc-gsTCUz cWkiwX"
 >
   <li
-    className="sc-AxjAm bSpxGd"
+    className="sc-bdfBwQ cNiGdI"
   />
 </ul>
 `;
 
 exports[`Alert Snapshots No props 1`] = `
 <ul
-  className="sc-AxirZ hryhsZ"
+  className="sc-gsTCUz cWkiwX"
 >
   <li
-    className="sc-AxjAm bSpxGd"
+    className="sc-bdfBwQ cNiGdI"
   >
     One ListElement
   </li>
   <li
-    className="sc-AxjAm bSpxGd"
+    className="sc-bdfBwQ cNiGdI"
   >
     Another List Element
   </li>

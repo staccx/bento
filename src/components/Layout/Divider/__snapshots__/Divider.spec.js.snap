@@ -2,28 +2,28 @@
 
 exports[`Alert Snapshots All 1`] = `
 <hr
-  className="sc-AxjAm cLELDF className"
+  className="sc-bdfBwQ hpStww className"
   height={10}
 />
 `;
 
 exports[`Alert Snapshots Height 1`] = `
 <hr
-  className="sc-AxjAm iHhoQU"
+  className="sc-bdfBwQ eolIjh"
   height={15}
 />
 `;
 
 exports[`Alert Snapshots No props 1`] = `
 <hr
-  className="sc-AxjAm eOUZDV"
+  className="sc-bdfBwQ hFKA-ds"
   height={1}
 />
 `;
 
 exports[`Alert Snapshots className 1`] = `
 <hr
-  className="sc-AxjAm eOUZDV className"
+  className="sc-bdfBwQ hFKA-ds className"
   height={1}
 />
 `;

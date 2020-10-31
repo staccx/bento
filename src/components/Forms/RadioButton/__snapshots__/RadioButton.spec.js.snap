@@ -2,10 +2,10 @@
 
 exports[`RadioButton Snapshots ID 1`] = `
 <div
-  className="sc-AxiKw deZmix"
+  className="sc-dlfnbm dAeYFb"
 >
   <input
-    className="sc-AxjAm cxcmXo"
+    className="sc-bdfBwQ itNUpd"
     defaultChecked={false}
     disabled={false}
     id="ID"
@@ -14,7 +14,7 @@ exports[`RadioButton Snapshots ID 1`] = `
     value=""
   />
   <label
-    className="sc-AxirZ DKObq"
+    className="sc-gsTCUz kgSeEo"
     htmlFor="ID"
   >
     RadioButton
@@ -24,10 +24,10 @@ exports[`RadioButton Snapshots ID 1`] = `
 
 exports[`RadioButton Snapshots No children 1`] = `
 <div
-  className="sc-AxiKw deZmix"
+  className="sc-dlfnbm dAeYFb"
 >
   <input
-    className="sc-AxjAm cxcmXo"
+    className="sc-bdfBwQ itNUpd"
     defaultChecked={false}
     disabled={false}
     id="ID"
@@ -36,7 +36,7 @@ exports[`RadioButton Snapshots No children 1`] = `
     value=""
   />
   <label
-    className="sc-AxirZ DKObq"
+    className="sc-gsTCUz kgSeEo"
     htmlFor="ID"
   />
 </div>
@@ -44,10 +44,10 @@ exports[`RadioButton Snapshots No children 1`] = `
 
 exports[`RadioButton Snapshots No props 1`] = `
 <div
-  className="sc-AxiKw deZmix"
+  className="sc-dlfnbm dAeYFb"
 >
   <input
-    className="sc-AxjAm cxcmXo"
+    className="sc-bdfBwQ itNUpd"
     defaultChecked={false}
     disabled={false}
     onChange={null}
@@ -55,7 +55,7 @@ exports[`RadioButton Snapshots No props 1`] = `
     value=""
   />
   <label
-    className="sc-AxirZ DKObq"
+    className="sc-gsTCUz kgSeEo"
   >
     RadioButton
   </label>
@@ -64,10 +64,10 @@ exports[`RadioButton Snapshots No props 1`] = `
 
 exports[`RadioButton Snapshots group 1`] = `
 <div
-  className="sc-AxiKw deZmix"
+  className="sc-dlfnbm dAeYFb"
 >
   <input
-    className="sc-AxjAm cxcmXo"
+    className="sc-bdfBwQ itNUpd"
     defaultChecked={false}
     disabled={false}
     id="ID"
@@ -77,7 +77,7 @@ exports[`RadioButton Snapshots group 1`] = `
     value=""
   />
   <label
-    className="sc-AxirZ DKObq"
+    className="sc-gsTCUz kgSeEo"
     htmlFor="ID"
   >
     RadioButton

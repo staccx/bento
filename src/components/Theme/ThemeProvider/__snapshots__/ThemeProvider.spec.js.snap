@@ -2,7 +2,7 @@
 
 exports[`Theme Provider Button Button 1`] = `
 <button
-  className="sc-AxjAm kHAlBU"
+  className="sc-bdfBwQ lXBUV"
   onClick={null}
 >
   Click me
@@ -11,7 +11,7 @@ exports[`Theme Provider Button Button 1`] = `
 
 exports[`Theme Provider Button everything 1`] = `
 <button
-  className="sc-AxjAm kHAlBU"
+  className="sc-bdfBwQ lXBUV"
   onClick={null}
 >
   Click me
@@ -20,7 +20,7 @@ exports[`Theme Provider Button everything 1`] = `
 
 exports[`Theme Provider Button logLevel 1`] = `
 <button
-  className="sc-AxjAm kHAlBU"
+  className="sc-bdfBwQ lXBUV"
   onClick={null}
 >
   Click me

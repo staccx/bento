@@ -2,14 +2,14 @@
 
 exports[`ProgressBar Progress over 1 1`] = `
 <div
-  className="sc-AxjAm raIux"
+  className="sc-bdfBwQ bLrSyQ"
 >
   <div
-    className="sc-AxirZ inmWDT"
+    className="sc-gsTCUz dMQoKd"
     width={0.012}
   >
     <span
-      className="sc-AxiKw MbTJa"
+      className="sc-dlfnbm jRsGLv"
     >
       1
       %
@@ -20,14 +20,14 @@ exports[`ProgressBar Progress over 1 1`] = `
 
 exports[`ProgressBar Progress under 1 1`] = `
 <div
-  className="sc-AxjAm raIux"
+  className="sc-bdfBwQ bLrSyQ"
 >
   <div
-    className="sc-AxirZ hprasq"
+    className="sc-gsTCUz fcDknw"
     width={-0.9}
   >
     <span
-      className="sc-AxiKw MbTJa"
+      className="sc-dlfnbm jRsGLv"
     >
       -90
       %
@@ -38,13 +38,13 @@ exports[`ProgressBar Progress under 1 1`] = `
 
 exports[`ProgressBar Snapshots No props 1`] = `
 <div
-  className="sc-AxjAm raIux"
+  className="sc-bdfBwQ bLrSyQ"
 >
   <div
-    className="sc-AxirZ bEycvz"
+    className="sc-gsTCUz dGIWXR"
   >
     <span
-      className="sc-AxiKw MbTJa"
+      className="sc-dlfnbm jRsGLv"
     >
       NaN
       %
@@ -55,14 +55,14 @@ exports[`ProgressBar Snapshots No props 1`] = `
 
 exports[`ProgressBar Snapshots Progress 1`] = `
 <div
-  className="sc-AxjAm raIux"
+  className="sc-bdfBwQ bLrSyQ"
 >
   <div
-    className="sc-AxirZ bMtwVg"
+    className="sc-gsTCUz fYTMfS"
     width={0.9}
   >
     <span
-      className="sc-AxiKw MbTJa"
+      className="sc-dlfnbm jRsGLv"
     >
       90
       %
@@ -73,14 +73,14 @@ exports[`ProgressBar Snapshots Progress 1`] = `
 
 exports[`ProgressBar Snapshots Progress&WarningTreshold 1`] = `
 <div
-  className="sc-AxjAm raIux"
+  className="sc-bdfBwQ bLrSyQ"
 >
   <div
-    className="sc-AxirZ iVXatG"
+    className="sc-gsTCUz cyFJIg"
     width={0.7}
   >
     <span
-      className="sc-AxiKw MbTJa"
+      className="sc-dlfnbm jRsGLv"
     >
       70
       %
@@ -91,14 +91,14 @@ exports[`ProgressBar Snapshots Progress&WarningTreshold 1`] = `
 
 exports[`ProgressBar With children 1`] = `
 <div
-  className="sc-AxjAm raIux"
+  className="sc-bdfBwQ bLrSyQ"
 >
   <div
-    className="sc-AxirZ bMtwVg"
+    className="sc-gsTCUz fYTMfS"
     width={0.9}
   >
     <span
-      className="sc-AxiKw MbTJa"
+      className="sc-dlfnbm jRsGLv"
     >
       90
       %
@@ -109,14 +109,14 @@ exports[`ProgressBar With children 1`] = `
 
 exports[`ProgressBar invalid progress 1`] = `
 <div
-  className="sc-AxjAm raIux"
+  className="sc-bdfBwQ bLrSyQ"
 >
   <div
-    className="sc-AxirZ keXVXO"
+    className="sc-gsTCUz ktRABs"
     width={null}
   >
     <span
-      className="sc-AxiKw MbTJa"
+      className="sc-dlfnbm jRsGLv"
     >
       0
       %

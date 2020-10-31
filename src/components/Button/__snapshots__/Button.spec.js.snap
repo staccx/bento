@@ -2,7 +2,7 @@
 
 exports[`Button Snapshots No props 1`] = `
 <button
-  className="sc-AxjAm ecAfij"
+  className="sc-bdfBwQ cXIOkm"
   onClick={null}
 >
   Test
@@ -11,7 +11,7 @@ exports[`Button Snapshots No props 1`] = `
 
 exports[`Button Snapshots no children 1`] = `
 <button
-  className="sc-AxjAm ecAfij"
+  className="sc-bdfBwQ cXIOkm"
   onClick={[Function]}
 >
   button
@@ -20,7 +20,7 @@ exports[`Button Snapshots no children 1`] = `
 
 exports[`Button Snapshots with onClick 1`] = `
 <button
-  className="sc-AxjAm ecAfij"
+  className="sc-bdfBwQ cXIOkm"
   onClick={[Function]}
 >
   Test

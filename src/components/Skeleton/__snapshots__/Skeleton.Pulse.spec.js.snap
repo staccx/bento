@@ -2,12 +2,12 @@
 
 exports[`SkeletonPulse Snapshots No props 1`] = `
 <div
-  className="sc-AxjAm ibqlzg"
+  className="sc-bdfBwQ hLTJHd"
 />
 `;
 
 exports[`SkeletonPulse Snapshots with className 1`] = `
 <div
-  className="sc-AxjAm ibqlzg className"
+  className="sc-bdfBwQ hLTJHd className"
 />
 `;

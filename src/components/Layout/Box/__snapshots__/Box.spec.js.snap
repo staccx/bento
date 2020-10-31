@@ -2,7 +2,7 @@
 
 exports[`Box Snapshots No props 1`] = `
 <div
-  className="sc-AxjAm eVwfbv"
+  className="sc-bdfBwQ lgHXgS"
   size={null}
 >
   <p>
@@ -13,7 +13,7 @@ exports[`Box Snapshots No props 1`] = `
 
 exports[`Box Snapshots Size 1`] = `
 <div
-  className="sc-AxjAm iQwjBP"
+  className="sc-bdfBwQ jShQhS"
   size="huge"
 >
   <p>
@@ -24,7 +24,7 @@ exports[`Box Snapshots Size 1`] = `
 
 exports[`Box Snapshots invalid Size 1`] = `
 <div
-  className="sc-AxjAm gdTeWj"
+  className="sc-bdfBwQ kYXVhO"
   size={100}
 >
   <p>

@@ -2,13 +2,13 @@
 
 exports[`PostalCodeInput Snapshots No props 1`] = `
 <div
-  className="sc-fznyAO ftqjaM"
+  className="sc-crrsfI ljqDII"
 >
   <div
-    className="sc-AxheI jmeqRy sc-fznZeY kIdrbW"
+    className="sc-gKsewC hZEsHD sc-bqyKva hkiBwy"
   >
     <input
-      className="sc-Axmtr bDDSAq"
+      className="sc-iBPRYJ kBha-dQ"
       maxLength={4}
       onChange={[Function]}
       pattern="[0-9]{4}"

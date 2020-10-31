@@ -2,7 +2,7 @@
 
 exports[`Wrapper Snapshots All 1`] = `
 <div
-  className="sc-AxjAm fJpNdI className"
+  className="sc-bdfBwQ fdIdvV className"
   size="large"
 >
   <p>
@@ -13,7 +13,7 @@ exports[`Wrapper Snapshots All 1`] = `
 
 exports[`Wrapper Snapshots No props 1`] = `
 <div
-  className="sc-AxjAm fCsoZh"
+  className="sc-bdfBwQ lfBJRI"
   size="large"
 >
   <p>
@@ -24,7 +24,7 @@ exports[`Wrapper Snapshots No props 1`] = `
 
 exports[`Wrapper Snapshots breakout 1`] = `
 <div
-  className="sc-AxjAm fJpNdI"
+  className="sc-bdfBwQ fdIdvV"
   size="large"
 >
   <p>
@@ -35,7 +35,7 @@ exports[`Wrapper Snapshots breakout 1`] = `
 
 exports[`Wrapper Snapshots className 1`] = `
 <div
-  className="sc-AxjAm fCsoZh className"
+  className="sc-bdfBwQ lfBJRI className"
   size="large"
 >
   <p>
@@ -46,7 +46,7 @@ exports[`Wrapper Snapshots className 1`] = `
 
 exports[`Wrapper Snapshots size 1`] = `
 <div
-  className="sc-AxjAm fCsoZh"
+  className="sc-bdfBwQ lfBJRI"
   size="large"
 >
   <p>
@@ -57,7 +57,7 @@ exports[`Wrapper Snapshots size 1`] = `
 
 exports[`Wrapper Snapshots size full 1`] = `
 <div
-  className="sc-AxjAm gwBBxQ"
+  className="sc-bdfBwQ gONIjx"
   size="full"
 >
   <p>

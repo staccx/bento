@@ -2,15 +2,15 @@
 
 exports[`Alert Snapshots Disabled 1`] = `
 <div
-  className="sc-AxheI jmeqRy"
+  className="sc-gKsewC hZEsHD"
 >
   <label
-    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
+    className="sc-bdfBwQ cuiLU sc-jSgupP fbijvz"
   >
     Input
   </label>
   <input
-    className="sc-Axmtr bDDSAq"
+    className="sc-iBPRYJ kBha-dQ"
     disabled={true}
     onChange={[Function]}
     type="text"
@@ -20,18 +20,18 @@ exports[`Alert Snapshots Disabled 1`] = `
 
 exports[`Alert Snapshots HelpText 1`] = `
 <div
-  className="sc-AxheI jmeqRy"
+  className="sc-gKsewC hZEsHD"
 >
   <label
-    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
+    className="sc-bdfBwQ cuiLU sc-jSgupP fbijvz"
   >
     Input
     <span
-      className="sc-AxhCb bPJBWs"
+      className="sc-hKgILt fEWihL"
     >
        
       <button
-        className="sc-AxirZ bIEvhd"
+        className="sc-gsTCUz kpZlaT"
         onClick={[Function]}
         type="button"
       >
@@ -55,12 +55,12 @@ exports[`Alert Snapshots HelpText 1`] = `
     </span>
   </label>
   <div
-    className="sc-AxhUy iybIOV"
+    className="sc-eCssSg hmkLDc"
   >
     This is an input
   </div>
   <input
-    className="sc-Axmtr bDDSAq"
+    className="sc-iBPRYJ kBha-dQ"
     onChange={[Function]}
     type="text"
   />
@@ -69,10 +69,10 @@ exports[`Alert Snapshots HelpText 1`] = `
 
 exports[`Alert Snapshots No props 1`] = `
 <div
-  className="sc-AxheI jmeqRy"
+  className="sc-gKsewC hZEsHD"
 >
   <input
-    className="sc-Axmtr bDDSAq"
+    className="sc-iBPRYJ kBha-dQ"
     onChange={[Function]}
     type="text"
   />
@@ -81,15 +81,15 @@ exports[`Alert Snapshots No props 1`] = `
 
 exports[`Alert Snapshots PlaceHolder 1`] = `
 <div
-  className="sc-AxheI jmeqRy"
+  className="sc-gKsewC hZEsHD"
 >
   <label
-    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
+    className="sc-bdfBwQ cuiLU sc-jSgupP fbijvz"
   >
     Secret question
   </label>
   <input
-    className="sc-Axmtr bDDSAq"
+    className="sc-iBPRYJ kBha-dQ"
     onChange={[Function]}
     placeholder="Your favourite animal"
     type="text"
@@ -99,15 +99,15 @@ exports[`Alert Snapshots PlaceHolder 1`] = `
 
 exports[`Alert Snapshots label 1`] = `
 <div
-  className="sc-AxheI jmeqRy"
+  className="sc-gKsewC hZEsHD"
 >
   <label
-    className="sc-AxjAm hjwNwx sc-AxgMl cxJYYh"
+    className="sc-bdfBwQ cuiLU sc-jSgupP fbijvz"
   >
     Input
   </label>
   <input
-    className="sc-Axmtr bDDSAq"
+    className="sc-iBPRYJ kBha-dQ"
     onChange={[Function]}
     type="text"
   />
