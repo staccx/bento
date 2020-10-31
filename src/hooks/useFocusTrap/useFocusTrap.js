@@ -1,5 +1,5 @@
 import React from "react"
-import createFocusTrap from "focus-trap"
+import { createFocusTrap } from "focus-trap"
 
 const defaultOptions = {
   clickOutsideDeactivates: true

@@ -9,10 +9,7 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    "@babel/plugin-proposal-optional-chaining",
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-export-namespace-from",
-
+    "@babel/plugin-proposal-export-namespace-from"
   ],
   "ignore": [
     "src/**/*.test.js",
@@ -20,8 +17,6 @@
     "src/**/*.stories.js",
     "src/**/*.md",
     "src/**/*.mdx",
-    "src/**/*.preview.js",
-    "src/setupTests.js",
-    "CHANGELOG.md"
+    "src/**/*.preview.js"
   ]
 }
