@@ -1,7 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, forwardRef } from "react"
 import PropTypes from "prop-types"
 import { useLogging } from "../../../hooks"
-import { useI18n } from "../../../i18n"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 import {
   HelpIcon,
@@ -13,8 +12,9 @@ import {
 } from "./Input.styles"
 import { resolveMask } from "./masks"
 import themeProps from "./Input.themeProps"
+import { useLocale } from "../../../locale"
 
-const Input = React.forwardRef(
+const Input = forwardRef(
   (
     {
       className,
@@ -33,17 +33,18 @@ const Input = React.forwardRef(
     },
     ref
   ) => {
-    const { language } = useI18n()
+    const { locale: contextLocale } = useLocale()
+
     const logger = useLogging("components.Input", level)
     const [showHelp, showHelpSet] = useState(false)
 
     const maskConfig = React.useMemo(() => {
       return {
         ...props,
-        ...(language && { locale: language }),
+        ...(contextLocale && { locale: contextLocale }),
         ...(locale && { locale })
       }
-    }, [locale, language])
+    }, [locale, contextLocale])
 
     const mask = React.useRef(() => {
       const createMask = resolveMask(mode, logger)
@@ -169,7 +170,7 @@ Input.propTypes = {
   maxLength: PropTypes.number,
   pattern: PropTypes.instanceOf(RegExp)
 }
-
+Input.displayName = "Input"
 Input.themeProps = themeProps
 Input.createVariants = componentCreateFactory(Input)
 

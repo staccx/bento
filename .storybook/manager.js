@@ -1,10 +1,11 @@
-import { addons, types } from "@storybook/addons";
-import { create, themes } from "@storybook/theming";
-import React from "react";
-import { ThemeSwitcher } from "./addons/ThemeSwitcher";
-import { LocaleSelector } from "./addons/LocaleSelector";
-import { Variants, VARIANTS_TOOL_NAME  } from "./tools/variants"
-import { AddonPanel } from "@storybook/components";
+import { addons, types } from "@storybook/addons"
+import { create, themes } from "@storybook/theming"
+import React from "react"
+import { ThemeSwitcher } from "./addons/ThemeSwitcher"
+import { LocaleSelector } from "./addons/LocaleSelector"
+import { Variants, VARIANTS_TOOL_NAME } from "./tools/variants"
+import { AddonPanel } from "@storybook/components"
+import { LanguageSelector } from "./addons/LanguageSelector"
 
 addons.setConfig({
   theme: create({
@@ -12,23 +13,31 @@ addons.setConfig({
     brandTitle: "Bento",
     base: "Bento"
   })
-});
+})
 
 addons.register("storybook/theme-switcher", api => {
   addons.addPanel("storybook/theme-switcher", {
     title: "theme-switcher",
     type: types.TOOL,
-    render: ({ active, key }) => <ThemeSwitcher api={api}/>
-  });
-});
+    render: ({ active, key }) => <ThemeSwitcher api={api} />
+  })
+})
 
 addons.register("storybook/locale-selector", api => {
   addons.addPanel("storybook/locale-selector", {
     title: "locale-selector",
     type: types.TOOL,
-    render: ({ active, key }) => <LocaleSelector api={api}/>
-  });
-});
+    render: ({ active, key }) => <LocaleSelector api={api} />
+  })
+})
+
+addons.register("storybook/language-selector", api => {
+  addons.addPanel("storybook/language-selector", {
+    title: "language-selector",
+    type: types.TOOL,
+    render: ({ active, key }) => <LanguageSelector api={api} />
+  })
+})
 // import { Button } from "@storybook/components"
 // import { FORCE_RE_RENDER } from "@storybook/core-events"
 // import StoryBookTheme from "./bentoStorybookTheme"

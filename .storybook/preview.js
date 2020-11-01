@@ -1,10 +1,12 @@
-import React from "react";
-import themes from "./themes";
-import { default as I18nProvider } from "../src/i18n/I18n";
-import WebFonts from "../src/components/Theme/WebFonts";
-import GlobalStyle from "../src/components/Theme/GlobalStyle";
-import { ThemeProvider } from "styled-components";
-import { locales } from "./locales";
+import React from "react"
+import themes from "./themes"
+import { default as I18nProvider } from "../src/i18n/I18n"
+import LocaleProvider from "../src/locale/LocaleProvider"
+import WebFonts from "../src/components/Theme/WebFonts"
+import GlobalStyle from "../src/components/Theme/GlobalStyle"
+import { ThemeProvider } from "styled-components"
+import locales from "./locales"
+import languages from "./languages"
 
 const texts = {
   no: {
@@ -20,44 +22,42 @@ const texts = {
       account_usage: "Brukskonto",
       blocks: [
         {
-          "_type": "block",
-          "_key": "3f1efe4b4982",
-          "style": "normal",
-          "markDefs": [],
-          "children": [
+          _type: "block",
+          _key: "3f1efe4b4982",
+          style: "normal",
+          markDefs: [],
+          children: [
             {
-              "_type": "span",
-              "_key": "3f1efe4b49820",
-              "text": "This is rich text ",
-              "marks": []
+              _type: "span",
+              _key: "3f1efe4b49820",
+              text: "This is rich text ",
+              marks: []
             },
             {
-              "_type": "span",
-              "_key": "3f1efe4b49821",
-              "text": "bold text",
-              "marks": [
-                "strong"
-              ]
+              _type: "span",
+              _key: "3f1efe4b49821",
+              text: "bold text",
+              marks: ["strong"]
             },
             {
-              "_type": "span",
-              "_key": "3f1efe4b49822",
-              "text": ". We can even format inside {{balance, currency}} of this",
-              "marks": []
+              _type: "span",
+              _key: "3f1efe4b49822",
+              text: ". We can even format inside {{balance, currency}} of this",
+              marks: []
             }
           ]
         },
         {
-          "_type": "block",
-          "_key": "7978c143c053",
-          "style": "normal",
-          "markDefs": [],
-          "children": [
+          _type: "block",
+          _key: "7978c143c053",
+          style: "normal",
+          markDefs: [],
+          children: [
             {
-              "_type": "span",
-              "_key": "7978c143c0530",
-              "text": "New line",
-              "marks": []
+              _type: "span",
+              _key: "7978c143c0530",
+              text: "New line",
+              marks: []
             }
           ]
         }
@@ -77,44 +77,42 @@ const texts = {
       account_usage: "Nuværende konto",
       blocks: [
         {
-          "_type": "block",
-          "_key": "3f1efe4b4982",
-          "style": "normal",
-          "markDefs": [],
-          "children": [
+          _type: "block",
+          _key: "3f1efe4b4982",
+          style: "normal",
+          markDefs: [],
+          children: [
             {
-              "_type": "span",
-              "_key": "3f1efe4b49820",
-              "text": "This is rich text ",
-              "marks": []
+              _type: "span",
+              _key: "3f1efe4b49820",
+              text: "This is rich text ",
+              marks: []
             },
             {
-              "_type": "span",
-              "_key": "3f1efe4b49821",
-              "text": "bold text",
-              "marks": [
-                "strong"
-              ]
+              _type: "span",
+              _key: "3f1efe4b49821",
+              text: "bold text",
+              marks: ["strong"]
             },
             {
-              "_type": "span",
-              "_key": "3f1efe4b49822",
-              "text": ". We can even format inside {{balance, currency}} of this",
-              "marks": []
+              _type: "span",
+              _key: "3f1efe4b49822",
+              text: ". We can even format inside {{balance, currency}} of this",
+              marks: []
             }
           ]
         },
         {
-          "_type": "block",
-          "_key": "7978c143c053",
-          "style": "normal",
-          "markDefs": [],
-          "children": [
+          _type: "block",
+          _key: "7978c143c053",
+          style: "normal",
+          markDefs: [],
+          children: [
             {
-              "_type": "span",
-              "_key": "7978c143c0530",
-              "text": "New line",
-              "marks": []
+              _type: "span",
+              _key: "7978c143c0530",
+              text: "New line",
+              marks: []
             }
           ]
         }
@@ -134,44 +132,42 @@ const texts = {
       account_usage: "Nuvarande konto",
       blocks: [
         {
-          "_type": "block",
-          "_key": "3f1efe4b4982",
-          "style": "normal",
-          "markDefs": [],
-          "children": [
+          _type: "block",
+          _key: "3f1efe4b4982",
+          style: "normal",
+          markDefs: [],
+          children: [
             {
-              "_type": "span",
-              "_key": "3f1efe4b49820",
-              "text": "This is rich text ",
-              "marks": []
+              _type: "span",
+              _key: "3f1efe4b49820",
+              text: "This is rich text ",
+              marks: []
             },
             {
-              "_type": "span",
-              "_key": "3f1efe4b49821",
-              "text": "bold text",
-              "marks": [
-                "strong"
-              ]
+              _type: "span",
+              _key: "3f1efe4b49821",
+              text: "bold text",
+              marks: ["strong"]
             },
             {
-              "_type": "span",
-              "_key": "3f1efe4b49822",
-              "text": ". We can even format inside {{balance, currency}} of this",
-              "marks": []
+              _type: "span",
+              _key: "3f1efe4b49822",
+              text: ". We can even format inside {{balance, currency}} of this",
+              marks: []
             }
           ]
         },
         {
-          "_type": "block",
-          "_key": "7978c143c053",
-          "style": "normal",
-          "markDefs": [],
-          "children": [
+          _type: "block",
+          _key: "7978c143c053",
+          style: "normal",
+          markDefs: [],
+          children: [
             {
-              "_type": "span",
-              "_key": "7978c143c0530",
-              "text": "New line",
-              "marks": []
+              _type: "span",
+              _key: "7978c143c0530",
+              text: "New line",
+              marks: []
             }
           ]
         }
@@ -191,44 +187,42 @@ const texts = {
       account_usage: "Nykyinen tili",
       blocks: [
         {
-          "_type": "block",
-          "_key": "3f1efe4b4982",
-          "style": "normal",
-          "markDefs": [],
-          "children": [
+          _type: "block",
+          _key: "3f1efe4b4982",
+          style: "normal",
+          markDefs: [],
+          children: [
             {
-              "_type": "span",
-              "_key": "3f1efe4b49820",
-              "text": "This is rich text ",
-              "marks": []
+              _type: "span",
+              _key: "3f1efe4b49820",
+              text: "This is rich text ",
+              marks: []
             },
             {
-              "_type": "span",
-              "_key": "3f1efe4b49821",
-              "text": "bold text",
-              "marks": [
-                "strong"
-              ]
+              _type: "span",
+              _key: "3f1efe4b49821",
+              text: "bold text",
+              marks: ["strong"]
             },
             {
-              "_type": "span",
-              "_key": "3f1efe4b49822",
-              "text": ". We can even format inside {{balance, currency}} of this",
-              "marks": []
+              _type: "span",
+              _key: "3f1efe4b49822",
+              text: ". We can even format inside {{balance, currency}} of this",
+              marks: []
             }
           ]
         },
         {
-          "_type": "block",
-          "_key": "7978c143c053",
-          "style": "normal",
-          "markDefs": [],
-          "children": [
+          _type: "block",
+          _key: "7978c143c053",
+          style: "normal",
+          markDefs: [],
+          children: [
             {
-              "_type": "span",
-              "_key": "7978c143c0530",
-              "text": "New line",
-              "marks": []
+              _type: "span",
+              _key: "7978c143c0530",
+              text: "New line",
+              marks: []
             }
           ]
         }
@@ -248,72 +242,75 @@ const texts = {
       account_usage: "Checking😮 account",
       blocks: [
         {
-          "_type": "block",
-          "_key": "3f1efe4b4982",
-          "style": "normal",
-          "markDefs": [],
-          "children": [
+          _type: "block",
+          _key: "3f1efe4b4982",
+          style: "normal",
+          markDefs: [],
+          children: [
             {
-              "_type": "span",
-              "_key": "3f1efe4b49820",
-              "text": "This is rich text ",
-              "marks": []
+              _type: "span",
+              _key: "3f1efe4b49820",
+              text: "This is rich text ",
+              marks: []
             },
             {
-              "_type": "span",
-              "_key": "3f1efe4b49821",
-              "text": "bold text",
-              "marks": [
-                "strong"
-              ]
+              _type: "span",
+              _key: "3f1efe4b49821",
+              text: "bold text",
+              marks: ["strong"]
             },
             {
-              "_type": "span",
-              "_key": "3f1efe4b49822",
-              "text": ". We can even format inside {{balance, currency}} of this",
-              "marks": []
+              _type: "span",
+              _key: "3f1efe4b49822",
+              text: ". We can even format inside {{balance, currency}} of this",
+              marks: []
             }
           ]
         },
         {
-          "_type": "block",
-          "_key": "7978c143c053",
-          "style": "normal",
-          "markDefs": [],
-          "children": [
+          _type: "block",
+          _key: "7978c143c053",
+          style: "normal",
+          markDefs: [],
+          children: [
             {
-              "_type": "span",
-              "_key": "7978c143c0530",
-              "text": "New line",
-              "marks": []
+              _type: "span",
+              _key: "7978c143c0530",
+              text: "New line",
+              marks: []
             }
           ]
         }
       ]
     }
-  },
-};
-const getName = theme => theme.storybookName || "NO NAME";
+  }
+}
+const getName = theme => theme.storybookName || "NO NAME"
 const mapTheme = (theme, index) => ({
   id: index,
   title: getName(theme)
-});
+})
 
 const withContext = (Story, context) => {
-  const theme = themes[context.globals.theme.id];
-  const locale = locales[context.globals.locale.id];
-  return (<ThemeProvider theme={theme}>
-    <I18nProvider level={0} language={locale?.data ?? "nb"} texts={texts}>
-      <>
-        <WebFonts/>
-        <GlobalStyle/>
-        <Story {...context} />
-      </>
-    </I18nProvider>
-  </ThemeProvider>);
-};
+  const theme = themes[context.globals.theme.id]
+  const locale = locales[context.globals.locale.id]
+  const language = languages[context.globals.language.id]
+  return (
+    <ThemeProvider theme={theme}>
+      <LocaleProvider locale={locale?.data}>
+        <I18nProvider level={0} language={language?.data || "no"} texts={texts}>
+          <>
+            <WebFonts />
+            <GlobalStyle />
+            <Story {...context} />
+          </>
+        </I18nProvider>
+      </LocaleProvider>
+    </ThemeProvider>
+  )
+}
 
-export const decorators = [withContext];
+export const decorators = [withContext]
 
 export const globalTypes = {
   theme: {
@@ -340,6 +337,21 @@ export const globalTypes = {
         data: null
       }))
     }
+  },
+  language: {
+    name: "Language",
+    description: "Language for i18n",
+    defaultValue: {
+      id: 0,
+      title: "Norsk",
+      right: "🇳🇴"
+    },
+    toolbar: {
+      icon: "globe",
+      items: languages.map(locale => ({
+        ...locale,
+        data: null
+      }))
+    }
   }
-};
-
+}

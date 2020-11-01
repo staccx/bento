@@ -1,10 +1,34 @@
-import { countries } from "../src/i18n";
+import { locales } from "../src/locale"
 
-export const locales = [
-  { value: "no", right: "🇳🇴", title: "Norsk", data: countries.Norway },
-  { value: "dk", right: "🇩🇰", title: "Dansk", data: countries.Denmark },
-  { value: "se", right: "🇸🇪", title: "Svenska", data: countries.Sweden },
-  { value: "fi", right: "🇫🇮", title: "Suomi", data: countries.Finland },
-  { value: "us", right: "🇺🇸", title: "America, f### yeah!", data: countries["United States"] }
+export default [
+  {
+    value: "no",
+    right: "🇳🇴",
+    title: locales.Norway.native,
+    data: locales.Norway
+  },
+  {
+    value: "dk",
+    right: "🇩🇰",
+    title: locales.Denmark.native,
+    data: locales.Denmark
+  },
+  {
+    value: "se",
+    right: "🇸🇪",
+    title: locales.Sweden.native,
+    data: locales.Sweden
+  },
+  {
+    value: "fi",
+    right: "🇫🇮",
+    title: locales.Finland.native,
+    data: locales.Finland
+  },
+  {
+    value: "us",
+    right: "🇺🇸",
+    title: locales["United States"].native,
+    data: locales["United States"]
+  }
 ]
-

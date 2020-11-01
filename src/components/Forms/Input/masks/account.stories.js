@@ -1,6 +1,6 @@
 import React from "react"
 import Input from "../Input"
-import { countries, Provider } from "../../../../i18n"
+import { locales, LocaleProvider } from "../../../../locale"
 
 export default {
   title: "Components/Input/Masks/Account",
@@ -15,15 +15,5 @@ Vanilla.args = {
 export const Locale = args => <Input {...args} mode="account" />
 Locale.args = {
   label: "Locale set explistely (Danish)",
-  locale: countries.Denmark,
-  onChange: console.log
-}
-
-export const i18nEnabled = args => (
-  <Provider language={countries.Denmark}>
-    <Input {...args} mode="account" />
-  </Provider>
-)
-i18nEnabled.args = {
-  label: "Locale derived from context"
+  locale: locales.Denmark
 }

@@ -1,9 +1,7 @@
 import React from "react"
-import { render, cleanup, waitForElement, act } from "@testing-library/react"
+import { cleanup } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
-import renderer from "react-test-renderer"
 import { isBlock } from "./utils"
-import { I18nConsumer, Provider } from "./index"
 
 afterEach(cleanup)
 
@@ -65,23 +63,6 @@ describe("i18n", () => {
     it("isBlock", () => {
       expect(isBlock("test")).toBe(false)
       expect(isBlock(data.value[0].nb[0])).toBe(true)
-    })
-  })
-  describe("Snapshots", () => {
-    it("Normal render", () => {
-      let tree = null
-      renderer.act(() => {
-        tree = renderer.create(
-          <Provider language="en">
-            <I18nConsumer>
-              {value => {
-                return <span>Ready: {value.ready}</span>
-              }}
-            </I18nConsumer>
-          </Provider>
-        )
-      })
-      expect(tree.toJSON()).toMatchSnapshot()
     })
   })
 })

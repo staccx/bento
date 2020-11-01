@@ -1,21 +1,21 @@
 import React from "react"
 import { IconButton, TooltipLinkList, WithTooltip } from "@storybook/components"
 import { useGlobals } from "@storybook/api"
-import locales from "../locales"
+import languages from "../languages"
 import { FlexIt } from "./ThemeSwitcher"
 
-export const LocaleSelector = ({ api }) => {
-  const [{ locale: activeLocale }, setGlobal] = useGlobals()
-  const locale = activeLocale ? locales[activeLocale.id] : null
+export const LanguageSelector = ({ api }) => {
+  const [{ language: activeLanguage }, setGlobal] = useGlobals()
+  const language = activeLanguage ? languages[activeLanguage.id] : null
   const [expanded, expandedSet] = React.useState(false)
   const localeList = React.useMemo(
     () =>
-      locales.map((local, index) => ({
+      languages.map((local, index) => ({
         ...local,
         key: index,
         onClick: () => {
           setGlobal({
-            locale: {
+            language: {
               ...local,
               id: index,
               data: null
@@ -27,7 +27,7 @@ export const LocaleSelector = ({ api }) => {
     []
   )
 
-  if (!locale) {
+  if (!language) {
     return null
   }
   return (
@@ -40,8 +40,8 @@ export const LocaleSelector = ({ api }) => {
       closeOnClick
     >
       <FlexIt>
-        <IconButton key="locale-selector">{locale.title} </IconButton>
-        <span>{locale?.right}</span>
+        <IconButton key="locale-selector">{language.title} </IconButton>
+        <span>{language?.right}</span>
       </FlexIt>
     </WithTooltip>
   )

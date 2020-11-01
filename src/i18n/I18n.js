@@ -1,4 +1,4 @@
-import React, {
+import {
   createContext,
   useCallback,
   useContext,
@@ -10,31 +10,20 @@ import PropTypes from "prop-types"
 import loglevel from "loglevel"
 import { formatMoney } from "../formatting"
 import { normalizeLevel } from "../utils/loglevelUtils"
-import { countries } from "./countries"
+import languages from "./lanuages"
 
 const I18nContext = createContext({})
 
 const defaultFormat = {
-  currency: value => {
-    return formatMoney(parseInt(value, 10))
+  currency: (value, locale) => {
+    return formatMoney(parseInt(value, 10), {
+      locale: locale || "nb-NO"
+    })
   }
 }
 
 export const i18nLogger = loglevel.getLogger("i18n")
 i18nLogger.setDefaultLevel(normalizeLevel(0))
-
-const resolveLanguage = language => {
-  if (typeof language === "string") {
-    return language
-  }
-  if (typeof language === "object") {
-    if (language.hasOwnProperty("key")) {
-      return language.key.toLowerCase()
-    }
-  }
-
-  return null
-}
 
 const Provider = ({
   children,
@@ -44,16 +33,15 @@ const Provider = ({
   formatFunctions = {},
   backend,
   backendOptions = {},
-  debug = false,
-  ...props
+  debug = false
 }) => {
   const [ready, readySet] = useState(false)
 
   useEffect(() => {
     if (language && i18next.isInitialized) {
-      if (resolveLanguage(language) !== i18next.language) {
+      if (language !== i18next.language) {
         i18next
-          .changeLanguage(resolveLanguage(language))
+          .changeLanguage(language)
           .then(() => {
             i18nLogger.debug("Language changed by props", language)
           })
@@ -79,12 +67,11 @@ const Provider = ({
       i18nLogger.info("Using backend", backend)
       i18next.use(backend)
     }
-    const lng = resolveLanguage(language)
     i18next
       .init({
         ...(texts && { resources: texts }),
-        lng,
-        fallbackLng: [lng],
+        lng: language,
+        fallbackLng: ["no"],
         debug: level >= loglevel.levels.INFO,
         backend: {
           ...backendOptions
@@ -112,11 +99,12 @@ const Provider = ({
         interpolation: {
           format: function(value, format, lng) {
             if (formatFunctions.hasOwnProperty(format)) {
-              return formatFunctions[format](value)
+              return formatFunctions[format](value, lng)
             }
             if (defaultFormat.hasOwnProperty(format)) {
-              return defaultFormat[format](value)
+              return defaultFormat[format](value, lng)
             }
+            i18nLogger.warn("interpolation", `missing formatter: ${format}`)
             return value
           }
         }
@@ -173,7 +161,6 @@ const Provider = ({
         ready,
         i18n: i18next,
         language,
-        languages: i18next.languages || [],
         translate,
         transform
       }}
@@ -186,12 +173,7 @@ const Provider = ({
 Provider.propTypes = {
   children: PropTypes.element.isRequired,
   texts: PropTypes.object,
-  language: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      key: PropTypes.string
-    })
-  ]),
+  language: PropTypes.string.isRequired,
   formatFunctions: PropTypes.object,
   backend: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   backendOptions: PropTypes.object,
@@ -208,42 +190,9 @@ Provider.propTypes = {
 
 Provider.defaultProps = {
   level: loglevel.levels.SILENT,
-  language: countries.Norway
+  language: languages.Norwegian
 }
 
 export const useI18n = () => useContext(I18nContext)
-
-/**
- * @deprecated use usei18n instead
- * @param children
- * @returns {null|*}
- * @constructor
- */
-export const I18nConsumer = ({ children }) => {
-  const props = useI18n()
-
-  if (!children) {
-    i18nLogger.debug("I18nConsumer has no children")
-    return null
-  }
-
-  if (!props.ready) {
-    i18nLogger.debug("i18nConsumer is not ready")
-    return null
-  }
-  i18nLogger.debug(`Returning ${children} with`)
-  return children(props)
-}
-
-/**
- * @deprecated use usei18n instead
- * @param Component
- * @returns {function(*): *}
- */
-export const withI18n = Component => props => (
-  <I18nConsumer>
-    {i18nProps => <Component {...props} {...i18nProps} />}
-  </I18nConsumer>
-)
 
 export default Provider
