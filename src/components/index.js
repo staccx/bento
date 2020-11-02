@@ -84,9 +84,6 @@ export { default as ThemeProvider } from "./Theme/ThemeProvider/ThemeProvider"
 export { default as GlobalStyle } from "./Theme/GlobalStyle"
 export { default as WebFonts } from "./Theme/WebFonts"
 
-// Formatters
-export { default as Odometer } from "./Formatters/Odometer/Odometer"
-
 // Logo
 export { default as Logo } from "./Logo/Logo"
 
