@@ -70,16 +70,14 @@ const Input = forwardRef(
 
     const handleChange = e => {
       if (!mask.current) {
-        onChange &&
-          onChange({
-            value: e.target.value
-          })
+        onChange && onChange(e)
         return
       }
       const val = mask.current(e.target.value)
       if (val && onChange) {
         onChange({
-          ...val
+          ...val,
+          ...e
         })
       }
       internalValueSet({

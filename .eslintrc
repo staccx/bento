@@ -17,7 +17,8 @@
         "react/react-in-jsx-scope": 0,
         "node/handle-callback-err": 0,
         "node/no-new-require": 0,
-        "node/no-path-concat": 0
+        "node/no-path-concat": 0,
+        "react/prop-types": 0
       }
     }
   ]

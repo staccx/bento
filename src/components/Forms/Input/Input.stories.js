@@ -11,6 +11,13 @@ Standard.args = {
   label: "Input"
 }
 
+export const FileUpload = args => <Input {...args} />
+FileUpload.args = {
+  label: "Fileupload",
+  type: "file",
+  onChange: console.log
+}
+
 export const Controlled = args => <Input {...args} />
 Controlled.args = {
   label: "Input",

@@ -29,6 +29,8 @@ const FocusTrapContainer = styled.div`
   ${applyVariants(themeProps.container)};
 `
 
+FocusTrap.displayName = "Focus Trap"
+
 FocusTrap.themeProps = themeProps
 
 export default FocusTrap

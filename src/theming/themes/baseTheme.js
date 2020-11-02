@@ -4,6 +4,9 @@ import reset from "../styles/cssResets"
 import grids from "../../components/Layout/Layout/Layout.Grids"
 import codeTheme from "../codeTheme"
 
+const Logo = () => <div>ThemeComponent for BaseTheme</div>
+Logo.displayName = "Logo for base theme"
+
 export const theme = {
   name: "Base Theme",
   storybookName: "Base Theme",
@@ -70,7 +73,7 @@ export const theme = {
   borderRadius: "2px",
   reset,
   grid: grids,
-  logo: () => <div>ThemeComponent for BaseTheme</div>
+  logo: Logo
 }
 
 export const StyleguideTheme = new Theme(theme, codeTheme)
