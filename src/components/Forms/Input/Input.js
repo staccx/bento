@@ -76,8 +76,8 @@ const Input = forwardRef(
       const val = mask.current(e.target.value)
       if (val && onChange) {
         onChange({
-          ...val,
-          ...e
+          ...e,
+          ...val
         })
       }
       internalValueSet({
