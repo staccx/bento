@@ -9,7 +9,8 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    "@babel/plugin-proposal-export-namespace-from"
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-transform-modules-commonjs"
   ],
   "ignore": [
     "src/**/*.test.js",
