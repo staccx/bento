@@ -1,9 +1,4 @@
 /**
- * To allow SSR support
- */
-import "regenerator-runtime/runtime.js"
-
-/**
  * Animations
  */
 export * as animations from "./animations"
