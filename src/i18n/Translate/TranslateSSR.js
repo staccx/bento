@@ -33,13 +33,10 @@ const TranslateSSR = ({ i18n, children }) => {
 
     client
       .fetch(
-        `*[_type == "translations" && i18nKey.current == "$key"][0]{"value": value[0], "key": i18nKey.current}`,
-        {
-          key: i18n
-        }
+        `*[_type == "translations" && i18nKey.current == "${i18n}"][0]{"value": value[0], "key": i18nKey.current}`
       )
       .then(val => {
-        i18nLogger.debug("Result from sanity", val?.toString())
+        i18nLogger.debug("Result from sanity", ...val)
         valueSet(val)
       })
       .catch(errorSet)
