@@ -4,7 +4,7 @@ import useSanity from "./useSanity"
 import { getComponent } from "../../i18n/utils"
 
 const logger = loglevel.getLogger("TRANSLATESSR")
-const TranslateSSR = ({ key, children }) => {
+const TranslateSSR = ({ i18n, children }) => {
   const { sanityConfig, client } = useSanity()
   const [value, valueSet] = useState(null)
   const [error, errorSet] = useState(null)
@@ -24,7 +24,7 @@ const TranslateSSR = ({ key, children }) => {
       return
     }
 
-    if (!key) {
+    if (!i18n) {
       logger.error("No key!")
       return
     }
@@ -33,7 +33,7 @@ const TranslateSSR = ({ key, children }) => {
       .fetch(
         `*[_type == "translations" && i18nKey.current == $key][0]{"value": value[0], "key": i18nKey.current}`,
         {
-          key
+          key: i18n
         }
       )
       .then(valueSet)
@@ -52,7 +52,7 @@ const TranslateSSR = ({ key, children }) => {
     logger.debug("Handling value is array")
     return value.map(getComponent)
   }
-  logger.debug("Key:", key, "resolved to:", value)
+  logger.debug("Key:", i18n, "resolved to:", value)
   return value
 }
 
