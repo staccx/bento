@@ -1,12 +1,16 @@
 import { useEffect, useMemo, useState } from "react"
 import { i18nLogger, useI18n } from "../I18n"
+import { getComponent } from "../utils"
 
 const TranslateSSR = ({ i18n, children }) => {
-  const { backend, transform, language } = useI18n()
+  const { ready, backend, transform, language } = useI18n()
 
   const client = useMemo(() => {
+    if (!ready) {
+      return null
+    }
     return backend?.getClient()
-  }, [backend])
+  }, [backend, ready])
 
   const [value, valueSet] = useState(null)
   const [error, errorSet] = useState(null)
@@ -28,7 +32,10 @@ const TranslateSSR = ({ i18n, children }) => {
           key: i18n
         }
       )
-      .then(valueSet)
+      .then(val => {
+        i18nLogger.info("Result from sanity", val)
+        valueSet(val)
+      })
       .catch(errorSet)
   }, [language, client])
 
@@ -40,6 +47,9 @@ const TranslateSSR = ({ i18n, children }) => {
     return children
   }
 
+  if (Array.isArray(value)) {
+    return value.map(getComponent)
+  }
   return transform(value, children)
 }
 
