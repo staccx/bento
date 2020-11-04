@@ -25,6 +25,12 @@ const TranslateSSR = ({ i18n, children }) => {
       return
     }
 
+    i18nLogger.info("Fetching from sanity", i18n)
+    i18nLogger.info(
+      "Query",
+      `*[_type == "translations" && i18nKey.current == ${i18n}][0]{"value": value[0], "key": i18nKey.current}`
+    )
+
     client
       .fetch(
         `*[_type == "translations" && i18nKey.current == $key][0]{"value": value[0], "key": i18nKey.current}`,
@@ -33,7 +39,7 @@ const TranslateSSR = ({ i18n, children }) => {
         }
       )
       .then(val => {
-        i18nLogger.info("Result from sanity", val)
+        i18nLogger.info("Result from sanity", val?.toString())
         valueSet(val)
       })
       .catch(errorSet)
