@@ -130,6 +130,7 @@
     "prop-types": "^15.6.2",
     "qs": "^6.9.1",
     "react-compound-slider": "^2.5.0",
+    "react-query": "^2.26.2",
     "regenerator-runtime": "^0.13.7",
     "swr": "^0.3.6",
     "tinycolor2": "^1.4.2",

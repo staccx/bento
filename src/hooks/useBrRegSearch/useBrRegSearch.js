@@ -1,6 +1,11 @@
-import { useRequest } from "../useRequest/useRequest"
+import axios from "axios"
 import useDebounce from "../useDebounce"
+import { useQuery } from "react-query"
 
+const brregInstance = axios.create({
+  baseURL: "https://data.brreg.no/enhetsregisteret/api"
+})
+brregInstance.interceptors.response.use(response => response.data)
 /**
  * Search in The Brønnøysund Register Centre(Brønnøysundregisteret).
  * Input a search term and it returns an object with the search results.
@@ -8,27 +13,24 @@ import useDebounce from "../useDebounce"
 const useBrRegSearch = searchTerm => {
   const [debouncedSearchTerm] = useDebounce(searchTerm, 500)
 
-  const { data, error: errors } = useRequest(
-    debouncedSearchTerm.length >= 2
-      ? {
-          url: `https://data.brreg.no/enhetsregisteret/api/enheter?${
-            Number.isInteger(parseInt(searchTerm))
-              ? "organisasjonsnummer"
-              : "navn"
-          }=${debouncedSearchTerm}`,
-          params: {},
-          transformRequest: [
-            function(data, headers) {
-              delete headers.common.Authorization
-              return data
-            }
-          ]
+  const { data, error: errors, isLoading } = useQuery(
+    debouncedSearchTerm,
+    () =>
+      brregInstance.get("/enheter", {
+        params: {
+          ...(Number.isInteger(parseInt(searchTerm))
+            ? { organisasjonsnummer: debouncedSearchTerm }
+            : { navn: debouncedSearchTerm })
         }
-      : null
+      }),
+    {
+      enabled: debouncedSearchTerm?.length > 2
+    }
   )
 
+  console.log(data)
   return {
-    isLoading: !data && !errors,
+    isLoading,
     results: data
       ? data?._embedded?.enheter?.length > 0
         ? data?._embedded?.enheter
