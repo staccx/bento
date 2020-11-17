@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from "react"
+import React, { forwardRef, useRef, useState } from "react"
 import PropTypes from "prop-types"
 import { useLogging } from "../../../hooks"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
@@ -34,7 +34,7 @@ const Input = forwardRef(
     ref
   ) => {
     const { locale: contextLocale } = useLocale()
-
+    const currentLocale = useRef(locale)
     const logger = useLogging("components.Input", level)
     const [showHelp, showHelpSet] = useState(false)
 
@@ -65,7 +65,10 @@ const Input = forwardRef(
     }, [mode, logger, maskConfig])
 
     React.useEffect(() => {
-      handleChange({ target: { value: internalValue.rawValue } })
+      if (locale && currentLocale.current !== locale) {
+        handleChange({ target: { value: internalValue.value } })
+        currentLocale.locale = locale
+      }
     }, [locale])
 
     const handleChange = e => {
