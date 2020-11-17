@@ -27,8 +27,6 @@ const useBrRegSearch = searchTerm => {
       enabled: debouncedSearchTerm?.length > 2
     }
   )
-
-  console.log(data)
   return {
     isLoading,
     results: data
