@@ -161,7 +161,8 @@ const Provider = ({
         ready,
         backend,
         i18n: i18next,
-        language,
+        language: i18next.language,
+        languages: i18next.languages,
         translate,
         transform
       }}
