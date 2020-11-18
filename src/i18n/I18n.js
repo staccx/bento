@@ -38,19 +38,8 @@ const Provider = ({
   const [ready, readySet] = useState(false)
 
   useEffect(() => {
-    if (language && i18next.isInitialized) {
-      if (language !== i18next.language) {
-        i18next
-          .changeLanguage(language)
-          .then(() => {
-            i18nLogger.debug("Language changed by props", language)
-          })
-          .catch(e => {
-            i18nLogger.debug("Language change rejected:", e.message)
-          })
-      }
-    }
-  }, [language, i18next.isInitialized])
+    changeLanguage(language)
+  }, [language])
 
   useEffect(() => {
     i18nLogger.setLevel(normalizeLevel(level))
@@ -155,6 +144,30 @@ const Provider = ({
     [i18next.isInitialized]
   )
 
+  const changeLanguage = useCallback(
+    lang => {
+      if (i18next.isInitialized) {
+        if (lang !== i18next.language) {
+          readySet(false)
+          i18next
+            .changeLanguage(lang)
+            .then(() => {
+              readySet(true)
+              i18nLogger.debug("Language changed", lang)
+            })
+            .catch(e => {
+              i18nLogger.debug("Language change rejected:", e.message)
+            })
+        }
+      }
+
+      return () => {
+        i18nLogger.debug("Not ready")
+      }
+    },
+    [i18next.isInitialized]
+  )
+
   return (
     <I18nContext.Provider
       value={{
@@ -163,6 +176,7 @@ const Provider = ({
         i18n: i18next,
         language: i18next.language,
         languages: i18next.languages,
+        changeLanguage,
         translate,
         transform
       }}
