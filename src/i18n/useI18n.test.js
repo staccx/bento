@@ -23,7 +23,7 @@ describe("usei18n", () => {
     )
   })
 
-  it("Should receive language", () => {
+  it("Should receive language", async () => {
     let wrapper = null
     act(() => {
       wrapper = ({ children }) => (
@@ -32,9 +32,10 @@ describe("usei18n", () => {
         </Provider>
       )
     })
-    const { result } = renderHook(() => useI18n(), {
+    const { result, waitForNextUpdate } = renderHook(() => useI18n(), {
       wrapper
     })
+    await waitForNextUpdate()
     expect(result.current.language).toBe("nb")
   })
 })
