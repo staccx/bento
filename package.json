@@ -1,6 +1,6 @@
 {
   "name": "@staccx/bento",
-  "version": "13.0.1-alpha.36",
+  "version": "13.0.1-alpha.37",
   "scripts": {
     "test": "is-ci \"test:coverage\" \"test:watch\"",
     "test:watch": "jest --watch",
