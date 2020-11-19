@@ -71,6 +71,18 @@ const Input = forwardRef(
       }
     }, [locale])
 
+    React.useEffect(() => {
+      if (value && value !== internalValue.value) {
+        if (!mask.current) {
+          return
+        }
+        const val = mask.current(value)
+        internalValueSet({
+          ...val
+        })
+      }
+    }, [value])
+
     const handleChange = e => {
       if (!mask.current) {
         onChange && onChange(e)
