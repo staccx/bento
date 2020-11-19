@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Input from "./Input"
 
 export default {
@@ -24,9 +24,24 @@ Controlled.args = {
   value: "Sphinx of black quartz, judge my vow"
 }
 
-export const ControlledWithMode = args => <Input {...args} />
+export const ControlledWithMode = args => {
+  const [value, valueSet] = useState(args.value)
+
+  useEffect(() => {
+    let interval = setInterval(() => {
+      valueSet(Math.round(Math.random() * args.value))
+    }, 1000)
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
+
+  console.log(value)
+  return <Input {...args} value={value} />
+}
 ControlledWithMode.args = {
-  label: "Input",
+  label: "Input (changes value every second",
   value: 100000,
   mode: "currency"
 }
