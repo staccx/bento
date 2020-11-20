@@ -74,6 +74,7 @@ const Input = forwardRef(
     React.useEffect(() => {
       if (value && value !== internalValue.value) {
         if (!mask.current) {
+          internalValueSet({ value })
           return
         }
         const val = mask.current(value)

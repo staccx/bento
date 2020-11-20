@@ -24,6 +24,29 @@ Controlled.args = {
   value: "Sphinx of black quartz, judge my vow"
 }
 
+export const ControlledWithChangingText = args => {
+  const [value, valueSet] = useState(args.value)
+
+  useEffect(() => {
+    const words = "Sphinx of black quartz, judge my vow".split(" ")
+    let interval = setInterval(() => {
+      valueSet(words[Math.round(Math.random() * words.length)])
+    }, 1000)
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
+
+  console.log(value)
+  return <Input {...args} value={value} />
+}
+
+ControlledWithChangingText.args = {
+  label: "Input (changes value every second)",
+  value: "Start text"
+}
+
 export const ControlledWithMode = args => {
   const [value, valueSet] = useState(args.value)
 
