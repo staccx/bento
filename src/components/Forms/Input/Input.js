@@ -148,7 +148,7 @@ Input.propTypes = {
   helpText: PropTypes.string,
   type: PropTypes.string,
   placeholder: PropTypes.string,
-  defaultValue: PropTypes.string,
+  defaultValue: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
   /**
    * Callback when content changes. Contains {value, rawValue} and other meta from masks
    */
@@ -163,7 +163,7 @@ Input.propTypes = {
     "postalcode",
     "custom"
   ]),
-  value: PropTypes.string,
+  value: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
   /**
    * Logger level. Higher is more detail
    */
