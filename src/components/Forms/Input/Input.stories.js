@@ -28,7 +28,7 @@ export const ControlledWithChangingText = args => {
   const [value, valueSet] = useState(args.value)
 
   useEffect(() => {
-    const words = "Sphinx of black quartz, judge my vow".split(" ")
+    const words = ["", ..."Sphinx of black quartz, judge my vow".split(" ")]
     let interval = setInterval(() => {
       valueSet(words[Math.round(Math.random() * words.length)])
     }, 1000)

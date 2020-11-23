@@ -72,7 +72,7 @@ const Input = forwardRef(
     }, [locale])
 
     React.useEffect(() => {
-      if (value && value !== internalValue.value) {
+      if (value !== internalValue.value) {
         if (!mask.current) {
           internalValueSet({ value })
           return
@@ -163,7 +163,7 @@ Input.propTypes = {
     "postalcode",
     "custom"
   ]),
-  value: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
    * Logger level. Higher is more detail
    */
