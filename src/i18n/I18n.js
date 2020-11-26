@@ -113,6 +113,14 @@ const Provider = ({
       i18nLogger.debug(`Translating ${key}`, data)
       const value = i18next.t(key, data)
       i18nLogger.debug(`Translated ${key} into ${value}`)
+
+      if (value && Array.isArray(value)) {
+        if (value.length === 1) {
+          // For most case this is it
+          return value[0]
+        }
+      }
+
       return value || fallback
     },
     [i18next.isInitialized]
