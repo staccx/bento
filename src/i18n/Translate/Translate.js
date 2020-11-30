@@ -13,7 +13,7 @@ import { useEffect, useState } from "react"
  * @constructor
  */
 const Translate = ({ children, i18n, data }) => {
-  const { translate } = useI18n()
+  const { translate, language } = useI18n()
   const [value, valueSet] = useState(children ?? null)
   useEffect(() => {
     if (!i18next.isInitialized) return
@@ -26,7 +26,7 @@ const Translate = ({ children, i18n, data }) => {
       result = translate(i18n, children, data)
     }
     valueSet(result)
-  }, [i18next, i18n, translate])
+  }, [i18next, i18n, translate, language])
 
   if (Array.isArray(value)) {
     i18nLogger.debug("Handling value is array")
