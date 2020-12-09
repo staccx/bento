@@ -13,7 +13,7 @@ export const FadeIn = keyframes`
 export const FadeInFromTop = keyframes`
   from {
     opacity: 0;
-    transform: translateY(-1rem);
+    transform: translateY(-0.5rem);
   }
 
   to {
