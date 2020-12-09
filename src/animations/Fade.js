@@ -10,14 +10,23 @@ export const FadeIn = keyframes`
   }
 `
 
-export const FadeInFromTop = keyframes`
+const fadeInFromTopKeyframe = (y = "-0.5rem") => keyframes`
   from {
     opacity: 0;
-    transform: translateY(-0.5rem);
+    transform: translateY(${y});
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 `
+
+const fadeInFromTop = (y = "-0.5rem") => css`
+  opacity: 0;
+  transform: translateY(${y});
+  animation: ${fadeInFromTopKeyframe({ y })} 0.4s ease-out forwards 1;
+`
+
+// Usage (applies both keyframe + css: 
+// ${fadeInFromTop()};
+// ${fadeInFromTop('100%')};
