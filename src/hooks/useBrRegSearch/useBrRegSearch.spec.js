@@ -262,7 +262,7 @@ const staccXData = {
 }
 const mockFunction = data => () => Promise.resolve({ data })
 
-describe("useBrregSearch", () => {
+describe.skip("useBrregSearch", () => {
   it.skip("search", async () => {
     axios.mockImplementationOnce(mockFunction(staccData))
     const { result, waitForNextUpdate } = renderHook(() =>
