@@ -155,7 +155,7 @@ describe("SliderKeyboardInput", () => {
     it("simulated keyboard with default value", () => {
       const { sliderKeyboardLabel } = setup({ defaultValue: 1337 })
       expect(sliderKeyboardLabel.value).toBe(
-        replaceWhiteSpaceForMatcher("1 337")
+        replaceWhiteSpaceForMatcher("1,337")
       )
     })
   })
