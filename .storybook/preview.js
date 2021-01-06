@@ -20,6 +20,7 @@ const texts = {
       account_savings: "Sparekonto",
       account_funds: "Fondskonto",
       account_usage: "Brukskonto",
+      this_is_key: "norsk verdi",
       blocks: [
         {
           _type: "block",
@@ -75,6 +76,7 @@ const texts = {
       account_savings: "Opsparingskonto",
       account_funds: "Fondskonto",
       account_usage: "Nuværende konto",
+      this_is_key: "dansk verdi",
       blocks: [
         {
           _type: "block",
@@ -130,6 +132,7 @@ const texts = {
       account_savings: "Sparkonto",
       account_funds: "Fondkonto",
       account_usage: "Nuvarande konto",
+      this_is_key: "svensk verdi",
       blocks: [
         {
           _type: "block",
@@ -185,6 +188,7 @@ const texts = {
       account_savings: "Säästötili",
       account_funds: "Rahastotili",
       account_usage: "Nykyinen tili",
+      this_is_key: "finsk verdi",
       blocks: [
         {
           _type: "block",
@@ -240,6 +244,7 @@ const texts = {
       account_savings: "Savings account",
       account_funds: "Funds account",
       account_usage: "Checking😮 account",
+      this_is_key: "engelsk verdi",
       blocks: [
         {
           _type: "block",
@@ -298,7 +303,12 @@ const withContext = (Story, context) => {
   return (
     <ThemeProvider theme={theme}>
       <LocaleProvider locale={locale?.data}>
-        <I18nProvider level={0} language={language?.data || "no"} texts={texts}>
+        <I18nProvider
+          level={0}
+          language={language?.data || "no"}
+          texts={texts}
+          debug={true}
+        >
           <>
             <WebFonts />
             <GlobalStyle />
