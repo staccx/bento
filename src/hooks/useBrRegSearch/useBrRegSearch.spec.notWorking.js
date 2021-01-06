@@ -263,7 +263,7 @@
 // const mockFunction = data => () => Promise.resolve({ data })
 //
 // describe.skip("useBrregSearch", () => {
-//   it.skip("search", async () => {
+//   it("search", async () => {
 //     axios.mockImplementationOnce(mockFunction(staccData))
 //     const { result, waitForNextUpdate } = renderHook(() =>
 //       useBrRegSearch("Stacc")
@@ -272,7 +272,7 @@
 //     expect(result.current.results).not.toBeUndefined()
 //     expect(result.current.results.length).toBe(4)
 //   })
-//   it.skip("Should work with org nr", async () => {
+//   it("Should work with org nr", async () => {
 //     axios.mockImplementationOnce(mockFunction(staccXData))
 //     const { result, waitForNextUpdate } = renderHook(() =>
 //       useBrRegSearch("920318886")
@@ -283,7 +283,7 @@
 //     expect(result.current.results[0].navn).toBe("STACC X AS")
 //   })
 //   describe("Rendering", () => {
-//     it.skip("should render Results", async () => {
+//     it("should render Results", async () => {
 //       axios.mockImplementationOnce(mockFunction(staccData))
 //       const { result, waitForNextUpdate } = renderHook(() =>
 //         useBrRegSearch("Stacc")
@@ -299,7 +299,7 @@
 //       expect(screen.getByText("STACC AS")).toBeInTheDocument()
 //       expect(screen.getByText("STACC X AS")).toBeInTheDocument()
 //     })
-//     it.skip("should render empty array", async () => {
+//     it("should render empty array", async () => {
 //       axios.get.mockImplementationOnce(mockFunction(staccData))
 //       const { result } = renderHook(() => useBrRegSearch("S"))
 //       render(
@@ -311,7 +311,7 @@
 //       )
 //       expect(screen.getAllBy * "STACC").toBeNaN()
 //     })
-//     it.skip("should render empty array not exisiting company", async () => {
+//     it("should render empty array not exisiting company", async () => {
 //       axios.get.mockImplementationOnce(
 //         mockFunction({ _embedded: { enheter: [] } })
 //       )
