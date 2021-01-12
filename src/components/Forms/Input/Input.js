@@ -67,7 +67,7 @@ const Input = forwardRef(
     React.useEffect(() => {
       if (locale && currentLocale.current !== locale) {
         handleChange({ target: { value: internalValue.value } })
-        currentLocale.locale = locale
+        currentLocale.current = locale
       }
     }, [locale])
 
