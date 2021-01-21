@@ -39,9 +39,14 @@ export * as theming from "./theming"
 export * as utils from "./utils"
 
 /**
- * Utils
+ * i18n
  */
 export * as i18n from "./i18n"
+
+/**
+ * Locale
+ */
+export * as locale from "./locale"
 
 /**
  * Hooks

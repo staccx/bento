@@ -47,7 +47,7 @@ export const baseMask = options => {
         _ => (config?.delimiter && _ ? _.replace(config?.delimiter, "") : _),
         _ => (config?.pattern ? _.replace(config?.pattern, "") : _),
         _ =>
-          config?.maxLength
+          config?.maxLength && _.length > config?.maxLength
             ? _.substring(0, Math.min(config.maxLength, _.length))
             : _
       )

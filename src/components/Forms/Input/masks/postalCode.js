@@ -1,33 +1,12 @@
 import { baseMask } from "./base"
+import { locales } from "../../../../locale"
 
-const locales = {
-  NO: {
-    blocks: [4],
-    maxLength: 4,
-    pattern: /[^0-9]+/gi
-  },
-  DK: {
-    blocks: [4],
-    maxLength: 4,
-    pattern: /[^0-9]+/gi
-  },
-  SE: {
-    blocks: [3, 2],
-    maxLength: 5,
-    pattern: /[^0-9]+/gi
-  },
-  FI: {
-    blocks: [5],
-    maxLength: 5,
-    pattern: /[^0-9]+/gi
-  }
-}
-
-export const postalCodeMask = ({ locale = "NO", ...options }) => {
+export const postalCodeMask = ({ locale = locales.Norway, ...options }) => {
   const config = {
     ...options,
-    ...(locales.hasOwnProperty(locale) ? locales[locale] : {}),
-    ...(locale?.postalCode && { ...locale.postalCode })
+    ...(locale?.postalCode
+      ? { ...locale.postalCode }
+      : { ...locales.Norway.postalCode })
   }
 
   return baseMask({
