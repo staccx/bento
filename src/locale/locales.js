@@ -643,7 +643,10 @@ export const locales = {
     phone: "45",
     continent: "EU",
     capital: "Copenhagen",
-    currency: "DKK",
+    currency: {
+      locale: "no-NB",
+      name: "DKK"
+    },
     languages: ["da"],
     alpha2: "DK",
     key: "dk",
