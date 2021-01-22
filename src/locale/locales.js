@@ -2205,6 +2205,12 @@ export const locales = {
     languages: ["sv"],
     alpha2: "SE",
     key: "SE",
+    account: {
+      type: "BBAN",
+      blocks: [4, 2, 5],
+      maxLength: 13,
+      pattern: /[^0-9]+/gi
+    },
     postalCode: {
       blocks: [3, 2],
       maxLength: 5,
