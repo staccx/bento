@@ -62,22 +62,26 @@ const Input = forwardRef(
     React.useEffect(() => {
       const createMask = resolveMask(mode, logger)
       mask.current = createMask(maskConfig)
+      logger.debug("Mode resolved", mask.current?.name)
     }, [mode, logger, maskConfig])
 
     React.useEffect(() => {
       if (locale && currentLocale.current !== locale) {
         handleChange({ target: { value: internalValue.value } })
         currentLocale.current = locale
+        logger.debug("Locale changed to", locale)
       }
     }, [locale])
 
     React.useEffect(() => {
       if (value !== internalValue.value) {
         if (!mask.current) {
+          logger.debug("Changing value from props on normal input to", value)
           internalValueSet({ value })
           return
         }
         const val = mask.current(value)
+        logger.debug("Changing value from props on masked input to", val)
         internalValueSet({
           ...val
         })
@@ -86,10 +90,12 @@ const Input = forwardRef(
 
     const handleChange = e => {
       if (!mask.current) {
+        logger.debug("Handling change on normal input", e.target.value)
         onChange && onChange(e)
         return
       }
       const val = mask.current(e.target.value)
+      logger.debug("Handling change on masked input", val)
       if (val && onChange) {
         onChange({
           ...e,
