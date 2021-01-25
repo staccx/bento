@@ -19,6 +19,7 @@ import {
 import { resolveMask } from "./masks"
 import themeProps from "./Input.themeProps"
 import { useLocale } from "../../../locale"
+import { useCombinedRefs } from "../../../hooks/useCombinedRefs/useCombinedRefs"
 
 // Which types are allowed to set range
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange
@@ -46,7 +47,8 @@ const Input = forwardRef(
     ref
   ) => {
     const { locale: contextLocale } = useLocale()
-    const inputRef = useRef(ref)
+    const innerRef = useRef(null)
+    const inputRef = useCombinedRefs(ref, innerRef)
     const currentLocale = useRef(locale)
     const logger = useLogging("components.Input", level)
     const [showHelp, showHelpSet] = useState(false)
