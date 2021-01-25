@@ -20,6 +20,10 @@ import { resolveMask } from "./masks"
 import themeProps from "./Input.themeProps"
 import { useLocale } from "../../../locale"
 
+// Which types are allowed to set range
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange
+const allowedSelectionRangeTypes = ["text", "search", "URL", "tel", "password"]
+
 let timeout = null
 const Input = forwardRef(
   (
@@ -36,6 +40,7 @@ const Input = forwardRef(
       value,
       level,
       locale,
+      type,
       ...props
     },
     ref
@@ -48,15 +53,24 @@ const Input = forwardRef(
     const [start, setStart] = useState(0)
     const [end, setEnd] = useState(0)
 
-    const updateCaret = useCallback(val => {
-      if (inputRef && inputRef.current) {
-        const { selectionStart, selectionEnd } = inputRef.current
-        setStart(val || selectionStart)
-        setEnd(val || selectionEnd)
-      }
-    }, [])
+    const updateCaret = useCallback(
+      val => {
+        if (!allowedSelectionRangeTypes.includes(type)) {
+          return
+        }
+        if (inputRef && inputRef.current) {
+          const { selectionStart, selectionEnd } = inputRef.current
+          setStart(val || selectionStart)
+          setEnd(val || selectionEnd)
+        }
+      },
+      [type]
+    )
 
     useEffect(() => {
+      if (!allowedSelectionRangeTypes.includes(type)) {
+        return
+      }
       if (inputRef && inputRef.current) {
         clearTimeout(timeout)
         timeout = setTimeout(() => {
@@ -168,10 +182,11 @@ const Input = forwardRef(
           onChange={handleChange}
           placeholder={placeholder}
           variant={variant}
-          onKeyUp={handleKeyUp}
           ref={inputRef}
           defaultValue={defaultValue}
+          type={type}
           {...props}
+          onKeyUp={handleKeyUp}
           value={internalValue.value}
         />
       </InputWrapper>

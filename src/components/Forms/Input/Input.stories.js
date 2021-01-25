@@ -128,3 +128,9 @@ MaskProperty.args = {
   mode: "custom",
   level: 1
 }
+
+export const File = args => <Input {...args} />
+File.args = {
+  label: "Type file",
+  type: "file"
+}
