@@ -1,4 +1,10 @@
-import React, { forwardRef, useRef, useState } from "react"
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState
+} from "react"
 import PropTypes from "prop-types"
 import { useLogging } from "../../../hooks"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
@@ -34,9 +40,30 @@ const Input = forwardRef(
     ref
   ) => {
     const { locale: contextLocale } = useLocale()
+    const inputRef = useRef(ref)
     const currentLocale = useRef(locale)
     const logger = useLogging("components.Input", level)
     const [showHelp, showHelpSet] = useState(false)
+    const [start, setStart] = useState(0)
+    const [end, setEnd] = useState(0)
+
+    const updateCaret = useCallback(() => {
+      if (inputRef && inputRef.current) {
+        const { selectionStart, selectionEnd } = inputRef.current
+        setStart(selectionStart)
+        setEnd(selectionEnd)
+      }
+    }, [])
+
+    useEffect(() => {
+      // Set the caret position by setting the selection range with the
+      // most current start and end values
+      if (inputRef && inputRef.current) {
+        setTimeout(() => {
+          inputRef.current.setSelectionRange(start, end)
+        }, 1)
+      }
+    }, [start, end])
 
     const maskConfig = React.useMemo(() => {
       return {
@@ -78,17 +105,18 @@ const Input = forwardRef(
         if (!mask.current) {
           logger.debug("Changing value from props on normal input to", value)
           internalValueSet({ value })
-          return
+        } else {
+          const val = mask.current(value)
+          logger.debug("Changing value from props on masked input to", val)
+          internalValueSet({
+            ...val
+          })
         }
-        const val = mask.current(value)
-        logger.debug("Changing value from props on masked input to", val)
-        internalValueSet({
-          ...val
-        })
       }
     }, [value])
 
     const handleChange = e => {
+      updateCaret()
       if (!mask.current) {
         logger.debug("Handling change on normal input", e.target.value)
         onChange && onChange(e)
@@ -127,7 +155,7 @@ const Input = forwardRef(
           onChange={handleChange}
           placeholder={placeholder}
           variant={variant}
-          ref={ref}
+          ref={inputRef}
           defaultValue={defaultValue}
           {...props}
           value={internalValue.value}

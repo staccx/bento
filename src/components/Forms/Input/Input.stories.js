@@ -6,6 +6,22 @@ export default {
   component: Input
 }
 
+export const WithValue = args => {
+  const [value, setValue] = useState("")
+  return (
+    <Input
+      id={"withvalue"}
+      value={value}
+      onChange={e => setValue(e.target.value)}
+      placeholder={"With valuer"}
+    />
+  )
+}
+
+WithValue.args = {
+  label: "With value state"
+}
+
 export const Standard = args => <Input {...args} />
 Standard.args = {
   label: "Input"
