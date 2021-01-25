@@ -14,6 +14,7 @@ describe("Loglevel", () => {
     expect(isValidLoglevel("info")).toBe(true)
     expect(isValidLoglevel("debug")).toBe(true)
     expect(isValidLoglevel("trace")).toBe(true)
+    expect(isValidLoglevel("4")).toBe(true)
 
     expect(isValidLoglevel(undefined)).toBe(false)
     expect(isValidLoglevel(null)).toBe(false)
