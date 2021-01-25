@@ -20,6 +20,7 @@ import { resolveMask } from "./masks"
 import themeProps from "./Input.themeProps"
 import { useLocale } from "../../../locale"
 
+let timeout = null
 const Input = forwardRef(
   (
     {
@@ -47,23 +48,22 @@ const Input = forwardRef(
     const [start, setStart] = useState(0)
     const [end, setEnd] = useState(0)
 
-    const updateCaret = useCallback(() => {
+    const updateCaret = useCallback(val => {
       if (inputRef && inputRef.current) {
         const { selectionStart, selectionEnd } = inputRef.current
-        setStart(selectionStart)
-        setEnd(selectionEnd)
+        setStart(val || selectionStart)
+        setEnd(val || selectionEnd)
       }
     }, [])
 
     useEffect(() => {
-      // Set the caret position by setting the selection range with the
-      // most current start and end values
       if (inputRef && inputRef.current) {
-        setTimeout(() => {
+        clearTimeout(timeout)
+        timeout = setTimeout(() => {
           inputRef.current.setSelectionRange(start, end)
-        }, 1)
+        })
       }
-    }, [start, end])
+    })
 
     const maskConfig = React.useMemo(() => {
       return {
@@ -116,14 +116,16 @@ const Input = forwardRef(
     }, [value])
 
     const handleChange = e => {
-      updateCaret()
       if (!mask.current) {
+        updateCaret()
         logger.debug("Handling change on normal input", e.target.value)
         onChange && onChange(e)
         return
       }
       const val = mask.current(e.target.value)
-      logger.debug("Handling change on masked input", val)
+      logger.debug("Handling change on masked input", val, internalValue)
+      const diff = val.value.length - internalValue.value.length
+      updateCaret(diff > 0 ? start + diff : null)
       if (val && onChange) {
         onChange({
           ...e,
@@ -133,6 +135,17 @@ const Input = forwardRef(
       internalValueSet({
         ...val
       })
+    }
+
+    const handleKeyUp = e => {
+      switch (e.key) {
+        case "ArrowLeft":
+        case "ArrowRight":
+          updateCaret()
+          break
+        default:
+          break
+      }
     }
 
     return (
@@ -155,6 +168,7 @@ const Input = forwardRef(
           onChange={handleChange}
           placeholder={placeholder}
           variant={variant}
+          onKeyUp={handleKeyUp}
           ref={inputRef}
           defaultValue={defaultValue}
           {...props}
