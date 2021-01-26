@@ -73,11 +73,15 @@ const Input = forwardRef(
       if (!allowedSelectionRangeTypes.includes(type)) {
         return
       }
-      if (inputRef && inputRef.current) {
-        clearTimeout(timeout)
-        timeout = setTimeout(() => {
+      clearTimeout(timeout)
+      timeout = setTimeout(() => {
+        if (inputRef && inputRef.current) {
           inputRef.current.setSelectionRange(start, end)
-        })
+        }
+      })
+
+      return () => {
+        clearTimeout(timeout)
       }
     })
 
