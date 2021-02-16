@@ -9,6 +9,7 @@ import { useEffect, useState } from "react"
  * @param children
  * @param i18n
  * @param data
+ * @name Translate
  * @returns {null|*}
  * @constructor
  */

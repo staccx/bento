@@ -5,6 +5,7 @@ import LocaleProvider from "../src/locale/LocaleProvider"
 import WebFonts from "../src/components/Theme/WebFonts"
 import GlobalStyle from "../src/components/Theme/GlobalStyle"
 import { ThemeProvider } from "styled-components"
+
 import locales from "./locales"
 import languages from "./languages"
 
