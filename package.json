@@ -11,7 +11,7 @@
     "storybook:genreq": "node stories/generateRequireStories",
     "start": "start-storybook -p 9009 --no-dll",
     "build-storybook": "build-storybook -c .storybook -o public",
-    "prepare": "yarn build",
+    "prepare": "yarn build:ts",
     "alpha": "npm version prerelease --preid=alpha && npm publish",
     "dirty-deploy-storybook": "yarn build-storybook && cp now.json public/ && cd public && now --prod",
     "chromatic": "CHROMATIC_APP_CODE=e5op6dsgv2n chromatic --exit-zero-on-changes",
