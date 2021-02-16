@@ -266,6 +266,9 @@ export const i18n = {
   Translate,
   TranslateSSR
 }
+
+export { Translate, Transform }
+
 export const locale = { locales, LocaleProvider, useLocale }
 
 export const hooks = {
