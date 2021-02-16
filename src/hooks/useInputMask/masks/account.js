@@ -1,5 +1,5 @@
 import { baseMask } from "./base"
-import { locales } from "../../../../locale"
+import { locales } from "../../../locale"
 
 export const accountMask = ({ locale = locales.Norway, ...options }) => {
   const config = {

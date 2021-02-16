@@ -1,5 +1,5 @@
-import Input from "../Input";
-import React from "react";
+import Input from "../../../components/Forms/Input/Input"
+import React from "react"
 
 export default {
   title: "Components/Input/Masks/Credit Card",

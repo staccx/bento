@@ -103,32 +103,6 @@ Disabled.args = {
   disabled: true
 }
 
-export const Custom = args => (
-  <Input {...args} blocks={[2, 2, 2]} pattern={/[^a-s]+/gi} />
-)
-Custom.args = {
-  label: "This uses a custom locale [a-s]",
-  level: 1,
-  placeholder: "aa aa aa",
-  mode: "custom"
-}
-
-export const Funny = args => <Input {...args} pattern={/[s]+/gi} />
-Funny.args = {
-  label: "Does not allow the use of the letter 's'",
-  level: 1,
-  mode: "custom"
-}
-
-export const MaskProperty = args => (
-  <Input {...args} mask="XX XXXXXX" delimiter="." />
-)
-MaskProperty.args = {
-  label: "Uses the mask property to define its mask custom",
-  mode: "custom",
-  level: 1
-}
-
 export const File = args => <Input {...args} />
 File.args = {
   label: "Type file",

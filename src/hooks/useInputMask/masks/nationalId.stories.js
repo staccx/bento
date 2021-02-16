@@ -1,6 +1,6 @@
 import React from "react"
-import Input from "../Input"
-import { locales } from "../../../../locale"
+import Input from "../../../components/Forms/Input/Input"
+import { locales } from "../../../locale"
 
 export default {
   title: "Components/Input/Masks/National Id",

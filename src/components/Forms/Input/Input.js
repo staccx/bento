@@ -1,12 +1,5 @@
-import React, {
-  forwardRef,
-  useCallback,
-  useEffect,
-  useRef,
-  useState
-} from "react"
+import React, { forwardRef, useRef, useState } from "react"
 import PropTypes from "prop-types"
-import { useLogging } from "../../../hooks"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 import {
   HelpIcon,
@@ -16,16 +9,10 @@ import {
   NoWrapSpan,
   StyledInput
 } from "./Input.styles"
-import { resolveMask } from "./masks"
 import themeProps from "./Input.themeProps"
-import { useLocale } from "../../../locale"
+import { useInputMask } from "../../../hooks/useInputMask/useInputMask"
 import { useCombinedRefs } from "../../../hooks/useCombinedRefs/useCombinedRefs"
 
-// Which types are allowed to set range
-// https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange
-const allowedSelectionRangeTypes = ["text", "search", "URL", "tel", "password"]
-
-let timeout = null
 const Input = forwardRef(
   (
     {
@@ -46,127 +33,21 @@ const Input = forwardRef(
     },
     ref
   ) => {
-    const { locale: contextLocale } = useLocale()
+    const [showHelp, showHelpSet] = useState(false)
+
     const innerRef = useRef(null)
     const inputRef = useCombinedRefs(ref, innerRef)
-    const currentLocale = useRef(locale)
-    const logger = useLogging("components.Input", level)
-    const [showHelp, showHelpSet] = useState(false)
-    const [start, setStart] = useState(0)
-    const [end, setEnd] = useState(0)
 
-    const updateCaret = useCallback(
-      val => {
-        if (!allowedSelectionRangeTypes.includes(type)) {
-          return
-        }
-        if (inputRef && inputRef.current) {
-          const { selectionStart, selectionEnd } = inputRef.current
-          setStart(val || selectionStart)
-          setEnd(val || selectionEnd)
-        }
-      },
-      [type]
-    )
-
-    useEffect(() => {
-      if (!allowedSelectionRangeTypes.includes(type)) {
-        return
-      }
-      clearTimeout(timeout)
-      timeout = setTimeout(() => {
-        if (inputRef && inputRef.current) {
-          inputRef.current.setSelectionRange(start, end)
-        }
-      })
-
-      return () => {
-        clearTimeout(timeout)
-      }
+    const inputProps = useInputMask({
+      ref: inputRef,
+      locale,
+      type,
+      mode,
+      defaultValue,
+      controlledValue: value,
+      onChange,
+      ...props
     })
-
-    const maskConfig = React.useMemo(() => {
-      return {
-        ...props,
-        ...(contextLocale && { locale: contextLocale }),
-        ...(locale && { locale })
-      }
-    }, [locale, contextLocale])
-
-    const mask = React.useRef(() => {
-      const createMask = resolveMask(mode, logger)
-      return createMask(maskConfig)
-    })
-
-    const [internalValue, internalValueSet] = React.useState(() => {
-      const initialValue = mask.current(props)
-      return {
-        ...(initialValue && { ...initialValue(value) }),
-        ...(!initialValue && { value })
-      }
-    })
-
-    React.useEffect(() => {
-      const createMask = resolveMask(mode, logger)
-      mask.current = createMask(maskConfig)
-      logger.debug("Mode resolved", mask.current?.name)
-    }, [mode, logger, maskConfig])
-
-    React.useEffect(() => {
-      if (locale && currentLocale.current !== locale) {
-        handleChange({ target: { value: internalValue.value } })
-        currentLocale.current = locale
-        logger.debug("Locale changed to", locale)
-      }
-    }, [locale])
-
-    React.useEffect(() => {
-      if (value !== internalValue.value) {
-        if (!mask.current) {
-          logger.debug("Changing value from props on normal input to", value)
-          internalValueSet({ value })
-        } else {
-          const val = mask.current(value)
-          logger.debug("Changing value from props on masked input to", val)
-          internalValueSet({
-            ...val
-          })
-        }
-      }
-    }, [value])
-
-    const handleChange = e => {
-      if (!mask.current) {
-        updateCaret()
-        logger.debug("Handling change on normal input", e.target.value)
-        onChange && onChange(e)
-        return
-      }
-      const val = mask.current(e.target.value)
-      logger.debug("Handling change on masked input", val, internalValue)
-      const diff = val.value.length - internalValue.value.length
-      updateCaret(diff > 0 ? start + diff : null)
-      if (val && onChange) {
-        onChange({
-          ...e,
-          ...val
-        })
-      }
-      internalValueSet({
-        ...val
-      })
-    }
-
-    const handleKeyUp = e => {
-      switch (e.key) {
-        case "ArrowLeft":
-        case "ArrowRight":
-          updateCaret()
-          break
-        default:
-          break
-      }
-    }
 
     return (
       <InputWrapper className={className} variant={variant}>
@@ -185,15 +66,13 @@ const Input = forwardRef(
 
         <StyledInput
           id={id}
-          onChange={handleChange}
+          onChange={onChange}
           placeholder={placeholder}
           variant={variant}
           ref={inputRef}
           defaultValue={defaultValue}
           type={type}
-          {...props}
-          onKeyUp={handleKeyUp}
-          value={internalValue.value}
+          {...inputProps}
         />
       </InputWrapper>
     )
