@@ -72,13 +72,13 @@ export const useInputMask = ({
   }, [])
 
   useEffect(() => {
-    if (controlledValue && controlledValue !== value?.value) {
+    if (controlledValue && controlledValue !== value?.rawValue) {
       handleChange({ target: { value: controlledValue } })
     }
   }, [controlledValue])
 
   useEffect(() => {
-    if (defaultValue && defaultValue !== value?.value) {
+    if (defaultValue && defaultValue !== value?.rawValue) {
       handleChange({ target: { value: defaultValue } })
     }
   }, [defaultValue])
