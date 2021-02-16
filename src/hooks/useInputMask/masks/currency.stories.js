@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Input from "../../../components/Forms/Input/Input"
+import { useDelayedValue } from "./_shared.utils"
 
 export default {
   title: "Components/Input/Masks/Currency",
@@ -40,3 +41,11 @@ const Test = ({ args }) => {
 
 export const InForm = args => <Test args={args} />
 InForm.args = {}
+
+export const DelayedControlled = args => {
+  const value = useDelayedValue("135792468")
+
+  return <Input id={"delayed_credit"} mode="currency" {...args} value={value} />
+}
+
+DelayedControlled.args = {}

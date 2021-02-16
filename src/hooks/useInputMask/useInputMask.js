@@ -10,12 +10,13 @@ export const useInputMask = ({
   locale,
   type,
   mode,
+  debugLevel = 0,
   onChange,
   controlledValue,
   defaultValue,
   ...otherProps
 }) => {
-  const logger = useLogging("useInputMask", 5)
+  const logger = useLogging("useInputMask", debugLevel)
   const caretPosition = useRef(0)
   const timeout = useRef(null)
   const [value, valueSet] = React.useState({
@@ -142,6 +143,7 @@ export const useInputMask = ({
 
   return {
     type,
+    ...(controlledValue && { value: controlledValue }),
     ...(mode && {
       onKeyUp: handleKeyUp,
       onChange: handleChange,

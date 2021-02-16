@@ -10,7 +10,7 @@ import {
   StyledInput
 } from "./Input.styles"
 import themeProps from "./Input.themeProps"
-import { useInputMask } from "../../../hooks/useInputMask/useInputMask"
+import { useInputMask } from "../../../hooks"
 import { useCombinedRefs } from "../../../hooks/useCombinedRefs/useCombinedRefs"
 
 const Input = forwardRef(
@@ -43,6 +43,7 @@ const Input = forwardRef(
       locale,
       type,
       mode,
+      debugLevel: level,
       defaultValue,
       controlledValue: value,
       onChange,
@@ -96,7 +97,7 @@ Input.propTypes = {
   helpText: PropTypes.string,
   type: PropTypes.string,
   placeholder: PropTypes.string,
-  defaultValue: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
    * Callback when content changes. Contains {value, rawValue} and other meta from masks
    */
