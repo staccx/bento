@@ -23,7 +23,7 @@ export const useInputMask = ({
   })
 
   const updateCaret = useCallback(
-    (val: number | null) => {
+    val => {
       if (!allowedSelectionRangeTypes.includes(type)) {
         return
       }
