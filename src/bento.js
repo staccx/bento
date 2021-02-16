@@ -6,7 +6,7 @@ import "regenerator-runtime/runtime.js"
 /**
  * Animations
  */
-export {
+import {
   AppearIn,
   BounceIn,
   BounceOut,
@@ -20,11 +20,10 @@ export {
   SlideInFromRight,
   SlideInFromTop
 } from "./animations"
-
 /**
  * Formatting
  */
-export {
+import {
   abbreviateCurrency,
   CURRENCY_DISPLAY,
   dashIt,
@@ -41,11 +40,10 @@ export {
   UNIT_DISPLAY,
   UNITS
 } from "./formatting"
-
 /**
  * Math functions
  */
-export {
+import {
   almostEquals,
   clamp,
   cosineInterpolate,
@@ -54,11 +52,148 @@ export {
   lerp,
   multiplyPixelValue
 } from "./math"
-
 /**
  * Open-Id
  */
-export {
+import {
+  CallbackLogin,
+  CallbackLoginSilent,
+  CallbackLogout,
+  Logout,
+  OpenId,
+  OpenIdContext,
+  useCallbackLogin,
+  useCallbackLoginSilent,
+  useCallbackLogout,
+  useLogout,
+  useOpenId,
+  useOpenIdUser,
+  useOtpLogin,
+  useUrlLogin
+} from "./open-id"
+/**
+ * Sanity specific
+ */
+import {
+  BlockContent,
+  Document,
+  Image as SanityImage,
+  List as SanityList,
+  Provider as SanityProvider,
+  Query,
+  useSanity,
+  useSanityQuery
+} from "./sanity"
+import {
+  applyVariants,
+  borderRadius,
+  color,
+  commonPropTypes,
+  createGlobal,
+  createVariants,
+  cssResets,
+  flattenGlobals,
+  font,
+  fontFamily,
+  fontSmoothing,
+  fontWeight,
+  getProp,
+  gradient,
+  grid,
+  hideVisually,
+  logger,
+  mapProp,
+  spacing,
+  targetSize,
+  Theme,
+  theme,
+  themePropTypes,
+  themes,
+  VARIANT_DEFAULT,
+  wrapper
+} from "./theming"
+/**
+ * Utils
+ */
+import { distinct, flatten, partition, stringIncludes } from "./utils"
+/**
+ * i18n
+ */
+import {
+  languages,
+  Provider,
+  resourceReducer,
+  RESTBackend,
+  SanityBackend,
+  Transform,
+  Translate,
+  TranslateSSR,
+  useI18n
+} from "./i18n"
+/**
+ * Locale
+ */
+import { LocaleProvider, locales, useLocale } from "./locale"
+/**
+ * Hooks
+ */
+import {
+  useApiRequest,
+  useBrRegSearch,
+  useCopyToClipboard,
+  useDebounce,
+  useExchangeRates,
+  useInterval,
+  useLogging,
+  usePostalCode,
+  useSearch,
+  useTimer
+} from "./hooks"
+
+export const animations = {
+  AppearIn,
+  BounceIn,
+  BounceOut,
+  Draw,
+  FadeIn,
+  FadeInFromTop,
+  ScaleIn,
+  ScaleInX,
+  ScaleInY,
+  SlideInFromLeft,
+  SlideInFromRight,
+  SlideInFromTop
+}
+
+export const formatting = {
+  abbreviateCurrency,
+  CURRENCY_DISPLAY,
+  dashIt,
+  formatDate,
+  formatDateDistance,
+  formatDateRelative,
+  formatMoney,
+  formatName,
+  formatNumber,
+  maskFormat,
+  removeWhitespace,
+  STYLE,
+  truncate,
+  UNIT_DISPLAY,
+  UNITS
+}
+
+export const math = {
+  almostEquals,
+  clamp,
+  cosineInterpolate,
+  inverseLerp,
+  isNumber,
+  lerp,
+  multiplyPixelValue
+}
+
+export const openId = {
   useLogout,
   CallbackLogin,
   CallbackLoginSilent,
@@ -73,27 +208,24 @@ export {
   useOpenIdUser,
   useOtpLogin,
   useUrlLogin
-} from "./open-id"
+}
 
-/**
- * Sanity specific
- */
-export {
+export const sanity = {
   BlockContent,
   Document,
-  Image as SanityImage,
-  List as SanityList,
-  Provider as SanityProvider,
+  SanityImage,
+  SanityList,
+  SanityProvider,
   Query,
   useSanity,
   useSanityQuery
-} from "./sanity"
+}
 
 /**
  * Theming
  */
 
-export {
+export const theming = {
   VARIANT_DEFAULT,
   fontWeight,
   fontFamily,
@@ -120,16 +252,10 @@ export {
   themePropTypes,
   themes,
   wrapper
-} from "./theming"
-/**
- * Utils
- */
-export { distinct, flatten, partition, stringIncludes } from "./utils"
+}
+export const utils = { distinct, flatten, partition, stringIncludes }
 
-/**
- * i18n
- */
-export {
+export const i18n = {
   useI18n,
   languages,
   Provider,
@@ -139,17 +265,10 @@ export {
   Transform,
   Translate,
   TranslateSSR
-} from "./i18n"
+}
+export const locale = { locales, LocaleProvider, useLocale }
 
-/**
- * Locale
- */
-export { locales, LocaleProvider, useLocale } from "./locale"
-
-/**
- * Hooks
- */
-export {
+export const hooks = {
   useApiRequest,
   useBrRegSearch,
   useCopyToClipboard,
@@ -160,7 +279,7 @@ export {
   usePostalCode,
   useSearch,
   useTimer
-} from "./hooks"
+}
 
 /**
  * Components
