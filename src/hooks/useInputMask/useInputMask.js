@@ -47,7 +47,7 @@ export const useInputMask = ({
     }
     clearTimeout(timeout.current)
     timeout.current = setTimeout(() => {
-      if (ref && ref.current) {
+      if (document && document.activeElement === ref.current && ref.current) {
         const { selectionStart } = ref.current
 
         if (selectionStart !== caretPosition.current) {
