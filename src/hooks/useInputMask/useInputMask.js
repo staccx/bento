@@ -72,10 +72,16 @@ export const useInputMask = ({
   }, [])
 
   useEffect(() => {
-    if (controlledValue !== value?.value) {
+    if (controlledValue && controlledValue !== value?.value) {
       handleChange({ target: { value: controlledValue } })
     }
   }, [controlledValue])
+
+  useEffect(() => {
+    if (defaultValue && defaultValue !== value?.value) {
+      handleChange({ target: { value: defaultValue } })
+    }
+  }, [defaultValue])
 
   const mask = React.useRef(value => {
     const createMask = resolveMask(mode, logger)

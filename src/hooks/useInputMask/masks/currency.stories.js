@@ -43,9 +43,33 @@ export const InForm = args => <Test args={args} />
 InForm.args = {}
 
 export const DelayedControlled = args => {
+  const [val, valSet] = useState("135792468")
+  const value = useDelayedValue(val)
+
+  return (
+    <Input
+      id={"delayed_credit"}
+      mode="currency"
+      {...args}
+      value={value}
+      onChange={e => valSet(e.rawValue)}
+    />
+  )
+}
+
+DelayedControlled.args = {}
+
+export const DelayedDefaultValue = args => {
   const value = useDelayedValue("135792468")
 
-  return <Input id={"delayed_credit"} mode="currency" {...args} value={value} />
+  return (
+    <Input
+      id={"delayed_credit"}
+      mode="currency"
+      {...args}
+      defaultValue={value}
+    />
+  )
 }
 
 DelayedControlled.args = {}
