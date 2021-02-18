@@ -3,7 +3,7 @@ import i18next from "i18next"
 import { i18nLogger, useI18n } from "../I18n"
 import { getComponent, handleArray } from "../utils"
 import React, { useEffect, useState } from "react"
-import TranslateDebug from "./Translate.Debug"
+import TranslateDebug from "./TranslateDebug"
 
 /**
  * Jsx Component for translating

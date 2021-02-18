@@ -187,7 +187,7 @@ const Provider = ({
         changeLanguage,
         translate,
         transform,
-        debug: debug
+        debug
       }}
     >
       {children}

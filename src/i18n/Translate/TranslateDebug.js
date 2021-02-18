@@ -1,8 +1,5 @@
 import PropTypes from "prop-types"
 import styled from "styled-components"
-// import i18next from "i18next"
-// import { i18nLogger, useI18n } from "../I18n"
-// import { getComponent, handleArray } from "../utils"
 import React, { useState } from "react"
 
 /**
@@ -21,27 +18,8 @@ const getValue = (i18n, list) => {
   }
 }
 
-const Translate = ({ children, value, i18n, allLangs }) => {
+const TranslateDebug = ({ children, value, i18n, allLangs }) => {
   const [isOpen, setIsOpen] = useState(false)
-  // const [value, valueSet] = useState(children ?? null)
-
-  // useEffect(() => {
-  //   if (!i18next.isInitialized) return
-
-  //   let result = null
-  //   if (Array.isArray(i18n)) {
-  //     i18nLogger.debug("Handling i18n key is array")
-  //     result = handleArray(i18n, data, children, translate)
-  //   } else {
-  //     result = translate(i18n, children, data)
-  //   }
-  //   valueSet(result)
-  // }, [i18next, i18n, translate, language])
-
-  // if (Array.isArray(value)) {
-  //   i18nLogger.debug("Handling value is array")
-  //   return value.map(getComponent)
-  // }
 
   let list = []
 
@@ -86,7 +64,7 @@ const Translate = ({ children, value, i18n, allLangs }) => {
   )
 }
 
-Translate.propTypes = {
+TranslateDebug.propTypes = {
   /**
    * Children will in this case work as a fallback
    */
@@ -108,9 +86,9 @@ Translate.propTypes = {
   data: PropTypes.object
 }
 
-Translate.defaultProps = {}
+TranslateDebug.defaultProps = {}
 
-export default Translate
+export default TranslateDebug
 
 const DebugOuter = styled.span`
   position: relative;
