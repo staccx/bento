@@ -48,7 +48,12 @@ Interpolation.args = {
   }
 }
 
-export const Context = args => <Translate i18n="account" {...args} />
+export const Context = args => (
+  <Translate i18n="account" {...args}>
+    {" "}
+    savings account{" "}
+  </Translate>
+)
 Context.args = {
   data: {
     context: "savings"
@@ -61,6 +66,12 @@ StructuredContent.args = {
     balance: 100000
   }
 }
+
+export const WithDebug = args => (
+  <Translate i18n="this_is_key" {...args}>
+    Dette er fallback
+  </Translate>
+)
 
 export const ButtonWithTranslate = args => (
   <Button>

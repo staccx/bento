@@ -186,7 +186,8 @@ const Provider = ({
         languages: i18next.languages,
         changeLanguage,
         translate,
-        transform
+        transform,
+        debug
       }}
     >
       {children}

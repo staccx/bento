@@ -2,7 +2,8 @@ import PropTypes from "prop-types"
 import i18next from "i18next"
 import { i18nLogger, useI18n } from "../I18n"
 import { getComponent, handleArray } from "../utils"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
+import TranslateDebug from "./TranslateDebug"
 
 /**
  * Jsx Component for translating
@@ -13,9 +14,11 @@ import { useEffect, useState } from "react"
  * @returns {null|*}
  * @constructor
  */
+
 const Translate = ({ children, i18n, data }) => {
-  const { translate, language } = useI18n()
+  const { translate, language, debug, i18n: allI18n } = useI18n()
   const [value, valueSet] = useState(children ?? null)
+
   useEffect(() => {
     if (!i18next.isInitialized) return
 
@@ -33,6 +36,19 @@ const Translate = ({ children, i18n, data }) => {
     i18nLogger.debug("Handling value is array")
     return value.map(getComponent)
   }
+
+  if (debug === true) {
+    return (
+      <TranslateDebug
+        allLangs={allI18n.options.resources}
+        value={value}
+        i18n={i18n}
+      >
+        {children}
+      </TranslateDebug>
+    )
+  }
+
   i18nLogger.debug("Key:", i18n, "resolved to:", value)
   return value
 }
