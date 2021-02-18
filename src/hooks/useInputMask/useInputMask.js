@@ -83,12 +83,12 @@ export const useInputMask = ({
     }
   }, [defaultValue])
 
-  const mask = React.useRef(value => {
-    const createMask = resolveMask(mode, logger)
-    return createMask({
+  const createMask = resolveMask(mode, logger)
+  const mask = React.useRef(
+    createMask({
       locale
     })
-  })
+  )
 
   React.useEffect(() => {
     if (!mode) {

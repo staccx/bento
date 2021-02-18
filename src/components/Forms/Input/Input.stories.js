@@ -13,13 +13,14 @@ export const WithValue = args => {
       id={"withvalue"}
       value={value}
       onChange={e => setValue(e.target.value)}
-      placeholder={"With valuer"}
+      placeholder={"With value"}
+      {...args}
     />
   )
 }
 
 WithValue.args = {
-  label: "With value state"
+  label: "With value set by external state[Controlled]"
 }
 
 export const Standard = args => <Input {...args} />
@@ -81,7 +82,7 @@ export const ControlledWithMode = args => {
 }
 ControlledWithMode.args = {
   label: "Input (changes value every second",
-  value: 100000,
+  value: "100000",
   mode: "currency"
 }
 
