@@ -12,7 +12,6 @@ exports[`Alert Snapshots Disabled 1`] = `
   <input
     className="sc-iBPRYJ kBha-dQ"
     disabled={true}
-    onChange={[Function]}
     type="text"
   />
 </div>
@@ -61,7 +60,6 @@ exports[`Alert Snapshots HelpText 1`] = `
   </div>
   <input
     className="sc-iBPRYJ kBha-dQ"
-    onChange={[Function]}
     type="text"
   />
 </div>
@@ -73,7 +71,6 @@ exports[`Alert Snapshots No props 1`] = `
 >
   <input
     className="sc-iBPRYJ kBha-dQ"
-    onChange={[Function]}
     type="text"
   />
 </div>
@@ -90,7 +87,6 @@ exports[`Alert Snapshots PlaceHolder 1`] = `
   </label>
   <input
     className="sc-iBPRYJ kBha-dQ"
-    onChange={[Function]}
     placeholder="Your favourite animal"
     type="text"
   />
@@ -108,7 +104,6 @@ exports[`Alert Snapshots label 1`] = `
   </label>
   <input
     className="sc-iBPRYJ kBha-dQ"
-    onChange={[Function]}
     type="text"
   />
 </div>

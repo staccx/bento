@@ -3,15 +3,10 @@ import { render, fireEvent } from "@testing-library/react"
 import Input from "./Input"
 import { LocaleProvider, locales } from "../../../locale"
 
-const InputFieldComp = () => {
-  return <Input id="creditCard" mode="account" label="accountInput" />
-}
 
 const setup = locale => {
   const utils = render(
-    <LocaleProvider locale={locale}>
-      <InputFieldComp />
-    </LocaleProvider>
+    <Input id="creditCard" mode="account" label="accountInput" locale={locale}/>
   )
   const input = utils.getByLabelText("accountInput")
   return {
@@ -33,8 +28,8 @@ describe("Inputs with account mask", () => {
   })
   test("Danish account mask", () => {
     const { input } = setup(locales.Denmark)
-    fireEvent.change(input, { target: { value: "1212121212100" } })
-    expect(input.value).toBe("1212 121212100")
+    fireEvent.change(input, { target: { value: "11111111111111" } })
+    expect(input.value).toBe("1111 111111111")
   })
   test("Swedish account mask", () => {
     const { input } = setup(locales.Sweden)

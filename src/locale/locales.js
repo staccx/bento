@@ -638,6 +638,12 @@ export const locales = {
     key: "DJ"
   },
   Denmark: {
+    account: {
+      type: "BBAN",
+      blocks: [4, 9],
+      maxLength: 13,
+      pattern: /[^0-9]+/gi
+    },
     name: "Denmark",
     native: "Danmark",
     phone: "45",
@@ -650,12 +656,6 @@ export const locales = {
     languages: ["da"],
     alpha2: "DK",
     key: "dk",
-    account: {
-      type: "BBAN",
-      blocks: [4, 9],
-      maxLength: 13,
-      pattern: /[^0-9]+/gi
-    },
     postalCode: {
       blocks: [4],
       maxLength: 4,
