@@ -10,6 +10,7 @@ import TranslateDebug from "./Translate.Debug"
  * @param children
  * @param i18n
  * @param data
+ * @name Translate
  * @returns {null|*}
  * @constructor
  */

@@ -638,19 +638,27 @@ export const locales = {
     key: "DJ"
   },
   Denmark: {
+    account: {
+      type: "BBAN",
+      blocks: [4, 9],
+      maxLength: 13,
+      pattern: /[^0-9]+/gi
+    },
     name: "Denmark",
     native: "Danmark",
     phone: "45",
     continent: "EU",
     capital: "Copenhagen",
-    currency: "DKK",
+    currency: {
+      locale: "no-NB",
+      name: "DKK"
+    },
     languages: ["da"],
     alpha2: "DK",
     key: "dk",
-    account: {
-      type: "BBAN",
-      blocks: [4, 9],
-      maxLength: 13,
+    postalCode: {
+      blocks: [4],
+      maxLength: 4,
       pattern: /[^0-9]+/gi
     }
   },
@@ -776,6 +784,11 @@ export const locales = {
     key: "FI",
     nationalId: {
       blocks: [6, 1, 5]
+    },
+    postalCode: {
+      blocks: [5],
+      maxLength: 5,
+      pattern: /[^0-9]+/gi
     }
   },
   Fiji: {
@@ -2194,7 +2207,18 @@ export const locales = {
     currency: "SEK",
     languages: ["sv"],
     alpha2: "SE",
-    key: "SE"
+    key: "SE",
+    account: {
+      type: "BBAN",
+      blocks: [4, 2, 5],
+      maxLength: 13,
+      pattern: /[^0-9]+/gi
+    },
+    postalCode: {
+      blocks: [3, 2],
+      maxLength: 5,
+      pattern: /[^0-9]+/gi
+    }
   },
   Singapore: {
     name: "Singapore",

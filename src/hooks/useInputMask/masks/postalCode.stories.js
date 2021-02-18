@@ -1,5 +1,5 @@
 import React from "react"
-import Input from "../Input"
+import Input from "../../../components/Forms/Input/Input"
 
 export default {
   title: "Components/Input/Masks/Postal Code",

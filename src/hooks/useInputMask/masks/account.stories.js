@@ -1,6 +1,7 @@
 import React from "react"
-import Input from "../Input"
-import { locales, LocaleProvider } from "../../../../locale"
+import Input from "../../../components/Forms/Input/Input"
+import { locales, LocaleProvider } from "../../../locale"
+import { useDelayedValue } from "./_shared.utils"
 
 export default {
   title: "Components/Input/Masks/Account",
@@ -17,3 +18,11 @@ Locale.args = {
   label: "Locale set explistely (Danish)",
   locale: locales.Denmark
 }
+
+export const DelayedController = args => {
+  const value = useDelayedValue("34951515827")
+
+  return <Input id={"delayed_account"} mode="account" {...args} value={value} />
+}
+
+DelayedController.args = {}

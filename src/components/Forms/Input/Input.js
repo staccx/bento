@@ -1,6 +1,5 @@
 import React, { forwardRef, useRef, useState } from "react"
 import PropTypes from "prop-types"
-import { useLogging } from "../../../hooks"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 import {
   HelpIcon,
@@ -10,9 +9,9 @@ import {
   NoWrapSpan,
   StyledInput
 } from "./Input.styles"
-import { resolveMask } from "./masks"
 import themeProps from "./Input.themeProps"
-import { useLocale } from "../../../locale"
+import { useInputMask } from "../../../hooks"
+import { useCombinedRefs } from "../../../hooks/useCombinedRefs/useCombinedRefs"
 
 const Input = forwardRef(
   (
@@ -29,77 +28,27 @@ const Input = forwardRef(
       value,
       level,
       locale,
+      type,
       ...props
     },
     ref
   ) => {
-    const { locale: contextLocale } = useLocale()
-    const currentLocale = useRef(locale)
-    const logger = useLogging("components.Input", level)
     const [showHelp, showHelpSet] = useState(false)
 
-    const maskConfig = React.useMemo(() => {
-      return {
-        ...props,
-        ...(contextLocale && { locale: contextLocale }),
-        ...(locale && { locale })
-      }
-    }, [locale, contextLocale])
+    const innerRef = useRef(null)
+    const inputRef = useCombinedRefs(ref, innerRef)
 
-    const mask = React.useRef(() => {
-      const createMask = resolveMask(mode, logger)
-      return createMask(maskConfig)
+    const inputProps = useInputMask({
+      ref: inputRef,
+      locale,
+      type,
+      mode,
+      debugLevel: level,
+      defaultValue,
+      controlledValue: value,
+      onChange,
+      ...props
     })
-
-    const [internalValue, internalValueSet] = React.useState(() => {
-      const initialValue = mask.current(props)
-      return {
-        ...(initialValue && { ...initialValue(value) }),
-        ...(!initialValue && { value })
-      }
-    })
-
-    React.useEffect(() => {
-      const createMask = resolveMask(mode, logger)
-      mask.current = createMask(maskConfig)
-    }, [mode, logger, maskConfig])
-
-    React.useEffect(() => {
-      if (locale && currentLocale.current !== locale) {
-        handleChange({ target: { value: internalValue.value } })
-        currentLocale.locale = locale
-      }
-    }, [locale])
-
-    React.useEffect(() => {
-      if (value !== internalValue.value) {
-        if (!mask.current) {
-          internalValueSet({ value })
-          return
-        }
-        const val = mask.current(value)
-        internalValueSet({
-          ...val
-        })
-      }
-    }, [value])
-
-    const handleChange = e => {
-      if (!mask.current) {
-        onChange && onChange(e)
-        return
-      }
-      const val = mask.current(e.target.value)
-      if (val && onChange) {
-        onChange({
-          ...e,
-          ...val
-        })
-      }
-      internalValueSet({
-        ...val
-      })
-    }
 
     return (
       <InputWrapper className={className} variant={variant}>
@@ -118,13 +67,13 @@ const Input = forwardRef(
 
         <StyledInput
           id={id}
-          onChange={handleChange}
+          onChange={onChange}
           placeholder={placeholder}
           variant={variant}
-          ref={ref}
+          ref={inputRef}
           defaultValue={defaultValue}
-          {...props}
-          value={internalValue.value}
+          type={type}
+          {...inputProps}
         />
       </InputWrapper>
     )
@@ -148,7 +97,7 @@ Input.propTypes = {
   helpText: PropTypes.string,
   type: PropTypes.string,
   placeholder: PropTypes.string,
-  defaultValue: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
    * Callback when content changes. Contains {value, rawValue} and other meta from masks
    */

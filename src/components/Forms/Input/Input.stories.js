@@ -6,6 +6,23 @@ export default {
   component: Input
 }
 
+export const WithValue = args => {
+  const [value, setValue] = useState("")
+  return (
+    <Input
+      id={"withvalue"}
+      value={value}
+      onChange={e => setValue(e.target.value)}
+      placeholder={"With value"}
+      {...args}
+    />
+  )
+}
+
+WithValue.args = {
+  label: "With value set by external state[Controlled]"
+}
+
 export const Standard = args => <Input {...args} />
 Standard.args = {
   label: "Input"
@@ -65,7 +82,7 @@ export const ControlledWithMode = args => {
 }
 ControlledWithMode.args = {
   label: "Input (changes value every second",
-  value: 100000,
+  value: "100000",
   mode: "currency"
 }
 
@@ -87,28 +104,33 @@ Disabled.args = {
   disabled: true
 }
 
-export const Custom = args => (
-  <Input {...args} blocks={[2, 2, 2]} pattern={/[^a-s]+/gi} />
-)
-Custom.args = {
-  label: "This uses a custom locale [a-s]",
-  level: 1,
-  placeholder: "aa aa aa",
-  mode: "custom"
+export const File = args => <Input {...args} />
+File.args = {
+  label: "Type file",
+  type: "file"
 }
 
-export const Funny = args => <Input {...args} pattern={/[s]+/gi} />
-Funny.args = {
-  label: "Does not allow the use of the letter 's'",
-  level: 1,
-  mode: "custom"
+const AsyncValueTest = ({ args }) => {
+  const [value, valueSet] = useState(args?.value)
+  useEffect(() => {
+    let timeout = setTimeout(() => {
+      console.log("Value is set now")
+      valueSet("Value is now set")
+    }, 2000)
+
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [])
+
+  return (
+    <Input
+      id={"delayed"}
+      value={value}
+      label={"This input's value will be populated after to sec"}
+    />
+  )
 }
 
-export const MaskProperty = args => (
-  <Input {...args} mask="XX XXXXXX" delimiter="." />
-)
-MaskProperty.args = {
-  label: "Uses the mask property to define its mask custom",
-  mode: "custom",
-  level: 1
-}
+export const Delayed = args => <AsyncValueTest args={args} />
+Delayed.args = {}

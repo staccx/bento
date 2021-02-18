@@ -61,6 +61,6 @@ describe("Rendering", () => {
     await act(async () => {
       await userEvent.type(input, "50w00t")
     })
-    expect(input.value).toBe("50w0")
+    expect(input.value).toBe("500")
   })
 })

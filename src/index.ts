@@ -6,7 +6,7 @@ import "regenerator-runtime/runtime.js"
 /**
  * Animations
  */
-import {
+export {
   AppearIn,
   BounceIn,
   BounceOut,
@@ -20,10 +20,11 @@ import {
   SlideInFromRight,
   SlideInFromTop
 } from "./animations"
+
 /**
  * Formatting
  */
-import {
+export {
   abbreviateCurrency,
   CURRENCY_DISPLAY,
   dashIt,
@@ -40,10 +41,11 @@ import {
   UNIT_DISPLAY,
   UNITS
 } from "./formatting"
+
 /**
  * Math functions
  */
-import {
+export {
   almostEquals,
   clamp,
   cosineInterpolate,
@@ -52,10 +54,12 @@ import {
   lerp,
   multiplyPixelValue
 } from "./math"
+
 /**
  * Open-Id
  */
-import {
+export {
+  useLogout,
   CallbackLogin,
   CallbackLoginSilent,
   CallbackLogout,
@@ -65,16 +69,16 @@ import {
   useCallbackLogin,
   useCallbackLoginSilent,
   useCallbackLogout,
-  useLogout,
   useOpenId,
   useOpenIdUser,
   useOtpLogin,
   useUrlLogin
 } from "./open-id"
+
 /**
  * Sanity specific
  */
-import {
+export {
   BlockContent,
   Document,
   Image as SanityImage,
@@ -84,7 +88,16 @@ import {
   useSanity,
   useSanityQuery
 } from "./sanity"
-import {
+
+/**
+ * Theming
+ */
+
+export {
+  VARIANT_DEFAULT,
+  fontWeight,
+  fontFamily,
+  font,
   applyVariants,
   borderRadius,
   color,
@@ -93,10 +106,7 @@ import {
   createVariants,
   cssResets,
   flattenGlobals,
-  font,
-  fontFamily,
   fontSmoothing,
-  fontWeight,
   getProp,
   gradient,
   grid,
@@ -109,17 +119,18 @@ import {
   theme,
   themePropTypes,
   themes,
-  VARIANT_DEFAULT,
   wrapper
 } from "./theming"
 /**
  * Utils
  */
-import { distinct, flatten, partition, stringIncludes } from "./utils"
+export { distinct, flatten, partition, stringIncludes } from "./utils"
+
 /**
  * i18n
  */
-import {
+export {
+  useI18n,
   languages,
   Provider,
   resourceReducer,
@@ -127,17 +138,18 @@ import {
   SanityBackend,
   Transform,
   Translate,
-  TranslateSSR,
-  useI18n
+  TranslateSSR
 } from "./i18n"
+
 /**
  * Locale
  */
-import { LocaleProvider, locales, useLocale } from "./locale"
+export { locales, LocaleProvider, useLocale } from "./locale"
+
 /**
  * Hooks
  */
-import {
+export {
   useApiRequest,
   useBrRegSearch,
   useCopyToClipboard,
@@ -149,140 +161,6 @@ import {
   useSearch,
   useTimer
 } from "./hooks"
-
-export const animations = {
-  AppearIn,
-  BounceIn,
-  BounceOut,
-  Draw,
-  FadeIn,
-  FadeInFromTop,
-  ScaleIn,
-  ScaleInX,
-  ScaleInY,
-  SlideInFromLeft,
-  SlideInFromRight,
-  SlideInFromTop
-}
-
-export const formatting = {
-  abbreviateCurrency,
-  CURRENCY_DISPLAY,
-  dashIt,
-  formatDate,
-  formatDateDistance,
-  formatDateRelative,
-  formatMoney,
-  formatName,
-  formatNumber,
-  maskFormat,
-  removeWhitespace,
-  STYLE,
-  truncate,
-  UNIT_DISPLAY,
-  UNITS
-}
-
-export const math = {
-  almostEquals,
-  clamp,
-  cosineInterpolate,
-  inverseLerp,
-  isNumber,
-  lerp,
-  multiplyPixelValue
-}
-
-export const openId = {
-  useLogout,
-  CallbackLogin,
-  CallbackLoginSilent,
-  CallbackLogout,
-  Logout,
-  OpenId,
-  OpenIdContext,
-  useCallbackLogin,
-  useCallbackLoginSilent,
-  useCallbackLogout,
-  useOpenId,
-  useOpenIdUser,
-  useOtpLogin,
-  useUrlLogin
-}
-
-export const sanity = {
-  BlockContent,
-  Document,
-  SanityImage,
-  SanityList,
-  SanityProvider,
-  Query,
-  useSanity,
-  useSanityQuery
-}
-
-/**
- * Theming
- */
-
-export const theming = {
-  VARIANT_DEFAULT,
-  fontWeight,
-  fontFamily,
-  font,
-  applyVariants,
-  borderRadius,
-  color,
-  commonPropTypes,
-  createGlobal,
-  createVariants,
-  cssResets,
-  flattenGlobals,
-  fontSmoothing,
-  getProp,
-  gradient,
-  grid,
-  hideVisually,
-  logger,
-  mapProp,
-  spacing,
-  targetSize,
-  Theme,
-  theme,
-  themePropTypes,
-  themes,
-  wrapper
-}
-export const utils = { distinct, flatten, partition, stringIncludes }
-
-export const i18n = {
-  useI18n,
-  languages,
-  Provider,
-  resourceReducer,
-  RESTBackend,
-  SanityBackend,
-  Transform,
-  Translate,
-  TranslateSSR
-}
-
-export { Translate, Transform }
-
-export const locale = { locales, LocaleProvider, useLocale }
-
-export const hooks = {
-  useApiRequest,
-  useBrRegSearch,
-  useCopyToClipboard,
-  useDebounce,
-  useExchangeRates,
-  useInterval,
-  useLogging,
-  usePostalCode,
-  useSearch,
-  useTimer
-}
 
 /**
  * Components

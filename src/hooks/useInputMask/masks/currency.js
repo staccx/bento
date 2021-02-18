@@ -1,5 +1,5 @@
 import { baseMask } from "./base"
-import { formatMoney } from "../../../../formatting"
+import { formatMoney } from "../../../formatting"
 
 export const currencyMask = ({
   locale = "no-NB",

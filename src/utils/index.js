@@ -1,4 +1,3 @@
-export { deepFind } from "./deepfind"
 export { stringIncludes } from "./stringIncludes"
 export { distinct } from "./distinct"
 export { flatten } from "./flatten"

@@ -12,7 +12,7 @@ export const isValidLoglevel = level =>
   level !== undefined &&
   level !== null &&
   (logLevels.hasOwnProperty(level.toString().toUpperCase()) ||
-    Object.entries(logLevels).some(([, val]) => val === level))
+    Object.entries(logLevels).some(([, val]) => val === parseInt(level, 10)))
 
 const flipLevel = level => {
   if (!isValidLoglevel(level)) {
