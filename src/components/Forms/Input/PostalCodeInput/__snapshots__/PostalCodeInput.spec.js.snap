@@ -11,9 +11,9 @@ exports[`PostalCodeInput Snapshots No props 1`] = `
       className="sc-iBPRYJ kBha-dQ"
       maxLength={4}
       onChange={[Function]}
+      onKeyUp={[Function]}
       pattern="[0-9]{4}"
       type="text"
-      value=""
     />
   </div>
 </div>

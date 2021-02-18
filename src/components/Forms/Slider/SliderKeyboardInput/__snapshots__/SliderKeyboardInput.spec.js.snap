@@ -17,8 +17,8 @@ exports[`SliderKeyboardInput Snapshots Name 1`] = `
       name="slider-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyUp={[Function]}
       type="text"
-      value=""
     />
   </div>
   <div
@@ -87,8 +87,8 @@ exports[`SliderKeyboardInput Snapshots No props 1`] = `
       name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyUp={[Function]}
       type="text"
-      value=""
     />
   </div>
   <div
@@ -164,8 +164,8 @@ exports[`SliderKeyboardInput Snapshots all 1`] = `
       name="slider-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyUp={[Function]}
       type="text"
-      value=""
     />
   </div>
   <div
@@ -240,8 +240,8 @@ exports[`SliderKeyboardInput Snapshots label 1`] = `
       name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyUp={[Function]}
       type="text"
-      value=""
     />
   </div>
   <div
@@ -310,8 +310,8 @@ exports[`SliderKeyboardInput Snapshots max 1`] = `
       name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyUp={[Function]}
       type="text"
-      value=""
     />
   </div>
   <div
@@ -380,8 +380,8 @@ exports[`SliderKeyboardInput Snapshots min 1`] = `
       name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyUp={[Function]}
       type="text"
-      value=""
     />
   </div>
   <div
@@ -451,8 +451,8 @@ exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
       name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyUp={[Function]}
       type="text"
-      value=""
     />
   </div>
   <div
@@ -521,8 +521,8 @@ exports[`SliderKeyboardInput Snapshots onChange 1`] = `
       name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyUp={[Function]}
       type="text"
-      value=""
     />
   </div>
   <div
@@ -591,8 +591,8 @@ exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
       name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyUp={[Function]}
       type="text"
-      value=""
     />
   </div>
   <div
@@ -661,8 +661,8 @@ exports[`SliderKeyboardInput Snapshots step 1`] = `
       name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyUp={[Function]}
       type="text"
-      value=""
     />
   </div>
   <div
@@ -731,8 +731,8 @@ exports[`SliderKeyboardInput Snapshots value 1`] = `
       name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyUp={[Function]}
       type="text"
-      value=""
     />
   </div>
   <div
