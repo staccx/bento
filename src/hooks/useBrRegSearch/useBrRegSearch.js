@@ -5,7 +5,7 @@ import { useQuery } from "react-query"
 const brregInstance = axios.create({
   baseURL: "https://data.brreg.no/enhetsregisteret/api"
 })
-brregInstance.interceptors.response.use(response => response.data)
+brregInstance?.interceptors?.response.use(response => response.data)
 /**
  * Search in The Brønnøysund Register Centre(Brønnøysundregisteret).
  * Input a search term and it returns an object with the search results.
