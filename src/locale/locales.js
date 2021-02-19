@@ -650,7 +650,7 @@ export const locales = {
     continent: "EU",
     capital: "Copenhagen",
     currency: {
-      locale: "no-NB",
+      locale: "da-DK",
       name: "DKK"
     },
     languages: ["da"],
@@ -2204,7 +2204,10 @@ export const locales = {
     phone: "46",
     continent: "EU",
     capital: "Stockholm",
-    currency: "SEK",
+    currency: {
+      locale: "sv-SE",
+      name: "SEK"
+    },
     languages: ["sv"],
     alpha2: "SE",
     key: "SE",

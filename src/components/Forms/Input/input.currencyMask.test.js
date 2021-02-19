@@ -22,23 +22,23 @@ const setup = locale => {
 
 describe("Inputs with currency mask", () => {
   test("Default mask", () => {
-    const { input } = setup({})
+    const { input } = setup()
     fireEvent.change(input, { target: { value: "100000" } })
-    expect(input.value).toBe("100,000")
+    expect(input.value).toBe("100\u00a0000")
   })
   test("Norwegian currency mask", () => {
     const { input } = setup(locales.Norway)
     fireEvent.change(input, { target: { value: "100000" } })
-    expect(input.value).toBe("100,000")
+    expect(input.value).toBe("100\u00a0000")
   })
   test("Danish currency mask", () => {
     const { input } = setup(locales.Denmark)
     fireEvent.change(input, { target: { value: "100000" } })
-    expect(input.value).toBe("100,000")
+    expect(input.value).toBe("100.000")
   })
   test("Swedish currency mask", () => {
     const { input } = setup(locales.Sweden)
     fireEvent.change(input, { target: { value: "100000" } })
-    expect(input.value).toBe("100,000")
+    expect(input.value).toBe("100\u00a0000")
   })
 })

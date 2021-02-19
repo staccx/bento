@@ -12,6 +12,7 @@ import {
 import themeProps from "./Input.themeProps"
 import { useInputMask } from "../../../hooks"
 import { useCombinedRefs } from "../../../hooks/useCombinedRefs/useCombinedRefs"
+import { useLocale } from "../../../locale"
 
 const Input = forwardRef(
   (
@@ -38,9 +39,11 @@ const Input = forwardRef(
     const innerRef = useRef(null)
     const inputRef = useCombinedRefs(ref, innerRef)
 
+    const { locale: contextLocale } = useLocale()
+
     const inputProps = useInputMask({
       ref: inputRef,
-      locale,
+      locale: locale ?? contextLocale,
       type,
       mode,
       debugLevel: level,

@@ -10,6 +10,7 @@ export const currencyMask = ({
     locale: locale?.currency?.locale ?? locale,
     currency: locale?.currency?.name ?? currency
   }
+
   const config = {
     ...options,
     format: input =>
