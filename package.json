@@ -154,6 +154,5 @@
     "react-is": "^16.12.0",
     "styled-components": "^5.0.0"
   },
-  "publishConfig": {},
-  "engines" : { "node" : "15.4" }
+  "publishConfig": {}
 }
