@@ -2,7 +2,7 @@ name: Release bento
 on:
   workflow_run:
     workflows: ["Setup Environment"]
-    branches: [master]
+    branches: [main, next]
     types:
       - completed
 jobs:
