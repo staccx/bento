@@ -5,7 +5,7 @@ import { theme as theming } from "../themes/baseTheme"
 
 
 export default {
-  title: "Styling/Color",
+  title: "Styling/Convenience/Color",
   component: color,
   parameters: {
     docs: {
@@ -41,7 +41,6 @@ export const Default = (args) => {
     </ExampleDiv>
   )
 }
-
 
 Default.args = {
   colorString: "wcag",
