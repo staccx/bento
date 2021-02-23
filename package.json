@@ -160,6 +160,6 @@
   },
   "publishConfig": {},
   "engines": {
-    "node": "15"
+    "node": ">14"
   }
 }
