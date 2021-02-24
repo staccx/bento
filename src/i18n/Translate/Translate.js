@@ -12,7 +12,6 @@ import TranslateDebug from "./TranslateDebug"
  * @param data
  * @name Translate
  * @returns {null|*}
- * @constructor
  */
 
 const Translate = ({ children, i18n, data }) => {

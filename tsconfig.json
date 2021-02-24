@@ -8,12 +8,15 @@
     "jsx": "react",
     "moduleResolution": "node",
     "declaration": true,
+    "declarationMap": true,
     "esModuleInterop": true,
     "noImplicitAny": false,
     "removeComments": true,
     "skipLibCheck": true,
     "checkJs": false,
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": false,
+    "isolatedModules": false,
+    "strict": true
   },
   "files": [
     "src/index.ts"

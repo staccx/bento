@@ -8,7 +8,6 @@ const Context = createContext({})
  * @param children
  * @param locale
  * @returns {JSX.Element}
- * @constructor
  */
 const LocaleProvider = ({ children, locale }) => {
   return <Context.Provider value={{ locale }}>{children}</Context.Provider>
