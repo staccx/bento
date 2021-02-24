@@ -27,9 +27,9 @@
   "files": [
     "lib"
   ],
-  "main": "lib/bento.js",
-  "jsnext:main": "lib/bento.js",
-  "module": "lib/bento.js",
+  "main": "lib/index.js",
+  "jsnext:main": "lib/index.js",
+  "module": "lib/index.js",
   "author": "",
   "license": "UNLICENSED",
   "homepage": "https://github.com/staccx/bento/blob/master/README.md",
