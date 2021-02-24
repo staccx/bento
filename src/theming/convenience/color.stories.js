@@ -14,7 +14,7 @@ export default {
 
           'Start by import theming from bento, as seen below \n\n ' +
           '    import { theming } from "@staccx/bento"\n\n' +
-          'You can now use colors that is often found under theme/properties/color in your project folder.\n\n' +
+          'You can now use colors that is often placed in theme/properties/color in your project folder.\n\n' +
           'Example:\n\n' +
           '    theming.theme.append({\n\n' +
           '        color: {\n\n' +
