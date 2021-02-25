@@ -30,6 +30,7 @@ const Input = forwardRef(
       level,
       locale,
       type,
+      inputModes,
       ...props
     },
     ref
@@ -136,12 +137,26 @@ Input.propTypes = {
   maxLength: PropTypes.number,
   pattern: PropTypes.instanceOf(RegExp)
 }
+
 Input.displayName = "Input"
 Input.themeProps = themeProps
 Input.createVariants = componentCreateFactory(Input)
 
 Input.defaultProps = {
   type: "text"
+}
+
+Input.inputModes = {
+  email: {
+    inputMode: "email",
+    type: "text",
+    autoComplete: "email"
+  },
+  numeric: {
+    inputMode: "numeric",
+    pattern: /[0-9]*/,
+    type: "text"
+  }
 }
 
 export default Input

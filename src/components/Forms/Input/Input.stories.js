@@ -80,6 +80,7 @@ export const ControlledWithMode = args => {
   console.log(value)
   return <Input {...args} value={value} />
 }
+
 ControlledWithMode.args = {
   label: "Input (changes value every second",
   value: "100000",
@@ -134,3 +135,16 @@ const AsyncValueTest = ({ args }) => {
 
 export const Delayed = args => <AsyncValueTest args={args} />
 Delayed.args = {}
+
+
+export const NumericInputMode = args => <Input {...Input.inputModes[args.mode]} value={args.value} />
+NumericInputMode.args = {
+  mode: "numeric",
+  value: 100000
+}
+
+export const EmailInputMode = args => <Input {...Input.inputModes[args.mode]} value={args.value} />
+EmailInputMode.args = {
+  mode: "email",
+  value: "ola.nordmann@epost.no"
+}
