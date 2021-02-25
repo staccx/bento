@@ -55,7 +55,6 @@ export const ControlledWithChangingText = args => {
     }
   }, [])
 
-  console.log(value)
   return <Input {...args} value={value} />
 }
 
@@ -76,8 +75,6 @@ export const ControlledWithMode = args => {
       clearInterval(interval)
     }
   }, [])
-
-  console.log(value)
   return <Input {...args} value={value} />
 }
 
@@ -115,7 +112,6 @@ const AsyncValueTest = ({ args }) => {
   const [value, valueSet] = useState(args?.value)
   useEffect(() => {
     let timeout = setTimeout(() => {
-      console.log("Value is set now")
       valueSet("Value is now set")
     }, 2000)
 
@@ -133,9 +129,32 @@ const AsyncValueTest = ({ args }) => {
   )
 }
 
-export const Delayed = args => <AsyncValueTest args={args} />
-Delayed.args = {}
+export const DelayedValue = args => <AsyncValueTest args={args} />
+DelayedValue.args = {}
 
+const AsyncDefaultValueTest = ({ args }) => {
+  const [value, valueSet] = useState(args?.value)
+  useEffect(() => {
+    let timeout = setTimeout(() => {
+      valueSet("Default value is now set")
+    }, 2000)
+
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [])
+
+  return (
+    <Input
+      id={"delayedDefaultValue"}
+      defaultValue={value}
+      label={"This input's default value will be populated after to sec"}
+    />
+  )
+}
+
+export const DelayedDefaultValue = args => <AsyncDefaultValueTest args={args} />
+DelayedDefaultValue.args = {}
 
 export const NumericInputMode = args => <Input {...Input.inputModes[args.mode]} value={args.value} />
 NumericInputMode.args = {
