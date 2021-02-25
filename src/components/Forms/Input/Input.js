@@ -30,7 +30,6 @@ const Input = forwardRef(
       level,
       locale,
       type,
-      inputModes,
       ...props
     },
     ref
