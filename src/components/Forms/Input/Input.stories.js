@@ -3,7 +3,20 @@ import Input from "./Input"
 
 export default {
   title: "/Components/Forms/Input/Input",
-  component: Input
+  component: Input,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          `Works as standard input, but with this new version one can add on a mode that returns a value and a rawValue.<br />
+           Mode uses masks. All older versions of input are supported within this new version.
+          <br />
+          <br />
+          <i>See below which modes that are available.</i>
+          `
+      },
+    }
+  },
 }
 
 export const WithValue = args => {
