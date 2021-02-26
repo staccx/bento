@@ -21,8 +21,8 @@ export default {
           '            bg: "#FBFDFE",\n\n' +
           '            text: "#003755",\n\n' +
           '            primary: "#003755",\n\n' +
-          '    })\n\n' +
-          'It can also be used to change color based on a state.'
+          '    })'
+
       },
     }
   },
@@ -61,11 +61,36 @@ export const UsageExample = (args) => (
   </div>
 )
 
+UsageExample.parameters = {
+  docs: {
+    description: {
+      story: 'Below is examples of how you can extract color from the theme. ',
+    },
+  },
+};
+
 export const ColorBasedOnState = (args) => (
     <div>
+      {'const Button = styled(Button)`'} <br />
       {`background: \${p =>`} <br />
       {`p.loading === "isLoading`} <br />
       {`?  \`\${theming.color("bg")};`} <br />
-      {`: \`\${theming.color("primary")};`}
+      {`: \`\${theming.color("primary")};`} <br />
+      {'´'}
     </div>
+
 )
+
+ColorBasedOnState.parameters = {
+  docs: {
+    description: {
+      story: 'The extraction function can also be used to change color based on a state, as seen in the example below.\n\n ' +
+        'If you have a button with a state named loading, you can set the background color of that button based on the loading state. \n\n ' +
+        'Example: \n\n ' +
+        '     \<Button onClick=\{handleOnClick\}> \n\n ' +
+        '         \{loading === "isLoading" && \<SimpleLoading \/>} \n\n' +
+        '           Example text \n\n ' +
+        '     \</Button>'
+    },
+  },
+};

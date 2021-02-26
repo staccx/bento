@@ -3,7 +3,20 @@ import Input from "./Input"
 
 export default {
   title: "/Components/Forms/Input/Input",
-  component: Input
+  component: Input,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          `Works as standard input, but with this new version one can add on a mode that returns a value and a rawValue.<br />
+           Mode uses masks. All older versions of input are supported within this new version.
+          <br />
+          <br />
+          <i>See below which modes that are available.</i>
+          `
+      },
+    }
+  },
 }
 
 export const WithValue = args => {
@@ -55,7 +68,6 @@ export const ControlledWithChangingText = args => {
     }
   }, [])
 
-  console.log(value)
   return <Input {...args} value={value} />
 }
 
@@ -76,10 +88,9 @@ export const ControlledWithMode = args => {
       clearInterval(interval)
     }
   }, [])
-
-  console.log(value)
   return <Input {...args} value={value} />
 }
+
 ControlledWithMode.args = {
   label: "Input (changes value every second",
   value: "100000",
@@ -114,7 +125,6 @@ const AsyncValueTest = ({ args }) => {
   const [value, valueSet] = useState(args?.value)
   useEffect(() => {
     let timeout = setTimeout(() => {
-      console.log("Value is set now")
       valueSet("Value is now set")
     }, 2000)
 
@@ -132,5 +142,41 @@ const AsyncValueTest = ({ args }) => {
   )
 }
 
-export const Delayed = args => <AsyncValueTest args={args} />
-Delayed.args = {}
+export const DelayedValue = args => <AsyncValueTest args={args} />
+DelayedValue.args = {}
+
+const AsyncDefaultValueTest = ({ args }) => {
+  const [value, valueSet] = useState(args?.value)
+  useEffect(() => {
+    let timeout = setTimeout(() => {
+      valueSet("Default value is now set")
+    }, 2000)
+
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [])
+
+  return (
+    <Input
+      id={"delayedDefaultValue"}
+      defaultValue={value}
+      label={"This input's default value will be populated after to sec"}
+    />
+  )
+}
+
+export const DelayedDefaultValue = args => <AsyncDefaultValueTest args={args} />
+DelayedDefaultValue.args = {}
+
+export const NumericInputMode = args => <Input {...Input.inputModes[args.mode]} value={args.value} />
+NumericInputMode.args = {
+  mode: "numeric",
+  value: 100000
+}
+
+export const EmailInputMode = args => <Input {...Input.inputModes[args.mode]} value={args.value} />
+EmailInputMode.args = {
+  mode: "email",
+  value: "ola.nordmann@epost.no"
+}
