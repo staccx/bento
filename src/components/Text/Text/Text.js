@@ -5,6 +5,9 @@ import { applyVariants, commonPropTypes } from "../../../theming"
 import themeProps from "./Text.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Text is is like a span tag, but it also takes inn i18n (translation) as props
+ */
 const Text = ({ level, children, className, ...restProps }) => {
   return (
     <Span className={className} {...restProps}>

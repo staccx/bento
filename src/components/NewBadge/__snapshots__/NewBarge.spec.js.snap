@@ -2,16 +2,16 @@
 
 exports[`NewBadge Snapshots No props 1`] = `
 <div
-  className="sc-AxjAm jyWUIT"
+  className="sc-bdfBwQ kQoaxm"
 />
 `;
 
 exports[`NewBadge Snapshots number 1`] = `
 <div
-  className="sc-AxjAm jyWUIT"
+  className="sc-bdfBwQ kQoaxm"
 >
   <span
-    className="sc-AxirZ hHUunu"
+    className="sc-gsTCUz iGsWbM"
   >
     <span>
       1000
@@ -22,10 +22,10 @@ exports[`NewBadge Snapshots number 1`] = `
 
 exports[`NewBadge Snapshots number 2`] = `
 <div
-  className="sc-AxjAm jyWUIT"
+  className="sc-bdfBwQ kQoaxm"
 >
   <span
-    className="sc-AxirZ kZsFQc"
+    className="sc-gsTCUz jtxTxC"
   >
     <span>
       10
@@ -36,11 +36,11 @@ exports[`NewBadge Snapshots number 2`] = `
 
 exports[`NewBadge Snapshots with children 1`] = `
 <div
-  className="sc-AxjAm jyWUIT"
+  className="sc-bdfBwQ kQoaxm"
 >
   test
   <span
-    className="sc-AxirZ hHUunu"
+    className="sc-gsTCUz iGsWbM"
   >
     <span>
       1000

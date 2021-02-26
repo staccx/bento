@@ -61,6 +61,9 @@ const Backend = {
       //   // TODO: if statusCode === 4xx do log
       // }, payload);
     })
+  },
+  getClient: function() {
+    return this.client
   }
 }
 

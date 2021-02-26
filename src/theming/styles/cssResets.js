@@ -1,8 +1,8 @@
 import { css } from "styled-components"
-import { default as color } from "../convenience/color"
-import { default as font } from "../convenience/font"
-import { default as fontFamily } from "../convenience/fontFamily"
-import { default as fontWeight } from "../convenience/fontWeight"
+import color from "../convenience/color"
+import font from "../convenience/font"
+import fontFamily from "../convenience/fontFamily"
+import fontWeight from "../convenience/fontWeight"
 
 export default css`
   body,

@@ -2,7 +2,7 @@
 
 exports[`CodeRenderer Snapshots CSharp 1`] = `
 <pre
-  className="sc-AxjAm eKgtDb language-csharp"
+  className="sc-bdfBwQ iiqtAa language-csharp"
 >
   <code
     className="language-csharp"
@@ -27,7 +27,7 @@ exports[`CodeRenderer Snapshots Default break 1`] = `null`;
 
 exports[`CodeRenderer Snapshots Java 1`] = `
 <pre
-  className="sc-AxjAm eKgtDb language-java"
+  className="sc-bdfBwQ iiqtAa language-java"
 >
   <code
     className="language-java"
@@ -48,10 +48,10 @@ exports[`CodeRenderer Snapshots Java 1`] = `
 
 exports[`CodeRenderer Snapshots JavaScript with codeWrapper 1`] = `
 <pre
-  className="sc-AxjAm eKgtDb language-javascript"
+  className="sc-bdfBwQ iiqtAa language-javascript"
 >
   <pre
-    className="sc-AxjAm eKgtDb language-js"
+    className="sc-bdfBwQ iiqtAa language-js"
   >
     <code
       className="language-js"
@@ -73,21 +73,21 @@ exports[`CodeRenderer Snapshots JavaScript with codeWrapper 1`] = `
 
 exports[`CodeRenderer Snapshots Markup with codeWrapper 1`] = `
 <pre
-  className="sc-AxjAm eKgtDb language-markup"
+  className="sc-bdfBwQ iiqtAa language-markup"
 >
   <pre
-    className="sc-AxjAm eKgtDb language-markup"
+    className="sc-bdfBwQ iiqtAa language-markup"
   >
     <code
       className="language-markup"
       dangerouslySetInnerHTML={
         Object {
-          "__html": "<span class=\\"token doctype\\">&lt;!DOCTYPE HTML></span>
-          <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>html</span> <span class=\\"token attr-name\\">lang</span> <span class=\\"token attr-value\\"><span class=\\"token punctuation\\">=</span> <span class=\\"token punctuation\\">\\"</span>en<span class=\\"token punctuation\\">\\"</span></span><span class=\\"token punctuation\\">></span></span>
+          "__html": "<span class=\\"token doctype\\"><span class=\\"token punctuation\\">&lt;!</span><span class=\\"token doctype-tag\\">DOCTYPE</span> <span class=\\"token name\\">HTML</span><span class=\\"token punctuation\\">></span></span>
+          <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>html</span> <span class=\\"token attr-name\\">lang</span> <span class=\\"token attr-value\\"><span class=\\"token punctuation attr-equals\\">=</span> <span class=\\"token punctuation\\">\\"</span>en<span class=\\"token punctuation\\">\\"</span></span><span class=\\"token punctuation\\">></span></span>
           <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>head</span><span class=\\"token punctuation\\">></span></span>
             <span class=\\"token comment\\">&lt;!-- basic.html --></span>
             <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>title</span><span class=\\"token punctuation\\">></span></span>basic.html<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>title</span><span class=\\"token punctuation\\">></span></span>
-            <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>meta</span> <span class=\\"token attr-name\\">charset</span> <span class=\\"token attr-value\\"><span class=\\"token punctuation\\">=</span> <span class=\\"token punctuation\\">\\"</span>UTF-8<span class=\\"token punctuation\\">\\"</span></span> <span class=\\"token punctuation\\">/></span></span>
+            <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>meta</span> <span class=\\"token attr-name\\">charset</span> <span class=\\"token attr-value\\"><span class=\\"token punctuation attr-equals\\">=</span> <span class=\\"token punctuation\\">\\"</span>UTF-8<span class=\\"token punctuation\\">\\"</span></span> <span class=\\"token punctuation\\">/></span></span>
           <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>head</span><span class=\\"token punctuation\\">></span></span>
           <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>body</span><span class=\\"token punctuation\\">></span></span>
             <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>h1</span><span class=\\"token punctuation\\">></span></span>Level One Headline<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>h1</span><span class=\\"token punctuation\\">></span></span>

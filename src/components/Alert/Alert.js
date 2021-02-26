@@ -72,6 +72,9 @@ const colors = ({ type }) => {
   }
 }
 
+/**
+ * Simple component for rendering an alert giving users feedback based on the result of an action
+ */
 const Alert = ({ children, type, ...restProps }) => {
   if (!children) {
     // TODO: What do we do here

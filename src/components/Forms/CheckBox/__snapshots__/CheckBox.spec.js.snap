@@ -2,20 +2,20 @@
 
 exports[`CheckBox Snapshots No props 1`] = `
 <div
-  className="sc-AxirZ feQoIa"
+  className="sc-gsTCUz gBEZiA"
 >
   <input
-    className="sc-AxhCb fFfhJi"
+    className="sc-hKgILt giIjLZ"
     defaultChecked={false}
     disabled={false}
     onChange={null}
     type="checkbox"
   />
   <label
-    className="sc-AxhUy faXawR"
+    className="sc-eCssSg kpsaBE"
   >
     <svg
-      className="sc-AxjAm bGsByD sc-AxiKw uciiB"
+      className="sc-bdfBwQ hZduwO sc-dlfnbm jaGLwg"
       viewBox="0 0 24 24"
     >
       <path
@@ -31,10 +31,10 @@ exports[`CheckBox Snapshots No props 1`] = `
 
 exports[`CheckBox Snapshots group 1`] = `
 <div
-  className="sc-AxirZ feQoIa"
+  className="sc-gsTCUz gBEZiA"
 >
   <input
-    className="sc-AxhCb fFfhJi"
+    className="sc-hKgILt giIjLZ"
     defaultChecked={false}
     disabled={false}
     id="ID"
@@ -43,11 +43,11 @@ exports[`CheckBox Snapshots group 1`] = `
     type="checkbox"
   />
   <label
-    className="sc-AxhUy faXawR"
+    className="sc-eCssSg kpsaBE"
     htmlFor="ID"
   >
     <svg
-      className="sc-AxjAm bGsByD sc-AxiKw uciiB"
+      className="sc-bdfBwQ hZduwO sc-dlfnbm jaGLwg"
       viewBox="0 0 24 24"
     >
       <path
@@ -63,10 +63,10 @@ exports[`CheckBox Snapshots group 1`] = `
 
 exports[`CheckBox Snapshots onChange 1`] = `
 <div
-  className="sc-AxirZ feQoIa"
+  className="sc-gsTCUz gBEZiA"
 >
   <input
-    className="sc-AxhCb fFfhJi"
+    className="sc-hKgILt giIjLZ"
     defaultChecked={false}
     disabled={false}
     id="ID"
@@ -74,11 +74,11 @@ exports[`CheckBox Snapshots onChange 1`] = `
     type="checkbox"
   />
   <label
-    className="sc-AxhUy faXawR"
+    className="sc-eCssSg kpsaBE"
     htmlFor="ID"
   >
     <svg
-      className="sc-AxjAm bGsByD sc-AxiKw uciiB"
+      className="sc-bdfBwQ hZduwO sc-dlfnbm jaGLwg"
       viewBox="0 0 24 24"
     >
       <path
@@ -94,10 +94,10 @@ exports[`CheckBox Snapshots onChange 1`] = `
 
 exports[`CheckBox Snapshots with Id 1`] = `
 <div
-  className="sc-AxirZ feQoIa"
+  className="sc-gsTCUz gBEZiA"
 >
   <input
-    className="sc-AxhCb fFfhJi"
+    className="sc-hKgILt giIjLZ"
     defaultChecked={false}
     disabled={false}
     id="ID"
@@ -105,11 +105,11 @@ exports[`CheckBox Snapshots with Id 1`] = `
     type="checkbox"
   />
   <label
-    className="sc-AxhUy faXawR"
+    className="sc-eCssSg kpsaBE"
     htmlFor="ID"
   >
     <svg
-      className="sc-AxjAm bGsByD sc-AxiKw uciiB"
+      className="sc-bdfBwQ hZduwO sc-dlfnbm jaGLwg"
       viewBox="0 0 24 24"
     >
       <path

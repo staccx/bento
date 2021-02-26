@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { applyVariants } from "../../../theming"
 import themeProps from "./RadioPill.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
@@ -14,12 +14,7 @@ const RadioPill = ({
   variant,
   ...restProps
 }) => (
-  <RadioPillContainer
-    className={className}
-    full={full}
-    variant={variant}
-    {...restProps}
-  >
+  <RadioPillContainer className={className} variant={variant} {...restProps}>
     {React.Children.map(children, child => {
       if (child) {
         return React.cloneElement(child, {
@@ -34,17 +29,13 @@ const RadioPill = ({
   </RadioPillContainer>
 )
 
-const Full = css`
-  display: flex;
-  width: 100%;
-`
-
 const RadioPillContainer = styled.div`
   border: 0;
   margin: 0;
   padding: 0;
   outline: 0;
-  ${p => p.full && Full};
+  display: flex;
+  flex-direction: row;
   ${applyVariants(themeProps.container)};
 `
 

@@ -2,7 +2,7 @@ name: Release bento
 on:
   workflow_run:
     workflows: ["Setup Environment"]
-    branches: [master]
+    branches: [main]
     types:
       - completed
 jobs:
@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Run tests
-        run: yarn test:ci
+        run: yarn test
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

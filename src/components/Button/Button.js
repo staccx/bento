@@ -47,7 +47,7 @@ const ButtonComp = styled.button`
   ${applyVariants(themeProps.button)};
 `
 /**
- * Button component. Use to click stuff
+ * Button component
  */
 const Button = props => <ButtonComp {...props} />
 

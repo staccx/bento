@@ -9,7 +9,7 @@ export const actionTypes = {
 const reducer = (state, action) =>
   produce(state, draft => {
     switch (action.type) {
-      case actionTypes.setDocument:
+      case actionTypes.setDocument: {
         if (!action.document) {
           break
         }
@@ -20,16 +20,19 @@ const reducer = (state, action) =>
         }
         draft.types[_type].push(action.document)
         break
+      }
       case actionTypes.setType:
-        const { documentType, documents } = action
+        {
+          const { documentType, documents } = action
 
-        if (!draft.types[documentType]) {
-          draft.types[documentType] = documents
+          if (!draft.types[documentType]) {
+            draft.types[documentType] = documents
+          }
+
+          documents.forEach(document => {
+            draft.documents[document._id] = document
+          })
         }
-
-        documents.forEach(document => {
-          draft.documents[document._id] = document
-        })
         break
       case actionTypes.fetch:
         draft.queries[action.id] = action.result

@@ -7,6 +7,11 @@ import { componentCreateFactory } from "../../theming/utils/createVariantsFuncti
 
 const tinycolor = require("tinycolor2")
 
+/**
+ * Breadcrumb is a type of secondary navigation scheme that
+ reveals the user’s location in a website or Web application.
+ Breadcrumbs offer users a way to trace the path back to their original landing point.
+**/
 const Breadcrumb = ({ path, ...restProps }) => (
   <BreadcrumbEl {...restProps}>
     {path.map((item, index, arr) =>

@@ -1,10 +1,13 @@
 import React from "react"
-import createFocusTrap from "focus-trap"
+import { createFocusTrap } from "focus-trap"
 
 const defaultOptions = {
   clickOutsideDeactivates: true
 }
 
+/**
+ * useFocusTrap is a hook that allows you to "trap" focus within a DOM node. Send the ref of a containerElement
+ */
 // TODO: allow containerElement to be string or function?
 export const useFocusTrap = (
   containerElement,

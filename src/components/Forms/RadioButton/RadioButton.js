@@ -82,6 +82,9 @@ const RadioWrapper = styled.div`
   ${applyVariants(themeProps.wrapper)};
 `
 
+/**
+ * Radio buttons are normally presented in radio groups to describe and select related settings. Only one radio button in a group can be selected at the same time.
+ */
 const RadioButton = ({
   children,
   id,

@@ -1,6 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+/**
+ * This component acts as a wrapper for a group of CheckBoxes. This allows us to pick up all changes that happends
+ to every CheckBox inside the CheckGroup.
+ */
 const CheckGroup = ({ children, group, onChange }) => {
   const [, valuesSet] = React.useState(
     React.Children.map(children, child =>

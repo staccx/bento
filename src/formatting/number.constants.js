@@ -51,12 +51,20 @@ export const STYLE = {
   unit: "unit"
 }
 
+/**
+ * Long: kilometres. short: km, narrow: km
+ * @type {{short: string, narrow: string, long: string}}
+ */
 export const UNIT_DISPLAY = {
   long: "long",
   short: "short",
   narrow: "narrow"
 }
 
+/**
+ * Symbol €, code USD, name Dollar
+ * @type {{symbol: string, code: string, name: string}}
+ */
 export const CURRENCY_DISPLAY = {
   symbol: "symbol",
   code: "code",

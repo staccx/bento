@@ -2,42 +2,34 @@
 
 exports[`SliderKeyboardInput Snapshots Name 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-bqyKva hYthuH"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-crrsfI leevFK sc-kstrdz hZYYUJ"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
+      className="sc-dQppl jYXCnb"
       id="slider-keyboard"
+      mask={null}
       max={100}
       min={0}
       name="slider-keyboard"
-      onBlur={null}
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      pattern="\\\\d*"
-      placeholder={null}
-      style={null}
+      onKeyUp={[Function]}
       type="text"
     />
   </div>
   <div
-    className="sc-AxiKw emHJuz"
+    className="sc-dlfnbm jQQXla"
   >
     <div
-      className="sc-AxhCb jOJTnl"
+      className="sc-hKgILt cNgtla"
       style={Object {}}
     >
       <div
-        className="sc-AxhUy hyMSCF"
+        className="sc-eCssSg fXBLJQ"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
       />
@@ -48,7 +40,7 @@ exports[`SliderKeyboardInput Snapshots Name 1`] = `
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={NaN}
-          className="sc-AxjAm iGTrFZ sc-AxgMl cxJYYh"
+          className="sc-bdfBwQ fHavKc sc-jSgupP fbijvz"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onTouchStart={[Function]}
@@ -58,10 +50,10 @@ exports[`SliderKeyboardInput Snapshots Name 1`] = `
         />
       </div>
       <div
-        className="sc-AxheI fcSpvz"
+        className="sc-gKsewC eoWRga"
       >
         <div
-          className="sc-AxirZ iWBtgN"
+          className="sc-gsTCUz bJfODj"
           onMouseDown={[Function]}
           onTouchStart={[Function]}
           target={
@@ -80,42 +72,34 @@ exports[`SliderKeyboardInput Snapshots Name 1`] = `
 
 exports[`SliderKeyboardInput Snapshots No props 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-bqyKva hYthuH"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-crrsfI leevFK sc-kstrdz hZYYUJ"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-dQppl jYXCnb"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      pattern="\\\\d*"
-      placeholder={null}
-      style={null}
+      onKeyUp={[Function]}
       type="text"
     />
   </div>
   <div
-    className="sc-AxiKw emHJuz"
+    className="sc-dlfnbm jQQXla"
   >
     <div
-      className="sc-AxhCb jOJTnl"
+      className="sc-hKgILt cNgtla"
       style={Object {}}
     >
       <div
-        className="sc-AxhUy hyMSCF"
+        className="sc-eCssSg fXBLJQ"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
       />
@@ -126,7 +110,7 @@ exports[`SliderKeyboardInput Snapshots No props 1`] = `
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={0}
-          className="sc-AxjAm gTevRY sc-AxgMl cxJYYh"
+          className="sc-bdfBwQ dMvusR sc-jSgupP fbijvz"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onTouchStart={[Function]}
@@ -136,10 +120,10 @@ exports[`SliderKeyboardInput Snapshots No props 1`] = `
         />
       </div>
       <div
-        className="sc-AxheI fcSpvz"
+        className="sc-gKsewC eoWRga"
       >
         <div
-          className="sc-AxirZ cESjww"
+          className="sc-gsTCUz XesgK"
           onMouseDown={[Function]}
           onTouchStart={[Function]}
           target={
@@ -158,49 +142,41 @@ exports[`SliderKeyboardInput Snapshots No props 1`] = `
 
 exports[`SliderKeyboardInput Snapshots all 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-bqyKva hYthuH"
   onBlur={[Function]}
   value={100}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-crrsfI leevFK sc-kstrdz hZYYUJ"
   >
     <label
-      className="sc-Axmtr dsOguc sc-fzplWN ldbKvL"
+      className="sc-iBPRYJ hrNrxW sc-iqHYGH gHOQQy"
       htmlFor="slider-keyboard"
     >
       Label
-      
     </label>
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
+      className="sc-dQppl jYXCnb"
       id="slider-keyboard"
+      mask={null}
       max={1000}
       min={0}
       name="slider-keyboard"
-      onBlur={null}
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      pattern="\\\\d*"
-      placeholder={null}
-      style={null}
+      onKeyUp={[Function]}
       type="text"
     />
   </div>
   <div
-    className="sc-AxiKw emHJuz"
+    className="sc-dlfnbm jQQXla"
   >
     <div
-      className="sc-AxhCb jOJTnl"
+      className="sc-hKgILt cNgtla"
       style={Object {}}
     >
       <div
-        className="sc-AxhUy hyMSCF"
+        className="sc-eCssSg fXBLJQ"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
       />
@@ -211,7 +187,7 @@ exports[`SliderKeyboardInput Snapshots all 1`] = `
           aria-valuemax={1000}
           aria-valuemin={0}
           aria-valuenow={0}
-          className="sc-AxjAm gTevRY sc-AxgMl cxJYYh"
+          className="sc-bdfBwQ dMvusR sc-jSgupP fbijvz"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onTouchStart={[Function]}
@@ -221,10 +197,10 @@ exports[`SliderKeyboardInput Snapshots all 1`] = `
         />
       </div>
       <div
-        className="sc-AxheI fcSpvz"
+        className="sc-gKsewC eoWRga"
       >
         <div
-          className="sc-AxirZ cESjww"
+          className="sc-gsTCUz XesgK"
           onMouseDown={[Function]}
           onTouchStart={[Function]}
           target={
@@ -243,48 +219,40 @@ exports[`SliderKeyboardInput Snapshots all 1`] = `
 
 exports[`SliderKeyboardInput Snapshots label 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-bqyKva hYthuH"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-crrsfI leevFK sc-kstrdz hZYYUJ"
   >
     <label
-      className="sc-Axmtr dsOguc sc-fzplWN ldbKvL"
-      htmlFor="undefined-keyboard"
+      className="sc-iBPRYJ hrNrxW sc-iqHYGH gHOQQy"
+      htmlFor="sliderKeyboard-keyboard"
     >
       Label
-      
     </label>
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-dQppl jYXCnb"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      pattern="\\\\d*"
-      placeholder={null}
-      style={null}
+      onKeyUp={[Function]}
       type="text"
     />
   </div>
   <div
-    className="sc-AxiKw emHJuz"
+    className="sc-dlfnbm jQQXla"
   >
     <div
-      className="sc-AxhCb jOJTnl"
+      className="sc-hKgILt cNgtla"
       style={Object {}}
     >
       <div
-        className="sc-AxhUy hyMSCF"
+        className="sc-eCssSg fXBLJQ"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
       />
@@ -295,7 +263,7 @@ exports[`SliderKeyboardInput Snapshots label 1`] = `
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={0}
-          className="sc-AxjAm gTevRY sc-AxgMl cxJYYh"
+          className="sc-bdfBwQ dMvusR sc-jSgupP fbijvz"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onTouchStart={[Function]}
@@ -305,10 +273,10 @@ exports[`SliderKeyboardInput Snapshots label 1`] = `
         />
       </div>
       <div
-        className="sc-AxheI fcSpvz"
+        className="sc-gKsewC eoWRga"
       >
         <div
-          className="sc-AxirZ cESjww"
+          className="sc-gsTCUz XesgK"
           onMouseDown={[Function]}
           onTouchStart={[Function]}
           target={
@@ -327,42 +295,34 @@ exports[`SliderKeyboardInput Snapshots label 1`] = `
 
 exports[`SliderKeyboardInput Snapshots max 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-bqyKva hYthuH"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-crrsfI leevFK sc-kstrdz hZYYUJ"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-dQppl jYXCnb"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={1000}
       min={0}
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      pattern="\\\\d*"
-      placeholder={null}
-      style={null}
+      onKeyUp={[Function]}
       type="text"
     />
   </div>
   <div
-    className="sc-AxiKw emHJuz"
+    className="sc-dlfnbm jQQXla"
   >
     <div
-      className="sc-AxhCb jOJTnl"
+      className="sc-hKgILt cNgtla"
       style={Object {}}
     >
       <div
-        className="sc-AxhUy hyMSCF"
+        className="sc-eCssSg fXBLJQ"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
       />
@@ -373,7 +333,7 @@ exports[`SliderKeyboardInput Snapshots max 1`] = `
           aria-valuemax={1000}
           aria-valuemin={0}
           aria-valuenow={0}
-          className="sc-AxjAm gTevRY sc-AxgMl cxJYYh"
+          className="sc-bdfBwQ dMvusR sc-jSgupP fbijvz"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onTouchStart={[Function]}
@@ -383,10 +343,10 @@ exports[`SliderKeyboardInput Snapshots max 1`] = `
         />
       </div>
       <div
-        className="sc-AxheI fcSpvz"
+        className="sc-gKsewC eoWRga"
       >
         <div
-          className="sc-AxirZ cESjww"
+          className="sc-gsTCUz XesgK"
           onMouseDown={[Function]}
           onTouchStart={[Function]}
           target={
@@ -405,42 +365,34 @@ exports[`SliderKeyboardInput Snapshots max 1`] = `
 
 exports[`SliderKeyboardInput Snapshots min 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-bqyKva hYthuH"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-crrsfI leevFK sc-kstrdz hZYYUJ"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-dQppl jYXCnb"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      pattern="\\\\d*"
-      placeholder={null}
-      style={null}
+      onKeyUp={[Function]}
       type="text"
     />
   </div>
   <div
-    className="sc-AxiKw emHJuz"
+    className="sc-dlfnbm jQQXla"
   >
     <div
-      className="sc-AxhCb jOJTnl"
+      className="sc-hKgILt cNgtla"
       style={Object {}}
     >
       <div
-        className="sc-AxhUy hyMSCF"
+        className="sc-eCssSg fXBLJQ"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
       />
@@ -451,7 +403,7 @@ exports[`SliderKeyboardInput Snapshots min 1`] = `
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={0}
-          className="sc-AxjAm gTevRY sc-AxgMl cxJYYh"
+          className="sc-bdfBwQ dMvusR sc-jSgupP fbijvz"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onTouchStart={[Function]}
@@ -461,10 +413,10 @@ exports[`SliderKeyboardInput Snapshots min 1`] = `
         />
       </div>
       <div
-        className="sc-AxheI fcSpvz"
+        className="sc-gKsewC eoWRga"
       >
         <div
-          className="sc-AxirZ cESjww"
+          className="sc-gsTCUz XesgK"
           onMouseDown={[Function]}
           onTouchStart={[Function]}
           target={
@@ -483,43 +435,35 @@ exports[`SliderKeyboardInput Snapshots min 1`] = `
 
 exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-bqyKva hYthuH"
   onBlur={[Function]}
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-crrsfI leevFK sc-kstrdz hZYYUJ"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-dQppl jYXCnb"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      pattern="\\\\d*"
-      placeholder={null}
-      style={null}
+      onKeyUp={[Function]}
       type="text"
     />
   </div>
   <div
-    className="sc-AxiKw emHJuz"
+    className="sc-dlfnbm jQQXla"
   >
     <div
-      className="sc-AxhCb jOJTnl"
+      className="sc-hKgILt cNgtla"
       style={Object {}}
     >
       <div
-        className="sc-AxhUy hyMSCF"
+        className="sc-eCssSg fXBLJQ"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
       />
@@ -530,7 +474,7 @@ exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={0}
-          className="sc-AxjAm gTevRY sc-AxgMl cxJYYh"
+          className="sc-bdfBwQ dMvusR sc-jSgupP fbijvz"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onTouchStart={[Function]}
@@ -540,10 +484,10 @@ exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
         />
       </div>
       <div
-        className="sc-AxheI fcSpvz"
+        className="sc-gKsewC eoWRga"
       >
         <div
-          className="sc-AxirZ cESjww"
+          className="sc-gsTCUz XesgK"
           onMouseDown={[Function]}
           onTouchStart={[Function]}
           target={
@@ -562,42 +506,34 @@ exports[`SliderKeyboardInput Snapshots onBlur 1`] = `
 
 exports[`SliderKeyboardInput Snapshots onChange 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-bqyKva hYthuH"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-crrsfI leevFK sc-kstrdz hZYYUJ"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-dQppl jYXCnb"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      pattern="\\\\d*"
-      placeholder={null}
-      style={null}
+      onKeyUp={[Function]}
       type="text"
     />
   </div>
   <div
-    className="sc-AxiKw emHJuz"
+    className="sc-dlfnbm jQQXla"
   >
     <div
-      className="sc-AxhCb jOJTnl"
+      className="sc-hKgILt cNgtla"
       style={Object {}}
     >
       <div
-        className="sc-AxhUy hyMSCF"
+        className="sc-eCssSg fXBLJQ"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
       />
@@ -608,7 +544,7 @@ exports[`SliderKeyboardInput Snapshots onChange 1`] = `
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={0}
-          className="sc-AxjAm gTevRY sc-AxgMl cxJYYh"
+          className="sc-bdfBwQ dMvusR sc-jSgupP fbijvz"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onTouchStart={[Function]}
@@ -618,10 +554,10 @@ exports[`SliderKeyboardInput Snapshots onChange 1`] = `
         />
       </div>
       <div
-        className="sc-AxheI fcSpvz"
+        className="sc-gKsewC eoWRga"
       >
         <div
-          className="sc-AxirZ cESjww"
+          className="sc-gsTCUz XesgK"
           onMouseDown={[Function]}
           onTouchStart={[Function]}
           target={
@@ -640,42 +576,34 @@ exports[`SliderKeyboardInput Snapshots onChange 1`] = `
 
 exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-bqyKva hYthuH"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-crrsfI leevFK sc-kstrdz hZYYUJ"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-dQppl jYXCnb"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      pattern="\\\\d*"
-      placeholder={null}
-      style={null}
+      onKeyUp={[Function]}
       type="text"
     />
   </div>
   <div
-    className="sc-AxiKw emHJuz"
+    className="sc-dlfnbm jQQXla"
   >
     <div
-      className="sc-AxhCb jOJTnl"
+      className="sc-hKgILt cNgtla"
       style={Object {}}
     >
       <div
-        className="sc-AxhUy hyMSCF"
+        className="sc-eCssSg fXBLJQ"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
       />
@@ -686,7 +614,7 @@ exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={0}
-          className="sc-AxjAm gTevRY sc-AxgMl cxJYYh"
+          className="sc-bdfBwQ dMvusR sc-jSgupP fbijvz"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onTouchStart={[Function]}
@@ -696,10 +624,10 @@ exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
         />
       </div>
       <div
-        className="sc-AxheI fcSpvz"
+        className="sc-gKsewC eoWRga"
       >
         <div
-          className="sc-AxirZ cESjww"
+          className="sc-gsTCUz XesgK"
           onMouseDown={[Function]}
           onTouchStart={[Function]}
           target={
@@ -718,42 +646,34 @@ exports[`SliderKeyboardInput Snapshots showLabel 1`] = `
 
 exports[`SliderKeyboardInput Snapshots step 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-bqyKva hYthuH"
   value={0}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-crrsfI leevFK sc-kstrdz hZYYUJ"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-dQppl jYXCnb"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      pattern="\\\\d*"
-      placeholder={null}
-      style={null}
+      onKeyUp={[Function]}
       type="text"
     />
   </div>
   <div
-    className="sc-AxiKw emHJuz"
+    className="sc-dlfnbm jQQXla"
   >
     <div
-      className="sc-AxhCb jOJTnl"
+      className="sc-hKgILt cNgtla"
       style={Object {}}
     >
       <div
-        className="sc-AxhUy hyMSCF"
+        className="sc-eCssSg fXBLJQ"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
       />
@@ -764,7 +684,7 @@ exports[`SliderKeyboardInput Snapshots step 1`] = `
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={0}
-          className="sc-AxjAm gTevRY sc-AxgMl cxJYYh"
+          className="sc-bdfBwQ dMvusR sc-jSgupP fbijvz"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onTouchStart={[Function]}
@@ -774,10 +694,10 @@ exports[`SliderKeyboardInput Snapshots step 1`] = `
         />
       </div>
       <div
-        className="sc-AxheI fcSpvz"
+        className="sc-gKsewC eoWRga"
       >
         <div
-          className="sc-AxirZ cESjww"
+          className="sc-gsTCUz XesgK"
           onMouseDown={[Function]}
           onTouchStart={[Function]}
           target={
@@ -796,42 +716,34 @@ exports[`SliderKeyboardInput Snapshots step 1`] = `
 
 exports[`SliderKeyboardInput Snapshots value 1`] = `
 <div
-  className="sc-fznZeY hRKcZz"
+  className="sc-bqyKva hYthuH"
   value={100}
 >
   <div
-    className="sc-fznyAO gvMetq sc-fzokOt jFjwOo"
+    className="sc-crrsfI leevFK sc-kstrdz hZYYUJ"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-fznKkj cEcbQA"
-      disabled={false}
-      hidden={false}
-      id="undefined-keyboard"
+      className="sc-dQppl jYXCnb"
+      id="sliderKeyboard-keyboard"
+      mask={null}
       max={100}
       min={0}
-      name="undefined-keyboard"
-      onBlur={null}
+      name="sliderKeyboard-keyboard"
       onChange={[Function]}
       onFocus={[Function]}
-      onKeyDown={null}
-      pattern="\\\\d*"
-      placeholder={null}
-      style={null}
+      onKeyUp={[Function]}
       type="text"
     />
   </div>
   <div
-    className="sc-AxiKw emHJuz"
+    className="sc-dlfnbm jQQXla"
   >
     <div
-      className="sc-AxhCb jOJTnl"
+      className="sc-hKgILt cNgtla"
       style={Object {}}
     >
       <div
-        className="sc-AxhUy hyMSCF"
+        className="sc-eCssSg fXBLJQ"
         onMouseDown={[Function]}
         onTouchStart={[Function]}
       />
@@ -842,7 +754,7 @@ exports[`SliderKeyboardInput Snapshots value 1`] = `
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={0}
-          className="sc-AxjAm gTevRY sc-AxgMl cxJYYh"
+          className="sc-bdfBwQ dMvusR sc-jSgupP fbijvz"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onTouchStart={[Function]}
@@ -852,10 +764,10 @@ exports[`SliderKeyboardInput Snapshots value 1`] = `
         />
       </div>
       <div
-        className="sc-AxheI fcSpvz"
+        className="sc-gKsewC eoWRga"
       >
         <div
-          className="sc-AxirZ cESjww"
+          className="sc-gsTCUz XesgK"
           onMouseDown={[Function]}
           onTouchStart={[Function]}
           target={

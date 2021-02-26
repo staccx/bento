@@ -2,7 +2,7 @@
 
 exports[`List Snapshots All 1`] = `
 <ol
-  className="sc-AxirZ hryhsZ className"
+  className="sc-gsTCUz cWkiwX className"
 >
   <li>
     Test
@@ -15,7 +15,7 @@ exports[`List Snapshots All 1`] = `
 
 exports[`List Snapshots No props 1`] = `
 <ul
-  className="sc-AxjAm bKPZbO"
+  className="sc-bdfBwQ hVnxAP"
 >
   <li>
     Test
@@ -28,7 +28,7 @@ exports[`List Snapshots No props 1`] = `
 
 exports[`List Snapshots className 1`] = `
 <ul
-  className="sc-AxjAm bKPZbO className"
+  className="sc-bdfBwQ hVnxAP className"
 >
   <li>
     Test
@@ -41,7 +41,7 @@ exports[`List Snapshots className 1`] = `
 
 exports[`List Snapshots ordered 1`] = `
 <ol
-  className="sc-AxirZ hryhsZ"
+  className="sc-gsTCUz cWkiwX"
 >
   <li>
     Test

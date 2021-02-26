@@ -1,6 +1,9 @@
 import PropTypes from "prop-types"
 import React from "react"
 
+/**
+ * Formatting for an img tag
+ */
 const Logo = ({ brand, height, width, className }) => (
   <img
     height={height}

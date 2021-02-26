@@ -2,7 +2,7 @@
 
 exports[`Table Snapshots Tab 1`] = `
 <table
-  className="sc-AxjAm jzbbdJ"
+  className="sc-bdfBwQ FAtxg"
   onClick={[Function]}
 >
   <thead>
@@ -40,7 +40,7 @@ exports[`Table Snapshots Tab 1`] = `
 
 exports[`Table Snapshots Table 1`] = `
 <table
-  className="sc-AxjAm jzbbdJ"
+  className="sc-bdfBwQ FAtxg"
 >
   <thead>
     <tr>

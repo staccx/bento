@@ -1,3 +1,390 @@
+## [13.0.1-alpha.19](https://github.com/staccx/bento/compare/v13.0.1-alpha.18...v13.0.1-alpha.19) (2020-10-31)
+
+
+### Features
+
+* **bento:** upgrade to react 17 and react-scripts 4 ([f170259](https://github.com/staccx/bento/commit/f170259))
+* **i18n:** fallback value now required ([0337e7d](https://github.com/staccx/bento/commit/0337e7d))
+
+
+
+## [13.0.1-alpha.18](https://github.com/staccx/bento/compare/v13.0.1-alpha.17...v13.0.1-alpha.18) (2020-10-23)
+
+
+### Bug Fixes
+
+* **i18n:** fix transform returning undefined ([083db78](https://github.com/staccx/bento/commit/083db78))
+
+
+
+## [13.0.1-alpha.17](https://github.com/staccx/bento/compare/v13.0.1-alpha.16...v13.0.1-alpha.17) (2020-10-22)
+
+
+### Bug Fixes
+
+* **i18n:** concurrency ([0e5f0eb](https://github.com/staccx/bento/commit/0e5f0eb))
+
+
+
+## [13.0.1-alpha.16](https://github.com/staccx/bento/compare/v13.0.1-alpha.15...v13.0.1-alpha.16) (2020-10-22)
+
+
+### Features
+
+* **components:** reduce complexity in select simple ([a9373cc](https://github.com/staccx/bento/commit/a9373cc))
+
+
+
+## [13.0.1-alpha.15](https://github.com/staccx/bento/compare/v13.0.1-alpha.14...v13.0.1-alpha.15) (2020-10-20)
+
+
+### Bug Fixes
+
+* **i18n:** value is null ([f61e214](https://github.com/staccx/bento/commit/f61e214))
+
+
+
+## [13.0.1-alpha.14](https://github.com/staccx/bento/compare/v13.0.1-alpha.13...v13.0.1-alpha.14) (2020-10-20)
+
+
+
+## [13.0.1-alpha.13](https://github.com/staccx/bento/compare/v13.0.1-alpha.12...v13.0.1-alpha.13) (2020-10-14)
+
+
+### Bug Fixes
+
+* **compoents:** inputs should set value when changed ([0252256](https://github.com/staccx/bento/commit/0252256))
+
+
+
+## [13.0.1-alpha.12](https://github.com/staccx/bento/compare/v13.0.1-alpha.11...v13.0.1-alpha.12) (2020-10-14)
+
+
+### Bug Fixes
+
+* **components:** fix controlled with mode. add examples. a number value ([acc1336](https://github.com/staccx/bento/commit/acc1336))
+
+
+
+## [13.0.1-alpha.11](https://github.com/staccx/bento/compare/v13.0.1-alpha.10...v13.0.1-alpha.11) (2020-10-14)
+
+
+### Bug Fixes
+
+* **i18n:** fix lanugage not set ([77ae9c7](https://github.com/staccx/bento/commit/77ae9c7))
+* **input:** fix check for onchangeW ([ed16862](https://github.com/staccx/bento/commit/ed16862))
+
+
+
+## [13.0.1-alpha.10](https://github.com/staccx/bento/compare/v13.0.1-alpha.9...v13.0.1-alpha.10) (2020-10-14)
+
+
+### Bug Fixes
+
+* **i18n:** fix casing for transform ([e8abd8b](https://github.com/staccx/bento/commit/e8abd8b))
+
+
+
+## [13.0.1-alpha.9](https://github.com/staccx/bento/compare/v13.0.1-alpha.8...v13.0.1-alpha.9) (2020-10-13)
+
+
+### Bug Fixes
+
+* **components:** early out ([10ceb7a](https://github.com/staccx/bento/commit/10ceb7a))
+
+
+
+## [13.0.1-alpha.8](https://github.com/staccx/bento/compare/v13.0.1-alpha.7...v13.0.1-alpha.8) (2020-10-13)
+
+
+### Bug Fixes
+
+* **components:** fix input not sending onChange when no mask ([b386368](https://github.com/staccx/bento/commit/b386368))
+
+
+
+## [13.0.1-alpha.7](https://github.com/staccx/bento/compare/v13.0.1-alpha.6...v13.0.1-alpha.7) (2020-10-13)
+
+
+### Bug Fixes
+
+* **i18n:** fix casing for language ([3acee50](https://github.com/staccx/bento/commit/3acee50))
+
+
+
+## [13.0.1-alpha.6](https://github.com/staccx/bento/compare/v13.0.1-alpha.5...v13.0.1-alpha.6) (2020-10-13)
+
+
+### Bug Fixes
+
+* **i18n:** return children when not ready ([1a41824](https://github.com/staccx/bento/commit/1a41824))
+
+
+### Features
+
+* **i18n:** simplify render. transform stories ([b3ccca4](https://github.com/staccx/bento/commit/b3ccca4))
+
+
+
+## [13.0.1-alpha.5](https://github.com/staccx/bento/compare/v13.0.1-alpha.4...v13.0.1-alpha.5) (2020-10-13)
+
+
+### Bug Fixes
+
+* **i18n:** i18n when not ready ([dfff6ae](https://github.com/staccx/bento/commit/dfff6ae))
+
+
+
+## [13.0.1-alpha.4](https://github.com/staccx/bento/compare/v13.0.1-alpha.3...v13.0.1-alpha.4) (2020-10-13)
+
+
+### Bug Fixes
+
+* **components:** fix masks ([6049e4f](https://github.com/staccx/bento/commit/6049e4f))
+
+
+
+## [13.0.1-alpha.3](https://github.com/staccx/bento/compare/v13.0.1-alpha.2...v13.0.1-alpha.3) (2020-10-13)
+
+
+### Bug Fixes
+
+* **i18n:** cleanup Translate ([90a3d11](https://github.com/staccx/bento/commit/90a3d11))
+
+
+
+## [13.0.1-alpha.2](https://github.com/staccx/bento/compare/v13.0.1-alpha.1...v13.0.1-alpha.2) (2020-10-13)
+
+
+### Bug Fixes
+
+* **i18n:** pipe fallback to func ([bea61ee](https://github.com/staccx/bento/commit/bea61ee))
+
+
+
+## [13.0.1-alpha.1](https://github.com/staccx/bento/compare/v13.0.1-alpha.0...v13.0.1-alpha.1) (2020-10-13)
+
+
+### Bug Fixes
+
+* **components:** fix migration to new Input ([7c51614](https://github.com/staccx/bento/commit/7c51614))
+
+
+
+## [13.0.1-alpha.0](https://github.com/staccx/bento/compare/v12.1.0...v13.0.1-alpha.0) (2020-10-05)
+
+
+### Bug Fixes
+
+* **bento:** remove sunset export ([a279eb4](https://github.com/staccx/bento/commit/a279eb4))
+* **components:** fix account mask ([1edf146](https://github.com/staccx/bento/commit/1edf146))
+* **components:** update slider to use new input ([ce89a99](https://github.com/staccx/bento/commit/ce89a99))
+* **formatting:** better error handling ([bf3c05d](https://github.com/staccx/bento/commit/bf3c05d))
+* **i18n:** better language handling ([e66336c](https://github.com/staccx/bento/commit/e66336c))
+* **i18n:** language state ([9f3a27c](https://github.com/staccx/bento/commit/9f3a27c))
+* **i18n:** pipe language as if one to consumer ([4837b9a](https://github.com/staccx/bento/commit/4837b9a))
+
+
+### Features
+
+* **bento:** it's late. fuck it ([4bced12](https://github.com/staccx/bento/commit/4bced12))
+* **bento:** now use jest package ([e9a2b04](https://github.com/staccx/bento/commit/e9a2b04))
+* **color:** sunsetting color and some inputs ([8158a4d](https://github.com/staccx/bento/commit/8158a4d))
+* **component:** made input i18n aware ([0433e50](https://github.com/staccx/bento/commit/0433e50))
+* **components:** add creditcard mode to input ([69429ca](https://github.com/staccx/bento/commit/69429ca))
+* **components:** add currency input ([711adc9](https://github.com/staccx/bento/commit/711adc9))
+* **components:** add new mask phone. delete old ([07bb6fe](https://github.com/staccx/bento/commit/07bb6fe))
+* **components:** add support for postal code mode ([7ae4314](https://github.com/staccx/bento/commit/7ae4314))
+* **components:** input now resolves value when locale change ([0c65522](https://github.com/staccx/bento/commit/0c65522))
+* **components:** new input allows for custom masking ([ef30872](https://github.com/staccx/bento/commit/ef30872))
+* **components:** new mask nationalId ([19b8c7d](https://github.com/staccx/bento/commit/19b8c7d))
+* **hooks:** new hook useLogging ([c254042](https://github.com/staccx/bento/commit/c254042))
+* **i18n:** exposes new object with countries ([36ba22b](https://github.com/staccx/bento/commit/36ba22b))
+* **i18n:** move mask configs into each country ([fae7669](https://github.com/staccx/bento/commit/fae7669))
+* **i18n:** reduce complexity ([a811965](https://github.com/staccx/bento/commit/a811965))
+
+
+
+# [12.1.0](https://github.com/staccx/bento/compare/v12.0.1...v12.1.0) (2020-09-18)
+
+
+### Features
+
+* **components:** update cleave. add new example ([57eb169](https://github.com/staccx/bento/commit/57eb169))
+
+
+### Reverts
+
+* undoing last commit ([bc030e0](https://github.com/staccx/bento/commit/bc030e0))
+
+
+
+## [12.0.1](https://github.com/staccx/bento/compare/v12.0.0...v12.0.1) (2020-09-17)
+
+
+### Bug Fixes
+
+* **components:** allow password type ([cc1a6a7](https://github.com/staccx/bento/commit/cc1a6a7))
+
+
+
+# [12.0.0](https://github.com/staccx/bento/compare/v11.2.1...v12.0.0) (2020-09-15)
+
+
+### Bug Fixes
+
+* **theming:** fix merging ([1feb7d7](https://github.com/staccx/bento/commit/1feb7d7))
+
+
+### Features
+
+* **theme:** remove dep immutable ([77aea39](https://github.com/staccx/bento/commit/77aea39))
+
+
+### BREAKING CHANGES
+
+* **theme:** This changes to the themes are merged
+
+
+
+## [11.2.1](https://github.com/staccx/bento/compare/v11.2.0...v11.2.1) (2020-09-10)
+
+
+### Bug Fixes
+
+* **components:** fix webfonts for ssr ([e626e40](https://github.com/staccx/bento/commit/e626e40))
+
+
+### Features
+
+* **storybook:** add function for setting doc per story ([e3d3191](https://github.com/staccx/bento/commit/e3d3191))
+
+
+
+# [11.2.0](https://github.com/staccx/bento/compare/v11.1.0...v11.2.0) (2020-08-19)
+
+
+### Features
+
+* **bento:** add regenerator-runtime for SSR support ([7489cdd](https://github.com/staccx/bento/commit/7489cdd))
+
+
+
+# [11.1.0](https://github.com/staccx/bento/compare/v10.2.2...v11.1.0) (2020-08-17)
+
+
+### Bug Fixes
+
+* **component:** proptypes ([ade9a04](https://github.com/staccx/bento/commit/ade9a04))
+* **components:** spread restProps of SliderKeyboardInput ([0cff582](https://github.com/staccx/bento/commit/0cff582))
+
+
+### Features
+
+* **components:** add state to checkgroup ([b139fa6](https://github.com/staccx/bento/commit/b139fa6))
+* **components:** slider on change updates input ([3213543](https://github.com/staccx/bento/commit/3213543))
+
+
+### BREAKING CHANGES
+
+* **components:** this is not how it used work
+
+
+
+## [10.2.1](https://github.com/staccx/bento/compare/v10.2.0...v10.2.1) (2020-08-10)
+
+
+### Bug Fixes
+
+* **components:** fix paths after refactor ([86adbb1](https://github.com/staccx/bento/commit/86adbb1))
+* **components:** upgrade component to func. add tests and docs ([849e6d7](https://github.com/staccx/bento/commit/849e6d7))
+
+
+
+# [10.2.0](https://github.com/staccx/bento/compare/v10.1.1...v10.2.0) (2020-08-07)
+
+
+### Features
+
+* **components:** expand is respected. add closeOnItemClick. closes [#14](https://github.com/staccx/bento/issues/14) ([f531728](https://github.com/staccx/bento/commit/f531728))
+
+
+
+## [10.1.1](https://github.com/staccx/bento/compare/v10.1.0...v10.1.1) (2020-08-07)
+
+
+### Bug Fixes
+
+* **components:** fix erronious import for deleted package ([21c63e1](https://github.com/staccx/bento/commit/21c63e1))
+
+
+
+# [10.1.0](https://github.com/staccx/bento/compare/v10.0.1...v10.1.0) (2020-08-07)
+
+
+### Features
+
+* **i18n:** add language to context value. fixes [#13](https://github.com/staccx/bento/issues/13) ([caa2bb8](https://github.com/staccx/bento/commit/caa2bb8))
+
+
+
+## [10.0.1](https://github.com/staccx/bento/compare/v10.0.0...v10.0.1) (2020-08-06)
+
+
+### Bug Fixes
+
+* **components:** fix default value being overwritten on inital render ([685e3dd](https://github.com/staccx/bento/commit/685e3dd))
+
+
+
+# [10.0.0](https://github.com/staccx/bento/compare/v11.0.0...v10.0.0) (2020-08-06)
+
+
+
+# [11.0.0](https://github.com/staccx/bento/compare/v10.0.1-alpha.54...v11.0.0) (2020-08-06)
+
+
+### Bug Fixes
+
+* **components:** fixed casing on import ([0238541](https://github.com/staccx/bento/commit/0238541))
+* **hooks:** bump xstate dep ([ea89084](https://github.com/staccx/bento/commit/ea89084))
+
+
+### Features
+
+* **component:** remove Form and FormField components ([8c34737](https://github.com/staccx/bento/commit/8c34737))
+
+
+
+## [10.0.1-alpha.54](https://github.com/staccx/bento/compare/v10.0.1-alpha.52...v10.0.1-alpha.54) (2020-08-04)
+
+
+### Bug Fixes
+
+* **components:** export slider ([250e348](https://github.com/staccx/bento/commit/250e348))
+* **web:** add restprops to radiopill ([b049125](https://github.com/staccx/bento/commit/b049125))
+
+
+### Features
+
+* **hooks:** add new hook useApiRequest ([e762c16](https://github.com/staccx/bento/commit/e762c16))
+
+
+### Reverts
+
+* **bento:** undo version change, publish failed ([91b3add](https://github.com/staccx/bento/commit/91b3add))
+
+
+
+## [10.0.1-alpha.52](https://github.com/staccx/bento/compare/v10.0.1-alpha.51...v10.0.1-alpha.52) (2020-06-25)
+
+
+### Bug Fixes
+
+* **formatting:** export format money ([562d17c](https://github.com/staccx/bento/commit/562d17c))
+
+
+
 ## [10.0.1-alpha.51](https://github.com/staccx/bento/compare/v10.0.1-alpha.50...v10.0.1-alpha.51) (2020-06-18)
 
 
@@ -26,6 +413,11 @@
 * **formatting:** fix currency default formatting ([7efbc70](https://github.com/staccx/bento/commit/7efbc70))
 * **formatting:** fix unit is null ([e98bff3](https://github.com/staccx/bento/commit/e98bff3))
 * **hooks:** error handling company not found useBrRegSearch ([c462ccf](https://github.com/staccx/bento/commit/c462ccf))
+
+
+### Features
+
+* **hooks:** new hooks useExchangeRates ([82675ad](https://github.com/staccx/bento/commit/82675ad))
 
 
 

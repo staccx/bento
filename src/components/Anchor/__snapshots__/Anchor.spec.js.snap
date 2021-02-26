@@ -2,7 +2,7 @@
 
 exports[`Anchor Snapshots href 1`] = `
 <a
-  className="sc-AxjAm oPrPU"
+  className="sc-bdfBwQ hUfsLB"
   href="https://stacc.com"
 >
   <p>
@@ -13,14 +13,14 @@ exports[`Anchor Snapshots href 1`] = `
 
 exports[`Anchor Snapshots no children 1`] = `
 <a
-  className="sc-AxjAm oPrPU"
+  className="sc-bdfBwQ hUfsLB"
   href="https://stacc.com"
 />
 `;
 
 exports[`Anchor Snapshots no props 1`] = `
 <a
-  className="sc-AxjAm oPrPU"
+  className="sc-bdfBwQ hUfsLB"
   href=""
 >
   <p>

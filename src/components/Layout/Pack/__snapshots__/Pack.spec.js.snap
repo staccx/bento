@@ -2,25 +2,25 @@
 
 exports[`Pack Snapshots Middle&Bottom 1`] = `
 <ul
-  className="sc-AxjAm fxMcSg"
+  className="sc-bdfBwQ hRCWAZ"
 >
   <li
-    className="sc-AxirZ dItNxg test"
+    className="sc-gsTCUz hoTGHm test"
   >
     Loan
   </li>
   <li
-    className="sc-AxirZ dItNxg test"
+    className="sc-gsTCUz hoTGHm test"
   >
     Credit
   </li>
   <li
-    className="sc-AxirZ dItNxg test"
+    className="sc-gsTCUz hoTGHm test"
   >
     Saving
   </li>
   <li
-    className="sc-AxirZ dItNxg test"
+    className="sc-gsTCUz hoTGHm test"
   >
     About this bank
   </li>
@@ -29,25 +29,25 @@ exports[`Pack Snapshots Middle&Bottom 1`] = `
 
 exports[`Pack Snapshots No props 1`] = `
 <ul
-  className="sc-AxjAm fxMcSg"
+  className="sc-bdfBwQ hRCWAZ"
 >
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Loan
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Credit
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Saving
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     About this bank
   </li>
@@ -56,25 +56,25 @@ exports[`Pack Snapshots No props 1`] = `
 
 exports[`Pack Snapshots bottom 1`] = `
 <ul
-  className="sc-AxjAm jwTVsl"
+  className="sc-bdfBwQ bMqWSE"
 >
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Loan
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Credit
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Saving
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     About this bank
   </li>
@@ -83,25 +83,25 @@ exports[`Pack Snapshots bottom 1`] = `
 
 exports[`Pack Snapshots className 1`] = `
 <ul
-  className="sc-AxjAm fxMcSg className"
+  className="sc-bdfBwQ hRCWAZ className"
 >
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Loan
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Credit
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Saving
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     About this bank
   </li>
@@ -110,25 +110,25 @@ exports[`Pack Snapshots className 1`] = `
 
 exports[`Pack Snapshots justify 1`] = `
 <ul
-  className="sc-AxjAm cMEmZt"
+  className="sc-bdfBwQ ghrdEA"
 >
   <li
-    className="sc-AxirZ dItNxg test"
+    className="sc-gsTCUz hoTGHm test"
   >
     Loan
   </li>
   <li
-    className="sc-AxirZ dItNxg test"
+    className="sc-gsTCUz hoTGHm test"
   >
     Credit
   </li>
   <li
-    className="sc-AxirZ dItNxg test"
+    className="sc-gsTCUz hoTGHm test"
   >
     Saving
   </li>
   <li
-    className="sc-AxirZ dItNxg test"
+    className="sc-gsTCUz hoTGHm test"
   >
     About this bank
   </li>
@@ -137,25 +137,25 @@ exports[`Pack Snapshots justify 1`] = `
 
 exports[`Pack Snapshots middle 1`] = `
 <ul
-  className="sc-AxjAm cjGdQf"
+  className="sc-bdfBwQ khvaIO"
 >
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Loan
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Credit
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Saving
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     About this bank
   </li>
@@ -164,31 +164,31 @@ exports[`Pack Snapshots middle 1`] = `
 
 exports[`Pack Snapshots no Children 1`] = `
 <ul
-  className="sc-AxjAm fxMcSg"
+  className="sc-bdfBwQ hRCWAZ"
 />
 `;
 
 exports[`Pack Snapshots noWrap 1`] = `
 <ul
-  className="sc-AxjAm bmPTJw"
+  className="sc-bdfBwQ ZZokh"
 >
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Loan
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Credit
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     Saving
   </li>
   <li
-    className="sc-AxirZ dItNxg"
+    className="sc-gsTCUz hoTGHm"
   >
     About this bank
   </li>

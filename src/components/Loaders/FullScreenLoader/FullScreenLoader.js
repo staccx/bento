@@ -7,6 +7,10 @@ import Loading from "../Loading/Loading"
 import themeProps from "./FullScreenLoader.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * FullScreenLoader is a LoadingComponent great for transitions when also doing something Async, like
+ * API requests.
+ */
 const FullScreenLoader = ({
   messages,
   delay = 50000,

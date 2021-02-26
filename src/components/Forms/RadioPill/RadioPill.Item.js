@@ -1,20 +1,23 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import {
   applyVariants,
   targetSize,
-  spacing,
   fontWeight,
   fontFamily,
   font,
   color,
   commonPropTypes,
-  hideVisually
+  hideVisually,
+  borderRadius
 } from "../../../theming"
 import themeProps from "./RadioPill.item.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Radiopill
+ */
 const RadioPillItem = ({
   children,
   id,
@@ -24,16 +27,10 @@ const RadioPillItem = ({
   className,
   defaultChecked,
   value,
-  full,
   variant,
   ...otherProps
 }) => (
-  <RadioWrapper
-    className={className}
-    full={full}
-    variant={variant}
-    {...otherProps}
-  >
+  <RadioWrapper className={className} variant={variant} {...otherProps}>
     <Radio
       id={id}
       disabled={disabled}
@@ -44,7 +41,7 @@ const RadioPillItem = ({
       value={value}
       variant={variant}
     />
-    <Label variant={variant} htmlFor={id} full={full}>
+    <Label variant={variant} htmlFor={id}>
       {children}
     </Label>
   </RadioWrapper>
@@ -52,7 +49,6 @@ const RadioPillItem = ({
 
 const Label = styled.label`
   position: relative;
-  padding: ${spacing.tiny} ${spacing.small};
   border: 1px solid ${color.line};
   cursor: pointer;
   font-family: ${fontFamily.body()};
@@ -61,15 +57,11 @@ const Label = styled.label`
   font-weight: ${fontWeight.normal};
   margin-right: -1px;
   background-color: ${color.white};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: ${targetSize.normal};
   ${applyVariants(themeProps.label)};
-  ${p =>
-    p.full &&
-    css`
-      width: calc(100% + 1px);
-      justify-content: center;
-      display: flex;
-      align-items: center;
-    `};
 `
 
 const Radio = styled.input`
@@ -93,23 +85,19 @@ const Radio = styled.input`
 `
 
 const RadioWrapper = styled.div`
-  display: ${p => (p.full ? "flex" : "inline-block")};
-  min-height: ${targetSize.normal};
-  padding-top: ${p => (p.full ? null : spacing.small)};
-  padding-bottom: ${p => (p.full ? null : spacing.small)};
-  ${p => p.full && "flex-grow: 1"};
+  flex-grow: 1;
 
   &:first-child {
     ${Label} {
-      border-top-left-radius: ${spacing.tiny};
-      border-bottom-left-radius: ${spacing.tiny};
+      border-top-left-radius: ${borderRadius};
+      border-bottom-left-radius: ${borderRadius};
     }
   }
 
   &:last-child {
     ${Label} {
-      border-top-right-radius: ${spacing.tiny};
-      border-bottom-right-radius: ${spacing.tiny};
+      border-top-right-radius: ${borderRadius};
+      border-bottom-right-radius: ${borderRadius};
       border-right-width: 1px;
       margin-right: 0;
     }
@@ -131,8 +119,7 @@ RadioPillItem.defaultProps = {
   input: {},
   onChange: null,
   value: "",
-  defaultChecked: false,
-  full: false
+  defaultChecked: false
 }
 
 RadioPillItem.propTypes = {
@@ -144,8 +131,7 @@ RadioPillItem.propTypes = {
   input: PropTypes.any,
   onChange: PropTypes.func,
   defaultChecked: PropTypes.bool,
-  value: PropTypes.any,
-  full: PropTypes.bool
+  value: PropTypes.any
 }
 RadioPillItem.themeProps = themeProps
 RadioPillItem.createVariants = componentCreateFactory(RadioPillItem)

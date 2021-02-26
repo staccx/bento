@@ -3,121 +3,191 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useMemo,
   useState
 } from "react"
 import i18next from "i18next"
 import PropTypes from "prop-types"
 import loglevel from "loglevel"
-import { formatMoney } from "../formatting/currency"
+import { formatMoney } from "../formatting"
 import { normalizeLevel } from "../utils/loglevelUtils"
+import languages from "./lanuages"
 
 const I18nContext = createContext({})
 
 const defaultFormat = {
-  currency: value => {
-    return formatMoney(parseInt(value, 10))
+  currency: (value, locale) => {
+    return formatMoney(parseInt(value, 10), {
+      locale: locale || "nb-NO"
+    })
   }
 }
 
 export const i18nLogger = loglevel.getLogger("i18n")
 i18nLogger.setDefaultLevel(normalizeLevel(0))
 
-const Provider = ({ children, level, ...props }) => {
-  const [ready, setReady] = useState(false)
-  const [language, setLanguage] = useState(props.language)
+const Provider = ({
+  children,
+  level,
+  language,
+  texts = null,
+  formatFunctions = {},
+  backend,
+  backendOptions = {},
+  debug = false
+}) => {
+  const [ready, readySet] = useState(false)
 
-  const changeLanguage = async language => {
-    await i18next.changeLanguage(language)
-    setLanguage(language)
-  }
+  useEffect(() => {
+    changeLanguage(language)
+  }, [language])
 
   useEffect(() => {
     i18nLogger.setLevel(normalizeLevel(level))
     i18nLogger.info("i18n levels updated")
-  }, [])
+  }, [level])
 
-  const {
-    texts = null,
-    languages = ["en"],
-    formatFunctions = {},
-    backend,
-    backendOptions = {},
-    debug = false
-  } = props
-
-  const initialize = useCallback(async () => {
-    if (ready) {
-      i18nLogger.info("Alredy completed initializion. Aborting")
+  useEffect(() => {
+    if (i18next.isInitialized) {
+      i18nLogger.debug("Already completed initializion. Aborting")
       return
     }
     i18nLogger.info("Initializing i18n")
     if (backend) {
+      i18nLogger.info("Using backend", backend)
       i18next.use(backend)
     }
-    await i18next.init({
-      ...(texts && { resources: texts }),
-      lng: language,
-      fallbackLng: [language],
-      debug: level >= loglevel.levels.INFO,
-      backend: {
-        ...backendOptions
-      },
-      returnObjects: true,
-      saveMissing: true, // Must be set to true
-      missingKeyHandler: (lng, ns, key, fallbackValue) => {
-        i18nLogger.warn(
-          `Missing key: ${key} in ${lng}[${ns}]. Fallbackvalue: ${fallbackValue}`,
-          lng,
-          ns,
-          key,
-          fallbackValue
-        )
-        return null
-      },
-      parseMissingKeyHandler: key => {
-        i18nLogger.warn(`No translation found for "${key}"`)
-        return null
-      },
-      interpolation: {
-        format: function(value, format, lng) {
-          if (formatFunctions.hasOwnProperty(format)) {
-            return formatFunctions[format](value)
+    i18next
+      .init({
+        ...(texts && { resources: texts }),
+        lng: language,
+        fallbackLng: ["no"],
+        debug: level >= loglevel.levels.INFO,
+        backend: {
+          ...backendOptions
+        },
+        returnObjects: true,
+        saveMissing: true, // Must be set to true
+        missingKeyHandler: (lng, ns, key, fallbackValue) => {
+          i18nLogger.warn(
+            "missingKeyHandler",
+            `Missing key: ${key} in ${lng}[${ns}]. Fallbackvalue: ${fallbackValue}`,
+            lng,
+            ns,
+            `key: ${key}`,
+            fallbackValue
+          )
+          return null
+        },
+        parseMissingKeyHandler: key => {
+          i18nLogger.warn(
+            "parseMissingKeyHandler",
+            `No translation found for "${key}"`
+          )
+          return null
+        },
+        interpolation: {
+          format: function(value, format, lng) {
+            if (formatFunctions.hasOwnProperty(format)) {
+              return formatFunctions[format](value, lng)
+            }
+            if (defaultFormat.hasOwnProperty(format)) {
+              return defaultFormat[format](value, lng)
+            }
+            i18nLogger.warn("interpolation", `missing formatter: ${format}`)
+            return value
           }
-          if (defaultFormat.hasOwnProperty(format)) {
-            return defaultFormat[format](value)
-          }
-          return value
+        }
+      })
+      .then(() => {
+        readySet(true)
+        i18nLogger.info("i18n ready to use")
+      })
+  }, [])
+
+  const translate = useCallback(
+    (key, fallback = null, data = null) => {
+      if (!i18next.isInitialized) {
+        i18nLogger.debug("translate", `i18n not initialized`, key)
+        return fallback
+      }
+      i18nLogger.debug(`Translating ${key}`, data)
+      const value = i18next.t(key, data)
+      i18nLogger.debug(`Translated ${key} into ${value}`)
+
+      if (value && Array.isArray(value)) {
+        if (value.length === 1) {
+          // For most case this is it
+          return value[0]
         }
       }
-    })
 
-    i18nLogger.info("i18n ready to use")
-    setReady(true)
-  }, [
-    backend,
-    backendOptions,
-    debug,
-    formatFunctions,
-    language,
-    level,
-    texts,
-    ready
-  ])
+      return value || fallback
+    },
+    [i18next.isInitialized]
+  )
 
-  useEffect(() => {
-    initialize()
-  }, [initialize])
+  const transform = useCallback(
+    (value, fallback) => {
+      if (!i18next.isInitialized) {
+        i18nLogger.debug("transform", "i18n not initialized")
+        return fallback
+      }
+      if (!value) {
+        i18nLogger.warn(`Cannot transform null or undefined`)
+        return fallback ?? null
+      }
+      if (!i18next?.language) {
+        i18nLogger.warn(`Language not yet set`)
+        return fallback ?? null
+      }
+      i18nLogger.debug(`Transforming in ${i18next.language}`, value)
+      return (
+        value[i18next.language] ??
+        value[i18next.language.toLowerCase()] ??
+        value[i18next.language.toUpperCase()] ??
+        fallback ??
+        null
+      )
+    },
+    [i18next.isInitialized]
+  )
+
+  const changeLanguage = useCallback(
+    lang => {
+      if (i18next.isInitialized) {
+        if (lang !== i18next.language) {
+          readySet(false)
+          i18next
+            .changeLanguage(lang)
+            .then(() => {
+              readySet(true)
+              i18nLogger.debug("Language changed", lang)
+            })
+            .catch(e => {
+              i18nLogger.debug("Language change rejected:", e.message)
+            })
+        }
+      }
+
+      return () => {
+        i18nLogger.debug("Not ready")
+      }
+    },
+    [i18next.isInitialized]
+  )
 
   return (
     <I18nContext.Provider
       value={{
-        texts,
-        i18n: i18next,
         ready,
-        languages,
-        language,
-        changeLanguage
+        backend,
+        i18n: i18next,
+        language: i18next.language,
+        languages: i18next.languages,
+        changeLanguage,
+        translate,
+        transform,
+        debug
       }}
     >
       {children}
@@ -144,65 +214,10 @@ Provider.propTypes = {
 }
 
 Provider.defaultProps = {
-  level: loglevel.levels.SILENT
+  level: loglevel.levels.SILENT,
+  language: languages.Norwegian
 }
 
-export const useI18n = () => {
-  const value = useContext(I18nContext)
-
-  const { i18n, ready } = value
-
-  const translate = (key, data, fallback = null) => {
-    i18nLogger.debug(`Translating ${key}`, data)
-    const value = i18n.t(key, data)
-    i18nLogger.debug(`Translated ${key} into ${value}`)
-    return value || fallback
-  }
-
-  const transform = value => {
-    if (!value) {
-      i18nLogger.warn(`Cannot transform null or undefined`)
-      return null
-    }
-    if (!value.hasOwnProperty(i18n.language)) {
-      i18nLogger.warn(`Could not find key in language`, value, i18n.language)
-      return null
-    }
-    i18nLogger.debug(`Transforming in ${i18n.language}`, value)
-    return value[i18n.language]
-  }
-
-  return useMemo(() => {
-    return {
-      translate,
-      transform,
-      languages: i18n.languages,
-      ...value
-    }
-  }, [value, ready, i18n])
-}
-
-export const I18nConsumer = ({ children }) => {
-  const props = useI18n()
-
-  if (!children) {
-    i18nLogger.debug("I18nConsumer has no children")
-    return null
-  }
-
-  if (!props.ready) {
-    i18nLogger.debug("i18nConsumer is not ready")
-    return null
-  }
-  i18nLogger.debug(`Returning ${children} with`)
-  return children(props)
-}
-
-// TODO: Split into seperate files
-export const withI18n = Component => props => (
-  <I18nConsumer>
-    {i18nProps => <Component {...props} {...i18nProps} />}
-  </I18nConsumer>
-)
+export const useI18n = () => useContext(I18nContext)
 
 export default Provider

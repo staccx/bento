@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { BounceIn } from "../../../animations"
@@ -27,72 +27,61 @@ const BtnComponent = ({ ...props }) => (
     {...props}
   />
 )
-class ExpandListItem extends Component {
-  constructor(props) {
-    super(props)
-    this.handleChange = this.handleChange.bind(this)
-    this.state = {
-      isExpanded: this.props.expanded
+
+/**
+ * ExpandListItem is a component that can be used with the List component.
+ * Its behaviour is the same as with the Expand component, and allows you to list
+ * Expands.
+ */
+const ExpandListItem = ({
+  title,
+  children,
+  className,
+  flush,
+  onClick,
+  variant,
+  expanded,
+  ...otherProps
+}) => {
+  const [isExpanded, isExpandedSet] = useState(expanded)
+
+  const handleChange = event => {
+    isExpandedSet(!isExpanded)
+    if (onClick) {
+      onClick(event)
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.expanded !== undefined) {
-      this.setState({ isExpanded: nextProps.expanded })
-    }
-  }
-
-  handleChange(event) {
-    this.setState({
-      isExpanded: !this.state.isExpanded
-    })
-    if (this.props.onClick) {
-      this.props.onClick(event)
-    }
-  }
-
-  render() {
-    const {
-      title,
-      children,
-      className,
-      flush,
-      onClick,
-      variant,
-      ...otherProps
-    } = this.props
-    const { isExpanded } = this.state
-    return (
-      <ExpandItem
-        className={className}
-        variant={variant}
-        isExpanded={isExpanded}
+  return (
+    <ExpandItem
+      className={className}
+      variant={variant}
+      isExpanded={isExpanded}
+      {...otherProps}
+    >
+      <BtnComponent
         {...otherProps}
-      >
-        <BtnComponent
-          {...otherProps}
-          title={title}
-          isExpanded={isExpanded}
-          onClick={this.handleChange}
-          aria-expanded={isExpanded}
-          aria-controls={title}
-          id={title + "2"}
+        title={title}
+        isExpanded={isExpanded}
+        onClick={handleChange}
+        aria-expanded={isExpanded}
+        aria-controls={title}
+        id={title + "2"}
+        variant={variant}
+      />
+      {isExpanded && (
+        <ExpandedItem
+          flush={flush}
+          id={title}
+          aria-labelledby={title + "2"}
           variant={variant}
-        />
-        {isExpanded && (
-          <ExpandedItem
-            flush={flush}
-            id={title}
-            aria-labelledby={title + "2"}
-            variant={variant}
-            isExpanded={isExpanded}
-          >
-            {children}
-          </ExpandedItem>
-        )}
-      </ExpandItem>
-    )
-  }
+          isExpanded={isExpanded}
+        >
+          {children}
+        </ExpandedItem>
+      )}
+    </ExpandItem>
+  )
 }
 
 const ExpandItem = styled.li`

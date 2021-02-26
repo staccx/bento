@@ -1,89 +1,57 @@
-/**
- * @class Input
- */
-
-import React, { useEffect, useRef, useState } from "react"
+import React, { forwardRef, useRef, useState } from "react"
 import PropTypes from "prop-types"
-import styled, { css } from "styled-components"
-import Cleave from "cleave.js"
-import Label from "../Label/Label"
-import {
-  applyVariants,
-  borderRadius,
-  color,
-  font,
-  fontFamily,
-  spacing,
-  targetSize,
-  commonPropTypes
-} from "../../../theming"
-import ThemeComponent from "../../Theme/ThemeComponent/ThemeComponent"
-import QuestionMark from "../../Icons/QuestionMark/QuestionMark"
-import { FadeIn } from "../../../animations"
-import themeProps from "./Input.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
+import {
+  HelpIcon,
+  HelpText,
+  InputLabel,
+  InputWrapper,
+  NoWrapSpan,
+  StyledInput
+} from "./Input.styles"
+import themeProps from "./Input.themeProps"
+import { useInputMask } from "../../../hooks"
+import { useCombinedRefs } from "../../../hooks/useCombinedRefs/useCombinedRefs"
+import { useLocale } from "../../../locale"
 
-const HelpBox = ({ onClick }) => (
-  <HelpButton onClick={onClick} type="button">
-    <QuestionMark />
-  </HelpButton>
-)
-
-const Input = React.forwardRef(
+const Input = forwardRef(
   (
     {
-      options,
-      onChange,
-      autoFocus,
       className,
-      disabled,
-      id,
-      name,
-      onBlur,
-      onFocus,
-      onKeyDown,
-      placeholder,
-      type,
-      value,
-      label,
-      mask,
       variant,
-      autoComplete,
+      id,
+      label,
       helpText,
+      placeholder,
       defaultValue,
-      ...otherProps
+      onChange,
+      mode,
+      value,
+      level,
+      locale,
+      type,
+      ...props
     },
     ref
   ) => {
-    const [showHelp, setShowHelp] = useState(false)
-    const cleave = useRef(null)
-    const inputRef = useRef(ref)
+    const [showHelp, showHelpSet] = useState(false)
 
-    const setRawValue = rawValue => {
-      if (!cleave.current) {
-        console.warn("setRawValue not supported for non cleave inputs")
-        return
-      }
+    const innerRef = useRef(null)
+    const inputRef = useCombinedRefs(ref, innerRef)
 
-      cleave.current.setRawValue(rawValue)
-    }
+    const { locale: contextLocale } = useLocale()
 
-    useEffect(() => {
-      if (options && inputRef.current) {
-        cleave.current = new Cleave(inputRef.current, {
-          ...options,
-          onValueChanged: onChange
-        })
-      }
-      if (ref) {
-        ref.current = inputRef.current
-      }
-      if (defaultValue) {
-        console.log("setting default value")
-        setRawValue(defaultValue)
-      }
-      // eslint-disable-next-line
-    }, [])
+    const inputProps = useInputMask({
+      ref: inputRef,
+      locale: locale ?? contextLocale,
+      type,
+      mode,
+      debugLevel: level,
+      defaultValue,
+      controlledValue: value,
+      onChange,
+      ...props
+    })
 
     return (
       <InputWrapper className={className} variant={variant}>
@@ -93,203 +61,101 @@ const Input = React.forwardRef(
             {helpText && (
               <NoWrapSpan>
                 &nbsp;
-                <HelpIcon onClick={() => setShowHelp(!showHelp)} />
+                <HelpIcon onClick={() => showHelpSet(!showHelp)} />
               </NoWrapSpan>
             )}
           </InputLabel>
         )}
         {helpText && <HelpText isVisible={showHelp}>{helpText}</HelpText>}
 
-        <InputNoMask
-          autoFocus={autoFocus}
-          value={value}
-          disabled={disabled}
+        <StyledInput
           id={id}
-          name={name}
-          onFocus={onFocus}
-          onBlur={onBlur}
           onChange={onChange}
-          onKeyDown={onKeyDown}
           placeholder={placeholder}
           variant={variant}
-          type={type}
           ref={inputRef}
           defaultValue={defaultValue}
-          autoComplete={autoComplete}
-          {...otherProps}
+          type={type}
+          {...inputProps}
         />
       </InputWrapper>
     )
   }
 )
 
-const IconComponent = ({ ...props }) => (
-  <ThemeComponent
-    tagName={themeProps.iconComponent.name}
-    fallback={HelpBox}
-    {...props}
-  />
-)
-
-const HelpButton = styled.button`
-  -webkit-appearance: none;
-  border: initial;
-  padding: 0;
-  cursor: pointer;
-  line-height: 0;
-  ${applyVariants(themeProps.helpButton)};
-`
-
-const HelpIcon = styled(IconComponent)`
-  ${applyVariants(themeProps.icon.name)};
-`
-
-const NoWrapSpan = styled.span`
-  white-space: nowrap;
-`
-
-const HelpText = styled.div`
-  display: ${p => (p.isVisible ? "block" : "none")};
-  opacity: 0;
-  animation: ${FadeIn} 0.4s ease-out 1 forwards;
-  ${applyVariants(themeProps.helpText)};
-`
-
-const InputLabel = styled(Label)`
-  ${applyVariants(themeProps.label)};
-`
-
-export const InputWrapper = styled.div`
-  display: block;
-  margin-bottom: 0;
-  position: relative;
-  ${applyVariants(themeProps.wrapper)};
-`
-
-export const inputCss = css`
-  display: block;
-  width: 100%;
-  min-height: ${targetSize.normal};
-  margin: 0 auto;
-  border: 1px solid ${color.line};
-  border-radius: ${borderRadius};
-  padding-left: ${spacing.small};
-  padding-right: ${spacing.small};
-  font-family: ${fontFamily.body};
-  font-size: ${font.input};
-  transition: border-color 0.2s ease-out;
-  -webkit-appearance: none;
-  appearance: none;
-  -moz-appearance: textfield;
-
-  &::-webkit-input-placeholder {
-    /* WebKit browsers */
-    color: ${color.line};
-  }
-  &:-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    color: ${color.line};
-  }
-  &::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: ${color.line};
-  }
-  &:-ms-input-placeholder {
-    /* Internet Explorer 10+ */
-    color: ${color.line};
-  }
-  &:-webkit-autofill {
-    background-color: ${color.bg};
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    outline: none;
-    background-color: ${color("subtleHover")};
-  }
-
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  ${p => p.additionalCSS || null};
-  ${applyVariants(themeProps.input)};
-`
-
-const InputNoMask = styled.input`
-  ${inputCss};
-`
-
-export const InputPropTypes = {
-  /**
-   * Set this to set focus to field on render
-   */
-  autoFocus: PropTypes.bool,
-  callback: PropTypes.func,
-  /**
-   * Disabled prop deactiovates functionality
-   * @export
-   */
-  disabled: PropTypes.bool,
-  hidden: PropTypes.bool,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  placeholder: PropTypes.string,
-  style: PropTypes.object,
-  type: PropTypes.oneOf([
-    "text",
-    "email",
-    "number",
-    "tel",
-    "url",
-    "search",
-    "date",
-    "file",
-    "password"
-  ]),
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  label: PropTypes.string,
+Input.propTypes = {
   className: PropTypes.string,
-  helpText: commonPropTypes.children,
-  mask: PropTypes.oneOfType([
-    PropTypes.array,
+  variant: PropTypes.oneOfType([
+    PropTypes.string,
     PropTypes.func,
-    PropTypes.bool,
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.object
+  ]),
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  label: PropTypes.string,
+  /**
+   * Define this is you want ? next to the label
+   */
+  helpText: PropTypes.string,
+  type: PropTypes.string,
+  placeholder: PropTypes.string,
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /**
+   * Callback when content changes. Contains {value, rawValue} and other meta from masks
+   */
+  onChange: PropTypes.func,
+  mode: PropTypes.oneOf([
+    "account",
+    "creditcard",
+    "currency",
+    "nationalid",
+    "phone",
+    "postal",
+    "postalcode",
+    "custom"
+  ]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /**
+   * Logger level. Higher is more detail
+   */
+  level: PropTypes.oneOf([0, 1, 2, 3, 4, 5]),
+  locale: PropTypes.oneOfType([
+    PropTypes.string,
     PropTypes.shape({
-      mask: PropTypes.oneOfType([PropTypes.array, PropTypes.func]),
-      pipe: PropTypes.func
+      alpha2: PropTypes.string
     })
-  ])
+  ]),
+  /**
+   * Use with custom mode. To block out text
+   */
+  blocks: PropTypes.arrayOf(PropTypes.number),
+  /**
+   * Max length of inputted string (raw value)
+   */
+  maxLength: PropTypes.number,
+  pattern: PropTypes.instanceOf(RegExp)
 }
 
-Input.propTypes = InputPropTypes
-
-export const InputDefaultProps = {
-  autoFocus: null,
-  callback: null,
-  disabled: false,
-  hidden: false,
-  name: null,
-  onBlur: null,
-  onChange: null,
-  onKeyDown: null,
-  placeholder: null,
-  style: null,
-  type: "text",
-  value: undefined,
-  label: "",
-  mask: null,
-  helpText: ""
-}
+Input.displayName = "Input"
 Input.themeProps = themeProps
 Input.createVariants = componentCreateFactory(Input)
 
-Input.defaultProps = InputDefaultProps
-/** @component */
+Input.defaultProps = {
+  type: "text"
+}
+
+Input.inputModes = {
+  email: {
+    inputMode: "email",
+    type: "text",
+    autoComplete: "email"
+  },
+  numeric: {
+    inputMode: "numeric",
+    pattern: /[0-9]*/,
+    type: "text"
+  }
+}
+
 export default Input

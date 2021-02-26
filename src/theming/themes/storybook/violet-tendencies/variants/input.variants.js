@@ -1,6 +1,6 @@
 import { css } from "styled-components"
-import Input from "../../../../../components/Forms/Input/Input"
-import createVariants from "../../../../utils/createVariants"
+import { Input } from "../../../../../components"
+import createVariants from "../../../../../theming/utils/createVariants"
 import { VARIANT_DEFAULT, color } from "../../../../index"
 
 export const inputVariants = createVariants(

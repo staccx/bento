@@ -12,6 +12,9 @@ import {
 import themeProps from "./SplitListItem.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * SplitList takes an array of objects and renders them in a list
+ */
 const SplitListItem = ({ children, className, ...restProps }) => {
   if (React.Children.count(children) > 2) {
     console.warn(

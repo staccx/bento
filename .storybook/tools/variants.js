@@ -1,22 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Badge, Button, IconButton, TooltipLinkList, WithTooltip } from "@storybook/components";
-import addons, { types } from "@storybook/addons";
+import { IconButton, TooltipLinkList, WithTooltip } from "@storybook/components";
 import styled from "styled-components";
-import { useAddonState, useChannel, useParameter, useStorybookState } from "@storybook/api";
-import { ThemeIcon } from "../addons/withThemes";
+import { useAddonState, useGlobals, useParameter, useStorybookState } from "@storybook/api";
+import themes from "../themes";
 
 export const VARIANTS_TOOL_NAME = "bento-variants";
-
-
 
 export const Variants = ({ api }) => {
   const [expanded, setExpanded] = useState(false);
   const [variants, setVariants] = useState([]);
-  const [theme] = useAddonState("theme-switcher", null);
-  const [currentVariant, setCurrentVariant] = useState(null);
-  const component = useParameter("component", "something");
-  const { storyId, storiesHash } = useStorybookState();
+  const [{theme: activeTheme}] = useGlobals()
 
+  const theme = React.useMemo(() => {
+    if(activeTheme) {
+      return themes[activeTheme.id]
+    }
+
+    return null
+  }, [activeTheme])
+  const component = useParameter("title", null);
+  const { storyId, ...rest } = useStorybookState();
+
+  console.log(component, storyId, rest);
   useEffect(() => {
     if (component && theme) {
       if (theme.hasOwnProperty(component)) {
@@ -24,15 +29,12 @@ export const Variants = ({ api }) => {
           id: "none",
           title: "None",
           onClick: () => {
-            setCurrentVariant(null)
-            api.getChannel().emit("variant_changed", null)
           }
         }, ...Object.keys(theme[component]).map(variant => ({
           id: variant,
           title: variant,
           onClick: () => {
-            setCurrentVariant(variant);
-            api.getChannel().emit("variant_changed", variant)
+            api.getChannel().emit("variant_changed", variant);
           }
         }))]);
       } else {
@@ -40,14 +42,15 @@ export const Variants = ({ api }) => {
       }
     }
     return () => {
-      setVariants([])
-      setCurrentVariant(null)
-      api.getChannel().emit("variant_changed", null)
-    }
+      setVariants([]);
+      api.getChannel().emit("variant_changed", null);
+    };
   }, [component, theme, storyId]);
 
-  if(variants.length === 0) {
-    return <IconButton key="variants">{"No variants"} </IconButton>
+  if (variants.length === 0) {
+    return  <div>
+      for the currently selected story, the parameter for "parameter-key" is:
+    </div>
   }
   return (
     <WithTooltip
@@ -59,7 +62,7 @@ export const Variants = ({ api }) => {
       closeOnClick
     >
       <FlexIt>
-        <IconButton key="variants">{currentVariant || "ChooseVariant"} </IconButton>
+        <IconButton key="variants">{"ChooseVariant"} </IconButton>
       </FlexIt>
     </WithTooltip>
   );

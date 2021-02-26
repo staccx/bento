@@ -2,25 +2,17 @@
 
 exports[`PostalCodeInput Snapshots No props 1`] = `
 <div
-  className="sc-fznyAO ftqjaM"
+  className="sc-crrsfI ljqDII"
 >
   <div
-    className="sc-AxheI jmeqRy sc-fznZeY kIdrbW"
+    className="sc-gKsewC hZEsHD sc-bqyKva hkiBwy"
   >
-    
-    
     <input
-      autoFocus={null}
-      className="sc-Axmtr bDDSAq"
-      disabled={false}
-      hidden={false}
-      name={null}
-      onBlur={null}
+      className="sc-iBPRYJ kBha-dQ"
+      maxLength={4}
       onChange={[Function]}
-      onKeyDown={null}
+      onKeyUp={[Function]}
       pattern="[0-9]{4}"
-      placeholder={null}
-      style={null}
       type="text"
     />
   </div>

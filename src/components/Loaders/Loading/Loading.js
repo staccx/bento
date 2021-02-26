@@ -13,6 +13,9 @@ const DefaultLoading = ({ className, variant, ...rest }) => (
 
 export const COMPONENT_LOADING = "COMPONENT_LOADING"
 
+/**
+ * Component to illustrate that the application is loading. Often used while loading api data and other async operations
+ */
 const Loading = ({ className, idleTime, ...rest }) => {
   const isReady = useTimer(idleTime)
 

@@ -10,6 +10,10 @@ import {
 import themeProps from "./Headling.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 
+/**
+ * Heading is Bentos header tag, it take a prop called Level with a range from 1-6.
+ * This level tag is what sets the size of the heading.
+ */
 const Heading = ({ level, children, className, ...restProps }) => {
   switch (level) {
     case "h1":

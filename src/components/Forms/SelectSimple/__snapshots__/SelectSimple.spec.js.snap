@@ -2,16 +2,15 @@
 
 exports[`SelectSimple Snapshots Label 1`] = `
 <div
-  className="sc-AxirZ bXXfIz"
+  className="sc-gsTCUz dySwGt"
 >
   <label
-    className="sc-AxjAm hjwNwx"
+    className="sc-bdfBwQ cuiLU"
   >
     Sivilstatus
   </label>
   <select
-    className="sc-AxhCb kLGhTM"
-    defaultValue=""
+    className="sc-hKgILt hbxHwc"
   >
     <option
       value={1}
@@ -45,7 +44,7 @@ exports[`SelectSimple Snapshots Label 1`] = `
     </option>
   </select>
   <svg
-    className="sc-AxiKw gYAEwv"
+    className="sc-dlfnbm cNMnUW"
     height="7"
     viewBox="0 0 33 20"
     width="12"
@@ -59,11 +58,10 @@ exports[`SelectSimple Snapshots Label 1`] = `
 
 exports[`SelectSimple Snapshots No props 1`] = `
 <div
-  className="sc-AxirZ bXXfIz"
+  className="sc-gsTCUz dySwGt"
 >
   <select
-    className="sc-AxhCb kLGhTM"
-    defaultValue=""
+    className="sc-hKgILt hbxHwc"
   >
     <option
       value={1}
@@ -97,7 +95,7 @@ exports[`SelectSimple Snapshots No props 1`] = `
     </option>
   </select>
   <svg
-    className="sc-AxiKw gYAEwv"
+    className="sc-dlfnbm cNMnUW"
     height="7"
     viewBox="0 0 33 20"
     width="12"
@@ -111,23 +109,17 @@ exports[`SelectSimple Snapshots No props 1`] = `
 
 exports[`SelectSimple Snapshots Placeholder 1`] = `
 <div
-  className="sc-AxirZ bXXfIz"
+  className="sc-gsTCUz dySwGt"
 >
   <label
-    className="sc-AxjAm hjwNwx"
+    className="sc-bdfBwQ cuiLU"
   >
     Sivilstatus
   </label>
   <select
-    className="sc-AxhCb kLGhTM"
-    defaultValue="Velg..."
+    className="sc-hKgILt hbxHwc"
+    placeholder="Velg..."
   >
-    <option
-      disabled={true}
-      value="Velg..."
-    >
-      Velg...
-    </option>
     <option
       value={1}
     >
@@ -160,7 +152,7 @@ exports[`SelectSimple Snapshots Placeholder 1`] = `
     </option>
   </select>
   <svg
-    className="sc-AxiKw gYAEwv"
+    className="sc-dlfnbm cNMnUW"
     height="7"
     viewBox="0 0 33 20"
     width="12"
@@ -174,25 +166,19 @@ exports[`SelectSimple Snapshots Placeholder 1`] = `
 
 exports[`SelectSimple Snapshots id 1`] = `
 <div
-  className="sc-AxirZ bXXfIz"
+  className="sc-gsTCUz dySwGt"
 >
   <label
-    className="sc-AxjAm hjwNwx"
+    className="sc-bdfBwQ cuiLU"
     htmlFor="simpleSelect"
   >
     Sivilstatus
   </label>
   <select
-    className="sc-AxhCb kLGhTM"
-    defaultValue="Velg..."
+    className="sc-hKgILt hbxHwc"
     id="simpleSelect"
+    placeholder="Velg..."
   >
-    <option
-      disabled={true}
-      value="Velg..."
-    >
-      Velg...
-    </option>
     <option
       value={1}
     >
@@ -225,7 +211,7 @@ exports[`SelectSimple Snapshots id 1`] = `
     </option>
   </select>
   <svg
-    className="sc-AxiKw gYAEwv"
+    className="sc-dlfnbm cNMnUW"
     height="7"
     viewBox="0 0 33 20"
     width="12"
@@ -239,28 +225,21 @@ exports[`SelectSimple Snapshots id 1`] = `
 
 exports[`SelectSimple Snapshots no Children 1`] = `
 <div
-  className="sc-AxirZ bXXfIz"
+  className="sc-gsTCUz dySwGt"
 >
   <label
-    className="sc-AxjAm hjwNwx"
+    className="sc-bdfBwQ cuiLU"
     htmlFor="simpleSelect"
   >
     Sivilstatus
   </label>
   <select
-    className="sc-AxhCb kLGhTM"
-    defaultValue="Velg..."
+    className="sc-hKgILt hbxHwc"
     id="simpleSelect"
-  >
-    <option
-      disabled={true}
-      value="Velg..."
-    >
-      Velg...
-    </option>
-  </select>
+    placeholder="Velg..."
+  />
   <svg
-    className="sc-AxiKw gYAEwv"
+    className="sc-dlfnbm cNMnUW"
     height="7"
     viewBox="0 0 33 20"
     width="12"
