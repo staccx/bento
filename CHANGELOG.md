@@ -1,3 +1,438 @@
+# [13.0.0](https://github.com/staccx/bento/compare/v12.2.2...v13.0.0) (2021-03-01)
+
+
+
+## [12.2.2](https://github.com/staccx/bento/compare/v12.2.1...v12.2.2) (2021-03-01)
+
+
+### Bug Fixes
+
+* **bento:** change target to default ([0ce2b7e](https://github.com/staccx/bento/commit/0ce2b7e))
+
+
+
+## [12.2.1](https://github.com/staccx/bento/compare/v14.0.0...v12.2.1) (2021-02-26)
+
+
+
+# [14.0.0](https://github.com/staccx/bento/compare/v12.2.0...v14.0.0) (2021-02-26)
+
+
+
+# [12.2.0](https://github.com/staccx/bento/compare/v13.0.1-beta.0...v12.2.0) (2021-02-26)
+
+
+### Bug Fixes
+
+* **input:** removed inputModes from forwardRef ([77f5923](https://github.com/staccx/bento/commit/77f5923))
+
+
+### Features
+
+* **input:** add inputmodes as dictionary ([83a5b68](https://github.com/staccx/bento/commit/83a5b68))
+
+
+
+## [13.0.1-beta.0](https://github.com/staccx/bento/compare/v13.0.1-alpha.65...v13.0.1-beta.0) (2021-02-24)
+
+
+
+## [13.0.1-alpha.65](https://github.com/staccx/bento/compare/v13.0.1-alpha.64...v13.0.1-alpha.65) (2021-02-24)
+
+
+
+## [13.0.1-alpha.64](https://github.com/staccx/bento/compare/v13.0.1-alpha.63...v13.0.1-alpha.64) (2021-02-24)
+
+
+### Bug Fixes
+
+* **bento:** fix ts build ([605b659](https://github.com/staccx/bento/commit/605b659))
+* **bento:** removed engines node check ([b30368e](https://github.com/staccx/bento/commit/b30368e))
+* **components:** fix default locale ([6b3ff86](https://github.com/staccx/bento/commit/6b3ff86))
+* **i18n:** remove comments, implicit naming, rename TranslateDebug ([9f48ea8](https://github.com/staccx/bento/commit/9f48ea8))
+* **stories:** added stories.js to formatdate ([e6b42ba](https://github.com/staccx/bento/commit/e6b42ba))
+* **stories:** added stories.js to formatdatedistance ([959ecf0](https://github.com/staccx/bento/commit/959ecf0))
+* **stories:** added stories.js to formatName ([42ff831](https://github.com/staccx/bento/commit/42ff831))
+* **stories:** added stories.js to maskFormat ([11c403a](https://github.com/staccx/bento/commit/11c403a))
+* **stories:** added stories.js to number formatting ([bb87de7](https://github.com/staccx/bento/commit/bb87de7))
+* **stories:** added stories.js to whitespace and truncate ([7a0c733](https://github.com/staccx/bento/commit/7a0c733))
+
+
+### Features
+
+* **bento:** adde error when using wrong node version ([45892a2](https://github.com/staccx/bento/commit/45892a2))
+* **bento:** main file is now index.ts ([3c7a063](https://github.com/staccx/bento/commit/3c7a063))
+
+
+
+## [13.0.1-alpha.63](https://github.com/staccx/bento/compare/v13.0.1-alpha.62...v13.0.1-alpha.63) (2021-02-16)
+
+
+### Bug Fixes
+
+* **hooks:** fix issue with non-active input ([39c7e5d](https://github.com/staccx/bento/commit/39c7e5d))
+
+
+
+## [13.0.1-alpha.62](https://github.com/staccx/bento/compare/v13.0.1-alpha.61...v13.0.1-alpha.62) (2021-02-16)
+
+
+### Bug Fixes
+
+* **hooks:** compare with raw value ([d19c429](https://github.com/staccx/bento/commit/d19c429))
+
+
+
+## [13.0.1-alpha.61](https://github.com/staccx/bento/compare/v13.0.1-alpha.60...v13.0.1-alpha.61) (2021-02-16)
+
+
+### Bug Fixes
+
+* **hooks:** allow delayed default values ([d03d1e6](https://github.com/staccx/bento/commit/d03d1e6))
+
+
+
+## [13.0.1-alpha.60](https://github.com/staccx/bento/compare/v13.0.1-alpha.59...v13.0.1-alpha.60) (2021-02-16)
+
+
+### Bug Fixes
+
+* **hooks:** allow for controlled values ([83a1d68](https://github.com/staccx/bento/commit/83a1d68))
+
+
+
+## [13.0.1-alpha.59](https://github.com/staccx/bento/compare/v13.0.1-alpha.58...v13.0.1-alpha.59) (2021-02-16)
+
+
+
+## [13.0.1-alpha.58](https://github.com/staccx/bento/compare/v13.0.1-alpha.57...v13.0.1-alpha.58) (2021-02-16)
+
+
+
+## [13.0.1-alpha.57](https://github.com/staccx/bento/compare/v13.0.1-alpha.56...v13.0.1-alpha.57) (2021-02-16)
+
+
+
+## [13.0.1-alpha.56](https://github.com/staccx/bento/compare/v13.0.1-alpha.55...v13.0.1-alpha.56) (2021-02-16)
+
+
+
+## [13.0.1-alpha.55](https://github.com/staccx/bento/compare/v13.0.1-alpha.54...v13.0.1-alpha.55) (2021-02-16)
+
+
+### Features
+
+* **hooks:** add hook useInputMask ([ffa7a91](https://github.com/staccx/bento/commit/ffa7a91))
+
+
+
+## [13.0.1-alpha.54](https://github.com/staccx/bento/compare/v13.0.1-alpha.53...v13.0.1-alpha.54) (2021-02-16)
+
+
+
+## [13.0.1-alpha.53](https://github.com/staccx/bento/compare/v13.0.1-alpha.52...v13.0.1-alpha.53) (2021-02-16)
+
+
+### Features
+
+* fuck it. typescript ([d68e3f7](https://github.com/staccx/bento/commit/d68e3f7))
+
+
+
+## [13.0.1-alpha.52](https://github.com/staccx/bento/compare/v13.0.1-alpha.51...v13.0.1-alpha.52) (2021-01-26)
+
+
+### Bug Fixes
+
+* **component:** clean up timeout ([4570ebd](https://github.com/staccx/bento/commit/4570ebd))
+
+
+
+## [13.0.1-alpha.51](https://github.com/staccx/bento/compare/v13.0.1-alpha.50...v13.0.1-alpha.51) (2021-01-25)
+
+
+### Bug Fixes
+
+* **components:** combining refs ([8bdef78](https://github.com/staccx/bento/commit/8bdef78))
+
+
+### Features
+
+* **hooks:** add hook for combining refs ([288d1f7](https://github.com/staccx/bento/commit/288d1f7))
+
+
+
+## [13.0.1-alpha.50](https://github.com/staccx/bento/compare/v13.0.1-alpha.49...v13.0.1-alpha.50) (2021-01-25)
+
+
+### Bug Fixes
+
+* **components:** fix issue with setselectionrange and file ([7c97d10](https://github.com/staccx/bento/commit/7c97d10))
+
+
+
+## [13.0.1-alpha.49](https://github.com/staccx/bento/compare/v13.0.1-alpha.48...v13.0.1-alpha.49) (2021-01-25)
+
+
+### Bug Fixes
+
+* **components:** fix mask input caret ([dc614bb](https://github.com/staccx/bento/commit/dc614bb))
+
+
+
+## [13.0.1-alpha.48](https://github.com/staccx/bento/compare/v13.0.1-alpha.47...v13.0.1-alpha.48) (2021-01-25)
+
+
+### Bug Fixes
+
+* **utils:** allow string numeric values ([8043b2b](https://github.com/staccx/bento/commit/8043b2b))
+
+
+### Features
+
+* **components:** add caret positioning for state changes on controlled values ([d3b28f1](https://github.com/staccx/bento/commit/d3b28f1))
+
+
+
+## [13.0.1-alpha.47](https://github.com/staccx/bento/compare/v13.0.1-alpha.46...v13.0.1-alpha.47) (2021-01-25)
+
+
+
+## [13.0.1-alpha.46](https://github.com/staccx/bento/compare/v13.0.1-alpha.45...v13.0.1-alpha.46) (2021-01-25)
+
+
+### Bug Fixes
+
+* **componenets:** minor improvements to default values ([2116e60](https://github.com/staccx/bento/commit/2116e60))
+
+
+
+## [13.0.1-alpha.45](https://github.com/staccx/bento/compare/v13.0.1-alpha.44...v13.0.1-alpha.45) (2021-01-12)
+
+
+### Bug Fixes
+
+* **components:** fix locale set to ref ([b6a16b9](https://github.com/staccx/bento/commit/b6a16b9))
+
+
+### Features
+
+* **i18n:** debug panel to see all used translations for key ([ffdb7a5](https://github.com/staccx/bento/commit/ffdb7a5))
+
+
+
+## [13.0.1-alpha.44](https://github.com/staccx/bento/compare/v13.0.1-alpha.43...v13.0.1-alpha.44) (2020-12-02)
+
+
+### Bug Fixes
+
+* **components:** default full width ([210a2b5](https://github.com/staccx/bento/commit/210a2b5))
+* **components:** fixed radiopill item ([a05243b](https://github.com/staccx/bento/commit/a05243b))
+
+
+
+## [13.0.1-alpha.43](https://github.com/staccx/bento/compare/v13.0.1-alpha.42...v13.0.1-alpha.43) (2020-11-30)
+
+
+### Bug Fixes
+
+* **i18n:** fix Translate not rerendering on lang change ([5f5391e](https://github.com/staccx/bento/commit/5f5391e))
+
+
+
+## [13.0.1-alpha.42](https://github.com/staccx/bento/compare/v13.0.1-alpha.41...v13.0.1-alpha.42) (2020-11-26)
+
+
+### Features
+
+* **i18n:** allow for 0 based index value if 1 value ([651637b](https://github.com/staccx/bento/commit/651637b))
+
+
+
+## [13.0.1-alpha.41](https://github.com/staccx/bento/compare/v13.0.1-alpha.40...v13.0.1-alpha.41) (2020-11-23)
+
+
+### Bug Fixes
+
+* **components:** input not allowing empty string ([83bcb69](https://github.com/staccx/bento/commit/83bcb69))
+
+
+
+## [13.0.1-alpha.40](https://github.com/staccx/bento/compare/v13.0.1-alpha.39...v13.0.1-alpha.40) (2020-11-20)
+
+
+### Bug Fixes
+
+* **components:** allow controlled text mode ([3c78912](https://github.com/staccx/bento/commit/3c78912))
+
+
+
+## [13.0.1-alpha.39](https://github.com/staccx/bento/compare/v13.0.1-alpha.38...v13.0.1-alpha.39) (2020-11-19)
+
+
+### Bug Fixes
+
+* **components:** alloow controlled mode ([1597f75](https://github.com/staccx/bento/commit/1597f75))
+
+
+
+## [13.0.1-alpha.38](https://github.com/staccx/bento/compare/v13.0.1-alpha.37...v13.0.1-alpha.38) (2020-11-18)
+
+
+### Features
+
+* **i18n:** expose changelanguage to context ([6267b7f](https://github.com/staccx/bento/commit/6267b7f))
+
+
+
+## [13.0.1-alpha.37](https://github.com/staccx/bento/compare/v13.0.1-alpha.36...v13.0.1-alpha.37) (2020-11-18)
+
+
+### Bug Fixes
+
+* **i18n:** fix language not read by i18n ([26001b9](https://github.com/staccx/bento/commit/26001b9))
+* **i18n:** test should wait for update ([0a3e5a8](https://github.com/staccx/bento/commit/0a3e5a8))
+
+
+
+## [13.0.1-alpha.36](https://github.com/staccx/bento/compare/v13.0.1-alpha.35...v13.0.1-alpha.36) (2020-11-17)
+
+
+
+## [13.0.1-alpha.35](https://github.com/staccx/bento/compare/v13.0.1-alpha.34...v13.0.1-alpha.35) (2020-11-17)
+
+
+### Features
+
+* **hooks:** breregsearch use react-query ([fa9572b](https://github.com/staccx/bento/commit/fa9572b))
+
+
+
+## [13.0.1-alpha.34](https://github.com/staccx/bento/compare/v13.0.1-alpha.33...v13.0.1-alpha.34) (2020-11-17)
+
+
+### Bug Fixes
+
+* **components:** fix issue with Input sending change before start ([eb6c3ff](https://github.com/staccx/bento/commit/eb6c3ff))
+
+
+
+## [13.0.1-alpha.33](https://github.com/staccx/bento/compare/v13.0.1-alpha.32...v13.0.1-alpha.33) (2020-11-04)
+
+
+### Bug Fixes
+
+* **i18n:** fix query string ([b2e4de6](https://github.com/staccx/bento/commit/b2e4de6))
+
+
+
+## [13.0.1-alpha.32](https://github.com/staccx/bento/compare/v13.0.1-alpha.31...v13.0.1-alpha.32) (2020-11-04)
+
+
+### Bug Fixes
+
+* **i18n:** fix query string ([ba7e827](https://github.com/staccx/bento/commit/ba7e827))
+
+
+
+## [13.0.1-alpha.31](https://github.com/staccx/bento/compare/v13.0.1-alpha.30...v13.0.1-alpha.31) (2020-11-04)
+
+
+
+## [13.0.1-alpha.30](https://github.com/staccx/bento/compare/v13.0.1-alpha.29...v13.0.1-alpha.30) (2020-11-04)
+
+
+### Bug Fixes
+
+* **i18n:** client fetching from backend ([b884436](https://github.com/staccx/bento/commit/b884436))
+
+
+
+## [13.0.1-alpha.29](https://github.com/staccx/bento/compare/v13.0.1-alpha.28...v13.0.1-alpha.29) (2020-11-04)
+
+
+### Features
+
+* **i18n:** moved TranslateSSR to i18n ([ac34471](https://github.com/staccx/bento/commit/ac34471))
+
+
+
+## [13.0.1-alpha.28](https://github.com/staccx/bento/compare/v13.0.1-alpha.27...v13.0.1-alpha.28) (2020-11-04)
+
+
+### Bug Fixes
+
+* **sanity:** remove prop key ([4ebdfc1](https://github.com/staccx/bento/commit/4ebdfc1))
+
+
+
+## [13.0.1-alpha.27](https://github.com/staccx/bento/compare/v13.0.1-alpha.26...v13.0.1-alpha.27) (2020-11-04)
+
+
+
+## [13.0.1-alpha.26](https://github.com/staccx/bento/compare/v13.0.1-alpha.25...v13.0.1-alpha.26) (2020-11-04)
+
+
+### Features
+
+* **sanity:** added TranslateSSR ([6104515](https://github.com/staccx/bento/commit/6104515))
+
+
+
+## [13.0.1-alpha.25](https://github.com/staccx/bento/compare/v13.0.1-alpha.24...v13.0.1-alpha.25) (2020-11-04)
+
+
+### Features
+
+* commonjs? ([cd06c67](https://github.com/staccx/bento/commit/cd06c67))
+
+
+
+## [13.0.1-alpha.24](https://github.com/staccx/bento/compare/v13.0.1-alpha.23...v13.0.1-alpha.24) (2020-11-04)
+
+
+### Features
+
+* remove runtimegenerator ([2f14e14](https://github.com/staccx/bento/commit/2f14e14))
+
+
+
+## [13.0.1-alpha.23](https://github.com/staccx/bento/compare/v13.0.1-alpha.22...v13.0.1-alpha.23) (2020-11-03)
+
+
+### Bug Fixes
+
+* **components:** allow value to be overidden ([a12fcaf](https://github.com/staccx/bento/commit/a12fcaf))
+
+
+
+## [13.0.1-alpha.22](https://github.com/staccx/bento/compare/v13.0.1-alpha.21...v13.0.1-alpha.22) (2020-11-02)
+
+
+### Bug Fixes
+
+* **i18n:** add react ([6e165c3](https://github.com/staccx/bento/commit/6e165c3))
+
+
+
+## [13.0.1-alpha.21](https://github.com/staccx/bento/compare/v13.0.1-alpha.20...v13.0.1-alpha.21) (2020-11-02)
+
+
+### Features
+
+* **components:** remove Odometer ([2a37d35](https://github.com/staccx/bento/commit/2a37d35))
+
+
+
+## [13.0.1-alpha.20](https://github.com/staccx/bento/compare/v13.0.1-alpha.19...v13.0.1-alpha.20) (2020-11-01)
+
+
+### Features
+
+* **locale:** add locale context. Big one ([342fa1c](https://github.com/staccx/bento/commit/342fa1c))
+
+
+
 ## [13.0.1-alpha.19](https://github.com/staccx/bento/compare/v13.0.1-alpha.18...v13.0.1-alpha.19) (2020-10-31)
 
 
@@ -270,7 +705,7 @@
 
 
 
-# [11.1.0](https://github.com/staccx/bento/compare/v10.2.2...v11.1.0) (2020-08-17)
+# [11.1.0](https://github.com/staccx/bento/compare/v11.0.0...v11.1.0) (2020-08-17)
 
 
 ### Bug Fixes
@@ -337,11 +772,7 @@
 
 
 
-# [10.0.0](https://github.com/staccx/bento/compare/v11.0.0...v10.0.0) (2020-08-06)
-
-
-
-# [11.0.0](https://github.com/staccx/bento/compare/v10.0.1-alpha.54...v11.0.0) (2020-08-06)
+# [10.0.0](https://github.com/staccx/bento/compare/v1.0.0...v10.0.0) (2020-08-06)
 
 
 ### Bug Fixes
