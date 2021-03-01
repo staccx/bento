@@ -10,7 +10,7 @@ export const useLogging = (loggerName, level) => {
   }, [loggerName])
 
   React.useEffect(() => {
-    if (logger.current && level) {
+    if (logger.current && level?.toString()) {
       logger.current.setLevel(normalizeLevel(level))
     }
   }, [logger, level])

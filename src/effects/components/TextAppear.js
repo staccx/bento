@@ -1,13 +1,11 @@
-import React, { useRef } from "react"
+import React from "react"
 import styled, { css } from "styled-components"
 import Letters from "./Letters"
 import { useTextEffect } from "../useTextEffect"
 import { TextEffectWrapper } from "./TextEffect"
 
 const TextAppear = ({ children }) => {
-  const group = useRef(null)
   const { completed } = useTextEffect({
-    el: group,
     effects: [
       {
         targets: ".letter",
@@ -33,14 +31,12 @@ const TextAppear = ({ children }) => {
   return (
     <TextEffectWrapper>
       <Line top className={"line"} />
-      <span ref={group}>
-        {completed && children}
-        {!completed && (
-          <Letters effectKey={"text-appear"} className={"letter"}>
-            {children}
-          </Letters>
-        )}
-      </span>
+      {completed && children}
+      {!completed && (
+        <Letters effectKey={"text-appear"} className={"letter"}>
+          {children}
+        </Letters>
+      )}
       <Line bottom className={"line"} />
     </TextEffectWrapper>
   )
