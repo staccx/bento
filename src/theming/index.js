@@ -13,7 +13,7 @@ export { default as targetSize } from "./convenience/targetSize"
 export { default as wrapper } from "./convenience/wrapper"
 export { default as gradient } from "./convenience/gradient"
 // Utils
-export { default as getProp } from "./utils/getProp"
+export { default as getProp, getField } from "./utils/getProp"
 export { default as mapProp } from "./utils/mapProp"
 export { default as createVariants } from "./utils/createVariants"
 export { default as createGlobal } from "./utils/createGlobal"

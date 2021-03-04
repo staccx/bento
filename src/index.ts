@@ -84,6 +84,9 @@ import {
   useSanity,
   useSanityQuery
 } from "./sanity"
+/**
+ * Theming
+ */
 import {
   applyVariants,
   borderRadius,
@@ -98,6 +101,7 @@ import {
   fontSmoothing,
   fontWeight,
   getProp,
+  getField,
   gradient,
   grid,
   hideVisually,
@@ -311,6 +315,7 @@ export const theming = {
   flattenGlobals,
   fontSmoothing,
   getProp,
+  getField,
   gradient,
   grid,
   hideVisually,
