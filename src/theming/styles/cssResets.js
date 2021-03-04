@@ -32,7 +32,7 @@ export default css`
     min-height: 100%;
     box-sizing: border-box;
     background-color: ${color.bg};
-    font-family: ${fontFamily.body};
+    font-family: ${fontFamily.body}, Sans-Serif;
     font-size: 14px;
     color: ${color.text};
     line-height: ${font.lineHeight};
