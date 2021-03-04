@@ -5,6 +5,13 @@ const data = {
     prop: 1,
     propWithField: {
       field: "field"
+    },
+    grandParent: {
+      parent: {
+        child: {
+          age: 5
+        }
+      }
     }
   }
 }
@@ -21,5 +28,9 @@ describe("Get Prop (from theme)", () => {
   it("Should not break if nothing found", () => {
     expect(getProp("na")(data)).toBe(null)
     expect(getProp("na", "na")(data)).toBe(null)
+  })
+
+  it("Should be able to find deep", () => {
+    expect(getProp("grandParent.parent.child.age")(data)).toBe(5)
   })
 })
