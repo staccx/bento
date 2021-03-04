@@ -1,4 +1,4 @@
-import getProp from "./getProp"
+import getProp, { getField } from "./getProp"
 
 const data = {
   theme: {
@@ -32,5 +32,24 @@ describe("Get Prop (from theme)", () => {
 
   it("Should be able to find deep", () => {
     expect(getProp("grandParent.parent.child.age")(data)).toBe(5)
+  })
+
+  describe("Get Field", () => {
+    it("Should get entire prop if no field is set", () => {
+      expect(getField("prop")(data)).toBe(1)
+    })
+    it("Should get field if set", () => {
+      expect(getField("propWithField.field")(data)).toBe(
+        data.theme.propWithField.field
+      )
+    })
+    it("Should not break if nothing found", () => {
+      expect(getField("na")(data)).toBe(null)
+      expect(getField("na", "na")(data)).toBe(null)
+    })
+
+    it("Should be able to find deep", () => {
+      expect(getField("grandParent.parent.child.age")(data)).toBe(5)
+    })
   })
 })
