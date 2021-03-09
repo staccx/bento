@@ -3,7 +3,6 @@
     "allowJs": true,
     "outDir": "./lib",
     "module": "commonjs",
-    "target": "esnext",
     "lib": [ "es2020", "dom" ],
     "jsx": "react",
     "moduleResolution": "node",
