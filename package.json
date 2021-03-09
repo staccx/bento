@@ -6,7 +6,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --watch=false --coverage --passWithNoTests --updateSnapshot",
     "build": "tsc",
-    "start": "start-storybook -p 9009 --no-dll",
+    "start": "start-storybook -p 9009",
     "build-storybook": "build-storybook -c .storybook -o public",
     "prepare": "yarn build",
     "alpha": "npm version prerelease --preid=alpha && npm publish",
