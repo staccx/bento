@@ -308,11 +308,11 @@ const withContext = (Story, context) => {
           level={0}
           language={language?.data || "no"}
           texts={texts}
-          debug
+          debug={false}
         >
           <>
-            <WebFonts/>
-            <GlobalStyle/>
+            <WebFonts />
+            <GlobalStyle />
             <Story {...context} />
           </>
         </I18nProvider>
