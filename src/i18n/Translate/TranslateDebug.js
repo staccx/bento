@@ -11,8 +11,18 @@ import React, { useState } from "react"
  * @constructor
  */
 const getValue = (i18n, list) => {
-  for (const [key, value] of Object.entries(list)) {
-    if (key === i18n) {
+  for (let [key, value] of Object.entries(list)) {
+    if (Array.isArray(value) && key === i18n) {
+      let text = []
+      value.map(itm => {
+        itm.children.forEach(child => {
+          text = [...text, child.text]
+        })
+        value = text.join("")
+        return value
+      })
+    }
+    if (!Array.isArray(value) && key === i18n) {
       return value
     }
   }
@@ -20,6 +30,19 @@ const getValue = (i18n, list) => {
 
 const TranslateDebug = ({ children, value, i18n, allLangs }) => {
   const [isOpen, setIsOpen] = useState(false)
+  let formatValue = value
+
+  if (Array.isArray(value)) {
+    if (Array.isArray(value[0].children)) {
+      let text = []
+      value.forEach(itm => {
+        itm.children.forEach(child => {
+          text = [...text, child.text]
+        })
+        formatValue = text.join("")
+      })
+    }
+  }
 
   let list = []
 
@@ -36,11 +59,9 @@ const TranslateDebug = ({ children, value, i18n, allLangs }) => {
       }
     }
   }
-
   return (
     <DebugOuter data-i18nkey={children}>
-      {value}
-
+      {formatValue}
       <DebugInfo>
         <DebugKey onClick={() => setIsOpen(!isOpen)}>
           <KeyWrapper>
