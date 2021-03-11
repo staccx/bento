@@ -151,7 +151,10 @@ import {
   useLogging,
   usePostalCode,
   useSearch,
-  useTimer
+  useTimer,
+  useMutationObserver,
+  useInputMask,
+  useWebFonts
 } from "./hooks"
 /**
  * Components
@@ -357,7 +360,10 @@ export const hooks = {
   useLogging,
   usePostalCode,
   useSearch,
-  useTimer
+  useTimer,
+  useMutationObserver,
+  useInputMask,
+  useWebFonts
 }
 
 export {
@@ -469,6 +475,9 @@ export {
   usePostalCode,
   useSearch,
   useTimer,
+  useMutationObserver,
+  useInputMask,
+  useWebFonts,
   Logo,
   Loading,
   Alert,
