@@ -1,16 +1,19 @@
 import { useTheme } from "styled-components"
 import useDeepCompareEffect from "use-deep-compare-effect"
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 import { useMutationObserver } from "../useMutationObserver/useMutationObserver"
-import { useLogging } from "../useLogging"
 
 /**
  * Will load webfotns
  * @param webfonts - optional. will pick from theme if undefined
+ * @param autoload - should we load on changed? default: true
  */
-export const useWebFonts = (webfonts = null, autoload = true) => {
+export const useWebFonts = (
+  webfonts = null,
+  autoload = true,
+  shouldUnloadOnUnmount = true
+) => {
   const theme = useTheme()
-  const logger = useLogging("useWebFonts", 1)
   const loadedFonts = useRef([])
 
   const load = () => {
@@ -24,7 +27,6 @@ export const useWebFonts = (webfonts = null, autoload = true) => {
   }
 
   const unload = () => {
-    logger.debug(loadedFonts.current)
     loadedFonts.current.forEach(node => {
       node.remove()
     })
@@ -41,9 +43,7 @@ export const useWebFonts = (webfonts = null, autoload = true) => {
     mutationList => {
       mutationList.forEach(record => {
         record?.addedNodes?.forEach(node => {
-          console.log(node)
           if (node && node?.tagName?.toLowerCase() === "link") {
-            logger.debug("Added node", node)
             loadedFonts.current.push(node)
           }
         })
@@ -51,12 +51,17 @@ export const useWebFonts = (webfonts = null, autoload = true) => {
     }
   )
 
+  useEffect(() => {}, [])
+
   useDeepCompareEffect(() => {
     if (autoload) {
       load()
     }
-
-    logger.debug(loadedFonts.current)
+    return () => {
+      if (shouldUnloadOnUnmount) {
+        unload()
+      }
+    }
   }, [webfonts, theme.webfonts])
 
   return {

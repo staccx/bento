@@ -29,3 +29,19 @@ export const ChangeFont = () => {
     </div>
   )
 }
+
+export const AutoLoad = () => {
+  const { unload, load } = useWebFonts({
+    google: {
+      families: ["Akaya Telivigala:ital,wght@0,400;0,500;1,500"]
+    }
+  })
+
+  return (
+    <div>
+      <Text>This text will change</Text>
+      <Button onClick={unload}>Unload font</Button>
+      <Button onClick={load}>Load font</Button>
+    </div>
+  )
+}
