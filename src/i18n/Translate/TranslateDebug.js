@@ -21,8 +21,7 @@ const getValue = (i18n, list) => {
         value = text.join("")
         return value
       })
-    }
-    if (!Array.isArray(value) && key === i18n) {
+    } else {
       return value
     }
   }
