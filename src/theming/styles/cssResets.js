@@ -32,7 +32,7 @@ export default css`
     min-height: 100%;
     box-sizing: border-box;
     background-color: ${color.bg};
-    font-family: ${fontFamily.body};
+    font-family: ${fontFamily.body}, Sans-Serif;
     font-size: 14px;
     color: ${color.text};
     line-height: ${font.lineHeight};
@@ -53,7 +53,7 @@ export default css`
   h4,
   h5,
   h6 {
-    font-family: ${fontFamily.heading};
+    font-family: ${fontFamily.heading}, Sans-Serif;
     font-weight: ${fontWeight.bold};
     font-size: 1em;
     -webkit-font-smoothing: antialiased;
@@ -98,7 +98,7 @@ export default css`
   optgroup,
   select,
   textarea {
-    font-family: ${fontFamily.body};
+    font-family: ${fontFamily.body}, Sans-Serif;
     font-size: 100%; /* 1 */
     line-height: 1.15; /* 1 */
     margin: 0; /* 2 */
