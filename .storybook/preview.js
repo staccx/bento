@@ -200,19 +200,19 @@ const texts = {
             {
               _type: "span",
               _key: "3f1efe4b49820",
-              text: "This is rich text ",
+              text: "Noe på finsk",
               marks: []
             },
             {
               _type: "span",
               _key: "3f1efe4b49821",
-              text: "bold text",
+              text: "bold finsk",
               marks: ["strong"]
             },
             {
               _type: "span",
               _key: "3f1efe4b49822",
-              text: ". We can even format inside {{balance, currency}} of this",
+              text: ". We can even format inside {{balance, currency}} mye greier på finsk",
               marks: []
             }
           ]
@@ -308,7 +308,7 @@ const withContext = (Story, context) => {
           level={0}
           language={language?.data || "no"}
           texts={texts}
-          debug={false}
+          debug={true}
         >
           <>
             <WebFonts />
