@@ -31,11 +31,6 @@ const Translate = ({ children, i18n, data }) => {
     valueSet(result)
   }, [i18next, i18n, translate, language])
 
-  if (Array.isArray(value)) {
-    i18nLogger.debug("Handling value is array")
-    return value.map(getComponent)
-  }
-
   if (debug === true) {
     return (
       <TranslateDebug
@@ -46,6 +41,11 @@ const Translate = ({ children, i18n, data }) => {
         {children}
       </TranslateDebug>
     )
+  }
+
+  if (Array.isArray(value)) {
+    i18nLogger.debug("Handling value is array")
+    return value.map(getComponent)
   }
 
   i18nLogger.debug("Key:", i18n, "resolved to:", value)
