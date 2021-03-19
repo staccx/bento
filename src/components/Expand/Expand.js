@@ -4,7 +4,13 @@ import styled from "styled-components"
 import { BounceIn } from "../../animations"
 import Caret from "../Icons/Caret/Caret"
 import ThemeComponent from "../Theme/ThemeComponent/ThemeComponent"
-import { applyVariants, color, commonPropTypes, spacing } from "../../theming"
+import {
+  applyVariants,
+  color,
+  commonPropTypes,
+  hideVisually,
+  spacing
+} from "../../theming"
 import themeProps from "./Expand.themeProps"
 import { componentCreateFactory } from "../../theming/utils/createVariantsFunctionFactory"
 
@@ -34,7 +40,6 @@ const Expand = ({
 
   const handleExpand = event => {
     setIsExpanded(!isExpanded)
-
     if (onClick) {
       onClick(event)
     }
@@ -45,40 +50,33 @@ const Expand = ({
   }, [expanded])
 
   return (
-    <ExpandWrapper className={className} variant={variant} {...restProps}>
-      {React.Children.map(children, (child, i) => {
-        // Ignore the first child
-        if (i < 1) {
-          return (
-            <ExpandBtn
-              title={title}
-              isExpanded={isExpanded}
-              onClick={handleExpand}
-              aria-expanded={isExpanded}
-              aria-controls={title}
-              id={(id ?? title) + "2"}
-              variant={variant}
-            >
-              {child}
-              {!hideIcon && (
-                <ExpandIcon variant={variant} isExpanded={isExpanded} />
-              )}
-            </ExpandBtn>
-          )
-        }
-        return (
-          isExpanded && (
-            <ExpandItem
-              id={`item-${i}`}
-              aria-labelledby={(id ?? title) + "2"}
-              variant={variant}
-              onClick={handleItemClick}
-            >
-              {child}
-            </ExpandItem>
-          )
-        )
-      })}
+    <ExpandWrapper
+      className={className}
+      variant={variant}
+      title={title}
+      {...restProps}
+    >
+      <ExpandBtn
+        title={title}
+        isExpanded={isExpanded}
+        onClick={handleExpand}
+        aria-expanded={isExpanded}
+        aria-controls={title}
+        id={(id ?? title) + "2"}
+        variant={variant}
+      >
+        {title}
+        {!hideIcon && <ExpandIcon variant={variant} isExpanded={isExpanded} />}
+      </ExpandBtn>
+      <ExpandItem
+        id={`item`}
+        aria-labelledby={(id ?? title) + "2"}
+        variant={variant}
+        onClick={handleItemClick}
+        isExpanded={isExpanded}
+      >
+        {children}
+      </ExpandItem>
     </ExpandWrapper>
   )
 }
@@ -140,6 +138,7 @@ export const ExpandBtn = styled.button`
 export const ExpandItem = styled.div`
   opacity: 0;
   animation: 0.4s ${BounceIn} 0.05s ease-out forwards 1;
+  ${p => (p.isExpanded ? "" : hideVisually)};
   ${applyVariants(themeProps.item.name)};
 `
 

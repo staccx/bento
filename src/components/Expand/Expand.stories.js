@@ -7,8 +7,7 @@ export default {
 }
 
 export const ExpandSpan = args => (
-  <Expand title="click to see">
-    <span>Click me to see</span>
+  <Expand title={<span>Dette er en span</span>}>
     <div>
       <p>Some more text</p>
     </div>
@@ -16,8 +15,7 @@ export const ExpandSpan = args => (
 )
 
 export const ExpandP = args => (
-  <Expand>
-    <p>Click me to see</p>
+  <Expand title={<p>Click me to see</p>}>
     <div>
       <p>Even more text</p>
     </div>
@@ -25,18 +23,20 @@ export const ExpandP = args => (
 )
 
 export const ExpandDiv = args => (
-  <Expand>
-    <div>
-      <p>All of me</p>
-      <p>Can be clicked to show</p>
-    </div>
+  <Expand
+    title={
+      <div>
+        <p>All of me</p>
+        <p>Can be clicked to show</p>
+      </div>
+    }
+  >
     <div>This text is also possible to read</div>
   </Expand>
 )
 
 export const ExpandShowUl = args => (
-  <Expand>
-    <span>Expand me</span>
+  <Expand title={<span>Expand me</span>}>
     <div>
       <ul>
         <li>I am hidden</li>
@@ -47,8 +47,7 @@ export const ExpandShowUl = args => (
 )
 
 export const ExpandNoHideIcon = args => (
-  <Expand {...args}>
-    <span>Click me to see</span>
+  <Expand {...args} title={<span>Click me to see</span>}>
     <div>
       <p>this</p>
     </div>
@@ -58,12 +57,11 @@ export const ExpandNoHideIcon = args => (
 ExpandNoHideIcon.args = { hideIcon: true }
 
 export const ExpandExpanded = args => (
-  <Expand {...args}>
-    <span>Click me to hide</span>
+  <Expand {...args} title={<span>{args.titleText}</span>}>
     <div>
       <p>this</p>
     </div>
   </Expand>
 )
 
-ExpandExpanded.args = { expanded: true }
+ExpandExpanded.args = { expanded: true, titleText: "i am default expanded" }
