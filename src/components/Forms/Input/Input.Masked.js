@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef, useState } from "react"
+import React, { forwardRef, useRef, useState } from "react"
 import PropTypes from "prop-types"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
 import {
@@ -10,10 +10,11 @@ import {
   StyledInput
 } from "./Input.styles"
 import themeProps from "./Input.themeProps"
+import { useInputMask } from "../../../hooks"
 import { useCombinedRefs } from "../../../hooks/useCombinedRefs/useCombinedRefs"
-import MaskedInput from "./Input.Masked"
+import { useLocale } from "../../../locale"
 
-const Input = forwardRef(
+const MaskedInput = forwardRef(
   (
     {
       className,
@@ -38,38 +39,19 @@ const Input = forwardRef(
     const innerRef = useRef(null)
     const inputRef = useCombinedRefs(ref, innerRef)
 
-    useEffect(() => {
-      if (defaultValue === undefined || !innerRef.current || mode) {
-        return
-      }
-      if (defaultValue !== innerRef?.current?.value) {
-        innerRef.current.value = defaultValue
-      }
-    }, [defaultValue, innerRef])
+    const { locale: contextLocale } = useLocale()
 
-    if (mode) {
-      return (
-        <MaskedInput
-          ref={ref}
-          className={className}
-          variant={variant}
-          id={id}
-          label={id}
-          helpText={helpText}
-          placeholder={placeholder}
-          defaultValue={defaultValue}
-          onChange={onChange}
-          mode={mode}
-          value={value}
-          level={level}
-          locale={locale}
-          type={type}
-          {...(props.value ||
-            (defaultValue && { value: props.value || defaultValue }))}
-          {...props}
-        />
-      )
-    }
+    const inputProps = useInputMask({
+      ref: inputRef,
+      locale: locale ?? contextLocale,
+      type,
+      mode,
+      debugLevel: level,
+      defaultValue,
+      controlledValue: value,
+      onChange,
+      ...props
+    })
 
     return (
       <InputWrapper className={className} variant={variant}>
@@ -87,23 +69,21 @@ const Input = forwardRef(
         {helpText && <HelpText isVisible={showHelp}>{helpText}</HelpText>}
 
         <StyledInput
-          ref={inputRef}
-          className={className}
-          variant={variant}
           id={id}
-          placeholder={placeholder}
-          defaultValue={defaultValue}
           onChange={onChange}
-          value={value}
+          placeholder={placeholder}
+          variant={variant}
+          ref={inputRef}
+          defaultValue={defaultValue}
           type={type}
-          {...props}
+          {...inputProps}
         />
       </InputWrapper>
     )
   }
 )
 
-Input.propTypes = {
+MaskedInput.propTypes = {
   className: PropTypes.string,
   variant: PropTypes.oneOfType([
     PropTypes.string,
@@ -157,15 +137,15 @@ Input.propTypes = {
   pattern: PropTypes.instanceOf(RegExp)
 }
 
-Input.displayName = "Input"
-Input.themeProps = themeProps
-Input.createVariants = componentCreateFactory(Input)
+MaskedInput.displayName = "MaskedInput"
+MaskedInput.themeProps = themeProps
+MaskedInput.createVariants = componentCreateFactory(MaskedInput)
 
-Input.defaultProps = {
+MaskedInput.defaultProps = {
   type: "text"
 }
 
-Input.inputModes = {
+MaskedInput.inputModes = {
   email: {
     inputMode: "email",
     type: "text",
@@ -178,4 +158,4 @@ Input.inputModes = {
   }
 }
 
-export default Input
+export default MaskedInput

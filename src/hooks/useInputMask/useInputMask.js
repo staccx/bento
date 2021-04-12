@@ -72,14 +72,25 @@ export const useInputMask = ({
   }, [])
 
   useEffect(() => {
-    if (controlledValue && controlledValue !== value?.rawValue) {
-      handleChange({ target: { value: controlledValue } })
+    if (!mode) {
+      return
+    }
+    if (controlledValue !== value?.rawValue) {
+      let value = controlledValue
+      if (value === null || value === undefined) {
+        value = ""
+      }
+      handleChange({ target: { value } })
     }
   }, [controlledValue])
 
   useEffect(() => {
-    if (defaultValue && defaultValue !== value?.rawValue) {
-      handleChange({ target: { value: defaultValue } })
+    if (defaultValue !== value?.rawValue) {
+      let value = defaultValue
+      if (value === null || value === undefined) {
+        value = ""
+      }
+      handleChange({ target: { value } })
     }
   }, [defaultValue])
 
@@ -147,9 +158,22 @@ export const useInputMask = ({
     }
   }
 
+  if (!mode) {
+    let value = controlledValue
+    if (value === null) {
+      value = ""
+    }
+    return {
+      ...(value !== undefined && { value }),
+      onChange,
+      defaultValue,
+      ...otherProps
+    }
+  }
+
   return {
     type,
-    ...(controlledValue && { value: controlledValue }),
+    ...(!mode && { value: controlledValue }),
     ...(mode && {
       onKeyUp: handleKeyUp,
       onChange: handleChange,

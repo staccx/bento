@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Input from "./Input"
+import Button from "../../Button/Button"
 
 export default {
   title: "/Components/Forms/Input/Input",
@@ -7,16 +8,15 @@ export default {
   parameters: {
     docs: {
       description: {
-        component:
-          `Works as standard input, but with this new version one can add on a mode that returns a value and a rawValue.<br />
+        component: `Works as standard input, but with this new version one can add on a mode that returns a value and a rawValue.<br />
            Mode uses masks. All older versions of input are supported within this new version.
           <br />
           <br />
           <i>See below which modes that are available.</i>
           `
-      },
+      }
     }
-  },
+  }
 }
 
 export const WithValue = args => {
@@ -149,6 +149,7 @@ const AsyncDefaultValueTest = ({ args }) => {
   const [value, valueSet] = useState(args?.value)
   useEffect(() => {
     let timeout = setTimeout(() => {
+      console.log("setting default value")
       valueSet("Default value is now set")
     }, 2000)
 
@@ -169,14 +170,80 @@ const AsyncDefaultValueTest = ({ args }) => {
 export const DelayedDefaultValue = args => <AsyncDefaultValueTest args={args} />
 DelayedDefaultValue.args = {}
 
-export const NumericInputMode = args => <Input {...Input.inputModes[args.mode]} value={args.value} />
+export const DelayedWithMode = args => {
+  const [value, valueSet] = useState(args?.value)
+  useEffect(() => {
+    let timeout = setTimeout(() => {
+      console.log("setting default value")
+      valueSet(args?.newValue)
+    }, 2000)
+
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [])
+
+  return (
+    <Input
+      id={"delayedDefaultWithMode"}
+      value={value}
+      label={
+        "This input's value will be populated after to sec with currency mode"
+      }
+      {...args}
+    />
+  )
+}
+
+DelayedWithMode.args = {
+  newValue: 1234567,
+  mode: "currency"
+}
+
+export const NumericInputMode = args => (
+  <Input {...Input.inputModes[args.mode]} value={args.value} />
+)
 NumericInputMode.args = {
   mode: "numeric",
   value: 100000
 }
 
-export const EmailInputMode = args => <Input {...Input.inputModes[args.mode]} value={args.value} />
+NumericInputMode.parameters = {
+  docs: {
+    description: {
+      story: `Please do not confuse *inputMode* from _formatting mode_. *inputMode* affect the device keyboard and _"mode"_ affects`
+    }
+  }
+}
+
+export const EmailInputMode = args => (
+  <Input {...Input.inputModes[args.mode]} value={args.value} />
+)
 EmailInputMode.args = {
   mode: "email",
   value: "ola.nordmann@epost.no"
+}
+
+export const ClearComponent = args => {
+  const [text, textSet] = useState(null)
+  const handleInputChange = e => {
+    textSet(e.target.value)
+  }
+
+  const clear = val => {
+    textSet(val)
+  }
+
+  return (
+    <div>
+      <p>Text is: {text}</p>
+      <Input {...args} value={text} onChange={handleInputChange} />
+      <Button onClick={() => clear(undefined)}>Clear (undefined)</Button>
+      <Button onClick={() => clear("")}>Empty string</Button>
+    </div>
+  )
+}
+
+ClearComponent.args = {
+  id: "clearExample"
 }
