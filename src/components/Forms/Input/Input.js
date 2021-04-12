@@ -54,7 +54,7 @@ const Input = forwardRef(
           className={className}
           variant={variant}
           id={id}
-          label={id}
+          label={label}
           helpText={helpText}
           placeholder={placeholder}
           defaultValue={defaultValue}
@@ -71,6 +71,7 @@ const Input = forwardRef(
       )
     }
 
+    console.log("Label", label)
     return (
       <InputWrapper className={className} variant={variant}>
         {label && (
