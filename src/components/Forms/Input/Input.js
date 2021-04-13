@@ -70,8 +70,6 @@ const Input = forwardRef(
         />
       )
     }
-
-    console.log("Label", label)
     return (
       <InputWrapper className={className} variant={variant}>
         {label && (
