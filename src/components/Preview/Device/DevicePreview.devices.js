@@ -18,12 +18,13 @@ export const IphoneX = css`
   width: 428px;
 
   ${Frame} {
+    background-color: ${panel};
     border-radius: 68px;
     box-shadow: inset 0 0 2px 2px ${shadow}, inset 0 0 0 7px ${color};
     padding: 28px;
   }
   ${Content} {
-    background: ${p => console.log(p) || p.background || color};
+    ${p => p.background};
     border-radius: 40px;
     height: 812px;
     width: 375px;
@@ -166,7 +167,7 @@ export const IpadPro = css`
 
   // 2224-by-1668-pixel resolution
   ${Content} {
-    background: ${p => console.log(p) || p.background || color};
+    background: ${p => p.background};
     border: 2px solid #222;
     border-radius: 2px;
     height: 680px;
@@ -238,7 +239,7 @@ export const MacBookPro = css`
   }
 
   ${Content} {
-    background: ${p => console.log(p) || p.background || color};
+    background: ${p => p.background};
     border: 2px solid ${lighten(0.02, panel)};
     border-radius: 2px;
     height: 360px;

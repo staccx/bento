@@ -19,8 +19,7 @@ export const IPhoneX = args => (
   <DevicePreview {...args}>Content here</DevicePreview>
 )
 IPhoneX.args = {
-  type: "iphoneX",
-  background: css`linear-gradient(#eee, white);`
+  type: "iphoneX"
 }
 export const IpadPro = args => (
   <DevicePreview {...args}>Content here</DevicePreview>

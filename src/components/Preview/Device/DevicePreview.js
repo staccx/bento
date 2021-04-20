@@ -1,4 +1,5 @@
 import React from "react"
+import { css } from "styled-components"
 import PropTypes from "prop-types"
 import {
   Buttons,
@@ -11,7 +12,15 @@ import {
   Stripe
 } from "./DevicePreview.devices"
 
-const DevicePreview = ({ type = "iphoneX", background, children }) => {
+const defaultBackground = css`
+  background: linear-gradient(white, white);
+`
+
+const DevicePreview = ({
+  type = "iphoneX",
+  background = defaultBackground,
+  children
+}) => {
   return (
     <Device type={type} background={background}>
       <Frame>
