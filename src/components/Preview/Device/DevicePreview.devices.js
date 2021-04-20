@@ -303,7 +303,6 @@ export const Device = styled.div`
   }
 
   ${Content} {
-    background-color: #fff;
     background-position: center center;
     background-size: cover;
     object-fit: cover;
