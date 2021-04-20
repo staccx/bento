@@ -307,5 +307,6 @@ export const Device = styled.div`
     background-size: cover;
     object-fit: cover;
     position: relative;
+    overflow: scroll;
   }
 `
