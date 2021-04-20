@@ -96,3 +96,6 @@ export { default as Breadcrumb } from "./Breadcrumb/Breadcrumb"
 export { default as SkeletonPulse } from "./Skeleton/Skeleton.Pulse"
 export { default as SkeletonLine } from "./Skeleton/Skeleton.Line"
 export { default as SkeletonCircle } from "./Skeleton/Skeleton.Circle"
+
+// Preview
+export { default as DevicePreview } from "./Preview/Device/DevicePreview"
