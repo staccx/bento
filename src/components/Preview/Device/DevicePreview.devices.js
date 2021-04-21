@@ -28,7 +28,6 @@ export const IphoneX = css`
     border-radius: 40px;
     height: 812px;
     width: 375px;
-    padding-top: 36px;
     margin: 0 auto;
   }
 
