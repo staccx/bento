@@ -36,6 +36,12 @@ WithValue.args = {
   label: "With value set by external state[Controlled]"
 }
 
+export const HelpText = args => <Input {...args} />
+HelpText.args = {
+  label: "This is a label",
+  helpText: "The ❔ will show up when you add the `helpText` prop"
+}
+
 export const Standard = args => <Input {...args} />
 Standard.args = {
   label: "Input"
