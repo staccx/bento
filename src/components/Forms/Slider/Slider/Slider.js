@@ -86,7 +86,11 @@ const Slider = ({
         variant={variant}
         {...restProps}
       >
-        <Rail>{({ getRailProps }) => <StyledRail {...getRailProps()} />}</Rail>
+        <Rail>
+          {({ getRailProps }) => (
+            <StyledRail variant={variant} {...getRailProps()} />
+          )}
+        </Rail>
         <Handles>
           {({ handles, getHandleProps }) => (
             <div className="slider-handles">
