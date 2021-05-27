@@ -74,7 +74,7 @@ const Slider = ({
   }, [value])
 
   return (
-    <Container>
+    <Container variant={variant}>
       <StyledSlider
         mode={1}
         step={step}
