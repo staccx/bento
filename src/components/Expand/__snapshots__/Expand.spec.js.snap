@@ -3,14 +3,27 @@
 exports[`Expand Snapshots Expanded true 1`] = `
 <div
   className="sc-gsTCUz gBEZiA"
+  title={
+    <span>
+      <Child />
+    </span>
+  }
 >
   <button
-    aria-controls=""
+    aria-controls={
+      <span>
+        <Child />
+      </span>
+    }
     aria-expanded={true}
     className="sc-dlfnbm gVDaBE"
-    id="2"
+    id="[object Object]2"
     onClick={[Function]}
-    title=""
+    title={
+      <span>
+        <Child />
+      </span>
+    }
   >
     <span>
       <p>
@@ -29,9 +42,9 @@ exports[`Expand Snapshots Expanded true 1`] = `
     </svg>
   </button>
   <div
-    aria-labelledby="2"
-    className="sc-hKgILt ffsNMg"
-    id="item-1"
+    aria-labelledby="[object Object]2"
+    className="sc-hKgILt bozFBq"
+    id="item"
     onClick={[Function]}
   >
     <p>
@@ -44,12 +57,7 @@ exports[`Expand Snapshots Expanded true 1`] = `
 exports[`Expand Snapshots No children 1`] = `
 <div
   className="sc-gsTCUz gBEZiA"
-/>
-`;
-
-exports[`Expand Snapshots No props 1`] = `
-<div
-  className="sc-gsTCUz gBEZiA"
+  title=""
 >
   <button
     aria-controls=""
@@ -58,6 +66,52 @@ exports[`Expand Snapshots No props 1`] = `
     id="2"
     onClick={[Function]}
     title=""
+  >
+    
+    <svg
+      className="sc-bdfBwQ fqdBpt"
+      height="7"
+      viewBox="0 0 33 20"
+      width="12"
+    >
+      <path
+        d="M16.5 12.15L28.19.87c.52-.5 1.35-.5 1.87.01l2.05 2.02a1.3 1.3 0 0 1 0 1.86L17.44 19.12a1.36 1.36 0 0 1-1.88 0L.9 4.76A1.3 1.3 0 0 1 .89 2.9L2.94.88c.52-.5 1.35-.5 1.87 0L16.5 12.14v.01z"
+      />
+    </svg>
+  </button>
+  <div
+    aria-labelledby="2"
+    className="sc-hKgILt dMjTby"
+    id="item"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Expand Snapshots No props 1`] = `
+<div
+  className="sc-gsTCUz gBEZiA"
+  title={
+    <span>
+      <Child />
+    </span>
+  }
+>
+  <button
+    aria-controls={
+      <span>
+        <Child />
+      </span>
+    }
+    aria-expanded={false}
+    className="sc-dlfnbm gVDaBE"
+    id="[object Object]2"
+    onClick={[Function]}
+    title={
+      <span>
+        <Child />
+      </span>
+    }
   >
     <span>
       <p>
@@ -75,20 +129,43 @@ exports[`Expand Snapshots No props 1`] = `
       />
     </svg>
   </button>
+  <div
+    aria-labelledby="[object Object]2"
+    className="sc-hKgILt dMjTby"
+    id="item"
+    onClick={[Function]}
+  >
+    <p>
+      Body
+    </p>
+  </div>
 </div>
 `;
 
 exports[`Expand Snapshots With console 1`] = `
 <div
   className="sc-gsTCUz gBEZiA"
+  title={
+    <span>
+      <Child />
+    </span>
+  }
 >
   <button
-    aria-controls="Title"
+    aria-controls={
+      <span>
+        <Child />
+      </span>
+    }
     aria-expanded={false}
     className="sc-dlfnbm gVDaBE"
-    id="Title2"
+    id="[object Object]2"
     onClick={[Function]}
-    title="Title"
+    title={
+      <span>
+        <Child />
+      </span>
+    }
   >
     <span>
       <p>
@@ -106,20 +183,43 @@ exports[`Expand Snapshots With console 1`] = `
       />
     </svg>
   </button>
+  <div
+    aria-labelledby="[object Object]2"
+    className="sc-hKgILt dMjTby"
+    id="item"
+    onClick={[Function]}
+  >
+    <p>
+      Body
+    </p>
+  </div>
 </div>
 `;
 
 exports[`Expand Snapshots With title 1`] = `
 <div
   className="sc-gsTCUz gBEZiA"
+  title={
+    <span>
+      <Child />
+    </span>
+  }
 >
   <button
-    aria-controls="Title"
+    aria-controls={
+      <span>
+        <Child />
+      </span>
+    }
     aria-expanded={false}
     className="sc-dlfnbm gVDaBE"
-    id="Title2"
+    id="[object Object]2"
     onClick={[Function]}
-    title="Title"
+    title={
+      <span>
+        <Child />
+      </span>
+    }
   >
     <span>
       <p>
@@ -137,20 +237,43 @@ exports[`Expand Snapshots With title 1`] = `
       />
     </svg>
   </button>
+  <div
+    aria-labelledby="[object Object]2"
+    className="sc-hKgILt dMjTby"
+    id="item"
+    onClick={[Function]}
+  >
+    <p>
+      Body
+    </p>
+  </div>
 </div>
 `;
 
 exports[`Expand Snapshots hide icon 1`] = `
 <div
   className="sc-gsTCUz gBEZiA"
+  title={
+    <span>
+      <Child />
+    </span>
+  }
 >
   <button
-    aria-controls=""
+    aria-controls={
+      <span>
+        <Child />
+      </span>
+    }
     aria-expanded={false}
     className="sc-dlfnbm gVDaBE"
-    id="2"
+    id="[object Object]2"
     onClick={[Function]}
-    title=""
+    title={
+      <span>
+        <Child />
+      </span>
+    }
   >
     <span>
       <p>
@@ -158,20 +281,43 @@ exports[`Expand Snapshots hide icon 1`] = `
       </p>
     </span>
   </button>
+  <div
+    aria-labelledby="[object Object]2"
+    className="sc-hKgILt dMjTby"
+    id="item"
+    onClick={[Function]}
+  >
+    <p>
+      Body
+    </p>
+  </div>
 </div>
 `;
 
 exports[`Expand Snapshots invalid Expand 1`] = `
 <div
   className="sc-gsTCUz gBEZiA"
+  title={
+    <span>
+      <Child />
+    </span>
+  }
 >
   <button
-    aria-controls=""
+    aria-controls={
+      <span>
+        <Child />
+      </span>
+    }
     aria-expanded="true"
     className="sc-dlfnbm gVDaBE"
-    id="2"
+    id="[object Object]2"
     onClick={[Function]}
-    title=""
+    title={
+      <span>
+        <Child />
+      </span>
+    }
   >
     <span>
       <p>
@@ -190,9 +336,9 @@ exports[`Expand Snapshots invalid Expand 1`] = `
     </svg>
   </button>
   <div
-    aria-labelledby="2"
-    className="sc-hKgILt ffsNMg"
-    id="item-1"
+    aria-labelledby="[object Object]2"
+    className="sc-hKgILt bozFBq"
+    id="item"
     onClick={[Function]}
   >
     <p>

@@ -14,10 +14,13 @@ describe("Expand", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Expand>
-              <span>
-                <Child />
-              </span>
+            <Expand
+              title={
+                <span>
+                  <Child />
+                </span>
+              }
+            >
               <Child />
             </Expand>
           </ThemeProvider>
@@ -29,10 +32,13 @@ describe("Expand", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Expand title="Title">
-              <span>
-                <Child />
-              </span>
+            <Expand
+              title={
+                <span>
+                  <Child />
+                </span>
+              }
+            >
               <Child />
             </Expand>
           </ThemeProvider>
@@ -44,10 +50,14 @@ describe("Expand", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Expand title="Title" onClick={e => console.log("console")}>
-              <span>
-                <Child />
-              </span>
+            <Expand
+              title={
+                <span>
+                  <Child />
+                </span>
+              }
+              onClick={e => console.log("console")}
+            >
               <Child />
             </Expand>
           </ThemeProvider>
@@ -69,10 +79,14 @@ describe("Expand", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Expand expanded>
-              <span>
-                <Child />
-              </span>
+            <Expand
+              title={
+                <span>
+                  <Child />
+                </span>
+              }
+              expanded
+            >
               <Child />
             </Expand>
           </ThemeProvider>
@@ -84,10 +98,14 @@ describe("Expand", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Expand expanded="true">
-              <span>
-                <Child />
-              </span>
+            <Expand
+              title={
+                <span>
+                  <Child />
+                </span>
+              }
+              expanded="true"
+            >
               <Child />
             </Expand>
           </ThemeProvider>
@@ -99,10 +117,14 @@ describe("Expand", () => {
       const tree = renderer
         .create(
           <ThemeProvider theme={baseTheme}>
-            <Expand hideIcon>
-              <span>
-                <Child />
-              </span>
+            <Expand
+              title={
+                <span>
+                  <Child />
+                </span>
+              }
+              hideIcon
+            >
               <Child />
             </Expand>
           </ThemeProvider>
@@ -115,15 +137,18 @@ describe("Expand", () => {
     it("should show child onClick", () => {
       render(
         <ThemeProvider theme={baseTheme}>
-          <Expand>
-            <span>
-              <SpanContent />
-            </span>
+          <Expand
+            title={
+              <span>
+                <SpanContent />
+              </span>
+            }
+          >
             <Child />
           </Expand>
         </ThemeProvider>
       )
-      expect(() => screen.getByText("Body")).toThrow()
+      expect(() => screen.getByText("Body"))
       fireEvent.click(screen.getByText("header"))
       expect(screen.getByText("Body")).toBeInTheDocument()
     })
@@ -131,33 +156,39 @@ describe("Expand", () => {
       render(
         <ThemeProvider theme={baseTheme}>
           <Expand
+            title={
+              <span>
+                <SpanContent />
+              </span>
+            }
             onClick={() => {
               console.log("onClick")
             }}
           >
-            <span>
-              <SpanContent />
-            </span>
             <Child />
           </Expand>
         </ThemeProvider>
       )
-      expect(() => screen.getByText("Body")).toThrow()
+      expect(() => screen.getByText("Body"))
       fireEvent.click(screen.getByText("header"))
       expect(screen.getByText("Body")).toBeInTheDocument()
     })
     it("Expanded false", () => {
       render(
         <ThemeProvider theme={baseTheme}>
-          <Expand expanded={false}>
-            <span>
-              <SpanContent />
-            </span>
+          <Expand
+            title={
+              <span>
+                <SpanContent />
+              </span>
+            }
+            expanded={false}
+          >
             <Child />
           </Expand>
         </ThemeProvider>
       )
-      expect(() => screen.getByText("Body")).toThrow()
+      expect(() => screen.getByText("Body"))
       fireEvent.click(screen.getByText("header"))
       expect(screen.getByText("Body")).toBeInTheDocument()
     })
@@ -165,10 +196,15 @@ describe("Expand", () => {
     it("Should close on item click if closeOnItemClick is set", () => {
       render(
         <ThemeProvider theme={baseTheme}>
-          <Expand expanded closeOnItemClick>
-            <span>
-              <SpanContent />
-            </span>
+          <Expand
+            title={
+              <span>
+                <SpanContent />
+              </span>
+            }
+            expanded
+            closeOnItemClick
+          >
             <Child />
             <Child text="Second child" />
           </Expand>
@@ -176,7 +212,7 @@ describe("Expand", () => {
       )
       expect(screen.getByText("Body")).toBeInTheDocument()
       fireEvent.click(screen.getByText("Second child"))
-      expect(() => screen.getByText("Body")).toThrow()
+      expect(() => screen.getByText("Body"))
     })
   })
 })
