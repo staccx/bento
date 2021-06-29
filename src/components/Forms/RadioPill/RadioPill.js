@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { applyVariants } from "../../../theming"
 import themeProps from "./RadioPill.themeProps"
 import { componentCreateFactory } from "../../../theming/utils/createVariantsFunctionFactory"
+import { addVariablesFactory } from "../../../theming/utils/addVariablesFactory"
+import { applyVariables } from "../../../theming/utils/applyVariables"
 
 const RadioPill = ({
   children,
@@ -30,6 +32,7 @@ const RadioPill = ({
 )
 
 const RadioPillContainer = styled.div`
+  ${applyVariables(RadioPill.name)};
   border: 0;
   margin: 0;
   padding: 0;
@@ -53,5 +56,6 @@ RadioPill.propTypes = {
 }
 RadioPill.themeProps = themeProps
 RadioPill.createVariants = componentCreateFactory(RadioPill)
+RadioPill.addVariables = addVariablesFactory(RadioPill)
 
 export default RadioPill
