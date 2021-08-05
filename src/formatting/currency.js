@@ -7,7 +7,7 @@ const logger = loglevel.getLogger("formatting")
 export const formatMoney = (value, options = {}) => {
   logger.debug("formatMoney", value, options)
   return formatNumber(value, {
-    locale: "nb-NO",
+    locale: "no",
     suffix: null,
     ...(options.currencyDisplay && { style: STYLE.currency }),
     ...options

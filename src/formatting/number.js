@@ -11,7 +11,7 @@ const defaults = {
   unitDisplay: UNIT_DISPLAY.short,
   currency: "NOK", // http://www.currency-iso.org/en/home/tables/table-a1.html,
   useGrouping: true,
-  locale: "nb-no",
+  locale: "no",
   unit: undefined,
   minimumFractionDigits: 0
 }
@@ -26,6 +26,7 @@ export const formatNumber = (value, opts) => {
     throw new Error("Unit is not yet supported")
   }
   try {
+    console.log("LOCALE", locale)
     const formatter = new Intl.NumberFormat(locale, options)
     const formattedValue = formatter.format(value)
     return `${formattedValue}${options.suffix ?? ""}`
