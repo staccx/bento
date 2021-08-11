@@ -38,7 +38,7 @@ const Modal = ({ children, className, isOpen, onClose, variant, ...props }) => {
       onClose(event)
     }
 
-    setOpen(!open)
+    setOpen(false)
   }
 
   const fixOverflow = () => {
