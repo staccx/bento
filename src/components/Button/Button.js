@@ -49,7 +49,9 @@ const ButtonComp = styled.button`
 /**
  * Button component
  */
-const Button = props => <ButtonComp {...props} />
+const Button = React.forwardRef((props, ref) => (
+  <ButtonComp ref={ref} {...props} />
+))
 
 const defaultProps = {
   children: "button",
@@ -69,5 +71,6 @@ Button.defaultProps = defaultProps
 Button.propTypes = propTypes
 Button.themeProps = themeProps
 Button.createVariants = componentCreateFactory(Button)
+Button.displayName = "Button"
 
 export default Button

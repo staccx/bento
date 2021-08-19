@@ -51,5 +51,10 @@ describe("Button", () => {
       fireEvent.click(screen.getByText("Test"))
       expect(console.log.mock.calls[0][0]).toBe("click")
     })
+    it("Should forward ref", () => {
+      const ref = React.createRef()
+      render(<Button ref={ref}>{text}</Button>)
+      expect(ref.current).not.toBeNull()
+    })
   })
 })
