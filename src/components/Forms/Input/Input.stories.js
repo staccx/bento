@@ -47,6 +47,13 @@ Standard.args = {
   label: "Input"
 }
 
+export const StandardWithLargeNumber = args => <Input {...args} />
+StandardWithLargeNumber.args = {
+  label: "Input",
+  mode: "currency",
+  defaultValue: 1234567
+}
+
 export const FileUpload = args => <Input {...args} />
 FileUpload.args = {
   label: "Fileupload",

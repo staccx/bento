@@ -19,8 +19,17 @@ export const useInputMask = ({
   const logger = useLogging("useInputMask", debugLevel)
   const caretPosition = useRef(0)
   const timeout = useRef(null)
-  const [value, valueSet] = React.useState({
-    value: controlledValue ?? defaultValue
+  const createMask = resolveMask(mode, logger)
+  const mask = React.useRef(
+    createMask({
+      locale
+    })
+  )
+  const [value, valueSet] = React.useState(() => {
+    if (!mode) {
+      return controlledValue ?? defaultValue
+    }
+    return mask.current(controlledValue ?? defaultValue)
   })
 
   const updateCaret = useCallback(
@@ -85,7 +94,10 @@ export const useInputMask = ({
   }, [controlledValue])
 
   useEffect(() => {
-    if (defaultValue !== value?.rawValue) {
+    if (
+      typeof defaultValue !== "undefined" &&
+      defaultValue !== value?.rawValue
+    ) {
       let value = defaultValue
       if (value === null || value === undefined) {
         value = ""
@@ -93,14 +105,6 @@ export const useInputMask = ({
       handleChange({ target: { value } })
     }
   }, [defaultValue])
-
-  const createMask = resolveMask(mode, logger)
-  const mask = React.useRef(
-    createMask({
-      locale
-    })
-  )
-
   React.useEffect(() => {
     if (!mode) {
       return
