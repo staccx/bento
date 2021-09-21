@@ -45,9 +45,10 @@ describe("Get Prop (from theme)", () => {
     })
     it("Should not break if nothing found", () => {
       expect(getField("na")(data)).toBe(null)
-      expect(getField("na", "na")(data)).toBe(null)
     })
-
+    it("Should handle fallbacks",() => {
+      expect(getField("na", "na")(data)).toBe("na")
+    })
     it("Should be able to find deep", () => {
       expect(getField("grandParent.parent.child.age")(data)).toBe(5)
     })
