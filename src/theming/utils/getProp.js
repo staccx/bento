@@ -7,7 +7,8 @@ import { themeLogger } from "../theme.logger"
  * @param field use dot notation e.g font.family.heading
  * @returns {function({theme?: *}): *}
  */
-export const getField = field => ({ theme }) => get(theme, field, null)
+export const getField = (field, fallback = null) => ({ theme }) =>
+  get(theme, field, fallback)
 
 /**
  * @deprecated use getField instead
