@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 import qs from "qs"
 import { useOpenId } from ".."
@@ -34,20 +34,24 @@ export const useOtpLogin = () => {
   const [input, setInput] = useState()
   const [state, setState] = useState()
 
-  if (userManager) {
-    userManager.getUser().then(user => {
-      if (user) {
-        console.log("already logged in")
-      } else if (!state && extraConfig) {
-        console.log("user was not logged in", user, state, extraConfig)
-        setState(getState(userManager))
-      }
-    })
-  }
+  useEffect(() => {
+    if (userManager) {
+      userManager.getUser().then(user => {
+        if (user) {
+          console.log("already logged in")
+        } else if (!state && extraConfig) {
+          console.log("user was not logged in", user, state, extraConfig)
+          setState(getState(userManager))
+        }
+      })
+    }
+  }, [userManager])
 
-  if (state && !stage) {
-    setStage(stages.WAITING_FOR_USERNAME)
-  }
+  useEffect(() => {
+    if (state && !stage) {
+      setStage(stages.WAITING_FOR_USERNAME)
+    }
+  }, [state, stage])
 
   const next = () => {
     switch (stage) {
