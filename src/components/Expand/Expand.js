@@ -58,6 +58,7 @@ const Expand = ({
               aria-controls={title}
               id={(id ?? title) + "2"}
               variant={variant}
+              type="button"
             >
               {child}
               {!hideIcon && (
