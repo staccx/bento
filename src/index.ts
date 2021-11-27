@@ -141,9 +141,9 @@ import { LocaleProvider, locales, useLocale } from "./locale"
 /**
  * Hooks
  */
+import { useBackoff } from "./hooks/useBackoff/useBackoff"
 import {
   useApiRequest,
-  useBackoff,
   useBrRegSearch,
   useCopyToClipboard,
   useDebounce,
