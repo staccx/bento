@@ -100,8 +100,8 @@ import {
   fontFamily,
   fontSmoothing,
   fontWeight,
-  getProp,
   getField,
+  getProp,
   gradient,
   grid,
   hideVisually,
@@ -143,17 +143,18 @@ import { LocaleProvider, locales, useLocale } from "./locale"
  */
 import {
   useApiRequest,
+  useBackoff,
   useBrRegSearch,
   useCopyToClipboard,
   useDebounce,
   useExchangeRates,
+  useInputMask,
   useInterval,
   useLogging,
+  useMutationObserver,
   usePostalCode,
   useSearch,
   useTimer,
-  useMutationObserver,
-  useInputMask,
   useWebFonts
 } from "./hooks"
 /**
@@ -364,7 +365,8 @@ export const hooks = {
   useTimer,
   useMutationObserver,
   useInputMask,
-  useWebFonts
+  useWebFonts,
+  useBackoff
 }
 
 export {
@@ -479,6 +481,7 @@ export {
   useMutationObserver,
   useInputMask,
   useWebFonts,
+  useBackoff,
   Logo,
   Loading,
   Alert,
