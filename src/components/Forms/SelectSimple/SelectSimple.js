@@ -38,7 +38,7 @@ const SelectSimple = ({ children, label, className, id, variant, ...rest }) => (
     <Select id={id} variant={variant} {...rest}>
       {children}
     </Select>
-    <SelectIcon />
+    <SelectIcon variant={variant} />
   </SelectWrapper>
 )
 
