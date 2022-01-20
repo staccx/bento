@@ -1,21 +1,22 @@
-import React, { useState } from "react";
-import { useDelayedValue } from "./_shared.utils";
+import React, { useState } from "react"
+import { useDelayedValue } from "./_shared.utils"
 
 export default {
   title: "hooks/useInputMask/Currency"
-};
+}
 
-export const Vanilla = args => <input {...args} mode="currency" />;
-Vanilla.args = {};
+export const Vanilla = args => <input {...args} mode="currency" />
+Vanilla.args = {}
 
-export const Locale = args => <input {...args} mode="currency" />;
+export const Locale = args => <input {...args} mode="currency" />
 Locale.args = {
-  locale: "da-DK"
-};
+  locale: "da-DK",
+  currency: "DKK"
+}
 
 const Test = ({ args }) => {
-  const [value1, value1Set] = useState();
-  const [value2, value2Set] = useState();
+  const [value1, value1Set] = useState()
+  const [value2, value2Set] = useState()
 
   return (
     <form>
@@ -34,15 +35,15 @@ const Test = ({ args }) => {
         onChange={e => value2Set(e.rawValue)}
       />
     </form>
-  );
-};
+  )
+}
 
-export const InForm = args => <Test args={args} />;
-InForm.args = {};
+export const InForm = args => <Test args={args} />
+InForm.args = {}
 
 export const DelayedControlled = args => {
-  const [val, valSet] = useState("135792468");
-  const value = useDelayedValue(val);
+  const [val, valSet] = useState("135792468")
+  const value = useDelayedValue(val)
 
   return (
     <input
@@ -52,13 +53,13 @@ export const DelayedControlled = args => {
       value={value}
       onChange={e => valSet(e.rawValue)}
     />
-  );
-};
+  )
+}
 
-DelayedControlled.args = {};
+DelayedControlled.args = {}
 
 export const DelayedDefaultValue = args => {
-  const value = useDelayedValue("135792468");
+  const value = useDelayedValue("135792468")
 
   return (
     <input
@@ -67,7 +68,7 @@ export const DelayedDefaultValue = args => {
       {...args}
       defaultValue={value}
     />
-  );
-};
+  )
+}
 
-DelayedControlled.args = {};
+DelayedControlled.args = {}

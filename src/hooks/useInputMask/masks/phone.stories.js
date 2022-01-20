@@ -1,25 +1,26 @@
-import React from "react";
-import { useDelayedValue } from "./_shared.utils";
+import React from "react"
+import { useDelayedValue } from "./_shared.utils"
 
 export default {
-  title: "Components/Input/Masks/Phone",
-  component: Input
-};
+  title: "hooks/useInputMask/Phone"
+}
 
 export const Vanilla = args => (
-  <Input {...args} mode="phone" onChange={console.log} />
-);
-Vanilla.args = {};
+  <input {...args} mode="phone" onChange={console.log} />
+)
+Vanilla.args = {}
 
-export const Locale = args => <Input {...args} mode="phone" />;
+export const Locale = args => <input {...args} mode="phone" />
 Locale.args = {
-  locale: "DK"
-};
+  options: {
+    blocks: [2, 2, 2, 2]
+  }
+}
 
 export const DelayedControlled = args => {
-  const value = useDelayedValue("99696901");
+  const value = useDelayedValue("99696901")
 
-  return <Input id={"delayed_phone"} mode="phone" {...args} value={value} />;
-};
+  return <input id={"delayed_phone"} mode="phone" {...args} value={value} />
+}
 
-DelayedControlled.args = {};
+DelayedControlled.args = {}

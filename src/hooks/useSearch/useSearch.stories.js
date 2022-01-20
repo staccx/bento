@@ -1,9 +1,6 @@
 import React, { useState } from "react"
 import useSearch from "./useSearch"
-import Input from "../../components/Forms/Input/Input"
-import List from "../../components/Lists/List"
 import ReactJson from "react-json-view"
-import Heading from "../../components/Text/Heading/Heading"
 import { data } from "./useSearch.storyData"
 
 export default {
@@ -21,37 +18,41 @@ export const useSearchView = args => {
   })
   return (
     <div>
-      <Input
+      <input
         onChange={e => setTerm(e.target.value)}
         style={{ width: 200 }}
         placeholder="Search..."
       />
       {result && (
         <div>
-          <Heading level={3}>Result</Heading>
-          <List>
+          <h3 level={3}>Result</h3>
+          <ul>
             {result.map((item, index) => (
-              <ReactJson
-                key={item + index}
-                src={item}
-                name={`${item.name.first} ${item.name.last}`}
-                theme="monokai"
-                collapsed
-              />
+              <li>
+                <ReactJson
+                  key={item + index}
+                  src={item}
+                  name={`${item.name.first} ${item.name.last}`}
+                  theme="monokai"
+                  collapsed
+                />
+              </li>
             ))}
-          </List>
-          <Heading level={3}>All items</Heading>
-          <List>
+          </ul>
+          <h3 level={3}>All items</h3>
+          <ul>
             {data.map((item, index) => (
-              <ReactJson
-                key={item + index}
-                src={item}
-                name={`${item.name.first} ${item.name.last}`}
-                theme="monokai"
-                collapsed
-              />
+              <li>
+                <ReactJson
+                  key={item + index}
+                  src={item}
+                  name={`${item.name.first} ${item.name.last}`}
+                  theme="monokai"
+                  collapsed
+                />
+              </li>
             ))}
-          </List>
+          </ul>
         </div>
       )}
     </div>

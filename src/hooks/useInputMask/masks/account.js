@@ -1,12 +1,16 @@
 import { baseMask } from "./base"
-import { locales } from "../../../locale"
 
-export const accountMask = ({ locale = locales.Norway, ...options }) => {
+const defaultOptions = {
+  type: "BBAN",
+  blocks: [4, 2, 5],
+  maxLength: 11,
+  pattern: /[^0-9]+/gi
+}
+
+export const accountMask = options => {
   const config = {
+    ...defaultOptions,
     ...options,
-    ...(locale?.account
-      ? { ...locale.account }
-      : { ...locales.Norway.account }),
     name: "Account mask"
   }
 

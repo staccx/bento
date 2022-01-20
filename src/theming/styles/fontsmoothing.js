@@ -1,6 +1,5 @@
-import { css } from "styled-components"
-
-const fontSmoothing = css`
+// language=CSS
+const fontSmoothing = `
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;

@@ -1,12 +1,15 @@
 import { baseMask } from "./base"
-import { locales } from "../../../locale"
 
-export const postalCodeMask = ({ locale = locales.Norway, ...options }) => {
+const defaultOptions = {
+  blocks: [4],
+  maxLength: 4,
+  pattern: /[^0-9]+/gi
+}
+
+export const postalCodeMask = options => {
   const config = {
-    ...options,
-    ...(locale?.postalCode
-      ? { ...locale.postalCode }
-      : { ...locales.Norway.postalCode })
+    ...defaultOptions,
+    ...options
   }
 
   return baseMask({

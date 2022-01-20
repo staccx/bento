@@ -1,12 +1,14 @@
 import { baseMask } from "./base"
-import { locales } from "../../../locale"
 
-export const nationalIdMask = ({ locale = locales.Norway, ...options }) => {
+const defaultOptions = {
+  blocks: [6, 5],
+  pattern: /[^0-9]+/gi
+}
+
+export const nationalIdMask = options => {
   const config = {
+    ...defaultOptions,
     ...options,
-    ...(locale?.nationalId
-      ? { ...locale.nationalId }
-      : { ...locales.Norway.nationalId }),
     name: "NationalId mask"
   }
 

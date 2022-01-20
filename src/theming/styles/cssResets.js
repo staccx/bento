@@ -1,10 +1,10 @@
-import { css } from "styled-components"
 import color from "../convenience/color"
 import font from "../convenience/font"
 import fontFamily from "../convenience/fontFamily"
 import fontWeight from "../convenience/fontWeight"
 
-export default css`
+// language=CSS
+export default `
   body,
   h1,
   h2,

@@ -1,22 +1,15 @@
 import { baseMask } from "./base"
 
-const defaultLocale = {
-  phone: {
-    blocks: [3, 2, 3],
-    maxLength: 8
-  }
+const defaultOptions = {
+  blocks: [3, 2, 3],
+  maxLength: 8,
+  pattern: /[^0-9]+/gi
 }
 
-export const phoneMask = ({ locale = defaultLocale, ...options }) => {
+export const phoneMask = options => {
   const config = {
+    ...defaultOptions,
     ...options,
-    ...(locale?.phone
-      ? { ...locale.phone }
-      : {
-          blocks: [2, 2, 2, 2],
-          maxLength: 8
-        }),
-    pattern: /[^0-9]+/gi,
     name: "Phone mask"
   }
 

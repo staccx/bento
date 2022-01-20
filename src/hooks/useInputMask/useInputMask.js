@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useRef } from "react"
 import { resolveMask } from "./masks"
-import { useLogging } from "../useLogging"
 // Which types are allowed to set range
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange
 const allowedSelectionRangeTypes = ["text", "search", "URL", "tel", "password"]
@@ -16,7 +15,7 @@ export const useInputMask = ({
   defaultValue,
   ...otherProps
 }) => {
-  const logger = useLogging("useInputMask", debugLevel)
+  const logger = console
   const caretPosition = useRef(0)
   const timeout = useRef(null)
   const [value, valueSet] = React.useState({

@@ -1,6 +1,5 @@
 // Convenience
 // Theme class
-import Theme from "./Theme"
 
 export { default as borderRadius } from "./convenience/borderRadius"
 export { default as color } from "./convenience/color"
@@ -29,14 +28,3 @@ export {
 // Styles
 export { default as cssResets } from "./styles/cssResets"
 export { default as fontSmoothing } from "./styles/fontsmoothing"
-export { default as hideVisually } from "./styles/hideVisually"
-export { themeLogger as logger } from "./theme.logger"
-const instance = new Theme()
-
-const themes = {
-  _default: instance
-}
-
-const classNames = name => instance.get(name)
-
-export { themes, instance as theme, Theme, classNames }

@@ -1,8 +1,5 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat/NumberFormat
 import { STYLE, UNIT_DISPLAY, CURRENCY_DISPLAY } from "./number.constants"
-import loglevel from "loglevel"
-
-const logger = loglevel.getLogger("formatting")
 
 const defaults = {
   style: STYLE.decimal,
@@ -30,7 +27,7 @@ export const formatNumber = (value, opts) => {
     const formattedValue = formatter.format(value)
     return `${formattedValue}${options.suffix ?? ""}`
   } catch (e) {
-    logger.error(e.message)
+    console.error(e.message)
     return value
   }
 }
