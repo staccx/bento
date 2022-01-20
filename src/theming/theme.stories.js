@@ -1,12 +1,10 @@
 import styled from "styled-components"
-import themes from "../../.storybook/themes"
 import {
   color
 } from "./index"
 
 export default {
   title: "Styling/Theme colors",
-  component: themes,
   parameters: {
     docs: {
       description: {

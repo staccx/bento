@@ -1,8 +1,0 @@
-export { default as Provider } from "./components/SanityProvider"
-export { default as List } from "./components/SanityList"
-export { default as Image } from "./components/SanityImage"
-export { default as Query } from "./components/SanityQuery"
-export { default as Document } from "./components/SanityDocument"
-export { default as BlockContent } from "./components/SanityBlockContent"
-export { default as useSanity } from "./components/useSanity"
-export { useSanityQuery } from "./hooks/useSanityQuery"

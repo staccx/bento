@@ -8,35 +8,6 @@ process.env.PUBLIC_URL = ""
 
 require("react-scripts/config/env")
 
-// List known warnings you want to group or suppress. See docs below.
-// Tip: This is just an array, you can import it from an external file
-const rules = [
-  {
-    match: /^Warning: Failed prop type/,
-    group: "React: failed prop type"
-  },
-  {
-    match: /^Warning: Encountered two children with the same key/,
-    group: "React: Two children with same key"
-  },
-  {
-    match: /^SplitListItem exceeded max children:/,
-    group: "React: Split list error"
-  },
-  {
-    match: /^Warning: Each child in a list should have a unique "key" prop./,
-    group: "React: key prop"
-  },
-  {
-    match: /^Not implemented:/,
-    group: "Not implemented errors"
-  },
-  {
-    match: /^Warning: An update to (\w*) inside a test was not wrapped in act/,
-    group: "React: Act warnings"
-  }
-]
-
 module.exports = {
   roots: ["<rootDir>/src"],
   testMatch: ["**/__tests__/**/*.js", "**/?(*.)+(spec|test).[jt]s?(x)"],
@@ -47,7 +18,7 @@ module.exports = {
   reporters: [
     // Add jest-clean-console-reporter. This takes place of the
     // default reporter, and behaves identically otherwise
-    ["jest-clean-console-reporter", { rules: rules }],
+    // ["jest-clean-console-reporter", { rules: rules }],
 
     // Overriding config.reporters wipes out default reporters, so
     // we need to restore the summary reporter.

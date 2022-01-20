@@ -37,4 +37,6 @@ const themes = {
   _default: instance
 }
 
-export { themes, instance as theme, Theme }
+const classNames = name => instance.get(name)
+
+export { themes, instance as theme, Theme, classNames }

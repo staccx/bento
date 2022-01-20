@@ -1,5 +1,0 @@
-# Divider example
-
-```jsx
-<Divider />
-```

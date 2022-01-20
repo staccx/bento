@@ -1,8 +1,0 @@
-export { default as SanityBackend } from "./SanityBackend"
-export { default as RESTBackend } from "./RESTBackend"
-export { resourceReducer } from "./backend.utils"
-export { default as Translate } from "./Translate/Translate"
-export { default as TranslateSSR } from "./Translate/TranslateSSR"
-export { default as Transform } from "./Transform/Transform"
-export { default as Provider, useI18n } from "./I18n"
-export { default as languages } from "./lanuages"

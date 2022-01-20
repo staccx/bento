@@ -1,3 +1,0 @@
-```jsx
-<Label>Labeltekst</Label>
-```

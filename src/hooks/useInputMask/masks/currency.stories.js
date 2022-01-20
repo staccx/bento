@@ -1,34 +1,32 @@
-import React, { useState } from "react"
-import Input from "../../../components/Forms/Input/Input"
-import { useDelayedValue } from "./_shared.utils"
+import React, { useState } from "react";
+import { useDelayedValue } from "./_shared.utils";
 
 export default {
-  title: "Components/Input/Masks/Currency",
-  component: Input
-}
+  title: "hooks/useInputMask/Currency"
+};
 
-export const Vanilla = args => <Input {...args} mode="currency" />
-Vanilla.args = {}
+export const Vanilla = args => <input {...args} mode="currency" />;
+Vanilla.args = {};
 
-export const Locale = args => <Input {...args} mode="currency" />
+export const Locale = args => <input {...args} mode="currency" />;
 Locale.args = {
   locale: "da-DK"
-}
+};
 
 const Test = ({ args }) => {
-  const [value1, value1Set] = useState()
-  const [value2, value2Set] = useState()
+  const [value1, value1Set] = useState();
+  const [value2, value2Set] = useState();
 
   return (
     <form>
-      <Input
+      <input
         {...args}
         id={"one"}
         mode="currency"
         value={value1}
         onChange={e => value1Set(e.rawValue)}
       />
-      <Input
+      <input
         {...args}
         id={"two"}
         mode="currency"
@@ -36,40 +34,40 @@ const Test = ({ args }) => {
         onChange={e => value2Set(e.rawValue)}
       />
     </form>
-  )
-}
+  );
+};
 
-export const InForm = args => <Test args={args} />
-InForm.args = {}
+export const InForm = args => <Test args={args} />;
+InForm.args = {};
 
 export const DelayedControlled = args => {
-  const [val, valSet] = useState("135792468")
-  const value = useDelayedValue(val)
+  const [val, valSet] = useState("135792468");
+  const value = useDelayedValue(val);
 
   return (
-    <Input
+    <input
       id={"delayed_credit"}
       mode="currency"
       {...args}
       value={value}
       onChange={e => valSet(e.rawValue)}
     />
-  )
-}
+  );
+};
 
-DelayedControlled.args = {}
+DelayedControlled.args = {};
 
 export const DelayedDefaultValue = args => {
-  const value = useDelayedValue("135792468")
+  const value = useDelayedValue("135792468");
 
   return (
-    <Input
+    <input
       id={"delayed_credit"}
       mode="currency"
       {...args}
       defaultValue={value}
     />
-  )
-}
+  );
+};
 
-DelayedControlled.args = {}
+DelayedControlled.args = {};

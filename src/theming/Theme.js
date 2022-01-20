@@ -1,6 +1,4 @@
-import { css } from "styled-components"
 import merge from "lodash.merge"
-import createGlobal from "./utils/createGlobal"
 
 const styleReducer = (acc, curr) => {
   Object.keys(curr).forEach(key => {
@@ -16,6 +14,7 @@ const styleReducer = (acc, curr) => {
  * Simple class for managing styles in the Bento world
  */
 export default class Theme {
+  classNames = []
   constructor(theme, ...props) {
     const newTheme = merge(theme, ...props)
 
@@ -48,14 +47,14 @@ export default class Theme {
     })
   }
 
-  setBaseSize(baseSize) {
-    this.baseSize = baseSize
-    this.append(
-      createGlobal({
-        fontSize: css`
-          font-size: ${baseSize}px;
-        `
-      })
-    )
+  register(name, className) {
+    this.classNames[name] = className
+  }
+
+  get(names) {
+    if (!Array.isArray(names)) {
+      names = [names]
+    }
+    return names.map(name => this.classNames[name]).join(" ")
   }
 }

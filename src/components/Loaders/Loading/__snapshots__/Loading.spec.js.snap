@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Loading Snapshots No props 1`] = `null`;
-
-exports[`Loading Snapshots className 1`] = `null`;
-
-exports[`Loading Snapshots isReady 1`] = `null`;

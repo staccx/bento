@@ -1,15 +1,13 @@
-import React from "react"
-import Input from "../../../components/Forms/Input/Input"
+import React from "react";
 
 export default {
-  title: "Components/Input/Masks/Postal Code",
-  component: Input
-}
+  title: "hooks/useInputMask/Postal Code"
+};
 
-export const Vanilla = args => <Input {...args} mode="postalcode" />
-Vanilla.args = {}
+export const Vanilla = args => <input {...args} mode="postalcode" />;
+Vanilla.args = {};
 
-export const Locale = args => <Input {...args} mode="postalcode" />
+export const Locale = args => <input {...args} mode="postalcode" />;
 Locale.args = {
   locale: "DK"
-}
+};

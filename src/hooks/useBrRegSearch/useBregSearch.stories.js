@@ -1,26 +1,24 @@
-import React, { useState } from "react"
-import useBrRegSearch from "./useBrRegSearch"
-import List from "../../components/Lists/List"
-import Input from "../../components/Forms/Input/Input"
-import ReactJson from "react-json-view"
+import React, { useState } from "react";
+import useBrRegSearch from "./useBrRegSearch";
+import ReactJson from "react-json-view";
 
 export default {
   title: "Hooks/useBrRegSearch",
   component: useBrRegSearch
-}
+};
 
 export const UseBrRegSearchView = () => {
-  const [search, setSearch] = useState("")
-  const { isLoading, results } = useBrRegSearch(search)
+  const [search, setSearch] = useState("");
+  const { isLoading, results } = useBrRegSearch(search);
   return (
     <div>
       <p>docs her</p>
-      <Input
+      <input
         onChange={e => setSearch(e.target.value)}
         placeholder="Search here"
         style={{ width: 300 }}
       />
-      <List>
+      <li>
         {isLoading
           ? "Loading..."
           : results.map(item => (
@@ -32,7 +30,7 @@ export const UseBrRegSearchView = () => {
                 collapsed
               />
             ))}
-      </List>
+      </li>
     </div>
-  )
-}
+  );
+};
