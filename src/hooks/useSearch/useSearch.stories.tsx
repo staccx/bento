@@ -25,7 +25,7 @@ export const useSearchView = args => {
       />
       {result && (
         <div>
-          <h3 level={3}>Result</h3>
+          <h3>Result</h3>
           <ul>
             {result.map((item, index) => (
               <li>
@@ -39,7 +39,7 @@ export const useSearchView = args => {
               </li>
             ))}
           </ul>
-          <h3 level={3}>All items</h3>
+          <h3>All items</h3>
           <ul>
             {data.map((item, index) => (
               <li>

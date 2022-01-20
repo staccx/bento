@@ -13,7 +13,7 @@ const defaults = {
   minimumFractionDigits: 0
 }
 
-export const formatNumber = (value, opts) => {
+export const formatNumber = (value, opts?: any) => {
   const options = {
     ...defaults,
     ...opts
@@ -27,7 +27,7 @@ export const formatNumber = (value, opts) => {
     const formattedValue = formatter.format(value)
     return `${formattedValue}${options.suffix ?? ""}`
   } catch (e) {
-    console.error(e.message)
+    if (e instanceof Error) console.error(e.message)
     return value
   }
 }

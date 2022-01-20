@@ -51,7 +51,7 @@ function TestComp({ term }) {
 describe("useSearch", () => {
   afterEach(cleanup)
   it("Should work", () => {
-    const { container, rerender } = render(<TestComp />)
+    const { container, rerender } = render(<TestComp term="" />)
     const span = getByTestId(container, "result")
 
     expect(span.textContent).toBe("3")

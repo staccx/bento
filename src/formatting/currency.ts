@@ -1,12 +1,16 @@
 import { formatNumber } from "./number"
 import { STYLE } from "./number.constants"
 
-export const formatMoney = (value, options = {}) => {
-  console.debug("formatMoney", value, options)
+type FormatNumberOptions = Intl.NumberFormatOptions & {
+  suffix?: string
+  locale?: string
+}
+
+export const formatMoney = (value, options?: FormatNumberOptions) => {
   return formatNumber(value, {
     locale: "no",
     suffix: null,
-    ...(options.currencyDisplay && { style: STYLE.currency }),
+    ...(options?.currencyDisplay && { style: STYLE.currency }),
     ...options
   })
 }

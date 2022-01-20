@@ -1,4 +1,10 @@
-import { format, formatDistance, formatRelative, parseISO } from "date-fns"
+import {
+  format,
+  formatDistance,
+  formatRelative,
+  parseISO,
+  Locale
+} from "date-fns"
 import nb from "date-fns/locale/nb"
 
 const parse = date => {
@@ -14,10 +20,10 @@ export const formatDate = (date, frmat = "dd MMMM yyyy", locale = nb) => {
 }
 
 export const formatDateDistance = (
-  frm,
-  to = new Date(),
-  locale = nb,
-  opts = {}
+  frm: string | Date,
+  to: string | Date = new Date(),
+  locale: Locale = nb,
+  opts: any = {}
 ) => {
   return formatDistance(parse(frm), parse(to), { locale, ...opts })
 }

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react"
 import Fuse from "fuse.js"
+import FuseSearchOptions = Fuse.FuseSearchOptions
 
 /**
  * useSearch lets you search Json files/APIs
@@ -14,7 +15,19 @@ const defaultFuseProps = {
   maxPatternLength: 32,
   minMatchCharLength: 2
 }
-const useSearch = ({ input, documents = [], keys = [], fuseProps = {} }) => {
+
+type SearchOptions = {
+  input: string | null | undefined
+  documents?: any[]
+  keys?: string[]
+  fuseProps?: any
+}
+const useSearch = ({
+  input,
+  documents = [],
+  keys = [],
+  fuseProps = {}
+}: SearchOptions) => {
   const [result, setResult] = useState(documents)
 
   const fuse = useMemo(() => {

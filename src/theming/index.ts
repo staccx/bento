@@ -17,7 +17,6 @@ export { default as mapProp } from "./utils/mapProp"
 export { default as createVariants } from "./utils/createVariants"
 export { default as createGlobal } from "./utils/createGlobal"
 export { default as applyVariants } from "./utils/applyVariants"
-export { default as flattenGlobals } from "./utils/flattenGlobals"
 
 export {
   commonPropTypes,

@@ -7,7 +7,7 @@ import get from "lodash.get"
  * @returns {function({theme?: *}): *}
  */
 export const getField =
-  (field, fallback = null) =>
+  (field, fallback: string | null = null) =>
   ({ theme }) =>
     get(theme, field, fallback)
 
@@ -17,7 +17,7 @@ export const getField =
  * @param field
  * @returns {function({theme?: *}): (*|null)}
  */
-export default (prop, field) =>
+export default (prop, field?: string) =>
   ({ theme }) => {
     if (!field) {
       return get(theme, prop, null)

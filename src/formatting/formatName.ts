@@ -14,8 +14,11 @@ const swapLastToFirst = (accumulator, currentValue, currentIndex, array) => {
   }
   return accumulator
 }
+type FormatNameOptions = {
+  separator?: string
+}
 
-export default (value, opts = {}) => {
+export default (value: string, opts: FormatNameOptions = {}) => {
   const { separator = "," } = opts
   return value
     .split(" ")

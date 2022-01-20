@@ -49,7 +49,7 @@ describe("Date", () => {
 
     it("Should get distance only one input with defaults", () => {
       const date = addDays(new Date(), 10)
-      expect(formatDateDistance(date)).toBe("ti dager")
+      expect(formatDateDistance(date)).toBe("10 dager")
     })
 
     it("Should be able to override locale", () => {

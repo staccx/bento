@@ -1,6 +1,10 @@
 const unique = (value, index, self) => self.indexOf(value) === index
 
-export const distinct = (list, distinctor = null, func = item => item) => {
+export const distinct = (
+  list,
+  distinctor: string | null = null,
+  func = item => item
+) => {
   const items = list.map(func).filter(unique)
 
   if (!distinctor) {
