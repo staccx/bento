@@ -7,16 +7,15 @@ const mapBlocks = block =>
     .join("")
 
 export const resolveBlocks = blocks =>
-  blocks
-    ?.map(mapBlocks)
-    .join(" ")
-    .trimEnd()
+  blocks?.map(mapBlocks).join(" ").trimEnd()
 
-const pipe = value => (...functions) =>
-  functions.reduce(
-    (currentValue, currentFunction) => currentFunction(currentValue),
-    value
-  )
+const pipe =
+  value =>
+  (...functions) =>
+    functions.reduce(
+      (currentValue, currentFunction) => currentFunction(currentValue),
+      value
+    )
 
 const resolveDelimiterString = ({ delimiter = null }) => {
   if (!delimiter) {

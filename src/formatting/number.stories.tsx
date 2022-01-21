@@ -1,13 +1,12 @@
 import { formatNumber } from "./number"
 import { CURRENCY_DISPLAY, STYLE } from "./number.constants"
 
-
 export default {
   title: "formatting/Format number",
   component: formatNumber
 }
 
-export const Default = (args) => (
+export const Default = args => (
   <div>
     <p>
       Uses Norwegian locales by default <br />
@@ -21,13 +20,13 @@ Default.args = {
   value: 100000
 }
 
-export const ChangeLocale = (args) => (
+export const ChangeLocale = args => (
   <div>
     <p>
       Easily change locale, in this instance the locale is "en" <br />
       Result:
     </p>
-    {formatNumber(args.value, {locale: args.locale})}
+    {formatNumber(args.value, { locale: args.locale })}
   </div>
 )
 
@@ -36,13 +35,14 @@ ChangeLocale.args = {
   locale: "en"
 }
 
-export const Currency = (args) => (
+export const Currency = args => (
   <div>
     <p>
-      You can use it to do money formatting (NOTE: this also has its own function `formatMoney`) <br />
+      You can use it to do money formatting (NOTE: this also has its own
+      function `formatMoney`) <br />
       Result:
     </p>
-    {formatNumber(args.value, {style: args.style})}
+    {formatNumber(args.value, { style: args.style })}
   </div>
 )
 
@@ -51,13 +51,14 @@ Currency.args = {
   style: STYLE.currency
 }
 
-export const Suffix = (args) => (
+export const Suffix = args => (
   <div>
     <p>
-      This can be used for any style. but if you want a unit you should use Units <br />
+      This can be used for any style. but if you want a unit you should use
+      Units <br />
       Result:
     </p>
-    {formatNumber(args.value, {style: args.style, suffix: args.suffix})}
+    {formatNumber(args.value, { style: args.style, suffix: args.suffix })}
   </div>
 )
 
@@ -67,13 +68,16 @@ Currency.args = {
   suffix: ".-"
 }
 
-export const CurrencyDisplayName = (args) => (
+export const CurrencyDisplayName = args => (
   <div>
     <p>
       You can add currencyDisplay, to show currency name <br />
       Result:
     </p>
-    {formatNumber(args.value, {style: args.style, currencyDisplay: args.currency})}
+    {formatNumber(args.value, {
+      style: args.style,
+      currencyDisplay: args.currency
+    })}
   </div>
 )
 
@@ -83,14 +87,16 @@ CurrencyDisplayName.args = {
   currency: CURRENCY_DISPLAY.name
 }
 
-
-export const CurrencyDisplayCode = (args) => (
+export const CurrencyDisplayCode = args => (
   <div>
     <p>
       You can add currencyDisplay, to show currency code <br />
       Result:
     </p>
-    {formatNumber(args.value, {style: args.style, currencyDisplay: args.currency})}
+    {formatNumber(args.value, {
+      style: args.style,
+      currencyDisplay: args.currency
+    })}
   </div>
 )
 
@@ -100,13 +106,13 @@ CurrencyDisplayCode.args = {
   currency: CURRENCY_DISPLAY.code
 }
 
-export const MinimumFraction = (args) => (
+export const MinimumFraction = args => (
   <div>
     <p>
-      Override default fraction settings  <br />
+      Override default fraction settings <br />
       Result:
     </p>
-    {formatNumber(args.value, {minimumFractionDigits: args.fractionDigit})}
+    {formatNumber(args.value, { minimumFractionDigits: args.fractionDigit })}
   </div>
 )
 
@@ -115,13 +121,13 @@ MinimumFraction.args = {
   fractionDigit: 2
 }
 
-export const MaximumFraction = (args) => (
+export const MaximumFraction = args => (
   <div>
     <p>
       Override default fraction settings <br />
       Result:
     </p>
-    {formatNumber(args.value, {maximumFractionDigits: args.fractionDigit})}
+    {formatNumber(args.value, { maximumFractionDigits: args.fractionDigit })}
   </div>
 )
 
@@ -130,13 +136,13 @@ MaximumFraction.args = {
   fractionDigit: 1
 }
 
-export const CompactFormatting = (args) => (
+export const CompactFormatting = args => (
   <div>
     <p>
-      Can compact numbers  <br />
+      Can compact numbers <br />
       Result:
     </p>
-    {formatNumber(args.value, {notation: args.notation})}
+    {formatNumber(args.value, { notation: args.notation })}
   </div>
 )
 
@@ -145,15 +151,15 @@ CompactFormatting.args = {
   notation: "compact"
 }
 
-export const Percentage = (args) => (
+export const Percentage = args => (
   <div>
     <p>
       Percentage formatting. Remember it uses normalized values (0-1) <br />
       Result:
     </p>
-    {formatNumber(args.value1, {style: args.style})} <br />
-    {formatNumber(args.value2, {style: args.style})} <br />
-    {formatNumber(args.value3, {style: args.style})}
+    {formatNumber(args.value1, { style: args.style })} <br />
+    {formatNumber(args.value2, { style: args.style })} <br />
+    {formatNumber(args.value3, { style: args.style })}
   </div>
 )
 

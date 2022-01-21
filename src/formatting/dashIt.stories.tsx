@@ -4,20 +4,14 @@ export default {
   component: dashIt
 }
 
-export const Default = (args) => (
+export const Default = args => (
   <div>
-    <p>
-      DashIt will replace all spaces with dashes.
-      </p>
-    <p>
-      Original: {args.text}
-    </p>
+    <p>DashIt will replace all spaces with dashes.</p>
+    <p>Original: {args.text}</p>
     New: {dashIt(args.text)}
   </div>
-
 )
 
 Default.args = {
   text: "This is a long text with a lot of spaces"
-
 }

@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import useBrRegSearch from "./useBrRegSearch";
-import ReactJson from "react-json-view";
+import React, { useState } from "react"
+import useBrRegSearch from "./useBrRegSearch"
+import ReactJson from "react-json-view"
 
 export default {
   title: "Hooks/useBrRegSearch",
   component: useBrRegSearch
-};
+}
 
 export const UseBrRegSearchView = () => {
-  const [search, setSearch] = useState("");
-  const { isLoading, results } = useBrRegSearch(search);
+  const [search, setSearch] = useState("")
+  const { isLoading, results } = useBrRegSearch(search)
   return (
     <div>
       <p>docs her</p>
@@ -32,5 +32,5 @@ export const UseBrRegSearchView = () => {
             ))}
       </li>
     </div>
-  );
-};
+  )
+}

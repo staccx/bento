@@ -12,7 +12,11 @@ const brregInstance = axios.create({
 const useBrRegSearch = searchTerm => {
   const [debouncedSearchTerm] = useDebounce(searchTerm, 500)
 
-  const { data, error: errors, isLoading } = useQuery(
+  const {
+    data,
+    error: errors,
+    isLoading
+  } = useQuery(
     debouncedSearchTerm,
     () =>
       brregInstance

@@ -1,5 +1,4 @@
-
-```
+;```
 examples:
 
 <CurrencyText>{formatCurrency(1000)}</CurrencyText>

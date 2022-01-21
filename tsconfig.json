@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "outDir": "./lib",
+    "outDir": "./dist",
     "module": "commonjs",
     "lib": [ "es2020", "dom" ],
     "jsx": "react",
     "moduleResolution": "node",
+    "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "removeComments": true,
     "skipLibCheck": true,
     "checkJs": false,

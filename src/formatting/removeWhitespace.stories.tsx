@@ -5,7 +5,7 @@ export default {
   component: removeWhitespace
 }
 
-export const Default = (args) => (
+export const Default = args => (
   <div>
     <p>
       Remove leading white space <br />
@@ -19,10 +19,11 @@ Default.args = {
   value: "        Test"
 }
 
-export const Trailing = (args) => (
+export const Trailing = args => (
   <div>
     <p>
-      Remove trailing white space<br />
+      Remove trailing white space
+      <br />
       Result:
     </p>
     {removeWhitespace(args.value)}
@@ -33,10 +34,11 @@ Trailing.args = {
   value: "Test         "
 }
 
-export const AllWhitespace = (args) => (
+export const AllWhitespace = args => (
   <div>
     <p>
-      Remove white space in entire string<br />
+      Remove white space in entire string
+      <br />
       Result:
     </p>
     {removeWhitespace(args.value)}
@@ -44,5 +46,6 @@ export const AllWhitespace = (args) => (
 )
 
 AllWhitespace.args = {
-  value: "This will be hard to read, but that is intended, because i have removed all white space"
+  value:
+    "This will be hard to read, but that is intended, because i have removed all white space"
 }
