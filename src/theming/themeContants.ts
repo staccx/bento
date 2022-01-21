@@ -20,6 +20,8 @@ const children = PropTypes.oneOfType([
   PropTypes.func
 ])
 
+// adding comment to test lint staged
+
 export const variant = PropTypes.oneOf([
   PropTypes.string,
   PropTypes.func,
