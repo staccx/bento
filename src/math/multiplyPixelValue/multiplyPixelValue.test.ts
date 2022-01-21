@@ -1,4 +1,4 @@
-import { multiplyPixelValue } from "./index"
+import { multiplyPixelValue } from "./multiplyPixelValue"
 describe("Math", () => {
   describe("Multiply pixel value", () => {
     it("Normal use", () => {

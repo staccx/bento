@@ -1,4 +1,4 @@
-import { isNumber } from "./index"
+import { isNumber } from "./isNumber"
 
 describe("Is Number", () => {
   it("Should return true for numbers", () => {
