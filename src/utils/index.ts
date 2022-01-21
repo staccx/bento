@@ -1,4 +1,3 @@
-export { stringIncludes } from "./stringIncludes"
-export { distinct } from "./distinct"
-export { flatten } from "./flatten"
+export { stringIncludes } from "./stringIncludes/stringIncludes"
+export { distinct } from "./distinct/distinct"
 export { partition } from "./partition/partition"

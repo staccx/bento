@@ -9,7 +9,7 @@ const list = [
 
 describe("Partition", () => {
   it("Should split an array in two based on condition", () => {
-    const [accepted, declined] = partition(list, item => item.flag)
+    const [accepted, declined] = partition(list, list => list.flag)
     expect(accepted.length).toBe(2)
     expect(declined.length).toBe(2)
     expect(accepted.filter(item => item.string === "foo").length).toBe(1)

@@ -60,7 +60,7 @@ import {
 /**
  * Utils
  */
-import { distinct, flatten, partition, stringIncludes } from "./utils"
+import { distinct, partition, stringIncludes } from "./utils"
 
 /**
  * Hooks
@@ -121,7 +121,6 @@ export const theming = {
   createGlobal,
   createVariants,
   cssResets,
-
   fontSmoothing,
   getProp,
   getField,
@@ -133,7 +132,7 @@ export const theming = {
   themePropTypes,
   wrapper
 }
-export const utils = { distinct, flatten, partition, stringIncludes }
+export const utils = { distinct, partition, stringIncludes }
 
 export const hooks = {
   useBrRegSearch,
@@ -191,7 +190,6 @@ export {
   VARIANT_DEFAULT,
   wrapper,
   distinct,
-  flatten,
   partition,
   stringIncludes,
   useBrRegSearch,

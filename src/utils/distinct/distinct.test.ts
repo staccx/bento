@@ -19,7 +19,7 @@ describe("Distinct", () => {
 
   it("Should handle objects", () => {
     expect(
-      distinct([obj1, obj2, obj1, { name: "test", value: 3 }], "name")
+      distinct([obj1, obj2, obj1, { name: "test", value: 3, test2: 3 }], "name")
     ).toEqual([obj1, obj2])
   })
 })
