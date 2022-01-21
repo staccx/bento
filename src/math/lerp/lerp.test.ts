@@ -1,4 +1,4 @@
-import { lerp } from "./index"
+import { lerp } from "./lerp"
 describe("Math", () => {
   describe("Lerp", () => {
     it("Lerp", () => {

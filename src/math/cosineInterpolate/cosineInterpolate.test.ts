@@ -1,4 +1,4 @@
-import { cosineInterpolate, almostEquals } from "./index"
+import { cosineInterpolate, almostEquals } from "../index"
 
 describe("Math", () => {
   describe("Cosine Interpolate", () => {
