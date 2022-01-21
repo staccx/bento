@@ -9,7 +9,7 @@ describe("Date", () => {
       expect(formatted).toBe("25 april 2018")
     })
     it("Should format ISO 8601 with other formats", () => {
-      const format = f => formatDate("2018-04-25T00:00:00", f)
+      const format = (f: string) => formatDate("2018-04-25T00:00:00", f)
 
       expect(format("yyyy")).toBe("2018")
       expect(format("MM/yyyy")).toBe("04/2018")
