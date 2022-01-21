@@ -1,13 +1,16 @@
 import { useEffect, useMemo, useState } from "react"
 
-const defaultCallback = mutationList => mutationList
+const defaultCallback = (
+  mutationList: MutationRecord[],
+  observer?: MutationObserver
+) => mutationList
 
 export function useMutationObserver(
   targetNode,
   config,
   callback = defaultCallback
 ) {
-  const [value, setValue] = useState(undefined)
+  const [value, setValue] = useState<MutationRecord[]>()
   const observer = useMemo(
     () =>
       new MutationObserver((mutationList, observer) => {

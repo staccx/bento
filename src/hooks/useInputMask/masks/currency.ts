@@ -7,8 +7,8 @@ export const currencyMask = ({
   ...options
 }) => {
   const currencyConfig = {
-    locale: locale?.currency?.locale ?? locale,
-    currency: locale?.currency?.name ?? currency
+    locale,
+    currency
   }
 
   const config = {

@@ -5,7 +5,6 @@ import { useQuery } from "react-query"
 const brregInstance = axios.create({
   baseURL: "https://data.brreg.no/enhetsregisteret/api"
 })
-brregInstance?.interceptors?.response.use(response => response.data)
 /**
  * Search in The Brønnøysund Register Centre(Brønnøysundregisteret).
  * Input a search term and it returns an object with the search results.
@@ -16,13 +15,15 @@ const useBrRegSearch = searchTerm => {
   const { data, error: errors, isLoading } = useQuery(
     debouncedSearchTerm,
     () =>
-      brregInstance.get("/enheter", {
-        params: {
-          ...(Number.isInteger(parseInt(searchTerm))
-            ? { organisasjonsnummer: debouncedSearchTerm }
-            : { navn: debouncedSearchTerm })
-        }
-      }),
+      brregInstance
+        .get("/enheter", {
+          params: {
+            ...(Number.isInteger(parseInt(searchTerm))
+              ? { organisasjonsnummer: debouncedSearchTerm }
+              : { navn: debouncedSearchTerm })
+          }
+        })
+        .then(res => res.data),
     {
       enabled: debouncedSearchTerm?.length > 2
     }

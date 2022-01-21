@@ -4,7 +4,7 @@ const useTimer = (time = 1000) => {
   const [isReady, setIsReady] = useState(time === 0)
 
   useEffect(() => {
-    let timeout = null
+    let timeout: NodeJS.Timeout
     if (!isReady) {
       timeout = setTimeout(() => {
         setIsReady(true)

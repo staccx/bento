@@ -17,8 +17,8 @@ export const useInputMask = ({
 }) => {
   const logger = console
   const caretPosition = useRef(0)
-  const timeout = useRef(null)
-  const [value, valueSet] = React.useState({
+  const timeout = useRef<NodeJS.Timeout>()
+  const [value, valueSet] = React.useState<{ value: any; rawValue?: any }>({
     value: controlledValue ?? defaultValue
   })
 
@@ -44,7 +44,7 @@ export const useInputMask = ({
     if (!allowedSelectionRangeTypes.includes(type)) {
       return
     }
-    clearTimeout(timeout.current)
+    if (timeout.current) clearTimeout(timeout.current)
     timeout.current = setTimeout(() => {
       if (document && document.activeElement === ref.current && ref.current) {
         const { selectionStart } = ref.current
@@ -59,7 +59,7 @@ export const useInputMask = ({
     })
 
     return () => {
-      clearTimeout(timeout.current)
+      if (timeout.current) clearTimeout(timeout.current)
     }
   })
 
@@ -93,8 +93,8 @@ export const useInputMask = ({
     }
   }, [defaultValue])
 
-  const createMask = resolveMask(mode, logger)
-  const mask = React.useRef(
+  const createMask = resolveMask(mode)
+  const mask = React.useRef<((input: any) => any) | null>(
     createMask({
       locale
     })
@@ -104,7 +104,7 @@ export const useInputMask = ({
     if (!mode) {
       return
     }
-    const createMask = resolveMask(mode, logger)
+    const createMask = resolveMask(mode)
     mask.current = createMask({ locale })
     logger.debug("Mode resolved", mask.current?.name)
   }, [mode, logger, locale])
@@ -123,7 +123,7 @@ export const useInputMask = ({
     if (!mode) {
       return
     }
-    const val = mask.current(e.target.value)
+    const val = mask.current && mask.current(e.target.value)
     logger.debug("Handling change on masked input", val, value)
     if (value?.value) {
       const diff = val.value.length - value.value.length
