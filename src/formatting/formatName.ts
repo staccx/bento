@@ -1,4 +1,4 @@
-const firstToUpper = value =>
+const firstToUpper = (value: string): string =>
   value
     .split("")
     .map((letter, index) =>
@@ -6,25 +6,30 @@ const firstToUpper = value =>
     )
     .join("")
 
-const swapLastToFirst = (accumulator, currentValue, currentIndex, array) => {
+function swapLastToFirst<T>(
+  previousValue: T[],
+  currentValue: T,
+  currentIndex: number,
+  array: any[]
+): T[] {
   if (currentIndex >= array.length - 1) {
-    accumulator.splice(0, 0, currentValue)
+    previousValue.splice(0, 0, currentValue)
   } else {
-    accumulator.push(currentValue)
+    previousValue.push(currentValue)
   }
-  return accumulator
+  return previousValue
 }
 type FormatNameOptions = {
   separator?: string
 }
 
-export default (value: string, opts: FormatNameOptions = {}) => {
+export default (value: string, opts: FormatNameOptions = {}): string => {
   const { separator = "," } = opts
   return value
     .split(" ")
     .map(firstToUpper)
-    .reduce(swapLastToFirst, [])
-    .map((name, index, arr) =>
+    .reduce(swapLastToFirst, [] as string[])
+    .map((name: string, index: number, arr: string[]) =>
       index === 0 && arr.length > 1 ? name + separator : name
     )
     .join(" ")

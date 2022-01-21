@@ -1,1 +1,1 @@
-export default input => input.replace(/\s/g, "-").toLowerCase()
+export default (input: string) => input.replace(/\s/g, "-").toLowerCase()

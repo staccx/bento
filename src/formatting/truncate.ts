@@ -1,2 +1,7 @@
-export default (val, length = 20, symbol = "&hellip;") =>
-  val.length > length ? val.substr(0, length - 1) + symbol : val
+export default function truncate(
+  val: string,
+  length: number = 20,
+  symbol: string = "&hellip;"
+) {
+  return val.length > length ? val.substring(0, length - 1) + symbol : val
+}

@@ -1,4 +1,6 @@
-export default (value, mask = "XXX XX XXX") => {
+type Value = string | number | bigint
+
+export default (value: Value, mask: string = "XXX XX XXX"): string => {
   const stringValue = "" + value
   let returnValue = ""
   let indexString = 0

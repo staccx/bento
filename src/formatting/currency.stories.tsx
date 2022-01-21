@@ -1,3 +1,4 @@
+import React from "react"
 import { formatMoney, abbreviateCurrency } from "./currency"
 import { STYLE } from "./number.constants"
 

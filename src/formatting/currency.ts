@@ -9,12 +9,11 @@ type FormatNumberOptions = Intl.NumberFormatOptions & {
 export const formatMoney = (value, options?: FormatNumberOptions) => {
   return formatNumber(value, {
     locale: "no",
-    suffix: null,
     ...(options?.currencyDisplay && { style: STYLE.currency }),
     ...options
   })
 }
 
-export const abbreviateCurrency = value => {
+export const abbreviateCurrency = (value: number | bigint) => {
   return formatNumber(value, { notation: "compact", maximumFractionDigits: 0 })
 }

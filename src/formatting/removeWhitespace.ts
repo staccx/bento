@@ -1,1 +1,1 @@
-export default value => (value ? value.replace(/\s/g, "") : null)
+export default (value: string): string => value.replace(/\s/g, "")
