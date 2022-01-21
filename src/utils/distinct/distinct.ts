@@ -1,11 +1,11 @@
-const unique = (value, index, self) => self.indexOf(value) === index
-
 export function distinct<Type>(
   list: Type[],
   distinctor: keyof Type | null = null,
   func = (item: Type) => item
 ) {
-  const items = list.map(func).filter(unique)
+  const items = list
+    .map(func)
+    .filter((value, index, self) => self.indexOf(value) === index)
 
   if (!distinctor) {
     return items
