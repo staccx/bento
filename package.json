@@ -7,7 +7,7 @@
     "test:coverage": "jest --watch=false --coverage --passWithNoTests --updateSnapshot",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
     "build": "tsc",
-    "start": "start-storybook -p 9009",
+    "start": "npm run test:generate-output && start-storybook -p 9009",
     "build-storybook": "tsc && npm run test:generate-output && build-storybook --output-dir public --quiet",
     "prepare": "npm run build",
     "lint": "eslint src/ --fix",
