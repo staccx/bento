@@ -9,6 +9,14 @@ import nb from "date-fns/locale/nb"
 
 type DateArgument = string | Date
 
+type FormatDateOptions = {
+  locale?: Locale
+  weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6
+  firstWeekContainsDate?: number
+  useAdditionalWeekYearTokens?: boolean
+  useAdditionalDayOfYearTokens?: boolean
+}
+
 const parse = (date: DateArgument) => {
   if (typeof date === "string") {
     return parseISO(date)
@@ -20,9 +28,11 @@ const parse = (date: DateArgument) => {
 export const formatDate = (
   date: DateArgument,
   dateFormat: string = "dd MMMM yyyy",
-  locale: Locale = nb
+  options: FormatDateOptions = {
+    locale: nb
+  }
 ) => {
-  return format(parse(date), dateFormat, { locale })
+  return format(parse(date), dateFormat, options)
 }
 
 type FormatDistanceOptions = {

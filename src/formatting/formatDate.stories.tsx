@@ -1,4 +1,8 @@
 import { formatDate } from "./date"
+import FunctionStory from "../_storyhelpers/FunctionStory"
+import React from "react"
+import * as locales from "date-fns/locale"
+import { ComponentStory } from "@storybook/react"
 
 const date = "2020-02-12T00:00:00"
 const dateObject = new Date(1525968057000)
@@ -8,22 +12,55 @@ export default {
   component: formatDate,
   parameters: {
     jest: ["date.test.ts"]
+  },
+  argTypes: {
+    date: { control: { type: "date" } },
+    format: {
+      control: { type: "text" }
+    },
+    locale: {
+      control: {
+        type: "select",
+        options: Object.keys(locales)
+      }
+    },
+    weekStartsOn: {
+      control: { type: "range", min: 0, max: 6, step: 1 }
+    }
+  },
+  args: {
+    date: new Date(),
+    weekStartsOn: 0,
+    format: "iiii dd MMMM yyyy HH:mm:ss"
   }
 }
 
-export const Default = args => (
-  <div>
-    <p>
-      This is the standard formatDate with no options, this converts to the
-      standard: 12 februar 2020
-    </p>
-    {formatDate(args.date)}
-  </div>
-)
+const Template: ComponentStory<any> = ({
+  date,
+  format,
+  locale,
+  weekStartsOn
+}) => {
+  try {
+    const l = locale ? locales[locale] : undefined
+    const d = new Date(date)
+    const output = formatDate(d, format, { locale: l, weekStartsOn })
 
-Default.args = {
-  date
+    return (
+      <FunctionStory
+        name={"formatDate"}
+        input={{ date: d, format, options: { locale: l, weekStartsOn } }}
+        output={output}
+      />
+    )
+  } catch (e: any) {
+    return <div>Error in formatting: {e.message}</div>
+  }
 }
+
+export const Default = Template.bind({})
+
+Default.args = {}
 
 export const FormattingStyles = args => (
   <div>

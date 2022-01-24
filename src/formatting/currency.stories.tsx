@@ -1,13 +1,48 @@
 import React from "react"
 import { formatMoney, abbreviateCurrency } from "./currency"
 import { STYLE } from "./number.constants"
-
+import FunctionStory from "../_storyhelpers/FunctionStory"
+import { ComponentStory } from "@storybook/react"
 export default {
   title: "formatting/currency",
   component: formatMoney,
   parameters: {
     jest: ["currency.test.ts"]
+  },
+  argTypes: {
+    locale: {
+      options: ["no", "da", "en", "jpn"],
+      control: { type: "select" }
+    },
+    currency: {
+      options: ["NOK", "DKK", "EUR", "JPY", "USD"],
+      control: { type: "select" }
+    },
+    minimumFractionDigits: {
+      control: { type: "range", min: 0, max: 3, step: 1 }
+    },
+    currencyDisplay: {
+      options: ["symbol", "code", "name"],
+      control: { type: "select" }
+    }
   }
+}
+
+const Template: ComponentStory<any> = ({ value, ...options }) => {
+  const output = formatMoney(value, options)
+
+  return (
+    <FunctionStory
+      name={"formatMoney"}
+      input={{ value, options }}
+      output={output}
+    />
+  )
+}
+
+export const ProofOfConcept = Template.bind({})
+ProofOfConcept.args = {
+  value: 1e6
 }
 
 export const Default = args => (

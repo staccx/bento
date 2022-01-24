@@ -1,0 +1,72 @@
+.node {
+  border: 1px solid #ccc;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  min-width: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: .1rem;
+  text-align: center;
+  align-items: center;
+  color: white;
+  margin: 0 auto;
+}
+
+.node > p {
+  margin: 0;
+  padding: 5px;
+}
+
+
+.type {
+
+}
+
+.name {
+font-style: italic;
+}
+
+.value {
+font-weight: 700;
+}
+
+.inputNode {
+  background-color: #fbf5f3;
+  color: #313131;
+}
+
+.clampWidth {
+  max-width: 150px;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.functionNode {
+  background-color: #373737;
+
+}
+
+.outputNode {
+  background-color: #008148;
+}
+
+.handles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.handles > div {
+  margin-left: 6px;
+}
+
+.handlesTop {
+  margin-top: -5px
+}
+
+.handlesBottom {
+  margin-bottom: -5px
+}
