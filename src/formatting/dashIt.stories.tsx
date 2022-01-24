@@ -1,7 +1,10 @@
 import dashIt from "./dashIt"
 export default {
   title: "formatting/dashIt",
-  component: dashIt
+  component: dashIt,
+  parameters: {
+    jest: ["dashIt.test.ts"]
+  }
 }
 
 export const Default = args => (

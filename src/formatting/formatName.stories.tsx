@@ -2,7 +2,10 @@ import formatName from "./formatName"
 
 export default {
   title: "formatting/Format name",
-  component: formatName
+  component: formatName,
+  parameters: {
+    jest: ["date.test.ts"]
+  }
 }
 
 export const Default = args => (

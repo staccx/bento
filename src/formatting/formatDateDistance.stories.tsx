@@ -6,7 +6,10 @@ const dateObject = new Date(1524614400000)
 
 export default {
   title: "formatting/Format date distance",
-  component: formatDateDistance
+  component: formatDateDistance,
+  parameters: {
+    jest: ["date.test.ts"]
+  }
 }
 
 export const Default = args => (

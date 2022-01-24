@@ -2,7 +2,10 @@ import maskFormat from "./maskFormat"
 
 export default {
   title: "formatting/Mask format",
-  component: maskFormat
+  component: maskFormat,
+  parameters: {
+    jest: ["maskFormat.test.ts"]
+  }
 }
 
 export const Default = args => (

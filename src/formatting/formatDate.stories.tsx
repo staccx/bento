@@ -5,7 +5,10 @@ const dateObject = new Date(1525968057000)
 
 export default {
   title: "formatting/Format date",
-  component: formatDate
+  component: formatDate,
+  parameters: {
+    jest: ["date.test.ts"]
+  }
 }
 
 export const Default = args => (

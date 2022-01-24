@@ -4,7 +4,10 @@ import { STYLE } from "./number.constants"
 
 export default {
   title: "formatting/currency",
-  component: formatMoney
+  component: formatMoney,
+  parameters: {
+    jest: ["currency.test.ts"]
+  }
 }
 
 export const Default = args => (

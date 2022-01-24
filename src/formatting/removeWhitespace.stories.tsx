@@ -2,7 +2,10 @@ import removeWhitespace from "./removeWhitespace"
 
 export default {
   title: "formatting/Remove whitespace",
-  component: removeWhitespace
+  component: removeWhitespace,
+  parameters: {
+    jest: ["removeWhitespace.test.ts"]
+  }
 }
 
 export const Default = args => (

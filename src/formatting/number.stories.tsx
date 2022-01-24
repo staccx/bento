@@ -3,7 +3,10 @@ import { CURRENCY_DISPLAY, STYLE } from "./number.constants"
 
 export default {
   title: "formatting/Format number",
-  component: formatNumber
+  component: formatNumber,
+  parameters: {
+    jest: ["number.test.ts"]
+  }
 }
 
 export const Default = args => (

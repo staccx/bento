@@ -2,7 +2,10 @@ import truncate from "./truncate"
 
 export default {
   title: "formatting/Truncate",
-  component: truncate
+  component: truncate,
+  parameters: {
+    jest: ["truncate.test.ts"]
+  }
 }
 
 const longString = "The quick brown fox jumps over the lazy dog"
