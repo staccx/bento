@@ -6,7 +6,10 @@ type FormatNumberOptions = Intl.NumberFormatOptions & {
   locale?: string
 }
 
-export const formatMoney = (value, options?: FormatNumberOptions) => {
+export const formatMoney = (
+  value: number | bigint,
+  options?: FormatNumberOptions
+) => {
   return formatNumber(value, {
     locale: "no",
     ...(options?.currencyDisplay && { style: STYLE.currency }),

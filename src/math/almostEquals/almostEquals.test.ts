@@ -1,4 +1,4 @@
-import { almostEquals } from "./index"
+import { almostEquals } from "./almostEquals"
 
 describe("Math", () => {
   describe("Almost equals", () => {

@@ -1,4 +1,4 @@
-import { inverseLerp } from "./index"
+import { inverseLerp } from "./inverseLerp"
 
 describe("Math", () => {
   describe("Inverse lerp", () => {

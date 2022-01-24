@@ -1,6 +1,5 @@
-import { useEffect, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import Fuse from "fuse.js"
-import FuseSearchOptions = Fuse.FuseSearchOptions
 
 /**
  * useSearch lets you search Json files/APIs
@@ -38,13 +37,17 @@ const useSearch = ({
     })
   }, [documents, keys, fuseProps])
 
-  const search = i => {
-    const searchResult = i ? fuse.search(i) : documents
-    setResult(searchResult)
-  }
+  const search = useCallback(
+    (i: string) => {
+      const searchResult = i ? fuse.search(i) : documents
+      setResult(searchResult)
+    },
+    [documents, fuse]
+  )
 
   useEffect(() => {
-    search(input)
+    if (input) search(input)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input])
 
   return [result, search]

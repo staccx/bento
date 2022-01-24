@@ -5,8 +5,11 @@
  * @param condition
  * @return {*}
  */
-export const partition = (list, condition) => {
-  return list.reduce(
+export function partition<Type>(
+  list: Type[],
+  condition: (element: Type) => boolean
+) {
+  return list.reduce<[Type[], Type[]]>(
     (result, element) => {
       result[condition(element) ? 0 : 1].push(element)
       return result

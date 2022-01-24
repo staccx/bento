@@ -1,5 +1,5 @@
 import axios from "axios"
-import useDebounce from "../useDebounce"
+import { useDebounce } from "../useDebounce/useDebounce"
 import { useQuery } from "react-query"
 
 const brregInstance = axios.create({
@@ -9,7 +9,7 @@ const brregInstance = axios.create({
  * Search in The Brønnøysund Register Centre(Brønnøysundregisteret).
  * Input a search term and it returns an object with the search results.
  */
-const useBrRegSearch = searchTerm => {
+const useBrRegSearch = (searchTerm: string) => {
   const [debouncedSearchTerm] = useDebounce(searchTerm, 500)
 
   const {

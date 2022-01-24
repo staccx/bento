@@ -6,8 +6,8 @@ const defaultCallback = (
 ) => mutationList
 
 export function useMutationObserver(
-  targetNode,
-  config,
+  targetNode?: React.MutableRefObject<Node>,
+  config?: MutationObserverInit,
   callback = defaultCallback
 ) {
   const [value, setValue] = useState<MutationRecord[]>()
@@ -21,12 +21,12 @@ export function useMutationObserver(
   )
   useEffect(() => {
     if (targetNode) {
-      observer.observe(targetNode?.current ?? targetNode, config)
+      observer.observe(targetNode?.current, config)
       return () => {
         observer.disconnect()
       }
     }
-  }, [targetNode, config])
+  }, [targetNode, config, observer])
 
   return value
 }
