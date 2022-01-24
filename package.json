@@ -7,7 +7,7 @@
     "test:coverage": "jest --watch=false --coverage --passWithNoTests --updateSnapshot",
     "build": "tsc",
     "start": "start-storybook -p 9009",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook --output-dir public --quiet",
     "prepare": "npm run build",
     "lint": "eslint src/ --fix",
     "alpha": "npm version prerelease --preid=alpha && npm publish",
