@@ -13,11 +13,11 @@ describe("useCopyToClipboard", () => {
   it("should copyContent", async () => {
     const testing = "test"
 
-    const values = renderHook(() => useCopyToClipboard(testing))
+    const view = renderHook(() => useCopyToClipboard(testing))
     render(
       <div>
         <ul>
-          <li>{values.result.current[0]}</li>
+          <li>{view.result.current[0]}</li>
         </ul>
       </div>
     )

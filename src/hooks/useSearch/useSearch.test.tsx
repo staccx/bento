@@ -76,7 +76,6 @@ describe("useSearch", () => {
       const [searchResult] = result.current
       expect(Array.isArray(searchResult)).toBe(true)
       expect(searchResult.length).toBe(1)
-      console.log("searchresults", searchResult)
       expect(searchResult[0].item.name.first).toBe("Rivers")
     })
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const useTimer = (time = 1000) => {
+export function useTimer(time: number = 1000) {
   const [isReady, setIsReady] = useState(time === 0)
 
   useEffect(() => {
@@ -14,9 +14,7 @@ const useTimer = (time = 1000) => {
     return () => {
       clearTimeout(timeout)
     }
-  }, [])
+  }, [isReady, time])
 
   return isReady
 }
-
-export default useTimer

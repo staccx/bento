@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react"
 
-const useDebounce = (input, delay) => {
-  const [debouncedValue, setDebouncedValue] = useState(input)
+export function useDebounce<Type>(
+  input: Type,
+  delay: number
+): [Type, React.Dispatch<React.SetStateAction<Type>>] {
+  const [debouncedValue, setDebouncedValue] = useState<Type>(input)
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -14,5 +17,3 @@ const useDebounce = (input, delay) => {
 
   return [debouncedValue, setDebouncedValue]
 }
-
-export default useDebounce

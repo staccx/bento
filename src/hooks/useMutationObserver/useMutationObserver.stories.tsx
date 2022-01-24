@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { useMutationObserver } from "./useMutationObserver"
 import React, { useRef, useState } from "react"
 import ReactJson from "react-json-view"
@@ -23,7 +24,7 @@ export const MoveBox = () => {
     <div ref={myRef}>
       <div>
         <div>
-          <div x={xPos} />
+          <div data-x={xPos} />
         </div>
       </div>
       <div>
