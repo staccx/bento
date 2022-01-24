@@ -1,6 +1,6 @@
 import React from "react"
 import { renderHook } from "@testing-library/react-hooks"
-import { render, cleanup, getByTestId } from "@testing-library/react"
+import { render, cleanup, getByTestId, screen } from "@testing-library/react"
 import useSearch from "./useSearch"
 
 const testData = [
@@ -51,8 +51,8 @@ function TestComp({ term }) {
 describe("useSearch", () => {
   afterEach(cleanup)
   it("Should work", () => {
-    const { container, rerender } = render(<TestComp term="" />)
-    const span = getByTestId(container, "result")
+    const { rerender } = render(<TestComp term="" />)
+    const span = screen.getByTestId("result")
 
     expect(span.textContent).toBe("3")
 
