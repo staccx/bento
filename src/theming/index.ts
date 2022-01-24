@@ -1,22 +1,22 @@
 // Convenience
 // Theme class
 
-export { default as borderRadius } from "./convenience/borderRadius"
-export { default as color } from "./convenience/color"
-export { default as font } from "./convenience/font"
-export { default as fontFamily } from "./convenience/fontFamily"
-export { default as fontWeight } from "./convenience/fontWeight"
-export { default as grid } from "./convenience/grid"
-export { default as spacing } from "./convenience/spacing"
-export { default as targetSize } from "./convenience/targetSize"
-export { default as wrapper } from "./convenience/wrapper"
-export { default as gradient } from "./convenience/gradient"
+export { borderRadius } from "./convenience/borderRadius"
+export { color } from "./convenience/color"
+export { font } from "./convenience/font"
+export { fontFamily } from "./convenience/fontFamily"
+export { fontWeight } from "./convenience/fontWeight"
+export { grid } from "./convenience/grid"
+export { spacing } from "./convenience/spacing"
+export { targetSize } from "./convenience/targetSize"
+export { wrapper } from "./convenience/wrapper"
+export { gradient } from "./convenience/gradient"
 // Utils
-export { default as getProp, getField } from "./utils/getProp"
-export { default as mapProp } from "./utils/mapProp"
-export { default as createVariants } from "./utils/createVariants"
-export { default as createGlobal } from "./utils/createGlobal"
-export { default as applyVariants } from "./utils/applyVariants"
+export { getField } from "./utils/getField"
+export { mapProp } from "./utils/mapProp"
+export { createVariants } from "./utils/createVariants"
+export { createGlobal } from "./utils/createGlobal"
+export { applyVariants } from "./utils/applyVariants"
 
 export {
   commonPropTypes,
@@ -25,5 +25,5 @@ export {
 } from "./themeContants"
 
 // Styles
-export { default as cssResets } from "./styles/cssResets"
-export { default as fontSmoothing } from "./styles/fontsmoothing"
+export { cssResets } from "./styles/cssResets"
+export { fontSmoothing } from "./styles/fontsmoothing"

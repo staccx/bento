@@ -1,6 +1,8 @@
-import getProp from "../utils/getProp"
+import { getField } from "../utils/getField"
 
-const font = size => getProp("font", size)
+export function font(size: string | TemplateStringsArray) {
+  return getField(["font", size].flat())
+}
 
 font.h1 = () => font("h1")
 font.h2 = () => font("h2")
@@ -13,5 +15,3 @@ font.tiny = () => font("tiny")
 font.input = () => font("input")
 font.huge = () => font("huge")
 font.lineHeight = () => font("lineHeight")
-
-export default font

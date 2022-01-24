@@ -1,4 +1,4 @@
-import borderRadius from "./borderRadius"
+import { borderRadius } from "./borderRadius"
 
 describe("borderRadius", () => {
   it("Work", () => {

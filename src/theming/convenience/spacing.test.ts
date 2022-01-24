@@ -1,4 +1,4 @@
-import spacing from "./spacing"
+import { spacing } from "./spacing"
 
 const theme = {
   spacing: {

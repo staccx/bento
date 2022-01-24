@@ -1,10 +1,10 @@
-import color from "../convenience/color"
-import font from "../convenience/font"
-import fontFamily from "../convenience/fontFamily"
-import fontWeight from "../convenience/fontWeight"
+import { color } from "../convenience/color"
+import { font } from "../convenience/font"
+import { fontFamily } from "../convenience/fontFamily"
+import { fontWeight } from "../convenience/fontWeight"
 
 // language=CSS
-export default `
+export const cssResets = `
   body,
   h1,
   h2,
@@ -31,16 +31,16 @@ export default `
     overflow-x: hidden;
     min-height: 100%;
     box-sizing: border-box;
-    background-color: ${color.bg};
+    background-color: ${color("bg")};
     font-family: ${fontFamily.body}, Sans-Serif;
     font-size: 14px;
-    color: ${color.text};
+    color: ${color("text")};
     line-height: ${font.lineHeight};
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
   }
   a {
-    color: ${color.link};
+    color: ${color("link")};
   }
   body {
     min-height: 100vh;

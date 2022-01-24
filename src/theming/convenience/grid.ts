@@ -1,2 +1,5 @@
-import getProp from "../utils/getProp"
-export default ({ grid }) => getProp("grid", grid)
+import { getField } from "../utils/getField"
+
+export function grid(grid: string | TemplateStringsArray) {
+  return getField(["grid", grid].flat())
+}

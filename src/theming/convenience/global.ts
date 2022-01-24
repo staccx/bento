@@ -1,1 +1,3 @@
-export default () => props => props.theme.global
+export function global(props) {
+  return ({ theme }) => theme.global
+}

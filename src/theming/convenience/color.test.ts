@@ -1,4 +1,4 @@
-import color from "./color"
+import { color } from "./color"
 
 const props = {
   theme: {
@@ -26,26 +26,6 @@ const props = {
 }
 
 describe("Color", () => {
-  it("Should work helpers", () => {
-    expect(color.white()(props)).toBe(props.theme.color.white)
-    expect(color.bg()(props)).toBe(props.theme.color.bg)
-    expect(color.subtleHover()(props)).toBe(props.theme.color.subtleHover)
-    expect(color.bgGray()(props)).toBe(props.theme.color.bgGray)
-    expect(color.line()(props)).toBe(props.theme.color.line)
-    expect(color.gray()(props)).toBe(props.theme.color.gray)
-    expect(color.wcag()(props)).toBe(props.theme.color.wcag)
-    expect(color.disabled()(props)).toBe(props.theme.color.disabled)
-    expect(color.primary()(props)).toBe(props.theme.color.primary)
-    expect(color.secondary()(props)).toBe(props.theme.color.secondary)
-    expect(color.text()(props)).toBe(props.theme.color.text)
-    expect(color.negative()(props)).toBe(props.theme.color.negative)
-    expect(color.positive()(props)).toBe(props.theme.color.positive)
-    expect(color.warning()(props)).toBe(props.theme.color.warning)
-    expect(color.black()(props)).toBe(props.theme.color.black)
-    expect(color.green()(props)).toBe(props.theme.color.green)
-    expect(color.link()(props)).toBe(props.theme.color.link)
-  })
-
   it("Should work with added colors", () => {
     expect(color("staccRed")(props)).toBe(props.theme.color.staccRed)
   })
