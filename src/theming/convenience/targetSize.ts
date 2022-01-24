@@ -1,8 +1,7 @@
-import getProp from "../utils/getProp"
+import { getField } from "../utils/getField"
 
-const targetSize = (size = "normal") => getProp("targetSize", size)
-
+export function targetSize(size: string | TemplateStringsArray = "normal") {
+  return getField(["targetSize", size].flat())
+}
 targetSize.small = () => targetSize("small")
 targetSize.normal = () => targetSize("normal")
-
-export default targetSize

@@ -1,4 +1,4 @@
-import applyVariants from "./applyVariants"
+import { applyVariants } from "./applyVariants"
 import { themePropTypes } from "../themeContants"
 
 const themeProps = {
@@ -94,7 +94,7 @@ describe("Apply Variants", () => {
       expect(
         buttonVariansFunction({
           ...props,
-          variant: ({ theme, name }) => {
+          variant: ({ theme, name }: { theme: any; name: string }) => {
             expect(theme).toEqual(props.theme)
             expect(name).toBe("Button")
 

@@ -1,4 +1,4 @@
-import mapProp from "./mapProp"
+import { mapProp } from "./mapProp"
 const props = {
   theme: {},
   tab: "Example"

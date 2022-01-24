@@ -1,4 +1,4 @@
-import deepfind from "./deepfind"
+import { deepfind } from "./deepfind"
 
 const object = {
   a: {

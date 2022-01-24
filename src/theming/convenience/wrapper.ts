@@ -1,10 +1,10 @@
-import getProp from "../utils/getProp"
+import { getField } from "../utils/getField"
 
-const wrapper = size => getProp("wrapper", size)
+export function wrapper(size: string | TemplateStringsArray) {
+  return getField(["wrapper", size].flat())
+}
 
 wrapper.small = () => wrapper("small")
 wrapper.medium = () => wrapper("medium")
 wrapper.large = () => wrapper("large")
 wrapper.breakout = () => wrapper("breakout")
-
-export default wrapper

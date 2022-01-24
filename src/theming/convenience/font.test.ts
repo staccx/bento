@@ -1,4 +1,4 @@
-import font from "./font"
+import { font } from "./font"
 
 const props = {
   theme: {

@@ -1,4 +1,7 @@
-export default (obj, propertyPath) => {
+export function deepfind<Type extends Record<string, any>>(
+  obj: Type,
+  propertyPath: string
+) {
   if (!propertyPath) return null
 
   const properties = propertyPath.split(".")
