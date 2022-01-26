@@ -4,10 +4,11 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --watch=false --json --outputFile=.jest-test-results.json ",
+    "test:coverage": "jest --watch=false --coverage",
+    "test:output": "jest --watch=false --json --outputFile=.jest-test-results.json",
     "build": "tsc",
     "start": "start-storybook -p 9009",
-    "build-storybook": "tsc && npm run test:generate-output && build-storybook --output-dir public --quiet",
+    "build-storybook": "tsc && npm run test:output && build-storybook --output-dir public --quiet",
     "prepare": "npm run build",
     "lint": "eslint src/ --fix",
     "alpha": "npm version prerelease --preid=alpha && npm publish",
