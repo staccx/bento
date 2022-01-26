@@ -1,4 +1,5 @@
 import { baseMask } from "./base"
+import { MaskOptions } from "./_types"
 
 const defaultOptions = {
   blocks: [3, 2, 3],
@@ -6,7 +7,7 @@ const defaultOptions = {
   pattern: /[^0-9]+/gi
 }
 
-export const phoneMask = options => {
+export const phoneMask = (options: MaskOptions) => {
   const config = {
     ...defaultOptions,
     ...options,

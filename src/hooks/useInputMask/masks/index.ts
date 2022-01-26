@@ -5,8 +5,9 @@ import { currencyMask } from "./currency"
 import { nationalIdMask } from "./nationalId"
 import { phoneMask } from "./phone"
 import { postalCodeMask } from "./postalCode"
+import { MaskMode } from "./_types"
 
-const resolveMask = mode => {
+const resolveMask = (mode: MaskMode) => {
   if (!mode) {
     return () => null // should not be masked
   }

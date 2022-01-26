@@ -1,23 +1,25 @@
 import { maskFormat } from "../../../formatting"
+import type { MaskOptions } from "./_types"
 
-const mapBlocks = block =>
+const mapBlocks = (block: number) =>
   new Array(block)
     .fill("X")
     .map(i => "X")
     .join("")
 
-export const resolveBlocks = blocks =>
+export const resolveBlocks = (blocks: number[] = []) =>
   blocks?.map(mapBlocks).join(" ").trimEnd()
 
 const pipe =
-  value =>
-  (...functions) =>
+  (value: any) =>
+  (...functions: any) =>
     functions.reduce(
-      (currentValue, currentFunction) => currentFunction(currentValue),
+      (currentValue: any, currentFunction: any) =>
+        currentFunction(currentValue),
       value
     )
 
-const resolveDelimiterString = ({ delimiter = null }) => {
+const resolveDelimiterString = ({ delimiter }: MaskOptions) => {
   if (!delimiter) {
     return null
   }
@@ -32,9 +34,9 @@ const resolveDelimiterString = ({ delimiter = null }) => {
   return delimiter
 }
 
-export const baseMask = options => {
+export const baseMask = (options: MaskOptions) => {
   const delimiter = resolveDelimiterString(options)
-  const config = {
+  const config: MaskOptions = {
     name: "Base mask",
     prepareConfig: (config, input) => config,
     prepare: (input, config) => {
@@ -43,9 +45,10 @@ export const baseMask = options => {
       }
 
       return pipe(input?.toString() ?? "")(
-        _ => (config?.delimiter && _ ? _.replace(config?.delimiter, "") : _),
-        _ => (config?.pattern ? _.replace(config?.pattern, "") : _),
-        _ =>
+        (_: any) =>
+          config?.delimiter && _ ? _.replace(config?.delimiter, "") : _,
+        (_: any) => (config?.pattern ? _.replace(config?.pattern, "") : _),
+        (_: any) =>
           config?.maxLength && _.length > config?.maxLength
             ? _.substring(0, Math.min(config.maxLength, _.length))
             : _
@@ -58,8 +61,8 @@ export const baseMask = options => {
     delimiter // Keep delimiter last since we resolve it at the top.
   }
 
-  return input => {
-    const configPrepared = config.prepareConfig(config, input)
+  return (input: any) => {
+    const configPrepared = config.prepareConfig?.(config, input) ?? config
     const { prepare, format, settle } = configPrepared
 
     const rawValue = prepare(input, configPrepared)

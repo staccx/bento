@@ -257,7 +257,7 @@ const staccXData = {
     ]
   }
 }
-const mockFunction = data => () => Promise.resolve({ data })
+const mockFunction = (data: any) => () => Promise.resolve({ data })
 
 describe.skip("useBrregSearch", () => {
   it("search", async () => {

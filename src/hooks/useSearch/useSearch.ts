@@ -15,22 +15,26 @@ const defaultFuseProps = {
   minMatchCharLength: 2
 }
 
-type SearchOptions = {
+type SearchOptions<T> = {
   input: string | null | undefined
-  documents?: any[]
+  documents?: T[]
   keys?: string[]
   fuseProps?: any
 }
-const useSearch = ({
+function useSearch<T>({
   input,
   documents = [],
-  keys = [],
+  keys,
   fuseProps = {}
-}: SearchOptions) => {
-  const [result, setResult] = useState(documents)
+}: SearchOptions<T>): [Fuse.FuseResult<T>[], (input: string) => void] {
+  const [result, setResult] = useState<Fuse.FuseResult<T>[]>([])
 
   const fuse = useMemo(() => {
-    const fProps = Object.assign({}, defaultFuseProps, fuseProps)
+    const fProps: Fuse.IFuseOptions<T> = Object.assign(
+      {},
+      defaultFuseProps,
+      fuseProps
+    )
     return new Fuse(documents, {
       ...fProps,
       keys
@@ -38,11 +42,11 @@ const useSearch = ({
   }, [documents, keys, fuseProps])
 
   const search = useCallback(
-    (i: string) => {
-      const searchResult = i ? fuse.search(i) : documents
+    (input: string) => {
+      const searchResult = fuse.search(input)
       setResult(searchResult)
     },
-    [documents, fuse]
+    [fuse]
   )
 
   useEffect(() => {

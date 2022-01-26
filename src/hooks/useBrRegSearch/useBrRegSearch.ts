@@ -2,6 +2,11 @@ import axios from "axios"
 import { useDebounce } from "../useDebounce/useDebounce"
 import { useQuery } from "react-query"
 
+type SearchResult = {
+  _embedded: {
+    enheter: any[]
+  }
+}
 const brregInstance = axios.create({
   baseURL: "https://data.brreg.no/enhetsregisteret/api"
 })
@@ -20,7 +25,7 @@ const useBrRegSearch = (searchTerm: string) => {
     debouncedSearchTerm,
     () =>
       brregInstance
-        .get("/enheter", {
+        .get<SearchResult>("/enheter", {
           params: {
             ...(Number.isInteger(parseInt(searchTerm))
               ? { organisasjonsnummer: debouncedSearchTerm }
