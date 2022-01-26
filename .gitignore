@@ -29,7 +29,6 @@ coverage
 
 .yalc/
 yalc.lock
-.jest-test-results.json
 
 
 .vercel
