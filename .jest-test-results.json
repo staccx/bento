@@ -1,0 +1,1307 @@
+{
+  "numFailedTestSuites": 0,
+  "numFailedTests": 0,
+  "numPassedTestSuites": 28,
+  "numPassedTests": 88,
+  "numPendingTestSuites": 1,
+  "numPendingTests": 6,
+  "numRuntimeErrorTestSuites": 0,
+  "numTodoTests": 0,
+  "numTotalTestSuites": 29,
+  "numTotalTests": 94,
+  "openHandles": [],
+  "snapshot": {
+    "added": 0,
+    "didUpdate": false,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0
+  },
+  "startTime": 1643098181270,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "String inclued"
+          ],
+          "failureMessages": [],
+          "fullName": "String inclued Should test with defaults",
+          "location": null,
+          "status": "passed",
+          "title": "Should test with defaults"
+        },
+        {
+          "ancestorTitles": [
+            "String inclued"
+          ],
+          "failureMessages": [],
+          "fullName": "String inclued Should be able to not ignore case",
+          "location": null,
+          "status": "passed",
+          "title": "Should be able to not ignore case"
+        }
+      ],
+      "endTime": 1643098186981,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/utils/stringIncludes/stringIncludes.test.ts",
+      "startTime": 1643098182289,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Math",
+            "Multiply pixel value"
+          ],
+          "failureMessages": [],
+          "fullName": "Math Multiply pixel value Normal use",
+          "location": null,
+          "status": "passed",
+          "title": "Normal use"
+        },
+        {
+          "ancestorTitles": [
+            "Math",
+            "Multiply pixel value"
+          ],
+          "failureMessages": [],
+          "fullName": "Math Multiply pixel value Override unit",
+          "location": null,
+          "status": "passed",
+          "title": "Override unit"
+        }
+      ],
+      "endTime": 1643098187412,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/math/multiplyPixelValue/multiplyPixelValue.test.ts",
+      "startTime": 1643098182262,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "useSearch"
+          ],
+          "failureMessages": [],
+          "fullName": "useSearch Should work",
+          "location": null,
+          "status": "passed",
+          "title": "Should work"
+        },
+        {
+          "ancestorTitles": [
+            "useSearch",
+            "Hook"
+          ],
+          "failureMessages": [],
+          "fullName": "useSearch Hook Should receive results",
+          "location": null,
+          "status": "passed",
+          "title": "Should receive results"
+        },
+        {
+          "ancestorTitles": [
+            "useSearch",
+            "Hook"
+          ],
+          "failureMessages": [],
+          "fullName": "useSearch Hook Should receive no results if none match",
+          "location": null,
+          "status": "passed",
+          "title": "Should receive no results if none match"
+        },
+        {
+          "ancestorTitles": [
+            "useSearch",
+            "Hook"
+          ],
+          "failureMessages": [],
+          "fullName": "useSearch Hook Should support any key",
+          "location": null,
+          "status": "passed",
+          "title": "Should support any key"
+        },
+        {
+          "ancestorTitles": [
+            "useSearch",
+            "Hook"
+          ],
+          "failureMessages": [],
+          "fullName": "useSearch Hook Should support any case",
+          "location": null,
+          "status": "passed",
+          "title": "Should support any case"
+        },
+        {
+          "ancestorTitles": [
+            "useSearch",
+            "Hook"
+          ],
+          "failureMessages": [],
+          "fullName": "useSearch Hook Should return all docs if no input",
+          "location": null,
+          "status": "passed",
+          "title": "Should return all docs if no input"
+        }
+      ],
+      "endTime": 1643098187483,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/hooks/useSearch/useSearch.test.tsx",
+      "startTime": 1643098187049,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Distinct"
+          ],
+          "failureMessages": [],
+          "fullName": "Distinct Should return only distinct values",
+          "location": null,
+          "status": "passed",
+          "title": "Should return only distinct values"
+        },
+        {
+          "ancestorTitles": [
+            "Distinct"
+          ],
+          "failureMessages": [],
+          "fullName": "Distinct Should handle objects",
+          "location": null,
+          "status": "passed",
+          "title": "Should handle objects"
+        }
+      ],
+      "endTime": 1643098187592,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/utils/distinct/distinct.test.ts",
+      "startTime": 1643098182261,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Math",
+            "Cosine Interpolate"
+          ],
+          "failureMessages": [],
+          "fullName": "Math Cosine Interpolate Should",
+          "location": null,
+          "status": "passed",
+          "title": "Should"
+        }
+      ],
+      "endTime": 1643098187703,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/math/cosineInterpolate/cosineInterpolate.test.ts",
+      "startTime": 1643098182239,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Partition"
+          ],
+          "failureMessages": [],
+          "fullName": "Partition Should split an array in two based on condition",
+          "location": null,
+          "status": "passed",
+          "title": "Should split an array in two based on condition"
+        }
+      ],
+      "endTime": 1643098187722,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/utils/partition/partition.test.ts",
+      "startTime": 1643098182256,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Is Number"
+          ],
+          "failureMessages": [],
+          "fullName": "Is Number Should return true for numbers",
+          "location": null,
+          "status": "passed",
+          "title": "Should return true for numbers"
+        },
+        {
+          "ancestorTitles": [
+            "Is Number"
+          ],
+          "failureMessages": [],
+          "fullName": "Is Number Should return true for numeric string",
+          "location": null,
+          "status": "passed",
+          "title": "Should return true for numeric string"
+        },
+        {
+          "ancestorTitles": [
+            "Is Number"
+          ],
+          "failureMessages": [],
+          "fullName": "Is Number Should return false for normal string",
+          "location": null,
+          "status": "passed",
+          "title": "Should return false for normal string"
+        },
+        {
+          "ancestorTitles": [
+            "Is Number"
+          ],
+          "failureMessages": [],
+          "fullName": "Is Number Should return false for Infinite",
+          "location": null,
+          "status": "passed",
+          "title": "Should return false for Infinite"
+        },
+        {
+          "ancestorTitles": [
+            "Is Number"
+          ],
+          "failureMessages": [],
+          "fullName": "Is Number Should return false for calculation above infinite",
+          "location": null,
+          "status": "passed",
+          "title": "Should return false for calculation above infinite"
+        }
+      ],
+      "endTime": 1643098187795,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/math/isNumber/isNumber.test.ts",
+      "startTime": 1643098182278,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Apply Variants",
+            "String"
+          ],
+          "failureMessages": [],
+          "fullName": "Apply Variants String Good defaults",
+          "location": null,
+          "status": "passed",
+          "title": "Good defaults"
+        },
+        {
+          "ancestorTitles": [
+            "Apply Variants",
+            "String"
+          ],
+          "failureMessages": [],
+          "fullName": "Apply Variants String With prop",
+          "location": null,
+          "status": "passed",
+          "title": "With prop"
+        },
+        {
+          "ancestorTitles": [
+            "Apply Variants",
+            "String"
+          ],
+          "failureMessages": [],
+          "fullName": "Apply Variants String No name",
+          "location": null,
+          "status": "passed",
+          "title": "No name"
+        },
+        {
+          "ancestorTitles": [
+            "Apply Variants",
+            "String"
+          ],
+          "failureMessages": [],
+          "fullName": "Apply Variants String No themeprops",
+          "location": null,
+          "status": "passed",
+          "title": "No themeprops"
+        },
+        {
+          "ancestorTitles": [
+            "Apply Variants",
+            "String"
+          ],
+          "failureMessages": [],
+          "fullName": "Apply Variants String Invalid variant type",
+          "location": null,
+          "status": "passed",
+          "title": "Invalid variant type"
+        },
+        {
+          "ancestorTitles": [
+            "Apply Variants",
+            "String"
+          ],
+          "failureMessages": [],
+          "fullName": "Apply Variants String No theme!",
+          "location": null,
+          "status": "passed",
+          "title": "No theme!"
+        },
+        {
+          "ancestorTitles": [
+            "Apply Variants",
+            "Array"
+          ],
+          "failureMessages": [],
+          "fullName": "Apply Variants Array Array prop. Single element",
+          "location": null,
+          "status": "passed",
+          "title": "Array prop. Single element"
+        },
+        {
+          "ancestorTitles": [
+            "Apply Variants",
+            "Array"
+          ],
+          "failureMessages": [],
+          "fullName": "Apply Variants Array Multiple elements",
+          "location": null,
+          "status": "passed",
+          "title": "Multiple elements"
+        },
+        {
+          "ancestorTitles": [
+            "Apply Variants",
+            "Function"
+          ],
+          "failureMessages": [],
+          "fullName": "Apply Variants Function Use function",
+          "location": null,
+          "status": "passed",
+          "title": "Use function"
+        },
+        {
+          "ancestorTitles": [
+            "Apply Variants",
+            "Object"
+          ],
+          "failureMessages": [],
+          "fullName": "Apply Variants Object Use object",
+          "location": null,
+          "status": "passed",
+          "title": "Use object"
+        }
+      ],
+      "endTime": 1643098187811,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/theming/utils/applyVariants.test.ts",
+      "startTime": 1643098187619,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "useCopyToClipboard"
+          ],
+          "failureMessages": [],
+          "fullName": "useCopyToClipboard should copyContent",
+          "location": null,
+          "status": "passed",
+          "title": "should copyContent"
+        }
+      ],
+      "endTime": 1643098187860,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/hooks/useCopyToClipboard/useCopyToClipboard.spec.tsx",
+      "startTime": 1643098187446,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Format number"
+          ],
+          "failureMessages": [],
+          "fullName": "Format number Default",
+          "location": null,
+          "status": "passed",
+          "title": "Default"
+        },
+        {
+          "ancestorTitles": [
+            "Format number"
+          ],
+          "failureMessages": [],
+          "fullName": "Format number Compact",
+          "location": null,
+          "status": "passed",
+          "title": "Compact"
+        },
+        {
+          "ancestorTitles": [
+            "Format number"
+          ],
+          "failureMessages": [],
+          "fullName": "Format number Units",
+          "location": null,
+          "status": "pending",
+          "title": "Units"
+        },
+        {
+          "ancestorTitles": [
+            "Format number"
+          ],
+          "failureMessages": [],
+          "fullName": "Format number Percent",
+          "location": null,
+          "status": "passed",
+          "title": "Percent"
+        }
+      ],
+      "endTime": 1643098187913,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/formatting/number.test.ts",
+      "startTime": 1643098187753,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Spacing"
+          ],
+          "failureMessages": [],
+          "fullName": "Spacing Should work",
+          "location": null,
+          "status": "passed",
+          "title": "Should work"
+        },
+        {
+          "ancestorTitles": [
+            "Spacing"
+          ],
+          "failureMessages": [],
+          "fullName": "Spacing Should work with string literals",
+          "location": null,
+          "status": "passed",
+          "title": "Should work with string literals"
+        }
+      ],
+      "endTime": 1643098187917,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/theming/convenience/spacing.test.ts",
+      "startTime": 1643098187732,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Clamp"
+          ],
+          "failureMessages": [],
+          "fullName": "Clamp Should clamp down high values",
+          "location": null,
+          "status": "passed",
+          "title": "Should clamp down high values"
+        },
+        {
+          "ancestorTitles": [
+            "Clamp"
+          ],
+          "failureMessages": [],
+          "fullName": "Clamp Should clamp up low values",
+          "location": null,
+          "status": "passed",
+          "title": "Should clamp up low values"
+        },
+        {
+          "ancestorTitles": [
+            "Clamp"
+          ],
+          "failureMessages": [],
+          "fullName": "Clamp Should return value if between min and max",
+          "location": null,
+          "status": "passed",
+          "title": "Should return value if between min and max"
+        }
+      ],
+      "endTime": 1643098187969,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/math/clamp/clamp.test.ts",
+      "startTime": 1643098182300,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Date",
+            "Format"
+          ],
+          "failureMessages": [],
+          "fullName": "Date Format Should format ISO 8601 with defaults",
+          "location": null,
+          "status": "passed",
+          "title": "Should format ISO 8601 with defaults"
+        },
+        {
+          "ancestorTitles": [
+            "Date",
+            "Format"
+          ],
+          "failureMessages": [],
+          "fullName": "Date Format Should format ISO 8601 with other formats",
+          "location": null,
+          "status": "passed",
+          "title": "Should format ISO 8601 with other formats"
+        },
+        {
+          "ancestorTitles": [
+            "Date",
+            "Format"
+          ],
+          "failureMessages": [],
+          "fullName": "Date Format Should take Date object",
+          "location": null,
+          "status": "passed",
+          "title": "Should take Date object"
+        },
+        {
+          "ancestorTitles": [
+            "Date",
+            "FormatDistance"
+          ],
+          "failureMessages": [],
+          "fullName": "Date FormatDistance Should format dates with defaults",
+          "location": null,
+          "status": "passed",
+          "title": "Should format dates with defaults"
+        },
+        {
+          "ancestorTitles": [
+            "Date",
+            "FormatDistance"
+          ],
+          "failureMessages": [],
+          "fullName": "Date FormatDistance Should format ISO 8601 with defaults",
+          "location": null,
+          "status": "passed",
+          "title": "Should format ISO 8601 with defaults"
+        },
+        {
+          "ancestorTitles": [
+            "Date",
+            "FormatDistance"
+          ],
+          "failureMessages": [],
+          "fullName": "Date FormatDistance Should format mixed inputs with defaults",
+          "location": null,
+          "status": "passed",
+          "title": "Should format mixed inputs with defaults"
+        },
+        {
+          "ancestorTitles": [
+            "Date",
+            "FormatDistance"
+          ],
+          "failureMessages": [],
+          "fullName": "Date FormatDistance Should get distance only one input with defaults",
+          "location": null,
+          "status": "passed",
+          "title": "Should get distance only one input with defaults"
+        },
+        {
+          "ancestorTitles": [
+            "Date",
+            "FormatDistance"
+          ],
+          "failureMessages": [],
+          "fullName": "Date FormatDistance Should be able to override locale",
+          "location": null,
+          "status": "passed",
+          "title": "Should be able to override locale"
+        }
+      ],
+      "endTime": 1643098187988,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/formatting/date.test.ts",
+      "startTime": 1643098187521,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Color"
+          ],
+          "failureMessages": [],
+          "fullName": "Color Should work with added colors",
+          "location": null,
+          "status": "passed",
+          "title": "Should work with added colors"
+        },
+        {
+          "ancestorTitles": [
+            "Color"
+          ],
+          "failureMessages": [],
+          "fullName": "Color Should work with string literals",
+          "location": null,
+          "status": "passed",
+          "title": "Should work with string literals"
+        },
+        {
+          "ancestorTitles": [
+            "Color"
+          ],
+          "failureMessages": [],
+          "fullName": "Color Should not work with mulitple string literals",
+          "location": null,
+          "status": "passed",
+          "title": "Should not work with mulitple string literals"
+        }
+      ],
+      "endTime": 1643098188011,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/theming/convenience/color.test.ts",
+      "startTime": 1643098187926,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Font"
+          ],
+          "failureMessages": [],
+          "fullName": "Font Should work with helpers",
+          "location": null,
+          "status": "passed",
+          "title": "Should work with helpers"
+        },
+        {
+          "ancestorTitles": [
+            "Font"
+          ],
+          "failureMessages": [],
+          "fullName": "Font Should work with added ones",
+          "location": null,
+          "status": "passed",
+          "title": "Should work with added ones"
+        }
+      ],
+      "endTime": 1643098188020,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/theming/convenience/font.test.ts",
+      "startTime": 1643098187900,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Currency",
+            "Abbreviations"
+          ],
+          "failureMessages": [],
+          "fullName": "Currency Abbreviations Should not abbreviate values less than 1000",
+          "location": null,
+          "status": "passed",
+          "title": "Should not abbreviate values less than 1000"
+        },
+        {
+          "ancestorTitles": [
+            "Currency",
+            "Abbreviations"
+          ],
+          "failureMessages": [],
+          "fullName": "Currency Abbreviations Should abbreviate 1000 to 1k",
+          "location": null,
+          "status": "passed",
+          "title": "Should abbreviate 1000 to 1k"
+        },
+        {
+          "ancestorTitles": [
+            "Currency",
+            "Abbreviations"
+          ],
+          "failureMessages": [],
+          "fullName": "Currency Abbreviations Should abbreviate 1 000 000 to 1m",
+          "location": null,
+          "status": "passed",
+          "title": "Should abbreviate 1 000 000 to 1m"
+        },
+        {
+          "ancestorTitles": [
+            "Currency",
+            "Abbreviations"
+          ],
+          "failureMessages": [],
+          "fullName": "Currency Abbreviations Should handle different values",
+          "location": null,
+          "status": "passed",
+          "title": "Should handle different values"
+        },
+        {
+          "ancestorTitles": [
+            "Currency",
+            "Format money"
+          ],
+          "failureMessages": [],
+          "fullName": "Currency Format money Default",
+          "location": null,
+          "status": "passed",
+          "title": "Default"
+        },
+        {
+          "ancestorTitles": [
+            "Currency",
+            "Format money"
+          ],
+          "failureMessages": [],
+          "fullName": "Currency Format money Suffix",
+          "location": null,
+          "status": "passed",
+          "title": "Suffix"
+        },
+        {
+          "ancestorTitles": [
+            "Currency",
+            "Format money"
+          ],
+          "failureMessages": [],
+          "fullName": "Currency Format money Decimals",
+          "location": null,
+          "status": "passed",
+          "title": "Decimals"
+        },
+        {
+          "ancestorTitles": [
+            "Currency",
+            "Format money"
+          ],
+          "failureMessages": [],
+          "fullName": "Currency Format money Currency display name",
+          "location": null,
+          "status": "passed",
+          "title": "Currency display name"
+        },
+        {
+          "ancestorTitles": [
+            "Currency",
+            "Format money"
+          ],
+          "failureMessages": [],
+          "fullName": "Currency Format money Currency display code",
+          "location": null,
+          "status": "passed",
+          "title": "Currency display code"
+        },
+        {
+          "ancestorTitles": [
+            "Currency",
+            "Format money"
+          ],
+          "failureMessages": [],
+          "fullName": "Currency Format money Currency other locale",
+          "location": null,
+          "status": "passed",
+          "title": "Currency other locale"
+        }
+      ],
+      "endTime": 1643098188017,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/formatting/currency.test.ts",
+      "startTime": 1643098187839,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "dash-it"
+          ],
+          "failureMessages": [],
+          "fullName": "dash-it Should smash it",
+          "location": null,
+          "status": "passed",
+          "title": "Should smash it"
+        }
+      ],
+      "endTime": 1643098188029,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/formatting/dashIt.test.ts",
+      "startTime": 1643098187898,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Remove white space"
+          ],
+          "failureMessages": [],
+          "fullName": "Remove white space Should remove leading white space",
+          "location": null,
+          "status": "passed",
+          "title": "Should remove leading white space"
+        },
+        {
+          "ancestorTitles": [
+            "Remove white space"
+          ],
+          "failureMessages": [],
+          "fullName": "Remove white space Should remove trailing white space",
+          "location": null,
+          "status": "passed",
+          "title": "Should remove trailing white space"
+        },
+        {
+          "ancestorTitles": [
+            "Remove white space"
+          ],
+          "failureMessages": [],
+          "fullName": "Remove white space Should remove all white space in multiple word string",
+          "location": null,
+          "status": "passed",
+          "title": "Should remove all white space in multiple word string"
+        }
+      ],
+      "endTime": 1643098188057,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/formatting/removeWhitespace.test.ts",
+      "startTime": 1643098187925,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "borderRadius"
+          ],
+          "failureMessages": [],
+          "fullName": "borderRadius Work",
+          "location": null,
+          "status": "passed",
+          "title": "Work"
+        }
+      ],
+      "endTime": 1643098188073,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/theming/convenience/borderRadius.test.ts",
+      "startTime": 1643098187998,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Format name"
+          ],
+          "failureMessages": [],
+          "fullName": "Format name Should format name properly from lowercase",
+          "location": null,
+          "status": "passed",
+          "title": "Should format name properly from lowercase"
+        },
+        {
+          "ancestorTitles": [
+            "Format name"
+          ],
+          "failureMessages": [],
+          "fullName": "Format name Should format name properly from uppercase",
+          "location": null,
+          "status": "passed",
+          "title": "Should format name properly from uppercase"
+        },
+        {
+          "ancestorTitles": [
+            "Format name"
+          ],
+          "failureMessages": [],
+          "fullName": "Format name Should work with custom separator",
+          "location": null,
+          "status": "passed",
+          "title": "Should work with custom separator"
+        }
+      ],
+      "endTime": 1643098188114,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/formatting/formatName.test.ts",
+      "startTime": 1643098188030,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Map Prop"
+          ],
+          "failureMessages": [],
+          "fullName": "Map Prop Should map props correctly",
+          "location": null,
+          "status": "passed",
+          "title": "Should map props correctly"
+        },
+        {
+          "ancestorTitles": [
+            "Map Prop"
+          ],
+          "failureMessages": [],
+          "fullName": "Map Prop Should use fallback is nothing fits",
+          "location": null,
+          "status": "passed",
+          "title": "Should use fallback is nothing fits"
+        }
+      ],
+      "endTime": 1643098188114,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/theming/utils/mapProp.test.ts",
+      "startTime": 1643098188025,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Get Field"
+          ],
+          "failureMessages": [],
+          "fullName": "Get Field Should get entire prop if no field is set",
+          "location": null,
+          "status": "passed",
+          "title": "Should get entire prop if no field is set"
+        },
+        {
+          "ancestorTitles": [
+            "Get Field"
+          ],
+          "failureMessages": [],
+          "fullName": "Get Field Should get field if set",
+          "location": null,
+          "status": "passed",
+          "title": "Should get field if set"
+        },
+        {
+          "ancestorTitles": [
+            "Get Field"
+          ],
+          "failureMessages": [],
+          "fullName": "Get Field Should not break if nothing found",
+          "location": null,
+          "status": "passed",
+          "title": "Should not break if nothing found"
+        },
+        {
+          "ancestorTitles": [
+            "Get Field"
+          ],
+          "failureMessages": [],
+          "fullName": "Get Field Should handle fallbacks",
+          "location": null,
+          "status": "passed",
+          "title": "Should handle fallbacks"
+        },
+        {
+          "ancestorTitles": [
+            "Get Field"
+          ],
+          "failureMessages": [],
+          "fullName": "Get Field Should be able to find deep",
+          "location": null,
+          "status": "passed",
+          "title": "Should be able to find deep"
+        }
+      ],
+      "endTime": 1643098188120,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/theming/utils/getField.test.ts",
+      "startTime": 1643098187989,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Phone"
+          ],
+          "failureMessages": [],
+          "fullName": "Phone Should format with defaults",
+          "location": null,
+          "status": "passed",
+          "title": "Should format with defaults"
+        },
+        {
+          "ancestorTitles": [
+            "Phone"
+          ],
+          "failureMessages": [],
+          "fullName": "Phone Should be able to handle other formats",
+          "location": null,
+          "status": "passed",
+          "title": "Should be able to handle other formats"
+        },
+        {
+          "ancestorTitles": [
+            "Phone"
+          ],
+          "failureMessages": [],
+          "fullName": "Phone Should be able to handle other delimiters",
+          "location": null,
+          "status": "passed",
+          "title": "Should be able to handle other delimiters"
+        }
+      ],
+      "endTime": 1643098188150,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/formatting/maskFormat.test.ts",
+      "startTime": 1643098188042,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Truncate"
+          ],
+          "failureMessages": [],
+          "fullName": "Truncate Should truncate with defaults",
+          "location": null,
+          "status": "passed",
+          "title": "Should truncate with defaults"
+        },
+        {
+          "ancestorTitles": [
+            "Truncate"
+          ],
+          "failureMessages": [],
+          "fullName": "Truncate Should not truncate strings shorter than %length",
+          "location": null,
+          "status": "passed",
+          "title": "Should not truncate strings shorter than %length"
+        },
+        {
+          "ancestorTitles": [
+            "Truncate"
+          ],
+          "failureMessages": [],
+          "fullName": "Truncate Should truncate with other length passed",
+          "location": null,
+          "status": "passed",
+          "title": "Should truncate with other length passed"
+        },
+        {
+          "ancestorTitles": [
+            "Truncate"
+          ],
+          "failureMessages": [],
+          "fullName": "Truncate Should truncate with other symbol passed",
+          "location": null,
+          "status": "passed",
+          "title": "Should truncate with other symbol passed"
+        }
+      ],
+      "endTime": 1643098188181,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/formatting/truncate.test.ts",
+      "startTime": 1643098188060,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Math",
+            "Almost equals"
+          ],
+          "failureMessages": [],
+          "fullName": "Math Almost equals Default",
+          "location": null,
+          "status": "passed",
+          "title": "Default"
+        },
+        {
+          "ancestorTitles": [
+            "Math",
+            "Almost equals"
+          ],
+          "failureMessages": [],
+          "fullName": "Math Almost equals Override epsilon",
+          "location": null,
+          "status": "passed",
+          "title": "Override epsilon"
+        }
+      ],
+      "endTime": 1643098188192,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/math/almostEquals/almostEquals.test.ts",
+      "startTime": 1643098188089,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Math",
+            "Lerp"
+          ],
+          "failureMessages": [],
+          "fullName": "Math Lerp Lerp",
+          "location": null,
+          "status": "passed",
+          "title": "Lerp"
+        }
+      ],
+      "endTime": 1643098188210,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/math/lerp/lerp.test.ts",
+      "startTime": 1643098188094,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Math",
+            "Inverse lerp"
+          ],
+          "failureMessages": [],
+          "fullName": "Math Inverse lerp Work",
+          "location": null,
+          "status": "passed",
+          "title": "Work"
+        }
+      ],
+      "endTime": 1643098188220,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/math/inverseLerp/inverseLerp.test.ts",
+      "startTime": 1643098188139,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Deepfind"
+          ],
+          "failureMessages": [],
+          "fullName": "Deepfind Should find properties in object",
+          "location": null,
+          "status": "passed",
+          "title": "Should find properties in object"
+        }
+      ],
+      "endTime": 1643098188231,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/theming/utils/deepfind.test.ts",
+      "startTime": 1643098188143,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "useBrregSearch"
+          ],
+          "failureMessages": [],
+          "fullName": "useBrregSearch search",
+          "location": null,
+          "status": "pending",
+          "title": "search"
+        },
+        {
+          "ancestorTitles": [
+            "useBrregSearch"
+          ],
+          "failureMessages": [],
+          "fullName": "useBrregSearch Should work with org nr",
+          "location": null,
+          "status": "pending",
+          "title": "Should work with org nr"
+        },
+        {
+          "ancestorTitles": [
+            "useBrregSearch",
+            "Rendering"
+          ],
+          "failureMessages": [],
+          "fullName": "useBrregSearch Rendering should render Results",
+          "location": null,
+          "status": "pending",
+          "title": "should render Results"
+        },
+        {
+          "ancestorTitles": [
+            "useBrregSearch",
+            "Rendering"
+          ],
+          "failureMessages": [],
+          "fullName": "useBrregSearch Rendering should render empty array",
+          "location": null,
+          "status": "pending",
+          "title": "should render empty array"
+        },
+        {
+          "ancestorTitles": [
+            "useBrregSearch",
+            "Rendering"
+          ],
+          "failureMessages": [],
+          "fullName": "useBrregSearch Rendering should render empty array not exisiting company",
+          "location": null,
+          "status": "pending",
+          "title": "should render empty array not exisiting company"
+        }
+      ],
+      "endTime": 1643098188386,
+      "message": "",
+      "name": "/Users/espen/projects/bento/src/hooks/useBrRegSearch/useBrRegSearch.spec.tsx",
+      "startTime": 1643098188134,
+      "status": "passed",
+      "summary": ""
+    }
+  ],
+  "wasInterrupted": false
+}
