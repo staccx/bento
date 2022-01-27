@@ -10,12 +10,6 @@ const targetHandleStyle: CSSProperties = {
   top: 0,
   transform: ""
 }
-const sourceHandleStyleA: CSSProperties = { ...targetHandleStyle, top: 0 }
-const sourceHandleStyleB: CSSProperties = {
-  ...targetHandleStyle,
-  bottom: -5,
-  top: "auto"
-}
 
 const FunctionNode: FC<NodeProps> = ({ data, isConnectable }) => {
   return (

@@ -1,5 +1,5 @@
 import React from "react"
-import { formatMoney, abbreviateCurrency } from "./currency"
+import { formatMoney } from "./currency"
 import { STYLE } from "./number.constants"
 import FunctionStory from "../_storyhelpers/FunctionStory"
 import { ComponentStory } from "@storybook/react"

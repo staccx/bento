@@ -30,7 +30,7 @@ const InputNode: FC<NodeProps> = ({ data, isConnectable }) => {
       )
     }
     return <p className={styles.value}>{data.value}</p>
-  }, [data.value])
+  }, [data.label, data.value])
 
   return (
     <div className={`${styles.node} ${styles.inputNode}`}>
