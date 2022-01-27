@@ -1,6 +1,6 @@
 import React from "react"
 import { renderHook } from "@testing-library/react-hooks"
-import { render, cleanup, getByTestId, screen } from "@testing-library/react"
+import { render, cleanup, screen } from "@testing-library/react"
 import useSearch from "./useSearch"
 
 const testData = [
@@ -34,7 +34,7 @@ const testData = [
 ]
 
 // Test component that uses the Hook
-function TestComp({ term }) {
+function TestComp({ term }: { term: string }) {
   const [result] = useSearch({
     input: term,
     documents: testData,
@@ -54,7 +54,7 @@ describe("useSearch", () => {
     const { rerender } = render(<TestComp term="" />)
     const span = screen.getByTestId("result")
 
-    expect(span.textContent).toBe("3")
+    expect(span.textContent).toBe("0")
 
     rerender(<TestComp term="Roberta" />)
     expect(span.textContent).toBe("1")
@@ -74,6 +74,7 @@ describe("useSearch", () => {
       )
 
       const [searchResult] = result.current
+
       expect(Array.isArray(searchResult)).toBe(true)
       expect(searchResult.length).toBe(1)
       expect(searchResult[0].item.name.first).toBe("Rivers")
@@ -121,7 +122,7 @@ describe("useSearch", () => {
       expect(searchResult.length).toBe(2)
     })
 
-    it("Should return all docs if no input", () => {
+    it("Should return no docs if no input", () => {
       const { result } = renderHook(() =>
         useSearch({
           input: null,
@@ -132,7 +133,7 @@ describe("useSearch", () => {
 
       const [searchResult] = result.current
       expect(Array.isArray(searchResult)).toBe(true)
-      expect(searchResult.length).toBe(3)
+      expect(searchResult.length).toBe(0)
     })
   })
 })

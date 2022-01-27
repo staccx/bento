@@ -1,4 +1,5 @@
 import { baseMask } from "./base"
+import type { MaskOptions } from "./_types"
 
 const defaultOptions = {
   type: "BBAN",
@@ -7,7 +8,7 @@ const defaultOptions = {
   pattern: /[^0-9]+/gi
 }
 
-export const accountMask = options => {
+export function accountMask(options: MaskOptions) {
   const config = {
     ...defaultOptions,
     ...options,

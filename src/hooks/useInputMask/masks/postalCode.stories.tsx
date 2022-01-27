@@ -1,13 +1,26 @@
 import React from "react"
+import { useInputMask } from "../useInputMask"
 
 export default {
   title: "hooks/useInputMask/Postal Code"
 }
 
-export const Vanilla = args => <input {...args} mode="postalcode" />
+export const Vanilla = args => {
+  const inputProps = useInputMask({
+    mode: "postalcode",
+    ...args
+  })
+  return <input {...inputProps} />
+}
 Vanilla.args = {}
 
-export const Locale = args => <input {...args} mode="postalcode" />
+export const Locale = args => {
+  const inputProps = useInputMask({
+    mode: "postalcode",
+    ...args
+  })
+  return <input {...inputProps} />
+}
 Locale.args = {
   options: {
     blocks: [4],

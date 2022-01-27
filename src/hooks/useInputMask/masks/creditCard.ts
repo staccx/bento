@@ -1,4 +1,5 @@
 import { baseMask, resolveBlocks } from "./base"
+import { MaskOptions } from "./_types"
 
 // TODO: Add more cards
 const creditCards = [
@@ -31,7 +32,7 @@ const creditCards = [
   }
 ]
 
-const matchCard = input => {
+const matchCard = (input: any) => {
   if (!input) {
     return null
   }
@@ -40,8 +41,8 @@ const matchCard = input => {
   )
 }
 
-export const creditCardMask = options => {
-  const config = {
+export const creditCardMask = (options: MaskOptions) => {
+  const config: MaskOptions = {
     ...options,
     pattern: /[^0-9]+/gi
   }
