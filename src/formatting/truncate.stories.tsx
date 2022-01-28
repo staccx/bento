@@ -10,14 +10,14 @@ export default {
 
 const longString = "The quick brown fox jumps over the lazy dog"
 
-export const Default = args => (
+export const Default = ({ value }) => (
   <div>
     <p>
       Standard truncate <br />
       Original text: {longString} <br />
       Result:
     </p>
-    {truncate(args.value)}
+    {truncate(value)}
   </div>
 )
 
@@ -25,7 +25,7 @@ Default.args = {
   value: longString
 }
 
-export const SetLength = args => (
+export const SetLength = ({ value, length }) => (
   <div>
     <p>
       Set truncate length
@@ -33,7 +33,7 @@ export const SetLength = args => (
       Original text: {longString} <br />
       Result:
     </p>
-    {truncate(args.value, args.length)}
+    {truncate(value, length)}
   </div>
 )
 
@@ -42,14 +42,14 @@ SetLength.args = {
   length: 10
 }
 
-export const SetSymbol = args => (
+export const SetSymbol = ({ value, length, symbol }) => (
   <div>
     <p>
       Pass other symbols to the truncate <br />
       Original text: {longString} <br />
       Result:
     </p>
-    {truncate(args.value, args.length, args.symbol)}
+    {truncate(value, length, symbol)}
   </div>
 )
 
