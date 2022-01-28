@@ -8,13 +8,13 @@ export default {
   }
 }
 
-export const Default = args => (
+export const Default = ({ name }) => (
   <div>
     <p>
       Here formatName takes the name Jane doe and formats it. <br />
       Result:
     </p>
-    {formatName(args.name)}
+    {formatName(name)}
   </div>
 )
 
@@ -22,13 +22,13 @@ Default.args = {
   name: "Jane doe"
 }
 
-export const FromUppercaseFormat = args => (
+export const FromUppercaseFormat = ({ name }) => (
   <div>
     <p>
       FormatName will also work from uppercase. <br />
       Result:
     </p>
-    {formatName(args.name)}
+    {formatName(name)}
   </div>
 )
 
@@ -36,13 +36,13 @@ FromUppercaseFormat.args = {
   name: "JANE DOE"
 }
 
-export const CustomSeparatorFormat = args => (
+export const CustomSeparatorFormat = ({ name, separator }) => (
   <div>
     <p>
       Format name also allows for custom separators. <br />
       Result:
     </p>
-    {formatName(args.name, { separator: args.separator })}
+    {formatName(name, { separator })}
   </div>
 )
 
