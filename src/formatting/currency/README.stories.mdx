@@ -1,15 +1,13 @@
-import { Meta } from '@storybook/addon-docs/blocks'
-import { Subtitle } from '@storybook/addon-docs/blocks'
-import { LinkTo } from '@storybook/addon-links'
-import { Badge } from '@storybook/components'
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
 
 <Meta title="formatting/currency/README" />
 
-# Embedding Figma designs
+# Format money
 
-<Subtitle>
-  This document describes the use of the formatMoney function
-</Subtitle>
+<Subtitle>This document describes the use of the formatMoney function</Subtitle>
 
 ## Requirements
 
@@ -19,15 +17,15 @@ import { Badge } from '@storybook/components'
 
 ```js
 import { formatMoney } from "@staccx/bento"
-const formattedValue  = formatMoney(1337)
+const formattedValue = formatMoney(1337)
 ```
 
 ## Arguments
 
-| Argument name                                      | Type           | Default value                  | Description                                            |
-| ------------------------------------------------ | -------------- | ------------------------------ | ------------------------------------------------------ |
-| `value` <Badge status="positive">required</Badge> | `number`      |                                |                                       |
-| `options`  | `Intl.NumberFormatOptions & { suffix?: string, locale?: string }` |                                |                |
+| Argument name                                     | Type                                                              | Default value | Description |
+| ------------------------------------------------- | ----------------------------------------------------------------- | ------------- | ----------- |
+| `value` <Badge status="positive">required</Badge> | `number`                                                          |               |             |
+| `options`                                         | `Intl.NumberFormatOptions & { suffix?: string, locale?: string }` |               |             |
 
 ## Troubleshooting
 
