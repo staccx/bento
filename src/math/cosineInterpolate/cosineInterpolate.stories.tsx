@@ -3,7 +3,7 @@ import { cosineInterpolate } from "./cosineInterpolate"
 import FunctionStory from "../../_storyhelpers/FunctionStory"
 import { ComponentStory } from "@storybook/react"
 export default {
-  title: "math/cosineInterpolate",
+  title: "math/Cosine interpolate",
   component: cosineInterpolate,
   parameters: {
     jest: ["cosineInterpolate.test.ts"]

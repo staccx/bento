@@ -3,7 +3,7 @@ import { clamp } from "./clamp"
 import FunctionStory from "../../_storyhelpers/FunctionStory"
 import { ComponentStory } from "@storybook/react"
 export default {
-  title: "math/clamp",
+  title: "math/Clamp",
   component: clamp,
   parameters: {
     jest: ["clamp.test.ts"]

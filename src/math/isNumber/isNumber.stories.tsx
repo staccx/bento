@@ -3,7 +3,7 @@ import { isNumber } from "./isNumber"
 import FunctionStory from "../../_storyhelpers/FunctionStory"
 import { ComponentStory } from "@storybook/react"
 export default {
-  title: "math/isNumber",
+  title: "math/Is number",
   component: isNumber,
   parameters: {
     jest: ["isNumber.test.ts"]

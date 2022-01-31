@@ -3,7 +3,7 @@ import { almostEquals } from "./almostEquals"
 import FunctionStory from "../../_storyhelpers/FunctionStory"
 import { ComponentStory } from "@storybook/react"
 export default {
-  title: "math/almostEquals",
+  title: "math/Almost equals",
   component: almostEquals,
   parameters: {
     jest: ["almostEquals.test.ts"]

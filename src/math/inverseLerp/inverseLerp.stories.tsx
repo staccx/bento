@@ -3,7 +3,7 @@ import { inverseLerp } from "./inverseLerp"
 import FunctionStory from "../../_storyhelpers/FunctionStory"
 import { ComponentStory } from "@storybook/react"
 export default {
-  title: "math/inverseLerp",
+  title: "math/Inverse lerp",
   component: inverseLerp,
   parameters: {
     jest: ["inverseLerp.test.ts"]

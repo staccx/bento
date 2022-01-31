@@ -3,7 +3,7 @@ import { lerp } from "./lerp"
 import FunctionStory from "../../_storyhelpers/FunctionStory"
 import { ComponentStory } from "@storybook/react"
 export default {
-  title: "math/lerp",
+  title: "math/Lerp",
   component: lerp,
   parameters: {
     jest: ["lerp.test.ts"]

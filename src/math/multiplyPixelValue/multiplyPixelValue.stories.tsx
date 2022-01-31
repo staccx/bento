@@ -3,7 +3,7 @@ import { multiplyPixelValue } from "./multiplyPixelValue"
 import FunctionStory from "../../_storyhelpers/FunctionStory"
 import { ComponentStory } from "@storybook/react"
 export default {
-  title: "math/multiplyPixelValue",
+  title: "math/Multiply pixel value",
   component: multiplyPixelValue,
   parameters: {
     jest: ["multiplyPixelValue.test.ts"]
