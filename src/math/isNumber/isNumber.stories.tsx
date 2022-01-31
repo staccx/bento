@@ -18,7 +18,7 @@ const Template: ComponentStory<any> = ({ n }) => {
   )
 }
 
-export const ProofOfConcept = Template.bind({})
-ProofOfConcept.args = {
+export const VisualDataFlow = Template.bind({})
+VisualDataFlow.args = {
   n: 10
 }

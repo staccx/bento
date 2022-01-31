@@ -22,8 +22,8 @@ const Template: ComponentStory<any> = ({ min, max, t }) => {
   )
 }
 
-export const ProofOfConcept = Template.bind({})
-ProofOfConcept.args = {
+export const VisualDataFlow = Template.bind({})
+VisualDataFlow.args = {
   min: 0,
   max: 10,
   t: 0.5

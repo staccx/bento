@@ -22,8 +22,8 @@ const Template: ComponentStory<any> = ({ value, multiplier, unit }) => {
   )
 }
 
-export const ProofOfConcept = Template.bind({})
-ProofOfConcept.args = {
+export const VisualDataFlow = Template.bind({})
+VisualDataFlow.args = {
   value: "36px",
   multiplier: 2,
   unit: "em"

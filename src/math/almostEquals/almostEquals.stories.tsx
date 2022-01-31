@@ -22,8 +22,8 @@ const Template: ComponentStory<any> = ({ value1, value2, precision }) => {
   )
 }
 
-export const ProofOfConcept = Template.bind({})
-ProofOfConcept.args = {
+export const VisualDataFlow = Template.bind({})
+VisualDataFlow.args = {
   value1: 0.1,
   value2: 0.2,
   precision: 0.2
