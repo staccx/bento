@@ -32,7 +32,7 @@ export const useFocusTrap = (
       readySet(true)
     }
     return deactivate
-  }, [containerElement])
+  }, [activateOnReady, containerElement, initialFocusElement, trapOptions])
 
   const activate = () => focusTrap?.current?.activate()
   const deactivate = () => focusTrap?.current?.deactivate()

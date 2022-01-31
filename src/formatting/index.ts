@@ -1,4 +1,4 @@
-export { abbreviateCurrency, formatMoney } from "./currency"
+export { abbreviateCurrency, formatMoney } from "./currency/currency"
 export { formatDateDistance, formatDateRelative, formatDate } from "./date"
 export { default as removeWhitespace } from "./removeWhitespace"
 export { default as formatName } from "./formatName"

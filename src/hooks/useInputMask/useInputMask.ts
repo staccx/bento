@@ -1,47 +1,50 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, useEffect, useRef } from "react"
 import { resolveMask } from "./masks"
+import { MaskMode, MaskOptions } from "./masks/_types"
 // Which types are allowed to set range
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange
 const allowedSelectionRangeTypes = ["text", "search", "URL", "tel", "password"]
 
+type Props = {
+  options?: MaskOptions
+  mode: MaskMode
+  onChange?: (event: { value: string; rawValue: string }) => void
+  value?: string
+  defaultValue?: string
+}
+
 export const useInputMask = ({
-  ref,
-  locale,
-  type,
+  options = {},
   mode,
-  debugLevel = 0,
-  onChange,
-  controlledValue,
-  defaultValue,
-  ...otherProps
-}) => {
-  const logger = console
+  onChange = () => {},
+  value: controlledValue,
+  defaultValue
+}: Props) => {
+  const ref = useRef<HTMLInputElement>(null)
   const caretPosition = useRef(0)
   const timeout = useRef<NodeJS.Timeout>()
   const [value, valueSet] = React.useState<{ value: any; rawValue?: any }>({
-    value: controlledValue ?? defaultValue
+    value: controlledValue ?? defaultValue ?? ""
   })
 
-  const updateCaret = useCallback(
-    val => {
-      if (!allowedSelectionRangeTypes.includes(type)) {
+  const updateCaret = useCallback(val => {
+    if (ref && ref.current) {
+      if (!allowedSelectionRangeTypes.includes(ref.current.type)) {
         return
       }
-      if (ref && ref.current) {
-        const { selectionStart, selectionEnd } = ref.current
-        const caret = val || Math.max(selectionStart, selectionEnd)
-        logger.debug("Settings caret position to", caret)
-        caretPosition.current = caret
-      }
-    },
-    [type]
-  )
+      const { selectionStart, selectionEnd } = ref.current
+      const caret = val || Math.max(selectionStart!, selectionEnd!)
+      console.debug("Settings caret position to", caret)
+      caretPosition.current = caret
+    }
+  }, [])
 
   useEffect(() => {
-    if (!mode) {
-      return
-    }
-    if (!allowedSelectionRangeTypes.includes(type)) {
+    if (
+      !ref.current ||
+      !allowedSelectionRangeTypes.includes(ref.current.type)
+    ) {
       return
     }
     if (timeout.current) clearTimeout(timeout.current)
@@ -64,16 +67,10 @@ export const useInputMask = ({
   })
 
   useEffect(() => {
-    if (!mode) {
-      return
-    }
     updateCaret(1)
   }, [])
 
   useEffect(() => {
-    if (!mode) {
-      return
-    }
     if (controlledValue !== value?.rawValue) {
       let value = controlledValue
       if (value === null || value === undefined) {
@@ -94,40 +91,29 @@ export const useInputMask = ({
   }, [defaultValue])
 
   const createMask = resolveMask(mode)
-  const mask = React.useRef<((input: any) => any) | null>(
-    createMask({
-      locale
-    })
-  )
-
+  const mask = React.useRef<((input: any) => any) | null>(createMask(options))
   React.useEffect(() => {
-    if (!mode) {
-      return
-    }
     const createMask = resolveMask(mode)
-    mask.current = createMask({ locale })
-    logger.debug("Mode resolved", mask.current?.name)
-  }, [mode, logger, locale])
+    mask.current = createMask(options)
+    console.debug("Mode resolved", mask.current?.name)
+  }, [mode, options])
 
   React.useEffect(() => {
-    if (!mode) {
-      return
+    if (options) {
+      handleChange({ target: { value: value.value } })
+      console.debug("Locale changed to", options)
     }
-    if (locale) {
-      handleChange({ target: value })
-      logger.debug("Locale changed to", locale)
-    }
-  }, [locale])
+  }, [options])
 
-  const handleChange = e => {
+  const handleChange = (e: any) => {
     if (!mode) {
       return
     }
     const val = mask.current && mask.current(e.target.value)
-    logger.debug("Handling change on masked input", val, value)
+    console.debug("Handling change on masked input", val, value)
     if (value?.value) {
       const diff = val.value.length - value.value.length
-      logger.debug("Difference is", diff)
+      console.debug("Difference is", diff)
       updateCaret(Math.abs(diff) > 1 ? caretPosition.current + diff : null)
     } else {
       updateCaret(null)
@@ -140,7 +126,7 @@ export const useInputMask = ({
     }
   }
 
-  const handleKeyUp = e => {
+  const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
     switch (e.key) {
       case "ArrowLeft":
       case "ArrowRight":
@@ -157,28 +143,11 @@ export const useInputMask = ({
     }
   }
 
-  if (!mode) {
-    let value = controlledValue
-    if (value === null) {
-      value = ""
-    }
-    return {
-      ...(value !== undefined && { value }),
-      onChange,
-      defaultValue,
-      ...otherProps
-    }
-  }
-
   return {
-    type,
-    ...(!mode && { value: controlledValue }),
-    ...(mode && {
-      onKeyUp: handleKeyUp,
-      onChange: handleChange,
-      value: value?.value
-    }),
-    defaultValue,
-    ...otherProps
+    ref,
+    onKeyUp: handleKeyUp,
+    onChange: handleChange,
+    value: value?.value,
+    defaultValue
   }
 }

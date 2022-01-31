@@ -12,14 +12,14 @@ export default {
   }
 }
 
-export const Default = args => (
+export const Default = ({ from, to }) => (
   <div>
     <p>
       FormatDateDistance takes two dates, and returns the distance between them,
       in the form of how long it is from date1 until date 2. In this instance
       from february to march:
     </p>
-    {formatDateDistance(args.from, args.to)}
+    {formatDateDistance(from, to)}
   </div>
 )
 
@@ -28,13 +28,13 @@ Default.args = {
   to: date2
 }
 
-export const CustomYearFormat = args => (
+export const CustomYearFormat = ({ from, to }) => (
   <div>
     <p>
       FormatDateDistance allow use of both ISO 8601 format and date object, and
       can also compare them
     </p>
-    {formatDateDistance(args.from, args.to)}
+    {formatDateDistance(from, to)}
   </div>
 )
 

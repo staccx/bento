@@ -3,14 +3,14 @@
     "allowJs": true,
     "outDir": "./dist",
     "module": "commonjs",
-    "lib": [ "es2020", "dom" ],
+    "lib": ["es2020", "dom"],
     "jsx": "react",
     "moduleResolution": "node",
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "removeComments": true,
     "skipLibCheck": true,
     "checkJs": false,
@@ -18,10 +18,6 @@
     "isolatedModules": false,
     "strict": true
   },
-  "files": [
-    "src/index.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "files": ["src/index.ts"],
+  "exclude": ["node_modules"]
 }

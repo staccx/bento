@@ -42,7 +42,7 @@ const BaseTestComponent = args => {
     }, args.timeBeforeSuccess)
 
     return () => clearTimeout(timeout)
-  }, [])
+  }, [args.timeBeforeSuccess])
 
   const { result, state, error, retries, reset, nextRetry } = useBackoff(
     () => helperFunction(fail),

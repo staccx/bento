@@ -1,6 +1,6 @@
 type Value = string | number | bigint
 
-export default (value: Value, mask: string = "XXX XX XXX"): string => {
+function maskFormat(value: Value, mask: string = "XXX XX XXX"): string {
   const stringValue = "" + value
   let returnValue = ""
   let indexString = 0
@@ -16,3 +16,4 @@ export default (value: Value, mask: string = "XXX XX XXX"): string => {
   }
   return returnValue
 }
+export default maskFormat

@@ -1,18 +1,28 @@
 import React from "react"
 import { useDelayedValue } from "./_shared.utils"
+import { useInputMask } from "../useInputMask"
 
 export default {
   title: "hooks/useInputMask/Account"
 }
 
-export const Vanilla = args => <input {...args} mode="account" />
-Vanilla.args = {
-  label: "Account input with nothing fancy"
+export const Vanilla = args => {
+  const inputProps = useInputMask({
+    mode: "account",
+    ...args
+  })
+  return <input {...inputProps} />
 }
+Vanilla.args = {}
 
-export const Locale = args => <input {...args} mode="account" />
+export const Locale = args => {
+  const inputProps = useInputMask({
+    mode: "account",
+    ...args
+  })
+  return <input {...inputProps} />
+}
 Locale.args = {
-  label: "Locale set explistely (Danish)",
   options: {
     type: "BBAN",
     blocks: [4, 9],
@@ -23,8 +33,18 @@ Locale.args = {
 
 export const DelayedController = args => {
   const value = useDelayedValue("34951515827")
+  const inputProps = useInputMask({
+    mode: "account",
+    defaultValue: value,
+    ...args
+  })
 
-  return <input id={"delayed_account"} mode="account" {...args} value={value} />
+  return (
+    <label>
+      <span>{args.label}</span>
+      <input {...inputProps} />
+    </label>
+  )
 }
 
 DelayedController.args = {}

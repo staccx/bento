@@ -1,5 +1,5 @@
-import { formatNumber } from "./number"
-import { STYLE } from "./number.constants"
+import { formatNumber } from "../number"
+import { STYLE } from "../number.constants"
 
 type FormatNumberOptions = Intl.NumberFormatOptions & {
   suffix?: string

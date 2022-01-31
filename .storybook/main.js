@@ -3,7 +3,8 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-jest"
+    "@storybook/addon-jest",
+    "@storybook/addon-storysource"
   ],
   framework: "@storybook/react",
   core: {

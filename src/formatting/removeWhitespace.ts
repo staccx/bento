@@ -1,1 +1,4 @@
-export default (value: string): string => value.replace(/\s/g, "")
+function removeWhitespace(value: string): string {
+  return value.replace(/\s/g, "")
+}
+export default removeWhitespace

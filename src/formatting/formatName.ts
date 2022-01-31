@@ -23,7 +23,7 @@ type FormatNameOptions = {
   separator?: string
 }
 
-export default (value: string, opts: FormatNameOptions = {}): string => {
+function formatName(value: string, opts: FormatNameOptions = {}): string {
   const { separator = "," } = opts
   return value
     .split(" ")
@@ -34,3 +34,4 @@ export default (value: string, opts: FormatNameOptions = {}): string => {
     )
     .join(" ")
 }
+export default formatName

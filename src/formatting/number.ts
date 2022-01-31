@@ -1,5 +1,5 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat/NumberFormat
-import { STYLE, UNIT_DISPLAY, CURRENCY_DISPLAY } from "./number.constants"
+import { STYLE, CURRENCY_DISPLAY } from "./number.constants"
 
 type NumberFormatOptions = Intl.NumberFormatOptions & {
   locale?: string

@@ -62,17 +62,23 @@ export const Default = Template.bind({})
 
 Default.args = {}
 
-export const FormattingStyles = args => (
+export const FormattingStyles = ({
+  date,
+  format1,
+  format2,
+  format3,
+  format4
+}) => (
   <div>
     <p>
       The way to decide how the formatting wil become is by the format string
       that is passed to formatDate there are several different ways to display a
       date string, and they can all be formatted with formatDate
     </p>
-    {formatDate(args.date, args.format1)} <br />
-    {formatDate(args.date, args.format2)} <br />
-    {formatDate(args.date, args.format3)} <br />
-    {formatDate(args.date, args.format4)}
+    {formatDate(date, format1)} <br />
+    {formatDate(date, format2)} <br />
+    {formatDate(date, format3)} <br />
+    {formatDate(date, format4)}
   </div>
 )
 
@@ -84,13 +90,13 @@ FormattingStyles.args = {
   format4: "dd.MMMM.yyyy"
 }
 
-export const CustomYearFormat = args => (
+export const CustomYearFormat = ({ date, format }) => (
   <div>
     <p>
       Here is an example of how you can return the whole year, with the format
       yyyy
     </p>
-    {formatDate(args.date, args.format)}
+    {formatDate(date, format)}
   </div>
 )
 
@@ -99,13 +105,13 @@ CustomYearFormat.args = {
   format: "yyyy"
 }
 
-export const CustomMonthFormat = args => (
+export const CustomMonthFormat = ({ date, format }) => (
   <div>
     <p>
       Here is an example of how you can return the month as a string, with the
       MMMM format
     </p>
-    {formatDate(args.date, args.format)}
+    {formatDate(date, format)}
   </div>
 )
 
@@ -114,13 +120,13 @@ CustomMonthFormat.args = {
   format: "MMMM"
 }
 
-export const CustomTimeFormat = args => (
+export const CustomTimeFormat = ({ date, format }) => (
   <div>
     <p>
       Here is an example of how you can return hours and minutes with a HH:mm
       format
     </p>
-    {formatDate(args.date, args.format)}
+    {formatDate(date, format)}
   </div>
 )
 
@@ -129,13 +135,13 @@ CustomTimeFormat.args = {
   format: "HH:mm"
 }
 
-export const CustomFullMonthAndYearFormat = args => (
+export const CustomFullMonthAndYearFormat = ({ date, format }) => (
   <div>
     <p>
       Here is an example of how you can return the full month and year, with a
       dd/MMM/yyyy format
     </p>
-    {formatDate(args.date, args.format)}
+    {formatDate(date, format)}
   </div>
 )
 
@@ -144,13 +150,13 @@ CustomFullMonthAndYearFormat.args = {
   format: "dd/MMM/yyyy"
 }
 
-export const CustomDateObjectFormat = args => (
+export const CustomDateObjectFormat = ({ date, format }) => (
   <div>
     <p>
       FormatDate can also take in a dateObject and format that, the
       functionality will be the same as with a date string in ISO 8601 format.
     </p>
-    {formatDate(args.date, args.format)}
+    {formatDate(date, format)}
   </div>
 )
 

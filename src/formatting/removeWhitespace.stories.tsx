@@ -8,13 +8,13 @@ export default {
   }
 }
 
-export const Default = args => (
+export const Default = ({ value }) => (
   <div>
     <p>
       Remove leading white space <br />
       Result:
     </p>
-    {removeWhitespace(args.value)}
+    {removeWhitespace(value)}
   </div>
 )
 
@@ -22,14 +22,14 @@ Default.args = {
   value: "        Test"
 }
 
-export const Trailing = args => (
+export const Trailing = ({ value }) => (
   <div>
     <p>
       Remove trailing white space
       <br />
       Result:
     </p>
-    {removeWhitespace(args.value)}
+    {removeWhitespace(value)}
   </div>
 )
 
@@ -37,14 +37,14 @@ Trailing.args = {
   value: "Test         "
 }
 
-export const AllWhitespace = args => (
+export const AllWhitespace = ({ value }) => (
   <div>
     <p>
       Remove white space in entire string
       <br />
       Result:
     </p>
-    {removeWhitespace(args.value)}
+    {removeWhitespace(value)}
   </div>
 )
 

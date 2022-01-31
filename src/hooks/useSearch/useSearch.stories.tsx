@@ -8,7 +8,7 @@ export default {
   component: useSearch
 }
 
-export const useSearchView = args => {
+export const SearchView = args => {
   const defaultKeysValue = ["name.first", "company", "email"]
   const [term, setTerm] = useState("")
   const [result] = useSearch({

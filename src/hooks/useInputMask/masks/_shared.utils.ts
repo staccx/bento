@@ -14,7 +14,7 @@ export const useDelayedValue = (value, delay = 1000) => {
     return () => {
       clearTimeout(timeout)
     }
-  }, [value])
+  }, [delay, value])
 
   return val
 }

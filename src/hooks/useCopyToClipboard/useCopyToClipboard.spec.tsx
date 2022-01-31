@@ -5,7 +5,7 @@ import "@testing-library/jest-dom"
 import { useCopyToClipboard } from "./useCopyToClipboard"
 // TODO: Ser ut som copy-to-clipboard er vanskelig å jest teste, se: https://github.com/nkbt/react-copy-to-clipboard/issues/106
 
-let prompt
+let prompt: any
 describe("useCopyToClipboard", () => {
   // jest.mock("copy-to-clipboard", () => {
   //   return jest.fn()
