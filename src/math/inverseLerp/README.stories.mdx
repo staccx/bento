@@ -1,0 +1,35 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="math/inverseLerp/README" />
+
+# Embedding Figma designs
+
+<Subtitle>This document describes the use of the inverseLerp function</Subtitle>
+
+## Requirements
+
+`@staccx/bento > 14.0.0`
+
+## Usage
+
+```js
+import { inverseLerp } from "@staccx/bento"
+const value = inverseLerp(0, 10, 5)
+```
+
+## Arguments
+
+| Argument name                                     | Type     | Default value | Description |
+| ------------------------------------------------- | -------- | ------------- | ----------- |
+| `min` <Badge status="positive">required</Badge>   | `number` |               |             |
+| `max` <Badge status="positive">required</Badge>   | `number` |               |             |
+| `value` <Badge status="positive">required</Badge> | `number` |               |             |
+
+## Troubleshooting
+
+### Troubleshoot heading
+
+Troubleshoot description

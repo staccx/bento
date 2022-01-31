@@ -1,0 +1,42 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="math/almostEquals/README" />
+
+# Embedding Figma designs
+
+<Subtitle>
+  This document describes the use of the almostEquals function
+</Subtitle>
+
+## Requirements
+
+`@staccx/bento > 14.0.0`
+
+## Usage
+
+```js
+import { almostEquals } from "@staccx/bento"
+
+//Defining your own precision
+const isAlmostEqual = almostEquals(0.1, 0.2, 0.2) //true
+
+//Default precision
+const isAlmostEqual = almostEquals(0.1, 0.2) //false
+```
+
+## Arguments
+
+| Argument name                                      | Type     | Default value | Description |
+| -------------------------------------------------- | -------- | ------------- | ----------- |
+| `value1` <Badge status="positive">required</Badge> | `number` |               |             |
+| `value2` <Badge status="positive">required</Badge> | `number` |               |             |
+| `precision`                                        | `number` | 0.0001        |             |
+
+## Troubleshooting
+
+### Troubleshoot heading
+
+Troubleshoot description
