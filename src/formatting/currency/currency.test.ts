@@ -1,5 +1,5 @@
 import { abbreviateCurrency, formatMoney } from "./currency"
-import { CURRENCY_DISPLAY } from "./number.constants"
+import { CURRENCY_DISPLAY } from "../number.constants"
 
 // const space = \u00a0
 

@@ -1,10 +1,10 @@
 import React from "react"
 import { formatMoney } from "./currency"
-import { STYLE } from "./number.constants"
-import FunctionStory from "../_storyhelpers/FunctionStory"
+import { STYLE } from "../number.constants"
+import FunctionStory from "../../_storyhelpers/FunctionStory"
 import { ComponentStory } from "@storybook/react"
 export default {
-  title: "formatting/currency",
+  title: "formatting/currency/examples",
   component: formatMoney,
   parameters: {
     jest: ["currency.test.ts"]
