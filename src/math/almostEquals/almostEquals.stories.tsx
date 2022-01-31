@@ -6,7 +6,7 @@ export default {
   title: "math/almostEquals",
   component: almostEquals,
   parameters: {
-    jest: ["currency.test.ts"]
+    jest: ["almostEquals.test.ts"]
   }
 }
 

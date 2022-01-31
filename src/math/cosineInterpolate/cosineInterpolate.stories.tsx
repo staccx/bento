@@ -6,7 +6,7 @@ export default {
   title: "math/cosineInterpolate",
   component: cosineInterpolate,
   parameters: {
-    jest: ["currency.test.ts"]
+    jest: ["cosineInterpolate.test.ts"]
   }
 }
 

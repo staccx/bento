@@ -6,7 +6,7 @@ export default {
   title: "math/isNumber",
   component: isNumber,
   parameters: {
-    jest: ["currency.test.ts"]
+    jest: ["isNumber.test.ts"]
   }
 }
 

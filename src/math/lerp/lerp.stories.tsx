@@ -6,7 +6,7 @@ export default {
   title: "math/lerp",
   component: lerp,
   parameters: {
-    jest: ["currency.test.ts"]
+    jest: ["lerp.test.ts"]
   }
 }
 

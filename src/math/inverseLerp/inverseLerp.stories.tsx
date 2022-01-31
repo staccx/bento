@@ -6,7 +6,7 @@ export default {
   title: "math/inverseLerp",
   component: inverseLerp,
   parameters: {
-    jest: ["currency.test.ts"]
+    jest: ["inverseLerp.test.ts"]
   }
 }
 

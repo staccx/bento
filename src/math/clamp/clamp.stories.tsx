@@ -6,7 +6,7 @@ export default {
   title: "math/clamp",
   component: clamp,
   parameters: {
-    jest: ["currency.test.ts"]
+    jest: ["clamp.test.ts"]
   }
 }
 

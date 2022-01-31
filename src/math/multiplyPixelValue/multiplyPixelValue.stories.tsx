@@ -6,7 +6,7 @@ export default {
   title: "math/multiplyPixelValue",
   component: multiplyPixelValue,
   parameters: {
-    jest: ["currency.test.ts"]
+    jest: ["multiplyPixelValue.test.ts"]
   }
 }
 
