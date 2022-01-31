@@ -1,0 +1,42 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="math/multiplyPixelValue/README" />
+
+# Multiply pixel value
+
+<Subtitle>
+  This document describes the use of the multiplyPixelValue function
+</Subtitle>
+
+## Requirements
+
+`@staccx/bento > 14.0.0`
+
+## Usage
+
+```js
+import { multiplyPixelValue } from "@staccx/bento"
+
+//Default Usage
+const value = multiplyPixelValue("36px", 2)
+
+//Override unit
+const value = multiplyPixelValue("36px", 2, "em")
+```
+
+## Arguments
+
+| Argument name                                          | Type     | Default value | Description |
+| ------------------------------------------------------ | -------- | ------------- | ----------- |
+| `value` <Badge status="positive">required</Badge>      | `string` |               |             |
+| `multiplier` <Badge status="positive">required</Badge> | `number` |               |             |
+| `unit`                                                 | `string` | null          |             |
+
+## Troubleshooting
+
+### Troubleshoot heading
+
+Troubleshoot description
