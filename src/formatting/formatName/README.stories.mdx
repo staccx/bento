@@ -1,0 +1,30 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="formatting/Format Name/README" />
+
+# Format Name
+
+<Subtitle>
+  This document describes the use of the `formatName` function
+</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { formatName } from "@staccx/bento"
+const formattedName = formatName("john doe")
+```
+
+## Arguments
+
+| Argument name                                     | Type                    | Default value | Description |
+| ------------------------------------------------- | ----------------------- | ------------- | ----------- |
+| `value` <Badge status="positive">required</Badge> | `string`                |               |             |
+| `options`                                         | `{ separator?: string}` |               |             |

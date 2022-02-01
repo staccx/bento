@@ -1,14 +1,19 @@
-export { abbreviateCurrency, formatMoney } from "./currency/currency"
-export { formatDateDistance, formatDateRelative, formatDate } from "./date"
-export { default as removeWhitespace } from "./removeWhitespace"
-export { default as formatName } from "./formatName"
-export { default as truncate } from "./truncate"
-export { default as maskFormat } from "./maskFormat"
-export { default as dashIt } from "./dashIt"
-export { formatNumber } from "./number"
+export { abbreviateCurrency } from "./abbreviateCurrency/abbreviateCurrency"
+export { formatMoney } from "./formatMoney/formatMoney"
+export { formatDate } from "./formatDate/formatDate"
+export {
+  formatDateDistance,
+  formatDateRelative
+} from "./formatDateDistance/formatDateDistance"
+export { removeWhitespace } from "./removeWhitespace/removeWhitespace"
+export { formatName } from "./formatName/formatName"
+export { truncate } from "./truncate/truncate"
+export { maskFormat } from "./maskFormat/maskFormat"
+export { dashIt } from "./dashIt/dashIt"
+export { formatNumber } from "./formatNumber/formatNumber"
 export {
   CURRENCY_DISPLAY,
   STYLE,
   UNIT_DISPLAY,
   UNITS
-} from "./number.constants"
+} from "./formatNumber/number.constants"
