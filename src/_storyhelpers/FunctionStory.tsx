@@ -130,8 +130,6 @@ function FunctionStory(props: FunctionStoryProps) {
       })
   }
 
-  console.log(elements)
-
   return (
     <div
       style={{

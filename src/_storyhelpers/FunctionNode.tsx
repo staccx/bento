@@ -12,7 +12,6 @@ const targetHandleStyle: CSSProperties = {
 }
 
 const FunctionNode: FC<NodeProps> = ({ data, isConnectable }) => {
-  console.log(data)
   return (
     <div className={`${styles.node} ${styles.functionNode}`}>
       <div className={[styles.handles, styles.handlesTop].join(" ")}>
