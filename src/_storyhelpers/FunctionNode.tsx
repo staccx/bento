@@ -12,13 +12,14 @@ const targetHandleStyle: CSSProperties = {
 }
 
 const FunctionNode: FC<NodeProps> = ({ data, isConnectable }) => {
+  console.log(data)
   return (
     <div className={`${styles.node} ${styles.functionNode}`}>
       <div className={[styles.handles, styles.handlesTop].join(" ")}>
         {data.inputs.map((input, index) => {
           return (
             <Handle
-              key={input}
+              key={input.key}
               type="target"
               position={Position.Top}
               id={"target-" + input.key}
