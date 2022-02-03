@@ -34,7 +34,7 @@ const helperFunction = shouldFail =>
     return resolve("Your data")
   })
 
-const BaseTestComponent = args => {
+const Template = args => {
   const [fail, failSet] = useState(true) // faking the promise to fail
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -42,21 +42,15 @@ const BaseTestComponent = args => {
     }, args.timeBeforeSuccess)
 
     return () => clearTimeout(timeout)
-  }, [args.timeBeforeSuccess])
+  }, [args.timeBeforeSuccess, fail])
 
   const { result, state, error, retries, reset, nextRetry } = useBackoff(
     () => helperFunction(fail),
-    {
-      ...args
-    }
+    args
   )
 
   return (
     <div>
-      <h3>
-        This component is a reusable component to allow easier maintenance. For
-        examples see the code
-      </h3>
       <div>
         <ReactJson src={args} name={"input"} />
       </div>
@@ -72,55 +66,50 @@ const BaseTestComponent = args => {
           name={"output"}
         />
       </div>
-      <button onClick={reset}>Reset</button>
+      <button
+        onClick={() => {
+          failSet(true)
+          reset()
+        }}
+      >
+        Reset
+      </button>
     </div>
   )
 }
 
-export const UseBackoffSuccess = args => {
-  return (
-    <BaseTestComponent
-      timeBeforeSuccess={10000}
-      time={1000}
-      maxTime={5000}
-      depth={5}
-      strategy={BackoffStrategy.Exponential}
-    />
-  )
+export const UseBackoffSuccess = Template.bind({})
+UseBackoffSuccess.args = {
+  timeBeforeSuccess: 10000,
+  time: 1000,
+  maxTime: 5000,
+  depth: 5,
+  strategy: BackoffStrategy.Exponential
 }
 
-export const UseBackoffFailed = args => {
-  return (
-    <BaseTestComponent
-      timeBeforeSuccess={100000}
-      time={100}
-      maxTime={1000}
-      depth={7}
-      strategy={BackoffStrategy.Exponential}
-    />
-  )
+export const UseBackoffFailed = Template.bind({})
+UseBackoffFailed.args = {
+  timeBeforeSuccess: 100000,
+  time: 100,
+  maxTime: 1000,
+  depth: 7,
+  strategy: BackoffStrategy.Exponential
 }
 
-export const UseBackoffLinear = args => {
-  return (
-    <BaseTestComponent
-      timeBeforeSuccess={100000}
-      time={1000}
-      maxTime={7000}
-      depth={7}
-      strategy={BackoffStrategy.Linear}
-    />
-  )
+export const UseBackoffLinear = Template.bind({})
+UseBackoffLinear.args = {
+  timeBeforeSuccess: 100000,
+  time: 1000,
+  maxTime: 7000,
+  depth: 7,
+  strategy: BackoffStrategy.Linear
 }
 
-export const UseBackoffFixed = args => {
-  return (
-    <BaseTestComponent
-      timeBeforeSuccess={5000}
-      time={100}
-      maxTime={100}
-      depth={7}
-      strategy={BackoffStrategy.Fixed}
-    />
-  )
+export const UseBackoffFixed = Template.bind({})
+UseBackoffFixed.args = {
+  timeBeforeSuccess: 5000,
+  time: 100,
+  maxTime: 100,
+  depth: 7,
+  strategy: BackoffStrategy.Fixed
 }
