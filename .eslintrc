@@ -1,26 +1,5 @@
 {
   "extends": [
-    "@staccx",
-    "plugin:react/recommended"
-  ],
-  "overrides": [
-    {
-      "files": [
-        "*.js",
-        "!*.stories.js"
-      ],
-      "rules": {
-        "react/jsx-handler-names": 0,
-        "no-unused-expressions": 0,
-        "react/jsx-curly-brace-presence": 0,
-        "react/jsx-pascal-case": 0,
-        "react/react-in-jsx-scope": 0,
-        "node/handle-callback-err": 0,
-        "node/no-new-require": 0,
-        "node/no-path-concat": 0,
-        "react/prop-types": 0
-      }
-    }
-  ],
-  "root": true
+    "@staccx"
+  ]
 }

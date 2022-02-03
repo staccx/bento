@@ -1,0 +1,30 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="formatting/Format Number/README" />
+
+# Format Number
+
+<Subtitle>
+  This document describes the use of the `formatNumber` function
+</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { formatNumber } from "@staccx/bento"
+const formattedValue = formatNumber(100000)
+```
+
+## Arguments
+
+| Argument name                                     | Type                                                              | Default value | Description |
+| ------------------------------------------------- | ----------------------------------------------------------------- | ------------- | ----------- |
+| `value` <Badge status="positive">required</Badge> | `number`                                                          |               |             |
+| `options`                                         | `Intl.NumberFormatOptions & { suffix?: string, locale?: string }` |               |             |

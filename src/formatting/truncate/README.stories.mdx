@@ -1,0 +1,29 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="formatting/Truncate/README" />
+
+# Truncate
+
+<Subtitle>This document describes the use of the `truncate` function</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { truncate } from "@staccx/bento"
+const value = truncate("The quick brown fox jumps over the lazy dog")
+```
+
+## Arguments
+
+| Argument name                                     | Type     | Default value | Description |
+| ------------------------------------------------- | -------- | ------------- | ----------- |
+| `value` <Badge status="positive">required</Badge> | `string` |               |             |
+| `length`                                          | `number` | 20            |             |
+| `symbol`                                          | `string` | `&hellip;`    |             |

@@ -1,0 +1,27 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="formatting/Dash It/README" />
+
+# Dash It
+
+<Subtitle>This document describes the use of the `dashIt` function</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { dashIt } from "@staccx/bento"
+const dashedValue = dashIt("This is a proof of concept æøå")
+```
+
+## Arguments
+
+| Argument name                                     | Type     | Default value | Description |
+| ------------------------------------------------- | -------- | ------------- | ----------- |
+| `value` <Badge status="positive">required</Badge> | `string` |               |             |

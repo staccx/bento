@@ -1,0 +1,35 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="formatting/Format Date Distance/README" />
+
+# Format Date Distance
+
+<Subtitle>
+  This document describes the use of the `formatDateDistance` function
+</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { formatDateDistance } from "@staccx/bento"
+const date = new Date(1525910400000)
+const old = new Date(1524614400000)
+
+const formatted = formatDateDistance(date, old)
+```
+
+## Arguments
+
+| Argument name                                   | Type             | Default value | Description |
+| ----------------------------------------------- | ---------------- | ------------- | ----------- | --- |
+| `frm` <Badge status="positive">required</Badge> | `string or Date` |               |             |
+| `to` <Badge status="positive">required</Badge>  | `string or Date` |               |             |
+| `locale`                                        | `object`         |               |             |     |
+| `options`                                       | `object`         |               |             |     |

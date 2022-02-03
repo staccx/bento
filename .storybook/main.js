@@ -1,11 +1,13 @@
 module.exports = {
-  stories: ["../src/**/*.stories.@(mdx|js)"],
+  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
-    "@storybook/preset-create-react-app",
-    "@storybook/addon-essentials",
     "@storybook/addon-links",
-    "@storybook/core-events",
-    "@storybook/addon-a11y",
-    "@storybook/addon-storyshots"
-  ]
+    "@storybook/addon-essentials",
+    "@storybook/addon-jest",
+    "@storybook/addon-storysource"
+  ],
+  framework: "@storybook/react",
+  core: {
+    builder: "webpack5"
+  }
 }

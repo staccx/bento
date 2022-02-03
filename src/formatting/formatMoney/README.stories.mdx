@@ -1,0 +1,30 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="formatting/Format Money/README" />
+
+# Format money
+
+<Subtitle>
+  This document describes the use of the `formatMoney` function
+</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { formatMoney } from "@staccx/bento"
+const formattedValue = formatMoney(1337)
+```
+
+## Arguments
+
+| Argument name                                     | Type                                                              | Default value | Description |
+| ------------------------------------------------- | ----------------------------------------------------------------- | ------------- | ----------- |
+| `value` <Badge status="positive">required</Badge> | `number`                                                          |               |             |
+| `options`                                         | `Intl.NumberFormatOptions & { suffix?: string, locale?: string }` |               |             |

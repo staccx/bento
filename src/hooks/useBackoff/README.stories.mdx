@@ -1,0 +1,40 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="Hooks/useBackoff/README" />
+
+# useBackoff
+
+<Subtitle>Hook to retry a function with different backoff strategies.</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { useBackoff } from "@staccx/bento"
+
+const { result, state, error, retries, nextRetry, reset } = useBackoff(() => fetchAListOfDataOrSomething(), {
+  time: 1000,
+  maxTime: 10000, // max time between retries,
+  strategy: BackoffStrategy.Exponential, // default,
+  depth: 5, // number of retries
+)}
+```
+
+## Arguments
+
+| Argument name                                        | Type                                                                           | Default value                                                                  | Description |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ----------- |
+| `callback` <Badge status="positive">required</Badge> | `Function`                                                                     |                                                                                |             |
+| `options`                                            | `{ time: number; depth: number; maxTime: number; strategy: BackoffStrategy; }` | { time: 1000, depth: 5, maxTime: 5000, strategy: BackoffStrategy.Exponential } |             |
+
+<!-- ## Troubleshooting
+
+### Troubleshoot heading
+
+Troubleshoot description -->

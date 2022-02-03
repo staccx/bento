@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Modal Snapshots No props 1`] = `<div />`;
-
-exports[`Modal Snapshots className 1`] = `<div />`;
-
-exports[`Modal Snapshots isOpen 1`] = `<div />`;
-
-exports[`Modal Snapshots onClose 1`] = `<div />`;

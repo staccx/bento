@@ -1,0 +1,29 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="formatting/Remove Whitespace/README" />
+
+# Remove Whitespace
+
+<Subtitle>
+  This document describes the use of the `removeWhitespace` function
+</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { removeWhitespace } from "@staccx/bento"
+const value = removeWhitespace("   test")
+```
+
+## Arguments
+
+| Argument name                                     | Type      | Default value | Description |
+| ------------------------------------------------- | --------- | ------------- | ----------- |
+| `value` <Badge status="positive">required</Badge> | `string ` |               |             |

@@ -1,0 +1,35 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="math/Cosine interpolate/README" />
+
+# Cosine interpolate
+
+<Subtitle>
+  This document describes the use of the cosineInterpolate function
+</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { cosineInterpolate } from "@staccx/bento"
+const value = cosineInterpolate(0, 10, 0.5)
+```
+
+## Arguments
+
+| Argument name                                   | Type     | Default value | Description |
+| ----------------------------------------------- | -------- | ------------- | ----------- |
+| `min` <Badge status="positive">required</Badge> | `number` |               |             |
+| `max` <Badge status="positive">required</Badge> | `number` |               |             |
+| `t` <Badge status="positive">required</Badge>   | `number` |               |             |
+
+## Return type
+
+`number`

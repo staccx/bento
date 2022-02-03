@@ -1,0 +1,31 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="math/Is number/README" />
+
+# Is number
+
+<Subtitle>This document describes the use of the isNumber function</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { isNumber } from "@staccx/bento"
+const value = isNumber(10)
+```
+
+## Arguments
+
+| Argument name                                 | Type     | Default value | Description |
+| --------------------------------------------- | -------- | ------------- | ----------- |
+| `n` <Badge status="positive">required</Badge> | `number` |               |             |
+
+## Return type
+
+`boolean`

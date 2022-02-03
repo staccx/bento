@@ -1,0 +1,36 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="formatting/Abbreviate Currency/README" />
+
+# Abbreviate Currency
+
+<Subtitle>
+  This document describes the use of the abbreviateCurrency function
+</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { abbreviateCurrency } from "@staccx/bento"
+const abbreviatedValue = abbreviateCurrency(100000)
+```
+
+## Arguments
+
+| Argument name                                     | Type                                                              | Default value | Description |
+| ------------------------------------------------- | ----------------------------------------------------------------- | ------------- | ----------- |
+| `value` <Badge status="positive">required</Badge> | `number`                                                          |               |             |
+| `options`                                         | `Intl.NumberFormatOptions & { suffix?: string, locale?: string }` |               |             |
+
+<!-- ## Troubleshooting
+
+### Troubleshoot heading
+
+Troubleshoot description -->

@@ -1,0 +1,30 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="formatting/Mask Format/README" />
+
+# Mask Format
+
+<Subtitle>
+  This document describes the use of the `maskFormat` function
+</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { maskFormat } from "@staccx/bento"
+const maskedValue = maskFormat(92284082, "XX-XX-XX-XX")
+```
+
+## Arguments
+
+| Argument name                                     | Type                         | Default value | Description |
+| ------------------------------------------------- | ---------------------------- | ------------- | ----------- |
+| `value` <Badge status="positive">required</Badge> | `string or number or bigint` |               |             |
+| `mask`                                            | `string`                     |               |             |

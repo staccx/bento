@@ -1,0 +1,31 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Subtitle } from "@storybook/addon-docs/blocks"
+import { LinkTo } from "@storybook/addon-links"
+import { Badge } from "@storybook/components"
+
+<Meta title="formatting/Format Date/README" />
+
+# Format Date
+
+<Subtitle>
+  This document describes the use of the `formatDate` function
+</Subtitle>
+
+## Requirements
+
+`@staccx/bento >= 14.0.0`
+
+## Usage
+
+```js
+import { formatDate } from "@staccx/bento"
+const formatted = formatDate("2018-04-25T00:00:00")
+```
+
+## Arguments
+
+| Argument name                                     | Type             | Default value  | Description |
+| ------------------------------------------------- | ---------------- | -------------- | ----------- | --- |
+| `value` <Badge status="positive">required</Badge> | `string or Date` |                |             |
+| `dateFormat`                                      | `string`         | `dd MMMM yyyy` |             |     |
+| `options`                                         | `object`         |                |             |     |

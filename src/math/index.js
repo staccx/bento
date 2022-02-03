@@ -1,7 +1,0 @@
-export { inverseLerp } from "./inverseLerp"
-export { lerp } from "./lerp"
-export { cosineInterpolate } from "./cosineInterpolate"
-export { clamp } from "./clamp"
-export { multiplyPixelValue } from "./multiplyPixelValue"
-export { isNumber } from "./isNumber"
-export { almostEquals } from "./almostEquals"
