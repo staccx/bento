@@ -1,11 +1,8 @@
-name: Release bento
+name: Prerelease bento
 on:
-  workflow_run:
-    workflows: ["Setup Environment"]
+  push:
     branches:
-      - "main"
-    types:
-      - completed
+      - "next"
 jobs:
   release:
     runs-on: ubuntu-latest
