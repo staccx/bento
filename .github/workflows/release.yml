@@ -2,7 +2,7 @@ name: Release bento
 on:
   workflow_run:
     workflows: ["Setup Environment"]
-    branches: [main]
+    branches: [main, next]
     types:
       - completed
 jobs:
@@ -20,4 +20,4 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release --branches main
+        run: npx semantic-release
