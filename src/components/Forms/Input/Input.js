@@ -29,6 +29,7 @@ const Input = forwardRef(
       level,
       locale,
       type,
+      maskOptions = {},
       ...props
     },
     ref
@@ -64,6 +65,7 @@ const Input = forwardRef(
           level={level}
           locale={locale}
           type={type}
+          maskOptions={maskOptions}
           {...(props.value ||
             (defaultValue && { value: props.value || defaultValue }))}
           {...props}

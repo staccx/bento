@@ -14,6 +14,7 @@ export const useInputMask = ({
   onChange,
   controlledValue,
   defaultValue,
+  maskOptions = {},
   ...otherProps
 }) => {
   const logger = useLogging("useInputMask", debugLevel)
@@ -97,7 +98,8 @@ export const useInputMask = ({
   const createMask = resolveMask(mode, logger)
   const mask = React.useRef(
     createMask({
-      locale
+      locale,
+      ...maskOptions
     })
   )
 
@@ -106,7 +108,7 @@ export const useInputMask = ({
       return
     }
     const createMask = resolveMask(mode, logger)
-    mask.current = createMask({ locale })
+    mask.current = createMask({ locale, ...maskOptions })
     logger.debug("Mode resolved", mask.current?.name)
   }, [mode, logger, locale])
 
@@ -124,7 +126,7 @@ export const useInputMask = ({
     if (!mode) {
       return
     }
-    const val = mask.current(e.target.value)
+    const val = mask.current(e.target.value, value?.value)
     logger.debug("Handling change on masked input", val, value)
     if (value?.value) {
       const diff = val.value.length - value.value.length

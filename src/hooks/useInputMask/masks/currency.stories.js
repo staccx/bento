@@ -72,4 +72,19 @@ export const DelayedDefaultValue = args => {
   )
 }
 
+export const Decimals = args => {
+  return (
+    <Input
+      id={"decimals_credit"}
+      mode="currency"
+      {...args}
+      defaultValue={200.52}
+      maskOptions={{
+        maximumFractionDigits: 4,
+        minimumFractionDigits: 0
+      }}
+    />
+  )
+}
+
 DelayedControlled.args = {}

@@ -12,7 +12,7 @@ export const resolveBlocks = blocks =>
     .join(" ")
     .trimEnd()
 
-const pipe = value => (...functions) =>
+export const pipe = value => (...functions) =>
   functions.reduce(
     (currentValue, currentFunction) => currentFunction(currentValue),
     value
@@ -59,12 +59,12 @@ export const baseMask = options => {
     delimiter // Keep delimiter last since we resolve it at the top.
   }
 
-  return input => {
+  return (input, lastValue) => {
     const configPrepared = config.prepareConfig(config, input)
     const { prepare, format, settle } = configPrepared
 
-    const rawValue = prepare(input, configPrepared)
-    const masked = format(rawValue, configPrepared)
+    const rawValue = prepare(input, configPrepared, lastValue)
+    const masked = format(rawValue, configPrepared, lastValue)
     const value = settle(masked, configPrepared, rawValue)
     return {
       ...value,

@@ -96,7 +96,8 @@
     "storybook-chromatic": "^4.0.2",
     "storybook-host": "^5.2.0",
     "styled-components": "^5.2.1",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.3",
+    "webpack": "^4.46.0"
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.6",
