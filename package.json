@@ -92,7 +92,7 @@
     "react-markdown": "^4.3.1",
     "react-scripts": "^4.0.3",
     "react-test-renderer": "^16.12.0",
-    "semantic-release": "^17.4.1",
+    "semantic-release": "^19.0.3",
     "storybook-chromatic": "^4.0.2",
     "storybook-host": "^5.2.0",
     "styled-components": "^5.2.1",
